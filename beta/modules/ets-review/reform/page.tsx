@@ -70,15 +70,15 @@ const CHANGES: (Change & { cat: CatKey })[] = [
   },
   {
     cat: 'flex', catColor: CAT.flex.color,
-    title: 'International credits re-admitted', figure: 'up to 2%',
-    proposed: 'From 2036 the EU may use up to 2% high-quality international credits toward the required reductions — the first re-opening to offshore credits since the Kyoto units were phased out.',
+    title: 'International credits re-admitted', figure: '≈260 Mt',
+    proposed: 'From 2036 the EU may use up to 2% high-quality international credits — ~260 Mt cumulative over 2036–40 (2% is the ETS share of the climate law’s 5% flexibility). Contingent on a 2033 availability review; if it fails, the 2036–40 LRF reverts to 2.7% (from 1.7%).',
     quote: '“Up to 2% high-quality international credits will allow to finance decarbonisation projects abroad and provide breathing space in 2036-2040.”',
     links: ['PR', 'QA'],
   },
   {
     cat: 'scope', catColor: CAT.scope.color,
-    title: 'Permanent carbon removals integrated', figure: 'new',
-    proposed: 'Permanent removals (BECCS, DACCS) become usable for compliance, giving the hardest-to-abate sectors flexibility and pulling the technologies to scale. The IA models 175–330 Mt over 2031–40.',
+    title: 'Permanent carbon removals integrated', figure: '250 Mt',
+    proposed: 'A new Article 9c lifts the cap by 250 Mt (+10 Mt contingency) over 2031–40; the Commission auctions these and uses the revenue to buy an equal tonnage of CRCF-certified EU BioCCS/DACCS — a central “Removals Authority”, not an emitter-to-supplier market. On top of the cap and not subject to the LRF. The IA modelled 175–330 Mt.',
     quote: '“The proposal also integrates permanent carbon removals into the EU ETS … additional flexibility for the hardest-to-abate sectors.”',
     links: ['PR', 'IA'],
   },
@@ -164,6 +164,12 @@ const REGISTER: Unc[] = [
   { tag: 'assumption', title: 'IDB abatement is “illustrative”', detail: 'The Bank’s 1,630 Mt figure “will depend on the final IDB design … demand for low-carbon products and project delivery risks”, and the ETS price feeding it “is an assumption … derived from 2040 climate-target modelling.”', src: 'Part 1, p34–35' },
   { tag: 'assumption', title: 'Refinery output held constant', detail: 'The free-allocation calculation “assumes refinery output remains constant over time”, while “in reality it is expected to decline” — an explicit simplification affecting the leakage budget.', src: 'Annex 12, p21' },
   { tag: 'definitional', title: 'Net vs gross removals ambiguity', detail: 'CR2 gross outcome is “uncertain and unlimited”; CR3 has “a maximum level of removals … but not a minimum,” so the net can silently equal the gross and miss the target.', src: 'Annex 8 II, p29/53' },
+  { tag: 'contested', title: 'Removals sit on top of the cap', detail: 'The 250 Mt Art. 9c removals are added above the cap and are not subject to the LRF — adding allowances rather than displacing emission budget. Critics (e.g. Bellona) call this “flooding the market”.', src: 'Removals summary · Art. 9c' },
+  { tag: 'assumption', title: 'Removal delivery is not guaranteed', detail: 'The programme is revenue-driven: the Commission auctions the 250 Mt and buys removals with the proceeds, so delivered tonnage depends on auction revenue vs removal cost (hence the +10 Mt contingency). It is not a hard commitment to 250 Mt delivered.', src: 'Removals summary · Art. 9c' },
+  { tag: 'assumption', title: 'International credits hinge on a 2033 review', detail: 'The ~260 Mt of 2036–40 international credits is contingent: a 2033 review must find high-integrity, cost-effective credits available. If it fails, the 2036–40 LRF reverts to 2.7% (from 1.7%) to tighten the cap instead.', src: 'Removals summary · 2033 review' },
+  { tag: 'range', title: '2040 ambition is contested', detail: 'The Commission estimates the package delivers an 85–87% reduction by 2040; Climact estimates the tabled text delivers ~80%. The proposal is entering trialogue, so the architecture and figures may still shift.', src: 'Removals summary · secondary coverage' },
+  { tag: 'assumption', title: 'Aviation scope can revert in 2032', detail: 'The extension to departing flights (≤5,000 km, from 2029) is provisional: a 2032 review of CORSIA can revert the scope to intra-EEA if CORSIA is judged “ambitious, efficient and successful”, or widen it if not.', src: 'Q&A · aviation coverage' },
+  { tag: 'assumption', title: 'Green-fuel support is a capped pot', detail: 'The SAF reserve (~110 M allowances, ~€9bn to 2040) and maritime SMAP (~46 M EUAs) are fixed pots covering a fixed share of the price gap. With SAF abatement at $600–800/t vs offsets $10–40/t, uptake still assumes the ReFuelEU/FuelEU mandates are met.', src: 'Part 1, p40 · coverage' },
 ];
 
 /* ---------------------------------------------------- cap trajectory chart */
@@ -238,6 +244,87 @@ function RangeBars({ rows, max, unit }: { rows: { name: string; lo: number; hi: 
   );
 }
 
+/* ------------------------------------------- flexibility package (removals + credits) */
+const PILLARS = [
+  {
+    name: 'Domestic permanent removals', color: C_PURPLE, vol: '250 Mt', volNote: '+10 Mt contingency',
+    rows: [
+      ['Period', '2031–2040 (cumulative)'],
+      ['Ramp', 'grows to ~48 Mt/yr by 2040'],
+      ['Geography', 'EU only'],
+      ['Eligible', 'BioCCS, DACCS (CRCF-certified; biochar excluded for now)'],
+      ['Mechanism', 'new Art. 9c — cap raised 250 Mt, auctioned; revenue buys certified removals via a central “Removals Authority”'],
+      ['Cap relation', 'on top of the cap, not subject to the LRF'],
+      ['Scale', '≈ €50bn market at ~€200/t (~€10bn/yr by 2040)'],
+    ],
+  },
+  {
+    name: 'International credits', color: C_TEAL, vol: '≈260 Mt', volNote: 'cumulative',
+    rows: [
+      ['Period', '2036–2040 (back-loaded)'],
+      ['Share', '2% of the ETS cap — the ETS slice of the climate law’s 5% flexibility'],
+      ['Geography', 'international (high-integrity credits)'],
+      ['Eligible', 'high-quality, high-integrity international credits'],
+      ['Mechanism', 'reflected within the cap as proportional flexibility'],
+      ['Cap relation', 'inside the cap'],
+      ['Condition', 'contingent on a 2033 review; if it fails, 2036–40 LRF reverts to 2.7%'],
+    ],
+  },
+];
+
+/* ------------------------------------------- aviation & maritime (current vs proposed) */
+const AVMAR = [
+  { area: 'Aviation scope', current: 'Flights within the EEA only (intra-EEA + departing to CH/UK)', proposed: '+ flights departing the EEA to third countries ≤5,000 km from the Union’s centre, from 2029 (Istanbul, Dubai in; US, China, Far East out). Reversible at a 2032 CORSIA review.' },
+  { area: 'Business / private jets', current: 'Largely exempt (flight-number thresholds)', proposed: 'Brought in via a single 10,000 tCO₂/yr emissions threshold for all operator types.' },
+  { area: 'SAF support', current: '20 M-allowance reserve, expiring ~2030', proposed: 'Reserve grown to ~110 M allowances (~€9bn) and extended to 2040; “book-and-claim”, tiered to fuel quality.' },
+  { area: 'Maritime scope', current: 'Ships ≥ 5,000 GT (100% intra-EEA + 50% extra-EEA)', proposed: 'Extended toward smaller vessels (~400–5,000 GT); cap raised, anti-evasion safeguards (+11–15 Mt scope).' },
+  { area: 'Clean marine fuels', current: 'No dedicated support mechanism', proposed: 'New SMAP mechanism ≈ 46 M EUAs (IA) to bridge the fossil-vs-alternative price gap; 50% of maritime ETS revenue recycled to the sector.' },
+];
+const SAF_TIERS = [
+  { name: 'e-SAF (RFNBO / e-fuels)', pct: 95, color: C_TEAL },
+  { name: 'Advanced biofuels', pct: 70, color: C_BLUE },
+  { name: 'Other ReFuelEU SAF', pct: 50, color: C_AMBER },
+];
+
+function Pillars() {
+  return (
+    <div className="grid gap-3 md:grid-cols-2">
+      {PILLARS.map((p) => (
+        <div key={p.name} className="rounded-lg border border-t-[3px] border-grey-200 bg-white p-4" style={{ borderTopColor: p.color }}>
+          <div className="flex items-baseline justify-between gap-2">
+            <p className="text-[13.5px] font-bold text-tertiary-dark">{p.name}</p>
+            <p className="font-mono text-lg font-bold tabular-nums" style={{ color: p.color }}>{p.vol}<span className="ml-1 text-[10px] font-normal text-tertiary">{p.volNote}</span></p>
+          </div>
+          <dl className="mt-2 space-y-1.5">
+            {p.rows.map(([k, v]) => (
+              <div key={k} className="grid grid-cols-[86px_1fr] gap-2">
+                <dt className="text-[11px] font-semibold text-tertiary">{k}</dt>
+                <dd className="text-[11.5px] leading-snug text-tertiary-dark">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SafTiers() {
+  return (
+    <div className="space-y-2">
+      {SAF_TIERS.map((t) => (
+        <div key={t.name} className="grid grid-cols-[150px_1fr] items-center gap-3">
+          <span className="text-[11.5px] leading-tight text-tertiary-dark">{t.name}</span>
+          <div className="relative h-5">
+            <div className="absolute inset-y-0 left-0 rounded-r-[3px]" style={{ width: `${t.pct}%`, background: t.color }} />
+            <span className="absolute top-1/2 -translate-y-1/2 pl-1.5 font-mono text-[11px] font-bold tabular-nums text-white" style={{ left: 0 }}>{t.pct}%</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 /* ----------------------------------------------------------------- chips */
 function SourceChip({ k }: { k: SrcKey }) {
   const s = SRC[k];
@@ -273,6 +360,8 @@ export default function EtsReformPage() {
   const nav = [
     { id: 'changes', label: 'Key changes' },
     { id: 'numbers', label: 'The numbers' },
+    { id: 'flexibility', label: 'Removals & credits' },
+    { id: 'aviation-maritime', label: 'Aviation & maritime' },
     { id: 'register', label: 'Uncertainty register' },
   ];
 
@@ -383,6 +472,85 @@ export default function EtsReformPage() {
           </div>
         </section>
 
+        {/* ===================== FLEXIBILITY PACKAGE ===================== */}
+        <section id="flexibility" className="mb-10 scroll-mt-16">
+          <h2 className="text-lg font-bold text-tertiary-dark">The flexibility package — removals &amp; international credits</h2>
+          <p className="mb-4 max-w-3xl text-[13px] text-tertiary">
+            Two new sources of headroom let the ETS reach −90% net without −90% of <em>gross</em> cuts inside its sectors. Both
+            figures are <strong>cumulative over the decade, not annual</strong>. This is the design that draws the most political fire.
+          </p>
+          <Pillars />
+          <div className="mt-3 grid gap-3 lg:grid-cols-3">
+            {[
+              { h: 'On top of the cap', b: 'The 250 Mt removals are added above the cap via Art. 9c and are not subject to the LRF — critics (Bellona) call this “flooding the market”, since it adds allowances rather than cutting the emission budget.', c: C_PURPLE },
+              { h: 'Revenue-driven, not firm', b: 'The Commission auctions the removal allowances and buys certified removals with the proceeds. Delivered tonnage depends on auction revenue vs cost — hence the +10 Mt contingency; 250 Mt delivered is not hard-committed.', c: C_AMBER },
+              { h: 'Credits are conditional', b: 'The ~260 Mt of international credits hinge on a 2033 availability review. If it fails, the 2036–40 LRF reverts to 2.7% (from 1.7%) and set-aside allowances go to the Industrial Decarbonisation Bank.', c: C_TEAL },
+            ].map((k) => (
+              <div key={k.h} className="rounded-lg border border-l-[3px] border-grey-200 bg-white p-3.5" style={{ borderLeftColor: k.c }}>
+                <p className="text-[12.5px] font-bold text-tertiary-dark">{k.h}</p>
+                <p className="mt-1 text-[12px] leading-relaxed text-tertiary">{k.b}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 rounded-md bg-surface-blue px-3 py-2 text-[11.5px] leading-relaxed text-tertiary">
+            <strong className="text-tertiary-dark">Contested ambition.</strong> The Commission estimates the package delivers an
+            <strong> 85–87%</strong> reduction by 2040; Climact estimates the tabled text delivers <strong>~80%</strong>. The proposal
+            is now in <strong>trialogue</strong> (Parliament ↔ Council), so volumes and the on-top-of-cap architecture may change.
+          </p>
+        </section>
+
+        {/* ===================== AVIATION & MARITIME ===================== */}
+        <section id="aviation-maritime" className="mb-10 scroll-mt-16">
+          <h2 className="text-lg font-bold text-tertiary-dark">Aviation &amp; maritime — and what it means for green fuels</h2>
+          <p className="mb-4 max-w-3xl text-[13px] text-tertiary">
+            The two hard-to-electrify transport sectors get wider scope <em>and</em> targeted support for clean fuels — the demand
+            base for e-fuels. What changes, current vs proposed:
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[720px] border-collapse text-left">
+              <thead>
+                <tr className="border-b border-grey-200 text-[11px] uppercase tracking-[0.06em] text-tertiary">
+                  <th className="py-2 pr-3 font-semibold">Area</th>
+                  <th className="py-2 pr-3 font-semibold">Current</th>
+                  <th className="py-2 font-semibold" style={{ color: C_TEAL }}>Proposed (Jul 2026)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {AVMAR.map((r) => (
+                  <tr key={r.area} className="border-b border-grey-100 align-top">
+                    <td className="py-2.5 pr-3 text-[12px] font-bold text-tertiary-dark">{r.area}</td>
+                    <td className="py-2.5 pr-3 text-[11.5px] leading-snug text-tertiary">{r.current}</td>
+                    <td className="py-2.5 text-[11.5px] leading-snug text-tertiary-dark">{r.proposed}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-4 grid gap-4 lg:grid-cols-[1fr_1fr]">
+            <Card>
+              <p className="mb-1 text-[12px] font-bold text-tertiary-dark">SAF support tiers to fuel quality · % of the price gap covered</p>
+              <p className="mb-3 text-[11px] text-tertiary">The grown, book-and-claim SAF reserve (~110 M allowances, ~€9bn to 2040) pays a share of the cost gap between fossil jet fuel and eligible SAF — the cleaner the fuel, the higher the share.</p>
+              <SafTiers />
+            </Card>
+            <div className="rounded-lg border border-grey-200 bg-white p-4">
+              <p className="mb-1.5 text-[12px] font-bold text-tertiary-dark">What it means for green-fuel uptake</p>
+              <ul className="space-y-1.5 text-[12px] leading-relaxed text-tertiary">
+                <li className="flex gap-2"><span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: C_TEAL }} /><span><strong className="text-tertiary-dark">A deliberate steer to e-fuels.</strong> The 95 / 70 / 50 tiering pays most for e-SAF (RFNBOs), pulling investment toward the hardest-to-produce, highest-integrity fuels rather than crop-based ones.</span></li>
+                <li className="flex gap-2"><span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: C_BLUE }} /><span><strong className="text-tertiary-dark">Double incentive.</strong> SAF is counted as zero-emissions under the ETS, so switching both avoids the carbon cost <em>and</em> earns the cost-gap subsidy — extended now to 2040, de-risking long-term offtake.</span></li>
+                <li className="flex gap-2"><span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: C_AMBER }} /><span><strong className="text-tertiary-dark">Maritime mirrors it.</strong> SMAP (~46 M EUAs) plus 50% revenue recycling narrows the price gap for e-ammonia, e-methanol and wind-assist; wider scope enlarges the carbon-priced demand base.</span></li>
+                <li className="flex gap-2"><span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: C_RED }} /><span><strong className="text-tertiary-dark">But the pots are capped.</strong> Support is a fixed number of allowances against a huge gap (SAF abatement $600–800/t vs offsets $10–40/t), so uptake still leans on the ReFuelEU / FuelEU mandates being met.</span></li>
+              </ul>
+            </div>
+          </div>
+          <p className="mt-3 rounded-md bg-surface-blue px-3 py-2 text-[11.5px] leading-relaxed text-tertiary">
+            <strong className="text-tertiary-dark">Verified against the proposal.</strong> The 5,000 km / 2029 departing-flight scope, business-jet
+            inclusion and the 95/70/50 SAF tiers are confirmed in the Commission communication and coverage. One correction to widely-shared
+            summaries: the <strong>~110 M allowances is the SAF (aviation) reserve</strong>, not maritime — the maritime <strong>SMAP is ≈46 M EUAs</strong>
+            in the impact assessment. Exact GT thresholds and final pot sizes may move in trialogue.
+          </p>
+        </section>
+
         {/* ===================== UNCERTAINTY REGISTER ===================== */}
         <section id="register" className="mb-8 scroll-mt-16">
           <h2 className="text-lg font-bold text-tertiary-dark">The uncertainty &amp; ambiguity register</h2>
@@ -425,8 +593,10 @@ export default function EtsReformPage() {
             uncertainty come from the underlying impact assessment{' '}
             <a href={SRC.IA.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">SWD(2026) 616</a> (5 parts, 958 pp) and its
             technology-assumptions workbook (E3Modelling / PRIMES); page references (pNN) point to the printed page of the cited part.
-            The cost question itself is modelled in the companion{' '}
-            <a href="/beta/ets-review/electrification" className="underline hover:text-primary">Electrification submodule</a>.
+            The removals/credits Art. 9c volumes and the aviation/maritime scope details are cross-checked against the Q&amp;A and
+            press coverage (ICAP, Bellona, GreenAir, ICCT, T&amp;E, euronews); as the proposal is <strong>entering trialogue</strong>, treat
+            these as tabled-not-final and verify against the primary Directive text before formal citation. The cost question itself is
+            modelled in the companion <a href="/beta/ets-review/electrification" className="underline hover:text-primary">Electrification submodule</a>.
           </div>
         </section>
       </main>
