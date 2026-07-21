@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T07:39:38.895Z",
+  "generatedAt": "2026-07-21T07:04:42.305Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,25 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/ae8d3a",
+      "title": "Policy architectures for green hydrogen: A comparative coherence analysis of fifteen Asian national strategies",
+      "journal": "Environmental Research Letters",
+      "authors": "SRUTHI KALYANI, Nanda Kumar Janardhanan",
+      "published": "2026-07-20",
+      "url": "https://doi.org/10.1088/1748-9326/ae8d3a",
+      "abstract": "Green hydrogen has become a central pillar of net-zero strategies in Asia, but the gap between announced ambition and bankable demand is widening. Aggregate 2030 production targets across ten major Asian economies exceed 14 Mt yr-1, yet only 9 per cent of the global low emissions hydrogen pipeline has reached a final investment decision. We apply a Policy Coherence Analysis (PCA) framework to 15 formally adopted national hydrogen strategies in Asia. Each strategy is scored on an ordinal scale across four dimensions: production credibility, demand integration, cross-sectoral coordination and public financing. The scoring framework is designed as a comparative governance heuristic rather than a predictive investment model. This can enable systematic comparison of institutional readiness across heterogeneous national contexts. Pairwise interactions among dimensions and across bilateral hydrogen agreements are then classified as reinforcing, neutral or constraining. Two main findings emerge from our analysis. First, demand integration lags every other dimension and participates in most of the constraining within-country interactions, which account for about one-fourth of pairwise combinations. Second, of twenty-five bilateral hydrogen and ammonia instruments coded for cross-country coherence, about 56 per cent constrain the coherence of at least one signatory's framework, and these instruments cluster on relationships with incumbent fossil fuel suppliers. Reinforcing agreements a",
+      "suggestedOn": "2026-07-21",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 4.5,
+          "matched": [
+            "green hydrogen"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1002/wcc.70081",
       "title": "Fast Today, Fair Tomorrow: Competing Priorities Shaping <scp>EU</scp> Climate Law and Policy",
