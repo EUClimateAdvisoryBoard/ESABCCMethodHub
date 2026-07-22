@@ -1,0 +1,117 @@
+{
+  "policy_id": "european-health-union",
+  "targets": [
+    {
+      "quote": "the EU can be equipped to prevent, prepare for and manage health crises both at the EU and global level, with all the societal and economic benefits that it would bring.",
+      "article": "Overall aim — a stronger Health Union",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["health crisis prevention, preparedness and management"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Concretely, this Communication is accompanied by three legislative proposals: an upgrading of Decision 1082/2013/EU on serious cross-border health threats, a strengthening of the mandate of the European Centre for Disease Prevention and Control (ECDC), and an extension of the mandate of the European Medicines Agency (EMA)",
+      "article": "Reinforced framework — three legislative proposals",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["ECDC mandate", "EMA mandate", "cross-border health threats decision"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the proposals present a strengthened mandate to enforce coordinated response at EU level in the Health Security Committee.",
+      "article": "Coordinated EU response — Health Security Committee",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["Health Security Committee mandate"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The new rules will enable the activation of EU emergency response mechanisms, in close coordination with the World Health Organization (WHO), without making it contingent upon the WHO’s own declaration of a Public Health Emergency of International Concern (PHEIC).",
+      "article": "EU recognition of a public health emergency",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["EU emergency recognition"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The proposed Regulation on serious cross-border threats to health will entrust all relevant EU decentralised agencies with risk assessment, scientific advice and recommendations for response measures",
+      "article": "All-hazard risk assessment framework",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["all-hazard risk assessment"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the proposed changes will result in a permanent structure within the EMA to monitor events related to the pharmaceutical area, which could lead to future crises, as well as monitoring and mitigating the risk of shortages of key medicines once a crisis is declared.",
+      "article": "EMA — permanent structure on medicine shortages",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["EMA permanent structure", "medicine shortages"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The purpose is to improve the Union’s crisis preparedness and facilitate a coordinated Union-level response by setting a permanent structure to monitor and mitigate shortages of medical devices (a Steering Group for Medical Devices) and to ensure that industry and Member States submit the necessary data to facilitate the monitoring and possible mitigation measures.",
+      "article": "EMA — Steering Group for Medical Devices",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["Steering Group for Medical Devices", "medical device shortages"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "It is therefore proposed to strengthen coordination mechanisms for preparedness, via the development of a binding EU health crisis/pandemic preparedness and response plan.",
+      "article": "Preparedness — binding EU preparedness and response plan",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["EU pandemic preparedness plan"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "To further strengthen the operationalisation of these plans, an EU audit process on national level capacities will be launched.",
+      "article": "Preparedness — EU audit of national capacities",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["EU audit process"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "A new high performing epidemiological surveillance system at the EU level, using artificial intelligence, harmonised datasets and digital tools for accurate modelling, risk assessment and response for the surveillance of novel pathogens based on common EU case definitions",
+      "article": "Surveillance — new high-performing EU system",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["epidemiological surveillance system"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "contact tracing will also be incorporated into the epidemiological surveillance network of the ECDC.",
+      "article": "Testing & contact tracing — automated contact tracing",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["contact tracing"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the new proposals confirm the EU’s leading role in the global sphere of public health preparedness and response, with the objective of addressing outbreaks at the source via a two-pronged approach",
+      "article": "International cooperation — addressing outbreaks at source",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["global health security", "outbreaks at source"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "a reinforced capacity for ECDC to mobilise and deploy the EU Health Task Force to assist local response in particular in the Member States and greater involvement in international response teams",
+      "article": "International — EU Health Task Force within ECDC",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["EU Health Task Force"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "it will launch an impact assessment and consultation on the establishment of an EU authority, with a view to proposing in 2021 a properly mandated and resourced dedicated structure to start operations in 2023.",
+      "article": "HERA — new EU preparedness and response authority",
+      "label": "commitment",
+      "timeline": "propose in 2021, operational in 2023",
+      "indicators": ["HERA"],
+      "climate_relevance": "none"
+    }
+  ]
+}

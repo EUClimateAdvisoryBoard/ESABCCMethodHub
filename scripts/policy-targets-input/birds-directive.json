@@ -1,0 +1,101 @@
+{
+  "policy_id": "birds-directive",
+  "targets": [
+    {
+      "quote": "This Directive relates to the conservation of all species of naturally occurring birds in the wild state in the European territory of the Member States to which the Treaty applies. It covers the protection, management and control of these species and lays down rules for their exploitation.",
+      "article": "Article 1(1)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["scope of wild bird conservation"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall take the requisite measures to maintain the population of the species referred to in Article 1 at a level which corresponds in particular to ecological, scientific and cultural requirements, while taking account of economic and recreational requirements, or to adapt the population of these species to that level.",
+      "article": "Article 2",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["bird population levels"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "In the light of the requirements referred to in Article 2, Member States shall take the requisite measures to preserve, maintain or re-establish a sufficient diversity and area of habitats for all the species of birds referred to in Article 1.",
+      "article": "Article 3(1)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["diversity and area of habitats"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The species mentioned in Annex I shall be the subject of special conservation measures concerning their habitat in order to ensure their survival and reproduction in their area of distribution.",
+      "article": "Article 4(1)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["Annex I special conservation measures"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall classify in particular the most suitable territories in number and size as special protection areas for the conservation of these species in the geographical sea and land area where this Directive applies.",
+      "article": "Article 4(1)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["special protection areas designated"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall take similar measures for regularly occurring migratory species not listed in Annex I, bearing in mind their need for protection in the geographical sea and land area where this Directive applies, as regards their breeding, moulting and wintering areas and staging posts along their migration routes.",
+      "article": "Article 4(2)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["protection of migratory species areas"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "In respect of the protection areas referred to in paragraphs 1 and 2, Member States shall take appropriate steps to avoid pollution or deterioration of habitats or any disturbances affecting the birds, in so far as these would be significant having regard to the objectives of this Article.",
+      "article": "Article 4(4)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["avoidance of habitat deterioration"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall prohibit, for all the bird species referred to in Article 1, the sale, transport for sale, keeping for sale and the offering for sale of live or dead birds and of any readily recognisable parts or derivatives of such birds.",
+      "article": "Article 6(1)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["ban on marketing of birds"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Owing to their population level, geographical distribution and reproductive rate throughout the Community, the species listed in Annex II may be hunted under national legislation. Member States shall ensure that the hunting of these species does not jeopardise conservation efforts in their distribution area.",
+      "article": "Article 7(1)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["hunting compatible with conservation"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "In respect of the hunting, capture or killing of birds under this Directive, Member States shall prohibit the use of all means, arrangements or methods used for the large-scale or non-selective capture or killing of birds or capable of causing the local disappearance of a species, in particular the use of those listed in Annex IV, point (a).",
+      "article": "Article 8(1)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["ban on non-selective capture methods"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Member States shall encourage research and any work required as a basis for the protection, management and use of the population of all species of bird referred to in Article 1.",
+      "article": "Article 10(1)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["research supporting bird protection"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Application of the measures taken pursuant to this Directive may not lead to deterioration in the present situation as regards the conservation of the species of birds referred to in Article 1.",
+      "article": "Article 13",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["non-deterioration of conservation status"],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}

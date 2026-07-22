@@ -1,0 +1,117 @@
+{
+  "policy_id": "habitats-directive",
+  "targets": [
+    {
+      "quote": "The aim of this Directive shall be to contribute towards ensuring bio-diversity through the conservation of natural habitats and of wild fauna and flora in the European territory of the Member States to which the Treaty applies.",
+      "article": "Article 2(1)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["biodiversity conservation"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Measures taken pursuant to this Directive shall be designed to maintain or restore, at favourable conservation status, natural habitats and species of wild fauna and flora of Community interest.",
+      "article": "Article 2(2)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["favourable conservation status"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "A coherent European ecological network of special areas of conservation shall be set up under the title Natura 2000. This network, composed of sites hosting the natural habitat types listed in Annex I and habitats of the species listed in Annex II, shall enable the natural habitat types and the species' habitats concerned to be maintained or, where appropriate, restored at a favourable conservation status in their natural range.",
+      "article": "Article 3(1)",
+      "label": "target",
+      "timeline": "",
+      "indicators": ["Natura 2000 network established"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Each Member State shall contribute to the creation of Natura 2000 in proportion to the representation within its territory of the natural habitat types and the habitats of species referred to in paragraph 1.",
+      "article": "Article 3(2)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["Member State contribution to Natura 2000"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The list shall be transmitted to the Commission, within three years of the notification of this Directive, together with information on each site.",
+      "article": "Article 4(1)",
+      "label": "obligation",
+      "timeline": "within three years of notification",
+      "indicators": ["national list of sites submitted"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The list referred to in paragraph 2 shall be established within six years of the notification of this Directive.",
+      "article": "Article 4(3)",
+      "label": "target",
+      "timeline": "within six years of notification",
+      "indicators": ["list of sites of Community importance"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "the Member State concerned shall designate that site as a special area of conservation as soon as possible and within six years at most, establishing priorities in the light of the importance of the sites for the maintenance or restoration, at a favourable conservation status, of a natural habitat type in Annex I or a species in Annex II and for the coherence of Natura 2000, and in the light of the threats of degradation or destruction to which those sites are exposed.",
+      "article": "Article 4(4)",
+      "label": "target",
+      "timeline": "within six years at most",
+      "indicators": ["special areas of conservation designated"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "For special areas of conservation, Member States shall establish the necessary conservation measures involving, if need be, appropriate management plans specifically designed for the sites or integrated into other development plans, and appropriate statutory, administrative or contractual measures which correspond to the ecological requirements of the natural habitat types in Annex I and the species in Annex II present on the sites.",
+      "article": "Article 6(1)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["conservation measures and management plans"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall take appropriate steps to avoid, in the special areas of conservation, the deterioration of natural habitats and the habitats of species as well as disturbance of the species for which the areas have been designated, in so far as such disturbance could be significant in relation to the objectives of this Directive.",
+      "article": "Article 6(2)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["avoidance of habitat deterioration"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Any plan or project not directly connected with or necessary to the management of the site but likely to have a significant effect thereon, either individually or in combination with other plans or projects, shall be subject to appropriate assessment of its implications for the site in view of the site's conservation objectives.",
+      "article": "Article 6(3)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["appropriate assessment of plans/projects"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall undertake surveillance of the conservation status of the natural habitats and species referred to in Article 2 with particular regard to priority natural habitat types and priority species.",
+      "article": "Article 11",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["surveillance of conservation status"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall take the requisite measures to establish a system of strict protection for the animal species listed in Annex IV (a) in their natural range, prohibiting:",
+      "article": "Article 12(1)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["strict protection of animal species"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "they shall take measures to ensure that the taking in the wild of specimens of species of wild fauna and flora listed in Annex V as well as their exploitation is compatible with their being maintained at a favourable conservation status.",
+      "article": "Article 14(1)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": ["sustainable exploitation of Annex V species"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "promote education and general information on the need to protect species of wild fauna and flora and to conserve their habitats and natural habitats.",
+      "article": "Article 22(c)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["education and public information"],
+      "climate_relevance": "none"
+    }
+  ]
+}

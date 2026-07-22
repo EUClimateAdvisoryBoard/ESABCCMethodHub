@@ -1,0 +1,728 @@
+EUROPEAN COMMISSION
+
+Strasbourg, 12.3.2024
+
+COM(2024) 91 final
+
+COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS
+
+Managing climate risks - protecting people and prosperity
+
+COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS
+
+Managing climate risks - protecting people and prosperity
+
+1.Introduction 
+
+1.1.Accelerating climate risks call for proactive management
+
+Managing uncertainty defines decision-making today, be it for the public, companies, or governments. War and geopolitical uncertainties, cost of living, demographic challenges, environmental degradation and health emergencies, social inequalities, political polarisation and disinformation, rapid technological developments and migration all require urgent action. Policymakers have to balance attention and resources. Intertwined with the other planetary crises of pollution and biodiversity loss and amplifying many of the other risks, the climate crisis is one of the most existential of all the threats we face.
+
+The EU is taking action to cut greenhouse gas emissions in this decade and to achieve climate neutrality by 2050. The Commission has initiated a debate on a 2040 climate target as a further step towards a competitive, net zero future
+1
+. Such rapid global emission cuts are needed, as there are physical limits to what it is possible to adapt to. 
+
+Climate impacts are already here, and risks will continue to increase in the coming decades and beyond due to the inertia of the climate system, even if ambitious global emission cuts reduce the potential damage. In February 2024 the Copernicus Climate Change Service reported that the global average temperature for the preceding 12 months had surpassed the threshold of 1.5 degrees centigrade above pre-industrial levels
+2
+. The outlook for Europe is well presented in the first ever European Climate Risk Assessment (EUCRA)
+3
+ by the European Environment Agency. In the best-case scenario where we limit global warming to 1.5 degrees above pre-industrial levels, Europe – which is heating twice the global rate - will have to learn to live with climate that is 3 degrees warmer, and consequently cope with exponentially more heatwaves and other weather extremes.
+
+Figure 1: Temperature projections for Europe under four standard global climate scenarios
+
+Source: EUCRA, based on Copernicus Climate Change Service
+
+Climate resilience is a matter of maintaining societal functions, but also of competitiveness for economies and companies, and thus jobs. Managing climate risks is a necessary condition for improving living standards, fighting inequality and protecting people. It is a matter of economic survival for rural and coastal areas, farmers, foresters and fishers. For businesses, climate risks are already well recognised and are seen as the top four risks in a decade
+4
+. Small and medium-sized enterprises (SMEs) can face particular resource constraints. Whether it is through exposed supply chains, decreasing access to insurance, vulnerable domestic assets, loss of biodiversity that economic sectors depend on, or insufficient protection of people, the recovery from increasingly intense climate-related disasters will absorb ever more capacity and capital for the unprepared.
+
+The European Central Bank and the European Systemic Risk Board have recognised that climate risks can affect financial stability in many ways, and have made a case for a robust, system wide macroprudential strategy to tackle such risks
+5
+. At the same time, agile and dynamic EU companies, including SMEs, have the potential to become leaders in some of the market segments that build resilience, such as innovation around the use of space data and technologies. 
+
+Increasing climate risks also have an impact on the geopolitical landscape, impinging on global safety and security, trade flows and economic stability, and the ability to maintain essential services for affected populations. Conversely, improving preparedness and resilience against climate impacts can help manage one of today’s major global challenges with positive spill-over effects.
+
+77% of the EU public sees climate change as a very serious problem, and 37% already feels personally exposed to climate risks. Both the European Parliament
+6
+and EU leaders
+7
+have recognised the urgency of stepping up the response to the climate emergency and strengthening the EU’s resilience. In line with the Communication on Europe’s 2040 climate target and path to climate neutrality by 2050, investments in climate-resilient buildings, transport and energy system could create significant business opportunities, generate economies of scale, and benefit more widely to the European economy, generating highly skilled jobs, and affordable clean energy.
+
+The European vision of a healthy, inclusive and fair society is a source of strength. Solidarity, inclusiveness, innovation and the rule of law have seen us through historical challenges and will see us through this one.
+
+The coordination made possible by the European Union is a powerful tool for building resilience. It brings efficiencies, which are essential with so many claims on public and private resources. It also enables countries, regions, and local communities to see what is and isn’t working elsewhere, and leads to faster, more effective action. The scale of action needed in some areas means that, without coordination, the necessary decisions and measures are unlikely to be taken in time to prevent irreversible environmental impacts. Finally, the EU adds value by developing tools that help citizens, public and private stakeholders build resilience. Considerable investment from EU budget, notably via cohesion policy, went into climate adaptation and mitigation over the past decade. In 2021-2027, Cohesion investments in this area are foreseen to reach around EUR 118 billion.
+
+Some of the disasters that happened in 2023 clearly reveal the pattern of increasing climate risks, and all EU countries have been affected to some extent, beyond the examples given below.
+
+Box 1: Four examples of disaster events in 2023 linked to climate-related hazards:
+
+-Greece. From July to August wildfires, fuelled by drought and heatwaves, burnt an area of 170,000 hectares in Greece. In particular, the wildfire in Alexandroupolis became the largest wildfire in Europe since 2000, burning more than 96,000 hectares. Storm Daniel caused record-breaking rainfall in Greece in early September, with a reported 750 mm of rain falling in 24 hours in Zagora, which represents more than a year of rainfall accumulation for this area. This event wiped out some 15% of the country’s annual agriculture yield.
+
+-Slovenia. In August, heavy rainfall over several days compounding on already high water levels led to massive flooding and landslides, with two thirds of Slovenia affected, with damages around 16 % of GDP.
+
+-Scandinavia. In August, Storm Hans swept across Denmark, Norway and Sweden, causing severe damage to infrastructure and agriculture, and major disruptions to critical transport networks. Insurance claims set new records.
+
+-All of Europe. The 2023 Cerberus heatwave set new temperature records in many countries. This followed the 2022 summer heatwaves where between 60,000 and 70,000 Europeans died from record breaking heat.
+
+Climate action is in the interest of all. Climate-related damages are not the result of unfortunate, unforeseen natural disasters. They are a function of known climate risks, and the policy actions taken to reduce those risks. This Communication sets out key steps needed to ensure that, in the face of worsening climate risks, the public and businesses can rely on the EU and its Member States to maintain societal functions and continued access to basic services. It seeks to clarify who is responsible for making the difficult choices and taking action, informed by the best evidence. It shows how the EU can effectively get ahead of climate impacts in the coming years and how building resilience makes achieving other policy objectives cheaper and easier. This endeavour requires that, in the future, preparedness and resilience in the face of climate risks be factored in into EU level and Member State action by default across policy areas.
+
+1.2.EU foundations are in place for improving climate risk management
+
+The European Climate Law requires the EU institutions and the Member States to ensure continuous progress on adaptive capacity, strengthening resilience and reducing vulnerability. Implementation of the broad action plan of the 2021 EU adaptation strategy is in full swing. To enhance the resilience of EU funded investments, cohesion policy and other key programmes in the EU budget have integrated the principle of ‘do no significant harm’ and established a climate proofing practice. A wide range of sector policies are being updated with respect to climate risks. The Member States are improving adaptation action and have taken the first steps to include climate resilience in their national energy and climate plans (NECPs).
+
+Still, the findings of recent Commission assessments
+8
+ 
+9
+ 
+10
+have been mixed. Whereas steady progress can be noted at EU level through the implementation of the EU adaptation strategy, much more needs to be done by the Member States on governance aspects, awareness raising, fairness and just resilience, financing, and nature-based solutions. The latest Commission assessments of draft updated NECPs and associated recommendations identify a mismatch between the NECPs and the Member States’ planned and implemented adaptation policies and measures. The Commission issued recommendations and is ready to further assist Member States in improving their NECPs to accelerate implementation and investments in the coming years.
+
+The report ‘Preventing and managing disaster risk in Europe’
+11
+ shows that climate-related risks are high on the disaster risk management agenda across Europe. Worryingly, it also shows that while climate risks are mostly acknowledged, the civil protection risk assessments rarely consider climate scenarios and uncertainties. The Member States’ assessments of risks to critical infrastructure will be carried out by January 2026 under the Critical Entities Resilience Directive. Current budgetary outlook assessments do not consider climate risks systematically, if at all. Overall, while the processes and requirements agreed upon in EU-level policy frameworks can address climate risks, implementation currently falls short of providing reasonable assurance.
+
+Progress is therefore uneven and is not keeping pace with accelerating climate change. Both the EU and its Member States must become significantly better at preparing for and effectively addressing climate risks.
+
+The EUCRA report sets out in telling detail the key climate risks for Europe and how these interact with and amplify many non-climate risks. This Communication responds to the report and other recent evidence. It does not look in-depth into potentially major risks to the EU from climate impacts outside the EU, or vice versa. Climate change can unleash cascading risks, and exacerbate environmental degradation and existing drivers of conflict, displacement and migration. These complex interlinkages merit specific analysis to inform policy decisions, as reflected in the Communication on the climate and security nexus
+12
+.
+
+In line with the international dimension of the EU adaptation strategy
+13
+, the EU will continue to support integrated solutions for climate resilience in fragile and vulnerable countries. The EU Global Gateway, the EU’s comprehensive strategy worth EUR 300 billion, the Economic and Investment Plans designed for the EU Southern neighbourhood, Eastern partnership and the Western Balkans can offer tools for mitigating climate risks at global level. As an example, the EU has launched the comprehensive Team Europe Initiative (TEI) on Climate Change Adaptation and Resilience in Sub-Saharan Africa as part of the EU-Africa Global Gateway investment package. In line with the Sendai Framework for Disaster Risk Reduction, the EU will continue to support disaster risk reduction in partner countries, putting the focus on disaster risk knowledge and governance, prevention, preparedness (particularly early warning systems), response and recovery.
+
+The Communication follows up on the most recent UN Climate Summit (COP28) outcomes on adaptation and particularly on implementation of the UAE Framework for Global Climate Resilience
+14
+. The EU will continue to foster climate resilience and climate risk management, contributing to climate adaptation and conflict prevention in its climate diplomacy tools that leverage European experiences in international fora and bilaterally.
+
+2.Analysis: the latest evidence on the key risks for Europe 
+
+2.1.Findings of the European Climate Risk Assessment 
+
+The science is clear: Europe will face higher overall temperatures, the risk of more intense and frequent heatwaves, prolonged droughts, more intensive precipitation, lower average wind speeds and less snow. Intergovernmental Panel on Climate Change (IPCC) reports have stated this clearly. However, this overall picture does not show the complex interactions between hazards and the probability of catastrophic impacts.
+
+Figure 2: Observed and projected trends in key climate-related hazards in different European regions
+
+ 
+
+Source: EUCRA
+
+These climatic hazards will lead to more disasters such as droughts, floods, wildfires, diseases, crop failures, heat deaths, infrastructure damage, and structural changes to the environment. In practice, the societal preparedness, the financial and administrative capacity to recover, and physical location are the main factors determining how exposed and vulnerable we are as a society.
+
+Southern Europe will face stronger climatic pressures than the rest of Europe, as will Arctic areas. The outermost regions have a distinct set of risks. This asymmetrical exposure to climate impacts exacerbates the already existing disparities between regions in terms of need for climate adaptation, risk prevention and preparedness, which can put pressure on the tools for EU-wide cohesion.
+
+The society-wide costs and benefits of avoided damages cannot be calculated accurately, but an estimate of the scale should be enough to warrant action. A conservative estimate is that worsening climate impacts could reduce EU GDP by about 7% by the end of the century. If global warming goes more permanently beyond the 1.5 degrees threshold of the Paris Agreement, the cumulative additional reduction in GDP for the EU as a whole could amount to EUR 2.4 trillion in the period from 2031 to 2050
+15
+. Annual damages in Europe from coastal flooding could exceed EUR 1.6 trillion by 2100
+16
+, with 3.9 million people exposed to coastal flooding every year. 
+
+Climate risks are especially felt by the most vulnerable people due to a range of socio-economic factors such as income, gender, age, disability, health, and social exclusion (particularly affecting migrants, ethnic minorities, and indigenous peoples). Pre-existing disadvantages reduce the capacity to recover from climate-induced disasters. Poorer urban areas, but also schools and hospitals tend to be in urban heat islands. Both in urban and rural settings, the population living in low-lying areas faces increased risks of flooding, and the consequences associated with water contamination.
+
+Exposed workers, primarily those working outdoors in sectors such as agriculture, construction, emergency services, and tourism, are more likely to face extreme heat conditions. Beyond occupational health and safety impacts and earnings losses affecting individual workers due to lost working hours, the ensuing reduction in labour productivity can cascade into shortfalls in economic output at a broader territorial level. Poorly designed adaptation solutions can further deepen inequalities. Consideration of social aspects, dialogue as well as inclusive and participatory decision-making processes with impacted communities is essential for well-designed policy action. Providing security is part of the social contract with our citizens.
+
+The EUCRA identified 36 key risks for Europe, several of them already at critical levels and of high urgency. Each of these should be considered by policymakers. The Section 4 responds to some of these, while focussing on actions which can respond to several risks simultaneously.
+
+Figure 3: Links between major climate risks clusters and exposed policy areas
+
+Source: EUCRA
+
+2.2.Uncertainties and probabilities 
+
+Despite the complexity of the climate system and the prevailing uncertainties, scientists have high confidence that climate will continue to deteriorate in the coming decades. Policymakers and investors need to consider the probability of the outcome they want to avoid.
+
+Uncertainty is not a valid excuse for inaction. The precautionary principle
+17
+ requires decision-makers to take a preventive, proactive approach to ensure good stewardship of our societies.
+
+3.Solutions space – equipping society for action
+
+Fast development, test and deployment of actionable solutions is needed in a changing environment. The EU Mission on Adaptation to Climate Change supports regions with innovative solutions that accompany a region or local authority towards climate resilience by 2030, and can serve as best practice for all interested parties.
+
+Investing in resilience from the outset of an infrastructure project means the asset will be better able to withstand extreme weather conditions so that ad-hoc reconstruction and recovery expenses are avoided. Every euro needed to repair damage is a euro not spent on a more productive investment. Conversely, every euro spent on prevention and preparedness will bring benefits for all, going beyond the initial investment
+18
+. Planning decisions of today need to build on a sound anticipatory assessment of risks
+19
+.
+
+The climate risks facing Europe cannot be addressed in isolation from other societal challenges. The best, lasting solutions are those that secure multiple benefits. The evidence in the EUCRA report points to several areas where cross-cutting solutions may help remove barriers to adaptation to climate change. This is why a systemic approach is needed.
+
+The following sub-sections identify four overarching categories of solutions that make administrative systems in the EU and its Member States better able to deal with climate risks: improved governance, tools for risk owners, harnessing structural policies, and right preconditions for financial resilience.
+
+3.1.Improved governance 
+
+The division of responsibilities between the EU and the national level – risk ownership – varies between policy areas and is based on subsidiarity. In practice this often means that the European Parliament and the Council agree on a common general framework at EU level, with actual implementation approaches designed and decided by the Member States at national level, and implemented at national, regional, and local levels. At EU level, climate risks should be better considered in the governance aspects of policies, legislation and financial instruments, and in seeking synergies between EU policies and measures.
+
+While most policies include provisions for considering climate risks, there are shortcomings in the way such policies and legislation are implemented in the Member States. Improvements are necessary across all governance levels. Attention must be paid to how the national, regional and local levels interact and how their means and tasks are aligned. The Commission calls on the Member States to fully implement the existing commitments on adaptation, and also consider relevant Commission recommendations.
+
+Improving governance of climate risks requires:
+
+Clear risk ownership. The Commission calls on all EU Institutions to consider how sector-specific climate risks and the responsibility to act on climate risks is distributed between the EU and the Member States in the current legislative setup for key policy areas.
+
+Strengthened governance structures. Clear governance structures for managing climate risks in Member States should ensure vertical and horizontal coordination among national, regional and local levels. The Commission calls on the Member States to ensure that risk owners at national level have necessary capabilities and resources to manage climate risks. The Commission will also structurally embed climate risks in its internal processes by strengthening climate risk controller functions and in the implementation of the climate consistency check in the Better Regulation requirements.
+
+Synergies in governance processes. The implementation of legislation relating to climate risks could be further improved and made more consistent. The European Climate Law, the Regulation on the Governance of the Energy Union and Climate Action, the Critical Entities Resilience Directive, the Regulation on Serious Cross-border Threats to Health, the imminent revised EU Economic Governance Framework, the Nature Restoration Law, once adopted, the Birds and Habitats Directives, the Water Framework Directive, the Floods Directive, the Marine Strategy Framework Directive, the Union Civil Protection Mechanism (UCPM) Decision with its Union Disaster Resilience Goals, all include provisions linked to managing climate risks. To simplify processes and render them more effective, the Commission will explore how the implementation of EU level requirements can be further facilitated, streamlined and strengthened.
+
+3.2.Tools for empowering risk owners
+
+Thanks to the scientific advances on understanding climatic risks, and the EU research and innovation funding supporting these advances, we can take meaningful action now. The Commission will continue to invest in decision-useful research and innovation, and to leverage knowledge and solutions put forward by relevant EU Missions, projects and Partnerships in the Horizon Europe. This alone is not sufficient, as highlighted by the knowledge actions put forward by the EUCRA. A high-resolution quantitative multi-hazard risk assessment, combined with matching adaptation and resilience assessment would be highly relevant for prioritising action. Access to available research and operational tools and data, and the ability to use them, can support the competitiveness of EU businesses and improve public policy decisions. Official climate resilience-related European statistics are also needed, compiled consistently with GDP and other national accounts aggregates.
+
+Even where governance structures are strong, effective decision-making on climate risks is held back by substantial skill, labour and knowledge gaps in both the private and the public sector, compounded by climate disinformation. To manage climate risks effectively and to make better use of the already available information and early warning systems, there is a need for better access to these and to relevant knowledge tools, as well as capacity building.
+
+Improving the capacity of risk owners to fulfil their tasks requires:
+
+Climate data, modelling tools and indicators. High quality, easily understandable climate data and models are crucial for informed decision-making on matters ranging from long-term planning to early warning systems.
+
+-The Commission and the European Environment Agency (EEA) will provide access to key granular and localised data, products, applications, indicators and services, notably through the Climate-ADAPT platform and the data platforms of Copernicus Climate Change Service, namely Copernicus Data Space Ecosystem
+20
+and WEkEO
+21
+.
+
+-The first two digital twins under the Destination Earth initiative (DestinE) - Climate Change Adaptation and Weather Induced Extremes digital twins - will provide from mid-2024 onwards detailed simulations of climate scenarios from global to national and sub-national levels at a multi-decadal timescale, including uncertainty quantification. The Digital Twin of the Ocean will also provide detailed simulations and scenarios and enable better understanding of processes such as sea-level rise, ice-melting, coastal erosion, the carbon cycle and changes in biodiversity. Horizon Europe will continue supporting research aimed at delivering large sets of high-resolution seamless multi-decadal climate simulations to better characterise local risks and uncertainties.
+
+-To help with emergencies, in 2025 the Galileo Emergency Warning Satellite Service (EWSS) will become available to communicate alert information to people, businesses and public authorities even when terrestrial alert systems are down.
+
+-Major data gaps will be reduced thanks to the proposed Forest Monitoring Law
+22
+ and the proposed Soil Monitoring Law
+23
+, which will improve early warning tools for wildfires and other disasters and contribute to more accurate risk assessments. More broadly, the Commission will promote the use of the available monitoring, forecasting and warning systems
+24
+.
+
+The Commission will review the existing tools and guidelines including the EEA’s European Climate Data Explorer
+25
+and the adaptation dashboard hosted in the EU Mission on Adaptation to Climate Change’s Portal
+26
+in Climate-ADAPT, the Risk Data Hub
+27
+, PROVIDE’s climate risk dashboard
+28
+and make more use of the analytical and foresight capabilities of the Emergency Response Coordination Centre. The Commission will improve user access, including at local level, and will monitor the use of the tools. It will seek better indicators on progress on resilience, including in conjunction with other interlinked and relevant indicators to ensure a system approach.
+
+Baseline climate scenarios. To reduce the complexity of assessing risks, the Commission will use the IPCC intermediate emissions scenario
+29
+ as the lowest acceptable baseline climate scenario for covering physical risks in assessing the impacts of policies and use more adverse scenarios in stress-testing and to compare adaptation options. The Member States are advised, and private stakeholders are expected, to do likewise; the Commission internal guidance on this matter will be published. Better historical data, for example on disaster losses, is useful as an indicator and input in projections. But deciding on climate future based primarily on extrapolated historical data is reckless behaviour.
+
+Enhanced public and private sector capacities. The Commission will support the development of training materials and online open courses on climate resilience through a single online platform, partly through Climate-ADAPT. The extensive range of adaptation planning tools at EU level will become part of the knowledge base. The Commission will support the Member States in their efforts to ensure that national curricula and training programmes, including those for public administrators, are future-ready, and will continue to support administrative cooperation among and within the Member States
+30
+. Based on further discussions, the Commission will develop climate and disaster risk assessments tools to help the Member States and the private sector, including SMEs.
+
+The Commission will also leverage existing tools:
+
+-The EU Mission for Adaptation to Climate Change is a major contributor to regional capacity building.
+
+-The Technical Support Instrument supports the Member States in the design and implementation of reforms aimed at reducing and managing climate risks. 
+
+-The competence framework on sustainability (GreenComp), released in 2022, provides a basis to foster competences needed to address climate change. 
+
+-The education and training initiatives and policies developed under the European Education Area (for instance with the Education for Climate Coalition) will be used.
+
+-The unique collaboration model between academia, research and business developed under the European Institute of Innovation and Technology (EIT) and its Knowledge and Innovation Communities (KICs), notably KIC “EIT Climate” can provide support.
+
+Combatting disinformation. The Commission will contribute to efforts to monitor and analyse how disinformation narratives enter the public space and impact opinion and behaviour. It will enhance the use of relevant policy tools, digital solutions, and communication approaches to fight climate disinformation. This includes ensuring that compliance with the Digital Services Act properly covers disinformation and that climate science is properly covered in social media companies’ compliance with the Code of Practice on Disinformation. It will also work with partners internationally to address disinformation as a growing societal challenge that is rooted in skewed economic incentives and poses a threat to the functioning of our democratic systems.
+
+3.3.Harnessing structural policies
+
+While risk ownership distribution between the EU and its Member States varies between policy areas, three structural policy areas hold particular promise for managing climate risks across many sectors:
+
+Better spatial planning in the Member States. Land use and planning are national – and often local - responsibilities. Land is not only an asset but is imbued with locally specific meaning and value beyond the monetary. At the same time, land use and planning decisions affect the resilience and insurability against risks of broader communities and economies. Such decisions should explicitly state the assumptions about climate risks and be approved by the national authorities responsible for the resilience of critical infrastructure and entities. The Commission will consider options to incentivise uptake of best practices, including by strengthening the link between the quality of territorial and maritime planning, and the cohesion, transport, fisheries, finance and agriculture policies. The Commission will build on existing work and include resilience principles in the New European Bauhaus initiative
+31
+to facilitate the planning of resilient communities.
+
+Embedding climate risks in planning and maintaining critical infrastructure. Closely linked to spatial planning, governments’ ability to maintain societal functions depends on the resilience of the entities that operate critical infrastructure to provide their essential services for the society and the economy. The Critical Entities Resilience Directive facilitates coordination between the Member States and sets out risk assessment processes for them and the critical entities. The Commission calls on each Member State to ensure that their national risk assessment under the Critical Entities Resilience Directive
+32
+ explicitly addresses the long-term resilience of the entities in scope to climate risks and invites the Member States to do so ahead of the 2026 deadline set in the Directive. Some of the critical infrastructure is agreed and co-financed at EU level, such as the trans-European networks TEN-T and TEN-E, but also for example EU-funded hospitals and schools. The Commission will update and develop relevant sectoral guidance documents. The available satellite data and services should be used fully to bolster the resilience of critical infrastructure against climate risks.
+
+Linking EU-level solidarity with adequate national resilience measures. If national capacities are overwhelmed, the civil protection capacities and other solidarity mechanisms at EU level (including the UCPM, the EU Solidarity Fund, Cohesion policy structural investments, certain tools under the common agricultural policy and other sectoral support packages) may be mobilised to protect people against climate impacts and help them recover faster. However, both national and EU level capacities are already stretched while risk pressures will continue to increase. Since 2019, the UCPM has been activated and coordinated assistance 76 times in EU Member States and third countries for climate-related emergency situations (extreme flooding, wildfires, storms and acute drought). Over EUR 8.6 billion have been spent through the EU Solidarity Fund for supporting 24 Member States and 4 accession countries after 110 disasters from natural hazards.
+
+The solidarity mechanisms need to be adequately resourced to ensure that the EU can help those in need. The civil protection systems and assets must be future-proofed, through investing in EU and Member State disaster risk management, response capacities and expertise that can be rapidly deployed across borders. This should fully integrate climate risks in the disaster risk management processes, as set out in the Union disaster resilience goals
+33
+and the Commission report on prevention risk management of disaster risks in Europe
+34
+. As EU response and recovery capacities can become exhausted with increasing risks, the Commission will consider how the solidarity mechanisms can better incentivise adequate anticipatory actions on key risks by the Member States also in the interest of fiscal sustainability, while strengthening EU disaster risk management, preparedness and response.
+
+3.4.Right preconditions for financing climate resilience
+
+Policymakers, investors and businesses need to understand the investment and protection needs and gaps, design targeted interventions based on their potential impact and urgency, engage risk owners and form long-term financing strategies. To effectively manage climate risks, public spending at EU and national level, including social investments, and incentives for private investment should be designed in a way that makes preventing climate-related disruptions and damages the best choice economically. Compliance with State aid rules needs to be ensured. This implies:
+
+Ensuring that EU spending is resilient to climate change. The Commission will integrate climate adaptation considerations in the implementation of EU programmes and activities as part of the ‘do no significant harm’ principle laid down in the Financial Regulation for the post 2027 multiannual financial framework, where feasible and appropriate. This will ensure that all relevant EU programmes contribute to climate resilience.
+
+Embedding climate resilience in public procurement. Public procurement accounts for 14% of EU GDP and needs to take climate risks int account. For infrastructure decisions in particular, this policy plays a key role in supporting climate resilience of assets and bidding companies’ awareness and knowledge of climate resilience. The Commission will consider climate risks as an element in case of a review of the regulatory framework for procurement. In parallel, it calls on the Member States to take account of, among others, climate risks when including environmental sustainability criteria in competitive tenders, for instance through accelerated implementation of the provisions of the Net-Zero Industry Act
+35
+ concerning non-price criteria in the tender design. 
+
+Mobilising finance to build resilience. Attracting and facilitating private investment is fundamental to successfully address climate risks and build climate resilience. Building on the work of the Climate Resilience Dialogue and other relevant work, the Commission will convene a temporary Reflection Group on mobilising Climate Resilience Financing to reflect on how to facilitate climate resilience finance. The Reflection Group will bring together key industrial players and representatives of public and private financial institutions. It may also draw on the knowledge of the European Investment Bank and the European Insurance and Occupational Pensions Authority in the field of financing adaptation and resilience-building. It will map best practices and identify obstacles and enabling conditions for the financing of climate resilience. The Commission will take the outcome of these discussions into account with a view to bolstering finance for climate resilience.
+
+4.Key EU actions in main impact clusters 
+
+Climate risks and EU policies are interconnected in many ways. Most EU policies already include decision-making processes that could take climate risks into account. The wealth of evidence put forward in the EUCRA report will feed into these processes. This section sets out specific actions for selected impacted clusters which the Commission will take forward, in addition to the already ongoing existing work.
+
+4.1.Natural ecosystems
+
+Apart from sustaining biodiversity itself, natural ecosystems provide life-supporting services such as freshwater, food and biomaterial, carbon sequestration, soil and coastal erosion control, flood and drought prevention, cooling of densely populated urban areas. More than half of the world’s total GDP is estimated to be moderately or highly dependent on nature and biodiversity. Healthy ecosystems are self-balancing, but ecosystems can also rapidly collapse if critical thresholds are crossed. The most immediate detrimental effect will be on to food security, local communities and those economic sectors that are most dependent on healthy nature. To maintain and restore the resilience of ecosystems and the services they provide, approximately 30-50% of Earth’s land, freshwater and oceans will need to be effectively and equitably preserved 
+36
+.  
+
+Future-proofed nature-based solutions can be cost-effective and increase resilience and should be the first climate adaptation choice whenever possible. For effective management of climate risks, ecosystems need to be protected and managed comprehensively, and assessments of wealth and economic activity should fully include natural capital
+37
+ using recent methodological advances. Implementation of the Birds and Habitats Directives and the development of the national restoration plans under the upcoming Nature Restoration Law should ensure synergies with climate resilience. To support climate change adaptation in protected areas, the Commission will update the guidelines on Natura 2000 and climate change.
+
+More work is needed to prevent major forest disturbances and improve preparedness for them. The Commission will use the UCPM actions to promote wildfire risk prevention, use the proposed regulations on a monitoring framework for resilient European forests and on forest reproductive material; and consider climate pressures when estimating the potential contribution of carbon sinks to EU net zero targets.
+
+The Member States need to improve the health of marine ecosystems. The Commission calls on the Member States to make best use of the Marine Strategy Framework Directive, the Nature Restoration Law and the Marine Action Plan
+38
+ to increase the resilience and preserve diversity of all marine ecosystems to maintain their productive capacity to provide food, materials and ecosystem services. Actions under the EU Ocean and Waters Mission
+39
+are contributing to a wide range of such solutions. To ensure sustainable fisheries in a changing climate, the synergies between the common fisheries policy and environmental legislation, as put forward in the Fisheries and Oceans Pact, should be fully exploited to ensure food security and livelihoods for fishers and coastal communities.
+
+The core elements of a climate-resilient landscape need to be addressed simultaneously to preserve landscapes’ capacity to reduce the risk of drought, floods, storm surges, wildfires or erosion along with delivering other ecosystem services. Rural areas cover most of Europe’s land and a siloed approach to managing soil, water and forests in the same area has reached its limits. A comprehensive and integrated approach is needed to ensure that ecosystems over large areas can cope with the multiple threats. To support the best use of existing planning documents and in synergy with the Member States’ spatial planning and nature restoration plans, the Commission, working with the Member States, will draw up guidance on the development of resilient landscapes that can buffer the impacts of climate change.
+
+4.2.Water
+
+Water is a vital resource that is already under pressure in many parts of Europe due to structural mismanagement, unsustainable land use, hydro-morphological changes and pollution. Climate change is exacerbating these pressures and increasing water-related risks in the form of more frequent or prolonged droughts or extreme precipitation. These are set to deepen in the future with larger parts of Europe being affected by water stress, as well as a growing risk of mega-droughts (spanning large regions and lasting several years), wildfires, increasing floods, and rising sea levels that heighten the risk of coastal floods and storm surges, coastal erosion and salt-water intrusion.
+
+The EUCRA emphasises that water-related risks cut across all the major sectors considered in this Communication and that severe floods, droughts and forest fires are becoming a health threat and a recurrent cause of social, environmental, and economic losses. These risks can manifest in multiple forms, some of which include droughts potentially affecting large areas for prolonged periods, with negative impacts on crop production, food security, drinking water supplies and energy production or the usability of waterways and that compound the risk of wildfires; risks to critical infrastructure, economic activities and human health from flooding, and in general increased competition over water resources across sectors and uses, including potential risk of conflicts within and among the Member States over transboundary water resources. The EUCRA demonstrates that the costs of insufficient or delayed implementation of integrated water management will be unaffordable. Estimates value the costs of droughts to be €9 billion per year and those of floods to be more than EUR 170 billion in total since 1980.
+
+Protecting and restoring the water cycle, promoting a water-smart EU economy and safeguarding good quality, affordable and accessible freshwater supplies to all is crucial to ensure a water-resilient Europe. Achieving water resilience means fostering our collective ability to manage and use water in a way that is more agile given the rapidly changing and partially unpredictable geo-political, economic, societal and environmental developments. Water needs to be managed, and human demand needs to be adjusted to the new and more scarce supply.
+
+Considering the fundamental role that water plays in sustaining life and as an economic input, the Commission will take stock of water issues comprehensively, building upon the findings of the ongoing assessments of River Basin and Flood Risk Management Plans, as well as of the marine Programmes of Measures put in place by the Member States and on that basis consider the need for action.
+
+4.3.Health
+
+Climate change is impacting human health. Between 60,000 and 70,000 premature deaths were attributed to the 2022 heatwave in Europe alone. Projections show a strong net increase in temperature-related mortality rates already for mid-century
+40
+. Through continuous warming and extreme weather events, climate change can contribute to or aggravate non-communicable diseases, which are responsible for about two thirds of all deaths in the European region. The “Healthier Together – EU non-communicable diseases initiative”
+41
+supports the Member States in taking appropriate preventive action.
+
+Labour productivity will go down and working hours will be at risk of being lost unless effective adaptation measures are taken. Individual and regional vulnerability and the most appropriate measure depend on factors like levels of preparedness, degree of urbanisation, age structure, or concurrent exposure to air pollution. As acknowledged in the Communication on a comprehensive approach to mental health
+42
+, the climate crisis severely impacts mental health. 
+
+The incidence of climate-sensitive infectious diseases is set to increase, with diseases such as the West Nile virus, dengue and chikungunya becoming endemic in parts of Europe and food-borne and water-borne pathogens spreading more easily. However, in most cases, effective medical countermeasures to respond to these diseases are scarce or yet to be developed. Extreme weather patterns can also lead to proliferation of resistant bacteria and more gene transfer, resulting in an increase in infections with resistant bacteria and fungi.
+
+These and other risks will put additional pressure on the already strained health care systems, health service workers and health budgets. Primary solutions lie in policies that can reduce vulnerabilities and limit human exposure. Health sector workers and buildings being directly exposed to climate risks should be managed adequately. To further strengthen its action, and put in practice the objectives and commitments set out in the Budapest and COP28 Declarations
+43
+on climate and health, the Commission will:
+
+Step up measures to ensure that workers exposed to climate risks are adequately protected. When reviewing occupational safety and health (OSH) legislation that protects workers from all occupational risks, including the risks related to increased ambient temperatures and heat stress, the Commission will consider the need for more action to protect workers on climate risks, also building on the existing guidance and tools
+44
+. The Commission set up a new stakeholder dialogue
+45
+.The European Agency for Safety and Health at Work (EU-OSHA) is strengthening foresight on the climate-OSH nexus
+46
+ and will launch in 2025 a project to increase climate resilience at the workplaces.
+
+Enhance the European Climate and Health Observatory, which helps prepare local and national health systems for climate change, build additional capacity, strengthen monitoring and early warning mechanisms, train and educate the health workforce, and promote evidence-based adaptation solutions and healthcare interventions.
+
+Strengthen surveillance and response mechanisms for climate-related health threats through the implementation of Regulation on serious cross-border threats to health, by interlinking the Early Warning and Response System with other alert systems (such as for climate and weather alerts) to facilitate joined-up management of health risks. The new EU Health Task Force will support EU-level response to serious health threats, including climate-related events.
+
+Strengthen cross-border mobilisation of medical personnel and patient transfer, for example through developing a framework to support the Member States with overwhelmed healthcare services.
+
+Secure access to and development of critical medical countermeasures. Rising temperatures and more frequent extreme weather events can disrupt manufacturing or limit access to raw materials. Also, climate-induced changes in disease patterns may lead to unexpected surges in demand for certain medicines, or create demand for entirely new products, straining existing supply chains or requiring investment in new supply chains. To reduce the vulnerabilities, the Commission will assess the relevant risks and further develop strategic stockpiles for key countermeasures. Under Horizon Europe and EU4Health, the Commission has been supporting development of new vaccines and therapeutics against neglected tropical and emerging infectious diseases. This has, for instance, enabled recent progress on a vaccine against chikungunya virus.
+
+4.4.Food
+
+Food supply in the EU is increasingly exposed to climate risks, from agricultural production notably in Southern Europe, fisheries and aquaculture, to food processing and international supply chains. Climate change affects the four pillars of food security in the short, medium- and long-term: availability, access, utilisation and stability. It interacts with many other drivers of food security in multiple and cascading ways, e.g. water stress, excess nutrients, soil health, diets, and health. Food production is notably at risk from floods, heatwaves, droughts, increasing pest and disease pressures, as well as biodiversity loss, soil degradation and changes in fish migration.
+
+For farmers, heat will complicate outdoor work. Shifts in agroclimatic zones will put pressure on crop selection and increase the rate of crop failures, while input prices and global markets variability squeeze the bottom line. For fishers, the additional pressures from climate change, eutrophication and ocean acidification can lower fish stock productivity resulting in much lower catches and come on top of some overfished stocks. With livelihoods and the sustainability of EU food production at risk, creating options for adaptation actions at the level of agricultural farms or fishing operations will not be enough and will have to be supplemented with adequate support measures for the transition to resilient farming and fishing. Such support measures should also ensure that healthy and sustainable food remains affordable and accessible for consumers, and should ensure sustainable incomes for farmers.
+
+While the EU food imports are not a major risk yet, concurrent crop failures in several world breadbasket regions or in major fisheries may if occurring drive up EU food prices (as EU producers sell at global prices), and thus impact consumers’ purchasing power and jeopardise the food security and affordability of healthy diets for the poorest households in the EU. Also, while this is not yet systemic, food safety is already at higher risk from heat-induced and other pathogens.
+
+Technology progress, farm management improvements and continuous adaptation of farming practices have helped short-term climate adaptation. The EU adaptation strategy and the common agricultural policy have enabled adaptation actions, but there is limited evidence of structural preparedness for climate-related disasters. In addition, a better use of genetic diversity and non-harmful plant genetic resources for adaptation and resilience to climate change can help farmers and land managers tackle climate risks. The proposal for a regulation on plants obtained by certain new genomic techniques and their food and feed
+47
+can support such solutions.
+
+Futureproofing of EU food production will be a priority for the Commission. The Commission will continue to work with the Member States to use the full potential of the common agricultural policy strategic plans to improve climate resilience and a wider use of risk management tools. Since soil degradation poses a major threat for our food production, the Commission, in cooperation with the Member States, will reinforce soil health monitoring. The contribution of farmers to the protection of ecosystem services should be better valued. The Commission will also conduct a study on adaptation in agriculture, to be finalised by the end of 2025.
+
+The warming and acidification of the ocean, including the rise of marine heatwaves and areas of low oxygen levels, is already changing species composition, and affecting fish stocks as they move to deeper water and poleward. This will create mismatches between established quotas and real fishing opportunities. The common fisheries policy should integrate climate impacts. Fish stock forecasts need to take account of the range of possible future effects of climate change and fisheries management practices should be resilient to future ecological changes. The European Maritime, Fisheries and Aquaculture Fund updates should fully integrate climate risks in its support for sustainable fisheries and aquaculture practices that build resilience.
+
+4.5.Infrastructure and built environment 
+
+Infrastructure assets are at significant risk from floods, wildfires, high temperatures and other extreme events, potentially leading to vast damage. Loss of access to energy, transport and communications can quickly disrupt societies. Currently, there are no reliable assessments of how well EU infrastructure will be able to function in the changing climatic conditions. Critical infrastructure and building stock are aging fast. Reflecting on the lack of knowledge and perceived prohibitive costs, the Member States find it difficult to plan and embark on major infrastructure adaptation efforts, even if damages from a single disaster can be multiples of available EU infrastructure funds.
+
+The EU objective of increasing renovation rates and decarbonising the economy are opportunities to improve climate resilience. The design of the built environment determines the resilience of the buildings themselves, and its inhabitants. Co-benefits of climate proofing residential housing in terms of affordability, a healthier living environment, and improved energy efficiency should be maximised. In addition to strong horizontal oversight of systemic risks linked to infrastructure and its location through spatial planning, more sector-specific solutions are needed.
+
+Infrastructure standards need to be strengthened. The Commission will ask the European Standardisation Organisations (ESOs) to integrate climate adaptation and resilience considerations into European standards for the design of infrastructure with a life-cycle of more than 30 years, such as power stations or railways. In addition, the Commission will ask the ESOs to develop new standards on climate services.
+
+The foreseen update of the standards (Eurocodes
+48
+) of buildings which sets the minimum requirements on structural design in the EU in 2026, will make it mandatory to consider the future climate hazards on structures of buildings. The Commission is performing pilot studies and will prepare guidance to the Member States on the use of freely available climatic datasets to define the expected climatic loading on their territory.
+
+The April 2024 New European Bauhaus festival is a key opportunity to engage in dialogue with different parts of the construction industry, to promote better mainstreaming of climate adaptation and resilience in that sector.
+
+All transport infrastructure is at risk from climate change. Yet, there is an EU knowledge gap with respect to the resilience of European transport infrastructure to the impacts of climate change in terms of risk exposure, adaptation needs and solutions, as well as investment needs to address them. The Commission will support climate risk assessments and climate proofing through its revised guidelines on the development of the Trans-European Transport Network (TEN-T). It has embarked on a study
+49
+ on the climate resilience of the TEN-T as a first step to address the identified knowledge gap and determine adaptation needs and investment priorities.
+
+Climate risk planning needs to be strengthened in the energy sector. Climate change results in increased risks for energy security, in particular increased risks of electricity disruption due to heat, wildfires, droughts, and floods affecting peak demand and impacting production, storage, transport and distribution. Only a few Member States have included in their draft updated NECPs detailed plans to consider adaptation to climate change in the context of the resilience of their energy systems. The Commission will consider possibilities for better mainstreaming of climate risks, for example in the context of the ongoing review of the Regulation on the Governance of the Energy Union and Climate Action. Building on the national preparedness plans in the electricity sector, the Commission will also consider initiating a dialogue on climate risks with selected energy sector stakeholders, and invites interested actors (e.g., the electricity sector) to come forward with proposals.
+
+4.6.Economy
+
+Each climate change related disaster will put additional strain on the economy, through loss or productivity and life, direct damage, reduced growth potential and pressure on public budgets. When the investment is redirected for rebuilding after damages, amount available for productive investment is reduced. The interactions between the different parts of the financial system are not well understood, and climate risks may push existing vulnerabilities over critical thresholds for these systems. Government budgets are the main source of coverage for these risks, but they are already strained by high debt levels. The implicit contingent liabilities from climate risks could jeopardise Member States’ fiscal stability and sustainability. The risks to the EU economy could be significant
+50
+. 
+
+The EU economic security is also exposed to climate risks in supply chains, notably for pharmaceuticals and semiconductors. In view of the existing data and knowledge gaps, it is not excluded that climate-related risks are currently underpriced. This can create disorderly reactions on the market, for example when extreme events occur or are likely to occur. The insurance coverage of climate exposed assets and property is low in the EU, with significant variation between the Member States and climate-related perils and is likely to shrink further with rising premiums as climate-related events increase in frequency and severity. There is substantial work ongoing on the various sustainability risks, notably via the EU sustainable finance strategy, or the Climate Resilience Dialogue that aims to bridge the climate protection gap in insurance
+51
+. 
+
+The EU has already taken major steps to mobilise global climate action and trade. The Coalition of Trade Ministers on Climate
+52
+, launched and led by the Union with Ecuador, Kenya and New Zealand reflects a growing recognition among governments of shared interests at the climate-trade nexus to enhance the contribution that trade and trade policy can have towards climate action. The EU’s bilateral trade agreements can serve as important platforms to engage with trade partners on climate and environmental action
+53
+.
+
+Climate-related risks are a major hazard to the resilience of EU firms, notably SMEs. Climate risks affect SMEs’ access to finance, their cost of capital, and their ability to repay debts
+54
+. Almost half of EU firms are concerned about natural hazards, yet less than a third of firms have or plan to invest to mitigate the impact of natural hazard risks.
+55
+ As set out in the EU SME strategy, it is essential to support SMEs in understanding and mitigating environmental risks
+56
+. As part of implementing the European economic security strategy
+57
+, Commission will also consider climate risks. The actions set out in the SME Relief Package
+58
+, which among others aim at making it easier for SMEs to access sustainable finance while minimising administrative burden, also help EU companies to maintain their competitive position and potentially create and lead the market development in segments that build climate resilience. This encompasses both supporting the society and capturing a significant share in the global marketplace for climate resilience and risk management technologies and information systems. To improve the systemic resilience of the EU supply chains, the Commission will consider the potential of screening for physical climate risks in the context of monitoring supply chain vulnerabilities.
+
+There is a clear need to strengthen fiscal sustainability. The provisional agreement on a new economic governance framework is expected to strengthen fiscal sustainability and promote growth through reforms and investments, not least those for common EU priorities such as the climate transition.
+59
+ Work is underway to develop the projection of climate impacts on debt sustainability. As part of the provisional agreement, the amendments to the Directive for National Budgetary Frameworks include climate-related reporting requirements in the national annual and multi-annual budgetary plans. These provisions cover past climate-related disaster loss data and estimates of fiscal risks from climate change. To improve and mainstream climate-risk budgeting into national budgetary processes, the Commission stands ready to support the Member States in their exchange of best practices and to provide technical support and training. Work is underway to refine the estimates on adaptation investment needs
+60
+, and the Commission will also work with the Member States to fill the data gaps inter alia for estimating national adaptation investment needs. The Commission stands ready to support the Member State treasuries seeking to exchange on their role in the coordination, formulation and implementation of adaptation policies.
+
+Financial market policies need to take a prudent approach to climate risks to safeguard financial stability. The EU sustainable finance strategy aims to make climate and other environmental risks more transparent and the EU financial system safer. The Commission will continue to ensure that all relevant risks are appropriately reflected in the prudential frameworks, e.g. in the recently agreed proposals on Solvency II and Capital Requirements Regulation, which provide the basis to embed climate risk in the banks and insurers’ frameworks. The Commission will ensure their swift implementation.
+
+5.Next steps 
+
+As part of the implementation of the EU adaptation strategy, this Communication stresses key actions that the EU and its Member States need to take to better manage increasing climate risks, notably to implement existing policies and clarify risk ownership in governance processes. It does so to provide a robust and timely response to the clear and present danger of more climate disasters.
+
+The Communication underlines the need for decision-useful evidence, such as the EUCRA report, the most recent temperature observations, progress reports, and information on the costs of climate damages. It stresses the need to fully use available information to inform policy choices across the sectors. In the coming years policymakers at all levels of governance should address climate adaptation proactively, using tools, technologies and other means that already exist. This requires concerted action at all levels and developing a clear pathway towards improving preparedness and resilience.
+
+While this Communication focusses on action in the European Union, it also provides for exchanging and sharing experience and information with EU’s partner countries. The sector and action area coverage of this document broadly align with the climate adaptation related decisions at the UNFCCC COP28 in Dubai. The Commission will proactively include relevant topics in bilateral dialogues, through Green Alliances and Green Partnerships as well as in relevant UN and other multilateral fora (such as G7, G20, OECD, WEF, WTO). Moreover, the Commission will look into the possibility to organise an international symposium on managing Global Climate Risks in 2025, bringing together government representatives, financiers, and expert organisations around the world.
+
+The Commission will continue to work with the Member States, the public, businesses and other EU institutions to increase the resilience of EU society and economy. Together we can protect our people and prosperity.
+
+(1)
+
+ COM(2024) 63 final.
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM%3A2024%3A63%3AFIN
+
+(2)
+
+ 
+https://climate.copernicus.eu/copernicus-2023-hottest-year-record
+ 
+
+(3)
+
+ EEA (2024), European Climate Risk Assessment, ISSN 1977-8449.
+https://www.eea.europa.eu/publications/european-climate-risk-assessment
+ 
+
+(4)
+
+ 
+https://www.weforum.org/publications/global-risks-report-2024/
+ 
+
+(5)
+
+ 
+https://www.ecb.europa.eu/press/pr/date/2023/html/ecb.pr231218_1~6b3bea9532.en.html
+ 
+
+(6)
+
+ P9_TA(2022)0330.
+https://www.europarl.europa.eu/doceo/document/TA-9-2022-0330_EN.html
+ 
+
+(7)
+
+EUCO 14/23. 
+https://www.consilium.europa.eu/media/67627/20241027-european-council-conclusions.pdf
+ 
+
+(8)
+
+ SWD(2023) 339 final. 
+https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:52023SC0339
+
+(9)
+
+ SWD(2023) 932 final.
+https://climate.ec.europa.eu/system/files/2023-12/SWD_2023_932_1_EN.pdf
+ 
+
+(10)
+
+ 
+https://commission.europa.eu/energy-climate-change-environment/implementation-eu-countries/energy-and-climate-governance-and-reporting/national-energy-and-climate-plans_en
+  
+
+(11)
+
+COM(2024) 130 final.
+https://civil-protection-humanitarian-aid.ec.europa.eu/what/civil-protection/european-disaster-risk-management_en
+ 
+
+(12)
+
+ JOIN(2023) 19 final. 
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52023JC0019
+ 
+
+(13)
+
+COM(2021)82 final.
+eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52021DC0082&from=EN
+
+(14)
+
+CMA.5 Decision on Glasgow–Sharm el-Sheikh work programme on the global goal on adaptation
+
+(15)
+
+ SWD(2024) 63 final.
+https://climate.ec.europa.eu/document/download/768bc81f-5f48-48e3-b4d4-e02ba09faca1_en
+ 
+
+(16)
+
+ https://www.nature.com/articles/s41467-020-15665-3
+
+(17)
+
+For Union policies, as set out in Article 191 of the Treaty on the Functioning of the European Union
+
+(18)
+
+2021 International Bank for Reconstruction and Development / The World Bank “Economics for Disaster Prevention and Preparedness: Investment in Disaster Risk management in Europe Makes Economic Sense”
+
+(19)
+
+Recommendation establishing Union Disaster resilience Goals OJ C 56, 15.2.2023
+
+(20)
+
+ 
+https://dataspace.copernicus.eu/
+ 
+
+(21)
+
+ 
+https://www.wekeo.eu/
+ 
+
+(22)
+
+ COM(2023) 728 final.
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM%3A2023%3A728%3AFIN
+ 
+
+(23)
+
+ COM(2023) 416 final.
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52023PC0416
+ 
+
+(24)
+
+E.g. EFAS, EFFIS, EDO
+
+(25)
+
+ 
+https://climate-adapt.eea.europa.eu/en/knowledge/european-climate-data-explorer/
+ 
+
+(26)
+
+ 
+https://discomap.eea.europa.eu/MKH/MapViewer/index.html
+
+(27)
+
+ 
+https://drmkc.jrc.ec.europa.eu/risk-data-hub#/
+ 
+
+(28)
+
+ 
+https://climate-risk-dashboard.climateanalytics.org/
+ 
+
+(29)
+
+Described in IPCC 6th Assessment Report as part of the SSP2-4.5 scenario, with an approximate global effective radiative forcing of 4.5.
+
+(30)
+
+ COM(2023) 667.
+https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=COM:2023:667:FIN
+ 
+
+(31)
+
+ 
+https://new-european-bauhaus.europa.eu/get-involved/use-compass_en
+ 
+
+(32)
+
+Directive (EU) 2022/2557. OJL 333, 27.12.2022, p. 164–198
+
+(33)
+
+COM(2023) 61. Recommendation OJ C 56, 15.2.2023, p.1. 
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0061
+ 
+
+(34)
+
+COM(2024) 130.
+
+(35)
+
+COM(2023) 161
+
+(36)
+
+IPCC AR6. 
+https://www.ipcc.ch/assessment-report/ar6/
+ 
+
+(37)
+
+ Dasgupta, P (2021), The Economics of Biodiversity: The Dasgupta Review, London: HM Treasury;
+https://www.worldbank.org/en/publication/changing-wealth-of-nations
+
+(38)
+
+COM(2023) 102 final. 
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52023DC0102
+ 
+
+(39)
+
+ 
+https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/restore-our-ocean-and-waters_en
+ 
+
+(40)
+
+EXHAUSTION interactive tool:
+https://www.exhaustion.eu/
+
+(41)
+
+ 
+https://health.ec.europa.eu/non-communicable-diseases/healthier-together-eu-non-communicable-diseases-initiative_en
+ 
+
+(42)
+
+COM(2023) 298 final. 
+https://health.ec.europa.eu/publications/comprehensive-approach-mental-health_en
+ 
+
+(43)
+
+ Declaration of the Seventh Ministerial Conference on Environment and Health (
+https://www.who.int/europe/publications/i/item/EURO-Budapest2023-6
+), COP28 UAE Declaration on Climate and Health (
+https://www.cop28.com/en/cop28-uae-declaration-on-climate-and-health
+)
+
+(44)
+
+ 
+https://osha.europa.eu/en/oshnews/heat-work-guidance-workplaces
+ 
+
+(45)
+
+Working Party on Climate Change and Occupational Safety and Health of the tripartite Advisory Committee on Health and Safety at Work (ACSH)
+
+(46)
+
+Foresight study on “OSH implications of future climate change-related developments and crises” (launched in 2024) 
+
+(47)
+
+COM(2023) 411 final
+
+(48)
+
+ 
+https://eurocodes.jrc.ec.europa.eu/2nd-generation/second-generation-eurocodes-what-new
+ 
+
+(49)
+
+Schade, W., Khanna, A.A., Mader, S., Streif, M., Abkai, T., de Stasio, C., Thiery, W., Deidda, C., Maatsch, S., Kramer, H. (2023): Support study on the climate adaptation & cross-border investment needs to realize the TEN-T network. Report on behalf of the European Commission (forthcoming).
+
+(50)
+
+ SWD(2024) 63 final. 
+https://climate.ec.europa.eu/document/download/768bc81f-5f48-48e3-b4d4-e02ba09faca1_en
+ 
+
+(51)
+
+Report of the Climate Resilience Dialogue is expected for summer 2024.
+
+(52)
+
+ 
+http://www.tradeministersonclimate.org/
+
+(53)
+
+ COM(2022) 409 final. 
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52022DC0409
+ 
+
+(54)
+
+ 
+Barbaglia, L., Fatica, S. and Rho, C., Flooded credit markets: physical climate risk and small business lending, European Commission, 2023, JRC136274.
+
+(55)
+
+ 
+https://www.ecb.europa.eu/pub/economic-bulletin/focus/2023/html/ecb.ebbox202306_05~f5ec994b9e.en.html
+
+(56)
+
+ COM/2020/103 final. 
+https://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX%3A52020DC0103
+ 
+
+(57)
+
+JOIN(2023) 20 final. 
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52023JC0020
+ 
+
+(58)
+
+ COM/2023/535 final. 
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM%3A2023%3A535%3AFIN
+ 
+
+(59)
+
+ COM(2023) 240 final. 
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52023PC0240
+ 
+
+(60)
+
+Extrapolating from single-country estimates to the EU level, the annual cost of climate change adaptation may range from EUR 15bn to EUR 64 bn per year (0.1-0.4 percent of EU GDP) to 2030, with a median estimate around EUR 21 bn ( World Bank (forthcoming, 2024). Investing in Resilience: Climate Adaptation Costing in a Changing World. Phase II study under Economics for Disaster Prevention and Preparedness: Prioritizing and Financing Resilient Investments.).

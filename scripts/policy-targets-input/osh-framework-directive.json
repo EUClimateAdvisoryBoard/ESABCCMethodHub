@@ -1,0 +1,145 @@
+{
+  "policy_id": "osh-framework-directive",
+  "targets": [
+    {
+      "quote": "The object of this Directive is to introduce measures to encourage improvements in the safety and health of workers at work.",
+      "article": "Article 1 — object of the Directive",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "scope of protection"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Member States shall take the necessary steps to ensure that employers, workers and workers' representatives are subject to the legal provisions necessary for the implementation of this Directive.",
+      "article": "Article 4 — Member State implementation",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "national implementing provisions"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The employer shall have a duty to ensure the safety and health of workers in every aspect related to the work.",
+      "article": "Article 5 — employer's general duty",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "employer duty of care"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the employer shall take the measures necessary for the safety and health protection of workers, including prevention of occupational risks and provision of information and training, as well as provision of the necessary organization and means.",
+      "article": "Article 6 — general obligations on employers",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "preventive measures"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The employer shall implement the measures referred to in the first subparagraph of paragraph 1 on the basis of the following general principles of prevention:",
+      "article": "Article 6 — general principles of prevention",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "prevention principles"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "evaluate the risks to the safety and health of workers, inter alia in the choice of work equipment, the chemical substances or preparations used, and the fitting-out of work places.",
+      "article": "Article 6(3) — risk evaluation",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "risk evaluation"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "designate one or more workers to carry out activities related to the protection and prevention of occupational risks for the undertaking and/or establishment.",
+      "article": "Article 7 — protective and preventive services",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "designated prevention workers"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "as soon as possible, inform all workers who are, or may be, exposed to serious and imminent danger of the risk involved and of the steps taken or to be taken as regards protection;",
+      "article": "Article 8 — serious and imminent danger",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "danger information"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "be in possession of an assessment of the risks to safety and health at work, including those facing groups of workers exposed to particular risks;",
+      "article": "Article 9 — risk assessment in possession",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "risk assessment"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "workers and/or their representatives in the undertaking and/or establishment receive, in accordance with national laws and/or practices which may take account, inter alia, of the size of the undertaking and/or establishment, all the necessary information concerning:",
+      "article": "Article 10 — worker information",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "worker information"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Employers shall consult workers and/or their representatives and allow them to take part in discussions on all questions relating to safety and health at work.",
+      "article": "Article 11 — consultation and participation",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "consultation of workers"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The employer shall ensure that each worker receives adequate safety and health training, in particular in the form of information and instructions specific to his workstation or job:",
+      "article": "Article 12 — training of workers",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "worker training"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "measures shall be introduced in accordance with national law and/or practices.",
+      "article": "Article 14 — health surveillance",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "health surveillance"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Particularly sensitive risk groups must be protected against the dangers which specifically affect them.",
+      "article": "Article 15 — risk groups",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "sensitive risk groups"
+      ],
+      "climate_relevance": "none"
+    }
+  ]
+}

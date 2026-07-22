@@ -1,0 +1,157 @@
+{
+  "policy_id": "managing-climate-risks",
+  "targets": [
+    {
+      "quote": "The European Climate Law requires the EU institutions and the Member States to ensure continuous progress on adaptive capacity, strengthening resilience and reducing vulnerability.",
+      "article": "Section 1.2 — EU foundations for climate risk management",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["adaptive capacity", "resilience", "vulnerability reduction"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The EU Mission on Adaptation to Climate Change supports regions with innovative solutions that accompany a region or local authority towards climate resilience by 2030, and can serve as best practice for all interested parties.",
+      "article": "Section 3 — Solutions space",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": ["EU Mission on Adaptation", "regional climate resilience"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission calls on all EU Institutions to consider how sector-specific climate risks and the responsibility to act on climate risks is distributed between the EU and the Member States in the current legislative setup for key policy areas.",
+      "article": "Section 3.1 — Improved governance (clear risk ownership)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["risk ownership", "governance"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will also structurally embed climate risks in its internal processes by strengthening climate risk controller functions and in the implementation of the climate consistency check in the Better Regulation requirements.",
+      "article": "Section 3.1 — Improved governance (governance structures)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["climate risk controller", "Better Regulation climate check"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "To help with emergencies, in 2025 the Galileo Emergency Warning Satellite Service (EWSS) will become available to communicate alert information to people, businesses and public authorities even when terrestrial alert systems are down.",
+      "article": "Section 3.2 — Tools for empowering risk owners",
+      "label": "commitment",
+      "timeline": "in 2025",
+      "indicators": ["Galileo EWSS", "early warning"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Member States are advised, and private stakeholders are expected, to do likewise; the Commission internal guidance on this matter will be published.",
+      "article": "Section 3.2 — Baseline climate scenarios",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["baseline climate scenario", "risk assessment"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "long-term resilience of the entities in scope to climate risks and invites the Member States",
+      "article": "Section 3.3 — Embedding climate risks in critical infrastructure",
+      "label": "commitment",
+      "timeline": "by 2026",
+      "indicators": ["Critical Entities Resilience Directive", "critical infrastructure risk assessment"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will integrate climate adaptation considerations in the implementation of EU programmes and activities as part of the ‘do no significant harm’ principle laid down in the Financial Regulation for the post 2027 multiannual financial framework, where feasible and appropriate.",
+      "article": "Section 3.4 — Financing climate resilience",
+      "label": "commitment",
+      "timeline": "post-2027 MFF",
+      "indicators": ["do no significant harm", "EU spending resilience"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will consider climate risks as an element in case of a review of the regulatory framework for procurement.",
+      "article": "Section 3.4 — Embedding resilience in public procurement",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["public procurement", "climate risk criteria"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Building on the work of the Climate Resilience Dialogue and other relevant work, the Commission will convene a temporary Reflection Group on mobilising Climate Resilience Financing to reflect on how to facilitate climate resilience finance.",
+      "article": "Section 3.4 — Mobilising finance to build resilience",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["Reflection Group", "climate resilience finance"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Enhance the European Climate and Health Observatory, which helps prepare local and national health systems for climate change, build additional capacity, strengthen monitoring and early warning mechanisms, train and educate the health workforce, and promote evidence-based adaptation solutions and healthcare interventions.",
+      "article": "Section 4.3 — Health",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["Climate and Health Observatory", "early warning"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Strengthen surveillance and response mechanisms for climate-related health threats through the implementation of Regulation on serious cross-border threats to health, by interlinking the Early Warning and Response System with other alert systems (such as for climate and weather alerts) to facilitate joined-up management of health risks.",
+      "article": "Section 4.3 — Health",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["health threat surveillance", "Early Warning and Response System"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will also conduct a study on adaptation in agriculture, to be finalised by the end of 2025.",
+      "article": "Section 4.4 — Food",
+      "label": "commitment",
+      "timeline": "by end 2025",
+      "indicators": ["agriculture adaptation study"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will continue to work with the Member States to use the full potential of the common agricultural policy strategic plans to improve climate resilience and a wider use of risk management tools.",
+      "article": "Section 4.4 — Food",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["CAP strategic plans", "risk management tools"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will ask the European Standardisation Organisations (ESOs) to integrate climate adaptation and resilience considerations into European standards for the design of infrastructure with a life-cycle of more than 30 years, such as power stations or railways.",
+      "article": "Section 4.5 — Infrastructure and built environment",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["infrastructure standards", "climate resilience standards"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "will make it mandatory to consider the future climate hazards on structures of buildings. The Commission is performing pilot studies and will prepare guidance to the Member States on the use of freely available climatic datasets",
+      "article": "Section 4.5 — Infrastructure and built environment (Eurocodes)",
+      "label": "target",
+      "timeline": "in 2026",
+      "indicators": ["Eurocodes", "building structural design"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "will support climate risk assessments and climate proofing through its revised guidelines on the development of the Trans-European Transport Network (TEN-T).",
+      "article": "Section 4.5 — Transport infrastructure",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["TEN-T", "transport climate proofing"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "As part of the provisional agreement, the amendments to the Directive for National Budgetary Frameworks include climate-related reporting requirements in the national annual and multi-annual budgetary plans.",
+      "article": "Section 4.6 — Economy (fiscal sustainability)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["National Budgetary Frameworks", "climate-related fiscal reporting"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Moreover, the Commission will look into the possibility to organise an international symposium on managing Global Climate Risks in 2025, bringing together government representatives, financiers, and expert organisations around the world.",
+      "article": "Section 5 — Next steps",
+      "label": "commitment",
+      "timeline": "in 2025",
+      "indicators": ["international symposium", "global climate risks"],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}

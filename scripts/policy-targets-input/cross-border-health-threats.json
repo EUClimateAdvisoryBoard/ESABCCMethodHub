@@ -1,0 +1,180 @@
+{
+  "policy_id": "cross-border-health-threats",
+  "targets": [
+    {
+      "quote": "shall establish a Union health crisis and pandemic plan (‘the Union prevention, preparedness and response plan’) to promote an effective and coordinated response to cross-border threats to health at Union level.",
+      "article": "Article 5 — Union prevention, preparedness and response plan",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "Union plan established"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the Commission shall facilitate, in collaboration with Member States and, when applicable, with relevant Union agencies or bodies or with international organisations, stress tests, simulation exercises and in-action and after-action reviews with Member States, and update the plan as necessary.",
+      "article": "Article 5(5) — stress tests and exercises",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "stress tests",
+        "simulation exercises"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "identifying risk factors for disease transmission and the associated disease burden, including social, economic and environmental determinants, following the One Health approach for zoonotic, food and waterborne diseases and relevant other diseases and related special health issues;",
+      "article": "Article 5(3)(f) — One Health environmental determinants",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "environmental determinants",
+        "One Health"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall liaise with each other within the HSC and coordinate with the Commission in order to seek coherence with the Union prevention, preparedness and response plan to the largest possible extent.",
+      "article": "Article 6 — National plans coherence",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "national plan coherence"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "By 27 December 2023 and every three years thereafter, Member States shall provide the Commission and relevant Union agencies and bodies with an updated report on prevention, preparedness and response planning and implementation at national level and, where appropriate, cross-border interregional levels.",
+      "article": "Article 7 — National reporting",
+      "label": "commitment",
+      "timeline": "by 27 December 2023, then every 3 years",
+      "indicators": [
+        "national preparedness report"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Every three years, the ECDC shall assess the Member States’ state of implementation of their national prevention, preparedness and response plans and their relation with the Union prevention, preparedness and response plan.",
+      "article": "Article 8 — ECDC assessment of plans",
+      "label": "commitment",
+      "timeline": "every 3 years",
+      "indicators": [
+        "ECDC preparedness assessment"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Member States shall, if applicable, present to the Commission and the ECDC in a timely manner within nine months of the receipt of the ECDC conclusions, an action plan addressing the proposed recommendations of the assessment, together with the corresponding recommended actions and milestones.",
+      "article": "Article 8(3) — Action plan on recommendations",
+      "label": "commitment",
+      "timeline": "within 9 months of ECDC conclusions",
+      "indicators": [
+        "action plan",
+        "milestones"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the Commission shall by 27 December 2023 and every three years thereafter, transmit to the European Parliament and to the Council a report on the state of play and progress on prevention, preparedness and response planning at Union level.",
+      "article": "Article 9 — Commission report to Parliament/Council",
+      "label": "commitment",
+      "timeline": "by 27 December 2023, then every 3 years",
+      "indicators": [
+        "Commission preparedness report"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The Commission and any of the Member States may engage, as contracting parties, in a joint procurement procedure conducted pursuant to Article 165(2) of Regulation (EU, Euratom) 2018/1046 with a view to the advance purchase of medical countermeasures for serious cross-border threats to health within a reasonable time frame.",
+      "article": "Article 12 — Joint procurement of medical countermeasures",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "joint procurement"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "shall ensure permanent communication between the Commission, the ECDC, and the competent authorities responsible at national level for epidemiological surveillance.",
+      "article": "Article 13 — Network for epidemiological surveillance",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "surveillance network"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "monitor trends in communicable diseases over time, across Member States and in third countries, to assess the situation, respond to rises above warning thresholds and facilitate appropriate evidence-based action;",
+      "article": "Article 13(2)(a) — Surveillance aim: monitor trends",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "disease trend monitoring",
+        "warning thresholds"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The ECDC shall ensure the continued development of the digital platform for surveillance, after conducting data protection impact assessments and having mitigated any risks to the rights and freedoms of the data subjects, as appropriate, through which data are managed and automatically exchanged, to establish integrated and interoperable surveillance systems enabling real-time surveillance where appropriate, for the purpose of supporting communicable disease prevention and control.",
+      "article": "Article 14 — Digital platform for surveillance",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "digital surveillance platform",
+        "real-time surveillance"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "National competent authorities or the Commission shall notify an alert in the EWRS, where the emergence or development of a serious cross-border threat to health fulfils the following criteria:",
+      "article": "Article 19 — EWRS alert notification",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "EWRS alert"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the Commission shall, where necessary for the coordination of the response at Union level referred to in Article 21 or at the request of the HSC or on its own initiative, make promptly available to the national competent authorities and to the HSC, through the EWRS, a risk assessment of the potential severity of the threat to public health, including possible public health measures.",
+      "article": "Article 20 — Public health risk assessment",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "risk assessment"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Where a Member State intends to adopt or to terminate public health measures to combat a serious cross-border threat to health, it shall, before adopting or terminating those measures, inform, consult and coordinate with the other Member States, in particular neighbouring Member States, and the Commission on the nature, purpose and scope of those measures",
+      "article": "Article 21 — Coordination of response (inform/consult)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "measure coordination"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the Commission may, after considering any expert opinion issued by the ECDC, any other relevant Union agencies or bodies or the Advisory Committee referred to in Article 24, formally recognise a public health emergency at Union level, including pandemic situations where the serious cross-border threat to health in question endangers public health at Union level.",
+      "article": "Article 23 — Recognition of public health emergency",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "emergency recognition"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "By 31 December 2024 and every five years thereafter at the latest, the Commission shall carry out an evaluation of this Regulation and present a report on the main findings of that evaluation to the European Parliament and to the Council.",
+      "article": "Article 33 — Evaluation of the Regulation",
+      "label": "commitment",
+      "timeline": "by 31 December 2024, then every 5 years",
+      "indicators": [
+        "regulation evaluation"
+      ],
+      "climate_relevance": "none"
+    }
+  ]
+}

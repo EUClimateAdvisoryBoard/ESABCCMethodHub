@@ -1,0 +1,141 @@
+{
+  "policy_id": "preparedness-union-strategy",
+  "targets": [
+    {
+      "quote": "The overall goal of the Preparedness Union is to create a secure and resilient EU with the capabilities required to anticipate and manage threats and hazards, independently of their nature or origin, to ensure that European citizens have adequate protection and preparedness, and to preserve the vital functions of the society in all circumstances.",
+      "article": "Overall goal",
+      "label": "goal",
+      "timeline": "",
+      "indicators": ["societal resilience", "protection of vital functions"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "the Commission and the High Representative, supported by EU Agencies, will develop a comprehensive (cross-sector, all-hazards) EU risk and threat assessment",
+      "article": "Foresight — risk & threat assessment",
+      "label": "commitment",
+      "timeline": "2026",
+      "indicators": ["all-hazards risk assessment"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "SIAC will be strengthened by the end of 2025 through reinforcements and additional resources, in line with the Joint Paper of the High Representative and Member States.",
+      "article": "Foresight — SIAC intelligence capacity",
+      "label": "commitment",
+      "timeline": "by end of 2025",
+      "indicators": ["intelligence analysis capacity"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The Commission will assess the need and feasibility of an EU Preparedness Law to strengthen the resilience of the vital societal functions by setting joint standards and measurable long-term targets.",
+      "article": "Vital functions — EU Preparedness Law",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["joint preparedness standards", "measurable long-term targets"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "minimum preparedness requirements, including a monitoring mechanism.",
+      "article": "Vital functions — minimum preparedness requirements",
+      "label": "commitment",
+      "timeline": "2026",
+      "indicators": ["minimum preparedness requirements", "monitoring mechanism"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will revise the legislative framework of the UCPM to further improve the effectiveness and efficiency in high impact emergencies and crises requiring a robust response and coordination at European level.",
+      "article": "Vital functions — Union Civil Protection Mechanism",
+      "label": "commitment",
+      "timeline": "2025",
+      "indicators": ["civil protection response capacity"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will propose an EU-wide stockpiling strategy that will integrate all existing sectorial stockpiling efforts.",
+      "article": "Vital functions — EU Stockpiling Strategy",
+      "label": "commitment",
+      "timeline": "2025",
+      "indicators": ["strategic stockpiles", "access to critical resources"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will present a European Climate Adaptation Plan to support Member States in preparing for climate risks and strengthening the resilience of the Union.",
+      "article": "Vital functions — Climate Adaptation Plan",
+      "label": "commitment",
+      "timeline": "2026",
+      "indicators": ["climate risk preparedness", "climate resilience"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will propose a European Water Resilience Strategy that will set out a path towards water security and resilience by ensuring the availability of clean water and better protecting the EU against water-related risks.",
+      "article": "Vital functions — Water Resilience Strategy",
+      "label": "commitment",
+      "timeline": "2025",
+      "indicators": ["water security", "water-related risk protection"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will propose guidelines for Member States to reach population self-sufficiency of at least 72 hours.",
+      "article": "Population preparedness — 72-hour self-sufficiency",
+      "label": "target",
+      "timeline": "2026",
+      "indicators": ["population self-sufficiency (hours)"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will propose an annual EU Preparedness Day to recognise efforts of national, regional and local authorities and communities to enhance preparedness and to raise awareness for preparedness needs in the population.",
+      "article": "Population preparedness — EU Preparedness Day",
+      "label": "commitment",
+      "timeline": "2026",
+      "indicators": ["public awareness of risks"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission will create a Preparedness Task Force drawing on the Industrial Forum, the Enterprise Europe Network, the European clusters network and other existing structures.",
+      "article": "Public-private cooperation — Preparedness Task Force",
+      "label": "commitment",
+      "timeline": "2026",
+      "indicators": ["public-private cooperation"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The Commission and the High Representative will develop arrangements for civil-military preparedness, which will clarify roles, responsibilities, and priorities of EU institutions, bodies and agencies as well as Member States for preparing for and responding to incidents and crises.",
+      "article": "Civil-military cooperation — preparedness arrangements",
+      "label": "commitment",
+      "timeline": "2027",
+      "indicators": ["civil-military coordination"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The Commission and the High Representative will organise regular EU-wide comprehensive and cross-sectoral preparedness exercises.",
+      "article": "Civil-military cooperation — EU exercises",
+      "label": "commitment",
+      "timeline": "2026",
+      "indicators": ["preparedness exercises"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The Commission will create an EU crisis coordination hub, building on the structures and the expertise of the ERCC.",
+      "article": "Crisis response — EU crisis coordination hub",
+      "label": "commitment",
+      "timeline": "2027",
+      "indicators": ["cross-sectoral crisis coordination"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Building on the success of the development of aerial firefighting and other rescEU capacities, the Commission will secure the maintenance and possible scaling up of its existing capabilities (aerial firefighting, medical, CBRN, shelters, transport, energy).",
+      "article": "Crisis response — rescEU reserves",
+      "label": "commitment",
+      "timeline": "2026",
+      "indicators": ["rescEU response capacities", "strategic reserves"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The EU will advance mutual resilience with candidate countries, including by associating them in relevant EU preparedness initiatives and crisis management framework, through the enlargement policy and in line with the process of their gradual integration.",
+      "article": "External partnerships — candidate countries",
+      "label": "commitment",
+      "timeline": "2025",
+      "indicators": ["mutual resilience with partners"],
+      "climate_relevance": "none"
+    }
+  ]
+}

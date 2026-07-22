@@ -1,0 +1,1293 @@
+EUROPEAN COMMISSION
+
+Brussels, 4.6.2025
+
+COM(2025) 280 final
+
+COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS
+
+European Water Resilience Strategy
+
+European Water Resilience Strategy
+
+1.
+   Introduction – Setting the Scene
+
+Water is life. Human beings, most species and the nature we live in and depend upon, cannot survive without water. Our environment, our economy, our food and energy security and our quality of life rely on a stable supply of water of the right quality.
+
+However, today we can no longer take water for granted, and this affects citizens, businesses and the environment. Europe is the Earth’s fastest warming continent due to climate change. Climate impacts like extreme heat, catastrophic floods, prolonged droughts and forest fires are increasing in frequency and severity and will continue to do so. These events cause health impacts and premature deaths, disruption of energy and drinking water supply and growing economic losses
+1
+ for business, farmers and aquaculture. If left unaddressed, water-related inequalities have the potential to harm the overall economic, social and territorial cohesion of the EU
+2
+and globally. This is especially true for the EU’s outermost regions, where climate pressures and infrastructure gaps make access to clean and safe water particularly challenging. Access to clean and affordable water is a human right and a public good.
+
+Water resilience is a matter of security and crisis preparedness for the EU. Water is a basic need and a critical resource. As outlined in the Preparedness Union Strategy, security of clean and affordable freshwater supply must be “a guiding priority” for the Union.
+3
+ 
+
+Investing in sustainable water management and innovation will strengthen Europe's businesses and boost competitiveness. Five of the top ten long term global risks for businesses identified by the World Economic Forum
+4
+are water related. Unsustainable water management undermines our overall security of supply and competitiveness, as recognised in the Competitiveness Compass
+5
+and the Clean Industrial Deal
+6
+. This calls for a better integration of water resilience into business decisions and an integrated vision of sustainable water management, reflecting long term climate scenarios.
+
+Water resilience is a significant business opportunity for EU industry. Europe is a global leader in water technology, accounting for 40% of all related patents globally.
+7
+ In 2022 alone, the sector generated EUR 111.7 billion in value added and supported 1.6 million jobs across 81 500 enterprises, most of which are SMEs
+8
+. We must leverage this position and strengthen the EU’s competitive advantage within the Single Market and abroad. For instance, within certain sectors, there is the potential to lower water and operating costs by up to EUR 2.8 billion per year, create an additional 9 000 jobs per year, while at the same time developing necessary worldwide expertise
+9
+. 
+
+Strong European global leadership on water resilience is an opportunity to build strategic alliances with international partners. Worldwide competition for dwindling supplies of freshwater exacerbates conflict and displacement. At the current pace, global water demand will surpass what is available by 40% in 2030
+10
+. Worldwide, water-related disasters displaced 40 million people and inflicted more than EUR 480 billion in damages in 2024.
+11
+ Building on the global consensus
+12
+ that our current model of managing water is not sustainable, the EU is determined to make the upcoming 2026 UN Water Conference a milestone in driving progress towards the Sustainable Development Goals.  
+
+For all these reasons, it is high time to put water resilience at the top of the political agenda as conveyed by the European Council
+13
+, European Parliament
+14
+and European Economic and Social Committee
+15
+. This is why, in her 2024-2029 Political Guidelines, President von der Leyen announced a new European Water Resilience Strategy. This should help all parts of the EU to improve the management of its waterbodies, tackle scarcity, enhance the competitive innovative edge of the water industry
+16
+, whilst embracing a clean and circular approach.
+
+Member States have organised their water management in different ways, involving various forms of public or private ownership, or a combination of the two. This Strategy fully respects these national choices and recognises that one size does not fit all, in particular taking into account that water availability varies considerably between different Member States as does the vulnerability of different sectors to water stress.
+
+2.
+   The Key Objectives 
+
+This Strategy sets out a pathway to make Europe water resilient, firmly rooted in the 2050 vision put forward by the EU at the 2023 UN Water Conference for a water resilient EU, providing water security for all. This entails the protection and restoration of aquatic ecosystems, and a fair balance between water supply and water demand responding to current needs, including the realization of the human right to safe drinking water and sanitation, without compromising the rights of future generations.
+
+To put Europe on a pathway of water resilience, we must work on three objectives:
+
+1.Restoring and protecting the water cycle as basis for sustainable water supply.
+
+2.Building a water-smart economy together with citizens and economic actors in a way that supports EU competitiveness, is attractive to investors and supports a thriving EU water industry.
+
+3.Securing clean and affordable water and sanitation for all at all times, and empowering citizens for water resilience.
+
+EU legislation and policies, including the European Green Deal, provide a strong basis to achieve these objectives
+17
+. Member States – and their local or regional authorities – are often best placed to deal with water management since they know their own circumstances, challenges and possible solutions best. This Strategy fully recognises that Member States are free to organise their water supply systems as they see fit, within the boundaries of EU laws. To support Member States’ initiatives and enhance cross-border water cooperation, it identifies five areas of EU action: (i) governance and implementation; (ii) finance, investments and infrastructure; (iii) digitalisation; (iv) research and innovation, industry and skills; and (v) security and preparedness.
+
+2.1
+   Restoring and protecting the water cycle as basis for water sustainable supply
+
+A well-functioning water cycle is essential for water resilience. Water moves in a cycle which naturally stores, purifies and releases water, a process that depends on healthy soils, wetlands, forests and other ecosystems. However, overexploitation and mismanagement of water resources, pollution as well as climate change and environmental degradation have deeply affected this cycle and severely reduced both the quantity and the quality of water.
+
+The existing EU framework for freshwater, including the Water Framework Directive,
+18
+the Flood Management Directive
+19
+, and the Nature Restoration Regulation
+20
+, provides a comprehensive regulatory framework for Europe’s water cycle. However, effective implementation will be necessary to restore the water cycle in quantity and quality. The Water Framework Directive’s objective to achieve good status of all water bodies by 2027
+21
+and the objectives of the Floods Directive remain the compass for action. The Commission will prioritise enforcement based on its latest assessment of national River Basin Management Plans (RBMPs) and Flood Risk Management Plans (FRMPs) in dialogue with Member States.
+22
+To further support the work of Member States in addressing water scarcity and droughts, the Commission will develop indicators for water scarcity and publish a Technical Guidance on Drought Management Plans. The Nature Restoration Regulation provides an opportunity to support water quantity management and enhance resilience against both droughts and floods with nature-based solutions. Water and climate resilience must be fully integrated in the national Restoration Plans to be developed by 2026.
+
+The 2008 Marine Strategy Framework Directive’s goal of achieving good environmental status for marine waters by 2020 was not met. Marine biodiversity is declining, and pollution from rivers continues to harm marine life. Following a recent evaluation
+23
+, the Commission will revise the Marine Strategy Framework Directive to improve coherence with the EU freshwater acquis, focusing on delivering results by reducing reporting requirements, and improving data management and governance across the Regional Seas Conventions.
+
+In addition to existing legislation, we need to step up our efforts to improve water retention on land. Consistent with the EU’s Ocean Pact, we need to give priority to using the full potential of our ecosystems to store, purify, release, and restore water on land and at sea, based on a source-to-sea approach. On its way back to the sea, freshwater is naturally stored in soils, forests, wetlands, floodplains and other ecosystems. There is a need to redress the natural sponge function of our landscapes to replenish our groundwater reserve and to protect biodiversity. To better coordinate and scale up existing initiatives
+24
+aimed at increasing water retention on land, the Commission will develop a “Sponge Facility”, providing a coherent framework for new and existing initiatives to increase water retention on land. As set out in the Vision for Agriculture and Food, the Commission also intends to incentivise and support farming practices that recover, maintain or improve soil health, such as organic farming and agroecological approaches that retain water in soil. In urban areas, “sponge cities”, carved with nature-based solutions to absorb and release water in a controlled way, should be promoted. In addition, integrated management of fresh and marine waters is essential. Riverine pollution, disruption of the sediment flows, and water shortages, all have a strong impact on the health of marine ecosystems and the viability of the social and economic activities that depend on them, such as fisheries, aquaculture or tourism
+25
+. Coastal areas play a critical role in the water cycle and are crucial in preventing land-based pollution from entering the sea. Effective spatial planning can reduce the vulnerability of coastal communities, cities, seaports, low-laying river deltas to climate change, while seaports also need to contribute to minimise pollution from ships by adhering to relevant laws and policies. This is also one of the topics to be addressed in the EU Port Strategy announced by the Commission. Finally, a sustainable and integrated management of inland waterways can significantly contribute to water resilience, by better adapting to droughts and floods, while maintaining the connectivity of navigational routes.
+
+Storing water in reservoirs and other man-made structures requires particular attention and careful planning and coordination since many economic sectors need a stable supply of water and often have different needs over the year
+26
+. Action on water management should prioritise nature-based solutions, but also needs to rely on man-made structures or a combination of both. The planning of new dams and reservoirs should carefully evaluate their environmental impacts, involving all relevant actors, and ensure that such actions are part of an integrated and sustainable water management strategy, fully reflecting long-term climate reference scenarios and projections, to avoid stranded investments.  
+
+Water quality and quantity are two sides of the same coin, and we must continue working on preventing pollution at source. In 2021, only 39.5% of EU’s surface waters had good ecological status, and only 26.8% a good chemical status.
+27
+ Action must be stepped up and focus on preventing unsustainable land use and management as well as hydro-morphological changes, structural mismanagement of water due to both legal and illegal over-abstraction, inefficiencies in water use across sectors, and water pollution linked to activities such as agriculture, industrial production, mining and waste management.
+
+Water pollution has a direct impact on health. It can result in water-borne diseases and exacerbate antimicrobial resistance. The COVID-19 crisis showed the importance of tracking pathogens and health parameters in wastewaters following a One Health approach, as human, animal, plant and environmental health are tightly interlinked.
+28
+The Commission will continue supporting capacity building and infrastructure development on wastewater surveillance particularly as climate change is worsening the health risks of water-related diseases
+29
+. 
+
+Urgent action is needed to tackle pollutants which pose a risk to our vital sources of drinking water. Highly persistent pollutants, such as PFAS
+30
+, keep accumulating across EU waters and cause health impacts estimated to range between EUR 52 and 84 billion annually
+31
+. This is also a major source of public concern. Water and marine pollution, including from microplastics, must be tackled at source or across pathways in line with the Zero Pollution Action Plan
+32
+. In addition, the EU must take decisive efforts to clean up sites already strongly polluted by these, and other, ubiquitous, persistent, bio-accumulative and toxic substances, particularly where such substances are still indispensable for society and industrial applications. Cleanup should be based on the polluter pays principle, with public money allocated to clean up orphan sites, where no liable entity could be found. While remediation efforts are very costly,
+33
+research and innovation can significantly reduce these costs through novel, including bio-based, technologies, which will be promoted in the Bioeconomy Strategy. In addition, if partners are found which are willing to invest alongside the EU, the Commission will put forward a proposal to establish a public-private initiative to achieve a technological breakthrough in feasible and affordable methods for the detection and remediation of PFAS and other persistent chemicals.
+
+Limiting the pollution of aquatic ecosystems by nutrients should be placed at the centre of restoring water quality. Nutrients from agriculture, urban settlements and other sources impact human health, and cause algal blooms and oxygen-depletion which are lethal to aquatic ecosystems. This remains a major challenge and causes socio-economic losses estimated to be between EUR 75 and 485 billion a year regarding nitrogen alone
+34
+. Such costs call for accelerated action from source to sea, including an improved implementation of the Nitrates Directive in all Member States.
+
+The Commission will assist Member States in assessing the tailored nutrient loads reductions that are needed, including through enhanced modelling, interactive maps and exchanges of best practices. The Commission will continue to support improved and integrated nutrient management through different existing fora, contribute to fund manure storage facilities and promote nutrients circularity which can help reduce the use of synthetic fertilisers. In synergy with the work stream for livestock announced in the Vision for Agriculture and Food, these actions will complement the development of a long-term vision that respects the diversity of livestock production in the EU while ensuring its sustainability. It will also reinforce the efforts to encourage farming extensification in regions with high livestock concentration.
+
+Flagship actions - Restoring and protecting the water cycle
+
+Timeline
+
+Establish, including through Structured Dialogues with Member States, implementation priorities of the Water Framework and the Floods Directives, focusing on water quality and quantity.
+
+2025-2026
+
+Revise the Marine Strategy Framework Directive.
+
+2027
+
+Develop water scarcity indicators and a Technical Guidance on Drought Management Plans.
+
+2026-2027
+
+Support addressing main sources of pollution:
+
+·Public-private initiative to achieve a technological breakthrough in feasible and affordable methods for the detection and remediation of PFAS and other persistent chemicals, if the right partners are found.
+
+·Launch an Assistance Toolbox for Member States to support actions to reduce nutrients pollution, including through enhanced modelling, interactive maps and exchanges of best practices. 
+
+2027
+
+2026-2027
+
+2.2
+   Building a water-smart economy that leaves no one behind, supports EU competitiveness and attracts investors
+
+Water is a finite resource that must be used efficiently. We must reduce demand across all sectors of the economy, by promoting water savings, efficiency, and reuse. Faced with increased water scarcity and droughts, this is essential to continue securing water supply, meeting the demands from different users in a fair way and supporting aquatic and terrestrial ecosystems. This is particularly important in regions with acute hotspots of overexploitation, where water scarcity is becoming systemic and a significant constraint to economic development, including some remote and island communities where freshwater availability is limited. With further climate change the regions affected by water scarcity will increase substantially
+35
+. Efficiency must focus in particular on the most intensive water users, both current and future, which also have the biggest interest in avoiding excessive abstraction leading to possible disruption of supply.
+
+Water efficiency is key and must come first. This Strategy is accompanied by a Recommendation on the application of the water efficiency first principle, inspired by experience with the energy efficiency first principle
+36
+. It sets out guiding principles for decision-making and investments based on a clear and predictable, yet flexible, prioritisation in the way water demand and supply are managed. Across the EU, the priority should be to curb demand and over-abstractions. This should be followed by efficiency by design and reuse, while increased supply should be the last resort option. 
+
+To guide action on water efficiency across the EU, in view of the potential for water savings
+37
+, the EU should aim to enhance water efficiency by at least 10% by 2030. The Commission will work with Member States and stakeholders to develop a joint methodology for water efficiency targets, taking into account territorial and other differences between countries, regions and sectors. On that basis, in the review of this strategy in 2027, the Commission intends to develop common benchmarks. Some Member States have already set specific targets to enhance water efficiency at national, regional or river basin level.
+38
+Member States are encouraged to set their own targets for water efficiency, based on their national circumstances.
+
+A water-smart economy requires a better control of the resources. Based on 2010-2021 data
+39
+, 81% of the total water consumption goes to users that abstract water directly at the source using private systems, and many Member States do not have accurate data concerning their freshwater availability. In line with the Water Framework Directive, authorities must conduct up-to-date assessments of water availability and abstractions by water users and increase their efforts to register and control all abstractions, losses and returns. Deploying smart water metering across all economic sectors will help to achieve a rigorous monitoring of water flows and will also help citizens and businesses to manage their water use more efficiently. The Commission will promote the exchange of best practices on water balances and smart water metering across all economic sectors. It will also work towards the launching of an EU Water Infrastructure & Smart Metering for All initiative (see section 3.3). Furthermore, it will assess by the end of 2026 the quality of the data available on water and, where appropriate, revise the relevant legislation to introduce new environmental economic account modules for water accounts
+40
+.
+
+Particular attention must be placed on assessing and, wherever possible, limiting the water needs that come with the clean industrial and digital transformation and to support it through water smart planning. Key sectors for the EU’s strategic autonomy such as battery production, semiconductors, hydrogen, microchips and datacentres consume large volumes of often ultra-pure water.
+41
+. At the same time, advancing the clean energy transition and the decarbonisation of our EU energy system will help to enhance water management
+42
+. In this context, savings in water and energy, which usually go hand in hand, must be maximised, and water resilience must get particular attention in spatial planning. In particular, to promote water savings across data centres, the Commission will rate their energy efficiency and overall sustainability and propose minimum performance standards, including for water consumption
+43
+. To support Member States in identifying the best areas for setting up water-intensive business operations and attract the necessary water investment, the Commission will enhance existing visualisation tools putting together environmental data and data related to the water and energy grids.
+
+Safe water reuse in agriculture, energy production, industrial processes must be at the heart of integrated water management. Currently, only 2.4% of wastewater is reused in the EU, with major differences between Member States, ranging from zero to 80%
+44
+. The Commission will support Member States through guidance on the safe reuse of water, as well as via capacity building in the context of implementing existing legislation
+45
+. By June 2028, the Commission will evaluate the Water Reuse Regulation, and will subsequently consider extending its scope pending evaluation results.
+
+For public water supply, corresponding to 13% of the water consumption in the EU, focus must be on fighting leakages and unintended losses, supported by digital tools. As current national leakage levels vary from 8% to 57%, the potential for improvement is significant, especially through smart water metering and remote sensing. The Drinking Water Directive requires Member States to reduce leakages in water supply networks. Member States with water supply leakage levels exceeding the EU-wide threshold – to be set by 2028 – will have to present, by 2030, national action plans to reduce leakages across their supply networks.
+
+Sustainable food systems are a major ally for water resilience and the Common Agricultural Policy has a crucial role to play. Sustainable agriculture and forest management contribute significantly to increase water and climate resilience, mitigating droughts and floods (Section 2.1). On the other hand, the production, processing, retailing, packaging and transportation of food has a profound impact on water quality and quantity. Agriculture accounts for 51% of total water consumption in the EU, with very significant differences between the North and South of Europe
+46
+. The Vision for Agriculture and Food underlined the importance of water quality and availability for food security. Furthermore, sustainable fisheries and mariculture should be further supported as they are produced without using freshwater. 
+
+The CAP and the national Strategic Plans provide support for agricultural practices and investments that enhance water efficiency, circularity and improve water retention, whilst curbing nutrient and pesticides pollution. This also includes support for organic farming with its multiple benefits related to soil health and its limiting use of artificial fertilisers, herbicides and pesticides. It is crucial to ensure that Member States make maximum use of these possibilities and promote water resilient farming practices, such as precision farming, drip irrigation, water reuse, improved soil management and pesticide use, landscape features and more climate resistant crops. In the next programming period, the Commission will continue to incentivise farmers to improve the environmental and climate performance of their holdings, including towards better water management.
+
+Water efficient energy production can make a major contribution to water resilience. 17% of the EU’s total water consumption is used as a feedstock or cooling agent
+47
+. If the right partners willing to invest alongside the EU are found, the Commission will put forward a proposal to establish a public-private initiative to achieve a technological breakthrough in feasible and affordable methods for dry cooling.
+
+Water resilience should be integrated into all industrial sectors. The revised Industrial Emissions Directive will ensure that large industrial actors progressively reduce water demand, enhance water efficiency and improve water reuse across production processes. Water efficiency and reuse should be integrated across the most water intensive industrial sectors, in particular through the available stakeholder support platforms
+48
+. In this context, the Commission will launch a pilot project to promote water efficiency in selected industrial clusters.  
+
+Increasing supply by using seawater to replace freshwater can be part of the solution, in particular in regions severely affected by water scarcity, if done sustainably. As part of an integrated management approach, which prioritises curbing demand over increasing supply based on local conditions, seawater desalination can provide steady water supply beyond the hydrological cycle. Yet, it remains costly, very energy intensive, and entails significant environmental impacts. The Commission will thus support innovation in this area with a view to limiting energy consumption and reduce greenhouse gas emissions, notably by promoting the use of renewable energies. Innovative solutions should also mitigate the environmental impacts of brine disposal and increase the recycling and reuse of energy and minerals from the brine in the industry sector.
+
+Flagship actions - Building a water-smart economy that leaves no one behind, supports EU competitiveness and attracts investors
+
+Timeline
+
+Recommendation on the Water Efficiency First principle, guidelines and EEA report on the untapped water efficiency potential.
+
+2025-2026
+
+Support the uptake of water reuse practices also beyond agriculture and review the Water Reuse Regulation.
+
+2026-2028
+
+Public water supply:
+
+·Support leakage reduction and infrastructure modernisation and deep data assessment.
+
+2025-2028
+
+Agriculture:
+
+·Maximise the use of CAP Strategic Plans for water resilience through knowledge sharing and innovative solutions promoted by the EU CAP network, the European Innovation Partnership (EIP-AGRI), as well as improved and independent farm advisory services.
+
+·In the next programming period, continue to incentivise farmers to improve the environmental and climate performance of their holdings, including towards better water management.
+
+2025- 2026
+
+Industry and Energy:
+
+·Launch a pilot project to promote water efficiency, including waterless and closed water cycle technologies, in selected industrial clusters.
+
+·Include water usage among the parameters of a common Union scheme to rate the sustainability of data centres and propose water consumption minimum performance standards.
+
+·Public-private initiative to achieve a technological breakthrough in feasible and affordable methods for dry cooling, if the right partners are found.
+
+2025-2027
+
+2.3
+   Securing clean and affordable water for all, empowering consumers and other users
+
+Access to safe and clean drinking water and sanitation is a human right. Three decades of development and implementation of EU water law, including the Drinking Water and Urban Wastewater Treatment Directives, together with significant EU investment, have generally secured access to safe drinking water and sanitation across the EU in line with the 
+
+European Pillar of Social Rights
+
+49
+. Still, 1,5 % of the EU population lives without basic sanitary facilities, and around 4% lacks proper access to safe drinking water. Actions in this area must ensure inclusive and equitable efforts that address the needs of women and vulnerable groups, such as persons with disabilities and minorities, as well as the least affluent EU regions to promote social, economic and territorial cohesion, including the outermost regions. For the latter, of particular importance are the specific climatic challenges they face coupled with inadequate water infrastructure, which directly affect access to drinking water. Supporting water filtration systems in areas with hard or very hard water is another relevant aspect.
+
+Consumers play an essential role in enhancing water resilience. Next to the well-established EU Ecolabel, the Ecodesign for Sustainable Product Regulation (ESPR)
+50
+ will help consumers reduce water consumption by choosing less polluting, more water-efficient products. This should shift demand towards water-smart products, boosting the EU's clean and circular competitiveness. New private initiatives, like the Unified Water Label, are emerging to rate the water efficiency of products.  
+
+When it comes to water use in housing and city planning, saving energy and saving water should always go hand in hand. The new Energy Performance of Buildings Directive
+51
+, which supports energy efficiency including hot water efficiency as one of its objectives, and the New European Bauhaus provide significant opportunities to boost efforts towards water resilience across the built environment, while enhancing users and citizens’ involvement and the sharing of best practices on water resilient design planning and concepts. This will be reflected in the upcoming work programme 2026-2027 of the New European Bauhaus Facility, and in the upcoming Affordable Housing Plan, which will also consider sustainability of housing, including water resilience. 
+
+More emphasis must be placed on awareness and public involvement in water management. Stronger awareness can be supported by digital tools and is key to increase citizens’ willingness to save water, but also to reduce their exposure to risks from floods or droughts (see section 3). Ensuring the full implementation of public information and transparency requirements will help increase citizens’ awareness and readiness to engage as part of inclusive water governance. The Commission will promote the exchange of best practices in raising awareness and equipping society to be more effectively involved in water management and River Basin and Flood Risk Management Plans.
+
+Water pricing policies based on actual use, environmental impact and capacity to pay are essential to ensure access to water while creating the right incentives for consumers and other users. The Water Framework Directive incentivises sound national water pricing policies, based on a fairly shared cost recovery and the polluter pays principle. The revised Drinking Water and Urban Wastewater Directives ensure regular and comprehensive information on water consumption and prices and advice how to reduce it. Exchanging best practices will help Member States to use these tools in the most effective way.
+
+Flagship actions - Securing clean and affordable water for all, empowering consumers and other users
+
+Timeline
+
+Address the water footprint of products when setting or updating requirements under the ESPR and the EU Ecolabel.
+
+2025-2027
+
+Promote best practices on public awareness and the role of water pricing to promote water efficiency, cost recovery and the polluter pays principle, and related national water governance.
+
+2026-2027
+
+Boost efforts towards water resilience across the built environment through the upcoming work programme 2026-2027 of the New European Bauhaus Facility and in the upcoming Affordable Housing Plan.
+
+2026
+
+3.
+   Five Enabling Areas to pave the way for a Water Resilient Europe
+
+To reach the objectives outlined in the strategy, we need a whole-of-society approach with enhanced cooperation between citizens, businesses, civil society and nature representative groups and committed administrations working across policy silos and levels, involving all stakeholders. The EU will support this with actions in five areas.
+
+3.1
+   Governance and implementation to boost change
+
+Achieving water resilience will depend on enhanced implementation of the comprehensive EU water acquis, as well as stronger synergies with policies in sectors such as agriculture, industry, energy, transport and consumer protection. Regulators have for decades acted to protect water in both EU environmental and health policies. Through the European Green Deal, several key pieces of legislation have been reviewed and modernised, driving much progress. Yet, as shown in a recent Commission report
+52
+, gaps in implementation and funding have so far considerably hampered the achievement of water legislation objectives. For example, when preparing their third River Basin Management Plans and second Flood Risk Management Plans, several Member States failed to duly follow up on the Commission recommendations issued in 2019 and have not yet put in place adequate registers, controls and, where appropriate, sanctions to avoid over-abstractions.
+
+Building on the findings of its latest assessment of the national plans and on its EU-wide and country-specific recommendations, the Commission will step up enforcement. It will launch Structured Dialogues with Member States to work jointly towards a reinforced implementation of the broader EU water acquis. The Technical Support Instrument can help Member States addressing water-related challenges, including those identified in the European Semester.
+
+Simplification of EU water rules can make an important contribution to their implementation. The Commission regularly evaluates key pieces of legislation, such as the Nitrates Directive, currently under evaluation. Moreover, the Commission aims to simplify and enhance the efficiency of electronic reporting under the Water Framework Directive, based on an ongoing study. The revision of the Marine Strategy Framework Directive will also lead to significant simplification. In the context of the implementation of the extended producer responsibility system referred to in Article 9 of Directive (EU) 2024/3019 on urban wastewater treatment, the Commission will conduct an updated study of costs and its potential impacts on concerned sectors. In addition, the Commission will continue to support Member States in the pragmatic design of national systems with a view to avoiding unexpected or unintended consequences, in particular for the availability and affordability of medicines
+53
+.
+
+Water-smart spatial planning must guide a sustainable deployment of the green and digital transition. The Commission will enhance existing visualisation tools putting together environmental data with data related to the water and energy grids. The aim is to inform Member States’ spatial planning decisions by helping them identify the best areas for setting up water-intensive business operations and at the same attract investors to carry out nature restoration and modernisation of water supply networks to support these businesses.
+
+Cross-border cooperation must be further improved. Europe has 75 cross-border river basins. Although the Water Framework Directive explicitly requires Member States to ensure a coordinated implementation for international river basins, there is room for a more harmonised assessment of the water bodies’ status, improved consistency between measures taken by upstream and downstream countries, including with riparian non-EU partner countries, and increased focus on water quantity management. The Commission will support peer-to-peer initiatives, to foster cooperation between River- and Sea-basin organisations, regions and cities, through EU programmes and initiatives such as Horizon Europe, the Urban Agenda for the European Union (UAEU) Thematic Partnership on ‘Water Sensitive City’ and Cohesion for Transitions Community of Practice
+54
+. This will secure the important involvement of the regional and local levels, as shown by initiatives under Interreg programs.
+
+Flagship actions - Governance and implementation to boost change
+
+Timeline
+
+Step up enforcement and launch structured dialogues with all Member States to accelerate and scale up implementation of the EU water acquis, based on key enforcement priorities stemming from the latest assessment of the River Basin and Flood Risk Management Plans.
+
+2025-2026
+
+Under Cohesion for Transitions Community of Practice, organise regular exchanges with regions, cities and water authorities, to promote exchange of best practices on “sponge landscapes”, as well as transboundary water cooperation, identified under Interreg.
+
+2025-2027
+
+Launch a viewer integrating environmental data with data related to the water and energy grids to assist Member States in their spatial planning efforts to identify the best areas for win-win localisation of water-intensive business operations.
+
+2027
+
+3.2
+   Finance, investments and infrastructure to achieve a stable supply
+
+Without significant additional public and private investments in all stages of water management, progress towards water resilience will be too slow or lack meaningful impact. The current annual capital investment for water measures (by the EU, EIB and national budgets) reaches around EUR 55 billion (in 2022 prices), suggesting an annual investment gap of around EUR 23 billion per year (0.1% of EU GDP) to implement the existing water legislation
+55
+. This includes investment to turn rain into green water (stored in terrestrial ecosystems) through nature-based solutions, and grey water (used in urban settlements or industrial processes) into blue water (rivers and seas) to make it fit for nature again. Investments must cover all the stages of water management and be planned in an integrated manner, factoring in future climate scenarios and the assessment of the resulting risks. Investment must also support new water technologies. For example, Member States may use the incentives provided for in the BlueInvest platform in blue sectors and the development of critical water-related technologies that meet the requirements of the Strategic Technologies for Europe Platform (STEP). At the same time, Member States need to avoid subsidies that, as a side effect, may harm the environment or lead to an inefficient water use.
+
+In the recent mid-term review of Cohesion policy, the Commission has proposed an exceptional package of measures to encourage Members States and regions to invest in water resilience. This package includes up to 100% of EU financing and 30% of prefinancing in water resilience investments programmed under the dedicated priority for this new specific objective, as well as various flexibilities.
+
+Some Member States have difficulties spending the EU funds available due to a lack of administrative capacity and legal or organisational barriers. The capacity to carry out water resilience investments must be improved, specifically in less developed regions. Together with water governance reforms at the right level, technical assistance can help to ensure that available EU money is used as effectively as possible.
+
+Available EU funds should be deployed quickly for investments aiming to reduce leakages by using digital tools, smart metering, and water efficiency enhancing technologies. These investments require less complex planning than large water projects. The Commission will develop guidance for Member States for “plug and play” (pilot) projects in these areas to simplify and streamline procedures.
+
+The next Multi-annual Financial Framework (MFF) is an opportunity to further support water resilience through investment and reforms. In the context of the national and regional partnership agreements, Member States could address areas such as improved governance, risk assessment and disaster preparedness, increased water efficiency and reuse, prioritised demand reduction and enhanced controls. Furthermore, the Commission will encourage Member States to cooperate in a Green and Blue Corridors initiative to support the restoration of ecological settings and infrastructure including rivers, wetlands, and coasts. 
+
+In addition, the Commission is enhancing its cooperation with the European Investment Bank Group (EIB) to step up public and private investments in the area of water, both in the EU and globally. The EIB Group, already today the largest global financier in the water sector, has developed a Water Programme to support the Commission's Water Resilience Strategy with over EUR 15 billion in planned financing during 2025-2027 for projects enhancing access to water, pollution control, resilience and competitiveness of the EU water sector, including through large infrastructures and nature-based solutions. Furthermore, the Commission and the European Investment Bank will join forces to address bottlenecks for deploying water investments. This will include the proposal of a new Sustainable Water Advisory Facility to finance EIB technical assistance in building the pipeline of projects as well as better quantifying funding needs and options to facilitate water investment.
+
+Private investment will need to be significantly stepped up. Cooperation with financial institutions can leverage more private financing into water resilience through blended finance approaches, innovative models such as Water as a Service and structured ecosystems for Green and Blue Bonds. Rewarding ecosystem services schemes have the potential to also support the creation of the necessary markets. The Commission will adopt a Roadmap for Nature Credits to tap the potential of these instruments and incentivise the scale-up of these markets. Furthermore, the simplified EU sustainable finance framework and the rolling out of the Savings and Investment Union aim to increase the funding opportunities for EU businesses, including in the water sector.
+
+Climate-induced disruptions are strengthening the business case for water investments, and innovative approaches can help unlock significant private investment. Water is increasingly recognised as a financially material factor for businesses, investors, and governments. But there are significant obstacles to trigger private investments in water, which often require close cooperation among different stakeholders not least to overcome free rider problems. The Commission will establish a Water Resilience Investment Accelerator to implement 20 pilot innovative cases for natural water retention and water efficiency, bringing together local water investors, solution providers and problem holders to inspire similar actions across the EU. This could also build on the networks of Living Labs established e.g. in European Partnerships and Missions. In order to address the growing challenge of insuring economic losses caused by natural catastrophes including water-related disasters in the EU, the Commission will explore possible solutions to reduce the insurance protection gap, by following up on the proposals by the European Central Bank and European Insurance and Occupational Pensions Authority.
+56
+ Incentives for improved information, pricing and control of water used (see section 2.3) will also help to make the business case for water investments more appealing, including in sectors that are highly dependent on water and increasingly vulnerable to its scarcity, such as agriculture, aquaculture and energy.
+
+Flagship actions - Finance, investments and infrastructure to achieve a stable supply
+
+Timeline
+
+Launch of EIB Water Programme and Sustainable Water Advisory Facility in cooperation with the Commission to step up the assistance to potential loan-takers, increasing the pipeline of projects.
+
+2025
+
+Support Member States and regions in reorienting Cohesion policy funds for water resilience within the mid-term review.
+
+2025
+
+Establish a Water Resilience Investment Accelerator
+
+2026-2027
+
+Launch a Green and Blue Corridors initiative to support the restoration of ecological settings and infrastructure including rivers, wetlands, and coastal restoration to restore the water cycle with a source-to-sea approach.
+
+2027
+
+Adopt a Roadmap for Nature Credits to tap the potential of these instruments and incentivise the scale-up of these markets.
+
+2025
+
+3.3
+   Digitalisation and Artificial Intelligence to accelerate and simplify sound water management  
+
+Digitalisation has significant potential for revolutionising water management and promoting sustainable water use. It will bring timely insights for better policy-making and improved design and operation of water infrastructure and services. Numerous digital solutions, including Artificial Intelligence, are available in the market
+57
+. Yet, the uptake remains too slow and uneven.
+
+To unleash this largely untapped potential, and building on the upcoming Communications on Data Union and on Apply AI, the Commission will adopt an Action Plan targeted to face the specific challenges of the water sector such as analogue and aging systems, very large data sets scattered in many different repositories. It will include two main pillars: i) deployment of digital solutions through funding and knowledge-sharing to build up digital skills and encourage technology transfer in the water sector; and ii) support to water data sharing by fostering the development of national data portals to overcome fragmentation and make data easily findable, accessible free of charge, interoperable, and reusable, in line with the requirements of the Open Data Directive
+58
+.
+
+A “one-stop shop” for Earth Observation products relevant to water management will make managing water from space easily accessible to everyone. While Earth Observation has been used for decades to forecast droughts and floods, its daily use for water management is much less widespread. Copernicus and its six specialized services provide an extensive portfolio of water-related products available on a full, free and open basis. Yet, this information is scattered. The Commission will establish a “one-stop shop” for Earth Observation products relevant to water management – a Water Thematic Hub – in order to bring together Copernicus water-related data, products, and tools, and facilitate access and use of these data. It will foster collaboration between the Earth Observation and water management communities, in partnership with the Joint Research Centre’s Knowledge Centre on Earth Observation, ensuring that Copernicus products respond to the needs of users and policy makers.
+
+Water management authorities and planning and permitting authorities, as well as the private sector may need assistance in assessing risks due to climate change. Digital models being developed by Commission such as the Digital Twin of the Ocean and Destination Earth will support the assessment long-term water conditions and availability under various climate change or human activities scenarios. Such capabilities can become available to national and local administrations before 2030.
+
+Flagship actions - Digitalisation and Artificial Intelligence to accelerate and simplify sound water management
+
+Timeline
+
+Develop and implement Destination Earth and EU Digital Twin of the Ocean applications for water resilience, and by 2030, make the capabilities available to national and local administrations in the EU and beyond.
+
+2025-2030
+
+Develop an EU-wide Action Plan on digitalisation in the water sector including an EU-wide initiative on Smart metering for all.
+
+2026
+
+Launch a Copernicus Water Thematic Hub.
+
+2026
+
+3.4
+   Research and innovation, water industry and skills to strengthen competitiveness
+
+Water innovation must be scaled up, based on the EU Start-up and Scale-up Strategy. Water has been an important component of EU Framework Programmes for R&I and there is already a large portfolio of innovative ideas and solutions developed in Europe. However, actual deployment of these solutions beyond the project stage is still slow. To address this matter, the Commission will establish a science/policy interface to valorise the knowledge from EU and national funded R&I actions.
+
+The Commission will launch a Water Smart Industrial Alliance to support its consolidation by stimulating innovation, competitiveness and securing the necessary water skills. Furthermore, in line with the Clean Industrial Deal the Commission will explore how public procurement can promote water resilience considerations in relevant public tenders and a simplified market access for SMEs to help them untap their innovation potential. Complementing these initiatives, the Commission will also launch a European Water Academy to address capacity needs in Europe’s water sector, fostering public-private partnerships, innovation, and technology transfer to fill skill gaps.
+
+People of all ages and across different disciplines need to develop new skills. Employment in the water sector has grown in the last years and will continue to do so
+59
+. However, both public authorities and the private sector are facing an ageing workforce and a skills gap, particularly in technical areas such as water treatment and management, as well as in relation to digital skills. The Union of skills package including the European Social Fund Plus can boost training for authorities, water management professionals, and communities. For freshwater and the ocean, skills in science, technology, engineering, and maths (STEM) must be promoted
+60
+. To equip the EU water workforce with the right skills, the Commission, the EU water industry and stakeholders will work together including on the possible launch of a Large-Scale Skills partnership. In addition, the Commission will enhance vocational training by increasing its support to the Platform of Vocational Excellence Water. It will also use the existing Network of European Blue Schools to raise literacy and awareness to address freshwater and ocean protection in a source-to-sea approach. 
+
+Despite a strong knowledge base, gaps remain in understanding European fresh and marine waters, water resource availability, climate changes, and the water-energy-food-ecosystems nexus. Effective use of EU research funds can help bring innovative technologies to market and support SMEs. Building on the cutting-edge research under EU Missions Restore our Oceans and Waters and Adaptation to Climate Change, the Commission will adopt, by the end of 2026, a Water Resilience R&I Strategy addressing the fragmentation of EU R&I initiatives.
+
+Finally, to boost Europe’s competitiveness in the water field by spurring innovation and closing the skills and knowledge gaps, we need to create more synergies and connect industry, education and research with a source-to-sea approach. This is why the Commission will launch, in 2026, a Knowledge and Innovation Community (KIC) in Water, Marine and Maritime Sectors and Ecosystems under the European Institute of Technology (EIT).
+
+Flagship actions – Research and innovation, water industry and skills to strengthen competitiveness
+
+Timeline
+
+Science/policy interface to disseminate the results of EU-funded R&I projects e.g. through a one-stop shop platform.
+
+2026
+
+Water Resilience R&I strategy.
+
+2026
+
+Water Smart Industrial Alliance to stimulate competitiveness.
+
+2026
+
+European Water Academy.
+
+2026-2027
+
+Knowledge and Innovation Community (KIC) in Water, Marine and Maritime Sectors and Ecosystems under the European Institute of Innovation and Technology (EIT).
+
+2026
+
+3.5
+   Security and preparedness to boost collective resilience
+
+Climate-driven threats and biodiversity losses, malicious attacks linked to the disruption of critical water infrastructure and supply, alongside accidental pollution of inland and marine waters have been identified as key water risks by Member States. Over the last years, such disasters have triggered an increasing number of requests for assistance from the EU Civil Protection Mechanism (UCPM), both in Europe and other parts of the world. The EU will continue to demonstrate solidarity for transboundary cooperation, yet in order to make an efficient use of available funds and reduce the need for disaster relief, such solidarity must by complemented by principles of preparedness by design. Particularly relevant in this context are the RESTORE Regulation, which supports Member States to quickly mobilize funds
+61
+and the mid-term review of Cohesion policy.
+
+Citizens need local solutions that protect them and allow them to be prepared for what cannot be prevented, in line with the European Preparedness Union Strategy
+62
+. Such actions must integrate urban planning considerations to tackle pollution, whilst mitigating and adapting to climate change, improving drought and flood risk management, optimising the use of digital tools and rapid alert systems, and strengthening the links of already existing risk management tools at the European level (such as the early warning tools of the Copernicus Emergency Management Service
+63
+), national level and local level. Citizens and communities must be empowered to act towards climate adaptation and protection from risks of floods and droughts. Making available information about the specific risks of floods and droughts for buildings and land is a first step towards increasing societal resilience.
+
+Many tools exist in the EU to protect the population from water-related disasters, or mitigate the impact, yet they are not always sufficiently known or used. It is important to empower citizens to learn about and manage the growing risks of climate-driven water disasters, as called for in Union Disaster Resilience Goals developed under the UCPM
+64
+. The Commission will enhance EU real-time early warning and monitoring systems for floods and droughts by supporting Member States’ actions, by strengthening the European Drought Observatory and the European Flood Awareness System of the Copernicus Emergency Management Service.
+
+Knowing and addressing our weaknesses will make us more resilient. As the frequency and the severity of the impact of cyberattacks against water facilities is increasing, appropriate security planning and better understanding of vulnerabilities will help the Union and economic operators to counter hostile actions against the physical and cyber integrity, including of drinking water-supply and wastewater treatment infrastructure and deliberate waterborne contamination. This planning will greatly benefit from the full implementation of the Critical Entities Resilience (CER) Directive
+65
+and the Directive on measures for a high common level of cybersecurity across the Union (NIS2 Directive)
+66
+. The upcoming Commission Communication setting non-binding guidelines to support Member States in identifying their critical entities and reporting on the outcome of their risk assessments will apply to the drinking water and wastewater sectors, in line with the scope of the CER Directive. Another important element of strengthening the EU resilience is supporting public authorities, business and the public in preparing for future climate risks, including through the use of common climate reference scenarios and digital tools for EU real-time early warning and monitoring systems.
+
+ Flagship actions - Security and preparedness to boost collective resilience
+
+Timeline
+
+Enhance resilience of on- and offshore water infrastructure through the implementation of the Critical Entities Resilience Directive.
+
+2025
+
+Enhance EU real-time early warning and monitoring systems by strengthening the European Drought Observatory and the European Flood Awareness System of the Copernicus Emergency Management Service.
+
+As from 2025
+
+Adopt a European Climate Adaptation Plan.
+
+2026
+
+4.
+   Acting Globally - leading by example, commitment and initiatives
+
+Five years remain until the end of the 2030 Agenda. Progress towards Sustainable Development Goal 6
+67
+is well below the pace needed. Worldwide, 2.2 billion people still lack access to safe drinking water, more than half of humankind lacks access to safe sanitation, and many watersheds experience increasing levels of degradation, threatening ecosystem health and water availability, and worsened by climate change. Wetlands are nature’s most effective water managers, yet, across the globe, they are disappearing three times faster than forests, increasing the risk of desertification and floods. It is estimated that almost half of the world’s population will suffer water stress by 2030
+68
+. 
+
+Swift and transformative global action, including redefinition of the way we value and govern water for the common good is needed to avoid an accelerated water crisis. Through its actions under the Global Gateway Strategy, the EU will contribute to protecting and restoring the global water cycle, building a water smart economy and ensuring water security for all, in line with the EU level objectives of this strategy and the Pact for the Future
+69
+. The EU will expand strategic partnerships and water diplomacy to promote Integrated Water Resource Management, the source-to-sea approach, the use of nature-based solutions, investment in sustainable water and sanitation for all, and innovation-driven policy reforms. As part of building a water-smart, circular and competitive economy, the EU will support global initiatives for promoting water efficiency and reuse in all economic sectors. In addition, the EU will support the finalisation and adoption of the Codex Alimentarius Guidelines
+70
+to ensure microbiologically safe use and reuse of water in food production across the globe.
+
+The water, peace and security nexus will be strengthened through bringing together humanitarian, development and peace actors, advocating for compliance with International Humanitarian Law to support the safety and security of water resources, water personnel and infrastructure in conflict zones. By setting minimum environmental requirements for EU-funded humanitarian aid operations, the EU promotes sustainability of water resources in contexts which are particularly affected by water shortages
+71
+.   
+
+A stronger global water governance is essential for steady progress, strategic steer and to overcome fragmentation. The UN 2023 Water Conference put water firmly on the global political landscape with the ambitious Water Action Agenda
+72
+, followed by the UNEA-6 resolution on water
+73
+, the System-wide strategy for water and sanitation
+74
+and the appointment of the UN Special Envoy on Water. The EU will work towards an ambitious and action-oriented outcome of the upcoming UN Water Conferences, including a regular UN inter-governmental process on water, mainstreaming of water in multilateral processes and engagement in key coalitions. The EU will also engage partner countries on water governance, including through building its network of EU member state Water Envoys.
+
+The EU will support the extension of the UN Water Convention
+75
+as a means to promote sustainable management of shared water resources, conflict prevention, peacebuilding, security, and economic development. Through Global Gateway
+76
+, Team Europe (the Commission, the EIB and Member States’ Development Finance Institutions) is making over EUR 1.2 billion available for supporting governance, knowledge, and investments in 18 major cross-border water basins across 47 countries in Africa and Central Asia. This includes initiatives like the International Fund for the Aral Sea and the Blue Africa programme.
+
+The EU will strengthen country and regional partnerships on water. This includes the Union for the Mediterranean Water Agenda 2030 and the upcoming New Pact for the Mediterranean, to address increasing water scarcity and climate impacts in the region. The EU will support candidate and neighbourhood countries, including through the Western Balkans and Eastern Neighbourhood Investment Framework and the Ukraine Facility. In this context, the EU strategic approach to the Black Sea
+77
+is of particular importance, to support local communities against inter alia war-related environmental damage. The EU will propose the introduction of the relevant water legislation in the acquis covered by the Energy Community Treaty
+78
+. The EU and Central Asia will enhance their cooperation through the recently agreed strategic partnership, with a EUR 12 billion Global Gateway investment package to focus on four key priorities, including climate, water and energy. The EU cutting-edge water industry is key to support partner countries, develop water-efficient technologies, finance sustainable infrastructure and drive innovation. The EU will support policy incentives, financing mechanisms and water SMEs to seize relevant market opportunities.
+
+The EU remains committed to help closing the considerable gap in international water financing. Through Global Gateway, the EU and its Member States remain the biggest contributor to official development aid, including on water infrastructure and Nature-based Solutions, strengthened by mobilising private sector engagement via the European Fund for Sustainable Development (EFSD+). The EIB and the European Bank for Reconstruction and Development, together with other multilateral development banks, have committed to greater levels of financing for water security and will reinforce their cooperation
+79
+. The EU will continue supporting investments mainly through blending mechanisms and guarantees and improving the investment climate by facilitating legal reforms and promoting high social and environmental standards. This includes initiatives like Climate Investor 2, a blended finance facility mobilising up to EUR 2.2 billion for water, sanitation, and ocean infrastructure projects, as well as strategic procurement and support to environmental, social and governance frameworks. Clean Trade and Investment Partnerships could also play a role.
+
+Flagship actions – Acting globally – leading by example, commitment and initiatives
+
+Timeline 
+
+Promote water resilience through the Global Gateway by support for priority water-related initiatives and reinforced country and regional engagement.
+
+As from 2025
+
+5.
+   Conclusions
+
+The Commission calls on Member States, institutional partners, businesses and all parts of society to take action along the lines indicated in this Strategy.
+
+As from December 2025, the Commission will convene, every two years, a Water Resilience Forum, bringing together in an inclusive dialogue of EU stakeholders and interested parties to take stock of progress made in enhancing water resilience across all levels of government, business and civil society, and monitoring implementation of this Strategy.
+
+In 2027, the Commission will carry out a mid-term review of the progress made in implementing the actions included in this Strategy. It will also make a first evaluation of the uptake of the Recommendation on Water Efficiency First. In this context, some of the actions may be updated or revised.
+
+In 2029, the Commission will evaluate the progress made, including a full evaluation of national actions taken in line with the Recommendation on Water Efficiency First. The Commission will also identify possible further actions needed to address emerging concerns and accordingly review, as appropriate, the identified targets and actions, with a view to achieving water resilience across all sectors of society.
+
+Annex I – Full List of Actions
+
+ACTIONS
+
+Timeline
+
+Restoring and protecting the water cycle
+
+Establish, including through Structured Dialogues with Member States, implementation priorities of the Water Framework and the Floods Directives, focusing on water quality and quantity.
+
+2025-2026
+
+Revise the Marine Strategy Framework Directive.
+
+2027
+
+Develop water scarcity indicators and a Technical Guidance on Drought Management Plans.
+
+2026-2027
+
+To address main sources of pollution:
+
+·Public-private initiative to achieve a technological breakthrough in feasible and affordable methods for the detection and remediation of PFAS and other persistent chemicals, if the right partners are found.
+
+·Launch an Assistance Toolbox for Member States to support actions to reduce nutrients pollution, including through enhanced modelling, interactive maps and exchanges of best practices.
+
+2027
+
+2026-2027
+
+Building a water-smart economy that leaves no one behind, supports EU competitiveness and attracts investors
+
+Recommendation on the Water Efficiency First principle, guidelines and EEA report on the untapped water efficiency potential.
+
+2025-2026
+
+Support the uptake of water reuse practices also beyond agriculture and review the Water Reuse Regulation.
+
+2026-2028
+
+Public water supply: 
+
+·Support leakage reduction and infrastructure modernisation and deep data assessment.
+
+2025-2028
+
+Agriculture:
+
+·Maximise the use of CAP Strategic Plans for water resilience through knowledge sharing and innovative solutions promoted by the EU CAP network, the European Innovation Partnership (EIP-AGRI), as well as improved and independent farm advisory services.
+
+·In the next programming period, continue to incentivise farmers to improve the environmental and climate performance of their holdings, including towards better water management.
+
+2025-2026
+
+Industry and Energy:
+
+·Launch a pilot project to promote water efficiency, including waterless and closed water cycle technologies, in selected industrial clusters.
+
+·Include water usage among the parameters of a common Union scheme to rate the sustainability of data centres and propose water consumption minimum performance standards.
+
+·Public-private initiative to achieve a technological breakthrough in feasible and affordable methods for dry cooling, if the right partners are found.
+
+2025-2026
+
+ 
+
+Promote an exchange of best practices on freshwater balances, accounting of water flows, water efficiency, and smart water metering across all economic sectors
+
+As from 2025
+
+Assess the quality of the data available on water and, where appropriate, submit a legislative proposal for the introduction of new environmental economic account modules for water accounts. 
+
+By the end of 2026
+
+Securing clean and affordable water for all, empowering consumers and other users
+
+Address the water footprint of products when setting or updating requirements under the ESPR and the EU Ecolabel.
+
+2025-2027
+
+Promote best practices on public awareness and the role of water pricing to promote water efficiency, cost recovery and the polluter pays principle, and related national water governance.
+
+2026-2027
+
+Boost efforts towards water resilience across the built environment through the upcoming work programme 2026-2027 of the New European Bauhaus Facility and in the upcoming Affordable Housing Plan.
+
+2026
+
+Governance and implementation to boost change
+
+Step up enforcement and launch structured dialogues with all Member States to accelerate and scale up implementation of the EU water acquis, based on key enforcement priorities stemming from the latest assessment of the River Basin and Flood Risk Management Plans.
+
+2025-2026
+
+Under Cohesion for Transitions Community of Practice, organize a regular exchange with regions, cities and water authorities, to promote exchange of best practices on “sponge landscapes” and transboundary water cooperation identified under Interreg.
+
+2025-2027
+
+Launch a viewer integrating environmental data with data related to the water and energy grids to assist Member States in their spatial planning efforts to identify the best areas for win-win localisation of water-intensive business operations.
+
+2027
+
+ 
+
+Create a Water Resilience Forum.
+
+As from 2026
+
+Finance, investments and infrastructure to achieve a stable supply
+
+Launch of EIB Water Programme and Sustainable Water Advisory Facility in cooperation with the Commission to step up the assistance to potential loan-takers, increasing the pipeline of projects.
+
+2025
+
+Support Member States and regions in reorienting Cohesion policy funds for water resilience within the mid-term review.
+
+2025
+
+Establish a Water Resilience Investment Accelerator.
+
+2026-2027
+
+Launch a Green and Blue Corridors initiative to support the restoration of ecological settings and infrastructure including rivers, wetlands, and coastal restoration to restore the water cycle with a source-to-sea approach.
+
+2027
+
+Adopt a Roadmap for Nature Credits to tap the potential of these instruments and incentivise the scale-up of these markets.
+
+2025
+
+ 
+
+Use the Technical Support Instrument to help Member States addressing water-related challenges, particularly those identified in the European Semester.
+
+As from 2025
+
+Digitalisation and Artificial Intelligence to accelerate and simplify sound water management
+
+Develop and implement Destination Earth and EU Digital Twin of the Ocean applications for water resilience, and by 2030, make the capabilities available to national and local administrations in the EU and beyond.
+
+2025-2030
+
+Develop an EU-wide Action Plan on digitalisation in the water sector including an EU-wide initiative on Smart metering for all.
+
+2026
+
+Launch a Copernicus Water Thematic Hub.
+
+2026
+
+Research and innovation, water industry and skills to strengthen competitiveness
+
+Science/policy interface to disseminate the results of EU-funded R&I projects e.g. through a one-stop shop platform.
+
+2026
+
+Water Resilience R&I strategy.
+
+2026
+
+Water Smart Industrial Alliance to stimulate competitiveness.
+
+2026
+
+European Water Academy.
+
+2026-2027
+
+Knowledge and Innovation Community (KIC) in Water, Marine and Maritime Sectors and Ecosystems under the European Institute of Innovation and Technology (EIT).
+
+2026
+
+ 
+
+Promote further research and innovation to promote sustainable desalination.
+
+2026
+
+Water Tech challenge, in cooperation with the EIC.
+
+tbd
+
+Security and preparedness to boost collective resilience
+
+Enhance resilience of on- and offshore water infrastructure through the implementation of the Critical Entities Resilience Directive.
+
+2025
+
+Enhance EU real-time early warning and monitoring systems by strengthening the European Drought Observatory and the European Flood Awareness System of the Copernicus Emergency Management Service.
+
+As from 2025
+
+Adopt a European Climate Adaptation Plan.
+
+2026
+
+Strengthen the prevention of water-borne infectious diseases through the implementation of Regulation (EU) 2022/2371 on Serious Cross-border Threats to Health.
+
+As from 2022
+
+Acting Globally – leading by example, commitment and initiatives
+
+Promote water resilience through the Global Gateway by support for priority water-related initiatives and reinforced country and regional engagement.
+
+As from 2025
+
+Strengthen global water governance by engaging in discussions on a future global water governance framework.
+
+As from 2025
+
+Foster cross-border water cooperation through supporting accession to the UN Water Convention.
+
+As from 2025
+
+Support the access to an improved drinking water source and/or sanitation facility for at least 70 million individuals, unlock larger investments and boost competitiveness of the EU water industry.
+
+ongoing
+
+Significantly scale up investment in nature-based solutions in infrastructures or in conjunction with infrastructures.
+
+As from 2026
+
+Mainstream water in international processes, including the three Rio Conventions on climate change, biodiversity and desertification.
+
+As from 2025
+
+Enhance implementation of water-related goals and targets
+80
+of the Kunming Montreal Global Biodiversity Framework.
+
+ongoing
+
+Enhance EU engagement in the Ramsar Convention.
+
+As from 2025 
+
+Strengthen engagement in inter-alia G7, G20, the Transboundary Water Cooperation Coalition, the Freshwater Challenge and the Baku Water Dialogue.
+
+As from 2025  
+
+Assess the investment needs for each candidate country to comply with the water acquis.
+
+As from 2026 
+
+Step up engagement in the Union for Mediterranean and the Blue Mediterranean Partnership.
+
+As from 2025 
+
+Annex II - The key 2027-2033 intermediate targets
+
+Restoring and protecting the water cycle
+
+By 2030, restoration measures will be put in place on at least 30% of the EU’s coastal and freshwater habitats that are not in good condition (Nature Restoration Regulation).
+
+By 2030, at least 30% of species and habitats not currently in favourable status are in that category or show a strong positive trend (EU biodiversity strategy for 2030).
+
+By 2030, at least 25 000 km of rivers in the EU will have to be restored into free-flowing rivers (EU biodiversity strategy for 2030).
+
+By 2027, Member States shall protect, enhance and restore all bodies of surface water and groundwater with the aim of achieving good status (Water Framework Directive).
+
+Building a water-smart economy that leaves no one behind, supports EU competitiveness and attracts investors
+
+By 2030, the most water-intensive sectors will have adopted and enhanced water-efficient practices, including the following sectors, based on existing EU legislation:
+
+·Energy: national building renovation plans, due by 2026, will start being deployed in each Member State to achieve the progressive renovation of existing buildings into highly energy-efficient and decarbonised buildings by 2050, including through approaches and programmes addressing water treatment (Energy Performance of Buildings Directive).
+
+·Industry:  water use will start being tangibly reduced across the EU’s largest industrial and livestock farming production processes (Industrial Emissions Directive).
+
+In addition, with respect to agriculture, by 2027 the CAP Strategic Plans have provided support for practices (beyond mandatory requirements) to improve soil health (and thus improve water retention and limit erosion) on 47% of the EU’s agricultural area. Support for practices for the sustainable use of pesticides and improved nutrient management will cover 27% and 15% of EU’s agricultural area respectively (CAP support and CAP Strategic Plans).
+
+By 2030, Member States with water supply leakage levels exceeding the EU-wide threshold – to be set by 2028 – will present an action plan with measures to reduce leakages across their supply networks (Drinking Water Directive).
+
+By 2030, the Commission and the Member States will promote the reuse of treated urban wastewater for all appropriate purposes beyond agriculture and assess the feasibility and appropriateness of setting an EU target for water reuse across economic sectors (Water Reuse Regulation).
+
+Securing clean and affordable water for all, empowering consumers and other users
+
+By 2027, Member States will set up transparent drinking water and wastewater bills, to increase consumers’ awareness of their consumption and the real price of water, as well as surveillance systems for monitoring public health parameters in urban wastewater in case of emergencies (Drinking Water Directive, Urban Wastewater Treatment Directive). 
+
+By 2029, Member States will inform the Commission about measures taken to improve access to drinking water and sanitation for all, including vulnerable and marginalised groups, and will start updating the Commission every six years on the matter (Drinking Water Directive and Urban Wastewater Treatment Directive).
+
+By 2030, the EU will support the access of 70 million individuals to an improved drinking water source and/or sanitation facility (EU commitment to the Water Action Agenda).
+
+By 2033, all EU cities above 100 000 inhabitants will set up integrated urban wastewater management plans prioritising nature-based solutions and green/blue infrastructures (Urban Wastewater Treatment Directive).
+
+(1)
+
+ 
+   Droughts have caused extraordinary losses of around EUR 40 billion in 2022 alone. Floods caused, between 1980 and 2023, losses of EUR 325 billion. Adding to these challenges, water pollution generates costs ranging from EUR 55 billion to EUR 73 billion. See Commission study on cost of inaction, in the context of the upcoming Environmental Implementation Review.
+
+(2)
+
+ 
+   Ninth Report on Economic, Social and Territorial Cohesion, Chapter 4 'Green Transition', 2024 (
+https://ec.europa.eu/regional_policy/information-sources/cohesion-report_en
+).
+
+(3)
+
+ 
+    European Union Preparedness Union Strategy, JOIN(2025) 130 final.
+
+(4)
+
+ 
+   “Global Risks Report 2024” These five top global, also water-related risks are: 1) Extreme Weather events, 2) Critical Change to Earth Systems, 3) Biodiversity loss and ecosystem collapse, 4) Natural resources shortages and 5) Pollution 
+https://www.weforum.org/publications/global-risks-report-2024/
+.
+
+(5)
+
+ 
+   COM (2025) 30 final A Competitiveness Compass for the EU.
+
+(6)
+
+ 
+   COM(2025) 85 final The Clean Industrial Deal: A joint roadmap for competitiveness and decarbonisation. 
+
+(7)
+
+ 
+   European Patent Office, “Innovation in water-related technologies” (July 2024), available
+here
+.
+
+(8)
+
+ 
+   Eurostat, “Businesses in the water supply, sewerage, waste management and remediation sector” (data extracted in February 2025), available
+here
+.
+
+(9)
+
+ 
+   Water Europe (2024) Socio-economic study on the value of the EU investing in water.
+
+(10)
+
+ 
+   Report of the Global Commission on the Economics of Water, 2024.
+
+(11)
+
+ 
+   Global water monitor: 2024 summary report | PreventionWeb.
+
+(12)
+
+ 
+   Achieved at the 2023 UN Water Conference.
+
+(13)
+
+ 
+   European Council Conclusions of 23 March 2023 - EUCO 4/23.
+
+(14)
+
+ 
+   European Parliament resolution of 7 May 2025 on the European Water Resilience Strategy (2024/2104(INI)).
+
+(15)
+
+ 
+   The EESC Umbrella Opinion “A call for an EU Blue Deal” CCMI/209 of 25 October 2023.
+
+(16)
+
+ 
+   In this Communication, water industry covers undertakings - whether public or private - involved in the supplying of (drinking) water and the treatment of wastewaters including urban and industrial wastewaters. It includes amongst others water engineering, water infrastructure building, developing and supplying water related equipment and technologies.
+
+(17)
+
+ 
+   See on overview of key objectives set out in existing legislation in Annex II.
+
+(18)
+
+ 
+   Directive 2000/60/EC of the European Parliament and of the Council of 23 October 2000 establishing a framework for Community action in the field of water policy (OJ L 327, 22.12.2000, p. 1, ELI:
+http://data.europa.eu/eli/dir/2000/60/oj
+).
+
+(19)
+
+ 
+   Directive 2007/60/EC of the European Parliament and of the Council of 23 October 2007 on the assessment and management of flood risks (OJ L 288, 6.11.2007, p. 27–34, ELI:
+http://data.europa.eu/eli/dir/2007/60/oj
+).
+
+(20)
+
+ 
+   Regulation (EU) 2024/1991 of the European Parliament and of the Council of 24 June 2024 on nature restoration and amending Regulation (EU) 2022/869 (OJ L, 2024/1991, 29.7.2024, ELI:
+http://data.europa.eu/eli/reg/2024/1991/oj
+).
+
+(21)
+
+ 
+   EEA EU State of Water Report
+https://www.eea.europa.eu/en/analysis/publications/europes-state-of-water-2024
+
+(22)
+
+ 
+   The Commission issued country-specific recommendations arounds 7 clusters: a) accelerated action to reduce the compliance gap; b) scaling up investments; c) tackling key pressures; d) enhancing resilience against water related extremes (including specific recommendation on effective implementation of the Floods Directive); e) transboundary cooperation; f) exemptions and g) monitoring, assessment and reporting. For more information see
+https://environment.ec.europa.eu/topics/water/water-framework-directive/implementation-reports_en
+ 
+
+(23)
+
+ 
+   
+
+Evaluation of the Marine Strategy Framework Directive (SWD(2025)50)
+
+ and its 
+
+annex
+
+.
+
+(24)
+
+ 
+   Adaptation and Soil Missions, Guidance on Climate Resilient Landscapes, the Urban Agenda for the European Union (UAEU) Thematic Partnership on ‘Water Sensitive City’ and Interreg Danube Region Sponge City project.
+
+(25)
+
+ 
+   Macias, D., Bisselink, B., Carmona-Moreno, C. et al. The overlooked impacts of freshwater scarcity on oceans as evidenced by the Mediterranean Sea. Nat Commun 16, 998 (2025).
+
+(26)
+
+ 
+   Common Implementation Strategy (CIS) under the Water Framework Directive Guidance No. 24 on River Basin Management in a Changing Climate, available
+here
+.
+
+(27)
+
+ 
+   Report from the Commission to the Council and the European Parliament on the implementation of the Water Framework Directive (2000/60/EC) and the Floods Directive (2007/60/EC) (Third river basin management plans Second flood risk management plans), COM(2025) 2 final.
+
+(28)
+
+ 
+   Council Recommendation 2023/C 220/01 on stepping up EU actions to combat antimicrobial resistance (AMR); pharmaceutical package; and, recast Urban Wastewater Treatment Directive ((EU) 2024/3019).
+
+(29)
+
+ 
+   European Environment Agency (2024) Responding to climate change impacts on human health in Europe: focus on floods, droughts and water quality. EEA Report 3/2024.
+
+(30)
+
+ 
+   Per- and polyfluoroalkyl substances.
+
+(31)
+
+ 
+   
+
+2019 data.
+
+(32)
+
+ 
+   The actions on PFAS remediation set out in this Strategy complement the Commission’s efforts to address PFAS emissions at the source under the chemicals legislation REACH. In this context it should be noted, that by the end of 2025, the Commission expects to adopt a restriction on all PFAS in firefighting foams, one of the main emission sources.
+
+(33)
+
+ 
+   The economic cost of cleaning PFAS contamination in Europe has been estimated to range from EUR 5 to 100 billion a year, with the water sector alone facing an increase of up to EUR 18 billion per year for drinking water treatment, while cost for wastewater treatment and sewage sludge management is estimated to be even higher. This cost has been estimated by the Forever Lobbying Project; more information available at
+https://foreverpollution.eu/lobbying/
+
+(34)
+
+ 
+   Van Grinsven et al, Costs and Benefits of Nitrogen for Europe and Implications for Mitigation, 2013. The N emissions and damage costs include emissions from all sectors to surface, ground- and marine waters and to air.
+
+(35)
+
+ 
+   European Environment Agency (EEA), European Climate Risk Assessment (EUCRA), 2024. See especially chapter 5 ‘Water security’ for detailed information on water scarcity.
+
+(36)
+
+ 
+   
+https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-first-principle_en
+ 
+
+(37)
+
+ 
+   Water savings for a water resilient Europe, European Environmental Agency 2025, forthcoming.
+
+(38)
+
+ 
+   For example, France has set a target to reduce water abstraction by 10% until 2030.
+
+(39)
+
+ 
+   Water Europe (2024) Socio-economic study on the value of the EU investing in water.
+
+(40)
+
+ 
+   Regulation (EU) 2024/3024 of the European Parliament and of the Council of 27 November 2024 amending Regulation (EU) No 691/2011 as regards introducing new environmental economic account modules.
+
+(41)
+
+ 
+   Water Europe (2024) Socio-economic study on the value of the EU investing in water.
+
+(42)
+
+ 
+   IEA Clean energy can help to ease the water crisis, 22 March 2023.
+
+(43)
+
+ 
+   Commission report to the Council and the Parliament pursuant to Article 12 of Directive 2023/1791 on energy efficiency and amending Regulation (EU) 2023/955 (recast).
+
+(44)
+
+ 
+   Commission Staff Working Document: Impact Assessment Accompanying the document Proposal for a Regulation of the European Parliament and of the Council on minimum requirements for water reuse, SWD(2018) 249 final.
+
+(45)
+
+ 
+   The Water Reuse Regulation, the revised Industrial Emissions Directive and the revised Urban Wastewater Treatment Directive.
+
+(46)
+
+ 
+   European Environment Agency (2024) Europe's state of water 2024. EEA Report 7/2024Publications Office of the European Union.
+https://www.eea.europa.eu/en/analysis/publications/europes-state-of-water-2024
+
+(47)
+
+ 
+   European Environment Agency (2024) Europe’s state of water 2024.
+https://www.eea.europa.eu/en/analysis/publications/europes-state-of-water-2024
+
+(48)
+
+ 
+   For example the current Transition Pathways Stakeholder Support Platform.
+
+(49)
+
+ 
+   
+https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/economy-works-people/jobs-growth-and-investment/european-pillar-social-rights/european-pillar-social-rights-20-principles_en
+ 
+
+(50)
+
+ 
+   The recently adopted Ecodesign for Sustainable Products and Energy Labelling Working Plan 2025-2030 includes textiles/apparel, iron & steel and aluminium as products for which new requirements will be developed, as well as a number of water relevant energy-related products such as dishwashers and washing machines for which ecodesign requirement and/or energy labels will be available.
+
+(51)
+
+ 
+   The Energy Efficiency Directive requires Member States to ensure that regional and local authorities prepare local heating and cooling plans at least in municipalities having more than 45 000 inhabitants.
+
+(52)
+
+ 
+   Report from the Commission to the Council and the European Parliament on the implementation of the Water Framework Directive (2000/60/EC) and the Floods Directive (2007/60/EC) (Third river basin management plans Second flood risk management plans), COM(2025) 2 final.
+
+(53)
+
+ 
+   As also requested by the European Parliament resolution of 7 May 2025 on the European Water Resilience Strategy (2024/2104(INI)).
+
+(54)
+
+ 
+   
+https://ec.europa.eu/regional_policy/policy/communities-and-networks/cohesion-4-transition_en
+ 
+
+(55)
+
+ 
+   DG Environment, Environmental investment needs, financing and gaps in the EU-27 – update 2024 (internal analysis). It should be noted that this amount is largely based on water supply and sanitation needs, while costs for other measures related to the implementation of the WFD and the FD may not be fully reflected.
+
+(56)
+
+ 
+   ECB and EIOPA, Towards a European system for natural catastrophe risk management, Joint Paper, December 2024.
+
+(57)
+
+ 
+   These include smart metering providing real-time data on water use, predictive maintenance and leakage detection systems, digital twins, as well as products based on data generated by in-situ, drone, or satellite sensors.
+
+(58)
+
+ 
+   Directive (EU) 2019/1024 of the European Parliament and of the Council of 20 June 2019 on open data and the re-use of public sector information.
+
+(59)
+
+ 
+   Cedefop (2023). Skills in transition: the way to 2035. Luxembourg: Publications Office.
+http://data.europa.eu/doi/10.2801/438491
+ 
+
+(60)
+
+A STEM Education Strategic Plan: skills for competitiveness and innovation COM(2025)89.
+
+(61)
+
+ 
+   Regulation (EU) 2024/3236 of the European Parliament and of the Council of 19 December 2024 amending Regulations (EU) 2021/1057 and (EU) 2021/1058 as regards Regional Emergency Support to Reconstruction (RESTORE).
+
+(62)
+
+ 
+   JOIN(2025) 130 final. Joint Communication to the European Parliament, the European Council, the Council, the European Economic and Social Committee and the Committee of the Regions on the European Preparedness Union Strategy.
+
+(63)
+
+ 
+   Copernicus Emergency Management Service with its early warning systems for forest fires (European Forest Fire Information System - EFFIS), floods (European and Global Flood Awareness Systems - EFAS & GloFAS), and droughts (European and Global Drought Observatory - EDO & GDO), the awareness-raising Flood Risk Areas viewer.
+
+(64)
+
+ 
+   The first Union Disaster Resilience Goals were established under Article 6(5) of the UCPM Decision, and were published in February 2023. Recommendation establishing Union Disaster Resilience Goals, OJ C 56, 15.2.2023, p.1. Communication on Union Disaster Resilience Goals: Acting together to deal with future emergencies, COM(2023) 61.
+
+(65)
+
+ 
+   By 2026, Member States will adopt a strategy for enhancing the resilience of critical entities covering the drinking and wastewater sectors.
+
+(66)
+
+ 
+   Directive (EU) 2022/2555 on measures for a high common level of cybersecurity across the Union (NIS2 Directive), OJ L 333, 27.12. 2022, p.80.
+
+(67)
+
+ 
+   SDG6 Ensure availability and sustainable management of water and sanitation for all.
+
+(68)
+
+ 
+   The 2024 UN World Water Development Report: Water for Prosperity and Peace.
+
+(69)
+
+ 
+   
+UNGA resolution 79/1
+
+(70)
+
+ 
+   
+fao.org/fao-who-codexalimentarius/sh-proxy/tr/?lnk=1&url=https%253A%252F%252Fworkspace.fao.org%252Fsites%252Fcodex%252FStandards%252FCXG%2B100-2023%252FCXG_100e.pdf
+ 
+
+(71)
+
+ 
+   
+https://civil-protection-humanitarian-aid.ec.europa.eu/what/humanitarian-aid/climate-change-and-environment_en
+ 
+
+(72)
+
+ 
+   
+https://sdgs.un.org/conferences/water2023/action-agenda
+, with 33 EU commitments
+https://data.consilium.europa.eu/doc/document/ST-7443-2023-INIT/en/pdf
+.
+
+(73)
+
+ 
+   
+https://docs.un.org/en/UNEP/EA.6/RES.13
+.
+
+(74)
+
+ 
+   
+UN_System-wide_Strategy_for_Water_and_Sanitation_July2024_vs23July2024.pdf
+.
+
+(75)
+
+ 
+   The Convention on the Protection and Use of Transboundary Watercourses and International Lakes.
+
+(76)
+
+ 
+   European strategy to tackle the most pressing global challenges and to mobilise up to EUR 300 billion of investments for sustainable and high-quality projects 
+https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/stronger-europe-world/global-gateway_en
+.
+
+(77)
+
+ 
+   JOIN(2025) 135/3, Joint Communication to the European Parliament and the Council - The European Union's strategic approach to the Black Sea region.
+
+(78)
+
+ 
+   
+Treaty establishing Energy Community - Energy Community Homepage
+
+(79)
+
+ 
+   
+https://www.eib.org/files/press/CommitmenttoWaterSecuritywithlogos.pdf
+ 
+
+(80)
+
+ 
+   
+https://www.cbd.int/gbf/targets

@@ -1,0 +1,1401 @@
+EUROPEAN COMMISSION
+
+Brussels, 7.6.2023
+
+COM(2023) 298 final
+
+COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS
+
+on a comprehensive approach to mental health
+
+Mental health is an integral part of health. It is a state of well-being in which individuals realise their own abilities and can cope with the stresses of life and contribute to community life. Mental health is a precondition for a productive economy and inclusive society and goes beyond individual or family matters.
+
+Mental health or ill-health does not happen in a vacuum, it is conditioned by personal and external factors. It reflects and is influenced by the state of our society, our economy, our environment and also by the state of world affairs around us. The European Union (EU) and the world have undergone unprecedented crises, such as the COVID-19 pandemic and Russia’s war of aggression against Ukraine, energy crisis and inflation, shaking everyday reality, the expectations and the confidence of people. The triple planetary crisis (climate change, biodiversity loss and pollution) is worsening. Increased digitalisation, demographic change and radical shifts in the labour market bring challenges alongside opportunities. Beyond tackling these crises, addressing mental health challenges is key to boosting the resilience of individuals and of the population.
+
+Better mental health is both a social and an economic imperative. Before the COVID-19 pandemic, mental health problems affected around 84 million people in the EU (one in six people), at a cost of EUR 600 billion or more than 4% of GDP
+1
+, with significant regional, social, gender and age inequalities. When it comes to the workplace, 27% of workers have reported experiencing work-related stress, depression, or anxiety during the previous twelve months, which increases the chances of absenteeism with serious impact on workers’ lives and business organisation. The cost of non-action on mental health is already significant and unfortunately, it is forecasted to rise even more, in line with global stressors. Already in 2019, more than 7% of people in the EU suffered from depression
+2
+and 13% felt lonely most of the time.
+
+The pandemic was a serious threat to mental health, especially among young people and those with pre-existing mental health conditions. During the pandemic, people in the EU affected by loneliness doubled compared to pre-pandemic years, reaching 26% across some regions
+3
+. Increased loneliness and reduced social interactions, concerns about one’s own health and that of loved ones, uncertainty about the future, anxiety caused by fear and loss
+4
+ all generated post-traumatic stress disorders.
+
+Suicide is the second leading cause of death among young people (15-19 years of age)
+5
+after road accidents. In the EU, the annual value of lost mental health, in children and young people is estimated at EUR 50 billion
+6
+. 
+
+Behind these statistics lie millions of personal stories. Stories of children and teenagers for whom tablets and smartphones, along with social media platforms and messaging apps, have become integral to their lives, sometimes at the detriment of physical and mental health. Stories of socially excluded people facing discrimination. Stories of elderly people feeling lonely, of workers experiencing burnout; parents no longer able to cope and of people feeling isolated, because of who they are or where they live.
+
+According to the EU Charter of fundamental rights, everyone has the right of access to preventive health care and the right to benefit from medical treatment under the conditions established by national laws and practices. According to the European Pillar of Social rights, everyone has the right to timely access to affordable, preventive and curative health care of good quality.
+
+Part of a healthy society must be that people know that help can be found, and that support and affordable high-quality treatment can be accessed. It should be a major public policy goal to ensure that no one is left behind, that citizens have equal access to prevention and mental health services across the EU, and that reintegration and social inclusion guides collective action addressing mental health illnesses. Effective guidance, coordination, reinforced support and targeted action are needed to bring Europe closer to that goal. The analysis of demographic change can inform targeted interventions, as demographic factors can help to identify high-risk groups that may require specific support or resources, and tailor policy accordingly.
+
+Responding to this reality and to the citizens’ call for action on mental health in the context of the Conference on the Future of Europe, President von der Leyen announced a new initiative on mental health in the EU. As part of the Commission’s priority ‘Promoting our European way of life’, this initiative marks a turning point in the way mental health is addressed in the EU. The Commission is also responding to the call for action from the European Parliament following its resolution from 2022 on mental health in the digital world of work
+7
+calling on the EU institutions and Member States to recognise the scale of work-related mental health problems in the EU and to act accordingly. This Communication is the beginning of a new strategic approach to mental health, cross-sectoral in nature, going beyond health policy. It focuses on how to bring relief to people suffering from mental health and on prevention policies. It draws on three guiding principles that should apply to every EU citizen: (i) to have access to adequate and effective prevention, (ii) to have access to high quality and affordable mental healthcare and treatment, and (iii) to be able to reintegrate society after recovery.
+
+These guiding principles inform all aspects of this initiative and are directly mirrored in the chapters therein.
+
+Today’s comprehensive approach to mental health calls upon national and regional actors, health and non-health policy sectors and relevant stakeholders, ranging from patient and civil society organisations, to academia, and industry, to work together. It aims to put tools in place to drive change, including at global level, boost existing structures and monitor actions.
+
+It will support Member States in their efforts to achieve the World Health Organization (WHO) targets for non-communicable diseases by 2025
+8
+and the Sustainable Development Goals (SDG)
+9
+by 2030, including on mental health.
+
+a.Integrating mental health across policies
+
+A comprehensive approach must recognise the influence of biological and psychological factors, as well as the importance of the family, community, economy, society, the environment and security. This includes the role of the combination between work and care, the school and workplace settings as well as the digital world, the social (e.g. levels of violence experienced, gender, behaviour, education
+10
+), economic (e.g. instability, inflation, poverty and unemployment) and commercial (e.g. pressure from aggressive marketing) determinants of health.
+
+Consequently, policies in areas such as education, youth, arts and culture, environment, employment, cohesion, research and innovation, social protection, sustainable urban development, and the digital world, are needed to improve mental health and support mental health resilience. Obstacles to good mental health cannot be overcome within the health system alone
+11
+.
+
+Determinants of mental health interact with existing inequalities in society, putting some people at a higher risk of poor mental health than others. When discrimination based on gender, racial or ethnic origin, religion or belief, disability, age or sexual orientation, violence and hate act as cause for poor mental health, promoting equality in our societies is an important tool for prevention. The Commission adopted five equality strategies
+12
+ in 2020 and 2021 to make progress towards a Union of Equality. All strategies stress the risk of discrimination leading to poorer mental health. Childhood is a crucial stage in life in determining future mental health, as stressed in the EU Strategy on the rights of the child
+13
+, which calls for a comprehensive approach to prevent and protect children from any form of violence.  
+
+The 2022 European Year of Youth focused on re-establishing a positive outlook for young people and included activities supporting the mental health and well-being of young people. The European Year of Skills will promote during 2023 investment in training and upskilling to increase life opportunities and improve the adaptability of people and workers to change, which is of relevance to the promotion of a comprehensive approach to mental health.
+
+A mental health policy that delivers for all needs to work across relevant policy areas. For instance, there is a growing body of research pointing to the insight of inter-connectedness and reconnection to nature as having a positive impact on mental health. At the same time, the impact of pollution on mental health is widely recognised, including through air pollution or citizens’ exposure to toxic chemicals. The targets and actions under the European Green Deal to promote clean environment, re-naturalised and restored sites and urban greening, positively affect our physical and mental health.
+
+To remedy the risks related to the use of digital services, including risks related to mental health, the Digital Services Act
+14
+(DSA) creates a wide set of due diligence obligations applicable to online intermediaries. To allow targeted remedies and address public policy concerns effectively, the DSA recognises the specific risks related to serious negative effects on a person’s physical and mental well-being, as well as consequences at physical and mental development of children potentially caused by using these platforms. The largest platforms and search engines, i.e. those having more than 45 million of users in the Union, are obliged to assess the systemic risks that their services pose on mental health and adopt measures to mitigate the identified risks
+15
+. 
+
+The Commission is already supporting the transfer of relevant best practices from Member States and stakeholders to promote mental health across all policies in communities
+16
+ through the Expert Group on Public Health
+17
+.
+
+A study to analyse the effectiveness of upscaling policies on mental health and well-being in the Member States
+18
+ is underway to better support policy-making.
+
+FLAGSHIP INITIATIVES
+
+1. European Mental Health Capacity Building Initiative 
+
+§In 2023, the Commission will allocate EUR 11 million under the EU4Health programme to support Member States in building capacity for an approach that promotes mental health across all policies together with the WHO
+19
+.
+
+§The Commission will allocate EUR 10 million
+20
+ to support the role of stakeholders in promoting mental health in communities focusing on vulnerable groups, including children and young people and migrant/refugee populations.
+
+§In 2024, the Commission will launch a blueprint (toolkit) for a multi-disciplinary approach to mental health capacity building.
+21
+
+Member States are urged to adopt an approach that promotes mental health across all policies. Particular focus should be placed on promotion, prevention
+22
+, early intervention, addressing stigma, ensuring the social inclusion of people living with mental health problems. In addition, Member States should support programmes to help people for employment or take part in return-to-work programmes. The digital domain, including at the workplace, brings psychosocial risks significantly affecting people, organisations and economies
+23
+. Particular attention to the promotion of work-life balance is needed.
+
+b.Promoting good mental health, prevention and early intervention for mental health problems
+
+People experiencing mental health issues need to know where to ask for help. Today, available services and tools are scattered and vary largely across the EU. Also, they are not sufficiently visible and known to people. This needs to change.
+
+The promotion of good mental health, prevention of mental health problems and early interventions are more effective and cost-effective than treatment. Economic evidence for the effectiveness of investments in this approach is strongest for early interventions focusing on maternal and infant health, children and adolescents, mental health in the workplace (see chapter e), and the prevention of suicide and self-harm
+24
+. Research needs to be strengthened in this area to better recognise early signals of concern and Horizon Europe has an earmarked budget for this
+25
+.
+
+People's health is influenced by their life experiences and environments in which they spend their lives. Health determinants, from nutrition and physical activity, harmful consumption of alcohol, tobacco and drugs, as well as environmental, social and commercial determinants, including living conditions, better housing, clean air, access to sport, culture, and green areas, and a better work-life balance, as well as risks of violence all have an important impact on mental health.
+
+Physical activity and sports play an important role in the promotion of good mental health. The EU will continue to promote sport and health-enhancing physical activity, via the EU work plan for sport and the European Week of Sport.
+
+Early intervention can ensure timely support and may prevent further deterioration of wellbeing and mental health, especially among young people
+26
+. For example, early intervention can be key in recognising and addressing risk factors and signs of various forms of distress people may be experiencing. Also, a variety of settings, such as schools, workplaces, elderly homes and prisons, are key places for mental health promotion, prevention and  early identification and intervention. School-based programmes to promote mental health and well-being and involving a variety of actors and services
+27
+in the community, for instance, can identify and address problems at an early stage.
+
+The Commission will launch a call in 2023 for Member States and stakeholders to submit best practices on mental health promotion, prevention, early detection and early intervention, via the EU Best Practice Portal
+28
+. It will develop, together with Member States, initiatives to address the key behavioural, economic, social, environmental (including pollution) transgenerational and commercial determinants of mental health through collaborative work, under the ‘Healthier Together’ initiative
+29
+. It will support the development of guidance on early detection and intervention and the screening of vulnerable groups in key settings to be piloted by Member States
+30
+. The Commission will step up its work on brain research with the launch of new projects, including through the use of digital health data
+31
+, computing and simulation infrastructures
+32
+.
+
+FLAGSHIP INITIATIVES
+   
+
+2. European Depression and Suicide Prevention Initiative
+
+§The Commission will dedicate EUR 6 million to reducing the risk for people to experience severe mental health issues by supporting the development and implementation of depression and suicide prevention policies in Member States based on the exchange of best practice (2023). 
+
+3. Healthier Together initiative – mental health
+
+§The Commission will allocate EUR 8.3 million to strengthen the mental health strand of the ‘Healthier Together’ EU non-communicable diseases initiative, with the aim to support Member States’ actions on promoting mental health, creating supportive environments and policies, enhancing social inclusion and tackling stigma and discrimination associated with mental health issues
+33
+.
+
+4. Access gate for people experiencing mental health issues
+
+§The Commission will create an EU repository under the EU Best Practice Portal
+34
+ compiling Member States’ best practices to learn from each other and guide people towards effective care (hotlines, help points, etc).
+
+§To help people navigate through available support services, Member States will be invited
+35
+ to create national websites for people to have one point of reference to improve access to treatment, support and care. 
+
+5. European Code for Mental Health
+
+§The Commission will dedicate EUR 2 million
+36
+ to empower people experiencing mental health issues to take better care of their own and their families and carers’ mental health by providing a set of evidence-based recommendations that will be actively promoted and available online. 
+
+6. Developing joint Ecosystem for brain Research
+
+§The Commission will strengthen research on brain health, including on mental health, by working closely with Member States to create an ecosystem. This ecosystem would bring researchers and stakeholders together to facilitate and coordinate activities in order to maximise EU and Member States’ research investments.
+
+Member States are urged to use EU funding opportunities and to collaborate to implement initiatives and best practices on mental health promotion and prevention, to address the links between inequalities and mental health by increasing efforts to combat stigma, discrimination, hate speech and violence, and to provide adequate training, upskilling and reskilling of the health and social care workforce in the promotion of mental health and well-being. Countries should also deal with the challenges related to the prevention of mental health problems of vulnerable communities, reinforce early recognition of mental health issues, provide early interventions and support, and address the links between exclusion, inequalities and mental health by increasing efforts to combat discrimination, hate speech and violence.
+
+c.Boosting the mental health of children and young people
+
+Europe is witnessing a worsening of the mental health of our younger generations. During the COVID-19 pandemic, most children were kept out of classrooms and deprived of social interaction and physical activity, and depression among young people more than doubled
+37
+. Loneliness, an important component of well-being and mental health, has reached alarming levels. In 2022, one in every five people aged between 16 and 25 reported feeling lonely most of the time
+38
+.
+
+Child poverty can have detrimental effects on mental health. The Council Recommendation establishing a European Child Guarantee
+39
+addresses some of those challenges. Bullying prevention programmes in schools
+40
+ are an effective way to support the psychological well-being of children and young people.
+
+Young people are increasingly dealing with anxiety, sadness or fear, self-harm, low self-esteem, bullying and eating disorders. Forcibly displaced and migrant children, including those who have been forced to flee Russia’s war of aggression in Ukraine, and children who are victims of sexual exploitation, other crime and abuse, are particularly at risk. 
+
+Children are affected by different interconnected health, environmental, social and commercial determinants, and also by the consequences of online crimes such as online child sexual abuse. There are instances when children and young people face adversities during some of the most vulnerable and formative years of their lives, which can shape their health and mental health throughout their entire lifetime.
+
+Young people are also strongly preoccupied by climate change and biodiversity loss. A recent survey
+41
+ concluded that 75% of children and young respondents saw their future as “frightening”. At the same time, the study revealed that climate anxiety and distress were correlated with perceived inadequate government response and associated feelings of betrayal. The EU’s commitments to reaching climate neutrality by 2050 and to the Kunming-Montreal Global Biodiversity Framework are therefore are also important for our children’s mental health.
+
+Digital tools can have a positive impact on mental health (e.g. by providing access to information, support groups, and therapy services) but can also affect mental health negatively. A move towards a safer and healthier digital space for children
+42
+is needed. This includes: protecting them from inappropriate content, the intrusive harvesting of information and aggressive online marketing of unhealthy food, beverages, beauty standards and alcohol and tobacco, a prudent use of social media, addressing online child sexual abuse, access to illicit drugs and new psychoactive substances, with safeguards against cyberbullying, hate speech, excessive screentime and the digital editing of images; a well-balanced use of gaming, which helps to prevent compulsive use and negative effects on daily life.
+
+In relation to physical and mental development of children,
+43
+ the Digital Services Act
+44
+(DSA) recognises certain systemic risks stemming from the design or functioning of the service and systems, including algorithmic systems, of those services designated as “very large online platforms” or “very large online search engines”. Such risks may arise, for example, in relation to the design of online interfaces which intentionally or unintentionally exploit the weaknesses and inexperience of minors or which may cause addictive behaviour.
+
+For those platforms that are not designated as “very large”, the DSA also imposes targeted measures to better protect minors online by, for example, designing their interface or parts thereof with the highest level of privacy, safety and security for minors by default, adopting protection standards or participating in relevant codes of conduct. Furthermore, the DSA prohibits providers of online platforms presenting online advertising on their interface, when they are aware with reasonable certainty that the recipient of the service is a minor.
+
+The Better internet for children (BIK+) strategy
+45
+, complementary to the DSA, offers support for children’s mental health when online via the Safer Internet Centres and the BIK portal which offers a wealth of age-appropriate resources for children, families and teachers. These helplines of the Safer Internet Centres offer practical support and advice to children facing problems online, such as cyberbullying, grooming and disturbing content, and to their parents or guardians.
+
+Children are in a more vulnerable situation than adults to express their worries.  In line with the EU Strategy on the rights of the child, the Commission will present in 2024 an initiative on integrated child protection systems, which will encourage all relevant authorities and services to better work together in a system that puts the child at the centre. Children will be consulted in its preparation, including on the mental health dimension, under the newly created EU Children’s Participation Platform. The voice of children should be heard, and for this, targeted tools and initiatives are necessary. The Commission will support the implementation of the EU strategy for a more effective fight against child sexual exploitation and abuse
+46
+ by improving prevention, assistance to victims, and investigation and prosecution efforts. To address the specific challenges of children and youth living in rural or remote areas and particularly affected by insufficient mental health support services, the Commission will include dedicated actions under the EU rural action plan. It will ensure that the European Solidarity Corps will continue to support activities related to prevention, promotion and support in the field of health, in line with the HealthyLifeStyle4All
+47
+, with a special focus on supporting vulnerable or disadvantaged population groups.
+
+Prevention and early interventions by professionals in contact with children, such as teachers, can promote the mental health resilience of children and young people and mitigate potential harms, in particular by giving them a voice. Nurseries and schools represent an ideal setting to equip young children with the skills to regulate their emotions and develop their understanding of mental health, developing skills, like empathy and building self-awareness and self-confidence. This requires adequately trained staff, a worthy investment that can help reduce stigma around mental health issues and build a more resilient and cohesive society. School-based initiatives, including holistic approaches to mental health have been demonstrated to improve student’s mental health, cognitive skills, attention span, academic outcomes and resilience to stressors
+48
+. The Child Helpline International
+49
+provides mental health support to children which can include emotional, psychological and sometimes legal support to children who contact the helpline. 
+
+The Commission will support Member States in implementing the European Child Guarantee, in line with their national action plans and through EU funds, in particular European Social Fund Plus, and by facilitating the exchange of good practices between the Child Guarantee Coordinators. Countries will also be supported in their effort to strengthen national capacity building for health care and other professionals, and invited to use the financial opportunities of the EU budget to increase action on prevention and early interventions outside the health sector, namely in the educational setting. The Commission will also monitor progress via the European Semester.
+
+The Commission will continue to implement the EU Youth Strategy (2019-2027)
+50
+to achieve better mental health and well-being and end stigmatisation.
+
+The Commission will strengthen mental health promotion in educational settings by supporting the implementation of the Pathways to School Success initiative
+51
+. The Commission’s expert group on supportive learning environments for groups at risk of underachievement and for supporting well-being at school will develop guidelines in 2024 on a systemic, whole-school approach for well-being for policy-makers at local, regional and national level and for schools
+52
+. The Commission will propose a self-assessment and self-improvement toolkit on well-being at school and will put forward recommendations for awareness raising activities at national and EU level. Funding opportunities for projects will be available through Erasmus+ and European Solidarity Corps, to foster mental health and well-being of young people and the Erasmus+ Training and Cooperation long-term Activity on “Mental Health in Youth Work” will continue to raise awareness and develop mental health literacy.
+
+ FLAGSHIP INITIATIVES
+
+7. Child and Youth Mental Health Network
+
+§In 2024, the Commission will support the creation of a child and youth mental health network to exchange information, mutual support and outreach via youth ambassadors
+53
+. 
+
+8. Children Health 360
+
+§In 2023, the Commission will develop a prevention toolkit focusing on prevention, early intervention of children at risk and addressing the interlinks between mental and physical health and key health determinants
+54
+. Special attention will be paid to the risks of bulling in educational settings. 
+
+9.Youth First Flagship (A Technical Support Instrument 2023 Flagship
+55
+)
+
+§In 2023, the Commission will develop tools for children and young people to actively address, for example, healthy lifestyles and the prevention of mental health problems in close cooperation with children and young people
+56
+(EUR 2 million).
+
+10. Healthy Screens, Healthy Youth
+
+The Commission will support the following activities:
+
+§continuation of implementation of the Better Internet for Kids strategy (BIK+)
+57
+; 
+
+§practical guidance for authorities on improving the protection of children in the digital world, complemented by a monitoring of the impact of the digital transformation on children’s well-being through the Better Internet for Kids portal;
+
+§code of conduct on age-appropriate design
+58
+to be facilitated by the Commission building on the new rules in the DSA;
+
+§facilitate continuation and reinforcement of the work under the code of conduct on countering illegal hate speech online, under the DSA
+59
+.
+
+The Commission encourages Member States to collaborate on policies and initiatives targeting the specific challenges related to children and young people’s mental health, and to address the links between mental health problems and health determinants and use of digital tools. The Commission invites Member States to identify children as a priority target group in their national mental health strategies and build up networks with families, schools, youth, and other stakeholders and institutions involved in mental health of children. Member States are urged to ensure that children have better access to mental health services, as well as equal and easy access to healthy nutrition and regular physical activity, live in safe and supportive environments, and are protected from consumption of alcohol, tobacco and drug-use problems and negative impacts of digital use. Member States are invited to implement innovative approaches and best practices identified in the ‘Healthier Together’ initiative on the mental health of children and young people and participate in the initiative’s collaborative work to address the impact of health determinants, including economic, commercial, social and environmental determinants, and the impact of the digital transformation on children and young people’s mental health and wellbeing.
+
+d.Helping those most in need
+
+Mental illness is associated with many forms of inequalities and special attention must be paid to people in vulnerable situations. Individuals may belong to one or more vulnerable groups at the same time, such as for example single mothers in poverty or disabled people recovering from severe illness.
+
+In the context of challenging demographic changes mental health, social and long-term care services must be accessible, affordable, integrated
+60
+, community-based and user friendly. Older people
+61
+ should be empowered to lead a healthy and active lifes, manage their own mental health and to increase their social interactions
+62
+and reduce loneliness. Creative solutions such as intergenerational housing, are to be encouraged.
+
+The Commission is raising awareness on the need to address loneliness and social isolation to promote good mental health
+63
+, and will support Member States through the collection and transfer of best practices via the EU Best Practice Portal.
+
+Women are almost twice as likely as men to experience depression. This is due to a multitude of factors such as biology, life circumstances and cultural stressors.
+64
+ 
+
+Victims of gender-based violence (GBV) are particularly vulnerable. The Commission will enhance the protection and support to victims of gender-based violence, including cyber violence, through the implementation of the EU’s upcoming obligations under the Istanbul Convention
+65
+ and the EU’s future directive on violence against women and domestic violence
+66
+. The Commission will address the prevention and combating of harmful practices against women and girls
+67
+and establish an EU network on the prevention of gender-based violence and domestic violence. Postnatal depression and other mental health issues that can arise during pregnancy and afterwards must be addressed, to protect the mental health of both children and women. 
+68
+The EU-funded HappyMums project
+69
+will explore the physiological mechanisms to enable effective science-based, clinical interventions. Challenges such as unequal access to employment, including non-permanent contracts and/or to equal pay, unequal sharing of domestic and family care responsibilities, and economic pressures and dependencies experienced by women must also be tackled. The Commission will contribute to improving the situation by ensuring that Member States fully and correctly transpose and apply the EU’s legislation on equal opportunities and equal treatment of women and men in matters of employment and occupation, on work-life balance for parents and carers as well as on pay transparency.
+
+Discrimination on the grounds of sexual orientation, gender identity, gender expression, or sex characteristics can also have an impact on mental health, especially for young people. Psychological distress that comes from experiences of marginalisation, discrimination and stigmatisation (‘minority stress’) increases the risk of suicidal behaviour, self-harm or depression, and will be addressed in line with the LGBTIQ equality strategy 2020-2025
+70
+.
+
+The physical and sexual violence and threats experienced by victims of trafficking in human beings results in long-term mental health consequences
+71
+. The Directive on preventing and combating trafficking in human beings recognises the special needs of victims with mental health problems and provides specialised health services, and long-term recovery and rehabilitation support. The Commission facilitates and promotes programmes supporting victims in their recovery and re-integration
+72
+, such as health and psychological services, through the Asylum, Migration and Integration Fund
+73
+.
+
+Many health issues can lead to or exacerbate mental health problems, for example among cancer patients considering it is the second leading cause of death. Cancer does not just affect your body, it also affects your mind and feelings and often leads to depression, anxiety and fear.
+
+Disabilities can often expose individuals to a higher risk of developing mental health problems and this may require that approaches are adapted in line with the
+
+strategy for the rights of persons with disabilities
+
+74
+, that refers to actions particularly relevant for people with mental and intellectual disabilities, such as promoting that Member States implement good practices of deinstitutionalisation in the area of mental health.
+
+Autonomy, independence and participation in society are related to mental health, which is especially relevant for older people and people with disabilities. Therefore, it is crucial to ensure physical, social and financial accessibility, including by improving access to labour market and facilitating their return to work. Two of the Disability Employment Package guidelines for employers are dedicated to working with chronic diseases and the return to work
+75
+. The Commission will also issue guidance to Member States with regard to independent living and inclusion in the community before the end of 2023, and in 2024, it will present a framework for Social Services of Excellence for persons with disabilities, including mental health.
+
+The symptoms of post COVID-19 condition, commonly known as long COVID, have been reported to have a negative impact on mental health
+76
+ and poor mental health can increase the risk of developing long COVID. The Commission will set up a network on long COVID with Member States’ experts in 2023.
+
+Refugees and displaced persons, notably those fleeing from war; persecution or conflict (such as displaced people from Ukraine) are more prone to develop mental health problems
+77
+ and early responses are needed to reduce distress. In this context, the Commission will continue to contribute to strengthen psychosocial support for displaced people and in particular to the provision of psychological first aid to people affected by the Russian war of aggression against Ukraine.
+78
+
+The Commission will launch a call for proposals under the Asylum, Migration and Integration Fund
+79
+aiming at reducing obstacles for migrants to access health services, including mental health services and psychological support.
+
+Mental ill-health is common among people experiencing homelessness
+80
+and long-term and repeated homelessness reinforces mental ill-health and disability. Within the framework of the European platform on combating homelessness mental health challenges are being addressed. 
+
+Roma may be at a higher risk for mental health problems, given their often difficult situation arising from poor socio-economic income, circumstances and exclusion, lack of access to education and employment, inadequate housing, segregation, exclusion and discrimination, including in health-related aspects. The EU Roma strategic framework for equality, inclusion and participation includes the sectorial objective of improving Roma health and increasing the effective equal access to quality healthcare and social services.
+81
+
+Victims of crimes, in particular those who have suffered considerable harm due to the severity of the crime or because of their personal characteristics, such as victims of terrorism, victims of trafficking, victims of hate crime, child victims or any other victim in need of psychological aid, should have access to such aid free of charge and for as long as necessary. Within the upcoming revision of the Victims’ Rights Directive
+82
+, the Commission is working on strengthening victims’ access to psychological aid, notably by making psychological aid free of charge for as long as necessary for all victims in need of such help.
+
+.
+
+People living in rural or remote areas, such as farmers, have particular mental health challenges associated with the risk of disconnection and lack of access to mental health services. Suicide rates among farmers are 20% higher than the national average in certain Member States
+83
+, which is why support will be offered to strengthen their resilience. CAP funds can support awareness raising activities including in the area of mental health for example via farm advisory services. In addition, other funds could also be mobilised, such as the European Social Fund+ or the European Fund for Regional Development, to enhance the investments into the social support services in rural and remote areas and thus guarantee that they are accessible to farmers and agriculture workers in need, regardless of their place of residence.
+
+FLAGSHIP INITIATIVES
+
+11. Protecting Victims of Crime
+
+§By Q2 of 2023, the Commission will seek to improve the access of crime victims to psychological and mental health support by revising the Directive establishing minimum standards on the rights, support and protection of victims of crime.
+
+12. Cancer Mission: platform for young cancer survivors
+
+§The Commission will provide young cancer survivors with a platform to help them to boost their mental health, via the Horizon Europe Cancer Mission
+84
+.
+
+§The Commission will support collaborative work between Member States to provide psychological support to cancer patients, their carers and families (EUR 8 million)
+85
+.
+
+The Commission encourages Member States to improve access to digital tools with proven usability for older people to improve their mental health and help them participate in social life. Member States are encouraged to collect data on the mental health status of people in vulnerable situations, including homeless people, and on accessibility of services in marginalised and remote and disadvantaged areas. The Commission urges Member States to ensure equal access without barriers to quality and affordable healthcare and social services, especially for those groups most at risk or those living in marginalised or remote localities
+86
+and to address the specific situation for Roma, by improving access to mental health services and primary prevention measures, for example through awareness raising campaigns. In addition, the Commission urges Member States to implement good practices for de-institutionalisation, including for children, and to strengthen the transition to community-based services.
+
+e.Tackling psychosocial risks at work
+
+People spend a significant part of their time at work and a good work environment is crucial for health. Stress and psychosocial risks at work can impact mental health and lead to decreased job satisfaction, conflict, lower productivity, burnout, absenteeism, and turnover. Mental health is a precondition for work ability, competence and productivity. However, around half of European workers consider stress to be common in their workplace and it contributes to around half of all lost working days. At the same time, psychosocial risks and work-related stress are among the most challenging issues in occupational safety and health.
+
+New forms of work brought by digitalisation and accelerated by the Covid-19 pandemic (such as platform and remote work) have affected workers’ mental health, even if the flexibility of such forms of work could also prove beneficial. Essential workers, and in particular health and social care workers, appeared to be the most at risk of being exposed to work-related psychosocial risks in the post-pandemic context
+87
+.
+
+Employers have a key role in ensuring the safety and health of workers as defined in EU Occupational Safety and Health (OSH) legislation
+88
+. The Commission has addressed psychosocial risks and mental health at work over the years in its OSH strategic frameworks
+89
+. There is a particular focus on mental health and psychosocial risks in the Communication on an “EU strategic framework on health and safety at work 2021-2027”
+90
+. 
+
+Moreover, the need to reflect on the way forward as regards the right to disconnect, as an integral part of reducing work-related stress and promoting a better work-life balance, the right to return to work after mental illness as well as a psychologically safe working environment are both crucial to promoting mental health and to creating a more inclusive society.
+
+The Commission welcomes the 2022-2024 work programme of the European cross-industry social partners and the ongoing negotiation of a new agreement on teleworking and the right to disconnect, intended to be put forward for adoption in the form of a legally binding agreement implemented via a Directive. The Commission will continue to support social partners in their endeavour to negotiate a new agreement on telework and the right to disconnect, facilitating discussions and the identification of best practices, and by assessing existing practices and rules related to the right to disconnect. The on-going negotiations of social partners are linked to the resolution of the European Parliament of January 2021 on the right to disconnect on which the Commission is committed to follow-up.
+
+The Commission will ensure that EU-OSHA
+91
+ finalises the overview on OSH and digitalisation which covers mental health at work and implements an OSH overview on psychosocial and mental health at work, including information on good practices on returning to work and working with mental health conditions and of an overview on OSH in the Health and Care sectors. The Commission will ensure that EU-OSHA provides updated guidance as a follow-up to the 2018 publication “Healthy workers, thriving companies - a practical guide to well-being at work”
+92
+, and that it carries out a project on good practices on supporting workers with a work- or non-work-related mental health condition to stay in work or successfully return to work following a sickness absence, with a report by 2024.
+
+The occupational safety and health (OSH) Summit, held on 15-16 May 2023 by the Swedish Presidency and the European Commission, identified psychosocial risks and mental health at work as growing OSH issues that need intensified further consideration
+93
+.  The Commission will follow up on these conclusions of the Summit to improve mental health at work in full respect of the tripartism principle. It will also continue the work of the review of the Directive on the workplace (89/654/EEC)
+94
+  and the Directive on work with display screen equipment (90/270/EEC)
+95
+. Finally, the Commission will support the implementation of the European Care Strategy
+96
+with actions that contribute to the mental well-being of carers and those being cared for.
+
+FLAGSHIP INITIATIVES
+97
+
+13. EU-level initiative on the psychosocial risks
+
+§The Commission will conduct a peer review on legislative and enforcement approaches to address psychosocial risks at work in the Member States with a view, and subject to its outcomes and the input of social partners, to present an EU-level initiative on the psychosocial risks in the medium term.
+
+14. EU work place campaigns
+
+§EU-wide EU-OSHA Healthy Workplaces Campaign - Safe and healthy work in the digital age, including a focus on mental health at work (2023-2025);
+
+§EU-wide EU-OSHA Healthy Workplaces Campaign on psychosocial risks and mental health at work with a focus on new and overlooked occupational sectors, including agriculture and construction, and groups including low skilled, migrant or young workers (2026-2027/28).
+
+Member States are encouraged to raise awareness of the mental health issues of farmers and populations in rural areas with support from the common agriculture policy and develop and implement policies and best practices to help focus on prevention and strengthen the resilience of essential workers, including health professionals, teachers and farmers. To help Member States, the Commission will ensure that EU OSHA produces a report that addresses psychosocial risks in the agricultural sector.
+
+Member States are also encouraged to further promote the use of SLIC Guide
+98
+with regard to prevention of psychosocial risks for increasing effective monitoring and inspections of OSH obligations in this regard, as well as to participate in SLIC training events for labour inspectors. 
+
+f.Reinforcing mental health systems and improving access to treatment and care
+
+Health systems need to reinforce their capacity to lead action on mental health, from prevention, to early intervention, to diagnosis, treatment and management of care and support to the reintegration of patients. Reinforcing mental health systems and improving access to treatment and care is therefore a key objective.
+
+The right of everyone to timely access to affordable, preventive and curative care of good quality is one of the key principles of the European Pillar of Social Rights. People suffering from mental health problems in the EU do not often have easy and equal access to support and it often entails costs that are not bearable for many. There are disparities between and within Member States as regards the capacity of health systems to meet the needs of people with mental ill-health
+99
+. Inequalities related to gender, ethnicity, geographical location, including the urban-rural divide, education, age and sexual orientation, gender identity or expression and sex characteristics have an important impact on the population’s mental health and their access to adequate care.
+
+It is essential to identify best practices and innovative solutions to improve the availability, quality, accessibility and affordability of mental health care. To address inequalities, tailored care should be provided to people in vulnerable situations, including displaced people, refugees, migrants, persons with disabilities and LGBTIQ people. The special care needs of people with comorbidities should also be addressed to facilitate access to effective treatments, in particular for people with drug-use disorders, in line with the EU Drugs Strategy 2021-2025 and the related Action Plan.
+
+Reinforcing the training of the health workforce will be essential to continue to improve skills and the quality of care but also to reduce stigma and discrimination and to increase the resilience of one of the most pressured sectors of the working population. The EU Year of Skills offers a unique opportunity for stakeholders to boost training of professionals in the mental health area.
+
+The use of digital tools (e.g. telemedicine, advice hotlines) should be explored for those people requiring better information and care, including in rural areas.
+
+Social prescribing is an innovative approach to improve well-being and health, including mental health. At the individual level, social prescribing gives a person the knowledge, motivation and confidence to better manage and improve their own health and well-being 
+100
+. This approach can be applied in the primary care setting, where doctors or other health professionals can prescribe activities that match with the person’s needs and interests, such as spending time in nature, sports, yoga or social and cultural activities
+101
+. 
+
+The Commission will continue to develop actions to support Member States in addressing unmet needs for medicines and will review the potential of telemedicine for improving access to mental health services
+102
+.  A mental health section will be included in the 2023 country health profiles, under the State of Health in the EU project. In addition, the Commission will launch a voluntary collaboration process with Member States (via the Open Method of Coordination), to strengthen linkages between culture and mental health. Finally, the potential of new technologies for the prevention and treatment of mental ill-health will be explored via the Expert Group on Health Systems Performance Assessment
+103
+.
+
+Data collection and monitoring needs to be strengthened to facilitate informed decision-making. New statistics and indicators should be developed and gradually embedded into policymaking to reflect issues such as inequalities, physical and mental health and nature’s value to people and to assess the impact of actions and funding. This will help to monitor the progress towards well-being, facilitate the communication of political challenges and the options to address them in a people- and planet-centred manner
+104
+.
+
+Member States already signalled strong need for support in the areas of mental health workforce planning and/or capacity building, monitoring and evaluation of mental health policy, and mental health promotion and prevention (Figure 1)
+105
+.
+
+Figure 1 – Priority needs of Member States for capacity building (27 EU Member States, Norway and Iceland)
+
+To address these needs, financial support at EU level will be mobilised to allow Member States to strengthen their capacity to act. This will include more and better trained professionals to deal with mental health problems. It will also imply a shift from institutionalised to community-based care.
+
+Several Member States have included under their Recovery and Resilience Plans measures to strengthen mental healthcare for their population. This is in line with Country-Specific Recommendations adopted under the 2020 European Semester calling on all Member States to boost the resilience of their health systems. In the spring 2023, the Commission proposed Country Specific Recommendations advocating healthcare reform for six Member States. The country reports for an additional six Member States recognized the need to further improve healthcare system to complement the Recovery and Resilience Plans. Moreover, all country reports adopted under the European Semester contain a thematic section covering population health and health systems in Member States, highlighting in selected cases mental health challenges and planned reforms. The European Semester will continue to monitor developments in healthcare at national level.
+
+FLAGSHIP INITIATIVES
+
+15. Initiative for More and Better trained Professionals in the EU
+
+§As of 2023 the Commission will strengthen training for healthcare and other professionals, such as teachers and social workers. A new cross border exchange programme for mental health professionals will also be launched through dedicated funding support under the EU4Health programme (EUR 9 million). This should allow to have around 2000 professionals trained across the EU by 2026 and on average 100 exchanges per year.
+
+16.Technical Support for Mental Health Reforms across several sectors
+
+The Commission will:
+
+§In 2024, increase the availability and affordability of mental health services for people by offering, upon demand, technical support to Member States to design and implement reforms to improve the availability of integrated cross-sectoral mental health services through the technical support instrument
+106
+.
+
+17. Gathering Data on mental health
+
+§As of 2025, the Commission will ensure that the European Health Interview Survey (EHIS) includes additional data on mental health to ensure strong monitoring and assessment of progress on mental health across the EU.
+
+The Commission encourages Member States to ensure access to affordable mental healthcare, including by telemedicine means and in cross-border settings. National authorities should collaborate on developing and implementing projects to improve mental health services and community-based care and de-institutionalisation
+107
+and are invited to develop referral pathways to mental health professionals, also taking into account the work of other service providers. 
+
+g.Breaking through stigma
+
+Stigma and discrimination exacerbate the personal and economic impacts of mental ill-health. Discrimination towards people with mental health problems is common, especially in social media but also in workplaces with 50% of workers considering that disclosing a mental health condition would have a negative impact on their career
+108
+.
+
+The principles of re-integration and social inclusion of those affected by mental health problems have to guide our action. Investing in improving awareness and understanding of mental health, including mental health and empathy training in school curricula are key to improving the situation, with the involvement of all stakeholders.
+
+The annual European Mental Health Week (taking place in May) and World Mental Health Day
+109
+(10 October) are occasions to specifically address stigma at EU level.
+
+Arts and culture are important in promoting the positive mental health and well-being of individuals and society in general by supporting social inclusion and reducing mental health stigma
+110
+. They may complement more traditional support for mental health problems and may contribute to the prevention of mental health problems and to addressing mental health stigma. The Commission will support the Member States to raise awareness on the positive role of cultural and artistic activities in improving mental health and overall well-being, for example, through a dedicated event showcasing arts and culture as new instruments for well-being and mental health.
+
+FLAGSHIP INITIATIVES
+
+ 
+
+18. Tackling stigma and discrimination
+
+The Commission will allocate EUR 18 million to
+111
+:
+
+§ improve the quality of life of patients, their families and (in)formal carers, including cancer patients, with a particular focus on addressing stigma and discrimination by supporting Member States to identify and implement best practices;
+
+§with the same objective it will support stakeholders to implement projects, such as awareness-raising activities to break through stigma and address discrimination, ensure social inclusion, protect the rights of patients, focusing on vulnerable groups; 
+
+§develop EU guidance on breaking through stigma and tackling discrimination with the Member States under the Expert Group on Public Health and stakeholder groups;
+
+§introduce communication activities to promote awareness in the fight against stigma.
+
+The Commission encourages Member States to develop communication campaigns to demystify and break through stigma, and to develop measures to counteract stigma and discrimination by helping individuals reintegrate into employment, empowering patients to access the services that best meet their needs and disseminating information on the use of legal instruments to tackle discrimination. Awareness should be raised (decision makers, employers, health care professionals, other professionals and the general public and healthcare professionals on mental health and stigma, especially of people in vulnerable situations) and community activities (sports, the arts, nature) should be supported that help to break through stigma and support mental health rehabilitation. Member States should support policies encouraging the integration of people with mental health in the community and on the labour market, including by social economy activities.
+
+h.Fostering mental health globally
+
+Safeguarding and promoting mental health is not just a priority for the EU, it is also a global issue and one where the EU can lead by example, making targeted contributions at international level and fostering convergence where appropriate.
+
+At the EU-US Trade and Technology Council of 30 and 31 May 2023, the EU and the United States expressed the shared view that online platforms should exercise greater responsibility in ensuring that their services contribute to an online environment that protects, empowers and respects children and youth and take responsible actions to address the impact of their services on children and youths’ mental health and development.
+112
+
+The EU Global Health Strategy
+113
+ provides global, national and regional actions intended to facilitate achievement of the health-related UN SDGs, with a focus on three interrelated priorities: (1) deliver better health and well-being of people across the life course; (2) strengthen health systems and advance universal health coverage; and (3) ensure public health security, including mental health and psycho-social support. The focus should be on strengthening primary health care where the availability of mental health services is essential.
+
+The Youth Action Plan in EU external action (2022-2027)
+114
+, recognises health and well-being as a prerequisite for young people to realise their full potential and participate in society. It puts forward health, mental and physical well-being at the core of its “empower pillar”. In parallel, mental health and psychosocial support (MHPSS) should be an integral part of measures to strengthen national health systems in partner countries, if appropriate, supporting global public health interventions e.g. the Global Fund to fight AIDS, Tuberculosis and Malaria
+115
+, the Spotlight Initiative on Gender-Based Violence
+116
+or in the context of EU humanitarian aid. According to the WHO, more than one in five people in post-conflict settings suffers from depression, anxiety or post-traumatic stress disorder
+117
+. Mental health needs also arise in situations of displacement and natural disasters. Therefore, MHPSS is an essential element of a comprehensive crisis response, integrated in the EU funded humanitarian aid operations with EUR 111 million dedicated to this priority since 2019. 
+
+The EU also spurs others to action by mobilising and raising the awareness of donors and partners on the importance of providing quality MHPSS in humanitarian emergencies. Following the successful engagement in the Middle East and North African region, outreach and capacity building sessions will be organised in other regions, starting with Latin American and Caribbean, before the end of 2023.
+
+Furthermore, the Commission is building the capacity of stakeholders through training and dissemination of the Interagency Standing Committee (IASC) Minimum Service Package on MHPSS
+118
+. This key reference tool was developed by the humanitarian community to set the minimum quality and facilitate the roll out of impactful and timely mental health interventions in crisis situations.
+
+In Ukraine
+119
+, the Commission already supports community centres for displaced children and their caregivers, and also children in institutions, to help them re-establish some level of normality and routine. However, the long duration of the aggression and its devastating effect is accelerating mental health impacts for people fleeing the war in the EU and for those displaced within Ukraine, which calls for determined and ambitious support.
+
+Ukrainian children are currently subject to the trauma of war, often leaving them with profound psychological scars. The Commission will, together with Ukraine, establish a specialised e-learning program for paediatricians and primary care medical staff. Through this initiative, healthcare professionals will get equipped with the necessary skills to provide trauma care and improve children’s mental health conditions. Specialised rehabilitation services will also be offered to distressed children in both Ukraine and the EU.
+
+The Commission also supports humanitarian partners to increase their capacity to address the mental health needs of conflict-affected populations, including in the Zaporizhzhia, Kharkiv, Dnipro and Mykolaiv oblasts. Under the EU4Health programme, in 2022 a contribution agreement of EUR 28.4 million with the International Federation of Red Cross Societies was allocated to provide psychological first aid, and four projects
+120
+(total of EUR 3 million) are being carried out by stakeholders implementing best practices to improve mental health and psychosocial wellbeing in migrant and refugee populations. For 2023, over EUR 10.6 million is programmed under EU4Health to improve access to health care and for the prevention of non-communicable diseases, in particular mental health issues. The Commission will also support Member States and stakeholders in the implementation of the best practice iFightDepression
+121
+which includes an online self-management programme that can help displaced people, including those from Ukraine, to self-manage their symptoms.
+
+As humanitarian assistance alone cannot meet the potential long-term needs of forcibly displaced people, including healthcare, the Commission supports its partner countries to integrated forcibly displaced communities into existing national service delivery structures. This integration is done in a way that ensures equal and fair access of refugees to the services addressing their needs, including on mental health, post-traumatic-stress, and gender-based violence. The EU’s substantial assistance to address the needs of migrants also includes psycho-social support, particularly for the most vulnerable, including children, victims of war, trafficking, stranded migrants and returnees.
+
+The Commission supports a comprehensive approach to the promotion and protection of mental health and psychosocial well-being of learners, and their teachers and caregivers through education actions. The Commission is a main donor of Education Cannot Wait that considers MHPSS a key priority of its work and of the Global Partnership for Education that invests in strengthening links between the health and education sectors.
+
+The Commission will continue to mainstream mental health in measures to strengthen health systems at regional, national and global level, in line with efforts towards localisation and the triple humanitarian-development-peace nexus, and ensure that refugees, people on the move and displaced people in post-emergency situations in partner countries have access to MHPSS at the same level as the host communities.
+
+FLAGSHIP INITIATIVES
+
+19. Mental health Support for Ukraine’ displaced and affected people
+
+·The Commission will contribute to the provision of psychological first aid to people affected by the Russian war of aggression against Ukraine deepening the collaborative work with the International Federation of Red Cross and Red Crescent Societies
+122
+(EUR 28 million). The Commission will seek to reinforce its financial support to strengthen psychosocial support for displaced people from the war. Options for training (online) of first responders, teachers, and social workers in psychological first aid and psychosocial support will also be explored to better help those in need. An additional EUR 0.5 million will be allocated to strengthen psychosocial support for affected people in emergency settings.
+
+·The Commission will, together with Ukraine, establish a specialised e-learning program for paediatricians and primary care medical staff to support Ukrainian children suffering from stress and anxiety because of the war. Through this initiative healthcare professionals will get equipped with the necessary skills to provide trauma care and improve children’s mental health conditions.
+
+·The Commission will work with Member States to offer provision of affordable psychosocial support available to the people who fled the war, to complement the healthcare already offered under the temporary protection directive.
+
+20. Supporting the dissemination of the Inter Agency Standing Committee
+123
+
+124
+Minimum Service Package on MHPSS:
+
+·The Commission will continue to support the dissemination of a Minimum Service Package intended to support humanitarian actors to deliver quality care in humanitarian emergencies. It provides guidelines on how to integrate timely, coordinated and evidence-based mental health services into overall humanitarian response.
+
+EU funding for mental health
+
+Budget to support mental health should match the magnitude of the challenge. EU and MS need to devote adequate resources to ensure people in need are helped, as a social and economic imperative.
+
+The Commission is mobilising all relevant financial instruments of the EU budget under the 2021-2027 Multiannual Financial Framework (MFF) to address key mental health challenges and to support the flagships and actions identified in this Communication. Furthermore, Member States may benefit from the funds available through the Recovery and Resilience Facility
+125
+to finance reforms and investments on health, including mental health.
+
+In total, EUR 1.23 billion of EU support to mental health activities have been identified and are available to finance activities directly or indirectly promoting mental health, from research to awareness campaigns, from capacity building and transfer of health best practices to psychological support to cancer patients and Ukrainian refugees. The impact of these projects and programmes will be regularly monitored. This not only requires having reliable, comparable and recent data but also indicators, monitoring and evaluation systems, to ensure follow-up and accountability.
+
+For 2022 and 2023, EUR 69,7 million has been allocated through the EU4Health Programme
+126
+ ) for actions that promote good mental health. This includes EUR 51.4 million under the 2022 work programme
+127
+, to support capacity-building initiatives in Member States and address the mental health of vulnerable groups and the EUR 18.3 million under the EU4Health 2023 work programme to support collaborative work between the Member States and to provide psychological support to cancer patients, their carers and families
+128
+.
+
+Funding of EUR 765 million in funding is mobilised through the Horizon 2020 and Horizon Europe
+129
+programme to support research and innovation projects on mental health. 
+
+National, regional and local authorities can also make use of cohesion policy funding, in particular the European Social Fund Plus (ESF+) and the European Regional Development Fund (ERDF), to strengthen equal access to health care by investing, for example, in relevant infrastructure and equipment, personal assistants, mobile teams, help lines, social workers
+130
+ The Technical Support Instrument (TSI) is available to provide technical support to Member States for projects on mental health (EUR 2 million in 2023). In 2024, the Commission intends to mobilise further resources from the TSI to support capacity building for mental health on a demand driven basis in the Member States.
+
+Funding (EUR 3.3 million) has been made available under the EU’s “Creative Europe programme” for projects on culture, well-being and mental health, and EUR 28 million has been mobilised to support mental health and psychosocial support activities in emergency and humanitarian settings (European Civil Protection and Humanitarian Aid Operations). The Citizenship, Equality, Rights and Value Programme
+131
+(2023-2024) also provides funding opportunities
+132
+for actions on the mental health of children and of victims of gender-based violence
+133
+. To help tackle mental health in the workplace, funding will be made available under the EU-OSHA.
+
+Conclusion and next steps
+
+Today’s challenges on mental health can affect everybody and require concerted actions and the full commitment of all actors involved. Mental health is an integral part of people’s health. It enables individual to realise their own abilities, to cope with the stresses of life, to socialise, work and contribute to community life
+
+All institutions and levels of government can, and should, play their part to overcome barriers to good mental health. Coordinated efforts, with and beyond the health system, are required to mobilise society as a whole and take a life-course approach with the emphasis on equality and non-discrimination.
+
+The Commission calls on the European Parliament and Member States to work together in taking forward the initiatives put forward in this strategic Communication, which lay the foundations for sustained action at national and EU level for a comprehensive, prevention-oriented and multistakeholder approach to mental health. They promote the universality of health care for people suffering from mental health in the EU and beyond.
+
+The prevention of mental health problems, access to help and reintegration in society are integral to the right to healthcare and through this initiative the EU sets a high ambition to help the most fragile and vulnerable in our societies, in line with the European way of life where each person counts and should have a prosperous life prospect.
+
+This Communication is the beginning of a new strategic approach to put mental health on par with physical health. It adds another pillar to the architecture of the European Health Union by both reinforcing ongoing work and opening new workstreams, developed with all partners and including implementing actions. These will be closely monitored with the Member States under the Expert Group on Public Health and in particular its sub-group on mental health. Stakeholders will have the opportunity to collaborate and coordinate their joint input for the development and implementation of the actions set out through the EU Health Policy Platform. These concerted efforts will be the path to develop and implement a new ambitious approach on mental health for a more resilient society that puts people first.
+
+(1)
+
+ 
+Health at a Glance
+: Europe 2018.
+
+(2)
+
+ 
+Eurostat News - Eurostat (europa.eu)
+.
+
+(3)
+
+ 
+New report: Loneliness doubles in Europe during the pandemic (europa.eu)
+.
+
+(4)
+
+ 
+The consequences of the COVID-19 pandemic on mental health and implications for clinical practice | European Psychiatry | Cambridge Core
+.
+
+(5)
+
+The
+State of the World’s Children 2021
+: On My Mind – Promoting, protecting and caring for children’s mental health, Regional brief: Europe, UNICEF, 2021.
+
+(6)
+
+ 
+SOWC-2021-Europe-regional-brief.pdf (unicef.org)
+.
+
+(7)
+
+https://www.europarl.europa.eu/doceo/document/TA-9-2022-0279_EN.html.
+
+(8)
+
+ 
+On the road to 2025 (who.int)
+.
+
+(9)
+
+SDG Target 3.4 | Noncommunicable diseases and mental health: By 2030, reduce by one third premature mortality from non-communicable diseases through prevention and treatment and promote mental health and well-being.
+
+(10)
+
+ 
+Education: a neglected social determinant of health - The Lancet Public Health
+. 
+
+(11)
+
+ 
+Fitter Minds, Fitter Jobs : From Awareness to Change in Integrated Mental Health, Skills and Work Policies | Mental Health and Work | OECD iLibrary (oecd-ilibrary.org)
+.
+
+(12)
+
+ 
+Gender equality strategy
+;
+LGBTIQ equality strategy
+;
+Roma strategic framework
+;
+Strategy for the Rights of Persons with Disability
+.
+
+(13)
+
+ 
+The EU Strategy on the Rights of the Child and the European Child Guarantee (europa.eu)
+.
+
+(14)
+
+Regulation (EU) 2022/2065 of the European Parliament and of the Council on a Single Market for Digital Services and amending Directive 2000/31/EC (Digital Services Act),
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32022R2065
+.
+
+(15)
+
+This might include, for example, mitigation of negative effects of personalised recommendations and correction of criteria used in their recommendations, discontinuation of advertising revenue for specific information or adaptation of the visibility of authoritative information sources.
+
+(16)
+
+ Such as
+EAAD’s Best Practice Model
+to Improve Depression Care and Prevent Suicidal Behaviour in Europe funded under EU 3rd Health Programme: EUR 2 million.
+
+(17)
+
+ 
+https://health.ec.europa.eu/non-communicable-diseases/expert-group-public-health_en
+
+(18)
+
+ Financial support under
+EU4Health 2021 work programme
+: DP-g-07.2.1 Collection and support for implementation of innovative best practices and research results on non-communicable diseases: budget reinforced by redistribution of funds: EUR 1 million.
+
+(19)
+
+ Through a contribution agreement with the WHO (budget reinforced by redistribution of funds: EUR 11 million) under the
+EU4Health 2022 work programme
+: DP-g-22-07.02 Addressing mental health challenges.
+
+(20)
+
+ Financial support under
+EU4Health 2022 work programme
+: DP-g-22-07.01/03/04 Call for proposals on promoting mental health: EUR 10 million.
+
+(21)
+
+ 
+Capacity-building on mental health
+: multidisciplinary training programme and exchange programme for health professionals: EUR 9 million
+
+(22)
+
+ 
+Joint Research Centre’s Health Promotion and Disease Prevention Knowledge Gateway (prevention of depression, work-related stress, and dementia
+).
+
+(23)
+
+Communication on an
+‘EU Strategic Framework on Health and Safety at Work 2021-2027’
+acknowledges the importance of addressing psychosocial risks at work, including in the light of the digitalisation transition.
+
+(24)
+
+ 
+https://www.annualreviews.org/doi/full/10.1146/annurev-publhealth-040617-013629
+.
+
+(25)
+
+ 
+Horizon Europe Health Calls 2023 - The Silver Deal - Person-centred health and care in European regions (Destination 1) (europa.eu)
+.
+
+(26)
+
+ 
+Preventive psychiatry: a blueprint for improving the mental health of young people (nih.gov)
+.
+
+(27)
+
+ In line with
+Pathways to School
+Success Council Recommendation.
+
+(28)
+
+ 
+BP Portal (europa.eu)
+.
+
+(29)
+
+Through actions funded under the
+EU4Health Programme (2021-2027)
+.
+
+(30)
+
+Through funding under
+EU4Health 2022 work programme
+(technical support for expert groups).
+
+(31)
+
+ The
+Proposal for a Regulation on the European Health Data Space
+ aims to facilitate better access to health data for research and innovation, including in the area of brain research.
+
+(32)
+
+ 
+European Research Infrastructures (europa.eu)
+.
+
+(33)
+
+ 
+Expert Group on Public Health
+.
+
+(34)
+
+EU Best Practice Portal:
+BP Portal (europa.eu)
+.
+
+(35)
+
+Under the Expert Group on Public Health’s subgroup on mental health.
+
+(36)
+
+ 
+2023 EU4Health Work Programme (europa.eu)
+.
+
+(37)
+
+ From pre-pandemic (2019 or nearest year) to pandemic levels (April 2020 - August 2021):
+Health at a Glance: Europe report, 2022
+.
+
+(38)
+
+ 
+Loneliness publications (europa.eu)
+.
+
+(39)
+
+ 
+Council Recommendation establishing a European Child Guarantee
+.
+
+(40)
+
+ 
+Well-being at school | European Education Area (europa.eu)
+.
+
+(41)
+
+https://www.sciencedirect.com/science/article/pii/S2542519621002783.
+
+(42)
+
+ 
+Creating a better Internet for kids | Shaping Europe’s digital future (europa.eu)
+.
+
+(43)
+
+Article 34(2)(b) and (d).
+
+(44)
+
+ 
+Digital Services Act
+.
+
+(45)
+
+A Digital Decade for children and youth: the new European strategy for a better internet for kids (BIK+) COM/2022/212 final.
+
+(46)
+
+EU Strategy for a more effective fight against child sexual abuse (europa.eu)
+.
+
+(47)
+
+The HealthyLifestyle4All Initiative | Sport (europa.eu)
+.
+
+(48)
+
+ 
+How school systems can improve health and well-being: topic brief: mental health (who.int)
+.
+
+(49)
+
+ 
+Home - Child Helpline International
+: funded under the Citizens, Equality, Rights and Values programme.
+
+(50)
+
+ 
+EUR-Lex - 42018Y1218(01) - EN - EUR-Lex (europa.eu)
+.
+
+(51)
+
+ 
+EUR-Lex - 32022H1209(01) - EN - EUR-Lex (europa.eu)
+.
+
+(52)
+
+These guidelines should include mental well being and prevention of bullying, and also address work-related stress of teachers and violence, as well as bullying of teachers as part of a whole school approach. Link:
+https://osha.europa.eu/en/publications/occupational-safety-and-health-and-education-whole-school-approach#:~:text=A%20Whole%2DSchool%20Approach%20to,pupils%20in%20school%20safety%20management
+
+(53)
+
+ Under the Healthier Together initiative and funded under the
+EU4Health programme
+.
+
+(54)
+
+ Under the Healthier Together initiative and funded under the
+EU4Health programme
+.
+
+(55)
+
+ EUR 2 million under the
+TSI 2023 work programme
+: project will be launched in autumn 2023.
+
+(56)
+
+ The Commission will provide
+technical support
+, together with UNICEF, to Cyprus, Italy, Slovenia and Andalusia, to enhance collaboration between different sectors: health, education, social services and child protection systems: .
+
+(57)
+
+ 
+Better Internet for Kids Strategy
+.
+
+(58)
+
+The Code of conduct on age appropriate design will support the implementation of Art 28 of the DSA, and be recognized as a code under art 45 of the DSA
+
+(59)
+
+Engagement of the European Board of Digital Services is foreseen for any DSA Code of Conduct.
+
+(60)
+
+An integrated care system for older people means that older adults get the health care they need, where and when they need it:
+Ageing and Health unit (who.int)
+.
+
+(61)
+
+In 2021 over 20.8% of the EU population was over 65 years, a figure that is projected to rise to 30.3% by 2058:
+Council Conclusions on Mainstreaming Ageing in Public Policies
+.
+
+(62)
+
+ 
+Council Conclusions on Human Rights, Participation and Well-being of Older Persons in the Era of Digitalisation
+.
+
+(63)
+
+ 
+Loneliness (europa.eu)
+.
+
+(64)
+
+ 
+WMH REVIEW FINAL (who.int)
+.
+
+(65)
+
+Istanbul Convention:
+Action against violence against women and domestic violence
+.
+
+(66)
+
+ 
+EUR-Lex - 52022PC0105 - EN - EUR-Lex (europa.eu)
+
+(67)
+
+ 
+Commission work programme 2023
+.
+
+(68)
+
+ 
+
+https://cordis.europa.eu/project/id/101057390
+
+(69)
+
+ 
+HappyMums project
+.
+
+(70)
+
+ 
+Union of Equality: LGBTIQ Equality Strategy 2020-2025
+.
+
+(71)
+
+ 
+Study on the economic, social and human costs of trafficking in human beings within the EU - Publications Office of the EU (europa.eu)
+.
+
+(72)
+
+ In line with the 
+EU Strategy on Combatting Trafficking in Human Beings
+(2021-2025)
+. 
+
+(73)
+
+ 
+Asylum, Migration and Integration Fund (2021-2027) (europa.eu)
+.
+
+(74)
+
+ In 2021, the European Commission adopted the
+strategy for the rights of persons with disabilities
+ (2021-2030) in line with the UN Convention on the Rights of Persons with Disabilities to which the EU and its Member States are party.
+
+(75)
+
+ 
+Disability Employment Package
+.
+
+(76)
+
+ 
+Long COVID and mental health correlates: a new chronic condition fits existing patterns - PubMed (nih.gov)
+.
+
+(77)
+
+According to the WHO, an estimated 1 in 5 people who are now experiencing the ravages of war will be dealing with a mental health condition within the next 10 years, and 1 in 10 will have a severe condition like post-traumatic stress disorder or psychosis.
+
+(78)
+
+See flagship action on Mental Health support for Ukraine’s displaced and affected people.
+
+(79)
+
+ 
+Asylum, Migration and Integration Fund (2021-2027) (europa.eu)
+.
+
+(80)
+
+Nicholas Pleace (2023) Social and healthcare services for homeless people: a discussion paper forthcoming in European Platform on Combatting Homelessness.
+
+(81)
+
+ 
+https://commission.europa.eu/system/files/2021-01/eu_roma_strategic_framework_for_equality_inclusion_and_participation_for_2020_-_2030_0.pdf
+.
+
+(82)
+
+Directive 2012/29/EU of the European Parliament and of the Council of 25 October 2012 establishing minimum standards on the rights, support and protection of victims of crime, and replacing Council Framework Decision 2001/220/JHA, OJ L 315, 14.11.2012, p. 57 – 73.
+
+(83)
+
+2018 report by Public Health France
+
+(84)
+
+ 
+EU Mission: Cancer (europa.eu)
+.
+
+(85)
+
+Financial support under EU4Health 2023 work programme: CR-g-23-19.01 action grants on mental health challenges for cancer patients and survivors.
+
+(86)
+
+For example, as set out in the
+Council Recommendation on Roma equality, inclusion and participation
+.
+
+(87)
+
+See
+https://osha.europa.eu/en/publications/osh-pulse-occupational-safety-and-health-post-pandemic-workplaces
+.
+
+(88)
+
+ 
+Safety and health legislation | Safety and health at work EU-OSHA (europa.eu)
+. The OSH framework directive (89/391/EEC) lays down the employer obligation to evaluate the safety and health risks of workers, including psychosocial risks, and to put in place protective measures. The display screen equipment Directive (90/270/EEC), the workplace directive (89/654/EEC), and the directive on prevention from sharp injuries in the hospital and healthcare sector (2010/32/EU) also address aspects of work relevant to psychosocial risks.
+
+(89)
+
+For example COM(2002) 118; COM(2007) 62; COM/2014/0332.
+
+(90)
+
+COM(2021) 323 final.
+
+(91)
+
+ 
+European Agency for Safety & Health at Work (europa.eu)
+.
+
+(92)
+
+ 
+Healthy workers, thriving companies – a practical guide to wellbeing at work
+.
+
+(93)
+
+ 
+https://ec.europa.eu/social/main.jsp?langId=en&catId=89&furtherNews=yes&newsId=10582#navItem-1
+ 
+
+(94)
+
+ 
+Council directive concerning the minimum safety and health requirements for the workplace
+.
+
+(95)
+
+ 
+Council directive on work with display screen equipment
+.
+
+(96)
+
+ 
+European Care Strategy
+.
+
+(97)
+
+Financial support provided by EU-OSHA budget.
+
+(98)
+
+ 
+https://osha.europa.eu/en/legislation/guidelines/labour-inspectors-guide-assessing-quality-risk-assessments-
+and-risk-management-measures-regard-prevention-msds
+
+(99)
+
+Health at a Glance: Europe 2022 report (see footnote 37 on page 8).
+
+(100)
+
+ 
+Global developments in social prescribing - PubMed (nih.gov)
+.
+
+(101)
+
+ 
+Systematic review of social prescribing and older adults: where to from here? - PubMed (nih.gov)
+.
+
+(102)
+
+ 
+EUR-Lex - 52012SC0414 - EN - EUR-Lex (europa.eu)
+.
+
+(103)
+
+The expert group’s report “Mapping metrics of health promotion and disease prevention for health system performance assessment” includes a case study on mental health and best practices on social prescribing
+
+(104)
+
+ 
+Strategic foresight (europa.eu)
+.
+
+(105)
+
+To support investments and reforms in Member States through targeted capacity-building, a survey was carried out in April 2023, through collaborative work between the Commission, the WHO and the Organisation for Economic Co-operation and Development (OECD), to provide a snapshot of mental health policies in the Member States.
+
+(106)
+
+ 
+TSI 2024 Flagship - Mental health: Fostering well-being and mental health (europa.eu)
+
+(107)
+
+In line with the
+United Nations – Convention on the Rights of Persons with Disabilities
+(UNCRPD).
+
+(108)
+
+OSH Pulse (flash Eurobarometer survey, 2022):
+’Occupational safety and health in post-pandemic workplaces’.
+The report includes the results of questions on psychosocial risks and individual country factsheets and a follow-up expert article on mental health and the impact of the COVID-19 pandemic.
+
+(109)
+
+World Mental Health Day (who.int)
+.
+
+(110)
+
+ 
+C4H_SummaryReport_V11LP_shortsmall.pdf (cultureforhealth.eu)
+.
+
+(111)
+
+ Funded under the
+EU4Health programme
+(EUR 18.36 million: budget under work programme 2023 dedicated to mental health activities).
+
+(112)
+
+Joint Statement for the EU-US Trade and Technology Council of 30 and 31 May 2023.
+
+(113)
+
+ 
+
+EU Global Health Strategy to improve global health security and deliver better health for all (europa.eu)
+
+.
+
+(114)
+
+ 
+Youth Action Plan (europa.eu)
+.
+
+(115)
+
+ 
+Home - The Global Fund to Fight AIDS, Tuberculosis and Malaria
+.
+
+(116)
+
+ 
+The Spotlight Initiative | What we do: Ending violence against women and girls | UN Women – Headquarters
+.
+
+(117)
+
+ 
+New WHO prevalence estimates of mental disorders in conflict settings: a systematic review and meta-analysis - The Lancet
+.
+
+(118)
+
+ 
+IASC Minimum Service Package
+: Mental Health and Psychosocial Support.
+
+(119)
+
+Financial support provided under
+NDICI Eastern Partnership Regional Programme
+to provide psychological support in Ukraine.
+
+(120)
+
+ 
+EU4Health projects
+to provide mental health support to Ukrainian refugees.
+
+(121)
+
+ 
+https://ifightdepression.com/en/
+: available in Ukrainian, and culturally adapted.
+
+(122)
+
+Budget: EUR 28.4 million mobilised under
+EU4Health 2022 work programme
+.
+
+(123)
+
+Budget: 750 000 EUR funded under the
+Enhanced Response Capacity Programme
+.
+
+(124)
+
+WHO, UNICEF, UNHCR and UNFPA
+https://mhpssmsp.org/en
+.
+
+(125)
+
+ 
+Recovery and Resilience Facility (europa.eu)
+.
+
+(126)
+
+ 
+Regulation (EU) 2021/522 on the EU4Health Programme
+.
+
+(127)
+
+ 
+com_2022-5436_annex2_en.pdf (europa.eu)
+
+(128)
+
+ 
+wp2023_annex_en.pdf (europa.eu)
+.
+
+(129)
+
+ 
+Horizon Europe (europa.eu)
+.
+
+(130)
+
+An overall budget of EUR 7.2 billion is available under ERDF for health infrastructure and equipment, which may include measures for mental health and social inclusion.
+
+(131)
+
+ 
+Citizens, Equality, Rights and Values (CERV) (europa.eu)
+.
+
+(132)
+
+ Daphne and rights of the child:
+c_2022_8588_1_en_annexe_acte_autonome_cp_part1_v2.pdf (europa.eu)
+.
+
+(133)
+
+EUR 22.9 million under the 2024 Daphne call for preventing and combating gender-based violence and violence against children to finance actions specifically supporting victims and survivors and further developing integrated child protection systems .
