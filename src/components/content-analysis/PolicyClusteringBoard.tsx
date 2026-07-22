@@ -29,14 +29,21 @@ import {
   type ClusterItem,
   type ClusterRelevance,
 } from '@/lib/content-analysis/policy-clustering';
+import PolicyHierarchyDiagram from './PolicyHierarchyDiagram';
 
 type RelevanceFilter = 'all' | ClusterRelevance;
+type ViewMode = 'category' | 'hierarchy';
 
 const RELEVANCE_FILTERS: RelevanceFilter[] = ['all', 'M', 'A', 'MA'];
+const VIEW_MODES: Array<{ id: ViewMode; label: string }> = [
+  { id: 'category', label: 'By category' },
+  { id: 'hierarchy', label: 'By hierarchy' },
+];
 
 export default function PolicyClusteringBoard() {
   const [systemId, setSystemId] = useState(CLUSTER_SYSTEMS[0]?.id ?? '');
   const [relevance, setRelevance] = useState<RelevanceFilter>('all');
+  const [viewMode, setViewMode] = useState<ViewMode>('category');
   const [detailItem, setDetailItem] = useState<ClusterItem | null>(null);
 
   const system = useMemo(
@@ -115,26 +122,47 @@ export default function PolicyClusteringBoard() {
         ))}
       </div>
 
-      {/* Relevance filter */}
-      <div className="flex items-center gap-1.5 flex-wrap">
-        {RELEVANCE_FILTERS.map(f => (
-          <button
-            key={f}
-            type="button"
-            onClick={() => setRelevance(f)}
-            className={`px-2.5 py-1 rounded-full text-[11px] font-medium border transition ${
-              relevance === f
-                ? 'bg-[#232019] text-white border-[#232019]'
-                : 'bg-white text-[#3D5265] border-[#C9C3B3] hover:border-[#8A95A3]'
-            }`}
-          >
-            {f === 'all' ? 'All' : CLUSTER_RELEVANCE_LABEL[f]}
-          </button>
-        ))}
+      {/* Relevance filter + view mode */}
+      <div className="flex items-center justify-between flex-wrap gap-2.5">
+        <div className="flex items-center gap-1.5 flex-wrap">
+          {RELEVANCE_FILTERS.map(f => (
+            <button
+              key={f}
+              type="button"
+              onClick={() => setRelevance(f)}
+              className={`px-2.5 py-1 rounded-full text-[11px] font-medium border transition ${
+                relevance === f
+                  ? 'bg-[#232019] text-white border-[#232019]'
+                  : 'bg-white text-[#3D5265] border-[#C9C3B3] hover:border-[#8A95A3]'
+              }`}
+            >
+              {f === 'all' ? 'All' : CLUSTER_RELEVANCE_LABEL[f]}
+            </button>
+          ))}
+        </div>
+        <div className="flex items-center rounded-md border border-[#E6E7E8] bg-white p-0.5">
+          {VIEW_MODES.map(v => (
+            <button
+              key={v.id}
+              type="button"
+              onClick={() => setViewMode(v.id)}
+              className={`px-2.5 py-1 rounded text-[11px] font-medium transition ${
+                viewMode === v.id ? 'bg-[#00928F] text-white' : 'text-[#3D5265] hover:bg-[#FBFBFA]'
+              }`}
+            >
+              {v.label}
+            </button>
+          ))}
+        </div>
       </div>
 
+      {/* Hierarchy view — same data, re-sliced by cascade instead of type */}
+      {system && viewMode === 'hierarchy' && (
+        <PolicyHierarchyDiagram system={system} relevance={relevance} />
+      )}
+
       {/* Cluster grid — one column per category */}
-      {system && (
+      {system && viewMode === 'category' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-start">
           {CLUSTER_CATEGORY_IDS.map(cat => (
             <div key={cat}>
@@ -163,8 +191,8 @@ export default function PolicyClusteringBoard() {
         </div>
       )}
 
-      {/* Detail panel */}
-      {detailItem && (
+      {/* Detail panel (category view only — the hierarchy view has its own) */}
+      {viewMode === 'category' && detailItem && (
         <div className="border border-[#E6E7E8] rounded-md bg-white p-3.5">
           <span
             className="inline-block text-[10.5px] px-2.5 py-0.5 rounded-full mb-1.5"
