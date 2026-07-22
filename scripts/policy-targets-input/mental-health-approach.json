@@ -2,11 +2,15 @@
   "policy_id": "mental-health-approach",
   "targets": [
     {
-      "quote": "It draws on three guiding principles that should apply to every EU citizen: (i) to have access to adequate and effective prevention, (ii) to have access to high quality and affordable mental healthcare and treatment, and (iii) to be able to reintegrate society after recovery.",
+      "quote": "It draws on three guiding principles that should apply to every EU citizen: (i) to have access to adequate and effective prevention, (ii) to have access to high quality and affordable mental healthcare and treatment, and (iii) to be able to reintegrate society after recovery.",
       "article": "Three guiding principles",
       "label": "objective",
       "timeline": "",
-      "indicators": ["prevention", "access to care", "reintegration"],
+      "indicators": [
+        "prevention",
+        "access to care",
+        "reintegration"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -14,7 +18,9 @@
       "article": "Alignment with WHO NCD targets",
       "label": "goal",
       "timeline": "by 2025",
-      "indicators": ["WHO NCD targets"],
+      "indicators": [
+        "WHO NCD targets"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -22,7 +28,10 @@
       "article": "Reinforcing systems and access to care",
       "label": "objective",
       "timeline": "",
-      "indicators": ["mental health systems", "access to treatment"],
+      "indicators": [
+        "mental health systems",
+        "access to treatment"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -30,7 +39,10 @@
       "article": "Flagship 1 — Capacity Building Initiative",
       "label": "commitment",
       "timeline": "2023",
-      "indicators": ["EUR 11 million", "capacity building"],
+      "indicators": [
+        "EUR 11 million",
+        "capacity building"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -38,31 +50,43 @@
       "article": "Flagship 1 — capacity-building blueprint",
       "label": "commitment",
       "timeline": "2024",
-      "indicators": ["capacity-building toolkit"],
+      "indicators": [
+        "capacity-building toolkit"
+      ],
       "climate_relevance": "none"
     },
     {
-      "quote": "The Commission will dedicate EUR 6 million to reducing the risk for people to experience severe mental health issues by supporting the development and implementation of depression and suicide prevention policies in Member States based on the exchange of best practice (2023).",
+      "quote": "The Commission will dedicate EUR 6 million to reducing the risk for people to experience severe mental health issues by supporting the development and implementation of depression and suicide prevention policies in Member States based on the exchange of best practice (2023).",
       "article": "Flagship 2 — Depression and Suicide Prevention",
       "label": "commitment",
       "timeline": "2023",
-      "indicators": ["EUR 6 million", "suicide prevention"],
+      "indicators": [
+        "EUR 6 million",
+        "suicide prevention"
+      ],
       "climate_relevance": "none"
     },
     {
-      "quote": "The Commission will allocate EUR 8.3 million to strengthen the mental health strand of the ‘Healthier Together’ EU non-communicable diseases initiative, with the aim to support Member States’ actions on promoting mental health, creating supportive environments and policies, enhancing social inclusion and tackling stigma and discrimination associated with mental health issues",
+      "quote": "The Commission will allocate EUR 8.3 million to strengthen the mental health strand of the ‘Healthier Together’ EU non-communicable diseases initiative, with the aim to support Member States’ actions on promoting mental health, creating supportive environments and policies, enhancing social inclusion and tackling stigma and discrimination associated with mental health issues",
       "article": "Flagship 3 — Healthier Together (mental health)",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["EUR 8.3 million", "prevention", "social inclusion"],
+      "indicators": [
+        "EUR 8.3 million",
+        "prevention",
+        "social inclusion"
+      ],
       "climate_relevance": "none"
     },
     {
-      "quote": "to empower people experiencing mental health issues to take better care of their own and their families and carers’ mental health by providing a set of evidence-based recommendations that will be actively promoted and available online.",
+      "quote": "to empower people experiencing mental health issues to take better care of their own and their families and carers’ mental health by providing a set of evidence-based recommendations that will be actively promoted and available online.",
       "article": "Flagship 5 — European Code for Mental Health",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["European Code for Mental Health", "EUR 2 million"],
+      "indicators": [
+        "European Code for Mental Health",
+        "EUR 2 million"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -70,7 +94,10 @@
       "article": "Flagship 11 — Protecting Victims of Crime",
       "label": "commitment",
       "timeline": "by Q2 of 2023",
-      "indicators": ["victims of crime", "access to psychological support"],
+      "indicators": [
+        "victims of crime",
+        "access to psychological support"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -78,7 +105,11 @@
       "article": "Flagship 15 — More and Better Trained Professionals",
       "label": "target",
       "timeline": "by 2026",
-      "indicators": ["2000 professionals trained", "EUR 9 million", "100 exchanges per year"],
+      "indicators": [
+        "2000 professionals trained",
+        "EUR 9 million",
+        "100 exchanges per year"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -86,15 +117,21 @@
       "article": "Flagship 17 — Gathering Data on mental health",
       "label": "commitment",
       "timeline": "as of 2025",
-      "indicators": ["EHIS mental health data", "monitoring"],
+      "indicators": [
+        "EHIS mental health data",
+        "monitoring"
+      ],
       "climate_relevance": "none"
     },
     {
-      "quote": "improve the quality of life of patients, their families and (in)formal carers, including cancer patients, with a particular focus on addressing stigma and discrimination by supporting Member States to identify and implement best practices;",
+      "quote": "improve the quality of life of patients, their families and (in)formal carers, including cancer patients, with a particular focus on addressing stigma and discrimination by supporting Member States to identify and implement best practices;",
       "article": "Flagship 18 — Tackling stigma and discrimination",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["EUR 18 million", "stigma and discrimination"],
+      "indicators": [
+        "EUR 18 million",
+        "stigma and discrimination"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -102,15 +139,21 @@
       "article": "EU funding for mental health — total",
       "label": "commitment",
       "timeline": "2021-2027",
-      "indicators": ["EUR 1.23 billion", "EU funding"],
+      "indicators": [
+        "EUR 1.23 billion",
+        "EU funding"
+      ],
       "climate_relevance": "none"
     },
     {
-      "quote": "Funding of EUR 765 million in funding is mobilised through the Horizon 2020 and Horizon Europe",
+      "quote": "Funding of EUR 765 million in funding is mobilised through the Horizon 2020 and Horizon Europe",
       "article": "EU funding — research and innovation",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["EUR 765 million", "research and innovation"],
+      "indicators": [
+        "EUR 765 million",
+        "research and innovation"
+      ],
       "climate_relevance": "none"
     }
   ]

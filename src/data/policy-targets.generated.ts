@@ -12,11 +12,11 @@
  * state keyed on them survives regeneration. Reviewed corrections from the
  * fact-check pass are applied from scripts/policy-targets-overrides.json.
  *
- * 921 targets across 58 acts.
- *   label:            {"target":415,"other":194,"objective":147,"commitment":148,"goal":17}
- *   obligation:       {"mandatory":681,"voluntary":240}
- *   type:             {"qualitative":307,"quantitative":413,"unspecified":201}
- *   climate_relevance:{"mitigation":422,"none":369,"both":25,"adaptation":105}
+ * 1057 targets across 62 acts.
+ *   label:            {"target":446,"other":207,"objective":199,"commitment":184,"goal":21}
+ *   obligation:       {"mandatory":773,"voluntary":284}
+ *   type:             {"qualitative":356,"quantitative":440,"unspecified":261}
+ *   climate_relevance:{"mitigation":450,"none":459,"both":28,"adaptation":120}
  *   (88 candidates rejected as non-verbatim / out of scope)
  */
 import type { RawPolicyTarget } from './policy-targets';
@@ -2237,23 +2237,159 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 13
   },
   {
+    "id": "tgt-6c973c32",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 2(42) — definition of climate proofing",
+    "target_text": "‘climate proofing’ means a process to prevent infrastructure from being vulnerable to potential long-term climate impacts whilst ensuring that the ‘energy efficiency first’ principle is respected and that the level of greenhouse gas emissions arising from the project is consistent with the climate neutrality objective in 2050;",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "by 2050",
+    "indicators": [
+      "greenhouse gas emissions",
+      "energy efficiency",
+      "climate proofing",
+      "climate neutrality"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 1
+  },
+  {
+    "id": "tgt-a78d421c",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Annex IV 2.2 — enabling condition: governance of the energy sector",
+    "target_text": "The integrated national energy and climate plan is notified to the Commission, in accordance with Article 3 of Regulation (EU) 2018/1999 and consistent with the long-term greenhouse gas emission reduction objectives under the Paris Agreement, which includes:",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "national energy and climate plan"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 2
+  },
+  {
+    "id": "tgt-f434a779",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Annex IV 2.3 — enabling condition: renewable energy promotion",
+    "target_text": "Compliance with the 2020 binding national renewable energy target and with this share of renewable energy as a baseline up to 2030 or having taken additional measures in case the baseline is not maintained over any one-year period in accordance with the Directive (EU) 2018/2001 and Regulation (EU) 2018/1999.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "up to 2030",
+    "indicators": [
+      "share of renewable energy",
+      "renewable energy",
+      "renewable energy share"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-f28c636d",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Annex IV 2.4 — enabling condition: disaster risk management",
+    "target_text": "A national or regional disaster risk management plan, established on the basis of risk assessments, taking due account of the likely impacts of climate change and the existing climate adaptation strategies, is in place and includes:",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "disaster risk management plan",
+      "climate adaptation"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 4
+  },
+  {
+    "id": "tgt-bbf5f6fe",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Annex IV 2.1 — enabling condition: building renovation strategy",
+    "target_text": "A national long term renovation strategy to support the renovation of the national stock of residential and non-residential buildings is adopted",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "milestones 2030/2040/2050",
+    "indicators": [
+      "long-term renovation strategy"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 5
+  },
+  {
+    "id": "tgt-4d13b442",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 5(1)(b) — policy objective 2 (greener, low-carbon)",
+    "target_text": "a greener, low-carbon transitioning towards a net zero carbon economy and resilient Europe by promoting clean and fair energy transition, green and blue investment, the circular economy, climate change mitigation and adaptation, risk prevention and management, and sustainable urban mobility;",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "policy objectives",
+      "climate mitigation and adaptation"
+    ],
+    "climate_relevance": "both",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 6
+  },
+  {
     "id": "tgt-cfb70166",
     "policy_id": "common-provisions-regulation",
     "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
     "policy_short": "Common Provisions Regulation (Cohesion)",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 5 — Policy objectives",
+    "article": "Article 5 — JTF specific objective",
     "target_text": "The JTF shall support the specific objective of enabling regions and people to address the social, employment, economic and environmental impacts of the transition towards the Union’s 2030 targets for energy and climate and a climate-neutral economy of the Union by 2050, based on the Paris Agreement.",
-    "target_label": "target",
+    "target_label": "objective",
     "obligation": "mandatory",
     "target_type": "qualitative",
     "timeline": "by 2050",
-    "indicators": [],
+    "indicators": [
+      "just transition",
+      "climate-neutral economy"
+    ],
     "climate_relevance": "mitigation",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
-    "target_number": 1
+    "target_number": 7
   },
   {
     "id": "tgt-12c33847",
@@ -2262,17 +2398,209 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "Common Provisions Regulation (Cohesion)",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 6 — Climate targets and climate adjustment mechanism",
+    "article": "Article 6(1) — climate targets (30%/37% contribution)",
     "target_text": "The ERDF and the Cohesion Fund shall contribute with 30 % and 37 % respectively of the Union contribution to expenditure supported for the achievement of the climate objectives set for the Union budget.",
-    "target_label": "objective",
+    "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
-    "indicators": [],
+    "indicators": [
+      "climate expenditure share"
+    ],
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
-    "target_number": 2
+    "target_number": 8
+  },
+  {
+    "id": "tgt-12468a34",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 6(2) — climate contribution target per Member State",
+    "target_text": "The climate contribution target for each Member State shall be established as a percentage of its total ERDF and Cohesion Fund allocation and included in programmes as a result of the types of intervention and the indicative financial breakdown pursuant to point (d)(viii) of Article 22(3). As provided for in Article 11(1), the preliminary climate contribution target shall be established in the Partnership Agreement.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "climate contribution target"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 9
+  },
+  {
+    "id": "tgt-80f5e77e",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 6(3) — monitoring of climate contribution targets",
+    "target_text": "The Member State and the Commission shall regularly monitor respect of the climate contribution targets, based on the total eligible expenditure declared by the beneficiaries to the managing authority as broken down by types of intervention in accordance with Article 42 and on data submitted by the Member State. Where the monitoring shows insufficient progress towards reaching the climate contribution target, the Member State and the Commission shall agree on remedial measures in the annual review meeting.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "climate contribution monitoring"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 10
+  },
+  {
+    "id": "tgt-334a8dfd",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 6(4) — mid-term review of climate target",
+    "target_text": "Where there is insufficient progress towards reaching the climate contribution target at national level by 31 December 2024, the Member State shall take this into account in its mid-term review in accordance with Article 18(1).",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "by 31 December 2024",
+    "indicators": [
+      "climate contribution target"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 11
+  },
+  {
+    "id": "tgt-59da31a9",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 8(2) — partnership and multi-level governance",
+    "target_text": "The partnership established under paragraph 1 of this Article shall operate in accordance with the multi-level governance principle and a bottom-up approach.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "partnership principle"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 12
+  },
+  {
+    "id": "tgt-429b14c5",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 9(4) — horizontal principle (sustainable development, DNSH)",
+    "target_text": "The objectives of the Funds shall be pursued in line with the objective of promoting sustainable development as set out in Article 11 TFEU, taking into account the UN Sustainable Development Goals, the Paris Agreement and the \"do no significant harm\" principle.",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "do no significant harm",
+      "sustainable development"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 13
+  },
+  {
+    "id": "tgt-b2ceb2af",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 9(4) — respect for environmental acquis",
+    "target_text": "The objectives of the Funds shall be pursued in full respect of the Union environmental acquis.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "environmental acquis"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 14
+  },
+  {
+    "id": "tgt-f213a913",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 10(1) — Partnership Agreement 2021-2027",
+    "target_text": "Each Member State shall prepare a Partnership Agreement which sets out the strategic orientation for programming and the arrangements for using the ERDF, the ESF+, the Cohesion Fund, the JTF and the EMFAF in an effective and efficient way for the period from 1 January 2021 to 31 December 2027.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "2021-2027",
+    "indicators": [
+      "Partnership Agreement"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 15
+  },
+  {
+    "id": "tgt-47c13331",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 15 — horizontal enabling conditions",
+    "target_text": "Annex III contains horizontal enabling conditions applicable to all specific objectives and the criteria necessary for the assessment of their fulfilment.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "enabling conditions"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 16
+  },
+  {
+    "id": "tgt-6f980bc6",
+    "policy_id": "common-provisions-regulation",
+    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
+    "policy_short": "Common Provisions Regulation (Cohesion)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 73(2)(j) — climate proofing of infrastructure operations",
+    "target_text": "ensure the climate proofing of investments in infrastructure which have an expected lifespan of at least 5 years.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "climate proofing"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1060",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "target_number": 17
   },
   {
     "id": "tgt-796b2e78",
@@ -2427,14 +2755,14 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 7
   },
   {
-    "id": "tgt-befafbf5",
+    "id": "tgt-f349faa4",
     "policy_id": "competitiveness-compass",
     "policy_name": "Communication COM(2025) 30 — A Competitiveness Compass for the EU",
     "policy_short": "Competitiveness Compass",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "Pillar 2 — Clean Industrial Deal",
-    "target_text": "This conviction will inspire the Clean Industrial Deal initiative, aimed at securing the EU as an attractive location for manufacturing, including for energy intensive industries, and promoting clean tech and new circular business models, in order to meet its agreed decarbonisation objectives.",
+    "target_text": "This conviction will inspire the Clean Industrial Deal initiative, aimed at securing the EU as an attractive location for manufacturing, including for energy intensive industries",
     "target_label": "objective",
     "obligation": "voluntary",
     "target_type": "unspecified",
@@ -2443,7 +2771,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "clean manufacturing investment",
       "decarbonisation of industry"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
     "target_number": 8
@@ -2515,14 +2843,14 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 11
   },
   {
-    "id": "tgt-443b443b",
+    "id": "tgt-9cc679ed",
     "policy_id": "competitiveness-compass",
     "policy_name": "Communication COM(2025) 30 — A Competitiveness Compass for the EU",
     "policy_short": "Competitiveness Compass",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "Pillar 3 — public procurement",
-    "target_text": "The Commission will propose the introduction of a European preference in public procurement for strategic sectors and technologies.",
+    "target_text": "The Commission will propose the introduction of a European preference in public procurement",
     "target_label": "commitment",
     "obligation": "voluntary",
     "target_type": "unspecified",
@@ -3831,6 +4159,279 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
     "target_number": 4
+  },
+  {
+    "id": "tgt-2f9e6f12",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 1.1 Introduction",
+    "target_text": "The overall aim is to help Member States and stakeholders make the most of the significant support for heritage available under EU instruments, progress towards a more integrated approach at national and EU level, and ultimately make Europe a laboratory for heritage-based innovation",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "integrated approach to heritage"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 1
+  },
+  {
+    "id": "tgt-836e7fda",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 1.1 Introduction",
+    "target_text": "In line with the objectives of the European Agenda for Culture, this Communication presents the EU's approach to heritage across different policy areas (section 2).",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "mainstreaming heritage across policies"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 2
+  },
+  {
+    "id": "tgt-4caab1ae",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 1.3",
+    "target_text": "Therefore a more integrated approach to heritage conservation, promotion and valorisation is needed in order to take into account its manifold contribution to societal and economic objectives, as well as its impact on other public policies.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "integrated heritage approach"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-d2083074",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 1.2",
+    "target_text": "to increase understanding of the actual and potential role of heritage in policy development, it is important to improve systematic data on its economic and social impacts.",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "evidence base on heritage impacts"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 4
+  },
+  {
+    "id": "tgt-e1e91d9c",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 1.3",
+    "target_text": "The heritage sector must also adapt management and business models and develop new professional skills, working with authorities not through one-off, isolated interventions, but by making the valorisation and preservation of heritage part of broader long-term development plans.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "long-term heritage development plans"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 5
+  },
+  {
+    "id": "tgt-eb6113d4",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 1.3",
+    "target_text": "Global warming and climate change, in particular rising sea levels and the increased occurrence of extreme weather events, can put cultural heritage at risk.",
+    "target_label": "other",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "climate risk to cultural heritage"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 6
+  },
+  {
+    "id": "tgt-6eaa2044",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 2",
+    "target_text": "heritage contributes through its direct and indirect economic potential, including the capacity to underpin our cultural and creative industries and inspire creators and thinkers",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "economic potential of heritage"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 7
+  },
+  {
+    "id": "tgt-8805129f",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 2",
+    "target_text": "encourage the modernisation of the heritage sector, raising awareness and engaging new audiences",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "modernisation of heritage sector"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 8
+  },
+  {
+    "id": "tgt-d2536c6b",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 2",
+    "target_text": "apply a strategic approach to research and innovation, knowledge sharing and smart specialization;",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "strategic research and innovation"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 9
+  },
+  {
+    "id": "tgt-f7e4636b",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 2",
+    "target_text": "seize the opportunities offered by digitisation; to reach out to new audiences and engage young people in particular;",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "digitisation of heritage"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 10
+  },
+  {
+    "id": "tgt-66573237",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 2",
+    "target_text": "continue developing more participative interpretation and governance models that are better suited to contemporary Europe, through greater involvement of the private sector and civil society.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "participative heritage governance"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 11
+  },
+  {
+    "id": "tgt-0e91d7ca",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 2.1",
+    "target_text": "Furthermore, research and innovation is carried out on strategies, methodologies and tools needed to enable a dynamic and sustainable cultural heritage in Europe in response to climate change and natural hazards and disasters.",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "heritage resilience to climate change"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 12
+  },
+  {
+    "id": "tgt-22b8c3cb",
+    "policy_id": "cultural-heritage-framework",
+    "policy_name": "Communication COM(2014) 477 — Towards an integrated approach to cultural heritage for Europe",
+    "policy_short": "Cultural Heritage (EU Framework)",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Sec. 4 Conclusion",
+    "target_text": "The Commission now invites all stakeholders to jointly look into how public policies at all levels, including the EU, could better be marshalled to draw out the long term and sustainability value of Europe's cultural heritage, and develop a more integrated approach to its preservation and valorisation.",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "integrated approach to preservation"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52014DC0477",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "target_number": 13
   },
   {
     "id": "tgt-b189f5ba",
@@ -6261,6 +6862,262 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 40
   },
   {
+    "id": "tgt-2c137932",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 1(1)",
+    "target_text": "This Regulation sets out the specific objectives and the scope of support from the European Regional Development Fund (ERDF) with regard to the Investment for jobs and growth goal and the European territorial cooperation goal (Interreg) referred to in Article 5(2) of Regulation (EU) 2021/1060.",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "ERDF scope"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 1
+  },
+  {
+    "id": "tgt-75cad6ac",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 3(1)(b)",
+    "target_text": "a greener, low-carbon transitioning towards a net zero carbon economy and resilient Europe by promoting clean and fair energy transition, green and blue investment, the circular economy, climate change mitigation and adaptation, risk prevention and management, and sustainable urban mobility (PO 2)",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "policy objective 2 - greener Europe"
+    ],
+    "climate_relevance": "both",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 2
+  },
+  {
+    "id": "tgt-bd266d7c",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 3(1)(b)(i)",
+    "target_text": "promoting energy efficiency and reducing greenhouse gas emissions;",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "greenhouse gas emissions",
+      "energy efficiency",
+      "GHG emission reduction"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-d5a1299e",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 3(1)(b)(ii)",
+    "target_text": "promoting renewable energy in accordance with Directive (EU) 2018/2001, including the sustainability criteria set out therein;",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "renewable energy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 4
+  },
+  {
+    "id": "tgt-2f85d592",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 3(1)(b)(iv)",
+    "target_text": "promoting climate change adaptation and disaster risk prevention and resilience, taking into account eco-system based approaches;",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "climate adaptation",
+      "disaster risk prevention"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 5
+  },
+  {
+    "id": "tgt-87c2c7eb",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 3(3)",
+    "target_text": "The Cohesion Fund shall support PO 2 and 3.",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "Cohesion Fund support for PO2/PO3"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 6
+  },
+  {
+    "id": "tgt-46805553",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 4(6)(a)",
+    "target_text": "Member States of group 1 or more developed regions shall allocate at least 85 % of their ERDF resources referred to in paragraph 1 to PO 1 and PO 2, and at least 30 % to PO 2;",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "thematic concentration group 1: >=85% PO1+PO2, >=30% PO2"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 7
+  },
+  {
+    "id": "tgt-0044637b",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 4(6)(b)",
+    "target_text": "Member States of group 2 or transition regions shall allocate at least 40 % of their ERDF resources referred to in paragraph 1 to PO 1, and at least 30 % to PO 2;",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "thematic concentration group 2: >=30% PO2"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 8
+  },
+  {
+    "id": "tgt-2a8611c2",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 4(6)(c)",
+    "target_text": "Member States of group 3 or less developed regions shall allocate at least 25 % of their ERDF resources referred to in paragraph 1 to PO 1, and at least 30 % to PO 2.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "thematic concentration group 3: >=30% PO2"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 9
+  },
+  {
+    "id": "tgt-eee1a233",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 4(9)",
+    "target_text": "By way of derogation from paragraph 6, 50 % of such ERDF resources shall be taken into account when calculating compliance with the thematic concentration requirements for PO 2 set out in paragraph 6.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "sustainable urban mobility counted to PO2"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 10
+  },
+  {
+    "id": "tgt-9872a437",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 7(1)(b)",
+    "target_text": "investment to achieve the reduction of greenhouse gas emissions from activities listed in Annex I to Directive 2003/87/EC;",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "greenhouse gas emissions",
+      "exclusion - ETS GHG reduction investments"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 11
+  },
+  {
+    "id": "tgt-c3ad01bb",
+    "policy_id": "erdf-regulation",
+    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
+    "policy_short": "European Regional Development Fund",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 7(1)(h)",
+    "target_text": "investment related to production, processing, transport, distribution, storage or combustion of fossil fuels, with the exception of:",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "exclusion - fossil fuels"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R1058",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "target_number": 12
+  },
+  {
     "id": "tgt-50b923f2",
     "policy_id": "erdf-regulation",
     "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
@@ -6277,7 +7134,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
-    "target_number": 1
+    "target_number": 13
   },
   {
     "id": "tgt-c816310d",
@@ -6296,7 +7153,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
-    "target_number": 2
+    "target_number": 14
   },
   {
     "id": "tgt-dfc0ebbe",
@@ -10656,6 +11513,300 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 25
   },
   {
+    "id": "tgt-7537e9a3",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 2(1)",
+    "target_text": "The aim of this Directive shall be to contribute towards ensuring bio-diversity through the conservation of natural habitats and of wild fauna and flora in the European territory of the Member States to which the Treaty applies.",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "biodiversity conservation"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 1
+  },
+  {
+    "id": "tgt-8e9c8073",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 2(2)",
+    "target_text": "Measures taken pursuant to this Directive shall be designed to maintain or restore, at favourable conservation status, natural habitats and species of wild fauna and flora of Community interest.",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "favourable conservation status"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 2
+  },
+  {
+    "id": "tgt-cff40ead",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 3(1)",
+    "target_text": "A coherent European ecological network of special areas of conservation shall be set up under the title Natura 2000. This network, composed of sites hosting the natural habitat types listed in Annex I and habitats of the species listed in Annex II, shall enable the natural habitat types and the species' habitats concerned to be maintained or, where appropriate, restored at a favourable conservation status in their natural range.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "Natura 2000 network established"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-fccd562e",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 3(2)",
+    "target_text": "Each Member State shall contribute to the creation of Natura 2000 in proportion to the representation within its territory of the natural habitat types and the habitats of species referred to in paragraph 1.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "Member State contribution to Natura 2000"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 4
+  },
+  {
+    "id": "tgt-a4cd2a01",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 4(1)",
+    "target_text": "The list shall be transmitted to the Commission, within three years of the notification of this Directive, together with information on each site.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "within three years of the notification of this Directive",
+    "indicators": [
+      "national list of sites submitted"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 5
+  },
+  {
+    "id": "tgt-560d0ce7",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 4(3)",
+    "target_text": "The list referred to in paragraph 2 shall be established within six years of the notification of this Directive.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "within six years of the notification of this Directive",
+    "indicators": [
+      "list of sites of Community importance"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 6
+  },
+  {
+    "id": "tgt-66d00c43",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 4(4)",
+    "target_text": "the Member State concerned shall designate that site as a special area of conservation as soon as possible and within six years at most, establishing priorities in the light of the importance of the sites for the maintenance or restoration, at a favourable conservation status, of a natural habitat type in Annex I or a species in Annex II and for the coherence of Natura 2000, and in the light of the threats of degradation or destruction to which those sites are exposed.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "within six years at most",
+    "indicators": [
+      "special areas of conservation designated"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 7
+  },
+  {
+    "id": "tgt-21b1ddc8",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 6(1)",
+    "target_text": "For special areas of conservation, Member States shall establish the necessary conservation measures involving, if need be, appropriate management plans specifically designed for the sites or integrated into other development plans, and appropriate statutory, administrative or contractual measures which correspond to the ecological requirements of the natural habitat types in Annex I and the species in Annex II present on the sites.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "conservation measures and management plans"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 8
+  },
+  {
+    "id": "tgt-5afed9f2",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 6(2)",
+    "target_text": "Member States shall take appropriate steps to avoid, in the special areas of conservation, the deterioration of natural habitats and the habitats of species as well as disturbance of the species for which the areas have been designated, in so far as such disturbance could be significant in relation to the objectives of this Directive.",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "avoidance of habitat deterioration"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 9
+  },
+  {
+    "id": "tgt-4d05b373",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 6(3)",
+    "target_text": "Any plan or project not directly connected with or necessary to the management of the site but likely to have a significant effect thereon, either individually or in combination with other plans or projects, shall be subject to appropriate assessment of its implications for the site in view of the site's conservation objectives.",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "appropriate assessment of plans/projects"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 10
+  },
+  {
+    "id": "tgt-93859a6f",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 11",
+    "target_text": "Member States shall undertake surveillance of the conservation status of the natural habitats and species referred to in Article 2 with particular regard to priority natural habitat types and priority species.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "surveillance of conservation status"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 11
+  },
+  {
+    "id": "tgt-4f9869ee",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 12(1)",
+    "target_text": "Member States shall take the requisite measures to establish a system of strict protection for the animal species listed in Annex IV (a) in their natural range, prohibiting:",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "strict protection of animal species"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 12
+  },
+  {
+    "id": "tgt-62385e79",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 14(1)",
+    "target_text": "they shall take measures to ensure that the taking in the wild of specimens of species of wild fauna and flora listed in Annex V as well as their exploitation is compatible with their being maintained at a favourable conservation status.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "sustainable exploitation of Annex V species"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 13
+  },
+  {
+    "id": "tgt-6f128387",
+    "policy_id": "habitats-directive",
+    "policy_name": "Council Directive 92/43/EEC on the conservation of natural habitats and of wild fauna and flora",
+    "policy_short": "Habitats Directive",
+    "document_type": "directive",
+    "policy_area": "Environment",
+    "article": "Article 22(c)",
+    "target_text": "promote education and general information on the need to protect species of wild fauna and flora and to conserve their habitats and natural habitats.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "education and public information"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "31992L0043",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "target_number": 14
+  },
+  {
     "id": "tgt-21a925fb",
     "policy_id": "horizon-europe",
     "policy_name": "Regulation (EU) 2021/695 establishing Horizon Europe, the Framework Programme for Research and Innovation",
@@ -11138,6 +12289,240 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 17
   },
   {
+    "id": "tgt-83e2ef7d",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 3(1)",
+    "target_text": "The general objective of the InvestEU Programme is to support the policy objectives of the Union by means of financing and investment operations that contribute to:",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "InvestEU general objective"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 1
+  },
+  {
+    "id": "tgt-148062f3",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 3(1)(b)",
+    "target_text": "growth and employment in the Union economy, the sustainability of the Union economy and its environmental and climate dimension contributing to the achievement of the SDGs and the objectives of the Paris Agreement and to the creation of high-quality jobs;",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "sustainability / climate dimension of the economy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 2
+  },
+  {
+    "id": "tgt-f7d681f8",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 3(2)(a)",
+    "target_text": "supporting financing and investment operations related to sustainable infrastructure in the areas referred to in point (a) of Article 8(1);",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "specific objective - sustainable infrastructure"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-02a79fd9",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 4(1)",
+    "target_text": "The EU guarantee for the purposes of the EU compartment referred to in point (a) of Article 9(1) shall be EUR 26 152 310 073 in current prices. It shall be provisioned at the rate of 40 %.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "EU guarantee amount"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 4
+  },
+  {
+    "id": "tgt-eb488740",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 8(1)(a)",
+    "target_text": "a sustainable infrastructure policy window which comprises sustainable investment in the areas of transport, including multimodal transport, road safety, including in accordance with the Union objective of eliminating fatal road accidents and serious injuries by 2050, the renewal and maintenance of rail and road infrastructure, energy, in particular renewable energy, energy efficiency in accordance with the 2030 energy framework, buildings renovation projects focused on energy savings",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "by 2050",
+    "indicators": [
+      "energy savings",
+      "energy efficiency",
+      "renewable energy",
+      "sustainable infrastructure policy window"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 5
+  },
+  {
+    "id": "tgt-310f4800",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 8(2)",
+    "target_text": "A just transition scheme shall be established horizontally across all policy windows. That scheme shall comprise investments that address social, economic and environmental challenges deriving from the transition process towards the achievement of the Union’s 2030 climate target and its target of achieving climate neutrality by 2050",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "by 2050",
+    "indicators": [
+      "just transition scheme"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 6
+  },
+  {
+    "id": "tgt-62a1fa97",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 8(5)",
+    "target_text": "If those operations have such an impact they shall be subject to climate, environmental and social sustainability proofing with a view to minimising detrimental impacts and to maximising benefits to the climate, environment and social dimensions.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "sustainability proofing"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 7
+  },
+  {
+    "id": "tgt-fd70dea5",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 8(5)",
+    "target_text": "Projects that are inconsistent with the climate objectives shall not be eligible for support under this Regulation.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "exclusion of climate-inconsistent projects"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 8
+  },
+  {
+    "id": "tgt-774d4428",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 8(7)",
+    "target_text": "Implementing partners shall provide the information necessary to allow the tracking of investment that contributes to meeting the Union objectives on climate and environment, on the basis of guidance to be provided by the Commission.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "climate and environment tracking"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 9
+  },
+  {
+    "id": "tgt-596143a5",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 8(8)",
+    "target_text": "Implementing partners shall apply a target of at least 60 % of the investment under the sustainable infrastructure policy window contributing to meeting the Union objectives on climate and environment.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "at least 60% of sustainable infrastructure window to climate/environment"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 10
+  },
+  {
+    "id": "tgt-f9690145",
+    "policy_id": "investeu-regulation",
+    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
+    "policy_short": "InvestEU Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 8(3)",
+    "target_text": "All policy windows may include strategic investments including important projects of common European interest to support final recipients whose activities are of strategic importance to the Union, in particular in view of the green and digital transitions",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "strategic investments - green and digital transitions"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32021R0523",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "target_number": 11
+  },
+  {
     "id": "tgt-2a92459a",
     "policy_id": "investeu-regulation",
     "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
@@ -11154,26 +12539,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
-    "target_number": 1
-  },
-  {
-    "id": "tgt-596143a5",
-    "policy_id": "investeu-regulation",
-    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
-    "policy_short": "InvestEU Regulation",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 8 — Policy windows",
-    "target_text": "Implementing partners shall apply a target of at least 60 % of the investment under the sustainable infrastructure policy window contributing to meeting the Union objectives on climate and environment.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "none",
-    "celex_number": "32021R0523",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
-    "target_number": 2
+    "target_number": 12
   },
   {
     "id": "tgt-a714b712",
@@ -13010,6 +14376,174 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
     "target_number": 26
+  },
+  {
+    "id": "tgt-412d95e0",
+    "policy_id": "mff-regulation",
+    "policy_name": "Council Regulation (EU, Euratom) 2020/2093 laying down the multiannual financial framework for the years 2021 to 2027",
+    "policy_short": "Multiannual Financial Framework",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 1",
+    "target_text": "This Regulation lays down the multiannual financial framework for the years 2021 to 2027 (MFF).",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "2021-2027",
+    "indicators": [
+      "MFF period"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32020R2093",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "target_number": 1
+  },
+  {
+    "id": "tgt-749f3395",
+    "policy_id": "mff-regulation",
+    "policy_name": "Council Regulation (EU, Euratom) 2020/2093 laying down the multiannual financial framework for the years 2021 to 2027",
+    "policy_short": "Multiannual Financial Framework",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 2(1)",
+    "target_text": "The European Parliament, the Council and the Commission (the ‘Institutions’) shall, during each budgetary procedure and when implementing the budget for the year concerned, comply with the annual expenditure ceilings set out in Annex I (the ‘MFF ceilings’).",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "2021-2027",
+    "indicators": [
+      "compliance with MFF ceilings"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32020R2093",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "target_number": 2
+  },
+  {
+    "id": "tgt-ae6043e4",
+    "policy_id": "mff-regulation",
+    "policy_name": "Council Regulation (EU, Euratom) 2020/2093 laying down the multiannual financial framework for the years 2021 to 2027",
+    "policy_short": "Multiannual Financial Framework",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 3(1)",
+    "target_text": "For each of the years covered by the MFF, the total appropriations for payments required, after annual adjustment and taking account of any other adjustments and revisions as well as the application of Article 2(2) and (3), shall not be such as to produce a call-in rate for own resources that exceeds the own resources ceiling",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "own resources ceiling"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32020R2093",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-2215037a",
+    "policy_id": "mff-regulation",
+    "policy_name": "Council Regulation (EU, Euratom) 2020/2093 laying down the multiannual financial framework for the years 2021 to 2027",
+    "policy_short": "Multiannual Financial Framework",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 5(1)",
+    "target_text": "The total amount of additional allocations for the period 2022 to 2027 for commitment and payment appropriations respectively shall be EUR 11 000 million (in 2018 prices).",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "2022-2027",
+    "indicators": [
+      "additional allocations EUR 11 000 million"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32020R2093",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "target_number": 4
+  },
+  {
+    "id": "tgt-f55dcd86",
+    "policy_id": "mff-regulation",
+    "policy_name": "Council Regulation (EU, Euratom) 2020/2093 laying down the multiannual financial framework for the years 2021 to 2027",
+    "policy_short": "Multiannual Financial Framework",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 9(2)",
+    "target_text": "The Solidarity and Emergency Aid Reserve shall not exceed a maximum annual amount of EUR 1 200 million (in 2018 prices). Any portion of the annual amount not used in year n may be used up to year n+1.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "annual",
+    "indicators": [
+      "Solidarity and Emergency Aid Reserve ceiling"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32020R2093",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "target_number": 5
+  },
+  {
+    "id": "tgt-9d643bbb",
+    "policy_id": "mff-regulation",
+    "policy_name": "Council Regulation (EU, Euratom) 2020/2093 laying down the multiannual financial framework for the years 2021 to 2027",
+    "policy_short": "Multiannual Financial Framework",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 10(2)",
+    "target_text": "The Brexit Adjustment Reserve shall not exceed an amount of EUR 5 000 million (in 2018 prices).",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "Brexit Adjustment Reserve ceiling"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32020R2093",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "target_number": 6
+  },
+  {
+    "id": "tgt-01562a13",
+    "policy_id": "mff-regulation",
+    "policy_name": "Council Regulation (EU, Euratom) 2020/2093 laying down the multiannual financial framework for the years 2021 to 2027",
+    "policy_short": "Multiannual Financial Framework",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 12(1)",
+    "target_text": "The ceiling for the annual amount available for the Flexibility Instrument shall be EUR 915 million (in 2018 prices).",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "annual",
+    "indicators": [
+      "Flexibility Instrument ceiling"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32020R2093",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "target_number": 7
+  },
+  {
+    "id": "tgt-99bbafc4",
+    "policy_id": "mff-regulation",
+    "policy_name": "Council Regulation (EU, Euratom) 2020/2093 laying down the multiannual financial framework for the years 2021 to 2027",
+    "policy_short": "Multiannual Financial Framework",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 21",
+    "target_text": "Before 1 July 2025, the Commission shall present a proposal for a new multiannual financial framework.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "by 1 July 2025",
+    "indicators": [
+      "proposal for next MFF"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32020R2093",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "target_number": 8
   },
   {
     "id": "tgt-516064e1",
@@ -15780,14 +17314,14 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 5
   },
   {
-    "id": "tgt-c4be3ff6",
+    "id": "tgt-7d1fc3e7",
     "policy_id": "preparedness-union-strategy",
     "policy_name": "Joint Communication JOIN(2025) 130 — Preparedness Union Strategy",
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "Vital functions — minimum preparedness requirements",
-    "target_text": "the Commission will put forward recommendations on minimum preparedness requirements, including a monitoring mechanism.",
+    "target_text": "minimum preparedness requirements, including a monitoring mechanism.",
     "target_label": "commitment",
     "obligation": "voluntary",
     "target_type": "unspecified",
@@ -15910,14 +17444,14 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 11
   },
   {
-    "id": "tgt-852b2291",
+    "id": "tgt-91e858f2",
     "policy_id": "preparedness-union-strategy",
     "policy_name": "Joint Communication JOIN(2025) 130 — Preparedness Union Strategy",
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "Public-private cooperation — Preparedness Task Force",
-    "target_text": "The Commission will create a Preparedness Task Force drawing on the Industrial Forum, the Enterprise Europe Network, the European clusters network and other existing structures.",
+    "target_text": "The aim of the Task Force is to (i) cooperate on strengthening the continuity management of vital functions and essential services",
     "target_label": "commitment",
     "obligation": "voluntary",
     "target_type": "unspecified",
@@ -17077,6 +18611,331 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 35
   },
   {
+    "id": "tgt-59f08f45",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "Heating equipment replacement ~4%/yr; renewables & waste heat 38-42%",
+    "target_text": "The annual rate of replacement of heating equipment would have to reach around 4% in both the residential and services sector. During the same time period, the share of renewables and waste heat would have to increase to 38-42%",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "heating equipment replacement rate",
+      "renewables & waste heat share"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 1
+  },
+  {
+    "id": "tgt-00e5a4e2",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "Tackling energy poverty (34 million affected)",
+    "target_text": "With nearly 34 million Europeans unable to afford keeping their home adequately warm 65 , tackling energy poverty is an urgent task for the EU and its Member States.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "energy poverty"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 2
+  },
+  {
+    "id": "tgt-43962846",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "35 million building units renovated",
+    "target_text": "Mobilising forces at all levels towards these goals will result in 35 million building units renovated by 2030.",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "building units renovated"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-80d8f818",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "EU net GHG cut of at least 55% by 2030",
+    "target_text": "to cut net greenhouse gas emissions in the EU by at least 55% by 2030 compared to 1990.",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "net greenhouse gas emissions",
+      "greenhouse gas emissions",
+      "net GHG emissions"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 4
+  },
+  {
+    "id": "tgt-f5aef2ca",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "Buildings GHG -60%, energy -14%, heating/cooling -18% by 2030",
+    "target_text": "by 2030 the EU should reduce buildings’ greenhouse gas emissions by 60%, their final energy consumption by 14% and energy consumption for heating and cooling by 18%",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "greenhouse gas emissions",
+      "final energy consumption",
+      "buildings GHG emissions",
+      "buildings final energy",
+      "heating/cooling energy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 5
+  },
+  {
+    "id": "tgt-719e83ea",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "160 000 green construction jobs by 2030",
+    "target_text": "By 2030 an additional 160 000 green jobs could be created in the EU construction sector through a renovation wave",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "By 2030",
+    "indicators": [
+      "green jobs"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 6
+  },
+  {
+    "id": "tgt-33360d4d",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "EUR 275 billion additional annual renovation investment",
+    "target_text": "in order to achieve the proposed 55% climate target by 2030, around EUR 275 billion of additional investments are needed per year",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "annual investment need"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 7
+  },
+  {
+    "id": "tgt-be6f1989",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "800 000 social homes needing renovation per year",
+    "target_text": "Each year, 800 000 social homes need renovation, requiring an estimated EUR 57 billion of additional funding",
+    "target_label": "other",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "annual",
+    "indicators": [
+      "social homes renovation need"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 8
+  },
+  {
+    "id": "tgt-b20d9477",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "Double annual renovation rate by 2030",
+    "target_text": "The objective is to at least double the annual energy renovation rate of residential and non-residential buildings by 2030 and to foster deep energy renovations.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "annual energy renovation rate"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 9
+  },
+  {
+    "id": "tgt-8192494b",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "Renovation milestones for service buildings 2030/2040",
+    "target_text": "indicative milestones for the renovation of public and private service buildings for 2030 and 2040 with a view to decarbonising the building stock by 2050.",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "by 2050",
+    "indicators": [
+      "renovation milestones"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 10
+  },
+  {
+    "id": "tgt-afb5f9cf",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "Climate neutrality of building stock by 2050",
+    "target_text": "The increased rate and depth of renovation will have to be maintained also post-2030 in order to reach EU-wide climate neutrality by 2050.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "by 2050",
+    "indicators": [
+      "climate neutrality"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 11
+  },
+  {
+    "id": "tgt-4a74da94",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "2050 roadmap for whole life-cycle carbon of buildings",
+    "target_text": "it will develop by 2023 a roadmap leading up to 2050 for reducing whole life-cycle carbon emissions in buildings.",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2023",
+    "indicators": [
+      "whole life-cycle carbon"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 12
+  },
+  {
+    "id": "tgt-a78af789",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "Mandatory minimum energy performance standards (EPBD)",
+    "target_text": "the Commission will propose mandatory minimum energy performance standards as part of the revision of the Energy Performance of Buildings Directive (EPBD) by the end of 2021",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "by the end of 2021",
+    "indicators": [
+      "energy performance",
+      "minimum energy performance standards"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 13
+  },
+  {
+    "id": "tgt-6485f979",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "Extend public-building renovation requirement to all levels",
+    "target_text": "the Commission will propose by June 2021 the need to extend the scope of the requirements to all public administration levels and to increase the annual renovation obligation as part of the revision of the EED.",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "by June 2021",
+    "indicators": [
+      "public building renovation obligation"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 14
+  },
+  {
+    "id": "tgt-c217412e",
+    "policy_id": "renovation-wave",
+    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
+    "policy_short": "Renovation Wave",
+    "document_type": "communication",
+    "policy_area": "Buildings",
+    "article": "Three priority focus areas for renovation",
+    "target_text": "three areas deserve specific attention: a) tackling energy poverty and worst-performing buildings; b) renovating public buildings, such as administrative, educational and healthcare facilities and c) decarbonising heating and cooling.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "energy poverty",
+      "public buildings",
+      "heating and cooling"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "52020DC0662",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "target_number": 15
+  },
+  {
     "id": "tgt-6bb79aff",
     "policy_id": "renovation-wave",
     "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
@@ -17096,7 +18955,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "target_number": 1
+    "target_number": 16
   },
   {
     "id": "tgt-71f4c973",
@@ -17118,7 +18977,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "target_number": 2
+    "target_number": 17
   },
   {
     "id": "tgt-afb0c97b",
@@ -17137,26 +18996,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "target_number": 3
-  },
-  {
-    "id": "tgt-afb5f9cf",
-    "policy_id": "renovation-wave",
-    "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
-    "policy_short": "Renovation Wave",
-    "document_type": "communication",
-    "policy_area": "Buildings",
-    "article": "Body",
-    "target_text": "The increased rate and depth of renovation will have to be maintained also post-2030 in order to reach EU-wide climate neutrality by 2050.",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "qualitative",
-    "timeline": "by 2050",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "52020DC0662",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "target_number": 4
+    "target_number": 18
   },
   {
     "id": "tgt-2daec9ab",
@@ -17175,7 +19015,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "target_number": 5
+    "target_number": 19
   },
   {
     "id": "tgt-58649b3a",
@@ -17194,7 +19034,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "target_number": 6
+    "target_number": 20
   },
   {
     "id": "tgt-3412e98e",
@@ -17213,7 +19053,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "target_number": 7
+    "target_number": 21
   },
   {
     "id": "tgt-f9cce434",
@@ -17232,7 +19072,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "target_number": 8
+    "target_number": 22
   },
   {
     "id": "tgt-108cc41f",
@@ -17251,7 +19091,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "target_number": 9
+    "target_number": 23
   },
   {
     "id": "tgt-df66bf6d",
@@ -18206,23 +20046,176 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 13
   },
   {
-    "id": "tgt-a79274ff",
+    "id": "tgt-58e15d65",
     "policy_id": "ten-e-regulation",
     "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
     "policy_short": "TEN-E Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 1 — Subject matter, objectives and scope",
-    "target_text": "This Regulation lays down guidelines for the timely development and interoperability of the priority corridors and areas of trans-European energy infrastructure (energy infrastructure priority corridors and areas) set out in Annex I that contribute to ensuring climate change mitigation, in particular achieving the Union’s 2030 targets for energy and climate and its climate neutrality objective by 2050 at the latest, and to ensuring interconnections, energy security, market and system integration and competition that benefits all Member States, as well as affordability of energy prices.",
-    "target_label": "target",
+    "article": "Art. 1(1)",
+    "target_text": "This Regulation lays down guidelines for the timely development and interoperability of the priority corridors and areas of trans-European energy infrastructure (energy infrastructure priority corridors and areas) set out in Annex I that contribute to ensuring climate change mitigation, in particular achieving the Union’s 2030 targets for energy and climate and its climate neutrality objective by 2050 at the latest",
+    "target_label": "objective",
     "obligation": "mandatory",
     "target_type": "unspecified",
     "timeline": "by 2050",
-    "indicators": [],
+    "indicators": [
+      "climate neutrality",
+      "energy infrastructure corridors"
+    ],
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "target_number": 1
+  },
+  {
+    "id": "tgt-bb8709d1",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 2(19)",
+    "target_text": "‘climate adaptation’ means a process that ensures that resilience to the potential adverse impacts of climate change of energy infrastructure is achieved through a climate vulnerability and risk assessment, including through relevant adaptation measures.",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "climate resilience of infrastructure"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 2
+  },
+  {
+    "id": "tgt-a603ee6a",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 3(4)",
+    "target_text": "The Commission shall adopt the delegated act establishing the first Union list pursuant to this Regulation by 30 November 2023.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "by 30 November 2023",
+    "indicators": [
+      "first Union list"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-28449d31",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 4(3)(a)",
+    "target_text": "the project contributes significantly to sustainability through the integration of renewable energy into the grid, the transmission or distribution of renewable generation to major consumption centres and storage sites, and to reducing energy curtailment",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "renewable energy",
+      "renewable integration"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 4
+  },
+  {
+    "id": "tgt-18df2b57",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 4(3)(d)",
+    "target_text": "the project contributes significantly to sustainability, including by reducing greenhouse gas emissions, by enhancing the deployment of renewable or low carbon hydrogen, with an emphasis on hydrogen from renewable sources",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "greenhouse gas emissions",
+      "renewable hydrogen deployment"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 5
+  },
+  {
+    "id": "tgt-aaf00973",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 4(3)(c)",
+    "target_text": "the project contributes significantly to sustainability through the reduction of carbon dioxide emissions in the connected industrial installations",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "industrial CO2 reduction"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 6
+  },
+  {
+    "id": "tgt-46a464fd",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 4(3)(f)",
+    "target_text": "the project contributes significantly to sustainability by ensuring the integration of a plurality of low-carbon and particularly renewable gases, including where they are locally sourced, such as biomethane or renewable hydrogen, into the gas transmission, distribution or storage systems in order to reduce greenhouse gas emissions",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "greenhouse gas emissions",
+      "renewable gas integration"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 7
+  },
+  {
+    "id": "tgt-4d22b310",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Annex I(4)",
+    "target_text": "Northern Seas offshore grids (NSOG): offshore electricity grid development, integrated offshore electricity, as well as, where appropriate, hydrogen grid development and the related interconnectors in the North Sea, the Irish Sea, the Celtic Sea, the English Channel and neighbouring waters to transport electricity or, where appropriate, hydrogen from renewable offshore energy sources to centres of consumption and storage",
+    "target_label": "goal",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "offshore renewable grids"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 8
   },
   {
     "id": "tgt-4f321494",
@@ -18241,7 +20234,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "target_number": 2
+    "target_number": 9
   },
   {
     "id": "tgt-f6383a62",
@@ -18260,7 +20253,175 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "target_number": 3
+    "target_number": 10
+  },
+  {
+    "id": "tgt-503d9ce5",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 5(4)",
+    "target_text": "By 31 December of each year following the year of the inclusion of a project on the Union list, project promoters shall submit an annual report",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "annual",
+    "indicators": [
+      "project progress reporting"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 11
+  },
+  {
+    "id": "tgt-21edf922",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 7(6)",
+    "target_text": "By 24 March 2023, Member States shall take the non-legislative measures that they have identified under paragraph 5.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "By 24 March 2023",
+    "indicators": [
+      "non-legislative streamlining measures"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 12
+  },
+  {
+    "id": "tgt-a9808eaa",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 7(7)",
+    "target_text": "By 24 June 2023, Member States shall take the legislative measures that they have identified under paragraph 5.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "By 24 June 2023",
+    "indicators": [
+      "legislative streamlining measures"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 13
+  },
+  {
+    "id": "tgt-d1f19497",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 8(1)",
+    "target_text": "By 23 June 2022, each Member State shall update, where necessary, the designation of one national competent authority which shall be responsible for facilitating and coordinating the permit granting process for projects on the Union list.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "By 23 June 2022",
+    "indicators": [
+      "national competent authority"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 14
+  },
+  {
+    "id": "tgt-62721a55",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Annex I(9)",
+    "target_text": "Hydrogen interconnections in Western Europe (HI West): hydrogen infrastructure and the repurposing of gas infrastructure, enabling the emergence of an integrated hydrogen backbone",
+    "target_label": "goal",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "hydrogen backbone"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 15
+  },
+  {
+    "id": "tgt-9ddd23ac",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 10(1)(a)",
+    "target_text": "the pre-application procedure, covering the period between the start of the permit granting process and the acceptance of the submitted application file by the national competent authority, which shall take place within an indicative period of 24 months",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "24 months",
+    "indicators": [
+      "pre-application duration"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 16
+  },
+  {
+    "id": "tgt-ec9298b8",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 10(1)(b)",
+    "target_text": "the statutory permit granting procedure, covering the period from the date of acceptance of the submitted application file until the taking of the comprehensive decision, which shall not exceed 18 months.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "18 months",
+    "indicators": [
+      "statutory permit duration"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 17
+  },
+  {
+    "id": "tgt-094514e7",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 10(2)",
+    "target_text": "The national competent authority shall ensure that the combined duration of the two procedures referred to in paragraph 1 does not exceed a period of 42 months.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "42 months",
+    "indicators": [
+      "total permitting duration"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 18
   },
   {
     "id": "tgt-ce5c38b2",
@@ -18279,7 +20440,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "target_number": 4
+    "target_number": 19
+  },
+  {
+    "id": "tgt-4f3cf9f9",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Annex I(12)",
+    "target_text": "Smart electricity grids deployment: adopting smart grid technologies across the Union to efficiently integrate the behaviour and actions of all users connected to the electricity network, in particular the generation of large amounts of electricity from renewable or distributed energy sources and demand response by consumers, energy storage, electric vehicles and other flexibility sources",
+    "target_label": "goal",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "smart grid deployment"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 20
   },
   {
     "id": "tgt-b0dc6863",
@@ -18300,7 +20482,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "target_number": 5
+    "target_number": 21
   },
   {
     "id": "tgt-2344ecf9",
@@ -18319,7 +20501,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "target_number": 6
+    "target_number": 22
   },
   {
     "id": "tgt-95510baa",
@@ -18338,7 +20520,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "target_number": 7
+    "target_number": 23
+  },
+  {
+    "id": "tgt-b4e91c4d",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Annex I(13)",
+    "target_text": "Cross-border carbon dioxide network: development of infrastructure for transport and storage of carbon dioxide between Member States and with neighbouring third countries of carbon dioxide capture and storage captured from industrial installations for the purpose of permanent geological storage",
+    "target_label": "goal",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "CO2 transport and storage network"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 24
   },
   {
     "id": "tgt-ab0429e9",
@@ -18357,7 +20560,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "target_number": 8
+    "target_number": 25
   },
   {
     "id": "tgt-c38c37bb",
@@ -18376,7 +20579,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "target_number": 9
+    "target_number": 26
   },
   {
     "id": "tgt-1b8a3a08",
@@ -18395,7 +20598,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "target_number": 10
+    "target_number": 27
   },
   {
     "id": "tgt-5ea869ec",
@@ -18414,7 +20617,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "target_number": 11
+    "target_number": 28
   },
   {
     "id": "tgt-82fa9e65",
@@ -18433,7 +20636,385 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "target_number": 29
+  },
+  {
+    "id": "tgt-1fcd1813",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 1(1)",
+    "target_text": "This Regulation establishes guidelines for the development of a trans-European transport network consisting of a comprehensive network and of a core network and extended core network",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "TEN-T network structure"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 1
+  },
+  {
+    "id": "tgt-c1b1e3ba",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 4(1)",
+    "target_text": "The overall objective of the development of the trans-European transport network is to establish a single multimodal Union wide transport network of high quality.",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "single multimodal network"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 2
+  },
+  {
+    "id": "tgt-f842737a",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 4(2)(a)",
+    "target_text": "promotion of zero and low emission mobility in line with the relevant Union CO2 reduction targets",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "zero and low emission mobility"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-9b10b0d8",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 4(2)(a)",
+    "target_text": "enabling greater use of more sustainable modes of transport, in particular by further developing an interoperable long-distance rail passenger network, including at high speed, and an interoperable rail freight network",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "modal shift to rail"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 4
+  },
+  {
+    "id": "tgt-85c5b03d",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 5(1)(c)",
+    "target_text": "the deployment of alternative fuels recharging and refuelling infrastructure, thereby contributing to the deployment of decarbonisation technologies",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "alternative fuels infrastructure"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 5
+  },
+  {
+    "id": "tgt-d8f20b3d",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 5(1)(g)",
+    "target_text": "the development of green, sustainable and climate resilient infrastructure, taking into account active modes, and the promotion of new technologies that aim to decarbonise the construction of transport infrastructure",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "green climate-resilient infrastructure"
+    ],
+    "climate_relevance": "both",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 6
+  },
+  {
+    "id": "tgt-87c4dd4b",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 6(1)(a)",
+    "target_text": "the completion of a core network by 31 December 2030",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "by 31 December 2030",
+    "indicators": [
+      "core network completion"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 7
+  },
+  {
+    "id": "tgt-b39b1278",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 6(1)(b)",
+    "target_text": "the completion of an extended core network by 31 December 2040",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "by 31 December 2040",
+    "indicators": [
+      "extended core network completion"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 8
+  },
+  {
+    "id": "tgt-9f7b0aa6",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 6(1)(c)",
+    "target_text": "the completion of a comprehensive network by 31 December 2050",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "by 31 December 2050",
+    "indicators": [
+      "comprehensive network completion"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 9
+  },
+  {
+    "id": "tgt-ca2ce071",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 16(2)(b)",
+    "target_text": "enables, without special permission, the operation of freight trains with a train length of at least 740 m (including the locomotive or locomotives)",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "by 2040",
+    "indicators": [
+      "740 m freight trains"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 10
+  },
+  {
+    "id": "tgt-e999f611",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 16(4)(b)",
+    "target_text": "designed for a speed of at least 160 km/h for passenger trains on the passenger lines of the extended core network",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "by 2040",
+    "indicators": [
+      "160 km/h passenger lines"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 11
+  },
+  {
+    "id": "tgt-064e3a5e",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 17(1)",
+    "target_text": "Member States shall ensure that any new railway line of the core network and the extended core network, including connections referred to in Article 14(1), point (d), provides for the European standard nominal track gauge of 1 435 mm.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "by 2030/2040",
+    "indicators": [
+      "standard 1435 mm track gauge"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
     "target_number": 12
+  },
+  {
+    "id": "tgt-97dd6503",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 18(1)(a)",
+    "target_text": "ERTMS is equipped on the railway infrastructure of the extended core network by 31 December 2040 and the comprehensive network by 31 December 2050",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "by 31 December 2040",
+    "indicators": [
+      "ERTMS deployment"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 13
+  },
+  {
+    "id": "tgt-8b729734",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 18(4)",
+    "target_text": "Member States shall ensure that the railway infrastructure of the core network, the extended core network and the comprehensive network is equipped with radio-based ERTMS by 31 December 2050.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "by 31 December 2050",
+    "indicators": [
+      "radio-based ERTMS"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 14
+  },
+  {
+    "id": "tgt-482876cc",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 41(1)(b)",
+    "target_text": "the adoption and monitoring of a sustainable urban mobility plan (SUMP) for each urban node that includes inter alia measures to integrate the different modes of transport and shift towards sustainable mobility, to promote efficient zero and low emission mobility including urban logistics",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "by 2027",
+    "indicators": [
+      "sustainable urban mobility plans"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 15
+  },
+  {
+    "id": "tgt-a5cf880a",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 41(1)(c)",
+    "target_text": "by 31 December 2030, the development of multimodal passenger hubs to facilitate first and last mile connections",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "by 31 December 2030",
+    "indicators": [
+      "multimodal passenger hubs"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 16
+  },
+  {
+    "id": "tgt-c5f835ce",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 46(1)",
+    "target_text": "Member States shall make all appropriate efforts to improve the security and resilience of the infrastructure to climate change, natural hazards, hybrid threats, human-made disasters, accidents, and operational interruptions",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "infrastructure resilience"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 17
+  },
+  {
+    "id": "tgt-2572e5ee",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Art. 46(2)",
+    "target_text": "Projects of common interest for which an environmental impact assessment must be carried out in compliance with Directive 2011/92/EU shall be subject to climate proofing.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "climate proofing"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "target_number": 18
   },
   {
     "id": "tgt-a1751f55",
@@ -19070,6 +21651,324 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 8
   },
   {
+    "id": "tgt-af443426",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Objective 1: restore and protect the water cycle",
+    "target_text": "1.Restoring and protecting the water cycle as basis for sustainable water supply.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "water cycle restoration"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 1
+  },
+  {
+    "id": "tgt-baacc710",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Objective 2: build a water-smart economy",
+    "target_text": "2.Building a water-smart economy together with citizens and economic actors in a way that supports EU competitiveness, is attractive to investors and supports a thriving EU water industry.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "water-smart economy"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 2
+  },
+  {
+    "id": "tgt-8595fc1f",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Objective 3: clean and affordable water for all",
+    "target_text": "3.Securing clean and affordable water and sanitation for all at all times, and empowering citizens for water resilience.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "access to clean water"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-a20d1fc0",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Enhance water efficiency by at least 10% by 2030",
+    "target_text": "the EU should aim to enhance water efficiency by at least 10% by 2030. The Commission will work with Member States and stakeholders to develop a joint methodology for water efficiency targets",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "water efficiency"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 4
+  },
+  {
+    "id": "tgt-7cf23236",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "EIB Water Programme: EUR 15 billion 2025-2027",
+    "target_text": "over EUR 15 billion in planned financing during 2025-2027 for projects enhancing access to water, pollution control, resilience and competitiveness of the EU water sector",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "2025-2027",
+    "indicators": [
+      "water sector financing"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 5
+  },
+  {
+    "id": "tgt-6ad028b0",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Water Resilience Investment Accelerator: 20 pilots",
+    "target_text": "The Commission will establish a Water Resilience Investment Accelerator to implement 20 pilot innovative cases for natural water retention and water efficiency",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "2026-2027",
+    "indicators": [
+      "water retention pilots",
+      "water efficiency"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 6
+  },
+  {
+    "id": "tgt-6d6b87ad",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "EUR 23 billion annual water investment gap",
+    "target_text": "suggesting an annual investment gap of around EUR 23 billion per year (0.1% of EU GDP) to implement the existing water legislation",
+    "target_label": "other",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "annual",
+    "indicators": [
+      "water investment gap"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 7
+  },
+  {
+    "id": "tgt-af3bec37",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Water/climate resilience in national Restoration Plans by 2026",
+    "target_text": "Water and climate resilience must be fully integrated in the national Restoration Plans to be developed by 2026.",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "by 2026",
+    "indicators": [
+      "restoration plans"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 8
+  },
+  {
+    "id": "tgt-e7230635",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Good status of all water bodies by 2027 (WFD)",
+    "target_text": "objective to achieve good status of all water bodies by 2027",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "by 2027",
+    "indicators": [
+      "water body status"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 9
+  },
+  {
+    "id": "tgt-d01d7f59",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Evaluate Water Reuse Regulation by June 2028",
+    "target_text": "By June 2028, the Commission will evaluate the Water Reuse Regulation, and will subsequently consider extending its scope pending evaluation results.",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "by June 2028",
+    "indicators": [
+      "water reuse"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 10
+  },
+  {
+    "id": "tgt-af4aa5eb",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "National leakage-reduction action plans by 2030",
+    "target_text": "Member States with water supply leakage levels exceeding the EU-wide threshold – to be set by 2028 – will have to present, by 2030, national action plans to reduce leakages across their supply networks.",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "by 2028",
+    "indicators": [
+      "water supply leakage"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 11
+  },
+  {
+    "id": "tgt-e9ef3e8d",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Destination Earth water capabilities available by 2030",
+    "target_text": "Develop and implement Destination Earth and EU Digital Twin of the Ocean applications for water resilience, and by 2030, make the capabilities available to national and local administrations in the EU and beyond.",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "by 2030",
+    "indicators": [
+      "digital water models"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 12
+  },
+  {
+    "id": "tgt-26e96c9d",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Good environmental status for marine waters (MSFD)",
+    "target_text": "goal of achieving good environmental status for marine waters by 2020 was not met.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "by 2020",
+    "indicators": [
+      "good environmental status",
+      "marine environmental status"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 13
+  },
+  {
+    "id": "tgt-fbb33206",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Minimum performance standards for data-centre water use",
+    "target_text": "the Commission will rate their energy efficiency and overall sustainability and propose minimum performance standards, including for water consumption",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "energy efficiency",
+      "data centre water consumption"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 14
+  },
+  {
+    "id": "tgt-49f0c073",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Adopt a European Climate Adaptation Plan",
+    "target_text": "Adopt a European Climate Adaptation Plan.",
+    "target_label": "commitment",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "2026",
+    "indicators": [
+      "climate adaptation plan"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "target_number": 15
+  },
+  {
     "id": "tgt-85f0173a",
     "policy_id": "water-resilience-strategy",
     "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
@@ -19088,7 +21987,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
-    "target_number": 1
+    "target_number": 16
   },
   {
     "id": "tgt-441a6819",
@@ -19107,7 +22006,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
-    "target_number": 2
+    "target_number": 17
   },
   {
     "id": "tgt-ca9cf814",
@@ -19128,7 +22027,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
-    "target_number": 3
+    "target_number": 18
   },
   {
     "id": "tgt-45ba053a",
@@ -19150,7 +22049,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
-    "target_number": 4
+    "target_number": 19
   },
   {
     "id": "tgt-407d9f2d",

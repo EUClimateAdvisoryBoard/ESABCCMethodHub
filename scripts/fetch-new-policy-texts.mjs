@@ -44,6 +44,9 @@ const TARGETS = {
   'birds-directive': '32009L0147',
   'habitats-directive': '31992L0043',
   'ten-e-regulation': '32022R0869',
+  // ten-t: the previously-scraped local text was truncated OJ page chrome
+  // ("cannot be displayed due to its size") — re-fetch the full act from cellar.
+  'ten-t-regulation': '32024R1679',
 };
 
 const HEADERS = {

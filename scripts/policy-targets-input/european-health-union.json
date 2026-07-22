@@ -6,7 +6,9 @@
       "article": "Overall aim — a stronger Health Union",
       "label": "objective",
       "timeline": "",
-      "indicators": ["health crisis prevention, preparedness and management"],
+      "indicators": [
+        "health crisis prevention, preparedness and management"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -14,7 +16,11 @@
       "article": "Reinforced framework — three legislative proposals",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["ECDC mandate", "EMA mandate", "cross-border health threats decision"],
+      "indicators": [
+        "ECDC mandate",
+        "EMA mandate",
+        "cross-border health threats decision"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -22,7 +28,9 @@
       "article": "Coordinated EU response — Health Security Committee",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["Health Security Committee mandate"],
+      "indicators": [
+        "Health Security Committee mandate"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -30,7 +38,9 @@
       "article": "EU recognition of a public health emergency",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["EU emergency recognition"],
+      "indicators": [
+        "EU emergency recognition"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -38,7 +48,9 @@
       "article": "All-hazard risk assessment framework",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["all-hazard risk assessment"],
+      "indicators": [
+        "all-hazard risk assessment"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -46,7 +58,10 @@
       "article": "EMA — permanent structure on medicine shortages",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["EMA permanent structure", "medicine shortages"],
+      "indicators": [
+        "EMA permanent structure",
+        "medicine shortages"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -54,7 +69,10 @@
       "article": "EMA — Steering Group for Medical Devices",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["Steering Group for Medical Devices", "medical device shortages"],
+      "indicators": [
+        "Steering Group for Medical Devices",
+        "medical device shortages"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -62,7 +80,9 @@
       "article": "Preparedness — binding EU preparedness and response plan",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["EU pandemic preparedness plan"],
+      "indicators": [
+        "EU pandemic preparedness plan"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -70,7 +90,9 @@
       "article": "Preparedness — EU audit of national capacities",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["EU audit process"],
+      "indicators": [
+        "EU audit process"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -78,7 +100,9 @@
       "article": "Surveillance — new high-performing EU system",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["epidemiological surveillance system"],
+      "indicators": [
+        "epidemiological surveillance system"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -86,7 +110,9 @@
       "article": "Testing & contact tracing — automated contact tracing",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["contact tracing"],
+      "indicators": [
+        "contact tracing"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -94,7 +120,10 @@
       "article": "International cooperation — addressing outbreaks at source",
       "label": "objective",
       "timeline": "",
-      "indicators": ["global health security", "outbreaks at source"],
+      "indicators": [
+        "global health security",
+        "outbreaks at source"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -102,7 +131,9 @@
       "article": "International — EU Health Task Force within ECDC",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["EU Health Task Force"],
+      "indicators": [
+        "EU Health Task Force"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -110,7 +141,9 @@
       "article": "HERA — new EU preparedness and response authority",
       "label": "commitment",
       "timeline": "propose in 2021, operational in 2023",
-      "indicators": ["HERA"],
+      "indicators": [
+        "HERA"
+      ],
       "climate_relevance": "none"
     }
   ]

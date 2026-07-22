@@ -6,7 +6,9 @@
       "article": "Overarching goal",
       "label": "goal",
       "timeline": "",
-      "indicators": ["effective treatment of infections"],
+      "indicators": [
+        "effective treatment of infections"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -14,7 +16,10 @@
       "article": "Overall aim — reduce AMR, increase new antimicrobials",
       "label": "objective",
       "timeline": "",
-      "indicators": ["AMR emergence and spread", "new antimicrobials"],
+      "indicators": [
+        "AMR emergence and spread",
+        "new antimicrobials"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -22,7 +27,11 @@
       "article": "Pillar 1 — EU as best-practice region",
       "label": "objective",
       "timeline": "",
-      "indicators": ["best evidence", "coordination and surveillance", "control measures"],
+      "indicators": [
+        "best evidence",
+        "coordination and surveillance",
+        "control measures"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -30,7 +39,11 @@
       "article": "Pillar 2 — boosting research and innovation",
       "label": "objective",
       "timeline": "",
-      "indicators": ["research and innovation", "knowledge gaps", "diagnosis"],
+      "indicators": [
+        "research and innovation",
+        "knowledge gaps",
+        "diagnosis"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -38,7 +51,9 @@
       "article": "Pillar 3 — shaping the global agenda",
       "label": "objective",
       "timeline": "",
-      "indicators": ["global agenda on AMR"],
+      "indicators": [
+        "global agenda on AMR"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -46,7 +61,11 @@
       "article": "Priority areas of EU action",
       "label": "objective",
       "timeline": "",
-      "indicators": ["prudent use", "infection prevention", "surveillance"],
+      "indicators": [
+        "prudent use",
+        "infection prevention",
+        "surveillance"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -54,7 +73,10 @@
       "article": "Better evidence — key outcome indicators",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["key outcome indicators", "antimicrobial consumption"],
+      "indicators": [
+        "key outcome indicators",
+        "antimicrobial consumption"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -62,7 +84,9 @@
       "article": "Infection prevention — vaccination uptake",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["vaccination uptake"],
+      "indicators": [
+        "vaccination uptake"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -70,7 +94,10 @@
       "article": "Prudent use — implementing acts on veterinary antimicrobials",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["prudent use", "veterinary antimicrobials"],
+      "indicators": [
+        "prudent use",
+        "veterinary antimicrobials"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -78,7 +105,9 @@
       "article": "Prudent use — EU guidelines in human medicine",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["prudent use guidelines"],
+      "indicators": [
+        "prudent use guidelines"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -86,7 +115,9 @@
       "article": "Environment — strategic approach to pharmaceuticals",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["pharmaceuticals in the environment"],
+      "indicators": [
+        "pharmaceuticals in the environment"
+      ],
       "climate_relevance": "adaptation"
     },
     {
@@ -94,7 +125,10 @@
       "article": "Availability — tackling falsified medicines",
       "label": "commitment",
       "timeline": "by 2019",
-      "indicators": ["falsified medicines", "safety features"],
+      "indicators": [
+        "falsified medicines",
+        "safety features"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -102,7 +136,9 @@
       "article": "R&I — new preventive vaccines",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["new preventive vaccines"],
+      "indicators": [
+        "new preventive vaccines"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -110,7 +146,10 @@
       "article": "R&I — AMR in the environment",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["AMR in the environment", "research"],
+      "indicators": [
+        "AMR in the environment",
+        "research"
+      ],
       "climate_relevance": "adaptation"
     },
     {
@@ -118,7 +157,9 @@
       "article": "Global agenda — normative work with WHO/OIE/FAO",
       "label": "commitment",
       "timeline": "",
-      "indicators": ["international frameworks and standards"],
+      "indicators": [
+        "international frameworks and standards"
+      ],
       "climate_relevance": "none"
     },
     {
@@ -126,7 +167,10 @@
       "article": "Measuring success — measurable national goals",
       "label": "target",
       "timeline": "",
-      "indicators": ["measurable goals", "reduce resistant infections"],
+      "indicators": [
+        "measurable goals",
+        "reduce resistant infections"
+      ],
       "climate_relevance": "none"
     }
   ]

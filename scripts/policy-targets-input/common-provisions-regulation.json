@@ -1,0 +1,180 @@
+{
+  "policy_id": "common-provisions-regulation",
+  "targets": [
+    {
+      "quote": "a greener, low-carbon transitioning towards a net zero carbon economy and resilient Europe by promoting clean and fair energy transition, green and blue investment, the circular economy, climate change mitigation and adaptation, risk prevention and management, and sustainable urban mobility;",
+      "article": "Article 5(1)(b) — policy objective 2 (greener, low-carbon)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "policy objectives",
+        "climate mitigation and adaptation"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "The JTF shall support the specific objective of enabling regions and people to address the social, employment, economic and environmental impacts of the transition towards the Union’s 2030 targets for energy and climate and a climate-neutral economy of the Union by 2050, based on the Paris Agreement.",
+      "article": "Article 5 — JTF specific objective",
+      "label": "objective",
+      "timeline": "by 2050 / 2030",
+      "indicators": [
+        "just transition",
+        "climate-neutral economy"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "The ERDF and the Cohesion Fund shall contribute with 30 % and 37 % respectively of the Union contribution to expenditure supported for the achievement of the climate objectives set for the Union budget.",
+      "article": "Article 6(1) — climate targets (30%/37% contribution)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "climate expenditure share"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The climate contribution target for each Member State shall be established as a percentage of its total ERDF and Cohesion Fund allocation and included in programmes as a result of the types of intervention and the indicative financial breakdown pursuant to point (d)(viii) of Article 22(3). As provided for in Article 11(1), the preliminary climate contribution target shall be established in the Partnership Agreement.",
+      "article": "Article 6(2) — climate contribution target per Member State",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "climate contribution target"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The Member State and the Commission shall regularly monitor respect of the climate contribution targets, based on the total eligible expenditure declared by the beneficiaries to the managing authority as broken down by types of intervention in accordance with Article 42 and on data submitted by the Member State. Where the monitoring shows insufficient progress towards reaching the climate contribution target, the Member State and the Commission shall agree on remedial measures in the annual review meeting.",
+      "article": "Article 6(3) — monitoring of climate contribution targets",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "climate contribution monitoring"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Where there is insufficient progress towards reaching the climate contribution target at national level by 31 December 2024, the Member State shall take this into account in its mid-term review in accordance with Article 18(1).",
+      "article": "Article 6(4) — mid-term review of climate target",
+      "label": "commitment",
+      "timeline": "by 31 December 2024",
+      "indicators": [
+        "climate contribution target"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The objectives of the Funds shall be pursued in line with the objective of promoting sustainable development as set out in Article 11 TFEU, taking into account the UN Sustainable Development Goals, the Paris Agreement and the \"do no significant harm\" principle.",
+      "article": "Article 9(4) — horizontal principle (sustainable development, DNSH)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "do no significant harm",
+        "sustainable development"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "The objectives of the Funds shall be pursued in full respect of the Union environmental acquis.",
+      "article": "Article 9(4) — respect for environmental acquis",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "environmental acquis"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "‘climate proofing’ means a process to prevent infrastructure from being vulnerable to potential long-term climate impacts whilst ensuring that the ‘energy efficiency first’ principle is respected and that the level of greenhouse gas emissions arising from the project is consistent with the climate neutrality objective in 2050;",
+      "article": "Article 2(42) — definition of climate proofing",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": [
+        "climate proofing",
+        "climate neutrality"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "ensure the climate proofing of investments in infrastructure which have an expected lifespan of at least 5 years.",
+      "article": "Article 73(2)(j) — climate proofing of infrastructure operations",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "climate proofing"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "Annex III contains horizontal enabling conditions applicable to all specific objectives and the criteria necessary for the assessment of their fulfilment.",
+      "article": "Article 15 — horizontal enabling conditions",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "enabling conditions"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The integrated national energy and climate plan is notified to the Commission, in accordance with Article 3 of Regulation (EU) 2018/1999 and consistent with the long-term greenhouse gas emission reduction objectives under the Paris Agreement, which includes:",
+      "article": "Annex IV 2.2 — enabling condition: governance of the energy sector",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "national energy and climate plan"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Compliance with the 2020 binding national renewable energy target and with this share of renewable energy as a baseline up to 2030 or having taken additional measures in case the baseline is not maintained over any one-year period in accordance with the Directive (EU) 2018/2001 and Regulation (EU) 2018/1999.",
+      "article": "Annex IV 2.3 — enabling condition: renewable energy promotion",
+      "label": "target",
+      "timeline": "up to 2030",
+      "indicators": [
+        "renewable energy share"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "A national or regional disaster risk management plan, established on the basis of risk assessments, taking due account of the likely impacts of climate change and the existing climate adaptation strategies, is in place and includes:",
+      "article": "Annex IV 2.4 — enabling condition: disaster risk management",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "disaster risk management plan",
+        "climate adaptation"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "A national long term renovation strategy to support the renovation of the national stock of residential and non-residential buildings is adopted",
+      "article": "Annex IV 2.1 — enabling condition: building renovation strategy",
+      "label": "other",
+      "timeline": "milestones 2030/2040/2050",
+      "indicators": [
+        "long-term renovation strategy"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The partnership established under paragraph 1 of this Article shall operate in accordance with the multi-level governance principle and a bottom-up approach.",
+      "article": "Article 8(2) — partnership and multi-level governance",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "partnership principle"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Each Member State shall prepare a Partnership Agreement which sets out the strategic orientation for programming and the arrangements for using the ERDF, the ESF+, the Cohesion Fund, the JTF and the EMFAF in an effective and efficient way for the period from 1 January 2021 to 31 December 2027.",
+      "article": "Article 10(1) — Partnership Agreement 2021-2027",
+      "label": "commitment",
+      "timeline": "2021-2027",
+      "indicators": [
+        "Partnership Agreement"
+      ],
+      "climate_relevance": "none"
+    }
+  ]
+}

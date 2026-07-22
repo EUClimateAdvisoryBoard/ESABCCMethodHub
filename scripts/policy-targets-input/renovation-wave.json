@@ -1,0 +1,160 @@
+{
+  "policy_id": "renovation-wave",
+  "targets": [
+    {
+      "quote": "The objective is to at least double the annual energy renovation rate of residential and non-residential buildings by 2030 and to foster deep energy renovations.",
+      "article": "Double annual renovation rate by 2030",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "annual energy renovation rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Mobilising forces at all levels towards these goals will result in 35 million building units renovated by 2030.",
+      "article": "35 million building units renovated",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "building units renovated"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The increased rate and depth of renovation will have to be maintained also post-2030 in order to reach EU-wide climate neutrality by 2050.",
+      "article": "Climate neutrality of building stock by 2050",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": [
+        "climate neutrality"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "to cut net greenhouse gas emissions in the EU by at least 55% by 2030 compared to 1990.",
+      "article": "EU net GHG cut of at least 55% by 2030",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "net GHG emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 2030 the EU should reduce buildings’ greenhouse gas emissions by 60%, their final energy consumption by 14% and energy consumption for heating and cooling by 18%",
+      "article": "Buildings GHG -60%, energy -14%, heating/cooling -18% by 2030",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "buildings GHG emissions",
+        "buildings final energy",
+        "heating/cooling energy"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "By 2030 an additional 160 000 green jobs could be created in the EU construction sector through a renovation wave",
+      "article": "160 000 green construction jobs by 2030",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "green jobs"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "in order to achieve the proposed 55% climate target by 2030, around EUR 275 billion of additional investments are needed per year",
+      "article": "EUR 275 billion additional annual renovation investment",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "annual investment need"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The annual rate of replacement of heating equipment would have to reach around 4% in both the residential and services sector. During the same time period, the share of renewables and waste heat would have to increase to 38-42%",
+      "article": "Heating equipment replacement ~4%/yr; renewables & waste heat 38-42%",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "heating equipment replacement rate",
+        "renewables & waste heat share"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "the Commission will propose mandatory minimum energy performance standards as part of the revision of the Energy Performance of Buildings Directive (EPBD) by the end of 2021",
+      "article": "Mandatory minimum energy performance standards (EPBD)",
+      "label": "commitment",
+      "timeline": "by end 2021",
+      "indicators": [
+        "minimum energy performance standards"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the Commission will propose by June 2021 the need to extend the scope of the requirements to all public administration levels and to increase the annual renovation obligation as part of the revision of the EED.",
+      "article": "Extend public-building renovation requirement to all levels",
+      "label": "commitment",
+      "timeline": "by June 2021",
+      "indicators": [
+        "public building renovation obligation"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "indicative milestones for the renovation of public and private service buildings for 2030 and 2040 with a view to decarbonising the building stock by 2050.",
+      "article": "Renovation milestones for service buildings 2030/2040",
+      "label": "commitment",
+      "timeline": "2030 and 2040",
+      "indicators": [
+        "renovation milestones"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "it will develop by 2023 a roadmap leading up to 2050 for reducing whole life-cycle carbon emissions in buildings.",
+      "article": "2050 roadmap for whole life-cycle carbon of buildings",
+      "label": "commitment",
+      "timeline": "by 2023",
+      "indicators": [
+        "whole life-cycle carbon"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "With nearly 34 million Europeans unable to afford keeping their home adequately warm\n65\n, tackling energy poverty is an urgent task for the EU and its Member States.",
+      "article": "Tackling energy poverty (34 million affected)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "energy poverty"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "Each year, 800 000 social homes need renovation, requiring an estimated EUR 57 billion of additional funding",
+      "article": "800 000 social homes needing renovation per year",
+      "label": "other",
+      "timeline": "annual",
+      "indicators": [
+        "social homes renovation need"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "three areas deserve specific attention: a) tackling energy poverty and worst-performing buildings; b) renovating public buildings, such as administrative, educational and healthcare facilities and c) decarbonising heating and cooling.",
+      "article": "Three priority focus areas for renovation",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "energy poverty",
+        "public buildings",
+        "heating and cooling"
+      ],
+      "climate_relevance": "both"
+    }
+  ]
+}

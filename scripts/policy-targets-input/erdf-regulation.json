@@ -1,0 +1,127 @@
+{
+  "policy_id": "erdf-regulation",
+  "targets": [
+    {
+      "quote": "This Regulation sets out the specific objectives and the scope of support from the European Regional Development Fund (ERDF) with regard to the Investment for jobs and growth goal and the European territorial cooperation goal (Interreg) referred to in Article 5(2) of Regulation (EU) 2021/1060.",
+      "article": "Article 1(1)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "ERDF scope"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "a greener, low-carbon transitioning towards a net zero carbon economy and resilient Europe by promoting clean and fair energy transition, green and blue investment, the circular economy, climate change mitigation and adaptation, risk prevention and management, and sustainable urban mobility (PO 2)",
+      "article": "Article 3(1)(b)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "policy objective 2 - greener Europe"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "promoting energy efficiency and reducing greenhouse gas emissions;",
+      "article": "Article 3(1)(b)(i)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "energy efficiency",
+        "GHG emission reduction"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "promoting renewable energy in accordance with Directive (EU) 2018/2001, including the sustainability criteria set out therein;",
+      "article": "Article 3(1)(b)(ii)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "renewable energy"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "promoting climate change adaptation and disaster risk prevention and resilience, taking into account eco-system based approaches;",
+      "article": "Article 3(1)(b)(iv)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "climate adaptation",
+        "disaster risk prevention"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Cohesion Fund shall support PO 2 and 3.",
+      "article": "Article 3(3)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "Cohesion Fund support for PO2/PO3"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "Member States of group 1 or more developed regions shall allocate at least 85 % of their ERDF resources referred to in paragraph 1 to PO 1 and PO 2, and at least 30 % to PO 2;",
+      "article": "Article 4(6)(a)",
+      "label": "target",
+      "timeline": "programming period",
+      "indicators": [
+        "thematic concentration group 1: >=85% PO1+PO2, >=30% PO2"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States of group 2 or transition regions shall allocate at least 40 % of their ERDF resources referred to in paragraph 1 to PO 1, and at least 30 % to PO 2;",
+      "article": "Article 4(6)(b)",
+      "label": "target",
+      "timeline": "programming period",
+      "indicators": [
+        "thematic concentration group 2: >=30% PO2"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States of group 3 or less developed regions shall allocate at least 25 % of their ERDF resources referred to in paragraph 1 to PO 1, and at least 30 % to PO 2.",
+      "article": "Article 4(6)(c)",
+      "label": "target",
+      "timeline": "programming period",
+      "indicators": [
+        "thematic concentration group 3: >=30% PO2"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By way of derogation from paragraph 6, 50 % of such ERDF resources shall be taken into account when calculating compliance with the thematic concentration requirements for PO 2 set out in paragraph 6.",
+      "article": "Article 4(9)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "sustainable urban mobility counted to PO2"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "investment to achieve the reduction of greenhouse gas emissions from activities listed in Annex I to Directive 2003/87/EC;",
+      "article": "Article 7(1)(b)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "exclusion - ETS GHG reduction investments"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "investment related to production, processing, transport, distribution, storage or combustion of fossil fuels, with the exception of:",
+      "article": "Article 7(1)(h)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "exclusion - fossil fuels"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

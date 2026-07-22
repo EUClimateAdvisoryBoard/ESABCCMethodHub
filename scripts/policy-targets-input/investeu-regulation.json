@@ -1,0 +1,115 @@
+{
+  "policy_id": "investeu-regulation",
+  "targets": [
+    {
+      "quote": "The general objective of the InvestEU Programme is to support the policy objectives of the Union by means of financing and investment operations that contribute to:",
+      "article": "Article 3(1)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "InvestEU general objective"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "growth and employment in the Union economy, the sustainability of the Union economy and its environmental and climate dimension contributing to the achievement of the SDGs and the objectives of the Paris Agreement and to the creation of high-quality jobs;",
+      "article": "Article 3(1)(b)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "sustainability / climate dimension of the economy"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "supporting financing and investment operations related to sustainable infrastructure in the areas referred to in point (a) of Article 8(1);",
+      "article": "Article 3(2)(a)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "specific objective - sustainable infrastructure"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "The EU guarantee for the purposes of the EU compartment referred to in point (a) of Article 9(1) shall be EUR 26 152 310 073 in current prices. It shall be provisioned at the rate of 40 %.",
+      "article": "Article 4(1)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "EU guarantee amount"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "a sustainable infrastructure policy window which comprises sustainable investment in the areas of transport, including multimodal transport, road safety, including in accordance with the Union objective of eliminating fatal road accidents and serious injuries by 2050, the renewal and maintenance of rail and road infrastructure, energy, in particular renewable energy, energy efficiency in accordance with the 2030 energy framework, buildings renovation projects focused on energy savings",
+      "article": "Article 8(1)(a)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "sustainable infrastructure policy window"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "A just transition scheme shall be established horizontally across all policy windows. That scheme shall comprise investments that address social, economic and environmental challenges deriving from the transition process towards the achievement of the Union’s 2030 climate target and its target of achieving climate neutrality by 2050",
+      "article": "Article 8(2)",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": [
+        "just transition scheme"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "If those operations have such an impact they shall be subject to climate, environmental and social sustainability proofing with a view to minimising detrimental impacts and to maximising benefits to the climate, environment and social dimensions.",
+      "article": "Article 8(5)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "sustainability proofing"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "Projects that are inconsistent with the climate objectives shall not be eligible for support under this Regulation.",
+      "article": "Article 8(5)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "exclusion of climate-inconsistent projects"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Implementing partners shall provide the information necessary to allow the tracking of investment that contributes to meeting the Union objectives on climate and environment, on the basis of guidance to be provided by the Commission.",
+      "article": "Article 8(7)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "climate and environment tracking"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "Implementing partners shall apply a target of at least 60 % of the investment under the sustainable infrastructure policy window contributing to meeting the Union objectives on climate and environment.",
+      "article": "Article 8(8)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "at least 60% of sustainable infrastructure window to climate/environment"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "All policy windows may include strategic investments including important projects of common European interest to support final recipients whose activities are of strategic importance to the Union, in particular in view of the green and digital transitions",
+      "article": "Article 8(3)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "strategic investments - green and digital transitions"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

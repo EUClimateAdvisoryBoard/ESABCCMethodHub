@@ -1,0 +1,85 @@
+{
+  "policy_id": "mff-regulation",
+  "targets": [
+    {
+      "quote": "This Regulation lays down the multiannual financial framework for the years 2021 to 2027 (MFF).",
+      "article": "Article 1",
+      "label": "objective",
+      "timeline": "2021-2027",
+      "indicators": [
+        "MFF period"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The European Parliament, the Council and the Commission (the ‘Institutions’) shall, during each budgetary procedure and when implementing the budget for the year concerned, comply with the annual expenditure ceilings set out in Annex I (the ‘MFF ceilings’).",
+      "article": "Article 2(1)",
+      "label": "commitment",
+      "timeline": "2021-2027",
+      "indicators": [
+        "compliance with MFF ceilings"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "For each of the years covered by the MFF, the total appropriations for payments required, after annual adjustment and taking account of any other adjustments and revisions as well as the application of Article 2(2) and (3), shall not be such as to produce a call-in rate for own resources that exceeds the own resources ceiling",
+      "article": "Article 3(1)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "own resources ceiling"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The total amount of additional allocations for the period 2022 to 2027 for commitment and payment appropriations respectively shall be EUR 11 000 million (in 2018 prices).",
+      "article": "Article 5(1)",
+      "label": "target",
+      "timeline": "2022-2027",
+      "indicators": [
+        "additional allocations EUR 11 000 million"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The Solidarity and Emergency Aid Reserve shall not exceed a maximum annual amount of EUR 1 200 million (in 2018 prices). Any portion of the annual amount not used in year n may be used up to year n+1.",
+      "article": "Article 9(2)",
+      "label": "target",
+      "timeline": "annual",
+      "indicators": [
+        "Solidarity and Emergency Aid Reserve ceiling"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The Brexit Adjustment Reserve shall not exceed an amount of EUR 5 000 million (in 2018 prices).",
+      "article": "Article 10(2)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "Brexit Adjustment Reserve ceiling"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The ceiling for the annual amount available for the Flexibility Instrument shall be EUR 915 million (in 2018 prices).",
+      "article": "Article 12(1)",
+      "label": "target",
+      "timeline": "annual",
+      "indicators": [
+        "Flexibility Instrument ceiling"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Before 1 July 2025, the Commission shall present a proposal for a new multiannual financial framework.",
+      "article": "Article 21",
+      "label": "commitment",
+      "timeline": "by 1 July 2025",
+      "indicators": [
+        "proposal for next MFF"
+      ],
+      "climate_relevance": "none"
+    }
+  ]
+}

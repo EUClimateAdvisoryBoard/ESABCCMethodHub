@@ -1,0 +1,109 @@
+{
+  "policy_id": "cultural-heritage-framework",
+  "targets": [
+    {
+      "quote": "The overall aim is to help Member States and stakeholders make the most of the significant support for heritage available under EU instruments, progress towards a more integrated approach at national and EU level, and ultimately make Europe a laboratory for heritage-based innovation",
+      "article": "Sec. 1.1 Introduction",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["integrated approach to heritage"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "In line with the objectives of the European Agenda for Culture, this Communication presents the EU's approach to heritage across different policy areas (section 2).",
+      "article": "Sec. 1.1 Introduction",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["mainstreaming heritage across policies"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Therefore a more integrated approach to heritage conservation, promotion and valorisation is needed in order to take into account its manifold contribution to societal and economic objectives, as well as its impact on other public policies.",
+      "article": "Sec. 1.3",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["integrated heritage approach"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "to increase understanding of the actual and potential role of heritage in policy development, it is important to improve systematic data on its economic and social impacts.",
+      "article": "Sec. 1.2",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["evidence base on heritage impacts"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "heritage contributes through its direct and indirect economic potential, including the capacity to underpin our cultural and creative industries and inspire creators and thinkers",
+      "article": "Sec. 2",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["economic potential of heritage"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The heritage sector must also adapt management and business models and develop new professional skills, working with authorities not through one-off, isolated interventions, but by making the valorisation and preservation of heritage part of broader long-term development plans.",
+      "article": "Sec. 1.3",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["long-term heritage development plans"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "encourage the modernisation of the heritage sector, raising awareness and engaging new audiences",
+      "article": "Sec. 2",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["modernisation of heritage sector"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "apply a strategic approach to research and innovation, knowledge sharing and smart specialization;",
+      "article": "Sec. 2",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["strategic research and innovation"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "seize the opportunities offered by digitisation; to reach out to new audiences and engage young people in particular;",
+      "article": "Sec. 2",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["digitisation of heritage"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "continue developing more participative interpretation and governance models that are better suited to contemporary Europe, through greater involvement of the private sector and civil society.",
+      "article": "Sec. 2",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["participative heritage governance"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Global warming and climate change, in particular rising sea levels and the increased occurrence of extreme weather events, can put cultural heritage at risk.",
+      "article": "Sec. 1.3",
+      "label": "other",
+      "timeline": "",
+      "indicators": ["climate risk to cultural heritage"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Furthermore, research and innovation is carried out on strategies, methodologies and tools needed to enable a dynamic and sustainable cultural heritage in Europe in response to climate change and natural hazards and disasters.",
+      "article": "Sec. 2.1",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["heritage resilience to climate change"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Commission now invites all stakeholders to jointly look into how public policies at all levels, including the EU, could better be marshalled to draw out the long term and sustainability value of Europe's cultural heritage, and develop a more integrated approach to its preservation and valorisation.",
+      "article": "Sec. 4 Conclusion",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["integrated approach to preservation"],
+      "climate_relevance": "none"
+    }
+  ]
+}
