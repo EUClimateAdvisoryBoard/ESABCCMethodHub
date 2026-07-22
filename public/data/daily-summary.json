@@ -1,6 +1,6 @@
 {
   "date": "2026-07-22",
-  "generatedAt": "2026-07-22T07:38:27.645Z",
+  "generatedAt": "2026-07-22T12:29:18.286Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 22 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Investors see pollution plan silver lining in EU carbon overhaul - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPYnlGZUxhbWIyV21zd1R6Tjl1RTJhal9FZF9iMHQ4TkpHN21QRllpbWtDdFB6Vjc5dTNuS29zWUpZVjRCaENnMEVDLVV0bGFIZVpHVlJJd280aWs2WXlJTGRSOGhmdlhyTGlTb3hvN2xFOHVQSnBkNEVla0RURWlWSVdMWmdiaWFnR2E4ZTlBYm5sUHk3TXVwYWZHOE8wbFJfanBtQks0eTd6cHhXbEVkLTNlaER1X0RIU0E?oc=5\" target=\"_blank\"&gt;Investors see pollution plan silver lining in EU carbon overhaul&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Allegations of harms at China-backed transition minerals projects rise",
+      "summary": "The growing number of recorded abuses linked to Chinese mineral projects come as a new mediation mechanism between Chinese firms and affected communities gets underway The post Allegations of harms at China-backed transition minerals projects rise appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -46,7 +46,7 @@
           "link": "https://www.bbc.co.uk/news/articles/cvgl9vp4vqvo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Whitelee Windfarm has been producing electricity for about 20 years on a stretch of moorland near Eaglesham but is reaching the end of its life.",
-          "published": "2026-07-22T06:12:32.000Z",
+          "published": "2026-07-22T09:28:47.000Z",
           "score": 7
         },
         {
@@ -54,7 +54,7 @@
           "link": "https://www.bbc.co.uk/news/articles/cdrv0p37k8jo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The US president's threat to target a key Iranian nuclear site came ahead of the 11th consecutive night of attacks.",
-          "published": "2026-07-22T03:05:08.000Z",
+          "published": "2026-07-22T10:15:03.000Z",
           "score": 7
         },
         {
@@ -80,27 +80,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Investors see pollution plan silver lining in EU carbon overhaul - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPYnlGZUxhbWIyV21zd1R6Tjl1RTJhal9FZF9iMHQ4TkpHN21QRllpbWtDdFB6Vjc5dTNuS29zWUpZVjRCaENnMEVDLVV0bGFIZVpHVlJJd280aWs2WXlJTGRSOGhmdlhyTGlTb3hvN2xFOHVQSnBkNEVla0RURWlWSVdMWmdiaWFnR2E4ZTlBYm5sUHk3TXVwYWZHOE8wbFJfanBtQks0eTd6cHhXbEVkLTNlaER1X0RIU0E?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPYnlGZUxhbWIyV21zd1R6Tjl1RTJhal9FZF9iMHQ4TkpHN21QRllpbWtDdFB6Vjc5dTNuS29zWUpZVjRCaENnMEVDLVV0bGFIZVpHVlJJd280aWs2WXlJTGRSOGhmdlhyTGlTb3hvN2xFOHVQSnBkNEVla0RURWlWSVdMWmdiaWFnR2E4ZTlBYm5sUHk3TXVwYWZHOE8wbFJfanBtQks0eTd6cHhXbEVkLTNlaER1X0RIU0E?oc=5\" target=\"_blank\"&gt;Investors see pollution plan silver lining in EU carbon overhaul&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-21T16:05:04.000Z",
-          "score": 13
-        },
-        {
           "title": "Allegations of harms at China-backed transition minerals projects rise",
           "link": "https://www.climatechangenews.com/2026/07/22/allegations-of-harms-at-china-backed-transition-minerals-projects-rise/",
           "source": "Climate Home News",
           "description": "The growing number of recorded abuses linked to Chinese mineral projects come as a new mediation mechanism between Chinese firms and affected communities gets underway The post Allegations of harms at China-backed transition minerals projects rise appeared first on Climate Home News.",
           "published": "2026-07-22T00:01:00.000Z",
-          "score": 10
-        },
-        {
-          "title": "Extreme heat costing India&#8217;s poorest workers 2% of GDP, survey finds",
-          "link": "https://www.climatechangenews.com/2026/07/21/extreme-heat-costing-india-poor-workers-2-gdp-survey-finds/",
-          "source": "Climate Home News",
-          "description": "India's informal workers are estimated to be losing $78 billion in wages per year because of productivity declines and illness caused by intensifying heat The post Extreme heat costing India&#8217;s poorest workers 2% of GDP, survey finds appeared first on Climate Home News.",
-          "published": "2026-07-21T08:30:03.000Z",
           "score": 10
         },
         {
@@ -117,6 +101,22 @@
           "source": "BBC Science & Environment",
           "description": "Eight areas across England are now in prolonged dry weather – the stage before drought.",
           "published": "2026-07-21T13:46:05.000Z",
+          "score": 7
+        },
+        {
+          "title": "Spain: Firefighters battle major wildfire north of Madrid",
+          "link": "https://www.dw.com/en/spain-firefighters-battle-major-wildfire-north-of-madrid/a-78059592?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Officials say the blaze, which has forced about 1,200 people to evacuate and has burned at least 30,000 hectares of land, is one of the most complex to affect the country in years.",
+          "published": "2026-07-21T21:40:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Fast-moving wildfire in southern France forces hundreds to flee - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPWWNBZWlfMVJCN3J6emRQbzY5NThiVVkzUmlfTW8tck5DVkxQM3BIQ3FiY0RtWUFjdTRpU3ZFbEJNaG9nNS1SYWhYTnVkRDhDcWNmWEkwdVU5cWpDbE5zNEYxcko5S2FvLVpmQ00zd2V5Rk9TYTlLYV9uc2l4bGw4RnRQbUFnVk85YTQ4X0Y1dXRJNGgxVGJVdm1oS3dkS2RabjNRSGdQbTZVTElvRlE5RGx5b3Y?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPWWNBZWlfMVJCN3J6emRQbzY5NThiVVkzUmlfTW8tck5DVkxQM3BIQ3FiY0RtWUFjdTRpU3ZFbEJNaG9nNS1SYWhYTnVkRDhDcWNmWEkwdVU5cWpDbE5zNEYxcko5S2FvLVpmQ00zd2V5Rk9TYTlLYV9uc2l4bGw4RnRQbUFnVk85YTQ4X0Y1dXRJNGgxVGJVdm1oS3dkS2RabjNRSGdQbTZVTElvRlE5RGx5b3Y?oc=5\" target=\"_blank\"&gt;Fast-moving wildfire in southern France forces hundreds to flee&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-22T06:20:00.000Z",
           "score": 7
         }
       ]
@@ -138,37 +138,20 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "AMENDMENTS 11 - 119 - Draft report Amending Regulation (EU) 2023/1542 and Regulation (EU) 2024/1244 as regards simplification of some requirements and reduction of administrative burden - PE790.846v02-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-790846_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 11 - 119 - Draft report Amending Regulation (EU) 2023/1542 and Regulation (EU) 2024/1244 as regards simplification of some requirements and reduction of administrative burden&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Susana Solís Pérez&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-21T09:13:07.000Z",
-          "score": 22
-        },
-        {
-          "title": "China's foreign minister discusses trade balance with EU lawmakers - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcTZtbUZSVkVVMzJKZzhmNlF1TmVIb3Z5ZlpoTUxweDd3ZUtTZ0dKUW1DdENYV1Fua0hqSEVyNHhiUGVHODBGNnJqdC1tQUNFQTBHMnNBS2I1Y3NESGVYTkxIckRvREhYbC1HTW5rcFJhMVN4ZnFydTFlOU1sU1dOWHdCVXdOOFVhLXlnVEhTc2lIV0lhbDJudWpyQlhuejlaell6cElUUmhMTzV3SkFMREdzQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQcTZtbUZSVkVVMzJKZzhmNlF1TmVIb3Z5ZlpoTUxweDd3ZUtTZ0dKUW1DdENYV1Fua0hqSEVyNHhiUGVHODBGNnJqdC1tQUNFQTBHMnNBS2I1Y3NESGVYTkxIckRvREhYbC1HTW5rcFJhMVN4ZnFydTFlOU1sU1dOWHdCVXdOOFVhLXlnVEhTc2lIV0lhbDJudWpyQlhuejlaell6cElUUmhMTzV3SkFMREdzQQ?oc=5\" target=\"_blank\"&gt;China's foreign minister discusses trade balance with EU lawmakers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-21T12:27:50.000Z",
-          "score": 8
-        },
-        {
-          "title": "How heat waves are messing with your sleep",
-          "link": "https://www.dw.com/en/how-heat-waves-are-messing-with-your-sleep/a-78043429?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Residents across Europe have struggled to sleep during the latest record heat waves. But as the planet continues to warm, sleep deprivation could create an epidemic of mental and physical ill-health.",
-          "published": "2026-07-21T08:17:00.000Z",
-          "score": 4
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Indian steelmakers pivot home as Europe tightens imports, China squeezes margins - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNakN6b1dteDhQOUhlTUNOTHVnZVVoVzZTREhQRHhCNFRybWZFaUI5bVp1UFh2NDZOYTY4Tms5dWJGRFd4RWlBejBrTEdoWkthd3FVWkdVNW9pNGdpQzVpdHFkME1JMC1nUWdMRUdVY2drdjZVdWt2ZEl5dXRoWHlPQ21LLXVzbFdJbmoxSmNLcThueGw2aXJJSHlLdzlrT053YmlzX2VjRjF4N0piMy00LWdUUnUxdWNxd1lwdVJ6WHpJdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNakN6b1dteDhQOUhlTUNOTHVnZVVoVzZTREhQRHhCNFRybWZFaUI5bVp1UFh2NDZOYTY4Tms5dWJGRFd4RWlBejBrTEdoWkthd3FVWkdVNW9pNGdpQzVpdHFkME1JMC1nUWdMRUdVY2drdjZVdWt2ZEl5dXRoWHlPQ21LLXVzbFdJbmoxSmNLcThueGw2aXJJSHlLdzlrT053YmlzX2VjRjF4N0piMy00LWdUUnUxdWNxd1lwdVJ6WHpJdw?oc=5\" target=\"_blank\"&gt;Indian steelmakers pivot home as Europe tightens imports, China squeezes margins&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-21T17:16:50.000Z",
+          "score": 8
+        },
         {
           "title": "Fires in Spain and France, hail in Balkans; Europe's erratic weather persists - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWi1yaHBIRE5YS2RBOXFTMmtJQ2ZDSDU1WU9YZXFfcmJ5aXFRVUFFMFFLdEtQOTVSVXhiNmZwLUFuTnl3R2pjM3lUVGtHQk43NTlUVXRTN1F0amJuOTgwTTJzY0w5ajV6RVJxSjh3dDNLaE1fZVVOaTdRb3RTbFVzZ0J2UTB6XzdPXzEwQUVjQlhBdEpZUnNNYWNRM1FvaTYwZzNDZnZiQ2pkYXU2WXcyQlA5UHFrWFVlSFliajhR?oc=5",
@@ -178,11 +161,19 @@
           "score": 8
         },
         {
-          "title": "Iraq's oil minister says US energy deals worth about $200 billion - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTnJwRXZISHBUcXd3Q3FOMHlLNWJPVUF6N25PWU1SMVpZUl9ZQUJNbEtFUVlCYlEwMzRibm82WWlxRkhpcm5IVzhHRDJwVmlDWnh0VklhRXQwLXJPMEJCekNvZWVYMjBsWjhrbThlLXJoVmJINExXN2hxakVkeTNobHJvU3o3Q2RwSm9salBZZmY1eHJqZWNrMEZwLWxSYzJEblNDZUd3ZUpnS1UwclhqM1g2dzVCZw?oc=5",
+          "title": "Indian exam protest forces parliament suspension, adding pressure on PM Modi - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbUQ5NzBKNnBVRWcyMmdKM1hoQ0FIOHN6dlFpRFRYcmpEcDN6bFdyVWwtaV80ZE9aWEJvaXN0MEF2aDRFNzBVWndnNlZSd2NZOVB5ZEJPVmJMMGZHN2xOUWpEOU5CeXNmeEVuXzBwNVRDaWkzS2tHcnFIaVF2YzNWZ1hBMHNjb2ZwbWJCTnJab3ZxcnlGU0NNNE1fWmZUTGd0WVlPeTU1bl8xZmdIeHVLaGJKbnh4YnNSLVRhVg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNTnJwRXZISHBUcXd3Q3FOMHlLNWJPVUF6N25PWU1SMVpZUl9ZQUJNbEtFUVlCYlEwMzRibm82WWlxRkhpcm5IVzhHRDJwVmlDWnh0VklhRXQwLXJPMEJCekNvZWVYMjBsWjhrbThlLXJoVmJINExXN2hxakVkeTNobHJvU3o3Q2RwSm9salBZZmY1eHJqZWNrMEZwLWxSYzJEblNDZUd3ZUpnS1UwclhqM1g2dzVCZw?oc=5\" target=\"_blank\"&gt;Iraq's oil minister says US energy deals worth about $200 billion&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-21T20:02:50.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQbUQ5NzBKNnBVRWcyMmdKM1hoQ0FIOHN6dlFpRFRYcmpEcDN6bFdyVWwtaV80ZE9aWEJvaXN0MEF2aDRFNzBVWndnNlZSd2NZOVB5ZEJPVmJMMGZHN2xOUWpEOU5CeXNmeEVuXzBwNVRDaWkzS2tHcnFIaVF2YzNWZ1hBMHNjb2ZwbWJCTnJab3ZxcnlGU0NNNE1fWmZUTGd0WVlPeTU1bl8xZmdIeHVLaGJKbnh4YnNSLVRhVg?oc=5\" target=\"_blank\"&gt;Indian exam protest forces parliament suspension, adding pressure on PM Modi&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-22T03:18:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Stocks boosted by energy as oil rises ahead of Big Tech earnings test - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE15bndqdmhfTjlVQXVscXkwMHFjU3hXNFR5RTdLSnY3a0trdmEzYlNGbm5LeUhxbVJSd21PR1FmQnJpeWxSdHN1aTEwalByRGZFcGtiRUhXeUZSeVdFMHFBekU3bzRvblRKMms0OW5vZkJPekhNSThGOERjRQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE15bndqdmhfTjlVQXVscXkwMHFjU3hXNFR5RTdLSnY3a0trdmEzYlNGbm5LeUhxbVJSd21PR1FmQnJpeWxSdHN1aTEwalByRGZFcGtiRUhXeUZSeVdFMHFBekU3bzRvblRKMms0OW5vZkJPekhNSThGOERjRQ?oc=5\" target=\"_blank\"&gt;Stocks boosted by energy as oil rises ahead of Big Tech earnings test&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-22T01:08:00.000Z",
           "score": 7
         },
         {
@@ -192,30 +183,14 @@
           "description": "The law will require social media platforms in France to verify all users age from January.",
           "published": "2026-07-22T03:50:55.000Z",
           "score": 6
-        },
-        {
-          "title": "Why are thousands protesting for education reform in India?",
-          "link": "https://www.bbc.co.uk/news/articles/cedj9j911p8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Thousands of mostly young people tried to march on India's parliament to demand changes to how the education system is run.",
-          "published": "2026-07-21T10:01:59.000Z",
-          "score": 4
-        },
-        {
-          "title": "French lawmakers approve social media ban for children",
-          "link": "https://www.dw.com/en/french-lawmakers-approve-social-media-ban-for-children/a-78052466?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Lawmakers in France gave the green light to a social media ban that could come into effect by the start of the new school year in September, becoming the first EU country to enact such a ban.",
-          "published": "2026-07-21T15:45:00.000Z",
-          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 428,
-    "articlesLast24h": 170,
-    "afterDedup": 159,
+    "totalArticlesScanned": 425,
+    "articlesLast24h": 166,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
