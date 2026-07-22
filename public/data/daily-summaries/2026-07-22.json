@@ -1,12 +1,12 @@
 {
   "date": "2026-07-22",
-  "generatedAt": "2026-07-22T12:29:18.286Z",
+  "generatedAt": "2026-07-22T18:08:48.108Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 22 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Energy transition policymaking must evolve to fit an age of rupture",
-      "summary": "Economic competitiveness, energy security and green industrialisation are driving real-world change - but will this damage our collective mission for a fair green shift? The post Energy transition policymaking must evolve to fit an age of rupture appeared first on Climate Home News.",
+      "headline": "Commission opens in-depth investigation into proposed merger between Saipem and Subsea7",
+      "summary": "European Commission Press release Brussels, 22 Jul 2026 The European Commission has opened an in-depth investigation to assess, under the EU Merger Regulation, the proposed merger between Saipem and Subsea7 to become \"Saipem7\". The Commission is concerned that the proposed concentration may significantly impact effective competition in some offshore engineering and construction service markets.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "EXCLUSIVE: Pakistan seeks $10 billion fund from US after mediating Iran talks, source says - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPT190ZlgyOU0tU2VVdFRleldkdkdEZ0JiUEJGVlFiNUFQQ3RPLTdmSi15MTJ5V19tSXZOTWxlQWV3cHBkMU8wU3BxRDFfbVZNMFdpZnNPbmVHd09XZV85YTdCaTFBejFzYXd6WUpkVTI1MUdyLWJDRXNSZVhGWjMwajlEOEQtWlVqVFRyRklQQ0VkTk1pdzRIbjRjS3RQNjVkMGIxRHJEM21IMFdqUS1jWHJCUDUzY093bjg5ZENvU09PYTVTaGc4?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Pakistan seeks $10 billion fund from US after mediating Iran talks, source says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
+      "headline": "OPINION on the proposal for a regulation of the European Parliament and of the Council on establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034 - PE786.677v02-00",
+      "summary": "OPINION on the proposal for a regulation of the European Parliament and of the Council on establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jana Nagyová&lt;br /&gt",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,15 +34,23 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Energy transition policymaking must evolve to fit an age of rupture",
-          "link": "https://www.climatechangenews.com/2026/07/21/energy-transition-policymaking-must-evolve-to-fit-an-age-of-rupture/",
+          "title": "Commission opens in-depth investigation into proposed merger between Saipem and Subsea7",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1657",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 22 Jul 2026 The European Commission has opened an in-depth investigation to assess, under the EU Merger Regulation, the proposed merger between Saipem and Subsea7 to become \"Saipem7\". The Commission is concerned that the proposed concentration may significantly impact effective competition in some offshore engineering and construction service markets.",
+          "published": "2026-07-21T22:00:00.000Z",
+          "score": 22
+        },
+        {
+          "title": "Will new UK PM&#8217;s green measures at home cause climate finance pain overseas?",
+          "link": "https://www.climatechangenews.com/2026/07/22/will-new-uk-pms-green-measures-at-home-cause-climate-finance-pain-overseas/",
           "source": "Climate Home News",
-          "description": "Economic competitiveness, energy security and green industrialisation are driving real-world change - but will this damage our collective mission for a fair green shift? The post Energy transition policymaking must evolve to fit an age of rupture appeared first on Climate Home News.",
-          "published": "2026-07-21T14:50:51.000Z",
+          "description": "Andy Burnham will cut bus fares and household electricity tax in a boost for UK climate action - but this will be funded partly by switching international climate finance from grants to loans The post Will new UK PM&#8217;s green measures at home cause climate finance pain overseas? appeared first on Climate Home News.",
+          "published": "2026-07-22T13:21:25.000Z",
           "score": 13
         },
         {
-          "title": "UK's largest wind farm to be rebuilt with fewer, larger turbines",
+          "title": "UK's largest onshore wind farm to be rebuilt with fewer, larger turbines",
           "link": "https://www.bbc.co.uk/news/articles/cvgl9vp4vqvo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Whitelee Windfarm has been producing electricity for about 20 years on a stretch of moorland near Eaglesham but is reaching the end of its life.",
@@ -50,27 +58,19 @@
           "score": 7
         },
         {
-          "title": "US renews strikes on Iran as Trump threatens to attack underground nuclear site",
-          "link": "https://www.bbc.co.uk/news/articles/cdrv0p37k8jo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "US to announce deal allowing Saudi Arabia a nuclear programme",
+          "link": "https://www.bbc.co.uk/news/articles/cj03r59z73po?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The US president's threat to target a key Iranian nuclear site came ahead of the 11th consecutive night of attacks.",
-          "published": "2026-07-22T10:15:03.000Z",
+          "description": "The agreement would fulfil a long-held Saudi ambition but could attract concern in Israel and from some US lawmakers.",
+          "published": "2026-07-22T14:49:12.000Z",
           "score": 7
         },
         {
-          "title": "Three tankers carrying Saudi crude make U-turns in Red Sea after Houthi warning - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPVmdHTWJMUUNZTWRSakluQzVLdlpKd2dSQWpoYXhaRVl0OTQyYy1oeldnaWRmMXpkSy1OVjFSXzZHbWdzQmtCLVljcnZST3laUk50aThFel81QnZNS3I1TU10MzItWG1CdW1lMENtaWtMS3QwenREbEN2a1l0Ukh5TDNDazl6R0ppQVNQeUljSFJnUncwU1hnS09yZ21ydVR4WDNEZE1ObEUwcmVuazdOYWs3T2NNekdPVTVWcF9qdkkzUGR2SEo0?oc=5",
+          "title": "More Red Sea shipments disrupted, Rubio says Iran not serious about talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONHRSTEdBY3l6NGhsLTFvUDRHeThEZkgzQzdzeDVSOWk1NzJ3R3dCT1JZWkE0VWoycVhEaG0wdmtWTnFyWElMbklkcFRUMW9qTkdqWGFfVHpDaDgyTnFNWGF4clVQSENtY2x5OS14dDBYX3JjYTdXRkV1SUZlcDU3eTduYXp3VndEMzlWZmpvZjY5S3dhVmdMdk5JVFhvNzNCQmJBRjBRX1daQ2ZB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPVmdHTWJMUUNZTWRSakluQzVLdlpKd2dSQWpoYXhaRVl0OTQyYy1oeldnaWRmMXpkSy1OVjFSXzZHbWdzQmtCLVljcnZST3laUk50aThFel81QnZNS3I1TU10MzItWG1CdW1lMENtaWtMS3QwenREbEN2a1l0Ukh5TDNDazl6R0ppQVNQeUljSFJnUncwU1hnS09yZ21ydVR4WDNEZE1ObEUwcmVuazdOYWs3T2NNekdPVTVWcF9qdkkzUGR2SEo0?oc=5\" target=\"_blank\"&gt;Three tankers carrying Saudi crude make U-turns in Red Sea after Houthi warning&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
-          "published": "2026-07-21T13:25:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Houthi Red Sea threat would challenge a stretched US military - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPOThodmVRdFZqSlZuSnpSMDJBb1dkX1NUam1GcVJsRWlHcV9qM0x6MUhXRlJtRXd3MWdKMHpYOVFvUGZjcmUtR1pkSTZsUEd2M2xZS1YtUGRqUkhteGw5QzR6a1ZhcG4wR1c4LXUzaXZrN3ctTlI2Vkc4NzlnUlRBb01pY3kxRTlweVFDWGMydnpsLThrUGlXamcxX3RDTnFpVXFwY1FJT01LRU1pVEdxdW1pQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPOThodmVRdFZqSlZuSnpSMDJBb1dkX1NUam1GcVJsRWlHcV9qM0x6MUhXRlJtRXd3MWdKMHpYOVFvUGZjcmUtR1pkSTZsUEd2M2xZS1YtUGRqUkhteGw5QzR6a1ZhcG4wR1c4LXUzaXZrN3ctTlI2Vkc4NzlnUlRBb01pY3kxRTlweVFDWGMydnpsLThrUGlXamcxX3RDTnFpVXFwY1FJT01LRU1pVEdxdW1pQQ?oc=5\" target=\"_blank\"&gt;Houthi Red Sea threat would challenge a stretched US military&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-22T05:03:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxONHRSTEdBY3l6NGhsLTFvUDRHeThEZkgzQzdzeDVSOWk1NzJ3R3dCT1JZWkE0VWoycVhEaG0wdmtWTnFyWElMbklkcFRUMW9qTkdqWGFfVHpDaDgyTnFNWGF4clVQSENtY2x5OS14dDBYX3JjYTdXRkV1SUZlcDU3eTduYXp3VndEMzlWZmpvZjY5S3dhVmdMdk5JVFhvNzNCQmJBRjBRX1daQ2ZB?oc=5\" target=\"_blank\"&gt;More Red Sea shipments disrupted, Rubio says Iran not serious about talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-22T03:21:00.000Z",
           "score": 7
         }
       ]
@@ -88,27 +88,11 @@
           "score": 10
         },
         {
-          "title": "Millions face long-term coastal flooding risk in UK without climate action, scientists warn",
-          "link": "https://www.theguardian.com/environment/2026/jul/21/millions-long-term-coastal-flooding-risk-uk-climate-action",
+          "title": "The human fridge: is this really the best way to cool down in a ‘cruelly hot’ climate?",
+          "link": "https://www.theguardian.com/lifeandstyle/2026/jul/22/human-fridge-japan-heatwave",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;A ‘reasonable worst-case scenario’ suggests need for large-scale movement of populations away from reshaped coast&lt;/p&gt;&lt;p&gt;Up to 13 million people in the UK face the long-term risk of coastal flooding due to the climate crisis, scientists have warned, with a “reasonable worst-case scenario” suggesting the need for the large-scale movement of populations away from a dramatically reshaped coast.&lt;/p&gt;&lt;p&gt;Even if today’s global pledges to cut carbon pollution are met, abo",
-          "published": "2026-07-21T17:00:51.000Z",
-          "score": 7
-        },
-        {
-          "title": "Parts of the UK move closer to drought",
-          "link": "https://www.bbc.co.uk/weather/articles/cjwx0xv571eo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Eight areas across England are now in prolonged dry weather – the stage before drought.",
-          "published": "2026-07-21T13:46:05.000Z",
-          "score": 7
-        },
-        {
-          "title": "Spain: Firefighters battle major wildfire north of Madrid",
-          "link": "https://www.dw.com/en/spain-firefighters-battle-major-wildfire-north-of-madrid/a-78059592?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Officials say the blaze, which has forced about 1,200 people to evacuate and has burned at least 30,000 hectares of land, is one of the most complex to affect the country in years.",
-          "published": "2026-07-21T21:40:00.000Z",
+          "description": "&lt;p&gt;A ‘personal cooling booth’ that promises to chill you out in 10 minutes has launched in Japan, with its makers claiming it beats air-conditioning or a fan&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt; The human fridge.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Age:&lt;/strong&gt; Brand new.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/lifeandstyle/2026/jul/22/human-fridge-japan-heatwave\"&gt;Continue reading...&lt;/a&gt;",
+          "published": "2026-07-22T16:11:53.000Z",
           "score": 7
         },
         {
@@ -118,6 +102,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPWWNBZWlfMVJCN3J6emRQbzY5NThiVVkzUmlfTW8tck5DVkxQM3BIQ3FiY0RtWUFjdTRpU3ZFbEJNaG9nNS1SYWhYTnVkRDhDcWNmWEkwdVU5cWpDbE5zNEYxcko5S2FvLVpmQ00zd2V5Rk9TYTlLYV9uc2l4bGw4RnRQbUFnVk85YTQ4X0Y1dXRJNGgxVGJVdm1oS3dkS2RabjNRSGdQbTZVTElvRlE5RGx5b3Y?oc=5\" target=\"_blank\"&gt;Fast-moving wildfire in southern France forces hundreds to flee&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-22T06:20:00.000Z",
           "score": 7
+        },
+        {
+          "title": "The world is on fire, and who does Trump blame? The Canadians | Arwa Mahdawi",
+          "link": "https://www.theguardian.com/commentisfree/2026/jul/22/trump-canada-wildfires-blame-air-pollution-climate-crisis",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;The US president has been complaining about Canada’s ‘filthy, polluted and unhealthy air’. Maybe he should put all that energy into tackling the climate crisis&lt;/p&gt;&lt;p&gt;Right, that’s it: we’ve got to do something about Canada. The country’s wildfires, which resulted in &lt;a href=\"https://www.theguardian.com/world/2026/jul/18/canada-wildfires-air-quality\"&gt;air quality alerts&lt;/a&gt; across more than 20 US states, ruined my weekend. On Friday the air in Philadelphia, where I",
+          "published": "2026-07-22T10:00:13.000Z",
+          "score": 4
+        },
+        {
+          "title": "‘Do a few big things well’: people share what they want from Andy Burnham",
+          "link": "https://www.theguardian.com/politics/2026/jul/22/guardian-readers-what-they-want-from-andy-burnham",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;We asked readers what they hoped to see – and consistent themes around courage and communication emerged&lt;/p&gt;&lt;p&gt;With &lt;a href=\"https://www.theguardian.com/politics/2026/jul/20/andy-burnham-uk-prime-minister-meeting-king-charles\"&gt;Andy Burnham having entered Downing Street&lt;/a&gt;, we asked people to tell us what they wanted from the new prime minister and government. About 400 people from around the UK responded to an online callout asking about the values and issues th",
+          "published": "2026-07-22T14:49:34.000Z",
+          "score": 2
         }
       ]
     },
@@ -126,10 +126,26 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "EXCLUSIVE: Pakistan seeks $10 billion fund from US after mediating Iran talks, source says - Reuters",
+          "title": "OPINION on the proposal for a regulation of the European Parliament and of the Council on establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034 - PE786.677v02-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-786677_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council on establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jana Nagyová&lt;br /&gt",
+          "published": "2026-07-22T15:23:01.000Z",
+          "score": 22
+        },
+        {
+          "title": "Germany&#039;s growing interest in Africa: A win for both sides?",
+          "link": "https://www.dw.com/en/germany-s-growing-interest-in-africa-a-win-for-both-sides/a-78068049?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany is deepening its footprint across Africa, as Foreign Minister Johann Wadephul embarks on his third trip to the continent in 2026. His top-level talks will focus on security, skills development and investment.",
+          "published": "2026-07-22T14:44:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "EXCLUSIVE: Pakistan seeks $10 billion fund from US after mediating Iran talks, sources say - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPT190ZlgyOU0tU2VVdFRleldkdkdEZ0JiUEJGVlFiNUFQQ3RPLTdmSi15MTJ5V19tSXZOTWxlQWV3cHBkMU8wU3BxRDFfbVZNMFdpZnNPbmVHd09XZV85YTdCaTFBejFzYXd6WUpkVTI1MUdyLWJDRXNSZVhGWjMwajlEOEQtWlVqVFRyRklQQ0VkTk1pdzRIbjRjS3RQNjVkMGIxRHJEM21IMFdqUS1jWHJCUDUzY093bjg5ZENvU09PYTVTaGc4?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPT190ZlgyOU0tU2VVdFRleldkdkdEZ0JiUEJGVlFiNUFQQ3RPLTdmSi15MTJ5V19tSXZOTWxlQWV3cHBkMU8wU3BxRDFfbVZNMFdpZnNPbmVHd09XZV85YTdCaTFBejFzYXd6WUpkVTI1MUdyLWJDRXNSZVhGWjMwajlEOEQtWlVqVFRyRklQQ0VkTk1pdzRIbjRjS3RQNjVkMGIxRHJEM21IMFdqUS1jWHJCUDUzY093bjg5ZENvU09PYTVTaGc4?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Pakistan seeks $10 billion fund from US after mediating Iran talks, source says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPT190ZlgyOU0tU2VVdFRleldkdkdEZ0JiUEJGVlFiNUFQQ3RPLTdmSi15MTJ5V19tSXZOTWxlQWV3cHBkMU8wU3BxRDFfbVZNMFdpZnNPbmVHd09XZV85YTdCaTFBejFzYXd6WUpkVTI1MUdyLWJDRXNSZVhGWjMwajlEOEQtWlVqVFRyRklQQ0VkTk1pdzRIbjRjS3RQNjVkMGIxRHJEM21IMFdqUS1jWHJCUDUzY093bjg5ZENvU09PYTVTaGc4?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Pakistan seeks $10 billion fund from US after mediating Iran talks, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
           "published": "2026-07-21T19:04:00.000Z",
           "score": 2
         }
@@ -138,59 +154,68 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "France records more than 5,700 excess deaths during June heatwave",
+          "link": "https://www.theguardian.com/world/2026/jul/22/france-recorded-more-than-5700-excess-deaths-during-june-heatwave",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Figures come as large parts of southern Europe endure another record-breaking period of extreme temperatures&lt;/p&gt;&lt;p&gt;France recorded more than 5,700 excess deaths during its June heatwave, authorities have said, as swathes of southern Europe continue to endure another record-breaking period of extreme temperatures.&lt;/p&gt;&lt;p&gt;The French national health agency said on Wednesday that it had recorded 5,764 excess deaths ⁠between ​17 June and 2 July, an excess mortality rat",
+          "published": "2026-07-22T15:34:27.000Z",
+          "score": 4
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Indian steelmakers pivot home as Europe tightens imports, China squeezes margins - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNakN6b1dteDhQOUhlTUNOTHVnZVVoVzZTREhQRHhCNFRybWZFaUI5bVp1UFh2NDZOYTY4Tms5dWJGRFd4RWlBejBrTEdoWkthd3FVWkdVNW9pNGdpQzVpdHFkME1JMC1nUWdMRUdVY2drdjZVdWt2ZEl5dXRoWHlPQ21LLXVzbFdJbmoxSmNLcThueGw2aXJJSHlLdzlrT053YmlzX2VjRjF4N0piMy00LWdUUnUxdWNxd1lwdVJ6WHpJdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNakN6b1dteDhQOUhlTUNOTHVnZVVoVzZTREhQRHhCNFRybWZFaUI5bVp1UFh2NDZOYTY4Tms5dWJGRFd4RWlBejBrTEdoWkthd3FVWkdVNW9pNGdpQzVpdHFkME1JMC1nUWdMRUdVY2drdjZVdWt2ZEl5dXRoWHlPQ21LLXVzbFdJbmoxSmNLcThueGw2aXJJSHlLdzlrT053YmlzX2VjRjF4N0piMy00LWdUUnUxdWNxd1lwdVJ6WHpJdw?oc=5\" target=\"_blank\"&gt;Indian steelmakers pivot home as Europe tightens imports, China squeezes margins&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-21T17:16:50.000Z",
-          "score": 8
-        },
-        {
-          "title": "Fires in Spain and France, hail in Balkans; Europe's erratic weather persists - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWi1yaHBIRE5YS2RBOXFTMmtJQ2ZDSDU1WU9YZXFfcmJ5aXFRVUFFMFFLdEtQOTVSVXhiNmZwLUFuTnl3R2pjM3lUVGtHQk43NTlUVXRTN1F0amJuOTgwTTJzY0w5ajV6RVJxSjh3dDNLaE1fZVVOaTdRb3RTbFVzZ0J2UTB6XzdPXzEwQUVjQlhBdEpZUnNNYWNRM1FvaTYwZzNDZnZiQ2pkYXU2WXcyQlA5UHFrWFVlSFliajhR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPWi1yaHBIRE5YS2RBOXFTMmtJQ2ZDSDU1WU9YZXFfcmJ5aXFRVUFFMFFLdEtQOTVSVXhiNmZwLUFuTnl3R2pjM3lUVGtHQk43NTlUVXRTN1F0amJuOTgwTTJzY0w5ajV6RVJxSjh3dDNLaE1fZVVOaTdRb3RTbFVzZ0J2UTB6XzdPXzEwQUVjQlhBdEpZUnNNYWNRM1FvaTYwZzNDZnZiQ2pkYXU2WXcyQlA5UHFrWFVlSFliajhR?oc=5\" target=\"_blank\"&gt;Fires in Spain and France, hail in Balkans; Europe's erratic weather persists&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-21T15:14:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Indian exam protest forces parliament suspension, adding pressure on PM Modi - Reuters",
+          "title": "Indian opposition disrupts parliament to support student protesters and pressure Modi - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbUQ5NzBKNnBVRWcyMmdKM1hoQ0FIOHN6dlFpRFRYcmpEcDN6bFdyVWwtaV80ZE9aWEJvaXN0MEF2aDRFNzBVWndnNlZSd2NZOVB5ZEJPVmJMMGZHN2xOUWpEOU5CeXNmeEVuXzBwNVRDaWkzS2tHcnFIaVF2YzNWZ1hBMHNjb2ZwbWJCTnJab3ZxcnlGU0NNNE1fWmZUTGd0WVlPeTU1bl8xZmdIeHVLaGJKbnh4YnNSLVRhVg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQbUQ5NzBKNnBVRWcyMmdKM1hoQ0FIOHN6dlFpRFRYcmpEcDN6bFdyVWwtaV80ZE9aWEJvaXN0MEF2aDRFNzBVWndnNlZSd2NZOVB5ZEJPVmJMMGZHN2xOUWpEOU5CeXNmeEVuXzBwNVRDaWkzS2tHcnFIaVF2YzNWZ1hBMHNjb2ZwbWJCTnJab3ZxcnlGU0NNNE1fWmZUTGd0WVlPeTU1bl8xZmdIeHVLaGJKbnh4YnNSLVRhVg?oc=5\" target=\"_blank\"&gt;Indian exam protest forces parliament suspension, adding pressure on PM Modi&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQbUQ5NzBKNnBVRWcyMmdKM1hoQ0FIOHN6dlFpRFRYcmpEcDN6bFdyVWwtaV80ZE9aWEJvaXN0MEF2aDRFNzBVWndnNlZSd2NZOVB5ZEJPVmJMMGZHN2xOUWpEOU5CeXNmeEVuXzBwNVRDaWkzS2tHcnFIaVF2YzNWZ1hBMHNjb2ZwbWJCTnJab3ZxcnlGU0NNNE1fWmZUTGd0WVlPeTU1bl8xZmdIeHVLaGJKbnh4YnNSLVRhVg?oc=5\" target=\"_blank\"&gt;Indian opposition disrupts parliament to support student protesters and pressure Modi&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-22T03:18:00.000Z",
           "score": 8
         },
         {
-          "title": "Stocks boosted by energy as oil rises ahead of Big Tech earnings test - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE15bndqdmhfTjlVQXVscXkwMHFjU3hXNFR5RTdLSnY3a0trdmEzYlNGbm5LeUhxbVJSd21PR1FmQnJpeWxSdHN1aTEwalByRGZFcGtiRUhXeUZSeVdFMHFBekU3bzRvblRKMms0OW5vZkJPekhNSThGOERjRQ?oc=5",
+          "title": "French parliament backs social media ban for children under 15 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPa0JnMFRoc19wNlFndnQ1NU9kazRFWEJqVFljTkFrUmFxd0ZpLTBiUGNvTV9qdjJEejVPd3J4bE1oY0Q1R3FRY2U0MHA4QTctNlZib2E1dWFPdDBWdlpuVzhuUVZhSGVjRHFBZVROVzJqbXRzVlFyaUhkMmhaMFo0eFpoN3NxbDFiOXBVdTdTOEw3YUtDSFBqd2JMbFZmeU1PVkE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE15bndqdmhfTjlVQXVscXkwMHFjU3hXNFR5RTdLSnY3a0trdmEzYlNGbm5LeUhxbVJSd21PR1FmQnJpeWxSdHN1aTEwalByRGZFcGtiRUhXeUZSeVdFMHFBekU3bzRvblRKMms0OW5vZkJPekhNSThGOERjRQ?oc=5\" target=\"_blank\"&gt;Stocks boosted by energy as oil rises ahead of Big Tech earnings test&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-22T01:08:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPa0JnMFRoc19wNlFndnQ1NU9kazRFWEJqVFljTkFrUmFxd0ZpLTBiUGNvTV9qdjJEejVPd3J4bE1oY0Q1R3FRY2U0MHA4QTctNlZib2E1dWFPdDBWdlpuVzhuUVZhSGVjRHFBZVROVzJqbXRzVlFyaUhkMmhaMFo0eFpoN3NxbDFiOXBVdTdTOEw3YUtDSFBqd2JMbFZmeU1PVkE?oc=5\" target=\"_blank\"&gt;French parliament backs social media ban for children under 15&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-21T19:18:56.000Z",
+          "score": 8
         },
         {
-          "title": "France passes law banning under-15s from social media",
-          "link": "https://www.bbc.co.uk/news/articles/cq56l9p4y93o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The law will require social media platforms in France to verify all users age from January.",
-          "published": "2026-07-22T03:50:55.000Z",
-          "score": 6
+          "title": "EXCLUSIVE: Chinese e-commerce giant JD.com given notice of EU concerns over Ceconomy takeover - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNLTYwNTBrRVgweEs3aHZDcEJZQmNpUFlPcG1abm01N3pKd2dXLWlZWkw1bFg4a3ZRcEhTYVl3ejlHaWhqSVhjUzlybUxIRW82ek1ZODlpR05pN0dSNnB3WnpBeVdDaV9zR2xNMnFGVDRkT2V2NldGcUR2d1JKOVlfMDJONUtRcm1lS3ZOal9GQUJtR2szMXpEclVPZ0pPQWtVM21pNThaLW1fak8xbWRsZGNsY1REYVFhZEVMcW9KR2tpbFEy?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNLTYwNTBrRVgweEs3aHZDcEJZQmNpUFlPcG1abm01N3pKd2dXLWlZWkw1bFg4a3ZRcEhTYVl3ejlHaWhqSVhjUzlybUxIRW82ek1ZODlpR05pN0dSNnB3WnpBeVdDaV9zR2xNMnFGVDRkT2V2NldGcUR2d1JKOVlfMDJONUtRcm1lS3ZOal9GQUJtR2szMXpEclVPZ0pPQWtVM21pNThaLW1fak8xbWRsZGNsY1REYVFhZEVMcW9KR2tpbFEy?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Chinese e-commerce giant JD.com given notice of EU concerns over Ceconomy takeover&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
+          "published": "2026-07-22T16:30:41.000Z",
+          "score": 8
+        },
+        {
+          "title": "Italy's levy on small parcels to go on top of EU levy, economy minister says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWThPZktjTTFuMncxYTMyUWk3dk5MS2szX1RoRUZEUVd3QjBUeFB5Tkd5dWhjeDBzaGF2a1lOazdVZlEzS2g4bW9lOTVBNkZSdWE3U2pCeDR3MWJGNzJHQXhkNnB4bHQ1eXlmUlBaeUpFNS1nLUptUndQejloX3NIc2JWUHhFYmxSUV83NmN4Q19yUkFUZHVtRDdSRFFySUlKeUY2YXc3WUFxcWFYVmZR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQWThPZktjTTFuMncxYTMyUWk3dk5MS2szX1RoRUZEUVd3QjBUeFB5Tkd5dWhjeDBzaGF2a1lOazdVZlEzS2g4bW9lOTVBNkZSdWE3U2pCeDR3MWJGNzJHQXhkNnB4bHQ1eXlmUlBaeUpFNS1nLUptUndQejloX3NIc2JWUHhFYmxSUV83NmN4Q19yUkFUZHVtRDdSRFFySUlKeUY2YXc3WUFxcWFYVmZR?oc=5\" target=\"_blank\"&gt;Italy's levy on small parcels to go on top of EU levy, economy minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-22T13:51:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU aviation agency adds Jordan to no-fly warning list as fighting continues - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWE9RZXEyMWMtbE0zVi1JaGJIYlIxZTJZZlVXbmdTRDcySXBqN0NmTTY4VWtHNXlSOHJFdzFNNmRfVy1NZDhNbDVadFdHVXNtNzJQc1ZDZG1yLWhoekRuVHRLV0l6RXhwNFpLOExMeDlmSnhLUVJiSlRaSGpFZDdFUVhGQzRWeEdlSHB1Z0lILXFPNklYNzZ1X3JrNXlYQ2pfLTVIYmZKVG1HREVyaUc4bk1TWHhqNUhHZWttSW94enY?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWE9RZXEyMWMtbE0zVi1JaGJIYlIxZTJZZlVXbmdTRDcySXBqN0NmTTY4VWtHNXlSOHJFdzFNNmRfVy1NZDhNbDVadFdHVXNtNzJQc1ZDZG1yLWhoekRuVHRLV0l6RXhwNFpLOExMeDlmSnhLUVJiSlRaSGpFZDdFUVhGQzRWeEdlSHB1Z0lILXFPNklYNzZ1X3JrNXlYQ2pfLTVIYmZKVG1HREVyaUc4bk1TWHhqNUhHZWttSW94enY?oc=5\" target=\"_blank\"&gt;EU aviation agency adds Jordan to no-fly warning list as fighting continues&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-22T12:08:20.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 425,
-    "articlesLast24h": 166,
-    "afterDedup": 156,
+    "totalArticlesScanned": 427,
+    "articlesLast24h": 161,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
