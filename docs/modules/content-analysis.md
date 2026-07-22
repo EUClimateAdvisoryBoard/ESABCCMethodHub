@@ -341,6 +341,22 @@ it is a draft working tool — instrument lists are a first pass and should
 be checked against current legislation before use in the final coherence
 analysis.
 
+Within the tab, a **By category / By hierarchy** toggle switches between two
+readings of the same per-system data (`PolicyHierarchyDiagram`). By category
+is the four-column NATO grid above; by hierarchy re-slices the same items
+into a cascade — each system's overarching framework acts (the European
+Climate Law, the Green Deal, Fit for 55, and, for agri-food, the CAP
+Strategic Plans Regulation) at the top, the sector-specific policies that
+turn those into binding obligations in the middle, and the implementation
+instruments that fund, guide, or institutionally support delivery at the
+bottom. Every non-framework item carries a `tier` (`sector` | `instrument`)
+and `parents` (the framework/sector ids it derives from or supports) in
+`policy-clustering.ts`; clicking a box traces its full lineage up and down
+the chain (via `ancestorsOf`/`descendantsOf`), dimming everything unrelated
+and drawing the connecting lines with an SVG overlay recomputed on resize.
+The relevance filter (Mitigation/Adaptation/Both) applies to this view too,
+dimming non-matching instruments and sector policies.
+
 ### Two-step New Project Wizard
 
 The **New Project** flow is a two-step stepper:
