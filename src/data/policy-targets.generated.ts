@@ -17,6 +17,7 @@
  *   obligation:       {"mandatory":773,"voluntary":284}
  *   type:             {"qualitative":356,"quantitative":440,"unspecified":261}
  *   climate_relevance:{"mitigation":450,"none":459,"both":28,"adaptation":120}
+ *   relevant (lens):  {"true":671,"false":386}
  *   (88 candidates rejected as non-verbatim / out of scope)
  */
 import type { RawPolicyTarget } from './policy-targets';
@@ -42,6 +43,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -63,6 +65,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -84,6 +87,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -106,6 +110,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -128,6 +133,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -150,6 +156,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -172,6 +179,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -194,6 +202,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -216,6 +225,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -238,6 +248,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -257,6 +268,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -276,6 +288,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -297,6 +310,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -319,6 +333,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -340,6 +355,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -361,6 +377,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -382,6 +399,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -404,6 +422,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -426,6 +445,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -448,6 +468,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -470,6 +491,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -491,6 +513,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -512,6 +535,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -531,6 +555,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": false,
     "target_number": 24
   },
   {
@@ -552,6 +577,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": false,
     "target_number": 25
   },
   {
@@ -573,6 +599,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 26
   },
   {
@@ -596,6 +623,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 27
   },
   {
@@ -617,6 +645,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 28
   },
   {
@@ -638,6 +667,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 29
   },
   {
@@ -659,6 +689,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 30
   },
   {
@@ -680,6 +711,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 31
   },
   {
@@ -701,6 +733,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 32
   },
   {
@@ -722,6 +755,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 33
   },
   {
@@ -743,6 +777,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 34
   },
   {
@@ -764,6 +799,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 35
   },
   {
@@ -785,6 +821,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": true,
     "target_number": 36
   },
   {
@@ -804,6 +841,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": false,
     "target_number": 37
   },
   {
@@ -823,6 +861,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "relevant": false,
     "target_number": 38
   },
   {
@@ -844,6 +883,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -865,6 +905,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -886,6 +927,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -907,6 +949,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -928,6 +971,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -949,6 +993,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -970,6 +1015,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -991,6 +1037,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -1012,6 +1059,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -1033,6 +1081,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -1054,6 +1103,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -1076,6 +1126,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -1097,6 +1148,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -1118,6 +1170,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -1139,6 +1192,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -1160,6 +1214,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -1181,6 +1236,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -1202,6 +1258,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -1223,6 +1280,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -1244,6 +1302,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -1265,6 +1324,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -1286,6 +1346,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -1307,6 +1368,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -1328,6 +1390,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -1351,6 +1414,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -1374,6 +1438,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -1396,6 +1461,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -1419,6 +1485,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -1440,6 +1507,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -1461,6 +1529,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -1484,6 +1553,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -1506,6 +1576,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -1525,6 +1596,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -1544,6 +1616,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -1566,6 +1639,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -1587,6 +1661,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -1606,6 +1681,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -1627,6 +1703,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -1646,6 +1723,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -1667,6 +1745,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -1688,6 +1767,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -1709,6 +1789,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -1730,6 +1811,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -1749,6 +1831,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -1770,6 +1853,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -1792,6 +1876,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -1814,6 +1899,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -1836,6 +1922,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -1855,6 +1942,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -1877,6 +1965,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -1898,6 +1987,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -1917,6 +2007,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -1936,6 +2027,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -1955,6 +2047,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -1978,6 +2071,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -2001,6 +2095,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -2024,6 +2119,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -2047,6 +2143,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -2070,6 +2167,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -2092,6 +2190,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -2114,6 +2213,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -2136,6 +2236,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -2158,6 +2259,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -2177,6 +2279,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -2196,6 +2299,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -2215,6 +2319,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -2234,6 +2339,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -2258,6 +2364,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -2279,6 +2386,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -2302,6 +2410,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -2324,6 +2433,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -2345,6 +2455,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -2367,6 +2478,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -2389,6 +2501,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -2410,6 +2523,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -2431,6 +2545,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -2452,6 +2567,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -2473,6 +2589,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -2494,6 +2611,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -2516,6 +2634,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -2537,6 +2656,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -2558,6 +2678,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -2579,6 +2700,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -2600,6 +2722,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "relevant": false,
     "target_number": 17
   },
   {
@@ -2621,6 +2744,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -2642,6 +2766,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -2663,6 +2788,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -2685,6 +2811,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -2707,6 +2834,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -2729,6 +2857,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -2752,6 +2881,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -2774,6 +2904,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -2796,6 +2927,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -2818,6 +2950,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -2840,6 +2973,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -2861,6 +2995,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -2882,6 +3017,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -2903,6 +3039,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -2924,6 +3061,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -2948,6 +3086,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -2970,6 +3109,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": false,
     "target_number": 17
   },
   {
@@ -2989,6 +3129,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -3008,6 +3149,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -3030,6 +3172,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -3051,6 +3194,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -3072,6 +3216,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -3093,6 +3238,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -3114,6 +3260,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -3135,6 +3282,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -3156,6 +3304,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -3177,6 +3326,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -3198,6 +3348,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -3219,6 +3370,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -3240,6 +3392,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -3262,6 +3415,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -3283,6 +3437,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -3304,6 +3459,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -3325,6 +3481,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -3347,6 +3504,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -3369,6 +3527,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -3391,6 +3550,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -3413,6 +3573,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -3435,6 +3596,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -3456,6 +3618,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -3475,6 +3638,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -3496,6 +3660,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -3517,6 +3682,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -3538,6 +3704,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -3559,6 +3726,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -3581,6 +3749,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -3602,6 +3771,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -3624,6 +3794,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -3646,6 +3817,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -3667,6 +3839,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -3688,6 +3861,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -3709,6 +3883,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -3731,6 +3906,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -3752,6 +3928,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -3773,6 +3950,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -3794,6 +3972,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -3816,6 +3995,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -3838,6 +4018,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -3859,6 +4040,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -3880,6 +4062,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -3901,6 +4084,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -3922,6 +4106,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -3943,6 +4128,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "relevant": false,
     "target_number": 17
   },
   {
@@ -3964,6 +4150,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -3986,6 +4173,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -4009,6 +4197,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -4030,6 +4219,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -4049,6 +4239,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -4070,6 +4261,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -4092,6 +4284,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -4114,6 +4307,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -4136,6 +4330,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -4158,6 +4353,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -4179,6 +4375,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -4200,6 +4397,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -4221,6 +4419,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -4242,6 +4441,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -4263,6 +4463,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -4284,6 +4485,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -4305,6 +4507,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -4326,6 +4529,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -4347,6 +4551,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -4368,6 +4573,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -4389,6 +4595,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -4410,6 +4617,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -4431,6 +4639,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -4452,6 +4661,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -4474,6 +4684,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -4496,6 +4707,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -4518,6 +4730,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -4540,6 +4753,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -4561,6 +4775,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -4582,6 +4797,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -4603,6 +4819,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -4622,6 +4839,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -4641,6 +4859,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -4660,6 +4879,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -4679,6 +4899,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -4698,6 +4919,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -4717,6 +4939,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -4738,6 +4961,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -4759,6 +4983,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -4780,6 +5005,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -4803,6 +5029,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -4826,6 +5053,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -4845,6 +5073,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -4866,6 +5095,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -4885,6 +5115,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -4904,6 +5135,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -4927,6 +5159,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -4949,6 +5182,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -4973,6 +5207,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -4995,6 +5230,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -5017,6 +5253,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -5039,6 +5276,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -5061,6 +5299,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -5082,6 +5321,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -5103,6 +5343,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -5124,6 +5365,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -5145,6 +5387,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -5166,6 +5409,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -5188,6 +5432,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -5209,6 +5454,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -5230,6 +5476,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -5251,6 +5498,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -5273,6 +5521,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -5296,6 +5545,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -5320,6 +5570,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -5341,6 +5592,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -5362,6 +5614,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -5384,6 +5637,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -5407,6 +5661,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -5430,6 +5685,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -5451,6 +5707,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -5470,6 +5727,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -5492,6 +5750,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -5515,6 +5774,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -5538,6 +5798,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -5561,6 +5822,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -5584,6 +5846,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -5607,6 +5870,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -5629,6 +5893,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -5651,6 +5916,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -5674,6 +5940,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -5695,6 +5962,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -5716,6 +5984,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -5737,6 +6006,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -5756,6 +6026,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -5780,6 +6051,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 24
   },
   {
@@ -5804,6 +6076,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -5828,6 +6101,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 26
   },
   {
@@ -5852,6 +6126,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 27
   },
   {
@@ -5875,6 +6150,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 28
   },
   {
@@ -5898,6 +6174,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 29
   },
   {
@@ -5919,6 +6196,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 30
   },
   {
@@ -5940,6 +6218,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 31
   },
   {
@@ -5961,6 +6240,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 32
   },
   {
@@ -5982,6 +6262,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 33
   },
   {
@@ -6003,6 +6284,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 34
   },
   {
@@ -6022,6 +6304,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "relevant": true,
     "target_number": 35
   },
   {
@@ -6045,6 +6328,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -6067,6 +6351,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -6089,6 +6374,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -6115,6 +6401,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -6137,6 +6424,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -6159,6 +6447,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -6180,6 +6469,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -6201,6 +6491,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -6222,6 +6513,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -6243,6 +6535,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -6262,6 +6555,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -6284,6 +6578,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -6307,6 +6602,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -6329,6 +6625,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -6352,6 +6649,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -6373,6 +6671,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -6395,6 +6694,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -6416,6 +6716,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": false,
     "target_number": 18
   },
   {
@@ -6438,6 +6739,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -6459,6 +6761,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -6478,6 +6781,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -6497,6 +6801,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -6516,6 +6821,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -6537,6 +6843,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 24
   },
   {
@@ -6556,6 +6863,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -6577,6 +6885,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 26
   },
   {
@@ -6600,6 +6909,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 27
   },
   {
@@ -6621,6 +6931,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 28
   },
   {
@@ -6642,6 +6953,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": false,
     "target_number": 29
   },
   {
@@ -6663,6 +6975,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 30
   },
   {
@@ -6684,6 +6997,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": false,
     "target_number": 31
   },
   {
@@ -6703,6 +7017,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": false,
     "target_number": 32
   },
   {
@@ -6722,6 +7037,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": false,
     "target_number": 33
   },
   {
@@ -6741,6 +7057,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": false,
     "target_number": 34
   },
   {
@@ -6760,6 +7077,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 35
   },
   {
@@ -6779,6 +7097,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": false,
     "target_number": 36
   },
   {
@@ -6798,6 +7117,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 37
   },
   {
@@ -6817,6 +7137,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 38
   },
   {
@@ -6836,6 +7157,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 39
   },
   {
@@ -6859,6 +7181,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "relevant": true,
     "target_number": 40
   },
   {
@@ -6880,6 +7203,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -6901,6 +7225,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -6924,6 +7249,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -6945,6 +7271,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -6967,6 +7294,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -6988,6 +7316,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -7009,6 +7338,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -7030,6 +7360,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -7051,6 +7382,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -7072,6 +7404,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -7094,6 +7427,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -7115,6 +7449,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -7134,6 +7469,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -7153,6 +7489,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -7175,6 +7512,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -7197,6 +7535,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -7220,6 +7559,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -7244,6 +7584,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -7265,6 +7606,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -7287,6 +7629,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -7308,6 +7651,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -7330,6 +7674,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -7352,6 +7697,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -7374,6 +7720,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -7396,6 +7743,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -7418,6 +7766,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -7441,6 +7790,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -7463,6 +7813,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -7485,6 +7836,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -7506,6 +7858,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -7527,6 +7880,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": false,
     "target_number": 17
   },
   {
@@ -7548,6 +7902,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -7567,6 +7922,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -7586,6 +7942,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": false,
     "target_number": 20
   },
   {
@@ -7605,6 +7962,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -7624,6 +7982,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -7643,6 +8002,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -7662,6 +8022,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 24
   },
   {
@@ -7681,6 +8042,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -7700,6 +8062,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "relevant": false,
     "target_number": 26
   },
   {
@@ -7722,6 +8085,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -7746,6 +8110,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -7767,6 +8132,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -7789,6 +8155,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -7812,6 +8179,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -7837,6 +8205,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -7858,6 +8227,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -7881,6 +8251,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -7902,6 +8273,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -7921,6 +8293,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -7940,6 +8313,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -7963,6 +8337,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -7982,6 +8357,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -8001,6 +8377,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -8020,6 +8397,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -8039,6 +8417,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -8058,6 +8437,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -8077,6 +8457,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -8096,6 +8477,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -8115,6 +8497,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -8134,6 +8517,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -8153,6 +8537,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -8174,6 +8559,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -8193,6 +8579,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 24
   },
   {
@@ -8212,6 +8599,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -8231,6 +8619,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 26
   },
   {
@@ -8250,6 +8639,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 27
   },
   {
@@ -8274,6 +8664,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 28
   },
   {
@@ -8293,6 +8684,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 29
   },
   {
@@ -8312,6 +8704,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 30
   },
   {
@@ -8331,6 +8724,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 31
   },
   {
@@ -8352,6 +8746,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 32
   },
   {
@@ -8371,6 +8766,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 33
   },
   {
@@ -8390,6 +8786,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "relevant": true,
     "target_number": 34
   },
   {
@@ -8411,6 +8808,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -8432,6 +8830,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -8451,6 +8850,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -8473,6 +8873,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -8494,6 +8895,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -8515,6 +8917,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -8536,6 +8939,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -8557,6 +8961,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -8579,6 +8984,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -8600,6 +9006,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -8621,6 +9028,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -8642,6 +9050,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -8664,6 +9073,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -8685,6 +9095,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -8706,6 +9117,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -8727,6 +9139,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -8746,6 +9159,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -8765,6 +9179,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -8786,6 +9201,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -8805,6 +9221,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -8824,6 +9241,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -8843,6 +9261,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -8862,6 +9281,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": false,
     "target_number": 17
   },
   {
@@ -8881,6 +9301,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -8900,6 +9321,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": false,
     "target_number": 19
   },
   {
@@ -8919,6 +9341,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "relevant": false,
     "target_number": 20
   },
   {
@@ -8940,6 +9363,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -8959,6 +9383,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -8978,6 +9403,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -9000,6 +9426,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -9021,6 +9448,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -9040,6 +9468,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -9059,6 +9488,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -9080,6 +9510,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -9103,6 +9534,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -9124,6 +9556,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -9145,6 +9578,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -9166,6 +9600,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -9188,6 +9623,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -9210,6 +9646,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -9231,6 +9668,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -9252,6 +9690,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -9273,6 +9712,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -9294,6 +9734,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -9316,6 +9757,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -9337,6 +9779,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -9358,6 +9801,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -9379,6 +9823,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -9401,6 +9846,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -9423,6 +9869,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -9445,6 +9892,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -9467,6 +9915,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -9489,6 +9938,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -9511,6 +9961,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -9533,6 +9984,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -9555,6 +10007,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -9576,6 +10029,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -9599,6 +10053,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -9621,6 +10076,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -9643,6 +10099,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -9664,6 +10121,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -9685,6 +10143,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -9707,6 +10166,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -9728,6 +10188,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -9749,6 +10210,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -9770,6 +10232,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -9791,6 +10254,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -9813,6 +10277,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -9834,6 +10299,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -9856,6 +10322,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -9875,6 +10342,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": false,
     "target_number": 24
   },
   {
@@ -9896,6 +10364,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -9917,6 +10386,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 26
   },
   {
@@ -9936,6 +10406,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": false,
     "target_number": 27
   },
   {
@@ -9957,6 +10428,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 28
   },
   {
@@ -9978,6 +10450,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 29
   },
   {
@@ -9999,6 +10472,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 30
   },
   {
@@ -10020,6 +10494,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "relevant": true,
     "target_number": 31
   },
   {
@@ -10042,6 +10517,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -10063,6 +10539,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -10085,6 +10562,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -10107,6 +10585,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -10128,6 +10607,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -10151,6 +10631,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -10172,6 +10653,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -10193,6 +10675,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -10214,6 +10697,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -10233,6 +10717,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -10255,6 +10740,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -10274,6 +10760,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -10295,6 +10782,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -10316,6 +10804,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -10337,6 +10826,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -10358,6 +10848,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -10377,6 +10868,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -10398,6 +10890,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -10419,6 +10912,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -10440,6 +10934,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -10461,6 +10956,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -10483,6 +10979,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -10504,6 +11001,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -10526,6 +11024,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -10547,6 +11046,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -10568,6 +11068,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -10589,6 +11090,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -10610,6 +11112,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -10631,6 +11134,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -10652,6 +11156,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -10673,6 +11178,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -10694,6 +11200,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -10715,6 +11222,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -10736,6 +11244,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "relevant": false,
     "target_number": 17
   },
   {
@@ -10755,6 +11264,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -10774,6 +11284,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -10795,6 +11306,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -10819,6 +11331,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -10841,6 +11354,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -10862,6 +11376,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -10881,6 +11396,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -10900,6 +11416,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -10921,6 +11438,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -10942,6 +11460,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -10961,6 +11480,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -10983,6 +11503,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -11009,6 +11530,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -11030,6 +11552,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -11051,6 +11574,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -11072,6 +11596,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -11094,6 +11619,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -11119,6 +11645,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -11141,6 +11668,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -11164,6 +11692,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -11185,6 +11714,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -11206,6 +11736,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -11229,6 +11760,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -11250,6 +11782,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -11271,6 +11804,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -11292,6 +11826,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -11313,6 +11848,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -11334,6 +11870,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -11355,6 +11892,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": false,
     "target_number": 18
   },
   {
@@ -11378,6 +11916,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -11399,6 +11938,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -11424,6 +11964,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -11446,6 +11987,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -11468,6 +12010,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -11489,6 +12032,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 24
   },
   {
@@ -11510,6 +12054,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -11531,6 +12076,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -11552,6 +12098,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -11573,6 +12120,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -11594,6 +12142,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -11615,6 +12164,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -11636,6 +12186,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -11657,6 +12208,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -11678,6 +12230,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -11699,6 +12252,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -11720,6 +12274,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -11741,6 +12296,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -11762,6 +12318,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -11783,6 +12340,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -11804,6 +12362,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -11823,6 +12382,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -11844,6 +12404,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -11863,6 +12424,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -11884,6 +12446,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -11905,6 +12468,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -11926,6 +12490,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -11947,6 +12512,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -11968,6 +12534,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -11989,6 +12556,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -12011,6 +12579,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -12032,6 +12601,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -12054,6 +12624,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -12076,6 +12647,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -12098,6 +12670,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -12117,6 +12690,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -12139,6 +12713,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -12158,6 +12733,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -12180,6 +12756,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -12202,6 +12779,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -12223,6 +12801,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -12242,6 +12821,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -12264,6 +12844,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -12286,6 +12867,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -12307,6 +12889,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -12328,6 +12911,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -12349,6 +12933,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -12370,6 +12955,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -12394,6 +12980,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -12415,6 +13002,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -12436,6 +13024,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -12457,6 +13046,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -12478,6 +13068,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -12499,6 +13090,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -12520,6 +13112,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -12539,6 +13132,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -12560,6 +13154,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -12581,6 +13176,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -12603,6 +13199,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -12625,6 +13222,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -12649,6 +13247,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -12671,6 +13270,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -12693,6 +13293,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -12715,6 +13316,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -12736,6 +13338,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -12759,6 +13362,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -12783,6 +13387,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -12806,6 +13411,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -12827,6 +13433,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -12850,6 +13457,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -12872,6 +13480,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -12894,6 +13503,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -12916,6 +13526,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -12938,6 +13549,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -12960,6 +13572,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -12982,6 +13595,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -13004,6 +13618,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -13026,6 +13641,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -13048,6 +13664,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -13070,6 +13687,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -13092,6 +13710,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -13113,6 +13732,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -13135,6 +13755,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -13157,6 +13778,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -13179,6 +13801,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -13201,6 +13824,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -13223,6 +13847,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -13245,6 +13870,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -13266,6 +13892,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -13285,6 +13912,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -13304,6 +13932,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": false,
     "target_number": 22
   },
   {
@@ -13323,6 +13952,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": false,
     "target_number": 23
   },
   {
@@ -13342,6 +13972,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "relevant": true,
     "target_number": 24
   },
   {
@@ -13364,6 +13995,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -13385,6 +14017,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -13407,6 +14040,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -13428,6 +14062,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -13449,6 +14084,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -13470,6 +14106,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -13491,6 +14128,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -13513,6 +14151,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -13534,6 +14173,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -13556,6 +14196,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -13577,6 +14218,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -13599,6 +14241,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -13622,6 +14265,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -13644,6 +14288,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -13666,6 +14311,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -13689,6 +14335,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -13711,6 +14358,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -13733,6 +14381,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -13756,6 +14405,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -13777,6 +14427,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -13799,6 +14450,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -13821,6 +14473,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -13843,6 +14496,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -13864,6 +14518,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -13885,6 +14540,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -13906,6 +14562,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -13927,6 +14584,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -13946,6 +14604,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -13967,6 +14626,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -13989,6 +14649,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -14010,6 +14671,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -14031,6 +14693,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -14052,6 +14715,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -14071,6 +14735,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -14090,6 +14755,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -14109,6 +14775,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -14130,6 +14797,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -14151,6 +14819,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -14173,6 +14842,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -14192,6 +14862,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -14211,6 +14882,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -14230,6 +14902,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -14249,6 +14922,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -14270,6 +14944,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -14292,6 +14967,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -14315,6 +14991,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -14334,6 +15011,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": false,
     "target_number": 24
   },
   {
@@ -14353,6 +15031,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": false,
     "target_number": 25
   },
   {
@@ -14375,6 +15054,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "relevant": true,
     "target_number": 26
   },
   {
@@ -14396,6 +15076,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -14417,6 +15098,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -14438,6 +15120,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -14459,6 +15142,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -14480,6 +15164,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -14501,6 +15186,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -14522,6 +15208,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -14543,6 +15230,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -14566,6 +15254,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -14587,6 +15276,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -14608,6 +15298,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -14630,6 +15321,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -14651,6 +15343,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -14673,6 +15366,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -14695,6 +15389,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -14714,6 +15409,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -14733,6 +15429,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -14752,6 +15449,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -14774,6 +15472,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -14795,6 +15494,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -14816,6 +15516,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -14837,6 +15538,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -14858,6 +15560,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -14877,6 +15580,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -14899,6 +15603,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -14918,6 +15623,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": false,
     "target_number": 18
   },
   {
@@ -14937,6 +15643,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": false,
     "target_number": 19
   },
   {
@@ -14958,6 +15665,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -14980,6 +15688,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -14999,6 +15708,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -15021,6 +15731,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -15043,6 +15754,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": false,
     "target_number": 24
   },
   {
@@ -15065,6 +15777,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -15087,6 +15800,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 26
   },
   {
@@ -15109,6 +15823,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 27
   },
   {
@@ -15130,6 +15845,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 28
   },
   {
@@ -15151,6 +15867,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 29
   },
   {
@@ -15173,6 +15890,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 30
   },
   {
@@ -15195,6 +15913,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 31
   },
   {
@@ -15214,6 +15933,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "relevant": true,
     "target_number": 32
   },
   {
@@ -15236,6 +15956,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -15258,6 +15979,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -15280,6 +16002,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -15299,6 +16022,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -15321,6 +16045,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -15343,6 +16068,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -15364,6 +16090,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -15386,6 +16113,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -15408,6 +16136,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -15430,6 +16159,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -15451,6 +16181,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -15472,6 +16203,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -15493,6 +16225,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -15512,6 +16245,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -15533,6 +16267,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -15554,6 +16289,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -15573,6 +16309,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -15592,6 +16329,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -15611,6 +16349,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -15630,6 +16369,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -15649,6 +16389,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -15668,6 +16409,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -15687,6 +16429,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -15706,6 +16449,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 24
   },
   {
@@ -15725,6 +16469,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -15744,6 +16489,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 26
   },
   {
@@ -15763,6 +16509,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "relevant": true,
     "target_number": 27
   },
   {
@@ -15786,6 +16533,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -15809,6 +16557,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -15830,6 +16579,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -15851,6 +16601,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -15873,6 +16624,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -15896,6 +16648,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -15918,6 +16671,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -15939,6 +16693,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -15961,6 +16716,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -15982,6 +16738,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -16003,6 +16760,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -16025,6 +16783,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -16046,6 +16805,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -16068,6 +16828,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -16089,6 +16850,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -16111,6 +16873,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -16132,6 +16895,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -16153,6 +16917,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -16174,6 +16939,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -16195,6 +16961,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -16216,6 +16983,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -16237,6 +17005,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -16258,6 +17027,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -16279,6 +17049,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -16300,6 +17071,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -16321,6 +17093,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -16342,6 +17115,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -16363,6 +17137,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -16384,6 +17159,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -16405,6 +17181,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -16426,6 +17203,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -16447,6 +17225,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -16468,6 +17247,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -16489,6 +17269,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -16511,6 +17292,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -16532,6 +17314,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -16553,6 +17336,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -16574,6 +17358,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -16595,6 +17380,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -16617,6 +17403,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -16638,6 +17425,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -16659,6 +17447,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -16680,6 +17469,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -16701,6 +17491,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -16722,6 +17513,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -16743,6 +17535,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -16764,6 +17557,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 17
   },
   {
@@ -16785,6 +17579,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -16806,6 +17601,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -16827,6 +17623,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 20
   },
   {
@@ -16848,6 +17645,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 21
   },
   {
@@ -16869,6 +17667,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -16890,6 +17689,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -16911,6 +17711,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 24
   },
   {
@@ -16932,6 +17733,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -16951,6 +17753,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 26
   },
   {
@@ -16972,6 +17775,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 27
   },
   {
@@ -16993,6 +17797,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 28
   },
   {
@@ -17014,6 +17819,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 29
   },
   {
@@ -17035,6 +17841,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 30
   },
   {
@@ -17056,6 +17863,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 31
   },
   {
@@ -17078,6 +17886,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 32
   },
   {
@@ -17099,6 +17908,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 33
   },
   {
@@ -17120,6 +17930,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 34
   },
   {
@@ -17141,6 +17952,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 35
   },
   {
@@ -17162,6 +17974,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": true,
     "target_number": 36
   },
   {
@@ -17183,6 +17996,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 37
   },
   {
@@ -17204,6 +18018,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "relevant": false,
     "target_number": 38
   },
   {
@@ -17225,6 +18040,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -17247,6 +18063,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -17268,6 +18085,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -17289,6 +18107,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -17311,6 +18130,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -17333,6 +18153,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -17354,6 +18175,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -17376,6 +18198,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -17398,6 +18221,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -17420,6 +18244,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -17441,6 +18266,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -17462,6 +18288,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -17483,6 +18310,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -17504,6 +18332,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -17525,6 +18354,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -17547,6 +18377,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -17568,6 +18399,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -17587,6 +18419,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -17610,6 +18443,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -17631,6 +18465,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -17652,6 +18487,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -17671,6 +18507,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -17692,6 +18529,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -17711,6 +18549,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -17733,6 +18572,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -17755,6 +18595,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -17777,6 +18618,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -17799,6 +18641,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -17821,6 +18664,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -17843,6 +18687,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -17865,6 +18710,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -17888,6 +18734,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -17910,6 +18757,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -17933,6 +18781,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -17955,6 +18804,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -17976,6 +18826,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -17995,6 +18846,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -18016,6 +18868,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -18037,6 +18890,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -18061,6 +18915,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -18082,6 +18937,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -18103,6 +18959,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -18127,6 +18984,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -18146,6 +19004,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -18165,6 +19024,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -18187,6 +19047,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -18210,6 +19071,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -18231,6 +19093,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -18250,6 +19113,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -18269,6 +19133,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -18288,6 +19153,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": false,
     "target_number": 20
   },
   {
@@ -18311,6 +19177,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -18333,6 +19200,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -18356,6 +19224,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -18379,6 +19248,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 24
   },
   {
@@ -18400,6 +19270,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -18419,6 +19290,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": false,
     "target_number": 26
   },
   {
@@ -18441,6 +19313,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 27
   },
   {
@@ -18463,6 +19336,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 28
   },
   {
@@ -18485,6 +19359,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 29
   },
   {
@@ -18507,6 +19382,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 30
   },
   {
@@ -18529,6 +19405,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 31
   },
   {
@@ -18548,6 +19425,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 32
   },
   {
@@ -18567,6 +19445,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 33
   },
   {
@@ -18586,6 +19465,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": false,
     "target_number": 34
   },
   {
@@ -18608,6 +19488,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "relevant": true,
     "target_number": 35
   },
   {
@@ -18630,6 +19511,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -18651,6 +19533,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -18672,6 +19555,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -18695,6 +19579,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -18720,6 +19605,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -18741,6 +19627,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -18762,6 +19649,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -18783,6 +19671,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -18804,6 +19693,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -18825,6 +19715,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -18846,6 +19737,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -18867,6 +19759,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -18889,6 +19782,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -18910,6 +19804,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -18933,6 +19828,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -18955,6 +19851,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -18977,6 +19874,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -18996,6 +19894,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": false,
     "target_number": 18
   },
   {
@@ -19015,6 +19914,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -19034,6 +19934,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": false,
     "target_number": 20
   },
   {
@@ -19053,6 +19954,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -19072,6 +19974,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -19091,6 +19994,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -19112,6 +20016,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -19133,6 +20038,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -19154,6 +20060,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -19177,6 +20084,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -19200,6 +20108,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -19221,6 +20130,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -19242,6 +20152,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -19263,6 +20174,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -19284,6 +20196,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -19305,6 +20218,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -19327,6 +20241,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -19348,6 +20263,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -19369,6 +20285,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -19390,6 +20307,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -19414,6 +20332,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -19437,6 +20356,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -19462,6 +20382,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -19483,6 +20404,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -19505,6 +20427,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -19529,6 +20452,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -19550,6 +20474,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -19572,6 +20497,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -19594,6 +20520,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -19617,6 +20544,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -19638,6 +20566,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -19659,6 +20588,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -19680,6 +20610,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -19701,6 +20632,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -19723,6 +20655,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -19742,6 +20675,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -19761,6 +20695,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -19782,6 +20717,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -19803,6 +20739,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -19825,6 +20762,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -19846,6 +20784,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -19872,6 +20811,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -19896,6 +20836,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -19919,6 +20860,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -19940,6 +20882,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -19961,6 +20904,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -19983,6 +20927,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -20005,6 +20950,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -20024,6 +20970,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -20043,6 +20990,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -20065,6 +21013,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 1
   },
   {
@@ -20086,6 +21035,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -20107,6 +21057,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -20129,6 +21080,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -20151,6 +21103,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -20172,6 +21125,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -20194,6 +21148,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -20215,6 +21170,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -20234,6 +21190,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -20253,6 +21210,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -20274,6 +21232,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -20295,6 +21254,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -20316,6 +21276,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -20337,6 +21298,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -20358,6 +21320,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -20379,6 +21342,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -20400,6 +21364,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -20421,6 +21386,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -20440,6 +21406,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -20461,6 +21428,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 20
   },
   {
@@ -20482,6 +21450,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 21
   },
   {
@@ -20501,6 +21470,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 22
   },
   {
@@ -20520,6 +21490,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 23
   },
   {
@@ -20541,6 +21512,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 24
   },
   {
@@ -20560,6 +21532,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 25
   },
   {
@@ -20579,6 +21552,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 26
   },
   {
@@ -20598,6 +21572,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 27
   },
   {
@@ -20617,6 +21592,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 28
   },
   {
@@ -20636,6 +21612,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
     "target_number": 29
   },
   {
@@ -20657,6 +21634,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -20678,6 +21656,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -20699,6 +21678,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -20720,6 +21700,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -20741,6 +21722,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -20762,6 +21744,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -20783,6 +21766,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -20804,6 +21788,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -20825,6 +21810,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -20846,6 +21832,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -20867,6 +21854,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -20888,6 +21876,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -20909,6 +21898,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -20930,6 +21920,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -20951,6 +21942,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -20972,6 +21964,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 16
   },
   {
@@ -20993,6 +21986,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -21014,6 +22008,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "relevant": false,
     "target_number": 18
   },
   {
@@ -21035,6 +22030,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -21056,6 +22052,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -21077,6 +22074,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 3
   },
   {
@@ -21098,6 +22096,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -21119,6 +22118,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -21140,6 +22140,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -21161,6 +22162,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -21182,6 +22184,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -21203,6 +22206,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -21224,6 +22228,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -21246,6 +22251,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -21267,6 +22273,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 12
   },
   {
@@ -21288,6 +22295,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 13
   },
   {
@@ -21309,6 +22317,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -21330,6 +22339,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": false,
     "target_number": 15
   },
   {
@@ -21349,6 +22359,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -21370,6 +22381,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -21391,6 +22403,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -21412,6 +22425,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -21433,6 +22447,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -21454,6 +22469,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -21475,6 +22491,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "relevant": false,
     "target_number": 6
   },
   {
@@ -21497,6 +22514,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -21518,6 +22536,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -21540,6 +22559,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -21562,6 +22582,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "relevant": false,
     "target_number": 4
   },
   {
@@ -21584,6 +22605,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "relevant": false,
     "target_number": 5
   },
   {
@@ -21606,6 +22628,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -21627,6 +22650,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -21648,6 +22672,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "relevant": false,
     "target_number": 8
   },
   {
@@ -21669,6 +22694,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -21690,6 +22716,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": false,
     "target_number": 2
   },
   {
@@ -21711,6 +22738,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -21732,6 +22760,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -21753,6 +22782,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -21775,6 +22805,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -21796,6 +22827,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": false,
     "target_number": 7
   },
   {
@@ -21817,6 +22849,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -21838,6 +22871,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": false,
     "target_number": 9
   },
   {
@@ -21859,6 +22893,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 10
   },
   {
@@ -21880,6 +22915,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": false,
     "target_number": 11
   },
   {
@@ -21901,6 +22937,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -21923,6 +22960,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -21945,6 +22983,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 14
   },
   {
@@ -21966,6 +23005,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -21987,6 +23027,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 16
   },
   {
@@ -22006,6 +23047,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 17
   },
   {
@@ -22027,6 +23069,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 18
   },
   {
@@ -22049,6 +23092,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": true,
     "target_number": 19
   },
   {
@@ -22070,6 +23114,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": false,
     "target_number": 1
   },
   {
@@ -22091,6 +23136,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 2
   },
   {
@@ -22112,6 +23158,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 3
   },
   {
@@ -22133,6 +23180,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 4
   },
   {
@@ -22156,6 +23204,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 5
   },
   {
@@ -22178,6 +23227,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 6
   },
   {
@@ -22200,6 +23250,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -22221,6 +23272,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 8
   },
   {
@@ -22242,6 +23294,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 9
   },
   {
@@ -22261,6 +23314,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": false,
     "target_number": 10
   },
   {
@@ -22280,6 +23334,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 11
   },
   {
@@ -22299,6 +23354,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 12
   },
   {
@@ -22318,6 +23374,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 13
   },
   {
@@ -22337,6 +23394,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "relevant": true,
     "target_number": 14
   }
 ];

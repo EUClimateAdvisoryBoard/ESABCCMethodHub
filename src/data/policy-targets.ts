@@ -57,6 +57,13 @@ export interface RawPolicyTarget {
   celex_number: string | null;
   /** Column 11 — link to the act on EUR-Lex. */
   eurlex_url: string;
+  /** Relevance lens — true when the row is a substantive target that materially
+   *  bears on the EU climate/energy transition; false for peripheral
+   *  institutional/procedural or non-climate commitments carried by the
+   *  resilience/health/cohesion acts. Defaults are derived in the build script
+   *  and refined per row by the fact-check overrides. The register's default view
+   *  shows only relevant rows. */
+  relevant: boolean;
 }
 
 export type PolicyTarget = RawPolicyTarget;
@@ -112,6 +119,7 @@ export const COLUMNS: ColumnDef[] = [
   { key: 'indicators', header: '9 · Indicators', width: 30, value: (t) => t.indicators.join('; ') },
   { key: 'climate_relevance', header: '10 · Climate-relevance', width: 20, value: (t) => CLIMATE_META[t.climate_relevance].label },
   { key: 'eurlex_url', header: '11 · Source (EUR-Lex)', width: 40, value: (t) => t.eurlex_url },
+  { key: 'relevant', header: 'Relevant (transition lens)', width: 16, value: (t) => (t.relevant ? 'Relevant' : 'Peripheral') },
 ];
 
 function cap(s: string): string {
@@ -124,6 +132,7 @@ export interface TargetStats {
   policies: number;
   mandatory: number;
   quantitative: number;
+  relevant: number;
   byClimate: Record<ClimateRelevance, number>;
   byLabel: Record<TargetLabel, number>;
 }
@@ -132,13 +141,14 @@ export function computeStats(targets: PolicyTarget[]): TargetStats {
   const byClimate = { mitigation: 0, adaptation: 0, both: 0, none: 0 } as Record<ClimateRelevance, number>;
   const byLabel = { target: 0, goal: 0, objective: 0, commitment: 0, other: 0 } as Record<TargetLabel, number>;
   const policies = new Set<string>();
-  let mandatory = 0, quantitative = 0;
+  let mandatory = 0, quantitative = 0, relevant = 0;
   for (const t of targets) {
     byClimate[t.climate_relevance]++;
     byLabel[t.target_label]++;
     policies.add(t.policy_id);
     if (t.obligation === 'mandatory') mandatory++;
     if (t.target_type === 'quantitative') quantitative++;
+    if (t.relevant) relevant++;
   }
-  return { total: targets.length, policies: policies.size, mandatory, quantitative, byClimate, byLabel };
+  return { total: targets.length, policies: policies.size, mandatory, quantitative, relevant, byClimate, byLabel };
 }

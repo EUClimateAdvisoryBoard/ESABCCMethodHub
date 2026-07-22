@@ -49,6 +49,10 @@ export default function PolicyTargetsRegisterPage() {
   });
   const [timeline, setTimeline] = useState<'all' | 'timebound' | 'unspecified'>('all');
   const [confirmView, setConfirmView] = useState<'all' | 'confirmed' | 'unconfirmed'>('all');
+  // Relevance lens — defaults to "relevant" so the register opens on the targets
+  // that materially bear on the climate/energy transition, hiding the peripheral
+  // institutional/procedural commitments carried by the resilience/health/cohesion acts.
+  const [relevanceView, setRelevanceView] = useState<'all' | 'relevant' | 'peripheral'>('relevant');
   const [downloading, setDownloading] = useState(false);
   // Target whose EUR-Lex source text is open in the reader modal (null = closed).
   const [sourceTarget, setSourceTarget] = useState<PolicyTarget | null>(null);
@@ -71,6 +75,8 @@ export default function PolicyTargetsRegisterPage() {
       if (filters.obligation !== 'all' && t.obligation !== filters.obligation) return false;
       if (filters.target_type !== 'all' && t.target_type !== filters.target_type) return false;
       if (filters.climate_relevance !== 'all' && t.climate_relevance !== filters.climate_relevance) return false;
+      if (relevanceView === 'relevant' && !t.relevant) return false;
+      if (relevanceView === 'peripheral' && t.relevant) return false;
       if (timeline === 'timebound' && !t.timeline) return false;
       if (timeline === 'unspecified' && t.timeline) return false;
       if (confirmView === 'confirmed' && !isConfirmed(t.id)) return false;
@@ -78,7 +84,7 @@ export default function PolicyTargetsRegisterPage() {
       if (q && !t.target_text.toLowerCase().includes(q) && !t.policy_name.toLowerCase().includes(q) && !t.article.toLowerCase().includes(q) && !t.indicators.join(' ').toLowerCase().includes(q)) return false;
       return true;
     });
-  }, [query, filters, timeline, confirmView, isConfirmed]);
+  }, [query, filters, relevanceView, timeline, confirmView, isConfirmed]);
 
   const stats = useMemo(() => computeStats(policyTargets), []);
 
@@ -149,8 +155,9 @@ export default function PolicyTargetsRegisterPage() {
 
       <div className="max-w-[1600px] mx-auto px-3 sm:px-5 py-5">
         {/* Stats */}
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2.5 mb-4">
+        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 mb-4">
           <Stat n={stats.total} label="Targets" color="#00928F" />
+          <Stat n={stats.relevant} label="Relevant (lens)" color="#0d9488" />
           <Stat n={stats.policies} label="Policies" color="#3D5265" />
           <Stat n={stats.mandatory} label="Mandatory" color="#b91c1c" />
           <Stat n={stats.quantitative} label="Quantitative" color="#0f766e" />
@@ -164,6 +171,7 @@ export default function PolicyTargetsRegisterPage() {
           <div className="mt-2.5 space-y-2 leading-relaxed">
             <p><strong>Sourcing.</strong> Each <em>Target text</em> is a verbatim slice of the act&rsquo;s enacting terms (articles/annexes) in the consolidated EUR-Lex text — the preamble/recitals are excluded. Candidates were gathered by a fan-out of reading agents (recall-first) plus a regex safety-net, then every quote was validated as an exact source substring before being kept.</p>
             <p><strong>Obligation</strong> is read from the instrument type (regulations/directives bind; communications/strategies are soft law) and the modal verb (&ldquo;shall&rdquo; → mandatory, &ldquo;should&rdquo; → voluntary). <strong>Type</strong> is quantitative when a number/%/date threshold is present, else qualitative. <strong>Climate-relevance</strong> flags mitigation and/or adaptation.</p>
+            <p><strong>Relevance lens.</strong> The register spans the climate acquis plus the resilience, health and cohesion acts that were added for their transition-relevant provisions — which also carry many generic institutional, procedural or non-climate commitments. Each row is flagged <em>relevant</em> when it states a substantive target that materially bears on the climate/energy transition (mitigation, adaptation/resilience, energy, climate-linked environment/nature, clean-tech/industry, or finance channelled to those ends), or <em>peripheral</em> otherwise. The <em>Relevance</em> filter defaults to <em>relevant</em>, so the register opens on the transition-material targets; set it to <em>all</em> (or <em>peripheral</em>) to see the rest. Flags start from a deterministic rule and are refined per row by the fact-check pass.</p>
             <p><strong>Review (column 12).</strong> Because extraction favours recall, every row starts <span className="px-1 rounded bg-grey-200 text-tertiary-dark">grey / unconfirmed</span>. Tick <em>Confirmed</em> to mark a row human-verified — it turns <span className="px-1 rounded" style={{ background: '#E7F6EC', color: '#15803d' }}>green</span>. Confirmations are saved in your browser and included in the Excel/CSV export. This is a screening aid — always check against the source act.</p>
           </div>
         </details>
@@ -172,6 +180,7 @@ export default function PolicyTargetsRegisterPage() {
         <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-3 mb-3 flex flex-wrap items-center gap-2">
           <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search target text, act, article, indicator…"
             className="flex-1 min-w-[200px] text-sm px-3 py-1.5 rounded-md border border-grey-300 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] text-tertiary-dark dark:text-[var(--mh-fg)]" />
+          <Sel label="Relevance" value={relevanceView} set={(v) => setRelevanceView(v as any)} opts={['relevant', 'peripheral']} cap />
           <Sel label="Policy" value={filters.policy} set={(v) => setFilters({ ...filters, policy: v })} opts={options.policy} />
           <Sel label="Type" value={filters.document_type} set={(v) => setFilters({ ...filters, document_type: v })} opts={options.document_type} cap />
           <Sel label="Label" value={filters.target_label} set={(v) => setFilters({ ...filters, target_label: v })} opts={options.target_label} cap />
@@ -185,7 +194,8 @@ export default function PolicyTargetsRegisterPage() {
         {/* Action row */}
         <div className="flex flex-wrap items-center gap-2 mb-3 text-[12.5px]">
           <span className="text-tertiary dark:text-[var(--mh-muted)]">
-            <strong className="text-tertiary-dark dark:text-[var(--mh-fg)]">{filtered.length}</strong> shown · {hydrated ? count : '…'} confirmed
+            <strong className="text-tertiary-dark dark:text-[var(--mh-fg)]">{filtered.length}</strong> shown · {stats.relevant} relevant of {stats.total} · {hydrated ? count : '…'} confirmed
+            {relevanceView === 'relevant' && <span className="ml-1 italic">(peripheral rows hidden — switch <em>Relevance</em> to <em>all</em> to include them)</span>}
           </span>
           <button onClick={() => setMany(shownIds, true)} className="px-2.5 py-1 rounded border border-green-300 text-green-700 bg-green-50 hover:bg-green-100">Confirm all shown</button>
           <button onClick={() => setMany(shownIds, false)} className="px-2.5 py-1 rounded border border-grey-300 text-tertiary hover:bg-grey-100">Clear shown</button>
@@ -249,7 +259,10 @@ export default function PolicyTargetsRegisterPage() {
                         <span>{t.article || 'View source text'}</span>
                       </button>
                     </td>
-                    <td className="px-2 py-2"><Badge label={LABEL_META[t.target_label].label} color={LABEL_META[t.target_label].color} /></td>
+                    <td className="px-2 py-2">
+                      <Badge label={LABEL_META[t.target_label].label} color={LABEL_META[t.target_label].color} />
+                      {!t.relevant && <div className="mt-1"><Badge label="Peripheral" color="#94a3b8" bg="#f1f5f9" /></div>}
+                    </td>
                     <td className="px-2 py-2"><Badge label={OBLIGATION_META[t.obligation].label} color={OBLIGATION_META[t.obligation].color} bg={OBLIGATION_META[t.obligation].bg} /></td>
                     <td className="px-2 py-2"><Badge label={TYPE_META[t.target_type].label} color={TYPE_META[t.target_type].color} /></td>
                     <td className="px-2 py-2 text-tertiary-dark dark:text-[var(--mh-fg)]">{t.timeline || <span className="text-tertiary italic">unspecified</span>}</td>
