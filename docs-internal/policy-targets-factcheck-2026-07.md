@@ -65,3 +65,92 @@ re-verified, and the confirmed corrections were applied. Result: **653 rows**
 Remaining known caveat (unchanged, documented in the module docs): a few
 corpus texts are pre-consolidation versions (EU ETS 2003/87/EC original,
 RED 2018), so their figures reflect that text.
+
+---
+
+# Second pass — the 24 added acts + a relevance lens (July 2026)
+
+After the first pass the register was expanded from 38 to **62 acts** by adding
+the resilience, health, civil-protection, cohesion-funding and single-market
+acquis (birds/habitats/floods directives, the CPR/ERDF/InvestEU/MFF funding
+instruments, the health-union / cross-border-health / one-health-AMR / mental-
+health / OSH acts, the civil-protection & preparedness & critical-entities
+resilience acts, TEN-E/TEN-T, the adaptation strategy, managing-climate-risks,
+water-resilience, the 8th EAP, competitiveness compass, cultural-heritage
+framework, renovation wave). That is **404 new rows across 24 acts**.
+
+## What was done
+
+- **Fact-check fan-out.** One Sonnet reviewer agent per act read the act's
+  EUR-Lex source text and checked every row (quote provenance, provision
+  reference, label, obligation, type, timeline, indicators, climate-relevance),
+  then a second Sonnet verifier agent adversarially re-checked each act's
+  proposed changes against the source (the same propose → verify method as the
+  first pass). 13 acts completed both passes; for 11 acts the verifier hit the
+  session token limit, so the reviewer's pass was used for those (noted below).
+- **Corrections applied** (`scripts/policy-targets-overrides.json`, tagged
+  `[fact-check 2026-07 new-acts]`): **257 rows touched** — **39 dropped**,
+  **208 field corrections**, **20 explicit relevance flips**. Field fixes by
+  column: article 120, climate-relevance 64, type 54, label 34, obligation 16,
+  timeline 11.
+  - *Dropped rows* were non-targets: subject-matter/scope clauses (e.g. "This
+    Directive relates to…", Art. 1 of the birds/floods/CER/ERDF/TEN-T acts),
+    definitions clauses ("'climate proofing' means…"), document titles/section
+    headings, near-duplicate sentences, footnote/illustrative content, and
+    retrospective statistics ("the 2008 MSFD goal was not met") — never dropped
+    merely for being non-climate.
+  - *Climate-relevance* was corrected by substance: CPR Art. 6 climate-
+    expenditure targets → `both` (they track mitigation **and** adaptation
+    intervention codes); adaptation/resilience/restoration rows wrongly tagged
+    `none` → `adaptation`/`both`; non-climate biodiversity, health and cohesion
+    boilerplate confirmed `none`.
+  - *Obligation/type/article* fixes: soft-law communications set voluntary,
+    binding "shall"/non-regression clauses set mandatory, numeric/dated quotes
+    re-typed quantitative, generic "Article N" references sharpened to the exact
+    paragraph/sub-point.
+
+## New: the relevance lens (column-13 `relevant` flag)
+
+The expanded register carries a lot of material that is peripheral to a climate
+board — generic institutional/procedural commitments and non-climate sectoral
+provisions. Each row now has a boolean **`relevant`** flag:
+
+- **Default rule** (`relevantDefault` in `scripts/build-policy-targets.mjs`):
+  a row is *relevant* if its climate-relevance is not `none`, **or** it is a
+  quantified, time-bound target/goal; otherwise *peripheral*.
+- **Refined per row** by the fact-check pass — the reviewer/verifier set
+  `relevant` explicitly where it disagreed with the default (20 flips), so the
+  override wins; everything else follows the deterministic rule.
+- **In the UI** (M·36 page) a *Relevance* filter defaults to **relevant**, so
+  the register opens on the transition-material targets and hides the peripheral
+  commitments; switch it to *all* / *peripheral* to see the rest. The flag is
+  also a column in the Excel/CSV export.
+
+Result: pure non-climate acts (birds & habitats directives, the health-union /
+cross-border-health / one-health-AMR / mental-health / OSH acts, MFF) fall
+entirely into *peripheral*; climate-core acts (adaptation strategy 26/26,
+managing-climate-risks 19/21, floods 15/17, ERDF climate-spend 12/12) stay
+*relevant*; mixed acts (competitiveness compass, TEN-T, 8th EAP, preparedness,
+critical-entities, civil-protection, cultural heritage) keep only their
+climate/energy slices.
+
+## Outcome
+
+- Dataset is now **1018 targets across 62 acts** (39 of the 404 new-act
+  candidates dropped). Relevance split: **669 relevant / 349 peripheral**
+  (new acts: 165 / 200; older 38 acts: 504 / 149).
+- The build remains deterministic and idempotent
+  (`npm run build:policy-targets` reproduces the dataset).
+
+## Known caveats (this pass)
+
+- **11 acts are reviewer-only** (verifier not run — session limit): managing-
+  climate-risks, mental-health-approach, mff-regulation, one-health-amr,
+  osh-framework-directive, preparedness-union-strategy, renovation-wave,
+  ten-e-regulation, ten-t-regulation, union-civil-protection-mechanism,
+  water-resilience-strategy. Their corrections come from a single (still
+  source-checked) reading rather than the two-agent propose→verify loop; re-run
+  the verifier for these when capacity allows.
+- Relevance is a **screening lens**, not a legal classification — it reflects
+  materiality to the EU climate/energy transition, and every row (including
+  peripheral ones) remains in the dataset and viewable via the *all* filter.
