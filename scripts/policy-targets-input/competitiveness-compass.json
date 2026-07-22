@@ -1,0 +1,141 @@
+{
+  "policy_id": "competitiveness-compass",
+  "targets": [
+    {
+      "quote": "The Compass’ goal is to nurture Europe’s innate strengths, harness its resources and remove the barriers at European and national level.",
+      "article": "Overall — Compass goal",
+      "label": "goal",
+      "timeline": "",
+      "indicators": ["removal of competitiveness barriers"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Europe has set out an ambitious framework to become a decarbonised economy by 2050. It will stay the course, including through the intermediate 2040 target of 90%",
+      "article": "Pillar 2 — decarbonisation framework",
+      "label": "target",
+      "timeline": "by 2050 (interim 2040)",
+      "indicators": ["net GHG emission reduction", "climate neutrality"],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the Commission will present a European Research Area Act to strengthen R&D investment and bring it up to the 3% GDP target",
+      "article": "Pillar 1 — closing the innovation gap",
+      "label": "target",
+      "timeline": "",
+      "indicators": ["R&D spending as % of GDP"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the Commission has set ambitious quantified targets for reducing reporting burden: at least 25% for all companies and at least 35% for SMEs.",
+      "article": "Enabler — regulatory simplification",
+      "label": "target",
+      "timeline": "by end of mandate",
+      "indicators": ["reporting burden reduction %"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "This results in a goal of reducing around EUR 37.5 billion of recurring costs until the end of the mandate",
+      "article": "Enabler — administrative burden reduction",
+      "label": "goal",
+      "timeline": "by end of mandate",
+      "indicators": ["recurring administrative cost savings (EUR)"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "circular potential is projected to grow from its current value of EUR 31 billion to EUR 100 billion by 2030, creating 500,000 new jobs",
+      "article": "Pillar 2 — circular economy",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": ["remanufacturing market value (EUR)", "new jobs created"],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "reaching the 2035 climate neutrality target for cars will require a technology-neutral approach, in which e-fuels have a role to play through a targeted amendment of the regulation as part of the foreseen review",
+      "article": "Pillar 2 — automotive decarbonisation",
+      "label": "target",
+      "timeline": "by 2035",
+      "indicators": ["CO2 emissions from cars", "climate neutrality for cars"],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Incentives will be developed, e.g. in the context of the review of the ETS Directive in 2026, to build a business case for permanent carbon removals to compensate for residual emissions from hard to abate sectors.",
+      "article": "Pillar 2 — carbon removals / ETS review",
+      "label": "commitment",
+      "timeline": "2026",
+      "indicators": ["permanent carbon removals", "residual emissions"],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States have committed to quantified targets for renewable energy, to increase R&D spending to 3% of GDP, to raise defence spending to at least 2% of GDP (for NATO members)",
+      "article": "Enabler — financing / committed targets",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["renewable energy share", "R&D % of GDP", "defence spending % of GDP"],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The Draghi report assesses the combined additional investment needs in Europe at EUR 750-800 billion per year by 2030",
+      "article": "Enabler — investment needs",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": ["additional annual investment (EUR)", "investment-to-GDP rate"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "This conviction will inspire the Clean Industrial Deal initiative, aimed at securing the EU as an attractive location for manufacturing, including for energy intensive industries",
+      "article": "Pillar 2 — Clean Industrial Deal",
+      "label": "objective",
+      "timeline": "Q1 2025",
+      "indicators": ["clean manufacturing investment", "decarbonisation of industry"],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "These issues will be addressed by the Affordable Energy Action Plan, through a range of measures to ensure that households and industrial customers have a wider direct access to low-cost energy.",
+      "article": "Pillar 2 — affordable energy",
+      "label": "objective",
+      "timeline": "Q1 2025",
+      "indicators": ["energy prices", "access to low-cost energy"],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "in Spring 2025, the Steel and Metals Action Plan will propose concrete measures to address investment needs, access to primary and secondary materials, use of trade defence instruments",
+      "article": "Pillar 2 — Steel and Metals Action Plan",
+      "label": "commitment",
+      "timeline": "Spring 2025",
+      "indicators": ["steel/metals investment", "materials access"],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The Commission will thus propose a 28th legal regime, which will simplify applicable rules and reduce the cost of failure, including any relevant aspects of corporate law, insolvency, labour and tax law.",
+      "article": "Pillar 1 — 28th legal regime",
+      "label": "commitment",
+      "timeline": "Q4 2025 – Q1 2026",
+      "indicators": ["harmonised EU-wide company rules"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "A Circular Economy Act proposal will serve to catalyse investment in recycling capacity and encourage EU industry to effectively substitute virgin materials and to reduce the landfilling and incineration of used raw materials.",
+      "article": "Pillar 2 — Circular Economy Act",
+      "label": "commitment",
+      "timeline": "Q4 2026",
+      "indicators": ["recycling capacity", "landfilling/incineration reduction"],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The Commission will propose the introduction of a European preference in public procurement",
+      "article": "Pillar 3 — public procurement",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["European preference in procurement"],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Yet, Europe is far behind its own 2030 Digital Decade targets for infrastructure connections.",
+      "article": "Pillar 1 — digital infrastructure",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": ["digital infrastructure connectivity"],
+      "climate_relevance": "none"
+    }
+  ]
+}

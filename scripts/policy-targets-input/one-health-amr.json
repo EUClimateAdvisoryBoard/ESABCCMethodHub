@@ -1,0 +1,177 @@
+{
+  "policy_id": "one-health-amr",
+  "targets": [
+    {
+      "quote": "Its overarching goal is to preserve the possibility of effective treatment of infections in humans and animals.",
+      "article": "Overarching goal",
+      "label": "goal",
+      "timeline": "",
+      "indicators": [
+        "effective treatment of infections"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "It provides a framework for continued, more extensive action to reduce the emergence and spread of AMR and to increase the development and availability of new effective antimicrobials inside and outside the EU.",
+      "article": "Overall aim — reduce AMR, increase new antimicrobials",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "AMR emergence and spread",
+        "new antimicrobials"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "making the EU a best practice region: as the evaluation of the 2011 action plan highlighted, this will require better evidence, better coordination and surveillance, and better control measures.",
+      "article": "Pillar 1 — EU as best-practice region",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "best evidence",
+        "coordination and surveillance",
+        "control measures"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "boosting research, development and innovation by closing current knowledge gaps, providing novel solutions and tools to prevent and treat infectious diseases, and improving diagnosis in order to control the spread of AMR;",
+      "article": "Pillar 2 — boosting research and innovation",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "research and innovation",
+        "knowledge gaps",
+        "diagnosis"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "intensifying EU efforts worldwide to shape the global agenda on AMR and the related risks in an increasingly interconnected world.",
+      "article": "Pillar 3 — shaping the global agenda",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "global agenda on AMR"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "EU actions will focus on the areas with the highest added value for Member States, e.g. promoting the prudent use of antimicrobials, enhancing cross-sectorial work, improving infection prevention and consolidating surveillance of AMR and antimicrobial consumption.",
+      "article": "Priority areas of EU action",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "prudent use",
+        "infection prevention",
+        "surveillance"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "define, with the support of the ECDC, the EMA and the EFSA, a limited number of key outcome indicators for AMR and antimicrobial consumption to measure the EU’s and Member States’ progress in the fight against AMR;",
+      "article": "Better evidence — key outcome indicators",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "key outcome indicators",
+        "antimicrobial consumption"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "promote the uptake of vaccination in humans as a public health measure to prevent infections and subsequent use of antimicrobials;",
+      "article": "Infection prevention — vaccination uptake",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "vaccination uptake"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "work towards EU implementing and delegated acts under the forthcoming veterinary medicinal products and medicated feed Regulations (once adopted by the European Parliament and the Council)",
+      "article": "Prudent use — implementing acts on veterinary antimicrobials",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "prudent use",
+        "veterinary antimicrobials"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "develop EU guidelines for the prudent use of antimicrobials in human medicine;",
+      "article": "Prudent use — EU guidelines in human medicine",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "prudent use guidelines"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "adopt an EU strategic approach to pharmaceuticals in the environment",
+      "article": "Environment — strategic approach to pharmaceuticals",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "pharmaceuticals in the environment"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "reduce the scope for falsified medicines by assisting Member States and stakeholders in the successful implementation of the safety features (unique identifier) that will appear by 2019 on the packaging of medicinal products for human use",
+      "article": "Availability — tackling falsified medicines",
+      "label": "commitment",
+      "timeline": "by 2019",
+      "indicators": [
+        "falsified medicines",
+        "safety features"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "continue to support research into the development of new effective preventive vaccines for humans and animals;",
+      "article": "R&I — new preventive vaccines",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "new preventive vaccines"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "support research into knowledge gaps on the release of resistant microorganisms and antimicrobials into the environment and their spread;",
+      "article": "R&I — AMR in the environment",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "AMR in the environment",
+        "research"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "continue to actively contribute to the normative work of the WHO, the OIE, the FAO, and the Codex Alimentarius on the development of ambitious international frameworks and standards/norms/guidelines/methodologies related to AMR;",
+      "article": "Global agenda — normative work with WHO/OIE/FAO",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "international frameworks and standards"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The indicators will also help Member States to set measurable goals to reduce infections by key antimicrobial resistant microorganisms in humans and food-producing animals, to improve the appropriateness of the use of antimicrobials in the human and veterinary sectors and to combat AMR in all sectors.",
+      "article": "Measuring success — measurable national goals",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "measurable goals",
+        "reduce resistant infections"
+      ],
+      "climate_relevance": "none"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "policy_id": "eighth-environment-action-programme",
+  "targets": [
+    {
+      "quote": "The 8th EAP aims to accelerate the green transition to a climate-neutral, sustainable, non-toxic, resource-efficient, renewable energy-based, resilient and competitive circular economy in a just, equitable and inclusive way, and to protect, restore and improve the state of the environment by, inter alia, halting and reversing biodiversity loss. It supports and strengthens an integrated policy and implementation approach, building upon the European Green Deal.",
+      "article": "Article 1(2) — subject matter",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "green transition",
+        "circular economy"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "The 8th EAP shall have the long-term priority objective that by 2050 at the latest, people live well, within the planetary boundaries in a well-being economy where nothing is wasted, growth is regenerative, climate neutrality in the Union has been achieved and inequalities have been significantly reduced. A healthy environment underpins the well-being of all people and is an environment in which biodiversity is conserved, ecosystems thrive, and nature is protected and restored, leading to increased resilience to climate change, weather- and climate-related disasters and other environmental risks. The Union sets the pace for ensuring the prosperity of present and future generations globally, guided by intergenerational responsibility.",
+      "article": "Article 2(1) — long-term priority objective",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": [
+        "planetary boundaries",
+        "climate neutrality"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "swift and predictable reduction of greenhouse gas emissions and, at the same time, enhancement of removals by natural sinks in the Union to attain the 2030 greenhouse gas emission reduction target as laid down in Regulation (EU) 2021/1119, in line with the Union’s climate and environment objectives, whilst ensuring a just transition that leaves no one behind;",
+      "article": "Article 2(2)(a) — thematic objective",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "GHG emission reduction",
+        "natural sinks"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "continuous progress in enhancing and mainstreaming adaptive capacity, including on the basis of ecosystem approaches, strengthening resilience and adaptation and reducing the vulnerability of the environment, society and all sectors of the economy to climate change, while improving prevention of, and preparedness for, weather- and climate-related disasters;",
+      "article": "Article 2(2)(b) — thematic objective",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "adaptation",
+        "resilience"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "advancing towards a well-being economy that gives back to the planet more than it takes and accelerating the transition to a non-toxic circular economy, where growth is regenerative, resources are used efficiently and sustainably, and the waste hierarchy is applied;",
+      "article": "Article 2(2)(c) — thematic objective",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "circular economy",
+        "resource efficiency"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "pursuing zero pollution, including in relation to harmful chemicals, in order to achieve a toxic-free environment, including for air, water and soil, as well as in relation to light and noise pollution, and protecting the health and well-being of people, animals and ecosystems from environment-related risks and negative impacts;",
+      "article": "Article 2(2)(d) — thematic objective",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "zero pollution",
+        "toxic-free environment"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "protecting, preserving and restoring marine and terrestrial biodiversity and the biodiversity of inland waters inside and outside protected areas by, inter alia, halting and reversing biodiversity loss and improving the state of ecosystems and their functions and the services they provide, and by improving the state of the environment, in particular air, water and soil, as well as by combating desertification and soil degradation;",
+      "article": "Article 2(2)(e) — thematic objective",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "biodiversity",
+        "ecosystem restoration"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "promoting environmental aspects of sustainability and significantly reducing key environmental and climate pressures related to the Union’s production and consumption, in particular in the areas of energy, industry, buildings and infrastructure, mobility, tourism, international trade and the food system.",
+      "article": "Article 2(2)(f) — thematic objective",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "production and consumption pressures"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "setting a deadline for the phasing out of fossil fuel subsidies consistent with the ambition of limiting global warming to 1,5",
+      "article": "Article 3(h)(ii) — enabling condition",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "fossil fuel subsidies phase-out"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "a methodology that is set out by the Commission, in consultation with Member States, by 2023, to identify other environmentally harmful subsidies; on the basis of that methodology Member States shall identify other environmentally harmful subsidies and report them regularly to the Commission, allowing for a Commission report on the level and type of such subsidies in the Union, and on progress made on phasing them out;",
+      "article": "Article 3(h)(iii) — enabling condition",
+      "label": "commitment",
+      "timeline": "by 2023",
+      "indicators": [
+        "environmentally harmful subsidies"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "mainstreaming biodiversity action in the Union’s policies and contributing to the achievement of the overall ambition of providing 7,5 % of annual spending under the multiannual financial framework 2021-2027 to biodiversity objectives in 2024 and 10 % of that annual spending in 2026 and in 2027, with such spending to be tracked using an effective, transparent and comprehensive methodology, while considering the existing overlaps between climate and biodiversity goals;",
+      "article": "Article 3(i) — enabling condition",
+      "label": "commitment",
+      "timeline": "2024, 2026, 2027",
+      "indicators": [
+        "biodiversity spending share"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "addressing land degradation and ensuring the protection and sustainable use of soil, including by way of a dedicated legislative proposal on soil health by 2023;",
+      "article": "Article 3(m) — enabling condition",
+      "label": "commitment",
+      "timeline": "by 2023",
+      "indicators": [
+        "soil health legislation"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "significantly decreasing the Union’s material and consumption footprints to bring them into planetary boundaries as soon as possible, including through the introduction of Union 2030 reduction targets, as appropriate;",
+      "article": "Article 3(s) — enabling condition",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "material footprint",
+        "consumption footprint"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Following a consultation process with all relevant stakeholders, the Commission shall, by 2 May 2022, present a monitoring framework, based on a limited number of headline indicators, which include, where available, systemic indicators that address, inter alia, environmental-social and environmental-economic nexus. The list of headline indicators shall remain stable to ensure accountability. It shall, however, be updated to reflect the latest policy and indicator developments, where appropriate.",
+      "article": "Article 4(2) — monitoring framework",
+      "label": "commitment",
+      "timeline": "by 2 May 2022",
+      "indicators": [
+        "headline indicators"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "By 31 March 2024, the Commission shall carry out a mid-term review of the progress achieved in attaining the thematic priority objectives set out in Article 2(2), taking into consideration the status of the enabling conditions laid down in Article 3, and the progress made towards monitoring and assessing systemic change. The Commission shall propose, where appropriate, changes to the headline indicators referred to in Article 4(2) in light of the outcome of the mid-term review. The mid-term review shall be based on the assessments carried out pursuant to Article 4(1) and on any other relevant findings. The Commission shall submit a report on the mid-term review to the European Parliament and to the Council.",
+      "article": "Article 5(1) — mid-term review",
+      "label": "commitment",
+      "timeline": "by 31 March 2024",
+      "indicators": [
+        "mid-term review"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "By 31 March 2029, the Commission shall carry out an evaluation of the 8th EAP. The Commission shall submit a report containing the main findings of that evaluation to the European Parliament and to the Council, followed, if appropriate, by a legislative proposal for the next environmental action programme by 31 December 2029.",
+      "article": "Article 6 — evaluation",
+      "label": "commitment",
+      "timeline": "by 31 March 2029",
+      "indicators": [
+        "evaluation report"
+      ],
+      "climate_relevance": "both"
+    }
+  ]
+}

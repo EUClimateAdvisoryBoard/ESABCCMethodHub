@@ -1,0 +1,185 @@
+{
+  "policy_id": "ten-t-regulation",
+  "targets": [
+    {
+      "quote": "This Regulation establishes guidelines for the development of a trans-European transport network consisting of a comprehensive network and of a core network and extended core network",
+      "article": "Art. 1(1)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "TEN-T network structure"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The overall objective of the development of the trans-European transport network is to establish a single multimodal Union wide transport network of high quality.",
+      "article": "Art. 4(1)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "single multimodal network"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the completion of a core network by 31 December 2030",
+      "article": "Art. 6(1)(a)",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "core network completion"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the completion of an extended core network by 31 December 2040",
+      "article": "Art. 6(1)(b)",
+      "label": "target",
+      "timeline": "by 2040",
+      "indicators": [
+        "extended core network completion"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the completion of a comprehensive network by 31 December 2050",
+      "article": "Art. 6(1)(c)",
+      "label": "target",
+      "timeline": "by 2050",
+      "indicators": [
+        "comprehensive network completion"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "promotion of zero and low emission mobility in line with the relevant Union CO2 reduction targets",
+      "article": "Art. 4(2)(a)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "zero and low emission mobility"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "enabling greater use of more sustainable modes of transport, in particular by further developing an interoperable long-distance rail passenger network, including at high speed, and an interoperable rail freight network",
+      "article": "Art. 4(2)(a)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "modal shift to rail"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the deployment of alternative fuels recharging and refuelling infrastructure, thereby contributing to the deployment of decarbonisation technologies",
+      "article": "Art. 5(1)(c)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "alternative fuels infrastructure"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the development of green, sustainable and climate resilient infrastructure, taking into account active modes, and the promotion of new technologies that aim to decarbonise the construction of transport infrastructure",
+      "article": "Art. 5(1)(g)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "green climate-resilient infrastructure"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "enables, without special permission, the operation of freight trains with a train length of at least 740 m (including the locomotive or locomotives)",
+      "article": "Art. 16(2)(b)",
+      "label": "target",
+      "timeline": "by 2040",
+      "indicators": [
+        "740 m freight trains"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "designed for a speed of at least 160 km/h for passenger trains on the passenger lines of the extended core network",
+      "article": "Art. 16(4)(b)",
+      "label": "target",
+      "timeline": "by 2040",
+      "indicators": [
+        "160 km/h passenger lines"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall ensure that any new railway line of the core network and the extended core network, including connections referred to in Article 14(1), point (d), provides for the European standard nominal track gauge of 1 435 mm.",
+      "article": "Art. 17(1)",
+      "label": "target",
+      "timeline": "by 2030/2040",
+      "indicators": [
+        "standard 1435 mm track gauge"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "ERTMS is equipped on the railway infrastructure of the extended core network by 31 December 2040 and the comprehensive network by 31 December 2050",
+      "article": "Art. 18(1)(a)",
+      "label": "target",
+      "timeline": "by 2040/2050",
+      "indicators": [
+        "ERTMS deployment"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall ensure that the railway infrastructure of the core network, the extended core network and the comprehensive network is equipped with radio-based ERTMS by 31 December 2050.",
+      "article": "Art. 18(4)",
+      "label": "target",
+      "timeline": "by 2050",
+      "indicators": [
+        "radio-based ERTMS"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the adoption and monitoring of a sustainable urban mobility plan (SUMP) for each urban node that includes inter alia measures to integrate the different modes of transport and shift towards sustainable mobility, to promote efficient zero and low emission mobility including urban logistics",
+      "article": "Art. 41(1)(b)",
+      "label": "target",
+      "timeline": "by 2027",
+      "indicators": [
+        "sustainable urban mobility plans"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2030, the development of multimodal passenger hubs to facilitate first and last mile connections",
+      "article": "Art. 41(1)(c)",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "multimodal passenger hubs"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall make all appropriate efforts to improve the security and resilience of the infrastructure to climate change, natural hazards, hybrid threats, human-made disasters, accidents, and operational interruptions",
+      "article": "Art. 46(1)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "infrastructure resilience"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Projects of common interest for which an environmental impact assessment must be carried out in compliance with Directive 2011/92/EU shall be subject to climate proofing.",
+      "article": "Art. 46(2)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "climate proofing"
+      ],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}

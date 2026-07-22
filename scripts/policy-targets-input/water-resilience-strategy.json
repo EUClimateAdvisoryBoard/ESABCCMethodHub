@@ -1,0 +1,156 @@
+{
+  "policy_id": "water-resilience-strategy",
+  "targets": [
+    {
+      "quote": "1.Restoring and protecting the water cycle as basis for sustainable water supply.",
+      "article": "Objective 1: restore and protect the water cycle",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "water cycle restoration"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "2.Building a water-smart economy together with citizens and economic actors in a way that supports EU competitiveness, is attractive to investors and supports a thriving EU water industry.",
+      "article": "Objective 2: build a water-smart economy",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "water-smart economy"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "3.Securing clean and affordable water and sanitation for all at all times, and empowering citizens for water resilience.",
+      "article": "Objective 3: clean and affordable water for all",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "access to clean water"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "the EU should aim to enhance water efficiency by at least 10% by 2030. The Commission will work with Member States and stakeholders to develop a joint methodology for water efficiency targets",
+      "article": "Enhance water efficiency by at least 10% by 2030",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "water efficiency"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "objective to achieve good status of all water bodies by 2027",
+      "article": "Good status of all water bodies by 2027 (WFD)",
+      "label": "objective",
+      "timeline": "by 2027",
+      "indicators": [
+        "water body status"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Water and climate resilience must be fully integrated in the national Restoration Plans to be developed by 2026.",
+      "article": "Water/climate resilience in national Restoration Plans by 2026",
+      "label": "commitment",
+      "timeline": "by 2026",
+      "indicators": [
+        "restoration plans"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "goal of achieving good environmental status for marine waters by 2020 was not met.",
+      "article": "Good environmental status for marine waters (MSFD)",
+      "label": "objective",
+      "timeline": "by 2020",
+      "indicators": [
+        "marine environmental status"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "By June 2028, the Commission will evaluate the Water Reuse Regulation, and will subsequently consider extending its scope pending evaluation results.",
+      "article": "Evaluate Water Reuse Regulation by June 2028",
+      "label": "commitment",
+      "timeline": "by June 2028",
+      "indicators": [
+        "water reuse"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States with water supply leakage levels exceeding the EU-wide threshold – to be set by 2028 – will have to present, by 2030, national action plans to reduce leakages across their supply networks.",
+      "article": "National leakage-reduction action plans by 2030",
+      "label": "target",
+      "timeline": "threshold by 2028, plans by 2030",
+      "indicators": [
+        "water supply leakage"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "the Commission will rate their energy efficiency and overall sustainability and propose minimum performance standards, including for water consumption",
+      "article": "Minimum performance standards for data-centre water use",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "data centre water consumption"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "suggesting an annual investment gap of around EUR 23 billion per year (0.1% of EU GDP) to implement the existing water legislation",
+      "article": "EUR 23 billion annual water investment gap",
+      "label": "other",
+      "timeline": "annual",
+      "indicators": [
+        "water investment gap"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "over EUR 15 billion in planned financing during 2025-2027 for projects enhancing access to water, pollution control, resilience and competitiveness of the EU water sector",
+      "article": "EIB Water Programme: EUR 15 billion 2025-2027",
+      "label": "commitment",
+      "timeline": "2025-2027",
+      "indicators": [
+        "water sector financing"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "The Commission will establish a Water Resilience Investment Accelerator to implement 20 pilot innovative cases for natural water retention and water efficiency",
+      "article": "Water Resilience Investment Accelerator: 20 pilots",
+      "label": "commitment",
+      "timeline": "2026-2027",
+      "indicators": [
+        "water retention pilots",
+        "water efficiency"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "Develop and implement Destination Earth and EU Digital Twin of the Ocean applications for water resilience, and by 2030, make the capabilities available to national and local administrations in the EU and beyond.",
+      "article": "Destination Earth water capabilities available by 2030",
+      "label": "commitment",
+      "timeline": "by 2030",
+      "indicators": [
+        "digital water models"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Adopt a European Climate Adaptation Plan.",
+      "article": "Adopt a European Climate Adaptation Plan",
+      "label": "commitment",
+      "timeline": "2026",
+      "indicators": [
+        "climate adaptation plan"
+      ],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}

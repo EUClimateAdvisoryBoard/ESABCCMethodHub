@@ -1,0 +1,689 @@
+EUROPEAN COMMISSION
+
+Brussels, 29.6.2017
+
+COM(2017) 339 final
+
+COMMUNICATION FROM THE COMMISSION TO THE COUNCIL AND THE EUROPEAN PARLIAMENT
+
+A European One Health Action Plan against Antimicrobial Resistance (AMR)
+
+{SWD(2017) 240 final}
+
+1The need for EU action against antimicrobial resistance (AMR)
+
+1.1State of play
+
+Since penicillin was first discovered in 1928, life-saving antimicrobials have revolutionised our society and economy. Previously deadly diseases have become routine ailments, requiring little more than a brief treatment. These achievements are now at risk mainly because of the excessive or inappropriate use of antimicrobials, which has led to the increasing emergence and spread of multi-resistant bacteria. Without effective action to reverse current trends, we could face a return to the pre-antibiotic era, with simple wounds and infections causing significant harm and even death and routine medical procedures becoming very high risk.
+
+Antimicrobials: include antibiotics, antivirals, antifungals and antiprotozoals. They are active substances of synthetic or natural origin which kill or inhibit the growth of microorganisms. Used in every-day medicine (e.g. urinary tract infections, surgery and care of premature babies), they are vital to preventing and treating infections in humans and animals.
+
+Antimicrobial resistance (AMR): is the ability of microorganisms, such as bacteria, to become increasingly resistant to an antimicrobial to which they were previously susceptible. AMR is a consequence of natural selection and genetic mutation. Such mutation is then passed on conferring resistance. This natural selection process is exacerbated by human factors such as inappropriate use of antimicrobials in human and veterinary medicine, poor hygiene conditions and practices in healthcare settings or in the food chain facilitating the transmission of resistant microorganisms. Over time, this makes antimicrobials less effective and ultimately useless.
+
+AMR is a serious challenge, in the EU and globally. According to the World Health Organization (WHO)
+1
+, AMR has already reached alarming levels in many parts of the world. High levels of AMR in bacteria linked to numerous common infections (e.g. urinary tract infections, pneumonia, tuberculosis and gonorrhoea) have been observed in all WHO regions. Resistance to antivirals, such as those used to treat HIV, is also increasing.
+
+Global efforts include the 2016 United Nations Political Declaration on AMR
+2
+and the 2015 WHO Global Action Plan on AMR
+3
+, which was subsequently adopted by the World Animal Health Organisation (OIE) and the Food and Agriculture Organization (FAO). AMR has also been addressed in the G7 and G20 forums.
+
+AMR already presents a serious social and economic burden. It is estimated to be responsible for 25,000 deaths per year in the EU alone
+4
+and 700,000 deaths per year globally. Inaction is projected to cause millions of deaths globally: it has been estimated that AMR might cause more deaths than cancer
+5
+by 2050.
+
+Apart from the human suffering caused by that development, AMR also pushes up the cost of treatment and diminishes productivity due to illness. In the EU alone it is estimated that AMR costs EUR 1.5 billion annually in healthcare costs and productivity losses4. The World Bank
+6
+has warned that, by 2050, drug-resistant infections could cause global economic damage on a par with the 2008 financial crisis. AMR also threatens the achievement of several of the United Nations’ sustainable development goals, particularly the targets for good health and well-being
+7
+(goal 3).
+
+Effective action against the rise of AMR will mitigate its negative impact on the economy and can therefore be considered a contribution to economic growth, to sustainable healthcare budgets by reducing healthcare costs and to a productive and healthy population.
+
+The EU was quick to recognise the importance of tackling AMR, as the 2001 Community strategy against AMR
+8
+shows. This policy was reinforced with the 2011 Commission action plan
+9
+, notable for its One Health approach, addressing AMR in both humans and animals.
+
+One Health: is a term used to describe a principle which recognises that human and animal health are interconnected, that diseases are transmitted from humans to animals and vice versa and must therefore be tackled in both. The One Health approach also encompasses the environment, another link between humans and animals and likewise a potential source of new resistant microorganisms. This term is globally recognised, having been widely used in the EU and in the 2016 United Nations Political Declaration on AMR.
+
+Since 1999, the Commission has invested over EUR 1.3 billion in AMR research, making Europe a leader in this domain. EU achievements include the launch of the New Drugs for Bad Bugs (ND4BB) programme
+10
+, the world’s biggest public-private AMR research partnership, forming part of the Innovative Medicines Initiative (IMI)
+11
+. The EU has also set up the Joint Programming Initiative on AMR (JPIAMR)
+12
+which aims to better coordinate and align worldwide AMR research efforts.
+
+Despite all this, incidences of infections resistant to multidrug therapies and last-resort treatments
+13
+have significantly increased in the EU
+14
+in recent years.
+
+The development and spread of AMR in the environment is also a growing concern, requiring further research. A number of scientific studies have identified the potential negative impacts of resistant microorganisms or antimicrobials on the environment.
+
+At the same time, the discovery, development, manufacture and marketing of new antimicrobials has significantly slowed down in the past 20 years. Historical data show a low success rate: only 1 out of 16 antibiotics from early-stage research reaches clinical application for patients
+15
+.
+
+1.2Recent developments and way forward
+
+In the face of regional and global AMR challenges, the EU stands at the forefront for addressing AMR. However, no single action will, in isolation, provide an adequate solution. Resistant bacteria and infectious diseases do not respect borders. No individual Member State or the EU can tackle the problem on its own. The EU is nevertheless in a strong position to act given its high degree of economic development, and commitment to a high level of human health protection.
+
+As requested by the Member States, the Council conclusions of 17 June 2016
+16
+call for a new and comprehensive EU action plan on AMR based on the One Health approach.
+
+This new action plan builds on the 2011 action plan, its evaluation
+17
+, the feedback on the roadmap
+18
+and an open public consultation
+19
+.
+
+The evaluation concluded that the 2011 action plan had clear EU added value, was a symbol of political commitment, stimulated action within the Member States and strengthened international cooperation. The evaluation also confirmed that the issues addressed in the 2011 plan are still relevant today. However, initiatives need to be broadened, such as extending the One Health approach to include the environment and tackling AMR more comprehensively on the basis of improved data collection, monitoring and surveillance. Further support and assistance to EU Member States to address differences and foster cooperation, more efficient and coordinated research to improve knowledge and develop solutions, and a continued strong EU voice at global level, were also recommended.
+
+The roadmap on a new EU action plan on AMR received contributions from 22 stakeholders from 24 October 2016 to 28 March 2017. The open public consultation took place between 27 January and 28 April 2017. It consisted of two separate online questionnaires: one for citizens and one for administrations, associations and other organisations. In total 421 responses were received from citizens and 163 from administrations, associations and other organisations. The synopsis report accompanying this Communication provides an overview of the contributions received and how they have been taken into account in defining concrete actions. Overall, the replies submitted confirm the strong support for a new One Health action plan and the importance of a comprehensive approach.
+
+This new One Health action plan against AMR is motivated by the need for the EU to play a leading role in the fight against AMR and to add value to Member States' actions. Its overarching goal is to preserve the possibility of effective treatment of infections in humans and animals. It provides a framework for continued, more extensive action to reduce the emergence and spread of AMR and to increase the development and availability of new effective antimicrobials inside and outside the EU.
+
+The key objectives of this new plan are built on three main pillars:
+
+1.making the EU a best practice region: as the evaluation of the 2011 action plan highlighted, this will require better evidence, better coordination and surveillance, and better control measures. EU action will focus on key areas and help Member States in establishing, implementing and monitoring their own national One Health action plans on AMR, which they agreed to develop at the 2015 World Health Assembly
+20
+;
+
+2.boosting research, development and innovation by closing current knowledge gaps, providing novel solutions and tools to prevent and treat infectious diseases, and improving diagnosis in order to control the spread of AMR;
+
+3.intensifying EU efforts worldwide to shape the global agenda on AMR and the related risks in an increasingly interconnected world.
+
+The new plan contains concrete actions with EU added value that the Commission will develop and strengthen as appropriate in the coming years. All these actions are important in themselves, but they are also interdependent and need to be implemented in parallel in order to achieve the best outcome.
+
+2Making the EU a best practice region
+
+Within the EU, the situation across Member States with regard to AMR varies greatly. This includes patterns of antimicrobial use, occurrence of resistance, and the extent to which effective national policies to deal with AMR have been implemented. In order to tackle this situation, the Commission will concentrate on key areas with the highest added value for Member States, while respecting the limits of EU competence and bearing in mind that Member States remain primarily responsible for the definition of their health policies.
+
+The Commission will continue to bring together all relevant EU scientific agencies – notably the European Food Safety Authority (EFSA), the European Medicines Agency (EMA), and the European Centre for Disease Prevention and Control (ECDC) – to jointly take appropriate actions. This will enable Member States to benefit from the most effective support and resources for reducing AMR and preserving the effectiveness of antimicrobials. Agencies’ supportive actions will include infection prevention, biosecurity measures and control practices in human healthcare and in animal husbandry, including aquaculture, in order to reduce infections and thus the need for antimicrobials.
+
+EU actions will focus on the areas with the highest added value for Member States, e.g. promoting the prudent use of antimicrobials, enhancing cross-sectorial work, improving infection prevention and consolidating surveillance of AMR and antimicrobial consumption.
+
+2.1Better evidence and awareness of the challenges of AMR
+
+Strengthen One Health surveillance and reporting of AMR and antimicrobial use
+
+Resistant microorganisms exist in humans, animals, food, and the environment. This makes AMR a complex epidemiological issue. The main cause of AMR is antimicrobial use. A comprehensive, collaborative and coordinated collection and analysis of data from multiple domains, i.e. a One Health AMR surveillance system, is therefore essential to understand the magnitude of the problem, identify trends, determine how the use of antimicrobials and AMR are linked, evaluate policies and set priorities. Although in the EU a wide range of surveillance programmes and activities across different sectors exist, gaps in surveillance remain. A more integrated surveillance system is needed to have a complete picture of the AMR epidemiological situation in the EU and to better identify critical control points. In the animal health area, a new regulatory framework (Animal Health Law
+21
+), offers a better basis to develop detailed rules for controlling resistant bacteria.
+
+The Commission will:
+
+-review EU implementing legislation on monitoring AMR in zoonotic and commensal bacteria in farm animals and food
+22
+, to take into account new scientific developments and data collection needs;
+
+-review EU implementing legislation on reporting communicable diseases in humans
+23
+to take into account new scientific developments and data collection needs;
+
+-identify and assess under the Animal Health Law and with the support of the EFSA, resistant bacteria that cause transmissible animal diseases and, if necessary, develop harmonised rules for their surveillance;
+
+-improve AMR detection in the human health sector by providing EU support for networking collaboration and reference laboratory activities;
+
+-consider options for the harmonised monitoring of AMR in the environment, including through the network of national reference laboratories in the veterinary sector.
+
+Benefit from the best evidence-based analysis and data
+
+High-quality research, data and analysis are crucial as a basis for new measures against AMR and to help policymakers improve existing measures. Some information is already available to Member States, but additional reliable information needs to be generated.
+
+The Commission will:
+
+-provide evidence-based data, with the support of the ECDC, the EMA and the EFSA, on possible links between the consumption of antimicrobial agents and the occurrence of antimicrobial resistance in humans and food-producing animals;
+
+-define, with the support of the ECDC, the EMA and the EFSA, a limited number of key outcome indicators for AMR and antimicrobial consumption to measure the EU’s and Member States’ progress in the fight against AMR;
+
+-develop, with the support of the OECD, a model aimed at helping Member States to assess the economic burden of AMR imposes on people and to estimate the cost-effectiveness of their national policies to reduce it.
+
+Increase awareness and understanding
+
+Several Eurobarometer surveys on AMR carried out since 2010
+24
+show that the level of awareness of the relationship between the use of antimicrobials and the development and spread of AMR is still low. This is a major cause for the inappropriate use of antimicrobials in humans and animals. More must be done to raise awareness and education about AMR. EU-level communication initiatives should support Member States in improving public and professional understanding of AMR, promote prudent use and support more informed clinical decision-making and judicious prescribing.
+
+The Commission will:
+
+-provide insights into reported public use of and knowledge about antimicrobials through Eurobarometer surveys;
+
+-support Member States’ national awareness-raising efforts with specific communication tools targeting key audiences and contribute to the annual European Antibiotic Awareness Day (EAAD).
+
+2.2Better coordination and implementation of EU rules to tackle AMR
+
+Improve the coordination of Member States’ One Health responses to AMR
+
+With AMR on the rise in the EU, it is vital to ensure that lessons learnt from successful strategies are made accessible to all Member States. To deal with the cross-border health threat of AMR
+25
+, it is crucial to identify and share best practices and policies, so that a lack of action in one region or sector does not undermine progress made in others. To assist with and accelerate this collaboration, in early 2017 the Commission set up an AMR One Health network of government experts from the human health, animal health, and environmental sectors, as well as the EU scientific agencies working in the human and animal health sectors (ECDC, EMA, and EFSA). Within the AMR One Health network, its members work towards facilitating mutual learning, sharing innovative ideas, building consensus, comparing progress made in key areas and, where necessary, accelerating national efforts to tackle AMR.
+
+The Commission will:
+
+-make available regular information on AMR in the context of the AMR One Health network, which gives an overview of the AMR epidemiological situation at Member State and EU level;
+
+-support the implementation of national One Health action plans against AMR through joint Commission and the ECDC visits to Member States upon request;
+
+-launch a joint action
+26
+to support collaborative activities and policy development by Member States to tackle AMR and healthcare-associated infections;
+
+-make increased use of the EU Health Security Committee and the Commission Working Group on AMR in the veterinary and food areas to strengthen coordination and to share information;
+
+-seek to co-fund and collaborate with the WHO on activities to help EU Member States develop and implement national One Health action plans against AMR.
+
+Better implementation of EU rules
+
+In order to deliver long-lasting results and create the necessary impetus, it is important that the EU legislation related to AMR (e.g. rules on AMR monitoring in food-producing animals, on use of veterinary medicinal products and medicated feed) is adequately implemented. This implies properly training of Member States’ staff involved in official control activities and keeping them up to date on all aspects of EU legislation related to AMR in order to ensure that controls are carried out uniformly and objectively in all Member States.
+
+The Commission will:
+
+-assess the effectiveness of the implementation of EU legislation
+27
+on, inter alia, monitoring AMR in food-producing animal populations and food by continuing to carry out regular audits in Member States;
+
+-develop training programmes on AMR for Member State competent authorities under the Better Training for Safer Food (BTSF) initiative and for health professionals through the ECDC and the EU health programme;
+
+-advise Member States on the possibility to use the Structural Reform Support Service (SRSS) funding to Member States for designing and implementing policies against AMR.
+
+2.3Better prevention and control of AMR
+
+Strengthen infection prevention and control measures
+
+Infection prevention, biosecurity measures and control practices are critical in the control of all infectious microorganisms as they reduce the need for antimicrobials and consequently the opportunity for microorganisms to develop and spread resistance.
+
+The availability of new and more coherent surveillance data, research and technologies will inform innovative approaches and improvements in infection prevention and control measures. Other control measures, such as vaccination, could also reduce the occurrence and spread of certain diseases, limiting the need for antimicrobials. In addition, immunisation through vaccination is a cost-effective public health intervention with proven economic benefits
+28
+.
+
+The Commission will:
+
+-help to address patient safety in hospital environments by supporting good practices in infection prevention and control;
+
+-support activities jointly funded by the EU and Member States for infection prevention and control in vulnerable groups, in particular to tackle resistant tuberculosis strains;
+
+-promote the uptake of vaccination in humans as a public health measure to prevent infections and subsequent use of antimicrobials;
+
+-continue to promote animal husbandry, including aquaculture and livestock farming systems, and feeding regimes which support good animal health and welfare to reduce antimicrobial consumption.
+
+Promote the prudent use of antimicrobials
+
+The appropriate and prudent use of antimicrobials is essential to limiting the emergence of AMR in human healthcare and in animal husbandry.
+
+Cross-sectorial and coordinated actions to promote the prudent use of antimicrobials in humans and animals are necessary to slow down the development of AMR and preserve the effectiveness of antimicrobials. Such actions, often referred to as ‘antimicrobial stewardship’ actions, are in place in some sectors (e.g. EU guidelines for the prudent use of antimicrobials in veterinary medicine
+29
+) but are not sufficiently developed for all situations in which antimicrobials are used.
+
+The Commission will:
+
+-work towards EU implementing and delegated acts under the forthcoming veterinary medicinal products and medicated feed Regulations (once adopted by the European Parliament and the Council)
+30
+, including rules on reserving antimicrobials for human use, drawing up a list of antimicrobials that cannot be used off-label, and methods for data gathering and reporting on the sales and use of antimicrobials;
+
+-develop EU guidelines for the prudent use of antimicrobials in human medicine;
+
+-assist Member States implement EU guidelines for the prudent use of antimicrobials in veterinary medicine, including identifying and disseminating good practices;
+
+-encourage the EMA to review all available information on the benefits and risks of older antimicrobial agents and consider whether any changes to their approved uses in the Member States are required.
+
+2.4Better addressing the role of the environment
+
+The environment is increasingly acknowledged as a contributor to the development and spread of AMR in humans and animals, in particular in high risk areas due to human, animal and manufacturing waste streams, but strong evidence is still required to better inform decision-making in this area. Specific actions to improve the knowledge base are considered in section 3. Once relevant monitoring and research data become available, risk assessment methodologies should be developed to evaluate the risks to human and animal health.
+
+The Commission will:
+
+-adopt an EU strategic approach to pharmaceuticals in the environment
+31
+;
+
+-maximise the use of data from existing monitoring, e.g. Watch List monitoring under the Water Framework Directive
+32
+, to improve knowledge of the occurrence and spread of antimicrobials in the environment, including by using the Information Platform for Chemical Monitoring (IPCheM) to access relevant monitoring data
+33
+;
+
+-reinforce the role of the Scientific Committee on Health and Environmental Risks (SCHER) in providing the expertise on environment-related AMR issues.
+
+2.5A stronger partnership against AMR and better availability of antimicrobials
+
+Actions against AMR cannot succeed without the sustained involvement of stakeholders, including industry, civil society, academia, and non-governmental experts but also the European Economic and Social Committee (EESC), throughout policy development and implementation. The Commission takes note of existing commitments and collaborative efforts such as the declaration by the pharmaceutical, biotechnology and diagnostics industries on combating AMR
+34
+. It provides a roadmap for further collaboration efforts between industry, governments and non-governmental organisations in the global fight against AMR. In line with this initiative, regular discussions among stakeholders will encourage them to develop and share their strategies against AMR. Cooperation with industry is also crucial to promote the development of other promising alternatives to antimicrobials and to address reduced availability issues, including antimicrobial withdrawals from the market that may lead to antimicrobial shortages and inadequate replacement treatments.
+
+It is also crucial to prevent falsified or counterfeit antimicrobial products from entering the supply chain and harming humans or animals.
+
+The Commission will:
+
+-engage with and support collaboration among key stakeholders in the human health, animal health, food, water and environmental sectors to encourage the responsible use of antimicrobials in the healthcare sector and along the food chain, as well as the appropriate handling of waste material;
+
+-work with stakeholders to ensure the availability of human and veterinary antimicrobials and continued access to established products; provide incentives to increase the uptake of diagnostics, antimicrobial alternatives and vaccines;
+
+-reduce the scope for falsified medicines by assisting Member States and stakeholders in the successful implementation of the safety features (unique identifier) that will appear by 2019 on the packaging of medicinal products for human use
+35
+;
+
+-discuss the availability of veterinary antimicrobials to tackle AMR in the Veterinary Pharmaceutical Committee.
+
+3Boosting research, development and innovation on AMR
+
+Research, development (R&D) and innovation can provide novel solutions and tools to prevent and treat infectious diseases, improve diagnosis and control the spread of AMR. This One Health action plan not only aims to boost research, but also to further incentivise innovation, provide valuable input into science-based policies and legal measures to combat AMR and address knowledge gaps such as the role of AMR in the environment.
+
+The proposed AMR research strategy covers the full One Health spectrum, addressing human and animal health as well as the role of the environment. It takes into account the priorities set out in the WHO Global Action Plan on AMR, the JPIAMR and national action plans. The Commission will work in partnerships with Member States and industry, including small and medium-sized enterprises (SMEs) and the IMI, to tackle AMR in bacteria, viruses, fungi and parasites. Special attention will be given to the WHO priority list of pathogens as well as to tuberculosis, HIV/AIDS, malaria and neglected infectious diseases. Using different funding instruments and partnerships under its current and future framework programmes for research and innovation, the Commission will focus on the following actions.
+
+3.1Improve knowledge on detection, effective infection control and surveillance
+
+Greater efforts are needed to better understand the epidemiology, emergence, prevalence and burden of infectious diseases, to further investigate how resistance develops and spreads, to improve early detection; and to better understand AMR-related challenges in the European healthcare, animal husbandry and food production sectors.
+
+Technology today enables to collect and use data from the healthcare (hospitals, health centres, laboratories, etc.) and agri-food sectors but also from society in general (the internet of Things, social networks, etc.). Combining these data makes it possible to detect disease outbreaks much earlier and helps to understand how infectious diseases are transmitted. The development of IT solutions for such operations has great potential to improve surveillance, prescription practices, self-management of health, care solutions, and awareness of AMR.
+
+The Commission will:
+
+-support research into the development and assessment of interventions that prevent the development and spread of AMR in different settings such as hospitals, communities and animal husbandry;
+
+-support research into understanding the epidemiology of AMR, in particular the pathways of transmission between animals and humans, and their impact;
+
+-support research into the development of new tools for early (real-time) detection of resistant pathogens in humans and animals, taking account of advances in IT solutions;
+
+-support research into new eHealth solutions to improve prescription practices, self-management of health, care solutions, and improve awareness of AMR.
+
+3.2Develop new therapeutics and alternatives
+
+Despite great efforts made in the past years, including through public-private partnerships, there are not enough antimicrobials in the pipeline to meet expected needs. The spread of AMR has also contributed to the declining effectiveness of existing antimicrobials. More research is needed to develop new medicinal products, therapeutics and alternative treatments, as well as innovative anti-infective approaches and products for humans and animals. More research is also needed to advance the repurposing of old antimicrobials, improving their activity and to develop new combination therapies, including those to treat multidrug resistant tuberculosis (MDR-TB). Digital technologies for testing biomedical products and innovation in eHealth should also be scaled up, e.g. by supporting innovation procurement
+36
+as well as supporting SMEs.
+
+The Commission will:
+
+-support research into the development of new antimicrobials and alternative products for humans and animals as well as the repurposing of old antimicrobials or the development of new combination therapies;
+
+-support SMEs in their R&D efforts towards innovative and/or alternative therapeutic approaches for the treatment or prevention of bacterial infections, together with the EMA;
+
+-facilitate sharing of antimicrobial research data among relevant stakeholders
+37
+to guide future antimicrobial medicinal product discovery and development;
+
+-support the establishment of a European-wide sustainable clinical research network, which should speed up clinical studies on medicinal products, lower their costs, and improve coordination of clinical research;
+
+-support research and innovation to promote the use of digital technologies supporting the development of new therapeutics and alternatives.
+
+3.3Develop new preventive vaccines
+
+Vaccines have proven to be crucial and very cost-effective in preventing the onset and spread of infectious diseases. They also have great potential to reduce the incidence of AMR. For example universal coverage by a pneumococcal vaccine could not only save many of the estimated 800,000 children who die each year of pneumonia, it would also reduce by an estimated 47% the use of antimicrobials, counteracting the development of AMR. Vaccines already play an important role in preventing disease in farm animals and aquaculture. This should be boosted even further to decrease the use of antimicrobials in those sectors.
+
+The Commission will:
+
+-continue to support research into the development of new effective preventive vaccines for humans and animals;
+
+-support increasing the knowledge base concerning the barriers that influence the wider use of vaccination in medical and veterinary practice.
+
+3.4Develop novel diagnostics
+
+Novel, rapid and reliable diagnostics are crucial for differentiating between bacterial and viral infections and identifying AMR, so that the most appropriate treatment can be given in a timely manner. By tailoring the treatment to the nature of the infectious pathogen and its resistance pattern, diagnostics help reduce the unnecessary use of antimicrobials in humans and animals.
+
+Such novel diagnostics are in the process of entering the market but more tests are needed to guide a more efficient use of existing antimicrobials in the human and animal health sectors. Novel diagnostics will also make it possible to recruit the right patients in clinical trials for new treatments, making the trials more efficient.
+
+The Commission will:
+
+-support research into the development of new diagnostic tools in particular on-site tests in humans and animals to guide practitioners regarding the use of antimicrobials;
+
+-support the use of IT solutions in developing tools for diagnosing human and animal infections;
+
+-encourage the uptake of diagnostics in medical and veterinary practice, e.g. through innovation procurement.
+
+3.5Develop new economic models and incentives
+
+Developing new antimicrobials or alternative therapies requires significant and long-term investments. In the classic business model, pharmaceutical companies recuperate research and development investments selling large volumes of their medicinal products. However, when any new antimicrobial treatment enters the market and is sold and used in large quantities, resistance can be expected to develop quickly. As the use of new antimicrobials needs to be restricted to minimise the risk of resistance development, the current business model results in a market failure for antimicrobials, and works against efforts to conserve effective antimicrobials.
+
+New economic models need to be developed to incentivise antimicrobial discovery and development while reconciling these incentives with responsible use. Similarly, in the diagnostics sector, the development and uptake of novel diagnostics requires new models that take account of the relatively high price of diagnostics compared to the currently low price of antimicrobials. Such models would need to reflect the long-term benefit of these medicinal products and the societal value of limiting the use of antimicrobials while promoting the use of novel diagnostics. This would be in line with the increasing trend of developing new therapies combined with a diagnostic.
+
+Health Technology Assessment (HTA) methods to evaluate the added value of such new technologies and economic analysis to understand the costs and benefits of different investments to fight AMR are needed to provide an evidence base for the uptake of interventions in the healthcare system and services. The involvement of HTA bodies in AMR-related discussions could raise their awareness on AMR when assessing the added value of new antimicrobials and alternatives, diagnostics or a combination thereof.
+
+The Commission will:
+
+-increase the evidence base for understanding the societal costs and benefits of different strategies for fighting AMR, including understanding factors that influence the uptake of interventions such as novel diagnostics or preventive measures;
+
+-support research into the development of new economic models, exploring and analysing incentives to boost the development of new therapeutics, alternatives, vaccines and diagnostics;
+
+-analyse EU regulatory tools and incentives – in particular orphan and paediatric legislation – to use them for novel antimicrobials and innovative alternative medicinal products (e.g. vaccines, antibacterial, antifungal, antiviral agents) that currently do not generate sufficient returns on investment;
+
+-encourage Member States to explore results and recommendations of EU research projects on new economic business models;
+
+-develop new or improved methodological HTA approaches and foster methodological consensus-building. This could benefit the development of combinations of technologies and co-dependent technologies including in the area of AMR.
+
+3.6Close knowledge gaps on AMR in the environment and on how to prevent transmission
+
+AMR is a good example of a One Health matter in which human health is connected to that of animals and the environment. Only a multidisciplinary effort can provide an adequate response. There is a major lack of knowledge about the release and spread of resistant organisms in the environment and the threats and risks this poses to human and animal health. For example, the release of antimicrobials into the environment through human, animal and manufacturing waste streams should be assessed and new technologies developed to enable efficient and rapid degradation of antimicrobials in wastewater treatment plants, organic waste streams or the environment.
+
+The feasibility and implementation of monitoring programmes need to be further studied, including the development of harmonised monitoring of antimicrobials and microorganisms resistant against antimicrobials in the environment. Using harmonised monitoring and research data, risk assessment methodologies should be developed to evaluate risks to human and animal health. In the agri-food sector, the links between farming practices, animal health and AMR development and spread need to be further investigated.
+
+The Commission will:
+
+-support research into knowledge gaps on the release of resistant microorganisms and antimicrobials into the environment and their spread;
+
+-explore risk assessment methodologies, with the support of scientific agencies and bodies, and use them to evaluate the risks to human and animal health from the presence of antimicrobials in the environment;
+
+-support research into and the development of new tools for monitoring antimicrobials and microorganisms resistant against antimicrobials in the environment;
+
+-support the development of technologies that enable efficient and rapid degradation of antimicrobials in wastewater and the environment and reduce the spread of AMR
+
+4Shaping the global agenda
+
+The EU and its Member States are part of an increasingly interconnected world characterised by an intensive exchange of people and commodities where policies implemented in one region can have significant impacts elsewhere.
+
+The spread of AMR across borders has been recognised globally and areas for action have been internationally agreed and outlined in the WHO Global Action Plan on AMR, which serves as the global blue-print for AMR activities and has been endorsed by the OIE and the FAO. The Political Declaration of the United Nations General Assembly of 21 September 2016 committed high-level support to the international implementation of the WHO Global Action Plan on AMR.
+
+The evaluation of the 2011 EU action plan recognised the positive effects of EU interventions at global level. Continued effort is necessary and is outlined below.
+
+4.1A stronger EU global presence
+
+Many of the EU’s domestic AMR policies (e.g. the ban on using antimicrobials as growth promoters in feed for food-producing animals) are already contributing to the achievement of international objectives against AMR. Nevertheless, it continues to develop and spread across the world. EU involvement and collaboration with multilateral organisations such as the WHO, the OIE, the FAO and international forums should therefore be intensified in order to contribute to regional and global action on AMR, following the One Health approach.
+
+The Commission will:
+
+-continue to actively contribute to the normative work of the WHO, the OIE, the FAO, and the Codex Alimentarius on the development of ambitious international frameworks and standards/norms/guidelines/methodologies related to AMR;
+
+-reinforce technical cooperation with the WHO and its members in key areas of the WHO Global Action Plan on AMR (e.g. the development of monitoring systems under the WHO Global Antimicrobial Resistance Surveillance System (GLASS), awareness-raising, infection prevention and control);
+
+-boost support for the International Conference on the Harmonisation of Technical Requirements for the Registration of Pharmaceuticals for Human Use (ICH) and the Veterinary International Conference on the Harmonisation (VICH) on relevant international guidelines/standards/norms related to AMR;
+
+-work towards continued high-level political attention and commitment to AMR action, including in the United Nations forums, the G7 and the G20;
+
+-look for synergies with the UN Strategic Approach to International Chemicals Management’s work on the emerging policy issue of pharmaceuticals in the environment;
+38
+
+-analyse the feasibility of setting up a global AMR clinical studies network in collaboration with G7 members
+39
+;
+
+-continue and strengthen ongoing collaboration within the Transatlantic Taskforce on Antimicrobial Resistance (TATFAR), which includes the EU, the USA, Canada, and Norway;
+
+-promote international regulatory convergence between the EMA and other regulatory agencies such as the US Food and Drug Administration (FDA) and the Japan Pharmaceuticals and Medical Devices Agency (PMDA) on development plans for new promising antimicrobials.
+
+4.2Stronger bilateral partnerships for stronger cooperation
+
+The EU has gained valuable expertise and experience in relation to AMR, while some of its trading partners have taken different approaches and chosen different priorities in this regard. There is scope for more collaboration and closer ties with these partners to build consensual activities, share experiences and align approaches, for the benefit of all sides. Candidate countries and potential candidates benefiting from a pre-accession strategy have also made commitments regarding alignment and implementation of EU legislation related to AMR, as have the neighbouring countries to which the European Neighbourhood Policy (ENP) applies or who have an Association Agreement with the EU. The Commission – with the help of EU agencies – will continue to support these countries through visits, best practice exchanges and capacity building.
+
+As one of the largest markets for agricultural products, the EU can play a major role in promoting its AMR-related standards, measures in food production, and standards on animal welfare, e.g. through its bilateral Free Trade Agreements (FTAs). The systematic inclusion of AMR-related provisions is now a current practice for the Commission in all new FTAs. Further actions may also be considered to ensure a level playing field between EU producers and EU trading partners, e.g. so that efforts made by EU farmers are not compromised by the non-prudent use of antimicrobials in EU trading partners. This could include linking concessions made to EU trading partners with compliance with specific EU AMR policy objectives.
+
+The Commission will:
+
+-advocate EU standards and measures for tackling AMR in trade agreements and incorporate them into cooperative arrangements in trade agreements;
+
+-engage with major global players and strategic countries (e.g. Brazil, China, India), contributing towards achieving objectives of the WHO Global Action Plan on AMR by sharing experiences, advocating best practices and thus stimulating actions outside the EU;
+
+-support EU candidate countries, potential candidate countries and neighbouring countries to which the ENP applies in the alignment with, and capacity building for the implementation of EU legislation related to AMR and EU standards;
+
+-invite the European Parliament, Member States and stakeholders to share views on actions to be taken to ensure that efforts to combat AMR made by EU producers, including farmers, do not place them at a competitive disadvantage.
+
+4.3Cooperating with developing countries
+
+The AMR threat to public health and the social and economic burden it entails is even greater in developing countries. This is due to political, social, epidemiological and economic factors which may vary from those in developed countries. The EU’s development policy can play an important role in raising awareness, sharing experiences and supporting capacity building in developing countries in order for them to be better equipped to control infectious diseases and prevent AMR. This process can be supported through dialogue, aid and cooperation activities, taking account of partner countries’ individual policy priorities to strengthen health systems and implement the sustainable development goals, in particular the third goal on good health and well-being. Particular attention should be given to lower income countries, where support is most needed.
+
+The Commission will:
+
+-continue to contribute to reducing AMR in least developed countries through infectious disease programmes such as the Global Alliance for Vaccines and Immunisations (GAVI);
+
+-assist in the development of AMR strategies in the areas of food safety and animal health through regional training workshops on AMR organised under the BTSF World initiative;
+
+-support partner countries’ policy initiatives on AMR, where appropriate, through international cooperation and development instruments (e.g. Global Public Goods & Challenges, the European Development Fund);
+
+-support the development of resilient health systems in partner countries, e.g. by strengthening the knowledge and evidence base, infection prevention and control and the quality and use of antimicrobials.
+
+4.4Developing a global research agenda
+
+A stronger, more interconnected and more globally oriented AMR research environment is needed. There are great benefits to be gained from further coordination between the European research agenda and its global counterparts. Many international initiatives have been launched during the last few years that would benefit from stronger collaboration in order to increase their impact, as expressed by the G739 and G20
+40
+Health Ministers.
+
+The Commission will:
+
+-improve global coordination of research activities by promoting dialogue and collaboration between international research initiatives;
+
+-support the establishment of a virtual research institute under JPIAMR;
+
+-continue collaborative research with Sub-Saharan Africa in the context of the European and Developing Countries Clinical Trial Partnership (EDCTP) in particular in relation to tuberculosis, HIV/AIDS, malaria and neglected infectious diseases;
+
+-foster international research collaboration on AMR in the animal health sector in the STAR-IDAZ International Research Consortium.
+41
+
+5measuring success
+
+To obtain the desired effect, it will be important to closely monitor the effectiveness and performance of certain key actions under this action plan at regular intervals and to modify them if necessary.
+
+The WHO, the OIE, the FAO, and the Codex Alimentarius are setting up systems and developing standards to monitor global effects.
+
+The EU systems will measure EU and Member State effects. This can be done by determining a limited number of key outcome indicators, based on data already collected. These indicators will be developed with the support of the EU scientific agencies (see point 2.1) and will enable Member States to assess, in a clear and simple way, the progress made in the implementation of their national One Health action plans on AMR. The indicators will also help Member States to set measurable goals to reduce infections by key antimicrobial resistant microorganisms in humans and food-producing animals, to improve the appropriateness of the use of antimicrobials in the human and veterinary sectors and to combat AMR in all sectors.
+
+This progress will be discussed at regular intervals in the One Health network on AMR, to guide individual Member States and to determine if new actions are needed at EU level.
+
+6Conclusion
+
+This Communication provides a framework for future actions against AMR and aims to make the best possible use of the EU legal framework and policy instruments, focusing on the real added value the EU can bring to the fight against AMR.
+
+Most of the actions can be done by adapting and reinforcing existing actions for a more integrated, comprehensive and effective approach to combating AMR. Other actions focus on identified gaps in the EU response so far that requires new activities, the discovery of new knowledge and the creation of new partnerships.
+
+The Commission is confident that this new One Health action plan can make a difference and will improve the EU performance in combatting AMR.
+
+The action plan will strengthen collaboration and surveillance, will reduce data gaps and allow for the sharing of best practices within the EU. It will create more synergies and coherence between different policies according to the One Health approach. The action plan will thus support the EU and its Member States in delivering innovative, effective and sustainable responses to AMR.
+
+The action plan will also strategically reinforce the research agenda on AMR and actively promote global action.
+
+The Commission invites the European Parliament and the Council to endorse this One Health action plan and calls on Member States and all those involved to ensure that measures to combat AMR are swiftly implemented. Only sustained ambition, continued commitment and concerted action can turn the tide and diminish this global threat.
+
+(1)
+
+ 
+
+http://www.who.int/entity/drugresistance/documents/surveillancereport/en/index.html
+
+ 
+
+(2)
+
+United Nations, 2016. Political Declaration of the high-level meeting of the General Assembly on antimicrobial resistance. New York, USA.
+
+(3)
+
+WHA 68.7
+
+ 
+
+http://www.wpro.who.int/entity/drug_resistance/resources/global_action_plan_eng.pdf
+
+(4)
+
+http://ecdc.europa.eu/en/publications/Publications/0909_TER_The_Bacterial_Challenge_Time_to_React.pdf
+
+(5)
+
+ 
+
+https://amr-review.org/sites/default/files/160525_Final%20paper_with%20cover.pdf
+
+(6)
+
+World Bank, 2016, ‘Drug-Resistant Infections: A Threat to Our Economic Future’, Washington, DC.
+
+(7)
+
+ 
+
+http://www.un.org/sustainabledevelopment/sustainable-development-goals
+
+(8)
+
+COM (2001) 333 final
+
+(9)
+
+COM (2011) 748
+
+(10)
+
+ 
+
+http://www.imi.europa.eu/content/nd4bb
+
+(11)
+
+ 
+
+http://www.imi.europa.eu
+
+(12)
+
+ 
+
+http://www.jpiamr.eu
+
+(13)
+
+Treatments that are tried after all other options have failed to produce an adequate response in the patient
+
+(14)
+
+ 
+
+http://ecdc.europa.eu/en/publications/Publications/antimicrobial-resistance-europe-2015.pdf
+
+(15)
+
+Payne et al. Drugs for bad bugs: confronting the challenges of antibacterial discovery Nature Reviews Drug Discovery 6, 29-40 (January 2007)
+
+(16)
+
+http://www.consilium.europa.eu/en/press/press-releases/2016/06/17-epsco-conclusions-antimicrobial-resistance
+
+(17)
+
+ SWD(2016) 347 final
+
+(18)
+
+ 
+
+http://ec.europa.eu/smart-regulation/roadmaps/docs/2016_sante_176_action_plan_against_amr_en.pdf
+
+(19)
+
+ 
+
+https://ec.europa.eu/health/amr/consultations/consultation_20170123_amr-new-action-plan_en
+
+(20)
+
+World Health Organization, 2015. 68th World Health Assembly: WHA resolution 68.7. Geneva, Switzerland; the commitment to have national AMR action plans in place before mid-2017 was confirmed in the Council conclusions on the next steps under a One Health approach to combat antimicrobial resistance.
+
+(21)
+
+Regulation (EU) 2016/429 of the European Parliament and of the Council of 9 March 2016 on transmissible animal diseases and amending and repealing certain acts in the area of animal health (‘Animal Health Law’), OJ L 84, 31.3.2016, p.1.
+
+(22)
+
+Commission Implementing Decision 2013/652/EU of 12 November 2013 on the monitoring and reporting of antimicrobial resistance in zoonotic and commensal bacteria, OJ L 303, 14.11.2013, p. 26.
+
+(23)
+
+Commission Decision 2002/253/EC of 19 March 2002 laying down case definitions for reporting communicable diseases to the Community network under Decision No 2119/98/EC of the European Parliament and of the Council, OJ L 86, 3.4.2002, p. 44.
+
+(24)
+
+Special Eurobarometer 338 (April 2010), Special Eurobarometer 407 (November 2013) and Special Eurobarometer 445 (June 2016)
+
+(25)
+
+Decision 1082/2013/EU of the European Parliament and of the Council of 22 October 2013 on serious cross-border threats to health and repealing Decision 2119/98/EC, OJ L 293, 5.11.2013, p.1
+
+(26)
+
+JA-04-2016 - Antimicrobial resistance and Health Care Associated Infections
+
+(27)
+
+Commission Implementing Decision 2013/652/EU of 12 November 2013 on the monitoring and reporting of antimicrobial resistance in zoonotic and commensal bacteria, OJ L 303, 14.11.2013, p. 26.
+
+(28)
+
+ 
+
+http://www.gavi.org/about/value/
+
+(29)
+
+ 
+
+http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52015XC0911(01)&from=EN
+
+(30)
+
+COM(2014) 558 final, COM(2014) 556 final
+
+(31)
+
+Directive 2013/39/EU of the European Parliament and of the Council of 12 August 2013 amending Directives 2000/60/EC and 2008/105/EC as regards priority substances in the field of water policy, OJ L 226, 24.8.2013, p. 1
+
+(32)
+
+Directive 2000/60/EC of the European Parliament and of the Council of 23 October 2000 establishing a framework for Community action in the field of water policy, OJ L 327, 22.12.2000, p. 1
+
+(33)
+
+ 
+
+https://ipchem.jrc.ec.europa.eu/RDSIdiscovery/ipchem/index.html
+
+ 
+
+(34)
+
+ 
+
+http://www.ifpma.org/partners-2/declaration-by-the-pharmaceutical-biotechnology-and-diagnostics-industries-on-combating-antimicrobial-resistance-amr/
+
+ 
+
+(35)
+
+Commission Delegated Regulation (EU) 2016/161 of 2 October 2015 supplementing Directive 2001/83/EC of the European Parliament and of the Council by laying down detailed rules for the safety features appearing on the packaging of medicinal products for human use, OJ L 32, 9 February 2016, p. 1.
+
+(36)
+
+https://ec.europa.eu/digital-single-market/en/innovation-procurement
+
+(37)
+
+Such as researchers in academia and industry, regulators, etc.
+
+(38)
+
+http://www.saicm.org/EmergingPolicyIssues/Pharmaceuticalnbsp;Pollutants/tabid/5477/language/en-US/Default.aspx
+
+(39)
+
+ 
+
+http://www.mhlw.go.jp/seisakunitsuite/bunya/hokabunya/kokusai/g7kobe/KobeCommunique_en.pdf
+
+(40)
+
+ 
+
+https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/G/G20-Gesundheitsministertreffen/G20_Health_Ministers_Declaration_engl.pdf
+
+(41)
+
+ 
+
+http://www.star-idaz.net/

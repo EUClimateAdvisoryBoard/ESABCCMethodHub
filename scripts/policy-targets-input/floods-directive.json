@@ -1,0 +1,177 @@
+{
+  "policy_id": "floods-directive",
+  "targets": [
+    {
+      "quote": "The purpose of this Directive is to establish a framework for the assessment and management of flood risks, aiming at the reduction of the adverse consequences for human health, the environment, cultural heritage and economic activity associated with floods in the Community.",
+      "article": "Article 1 — purpose",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "adverse consequences reduction"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall, for each river basin district, or unit of management referred to in Article 3(2)(b), or the portion of an international river basin district lying within their territory, undertake a preliminary flood risk assessment in accordance with paragraph 2 of this Article.\n\n2.   Based on available or readily derivable information, such as records and studies on long term developments, in particular impacts of climate change on the occurrence of floods, a preliminary flood risk assessment shall be undertaken to provide an assessment of potential risks.",
+      "article": "Article 4(1)-(2) — preliminary flood risk assessment",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "preliminary flood risk assessment"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall complete the preliminary flood risk assessment by 22 December 2011.",
+      "article": "Article 4(4) — deadline",
+      "label": "obligation",
+      "timeline": "by 22 December 2011",
+      "indicators": [
+        "preliminary flood risk assessment"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall, for each river basin district, or unit of management referred to in Article 3(2)(b), or portion of an international river basin district lying within their territory, identify those areas for which they conclude that potential significant flood risks exist or might be considered likely to occur.",
+      "article": "Article 5(1) — identification of areas",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "areas of potential significant flood risk"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall, at the level of the river basin district, or unit of management referred to in Article 3(2)(b), prepare flood hazard maps and flood risk maps, at the most appropriate scale for the areas identified under Article 5(1).",
+      "article": "Article 6(1) — flood hazard and risk maps",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "flood hazard maps",
+        "flood risk maps"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Flood hazard maps shall cover the geographical areas which could be flooded according to the following scenarios:\n\n(a)\n\nfloods with a low probability, or extreme event scenarios;\n\n(b)\n\nfloods with a medium probability (likely return period ≥ 100 years);\n\n(c)\n\nfloods with a high probability, where appropriate.",
+      "article": "Article 6(3) — flood scenarios",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "flood scenarios"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall ensure that the flood hazard maps and flood risk maps are completed by 22 December 2013.",
+      "article": "Article 6(8) — deadline",
+      "label": "obligation",
+      "timeline": "by 22 December 2013",
+      "indicators": [
+        "flood hazard maps",
+        "flood risk maps"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "On the basis of the maps referred to in Article 6, Member States shall establish flood risk management plans coordinated at the level of the river basin district, or unit of management referred to in Article 3(2)(b), for the areas identified under Article 5(1) and the areas covered by Article 13(1)(b) in accordance with paragraphs 2 and 3 of this Article.",
+      "article": "Article 7(1) — flood risk management plans",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "flood risk management plans"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall establish appropriate objectives for the management of flood risks for the areas identified under Article 5(1) and the areas covered by Article 13(1)(b), focusing on the reduction of potential adverse consequences of flooding for human health, the environment, cultural heritage and economic activity, and, if considered appropriate, on non-structural initiatives and/or on the reduction of the likelihood of flooding.",
+      "article": "Article 7(2) — management objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "flood risk management objectives"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Flood risk management plans shall address all aspects of flood risk management focusing on prevention, protection, preparedness, including flood forecasts and early warning systems and taking into account the characteristics of the particular river basin or sub-basin.",
+      "article": "Article 7(3) — plan content",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "prevention, protection, preparedness"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall ensure that flood risk management plans are completed and published by 22 December 2015.",
+      "article": "Article 7(5) — deadline",
+      "label": "obligation",
+      "timeline": "by 22 December 2015",
+      "indicators": [
+        "flood risk management plans"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The preliminary flood risk assessment, or the assessment and decisions referred to in Article 13(1), shall be reviewed, and if necessary updated, by 22 December 2018 and every six years thereafter.",
+      "article": "Article 14(1) — review cycle",
+      "label": "obligation",
+      "timeline": "by 22 December 2018; every 6 years",
+      "indicators": [
+        "review of assessment"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The flood hazard maps and the flood risk maps shall be reviewed, and if necessary updated, by 22 December 2019 and every six years thereafter.",
+      "article": "Article 14(2) — review cycle",
+      "label": "obligation",
+      "timeline": "by 22 December 2019; every 6 years",
+      "indicators": [
+        "review of maps"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The flood risk management plan(s) shall be reviewed, and if necessary updated, including the components set out in part B of the Annex, by 22 December 2021 and every six years thereafter.",
+      "article": "Article 14(3) — review cycle",
+      "label": "obligation",
+      "timeline": "by 22 December 2021; every 6 years",
+      "indicators": [
+        "review of plans"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The likely impact of climate change on the occurrence of floods shall be taken into account in the reviews referred to in paragraphs 1 and 3.",
+      "article": "Article 14(4) — climate change",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "climate change consideration"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "The Commission shall, by 22 December 2018, and every six years thereafter, submit to the European Parliament and to the Council a report on the implementation of this Directive. The impact of climate change shall be taken into account in drawing up this report.",
+      "article": "Article 16 — implementation report",
+      "label": "obligation",
+      "timeline": "by 22 December 2018; every 6 years",
+      "indicators": [
+        "implementation report"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall bring into force the laws, regulations and administrative provisions necessary to comply with this Directive before 26 November 2009.",
+      "article": "Article 17(1) — transposition",
+      "label": "obligation",
+      "timeline": "before 26 November 2009",
+      "indicators": [
+        "transposition"
+      ],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}

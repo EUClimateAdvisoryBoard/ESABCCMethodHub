@@ -1,0 +1,147 @@
+{
+  "policy_id": "critical-entities-resilience",
+  "targets": [
+    {
+      "quote": "lays down obligations on Member States to take specific measures aimed at ensuring that services which are essential for the maintenance of vital societal functions or economic activities within the scope of Article 114 TFEU are provided in an unobstructed manner in the internal market, in particular obligations to identify critical entities and to support critical entities in meeting the obligations imposed on them;",
+      "article": "Article 1 — subject matter and scope",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "identify critical entities",
+        "support"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "lays down measures with a view to achieving a high level of resilience of critical entities in order to ensure the provision of essential services within the Union and to improve the functioning of the internal market.",
+      "article": "Article 1(1)(e) — high level of resilience",
+      "label": "goal",
+      "timeline": "",
+      "indicators": [
+        "resilience of critical entities"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "each Member State shall adopt by 17 January 2026 a strategy for enhancing the resilience of critical entities (the ‘strategy’). The strategy shall set out strategic objectives and policy measures, building upon relevant existing national and sectoral strategies, plans or similar documents, with a view to achieving and maintaining a high level of resilience on the part of critical entities and covering at least the sectors set out in the Annex.",
+      "article": "Article 4 — national resilience strategy",
+      "label": "obligation",
+      "timeline": "by 17 January 2026",
+      "indicators": [
+        "national resilience strategy"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The competent authorities shall use that list of essential services for the purpose of carrying out a risk assessment (‘Member State risk assessment’) by 17 January 2026, whenever necessary subsequently, and at least every four years.",
+      "article": "Article 5 — Member State risk assessment",
+      "label": "obligation",
+      "timeline": "by 17 January 2026",
+      "indicators": [
+        "Member State risk assessment"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member State risk assessments shall account for the relevant natural and man-made risks, including those of a cross-sectoral or cross-border nature, accidents, natural disasters, public health emergencies and hybrid threats or other antagonistic threats, including terrorist offences as provided for in Directive (EU) 2017/541 of the European Parliament and of the Council",
+      "article": "Article 5 — risks covered (natural disasters)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "natural and man-made risks"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "By 17 July 2026, each Member State shall identify the critical entities for the sectors and subsectors set out in the Annex.",
+      "article": "Article 6 — identification of critical entities",
+      "label": "obligation",
+      "timeline": "by 17 July 2026",
+      "indicators": [
+        "identification of critical entities"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall ensure that critical entities carry out a risk assessment within nine months of receiving the notification referred to in Article 6(3), whenever necessary subsequently, and at least every four years, on the basis of Member State risk assessments and other relevant sources of information, in order to assess all relevant risks that could disrupt the provision of their essential services (‘critical entity risk assessment’).",
+      "article": "Article 12 — critical entity risk assessment",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "critical entity risk assessment"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Critical entity risk assessments shall account for all the relevant natural and man-made risks which could lead to an incident, including those of a cross-sectoral or cross-border nature, accidents, natural disasters, public health emergencies and hybrid threats and other antagonistic threats, including terrorist offences as provided for in Directive (EU) 2017/541.",
+      "article": "Article 12 — critical entity risk assessment (risks)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "natural and man-made risks"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall ensure that critical entities take appropriate and proportionate technical, security and organisational measures to ensure their resilience, based on the relevant information provided by Member States on the Member State risk assessment and on the outcomes of the critical entity risk assessment, including measures necessary to:",
+      "article": "Article 13 — resilience measures",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "resilience measures"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "prevent incidents from occurring, duly considering disaster risk reduction and climate adaptation measures;",
+      "article": "Article 13(1)(a) — disaster risk reduction and climate adaptation",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "disaster risk reduction",
+        "climate adaptation"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "recover from incidents, duly considering business continuity measures and the identification of alternative supply chains, in order to resume the provision of the essential service;",
+      "article": "Article 13(1)(d) — recovery and business continuity",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "business continuity"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall ensure that critical entities have in place and apply a resilience plan or equivalent document or documents which describe the measures taken pursuant to paragraph 1.",
+      "article": "Article 13(2) — resilience plan",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "resilience plan"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall support critical entities in enhancing their resilience. That support may include developing guidance materials and methodologies, supporting the organisation of exercises to test their resilience and providing advice and training to the personnel of critical entities.",
+      "article": "Article 10 — support to critical entities",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "state support"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Each Member State shall designate or establish one or more competent authorities responsible for the correct application and, where necessary, enforcement of the rules set out in this Directive at national level.",
+      "article": "Article 9 — competent authorities",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "competent authorities"
+      ],
+      "climate_relevance": "none"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "policy_id": "eu-adaptation-strategy",
+  "targets": [
+    {
+      "quote": "The long-term vision is that in 2050, the EU will be a climate-resilient society, fully adapted to the unavoidable impacts of climate change.",
+      "article": "Section 2 — Forging a climate-resilient Union",
+      "label": "goal",
+      "timeline": "by 2050",
+      "indicators": ["climate-resilient society", "full adaptation"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "This means that by 2050, when we aim to have reached climate neutrality, we will have reinforced adaptive capacity and minimised vulnerability to climate impacts, in line with the Paris Agreement and the proposed European Climate Law",
+      "article": "Section 2 — Forging a climate-resilient Union",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": ["adaptive capacity", "vulnerability reduction"],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "The proposal commits the EU and its Member States to make continuous progress to boost adaptive capacity, strengthen resilience and reduce vulnerability to climate change.",
+      "article": "Section 2 — European Climate Law foundation",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["adaptive capacity", "resilience", "vulnerability reduction"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The strategy aims to realise the 2050 vision of a climate-resilient Union by making adaptation smarter, more systemic, swifter, and by stepping up international action.",
+      "article": "Section 2 — Four objectives of the strategy",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": ["smarter adaptation", "systemic adaptation", "faster adaptation", "international action"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Full implementation of the actions of the strategy would put Europe in a much better position to face climate impacts already by 2030.",
+      "article": "Section 2 — Forging a climate-resilient Union",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": ["strategy implementation"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "oimprove the state of the art on adaptation modelling, risk assessment and management tools – towards “asset-level modelling”.",
+      "article": "Section 4 — Pushing the frontiers of knowledge",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["adaptation modelling", "risk assessment tools"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "oestablish a European climate and health observatory under Climate-ADAPT.",
+      "article": "Section 6 — Climate-ADAPT platform",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["climate and health observatory"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "oupgrade adaptation monitoring, reporting and evaluation by using a harmonised framework of standards and indicators;",
+      "article": "Section 8 — Improving adaptation strategies and plans",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["monitoring reporting evaluation", "harmonised indicators"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "At least 37% of the allocation of the plans should be directed to climate action covering both mitigation and adaptation efforts.",
+      "article": "Section 10 — Integrating resilience in national fiscal frameworks",
+      "label": "target",
+      "timeline": "",
+      "indicators": ["climate spending share", "Recovery and Resilience Facility"],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "ostep up support to planning and implementation of local adaptation and launch an adaptation support facility under the EU Covenant of Mayors;",
+      "article": "Section 9 — Fostering local, individual and just resilience",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["local adaptation", "Covenant of Mayors support facility"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The EU increased the spending target for climate action to 30% in its long-term budget for 2021-2027, with adaptation as a key component.",
+      "article": "Section 12 — Faster adaptation",
+      "label": "target",
+      "timeline": "2021-2027",
+      "indicators": ["climate spending share", "EU budget"],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "The aim of this strategy is therefore to shift the focus to developing and rolling out solutions, to help reduce climate risk, increase climate protection, and safeguard freshwater access.",
+      "article": "Section 12 — Faster adaptation",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["adaptation solutions rollout", "climate risk reduction"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Mission proposal aims to support 200 communities to develop solutions for transformative adaptation, and scale up 100 deep demonstrations of climate-resilience.",
+      "article": "Section 13 — Accelerating the rollout of adaptation solutions",
+      "label": "target",
+      "timeline": "",
+      "indicators": ["200 communities", "100 demonstrations", "Horizon Europe Mission"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "odevelop an EU-wide climate risk assessment and strengthen climate considerations in EU disaster risk prevention and management;",
+      "article": "Section 14 — Reducing climate-related risk",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["EU-wide climate risk assessment", "disaster risk management"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Ultimately, the mechanism this strategy puts in place will lead to national-level assessments of insurance penetration rates and recommendations to improve them.",
+      "article": "Section 15 — Closing the climate protection gap",
+      "label": "objective",
+      "timeline": "",
+      "indicators": ["insurance penetration", "climate protection gap"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "osubmit the EU's adaptation plans and actions under the Paris Agreement;",
+      "article": "Section 20 — Strengthen global engagement",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["Paris Agreement adaptation communication"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "oaim to increase international climate finance for adaptation through the EU instruments for external action and by leveraging private sector investments;",
+      "article": "Section 19 — Scaling up international finance",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["international adaptation finance"],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "oenhance the climate proofing of all EU external investments and actions.",
+      "article": "Section 19 — Scaling up international finance",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": ["climate proofing external investment"],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}

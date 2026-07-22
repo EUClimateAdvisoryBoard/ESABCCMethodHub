@@ -1,0 +1,156 @@
+{
+  "policy_id": "union-civil-protection-mechanism",
+  "targets": [
+    {
+      "quote": "The Union Civil Protection Mechanism (\"the Union Mechanism\") shall aim to strengthen the cooperation between the Union and the Member States and to facilitate coordination in the field of civil protection in order to improve the effectiveness of systems for preventing, preparing for and responding to natural and man-made disasters.",
+      "article": "Article 1 — general objective of the Mechanism",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "prevention, preparedness, response"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The protection to be ensured by the Union Mechanism shall cover primarily people, but also the environment and property, including cultural heritage, against all kinds of natural and man-made disasters, including the consequences of acts of terrorism, technological, radiological or environmental disasters, marine pollution, and acute health emergencies, occurring inside or outside the Union.",
+      "article": "Article 1(2) — scope of protection",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "protection scope"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "to achieve a high level of protection against disasters by preventing or reducing their potential effects, by fostering a culture of prevention and by improving cooperation between the civil protection and other relevant services;",
+      "article": "Article 3(1)(a) — high level of protection",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "protection against disasters"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "to enhance preparedness at Member State and Union level to respond to disasters;",
+      "article": "Article 3(1)(b) — preparedness objective",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "preparedness"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "to facilitate rapid and efficient response in the event of disasters or imminent disasters; and",
+      "article": "Article 3(1)(c) — response objective",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "rapid response"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "to increase public awareness and preparedness for disasters.",
+      "article": "Article 3(1)(d) — public awareness objective",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "public awareness"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "encourage an exchange of good practices on preparing national civil protection systems to cope with the impact of climate change;",
+      "article": "Article 5(1)(d) — climate change adaptation practices",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "climate change adaptation"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "establish and regularly update a cross-sectoral overview and map of natural and man-made disaster risks the Union may face, by taking a coherent approach across different policy areas that may address or affect disaster prevention and taking due account of the likely impacts of climate change;",
+      "article": "Article 5(1)(c) — Union disaster risk overview",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "Union risk overview"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "develop risk assessments at national or appropriate sub-national level and make available to the Commission a summary of the relevant elements thereof by 22 December 2015 and every three years thereafter;",
+      "article": "Article 6(a) — national risk assessments",
+      "label": "obligation",
+      "timeline": "by 22 December 2015",
+      "indicators": [
+        "national risk assessments"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "make available to the Commission the assessment of their risk management capability at national or appropriate sub-national level every three years following the finalisation of the relevant guidelines as referred to in point (f) of Article 5(1) and whenever there are important changes; and",
+      "article": "Article 6(c) — risk management capability assessment",
+      "label": "obligation",
+      "timeline": "every three years",
+      "indicators": [
+        "risk management capability"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The Emergency Response Coordination Centre (ERCC) is hereby established. The ERCC shall ensure 24/7 operational capacity, and serve the Member States and the Commission in pursuit of the objectives of the Union Mechanism.",
+      "article": "Article 7 — Emergency Response Coordination Centre",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "ERCC",
+        "24/7 capacity"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall, on a voluntary basis, work towards developing modules, in particular to meet priority intervention or support needs under the Union Mechanism.",
+      "article": "Article 9 — Member State preparedness (modules)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "response modules"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "A European Emergency Response Capacity (EERC) shall be established. It shall consist of a voluntary pool of pre-committed response capacities of the Member States and include modules, other response capacities and experts.",
+      "article": "Article 11 — European Emergency Response Capacity",
+      "label": "goal",
+      "timeline": "",
+      "indicators": [
+        "EERC voluntary pool"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "On the basis of identified risks, the Commission shall define the types and the number of key response capacities required for the EERC (\"capacity goals\").",
+      "article": "Article 11 — capacity goals",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "capacity goals"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "set up and manage a training programme for civil protection and emergency management personnel on prevention of, preparedness for and response to disasters.",
+      "article": "Article 13 — training programme",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "training programme"
+      ],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}

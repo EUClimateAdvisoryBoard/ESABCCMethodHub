@@ -1,0 +1,1013 @@
+EUROPEAN COMMISSION
+
+Brussels, 14.10.2020
+
+COM(2020) 662 final
+
+COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS
+
+A Renovation Wave for Europe - greening our buildings, creating jobs, improving lives
+
+{SWD(2020) 550 final}
+
+1. Boosting building renovation for climate neutrality and recovery
+
+Europe’s building stock is both unique and heterogeneous in its expression of the cultural diversity and history of our continent. But not surprisingly, it is also old and changes very slowly. More than 220 million building units, representing 85% of the EU’s building stock, were built before 2001. 85-95% of the buildings that exist today will still be standing in 2050.
+
+Most of those existing buildings are not energy-efficient
+1
+. Many rely on fossil fuels for heating and cooling, and use old technologies and wasteful appliances. Energy poverty remains a major challenge for millions of Europeans. Overall, buildings are responsible for about 40% of the EU’s total energy consumption, and for 36% of its greenhouse gas emissions from energy
+2
+. 
+
+The COVID-19 crisis has also brought into sharper focus our buildings, their importance for our lives and their fragilities. Throughout the pandemic, the home has been the focal point of daily life for millions of Europeans: an office for those teleworking, a nursery or classroom for children and pupils, for many a hub for online shopping or downloading entertainment. Schools had to adapt to distance learning. Hospital infrastructure has been under severe strain. Private business had to readjust to social distancing. Some of the effects of the pandemic may continue in the longer term creating new demands on our buildings and their energy and resource profile, further adding to the need to renovate them deeply and on a massive scale.
+
+As Europe seeks to overcome the COVID-19 crisis, renovation offers a unique opportunity to rethink, redesign and modernise our buildings to make them fit for a greener and digital society and sustain economic recovery.
+
+The Commission has proposed in the Climate Target Plan 2030
+3
+to cut net greenhouse gas emissions in the EU by at least 55% by 2030 compared to 1990. Energy efficiency is an essential component for action, with the building sector as one of the areas where efforts must be ramped up. To achieve the 55% emission reduction target, by 2030 the EU should reduce buildings’ greenhouse gas emissions by 60%, their final energy consumption by 14% and energy consumption for heating and cooling by 18%
+4
+. It is therefore urgent for the EU to focus on how to make our buildings more energy-efficient, less carbon-intensive over their full life-cycle and more sustainable. Applying circularity principles to building renovation will reduce materials-related greenhouse gas emissions for buildings.
+
+ 
+
+Today, only 11% of the EU existing building stock undergoes some level of renovation each year. However, very rarely, renovation works address energy performance of buildings. The weighted annual energy renovation rate is low at some 1%. Across the EU, deep renovations that reduce energy consumption by at least 60%
+5
+are carried out only in 0.2% of the building stock per year and in some regions, energy renovation rates are virtually absent. At this pace, cutting carbon emissions from the building sector to net-zero would require centuries. It is time to act.
+
+Not only reducing energy bills and cutting down emissions are at stake. Renovation can open up numerous possibilities and generate far-reaching social, environmental and economic benefits. With the same intervention, buildings can be made healthier, greener, interconnected within a neighbourhood district, more accessible, resilient to extreme natural events, and equipped with recharging points for e-mobility and bike parking. Smart buildings can provide essential privacy-compliant data for city planning and services. Deep renovation can reduce pressure for greenfield construction, helping preserve nature, biodiversity and fertile agricultural land.
+
+Investing in buildings can also inject a much-needed stimulus in the construction ecosystem and the broader economy. Renovation works are labour-intensive, create jobs and investments rooted in often local supply chains, can generate demand for highly energy and resource-efficient equipment and bring long-term value to properties. By 2030 an additional 160 000 green jobs could be created in the EU construction sector through a renovation wave
+6
+. This can be very valuable for a sector where more than 90% of the operators are SMEs, hard hit by the economic impact of the COVID-19 crisis. Activity in construction fell by 15.7% in relation to 2019 and energy efficiency investments have dropped by 12% in 2020. Even if a recovery is expected, there is likely to be a lasting impact on the sector.
+
+Europe has now a unique chance to make renovation a win-win for climate neutrality and recovery. The EU’s recovery instrument NextGenerationEU, alongside the EU’s Multiannual Financial Framework, will make available an unprecedented volume of resources that can also be used to kick-start renovation for recovery, resilience and greater social inclusion. Tackling energy efficiency together with accessibility makes buildings more usable and sustainable in the context of an ageing population
+7
+.
+
+On this basis, this Communication presents a strategy to trigger a Renovation Wave for Europe, breaking down long-standing barriers to energy and resource-efficient renovation, supporting fresh investment over a sustained period starting from public and less efficient buildings, spurring digitalisation and creating employment and growth opportunities across the renovation supply chain.
+
+The objective is to at least double the annual energy renovation rate of residential and non-residential buildings by 2030 and to foster deep energy renovations. Mobilising forces at all levels towards these goals will result in 35 million building units renovated by 2030. The increased rate and depth of renovation will have to be maintained also post-2030 in order to reach EU-wide climate neutrality by 2050.
+
+2. Key principles for building renovation towards 2030 and 2050 
+
+The EU must adopt an encompassing and integrated strategy involving a wide range of sectors and actors on the basis of the following key principles:
+
+-‘Energy efficiency first’
+8
+as a horizontal guiding principle of European climate and energy governance and beyond, as outlined in the European Green Deal
+9
+and the EU strategy on Energy System Integration
+10
+, to make sure we only produce the energy we really need;
+
+-Affordability, making energy-performing and sustainable buildings widely available, in particular for medium and lower-income households and vulnerable people and areas;
+
+-Decarbonisation and integration of renewables
+11
+. Building renovation should speed up the integration of renewables in particular from local sources, and promote broader use of waste heat. It should integrate energy systems at local and regional levels helping to decarbonise transport as well as heating and cooling;
+
+-Life-cycle thinking and circularity. Minimising the footprint of buildings requires resource efficiency and circularity combined with turning parts of the construction sector into a carbon sink, for example through the promotion of green infrastructure and the use of organic building materials that can store carbon, such as sustainably-sourced wood;
+
+-High health and environmental standards. Ensuring high air quality, good water management, disaster prevention and protection against climate-related hazards
+12
+, removal of and protection against harmful substances such as asbestos and radon, fire and seismic safety. Furthermore, accessibility should be ensured to achieve equal access for Europe’s population, including persons with disabilities and senior citizens.
+
+-Tackling the twin challenges of the green and digital transitions together. Smart buildings can enable efficient production and use of renewables at house, district or city level. Combined with smart energy distribution systems, they will enable highly efficient and zero-emission buildings.
+
+-Respect for aesthetics and architectural quality
+13
+. Renovation must respect design, craftsmanship, heritage and public space conservation principles.
+
+3. Delivering faster and deeper renovation for better buildings 
+
+The EU has established a regulatory framework and a set of funding instruments to promote energy efficiency, building renovation and renewables deployment at building, neighbourhood and district level. The Clean Energy for All Europeans Package of 2018 and 2019 has upgraded it, creating a solid basis for energy market integration, renewables deployment and energy efficiency promotion, and its provisions need to be fully implemented as a matter of utmost priority by all Member States and stakeholders.
+
+This framework has driven substantial progress in the energy performance of buildings: new buildings today consume half of the energy compared to similar new buildings 20 years ago. Thanks to energy efficiency obligation schemes, an increasing number of energy companies ensure that their customers save energy, offering commercial packages that increasingly address building renovation and system upgrades. Europe represents around 40% of world-wide investments in improving building energy efficiency (between EUR 85-90 billion annually), with a building sector at the forefront of applying life-cycle principles
+14
+. Yet, the level of renovations of existing buildings remains persistently low and shallow.
+
+Renovation is held back by barriers at different points throughout the value chain – from the initial decision to engage in renovation, to financing and completion of the project. For instance, when considering a renovation, benefits from energy savings might be uncertain or poorly explained and understood, especially by the end-users. They can be difficult to measure and monetise
+15
+. Renovating can also be costly, difficult to organise and lengthy to carry out. Mobilising financing can be difficult, in particular at local and regional level. Public funds are frequently scarce and difficult to blend due to regulatory obstacles and lacking capacity in public administrations.
+
+To kick-start a large-scale, sustainable deployment of renovation all over Europe, it is necessary to break the key barriers at every point of the supply chain.
+
+Based on its analysis and a public consultation
+16
+, the Commission has identified the following areas of intervention and lead actions critical to enable a step-change in the depth and scale of renovations:
+
+1)Strengthening information, legal certainty and incentives for public and private owners and tenants
+17
+to undertake renovations. The Commission will revise in 2021 the Energy Efficiency and the Energy Performance of Buildings Directives
+18
+. It will propose to introduce a stronger obligation to have Energy Performance Certificates alongside a phased introduction of mandatory minimum energy performance standards for existing buildings. It will also propose to extend the requirements for building renovation to all public administration levels. The impact assessments accompanying these legislative revisions will consider different options in terms of the level, scope and timing of these requirements.
+
+2)Ensuring adequate and well-targeted funding. The 2021 Annual Sustainable Growth Strategy
+19
+and the Guidance on Resilience and Recovery Plans
+20
+identified building renovation as a priority for national recovery plans under the European Flagship ‘Renovate’. Beyond recovery, this Communication proposes to increase the volume and impact of EU funding by providing more grants, technical assistance, project development support and loans and making it possible to combine them where this was not possible in the past. The Commission will promote a genuine market for energy services and will strengthen the access to attractive private financing
+21
+through the Renewed Sustainable Finance Strategy. Support for access to essential energy services should be available for those in need
+22
+.
+
+3)Increasing the capacity to prepare and implement projects. The Commission will scale up technical assistance and make it closer to regional and local actors, in particular by strengthening the European Local Energy Assistance (ELENA) and using the technical assistance window under the Resilience and Recovery Fund. 
+
+4)Promoting comprehensive and integrated renovation interventions for smart buildings, integration of renewable energy and enabling to measure actual energy consumption. The new Smart Readiness Indicator
+23
+ promotes digitally friendly renovations. In the framework of the ongoing Construction Products Regulation revision the Commission will consider how sustainability criteria could support the uptake of more sustainable construction products in construction works and foster the uptake of the latest technologies.
+
+5)Making the construction ecosystem fit to deliver sustainable renovation, based on circular solutions, use and reuse of sustainable materials, and the integration of nature-based solutions. The Commission proposes to promote the development of standardised sustainable industrial solutions and the reuse of waste material. It will develop a 2050 roadmap for reducing whole life-cycle carbon emissions in buildings, including through the use of biobased products, and review material recovery targets. To boost know-how and workers’ skills in the renovation sector the Commission will work with Member States through the Skills Agenda and its upcoming Pact for Skills and through Cohesion policy funds and the Just Transition Fund to finance training and re-training initiatives, in close cooperation with social partners.
+
+6)Using renovation as a lever to address energy poverty and access to healthy housing for all households, including for persons with disabilities and for older people. The Commission presents a Recommendation on Energy poverty. The Commission will launch an Affordable Housing Initiative for 100 lighthouse project and will examine whether and how the EU budget resources alongside EU Emissions Trading System (EU ETS) revenues could be used to fund national energy efficiency and savings schemes targeting lower-income population. 
+
+7)Promoting the decarbonisation of heating and cooling, which is responsible for 80% of energy consumed in residential buildings, through the 2021 revisions of the Renewable Energy and Energy Efficiency Directives and the EU ETS, the application and further development of eco-design and labelling measures, as well as support to district approaches.
+
+ 
+
+These lead actions and several flanking policy, regulatory and funding measures are described in more detail in the following sections.
+
+3.1. Strengthening information, legal certainty and incentives for renovation
+
+The starting point of a sustainable renovation is always an individual decision, balancing expected benefits and costs. Yet, today, insufficient information on the current energy and resource profile of buildings and the potential benefits of renovation, lack of trust in the actual energy savings and split incentives between owners and tenants are among the strongest barriers to taking such a decision.
+
+Some Member States have decided to tackle this by introducing minimum performance levels by a specified compliance deadline or at certain moments in the lifetime of a building
+24
+. Such requirements provide an anchor for investors and business expectations and work best in combination with reliable energy performance certificates and funding. The advantages of such a regulatory push include drawing clear lines for decision-making in multi-owner buildings, reflecting energy performance in the value of a building, and remedying general low awareness of the benefits of renovation.
+
+Building on such good practices, the Commission will propose mandatory minimum energy performance standards as part of the revision of the Energy Performance of Buildings Directive (EPBD) by the end of 2021, following an impact assessment looking at the scope, timeline and phasing of a progressive implementation of such requirements, including the need for accompanying support policies. Such measures will facilitate linking specific national, regional and local incentives and support compliance with these minimum standards.
+
+The Commission considers that energy performance certificates (EPC) and their availability in accessible databases improve transparency of the performance of the building stock. At the building level, EPCs inform about energy performance, share of renewables and energy costs. At district, regional, national or Union level, they are crucial for identifying the worst-performing buildings in urgent need of renovation. They can be used to evaluate improvements relative to the investment before and after the works and help connect financing with quality renovation.
+
+The EPBD already establishes requirements for EPCs in case of construction, change of occupancy and for buildings occupied by public authorities and frequently visited by the public of over 250 m2. However, the coverage of EPC is still limited, with several Member States having less than 10% of the building stock with EPCs. Their quality and fair pricing remain an issue, eroding the trust in this tool. Very few of the EPCs are based on physical energy audits, and they do not reflect the interconnectivity and smart readiness of buildings. Given that solutions are increasingly available to measure and manage energy performance during the use of the buildings, the Commission will propose to update the EPC framework, taking into account emerging energy performance metering technologies. This will include looking at a uniform EU machine-readable data
+25
+format for the certificates and more stringent provisions on availability and accessibility of databases and federated digital repositories for EPCs.
+
+The Commission will also examine the need for extending energy audits requirements
+26
+to larger and more complex non-residential buildings such as hospitals, schools or offices, in order to also maximise complementarity with EPCs.
+
+The existing legislative requirements for purchasing and renovation of existing public buildings currently cover only public buildings owned and occupied by the central governments, which represent around 4.5% of all public buildings. As part of the revision of the EED, the Commission will examine the need to extend the renovation requirements to buildings at all public administration levels, including the Commission, and to increase the annual renovation rate.
+
+Deep renovation is not always achievable in one go. It is therefore important to create better conditions for staged renovation. The Commission will introduce Digital Building Logbooks
+27
+ that will integrate all building related data provided by the upcoming Building Renovation Passports
+28
+, Smart Readiness Indicators, Level(s)
+29
+and EPCs to ensure compatibility and integration of data throughout the renovation journey.
+
+The Commission will explore with Member States, stakeholders, market players and data providers whether it is possible for the European Building Stock Observatory
+30
+to become a central European repository for reliable data on the building stock and its energy performance and support the design of incentives in this domain.
+
+3.2. Reinforced, accessible and more targeted funding
+
+Building renovation is one of the sectors facing the largest investment gap in the EU. The Commission estimates that in order to achieve the proposed 55% climate target by 2030, around EUR 275 billion of additional investments are needed per year
+31
+.
+
+In the residential building sector, the lack of simple, attractive and easily accessible public incentives for renovation and the lack of mainstream financing products are often mentioned as a barrier. Even when funding is in principle available, the shortage of information and low awareness of available funding, cumbersome procedures or regulatory constraints for accessing public finance limit its use. In the non-residential sector, the lack of funding for publicly-owned buildings and the lack of suitable financial incentives for commercial buildings are two of the most relevant obstacles.
+
+To overcome these barriers, it is necessary to act on different fronts to foster a better use of EU and national public funds and mobilise a greater share of private funds. EU and national public funds can be more effectively targeted and better channelled to the end-users by making it easier to blend various sources of financing, making the intensity of support proportional to performance, strengthening technical or project development assistance and promoting synergies with market-based mechanisms.
+
+EU funding driving investment for renovation
+
+The 2021-2027 Multiannual Financial Framework and the recovery instrument NextGenerationEU provide an unprecedented opportunity to set off the Renovation Wave. Never before have such investment possibilities existed for this crucial sector.
+
+The Recovery and Resilience Facility, which is currently under negotiation and which the European Council agreed to endow with EUR 672.5 billion, 37% of which would be targeted to climate-related expenditure, can support renovation investment and energy efficiency-related reforms across Member States. In the Annual Sustainable Growth Strategy 2021, the Commission has proposed the European Flagships Renovate and Power Up for coordinated intervention by all Member States, based on projects included in their national Recovery and Resilience Plans
+32
+.
+
+To sustain the implementation of these Flagships, the Commission will complement the Guidance to Member States on the preparation of Recovery and Resiliency Plans
+33
+ with tailor-made guidance to each Member State in the context of the individual assessment of National Energy and Climate Plans (NECPs)
+34
+and Long-term Renovation Strategies. An example of possible components of a Recovery and Resilience Plan on building renovation, energy and resource efficiency will be made available by the Commission to give practical guidance to Member States
+35
+. Finally, the Commission will strengthen the existing Concerted Actions
+36
+to help Member States exchange good practices and monitor implementation over time.
+
+Cohesion policy has historically represented a main source of EU public funding for direct investment in improving buildings’ energy efficiency and will maintain this role over the 2021-2027 period
+37
+. It complements the temporary Recovery and Resilience Facility and provides integrated support to building renovation, including for tailor-made renovation programmes at local and regional levels. Using experience from previous programming periods, Member States need to ensure that their co-funded energy and resource efficiency programmes are well targeted on delivering high energy performance, the monitoring of which will be improved through a more detailed and robust indicator system.
+
+Member States should also complement the deployment of EU co-funded programmes with additional support schemes, in particular to mobilise private financing
+38
+. In rural areas, funding from the European Agricultural Fund for Rural Development (EAFRD) can be used to enhance energy efficiency and the production of renewable energy.
+
+Programming documents should set out renovation priorities drawn from the NECPs and Long-Term Renovation Strategies. Member States that have not yet presented the Long-Term Renovation Strategies are invited to do so as they are part of the required enabling conditions to access Cohesion Funds from 2021 onwards.
+
+Building on the positive experience of the European Fund for Strategic Investments (EFSI) and complementing other EU funding sources, InvestEU will act as a single EU-level investment support programme to provide technical assistance and financing backed by an EU budget guarantee to unlock private investments. Within the Social Investment and Skills Window and the Sustainable Infrastructure Window of InvestEU, dedicated financial products for energy renovation of buildings will target the residential sector and focus on social and affordable housing, public buildings, schools and hospitals, SMEs and support for ESCOs to mainstream energy performance contracting.
+
+Drawing on the experience gained with the Private Finance for Energy Efficiency and the Smart Finance for Smart Buildings initiatives, the Commission will work to facilitate needs-driven solutions which are easily accessible for project promoters and use a single set of rules. Concretely, this means that a Member State will be able to transfer part of the funding available under cohesion policy to the Member State compartment of InvestEU. The InvestEU programme will also enable linking financial products backed by the InvestEU guarantee with dedicated technical assistance to banks and intermediaries, to local authorities and final beneficiaries. The simplified rules also allow to combine loans with grants and reward best-performing projects with a higher grant rate.
+
+In the context of its newly established European Initiative for Building Renovation, the European Investment Bank (EIB) will step up its support for the aggregation into portfolios of building renovation projects and the provision of tailored financial support, ranging from traditional long-term loans to guarantees, equity or receivables financing. To scale up the volume and impact of lending for energy efficiency of buildings, the EIB should be able to more easily combine technical assistance, project development assistance, loans and grants as a single package.
+
+The Commission will work in cooperation with the Member States, the EIB and market participants to facilitate the implementation of rules for combining EU programmes and instruments, national funds and private funds for renovation projects.
+
+As part of the ongoing revision of the General Block Exemption Regulation and the Energy and Environmental Aid Guidelines, the Commission will set up simpler, clearer and easier-to-apply State Aid rules for building renovation, in particular in the residential and social sectors, and clarify the scope of State Aid for renewable energy installations for self-consumption. As a first step, the Commission is revising State aid rules to facilitate co-financing of InvestEU guarantees by Member States
+39
+.
+
+Finally, building on the experience gained in some national contexts, the Commission stands ready to advise Member States that are considering using revenues from the EU Emissions Trading System (ETS) and funding opportunities under the ETS Modernisation Fund as a source of funding for building renovation programmes, in particular for lower-income households.
+
+Attracting private investment and stimulating green loan financing
+
+Given the low risk profile of energy efficiency investments
+40
+and the demand prospects that a renovation wave will underpin, offering private financing jointly with innovative services for renovation will be an increasingly attractive business proposition. Actors like ESCOs, utilities or banks already use and provide technical advice. They can offer property owners much-needed support in terms of ideas and financing in all phases of a renovation process. They can promote the aggregation of small projects, offer favourable conditions for complex projects with long payback times and unite the various actors involved in taking buildings renovation decisions.
+
+Secondly, Member States can reduce risk perception and scale up market incentives such as energy-saving tariffs, pay-per-performance public support schemes and energy-saving tenders to attract private intermediaries and aggregators. Member States should also explore innovative financing solutions through on-tax and on-bill schemes or property-linked finance, a well as taxation tools
+41
+to generate economic incentives to finance building renovation. Existing energy efficiency obligation schemes under Article 7 of the Energy Efficiency Directive can be effectively used for all types of buildings
+42
+to engage new intermediaries like utilities, deliver technical expertise and offer aggregated services to reduce transaction and administrative costs.
+
+Involving ESCOs through public-private partnerships is a possibility to attract investment, pool together small-scale and scattered investments, reduce upfront costs and reward the energy savings. Coupling energy performance contracts with resilience contracting by insurers can help the market manage investment risk because insurers have expertise on assessing and offering protection against environmental, climate and other risks.
+
+To help reduce transaction costs, the Commission will encourage the standardisation of contracts and financial instruments at national and European level, by using existing forums to help replicate and scale up best practices and innovative approaches. The Commission will actively support these ways of activating private-sector investments through the Energy Efficiency Financial Institutions Group (EEFIG) and the Sustainable Energy Investment (SEI) Forums.
+
+A renovation wave can also be an opportunity to spur the development of green loan and mortgage financing. An upgraded system of EPCs demonstrating efficiency gains will allow banks and other financial institutions to offer credit and mortgage financing to green their portfolios and to pool buildings as a collateral for the issuance of covered bonds. A number of market-led initiatives are already piloting innovative schemes for energy efficiency loan and mortgage financing
+43
+. In a next step, whole life-cycle carbon can be included in this assessment and linked to financing for circular solutions.
+
+With the EU Renewed Sustainable Finance Strategy, the Commission is looking into additional standards and labels for sustainable financial products, such as green mortgages, green loans and green bonds. This will help make sure energy and resource efficiency lending products are offered more widely and are more visible to consumers. The reviews of the Mortgage Credit Directive
+44
+and the Consumer Credit Directive
+45
+ provide opportunities to adequately reflect a possible lower credit risk of sustainable financial products
+46
+. Moreover, the European Banking Authority is analysing whether a dedicated prudential treatment in bank regulation of financial products associated with sustainability objectives, such as building renovation, would be justified. The Commission is also considering measures to incorporate environmental, social and governance risks into prudential regulation in its reviews of the rules for banks (the Capital Requirements Regulation and Directive) and insurers (the Solvency II Directive). The EIB will also consider supporting new ways to attract private finance for building rehabilitation, including unlocking new markets in energy efficiency mortgage-based lending or securitisation.
+
+Finally, the Commission is developing the EU Taxonomy
+47
+, with technical screening criteria for the buildings sector, to direct private capital towards sustainable investments in energy renovation, relying on Energy Performance Certificates and nearly zero-energy building standards. As part of the EPBD revision, the Commission will also consider introducing a ‘deep renovation’ standard, to enable anchoring significant private financing to transparent, measurable and genuinely “green” investments.
+
+All these initiatives can help customers to access funding on cheaper terms and help promoting the development of dynamic private financing complementing public funds, tax incentives and other forms of public financial support.
+
+3.3 Increasing capacity and technical assistance
+
+Preparig a good renovation project, matched with the best financing sources available, is difficult and often very complicated for individuals or small local authorities. Thus, technical assistance is going to play a key role for the expected increased rates and quality of renovation. Some of this assistance is in the Member States’ hands, but the EU can play a stronger role.
+
+Based on lessons learnt from the ELENA facility, Private Financing for Energy Efficiency (PF4EE), cohesion policy, JASPERS programme and the Horizon 2020 Project Development Assistance (PDA) facility, the Commission will simplify and reinforce technical assistance, with a priority objective to reach a larger pool of beneficiaris, including those of a smaller size. Strengthened financing for the ELENA facility has been proposed to come from the InvestEU advisory hub and possibly from other European programmes
+
+The Commission, together with the EIB, will help Member States to design national or local programmes replicating the ELENA model
+48
+and to reward fast implementation and high energy performance using three financing streams: cohesion policy funds (as a stand-alone support or as a part of a financial instrument operation), the Member State compartment of InvestEU, or the Recovery and Resilience Facility.
+
+In addition, the Commission and the EIB will support setting up standardised one-stop shops that can be deployed quickly at national, regional or local levels for delivering tailored advice and financing solutions designed to accompany homeowners or SMEs throughout the preparation and implementation of their projects. Local actors can build on this platform to create competence centres for various types of advice on sustainable renovation.
+
+Additional source of capacity support will be offered by the proposed new Technical Support Instrument of the Recovery Plan, the EU City Facility and the Project Development Assistance Facility under LIFE, and the administrative capacity building and technical assistance under the post-2020 cohesion policy funds. Furthermore, the cohesion policy legislative proposal also includes the creation of an European Urban Initiative to strengthen integrated and participatory approach to sustainable urban development. For national, regional or local authorities interested in deploying building renovation investments as part of urban renewal, the European Smart Cities Marketplace offers a successful blueprint
+49
+to guide public authorities in doing so. 
+
+3.4. Creating green jobs, upskilling workers and attracting new talents
+
+The design, installation and operation of circular and low-carbon solutions often require a high level of technical knowledge. Specific skills are also needed for the safe management of historical buildings and safeguarding their heritage value. The transformation towards a climate-neutral building stock will only be possible if existing jobs are transformed to include green and circular skills and if new job profiles emerge, such as specialists in deep building renovation, installers for advanced technological solutions, or Building Information Modelling managers. Only well-informed professionals can play their potentially key role in offering end-users latest available technical opportunities for resource and energy efficiency. Finally, professionals require training to improve accessibility in renovations.
+
+Already before the COVID-19 crisis, there was a shortage of qualified workers to carry out sustainable building renovation and modernisation. The potential for job retention and creation in this sector has been and remains large. Energy efficiency in buildings is the largest generator of jobs per million euros invested
+50
+. If Member States were to quickly implement measures to improve insulation, technical building systems and appliances, new employment opportunities would immediately present themselves. Policy should signal to the market that innovative and sustainable solutions are needed. For example, the bioeconomy can provide new low-carbon materials for deep renovations, increasing new specialist job opportunities.
+
+Increasing the presence and role of women in the construction sector can help improve the availability of skills and qualified professionals. Revising vocational and educational training strategies by involving industry, creating an inclusive and accessible working environment and overcoming prejudices is key. SMEs should be given better access to information about training and apprenticeship programmes. Social partners, including workers’ and employers’ representatives of the construction sector at national and European level, have solid expertise in upskilling workers, attracting new talent and promoting an inclusive working environment and should be involved in the design and implementation of measures to achieve these goals.
+
+The occupational safety and health perspective of workers in construction – a sector with a comparatively high risk of accidents and ill-health – is important and legal requirements for worker protection should be complied with, with a particular attention to protecting workers renovating old buildings from exposure to asbestos, also through appropriate training
+51
+.
+
+To address these issues, and building on the 2020 Skills Agenda and the Blueprint for sectoral cooperation on skills
+52
+, the Commission will launch the Pact for Skills bringing together private and public stakeholders with the shared objective of up- and reskilling Europe’s workforce. The Commission encourages Member States to make use of the Next Generation EU funds, the European Social Fund+ and the Just Transition Fund. Apprenticeships and other forms of work-based learning facilitate the transition of young people into the labour market. The Commission’s Youth Employment Support package of 1 July 2020 announced a renewed European Alliance for Apprenticeships. With the support of the Build Up Skills initiative that continues under the LIFE programme, Member States can update their gap analysis and National Roadmaps for training as the Commission will develop training material on the use of Level(s)
+53
+in 2021. 
+
+3.5.
+   Creating a sustainable built environment
+
+Delivering the depth and volume of renovation Europe needs, ultimately requires a strong and competitive construction sector, embracing innovation and sustainability to increase quality and reduce costs.
+
+European companies lead in innovation, manufacture, distribution and installation of a variety of energy-saving and renewables-related goods and services in buildings. Consolidating this lead role requires uptake of industrialised technological solutions in order to limit the cost and duration of works, faster digitalisation and the full integration of circularity principles across the value chain: sourcing safe, sustainable and secondary raw materials, reuse and recycling and waste management. Industrialisation can trigger a virtuous circle between higher demand for deeper renovation and falling costs for smarter and more sustainable products.
+
+The Commission promotes environmental sustainability of building solutions and materials, including wood and bio-based materials, nature-based solutions and recycled materials on the basis of a comprehensive life-cycle assessment approach. It will address the sustainability performance of construction products in the context of its revision of the Construction Product Regulation and it will develop by 2023 a roadmap leading up to 2050 for reducing whole life-cycle carbon emissions in buildings. The Commission will also accelerate work with standardisation organisations on climate resilience standards for buildings.
+
+By the end of 2024, the Commission will review the material recovery targets set in EU legislation for construction and demolition waste. The Commission will put in place measures to increase reuse and recycling platforms and support a well-functioning internal market for secondary raw materials. Level(s), the Circular Economy principles for buildings design and the EU Construction and Demolition Waste management protocol guide the user to apply these principles in renovation projects.
+
+The uptake of and investments into digital and innovative technologies by the construction sector remain low
+54
+. The Commission will therefore support digitalisation in the construction sector through Horizon Europe, Digital Innovation Hubs and Testing and Experimentation Facilities. Digital tools
+55
+help record the progression of works, the use of materials and increase productivity. For example, a digital twin of a building, enabled by 3D mapping data, provides information on how the building is performing in real-time and prevents serious accidents by helping predict potential failures in building systems. Cost savings are present across the value chain from accelerated administrative procedures and physical works. Smart buildings and digitally enabled construction generate large pools of data for the whole life-cycle of construction, use and renovation of buildings to be able to operate them better. The Commission will consider setting a governance framework for data spaces with further actions to develop allocated data spaces, including in the areas of energy, manufacturing and construction.
+
+Building Information Modelling (BIM) improves transparency and reduces costs and resource use. The Commission will provide a recommendation to promote Building Information Modelling in public procurement for construction and provide a methodology to public clients to conduct cost-benefit analysis for the use of BIM in public tenders. Digital industrial platforms will allow stakeholders to collect and make better use of this data. The Commission will also develop a unified EU Framework for digital permitting in the built environment and establish a trusted scheme for certifying energy efficiency meters in buildings that can measure actual energy performance improvements.
+
+Research must also spur innovation in the construction sector. The European Green Deal Call, part of Horizon 2020, includes an area dedicated to ‘Energy and resource-efficient buildings’. Horizon Europe will support research and innovation on energy technologies, sustainability and circularity of materials and systems for construction, taking into consideration the specific conditions of every geographic region of Europe. In the preparation of Horizon Europe Programme implementation, the Commission is currently considering a Public-Private Partnership on People-centric Sustainable Built Environment (Built4People) and a dedicated Mission on Climate-Neutral and Smart Cities. The partnership could deliver innovation to the buildings and construction industry and the mission could showcase 100 European cities in their systemic transformation towards climate neutrality by 2030 together and for the citizens.
+56
+.
+
+In addition, if adopted, the Clean Energy Transition Co-funded Partnership
+57
+can contribute to developing climate-neutral solutions for heating and cooling systems in buildings. Other programmes of relevance for building renovation research and innovation domains include regional programmes (also in the light of the Seal of Excellence), and the new LIFE prgramme. In particular, the Clean Energy Transition sub-programme under LIFE will support the renovation wave by addressing behavioural and non-technological barriers to renovation
+58
+.
+
+3.6. Placing an integrated, participatory and neighbourhood based approach at the heart of the renovation wave
+
+Fully reaping the potential of a renovation wave in terms of co-benefits requires an integrated approach that has already been successfully piloted. “Smart” homes can promote user comfort, increase the integration of renewable and surplus energy into buildings. In some pilot projects, apartment buildings were equipped with photovoltaic solar panels on the roofs, thermal storage and heat pumps. Each building was connected to a local grid, which fed charging points for electric cars. The application of smart meters
+59
+helped match power supply and demand in the most efficient way. As a result, the buildings were transformed from consumers to producers of energy, with high energy efficiency, reduced energy costs for households, integration of e-mobility and systemic benefits for the stability of the grids.
+
+This is just an example of what can be achieved through an integrated digital renovation that combines energy storage and demand-side flexibility, on-site energy generation from renewable sources, Internet of Things of the system components, appliances and recharging points for e-mobility. This promotes an active participation of citizens in the energy system as prosumers.
+
+The EPBD
+60
+already provides for measures to promote smart infrastructure and the roll-out of charging points for e-mobility. In line with the objective to deploy more than 1 million public charging stations by 2025, the Commission will ensure their full implementation and enforcement and consider whether they need strengthening. Furthermore, together with this Communication, the Commission presents the implementing and delegated acts on the EU Smart Readiness Indicator, as a tool to measure the smart readiness of buildings and raise the awareness of building owners and occupants.
+
+For the latest sustainable products and products which integrate renewable energy, such as from photovoltaics, the Commission will map challenges encountered by these products on the single market and consider ways to remove identified barriers, including via mutual recognition. A well functioning Single Market removes regulatory and administrative barriers to cross-border service provision and facilitates mutual recognition of national certification and insurance schemes for renovation and energy efficiency specialists.
+
+Synergies for renovation become evident when scaled up to district and community approaches. Aggregating projects at this level may lead to zero-energy or even positive energy districts
+61
+ (e.g. advanced district heating and cooling systems with large potential for renewables and waste-heat recovery). These offer cheaper ways to decarbonise heating and cooling and can offer system efficiencies at an industrial scale by fuel switch, increased flexibility and thermal storage, and creating space for nature. In addition to a more rational and aesthetic use of space, a district-based approach can allow improving old dwellings with reduced accessibility and mobility services.
+
+Energy communities generate, consume, store and sell energy, and can offer tools for the most vulnerable citizens to lift them out of energy poverty. To exploit their untapped potential as active players in the energy system, the Commission will look closely into the implementation of the Electricity Market Directive
+62
+and the Renewable Energy Directive and use concerted actions to support their progressive creation and diffusion across Member States. The Commission will further explore how to promote energy communities and disseminate good practices
+63
+.
+
+Based on broad and inclusive engagement of inhabitants through cooperative structures and one-stop shops with a wide variety of useful advice, such district approaches can transform entire neighbourhoods and create new business opportunities. Exemplary district renovation projects
+64
+could be included in the national recovery plans and pave the way to a new wave of decarbonised districts.
+
+Member States, regions and local authorities should further seize the opportunity to finance investments in a local context as part of the territorial instruments within the European Regional Development Fund (ERDF) and the European Agricultural Fund for Rural Development (EAFRD): Integrated Territorial Investments (ITI’s), Community-Led Local Development (CLLD) and LEADER. Further, urban authorities can draw on the mandatory minimum allocation of the ERDF to sustainable urban development implemented on the ground through integrated urban and territorial development strategies.
+
+At the local level, the Covenant of Mayors supports a new coalition of willing cities ready to commit to ambitious pledges on building renovation. This process could feed into the future updates of Long-Term Renovation Strategies and result in aggregated green procurement to which mayors commit under the Covenant. The Big Buyers for Climate and Environment project further fosters collaboration between big public buyers such as cities, regions, hospitals, central purchasing bodies, utilities, towards piloting and uptaking new technologies in areas such as zero emission construction sites.
+
+In addition, the Commission will engage all relevant stakeholders, including through the Climate Pact and the High Level Forum on construction, with supportive actions to regenerate European neighbourhoods through cultural, economic and social vitality.
+
+3.7. The new European Bauhaus: Matching style with sustainability
+
+The Renovation Wave is not only about looking into existing building stock. It is the start of a forward-looking process to match sustainability with style. As announced by President von der Leyen in her State of the Union speech on 16 September 2020, the Commission will launch the New European Bauhaus to nurture a new European aesthetic that combines performance with inventiveness.
+
+The New European Bauhaus will act as an incubator for innovation and creativity to drive sustainable design across Europe and beyond, that is also appealing and affordable for citizens. It will network practitioners from across disciplines and mobilise creative minds to reimagine how sustainable living could and should be in the future.
+
+The New European Bauhaus is an interdisciplinary project that will create experimental spaces where art, culture, science and technology can mingle, imagine, test and demonstrate new solutions helping to develop new lead markets. It will have two dimensions. The first is a network of thinkers, planners, architects, entrepreneurs, students and citizens working together to develop sustainability in style. The second dimension will consist of real existing building projects across the EU.
+
+The New European Bauhaus will also be an accelerator for socially and aesthetically promising green and digital solutions, technologies and products. It will foster innovative solutions in terms of architecture and materials. Nature-based materials such as wood can play a crucial role in the design of the New European Bauhaus as they can have a double benefit: stocking carbon emissions in buildings and avoiding emissions that would have been needed to produce conventional construction materials.
+
+The New European Bauhaus will be set up in three phases: Design, Deliver and Diffuse. From now until summer 2021, the Commission will conduct a broad participatory co-creation process for its “design”, with the aim of launching calls for proposals under the next Multi-Annual Framework in all relevant programmes. The “delivery” of the first European Bauhaus’ construction or transformation will start in the second half of 2021.
+
+But this will only be the beginning. The goal is to “diffuse” a network of Bauhaus’ with different features, always keeping in mind the transformation towards living together sustainably. In a first wave, we would aim at establishing a series of five founding Bauhaus’ in 2022 in different EU countries. All projects would deal with the built environment as a whole but should focus on different aspects such as climate challenges, accessibility, social cohesion, digital construction, sustainable bio-resources etc. In a second wave, further Bauhaus’ can be added across the EU and even globally.
+
+The project will be co-steered by an advisory board of external experts including scientists, architects, designers, artists, planners and civil society to make sure that the European Bauhaus will keep on track and deliver on the objectives.
+
+4. Focus areas for building renovation
+
+While the measures described above are designed to unlock the renovation of all buildings, three areas deserve specific attention: a) tackling energy poverty and worst-performing buildings; b) renovating public buildings, such as administrative, educational and healthcare facilities and c) decarbonising heating and cooling. These areas should be considered as a priority for policy and financing, because they offer huge potential for increasing renovation rates, while delivering large energy savings and healthier and more comfortable buildings for citizens.
+
+4.1. Tackling energy poverty and worst-performing buildings
+
+With nearly 34 million Europeans unable to afford keeping their home adequately warm
+65
+, tackling energy poverty is an urgent task for the EU and its Member States. Each year, 800 000 social homes need renovation, requiring an estimated EUR 57 billion of additional funding
+66
+per year.
+
+Inefficient buildings are often synonymous with energy poverty and social problems
+67
+. This often means that people with low incomes have little control over their energy expenditure, causing a vicious circle of high energy bills, arrears
+68
+and problems with wellbeing and health. People in inefficient buildings are more exposed to cold spells, heatwaves and other impacts of climate change
+69
+. Inadequate comfort and sanitary conditions in housing and work environments, such as inadequate indoor temperatures, deficient air quality and exposure to harmful chemicals and materials, contribute to lower productivity, health problems and higher mortality and morbidity.
+
+Poorly performing buildings have a large potential for improvement, but their renovation faces persistent barriers ranging from regulatory obstacles to structural factors. Renovation of social and multi-apartment housing faces additional barriers due to the complex decision-making process
+70
+. Addressing these barriers call for an integrated approach that also accounts for the social setting and affordability of housing. Minimum energy performance standards coupled with financing that limit the monthly net expenditure of the inhabitants can significantly accelerate renovation, as explained in sections 3.1. and 3.2. Accompanying services and technical assistance are essential for the worst-performing buildings.
+
+The Commission will also propose to expand the use of ESCOs and energy performance contracts, which proved to work well in some Member States
+71
+, through the upcoming revision of the EED to make renovation affordable for all households, including those with a limited ability to cover upfront costs.
+
+Financing solutions for low-income households for cost neutrality must address rents, energy and operating costs and local taxes through the use of grants, subsidised renovation measures or the use of energy savings for repayment (limiting upfront investment to available grants). Such solutions can be deployed alongside micro-credits backed by a guarantee fund to promote fair cost-sharing between owners and tenants, on-bill financing schemes and on-tax financing schemes. Vulnerable households must be shielded from rent increases that may follow renovations. Offering blended loans and guarantees from public and private sources through one-stop shops may nurture trust in renovation and ensure certain quality requirements are met
+72
+. 
+
+In accordance with the Clean Energy for All Europeans Package, Member States must use their National Energy and Climate Plans and Long-Term Renovation Strategies to identify dwellings of people at risk of energy poverty and develop effective strategies for renovating these as a matter of priority
+73
+. In parallel to this Communication, the Commission presents a Recommendation on Energy Poverty
+74
+to guide Member States in defining and implementing such strategies to reduce energy poverty. The Commission will further assist them in developing targeted financial solutions for lower-income households, together with easier access to essential services, energy audits and energy performance certificates.
+
+Some Long-Term Renovation Strategies are already rolling out a mix of measures to raise awareness among vulnerable target groups and insulation programmes that combine financial and practical support
+75
+. The EU Building Stock Observatory
+76
+, the EU Energy Poverty Observatory
+77
+, the Horizon Europe Mission on Cities
+78
+ and the EU Covenant of Mayors Office
+79
+ can further assist Member States in taking stock and identifying segments in need, and in linking renovation strategies to social indicators and policies to address energy poverty.
+
+In order to guarantee that local social housing projects have access to all necessary technical capacity, the Commission will launch the Affordable Housing Initiative. It will pilot 100 lighthouse renovation districts in a smart neighbourhood approach and provide blueprints for replication, setting liveability and latest innovations at the forefront. It will mobilise cross-sectoral project partnerships linking them to local actors, including from the social economy, to promote efficient, circular and modular processes, social engagement models to empower residents, inclusive and accesible developments and cultural innovation.
+
+To address the specific challenges in rural and remote locations, the Commission will in 2021 come forward with a Communication on the Long-Term Vision for Rural Areas to analyse social and infrastructure aspects in rural areas and examine possible action in the short and medium-term.
+
+The use of standardised industrial solutions applied as part of a comprehensive renovation package enable cheaper and quicker renovation with limited impact on the residents and can be of particular relevance in the case of social housing
+80
+. In this context, the potential of efficiency purchase agreements based on smart measuring of the actual savings achieved should also be piloted and potentally scaled up.
+
+Finally, social enterprises are important partners in tackling energy poverty through socially innovative solutions, including energy awareness campaigns, retraining unemployed people to energy poverty advisors or purchasing of energy-efficient appliances to rent out, and they should be fully involved in the renovation wave.
+
+4.2. Public buildings and social infrastructure showing the way
+
+Public and privately-owned social infrastructure, public administrative buildings, social housing, cultural institutions, schools, hospitals and healthcare facilities can spearhead the renovation wave, serving as a role model and reference point for the industrialisation of construction and the co-benefits that become immediately visible to the public.
+
+The Commission will issue guidance on the Energy Efficiency First principle in early 2021 to help public authorities properly take into account all costs and wider benefits of the investments in the built environment, which could be practically applied in public procurement.
+
+Given the limited scope of existing legislative requirements for renovation of public buildings, the Commission will propose by June 2021 the need to extend the scope of the requirements to all public administration levels and to increase the annual renovation obligation as part of the revision of the EED. This will be done in conjunction with the phased introduction of minimum energy performance standards in the context of the revision of the EPBD by the end of 2021. The Commission will also develop comprehensive guidance on sustainable public investments through procurement.
+
+Moreover, by June 2022, the Commission will look into the possibility to develop green public procurement criteria for public buildings such as office buildings and schools related to life-cycle and climate resilience and based on Level(s). The Commission will also issue, based on the upcoming assessment of the Long-Term Renovation Strategies, indicative milestones for the renovation of public and private service buildings for 2030 and 2040 with a view to decarbonising the building stock by 2050.
+
+4.3. Decarbonising heating and cooling
+
+Modernising the heating and cooling systems of buildings is essential to decarbonise the EU building stock, to deploy local renewable energy potential and to reduce the EU’s dependence on imported fossil fuels. In the EU, heating, cooling and domestic hot water account for around 80% of energy consumed in residential buildings. Two thirds
+81
+of this energy comes from fossil fuels. Many systems are old and inefficient and half are beyond their service lifetime. Stand-alone systems provide up to 88% of heat supply and district heating systems supply the remaining 12%
+82
+.
+
+According to the impact assessment for the Climate Target Plan 2030, the residential sector would have to undergo the highest reduction in energy demand in heating and cooling, ranging between -19% to -23%, compared to 2015. The annual rate of replacement of heating equipment would have to reach around 4% in both the residential and services sector. During the same time period, the share of renewables and waste heat would have to increase to 38-42%
+83
+to reach the objective.
+
+The Renewable Energy Directive
+84
+, together with the Energy Efficiency Directive
+85
+, require the Member States to provide the Commission with their assessment of how to decarbonise their heating and cooling systems using their potential for efficiency, renewables and waste heat and include this in the comprehensive assessment due by December 2020.
+
+Based on a thorough impact assessment, the revision of the Renewable Energy Directive by June 2021 will consider strengthening the existing renewable heating and cooling target in accordance with the proposed higher climate target ambition for 2030 and introducing a requirement to use minimum levels of renewables in buildings. The revision will explore a toolbox of measures to promote advanced heating and cooling, including highly efficient low-temperature renewable and waste heat and cold technologies and the development of local and regional heating and cooling plans, and to address the barrier of high upfront capital investment. It will also promote the use of decarbonised gases that can create local synergies with municipal and agricultural waste recycling and industrial sectors. The Commission will propose measures for facilitating access to waste and renewable heat and cold
+86
+. 
+
+Based on a thorough impact assessment, the revision of the Energy Efficiency Directive by June 2021 will strengthen the capacities of public authorities to prepare, finance and implement comprehensive heating and cooling planning in coordination with renovation projects. Local authorities and utility companies have an important role, in creating the necessary regulatory framework, market conditions and skills and in preparing a robust pipeline of projects to finance the modernisation of heating and cooling systems. Integrated planning, specific information about the building stock and energy supply options are necessary to decarbonise heating and cooling in neighbourhoods and at the national level
+87
+. 
+
+The Ecodesign Framework Directive
+88
+and the product-specific eco-design and energy labelling
+89
+ delegated and implementing acts will further be developed to continue promoting high environmental standards, providing the public with information on the most efficient products and steering financial incentives towards the highest performing ones.
+
+The Commission encourages public authorities to consider using energy and CO2 taxation to promote the switch-away from fossil fuels. The upcoming impact assessments for the revision of key climate and energy legislation envisaged by June 2021 will look into extending the use of emission trading to include emissions from buildings.
+90
+The EU ETS covers at present around 30% of building emissions from heating due to the coverage of district heating as well as electric heating.
+
+5. Conclusion
+
+In 10 years, the buildings of Europe will look remarkably different. Buildings will be the microcosms of a more resilient, greener and digitalised society, operating in a circular system by reducing energy needs, waste generation and emissions at every point and reusing what is needed. Their roofs and walls will increase the green surface of our cities and improve the urban climate and biodiversity. Within their walls, buildings will host smart and digitalised appliances, providing real time data on how, when and where energy is consumed. Recharging electric vehicles, namely bikes, cars and vans, in residential and office buildings will be a common experience complementing publicly accessible charging infrastructure. Many more Europeans will be prosumers, producing electricity for self consumption or even selling it back to the grid. Fossil fuels will gradually disappear from heating and cooling.
+
+District approaches will unite people and communities. Buildings will be less energy-consuming, more liveable, and healthier for everybody. Cities will become greener and better connected with nature. New jobs and professional profiles will emerge. Europe’s construction industry will thrive on the opportunities provided by a sustained rate of renovations and consolidate its global leadership in innovative materials, turning the buildings sector from a carbon source into a carbon sink. Positive effects will spill over to other industrial ecosystems. New and larger markets for green construction and for green loan and mortgage financing will develop.
+
+This Communication sets out a strategy to embrace, accelerate and drive such a transformation in a way that is underpinned by the climate neutrality objective, applies circularity principles, contributes to the Sustainable Development Goals and Europe’s competitiveness and protects the right of everyone to have affordable, liveable, accessible and healthy housing while safeguarding cultural heritage.
+
+The Commission will advise and support Member States to plan and implement ambitious measures for renovation in the context of their recovery plans. In the coming months, it will present a comprehensive set of policy and regulatory actions to break down existing barriers holding back renovation, notably through the revision of the Energy Efficiency and Renewable Energy Directives and by strengthening the EU Emissions Trading System in the context of the 2030 follow-up package by June 2021. This will be complemented by a range of further initiatives including the revision of the Energy Performance of Buildings Directive, as set out in the annexed action plan.
+
+Renovation should be a shared project across Europe. The mobilisation and ownership of cities, local and regional authorities, stakeholders, national governments and citizens will be key to sustaining it. The Commission will work in close partnership with the Committee of the Regions and with local and municipal authorities including by using the Climate Pact. It will facilitate the exchange of good practices and mutual inspiration through cross-border networks such as EU committees, concerted actions or expert groups, stakeholder fora, the Covenant of Mayors and the Smart Cities Marketplace.
+
+The Renovation Wave can support recovery for the individuals and economy alike, and pursuing its benefits must be sustained over the long term. The Commission will track progress on renovation through the European Semester and the monitoring and reporting mechanisms set out in the Governance of the Energy Union and Climate Action, in particular through the Technical Working Group on the implementation of the Governance Regulation, with a particular focus on the NECPs and Long-Term Renovation Strategies implementation.
+
+The Commission invites the European Parliament, the Council, the Committee of the Regions, the European Economic and Social Committee, the European Investment Bank, Member States, citizens and all stakeholders to discuss the strategy set out in this Communication and to contribute to the actions needed to step up energy efficient and sustainable renovation of buildings. Working together at all levels, we can make a European Renovation Wave happen.
+
+(1)
+
+Building codes with specific regulation on thermal insulation of the building envelope started appearing after the 1970s in Europe. This means that a large share of today's EU building stock was built without any energy performance requirement: one third (35%) of the EU building stock is over 50 years old, more than 40% of the building stock was built before 1960. Almost 75% of it is energy inefficient according to current building standards. Source: JRC report “Achieving the cost-effective energy transformation of Europe’s buildings”.
+
+(2)
+
+These figures refer to the use and operation of buildings, including indirect emissions in the power and heat sector, not their full life cycle. The embodied carbon in construction is estimated to account for about 10% of total yearly greenhouse gas emissions worldwide, see IRP, Resource Efficiency and Climate Change, 2020, and UN Environment Emissions Gap Report 2019.
+
+(3)
+
+“Stepping up Europe’s 2030 climate ambition Communication” COM (2020) 562 final
+
+(4)
+
+Compared to 2015 levels, See SWD(2020) 176 final.
+
+(5)
+
+See 2019 Commission Recommendation on Building Renovation (EU) 2019/786.
+
+(6)
+
+Employment and Social Developments in Europe, Annual Review 2019, European Commission.
+
+(7)
+
+ The removal of barriers to accessibility is an obligation for the EU and all Member States as Parties to the UN Convention on the Rights of Persons with Disabilities.
+
+(8)
+
+See Article 2(18) Governance Regulation (EU) 2018/1999: “‘energy efficiency first’ means taking utmost account in energy planning, and in policy and investment decisions, of alternative cost-efficient energy efficiency measures to make energy demand and energy supply more efficient, in particular by means of cost-effective end-use energy savings, demand response initiatives and more efficient conversion, transmission and distribution of energy, whilst still achieving the objectives of those decisions”.
+
+(9)
+
+The European Green Deal, COM(2019) 640 final.
+
+(10)
+
+Powering a climate-neutral economy: An EU Strategy for Energy System Integration, COM(2020) 299 final.
+
+(11)
+
+This refers to energy from renewable sources produced on-site or nearby.
+
+(12)
+
+Climate resilient buildings means that the buildings are renovated to be resilient against acute and chronic climate related hazards relating to temperature, wind, water and solid mass, as appropriate. A complete list of such hazards is included in Table 1 of Annex I of Commission Implementing Regulation (EU) 2020/1208.
+
+(13)
+
+In line with the Davos Declaration “Towards a High-quality Baukultur in Europe” adopted by European Ministers of Culture and stakeholders in 2018, "quality architecture" is not only defined by aesthetics and functionality but also by its contribution to people’s quality of life and to the sustainable development of our cities and rural areas.
+
+(14)
+
+Circular economy actions can lead to reductions of up to 60 % in the materials-related greenhouse gases emitted across the life-cycles of buildings. https://www.eea.europa.eu/highlights/greater-circularity-in-the-buildings
+
+(15)
+
+ See JRC report “Untapping multiple benefits: hidden values in environmental and building policies”
+
+(16)
+
+ The summary report of the stakeholder consultation process is available on the Have Your Say portal (
+here
+) and on the Renovation Wave dedicated webpage  (
+here
+).
+
+(17)
+
+ In residential buildings, insufficient understanding of energy use and savings is rated as very important/important barrier by more respondents to the Open Public Consultation on the Renovation Wave than any other barrier. Different interests between house owners and house occupants, disagreements between several owners and difficulties in planning building renovation works are among the top barriers to building renovation.
+
+(18)
+
+Directive 2012/27/EU on energy efficiency (EED), as amended by Directive 2018/2002; Directive (EU) 2010/31 on Energy Performance of Buildings (EPBD) as amended by Directive.
+
+(19)
+
+COM(2020) 575 final
+
+(20)
+
+Published on 17 September 2020
+
+(21)
+
+ Lack of or limited resource to finance building renovation comes as the most important barrier to building renovation rated as very important/important by an overwhelming majority of 92% of respondents to the Open Public Consulation on the Renovation Wave
+
+(22)
+
+ Cf. European Pillar of Social Rights, principle 20
+
+https://ec.europa.eu/commission/priorities/deeper-and-fairer-economic-and-monetary-union/european-pillar-social-rights/european-pillar-social-rights-20-principles_en
+
+(23)
+
+Commission Delegated Regulation C(2020) 6930, supplementing Directive (EU) 2010/31/EU of the European Parliament and of the Council by establishing an optional common European Union scheme for rating the smart readiness of buildings ), and Commission Implementing Regulation C(2020) 6929, detailing the technical modalities for the effective implementation of an optional common Union scheme for rating the smart readiness of buildings.
+
+(24)
+
+ In the context of their Long-Term Renovation Strategies, France has adopted a progressive set of measures to this effect, starting with a ban on rent increase in the case of poorly performing buildings (“passoire énergétique”, no performance specified) as from 2021, a ban on renting these as from 2023 and an obligation to renovate all worst performing buildings as from 2028. In the Netherlands, all office buildings will have to be EPC class C by 2023 and EPC class A by 2030. Belgium-Flanders is also considering policy proposals for minimum EPC level for non-residential buildings from 2030 and minimum EPC level for residential rentals.
+
+(25)
+
+Lack of a common data format results in certificates as pdf file and thus prevents the easy access, use and analysis of relevant data.
+
+(26)
+
+By June 2021, as part of the revision of the EED. Energy audits are currently mandatory for large enterprises and Member States must set up programmes to encourage SMEs to carry them out, but it is not compulsory to implement audit recommendations.
+
+(27)
+
+ Digital Building Logbooks will serve as repositories for data on individual buildings and facilitate information sharing within the construction sector, and between building owners and tenants, financial institutions and public authorities.
+
+(28)
+
+ As foreseen by the EPBD, Building Renovation Passports will provide a clear roadmap for staged renovation over the lifetime of a building, helping owners and investors plan the best timing and scope for interventions.
+
+(29)
+
+ The Commission’s recent Level(s) framework covers energy, material and water use, quality and value of buildings, health, comfort, resilience to climate change and life-cycle cost. https://ec.europa.eu/environment/eussd/buildings.htm
+
+(30)
+
+See
+https://ec.europa.eu/energy/topics/energy-efficiency/energy-efficient-buildings/eu-bso_en
+
+(31)
+
+See “Identifying Europe’s recovery needs”, SWD(2020) 98 final and “Stepping up Europe’s 2030 climate ambition Investing in a climate-neutral future for the benefit of our people”, SWD(2020) 176 final.
+
+(32)
+
+Support from other EU programmes such as InvestEU, the Connecting Europe Facility, LIFE and Horizon Europe as well as national funds can also be combined with the Recovery and Resilience Facility.
+
+(33)
+
+ COM(2020) 575 final Annual Sustainable Growth Strategy 2021
+
+(34)
+
+ For individual assessments, please see SWD(2020)900-SWD(2020)926
+
+(35)
+
+https://ec.europa.eu/info/departments/recovery-and-resilience-task-force
+
+(36)
+
+Setting up a dedicated thematic focus on the Renovate Flagship, and involving representatives across the various national ministries concerned as part of the Energy Performance of Buildigs Directive Concerted Action (
+https://epbd-ca.eu
+) in close cooperation with the Concerted Actions on the Energy Efficiency Directive and the Renewable Energy Directive, and in liaison with the Technical Working Group under the Energy Union Governance.
+
+(37)
+
+In 2014-2020, around EUR 17 billion in cohesion funds were dedicated to building renovation.
+
+(38)
+
+With ERDF funds, Croatia has funded the renovation of 250 000 m2 and 69 public buildings, such as hospitals and nursery schools with expected annual savings of 70GWh.
+
+(39)
+
+ Targeted review of the General Block Exemption Regulation (State aid): extended scope for national funds to be combined with certain Union programmes (2nd consultation) https://ec.europa.eu/competition/consultations/2020_gber/consultation_document_en.pdf
+
+(40)
+
+Higher energy efficiency is seen to be correlating with lower mortgage default rates and with increasing asset value. Source: Final report on correlation analysis between energy efficiency and risk. EeDaPP. https://eedapp.energyefficientmortgages.eu/wp-content/uploads/2020/08/EeDaPP_D57_27Aug20-1.pdf
+
+(41)
+
+Such as tax incentives and credits in the context of direct taxation (e.g. income and corporate taxation) and environmental taxation (carbon taxes), property taxation favouring better buildings, earmarking tax revenues for renovation, tax depreciation favouring renovation investments, VAT rates for construction services and sustainable materials in line with the VAT Directive (Annex III), as well as regional and local taxes and fees. See also Bertoldi, P, Economidou, M, Palermo, V, Boza‐Kiss, B, Todeschi, V. How to finance energy renovation of residential buildings: Review of current and emerging financing instruments in the EU. WIREs Energy Environ. 2020;e384. https://doi.org/10.1002/wene.384
+
+(42)
+
+The energy savings achieved under these obligations contribute to delivering on the energy savings obligation under Article 7 EED.
+
+(43)
+
+Using grants from Horizon 2020, the European Mortgage Federation - European Covered Bond Council (EMF-ECBC) has been developing an Energy Efficiency Mortgages Initiative with a set of supportive actions to stimulate private financing in energy saving renovation of residential and commercial buildings.
+
+(44)
+
+ Directive 2014/17/EU
+
+(45)
+
+Directive 2008/48/EC
+
+(46)
+
+ See EaDaPP, Final results of the correlation analysis between energy efficiency and risk, 2020.
+
+(47)
+
+Through two delegated acts:on Climate Change mitigation and adaptation and on Transition to a circular economy, as well as Sustainable use and protection of water and marine resources, Pollution and prevention control and Protection and restoration of biodiversity and ecosystems. Regulation (EU) 2020/852, OJ L 198, 22.6.2020, p. 13.
+
+(48)
+
+By using the cohesion policy funds, the Member State compartment of InvestEU or the Recovery and Resilience Facility.
+
+(49)
+
+The Smart Cities Marketplace builds on the experiences and outcomes of 17 large-scale cross-border cooperative city demonstration projects, known as “Lighthouse projects”. These lighthouse projects gather 120 cities, based on more than EUR 400 million funding through Horizon2020 that has leveraged much higher amounts of investments. More information is available at https://smartcities-infosystem.eu/scc-lighthouse-projects.
+
+(50)
+
+12-18 local jobs per million euro invested, IEA, Sustainable Recovery, June 2020.
+
+(51)
+
+ In line with national measures transposing Directive 2009/148/EC on the protection of workers from the risks related to exposure to asbestos at work
+
+(52)
+
+ The Blueprint for sectoral cooperation on skills will develop a sectoral strategy for skills intelligence and labour market relevant skills development, including the development of relevant European vocational core curricula and roll out training.
+
+(53)
+
+ Level(s) is a common European approach to assess and report on the sustainability of buildings. See
+https://ec.europa.eu/environment/eussd/buildings.htm
+ 
+
+(54)
+
+Currently, 70% of construction firms dedicate less than 1% of their revenues to digital and innovative projects, and the uptake of Building Information Modelling (BIM) remains particularly low. Technologies, such as IoT, AI, robots, digital twins reduce the time needed for physical works.
+
+(55)
+
+Including, Building Information Modelling (BIM), Geographic Information System (GIS) and Augmented Reality
+
+(56)
+
+The Horizon Europe Misson on ‘Climate-Neutral and Smart Cities’ aims to support, promote and showcase 100 European cities in their systemic transformation towards climate neutrality by 2030 and make these cities into experimentation and innovation hubs for all cities, thus leading on the European Green Deal and on Europe’s efforts to become climate neutral by 2050.
+
+(57)
+
+ The Clean Energy Transition Co-funded Partnership covers all the areas of the Strategic Energy Technology Plan is linked to the National Energy and Climate Plans.
+
+(58)
+
+Such as green mortgages definitions, property-linked finance, or new one-stop-shop models.
+
+(59)
+
+Smart meters have a strong potential to raise consumers’ awareness on energy consumption patterns. Smart gas meters are a requirement under the Energy Efficiency Directive complementing obligations on smart electricity meters. 
+
+(60)
+
+ Directive (EU) 2018/844 of the European Parliament and of the Council of 30 May 2018 amending Directive 2010/31/EU on the energy performance of buildings and Directive 2012/27/EU on energy efficiency
+
+(61)
+
+Where several buildings optimise energy consumption across buildings as well as the wider energy system. These districts are characterised by an annual positive energy balance and integrate with local renewable energy, local storage (both electricity and heat), smart energy grids, demand-response, cutting-edge energy management (electricity, heating and cooling), user interaction/involvement and ICT. “Positive Energy Districts” projects are developed through Horizon 2020 Lighthouse Projects (
+https://smartcities-infosystem.eu/scc-lighthouse-projects
+) and in projects where Member States cooperate through the Urban Europe Joint Programming Initiative (JPI) (
+https://jpi-urbaneurope.eu/ped
+), as well as through the Strategic Energy Technologies Plan that has a dedicated group to support such projects.
+
+(62)
+
+Directive (EU) 2019/944 of the European Parliament and of the Council of 5 June 2019 on common rules for the internal market for electricity and amending Directive 2012/27/EU
+
+(63)
+
+This can include lessons learnt from EU-funded projects, see for instance https://www.rescoop.eu/the-rescoop-model
+
+(64)
+
+ Such as the ones participating in the proposed Horizon Europe Mission on ‘100 Climate-neutral Cities by 2030 – by and for the citizens’.
+
+(65)
+
+ Data from 2018. Eurostat, SILC [ilc_mdes01]).
+
+(66)
+
+Report of the High-Level Task Force on Investing in Social Infrastructure in Europe, January 2018.
+
+(67)
+
+ For example, the EEFIG has identified studies showing that default rates of mortgages with good Energy Performance Certificate energy ratings can be as low as 0.92%, compared to 1.18% for mortgages with poor Energy Performance Certificate energy ratings (28% higher default rate).
+
+(68)
+
+In 2018 30.3 million people were unable to keep up with utility bills, including energy bills, and so were at risk of having their supply cut off.
+
+(69)
+
+ European Environment Agency, Report No 22/2018: Unequal exposure and unequal impacts: social vulnerability to air pollution, noise and extreme temperatures in Europe.
+
+(70)
+
+See 
+https://ec.europa.eu/jrc/en/publication/energy-efficiency-upgrades-multi-owner-residential-buildings-review-governance-and-legal-issues-7-eu
+
+(71)
+
+See the Energy companies in the EU status report of the Joint Research Centre https://publications.jrc.ec.europa.eu/repository/bitstream/JRC106624/kjna28716enn.pdf. As an example, in Estonia, since April 2010, around 1100 multi-apartment buildings were reconstructed (mainly using pre-constructed elements).
+
+(72)
+
+ 
+Estonia’s KredEx Revolving Fund
+supports combining loans, loan guarantees and grants. The National Revolving Fund for Energy Saving in the Netherlands works in combination with the total rental housing stock expected to reach and average EPC class B by 2021.
+
+(73)
+
+In Denmark, the 2018 energy agreement allocates DKK 200 million per year from 2021-2024 to energy savings in buildings. The grant will be awarded to building owners who can demonstrate the highest energy saving potential to ensure grants targetthe least energy efficient segments of the national building stock.
+
+(74)
+
+ Commission Recommendation C(2020)9600 on Energy Poverty.
+
+(75)
+
+BE, Flemish Region. Vulnerable groups qualify for a free energy scan of their homes; over 20,000 such scans are being carried out every year.
+
+(76)
+
+ 
+https://ec.europa.eu/energy/topics/energy-efficiency/energy-efficient-buildings/eu-bso_en
+ 
+
+(77)
+
+ 
+https://www.energypoverty.eu/
+ 
+
+(78)
+
+ 
+https://ec.europa.eu/info/horizon-europe-next-research-and-innovation-framework-programme/missions-horizon-europe/climate-neutral-and-smart-cities_en
+
+(79)
+
+https://www.covenantofmayors.eu/
+
+(80)
+
+Examples of projects to industrialise building renovation processes that have been co-funded by the EU:
+Transition Zero
+,
+Energiesprong
+,
+4RinEU
+,
+BERTIM
+,
+MORE-CONNECT
+,
+P2Endure
+,
+Pro-GET-OnE
+,
+DRIVE 0
+.
+
+(81)
+
+In 2017, the overall share of fossil fuels in buildings' heating was 76,5%.
+
+(82)
+
+ However, in Denmark and Latvia, up to 60% of heat is supplied by district heating systems.
+
+(83)
+
+Compared to 33% in the baseline scenario. 
+
+(84)
+
+ Article 15(7) of the Rewable Energy Directive (2018/2001/EU).
+
+(85)
+
+ Article 14 of the Energy Efficiency Directive (2012/27/EU).
+
+(86)
+
+ Many complex, industrial and service buildings, such as data centres, currently release excess heat or cold into the environment which could be reused. Among the areas with noteworthy potentials are shopping malls and datacentres.
+
+(87)
+
+Underlined by the requirement to carry out by 31 December 2020 comprehensive assessment of the potential for efficient district heating and cooling in line Article 14(1) of and Annex VIII to Directive 2012/27/EU on energy efficiency, as amended by Commission Delegated Regulation (EU) 2019/826. The upcoming second round of the comprehensive assessments should also integrate the requirements laid down in Article 15(7) of the recast Renewable Energy Directive by integrating the assessments of the potentials for using renewable energy and waste heat and cold for heating and cooling.
+
+(88)
+
+Directive 2009/125/EC of the European Parliament and of the Council of 21 October 2009 establishing a framework for the setting of ecodesign requirements for energy-related products.
+
+(89)
+
+ Regulation (EU) 2017/1369 of the European Parliament and of the Council of 4 July 2017 setting a framework for energy labelling and repealing Directive 2010/30/EU (OJ L 198, 28.7.2017, p. 1–23)
+
+(90)
+
+COM(2020)562 final
+
+EUROPEAN COMMISSION
+
+Brussels, 14.10.2020
+
+COM(2020) 662 final
+
+ANNEX
+
+to the
+
+COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS
+
+A Renovation Wave for Europe - greening our buildings, creating jobs, improving lives
+
+{SWD(2020) 550 final}
+
+Annex: The Renovation Wave: key Commission actions and indicative timelines
+
+Strengthening information, legal certainty and incentives for renovation
+
+Revision of Energy Performance Certificates and proposal to introduce mandatory minimum energy performance standards for all types of buildings in the EPBD
+
+2021
+
+Revision of requirements on energy audits in the EED
+
+2021
+
+Proposal on Building Renovation Passports and introduction of a single digital tool unifying them with Digital Building Logbooks
+
+2023
+
+Developing a 2050 whole life-cycle performance roadmap to reduce carbon emissions form buildings and advancing national benchmarking with Member States
+
+2023
+
+Reinforced, accessible and more targeted funding supported by technical assistance
+
+ Proposed strengthened financing for the ELENA facility from the InvestEU advisory hub and possibly from other European programmes
+
+2021
+
+Consider the introduction of a ‘deep renovation’ standard as part of the EPBD revision
+
+2021
+
+Revising the climate-proofing guidelines for projects supported by the EU
+
+2021
+
+Supporting de-risking energy efficiency investments, and proposing to incorporate environmental, social and governance (ESG) risks into the Capital Requirements law and the Solvency II Directive
+
+2021
+
+Reviewing the General Block Exemption Regulation and Energy and Environmental Aid Guidelines 
+
+2021
+
+Creating green jobs, upskilling workers and attracting new talent
+
+Supporting Member States to update their national roadmaps for the training of the construction workforce through the Build Up Skills Initiative and helping implement the 2020 European Skills Agenda
+
+2020
+
+Sustainable built environement
+
+Reviewing material recovery targets and supporting the internal market for secondary raw materials
+
+2024
+
+Presenting a unified EU Framework for digital permitting and recommending Building Information Modelling in public procurement
+
+2021
+
+Supporting digitalisation in the construction sector through Horizon Europe, Digital Innovation Hubs and Testing and Experimentation Facilities
+
+2021
+
+Placing an integrated participatory and neighbourhood based approach at the heart of renovation
+
+Setting up a creative European Bauhaus platform to combine sustainability with art and design
+
+2020
+
+Supporting sustainable and decarbonised energy solutions through Horizon Europe and the R&I co-creation space 
+
+2020
+
+Facilitating the development of energy communities and local action through the European Smart Cities Marketplace
+
+2020
+
+Supporting the development of climate-resilient building standards
+
+2020
+
+Tackling energy poverty and worst-performing buildings
+
+Launching the Affordable Housing Initiative piloting 100 renovation districts
+
+2021
+
+Public buildings and social infrastructure showing the way
+
+Proposing to extend the requirements for renovation to buildings in the EED to all public administration levels 
+
+2021
+
+Based on Level(s), developing green public procurement criteria related to life cycle and climate resilience for certain public buildings
+
+2022
+
+Decarbonising heating and cooling
+
+Developing ecodesign and energy labelling measures
+
+2020
+
+Assessing the extension of the use of emission trading to emissions from buildings 
+
+2021
+
+Revising the RED and the EED and considering strengthening the renewable heating and cooling target and introducing a requirement for minimum proportions of renewable energy in buildings. Also facilitating access of waste and renewable heat and cool into energy systems
+
+2021

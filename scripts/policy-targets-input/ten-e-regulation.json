@@ -1,0 +1,186 @@
+{
+  "policy_id": "ten-e-regulation",
+  "targets": [
+    {
+      "quote": "This Regulation lays down guidelines for the timely development and interoperability of the priority corridors and areas of trans-European energy infrastructure (energy infrastructure priority corridors and areas) set out in Annex I that contribute to ensuring climate change mitigation, in particular achieving the Union’s 2030 targets for energy and climate and its climate neutrality objective by 2050 at the latest",
+      "article": "Art. 1(1)",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": [
+        "climate neutrality",
+        "energy infrastructure corridors"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The Commission shall adopt the delegated act establishing the first Union list pursuant to this Regulation by 30 November 2023.",
+      "article": "Art. 3(4)",
+      "label": "commitment",
+      "timeline": "by 2023",
+      "indicators": [
+        "first Union list"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 24 March 2023, Member States shall take the non-legislative measures that they have identified under paragraph 5.",
+      "article": "Art. 7(6)",
+      "label": "commitment",
+      "timeline": "by 2023",
+      "indicators": [
+        "non-legislative streamlining measures"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 24 June 2023, Member States shall take the legislative measures that they have identified under paragraph 5.",
+      "article": "Art. 7(7)",
+      "label": "commitment",
+      "timeline": "by 2023",
+      "indicators": [
+        "legislative streamlining measures"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 23 June 2022, each Member State shall update, where necessary, the designation of one national competent authority which shall be responsible for facilitating and coordinating the permit granting process for projects on the Union list.",
+      "article": "Art. 8(1)",
+      "label": "commitment",
+      "timeline": "by 2022",
+      "indicators": [
+        "national competent authority"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the pre-application procedure, covering the period between the start of the permit granting process and the acceptance of the submitted application file by the national competent authority, which shall take place within an indicative period of 24 months",
+      "article": "Art. 10(1)(a)",
+      "label": "target",
+      "timeline": "24 months",
+      "indicators": [
+        "pre-application duration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the statutory permit granting procedure, covering the period from the date of acceptance of the submitted application file until the taking of the comprehensive decision, which shall not exceed 18 months.",
+      "article": "Art. 10(1)(b)",
+      "label": "target",
+      "timeline": "18 months",
+      "indicators": [
+        "statutory permit duration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The national competent authority shall ensure that the combined duration of the two procedures referred to in paragraph 1 does not exceed a period of 42 months.",
+      "article": "Art. 10(2)",
+      "label": "target",
+      "timeline": "42 months",
+      "indicators": [
+        "total permitting duration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 31 December of each year following the year of the inclusion of a project on the Union list, project promoters shall submit an annual report",
+      "article": "Art. 5(4)",
+      "label": "commitment",
+      "timeline": "annual",
+      "indicators": [
+        "project progress reporting"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the project contributes significantly to sustainability through the integration of renewable energy into the grid, the transmission or distribution of renewable generation to major consumption centres and storage sites, and to reducing energy curtailment",
+      "article": "Art. 4(3)(a)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "renewable integration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the project contributes significantly to sustainability, including by reducing greenhouse gas emissions, by enhancing the deployment of renewable or low carbon hydrogen, with an emphasis on hydrogen from renewable sources",
+      "article": "Art. 4(3)(d)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "renewable hydrogen deployment"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the project contributes significantly to sustainability through the reduction of carbon dioxide emissions in the connected industrial installations",
+      "article": "Art. 4(3)(c)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "industrial CO2 reduction"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the project contributes significantly to sustainability by ensuring the integration of a plurality of low-carbon and particularly renewable gases, including where they are locally sourced, such as biomethane or renewable hydrogen, into the gas transmission, distribution or storage systems in order to reduce greenhouse gas emissions",
+      "article": "Art. 4(3)(f)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "renewable gas integration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Smart electricity grids deployment: adopting smart grid technologies across the Union to efficiently integrate the behaviour and actions of all users connected to the electricity network, in particular the generation of large amounts of electricity from renewable or distributed energy sources and demand response by consumers, energy storage, electric vehicles and other flexibility sources",
+      "article": "Annex I(12)",
+      "label": "goal",
+      "timeline": "",
+      "indicators": [
+        "smart grid deployment"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Cross-border carbon dioxide network: development of infrastructure for transport and storage of carbon dioxide between Member States and with neighbouring third countries of carbon dioxide capture and storage captured from industrial installations for the purpose of permanent geological storage",
+      "article": "Annex I(13)",
+      "label": "goal",
+      "timeline": "",
+      "indicators": [
+        "CO2 transport and storage network"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Hydrogen interconnections in Western Europe (HI West): hydrogen infrastructure and the repurposing of gas infrastructure, enabling the emergence of an integrated hydrogen backbone",
+      "article": "Annex I(9)",
+      "label": "goal",
+      "timeline": "",
+      "indicators": [
+        "hydrogen backbone"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Northern Seas offshore grids (NSOG): offshore electricity grid development, integrated offshore electricity, as well as, where appropriate, hydrogen grid development and the related interconnectors in the North Sea, the Irish Sea, the Celtic Sea, the English Channel and neighbouring waters to transport electricity or, where appropriate, hydrogen from renewable offshore energy sources to centres of consumption and storage",
+      "article": "Annex I(4)",
+      "label": "goal",
+      "timeline": "",
+      "indicators": [
+        "offshore renewable grids"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "‘climate adaptation’ means a process that ensures that resilience to the potential adverse impacts of climate change of energy infrastructure is achieved through a climate vulnerability and risk assessment, including through relevant adaptation measures.",
+      "article": "Art. 2(19)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "climate resilience of infrastructure"
+      ],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}
