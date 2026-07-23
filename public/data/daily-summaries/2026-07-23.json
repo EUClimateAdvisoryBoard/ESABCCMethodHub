@@ -1,12 +1,18 @@
 {
   "date": "2026-07-23",
-  "generatedAt": "2026-07-23T12:28:28.946Z",
+  "generatedAt": "2026-07-23T18:13:34.473Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 23 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Will new UK PM&#8217;s green measures at home cause climate finance pain overseas?",
-      "summary": "Andy Burnham will cut bus fares and household electricity tax in a boost for UK climate action - but this will be funded partly by switching international climate finance from grants to loans The post Will new UK PM&#8217;s green measures at home cause climate finance pain overseas? appeared first on Climate Home News.",
+      "headline": "UK households free to install plug-in balcony solar panels from end of August",
+      "summary": "&lt;p&gt;Law change means renters and flat owners may be able to cut bills as energy costs soar amid Iran war&lt;/p&gt;&lt;p&gt;British households will be able to buy plug-in solar panels later this summer after the government changed the law so the UK’s biggest retailers could bring them to market for the first time.&lt;/p&gt;&lt;p&gt;People across the country will be able to join the millions across Europe generating their own electricity using “balcony solar panels” from 27 August, according ",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "I am used to hot days now. But the warm wind has really panicked me | Adrian Chiles",
+      "summary": "&lt;p&gt;I first noticed it a couple of weeks ago on the streets of Cardiff – and it felt alarmingly wrong&lt;/p&gt;&lt;p&gt;When the wind is warm, you know something is up. Naturally, I have been well aware of the awful reality of the climate crisis, but it has taken the warmth of the wind to really panic me. Not the endless 30C+ days, the desiccated garden, the tap slowing to a drip. No, it is the warm wind blowing on me. I can just about manage in punishing heat, even though it is particularl",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +23,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "OPINION on the proposal for a regulation of the European Parliament and of the Council on establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034 - PE786.677v02-00",
-      "summary": "OPINION on the proposal for a regulation of the European Parliament and of the Council on establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jana Nagyová&lt;br /&gt",
+      "headline": "India relaxes e-commerce investment rules for exports in win for Amazon - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQUk8xcnpNeU9mY0RLYi1CM3lKdk5xS1ZjcDhhWkJYclJVZmJyUnl4RlBZd0x3ZHlseU5va096WFBLNlhndWtLMFlKZXdfTktqbk1nR09jbWlRSkR3WWRVdUlBaUI0UDJHSURXUnBVdkpRemtNTW1XeUJrbV9HdTdKMlJGTDlIRDhZRVJFMXVhLURnMW5YN1FPNUgzT3RiUGJzOEtWaWl1bU1ENGI0?oc=5\" target=\"_blank\"&gt;India relaxes e-commerce investment rules for exports in win for Amazon&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,20 +33,21 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "UK households free to install plug-in balcony solar panels from end of August",
+          "link": "https://www.theguardian.com/money/2026/jul/23/uk-households-free-install-plug-in-balcony-solar-panels",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Law change means renters and flat owners may be able to cut bills as energy costs soar amid Iran war&lt;/p&gt;&lt;p&gt;British households will be able to buy plug-in solar panels later this summer after the government changed the law so the UK’s biggest retailers could bring them to market for the first time.&lt;/p&gt;&lt;p&gt;People across the country will be able to join the millions across Europe generating their own electricity using “balcony solar panels” from 27 August, according ",
+          "published": "2026-07-23T13:00:44.000Z",
+          "score": 13
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Will new UK PM&#8217;s green measures at home cause climate finance pain overseas?",
-          "link": "https://www.climatechangenews.com/2026/07/22/will-new-uk-pms-green-measures-at-home-cause-climate-finance-pain-overseas/",
-          "source": "Climate Home News",
-          "description": "Andy Burnham will cut bus fares and household electricity tax in a boost for UK climate action - but this will be funded partly by switching international climate finance from grants to loans The post Will new UK PM&#8217;s green measures at home cause climate finance pain overseas? appeared first on Climate Home News.",
-          "published": "2026-07-22T13:21:25.000Z",
-          "score": 13
-        },
         {
           "title": "I am used to hot days now. But the warm wind has really panicked me | Adrian Chiles",
           "link": "https://www.theguardian.com/commentisfree/2026/jul/23/i-am-used-to-hot-days-now-but-the-warm-wind-has-really-panicked-me",
@@ -50,19 +57,19 @@
           "score": 7
         },
         {
-          "title": "US signs landmark nuclear deal with Saudi Arabia",
-          "link": "https://www.bbc.co.uk/news/articles/cj03r59z73po?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Saudis must recognise Israel for nuclear deal, says Trump",
+          "link": "https://www.bbc.co.uk/news/articles/cwye71yq8wwo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The US Department of Energy says the \"peaceful\" co-operation agreement will give US firms \"great access\" to the Saudi nuclear energy programme.",
-          "published": "2026-07-23T09:17:50.000Z",
+          "description": "The US president says the landmark agreement to help Saudis develop nuclear energy is dependent on it joining the Abraham Accords.",
+          "published": "2026-07-23T17:58:02.000Z",
           "score": 7
         },
         {
           "title": "Trump's nuclear deal with Saudis jettisons longstanding US demands",
           "link": "https://www.bbc.co.uk/news/articles/cz05lx0xpero?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Past US presidents insisted that Saudi Arabia normalise relations with Israel in exchange for nuclear technology.",
-          "published": "2026-07-23T11:13:13.000Z",
+          "description": "Signing a nuclear pact in the Middle East is a bold move that has drawn criticism in the US and in Israel.",
+          "published": "2026-07-23T12:58:40.000Z",
           "score": 7
         },
         {
@@ -71,6 +78,14 @@
           "source": "BBC World News",
           "description": "The BBC's Sarah Smith explains the implications of the landmark cooperation agreement between both countries.",
           "published": "2026-07-22T22:45:08.000Z",
+          "score": 7
+        },
+        {
+          "title": "US-Saudi nuclear deal: How will it impact Middle East, US-Iran war?",
+          "link": "https://www.dw.com/en/us-saudi-nuclear-deal-how-will-it-impact-middle-east-us-iran-war/a-78087041?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Critics say the US-Saudi deal could spark a nuclear arms race in the Middle East. It&#039;s certainly not making US allies, like Israel and the UAE, happy. And reports suggest the US may already be backtracking on the deal.",
+          "published": "2026-07-23T16:14:00.000Z",
           "score": 7
         }
       ]
@@ -96,28 +111,28 @@
           "score": 13
         },
         {
-          "title": "More than 20,000 evacuated after intense wildfire in France",
+          "title": "Climate change exacerbating drought across Europe, scientists say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQSWRFejgwVC1xMUNLY01Mc2RXWkRnc1QzMllNZWpNMy1Xd1JZR0RsQlMtdGxaejFzTFV0OGVMTnliSEwxbk9Oalo1TmJXY2FiX1owaUJfQkw3S3dNM0JOcmZDYnNISllPam93aHo2bGxwb2pGTzE5Y1hKMlI3eDhuOTVDVjA3aTZzbDk2RUNaQ0wzWTRaVVFQMl9MUXQ3b3ozVFVfTVg0aC1LcFZmUHZOYnlLVHAwQTVNYTFv?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQSWRFejgwVC1xMUNLY01Mc2RXWkRnc1QzMllNZWpNMy1Xd1JZR0RsQlMtdGxaejFzTFV0OGVMTnliSEwxbk9Oalo1TmJXY2FiX1owaUJfQkw3S3dNM0JOcmZDYnNISllPam93aHo2bGxwb2pGTzE5Y1hKMlI3eDhuOTVDVjA3aTZzbDk2RUNaQ0wzWTRaVVFQMl9MUXQ3b3ozVFVfTVg0aC1LcFZmUHZOYnlLVHAwQTVNYTFv?oc=5\" target=\"_blank\"&gt;Climate change exacerbating drought across Europe, scientists say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-22T23:09:43.000Z",
+          "score": 13
+        },
+        {
+          "title": "France wildfire forces thousands to flee as tinder box conditions persist in warming Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONEJlRVlNb1o1bHBLTFBtNi1aeUVCSTBHYTF1dUdWcV9pR3ZwaVZqQUdqYTdvZWNnSkZ4VS1kRVhsZ1loQWpLeTIxSTFVelFXeTh2eE9rRTdwY1NLcWRwVnZXbFk0MEVoOGoxaTFxLU1ZeWk2OG0tc0NBT3dWOUgxbVJwYjBrT0hSZ1cwSHZYQV9ZRVdIMkExVUl5Z3pHZUVIdTI2d215R2xlQ2MxbWlKRG1yMlRhZTlUcDNXczBGdUFMYmw2YzJKWFd3NFE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxONEJlRVlNb1o1bHBLTFBtNi1aeUVCSTBHYTF1dUdWcV9pR3ZwaVZqQUdqYTdvZWNnSkZ4VS1kRVhsZ1loQWpLeTIxSTFVelFXeTh2eE9rRTdwY1NLcWRwVnZXbFk0MEVoOGoxaTFxLU1ZeWk2OG0tc0NBT3dWOUgxbVJwYjBrT0hSZ1cwSHZYQV9ZRVdIMkExVUl5Z3pHZUVIdTI2d215R2xlQ2MxbWlKRG1yMlRhZTlUcDNXczBGdUFMYmw2YzJKWFd3NFE?oc=5\" target=\"_blank\"&gt;France wildfire forces thousands to flee as tinder box conditions persist in warming Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&",
+          "published": "2026-07-23T16:41:43.000Z",
+          "score": 13
+        },
+        {
+          "title": "Thousands flee wildfires in France as temperatures reach extreme levels in southern Europe",
           "link": "https://www.theguardian.com/world/2026/jul/23/people-evacuated-intense-wildfire-saumos-france",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Reception centres open to thousands of evacuees after blaze begins in pine forest 45km west of Bordeaux&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/jul/23/eu-sanctions-russia-ukraine-marcio-rubio-sergei-lavrov-kallas-google-latest-news-updates\"&gt;Europe live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;More than 20,000 people, including thousands of tourists from campsites and other holiday accommodation, have been",
-          "published": "2026-07-23T11:46:01.000Z",
-          "score": 9
-        },
-        {
-          "title": "The human fridge: is this really the best way to cool down in a ‘cruelly hot’ climate?",
-          "link": "https://www.theguardian.com/lifeandstyle/2026/jul/22/human-fridge-japan-heatwave",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;A ‘personal cooling booth’ that promises to chill you out in 10 minutes has launched in Japan, with its makers claiming it beats air-conditioning or a fan&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt; The human fridge.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Age:&lt;/strong&gt; Brand new.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/lifeandstyle/2026/jul/22/human-fridge-japan-heatwave\"&gt;Continue reading...&lt;/a&gt;",
-          "published": "2026-07-22T16:11:53.000Z",
-          "score": 7
-        },
-        {
-          "title": "Who is Miatta Fahnbulleh, the radical-thinking new UK energy secretary?",
-          "link": "https://www.theguardian.com/politics/2026/jul/23/who-is-miatta-fahnbulleh-the-radical-thinking-new-uk-energy-secretary",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Selection of economist formerly at helm of green thinktank marks continuation of decarbonising Miliband era&lt;/p&gt;&lt;p&gt;In her first 48 hours as energy secretary, Miatta Fahnbulleh was left in no doubt about the thorny policy decision at the top of her in-tray. Protesters from Fossil Free London met her outside her new offices dressed as firefighters holding placards reading: “We’re already putting out fires, don’t start new ones.”&lt;/p&gt;&lt;p&gt;The MP for Peckham – a radical ",
-          "published": "2026-07-23T09:00:41.000Z",
-          "score": 7
+          "description": "&lt;p&gt;Some parts of Mediterranean Sea 5C hotter than normal, with air temperatures above 44C expected in Spain&lt;/p&gt;&lt;p&gt;Brutal heat torching southern Europe has forced more than 20,000 people to flee wildfires in France as a marine heatwave scalds the Mediterranean and researchers warn that “Dantesque” scenarios cannot be ruled out as infernos worsen.&lt;/p&gt;&lt;p&gt;A “particularly intense” wildfire on France’s Atlantic coast prompted a series of evacuations, including thousands o",
+          "published": "2026-07-23T16:36:51.000Z",
+          "score": 10
         }
       ]
     },
@@ -126,12 +141,12 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "OPINION on the proposal for a regulation of the European Parliament and of the Council on establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034 - PE786.677v02-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-786677_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council on establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jana Nagyová&lt;br /&gt",
-          "published": "2026-07-22T15:23:01.000Z",
-          "score": 22
+          "title": "India relaxes e-commerce investment rules for exports in win for Amazon - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQUk8xcnpNeU9mY0RLYi1CM3lKdk5xS1ZjcDhhWkJYclJVZmJyUnl4RlBZd0x3ZHlseU5va096WFBLNlhndWtLMFlKZXdfTktqbk1nR09jbWlRSkR3WWRVdUlBaUI0UDJHSURXUnBVdkpRemtNTW1XeUJrbV9HdTdKMlJGTDlIRDhZRVJFMXVhLURnMW5YN1FPNUgzT3RiUGJzOEtWaWl1bU1ENGI0?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQUk8xcnpNeU9mY0RLYi1CM3lKdk5xS1ZjcDhhWkJYclJVZmJyUnl4RlBZd0x3ZHlseU5va096WFBLNlhndWtLMFlKZXdfTktqbk1nR09jbWlRSkR3WWRVdUlBaUI0UDJHSURXUnBVdkpRemtNTW1XeUJrbV9HdTdKMlJGTDlIRDhZRVJFMXVhLURnMW5YN1FPNUgzT3RiUGJzOEtWaWl1bU1ENGI0?oc=5\" target=\"_blank\"&gt;India relaxes e-commerce investment rules for exports in win for Amazon&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-23T16:06:02.000Z",
+          "score": 2
         }
       ]
     },
@@ -148,20 +163,12 @@
           "score": 18
         },
         {
-          "title": "EU agrees on new round of sanctions against Russia",
-          "link": "https://www.dw.com/en/eu-agrees-on-new-round-of-sanctions-against-russia/a-78081102?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Canada-EU: Closer trade ties to counter Trump?",
+          "link": "https://www.dw.com/en/canada-eu-closer-trade-ties-to-counter-trump/a-78082851?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The European Union has agreed upon a new sanctions package against Russia for its war in Ukraine, which includes a price cap on Russian oil.",
-          "published": "2026-07-23T10:14:00.000Z",
+          "description": "Given they share the world&#039;s longest land border, Canada and the US have historically enjoyed fruitful trade relations. But with Donald Trump escalating his tariff war, Canada is looking to the EU and further afield.",
+          "published": "2026-07-23T13:38:00.000Z",
           "score": 8
-        },
-        {
-          "title": "France records more than 5,700 excess deaths during June heatwave",
-          "link": "https://www.theguardian.com/world/2026/jul/22/france-recorded-more-than-5700-excess-deaths-during-june-heatwave",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Figures come as large parts of southern Europe endure another record-breaking period of extreme temperatures&lt;/p&gt;&lt;p&gt;France recorded more than 5,700 excess deaths during its June heatwave, authorities have said, as swathes of southern Europe continue to endure another record-breaking period of extreme temperatures.&lt;/p&gt;&lt;p&gt;The French national health agency said on Wednesday that it had recorded 5,764 excess deaths ⁠between ​17 June and 2 July, an excess mortality rat",
-          "published": "2026-07-22T15:34:27.000Z",
-          "score": 4
         }
       ]
     },
@@ -178,22 +185,6 @@
           "score": 8
         },
         {
-          "title": "Europe wildfires prompt evacuations in France, Spain, Italy",
-          "link": "https://www.dw.com/en/europe-wildfires-prompt-evacuations-in-france-spain-italy/a-78080171?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Fires are blazing across several European countries as the continent braces for another heat wave. In 2026, wildfires have already burnt more land in Europe than the annual average over the past two decades.",
-          "published": "2026-07-23T08:52:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EXCLUSIVE: Chinese e-commerce giant JD.com given notice of EU concerns over Ceconomy takeover - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNLTYwNTBrRVgweEs3aHZDcEJZQmNpUFlPcG1abm01N3pKd2dXLWlZWkw1bFg4a3ZRcEhTYVl3ejlHaWhqSVhjUzlybUxIRW82ek1ZODlpR05pN0dSNnB3WnpBeVdDaV9zR2xNMnFGVDRkT2V2NldGcUR2d1JKOVlfMDJONUtRcm1lS3ZOal9GQUJtR2szMXpEclVPZ0pPQWtVM21pNThaLW1fak8xbWRsZGNsY1REYVFhZEVMcW9KR2tpbFEy?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNLTYwNTBrRVgweEs3aHZDcEJZQmNpUFlPcG1abm01N3pKd2dXLWlZWkw1bFg4a3ZRcEhTYVl3ejlHaWhqSVhjUzlybUxIRW82ek1ZODlpR05pN0dSNnB3WnpBeVdDaV9zR2xNMnFGVDRkT2V2NldGcUR2d1JKOVlfMDJONUtRcm1lS3ZOal9GQUJtR2szMXpEclVPZ0pPQWtVM21pNThaLW1fak8xbWRsZGNsY1REYVFhZEVMcW9KR2tpbFEy?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Chinese e-commerce giant JD.com given notice of EU concerns over Ceconomy takeover&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
-          "published": "2026-07-22T16:30:41.000Z",
-          "score": 8
-        },
-        {
           "title": "Paramount secures EU nod for $110 billion Warner Bros deal, US hurdles ahead - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOLTZpR1FMN3VoQXVtYTd6MEJJV2QxVVp0Z3JsTXQ5Sm91NU5sZHhpdE1PdEU2eDRmUDdNbHpCQy1zLXg0R0V5THM3QjgzU2ZWd0dUM0pTVjlyRjMwUWdvc2ZTSm5leHlDUXFpM2c4cUNNOHN4QnIxV2xLUnJ4SG05a3pvRlRtS1ptZzBGM2RvYTByTERmRGo5RmFlZTM5QXU5dHptbkx1LURrMjVjck1jVEl2dkFSOTg?oc=5",
           "source": "Reuters World (via Google News)",
@@ -202,19 +193,35 @@
           "score": 8
         },
         {
-          "title": "Italy's levy on small parcels to go on top of EU levy, economy minister says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWThPZktjTTFuMncxYTMyUWk3dk5MS2szX1RoRUZEUVd3QjBUeFB5Tkd5dWhjeDBzaGF2a1lOazdVZlEzS2g4bW9lOTVBNkZSdWE3U2pCeDR3MWJGNzJHQXhkNnB4bHQ1eXlmUlBaeUpFNS1nLUptUndQejloX3NIc2JWUHhFYmxSUV83NmN4Q19yUkFUZHVtRDdSRFFySUlKeUY2YXc3WUFxcWFYVmZR?oc=5",
+          "title": "Electrified cars drive Europe auto sales growth as Chinese brands gain ground - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQODQyZ0FjY2MxU1dzekVJdl9jYlN1VFQ1cVA5SFpfcmZvTFFnU2phUW1xTGt1UElGMWo4X0hIVkN4bVRIOTFRZk5sVGstdGtna2RrY1p4YzZuTFptc1dUZmltT3pHSEZCU3lnWDI2ZTZLZHgwZFNqTFhFaGF1cG9lRm10UUxib3Z1Y3MtSjJhajJSeV9sQkk4eGxVWmhpYUV6Rk9wTmlidTcwMmE2LU9PUVFpSUFEZ0liSXFOb1Yybw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQWThPZktjTTFuMncxYTMyUWk3dk5MS2szX1RoRUZEUVd3QjBUeFB5Tkd5dWhjeDBzaGF2a1lOazdVZlEzS2g4bW9lOTVBNkZSdWE3U2pCeDR3MWJGNzJHQXhkNnB4bHQ1eXlmUlBaeUpFNS1nLUptUndQejloX3NIc2JWUHhFYmxSUV83NmN4Q19yUkFUZHVtRDdSRFFySUlKeUY2YXc3WUFxcWFYVmZR?oc=5\" target=\"_blank\"&gt;Italy's levy on small parcels to go on top of EU levy, economy minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-22T13:51:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQODQyZ0FjY2MxU1dzekVJdl9jYlN1VFQ1cVA5SFpfcmZvTFFnU2phUW1xTGt1UElGMWo4X0hIVkN4bVRIOTFRZk5sVGstdGtna2RrY1p4YzZuTFptc1dUZmltT3pHSEZCU3lnWDI2ZTZLZHgwZFNqTFhFaGF1cG9lRm10UUxib3Z1Y3MtSjJhajJSeV9sQkk4eGxVWmhpYUV6Rk9wTmlidTcwMmE2LU9PUVFpSUFEZ0liSXFOb1Yybw?oc=5\" target=\"_blank\"&gt;Electrified cars drive Europe auto sales growth as Chinese brands gain ground&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-23T04:05:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Immigrant employment in the EU reaches record high, study shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPX3hoWXA1THQ0Q2VxMi1qVzA1SlNJV2tZaEd3aC1fMUpNX0Y3YjBadWJWcFoxNVFTMVB1c1N2bVR6eGs1N0p2ck1GZHM0eDJZc3kzSXJRVjVEaFZzckV2NHJCcEJveGJpcEU2X2U1Z2NlNmlTZ1lfVnZJd3ktb01IRjF0RE53eDRvSFVmelBZVkEycXZOaE9kaUJvcFd1QQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPX3hoWXA1THQ0Q2VxMi1qVzA1SlNJV2tZaEd3aC1fMUpNX0Y3YjBadWJWcFoxNVFTMVB1c1N2bVR6eGs1N0p2ck1GZHM0eDJZc3kzSXJRVjVEaFZzckV2NHJCcEJveGJpcEU2X2U1Z2NlNmlTZ1lfVnZJd3ktb01IRjF0RE53eDRvSFVmelBZVkEycXZOaE9kaUJvcFd1QQ?oc=5\" target=\"_blank\"&gt;Immigrant employment in the EU reaches record high, study shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-23T05:04:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Google hit with $1 billion EU fine, in 'constructive' talks to avoid more penalties - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYkZ0Y296UnBOaHhsNXpXR29WRHJXSjJvOHFZYzBQSW04Z3FfZk9TcWU0Ty15TGEtUUZpeElDN0E5SmlpcV9GT0txMnBPV19HZkR5TDJEQ1NiX2VEcVB2UVY0c3FTZEZIRkRIODhwUVRrLTl0THB4U2R2QjhnekhtWDFkSk80ajd1a0VENUlSNW1ja09GeVpDc2N6b25GMG5tQVlMMw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPYkZ0Y296UnBOaHhsNXpXR29WRHJXSjJvOHFZYzBQSW04Z3FfZk9TcWU0Ty15TGEtUUZpeElDN0E5SmlpcV9GT0txMnBPV19HZkR5TDJEQ1NiX2VEcVB2UVY0c3FTZEZIRkRIODhwUVRrLTl0THB4U2R2QjhnekhtWDFkSk80ajd1a0VENUlSNW1ja09GeVpDc2N6b25GMG5tQVlMMw?oc=5\" target=\"_blank\"&gt;Google hit with $1 billion EU fine, in 'constructive' talks to avoid more penalties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-23T11:01:15.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 431,
-    "articlesLast24h": 172,
+    "totalArticlesScanned": 407,
+    "articlesLast24h": 173,
     "afterDedup": 163,
     "feedsQueried": 19
   }
