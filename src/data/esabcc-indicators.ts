@@ -47,7 +47,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     duplicateOf: 'ghg-total-net',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 4393.9 }, { year: 2006, value: 4392.8 }, { year: 2007, value: 4417.4 }, { year: 2008, value: 4279.6 }, { year: 2009, value: 3940.7 }, { year: 2010, value: 4025.2 }, { year: 2011, value: 3921.3 }, { year: 2012, value: 3843.7 }, { year: 2013, value: 3752.9 }, { year: 2014, value: 3626.5 }, { year: 2015, value: 3680.9 }, { year: 2016, value: 3696 }, { year: 2017, value: 3796.3 }, { year: 2018, value: 3711.2 }, { year: 2019, value: 3564 }, { year: 2020, value: 3195.8 }, { year: 2021, value: 3393.8 }, { year: 2022, value: 3333.9 }, { year: 2023, value: 3104.6, afterReport: true }, { year: 2024, value: 3222.1, afterReport: true }],
+    data: [{ year: 2005, value: 4393.9 }, { year: 2006, value: 4392.8 }, { year: 2007, value: 4417.4 }, { year: 2008, value: 4279.6 }, { year: 2009, value: 3940.7 }, { year: 2010, value: 4025.2 }, { year: 2011, value: 3921.3 }, { year: 2012, value: 3843.7 }, { year: 2013, value: 3752.9 }, { year: 2014, value: 3626.5 }, { year: 2015, value: 3680.9 }, { year: 2016, value: 3696 }, { year: 2017, value: 3796.3 }, { year: 2018, value: 3711.2 }, { year: 2019, value: 3564 }, { year: 2020, value: 3195.8 }, { year: 2021, value: 3393.8 }, { year: 2022, value: 3333.9 }, { year: 2023, value: 3104.6, afterReport: true }, { year: 2024, value: 3017.2, afterReport: true }],
   },
   {
     id: 'esabcc-o2-pec',
@@ -165,7 +165,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'GW/yr',
     description:
       'ESABCC progress indicator E4a. Net new solar photovoltaic capacity commissioned per year across the EU-27.',
-    source: 'Eurostat (nrg_inf_epcrw)',
+    source: 'Eurostat (nrg_inf_epcrw); 2023+ SolarPower Europe, EU Market Outlook',
     sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/nrg_inf_epcrw/default/table',
     direction: 'up',
     duplicateOf: 'solar-pv-additions',
@@ -181,7 +181,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'GW/yr',
     description:
       'ESABCC progress indicators E4b (onshore) and E4c (offshore). Net new wind capacity commissioned per year, all axes.',
-    source: 'Eurostat (nrg_inf_epcrw)',
+    source: 'Eurostat (nrg_inf_epcrw); 2023+ WindEurope annual statistics',
     sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/nrg_inf_epcrw/default/table',
     direction: 'up',
     duplicateOf: 'wind-additions',
@@ -746,7 +746,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'billion EUR',
     description:
       'ESABCC chapter on finance. Total EU fossil-fuel subsidies estimated by the Fossil Fuel Subsidy Tracker. Should fall to zero per Council conclusions.',
-    source: 'Fossil Fuel Subsidy Tracker',
+    source: 'Fossil Fuel Subsidy Tracker; 2023: EC Report on Energy Subsidies in the EU (COM(2025)17)',
     sourceUrl: 'https://fossilfuelsubsidytracker.org/',
     direction: 'down',
     targetValue: 0,
@@ -780,7 +780,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: '%',
     description:
       'ESABCC chapter on finance. Green bonds as a share of total EU bond issuance.',
-    source: 'BloombergNEF',
+    source: 'BloombergNEF; 2023+ EEA "Green bonds in Europe" (LSEG/Refinitiv)',
     sourceUrl: 'https://about.bnef.com/clean-energy-investment/',
     direction: 'up',
     group: 'esabcc',
@@ -833,7 +833,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     duplicateOf: 'clean-tech-investment',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2018, value: 0.0002 }, { year: 2019, value: 0.0003 }, { year: 2020, value: 0.0003 }, { year: 2021, value: 0.0007 }, { year: 2022, value: 0.0006 }, { year: 2023, value: 0.0007, afterReport: true }, { year: 2024, value: 0.0005, afterReport: true }, { year: 2025, value: 0.0004, afterReport: true }],
+    data: [{ year: 2018, value: 0.02 }, { year: 2019, value: 0.03 }, { year: 2020, value: 0.03 }, { year: 2021, value: 0.07 }, { year: 2022, value: 0.06 }, { year: 2023, value: 0.07, afterReport: true }, { year: 2024, value: 0.05, afterReport: true }, { year: 2025, value: 0.04, afterReport: true }],
   },
   // ── Post-report completeness pass: previously-missing report figures
   //    (I2, A2, A4, A5, A6, B3, B4, L2, I7a/b/c). One entry per plotted series.
@@ -852,7 +852,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2008, value: 185 }, { year: 2009, value: 129.3 }, { year: 2010, value: 163.1 }, { year: 2011, value: 168.1 }, { year: 2012, value: 159 }, { year: 2013, value: 154.3 }, { year: 2014, value: 157.1 }, { year: 2015, value: 155.1 }, { year: 2016, value: 154.3 }, { year: 2017, value: 160.9 }, { year: 2018, value: 160.1 }, { year: 2019, value: 150.2 }, { year: 2020, value: 132.2 }, { year: 2021, value: 152.8 }, { year: 2022, value: 136.3, afterReport: true }, { year: 2023, value: 125.9, afterReport: true }, { year: 2024, value: 128.8, afterReport: true }, { year: 2025, value: 128.8, afterReport: true }],
+    data: [{ year: 2008, value: 185 }, { year: 2009, value: 129.3 }, { year: 2010, value: 163.1 }, { year: 2011, value: 168.1 }, { year: 2012, value: 159 }, { year: 2013, value: 154.3 }, { year: 2014, value: 157.1 }, { year: 2015, value: 155.1 }, { year: 2016, value: 154.3 }, { year: 2017, value: 160.9 }, { year: 2018, value: 160.1 }, { year: 2019, value: 150.2 }, { year: 2020, value: 132.2 }, { year: 2021, value: 152.8 }, { year: 2022, value: 136.3, afterReport: true }, { year: 2023, value: 125.9, afterReport: true }, { year: 2024, value: 128.8, afterReport: true }, { year: 2025, value: 126.2, afterReport: true }],
   },
   {
     id: 'esabcc-i2-steel-use',
@@ -897,7 +897,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 239.5 }, { year: 2006, value: 256.2 }, { year: 2007, value: 261.8 }, { year: 2008, value: 244.4 }, { year: 2009, value: 197.9 }, { year: 2010, value: 185.6 }, { year: 2011, value: 187.2 }, { year: 2012, value: 164.7 }, { year: 2013, value: 157 }, { year: 2014, value: 157.5 }, { year: 2015, value: 158.1 }, { year: 2016, value: 159.9 }, { year: 2017, value: 165.7 }, { year: 2018, value: 179.8 }, { year: 2019, value: 173.1 }, { year: 2020, value: 172.2 }, { year: 2021, value: 182.5 }, { year: 2022, value: 174.7, afterReport: true }, { year: 2023, value: 160.8, afterReport: true }, { year: 2024, value: 159.1, afterReport: true }, { year: 2025, value: 157.7, afterReport: true }],
+    data: [{ year: 2005, value: 239.5 }, { year: 2006, value: 256.2 }, { year: 2007, value: 261.8 }, { year: 2008, value: 244.4 }, { year: 2009, value: 197.9 }, { year: 2010, value: 185.6 }, { year: 2011, value: 187.2 }, { year: 2012, value: 164.7 }, { year: 2013, value: 157 }, { year: 2014, value: 157.5 }, { year: 2015, value: 158.1 }, { year: 2016, value: 159.9 }, { year: 2017, value: 165.7 }, { year: 2018, value: 179.8 }, { year: 2019, value: 173.1 }, { year: 2020, value: 172.2 }, { year: 2021, value: 182.5 }, { year: 2022, value: 174.7, afterReport: true }, { year: 2023, value: 160.8, afterReport: true }, { year: 2024, value: 159.1, afterReport: true }],
   },
   {
     id: 'esabcc-i2-cement-use',
