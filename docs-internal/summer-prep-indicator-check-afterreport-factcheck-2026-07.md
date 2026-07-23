@@ -25,9 +25,14 @@ audited sources/links/freshness); this audit checks the **values** themselves.
 > **A4 herds**: the workbook's own source column says "EU GHG inventories
 > (CRF tables)" — the app's values correctly continue that basis and only the
 > source label was wrong (fixed); the earlier "WRONG (−21 %)" verdict is
-> retracted. The refresh script's YoY-splice approach
-> (scripts/esabcc-indicators/refresh-provenance.json) is what caused O1/T1/L7
-> drift — consider refreshing these series by derivation, not splice.
+> retracted. **L8** = GIC × BIOE (nrg_bal_c; reproduces the report 2010–2021
+> within 1.4–3.4 %; the sector components are Eurostat's own split — industry
+> & other sectors = solid biofuels+charcoal+biogases, transport = full BIOE)
+> → 1698.0 / 1664.9 / 1663.5, replacing the ~6 %-high splice values.
+> The refresh script's YoY-splice approach
+> (scripts/esabcc-indicators/refresh-provenance.json) is what caused
+> O1/T1/L7/L8 drift — consider refreshing these series by derivation, not
+> splice.
 >
 > **Status update (same day):** the unambiguous fixes have been applied in
 > `src/data/esabcc-indicators.ts` + migration

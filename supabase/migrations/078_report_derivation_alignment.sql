@@ -18,6 +18,11 @@
 --     (CRF4B+4C+4D+4E+4F) — NOT "CRF4 minus forest", which would wrongly
 --     include harvested wood products. Current-vintage values:
 --     2022 = 121.0 ; 2023 = 135.6 ; 2024 = 123.0.
+--  L8 (Figure 72): Total = gross inland consumption × Eurostat's bioenergy
+--     aggregate (nrg_bal_c GIC × BIOE; reproduces the report 2010–2021 within
+--     1.4–3.4%, plain vintage drift). The spliced values ran ~6% high because
+--     the splice anchor froze an older GIC vintage. Current-vintage values:
+--     2022 = 1698.0 ; 2023 = 1664.9 ; 2024 = 1663.5.
 --  E6 (Figure 19): derivation = CRF1 CH₄; the report's CO₂e convention runs
 --     a constant ~9% above env_air_gge CH4_CO2E (2005–2016 ratio 0.909–0.919),
 --     so the existing spliced points correctly continue the report convention
@@ -39,7 +44,10 @@ values
   ('esabcc-t1-transport-ghg', 2024, 934.7),
   ('esabcc-l7-nonforest-lulucf', 2022, 121.0),
   ('esabcc-l7-nonforest-lulucf', 2023, 135.6),
-  ('esabcc-l7-nonforest-lulucf', 2024, 123.0)
+  ('esabcc-l7-nonforest-lulucf', 2024, 123.0),
+  ('esabcc-l8-bioenergy-use', 2022, 1698.0),
+  ('esabcc-l8-bioenergy-use', 2023, 1664.9),
+  ('esabcc-l8-bioenergy-use', 2024, 1663.5)
 on conflict (indicator_id, year) do update set value = excluded.value;
 
 update public.pw_indicators

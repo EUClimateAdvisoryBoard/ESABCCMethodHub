@@ -736,7 +736,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 896.4 }, { year: 2006, value: 972.1 }, { year: 2007, value: 1075.9 }, { year: 2008, value: 1192.6 }, { year: 2009, value: 1270.3 }, { year: 2010, value: 1406.2 }, { year: 2011, value: 1374 }, { year: 2012, value: 1504.2 }, { year: 2013, value: 1505.7 }, { year: 2014, value: 1474.3 }, { year: 2015, value: 1515.4 }, { year: 2016, value: 1524.4 }, { year: 2017, value: 1570.7 }, { year: 2018, value: 1642.1 }, { year: 2019, value: 1679 }, { year: 2020, value: 1684.1 }, { year: 2021, value: 1795.7 }, { year: 2022, value: 1811.9, afterReport: true }, { year: 2023, value: 1766.3, afterReport: true }, { year: 2024, value: 1761.2, afterReport: true }],
+    data: [{ year: 2005, value: 896.4 }, { year: 2006, value: 972.1 }, { year: 2007, value: 1075.9 }, { year: 2008, value: 1192.6 }, { year: 2009, value: 1270.3 }, { year: 2010, value: 1406.2 }, { year: 2011, value: 1374 }, { year: 2012, value: 1504.2 }, { year: 2013, value: 1505.7 }, { year: 2014, value: 1474.3 }, { year: 2015, value: 1515.4 }, { year: 2016, value: 1524.4 }, { year: 2017, value: 1570.7 }, { year: 2018, value: 1642.1 }, { year: 2019, value: 1679 }, { year: 2020, value: 1684.1 }, { year: 2021, value: 1795.7 }, { year: 2022, value: 1698.0, afterReport: true }, { year: 2023, value: 1664.9, afterReport: true }, { year: 2024, value: 1663.5, afterReport: true }],
   },
   {
     id: 'esabcc-f-fossil-subsidies',
