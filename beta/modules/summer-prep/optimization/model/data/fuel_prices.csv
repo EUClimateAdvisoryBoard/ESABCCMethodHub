@@ -1,0 +1,43 @@
+carrier,year,price_eur_gj,source,source_url
+coal,2025,3.0,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coal,2030,3.0,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coal,2035,3.1,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coal,2040,3.1,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coal,2045,3.2,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coal,2050,3.2,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coke,2025,6.0,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coke,2030,6.0,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coke,2035,6.1,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coke,2040,6.1,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coke,2045,6.2,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+coke,2050,6.2,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+natural_gas,2025,10.0,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+natural_gas,2030,9.5,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+natural_gas,2035,9.0,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+natural_gas,2040,8.7,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+natural_gas,2045,8.5,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+natural_gas,2050,8.3,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+electricity,2025,24.0,"Eurostat (2024), Electricity price statistics",https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics
+electricity,2030,22.0,"Eurostat (2024), Electricity price statistics",https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics
+electricity,2035,21.0,"Eurostat (2024), Electricity price statistics",https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics
+electricity,2040,20.0,"Eurostat (2024), Electricity price statistics",https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics
+electricity,2045,19.0,"Eurostat (2024), Electricity price statistics",https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics
+electricity,2050,18.0,"Eurostat (2024), Electricity price statistics",https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics
+hydrogen,2025,40.0,"IEA (2024), Global Hydrogen Review 2024",https://www.iea.org/reports/global-hydrogen-review-2024
+hydrogen,2030,33.0,"IEA (2024), Global Hydrogen Review 2024",https://www.iea.org/reports/global-hydrogen-review-2024
+hydrogen,2035,28.0,"IEA (2024), Global Hydrogen Review 2024",https://www.iea.org/reports/global-hydrogen-review-2024
+hydrogen,2040,25.0,"IEA (2024), Global Hydrogen Review 2024",https://www.iea.org/reports/global-hydrogen-review-2024
+hydrogen,2045,22.0,"IEA (2024), Global Hydrogen Review 2024",https://www.iea.org/reports/global-hydrogen-review-2024
+hydrogen,2050,20.0,"IEA (2024), Global Hydrogen Review 2024",https://www.iea.org/reports/global-hydrogen-review-2024
+biomass,2025,8.0,"IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/
+biomass,2030,8.0,"IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/
+biomass,2035,8.2,"IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/
+biomass,2040,8.3,"IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/
+biomass,2045,8.4,"IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/
+biomass,2050,8.5,"IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/
+oil,2025,14.0,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+oil,2030,14.0,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+oil,2035,13.8,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+oil,2040,13.6,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+oil,2045,13.4,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024
+oil,2050,13.2,"IEA (2024), World Energy Outlook 2024",https://www.iea.org/reports/world-energy-outlook-2024

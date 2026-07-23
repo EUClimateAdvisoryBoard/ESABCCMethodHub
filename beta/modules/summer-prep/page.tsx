@@ -86,6 +86,14 @@ const MODULES: PrepModule[] = [
         icon: '◎',
         accent: '#B87400',
       },
+      {
+        href: '/beta/summer-prep/optimization',
+        title: 'Optimization',
+        tag: 'Sector least-cost model',
+        desc: 'A SEAMAPS-style least-cost optimization model (Julia/JuMP) of the EU energy-intensive subsectors — sourced cost & technology inputs in an Excel workbook, the fully commented solver code, built-in sensitivity runs and the key findings, all viewable and downloadable.',
+        icon: '∑',
+        accent: '#007B6C',
+      },
     ],
   },
   {
