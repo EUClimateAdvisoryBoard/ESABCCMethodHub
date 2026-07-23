@@ -1,13 +1,13 @@
-carrier,year,tco2_per_gj
-coal,all,0.094
-coke,all,0.107
-natural_gas,all,0.056
-hydrogen,all,0.0
-biomass,all,0.0
-oil,all,0.073
-electricity,2025,0.065
-electricity,2030,0.045
-electricity,2035,0.03
-electricity,2040,0.018
-electricity,2045,0.01
-electricity,2050,0.003
+carrier,year,tco2_per_gj,source,source_url
+coal,all,0.094,"IPCC (2006), 2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html
+coke,all,0.107,"IPCC (2006), 2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html
+natural_gas,all,0.056,"IPCC (2006), 2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html
+hydrogen,all,0.0,"IPCC AR6 WGIII (2022), Chapter 11: Industry",https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/
+biomass,all,0.0,"IPCC AR6 WGIII (2022), Chapter 11: Industry",https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/
+oil,all,0.073,"IPCC (2006), 2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html
+electricity,2025,0.065,"European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1
+electricity,2030,0.045,"European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1
+electricity,2035,0.03,"European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1
+electricity,2040,0.018,"European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1
+electricity,2045,0.01,"European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1
+electricity,2050,0.003,"European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1

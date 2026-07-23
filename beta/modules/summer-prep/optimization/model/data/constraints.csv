@@ -1,25 +1,25 @@
-name,subsector,year,value
-scrap_share_max,steel,2025,0.45
-scrap_share_max,steel,2030,0.47
-scrap_share_max,steel,2035,0.49
-scrap_share_max,steel,2040,0.51
-scrap_share_max,steel,2045,0.53
-scrap_share_max,steel,2050,0.55
-scrap_share_max,aluminium,2025,0.55
-scrap_share_max,aluminium,2030,0.58
-scrap_share_max,aluminium,2035,0.6
-scrap_share_max,aluminium,2040,0.62
-scrap_share_max,aluminium,2045,0.64
-scrap_share_max,aluminium,2050,0.65
-biomass_pj_max,all,2025,300
-biomass_pj_max,all,2030,300
-biomass_pj_max,all,2035,300
-biomass_pj_max,all,2040,300
-biomass_pj_max,all,2045,300
-biomass_pj_max,all,2050,300
-ccs_mt_max,all,2025,0
-ccs_mt_max,all,2030,5
-ccs_mt_max,all,2035,20
-ccs_mt_max,all,2040,50
-ccs_mt_max,all,2045,80
-ccs_mt_max,all,2050,100
+name,subsector,year,value,source,source_url
+scrap_share_max,steel,2025,0.45,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,steel,2030,0.47,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,steel,2035,0.49,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,steel,2040,0.51,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,steel,2045,0.53,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,steel,2050,0.55,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,aluminium,2025,0.55,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,aluminium,2030,0.58,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,aluminium,2035,0.6,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,aluminium,2040,0.62,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,aluminium,2045,0.64,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+scrap_share_max,aluminium,2050,0.65,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+biomass_pj_max,all,2025,300,"JRC (European Commission) (2019), Brief on biomass for energy in the European Union",https://publications.jrc.ec.europa.eu/repository/handle/JRC109354
+biomass_pj_max,all,2030,300,"JRC (European Commission) (2019), Brief on biomass for energy in the European Union",https://publications.jrc.ec.europa.eu/repository/handle/JRC109354
+biomass_pj_max,all,2035,300,"JRC (European Commission) (2019), Brief on biomass for energy in the European Union",https://publications.jrc.ec.europa.eu/repository/handle/JRC109354
+biomass_pj_max,all,2040,300,"JRC (European Commission) (2019), Brief on biomass for energy in the European Union",https://publications.jrc.ec.europa.eu/repository/handle/JRC109354
+biomass_pj_max,all,2045,300,"JRC (European Commission) (2019), Brief on biomass for energy in the European Union",https://publications.jrc.ec.europa.eu/repository/handle/JRC109354
+biomass_pj_max,all,2050,300,"JRC (European Commission) (2019), Brief on biomass for energy in the European Union",https://publications.jrc.ec.europa.eu/repository/handle/JRC109354
+ccs_mt_max,all,2025,0,"Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",https://www.globalccsinstitute.com/
+ccs_mt_max,all,2030,5,"Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",https://www.globalccsinstitute.com/
+ccs_mt_max,all,2035,20,"Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",https://www.globalccsinstitute.com/
+ccs_mt_max,all,2040,50,"Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",https://www.globalccsinstitute.com/
+ccs_mt_max,all,2045,80,"Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",https://www.globalccsinstitute.com/
+ccs_mt_max,all,2050,100,"Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",https://www.globalccsinstitute.com/

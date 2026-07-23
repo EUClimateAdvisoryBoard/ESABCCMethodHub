@@ -197,7 +197,19 @@ function SubsectorCard({ id }: { id: string }) {
  * Section: input workbook viewer
  * ---------------------------------------------------------------------- */
 
-const SOURCE_LIKE_COLUMNS = new Set(['source', 'url', 'note', 'source_title', 'description']);
+const SOURCE_LIKE_COLUMNS = new Set(['source', 'url', 'source_url', 'note', 'source_title', 'description']);
+
+/** Shorten a URL for display: hostname + path, truncated; full URL stays in the title tooltip. */
+function shortenUrl(url: string, maxLen = 42): string {
+  let display = url;
+  try {
+    const u = new URL(url);
+    display = u.hostname.replace(/^www\./, '') + u.pathname + u.search;
+  } catch {
+    // not a real URL (e.g. a relative repo path for model-assumption rows) — show as-is
+  }
+  return display.length > maxLen ? display.slice(0, maxLen - 1) + '…' : display;
+}
 
 function isNumericColumn(rows: CellValue[][], colIdx: number): boolean {
   return rows.every((r) => typeof r[colIdx] === 'number');
@@ -289,18 +301,34 @@ function WorkbookViewer() {
                   >
                     {row.map((cell, ci) => {
                       const col = sheet.columns[ci];
+                      const isSourceUrl = col === 'source_url' && typeof cell === 'string' && cell.length > 0;
                       const truncate = SOURCE_LIKE_COLUMNS.has(col) && typeof cell === 'string' && cell.length > 40;
                       return (
                         <td
                           key={ci}
-                          title={truncate ? String(cell) : undefined}
+                          title={isSourceUrl ? String(cell) : truncate ? String(cell) : undefined}
                           className={`px-2.5 py-1 text-[#3D5265] dark:text-[var(--mh-muted)] ${
                             numericCols[ci] ? 'text-right tabular-nums' : 'text-left'
-                          } ${truncate ? 'max-w-[220px] truncate' : 'whitespace-nowrap'}`}
+                          } ${truncate && !isSourceUrl ? 'max-w-[220px] truncate' : 'whitespace-nowrap'}`}
                         >
-                          {typeof cell === 'number'
-                            ? cell.toLocaleString('en-GB', { maximumFractionDigits: 4 })
-                            : cell}
+                          {isSourceUrl ? (
+                            (cell as string).startsWith('http') ? (
+                              <a
+                                href={cell as string}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[#004B7F] underline decoration-[#004B7F]/40 underline-offset-2 hover:text-[#00928F] dark:text-[#6FB7E8]"
+                              >
+                                {shortenUrl(cell as string)}
+                              </a>
+                            ) : (
+                              <span className="text-[#3D5265] dark:text-[var(--mh-muted)]">{cell}</span>
+                            )
+                          ) : typeof cell === 'number' ? (
+                            cell.toLocaleString('en-GB', { maximumFractionDigits: 4 })
+                          ) : (
+                            cell
+                          )}
                         </td>
                       );
                     })}

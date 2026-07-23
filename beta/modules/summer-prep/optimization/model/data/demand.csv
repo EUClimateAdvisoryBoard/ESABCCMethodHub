@@ -1,43 +1,43 @@
-subsector,year,demand_mt
-steel,2025,124
-steel,2030,122
-steel,2035,120
-steel,2040,118
-steel,2045,116
-steel,2050,114
-cement,2025,178
-cement,2030,175
-cement,2035,172
-cement,2040,168
-cement,2045,164
-cement,2050,160
-hvc,2025,40
-hvc,2030,41
-hvc,2035,42
-hvc,2040,43
-hvc,2045,44
-hvc,2050,45
-ammonia,2025,16
-ammonia,2030,16
-ammonia,2035,15
-ammonia,2040,15
-ammonia,2045,14
-ammonia,2050,14
-aluminium,2025,6.5
-aluminium,2030,6.8
-aluminium,2035,7.1
-aluminium,2040,7.4
-aluminium,2045,7.7
-aluminium,2050,8.0
-glass,2025,35
-glass,2030,35
-glass,2035,34
-glass,2040,34
-glass,2045,33
-glass,2050,33
-paper,2025,74
-paper,2030,72
-paper,2035,70
-paper,2040,68
-paper,2045,66
-paper,2050,64
+subsector,year,demand_mt,source,source_url
+steel,2025,124,"Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024
+steel,2030,122,"Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024
+steel,2035,120,"Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024
+steel,2040,118,"Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024
+steel,2045,116,"Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024
+steel,2050,114,"Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024
+cement,2025,178,"Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf
+cement,2030,175,"Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf
+cement,2035,172,"Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf
+cement,2040,168,"Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf
+cement,2045,164,"Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf
+cement,2050,160,"Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf
+hvc,2025,40,"Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc,2030,41,"Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc,2035,42,"Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc,2040,43,"Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc,2045,44,"Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc,2050,45,"Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",https://www.iea.org/reports/the-future-of-petrochemicals
+ammonia,2025,16,"Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/
+ammonia,2030,16,"Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/
+ammonia,2035,15,"Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/
+ammonia,2040,15,"Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/
+ammonia,2045,14,"Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/
+ammonia,2050,14,"Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/
+aluminium,2025,6.5,"Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",https://international-aluminium.org/statistics/
+aluminium,2030,6.8,"Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",https://international-aluminium.org/statistics/
+aluminium,2035,7.1,"Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",https://international-aluminium.org/statistics/
+aluminium,2040,7.4,"Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",https://international-aluminium.org/statistics/
+aluminium,2045,7.7,"Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",https://international-aluminium.org/statistics/
+aluminium,2050,8.0,"Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",https://international-aluminium.org/statistics/
+glass,2025,35,"Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",https://feve.org/about-glass/statistics/
+glass,2030,35,"Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",https://feve.org/about-glass/statistics/
+glass,2035,34,"Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",https://feve.org/about-glass/statistics/
+glass,2040,34,"Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",https://feve.org/about-glass/statistics/
+glass,2045,33,"Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",https://feve.org/about-glass/statistics/
+glass,2050,33,"Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",https://feve.org/about-glass/statistics/
+paper,2025,74,"Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf
+paper,2030,72,"Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf
+paper,2035,70,"Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf
+paper,2040,68,"Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf
+paper,2045,66,"Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf
+paper,2050,64,"Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf

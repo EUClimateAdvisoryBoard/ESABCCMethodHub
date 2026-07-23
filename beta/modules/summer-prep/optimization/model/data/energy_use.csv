@@ -1,67 +1,67 @@
-tech,carrier,gj_per_t
-steel_bfbof,coal,7
-steel_bfbof,coke,11
-steel_bfbof,natural_gas,1
-steel_bfbof,electricity,2
-steel_bfbof_ccs,coal,7
-steel_bfbof_ccs,coke,11
-steel_bfbof_ccs,natural_gas,2.5
-steel_bfbof_ccs,electricity,3
-steel_ngdri_eaf,natural_gas,7
-steel_ngdri_eaf,electricity,1.5
-steel_h2dri_eaf,natural_gas,0.5
-steel_h2dri_eaf,hydrogen,6.6
-steel_h2dri_eaf,electricity,2.5
-steel_scrap_eaf,natural_gas,0.5
-steel_scrap_eaf,electricity,1.7
-cement_ref,coal,2.0
-cement_ref,natural_gas,0.3
-cement_ref,oil,0.2
-cement_ref,electricity,0.4
-cement_clinkersub,coal,1.6
-cement_clinkersub,natural_gas,0.2
-cement_clinkersub,electricity,0.45
-cement_ccs,coal,2.0
-cement_ccs,natural_gas,0.6
-cement_ccs,electricity,0.9
-cement_altfuel,biomass,1.8
-cement_altfuel,coal,0.3
-cement_altfuel,natural_gas,0.1
-cement_altfuel,electricity,0.45
-hvc_ref,natural_gas,12
-hvc_ref,oil,1
-hvc_ref,electricity,1.2
-hvc_elec,natural_gas,1.2
-hvc_elec,oil,0.3
-hvc_elec,electricity,11
-hvc_bio,natural_gas,9
-hvc_bio,oil,1
-hvc_bio,electricity,2
-hvc_ccs,natural_gas,13.5
-hvc_ccs,oil,1
-hvc_ccs,electricity,2.2
-ammonia_smr,natural_gas,29
-ammonia_smr,electricity,0.5
-ammonia_smr_ccs,natural_gas,30.5
-ammonia_smr_ccs,electricity,1.2
-ammonia_h2,hydrogen,22
-ammonia_h2,electricity,3
-alu_ref,electricity,51
-alu_ref,natural_gas,1
-alu_inert,electricity,52
-alu_inert,natural_gas,0.5
-alu_sec,electricity,2.55
-alu_sec,natural_gas,1.5
-glass_ng,natural_gas,6
-glass_ng,electricity,0.6
-glass_elec,natural_gas,0.3
-glass_elec,electricity,5.5
-glass_hybrid,natural_gas,3
-glass_hybrid,electricity,3
-paper_ref,natural_gas,8
-paper_ref,electricity,2
-paper_elec,natural_gas,1
-paper_elec,electricity,5.5
-paper_bio,natural_gas,0.3
-paper_bio,biomass,9
-paper_bio,electricity,2
+tech,carrier,gj_per_t,source,source_url
+steel_bfbof,coal,7,"IEA (2020), Iron and Steel Technology Roadmap",https://www.iea.org/reports/iron-and-steel-technology-roadmap
+steel_bfbof,coke,11,"IEA (2020), Iron and Steel Technology Roadmap",https://www.iea.org/reports/iron-and-steel-technology-roadmap
+steel_bfbof,natural_gas,1,"IEA (2020), Iron and Steel Technology Roadmap",https://www.iea.org/reports/iron-and-steel-technology-roadmap
+steel_bfbof,electricity,2,"IEA (2020), Iron and Steel Technology Roadmap",https://www.iea.org/reports/iron-and-steel-technology-roadmap
+steel_bfbof_ccs,coal,7,"IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/
+steel_bfbof_ccs,coke,11,"IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/
+steel_bfbof_ccs,natural_gas,2.5,"IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/
+steel_bfbof_ccs,electricity,3,"IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/
+steel_ngdri_eaf,natural_gas,7,"IEA (2020), Iron and Steel Technology Roadmap",https://www.iea.org/reports/iron-and-steel-technology-roadmap
+steel_ngdri_eaf,electricity,1.5,"IEA (2020), Iron and Steel Technology Roadmap",https://www.iea.org/reports/iron-and-steel-technology-roadmap
+steel_h2dri_eaf,natural_gas,0.5,"European Parliament (EPRS) (2021), Carbon-free steel production - Cost reduction options and usage of existing gas infrastructure",https://www.europarl.europa.eu/RegData/etudes/STUD/2021/690008/EPRS_STU(2021)690008_EN.pdf
+steel_h2dri_eaf,hydrogen,6.6,"European Parliament (EPRS) (2021), Carbon-free steel production - Cost reduction options and usage of existing gas infrastructure",https://www.europarl.europa.eu/RegData/etudes/STUD/2021/690008/EPRS_STU(2021)690008_EN.pdf
+steel_h2dri_eaf,electricity,2.5,"European Parliament (EPRS) (2021), Carbon-free steel production - Cost reduction options and usage of existing gas infrastructure",https://www.europarl.europa.eu/RegData/etudes/STUD/2021/690008/EPRS_STU(2021)690008_EN.pdf
+steel_scrap_eaf,natural_gas,0.5,"IEA (2020), Iron and Steel Technology Roadmap",https://www.iea.org/reports/iron-and-steel-technology-roadmap
+steel_scrap_eaf,electricity,1.7,"IEA (2020), Iron and Steel Technology Roadmap",https://www.iea.org/reports/iron-and-steel-technology-roadmap
+cement_ref,coal,2.0,"IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry
+cement_ref,natural_gas,0.3,"IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry
+cement_ref,oil,0.2,"IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry
+cement_ref,electricity,0.4,"IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry
+cement_clinkersub,coal,1.6,"MDPI (Sustainability, peer-reviewed) (2026), Limestone Calcined Clay Cement (LC3): From Laboratory Innovation to Sustainable Industrial Application",https://www.mdpi.com/2071-1050/18/7/3473
+cement_clinkersub,natural_gas,0.2,"MDPI (Sustainability, peer-reviewed) (2026), Limestone Calcined Clay Cement (LC3): From Laboratory Innovation to Sustainable Industrial Application",https://www.mdpi.com/2071-1050/18/7/3473
+cement_clinkersub,electricity,0.45,"MDPI (Sustainability, peer-reviewed) (2026), Limestone Calcined Clay Cement (LC3): From Laboratory Innovation to Sustainable Industrial Application",https://www.mdpi.com/2071-1050/18/7/3473
+cement_ccs,coal,2.0,"IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/
+cement_ccs,natural_gas,0.6,"IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/
+cement_ccs,electricity,0.9,"IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/
+cement_altfuel,biomass,1.8,"IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry
+cement_altfuel,coal,0.3,"IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry
+cement_altfuel,natural_gas,0.1,"IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry
+cement_altfuel,electricity,0.45,"IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry
+hvc_ref,natural_gas,12,"IEA (2018), The Future of Petrochemicals",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc_ref,oil,1,"IEA (2018), The Future of Petrochemicals",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc_ref,electricity,1.2,"IEA (2018), The Future of Petrochemicals",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc_elec,natural_gas,1.2,"BASF / SABIC / Linde (2024), Start-up of the world's first large-scale electrically heated steam cracking furnace",https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177
+hvc_elec,oil,0.3,"BASF / SABIC / Linde (2024), Start-up of the world's first large-scale electrically heated steam cracking furnace",https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177
+hvc_elec,electricity,11,"BASF / SABIC / Linde (2024), Start-up of the world's first large-scale electrically heated steam cracking furnace",https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177
+hvc_bio,natural_gas,9,"IEA (2018), The Future of Petrochemicals",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc_bio,oil,1,"IEA (2018), The Future of Petrochemicals",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc_bio,electricity,2,"IEA (2018), The Future of Petrochemicals",https://www.iea.org/reports/the-future-of-petrochemicals
+hvc_ccs,natural_gas,13.5,"IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/
+hvc_ccs,oil,1,"IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/
+hvc_ccs,electricity,2.2,"IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/
+ammonia_smr,natural_gas,29,"IEA (2021), Ammonia Technology Roadmap",https://www.iea.org/reports/ammonia-technology-roadmap
+ammonia_smr,electricity,0.5,"IEA (2021), Ammonia Technology Roadmap",https://www.iea.org/reports/ammonia-technology-roadmap
+ammonia_smr_ccs,natural_gas,30.5,"IEA (2021), Ammonia Technology Roadmap",https://www.iea.org/reports/ammonia-technology-roadmap
+ammonia_smr_ccs,electricity,1.2,"IEA (2021), Ammonia Technology Roadmap",https://www.iea.org/reports/ammonia-technology-roadmap
+ammonia_h2,hydrogen,22,"IEA (2021), Ammonia Technology Roadmap - Executive Summary",https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary
+ammonia_h2,electricity,3,"IEA (2021), Ammonia Technology Roadmap - Executive Summary",https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary
+alu_ref,electricity,51,"JRC (European Commission) (2026), Aluminium factsheet (JRC144120)",https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf
+alu_ref,natural_gas,1,"JRC (European Commission) (2026), Aluminium factsheet (JRC144120)",https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf
+alu_inert,electricity,52,"ELYSIS (2025), ELYSIS achieves breakthrough with commercial-size cell",https://elysis.com/en/elysis-achieves-breakthrough-with-commercial-size-cell-a-first-in-aluminium-production-using-the
+alu_inert,natural_gas,0.5,"ELYSIS (2025), ELYSIS achieves breakthrough with commercial-size cell",https://elysis.com/en/elysis-achieves-breakthrough-with-commercial-size-cell-a-first-in-aluminium-production-using-the
+alu_sec,electricity,2.55,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+alu_sec,natural_gas,1.5,"Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf
+glass_ng,natural_gas,6,"European Commission (CINEA) (2022), How LIFE is reducing emissions from glass production",https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en
+glass_ng,electricity,0.6,"European Commission (CINEA) (2022), How LIFE is reducing emissions from glass production",https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en
+glass_elec,natural_gas,0.3,"IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide
+glass_elec,electricity,5.5,"IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide
+glass_hybrid,natural_gas,3,"IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide
+glass_hybrid,electricity,3,"IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide
+paper_ref,natural_gas,8,"CEPI (2022), Key Statistics 2022 - European pulp & paper industry",https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf
+paper_ref,electricity,2,"CEPI (2022), Key Statistics 2022 - European pulp & paper industry",https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf
+paper_elec,natural_gas,1,"IEA (2022), The Future of Heat Pumps",https://www.iea.org/reports/the-future-of-heat-pumps
+paper_elec,electricity,5.5,"IEA (2022), The Future of Heat Pumps",https://www.iea.org/reports/the-future-of-heat-pumps
+paper_bio,natural_gas,0.3,"IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/
+paper_bio,biomass,9,"IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/
+paper_bio,electricity,2,"IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/

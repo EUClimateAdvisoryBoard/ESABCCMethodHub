@@ -1,2197 +1,2691 @@
 {
- "sectors": {
-  "columns": [
-   "subsector",
-   "name",
-   "branch",
-   "production_2023_mt",
-   "direct_co2_2023_mt",
-   "source"
-  ],
-  "rows": [
-   [
-    "steel",
-    "Crude steel (integrated + EAF)",
-    "Metals",
-    126.0,
-    96.0,
-    "Eurofer 2024 / Sandbag EUTL 2023"
-   ],
-   [
-    "cement",
-    "Cement (clinker-based)",
-    "Non-metallic minerals",
-    180.0,
-    124.0,
-    "Cembureau 2024 / Sandbag EUTL 2023"
-   ],
-   [
-    "hvc",
-    "High-value chemicals (steam cracking)",
-    "Chemicals & refining",
-    40.0,
-    45.0,
-    "Sandbag Chemicals 2025 / IEA Future of Petrochemicals"
-   ],
-   [
-    "ammonia",
-    "Ammonia / nitrogen fertilisers",
-    "Chemicals & refining",
-    16.0,
-    26.0,
-    "Fertilizers Europe 2024 / IEA Ammonia Technology Roadmap 2021"
-   ],
-   [
-    "aluminium",
-    "Primary + secondary aluminium",
-    "Metals",
-    6.5,
-    2.8,
-    "IAI 2024 / JRC Aluminium factsheet 2026"
-   ],
-   [
-    "glass",
-    "Container & flat glass",
-    "Non-metallic minerals",
-    35.0,
-    20.0,
-    "FEVE / European Commission (CINEA) 2022"
-   ],
-   [
-    "paper",
-    "Pulp & paper",
-    "Other manufacturing",
-    74.0,
-    27.0,
-    "CEPI Key Statistics 2022"
-   ]
-  ]
- },
- "demand": {
-  "columns": [
-   "subsector",
-   "year",
-   "demand_mt"
-  ],
-  "rows": [
-   [
-    "steel",
-    2025,
-    124.0
-   ],
-   [
-    "steel",
-    2030,
-    122.0
-   ],
-   [
-    "steel",
-    2035,
-    120.0
-   ],
-   [
-    "steel",
-    2040,
-    118.0
-   ],
-   [
-    "steel",
-    2045,
-    116.0
-   ],
-   [
-    "steel",
-    2050,
-    114.0
-   ],
-   [
-    "cement",
-    2025,
-    178.0
-   ],
-   [
-    "cement",
-    2030,
-    175.0
-   ],
-   [
-    "cement",
-    2035,
-    172.0
-   ],
-   [
-    "cement",
-    2040,
-    168.0
-   ],
-   [
-    "cement",
-    2045,
-    164.0
-   ],
-   [
-    "cement",
-    2050,
-    160.0
-   ],
-   [
-    "hvc",
-    2025,
-    40.0
-   ],
-   [
-    "hvc",
-    2030,
-    41.0
-   ],
-   [
-    "hvc",
-    2035,
-    42.0
-   ],
-   [
-    "hvc",
-    2040,
-    43.0
-   ],
-   [
-    "hvc",
-    2045,
-    44.0
-   ],
-   [
-    "hvc",
-    2050,
-    45.0
-   ],
-   [
-    "ammonia",
-    2025,
-    16.0
-   ],
-   [
-    "ammonia",
-    2030,
-    16.0
-   ],
-   [
-    "ammonia",
-    2035,
-    15.0
-   ],
-   [
-    "ammonia",
-    2040,
-    15.0
-   ],
-   [
-    "ammonia",
-    2045,
-    14.0
-   ],
-   [
-    "ammonia",
-    2050,
-    14.0
-   ],
-   [
-    "aluminium",
-    2025,
-    6.5
-   ],
-   [
-    "aluminium",
-    2030,
-    6.8
-   ],
-   [
-    "aluminium",
-    2035,
-    7.1
-   ],
-   [
-    "aluminium",
-    2040,
-    7.4
-   ],
-   [
-    "aluminium",
-    2045,
-    7.7
-   ],
-   [
-    "aluminium",
-    2050,
-    8.0
-   ],
-   [
-    "glass",
-    2025,
-    35.0
-   ],
-   [
-    "glass",
-    2030,
-    35.0
-   ],
-   [
-    "glass",
-    2035,
-    34.0
-   ],
-   [
-    "glass",
-    2040,
-    34.0
-   ],
-   [
-    "glass",
-    2045,
-    33.0
-   ],
-   [
-    "glass",
-    2050,
-    33.0
-   ],
-   [
-    "paper",
-    2025,
-    74.0
-   ],
-   [
-    "paper",
-    2030,
-    72.0
-   ],
-   [
-    "paper",
-    2035,
-    70.0
-   ],
-   [
-    "paper",
-    2040,
-    68.0
-   ],
-   [
-    "paper",
-    2045,
-    66.0
-   ],
-   [
-    "paper",
-    2050,
-    64.0
-   ]
-  ]
- },
- "technologies": {
-  "columns": [
-   "tech",
-   "subsector",
-   "name",
-   "capex_eur_t",
-   "fixed_opex_eur_t",
-   "var_opex_eur_t",
-   "lifetime_yr",
-   "available_from",
-   "max_build_share",
-   "capture_rate",
-   "process_co2_t_t",
-   "source"
-  ],
-  "rows": [
-   [
-    "steel_bfbof",
-    "steel",
-    "Blast furnace - basic oxygen furnace (reference)",
-    400.0,
-    25.0,
-    150.0,
-    25,
-    2025,
-    0.25,
-    0.0,
-    0.0,
-    "IEA Iron and Steel Technology Roadmap 2020"
-   ],
-   [
-    "steel_bfbof_ccs",
-    "steel",
-    "BF-BOF with CCUS (top-gas / post-combustion capture)",
-    650.0,
-    35.0,
-    160.0,
-    25,
-    2030,
-    0.12,
-    0.6,
-    0.0,
-    "IEAGHG 2018 / IEA Iron and Steel Technology Roadmap 2020"
-   ],
-   [
-    "steel_ngdri_eaf",
-    "steel",
-    "Natural-gas DRI + EAF (transitional)",
-    500.0,
-    25.0,
-    140.0,
-    25,
-    2025,
-    0.15,
-    0.0,
-    0.0,
-    "IEA Iron and Steel Technology Roadmap 2020"
-   ],
-   [
-    "steel_h2dri_eaf",
-    "steel",
-    "Hydrogen DRI (H2-DRI) + EAF",
-    800.0,
-    30.0,
-    130.0,
-    25,
-    2027,
-    0.15,
-    0.0,
-    0.0,
-    "EPRS 2021 (Carbon-free steel production) / LeadIT Green Steel Tracker"
-   ],
-   [
-    "steel_scrap_eaf",
-    "steel",
-    "Scrap-based EAF (secondary steel, scrap-limited)",
-    350.0,
-    18.0,
-    280.0,
-    20,
-    2025,
-    0.15,
-    0.0,
-    0.0,
-    "IEA Iron and Steel Technology Roadmap 2020 / Material Economics 2019"
-   ],
-   [
-    "cement_ref",
-    "cement",
-    "Conventional dry-kiln clinker production (reference)",
-    150.0,
-    12.0,
-    25.0,
-    35,
-    2025,
-    0.25,
-    0.0,
-    0.408,
-    "IEA/CSI Cement Technology Roadmap 2018"
-   ],
-   [
-    "cement_clinkersub",
-    "cement",
-    "Clinker substitution / calcined clay (LC3) & efficiency package",
-    160.0,
-    12.0,
-    22.0,
-    35,
-    2025,
-    0.15,
-    0.0,
-    0.345,
-    "MDPI Sustainability (LC3) 2026 / Material Economics 2019"
-   ],
-   [
-    "cement_ccs",
-    "cement",
-    "CCS (oxyfuel / post-combustion / LEILAC direct separation)",
-    320.0,
-    25.0,
-    35.0,
-    30,
-    2028,
-    0.12,
-    0.9,
-    0.408,
-    "IEAGHG 2018 / Heidelberg Materials Brevik CCS 2025"
-   ],
-   [
-    "cement_altfuel",
-    "cement",
-    "High alternative-fuel share (biomass / waste-derived kiln fuel)",
-    165.0,
-    13.0,
-    20.0,
-    35,
-    2025,
-    0.15,
-    0.0,
-    0.408,
-    "IEA/CSI Cement Technology Roadmap 2018"
-   ],
-   [
-    "hvc_ref",
-    "hvc",
-    "NG/naphtha steam cracker (reference)",
-    700.0,
-    30.0,
-    550.0,
-    30,
-    2025,
-    0.3,
-    0.0,
-    0.0,
-    "IEA Future of Petrochemicals 2018"
-   ],
-   [
-    "hvc_elec",
-    "hvc",
-    "Electric steam cracker (e-cracker)",
-    850.0,
-    32.0,
-    560.0,
-    30,
-    2030,
-    0.15,
-    0.0,
-    0.0,
-    "BASF/SABIC/Linde 2024 e-cracker demonstration"
-   ],
-   [
-    "hvc_bio",
-    "hvc",
-    "Bio-naphtha fed cracker",
-    720.0,
-    30.0,
-    620.0,
-    30,
-    2027,
-    0.15,
-    0.0,
-    0.0,
-    "IEA Future of Petrochemicals 2018 / Material Economics 2019"
-   ],
-   [
-    "hvc_ccs",
-    "hvc",
-    "Steam cracker with CCS",
-    900.0,
-    35.0,
-    560.0,
-    30,
-    2032,
-    0.15,
-    0.65,
-    0.0,
-    "IEAGHG 2018 (industrial CCS costs, applied to chemicals furnaces)"
-   ],
-   [
-    "ammonia_smr",
-    "ammonia",
-    "Steam methane reforming Haber-Bosch (reference)",
-    650.0,
-    25.0,
-    40.0,
-    25,
-    2025,
-    0.3,
-    0.0,
-    0.0,
-    "IEA Ammonia Technology Roadmap 2021"
-   ],
-   [
-    "ammonia_smr_ccs",
-    "ammonia",
-    "SMR + CCS (blue ammonia)",
-    900.0,
-    35.0,
-    55.0,
-    25,
-    2026,
-    0.15,
-    0.6,
-    0.0,
-    "IEA Ammonia Technology Roadmap 2021"
-   ],
-   [
-    "ammonia_h2",
-    "ammonia",
-    "Electrolytic hydrogen Haber-Bosch (green ammonia)",
-    1500.0,
-    45.0,
-    45.0,
-    20,
-    2026,
-    0.15,
-    0.0,
-    0.0,
-    "IEA Ammonia Technology Roadmap 2021 / Yara Heroya 2024"
-   ],
-   [
-    "alu_ref",
-    "aluminium",
-    "Hall-Heroult primary smelting, grid electricity (reference)",
-    3500.0,
-    60.0,
-    900.0,
-    30,
-    2025,
-    0.3,
-    0.0,
-    1.4,
-    "JRC Aluminium factsheet 2026 / IAI 2024"
-   ],
-   [
-    "alu_inert",
-    "aluminium",
-    "Inert anode primary smelting (ELYSIS)",
-    3800.0,
-    65.0,
-    850.0,
-    30,
-    2032,
-    0.15,
-    0.0,
-    0.0,
-    "ELYSIS 2025 (commercial-size cell) / IEA ETP Guide 2024"
-   ],
-   [
-    "alu_sec",
-    "aluminium",
-    "Secondary (recycled) aluminium, scrap-limited",
-    700.0,
-    20.0,
-    750.0,
-    25,
-    2025,
-    0.25,
-    0.0,
-    0.0,
-    "Material Economics 2019 / IAI 2024"
-   ],
-   [
-    "glass_ng",
-    "glass",
-    "Natural-gas fired melting (reference)",
-    120.0,
-    8.0,
-    90.0,
-    15,
-    2025,
-    0.3,
-    0.0,
-    0.15,
-    "European Commission (CINEA) 2022"
-   ],
-   [
-    "glass_elec",
-    "glass",
-    "All-electric melting",
-    150.0,
-    9.0,
-    88.0,
-    15,
-    2025,
-    0.2,
-    0.0,
-    0.15,
-    "IEA ETP Clean Energy Technology Guide 2024"
-   ],
-   [
-    "glass_hybrid",
-    "glass",
-    "Hybrid natural-gas / electric / hydrogen melting",
-    140.0,
-    8.5,
-    89.0,
-    15,
-    2027,
-    0.2,
-    0.0,
-    0.15,
-    "IEA ETP Clean Energy Technology Guide 2024"
-   ],
-   [
-    "paper_ref",
-    "paper",
-    "Natural-gas CHP process heat (reference)",
-    250.0,
-    20.0,
-    300.0,
-    25,
-    2025,
-    0.25,
-    0.0,
-    0.0,
-    "CEPI Key Statistics 2022"
-   ],
-   [
-    "paper_elec",
-    "paper",
-    "Electrification / high-temperature heat pumps",
-    280.0,
-    20.0,
-    295.0,
-    20,
-    2027,
-    0.15,
-    0.0,
-    0.0,
-    "IEA The Future of Heat Pumps 2022"
-   ],
-   [
-    "paper_bio",
-    "paper",
-    "Biomass residues (incl. black liquor) process heat",
-    260.0,
-    20.0,
-    290.0,
-    25,
-    2025,
-    0.15,
-    0.0,
-    0.0,
-    "IEA Bioenergy 2022 / CEPI Key Statistics 2022"
-   ]
-  ]
- },
- "energy_use": {
-  "columns": [
-   "tech",
-   "carrier",
-   "gj_per_t"
-  ],
-  "rows": [
-   [
-    "steel_bfbof",
-    "coal",
-    7.0
-   ],
-   [
-    "steel_bfbof",
-    "coke",
-    11.0
-   ],
-   [
-    "steel_bfbof",
-    "natural_gas",
-    1.0
-   ],
-   [
-    "steel_bfbof",
-    "electricity",
-    2.0
-   ],
-   [
-    "steel_bfbof_ccs",
-    "coal",
-    7.0
-   ],
-   [
-    "steel_bfbof_ccs",
-    "coke",
-    11.0
-   ],
-   [
-    "steel_bfbof_ccs",
-    "natural_gas",
-    2.5
-   ],
-   [
-    "steel_bfbof_ccs",
-    "electricity",
-    3.0
-   ],
-   [
-    "steel_ngdri_eaf",
-    "natural_gas",
-    7.0
-   ],
-   [
-    "steel_ngdri_eaf",
-    "electricity",
-    1.5
-   ],
-   [
-    "steel_h2dri_eaf",
-    "natural_gas",
-    0.5
-   ],
-   [
-    "steel_h2dri_eaf",
-    "hydrogen",
-    6.6
-   ],
-   [
-    "steel_h2dri_eaf",
-    "electricity",
-    2.5
-   ],
-   [
-    "steel_scrap_eaf",
-    "natural_gas",
-    0.5
-   ],
-   [
-    "steel_scrap_eaf",
-    "electricity",
-    1.7
-   ],
-   [
-    "cement_ref",
-    "coal",
-    2.0
-   ],
-   [
-    "cement_ref",
-    "natural_gas",
-    0.3
-   ],
-   [
-    "cement_ref",
-    "oil",
-    0.2
-   ],
-   [
-    "cement_ref",
-    "electricity",
-    0.4
-   ],
-   [
-    "cement_clinkersub",
-    "coal",
-    1.6
-   ],
-   [
-    "cement_clinkersub",
-    "natural_gas",
-    0.2
-   ],
-   [
-    "cement_clinkersub",
-    "electricity",
-    0.45
-   ],
-   [
-    "cement_ccs",
-    "coal",
-    2.0
-   ],
-   [
-    "cement_ccs",
-    "natural_gas",
-    0.6
-   ],
-   [
-    "cement_ccs",
-    "electricity",
-    0.9
-   ],
-   [
-    "cement_altfuel",
-    "biomass",
-    1.8
-   ],
-   [
-    "cement_altfuel",
-    "coal",
-    0.3
-   ],
-   [
-    "cement_altfuel",
-    "natural_gas",
-    0.1
-   ],
-   [
-    "cement_altfuel",
-    "electricity",
-    0.45
-   ],
-   [
-    "hvc_ref",
-    "natural_gas",
-    12.0
-   ],
-   [
-    "hvc_ref",
-    "oil",
-    1.0
-   ],
-   [
-    "hvc_ref",
-    "electricity",
-    1.2
-   ],
-   [
-    "hvc_elec",
-    "natural_gas",
-    1.2
-   ],
-   [
-    "hvc_elec",
-    "oil",
-    0.3
-   ],
-   [
-    "hvc_elec",
-    "electricity",
-    11.0
-   ],
-   [
-    "hvc_bio",
-    "natural_gas",
-    9.0
-   ],
-   [
-    "hvc_bio",
-    "oil",
-    1.0
-   ],
-   [
-    "hvc_bio",
-    "electricity",
-    2.0
-   ],
-   [
-    "hvc_ccs",
-    "natural_gas",
-    13.5
-   ],
-   [
-    "hvc_ccs",
-    "oil",
-    1.0
-   ],
-   [
-    "hvc_ccs",
-    "electricity",
-    2.2
-   ],
-   [
-    "ammonia_smr",
-    "natural_gas",
-    29.0
-   ],
-   [
-    "ammonia_smr",
-    "electricity",
-    0.5
-   ],
-   [
-    "ammonia_smr_ccs",
-    "natural_gas",
-    30.5
-   ],
-   [
-    "ammonia_smr_ccs",
-    "electricity",
-    1.2
-   ],
-   [
-    "ammonia_h2",
-    "hydrogen",
-    22.0
-   ],
-   [
-    "ammonia_h2",
-    "electricity",
-    3.0
-   ],
-   [
-    "alu_ref",
-    "electricity",
-    51.0
-   ],
-   [
-    "alu_ref",
-    "natural_gas",
-    1.0
-   ],
-   [
-    "alu_inert",
-    "electricity",
-    52.0
-   ],
-   [
-    "alu_inert",
-    "natural_gas",
-    0.5
-   ],
-   [
-    "alu_sec",
-    "electricity",
-    2.55
-   ],
-   [
-    "alu_sec",
-    "natural_gas",
-    1.5
-   ],
-   [
-    "glass_ng",
-    "natural_gas",
-    6.0
-   ],
-   [
-    "glass_ng",
-    "electricity",
-    0.6
-   ],
-   [
-    "glass_elec",
-    "natural_gas",
-    0.3
-   ],
-   [
-    "glass_elec",
-    "electricity",
-    5.5
-   ],
-   [
-    "glass_hybrid",
-    "natural_gas",
-    3.0
-   ],
-   [
-    "glass_hybrid",
-    "electricity",
-    3.0
-   ],
-   [
-    "paper_ref",
-    "natural_gas",
-    8.0
-   ],
-   [
-    "paper_ref",
-    "electricity",
-    2.0
-   ],
-   [
-    "paper_elec",
-    "natural_gas",
-    1.0
-   ],
-   [
-    "paper_elec",
-    "electricity",
-    5.5
-   ],
-   [
-    "paper_bio",
-    "natural_gas",
-    0.3
-   ],
-   [
-    "paper_bio",
-    "biomass",
-    9.0
-   ],
-   [
-    "paper_bio",
-    "electricity",
-    2.0
-   ]
-  ]
- },
- "fuel_prices": {
-  "columns": [
-   "carrier",
-   "year",
-   "price_eur_gj"
-  ],
-  "rows": [
-   [
-    "coal",
-    2025,
-    3.0
-   ],
-   [
-    "coal",
-    2030,
-    3.0
-   ],
-   [
-    "coal",
-    2035,
-    3.1
-   ],
-   [
-    "coal",
-    2040,
-    3.1
-   ],
-   [
-    "coal",
-    2045,
-    3.2
-   ],
-   [
-    "coal",
-    2050,
-    3.2
-   ],
-   [
-    "coke",
-    2025,
-    6.0
-   ],
-   [
-    "coke",
-    2030,
-    6.0
-   ],
-   [
-    "coke",
-    2035,
-    6.1
-   ],
-   [
-    "coke",
-    2040,
-    6.1
-   ],
-   [
-    "coke",
-    2045,
-    6.2
-   ],
-   [
-    "coke",
-    2050,
-    6.2
-   ],
-   [
-    "natural_gas",
-    2025,
-    10.0
-   ],
-   [
-    "natural_gas",
-    2030,
-    9.5
-   ],
-   [
-    "natural_gas",
-    2035,
-    9.0
-   ],
-   [
-    "natural_gas",
-    2040,
-    8.7
-   ],
-   [
-    "natural_gas",
-    2045,
-    8.5
-   ],
-   [
-    "natural_gas",
-    2050,
-    8.3
-   ],
-   [
-    "electricity",
-    2025,
-    24.0
-   ],
-   [
-    "electricity",
-    2030,
-    22.0
-   ],
-   [
-    "electricity",
-    2035,
-    21.0
-   ],
-   [
-    "electricity",
-    2040,
-    20.0
-   ],
-   [
-    "electricity",
-    2045,
-    19.0
-   ],
-   [
-    "electricity",
-    2050,
-    18.0
-   ],
-   [
-    "hydrogen",
-    2025,
-    40.0
-   ],
-   [
-    "hydrogen",
-    2030,
-    33.0
-   ],
-   [
-    "hydrogen",
-    2035,
-    28.0
-   ],
-   [
-    "hydrogen",
-    2040,
-    25.0
-   ],
-   [
-    "hydrogen",
-    2045,
-    22.0
-   ],
-   [
-    "hydrogen",
-    2050,
-    20.0
-   ],
-   [
-    "biomass",
-    2025,
-    8.0
-   ],
-   [
-    "biomass",
-    2030,
-    8.0
-   ],
-   [
-    "biomass",
-    2035,
-    8.2
-   ],
-   [
-    "biomass",
-    2040,
-    8.3
-   ],
-   [
-    "biomass",
-    2045,
-    8.4
-   ],
-   [
-    "biomass",
-    2050,
-    8.5
-   ],
-   [
-    "oil",
-    2025,
-    14.0
-   ],
-   [
-    "oil",
-    2030,
-    14.0
-   ],
-   [
-    "oil",
-    2035,
-    13.8
-   ],
-   [
-    "oil",
-    2040,
-    13.6
-   ],
-   [
-    "oil",
-    2045,
-    13.4
-   ],
-   [
-    "oil",
-    2050,
-    13.2
-   ]
-  ]
- },
- "carbon_price": {
-  "columns": [
-   "year",
-   "price_low",
-   "price_central",
-   "price_high"
-  ],
-  "rows": [
-   [
-    2025,
-    50.0,
-    80.0,
-    110.0
-   ],
-   [
-    2030,
-    70.0,
-    110.0,
-    160.0
-   ],
-   [
-    2035,
-    95.0,
-    150.0,
-    210.0
-   ],
-   [
-    2040,
-    130.0,
-    200.0,
-    270.0
-   ],
-   [
-    2045,
-    150.0,
-    225.0,
-    310.0
-   ],
-   [
-    2050,
-    170.0,
-    250.0,
-    350.0
-   ]
-  ]
- },
- "emission_factors": {
-  "columns": [
-   "carrier",
-   "year",
-   "tco2_per_gj"
-  ],
-  "rows": [
-   [
-    "coal",
-    "all",
-    0.094
-   ],
-   [
-    "coke",
-    "all",
-    0.107
-   ],
-   [
-    "natural_gas",
-    "all",
-    0.056
-   ],
-   [
-    "hydrogen",
-    "all",
-    0.0
-   ],
-   [
-    "biomass",
-    "all",
-    0.0
-   ],
-   [
-    "oil",
-    "all",
-    0.073
-   ],
-   [
-    "electricity",
-    "2025",
-    0.065
-   ],
-   [
-    "electricity",
-    "2030",
-    0.045
-   ],
-   [
-    "electricity",
-    "2035",
-    0.03
-   ],
-   [
-    "electricity",
-    "2040",
-    0.018
-   ],
-   [
-    "electricity",
-    "2045",
-    0.01
-   ],
-   [
-    "electricity",
-    "2050",
-    0.003
-   ]
-  ]
- },
- "constraints": {
-  "columns": [
-   "name",
-   "subsector",
-   "year",
-   "value"
-  ],
-  "rows": [
-   [
-    "scrap_share_max",
-    "steel",
-    2025,
-    0.45
-   ],
-   [
-    "scrap_share_max",
-    "steel",
-    2030,
-    0.47
-   ],
-   [
-    "scrap_share_max",
-    "steel",
-    2035,
-    0.49
-   ],
-   [
-    "scrap_share_max",
-    "steel",
-    2040,
-    0.51
-   ],
-   [
-    "scrap_share_max",
-    "steel",
-    2045,
-    0.53
-   ],
-   [
-    "scrap_share_max",
-    "steel",
-    2050,
-    0.55
-   ],
-   [
-    "scrap_share_max",
-    "aluminium",
-    2025,
-    0.55
-   ],
-   [
-    "scrap_share_max",
-    "aluminium",
-    2030,
-    0.58
-   ],
-   [
-    "scrap_share_max",
-    "aluminium",
-    2035,
-    0.6
-   ],
-   [
-    "scrap_share_max",
-    "aluminium",
-    2040,
-    0.62
-   ],
-   [
-    "scrap_share_max",
-    "aluminium",
-    2045,
-    0.64
-   ],
-   [
-    "scrap_share_max",
-    "aluminium",
-    2050,
-    0.65
-   ],
-   [
-    "biomass_pj_max",
-    "all",
-    2025,
-    300.0
-   ],
-   [
-    "biomass_pj_max",
-    "all",
-    2030,
-    300.0
-   ],
-   [
-    "biomass_pj_max",
-    "all",
-    2035,
-    300.0
-   ],
-   [
-    "biomass_pj_max",
-    "all",
-    2040,
-    300.0
-   ],
-   [
-    "biomass_pj_max",
-    "all",
-    2045,
-    300.0
-   ],
-   [
-    "biomass_pj_max",
-    "all",
-    2050,
-    300.0
-   ],
-   [
-    "ccs_mt_max",
-    "all",
-    2025,
-    0.0
-   ],
-   [
-    "ccs_mt_max",
-    "all",
-    2030,
-    5.0
-   ],
-   [
-    "ccs_mt_max",
-    "all",
-    2035,
-    20.0
-   ],
-   [
-    "ccs_mt_max",
-    "all",
-    2040,
-    50.0
-   ],
-   [
-    "ccs_mt_max",
-    "all",
-    2045,
-    80.0
-   ],
-   [
-    "ccs_mt_max",
-    "all",
-    2050,
-    100.0
-   ]
-  ]
- },
- "scenarios": {
-  "columns": [
-   "scenario",
-   "description",
-   "param",
-   "factor"
-  ],
-  "rows": [
-   [
-    "central",
-    "Central-case assumptions across all parameters",
-    "none",
-    1.0
-   ],
-   [
-    "co2_low",
-    "EU ETS carbon price follows the low column of carbon_price.csv",
-    "carbon_price_low",
-    1.0
-   ],
-   [
-    "co2_high",
-    "EU ETS carbon price follows the high column of carbon_price.csv",
-    "carbon_price_high",
-    1.0
-   ],
-   [
-    "capex_low",
-    "Clean (non-reference) technology CAPEX 30% lower (faster learning/cost-down)",
-    "capex_clean",
-    0.7
-   ],
-   [
-    "capex_high",
-    "Clean (non-reference) technology CAPEX 30% higher (slower learning, supply-chain cost pressure)",
-    "capex_clean",
-    1.3
-   ],
-   [
-    "demand_low",
-    "Product demand 20% lower across all subsectors (material efficiency & circularity)",
-    "demand",
-    0.8
-   ],
-   [
-    "demand_high",
-    "Product demand 10% higher across all subsectors (continued growth)",
-    "demand",
-    1.1
-   ],
-   [
-    "elec_cheap",
-    "Electricity price 30% lower (faster renewables build-out)",
-    "elec_price",
-    0.7
-   ],
-   [
-    "elec_exp",
-    "Electricity price 30% higher (slower grid build-out / tight power markets)",
-    "elec_price",
-    1.3
-   ],
-   [
-    "h2_cheap",
-    "Hydrogen price 40% lower (electrolyser cost-down, cheap renewable power)",
-    "h2_price",
-    0.6
-   ],
-   [
-    "h2_exp",
-    "Hydrogen price 40% higher (slow electrolyser scale-up, feedstock power scarcity)",
-    "h2_price",
-    1.4
-   ],
-   [
-    "eff_gain",
-    "Energy intensity of clean technologies 10% lower (learning-by-doing efficiency gains)",
-    "energy_intensity_clean",
-    0.9
-   ],
-   [
-    "slow_build",
-    "Maximum build rate for new capacity halved (permitting / supply-chain / grid bottlenecks)",
-    "max_build_share",
-    0.5
-   ]
-  ]
- },
- "sources": {
-  "columns": [
-   "table",
-   "item",
-   "source_org",
-   "source_title",
-   "url",
-   "year",
-   "note"
-  ],
-  "rows": [
-   [
-    "sectors",
-    "steel",
-    "Eurofer",
-    "European Steel in Figures 2024",
-    "https://www.eurofer.eu/publications/economic-market-outlook/european-steel-in-figures-2024",
-    "2024",
-    "EU-27 crude steel production ~126 Mt (2023)"
-   ],
-   [
-    "sectors",
-    "steel",
-    "Sandbag (EEA EU ETS Data Viewer / EUTL)",
-    "A closer look at 2023 emissions",
-    "https://sandbag.be/2024/10/07/a-closer-look-at-2023-emissions/",
-    "2024",
-    "EU ETS 'pig iron or steel' activity ~96 Mt CO2 (2023); ~145 Mt on a value-chain basis incl. coke ovens"
-   ],
-   [
-    "sectors",
-    "cement",
-    "Cembureau",
-    "Key Facts & Figures",
-    "https://cembureau.eu/about-our-industry/key-facts-figures/",
-    "2024",
-    "EU-27 cement production ~180 Mt (2023)"
-   ],
-   [
-    "sectors",
-    "cement",
-    "Sandbag (EEA EU ETS Data Viewer / EUTL)",
-    "A closer look at 2023 emissions",
-    "https://sandbag.be/2024/10/07/a-closer-look-at-2023-emissions/",
-    "2024",
-    "EU ETS 'cement clinker or lime' activity combined ~124 Mt CO2 (2023)"
-   ],
-   [
-    "sectors",
-    "hvc",
-    "Sandbag (EU ETS / EUTL)",
-    "Chemicals in the CBAM: Time to step up",
-    "https://sandbag.be/2025/11/25/chemicals-in-the-cbam-time-to-step-up/",
-    "2025",
-    "Refining + chemicals ~203 Mt CO2 = 36% of EU ETS industry (2023); HVC/steam-cracking share estimated at ~45 Mt CO2 direct"
-   ],
-   [
-    "sectors",
-    "hvc",
-    "IEA",
-    "The Future of Petrochemicals",
-    "https://www.iea.org/reports/the-future-of-petrochemicals",
-    "2018",
-    "EU-27 HVC (ethylene/propylene/BTX) production order of magnitude ~40 Mt/yr"
-   ],
-   [
-    "sectors",
-    "ammonia",
-    "Fertilizers Europe",
-    "Industry Facts & Figures",
-    "https://www.fertilizerseurope.com/industry-facts-figures/",
-    "2024",
-    "EU-27 ammonia production ~16 Mt/yr"
-   ],
-   [
-    "sectors",
-    "ammonia",
-    "IEA",
-    "Ammonia Technology Roadmap",
-    "https://www.iea.org/reports/ammonia-technology-roadmap",
-    "2021",
-    "Direct CO2 intensity of conventional (SMR) ammonia ~1.6-2.4 tCO2/t NH3; EU-27 direct CO2 estimated ~26 Mt/yr"
-   ],
-   [
-    "sectors",
-    "aluminium",
-    "International Aluminium Institute (IAI)",
-    "Primary Aluminium Production statistics",
-    "https://international-aluminium.org/statistics/",
-    "2024",
-    "EU-27 primary aluminium ~2 Mt/yr; secondary ~4-5 Mt/yr"
-   ],
-   [
-    "sectors",
-    "aluminium",
-    "JRC (European Commission)",
-    "Aluminium factsheet (JRC144120)",
-    "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf",
-    "2026",
-    "Direct process CO2 (anode consumption) ~2.75 Mt CO2 (2022)"
-   ],
-   [
-    "sectors",
-    "glass",
-    "FEVE (European Container Glass Federation)",
-    "Statistics",
-    "https://feve.org/about-glass/statistics/",
-    "2024",
-    "EU-27 container + flat glass production ~35 Mt/yr"
-   ],
-   [
-    "sectors",
-    "glass",
-    "European Commission (CINEA)",
-    "How LIFE is reducing emissions from glass production",
-    "https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en",
-    "2022",
-    "Whole glass sector ~22 Mt CO2 direct/yr; container+flat share estimated ~20 Mt"
-   ],
-   [
-    "sectors",
-    "paper",
-    "CEPI",
-    "Key Statistics 2022 - European pulp & paper industry",
-    "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf",
-    "2022",
-    "EU pulp & paper (board) production ~74 Mt/yr; direct fossil CO2 ~27 Mt/yr"
-   ],
-   [
-    "technologies",
-    "steel_bfbof",
-    "IEA",
-    "Iron and Steel Technology Roadmap",
-    "https://www.iea.org/reports/iron-and-steel-technology-roadmap",
-    "2020",
-    "Reference BF-BOF energy/capex/direct-CO2 order of magnitude (~1.9 tCO2/t)"
-   ],
-   [
-    "technologies",
-    "steel_bfbof_ccs",
-    "IEAGHG",
-    "Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-    "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/",
-    "2018",
-    "Capture-rate and capex premium for BF-BOF + CCUS"
-   ],
-   [
-    "technologies",
-    "steel_ngdri_eaf",
-    "IEA",
-    "Iron and Steel Technology Roadmap",
-    "https://www.iea.org/reports/iron-and-steel-technology-roadmap",
-    "2020",
-    "NG-DRI+EAF energy use and transitional-asset characterisation"
-   ],
-   [
-    "technologies",
-    "steel_h2dri_eaf",
-    "European Parliament (EPRS)",
-    "Carbon-free steel production - Cost reduction options and usage of existing gas infrastructure",
-    "https://www.europarl.europa.eu/RegData/etudes/STUD/2021/690008/EPRS_STU(2021)690008_EN.pdf",
-    "2021",
-    "H2-DRI+EAF hydrogen intensity (~50-60 kg H2/t) and MAC ~EUR73-166/tCO2 by 2030"
-   ],
-   [
-    "technologies",
-    "steel_h2dri_eaf",
-    "LeadIT (SEI)",
-    "Green Steel Tracker",
-    "https://www.industrytransition.org/green-steel-tracker/",
-    "2026",
-    "Commercial availability timeline (first plants building now)"
-   ],
-   [
-    "technologies",
-    "steel_scrap_eaf",
-    "IEA",
-    "Iron and Steel Technology Roadmap",
-    "https://www.iea.org/reports/iron-and-steel-technology-roadmap",
-    "2020",
-    "Scrap-EAF as mature, low direct-CO2 route"
-   ],
-   [
-    "technologies",
-    "steel_scrap_eaf",
-    "Material Economics",
-    "Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
-    "https://materialeconomics.com/node/13",
-    "2019",
-    "Scrap availability as the binding long-run constraint on secondary steel"
-   ],
-   [
-    "technologies",
-    "cement_ref",
-    "IEA / CSI",
-    "Technology Roadmap: Low-Carbon Transition in the Cement Industry",
-    "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry",
-    "2018",
-    "Reference kiln thermal energy (~3.4 GJ/t clinker) and clinker-ratio-driven process CO2 (0.53 tCO2/t clinker x 0.77 ratio)"
-   ],
-   [
-    "technologies",
-    "cement_clinkersub",
-    "MDPI (Sustainability, peer-reviewed)",
-    "Limestone Calcined Clay Cement (LC3): From Laboratory Innovation to Sustainable Industrial Application",
-    "https://www.mdpi.com/2071-1050/18/7/3473",
-    "2026",
-    "LC3 clinker replacement up to ~50%, ~40% CO2 cut, near-cost-neutral"
-   ],
-   [
-    "technologies",
-    "cement_ccs",
-    "IEAGHG",
-    "Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-    "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/",
-    "2018",
-    "MAC EUR30-107/tCO2 avoided; capture rate ~90% assumed for post-combustion"
-   ],
-   [
-    "technologies",
-    "cement_ccs",
-    "Heidelberg Materials",
-    "World premiere: CCS cement facility opens in Norway (Brevik CCS)",
-    "https://www.heidelbergmaterials.com/en/pr-2025-06-18",
-    "2025",
-    "First industrial-scale cement CCS operational since 2025; available_from calibrated to this"
-   ],
-   [
-    "technologies",
-    "cement_altfuel",
-    "IEA / CSI",
-    "Technology Roadmap: Low-Carbon Transition in the Cement Industry",
-    "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry",
-    "2018",
-    "Alternative-fuel co-processing mature and widely deployed"
-   ],
-   [
-    "technologies",
-    "hvc_ref",
-    "IEA",
-    "The Future of Petrochemicals",
-    "https://www.iea.org/reports/the-future-of-petrochemicals",
-    "2018",
-    "Reference steam-cracker furnace energy intensity order of magnitude"
-   ],
-   [
-    "technologies",
-    "hvc_elec",
-    "BASF / SABIC / Linde",
-    "Start-up of the world's first large-scale electrically heated steam cracking furnace",
-    "https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177",
-    "2024",
-    "Electric cracker demonstration; furnace CO2 cut up to ~90%"
-   ],
-   [
-    "technologies",
-    "hvc_bio",
-    "IEA",
-    "The Future of Petrochemicals",
-    "https://www.iea.org/reports/the-future-of-petrochemicals",
-    "2018",
-    "Bio-naphtha as drop-in feedstock displacing fossil naphtha"
-   ],
-   [
-    "technologies",
-    "hvc_ccs",
-    "IEAGHG",
-    "Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-    "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/",
-    "2018",
-    "Industrial CCS cost/capture-rate benchmarks applied to chemicals furnaces (moderate capture, dilute flue gas)"
-   ],
-   [
-    "technologies",
-    "ammonia_smr",
-    "IEA",
-    "Ammonia Technology Roadmap",
-    "https://www.iea.org/reports/ammonia-technology-roadmap",
-    "2021",
-    "Reference SMR-Haber-Bosch natural gas intensity ~28-32 GJ/t NH3"
-   ],
-   [
-    "technologies",
-    "ammonia_smr_ccs",
-    "IEA",
-    "Ammonia Technology Roadmap",
-    "https://www.iea.org/reports/ammonia-technology-roadmap",
-    "2021",
-    "Blue-ammonia (SMR/ATR+CCS) capture rate and capex premium"
-   ],
-   [
-    "technologies",
-    "ammonia_h2",
-    "IEA",
-    "Ammonia Technology Roadmap - Executive Summary",
-    "https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary",
-    "2021",
-    "Electrolytic-H2 ammonia MAC ~US$820/t NH3 (~US$400/t above conventional); needs power <~US$40/MWh for parity"
-   ],
-   [
-    "technologies",
-    "ammonia_h2",
-    "Yara International",
-    "Yara opens renewable hydrogen plant: a major milestone",
-    "https://www.yara.com/corporate-releases/yara-opens-renewable-hydrogen-plant-a-major-milestone/",
-    "2024",
-    "First commercial green-ammonia plant (Heroya) inaugurated 2024; calibrates available_from"
-   ],
-   [
-    "technologies",
-    "alu_ref",
-    "JRC (European Commission)",
-    "Aluminium factsheet (JRC144120)",
-    "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf",
-    "2026",
-    "Direct anode process CO2 ~1.4 tCO2/t primary Al implied by ~2.75 Mt / ~2 Mt production"
-   ],
-   [
-    "technologies",
-    "alu_ref",
-    "International Aluminium Institute (IAI)",
-    "Statistics",
-    "https://international-aluminium.org/statistics/",
-    "2024",
-    "Primary smelting electricity intensity ~14-15 MWh/t (~51 GJ/t)"
-   ],
-   [
-    "technologies",
-    "alu_inert",
-    "ELYSIS",
-    "ELYSIS achieves breakthrough with commercial-size cell",
-    "https://elysis.com/en/elysis-achieves-breakthrough-with-commercial-size-cell-a-first-in-aluminium-production-using-the",
-    "2025",
-    "Full-scale 450 kA commercial-size inert-anode cell started up Nov 2025; eliminates direct process CO2"
-   ],
-   [
-    "technologies",
-    "alu_sec",
-    "Material Economics",
-    "Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
-    "https://materialeconomics.com/node/13",
-    "2019",
-    "Secondary aluminium uses ~5% of primary smelting energy; scrap-supply constrained"
-   ],
-   [
-    "technologies",
-    "glass_ng",
-    "European Commission (CINEA)",
-    "How LIFE is reducing emissions from glass production",
-    "https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en",
-    "2022",
-    "Reference gas-fired melting energy ~5-7 GJ/t and process CO2 from carbonate raw materials"
-   ],
-   [
-    "technologies",
-    "glass_elec",
-    "IEA",
-    "ETP Clean Energy Technology Guide (technology readiness levels)",
-    "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide",
-    "2024",
-    "All-electric melting TRL and availability"
-   ],
-   [
-    "technologies",
-    "glass_hybrid",
-    "IEA",
-    "ETP Clean Energy Technology Guide (technology readiness levels)",
-    "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide",
-    "2024",
-    "Large hybrid furnace TRL 6-8, emerging"
-   ],
-   [
-    "technologies",
-    "paper_ref",
-    "CEPI",
-    "Key Statistics 2022 - European pulp & paper industry",
-    "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf",
-    "2022",
-    "Reference fossil process-heat intensity order of magnitude"
-   ],
-   [
-    "technologies",
-    "paper_elec",
-    "IEA",
-    "The Future of Heat Pumps",
-    "https://www.iea.org/reports/the-future-of-heat-pumps",
-    "2022",
-    "Industrial heat-pump electrification of process heat; TRL and availability"
-   ],
-   [
-    "technologies",
-    "paper_bio",
-    "IEA Bioenergy",
-    "Decarbonizing industrial process heat: the role of biomass",
-    "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/",
-    "2022",
-    "Biomass/black-liquor process heat, commercially mature"
-   ],
-   [
-    "fuel_prices",
-    "coal",
-    "IEA",
-    "World Energy Outlook 2024",
-    "https://www.iea.org/reports/world-energy-outlook-2024",
-    "2024",
-    "Steam coal industrial price path, central scenario order of magnitude ~EUR3/GJ"
-   ],
-   [
-    "fuel_prices",
-    "coke",
-    "IEA",
-    "World Energy Outlook 2024",
-    "https://www.iea.org/reports/world-energy-outlook-2024",
-    "2024",
-    "Metallurgical coke priced at a premium to thermal coal (~2x)"
-   ],
-   [
-    "fuel_prices",
-    "natural_gas",
-    "IEA",
-    "World Energy Outlook 2024",
-    "https://www.iea.org/reports/world-energy-outlook-2024",
-    "2024",
-    "EU industrial natural gas price path, central scenario, declining from ~EUR10/GJ (2025)"
-   ],
-   [
-    "fuel_prices",
-    "electricity",
-    "Eurostat",
-    "Electricity price statistics",
-    "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics",
-    "2024",
-    "EU-27 industrial electricity price ~EUR24/GJ (~EUR86/MWh) in 2025, declining as renewables share rises"
-   ],
-   [
-    "fuel_prices",
-    "hydrogen",
-    "IEA",
-    "Global Hydrogen Review 2024",
-    "https://www.iea.org/reports/global-hydrogen-review-2024",
-    "2024",
-    "Low-carbon hydrogen cost path ~EUR40/GJ (~EUR4.8/kg) in 2025 falling to ~EUR20/GJ (~EUR2.4/kg) by 2050"
-   ],
-   [
-    "fuel_prices",
-    "biomass",
-    "IEA Bioenergy",
-    "Decarbonizing industrial process heat: the role of biomass",
-    "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/",
-    "2022",
-    "Solid biomass/residue fuel price order of magnitude ~EUR8/GJ"
-   ],
-   [
-    "fuel_prices",
-    "oil",
-    "IEA",
-    "World Energy Outlook 2024",
-    "https://www.iea.org/reports/world-energy-outlook-2024",
-    "2024",
-    "Industrial oil/naphtha price path, central scenario order of magnitude ~EUR14/GJ"
-   ],
-   [
-    "carbon_price",
-    "eu_ets",
-    "European Commission (DG CLIMA)",
-    "2040 Climate Target",
-    "https://climate.ec.europa.eu/eu-action/eu-climate-targets-and-progress/2040-climate-target_en",
-    "2024",
-    "Central EU ETS price path ~EUR80/t (2025) rising to ~EUR200/t (2040) and ~EUR250/t (2050); low/high bands constructed around this by the model team, consistent with the range of EC impact-assessment and market-forward modelling"
-   ],
-   [
-    "carbon_price",
-    "eu_ets",
-    "ICAP",
-    "EU Emissions Trading System (EU ETS)",
-    "https://icapcarbonaction.com/en/ets/eu-emissions-trading-system-eu-ets",
-    "2025",
-    "Historical and current EUA price context used to anchor the 2025 starting point"
-   ],
-   [
-    "emission_factors",
-    "coal",
-    "IPCC",
-    "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
-    "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html",
-    "2006",
-    "Default combustion emission factor for coal, ~94 kgCO2/GJ"
-   ],
-   [
-    "emission_factors",
-    "coke",
-    "IPCC",
-    "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
-    "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html",
-    "2006",
-    "Default combustion emission factor for coke oven coke, ~107 kgCO2/GJ"
-   ],
-   [
-    "emission_factors",
-    "natural_gas",
-    "IPCC",
-    "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
-    "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html",
-    "2006",
-    "Default combustion emission factor for natural gas, ~56 kgCO2/GJ"
-   ],
-   [
-    "emission_factors",
-    "oil",
-    "IPCC",
-    "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
-    "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html",
-    "2006",
-    "Default combustion emission factor for gas/diesel oil & naphtha, ~73 kgCO2/GJ"
-   ],
-   [
-    "emission_factors",
-    "hydrogen",
-    "IPCC AR6 WGIII",
-    "Chapter 11: Industry",
-    "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/",
-    "2022",
-    "Zero combustion CO2 for hydrogen; upstream emissions depend on production route (not modelled at combustion stage)"
-   ],
-   [
-    "emission_factors",
-    "biomass",
-    "IPCC AR6 WGIII",
-    "Chapter 11: Industry",
-    "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/",
-    "2022",
-    "Biomass combustion CO2 conventionally reported as zero at point of combustion (biogenic carbon accounting); land-use/supply-chain emissions not modelled here"
-   ],
-   [
-    "emission_factors",
-    "electricity",
-    "European Environment Agency (EEA)",
-    "Greenhouse gas emission intensity of electricity generation (indicator)",
-    "https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1",
-    "2024",
-    "EU-27 grid emission factor ~0.065 tCO2/GJ (~230 gCO2/kWh) in 2025 falling to ~0.003 tCO2/GJ by 2050 as the grid decarbonises"
-   ],
-   [
-    "constraints",
-    "scrap_share_max",
-    "Material Economics",
-    "Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
-    "https://materialeconomics.com/node/13",
-    "2019",
-    "Steel scrap availability rising from ~45% (2025) to ~55% (2050) of demand servable by scrap-EAF; aluminium secondary share rising ~55% to ~65%, both circularity-constrained"
-   ],
-   [
-    "constraints",
-    "biomass_pj_max",
-    "JRC (European Commission)",
-    "Brief on biomass for energy in the European Union",
-    "https://publications.jrc.ec.europa.eu/repository/handle/JRC109354",
-    "2019",
-    "Sustainable biomass availability for industrial energy use constrained to an order-of-magnitude ceiling of ~300 PJ/yr across all EU-27 industry"
-   ],
-   [
-    "constraints",
-    "ccs_mt_max",
-    "Global CCS Institute",
-    "Global Status of CCS report series",
-    "https://www.globalccsinstitute.com/",
-    "2024",
-    "EU CO2 transport & storage network ramp-up: ~0 Mt/yr (2025) to ~100 Mt/yr (2050) capturable across all subsectors"
-   ],
-   [
-    "constraints",
-    "ccs_mt_max",
-    "Clean Air Task Force",
-    "Carbon capture and storage in Europe: slow but significant progress in 2025",
-    "https://www.catf.us/2025/11/carbon-capture-storage-europe-slow-but-significant-progress-2025/",
-    "2025",
-    "Status of first EU CO2 storage/transport projects (Northern Lights, Porthos, Greensand) calibrating the near-term ramp"
-   ],
-   [
-    "demand",
-    "steel",
-    "Eurofer",
-    "European Steel in Figures 2024",
-    "https://www.eurofer.eu/publications/economic-market-outlook/european-steel-in-figures-2024",
-    "2024",
-    "Demand path assumed broadly flat-to-declining from the 2023 production base"
-   ],
-   [
-    "demand",
-    "cement",
-    "Cembureau",
-    "Key Facts & Figures",
-    "https://cembureau.eu/about-our-industry/key-facts-figures/",
-    "2024",
-    "Demand path assumed broadly flat-to-declining from the 2023 production base"
-   ],
-   [
-    "demand",
-    "aluminium",
-    "International Aluminium Institute (IAI)",
-    "Statistics",
-    "https://international-aluminium.org/statistics/",
-    "2024",
-    "Demand path assumed slight growth, reflecting continued electrification-driven aluminium demand"
-   ],
-   [
-    "demand",
-    "hvc",
-    "IEA",
-    "The Future of Petrochemicals",
-    "https://www.iea.org/reports/the-future-of-petrochemicals",
-    "2018",
-    "Demand path assumed slight growth"
-   ],
-   [
-    "technologies",
-    "discount_rate",
-    "IPCC",
-    "AR6 WGIII, Chapter 11: Industry",
-    "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/",
-    "2022",
-    "7% social/industry discount rate and capital recovery factor approach used to annualise CAPEX, consistent with standard industrial decarbonisation cost-modelling practice"
-   ]
-  ]
- }
+  "sectors": {
+    "columns": [
+      "subsector",
+      "name",
+      "branch",
+      "production_2023_mt",
+      "direct_co2_2023_mt",
+      "source",
+      "source_url"
+    ],
+    "rows": [
+      [
+        "steel",
+        "Crude steel (integrated + EAF)",
+        "Metals",
+        126.0,
+        96.0,
+        "Eurofer (2024), European Steel in Figures 2024; Sandbag (EEA EU ETS Data Viewer / EUTL) (2024), A closer look at 2023 emissions",
+        "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024"
+      ],
+      [
+        "cement",
+        "Cement (clinker-based)",
+        "Non-metallic minerals",
+        180.0,
+        124.0,
+        "Cembureau (2024), Key Facts & Figures; Sandbag (EEA EU ETS Data Viewer / EUTL) (2024), A closer look at 2023 emissions",
+        "https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf"
+      ],
+      [
+        "hvc",
+        "High-value chemicals (steam cracking)",
+        "Chemicals & refining",
+        40.0,
+        45.0,
+        "Sandbag (EU ETS / EUTL) (2025), Chemicals in the CBAM: Time to step up; IEA (2018), The Future of Petrochemicals",
+        "https://sandbag.be/2025/11/25/chemicals-in-the-cbam-time-to-step-up/"
+      ],
+      [
+        "ammonia",
+        "Ammonia / nitrogen fertilisers",
+        "Chemicals & refining",
+        16.0,
+        26.0,
+        "Fertilizers Europe (2024), Industry Facts & Figures; IEA (2021), Ammonia Technology Roadmap",
+        "https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/"
+      ],
+      [
+        "aluminium",
+        "Primary + secondary aluminium",
+        "Metals",
+        6.5,
+        2.8,
+        "International Aluminium Institute (IAI) (2024), Primary Aluminium Production statistics; JRC (European Commission) (2026), Aluminium factsheet (JRC144120)",
+        "https://international-aluminium.org/statistics/"
+      ],
+      [
+        "glass",
+        "Container & flat glass",
+        "Non-metallic minerals",
+        35.0,
+        20.0,
+        "FEVE (European Container Glass Federation) (2024), Statistics; European Commission (CINEA) (2022), How LIFE is reducing emissions from glass production",
+        "https://feve.org/about-glass/statistics/"
+      ],
+      [
+        "paper",
+        "Pulp & paper",
+        "Other manufacturing",
+        74.0,
+        27.0,
+        "CEPI (2022), Key Statistics 2022 - European pulp & paper industry",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf"
+      ]
+    ]
+  },
+  "demand": {
+    "columns": [
+      "subsector",
+      "year",
+      "demand_mt",
+      "source",
+      "source_url"
+    ],
+    "rows": [
+      [
+        "steel",
+        2025,
+        124.0,
+        "Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",
+        "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024"
+      ],
+      [
+        "steel",
+        2030,
+        122.0,
+        "Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",
+        "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024"
+      ],
+      [
+        "steel",
+        2035,
+        120.0,
+        "Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",
+        "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024"
+      ],
+      [
+        "steel",
+        2040,
+        118.0,
+        "Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",
+        "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024"
+      ],
+      [
+        "steel",
+        2045,
+        116.0,
+        "Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",
+        "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024"
+      ],
+      [
+        "steel",
+        2050,
+        114.0,
+        "Derived from Eurofer (2024), European Steel in Figures 2024 (2023 production baseline)",
+        "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024"
+      ],
+      [
+        "cement",
+        2025,
+        178.0,
+        "Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",
+        "https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf"
+      ],
+      [
+        "cement",
+        2030,
+        175.0,
+        "Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",
+        "https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf"
+      ],
+      [
+        "cement",
+        2035,
+        172.0,
+        "Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",
+        "https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf"
+      ],
+      [
+        "cement",
+        2040,
+        168.0,
+        "Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",
+        "https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf"
+      ],
+      [
+        "cement",
+        2045,
+        164.0,
+        "Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",
+        "https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf"
+      ],
+      [
+        "cement",
+        2050,
+        160.0,
+        "Derived from Cembureau (2024), Key Facts & Figures (2023 production baseline)",
+        "https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf"
+      ],
+      [
+        "hvc",
+        2025,
+        40.0,
+        "Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc",
+        2030,
+        41.0,
+        "Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc",
+        2035,
+        42.0,
+        "Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc",
+        2040,
+        43.0,
+        "Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc",
+        2045,
+        44.0,
+        "Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc",
+        2050,
+        45.0,
+        "Derived from IEA (2018), The Future of Petrochemicals (2023 production baseline)",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "ammonia",
+        2025,
+        16.0,
+        "Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",
+        "https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/"
+      ],
+      [
+        "ammonia",
+        2030,
+        16.0,
+        "Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",
+        "https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/"
+      ],
+      [
+        "ammonia",
+        2035,
+        15.0,
+        "Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",
+        "https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/"
+      ],
+      [
+        "ammonia",
+        2040,
+        15.0,
+        "Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",
+        "https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/"
+      ],
+      [
+        "ammonia",
+        2045,
+        14.0,
+        "Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",
+        "https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/"
+      ],
+      [
+        "ammonia",
+        2050,
+        14.0,
+        "Derived from Fertilizers Europe (2024), Fertilizer Industry Facts and Figures 2023 edition (2023 production baseline)",
+        "https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/"
+      ],
+      [
+        "aluminium",
+        2025,
+        6.5,
+        "Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",
+        "https://international-aluminium.org/statistics/"
+      ],
+      [
+        "aluminium",
+        2030,
+        6.8,
+        "Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",
+        "https://international-aluminium.org/statistics/"
+      ],
+      [
+        "aluminium",
+        2035,
+        7.1,
+        "Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",
+        "https://international-aluminium.org/statistics/"
+      ],
+      [
+        "aluminium",
+        2040,
+        7.4,
+        "Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",
+        "https://international-aluminium.org/statistics/"
+      ],
+      [
+        "aluminium",
+        2045,
+        7.7,
+        "Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",
+        "https://international-aluminium.org/statistics/"
+      ],
+      [
+        "aluminium",
+        2050,
+        8.0,
+        "Derived from International Aluminium Institute (IAI) (2024), Statistics (2023 production baseline)",
+        "https://international-aluminium.org/statistics/"
+      ],
+      [
+        "glass",
+        2025,
+        35.0,
+        "Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",
+        "https://feve.org/about-glass/statistics/"
+      ],
+      [
+        "glass",
+        2030,
+        35.0,
+        "Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",
+        "https://feve.org/about-glass/statistics/"
+      ],
+      [
+        "glass",
+        2035,
+        34.0,
+        "Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",
+        "https://feve.org/about-glass/statistics/"
+      ],
+      [
+        "glass",
+        2040,
+        34.0,
+        "Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",
+        "https://feve.org/about-glass/statistics/"
+      ],
+      [
+        "glass",
+        2045,
+        33.0,
+        "Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",
+        "https://feve.org/about-glass/statistics/"
+      ],
+      [
+        "glass",
+        2050,
+        33.0,
+        "Derived from FEVE (European Container Glass Federation) (2024), Statistics (2023 production baseline)",
+        "https://feve.org/about-glass/statistics/"
+      ],
+      [
+        "paper",
+        2025,
+        74.0,
+        "Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf"
+      ],
+      [
+        "paper",
+        2030,
+        72.0,
+        "Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf"
+      ],
+      [
+        "paper",
+        2035,
+        70.0,
+        "Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf"
+      ],
+      [
+        "paper",
+        2040,
+        68.0,
+        "Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf"
+      ],
+      [
+        "paper",
+        2045,
+        66.0,
+        "Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf"
+      ],
+      [
+        "paper",
+        2050,
+        64.0,
+        "Derived from CEPI (2022), Key Statistics 2022 - European pulp & paper industry (2023 production baseline)",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf"
+      ]
+    ]
+  },
+  "technologies": {
+    "columns": [
+      "tech",
+      "subsector",
+      "name",
+      "capex_eur_t",
+      "fixed_opex_eur_t",
+      "var_opex_eur_t",
+      "lifetime_yr",
+      "available_from",
+      "max_build_share",
+      "capture_rate",
+      "process_co2_t_t",
+      "source",
+      "source_url"
+    ],
+    "rows": [
+      [
+        "steel_bfbof",
+        "steel",
+        "Blast furnace - basic oxygen furnace (reference)",
+        400.0,
+        25.0,
+        150.0,
+        25,
+        2025,
+        0.25,
+        0.0,
+        0.0,
+        "IEA (2020), Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "steel_bfbof_ccs",
+        "steel",
+        "BF-BOF with CCUS (top-gas / post-combustion capture)",
+        650.0,
+        35.0,
+        160.0,
+        25,
+        2030,
+        0.12,
+        0.6,
+        0.0,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "steel_ngdri_eaf",
+        "steel",
+        "Natural-gas DRI + EAF (transitional)",
+        500.0,
+        25.0,
+        140.0,
+        25,
+        2025,
+        0.15,
+        0.0,
+        0.0,
+        "IEA (2020), Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "steel_h2dri_eaf",
+        "steel",
+        "Hydrogen DRI (H2-DRI) + EAF",
+        800.0,
+        30.0,
+        130.0,
+        25,
+        2027,
+        0.15,
+        0.0,
+        0.0,
+        "European Parliament (EPRS) (2021), Carbon-free steel production - Cost reduction options and usage of existing gas infrastructure; LeadIT (SEI) (2026), Green Steel Tracker",
+        "https://www.europarl.europa.eu/RegData/etudes/STUD/2021/690008/EPRS_STU(2021)690008_EN.pdf"
+      ],
+      [
+        "steel_scrap_eaf",
+        "steel",
+        "Scrap-based EAF (secondary steel, scrap-limited)",
+        350.0,
+        18.0,
+        280.0,
+        20,
+        2025,
+        0.15,
+        0.0,
+        0.0,
+        "IEA (2020), Iron and Steel Technology Roadmap; Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "cement_ref",
+        "cement",
+        "Conventional dry-kiln clinker production (reference)",
+        150.0,
+        12.0,
+        25.0,
+        35,
+        2025,
+        0.25,
+        0.0,
+        0.408,
+        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+      ],
+      [
+        "cement_clinkersub",
+        "cement",
+        "Clinker substitution / calcined clay (LC3) & efficiency package",
+        160.0,
+        12.0,
+        22.0,
+        35,
+        2025,
+        0.15,
+        0.0,
+        0.345,
+        "MDPI (Sustainability, peer-reviewed) (2026), Limestone Calcined Clay Cement (LC3): From Laboratory Innovation to Sustainable Industrial Application",
+        "https://www.mdpi.com/2071-1050/18/7/3473"
+      ],
+      [
+        "cement_ccs",
+        "cement",
+        "CCS (oxyfuel / post-combustion / LEILAC direct separation)",
+        320.0,
+        25.0,
+        35.0,
+        30,
+        2028,
+        0.12,
+        0.9,
+        0.408,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03); Heidelberg Materials (2025), World premiere: CCS cement facility opens in Norway (Brevik CCS)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "cement_altfuel",
+        "cement",
+        "High alternative-fuel share (biomass / waste-derived kiln fuel)",
+        165.0,
+        13.0,
+        20.0,
+        35,
+        2025,
+        0.15,
+        0.0,
+        0.408,
+        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+      ],
+      [
+        "hvc_ref",
+        "hvc",
+        "NG/naphtha steam cracker (reference)",
+        700.0,
+        30.0,
+        550.0,
+        30,
+        2025,
+        0.3,
+        0.0,
+        0.0,
+        "IEA (2018), The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc_elec",
+        "hvc",
+        "Electric steam cracker (e-cracker)",
+        850.0,
+        32.0,
+        560.0,
+        30,
+        2030,
+        0.15,
+        0.0,
+        0.0,
+        "BASF / SABIC / Linde (2024), Start-up of the world's first large-scale electrically heated steam cracking furnace",
+        "https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177"
+      ],
+      [
+        "hvc_bio",
+        "hvc",
+        "Bio-naphtha fed cracker",
+        720.0,
+        30.0,
+        620.0,
+        30,
+        2027,
+        0.15,
+        0.0,
+        0.0,
+        "IEA (2018), The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc_ccs",
+        "hvc",
+        "Steam cracker with CCS",
+        900.0,
+        35.0,
+        560.0,
+        30,
+        2032,
+        0.15,
+        0.65,
+        0.0,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "ammonia_smr",
+        "ammonia",
+        "Steam methane reforming Haber-Bosch (reference)",
+        650.0,
+        25.0,
+        40.0,
+        25,
+        2025,
+        0.3,
+        0.0,
+        0.0,
+        "IEA (2021), Ammonia Technology Roadmap",
+        "https://www.iea.org/reports/ammonia-technology-roadmap"
+      ],
+      [
+        "ammonia_smr_ccs",
+        "ammonia",
+        "SMR + CCS (blue ammonia)",
+        900.0,
+        35.0,
+        55.0,
+        25,
+        2026,
+        0.15,
+        0.6,
+        0.0,
+        "IEA (2021), Ammonia Technology Roadmap",
+        "https://www.iea.org/reports/ammonia-technology-roadmap"
+      ],
+      [
+        "ammonia_h2",
+        "ammonia",
+        "Electrolytic hydrogen Haber-Bosch (green ammonia)",
+        1500.0,
+        45.0,
+        45.0,
+        20,
+        2026,
+        0.15,
+        0.0,
+        0.0,
+        "IEA (2021), Ammonia Technology Roadmap - Executive Summary; Yara International (2024), Yara opens renewable hydrogen plant: a major milestone",
+        "https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary"
+      ],
+      [
+        "alu_ref",
+        "aluminium",
+        "Hall-Heroult primary smelting, grid electricity (reference)",
+        3500.0,
+        60.0,
+        900.0,
+        30,
+        2025,
+        0.3,
+        0.0,
+        1.4,
+        "JRC (European Commission) (2026), Aluminium factsheet (JRC144120); International Aluminium Institute (IAI) (2024), Statistics",
+        "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf"
+      ],
+      [
+        "alu_inert",
+        "aluminium",
+        "Inert anode primary smelting (ELYSIS)",
+        3800.0,
+        65.0,
+        850.0,
+        30,
+        2032,
+        0.15,
+        0.0,
+        0.0,
+        "ELYSIS (2025), ELYSIS achieves breakthrough with commercial-size cell",
+        "https://elysis.com/en/elysis-achieves-breakthrough-with-commercial-size-cell-a-first-in-aluminium-production-using-the"
+      ],
+      [
+        "alu_sec",
+        "aluminium",
+        "Secondary (recycled) aluminium, scrap-limited",
+        700.0,
+        20.0,
+        750.0,
+        25,
+        2025,
+        0.25,
+        0.0,
+        0.0,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "glass_ng",
+        "glass",
+        "Natural-gas fired melting (reference)",
+        120.0,
+        8.0,
+        90.0,
+        15,
+        2025,
+        0.3,
+        0.0,
+        0.15,
+        "European Commission (CINEA) (2022), How LIFE is reducing emissions from glass production",
+        "https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en"
+      ],
+      [
+        "glass_elec",
+        "glass",
+        "All-electric melting",
+        150.0,
+        9.0,
+        88.0,
+        15,
+        2025,
+        0.2,
+        0.0,
+        0.15,
+        "IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",
+        "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide"
+      ],
+      [
+        "glass_hybrid",
+        "glass",
+        "Hybrid natural-gas / electric / hydrogen melting",
+        140.0,
+        8.5,
+        89.0,
+        15,
+        2027,
+        0.2,
+        0.0,
+        0.15,
+        "IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",
+        "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide"
+      ],
+      [
+        "paper_ref",
+        "paper",
+        "Natural-gas CHP process heat (reference)",
+        250.0,
+        20.0,
+        300.0,
+        25,
+        2025,
+        0.25,
+        0.0,
+        0.0,
+        "CEPI (2022), Key Statistics 2022 - European pulp & paper industry",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf"
+      ],
+      [
+        "paper_elec",
+        "paper",
+        "Electrification / high-temperature heat pumps",
+        280.0,
+        20.0,
+        295.0,
+        20,
+        2027,
+        0.15,
+        0.0,
+        0.0,
+        "IEA (2022), The Future of Heat Pumps",
+        "https://www.iea.org/reports/the-future-of-heat-pumps"
+      ],
+      [
+        "paper_bio",
+        "paper",
+        "Biomass residues (incl. black liquor) process heat",
+        260.0,
+        20.0,
+        290.0,
+        25,
+        2025,
+        0.15,
+        0.0,
+        0.0,
+        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+      ]
+    ]
+  },
+  "energy_use": {
+    "columns": [
+      "tech",
+      "carrier",
+      "gj_per_t",
+      "source",
+      "source_url"
+    ],
+    "rows": [
+      [
+        "steel_bfbof",
+        "coal",
+        7.0,
+        "IEA (2020), Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "steel_bfbof",
+        "coke",
+        11.0,
+        "IEA (2020), Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "steel_bfbof",
+        "natural_gas",
+        1.0,
+        "IEA (2020), Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "steel_bfbof",
+        "electricity",
+        2.0,
+        "IEA (2020), Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "steel_bfbof_ccs",
+        "coal",
+        7.0,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "steel_bfbof_ccs",
+        "coke",
+        11.0,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "steel_bfbof_ccs",
+        "natural_gas",
+        2.5,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "steel_bfbof_ccs",
+        "electricity",
+        3.0,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "steel_ngdri_eaf",
+        "natural_gas",
+        7.0,
+        "IEA (2020), Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "steel_ngdri_eaf",
+        "electricity",
+        1.5,
+        "IEA (2020), Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "steel_h2dri_eaf",
+        "natural_gas",
+        0.5,
+        "European Parliament (EPRS) (2021), Carbon-free steel production - Cost reduction options and usage of existing gas infrastructure",
+        "https://www.europarl.europa.eu/RegData/etudes/STUD/2021/690008/EPRS_STU(2021)690008_EN.pdf"
+      ],
+      [
+        "steel_h2dri_eaf",
+        "hydrogen",
+        6.6,
+        "European Parliament (EPRS) (2021), Carbon-free steel production - Cost reduction options and usage of existing gas infrastructure",
+        "https://www.europarl.europa.eu/RegData/etudes/STUD/2021/690008/EPRS_STU(2021)690008_EN.pdf"
+      ],
+      [
+        "steel_h2dri_eaf",
+        "electricity",
+        2.5,
+        "European Parliament (EPRS) (2021), Carbon-free steel production - Cost reduction options and usage of existing gas infrastructure",
+        "https://www.europarl.europa.eu/RegData/etudes/STUD/2021/690008/EPRS_STU(2021)690008_EN.pdf"
+      ],
+      [
+        "steel_scrap_eaf",
+        "natural_gas",
+        0.5,
+        "IEA (2020), Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "steel_scrap_eaf",
+        "electricity",
+        1.7,
+        "IEA (2020), Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+      ],
+      [
+        "cement_ref",
+        "coal",
+        2.0,
+        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+      ],
+      [
+        "cement_ref",
+        "natural_gas",
+        0.3,
+        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+      ],
+      [
+        "cement_ref",
+        "oil",
+        0.2,
+        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+      ],
+      [
+        "cement_ref",
+        "electricity",
+        0.4,
+        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+      ],
+      [
+        "cement_clinkersub",
+        "coal",
+        1.6,
+        "MDPI (Sustainability, peer-reviewed) (2026), Limestone Calcined Clay Cement (LC3): From Laboratory Innovation to Sustainable Industrial Application",
+        "https://www.mdpi.com/2071-1050/18/7/3473"
+      ],
+      [
+        "cement_clinkersub",
+        "natural_gas",
+        0.2,
+        "MDPI (Sustainability, peer-reviewed) (2026), Limestone Calcined Clay Cement (LC3): From Laboratory Innovation to Sustainable Industrial Application",
+        "https://www.mdpi.com/2071-1050/18/7/3473"
+      ],
+      [
+        "cement_clinkersub",
+        "electricity",
+        0.45,
+        "MDPI (Sustainability, peer-reviewed) (2026), Limestone Calcined Clay Cement (LC3): From Laboratory Innovation to Sustainable Industrial Application",
+        "https://www.mdpi.com/2071-1050/18/7/3473"
+      ],
+      [
+        "cement_ccs",
+        "coal",
+        2.0,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "cement_ccs",
+        "natural_gas",
+        0.6,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "cement_ccs",
+        "electricity",
+        0.9,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "cement_altfuel",
+        "biomass",
+        1.8,
+        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+      ],
+      [
+        "cement_altfuel",
+        "coal",
+        0.3,
+        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+      ],
+      [
+        "cement_altfuel",
+        "natural_gas",
+        0.1,
+        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+      ],
+      [
+        "cement_altfuel",
+        "electricity",
+        0.45,
+        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+      ],
+      [
+        "hvc_ref",
+        "natural_gas",
+        12.0,
+        "IEA (2018), The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc_ref",
+        "oil",
+        1.0,
+        "IEA (2018), The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc_ref",
+        "electricity",
+        1.2,
+        "IEA (2018), The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc_elec",
+        "natural_gas",
+        1.2,
+        "BASF / SABIC / Linde (2024), Start-up of the world's first large-scale electrically heated steam cracking furnace",
+        "https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177"
+      ],
+      [
+        "hvc_elec",
+        "oil",
+        0.3,
+        "BASF / SABIC / Linde (2024), Start-up of the world's first large-scale electrically heated steam cracking furnace",
+        "https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177"
+      ],
+      [
+        "hvc_elec",
+        "electricity",
+        11.0,
+        "BASF / SABIC / Linde (2024), Start-up of the world's first large-scale electrically heated steam cracking furnace",
+        "https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177"
+      ],
+      [
+        "hvc_bio",
+        "natural_gas",
+        9.0,
+        "IEA (2018), The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc_bio",
+        "oil",
+        1.0,
+        "IEA (2018), The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc_bio",
+        "electricity",
+        2.0,
+        "IEA (2018), The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals"
+      ],
+      [
+        "hvc_ccs",
+        "natural_gas",
+        13.5,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "hvc_ccs",
+        "oil",
+        1.0,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "hvc_ccs",
+        "electricity",
+        2.2,
+        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+      ],
+      [
+        "ammonia_smr",
+        "natural_gas",
+        29.0,
+        "IEA (2021), Ammonia Technology Roadmap",
+        "https://www.iea.org/reports/ammonia-technology-roadmap"
+      ],
+      [
+        "ammonia_smr",
+        "electricity",
+        0.5,
+        "IEA (2021), Ammonia Technology Roadmap",
+        "https://www.iea.org/reports/ammonia-technology-roadmap"
+      ],
+      [
+        "ammonia_smr_ccs",
+        "natural_gas",
+        30.5,
+        "IEA (2021), Ammonia Technology Roadmap",
+        "https://www.iea.org/reports/ammonia-technology-roadmap"
+      ],
+      [
+        "ammonia_smr_ccs",
+        "electricity",
+        1.2,
+        "IEA (2021), Ammonia Technology Roadmap",
+        "https://www.iea.org/reports/ammonia-technology-roadmap"
+      ],
+      [
+        "ammonia_h2",
+        "hydrogen",
+        22.0,
+        "IEA (2021), Ammonia Technology Roadmap - Executive Summary",
+        "https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary"
+      ],
+      [
+        "ammonia_h2",
+        "electricity",
+        3.0,
+        "IEA (2021), Ammonia Technology Roadmap - Executive Summary",
+        "https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary"
+      ],
+      [
+        "alu_ref",
+        "electricity",
+        51.0,
+        "JRC (European Commission) (2026), Aluminium factsheet (JRC144120)",
+        "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf"
+      ],
+      [
+        "alu_ref",
+        "natural_gas",
+        1.0,
+        "JRC (European Commission) (2026), Aluminium factsheet (JRC144120)",
+        "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf"
+      ],
+      [
+        "alu_inert",
+        "electricity",
+        52.0,
+        "ELYSIS (2025), ELYSIS achieves breakthrough with commercial-size cell",
+        "https://elysis.com/en/elysis-achieves-breakthrough-with-commercial-size-cell-a-first-in-aluminium-production-using-the"
+      ],
+      [
+        "alu_inert",
+        "natural_gas",
+        0.5,
+        "ELYSIS (2025), ELYSIS achieves breakthrough with commercial-size cell",
+        "https://elysis.com/en/elysis-achieves-breakthrough-with-commercial-size-cell-a-first-in-aluminium-production-using-the"
+      ],
+      [
+        "alu_sec",
+        "electricity",
+        2.55,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "alu_sec",
+        "natural_gas",
+        1.5,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "glass_ng",
+        "natural_gas",
+        6.0,
+        "European Commission (CINEA) (2022), How LIFE is reducing emissions from glass production",
+        "https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en"
+      ],
+      [
+        "glass_ng",
+        "electricity",
+        0.6,
+        "European Commission (CINEA) (2022), How LIFE is reducing emissions from glass production",
+        "https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en"
+      ],
+      [
+        "glass_elec",
+        "natural_gas",
+        0.3,
+        "IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",
+        "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide"
+      ],
+      [
+        "glass_elec",
+        "electricity",
+        5.5,
+        "IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",
+        "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide"
+      ],
+      [
+        "glass_hybrid",
+        "natural_gas",
+        3.0,
+        "IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",
+        "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide"
+      ],
+      [
+        "glass_hybrid",
+        "electricity",
+        3.0,
+        "IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",
+        "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide"
+      ],
+      [
+        "paper_ref",
+        "natural_gas",
+        8.0,
+        "CEPI (2022), Key Statistics 2022 - European pulp & paper industry",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf"
+      ],
+      [
+        "paper_ref",
+        "electricity",
+        2.0,
+        "CEPI (2022), Key Statistics 2022 - European pulp & paper industry",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf"
+      ],
+      [
+        "paper_elec",
+        "natural_gas",
+        1.0,
+        "IEA (2022), The Future of Heat Pumps",
+        "https://www.iea.org/reports/the-future-of-heat-pumps"
+      ],
+      [
+        "paper_elec",
+        "electricity",
+        5.5,
+        "IEA (2022), The Future of Heat Pumps",
+        "https://www.iea.org/reports/the-future-of-heat-pumps"
+      ],
+      [
+        "paper_bio",
+        "natural_gas",
+        0.3,
+        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+      ],
+      [
+        "paper_bio",
+        "biomass",
+        9.0,
+        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+      ],
+      [
+        "paper_bio",
+        "electricity",
+        2.0,
+        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+      ]
+    ]
+  },
+  "fuel_prices": {
+    "columns": [
+      "carrier",
+      "year",
+      "price_eur_gj",
+      "source",
+      "source_url"
+    ],
+    "rows": [
+      [
+        "coal",
+        2025,
+        3.0,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coal",
+        2030,
+        3.0,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coal",
+        2035,
+        3.1,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coal",
+        2040,
+        3.1,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coal",
+        2045,
+        3.2,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coal",
+        2050,
+        3.2,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coke",
+        2025,
+        6.0,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coke",
+        2030,
+        6.0,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coke",
+        2035,
+        6.1,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coke",
+        2040,
+        6.1,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coke",
+        2045,
+        6.2,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "coke",
+        2050,
+        6.2,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "natural_gas",
+        2025,
+        10.0,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "natural_gas",
+        2030,
+        9.5,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "natural_gas",
+        2035,
+        9.0,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "natural_gas",
+        2040,
+        8.7,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "natural_gas",
+        2045,
+        8.5,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "natural_gas",
+        2050,
+        8.3,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "electricity",
+        2025,
+        24.0,
+        "Eurostat (2024), Electricity price statistics",
+        "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics"
+      ],
+      [
+        "electricity",
+        2030,
+        22.0,
+        "Eurostat (2024), Electricity price statistics",
+        "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics"
+      ],
+      [
+        "electricity",
+        2035,
+        21.0,
+        "Eurostat (2024), Electricity price statistics",
+        "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics"
+      ],
+      [
+        "electricity",
+        2040,
+        20.0,
+        "Eurostat (2024), Electricity price statistics",
+        "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics"
+      ],
+      [
+        "electricity",
+        2045,
+        19.0,
+        "Eurostat (2024), Electricity price statistics",
+        "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics"
+      ],
+      [
+        "electricity",
+        2050,
+        18.0,
+        "Eurostat (2024), Electricity price statistics",
+        "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics"
+      ],
+      [
+        "hydrogen",
+        2025,
+        40.0,
+        "IEA (2024), Global Hydrogen Review 2024",
+        "https://www.iea.org/reports/global-hydrogen-review-2024"
+      ],
+      [
+        "hydrogen",
+        2030,
+        33.0,
+        "IEA (2024), Global Hydrogen Review 2024",
+        "https://www.iea.org/reports/global-hydrogen-review-2024"
+      ],
+      [
+        "hydrogen",
+        2035,
+        28.0,
+        "IEA (2024), Global Hydrogen Review 2024",
+        "https://www.iea.org/reports/global-hydrogen-review-2024"
+      ],
+      [
+        "hydrogen",
+        2040,
+        25.0,
+        "IEA (2024), Global Hydrogen Review 2024",
+        "https://www.iea.org/reports/global-hydrogen-review-2024"
+      ],
+      [
+        "hydrogen",
+        2045,
+        22.0,
+        "IEA (2024), Global Hydrogen Review 2024",
+        "https://www.iea.org/reports/global-hydrogen-review-2024"
+      ],
+      [
+        "hydrogen",
+        2050,
+        20.0,
+        "IEA (2024), Global Hydrogen Review 2024",
+        "https://www.iea.org/reports/global-hydrogen-review-2024"
+      ],
+      [
+        "biomass",
+        2025,
+        8.0,
+        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+      ],
+      [
+        "biomass",
+        2030,
+        8.0,
+        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+      ],
+      [
+        "biomass",
+        2035,
+        8.2,
+        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+      ],
+      [
+        "biomass",
+        2040,
+        8.3,
+        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+      ],
+      [
+        "biomass",
+        2045,
+        8.4,
+        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+      ],
+      [
+        "biomass",
+        2050,
+        8.5,
+        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+      ],
+      [
+        "oil",
+        2025,
+        14.0,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "oil",
+        2030,
+        14.0,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "oil",
+        2035,
+        13.8,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "oil",
+        2040,
+        13.6,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "oil",
+        2045,
+        13.4,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ],
+      [
+        "oil",
+        2050,
+        13.2,
+        "IEA (2024), World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024"
+      ]
+    ]
+  },
+  "carbon_price": {
+    "columns": [
+      "year",
+      "price_low",
+      "price_central",
+      "price_high",
+      "source",
+      "source_url"
+    ],
+    "rows": [
+      [
+        2025,
+        50.0,
+        80.0,
+        110.0,
+        "Derived from European Commission (DG CLIMA) (2024), 2040 Climate Target (central path); low/high bands are model-team constructed sensitivity ranges",
+        "https://commission.europa.eu/topics/climate-action/eu-climate-energy-and-environmental-targets/2040-targets_en"
+      ],
+      [
+        2030,
+        70.0,
+        110.0,
+        160.0,
+        "Derived from European Commission (DG CLIMA) (2024), 2040 Climate Target (central path); low/high bands are model-team constructed sensitivity ranges",
+        "https://commission.europa.eu/topics/climate-action/eu-climate-energy-and-environmental-targets/2040-targets_en"
+      ],
+      [
+        2035,
+        95.0,
+        150.0,
+        210.0,
+        "Derived from European Commission (DG CLIMA) (2024), 2040 Climate Target (central path); low/high bands are model-team constructed sensitivity ranges",
+        "https://commission.europa.eu/topics/climate-action/eu-climate-energy-and-environmental-targets/2040-targets_en"
+      ],
+      [
+        2040,
+        130.0,
+        200.0,
+        270.0,
+        "Derived from European Commission (DG CLIMA) (2024), 2040 Climate Target (central path); low/high bands are model-team constructed sensitivity ranges",
+        "https://commission.europa.eu/topics/climate-action/eu-climate-energy-and-environmental-targets/2040-targets_en"
+      ],
+      [
+        2045,
+        150.0,
+        225.0,
+        310.0,
+        "Derived from European Commission (DG CLIMA) (2024), 2040 Climate Target (central path); low/high bands are model-team constructed sensitivity ranges",
+        "https://commission.europa.eu/topics/climate-action/eu-climate-energy-and-environmental-targets/2040-targets_en"
+      ],
+      [
+        2050,
+        170.0,
+        250.0,
+        350.0,
+        "Derived from European Commission (DG CLIMA) (2024), 2040 Climate Target (central path); low/high bands are model-team constructed sensitivity ranges",
+        "https://commission.europa.eu/topics/climate-action/eu-climate-energy-and-environmental-targets/2040-targets_en"
+      ]
+    ]
+  },
+  "emission_factors": {
+    "columns": [
+      "carrier",
+      "year",
+      "tco2_per_gj",
+      "source",
+      "source_url"
+    ],
+    "rows": [
+      [
+        "coal",
+        "all",
+        0.094,
+        "IPCC (2006), 2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
+        "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+      ],
+      [
+        "coke",
+        "all",
+        0.107,
+        "IPCC (2006), 2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
+        "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+      ],
+      [
+        "natural_gas",
+        "all",
+        0.056,
+        "IPCC (2006), 2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
+        "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+      ],
+      [
+        "hydrogen",
+        "all",
+        0.0,
+        "IPCC AR6 WGIII (2022), Chapter 11: Industry",
+        "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/"
+      ],
+      [
+        "biomass",
+        "all",
+        0.0,
+        "IPCC AR6 WGIII (2022), Chapter 11: Industry",
+        "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/"
+      ],
+      [
+        "oil",
+        "all",
+        0.073,
+        "IPCC (2006), 2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
+        "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+      ],
+      [
+        "electricity",
+        "2025",
+        0.065,
+        "European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",
+        "https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1"
+      ],
+      [
+        "electricity",
+        "2030",
+        0.045,
+        "European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",
+        "https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1"
+      ],
+      [
+        "electricity",
+        "2035",
+        0.03,
+        "European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",
+        "https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1"
+      ],
+      [
+        "electricity",
+        "2040",
+        0.018,
+        "European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",
+        "https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1"
+      ],
+      [
+        "electricity",
+        "2045",
+        0.01,
+        "European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",
+        "https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1"
+      ],
+      [
+        "electricity",
+        "2050",
+        0.003,
+        "European Environment Agency (EEA) (2024), Greenhouse gas emission intensity of electricity generation (indicator)",
+        "https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1"
+      ]
+    ]
+  },
+  "constraints": {
+    "columns": [
+      "name",
+      "subsector",
+      "year",
+      "value",
+      "source",
+      "source_url"
+    ],
+    "rows": [
+      [
+        "scrap_share_max",
+        "steel",
+        2025,
+        0.45,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "steel",
+        2030,
+        0.47,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "steel",
+        2035,
+        0.49,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "steel",
+        2040,
+        0.51,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "steel",
+        2045,
+        0.53,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "steel",
+        2050,
+        0.55,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "aluminium",
+        2025,
+        0.55,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "aluminium",
+        2030,
+        0.58,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "aluminium",
+        2035,
+        0.6,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "aluminium",
+        2040,
+        0.62,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "aluminium",
+        2045,
+        0.64,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "scrap_share_max",
+        "aluminium",
+        2050,
+        0.65,
+        "Material Economics (2019), Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf"
+      ],
+      [
+        "biomass_pj_max",
+        "all",
+        2025,
+        300.0,
+        "JRC (European Commission) (2019), Brief on biomass for energy in the European Union",
+        "https://publications.jrc.ec.europa.eu/repository/handle/JRC109354"
+      ],
+      [
+        "biomass_pj_max",
+        "all",
+        2030,
+        300.0,
+        "JRC (European Commission) (2019), Brief on biomass for energy in the European Union",
+        "https://publications.jrc.ec.europa.eu/repository/handle/JRC109354"
+      ],
+      [
+        "biomass_pj_max",
+        "all",
+        2035,
+        300.0,
+        "JRC (European Commission) (2019), Brief on biomass for energy in the European Union",
+        "https://publications.jrc.ec.europa.eu/repository/handle/JRC109354"
+      ],
+      [
+        "biomass_pj_max",
+        "all",
+        2040,
+        300.0,
+        "JRC (European Commission) (2019), Brief on biomass for energy in the European Union",
+        "https://publications.jrc.ec.europa.eu/repository/handle/JRC109354"
+      ],
+      [
+        "biomass_pj_max",
+        "all",
+        2045,
+        300.0,
+        "JRC (European Commission) (2019), Brief on biomass for energy in the European Union",
+        "https://publications.jrc.ec.europa.eu/repository/handle/JRC109354"
+      ],
+      [
+        "biomass_pj_max",
+        "all",
+        2050,
+        300.0,
+        "JRC (European Commission) (2019), Brief on biomass for energy in the European Union",
+        "https://publications.jrc.ec.europa.eu/repository/handle/JRC109354"
+      ],
+      [
+        "ccs_mt_max",
+        "all",
+        2025,
+        0.0,
+        "Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",
+        "https://www.globalccsinstitute.com/"
+      ],
+      [
+        "ccs_mt_max",
+        "all",
+        2030,
+        5.0,
+        "Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",
+        "https://www.globalccsinstitute.com/"
+      ],
+      [
+        "ccs_mt_max",
+        "all",
+        2035,
+        20.0,
+        "Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",
+        "https://www.globalccsinstitute.com/"
+      ],
+      [
+        "ccs_mt_max",
+        "all",
+        2040,
+        50.0,
+        "Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",
+        "https://www.globalccsinstitute.com/"
+      ],
+      [
+        "ccs_mt_max",
+        "all",
+        2045,
+        80.0,
+        "Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",
+        "https://www.globalccsinstitute.com/"
+      ],
+      [
+        "ccs_mt_max",
+        "all",
+        2050,
+        100.0,
+        "Global CCS Institute (2024), Global Status of CCS report series; Clean Air Task Force (2025), Carbon capture and storage in Europe: slow but significant progress in 2025",
+        "https://www.globalccsinstitute.com/"
+      ]
+    ]
+  },
+  "scenarios": {
+    "columns": [
+      "scenario",
+      "description",
+      "param",
+      "factor",
+      "source",
+      "source_url"
+    ],
+    "rows": [
+      [
+        "central",
+        "Central-case assumptions across all parameters",
+        "none",
+        1.0,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "co2_low",
+        "EU ETS carbon price follows the low column of carbon_price.csv",
+        "carbon_price_low",
+        1.0,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "co2_high",
+        "EU ETS carbon price follows the high column of carbon_price.csv",
+        "carbon_price_high",
+        1.0,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "capex_low",
+        "Clean (non-reference) technology CAPEX 30% lower (faster learning/cost-down)",
+        "capex_clean",
+        0.7,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "capex_high",
+        "Clean (non-reference) technology CAPEX 30% higher (slower learning, supply-chain cost pressure)",
+        "capex_clean",
+        1.3,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "demand_low",
+        "Product demand 20% lower across all subsectors (material efficiency & circularity)",
+        "demand",
+        0.8,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "demand_high",
+        "Product demand 10% higher across all subsectors (continued growth)",
+        "demand",
+        1.1,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "elec_cheap",
+        "Electricity price 30% lower (faster renewables build-out)",
+        "elec_price",
+        0.7,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "elec_exp",
+        "Electricity price 30% higher (slower grid build-out / tight power markets)",
+        "elec_price",
+        1.3,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "h2_cheap",
+        "Hydrogen price 40% lower (electrolyser cost-down, cheap renewable power)",
+        "h2_price",
+        0.6,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "h2_exp",
+        "Hydrogen price 40% higher (slow electrolyser scale-up, feedstock power scarcity)",
+        "h2_price",
+        1.4,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "eff_gain",
+        "Energy intensity of clean technologies 10% lower (learning-by-doing efficiency gains)",
+        "energy_intensity_clean",
+        0.9,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ],
+      [
+        "slow_build",
+        "Maximum build rate for new capacity halved (permitting / supply-chain / grid bottlenecks)",
+        "max_build_share",
+        0.5,
+        "Model assumption (prototype)",
+        "beta/modules/summer-prep/optimization/model/README.md"
+      ]
+    ]
+  },
+  "sources": {
+    "columns": [
+      "table",
+      "item",
+      "source_org",
+      "source_title",
+      "url",
+      "year",
+      "note"
+    ],
+    "rows": [
+      [
+        "sectors",
+        "steel",
+        "Eurofer",
+        "European Steel in Figures 2024",
+        "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024",
+        "2024",
+        "EU-27 crude steel production ~126 Mt (2023)"
+      ],
+      [
+        "sectors",
+        "steel",
+        "Sandbag (EEA EU ETS Data Viewer / EUTL)",
+        "A closer look at 2023 emissions",
+        "https://sandbag.be/2024/10/07/a-closer-look-at-2023-emissions/",
+        "2024",
+        "EU ETS 'pig iron or steel' activity ~96 Mt CO2 (2023); ~145 Mt on a value-chain basis incl. coke ovens"
+      ],
+      [
+        "sectors",
+        "cement",
+        "Cembureau",
+        "Key Facts & Figures",
+        "https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf",
+        "2024",
+        "EU-27 cement production ~180 Mt (2023)"
+      ],
+      [
+        "sectors",
+        "cement",
+        "Sandbag (EEA EU ETS Data Viewer / EUTL)",
+        "A closer look at 2023 emissions",
+        "https://sandbag.be/2024/10/07/a-closer-look-at-2023-emissions/",
+        "2024",
+        "EU ETS 'cement clinker or lime' activity combined ~124 Mt CO2 (2023)"
+      ],
+      [
+        "sectors",
+        "hvc",
+        "Sandbag (EU ETS / EUTL)",
+        "Chemicals in the CBAM: Time to step up",
+        "https://sandbag.be/2025/11/25/chemicals-in-the-cbam-time-to-step-up/",
+        "2025",
+        "Refining + chemicals ~203 Mt CO2 = 36% of EU ETS industry (2023); HVC/steam-cracking share estimated at ~45 Mt CO2 direct"
+      ],
+      [
+        "sectors",
+        "hvc",
+        "IEA",
+        "The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals",
+        "2018",
+        "EU-27 HVC (ethylene/propylene/BTX) production order of magnitude ~40 Mt/yr"
+      ],
+      [
+        "sectors",
+        "ammonia",
+        "Fertilizers Europe",
+        "Industry Facts & Figures",
+        "https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/",
+        "2024",
+        "EU-27 ammonia production ~16 Mt/yr"
+      ],
+      [
+        "sectors",
+        "ammonia",
+        "IEA",
+        "Ammonia Technology Roadmap",
+        "https://www.iea.org/reports/ammonia-technology-roadmap",
+        "2021",
+        "Direct CO2 intensity of conventional (SMR) ammonia ~1.6-2.4 tCO2/t NH3; EU-27 direct CO2 estimated ~26 Mt/yr"
+      ],
+      [
+        "sectors",
+        "aluminium",
+        "International Aluminium Institute (IAI)",
+        "Primary Aluminium Production statistics",
+        "https://international-aluminium.org/statistics/",
+        "2024",
+        "EU-27 primary aluminium ~2 Mt/yr; secondary ~4-5 Mt/yr"
+      ],
+      [
+        "sectors",
+        "aluminium",
+        "JRC (European Commission)",
+        "Aluminium factsheet (JRC144120)",
+        "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf",
+        "2026",
+        "Direct process CO2 (anode consumption) ~2.75 Mt CO2 (2022)"
+      ],
+      [
+        "sectors",
+        "glass",
+        "FEVE (European Container Glass Federation)",
+        "Statistics",
+        "https://feve.org/about-glass/statistics/",
+        "2024",
+        "EU-27 container + flat glass production ~35 Mt/yr"
+      ],
+      [
+        "sectors",
+        "glass",
+        "European Commission (CINEA)",
+        "How LIFE is reducing emissions from glass production",
+        "https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en",
+        "2022",
+        "Whole glass sector ~22 Mt CO2 direct/yr; container+flat share estimated ~20 Mt"
+      ],
+      [
+        "sectors",
+        "paper",
+        "CEPI",
+        "Key Statistics 2022 - European pulp & paper industry",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf",
+        "2022",
+        "EU pulp & paper (board) production ~74 Mt/yr; direct fossil CO2 ~27 Mt/yr"
+      ],
+      [
+        "technologies",
+        "steel_bfbof",
+        "IEA",
+        "Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap",
+        "2020",
+        "Reference BF-BOF energy/capex/direct-CO2 order of magnitude (~1.9 tCO2/t)"
+      ],
+      [
+        "technologies",
+        "steel_bfbof_ccs",
+        "IEAGHG",
+        "Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/",
+        "2018",
+        "Capture-rate and capex premium for BF-BOF + CCUS"
+      ],
+      [
+        "technologies",
+        "steel_ngdri_eaf",
+        "IEA",
+        "Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap",
+        "2020",
+        "NG-DRI+EAF energy use and transitional-asset characterisation"
+      ],
+      [
+        "technologies",
+        "steel_h2dri_eaf",
+        "European Parliament (EPRS)",
+        "Carbon-free steel production - Cost reduction options and usage of existing gas infrastructure",
+        "https://www.europarl.europa.eu/RegData/etudes/STUD/2021/690008/EPRS_STU(2021)690008_EN.pdf",
+        "2021",
+        "H2-DRI+EAF hydrogen intensity (~50-60 kg H2/t) and MAC ~EUR73-166/tCO2 by 2030"
+      ],
+      [
+        "technologies",
+        "steel_h2dri_eaf",
+        "LeadIT (SEI)",
+        "Green Steel Tracker",
+        "https://www.industrytransition.org/green-steel-tracker/",
+        "2026",
+        "Commercial availability timeline (first plants building now)"
+      ],
+      [
+        "technologies",
+        "steel_scrap_eaf",
+        "IEA",
+        "Iron and Steel Technology Roadmap",
+        "https://www.iea.org/reports/iron-and-steel-technology-roadmap",
+        "2020",
+        "Scrap-EAF as mature, low direct-CO2 route"
+      ],
+      [
+        "technologies",
+        "steel_scrap_eaf",
+        "Material Economics",
+        "Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf",
+        "2019",
+        "Scrap availability as the binding long-run constraint on secondary steel"
+      ],
+      [
+        "technologies",
+        "cement_ref",
+        "IEA / CSI",
+        "Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry",
+        "2018",
+        "Reference kiln thermal energy (~3.4 GJ/t clinker) and clinker-ratio-driven process CO2 (0.53 tCO2/t clinker x 0.77 ratio)"
+      ],
+      [
+        "technologies",
+        "cement_clinkersub",
+        "MDPI (Sustainability, peer-reviewed)",
+        "Limestone Calcined Clay Cement (LC3): From Laboratory Innovation to Sustainable Industrial Application",
+        "https://www.mdpi.com/2071-1050/18/7/3473",
+        "2026",
+        "LC3 clinker replacement up to ~50%, ~40% CO2 cut, near-cost-neutral"
+      ],
+      [
+        "technologies",
+        "cement_ccs",
+        "IEAGHG",
+        "Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/",
+        "2018",
+        "MAC EUR30-107/tCO2 avoided; capture rate ~90% assumed for post-combustion"
+      ],
+      [
+        "technologies",
+        "cement_ccs",
+        "Heidelberg Materials",
+        "World premiere: CCS cement facility opens in Norway (Brevik CCS)",
+        "https://www.heidelbergmaterials.com/en/pr-2025-06-18",
+        "2025",
+        "First industrial-scale cement CCS operational since 2025; available_from calibrated to this"
+      ],
+      [
+        "technologies",
+        "cement_altfuel",
+        "IEA / CSI",
+        "Technology Roadmap: Low-Carbon Transition in the Cement Industry",
+        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry",
+        "2018",
+        "Alternative-fuel co-processing mature and widely deployed"
+      ],
+      [
+        "technologies",
+        "hvc_ref",
+        "IEA",
+        "The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals",
+        "2018",
+        "Reference steam-cracker furnace energy intensity order of magnitude"
+      ],
+      [
+        "technologies",
+        "hvc_elec",
+        "BASF / SABIC / Linde",
+        "Start-up of the world's first large-scale electrically heated steam cracking furnace",
+        "https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177",
+        "2024",
+        "Electric cracker demonstration; furnace CO2 cut up to ~90%"
+      ],
+      [
+        "technologies",
+        "hvc_bio",
+        "IEA",
+        "The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals",
+        "2018",
+        "Bio-naphtha as drop-in feedstock displacing fossil naphtha"
+      ],
+      [
+        "technologies",
+        "hvc_ccs",
+        "IEAGHG",
+        "Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
+        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/",
+        "2018",
+        "Industrial CCS cost/capture-rate benchmarks applied to chemicals furnaces (moderate capture, dilute flue gas)"
+      ],
+      [
+        "technologies",
+        "ammonia_smr",
+        "IEA",
+        "Ammonia Technology Roadmap",
+        "https://www.iea.org/reports/ammonia-technology-roadmap",
+        "2021",
+        "Reference SMR-Haber-Bosch natural gas intensity ~28-32 GJ/t NH3"
+      ],
+      [
+        "technologies",
+        "ammonia_smr_ccs",
+        "IEA",
+        "Ammonia Technology Roadmap",
+        "https://www.iea.org/reports/ammonia-technology-roadmap",
+        "2021",
+        "Blue-ammonia (SMR/ATR+CCS) capture rate and capex premium"
+      ],
+      [
+        "technologies",
+        "ammonia_h2",
+        "IEA",
+        "Ammonia Technology Roadmap - Executive Summary",
+        "https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary",
+        "2021",
+        "Electrolytic-H2 ammonia MAC ~US$820/t NH3 (~US$400/t above conventional); needs power <~US$40/MWh for parity"
+      ],
+      [
+        "technologies",
+        "ammonia_h2",
+        "Yara International",
+        "Yara opens renewable hydrogen plant: a major milestone",
+        "https://www.yara.com/corporate-releases/yara-opens-renewable-hydrogen-plant-a-major-milestone/",
+        "2024",
+        "First commercial green-ammonia plant (Heroya) inaugurated 2024; calibrates available_from"
+      ],
+      [
+        "technologies",
+        "alu_ref",
+        "JRC (European Commission)",
+        "Aluminium factsheet (JRC144120)",
+        "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf",
+        "2026",
+        "Direct anode process CO2 ~1.4 tCO2/t primary Al implied by ~2.75 Mt / ~2 Mt production"
+      ],
+      [
+        "technologies",
+        "alu_ref",
+        "International Aluminium Institute (IAI)",
+        "Statistics",
+        "https://international-aluminium.org/statistics/",
+        "2024",
+        "Primary smelting electricity intensity ~14-15 MWh/t (~51 GJ/t)"
+      ],
+      [
+        "technologies",
+        "alu_inert",
+        "ELYSIS",
+        "ELYSIS achieves breakthrough with commercial-size cell",
+        "https://elysis.com/en/elysis-achieves-breakthrough-with-commercial-size-cell-a-first-in-aluminium-production-using-the",
+        "2025",
+        "Full-scale 450 kA commercial-size inert-anode cell started up Nov 2025; eliminates direct process CO2"
+      ],
+      [
+        "technologies",
+        "alu_sec",
+        "Material Economics",
+        "Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf",
+        "2019",
+        "Secondary aluminium uses ~5% of primary smelting energy; scrap-supply constrained"
+      ],
+      [
+        "technologies",
+        "glass_ng",
+        "European Commission (CINEA)",
+        "How LIFE is reducing emissions from glass production",
+        "https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en",
+        "2022",
+        "Reference gas-fired melting energy ~5-7 GJ/t and process CO2 from carbonate raw materials"
+      ],
+      [
+        "technologies",
+        "glass_elec",
+        "IEA",
+        "ETP Clean Energy Technology Guide (technology readiness levels)",
+        "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide",
+        "2024",
+        "All-electric melting TRL and availability"
+      ],
+      [
+        "technologies",
+        "glass_hybrid",
+        "IEA",
+        "ETP Clean Energy Technology Guide (technology readiness levels)",
+        "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide",
+        "2024",
+        "Large hybrid furnace TRL 6-8, emerging"
+      ],
+      [
+        "technologies",
+        "paper_ref",
+        "CEPI",
+        "Key Statistics 2022 - European pulp & paper industry",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf",
+        "2022",
+        "Reference fossil process-heat intensity order of magnitude"
+      ],
+      [
+        "technologies",
+        "paper_elec",
+        "IEA",
+        "The Future of Heat Pumps",
+        "https://www.iea.org/reports/the-future-of-heat-pumps",
+        "2022",
+        "Industrial heat-pump electrification of process heat; TRL and availability"
+      ],
+      [
+        "technologies",
+        "paper_bio",
+        "IEA Bioenergy",
+        "Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/",
+        "2022",
+        "Biomass/black-liquor process heat, commercially mature"
+      ],
+      [
+        "fuel_prices",
+        "coal",
+        "IEA",
+        "World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024",
+        "2024",
+        "Steam coal industrial price path, central scenario order of magnitude ~EUR3/GJ"
+      ],
+      [
+        "fuel_prices",
+        "coke",
+        "IEA",
+        "World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024",
+        "2024",
+        "Metallurgical coke priced at a premium to thermal coal (~2x)"
+      ],
+      [
+        "fuel_prices",
+        "natural_gas",
+        "IEA",
+        "World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024",
+        "2024",
+        "EU industrial natural gas price path, central scenario, declining from ~EUR10/GJ (2025)"
+      ],
+      [
+        "fuel_prices",
+        "electricity",
+        "Eurostat",
+        "Electricity price statistics",
+        "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics",
+        "2024",
+        "EU-27 industrial electricity price ~EUR24/GJ (~EUR86/MWh) in 2025, declining as renewables share rises"
+      ],
+      [
+        "fuel_prices",
+        "hydrogen",
+        "IEA",
+        "Global Hydrogen Review 2024",
+        "https://www.iea.org/reports/global-hydrogen-review-2024",
+        "2024",
+        "Low-carbon hydrogen cost path ~EUR40/GJ (~EUR4.8/kg) in 2025 falling to ~EUR20/GJ (~EUR2.4/kg) by 2050"
+      ],
+      [
+        "fuel_prices",
+        "biomass",
+        "IEA Bioenergy",
+        "Decarbonizing industrial process heat: the role of biomass",
+        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/",
+        "2022",
+        "Solid biomass/residue fuel price order of magnitude ~EUR8/GJ"
+      ],
+      [
+        "fuel_prices",
+        "oil",
+        "IEA",
+        "World Energy Outlook 2024",
+        "https://www.iea.org/reports/world-energy-outlook-2024",
+        "2024",
+        "Industrial oil/naphtha price path, central scenario order of magnitude ~EUR14/GJ"
+      ],
+      [
+        "carbon_price",
+        "eu_ets",
+        "European Commission (DG CLIMA)",
+        "2040 Climate Target",
+        "https://commission.europa.eu/topics/climate-action/eu-climate-energy-and-environmental-targets/2040-targets_en",
+        "2024",
+        "Central EU ETS price path ~EUR80/t (2025) rising to ~EUR200/t (2040) and ~EUR250/t (2050); low/high bands constructed around this by the model team, consistent with the range of EC impact-assessment and market-forward modelling"
+      ],
+      [
+        "carbon_price",
+        "eu_ets",
+        "ICAP",
+        "EU Emissions Trading System (EU ETS)",
+        "https://icapcarbonaction.com/en/ets/eu-emissions-trading-system-eu-ets",
+        "2025",
+        "Historical and current EUA price context used to anchor the 2025 starting point"
+      ],
+      [
+        "emission_factors",
+        "coal",
+        "IPCC",
+        "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
+        "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html",
+        "2006",
+        "Default combustion emission factor for coal, ~94 kgCO2/GJ"
+      ],
+      [
+        "emission_factors",
+        "coke",
+        "IPCC",
+        "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
+        "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html",
+        "2006",
+        "Default combustion emission factor for coke oven coke, ~107 kgCO2/GJ"
+      ],
+      [
+        "emission_factors",
+        "natural_gas",
+        "IPCC",
+        "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
+        "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html",
+        "2006",
+        "Default combustion emission factor for natural gas, ~56 kgCO2/GJ"
+      ],
+      [
+        "emission_factors",
+        "oil",
+        "IPCC",
+        "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol. 2 (Energy)",
+        "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html",
+        "2006",
+        "Default combustion emission factor for gas/diesel oil & naphtha, ~73 kgCO2/GJ"
+      ],
+      [
+        "emission_factors",
+        "hydrogen",
+        "IPCC AR6 WGIII",
+        "Chapter 11: Industry",
+        "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/",
+        "2022",
+        "Zero combustion CO2 for hydrogen; upstream emissions depend on production route (not modelled at combustion stage)"
+      ],
+      [
+        "emission_factors",
+        "biomass",
+        "IPCC AR6 WGIII",
+        "Chapter 11: Industry",
+        "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/",
+        "2022",
+        "Biomass combustion CO2 conventionally reported as zero at point of combustion (biogenic carbon accounting); land-use/supply-chain emissions not modelled here"
+      ],
+      [
+        "emission_factors",
+        "electricity",
+        "European Environment Agency (EEA)",
+        "Greenhouse gas emission intensity of electricity generation (indicator)",
+        "https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1",
+        "2024",
+        "EU-27 grid emission factor ~0.065 tCO2/GJ (~230 gCO2/kWh) in 2025 falling to ~0.003 tCO2/GJ by 2050 as the grid decarbonises"
+      ],
+      [
+        "constraints",
+        "scrap_share_max",
+        "Material Economics",
+        "Industrial Transformation 2050 - Pathways to Net-Zero Emissions from EU Heavy Industry",
+        "https://materialeconomics.com/sites/default/files/2024-06/material-economics-industrial-transformation-2050-executive-summary.pdf",
+        "2019",
+        "Steel scrap availability rising from ~45% (2025) to ~55% (2050) of demand servable by scrap-EAF; aluminium secondary share rising ~55% to ~65%, both circularity-constrained"
+      ],
+      [
+        "constraints",
+        "biomass_pj_max",
+        "JRC (European Commission)",
+        "Brief on biomass for energy in the European Union",
+        "https://publications.jrc.ec.europa.eu/repository/handle/JRC109354",
+        "2019",
+        "Sustainable biomass availability for industrial energy use constrained to an order-of-magnitude ceiling of ~300 PJ/yr across all EU-27 industry"
+      ],
+      [
+        "constraints",
+        "ccs_mt_max",
+        "Global CCS Institute",
+        "Global Status of CCS report series",
+        "https://www.globalccsinstitute.com/",
+        "2024",
+        "EU CO2 transport & storage network ramp-up: ~0 Mt/yr (2025) to ~100 Mt/yr (2050) capturable across all subsectors"
+      ],
+      [
+        "constraints",
+        "ccs_mt_max",
+        "Clean Air Task Force",
+        "Carbon capture and storage in Europe: slow but significant progress in 2025",
+        "https://www.catf.us/2025/11/carbon-capture-storage-europe-slow-but-significant-progress-2025/",
+        "2025",
+        "Status of first EU CO2 storage/transport projects (Northern Lights, Porthos, Greensand) calibrating the near-term ramp"
+      ],
+      [
+        "demand",
+        "steel",
+        "Eurofer",
+        "European Steel in Figures 2024",
+        "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2024",
+        "2024",
+        "Demand path assumed broadly flat-to-declining from the 2023 production base"
+      ],
+      [
+        "demand",
+        "cement",
+        "Cembureau",
+        "Key Facts & Figures",
+        "https://www.cembureau.eu/media/00ejjcfj/key-facts-figures-publication-june-2024.pdf",
+        "2024",
+        "Demand path assumed broadly flat-to-declining from the 2023 production base"
+      ],
+      [
+        "demand",
+        "aluminium",
+        "International Aluminium Institute (IAI)",
+        "Statistics",
+        "https://international-aluminium.org/statistics/",
+        "2024",
+        "Demand path assumed slight growth, reflecting continued electrification-driven aluminium demand"
+      ],
+      [
+        "demand",
+        "hvc",
+        "IEA",
+        "The Future of Petrochemicals",
+        "https://www.iea.org/reports/the-future-of-petrochemicals",
+        "2018",
+        "Demand path assumed slight growth"
+      ],
+      [
+        "technologies",
+        "discount_rate",
+        "IPCC",
+        "AR6 WGIII, Chapter 11: Industry",
+        "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/",
+        "2022",
+        "7% social/industry discount rate and capital recovery factor approach used to annualise CAPEX, consistent with standard industrial decarbonisation cost-modelling practice"
+      ],
+      [
+        "demand",
+        "ammonia",
+        "Fertilizers Europe",
+        "Fertilizer Industry Facts and Figures 2023 edition",
+        "https://www.fertilizerseurope.com/publications/fertilizers-industry-facts-and-figures-2023-edition/",
+        "2024",
+        "Demand path assumed broadly flat-to-slightly-declining from the 2023 production base"
+      ],
+      [
+        "demand",
+        "glass",
+        "FEVE (European Container Glass Federation)",
+        "Statistics",
+        "https://feve.org/about-glass/statistics/",
+        "2024",
+        "Demand path assumed broadly flat from the 2023 production base"
+      ],
+      [
+        "demand",
+        "paper",
+        "CEPI",
+        "Key Statistics 2022 - European pulp & paper industry",
+        "https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf",
+        "2022",
+        "Demand path assumed gently declining from the 2023 production base"
+      ],
+      [
+        "scenarios",
+        "multiple",
+        "ESABCC Method Hub (model team)",
+        "Model README - sensitivity scenario methodology",
+        "beta/modules/summer-prep/optimization/model/README.md",
+        "2026",
+        "All 13 scenarios (1 central + 12 sensitivities) are prototype modelling assumptions (parameter multipliers applied to already-sourced central inputs), not independent literature values; see the README for the full methodology and per-scenario definitions."
+      ]
+    ]
+  }
 }
