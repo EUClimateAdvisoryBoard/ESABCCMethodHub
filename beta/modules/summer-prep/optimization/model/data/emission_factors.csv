@@ -1,0 +1,13 @@
+carrier,year,tco2_per_gj
+coal,all,0.094
+coke,all,0.107
+natural_gas,all,0.056
+hydrogen,all,0.0
+biomass,all,0.0
+oil,all,0.073
+electricity,2025,0.065
+electricity,2030,0.045
+electricity,2035,0.03
+electricity,2040,0.018
+electricity,2045,0.01
+electricity,2050,0.003
