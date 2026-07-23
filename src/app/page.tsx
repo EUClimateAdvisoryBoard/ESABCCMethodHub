@@ -397,7 +397,7 @@ export default async function HomePage() {
     // Prep. Their routes (/beta/overview-industry, /beta/policy-gaps) stay
     // alive and are reached from the Summer Prep workspace.
     { code: 'M · 34', title: 'Electricity Prices', href: '/beta/electricity-prices', tags: ['Merit order', 'EU · US · China'] },
-    { code: 'M · 35', title: 'Summer Prep', href: '/beta/summer-prep', tags: ['Industry · Transport', 'Gap tracker · Indicators'] },
+    { code: 'M · 35', title: 'Summer Prep', href: '/beta/summer-prep', tags: ['Industry · Transport', 'Gap tracker · Indicators', 'Least-cost model'] },
     { code: 'M · 36', title: 'Policy Targets Register', href: '/beta/policy-targets', tags: ['Verbatim targets', 'Excel export', 'Human-confirmed'] },
     { code: 'M · 37', title: 'ETS Review & Electrification', href: '/beta/ets-review', tags: ['Electrification model', 'ETS reform overview', '17 Jul 2026 package'] },
     { code: 'M · 38', title: 'Impact Assessment — Modelling Results', href: '/beta/impact-assessment', tags: ['SWD(2026) 616', 'Reference figures', 'Screenshots + numbers'] },
