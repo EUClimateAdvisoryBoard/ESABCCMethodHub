@@ -86,13 +86,17 @@ framework, renovation wave). That is **404 new rows across 24 acts**.
   reference, label, obligation, type, timeline, indicators, climate-relevance),
   then a second Sonnet verifier agent adversarially re-checked each act's
   proposed changes against the source (the same propose → verify method as the
-  first pass). 13 acts completed both passes; for 11 acts the verifier hit the
-  session token limit, so the reviewer's pass was used for those (noted below).
+  first pass). **All 24 acts completed both passes** (the 11 acts whose verifier
+  first hit the session token limit were re-verified in a follow-up run). The
+  verifiers materially improved the 11 re-verified acts — e.g. restoring
+  quantitative typing the reviewer had wrongly downgraded (renovation wave,
+  TEN-E) and overturning an unjustified drop (TEN-E Art. 1(1), which embeds the
+  Regulation's own 2030/climate-neutrality objective).
 - **Corrections applied** (`scripts/policy-targets-overrides.json`, tagged
-  `[fact-check 2026-07 new-acts]`): **257 rows touched** — **39 dropped**,
-  **208 field corrections**, **20 explicit relevance flips**. Field fixes by
-  column: article 120, climate-relevance 64, type 54, label 34, obligation 16,
-  timeline 11.
+  `[fact-check 2026-07 new-acts]`): **255 rows touched** — **39 dropped**,
+  **205 field corrections**, **27 explicit relevance flips**. Field fixes by
+  column: article 101, type 74, climate-relevance 69, label 35, obligation 16,
+  timeline 14.
   - *Dropped rows* were non-targets: subject-matter/scope clauses (e.g. "This
     Directive relates to…", Art. 1 of the birds/floods/CER/ERDF/TEN-T acts),
     definitions clauses ("'climate proofing' means…"), document titles/section
@@ -119,7 +123,7 @@ provisions. Each row now has a boolean **`relevant`** flag:
   a row is *relevant* if its climate-relevance is not `none`, **or** it is a
   quantified, time-bound target/goal; otherwise *peripheral*.
 - **Refined per row** by the fact-check pass — the reviewer/verifier set
-  `relevant` explicitly where it disagreed with the default (20 flips), so the
+  `relevant` explicitly where it disagreed with the default (27 flips), so the
   override wins; everything else follows the deterministic rule.
 - **In the UI** (M·36 page) a *Relevance* filter defaults to **relevant**, so
   the register opens on the transition-material targets and hides the peripheral
@@ -137,20 +141,14 @@ climate/energy slices.
 ## Outcome
 
 - Dataset is now **1018 targets across 62 acts** (39 of the 404 new-act
-  candidates dropped). Relevance split: **669 relevant / 349 peripheral**
-  (new acts: 165 / 200; older 38 acts: 504 / 149).
+  candidates dropped). Relevance split: **673 relevant / 345 peripheral**
+  (new acts: 169 / 196; older 38 acts: 504 / 149).
+- All 24 added acts are **two-agent verified** (reviewer → adversarial verifier).
 - The build remains deterministic and idempotent
   (`npm run build:policy-targets` reproduces the dataset).
 
 ## Known caveats (this pass)
 
-- **11 acts are reviewer-only** (verifier not run — session limit): managing-
-  climate-risks, mental-health-approach, mff-regulation, one-health-amr,
-  osh-framework-directive, preparedness-union-strategy, renovation-wave,
-  ten-e-regulation, ten-t-regulation, union-civil-protection-mechanism,
-  water-resilience-strategy. Their corrections come from a single (still
-  source-checked) reading rather than the two-agent propose→verify loop; re-run
-  the verifier for these when capacity allows.
 - Relevance is a **screening lens**, not a legal classification — it reflects
   materiality to the EU climate/energy transition, and every row (including
   peripheral ones) remains in the dataset and viewable via the *all* filter.

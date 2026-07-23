@@ -13,11 +13,11 @@
  * fact-check pass are applied from scripts/policy-targets-overrides.json.
  *
  * 1018 targets across 62 acts.
- *   label:            {"target":424,"other":202,"objective":177,"commitment":200,"goal":15}
+ *   label:            {"target":424,"other":204,"objective":176,"commitment":199,"goal":15}
  *   obligation:       {"mandatory":767,"voluntary":251}
- *   type:             {"qualitative":326,"quantitative":469,"unspecified":223}
- *   climate_relevance:{"mitigation":451,"none":406,"both":46,"adaptation":115}
- *   relevant (lens):  {"true":669,"false":349}
+ *   type:             {"qualitative":317,"quantitative":494,"unspecified":207}
+ *   climate_relevance:{"mitigation":454,"none":401,"both":47,"adaptation":116}
+ *   relevant (lens):  {"true":673,"false":345}
  *   (88 candidates rejected as non-verbatim / out of scope)
  */
 import type { RawPolicyTarget } from './policy-targets';
@@ -13816,7 +13816,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "It will support Member States in their efforts to achieve the World Health Organization (WHO) targets for non-communicable diseases by 2025",
     "target_label": "goal",
     "obligation": "voluntary",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "by 2025",
     "indicators": [
       "WHO NCD targets"
@@ -13861,7 +13861,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "In 2024, the Commission will launch a blueprint (toolkit) for a multi-disciplinary approach to mental health capacity building.",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "2024",
     "indicators": [
       "capacity-building toolkit"
@@ -13953,7 +13953,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "By Q2 of 2023, the Commission will seek to improve the access of crime victims to psychological and mental health support by revising the Directive establishing minimum standards on the rights, support and protection of victims of crime.",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "by Q2 of 2023",
     "indicators": [
       "victims of crime",
@@ -14000,7 +14000,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "As of 2025, the Commission will ensure that the European Health Interview Survey (EHIS) includes additional data on mental health to ensure strong monitoring and assessment of progress on mental health across the EU.",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "As of 2025",
     "indicators": [
       "EHIS mental health data",
@@ -16437,28 +16437,6 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 16
   },
   {
-    "id": "tgt-94aa8cfd",
-    "policy_id": "osh-framework-directive",
-    "policy_name": "Directive 89/391/EEC on the introduction of measures to encourage improvements in the safety and health of workers at work (OSH Framework Directive)",
-    "policy_short": "OSH Framework Directive",
-    "document_type": "directive",
-    "policy_area": "Employment",
-    "article": "Article 1(1)",
-    "target_text": "The object of this Directive is to introduce measures to encourage improvements in the safety and health of workers at work.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "scope of protection"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "31989L0391",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
-    "relevant": false,
-    "target_number": 1
-  },
-  {
     "id": "tgt-8595bda2",
     "policy_id": "osh-framework-directive",
     "policy_name": "Directive 89/391/EEC on the introduction of measures to encourage improvements in the safety and health of workers at work (OSH Framework Directive)",
@@ -16478,7 +16456,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 2
+    "target_number": 1
   },
   {
     "id": "tgt-ced3883b",
@@ -16500,7 +16478,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 3
+    "target_number": 2
   },
   {
     "id": "tgt-618e53ad",
@@ -16522,7 +16500,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 4
+    "target_number": 3
   },
   {
     "id": "tgt-2f6f24d6",
@@ -16544,7 +16522,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 5
+    "target_number": 4
   },
   {
     "id": "tgt-4199f52b",
@@ -16566,7 +16544,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 6
+    "target_number": 5
   },
   {
     "id": "tgt-c054d1c8",
@@ -16588,7 +16566,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 7
+    "target_number": 6
   },
   {
     "id": "tgt-e63c579c",
@@ -16610,7 +16588,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 8
+    "target_number": 7
   },
   {
     "id": "tgt-45da2a3d",
@@ -16632,7 +16610,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 9
+    "target_number": 8
   },
   {
     "id": "tgt-6c57c108",
@@ -16654,7 +16632,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 10
+    "target_number": 9
   },
   {
     "id": "tgt-2358cc8c",
@@ -16676,7 +16654,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 11
+    "target_number": 10
   },
   {
     "id": "tgt-2ff038fe",
@@ -16698,7 +16676,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 12
+    "target_number": 11
   },
   {
     "id": "tgt-b26be8ca",
@@ -16720,7 +16698,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
     "relevant": false,
-    "target_number": 13
+    "target_number": 12
   },
   {
     "id": "tgt-f2d77c02",
@@ -17560,13 +17538,58 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 38
   },
   {
+    "id": "tgt-3d61f0f8",
+    "policy_id": "preparedness-union-strategy",
+    "policy_name": "Joint Communication JOIN(2025) 130 — Preparedness Union Strategy",
+    "policy_short": "EU Preparedness Union Strategy",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Population preparedness — 72-hour self-sufficiency",
+    "target_text": "The Commission will propose guidelines for Member States to reach population self-sufficiency of at least 72 hours.",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "2026",
+    "indicators": [
+      "population self-sufficiency (hours)"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52025JC0130",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
+    "target_number": 1
+  },
+  {
+    "id": "tgt-bca93942",
+    "policy_id": "preparedness-union-strategy",
+    "policy_name": "Joint Communication JOIN(2025) 130 — Preparedness Union Strategy",
+    "policy_short": "EU Preparedness Union Strategy",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Overall goal",
+    "target_text": "The overall goal of the Preparedness Union is to create a secure and resilient EU with the capabilities required to anticipate and manage threats and hazards, independently of their nature or origin, to ensure that European citizens have adequate protection and preparedness, and to preserve the vital functions of the society in all circumstances.",
+    "target_label": "goal",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "societal resilience",
+      "protection of vital functions"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52025JC0130",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "relevant": false,
+    "target_number": 2
+  },
+  {
     "id": "tgt-fee0dd76",
     "policy_id": "preparedness-union-strategy",
     "policy_name": "Joint Communication JOIN(2025) 130 — Preparedness Union Strategy",
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 1, Key Action 1 (2026)",
+    "article": "Foresight — risk & threat assessment",
     "target_text": "the Commission and the High Representative, supported by EU Agencies, will develop a comprehensive (cross-sector, all-hazards) EU risk and threat assessment",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17579,7 +17602,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 1
+    "target_number": 3
   },
   {
     "id": "tgt-27cf8a59",
@@ -17588,7 +17611,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 1, Key Action 1 (SIAC strengthening)",
+    "article": "Foresight — SIAC intelligence capacity",
     "target_text": "SIAC will be strengthened by the end of 2025 through reinforcements and additional resources, in line with the Joint Paper of the High Representative and Member States.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17601,7 +17624,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 2
+    "target_number": 4
   },
   {
     "id": "tgt-ac8baf6a",
@@ -17610,7 +17633,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 2, Key Action 12 (2025)",
+    "article": "Vital functions — EU Preparedness Law",
     "target_text": "The Commission will assess the need and feasibility of an EU Preparedness Law to strengthen the resilience of the vital societal functions by setting joint standards and measurable long-term targets.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17624,7 +17647,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 3
+    "target_number": 5
   },
   {
     "id": "tgt-7d1fc3e7",
@@ -17633,7 +17656,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 2, Key Action 13 (2026)",
+    "article": "Vital functions — minimum preparedness requirements",
     "target_text": "minimum preparedness requirements, including a monitoring mechanism.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17647,7 +17670,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 4
+    "target_number": 6
   },
   {
     "id": "tgt-9c1ab8b4",
@@ -17656,7 +17679,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 2, Key Action 14 (2025)",
+    "article": "Vital functions — Union Civil Protection Mechanism",
     "target_text": "The Commission will revise the legislative framework of the UCPM to further improve the effectiveness and efficiency in high impact emergencies and crises requiring a robust response and coordination at European level.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17669,7 +17692,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 5
+    "target_number": 7
   },
   {
     "id": "tgt-472b2afe",
@@ -17678,7 +17701,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 2, Key Action 15 (2025)",
+    "article": "Vital functions — EU Stockpiling Strategy",
     "target_text": "The Commission will propose an EU-wide stockpiling strategy that will integrate all existing sectorial stockpiling efforts.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17692,7 +17715,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 6
+    "target_number": 8
   },
   {
     "id": "tgt-7c310a06",
@@ -17701,7 +17724,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 2, Key Action 16 (2026)",
+    "article": "Vital functions — Climate Adaptation Plan",
     "target_text": "The Commission will present a European Climate Adaptation Plan to support Member States in preparing for climate risks and strengthening the resilience of the Union.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17715,7 +17738,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": true,
-    "target_number": 7
+    "target_number": 9
   },
   {
     "id": "tgt-462ac676",
@@ -17724,7 +17747,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 2, Key Action 17 (2025)",
+    "article": "Vital functions — Water Resilience Strategy",
     "target_text": "The Commission will propose a European Water Resilience Strategy that will set out a path towards water security and resilience by ensuring the availability of clean water and better protecting the EU against water-related risks.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17738,29 +17761,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": true,
-    "target_number": 8
-  },
-  {
-    "id": "tgt-3d61f0f8",
-    "policy_id": "preparedness-union-strategy",
-    "policy_name": "Joint Communication JOIN(2025) 130 — Preparedness Union Strategy",
-    "policy_short": "EU Preparedness Union Strategy",
-    "document_type": "communication",
-    "policy_area": "Cross-cutting",
-    "article": "Section 3, Key Action 14 (2026)",
-    "target_text": "The Commission will propose guidelines for Member States to reach population self-sufficiency of at least 72 hours.",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
-    "timeline": "2026",
-    "indicators": [
-      "population self-sufficiency (hours)"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "52025JC0130",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
-    "relevant": false,
-    "target_number": 9
+    "target_number": 10
   },
   {
     "id": "tgt-a473e288",
@@ -17769,7 +17770,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 3, Key Action 27 (2026)",
+    "article": "Population preparedness — EU Preparedness Day",
     "target_text": "The Commission will propose an annual EU Preparedness Day to recognise efforts of national, regional and local authorities and communities to enhance preparedness and to raise awareness for preparedness needs in the population.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17782,7 +17783,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 10
+    "target_number": 11
   },
   {
     "id": "tgt-91e858f2",
@@ -17791,7 +17792,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 4, Key Action 18 (2026)",
+    "article": "Public-private cooperation — Preparedness Task Force",
     "target_text": "The aim of the Task Force is to (i) cooperate on strengthening the continuity management of vital functions and essential services",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17804,7 +17805,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 11
+    "target_number": 12
   },
   {
     "id": "tgt-b8838bf9",
@@ -17813,7 +17814,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 5, Key Action 22 (2027)",
+    "article": "Civil-military cooperation — preparedness arrangements",
     "target_text": "The Commission and the High Representative will develop arrangements for civil-military preparedness, which will clarify roles, responsibilities, and priorities of EU institutions, bodies and agencies as well as Member States for preparing for and responding to incidents and crises.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17826,7 +17827,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 12
+    "target_number": 13
   },
   {
     "id": "tgt-57ac9f4e",
@@ -17835,7 +17836,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 5, Key Action 24 (2026)",
+    "article": "Civil-military cooperation — EU exercises",
     "target_text": "The Commission and the High Representative will organise regular EU-wide comprehensive and cross-sectoral preparedness exercises.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17848,7 +17849,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 13
+    "target_number": 14
   },
   {
     "id": "tgt-f74982f5",
@@ -17857,7 +17858,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 6, Key Action 25 (2027)",
+    "article": "Crisis response — EU crisis coordination hub",
     "target_text": "The Commission will create an EU crisis coordination hub, building on the structures and the expertise of the ERCC.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17870,7 +17871,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 14
+    "target_number": 15
   },
   {
     "id": "tgt-ff8d2467",
@@ -17879,7 +17880,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 6, Key Action 26 (2026)",
+    "article": "Crisis response — rescEU reserves",
     "target_text": "Building on the success of the development of aerial firefighting and other rescEU capacities, the Commission will secure the maintenance and possible scaling up of its existing capabilities (aerial firefighting, medical, CBRN, shelters, transport, energy).",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17893,7 +17894,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": true,
-    "target_number": 15
+    "target_number": 16
   },
   {
     "id": "tgt-2c0245f5",
@@ -17902,7 +17903,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "EU Preparedness Union Strategy",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Section 7, Key Action 27 (2025)",
+    "article": "External partnerships — candidate countries",
     "target_text": "The EU will advance mutual resilience with candidate countries, including by associating them in relevant EU preparedness initiatives and crisis management framework, through the enlargement policy and in line with the process of their gradual integration.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -17910,29 +17911,6 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "timeline": "2025",
     "indicators": [
       "mutual resilience with partners"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "52025JC0130",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
-    "relevant": false,
-    "target_number": 16
-  },
-  {
-    "id": "tgt-bca93942",
-    "policy_id": "preparedness-union-strategy",
-    "policy_name": "Joint Communication JOIN(2025) 130 — Preparedness Union Strategy",
-    "policy_short": "EU Preparedness Union Strategy",
-    "document_type": "communication",
-    "policy_area": "Cross-cutting",
-    "article": "Introduction (overall goal statement)",
-    "target_text": "The overall goal of the Preparedness Union is to create a secure and resilient EU with the capabilities required to anticipate and manage threats and hazards, independently of their nature or origin, to ensure that European citizens have adequate protection and preparedness, and to preserve the vital functions of the society in all circumstances.",
-    "target_label": "goal",
-    "obligation": "voluntary",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "societal resilience",
-      "protection of vital functions"
     ],
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
@@ -19047,7 +19025,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "building units renovated"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
     "relevant": true,
@@ -19064,7 +19042,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "The increased rate and depth of renovation will have to be maintained also post-2030 in order to reach EU-wide climate neutrality by 2050.",
     "target_label": "objective",
     "obligation": "voluntary",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "by 2050",
     "indicators": [
       "climate neutrality"
@@ -19134,9 +19112,9 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_area": "Buildings",
     "article": "Section 1 (Boosting building renovation for climate neutrality and recovery)",
     "target_text": "By 2030 an additional 160 000 green jobs could be created in the EU construction sector through a renovation wave",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "By 2030",
     "indicators": [
       "green jobs"
@@ -19158,13 +19136,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "Across the EU, deep renovations that reduce energy consumption by at least 60% 5 are carried out only in 0.2% of the building stock per year and in some regions, energy renovation rates are virtually absent.",
     "target_label": "other",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "relevant": false,
+    "relevant": true,
     "target_number": 7
   },
   {
@@ -19176,7 +19154,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_area": "Buildings",
     "article": "Section 3.2 (Reinforced, accessible and more targeted funding)",
     "target_text": "in order to achieve the proposed 55% climate target by 2030, around EUR 275 billion of additional investments are needed per year",
-    "target_label": "objective",
+    "target_label": "other",
     "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "by 2030",
@@ -19200,7 +19178,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "the Commission will propose mandatory minimum energy performance standards as part of the revision of the Energy Performance of Buildings Directive (EPBD) by the end of 2021",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by the end of 2021",
     "indicators": [
       "energy performance",
@@ -19223,7 +19201,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "it will develop by 2023 a roadmap leading up to 2050 for reducing whole life-cycle carbon emissions in buildings.",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 2023",
     "indicators": [
       "whole life-cycle carbon"
@@ -19268,7 +19246,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "the Commission will propose by June 2021 the need to extend the scope of the requirements to all public administration levels and to increase the annual renovation obligation as part of the revision of the EED.",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "by June 2021",
     "indicators": [
       "public building renovation obligation"
@@ -19290,7 +19268,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "indicative milestones for the renovation of public and private service buildings for 2030 and 2040 with a view to decarbonising the building stock by 2050.",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 2050",
     "indicators": [
       "renovation milestones"
@@ -19312,7 +19290,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "With nearly 34 million Europeans unable to afford keeping their home adequately warm 65 , tackling energy poverty is an urgent task for the EU and its Member States.",
     "target_label": "other",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "energy poverty"
@@ -20386,6 +20364,29 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 13
   },
   {
+    "id": "tgt-58e15d65",
+    "policy_id": "ten-e-regulation",
+    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
+    "policy_short": "TEN-E Regulation",
+    "document_type": "regulation",
+    "policy_area": "Energy",
+    "article": "Art. 1(1)",
+    "target_text": "This Regulation lays down guidelines for the timely development and interoperability of the priority corridors and areas of trans-European energy infrastructure (energy infrastructure priority corridors and areas) set out in Annex I that contribute to ensuring climate change mitigation, in particular achieving the Union’s 2030 targets for energy and climate and its climate neutrality objective by 2050 at the latest",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "by 2050",
+    "indicators": [
+      "climate neutrality",
+      "energy infrastructure corridors"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32022R0869",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "relevant": true,
+    "target_number": 1
+  },
+  {
     "id": "tgt-a603ee6a",
     "policy_id": "ten-e-regulation",
     "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
@@ -20405,7 +20406,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 1
+    "target_number": 2
   },
   {
     "id": "tgt-28449d31",
@@ -20428,7 +20429,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 2
+    "target_number": 3
   },
   {
     "id": "tgt-18df2b57",
@@ -20451,7 +20452,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 3
+    "target_number": 4
   },
   {
     "id": "tgt-aaf00973",
@@ -20473,7 +20474,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 4
+    "target_number": 5
   },
   {
     "id": "tgt-46a464fd",
@@ -20496,7 +20497,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 5
+    "target_number": 6
   },
   {
     "id": "tgt-4d22b310",
@@ -20518,7 +20519,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 6
+    "target_number": 7
   },
   {
     "id": "tgt-4f321494",
@@ -20538,7 +20539,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 7
+    "target_number": 8
   },
   {
     "id": "tgt-f6383a62",
@@ -20558,7 +20559,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 8
+    "target_number": 9
   },
   {
     "id": "tgt-503d9ce5",
@@ -20580,7 +20581,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 9
+    "target_number": 10
   },
   {
     "id": "tgt-21edf922",
@@ -20602,7 +20603,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 10
+    "target_number": 11
   },
   {
     "id": "tgt-a9808eaa",
@@ -20624,7 +20625,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 11
+    "target_number": 12
   },
   {
     "id": "tgt-d1f19497",
@@ -20646,7 +20647,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 12
+    "target_number": 13
   },
   {
     "id": "tgt-62721a55",
@@ -20668,7 +20669,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 13
+    "target_number": 14
   },
   {
     "id": "tgt-9ddd23ac",
@@ -20690,7 +20691,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 14
+    "target_number": 15
   },
   {
     "id": "tgt-ec9298b8",
@@ -20712,7 +20713,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 15
+    "target_number": 16
   },
   {
     "id": "tgt-094514e7",
@@ -20734,7 +20735,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 16
+    "target_number": 17
   },
   {
     "id": "tgt-ce5c38b2",
@@ -20754,7 +20755,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 17
+    "target_number": 18
   },
   {
     "id": "tgt-4f3cf9f9",
@@ -20776,7 +20777,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 18
+    "target_number": 19
   },
   {
     "id": "tgt-b0dc6863",
@@ -20798,7 +20799,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 19
+    "target_number": 20
   },
   {
     "id": "tgt-b4e91c4d",
@@ -20820,7 +20821,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 20
+    "target_number": 21
   },
   {
     "id": "tgt-ab0429e9",
@@ -20840,7 +20841,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 21
+    "target_number": 22
   },
   {
     "id": "tgt-c38c37bb",
@@ -20860,7 +20861,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 22
+    "target_number": 23
   },
   {
     "id": "tgt-1b8a3a08",
@@ -20880,7 +20881,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 23
+    "target_number": 24
   },
   {
     "id": "tgt-82fa9e65",
@@ -20900,7 +20901,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": true,
-    "target_number": 24
+    "target_number": 25
   },
   {
     "id": "tgt-c1b1e3ba",
@@ -21023,7 +21024,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "the completion of a core network by 31 December 2030",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 31 December 2030",
     "indicators": [
       "core network completion"
@@ -21045,7 +21046,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "the completion of an extended core network by 31 December 2040",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 31 December 2040",
     "indicators": [
       "extended core network completion"
@@ -21067,7 +21068,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "the completion of a comprehensive network by 31 December 2050",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 31 December 2050",
     "indicators": [
       "comprehensive network completion"
@@ -21133,7 +21134,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "Member States shall ensure that any new railway line of the core network and the extended core network, including connections referred to in Article 14(1), point (d), provides for the European standard nominal track gauge of 1 435 mm.",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "by 2030/2040",
     "indicators": [
       "standard 1435 mm track gauge"
@@ -21155,7 +21156,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "ERTMS is equipped on the railway infrastructure of the extended core network by 31 December 2040 and the comprehensive network by 31 December 2050",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 31 December 2040 (extended core network); by 31 December 2050…",
     "indicators": [
       "ERTMS deployment"
@@ -21177,7 +21178,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "Member States shall ensure that the railway infrastructure of the core network, the extended core network and the comprehensive network is equipped with radio-based ERTMS by 31 December 2050.",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "by 31 December 2050",
     "indicators": [
       "radio-based ERTMS"
@@ -21200,7 +21201,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "by 2027",
+    "timeline": "by 31 December 2027",
     "indicators": [
       "sustainable urban mobility plans"
     ],
@@ -21221,15 +21222,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "by 31 December 2030, the development of multimodal passenger hubs to facilitate first and last mile connections",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 31 December 2030",
     "indicators": [
       "multimodal passenger hubs"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
-    "relevant": false,
+    "relevant": true,
     "target_number": 15
   },
   {
@@ -21949,7 +21950,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "Water Resilience Strategy",
     "document_type": "communication",
     "policy_area": "Environment",
-    "article": "Section 2.2 (Water Efficiency First)",
+    "article": "Section 2.2 (Building a water-smart economy) - Water Efficiency First paragraph",
     "target_text": "the EU should aim to enhance water efficiency by at least 10% by 2030. The Commission will work with Member States and stakeholders to develop a joint methodology for water efficiency targets",
     "target_label": "target",
     "obligation": "voluntary",
@@ -21965,28 +21966,6 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_number": 3
   },
   {
-    "id": "tgt-e7230635",
-    "policy_id": "water-resilience-strategy",
-    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
-    "policy_short": "Water Resilience Strategy",
-    "document_type": "communication",
-    "policy_area": "Environment",
-    "article": "Section 2.1 (Restoring and protecting the water cycle)",
-    "target_text": "objective to achieve good status of all water bodies by 2027",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "by 2027",
-    "indicators": [
-      "water body status"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "52025DC0280",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
-    "relevant": false,
-    "target_number": 4
-  },
-  {
     "id": "tgt-af3bec37",
     "policy_id": "water-resilience-strategy",
     "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
@@ -21997,7 +21976,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "Water and climate resilience must be fully integrated in the national Restoration Plans to be developed by 2026.",
     "target_label": "commitment",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 2026",
     "indicators": [
       "restoration plans"
@@ -22006,7 +21985,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
     "relevant": true,
-    "target_number": 5
+    "target_number": 4
   },
   {
     "id": "tgt-d01d7f59",
@@ -22019,7 +21998,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "By June 2028, the Commission will evaluate the Water Reuse Regulation, and will subsequently consider extending its scope pending evaluation results.",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by June 2028",
     "indicators": [
       "water reuse"
@@ -22028,7 +22007,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
     "relevant": true,
-    "target_number": 6
+    "target_number": 5
   },
   {
     "id": "tgt-af4aa5eb",
@@ -22039,18 +22018,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_area": "Environment",
     "article": "Section 2.2 (Building a water-smart economy)",
     "target_text": "Member States with water supply leakage levels exceeding the EU-wide threshold – to be set by 2028 – will have to present, by 2030, national action plans to reduce leakages across their supply networks.",
-    "target_label": "commitment",
+    "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "by 2028",
+    "target_type": "quantitative",
+    "timeline": "threshold to be set by 2028; national action plans due by 2030",
     "indicators": [
       "water supply leakage"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
-    "relevant": false,
-    "target_number": 7
+    "relevant": true,
+    "target_number": 6
   },
   {
     "id": "tgt-fbb33206",
@@ -22059,21 +22038,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "Water Resilience Strategy",
     "document_type": "communication",
     "policy_area": "Environment",
-    "article": "Section 2.2 (Flagship actions - Industry and Energy)",
+    "article": "Section 2.2 (Building a water-smart economy)",
     "target_text": "the Commission will rate their energy efficiency and overall sustainability and propose minimum performance standards, including for water consumption",
     "target_label": "commitment",
     "obligation": "voluntary",
     "target_type": "unspecified",
-    "timeline": "2025-2026",
+    "timeline": "2025-2027",
     "indicators": [
       "energy efficiency",
       "data centre water consumption"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "both",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
     "relevant": true,
-    "target_number": 8
+    "target_number": 7
   },
   {
     "id": "tgt-8595fc1f",
@@ -22095,7 +22074,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
     "relevant": true,
-    "target_number": 9
+    "target_number": 8
   },
   {
     "id": "tgt-7cf23236",
@@ -22117,7 +22096,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
     "relevant": true,
-    "target_number": 10
+    "target_number": 9
   },
   {
     "id": "tgt-6ad028b0",
@@ -22130,7 +22109,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "The Commission will establish a Water Resilience Investment Accelerator to implement 20 pilot innovative cases for natural water retention and water efficiency",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "2026-2027",
     "indicators": [
       "water retention pilots",
@@ -22140,7 +22119,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
     "relevant": true,
-    "target_number": 11
+    "target_number": 10
   },
   {
     "id": "tgt-e9ef3e8d",
@@ -22153,7 +22132,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "Develop and implement Destination Earth and EU Digital Twin of the Ocean applications for water resilience, and by 2030, make the capabilities available to national and local administrations in the EU and beyond.",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "2025-2030",
     "indicators": [
       "digital water models"
@@ -22162,7 +22141,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
     "relevant": true,
-    "target_number": 12
+    "target_number": 11
   },
   {
     "id": "tgt-49f0c073",
@@ -22184,7 +22163,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
     "relevant": true,
-    "target_number": 13
+    "target_number": 12
   },
   {
     "id": "tgt-441a6819",
@@ -22204,6 +22183,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
     "relevant": true,
+    "target_number": 13
+  },
+  {
+    "id": "tgt-e7230635",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Good status of all water bodies by 2027 (WFD)",
+    "target_text": "objective to achieve good status of all water bodies by 2027",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "by 2027",
+    "indicators": [
+      "water body status"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "relevant": false,
     "target_number": 14
   },
   {
@@ -22240,7 +22241,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
-    "timeline": "by 2026",
+    "timeline": "national plans due by 2026; building decarbonisation by 2050",
     "indicators": [
       "energy performance",
       "building renovation"
