@@ -160,6 +160,20 @@ function climateRelevanceOf(s) {
   return 'none';
 }
 
+// Relevance lens (column-13 flag). The register now spans resilience/health/
+// cohesion acquis added for their transition-relevant slices, so it also carries
+// a lot of generic institutional/procedural or non-climate commitments. A row is
+// "relevant" (shown in the default lens) when it materially bears on the climate/
+// energy transition; peripheral rows default to false. This is only the
+// deterministic DEFAULT — the per-act fact-check refines it via overrides
+// (scripts/policy-targets-overrides.json, `set.relevant`).
+function relevantDefault(r) {
+  if (r.climate_relevance !== 'none') return true; // touches mitigation/adaptation
+  // A non-climate row is surfaced only when it is a quantified, time-bound target/goal.
+  if (r.target_type === 'quantitative' && r.timeline && (r.target_label === 'target' || r.target_label === 'goal')) return true;
+  return false;
+}
+
 function labelOf(s, agentLabel) {
   const valid = ['target', 'goal', 'objective', 'commitment', 'other'];
   if (agentLabel && valid.includes(agentLabel)) return agentLabel;
@@ -318,6 +332,11 @@ function main() {
       rec.article = truncateWords(rec.article, 120);
       rec.timeline = truncateWords(rec.timeline, 80);
     }
+    // Relevance lens: computed AFTER field overrides so it reflects the corrected
+    // climate_relevance/type/label, unless a reviewer set `relevant` explicitly.
+    if (!(ov && ov.set && Object.prototype.hasOwnProperty.call(ov.set, 'relevant'))) {
+      rec.relevant = relevantDefault(rec);
+    }
     if (!perPolicy.has(p.id)) perPolicy.set(p.id, []);
     perPolicy.get(p.id).push(rec);
   }
@@ -356,6 +375,7 @@ function main() {
  *   obligation:       ${JSON.stringify(tally('obligation'))}
  *   type:             ${JSON.stringify(tally('target_type'))}
  *   climate_relevance:${JSON.stringify(tally('climate_relevance'))}
+ *   relevant (lens):  ${JSON.stringify(tally('relevant'))}
  *   (${dropped} candidates rejected as non-verbatim / out of scope)
  */
 import type { RawPolicyTarget } from './policy-targets';
@@ -366,7 +386,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = ${JSON.stringify(out, null,
   console.log(`✓ ${out.length} targets across ${policyOrder.length} acts (${dropped} rejected) → ${path.relative(ROOT, OUTPUT_FILE)}`);
   console.log(`  label=${JSON.stringify(tally('target_label'))}`);
   console.log(`  obligation=${JSON.stringify(tally('obligation'))} type=${JSON.stringify(tally('target_type'))}`);
-  console.log(`  climate=${JSON.stringify(tally('climate_relevance'))}`);
+  console.log(`  climate=${JSON.stringify(tally('climate_relevance'))} relevant=${JSON.stringify(tally('relevant'))}`);
 }
 
 main();
