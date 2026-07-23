@@ -1,6 +1,6 @@
 {
   "date": "2026-07-23",
-  "generatedAt": "2026-07-23T00:01:53.678Z",
+  "generatedAt": "2026-07-23T07:37:15.402Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 23 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "The human fridge: is this really the best way to cool down in a ‘cruelly hot’ climate?",
-      "summary": "&lt;p&gt;A ‘personal cooling booth’ that promises to chill you out in 10 minutes has launched in Japan, with its makers claiming it beats air-conditioning or a fan&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt; The human fridge.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Age:&lt;/strong&gt; Brand new.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/lifeandstyle/2026/jul/22/human-fridge-japan-heatwave\"&gt;Continue reading...&lt;/a&gt;",
+      "headline": "Climate crisis-driven heat ‘sucking soils dry’ as extreme drought hits Europe",
+      "summary": "&lt;p&gt;Analysis shows how heatwaves are making atmosphere thirstier, damaging water supplies, food production and power generation&lt;/p&gt;&lt;p&gt;Extreme heat supercharged by the climate crisis is sucking Europe dry in summer and intensifying the drought hitting the continent, a scientific analysis has found.&lt;/p&gt;&lt;p&gt;Record-breaking heatwaves meant the hot atmosphere strongly evaporated water from rivers, lakes, soils and plants – conditions made 80 times more likely by global hea",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -54,7 +54,7 @@
           "link": "https://www.bbc.co.uk/news/articles/cj03r59z73po?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The US Department of Energy says the \"peaceful\" co-operation agreement will give US firms \"great access\" to the Saudi nuclear energy programme.",
-          "published": "2026-07-22T23:21:31.000Z",
+          "published": "2026-07-23T00:21:53.000Z",
           "score": 7
         },
         {
@@ -80,6 +80,14 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Climate crisis-driven heat ‘sucking soils dry’ as extreme drought hits Europe",
+          "link": "https://www.theguardian.com/environment/2026/jul/23/climate-crisis-heat-sucking-soils-dry-extreme-drought-europe-analysis",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Analysis shows how heatwaves are making atmosphere thirstier, damaging water supplies, food production and power generation&lt;/p&gt;&lt;p&gt;Extreme heat supercharged by the climate crisis is sucking Europe dry in summer and intensifying the drought hitting the continent, a scientific analysis has found.&lt;/p&gt;&lt;p&gt;Record-breaking heatwaves meant the hot atmosphere strongly evaporated water from rivers, lakes, soils and plants – conditions made 80 times more likely by global hea",
+          "published": "2026-07-23T04:00:34.000Z",
+          "score": 13
+        },
+        {
           "title": "The human fridge: is this really the best way to cool down in a ‘cruelly hot’ climate?",
           "link": "https://www.theguardian.com/lifeandstyle/2026/jul/22/human-fridge-japan-heatwave",
           "source": "The Guardian - Climate",
@@ -88,11 +96,11 @@
           "score": 7
         },
         {
-          "title": "Fast-moving wildfire in southern France forces hundreds to flee - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPWWNBZWlfMVJCN3J6emRQbzY5NThiVVkzUmlfTW8tck5DVkxQM3BIQ3FiY0RtWUFjdTRpU3ZFbEJNaG9nNS1SYWhYTnVkRDhDcWNmWEkwdVU5cWpDbE5zNEYxcko5S2FvLVpmQ00zd2V5Rk9TYTlLYV9uc2l4bGw4RnRQbUFnVk85YTQ4X0Y1dXRJNGgxVGJVdm1oS3dkS2RabjNRSGdQbTZVTElvRlE5RGx5b3Y?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPWWNBZWlfMVJCN3J6emRQbzY5NThiVVkzUmlfTW8tck5DVkxQM3BIQ3FiY0RtWUFjdTRpU3ZFbEJNaG9nNS1SYWhYTnVkRDhDcWNmWEkwdVU5cWpDbE5zNEYxcko5S2FvLVpmQ00zd2V5Rk9TYTlLYV9uc2l4bGw4RnRQbUFnVk85YTQ4X0Y1dXRJNGgxVGJVdm1oS3dkS2RabjNRSGdQbTZVTElvRlE5RGx5b3Y?oc=5\" target=\"_blank\"&gt;Fast-moving wildfire in southern France forces hundreds to flee&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-22T06:20:00.000Z",
+          "title": "River levels approach all-time low as drought announcement looms",
+          "link": "https://www.bbc.co.uk/news/articles/c80n5rvx917o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "An announcement is expected from NRW as some river levels are reported to be nearing all-time lows.",
+          "published": "2026-07-23T05:12:09.000Z",
           "score": 7
         },
         {
@@ -109,14 +117,6 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;We asked readers what they hoped to see – and consistent themes around courage and communication emerged&lt;/p&gt;&lt;p&gt;With &lt;a href=\"https://www.theguardian.com/politics/2026/jul/20/andy-burnham-uk-prime-minister-meeting-king-charles\"&gt;Andy Burnham having entered Downing Street&lt;/a&gt;, we asked people to tell us what they wanted from the new prime minister and government. About 400 people from around the UK responded to an online callout asking about the values and issues th",
           "published": "2026-07-22T14:49:34.000Z",
-          "score": 2
-        },
-        {
-          "title": "Most sewage spills in England may be illegal, new research suggests",
-          "link": "https://www.bbc.co.uk/news/articles/cn0nxd1jgw5o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The new analysis from a prominent water campaigner emerged after secret court documents were leaked.",
-          "published": "2026-07-22T23:47:27.000Z",
           "score": 2
         }
       ]
@@ -162,11 +162,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Indian opposition disrupts parliament to support student protesters and pressure Modi - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbUQ5NzBKNnBVRWcyMmdKM1hoQ0FIOHN6dlFpRFRYcmpEcDN6bFdyVWwtaV80ZE9aWEJvaXN0MEF2aDRFNzBVWndnNlZSd2NZOVB5ZEJPVmJMMGZHN2xOUWpEOU5CeXNmeEVuXzBwNVRDaWkzS2tHcnFIaVF2YzNWZ1hBMHNjb2ZwbWJCTnJab3ZxcnlGU0NNNE1fWmZUTGd0WVlPeTU1bl8xZmdIeHVLaGJKbnh4YnNSLVRhVg?oc=5",
+          "title": "EU aviation agency adds Jordan to no-fly warning list as fighting continues - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWE9RZXEyMWMtbE0zVi1JaGJIYlIxZTJZZlVXbmdTRDcySXBqN0NmTTY4VWtHNXlSOHJFdzFNNmRfVy1NZDhNbDVadFdHVXNtNzJQc1ZDZG1yLWhoekRuVHRLV0l6RXhwNFpLOExMeDlmSnhLUVJiSlRaSGpFZDdFUVhGQzRWeEdlSHB1Z0lILXFPNklYNzZ1X3JrNXlYQ2pfLTVIYmZKVG1HREVyaUc4bk1TWHhqNUhHZWttSW94enY?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQbUQ5NzBKNnBVRWcyMmdKM1hoQ0FIOHN6dlFpRFRYcmpEcDN6bFdyVWwtaV80ZE9aWEJvaXN0MEF2aDRFNzBVWndnNlZSd2NZOVB5ZEJPVmJMMGZHN2xOUWpEOU5CeXNmeEVuXzBwNVRDaWkzS2tHcnFIaVF2YzNWZ1hBMHNjb2ZwbWJCTnJab3ZxcnlGU0NNNE1fWmZUTGd0WVlPeTU1bl8xZmdIeHVLaGJKbnh4YnNSLVRhVg?oc=5\" target=\"_blank\"&gt;Indian opposition disrupts parliament to support student protesters and pressure Modi&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-22T03:18:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWE9RZXEyMWMtbE0zVi1JaGJIYlIxZTJZZlVXbmdTRDcySXBqN0NmTTY4VWtHNXlSOHJFdzFNNmRfVy1NZDhNbDVadFdHVXNtNzJQc1ZDZG1yLWhoekRuVHRLV0l6RXhwNFpLOExMeDlmSnhLUVJiSlRaSGpFZDdFUVhGQzRWeEdlSHB1Z0lILXFPNklYNzZ1X3JrNXlYQ2pfLTVIYmZKVG1HREVyaUc4bk1TWHhqNUhHZWttSW94enY?oc=5\" target=\"_blank\"&gt;EU aviation agency adds Jordan to no-fly warning list as fighting continues&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-22T12:08:20.000Z",
           "score": 8
         },
         {
@@ -205,9 +205,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 427,
+    "totalArticlesScanned": 428,
     "articlesLast24h": 164,
-    "afterDedup": 157,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
