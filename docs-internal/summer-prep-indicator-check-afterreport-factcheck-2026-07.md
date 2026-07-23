@@ -12,6 +12,15 @@ non-API sources via web).*
 This complements `indicator-check-data-provenance-audit-2026-07.md` (which
 audited sources/links/freshness); this audit checks the **values** themselves.
 
+> **Status update (same day):** the unambiguous fixes have been applied in
+> `src/data/esabcc-indicators.ts` + migration
+> `077_fix_factchecked_indicator_points.sql`: O1 2024 → 3017.2, steel 2025 →
+> 126.2, cement 2025 removed, F5 rescaled to percent numbers, and the
+> E4a/E4b/F1/F2-share source labels corrected. **Not** auto-fixed (need a
+> definition decision, not a value overwrite): E6 methane (+10.7 % offset),
+> L8 bioenergy (+6 %), bovine/pig herd (−21 %/−4 % vs Eurostat+FAOSTAT),
+> L7 2022, T1 scope — see §1.
+
 ## Verdict key
 
 - **CONFIRMED** — reproduces from the live primary source (≤2 % / ≤1 pp)
