@@ -12,6 +12,28 @@ non-API sources via web).*
 This complements `indicator-check-data-provenance-audit-2026-07.md` (which
 audited sources/links/freshness); this audit checks the **values** themselves.
 
+> **Status update 2 (2026-07-23):** the report workbook's exact derivations
+> were reverse-engineered (per request) and applied via migration 078:
+> **O1** = net incl LULUCF + intl aviation + intl maritime (true ECL scope;
+> reproduces the report 2005–2022 within 0.1–1.5 % — the gross basis assumed
+> by the fact-check and migration 077 is 3–4 % off pre-2017) → 2023 = 3118.0,
+> 2024 = 3043.2. **T1** = CRF1A3 + intl aviation, no maritime (matches report
+> to 0.1–0.3 %) → 2023 = 918.4, 2024 = 934.7. **L7** = CRF4B+C+D+E+F, i.e.
+> excluding harvested wood products → 121.0 / 135.6 / 123.0. **E6**: the
+> report's CO₂e convention runs a *constant* ~9 % above env_air_gge CH4_CO2E —
+> a convention difference, not an error; values kept, convention documented.
+> **A4 herds**: the workbook's own source column says "EU GHG inventories
+> (CRF tables)" — the app's values correctly continue that basis and only the
+> source label was wrong (fixed); the earlier "WRONG (−21 %)" verdict is
+> retracted. **L8** = GIC × BIOE (nrg_bal_c; reproduces the report 2010–2021
+> within 1.4–3.4 %; the sector components are Eurostat's own split — industry
+> & other sectors = solid biofuels+charcoal+biogases, transport = full BIOE)
+> → 1698.0 / 1664.9 / 1663.5, replacing the ~6 %-high splice values.
+> The refresh script's YoY-splice approach
+> (scripts/esabcc-indicators/refresh-provenance.json) is what caused
+> O1/T1/L7/L8 drift — consider refreshing these series by derivation, not
+> splice.
+>
 > **Status update (same day):** the unambiguous fixes have been applied in
 > `src/data/esabcc-indicators.ts` + migration
 > `077_fix_factchecked_indicator_points.sql`: O1 2024 → 3017.2, steel 2025 →

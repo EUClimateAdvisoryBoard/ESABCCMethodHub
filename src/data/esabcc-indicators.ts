@@ -47,7 +47,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     duplicateOf: 'ghg-total-net',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 4393.9 }, { year: 2006, value: 4392.8 }, { year: 2007, value: 4417.4 }, { year: 2008, value: 4279.6 }, { year: 2009, value: 3940.7 }, { year: 2010, value: 4025.2 }, { year: 2011, value: 3921.3 }, { year: 2012, value: 3843.7 }, { year: 2013, value: 3752.9 }, { year: 2014, value: 3626.5 }, { year: 2015, value: 3680.9 }, { year: 2016, value: 3696 }, { year: 2017, value: 3796.3 }, { year: 2018, value: 3711.2 }, { year: 2019, value: 3564 }, { year: 2020, value: 3195.8 }, { year: 2021, value: 3393.8 }, { year: 2022, value: 3333.9 }, { year: 2023, value: 3104.6, afterReport: true }, { year: 2024, value: 3017.2, afterReport: true }],
+    data: [{ year: 2005, value: 4393.9 }, { year: 2006, value: 4392.8 }, { year: 2007, value: 4417.4 }, { year: 2008, value: 4279.6 }, { year: 2009, value: 3940.7 }, { year: 2010, value: 4025.2 }, { year: 2011, value: 3921.3 }, { year: 2012, value: 3843.7 }, { year: 2013, value: 3752.9 }, { year: 2014, value: 3626.5 }, { year: 2015, value: 3680.9 }, { year: 2016, value: 3696 }, { year: 2017, value: 3796.3 }, { year: 2018, value: 3711.2 }, { year: 2019, value: 3564 }, { year: 2020, value: 3195.8 }, { year: 2021, value: 3393.8 }, { year: 2022, value: 3333.9 }, { year: 2023, value: 3118.0, afterReport: true }, { year: 2024, value: 3043.2, afterReport: true }],
   },
   {
     id: 'esabcc-o2-pec',
@@ -212,7 +212,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     category: 'energy-supply',
     unit: 'Mt CO₂eq',
     description:
-      'ESABCC progress indicator E6. Methane emissions from fuel combustion and fugitives. Aligned with the Methane Regulation.',
+      'ESABCC progress indicator E6. Methane emissions from fuel combustion and fugitives (CRF 1 CH₄). Aligned with the Methane Regulation. Uses the report workbook’s CO₂e convention, which runs a constant ~9% above the current Eurostat env_air_gge CH₄ CO₂e series; post-report points continue that convention.',
     source: 'EEA GHG data viewer',
     sourceUrl: 'https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2',
     direction: 'down',
@@ -342,7 +342,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 943.5 }, { year: 2006, value: 956.7 }, { year: 2007, value: 969.8 }, { year: 2008, value: 952.3 }, { year: 2009, value: 921.9 }, { year: 2010, value: 918 }, { year: 2011, value: 911.1 }, { year: 2012, value: 880.4 }, { year: 2013, value: 875.4 }, { year: 2014, value: 882.7 }, { year: 2015, value: 901.8 }, { year: 2016, value: 925.8 }, { year: 2017, value: 949.1 }, { year: 2018, value: 956.8 }, { year: 2019, value: 965.7 }, { year: 2020, value: 776.3 }, { year: 2021, value: 851.9 }, { year: 2022, value: 906.6 }, { year: 2023, value: 901.9, afterReport: true }, { year: 2024, value: 920, afterReport: true }],
+    data: [{ year: 2005, value: 943.5 }, { year: 2006, value: 956.7 }, { year: 2007, value: 969.8 }, { year: 2008, value: 952.3 }, { year: 2009, value: 921.9 }, { year: 2010, value: 918 }, { year: 2011, value: 911.1 }, { year: 2012, value: 880.4 }, { year: 2013, value: 875.4 }, { year: 2014, value: 882.7 }, { year: 2015, value: 901.8 }, { year: 2016, value: 925.8 }, { year: 2017, value: 949.1 }, { year: 2018, value: 956.8 }, { year: 2019, value: 965.7 }, { year: 2020, value: 776.3 }, { year: 2021, value: 851.9 }, { year: 2022, value: 906.6 }, { year: 2023, value: 918.4, afterReport: true }, { year: 2024, value: 934.7, afterReport: true }],
   },
   {
     id: 'esabcc-t2a-passenger-demand',
@@ -721,7 +721,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 127.8 }, { year: 2006, value: 121.8 }, { year: 2007, value: 131.9 }, { year: 2008, value: 130.7 }, { year: 2009, value: 130.9 }, { year: 2010, value: 117.8 }, { year: 2011, value: 115.9 }, { year: 2012, value: 114.6 }, { year: 2013, value: 128 }, { year: 2014, value: 108.2 }, { year: 2015, value: 103.1 }, { year: 2016, value: 100.4 }, { year: 2017, value: 103.3 }, { year: 2018, value: 94 }, { year: 2019, value: 89.44 }, { year: 2020, value: 91.21 }, { year: 2021, value: 97.44 }, { year: 2022, value: 101.2, afterReport: true }, { year: 2023, value: 113.9, afterReport: true }, { year: 2024, value: 103, afterReport: true }],
+    data: [{ year: 2005, value: 127.8 }, { year: 2006, value: 121.8 }, { year: 2007, value: 131.9 }, { year: 2008, value: 130.7 }, { year: 2009, value: 130.9 }, { year: 2010, value: 117.8 }, { year: 2011, value: 115.9 }, { year: 2012, value: 114.6 }, { year: 2013, value: 128 }, { year: 2014, value: 108.2 }, { year: 2015, value: 103.1 }, { year: 2016, value: 100.4 }, { year: 2017, value: 103.3 }, { year: 2018, value: 94 }, { year: 2019, value: 89.44 }, { year: 2020, value: 91.21 }, { year: 2021, value: 97.44 }, { year: 2022, value: 121.0, afterReport: true }, { year: 2023, value: 135.6, afterReport: true }, { year: 2024, value: 123.0, afterReport: true }],
   },
   {
     id: 'esabcc-l8-bioenergy-use',
@@ -736,7 +736,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 896.4 }, { year: 2006, value: 972.1 }, { year: 2007, value: 1075.9 }, { year: 2008, value: 1192.6 }, { year: 2009, value: 1270.3 }, { year: 2010, value: 1406.2 }, { year: 2011, value: 1374 }, { year: 2012, value: 1504.2 }, { year: 2013, value: 1505.7 }, { year: 2014, value: 1474.3 }, { year: 2015, value: 1515.4 }, { year: 2016, value: 1524.4 }, { year: 2017, value: 1570.7 }, { year: 2018, value: 1642.1 }, { year: 2019, value: 1679 }, { year: 2020, value: 1684.1 }, { year: 2021, value: 1795.7 }, { year: 2022, value: 1811.9, afterReport: true }, { year: 2023, value: 1766.3, afterReport: true }, { year: 2024, value: 1761.2, afterReport: true }],
+    data: [{ year: 2005, value: 896.4 }, { year: 2006, value: 972.1 }, { year: 2007, value: 1075.9 }, { year: 2008, value: 1192.6 }, { year: 2009, value: 1270.3 }, { year: 2010, value: 1406.2 }, { year: 2011, value: 1374 }, { year: 2012, value: 1504.2 }, { year: 2013, value: 1505.7 }, { year: 2014, value: 1474.3 }, { year: 2015, value: 1515.4 }, { year: 2016, value: 1524.4 }, { year: 2017, value: 1570.7 }, { year: 2018, value: 1642.1 }, { year: 2019, value: 1679 }, { year: 2020, value: 1684.1 }, { year: 2021, value: 1795.7 }, { year: 2022, value: 1698.0, afterReport: true }, { year: 2023, value: 1664.9, afterReport: true }, { year: 2024, value: 1663.5, afterReport: true }],
   },
   {
     id: 'esabcc-f-fossil-subsidies',
@@ -1131,8 +1131,8 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     category: 'agriculture',
     unit: 'million heads',
     description:
-      'ESABCC progress indicator A4 (bovine meat herd size). EU herd size of bovine meat (Figure 59), shown alongside production and herd size to relate demand, output and animal numbers.',
-    source: 'Eurostat/FAOSTAT food balances + livestock surveys',
+      'ESABCC progress indicator A4 (bovine meat herd size). EU herd size of bovine meat (Figure 59), shown alongside production and herd size to relate demand, output and animal numbers. Report basis: CRF-table livestock populations (a bovine-meat subset, ~21% below the total-cattle survey count); 2021+ extended via Eurostat survey trends on that basis.',
+    source: 'EU GHG inventory (CRF) livestock populations; 2021+ Eurostat survey trend',
     sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/apro_mt_lscatl/default/table',
     direction: 'down',
     duplicateOf: 'cattle-population',
@@ -1177,8 +1177,8 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     category: 'agriculture',
     unit: 'million heads',
     description:
-      'ESABCC progress indicator A4 (dairy products herd size). EU herd size of dairy products (Figure 59), shown alongside production and herd size to relate demand, output and animal numbers.',
-    source: 'Eurostat/FAOSTAT food balances + livestock surveys',
+      'ESABCC progress indicator A4 (dairy products herd size). EU herd size of dairy products (Figure 59), shown alongside production and herd size to relate demand, output and animal numbers. Report basis: CRF-table livestock populations; 2021+ extended via the Eurostat dairy-cow survey.',
+    source: 'EU GHG inventory (CRF) livestock populations; 2021+ Eurostat survey trend',
     sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/apro_mt_lscatl/default/table',
     direction: 'down',
     group: 'esabcc',
@@ -1222,8 +1222,8 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     category: 'agriculture',
     unit: 'million heads',
     description:
-      'ESABCC progress indicator A4 (pig meat herd size). EU herd size of pig meat (Figure 59), shown alongside production and herd size to relate demand, output and animal numbers.',
-    source: 'Eurostat/FAOSTAT food balances + livestock surveys',
+      'ESABCC progress indicator A4 (pig meat herd size). EU herd size of pig meat (Figure 59), shown alongside production and herd size to relate demand, output and animal numbers. Report basis: CRF-table livestock populations (~4% below the Eurostat Dec survey count); 2021+ extended via Eurostat survey trends on that basis.',
+    source: 'EU GHG inventory (CRF) livestock populations; 2021+ Eurostat survey trend',
     sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/apro_mt_lscatl/default/table',
     direction: 'down',
     group: 'esabcc',
