@@ -1,6 +1,6 @@
 {
   "date": "2026-07-23",
-  "generatedAt": "2026-07-23T07:37:15.402Z",
+  "generatedAt": "2026-07-23T12:28:28.946Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 23 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Climate crisis-driven heat ‘sucking soils dry’ as extreme drought hits Europe",
-      "summary": "&lt;p&gt;Analysis shows how heatwaves are making atmosphere thirstier, damaging water supplies, food production and power generation&lt;/p&gt;&lt;p&gt;Extreme heat supercharged by the climate crisis is sucking Europe dry in summer and intensifying the drought hitting the continent, a scientific analysis has found.&lt;/p&gt;&lt;p&gt;Record-breaking heatwaves meant the hot atmosphere strongly evaporated water from rivers, lakes, soils and plants – conditions made 80 times more likely by global hea",
+      "headline": "Daily News 23 / 07 / 2026",
+      "summary": "European Commission Daily news Brussels, 23 Jul 2026 Commission fines Google €890 million for breaches of the Digital Markets Act\r\nToday, the European Commission took two decisions finding non-compliance by Google ...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -42,11 +42,11 @@
           "score": 13
         },
         {
-          "title": "UK's largest onshore wind farm to be rebuilt with fewer, larger turbines",
-          "link": "https://www.bbc.co.uk/news/articles/cvgl9vp4vqvo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Whitelee Windfarm has been producing electricity for about 20 years on a stretch of moorland near Eaglesham but is reaching the end of its life.",
-          "published": "2026-07-22T09:28:47.000Z",
+          "title": "I am used to hot days now. But the warm wind has really panicked me | Adrian Chiles",
+          "link": "https://www.theguardian.com/commentisfree/2026/jul/23/i-am-used-to-hot-days-now-but-the-warm-wind-has-really-panicked-me",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;I first noticed it a couple of weeks ago on the streets of Cardiff – and it felt alarmingly wrong&lt;/p&gt;&lt;p&gt;When the wind is warm, you know something is up. Naturally, I have been well aware of the awful reality of the climate crisis, but it has taken the warmth of the wind to really panic me. Not the endless 30C+ days, the desiccated garden, the tap slowing to a drip. No, it is the warm wind blowing on me. I can just about manage in punishing heat, even though it is particularl",
+          "published": "2026-07-23T10:00:41.000Z",
           "score": 7
         },
         {
@@ -54,7 +54,15 @@
           "link": "https://www.bbc.co.uk/news/articles/cj03r59z73po?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The US Department of Energy says the \"peaceful\" co-operation agreement will give US firms \"great access\" to the Saudi nuclear energy programme.",
-          "published": "2026-07-23T00:21:53.000Z",
+          "published": "2026-07-23T09:17:50.000Z",
+          "score": 7
+        },
+        {
+          "title": "Trump's nuclear deal with Saudis jettisons longstanding US demands",
+          "link": "https://www.bbc.co.uk/news/articles/cz05lx0xpero?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Past US presidents insisted that Saudi Arabia normalise relations with Israel in exchange for nuclear technology.",
+          "published": "2026-07-23T11:13:13.000Z",
           "score": 7
         },
         {
@@ -64,14 +72,6 @@
           "description": "The BBC's Sarah Smith explains the implications of the landmark cooperation agreement between both countries.",
           "published": "2026-07-22T22:45:08.000Z",
           "score": 7
-        },
-        {
-          "title": "US and Saudi Arabia reach historic nuclear energy deal",
-          "link": "https://www.dw.com/en/us-and-saudi-arabia-reach-historic-nuclear-energy-deal/a-78077629?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The deal is another sign of growing US-Saudi ties during US President Donald Trump&#039;s second term. The agreement, known as a 123 Agreement, would allow Saudi Arabia to build nuclear reactors using US technology.",
-          "published": "2026-07-22T23:39:00.000Z",
-          "score": 7
         }
       ]
     },
@@ -80,12 +80,28 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Daily News 23 / 07 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1675",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 23 Jul 2026 Commission fines Google €890 million for breaches of the Digital Markets Act\r\nToday, the European Commission took two decisions finding non-compliance by Google ...",
+          "published": "2026-07-23T09:28:37.000Z",
+          "score": 14
+        },
+        {
           "title": "Climate crisis-driven heat ‘sucking soils dry’ as extreme drought hits Europe",
           "link": "https://www.theguardian.com/environment/2026/jul/23/climate-crisis-heat-sucking-soils-dry-extreme-drought-europe-analysis",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Analysis shows how heatwaves are making atmosphere thirstier, damaging water supplies, food production and power generation&lt;/p&gt;&lt;p&gt;Extreme heat supercharged by the climate crisis is sucking Europe dry in summer and intensifying the drought hitting the continent, a scientific analysis has found.&lt;/p&gt;&lt;p&gt;Record-breaking heatwaves meant the hot atmosphere strongly evaporated water from rivers, lakes, soils and plants – conditions made 80 times more likely by global hea",
           "published": "2026-07-23T04:00:34.000Z",
           "score": 13
+        },
+        {
+          "title": "More than 20,000 evacuated after intense wildfire in France",
+          "link": "https://www.theguardian.com/world/2026/jul/23/people-evacuated-intense-wildfire-saumos-france",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Reception centres open to thousands of evacuees after blaze begins in pine forest 45km west of Bordeaux&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/jul/23/eu-sanctions-russia-ukraine-marcio-rubio-sergei-lavrov-kallas-google-latest-news-updates\"&gt;Europe live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;More than 20,000 people, including thousands of tourists from campsites and other holiday accommodation, have been",
+          "published": "2026-07-23T11:46:01.000Z",
+          "score": 9
         },
         {
           "title": "The human fridge: is this really the best way to cool down in a ‘cruelly hot’ climate?",
@@ -96,28 +112,12 @@
           "score": 7
         },
         {
-          "title": "River levels approach all-time low as drought announcement looms",
-          "link": "https://www.bbc.co.uk/news/articles/c80n5rvx917o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "An announcement is expected from NRW as some river levels are reported to be nearing all-time lows.",
-          "published": "2026-07-23T05:12:09.000Z",
+          "title": "Who is Miatta Fahnbulleh, the radical-thinking new UK energy secretary?",
+          "link": "https://www.theguardian.com/politics/2026/jul/23/who-is-miatta-fahnbulleh-the-radical-thinking-new-uk-energy-secretary",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Selection of economist formerly at helm of green thinktank marks continuation of decarbonising Miliband era&lt;/p&gt;&lt;p&gt;In her first 48 hours as energy secretary, Miatta Fahnbulleh was left in no doubt about the thorny policy decision at the top of her in-tray. Protesters from Fossil Free London met her outside her new offices dressed as firefighters holding placards reading: “We’re already putting out fires, don’t start new ones.”&lt;/p&gt;&lt;p&gt;The MP for Peckham – a radical ",
+          "published": "2026-07-23T09:00:41.000Z",
           "score": 7
-        },
-        {
-          "title": "The world is on fire, and who does Trump blame? The Canadians | Arwa Mahdawi",
-          "link": "https://www.theguardian.com/commentisfree/2026/jul/22/trump-canada-wildfires-blame-air-pollution-climate-crisis",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The US president has been complaining about Canada’s ‘filthy, polluted and unhealthy air’. Maybe he should put all that energy into tackling the climate crisis&lt;/p&gt;&lt;p&gt;Right, that’s it: we’ve got to do something about Canada. The country’s wildfires, which resulted in &lt;a href=\"https://www.theguardian.com/world/2026/jul/18/canada-wildfires-air-quality\"&gt;air quality alerts&lt;/a&gt; across more than 20 US states, ruined my weekend. On Friday the air in Philadelphia, where I",
-          "published": "2026-07-22T10:00:13.000Z",
-          "score": 4
-        },
-        {
-          "title": "‘Do a few big things well’: people share what they want from Andy Burnham",
-          "link": "https://www.theguardian.com/politics/2026/jul/22/guardian-readers-what-they-want-from-andy-burnham",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;We asked readers what they hoped to see – and consistent themes around courage and communication emerged&lt;/p&gt;&lt;p&gt;With &lt;a href=\"https://www.theguardian.com/politics/2026/jul/20/andy-burnham-uk-prime-minister-meeting-king-charles\"&gt;Andy Burnham having entered Downing Street&lt;/a&gt;, we asked people to tell us what they wanted from the new prime minister and government. About 400 people from around the UK responded to an online callout asking about the values and issues th",
-          "published": "2026-07-22T14:49:34.000Z",
-          "score": 2
         }
       ]
     },
@@ -132,14 +132,6 @@
           "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council on establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jana Nagyová&lt;br /&gt",
           "published": "2026-07-22T15:23:01.000Z",
           "score": 22
-        },
-        {
-          "title": "Germany&#039;s growing interest in Africa: A win for both sides?",
-          "link": "https://www.dw.com/en/germany-s-growing-interest-in-africa-a-win-for-both-sides/a-78068049?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Germany is deepening its footprint across Africa, as Foreign Minister Johann Wadephul embarks on his third trip to the continent in 2026. His top-level talks will focus on security, skills development and investment.",
-          "published": "2026-07-22T14:44:00.000Z",
-          "score": 2
         }
       ]
     },
@@ -147,6 +139,22 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
+        {
+          "title": "Commission fines Google €890 million for breaches of the Digital Markets Act",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1670",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 23 Jul 2026 Today, the European Commission took two decisions finding non-compliance by Google with the Digital Markets Act (DMA) for self-preferencing its own services on Google Search, and for putting in place restrictions on businesses to direct consumers to alternative, often cheaper, purchase channels on Google Play (steering). In this regard, the Commission issued Google a fine of €460 million and a fine of €430 million respectively.",
+          "published": "2026-07-22T22:00:00.000Z",
+          "score": 18
+        },
+        {
+          "title": "EU agrees on new round of sanctions against Russia",
+          "link": "https://www.dw.com/en/eu-agrees-on-new-round-of-sanctions-against-russia/a-78081102?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Union has agreed upon a new sanctions package against Russia for its war in Ukraine, which includes a price cap on Russian oil.",
+          "published": "2026-07-23T10:14:00.000Z",
+          "score": 8
+        },
         {
           "title": "France records more than 5,700 excess deaths during June heatwave",
           "link": "https://www.theguardian.com/world/2026/jul/22/france-recorded-more-than-5700-excess-deaths-during-june-heatwave",
@@ -162,11 +170,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU aviation agency adds Jordan to no-fly warning list as fighting continues - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWE9RZXEyMWMtbE0zVi1JaGJIYlIxZTJZZlVXbmdTRDcySXBqN0NmTTY4VWtHNXlSOHJFdzFNNmRfVy1NZDhNbDVadFdHVXNtNzJQc1ZDZG1yLWhoekRuVHRLV0l6RXhwNFpLOExMeDlmSnhLUVJiSlRaSGpFZDdFUVhGQzRWeEdlSHB1Z0lILXFPNklYNzZ1X3JrNXlYQ2pfLTVIYmZKVG1HREVyaUc4bk1TWHhqNUhHZWttSW94enY?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWE9RZXEyMWMtbE0zVi1JaGJIYlIxZTJZZlVXbmdTRDcySXBqN0NmTTY4VWtHNXlSOHJFdzFNNmRfVy1NZDhNbDVadFdHVXNtNzJQc1ZDZG1yLWhoekRuVHRLV0l6RXhwNFpLOExMeDlmSnhLUVJiSlRaSGpFZDdFUVhGQzRWeEdlSHB1Z0lILXFPNklYNzZ1X3JrNXlYQ2pfLTVIYmZKVG1HREVyaUc4bk1TWHhqNUhHZWttSW94enY?oc=5\" target=\"_blank\"&gt;EU aviation agency adds Jordan to no-fly warning list as fighting continues&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-22T12:08:20.000Z",
+          "title": "EU fines Google €890 million over competition rules",
+          "link": "https://www.dw.com/en/eu-fines-google-€890-million-over-competition-rules/a-78082850?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Commission said it found that Google had preferenced its search engine and app store in ways that unfairly harmed competition.",
+          "published": "2026-07-23T10:19:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Europe wildfires prompt evacuations in France, Spain, Italy",
+          "link": "https://www.dw.com/en/europe-wildfires-prompt-evacuations-in-france-spain-italy/a-78080171?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Fires are blazing across several European countries as the continent braces for another heat wave. In 2026, wildfires have already burnt more land in Europe than the annual average over the past two decades.",
+          "published": "2026-07-23T08:52:00.000Z",
           "score": 8
         },
         {
@@ -192,22 +208,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQWThPZktjTTFuMncxYTMyUWk3dk5MS2szX1RoRUZEUVd3QjBUeFB5Tkd5dWhjeDBzaGF2a1lOazdVZlEzS2g4bW9lOTVBNkZSdWE3U2pCeDR3MWJGNzJHQXhkNnB4bHQ1eXlmUlBaeUpFNS1nLUptUndQejloX3NIc2JWUHhFYmxSUV83NmN4Q19yUkFUZHVtRDdSRFFySUlKeUY2YXc3WUFxcWFYVmZR?oc=5\" target=\"_blank\"&gt;Italy's levy on small parcels to go on top of EU levy, economy minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-22T13:51:43.000Z",
           "score": 8
-        },
-        {
-          "title": "Venice Biennale to challenge EU funding cut over Russian pavilion row - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPYTJyU0doSEo4N3FrSVU5djg2cXI5X29hZ2N2Qi1IVXJQeklBRFVsWG8xMXBxaVlYMWEtdjZ1SGJELXU5ZGo2QXJ0ZEduSUlJbGt4TE1nYWptUEZFeE1SUloweFNtZEJYV3FkZE9VUHJsbTBXZEhLQjltT3NaT05WZEJnOS1KSGF3UkV3dVFnX3JNbklnWlN3dzlsNUt0WHN2b0Z3VlpJeGFkRGFtSFRGRHNn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPYTJyU0doSEo4N3FrSVU5djg2cXI5X29hZ2N2Qi1IVXJQeklBRFVsWG8xMXBxaVlYMWEtdjZ1SGJELXU5ZGo2QXJ0ZEduSUlJbGt4TE1nYWptUEZFeE1SUloweFNtZEJYV3FkZE9VUHJsbTBXZEhLQjltT3NaT05WZEJnOS1KSGF3UkV3dVFnX3JNbklnWlN3dzlsNUt0WHN2b0Z3VlpJeGFkRGFtSFRGRHNn?oc=5\" target=\"_blank\"&gt;Venice Biennale to challenge EU funding cut over Russian pavilion row&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-22T09:09:44.000Z",
-          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 428,
-    "articlesLast24h": 164,
-    "afterDedup": 156,
+    "totalArticlesScanned": 431,
+    "articlesLast24h": 172,
+    "afterDedup": 163,
     "feedsQueried": 19
   }
 }
