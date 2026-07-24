@@ -5,17 +5,20 @@
  * This is a line-for-line semantic port of
  * `beta/modules/summer-prep/optimization/model/industry_optimization.jl`
  * (Julia/JuMP + HiGHS) — same decision variables (B = new build, K =
- * installed capacity, Q = production), same constraints, same CRF-annualized
- * capex, same 7% discounting, same "carbon price on direct CO2 only" rule.
- * Read the Julia file's comments for the full plain-language rationale of
- * each constraint; this file's comments point back to the matching Julia
- * section rather than repeating the explanation.
+ * installed capacity, Q = production), same constraints, same CRF-annualized,
+ * VINTAGE-COSTED capex (a unit built in year yb keeps paying yb's capex rate
+ * for every year it survives — see section 4.11 below), same 7% discounting,
+ * same "carbon price on direct CO2 only" rule. Read the Julia file's comments
+ * for the full plain-language rationale of each constraint; this file's
+ * comments point back to the matching Julia section rather than repeating
+ * the explanation.
  *
  * Framework-free: no React, no DOM. `buildAndSolve()` is the single public
  * entry point a page (or a Web Worker, or a node test script) calls.
  */
 
 import type { CellValue, InputSheet } from '../../data/summer-prep-optimization';
+import { CAPEX_TRAJECTORY } from '../../data/summer-prep-capex-trajectory';
 import { solveLP } from './solver';
 import type {
   IndustryLpOverrides,
@@ -101,7 +104,8 @@ interface BaseData {
   subsectors: string[];
   techs: string[];
   subsectorOf: Record<string, string>;
-  capex: Record<string, number>;
+  /** key: `${tech}|${year}` -> EUR/t capacity (vintage costing — replaces a single-year capex). */
+  capexTrajectory: Record<string, number>;
   fixedOpex: Record<string, number>;
   varOpex: Record<string, number>;
   lifetime: Record<string, number>;
@@ -141,7 +145,6 @@ function parseBaseData(sheets: InputSheets): BaseData {
   const techRows = rowObjects(sheets.technologies);
   const techs = techRows.map((r) => str(r.tech));
   const subsectorOf: Record<string, string> = {};
-  const capex: Record<string, number> = {};
   const fixedOpex: Record<string, number> = {};
   const varOpex: Record<string, number> = {};
   const lifetime: Record<string, number> = {};
@@ -152,7 +155,8 @@ function parseBaseData(sheets: InputSheets): BaseData {
   for (const r of techRows) {
     const t = str(r.tech);
     subsectorOf[t] = str(r.subsector);
-    capex[t] = num(r.capex_eur_t);
+    // NOTE: the technologies sheet's own capex_eur_t is no longer read here — it is superseded
+    // by CAPEX_TRAJECTORY (below), whose 2025 value equals this column by construction.
     fixedOpex[t] = num(r.fixed_opex_eur_t);
     varOpex[t] = num(r.var_opex_eur_t);
     lifetime[t] = num(r.lifetime_yr);
@@ -244,11 +248,23 @@ function parseBaseData(sheets: InputSheets): BaseData {
   existingShare2025['alu_ref'] = 1.0 - aluScrap2025;
   existingShare2025['alu_sec'] = aluScrap2025;
 
+  // Time-dependent (vintage) capex: every technology must have a value for every model year in
+  // CAPEX_TRAJECTORY (generated straight from capex_trajectory.csv — see that file's header for
+  // the generator). Fail loudly rather than silently defaulting, matching the Julia reference.
+  const capexTrajectory: Record<string, number> = { ...CAPEX_TRAJECTORY };
+  for (const t of techs) {
+    for (const y of MODEL_YEARS) {
+      if (!(yearKey(t, y) in capexTrajectory)) {
+        throw new Error(`capex trajectory is missing tech='${t}', year=${y}.`);
+      }
+    }
+  }
+
   return {
     subsectors,
     techs,
     subsectorOf,
-    capex,
+    capexTrajectory,
     fixedOpex,
     varOpex,
     lifetime,
@@ -282,17 +298,40 @@ interface Data extends BaseData {
 }
 
 function applyOverrides(base: BaseData, overrides: IndustryLpOverrides): Data {
-  const capex = { ...base.capex };
+  const capexTrajectory = { ...base.capexTrajectory };
   const energy = { ...base.energy };
   const demand = { ...base.demand };
   const fuelPrice = { ...base.fuelPrice };
   const maxBuildShare = { ...base.maxBuildShare };
   const biomassPjMax = { ...base.biomassPjMax };
 
+  // capex_clean: a LEVEL SHIFT of the whole capex trajectory (every model year scaled by the
+  // same factor, including its 2025 anchor) for non-reference technologies only.
   const capexCleanScale = overrides.capexCleanScale ?? 1;
   if (capexCleanScale !== 1) {
     for (const t of base.techs) {
-      if (!EXISTING_STOCK_SET.has(t)) capex[t] = base.capex[t] * capexCleanScale;
+      if (EXISTING_STOCK_SET.has(t)) continue;
+      for (const y of MODEL_YEARS) {
+        const k = yearKey(t, y);
+        capexTrajectory[k] = base.capexTrajectory[k] * capexCleanScale;
+      }
+    }
+  }
+
+  // learning_rate: reshapes each non-reference technology's OWN trajectory around its fixed 2025
+  // anchor by raising the (year/2025) cost ratio to the power `learningRateScale` — see the
+  // doc comment on IndustryLpOverrides.learningRateScale. Order-independent versus capex_clean
+  // (a uniform level shift cancels out of the ratio), so it is safe to apply after it.
+  const learningRateScale = overrides.learningRateScale ?? 1;
+  if (learningRateScale !== 1) {
+    for (const t of base.techs) {
+      if (EXISTING_STOCK_SET.has(t)) continue;
+      const base2025 = capexTrajectory[yearKey(t, BASE_YEAR)];
+      for (const y of MODEL_YEARS) {
+        const k = yearKey(t, y);
+        const ratio = base2025 !== 0 ? capexTrajectory[k] / base2025 : 1;
+        capexTrajectory[k] = base2025 * Math.pow(ratio, learningRateScale);
+      }
     }
   }
 
@@ -342,7 +381,7 @@ function applyOverrides(base: BaseData, overrides: IndustryLpOverrides): Data {
   // already mutated it.
   return {
     ...base,
-    capex,
+    capexTrajectory,
     energy,
     demand,
     fuelPrice,
@@ -374,6 +413,15 @@ function kExist(data: Data, t: string, y: number): number {
   const base2025 = data.existingShare2025[t] * data.demand[yearKey(s, BASE_YEAR)];
   const remainingShare = Math.max(0, 1 - (y - BASE_YEAR) / (RETIREMENT_END_YEAR - BASE_YEAR));
   return base2025 * remainingShare;
+}
+
+/** Vintage capex lookup (EUR/t capacity) for tech `t` in build-year `y` — errors loudly if the
+ * trajectory has no entry, mirroring Julia's own KeyError-avoiding style. */
+function capexTrajLookup(data: Data, t: string, y: number): number {
+  const k = yearKey(t, y);
+  const v = data.capexTrajectory[k];
+  if (v === undefined) throw new Error(`capex trajectory has no value for tech='${t}', year=${y}.`);
+  return v;
 }
 
 function efLookup(data: Data, carrier: string, y: number): number {
@@ -532,11 +580,47 @@ function buildLpProblem(data: Data): BuiltProblem {
     }
   }
 
-  // --- 4.11 Objective: discounted sum of annualised capex + fixed/var OPEX + energy + carbon -----
+  // --- 4.11 Objective: discounted sum of vintage-costed capex + fixed/var OPEX + energy + carbon -
+  // VINTAGE CAPEX COSTING (mirrors Julia's CapexTerm, same section): a unit built in year yb pays
+  // its build-year capex rate for every year it survives. Instead of a coefficient on K[t,y] (the
+  // pre-vintage-costing shape), each build-vintage variable B[t,yb] gets a coefficient equal to
+  // crf(lifetime[t]) * capexTraj(t,yb) * (discounted YEAR_STEP summed over every y that vintage
+  // survives). Existing (pre-2025) stock is not a decision variable, so its capex — always costed
+  // at the fixed 2025 trajectory anchor — is a genuine CONSTANT term. This mini-LP's text format
+  // has no native "constant in the objective" syntax, so the constant is carried by a helper
+  // variable (CONST_ONE) pinned to exactly 1 via an equality constraint — the LP-native equivalent
+  // of the plain constant JuMP adds directly into the objective on the Julia side.
+  const CONST_ONE = 'CONST_ONE';
+  variables.push(CONST_ONE);
+  constraints.push({ name: 'const_one', terms: [{ coef: 1, v: CONST_ONE }], sense: '=', rhs: 1 });
+  let constOffset = 0;
+  for (const t of techs) {
+    for (const y of Y) {
+      constOffset +=
+        discountFactor(y) *
+        YEAR_STEP *
+        crf(DISCOUNT_RATE, data.lifetime[t]) *
+        capexTrajLookup(data, t, BASE_YEAR) *
+        kExist(data, t, y);
+    }
+  }
+  if (constOffset !== 0) objective.push({ coef: constOffset, v: CONST_ONE });
+
+  for (const t of techs) {
+    for (const yb of Y) {
+      let survivalDisc = 0;
+      for (const y of Y) {
+        if (y >= yb && y - yb < data.lifetime[t]) survivalDisc += discountFactor(y) * YEAR_STEP;
+      }
+      const bCoef = crf(DISCOUNT_RATE, data.lifetime[t]) * capexTrajLookup(data, t, yb) * survivalDisc;
+      if (bCoef !== 0) objective.push({ coef: bCoef, v: bName(t, yb) });
+    }
+  }
+
   for (const t of techs) {
     for (const y of Y) {
       const disc = discountFactor(y) * YEAR_STEP;
-      const kCoef = crf(DISCOUNT_RATE, data.lifetime[t]) * data.capex[t] + data.fixedOpex[t];
+      const kCoef = data.fixedOpex[t];
       const energyCostPerT = CARRIERS.reduce((s, c) => s + getEnergy(data, t, c) * fuelPriceLookup(data, c, y), 0);
       const directCoef = (1 - data.captureRate[t]) * preCaptureCoef(data, t, y);
       const qCoef = data.varOpex[t] + energyCostPerT + activeCarbonPrice(data, y) * directCoef;
@@ -551,6 +635,17 @@ function buildLpProblem(data: Data): BuiltProblem {
 /* ================================================================================================
  * 6. EXTRACT RESULTS — the TS equivalent of `extract_results` + `build_scenario_summary`.
  * ============================================================================================== */
+
+/** Per-(tech,year) vintage-costed annualised capex (M EUR), matching CapexTerm[t,y] on the Julia
+ * side: annualised(capex(t,2025)) x surviving existing stock, plus annualised(capex(t,yb)) x
+ * surviving build B[t,yb] for every past vintage yb<=y. */
+function capexTermForYear(data: Data, get: (name: string) => number, t: string, y: number): number {
+  let sum = capexTrajLookup(data, t, BASE_YEAR) * kExist(data, t, y);
+  for (const yb of MODEL_YEARS) {
+    if (yb <= y && y - yb < data.lifetime[t]) sum += capexTrajLookup(data, t, yb) * get(bName(t, yb));
+  }
+  return crf(DISCOUNT_RATE, data.lifetime[t]) * sum;
+}
 
 function extractResults(data: Data, values: Record<string, number>, objective: number): {
   rows: TechYearResult[];
@@ -576,7 +671,7 @@ function extractResults(data: Data, values: Record<string, number>, objective: n
       const biomassPj = Q * getEnergy(data, t, 'biomass');
       const energyCost = Q * CARRIERS.reduce((sum, c) => sum + getEnergy(data, t, c) * fuelPriceLookup(data, c, y), 0);
       const cost =
-        crf(DISCOUNT_RATE, data.lifetime[t]) * data.capex[t] * K +
+        capexTermForYear(data, get, t, y) +
         data.fixedOpex[t] * K +
         data.varOpex[t] * Q +
         energyCost +
@@ -649,7 +744,7 @@ function extractResults(data: Data, values: Record<string, number>, objective: n
 }
 
 /**
- * Maps one of the 13 built-in scenarios' (knob, factor) pair — as stored in
+ * Maps one of the built-in scenarios' (knob, factor) pair — as stored in
  * `SCENARIO_META` in the data file — onto the equivalent `IndustryLpOverrides`. Exposed so the
  * page's preset dropdown can reuse the exact same semantics as the parity test / Julia scenarios
  * instead of re-deriving them.
@@ -672,6 +767,8 @@ export function overridesFromScenarioMeta(knob: string, factor: number): Industr
       return { h2PriceScale: factor };
     case 'energy_intensity_clean':
       return { energyIntensityCleanScale: factor };
+    case 'learning_rate':
+      return { learningRateScale: factor };
     case 'max_build_share':
       return { buildRateScale: factor };
     default:
@@ -688,6 +785,7 @@ export const CENTRAL_OVERRIDES: Required<IndustryLpOverrides> = {
   elecPriceScale: 1,
   h2PriceScale: 1,
   energyIntensityCleanScale: 1,
+  learningRateScale: 1,
   buildRateScale: 1,
   biomassCeilingScale: 1,
 };

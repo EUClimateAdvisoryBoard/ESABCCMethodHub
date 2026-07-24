@@ -6,7 +6,7 @@
  * Web front-end for the SEAMAPS-style (https://github.com/SebastianFra/SEAMAPS)
  * least-cost technology optimization of EU-27 energy-intensive industry
  * (Julia/JuMP + HiGHS). All data rendered here — the input workbook, the full
- * model source, and the results of all 13 scenarios — comes from
+ * model source, and the results of all 15 scenarios — comes from
  * `src/data/summer-prep-optimization.ts`, a generated file produced directly
  * from the model's own inputs/outputs (see that file's header comment for the
  * exact source files). Nothing on this page is hand-typed data.
@@ -248,7 +248,7 @@ function FormulationChips() {
     '7 subsectors',
     '25 technologies',
     '2025–2050',
-    '13 scenarios',
+    '15 scenarios',
   ];
   return (
     <div className="flex flex-wrap gap-2">
@@ -386,12 +386,12 @@ function WorkbookViewer() {
             <span className="font-semibold text-[#3D5265] dark:text-[var(--mh-fg)]">Constraints</span>{' '}
             caps scrap availability, biomass and CO2 storage;{' '}
             <span className="font-semibold text-[#3D5265] dark:text-[var(--mh-fg)]">Scenarios</span>{' '}
-            defines the 13 sensitivity runs; and every non-trivial number is keyed back to a real
+            defines the 15 sensitivity runs; and every non-trivial number is keyed back to a real
             source in <span className="font-semibold text-[#3D5265] dark:text-[var(--mh-fg)]">Sources</span>.
           </p>
           <p>
             The model reads these files once, fails loudly if a file or column is missing, and
-            re-solves the whole joint linear program from scratch for each of the 13 scenarios.
+            re-solves the whole joint linear program from scratch for each of the 15 scenarios.
           </p>
         </div>
       ) : (
@@ -461,14 +461,14 @@ function WorkbookViewer() {
 
       <div className="mt-3 flex items-center justify-between gap-3 border-t border-[#E6E7E8] pt-3 dark:border-[var(--mh-border)]">
         <p className="text-[11px] text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
-          {sheet ? `${sheet.rows.length} row${sheet.rows.length === 1 ? '' : 's'} · ${sheet.columns.length} columns` : '10 sheets'}
+          {sheet ? `${sheet.rows.length} row${sheet.rows.length === 1 ? '' : 's'} · ${sheet.columns.length} columns` : '11 sheets'}
         </p>
         <a
           href={XLSX_URL}
           download
           className="inline-flex items-center gap-1.5 rounded-md border border-[#D6DAE0] px-3 py-1.5 text-[12px] font-semibold text-[#3D5265] hover:bg-[#F3F5F7] dark:border-[var(--mh-border)] dark:text-[var(--mh-fg)] dark:hover:bg-[var(--mh-bg)]"
         >
-          ⬇ Download inputs (.xlsx, ~53 KB)
+          ⬇ Download inputs (.xlsx, ~68 KB)
         </a>
       </div>
     </div>
@@ -526,7 +526,7 @@ function CodeViewer() {
           download
           className="inline-flex items-center gap-1.5 rounded-md border border-[#D6DAE0] px-3 py-1.5 text-[12px] font-semibold text-[#3D5265] hover:bg-[#F3F5F7] dark:border-[var(--mh-border)] dark:text-[var(--mh-fg)] dark:hover:bg-[var(--mh-bg)]"
         >
-          ⬇ Download .jl (~37 KB)
+          ⬇ Download .jl (~41 KB)
         </a>
       </div>
     </div>
@@ -1146,7 +1146,7 @@ function RunModelSection({
         <div>
           <h3 className="text-[13.5px] font-bold text-[#3D5265] dark:text-[var(--mh-fg)]">Assumptions</h3>
           <p className="mt-0.5 max-w-md text-[11.5px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
-            Pick one of the 13 built-in scenarios, or move any slider to explore a combination —
+            Pick one of the 15 built-in scenarios, or move any slider to explore a combination —
             the model re-solves the full joint LP from scratch every time.
           </p>
         </div>
@@ -1267,6 +1267,16 @@ function RunModelSection({
           onChange={(v) => patch({ energyIntensityCleanScale: v })}
         />
         <SliderRow
+          id="learning-rate"
+          label="Technology learning"
+          min={0.0}
+          max={2.0}
+          step={0.1}
+          value={overrides.learningRateScale}
+          format={(v) => `×${v.toFixed(1)}`}
+          onChange={(v) => patch({ learningRateScale: v })}
+        />
+        <SliderRow
           id="build-rate"
           label="Max build rate"
           min={0.5}
@@ -1350,7 +1360,7 @@ function RunModelSection({
         This runs the same joint linear program as the Julia reference model, ported line-for-line
         to TypeScript, and solved in your browser with HiGHS compiled to WebAssembly — the same
         open-source solver (via the <span className="font-mono text-[10.5px]">highs</span> npm
-        package) that the Julia/JuMP file uses server-side. It has been checked against all 13
+        package) that the Julia/JuMP file uses server-side. It has been checked against all 15
         pre-solved reference scenarios (objective within 0.5%, 2040 CO2 within 0.5 Mt, technology
         shares within 2 percentage points) — see the model source above for the exact formulation.
       </p>
@@ -1733,7 +1743,7 @@ function SensitivitySection() {
   return (
     <div className={CARD_CLASS}>
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <h3 className="text-[13.5px] font-bold">All 12 sensitivity scenarios vs central</h3>
+        <h3 className="text-[13.5px] font-bold">All 14 sensitivity scenarios vs central</h3>
         <div className="inline-flex rounded-lg border border-[#E6E7E8] p-1 dark:border-[var(--mh-border)]">
           {(
             [
@@ -2139,22 +2149,22 @@ function OptimizationInner() {
           <div className="grid gap-3 sm:grid-cols-3">
             <DownloadCard
               title="Input workbook"
-              desc="All 10 input tables (sectors, demand, technologies, energy use, prices, constraints, scenarios, sources) as one Excel file."
-              size="~53 KB"
+              desc="All 11 input tables (sectors, demand, technologies, capex trajectories, energy use, prices, constraints, scenarios, sources) as one Excel file."
+              size="~68 KB"
               href={XLSX_URL}
               accent={ACCENTS.blue}
             />
             <DownloadCard
               title="Model source (.jl)"
               desc="The full, heavily-commented Julia/JuMP model — the same source shown in the code viewer above."
-              size="~37 KB"
+              size="~41 KB"
               href={JL_URL}
               accent={ACCENTS.teal}
             />
             <DownloadCard
               title="Full model package (.zip)"
-              desc="Code + data + all 13 results_<scenario>.csv files + results_summary.json + README — everything needed to reproduce and review."
-              size="~112 KB"
+              desc="Code + data + all 15 results_<scenario>.csv files + results_summary.json + README — everything needed to reproduce and review."
+              size="~137 KB"
               href={ZIP_URL}
               accent={ACCENTS.purple}
             />
@@ -2163,7 +2173,7 @@ function OptimizationInner() {
             Every result on this page is reproducible: with Julia 1.11 and the pinned dependencies in{' '}
             <span className="font-mono text-[11.5px]">Project.toml</span>, run{' '}
             <span className="font-mono text-[11.5px]">julia --project=. industry_optimization.jl</span>{' '}
-            from inside the unzipped model folder to re-solve all 13 scenarios and regenerate the result
+            from inside the unzipped model folder to re-solve all 15 scenarios and regenerate the result
             CSVs and JSON from scratch.
           </p>
         </section>
