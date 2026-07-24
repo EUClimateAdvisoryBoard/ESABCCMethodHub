@@ -1,6 +1,6 @@
 {
   "date": "2026-07-24",
-  "generatedAt": "2026-07-24T07:35:07.220Z",
+  "generatedAt": "2026-07-24T12:22:55.257Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 24 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Thousands evacuated in south of France as wildfire rages across pine forest – video",
-      "summary": "&lt;p&gt;Local people and tourists were evacuated from the Arcachon Bay area overnight into Thursday after a huge fire engulfed more than 3,400 hectares (8,400 acres) of forest. Pushed by the wind, with flames reaching 10 metres high, the fire is still spreading towards the Cap Ferret peninsula. On Tuesday, two firefighters died battling another nearby fire close to Bordeaux airport &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/2",
+      "headline": "France evacuates Cap Ferret peninsula as Spanish wildfires merge near Madrid – Europe live",
+      "summary": "&lt;p&gt;French evacuees using hundreds of mobilised boats or the only road linking the area with the mainland as evacuation also ordered in areas near Spanish capital&lt;/p&gt;&lt;p&gt;Over in France, it’s not just the south-west that gets affected, but the country’s south-east regions are also being hard hit, AFP noted.&lt;/p&gt;&lt;p&gt;Dozens of fires flared up and are being fanned by the mistral wind around the historic village of &lt;strong&gt;Cotignac&lt;/strong&gt; – officials saying aro",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Daily News 23 / 07 / 2026",
-      "summary": "European Commission Daily news Brussels, 23 Jul 2026 Commission fines Google €890 million for breaches of the Digital Markets Act\r\nToday, the European Commission took two decisions finding non-compliance by Google ...",
+      "headline": "Access to finance ‘strengthens climate resilience’ among sub-Saharan women",
+      "summary": "Empowering women through greater access to finance could “strengthen” households&#8217; resilience to “climate shocks”, according to a new study.&#160;&#160; Published&#8230; The post Access to finance ‘strengthens climate resilience’ among sub-Saharan women appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -49,19 +49,19 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "France evacuates Cap Ferret peninsula as Spanish wildfires merge near Madrid – Europe live",
+          "link": "https://www.theguardian.com/world/live/2026/jul/24/france-spain-wildfires-cap-ferret-europe-latest-news-updates",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;French evacuees using hundreds of mobilised boats or the only road linking the area with the mainland as evacuation also ordered in areas near Spanish capital&lt;/p&gt;&lt;p&gt;Over in France, it’s not just the south-west that gets affected, but the country’s south-east regions are also being hard hit, AFP noted.&lt;/p&gt;&lt;p&gt;Dozens of fires flared up and are being fanned by the mistral wind around the historic village of &lt;strong&gt;Cotignac&lt;/strong&gt; – officials saying aro",
+          "published": "2026-07-24T12:03:06.000Z",
+          "score": 10
+        },
+        {
           "title": "Thousands evacuated in south of France as wildfire rages across pine forest – video",
           "link": "https://www.theguardian.com/world/video/2026/jul/23/thousands-evacuated-in-south-of-france-as-wildfire-rages-across-pine-forest-video",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Local people and tourists were evacuated from the Arcachon Bay area overnight into Thursday after a huge fire engulfed more than 3,400 hectares (8,400 acres) of forest. Pushed by the wind, with flames reaching 10 metres high, the fire is still spreading towards the Cap Ferret peninsula. On Tuesday, two firefighters died battling another nearby fire close to Bordeaux airport &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/2",
           "published": "2026-07-23T18:34:36.000Z",
-          "score": 7
-        },
-        {
-          "title": "I am used to hot days now. But the warm wind has really panicked me | Adrian Chiles",
-          "link": "https://www.theguardian.com/commentisfree/2026/jul/23/i-am-used-to-hot-days-now-but-the-warm-wind-has-really-panicked-me",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;I first noticed it a couple of weeks ago on the streets of Cardiff – and it felt alarmingly wrong&lt;/p&gt;&lt;p&gt;When the wind is warm, you know something is up. Naturally, I have been well aware of the awful reality of the climate crisis, but it has taken the warmth of the wind to really panic me. Not the endless 30C+ days, the desiccated garden, the tap slowing to a drip. No, it is the warm wind blowing on me. I can just about manage in punishing heat, even though it is particularl",
-          "published": "2026-07-23T10:00:41.000Z",
           "score": 7
         },
         {
@@ -95,12 +95,20 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Daily News 23 / 07 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1675",
-          "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 23 Jul 2026 Commission fines Google €890 million for breaches of the Digital Markets Act\r\nToday, the European Commission took two decisions finding non-compliance by Google ...",
-          "published": "2026-07-23T09:28:37.000Z",
-          "score": 14
+          "title": "Access to finance ‘strengthens climate resilience’ among sub-Saharan women",
+          "link": "https://www.carbonbrief.org/access-to-finance-strengthens-climate-resilience-among-sub-saharan-women",
+          "source": "Carbon Brief",
+          "description": "Empowering women through greater access to finance could “strengthen” households&#8217; resilience to “climate shocks”, according to a new study.&#160;&#160; Published&#8230; The post Access to finance ‘strengthens climate resilience’ among sub-Saharan women appeared first on Carbon Brief.",
+          "published": "2026-07-24T11:29:45.000Z",
+          "score": 13
+        },
+        {
+          "title": "State of the climate: Rapidly developing El Niño raises chance of record-warm 2026",
+          "link": "https://www.carbonbrief.org/state-of-the-climate-rapidly-developing-el-nino-raises-chance-of-record-warm-2026",
+          "source": "Carbon Brief",
+          "description": "As 2026 passes its halfway point, the world is watching one of the most rapidly intensifying El Niño events in&#8230; The post State of the climate: Rapidly developing El Niño raises chance of record-warm 2026 appeared first on Carbon Brief.",
+          "published": "2026-07-24T10:59:37.000Z",
+          "score": 13
         },
         {
           "title": "France wildfire forces thousands to flee as tinder box conditions persist in warming Europe - Reuters",
@@ -124,14 +132,6 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Government agency announces status in north Wales and Upper Severn after series of heatwaves and lack of rainfall&lt;/p&gt;&lt;p&gt;Parts of Wales are now in drought and all other areas of the country are experiencing prolonged dry conditions, with this month on course to be the driest on record for nearly 200 years.&lt;/p&gt;&lt;p&gt;Natural Resources Wales (NRW) said on Thursday that record-low river flows, back-to-back heatwaves and widespread wildfires have prompted the declaration ",
           "published": "2026-07-23T15:46:14.000Z",
-          "score": 7
-        },
-        {
-          "title": "Who is Miatta Fahnbulleh, the radical-thinking new UK energy secretary?",
-          "link": "https://www.theguardian.com/politics/2026/jul/23/who-is-miatta-fahnbulleh-the-radical-thinking-new-uk-energy-secretary",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Selection of economist formerly at helm of green thinktank marks continuation of decarbonising Miliband era&lt;/p&gt;&lt;p&gt;In her first 48 hours as energy secretary, Miatta Fahnbulleh was left in no doubt about the thorny policy decision at the top of her in-tray. Protesters from Fossil Free London met her outside her new offices dressed as firefighters holding placards reading: “We’re already putting out fires, don’t start new ones.”&lt;/p&gt;&lt;p&gt;The MP for Peckham – a radical ",
-          "published": "2026-07-23T09:00:41.000Z",
           "score": 7
         }
       ]
@@ -177,11 +177,19 @@
           "score": 8
         },
         {
-          "title": "EU fines Google €890 million over competition rules",
-          "link": "https://www.dw.com/en/eu-fines-google-€890-million-over-competition-rules/a-78082850?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The European Commission said it found that Google had preferenced its search engine and app store in ways that unfairly harmed competition.",
-          "published": "2026-07-23T10:19:00.000Z",
+          "title": "European Commission gives guarded welcome to new Trump tariffs - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPR0lfaDB3SHJ6STlnLXIyYWtTMHBUaE5qXzBDXy1VMDJkcHp1NjROSFFtbGVMWUEtQTl5RTNXVmFFajFrS1JIbFFjVzJLdEhMeW53ODB1c010VHBpYjNYbXNIbnBscEpGbXVmSHJjMUl3QXhiemlOc2oxbFpjYk1pZklSMnUwako2Sl8zWG9KcU04Z29McllZNVNTb3JrZUM1X19UZ3ctZFNneEE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPR0lfaDB3SHJ6STlnLXIyYWtTMHBUaE5qXzBDXy1VMDJkcHp1NjROSFFtbGVMWUEtQTl5RTNXVmFFajFrS1JIbFFjVzJLdEhMeW53ODB1c010VHBpYjNYbXNIbnBscEpGbXVmSHJjMUl3QXhiemlOc2oxbFpjYk1pZklSMnUwako2Sl8zWG9KcU04Z29McllZNVNTb3JrZUM1X19UZ3ctZFNneEE?oc=5\" target=\"_blank\"&gt;European Commission gives guarded welcome to new Trump tariffs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-24T06:30:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Russian head of FIDE suspends activity over EU sanctions - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPb0FrMmptUUM3TWVFN3VuV3I1Wldkd0RwTWcyNzJWcVpvcHBUZzZQRG1uV1NWejlDUGRZd2RDN3JadHNsUm1fRTFpNWhQUkFKS1BvdnZUeTdiamRSMWdrUWdQSFhwb1BBYmhwWEtYQjhRcFZHQkpWcVQxXzdZVXd3Yld6NUtOMkxPOWlCSm01NGk3R2xpSVI0M0Fjdlg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxPb0FrMmptUUM3TWVFN3VuV3I1Wldkd0RwTWcyNzJWcVpvcHBUZzZQRG1uV1NWejlDUGRZd2RDN3JadHNsUm1fRTFpNWhQUkFKS1BvdnZUeTdiamRSMWdrUWdQSFhwb1BBYmhwWEtYQjhRcFZHQkpWcVQxXzdZVXd3Yld6NUtOMkxPOWlCSm01NGk3R2xpSVI0M0Fjdlg?oc=5\" target=\"_blank\"&gt;Russian head of FIDE suspends activity over EU sanctions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-23T22:58:27.000Z",
           "score": 8
         },
         {
@@ -190,14 +198,6 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPX3hoWXA1THQ0Q2VxMi1qVzA1SlNJV2tZaEd3aC1fMUpNX0Y3YjBadWJWcFoxNVFTMVB1c1N2bVR6eGs1N0p2ck1GZHM0eDJZc3kzSXJRVjVEaFZzckV2NHJCcEJveGJpcEU2X2U1Z2NlNmlTZ1lfVnZJd3ktb01IRjF0RE53eDRvSFVmelBZVkEycXZOaE9kaUJvcFd1QQ?oc=5\" target=\"_blank\"&gt;Immigrant employment in the EU reaches record high, study shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-23T14:13:32.000Z",
-          "score": 8
-        },
-        {
-          "title": "What's in the EU's 21st package of sanctions against Russia - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxORVFmcndVRlpnZk84cG1MdjJ3bnBLTThobTlaUlFzdXRidHcxWkhjTzVtM1lvYnJxaHBERzBFN3lYcjVFMjFYY2V2NWU4bVFEb0M0c2RweFk5U3FDaGhYZE9rWHU0bkVqemlQU3JGZmtmN1hLUGJDaTR3aTlaWTFHZkNuYW1zWWl5VlVscVNhbTlNWWJRUGxORWVIcw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxORVFmcndVRlpnZk84cG1MdjJ3bnBLTThobTlaUlFzdXRidHcxWkhjTzVtM1lvYnJxaHBERzBFN3lYcjVFMjFYY2V2NWU4bVFEb0M0c2RweFk5U3FDaGhYZE9rWHU0bkVqemlQU3JGZmtmN1hLUGJDaTR3aTlaWTFHZkNuYW1zWWl5VlVscVNhbTlNWWJRUGxORWVIcw?oc=5\" target=\"_blank\"&gt;What's in the EU's 21st package of sanctions against Russia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-23T17:01:43.000Z",
           "score": 8
         },
         {
@@ -212,9 +212,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 407,
-    "articlesLast24h": 171,
-    "afterDedup": 164,
+    "totalArticlesScanned": 411,
+    "articlesLast24h": 172,
+    "afterDedup": 166,
     "feedsQueried": 19
   }
 }
