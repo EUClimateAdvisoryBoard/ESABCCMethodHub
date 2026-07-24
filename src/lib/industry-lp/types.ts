@@ -65,6 +65,8 @@ export interface IndustryLpOverrides {
   energyIntensityCleanScale?: number;
   /** Multiplies max_build_share of every technology. */
   buildRateScale?: number;
+  /** Multiplies the biomass_pj_max constraint RHS in every year (0.25-1.5 typical UI range). */
+  biomassCeilingScale?: number;
 }
 
 /** Per-technology, per-year extracted results (the LP's decision variables + derived quantities). */
@@ -78,6 +80,8 @@ export interface TechYearResult {
   direct_co2_mt: number;
   indirect_co2_mt: number;
   cost_meur: number;
+  /** Biomass consumed by this tech/year, PJ = production_mt (Mt) x energy[tech,'biomass'] (GJ/t). */
+  biomass_pj: number;
 }
 
 export interface SubsectorResult {
@@ -85,6 +89,8 @@ export interface SubsectorResult {
   dominant_tech_2040: string;
   /** year (string) -> tech id -> production share (0-1) */
   tech_shares: Record<string, Record<string, number>>;
+  /** year (string) -> biomass PJ used by this subsector's technologies */
+  biomass_pj_by_year: Record<string, number>;
 }
 
 export interface IndustryLpResult {
@@ -99,6 +105,10 @@ export interface IndustryLpResult {
   co2ByYear?: Record<string, number>;
   /** year (string) -> total EU-27 indirect (electricity) CO2, Mt */
   indirectCo2ByYear?: Record<string, number>;
+  /** year (string) -> total EU-27 industrial biomass use, PJ (sum across all subsectors/techs) */
+  biomassPjByYear?: Record<string, number>;
+  /** year (string) -> active biomass_pj_max ceiling, PJ (after biomassCeilingScale) */
+  biomassCeilingPjByYear?: Record<string, number>;
   bySubsector?: Record<string, SubsectorResult>;
   /** Full per-tech/year table, for charts that need more detail than the summary. */
   rows?: TechYearResult[];
