@@ -416,16 +416,16 @@
         "steel_bfbof_ccs",
         "steel",
         "BF-BOF with CCUS (top-gas / post-combustion capture)",
-        650.0,
-        35.0,
-        160.0,
+        770.0,
+        37.0,
+        153.0,
         25,
         2030,
         0.12,
         0.6,
         0.0,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage (sheet 401.c, post-combustion capture retrofit, cement kiln flue gas used as CO2-concentration proxy for BF-BOF flue/top gas, ~90% capture); converted at 1.185 tCO2 captured/t steel (combustion CO2 at 0.6 capture rate), 8000 full-load h/yr, DEA specific investment 2.5 M EUR/(tCO2/h) (2030) -> capture add-on 370 EUR/(t/yr) added to unchanged base steel_bfbof capex (400); base process still IEA (2020) Iron and Steel Technology Roadmap. DEA capture-retrofit benchmark implies a materially higher capture add-on than the prior generic IEAGHG (2018) estimate (250 EUR/t) - adopted the DEA-grounded (higher, more conservative) figure and retained it for fixed/var O&M add-ons (11.9 and 3.0 EUR/t respectively, close to the prior estimate).",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "steel_ngdri_eaf",
@@ -506,16 +506,16 @@
         "cement_ccs",
         "cement",
         "CCS (oxyfuel / post-combustion / LEILAC direct separation)",
-        320.0,
-        25.0,
-        35.0,
-        30,
+        325.0,
+        18.0,
+        26.0,
+        25,
         2028,
         0.12,
         0.9,
         0.408,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03); Heidelberg Materials (2025), World premiere: CCS cement facility opens in Norway (Brevik CCS)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage (sheet 401.c, post-combustion capture retrofit for a 4500 t clinker/day cement kiln - a direct match for this technology); converted at 0.567 tCO2 captured/t clinker (0.9 capture rate on ~0.63 tCO2/t pre-capture process+combustion CO2), 8000 full-load h/yr, DEA specific investment 2.5 M EUR/(tCO2/h) (2030) -> capture add-on ~177 EUR/(t/yr) on top of the unchanged cement_ref kiln capex (150), materially consistent with the prior implied add-on (170 EUR/t from IEAGHG 2018); fixed/var O&M add-ons recomputed from DEA (5.7 and 1.4 EUR/t) and are lower than the prior generic IEAGHG estimate - adopted the DEA, more granular, figures. Capture-unit lifetime (25 yr per DEA) now governs over the kiln's own 35-yr structural life, since capture equipment would need reinvestment first. Heidelberg Materials (2025) Brevik CCS start-up retained for the available_from=2028 calibration.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "cement_altfuel",
@@ -529,8 +529,8 @@
         0.15,
         0.0,
         0.408,
-        "IEA / CSI (2018), Technology Roadmap: Low-Carbon Transition in the Cement Industry",
-        "https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (sheet 7.2, direct firing of solid fuels: 100% net efficiency, used as the closest available DEA proxy for alternative/biomass fuel firing in a cement kiln burner - DEA has no cement-kiln-specific alt-fuel sheet). Capex/fixed/var opex and the 35-yr lifetime retained from IEA / CSI (2018) Technology Roadmap: Low-Carbon Transition in the Cement Industry: DEA's burner-only figures (0.258 M EUR/MW, 15-yr burner lifetime) price the firing equipment alone, not the rotary kiln shell/refractories/preheater that dominate cement-kiln capex and govern its much longer structural life - divergence noted, fuller-scope IEA/CSI figures kept.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ],
       [
         "hvc_ref",
@@ -559,8 +559,8 @@
         0.15,
         0.0,
         0.0,
-        "BASF / SABIC / Linde (2024), Start-up of the world's first large-scale electrically heated steam cracking furnace",
-        "https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177"
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (sheet 7.3, direct electric firing: 100% net efficiency, heat supply up to 2000 degC, technically consistent with electrically heated cracking-furnace tube temperatures ~850 degC). Capex/fixed/var opex and the 30-yr lifetime retained from BASF / SABIC / Linde (2024)'s e-cracker demonstration: DEA's sheet prices resistive heating elements alone (~0.07 M EUR/MW, converting to a small fraction of this technology's capex) and excludes the cracker tubes, compressors and separation train that dominate real e-cracker capex - a wide divergence, noted, with the fuller-scope BASF-anchored literature figure kept as the defensible capex/opex/lifetime.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ],
       [
         "hvc_bio",
@@ -581,16 +581,16 @@
         "hvc_ccs",
         "hvc",
         "Steam cracker with CCS",
-        900.0,
-        35.0,
-        560.0,
-        30,
+        1020.0,
+        39.0,
+        555.0,
+        25,
         2032,
         0.15,
         0.65,
         0.0,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage (sheet 401.a, post-combustion capture retrofit on a dilute ~15% CO2 CHP/biomass flue gas, used as the closest available DEA proxy for cracker-furnace flue gas - DEA has no HVC/steam-cracker-specific capture sheet); converted at 0.539 tCO2 captured/t HVC (0.65 capture rate on ~0.83 tCO2/t pre-capture combustion CO2), 8000 full-load h/yr, DEA specific investment 4.8 M EUR/(tCO2/h) (2030, higher than the cement-kiln stream because dilute flue gas costs more per tCO2 captured) -> capture add-on ~324 EUR/(t/yr) on top of the unchanged hvc_ref cracker capex (700); this is materially higher than the prior generic IEAGHG (2018) add-on (200 EUR/t) - adopted the DEA-grounded (higher) figure as the more defensible, dilute-stream-consistent estimate. Fixed O&M add-on similarly raised (9.4 vs 5 EUR/t); variable O&M add-on (DEA solvent/consumable cost only, 1.4 EUR/t) is well below the prior generic estimate (10 EUR/t) so a smaller blended reduction was applied (560->555) to avoid understating broader non-energy consumable costs DEA does not price.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "ammonia_smr",
@@ -611,31 +611,31 @@
         "ammonia_smr_ccs",
         "ammonia",
         "SMR + CCS (blue ammonia)",
-        900.0,
-        35.0,
-        55.0,
+        1020.0,
+        36.0,
+        45.0,
         25,
         2026,
         0.15,
         0.6,
         0.0,
-        "IEA (2021), Ammonia Technology Roadmap",
-        "https://www.iea.org/reports/ammonia-technology-roadmap"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage (sheet 401.c, post-combustion capture on cement-kiln-like moderate-concentration flue gas, used as the closest available DEA proxy - DEA has no SMR/ammonia-specific capture sheet); converted at 1.025 tCO2 captured/t NH3 (0.6 capture rate on ~1.71 tCO2/t pre-capture reformer flue-gas CO2), 8000 full-load h/yr, DEA specific investment ~2.9 M EUR/(tCO2/h) (2025/26) -> capture add-on ~372 EUR/(t/yr) on top of the unchanged ammonia_smr capex (650); materially higher than the prior IEA (2021) Ammonia Technology Roadmap-implied add-on (250 EUR/t) - adopted the DEA-grounded (higher) figure. Fixed O&M add-on (10.9 EUR/t) closely matches the prior estimate (10 EUR/t, minimal change); variable O&M add-on (DEA solvent-only, 2.6 EUR/t) is well below the prior generic estimate (15 EUR/t) so a smaller blended reduction was applied (55->45) to avoid understating catalyst/other non-energy variable costs DEA does not price for this route.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "ammonia_h2",
         "ammonia",
         "Electrolytic hydrogen Haber-Bosch (green ammonia)",
-        1500.0,
-        45.0,
-        45.0,
-        20,
+        1000.0,
+        30.0,
+        40.0,
+        30,
         2026,
         0.15,
         0.0,
         0.0,
-        "IEA (2021), Ammonia Technology Roadmap - Executive Summary; Yara International (2024), Yara opens renewable hydrogen plant: a major milestone",
-        "https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary"
+        "Danish Energy Agency (2026), Technology Data for Renewable Fuels (sheet 5.4, Hydrogen to Ammonia, Haber-Bosch synthesis excl. electrolyser and excl. ASU); converted at 18.9 GJ/t NH3 specific energy content, 8000 full-load h/yr, DEA specific investment ~1.5 M EUR/MW NH3 output (2025/26 interpolated) -> 1000 EUR/(t/yr), notably lower than the prior IEA (2021) Ammonia Technology Roadmap Executive Summary estimate (1500 EUR/t): the DEA sheet deliberately excludes the electrolyser, whose capex is already reflected in the purchased-hydrogen carrier price (fuel_prices.csv) - the prior 1500 EUR/t figure double-counted electrolyser capex once via the H2 price and once via plant capex; the DEA synthesis-only figure corrects this. Fixed O&M similarly reduced (45->30 EUR/t/yr, DEA ~46 k EUR/MW/yr converted); variable O&M retained close to the prior estimate (45->40 EUR/t) since DEA's synthesis-only variable cost (0.11 EUR/t) excludes the air-separation-unit (ASU/N2 supply) consumables that dominate green-ammonia non-energy variable cost. Lifetime raised to 30 yr (DEA HB-synthesis plant lifetime) from 20 yr. Yara International (2024) Heroya plant retained for the available_from=2026 calibration.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels"
       ],
       [
         "alu_ref",
@@ -704,13 +704,13 @@
         150.0,
         9.0,
         88.0,
-        15,
+        20,
         2025,
         0.2,
         0.0,
         0.15,
-        "IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",
-        "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide"
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (sheet 7.3, direct electric firing: 100% net efficiency, heat supply up to 2000 degC by 2030, 20-yr technical lifetime) - confirms all-electric glass melting is thermally and technically well within DEA's direct-electric-firing envelope. Capex/fixed/var opex retained from IEA (2024) ETP Clean Energy Technology Guide (150/9/88 EUR/t): DEA's sheet prices the resistive heating elements alone (~0.07 M EUR/MW, which converts to only ~13 EUR/(t/yr) at this technology's energy intensity) and does not include the furnace shell, refractories, batch/feeding and forming equipment that dominate a full electric-melter rebuild cost - a wide (>10x) divergence versus furnace-level literature estimates, so the fuller-scope IEA figure was kept as the defensible capex/opex. Lifetime raised from 15 to 20 yr per DEA's direct-electric-firing technical lifetime.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ],
       [
         "glass_hybrid",
@@ -719,13 +719,13 @@
         140.0,
         8.5,
         89.0,
-        15,
+        18,
         2027,
         0.2,
         0.0,
         0.15,
-        "IEA (2024), ETP Clean Energy Technology Guide (technology readiness levels)",
-        "https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide"
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (blend of sheet 7.3 direct electric firing, up to 2000 degC, 20-yr lifetime, and sheet 6.1 gas/oil boiler, 94% efficiency, 25-yr lifetime, as proxies for the electric and gas-fired shares of a hybrid furnace). Capex/fixed/var opex retained from IEA (2024) ETP Clean Energy Technology Guide (140/8.5/89 EUR/t): as with glass_elec, DEA's per-MW figures price heating elements/burners only, not a full hybrid furnace rebuild - the wide divergence is noted and the fuller-scope literature figure was kept. Lifetime raised from 15 to 18 yr, a blended estimate between the DEA electric (20 yr) and gas (25 yr) equipment lifetimes and the shorter real-world furnace campaign life typical of hybrid melters.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ],
       [
         "paper_ref",
@@ -746,31 +746,31 @@
         "paper_elec",
         "paper",
         "Electrification / high-temperature heat pumps",
-        280.0,
-        20.0,
+        300.0,
+        21.0,
         295.0,
         20,
         2027,
         0.15,
         0.0,
         0.0,
-        "IEA (2022), The Future of Heat Pumps",
-        "https://www.iea.org/reports/the-future-of-heat-pumps"
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (sheet 2.a, high-temperature heat pump up to 125 degC); converted at 7.5 GJ/t useful process heat (from the unchanged paper_ref 8 GJ/t natural-gas input at 94% DEA boiler efficiency, sheet 6.1), 8000 full-load h/yr, DEA nominal investment 1.15 M EUR/MW (2030 est., since available_from=2027) -> 300 EUR/(t/yr), consistent with the prior IEA (2022) Future of Heat Pumps estimate (280 EUR/t). Fixed O&M retained at ~7% of capex (21 EUR/t/yr) since DEA's equipment-only fixed O&M (EUR2456/MW/yr, ~0.2% of capex) reflects heat-pump unit maintenance only, not the mill's broader fixed operating cost; variable O&M unchanged (295 EUR/t) for the same reason. Lifetime (20 yr) matches the prior estimate exactly.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ],
       [
         "paper_bio",
         "paper",
         "Biomass residues (incl. black liquor) process heat",
-        260.0,
-        20.0,
+        230.0,
+        16.0,
         290.0,
         25,
         2025,
         0.15,
         0.0,
         0.0,
-        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
-        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (sheet 6.2, biomass boiler); converted at 7.5 GJ/t useful process heat and 88.9% DEA annual-average boiler efficiency -> 8.5 GJ/t biomass fuel input (down slightly from the prior 9 GJ/t IEA Bioenergy estimate), 8000 full-load h/yr, DEA nominal investment 0.878 M EUR/MW (2025) -> 230 EUR/(t/yr), down from the prior 260 EUR/t. Fixed O&M partially adopted (20->16 EUR/t/yr): DEA's boiler-only fixed O&M (converted, ~10 EUR/t/yr) omits solid-biomass handling, storage and ash-removal costs that are material for this fuel, so a blended value above the pure DEA figure was retained. Variable O&M unchanged (290 EUR/t, dominated by broader mill non-energy variable costs DEA's boiler-only figure - ~3 EUR/t - does not capture). Lifetime (25 yr) matches the prior estimate exactly.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ]
     ]
   },
@@ -815,29 +815,29 @@
         "steel_bfbof_ccs",
         "coal",
         7.0,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "steel_bfbof_ccs",
         "coke",
         11.0,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "steel_bfbof_ccs",
         "natural_gas",
         2.5,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "steel_bfbof_ccs",
         "electricity",
         3.0,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "steel_ngdri_eaf",
@@ -941,22 +941,22 @@
         "cement_ccs",
         "coal",
         2.0,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "cement_ccs",
         "natural_gas",
         0.6,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "cement_ccs",
         "electricity",
         0.9,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "cement_altfuel",
@@ -1053,22 +1053,22 @@
         "hvc_ccs",
         "natural_gas",
         13.5,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "hvc_ccs",
         "oil",
         1.0,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "hvc_ccs",
         "electricity",
         2.2,
-        "IEAGHG (2018), Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "ammonia_smr",
@@ -1088,28 +1088,28 @@
         "ammonia_smr_ccs",
         "natural_gas",
         30.5,
-        "IEA (2021), Ammonia Technology Roadmap",
-        "https://www.iea.org/reports/ammonia-technology-roadmap"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "ammonia_smr_ccs",
         "electricity",
         1.2,
-        "IEA (2021), Ammonia Technology Roadmap",
-        "https://www.iea.org/reports/ammonia-technology-roadmap"
+        "Danish Energy Agency (2024), Technology Data for Carbon Capture, Transport and Storage - capture-penalty energy use cross-checked against DEA sheet 401.c/401.a heat and electricity input per tCO2 captured and found consistent with this pre-existing figure; retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage"
       ],
       [
         "ammonia_h2",
         "hydrogen",
         22.0,
-        "IEA (2021), Ammonia Technology Roadmap - Executive Summary",
-        "https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary"
+        "Danish Energy Agency (2026), Technology Data for Renewable Fuels (sheet 5.4, 0.18 t H2/t NH3 at ~120 GJ/t H2 LHV = 21.6 GJ/t, consistent with this pre-existing 22 GJ/t figure) - retained.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels"
       ],
       [
         "ammonia_h2",
         "electricity",
         3.0,
-        "IEA (2021), Ammonia Technology Roadmap - Executive Summary",
+        "IEA (2021), Ammonia Technology Roadmap - Executive Summary - retained: DEA sheet 5.4 explicitly excludes the air-separation unit (ASU) that this electricity mainly serves, so it is outside DEA's scope here.",
         "https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary"
       ],
       [
@@ -1214,36 +1214,36 @@
         "paper_elec",
         "natural_gas",
         1.0,
-        "IEA (2022), The Future of Heat Pumps",
-        "https://www.iea.org/reports/the-future-of-heat-pumps"
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (sheet 2.a note: steam generation reduces heat-pump COP) - retained unchanged as high-temperature steam trim allowance.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ],
       [
         "paper_elec",
         "electricity",
-        5.5,
-        "IEA (2022), The Future of Heat Pumps",
-        "https://www.iea.org/reports/the-future-of-heat-pumps"
+        4.7,
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (sheet 2.a, high-temperature heat pump, COP 2.8 at 2030 est.); 7.5 GJ/t useful heat / COP 2.8 = 2.7 GJ/t for heat supply, plus 2.0 GJ/t unchanged baseline (non-heat) electricity = 4.7 GJ/t total, down from the prior 5.5 GJ/t IEA estimate reflecting DEA's documented heat-pump COP.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ],
       [
         "paper_bio",
         "natural_gas",
         0.3,
-        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
-        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (sheet 6.2) - retained unchanged as start-up/trim allowance.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ],
       [
         "paper_bio",
         "biomass",
-        9.0,
-        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
-        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+        8.5,
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (sheet 6.2, biomass boiler, 88.9% annual-average efficiency); 7.5 GJ/t useful heat / 0.889 = 8.4-8.5 GJ/t fuel input, down slightly from the prior 9 GJ/t IEA Bioenergy estimate.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ],
       [
         "paper_bio",
         "electricity",
         2.0,
-        "IEA Bioenergy (2022), Decarbonizing industrial process heat: the role of biomass",
-        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/"
+        "Danish Energy Agency (2026), Technology Data for Industrial Process Heat (sheet 6.2, auxiliary electricity ~2% of heat gen) - retained unchanged.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat"
       ]
     ]
   },
@@ -1427,44 +1427,44 @@
       [
         "hydrogen",
         2025,
-        40.0,
-        "IEA (2024), Global Hydrogen Review 2024",
-        "https://www.iea.org/reports/global-hydrogen-review-2024"
+        47.0,
+        "Danish Energy Agency (2026), Technology Data for Renewable Fuels (sheet 1.1, alkaline electrolysis AEC, 100 MW plant) - levelised cost of hydrogen built bottom-up from DEA electrolyser capex (975->300 EUR/kW, 2025->2050), 4%/yr fixed O&M, 25-yr lifetime (7% WACC CRF), DEA stack+BOP electricity consumption (56.7->47.6 kWh/kg H2), 8000 full-load h/yr, and this table's own Eurostat electricity price path; replaces the prior IEA (2024) Global Hydrogen Review market-price path, which this bottom-up DEA calculation shows was materially more optimistic (17-40% below the DEA-grounded figure across the horizon, widening over time) - the DEA figure is adopted as the more transparent, reproducible, EU-specific estimate.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels"
       ],
       [
         "hydrogen",
         2030,
-        33.0,
-        "IEA (2024), Global Hydrogen Review 2024",
-        "https://www.iea.org/reports/global-hydrogen-review-2024"
+        39.0,
+        "Danish Energy Agency (2026), Technology Data for Renewable Fuels (sheet 1.1, alkaline electrolysis AEC, 100 MW plant) - levelised cost of hydrogen built bottom-up from DEA electrolyser capex (975->300 EUR/kW, 2025->2050), 4%/yr fixed O&M, 25-yr lifetime (7% WACC CRF), DEA stack+BOP electricity consumption (56.7->47.6 kWh/kg H2), 8000 full-load h/yr, and this table's own Eurostat electricity price path; replaces the prior IEA (2024) Global Hydrogen Review market-price path, which this bottom-up DEA calculation shows was materially more optimistic (17-40% below the DEA-grounded figure across the horizon, widening over time) - the DEA figure is adopted as the more transparent, reproducible, EU-specific estimate.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels"
       ],
       [
         "hydrogen",
         2035,
-        28.0,
-        "IEA (2024), Global Hydrogen Review 2024",
-        "https://www.iea.org/reports/global-hydrogen-review-2024"
+        36.0,
+        "Danish Energy Agency (2026), Technology Data for Renewable Fuels (sheet 1.1, alkaline electrolysis AEC, 100 MW plant) - levelised cost of hydrogen built bottom-up from DEA electrolyser capex (975->300 EUR/kW, 2025->2050), 4%/yr fixed O&M, 25-yr lifetime (7% WACC CRF), DEA stack+BOP electricity consumption (56.7->47.6 kWh/kg H2), 8000 full-load h/yr, and this table's own Eurostat electricity price path; replaces the prior IEA (2024) Global Hydrogen Review market-price path, which this bottom-up DEA calculation shows was materially more optimistic (17-40% below the DEA-grounded figure across the horizon, widening over time) - the DEA figure is adopted as the more transparent, reproducible, EU-specific estimate.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels"
       ],
       [
         "hydrogen",
         2040,
-        25.0,
-        "IEA (2024), Global Hydrogen Review 2024",
-        "https://www.iea.org/reports/global-hydrogen-review-2024"
+        33.0,
+        "Danish Energy Agency (2026), Technology Data for Renewable Fuels (sheet 1.1, alkaline electrolysis AEC, 100 MW plant) - levelised cost of hydrogen built bottom-up from DEA electrolyser capex (975->300 EUR/kW, 2025->2050), 4%/yr fixed O&M, 25-yr lifetime (7% WACC CRF), DEA stack+BOP electricity consumption (56.7->47.6 kWh/kg H2), 8000 full-load h/yr, and this table's own Eurostat electricity price path; replaces the prior IEA (2024) Global Hydrogen Review market-price path, which this bottom-up DEA calculation shows was materially more optimistic (17-40% below the DEA-grounded figure across the horizon, widening over time) - the DEA figure is adopted as the more transparent, reproducible, EU-specific estimate.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels"
       ],
       [
         "hydrogen",
         2045,
-        22.0,
-        "IEA (2024), Global Hydrogen Review 2024",
-        "https://www.iea.org/reports/global-hydrogen-review-2024"
+        31.0,
+        "Danish Energy Agency (2026), Technology Data for Renewable Fuels (sheet 1.1, alkaline electrolysis AEC, 100 MW plant) - levelised cost of hydrogen built bottom-up from DEA electrolyser capex (975->300 EUR/kW, 2025->2050), 4%/yr fixed O&M, 25-yr lifetime (7% WACC CRF), DEA stack+BOP electricity consumption (56.7->47.6 kWh/kg H2), 8000 full-load h/yr, and this table's own Eurostat electricity price path; replaces the prior IEA (2024) Global Hydrogen Review market-price path, which this bottom-up DEA calculation shows was materially more optimistic (17-40% below the DEA-grounded figure across the horizon, widening over time) - the DEA figure is adopted as the more transparent, reproducible, EU-specific estimate.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels"
       ],
       [
         "hydrogen",
         2050,
-        20.0,
-        "IEA (2024), Global Hydrogen Review 2024",
-        "https://www.iea.org/reports/global-hydrogen-review-2024"
+        28.0,
+        "Danish Energy Agency (2026), Technology Data for Renewable Fuels (sheet 1.1, alkaline electrolysis AEC, 100 MW plant) - levelised cost of hydrogen built bottom-up from DEA electrolyser capex (975->300 EUR/kW, 2025->2050), 4%/yr fixed O&M, 25-yr lifetime (7% WACC CRF), DEA stack+BOP electricity consumption (56.7->47.6 kWh/kg H2), 8000 full-load h/yr, and this table's own Eurostat electricity price path; replaces the prior IEA (2024) Global Hydrogen Review market-price path, which this bottom-up DEA calculation shows was materially more optimistic (17-40% below the DEA-grounded figure across the horizon, widening over time) - the DEA figure is adopted as the more transparent, reproducible, EU-specific estimate.",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels"
       ],
       [
         "biomass",
@@ -2166,15 +2166,6 @@
       ],
       [
         "technologies",
-        "steel_bfbof_ccs",
-        "IEAGHG",
-        "Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/",
-        "2018",
-        "Capture-rate and capex premium for BF-BOF + CCUS"
-      ],
-      [
-        "technologies",
         "steel_ngdri_eaf",
         "IEA",
         "Iron and Steel Technology Roadmap",
@@ -2239,15 +2230,6 @@
       [
         "technologies",
         "cement_ccs",
-        "IEAGHG",
-        "Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/",
-        "2018",
-        "MAC EUR30-107/tCO2 avoided; capture rate ~90% assumed for post-combustion"
-      ],
-      [
-        "technologies",
-        "cement_ccs",
         "Heidelberg Materials",
         "World premiere: CCS cement facility opens in Norway (Brevik CCS)",
         "https://www.heidelbergmaterials.com/en/pr-2025-06-18",
@@ -2292,39 +2274,12 @@
       ],
       [
         "technologies",
-        "hvc_ccs",
-        "IEAGHG",
-        "Cost of CO2 capture in the industrial sector: cement and iron & steel industries (2018-TR03)",
-        "https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/",
-        "2018",
-        "Industrial CCS cost/capture-rate benchmarks applied to chemicals furnaces (moderate capture, dilute flue gas)"
-      ],
-      [
-        "technologies",
         "ammonia_smr",
         "IEA",
         "Ammonia Technology Roadmap",
         "https://www.iea.org/reports/ammonia-technology-roadmap",
         "2021",
         "Reference SMR-Haber-Bosch natural gas intensity ~28-32 GJ/t NH3"
-      ],
-      [
-        "technologies",
-        "ammonia_smr_ccs",
-        "IEA",
-        "Ammonia Technology Roadmap",
-        "https://www.iea.org/reports/ammonia-technology-roadmap",
-        "2021",
-        "Blue-ammonia (SMR/ATR+CCS) capture rate and capex premium"
-      ],
-      [
-        "technologies",
-        "ammonia_h2",
-        "IEA",
-        "Ammonia Technology Roadmap - Executive Summary",
-        "https://www.iea.org/reports/ammonia-technology-roadmap/executive-summary",
-        "2021",
-        "Electrolytic-H2 ammonia MAC ~US$820/t NH3 (~US$400/t above conventional); needs power <~US$40/MWh for parity"
       ],
       [
         "technologies",
@@ -2408,24 +2363,6 @@
         "Reference fossil process-heat intensity order of magnitude"
       ],
       [
-        "technologies",
-        "paper_elec",
-        "IEA",
-        "The Future of Heat Pumps",
-        "https://www.iea.org/reports/the-future-of-heat-pumps",
-        "2022",
-        "Industrial heat-pump electrification of process heat; TRL and availability"
-      ],
-      [
-        "technologies",
-        "paper_bio",
-        "IEA Bioenergy",
-        "Decarbonizing industrial process heat: the role of biomass",
-        "https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/",
-        "2022",
-        "Biomass/black-liquor process heat, commercially mature"
-      ],
-      [
         "fuel_prices",
         "coal",
         "IEA",
@@ -2460,15 +2397,6 @@
         "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics",
         "2024",
         "EU-27 industrial electricity price ~EUR24/GJ (~EUR86/MWh) in 2025, declining as renewables share rises"
-      ],
-      [
-        "fuel_prices",
-        "hydrogen",
-        "IEA",
-        "Global Hydrogen Review 2024",
-        "https://www.iea.org/reports/global-hydrogen-review-2024",
-        "2024",
-        "Low-carbon hydrogen cost path ~EUR40/GJ (~EUR4.8/kg) in 2025 falling to ~EUR20/GJ (~EUR2.4/kg) by 2050"
       ],
       [
         "fuel_prices",
@@ -2685,6 +2613,141 @@
         "beta/modules/summer-prep/optimization/model/README.md",
         "2026",
         "All 13 scenarios (1 central + 12 sensitivities) are prototype modelling assumptions (parameter multipliers applied to already-sourced central inputs), not independent literature values; see the README for the full methodology and per-scenario definitions."
+      ],
+      [
+        "technologies",
+        "steel_bfbof_ccs",
+        "Danish Energy Agency",
+        "Technology Data for Carbon Capture, Transport and Storage",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage",
+        "2024",
+        "Sheet 401.c (post-combustion capture, cement-kiln flue gas, used as CO2-concentration proxy for BF-BOF top gas): specific investment, fixed/var O&M per tCO2 captured, 25-yr capture-unit lifetime; now the primary source, replacing the generic IEAGHG (2018) estimate."
+      ],
+      [
+        "technologies",
+        "cement_ccs",
+        "Danish Energy Agency",
+        "Technology Data for Carbon Capture, Transport and Storage",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage",
+        "2024",
+        "Sheet 401.c (post-combustion capture retrofit, 4500 t clinker/day cement kiln - a direct technology match): specific investment, fixed/var O&M per tCO2 captured, 25-yr capture-unit lifetime; now the primary source, replacing the generic IEAGHG (2018) estimate. Heidelberg Materials retained for available_from calibration."
+      ],
+      [
+        "technologies",
+        "cement_altfuel",
+        "Danish Energy Agency",
+        "Technology Data for Industrial Process Heat",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat",
+        "2026",
+        "Sheet 7.2 (direct firing of solid fuels, 100% net efficiency) used as the closest available DEA proxy for alternative/biomass kiln-fuel firing; DEA has no cement-kiln-specific alt-fuel sheet, so IEA/CSI (2018) is retained for kiln-level capex/opex/lifetime, with DEA as the primary technical cross-check per the model's DEA-primary-source policy."
+      ],
+      [
+        "technologies",
+        "hvc_elec",
+        "Danish Energy Agency",
+        "Technology Data for Industrial Process Heat",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat",
+        "2026",
+        "Sheet 7.3 (direct electric firing, 100% net efficiency, up to 2000 degC) confirms electrified cracking-furnace heat supply is well within DEA's technical envelope; DEA prices heating elements only, so BASF/SABIC/Linde (2024) is retained for full e-cracker capex/opex/lifetime, with DEA as the primary technical cross-check per the model's DEA-primary-source policy."
+      ],
+      [
+        "technologies",
+        "hvc_ccs",
+        "Danish Energy Agency",
+        "Technology Data for Carbon Capture, Transport and Storage",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage",
+        "2024",
+        "Sheet 401.a (post-combustion capture, dilute ~15% CO2 CHP/biomass flue gas, used as proxy for cracker-furnace flue gas - DEA has no HVC-specific sheet): specific investment, fixed/var O&M per tCO2 captured, 25-yr capture-unit lifetime; now the primary source, replacing the generic IEAGHG (2018) estimate."
+      ],
+      [
+        "technologies",
+        "ammonia_smr_ccs",
+        "Danish Energy Agency",
+        "Technology Data for Carbon Capture, Transport and Storage",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-carbon-capture-transport-and-storage",
+        "2024",
+        "Sheet 401.c (post-combustion capture, cement-kiln flue gas used as moderate-CO2-concentration proxy - DEA has no SMR/ammonia-specific sheet): specific investment, fixed/var O&M per tCO2 captured, 25-yr capture-unit lifetime; now the primary source, replacing the IEA (2021) Ammonia Technology Roadmap-implied capture premium."
+      ],
+      [
+        "technologies",
+        "ammonia_h2",
+        "Danish Energy Agency",
+        "Technology Data for Renewable Fuels",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels",
+        "2026",
+        "Sheet 5.4 (Hydrogen to Ammonia, Haber-Bosch synthesis excl. electrolyser and excl. ASU): specific investment, fixed/var O&M, 30-yr lifetime; now the primary source. Correctly excludes electrolyser capex, which is already reflected in the purchased-hydrogen carrier price (see fuel_prices,hydrogen below), avoiding the double-counting implicit in the prior IEA (2021) Ammonia Technology Roadmap Executive Summary bundled estimate. Yara International (2024) retained for available_from calibration."
+      ],
+      [
+        "technologies",
+        "glass_elec",
+        "Danish Energy Agency",
+        "Technology Data for Industrial Process Heat",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat",
+        "2026",
+        "Sheet 7.3 (direct electric firing: 100% net efficiency, up to 2000 degC, 20-yr technical lifetime) confirms all-electric glass melting is well within DEA's technical envelope and grounds the updated 20-yr lifetime; DEA prices heating elements only (not furnace shell/refractories/forming equipment), so IEA (2024) ETP is retained for furnace-level capex/opex, with DEA as the primary technical cross-check per the model's DEA-primary-source policy."
+      ],
+      [
+        "technologies",
+        "glass_hybrid",
+        "Danish Energy Agency",
+        "Technology Data for Industrial Process Heat",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat",
+        "2026",
+        "Blend of sheet 7.3 (direct electric firing) and sheet 6.1 (gas/oil boiler) as proxies for the electric and gas-fired shares of a hybrid furnace; grounds the updated 18-yr lifetime. DEA prices heating elements/burners only, so IEA (2024) ETP is retained for furnace-level capex/opex, with DEA as the primary technical cross-check per the model's DEA-primary-source policy."
+      ],
+      [
+        "technologies",
+        "paper_elec",
+        "Danish Energy Agency",
+        "Technology Data for Industrial Process Heat",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat",
+        "2026",
+        "Sheet 2.a (high-temperature heat pump up to 125 degC): COP 2.7-2.95 (2025-2050), 1.15 M EUR/MW nominal investment (2030 est.), 20-yr technical lifetime; now the primary source, replacing IEA (2022) Future of Heat Pumps as the quantitative basis for capex, electricity intensity and lifetime."
+      ],
+      [
+        "technologies",
+        "paper_bio",
+        "Danish Energy Agency",
+        "Technology Data for Industrial Process Heat",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-industrial-process-heat",
+        "2026",
+        "Sheet 6.2 (biomass boiler): 88.9% annual-average efficiency, 0.878 M EUR/MW nominal investment (2025), 25-yr technical lifetime; now the primary source, replacing IEA Bioenergy (2022) as the quantitative basis for capex, fuel intensity and lifetime."
+      ],
+      [
+        "fuel_prices",
+        "hydrogen",
+        "Danish Energy Agency",
+        "Technology Data for Renewable Fuels",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels",
+        "2026",
+        "Sheet 1.1 (alkaline electrolysis, AEC, 100 MW plant): bottom-up levelised cost of hydrogen from DEA electrolyser capex (975->300 EUR/kW, 2025->2050), 4%/yr fixed O&M, 25-yr lifetime (7% WACC CRF), DEA stack+BOP electricity consumption (56.7->47.6 kWh/kg H2), 8000 full-load h/yr, and this model's own Eurostat electricity price path; now the primary source, replacing the IEA (2024) Global Hydrogen Review market-price path, which this bottom-up calculation shows was materially more optimistic (17-40% below the DEA-grounded figure, widening over the horizon)."
+      ],
+      [
+        "fuel_prices",
+        "electricity",
+        "Danish Energy Agency",
+        "Technology Data for Generation of Electricity and District Heat",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-generation-electricity-and-district-heating",
+        "2025",
+        "Reviewed as a possible source for the industrial electricity price path but not adopted: this DEA catalogue prices generation technologies (LCOE), not the retail/industrial electricity price this table needs, so Eurostat market-price statistics remain the more appropriate and directly applicable source."
+      ],
+      [
+        "fuel_prices",
+        "biomass",
+        "Danish Energy Agency",
+        "Technology Data for Renewable Fuels",
+        "https://ens.dk/en/analyses-and-statistics/technology-data-renewable-fuels",
+        "2026",
+        "Reviewed as a possible source for the biomass feedstock price path but not adopted: this DEA catalogue prices biomass-conversion plant technologies (boilers, gasifiers, pyrolysis), not EU biomass feedstock market prices, so the IEA Bioenergy feedstock-price estimate is retained."
+      ],
+      [
+        "technologies",
+        "multiple",
+        "Danish Energy Agency",
+        "Technology Data catalogue series (Industrial Process Heat; Carbon Capture, Transport and Storage; Renewable Fuels; Generation of Electricity and District Heat)",
+        "https://ens.dk/en/analyses-and-statistics/technology-data",
+        "2024-2026",
+        "Per explicit user direction, the DEA Technology Data catalogue series is the primary source for this model wherever it plausibly covers the underlying equipment (all CCS variants; paper/glass/HVC electrification and biomass/alt-fuel heat; electrolytic-hydrogen ammonia synthesis and the hydrogen price path). Where DEA genuinely has no coverage (BF-BOF/DRI/EAF steel process metallurgy, cement clinker kilns, steam crackers, aluminium smelting, SMR reforming), the pre-existing IEA/IEAGHG/JRC/etc. sources remain primary - DEA is primary, not exclusive, consistent with data-quality requirements."
       ]
     ]
   }
