@@ -36,6 +36,30 @@ const nextConfig = {
     },
   },
 
+  // The `highs` package (HiGHS LP solver compiled to WebAssembly, used by the in-browser
+  // industry-optimization LP at beta/modules/summer-prep/optimization) ships one Emscripten glue
+  // file for both Node and the browser. It gated its Node-only `require("node:fs")` /
+  // `require("node:crypto")` calls behind a runtime environment check, but webpack still parses
+  // them statically while bundling the client chunk and fails with "UnhandledSchemeError" for the
+  // `node:` scheme. Since those branches never execute in the browser (the WASM binary is fetched
+  // via `locateFile` instead — see src/lib/industry-lp/solver.ts), it's safe to stub them out of
+  // the client bundle only.
+  webpack: (config, { isServer, webpack }) => {
+    if (!isServer) {
+      config.resolve.fallback = { ...config.resolve.fallback, fs: false, crypto: false, path: false };
+      // Webpack treats a bare `node:fs`-style specifier as an unhandled URI scheme rather than a
+      // module request, so `resolve.fallback`/`resolve.alias` never get a chance to run. Strip the
+      // `node:` prefix first so it becomes an ordinary `fs`/`crypto` request, which the fallback
+      // above then stubs out to an empty module for the client bundle.
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
+          resource.request = resource.request.replace(/^node:/, '');
+        }),
+      );
+    }
+    return config;
+  },
+
   // Redirect legacy routes to their policy-navigator equivalents
   async redirects() {
     return [
