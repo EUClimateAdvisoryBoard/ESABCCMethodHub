@@ -37,6 +37,14 @@ import {
 } from '@/data/summer-prep-optimization';
 import { buildAndSolve, CENTRAL_OVERRIDES, overridesFromScenarioMeta } from '@/lib/industry-lp/model';
 import type { IndustryLpOverrides, IndustryLpResult } from '@/lib/industry-lp/types';
+import {
+  BIOMASS_VERDICT,
+  COMPETING_CLAIMS,
+  EU_BIOMASS_SUPPLY,
+  EU_BIOMASS_TRADE,
+  MODEL_CEILING_PJ,
+  type BiomassFigure,
+} from '@/data/summer-prep-biomass';
 
 /* -------------------------------------------------------------------------
  * Constants / shared styling
@@ -119,6 +127,114 @@ function fmt(n: number, digits = 0): string {
 
 function techName(id: string): string {
   return TECHNOLOGIES[id]?.name ?? id;
+}
+
+/** Short, legible per-technology label for the 25 fixed technology IDs — used inside tech-mix bar
+ * segments alongside the %, so the color->technology mapping doesn't require a separate lookup. */
+const SHORT_TECH_LABEL: Record<string, string> = {
+  steel_bfbof: 'BF-BOF',
+  steel_bfbof_ccs: 'BF-BOF+CCS',
+  steel_ngdri_eaf: 'NG-DRI',
+  steel_h2dri_eaf: 'H2-DRI',
+  steel_scrap_eaf: 'Scrap-EAF',
+  cement_ref: 'Conv. kiln',
+  cement_clinkersub: 'Clinker sub',
+  cement_ccs: 'CCS kiln',
+  cement_altfuel: 'Alt-fuel',
+  hvc_ref: 'Steam cracker',
+  hvc_elec: 'E-cracker',
+  hvc_bio: 'Bio-feedstock',
+  hvc_ccs: 'Cracker+CCS',
+  ammonia_smr: 'SMR',
+  ammonia_smr_ccs: 'SMR+CCS',
+  ammonia_h2: 'e-NH3',
+  alu_ref: 'Primary',
+  alu_inert: 'Inert anode',
+  alu_sec: 'Recycled',
+  glass_ng: 'Gas furnace',
+  glass_elec: 'Electric',
+  glass_hybrid: 'Hybrid furnace',
+  paper_ref: 'Conventional',
+  paper_elec: 'Electric',
+  paper_bio: 'Biomass',
+};
+
+function shortTechLabel(id: string): string {
+  return SHORT_TECH_LABEL[id] ?? id;
+}
+
+/** Formats the % change of `v` vs a base value `v0` as a decline label, e.g. "−64%" (or "+12%" for
+ * an increase). Used to annotate each point of a CO2 trajectory with its move vs the base year. */
+function declineLabel(v: number, v0: number): string | null {
+  if (!(v0 > 0)) return null;
+  const pct = Math.round(100 * (1 - v / v0));
+  return pct >= 0 ? `−${pct}%` : `+${Math.abs(pct)}%`;
+}
+
+/* -------------------------------------------------------------------------
+ * Biomass lookups — derived once from the same INPUT_SHEETS workbook (energy_use, demand,
+ * constraints) already rendered by the WorkbookViewer above, so the central-run biomass PJ figures
+ * below are computed from the site's own data, not re-typed.
+ * ---------------------------------------------------------------------- */
+
+function sheetIndex(columns: string[], name: string): number {
+  const i = columns.indexOf(name);
+  if (i < 0) throw new Error(`Expected column '${name}' in input sheet.`);
+  return i;
+}
+
+/** tech id -> biomass GJ/t (0 if the technology doesn't use biomass). */
+const BIOMASS_GJ_PER_T: Record<string, number> = (() => {
+  const sheet = INPUT_SHEETS.energy_use;
+  const techIdx = sheetIndex(sheet.columns, 'tech');
+  const carrierIdx = sheetIndex(sheet.columns, 'carrier');
+  const gjIdx = sheetIndex(sheet.columns, 'gj_per_t');
+  const map: Record<string, number> = {};
+  for (const row of sheet.rows) {
+    if (row[carrierIdx] === 'biomass') map[String(row[techIdx])] = Number(row[gjIdx]);
+  }
+  return map;
+})();
+
+/** `${subsector}|${year}` -> demand, Mt. */
+const DEMAND_MT: Record<string, number> = (() => {
+  const sheet = INPUT_SHEETS.demand;
+  const subIdx = sheetIndex(sheet.columns, 'subsector');
+  const yearIdx = sheetIndex(sheet.columns, 'year');
+  const mtIdx = sheetIndex(sheet.columns, 'demand_mt');
+  const map: Record<string, number> = {};
+  for (const row of sheet.rows) {
+    map[`${row[subIdx]}|${row[yearIdx]}`] = Number(row[mtIdx]);
+  }
+  return map;
+})();
+
+/** year (string) -> biomass_pj_max ceiling, PJ. */
+const BIOMASS_CEILING_BY_YEAR: Record<string, number> = (() => {
+  const sheet = INPUT_SHEETS.constraints;
+  const nameIdx = sheetIndex(sheet.columns, 'name');
+  const yearIdx = sheetIndex(sheet.columns, 'year');
+  const valueIdx = sheetIndex(sheet.columns, 'value');
+  const map: Record<string, number> = {};
+  for (const row of sheet.rows) {
+    if (row[nameIdx] === 'biomass_pj_max') map[String(row[yearIdx])] = Number(row[valueIdx]);
+  }
+  return map;
+})();
+
+/** Central-scenario biomass use of one subsector in one year, PJ = sum over that subsector's
+ * technologies of (2050-style tech share) x demand (Mt) x biomass energy intensity (GJ/t) — the
+ * same production-weighted computation the LP itself does, applied to the pre-solved central
+ * result so it needs no re-solve. */
+function centralBiomassPj(subsector: string, year: number): number {
+  const shares = RESULTS.central.by_subsector[subsector]?.tech_shares[String(year)] ?? {};
+  const demand = DEMAND_MT[`${subsector}|${year}`] ?? 0;
+  let pj = 0;
+  for (const [tech, share] of Object.entries(shares)) {
+    const gj = BIOMASS_GJ_PER_T[tech];
+    if (gj) pj += share * demand * gj;
+  }
+  return pj;
 }
 
 /* -------------------------------------------------------------------------
@@ -423,6 +539,41 @@ function CodeViewer() {
 
 const MIX_YEARS = [2030, 2040, 2050] as const;
 
+/** One colored segment of a tech-mix bar: color still encodes category (see CategoryLegend), but
+ * a short tech label is now printed inside any segment wide enough to hold it, and every segment
+ * carries a full tooltip (tech name + category + share) so the color->technology mapping is never
+ * the only way to read the chart. Reference/incumbent-tech segments additionally get a diagonal
+ * stripe overlay so "still on the old technology" is visible without reading labels at all. */
+function TechSegment({ tech, share }: { tech: string; share: number }) {
+  const pct = share * 100;
+  const category = TECH_CATEGORY[tech];
+  const isReference = category === 'reference';
+  const showPct = pct >= 6;
+  const showLabel = pct >= 12;
+  return (
+    <div
+      title={`${techName(tech)} — ${CATEGORY_LABEL[category]} — ${pct.toFixed(1)}%${
+        isReference ? ' (still on the reference/incumbent technology)' : ''
+      }`}
+      style={{
+        width: `${pct}%`,
+        backgroundColor: CATEGORY_COLOR[category],
+        backgroundImage: isReference
+          ? 'repeating-linear-gradient(135deg, rgba(255,255,255,0.45) 0px, rgba(255,255,255,0.45) 3px, transparent 3px, transparent 7px)'
+          : undefined,
+        boxShadow: isReference ? 'inset 0 0 0 1px rgba(255,255,255,0.6)' : undefined,
+      }}
+      className="flex h-full items-center justify-center overflow-hidden"
+    >
+      {showPct && (
+        <span className="truncate px-0.5 text-[9px] font-bold text-white">
+          {showLabel ? `${shortTechLabel(tech)} · ${Math.round(pct)}%` : `${Math.round(pct)}%`}
+        </span>
+      )}
+    </div>
+  );
+}
+
 function TechMixBar({ subsector }: { subsector: string }) {
   const central = RESULTS.central.by_subsector[subsector];
   return (
@@ -443,18 +594,7 @@ function TechMixBar({ subsector }: { subsector: string }) {
               className="flex h-6 flex-1 overflow-hidden rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)]"
             >
               {entries.map(([t, v]) => (
-                <div
-                  key={t}
-                  title={`${techName(t)}: ${(v * 100).toFixed(1)}%`}
-                  style={{ width: `${v * 100}%`, backgroundColor: CATEGORY_COLOR[TECH_CATEGORY[t]] }}
-                  className="flex h-full items-center justify-center overflow-hidden"
-                >
-                  {v >= 0.09 && (
-                    <span className="px-0.5 text-[9px] font-bold text-white">
-                      {Math.round(v * 100)}%
-                    </span>
-                  )}
-                </div>
+                <TechSegment key={t} tech={t} share={v} />
               ))}
             </div>
           </div>
@@ -539,29 +679,47 @@ function Co2TrajectoryChart() {
         ))}
         <path d={areaPath} fill={ACCENTS.teal} opacity={0.12} />
         <path d={linePath} fill="none" stroke={ACCENTS.teal} strokeWidth={2.5} />
-        {points.map((p, i) => (
-          <g key={p.y}>
-            <circle cx={x(i)} cy={yPos(p.v)} r={3.5} fill={ACCENTS.teal} />
-            {labelIdx.has(i) && (
+        {points.map((p, i) => {
+          const decline = i > 0 ? declineLabel(p.v, points[0].v) : null;
+          const hasMtLabel = labelIdx.has(i);
+          // Mt labels sit above the point (-10); when both would be shown, park the % decline
+          // below instead so the two never overlap. Otherwise prefer above, flipping below only
+          // when there isn't enough headroom (near the top of the plot).
+          const declineBelow = hasMtLabel || yPos(p.v) - 18 < padT;
+          return (
+            <g key={p.y}>
+              <circle cx={x(i)} cy={yPos(p.v)} r={3.5} fill={ACCENTS.teal} />
+              {hasMtLabel && (
+                <text
+                  x={x(i)}
+                  y={yPos(p.v) - 10}
+                  textAnchor="middle"
+                  className="fill-[#3D5265] text-[11px] font-bold dark:fill-[var(--mh-fg)]"
+                >
+                  {fmt(p.v, 0)} Mt
+                </text>
+              )}
+              {decline && (
+                <text
+                  x={x(i)}
+                  y={yPos(p.v) + (declineBelow ? 13 : -10)}
+                  textAnchor="middle"
+                  className="fill-[#B83230] text-[9.5px] font-bold dark:fill-[#FF9A90]"
+                >
+                  {decline}
+                </text>
+              )}
               <text
                 x={x(i)}
-                y={yPos(p.v) - 10}
+                y={H - 8}
                 textAnchor="middle"
-                className="fill-[#3D5265] text-[11px] font-bold dark:fill-[var(--mh-fg)]"
+                className="fill-[#3D5265]/60 text-[10px] dark:fill-[var(--mh-muted)]"
               >
-                {fmt(p.v, 0)} Mt
+                {p.y}
               </text>
-            )}
-            <text
-              x={x(i)}
-              y={H - 8}
-              textAnchor="middle"
-              className="fill-[#3D5265]/60 text-[10px] dark:fill-[var(--mh-muted)]"
-            >
-              {p.y}
-            </text>
-          </g>
-        ))}
+            </g>
+          );
+        })}
         <text
           x={padL - 8}
           y={padT + 4}
@@ -729,14 +887,46 @@ function UserCo2Chart({ userCo2 }: { userCo2: Record<string, number> | undefined
       ))}
       <path d={refPath} fill="none" stroke="currentColor" className="text-[#3D5265]/40 dark:text-[var(--mh-muted)]" strokeWidth={2} strokeDasharray="5 4" />
       {userPath && <path d={userPath} fill="none" stroke={ACCENTS.blue} strokeWidth={2.5} />}
-      {points.map((p, i) => (
-        <g key={p.y}>
-          {typeof p.user === 'number' && <circle cx={x(i)} cy={yPos(p.user)} r={3.5} fill={ACCENTS.blue} />}
-          <text x={x(i)} y={H - 8} textAnchor="middle" className="fill-[#3D5265]/60 text-[10px] dark:fill-[var(--mh-muted)]">
-            {p.y}
+      {/* Central reference gets exactly one decline label, at 2050. */}
+      {(() => {
+        const lastIdx = points.length - 1;
+        const centralDecline = declineLabel(points[lastIdx].ref, points[0].ref);
+        if (!centralDecline) return null;
+        return (
+          <text
+            x={x(lastIdx)}
+            y={yPos(points[lastIdx].ref) + 13}
+            textAnchor="middle"
+            className="fill-[#3D5265]/60 text-[9.5px] font-bold dark:fill-[var(--mh-muted)]"
+          >
+            central {centralDecline}
           </text>
-        </g>
-      ))}
+        );
+      })()}
+      {points.map((p, i) => {
+        const userDecline =
+          i > 0 && typeof p.user === 'number' && typeof points[0].user === 'number'
+            ? declineLabel(p.user, points[0].user)
+            : null;
+        return (
+          <g key={p.y}>
+            {typeof p.user === 'number' && <circle cx={x(i)} cy={yPos(p.user)} r={3.5} fill={ACCENTS.blue} />}
+            {userDecline && typeof p.user === 'number' && (
+              <text
+                x={x(i)}
+                y={yPos(p.user) - 10 < padT + 8 ? yPos(p.user) + 13 : yPos(p.user) - 10}
+                textAnchor="middle"
+                className="fill-[#004B7F] text-[9.5px] font-bold dark:fill-[#6FB7E8]"
+              >
+                {userDecline}
+              </text>
+            )}
+            <text x={x(i)} y={H - 8} textAnchor="middle" className="fill-[#3D5265]/60 text-[10px] dark:fill-[var(--mh-muted)]">
+              {p.y}
+            </text>
+          </g>
+        );
+      })}
       <text x={padL - 8} y={padT + 4} textAnchor="end" className="fill-[#3D5265]/60 text-[9px] dark:fill-[var(--mh-muted)]">
         {fmt(maxV, 0)}
       </text>
@@ -766,16 +956,7 @@ function UserTechMixRow({ subsector, shares }: { subsector: string; shares: Reco
         {entries.length === 0 ? (
           <div className="h-full w-full bg-[#F3F5F7] dark:bg-[var(--mh-bg)]" />
         ) : (
-          entries.map(([t, v]) => (
-            <div
-              key={t}
-              title={`${techName(t)}: ${(v * 100).toFixed(1)}%`}
-              style={{ width: `${v * 100}%`, backgroundColor: CATEGORY_COLOR[TECH_CATEGORY[t]] }}
-              className="flex h-full items-center justify-center overflow-hidden"
-            >
-              {v >= 0.12 && <span className="px-0.5 text-[9px] font-bold text-white">{Math.round(v * 100)}%</span>}
-            </div>
-          ))
+          entries.map(([t, v]) => <TechSegment key={t} tech={t} share={v} />)
         )}
       </div>
     </div>
@@ -813,7 +994,86 @@ function CostDeltaChip({ result }: { result: IndustryLpResult | null }) {
   );
 }
 
-function RunModelSection() {
+/** Auto-generated "where progress is slow" read-out for the current run: which subsectors still
+ * lean on reference/incumbent technology in 2050, and which carry the most residual direct CO2 —
+ * computed purely from this run's own result, not from any hand-written scenario text. */
+function ProgressPanel({ result }: { result: IndustryLpResult | null }) {
+  if (!result || result.status !== 'optimal' || !result.bySubsector) return null;
+
+  const rows = SUBSECTOR_ORDER.map((s) => {
+    const sub = result.bySubsector?.[s];
+    const shares2050 = sub?.tech_shares['2050'] ?? {};
+    const refTechs = SUBSECTORS[s].techs.filter((t) => TECH_CATEGORY[t] === 'reference');
+    const refShare = refTechs.reduce((sum, t) => sum + (shares2050[t] ?? 0), 0);
+    const dominantRefTech = [...refTechs].sort((a, b) => (shares2050[b] ?? 0) - (shares2050[a] ?? 0))[0];
+    return {
+      s,
+      name: SUBSECTORS[s].name,
+      refShare,
+      refTechName: dominantRefTech ? techName(dominantRefTech) : null,
+      co2_2050: sub?.co2_2050_mt ?? 0,
+    };
+  });
+
+  const byCo2 = [...rows].sort((a, b) => b.co2_2050 - a.co2_2050);
+  const byRef = [...rows].filter((r) => r.refShare > 0.05).sort((a, b) => b.refShare - a.refShare);
+
+  const bullets: string[] = [];
+  const used = new Set<string>();
+
+  if (byCo2[0] && byCo2[0].co2_2050 > 0.3) {
+    const r = byCo2[0];
+    const refClause =
+      r.refShare > 0.05 && r.refTechName
+        ? `${Math.round(r.refShare * 100)}% of 2050 output still on ${r.refTechName}`
+        : `still emitting`;
+    bullets.push(`${r.name}: ${refClause} — ${fmt(r.co2_2050, 0)} Mt CO2 remaining, the largest residual.`);
+    used.add(r.s);
+  }
+  for (const r of byRef) {
+    if (used.has(r.s) || bullets.length >= 4) break;
+    bullets.push(
+      `${r.name}: ${Math.round(r.refShare * 100)}% of 2050 output still on ${r.refTechName} — ${fmt(
+        r.co2_2050,
+        0,
+      )} Mt CO2 remaining.`,
+    );
+    used.add(r.s);
+  }
+  for (const r of byCo2) {
+    if (used.has(r.s) || bullets.length >= 4 || r.co2_2050 <= 0.3) continue;
+    bullets.push(`${r.name}: ${fmt(r.co2_2050, 0)} Mt CO2 remaining in 2050.`);
+    used.add(r.s);
+  }
+
+  if (bullets.length < 2) return null;
+
+  return (
+    <div className="mt-3 rounded-lg border border-[#E6E7E8] bg-[#F8F9FA] p-3 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+      <h5 className="mb-1.5 text-[12px] font-bold text-[#3D5265] dark:text-[var(--mh-fg)]">Where progress is slow</h5>
+      <ul className="space-y-1 text-[12px] leading-relaxed text-[#3D5265]/85 dark:text-[var(--mh-muted)]">
+        {bullets.slice(0, 4).map((b, i) => (
+          <li key={i} className="flex gap-1.5">
+            <span aria-hidden="true">•</span>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-2 text-[10.5px] text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
+        Diagonally-striped segments in the chart above mark technologies still on the
+        reference/incumbent pathway.
+      </p>
+    </div>
+  );
+}
+
+function RunModelSection({
+  onResult,
+}: {
+  /** Reports the latest solve result (and whether the visitor has run at least once) up to the
+   * page, so other sections (e.g. the biomass section's "your run" KPI) can reflect it too. */
+  onResult?: (result: IndustryLpResult | null, hasRunOnce: boolean) => void;
+}) {
   const [preset, setPreset] = useState<PresetChoice>('central');
   const [overrides, setOverrides] = useState<OverridesState>(CENTRAL_OVERRIDES);
   const [result, setResult] = useState<IndustryLpResult | null>(null);
@@ -821,6 +1081,11 @@ function RunModelSection() {
   const [hasRunOnce, setHasRunOnce] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const runIdRef = useRef(0);
+
+  useEffect(() => {
+    onResult?.(result, hasRunOnce);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [result, hasRunOnce]);
 
   const runSolve = useCallback(async (ov: OverridesState) => {
     const myRunId = ++runIdRef.current;
@@ -1011,6 +1276,16 @@ function RunModelSection() {
           format={(v) => `×${v.toFixed(2)}`}
           onChange={(v) => patch({ buildRateScale: v })}
         />
+        <SliderRow
+          id="biomass-ceiling"
+          label="Industrial biomass ceiling"
+          min={0.25}
+          max={1.5}
+          step={0.05}
+          value={overrides.biomassCeilingScale}
+          format={(v) => `×${v.toFixed(2)}`}
+          onChange={(v) => patch({ biomassCeilingScale: v })}
+        />
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-3 border-t border-[#E6E7E8] pt-4 dark:border-[var(--mh-border)]">
@@ -1067,6 +1342,7 @@ function RunModelSection() {
               <UserTechMixRow key={s} subsector={s} shares={result?.status === 'optimal' ? result.bySubsector?.[s]?.tech_shares['2050'] : undefined} />
             ))}
           </div>
+          <ProgressPanel result={result} />
         </div>
       )}
 
@@ -1079,6 +1355,294 @@ function RunModelSection() {
         shares within 2 percentage points) — see the model source above for the exact formulation.
       </p>
     </div>
+  );
+}
+
+/* -------------------------------------------------------------------------
+ * Section: "Biomass — a scarce resource?"
+ * -------------------------------------------------------------------------
+ * Judges the model's own industrial biomass ceiling (constraints.csv, biomass_pj_max) against the
+ * sourced evidence pack in src/data/summer-prep-biomass.ts (EU supply, trade, competing sectoral
+ * claims) and the central run's own biomass use. Renders defensively: the evidence-pack chart
+ * falls back to a loading note if that file's arrays are still empty (schema stub); the central-run
+ * chart and "your run" KPI depend only on this page's own already-populated data.
+ * ---------------------------------------------------------------------- */
+
+/** Normalizes a BiomassFigure's value_pj (a number or a [lo, hi] range) to a [lo, hi] tuple. */
+function figureRange(f: BiomassFigure): [number, number] {
+  return Array.isArray(f.value_pj) ? f.value_pj : [f.value_pj, f.value_pj];
+}
+
+function BiomassBarRow({
+  figure,
+  color,
+  frac,
+  zeroPct,
+  highlight,
+}: {
+  figure: BiomassFigure;
+  color: string;
+  frac: (v: number) => number;
+  zeroPct: number;
+  highlight?: boolean;
+}) {
+  const [lo, hi] = figureRange(figure);
+  const loP = frac(lo);
+  const hiP = frac(hi);
+  const lightLeft = Math.min(loP, hiP);
+  const lightWidth = Math.abs(hiP - loP);
+  const solidLeft = Math.min(zeroPct, loP);
+  const solidWidth = Math.max(Math.abs(loP - zeroPct), 0.4);
+  const rangeLabel = lo === hi ? `${fmt(lo, 0)} PJ` : `${fmt(lo, 0)}–${fmt(hi, 0)} PJ`;
+  const titleText = `${figure.label}: ${rangeLabel}${figure.year ? ` (${figure.year})` : ''}${
+    figure.note ? ` — ${figure.note}` : ''
+  } — source: ${figure.source.org}, ${figure.source.title}`;
+
+  return (
+    <div className="flex items-center gap-2">
+      <span
+        className={`w-40 flex-none truncate text-[11px] ${
+          highlight ? 'font-bold text-[#3D5265] dark:text-[var(--mh-fg)]' : 'font-medium text-[#3D5265]/85 dark:text-[var(--mh-muted)]'
+        }`}
+        title={figure.label}
+      >
+        {figure.label}
+      </span>
+      <div className="relative h-4 flex-1" title={titleText}>
+        <div
+          className="absolute inset-y-0 rounded-sm"
+          style={{ left: `${lightLeft}%`, width: `${lightWidth}%`, backgroundColor: color, opacity: 0.28 }}
+        />
+        <div
+          className="absolute inset-y-0 rounded-sm"
+          style={{
+            left: `${solidLeft}%`,
+            width: `${solidWidth}%`,
+            backgroundColor: color,
+            boxShadow: highlight ? `0 0 0 1px ${color}` : undefined,
+          }}
+        />
+      </div>
+      <a
+        href={figure.source.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={titleText}
+        className="w-24 flex-none truncate text-right text-[10.5px] font-semibold text-[#004B7F] underline decoration-[#004B7F]/40 underline-offset-2 hover:text-[#00928F] dark:text-[#6FB7E8]"
+      >
+        {rangeLabel}
+      </a>
+    </div>
+  );
+}
+
+function BiomassComparisonChart() {
+  const allFigures = [...EU_BIOMASS_SUPPLY, ...EU_BIOMASS_TRADE, ...COMPETING_CLAIMS];
+  const maxAbs =
+    Math.max(1, MODEL_CEILING_PJ, ...allFigures.flatMap((f) => figureRange(f).map((v) => Math.abs(v)))) * 1.08;
+  const zeroPct = 50;
+  const frac = (v: number) => zeroPct + (v / maxAbs) * zeroPct;
+  const ceilingPct = frac(MODEL_CEILING_PJ);
+
+  const groups: { title: string; figures: BiomassFigure[]; color: string }[] = [
+    { title: 'EU biomass supply', figures: EU_BIOMASS_SUPPLY, color: ACCENTS.green },
+    { title: 'EU biomass trade (imports +, exports −)', figures: EU_BIOMASS_TRADE, color: ACCENTS.blue },
+    { title: "Competing sectoral claims (incl. this model's ceiling)", figures: COMPETING_CLAIMS, color: ACCENTS.purple },
+  ];
+
+  return (
+    <div className="relative">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 w-px"
+        style={{ left: `${ceilingPct}%`, backgroundColor: ACCENTS.amber }}
+      />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-4 whitespace-nowrap text-[9.5px] font-bold"
+        style={{ left: `${ceilingPct}%`, transform: 'translateX(-50%)', color: ACCENTS.amber }}
+      >
+        model ceiling {fmt(MODEL_CEILING_PJ, 0)} PJ
+      </span>
+      <div className="space-y-4 pt-4">
+        {groups.map((g) => (
+          <div key={g.title}>
+            <h5 className="mb-1.5 text-[11px] font-bold uppercase tracking-wide text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
+              {g.title}
+            </h5>
+            {g.figures.length === 0 ? (
+              <p className="text-[11px] text-[#3D5265]/50 dark:text-[var(--mh-muted)]">No figures yet.</p>
+            ) : (
+              <div className="space-y-1.5">
+                {g.figures.map((f) => (
+                  <BiomassBarRow
+                    key={f.label}
+                    figure={f}
+                    color={g.color}
+                    frac={frac}
+                    zeroPct={zeroPct}
+                    highlight={f.label.toLowerCase().includes('this model')}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+        <div>
+          <h5 className="mb-1.5 text-[11px] font-bold uppercase tracking-wide text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
+            This model's own ceiling
+          </h5>
+          <BiomassBarRow
+            figure={{ label: "Industrial biomass_pj_max (this model)", value_pj: MODEL_CEILING_PJ, source: { org: 'This model', title: 'constraints.csv, biomass_pj_max', url: XLSX_URL } }}
+            color={ACCENTS.amber}
+            frac={frac}
+            zeroPct={zeroPct}
+            highlight
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Small stacked bars of the central run's biomass use by subsector, 2025-2050, against the
+ * ceiling — computed from RESULTS.central (tech shares) x INPUT_SHEETS.demand x
+ * INPUT_SHEETS.energy_use (biomass gj_per_t), see centralBiomassPj() above. */
+function BiomassRunChart() {
+  const chartH = 150;
+  const totalsByYear = MODEL_YEARS.map((y) => SUBSECTOR_ORDER.reduce((sum, s) => sum + centralBiomassPj(s, y), 0));
+  const ceilings = MODEL_YEARS.map((y) => BIOMASS_CEILING_BY_YEAR[String(y)] ?? MODEL_CEILING_PJ);
+  const maxVal = Math.max(...totalsByYear, ...ceilings, 1) * 1.15;
+  const subsectorColor = (s: string) => Object.values(ACCENTS)[(SUBSECTOR_ORDER as readonly string[]).indexOf(s) % 7];
+
+  return (
+    <div>
+      <div className="relative" style={{ height: chartH + 8 }}>
+        {ceilings.every((c) => c === ceilings[0]) && (
+          <div
+            className="absolute inset-x-0 border-t-2 border-dashed"
+            style={{ bottom: (ceilings[0] / maxVal) * chartH + 8, borderColor: ACCENTS.amber }}
+          >
+            <span
+              className="absolute right-0 -top-3.5 whitespace-nowrap text-[9.5px] font-bold"
+              style={{ color: ACCENTS.amber }}
+            >
+              ceiling {fmt(ceilings[0], 0)} PJ
+            </span>
+          </div>
+        )}
+        <div className="flex h-full items-end gap-3 px-1">
+          {MODEL_YEARS.map((y, yi) => (
+            <div key={y} className="flex flex-1 flex-col-reverse items-center gap-px" style={{ height: chartH }}>
+              {SUBSECTOR_ORDER.map((s) => {
+                const v = centralBiomassPj(s, y);
+                if (v <= 0.01) return null;
+                return (
+                  <div
+                    key={s}
+                    title={`${SUBSECTORS[s].name}, ${y}: ${fmt(v, 1)} PJ biomass`}
+                    style={{ height: `${Math.max((v / maxVal) * chartH, 1)}px`, backgroundColor: subsectorColor(s) }}
+                    className="w-[70%] rounded-t-[1px]"
+                  />
+                );
+              })}
+              <span className="sr-only">
+                {y}: {fmt(totalsByYear[yi], 0)} PJ total biomass use, {fmt(ceilings[yi], 0)} PJ ceiling
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-1 flex gap-3 px-1">
+        {MODEL_YEARS.map((y) => (
+          <span key={y} className="flex-1 text-center text-[10px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+            {y}
+          </span>
+        ))}
+      </div>
+      <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
+        {SUBSECTOR_ORDER.map((s) => (
+          <span key={s} className="inline-flex items-center gap-1.5 text-[10.5px] text-[#3D5265]/75 dark:text-[var(--mh-muted)]">
+            <span className="h-2.5 w-2.5 flex-none rounded-sm" style={{ backgroundColor: subsectorColor(s) }} />
+            {SUBSECTORS[s].name}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function BiomassSection({
+  runResult,
+  runHasRunOnce,
+}: {
+  runResult: IndustryLpResult | null;
+  runHasRunOnce: boolean;
+}) {
+  const evidenceEmpty = EU_BIOMASS_SUPPLY.length === 0 && EU_BIOMASS_TRADE.length === 0 && COMPETING_CLAIMS.length === 0;
+  const runBiomass2050 = runResult?.status === 'optimal' ? runResult.biomassPjByYear?.['2050'] : undefined;
+  const runCeiling2050 = runResult?.status === 'optimal' ? runResult.biomassCeilingPjByYear?.['2050'] : undefined;
+
+  return (
+    <section className="mb-8">
+      <h2 className="mb-1 text-[15px] font-bold text-[#3D5265] dark:text-[var(--mh-fg)]">
+        Biomass — a scarce resource?
+      </h2>
+      <p className="mb-3 max-w-3xl text-[12px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+        The model caps total industrial biomass use at {fmt(MODEL_CEILING_PJ, 0)} PJ/yr economy-wide
+        (constraints.csv, <span className="font-mono text-[10.5px]">biomass_pj_max</span>). How does
+        that ceiling compare to what the EU actually supplies, trades, and is being asked to
+        allocate to other sectors — and how much of it does the model's own central pathway
+        actually use?
+      </p>
+
+      <div className={CARD_CLASS}>
+        <h3 className="mb-3 text-[13.5px] font-bold">
+          EU biomass supply, trade &amp; competing claims vs the model&apos;s ceiling
+        </h3>
+        {evidenceEmpty ? (
+          <p className="rounded-md border border-dashed border-[#D6DAE0] bg-[#F8F9FA] px-3 py-4 text-center text-[12px] text-[#3D5265]/55 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-muted)]">
+            Evidence pack loading is empty — sourced supply/trade/claims figures for this chart are
+            still being compiled.
+          </p>
+        ) : (
+          <BiomassComparisonChart />
+        )}
+      </div>
+
+      <div className={`${CARD_CLASS} mt-3`}>
+        <h3 className="mb-1 text-[13.5px] font-bold">Central-run industrial biomass use by subsector, 2025–2050</h3>
+        <p className="mb-3 text-[11px] text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
+          Production share x demand x biomass energy intensity (GJ/t), summed to PJ/yr per
+          subsector, against the {fmt(MODEL_CEILING_PJ, 0)} PJ/yr ceiling (dashed).
+        </p>
+        <BiomassRunChart />
+      </div>
+
+      {BIOMASS_VERDICT.paragraphs.length > 0 && (
+        <div className={`${CARD_CLASS} mt-3`}>
+          <h3 className="mb-1.5 text-[13.5px] font-bold">{BIOMASS_VERDICT.headline || 'Verdict'}</h3>
+          <div className="space-y-2 text-[12.5px] leading-relaxed text-[#3D5265]/85 dark:text-[var(--mh-muted)]">
+            {BIOMASS_VERDICT.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {runHasRunOnce && (
+        <div className="mt-3 rounded-lg border border-[#E6E7E8] bg-[#F8F9FA] px-3 py-2.5 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+          <div className="text-[9px] font-bold uppercase tracking-wide text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+            Your run — 2050 biomass use
+          </div>
+          <div className="text-[13px] font-semibold text-[#3D5265] dark:text-[var(--mh-fg)]">
+            {typeof runBiomass2050 === 'number' && typeof runCeiling2050 === 'number'
+              ? `your run: ${fmt(runBiomass2050, 0)} PJ of ${fmt(runCeiling2050, 0)} PJ ceiling in 2050`
+              : 'Run the model above to see a value'}
+          </div>
+        </div>
+      )}
+    </section>
   );
 }
 
@@ -1238,6 +1802,15 @@ function DownloadCard({
  * ---------------------------------------------------------------------- */
 
 function OptimizationInner() {
+  // Lifted out of RunModelSection purely so the Biomass section (below the sensitivity tornado)
+  // can show the same interactive run's biomass-vs-ceiling KPI alongside its other run KPIs.
+  const [liveResult, setLiveResult] = useState<IndustryLpResult | null>(null);
+  const [liveHasRunOnce, setLiveHasRunOnce] = useState(false);
+  const handleLiveResult = useCallback((result: IndustryLpResult | null, hasRunOnce: boolean) => {
+    setLiveResult(result);
+    setLiveHasRunOnce(hasRunOnce);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-[#3D5265] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
       <SiteHeader />
@@ -1360,9 +1933,13 @@ function OptimizationInner() {
           <h3 className="mb-2 mt-5 text-[13.5px] font-bold text-[#3D5265] dark:text-[var(--mh-fg)]">
             Production mix by technology, 2030 / 2040 / 2050
           </h3>
-          <div className="mb-3">
+          <div className="mb-1.5">
             <CategoryLegend />
           </div>
+          <p className="mb-3 text-[10.5px] text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
+            Diagonally-striped segments mark technologies still on the reference/incumbent pathway
+            (hover any segment for its full name, category and share).
+          </p>
           <div className="grid gap-3 sm:grid-cols-2">
             {SUBSECTOR_ORDER.map((id) => (
               <TechMixCard key={id} subsector={id} />
@@ -1379,7 +1956,7 @@ function OptimizationInner() {
             Every slider and preset below re-solves the full 7-subsector, 25-technology joint
             linear program in your browser, instantly — no server round-trip.
           </p>
-          <RunModelSection />
+          <RunModelSection onResult={handleLiveResult} />
         </section>
 
         {/* 6. Sensitivity analysis */}
@@ -1454,6 +2031,9 @@ function OptimizationInner() {
             </li>
           </ul>
         </section>
+
+        {/* 6b. Biomass — a scarce resource? */}
+        <BiomassSection runResult={liveResult} runHasRunOnce={liveHasRunOnce} />
 
         {/* 7. Key findings */}
         <section className="mb-8">

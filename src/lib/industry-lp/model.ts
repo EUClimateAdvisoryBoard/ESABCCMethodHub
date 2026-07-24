@@ -287,6 +287,7 @@ function applyOverrides(base: BaseData, overrides: IndustryLpOverrides): Data {
   const demand = { ...base.demand };
   const fuelPrice = { ...base.fuelPrice };
   const maxBuildShare = { ...base.maxBuildShare };
+  const biomassPjMax = { ...base.biomassPjMax };
 
   const capexCleanScale = overrides.capexCleanScale ?? 1;
   if (capexCleanScale !== 1) {
@@ -329,6 +330,13 @@ function applyOverrides(base: BaseData, overrides: IndustryLpOverrides): Data {
     for (const t of base.techs) maxBuildShare[t] = base.maxBuildShare[t] * buildRateScale;
   }
 
+  const biomassCeilingScale = overrides.biomassCeilingScale ?? 1;
+  if (biomassCeilingScale !== 1) {
+    for (const y of MODEL_YEARS) {
+      if (y in biomassPjMax) biomassPjMax[y] = base.biomassPjMax[y] * biomassCeilingScale;
+    }
+  }
+
   // Re-derive existing_share_2025 / k_exist inputs from the (possibly demand-scaled) 2025 demand —
   // matches Julia, where k_exist() reads data.demand at BASE_YEAR *after* the demand scenario has
   // already mutated it.
@@ -339,6 +347,7 @@ function applyOverrides(base: BaseData, overrides: IndustryLpOverrides): Data {
     demand,
     fuelPrice,
     maxBuildShare,
+    biomassPjMax,
     carbonPriceChoice: overrides.carbonPricePath ?? 'central',
     carbonScale: overrides.carbonScale ?? 1,
   };
@@ -545,6 +554,8 @@ function extractResults(data: Data, values: Record<string, number>, objective: n
   rows: TechYearResult[];
   co2ByYear: Record<string, number>;
   indirectCo2ByYear: Record<string, number>;
+  biomassPjByYear: Record<string, number>;
+  biomassCeilingPjByYear: Record<string, number>;
   bySubsector: Record<string, SubsectorResult>;
   totalDiscountedCostBeur: number;
 } {
@@ -560,6 +571,7 @@ function extractResults(data: Data, values: Record<string, number>, objective: n
       const preCapture = Q * preCaptureCoef(data, t, y);
       const directCo2 = (1 - data.captureRate[t]) * preCapture;
       const indirectCo2 = Q * getEnergy(data, t, 'electricity') * efLookup(data, 'electricity', y);
+      const biomassPj = Q * getEnergy(data, t, 'biomass');
       const energyCost = Q * CARRIERS.reduce((sum, c) => sum + getEnergy(data, t, c) * fuelPriceLookup(data, c, y), 0);
       const cost =
         crf(DISCOUNT_RATE, data.lifetime[t]) * data.capex[t] * K +
@@ -577,15 +589,20 @@ function extractResults(data: Data, values: Record<string, number>, objective: n
         direct_co2_mt: directCo2,
         indirect_co2_mt: indirectCo2,
         cost_meur: cost,
+        biomass_pj: biomassPj,
       });
     }
   }
 
   const co2ByYear: Record<string, number> = {};
   const indirectCo2ByYear: Record<string, number> = {};
+  const biomassPjByYear: Record<string, number> = {};
+  const biomassCeilingPjByYear: Record<string, number> = {};
   for (const y of MODEL_YEARS) {
     co2ByYear[String(y)] = rows.filter((r) => r.year === y).reduce((s, r) => s + r.direct_co2_mt, 0);
     indirectCo2ByYear[String(y)] = rows.filter((r) => r.year === y).reduce((s, r) => s + r.indirect_co2_mt, 0);
+    biomassPjByYear[String(y)] = rows.filter((r) => r.year === y).reduce((s, r) => s + r.biomass_pj, 0);
+    biomassCeilingPjByYear[String(y)] = data.biomassPjMax[y];
   }
 
   const bySubsector: Record<string, SubsectorResult> = {};
@@ -610,13 +627,20 @@ function extractResults(data: Data, values: Record<string, number>, objective: n
       tech_shares[String(y)] = shares;
     }
 
-    bySubsector[s] = { co2_2050_mt: co2_2050, dominant_tech_2040, tech_shares };
+    const biomass_pj_by_year: Record<string, number> = {};
+    for (const y of MODEL_YEARS) {
+      biomass_pj_by_year[String(y)] = sub.filter((r) => r.year === y).reduce((sum, r) => sum + r.biomass_pj, 0);
+    }
+
+    bySubsector[s] = { co2_2050_mt: co2_2050, dominant_tech_2040, tech_shares, biomass_pj_by_year };
   }
 
   return {
     rows,
     co2ByYear,
     indirectCo2ByYear,
+    biomassPjByYear,
+    biomassCeilingPjByYear,
     bySubsector,
     totalDiscountedCostBeur: objective / 1000.0,
   };
@@ -663,6 +687,7 @@ export const CENTRAL_OVERRIDES: Required<IndustryLpOverrides> = {
   h2PriceScale: 1,
   energyIntensityCleanScale: 1,
   buildRateScale: 1,
+  biomassCeilingScale: 1,
 };
 
 /* ================================================================================================
@@ -706,6 +731,8 @@ export async function buildAndSolve(inputSheets: InputSheets, overrides: Industr
     totalDiscountedCostBeur: extracted.totalDiscountedCostBeur,
     co2ByYear: extracted.co2ByYear,
     indirectCo2ByYear: extracted.indirectCo2ByYear,
+    biomassPjByYear: extracted.biomassPjByYear,
+    biomassCeilingPjByYear: extracted.biomassCeilingPjByYear,
     bySubsector: extracted.bySubsector,
     rows: extracted.rows,
   };
