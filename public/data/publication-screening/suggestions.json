@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T06:44:25.768Z",
+  "generatedAt": "2026-07-24T06:45:08.588Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,53 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/ae8f5a",
+      "title": "Climate variability introduces uncertainty into future emissions pathways",
+      "journal": "Environmental Research Letters",
+      "authors": "James Gilroy Larson, Patrick W Keys, Frances C Moore, Jesse Burkhardt",
+      "published": "2026-07-23",
+      "url": "https://doi.org/10.1088/1748-9326/ae8f5a",
+      "abstract": "Uncertainty in long-term climate outcomes arises not only from physical processes but also from societal responses to climate variability and change. Here we embed a range of temperature anomalies into an empirically-informed, coupled climate–social model to investigate how natural temperature variability, through its influence on societal decision-making, shapes global emissions trajectories. Using Monte Carlo ensembles spanning social, political, and technological parameters, we find that anomalous mid-century warmth strengthens public support for mitigation and accelerates the timing of net-zero emissions by several years, whereas anomalous cooling delays net-zero achievement. The response scales with the magnitude and persistence of variability with stronger and longer-lasting temperature anomalies producing larger shifts in mitigation timing. Across ensembles, high-variability climates are associated with higher emissions pathways and a greater likelihood of failing to reach net zero by 2100. Externally forced cooling events, such as volcanic eruptions, produce sharp impacts, delaying net zero by nearly a decade through temporary declines in public support for climate mitigation. These findings reveal that climate variability can cascade through perception, politics, and technology adoption to alter the pace of global mitigation, highlighting the sensitivity of emissions pathways to short-term climate signals and the role of societal interpretation of those signals.",
+      "suggestedOn": "2026-07-24",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 4,
+          "matched": [
+            "net-zero",
+            "net zero"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.erss.2026.104857",
+      "title": "From industrialization to industrial decarbonization: Divergent steel decarbonization pathways in South Korea and Germany",
+      "journal": "Energy Research &amp; Social Science",
+      "authors": "Soyoung Oh",
+      "published": "2026-09",
+      "url": "https://doi.org/10.1016/j.erss.2026.104857",
+      "abstract": "",
+      "suggestedOn": "2026-07-24",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6,
+          "matched": [
+            "decarbonization"
+          ]
+        },
+        {
+          "projectId": "industry-project",
+          "score": 6.5,
+          "matched": [
+            "industrial decarbonization",
+            "steel"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/ae8d3a",
       "title": "Policy architectures for green hydrogen: A comparative coherence analysis of fifteen Asian national strategies",
