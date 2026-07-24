@@ -58,7 +58,7 @@
               "ammonia_smr_ccs": 0.31
             },
             "2040": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.5399999999999999,
               "ammonia_smr_ccs": 0.46
             },
@@ -68,14 +68,14 @@
               "ammonia_smr_ccs": 0.6428571428571429
             },
             "2050": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.20714285714285716,
               "ammonia_smr_ccs": 0.7928571428571428
             }
           }
         },
         "cement": {
-          "co2_2050_mt": 38.8035333828039,
+          "co2_2050_mt": 38.135796192460816,
           "dominant_tech_2040": "cement_altfuel",
           "tech_shares": {
             "2025": {
@@ -92,32 +92,32 @@
             },
             "2035": {
               "cement_altfuel": 0.3026162790697674,
-              "cement_ccs": 0.1460663429305018,
+              "cement_ccs": 0.1563139222967538,
               "cement_clinkersub": 0.06259644776717263,
-              "cement_ref": 0.48872093023255814
+              "cement_ref": 0.47847335086630616
             },
             "2040": {
               "cement_altfuel": 0.45982142857142855,
-              "cement_ccs": 0.26954411300027564,
-              "cement_clinkersub": 0.12968207747591484,
-              "cement_ref": 0.14095238095238094
+              "cement_ccs": 0.2800356823514384,
+              "cement_clinkersub": 0.11919050812475211,
+              "cement_ref": 0.1409523809523809
             },
             "2045": {
               "cement_altfuel": 0.47103658536585363,
-              "cement_ccs": 0.3961183596588189,
-              "cement_clinkersub": 0.1328450549753274,
+              "cement_ccs": 0.4068658209453759,
+              "cement_clinkersub": 0.12209759368877046,
               "cement_ref": -0.0
             },
             "2050": {
-              "cement_altfuel": 0.47397868134971066,
-              "cement_ccs": 0.5260213186502893,
+              "cement_altfuel": 0.4629625335309897,
+              "cement_ccs": 0.5370374664690103,
               "cement_clinkersub": 0.0,
               "cement_ref": 0.0
             }
           }
         },
         "glass": {
-          "co2_2050_mt": 7.469999999999999,
+          "co2_2050_mt": 6.940799999999999,
           "dominant_tech_2040": "glass_ng",
           "tech_shares": {
             "2025": {
@@ -127,33 +127,33 @@
             },
             "2030": {
               "glass_elec": -0.0,
-              "glass_hybrid": -0.0,
-              "glass_ng": 1.0
+              "glass_hybrid": 0.09428571428571421,
+              "glass_ng": 0.9057142857142858
             },
             "2035": {
-              "glass_elec": 0.027941176470588216,
-              "glass_hybrid": 0.2,
-              "glass_ng": 0.7720588235294118
+              "glass_elec": 0.2,
+              "glass_hybrid": 0.12499999999999989,
+              "glass_ng": 0.675
             },
             "2040": {
-              "glass_elec": 0.22794117647058823,
-              "glass_hybrid": 0.35441176470588226,
+              "glass_elec": 0.4,
+              "glass_hybrid": 0.18235294117647047,
               "glass_ng": 0.4176470588235295
             },
             "2045": {
-              "glass_elec": 0.4348484848484849,
-              "glass_hybrid": 0.5651515151515151,
+              "glass_elec": 0.6121212121212122,
+              "glass_hybrid": 0.38787878787878777,
               "glass_ng": 0.0
             },
             "2050": {
-              "glass_elec": 0.6060606060606062,
-              "glass_hybrid": 0.3939393939393938,
-              "glass_ng": -0.0
+              "glass_elec": 0.7121212121212122,
+              "glass_hybrid": 0.2878787878787879,
+              "glass_ng": 0.0
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 19.777634841208126,
+          "co2_2050_mt": 22.308265,
           "dominant_tech_2040": "hvc_ref",
           "tech_shares": {
             "2025": {
@@ -170,32 +170,32 @@
             },
             "2035": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.04413059558053537,
+              "hvc_ccs": -0.0,
               "hvc_elec": -0.0,
-              "hvc_ref": 0.9558694044194647
+              "hvc_ref": 1.0
             },
             "2040": {
-              "hvc_bio": 0.0,
-              "hvc_ccs": 0.1931043026600578,
-              "hvc_elec": 0.10581395348837211,
-              "hvc_ref": 0.7010817438515701
+              "hvc_bio": -0.0,
+              "hvc_ccs": -0.0,
+              "hvc_elec": 0.15,
+              "hvc_ref": 0.85
             },
             "2045": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.2887155685086929,
-              "hvc_elec": 0.2534090909090909,
-              "hvc_ref": 0.45787534058221624
+              "hvc_ccs": 0.10000000000000005,
+              "hvc_elec": 0.2965909090909091,
+              "hvc_ref": 0.6034090909090909
             },
             "2050": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.2822996669862775,
-              "hvc_elec": 0.26999999999999996,
-              "hvc_ref": 0.44770033301372253
+              "hvc_ccs": 0.09777777777777782,
+              "hvc_elec": 0.31222222222222223,
+              "hvc_ref": 0.59
             }
           }
         },
         "paper": {
-          "co2_2050_mt": 1.8866399999999999,
+          "co2_2050_mt": 1.9728800000000004,
           "dominant_tech_2040": "paper_bio",
           "tech_shares": {
             "2025": {
@@ -205,27 +205,27 @@
             },
             "2030": {
               "paper_bio": 0.30416666666666664,
-              "paper_elec": -0.0,
-              "paper_ref": 0.6958333333333333
+              "paper_elec": 0.15,
+              "paper_ref": 0.5458333333333334
             },
             "2035": {
               "paper_bio": 0.46285714285714286,
-              "paper_elec": 0.15,
-              "paper_ref": 0.3871428571428572
+              "paper_elec": 0.30428571428571427,
+              "paper_ref": 0.23285714285714293
             },
             "2040": {
               "paper_bio": 0.626470588235294,
-              "paper_elec": 0.3044117647058823,
-              "paper_ref": 0.06911764705882362
+              "paper_elec": 0.35441176470588237,
+              "paper_ref": 0.019117647058823593
             },
             "2045": {
-              "paper_bio": 0.6863636363636363,
-              "paper_elec": 0.3136363636363636,
+              "paper_bio": 0.6348484848484848,
+              "paper_elec": 0.36515151515151517,
               "paper_ref": 0.0
             },
             "2050": {
-              "paper_bio": 0.6765625,
-              "paper_elec": 0.3234375,
+              "paper_bio": 0.6421874999999999,
+              "paper_elec": 0.3578125000000001,
               "paper_ref": 0.0
             }
           }
@@ -265,32 +265,32 @@
             "2045": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": -0.0,
+              "steel_h2dri_eaf": 0.0,
               "steel_ngdri_eaf": 0.49844827586206897,
               "steel_scrap_eaf": 0.501551724137931
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.00614035087719307,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.49403508771929816,
-              "steel_scrap_eaf": 0.4998245614035087
+              "steel_scrap_eaf": 0.5059649122807018
             }
           }
         }
       },
-      "co2_2030_mt": 306.3194115510378,
-      "co2_2040_mt": 148.8271123922458,
-      "co2_2050_mt": 105.384301224012,
+      "co2_2030_mt": 301.53141155103776,
+      "co2_2040_mt": 148.3584699401101,
+      "co2_2050_mt": 106.8042341924608,
       "total_direct_co2_by_year": {
         "2025": 389.3467800000001,
-        "2030": 306.3194115510378,
-        "2035": 207.3724632922458,
-        "2040": 148.8271123922458,
-        "2045": 119.18982819224583,
-        "2050": 105.384301224012
+        "2030": 301.53141155103776,
+        "2035": 201.5481282350699,
+        "2040": 148.3584699401101,
+        "2045": 120.18726574011012,
+        "2050": 106.8042341924608
       },
-      "total_discounted_cost_beur": 2705.328107975138
+      "total_discounted_cost_beur": 2695.166200743276
     },
     "capex_low": {
       "by_subsector": {
@@ -331,7 +331,7 @@
           }
         },
         "ammonia": {
-          "co2_2050_mt": 7.58352,
+          "co2_2050_mt": 12.293120000000002,
           "dominant_tech_2040": "ammonia_smr",
           "tech_shares": {
             "2025": {
@@ -350,24 +350,24 @@
               "ammonia_smr_ccs": 0.31
             },
             "2040": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.5399999999999999,
               "ammonia_smr_ccs": 0.46
             },
             "2045": {
-              "ammonia_h2": 0.06428571428571431,
-              "ammonia_smr": 0.2928571428571428,
+              "ammonia_h2": -0.0,
+              "ammonia_smr": 0.35714285714285715,
               "ammonia_smr_ccs": 0.6428571428571429
             },
             "2050": {
-              "ammonia_h2": 0.20714285714285716,
-              "ammonia_smr": 0.0,
+              "ammonia_h2": 0.0,
+              "ammonia_smr": 0.20714285714285716,
               "ammonia_smr_ccs": 0.7928571428571428
             }
           }
         },
         "cement": {
-          "co2_2050_mt": 38.8035333828039,
+          "co2_2050_mt": 32.5463888,
           "dominant_tech_2040": "cement_altfuel",
           "tech_shares": {
             "2025": {
@@ -385,31 +385,31 @@
             "2035": {
               "cement_altfuel": 0.3026162790697674,
               "cement_ccs": 0.13032848262626862,
-              "cement_clinkersub": 0.1266662152090331,
-              "cement_ref": 0.44038902309493083
+              "cement_clinkersub": 0.06259644776717263,
+              "cement_ref": 0.5044587905367913
             },
             "2040": {
-              "cement_altfuel": 0.45982142857142855,
-              "cement_ccs": 0.26954411300027564,
-              "cement_clinkersub": 0.12968207747591484,
-              "cement_ref": 0.14095238095238094
+              "cement_altfuel": 0.4271036368097996,
+              "cement_ccs": 0.3678571428571429,
+              "cement_clinkersub": 0.06408683938067675,
+              "cement_ref": 0.14095238095238088
             },
             "2045": {
-              "cement_altfuel": 0.47103658536585363,
-              "cement_ccs": 0.3961183596588189,
-              "cement_clinkersub": 0.1328450549753274,
+              "cement_altfuel": 0.4375207986832093,
+              "cement_ccs": 0.49682926829268287,
+              "cement_clinkersub": 0.06564993302410788,
               "cement_ref": 0.0
             },
             "2050": {
-              "cement_altfuel": 0.47397868134971066,
-              "cement_ccs": 0.5260213186502893,
+              "cement_altfuel": 0.37075,
+              "cement_ccs": 0.62925,
               "cement_clinkersub": 0.0,
               "cement_ref": 0.0
             }
           }
         },
         "glass": {
-          "co2_2050_mt": 7.469999999999999,
+          "co2_2050_mt": 6.441839999999999,
           "dominant_tech_2040": "glass_elec",
           "tech_shares": {
             "2025": {
@@ -429,8 +429,8 @@
             },
             "2040": {
               "glass_elec": 0.4,
-              "glass_hybrid": 0.38823529411764696,
-              "glass_ng": 0.21176470588235302
+              "glass_hybrid": 0.29117647058823526,
+              "glass_ng": 0.3088235294117647
             },
             "2045": {
               "glass_elec": 0.6121212121212122,
@@ -438,14 +438,14 @@
               "glass_ng": 0.0
             },
             "2050": {
-              "glass_elec": 0.6060606060606062,
-              "glass_hybrid": 0.3939393939393938,
+              "glass_elec": 0.8121212121212122,
+              "glass_hybrid": 0.18787878787878776,
               "glass_ng": 0.0
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 10.3169425,
+          "co2_2050_mt": 9.9349475,
           "dominant_tech_2040": "hvc_elec",
           "tech_shares": {
             "2025": {
@@ -468,20 +468,20 @@
             },
             "2040": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.2593023255813953,
-              "hvc_elec": 0.3953488372093023,
+              "hvc_ccs": 0.21511627906976744,
+              "hvc_elec": 0.4395348837209302,
               "hvc_ref": 0.3453488372093024
             },
             "2045": {
-              "hvc_bio": -0.0,
-              "hvc_ccs": 0.35340909090909095,
-              "hvc_elec": 0.5363636363636363,
+              "hvc_bio": 0.0,
+              "hvc_ccs": 0.3102272727272727,
+              "hvc_elec": 0.5795454545454546,
               "hvc_ref": 0.11022727272727276
             },
             "2050": {
               "hvc_bio": 0.0,
-              "hvc_ccs": 0.34555555555555556,
-              "hvc_elec": 0.5466666666666666,
+              "hvc_ccs": 0.3033333333333333,
+              "hvc_elec": 0.5888888888888889,
               "hvc_ref": 0.1077777777777778
             }
           }
@@ -511,8 +511,8 @@
               "paper_ref": 0.0
             },
             "2045": {
-              "paper_bio": 0.6454545454545454,
-              "paper_elec": 0.3545454545454546,
+              "paper_bio": 0.6151515151515151,
+              "paper_elec": 0.38484848484848494,
               "paper_ref": 0.0
             },
             "2050": {
@@ -523,8 +523,8 @@
           }
         },
         "steel": {
-          "co2_2050_mt": 22.629599999999996,
-          "dominant_tech_2040": "steel_ngdri_eaf",
+          "co2_2050_mt": 23.69248,
+          "dominant_tech_2040": "steel_scrap_eaf",
           "tech_shares": {
             "2025": {
               "steel_bfbof": 0.7000000000000001,
@@ -534,55 +534,55 @@
               "steel_scrap_eaf": 0.15
             },
             "2030": {
-              "steel_bfbof": 0.31147540983606564,
-              "steel_bfbof_ccs": -0.0,
-              "steel_h2dri_eaf": 0.08360655737704914,
+              "steel_bfbof": 0.3950819672131147,
+              "steel_bfbof_ccs": 0.0,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.30245901639344264,
               "steel_scrap_eaf": 0.30245901639344264
             },
             "2035": {
-              "steel_bfbof": 0.0,
+              "steel_bfbof": 0.08499999999999996,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.08499999999999996,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.45749999999999996,
               "steel_scrap_eaf": 0.45749999999999996
             },
             "2040": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.06949152542372884,
-              "steel_ngdri_eaf": 0.4652542372881356,
-              "steel_scrap_eaf": 0.4652542372881356
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.49,
+              "steel_scrap_eaf": 0.51
             },
             "2045": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.08793103448275859,
-              "steel_ngdri_eaf": 0.4732758620689655,
-              "steel_scrap_eaf": 0.43879310344827593
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.49844827586206897,
+              "steel_scrap_eaf": 0.501551724137931
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.09561403508771935,
-              "steel_ngdri_eaf": 0.46842105263157885,
-              "steel_scrap_eaf": 0.4359649122807018
+              "steel_h2dri_eaf": -0.0,
+              "steel_ngdri_eaf": 0.49403508771929816,
+              "steel_scrap_eaf": 0.5059649122807018
             }
           }
         }
       },
-      "co2_2030_mt": 277.87342655103777,
-      "co2_2040_mt": 133.8197810510377,
-      "co2_2050_mt": 89.29167588280389,
+      "co2_2030_mt": 296.87602655103774,
+      "co2_2040_mt": 128.08382546823378,
+      "co2_2050_mt": 87.3968563,
       "total_direct_co2_by_year": {
         "2025": 389.3467800000001,
-        "2030": 277.87342655103777,
-        "2035": 172.81172434469858,
-        "2040": 133.8197810510377,
-        "2045": 105.4802828510377,
-        "2050": 89.29167588280389
+        "2030": 296.87602655103774,
+        "2035": 193.1455403446986,
+        "2040": 128.08382546823378,
+        "2045": 100.72992726823381,
+        "2050": 87.3968563
       },
-      "total_discounted_cost_beur": 2647.304240193867
+      "total_discounted_cost_beur": 2637.6417390681863
     },
     "central": {
       "by_subsector": {
@@ -623,7 +623,7 @@
           }
         },
         "ammonia": {
-          "co2_2050_mt": 10.831520000000001,
+          "co2_2050_mt": 12.293120000000002,
           "dominant_tech_2040": "ammonia_smr",
           "tech_shares": {
             "2025": {
@@ -642,24 +642,24 @@
               "ammonia_smr_ccs": 0.31
             },
             "2040": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.5399999999999999,
               "ammonia_smr_ccs": 0.46
             },
             "2045": {
-              "ammonia_h2": 0.06428571428571431,
-              "ammonia_smr": 0.2928571428571428,
+              "ammonia_h2": -0.0,
+              "ammonia_smr": 0.35714285714285715,
               "ammonia_smr_ccs": 0.6428571428571429
             },
             "2050": {
-              "ammonia_h2": 0.06428571428571431,
-              "ammonia_smr": 0.14285714285714285,
+              "ammonia_h2": 0.0,
+              "ammonia_smr": 0.20714285714285716,
               "ammonia_smr_ccs": 0.7928571428571428
             }
           }
         },
         "cement": {
-          "co2_2050_mt": 38.8035333828039,
+          "co2_2050_mt": 38.135796192460816,
           "dominant_tech_2040": "cement_altfuel",
           "tech_shares": {
             "2025": {
@@ -676,33 +676,33 @@
             },
             "2035": {
               "cement_altfuel": 0.3026162790697674,
-              "cement_ccs": 0.1460663429305018,
-              "cement_clinkersub": 0.1266662152090331,
+              "cement_ccs": 0.1563139222967538,
+              "cement_clinkersub": 0.11641863584278114,
               "cement_ref": 0.4246511627906977
             },
             "2040": {
               "cement_altfuel": 0.45982142857142855,
-              "cement_ccs": 0.26954411300027564,
-              "cement_clinkersub": 0.12968207747591484,
-              "cement_ref": 0.14095238095238094
+              "cement_ccs": 0.2800356823514384,
+              "cement_clinkersub": 0.11919050812475211,
+              "cement_ref": 0.1409523809523809
             },
             "2045": {
               "cement_altfuel": 0.47103658536585363,
-              "cement_ccs": 0.3961183596588189,
-              "cement_clinkersub": 0.1328450549753274,
+              "cement_ccs": 0.4068658209453759,
+              "cement_clinkersub": 0.12209759368877046,
               "cement_ref": 0.0
             },
             "2050": {
-              "cement_altfuel": 0.47397868134971066,
-              "cement_ccs": 0.5260213186502893,
+              "cement_altfuel": 0.4629625335309897,
+              "cement_ccs": 0.5370374664690103,
               "cement_clinkersub": 0.0,
               "cement_ref": 0.0
             }
           }
         },
         "glass": {
-          "co2_2050_mt": 7.469999999999999,
-          "dominant_tech_2040": "glass_ng",
+          "co2_2050_mt": 6.441839999999999,
+          "dominant_tech_2040": "glass_elec",
           "tech_shares": {
             "2025": {
               "glass_elec": 0.0,
@@ -711,33 +711,33 @@
             },
             "2030": {
               "glass_elec": -0.0,
-              "glass_hybrid": -0.0,
-              "glass_ng": 1.0
+              "glass_hybrid": 0.2,
+              "glass_ng": 0.8
             },
             "2035": {
               "glass_elec": 0.2,
-              "glass_hybrid": 0.027941176470588216,
-              "glass_ng": 0.7720588235294118
+              "glass_hybrid": 0.23382352941176468,
+              "glass_ng": 0.5661764705882353
             },
             "2040": {
               "glass_elec": 0.4,
-              "glass_hybrid": 0.1823529411764705,
-              "glass_ng": 0.4176470588235295
+              "glass_hybrid": 0.29117647058823526,
+              "glass_ng": 0.3088235294117647
             },
             "2045": {
               "glass_elec": 0.6121212121212122,
               "glass_hybrid": 0.38787878787878777,
-              "glass_ng": 0.0
+              "glass_ng": -0.0
             },
             "2050": {
-              "glass_elec": 0.6060606060606062,
-              "glass_hybrid": 0.3939393939393938,
+              "glass_elec": 0.8121212121212122,
+              "glass_hybrid": 0.18787878787878776,
               "glass_ng": 0.0
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 15.64546484120813,
+          "co2_2050_mt": 16.1065275,
           "dominant_tech_2040": "hvc_ref",
           "tech_shares": {
             "2025": {
@@ -754,27 +754,27 @@
             },
             "2035": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.04413059558053537,
+              "hvc_ccs": -0.0,
               "hvc_elec": 0.15,
-              "hvc_ref": 0.8058694044194648
+              "hvc_ref": 0.8500000000000001
             },
             "2040": {
-              "hvc_bio": 0.0,
-              "hvc_ccs": 0.1931043026600578,
-              "hvc_elec": 0.2523255813953488,
-              "hvc_ref": 0.5545701159445934
+              "hvc_bio": -0.0,
+              "hvc_ccs": 0.10581395348837203,
+              "hvc_elec": 0.29651162790697677,
+              "hvc_ref": 0.5976744186046512
             },
             "2045": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.2887155685086929,
-              "hvc_elec": 0.396590909090909,
-              "hvc_ref": 0.3146935224003981
+              "hvc_ccs": 0.20340909090909082,
+              "hvc_elec": 0.4397727272727273,
+              "hvc_ref": 0.35681818181818187
             },
             "2050": {
               "hvc_bio": 0.0,
-              "hvc_ccs": 0.2822996669862775,
-              "hvc_elec": 0.4099999999999999,
-              "hvc_ref": 0.3077003330137226
+              "hvc_ccs": 0.19888888888888878,
+              "hvc_elec": 0.45222222222222225,
+              "hvc_ref": 0.34888888888888897
             }
           }
         },
@@ -789,22 +789,22 @@
             },
             "2030": {
               "paper_bio": 0.30416666666666664,
-              "paper_elec": 0.03750000000000009,
-              "paper_ref": 0.6583333333333332
+              "paper_elec": 0.15,
+              "paper_ref": 0.5458333333333334
             },
             "2035": {
               "paper_bio": 0.46285714285714286,
-              "paper_elec": 0.18857142857142867,
-              "paper_ref": 0.3485714285714285
+              "paper_elec": 0.30428571428571427,
+              "paper_ref": 0.23285714285714293
             },
             "2040": {
               "paper_bio": 0.626470588235294,
-              "paper_elec": 0.34411764705882364,
-              "paper_ref": 0.029411764705882353
+              "paper_elec": 0.37352941176470594,
+              "paper_ref": 0.0
             },
             "2045": {
-              "paper_bio": 0.6454545454545454,
-              "paper_elec": 0.3545454545454546,
+              "paper_bio": 0.6151515151515151,
+              "paper_elec": 0.38484848484848494,
               "paper_ref": 0.0
             },
             "2050": {
@@ -815,7 +815,7 @@
           }
         },
         "steel": {
-          "co2_2050_mt": 22.629599999999996,
+          "co2_2050_mt": 23.69248,
           "dominant_tech_2040": "steel_scrap_eaf",
           "tech_shares": {
             "2025": {
@@ -827,54 +827,54 @@
             },
             "2030": {
               "steel_bfbof": 0.3950819672131147,
-              "steel_bfbof_ccs": -0.0,
+              "steel_bfbof_ccs": 0.0,
               "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.30245901639344264,
               "steel_scrap_eaf": 0.30245901639344264
             },
             "2035": {
-              "steel_bfbof": 0.06066666666666662,
-              "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.02433333333333335,
+              "steel_bfbof": 0.08499999999999996,
+              "steel_bfbof_ccs": -0.0,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.45749999999999996,
               "steel_scrap_eaf": 0.45749999999999996
             },
             "2040": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.024745762711864423,
-              "steel_ngdri_eaf": 0.4652542372881356,
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.49,
               "steel_scrap_eaf": 0.51
             },
             "2045": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.025172413793103462,
-              "steel_ngdri_eaf": 0.4732758620689655,
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.49844827586206897,
               "steel_scrap_eaf": 0.501551724137931
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.03175438596491238,
-              "steel_ngdri_eaf": 0.46842105263157885,
-              "steel_scrap_eaf": 0.4998245614035087
+              "steel_h2dri_eaf": -0.0,
+              "steel_ngdri_eaf": 0.49403508771929816,
+              "steel_scrap_eaf": 0.5059649122807018
             }
           }
         }
       },
-      "co2_2030_mt": 305.2610115510377,
-      "co2_2040_mt": 141.68914239224583,
-      "co2_2050_mt": 97.86819822401202,
+      "co2_2030_mt": 300.9098115510377,
+      "co2_2040_mt": 141.0255324401101,
+      "co2_2050_mt": 99.1578436924608,
       "total_direct_co2_by_year": {
         "2025": 389.3467800000001,
-        "2030": 305.2610115510377,
-        "2035": 194.52619729224588,
-        "2040": 141.68914239224583,
-        "2045": 111.75449819224582,
-        "2050": 97.86819822401202
+        "2030": 300.9098115510377,
+        "2035": 195.67606234011015,
+        "2040": 141.0255324401101,
+        "2045": 114.03648824011012,
+        "2050": 99.1578436924608
       },
-      "total_discounted_cost_beur": 2678.031496125437
+      "total_discounted_cost_beur": 2667.223471665225
     },
     "co2_high": {
       "by_subsector": {
@@ -916,7 +916,7 @@
         },
         "ammonia": {
           "co2_2050_mt": 7.58352,
-          "dominant_tech_2040": "ammonia_smr_ccs",
+          "dominant_tech_2040": "ammonia_smr",
           "tech_shares": {
             "2025": {
               "ammonia_h2": 0.0,
@@ -929,18 +929,18 @@
               "ammonia_smr_ccs": 0.15
             },
             "2035": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.69,
               "ammonia_smr_ccs": 0.31
             },
             "2040": {
-              "ammonia_h2": 0.11666666666666667,
-              "ammonia_smr": 0.4233333333333333,
+              "ammonia_h2": -0.0,
+              "ammonia_smr": 0.5399999999999999,
               "ammonia_smr_ccs": 0.46
             },
             "2045": {
-              "ammonia_h2": 0.20714285714285716,
-              "ammonia_smr": 0.14999999999999997,
+              "ammonia_h2": 0.06428571428571431,
+              "ammonia_smr": 0.2928571428571428,
               "ammonia_smr_ccs": 0.6428571428571429
             },
             "2050": {
@@ -951,7 +951,7 @@
           }
         },
         "cement": {
-          "co2_2050_mt": 38.8035333828039,
+          "co2_2050_mt": 32.5463888,
           "dominant_tech_2040": "cement_altfuel",
           "tech_shares": {
             "2025": {
@@ -964,36 +964,36 @@
               "cement_altfuel": 0.3025714285714286,
               "cement_ccs": 0.025619491337407478,
               "cement_clinkersub": -0.0,
-              "cement_ref": 0.6718090800911639
+              "cement_ref": 0.671809080091164
             },
             "2035": {
               "cement_altfuel": 0.4578488372093023,
-              "cement_ccs": 0.13032848262626862,
+              "cement_ccs": 0.13530441788231898,
               "cement_clinkersub": -0.0,
-              "cement_ref": 0.4118226801644291
+              "cement_ref": 0.4068467449083787
             },
             "2040": {
-              "cement_altfuel": 0.5895035060473435,
-              "cement_ccs": 0.26954411300027564,
+              "cement_altfuel": 0.49119047619047623,
+              "cement_ccs": 0.3678571428571428,
               "cement_clinkersub": -0.0,
-              "cement_ref": 0.14095238095238094
+              "cement_ref": 0.1409523809523809
             },
             "2045": {
-              "cement_altfuel": 0.6038816403411811,
-              "cement_ccs": 0.3961183596588189,
+              "cement_altfuel": 0.5031707317073172,
+              "cement_ccs": 0.49682926829268287,
               "cement_clinkersub": 0.0,
               "cement_ref": 0.0
             },
             "2050": {
-              "cement_altfuel": 0.47397868134971066,
-              "cement_ccs": 0.5260213186502893,
+              "cement_altfuel": 0.37075,
+              "cement_ccs": 0.62925,
               "cement_clinkersub": 0.0,
               "cement_ref": 0.0
             }
           }
         },
         "glass": {
-          "co2_2050_mt": 7.469999999999999,
+          "co2_2050_mt": 6.441839999999999,
           "dominant_tech_2040": "glass_elec",
           "tech_shares": {
             "2025": {
@@ -1013,23 +1013,23 @@
             },
             "2040": {
               "glass_elec": 0.6058823529411765,
-              "glass_hybrid": 0.27941176470588236,
-              "glass_ng": 0.11470588235294113
+              "glass_hybrid": 0.17058823529411757,
+              "glass_ng": 0.22352941176470592
             },
             "2045": {
-              "glass_elec": 0.6121212121212122,
-              "glass_hybrid": 0.38787878787878777,
+              "glass_elec": 0.8242424242424243,
+              "glass_hybrid": 0.17575757575757567,
               "glass_ng": 0.0
             },
             "2050": {
-              "glass_elec": 0.6060606060606062,
-              "glass_hybrid": 0.3939393939393938,
+              "glass_elec": 0.8121212121212122,
+              "glass_hybrid": 0.18787878787878776,
               "glass_ng": 0.0
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 6.7538325,
+          "co2_2050_mt": 6.572887499999999,
           "dominant_tech_2040": "hvc_elec",
           "tech_shares": {
             "2025": {
@@ -1046,26 +1046,26 @@
             },
             "2035": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.11190476190476188,
+              "hvc_ccs": 0.09047619047619049,
               "hvc_elec": 0.29642857142857143,
-              "hvc_ref": 0.5916666666666667
+              "hvc_ref": 0.6130952380952381
             },
             "2040": {
-              "hvc_bio": -0.0,
-              "hvc_ccs": 0.21511627906976744,
+              "hvc_bio": 0.0,
+              "hvc_ccs": 0.19418604651162794,
               "hvc_elec": 0.4395348837209302,
-              "hvc_ref": 0.3453488372093024
+              "hvc_ref": 0.36627906976744184
             },
             "2045": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.3102272727272727,
+              "hvc_ccs": 0.2897727272727273,
               "hvc_elec": 0.5795454545454546,
-              "hvc_ref": 0.11022727272727276
+              "hvc_ref": 0.13068181818181818
             },
             "2050": {
               "hvc_bio": 0.0,
-              "hvc_ccs": 0.3033333333333333,
-              "hvc_elec": 0.6966666666666667,
+              "hvc_ccs": 0.2833333333333333,
+              "hvc_elec": 0.7166666666666667,
               "hvc_ref": 0.0
             }
           }
@@ -1107,13 +1107,13 @@
           }
         },
         "steel": {
-          "co2_2050_mt": 16.4052,
-          "dominant_tech_2040": "steel_ngdri_eaf",
+          "co2_2050_mt": 19.94328,
+          "dominant_tech_2040": "steel_scrap_eaf",
           "tech_shares": {
             "2025": {
               "steel_bfbof": 0.7000000000000001,
               "steel_bfbof_ccs": -0.0,
-              "steel_h2dri_eaf": -0.0,
+              "steel_h2dri_eaf": 0.0,
               "steel_ngdri_eaf": 0.15,
               "steel_scrap_eaf": 0.15
             },
@@ -1134,39 +1134,39 @@
             "2040": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.06949152542372884,
+              "steel_h2dri_eaf": 0.024745762711864423,
               "steel_ngdri_eaf": 0.4652542372881356,
-              "steel_scrap_eaf": 0.4652542372881356
+              "steel_scrap_eaf": 0.51
             },
             "2045": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.08793103448275859,
-              "steel_ngdri_eaf": 0.44913793103448285,
-              "steel_scrap_eaf": 0.4629310344827586
+              "steel_h2dri_eaf": 0.018275862068965556,
+              "steel_ngdri_eaf": 0.4732758620689655,
+              "steel_scrap_eaf": 0.508448275862069
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.2210526315789474,
-              "steel_ngdri_eaf": 0.31842105263157894,
-              "steel_scrap_eaf": 0.4605263157894737
+              "steel_h2dri_eaf": 0.08947368421052627,
+              "steel_ngdri_eaf": 0.4036842105263158,
+              "steel_scrap_eaf": 0.5068421052631579
             }
           }
         }
       },
       "co2_2030_mt": 272.86611050416496,
-      "co2_2040_mt": 127.5712150828039,
-      "co2_2050_mt": 79.50416588280389,
+      "co2_2040_mt": 125.1870355,
+      "co2_2050_mt": 75.5759963,
       "total_direct_co2_by_year": {
         "2025": 384.39126000000005,
         "2030": 272.86611050416496,
-        "2035": 169.13562429782579,
-        "2040": 127.5712150828039,
-        "2045": 99.41931688280391,
-        "2050": 79.50416588280389
+        "2035": 169.06190719172668,
+        "2040": 125.1870355,
+        "2045": 96.7803373,
+        "2050": 75.5759963
       },
-      "total_discounted_cost_beur": 2849.2784374718603
+      "total_discounted_cost_beur": 2842.1286999015933
     },
     "co2_low": {
       "by_subsector": {
@@ -1231,19 +1231,19 @@
               "ammonia_smr_ccs": 0.46
             },
             "2045": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.35714285714285715,
               "ammonia_smr_ccs": 0.6428571428571429
             },
             "2050": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.20714285714285716,
               "ammonia_smr_ccs": 0.7928571428571428
             }
           }
         },
         "cement": {
-          "co2_2050_mt": 51.887316799999994,
+          "co2_2050_mt": 41.670933382803895,
           "dominant_tech_2040": "cement_clinkersub",
           "tech_shares": {
             "2025": {
@@ -1253,39 +1253,39 @@
               "cement_ref": 1.0
             },
             "2030": {
-              "cement_altfuel": 0.08714285714285715,
-              "cement_ccs": -0.0,
+              "cement_altfuel": 0.06152336580544967,
+              "cement_ccs": 0.025619491337407478,
               "cement_clinkersub": 0.15,
               "cement_ref": 0.7628571428571429
             },
             "2035": {
-              "cement_altfuel": 0.08866279069767442,
-              "cement_ccs": 0.12000000000000001,
+              "cement_altfuel": 0.06259644776717263,
+              "cement_ccs": 0.1460663429305018,
               "cement_clinkersub": 0.2738953488372093,
               "cement_ref": 0.5174418604651163
             },
             "2040": {
-              "cement_altfuel": 0.09077380952380952,
-              "cement_ccs": 0.24285714285714283,
-              "cement_clinkersub": 0.40148809523809526,
+              "cement_altfuel": 0.06408683938067673,
+              "cement_ccs": 0.26954411300027564,
+              "cement_clinkersub": 0.40148809523809537,
               "cement_ref": 0.2648809523809524
             },
             "2045": {
-              "cement_altfuel": 0.21993902439024396,
-              "cement_ccs": 0.36878048780487804,
-              "cement_clinkersub": 0.4112804878048781,
+              "cement_altfuel": 0.19260115253630292,
+              "cement_ccs": 0.3961183596588189,
+              "cement_clinkersub": 0.41128048780487814,
               "cement_ref": -0.0
             },
             "2050": {
-              "cement_altfuel": 0.22543750000000004,
-              "cement_ccs": 0.378,
-              "cement_clinkersub": 0.3965625,
+              "cement_altfuel": 0.19741618134971048,
+              "cement_ccs": 0.5260213186502893,
+              "cement_clinkersub": 0.27656250000000016,
               "cement_ref": 0.0
             }
           }
         },
         "glass": {
-          "co2_2050_mt": 9.380159999999998,
+          "co2_2050_mt": 8.75772,
           "dominant_tech_2040": "glass_ng",
           "tech_shares": {
             "2025": {
@@ -1304,24 +1304,24 @@
               "glass_ng": 1.0
             },
             "2040": {
-              "glass_elec": -0.0,
+              "glass_elec": 0.057352941176470565,
               "glass_hybrid": 0.2,
-              "glass_ng": 0.7999999999999999
+              "glass_ng": 0.7426470588235294
             },
             "2045": {
-              "glass_elec": 0.2,
+              "glass_elec": 0.2590909090909091,
               "glass_hybrid": 0.4060606060606061,
-              "glass_ng": 0.3939393939393938
+              "glass_ng": 0.3348484848484848
             },
             "2050": {
-              "glass_elec": 0.4,
-              "glass_hybrid": 0.4409090909090909,
-              "glass_ng": 0.15909090909090898
+              "glass_elec": 0.4590909090909091,
+              "glass_hybrid": 0.44090909090909103,
+              "glass_ng": 0.09999999999999991
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 27.1343575,
+          "co2_2050_mt": 32.8691,
           "dominant_tech_2040": "hvc_ref",
           "tech_shares": {
             "2025": {
@@ -1344,26 +1344,26 @@
             },
             "2040": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.15,
+              "hvc_ccs": -0.0,
               "hvc_elec": -0.0,
-              "hvc_ref": 0.85
+              "hvc_ref": 1.0
             },
             "2045": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.2965909090909091,
+              "hvc_ccs": -0.0,
               "hvc_elec": -0.0,
-              "hvc_ref": 0.7034090909090909
+              "hvc_ref": 1.0
             },
             "2050": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.31222222222222223,
-              "hvc_elec": -0.0,
-              "hvc_ref": 0.6877777777777777
+              "hvc_ccs": -0.0,
+              "hvc_elec": 0.022222222222222223,
+              "hvc_ref": 0.9777777777777777
             }
           }
         },
         "paper": {
-          "co2_2050_mt": 1.6044000000000003,
+          "co2_2050_mt": 1.8866399999999999,
           "dominant_tech_2040": "paper_bio",
           "tech_shares": {
             "2025": {
@@ -1378,22 +1378,22 @@
             },
             "2035": {
               "paper_bio": 0.46285714285714286,
-              "paper_elec": 0.008571428571428591,
-              "paper_ref": 0.5285714285714286
+              "paper_elec": 0.15,
+              "paper_ref": 0.3871428571428572
             },
             "2040": {
               "paper_bio": 0.626470588235294,
-              "paper_elec": 0.15882352941176472,
-              "paper_ref": 0.21470588235294125
+              "paper_elec": 0.3044117647058823,
+              "paper_ref": 0.06911764705882362
             },
             "2045": {
-              "paper_bio": 0.7954545454545453,
-              "paper_elec": 0.20454545454545464,
+              "paper_bio": 0.6863636363636363,
+              "paper_elec": 0.3136363636363636,
               "paper_ref": 0.0
             },
             "2050": {
-              "paper_bio": 0.7890624999999999,
-              "paper_elec": 0.2109375000000001,
+              "paper_bio": 0.6765625,
+              "paper_elec": 0.3234375,
               "paper_ref": 0.0
             }
           }
@@ -1411,8 +1411,8 @@
             },
             "2030": {
               "steel_bfbof": 0.3950819672131147,
-              "steel_bfbof_ccs": -0.0,
-              "steel_h2dri_eaf": -0.0,
+              "steel_bfbof_ccs": 0.0,
+              "steel_h2dri_eaf": 0.0,
               "steel_ngdri_eaf": 0.30245901639344264,
               "steel_scrap_eaf": 0.30245901639344264
             },
@@ -1440,25 +1440,25 @@
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.0,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.6921052631578948,
               "steel_scrap_eaf": 0.3078947368421052
             }
           }
         }
       },
-      "co2_2030_mt": 309.02123200000005,
-      "co2_2040_mt": 170.3347115,
-      "co2_2050_mt": 135.6718473,
+      "co2_2030_mt": 307.32273658280394,
+      "co2_2040_mt": 167.0667585828039,
+      "co2_2050_mt": 130.85000638280388,
       "total_direct_co2_by_year": {
         "2025": 389.3467800000001,
-        "2030": 309.02123200000005,
-        "2035": 218.5123734,
-        "2040": 170.3347115,
-        "2045": 142.29566530000002,
-        "2050": 135.6718473
+        "2030": 307.32273658280394,
+        "2035": 212.9330779828039,
+        "2040": 167.0667585828039,
+        "2045": 146.19276238280392,
+        "2050": 130.85000638280388
       },
-      "total_discounted_cost_beur": 2506.0926645025493
+      "total_discounted_cost_beur": 2496.9119342655003
     },
     "demand_high": {
       "by_subsector": {
@@ -1499,7 +1499,7 @@
           }
         },
         "ammonia": {
-          "co2_2050_mt": 11.914672,
+          "co2_2050_mt": 13.522432000000002,
           "dominant_tech_2040": "ammonia_smr",
           "tech_shares": {
             "2025": {
@@ -1518,18 +1518,18 @@
               "ammonia_smr_ccs": 0.31
             },
             "2040": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.54,
               "ammonia_smr_ccs": 0.45999999999999996
             },
             "2045": {
-              "ammonia_h2": 0.0642857142857144,
-              "ammonia_smr": 0.2928571428571428,
+              "ammonia_h2": -0.0,
+              "ammonia_smr": 0.3571428571428572,
               "ammonia_smr_ccs": 0.6428571428571428
             },
             "2050": {
-              "ammonia_h2": 0.0642857142857144,
-              "ammonia_smr": 0.1428571428571428,
+              "ammonia_h2": 0.0,
+              "ammonia_smr": 0.20714285714285718,
               "ammonia_smr_ccs": 0.7928571428571428
             }
           }
@@ -1577,8 +1577,8 @@
           }
         },
         "glass": {
-          "co2_2050_mt": 8.217000000000002,
-          "dominant_tech_2040": "glass_ng",
+          "co2_2050_mt": 7.086024,
+          "dominant_tech_2040": "glass_elec",
           "tech_shares": {
             "2025": {
               "glass_elec": 0.0,
@@ -1587,33 +1587,33 @@
             },
             "2030": {
               "glass_elec": -0.0,
-              "glass_hybrid": -0.0,
-              "glass_ng": 1.0
+              "glass_hybrid": 0.2,
+              "glass_ng": 0.8
             },
             "2035": {
               "glass_elec": 0.2,
-              "glass_hybrid": 0.027941176470588372,
-              "glass_ng": 0.7720588235294117
+              "glass_hybrid": 0.2338235294117648,
+              "glass_ng": 0.5661764705882353
             },
             "2040": {
               "glass_elec": 0.4,
-              "glass_hybrid": 0.18235294117647047,
-              "glass_ng": 0.41764705882352954
+              "glass_hybrid": 0.29117647058823537,
+              "glass_ng": 0.30882352941176466
             },
             "2045": {
               "glass_elec": 0.6121212121212122,
               "glass_hybrid": 0.38787878787878777,
-              "glass_ng": 0.0
+              "glass_ng": -0.0
             },
             "2050": {
-              "glass_elec": 0.6060606060606061,
-              "glass_hybrid": 0.3939393939393939,
+              "glass_elec": 0.8121212121212122,
+              "glass_hybrid": 0.18787878787878776,
               "glass_ng": 0.0
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 18.137374750000003,
+          "co2_2050_mt": 17.717180250000002,
           "dominant_tech_2040": "hvc_ref",
           "tech_shares": {
             "2025": {
@@ -1630,26 +1630,26 @@
             },
             "2035": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.0,
+              "hvc_ccs": -0.0,
               "hvc_elec": 0.15,
               "hvc_ref": 0.85
             },
             "2040": {
-              "hvc_bio": 0.0,
-              "hvc_ccs": 0.15,
-              "hvc_elec": 0.2523255813953489,
-              "hvc_ref": 0.5976744186046512
+              "hvc_bio": -0.0,
+              "hvc_ccs": 0.10581395348837212,
+              "hvc_elec": 0.2965116279069767,
+              "hvc_ref": 0.5976744186046511
             },
             "2045": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.24659090909090903,
-              "hvc_elec": 0.3965909090909091,
+              "hvc_ccs": 0.20340909090909087,
+              "hvc_elec": 0.4397727272727273,
               "hvc_ref": 0.35681818181818187
             },
             "2050": {
               "hvc_bio": 0.0,
-              "hvc_ccs": 0.24111111111111105,
-              "hvc_elec": 0.41000000000000003,
+              "hvc_ccs": 0.19888888888888884,
+              "hvc_elec": 0.45222222222222225,
               "hvc_ref": 0.3488888888888889
             }
           }
@@ -1665,22 +1665,22 @@
             },
             "2030": {
               "paper_bio": 0.3041666666666667,
-              "paper_elec": 0.03750000000000012,
-              "paper_ref": 0.6583333333333331
+              "paper_elec": 0.15,
+              "paper_ref": 0.5458333333333333
             },
             "2035": {
               "paper_bio": 0.46285714285714286,
-              "paper_elec": 0.18857142857142867,
-              "paper_ref": 0.3485714285714284
+              "paper_elec": 0.30428571428571427,
+              "paper_ref": 0.23285714285714285
             },
             "2040": {
               "paper_bio": 0.626470588235294,
-              "paper_elec": 0.3441176470588236,
-              "paper_ref": 0.029411764705882387
+              "paper_elec": 0.373529411764706,
+              "paper_ref": 0.0
             },
             "2045": {
-              "paper_bio": 0.6454545454545454,
-              "paper_elec": 0.3545454545454546,
+              "paper_bio": 0.615151515151515,
+              "paper_elec": 0.384848484848485,
               "paper_ref": 0.0
             },
             "2050": {
@@ -1691,7 +1691,7 @@
           }
         },
         "steel": {
-          "co2_2050_mt": 24.892560000000003,
+          "co2_2050_mt": 26.061728000000006,
           "dominant_tech_2040": "steel_scrap_eaf",
           "tech_shares": {
             "2025": {
@@ -1703,54 +1703,54 @@
             },
             "2030": {
               "steel_bfbof": 0.3950819672131148,
-              "steel_bfbof_ccs": -0.0,
+              "steel_bfbof_ccs": 0.0,
               "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.30245901639344264,
               "steel_scrap_eaf": 0.30245901639344264
             },
             "2035": {
-              "steel_bfbof": 0.06066666666666663,
+              "steel_bfbof": 0.08499999999999999,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.02433333333333336,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.4575,
               "steel_scrap_eaf": 0.4575
             },
             "2040": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.02474576271186443,
-              "steel_ngdri_eaf": 0.46525423728813553,
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.49,
               "steel_scrap_eaf": 0.51
             },
             "2045": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.025172413793103473,
-              "steel_ngdri_eaf": 0.4732758620689655,
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.49844827586206897,
               "steel_scrap_eaf": 0.501551724137931
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.03175438596491227,
-              "steel_ngdri_eaf": 0.468421052631579,
-              "steel_scrap_eaf": 0.4998245614035087
+              "steel_h2dri_eaf": -0.0,
+              "steel_ngdri_eaf": 0.4940350877192983,
+              "steel_scrap_eaf": 0.5059649122807017
             }
           }
         }
       },
-      "co2_2030_mt": 336.17857818686997,
-      "co2_2040_mt": 157.17688553686995,
-      "co2_2050_mt": 108.9166677904405,
+      "co2_2030_mt": 331.39225818687,
+      "co2_2040_mt": 156.37969903686997,
+      "co2_2050_mt": 110.1424252904405,
       "total_direct_co2_by_year": {
         "2025": 428.28145800000004,
-        "2030": 336.17857818686997,
-        "2035": 215.69746213583224,
-        "2040": 157.17688553686995,
-        "2045": 124.24877691686997,
-        "2050": 108.9166677904405
+        "2030": 331.39225818687,
+        "2035": 216.89509813583223,
+        "2040": 156.37969903686997,
+        "2045": 126.69175041686998,
+        "2050": 110.1424252904405
       },
-      "total_discounted_cost_beur": 2946.4281690235107
+      "total_discounted_cost_beur": 2934.6223801909214
     },
     "demand_low": {
       "by_subsector": {
@@ -1791,7 +1791,7 @@
           }
         },
         "ammonia": {
-          "co2_2050_mt": 8.665216000000001,
+          "co2_2050_mt": 9.834496000000003,
           "dominant_tech_2040": "ammonia_smr",
           "tech_shares": {
             "2025": {
@@ -1810,24 +1810,24 @@
               "ammonia_smr_ccs": 0.31
             },
             "2040": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.54,
               "ammonia_smr_ccs": 0.45999999999999996
             },
             "2045": {
-              "ammonia_h2": 0.06428571428571442,
-              "ammonia_smr": 0.29285714285714287,
+              "ammonia_h2": -0.0,
+              "ammonia_smr": 0.35714285714285726,
               "ammonia_smr_ccs": 0.6428571428571427
             },
             "2050": {
-              "ammonia_h2": 0.0642857142857144,
-              "ammonia_smr": 0.14285714285714296,
-              "ammonia_smr_ccs": 0.7928571428571426
+              "ammonia_h2": 0.0,
+              "ammonia_smr": 0.2071428571428573,
+              "ammonia_smr_ccs": 0.7928571428571427
             }
           }
         },
         "cement": {
-          "co2_2050_mt": 29.650058645624725,
+          "co2_2050_mt": 27.834346399119013,
           "dominant_tech_2040": "cement_altfuel",
           "tech_shares": {
             "2025": {
@@ -1843,34 +1843,34 @@
               "cement_ref": 0.7628571428571429
             },
             "2035": {
-              "cement_altfuel": 0.3026162790697675,
-              "cement_ccs": 0.1727843793196288,
-              "cement_clinkersub": 0.09994817881990628,
-              "cement_ref": 0.42465116279069753
+              "cement_altfuel": 0.30261627906976746,
+              "cement_ccs": 0.20761592611198126,
+              "cement_clinkersub": 0.06511663202755381,
+              "cement_ref": 0.4246511627906975
             },
             "2040": {
               "cement_altfuel": 0.45982142857142855,
-              "cement_ccs": 0.29689829311295324,
-              "cement_clinkersub": 0.10232789736323736,
+              "cement_ccs": 0.3325591624479808,
+              "cement_clinkersub": 0.06666702802820984,
               "cement_ref": 0.14095238095238086
             },
             "2045": {
               "cement_altfuel": 0.4710365853658536,
-              "cement_ccs": 0.42413971489619595,
-              "cement_clinkersub": 0.10482369973795046,
+              "cement_ccs": 0.4606703615320778,
+              "cement_clinkersub": 0.06829305310206861,
               "cement_ref": 0.0
             },
             "2050": {
-              "cement_altfuel": 0.445256792231399,
-              "cement_ccs": 0.554743207768601,
+              "cement_altfuel": 0.4078128794296202,
+              "cement_ccs": 0.5921871205703798,
               "cement_clinkersub": 0.0,
               "cement_ref": 0.0
             }
           }
         },
         "glass": {
-          "co2_2050_mt": 5.976,
-          "dominant_tech_2040": "glass_ng",
+          "co2_2050_mt": 5.153472,
+          "dominant_tech_2040": "glass_elec",
           "tech_shares": {
             "2025": {
               "glass_elec": 0.0,
@@ -1879,33 +1879,33 @@
             },
             "2030": {
               "glass_elec": -0.0,
-              "glass_hybrid": -0.0,
-              "glass_ng": 1.0
+              "glass_hybrid": 0.2,
+              "glass_ng": 0.7999999999999999
             },
             "2035": {
               "glass_elec": 0.20000000000000004,
-              "glass_hybrid": 0.02794117647058829,
-              "glass_ng": 0.7720588235294117
+              "glass_hybrid": 0.2338235294117648,
+              "glass_ng": 0.5661764705882352
             },
             "2040": {
               "glass_elec": 0.4000000000000001,
-              "glass_hybrid": 0.18235294117647047,
-              "glass_ng": 0.4176470588235295
+              "glass_hybrid": 0.2911764705882353,
+              "glass_ng": 0.3088235294117646
             },
             "2045": {
               "glass_elec": 0.6121212121212122,
               "glass_hybrid": 0.38787878787878777,
-              "glass_ng": 0.0
+              "glass_ng": -0.0
             },
             "2050": {
-              "glass_elec": 0.6060606060606062,
-              "glass_hybrid": 0.39393939393939387,
+              "glass_elec": 0.8121212121212122,
+              "glass_hybrid": 0.18787878787878776,
               "glass_ng": 0.0
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 11.737926000000002,
+          "co2_2050_mt": 12.885222000000002,
           "dominant_tech_2040": "hvc_ref",
           "tech_shares": {
             "2025": {
@@ -1921,28 +1921,28 @@
               "hvc_ref": 1.0
             },
             "2035": {
-              "hvc_bio": 0.0,
-              "hvc_ccs": 0.15,
-              "hvc_elec": 0.11190476190476184,
-              "hvc_ref": 0.7380952380952381
+              "hvc_bio": -0.0,
+              "hvc_ccs": -0.0,
+              "hvc_elec": 0.15,
+              "hvc_ref": 0.85
             },
             "2040": {
-              "hvc_bio": 0.0,
-              "hvc_ccs": 0.2965116279069767,
-              "hvc_elec": 0.2151162790697673,
-              "hvc_ref": 0.48837209302325596
+              "hvc_bio": -0.0,
+              "hvc_ccs": 0.10581395348837201,
+              "hvc_elec": 0.2965116279069767,
+              "hvc_ref": 0.5976744186046512
             },
             "2045": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.3897727272727273,
-              "hvc_elec": 0.36022727272727256,
-              "hvc_ref": 0.2500000000000001
+              "hvc_ccs": 0.2034090909090909,
+              "hvc_elec": 0.43977272727272726,
+              "hvc_ref": 0.35681818181818187
             },
             "2050": {
-              "hvc_bio": 0.0,
-              "hvc_ccs": 0.3811111111111112,
-              "hvc_elec": 0.37444444444444425,
-              "hvc_ref": 0.24444444444444458
+              "hvc_bio": -0.0,
+              "hvc_ccs": 0.1988888888888889,
+              "hvc_elec": 0.45222222222222214,
+              "hvc_ref": 0.34888888888888897
             }
           }
         },
@@ -1957,22 +1957,22 @@
             },
             "2030": {
               "paper_bio": 0.3041666666666667,
-              "paper_elec": 0.03750000000000006,
-              "paper_ref": 0.6583333333333332
+              "paper_elec": 0.15,
+              "paper_ref": 0.5458333333333333
             },
             "2035": {
               "paper_bio": 0.4628571428571429,
-              "paper_elec": 0.18857142857142864,
-              "paper_ref": 0.3485714285714285
+              "paper_elec": 0.30428571428571427,
+              "paper_ref": 0.23285714285714285
             },
             "2040": {
               "paper_bio": 0.626470588235294,
-              "paper_elec": 0.3441176470588236,
-              "paper_ref": 0.029411764705882377
+              "paper_elec": 0.373529411764706,
+              "paper_ref": 0.0
             },
             "2045": {
-              "paper_bio": 0.6454545454545454,
-              "paper_elec": 0.3545454545454546,
+              "paper_bio": 0.615151515151515,
+              "paper_elec": 0.38484848484848494,
               "paper_ref": 0.0
             },
             "2050": {
@@ -1983,7 +1983,7 @@
           }
         },
         "steel": {
-          "co2_2050_mt": 18.10368,
+          "co2_2050_mt": 18.953984,
           "dominant_tech_2040": "steel_scrap_eaf",
           "tech_shares": {
             "2025": {
@@ -2001,48 +2001,48 @@
               "steel_scrap_eaf": 0.3024590163934426
             },
             "2035": {
-              "steel_bfbof": 0.06066666666666665,
+              "steel_bfbof": 0.08499999999999996,
               "steel_bfbof_ccs": -0.0,
-              "steel_h2dri_eaf": 0.024333333333333318,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.4575,
               "steel_scrap_eaf": 0.4575
             },
             "2040": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.02474576271186439,
-              "steel_ngdri_eaf": 0.4652542372881356,
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.49,
               "steel_scrap_eaf": 0.51
             },
             "2045": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.025172413793103428,
-              "steel_ngdri_eaf": 0.4732758620689655,
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.4984482758620689,
               "steel_scrap_eaf": 0.5015517241379311
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.03175438596491221,
-              "steel_ngdri_eaf": 0.4684210526315789,
-              "steel_scrap_eaf": 0.4998245614035089
+              "steel_h2dri_eaf": -0.0,
+              "steel_ngdri_eaf": 0.4940350877192982,
+              "steel_scrap_eaf": 0.5059649122807018
             }
           }
         }
       },
-      "co2_2030_mt": 243.42587827937317,
-      "co2_2040_mt": 110.94186914310886,
-      "co2_2050_mt": 76.12334464562474,
+      "co2_2030_mt": 239.94491827937318,
+      "co2_2040_mt": 109.68870210626005,
+      "co2_2050_mt": 76.65198439911902,
       "total_direct_co2_by_year": {
         "2025": 311.47742400000004,
-        "2030": 243.42587827937317,
-        "2035": 153.21151306310884,
-        "2040": 110.94186914310886,
-        "2045": 86.99415378310886,
-        "2050": 76.12334464562474
+        "2030": 239.94491827937318,
+        "2035": 153.40912602626008,
+        "2040": 109.68870210626005,
+        "2045": 88.09746674626005,
+        "2050": 76.65198439911902
       },
-      "total_discounted_cost_beur": 2141.594927734688
+      "total_discounted_cost_beur": 2132.5015033052227
     },
     "eff_gain": {
       "by_subsector": {
@@ -2083,7 +2083,7 @@
           }
         },
         "ammonia": {
-          "co2_2050_mt": 6.825168,
+          "co2_2050_mt": 11.534768,
           "dominant_tech_2040": "ammonia_smr",
           "tech_shares": {
             "2025": {
@@ -2102,18 +2102,18 @@
               "ammonia_smr_ccs": 0.31
             },
             "2040": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.5399999999999999,
               "ammonia_smr_ccs": 0.46
             },
             "2045": {
-              "ammonia_h2": 0.06428571428571431,
-              "ammonia_smr": 0.2928571428571428,
+              "ammonia_h2": -0.0,
+              "ammonia_smr": 0.35714285714285715,
               "ammonia_smr_ccs": 0.6428571428571429
             },
             "2050": {
-              "ammonia_h2": 0.20714285714285716,
-              "ammonia_smr": 0.0,
+              "ammonia_h2": -0.0,
+              "ammonia_smr": 0.20714285714285716,
               "ammonia_smr_ccs": 0.7928571428571428
             }
           }
@@ -2161,7 +2161,7 @@
           }
         },
         "glass": {
-          "co2_2050_mt": 7.218,
+          "co2_2050_mt": 6.292655999999999,
           "dominant_tech_2040": "glass_elec",
           "tech_shares": {
             "2025": {
@@ -2181,23 +2181,23 @@
             },
             "2040": {
               "glass_elec": 0.4514705882352942,
-              "glass_hybrid": 0.4338235294117647,
-              "glass_ng": 0.11470588235294113
+              "glass_hybrid": 0.3249999999999999,
+              "glass_ng": 0.22352941176470592
             },
             "2045": {
-              "glass_elec": 0.6121212121212122,
-              "glass_hybrid": 0.38787878787878777,
+              "glass_elec": 0.6651515151515153,
+              "glass_hybrid": 0.3348484848484848,
               "glass_ng": 0.0
             },
             "2050": {
-              "glass_elec": 0.6060606060606062,
-              "glass_hybrid": 0.3939393939393938,
+              "glass_elec": 0.8121212121212122,
+              "glass_hybrid": 0.18787878787878776,
               "glass_ng": 0.0
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 9.646573250000001,
+          "co2_2050_mt": 9.30277775,
           "dominant_tech_2040": "hvc_elec",
           "tech_shares": {
             "2025": {
@@ -2220,20 +2220,20 @@
             },
             "2040": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.2593023255813953,
-              "hvc_elec": 0.3953488372093023,
+              "hvc_ccs": 0.21511627906976744,
+              "hvc_elec": 0.4395348837209302,
               "hvc_ref": 0.3453488372093024
             },
             "2045": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.35340909090909095,
-              "hvc_elec": 0.5363636363636363,
+              "hvc_ccs": 0.3102272727272727,
+              "hvc_elec": 0.5795454545454546,
               "hvc_ref": 0.11022727272727276
             },
             "2050": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.34555555555555556,
-              "hvc_elec": 0.5466666666666666,
+              "hvc_ccs": 0.3033333333333333,
+              "hvc_elec": 0.5888888888888889,
               "hvc_ref": 0.1077777777777778
             }
           }
@@ -2275,66 +2275,66 @@
           }
         },
         "steel": {
-          "co2_2050_mt": 25.1496,
+          "co2_2050_mt": 28.72044,
           "dominant_tech_2040": "steel_ngdri_eaf",
           "tech_shares": {
             "2025": {
               "steel_bfbof": 0.7000000000000001,
               "steel_bfbof_ccs": -0.0,
-              "steel_h2dri_eaf": -0.0,
+              "steel_h2dri_eaf": 0.0,
               "steel_ngdri_eaf": 0.15,
               "steel_scrap_eaf": 0.15
             },
             "2030": {
-              "steel_bfbof": 0.31147540983606564,
+              "steel_bfbof": 0.3950819672131147,
               "steel_bfbof_ccs": -0.0,
-              "steel_h2dri_eaf": 0.08360655737704914,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.30245901639344264,
               "steel_scrap_eaf": 0.30245901639344264
             },
             "2035": {
-              "steel_bfbof": 0.0,
-              "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.08499999999999996,
+              "steel_bfbof": 0.08499999999999996,
+              "steel_bfbof_ccs": -0.0,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.45749999999999996,
               "steel_scrap_eaf": 0.45749999999999996
             },
             "2040": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.06949152542372884,
-              "steel_ngdri_eaf": 0.4652542372881356,
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.5347457627118645,
               "steel_scrap_eaf": 0.4652542372881356
             },
             "2045": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.08793103448275859,
-              "steel_ngdri_eaf": 0.5991379310344829,
-              "steel_scrap_eaf": 0.3129310344827586
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.6931034482758622,
+              "steel_scrap_eaf": 0.30689655172413777
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.09561403508771935,
-              "steel_ngdri_eaf": 0.5964912280701754,
+              "steel_h2dri_eaf": -0.0,
+              "steel_ngdri_eaf": 0.6921052631578948,
               "steel_scrap_eaf": 0.3078947368421052
             }
           }
         }
       },
-      "co2_2030_mt": 274.7636459114317,
-      "co2_2040_mt": 128.52443226143157,
-      "co2_2050_mt": 89.91472698143157,
+      "co2_2030_mt": 293.79480591143164,
+      "co2_2040_mt": 131.55071676143157,
+      "co2_2050_mt": 96.92602748143157,
       "total_direct_co2_by_year": {
         "2025": 388.546932,
-        "2030": 274.7636459114317,
-        "2035": 164.7919552200272,
-        "2040": 128.52443226143157,
-        "2045": 105.95252258143158,
-        "2050": 89.91472698143157
+        "2030": 293.79480591143164,
+        "2035": 183.8231152200272,
+        "2040": 131.55071676143157,
+        "2045": 110.40302708143159,
+        "2050": 96.92602748143157
       },
-      "total_discounted_cost_beur": 2643.6011526782954
+      "total_discounted_cost_beur": 2635.0653077283414
     },
     "elec_cheap": {
       "by_subsector": {
@@ -2375,7 +2375,7 @@
           }
         },
         "ammonia": {
-          "co2_2050_mt": 10.831520000000001,
+          "co2_2050_mt": 12.293120000000002,
           "dominant_tech_2040": "ammonia_smr",
           "tech_shares": {
             "2025": {
@@ -2394,24 +2394,24 @@
               "ammonia_smr_ccs": 0.31
             },
             "2040": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.5399999999999999,
               "ammonia_smr_ccs": 0.46
             },
             "2045": {
-              "ammonia_h2": 0.06428571428571431,
-              "ammonia_smr": 0.2928571428571428,
+              "ammonia_h2": -0.0,
+              "ammonia_smr": 0.35714285714285715,
               "ammonia_smr_ccs": 0.6428571428571429
             },
             "2050": {
-              "ammonia_h2": 0.06428571428571431,
-              "ammonia_smr": 0.14285714285714285,
+              "ammonia_h2": 0.0,
+              "ammonia_smr": 0.20714285714285716,
               "ammonia_smr_ccs": 0.7928571428571428
             }
           }
         },
         "cement": {
-          "co2_2050_mt": 38.8035333828039,
+          "co2_2050_mt": 38.135796192460816,
           "dominant_tech_2040": "cement_altfuel",
           "tech_shares": {
             "2025": {
@@ -2428,32 +2428,32 @@
             },
             "2035": {
               "cement_altfuel": 0.3026162790697674,
-              "cement_ccs": 0.13032848262626862,
-              "cement_clinkersub": 0.1266662152090331,
-              "cement_ref": 0.44038902309493083
+              "cement_ccs": 0.1563139222967538,
+              "cement_clinkersub": 0.11641863584278114,
+              "cement_ref": 0.4246511627906977
             },
             "2040": {
               "cement_altfuel": 0.45982142857142855,
-              "cement_ccs": 0.26954411300027564,
-              "cement_clinkersub": 0.12968207747591484,
-              "cement_ref": 0.14095238095238094
+              "cement_ccs": 0.2800356823514384,
+              "cement_clinkersub": 0.11919050812475211,
+              "cement_ref": 0.1409523809523809
             },
             "2045": {
               "cement_altfuel": 0.47103658536585363,
-              "cement_ccs": 0.3961183596588189,
-              "cement_clinkersub": 0.1328450549753274,
+              "cement_ccs": 0.4068658209453759,
+              "cement_clinkersub": 0.12209759368877046,
               "cement_ref": 0.0
             },
             "2050": {
-              "cement_altfuel": 0.47397868134971066,
-              "cement_ccs": 0.5260213186502893,
+              "cement_altfuel": 0.4629625335309897,
+              "cement_ccs": 0.5370374664690103,
               "cement_clinkersub": 0.0,
               "cement_ref": 0.0
             }
           }
         },
         "glass": {
-          "co2_2050_mt": 7.469999999999999,
+          "co2_2050_mt": 6.441839999999999,
           "dominant_tech_2040": "glass_elec",
           "tech_shares": {
             "2025": {
@@ -2473,24 +2473,24 @@
             },
             "2040": {
               "glass_elec": 0.6058823529411765,
-              "glass_hybrid": 0.27941176470588236,
-              "glass_ng": 0.11470588235294113
+              "glass_hybrid": 0.17058823529411757,
+              "glass_ng": 0.22352941176470592
             },
             "2045": {
-              "glass_elec": 0.6121212121212122,
-              "glass_hybrid": 0.38787878787878777,
+              "glass_elec": 0.8242424242424243,
+              "glass_hybrid": 0.17575757575757567,
               "glass_ng": 0.0
             },
             "2050": {
-              "glass_elec": 0.6060606060606062,
-              "glass_hybrid": 0.3939393939393938,
+              "glass_elec": 0.8121212121212122,
+              "glass_hybrid": 0.18787878787878776,
               "glass_ng": 0.0
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 6.7538325,
-          "dominant_tech_2040": "hvc_elec",
+          "co2_2050_mt": 8.301317499999996,
+          "dominant_tech_2040": "hvc_ref",
           "tech_shares": {
             "2025": {
               "hvc_bio": 0.0,
@@ -2506,27 +2506,27 @@
             },
             "2035": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.11190476190476188,
+              "hvc_ccs": -0.0,
               "hvc_elec": 0.29642857142857143,
-              "hvc_ref": 0.5916666666666667
+              "hvc_ref": 0.7035714285714286
             },
             "2040": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.21511627906976744,
+              "hvc_ccs": 0.10581395348837211,
               "hvc_elec": 0.4395348837209302,
-              "hvc_ref": 0.3453488372093024
+              "hvc_ref": 0.45465116279069767
             },
             "2045": {
-              "hvc_bio": -0.0,
-              "hvc_ccs": 0.3102272727272727,
+              "hvc_bio": 0.0,
+              "hvc_ccs": 0.2034090909090909,
               "hvc_elec": 0.5795454545454546,
-              "hvc_ref": 0.11022727272727276
+              "hvc_ref": 0.21704545454545457
             },
             "2050": {
               "hvc_bio": 0.0,
-              "hvc_ccs": 0.3033333333333333,
-              "hvc_elec": 0.6966666666666667,
-              "hvc_ref": 0.0
+              "hvc_ccs": 0.19888888888888887,
+              "hvc_elec": 0.7166666666666667,
+              "hvc_ref": 0.08444444444444438
             }
           }
         },
@@ -2567,8 +2567,8 @@
           }
         },
         "steel": {
-          "co2_2050_mt": 22.6296,
-          "dominant_tech_2040": "steel_ngdri_eaf",
+          "co2_2050_mt": 23.69248,
+          "dominant_tech_2040": "steel_scrap_eaf",
           "tech_shares": {
             "2025": {
               "steel_bfbof": 0.7000000000000001,
@@ -2579,54 +2579,54 @@
             },
             "2030": {
               "steel_bfbof": 0.3950819672131147,
-              "steel_bfbof_ccs": -0.0,
+              "steel_bfbof_ccs": 0.0,
               "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.30245901639344264,
               "steel_scrap_eaf": 0.30245901639344264
             },
             "2035": {
-              "steel_bfbof": 0.016666666666666607,
-              "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.06833333333333336,
+              "steel_bfbof": 0.08499999999999996,
+              "steel_bfbof_ccs": -0.0,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.45749999999999996,
               "steel_scrap_eaf": 0.45749999999999996
             },
             "2040": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.06949152542372884,
-              "steel_ngdri_eaf": 0.4652542372881356,
-              "steel_scrap_eaf": 0.4652542372881356
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.49,
+              "steel_scrap_eaf": 0.51
             },
             "2045": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.07068965517241382,
-              "steel_ngdri_eaf": 0.4732758620689655,
-              "steel_scrap_eaf": 0.4560344827586207
+              "steel_h2dri_eaf": 0.0,
+              "steel_ngdri_eaf": 0.49844827586206897,
+              "steel_scrap_eaf": 0.501551724137931
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.07807017543859661,
-              "steel_ngdri_eaf": 0.46842105263157885,
-              "steel_scrap_eaf": 0.45350877192982453
+              "steel_h2dri_eaf": -0.0,
+              "steel_ngdri_eaf": 0.49403508771929816,
+              "steel_scrap_eaf": 0.5059649122807018
             }
           }
         }
       },
       "co2_2030_mt": 295.52362655103775,
-      "co2_2040_mt": 132.6449450510377,
-      "co2_2050_mt": 89.26664588280389,
+      "co2_2040_mt": 135.6852674401101,
+      "co2_2050_mt": 91.6427136924608,
       "total_direct_co2_by_year": {
         "2025": 389.3467800000001,
         "2030": 295.52362655103775,
-        "2035": 175.18532434469856,
-        "2040": 132.6449450510377,
-        "2045": 106.3615008510377,
-        "2050": 89.26664588280389
+        "2035": 190.28987734011014,
+        "2040": 135.6852674401101,
+        "2045": 109.18342324011013,
+        "2050": 91.6427136924608
       },
-      "total_discounted_cost_beur": 2594.6266109747526
+      "total_discounted_cost_beur": 2584.633856906207
     },
     "elec_exp": {
       "by_subsector": {
@@ -2686,7 +2686,7 @@
               "ammonia_smr_ccs": 0.31
             },
             "2040": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.5399999999999999,
               "ammonia_smr_ccs": 0.46
             },
@@ -2696,14 +2696,14 @@
               "ammonia_smr_ccs": 0.6428571428571429
             },
             "2050": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.20714285714285716,
               "ammonia_smr_ccs": 0.7928571428571428
             }
           }
         },
         "cement": {
-          "co2_2050_mt": 38.8035333828039,
+          "co2_2050_mt": 38.135796192460816,
           "dominant_tech_2040": "cement_altfuel",
           "tech_shares": {
             "2025": {
@@ -2720,25 +2720,25 @@
             },
             "2035": {
               "cement_altfuel": 0.3026162790697674,
-              "cement_ccs": 0.1460663429305018,
-              "cement_clinkersub": 0.1266662152090331,
+              "cement_ccs": 0.1563139222967538,
+              "cement_clinkersub": 0.11641863584278114,
               "cement_ref": 0.4246511627906977
             },
             "2040": {
               "cement_altfuel": 0.45982142857142855,
-              "cement_ccs": 0.26954411300027564,
-              "cement_clinkersub": 0.12968207747591484,
-              "cement_ref": 0.14095238095238094
+              "cement_ccs": 0.2800356823514384,
+              "cement_clinkersub": 0.11919050812475211,
+              "cement_ref": 0.1409523809523809
             },
             "2045": {
               "cement_altfuel": 0.47103658536585363,
-              "cement_ccs": 0.3961183596588189,
-              "cement_clinkersub": 0.1328450549753274,
+              "cement_ccs": 0.4068658209453759,
+              "cement_clinkersub": 0.12209759368877046,
               "cement_ref": 0.0
             },
             "2050": {
-              "cement_altfuel": 0.47397868134971066,
-              "cement_ccs": 0.5260213186502893,
+              "cement_altfuel": 0.4629625335309897,
+              "cement_ccs": 0.5370374664690103,
               "cement_clinkersub": 0.0,
               "cement_ref": 0.0
             }
@@ -2760,7 +2760,7 @@
             },
             "2035": {
               "glass_elec": 0.0,
-              "glass_hybrid": 0.0,
+              "glass_hybrid": -0.0,
               "glass_ng": 1.0
             },
             "2040": {
@@ -2781,7 +2781,7 @@
           }
         },
         "hvc": {
-          "co2_2050_mt": 26.291299841208122,
+          "co2_2050_mt": 27.1343575,
           "dominant_tech_2040": "hvc_ref",
           "tech_shares": {
             "2025": {
@@ -2798,27 +2798,27 @@
             },
             "2035": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.04413059558053537,
+              "hvc_ccs": -0.0,
               "hvc_elec": -0.0,
-              "hvc_ref": 0.9558694044194647
+              "hvc_ref": 1.0
             },
             "2040": {
-              "hvc_bio": 0.0,
-              "hvc_ccs": 0.1931043026600578,
+              "hvc_bio": -0.0,
+              "hvc_ccs": 0.15,
               "hvc_elec": -0.0,
-              "hvc_ref": 0.8068956973399422
+              "hvc_ref": 0.85
             },
             "2045": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.3387155685086929,
+              "hvc_ccs": 0.2965909090909091,
               "hvc_elec": -0.0,
-              "hvc_ref": 0.6612844314913071
+              "hvc_ref": 0.7034090909090909
             },
             "2050": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.3534107780973886,
+              "hvc_ccs": 0.31222222222222223,
               "hvc_elec": -0.0,
-              "hvc_ref": 0.6465892219026114
+              "hvc_ref": 0.6877777777777777
             }
           }
         },
@@ -2828,7 +2828,7 @@
           "tech_shares": {
             "2025": {
               "paper_bio": 0.15,
-              "paper_elec": 0.0,
+              "paper_elec": -0.0,
               "paper_ref": 0.85
             },
             "2030": {
@@ -2838,18 +2838,18 @@
             },
             "2035": {
               "paper_bio": 0.46285714285714286,
-              "paper_elec": 0.008571428571428591,
-              "paper_ref": 0.5285714285714286
+              "paper_elec": 0.15,
+              "paper_ref": 0.3871428571428572
             },
             "2040": {
               "paper_bio": 0.626470588235294,
-              "paper_elec": 0.15882352941176472,
-              "paper_ref": 0.21470588235294125
+              "paper_elec": 0.19852941176470598,
+              "paper_ref": 0.175
             },
             "2045": {
               "paper_bio": 0.7954545454545453,
               "paper_elec": 0.20454545454545464,
-              "paper_ref": -0.0
+              "paper_ref": 0.0
             },
             "2050": {
               "paper_bio": 0.7890624999999999,
@@ -2871,7 +2871,7 @@
             },
             "2030": {
               "steel_bfbof": 0.3950819672131147,
-              "steel_bfbof_ccs": -0.0,
+              "steel_bfbof_ccs": 0.0,
               "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.30245901639344264,
               "steel_scrap_eaf": 0.30245901639344264
@@ -2886,39 +2886,39 @@
             "2040": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": -0.0,
+              "steel_h2dri_eaf": 0.0,
               "steel_ngdri_eaf": 0.49,
               "steel_scrap_eaf": 0.51
             },
             "2045": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": -0.0,
+              "steel_h2dri_eaf": 0.0,
               "steel_ngdri_eaf": 0.49844827586206897,
               "steel_scrap_eaf": 0.501551724137931
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.00614035087719307,
+              "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.49403508771929816,
-              "steel_scrap_eaf": 0.4998245614035087
+              "steel_scrap_eaf": 0.5059649122807018
             }
           }
         }
       },
       "co2_2030_mt": 306.3194115510378,
-      "co2_2040_mt": 159.0480573922458,
-      "co2_2050_mt": 112.58019322401202,
+      "co2_2040_mt": 158.05076244011008,
+      "co2_2050_mt": 112.75551369246081,
       "total_direct_co2_by_year": {
         "2025": 389.3467800000001,
         "2030": 306.3194115510378,
-        "2035": 211.36768729224582,
-        "2040": 159.0480573922458,
-        "2045": 128.5760031922458,
-        "2050": 112.58019322401202
+        "2035": 207.54799234011014,
+        "2040": 158.05076244011008,
+        "2045": 128.63710824011014,
+        "2050": 112.75551369246081
       },
-      "total_discounted_cost_beur": 2749.7644343065413
+      "total_discounted_cost_beur": 2740.3961244456527
     },
     "h2_cheap": {
       "by_subsector": {
@@ -2959,7 +2959,7 @@
           }
         },
         "ammonia": {
-          "co2_2050_mt": 5.057916933333334,
+          "co2_2050_mt": 6.1488000000000005,
           "dominant_tech_2040": "ammonia_smr_ccs",
           "tech_shares": {
             "2025": {
@@ -2973,29 +2973,29 @@
               "ammonia_smr_ccs": 0.15
             },
             "2035": {
-              "ammonia_h2": 0.14978172001040851,
+              "ammonia_h2": 0.05,
               "ammonia_smr": 0.64,
-              "ammonia_smr_ccs": 0.2102182799895915
+              "ammonia_smr_ccs": 0.31
             },
             "2040": {
-              "ammonia_h2": 0.29978172001040854,
-              "ammonia_smr": 0.33999999999999997,
-              "ammonia_smr_ccs": 0.3602182799895915
+              "ammonia_h2": 0.19333333333333333,
+              "ammonia_smr": 0.3466666666666666,
+              "ammonia_smr_ccs": 0.46
             },
             "2045": {
-              "ammonia_h2": 0.47119470001115193,
+              "ammonia_h2": 0.35714285714285715,
               "ammonia_smr": -0.0,
-              "ammonia_smr_ccs": 0.5288052999888481
+              "ammonia_smr_ccs": 0.6428571428571429
             },
             "2050": {
-              "ammonia_h2": 0.47119470001115193,
+              "ammonia_h2": 0.35714285714285715,
               "ammonia_smr": 0.0,
-              "ammonia_smr_ccs": 0.5288052999888481
+              "ammonia_smr_ccs": 0.6428571428571429
             }
           }
         },
         "cement": {
-          "co2_2050_mt": 38.8035333828039,
+          "co2_2050_mt": 38.135796192460816,
           "dominant_tech_2040": "cement_altfuel",
           "tech_shares": {
             "2025": {
@@ -3012,33 +3012,33 @@
             },
             "2035": {
               "cement_altfuel": 0.3026162790697674,
-              "cement_ccs": 0.1460663429305018,
-              "cement_clinkersub": 0.1266662152090331,
+              "cement_ccs": 0.1563139222967538,
+              "cement_clinkersub": 0.11641863584278114,
               "cement_ref": 0.4246511627906977
             },
             "2040": {
               "cement_altfuel": 0.45982142857142855,
-              "cement_ccs": 0.26954411300027564,
-              "cement_clinkersub": 0.12968207747591484,
-              "cement_ref": 0.14095238095238094
+              "cement_ccs": 0.2800356823514384,
+              "cement_clinkersub": 0.11919050812475211,
+              "cement_ref": 0.1409523809523809
             },
             "2045": {
               "cement_altfuel": 0.47103658536585363,
-              "cement_ccs": 0.3961183596588189,
-              "cement_clinkersub": 0.1328450549753274,
+              "cement_ccs": 0.4068658209453759,
+              "cement_clinkersub": 0.12209759368877046,
               "cement_ref": 0.0
             },
             "2050": {
-              "cement_altfuel": 0.47397868134971066,
-              "cement_ccs": 0.5260213186502893,
+              "cement_altfuel": 0.4629625335309897,
+              "cement_ccs": 0.5370374664690103,
               "cement_clinkersub": 0.0,
               "cement_ref": 0.0
             }
           }
         },
         "glass": {
-          "co2_2050_mt": 7.469999999999999,
-          "dominant_tech_2040": "glass_ng",
+          "co2_2050_mt": 6.441839999999999,
+          "dominant_tech_2040": "glass_elec",
           "tech_shares": {
             "2025": {
               "glass_elec": 0.0,
@@ -3047,33 +3047,33 @@
             },
             "2030": {
               "glass_elec": -0.0,
-              "glass_hybrid": -0.0,
-              "glass_ng": 1.0
+              "glass_hybrid": 0.2,
+              "glass_ng": 0.8
             },
             "2035": {
               "glass_elec": 0.2,
-              "glass_hybrid": 0.027941176470588216,
-              "glass_ng": 0.7720588235294118
+              "glass_hybrid": 0.23382352941176468,
+              "glass_ng": 0.5661764705882353
             },
             "2040": {
               "glass_elec": 0.4,
-              "glass_hybrid": 0.1823529411764705,
-              "glass_ng": 0.4176470588235295
+              "glass_hybrid": 0.29117647058823526,
+              "glass_ng": 0.3088235294117647
             },
             "2045": {
               "glass_elec": 0.6121212121212122,
               "glass_hybrid": 0.38787878787878777,
-              "glass_ng": 0.0
+              "glass_ng": -0.0
             },
             "2050": {
-              "glass_elec": 0.6060606060606062,
-              "glass_hybrid": 0.3939393939393938,
+              "glass_elec": 0.8121212121212122,
+              "glass_hybrid": 0.18787878787878776,
               "glass_ng": 0.0
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 14.350727500000001,
+          "co2_2050_mt": 16.1065275,
           "dominant_tech_2040": "hvc_ref",
           "tech_shares": {
             "2025": {
@@ -3089,28 +3089,28 @@
               "hvc_ref": 1.0
             },
             "2035": {
-              "hvc_bio": 0.0,
-              "hvc_ccs": 0.11190476190476198,
+              "hvc_bio": -0.0,
+              "hvc_ccs": -0.0,
               "hvc_elec": 0.15,
-              "hvc_ref": 0.7380952380952381
+              "hvc_ref": 0.8500000000000001
             },
             "2040": {
-              "hvc_bio": 0.0,
-              "hvc_ccs": 0.2593023255813954,
-              "hvc_elec": 0.2523255813953488,
-              "hvc_ref": 0.4883720930232558
+              "hvc_bio": -0.0,
+              "hvc_ccs": 0.10581395348837203,
+              "hvc_elec": 0.29651162790697677,
+              "hvc_ref": 0.5976744186046512
             },
             "2045": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.353409090909091,
-              "hvc_elec": 0.396590909090909,
-              "hvc_ref": 0.25
+              "hvc_ccs": 0.20340909090909082,
+              "hvc_elec": 0.4397727272727273,
+              "hvc_ref": 0.35681818181818187
             },
             "2050": {
               "hvc_bio": 0.0,
-              "hvc_ccs": 0.34555555555555567,
-              "hvc_elec": 0.4099999999999999,
-              "hvc_ref": 0.24444444444444444
+              "hvc_ccs": 0.19888888888888878,
+              "hvc_elec": 0.45222222222222225,
+              "hvc_ref": 0.34888888888888897
             }
           }
         },
@@ -3125,22 +3125,22 @@
             },
             "2030": {
               "paper_bio": 0.30416666666666664,
-              "paper_elec": 0.03750000000000009,
-              "paper_ref": 0.6583333333333332
+              "paper_elec": 0.15,
+              "paper_ref": 0.5458333333333334
             },
             "2035": {
               "paper_bio": 0.46285714285714286,
-              "paper_elec": 0.18857142857142867,
-              "paper_ref": 0.3485714285714285
+              "paper_elec": 0.30428571428571427,
+              "paper_ref": 0.23285714285714293
             },
             "2040": {
               "paper_bio": 0.626470588235294,
-              "paper_elec": 0.34411764705882364,
-              "paper_ref": 0.029411764705882353
+              "paper_elec": 0.37352941176470594,
+              "paper_ref": 0.0
             },
             "2045": {
-              "paper_bio": 0.6454545454545454,
-              "paper_elec": 0.3545454545454546,
+              "paper_bio": 0.6151515151515151,
+              "paper_elec": 0.38484848484848494,
               "paper_ref": 0.0
             },
             "2050": {
@@ -3151,7 +3151,7 @@
           }
         },
         "steel": {
-          "co2_2050_mt": 16.66,
+          "co2_2050_mt": 22.629599999999996,
           "dominant_tech_2040": "steel_ngdri_eaf",
           "tech_shares": {
             "2025": {
@@ -3162,55 +3162,55 @@
               "steel_scrap_eaf": 0.15
             },
             "2030": {
-              "steel_bfbof": 0.24508196721311473,
-              "steel_bfbof_ccs": -0.0,
-              "steel_h2dri_eaf": 0.15,
+              "steel_bfbof": 0.31147540983606564,
+              "steel_bfbof_ccs": 0.0,
+              "steel_h2dri_eaf": 0.08360655737704914,
               "steel_ngdri_eaf": 0.30245901639344264,
               "steel_scrap_eaf": 0.30245901639344264
             },
             "2035": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.1525,
+              "steel_h2dri_eaf": 0.08499999999999996,
               "steel_ngdri_eaf": 0.45749999999999996,
-              "steel_scrap_eaf": 0.38999999999999996
+              "steel_scrap_eaf": 0.45749999999999996
             },
             "2040": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.15508474576271186,
+              "steel_h2dri_eaf": 0.08644067796610166,
               "steel_ngdri_eaf": 0.4652542372881356,
-              "steel_scrap_eaf": 0.3796610169491525
+              "steel_scrap_eaf": 0.44830508474576275
             },
             "2045": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.28362068965517245,
-              "steel_ngdri_eaf": 0.47327586206896544,
-              "steel_scrap_eaf": 0.24310344827586203
+              "steel_h2dri_eaf": 0.08793103448275859,
+              "steel_ngdri_eaf": 0.4732758620689655,
+              "steel_scrap_eaf": 0.43879310344827593
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.43859649122807015,
-              "steel_ngdri_eaf": 0.32456140350877194,
-              "steel_scrap_eaf": 0.23684210526315785
+              "steel_h2dri_eaf": 0.09561403508771935,
+              "steel_ngdri_eaf": 0.46842105263157885,
+              "steel_scrap_eaf": 0.4359649122807018
             }
           }
         }
       },
-      "co2_2030_mt": 271.1681115510377,
-      "co2_2040_mt": 134.49984198437102,
-      "co2_2050_mt": 84.83025781613723,
+      "co2_2030_mt": 281.90721155103773,
+      "co2_2040_mt": 135.2530524401101,
+      "co2_2050_mt": 91.95064369246082,
       "total_direct_co2_by_year": {
         "2025": 389.3467800000001,
-        "2030": 271.1681115510377,
-        "2035": 177.42825688437102,
-        "2040": 134.49984198437102,
-        "2045": 102.71047778437101,
-        "2050": 84.83025781613723
+        "2030": 281.90721155103773,
+        "2035": 175.45546234011016,
+        "2040": 135.2530524401101,
+        "2045": 104.85360824011012,
+        "2050": 91.95064369246082
       },
-      "total_discounted_cost_beur": 2666.832995074769
+      "total_discounted_cost_beur": 2661.7486954675373
     },
     "h2_exp": {
       "by_subsector": {
@@ -3275,7 +3275,7 @@
               "ammonia_smr_ccs": 0.46
             },
             "2045": {
-              "ammonia_h2": -0.0,
+              "ammonia_h2": 0.0,
               "ammonia_smr": 0.35714285714285715,
               "ammonia_smr_ccs": 0.6428571428571429
             },
@@ -3287,7 +3287,7 @@
           }
         },
         "cement": {
-          "co2_2050_mt": 38.8035333828039,
+          "co2_2050_mt": 38.135796192460816,
           "dominant_tech_2040": "cement_altfuel",
           "tech_shares": {
             "2025": {
@@ -3304,33 +3304,33 @@
             },
             "2035": {
               "cement_altfuel": 0.3026162790697674,
-              "cement_ccs": 0.1460663429305018,
-              "cement_clinkersub": 0.1266662152090331,
+              "cement_ccs": 0.1563139222967538,
+              "cement_clinkersub": 0.11641863584278114,
               "cement_ref": 0.4246511627906977
             },
             "2040": {
               "cement_altfuel": 0.45982142857142855,
-              "cement_ccs": 0.26954411300027564,
-              "cement_clinkersub": 0.12968207747591484,
-              "cement_ref": 0.14095238095238094
+              "cement_ccs": 0.2800356823514384,
+              "cement_clinkersub": 0.11919050812475211,
+              "cement_ref": 0.1409523809523809
             },
             "2045": {
               "cement_altfuel": 0.47103658536585363,
-              "cement_ccs": 0.3961183596588189,
-              "cement_clinkersub": 0.1328450549753274,
+              "cement_ccs": 0.4068658209453759,
+              "cement_clinkersub": 0.12209759368877046,
               "cement_ref": 0.0
             },
             "2050": {
-              "cement_altfuel": 0.47397868134971066,
-              "cement_ccs": 0.5260213186502893,
+              "cement_altfuel": 0.4629625335309897,
+              "cement_ccs": 0.5370374664690103,
               "cement_clinkersub": 0.0,
               "cement_ref": 0.0
             }
           }
         },
         "glass": {
-          "co2_2050_mt": 7.469999999999999,
-          "dominant_tech_2040": "glass_ng",
+          "co2_2050_mt": 6.441839999999999,
+          "dominant_tech_2040": "glass_elec",
           "tech_shares": {
             "2025": {
               "glass_elec": 0.0,
@@ -3339,33 +3339,33 @@
             },
             "2030": {
               "glass_elec": -0.0,
-              "glass_hybrid": -0.0,
-              "glass_ng": 1.0
+              "glass_hybrid": 0.2,
+              "glass_ng": 0.8
             },
             "2035": {
               "glass_elec": 0.2,
-              "glass_hybrid": 0.027941176470588216,
-              "glass_ng": 0.7720588235294118
+              "glass_hybrid": 0.23382352941176468,
+              "glass_ng": 0.5661764705882353
             },
             "2040": {
               "glass_elec": 0.4,
-              "glass_hybrid": 0.1823529411764705,
-              "glass_ng": 0.4176470588235295
+              "glass_hybrid": 0.29117647058823526,
+              "glass_ng": 0.3088235294117647
             },
             "2045": {
               "glass_elec": 0.6121212121212122,
               "glass_hybrid": 0.38787878787878777,
-              "glass_ng": 0.0
+              "glass_ng": -0.0
             },
             "2050": {
-              "glass_elec": 0.6060606060606062,
-              "glass_hybrid": 0.3939393939393938,
+              "glass_elec": 0.8121212121212122,
+              "glass_hybrid": 0.18787878787878776,
               "glass_ng": 0.0
             }
           }
         },
         "hvc": {
-          "co2_2050_mt": 15.64546484120813,
+          "co2_2050_mt": 16.1065275,
           "dominant_tech_2040": "hvc_ref",
           "tech_shares": {
             "2025": {
@@ -3382,27 +3382,27 @@
             },
             "2035": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.04413059558053537,
+              "hvc_ccs": -0.0,
               "hvc_elec": 0.15,
-              "hvc_ref": 0.8058694044194648
+              "hvc_ref": 0.8500000000000001
             },
             "2040": {
-              "hvc_bio": 0.0,
-              "hvc_ccs": 0.1931043026600578,
-              "hvc_elec": 0.2523255813953488,
-              "hvc_ref": 0.5545701159445934
+              "hvc_bio": -0.0,
+              "hvc_ccs": 0.10581395348837203,
+              "hvc_elec": 0.29651162790697677,
+              "hvc_ref": 0.5976744186046512
             },
             "2045": {
               "hvc_bio": -0.0,
-              "hvc_ccs": 0.2887155685086929,
-              "hvc_elec": 0.396590909090909,
-              "hvc_ref": 0.3146935224003981
+              "hvc_ccs": 0.20340909090909082,
+              "hvc_elec": 0.4397727272727273,
+              "hvc_ref": 0.35681818181818187
             },
             "2050": {
               "hvc_bio": 0.0,
-              "hvc_ccs": 0.2822996669862775,
-              "hvc_elec": 0.4099999999999999,
-              "hvc_ref": 0.3077003330137226
+              "hvc_ccs": 0.19888888888888878,
+              "hvc_elec": 0.45222222222222225,
+              "hvc_ref": 0.34888888888888897
             }
           }
         },
@@ -3417,22 +3417,22 @@
             },
             "2030": {
               "paper_bio": 0.30416666666666664,
-              "paper_elec": 0.03750000000000009,
-              "paper_ref": 0.6583333333333332
+              "paper_elec": 0.15,
+              "paper_ref": 0.5458333333333334
             },
             "2035": {
               "paper_bio": 0.46285714285714286,
-              "paper_elec": 0.18857142857142867,
-              "paper_ref": 0.3485714285714285
+              "paper_elec": 0.30428571428571427,
+              "paper_ref": 0.23285714285714293
             },
             "2040": {
               "paper_bio": 0.626470588235294,
-              "paper_elec": 0.34411764705882364,
-              "paper_ref": 0.029411764705882353
+              "paper_elec": 0.37352941176470594,
+              "paper_ref": 0.0
             },
             "2045": {
-              "paper_bio": 0.6454545454545454,
-              "paper_elec": 0.3545454545454546,
+              "paper_bio": 0.6151515151515151,
+              "paper_elec": 0.38484848484848494,
               "paper_ref": 0.0
             },
             "2050": {
@@ -3455,14 +3455,14 @@
             },
             "2030": {
               "steel_bfbof": 0.3950819672131147,
-              "steel_bfbof_ccs": -0.0,
-              "steel_h2dri_eaf": -0.0,
+              "steel_bfbof_ccs": 0.0,
+              "steel_h2dri_eaf": 0.0,
               "steel_ngdri_eaf": 0.30245901639344264,
               "steel_scrap_eaf": 0.30245901639344264
             },
             "2035": {
               "steel_bfbof": 0.08499999999999996,
-              "steel_bfbof_ccs": 0.0,
+              "steel_bfbof_ccs": -0.0,
               "steel_h2dri_eaf": -0.0,
               "steel_ngdri_eaf": 0.45749999999999996,
               "steel_scrap_eaf": 0.45749999999999996
@@ -3484,25 +3484,25 @@
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": -0.0,
+              "steel_h2dri_eaf": 0.0,
               "steel_ngdri_eaf": 0.49403508771929816,
               "steel_scrap_eaf": 0.5059649122807018
             }
           }
         }
       },
-      "co2_2030_mt": 305.2610115510377,
-      "co2_2040_mt": 142.7520223922458,
-      "co2_2050_mt": 100.392678224012,
+      "co2_2030_mt": 300.9098115510377,
+      "co2_2040_mt": 141.0255324401101,
+      "co2_2050_mt": 99.1578436924608,
       "total_direct_co2_by_year": {
         "2025": 389.3467800000001,
-        "2030": 305.2610115510377,
-        "2035": 199.96615729224587,
-        "2040": 142.7520223922458,
-        "2045": 114.27897819224583,
-        "2050": 100.392678224012
+        "2030": 300.9098115510377,
+        "2035": 195.67606234011015,
+        "2040": 141.0255324401101,
+        "2045": 114.03648824011012,
+        "2050": 99.1578436924608
       },
-      "total_discounted_cost_beur": 2678.135442707254
+      "total_discounted_cost_beur": 2667.223471665225
     },
     "slow_build": {
       "by_subsector": {
@@ -3543,7 +3543,7 @@
           }
         },
         "ammonia": {
-          "co2_2050_mt": 15.40336,
+          "co2_2050_mt": 17.51456,
           "dominant_tech_2040": "ammonia_smr",
           "tech_shares": {
             "2025": {
@@ -3567,13 +3567,13 @@
               "ammonia_smr_ccs": 0.23
             },
             "2045": {
-              "ammonia_h2": 0.09285714285714286,
-              "ammonia_smr": 0.5857142857142856,
+              "ammonia_h2": 0.017857142857142856,
+              "ammonia_smr": 0.6607142857142857,
               "ammonia_smr_ccs": 0.32142857142857145
             },
             "2050": {
-              "ammonia_h2": 0.09285714285714286,
-              "ammonia_smr": 0.5107142857142857,
+              "ammonia_h2": 0.0,
+              "ammonia_smr": 0.6035714285714285,
               "ammonia_smr_ccs": 0.3964285714285714
             }
           }
@@ -3621,7 +3621,7 @@
           }
         },
         "glass": {
-          "co2_2050_mt": 11.166,
+          "co2_2050_mt": 9.509519999999998,
           "dominant_tech_2040": "glass_ng",
           "tech_shares": {
             "2025": {
@@ -3630,29 +3630,29 @@
               "glass_ng": 1.0
             },
             "2030": {
-              "glass_elec": -0.0,
+              "glass_elec": 0.06142857142857139,
               "glass_hybrid": 0.1,
-              "glass_ng": 0.9
+              "glass_ng": 0.8385714285714286
             },
             "2035": {
-              "glass_elec": 0.04705882352941186,
+              "glass_elec": 0.16323529411764698,
               "glass_hybrid": 0.20294117647058824,
-              "glass_ng": 0.7499999999999999
+              "glass_ng": 0.6338235294117648
             },
             "2040": {
-              "glass_elec": 0.2,
+              "glass_elec": 0.263235294117647,
               "glass_hybrid": 0.30294117647058827,
-              "glass_ng": 0.4970588235294117
+              "glass_ng": 0.4338235294117647
             },
             "2045": {
-              "glass_elec": 0.3060606060606061,
-              "glass_hybrid": 0.3060606060606061,
-              "glass_ng": 0.38787878787878777
+              "glass_elec": 0.3712121212121212,
+              "glass_hybrid": 0.41212121212121217,
+              "glass_ng": 0.21666666666666662
             },
             "2050": {
-              "glass_elec": 0.3030303030303031,
-              "glass_hybrid": 0.3030303030303031,
-              "glass_ng": 0.39393939393939387
+              "glass_elec": 0.4060606060606061,
+              "glass_hybrid": 0.4060606060606061,
+              "glass_ng": 0.18787878787878776
             }
           }
         },
@@ -3735,7 +3735,7 @@
           }
         },
         "steel": {
-          "co2_2050_mt": 19.062400000000004,
+          "co2_2050_mt": 19.299,
           "dominant_tech_2040": "steel_ngdri_eaf",
           "tech_shares": {
             "2025": {
@@ -3753,48 +3753,48 @@
               "steel_scrap_eaf": 0.15122950819672132
             },
             "2035": {
-              "steel_bfbof": 0.36225901758087187,
-              "steel_bfbof_ccs": 0.028990982419128,
+              "steel_bfbof": 0.38583333333333336,
+              "steel_bfbof_ccs": 0.005416666666666655,
               "steel_h2dri_eaf": 0.15125,
               "steel_ngdri_eaf": 0.22874999999999998,
               "steel_scrap_eaf": 0.22874999999999998
             },
             "2040": {
-              "steel_bfbof": 0.1264498483873275,
-              "steel_bfbof_ccs": 0.02948235500250305,
+              "steel_bfbof": 0.1504237288135594,
+              "steel_bfbof_ccs": 0.005508474576271174,
               "steel_h2dri_eaf": 0.2288135593220339,
               "steel_ngdri_eaf": 0.3076271186440678,
               "steel_scrap_eaf": 0.3076271186440678
             },
             "2045": {
               "steel_bfbof": 0.0,
-              "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.3043103448275862,
+              "steel_bfbof_ccs": 0.005603448275862057,
+              "steel_h2dri_eaf": 0.2987068965517241,
               "steel_ngdri_eaf": 0.3879310344827586,
               "steel_scrap_eaf": 0.3077586206896552
             },
             "2050": {
               "steel_bfbof": 0.0,
               "steel_bfbof_ccs": 0.0,
-              "steel_h2dri_eaf": 0.3096491228070175,
-              "steel_ngdri_eaf": 0.38245614035087727,
+              "steel_h2dri_eaf": 0.30394736842105263,
+              "steel_ngdri_eaf": 0.3881578947368421,
               "steel_scrap_eaf": 0.3078947368421053
             }
           }
         }
       },
-      "co2_2030_mt": 351.0748075912042,
-      "co2_2040_mt": 195.41265665278485,
-      "co2_2050_mt": 132.59816365,
+      "co2_2030_mt": 350.38852759120425,
+      "co2_2040_mt": 197.84101525000003,
+      "co2_2050_mt": 133.28948365,
       "total_direct_co2_by_year": {
         "2025": 421.02266000000003,
-        "2030": 351.0748075912042,
-        "2035": 269.62757560278476,
-        "2040": 195.41265665278485,
-        "2045": 142.04582564999998,
-        "2050": 132.59816365
+        "2030": 350.38852759120425,
+        "2035": 271.4813742,
+        "2040": 197.84101525000003,
+        "2045": 142.97204564999998,
+        "2050": 133.28948365
       },
-      "total_discounted_cost_beur": 2771.600739302995
+      "total_discounted_cost_beur": 2775.363656147446
     }
   }
 }

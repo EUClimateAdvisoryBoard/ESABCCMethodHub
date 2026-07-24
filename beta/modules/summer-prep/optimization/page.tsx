@@ -16,7 +16,7 @@
  * and is downloadable in full (code + data + results + README) as a zip.
  */
 
-import { useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
@@ -33,7 +33,10 @@ import {
   SUBSECTORS,
   TECHNOLOGIES,
   type CellValue,
+  type ScenarioId,
 } from '@/data/summer-prep-optimization';
+import { buildAndSolve, CENTRAL_OVERRIDES, overridesFromScenarioMeta } from '@/lib/industry-lp/model';
+import type { IndustryLpOverrides, IndustryLpResult } from '@/lib/industry-lp/types';
 
 /* -------------------------------------------------------------------------
  * Constants / shared styling
@@ -349,7 +352,7 @@ function WorkbookViewer() {
           download
           className="inline-flex items-center gap-1.5 rounded-md border border-[#D6DAE0] px-3 py-1.5 text-[12px] font-semibold text-[#3D5265] hover:bg-[#F3F5F7] dark:border-[var(--mh-border)] dark:text-[var(--mh-fg)] dark:hover:bg-[var(--mh-bg)]"
         >
-          ⬇ Download inputs (.xlsx, ~29 KB)
+          ⬇ Download inputs (.xlsx, ~53 KB)
         </a>
       </div>
     </div>
@@ -578,6 +581,502 @@ function Co2TrajectoryChart() {
       </svg>
       <p className="mt-1 text-center text-[11px] text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
         EU-27 industry direct (scope-1) CO2, central scenario — Mt/yr
+      </p>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------
+ * Section: "Run the model yourself" — the in-browser LP solve
+ * -------------------------------------------------------------------------
+ * Ports the exact Julia/JuMP formulation (industry_optimization.jl) to
+ * TypeScript (src/lib/industry-lp/model.ts) and solves it client-side with
+ * HiGHS compiled to WebAssembly (the `highs` npm package — the very same
+ * open-source solver the Julia reference model calls via JuMP), so a
+ * visitor can change assumptions and see a fresh, real re-optimization
+ * rather than a pre-computed scenario.
+ * ---------------------------------------------------------------------- */
+
+type PresetChoice = ScenarioId | 'custom';
+type OverridesState = Required<IndustryLpOverrides>;
+
+const RUN_MODEL_YEARS = MODEL_YEARS;
+
+const SLIDER_ACCENT = ACCENTS.blue;
+
+function SliderRow({
+  id,
+  label,
+  min,
+  max,
+  step,
+  value,
+  format,
+  onChange,
+}: {
+  id: string;
+  label: string;
+  min: number;
+  max: number;
+  step: number;
+  value: number;
+  format: (v: number) => string;
+  onChange: (v: number) => void;
+}) {
+  const valueId = `${id}-value`;
+  return (
+    <div className="flex items-center gap-3">
+      <label htmlFor={id} className="w-[168px] flex-none text-[12px] font-semibold leading-tight text-[#3D5265] dark:text-[var(--mh-fg)]">
+        {label}
+      </label>
+      <input
+        id={id}
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        aria-describedby={valueId}
+        aria-valuetext={format(value)}
+        className="h-1.5 flex-1 accent-[#004B7F]"
+        style={{ accentColor: SLIDER_ACCENT }}
+      />
+      <span
+        id={valueId}
+        className="w-16 flex-none text-right text-[12px] font-bold tabular-nums text-[#3D5265] dark:text-[var(--mh-fg)]"
+      >
+        {format(value)}
+      </span>
+    </div>
+  );
+}
+
+const CARBON_PATH_LABEL: Record<'low' | 'central' | 'high', string> = {
+  low: 'Low',
+  central: 'Central',
+  high: 'High',
+};
+
+function ResultBadge({ result, solving }: { result: IndustryLpResult | null; solving: boolean }) {
+  if (solving) {
+    return (
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#D6DAE0] bg-[#F3F5F7] px-2.5 py-1 text-[11px] font-bold text-[#3D5265] dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
+        <span className="h-2 w-2 animate-pulse rounded-full bg-[#6667AB]" aria-hidden="true" />
+        solving…
+      </span>
+    );
+  }
+  if (!result) return null;
+  if (result.status === 'optimal') {
+    return (
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00928F]/30 bg-[#00928F]/10 px-2.5 py-1 text-[11px] font-bold text-[#00695F] dark:border-[#00928F]/40 dark:bg-[#00928F]/15 dark:text-[#5FD3CE]">
+        <span className="h-2 w-2 rounded-full bg-[#00928F]" aria-hidden="true" />
+        solved · optimal · {Math.round(result.solveTimeMs)} ms
+      </span>
+    );
+  }
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#B83230]/30 bg-[#B83230]/10 px-2.5 py-1 text-[11px] font-bold text-[#B83230] dark:border-[#B83230]/40 dark:bg-[#B83230]/15 dark:text-[#FF9A90]">
+        <span className="h-2 w-2 rounded-full bg-[#B83230]" aria-hidden="true" />
+        {result.status === 'infeasible' ? 'infeasible' : 'error'}
+      </span>
+  );
+}
+
+/** CO2 trajectory: the user's live solve vs the pre-solved central reference line. */
+function UserCo2Chart({ userCo2 }: { userCo2: Record<string, number> | undefined }) {
+  const central = RESULTS.central.co2_by_year;
+  const points = RUN_MODEL_YEARS.map((y) => ({ y, ref: central[String(y)], user: userCo2?.[String(y)] }));
+  const allVals = points.flatMap((p) => [p.ref, p.user]).filter((v): v is number => typeof v === 'number');
+  const maxV = Math.max(...allVals, 1) * 1.1;
+  const W = 640;
+  const H = 220;
+  const padL = 40;
+  const padB = 28;
+  const padT = 16;
+  const padR = 16;
+  const plotW = W - padL - padR;
+  const plotH = H - padT - padB;
+  const x = (i: number) => padL + (i / (points.length - 1)) * plotW;
+  const yPos = (v: number) => padT + plotH - (v / maxV) * plotH;
+
+  const refPath = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${x(i)} ${yPos(p.ref)}`).join(' ');
+  const userPath =
+    points.every((p) => typeof p.user === 'number') &&
+    points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${x(i)} ${yPos(p.user as number)}`).join(' ');
+
+  return (
+    <svg
+      viewBox={`0 0 ${W} ${H}`}
+      role="img"
+      aria-label={`Direct CO2 trajectory: your run ${
+        userPath ? points.map((p) => `${p.y}: ${fmt(p.user ?? 0, 0)} Mt`).join(', ') : 'not yet solved'
+      }; central reference ${points.map((p) => `${p.y}: ${fmt(p.ref, 0)} Mt`).join(', ')}`}
+      className="w-full"
+    >
+      {[0, 0.25, 0.5, 0.75, 1].map((f) => (
+        <line
+          key={f}
+          x1={padL}
+          x2={W - padR}
+          y1={padT + plotH * (1 - f)}
+          y2={padT + plotH * (1 - f)}
+          stroke="currentColor"
+          className="text-[#E6E7E8] dark:text-[var(--mh-border)]"
+          strokeWidth={1}
+        />
+      ))}
+      <path d={refPath} fill="none" stroke="currentColor" className="text-[#3D5265]/40 dark:text-[var(--mh-muted)]" strokeWidth={2} strokeDasharray="5 4" />
+      {userPath && <path d={userPath} fill="none" stroke={ACCENTS.blue} strokeWidth={2.5} />}
+      {points.map((p, i) => (
+        <g key={p.y}>
+          {typeof p.user === 'number' && <circle cx={x(i)} cy={yPos(p.user)} r={3.5} fill={ACCENTS.blue} />}
+          <text x={x(i)} y={H - 8} textAnchor="middle" className="fill-[#3D5265]/60 text-[10px] dark:fill-[var(--mh-muted)]">
+            {p.y}
+          </text>
+        </g>
+      ))}
+      <text x={padL - 8} y={padT + 4} textAnchor="end" className="fill-[#3D5265]/60 text-[9px] dark:fill-[var(--mh-muted)]">
+        {fmt(maxV, 0)}
+      </text>
+      <text x={padL - 8} y={padT + plotH} textAnchor="end" className="fill-[#3D5265]/60 text-[9px] dark:fill-[var(--mh-muted)]">
+        0
+      </text>
+    </svg>
+  );
+}
+
+function UserTechMixRow({ subsector, shares }: { subsector: string; shares: Record<string, number> | undefined }) {
+  const entries = Object.entries(shares ?? {}).filter(([, v]) => v > 0);
+  return (
+    <div className="flex items-center gap-2">
+      <span className="w-24 flex-none truncate text-[11.5px] font-semibold text-[#3D5265] dark:text-[var(--mh-fg)]" title={SUBSECTORS[subsector].name}>
+        {SUBSECTORS[subsector].name}
+      </span>
+      <div
+        role="img"
+        aria-label={`${SUBSECTORS[subsector].name} 2050 production mix: ${
+          entries.length
+            ? entries.map(([t, v]) => `${techName(t)} ${Math.round(v * 100)}%`).join(', ')
+            : 'not yet solved'
+        }`}
+        className="flex h-6 flex-1 overflow-hidden rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)]"
+      >
+        {entries.length === 0 ? (
+          <div className="h-full w-full bg-[#F3F5F7] dark:bg-[var(--mh-bg)]" />
+        ) : (
+          entries.map(([t, v]) => (
+            <div
+              key={t}
+              title={`${techName(t)}: ${(v * 100).toFixed(1)}%`}
+              style={{ width: `${v * 100}%`, backgroundColor: CATEGORY_COLOR[TECH_CATEGORY[t]] }}
+              className="flex h-full items-center justify-center overflow-hidden"
+            >
+              {v >= 0.12 && <span className="px-0.5 text-[9px] font-bold text-white">{Math.round(v * 100)}%</span>}
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
+}
+
+function CostDeltaChip({ result }: { result: IndustryLpResult | null }) {
+  const central = RESULTS.central.total_discounted_cost_beur;
+  if (!result || result.status !== 'optimal' || result.totalDiscountedCostBeur === undefined) {
+    return (
+      <div className="rounded-lg border border-[#E6E7E8] bg-[#F8F9FA] px-3 py-2.5 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+        <div className="text-[9px] font-bold uppercase tracking-wide text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+          Total discounted cost
+        </div>
+        <div className="text-[13px] text-[#3D5265]/50 dark:text-[var(--mh-muted)]">Run the model to see a value</div>
+      </div>
+    );
+  }
+  const delta = result.totalDiscountedCostBeur - central;
+  const pct = (delta / central) * 100;
+  const worse = delta > 0;
+  return (
+    <div className="rounded-lg border border-[#E6E7E8] bg-[#F8F9FA] px-3 py-2.5 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+      <div className="text-[9px] font-bold uppercase tracking-wide text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+        Total discounted cost (your run)
+      </div>
+      <div className="flex items-baseline gap-2">
+        <span className="text-[16px] font-bold text-[#3D5265] dark:text-[var(--mh-fg)]">€{fmt(result.totalDiscountedCostBeur, 0)}bn</span>
+        <span className="text-[11.5px] font-bold" style={{ color: worse ? ACCENTS.red : ACCENTS.green }}>
+          {worse ? '+' : ''}
+          {fmt(pct, 1)}% vs central
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function RunModelSection() {
+  const [preset, setPreset] = useState<PresetChoice>('central');
+  const [overrides, setOverrides] = useState<OverridesState>(CENTRAL_OVERRIDES);
+  const [result, setResult] = useState<IndustryLpResult | null>(null);
+  const [solving, setSolving] = useState(false);
+  const [hasRunOnce, setHasRunOnce] = useState(false);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const runIdRef = useRef(0);
+
+  const runSolve = useCallback(async (ov: OverridesState) => {
+    const myRunId = ++runIdRef.current;
+    setSolving(true);
+    try {
+      const r = await buildAndSolve(INPUT_SHEETS, ov);
+      if (myRunId === runIdRef.current) setResult(r);
+    } finally {
+      if (myRunId === runIdRef.current) setSolving(false);
+    }
+  }, []);
+
+  const handleRunClick = () => {
+    setHasRunOnce(true);
+    void runSolve(overrides);
+  };
+
+  // Auto-resolve (debounced) whenever assumptions change, but only once the visitor has run the
+  // model at least once — first paint should never silently trigger a solve.
+  useEffect(() => {
+    if (!hasRunOnce) return;
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      void runSolve(overrides);
+    }, 400);
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [overrides, hasRunOnce]);
+
+  const handlePreset = (id: PresetChoice) => {
+    setPreset(id);
+    if (id === 'custom') return;
+    const meta = SCENARIO_META[id];
+    const delta = overridesFromScenarioMeta(meta.knob, meta.factor);
+    setOverrides({ ...CENTRAL_OVERRIDES, ...delta });
+  };
+
+  const patch = (p: Partial<OverridesState>) => {
+    setPreset('custom');
+    setOverrides((prev) => ({ ...prev, ...p }));
+  };
+
+  const handleReset = () => {
+    setPreset('central');
+    setOverrides(CENTRAL_OVERRIDES);
+  };
+
+  const isCentral = useMemo(
+    () => (Object.keys(CENTRAL_OVERRIDES) as (keyof OverridesState)[]).every((k) => overrides[k] === CENTRAL_OVERRIDES[k]),
+    [overrides],
+  );
+
+  return (
+    <div className={CARD_CLASS}>
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h3 className="text-[13.5px] font-bold text-[#3D5265] dark:text-[var(--mh-fg)]">Assumptions</h3>
+          <p className="mt-0.5 max-w-md text-[11.5px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+            Pick one of the 13 built-in scenarios, or move any slider to explore a combination —
+            the model re-solves the full joint LP from scratch every time.
+          </p>
+        </div>
+        <button
+          onClick={handleReset}
+          disabled={isCentral}
+          className="rounded-md border border-[#D6DAE0] px-3 py-1.5 text-[12px] font-semibold text-[#3D5265] hover:bg-[#F3F5F7] disabled:cursor-not-allowed disabled:opacity-40 dark:border-[var(--mh-border)] dark:text-[var(--mh-fg)] dark:hover:bg-[var(--mh-bg)]"
+        >
+          Reset to central
+        </button>
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="preset-select" className="mb-1 block text-[11px] font-bold uppercase tracking-wide text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
+          Preset scenario
+        </label>
+        <select
+          id="preset-select"
+          value={preset}
+          onChange={(e) => handlePreset(e.target.value as PresetChoice)}
+          className="w-full max-w-sm rounded-md border border-[#D6DAE0] bg-white px-2.5 py-1.5 text-[12.5px] font-semibold text-[#3D5265] dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)] dark:text-[var(--mh-fg)]"
+        >
+          {preset === 'custom' && <option value="custom">Custom (adjusted below)</option>}
+          {SCENARIO_IDS.map((id) => (
+            <option key={id} value={id}>
+              {SCENARIO_META[id].label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
+        <div className="space-y-2 sm:col-span-2">
+          <span className="block text-[11px] font-bold uppercase tracking-wide text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
+            Carbon price (EU ETS path)
+          </span>
+          <div className="flex flex-wrap items-center gap-4">
+            <div role="radiogroup" aria-label="Carbon price path" className="inline-flex rounded-lg border border-[#E6E7E8] p-1 dark:border-[var(--mh-border)]">
+              {(['low', 'central', 'high'] as const).map((path) => (
+                <button
+                  key={path}
+                  role="radio"
+                  aria-checked={overrides.carbonPricePath === path}
+                  onClick={() => patch({ carbonPricePath: path })}
+                  className={`rounded-md px-3 py-1 text-[12px] font-semibold transition ${
+                    overrides.carbonPricePath === path
+                      ? 'bg-[#003399] text-white'
+                      : 'text-[#3D5265] hover:bg-[#F3F5F7] dark:text-[var(--mh-fg)] dark:hover:bg-[var(--mh-bg)]'
+                  }`}
+                >
+                  {CARBON_PATH_LABEL[path]}
+                </button>
+              ))}
+            </div>
+            <div className="min-w-[220px] flex-1">
+              <SliderRow
+                id="carbon-scale"
+                label="Scale (×)"
+                min={0.5}
+                max={2.0}
+                step={0.05}
+                value={overrides.carbonScale}
+                format={(v) => `×${v.toFixed(2)}`}
+                onChange={(v) => patch({ carbonScale: v })}
+              />
+            </div>
+          </div>
+        </div>
+
+        <SliderRow
+          id="capex-clean"
+          label="Clean-tech CAPEX"
+          min={0.5}
+          max={1.5}
+          step={0.05}
+          value={overrides.capexCleanScale}
+          format={(v) => `×${v.toFixed(2)}`}
+          onChange={(v) => patch({ capexCleanScale: v })}
+        />
+        <SliderRow
+          id="demand-scale"
+          label="Demand"
+          min={0.7}
+          max={1.3}
+          step={0.02}
+          value={overrides.demandScale}
+          format={(v) => `×${v.toFixed(2)}`}
+          onChange={(v) => patch({ demandScale: v })}
+        />
+        <SliderRow
+          id="elec-price"
+          label="Electricity price"
+          min={0.5}
+          max={1.5}
+          step={0.05}
+          value={overrides.elecPriceScale}
+          format={(v) => `×${v.toFixed(2)}`}
+          onChange={(v) => patch({ elecPriceScale: v })}
+        />
+        <SliderRow
+          id="h2-price"
+          label="Hydrogen price"
+          min={0.5}
+          max={1.5}
+          step={0.05}
+          value={overrides.h2PriceScale}
+          format={(v) => `×${v.toFixed(2)}`}
+          onChange={(v) => patch({ h2PriceScale: v })}
+        />
+        <SliderRow
+          id="energy-intensity"
+          label="Clean-tech energy intensity"
+          min={0.8}
+          max={1.1}
+          step={0.01}
+          value={overrides.energyIntensityCleanScale}
+          format={(v) => `×${v.toFixed(2)}`}
+          onChange={(v) => patch({ energyIntensityCleanScale: v })}
+        />
+        <SliderRow
+          id="build-rate"
+          label="Max build rate"
+          min={0.5}
+          max={2.0}
+          step={0.05}
+          value={overrides.buildRateScale}
+          format={(v) => `×${v.toFixed(2)}`}
+          onChange={(v) => patch({ buildRateScale: v })}
+        />
+      </div>
+
+      <div className="mt-4 flex flex-wrap items-center gap-3 border-t border-[#E6E7E8] pt-4 dark:border-[var(--mh-border)]">
+        <button
+          onClick={handleRunClick}
+          disabled={solving}
+          className="rounded-md bg-[#003399] px-4 py-2 text-[13px] font-bold text-white transition hover:bg-[#00287a] disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          {hasRunOnce ? 'Re-run model' : '▶ Run the model'}
+        </button>
+        <ResultBadge result={result} solving={solving} />
+        {hasRunOnce && (
+          <span className="text-[11px] text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
+            Auto re-solves ~400ms after you move a slider.
+          </span>
+        )}
+      </div>
+
+      {result?.status !== 'optimal' && result?.message && (
+        <p className="mt-3 rounded-md border border-[#B83230]/30 bg-[#B83230]/5 px-3 py-2 text-[12px] font-medium text-[#B83230] dark:border-[#B83230]/40 dark:bg-[#B83230]/10 dark:text-[#FF9A90]">
+          {result.message}
+        </p>
+      )}
+
+      {hasRunOnce && (
+        <div className="mt-5 grid gap-4 lg:grid-cols-[1.3fr_1fr]">
+          <div>
+            <h4 className="mb-1 text-[12.5px] font-bold text-[#3D5265] dark:text-[var(--mh-fg)]">
+              Direct CO2 trajectory — your run vs central
+            </h4>
+            <UserCo2Chart userCo2={result?.status === 'optimal' ? result.co2ByYear : undefined} />
+            <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[10.5px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-0.5 w-4 rounded-sm" style={{ backgroundColor: ACCENTS.blue }} /> your run
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-0.5 w-4 rounded-sm border-t-2 border-dashed" style={{ borderColor: '#3D5265' }} /> central reference
+              </span>
+            </div>
+          </div>
+          <div className="space-y-2.5">
+            <CostDeltaChip result={result} />
+          </div>
+        </div>
+      )}
+
+      {hasRunOnce && (
+        <div className="mt-5">
+          <h4 className="mb-2 text-[12.5px] font-bold text-[#3D5265] dark:text-[var(--mh-fg)]">
+            2050 production mix by subsector (your run)
+          </h4>
+          <div className="space-y-1.5">
+            {SUBSECTOR_ORDER.map((s) => (
+              <UserTechMixRow key={s} subsector={s} shares={result?.status === 'optimal' ? result.bySubsector?.[s]?.tech_shares['2050'] : undefined} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      <p className="mt-4 border-t border-[#E6E7E8] pt-3 text-[11px] leading-relaxed text-[#3D5265]/55 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]">
+        This runs the same joint linear program as the Julia reference model, ported line-for-line
+        to TypeScript, and solved in your browser with HiGHS compiled to WebAssembly — the same
+        open-source solver (via the <span className="font-mono text-[10.5px]">highs</span> npm
+        package) that the Julia/JuMP file uses server-side. It has been checked against all 13
+        pre-solved reference scenarios (objective within 0.5%, 2040 CO2 within 0.5 Mt, technology
+        shares within 2 percentage points) — see the model source above for the exact formulation.
       </p>
     </div>
   );
@@ -871,6 +1370,18 @@ function OptimizationInner() {
           </div>
         </section>
 
+        {/* 5b. Run the model yourself */}
+        <section className="mb-8">
+          <h2 className="mb-1 text-[15px] font-bold text-[#3D5265] dark:text-[var(--mh-fg)]">
+            Run the model yourself
+          </h2>
+          <p className="mb-3 text-[12px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+            Every slider and preset below re-solves the full 7-subsector, 25-technology joint
+            linear program in your browser, instantly — no server round-trip.
+          </p>
+          <RunModelSection />
+        </section>
+
         {/* 6. Sensitivity analysis */}
         <section className="mb-8">
           <h2 className="mb-1 text-[15px] font-bold text-[#3D5265] dark:text-[var(--mh-fg)]">
@@ -1049,7 +1560,7 @@ function OptimizationInner() {
             <DownloadCard
               title="Input workbook"
               desc="All 10 input tables (sectors, demand, technologies, energy use, prices, constraints, scenarios, sources) as one Excel file."
-              size="~29 KB"
+              size="~53 KB"
               href={XLSX_URL}
               accent={ACCENTS.blue}
             />
@@ -1063,7 +1574,7 @@ function OptimizationInner() {
             <DownloadCard
               title="Full model package (.zip)"
               desc="Code + data + all 13 results_<scenario>.csv files + results_summary.json + README — everything needed to reproduce and review."
-              size="~96 KB"
+              size="~112 KB"
               href={ZIP_URL}
               accent={ACCENTS.purple}
             />
