@@ -1,61 +1,32 @@
 {
   "date": "2026-07-24",
-  "generatedAt": "2026-07-24T12:22:55.257Z",
+  "generatedAt": "2026-07-24T18:19:01.428Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 24 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "UK households free to install plug-in balcony solar panels from end of August",
-      "summary": "&lt;p&gt;Law change means renters and flat owners may be able to cut bills as energy costs soar amid Iran war&lt;/p&gt;&lt;p&gt;British households will be able to buy plug-in solar panels later this summer after the government changed the law so the UK’s biggest retailers could bring them to market for the first time.&lt;/p&gt;&lt;p&gt;People across the country will be able to join the millions across Europe generating their own electricity using “balcony solar panels” from 27 August, according ",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "France evacuates Cap Ferret peninsula as Spanish wildfires merge near Madrid – Europe live",
-      "summary": "&lt;p&gt;French evacuees using hundreds of mobilised boats or the only road linking the area with the mainland as evacuation also ordered in areas near Spanish capital&lt;/p&gt;&lt;p&gt;Over in France, it’s not just the south-west that gets affected, but the country’s south-east regions are also being hard hit, AFP noted.&lt;/p&gt;&lt;p&gt;Dozens of fires flared up and are being fanned by the mistral wind around the historic village of &lt;strong&gt;Cotignac&lt;/strong&gt; – officials saying aro",
+      "headline": "Thousands evacuated in south of France as wildfire rages across pine forest – video",
+      "summary": "&lt;p&gt;Local people and tourists were evacuated from the Arcachon Bay area overnight into Thursday after a huge fire engulfed more than 3,400 hectares (8,400 acres) of forest. Pushed by the wind, with flames reaching 10 metres high, the fire is still spreading towards the Cap Ferret peninsula. On Tuesday, two firefighters died battling another nearby fire close to Bordeaux airport &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/2",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Access to finance ‘strengthens climate resilience’ among sub-Saharan women",
-      "summary": "Empowering women through greater access to finance could “strengthen” households&#8217; resilience to “climate shocks”, according to a new study.&#160;&#160; Published&#8230; The post Access to finance ‘strengthens climate resilience’ among sub-Saharan women appeared first on Carbon Brief.",
+      "headline": "Factcheck: No, Europe’s heatwaves are not being ‘caused’ by declining air pollution",
+      "summary": "This summer has seen Europe suffer through a series of record-breaking heatwaves. Amid widespread media coverage of the number of&#8230; The post Factcheck: No, Europe’s heatwaves are not being ‘caused’ by declining air pollution appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "India relaxes e-commerce investment rules for exports in win for Amazon - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQUk8xcnpNeU9mY0RLYi1CM3lKdk5xS1ZjcDhhWkJYclJVZmJyUnl4RlBZd0x3ZHlseU5va096WFBLNlhndWtLMFlKZXdfTktqbk1nR09jbWlRSkR3WWRVdUlBaUI0UDJHSURXUnBVdkpRemtNTW1XeUJrbV9HdTdKMlJGTDlIRDhZRVJFMXVhLURnMW5YN1FPNUgzT3RiUGJzOEtWaWl1bU1ENGI0?oc=5\" target=\"_blank\"&gt;India relaxes e-commerce investment rules for exports in win for Amazon&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "UK households free to install plug-in balcony solar panels from end of August",
-          "link": "https://www.theguardian.com/money/2026/jul/23/uk-households-free-install-plug-in-balcony-solar-panels",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Law change means renters and flat owners may be able to cut bills as energy costs soar amid Iran war&lt;/p&gt;&lt;p&gt;British households will be able to buy plug-in solar panels later this summer after the government changed the law so the UK’s biggest retailers could bring them to market for the first time.&lt;/p&gt;&lt;p&gt;People across the country will be able to join the millions across Europe generating their own electricity using “balcony solar panels” from 27 August, according ",
-          "published": "2026-07-23T13:00:44.000Z",
-          "score": 13
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "France evacuates Cap Ferret peninsula as Spanish wildfires merge near Madrid – Europe live",
-          "link": "https://www.theguardian.com/world/live/2026/jul/24/france-spain-wildfires-cap-ferret-europe-latest-news-updates",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;French evacuees using hundreds of mobilised boats or the only road linking the area with the mainland as evacuation also ordered in areas near Spanish capital&lt;/p&gt;&lt;p&gt;Over in France, it’s not just the south-west that gets affected, but the country’s south-east regions are also being hard hit, AFP noted.&lt;/p&gt;&lt;p&gt;Dozens of fires flared up and are being fanned by the mistral wind around the historic village of &lt;strong&gt;Cotignac&lt;/strong&gt; – officials saying aro",
-          "published": "2026-07-24T12:03:06.000Z",
-          "score": 10
-        },
         {
           "title": "Thousands evacuated in south of France as wildfire rages across pine forest – video",
           "link": "https://www.theguardian.com/world/video/2026/jul/23/thousands-evacuated-in-south-of-france-as-wildfire-rages-across-pine-forest-video",
@@ -65,28 +36,36 @@
           "score": 7
         },
         {
-          "title": "Saudis must recognise Israel for nuclear deal, says Trump",
-          "link": "https://www.bbc.co.uk/news/articles/cwye71yq8wwo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The US president says the landmark agreement to help Saudis develop nuclear energy is dependent on it joining the Abraham Accords.",
-          "published": "2026-07-23T17:58:02.000Z",
+          "title": "US strikes Iran from south to north after Trump threats over Red Sea shipping - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNFdZY1R2bFRCTk51X1E2U2dLZUphMDA2MVlUaGRzOEJXRXc5Vl9ObDNaVE9FNnU4eTV6TXBjYjRyR2xZekJYeGY2VHNrYW9hSjhpSjQ0aVJEdXBkSk9Ja2NXRjZjQng3Rkp1eFBHMlVwQ2paZUlVRnZUN0l3OThQRlZVLTJDanZHREpMTjFNVm9odWl5alZwRUpDbUhwSWRWeHc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxQNFdZY1R2bFRCTk51X1E2U2dLZUphMDA2MVlUaGRzOEJXRXc5Vl9ObDNaVE9FNnU4eTV6TXBjYjRyR2xZekJYeGY2VHNrYW9hSjhpSjQ0aVJEdXBkSk9Ja2NXRjZjQng3Rkp1eFBHMlVwQ2paZUlVRnZUN0l3OThQRlZVLTJDanZHREpMTjFNVm9odWl5alZwRUpDbUhwSWRWeHc?oc=5\" target=\"_blank\"&gt;US strikes Iran from south to north after Trump threats over Red Sea shipping&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-24T04:00:00.000Z",
           "score": 7
         },
         {
-          "title": "Trump's nuclear deal with Saudis jettisons longstanding US demands",
-          "link": "https://www.bbc.co.uk/news/articles/cz05lx0xpero?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Signing a nuclear pact in the Middle East is a bold move that has drawn criticism in the US and in Israel.",
-          "published": "2026-07-23T12:58:40.000Z",
+          "title": "AfDB approves $114 million loan for Morocco battery gigafactory - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPcHB1Q2o5ZEh2cF9LRTR1bEQ0T3lxMURldzlFQmRKc3lRSjQ0c3ZEQWR6TWNnV2VXdDVjcTlWWGpoa1p2VzdVUTlycmVrVF9tc0lER19hZ2ZZNXRtb3dqYlBqZjN6bks5TUhDVnNWTVdBdHVMSTBVU1ptNmI4TXY0U3NGbWVCRlo5U1h1eGp4WC1qWG4xR183WWtUUVJYeTNFT3VMWDZTNG9Pb0k?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPcHB1Q2o5ZEh2cF9LRTR1bEQ0T3lxMURldzlFQmRKc3lRSjQ0c3ZEQWR6TWNnV2VXdDVjcTlWWGpoa1p2VzdVUTlycmVrVF9tc0lER19hZ2ZZNXRtb3dqYlBqZjN6bks5TUhDVnNWTVdBdHVMSTBVU1ptNmI4TXY0U3NGbWVCRlo5U1h1eGp4WC1qWG4xR183WWtUUVJYeTNFT3VMWDZTNG9Pb0k?oc=5\" target=\"_blank\"&gt;AfDB approves $114 million loan for Morocco battery gigafactory&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-24T09:31:44.000Z",
           "score": 7
         },
         {
-          "title": "US-Saudi nuclear deal: How will it impact Middle East, US-Iran war?",
-          "link": "https://www.dw.com/en/us-saudi-nuclear-deal-how-will-it-impact-middle-east-us-iran-war/a-78087041?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Critics say the US-Saudi deal could spark a nuclear arms race in the Middle East. It&#039;s certainly not making US allies, like Israel and the UAE, happy. And reports suggest the US may already be backtracking on the deal.",
-          "published": "2026-07-23T16:14:00.000Z",
+          "title": "China's CATL tops quarterly profit forecasts on robust energy storage business - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcF9pTnJraWJkenBtYW03RHBabkdfYWI4RXllR0VDQldoVWllUUV5eVd3MzFVYkFXamxQZzY5cmQwaXJwMG5BbHpNVkJTdm1tTk54a3BvR2R0YzZ0THZWRDF5MzgweFRwV01JNFc0bnlpSmVGTkh4d0ZGYjk5QmFEWkhCanItLTlBYmtsTGtUR2h0ZmRUUjFaQWd1Nm0xcmFhVmNv?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPcF9pTnJraWJkenBtYW03RHBabkdfYWI4RXllR0VDQldoVWllUUV5eVd3MzFVYkFXamxQZzY5cmQwaXJwMG5BbHpNVkJTdm1tTk54a3BvR2R0YzZ0THZWRDF5MzgweFRwV01JNFc0bnlpSmVGTkh4d0ZGYjk5QmFEWkhCanItLTlBYmtsTGtUR2h0ZmRUUjFaQWd1Nm0xcmFhVmNv?oc=5\" target=\"_blank\"&gt;China's CATL tops quarterly profit forecasts on robust energy storage business&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-24T12:48:05.000Z",
           "score": 7
+        },
+        {
+          "title": "France evacuates Cap Ferret peninsula as Spanish wildfires merge near Madrid – as it happened",
+          "link": "https://www.theguardian.com/world/live/2026/jul/24/france-spain-wildfires-cap-ferret-europe-latest-news-updates",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;French evacuees using hundreds of mobilised boats or the only road linking the area with the mainland as evacuation also ordered in areas near Spanish capital&lt;/p&gt;&lt;p&gt;Over in France, it’s not just the south-west that gets affected, but the country’s south-east regions are also being hard hit, AFP noted.&lt;/p&gt;&lt;p&gt;Dozens of fires flared up and are being fanned by the mistral wind around the historic village of &lt;strong&gt;Cotignac&lt;/strong&gt; – officials saying aro",
+          "published": "2026-07-24T15:09:33.000Z",
+          "score": 4
         }
       ]
     },
@@ -94,6 +73,22 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Factcheck: No, Europe’s heatwaves are not being ‘caused’ by declining air pollution",
+          "link": "https://www.carbonbrief.org/factcheck-no-europes-heatwaves-are-not-being-caused-by-declining-air-pollution",
+          "source": "Carbon Brief",
+          "description": "This summer has seen Europe suffer through a series of record-breaking heatwaves. Amid widespread media coverage of the number of&#8230; The post Factcheck: No, Europe’s heatwaves are not being ‘caused’ by declining air pollution appeared first on Carbon Brief.",
+          "published": "2026-07-24T14:15:24.000Z",
+          "score": 19
+        },
+        {
+          "title": "Questions and answers on the 21st package of sanctions against Russia",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_1686",
+          "source": "European Commission",
+          "description": "European Commission Questions and answers Brussels, 24 Jul 2026 ENERGY MEASURES\r\nWhat energy measures are included in the package?\r\nCurbing Russia's energy export revenues is the most effective way to inflict significant costs...",
+          "published": "2026-07-24T09:27:38.000Z",
+          "score": 16
+        },
         {
           "title": "Access to finance ‘strengthens climate resilience’ among sub-Saharan women",
           "link": "https://www.carbonbrief.org/access-to-finance-strengthens-climate-resilience-among-sub-saharan-women",
@@ -117,57 +112,39 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxONEJlRVlNb1o1bHBLTFBtNi1aeUVCSTBHYTF1dUdWcV9pR3ZwaVZqQUdqYTdvZWNnSkZ4VS1kRVhsZ1loQWpLeTIxSTFVelFXeTh2eE9rRTdwY1NLcWRwVnZXbFk0MEVoOGoxaTFxLU1ZeWk2OG0tc0NBT3dWOUgxbVJwYjBrT0hSZ1cwSHZYQV9ZRVdIMkExVUl5Z3pHZUVIdTI2d215R2xlQ2MxbWlKRG1yMlRhZTlUcDNXczBGdUFMYmw2YzJKWFd3NFE?oc=5\" target=\"_blank\"&gt;France wildfire forces thousands to flee as tinder box conditions persist in warming Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&",
           "published": "2026-07-23T23:59:42.000Z",
           "score": 13
-        },
-        {
-          "title": "Thousands flee wildfires in France and Spain as temperatures reach extreme levels in southern Europe",
-          "link": "https://www.theguardian.com/world/2026/jul/23/people-evacuated-intense-wildfire-saumos-france",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;France asks EU for help while Spain declares national emergency around Madrid, as marine heatwave sees parts of Mediterranean Sea 5C hotter than normal&lt;/p&gt;&lt;p&gt;Brutal heat torching southern Europe has forced about 30,000 people to flee wildfires in France and Spain as a marine heatwave scalds the Mediterranean and researchers warn that “Dantesque” scenarios cannot be ruled out as infernos worsen.&lt;/p&gt;&lt;p&gt;France has requested assistance from ⁠the European Union to hel",
-          "published": "2026-07-24T00:16:02.000Z",
-          "score": 8
-        },
-        {
-          "title": "Drought declared in parts of Wales as July on course to be driest in nearly 200 years",
-          "link": "https://www.theguardian.com/uk-news/2026/jul/23/drought-declared-north-wales-upper-severn-heatwaves-rainfall",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Government agency announces status in north Wales and Upper Severn after series of heatwaves and lack of rainfall&lt;/p&gt;&lt;p&gt;Parts of Wales are now in drought and all other areas of the country are experiencing prolonged dry conditions, with this month on course to be the driest on record for nearly 200 years.&lt;/p&gt;&lt;p&gt;Natural Resources Wales (NRW) said on Thursday that record-low river flows, back-to-back heatwaves and widespread wildfires have prompted the declaration ",
-          "published": "2026-07-23T15:46:14.000Z",
-          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "India relaxes e-commerce investment rules for exports in win for Amazon - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQUk8xcnpNeU9mY0RLYi1CM3lKdk5xS1ZjcDhhWkJYclJVZmJyUnl4RlBZd0x3ZHlseU5va096WFBLNlhndWtLMFlKZXdfTktqbk1nR09jbWlRSkR3WWRVdUlBaUI0UDJHSURXUnBVdkpRemtNTW1XeUJrbV9HdTdKMlJGTDlIRDhZRVJFMXVhLURnMW5YN1FPNUgzT3RiUGJzOEtWaWl1bU1ENGI0?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQUk8xcnpNeU9mY0RLYi1CM3lKdk5xS1ZjcDhhWkJYclJVZmJyUnl4RlBZd0x3ZHlseU5va096WFBLNlhndWtLMFlKZXdfTktqbk1nR09jbWlRSkR3WWRVdUlBaUI0UDJHSURXUnBVdkpRemtNTW1XeUJrbV9HdTdKMlJGTDlIRDhZRVJFMXVhLURnMW5YN1FPNUgzT3RiUGJzOEtWaWl1bU1ENGI0?oc=5\" target=\"_blank\"&gt;India relaxes e-commerce investment rules for exports in win for Amazon&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-23T16:06:02.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "Canada-EU: Closer trade ties to counter Trump?",
-          "link": "https://www.dw.com/en/canada-eu-closer-trade-ties-to-counter-trump/a-78082851?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Given they share the world&#039;s longest land border, Canada and the US have historically enjoyed fruitful trade relations. But with Donald Trump escalating his tariff war, Canada is looking to the EU and further afield.",
-          "published": "2026-07-23T13:38:00.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "World chess chief faces endgame after EU announces Russia war sanctions",
+          "link": "https://www.bbc.co.uk/news/articles/cewrk58k2k4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Arkady Dvorkovich, a former Russian deputy prime minister, now faces an EU travel ban and asset freeze.",
+          "published": "2026-07-24T16:08:51.000Z",
+          "score": 8
+        },
+        {
+          "title": "Europe wildfires: Many flee by boat as fires spread, merge",
+          "link": "https://www.dw.com/en/europe-wildfires-many-flee-by-boat-as-fires-spread-merge/a-78104513?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Tens of thousands hopped onto cars and boats to escape southwestern France&#039;s wildfires. In the Madrid region, authorities declared a national emergency as at least two fires merged.",
+          "published": "2026-07-24T15:06:00.000Z",
+          "score": 8
+        },
         {
           "title": "Wildfires in Europe prompt tens of thousands to evacuate",
           "link": "https://www.dw.com/en/wildfires-in-europe-prompt-tens-of-thousands-to-evacuate/a-78080171?maca=en-rss-en-all-1573-xml-mrss",
@@ -177,44 +154,28 @@
           "score": 8
         },
         {
-          "title": "European Commission gives guarded welcome to new Trump tariffs - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPR0lfaDB3SHJ6STlnLXIyYWtTMHBUaE5qXzBDXy1VMDJkcHp1NjROSFFtbGVMWUEtQTl5RTNXVmFFajFrS1JIbFFjVzJLdEhMeW53ODB1c010VHBpYjNYbXNIbnBscEpGbXVmSHJjMUl3QXhiemlOc2oxbFpjYk1pZklSMnUwako2Sl8zWG9KcU04Z29McllZNVNTb3JrZUM1X19UZ3ctZFNneEE?oc=5",
+          "title": "Volkswagen makes case for deep cuts as Chinese competitors close in on Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZUxzVXk4Unlsdlk3cHhVcWtSX0dfdU52S2lWUThBNFRQRDNxX19adEJJbndIUlljYkRVTlgxczFnTWdXdlRvUGlCSXMtYW1iRHU3akRZRG50YmhDd2dMTkZuWVBYM1BDLTl5Vm1hZ2ctak9TOVdOc1NCbk5meUlpZ2pEc0xFMW9uZ3JLeU9oVzZsbGw2RHFzdUdXWVBwWE1JU1VSOS1KNnptUXJuTDBsa1RMSQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPR0lfaDB3SHJ6STlnLXIyYWtTMHBUaE5qXzBDXy1VMDJkcHp1NjROSFFtbGVMWUEtQTl5RTNXVmFFajFrS1JIbFFjVzJLdEhMeW53ODB1c010VHBpYjNYbXNIbnBscEpGbXVmSHJjMUl3QXhiemlOc2oxbFpjYk1pZklSMnUwako2Sl8zWG9KcU04Z29McllZNVNTb3JrZUM1X19UZ3ctZFNneEE?oc=5\" target=\"_blank\"&gt;European Commission gives guarded welcome to new Trump tariffs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-24T06:30:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPZUxzVXk4Unlsdlk3cHhVcWtSX0dfdU52S2lWUThBNFRQRDNxX19adEJJbndIUlljYkRVTlgxczFnTWdXdlRvUGlCSXMtYW1iRHU3akRZRG50YmhDd2dMTkZuWVBYM1BDLTl5Vm1hZ2ctak9TOVdOc1NCbk5meUlpZ2pEc0xFMW9uZ3JLeU9oVzZsbGw2RHFzdUdXWVBwWE1JU1VSOS1KNnptUXJuTDBsa1RMSQ?oc=5\" target=\"_blank\"&gt;Volkswagen makes case for deep cuts as Chinese competitors close in on Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-24T05:39:00.000Z",
           "score": 8
         },
         {
-          "title": "Russian head of FIDE suspends activity over EU sanctions - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPb0FrMmptUUM3TWVFN3VuV3I1Wldkd0RwTWcyNzJWcVpvcHBUZzZQRG1uV1NWejlDUGRZd2RDN3JadHNsUm1fRTFpNWhQUkFKS1BvdnZUeTdiamRSMWdrUWdQSFhwb1BBYmhwWEtYQjhRcFZHQkpWcVQxXzdZVXd3Yld6NUtOMkxPOWlCSm01NGk3R2xpSVI0M0Fjdlg?oc=5",
+          "title": "Liberia seizes $317 million of cocaine bound for Europe, police chief says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOYXBXV1lyS3lPeEZPVnp4YUstN3BwS1pHQWEzU2NXN09BdkFqNk1mRlppQmxrakhXQ0otcnZ5WG9aeF91Z2RLeHRCMFo3aXVKcmI2bDRnWlBXQ3FkTlBHZTdoVXJ1QTBVVThKNS0xNHBpQVUzdnZuS2pBR2xZZzIxZU4tVzRjRmZDTmZkWHJlRXo5cElNNG1PVDlORkdiTnMxQnlfTFJnOTRIS3JIQjBqbHB1SjR0NkE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxPb0FrMmptUUM3TWVFN3VuV3I1Wldkd0RwTWcyNzJWcVpvcHBUZzZQRG1uV1NWejlDUGRZd2RDN3JadHNsUm1fRTFpNWhQUkFKS1BvdnZUeTdiamRSMWdrUWdQSFhwb1BBYmhwWEtYQjhRcFZHQkpWcVQxXzdZVXd3Yld6NUtOMkxPOWlCSm01NGk3R2xpSVI0M0Fjdlg?oc=5\" target=\"_blank\"&gt;Russian head of FIDE suspends activity over EU sanctions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-23T22:58:27.000Z",
-          "score": 8
-        },
-        {
-          "title": "Immigrant employment in the EU reaches record high, study shows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPX3hoWXA1THQ0Q2VxMi1qVzA1SlNJV2tZaEd3aC1fMUpNX0Y3YjBadWJWcFoxNVFTMVB1c1N2bVR6eGs1N0p2ck1GZHM0eDJZc3kzSXJRVjVEaFZzckV2NHJCcEJveGJpcEU2X2U1Z2NlNmlTZ1lfVnZJd3ktb01IRjF0RE53eDRvSFVmelBZVkEycXZOaE9kaUJvcFd1QQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPX3hoWXA1THQ0Q2VxMi1qVzA1SlNJV2tZaEd3aC1fMUpNX0Y3YjBadWJWcFoxNVFTMVB1c1N2bVR6eGs1N0p2ck1GZHM0eDJZc3kzSXJRVjVEaFZzckV2NHJCcEJveGJpcEU2X2U1Z2NlNmlTZ1lfVnZJd3ktb01IRjF0RE53eDRvSFVmelBZVkEycXZOaE9kaUJvcFd1QQ?oc=5\" target=\"_blank\"&gt;Immigrant employment in the EU reaches record high, study shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-23T14:13:32.000Z",
-          "score": 8
-        },
-        {
-          "title": "Google hit with $1 billion EU fine, in 'constructive' talks to avoid more penalties - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYkZ0Y296UnBOaHhsNXpXR29WRHJXSjJvOHFZYzBQSW04Z3FfZk9TcWU0Ty15TGEtUUZpeElDN0E5SmlpcV9GT0txMnBPV19HZkR5TDJEQ1NiX2VEcVB2UVY0c3FTZEZIRkRIODhwUVRrLTl0THB4U2R2QjhnekhtWDFkSk80ajd1a0VENUlSNW1ja09GeVpDc2N6b25GMG5tQVlMMw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPYkZ0Y296UnBOaHhsNXpXR29WRHJXSjJvOHFZYzBQSW04Z3FfZk9TcWU0Ty15TGEtUUZpeElDN0E5SmlpcV9GT0txMnBPV19HZkR5TDJEQ1NiX2VEcVB2UVY0c3FTZEZIRkRIODhwUVRrLTl0THB4U2R2QjhnekhtWDFkSk80ajd1a0VENUlSNW1ja09GeVpDc2N6b25GMG5tQVlMMw?oc=5\" target=\"_blank\"&gt;Google hit with $1 billion EU fine, in 'constructive' talks to avoid more penalties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-23T18:06:30.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOYXBXV1lyS3lPeEZPVnp4YUstN3BwS1pHQWEzU2NXN09BdkFqNk1mRlppQmxrakhXQ0otcnZ5WG9aeF91Z2RLeHRCMFo3aXVKcmI2bDRnWlBXQ3FkTlBHZTdoVXJ1QTBVVThKNS0xNHBpQVUzdnZuS2pBR2xZZzIxZU4tVzRjRmZDTmZkWHJlRXo5cElNNG1PVDlORkdiTnMxQnlfTFJnOTRIS3JIQjBqbHB1SjR0NkE?oc=5\" target=\"_blank\"&gt;Liberia seizes $317 million of cocaine bound for Europe, police chief says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-24T11:30:24.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 411,
-    "articlesLast24h": 172,
-    "afterDedup": 166,
+    "totalArticlesScanned": 401,
+    "articlesLast24h": 156,
+    "afterDedup": 151,
     "feedsQueried": 19
   }
 }
