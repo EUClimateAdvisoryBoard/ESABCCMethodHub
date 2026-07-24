@@ -510,13 +510,15 @@ function buildLpProblem(data: Data): BuiltProblem {
     }
   }
 
-  // --- 4.9 Biomass ceiling: sum(Q[t,y]*energy[t,biomass]) <= biomass_pj_max[y] * 1e6 -------------
+  // --- 4.9 Biomass ceiling: sum(Q[t,y]*energy[t,biomass]) <= biomass_pj_max[y] ------------------
+  // Units: Q is Mt product and intensity GJ/t, so Q*intensity is numerically PJ (Mt*GJ/t = 1 PJ),
+  // the same unit as biomass_pj_max — no conversion factor.
   for (const y of Y) {
     const terms = techs
       .map((t) => ({ coef: getEnergy(data, t, 'biomass'), v: qName(t, y) }))
       .filter((term) => term.coef !== 0);
     if (terms.length > 0) {
-      constraints.push({ name: `biomass_${y}`, terms, sense: '<=', rhs: data.biomassPjMax[y] * 1.0e6 });
+      constraints.push({ name: `biomass_${y}`, terms, sense: '<=', rhs: data.biomassPjMax[y] });
     }
   }
 

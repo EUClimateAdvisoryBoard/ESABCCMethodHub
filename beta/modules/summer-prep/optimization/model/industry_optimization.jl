@@ -514,11 +514,12 @@ function build_model(data::ModelData)
 
     # --- 4.9 Biomass ceiling -------------------------------------------------------------------
     # Sustainable biomass is a scarce, shared resource across ALL subsectors (paper, HVC bio-
-    # naphtha, etc). Total biomass use (GJ) in a year cannot exceed the economy-wide ceiling
-    # (converted from PJ to GJ: 1 PJ = 1e6 GJ).
+    # naphtha, etc). Total biomass use in a year cannot exceed the economy-wide ceiling.
+    # Units note: Q is in Mt product and energy intensity in GJ/t, so Q * intensity is
+    # numerically in PJ (Mt * GJ/t = 1e6 GJ = 1 PJ) — the same unit as biomass_pj_max.
     @constraint(m, con_biomass[y = Y],
         sum(Q[t, y] * get(data.energy, (t, "biomass"), 0.0) for t in techs) <=
-        data.biomass_pj_max[y] * 1.0e6)
+        data.biomass_pj_max[y])
 
     # --- 4.10 CO2 capture & storage ceiling ------------------------------------------------------
     # Total CO2 captured across ALL CCS technologies in ALL subsectors cannot exceed the
