@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T06:45:08.588Z",
+  "generatedAt": "2026-07-25T06:35:52.036Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,26 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1038/s41558-026-02700-2",
+      "title": "Multi-century cooling after net-zero greenhouse gas emissions",
+      "journal": "Nature Climate Change",
+      "authors": "Nathaniel Tarshish, Nadir Jeevanjee, Inez Fung",
+      "published": "2026-07-24",
+      "url": "https://doi.org/10.1038/s41558-026-02700-2",
+      "abstract": "",
+      "suggestedOn": "2026-07-25",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6,
+          "matched": [
+            "net-zero",
+            "greenhouse gas emissions"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/ae8f5a",
       "title": "Climate variability introduces uncertainty into future emissions pathways",
