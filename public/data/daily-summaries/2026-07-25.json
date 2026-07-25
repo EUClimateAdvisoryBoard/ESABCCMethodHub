@@ -1,18 +1,18 @@
 {
   "date": "2026-07-25",
-  "generatedAt": "2026-07-25T12:03:49.306Z",
+  "generatedAt": "2026-07-25T18:02:32.986Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 25 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "China's CATL tops quarterly profit forecasts on robust energy storage business - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPcF9pTnJraWJkenBtYW03RHBabkdfYWI4RXllR0VDQldoVWllUUV5eVd3MzFVYkFXamxQZzY5cmQwaXJwMG5BbHpNVkJTdm1tTk54a3BvR2R0YzZ0THZWRDF5MzgweFRwV01JNFc0bnlpSmVGTkh4d0ZGYjk5QmFEWkhCanItLTlBYmtsTGtUR2h0ZmRUUjFaQWd1Nm0xcmFhVmNv?oc=5\" target=\"_blank\"&gt;China's CATL tops quarterly profit forecasts on robust energy storage business&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Saudi vessel sustains minor hull damage after Red Sea attack, state news agency says - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNZmVnQzBKdENLU1Y5aXhpcVVpZVNtbDJyUGhJNWdlMF9zaVBRSmc4a0FFLUN1QjRVcFNvZDNjZFQwcWx6YWRNWEFOaVZoS0ZjWjFoMXlwQjN0bGk3d1lZSnVTYUNQZl9YenZOUk1ZZXMxX1RxTGhzR3VrclI2YXY5OWRWNVRpNGthOVFackVyQUpwTFlQVzh4S1M2cDM2MjdKWjRJX2R2QXpPSWpwa2hJdFBNRjhXdjhoeXJBaTczMUVrckxiU2ZPZ0hBNGc?oc=5\" target=\"_blank\"&gt;Saudi vessel sustains minor hull damage after Red Sea attack, state news agency says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Factcheck: No, Europe’s heatwaves are not being ‘caused’ by declining air pollution",
-      "summary": "This summer has seen Europe suffer through a series of record-breaking heatwaves. Amid widespread media coverage of the number of&#8230; The post Factcheck: No, Europe’s heatwaves are not being ‘caused’ by declining air pollution appeared first on Carbon Brief.",
+      "headline": "Swinney requests UK military aid as 500 firefighters tackle Cairngorms wildfire",
+      "summary": "&lt;p&gt;Scottish first minister hopes aerial support will help quench 10-day fire that has forced evacuation of Highlands village&lt;/p&gt;&lt;p&gt;The first minister of Scotland has asked for military aid from the UK government as more than 500 firefighters continue to tackle a fire that has raged in the Cairngorms national park for the past 10 days and forced the evacuation of homes in the remote region.&lt;/p&gt;&lt;p&gt;John Swinney has said the blaze remains a “major and serious” incident ",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -27,14 +27,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "China's CATL tops quarterly profit forecasts on robust energy storage business - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcF9pTnJraWJkenBtYW03RHBabkdfYWI4RXllR0VDQldoVWllUUV5eVd3MzFVYkFXamxQZzY5cmQwaXJwMG5BbHpNVkJTdm1tTk54a3BvR2R0YzZ0THZWRDF5MzgweFRwV01JNFc0bnlpSmVGTkh4d0ZGYjk5QmFEWkhCanItLTlBYmtsTGtUR2h0ZmRUUjFaQWd1Nm0xcmFhVmNv?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPcF9pTnJraWJkenBtYW03RHBabkdfYWI4RXllR0VDQldoVWllUUV5eVd3MzFVYkFXamxQZzY5cmQwaXJwMG5BbHpNVkJTdm1tTk54a3BvR2R0YzZ0THZWRDF5MzgweFRwV01JNFc0bnlpSmVGTkh4d0ZGYjk5QmFEWkhCanItLTlBYmtsTGtUR2h0ZmRUUjFaQWd1Nm0xcmFhVmNv?oc=5\" target=\"_blank\"&gt;China's CATL tops quarterly profit forecasts on robust energy storage business&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-24T12:48:05.000Z",
-          "score": 7
-        },
         {
           "title": "Saudi vessel sustains minor hull damage after Red Sea attack, state news agency says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZmVnQzBKdENLU1Y5aXhpcVVpZVNtbDJyUGhJNWdlMF9zaVBRSmc4a0FFLUN1QjRVcFNvZDNjZFQwcWx6YWRNWEFOaVZoS0ZjWjFoMXlwQjN0bGk3d1lZSnVTYUNQZl9YenZOUk1ZZXMxX1RxTGhzR3VrclI2YXY5OWRWNVRpNGthOVFackVyQUpwTFlQVzh4S1M2cDM2MjdKWjRJX2R2QXpPSWpwa2hJdFBNRjhXdjhoeXJBaTczMUVrckxiU2ZPZ0hBNGc?oc=5",
@@ -52,20 +44,28 @@
           "score": 7
         },
         {
-          "title": "Canadian Solar opens US solar cell factory in Indiana - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNS0VmREh5Uy1zNThOWlhnV0FxUHZ4NURHZHE5SW5JRlV3aU5vd3lQQ256Q2U3blNwSENRbjZZaVE3X0N0QTlvdzVLV1h1cUZiOVA4OWhsVEl1a2Exbll5eVpkRGtneWJZRE84eWNUWEJUM0F2Wl96RzNkUHB5eTZkVmN3M01KSnpxc1ZwUG9mdGktTHdPc2FESi11MERTS1RVWlBkeA?oc=5",
+          "title": "Houthis fire on Saudi Red Sea oil sites - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZXJqVTM2Sjk5OGw4TnB5SWw2S0xRNG03eE5JLVFfZnp1NXluaGlpU3hHa2o2NHVCTERuOEpHeEliODNVblllcG1FTzdINTZVRUFSLWg2dXphTVphTVRtR0tSYVdKaTJPTEpwN1B3TFZZVnBNRjJvLWV4U3BvYUZud0RzNVpCLUJxRjBYU0U4SkVNbnRwNlhVRTZVS0p1TjlOczBLTG8zNG5nSHFZMzY4WFNZSGIyMlFKMmRJUg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxNS0VmREh5Uy1zNThOWlhnV0FxUHZ4NURHZHE5SW5JRlV3aU5vd3lQQ256Q2U3blNwSENRbjZZaVE3X0N0QTlvdzVLV1h1cUZiOVA4OWhsVEl1a2Exbll5eVpkRGtneWJZRE84eWNUWEJUM0F2Wl96RzNkUHB5eTZkVmN3M01KSnpxc1ZwUG9mdGktTHdPc2FESi11MERTS1RVWlBkeA?oc=5\" target=\"_blank\"&gt;Canadian Solar opens US solar cell factory in Indiana&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-24T14:14:30.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPZXJqVTM2Sjk5OGw4TnB5SWw2S0xRNG03eE5JLVFfZnp1NXluaGlpU3hHa2o2NHVCTERuOEpHeEliODNVblllcG1FTzdINTZVRUFSLWg2dXphTVphTVRtR0tSYVdKaTJPTEpwN1B3TFZZVnBNRjJvLWV4U3BvYUZud0RzNVpCLUJxRjBYU0U4SkVNbnRwNlhVRTZVS0p1TjlOczBLTG8zNG5nSHFZMzY4WFNZSGIyMlFKMmRJUg?oc=5\" target=\"_blank\"&gt;Houthis fire on Saudi Red Sea oil sites&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-24T20:57:00.000Z",
           "score": 7
         },
         {
-          "title": "France evacuates Cap Ferret peninsula as Spanish wildfires merge near Madrid – as it happened",
-          "link": "https://www.theguardian.com/world/live/2026/jul/24/france-spain-wildfires-cap-ferret-europe-latest-news-updates",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;French evacuees using hundreds of mobilised boats or the only road linking the area with the mainland as evacuation also ordered in areas near Spanish capital&lt;/p&gt;&lt;p&gt;Over in France, it’s not just the south-west that gets affected, but the country’s south-east regions are also being hard hit, AFP noted.&lt;/p&gt;&lt;p&gt;Dozens of fires flared up and are being fanned by the mistral wind around the historic village of &lt;strong&gt;Cotignac&lt;/strong&gt; – officials saying aro",
-          "published": "2026-07-24T15:09:33.000Z",
-          "score": 4
+          "title": "Wildfires force evacuations outside Bordeaux as wind stokes Spanish blazes - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZTdNNFNCU3lNQjY3ekRqOHR0cEdfYjFCSm5fMEpraDNOS2RlOWV5V2tmZ0l6MG9TSWRscDg5LU45VXBSTEwtbkZhZ2dOUmt0b2RiVXk5Z3M4ejVCTUFHYUJaR1dMcEMxWXRpZDF0RmdyNE9aeXNaNGljRHVEZWlBdU5FbVluNm9hcnhmR21KSlBMYjJiRkpQcUJ5VlRiV0F1YnFDaVdseHE0dEUtU1k2QVJiYkJDLWFld0NSczRrN0RnUVRDV21B?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPZTdNNFNCU3lNQjY3ekRqOHR0cEdfYjFCSm5fMEpraDNOS2RlOWV5V2tmZ0l6MG9TSWRscDg5LU45VXBSTEwtbkZhZ2dOUmt0b2RiVXk5Z3M4ejVCTUFHYUJaR1dMcEMxWXRpZDF0RmdyNE9aeXNaNGljRHVEZWlBdU5FbVluNm9hcnhmR21KSlBMYjJiRkpQcUJ5VlRiV0F1YnFDaVdseHE0dEUtU1k2QVJiYkJDLWFld0NSczRrN0RnUVRDV21B?oc=5\" target=\"_blank\"&gt;Wildfires force evacuations outside Bordeaux as wind stokes Spanish blazes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-25T16:41:34.000Z",
+          "score": 7
+        },
+        {
+          "title": "HF Sinclair sues EPA for delays on biofuel exemption decision, Bloomberg News reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPS0h4UlU5a2E0LW5QejRWZ01HVnd4dmRzSDRGcDVNRWt6TkRhYm5GV3gyaWVXOGsyaUctbjdwcGZGR25GWmZNT0FQd0dIR2hGY28zTmE5cjlvOW1YT3hHbWZDTi1mQjJnTGMtSkJOMlZJLUUzNVdhTExjQWFmenZLY1FwbE45UkJWbWVLb1dPSXJPMlZxdEltbHZlaV9zcFNNcU5XWlg2M0pScllmYnVQRDdkRXNzQ1FoME1wY2x3SXhtZVJvdFc1Z1JB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPS0h4UlU5a2E0LW5QejRWZ01HVnd4dmRzSDRGcDVNRWt6TkRhYm5GV3gyaWVXOGsyaUctbjdwcGZGR25GWmZNT0FQd0dIR2hGY28zTmE5cjlvOW1YT3hHbWZDTi1mQjJnTGMtSkJOMlZJLUUzNVdhTExjQWFmenZLY1FwbE45UkJWbWVLb1dPSXJPMlZxdEltbHZlaV9zcFNNcU5XWlg2M0pScllmYnVQRDdkRXNzQ1FoME1wY2x3SXhtZVJvdFc1Z1JB?oc=5\" target=\"_blank\"&gt;HF Sinclair sues EPA for delays on biofuel exemption decision, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
+          "published": "2026-07-24T22:00:51.000Z",
+          "score": 7
         }
       ]
     },
@@ -74,19 +74,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Factcheck: No, Europe’s heatwaves are not being ‘caused’ by declining air pollution",
-          "link": "https://www.carbonbrief.org/factcheck-no-europes-heatwaves-are-not-being-caused-by-declining-air-pollution",
-          "source": "Carbon Brief",
-          "description": "This summer has seen Europe suffer through a series of record-breaking heatwaves. Amid widespread media coverage of the number of&#8230; The post Factcheck: No, Europe’s heatwaves are not being ‘caused’ by declining air pollution appeared first on Carbon Brief.",
-          "published": "2026-07-24T14:15:24.000Z",
-          "score": 19
-        },
-        {
-          "title": "Entire Cairngorms village evacuated as raging wildfire nears",
+          "title": "Swinney requests UK military aid as 500 firefighters tackle Cairngorms wildfire",
           "link": "https://www.theguardian.com/world/2026/jul/25/entire-cairngorms-village-evacuated-as-raging-wildfire-nears",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Major incident declared over blaze that has intensified amid strengthening winds&lt;/p&gt;&lt;p&gt;A major incident has been declared over a wildfire that has been raging in the Cairngorms national park for more than a week, police have said, with a whole village having been evacuated.&lt;/p&gt;&lt;p&gt;Officers from Police Scotland said there had been a significant change in weather conditions, with strengthening winds making a fire that has been burning out of control for 11 days yet ",
-          "published": "2026-07-25T09:45:38.000Z",
+          "description": "&lt;p&gt;Scottish first minister hopes aerial support will help quench 10-day fire that has forced evacuation of Highlands village&lt;/p&gt;&lt;p&gt;The first minister of Scotland has asked for military aid from the UK government as more than 500 firefighters continue to tackle a fire that has raged in the Cairngorms national park for the past 10 days and forced the evacuation of homes in the remote region.&lt;/p&gt;&lt;p&gt;John Swinney has said the blaze remains a “major and serious” incident ",
+          "published": "2026-07-25T16:50:14.000Z",
           "score": 7
         },
         {
@@ -98,20 +90,28 @@
           "score": 7
         },
         {
-          "title": "NEWSLETTER: Climate Focus: Spain declares national emergency over wildfires - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNelExdE5Bdk5WUnQyVnJYMGhVcXhKNDVnbTVLRHBJckk1eXRxNHd2TWoxM0hPY3VMVU9YVGEtNGM2QkVEQ25Qa3NFc3QyQS1KeDY5RnhrU0VMYVdPakxhUll6S1VHZWRqbUJNYmpGT1Q4c0piWF9sYnB2UzkyRUhQeGNLUmtSdWk2eVpTek1heUVDYXFlT1gzV2IyTGpsVjlWLWhWWWVvd2JiLVBzTi1rZ3FqVQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNelExdE5Bdk5WUnQyVnJYMGhVcXhKNDVnbTVLRHBJckk1eXRxNHd2TWoxM0hPY3VMVU9YVGEtNGM2QkVEQ25Qa3NFc3QyQS1KeDY5RnhrU0VMYVdPakxhUll6S1VHZWRqbUJNYmpGT1Q4c0piWF9sYnB2UzkyRUhQeGNLUmtSdWk2eVpTek1heUVDYXFlT1gzV2IyTGpsVjlWLWhWWWVvd2JiLVBzTi1rZ3FqVQ?oc=5\" target=\"_blank\"&gt;NEWSLETTER: Climate Focus: Spain declares national emergency over wildfires&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-24T16:35:53.000Z",
-          "score": 7
+          "title": "France and Spain race to control wildfires as more than 250,000 evacuated – as it happened",
+          "link": "https://www.theguardian.com/world/live/2026/jul/25/france-spain-wildfires-latest-news-updates-madrid-cap-ferret-bordeaux-gironde",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Meanwhile, in the UK, a blaze in the Cairngorms national park has been described as ‘very serious’ by Scotland’s first minister&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/08/tell-us-have-you-been-affected-by-the-wildfires-in-southern-europe\"&gt;Tell us: have you been affected by wildfires in Europe?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The French prime minister, &lt;strong&gt;Sébastien Lecornu,&lt;/strong&gt; has requested t",
+          "published": "2026-07-25T17:07:36.000Z",
+          "score": 4
         },
         {
-          "title": "How dangerous are wildfires and how can we stop them from getting worse?",
-          "link": "https://www.theguardian.com/environment/2025/aug/13/how-dangerous-wildfires-stop-them-getting-worse",
+          "title": "Firefighters in Spain and France battle raging wildfires – video",
+          "link": "https://www.theguardian.com/world/video/2026/jul/25/firefighters-in-spain-and-france-battle-raging-wildfires-video",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The conditions for ferocious fires are expected to worsen as the planet heats up, putting more people at risk&lt;/p&gt;&lt;p&gt;Fierce wildfires after back-to-back heatwaves have forced tens of thousands of people across southern Europe to &lt;a href=\"https://www.theguardian.com/world/2026/jul/24/france-evacuation-cap-ferret-peninsula-wildfire\"&gt;flee their homes&lt;/a&gt;, while powerful infernos across Canada and the US choke big cities with thick smoke.&lt;/p&gt; &lt;a href=\"https:/",
-          "published": "2026-07-24T14:47:43.000Z",
-          "score": 6
+          "description": "&lt;p&gt;Footage shows the extent of the devastation caused by wildfires in Cenicientos, in the Madrid region of Spain, on Friday. Members of Spain's military emergency unit sought to contain the blazes in the Madrid region and in Cuevas de Cañart in the country's north-east. In France, dozens of firefighters battled flames threatening homes around the towns of Saumos and Sainte-Hélène in the south-west as a wildfire swept the nearby forest. The virulence of the wildfires, fuelled by high temper",
+          "published": "2026-07-25T14:11:56.000Z",
+          "score": 4
+        },
+        {
+          "title": "Eco wins: Cities, creatures, and tech are saving the day",
+          "link": "https://www.dw.com/en/eco-wins-cities-creatures-and-tech-are-saving-the-day/a-78097358?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "From an AI-powered cute little pangolin, heat mapping to cool down cities and animals reducing wildfire risks by doing their thing, these real-world climate hacks are helping communities stay ahead of a changing planet.",
+          "published": "2026-07-25T07:25:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -147,44 +147,44 @@
           "score": 8
         },
         {
-          "title": "World chess chief faces endgame after EU announces Russia war sanctions",
-          "link": "https://www.bbc.co.uk/news/articles/cewrk58k2k4o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Arkady Dvorkovich, a former Russian deputy prime minister, now faces an EU travel ban and asset freeze.",
-          "published": "2026-07-24T16:08:51.000Z",
-          "score": 8
-        },
-        {
-          "title": "Europe wildfires rage on, forcing 200,000 from homes",
-          "link": "https://www.dw.com/en/europe-wildfires-rage-on-forcing-200-000-from-homes/a-78109406?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Europe wildfires rage on, forcing more than 250,000 from homes",
+          "link": "https://www.dw.com/en/europe-wildfires-rage-on-forcing-more-than-250-000-from-homes/a-78109406?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Hot, arid weather and strong winds have continued to fuel wildfires in France, Spain and Italy, devastating huge swaths of land and forcing mass evacuations. As national emergencies are declared, the danger remains.",
-          "published": "2026-07-25T08:17:00.000Z",
+          "description": "From the outskirts of Bordeaux to communities near Madrid, fast-moving wildfires in France and Spain are driving mass evacuations, destroying homes, and claiming lives.",
+          "published": "2026-07-25T17:05:00.000Z",
           "score": 8
         },
         {
-          "title": "Europe wildfires: Thousands flee by boat as fires spread, merge",
-          "link": "https://www.dw.com/en/europe-wildfires-thousands-flee-by-boat-as-fires-spread-merge/a-78104513?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Tens of thousands of people used cars and boats to escape wildfires raging in southwestern France. In Spain&#039;s Madrid region, authorities declared a national emergency after at least two fires merged.",
-          "published": "2026-07-24T15:06:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "TikTok charged with breaching EU tech rules on online safety for kids, EU says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSEVZbTRlWVdyajhvLS1VZXlKck5mcVVRYmlPeWEwQVNpYlVDYUMzc205ZFBaUGwxZEE0UHR3TUlSMTZuZHFzQmMtUy1odHZJMjItM252TWJ4a0pHY1FUVE1rWjR4eFJpU2xGWHdoRHYyYmZpNEFQVDNnWlowbU1pRUFXb0tONGhydDVONk9xOS1nNWFzTGE0UXBDUzJhRUNlWktRNGNwVUxCVHc5bV9DWUtR?oc=5",
+          "title": "Trump says US to launch EU probe over 'illegal' Google fine - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOS3dXSEd1bktIXy1XcmlsWGFYekt3d2dPeW53TVdyeVBiT0RkdDJERks0eXp0cVlheW54SFVPYU5aYnhwaFNfLVdXNWc3dVQxM0FTR3Y4UUlEQVZLd1JFZmhGZmx0U282TzdnaXJxbnQ5QkVlczlLZExqdmdTbk4tblE0RXNWMzNlOGk5ZkdXenptLUNLRHZXaS1aNmVocTEz?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPSEVZbTRlWVdyajhvLS1VZXlKck5mcVVRYmlPeWEwQVNpYlVDYUMzc205ZFBaUGwxZEE0UHR3TUlSMTZuZHFzQmMtUy1odHZJMjItM252TWJ4a0pHY1FUVE1rWjR4eFJpU2xGWHdoRHYyYmZpNEFQVDNnWlowbU1pRUFXb0tONGhydDVONk9xOS1nNWFzTGE0UXBDUzJhRUNlWktRNGNwVUxCVHc5bV9DWUtR?oc=5\" target=\"_blank\"&gt;TikTok charged with breaching EU tech rules on online safety for kids, EU says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-24T15:13:09.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxOS3dXSEd1bktIXy1XcmlsWGFYekt3d2dPeW53TVdyeVBiT0RkdDJERks0eXp0cVlheW54SFVPYU5aYnhwaFNfLVdXNWc3dVQxM0FTR3Y4UUlEQVZLd1JFZmhGZmx0U282TzdnaXJxbnQ5QkVlczlLZExqdmdTbk4tblE0RXNWMzNlOGk5ZkdXenptLUNLRHZXaS1aNmVocTEz?oc=5\" target=\"_blank\"&gt;Trump says US to launch EU probe over 'illegal' Google fine&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-24T22:02:32.000Z",
           "score": 8
+        },
+        {
+          "title": "Devon Energy mulls $4 billion sale of Eagle Ford, Powder River assets, Bloomberg News reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQbHZYcnNEUjEwa010MXFzZk9FT2RXT0k2eE55cjdpWFU4a21lM0R5ZnJJblBoTjJCT1lOdEh5MGpZWWd0NU9LS3ZLZG9ZUjE5QnpVSzg0bjhDSWRRZjBSYmJpR0NDVExJT2tnZGJVRDE2a0pfY0lyZXNrb1Z5SGVZdEVlWDM3OUdSS0E5UUFZMUNqSUNFeFpQTmFmNnVFbTc3QVkxbUtURndudXJuQXhBS2xKb1FLQU04RW8xZVZyUFVFQ1FBc3dHbWs5Zl8?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxQbHZYcnNEUjEwa010MXFzZk9FT2RXT0k2eE55cjdpWFU4a21lM0R5ZnJJblBoTjJCT1lOdEh5MGpZWWd0NU9LS3ZLZG9ZUjE5QnpVSzg0bjhDSWRRZjBSYmJpR0NDVExJT2tnZGJVRDE2a0pfY0lyZXNrb1Z5SGVZdEVlWDM3OUdSS0E5UUFZMUNqSUNFeFpQTmFmNnVFbTc3QVkxbUtURndudXJuQXhBS2xKb1FLQU04RW8xZVZyUFVFQ1FBc3dHbWs5Zl8?oc=5\" target=\"_blank\"&gt;Devon Energy mulls $4 billion sale of Eagle Ford, Powder River assets, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f",
+          "published": "2026-07-24T20:20:09.000Z",
+          "score": 7
+        },
+        {
+          "title": "Amgen submits new data to challenge FDA's proposal to withdraw Tavneos - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUjFOZVhGVDhzc0liUGtnT1l4cUhiNEhydWJlc2xjYzkwT2pnNW9WN3BFZUdMdUlFek9yand6MDlZaEJoTi1PRmJnRml0SDI2R19lbk80SnZraElodV90UEF1ZEs3bjEwRk5wMHNWUm9NaVp3bnFxNkM3RTAzNzRNckEycTFYemNmYjdoT2JfaTZEQm9tWTdSNGVhMXhHeC1tVTdtdGpwc1RobVdVakRqZGZsbExxRkE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOUjFOZVhGVDhzc0liUGtnT1l4cUhiNEhydWJlc2xjYzkwT2pnNW9WN3BFZUdMdUlFek9yand6MDlZaEJoTi1PRmJnRml0SDI2R19lbk80SnZraElodV90UEF1ZEs3bjEwRk5wMHNWUm9NaVp3bnFxNkM3RTAzNzRNckEycTFYemNmYjdoT2JfaTZEQm9tWTdSNGVhMXhHeC1tVTdtdGpwc1RobVdVakRqZGZsbExxRkE?oc=5\" target=\"_blank\"&gt;Amgen submits new data to challenge FDA's proposal to withdraw Tavneos&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-24T21:26:44.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 403,
-    "articlesLast24h": 158,
-    "afterDedup": 148,
+    "totalArticlesScanned": 364,
+    "articlesLast24h": 151,
+    "afterDedup": 141,
     "feedsQueried": 19
   }
 }
