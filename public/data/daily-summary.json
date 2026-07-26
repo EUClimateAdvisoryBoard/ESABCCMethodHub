@@ -1,6 +1,6 @@
 {
   "date": "2026-07-26",
-  "generatedAt": "2026-07-26T12:07:13.885Z",
+  "generatedAt": "2026-07-26T18:06:42.707Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 26 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,10 @@
       "color": "#E87722"
     },
     {
-      "headline": "Europe wildfires: ‘Difficult hours lie ahead’ in battle to contain fires, says Pedro Sanchez as more than 300,000 flee homes in France and Spain",
+      "headline": "Europe wildfires: ‘Difficult hours lie ahead’ in battle to contain fires, says Pedro Sánchez as more than 300,000 flee homes in France and Spain – as it happened",
       "summary": "&lt;p&gt;Fires displace people on massive scale and trigger one of the largest peacetime civilian evacuation operations ever carried out in France&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/25/wildfires-force-250000-people-to-evacuate-in-france-and-spain\"&gt;More than 250,000 people flee wildfires in France and Spain&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;As my colleagues &lt;a href=\"https://www.theguardian.com/world/2026/jul/24/france",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "LSEG's Lipper reviews transaction affecting fixed-income fund flow data - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWZFUVRJQ2RrRXktTk1RcmZsTWhuY3dSQVZsLTJCVHBoSVhCV0k1dHFUcTdrSktZVDZDMUd5NW0xTF9BdEFfQnFMNGNhRE1WLUF0QlNia2NJemc1aDhkU29oVElFU0RTa0E0TmhWZ2hYZ1R5cU9BNWJXUFVwZWliVTdQUk02ZVM5ZXJic2hucWxiekRKd3Y1OHBheTdBeWFjS0g2Q3NWb05mZjZ6VkE3QXVjbnFyQQ?oc=5\" target=\"_blank\"&gt;LSEG's Lipper reviews transaction affecting fixed-income fund flow data&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -40,6 +34,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYnVSWlhuMFM5LW94bUxZY2tSeDlTX3p1RC1yNk10aVJobG02aVpFeGc3bFowLVZIT01sQk5yekpRWHNUYmhiS3gxSmJTbF9YU2hROXlmQ3hSMVFvaVpDZlhuUXp6N0d4c2lERjlra2NFeXp6Y1Uwd3M2U3prWUp2LTNvMG5Zd05laVktTmJXaXFTNnp4V3U2RkUwV0FNM04yc0dsQWZKc1BtOFk2aDFKQlUwc21pdW9k?oc=5\" target=\"_blank\"&gt;Iran war spreads to Red Sea and Caspian, Gulf quiet as US forgoes strikes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-25T23:18:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Most Gulf markets ease after Houthi attacks on Saudi Red Sea oil sites - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPdUY5ektKSEpjeG1EZXRCR3BGa1NxV1AtdTdZZ0ZnSi0xNjE3c2pjcE5PM3hkTHNGUDBlWVpWUDJXUUxDY3EtUWFaV0QxUnB2clJKZ3U1bjRrbGFwTlhWRGc4R0l6eEtDWXJIdFdid2c1Q3RibUNUM0NDWi04MU83TWxuUnFYd0xNaDZ1UHFYZHQzN0FGMFVMNVgtanh0MzVEMlNDM19tUWFVWXhub3FqQ1NHRnFVNm5aaFVsVm9R?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPdUY5ektKSEpjeG1EZXRCR3BGa1NxV1AtdTdZZ0ZnSi0xNjE3c2pjcE5PM3hkTHNGUDBlWVpWUDJXUUxDY3EtUWFaV0QxUnB2clJKZ3U1bjRrbGFwTlhWRGc4R0l6eEtDWXJIdFdid2c1Q3RibUNUM0NDWi04MU83TWxuUnFYd0xNaDZ1UHFYZHQzN0FGMFVMNVgtanh0MzVEMlNDM19tUWFVWXhub3FqQ1NHRnFVNm5aaFVsVm9R?oc=5\" target=\"_blank\"&gt;Most Gulf markets ease after Houthi attacks on Saudi Red Sea oil sites&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-26T13:29:43.000Z",
+          "score": 7
+        },
+        {
+          "title": "Trump says no nuclear deal unless Saudi Arabia joins Abraham Accords - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE94M1ZJQlAwaHRDNlJxd1lvWjlHbmxkN1dCTkREbnQ2M3dmWGpUSEx1VFdBSS1Jc0lGNjByUzJOYVF3azBUeVRoLVNvcjNIMW9pU253Rkh4amlzTmxzbUxZakc1Ykw4Sk0?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE94M1ZJQlAwaHRDNlJxd1lvWjlHbmxkN1dCTkREbnQ2M3dmWGpUSEx1VFdBSS1Jc0lGNjByUzJOYVF3azBUeVRoLVNvcjNIMW9pU253Rkh4amlzTmxzbUxZakc1Ykw4Sk0?oc=5\" target=\"_blank\"&gt;Trump says no nuclear deal unless Saudi Arabia joins Abraham Accords&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-26T09:58:31.000Z",
+          "score": 7
         }
       ]
     },
@@ -48,12 +58,28 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Europe wildfires: ‘Difficult hours lie ahead’ in battle to contain fires, says Pedro Sanchez as more than 300,000 flee homes in France and Spain",
+          "title": "Europe wildfires: ‘Difficult hours lie ahead’ in battle to contain fires, says Pedro Sánchez as more than 300,000 flee homes in France and Spain – as it happened",
           "link": "https://www.theguardian.com/world/live/2026/jul/26/europe-wildfires-spain-france-bordeaux-madrid-evacuations",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Fires displace people on massive scale and trigger one of the largest peacetime civilian evacuation operations ever carried out in France&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/25/wildfires-force-250000-people-to-evacuate-in-france-and-spain\"&gt;More than 250,000 people flee wildfires in France and Spain&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;As my colleagues &lt;a href=\"https://www.theguardian.com/world/2026/jul/24/france",
-          "published": "2026-07-26T11:52:50.000Z",
+          "published": "2026-07-26T14:52:13.000Z",
           "score": 8
+        },
+        {
+          "title": "Ed Miliband indicates development and climate will be at heart of UK foreign policy",
+          "link": "https://www.theguardian.com/business/2026/jul/26/ed-miliband-development-climate-crisis-uk-foreign-policy-world-bank-seat",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Exclusive: Foreign secretary to take up World Bank seat and play active role in shaping changes to global lender &lt;/p&gt;&lt;p&gt;Britain’s foreign secretary, Ed Miliband, is to indicate he will put the climate crisis and overseas development at the heart of UK international relations by taking up the country’s seat on the board at the World Bank.&lt;/p&gt;&lt;p&gt;The position, which is usually delegated to a junior minister, means Miliband will play an active role in shaping the cha",
+          "published": "2026-07-26T16:00:15.000Z",
+          "score": 7
+        },
+        {
+          "title": "Pedro Sánchez says Spain is suffering effects of climate crisis as firefighters battle wildfires in France",
+          "link": "https://www.theguardian.com/world/2026/jul/26/firefighters-in-france-battle-to-prevent-huge-blaze-from-approaching-bordeaux",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Blazes near Madrid coming under control but efforts to contain huge fire near Bordeaux hampered by windy conditions&lt;/p&gt;&lt;p&gt;Authorities in France are battling to contain a huge wildfire near Bordeaux in the south-west as Spain’s prime minister, Pedro Sánchez, warned Spain and the Iberian peninsula were suffering the effects of the climate emergency.&lt;/p&gt;&lt;p&gt;Efforts to extinguish the blaze in the Gironde region of France – which has consumed an area four times the siz",
+          "published": "2026-07-26T12:56:30.000Z",
+          "score": 7
         },
         {
           "title": "Evacuated villagers in Cairngorms allowed home after wildfire threat lifts",
@@ -68,23 +94,7 @@
           "link": "https://www.bbc.co.uk/news/articles/clyj8k4nn5jo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "More than 330,000 people have now been evacuated from wildfires across France and Spain.",
-          "published": "2026-07-26T11:29:07.000Z",
-          "score": 7
-        },
-        {
-          "title": "Southern China faces torrential rain, flood risk after Typhoon Noul hits land - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPei03bzZKTWJfYWxESGxYN0t1OURsLWNyZUllSlFDVFZiWkFJekRUMTM1WnpLU1lmSDB4RlhTOEZrRFZFYnd5Zm0wc29uVXYtRURSdmJRc19fRVM0OW1VLU5YcHdBY3lVR1AxUFdqbF81aXl4NkJQUkhHZGhhVHZ0UVM5ZEZFOEVqYWlvNFBJVThBYnBOdWV2TG84SjRCMUFrSjBNZ01jRi0yUGgx?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPei03bzZKTWJfYWxESGxYN0t1OURsLWNyZUllSlFDVFZiWkFJekRUMTM1WnpLU1lmSDB4RlhTOEZrRFZFYnd5Zm0wc29uVXYtRURSdmJRc19fRVM0OW1VLU5YcHdBY3lVR1AxUFdqbF81aXl4NkJQUkhHZGhhVHZ0UVM5ZEZFOEVqYWlvNFBJVThBYnBOdWV2TG84SjRCMUFrSjBNZ01jRi0yUGgx?oc=5\" target=\"_blank\"&gt;Southern China faces torrential rain, flood risk after Typhoon Noul hits land&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-26T00:15:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Africa facing $10-$20 billion economic hit from 'super' El Niño, AfDB climate chief warns - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxORTVKMDhrM083OEFuZWQ1am92SHdCUXpQVmVkWkFBVTdXWUlGNzNGcDlsSlVLNWdTc0lZT2J5MHV1NHFjUHhzVG83MmRkQ3VsYjhpbFNXbkNYNkJLSnQ2RlFQbmRoa3lQUWJJOWt0TXZ0b3k3c1R6YXpGVlRTM2xSV0FoZmxMMXdhM1N1WU5kbmJWZnNLRTM4RW1xQ3N0WFlxcWRTVHRxY2drWC1FU3ZGdkJFMDhYd25aamhZNUJTYjRDTHg1TUhFdVBQeTdlQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxORTVKMDhrM083OEFuZWQ1am92SHdCUXpQVmVkWkFBVTdXWUlGNzNGcDlsSlVLNWdTc0lZT2J5MHV1NHFjUHhzVG83MmRkQ3VsYjhpbFNXbkNYNkJLSnQ2RlFQbmRoa3lQUWJJOWt0TXZ0b3k3c1R6YXpGVlRTM2xSV0FoZmxMMXdhM1N1WU5kbmJWZnNLRTM4RW1xQ3N0WFlxcWRTVHRxY2drWC1FU3ZGdkJFMDhYd25aamhZNUJTYjRDTHg1TUhFdVBQeTdlQQ?oc=5\" target=\"_blank\"&gt;Africa facing $10-$20 billion economic hit from 'super' El Niño, AfDB climate chief warns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"",
-          "published": "2026-07-26T08:33:45.000Z",
+          "published": "2026-07-26T16:48:16.000Z",
           "score": 7
         }
       ]
@@ -92,16 +102,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "LSEG's Lipper reviews transaction affecting fixed-income fund flow data - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWZFUVRJQ2RrRXktTk1RcmZsTWhuY3dSQVZsLTJCVHBoSVhCV0k1dHFUcTdrSktZVDZDMUd5NW0xTF9BdEFfQnFMNGNhRE1WLUF0QlNia2NJemc1aDhkU29oVElFU0RTa0E0TmhWZ2hYZ1R5cU9BNWJXUFVwZWliVTdQUk02ZVM5ZXJic2hucWxiekRKd3Y1OHBheTdBeWFjS0g2Q3NWb05mZjZ6VkE3QXVjbnFyQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWZFUVRJQ2RrRXktTk1RcmZsTWhuY3dSQVZsLTJCVHBoSVhCV0k1dHFUcTdrSktZVDZDMUd5NW0xTF9BdEFfQnFMNGNhRE1WLUF0QlNia2NJemc1aDhkU29oVElFU0RTa0E0TmhWZ2hYZ1R5cU9BNWJXUFVwZWliVTdQUk02ZVM5ZXJic2hucWxiekRKd3Y1OHBheTdBeWFjS0g2Q3NWb05mZjZ6VkE3QXVjbnFyQQ?oc=5\" target=\"_blank\"&gt;LSEG's Lipper reviews transaction affecting fixed-income fund flow data&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-25T16:32:09.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -112,14 +113,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "Europe wildfires rage on, forcing more than 250,000 from homes",
-          "link": "https://www.dw.com/en/europe-wildfires-rage-on-forcing-more-than-250-000-from-homes/a-78109406?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "From the outskirts of Bordeaux to communities near Madrid, fast-moving wildfires in France and Spain are driving mass evacuations, destroying homes, and claiming lives.",
-          "published": "2026-07-25T17:05:00.000Z",
-          "score": 8
-        },
         {
           "title": "Pizza, pasta, potatoes, protein - how Italian children became so overweight",
           "link": "https://www.bbc.co.uk/news/articles/c33y3151vydo?at_medium=RSS&amp;at_campaign=rss",
@@ -132,16 +125,8 @@
           "title": "What we know so far about the Berlin Pride ramming attack",
           "link": "https://www.bbc.co.uk/news/articles/cevmdxz4872o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "A police manhunt is underway after a suspect rammed a car into a crowd at a Pride event in the German capital on Saturday night.",
-          "published": "2026-07-26T11:41:04.000Z",
-          "score": 2
-        },
-        {
-          "title": "Trump takes swipes at press during White House Correspondents' Dinner",
-          "link": "https://www.bbc.co.uk/news/articles/cd7le4ylev2o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The event celebrated press freedom after the first dinner was cancelled by a shooting in April.",
-          "published": "2026-07-25T13:51:07.000Z",
+          "description": "A police manhunt is under way after a suspect rammed a car into a crowd at a Pride event in the German capital on Saturday night.",
+          "published": "2026-07-26T17:45:30.000Z",
           "score": 2
         },
         {
@@ -151,14 +136,30 @@
           "description": "The latest attacks come two days after a clash between settlers and Palestinians near the village of Tell, which left four Palestinians and two Israelis dead.",
           "published": "2026-07-26T10:26:05.000Z",
           "score": 2
+        },
+        {
+          "title": "Left-wing Democrats are on a winning run - but can they lure back crucial swing voters?",
+          "link": "https://www.bbc.co.uk/news/articles/c5y3rrd32jlo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "They have seen a flurry of recent wins, but Michigan will test their ability to win back working-class voters in crucial states.",
+          "published": "2026-07-26T03:58:51.000Z",
+          "score": 2
+        },
+        {
+          "title": "The notorious Cameroonian prison with its own record label",
+          "link": "https://www.bbc.co.uk/news/articles/czxqlkrlj7no?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "New Bell's inmates have become mini stars, recording songs and music videos from the confines of the jail.",
+          "published": "2026-07-26T00:24:30.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 360,
-    "articlesLast24h": 139,
-    "afterDedup": 119,
+    "articlesLast24h": 131,
+    "afterDedup": 109,
     "feedsQueried": 19
   }
 }
