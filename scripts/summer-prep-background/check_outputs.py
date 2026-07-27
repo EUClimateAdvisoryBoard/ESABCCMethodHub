@@ -153,9 +153,17 @@ def check_indicator_check(path, data, calc):
     missing = want - seen
     check(not missing, f"every post-report point has its provenance row ({sorted(missing)[:4]})")
 
+    ov_head = [c.value for c in ov[4]]
+    check("Source check (27 Jul 2026)" in ov_head,
+          f"overview carries the fact-check verdict column ({ov_head[-2:]})")
+    verdicts = {r[5].split(" — ")[0] for r in pv.iter_rows(min_row=header + 1, values_only=True)
+                if r[5]}
+    check(verdicts <= {"CONFIRMED", "REVISION", "WRONG", "NO SOURCE YEAR", "NOT CHECKABLE"},
+          f"provenance verdicts are from the fact-check vocabulary ({sorted(verdicts)})")
+
     sourced = 0
     for r in pv.iter_rows(min_row=header + 1, values_only=True):
-        if r[5] and r[7]:
+        if r[6] and r[8]:
             sourced += 1
     check(sourced > 0, f"provenance rows carry a source ({sourced})")
     return wb
