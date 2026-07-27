@@ -430,9 +430,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: '%',
     description:
       'ESABCC progress indicator T5a. Battery-electric + fuel-cell share of new passenger car registrations.',
-    source: 'EU Alternative Fuels Observatory; EEA for 2022',
-    targetValue: 80000,
-    targetYear: 2030,
+    source: 'EU Alternative Fuels Observatory',
     sourceUrl: 'https://alternative-fuels-observatory.ec.europa.eu/',
     direction: 'up',
     targetValue: 100,
@@ -450,7 +448,9 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'vehicles',
     description:
       'ESABCC progress indicator T5b. Stock of zero-emission heavy-duty lorries on EU roads.',
-    source: 'EU Alternative Fuels Observatory',
+    source: 'EU Alternative Fuels Observatory; EEA for 2022',
+    targetValue: 80000,
+    targetYear: 2030,
     sourceUrl: 'https://alternative-fuels-observatory.ec.europa.eu/',
     direction: 'up',
     duplicateOf: 'zev-share-truck-stock',
@@ -1491,8 +1491,8 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'projects',
     description:
       'ESABCC progress indicator I7b. Count of announced low-carbon cement projects in the EU (Figure 30), 62 in total by project scale (unspecified 5, R&D 22, pilot 24, demo 7, full scale 4) and technology (CCS/CCU, material substitution/recycling, fuel switch/electrification, energy efficiency, mineralisation). Categorical snapshot.',
-    source: 'CEFIC low carbon projects map',
-    sourceUrl: 'https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities',
+    source: 'Cembureau map of innovation projects',
+    sourceUrl: 'https://lowcarboneconomy.cembureau.eu/',
     direction: 'up',
     group: 'esabcc',
     isSeed: true,

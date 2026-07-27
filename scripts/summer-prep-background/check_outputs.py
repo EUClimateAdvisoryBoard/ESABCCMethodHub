@@ -211,6 +211,46 @@ def check_chart_categories(path):
     check(not bad, f"{Path(path).name}: {n} charts, text categories all referenced as text ({bad[:2]})")
 
 
+def check_overviews(outdir, data, calc):
+    """The two indicator overviews, and that the derivations are live formulas."""
+    inds = data["indicators"]
+
+    wb = load_workbook(outdir / "ESABCC_Indicator-New-Data-Overview_2026-07.xlsx")
+    ws = wb["The one big figure"]
+    updated = [i for i in inds if any(d.get("afterReport") for d in i["data"])]
+    codes = {r[0] for r in ws.iter_rows(min_row=5, max_col=1, values_only=True) if r[0]} - {"Code"}
+    listed = {i.get("code") for i in updated} & codes
+    check(len(listed) >= len(updated) - 1,
+          f"big figure lists the updated indicators ({len(listed)} of {len(updated)})")
+    check(len(ws._charts) == 2, f"big figure sheet carries its two charts ({len(ws._charts)})")
+
+    wb2 = load_workbook(outdir / "ESABCC_Indicators-Old-vs-New-with-derivations_2026-07.xlsx")
+    check(wb2.sheetnames == ["Read me", "Old vs new", "Derivations", "Sources"],
+          f"old-vs-new sheets: {wb2.sheetnames}")
+    ov = wb2["Old vs new"]
+    rows = [r[0] for r in ov.iter_rows(min_row=5, max_col=1, values_only=True)
+            if r[0] and r[0] != "Code"]
+    check(len(rows) == len(inds), f"old-vs-new lists all {len(inds)} indicators (found {len(rows)})")
+
+    # Every Value cell in a derivation block must be a live formula addressing
+    # its own row — a formula pointing at another block would compute nonsense.
+    dv = wb2["Derivations"]
+    checked, stray, plain = 0, [], 0
+    for row in dv.iter_rows(min_row=1, max_row=dv.max_row):
+        if not isinstance(row[0].value, int):
+            continue
+        v = row[1].value
+        if isinstance(v, str) and v.startswith("="):
+            checked += 1
+            refs = re.findall(r"\b[A-Z]{1,2}(\d+)\b", v)
+            if refs and any(int(x) != row[0].row for x in refs):
+                stray.append((row[0].row, v[:60]))
+        elif v is not None:
+            plain += 1
+    check(checked > 500, f"derivation blocks carry live Excel formulas ({checked})")
+    check(not stray, f"every derivation formula addresses its own row ({stray[:3]})")
+
+
 def check_no_errors(path):
     wb = load_workbook(path)
     bad = []
@@ -250,9 +290,29 @@ def main(data_path, calc_path, outdir, template):
     check_tracker(out / "ESABCC_Policy-Gap-Tracker_2026-07.xlsx", data)
     check_sector_gaps(out / "ESABCC_Policy-Gaps_Transport-Industry_2026-07.xlsx", data)
     check_indicator_check(out / "ESABCC_Indicator-Check_2026-07.xlsx", data, calc)
+    check_overviews(out, data, calc)
     for f in out.glob("*.xlsx"):
         check_no_errors(f)
         check_chart_categories(f)
+
+    # The July-2026 content fact-check must actually reach the documents — an
+    # earlier run rebuilt them from a stale extract and silently shipped the
+    # pre-fact-check numbers.
+    inds = {i.get("code"): i for i in data["indicators"]}
+    check(inds["B6"].get("targetValue") == 41.5,
+          f"fact-check reached the data: B6 target is {inds['B6'].get('targetValue')} (must be 41.5)")
+    check(inds["T5b"].get("targetValue") == 80000,
+          f"fact-check reached the data: T5b target is {inds['T5b'].get('targetValue')}")
+    check(inds["B4 (population)"]["unit"] == "index (2005 = 1.0)",
+          f"fact-check reached the data: B4 unit is {inds['B4 (population)']['unit']}")
+    gaps = {g["id"]: g for g in data["policyGaps"]["POLICY_GAPS"]}
+    check("IPCEI" not in gaps["energy-hydrogen-support"]["instrument"],
+          "fact-check reached the data: IPCEIs removed from the hydrogen row")
+    syn = {e["id"]: e for e in data["synergies"]["SYNERGIES"]}
+    check("no evidence of a substantial shift" in syn["tr-iww-lowflow"]["mechanism"],
+          "fact-check reached the data: the Rhine entry states its source's actual finding")
+    check(syn["ind-cement-cool-durable"]["kind"] == "mixed",
+          "fact-check reached the data: the cement durability entry is retagged conditional")
     check_docx(out / "ESABCC_Synergies-Trade-offs_Industry-Transport_2026-07.docx", template)
 
     for m in OK:
