@@ -75,6 +75,12 @@ the CSV defines, always including an unmodified `central` run):
 - `eff_gain` — clean-tech energy intensity x0.9
 - `slow_build` — max build-rate share x0.5 (deployment bottleneck)
 
+Besides the `carbon_price_low` / `carbon_price_high` switches (which select a pre-defined column of
+`carbon_price.csv`), the `carbon_price_scale` param scales the whole ETS price path by a constant
+factor. That makes it possible to sweep the price continuously — add a series of rows to
+`scenarios.csv` with increasing factors — and trace how far down the emission path a given price
+level actually buys, rather than reading off three discrete points.
+
 ## Model formulation, in brief
 
 One joint linear program covers all 7 subsectors and their candidate technologies together for
