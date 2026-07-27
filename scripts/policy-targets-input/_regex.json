@@ -1330,6 +1330,40 @@
     ]
   },
   {
+    "policy_id": "ten-t-regulation",
+    "source": "regex",
+    "targets": [
+      {
+        "quote": "enables, without special permission, an axle load of at least 22,5 tonnes; and",
+        "article": "Article 15 — Transport infrastructure requirements for the comprehensive network"
+      },
+      {
+        "quote": "for rail sections linking the multimodal freight terminals of two urban nodes or the multimodal freight terminal of an urban node and a border crossing point, over 75 % of the length of each rail section, is designed for a speed of at least 100 km/h for freight trains on the freight lines of the extended core network.",
+        "article": "Article 16 — Transport infrastructure requirements for the core network and the extended core network"
+      },
+      {
+        "quote": "for rail sections linking the multimodal passenger hubs of two urban nodes or the multimodal passenger hubs of an urban node and a border crossing point, over 75 % of the length of each rail section is designed for a speed of at least 160 km/h for passenger trains on the passenger lines of the extended core network.",
+        "article": "Article 16 — Transport infrastructure requirements for the core network and the extended core network"
+      },
+      {
+        "quote": "at least 75 % of the freight trains crossing at least one border along a European Transport Corridor arrive at their destination, or at the external Union border if their destination is outside the Union, at their scheduled time or with a delay of less than 30 minutes by reasons that are attributable to the infrastructure manager(s) of the Union; delays occurring in and attributable to third countries that are crossed by freight trains shall not be taken into account.",
+        "article": "Article 19 — Operational priorities"
+      },
+      {
+        "quote": "it has an annual freight transhipment volume exceeding 500 000 tonnes, where the total annual freight transhipment volume shall be based on the latest available three-year average, based on the statistics published by Eurostat; and",
+        "article": "Article 21 — Infrastructure components"
+      },
+      {
+        "quote": "for cargo airports, the total annual cargo volume is at least 0,2 % of the total annual cargo volume of all airports of the Union;",
+        "article": "Article 33 — Infrastructure components"
+      },
+      {
+        "quote": "for passenger airports, the total annual passenger traffic is at least 0,1 % of the total annual passenger volume of all airports of the Union, unless the airport in question is situated outside a radius of 100 km from the nearest airport in the comprehensive network or outside a radius of 200 km where there is a high-speed railway line in the region in which it is situated.",
+        "article": "Article 33 — Infrastructure components"
+      }
+    ]
+  },
+  {
     "policy_id": "euro-7-regulation",
     "source": "regex",
     "targets": [

@@ -134,15 +134,28 @@ function timelineOf(s) {
   return '';
 }
 
+// Best-efforts phrasings that are not a hard obligation even after "shall".
+// The single-verb forms are matched anywhere in the quote; the multi-word
+// "make … efforts" family is only honoured when it is the GOVERNING verb (see
+// obligationOf), because a binding headline target often mentions a secondary
+// best-efforts duty further down the same provision (e.g. EED Art. 4(1):
+// "shall collectively ensure a reduction of … 11,7 % … Member States shall make
+// efforts to collectively contribute to the indicative … target").
+const RE_BEST_EFFORTS_ANY = /\bshall\s+(endeavour|aim|strive|seek)\b/;
+const RE_BEST_EFFORTS_GOVERNING = /^(?:make\s+(?:all\s+|every\s+|its\s+|their\s+)?(?:possible\s+|appropriate\s+|reasonable\s+|necessary\s+)?(?:effort|endeavour)s?\b|use\s+(?:its|their)\s+best\b)/;
+
 function obligationOf(s, instrumentBinding) {
   // Soft law binds nobody: a communication/strategy row is voluntary even when
   // the quoted passage contains "shall" (it is usually quoting or proposing
   // binding text that lives elsewhere).
   if (!instrumentBinding) return 'voluntary';
   const lc = s.toLowerCase();
-  // Best-efforts constructions defeat "shall": "shall endeavour / aim / strive"
-  // is not a hard obligation…
-  if (/\bshall\s+(endeavour|aim|strive)\b/.test(lc)) return 'voluntary';
+  // Best-efforts constructions defeat "shall": "shall endeavour / aim / strive /
+  // seek", and a governing "shall make (all appropriate) efforts" — TEN-T
+  // Art. 46(1), Art. 19(1) — are not hard obligations…
+  if (RE_BEST_EFFORTS_ANY.test(lc)) return 'voluntary';
+  const firstShall = /\bshall\s+([a-z’'\s]{0,40})/.exec(lc);
+  if (firstShall && RE_BEST_EFFORTS_GOVERNING.test(firstShall[1])) return 'voluntary';
   // …but a governing "shall"/"must" wins over an incidental "may"/"should"
   // elsewhere in the sentence.
   if (/\b(shall|must|are required to|is required to|are obliged to|mandatory|binding)\b/.test(lc)) return 'mandatory';
@@ -237,6 +250,19 @@ function truncateWords(s, max) {
   return (at > max * 0.6 ? cut.slice(0, at) : cut).replace(/[\s,;—-]+$/, '') + '…';
 }
 
+// Dedupe key. One row per target: the same provision quoted by an agent and by
+// the regex net must collapse to a single row even when only the source's
+// paragraph/point enumerator differs — the agents quote "1. Member States
+// shall …" while the sentence-splitting regex net yields "Member States shall …".
+// Both are verbatim, so the id hashes differ and both used to survive. Strip a
+// leading enumerator ("1. ", "2.1 ", "(a) ", "(3) ") before comparing.
+function dedupeKey(policyId, exactText) {
+  const bare = norm(exactText)
+    .replace(/^(?:[·•–—-]\s*)?(?:\d{1,3}(?:\.\d{1,3})?\.\s+|\(\d{1,3}[a-z]?\)\s+|\([a-z]\)\s+|\([ivxlc]+\)\s+)/i, '')
+    .toLowerCase();
+  return policyId + '::' + bare.slice(0, 120);
+}
+
 // Stable, content-derived row id: survives re-ordering and regeneration, so
 // per-user human confirmations (column 12, keyed by id in localStorage) keep
 // pointing at the same target.
@@ -291,6 +317,7 @@ function main() {
   };
 
   let dropped = 0;
+  const softLawForced = [];
   const perPolicy = new Map();
   const seen = new Set();
   for (const c of sources) {
@@ -302,9 +329,9 @@ function main() {
     if (quoteRaw.length < MIN_QUOTE || quoteRaw.length > MAX_QUOTE) { dropped++; continue; }
     const exact = verbatimSlice(body, quoteRaw);
     if (!exact) { dropped++; continue; } // not verbatim in enacting terms → reject
-    const dedupeKey = c.policy_id + '::' + norm(exact).slice(0, 120).toLowerCase();
-    if (seen.has(dedupeKey)) continue;
-    seen.add(dedupeKey);
+    const key = dedupeKey(c.policy_id, exact);
+    if (seen.has(key)) continue;
+    seen.add(key);
 
     const instrumentBinding = ['regulation', 'directive', 'decision'].includes(p.document_type);
     const rec = {
@@ -331,6 +358,15 @@ function main() {
       for (const [k, v] of Object.entries(ov.set || {})) rec[k] = v;
       rec.article = truncateWords(rec.article, 120);
       rec.timeline = truncateWords(rec.timeline, 80);
+      // Column 6 reports the obligation created by THE ACT THIS ROW BELONGS TO.
+      // A communication/strategy creates none, so soft law stays voluntary even
+      // when a reviewer read the passage as binding — in those cases the binding
+      // force lives in the act being referenced, which the register carries as
+      // its own rows. Enforced after overrides so the invariant cannot drift.
+      if (!instrumentBinding && rec.obligation !== 'voluntary') {
+        softLawForced.push(`${rec.id} ${p.id} (${p.document_type})`);
+        rec.obligation = 'voluntary';
+      }
     }
     // Relevance lens: computed AFTER field overrides so it reflects the corrected
     // climate_relevance/type/label, unless a reviewer set `relevant` explicitly.
@@ -387,6 +423,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = ${JSON.stringify(out, null,
   console.log(`  label=${JSON.stringify(tally('target_label'))}`);
   console.log(`  obligation=${JSON.stringify(tally('obligation'))} type=${JSON.stringify(tally('target_type'))}`);
   console.log(`  climate=${JSON.stringify(tally('climate_relevance'))} relevant=${JSON.stringify(tally('relevant'))}`);
+  if (softLawForced.length) {
+    console.warn(`  ! ${softLawForced.length} soft-law row(s) had an override to mandatory forced back to voluntary:`);
+    for (const s of softLawForced) console.warn(`      ${s}`);
+  }
 }
 
 main();

@@ -351,14 +351,6 @@
     "reason": "timeline: Timeline field is truncated mid-word at ~60 characters, cutting off before 'the year 2026'. The full date phrase is already fully present in the quote"
   },
   {
-    "id": "tgt-8fb2521a",
-    "policy_id": "cbam-regulation",
-    "set": {
-      "article": "Article 22(2) — Surrender of CBAM certificates (duplicate of tgt-0074; consider removing one)"
-    },
-    "reason": "article: This row is a duplicate of tgt-0074 (identical quote, same content) but cites the article at heading level only, omitting the paragraph number that tgt"
-  },
-  {
     "id": "tgt-c6339652",
     "policy_id": "cbam-regulation",
     "set": {
@@ -813,14 +805,6 @@
       "article": "Article 21(2)"
     },
     "reason": "fields: Art 21(2) requires MS to inform/consult before adopting public-health measures; procedural coordination, no climate content. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-3f38d147",
-    "policy_id": "csddd",
-    "set": {
-      "target_type": "quantitative"
-    },
-    "reason": "target_type: Same consideration as tgt-0108/tgt-0110: quote (duplicate of Article 22(1) first subparagraph) contains explicit numeric thresholds (1.5°C, 2050)."
   },
   {
     "id": "tgt-60077c9b",
@@ -1529,14 +1513,6 @@
     "reason": "fields: Line 149. Actual heading (line 131) is '6.Making Climate-ADAPT the authoritative European platform for adaptation'; current article is a paraphrase. Establishing a climate-and-health observatory under Climate-ADAPT is adaptation content, not 'none'. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-051f2228",
-    "policy_id": "eu-climate-law",
-    "set": {
-      "article": "Article 2(1) — Climate-neutrality objective"
-    },
-    "reason": "article: Quote is verbatim Article 2, paragraph 1, but is cited only as generic 'Article 2' (paragraph number omitted, unlike the near-duplicate row tgt-0217 wh"
-  },
-  {
     "id": "tgt-08ced768",
     "policy_id": "eu-climate-law",
     "set": {
@@ -1559,14 +1535,6 @@
       "article": "Article 6(3) — Assessment of Union progress and measures"
     },
     "reason": "article: Quote is verbatim Article 6, paragraph 3, cited only as generic 'Article 6'."
-  },
-  {
-    "id": "tgt-1201f2df",
-    "policy_id": "eu-climate-law",
-    "set": {
-      "article": "Article 4(1) — Intermediate Union climate targets"
-    },
-    "reason": "article: Quote is verbatim Article 4, paragraph 1 (first subparagraph), cited only as generic 'Article 4' (unlike near-duplicate tgt-0221, which correctly says "
   },
   {
     "id": "tgt-182d72ef",
@@ -1621,14 +1589,6 @@
       "article": "Article 9(1) — Public participation"
     },
     "reason": "article: Quote is the first sentence of Article 9, paragraph 1, cited only as generic 'Article 9'."
-  },
-  {
-    "id": "tgt-3769a95e",
-    "policy_id": "eu-climate-law",
-    "set": {
-      "article": "Article 4(3) — Intermediate Union climate targets"
-    },
-    "reason": "article: Quote is verbatim the first sentence of Article 4, paragraph 3, cited only as generic 'Article 4'."
   },
   {
     "id": "tgt-434d2845",
@@ -2142,14 +2102,6 @@
     "reason": "climate: Same inconsistency as tgt-0311: Annex V HFC production-right phase-down step, a mitigation measure."
   },
   {
-    "id": "tgt-f4fc64f4",
-    "policy_id": "f-gas-regulation",
-    "set": {
-      "article": "Article 13(3) — Control of use"
-    },
-    "reason": "article: Article reference lacks the paragraph number; quote is verbatim the first sentence of Article 13(3)."
-  },
-  {
     "id": "tgt-f56a0626",
     "policy_id": "f-gas-regulation",
     "set": {
@@ -2400,15 +2352,6 @@
       "article": "Article 5(4)"
     },
     "reason": "article: Cited at heading level only; the quote is verbatim Article 5, paragraph 4."
-  },
-  {
-    "id": "tgt-6c03bd42",
-    "policy_id": "fueleu-maritime",
-    "set": {
-      "climate_relevance": "mitigation",
-      "article": "Article 5(3) (duplicate of tgt-0341; consider removing one)"
-    },
-    "reason": "climate: Duplicate of tgt-0341 (identical quote content, generic article citation). Same climate_relevance misclassification applies. | article: Cited at heading level only; the quote is specifically Article 5(3) content, and is a duplicate row of tgt-0341 which already carries the correct parag"
   },
   {
     "id": "tgt-7e7be956",
@@ -2743,22 +2686,6 @@
     "reason": "fields: Art. 8(5) excludes projects inconsistent with 'climate objectives' from support — a direct climate-alignment eligibility gate. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-b10ce60e",
-    "policy_id": "lulucf-regulation",
-    "set": {
-      "article": "Article 13b(1) — Land flexibility mechanism for the period from 2026 to 2030"
-    },
-    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 13b(1) (a subset of the same paragraph quoted in full in row tgt-0407, whi"
-  },
-  {
-    "id": "tgt-b1c22e59",
-    "policy_id": "lulucf-regulation",
-    "set": {
-      "article": "Article 4(2) — Commitments and targets"
-    },
-    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 4(2) (identical quote to row tgt-0401, which correctly cites Article 4(2))"
-  },
-  {
     "id": "tgt-bedce6d9",
     "policy_id": "lulucf-regulation",
     "set": {
@@ -2808,10 +2735,7 @@
   {
     "id": "tgt-1e8f8f64",
     "policy_id": "managing-climate-risks",
-    "set": {
-      "obligation": "mandatory"
-    },
-    "reason": "fields: Section 1.2: quote uses governing 'requires' (European Climate Law requires continuous progress on adaptive capacity/resilience) -> mandatory, not voluntary. [fact-check 2026-07 new-acts]"
+    "reason": "fields: Section 1.2: quote uses governing 'requires' (European Climate Law requires continuous progress on adaptive capacity/resilience) -> mandatory, not voluntary. [fact-check 2026-07 new-acts] NOTE (conformance 2026-07): the reviewer's obligation=mandatory reading is not carried — column 6 reports the obligation created by the act the row belongs to, and a communication/strategy creates none; the binding force sits in the act being referenced, which the register carries under its own rows."
   },
   {
     "id": "tgt-655fac45",
@@ -2835,10 +2759,9 @@
     "id": "tgt-74273615",
     "policy_id": "managing-climate-risks",
     "set": {
-      "target_label": "other",
-      "obligation": "mandatory"
+      "target_label": "other"
     },
-    "reason": "fields: Section 4.6 Economy: describes an external legislative fact (amended Directive for National Budgetary Frameworks includes climate-related reporting requirements) rather than the Communication's own commitment; once adopted the reporting requirement is binding. [fact-check 2026-07 new-acts]"
+    "reason": "fields: Section 4.6 Economy: describes an external legislative fact (amended Directive for National Budgetary Frameworks includes climate-related reporting requirements) rather than the Communication's own commitment; once adopted the reporting requirement is binding. [fact-check 2026-07 new-acts] NOTE (conformance 2026-07): the reviewer's obligation=mandatory reading is not carried — column 6 reports the obligation created by the act the row belongs to, and a communication/strategy creates none; the binding force sits in the act being referenced, which the register carries under its own rows."
   },
   {
     "id": "tgt-7dc68c1e",
@@ -2853,10 +2776,9 @@
     "policy_id": "managing-climate-risks",
     "set": {
       "target_label": "commitment",
-      "obligation": "mandatory",
       "climate_relevance": "adaptation"
     },
-    "reason": "fields: Section 4.5 Eurocodes: the 2026 revision 'will make it mandatory to consider the future climate hazards on structures of buildings' - a forthcoming binding requirement about climate adaptation of buildings, not 'none'/'target'. [fact-check 2026-07 new-acts]"
+    "reason": "fields: Section 4.5 Eurocodes: the 2026 revision 'will make it mandatory to consider the future climate hazards on structures of buildings' - a forthcoming binding requirement about climate adaptation of buildings, not 'none'/'target'. [fact-check 2026-07 new-acts] NOTE (conformance 2026-07): the reviewer's obligation=mandatory reading is not carried — column 6 reports the obligation created by the act the row belongs to, and a communication/strategy creates none; the binding force sits in the act being referenced, which the register carries under its own rows."
   },
   {
     "id": "tgt-98c09c78",
@@ -3621,14 +3543,6 @@
     "reason": "fields: Key Action 'Boost rescEU' (Annex 49, 2026): exact quote leads with maintaining/scaling the aerial firefighting fleet, a core EU adaptation capacity for climate-driven wildfire risk, alongside other all-hazards capabilities; substantively adaptation-relevant per the preparedness/resilience lens, not 'none'. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-0a2d425b",
-    "policy_id": "refueleu-aviation",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "climate: anti-tankering refuelling obligation avoids extra fuel burn (SAF framework) [fact-check 2026-07]"
-  },
-  {
     "id": "tgt-1d58bcbd",
     "policy_id": "refueleu-aviation",
     "set": {
@@ -3659,14 +3573,6 @@
       "climate_relevance": "mitigation"
     },
     "reason": "climate: Annex I(b) sets the 2030 minimum SAF/synthetic aviation fuel shares, the Regulation's core decarbonisation mandate. climate_relevance 'none' is a miscl"
-  },
-  {
-    "id": "tgt-f786b593",
-    "policy_id": "refueleu-aviation",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "climate: Duplicate of the Article 4(4) biofuel cap (see tgt-0544); same misclassification."
   },
   {
     "id": "tgt-3b1337c8",
@@ -4277,12 +4183,28 @@
     "reason": "drop: Art. 1(1) is the Regulation's subject-matter clause ('This Regulation establishes guidelines for...') defining scope, not a target/goal/objective/commitment itself. Genuine scope statement -> drop. [fact-check 2026-07 new-acts]"
   },
   {
+    "id": "tgt-24d37a09",
+    "policy_id": "ten-t-regulation",
+    "set": {
+      "article": "Art. 16(2)(c)",
+      "target_label": "target",
+      "timeline": "by 31 December 2040"
+    },
+    "reason": "fields: Art. 16(2), point (c) — chapeau 'Member States shall ensure that, by 31 December 2040, the railway infrastructure of the extended core network … for lines that are part of the network for freight transport' supplies the timeline; 75 %-of-length / 100 km/h freight design speed is a quantified target, not 'other'. Technical speed standard, non-climate → peripheral, matching sibling row Art. 16(2)(b). [fact-check 2026-07 ten-t re-sweep]"
+  },
+  {
     "id": "tgt-2572e5ee",
     "policy_id": "ten-t-regulation",
     "set": {
       "climate_relevance": "adaptation"
     },
     "reason": "fields: Art. 46(2) confirmed verbatim ('...shall be subject to climate proofing'), with the following sentence detailing climate vulnerability/risk assessment and adaptation measures. Mandatory climate proofing of projects of common interest is adaptation, not 'none'. [fact-check 2026-07 new-acts]"
+  },
+  {
+    "id": "tgt-39649459",
+    "policy_id": "ten-t-regulation",
+    "drop": true,
+    "reason": "drop: Art. 33(2)(a) is an airport network-membership eligibility criterion ('In order to be part of the comprehensive network, an airport shall meet at least one of the following conditions: (a) for cargo airports, the total annual cargo volume is at least 0,2 % …'), a scope clause rather than a target. [fact-check 2026-07 ten-t re-sweep]"
   },
   {
     "id": "tgt-482876cc",
@@ -4292,6 +4214,22 @@
       "timeline": "by 31 December 2027"
     },
     "reason": "fields: Confirmed at Art. 41(1)(b)(i) (the chapeau of point (b) sets 'by 31 December 2027' for the SUMP sub-items). SUMP measures to shift toward sustainable mobility and promote zero/low-emission mobility are mitigation-relevant. [fact-check 2026-07 new-acts]"
+  },
+  {
+    "id": "tgt-5b033f70",
+    "policy_id": "ten-t-regulation",
+    "drop": true,
+    "reason": "drop: Art. 33(2)(b) is the passenger-airport limb of the same network-membership eligibility test as Art. 33(2)(a) — a scope clause, not a target. [fact-check 2026-07 ten-t re-sweep]"
+  },
+  {
+    "id": "tgt-6208c6ed",
+    "policy_id": "ten-t-regulation",
+    "set": {
+      "article": "Art. 16(4)(b)",
+      "target_label": "target",
+      "timeline": "by 31 December 2040"
+    },
+    "reason": "fields: Art. 16(4), point (b) — chapeau 'Member States shall ensure that, by 31 December 2040, the railway infrastructure of the extended core network … for lines that are part of the network for passenger transport' supplies the timeline; quantified 75 %-of-length / 160 km/h passenger design speed → target. This is the complete point (b); the earlier row tgt-e999f611 quoted only its speed clause and is dropped as a fragment of this one. Technical speed standard, non-climate → peripheral. [fact-check 2026-07 ten-t re-sweep]"
   },
   {
     "id": "tgt-87c4dd4b",
@@ -4310,6 +4248,16 @@
       "relevant": false
     },
     "reason": "fields: Art. 18(4) confirmed verbatim. Quote contains an explicit date (31 December 2050) so target_type must be quantitative, not qualitative. Radio-based ERTMS deployment, non-climate -> peripheral. | relevance=peripheral: Art. 18(4) confirmed verbatim. Quote contains an explicit date (31 December 2050) so target_type must be quantitative, not qualitative. Radio-based ERTMS deployment, non-climate -> peripheral. [fact-check 2026-07 new-acts]"
+  },
+  {
+    "id": "tgt-8d39dbb2",
+    "policy_id": "ten-t-regulation",
+    "set": {
+      "article": "Art. 19(1)(b)",
+      "obligation": "voluntary",
+      "timeline": "by 31 December 2030"
+    },
+    "reason": "fields: Art. 19(1), point (b) — the governing chapeau is 'The Rail Freight governance shall make all possible efforts to ensure by 31 December 2030 … the following target values', a best-efforts construction, so the 75 %-punctuality figure is voluntary; the 'shall' inside the quote ('delays … shall not be taken into account') is an incidental exclusion rule, not the obligation. Chapeau supplies the 2030 timeline. Rail-freight punctuality, no climate content in the quote → peripheral. [fact-check 2026-07 ten-t re-sweep]"
   },
   {
     "id": "tgt-97dd6503",
@@ -4366,6 +4314,12 @@
     "reason": "relevance=peripheral: Art. 16(2)(b) confirmed verbatim (740 m freight train length requirement). Technical interoperability standard with no climate/energy substance in the quote -> peripheral. [fact-check 2026-07 new-acts]"
   },
   {
+    "id": "tgt-d766eef0",
+    "policy_id": "ten-t-regulation",
+    "drop": true,
+    "reason": "drop: Art. 21(3)(a) is a network-membership eligibility criterion ('In order to be part of the comprehensive network, an inland port shall meet the following conditions: (a) it has an annual freight transhipment volume exceeding 500 000 tonnes …'), i.e. a scope clause, not a target the act sets. Same family as the scope/definition clauses dropped in the first TEN-T pass. [fact-check 2026-07 ten-t re-sweep]"
+  },
+  {
     "id": "tgt-d8f20b3d",
     "policy_id": "ten-t-regulation",
     "set": {
@@ -4376,10 +4330,18 @@
   {
     "id": "tgt-e999f611",
     "policy_id": "ten-t-regulation",
+    "drop": true,
+    "reason": "drop: fragment near-duplicate. The quote is the bare speed clause of Art. 16(4)(b); the complete point — including the governing '75 % of the length of each rail section' threshold, without which the row overstates the requirement — is now carried by tgt-6208c6ed, which the completed TEN-T corpus text surfaced. One row per target. [fact-check 2026-07 ten-t re-sweep] Supersedes the earlier entry for this row: \"relevance=peripheral: Art. 16(4)(b) confirmed verbatim (160 km/h passenger-line speed requirement, part of a 75%-of-section threshold). Technical speed standard, non-climate -> peripheral. [fact-check 2026-07 new-acts]\""
+  },
+  {
+    "id": "tgt-f64b1099",
+    "policy_id": "ten-t-regulation",
     "set": {
-      "relevant": false
+      "article": "Art. 15(2)(b)",
+      "target_label": "target",
+      "timeline": "by 31 December 2050"
     },
-    "reason": "relevance=peripheral: Art. 16(4)(b) confirmed verbatim (160 km/h passenger-line speed requirement, part of a 75%-of-section threshold). Technical speed standard, non-climate -> peripheral. [fact-check 2026-07 new-acts]"
+    "reason": "fields: Art. 15(2), point (b) — sub-point of the binding chapeau 'Member States shall ensure that, by 31 December 2050, the railway infrastructure of the comprehensive network …', so the reference is Art. 15(2)(b), the context supplies the 2050 timeline the quote itself lacks, and a quantified infrastructure requirement is a target, not 'other'. Axle-load standard is a technical spec with no climate content → climate_relevance stays 'none' / peripheral, consistent with the other TEN-T rail-specification rows. [fact-check 2026-07 ten-t re-sweep]"
   },
   {
     "id": "tgt-f842737a",
@@ -4532,11 +4494,10 @@
     "policy_id": "water-resilience-strategy",
     "set": {
       "article": "Annex II - The key 2027-2033 intermediate targets",
-      "obligation": "mandatory",
       "target_type": "quantitative",
       "timeline": "national plans due by 2026; building decarbonisation by 2050"
     },
-    "reason": "fields: Annex II intermediate target under the binding Energy Performance of Buildings Directive: building decarbonisation by 2050 - mandatory EU directive obligation, direct mitigation content. Quote contains explicit date thresholds ('due by 2026', 'by 2050'), so target_type should be quantitative, not qualitative; timeline should reflect both dates. [fact-check 2026-07 new-acts]"
+    "reason": "fields: Annex II intermediate target under the binding Energy Performance of Buildings Directive: building decarbonisation by 2050 - mandatory EU directive obligation, direct mitigation content. Quote contains explicit date thresholds ('due by 2026', 'by 2050'), so target_type should be quantitative, not qualitative; timeline should reflect both dates. [fact-check 2026-07 new-acts] NOTE (conformance 2026-07): the reviewer's obligation=mandatory reading is not carried — column 6 reports the obligation created by the act the row belongs to, and a communication/strategy creates none; the binding force sits in the act being referenced, which the register carries under its own rows."
   },
   {
     "id": "tgt-49f0c073",
@@ -4589,10 +4550,9 @@
     "policy_id": "water-resilience-strategy",
     "set": {
       "article": "Section 2.1 (Restoring and protecting the water cycle)",
-      "obligation": "mandatory",
       "target_type": "quantitative"
     },
-    "reason": "fields: Sec.2.1: 'must be fully integrated' is governing mandatory language (integration requirement for Nature Restoration Regulation national Restoration Plans), so obligation should be mandatory, not voluntary; quote also contains an explicit date threshold ('by 2026'), so target_type should be quantitative, not unspecified. [fact-check 2026-07 new-acts]"
+    "reason": "fields: Sec.2.1: 'must be fully integrated' is governing mandatory language (integration requirement for Nature Restoration Regulation national Restoration Plans), so obligation should be mandatory, not voluntary; quote also contains an explicit date threshold ('by 2026'), so target_type should be quantitative, not unspecified. [fact-check 2026-07 new-acts] NOTE (conformance 2026-07): the reviewer's obligation=mandatory reading is not carried — column 6 reports the obligation created by the act the row belongs to, and a communication/strategy creates none; the binding force sits in the act being referenced, which the register carries under its own rows."
   },
   {
     "id": "tgt-af443426",
@@ -4607,12 +4567,11 @@
     "policy_id": "water-resilience-strategy",
     "set": {
       "article": "Section 2.2 (Building a water-smart economy)",
-      "obligation": "mandatory",
       "target_type": "quantitative",
       "timeline": "threshold to be set by 2028; national action plans due by 2030",
       "climate_relevance": "adaptation"
     },
-    "reason": "fields: Sec.2.2: leakage reduction is a core water-use-efficiency measure under the same climate-driven-scarcity framing that opens Section 2.2 ('Faced with increased water scarcity and droughts...With further climate change the regions affected by water scarcity will increase substantially'), so this should be treated as adaptation-relevant like the parallel water-efficiency target, not 'none'/peripheral (reviewer's drop of relevance here is inconsistent with its own treatment of the water-efficiency-target row). The Drinking Water Directive 'requires' Member States to reduce leakages - mandatory, not voluntary. Quote also contains explicit date thresholds ('by 2028', 'by 2030'), so target_type should be quantitative. [fact-check 2026-07 new-acts]"
+    "reason": "fields: Sec.2.2: leakage reduction is a core water-use-efficiency measure under the same climate-driven-scarcity framing that opens Section 2.2 ('Faced with increased water scarcity and droughts...With further climate change the regions affected by water scarcity will increase substantially'), so this should be treated as adaptation-relevant like the parallel water-efficiency target, not 'none'/peripheral (reviewer's drop of relevance here is inconsistent with its own treatment of the water-efficiency-target row). The Drinking Water Directive 'requires' Member States to reduce leakages - mandatory, not voluntary. Quote also contains explicit date thresholds ('by 2028', 'by 2030'), so target_type should be quantitative. [fact-check 2026-07 new-acts] NOTE (conformance 2026-07): the reviewer's obligation=mandatory reading is not carried — column 6 reports the obligation created by the act the row belongs to, and a communication/strategy creates none; the binding force sits in the act being referenced, which the register carries under its own rows."
   },
   {
     "id": "tgt-ca9cf814",
@@ -4620,10 +4579,9 @@
     "set": {
       "article": "Annex II - The key 2027-2033 intermediate targets",
       "target_label": "target",
-      "obligation": "mandatory",
       "climate_relevance": "both"
     },
-    "reason": "fields: Annex II intermediate target under the binding Nature Restoration Regulation ('will be put in place' restates a directly-applicable EU Regulation requirement - mandatory); 30%-by-2030 habitat restoration is a genuine quantified target (not 'other'), bearing on both ecosystem/adaptation resilience and carbon-sink mitigation. [fact-check 2026-07 new-acts]"
+    "reason": "fields: Annex II intermediate target under the binding Nature Restoration Regulation ('will be put in place' restates a directly-applicable EU Regulation requirement - mandatory); 30%-by-2030 habitat restoration is a genuine quantified target (not 'other'), bearing on both ecosystem/adaptation resilience and carbon-sink mitigation. [fact-check 2026-07 new-acts] NOTE (conformance 2026-07): the reviewer's obligation=mandatory reading is not carried — column 6 reports the obligation created by the act the row belongs to, and a communication/strategy creates none; the binding force sits in the act being referenced, which the register carries under its own rows."
   },
   {
     "id": "tgt-d01d7f59",
@@ -4638,10 +4596,9 @@
     "id": "tgt-e7230635",
     "policy_id": "water-resilience-strategy",
     "set": {
-      "obligation": "mandatory",
       "target_type": "quantitative"
     },
-    "reason": "fields: Sec.2.1: WFD 'good status of all water bodies' objective is a binding legal requirement (Annex II confirms 'Member States shall ... achieve good status'), so obligation should be mandatory, not voluntary; quote also contains a date threshold ('by 2027'), so target_type should be quantitative. Substance is water quality/ecological status, not climate-specific, so relevant stays false. [fact-check 2026-07 new-acts]"
+    "reason": "fields: Sec.2.1: WFD 'good status of all water bodies' objective is a binding legal requirement (Annex II confirms 'Member States shall ... achieve good status'), so obligation should be mandatory, not voluntary; quote also contains a date threshold ('by 2027'), so target_type should be quantitative. Substance is water quality/ecological status, not climate-specific, so relevant stays false. [fact-check 2026-07 new-acts] NOTE (conformance 2026-07): the reviewer's obligation=mandatory reading is not carried — column 6 reports the obligation created by the act the row belongs to, and a communication/strategy creates none; the binding force sits in the act being referenced, which the register carries under its own rows."
   },
   {
     "id": "tgt-e9ef3e8d",

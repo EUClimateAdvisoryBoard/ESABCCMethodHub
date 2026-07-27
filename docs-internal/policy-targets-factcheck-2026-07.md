@@ -152,3 +152,99 @@ climate/energy slices.
 - Relevance is a **screening lens**, not a legal classification — it reflects
   materiality to the EU climate/energy transition, and every row (including
   peripheral ones) remains in the dataset and viewable via the *all* filter.
+
+---
+
+# Third pass — conformance audit against the documented methodology (July 2026)
+
+The first two passes checked the *rows* against the sources. This pass checked
+the *pipeline* against its own documentation: every guarantee in
+`docs/modules/policy-targets.md` was re-derived from the shipped dataset by an
+independent implementation (deliberately not importing the build script, so a
+self-consistent bug in the builder could not pass itself). Four violations were
+found and fixed, and the checks are now enforced on every build.
+
+## What was broken
+
+1. **The build no longer reproduced the dataset.** `npm run build:policy-targets`
+   yielded 1 025 rows against the committed 1 018. Cause: the TEN-T source text
+   was fetched in full at `89c8053` (a 17 703-line expansion of
+   `public/data/policy-texts/ten-t-regulation.txt`) but the committed
+   `_regex.json` still reflected the pre-fetch stub, so 7 TEN-T candidates from
+   the completed text never reached the merge. The documented "deterministic and
+   idempotent" claim was therefore false at HEAD.
+2. **8 soft-law rows were mandatory.** Overrides on `managing-climate-risks` (3)
+   and `water-resilience-strategy` (5) set `obligation: mandatory` because the
+   reviewer read the passage as binding ("must be fully integrated", "the
+   Drinking Water Directive requires…", Nature Restoration Regulation
+   restatements). That is exactly the confusion the soft-law rule exists to
+   prevent: column 6 reports the obligation created by *the act the row belongs
+   to*, and the binding force in each case sits in an act the register carries
+   under its own rows. Overrides were applied after classification with no
+   guardrail, so they could overrule the rule.
+3. **The best-efforts rule was under-implemented.** It matched only "shall
+   endeavour / aim / strive", missing the "shall make (all appropriate) efforts"
+   family — TEN-T Art. 46(1) was typed mandatory.
+4. **17 rows were duplicates.** The dedupe key hashed the quote as-is, so the
+   same provision survived twice whenever the agent quoted it with its paragraph
+   enumerator ("1. Member States shall…") and the sentence-splitting regex net
+   without it. Affected acts: EU Climate Law (3), EPBD (4), LULUCF (2), RefuelEU
+   (2), CBAM, CSDDD, F-gas, FuelEU, SCF, Taxonomy. Two of these rows also
+   carried a reviewer's TODO note *inside* the provision reference
+   ("…(duplicate of tgt-0074; consider removing one)"), which rendered in the
+   register's Provision column.
+
+## What was changed
+
+- **`scripts/build-policy-targets.mjs`** — enumerator-insensitive dedupe key
+  (richer agent entry wins); best-efforts detection extended to a governing
+  "shall make … efforts" / "use its best endeavours" while a *secondary*
+  best-efforts duty still cannot downgrade a binding headline target (EED
+  Art. 4(1) verified unchanged); soft-law obligation re-asserted after overrides,
+  logging each override it overrules.
+- **`scripts/check-policy-targets.mjs`** (new, wired into
+  `npm run build:policy-targets` and `npm run check:policy-targets`) — 10
+  invariants: verbatim, enacting-terms-only, stable + unique ids, one row per
+  target, soft-law voluntary, best-efforts voluntary, relevance-lens default,
+  act metadata vs the canonical registry, enum/bounds/numbering, and override
+  hygiene (no stale entries, every entry has a reason, no reviewer notes leaking
+  into the provision reference).
+- **`scripts/policy-targets-overrides.json`** — `obligation` removed from the 8
+  soft-law entries (the rest of each correction kept, reason annotated); 11
+  entries stranded by the dedupe fix removed after confirming the surviving twin
+  carries an equal or sharper reference and timeline in every case; 8 TEN-T
+  entries added (below).
+
+## The 7 new TEN-T rows, fact-checked
+
+Reviewed against the source before being shipped, same criteria as the earlier
+passes:
+
+- **Kept (4)**, with the provision reference sharpened to the exact sub-point
+  and the timeline taken from the binding chapeau the sub-point hangs off:
+  Art. 15(2)(b) axle load (by 31 Dec 2050), Art. 16(2)(c) freight design speed
+  and Art. 16(4)(b) passenger design speed (both by 31 Dec 2040), Art. 19(1)(b)
+  75 % cross-border punctuality (by 31 Dec 2030, **voluntary** — the chapeau is
+  "shall make all possible efforts to ensure"; the "shall" inside the quote is
+  an incidental exclusion rule). All four are technical/operational transport
+  standards with no climate content in the quote → `none` / peripheral,
+  consistent with the sibling TEN-T rail-specification rows.
+- **Dropped (3)**: Art. 21(3)(a) inland-port and Art. 33(2)(a)–(b) airport
+  thresholds are network-*membership eligibility criteria* ("In order to be part
+  of the comprehensive network, an airport shall meet at least one of the
+  following conditions…") — scope clauses, not targets the act sets.
+- **One older row dropped**: `tgt-e999f611` quoted only the speed clause of
+  Art. 16(4)(b), omitting the governing "75 % of the length of each rail
+  section" threshold and so overstating the requirement. The complete point is
+  now carried by `tgt-6208c6ed`.
+
+## Outcome
+
+- **1 004 targets across 62 acts** (1 018 → +7 TEN-T, −17 duplicates, −4
+  reviewed drops). Relevance split **660 relevant / 344 peripheral**.
+- Obligation **744 mandatory / 260 voluntary** (9 rows flipped to voluntary: the
+  8 soft-law rows and TEN-T Art. 46(1)).
+- No row's id changed and no surviving row's quote changed, so existing column-12
+  confirmations remain attached.
+- Two consecutive builds now produce byte-identical output, and all 10
+  invariants pass.
