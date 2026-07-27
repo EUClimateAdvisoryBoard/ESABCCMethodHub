@@ -1,0 +1,36 @@
+# Summer Prep — background documents
+
+Offline copies of the **Summer Prep › Policy Gap 2.0 Report** module, so the
+work can continue while the Method Hub owner is on parental leave. Each file
+stands on its own: no login, no Hub, nothing to install.
+
+| File | What it is | Live version on the Hub |
+| --- | --- | --- |
+| `ESABCC_Policy-Gap-Tracker_2026-07.xlsx` | All 66 gaps and inconsistencies the Board identified across the 12 chapters of the 2024 progress report, with the verbatim report sentence and page behind each. Two columns to maintain (live status + note), a summary matrix and two figures that follow your edits. | `/beta/policy-gaps` |
+| `ESABCC_Indicator-Check_2026-07.xlsx` | What has moved, data-wise, since the report: all 97 progress indicators, their report baseline, the points added since publication, a figure per indicator, and a sheet showing where every post-report number comes from. | `/beta/summer-prep/indicator-check` |
+| `ESABCC_Synergies-Trade-offs_Industry-Transport_2026-07.docx` | The mitigation ↔ adaptation literature note, subsector by subsector — 20 interactions with mechanism, policy implication and sources. Built in the Board's own Word template. | `/beta/summer-prep/synergies-tradeoffs` |
+| `ESABCC_Policy-Gaps_Transport-Industry_2026-07.xlsx` | The transport/industry gaps re-assessed against legislation adopted since the report, 10 candidate additional gaps with the test that would confirm or refute each, and the per-subsector gap landscape. | `/beta/summer-prep/policy-gaps-sectors` |
+
+## Status of the content
+
+The Board's own findings — the gaps, their quotes and pages, the report's
+indicator values — are from the published report. The live-status
+re-assessments, the candidate gaps and the synergies framing are working
+material for this prep cycle, flagged as pending verification inside each file.
+**Nothing in these documents is a Board position.**
+
+## Rebuilding them
+
+```bash
+node scripts/summer-prep-background/extract.mjs data.json      # data from src/data/*.ts
+python3 scripts/summer-prep-background/build_policy_gap_tracker.py data.json out.xlsx
+python3 scripts/summer-prep-background/build_indicator_check.py data.json calc.json out.xlsx
+python3 scripts/summer-prep-background/build_sector_policy_gaps.py data.json out.xlsx
+python3 scripts/summer-prep-background/build_synergies_docx.py data.json template.dotx out.docx
+python3 scripts/summer-prep-background/check_outputs.py data.json calc.json outdir template.dotx
+```
+
+The builders read the Method Hub's own data files, so re-running them after a
+data change reproduces the documents. `check_outputs.py` re-derives every
+summary figure independently and fails if a workbook's formulas would not
+produce it.
