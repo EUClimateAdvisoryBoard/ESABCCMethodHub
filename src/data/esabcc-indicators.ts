@@ -258,7 +258,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     code: 'I4 (steel)',
     name: 'GHG intensity of EU steel production',
     category: 'industry',
-    unit: 't CO₂/t',
+    unit: 't CO₂eq/t',
     description:
       'ESABCC progress indicator I4 (steel component). Total emissions (combustion + process) per tonne of crude steel produced.',
     source: 'EEA + Eurofer',
@@ -273,7 +273,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     code: 'I4 (cement)',
     name: 'GHG intensity of EU cement production',
     category: 'industry',
-    unit: 't CO₂/t',
+    unit: 't CO₂eq/t',
     description:
       'ESABCC progress indicator I4 (cement component). Total emissions per tonne of cement produced.',
     source: 'EEA + Cembureau',
@@ -288,7 +288,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     code: 'I4 (chemicals)',
     name: 'GHG intensity of EU base organic chemicals',
     category: 'industry',
-    unit: 't CO₂/t',
+    unit: 't CO₂eq/t',
     description:
       'ESABCC progress indicator I4 (chemicals component). Combustion + process emissions per tonne of ethylene, propylene, methanol etc.',
     source: 'EEA + Eurostat (DS-056120)',
@@ -352,7 +352,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Gpkm',
     description:
       'ESABCC progress indicator T2a. Total passenger-kilometres travelled across all inland and air modes.',
-    source: 'Eurostat Statistical Pocketbook',
+    source: 'European Commission, DG MOVE — EU transport in figures: statistical pocketbook',
     sourceUrl: 'https://transport.ec.europa.eu/facts-funding/studies-data/eu-transport-figures-statistical-pocketbook_en',
     direction: 'down',
     group: 'esabcc',
@@ -367,7 +367,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Gtkm',
     description:
       'ESABCC progress indicator T2b. Total freight tonne-kilometres across road, rail and inland waterways.',
-    source: 'Eurostat Statistical Pocketbook',
+    source: 'European Commission, DG MOVE — EU transport in figures: statistical pocketbook',
     sourceUrl: 'https://transport.ec.europa.eu/facts-funding/studies-data/eu-transport-figures-statistical-pocketbook_en',
     direction: 'down',
     group: 'esabcc',
@@ -382,7 +382,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: '%',
     description:
       'ESABCC progress indicator T3a. Passenger-side road share (cars + two-wheelers) of motorised inland transport, excluding aviation, maritime and active modes.',
-    source: 'Eurostat Statistical Pocketbook',
+    source: 'European Commission, DG MOVE — EU transport in figures: statistical pocketbook',
     sourceUrl: 'https://transport.ec.europa.eu/facts-funding/studies-data/eu-transport-figures-statistical-pocketbook_en',
     direction: 'down',
     duplicateOf: 'road-passenger-share',
@@ -398,7 +398,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Gpkm',
     description:
       'ESABCC progress indicator T3b. Intra-EU passenger-kilometres travelled by air; Fit-for-55 MIX 2030 plus 1.5LIFE/TECH 2050 benchmarks.',
-    source: 'Eurostat Statistical Pocketbook',
+    source: 'European Commission, DG MOVE — EU transport in figures: statistical pocketbook',
     sourceUrl: 'https://transport.ec.europa.eu/facts-funding/studies-data/eu-transport-figures-statistical-pocketbook_en',
     direction: 'down',
     group: 'esabcc',
@@ -430,7 +430,9 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: '%',
     description:
       'ESABCC progress indicator T5a. Battery-electric + fuel-cell share of new passenger car registrations.',
-    source: 'EU Alternative Fuels Observatory',
+    source: 'EU Alternative Fuels Observatory; EEA for 2022',
+    targetValue: 80000,
+    targetYear: 2030,
     sourceUrl: 'https://alternative-fuels-observatory.ec.europa.eu/',
     direction: 'up',
     targetValue: 100,
@@ -480,7 +482,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     description:
       'ESABCC progress indicator T6b. Energy from first-generation biofuels (food/feed crops) used in the transport sector.',
     source: 'SHARES summary',
-    sourceUrl: 'https://ec.europa.eu/eurostat/web/energy/data/shares',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table',
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
@@ -554,11 +556,11 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     category: 'buildings',
     unit: 'million units',
     description:
-      'ESABCC progress indicator B6. Cumulative stock of heat pumps. REPowerEU 2030 objective requires 60 million units.',
+      'ESABCC progress indicator B6. Cumulative stock of heat pumps. REPowerEU 2030 objective: 41.5 million units (SWD(2022) 230 final, table 4), the figure the report\'s own underlying-data workbook carries. The 60 million sometimes quoted is a derived total-stock reading, not the Commission objective.',
     source: 'European Heat Pump Association',
-    sourceUrl: 'https://www.ehpa.org/market-data/',
+    sourceUrl: 'https://ehpa.org/market-data/',
     direction: 'up',
-    targetValue: 60,
+    targetValue: 41.5,
     targetYear: 2030,
     duplicateOf: 'heat-pump-stock',
     group: 'esabcc',
@@ -583,6 +585,8 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
   },
   {
     id: 'esabcc-a3-fertiliser-use',
+    targetValue: 12.19,
+    targetYear: 2030,
     code: 'A3 (use)',
     name: 'Total fertiliser nitrogen use (EU)',
     category: 'agriculture',
@@ -606,7 +610,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     description:
       'ESABCC progress indicator A3 (efficiency component). Share of applied N that ends up in harvested products.',
     source: 'Ludemann et al. 2023',
-    sourceUrl: 'https://doi.org/10.1093/jambio/lxac084',
+    sourceUrl: 'https://doi.org/10.5194/essd-16-525-2024',
     direction: 'up',
     group: 'esabcc',
     isSeed: true,
@@ -822,7 +826,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
   {
     id: 'esabcc-f-cleantech-investment',
     code: 'F5',
-    name: 'Cleantech investment in the EU',
+    name: 'Cleantech venture & growth investment in the EU',
     category: 'finance',
     unit: '% of GDP',
     description:
@@ -847,7 +851,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Mt',
     description:
       'ESABCC progress indicator I2 (steel production). EU production of crude steel (Figure 24). Production, use and trade balance together show how much demand is met domestically versus through net trade — a context indicator with no policy target.',
-    source: 'Eurostat PRODCOM & trade + Eurofer/Cembureau',
+    source: 'Eurofer, Steel in figures 2022',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database',
     direction: 'down',
     group: 'esabcc',
@@ -862,7 +866,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Mt',
     description:
       'ESABCC progress indicator I2 (steel use). EU apparent use (consumption) of crude steel (Figure 24). Production, use and trade balance together show how much demand is met domestically versus through net trade — a context indicator with no policy target.',
-    source: 'Eurostat PRODCOM & trade + Eurofer/Cembureau',
+    source: 'Eurofer, Steel in figures 2022',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database',
     direction: 'down',
     group: 'esabcc',
@@ -877,7 +881,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Mt',
     description:
       'ESABCC progress indicator I2 (steel trade). EU net trade balance of crude steel (Figure 24). Production, use and trade balance together show how much demand is met domestically versus through net trade — a context indicator with no policy target.',
-    source: 'Eurostat PRODCOM & trade + Eurofer/Cembureau',
+    source: 'Eurofer, Steel in figures 2022; trade from Eurostat DS-059268',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database',
     direction: 'up',
     group: 'esabcc',
@@ -892,7 +896,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Mt',
     description:
       'ESABCC progress indicator I2 (cement production). EU production of cement (Figure 24). Production, use and trade balance together show how much demand is met domestically versus through net trade — a context indicator with no policy target.',
-    source: 'Eurostat PRODCOM & trade + Eurofer/Cembureau',
+    source: 'Cembureau (data provided)',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database',
     direction: 'down',
     group: 'esabcc',
@@ -907,7 +911,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Mt',
     description:
       'ESABCC progress indicator I2 (cement use). EU apparent use (consumption) of cement (Figure 24). Production, use and trade balance together show how much demand is met domestically versus through net trade — a context indicator with no policy target.',
-    source: 'Eurostat PRODCOM & trade + Eurofer/Cembureau',
+    source: 'Cembureau (data provided)',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database',
     direction: 'down',
     group: 'esabcc',
@@ -922,7 +926,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Mt',
     description:
       'ESABCC progress indicator I2 (chemicals production). EU production of base organic chemicals (Figure 24). Production, use and trade balance together show how much demand is met domestically versus through net trade — a context indicator with no policy target.',
-    source: 'Eurostat PRODCOM & trade + Eurofer/Cembureau',
+    source: 'Eurostat DS-056120 (sold production) and DS-059268 (trade)',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database',
     direction: 'down',
     group: 'esabcc',
@@ -937,7 +941,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Mt',
     description:
       'ESABCC progress indicator I2 (chemicals use). EU apparent use (consumption) of base organic chemicals (Figure 24). Production, use and trade balance together show how much demand is met domestically versus through net trade — a context indicator with no policy target.',
-    source: 'Eurostat PRODCOM & trade + Eurofer/Cembureau',
+    source: 'Eurostat DS-056120 (sold production) and DS-059268 (trade)',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database',
     direction: 'down',
     group: 'esabcc',
@@ -952,7 +956,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Mt',
     description:
       'ESABCC progress indicator I2 (chemicals trade). EU net trade balance of base organic chemicals (Figure 24). Production, use and trade balance together show how much demand is met domestically versus through net trade — a context indicator with no policy target.',
-    source: 'Eurostat PRODCOM & trade + Eurofer/Cembureau',
+    source: 'Eurostat DS-056120 (sold production) and DS-059268 (trade)',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database',
     direction: 'up',
     group: 'esabcc',
@@ -1194,7 +1198,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     description:
       'ESABCC progress indicator A4 (pig meat consumption). EU consumption of pig meat (Figure 59), shown alongside production and herd size to relate demand, output and animal numbers.',
     source: 'Eurostat/FAOSTAT food balances + livestock surveys',
-    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/apro_mt_lscatl/default/table',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/apro_mt_pann/default/table',
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
@@ -1209,7 +1213,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     description:
       'ESABCC progress indicator A4 (pig meat production). EU production of pig meat (Figure 59), shown alongside production and herd size to relate demand, output and animal numbers.',
     source: 'Eurostat/FAOSTAT food balances + livestock surveys',
-    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/apro_mt_lscatl/default/table',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/apro_mt_pann/default/table',
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
@@ -1223,8 +1227,8 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'million heads',
     description:
       'ESABCC progress indicator A4 (pig meat herd size). EU herd size of pig meat (Figure 59), shown alongside production and herd size to relate demand, output and animal numbers. Report basis: CRF-table livestock populations (~4% below the Eurostat Dec survey count); 2021+ extended via Eurostat survey trends on that basis.',
-    source: 'EU GHG inventory (CRF) livestock populations; 2021+ Eurostat survey trend',
-    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/apro_mt_lscatl/default/table',
+    source: 'EU GHG inventory (CRF) livestock populations; 2021+ Eurostat apro_mt_lspig (swine) survey trend',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/apro_mt_lspig/default/table',
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
@@ -1304,10 +1308,10 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     code: 'B4 (dwellings)',
     name: 'Total number of dwellings (index, 2005 = 1.0)',
     category: 'buildings',
-    unit: '% of 2005',
+    unit: 'index (2005 = 1.0)',
     description:
       'ESABCC progress indicator B4. Total number of dwellings, indexed to 2005 = 1.0 (Figure 50). These structural drivers (more, larger dwellings; growing population and floor area) push buildings energy demand up, against which efficiency gains must be set.',
-    source: 'Eurostat (Building Stock Observatory, demo_pjan)',
+    source: 'European Building Stock Observatory (DG ENER) + Odyssee-Mure; population from Eurostat demo_gind',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/population-demography/demography-population-stock-balance/database',
     direction: 'up',
     group: 'esabcc',
@@ -1319,10 +1323,10 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     code: 'B4 (floor area)',
     name: 'Average floor area per dwelling (index, 2005 = 1.0)',
     category: 'buildings',
-    unit: '% of 2005',
+    unit: 'index (2005 = 1.0)',
     description:
       'ESABCC progress indicator B4. Average floor area per dwelling, indexed to 2005 = 1.0 (Figure 50). These structural drivers (more, larger dwellings; growing population and floor area) push buildings energy demand up, against which efficiency gains must be set.',
-    source: 'Eurostat (Building Stock Observatory, demo_pjan)',
+    source: 'European Building Stock Observatory (DG ENER) + Odyssee-Mure; population from Eurostat demo_gind',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/population-demography/demography-population-stock-balance/database',
     direction: 'up',
     group: 'esabcc',
@@ -1334,10 +1338,10 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     code: 'B4 (surface residential)',
     name: 'Total residential floor surface (index, 2005 = 1.0)',
     category: 'buildings',
-    unit: '% of 2005',
+    unit: 'index (2005 = 1.0)',
     description:
       'ESABCC progress indicator B4. Total residential floor surface, indexed to 2005 = 1.0 (Figure 50). These structural drivers (more, larger dwellings; growing population and floor area) push buildings energy demand up, against which efficiency gains must be set.',
-    source: 'Eurostat (Building Stock Observatory, demo_pjan)',
+    source: 'European Building Stock Observatory (DG ENER) + Odyssee-Mure; population from Eurostat demo_gind',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/population-demography/demography-population-stock-balance/database',
     direction: 'up',
     group: 'esabcc',
@@ -1349,10 +1353,10 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     code: 'B4 (population)',
     name: 'EU population (index, 2005 = 1.0)',
     category: 'buildings',
-    unit: '% of 2005',
+    unit: 'index (2005 = 1.0)',
     description:
       'ESABCC progress indicator B4. EU population, indexed to 2005 = 1.0 (Figure 50). These structural drivers (more, larger dwellings; growing population and floor area) push buildings energy demand up, against which efficiency gains must be set.',
-    source: 'Eurostat (Building Stock Observatory, demo_pjan)',
+    source: 'European Building Stock Observatory (DG ENER) + Odyssee-Mure; population from Eurostat demo_gind',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/population-demography/demography-population-stock-balance/database',
     direction: 'up',
     group: 'esabcc',
@@ -1364,10 +1368,10 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     code: 'B4 (surface tertiary)',
     name: 'Total tertiary floor surface (index, 2005 = 1.0)',
     category: 'buildings',
-    unit: '% of 2005',
+    unit: 'index (2005 = 1.0)',
     description:
       'ESABCC progress indicator B4. Total tertiary floor surface, indexed to 2005 = 1.0 (Figure 50). These structural drivers (more, larger dwellings; growing population and floor area) push buildings energy demand up, against which efficiency gains must be set.',
-    source: 'Eurostat (Building Stock Observatory, demo_pjan)',
+    source: 'European Building Stock Observatory (DG ENER) + Odyssee-Mure; population from Eurostat demo_gind',
     sourceUrl: 'https://ec.europa.eu/eurostat/web/population-demography/demography-population-stock-balance/database',
     direction: 'up',
     group: 'esabcc',
@@ -1473,7 +1477,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     description:
       'ESABCC progress indicator I7a. Count of announced low-carbon steel projects in the EU (Figure 29, Green Steel Tracker), 48 in total by project scale: R&D 6, pilot 8, demo 5, full scale 29 — and technology (DRI, H₂ production, EAF, CCS/CCU, other). Categorical snapshot.',
     source: 'Green Steel Tracker (Leadership Group for Industry Transition)',
-    sourceUrl: 'https://www.industrytransition.org/green-steel-tracker/',
+    sourceUrl: 'https://www.industrytransition.org/trackers/green-steel-tracker/',
     direction: 'up',
     group: 'esabcc',
     isSeed: true,
@@ -1487,7 +1491,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'projects',
     description:
       'ESABCC progress indicator I7b. Count of announced low-carbon cement projects in the EU (Figure 30), 62 in total by project scale (unspecified 5, R&D 22, pilot 24, demo 7, full scale 4) and technology (CCS/CCU, material substitution/recycling, fuel switch/electrification, energy efficiency, mineralisation). Categorical snapshot.',
-    source: 'ESABCC project database',
+    source: 'CEFIC low carbon projects map',
     sourceUrl: 'https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities',
     direction: 'up',
     group: 'esabcc',
@@ -1502,7 +1506,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'projects',
     description:
       'ESABCC progress indicator I7c. Count of low-carbon base-chemicals projects in the EU (Figure 31), 171 in total by technology — renewables 54, chemical recycling 28, H₂ & derivatives 27, CCS/CCU 18, efficiency 15, biochemicals 14, mechanical recycling 13, e-cracker 2 — split by status (planned/started). Categorical snapshot.',
-    source: 'ESABCC project database',
+    source: 'CEFIC low carbon projects map',
     sourceUrl: 'https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities',
     direction: 'up',
     group: 'esabcc',

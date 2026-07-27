@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-27T12:54:57.478Z",
+ "generatedAt": "2026-07-27T15:08:41.775Z",
  "legs": {
   "env_air_gge?airpol=GHG&freq=A&geo=EU27_2020&src_crf=TOTXMEMO&unit=MIO_T": {
    "dataset": "env_air_gge",

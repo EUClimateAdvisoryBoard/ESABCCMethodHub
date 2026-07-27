@@ -191,7 +191,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     type: "policy",
     title: "Hydrogen support ignores techno-economic limits",
     description: "The EU's massive policy support to the hydrogen value chain does not sufficiently reflect the techno-economic limits of hydrogen and its role in the integrated and decarbonised energy systems.",
-    instrument: "Hydrogen & Decarbonised Gas package, RED III, IPCEIs",
+    instrument: "RED III, EED, EPBD, Net-Zero Industry Act",
     quote: "The EU's massive policy support to the hydrogen value chain does not sufficiently reflect the techno-economic limits of hydrogen and its role in the integrated and decarbonised energy systems (policy gap).",
     reference: "Ch. 4 Energy supply, p. 50, line 14",
     reportStatus: "open",
@@ -242,7 +242,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     sector: "Industry",
     type: "policy",
     title: "Ecodesign circularity scope remained limited",
-    description: "The Ecodesign Directive has been mainly focused on energy efficiency; product circularity has been added only in recent years, and its scope remained limited to energy products.",
+    description: "The Ecodesign Directive has been mainly focused on energy efficiency; product circularity has been added in recent years, and its scope remained limited to energy products.",
     instrument: "Ecodesign Directive",
     quote: "the Ecodesign Directive has been mainly focused on energy efficiency and, whereas product circularity has been added in recent years, its scope remained limited to energy products (policy gap).",
     reference: "Ch. 5 Industry, p. 82, line 18",
@@ -294,7 +294,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     sector: "Transport",
     type: "implementation",
     title: "Heterogeneous Member-State freight-shift implementation",
-    description: "Implementation of the modal-shift measures (notably the Rail Freight Corridor Regulation and the Combined Transport Directive) has been incomplete and heterogeneous across Member States.",
+    description: "Implementation of the modal-shift measures has been incomplete and heterogeneous across Member States.",
     instrument: "Rail Freight Corridors Regulation, Combined Transport Directive",
     quote: "EU policies to support a modal shift (the Combined Transport Directive, the Rail Freight Corridors Regulation, the Trans-European Transport Network (TEN-T) regulation) have so far had little success owing to lack of ambition (e.g. outdated provisions in the Combined Transport directive that prevent digitalised workflows, lack of adequate delivery mechanisms in the Rail Freights Corridors Regulation, lack of an overview of current and future required capacities of intermodal terminals under the TEN-T regulation) (ambition gap) and incomplete and heterogeneous implementation at the Member State level (implementation gap).",
     reference: "Ch. 6 Transport, p. 103, line 12",
@@ -313,7 +313,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     reference: "Ch. 6 Transport, p. 103, line 41",
     reportStatus: "open",
     currentStatus: "open",
-    statusNote: ""
+    statusNote: "TAGGING: the report tags TWO barriers in this sentence — the failure to incentivise efficiency is an (ambition gap) and the pull towards larger, less-efficient ZEVs is a (policy inconsistency). This row carries the ambition tag; the inconsistency is recorded here rather than as a separate row. The report's phrase 'these policies' also covers the CO2 standards for HDVs, the AFIR, the revised Clean Vehicles Directive and EU State aid guidelines, not only the car and van standards."
   },
   {
     id: "transport-biofuels-indirect",
@@ -333,7 +333,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     sector: "Transport",
     type: "implementation",
     title: "Suspected fraud in biofuel sustainability labelling",
-    description: "There are well-founded suspicions of fraud in the labelling of transport biofuels as sustainable under RED III.",
+    description: "There are well-founded suspicions of fraud in the labelling of transport biofuels as sustainable.",
     instrument: "RED III",
     quote: "Furthermore, there are well-founded suspicions of fraud in the labelling of biofuels as sustainable (implementation gap).",
     reference: "Ch. 6 Transport, p. 104, line 17",
@@ -391,7 +391,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     reference: "Ch. 7 Buildings, p. 129, line 38",
     reportStatus: "open",
     currentStatus: "open",
-    statusNote: ""
+    statusNote: "TAGGING: the report tags TWO barriers here — the fossil-gas subsidies allowed under the ETD are a (policy inconsistency), and the insufficiently robust EU standards and resulting lock-in are a (policy gap). This row carries the inconsistency tag; the policy gap is recorded here."
   },
   {
     id: "buildings-spatial-planning",
@@ -521,7 +521,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     reference: "Ch. 9 LULUCF, p. 183, line 7",
     reportStatus: "open",
     currentStatus: "open",
-    statusNote: ""
+    statusNote: "TAGGING: the report tags TWO barriers in this sentence — the specific exemptions are an (ambition gap) and the monitoring and compliance issues, including fraud, are an (implementation gap). This row carries the ambition tag; the implementation gap is recorded here."
   },
   {
     id: "lulucf-bioenergy-supply-info",
@@ -529,7 +529,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     type: "implementation",
     title: "Insufficient data on sustainable biomass supply",
     description: "So far, Member States have provided insufficient information for the European Commission to assess the compatibility between projected bioenergy demand and sustainably available supply.",
-    instrument: "RED III, Governance Regulation reporting",
+    instrument: "RED III, LULUCF Regulation reporting",
     quote: "Secondly, so far, Member States have provided insufficient information for the European Commission to assess the compatibility between projected bioenergy demand and sustainably available supply (implementation gap).",
     reference: "Ch. 9 LULUCF, p. 183, line 10",
     reportStatus: "open",
@@ -543,7 +543,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     title: "Uneven incentives: forest biomass energy vs. carbon sink",
     description: "The incentives for using forest biomass for energy purposes versus maximising the LULUCF carbon sink continue to be unevenly distributed, in the absence of a financial incentive for land managers to reduce emissions and increase removals in the LULUCF sector.",
     instrument: "RED III, LULUCF Regulation, CAP",
-    quote: "Furthermore, the incentives for using forest biomass for energy purposes versus maximising the LULUCF carbon sink continue to be unevenly distributed in the absence of a financial incentive for land managers to reduce emissions and increase removals in the LULUCF sector (policy gap).",
+    quote: "Furthermore, the incentives for using forest biomass for energy purposes versus maximising the LULUCF carbon sink continue to be unevenly distributed in the absence of a financial incentive for land managers to reduce emissions and increase removals in the LULUCF sector (policy gap) (see also Chapter 10 'Pricing emissions and rewarding removals').",
     reference: "Ch. 9 LULUCF, p. 183, line 12",
     reportStatus: "open",
     currentStatus: "open",
@@ -581,7 +581,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     type: "implementation",
     title: "Carbon-farming eco-schemes low in uptake and ambition",
     description: "Although most Member States set carbon-storage targets for soil and biomass, only eight included voluntary eco-schemes to incentivise carbon farming, often with low levels of ambition.",
-    instrument: "CAP eco-schemes, Carbon Removals Certification",
+    instrument: "CAP eco-schemes",
     quote: "Whereas most Member States have set targets on carbon storage in soil and biomass, only eight of them included voluntary eco-schemes to incentivise carbon farming, often with low levels of ambition (implementation gap).",
     reference: "Ch. 9 LULUCF, p. 184, line 5",
     reportStatus: "open",
@@ -651,7 +651,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     reference: "Ch. 10 Pricing emissions, p. 224, line 22",
     reportStatus: "open",
     currentStatus: "open",
-    statusNote: ""
+    statusNote: "SOURCING: the quoted passage on p. 224 carries no inline gap tag. The 'policy gap' type comes from Table 16 on p. 227 ('Agriculture/food and land use are not covered by explicit carbon pricing')."
   },
   {
     id: "society-distributional-ia",
@@ -762,7 +762,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     sector: "Finance & investment",
     type: "ambition",
     title: "STEP / Sovereignty-Fund budget too limited",
-    description: "The proposed Strategic Technologies for Europe Platform, presented as a first step towards an EU Sovereignty Fund, carries too limited a budget (EUR 10 billion, versus more than EUR 300 billion per year in State aid in 2021) to be sufficiently effective in closing the investment gap.",
+    description: "The proposed Strategic Technologies for Europe Platform, presented as a first step towards an EU Sovereignty Fund, carries too limited a budget (EUR 10 billion, versus more than EUR 300 billion per year in State aid in 2021) to be sufficiently effective in countering the risk that relaxed State aid rules fragment the EU single market.",
     instrument: "Strategic Technologies for Europe Platform (STEP)",
     quote: "Proposals from European Commission to address this (the proposed Strategic Technologies for Europe Platform, as a first step towards an EU Sovereignty Fund) include too limited a budget (EUR 10 billion compared with more than EUR 300 billion per year in State aid in 2021) to be sufficiently effective (ambition gap).",
     reference: "Ch. 12 Finance & investment, p. 238, line 18",
@@ -907,8 +907,8 @@ export const POLICY_GAPS: PolicyGap[] = [
     title: "Transparency and public-engagement deficits in NECPs",
     description: "Deficits in transparency and public engagement are observed in NECP preparation at national level; the Committee of the Regions notes that multilevel dialogues are often not permanent and NECPs are not always in tune with subnational climate policies.",
     instrument: "Governance Regulation, Aarhus Convention",
-    quote: "Deficits in transparency and in public engagement are observed in NECP preparation at the national level (implementation gap). The Committee of the Regions points out that the dialogues are often not permanent and the NECPs are not always in tune with subnational climate policies (implementation gap).",
-    reference: "Ch. 14 Climate governance, pp. 268-269, p. 268, line 22",
+    quote: "Deficits in transparency and in public engagement are observed in NECP preparation at the national level (implementation gap). […] The Committee of the Regions points out that the dialogues are often not permanent and the NECPs are not always in tune with subnational climate policies (implementation gap).",
+    reference: "Ch. 14 Climate governance, pp. 268–269 (two sentences joined — see the ellipsis in the quote)",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""

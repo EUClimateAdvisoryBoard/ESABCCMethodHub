@@ -51,12 +51,12 @@ the indicator degrades to *as published* rather than shipping a wrong derivation
 | I5 | Industrial final energy consumption (EU) | 2022, 2023 | reconstructed | 0% | Eurostat (nrg_bal_c) |
 | I6 | Electricity share of industrial final energy use | 2022, 2023 | as-published + ×100 fix + self-ref fix | 0.02% | Eurostat (nrg_bal_c) |
 | T1 | Transport GHG emissions (EU) | 2022, 2023, 2024 | derived | 0.01% | live inputs, per-column query |
-| T2a | Total passenger transport demand | 2022, 2023 | as-published | 0% | Eurostat Statistical Pocketbook |
-| T2b | Total freight transport demand | 2023 | as-published | 0% | Eurostat Statistical Pocketbook |
-| T3a | Road share of motorised inland passenger transport | — | repaired + ×100 fix | 0.01% | Eurostat Statistical Pocketbook |
-| T3b | Intra-EU air passenger transport | 2022, 2023 | reconstructed | 0% | Eurostat Statistical Pocketbook |
+| T2a | Total passenger transport demand | 2022, 2023 | as-published | 0% | European Commission, DG MOVE — EU transport in figures: statistical pocketbook |
+| T2b | Total freight transport demand | 2023 | as-published | 0% | European Commission, DG MOVE — EU transport in figures: statistical pocketbook |
+| T3a | Road share of motorised inland passenger transport | — | repaired + ×100 fix | 0.01% | European Commission, DG MOVE — EU transport in figures: statistical pocketbook |
+| T3b | Intra-EU air passenger transport | 2022, 2023 | reconstructed | 0% | European Commission, DG MOVE — EU transport in figures: statistical pocketbook |
 | T4 | Average CO₂ intensity of new passenger cars (WLTP) | 2023, 2024, 2025 | reconstructed | 0% | EEA |
-| T5a | ZEV share of new passenger car registrations | 2023, 2024, 2025 | as-published + ×100 fix | 0% | EU Alternative Fuels Observatory |
+| T5a | ZEV share of new passenger car registrations | 2023, 2024, 2025 | as-published + ×100 fix | 0% | EU Alternative Fuels Observatory; EEA for 2022 |
 | T6a | Fossil share of transport energy use | 2022, 2023, 2024 | derived + ×100 fix | 0% | live inputs, per-column query |
 | B1 | Residential + tertiary building GHG emissions | 2022, 2023, 2024 | derived | 0.01% | live inputs, per-column query |
 | B2 | Final energy consumption in buildings | 2022, 2023 | as-published | 0% | Eurostat (nrg_bal_c) |
@@ -71,8 +71,8 @@ the indicator degrades to *as published* rather than shipping a wrong derivation
 | F1 | EU fossil-fuel subsidies (FFST) | 2023 | reconstructed (grid created) | 0% | Fossil Fuel Subsidy Tracker; 2023: EC Report on Energy Subsidies in the EU (COM(2025)17) |
 | F2 (share) | Green share of EU bond issuance | 2023, 2024 | reconstructed (grid created) | 0% | BloombergNEF; 2023+ EEA "Green bonds in Europe" (LSEG/Refinitiv) |
 | F3 | EU R&D expenditure (GERD) | 2023, 2024 | derived (grid created) | 0% | live inputs, per-column query |
-| F5 | Cleantech investment in the EU | 2023, 2024, 2025 | reconstructed (grid created) | 0% | Cleantech for Europe |
-| I2 (steel, production) | Steel production (EU) | 2022, 2023, 2024, 2025 | reconstructed (grid created) | 0% | Eurostat PRODCOM & trade + Eurofer/Cembureau |
+| F5 | Cleantech venture & growth investment in the EU | 2023, 2024, 2025 | reconstructed (grid created) | 0% | Cleantech for Europe |
+| I2 (steel, production) | Steel production (EU) | 2022, 2023, 2024, 2025 | reconstructed (grid created) | 0% | Eurofer, Steel in figures 2022 |
 | I2 (cement, production) | Cement production (EU) | 2022, 2023, 2024 | derived (grid created) | 0% | live inputs, per-column query |
 | I2 (chemicals, production) | Chemicals production (EU) | 2022, 2023, 2024, 2025 | derived (grid created) | 0% | live inputs, per-column query |
 | A2 (bovine, production) | Bovine meat: production (EU) | 2021, 2022, 2023, 2024, 2025 | derived (grid created) | 0% | live inputs, per-column query |

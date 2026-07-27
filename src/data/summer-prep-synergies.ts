@@ -140,13 +140,13 @@ export const SYNERGIES: SynergyEntry[] = [
     adaptation:
       'Lower dependence on imported coking coal and iron ore, and lower process-water intensity.',
     mechanism:
-      'Secondary (scrap-based) steelmaking cuts direct CO₂ by roughly 80–90% versus the integrated route while also shortening and localising the supply chain, reducing exposure to climate- and geopolitics-driven disruption of coke and ore imports. EAF routes are markedly less water-intensive than integrated works, easing pressure where cooling water is scarce.',
+      'Secondary (scrap-based) steelmaking cuts total (direct + indirect) CO₂ by roughly 85–90 % versus the integrated route where the electricity is largely decarbonised — the IEA roadmap\'s 2.2 vs 0.3 tCO₂/t pair is direct + indirect, not direct-only (direct-only is 1.2 vs 0.04) while also shortening and localising the supply chain, reducing exposure to climate- and geopolitics-driven disruption of coke and ore imports. (A water-intensity advantage for EAF over integrated works is often asserted but is not supported by the sources cited here — the IEA roadmap gives only a sector-wide average and does not split by route.)',
     implication:
       'Circular-economy and scrap-quality policy (CEAP, Ecodesign) is simultaneously a resilience instrument; the report already flags the EU’s recycling-first, prevention-last gap for industry.',
     references: [
       AR6_WG3,
       {
-        cite: 'IEA (2020) "Iron and Steel Technology Roadmap" (direct intensities ≈2.2 tCO₂/t BF-BOF vs ≈0.3 tCO₂/t scrap-EAF).',
+        cite: 'IEA (2020) "Iron and Steel Technology Roadmap" (direct + indirect intensities ≈2.2 tCO₂/t BF-BOF vs ≈0.3 tCO₂/t scrap-EAF; direct-only ≈1.2 vs ≈0.04).',
         url: 'https://www.iea.org/reports/iron-and-steel-technology-roadmap',
       },
       {
@@ -205,13 +205,13 @@ export const SYNERGIES: SynergyEntry[] = [
     id: 'ind-cement-cool-durable',
     sector: 'Industry',
     subsector: 'Cement & lime',
-    kind: 'synergy',
+    kind: 'mixed',
     title: 'Lower-carbon, durable and reflective concretes aid heat resilience',
     mitigation: 'Clinker substitution, CO₂-cured and novel-binder concretes.',
     adaptation:
       'Longer-lived infrastructure and cooler urban surfaces (reduced urban-heat-island effect).',
     mechanism:
-      'Well-designed blended and carbonation-cured concretes can raise durability (fewer high-carbon replacement cycles) and, where formulated as reflective/"cool" surfaces, cut absorbed heat in cities — an adaptation co-benefit of a mitigation product. The synergy is conditional on durability being verified for the specific low-clinker mix.',
+      'Blended and carbonation-cured concretes cut embodied carbon, but the durability case is conditional and cuts both ways. Habert et al. find that carbonation can damage the electrochemical protection of steel reinforcement and is deleterious for the durability of concrete exposed to rain or high humidity — precisely the climate-exposed infrastructure at issue here — while noting that more than 80 % of cement goes into applications where higher carbonation raises no durability concern. So the mitigation product extends life in unreinforced and sheltered uses and can shorten it in outdoor reinforced structures. NOTE: an earlier version also claimed a reflective/\u201ccool surface\u201d urban-heat benefit; neither cited source addresses albedo or urban heat islands, so that limb has been removed pending a source.',
     implication:
       'Standards and public procurement can reward the mixes that deliver both lower embodied carbon and demonstrated durability/albedo.',
     references: [
@@ -232,7 +232,7 @@ export const SYNERGIES: SynergyEntry[] = [
       'Post-combustion carbon capture on cement plants — the indispensable lever for the sector’s process emissions.',
     adaptation: 'Freshwater availability for capture solvents and cooling under drought.',
     mechanism:
-      'Carbon capture raises a plant’s water intensity — retrofitting post-combustion capture raises a coal plant’s water intensity by roughly 55%, and CCS water footprints span orders of magnitude (≈0.7–575 m³ per tCO₂) depending on capture and cooling technology. Cement CCS sited in drought-prone basins therefore adds water demand exactly where EUCRA sees scarcity rising; cooling choices (dry/hybrid) and reuse determine how sharp the conflict becomes.',
+      'Carbon capture raises a plant’s water intensity — retrofitting post-combustion capture raises a coal plant’s water intensity by roughly 55%, and CCS water footprints span orders of magnitude (≈0.7–575 m³ per tCO₂) depending on the CCS technology — the 575 upper bound is BECCS including biomass evapotranspiration, while post-combustion capture, the cement-relevant case, sits at roughly 2.2–2.6 m³/tCO₂ (Rosa et al. cover power plants and DACCS/BECCS, not cement, so the transfer to kilns is an inference). Cement CCS sited in drought-prone basins therefore adds water demand exactly where EUCRA sees scarcity rising; cooling choices (dry/hybrid) and reuse determine how sharp the conflict becomes.',
     implication:
       'CCS permitting and Net-Zero Industry Act support for cement should carry the same water-stress screen proposed for hydrogen, with capture/cooling configurations sized to local hydrology.',
     references: [
@@ -351,7 +351,7 @@ export const SYNERGIES: SynergyEntry[] = [
     adaptation:
       'Battery performance and charging reliability under extreme heat and flooding; mineral supply-chain exposure.',
     mechanism:
-      'Extreme heat degrades battery performance, range and lifetime and stresses charging infrastructure, while floods threaten kerbside chargers; separately, the critical-mineral supply chains for batteries are themselves exposed to climate and geopolitical disruption — aggravated by the report’s point that CO₂ standards can push buyers toward larger, more mineral-hungry ZEVs.',
+      'The battery supply chain, not the vehicle, is where the cited evidence sits. Lithium, cobalt, copper and rare earths are concentrated in climate-exposed places — around 80 % of Chilean copper comes from arid, water-stressed areas, and the 2022 Sichuan drought cut lithium output by roughly 1 200 t — so a fleet-wide switch to EVs deepens EU exposure to climate-driven supply shocks on top of an already concentrated market (~98 % rare-earth dependence on China). NOTE: an earlier version of this entry also claimed extreme heat degrades battery range and lifetime and floods kerbside chargers; neither cited source supports that (the full EUCRA text does not mention charging at all), so it has been removed pending a source.',
     implication:
       'Charging-network and battery standards should include thermal/flood resilience, and vehicle-efficiency incentives (the report’s ambition gap) also cut mineral exposure.',
     references: [
@@ -366,7 +366,7 @@ export const SYNERGIES: SynergyEntry[] = [
     id: 'tr-cars-v2g-flex',
     sector: 'Transport',
     subsector: 'Road passenger (cars & vans)',
-    kind: 'synergy',
+    kind: 'mixed',
     title: 'EV fleets as distributed storage can back up a climate-stressed grid',
     mitigation:
       'Electrifying cars and vans with smart charging and vehicle-to-grid (V2G) capability.',
@@ -464,7 +464,7 @@ export const SYNERGIES: SynergyEntry[] = [
     adaptation:
       'Higher temperatures reduce lift/payload; low-lying airports face sea-level rise and surge.',
     mechanism:
-      'Hotter air lowers air density, so on extreme-heat days aircraft face weight/payload restrictions and longer take-off rolls, and many major European airports are coastal and low-lying, exposed to sea-level rise and storm surge. These physical adaptation pressures interact with — and can raise the cost of — the mitigation transition (e.g. heavier alternative-fuel aircraft).',
+      'Higher air temperature lowers air density, so a fully loaded aircraft needs more runway or must shed payload — Coffel et al. find 10–30 % of departures at the daily maximum temperature weight-restricted, shedding 0.5–4 % of payload and fuel on average. The effect is strongly site-specific and bites hardest at hot, high-elevation or short-runway airports (LaGuardia ~50 % of departures, Dubai ~55 %); the same study names London Heathrow and Paris Charles de Gaulle among the airports MINIMALLY affected, so the European exposure runs mainly through coastal siting rather than heat. On that, EUCRA is explicit: airports and harbours in low-elevation coastal areas are at risk from sea-level rise. Efficiency losses act against the sector\'s mitigation effort at exactly the times demand peaks.',
     implication:
       'Airport adaptation planning belongs alongside aviation decarbonisation and the report’s call to close the extra-EU ETS exemption.',
     references: [
@@ -511,7 +511,7 @@ export const SYNERGIES: SynergyEntry[] = [
     mitigation: 'Shifting freight to inland waterways (a low-carbon mode).',
     adaptation: 'Falling and more variable river levels in droughts (e.g. Rhine 2018, 2022).',
     mechanism:
-      'Inland shipping is low-carbon per tonne-km but directly hostage to river hydrology: the 2018 and 2022 Rhine low-water episodes forced barges to sail part-loaded and diverted freight back to road and rail, i.e. climate change degraded the reliability of the mode the mitigation strategy wants to grow.',
+      'Inland shipping is low-carbon per tonne-km but directly hostage to river hydrology: the 2018 and 2022 Rhine low-water episodes forced barges to sail part-loaded (at a 78 cm gauge at Kaub, roughly four times as many vessels are needed as at 250 cm). Crucially, the loss is NOT absorbed by other modes — Ademmer et al. find no evidence of a substantial shift to road or rail, so the disruption propagates into industrial output: about 0.034 % lower German industrial production per low-water day, ~1 % in a month with 30 such days, peaking at −1.5 % (≈ −0.4 % of GDP) in November 2018. Climate change degrades the reliability of the very mode the mitigation strategy wants to grow, and the alternatives do not take up the slack. (The 2018/2022 episodes are documented by EUCRA; Ademmer et al.’s own sample ends in March 2019.)',
     implication:
       'Modal-shift-to-water targets need a hydrological-risk hedge (fleet design for low draught, redundancy with rail) or they will underperform in dry years.',
     references: [
