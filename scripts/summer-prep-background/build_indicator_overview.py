@@ -14,8 +14,15 @@ Background documents 5 and 6 — the two indicator overviews.
      over the raw inputs, exactly as the Method Hub's calc grid computes it, so
      the arithmetic behind each number is visible and re-computable in the sheet.
 
+Where the report's own derivation can be carried forward — its own input
+columns refreshed from the same publisher, its own formula untouched — that is
+what the Derivations sheet shows, and the sheet says so per indicator. Where it
+cannot (the inputs are a pocketbook table or an association's fleet count with
+no feed), the sheet says that too rather than passing off a substitute recipe
+as the report's method.
+
 Usage:
-  python3 build_indicator_overview.py data.json calc_excel.json factcheck.json outdir
+  python3 build_indicator_overview.py data.json calc_excel.json factcheck.json reportway.json outdir
 """
 
 import json
@@ -200,7 +207,30 @@ def build_new_data_overview(inds, reads, fc, out_path):
 
 # ── B. old indicators + new data + the derivation as a live formula ─────────
 
-def build_old_vs_new(inds, reads, calc, fc, out_path):
+DERIVATION_KIND = {
+    "report": "Report's own derivation, continued",
+    "switched": "Different recipe for the later years",
+    "reconstructed": "Report's formula, input back-computed",
+    "published": "Published figure, no derivation",
+    "none": "No calc grid",
+}
+
+
+def derivation_kind(iid, calc, reportway):
+    """How the later years of this indicator are obtained."""
+    if iid in reportway:
+        return "report"
+    layout = calc.get(iid)
+    if not layout:
+        return "none"
+    headers = [c["header"] for c in layout["columns"]]
+    if any(h.startswith("Post-report figure as published") for h in headers):
+        return "published"
+    expr = layout["columns"][0].get("expr") or ""
+    return "switched" if expr.startswith("IF(") else "reconstructed"
+
+
+def build_old_vs_new(inds, reads, calc, fc, reportway, out_path):
     wb = Workbook()
 
     ws = wb.active
@@ -270,17 +300,10 @@ def build_old_vs_new(inds, reads, calc, fc, out_path):
     for n, ind in enumerate(sorted(inds, key=lambda i: (order.get(i["category"], 99), i.get("code") or ""))):
         rd = reads[ind["id"]]
         b, l = rd["baseline"], rd["latest"]
-        layout = calc.get(ind["id"])
         has_new = bool(rd["post"])
-        if not layout:
-            how = "As published by the report; no later data"
-        elif not has_new:
-            how = "No later data — report figure stands"
-        else:
-            expr = (layout["columns"][0].get("expr") or "")
-            how = ("Derived from the live source (year-switched formula)" if expr.startswith("IF(")
-                   else "Reconstructed through the sheet's own conversion" if expr
-                   else "Taken as published")
+        kind = derivation_kind(ind["id"], calc, reportway)
+        how = ("No later data — report figure stands" if not has_new
+               else DERIVATION_KIND[kind])
         v = fc.get(ind["id"], {}).get("verdict")
         body_row(ov, r + n, [
             ind.get("code"), ind["name"], CATEGORY_LABEL.get(ind["category"], ind["category"]),
@@ -318,7 +341,8 @@ def build_old_vs_new(inds, reads, calc, fc, out_path):
         width=12)
     blocks = 0
     for ind in sorted(inds, key=lambda i: (order.get(i["category"], 99), i.get("code") or "")):
-        layout = calc.get(ind["id"])
+        kind = derivation_kind(ind["id"], calc, reportway)
+        layout = reportway.get(ind["id"]) or calc.get(ind["id"])
         if not layout:
             continue
         blocks += 1
@@ -327,6 +351,36 @@ def build_old_vs_new(inds, reads, calc, fc, out_path):
         c.font = Font(name=FONT_SEMI, size=11, color=CATEGORY_COLOR.get(ind["category"], TEAL))
         dv.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
         r += 1
+        label = {
+            "report": "SAME DERIVATION AS THE REPORT — the report's own formula, with its own input "
+                      "columns refreshed from the same publisher for the later years. Nothing about "
+                      "the calculation changes across the join.",
+            "switched": "NOT the report's derivation for the later years — the formula switches by "
+                        "year to a different recipe, because the report's own inputs have no feed. "
+                        "The two halves of this series are not computed the same way.",
+            "reconstructed": "The report's formula throughout; for the later years its single input "
+                             "is back-computed from the published figure through the sheet's own "
+                             "constants, so the arithmetic is unchanged.",
+            "published": "No derivation for the later years — the figure is the publication's own.",
+            "none": "",
+        }[kind]
+        if label:
+            c = dv.cell(row=r, column=1, value=label)
+            c.font = Font(name=FONT_SEMI, size=8.5,
+                          color=TEAL if kind in ("report", "reconstructed") else ACCENT_ORANGE)
+            c.alignment = Alignment(vertical="top", wrap_text=True)
+            dv.merge_cells(start_row=r, start_column=1, end_row=r, end_column=12)
+            dv.row_dimensions[r].height = 26
+            r += 1
+        rw = reportway.get(ind["id"])
+        if rw and rw.get("refreshed"):
+            names = ", ".join(f"{c['header']}" for c in rw["refreshed"])
+            c = dv.cell(row=r, column=1, value=f"Refreshed for {', '.join(str(y) for y in rw['addedYears'])}: {names}")
+            c.font = Font(name=FONT_LIGHT, size=8, color=MUTED)
+            c.alignment = Alignment(vertical="top", wrap_text=True)
+            dv.merge_cells(start_row=r, start_column=1, end_row=r, end_column=12)
+            dv.row_dimensions[r].height = 22
+            r += 1
         expr = layout["columns"][0].get("expr")
         if expr:
             c = dv.cell(row=r, column=1, value=f"Derivation:  Value = {expr}")
@@ -410,7 +464,7 @@ def _shift_rows(formula, shift):
                   lambda m: f"{m.group(1)}{int(m.group(2)) + shift}", formula)
 
 
-def main(data_path, calc_path, fc_path, outdir):
+def main(data_path, calc_path, fc_path, reportway_path, outdir):
     data = json.load(open(data_path, encoding="utf8"))
     calc = json.load(open(calc_path, encoding="utf8"))
     fcraw = json.load(open(fc_path, encoding="utf8"))
@@ -421,12 +475,14 @@ def main(data_path, calc_path, fc_path, outdir):
         if order.index(row["verdict"]) > order.index(cur["verdict"]):
             cur["verdict"] = row["verdict"]
 
+    reportway = json.load(open(reportway_path, encoding="utf8"))["filled"]
     inds = data["indicators"]
     reads = {i["id"]: read(i) for i in inds}
     out = Path(outdir)
     build_new_data_overview(inds, reads, fc, out / "ESABCC_Indicator-New-Data-Overview_2026-07.xlsx")
-    build_old_vs_new(inds, reads, calc, fc, out / "ESABCC_Indicators-Old-vs-New-with-derivations_2026-07.xlsx")
+    build_old_vs_new(inds, reads, calc, fc, reportway,
+                     out / "ESABCC_Indicators-Old-vs-New-with-derivations_2026-07.xlsx")
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])

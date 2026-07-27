@@ -10,7 +10,7 @@ stands on its own: no login, no Hub, nothing to install.
 | `ESABCC_Indicator-Check_2026-07.xlsx` | What has moved, data-wise, since the report: all 97 progress indicators, their report baseline, the points added since publication, a figure per indicator, a sheet showing where every post-report number comes from, and the 27 July 2026 fact-check verdict per point. | `/beta/summer-prep/indicator-check` |
 | `ESABCC_Synergies-Trade-offs_Industry-Transport_2026-07.docx` | The mitigation ↔ adaptation literature note, subsector by subsector — 20 interactions with mechanism, policy implication and sources. Built in the Board's own Word template. | `/beta/summer-prep/synergies-tradeoffs` |
 | `ESABCC_Indicator-New-Data-Overview_2026-07.xlsx` | Everything that has moved since the report in **one figure**: all 52 indicators with new data, shown as the change against each one's own report baseline, with the numbers beside it and a coverage chart per chapter. | `/beta/summer-prep/indicator-check` |
-| `ESABCC_Indicators-Old-vs-New-with-derivations_2026-07.xlsx` | Every indicator the report carried, its published figure and its latest value — plus the **derivation as a live Excel formula**: click a Value cell and Excel shows the arithmetic over the raw inputs, exactly as the Hub's calc grid computes it. | `/project-workspace/policy-gap-2-0` |
+| `ESABCC_Indicators-Old-vs-New-with-derivations_2026-07.xlsx` | Every indicator the report carried, its published figure and its latest value — plus the **derivation as a live Excel formula**. Where the report's own derivation can be carried forward — its own input columns refreshed from the same publisher, its formula untouched — that is what the sheet shows and says; where it cannot, the sheet says that instead of passing off a substitute recipe as the report's method. | `/project-workspace/policy-gap-2-0` |
 | `ESABCC_Policy-Gaps_Transport-Industry_2026-07.xlsx` | The transport/industry gaps re-assessed against legislation adopted since the report, 10 candidate additional gaps with the test that would confirm or refute each, and the per-subsector gap landscape. | `/beta/summer-prep/policy-gaps-sectors` |
 
 ## Status of the content
@@ -40,7 +40,8 @@ python3 scripts/summer-prep-background/build_policy_gap_tracker.py data.json out
 python3 scripts/summer-prep-background/build_indicator_check.py data.json calc.json factcheck.json out.xlsx
 python3 scripts/summer-prep-background/build_sector_policy_gaps.py data.json out.xlsx
 python3 scripts/summer-prep-background/build_synergies_docx.py data.json template.dotx out.docx
-python3 scripts/summer-prep-background/build_indicator_overview.py data.json calc_excel.json factcheck.json outdir
+node scripts/esabcc-indicators/build-report-way-rows.mjs          # continue the report's own derivation
+python3 scripts/summer-prep-background/build_indicator_overview.py data.json calc_excel.json factcheck.json reportway.json outdir
 python3 scripts/summer-prep-background/check_outputs.py data.json calc.json outdir template.dotx
 ```
 

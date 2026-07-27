@@ -248,6 +248,23 @@ def check_overviews(outdir, data, calc):
         elif v is not None:
             plain += 1
     check(checked > 500, f"derivation blocks carry live Excel formulas ({checked})")
+
+    # Indicators whose report derivation was continued must NOT carry a
+    # year-switched formula — that would mean a second recipe crept back in.
+    import json as _json
+    rw = _json.load(open(Path(__file__).parent.parent / "esabcc-indicators"
+                         / "report-way-rows.json", encoding="utf8"))["filled"]
+    switched = []
+    for row in dv.iter_rows(min_row=1, max_col=1):
+        v = row[0].value
+        if isinstance(v, str) and v.startswith("Derivation:  Value = IF("):
+            for back in range(1, 6):
+                lbl = dv.cell(row=row[0].row - back, column=1).value
+                if isinstance(lbl, str) and lbl.startswith("SAME DERIVATION AS THE REPORT"):
+                    switched.append(row[0].row)
+    check(not switched,
+          f"no indicator labelled as the report's own derivation carries a year switch ({switched[:3]})")
+    check(len(rw) >= 7, f"the report's derivation is continued for {len(rw)} indicators")
     check(not stray, f"every derivation formula addresses its own row ({stray[:3]})")
 
 
