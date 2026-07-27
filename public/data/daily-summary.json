@@ -1,6 +1,6 @@
 {
   "date": "2026-07-27",
-  "generatedAt": "2026-07-27T00:03:24.019Z",
+  "generatedAt": "2026-07-27T08:34:59.996Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 27 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,10 +11,16 @@
       "color": "#E87722"
     },
     {
-      "headline": "Europe wildfires: ‘Difficult hours lie ahead’ in battle to contain fires, says Pedro Sánchez as more than 300,000 flee homes in France and Spain – as it happened",
-      "summary": "&lt;p&gt;Fires displace people on massive scale and trigger one of the largest peacetime civilian evacuation operations ever carried out in France&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/25/wildfires-force-250000-people-to-evacuate-in-france-and-spain\"&gt;More than 250,000 people flee wildfires in France and Spain&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;As my colleagues &lt;a href=\"https://www.theguardian.com/world/2026/jul/24/france",
+      "headline": "Europe wildfires live: Macron to chair crisis meeting as France and Spain continue to battle major blazes",
+      "summary": "&lt;p&gt;Firefighters in France and Spain face another day battling wildfires that have seen hundreds of thousands of people evacuated&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/26/firefighters-in-france-battle-to-prevent-huge-blaze-from-approaching-bordeaux\"&gt;Pedro Sánchez says Spain is suffering effects of climate crisis as firefighters battle wildfires in France&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Authorities in M",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "South Korea's Naver jumps 10% on Nvidia's $1 billion investment plan - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOSkhjUXN3Z1VSTkZyVjdBMURwLXRFYm1TMkpmZEZGS1FyRFhsRjNkSWpTZ2g1cW1UNVpXUnc4dWNSWkJIVlVkY18wOENjMWsxQm0tWWN6Y3M3RW9lNkxRUXY5Rzc5M3cxMHI2Ry1DbldOOG0xQU5obklobjlXdFNWU2tVcXc2dkM1bzYwNXlUZHowQ1l4OGhWTjN4Y1hybVQwcGoyZnphTXkyVVRYa3lmNW9URQ?oc=5\" target=\"_blank\"&gt;South Korea's Naver jumps 10% on Nvidia's $1 billion investment plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -36,19 +42,19 @@
           "score": 7
         },
         {
-          "title": "US pauses Iran strikes but conflict spreads to Red Sea and Caspian - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBOdUphX3VmamY0ZmNQOGU5ZkJtbjd4WXZyUmJtZlVNZDR6aG1iNVlEbkNrdFV0UWt6MnZBWlpBTzBSdlg1ZEdJblBZcl9zd3doYTJjYUpaWm5CbENaWjREUjNMS0oyRlk?oc=5",
+          "title": "Red Sea shipping slows after Houthi attack on Saudi Arabia, data shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNWxxNDU1SHBqVXozbmd1VHRWYVpQWGVqVUVTUHVlakJjS2lKMHBCbDJCS1hucGROTV90dUhuNS1mUEdKVEtBZjR2b1FwSFZJejdVLWR3WFMxWGV6NVk5YWFOa2o3ZHdnX1R2enpyRm53YnBmRmZyS2trSjFiQ2VSbjZQZ2JhbTdRbnh0RVlleDhYTmtUUjJWN0JpTV9lNXU1X3cwazNYcHhzZkNic1hQdTdxMXZEaEM5MDhQZA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBOdUphX3VmamY0ZmNQOGU5ZkJtbjd4WXZyUmJtZlVNZDR6aG1iNVlEbkNrdFV0UWt6MnZBWlpBTzBSdlg1ZEdJblBZcl9zd3doYTJjYUpaWm5CbENaWjREUjNMS0oyRlk?oc=5\" target=\"_blank\"&gt;US pauses Iran strikes but conflict spreads to Red Sea and Caspian&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-26T17:10:50.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQNWxxNDU1SHBqVXozbmd1VHRWYVpQWGVqVUVTUHVlakJjS2lKMHBCbDJCS1hucGROTV90dUhuNS1mUEdKVEtBZjR2b1FwSFZJejdVLWR3WFMxWGV6NVk5YWFOa2o3ZHdnX1R2enpyRm53YnBmRmZyS2trSjFiQ2VSbjZQZ2JhbTdRbnh0RVlleDhYTmtUUjJWN0JpTV9lNXU1X3cwazNYcHhzZkNic1hQdTdxMXZEaEM5MDhQZA?oc=5\" target=\"_blank\"&gt;Red Sea shipping slows after Houthi attack on Saudi Arabia, data shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-27T00:08:00.000Z",
           "score": 7
         },
         {
-          "title": "Trump says no nuclear deal unless Saudi Arabia joins Abraham Accords - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE94M1ZJQlAwaHRDNlJxd1lvWjlHbmxkN1dCTkREbnQ2M3dmWGpUSEx1VFdBSS1Jc0lGNjByUzJOYVF3azBUeVRoLVNvcjNIMW9pU253Rkh4amlzTmxzbUxZakc1Ykw4Sk0?oc=5",
+          "title": "US Energy Department orders more power resources for western electric grid - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNVVAwQ3FJekZ0VS1YbWxkdXh1dlI5Q0YyTEJKVl94eFF5Y05LbkEzWm5aTkZLRTIyMGZVTml1OHhhaThsMU5jRlNoQUw3M0VBUVVEdlZhU0VWa0NnLW1rblFfVVpKZlFGc2tTcGJxb29fdFlPaHBLN2ZJc2hhbGFfUVFmME5EaS1DY0JqTVFoVmdfaEtFQ0pxdEZ5aTA4SGJLNmFGUzVueFQ0blRJc3dfTUpjekEwaFFQMWRCQkdrN3JlTlVmVE5R?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE94M1ZJQlAwaHRDNlJxd1lvWjlHbmxkN1dCTkREbnQ2M3dmWGpUSEx1VFdBSS1Jc0lGNjByUzJOYVF3azBUeVRoLVNvcjNIMW9pU253Rkh4amlzTmxzbUxZakc1Ykw4Sk0?oc=5\" target=\"_blank\"&gt;Trump says no nuclear deal unless Saudi Arabia joins Abraham Accords&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-26T10:07:30.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNVVAwQ3FJekZ0VS1YbWxkdXh1dlI5Q0YyTEJKVl94eFF5Y05LbkEzWm5aTkZLRTIyMGZVTml1OHhhaThsMU5jRlNoQUw3M0VBUVVEdlZhU0VWa0NnLW1rblFfVVpKZlFGc2tTcGJxb29fdFlPaHBLN2ZJc2hhbGFfUVFmME5EaS1DY0JqTVFoVmdfaEtFQ0pxdEZ5aTA4SGJLNmFGUzVueFQ0blRJc3dfTUpjekEwaFFQMWRCQkdrN3JlTlVmVE5R?oc=5\" target=\"_blank\"&gt;US Energy Department orders more power resources for western electric grid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-26T21:52:00.000Z",
           "score": 7
         }
       ]
@@ -58,12 +64,20 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Europe wildfires: ‘Difficult hours lie ahead’ in battle to contain fires, says Pedro Sánchez as more than 300,000 flee homes in France and Spain – as it happened",
-          "link": "https://www.theguardian.com/world/live/2026/jul/26/europe-wildfires-spain-france-bordeaux-madrid-evacuations",
+          "title": "Europe wildfires live: Macron to chair crisis meeting as France and Spain continue to battle major blazes",
+          "link": "https://www.theguardian.com/world/live/2026/jul/27/europe-wildfires-france-spain-emmanuel-macron-crisis-meeting-pedro-sanchez-castillon-latest-news-updates",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Fires displace people on massive scale and trigger one of the largest peacetime civilian evacuation operations ever carried out in France&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/25/wildfires-force-250000-people-to-evacuate-in-france-and-spain\"&gt;More than 250,000 people flee wildfires in France and Spain&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;As my colleagues &lt;a href=\"https://www.theguardian.com/world/2026/jul/24/france",
-          "published": "2026-07-26T14:52:13.000Z",
-          "score": 8
+          "description": "&lt;p&gt;Firefighters in France and Spain face another day battling wildfires that have seen hundreds of thousands of people evacuated&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/26/firefighters-in-france-battle-to-prevent-huge-blaze-from-approaching-bordeaux\"&gt;Pedro Sánchez says Spain is suffering effects of climate crisis as firefighters battle wildfires in France&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Authorities in M",
+          "published": "2026-07-27T08:15:58.000Z",
+          "score": 10
+        },
+        {
+          "title": "Pedro Sánchez says Spain is suffering effects of climate crisis as firefighters battle wildfires in France",
+          "link": "https://www.theguardian.com/world/2026/jul/26/firefighters-in-france-battle-to-prevent-huge-blaze-from-approaching-bordeaux",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Blazes near Madrid coming under control but efforts to contain huge fire near Bordeaux hampered by windy conditions while another heatwave forecast&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/27/what-is-a-fire-cloud-pyrocumulonimbus-pyrocb-france-spain-wildfires\"&gt;What is a ‘fire cloud’, and how have they worsened wildfires in Europe?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Authorities in France battled to contain a huge wildf",
+          "published": "2026-07-27T03:58:52.000Z",
+          "score": 9
         },
         {
           "title": "Ed Miliband indicates development and climate will be at heart of UK foreign policy",
@@ -74,45 +88,71 @@
           "score": 7
         },
         {
-          "title": "Pedro Sánchez says Spain is suffering effects of climate crisis as firefighters battle wildfires in France",
-          "link": "https://www.theguardian.com/world/2026/jul/26/firefighters-in-france-battle-to-prevent-huge-blaze-from-approaching-bordeaux",
+          "title": "Uganda begins emergency food handouts after 19 die from hunger",
+          "link": "https://www.theguardian.com/global-development/2026/jul/27/uganda-begins-emergency-food-handouts-after-19-die-from-hunger",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Blazes near Madrid coming under control but efforts to contain huge fire near Bordeaux hampered by windy conditions&lt;/p&gt;&lt;p&gt;Authorities in France are battling to contain a huge wildfire near Bordeaux in the south-west as Spain’s prime minister, Pedro Sánchez, warned Spain and the Iberian peninsula were suffering the effects of the climate emergency.&lt;/p&gt;&lt;p&gt;Efforts to extinguish the blaze in the Gironde region of France – which has consumed an area four times the siz",
-          "published": "2026-07-26T12:56:30.000Z",
-          "score": 7
+          "description": "&lt;p&gt;Government move follows months of drought and crop failures in Karamoja, with 1.5m people facing malnutrition&lt;/p&gt;&lt;p&gt;Uganda has launched &lt;a href=\"https://x.com/OPMUganda/status/2079977034479026390\"&gt;emergency food relief distribution&lt;/a&gt; after &lt;a href=\"https://nilepost.co.ug/news/357339/photos-karamoja-hunger-death-toll-rises-to-19\"&gt;at least 19 deaths&lt;/a&gt; from hunger were reported in an area of prolonged drought in the east of the country.&lt;/p&gt;&lt;",
+          "published": "2026-07-27T07:00:34.000Z",
+          "score": 4
         },
         {
-          "title": "Firefighters battle wildfire as tens of thousands evacuated near Bordeaux",
-          "link": "https://www.bbc.co.uk/news/articles/clyj8k4nn5jo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "More than 330,000 people have now been evacuated from wildfires across France and Spain.",
-          "published": "2026-07-26T18:40:08.000Z",
-          "score": 7
-        },
-        {
-          "title": "Africa facing $10-$20 billion economic hit from 'super' El Niño, AfDB climate chief warns - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxORTVKMDhrM083OEFuZWQ1am92SHdCUXpQVmVkWkFBVTdXWUlGNzNGcDlsSlVLNWdTc0lZT2J5MHV1NHFjUHhzVG83MmRkQ3VsYjhpbFNXbkNYNkJLSnQ2RlFQbmRoa3lQUWJJOWt0TXZ0b3k3c1R6YXpGVlRTM2xSV0FoZmxMMXdhM1N1WU5kbmJWZnNLRTM4RW1xQ3N0WFlxcWRTVHRxY2drWC1FU3ZGdkJFMDhYd25aamhZNUJTYjRDTHg1TUhFdVBQeTdlQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxORTVKMDhrM083OEFuZWQ1am92SHdCUXpQVmVkWkFBVTdXWUlGNzNGcDlsSlVLNWdTc0lZT2J5MHV1NHFjUHhzVG83MmRkQ3VsYjhpbFNXbkNYNkJLSnQ2RlFQbmRoa3lQUWJJOWt0TXZ0b3k3c1R6YXpGVlRTM2xSV0FoZmxMMXdhM1N1WU5kbmJWZnNLRTM4RW1xQ3N0WFlxcWRTVHRxY2drWC1FU3ZGdkJFMDhYd25aamhZNUJTYjRDTHg1TUhFdVBQeTdlQQ?oc=5\" target=\"_blank\"&gt;Africa facing $10-$20 billion economic hit from 'super' El Niño, AfDB climate chief warns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"",
-          "published": "2026-07-26T08:33:45.000Z",
-          "score": 7
+          "title": "Every new UK home should have air conditioning, say Liberal Democrats",
+          "link": "https://www.theguardian.com/environment/2026/jul/26/every-new-home-should-have-air-conditioning-say-liberal-democrats",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Exclusive: Party says housing stock ‘woefully unprepared’ for extreme heat and new rules for builders must be set&lt;/p&gt;&lt;p&gt;All new UK homes should be built with air conditioning to cope with the effects of the climate crisis, according to the Liberal Democrats.&lt;/p&gt;&lt;p&gt;The party says British homes are dangerously unsuited to rising temperatures, meaning passive cooling measures such as planting more trees in residential areas are necessary.&lt;/p&gt; &lt;a href=\"https",
+          "published": "2026-07-26T17:34:32.000Z",
+          "score": 4
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "South Korea's Naver jumps 10% on Nvidia's $1 billion investment plan - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSkhjUXN3Z1VSTkZyVjdBMURwLXRFYm1TMkpmZEZGS1FyRFhsRjNkSWpTZ2g1cW1UNVpXUnc4dWNSWkJIVlVkY18wOENjMWsxQm0tWWN6Y3M3RW9lNkxRUXY5Rzc5M3cxMHI2Ry1DbldOOG0xQU5obklobjlXdFNWU2tVcXc2dkM1bzYwNXlUZHowQ1l4OGhWTjN4Y1hybVQwcGoyZnphTXkyVVRYa3lmNW9URQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOSkhjUXN3Z1VSTkZyVjdBMURwLXRFYm1TMkpmZEZGS1FyRFhsRjNkSWpTZ2g1cW1UNVpXUnc4dWNSWkJIVlVkY18wOENjMWsxQm0tWWN6Y3M3RW9lNkxRUXY5Rzc5M3cxMHI2Ry1DbldOOG0xQU5obklobjlXdFNWU2tVcXc2dkM1bzYwNXlUZHowQ1l4OGhWTjN4Y1hybVQwcGoyZnphTXkyVVRYa3lmNW9URQ?oc=5\" target=\"_blank\"&gt;South Korea's Naver jumps 10% on Nvidia's $1 billion investment plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-26T23:04:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "EXCLUSIVE: Ukraine wants prototype of European missile defence system by mid-2027, official says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNX29SalVqS0JKSG5FVjlBOEJLR2tjYkdrRTdLSFdTWDhrczBva2dPcl9lb05mY3FndzlfMlBqRVdnUlM5cVFwa1pIVE0tc1VqZ3B1Z2lMbGdHdlJuLVJCMGVyNEk2bHFQYXpiZC0tRnd1SmxkQzBId1VxbTZzSG8tVkp1aHRYMHFQencxNGlrNjJyRGpsbjFVaHVudjIxRXZHNXZ2OFN2SU12WlRaS2dIMGdQd1N1Vkk5Y1NuT2o5NlJ6TV8tQzMyMWFXRFEzNWJFV0hkWjNR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxNX29SalVqS0JKSG5FVjlBOEJLR2tjYkdrRTdLSFdTWDhrczBva2dPcl9lb05mY3FndzlfMlBqRVdnUlM5cVFwa1pIVE0tc1VqZ3B1Z2lMbGdHdlJuLVJCMGVyNEk2bHFQYXpiZC0tRnd1SmxkQzBId1VxbTZzSG8tVkp1aHRYMHFQencxNGlrNjJyRGpsbjFVaHVudjIxRXZHNXZ2OFN2SU12WlRaS2dIMGdQd1N1Vkk5Y1NuT2o5NlJ6TV8tQzMyMWFXRFEzNWJFV0hkWjNR?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Ukraine wants prototype of European missile defence system by mid-2027, official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;fon",
+          "published": "2026-07-27T06:46:00.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "South Korea court gives ex-President Yoon suspended jail term for violating election law - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMmxHenlQaks1SXgwdnUtd3VWUzY5RDFwRVlXYzc3ODkxRnEtUXotcjRQM2ZISmdfNml3LXlkd25FSUpWZmdsMGRjaDZ2eHUyY3ZkSU0tcjZQRmFlU01TQnZvOWxaU0gxbzF6bnVrYUl1US03QTVoTzhhbFdQMGw5aW1mRVZlZkNOQ3lmclVxaGxBZG5mNzVOWWhjS0pmOTJpQi1uQThvRW9uRjFZMTRJclRIN2JrVEpIdThPREt5eWhtWlVoWkFZOTRTdzU2Ym9O?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMmxHenlQaks1SXgwdnUtd3VWUzY5RDFwRVlXYzc3ODkxRnEtUXotcjRQM2ZISmdfNml3LXlkd25FSUpWZmdsMGRjaDZ2eHUyY3ZkSU0tcjZQRmFlU01TQnZvOWxaU0gxbzF6bnVrYUl1US03QTVoTzhhbFdQMGw5aW1mRVZlZkNOQ3lmclVxaGxBZG5mNzVOWWhjS0pmOTJpQi1uQThvRW9uRjFZMTRJclRIN2JrVEpIdThPREt5eWhtWlVoWkFZOTRTdzU2Ym9O?oc=5\" target=\"_blank\"&gt;South Korea court gives ex-President Yoon suspended jail term for violating election law&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f",
+          "published": "2026-07-27T05:57:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "Netanyahu accuses NYC Mayor Mamdani of 'fomenting hate' after arrest threat",
+          "link": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Mamdani walked back his threat last week, acknowledging he lacked the legal power to arrest Netanyahu on a warrant issued by the International Criminal Court.",
+          "published": "2026-07-27T00:27:58.000Z",
+          "score": 2
+        },
         {
           "title": "Berlin Pride attack suspect shot and killed during police operation",
           "link": "https://www.bbc.co.uk/news/articles/c62eg899l99o?at_medium=RSS&amp;at_campaign=rss",
@@ -122,44 +162,28 @@
           "score": 2
         },
         {
-          "title": "What we know so far about the Berlin Pride ramming attack",
-          "link": "https://www.bbc.co.uk/news/articles/cevmdxz4872o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "'This is just the start': India's Gen Z protesters force out a minister, but what next?",
+          "link": "https://www.bbc.co.uk/news/articles/c8dng1v72lno?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "German Chancellor Friedrich Merz condemns the attack as \"heinous\" after a suspect drove a car into a crowd near the Tiergarten park.",
-          "published": "2026-07-26T20:34:23.000Z",
+          "description": "The education minister's resignation, a rare setback for the Modi government, brings hope to many young protesters that their voices will be heard.",
+          "published": "2026-07-27T05:59:22.000Z",
           "score": 2
         },
         {
-          "title": "Israeli settlers set fire to mosques, cars and farm land in West Bank, Palestinians say",
-          "link": "https://www.bbc.co.uk/news/articles/cjrv77gl4deo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Rapper Yung Filly tells trial 'vibes were good' with woman who accuses him of rape",
+          "link": "https://www.bbc.co.uk/news/articles/cm2g044ydl4o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The latest attacks come two days after a clash between settlers and Palestinians near the village of Tal, which left four Palestinians and two Israelis dead.",
-          "published": "2026-07-26T21:23:53.000Z",
-          "score": 2
-        },
-        {
-          "title": "PM pledges continued support for Ukraine ahead of Zelensky visit",
-          "link": "https://www.bbc.co.uk/news/articles/cy8me5vyjg2o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The Ukrainian president will be Andy Burnham's first international visitor since taking office.",
-          "published": "2026-07-26T21:30:20.000Z",
-          "score": 2
-        },
-        {
-          "title": "The Indian Army's first woman boxer is now chasing Commonwealth gold",
-          "link": "https://www.bbc.co.uk/news/articles/c5y0m8z6de3o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "World champion Jaismine Lamboria targets Commonwealth gold in Glasgow Games.",
-          "published": "2026-07-26T22:06:46.000Z",
+          "description": "The rapper takes the witness stand at his trial in Australia where he denies raping a fan in a hotel room.",
+          "published": "2026-07-27T07:37:11.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 357,
-    "articlesLast24h": 127,
-    "afterDedup": 100,
+    "totalArticlesScanned": 365,
+    "articlesLast24h": 136,
+    "afterDedup": 124,
     "feedsQueried": 19
   }
 }
