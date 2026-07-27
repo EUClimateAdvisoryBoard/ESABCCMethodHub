@@ -31,7 +31,7 @@
  */
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..', '..');
@@ -58,38 +58,59 @@ const MTOE_TO_TWH = 11.63; // 1 Mtoe = 1000 ktoe × 0.011630 TWh
  *  round:    decimals
  *  sourceUrl, sourceTitle, note                   → shown in the PDF
  */
-const RECIPES = {
+export const RECIPES = {
   // ── Eurostat ──────────────────────────────────────────────────────────
   'esabcc-o2-pec': {
     kind: 'eurostat', dataset: 'nrg_ind_eff',
-    filters: { geo: 'EU27_2020', nrg_bal: 'PEC2020-2030', unit: 'MTOE' },
+    // 2026-07: Eurostat renamed the EED headline codes (PEC2020-2030 → PEC_EED,
+    // FEC2020-2030 → FEC_EED) with the EED-recast vintage. The old codes still
+    // exist as empty dimensions, so the query returned 200-with-no-values and
+    // the refresh silently reported "up-to-date" while the series stood still.
+    filters: { geo: 'EU27_2020', nrg_bal: 'PEC_EED', unit: 'MTOE' },
     toRepo: v => v * MTOE_TO_TWH, round: 1,
-    sourceUrl: `${EUROSTAT_BASE}/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=PEC2020-2030&unit=MTOE`,
-    sourceTitle: 'Eurostat nrg_ind_eff · primary energy consumption (PEC2020-2030) · EU27_2020',
+    sourceUrl: `${EUROSTAT_BASE}/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=PEC_EED&unit=MTOE`,
+    sourceTitle: 'Eurostat nrg_ind_eff · primary energy consumption (PEC_EED) · EU27_2020',
     note: 'Mtoe×11.63→TWh.',
   },
   'esabcc-o2-fec': {
     kind: 'eurostat', dataset: 'nrg_ind_eff',
-    filters: { geo: 'EU27_2020', nrg_bal: 'FEC2020-2030', unit: 'MTOE' },
+    filters: { geo: 'EU27_2020', nrg_bal: 'FEC_EED', unit: 'MTOE' },
     toRepo: v => v * MTOE_TO_TWH, round: 1,
-    sourceUrl: `${EUROSTAT_BASE}/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=FEC2020-2030&unit=MTOE`,
-    sourceTitle: 'Eurostat nrg_ind_eff · final energy consumption (FEC2020-2030) · EU27_2020',
+    sourceUrl: `${EUROSTAT_BASE}/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=FEC_EED&unit=MTOE`,
+    sourceTitle: 'Eurostat nrg_ind_eff · final energy consumption (FEC_EED) · EU27_2020',
     note: 'Mtoe×11.63→TWh.',
   },
+  // 2026-07: nrg_bal_s no longer serves these shares as ready-made PC values
+  // (the query returns 200 with an empty value set), so both are computed from
+  // the nrg_bal_c energy balance itself — electricity over total final energy,
+  // in GWh. Ratio recipes run in splice mode: the ×100 and any scope offset
+  // cancel in the year-on-year ratio.
   'esabcc-e5-electrification': {
-    kind: 'eurostat', dataset: 'nrg_bal_s',
-    filters: { geo: 'EU27_2020', nrg_bal: 'FC_E', siec: 'E7000', unit: 'PC' },
-    toRepo: v => v, round: 2,
-    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_E&siec=E7000&unit=PC`,
-    sourceTitle: 'Eurostat nrg_bal_s · electricity share of final energy · EU27_2020',
+    kind: 'eurostat-ratio', round: 2, mode: 'splice',
+    num: {
+      dataset: 'nrg_bal_c',
+      legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_E', siec: 'E7000' }],
+    },
+    den: {
+      dataset: 'nrg_bal_c',
+      legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_E', siec: 'TOTAL' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_c?format=JSON&geo=EU27_2020&nrg_bal=FC_E&siec=E7000&unit=GWH`,
+    sourceTitle: 'Eurostat nrg_bal_c · electricity ÷ total final energy consumption · EU27_2020',
     note: 'Stored as percent-number to match ECNO duplicate end-use-electrification.',
   },
   'esabcc-i6-industry-electrification': {
-    kind: 'eurostat', dataset: 'nrg_bal_s',
-    filters: { geo: 'EU27_2020', nrg_bal: 'FC_IND_E', siec: 'E7000', unit: 'PC' },
-    toRepo: v => v, round: 2,
-    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_IND_E&siec=E7000&unit=PC`,
-    sourceTitle: 'Eurostat nrg_bal_s · industry electricity share · EU27_2020',
+    kind: 'eurostat-ratio', round: 2, mode: 'splice',
+    num: {
+      dataset: 'nrg_bal_c',
+      legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_IND_E', siec: 'E7000' }],
+    },
+    den: {
+      dataset: 'nrg_bal_c',
+      legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_IND_E', siec: 'TOTAL' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_c?format=JSON&geo=EU27_2020&nrg_bal=FC_IND_E&siec=E7000&unit=GWH`,
+    sourceTitle: 'Eurostat nrg_bal_c · industry electricity ÷ industry final energy · EU27_2020',
     note: 'Stored as percent-number to match ECNO duplicate industry-electrification.',
   },
   'esabcc-i3-circular-mat-use': {
@@ -228,7 +249,10 @@ const RECIPES = {
     kind: 'eurostat-ratio', round: 2, mode: 'splice',
     num: {
       dataset: 'nrg_bal_peh',
-      legs: ['RA100', 'RA200', 'RA300', 'RA400'].map(siec => (
+      // 2026-07: siec RA400 (solar, aggregate) is no longer served — Eurostat
+      // splits it into RA410 solar thermal / RA420 solar PV. RA500 adds
+      // tide/wave, the remaining non-biomass renewable.
+      legs: ['RA100', 'RA200', 'RA300', 'RA410', 'RA420', 'RA500'].map(siec => (
         { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'GEP', siec })),
     },
     den: {
@@ -236,7 +260,7 @@ const RECIPES = {
       legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'GEP', siec: 'TOTAL' }],
     },
     sourceUrl: `${EUROSTAT_BASE}/nrg_bal_peh?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=GEP`,
-    sourceTitle: 'Eurostat nrg_bal_peh · (hydro + geothermal + wind + solar) ÷ total gross electricity production · EU27_2020',
+    sourceTitle: 'Eurostat nrg_bal_peh · (hydro + geothermal + wind + solar thermal + solar PV + tide) ÷ total gross electricity production · EU27_2020',
     note: 'Spliced ratio: non-biomass renewables ÷ TOTAL, YoY change × report baseline.',
   },
   'esabcc-e3-grid-co2-intensity': {
@@ -494,14 +518,14 @@ function parseNum(s) {
   return parseFloat(t);
 }
 
-function round(v, d) {
+export function round(v, d) {
   const f = 10 ** d;
   return Math.round(v * f) / f;
 }
 
 // ───────────────────────── fetchers ─────────────────────────
 
-async function fetchEurostat(dataset, filters) {
+export async function fetchEurostat(dataset, filters) {
   const params = new URLSearchParams({ format: 'JSON', lang: 'EN', ...filters });
   const url = `${EUROSTAT_BASE}/${encodeURIComponent(dataset)}?${params}`;
   const res = await fetch(url, { headers: { accept: 'application/json' } });
@@ -526,7 +550,7 @@ async function fetchEurostat(dataset, filters) {
  * GWP factor turning a gas mass into CO₂-equivalent). Fault-tolerant: a leg
  * that errors is skipped; throws only if every leg fails.
  */
-async function fetchEurostatSum(dataset, legs) {
+export async function fetchEurostatSum(dataset, legs) {
   const acc = new Map();
   let ok = 0;
   for (const leg of legs) {
@@ -552,7 +576,7 @@ async function fetchEurostatSum(dataset, legs) {
  * in splice mode: any constant scale factor (×100, unit mixes) cancels in the
  * year-on-year ratio, so only the trend is trusted, never the level.
  */
-async function fetchEurostatRatio(rec) {
+export async function fetchEurostatRatio(rec) {
   const num = await fetchEurostatSum(rec.num.dataset, rec.num.legs);
   const den = await fetchEurostatSum(rec.den.dataset, rec.den.legs);
   const dm = new Map(den.map(p => [p.year, p.value]));
@@ -785,4 +809,8 @@ async function main() {
               `${by('mismatch')} mismatch, ${by('error')} errored, ${provenance.length} recipes.`);
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+// Only run the refresh when invoked directly — the recipe table and the
+// Eurostat fetchers are imported by build-postreport-calc-rows.mjs.
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch(e => { console.error(e); process.exit(1); });
+}
