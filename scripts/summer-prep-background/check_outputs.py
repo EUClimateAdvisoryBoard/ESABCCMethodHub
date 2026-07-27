@@ -169,6 +169,48 @@ def check_indicator_check(path, data, calc):
     return wb
 
 
+def check_chart_categories(path):
+    """
+    Every chart whose categories are TEXT must reference them as a string
+    range. openpyxl writes `set_categories` as a numeric reference, and Excel
+    then draws the axis with no labels at all — bars with nothing naming them.
+    """
+    from openpyxl.utils import column_index_from_string
+
+    wb = load_workbook(path)
+    bad = []
+    n = 0
+    with zipfile.ZipFile(path) as z:
+        for name in z.namelist():
+            if not re.match(r"xl/charts/chart\d+\.xml", name):
+                continue
+            n += 1
+            xml = z.read(name).decode("utf8")
+            m = re.search(r"<cat>(.*?)</cat>", xml, re.S)
+            if not m:
+                continue
+            ref = re.search(r"<f>([^<]+)</f>", m.group(1))
+            if not ref:
+                continue
+            sheet, rng = ref.group(1).rsplit("!", 1)
+            # the reference lives in XML, so its sheet name is escaped
+            sheet = (sheet.strip("'").replace("''", "'")
+                     .replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">"))
+            span = re.match(r"\$?([A-Z]+)\$?(\d+)(?::\$?([A-Z]+)\$?(\d+))?$", rng)
+            if not span:
+                bad.append(f"{name}: category reference not understood ({rng})")
+                continue
+            col, first, _, last = span.groups()
+            last = last or first  # a one-row block references a single cell
+            ci = column_index_from_string(col)
+            values = [wb[sheet].cell(row=r, column=ci).value
+                      for r in range(int(first), int(last) + 1)]
+            texts = [v for v in values if isinstance(v, str)]
+            if texts and "strRef" not in m.group(1):
+                bad.append(f"{name}: text categories written as a numeric reference ({texts[0][:30]}…)")
+    check(not bad, f"{Path(path).name}: {n} charts, text categories all referenced as text ({bad[:2]})")
+
+
 def check_no_errors(path):
     wb = load_workbook(path)
     bad = []
@@ -210,6 +252,7 @@ def main(data_path, calc_path, outdir, template):
     check_indicator_check(out / "ESABCC_Indicator-Check_2026-07.xlsx", data, calc)
     for f in out.glob("*.xlsx"):
         check_no_errors(f)
+        check_chart_categories(f)
     check_docx(out / "ESABCC_Synergies-Trade-offs_Industry-Transport_2026-07.docx", template)
 
     for m in OK:

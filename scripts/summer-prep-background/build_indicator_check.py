@@ -25,7 +25,7 @@ from esabcc_style import (
     ACCENT_BLUE, ACCENT_ORANGE, ACCENT_PURPLE, ACCENT_RED, BODY_FILL, BODY_FONT, FONT,
     FONT_LIGHT, FONT_SEMI, H2_FONT, INK, LABEL_FONT, MUTED, RULE, SMALL_FONT, TEAL,
     TEAL_LIGHT, TEAL_PALE, WHITE, body_row, header_row, note_line, set_widths,
-    sheet_setup, style_chart, title_block,
+    sheet_setup, style_chart, text_categories, title_block,
 )
 
 PREPARED = "27 July 2026"
@@ -289,19 +289,25 @@ def build(data, calc, factcheck, out_path):
     fr = last + 3
     ov.cell(row=fr, column=1, value="Overview figures").font = H2_FONT
     fr += 1
-    header_row(ov, fr, ["Indicator (largest moves)", "Change % vs report baseline", "", "", "", "", "", "", "", "", "", "", ""], height=20)
+    # The label goes in column B — the wide "Indicator" column — so the names
+    # are readable in the sheet as well as in the figure.
+    header_row(ov, fr, ["", "Indicator (largest moves)", "Change % vs report baseline",
+                        "", "", "", "", "", "", "", "", "", ""], height=20)
     m_first = fr + 1
     for n, ind in enumerate(reversed(movers)):  # smallest first → largest on top of a bar chart
         rd = reads[ind["id"]]
-        body_row(ov, m_first + n, [f"{ind.get('code')} · {ind['name']}", rd["pct"] / 100], band=(n % 2 == 0), height=15)
-        ov.cell(row=m_first + n, column=2).number_format = "+0.0%;-0.0%;0.0%"
+        body_row(ov, m_first + n, ["", f"{ind.get('code')} · {ind['name']}", rd["pct"] / 100],
+                 band=(n % 2 == 0), height=15)
+        ov.cell(row=m_first + n, column=3).number_format = "+0.0%;-0.0%;0.0%"
+        ov.cell(row=m_first + n, column=3).alignment = Alignment(horizontal="right", vertical="center")
     m_last = m_first + len(movers) - 1
 
     chart = BarChart()
     chart.type = "bar"
-    chart.add_data(Reference(ov, min_col=2, min_row=fr, max_row=m_last), titles_from_data=True)
-    chart.set_categories(Reference(ov, min_col=1, min_row=m_first, max_row=m_last))
+    chart.add_data(Reference(ov, min_col=3, min_row=fr, max_row=m_last), titles_from_data=True)
+    chart.set_categories(Reference(ov, min_col=2, min_row=m_first, max_row=m_last))
     style_chart(chart, "The largest moves since the report baseline", height=11.5, width=20)
+    text_categories(chart, ov, 2, m_first, m_last)
     chart.legend = None
     chart.x_axis.title = "Change vs the report's last figure (%)"
     chart.x_axis.numFmt = "0%"
@@ -311,17 +317,18 @@ def build(data, calc, factcheck, out_path):
         pct = reads[ind["id"]]["pct"]
         ser.data_points[i].graphicalProperties.solidFill = TEAL if pct < 0 else ACCENT_ORANGE
         ser.data_points[i].graphicalProperties.line.noFill = True
-    ov.add_chart(chart, f"D{fr}")
+    ov.add_chart(chart, f"E{fr}")
 
     # Overview figure 2 — coverage per chapter.
     cr = m_last + 3
-    header_row(ov, cr, ["Chapter", "With new data since the report", "Still at the report figure", "", "", "", "", "", "", "", "", "", ""], height=28)
+    header_row(ov, cr, ["", "Chapter", "With new data since the report",
+                        "Still at the report figure", "", "", "", "", "", "", "", "", ""], height=28)
     c_first = cr + 1
     for n, cat in enumerate(cats):
         up = sum(1 for i in by_cat[cat] if reads[i["id"]]["post"])
-        body_row(ov, c_first + n, [CATEGORY_LABEL.get(cat, cat), up, len(by_cat[cat]) - up],
+        body_row(ov, c_first + n, ["", CATEGORY_LABEL.get(cat, cat), up, len(by_cat[cat]) - up],
                  band=(n % 2 == 0), height=15)
-        for col in (2, 3):
+        for col in (3, 4):
             ov.cell(row=c_first + n, column=col).alignment = Alignment(horizontal="center", vertical="center")
     c_last = c_first + len(cats) - 1
 
@@ -329,15 +336,16 @@ def build(data, calc, factcheck, out_path):
     cov.type = "col"
     cov.grouping = "stacked"
     cov.overlap = 100
-    cov.add_data(Reference(ov, min_col=2, max_col=3, min_row=cr, max_row=c_last), titles_from_data=True)
-    cov.set_categories(Reference(ov, min_col=1, min_row=c_first, max_row=c_last))
+    cov.add_data(Reference(ov, min_col=3, max_col=4, min_row=cr, max_row=c_last), titles_from_data=True)
+    cov.set_categories(Reference(ov, min_col=2, min_row=c_first, max_row=c_last))
     style_chart(cov, "How much of each chapter has moved on since the report", height=9, width=20)
+    text_categories(cov, ov, 2, c_first, c_last)
     cov.y_axis.title = "Indicators"
     for series, color in zip(cov.series, [TEAL, "D8E7E8"]):
         series.graphicalProperties.solidFill = color
         series.graphicalProperties.line.noFill = True
     cov.legend.position = "b"
-    ov.add_chart(cov, f"D{cr}")
+    ov.add_chart(cov, f"E{cr}")
 
     note_line(ov, c_last + 2,
               "Notes: “change” is arithmetic — the workbook draws no conclusion about whether a move is progress. "
@@ -430,6 +438,17 @@ def build(data, calc, factcheck, out_path):
                 sh.cell(row=t_first + last_pre_idx, column=3,
                         value=data_rows[last_pre_idx]["value"]).number_format = "#,##0.00"
             t_last = t_first + len(data_rows) - 1
+
+            if len(data_rows) < 2:
+                # One point is not a line: say so where the figure would be.
+                c = sh.cell(row=t_head, column=5,
+                            value="Only one data point — the report carries this indicator as a "
+                                  "single figure, so there is no series to draw.")
+                c.font = SMALL_FONT
+                c.alignment = Alignment(vertical="top", wrap_text=True)
+                sh.merge_cells(start_row=t_head, start_column=5, end_row=t_head + 1, end_column=9)
+                r = max(t_last + 2, t_head + 3)
+                continue
 
             ch = LineChart()
             ch.add_data(Reference(sh, min_col=2, max_col=3, min_row=t_head, max_row=t_last),
