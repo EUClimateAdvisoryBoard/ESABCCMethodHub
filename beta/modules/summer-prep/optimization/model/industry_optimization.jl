@@ -416,6 +416,17 @@ function apply_scenario_row!(data::ModelData, param::String, factor::Float64)
         data.carbon_price_choice = "low"     # switch the EU ETS carbon-price path used
     elseif param == "carbon_price_high"
         data.carbon_price_choice = "high"
+    elseif param == "carbon_price_scale"
+        # Scales the whole EU ETS price path by a constant factor. Unlike the two switches above
+        # (which pick a pre-defined low/high column), this sweeps the price continuously, so a
+        # series of scenarios can trace out how far down the emission path a given price level
+        # buys. All three columns are scaled so this composes with a low/high switch on the same
+        # scenario row.
+        for y in MODEL_YEARS
+            data.carbon_price_low[y]     *= factor
+            data.carbon_price_central[y] *= factor
+            data.carbon_price_high[y]    *= factor
+        end
     elseif param == "demand"
         # Scales projected product demand up/down in every subsector and year (e.g. circularity
         # vs. growth scenarios). 2025 existing-stock capacity is derived from (scaled) 2025
@@ -444,7 +455,8 @@ function apply_scenario_row!(data::ModelData, param::String, factor::Float64)
     else
         error("Unknown scenario parameter '$(param)' in scenarios.csv. Supported params: " *
               "capex_clean, learning_rate, energy_intensity_clean, carbon_price_low, " *
-              "carbon_price_high, demand, elec_price, h2_price, max_build_share.")
+              "carbon_price_high, carbon_price_scale, demand, elec_price, h2_price, " *
+              "max_build_share.")
     end
     return data
 end
