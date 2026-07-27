@@ -30,6 +30,11 @@
 # because they compete for the same limited biomass and CO2-storage pools. The objective is the
 # discounted sum of annualised capex, fixed & variable OPEX, fuel cost and carbon cost (on direct
 # emissions only) over the whole horizon, discounted at a 7% real rate from a 2025 base year.
+# Capex is TIME-DEPENDENT ("vintage costing"): a unit built in year yb keeps paying the annualised
+# capex RATE THAT WAS IN FORCE IN yb for every year it survives, so a technology whose trajectory
+# gets cheaper over time (data/capex_trajectory.csv) rewards WAITING to build it, not just building
+# it cheaply once cheap. A "technology learning" sensitivity (scenario param learning_rate) can
+# stretch or flatten how much of that literature-derived cost decline actually plays out.
 #
 # UNITS (fixed throughout)
 # --------------------------
@@ -117,7 +122,8 @@ mutable struct ModelData
     subsectors::Vector{String}
     techs::Vector{String}
     subsector_of::Dict{String,String}
-    capex::Dict{String,Float64}                 # EUR per tonne/yr of capacity
+    capex_trajectory::Dict{Tuple{String,Int},Float64}  # (tech,year) -> EUR/t capacity (vintage
+                                                         # costing — see build_model section 4.11)
     fixed_opex::Dict{String,Float64}             # EUR per tonne/yr of capacity per year
     var_opex::Dict{String,Float64}               # EUR per tonne produced
     lifetime::Dict{String,Float64}               # years
@@ -142,6 +148,7 @@ end
 const INPUT_FILES = [
     "sectors.csv", "demand.csv", "technologies.csv", "energy_use.csv", "fuel_prices.csv",
     "carbon_price.csv", "emission_factors.csv", "constraints.csv", "scenarios.csv", "sources.csv",
+    "capex_trajectory.csv",
 ]
 
 """Error loudly, listing every missing file at once, if any required CSV is not present."""
@@ -216,7 +223,9 @@ function read_inputs()::Tuple{ModelData,DataFrame}
     techs = String.(tech_df.tech)
     allunique(techs) || error("technologies.csv contains duplicate 'tech' identifiers.")
     subsector_of      = Dict(zip(techs, String.(tech_df.subsector)))
-    capex             = Dict(zip(techs, Float64.(tech_df.capex_eur_t)))
+    # NOTE: technologies.csv's own capex_eur_t column is no longer read into the model directly —
+    # it is superseded by the per-year capex_trajectory.csv (read below), whose 2025 value equals
+    # this column by construction. It stays in technologies.csv purely as a human-readable anchor.
     fixed_opex        = Dict(zip(techs, Float64.(tech_df.fixed_opex_eur_t)))
     var_opex          = Dict(zip(techs, Float64.(tech_df.var_opex_eur_t)))
     lifetime          = Dict(zip(techs, Float64.(tech_df.lifetime_yr)))
@@ -317,6 +326,22 @@ function read_inputs()::Tuple{ModelData,DataFrame}
     assert_columns(sources_df, "sources.csv",
         [:table, :item, :source_org, :source_title, :url, :year, :note])
 
+    # Time-dependent (vintage) capex: one EUR/t row per (tech, model year), used by build_model's
+    # objective instead of a single constant capex per technology (see section 4.11). Every
+    # technology must have a value for every model year, or we fail loudly rather than silently
+    # defaulting — a missing trajectory year would otherwise look like "free" or "priceless" capex.
+    capextraj_df = CSV.read(joinpath(DATA_DIR, "capex_trajectory.csv"), DataFrame)
+    assert_columns(capextraj_df, "capex_trajectory.csv",
+        [:tech, :year, :capex_eur_t, :basis, :source, :source_url])
+    capex_trajectory = Dict{Tuple{String,Int},Float64}()
+    for row in eachrow(capextraj_df)
+        capex_trajectory[(String(row.tech), Int(row.year))] = Float64(row.capex_eur_t)
+    end
+    for t in techs, y in MODEL_YEARS
+        haskey(capex_trajectory, (t, y)) ||
+            error("capex_trajectory.csv is missing tech='$(t)', year=$(y).")
+    end
+
     # Existing (2025) stock shares: aluminium splits between primary (alu_ref) and secondary
     # recycling (alu_sec) according to the 2025 scrap_share_max; every other subsector's
     # incumbent technology holds 100% of 2025 demand.
@@ -331,9 +356,9 @@ function read_inputs()::Tuple{ModelData,DataFrame}
     existing_share_2025["alu_ref"] = 1.0 - alu_scrap_2025
     existing_share_2025["alu_sec"] = alu_scrap_2025
 
-    data = ModelData(subsectors, techs, subsector_of, capex, fixed_opex, var_opex, lifetime,
-        available_from, max_build_share, capture_rate, process_co2, energy, demand, fuel_price,
-        ef, carbon_price_low, carbon_price_central, carbon_price_high, "central",
+    data = ModelData(subsectors, techs, subsector_of, capex_trajectory, fixed_opex, var_opex,
+        lifetime, available_from, max_build_share, capture_rate, process_co2, energy, demand,
+        fuel_price, ef, carbon_price_low, carbon_price_central, carbon_price_high, "central",
         scrap_share_max, biomass_pj_max, ccs_mt_max, existing_share_2025)
     return data, scenarios_df
 end
@@ -344,17 +369,40 @@ end
 # scenarios.csv rows have columns (scenario, description, param, factor). For a given scenario id
 # we apply every matching row to a deep copy of the central ModelData. Two params ("carbon_price_
 # low"/"carbon_price_high") are SWITCHES (they select which carbon-price column is active) rather
-# than multiplicative factors; all others multiply the named quantity by 'factor'.
+# than multiplicative factors; all others multiply the named quantity by 'factor'. Two params
+# ("capex_clean", "learning_rate") reshape the whole capex_trajectory curve of the non-reference
+# technologies rather than a single scalar — see their branches below for the exact math.
 
 """Apply one (param, factor) scenario adjustment to `data` in place."""
 function apply_scenario_row!(data::ModelData, param::String, factor::Float64)
     if param == "capex_clean"
-        # Clean/alternative technologies get cheaper (or, with factor>1, more expensive) capex.
-        # The incumbent/reference technologies are left untouched — this represents progress on
-        # the ALTERNATIVE routes only, not on the conventional plant.
+        # Clean/alternative technologies get a cheaper (or, with factor>1, more expensive) capex
+        # TRAJECTORY: every model year of capex_trajectory[t, ·] is scaled by the same factor (a
+        # level shift of the whole curve, including its 2025 anchor). The incumbent/reference
+        # technologies are left untouched — this represents progress on the ALTERNATIVE routes
+        # only, not on the conventional plant.
+        for t in data.techs, y in MODEL_YEARS
+            if !(t in EXISTING_STOCK_TECHS)
+                data.capex_trajectory[(t, y)] *= factor
+            end
+        end
+    elseif param == "learning_rate"
+        # Technology-learning sensitivity: reshapes each non-reference technology's OWN capex
+        # trajectory around its fixed 2025 anchor, by raising the (year value / 2025 value) cost
+        # ratio to the power `factor` (the "learning exponent"): capex(t,y;f) = capex(t,2025) *
+        # (capex(t,y)/capex(t,2025))^f. factor=1 leaves the trajectory exactly as read from
+        # capex_trajectory.csv; factor=0 freezes every year at the 2025 level (no learning at
+        # all); factor>1 amplifies whatever cost decline (or increase) the trajectory encodes.
+        # Reference/incumbent technologies are left untouched, exactly like capex_clean, since
+        # this represents progress on the ALTERNATIVE routes only. Order-independent versus
+        # capex_clean: a uniform level shift cancels out of the (year/2025) ratio.
         for t in data.techs
             if !(t in EXISTING_STOCK_TECHS)
-                data.capex[t] *= factor
+                base = data.capex_trajectory[(t, BASE_YEAR)]
+                for y in MODEL_YEARS
+                    ratio = base > 0 ? data.capex_trajectory[(t, y)] / base : 1.0
+                    data.capex_trajectory[(t, y)] = base * ratio^factor
+                end
             end
         end
     elseif param == "energy_intensity_clean"
@@ -395,8 +443,8 @@ function apply_scenario_row!(data::ModelData, param::String, factor::Float64)
         end
     else
         error("Unknown scenario parameter '$(param)' in scenarios.csv. Supported params: " *
-              "capex_clean, energy_intensity_clean, carbon_price_low, carbon_price_high, " *
-              "demand, elec_price, h2_price, max_build_share.")
+              "capex_clean, learning_rate, energy_intensity_clean, carbon_price_low, " *
+              "carbon_price_high, demand, elec_price, h2_price, max_build_share.")
     end
     return data
 end
@@ -527,18 +575,36 @@ function build_model(data::ModelData)
     @constraint(m, con_ccs[y = Y], sum(Captured[t, y] for t in techs) <= data.ccs_mt_max[y])
 
     # --- 4.11 Costs and objective ----------------------------------------------------------------
+    # VINTAGE CAPEX COSTING: capex is no longer one constant EUR/t per technology. Each unit of
+    # capacity pays the CRF-annualised capex.trajectory RATE THAT WAS IN FORCE THE YEAR IT WAS
+    # BUILT, for every year it survives — the same "one build, many surviving years" bookkeeping
+    # con_capacity already does for K[t,y], just cost-weighted per vintage instead of counted
+    # per tonne. CapexTerm[t,y] = annualised(capex(t,2025)) x surviving 2025 existing stock, plus
+    # annualised(capex(t,yb)) x surviving new build B[t,yb], for every past vintage yb<=y. Existing
+    # (pre-2025) stock always keeps its 2025-anchor cost, regardless of how the trajectory or any
+    # capex/learning scenario later moves — that stock was already built at the 2025 price. A FLAT
+    # capex_trajectory (every year equal) collapses this exactly back to the old
+    # "crf x capex x K[t,y]" formula, since K[t,y] is itself defined as k_exist + sum(surviving B).
+    @expression(m, CapexTerm[t = techs, y = Y],
+        crf(DISCOUNT_RATE, data.lifetime[t]) *
+        (data.capex_trajectory[(t, BASE_YEAR)] * k_exist(data, t, y) +
+         sum(data.capex_trajectory[(t, yb)] * B[t, yb]
+             for yb in Y if yb <= y && (y - yb) < data.lifetime[t])))
     # Energy cost: quantity produced x energy intensity x fuel price, summed over all carriers.
     @expression(m, EnergyCost[t = techs, y = Y],
         Q[t, y] * sum(get(data.energy, (t, c), 0.0) * fuel_price_lookup(data, c, y)
                       for c in CARRIERS))
     # Total annual cost of operating technology t in year y (million EUR):
-    #   annualised capex (CRF x capex x capacity) + fixed OPEX x capacity + variable OPEX x
-    #   production + energy cost + carbon price x DIRECT emissions only. Carbon price is NOT
-    #   applied to indirect (electricity) emissions here, because the EU ETS price a producer
-    #   actually pays on its own smokestack (scope 1) is what this term represents; any carbon
-    #   cost passed through in the electricity price is already inside EnergyCost above.
+    #   vintage-costed annualised capex (see CapexTerm above) + fixed OPEX x capacity + variable
+    #   OPEX x production + energy cost + carbon price x DIRECT emissions only. Fixed OPEX still
+    #   applies to TOTAL installed capacity K[t,y] (it is an ongoing running cost of the currently
+    #   installed fleet, not a one-off build-year decision, so it does not need vintage tracking).
+    #   Carbon price is NOT applied to indirect (electricity) emissions here, because the EU ETS
+    #   price a producer actually pays on its own smokestack (scope 1) is what this term
+    #   represents; any carbon cost passed through in the electricity price is already inside
+    #   EnergyCost above.
     @expression(m, AnnualCost[t = techs, y = Y],
-        crf(DISCOUNT_RATE, data.lifetime[t]) * data.capex[t] * K[t, y] +
+        CapexTerm[t, y] +
         data.fixed_opex[t] * K[t, y] +
         data.var_opex[t] * Q[t, y] +
         EnergyCost[t, y] +

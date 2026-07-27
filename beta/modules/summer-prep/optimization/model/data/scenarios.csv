@@ -12,3 +12,5 @@ h2_cheap,"Hydrogen price 40% lower (electrolyser cost-down, cheap renewable powe
 h2_exp,"Hydrogen price 40% higher (slow electrolyser scale-up, feedstock power scarcity)",h2_price,1.4,Model assumption (prototype),beta/modules/summer-prep/optimization/model/README.md
 eff_gain,Energy intensity of clean technologies 10% lower (learning-by-doing efficiency gains),energy_intensity_clean,0.9,Model assumption (prototype),beta/modules/summer-prep/optimization/model/README.md
 slow_build,Maximum build rate for new capacity halved (permitting / supply-chain / grid bottlenecks),max_build_share,0.5,Model assumption (prototype),beta/modules/summer-prep/optimization/model/README.md
+learning_fast,Technology learning accelerates: 2025->2050 capex decline exponent x1.5 (deeper cost cuts for clean tech),learning_rate,1.5,Model assumption (prototype),beta/modules/summer-prep/optimization/model/README.md
+learning_slow,Technology learning slows: 2025->2050 capex decline exponent x0.5 (learning stalls),learning_rate,0.5,Model assumption (prototype),beta/modules/summer-prep/optimization/model/README.md

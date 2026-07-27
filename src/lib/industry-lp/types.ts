@@ -63,6 +63,13 @@ export interface IndustryLpOverrides {
   h2PriceScale?: number;
   /** Multiplies energy intensity (GJ/t, every carrier) of non-reference technologies. */
   energyIntensityCleanScale?: number;
+  /**
+   * Technology-learning exponent applied to non-reference technologies' capex trajectory:
+   * capex(t,y;f) = capex(t,2025) * (capex(t,y)/capex(t,2025))^f. Default 1 (trajectory as read
+   * from capex_trajectory.csv, unchanged); 0 freezes every year at the 2025 level (no learning);
+   * >1 amplifies whatever cost decline/increase the trajectory already encodes.
+   */
+  learningRateScale?: number;
   /** Multiplies max_build_share of every technology. */
   buildRateScale?: number;
   /** Multiplies the biomass_pj_max constraint RHS in every year (0.25-1.5 typical UI range). */
