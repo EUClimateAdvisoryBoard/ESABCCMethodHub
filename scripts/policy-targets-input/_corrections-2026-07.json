@@ -1,0 +1,498 @@
+[
+  {
+    "policy_id": "co2-cars-regulation",
+    "targets": [
+      {
+        "quote": "1. The manufacturer shall ensure that its average specific emissions of CO2 do not exceed the following specific emissions targets: (a) for the calendar year 2020, the specific emissions target determined in accordance with points 1 and 2 of Part A of Annex I in the case of passenger cars, or points 1 and 2 of Part B of Annex I in the case of light commercial vehicles, or where a manufacturer is granted a derogation under",
+        "article": "Article 4(1) — Specific emissions targets",
+        "label": "target",
+        "timeline": "",
+        "indicators": [
+          "average specific emissions of CO2",
+          "specific emissions target"
+        ],
+        "supersedes": "tgt-3b76652b",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      }
+    ]
+  },
+  {
+    "policy_id": "competitiveness-compass",
+    "targets": [
+      {
+        "quote": "But some of the cost components of energy prices can be mitigated in the short term, as they are determined by inefficiencies in the design of network tariffs and taxation or a lack of energy market integration. These issues will be addressed by the Affordable Energy Action Plan, through a range of measures to ensure that households and industrial customers have a wider direct access to low-cost energy.",
+        "article": "Pillar 2 — affordable energy",
+        "label": "objective",
+        "timeline": "Q1 2025",
+        "indicators": [
+          "energy prices",
+          "access to low-cost energy"
+        ],
+        "supersedes": "tgt-bc73fa42",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  },
+  {
+    "policy_id": "effort-sharing-regulation",
+    "targets": [
+      {
+        "quote": "A Member State, which meets the conditions set out in paragraph 2 of this Article, shall receive an additional quantity from the safety reserve up to its shortfall to be used for compliance under Article 9. That quantity shall not exceed 20 % of its overall overachievement in the period from 2013 to 2020.",
+        "article": "Article 11(3) — Safety reserve",
+        "label": "target",
+        "timeline": "from 2013 to 2020",
+        "indicators": [],
+        "supersedes": "tgt-c8d671ae",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  },
+  {
+    "policy_id": "energy-efficiency-directive",
+    "targets": [
+      {
+        "quote": "In accordance with the energy efficiency first principle, Member States shall ensure that energy efficiency solutions, including demand-side resources and system flexibilities, are assessed in planning, policy and major investment decisions of a value of more than EUR 100 000 000 each or EUR 175 000 000 for transport infrastructure projects, relating to the following sectors: (a) energy systems; and (b) non-energy sectors, where those sectors have an impact on energy consumption and energy efficiency such as buildings, transport, water, information and communications technology (ICT), agriculture and financial sectors.",
+        "article": "Article 3(1) — Energy efficiency first principle",
+        "label": "objective",
+        "timeline": "",
+        "indicators": [
+          "energy efficiency",
+          "energy efficiency first principle"
+        ],
+        "supersedes": "tgt-845cb005",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      }
+    ]
+  },
+  {
+    "policy_id": "epbd-recast",
+    "targets": [
+      {
+        "quote": "Member States shall make best cost-effective use of national financing and financing available established at Union level, in particular the Recovery and Resilience Facility, the Social Climate Fund, the Cohesion fund, InvestEU, auctioning revenues from emission trading pursuant to Directive 2003/87/EC of the European Parliament and of the Council (31) and other public funding sources. Those funding sources shall be deployed consistently with a path to achieving a zero-emission building stock by 2050.",
+        "article": "Article 17 — Financial incentives, skills and market barriers",
+        "label": "target",
+        "timeline": "by 2050",
+        "indicators": [],
+        "supersedes": "tgt-bb7b7612",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  },
+  {
+    "policy_id": "eu-green-deal",
+    "targets": [
+      {
+        "quote": "The European Green Deal is a response to these challenges. It is a new growth strategy that aims to transform the EU into a fair and prosperous society, with a modern, resource-efficient and competitive economy where there are no net emissions of greenhouse gases in 2050 and where economic growth is decoupled from resource use.",
+        "article": "1. Introduction - turning an urgent challenge into a unique opportunity",
+        "label": "objective",
+        "timeline": "2050",
+        "indicators": [
+          "net emissions of greenhouse gases"
+        ],
+        "supersedes": "tgt-70c2fffd",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      },
+      {
+        "quote": "To set out clearly the conditions for an effective and fair transition, to provide predictability for investors, and to ensure that the transition is irreversible, the Commission will propose the first European ‘Climate Law’ by March 2020. This will enshrine the 2050 climate neutrality objective in legislation.",
+        "article": "2.1.1 Increasing the EU’s climate ambition for 2030 and 2050",
+        "label": "objective",
+        "timeline": "2050",
+        "indicators": [
+          "climate neutrality"
+        ],
+        "supersedes": "tgt-8e1d4f83",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  },
+  {
+    "policy_id": "f-gas-regulation",
+    "targets": [
+      {
+        "quote": "The maximum amount of hydrofluorocarbons allowed to be placed on the Union market in a given year is as follows: Years Maximum Quantity in tonnes CO2 equivalent 2025 – 2026 42 874 410 2027 – 2029 21 665 691 2030 – 2032 9 132 097 2033 – 2035 8 445 713 2036 – 2038 6 782 265 2039 – 2041 6 136 732 2042 – 2044 5 491 199 2045 – 2047 4 845 666 2048 – 2049 4 200 133 2050 onwards 0",
+        "article": "Annex VII(1) — Maximum quantities and calculation of reference values and quota",
+        "label": "target",
+        "timeline": "2025 to 2050 onwards",
+        "indicators": [
+          "hydrofluorocarbons placed on the Union market (tonnes CO2 equivalent)"
+        ],
+        "supersedes": "tgt-74fb9c09",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      },
+      {
+        "quote": "6. This Article shall not apply to undertakings that placed on the market less than 10 tonnes of CO2 equivalent of hydrofluorocarbons, per year, contained in the products or equipment referred to in paragraph 1.",
+        "article": "Article 19 — Products or equipment pre-charged with hydrofluorocarbons",
+        "label": "commitment",
+        "timeline": "",
+        "indicators": [
+          "CO2 equivalent"
+        ],
+        "supersedes": "tgt-41d5088c",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  },
+  {
+    "policy_id": "fit-for-55",
+    "targets": [
+      {
+        "quote": "The revision of the Energy Efficiency Directive proposes to increase the level of ambition of the energy efficiency targets at EU level and to make them binding. This should lead to 9% reduction in energy consumption by 2030, compared to the baseline projections",
+        "article": "2.2.3 Energy",
+        "label": "target",
+        "timeline": "by 2030",
+        "indicators": [
+          "energy consumption reduction"
+        ],
+        "supersedes": "tgt-33252dd6",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      },
+      {
+        "quote": "The new proposal looks to reverse the current trend of diminishing CO2 removals and increase the quality and quantity of the EU’s forests and other natural carbon sinks. It proposes to set an EU target of net greenhouse gas removals in the LULUCF sector of 310 million tons of CO2 equivalent by 2030.",
+        "article": "2.3 A green transition: Protecting nature and increasing the EU's natural carbon sink",
+        "label": "target",
+        "timeline": "by 2030",
+        "indicators": [
+          "CO2 equivalent",
+          "removals",
+          "net greenhouse gas removals in the LULUCF sector"
+        ],
+        "supersedes": "tgt-06fd25a7",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      },
+      {
+        "quote": "This will be complemented by policy measures to improve the energy efficiency of buildings and energy appliances and systems so that the overall energy needs in our homes and in heating and cooling will also be reduced. This is why the Commission proposes to start applying emissions trading from 2026 for road transport and buildings.",
+        "article": "2.2.1 Industrial transformation and carbon pricing",
+        "label": "commitment",
+        "timeline": "from 2026",
+        "indicators": [
+          "emissions trading for road transport and buildings"
+        ],
+        "supersedes": "tgt-e7359b3d",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      },
+      {
+        "quote": "2.2.2 Cleaner mobility and transport fuels Next to carbon pricing, other measures are needed to put transport on a firm path to zero emissions, and drive down air pollution as transport represents almost a quarter of the EU’s greenhouse gas emissions and is the main cause of air pollution in cities. Emissions remain higher than in 1990 and a 90% reduction in overall transport emissions by 2050",
+        "article": "2.2.2 Cleaner mobility and transport fuels",
+        "label": "target",
+        "timeline": "by 2050",
+        "indicators": [
+          "transport emissions"
+        ],
+        "supersedes": "tgt-051d70a0",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  },
+  {
+    "policy_id": "fueleu-maritime",
+    "targets": [
+      {
+        "quote": "2. The limit referred to in paragraph 1 shall be calculated by reducing the reference value of 91,16 grams of CO2 equivalent per MJ by the following percentage: — 2 % from 1 January 2025; — 6 % from 1 January 2030; — 14,5 % from 1 January 2035; — 31 % from 1 January 2040; — 62 % from 1 January 2045; — 80 % from 1 January 2050.",
+        "article": "Article 4(2)",
+        "label": "target",
+        "timeline": "",
+        "indicators": [
+          "CO2 equivalent",
+          "GHG intensity limit",
+          "reference value (91,16 gCO2e/MJ)",
+          "percentage reduction"
+        ],
+        "supersedes": "tgt-4c45c1a8",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      }
+    ]
+  },
+  {
+    "policy_id": "industrial-emissions-directive",
+    "targets": [
+      {
+        "quote": "The competent authority shall set emission limit values that ensure that, under normal operating conditions, emissions do not exceed the emission levels associated with the best available techniques as laid down in the decisions on BAT conclusions referred to in Article 13(5) through either of the following: (a) setting emission limit values that do not exceed the emission levels associated with the best available techniques. Those emission limit values shall be expressed for the same or shorter periods of time and under the same reference conditions as those emission levels associated with the best available techniques; or (b) setting different emission limit values than those referred to under point (a) in terms of values, periods of time and reference conditions.",
+        "article": "Article 15(3) - Emission limit values, equivalent parameters and technical measures",
+        "label": "target",
+        "timeline": "",
+        "indicators": [
+          "emission limit values",
+          "emission levels associated with the best available techniques"
+        ],
+        "supersedes": "tgt-6aefa963",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      }
+    ]
+  },
+  {
+    "policy_id": "methane-regulation",
+    "targets": [
+      {
+        "quote": "From 1 January 2025, drainage station operators shall notify the competent authorities of all venting events and all flaring events with a destruction and removal efficiency by design level below 99 %: (a) caused by an emergency or a malfunction, (b) occurring unavoidably, due to maintenance of the drainage system.",
+        "article": "Article 23(1)",
+        "label": "target",
+        "timeline": "",
+        "indicators": [],
+        "supersedes": "tgt-0e4ae91a",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      }
+    ]
+  },
+  {
+    "policy_id": "nature-restoration-law",
+    "targets": [
+      {
+        "quote": "Member States shall put in place the restoration measures that are necessary to re-establish the habitat types listed in Annex I in areas where those habitat types do not occur, with the aim of reaching the favourable reference area for those habitat types. Such measures shall be in place on areas representing at least 30 % of the additional surface needed to reach the total favourable reference area for each group of habitat types listed in Annex I, as quantified in the national restoration plan referred to in Article 15, by 2030, on areas representing at least 60 % of that surface by 2040, and on 100 % of that surface by 2050.",
+        "article": "Article 4(4) — Restoration of terrestrial, coastal and freshwater ecosystems",
+        "label": "target",
+        "timeline": "by 2030",
+        "indicators": [
+          "favourable reference area",
+          "additional surface re-established"
+        ],
+        "supersedes": "tgt-089de6db",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  },
+  {
+    "policy_id": "net-zero-industry-act",
+    "targets": [
+      {
+        "quote": "Each entity holding an authorisation as defined in Article 1, point 3, of Directive 94/22/EC shall be subject to an individual contribution to the Union-wide target for available CO2 injection capacity set in Article 20 of this Regulation. Those individual contributions shall be calculated pro-rata on the basis of each entity’s share in the Union’s crude oil and natural gas production from 1 January 2020 to 31 December 2023 and shall consist of CO2 injection capacity in a storage site permitted in accordance with Directive 2009/31/EC and available to the market by 2030.",
+        "article": "Article 23(1) — Contribution of authorised oil and gas producers",
+        "label": "target",
+        "timeline": "by 2030",
+        "indicators": [],
+        "supersedes": "tgt-27f98575",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  },
+  {
+    "policy_id": "packaging-waste-regulation",
+    "targets": [
+      {
+        "quote": "1. By 1 January 2029, Member States shall take the necessary measures to ensure the separate collection of at least 90 % per year by weight of the following packaging formats made available on the market for the first time in that Member State in a given calendar year: (a) single-use plastic beverage bottles with a capacity of up to three litres; and (b) single-use metal beverage containers with a capacity of up to three litres.",
+        "article": "Article 50(1)",
+        "label": "target",
+        "timeline": "By 1 January 2029",
+        "indicators": [
+          "separate collection rate (beverage bottles/containers)"
+        ],
+        "supersedes": "tgt-31b9f479",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      }
+    ]
+  },
+  {
+    "policy_id": "renewable-energy-directive",
+    "targets": [
+      {
+        "quote": "When opening participation in support schemes for electricity from renewable sources, Member States may provide that support for an indicative share of the newly-supported capacity, or of the budget allocated thereto, in each year is open to producers located in other Member States. Such indicative shares may, in each year, amount to at least 5 % from 2023 to 2026 and at least 10 % from 2027 to 2030, or, where lower, to the level of interconnectivity of the Member State concerned in any given year.",
+        "article": "Article 5(1)",
+        "label": "target",
+        "timeline": "from 2023 to 2026",
+        "indicators": [
+          "indicative share of newly-supported capacity"
+        ],
+        "supersedes": "tgt-68e01242",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      },
+      {
+        "quote": "By 2023, the Commission shall carry out an evaluation of the implementation of this Article. That evaluation shall assess the need to introduce an obligation on Member States partially to open participation in their support schemes for electricity from renewable sources to producers located in other Member States with a view to a 5 % opening by 2025 and a 10 % opening by 2030.",
+        "article": "Article 5(5)",
+        "label": "target",
+        "timeline": "by 2025",
+        "indicators": [],
+        "supersedes": "tgt-712fc8a2",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  },
+  {
+    "policy_id": "renovation-wave",
+    "targets": [
+      {
+        "quote": "It will address the sustainability performance of construction products in the context of its revision of the Construction Product Regulation and it will develop by 2023 a roadmap leading up to 2050 for reducing whole life-cycle carbon emissions in buildings.",
+        "article": "Section 3.5 (Creating a sustainable built environment)",
+        "label": "commitment",
+        "timeline": "by 2023",
+        "indicators": [
+          "whole life-cycle carbon"
+        ],
+        "supersedes": "tgt-4a74da94",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  },
+  {
+    "policy_id": "social-climate-fund",
+    "targets": [
+      {
+        "quote": "2. Payment of financial support pursuant to paragraph 1 of this Article to each Member State shall be conditional upon that Member State achieving the milestones and targets for the measures and investments in accordance with Article 8 of this Regulation. Those milestones and targets shall be compatible with the Union’s climate targets and the objective set out in Regulation (EU) 2021/1119, and shall cover in particular: (a) energy efficiency; (b) building renovation; (c) zero- and low-emission mobility and transport; (d) greenhouse gas emission reductions; (e) reductions in the number of vulnerable households, in particular households in energy poverty, of vulnerable micro-enterprises and of vulnerable transport users.",
+        "article": "Article 7(2) — Principles governing the Fund",
+        "label": "target",
+        "timeline": "",
+        "indicators": [
+          "milestones and targets",
+          "Union's climate targets"
+        ],
+        "supersedes": "tgt-7ef1a6a7",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      }
+    ]
+  },
+  {
+    "policy_id": "taxonomy-regulation",
+    "targets": [
+      {
+        "quote": "1. An economic activity shall qualify as contributing substantially to climate change adaptation where that activity: (a) includes adaptation solutions that either substantially reduce the risk of the adverse impact of the current climate and the expected future climate on that economic activity or substantially reduce that adverse impact, without increasing the risk of an adverse impact on people, nature or assets; or (b) provides adaptation solutions that, in addition to satisfying the conditions set out in",
+        "article": "Article 11(1) — Substantial contribution to climate change adaptation",
+        "label": "objective",
+        "timeline": "",
+        "indicators": [
+          "climate risk adaptation solutions"
+        ],
+        "supersedes": "tgt-51b84dd6",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      },
+      {
+        "quote": "1. An economic activity shall qualify as contributing substantially to climate change mitigation where that activity contributes substantially to the stabilisation of greenhouse gas concentrations in the atmosphere at a level which prevents dangerous anthropogenic interference with the climate system consistent with the long-term temperature goal of the Paris Agreement through the avoidance or reduction of greenhouse gas emissions or the increase of greenhouse gas removals, including through process innovations or product innovations, by: (a) generating, transmitting, storing, distributing or using renewable energy in line with Directive (EU) 2018/2001, including through using innovative technology with a potential for significant future savings or through necessary reinforcement or extension of the grid;",
+        "article": "Article 10(1) — Substantial contribution to climate change mitigation",
+        "label": "objective",
+        "timeline": "",
+        "indicators": [
+          "greenhouse gas emissions",
+          "removals",
+          "avoidance or reduction of greenhouse gas emissions",
+          "increase of greenhouse gas removals"
+        ],
+        "supersedes": "tgt-7d62258c",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      },
+      {
+        "quote": "2. For the purposes of paragraph 1, an economic activity for which there is no technologically and economically feasible low-carbon alternative shall qualify as contributing substantially to climate change mitigation where it supports the transition to a climate-neutral economy consistent with a pathway to limit the temperature increase to 1,5 0C above pre-industrial levels, including by phasing out greenhouse gas emissions, in particular emissions from solid fossil fuels, and where that activity: (a) has greenhouse gas emission levels that correspond to the best performance in the sector or industry; (b) does not hamper the development and deployment of low-carbon alternatives; and (c) does not lead to a lock-in of carbon-intensive assets, considering the economic lifetime of those assets.",
+        "article": "Article 10(2) — Substantial contribution to climate change mitigation",
+        "label": "objective",
+        "timeline": "",
+        "indicators": [
+          "greenhouse gas emissions",
+          "1,5 0C temperature pathway",
+          "phasing out greenhouse gas emissions"
+        ],
+        "supersedes": "tgt-921c449a",
+        "fix": "chapeau completed with the enumerated points that follow the colon"
+      }
+    ]
+  },
+  {
+    "policy_id": "water-resilience-strategy",
+    "targets": [
+      {
+        "quote": "In the recent mid-term review of Cohesion policy, the Commission has proposed an exceptional package of measures to encourage Members States and regions to invest in water resilience. This package includes up to 100% of EU financing and 30% of prefinancing in water resilience investments programmed under the dedicated priority for this new specific objective, as well as various flexibilities.",
+        "article": "Section 3.2 (Finance, investments and infrastructure)",
+        "label": "commitment",
+        "timeline": "",
+        "indicators": [],
+        "supersedes": "tgt-441a6819",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      },
+      {
+        "quote": "By 2030, restoration measures will be put in place on at least 30% of the EU’s coastal and freshwater habitats that are not in good condition (Nature Restoration Regulation).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "By 2030, at least 30% of species and habitats not currently in favourable status are in that category or show a strong positive trend (EU biodiversity strategy for 2030).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "By 2030, at least 25 000 km of rivers in the EU will have to be restored into free-flowing rivers (EU biodiversity strategy for 2030).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "By 2027, Member States shall protect, enhance and restore all bodies of surface water and groundwater with the aim of achieving good status (Water Framework Directive).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "By 2030, the most water-intensive sectors will have adopted and enhanced water-efficient practices, including the following sectors, based on existing EU legislation:",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "·Energy: national building renovation plans, due by 2026, will start being deployed in each Member State to achieve the progressive renovation of existing buildings into highly energy-efficient and decarbonised buildings by 2050, including through approaches and programmes addressing water treatment (Energy Performance of Buildings Directive).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "·Industry: water use will start being tangibly reduced across the EU’s largest industrial and livestock farming production processes (Industrial Emissions Directive).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "In addition, with respect to agriculture, by 2027 the CAP Strategic Plans have provided support for practices (beyond mandatory requirements) to improve soil health (and thus improve water retention and limit erosion) on 47% of the EU’s agricultural area. Support for practices for the sustainable use of pesticides and improved nutrient management will cover 27% and 15% of EU’s agricultural area respectively (CAP support and CAP Strategic Plans).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "By 2030, Member States with water supply leakage levels exceeding the EU-wide threshold – to be set by 2028 – will present an action plan with measures to reduce leakages across their supply networks (Drinking Water Directive).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "By 2030, the Commission and the Member States will promote the reuse of treated urban wastewater for all appropriate purposes beyond agriculture and assess the feasibility and appropriateness of setting an EU target for water reuse across economic sectors (Water Reuse Regulation).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "By 2027, Member States will set up transparent drinking water and wastewater bills, to increase consumers’ awareness of their consumption and the real price of water, as well as surveillance systems for monitoring public health parameters in urban wastewater in case of emergencies (Drinking Water Directive, Urban Wastewater Treatment Directive).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "By 2029, Member States will inform the Commission about measures taken to improve access to drinking water and sanitation for all, including vulnerable and marginalised groups, and will start updating the Commission every six years on the matter (Drinking Water Directive and Urban Wastewater Treatment Directive).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "By 2030, the EU will support the access of 70 million individuals to an improved drinking water source and/or sanitation facility (EU commitment to the Water Action Agenda).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      },
+      {
+        "quote": "By 2033, all EU cities above 100 000 inhabitants will set up integrated urban wastewater management plans prioritising nature-based solutions and green/blue infrastructures (Urban Wastewater Treatment Directive).",
+        "article": "Annex II — The key 2027-2033 intermediate targets",
+        "label": "target",
+        "added": "Annex II intermediate-target list — completed per human review"
+      }
+    ]
+  },
+  {
+    "policy_id": "zero-pollution-action-plan",
+    "targets": [
+      {
+        "quote": "Furthermore, the proposed ‘’Mission in the area of Soil Health and Food’, together with the agricultural European Innovation Partnership (EIP AGRI), will promote the wide-spread uptake of practices for pesticide and nutrient reduction by promoting innovations and exchange of knowledge. It will aim to ensuring that, by 2030, 75% of soils are healthy, also thanks to a specific objective on reducing soil pollution and enhancing restoration.",
+        "article": "2.3 Living within our planetary boundaries",
+        "label": "objective",
+        "timeline": "by 2030",
+        "indicators": [
+          "share of healthy soils"
+        ],
+        "supersedes": "tgt-f4429175",
+        "fix": "preceding sentence prepended so the pronoun subject has its antecedent"
+      }
+    ]
+  }
+]

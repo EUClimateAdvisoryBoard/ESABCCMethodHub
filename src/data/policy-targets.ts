@@ -20,6 +20,11 @@ export type TargetLabel = 'target' | 'goal' | 'objective' | 'commitment' | 'othe
 export type Obligation = 'mandatory' | 'voluntary';
 export type TargetType = 'quantitative' | 'qualitative' | 'unspecified';
 export type ClimateRelevance = 'mitigation' | 'adaptation' | 'both' | 'none';
+/** The eight sectors/systems the register classifies targets against. The first
+ *  six matter for both mitigation and adaptation; water and health are the two
+ *  that matter above all for adaptation. */
+export type SectorKey = 'energy' | 'buildings' | 'agrifood' | 'transport'
+  | 'industry' | 'ecosystems' | 'water' | 'health';
 
 export interface RawPolicyTarget {
   /** Stable content hash of (policy_id + quote) — survives regeneration, so
@@ -64,6 +69,21 @@ export interface RawPolicyTarget {
    *  and refined per row by the fact-check overrides. The register's default view
    *  shows only relevant rows. */
   relevant: boolean;
+  /** Sectors/systems the target bears on — any of the eight keys in SECTOR_META.
+   *  Empty when the target is cross-cutting or institutional; those rows stay in
+   *  the register for review. Derived in scripts/policy-targets-classify.mjs. */
+  sectors: SectorKey[];
+  /** The words in the target text that fired each sector, for auditability. */
+  sector_evidence: Partial<Record<SectorKey, string[]>>;
+  /** Why the target counts as mitigation and/or adaptation — the mechanism it
+   *  works through (cuts GHGs / raises removals / enables either; reduces
+   *  vulnerability or exposure / raises adaptive capacity / seizes an
+   *  opportunity), with the phrase that evidences it. */
+  climate_argument: string;
+  /** The closest target text in a DIFFERENT policy, when one is close enough to
+   *  matter ("Duplicate wording" ≥0.45 similarity, "Similar target" ≥0.25).
+   *  Empty when the target has no close counterpart elsewhere. */
+  duplicate_of: string;
 }
 
 export type PolicyTarget = RawPolicyTarget;
@@ -97,6 +117,17 @@ export const CLIMATE_META: Record<ClimateRelevance, { label: string; color: stri
   none: { label: 'Not climate-specific', color: '#64748b' },
 };
 
+export const SECTOR_META: { key: SectorKey; label: string; lens: string; color: string }[] = [
+  { key: 'energy', label: 'Energy', lens: 'mitigation + adaptation', color: '#f59e0b' },
+  { key: 'buildings', label: 'Buildings and built environment', lens: 'mitigation + adaptation', color: '#0ea5e9' },
+  { key: 'agrifood', label: 'Agri-food', lens: 'mitigation + adaptation', color: '#65a30d' },
+  { key: 'transport', label: 'Transport and mobility', lens: 'mitigation + adaptation', color: '#8b5cf6' },
+  { key: 'industry', label: 'Industry', lens: 'mitigation + adaptation', color: '#475569' },
+  { key: 'ecosystems', label: 'Land and marine ecosystems', lens: 'mitigation + adaptation', color: '#059669' },
+  { key: 'water', label: 'Water', lens: 'adaptation-critical', color: '#0891b2' },
+  { key: 'health', label: 'Health', lens: 'adaptation-critical', color: '#e11d48' },
+];
+
 // ─── Shared column config (drives both the table and the Excel/CSV export) ──
 export interface ColumnDef {
   key: string;
@@ -120,6 +151,14 @@ export const COLUMNS: ColumnDef[] = [
   { key: 'climate_relevance', header: '10 · Climate-relevance', width: 20, value: (t) => CLIMATE_META[t.climate_relevance].label },
   { key: 'eurlex_url', header: '11 · Source (EUR-Lex)', width: 40, value: (t) => t.eurlex_url },
   { key: 'relevant', header: 'Relevant (transition lens)', width: 16, value: (t) => (t.relevant ? 'Relevant' : 'Peripheral') },
+  ...SECTOR_META.map((s, i) => ({
+    key: `sector_${s.key}`,
+    header: `${13 + i} · ${s.label}`,
+    width: 14,
+    value: (t: PolicyTarget) => (t.sectors.includes(s.key) ? 'Yes' : ''),
+  })),
+  { key: 'climate_argument', header: '21 · Mitigation / adaptation argument', width: 60, value: (t) => t.climate_argument },
+  { key: 'duplicate_of', header: '22 · Duplicate / similar target in another policy', width: 46, value: (t) => t.duplicate_of },
 ];
 
 function cap(s: string): string {

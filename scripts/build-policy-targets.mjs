@@ -27,6 +27,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { sectorsOf, climateOf, duplicatesOf } from './policy-targets-classify.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -150,6 +151,9 @@ function obligationOf(s, instrumentBinding) {
   return instrumentBinding ? 'mandatory' : 'voluntary';
 }
 
+// Climate relevance is decided by the MECHANISM the target works through
+// (see scripts/policy-targets-classify.mjs), which also writes the argument
+// stored alongside it. The keyword lists above remain in use for indicators.
 function climateRelevanceOf(s) {
   const lc = s.toLowerCase();
   const mit = countHits(lc, MITIGATION);
@@ -302,6 +306,11 @@ function main() {
     if (quoteRaw.length < MIN_QUOTE || quoteRaw.length > MAX_QUOTE) { dropped++; continue; }
     const exact = verbatimSlice(body, quoteRaw);
     if (!exact) { dropped++; continue; } // not verbatim in enacting terms → reject
+    // Dropped rows are discarded BEFORE the dedupe register, so a corrected
+    // re-extraction that opens with the same words as the truncated row it
+    // supersedes is not mistaken for a duplicate of it.
+    const dropOv = overrides.get(stableId(p.id, exact));
+    if (dropOv && dropOv.drop) continue;
     const dedupeKey = c.policy_id + '::' + norm(exact).slice(0, 120).toLowerCase();
     if (seen.has(dedupeKey)) continue;
     seen.add(dedupeKey);
@@ -332,6 +341,23 @@ function main() {
       rec.article = truncateWords(rec.article, 120);
       rec.timeline = truncateWords(rec.timeline, 80);
     }
+    // Sectors/systems and the mechanism-based climate call are derived AFTER
+    // field overrides (they read target_text and article), and a reviewer can
+    // still override either explicitly.
+    const sec = sectorsOf(rec);
+    const clim = climateOf(rec);
+    rec.sectors = ov?.set?.sectors ?? sec.sectors;
+    rec.sector_evidence = sec.evidence;
+    const ovClimate = ov?.set?.climate_relevance;
+    rec.climate_relevance = ovClimate ?? clim.relevance;
+    // Where a reviewer's call differs from the mechanism read (typically a
+    // sub-point whose mechanism sits in the provision above it), the argument
+    // says so rather than silently contradicting the column beside it.
+    const CLIMATE_WORD = { mitigation: 'Mitigation', adaptation: 'Adaptation', both: 'Mitigation + adaptation', none: 'Neither' };
+    rec.climate_argument = ov?.set?.climate_argument
+      ?? (ovClimate && ovClimate !== clim.relevance
+        ? `${CLIMATE_WORD[ovClimate]} — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: ${clim.argument[0].toLowerCase()}${clim.argument.slice(1)}`
+        : clim.argument);
     // Relevance lens: computed AFTER field overrides so it reflects the corrected
     // climate_relevance/type/label, unless a reviewer set `relevant` explicitly.
     if (!(ov && ov.set && Object.prototype.hasOwnProperty.call(ov.set, 'relevant'))) {
@@ -353,6 +379,12 @@ function main() {
     list.forEach((r, i) => { r.target_number = i + 1; });
     out.push(...list);
   }
+
+  // Cross-policy duplicate / near-duplicate target texts (a target restated by
+  // another act, or a communication collating a target set in legislation).
+  const titles = new Map([...policies.values()].map((p) => [p.id, [p.title, p.short_title].filter(Boolean)]));
+  const dupes = duplicatesOf(out, titles);
+  out.forEach((r, i) => { r.duplicate_of = dupes[i]; });
 
   const tally = (key) => out.reduce((m, t) => ((m[t[key]] = (m[t[key]] || 0) + 1), m), {});
 
