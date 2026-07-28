@@ -53,6 +53,11 @@ const TOL = 0.02;
 
 const GHG = { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG' };
 const crf = code => ({ dataset: 'env_air_gge', filters: { ...GHG, src_crf: code } });
+/** Gross electricity production by fuel (Eurostat nrg_bal_peh, GWh). */
+const peh = siecs => ({
+  dataset: 'nrg_bal_peh',
+  sum: siecs.map(siec => ({ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'GEP', siec })),
+});
 
 /**
  * The report's own input columns, mapped to the publisher series they came
@@ -112,6 +117,39 @@ const REPORT_INPUTS = {
     'Fertilizer use': crf('CRF3D'),
     // the report's residual: total agriculture less the three named categories
     'Other': { residual: { total: crf('CRF3'), minus: ['CRF3A', 'CRF3B', 'CRF3D'] } },
+  },
+  // Electricity-mix shares: the report's own columns are Eurostat's gross
+  // electricity production by fuel, which is still published. These are
+  // headline KPIs and there was never a reason not to continue them.
+  'esabcc-e2-res-noBio-power-share': {
+    'Renewable - hydro': peh(['RA100']),
+    'Renewable - solar': peh(['RA410', 'RA420']),   // RA400 was split by Eurostat
+    'Renewable - wind': peh(['RA300']),
+    'Renewable - other non-bio': peh(['RA200', 'RA500']),
+    'Total': peh(['TOTAL']),
+  },
+  'esabcc-e2-fossil-power-share': {
+    'Solid fossil fuels': peh(['C0000X0350-0370', 'P1000', 'S2000']),
+    'Natural & manufactured gases': peh(['G3000']),
+    'Oil products & other fossils': peh(['O4000XBIO']),
+    'Total': peh(['TOTAL']),
+  },
+  'esabcc-o3-gross-inland': {
+    'Gross inland (ktoe)': {
+      dataset: 'nrg_bal_c',
+      filters: { geo: 'EU27_2020', unit: 'KTOE', freq: 'A', nrg_bal: 'GIC', siec: 'TOTAL' },
+    },
+    'ktoe → TWh': { carryForward: true },
+  },
+  'esabcc-i6-industry-electrification': {
+    'Electricity (raw input)': {
+      dataset: 'nrg_bal_c',
+      filters: { geo: 'EU27_2020', unit: 'KTOE', freq: 'A', nrg_bal: 'FC_IND_E', siec: 'E7000' },
+    },
+    'Total': {
+      dataset: 'nrg_bal_c',
+      filters: { geo: 'EU27_2020', unit: 'KTOE', freq: 'A', nrg_bal: 'FC_IND_E', siec: 'TOTAL' },
+    },
   },
   'esabcc-o2-pec': {
     'PEC (Mtoe)': {
@@ -212,7 +250,36 @@ function parseLayouts(sql) {
 }
 
 // ── the report's own formula engine (same semantics as the app) ─────────────
-const { computeValues } = await import('./report-way-eval.mjs');
+const { computeValues, columnExpr } = await import('./report-way-eval.mjs');
+
+/**
+ * I6's seeded grid has two columns whose headers differ only in case
+ * ("electricity" derived from "Electricity"), so the case-insensitive lookup
+ * resolves the reference back to the derived column itself and the whole grid
+ * computes blank. Migration 079 repairs this in the database; repair it here
+ * too, or the report's own derivation cannot be evaluated at all.
+ */
+function fixSelfReferences(layout) {
+  const headers = layout.columns.map(c => c.header);
+  const lower = headers.map(h => h.trim().toLowerCase());
+  for (let i = 0; i < layout.columns.length; i++) {
+    const expr = columnExpr(layout.columns[i].formula);
+    if (!expr) continue;
+    let next = expr;
+    for (const m of expr.matchAll(/\[([^\]]+)\]/g)) {
+      const name = m[1].trim().toLowerCase();
+      if (lower.indexOf(name) !== i) continue;
+      const j = lower.indexOf(name, i + 1);
+      if (j < 0) continue;
+      const renamed = `${layout.columns[j].header} (raw input)`;
+      layout.columns[j] = { ...layout.columns[j], header: renamed };
+      lower[j] = renamed.toLowerCase();
+      next = next.split(`[${m[1]}]`).join(`[${renamed}]`);
+    }
+    if (next !== expr) layout.columns[i] = { ...layout.columns[i], formula: { expr: next } };
+  }
+  return layout;
+}
 
 async function main() {
   const inds = parseIndicators(await readFile(TS_FILE, 'utf8'))
@@ -231,6 +298,7 @@ async function main() {
       results.push({ id: iid, code: ind?.code, status: 'NO LAYOUT' });
       continue;
     }
+    fixSelfReferences(layout);
     const headers = layout.columns.map(c => c.header);
     const have = new Set(layout.rows.map(r => r.year));
     const missing = ind.data.map(p => p.year).filter(y => !have.has(y)).sort((a, b) => a - b);
@@ -316,9 +384,19 @@ async function main() {
 
     // Verify: the report's own formula, over the refreshed inputs.
     const got = computeValues(extended);
+    // The share grids compute a fraction while the plotted series is stored as
+    // a percent number (migrations 058 / 075 / 076 rescaled the points, not the
+    // layouts). Detect that from the report years and compare like with like.
+    let display = 1;
+    {
+      const ratios = ind.data
+        .filter(p => Number.isFinite(got[p.year]) && got[p.year] !== 0)
+        .map(p => p.value / got[p.year]);
+      if (ratios.length >= 3 && ratios.every(r => Math.abs(r - 100) / 100 < 0.05)) display = 100;
+    }
     const rows = added.map(y => {
       const stored = ind.data.find(p => p.year === y)?.value;
-      const v = got[y];
+      const v = Number.isFinite(got[y]) ? got[y] * display : got[y];
       const rel = (Number.isFinite(v) && Number.isFinite(stored) && stored !== 0)
         ? Math.abs(v - stored) / Math.abs(stored) : null;
       return { year: y, reportWay: Number.isFinite(v) ? round(v, 3) : null, stored, rel };
@@ -330,7 +408,8 @@ async function main() {
     const drift = Math.max(0, ...live.map(c => Math.abs(c.drift ?? 0)));
     filled[iid] = { layout: extended, rows,
       columns: live.map(c => ({ header: c.header, scale: c.scale, vintageDrift: c.drift })) };
-    results.push({ id: iid, code: ind.code, status, years: added, worst, rows, anchor, drift });
+    results.push({ id: iid, code: ind.code, status, years: added, worst, rows, anchor, drift,
+                   percentScale: display === 100 });
     const mark = status === 'MATCHES' ? '✓' : status === 'DIFFERS' ? '≠' : '!';
     console.log(`${mark} ${(ind.code ?? iid).padEnd(12)} ${status.padEnd(8)} ${added.join(',')}` +
                 `  [vintage drift at ${anchor}: ${(drift * 100).toFixed(1)}%]` +
