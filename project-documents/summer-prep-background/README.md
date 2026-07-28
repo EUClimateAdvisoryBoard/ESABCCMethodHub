@@ -32,6 +32,13 @@ the join is partly basis, not movement. Full detail, including what to do about
 each, is in `docs-internal/indicator-postreport-factcheck-2026-07-27.md`; the
 verdict per point is also in the workbook itself.
 
+## The same derivations are in the Hub
+
+Migration `080_report_way_calc_rows.sql` puts the eleven report-way derivations
+into the Hub's calc space, so opening an indicator's "Edit data / calc" shows the
+report's own formula continued into 2022–2024 — the workbook and the Hub carry
+the same thing. It needs applying to the database like any other migration.
+
 ## Rebuilding them
 
 ```bash

@@ -37,6 +37,23 @@ plotted value within 2 %. The series is continuous in method as well as in numbe
 because that value was produced by the year-on-year splice rather than by the report's method.
 The report-way figure is the one to prefer; the difference is stated so the choice is visible.
 
+## In the Method Hub
+
+Migration `080_report_way_calc_rows.sql` writes these eleven layouts into
+`pw_indicator_sheets`, so the Hub's own calc editor shows the report's derivation
+continued — not only the offline workbook. It supersedes migration 079 for these
+eleven indicators; everything 079 did for the rest stands.
+
+Verified against the app's own formula engine before writing: 11 layouts, no blank
+cells, every report year reproduced (B1 2022 excepted and documented — that year
+was missing from the seeded grid and the current inventory vintage differs by
+2.8%).
+
+Where the report's method disagrees with the plotted point, the derivation text
+in the Hub says so, names both figures, and explains that the plotted one came
+from the splice. The plotted points are **not** changed: which basis a series
+should carry is the indicator owner's call.
+
 ## Indicators this cannot cover
 
 The report's derivation can only be continued where its own inputs still have a feed. It cannot
