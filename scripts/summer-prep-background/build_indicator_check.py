@@ -305,9 +305,10 @@ def build(data, calc, factcheck, out_path=None, wb=None):
     ov.cell(row=fr, column=1, value="Overview figures").font = H2_FONT
     fr += 1
     # The label goes in column B — the wide "Indicator" column — so the names
-    # are readable in the sheet as well as in the figure.
-    header_row(ov, fr, ["", "Indicator (largest moves)", "Change % vs report baseline",
-                        "", "", "", "", "", "", "", "", "", ""], height=20)
+    # are readable in the sheet as well as in the figure. Painted only across
+    # the 3 columns this mini-table uses: the figure is anchored at column E,
+    # and a wider band would sit underneath it.
+    header_row(ov, fr, ["", "Indicator (largest moves)", "Change % vs report baseline"], height=20)
     m_first = fr + 1
     for n, ind in enumerate(reversed(movers)):  # smallest first → largest on top of a bar chart
         rd = reads[ind["id"]]
@@ -336,8 +337,11 @@ def build(data, calc, factcheck, out_path=None, wb=None):
 
     # Overview figure 2 — coverage per chapter.
     cr = m_last + 3
+    # Same reasoning as the movers header just above: painted only across the
+    # 4 columns this mini-table uses, not the full 13-column width, so the
+    # figure anchored at column E lands on empty cells.
     header_row(ov, cr, ["", "Chapter", "With new data since the report",
-                        "Still at the report figure", "", "", "", "", "", "", "", "", ""], height=28)
+                        "Still at the report figure"], height=28)
     c_first = cr + 1
     for n, cat in enumerate(cats):
         up = sum(1 for i in by_cat[cat] if reads[i["id"]]["post"])
@@ -428,8 +432,11 @@ def build(data, calc, factcheck, out_path=None, wb=None):
             c.alignment = Alignment(vertical="top", wrap_text=True)
             sh.merge_cells(start_row=r, start_column=1, end_row=r, end_column=4)
             r += 1
-            header_row(sh, r, ["Year", "In the 2024 report", "Added since the report", "", "", "", "", "", "", "", ""],
-                       height=28)
+            # Painted only across the 3 columns the table actually uses — the
+            # figure sits at column E, and a header band running wider than
+            # the table would float underneath it (a chart's anchor must land
+            # on genuinely empty cells, not just visually-blank ones).
+            header_row(sh, r, ["Year", "In the 2024 report", "Added since the report"], height=28)
             t_head = r
             r += 1
             t_first = r
@@ -469,7 +476,8 @@ def build(data, calc, factcheck, out_path=None, wb=None):
             ch.add_data(Reference(sh, min_col=2, max_col=3, min_row=t_head, max_row=t_last),
                         titles_from_data=True)
             ch.set_categories(Reference(sh, min_col=1, min_row=t_first, max_row=t_last))
-            style_chart(ch, f"{ind.get('code')} — {ind['name']}", height=6.6, width=13.5)
+            style_chart(ch, f"{ind.get('code')} — {ind['name']}", height=6.6, width=13.5,
+                       y_number_format="#,##0")
             ch.y_axis.title = ind["unit"]
             ch.series[0].graphicalProperties.line.solidFill = color
             ch.series[0].graphicalProperties.line.width = 22000

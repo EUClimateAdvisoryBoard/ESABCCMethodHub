@@ -304,6 +304,87 @@ def check_combined(outdir):
     check(doi_links > 0, f"combined workbook carries DOI hyperlinks ({doi_links})")
 
 
+def assert_no_chart_overlap(ws):
+    """
+    Every floating chart's anchor bounding box, expressed as the cells it
+    covers — and flagged if any of those cells carries a value or a painted
+    (non-default) fill. A chart that lands on such a cell sits visually on
+    top of table content instead of in genuinely empty space.
+
+    Only `OneCellAnchor` charts are handled (what `ws.add_chart(chart, "E10")`
+    produces, and the only anchor kind these builders use): the top-left cell
+    comes straight off the anchor, and the bottom-right is derived by walking
+    forward from it, accumulating column widths / row heights in EMU until
+    the chart's own `ext.cx` / `ext.cy` (its width/height) is used up — the
+    same arithmetic Excel itself uses to lay the chart over the grid.
+    Column widths absent a custom `column_dimensions` entry, and row heights
+    absent a custom `row_dimensions` entry, fall back to Excel's own defaults
+    (8.43 characters, 15 points).
+
+    Returns a list of "Sheet!Cell" overlap strings — empty if the sheet is
+    clean.
+    """
+    from openpyxl.utils import get_column_letter
+
+    def col_width_emu(col0):
+        letter = get_column_letter(col0 + 1)
+        dim = ws.column_dimensions.get(letter)
+        width = dim.width if (dim and dim.width) else 8.43
+        return (width * 7 + 5) * 9525  # chars -> px (MDW=7) -> EMU (96 dpi)
+
+    def row_height_emu(row0):
+        dim = ws.row_dimensions.get(row0 + 1)
+        height = dim.height if (dim and dim.height) else 15
+        return height * 12700  # points -> EMU
+
+    def is_content(cell):
+        has_value = cell.value is not None and cell.value != ""
+        fill = cell.fill
+        has_fill = fill is not None and fill.fill_type is not None
+        return has_value or has_fill
+
+    problems = []
+    for ch in getattr(ws, "_charts", []):
+        anchor = ch.anchor
+        frm = getattr(anchor, "_from", None)
+        ext = getattr(anchor, "ext", None)
+        if frm is None or ext is None:
+            continue  # not a OneCellAnchor — not what these builders emit
+        col0, row0 = frm.col, frm.row
+
+        remaining = ext.cx
+        c = col0
+        while remaining > 0:
+            remaining -= col_width_emu(c)
+            c += 1
+        last_col = c - 1
+
+        remaining = ext.cy
+        rr = row0
+        while remaining > 0:
+            remaining -= row_height_emu(rr)
+            rr += 1
+        last_row = rr - 1
+
+        for r in range(row0 + 1, last_row + 2):
+            for c2 in range(col0 + 1, last_col + 2):
+                cell = ws.cell(row=r, column=c2)
+                if is_content(cell):
+                    problems.append(f"{ws.title}!{cell.coordinate}")
+    return problems
+
+
+def check_no_chart_overlap(path):
+    """No chart in any sheet of `path` floats on top of table content."""
+    wb = load_workbook(path)
+    problems = []
+    for ws in wb.worksheets:
+        problems.extend(assert_no_chart_overlap(ws))
+    check(not problems,
+          f"{Path(path).name}: no chart sits on top of table content "
+          f"({len(problems)} overlapping cells; e.g. {problems[:5]})")
+
+
 def check_no_errors(path):
     wb = load_workbook(path)
     bad = []
@@ -348,6 +429,19 @@ def main(data_path, calc_path, outdir, template):
     for f in out.glob("*.xlsx"):
         check_no_errors(f)
         check_chart_categories(f)
+
+    # Chart-overlap check: scoped to the workbooks this script builds. (The
+    # Policy-Gap tracker and sector-gap workbooks are out of scope for this
+    # fix and are not rebuilt here, so they are left out of this check too.)
+    for name in [
+        "ESABCC_Indicator-Check_2026-07.xlsx",
+        "ESABCC_Indicator-New-Data-Overview_2026-07.xlsx",
+        "ESABCC_Indicators-Old-vs-New-with-derivations_2026-07.xlsx",
+        "ESABCC_Indicator-Combined_2026-07.xlsx",
+    ]:
+        p = out / name
+        if p.exists():
+            check_no_chart_overlap(p)
 
     # The July-2026 content fact-check must actually reach the documents — an
     # earlier run rebuilt them from a stale extract and silently shipped the

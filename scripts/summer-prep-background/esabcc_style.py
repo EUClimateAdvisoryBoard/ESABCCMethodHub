@@ -181,8 +181,18 @@ def text_categories(chart, ws, col, first_row, last_row):
     return chart
 
 
-def style_chart(chart, title, height=7.5, width=17):
-    """Common chart chrome: ESABCC teal title, no border, light gridlines."""
+def style_chart(chart, title, height=7.5, width=17, y_number_format=None):
+    """
+    Common chart chrome: ESABCC teal title, no border, light gridlines.
+
+    `y_number_format`, when given, sets a compact number format on the value
+    (y) axis — e.g. "#,##0". Left at the default None, the axis is untouched
+    and keeps Excel's own source-linked format (right for charts whose cells
+    already carry the format that should show, such as the "0%" bars). Pass
+    it explicitly for a chart whose value axis would otherwise show
+    long-decimal ticks (e.g. "5.000,00") that collide with a rotated axis
+    title — the small per-indicator line charts being the case in point.
+    """
     from openpyxl.chart.text import RichText
     from openpyxl.drawing.text import (
         CharacterProperties, Font as DrawingFont, Paragraph, ParagraphProperties,
@@ -211,6 +221,8 @@ def style_chart(chart, title, height=7.5, width=17):
         # without its tick labels — the chart appears with bars but no names.
         ax.delete = False
         ax.tickLblPos = "nextTo"
+    if y_number_format:
+        chart.y_axis.number_format = y_number_format
     chart.graphical_properties = GraphicalProperties(ln=LineProperties(noFill=True))
     if chart.legend is not None:
         chart.legend.overlay = False

@@ -186,8 +186,9 @@ def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The 
     cr = last + 5
     ws.cell(row=cr, column=1, value="Coverage — how much of each chapter has new data").font = H2_FONT
     cr += 1
-    header_row(ws, cr, ["", "Chapter", "With new data", "Still at the report figure",
-                        "", "", "", "", "", "", ""], height=22)
+    # Painted only across the 4 columns this mini-table uses — the figure is
+    # anchored at column F, and a wider band would sit underneath it.
+    header_row(ws, cr, ["", "Chapter", "With new data", "Still at the report figure"], height=22)
     c_first = cr + 1
     for n, cat in enumerate(cats):
         up, still = by_cat[cat]
