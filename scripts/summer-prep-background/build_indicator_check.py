@@ -127,7 +127,7 @@ def factcheck_index(factcheck):
     return out
 
 
-def build(data, calc, factcheck, out_path=None, wb=None):
+def build(data, calc, factcheck, out_path=None, wb=None, wire_targets=None):
     """
     Render the Indicator Check workbook.
 
@@ -137,6 +137,14 @@ def build(data, calc, factcheck, out_path=None, wb=None):
     Embedded (combined workbook): pass an existing `wb` — its sheets are
     appended to (no "Read me" of its own; the caller supplies one merged
     "Read me" instead), and nothing is saved here. `out_path` is ignored.
+
+    `wire_targets`, when given a list, has one dict appended per Overview
+    latest-value cell, chapter-tab "In the 2024 report" / "Added since the
+    report" cell, and Data (long) Value cell this build writes —
+    {"sheet", "row", "col", "id", "year"} — for the combined workbook's
+    derivation-wiring pass to rewrite into a cross-sheet formula wherever a
+    Derivations block covers that (indicator, year). Left None (the default,
+    and always so outside the combined workbook), nothing is recorded.
     """
     standalone = wb is None
     inds = [i for i in data["indicators"]]
@@ -276,6 +284,9 @@ def build(data, calc, factcheck, out_path=None, wb=None):
             if rd["post"] else "—",
             ind.get("source") or "",
         ], band=(n % 2 == 0), height=15)
+        if wire_targets is not None and l:
+            wire_targets.append({"sheet": ov.title, "row": row, "col": 8,
+                                 "id": ind["id"], "year": l["year"]})
         ov.cell(row=row, column=1).font = Font(name=FONT_SEMI, size=9,
                                                color=CATEGORY_COLOR.get(ind["category"], TEAL))
         for col in (5, 7, 11):
@@ -450,6 +461,10 @@ def build(data, calc, factcheck, out_path=None, wb=None):
                     None if is_post else d["value"],
                     d["value"] if is_post else None,
                 ], band=(n % 2 == 0), height=14)
+                if wire_targets is not None:
+                    wire_targets.append({"sheet": sh.title, "row": r + n,
+                                         "col": 3 if is_post else 2,
+                                         "id": ind["id"], "year": d["year"]})
                 for col in (1, 2, 3):
                     sh.cell(row=r + n, column=col).alignment = Alignment(horizontal="right", vertical="center")
                 sh.cell(row=r + n, column=1).number_format = "0"
@@ -459,6 +474,10 @@ def build(data, calc, factcheck, out_path=None, wb=None):
             if last_pre_idx is not None and rd["post"]:
                 sh.cell(row=t_first + last_pre_idx, column=3,
                         value=data_rows[last_pre_idx]["value"]).number_format = "#,##0.00"
+                if wire_targets is not None:
+                    wire_targets.append({"sheet": sh.title, "row": t_first + last_pre_idx,
+                                         "col": 3, "id": ind["id"],
+                                         "year": data_rows[last_pre_idx]["year"]})
             t_last = t_first + len(data_rows) - 1
 
             if len(data_rows) < 2:
@@ -511,6 +530,9 @@ def build(data, calc, factcheck, out_path=None, wb=None):
                 "Added since the report" if post else "In the 2024 report",
                 ind.get("source") or "", ind["id"],
             ], band=(row % 2 == 0), height=14)
+            if wire_targets is not None:
+                wire_targets.append({"sheet": lg.title, "row": row, "col": 6,
+                                     "id": ind["id"], "year": d["year"]})
             lg.cell(row=row, column=5).number_format = "0"
             lg.cell(row=row, column=6).number_format = "#,##0.000"
             lg.cell(row=row, column=7).font = Font(name=FONT_SEMI, size=9,

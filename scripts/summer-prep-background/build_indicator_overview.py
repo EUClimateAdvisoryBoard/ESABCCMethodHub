@@ -85,7 +85,8 @@ def read(ind):
 
 # ── A. the one big figure ───────────────────────────────────────────────────
 
-def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The one big figure"):
+def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The one big figure",
+                            wire_targets=None):
     """
     Render the "everything that has moved" figure.
 
@@ -93,6 +94,13 @@ def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The 
     saved to `out_path`. Embedded: pass an existing `wb` — the sheet is
     appended under `title` (the combined workbook uses "New data") and
     nothing is saved here.
+
+    `wire_targets`, when given a list, has one dict appended per baseline and
+    latest-value cell this sheet writes — {"sheet", "row", "col", "id",
+    "year"} — for the combined workbook's derivation-wiring pass to rewrite
+    into a cross-sheet formula where a Derivations block covers that
+    (indicator, year). Left None (the default, and always so outside the
+    combined workbook), nothing is recorded and this sheet is unchanged.
     """
     standalone = wb is None
     if standalone:
@@ -136,6 +144,11 @@ def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The 
             l["value"] - b["value"], rd["pct"] / 100,
             VERDICT_SHORT.get(v, "—"),
         ], band=(n % 2 == 0), height=15)
+        if wire_targets is not None:
+            wire_targets.append({"sheet": ws.title, "row": row, "col": 6,
+                                 "id": ind["id"], "year": b["year"]})
+            wire_targets.append({"sheet": ws.title, "row": row, "col": 8,
+                                 "id": ind["id"], "year": l["year"]})
         ws.cell(row=row, column=1).font = Font(name=FONT_SEMI, size=9,
                                                color=CATEGORY_COLOR.get(ind["category"], TEAL))
         for c in (5, 7):
@@ -246,7 +259,8 @@ def derivation_kind(iid, calc, reportway):
     return "switched" if expr.startswith("IF(") else "reconstructed"
 
 
-def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None):
+def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None,
+                     wire_targets=None, derivation_map=None):
     """
     Render the Old-vs-New-with-derivations workbook.
 
@@ -256,6 +270,16 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None):
     Embedded (combined workbook): pass an existing `wb` — its sheets are
     appended to (no "Read me" of its own), and nothing is saved here.
     `out_path` is ignored.
+
+    `wire_targets`, when given a list, has one dict appended per report-value
+    and latest-value cell the "Old vs new" sheet writes — see
+    `build_new_data_overview` for the shape.
+
+    `derivation_map`, when given a dict, is filled with
+    `(indicator id, year) -> Derivations row number` for every Value cell
+    this call writes into the Derivations sheet — the single source of truth
+    the combined workbook's wiring pass rewrites every matching cell
+    elsewhere to reference, instead of re-parsing `calc`/`reportway` itself.
     """
     standalone = wb is None
     if standalone:
@@ -343,6 +367,13 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None):
             how, VERDICT_SHORT.get(v, "—") if has_new else "—",
             ind.get("source") or "",
         ], band=(n % 2 == 0), height=15)
+        if wire_targets is not None:
+            if b:
+                wire_targets.append({"sheet": ov.title, "row": r + n, "col": 6,
+                                     "id": ind["id"], "year": b["year"]})
+            if l:
+                wire_targets.append({"sheet": ov.title, "row": r + n, "col": 8,
+                                     "id": ind["id"], "year": l["year"]})
         ov.cell(row=r + n, column=1).font = Font(name=FONT_SEMI, size=9,
                                                  color=CATEGORY_COLOR.get(ind["category"], TEAL))
         for c in (5, 7):
@@ -454,6 +485,11 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None):
                     cell.font = Font(name=FONT, size=9, color=INK, bold=(ci == 0))
                 cell.number_format = "#,##0.000"
                 cell.alignment = Alignment(horizontal="right", vertical="center")
+            if derivation_map is not None:
+                # column B is always the Value column (columns[0]) — the
+                # single source of truth every other sheet's wiring pass
+                # points at for this (indicator, year).
+                derivation_map[(ind["id"], rowdata["year"])] = r
             r += 1
         r += 2
     note_line(dv, r, "Notes: a formula of the form =IF(A…>=2023, ROUND(<live-source recipe>), <report recipe>) "

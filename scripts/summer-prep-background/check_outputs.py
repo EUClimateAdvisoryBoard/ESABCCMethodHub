@@ -24,6 +24,8 @@ from pathlib import Path
 
 from openpyxl import load_workbook
 
+import formula_eval
+
 FAIL = []
 OK = []
 
@@ -283,9 +285,13 @@ def check_combined(outdir):
           f"combined workbook opens on one merged Read me ({wb.sheetnames[:1]})")
     check(wb.sheetnames.count("Read me") == 1,
           "combined workbook carries exactly one Read me (no per-section duplicates)")
-    for name in ["Overview", "Data (long)", "Where the data comes from", "New data",
-                 "Old vs new", "Derivations", "Sources"]:
+    check(len(wb.sheetnames) > 1 and wb.sheetnames[1] == "Dashboard",
+          f"Dashboard is the first content sheet, right after Read me ({wb.sheetnames[:2]})")
+    for name in ["Dashboard", "Dashboard data", "Overview", "Data (long)",
+                 "Where the data comes from", "New data", "Old vs new", "Derivations", "Sources"]:
         check(name in wb.sheetnames, f"combined workbook carries the {name!r} sheet")
+    check(wb["Dashboard data"].sheet_state == "hidden",
+          "the Dashboard's data sheet is hidden, not part of the visible reading order")
 
     dv = wb["Derivations"]
     formulas = sum(1 for row in dv.iter_rows() for c in row
@@ -294,6 +300,8 @@ def check_combined(outdir):
 
     charts = sum(len(wb[s]._charts) for s in wb.sheetnames)
     check(charts > 0, f"combined workbook carries its charts ({charts})")
+    check(len(wb["Dashboard"]._charts) >= 4,
+          f"Dashboard carries its charts ({len(wb['Dashboard']._charts)})")
 
     doi_links = 0
     for name in wb.sheetnames:
@@ -302,6 +310,92 @@ def check_combined(outdir):
                 if c.hyperlink is not None and "doi.org" in (c.hyperlink.target or ""):
                     doi_links += 1
     check(doi_links > 0, f"combined workbook carries DOI hyperlinks ({doi_links})")
+
+
+def check_derivation_wiring(path, data):
+    """
+    Combined workbook only, gated on the file existing (see `check_combined`).
+
+    Feature 1's wiring pass rewrites value cells elsewhere in the workbook as
+    `='Derivations'!B<row>` wherever the referenced Value cell already agreed
+    with the stored data point closely enough to be worth wiring. This check
+    re-derives the file exactly as shipped — no cached formula results exist
+    (`fullCalcOnLoad` stands in for Excel's own recalculation), so every
+    number here comes from walking the formulas themselves, the same way
+    Excel would on open:
+
+      (a) every Derivations row that some wired cell actually targets
+          evaluates, independent of any cache, to a value that agrees with
+          data.json for that indicator/year within rounding (0.5%);
+      (b) at least one cell was actually wired, and the count is reported.
+    """
+    if not path.exists():
+        return
+    wb = load_workbook(path)
+    if "Derivations" not in wb.sheetnames:
+        return
+
+    # Reconstruct (code, year) -> Derivations row from the sheet's own block
+    # titles ("CODE · name (unit)") and Year column — read back from the
+    # shipped file, not re-parsed from the generator's calc_excel.json/
+    # reportway.json, so this exercises what actually ships.
+    dv = wb["Derivations"]
+    row_of_code_year = {}
+    cur_code = None
+    for row in dv.iter_rows(min_row=1, max_row=dv.max_row, max_col=1):
+        v0 = row[0].value
+        if isinstance(v0, str) and " · " in v0 and not v0.startswith(("Derivation", "Refreshed")):
+            cur_code = v0.split(" · ", 1)[0].strip()
+        elif isinstance(v0, int) and cur_code is not None:
+            row_of_code_year[(cur_code, v0)] = row[0].row
+
+    # Every cross-sheet reference into Derivations, wherever it appears.
+    wire_re = re.compile(r"^='Derivations'!B(\d+)$")
+    wired_cells = 0
+    targeted_rows = set()
+    for name in wb.sheetnames:
+        if name in ("Derivations",):
+            continue
+        for row in wb[name].iter_rows():
+            for c in row:
+                if isinstance(c.value, str):
+                    m = wire_re.match(c.value)
+                    if m:
+                        wired_cells += 1
+                        targeted_rows.add(int(m.group(1)))
+    check(wired_cells > 0, f"combined workbook: {wired_cells} cells wired to Derivations as cross-sheet formulas")
+
+    row_to_code_year = {r: cy for cy, r in row_of_code_year.items()}
+    inds_by_code = {i.get("code"): i for i in data["indicators"]}
+    cache = {}
+    checked, bad = 0, []
+    for r in targeted_rows:
+        cy = row_to_code_year.get(r)
+        if cy is None:
+            bad.append(f"row {r}: not inside any recognised derivation block")
+            continue
+        code, year = cy
+        ind = inds_by_code.get(code)
+        point = next((d for d in ind["data"] if d["year"] == year), None) if ind else None
+        if point is None:
+            continue
+        try:
+            derived = formula_eval.evaluate_cell(wb, "Derivations", r, "B", cache)
+        except formula_eval.FormulaError as e:
+            bad.append(f"{code}/{year} (row {r}): {e}")
+            continue
+        if derived is None or not isinstance(derived, (int, float)):
+            bad.append(f"{code}/{year} (row {r}): derived {derived!r}")
+            continue
+        actual = point["value"]
+        denom = abs(actual) if actual else 1
+        pct = abs(derived - actual) / denom * 100 if actual else (0 if abs(derived) < 1e-9 else 100)
+        checked += 1
+        if pct > 0.5:
+            bad.append(f"{code}/{year} (row {r}): derived {derived:.4g} vs data.json {actual} ({pct:.1f}%)")
+    check(checked > 0, f"combined workbook: {checked} wired-to Derivations rows re-derived independently")
+    check(not bad, f"every wired-to Derivations row agrees with data.json within 0.5% ({len(bad)} off; "
+                   f"e.g. {bad[:5]})")
 
 
 def assert_no_chart_overlap(ws):
@@ -426,6 +520,7 @@ def main(data_path, calc_path, outdir, template):
     check_indicator_check(out / "ESABCC_Indicator-Check_2026-07.xlsx", data, calc)
     check_overviews(out, data, calc)
     check_combined(out)
+    check_derivation_wiring(out / "ESABCC_Indicator-Combined_2026-07.xlsx", data)
     for f in out.glob("*.xlsx"):
         check_no_errors(f)
         check_chart_categories(f)
