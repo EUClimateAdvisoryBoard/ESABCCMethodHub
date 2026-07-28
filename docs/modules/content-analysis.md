@@ -344,18 +344,36 @@ analysis.
 Within the tab, a **By category / By hierarchy** toggle switches between two
 readings of the same per-system data (`PolicyHierarchyDiagram`). By category
 is the four-column NATO grid above; by hierarchy re-slices the same items
-into a cascade — each system's overarching framework acts (the European
-Climate Law, the Green Deal, Fit for 55, and, for agri-food, the CAP
-Strategic Plans Regulation) at the top, the sector-specific policies that
-turn those into binding obligations in the middle, and the implementation
-instruments that fund, guide, or institutionally support delivery at the
-bottom. Every non-framework item carries a `tier` (`sector` | `instrument`)
-and `parents` (the framework/sector ids it derives from or supports) in
-`policy-clustering.ts`; clicking a box traces its full lineage up and down
-the chain (via `ancestorsOf`/`descendantsOf`), dimming everything unrelated
-and drawing the connecting lines with an SVG overlay recomputed on resize.
-The relevance filter (Mitigation/Adaptation/Both) applies to this view too,
-dimming non-matching instruments and sector policies.
+into a cascade ordered strictly by how cross-cutting an act's reach is, top
+to bottom:
+
+1. **Economy-wide framework** (`ClusterSystem.frameworks`) — cuts across the
+   whole economy: the European Climate Law (legislation), and the Green Deal
+   / Fit for 55 (same breadth, but non-binding strategy/package labels).
+2. **Sector framework legislation** (`tier: 'sector-framework'`) — the one
+   master regulation structuring most of *this* system: the Governance
+   Regulation's NECPs for energy, the EPBD for buildings, the CAP Strategic
+   Plans Regulation for agri-food.
+3. **Sector-specific policy** (`tier: 'sector-policy'`) — binding acts
+   setting a headline target/price/standard for a defined slice of the
+   system (RED III, EU ETS, LULUCF, …).
+4. **Implementation instrument** (`tier: 'instrument'`) — narrow/technical
+   legislation (e.g. TEN-E permitting, Construction Products Regulation)
+   plus every non-legislative fund, platform, report, guideline or
+   institution.
+
+Every node (framework or item) also carries `legislative: boolean` —
+adopted, binding law vs. a strategy, communication, guideline, report, plan
+or proposal. Non-legislative nodes render with a softer, dashed outline (and
+a dashed connecting line wherever either end of a link is non-legislative)
+so the binding backbone reads clearly at a glance; nothing is removed from
+the picture, since a strategy or a not-yet-adopted proposal is still useful
+context for the coherence analysis. `parents` (in `policy-clustering.ts`)
+encode the cascade; clicking a box traces its full lineage up and down the
+chain (via `ancestorsOf`/`descendantsOf`), dimming everything unrelated and
+drawing the connecting lines with an SVG overlay recomputed on resize. The
+relevance filter (Mitigation/Adaptation/Both) applies to this view too,
+dimming non-matching items.
 
 ### Two-step New Project Wizard
 
