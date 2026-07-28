@@ -9,6 +9,19 @@ the record checked. 151 points across 52 series, verified against live primary
 sources on 2026-07-22 (12 parallel verification agents; Eurostat/EEA via API,
 non-API sources via web).*
 
+> **Superseded for the values (2026-07-27).** The post-report values were
+> re-checked against a fresh source pull on the corrected basis — the
+> report-exact derivations of migration 078, plus three Eurostat recipes that
+> had gone stale and were returning no data at all (renamed EED codes, the
+> `RA400` solar split, the withdrawn `nrg_bal_s` shares). On that basis 114 of
+> 150 points reproduce within 2 %, none is wrong, and the O1 / bovine-herd /
+> E6 / L8 / steel findings below are resolved or retracted. One NEW finding
+> that this audit could not have seen: L7 (and mildly L1) reproduce their
+> source exactly but sit on a different LEVEL than the report years, so the
+> jump at the join is partly basis rather than movement. See
+> `indicator-postreport-factcheck-2026-07-27.md`. The source/link/freshness
+> findings below stand.
+
 This complements `indicator-check-data-provenance-audit-2026-07.md` (which
 audited sources/links/freshness); this audit checks the **values** themselves.
 

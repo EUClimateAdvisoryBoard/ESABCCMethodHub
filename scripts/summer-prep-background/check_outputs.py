@@ -153,12 +153,119 @@ def check_indicator_check(path, data, calc):
     missing = want - seen
     check(not missing, f"every post-report point has its provenance row ({sorted(missing)[:4]})")
 
+    ov_head = [c.value for c in ov[4]]
+    check("Source check (27 Jul 2026)" in ov_head,
+          f"overview carries the fact-check verdict column ({ov_head[-2:]})")
+    verdicts = {r[5].split(" — ")[0] for r in pv.iter_rows(min_row=header + 1, values_only=True)
+                if r[5]}
+    check(verdicts <= {"CONFIRMED", "REVISION", "WRONG", "NO SOURCE YEAR", "NOT CHECKABLE"},
+          f"provenance verdicts are from the fact-check vocabulary ({sorted(verdicts)})")
+
     sourced = 0
     for r in pv.iter_rows(min_row=header + 1, values_only=True):
-        if r[5] and r[7]:
+        if r[6] and r[8]:
             sourced += 1
     check(sourced > 0, f"provenance rows carry a source ({sourced})")
     return wb
+
+
+def check_chart_categories(path):
+    """
+    Every chart whose categories are TEXT must reference them as a string
+    range. openpyxl writes `set_categories` as a numeric reference, and Excel
+    then draws the axis with no labels at all — bars with nothing naming them.
+    """
+    from openpyxl.utils import column_index_from_string
+
+    wb = load_workbook(path)
+    bad = []
+    n = 0
+    with zipfile.ZipFile(path) as z:
+        for name in z.namelist():
+            if not re.match(r"xl/charts/chart\d+\.xml", name):
+                continue
+            n += 1
+            xml = z.read(name).decode("utf8")
+            m = re.search(r"<cat>(.*?)</cat>", xml, re.S)
+            if not m:
+                continue
+            ref = re.search(r"<f>([^<]+)</f>", m.group(1))
+            if not ref:
+                continue
+            sheet, rng = ref.group(1).rsplit("!", 1)
+            # the reference lives in XML, so its sheet name is escaped
+            sheet = (sheet.strip("'").replace("''", "'")
+                     .replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">"))
+            span = re.match(r"\$?([A-Z]+)\$?(\d+)(?::\$?([A-Z]+)\$?(\d+))?$", rng)
+            if not span:
+                bad.append(f"{name}: category reference not understood ({rng})")
+                continue
+            col, first, _, last = span.groups()
+            last = last or first  # a one-row block references a single cell
+            ci = column_index_from_string(col)
+            values = [wb[sheet].cell(row=r, column=ci).value
+                      for r in range(int(first), int(last) + 1)]
+            texts = [v for v in values if isinstance(v, str)]
+            if texts and "strRef" not in m.group(1):
+                bad.append(f"{name}: text categories written as a numeric reference ({texts[0][:30]}…)")
+    check(not bad, f"{Path(path).name}: {n} charts, text categories all referenced as text ({bad[:2]})")
+
+
+def check_overviews(outdir, data, calc):
+    """The two indicator overviews, and that the derivations are live formulas."""
+    inds = data["indicators"]
+
+    wb = load_workbook(outdir / "ESABCC_Indicator-New-Data-Overview_2026-07.xlsx")
+    ws = wb["The one big figure"]
+    updated = [i for i in inds if any(d.get("afterReport") for d in i["data"])]
+    codes = {r[0] for r in ws.iter_rows(min_row=5, max_col=1, values_only=True) if r[0]} - {"Code"}
+    listed = {i.get("code") for i in updated} & codes
+    check(len(listed) >= len(updated) - 1,
+          f"big figure lists the updated indicators ({len(listed)} of {len(updated)})")
+    check(len(ws._charts) == 2, f"big figure sheet carries its two charts ({len(ws._charts)})")
+
+    wb2 = load_workbook(outdir / "ESABCC_Indicators-Old-vs-New-with-derivations_2026-07.xlsx")
+    check(wb2.sheetnames == ["Read me", "Old vs new", "Derivations", "Sources"],
+          f"old-vs-new sheets: {wb2.sheetnames}")
+    ov = wb2["Old vs new"]
+    rows = [r[0] for r in ov.iter_rows(min_row=5, max_col=1, values_only=True)
+            if r[0] and r[0] != "Code"]
+    check(len(rows) == len(inds), f"old-vs-new lists all {len(inds)} indicators (found {len(rows)})")
+
+    # Every Value cell in a derivation block must be a live formula addressing
+    # its own row — a formula pointing at another block would compute nonsense.
+    dv = wb2["Derivations"]
+    checked, stray, plain = 0, [], 0
+    for row in dv.iter_rows(min_row=1, max_row=dv.max_row):
+        if not isinstance(row[0].value, int):
+            continue
+        v = row[1].value
+        if isinstance(v, str) and v.startswith("="):
+            checked += 1
+            refs = re.findall(r"\b[A-Z]{1,2}(\d+)\b", v)
+            if refs and any(int(x) != row[0].row for x in refs):
+                stray.append((row[0].row, v[:60]))
+        elif v is not None:
+            plain += 1
+    check(checked > 500, f"derivation blocks carry live Excel formulas ({checked})")
+
+    # Indicators whose report derivation was continued must NOT carry a
+    # year-switched formula — that would mean a second recipe crept back in.
+    import json as _json
+    rw = _json.load(open(Path(__file__).parent.parent / "esabcc-indicators"
+                         / "report-way-rows.json", encoding="utf8"))["filled"]
+    switched = []
+    for row in dv.iter_rows(min_row=1, max_col=1):
+        v = row[0].value
+        if isinstance(v, str) and v.startswith("Derivation:  Value = IF("):
+            for back in range(1, 6):
+                lbl = dv.cell(row=row[0].row - back, column=1).value
+                if isinstance(lbl, str) and lbl.startswith("SAME DERIVATION AS THE REPORT"):
+                    switched.append(row[0].row)
+    check(not switched,
+          f"no indicator labelled as the report's own derivation carries a year switch ({switched[:3]})")
+    check(len(rw) >= 7, f"the report's derivation is continued for {len(rw)} indicators")
+    check(not stray, f"every derivation formula addresses its own row ({stray[:3]})")
 
 
 def check_no_errors(path):
@@ -200,8 +307,29 @@ def main(data_path, calc_path, outdir, template):
     check_tracker(out / "ESABCC_Policy-Gap-Tracker_2026-07.xlsx", data)
     check_sector_gaps(out / "ESABCC_Policy-Gaps_Transport-Industry_2026-07.xlsx", data)
     check_indicator_check(out / "ESABCC_Indicator-Check_2026-07.xlsx", data, calc)
+    check_overviews(out, data, calc)
     for f in out.glob("*.xlsx"):
         check_no_errors(f)
+        check_chart_categories(f)
+
+    # The July-2026 content fact-check must actually reach the documents — an
+    # earlier run rebuilt them from a stale extract and silently shipped the
+    # pre-fact-check numbers.
+    inds = {i.get("code"): i for i in data["indicators"]}
+    check(inds["B6"].get("targetValue") == 41.5,
+          f"fact-check reached the data: B6 target is {inds['B6'].get('targetValue')} (must be 41.5)")
+    check(inds["T5b"].get("targetValue") == 80000,
+          f"fact-check reached the data: T5b target is {inds['T5b'].get('targetValue')}")
+    check(inds["B4 (population)"]["unit"] == "index (2005 = 1.0)",
+          f"fact-check reached the data: B4 unit is {inds['B4 (population)']['unit']}")
+    gaps = {g["id"]: g for g in data["policyGaps"]["POLICY_GAPS"]}
+    check("IPCEI" not in gaps["energy-hydrogen-support"]["instrument"],
+          "fact-check reached the data: IPCEIs removed from the hydrogen row")
+    syn = {e["id"]: e for e in data["synergies"]["SYNERGIES"]}
+    check("no evidence of a substantial shift" in syn["tr-iww-lowflow"]["mechanism"],
+          "fact-check reached the data: the Rhine entry states its source's actual finding")
+    check(syn["ind-cement-cool-durable"]["kind"] == "mixed",
+          "fact-check reached the data: the cement durability entry is retagged conditional")
     check_docx(out / "ESABCC_Synergies-Trade-offs_Industry-Transport_2026-07.docx", template)
 
     for m in OK:

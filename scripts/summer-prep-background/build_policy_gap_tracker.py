@@ -21,7 +21,8 @@ from openpyxl.worksheet.datavalidation import DataValidation
 from esabcc_style import (
     ACCENT_BLUE, ACCENT_ORANGE, ACCENT_PURPLE, ACCENT_RED, BODY_FONT, GAP_STATUS_COLOR,
     GAP_TYPE_COLOR, H2_FONT, LABEL_FONT, MUTED, NOTE_FONT, SMALL_FONT, TEAL, TEAL_LIGHT,
-    body_row, header_row, note_line, set_widths, sheet_setup, style_chart, title_block,
+    body_row, header_row, note_line, set_widths, sheet_setup, style_chart, text_categories,
+    title_block,
     BODY_FILL, FONT, FONT_SEMI, INK, LINK_FONT, WHITE,
 )
 
@@ -237,6 +238,7 @@ def build(data, out_path):
     chart.add_data(data_ref, titles_from_data=True)
     chart.set_categories(cats)
     style_chart(chart, "Findings per report chapter, by gap type", height=10.5, width=18)
+    text_categories(chart, sm, 1, first_data, total_row - 1)
     chart.y_axis.title = None
     chart.x_axis.title = "Number of findings"
     for series, t in zip(chart.series, type_order):
@@ -265,6 +267,7 @@ def build(data, out_path):
     pie.add_data(Reference(sm, min_col=2, min_row=r2, max_row=status_last), titles_from_data=True)
     pie.set_categories(Reference(sm, min_col=1, min_row=status_first, max_row=status_last))
     style_chart(pie, "Findings by live status", height=7.5, width=13)
+    text_categories(pie, sm, 1, status_first, status_last)
     pie.legend = None
     pie.y_axis.title = "Number of findings"
     ser = pie.series[0]

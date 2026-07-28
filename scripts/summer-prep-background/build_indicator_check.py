@@ -8,7 +8,7 @@ change between them, a figure per indicator, and — behind all of it — the ca
 inputs each post-report number was built from, so no figure on a chart is
 without a visible source.
 
-Usage:  python3 build_indicator_check.py data.json calc.json out.xlsx
+Usage:  python3 build_indicator_check.py data.json calc.json factcheck.json out.xlsx
 """
 
 import json
@@ -25,7 +25,7 @@ from esabcc_style import (
     ACCENT_BLUE, ACCENT_ORANGE, ACCENT_PURPLE, ACCENT_RED, BODY_FILL, BODY_FONT, FONT,
     FONT_LIGHT, FONT_SEMI, H2_FONT, INK, LABEL_FONT, MUTED, RULE, SMALL_FONT, TEAL,
     TEAL_LIGHT, TEAL_PALE, WHITE, body_row, header_row, note_line, set_widths,
-    sheet_setup, style_chart, title_block,
+    sheet_setup, style_chart, text_categories, title_block,
 )
 
 PREPARED = "27 July 2026"
@@ -61,6 +61,20 @@ CATEGORY_COLOR = {
     "finance": "A530B8",
     "fairness": ACCENT_ORANGE,
     "adaptation": "478EA5",
+}
+VERDICT_NOTE = {
+    "CONFIRMED": "Reproduces from the primary source",
+    "REVISION": "2–5% off the source — see the fact-check",
+    "WRONG": "Does not reproduce — see the fact-check",
+    "NO SOURCE YEAR": "The source has no figure for that year yet",
+    "NOT CHECKABLE": "Published figure — source named, not re-derived",
+}
+VERDICT_COLOR = {
+    "CONFIRMED": TEAL,
+    "REVISION": ACCENT_ORANGE,
+    "WRONG": ACCENT_RED,
+    "NO SOURCE YEAR": MUTED,
+    "NOT CHECKABLE": MUTED,
 }
 METHOD_LABEL = {
     "derived": "Derived from the live source",
@@ -98,7 +112,21 @@ def method_of(layout):
     return "reconstructed"
 
 
-def build(data, calc, out_path):
+def factcheck_index(factcheck):
+    """Per indicator: the worst verdict over its points, and how deep the check goes."""
+    order = ["CONFIRMED", "NOT CHECKABLE", "NO SOURCE YEAR", "REVISION", "WRONG"]
+    out = {}
+    for r in factcheck.get("rows", []):
+        cur = out.setdefault(r["id"], {"verdict": "CONFIRMED", "depth": r.get("depth"),
+                                       "points": {}, "join": r.get("join")})
+        if order.index(r["verdict"]) > order.index(cur["verdict"]):
+            cur["verdict"] = r["verdict"]
+        cur["depth"] = cur["depth"] or r.get("depth")
+        cur["points"][r["year"]] = r
+    return out
+
+
+def build(data, calc, factcheck, out_path):
     inds = [i for i in data["indicators"]]
     reads = {i["id"]: read_indicator(i) for i in inds}
     by_cat = defaultdict(list)
@@ -108,6 +136,7 @@ def build(data, calc, out_path):
            [c for c in by_cat if c not in CATEGORY_ORDER]
 
     updated = [i for i in inds if reads[i["id"]]["post"]]
+    fc = factcheck_index(factcheck)
 
     wb = Workbook()
 
@@ -138,8 +167,9 @@ def build(data, calc, out_path):
         ("Data (long)", "Every data point of every indicator in one flat table — indicator, year, value, and "
                         "whether it is a report point or one added since. This is the sheet to pivot or filter."),
         ("Where the data comes from", "For every point added since the report: the calc inputs behind it, the "
-                                      "formula that turns them into the plotted figure, and the exact source "
-                                      "query for each input."),
+                                      "formula that turns them into the plotted figure, the exact source "
+                                      "query for each input, and the 27 July 2026 fact-check verdict — whether "
+                                      "the figure still reproduces from that source today."),
     ]
     header_row(ws, r, ["Sheet", "What it holds", "", "", "", "", "", ""], height=20)
     r += 1
@@ -198,18 +228,18 @@ def build(data, calc, out_path):
     headers = [
         "Code", "Indicator", "Chapter", "Unit", "Report baseline (year)", "Report baseline",
         "Latest (year)", "Latest value", "Change", "Change %", "New points since the report",
-        "Primary source",
+        "Source check (27 Jul 2026)", "Primary source",
     ]
     r = title_block(
         ov,
         "Every indicator, and what has moved",
         "Baseline = the last figure the 2024 report carried; latest = the most recent point in the database. "
         "The change is arithmetic only — no better/worse reading is applied.",
-        width=12,
+        width=13,
     )
     header_row(ov, r, headers, height=34)
     head_row = r
-    set_widths(ov, [12, 46, 16, 14, 13, 13, 11, 12, 11, 11, 13, 34])
+    set_widths(ov, [12, 46, 16, 14, 13, 13, 11, 12, 11, 11, 13, 30, 34])
     r += 1
     first = r
     for n, ind in enumerate(inds):
@@ -229,6 +259,8 @@ def build(data, calc, out_path):
             change,
             rd["pct"] / 100 if rd["pct"] is not None else None,
             len(rd["post"]) or None,
+            (VERDICT_NOTE.get(fc[ind["id"]]["verdict"], "") if ind["id"] in fc else "—")
+            if rd["post"] else "—",
             ind.get("source") or "",
         ], band=(n % 2 == 0), height=15)
         ov.cell(row=row, column=1).font = Font(name=FONT_SEMI, size=9,
@@ -242,9 +274,14 @@ def build(data, calc, out_path):
         c = ov.cell(row=row, column=10)
         c.number_format = "+0.0%;-0.0%;0.0%"
         c.alignment = Alignment(horizontal="right", vertical="center")
-        ov.cell(row=row, column=12).font = SMALL_FONT
+        if ind["id"] in fc and rd["post"]:
+            ov.cell(row=row, column=12).font = Font(
+                name=FONT_SEMI, size=8.5, color=VERDICT_COLOR[fc[ind["id"]]["verdict"]])
+        else:
+            ov.cell(row=row, column=12).font = SMALL_FONT
+        ov.cell(row=row, column=13).font = SMALL_FONT
     last = first + len(inds) - 1
-    ov.auto_filter.ref = f"A{head_row}:L{last}"
+    ov.auto_filter.ref = f"A{head_row}:M{last}"
 
     # Overview figure 1 — the largest moves since the report.
     movers = sorted((i for i in updated if reads[i["id"]]["pct"] is not None),
@@ -252,19 +289,25 @@ def build(data, calc, out_path):
     fr = last + 3
     ov.cell(row=fr, column=1, value="Overview figures").font = H2_FONT
     fr += 1
-    header_row(ov, fr, ["Indicator (largest moves)", "Change % vs report baseline", "", "", "", "", "", "", "", "", "", ""], height=20)
+    # The label goes in column B — the wide "Indicator" column — so the names
+    # are readable in the sheet as well as in the figure.
+    header_row(ov, fr, ["", "Indicator (largest moves)", "Change % vs report baseline",
+                        "", "", "", "", "", "", "", "", "", ""], height=20)
     m_first = fr + 1
     for n, ind in enumerate(reversed(movers)):  # smallest first → largest on top of a bar chart
         rd = reads[ind["id"]]
-        body_row(ov, m_first + n, [f"{ind.get('code')} · {ind['name']}", rd["pct"] / 100], band=(n % 2 == 0), height=15)
-        ov.cell(row=m_first + n, column=2).number_format = "+0.0%;-0.0%;0.0%"
+        body_row(ov, m_first + n, ["", f"{ind.get('code')} · {ind['name']}", rd["pct"] / 100],
+                 band=(n % 2 == 0), height=15)
+        ov.cell(row=m_first + n, column=3).number_format = "+0.0%;-0.0%;0.0%"
+        ov.cell(row=m_first + n, column=3).alignment = Alignment(horizontal="right", vertical="center")
     m_last = m_first + len(movers) - 1
 
     chart = BarChart()
     chart.type = "bar"
-    chart.add_data(Reference(ov, min_col=2, min_row=fr, max_row=m_last), titles_from_data=True)
-    chart.set_categories(Reference(ov, min_col=1, min_row=m_first, max_row=m_last))
+    chart.add_data(Reference(ov, min_col=3, min_row=fr, max_row=m_last), titles_from_data=True)
+    chart.set_categories(Reference(ov, min_col=2, min_row=m_first, max_row=m_last))
     style_chart(chart, "The largest moves since the report baseline", height=11.5, width=20)
+    text_categories(chart, ov, 2, m_first, m_last)
     chart.legend = None
     chart.x_axis.title = "Change vs the report's last figure (%)"
     chart.x_axis.numFmt = "0%"
@@ -274,17 +317,18 @@ def build(data, calc, out_path):
         pct = reads[ind["id"]]["pct"]
         ser.data_points[i].graphicalProperties.solidFill = TEAL if pct < 0 else ACCENT_ORANGE
         ser.data_points[i].graphicalProperties.line.noFill = True
-    ov.add_chart(chart, f"D{fr}")
+    ov.add_chart(chart, f"E{fr}")
 
     # Overview figure 2 — coverage per chapter.
     cr = m_last + 3
-    header_row(ov, cr, ["Chapter", "With new data since the report", "Still at the report figure", "", "", "", "", "", "", "", "", ""], height=28)
+    header_row(ov, cr, ["", "Chapter", "With new data since the report",
+                        "Still at the report figure", "", "", "", "", "", "", "", "", ""], height=28)
     c_first = cr + 1
     for n, cat in enumerate(cats):
         up = sum(1 for i in by_cat[cat] if reads[i["id"]]["post"])
-        body_row(ov, c_first + n, [CATEGORY_LABEL.get(cat, cat), up, len(by_cat[cat]) - up],
+        body_row(ov, c_first + n, ["", CATEGORY_LABEL.get(cat, cat), up, len(by_cat[cat]) - up],
                  band=(n % 2 == 0), height=15)
-        for col in (2, 3):
+        for col in (3, 4):
             ov.cell(row=c_first + n, column=col).alignment = Alignment(horizontal="center", vertical="center")
     c_last = c_first + len(cats) - 1
 
@@ -292,22 +336,23 @@ def build(data, calc, out_path):
     cov.type = "col"
     cov.grouping = "stacked"
     cov.overlap = 100
-    cov.add_data(Reference(ov, min_col=2, max_col=3, min_row=cr, max_row=c_last), titles_from_data=True)
-    cov.set_categories(Reference(ov, min_col=1, min_row=c_first, max_row=c_last))
+    cov.add_data(Reference(ov, min_col=3, max_col=4, min_row=cr, max_row=c_last), titles_from_data=True)
+    cov.set_categories(Reference(ov, min_col=2, min_row=c_first, max_row=c_last))
     style_chart(cov, "How much of each chapter has moved on since the report", height=9, width=20)
+    text_categories(cov, ov, 2, c_first, c_last)
     cov.y_axis.title = "Indicators"
     for series, color in zip(cov.series, [TEAL, "D8E7E8"]):
         series.graphicalProperties.solidFill = color
         series.graphicalProperties.line.noFill = True
     cov.legend.position = "b"
-    ov.add_chart(cov, f"D{cr}")
+    ov.add_chart(cov, f"E{cr}")
 
     note_line(ov, c_last + 2,
               "Notes: “change” is arithmetic — the workbook draws no conclusion about whether a move is progress. "
               "Latest years differ between indicators; the year is always shown beside the value.", width=12)
     note_line(ov, c_last + 3,
               "Source: ESABCC (2024) “Towards EU climate neutrality”, progress indicators, extended with the "
-              "post-publication points held in the Policy Gap 2.0 indicator database.", width=12)
+              "post-publication points held in the Policy Gap 2.0 indicator database.", width=13)
 
     # ── One tab per chapter ──────────────────────────────────────────────────
     for cat in cats:
@@ -394,6 +439,17 @@ def build(data, calc, out_path):
                         value=data_rows[last_pre_idx]["value"]).number_format = "#,##0.00"
             t_last = t_first + len(data_rows) - 1
 
+            if len(data_rows) < 2:
+                # One point is not a line: say so where the figure would be.
+                c = sh.cell(row=t_head, column=5,
+                            value="Only one data point — the report carries this indicator as a "
+                                  "single figure, so there is no series to draw.")
+                c.font = SMALL_FONT
+                c.alignment = Alignment(vertical="top", wrap_text=True)
+                sh.merge_cells(start_row=t_head, start_column=5, end_row=t_head + 1, end_column=9)
+                r = max(t_last + 2, t_head + 3)
+                continue
+
             ch = LineChart()
             ch.add_data(Reference(sh, min_col=2, max_col=3, min_row=t_head, max_row=t_last),
                         titles_from_data=True)
@@ -443,7 +499,7 @@ def build(data, calc, out_path):
     # ── Where the data comes from ────────────────────────────────────────────
     pv = wb.create_sheet("Where the data comes from")
     sheet_setup(pv, freeze="B6")
-    set_widths(pv, [11, 34, 8, 13, 22, 34, 15, 46])
+    set_widths(pv, [11, 34, 8, 13, 22, 18, 30, 15, 46])
     r = title_block(
         pv,
         "Where each post-report number comes from",
@@ -453,7 +509,8 @@ def build(data, calc, out_path):
         width=8,
     )
     header_row(pv, r, ["Code", "Indicator", "Year", "Value", "How this year was obtained",
-                       "Input", "Input value", "Where that input comes from"], height=32)
+                       "Checked 27 Jul 2026", "Input", "Input value",
+                       "Where that input comes from"], height=32)
     r += 1
     n = 0
     for ind in inds:
@@ -481,37 +538,46 @@ def build(data, calc, out_path):
             if not inputs:
                 inputs = [("(no calc inputs recorded)", None, ind.get("source") or "")]
             for k, (header, value, source) in enumerate(inputs):
+                point = fc.get(ind["id"], {}).get("points", {}).get(year)
+                verdict = point["verdict"] if point else "NOT CHECKABLE"
                 body_row(pv, r, [
                     ind.get("code") if k == 0 else "",
                     ind["name"] if k == 0 else "",
                     year if k == 0 else None,
                     d["value"] if k == 0 else None,
                     method if k == 0 else "",
+                    (f"{verdict} — {VERDICT_NOTE[verdict]}" if k == 0 else ""),
                     header, value, source,
                 ], band=(n % 2 == 0), height=26)
                 pv.cell(row=r, column=3).number_format = "0"
                 pv.cell(row=r, column=4).number_format = "#,##0.000"
-                pv.cell(row=r, column=7).number_format = "#,##0.000"
-                pv.cell(row=r, column=7).alignment = Alignment(horizontal="right", vertical="top")
+                pv.cell(row=r, column=8).number_format = "#,##0.000"
+                pv.cell(row=r, column=8).alignment = Alignment(horizontal="right", vertical="top")
                 pv.cell(row=r, column=1).font = Font(name=FONT_SEMI, size=9, color=TEAL)
-                pv.cell(row=r, column=8).font = SMALL_FONT
-                pv.cell(row=r, column=6).font = Font(name=FONT_LIGHT, size=9, color=INK)
+                if k == 0:
+                    pv.cell(row=r, column=6).font = Font(name=FONT_SEMI, size=8.5,
+                                                         color=VERDICT_COLOR[verdict])
+                pv.cell(row=r, column=9).font = SMALL_FONT
+                pv.cell(row=r, column=7).font = Font(name=FONT_LIGHT, size=9, color=INK)
                 r += 1
             n += 1
         # the formula that turns those inputs into the plotted value
         if layout and layout["columns"][0].get("formula"):
-            c = pv.cell(row=r, column=6, value=f"Formula:  Value = {layout['columns'][0]['formula']}")
+            c = pv.cell(row=r, column=7, value=f"Formula:  Value = {layout['columns'][0]['formula']}")
             c.font = Font(name=FONT_LIGHT, size=8, color=MUTED)
             c.alignment = Alignment(vertical="top", wrap_text=True)
-            pv.merge_cells(start_row=r, start_column=6, end_row=r, end_column=8)
+            pv.merge_cells(start_row=r, start_column=7, end_row=r, end_column=9)
             pv.row_dimensions[r].height = 22
             r += 1
-    pv.auto_filter.ref = f"A5:H{r - 1}"
+    pv.auto_filter.ref = f"A5:I{r - 1}"
     note_line(pv, r + 1,
               "Notes: “Derived from the live source” means the figure is recomputed from the publisher's own data, "
               "with the query in the last column. “Reconstructed” means the sheet's own conversion pins the input "
               "exactly from the published figure. “Taken as published” means the figure is the publication's own — "
-              "no derivation is claimed. See docs-internal/indicator-postreport-calc-rows-2026-07.md.", width=8)
+              "no derivation is claimed. The verdict column is the 27 July 2026 fact-check: whether the stored "
+              "figure still reproduces from that source today. Two series (L1, L7) reproduce their source but sit "
+              "on a different level than the report years — see "
+              "docs-internal/indicator-postreport-factcheck-2026-07-27.md.", width=9)
 
     # No cached results are written for the COUNTIFS formulas, so ask the
     # spreadsheet app to calculate the whole book the moment it opens.
@@ -527,4 +593,5 @@ def build(data, calc, out_path):
 if __name__ == "__main__":
     build(json.load(open(sys.argv[1], encoding="utf8")),
           json.load(open(sys.argv[2], encoding="utf8")),
-          sys.argv[3])
+          json.load(open(sys.argv[3], encoding="utf8")),
+          sys.argv[4])

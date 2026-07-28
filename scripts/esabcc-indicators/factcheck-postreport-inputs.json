@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-27T15:08:41.775Z",
+ "generatedAt": "2026-07-27T12:59:38.099Z",
  "legs": {
   "env_air_gge?airpol=GHG&freq=A&geo=EU27_2020&src_crf=TOTXMEMO&unit=MIO_T": {
    "dataset": "env_air_gge",
@@ -10,7 +10,6 @@
     "airpol": "GHG",
     "src_crf": "TOTXMEMO"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=TOTXMEMO",
    "values": {
     "1990": 4608.53461,
     "1991": 4404.85633,
@@ -58,7 +57,6 @@
     "airpol": "GHG",
     "src_crf": "CRF1D1A"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF1D1A",
    "values": {
     "1990": 54.63458,
     "1991": 53.65408,
@@ -106,7 +104,6 @@
     "airpol": "GHG",
     "src_crf": "CRF1D1B"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF1D1B",
    "values": {
     "1990": 100.17573,
     "1991": 98.08652,
@@ -152,7 +149,6 @@
     "nrg_bal": "PEC_EED",
     "unit": "MTOE"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&lang=EN&geo=EU27_2020&nrg_bal=PEC_EED&unit=MTOE",
    "values": {
     "2005": 1497.76,
     "2006": 1511.4,
@@ -183,7 +179,6 @@
     "nrg_bal": "FEC_EED",
     "unit": "MTOE"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&lang=EN&geo=EU27_2020&nrg_bal=FEC_EED&unit=MTOE",
    "values": {
     "2005": 1017.18,
     "2006": 1021.82,
@@ -216,7 +211,6 @@
     "airpol": "GHG",
     "src_crf": "CRF1A1"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF1A1",
    "values": {
     "1990": 1441.75906,
     "1991": 1409.23982,
@@ -264,7 +258,6 @@
     "airpol": "GHG",
     "src_crf": "CRF1B"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF1B",
    "values": {
     "1990": 164.95314,
     "1991": 151.68851,
@@ -312,7 +305,6 @@
     "nrg_bal": "GEP",
     "siec": "C0000X0350-0370"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=C0000X0350-0370",
    "values": {
     "1990": 794919,
     "1991": 794428,
@@ -360,7 +352,6 @@
     "nrg_bal": "GEP",
     "siec": "P1000"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=P1000",
    "values": {
     "1990": 5137,
     "1991": 6334,
@@ -408,7 +399,6 @@
     "nrg_bal": "GEP",
     "siec": "S2000"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=S2000",
    "values": {
     "1990": 14709,
     "1991": 12325,
@@ -456,7 +446,6 @@
     "nrg_bal": "GEP",
     "siec": "O4000XBIO"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=O4000XBIO",
    "values": {
     "1990": 189523,
     "1991": 203900,
@@ -504,7 +493,6 @@
     "nrg_bal": "GEP",
     "siec": "G3000"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=G3000",
    "values": {
     "1990": 187563,
     "1991": 182525,
@@ -552,7 +540,6 @@
     "nrg_bal": "GEP",
     "siec": "TOTAL"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=TOTAL",
    "values": {
     "1990": 2275258.401,
     "1991": 2316883.717,
@@ -600,7 +587,6 @@
     "nrg_bal": "GEP",
     "siec": "RA100"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=RA100",
    "values": {
     "1990": 283643.314,
     "1991": 295613.633,
@@ -648,7 +634,6 @@
     "nrg_bal": "GEP",
     "siec": "RA200"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=RA200",
    "values": {
     "1990": 3226,
     "1991": 3187,
@@ -696,7 +681,6 @@
     "nrg_bal": "GEP",
     "siec": "RA300"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=RA300",
    "values": {
     "1990": 769.272,
     "1991": 1085.49,
@@ -744,7 +728,6 @@
     "nrg_bal": "GEP",
     "siec": "RA410"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=RA410",
    "values": {
     "1990": 0,
     "1991": 0,
@@ -792,7 +775,6 @@
     "nrg_bal": "GEP",
     "siec": "RA420"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=RA420",
    "values": {
     "1990": 15.875,
     "1991": 19.15,
@@ -840,7 +822,6 @@
     "nrg_bal": "GEP",
     "siec": "RA500"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GEP&siec=RA500",
    "values": {
     "1990": 502.673,
     "1991": 517.295,
@@ -888,7 +869,6 @@
     "airpol": "CH4",
     "src_crf": "CRF1"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=CH4&src_crf=CRF1",
    "values": {
     "1990": 6.24322,
     "1991": 5.82279,
@@ -936,7 +916,6 @@
     "airpol": "GHG",
     "src_crf": "CRF1A2"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF1A2",
    "values": {
     "1990": 720.77962,
     "1991": 677.9255,
@@ -984,7 +963,6 @@
     "airpol": "GHG",
     "src_crf": "CRF2"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF2",
    "values": {
     "1990": 449.93752,
     "1991": 418.31919,
@@ -1029,7 +1007,6 @@
     "geo": "EU27_2020",
     "unit": "PC"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/cei_srm030?format=JSON&lang=EN&geo=EU27_2020&unit=PC",
    "values": {
     "2004": 8.2,
     "2005": 8.7,
@@ -1063,7 +1040,6 @@
     "nrg_bal": "FC_IND_E",
     "siec": "E7000"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_c?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=FC_IND_E&siec=E7000",
    "values": {
     "1990": 892796.299,
     "1991": 862416.846,
@@ -1111,7 +1087,6 @@
     "nrg_bal": "FC_IND_E",
     "siec": "TOTAL"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_c?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=FC_IND_E&siec=TOTAL",
    "values": {
     "1990": 3608178.056,
     "1991": 3392771.715,
@@ -1159,7 +1134,6 @@
     "airpol": "GHG",
     "src_crf": "CRF1A3"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF1A3",
    "values": {
     "1990": 674.68434,
     "1991": 683.32806,
@@ -1207,7 +1181,6 @@
     "nrg_bal": "FC_TRA_E",
     "siec": "O4000XBIO"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=FC_TRA_E&siec=O4000XBIO",
    "values": {
     "1990": 2503396.188,
     "1991": 2535739.486,
@@ -1255,7 +1228,6 @@
     "nrg_bal": "FC_TRA_E",
     "siec": "G3000"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=FC_TRA_E&siec=G3000",
    "values": {
     "1990": 4021.249,
     "1991": 4074.999,
@@ -1303,7 +1275,6 @@
     "nrg_bal": "FC_TRA_E",
     "siec": "C0000X0350-0370"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=FC_TRA_E&siec=C0000X0350-0370",
    "values": {
     "1990": 2432.261,
     "1991": 1781.983,
@@ -1351,7 +1322,6 @@
     "nrg_bal": "FC_TRA_E",
     "siec": "TOTAL"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=FC_TRA_E&siec=TOTAL",
    "values": {
     "1990": 2566842.482,
     "1991": 2599010.421,
@@ -1399,7 +1369,6 @@
     "airpol": "GHG",
     "src_crf": "CRF1A4"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF1A4",
    "values": {
     "1990": 711.98849,
     "1991": 746.38825,
@@ -1447,7 +1416,6 @@
     "airpol": "CH4",
     "src_crf": "CRF3"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=CH4&src_crf=CRF3",
    "values": {
     "1990": 10.77842,
     "1991": 10.30353,
@@ -1495,7 +1463,6 @@
     "airpol": "N2O",
     "src_crf": "CRF3"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=N2O&src_crf=CRF3",
    "values": {
     "1990": 0.64628,
     "1991": 0.602,
@@ -1543,7 +1510,6 @@
     "airpol": "GHG",
     "src_crf": "CRF4"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF4",
    "values": {
     "1990": -258.37074,
     "1991": -356.39461,
@@ -1591,7 +1557,6 @@
     "airpol": "GHG",
     "src_crf": "CRF4A"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF4A",
    "values": {
     "1990": -393.88684,
     "1991": -482.7458,
@@ -1639,7 +1604,6 @@
     "airpol": "GHG",
     "src_crf": "CRF4B"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF4B",
    "values": {
     "1990": 79.67823,
     "1991": 67.89771,
@@ -1687,7 +1651,6 @@
     "airpol": "GHG",
     "src_crf": "CRF4C"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF4C",
    "values": {
     "1990": 33.77467,
     "1991": 25.35272,
@@ -1735,7 +1698,6 @@
     "airpol": "GHG",
     "src_crf": "CRF4D"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF4D",
    "values": {
     "1990": 21.00939,
     "1991": 20.93393,
@@ -1783,7 +1745,6 @@
     "airpol": "GHG",
     "src_crf": "CRF4E"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF4E",
    "values": {
     "1990": 25.37214,
     "1991": 25.5595,
@@ -1831,7 +1792,6 @@
     "airpol": "GHG",
     "src_crf": "CRF4F"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF4F",
    "values": {
     "1990": 2.23502,
     "1991": 1.77623,
@@ -1879,7 +1839,6 @@
     "nrg_bal": "GIC",
     "siec": "BIOE"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_c?format=JSON&lang=EN&geo=EU27_2020&unit=GWH&freq=A&nrg_bal=GIC&siec=BIOE",
    "values": {
     "1990": 502926.816,
     "1991": 525905.76,
@@ -1925,7 +1884,6 @@
     "sectperf": "TOTAL",
     "unit": "PC_GDP"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/rd_e_gerdtot?format=JSON&lang=EN&geo=EU27_2020&sectperf=TOTAL&unit=PC_GDP",
    "values": {
     "1995": 1.73,
     "1996": 1.72,
@@ -1968,7 +1926,6 @@
     "unit": "I21",
     "nace_r2": "C241"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_a?format=JSON&lang=EN&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C241",
    "values": {
     "2000": 111.4,
     "2001": 109.2,
@@ -2007,7 +1964,6 @@
     "unit": "I21",
     "nace_r2": "C235"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_a?format=JSON&lang=EN&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C235",
    "values": {
     "2010": 103.3,
     "2011": 104.2,
@@ -2036,7 +1992,6 @@
     "unit": "I21",
     "nace_r2": "C201"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_a?format=JSON&lang=EN&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C201",
    "values": {
     "2000": 98.5,
     "2001": 96.5,
@@ -2074,7 +2029,6 @@
     "meatitem": "SLAUGHT",
     "unit": "THS_T"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pann?format=JSON&lang=EN&geo=EU27_2020&meat=B1000&meatitem=SLAUGHT&unit=THS_T",
    "values": {
     "2004": 7619.25,
     "2005": 7374.59,
@@ -2104,7 +2058,6 @@
     "dairyprod": "D1100A",
     "milkitem": "PRO"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mk_farm?format=JSON&lang=EN&geo=EU27_2020&dairyprod=D1100A&milkitem=PRO",
    "values": {
     "1990": 147576.61,
     "1991": 148189.92,
@@ -2143,7 +2096,6 @@
     "airpol": "GHG",
     "src_crf": "CRF3A3"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF3A3",
    "values": {
     "1990": 5.77607,
     "1991": 5.62618,
@@ -2191,7 +2143,6 @@
     "airpol": "GHG",
     "src_crf": "CRF3B3"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&lang=EN&geo=EU27_2020&unit=MIO_T&freq=A&airpol=GHG&src_crf=CRF3B3",
    "values": {
     "1990": 27.64282,
     "1991": 26.27383,
@@ -2238,7 +2189,6 @@
     "meatitem": "SLAUGHT",
     "unit": "THS_T"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pann?format=JSON&lang=EN&geo=EU27_2020&meat=B3100&meatitem=SLAUGHT&unit=THS_T",
    "values": {
     "2004": 21095.83,
     "2005": 21074.97,
@@ -2272,7 +2222,6 @@
     "month": "M11_M12",
     "unit": "THS_HD"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_lscatl?format=JSON&lang=EN&geo=EU27_2020&animals=A2000&month=M11_M12&unit=THS_HD",
    "values": {
     "2001": 84073.69,
     "2002": 82399.06,
@@ -2309,7 +2258,6 @@
     "month": "M11_M12",
     "unit": "THS_HD"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_lscatl?format=JSON&lang=EN&geo=EU27_2020&animals=A2300F&month=M11_M12&unit=THS_HD",
    "values": {
     "2007": 22309.79,
     "2008": 22502.8,
@@ -2340,7 +2288,6 @@
     "month": "M11_M12",
     "unit": "THS_HD"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_lspig?format=JSON&lang=EN&geo=EU27_2020&animals=A3100&month=M11_M12&unit=THS_HD",
    "values": {
     "2001": 153324.14,
     "2002": 156002.53,
@@ -2376,7 +2323,6 @@
     "nace_r2": "TOT",
     "unit": "KG_HAB"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasfw?format=JSON&lang=EN&geo=EU27_2020&nace_r2=TOT&unit=KG_HAB",
    "values": {
     "2020": 128,
     "2021": 129,
@@ -2390,7 +2336,6 @@
     "geo": "EU27_2020",
     "indic_de": "AVG"
    },
-   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?format=JSON&lang=EN&geo=EU27_2020&indic_de=AVG",
    "values": {
     "1960": 355968032,
     "1961": 358917677,

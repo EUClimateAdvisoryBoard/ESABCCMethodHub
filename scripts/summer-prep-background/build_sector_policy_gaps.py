@@ -24,7 +24,7 @@ from openpyxl.utils import get_column_letter
 from esabcc_style import (
     ACCENT_PURPLE, BODY_FILL, BODY_FONT, FONT, FONT_SEMI, GAP_STATUS_COLOR, GAP_TYPE_COLOR,
     H2_FONT, INK, LABEL_FONT, MUTED, SMALL_FONT, TEAL, TEAL_PALE, WHITE, body_row,
-    header_row, note_line, set_widths, sheet_setup, style_chart, title_block,
+    header_row, note_line, set_widths, sheet_setup, style_chart, text_categories, title_block,
 )
 
 PREPARED = "27 July 2026"
@@ -283,6 +283,7 @@ def build(data, out_path):
                        titles_from_data=True)
         chart.set_categories(Reference(gl, min_col=1, min_row=first, max_row=last))
         style_chart(chart, f"{sector} — gaps per subsector", height=7.4, width=15)
+        text_categories(chart, gl, 1, first, last)
         chart.x_axis.title = "Number of gaps"
         colors = [GAP_STATUS_COLOR["open"], GAP_STATUS_COLOR["partially-addressed"],
                   GAP_STATUS_COLOR["addressed"], ACCENT_PURPLE]

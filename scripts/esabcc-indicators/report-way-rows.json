@@ -1,0 +1,3402 @@
+{
+ "generatedAt": "2026-07-28T08:03:40.222Z",
+ "filled": {
+  "esabcc-o1-ghg-total": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "([International aviation]+[Energy supply]+[Industry]+[Transport]+[Buildings and agriculture energy]+[Agriculture (non-energy)]+[LULUCF]+[Waste and other sectors])+[International maritime]*(0.6374552000704592)"
+      }
+     },
+     {
+      "header": "International aviation",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "[1.D.1.a - International Aviation]/1000"
+      }
+     },
+     {
+      "header": "Energy supply",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "([1.A.1 - Energy Industries]+[1.B - Fugitive Emissions from Fuels])/1000"
+      }
+     },
+     {
+      "header": "Industry",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "([1.A.2 - Manufacturing Industries and Construction]+[2 - Industrial Processes and Product Use])/1000"
+      }
+     },
+     {
+      "header": "Transport",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "([1.A.3 - Transport])/1000"
+      }
+     },
+     {
+      "header": "Buildings and agriculture energy",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "[1.A.4 - Other Sectors]/1000"
+      }
+     },
+     {
+      "header": "Agriculture (non-energy)",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "[3 - Agriculture]/1000"
+      }
+     },
+     {
+      "header": "LULUCF",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "[4 - Land Use, Land-Use Change and Forestry]/1000"
+      }
+     },
+     {
+      "header": "Waste and other sectors",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "[Total net emissions (UNFCCC)]/1000-[LULUCF]-[Agriculture (non-energy)]-[Buildings and agriculture energy]-[Transport]-[Industry]-[Energy supply]"
+      }
+     },
+     {
+      "header": "International maritime",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "[1.D.1.b - International Navigation]/1000"
+      }
+     },
+     {
+      "header": "1.D.1.a - International Aviation",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "1.A.1 - Energy Industries",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "1.B - Fugitive Emissions from Fuels",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "1.A.2 - Manufacturing Industries and Construction",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "2 - Industrial Processes and Product Use",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "1.A.3 - Transport",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "1.A.4 - Other Sectors",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "3 - Agriculture",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "4 - Land Use, Land-Use Change and Forestry",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "Total net emissions (UNFCCC)",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "1.D.1.b - International Navigation",
+      "source": "EEA GHG data viewer"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       4393.8544455997635,
+       96.09354678675581,
+       1489.2308635829077,
+       981.2737567577378,
+       847.3858950621939,
+       665.0392409976354,
+       389.22393811242966,
+       -342.10947613129105,
+       169.72820383495673,
+       153.7182167242595,
+       96093.5467867558,
+       1383791.909747243,
+       105438.95383566488,
+       556523.7994334318,
+       424749.957324306,
+       847385.8950621939,
+       665039.2409976354,
+       389223.9381124297,
+       -342109.47613129107,
+       4199772.422216571,
+       153718.2167242595
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       4392.775467577483,
+       101.16153164168031,
+       1494.1525158714342,
+       973.7864643499324,
+       855.4935985864113,
+       663.4478326795688,
+       386.0797416515591,
+       -351.29638360007004,
+       165.07888080560292,
+       164.5155386288674,
+       101161.53164168031,
+       1391298.0674825914,
+       102854.44838884297,
+       546025.3443937633,
+       427761.11995616904,
+       855493.5985864113,
+       663447.8326795688,
+       386079.74165155913,
+       -351296.38360007,
+       4186742.650344439,
+       164515.5386288674
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       4417.407290145159,
+       105.83006652528978,
+       1503.6684597010162,
+       995.6181345482117,
+       863.9873624702656,
+       589.4946612543916,
+       389.0772087221159,
+       -300.6172864973615,
+       160.921824873461,
+       171.66203763915254,
+       105830.06652528977,
+       1405513.6499988372,
+       98154.80970217913,
+       558821.7373136887,
+       436796.39723452297,
+       863987.3624702656,
+       589494.6612543917,
+       389077.2087221159,
+       -300617.2864973615,
+       4202150.3650721,
+       171662.03763915255
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       4279.585840278024,
+       107.39422934415084,
+       1433.2435942116344,
+       952.3384468636497,
+       844.9242604683492,
+       635.0700212689056,
+       386.57500981647684,
+       -344.26277168343694,
+       156.26092312467927,
+       169.48975685141957,
+       107394.22934415084,
+       1336603.937452088,
+       96639.65675954637,
+       539298.5581894323,
+       413039.88867421733,
+       844924.2604683492,
+       635070.0212689056,
+       386575.00981647684,
+       -344262.77168343693,
+       4064149.4840702577,
+       169489.75685141957
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       3940.7241952743284,
+       98.72774136248265,
+       1325.218058629576,
+       789.4283062560586,
+       823.1230306433681,
+       621.3870525601142,
+       381.54065426293414,
+       -347.02232862364394,
+       152.2621873960495,
+       150.69214711366692,
+       98727.74136248264,
+       1235822.2176750025,
+       89395.84095457353,
+       447681.1654271635,
+       341747.14082889515,
+       823123.0306433681,
+       621387.0525601142,
+       381540.6542629341,
+       -347022.32862364396,
+       3745936.961124457,
+       150692.14711366693
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       4025.1679359813015,
+       100.36770316810103,
+       1343.1400819540474,
+       838.8144426930774,
+       817.6393284119875,
+       656.0914267227739,
+       376.26183201603794,
+       -352.5901909498173,
+       148.79456088393545,
+       151.61653881006123,
+       100367.70316810103,
+       1254197.964069834,
+       88942.11788421345,
+       480724.96661687526,
+       358089.4760762021,
+       817639.3284119875,
+       656091.4267227739,
+       376261.83201603795,
+       -352590.1909498173,
+       3828151.481732043,
+       151616.53881006123
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       3921.327326180008,
+       102.83706419913365,
+       1333.8554743473871,
+       826.1534544181018,
+       808.2404255515237,
+       581.491159158799,
+       375.71068571010153,
+       -347.27380043837763,
+       144.41493657978413,
+       150.43869222959532,
+       102837.06419913365,
+       1245598.7563612096,
+       88256.71798617767,
+       468688.8421073754,
+       357464.6123107264,
+       808240.4255515237,
+       581491.159158799,
+       375710.6857101015,
+       -347273.80043837766,
+       3722592.33532732,
+       150438.69222959533
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       3843.6804107039684,
+       101.71127123502156,
+       1315.879554492708,
+       795.6704345418054,
+       778.706749671909,
+       589.5709624305605,
+       375.5351288160272,
+       -342.6335989882684,
+       139.94722738270434,
+       140.0767945914176,
+       101711.27123502156,
+       1228497.2835891915,
+       87382.27090351634,
+       450892.5625642318,
+       344777.87197757367,
+       778706.749671909,
+       589570.9624305605,
+       375535.12881602725,
+       -342633.59898826835,
+       3652676.4583474463,
+       140076.79459141762
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       3752.9156894502776,
+       102.66152771785798,
+       1254.011429032349,
+       775.5323410327082,
+       772.7140098053934,
+       593.8985478671879,
+       377.7110600038942,
+       -342.6049051712324,
+       134.70936924287935,
+       132.21683643011187,
+       102661.52771785799,
+       1167766.6278561049,
+       86244.80117624416,
+       432830.4669897874,
+       342701.8740429208,
+       772714.0098053934,
+       593898.5478671879,
+       377711.0600038942,
+       -342604.9051712324,
+       3565971.8518131794,
+       132216.83643011187
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       3626.522573504807,
+       104.67025158665994,
+       1189.727706691921,
+       769.1653962810484,
+       778.0782800394794,
+       517.7746481601745,
+       382.76323233658485,
+       -327.8027208805995,
+       130.23006267327492,
+       128.5042723115443,
+       104670.25158665994,
+       1106411.9525673406,
+       83315.75412458043,
+       419987.19537616114,
+       349178.2009048872,
+       778078.2800394794,
+       517774.64816017443,
+       382763.2323365848,
+       -327802.7208805995,
+       3439936.605301883,
+       128504.27231154431
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       3680.8567617873755,
+       108.53022557563203,
+       1196.674215241051,
+       768.8490453104929,
+       793.2395374683889,
+       541.0008190923381,
+       384.28024043367134,
+       -322.4238390120482,
+       128.37176831057582,
+       129.16162478268836,
+       108530.22557563204,
+       1113952.039429784,
+       82722.17581126672,
+       428994.70467562927,
+       339854.3406348636,
+       793239.5374683889,
+       541000.8190923381,
+       384280.24043367134,
+       -322423.83901204815,
+       3489991.7868444696,
+       129161.62478268836
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       3695.985235691014,
+       115.07396257317444,
+       1168.514883806718,
+       776.2196706376404,
+       810.7491666258904,
+       547.7346214553677,
+       386.35086308623397,
+       -318.48652483153614,
+       125.12436669127283,
+       132.87871153438044,
+       115073.96257317445,
+       1089116.5887234109,
+       79398.29508330715,
+       434138.46733066376,
+       342081.20330697665,
+       810749.1666258904,
+       547734.6214553677,
+       386350.86308623396,
+       -318486.52483153617,
+       3496207.047471587,
+       132878.71153438045
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       3796.2808470131636,
+       124.16225316137847,
+       1162.1379242862579,
+       791.0360996422826,
+       824.9806709826406,
+       545.7283094760611,
+       388.16274656214773,
+       -249.7958911803428,
+       124.02069564713202,
+       134.67305377086453,
+       124162.25316137847,
+       1083340.062104683,
+       78797.86218157514,
+       441345.54675687663,
+       349690.55288540595,
+       824980.6709826406,
+       545728.3094760611,
+       388162.74656214775,
+       -249795.89118034282,
+       3586270.555416179,
+       134673.05377086453
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       3711.2042053823952,
+       130.35831223435034,
+       1098.7821738414586,
+       785.2766078383684,
+       826.4830160983558,
+       532.9322957141745,
+       385.1440777511664,
+       -257.78904072107576,
+       122.15263891490508,
+       137.83576273435258,
+       130358.31223435035,
+       1023654.3690424642,
+       75127.8047989946,
+       442369.91823639435,
+       342906.68960197404,
+       826483.0160983559,
+       532932.2957141745,
+       385144.07775116636,
+       -257789.04072107578,
+       3492981.7694373527,
+       137835.76273435258
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       3564.0272825354205,
+       132.9766899599499,
+       973.8049218740019,
+       760.1281294160046,
+       832.7329627801805,
+       522.8230782422734,
+       380.24796301831776,
+       -247.3176236412184,
+       121.55657002231908,
+       136.59719279718294,
+       132976.6899599499,
+       905334.0532878421,
+       68470.86858615991,
+       428579.8953015269,
+       331548.23411447776,
+       832732.9627801805,
+       522823.0782422734,
+       380247.96301831777,
+       -247317.6236412184,
+       3343976.0017118794,
+       136597.19279718294
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       3195.8242692285844,
+       56.110153869940774,
+       841.5181786770137,
+       719.6003290198165,
+       720.1815179737462,
+       519.7136736162479,
+       381.9568334369566,
+       -241.03805792704637,
+       120.63001056849816,
+       121.0306700531797,
+       56110.153869940776,
+       778122.0885059792,
+       63396.090171034564,
+       412771.8756989454,
+       306828.45332087105,
+       720181.5179737462,
+       519713.6736162479,
+       381956.8334369566,
+       -241038.05792704638,
+       3062562.4853652325,
+       121030.67005317971
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       3393.756578286026,
+       69.7543328862993,
+       901.6247143957199,
+       757.4740937960399,
+       782.100692712838,
+       532.5338870926787,
+       378.43047321885814,
+       -229.9846664172722,
+       119.53645060086433,
+       129.0860910553474,
+       69754.3328862993,
+       840446.6098716129,
+       61178.10452410704,
+       439540.13245647895,
+       317933.96133956104,
+       782100.6927128381,
+       532533.8870926787,
+       378430.4732188581,
+       -229984.6664172722,
+       3241715.645399727,
+       129086.09105534741
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       3333.911785052191,
+       103.28233849,
+       924.3341574,
+       691.32881325,
+       803.30064018,
+       481.83207029,
+       370.64949144999997,
+       -243.76728937000001,
+       115.14677466000023,
+       137.74268167,
+       103282.33849,
+       863591.50089,
+       60742.65651,
+       398202.32207,
+       293126.49118,
+       803300.64018,
+       481832.07029,
+       370649.49145,
+       -243767.28937,
+       3142824.65786,
+       137742.68167
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       122755.95,
+       698415.59,
+       47890.66,
+       358770.37,
+       263328.47,
+       795640.38,
+       437337.17,
+       363238.13,
+       -215514.95,
+       2872831.69,
+       122385.65
+      ]
+     },
+     {
+      "year": 2024,
+      "cells": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       129981.66,
+       642414.81,
+       46712.11,
+       351562.16,
+       259866.27,
+       804764.05,
+       430706,
+       359085.59,
+       -230985.16,
+       2786202.81,
+       127020.67
+      ]
+     }
+    ],
+    "derivation": "Total EU GHG emissions (European Climate Law scope)  (Mt CO₂eq)\n\nWhat it measures: ESABCC progress indicator O1. Total EU-27 GHG emissions in the scope of the European Climate Law (EU-27 plus international aviation and maritime). 2030 target: -55% vs 1990; 2050: climate neutrality; ESABCC 2040 advice range: -90 to -95%.\n\nHow it's calculated:\n  1. Each component is first built from the detailed source rows (combined and unit-scaled as needed).\n  2. Add up International aviation, Energy supply, Industry, Transport, Buildings and agriculture energy, Agriculture, LULUCF, Waste and other sectors, and International maritime.\n\nWhy it's done this way:\n  This is an accounting identity: the source reports these categories as mutually exclusive and exhaustive, so their sum is the total by construction — no modelling assumption is introduced, only disaggregated official data are re-aggregated.\n\n⚠ Caveat:\n  International maritime is included at a fixed scope factor (≈0.64) — confirm it matches the intended European Climate Law attribution. 'Waste and other sectors' is a residual (total net emissions minus the listed sectors), so it absorbs any unlisted items.\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in Mt CO₂eq.\n  • International aviation — intermediate step, computed as 1.D.1.a - International Aviation ÷ 1000. It prepares this component from the detailed source rows so the final line can combine them.\n  • Energy supply — intermediate step, computed as (1.A.1 - Energy Industries + 1.B - Fugitive Emissions from Fuels) ÷ 1000. It prepares this component from the detailed source rows so the final line can combine them.\n  • Industry — intermediate step, computed as (1.A.2 - Manufacturing Industries and Construction + 2 - Industrial Processes and Product Use) ÷ 1000. It prepares this component from the detailed source rows so the final line can combine them.\n  • Transport — intermediate step, computed as (1.A.3 - Transport) ÷ 1000. It prepares this component from the detailed source rows so the final line can combine them.\n  • Buildings and agriculture energy — intermediate step, computed as 1.A.4 - Other Sectors ÷ 1000. It prepares this component from the detailed source rows so the final line can combine them.\n  • Agriculture — intermediate step, computed as 3 - Agriculture ÷ 1000. It prepares this component from the detailed source rows so the final line can combine them.\n  • LULUCF — intermediate step, computed as 4 - Land Use, Land - Use Change and Forestry ÷ 1000. It prepares this component from the detailed source rows so the final line can combine them.\n  • Waste and other sectors — intermediate step, computed as Total net emissions ÷ 1000 - LULUCF - Agriculture - Buildings and agriculture energy - Transport - Industry - Energy supply. It prepares this component from the detailed source rows so the final line can combine them.\n  • International maritime — intermediate step, computed as 1.D.1.b - International Navigation ÷ 1000. It prepares this component from the detailed source rows so the final line can combine them.\n  • 1.D.1.a - International Aviation — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • 1.A.1 - Energy Industries — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • 1.B - Fugitive Emissions from Fuels — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • 1.A.2 - Manufacturing Industries and Construction — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • 2 - Industrial Processes and Product Use — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • 1.A.3 - Transport — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • 1.A.4 - Other Sectors — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • 3 - Agriculture — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • 4 - Land Use, Land-Use Change and Forestry — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • Total net emissions — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • 1.D.1.b - International Navigation — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n\nFormula:\n  Value = (International aviation + Energy supply + Industry + Transport + Buildings and agriculture energy + Agriculture + LULUCF + Waste and other sectors) + International maritime × (0.6375)\n  International aviation = 1.D.1.a - International Aviation ÷ 1000\n  Energy supply = (1.A.1 - Energy Industries + 1.B - Fugitive Emissions from Fuels) ÷ 1000\n  Industry = (1.A.2 - Manufacturing Industries and Construction + 2 - Industrial Processes and Product Use) ÷ 1000\n  Transport = (1.A.3 - Transport) ÷ 1000\n  Buildings and agriculture energy = 1.A.4 - Other Sectors ÷ 1000\n  Agriculture = 3 - Agriculture ÷ 1000\n  LULUCF = 4 - Land Use, Land - Use Change and Forestry ÷ 1000\n  Waste and other sectors = Total net emissions ÷ 1000 - LULUCF - Agriculture - Buildings and agriculture energy - Transport - Industry - Energy supply\n  International maritime = 1.D.1.b - International Navigation ÷ 1000\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": 3073.603,
+     "stored": 3118,
+     "rel": 0.014238932326330224
+    },
+    {
+     "year": 2024,
+     "reportWay": 2997.154,
+     "stored": 3043.2,
+     "rel": 0.01513063334387029
+    }
+   ],
+   "columns": [
+    {
+     "header": "1.D.1.a - International Aviation",
+     "scale": 1000,
+     "vintageDrift": -0.061753035062098394
+    },
+    {
+     "header": "1.A.1 - Energy Industries",
+     "scale": 1000,
+     "vintageDrift": 0.005453943800928451
+    },
+    {
+     "header": "1.B - Fugitive Emissions from Fuels",
+     "scale": 1000,
+     "vintageDrift": 0.16601930873474213
+    },
+    {
+     "header": "1.A.2 - Manufacturing Industries and Construction",
+     "scale": 1000,
+     "vintageDrift": 0.01929998732409821
+    },
+    {
+     "header": "2 - Industrial Processes and Product Use",
+     "scale": 1000,
+     "vintageDrift": 0.012038199798197535
+    },
+    {
+     "header": "1.A.3 - Transport",
+     "scale": 1000,
+     "vintageDrift": -0.0018002620691610627
+    },
+    {
+     "header": "1.A.4 - Other Sectors",
+     "scale": 1000,
+     "vintageDrift": 0.028413353863235402
+    },
+    {
+     "header": "3 - Agriculture",
+     "scale": 1000,
+     "vintageDrift": 0.017512414546958288
+    },
+    {
+     "header": "4 - Land Use, Land-Use Change and Forestry",
+     "scale": 1000,
+     "vintageDrift": 0.11810748523423054
+    },
+    {
+     "header": "Total net emissions (UNFCCC)",
+     "scale": 1000,
+     "vintageDrift": 0.0003961057038217586
+    },
+    {
+     "header": "1.D.1.b - International Navigation",
+     "scale": 1000,
+     "vintageDrift": 0.04805921967141602
+    }
+   ]
+  },
+  "esabcc-i1-industry-ghg": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "([1.A.2 - Manufacturing Industries and Construction]+[2 - Industrial Processes and Product Use])/1000"
+      }
+     },
+     {
+      "header": "1.A.2 - Manufacturing Industries and Construction",
+      "source": "EEA GHG data viewer"
+     },
+     {
+      "header": "2 - Industrial Processes and Product Use",
+      "source": "EEA GHG data viewer"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       981.2737567577374,
+       556523.7994334318,
+       424749.95732430555
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       973.7864643499324,
+       546025.3443937633,
+       427761.11995616904
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       995.6181345482117,
+       558821.7373136887,
+       436796.39723452297
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       952.3384468636497,
+       539298.5581894323,
+       413039.88867421733
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       789.4283062560586,
+       447681.1654271635,
+       341747.14082889515
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       838.8144426930774,
+       480724.96661687526,
+       358089.4760762021
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       826.1534544181018,
+       468688.8421073754,
+       357464.6123107264
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       795.6704345418054,
+       450892.5625642318,
+       344777.87197757367
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       775.5323410327082,
+       432830.4669897874,
+       342701.8740429208
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       769.1653962810484,
+       419987.19537616114,
+       349178.2009048872
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       768.8490453104929,
+       428994.70467562927,
+       339854.3406348636
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       776.2196706376404,
+       434138.46733066376,
+       342081.20330697665
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       791.0360996422826,
+       441345.54675687663,
+       349690.55288540595
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       785.2766078383684,
+       442369.91823639435,
+       342906.68960197404
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       760.1281294160046,
+       428579.8953015269,
+       331548.23411447776
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       719.6003290198165,
+       412771.8756989454,
+       306828.45332087105
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       757.4740937960399,
+       439540.13245647895,
+       317933.96133956104
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       691.32881325,
+       398202.32207,
+       293126.49118
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       358770.37,
+       263328.47
+      ]
+     },
+     {
+      "year": 2024,
+      "cells": [
+       null,
+       351562.16,
+       259866.27
+      ]
+     }
+    ],
+    "derivation": "Industrial GHG emissions  (Mt CO₂eq)\n\nWhat it measures: ESABCC progress indicator I1. Industrial CO₂ plus other GHGs (combustion + process emissions). Fit-for-55 MIX 2030 benchmark.\n\nHow it's calculated:\n  1. Subtract 2 - Industrial Processes and Product Use from the first (then rescaled to Mt CO₂eq).\n\nWhy it's done this way:\n  The indicator is the net difference between these two quantities.\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in Mt CO₂eq.\n  • 1.A.2 - Manufacturing Industries and Construction — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • 2 - Industrial Processes and Product Use — raw input from EEA GHG data viewer. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n\nFormula:\n  Value = (1.A.2 - Manufacturing Industries and Construction + 2 - Industrial Processes and Product Use) ÷ 1000\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": 622.099,
+     "stored": 622.1,
+     "rel": 0.0000018646519852550062
+    },
+    {
+     "year": 2024,
+     "reportWay": 611.428,
+     "stored": 611.4,
+     "rel": 0.00004649983644088575
+    }
+   ],
+   "columns": [
+    {
+     "header": "1.A.2 - Manufacturing Industries and Construction",
+     "scale": 1000,
+     "vintageDrift": 0.01929998732409821
+    },
+    {
+     "header": "2 - Industrial Processes and Product Use",
+     "scale": 1000,
+     "vintageDrift": 0.012038199798197535
+    }
+   ]
+  },
+  "esabcc-l1-lulucf-net": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "EEA GHG data viewer",
+      "formula": {
+       "expr": "[4 - Land Use, Land-Use Change and Forestry] / 1000"
+      }
+     },
+     {
+      "header": "4 - Land Use, Land-Use Change and Forestry",
+      "source": "EEA GHG data viewer"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       -342.10947613129105,
+       -342109.47613129107
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       -351.29638360007004,
+       -351296.38360007
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       -300.6172864973615,
+       -300617.2864973615
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       -344.26277168343694,
+       -344262.77168343693
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       -347.02232862364394,
+       -347022.32862364396
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       -352.5901909498173,
+       -352590.1909498173
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       -347.27380043837763,
+       -347273.80043837766
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       -342.6335989882684,
+       -342633.59898826835
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       -342.6049051712324,
+       -342604.9051712324
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       -327.8027208805995,
+       -327802.7208805995
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       -322.4238390120482,
+       -322423.83901204815
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       -318.48652483153614,
+       -318486.52483153617
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       -249.7958911803428,
+       -249795.89118034282
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       -257.78904072107576,
+       -257789.04072107578
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       -247.3176236412184,
+       -247317.6236412184
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       -241.03805792704637,
+       -241038.05792704638
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       -229.9846664172722,
+       -229984.6664172722
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       -243.76728937000001,
+       -243767.28937
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       -215514.95
+      ]
+     },
+     {
+      "year": 2024,
+      "cells": [
+       null,
+       -230985.16
+      ]
+     }
+    ],
+    "derivation": "LULUCF net GHG balance  (Mt CO₂eq)\n\nWhat it measures: ESABCC progress indicator L1. Net GHG balance for land use, land-use change and forestry (negative = net removals). LULUCF Regulation 2030 target: net -310 Mt CO₂eq.\n\nHow it's calculated:\n  1. Take 4 - Land Use, Land-Use Change and Forestry (then rescaled to Mt CO₂eq).\n\nWhy it's done this way:\n  The published figure comes straight from this single source series.\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in Mt CO₂eq.\n  • 4 - Land Use, Land-Use Change and Forestry — raw input from EEA GHG data viewer. This is the published series the indicator reports; no further breakdown is available in the source.\n\nFormula:\n  Value = 4 - Land Use, Land - Use Change and Forestry ÷ 1000\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": -215.515,
+     "stored": -215.5,
+     "rel": 0.00006937354988398565
+    },
+    {
+     "year": 2024,
+     "reportWay": -230.985,
+     "stored": -231,
+     "rel": 0.0000642424242423914
+    }
+   ],
+   "columns": [
+    {
+     "header": "4 - Land Use, Land-Use Change and Forestry",
+     "scale": 1000,
+     "vintageDrift": 0.11810748523423054
+    }
+   ]
+  },
+  "esabcc-b1-buildings-ghg": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "EEA GHG data viewer (UNFCCC CRF)",
+      "formula": {
+       "expr": "[Residential (CRF 1.A.4.b)]+[Tertiary (CRF 1.A.4.a)]+[Agriculture & fisheries energy (CRF 1.A.4.c)]"
+      }
+     },
+     {
+      "header": "Residential (CRF 1.A.4.b)",
+      "source": "EEA / UNFCCC inventory CRF Table 1.A(a)s4"
+     },
+     {
+      "header": "Tertiary (CRF 1.A.4.a)",
+      "source": "EEA / UNFCCC inventory CRF Table 1.A(a)s4"
+     },
+     {
+      "header": "Agriculture & fisheries energy (CRF 1.A.4.c)",
+      "source": "EEA / UNFCCC inventory CRF Table 1.A(a)s4"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       665.0392409976354,
+       426.8048486219644,
+       154.3626039143487,
+       83.87178846132228
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       663.4478326795687,
+       420.478847350464,
+       162.01644886977272,
+       80.95253645933205
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       589.4946612543916,
+       368.5614683549124,
+       142.7845651177743,
+       78.14862778170493
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       635.0700212689056,
+       399.005212707691,
+       157.0020964387047,
+       79.06271212250992
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       621.3870525601141,
+       389.51003567241133,
+       154.306085680938,
+       77.57093120676474
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       656.0914267227739,
+       412.9524927561005,
+       163.29737913388203,
+       79.84155483279135
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       581.4911591587988,
+       362.0069820055989,
+       140.57009233623006,
+       78.9140848169699
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       589.5709624305606,
+       372.5484894975496,
+       140.71548900304438,
+       76.30698392996658
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       593.8985478671877,
+       375.12387610261135,
+       142.47916935855022,
+       76.29550240602613
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       517.7746481601744,
+       316.9145959151957,
+       124.8706464175849,
+       75.98940582739368
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       541.0008190923381,
+       335.1602553423199,
+       130.48530676840943,
+       75.35525698160882
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       547.7346214553676,
+       341.31848003471134,
+       130.89357112535978,
+       75.52257029529639
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       545.7283094760612,
+       338.5408877789356,
+       131.28435590921788,
+       75.90306578790768
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       532.9322957141745,
+       328.3919622628258,
+       127.58943558563323,
+       76.95089786571549
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       522.8230782422734,
+       321.1751820670957,
+       125.15035348565097,
+       76.49754268952675
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       519.7136736162479,
+       319.38421303496597,
+       122.10588395712497,
+       78.223576624157
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       532.5338870926786,
+       324.73676140580284,
+       129.90279769673663,
+       77.89432799013916
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       null,
+       294.29886,
+       101.83575,
+       72.38525
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       268.82398,
+       96.49506,
+       72.01813
+      ]
+     },
+     {
+      "year": 2024,
+      "cells": [
+       null,
+       263.39558,
+       96.433,
+       70.87742
+      ]
+     }
+    ],
+    "derivation": "Residential + tertiary building GHG emissions  (Mt CO₂eq)\n\nWhat it measures: ESABCC progress indicator B1. Direct GHG emissions from heating, cooling and cooking in residential and tertiary buildings.\n\nHow it's calculated:\n  1. Add up Residential, Tertiary, and Agriculture & fisheries energy.\n\nWhy it's done this way:\n  This is an accounting identity: the source reports these categories as mutually exclusive and exhaustive, so their sum is the total by construction — no modelling assumption is introduced, only disaggregated official data are re-aggregated.\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in Mt CO₂eq.\n  • Residential — raw input from EEA / UNFCCC inventory CRF Table 1.A(a)s4. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • Tertiary — raw input from EEA / UNFCCC inventory CRF Table 1.A(a)s4. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • Agriculture & fisheries energy — raw input from EEA / UNFCCC inventory CRF Table 1.A(a)s4. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n\nFormula:\n  Value = Residential + Tertiary + Agriculture & fisheries energy\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2022,
+     "reportWay": 468.52,
+     "stored": 481.8,
+     "rel": 0.027563594852635983
+    },
+    {
+     "year": 2023,
+     "reportWay": 437.337,
+     "stored": 437.3,
+     "rel": 0.00008499885662004668
+    },
+    {
+     "year": 2024,
+     "reportWay": 430.706,
+     "stored": 430.7,
+     "rel": 0.000013930810308866146
+    }
+   ],
+   "columns": [
+    {
+     "header": "Residential (CRF 1.A.4.b)",
+     "scale": 1,
+     "vintageDrift": -0.032720082932397476
+    },
+    {
+     "header": "Tertiary (CRF 1.A.4.a)",
+     "scale": 1,
+     "vintageDrift": 0.14800859438465874
+    },
+    {
+     "header": "Agriculture & fisheries energy (CRF 1.A.4.c)",
+     "scale": 1,
+     "vintageDrift": 0.007355758396762058
+    }
+   ]
+  },
+  "esabcc-e1-energy-supply-ghg": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "EEA / EU GHG inventory (UNFCCC CRF), EU-27",
+      "formula": {
+       "expr": "([Power and heat]+[Petroleum refineries]+[Other (mining, gas transport, …)]+[Fugitive emissions]+[Total (reported, no breakdown)])"
+      }
+     },
+     {
+      "header": "Power and heat",
+      "source": "CRF table (2023 submission): 1.A.1.a (total)"
+     },
+     {
+      "header": "Petroleum refineries",
+      "source": "CRF table (2023 submission): 1.A.1.b (total)"
+     },
+     {
+      "header": "Other (mining, gas transport, …)",
+      "source": "CRF table (2023 submission): 1.A.1.c (total)"
+     },
+     {
+      "header": "Fugitive emissions",
+      "source": "EEA inventory CSV: 1.B (given as CO2e total)"
+     },
+     {
+      "header": "Total (reported, no breakdown)",
+      "source": "EEA / EU GHG inventory (UNFCCC CRF), EU-27"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       1489.230863547243,
+       1196.7582458460263,
+       123.98705961012415,
+       63.04660429109262,
+       105.43895380000001,
+       0
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       1494.1525158825912,
+       1202.2871586886665,
+       124.13657103932623,
+       64.87433775459844,
+       102.8544484,
+       0
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       1503.668459698837,
+       1217.0337780451016,
+       126.0325001798641,
+       62.44737177387138,
+       98.1548097,
+       0
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       1433.2435942120883,
+       1154.0902877042429,
+       123.85014069512097,
+       58.663509052724464,
+       96.63965676,
+       0
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       1325.2180586250024,
+       1071.7236287739076,
+       116.49915436559944,
+       47.5994345354952,
+       89.39584095,
+       0
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       1343.140081949834,
+       1083.1597856188062,
+       115.76435969146951,
+       55.27381875955815,
+       88.94211788000001,
+       0
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       1333.855474351209,
+       1078.116924470295,
+       113.0561118340927,
+       54.42572005682139,
+       88.25671799,
+       0
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       1315.8795544891916,
+       1073.8854674238546,
+       109.90615796098554,
+       44.70565820435123,
+       87.38227090000001,
+       0
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       1254.011429036105,
+       1017.828197834809,
+       107.89153983016224,
+       42.0468901911337,
+       86.24480118,
+       0
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       1189.7277066873407,
+       959.9153430101976,
+       104.83732149796218,
+       41.65928805918095,
+       83.31575412,
+       0
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       1196.674215239784,
+       968.478226654539,
+       105.92321766926835,
+       39.550595105976775,
+       82.72217581,
+       0
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       1168.5148838034108,
+       943.7780432166106,
+       105.36763183034792,
+       39.970913676452234,
+       79.39829508,
+       0
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       1162.1379242846829,
+       941.4613738822286,
+       103.0793338102074,
+       38.79935441224699,
+       78.79786218,
+       0
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       1098.782173842464,
+       882.6337398417216,
+       99.76282735267915,
+       41.25780184806324,
+       75.12780479999999,
+       0
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       973.8049218778422,
+       765.3394265641642,
+       100.06290830640184,
+       39.931718417276095,
+       68.47086859,
+       0
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       841.5181786759792,
+       652.2738549169003,
+       93.1745498914046,
+       32.67368369767437,
+       63.39609017,
+       0
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       901.6247143916128,
+       716.9830013629618,
+       92.82853754286684,
+       30.63507096578415,
+       61.17810452,
+       0
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       924.3341574,
+       0,
+       0,
+       0,
+       0,
+       924.3341574
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       0,
+       0,
+       0,
+       0,
+       746.30625
+      ]
+     },
+     {
+      "year": 2024,
+      "cells": [
+       null,
+       0,
+       0,
+       0,
+       0,
+       689.12692
+      ]
+     }
+    ],
+    "derivation": "Energy supply GHG emissions  (Mt CO₂eq)\n\nWhat it measures: ESABCC progress indicator E1. Total energy supply emissions: public power & heat, refineries and other energy industries. Fit-for-55 MIX gives the 2030 benchmark.\n\nHow it's calculated:\n  1. Add up Power and heat, Petroleum refineries, Other, Fugitive emissions, and Total.\n\nWhy it's done this way:\n  This is an accounting identity: the source reports these categories as mutually exclusive and exhaustive, so their sum is the total by construction — no modelling assumption is introduced, only disaggregated official data are re-aggregated.\n\n⚠ Caveat:\n  The sectoral breakdown is available 2005–2021; the 2022 point uses the reported total only (the four components are blank that year).\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in Mt CO₂eq.\n  • Power and heat — raw input from CRF table (2023 submission): 1.A.1.a (total). It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • Petroleum refineries — raw input from CRF table (2023 submission): 1.A.1.b (total). It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • Other — raw input from CRF table (2023 submission): 1.A.1.c (total). It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • Fugitive emissions — raw input from EEA inventory CSV: 1.B (given as CO2e total). It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n  • Total — raw input from EEA / EU GHG inventory (UNFCCC CRF), EU-27. It is one of the source categories that are added together to form the total, so it has to be captured to reproduce the figure.\n\nFormula:\n  Value = (Power and heat + Petroleum refineries + Other + Fugitive emissions + Total)\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": 746.306,
+     "stored": 746.3,
+     "rel": 0.000008374648264803347
+    },
+    {
+     "year": 2024,
+     "reportWay": 689.127,
+     "stored": 689.1,
+     "rel": 0.000039065447685413236
+    }
+   ],
+   "columns": [
+    {
+     "header": "Total (reported, no breakdown)",
+     "scale": 1,
+     "vintageDrift": 0.01463559951095994
+    }
+   ]
+  },
+  "esabcc-e2-res-noBio-power-share": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "Eurostat energy balances (EU-27 gross electricity generation)",
+      "formula": {
+       "expr": "([Renewable - hydro]+[Renewable - solar]+[Renewable - wind]+[Renewable - other non-bio]) / [Total]"
+      }
+     },
+     {
+      "header": "Renewable - hydro",
+      "source": "See 4bis tab for sources and categorisation details"
+     },
+     {
+      "header": "Renewable - solar",
+      "source": "See 4bis tab for sources and categorisation details"
+     },
+     {
+      "header": "Renewable - wind",
+      "source": "See 4bis tab for sources and categorisation details"
+     },
+     {
+      "header": "Renewable - other non-bio",
+      "source": "See 4bis tab for sources and categorisation details"
+     },
+     {
+      "header": "Total",
+      "source": "Eurostat energy balances, EU27 gross electricity generation"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       0.14263847656419304,
+       340.546184,
+       1.4586880000000002,
+       68.094587,
+       5.878568,
+       2916.31008
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       0.14489278665615615,
+       342.707881,
+       2.48947,
+       78.711461,
+       6.079915,
+       2967.6337719999997
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       0.15046829392848632,
+       338.893876,
+       3.774527,
+       99.907526,
+       6.237820000000001,
+       2982.779542999999
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       0.16090041600934385,
+       354.877833,
+       7.437621,
+       113.234843,
+       6.196697,
+       2994.069288
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       0.1767180445912535,
+       357.662569,
+       14.103981,
+       124.555918,
+       5.994467,
+       2842.476761000001
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       0.19143946775535947,
+       401.279583,
+       23.224063,
+       139.842164,
+       6.078805999999999,
+       2979.6604780000002
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       0.18791174925192405,
+       332.84879700000005,
+       47.288533,
+       165.346899,
+       6.424249,
+       2937.0621060000003
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       0.21246360156192742,
+       359.551397,
+       70.14140800000001,
+       187.468916,
+       6.278327999999999,
+       2934.338138
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       0.23889139706199689,
+       396.650775,
+       84.13560100000001,
+       209.474806,
+       6.439842,
+       2916.3922710000006
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       0.25272895690717695,
+       398.608494,
+       94.172878,
+       222.356661,
+       6.783885000000001,
+       2856.5065389999995
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       0.25319329867695384,
+       363.23762800000003,
+       100.85686199999999,
+       263.204743,
+       7.101067,
+       2900.5518860000006
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       0.25591779278556664,
+       372.71119500000003,
+       101.036686,
+       266.814627,
+       7.23339,
+       2922.01605
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       0.2538305110404779,
+       322.463411,
+       107.934943,
+       312.313129,
+       7.236751,
+       2954.5235950000006
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       0.27605294894796617,
+       370.23443599999996,
+       113.06662399999999,
+       320.61589799999996,
+       7.134921,
+       2938.030121
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       0.29075197970439914,
+       345.642675,
+       123.884579,
+       367.117813,
+       7.2247699999999995,
+       2902.370047
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       0.33230112478810214,
+       375.486539,
+       145.11675599999998,
+       397.481079,
+       7.22602,
+       2784.5539030000004
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       0.3207619434519137,
+       374.849021,
+       163.76427299999997,
+       386.53956400000004,
+       7.0411660000000005,
+       2906.1864819999996
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       0.33755535703572626,
+       308.58113299999997,
+       209.64428700000002,
+       421.26459,
+       6.946363,
+       2803.796039
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       330.438319,
+       254.459334,
+       480.450777,
+       6.721399,
+       2760.944843
+      ]
+     },
+     {
+      "year": 2024,
+      "cells": [
+       null,
+       369.659291,
+       308.516899,
+       490.037497,
+       6.681308,
+       2828.734401
+      ]
+     }
+    ],
+    "derivation": "Non-biomass renewable share of EU electricity mix  (%)\n\nWhat it measures: ESABCC progress indicator E2 (renewables component). Share of non-biomass renewables (wind, solar PV, hydro, geothermal) in total electricity generation.\n\nHow it's calculated:\n  1. Add up Renewable - hydro, Renewable - solar, Renewable - wind, and Renewable - other non-bio.\n  2. Divide that by Total to get its share of the total.\n\nWhy it's done this way:\n  Normalising by the total removes the effect of overall volume and isolates the compositional shift (the fuel/modal mix) — which is the quantity of policy interest, and makes years with different total demand directly comparable.\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in %.\n  • Renewable - hydro — raw input. It is one of the components measured against the total to form the share, so it has to be captured to reproduce the figure.\n  • Renewable - solar — raw input. It is one of the components measured against the total to form the share, so it has to be captured to reproduce the figure.\n  • Renewable - wind — raw input. It is one of the components measured against the total to form the share, so it has to be captured to reproduce the figure.\n  • Renewable - other non-bio — raw input. It is one of the components measured against the total to form the share, so it has to be captured to reproduce the figure.\n  • Total — the total, used as the denominator. Dividing by it turns the components into a share.\n\nFormula:\n  Value = (Renewable - hydro + Renewable - solar + Renewable - wind + Renewable - other non - bio) ÷ Total\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": 38.83,
+     "stored": 40.01,
+     "rel": 0.02949720161218073
+    },
+    {
+     "year": 2024,
+     "reportWay": 41.534,
+     "stored": 41.38,
+     "rel": 0.003728822640768009
+    }
+   ],
+   "columns": [
+    {
+     "header": "Renewable - hydro",
+     "scale": 0.001,
+     "vintageDrift": 0.11757495035894627
+    },
+    {
+     "header": "Renewable - solar",
+     "scale": 0.001,
+     "vintageDrift": -0.003966771825112736
+    },
+    {
+     "header": "Renewable - wind",
+     "scale": 0.001,
+     "vintageDrift": -0.003291307950717748
+    },
+    {
+     "header": "Renewable - other non-bio",
+     "scale": 0.001,
+     "vintageDrift": 0.0007340157446735773
+    },
+    {
+     "header": "Total",
+     "scale": 0.001,
+     "vintageDrift": -0.00699080277038866
+    }
+   ]
+  },
+  "esabcc-e2-fossil-power-share": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "Eurostat energy balances (EU-27 gross electricity generation)",
+      "formula": {
+       "expr": "([Solid fossil fuels]+[Natural & manufactured gases]+[Oil products & other fossils]) / [Total]"
+      }
+     },
+     {
+      "header": "Solid fossil fuels",
+      "source": "See 4bis tab for sources and categorisation details"
+     },
+     {
+      "header": "Natural & manufactured gases",
+      "source": "See 4bis tab for sources and categorisation details"
+     },
+     {
+      "header": "Oil products & other fossils",
+      "source": "See 4bis tab for sources and categorisation details"
+     },
+     {
+      "header": "Total",
+      "source": "Eurostat energy balances, EU27 gross electricity generation"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       0.5182598412168846,
+       808.8822210000001,
+       548.315303,
+       154.208875,
+       2916.31008
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       0.5190010238230972,
+       816.4990429999999,
+       575.616132,
+       148.089791,
+       2967.6337719999997
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       0.5260279545909439,
+       828.805419,
+       609.4216759999999,
+       130.798327,
+       2982.779542999999
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       0.509190394861697,
+       757.053054,
+       647.726098,
+       119.77217100000001,
+       2994.069288
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       0.49325477071156254,
+       703.574826,
+       590.1233000000001,
+       108.36709700000002,
+       2842.476761000001
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       0.4784934067243079,
+       701.230144,
+       622.051201,
+       102.46654799999999,
+       2979.6604780000002
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       0.4800622207203677,
+       724.8267979999999,
+       591.3915999999999,
+       93.754159,
+       2937.0621060000003
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       0.4593046726777745,
+       742.7146720000001,
+       516.165104,
+       88.875442,
+       2934.338138
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       0.4306696422458046,
+       728.930201,
+       446.60268799999994,
+       80.468727,
+       2916.3922710000006
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       0.4055448339374518,
+       692.768867,
+       388.686239,
+       76.986364,
+       2856.5065389999995
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       0.41736263875956736,
+       705.028993,
+       428.52983400000005,
+       77.023162,
+       2900.5518860000006
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       0.4224018314341565,
+       659.0611759999999,
+       498.1137,
+       77.09005499999999,
+       2922.01605
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       0.43004707566060235,
+       638.838938,
+       557.9138810000001,
+       73.831413,
+       2954.5235950000006
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       0.4042712201996516,
+       595.507,
+       522.4296,
+       69.824422,
+       2938.030121
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       0.38311501152285704,
+       450.933123,
+       599.577544,
+       61.430867,
+       2902.370047
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       0.35629252352813934,
+       352.40512800000005,
+       586.4874719999999,
+       53.223137,
+       2784.5539030000004
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       0.36183279962004866,
+       419.00388799999996,
+       579.8584930000001,
+       52.69121,
+       2906.1864819999996
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       0.38756501538805416,
+       453.17999900000007,
+       571.6867760000001,
+       61.786480000000005,
+       2803.796039
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       322.019936,
+       462.535657,
+       47.866955,
+       2760.944843
+      ]
+     },
+     {
+      "year": 2024,
+      "cells": [
+       null,
+       274.190922,
+       443.188995,
+       45.73424,
+       2828.734401
+      ]
+     }
+    ],
+    "derivation": "Fossil share of EU electricity mix  (%)\n\nWhat it measures: ESABCC progress indicator E2 (fossil component). Share of fossil fuels in total electricity generation; complements the renewable share to highlight the substitution pace.\n\nHow it's calculated:\n  1. Add up Solid fossil fuels, Natural & manufactured gases, and Oil products & other fossils.\n  2. Divide that by Total to get its share of the total.\n\nWhy it's done this way:\n  Normalising by the total removes the effect of overall volume and isolates the compositional shift (the fuel/modal mix) — which is the quantity of policy interest, and makes years with different total demand directly comparable.\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in %.\n  • Solid fossil fuels — raw input. It is one of the components measured against the total to form the share, so it has to be captured to reproduce the figure.\n  • Natural & manufactured gases — raw input. It is one of the components measured against the total to form the share, so it has to be captured to reproduce the figure.\n  • Oil products & other fossils — raw input. It is one of the components measured against the total to form the share, so it has to be captured to reproduce the figure.\n  • Total — the total, used as the denominator. Dividing by it turns the components into a share.\n\nFormula:\n  Value = (Solid fossil fuels + Natural & manufactured gases + Oil products & other fossils) ÷ Total\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": 30.15,
+     "stored": 31.42,
+     "rel": 0.04042279145773401
+    },
+    {
+     "year": 2024,
+     "reportWay": 26.977,
+     "stored": 28.11,
+     "rel": 0.0402977945798745
+    }
+   ],
+   "columns": [
+    {
+     "header": "Solid fossil fuels",
+     "scale": 0.001,
+     "vintageDrift": -0.006407296070643831
+    },
+    {
+     "header": "Natural & manufactured gases",
+     "scale": 0.001,
+     "vintageDrift": 0.06197101817954431
+    },
+    {
+     "header": "Oil products & other fossils",
+     "scale": 0.001,
+     "vintageDrift": 0.10841558885990898
+    },
+    {
+     "header": "Total",
+     "scale": 0.001,
+     "vintageDrift": -0.00699080277038866
+    }
+   ]
+  },
+  "esabcc-o3-gross-inland": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "Eurostat (nrg_bal_c)",
+      "formula": {
+       "expr": "[Gross inland (ktoe)] * [ktoe → TWh]"
+      }
+     },
+     {
+      "header": "Gross inland (ktoe)",
+      "source": "Eurostat (nrg_bal_c)"
+     },
+     {
+      "header": "ktoe → TWh",
+      "source": "IEA unit converter"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       18652.096214959998,
+       1603791.592,
+       0.01163
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       18808.78903087,
+       1617264.749,
+       0.01163
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       18569.90175983,
+       1596724.141,
+       0.01163
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       18524.24162388,
+       1592798.076,
+       0.01163
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       17430.29279504,
+       1498735.408,
+       0.01163
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       18130.769311609998,
+       1558965.547,
+       0.01163
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       17597.326530119997,
+       1513097.724,
+       0.01163
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       17372.23313688,
+       1493743.176,
+       0.01163
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       17200.24742921,
+       1478955.067,
+       0.01163
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       16610.14288067,
+       1428215.209,
+       0.01163
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       16842.21620449,
+       1448169.923,
+       0.01163
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       16981.77682088,
+       1460169.976,
+       0.01163
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       17338.1042506,
+       1490808.62,
+       0.01163
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       17227.87927414,
+       1481330.978,
+       0.01163
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       16959.99918068,
+       1458297.436,
+       0.01163
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       15585.31193267,
+       1340095.609,
+       0.01163
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       16533.976394100002,
+       1421666.07,
+       0.01163
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       null,
+       1354389.897,
+       0.01163
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       1299325.698,
+       0.01163
+      ]
+     }
+    ],
+    "derivation": "Gross inland energy consumption (EU-27)  (TWh)\n\nWhat it measures: ESABCC progress indicator O3. Gross inland energy consumption covering all fuels and renewables. Benchmark from Climate Target Plan MIX 2050 scenario.\n\nHow it's calculated:\n  1. Take the raw Gross inland, reported in ktoe.\n  2. Convert it from ktoe to TWh.\n\nWhy it's done this way:\n  A unit conversion is an exact linear rescaling (e.g. 1 toe ≡ 11.63 MWh): it expresses the source's ktoe data in TWh without changing the underlying physical quantity or introducing any assumption.\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in TWh.\n  • Gross inland — raw input from Eurostat (nrg_bal_c). This is the published series the indicator reports; no further breakdown is available in the source.\n  • ktoe → TWh — unit-conversion factor (ktoe → TWh). Needed because the source reports ktoe but the indicator is shown in TWh; multiplying by it only changes the unit, not the underlying quantity.\n\nFormula:\n  Value = Gross inland × ktoe → TWh\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2022,
+     "reportWay": 15751.555,
+     "stored": 16241.1,
+     "rel": 0.030142385545929753
+    },
+    {
+     "year": 2023,
+     "reportWay": 15111.158,
+     "stored": 15575.3,
+     "rel": 0.029799883935461798
+    }
+   ],
+   "columns": [
+    {
+     "header": "Gross inland (ktoe)",
+     "scale": 1,
+     "vintageDrift": -0.00023475177674192604
+    }
+   ]
+  },
+  "esabcc-i6-industry-electrification": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "Eurostat energy balances",
+      "formula": {
+       "expr": "[electricity]/[Total energy use]"
+      }
+     },
+     {
+      "header": "electricity",
+      "source": "Eurostat energy balances",
+      "formula": {
+       "expr": "[Electricity (raw input)]"
+      }
+     },
+     {
+      "header": "Total energy use",
+      "source": "Eurostat energy balances",
+      "formula": {
+       "expr": "[Total]"
+      }
+     },
+     {
+      "header": "Electricity (raw input)",
+      "source": "Eurostat energy balances"
+     },
+     {
+      "header": "Total",
+      "source": "Eurostat energy balances"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       0.3171376990350729,
+       87.25259,
+       275.12525400000004,
+       87.25259,
+       275.12525400000004
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       0.32347845916457757,
+       87.20215300000001,
+       269.57638299999996,
+       87.20215300000001,
+       269.57638299999996
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       0.32215150290704053,
+       88.358376,
+       274.275846,
+       88.358376,
+       274.275846
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       0.3253961439137459,
+       86.265145,
+       265.10807400000004,
+       86.265145,
+       265.10807400000004
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       0.32420226401500374,
+       74.30082399999999,
+       229.18045999999998,
+       74.30082399999999,
+       229.18045999999998
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       0.32635016494294855,
+       79.58803,
+       243.873111,
+       79.58803,
+       243.873111
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       0.32963440399218724,
+       80.52822,
+       244.295556,
+       80.52822,
+       244.295556
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       0.3301170101571032,
+       79.12993700000001,
+       239.702695,
+       79.12993700000001,
+       239.702695
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       0.3291846737489159,
+       77.933983,
+       236.748516,
+       77.933983,
+       236.748516
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       0.3354141705093988,
+       78.25137699999999,
+       233.297767,
+       78.25137699999999,
+       233.297767
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       0.33652292601635087,
+       78.580682,
+       233.507663,
+       78.580682,
+       233.507663
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       0.3348091751173783,
+       79.61735499999999,
+       237.799203,
+       79.61735499999999,
+       237.799203
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       0.3375648205557339,
+       81.03699499999999,
+       240.063508,
+       81.03699499999999,
+       240.063508
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       0.3352720452061136,
+       81.292179,
+       242.46632,
+       81.292179,
+       242.46632
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       0.33536905544418766,
+       80.233557,
+       239.239595,
+       80.233557,
+       239.239595
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       0.3292776188707638,
+       76.037877,
+       230.923308,
+       76.037877,
+       230.923308
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       0.33215479960129957,
+       79.831363,
+       240.34384899999998,
+       79.831363,
+       240.34384899999998
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       null,
+       null,
+       null,
+       74.706527,
+       226.90747
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       null,
+       null,
+       70.750109,
+       215.070029
+      ]
+     }
+    ],
+    "derivation": "Electricity share of industrial final energy use  (%)\n\nWhat it measures: ESABCC progress indicator I6. Share of electricity in industrial final energy use (excluding non-energy use). Climate Target Plan benchmarks for 2030 and 2050.\n\nHow it's calculated:\n  1. Divide electricity by Total energy use to get its share of the total.\n\nWhy it's done this way:\n  Normalising by the total removes the effect of overall volume and isolates the compositional shift (the fuel/modal mix) — which is the quantity of policy interest, and makes years with different total demand directly comparable.\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in %.\n  • electricity — intermediate step, computed as Electricity. It prepares this component from the detailed source rows so the final line can combine them.\n  • Total energy use — intermediate step, computed as Total. It prepares this component from the detailed source rows so the final line can combine them.\n  • Electricity — raw input from Eurostat energy balances. It is one of the components measured against the total to form the share, so it has to be captured to reproduce the figure.\n  • Total — raw input from Eurostat energy balances. It is one of the components measured against the total to form the share, so it has to be captured to reproduce the figure.\n\nFormula:\n  Value = electricity ÷ Total energy use\n  electricity = Electricity\n  Total energy use = Total\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2022,
+     "reportWay": 32.924,
+     "stored": 33.3,
+     "rel": 0.011297755314424089
+    },
+    {
+     "year": 2023,
+     "reportWay": 32.896,
+     "stored": 32.6,
+     "rel": 0.009089342862964929
+    }
+   ],
+   "columns": [
+    {
+     "header": "Electricity (raw input)",
+     "scale": 0.001,
+     "vintageDrift": 0.010473276058294179
+    },
+    {
+     "header": "Total",
+     "scale": 0.001,
+     "vintageDrift": -0.010234409299140879
+    }
+   ]
+  },
+  "esabcc-o2-pec": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "Eurostat (nrg_bal_c)",
+      "formula": {
+       "expr": "[PEC (Mtoe)] * [Mtoe → TWh]"
+      }
+     },
+     {
+      "header": "PEC (Mtoe)",
+      "source": "Eurostat (nrg_bal_c)"
+     },
+     {
+      "header": "Mtoe → TWh",
+      "source": "IEA unit converter"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       17418.93834463,
+       1497.759101,
+       11.63
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       17573.14537597,
+       1511.018519,
+       11.63
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       17330.618577840003,
+       1490.164968,
+       11.63
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       17314.322354350003,
+       1488.7637450000002,
+       11.63
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       16319.305609150002,
+       1403.207705,
+       11.63
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       16951.3531363,
+       1457.55401,
+       11.63
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       16423.06420094,
+       1412.129338,
+       11.63
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       16237.603940380002,
+       1396.182626,
+       11.63
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       16097.665162910002,
+       1384.150057,
+       11.63
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       15473.2085135,
+       1330.45645,
+       11.63
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       15731.959615200001,
+       1352.70504,
+       11.63
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       15864.123842340003,
+       1364.0691180000001,
+       11.63
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       16093.571949520001,
+       1383.798104,
+       11.63
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       16018.454488950003,
+       1377.339165,
+       11.63
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       15747.90439172,
+       1354.076044,
+       11.63
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       14372.129238620002,
+       1235.780674,
+       11.63
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       15248.247818560001,
+       1311.113312,
+       11.63
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       null,
+       1259.22,
+       11.63
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       1207.67,
+       11.63
+      ]
+     },
+     {
+      "year": 2024,
+      "cells": [
+       null,
+       1193.72,
+       11.63
+      ]
+     }
+    ],
+    "derivation": "Primary energy consumption (EU-27)  (TWh)\n\nWhat it measures: ESABCC progress indicator O2 (primary energy component). EED 2030 indicative benchmark applies; Climate Target Plan MIX 2050 trajectory used as longer-run benchmark.\n\nHow it's calculated:\n  1. Take the raw PEC, reported in Mtoe.\n  2. Convert it from Mtoe to TWh.\n\nWhy it's done this way:\n  A unit conversion is an exact linear rescaling (e.g. 1 toe ≡ 11.63 MWh): it expresses the source's Mtoe data in TWh without changing the underlying physical quantity or introducing any assumption.\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in TWh.\n  • PEC — raw input from Eurostat (nrg_bal_c). This is the published series the indicator reports; no further breakdown is available in the source.\n  • Mtoe → TWh — unit-conversion factor (Mtoe → TWh). Needed because the source reports Mtoe but the indicator is shown in TWh; multiplying by it only changes the unit, not the underlying quantity.\n\nFormula:\n  Value = PEC × Mtoe → TWh\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2022,
+     "reportWay": 14644.729,
+     "stored": 14653.8,
+     "rel": 0.00061904761904742
+    },
+    {
+     "year": 2023,
+     "reportWay": 14045.202,
+     "stored": 14083.9,
+     "rel": 0.002747669324547703
+    },
+    {
+     "year": 2024,
+     "reportWay": 13882.964,
+     "stored": 13979.3,
+     "rel": 0.00689136079775084
+    }
+   ],
+   "columns": [
+    {
+     "header": "PEC (Mtoe)",
+     "scale": 1,
+     "vintageDrift": -0.0017486451298529548
+    }
+   ]
+  },
+  "esabcc-o2-fec": {
+   "layout": {
+    "columns": [
+     {
+      "header": "Value",
+      "source": "Eurostat (nrg_bal_c)",
+      "formula": {
+       "expr": "[FEC (Mtoe)] * [Mtoe → TWh]"
+      }
+     },
+     {
+      "header": "FEC (Mtoe)",
+      "source": "Eurostat (nrg_bal_c)"
+     },
+     {
+      "header": "Mtoe → TWh",
+      "source": "IEA unit converter"
+     }
+    ],
+    "rows": [
+     {
+      "year": 2005,
+      "cells": [
+       12109.82318984,
+       1041.257368,
+       11.63
+      ]
+     },
+     {
+      "year": 2006,
+      "cells": [
+       12163.190049960001,
+       1045.846092,
+       11.63
+      ]
+     },
+     {
+      "year": 2007,
+      "cells": [
+       11961.649523380001,
+       1028.516726,
+       11.63
+      ]
+     },
+     {
+      "year": 2008,
+      "cells": [
+       12056.965967950002,
+       1036.712465,
+       11.63
+      ]
+     },
+     {
+      "year": 2009,
+      "cells": [
+       11407.05188819,
+       980.8299129999999,
+       11.63
+      ]
+     },
+     {
+      "year": 2010,
+      "cells": [
+       11914.97147168,
+       1024.503136,
+       11.63
+      ]
+     },
+     {
+      "year": 2011,
+      "cells": [
+       11450.91417733,
+       984.6013909999999,
+       11.63
+      ]
+     },
+     {
+      "year": 2012,
+      "cells": [
+       11427.20272399,
+       982.5625729999999,
+       11.63
+      ]
+     },
+     {
+      "year": 2013,
+      "cells": [
+       11401.459056079999,
+       980.3490159999999,
+       11.63
+      ]
+     },
+     {
+      "year": 2014,
+      "cells": [
+       10918.07830739,
+       938.785753,
+       11.63
+      ]
+     },
+     {
+      "year": 2015,
+      "cells": [
+       11140.02857683,
+       957.870041,
+       11.63
+      ]
+     },
+     {
+      "year": 2016,
+      "cells": [
+       11361.160047750001,
+       976.8839250000001,
+       11.63
+      ]
+     },
+     {
+      "year": 2017,
+      "cells": [
+       11502.07301217,
+       989.0002589999999,
+       11.63
+      ]
+     },
+     {
+      "year": 2018,
+      "cells": [
+       11531.881434860003,
+       991.5633220000001,
+       11.63
+      ]
+     },
+     {
+      "year": 2019,
+      "cells": [
+       11466.808014450002,
+       985.968015,
+       11.63
+      ]
+     },
+     {
+      "year": 2020,
+      "cells": [
+       10539.724471770001,
+       906.253179,
+       11.63
+      ]
+     },
+     {
+      "year": 2021,
+      "cells": [
+       11262.798287680002,
+       968.426336,
+       11.63
+      ]
+     },
+     {
+      "year": 2022,
+      "cells": [
+       null,
+       920.44,
+       11.63
+      ]
+     },
+     {
+      "year": 2023,
+      "cells": [
+       null,
+       893.27,
+       11.63
+      ]
+     },
+     {
+      "year": 2024,
+      "cells": [
+       null,
+       900.41,
+       11.63
+      ]
+     }
+    ],
+    "derivation": "Final energy consumption (EU-27)  (TWh)\n\nWhat it measures: ESABCC progress indicator O2 (final energy component). 2030 EED indicative benchmark: 763 Mtoe (~8 875 TWh).\n\nHow it's calculated:\n  1. Take the raw FEC, reported in Mtoe.\n  2. Convert it from Mtoe to TWh.\n\nWhy it's done this way:\n  A unit conversion is an exact linear rescaling (e.g. 1 toe ≡ 11.63 MWh): it expresses the source's Mtoe data in TWh without changing the underlying physical quantity or introducing any assumption.\n\nThe columns in this sheet (and why each is needed):\n  • Value — the final number plotted on the website, in TWh.\n  • FEC — raw input from Eurostat (nrg_bal_c). This is the published series the indicator reports; no further breakdown is available in the source.\n  • Mtoe → TWh — unit-conversion factor (Mtoe → TWh). Needed because the source reports Mtoe but the indicator is shown in TWh; multiplying by it only changes the unit, not the underlying quantity.\n\nFormula:\n  Value = FEC × Mtoe → TWh\n\nEverything recomputes live — change a raw input and the plotted value (and any intermediate columns) update automatically, using the same formulas as the original source workbook."
+   },
+   "rows": [
+    {
+     "year": 2022,
+     "reportWay": 10704.717,
+     "stored": 10711.2,
+     "rel": 0.0006052356411979768
+    },
+    {
+     "year": 2023,
+     "reportWay": 10388.73,
+     "stored": 10397.2,
+     "rel": 0.0008146327857500146
+    },
+    {
+     "year": 2024,
+     "reportWay": 10471.768,
+     "stored": 10467,
+     "rel": 0.00045555555555552943
+    }
+   ],
+   "columns": [
+    {
+     "header": "FEC (Mtoe)",
+     "scale": 1,
+     "vintageDrift": 0.021708430658859523
+    }
+   ]
+  }
+ },
+ "results": [
+  {
+   "id": "esabcc-o1-ghg-total",
+   "code": "O1",
+   "status": "MATCHES",
+   "years": [
+    2023,
+    2024
+   ],
+   "worst": 0.01513063334387029,
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": 3073.603,
+     "stored": 3118,
+     "rel": 0.014238932326330224
+    },
+    {
+     "year": 2024,
+     "reportWay": 2997.154,
+     "stored": 3043.2,
+     "rel": 0.01513063334387029
+    }
+   ],
+   "anchor": 2022,
+   "drift": 0.16601930873474213,
+   "percentScale": false
+  },
+  {
+   "id": "esabcc-i1-industry-ghg",
+   "code": "I1",
+   "status": "MATCHES",
+   "years": [
+    2023,
+    2024
+   ],
+   "worst": 0.00004649983644088575,
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": 622.099,
+     "stored": 622.1,
+     "rel": 0.0000018646519852550062
+    },
+    {
+     "year": 2024,
+     "reportWay": 611.428,
+     "stored": 611.4,
+     "rel": 0.00004649983644088575
+    }
+   ],
+   "anchor": 2022,
+   "drift": 0.01929998732409821,
+   "percentScale": false
+  },
+  {
+   "id": "esabcc-l1-lulucf-net",
+   "code": "L1",
+   "status": "MATCHES",
+   "years": [
+    2023,
+    2024
+   ],
+   "worst": 0.00006937354988398565,
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": -215.515,
+     "stored": -215.5,
+     "rel": 0.00006937354988398565
+    },
+    {
+     "year": 2024,
+     "reportWay": -230.985,
+     "stored": -231,
+     "rel": 0.0000642424242423914
+    }
+   ],
+   "anchor": 2022,
+   "drift": 0.11810748523423054,
+   "percentScale": false
+  },
+  {
+   "id": "esabcc-l7-nonforest-lulucf",
+   "code": "L7",
+   "status": "SCALE MISMATCH",
+   "why": "4.B - Cropland: the report's 2021 cell is 22646.39783576392 but the source series carries 50.51256 — ratio 448.3320, no unit factor explains it, so this is a different series"
+  },
+  {
+   "id": "esabcc-b1-buildings-ghg",
+   "code": "B1",
+   "status": "DIFFERS",
+   "years": [
+    2022,
+    2023,
+    2024
+   ],
+   "worst": 0.027563594852635983,
+   "rows": [
+    {
+     "year": 2022,
+     "reportWay": 468.52,
+     "stored": 481.8,
+     "rel": 0.027563594852635983
+    },
+    {
+     "year": 2023,
+     "reportWay": 437.337,
+     "stored": 437.3,
+     "rel": 0.00008499885662004668
+    },
+    {
+     "year": 2024,
+     "reportWay": 430.706,
+     "stored": 430.7,
+     "rel": 0.000013930810308866146
+    }
+   ],
+   "anchor": 2021,
+   "drift": 0.14800859438465874,
+   "percentScale": false
+  },
+  {
+   "id": "esabcc-e1-energy-supply-ghg",
+   "code": "E1",
+   "status": "MATCHES",
+   "years": [
+    2023,
+    2024
+   ],
+   "worst": 0.000039065447685413236,
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": 746.306,
+     "stored": 746.3,
+     "rel": 0.000008374648264803347
+    },
+    {
+     "year": 2024,
+     "reportWay": 689.127,
+     "stored": 689.1,
+     "rel": 0.000039065447685413236
+    }
+   ],
+   "anchor": 2022,
+   "drift": 0.01463559951095994,
+   "percentScale": false
+  },
+  {
+   "id": "esabcc-a1-agri-nonco2",
+   "code": "A1",
+   "status": "SCALE MISMATCH",
+   "why": "Other: the report's 2021 cell is 5.1696654404224205 but the source series carries 15.078800000000001 — ratio 0.3428, no unit factor explains it, so this is a different series"
+  },
+  {
+   "id": "esabcc-e2-res-noBio-power-share",
+   "code": "E2 (RES)",
+   "status": "DIFFERS",
+   "years": [
+    2023,
+    2024
+   ],
+   "worst": 0.02949720161218073,
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": 38.83,
+     "stored": 40.01,
+     "rel": 0.02949720161218073
+    },
+    {
+     "year": 2024,
+     "reportWay": 41.534,
+     "stored": 41.38,
+     "rel": 0.003728822640768009
+    }
+   ],
+   "anchor": 2022,
+   "drift": 0.11757495035894627,
+   "percentScale": true
+  },
+  {
+   "id": "esabcc-e2-fossil-power-share",
+   "code": "E2 (fossil)",
+   "status": "DIFFERS",
+   "years": [
+    2023,
+    2024
+   ],
+   "worst": 0.04042279145773401,
+   "rows": [
+    {
+     "year": 2023,
+     "reportWay": 30.15,
+     "stored": 31.42,
+     "rel": 0.04042279145773401
+    },
+    {
+     "year": 2024,
+     "reportWay": 26.977,
+     "stored": 28.11,
+     "rel": 0.0402977945798745
+    }
+   ],
+   "anchor": 2022,
+   "drift": 0.10841558885990898,
+   "percentScale": true
+  },
+  {
+   "id": "esabcc-o3-gross-inland",
+   "code": "O3",
+   "status": "DIFFERS",
+   "years": [
+    2022,
+    2023
+   ],
+   "worst": 0.030142385545929753,
+   "rows": [
+    {
+     "year": 2022,
+     "reportWay": 15751.555,
+     "stored": 16241.1,
+     "rel": 0.030142385545929753
+    },
+    {
+     "year": 2023,
+     "reportWay": 15111.158,
+     "stored": 15575.3,
+     "rel": 0.029799883935461798
+    }
+   ],
+   "anchor": 2021,
+   "drift": 0.00023475177674192604,
+   "percentScale": false
+  },
+  {
+   "id": "esabcc-i6-industry-electrification",
+   "code": "I6",
+   "status": "MATCHES",
+   "years": [
+    2022,
+    2023
+   ],
+   "worst": 0.011297755314424089,
+   "rows": [
+    {
+     "year": 2022,
+     "reportWay": 32.924,
+     "stored": 33.3,
+     "rel": 0.011297755314424089
+    },
+    {
+     "year": 2023,
+     "reportWay": 32.896,
+     "stored": 32.6,
+     "rel": 0.009089342862964929
+    }
+   ],
+   "anchor": 2021,
+   "drift": 0.010473276058294179,
+   "percentScale": true
+  },
+  {
+   "id": "esabcc-o2-pec",
+   "code": "O2 (PEC)",
+   "status": "MATCHES",
+   "years": [
+    2022,
+    2023,
+    2024
+   ],
+   "worst": 0.00689136079775084,
+   "rows": [
+    {
+     "year": 2022,
+     "reportWay": 14644.729,
+     "stored": 14653.8,
+     "rel": 0.00061904761904742
+    },
+    {
+     "year": 2023,
+     "reportWay": 14045.202,
+     "stored": 14083.9,
+     "rel": 0.002747669324547703
+    },
+    {
+     "year": 2024,
+     "reportWay": 13882.964,
+     "stored": 13979.3,
+     "rel": 0.00689136079775084
+    }
+   ],
+   "anchor": 2021,
+   "drift": 0.0017486451298529548,
+   "percentScale": false
+  },
+  {
+   "id": "esabcc-o2-fec",
+   "code": "O2 (FEC)",
+   "status": "MATCHES",
+   "years": [
+    2022,
+    2023,
+    2024
+   ],
+   "worst": 0.0008146327857500146,
+   "rows": [
+    {
+     "year": 2022,
+     "reportWay": 10704.717,
+     "stored": 10711.2,
+     "rel": 0.0006052356411979768
+    },
+    {
+     "year": 2023,
+     "reportWay": 10388.73,
+     "stored": 10397.2,
+     "rel": 0.0008146327857500146
+    },
+    {
+     "year": 2024,
+     "reportWay": 10471.768,
+     "stored": 10467,
+     "rel": 0.00045555555555552943
+    }
+   ],
+   "anchor": 2021,
+   "drift": 0.021708430658859523,
+   "percentScale": false
+  }
+ ]
+}

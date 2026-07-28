@@ -159,6 +159,28 @@ def note_line(ws, row, text, width=8, font=None):
     return row + 1
 
 
+def text_categories(chart, ws, col, first_row, last_row):
+    """
+    Point a chart's category axis at a column of TEXT labels.
+
+    `chart.set_categories()` always writes the reference as a numeric one
+    (`c:numRef`). Excel reads that as "these cells are numbers", finds text,
+    and draws the axis with no labels at all — the chart comes out as bars
+    with nothing naming them. Rewriting the reference as `c:strRef` is what
+    makes the names appear.
+
+    Numeric categories (a column of years) are fine through `set_categories`;
+    this is only for label columns.
+    """
+    from openpyxl.chart.data_source import AxDataSource, StrRef
+
+    letter = get_column_letter(col)
+    ref = f"'{ws.title}'!${letter}${first_row}:${letter}${last_row}"
+    for s in chart.series:
+        s.cat = AxDataSource(strRef=StrRef(f=ref))
+    return chart
+
+
 def style_chart(chart, title, height=7.5, width=17):
     """Common chart chrome: ESABCC teal title, no border, light gridlines."""
     from openpyxl.chart.text import RichText
@@ -185,6 +207,10 @@ def style_chart(chart, title, height=7.5, width=17):
                            p=[Paragraph(pPr=ParagraphProperties(defRPr=axis_cp), endParaRPr=axis_cp)])
         ax.majorGridlines = None
         ax.spPr = GraphicalProperties(ln=LineProperties(solidFill=RULE))
+        # openpyxl leaves both of these out, and Excel then draws the axis
+        # without its tick labels — the chart appears with bars but no names.
+        ax.delete = False
+        ax.tickLblPos = "nextTo"
     chart.graphical_properties = GraphicalProperties(ln=LineProperties(noFill=True))
     if chart.legend is not None:
         chart.legend.overlay = False
