@@ -262,14 +262,6 @@
     "reason": "article: Quote is the second subparagraph of Article 19(4) verbatim, not a generic reference to 'Article 19'. | label: This describes a Commission implementing-act procedure for fuel-compatibility labelling, not a deployment/quantitative target like the other rows in this"
   },
   {
-    "id": "tgt-9e83bd7c",
-    "policy_id": "batteries-regulation",
-    "set": {
-      "timeline": "from 18 February 2025"
-    },
-    "reason": "timeline: replaces string truncated mid-word; first applicability date of the Art. 7(1) carbon-footprint schedule [fact-check 2026-07]"
-  },
-  {
     "id": "tgt-34d69762",
     "policy_id": "birds-directive",
     "drop": true,
@@ -327,14 +319,6 @@
     "reason": "climate: provision expressly serves the Art. 6(1)(d)-(f) climate mitigation/adaptation & environment objectives [fact-check 2026-07]"
   },
   {
-    "id": "tgt-239ce643",
-    "policy_id": "cbam-regulation",
-    "set": {
-      "article": "Article 2(8), point (d)"
-    },
-    "reason": "article: Article reference cites only the article-level heading; the quote actually comes from a specific numbered condition within Article 2, paragraph 8. Othe"
-  },
-  {
     "id": "tgt-461fa733",
     "policy_id": "cbam-regulation",
     "set": {
@@ -357,14 +341,6 @@
       "timeline": "By 31 May of each year, and for the first time in 2027 for the year 2026"
     },
     "reason": "timeline: Same mid-word truncation as tgt-0072; the full phrase is already present verbatim in the quote."
-  },
-  {
-    "id": "tgt-e52db04e",
-    "policy_id": "cbam-regulation",
-    "set": {
-      "article": "Article 2(9), point (c)"
-    },
-    "reason": "article: Same imprecision as tgt-0069: the quote is a specific de-listing condition in Article 2, paragraph 9, point (c), not a generic reference to the whole '"
   },
   {
     "id": "tgt-1a941a88",
@@ -432,14 +408,6 @@
     "reason": "drop: Article 2(42) is a definitions clause ('climate proofing' means...); definitions are excluded from verbatim/operative-target status and dropped even though the substance (vulnerability protection + GHG/climate-neutrality consistency) is genuinely climate-related. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-6f980bc6",
-    "policy_id": "common-provisions-regulation",
-    "set": {
-      "climate_relevance": "both"
-    },
-    "reason": "fields: Article 73(2)(j) requires climate proofing of infrastructure investments (>=5yr lifespan); per the Article 2(42) definition this covers both adaptation (vulnerability protection) and mitigation (GHG/climate-neutrality consistency), so climate_relevance corrected to 'both'. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-80f5e77e",
     "policy_id": "common-provisions-regulation",
     "set": {
@@ -457,35 +425,10 @@
     "reason": "fields: Article 5(1), second subparagraph (confirmed: the (a)-(e) list is the first subparagraph per the following sentence's own cross-reference, so the JTF sentence is the second) targets a climate-neutral Union economy by 2050 and the Union's 2030 energy/climate targets; both dates are explicit thresholds in the quote so target_type is quantitative. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-07fbd962",
-    "policy_id": "competitiveness-compass",
-    "set": {
-      "target_type": "quantitative"
-    },
-    "reason": "fields: '2035 climate neutrality target for cars' (Sec. 1.2, automotive dialogue) contains an explicit date-threshold in the quote itself, so it is quantitative, not unspecified. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-47ff72c9",
-    "policy_id": "competitiveness-compass",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Steel and Metals Action Plan (Sec. 1.2) is introduced explicitly 'to accompany their transition' (energy-intensive industries' decarbonisation); mitigation-linked industrial policy, not none. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-5432b40c",
     "policy_id": "competitiveness-compass",
     "drop": true,
     "reason": "drop: Generic connective sentence (Sec. 2.3, 'Financing competitiveness') stating investment is 'critical to achieve' pre-existing innovation/climate-neutrality/defence goals collectively — not itself a target/goal/objective/commitment, just rhetorical framing restating goals already captured elsewhere (e.g. tgt-21eb9378); genuine non-target. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-6baa4b76",
-    "policy_id": "competitiveness-compass",
-    "set": {
-      "target_label": "other",
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Remanufacturing market growth/jobs projection (Sec. 1.2, 'Tapping the potential of the circular economy') is a cited market statistic, not the Commission's own target/objective; preceding sentence frames circularity as 'helps decarbonisation', so mitigation-linked, not none. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-6c77c9c4",
@@ -548,14 +491,6 @@
     "reason": "fields: Art 12(1) is the procedural deadline for critical-entity risk assessments; institutional, no climate content. | relevance=peripheral: Art 12(1) is the procedural deadline for critical-entity risk assessments; institutional, no climate content. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-823b3e58",
-    "policy_id": "critical-entities-resilience",
-    "set": {
-      "article": "Article 12(2)"
-    },
-    "reason": "fields: Art 12(2) lists the same five all-hazards risk categories for critical-entity assessments; generic, not climate-specific. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-84d6d6e4",
     "policy_id": "critical-entities-resilience",
     "set": {
@@ -590,14 +525,6 @@
     "policy_id": "critical-entities-resilience",
     "drop": true,
     "reason": "drop: Art 1(1)(a) is a scope/subject-matter clause listing what the Directive lays down (identify & support critical entities); it is not itself an operative target and duplicates the substantive obligations set out in Art 6(1) (identification) and Art 10(1) (support). [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-e2f06bba",
-    "policy_id": "critical-entities-resilience",
-    "set": {
-      "article": "Article 5(1)"
-    },
-    "reason": "fields: Art 5(1) lists five parallel all-hazards risk categories (accidents, natural disasters, public-health emergencies, hybrid/terrorist threats); natural disasters is one generic category among several, not a distinct climate obligation. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-ed4b0d6c",
@@ -667,23 +594,6 @@
     "reason": "climate: Quote is Article 1(1)'s general objective — internal-market functioning and secure/resilient/sustainable supply of critical raw materials plus circular"
   },
   {
-    "id": "tgt-0dddb29f",
-    "policy_id": "cross-border-health-threats",
-    "set": {
-      "article": "Article 13(1)"
-    },
-    "reason": "fields: Art 13(1) establishes the epidemiological surveillance network's communication channel; institutional, no climate content. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-16b5e457",
-    "policy_id": "cross-border-health-threats",
-    "set": {
-      "article": "Article 23(1)",
-      "target_label": "other"
-    },
-    "reason": "fields: Art 23(1) is a discretionary Commission power to recognise a public health emergency, not an objective; no climate content. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-3e4e5851",
     "policy_id": "cross-border-health-threats",
     "set": {
@@ -693,29 +603,12 @@
     "reason": "fields: Art 7(1) recurring national reporting on health preparedness; administrative, no climate content. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-41fd0e32",
-    "policy_id": "cross-border-health-threats",
-    "set": {
-      "article": "Article 5(1)",
-      "target_label": "commitment"
-    },
-    "reason": "fields: Art 5(1) mandates establishing an EU pandemic plan; institutional preparedness commitment, no climate content. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-66aa3f8d",
     "policy_id": "cross-border-health-threats",
     "set": {
       "article": "Article 12(1)"
     },
     "reason": "fields: Art 12(1) enables joint procurement of medical countermeasures; health-specific mechanism, no climate content. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-71ae5547",
-    "policy_id": "cross-border-health-threats",
-    "set": {
-      "article": "Article 20(1)"
-    },
-    "reason": "fields: Art 20(1) Commission risk-assessment duty on health threats; procedural, no climate content. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-815d9483",
@@ -742,15 +635,6 @@
     "reason": "fields: Art 19(1) EWRS alert-notification duty; procedural early-warning mechanism, no climate content. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-d0a2457e",
-    "policy_id": "cross-border-health-threats",
-    "set": {
-      "article": "Article 9(1)",
-      "timeline": "by 27 December 2023 and every three years thereafter"
-    },
-    "reason": "fields: Art 9(1) recurring Commission report to Parliament/Council on preparedness planning; reporting boilerplate, no climate content. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-dab86ea5",
     "policy_id": "cross-border-health-threats",
     "set": {
@@ -767,28 +651,12 @@
     "reason": "fields: Art 6(1) requires MS-Commission coherence on national plans; institutional coordination clause, no climate content. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-f840771e",
-    "policy_id": "cross-border-health-threats",
-    "set": {
-      "article": "Article 21(2)"
-    },
-    "reason": "fields: Art 21(2) requires MS to inform/consult before adopting public-health measures; procedural coordination, no climate content. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-60077c9b",
     "policy_id": "csddd",
     "set": {
       "article": "Article 25(1) — Powers of supervisory authorities"
     },
     "reason": "article: The heading 'Supervisory authorities' belongs to Article 24. The quoted paragraph, granting supervisory authorities powers/resources and tasking them w"
-  },
-  {
-    "id": "tgt-c8e62421",
-    "policy_id": "csddd",
-    "set": {
-      "target_type": "quantitative"
-    },
-    "reason": "target_type: Same consideration as tgt-0108: quote contains explicit numeric thresholds (1.5°C, 2050 climate-neutrality target)."
   },
   {
     "id": "tgt-3f22cbfa",
@@ -807,34 +675,10 @@
     "reason": "target_type: The quote contains no numeric percentage or quantity for the emission-reduction target itself — only the years 2030/2050 (a timeline), and the phra"
   },
   {
-    "id": "tgt-0e91d7ca",
-    "policy_id": "cultural-heritage-framework",
-    "set": {
-      "climate_relevance": "adaptation"
-    },
-    "reason": "fields: Confirmed: Sec.2.1 (Research and innovation) commits to R&I enabling a 'dynamic and sustainable cultural heritage...in response to climate change and natural hazards and disasters' -- adaptation-relevant, keyword-miss correction from none to adaptation is right. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-836e7fda",
     "policy_id": "cultural-heritage-framework",
     "drop": true,
     "reason": "drop: Confirmed drop: 'this Communication presents the EU's approach to heritage across different policy areas (section 2)' is a self-referential document-structure/scope sentence, not a target/goal/objective/commitment. (Quote itself is an exact, verbatim body-text extract, not a heading/definition/recital, so verbatim_ok stays true; the defect is that it is a non-target scope statement, which is what drop captures.) [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-eb6113d4",
-    "policy_id": "cultural-heritage-framework",
-    "set": {
-      "climate_relevance": "adaptation"
-    },
-    "reason": "fields: Confirmed: Sec.1.3 explicitly names global warming/sea-level rise/extreme weather as risks to cultural heritage -- adaptation-relevant, keyword-miss correction from none to adaptation is right. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-337c264c",
-    "policy_id": "deforestation-regulation",
-    "set": {
-      "climate_relevance": "both"
-    },
-    "reason": "climate: quote addresses GHG emissions (mitigation) and biodiversity/ecosystem loss (adaptation side) [fact-check 2026-07]"
   },
   {
     "id": "tgt-1fb31107",
@@ -854,16 +698,6 @@
       "indicators": []
     },
     "reason": "article: Quote ('References to the relevant harmonised standards or to the common specifications used...') is point 6 of ANNEX V (EU declaration of conformity t | indicators: Indicators 'apparel and clothing accessories' and 'footwear' are actual product-category entries from Annex VII (destruction-ban product list), not "
-  },
-  {
-    "id": "tgt-412040e4",
-    "policy_id": "ecodesign-sustainable-products",
-    "set": {
-      "article": "Article 2 (unnumbered paragraph following point (58), cross-referencing Regulation (EU) 2019/1020)",
-      "timeline": "",
-      "indicators": []
-    },
-    "reason": "article: Quote is the unnumbered closing paragraph of Article 2 (Definitions) that incorporates market-surveillance-related definitions from Regulation (EU) 201 | timeline: unsupported (\"before 19 July 2025\") | indicators: Indicator 'first ecodesign delegated act' has no connection to this definitions cross-reference paragraph."
   },
   {
     "id": "tgt-43a429ff",
@@ -896,38 +730,12 @@
     "reason": "timeline: 'By 19 July 2027 and every 36 months thereafter' is not supported by the quoted sentence (which itself states a different date, 19 July 2030, for medi | article/timeline: quote is the SME-applicability sentence of Art. 25(1)/24(1), not Article 26; timeline from the quote itself [fact-check 2026-07]"
   },
   {
-    "id": "tgt-eb2b9583",
-    "policy_id": "ecodesign-sustainable-products",
-    "set": {
-      "article": "Article 21(2), point (f)",
-      "timeline": "",
-      "indicators": []
-    },
-    "reason": "article: Quote is verbatim Article 21(2), point (f) (Self-regulation measures — content of the note justifying a self-regulation measure), not Article 24(1) (Di | timeline: unsupported (\"annual\") | indicators: Indicator 'number and weight of unsold consumer products discarded' does not relate to the self-regulation-measure note quoted in this row; it is dr"
-  },
-  {
-    "id": "tgt-897682ac",
-    "policy_id": "effort-sharing-regulation",
-    "set": {
-      "article": "Article 11(5) — Safety reserve"
-    },
-    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 11(5)."
-  },
-  {
     "id": "tgt-c28cbdc2",
     "policy_id": "effort-sharing-regulation",
     "set": {
       "article": "Article 4(4) — Annual emission levels for the period from 2021 to 2030"
     },
     "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 4(4)."
-  },
-  {
-    "id": "tgt-25097ba7",
-    "policy_id": "eighth-environment-action-programme",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Art.2(2)(f) explicitly targets reducing 'key environmental and climate pressures' from energy, industry, buildings/infrastructure and mobility — a mitigation-relevant objective mistagged as none. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-3c12511b",
@@ -1002,16 +810,6 @@
     "reason": "target_type: The quote states an explicit numeric GHG-intensity ceiling (150 grams/kWh), which is a quantitative threshold. | climate: Quote is a maximum GHG emissions threshold for district heating/cooling systems — clearly mitigation-relevant, not 'none'."
   },
   {
-    "id": "tgt-4ca958a3",
-    "policy_id": "energy-efficiency-directive",
-    "set": {
-      "article": "Article 35(7), point (e) — Review and monitoring of implementation",
-      "target_label": "other",
-      "climate_relevance": "mitigation"
-    },
-    "reason": "article: Quote is verbatim point (e) of Article 35(7), not a generic 'Article 35' reference. | label: The quote is a Commission review/evaluation criterion (whether to revisit the Article 6(1) renovation rate), not itself a target imposed on Member States | climate: Quote concerns the continuation of the building-renovation-into-nearly-zero-energy-buildings target — same topic as tgt-0147/tgt-0148, both labelled 'm"
-  },
-  {
     "id": "tgt-76a08e35",
     "policy_id": "energy-efficiency-directive",
     "set": {
@@ -1035,14 +833,6 @@
       "article": "Article 8(9)(b) — Energy savings obligation"
     },
     "reason": "article: Quote is verbatim Article 8(9), point (b), not a generic 'Article 8' reference."
-  },
-  {
-    "id": "tgt-7ceff24f",
-    "policy_id": "energy-efficiency-directive",
-    "set": {
-      "article": "Article 4(5), third subparagraph — Energy efficiency targets"
-    },
-    "reason": "article: Quote is located in the third subparagraph of Article 4(5), not a generic 'Article 4' reference."
   },
   {
     "id": "tgt-8f201f25",
@@ -1088,15 +878,6 @@
     "reason": "climate: Quote concerns renovating public buildings into nearly zero-energy buildings — the same energy-efficiency/building-renovation topic as tgt-0147 (Articl"
   },
   {
-    "id": "tgt-d30adf3b",
-    "policy_id": "energy-efficiency-directive",
-    "set": {
-      "climate_relevance": "mitigation",
-      "article": "Article 6(6)(a) — Exemplary role of public bodies' buildings"
-    },
-    "reason": "climate: Quote is the nearly-zero-energy-building renovation deadline, the same topic as tgt-0147/tgt-0148 which are labelled 'mitigation'. 'none' is wrong. | article: Quote is verbatim from Article 6(6), point (a) (it is the same sentence fragment also captured within tgt-0148's longer quote), not a generic 'Article "
-  },
-  {
     "id": "tgt-d534e2a7",
     "policy_id": "energy-efficiency-directive",
     "set": {
@@ -1114,14 +895,6 @@
     "reason": "target_type: The quote states an explicit numeric GHG-intensity ceiling (100 grams/kWh), which is a quantitative threshold. | climate: Quote is a maximum GHG emissions threshold for district heating/cooling systems — clearly mitigation-relevant, not 'none'."
   },
   {
-    "id": "tgt-173ee764",
-    "policy_id": "epbd-recast",
-    "set": {
-      "article": "Article 14(1), point (a) — Infrastructure for sustainable mobility"
-    },
-    "reason": "article: ARTICLE_MISMATCH confirmed: the quote is from Article 14(1), point (a) (\"Infrastructure for sustainable mobility\"), not Article 15 (which is titled \"Sm"
-  },
-  {
     "id": "tgt-21c2285b",
     "policy_id": "epbd-recast",
     "set": {
@@ -1130,36 +903,12 @@
     "reason": "climate: Labeled \"none\", but this is the Commission's monitoring of the same average-primary-energy-use decrease values (Article 9(2), second/third subparagraph"
   },
   {
-    "id": "tgt-2b004764",
-    "policy_id": "epbd-recast",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "climate: Labeled \"none\", but this quote is the same average-primary-energy-use reduction milestone from Article 9(2) whose parent/sibling extractions (e.g. tgt-"
-  },
-  {
-    "id": "tgt-3b113ab6",
-    "policy_id": "epbd-recast",
-    "set": {
-      "article": "Article 6(3) — Calculation of cost-optimal levels of minimum energy performance requirements"
-    },
-    "reason": "article: Article reference omits the paragraph number. The quote (15% discrepancy / 24-month adjustment) is paragraph 3 of Article 6, not the article as a whole"
-  },
-  {
     "id": "tgt-44ca28df",
     "policy_id": "epbd-recast",
     "set": {
       "climate_relevance": "mitigation"
     },
     "reason": "climate: Classified as \"none\" but the quote concerns limit values on the life-cycle global warming potential (GWP) of new buildings — a direct climate-mitigatio"
-  },
-  {
-    "id": "tgt-86f1ac80",
-    "policy_id": "epbd-recast",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "climate: Same issue as tgt-0197: this is the 2035 milestone of the same Article 9(2) average-primary-energy-use decrease target, inconsistently tagged \"none\" wh"
   },
   {
     "id": "tgt-fc2da23e",
@@ -1224,14 +973,6 @@
     "reason": "fields: Confirmed at source: quote is Article 11(1), second subparagraph, not the Article 11 heading; framed as 'special attention shall be given' (commitment) with the 2050 date-threshold in the quote. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-eee1a233",
-    "policy_id": "erdf-regulation",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Art 4(9) counts sustainable urban mobility resources (Art 3(1)(b)(viii), 'net zero carbon economy') toward PO2 thematic concentration. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-00f35d0e",
     "policy_id": "eu-adaptation-strategy",
     "set": {
@@ -1276,15 +1017,6 @@
     "reason": "fields: Line 218. Actual heading (line 204) is '10.Integrating climate resilience in national fiscal frameworks' (current article drops 'climate'). Quote explicitly covers 'both mitigation and adaptation efforts' -> climate_relevance should be 'both', not 'adaptation'. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-26a40b3f",
-    "policy_id": "eu-adaptation-strategy",
-    "set": {
-      "article": "Section 1 — The reality of climate change impacts – the need to act NOW",
-      "target_label": "other"
-    },
-    "reason": "fields: Line 19, within Section 1 ('The reality of climate change impacts – the need to act NOW'), not generic 'Body'. It's a contextual/analytical statement about global trends rather than a commitment the strategy itself makes, so target_label 'other' fits better than 'commitment'. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-3bdb39dc",
     "policy_id": "eu-adaptation-strategy",
     "set": {
@@ -1312,22 +1044,6 @@
     "reason": "fields: Line 258. Actual heading (line 253) is '12.Faster adaptation: Speeding up adaptation across the board' (current article truncated). The 30% MFF climate-spending target covers general 'climate action' with adaptation only 'a key component' -> climate_relevance 'both', not 'adaptation' alone. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-661ac674",
-    "policy_id": "eu-adaptation-strategy",
-    "set": {
-      "article": "Section 2 — Forging a climate-resilient Union"
-    },
-    "reason": "fields: Line 63, Section 2 body ('The proposal commits...'). No 'European Climate Law foundation' subheading exists in source; reviewer's fix to the real section heading is correct. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-69cf7533",
-    "policy_id": "eu-adaptation-strategy",
-    "set": {
-      "article": "Section 1 — The reality of climate change impacts – the need to act NOW (Box 1: The example of droughts)"
-    },
-    "reason": "fields: Line 48, within Section 1's 'Box 1: The example of droughts', not generic 'Body' — refined beyond reviewer's generic Section 1 label to note the box location. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-6d0c314e",
     "policy_id": "eu-adaptation-strategy",
     "set": {
@@ -1344,48 +1060,12 @@
     "reason": "fields: Line 109. Actual heading (line 89) is '4.Pushing the frontiers of knowledge on adaptation'; current article drops 'on adaptation'. All other fields (commitment/voluntary/adaptation/relevant) are correct as-is. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-877cf0ab",
-    "policy_id": "eu-adaptation-strategy",
-    "set": {
-      "target_type": "quantitative"
-    },
-    "reason": "fields: Section 2 (line 59). Explicit date-threshold '2050' in quote -> quantitative. climate_relevance 'both' already correct (climate neutrality = mitigation; adaptive capacity/vulnerability = adaptation). [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-b224e5d0",
     "policy_id": "eu-adaptation-strategy",
     "set": {
       "climate_relevance": "adaptation"
     },
     "reason": "fields: Line 339, Section 15 (article already correct). National insurance-penetration assessment mechanism is adaptation-finance content ('closing the climate protection gap'), not climate_relevance 'none'. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-bb340a12",
-    "policy_id": "eu-adaptation-strategy",
-    "set": {
-      "article": "Section 1 — The reality of climate change impacts – the need to act NOW",
-      "timeline": "by 2050 (climate neutrality); by 2030 (at least -55% vs 1990)"
-    },
-    "reason": "fields: Line 35, within Section 1, not generic 'Body'. Quote states both the 2050 neutrality goal and the 2030 -55% target, so timeline should capture both dates. climate_relevance 'mitigation' already correct (no adaptation content in this quote). [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-cfcca98e",
-    "policy_id": "eu-adaptation-strategy",
-    "set": {
-      "article": "Section 1 — The reality of climate change impacts – the need to act NOW",
-      "climate_relevance": "adaptation"
-    },
-    "reason": "fields: Line 31, within Section 1, not generic 'Body'. The EUR170bn/3°C loss estimate is the foundational risk statistic underpinning the case for adaptation action; climate_relevance should be 'adaptation', not 'none'. target_label 'other' already correctly set. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-d8855c4e",
-    "policy_id": "eu-adaptation-strategy",
-    "set": {
-      "article": "Section 19 — Scaling up international finance to build climate resilience",
-      "target_label": "other",
-      "climate_relevance": "both"
-    },
-    "reason": "fields: Line 427, Section 19 (international climate finance paragraph), not generic 'Body'. Reports a past 2019 achievement, not a forward-looking target, so target_label 'other' fits. The figure covers 'overall climate finance' with only 52% specified as adaptation (footnote 79 confirms mixed mitigation+adaptation accounting), so climate_relevance should be 'both', not 'adaptation' alone as the reviewer proposed. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-d9d32922",
@@ -1452,14 +1132,6 @@
     "reason": "article: Quote is the first sentence of Article 9, paragraph 1, cited only as generic 'Article 9'."
   },
   {
-    "id": "tgt-3769a95e",
-    "policy_id": "eu-climate-law",
-    "set": {
-      "article": "Article 4(3) — Intermediate Union climate targets"
-    },
-    "reason": "article: Quote is verbatim the first sentence of Article 4, paragraph 3, cited only as generic 'Article 4'."
-  },
-  {
     "id": "tgt-48d710cd",
     "policy_id": "eu-climate-law",
     "set": {
@@ -1468,29 +1140,12 @@
     "reason": "timeline: This quote's two operative figures (the 225 Mt CO2eq removals cap, and the 'higher net carbon sink' aim) both pertain to 2030 (the Union 2030 climate "
   },
   {
-    "id": "tgt-530fa44b",
-    "policy_id": "eu-climate-law",
-    "set": {
-      "article": "Article 4(1) — Intermediate Union climate targets",
-      "timeline": "2030"
-    },
-    "reason": "article: Quote is verbatim from Article 4(1), third subparagraph, cited only as generic 'Article 4'. | timeline: The sentence's operative target (a higher net carbon sink) is dated 2030; '2050' in the quote refers only to the overarching climate-neutrality object"
-  },
-  {
     "id": "tgt-5450319c",
     "policy_id": "eu-climate-law",
     "set": {
       "article": "Article 13(4) (inserting Article 8(2)(e) of Regulation (EU) 2018/1999)"
     },
     "reason": "article: Correct at the article level but imprecise: this is specifically Article 13(4), inserting a new point (e) into Article 8(2) of Regulation (EU) 2018/199"
-  },
-  {
-    "id": "tgt-69956688",
-    "policy_id": "eu-climate-law",
-    "set": {
-      "article": "Article 13(5) (replacing Article 11 of Regulation (EU) 2018/1999)"
-    },
-    "reason": "article: quote is amendment text the Climate Law inserts into Reg. (EU) 2018/1999 via its Article 13 (the Climate Law itself has no such article) [fact-check 2026-07]"
   },
   {
     "id": "tgt-6c18debe",
@@ -1573,22 +1228,6 @@
     "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
   },
   {
-    "id": "tgt-8b3862c0",
-    "policy_id": "eu-green-deal",
-    "set": {
-      "article": "2.1.6. From ‘Farm to Fork’: designing a fair, healthy and environmentally-friendly food system"
-    },
-    "reason": "article: heading was truncated mid-word [fact-check 2026-07]"
-  },
-  {
-    "id": "tgt-9ecb3b97",
-    "policy_id": "eu-green-deal",
-    "set": {
-      "article": "2.1.1 Increasing the EU’s climate ambition for 2030 and 2050"
-    },
-    "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
-  },
-  {
     "id": "tgt-c5018ef7",
     "policy_id": "eu-green-deal",
     "set": {
@@ -1638,14 +1277,6 @@
     "reason": "article: Confirmed ARTICLE_MISMATCH: quote is Article 18(3) ('Reporting and review'), not Article 21."
   },
   {
-    "id": "tgt-ade6ec07",
-    "policy_id": "euro-7-regulation",
-    "set": {
-      "article": "Article 10(8) — Emission type-approval, conformity of production, in-service conformity and market surveillance"
-    },
-    "reason": "article: Article number is correct (10) but the heading is truncated and no paragraph is given; the quote is specifically paragraph 8, a derogation for M2/M3 ve"
-  },
-  {
     "id": "tgt-c7e1b871",
     "policy_id": "euro-7-regulation",
     "set": {
@@ -1681,44 +1312,12 @@
     "reason": "fields: Section 1 narrative aim to equip EU for health-crisis prevention/preparedness; generic institutional aspiration, no climate/energy substance in the quote. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-61fe26fe",
-    "policy_id": "european-health-union",
-    "set": {
-      "target_type": "quantitative"
-    },
-    "reason": "fields: Section 10, establishment of HERA with proposal in 2021 / operations from 2023; explicit dates in the quote make target_type quantitative (was unspecified), but substance is health-emergency-preparedness administration, non-climate. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-79d6bf97",
-    "policy_id": "european-health-union",
-    "set": {
-      "article": "Section 1 (The Need for a Stronger EU Health Security Framework)"
-    },
-    "reason": "fields: Section 1 description of the three accompanying legislative proposals (ECDC/EMA mandates, cross-border threats decision); pure health-governance commitment, no climate content. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-9417b895",
-    "policy_id": "european-health-union",
-    "set": {
-      "article": "Section 8 (Early Warning and Risk Assessment Capacity)"
-    },
-    "reason": "fields: Section 8 (not Section 3), all-hazard risk-assessment mandate for EU agencies under the proposed cross-border threats Regulation; 'all-hazard' framing is generic public-health risk assessment, no climate-specific content in the quote. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-06baa173",
     "policy_id": "f-gas-regulation",
     "set": {
       "climate_relevance": "mitigation"
     },
     "reason": "climate: Same inconsistency as tgt-0300: sub-point of the Article 13(9) F-gas switchgear phase-out, which is a mitigation measure."
-  },
-  {
-    "id": "tgt-07c922a0",
-    "policy_id": "f-gas-regulation",
-    "set": {
-      "article": "Article 6(1) — Leakage detection systems"
-    },
-    "reason": "article: Article reference lacks the paragraph number; quote is verbatim Article 6(1)."
   },
   {
     "id": "tgt-0a15046d",
@@ -1736,14 +1335,6 @@
       "article": "Article 5(1) — Leak checks"
     },
     "reason": "article: Article reference lacks the paragraph number; the quote is verbatim Article 5(1), not the whole of Article 5."
-  },
-  {
-    "id": "tgt-1eb2c4e3",
-    "policy_id": "f-gas-regulation",
-    "set": {
-      "article": "Article 6(2) — Leakage detection systems"
-    },
-    "reason": "article: Article reference lacks the paragraph number; quote is verbatim Article 6(2)."
   },
   {
     "id": "tgt-23e32e4b",
@@ -1778,14 +1369,6 @@
     "reason": "target_type: Quote contains a numeric GWP threshold ('global warming potential of 2 500 or more') so it meets the quantitative rule; labelled 'qualitative' whil"
   },
   {
-    "id": "tgt-4095939a",
-    "policy_id": "f-gas-regulation",
-    "set": {
-      "article": "Article 5(6)(c) — Leak checks"
-    },
-    "reason": "article: Article reference lacks paragraph/point; quote is verbatim Article 5(6)(c)."
-  },
-  {
     "id": "tgt-49605178",
     "policy_id": "f-gas-regulation",
     "set": {
@@ -1800,22 +1383,6 @@
       "article": "Article 16(1) — Reduction of the quantity of hydrofluorocarbons placed on the market"
     },
     "reason": "article: Article heading is truncated mid-word (matches the ARTICLE_TRUNCATED flag); full Article 16 heading is 'Reduction of the quantity of hydrofluorocarbons"
-  },
-  {
-    "id": "tgt-5cde3d7b",
-    "policy_id": "f-gas-regulation",
-    "set": {
-      "article": "Article 5(6)(b) — Leak checks"
-    },
-    "reason": "article: Article reference lacks paragraph/point; quote is verbatim Article 5(6)(b)."
-  },
-  {
-    "id": "tgt-6e36ba24",
-    "policy_id": "f-gas-regulation",
-    "set": {
-      "article": "Article 5(6)(a) — Leak checks"
-    },
-    "reason": "article: Article reference lacks paragraph/point; quote is verbatim Article 5(6)(a)."
   },
   {
     "id": "tgt-a1f07801",
@@ -1850,22 +1417,6 @@
     "reason": "article: Article reference lacks the paragraph number; quote is verbatim Article 26(8)."
   },
   {
-    "id": "tgt-b6eb909a",
-    "policy_id": "f-gas-regulation",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "climate: Classified 'none' but desflurane is an F-gas covered by this Regulation; recital 27 explicitly calls it 'that very potent greenhouse gas'. Phasing out "
-  },
-  {
-    "id": "tgt-b7439b50",
-    "policy_id": "f-gas-regulation",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "climate: Classified 'none' but SF6 is a listed fluorinated greenhouse gas (Annex I) and recital 22 identifies it as a very potent GHG; restricting its use in sw"
-  },
-  {
     "id": "tgt-cc5d1fda",
     "policy_id": "f-gas-regulation",
     "set": {
@@ -1880,14 +1431,6 @@
       "climate_relevance": "mitigation"
     },
     "reason": "climate: Same inconsistency as tgt-0311: Annex V HFC production-right phase-down step, a mitigation measure."
-  },
-  {
-    "id": "tgt-f4fc64f4",
-    "policy_id": "f-gas-regulation",
-    "set": {
-      "article": "Article 13(3) — Control of use"
-    },
-    "reason": "article: Article reference lacks the paragraph number; quote is verbatim the first sentence of Article 13(3)."
   },
   {
     "id": "tgt-f56a0626",
@@ -1906,22 +1449,6 @@
     "reason": "climate: Same inconsistency as tgt-0300: sub-point of the Article 13(9) F-gas switchgear phase-out, which is a mitigation measure."
   },
   {
-    "id": "tgt-0d509deb",
-    "policy_id": "fit-for-55",
-    "set": {
-      "article": "2.1 A socially fair transition: tackling inequality and energy poverty through climate action"
-    },
-    "reason": "section: Article field is generic 'Body' but the quote sits within a specific numbered subsection."
-  },
-  {
-    "id": "tgt-195a40f2",
-    "policy_id": "fit-for-55",
-    "set": {
-      "article": "2.3 A green transition: Protecting nature and increasing the EU's natural carbon sink"
-    },
-    "reason": "section: Article field is generic 'Body' but the quote sits within a specific numbered subsection."
-  },
-  {
     "id": "tgt-2025acfe",
     "policy_id": "fit-for-55",
     "set": {
@@ -1938,26 +1465,10 @@
     "reason": "section: Article/section reference is truncated mid-word."
   },
   {
-    "id": "tgt-43362bdd",
-    "policy_id": "fit-for-55",
-    "set": {
-      "article": "5. Conclusion"
-    },
-    "reason": "section: quote sits in this numbered section, not generic \"Body\" [fact-check 2026-07]"
-  },
-  {
     "id": "tgt-7944ffef",
     "policy_id": "fit-for-55",
     "drop": true,
     "reason": "duplicate of tgt-0319 (same provision text) [fact-check 2026-07]"
-  },
-  {
-    "id": "tgt-8273e96a",
-    "policy_id": "fit-for-55",
-    "set": {
-      "article": "2.2 A competitive transition: New opportunities through industrial and sectoral change"
-    },
-    "reason": "section: Article/section reference is truncated mid-word."
   },
   {
     "id": "tgt-89288c9b",
@@ -1966,29 +1477,12 @@
     "reason": "quote is the document title, not a target [fact-check 2026-07]"
   },
   {
-    "id": "tgt-8b90cdb3",
-    "policy_id": "fit-for-55",
-    "set": {
-      "article": "4. A Sustainable EU in a Sustainable World"
-    },
-    "reason": "section: quote sits in this numbered section, not generic \"Body\" [fact-check 2026-07]"
-  },
-  {
     "id": "tgt-8c6b0235",
     "policy_id": "fit-for-55",
     "set": {
       "article": "2.2.1 Industrial transformation and carbon pricing"
     },
     "reason": "section: Article field is generic 'Body' but the quote sits within a specific numbered subsection."
-  },
-  {
-    "id": "tgt-a4ff486a",
-    "policy_id": "fit-for-55",
-    "set": {
-      "article": "3.Opportunities and Incentives: Innovation and Investment for a competitive transition",
-      "climate_relevance": "none"
-    },
-    "reason": "section: Article/section reference is truncated mid-word. | climate: Quote is a generic 'green transition' budget-share figure for the Recovery and Resilience Facility, with no resilience/ecosystem/water-specific wording"
   },
   {
     "id": "tgt-ae5baca0",
@@ -2001,14 +1495,6 @@
     "policy_id": "fit-for-55",
     "drop": true,
     "reason": "duplicate of tgt-0325 (same provision text) [fact-check 2026-07]"
-  },
-  {
-    "id": "tgt-f3ad597b",
-    "policy_id": "fit-for-55",
-    "set": {
-      "article": "2.1 A socially fair transition: tackling inequality and energy poverty through climate action"
-    },
-    "reason": "section: Article/section reference is truncated mid-word."
   },
   {
     "id": "tgt-f5445a08",
@@ -2083,14 +1569,6 @@
       "target_type": "quantitative"
     },
     "reason": "fields: Article 6(8) verified verbatim; explicit date-threshold (22 Dec 2013) makes this quantitative. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-e1e825fb",
-    "policy_id": "floods-directive",
-    "set": {
-      "target_type": "quantitative"
-    },
-    "reason": "fields: Article 6(3) verified verbatim; explicit magnitude ('return period ≥ 100 years') makes this quantitative. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-31e539a8",
@@ -2189,23 +1667,6 @@
       "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union"
     },
     "reason": "article: Heading is truncated ('...for the five dimensio') and lacks the point (a)(2) pinpoint; the quote is the renewable-energy sub-point of Article 4(a)."
-  },
-  {
-    "id": "tgt-6b09672e",
-    "policy_id": "governance-regulation",
-    "set": {
-      "article": "Article 2, point (20)(b) — Definitions ('early efforts')",
-      "target_label": "other"
-    },
-    "reason": "article: Citation lacks the pinpoint sub-point; the quote is the 'early efforts' definition, Article 2, point (20)(b), not a generic Article 2 reference. | label: definition of \"early efforts\", not a target of the act [fact-check 2026-07]"
-  },
-  {
-    "id": "tgt-6b6b65ed",
-    "policy_id": "governance-regulation",
-    "set": {
-      "article": "Article 47(1)(b) — Amendments to Directive 98/70/EC"
-    },
-    "reason": "article: no Article 7a exists in Reg. (EU) 2018/1999; quote is text inserted into Directive 98/70/EC [fact-check 2026-07]"
   },
   {
     "id": "tgt-7dd1788d",
@@ -2359,15 +1820,6 @@
     "reason": "drop: Near-duplicate of tgt-310f4800 — same just-transition-scheme sentence extended with the just-transition-plan/territories clause; also mis-cited to generic 'Article 8 — Policy windows' rather than Art. 8(2). [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-310f4800",
-    "policy_id": "investeu-regulation",
-    "set": {
-      "target_type": "quantitative",
-      "timeline": "2030 and 2050"
-    },
-    "reason": "fields: Art. 8(2) ties the just transition scheme explicitly to the Union's 2030 climate target and 2050 climate-neutrality target — explicit date thresholds in the quote. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-596143a5",
     "policy_id": "investeu-regulation",
     "set": {
@@ -2376,28 +1828,12 @@
     "reason": "fields: Art. 8(8) sets a quantified 60% climate/environment investment target for the sustainable-infrastructure window — InvestEU's flagship climate-mainstreaming target. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-62a1fa97",
-    "policy_id": "investeu-regulation",
-    "set": {
-      "climate_relevance": "both"
-    },
-    "reason": "fields: Art. 8(5) mandates climate/environmental/social sustainability proofing to minimise detrimental impacts and maximise climate benefits — a mainstreaming screen covering both mitigation and adaptation dimensions (cf. Art. 8(6)(a)). [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-774d4428",
     "policy_id": "investeu-regulation",
     "set": {
       "climate_relevance": "both"
     },
     "reason": "fields: Art. 8(7) mandates tracking of investment contributing to Union climate and environment objectives — InvestEU's climate-mainstreaming tracking mechanism. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-eb488740",
-    "policy_id": "investeu-regulation",
-    "set": {
-      "timeline": "2030 energy framework (energy efficiency element); the '2050' in the quote is the road-safety fatal-accident-elimination deadline, unrelated to the climate/energy elements"
-    },
-    "reason": "fields: Art. 8(1)(a) defines the sustainable-infrastructure window including renewable energy, energy efficiency (2030 energy framework) and energy-savings building renovation. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-f7d681f8",
@@ -2426,22 +1862,6 @@
     "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 4(5)."
   },
   {
-    "id": "tgt-bfec02c0",
-    "policy_id": "lulucf-regulation",
-    "set": {
-      "article": "Article 13b(3) — Land flexibility mechanism for the period from 2026 to 2030"
-    },
-    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 13b(3)."
-  },
-  {
-    "id": "tgt-05381907",
-    "policy_id": "managing-climate-risks",
-    "set": {
-      "article": "Section 4.1 — Natural ecosystems"
-    },
-    "reason": "fields: Verified verbatim in Section 4.1 (not generic 'Body'): 30-50% land/freshwater/ocean preservation figure tied to ecosystem resilience. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-0d47dc8c",
     "policy_id": "managing-climate-risks",
     "set": {
@@ -2465,32 +1885,6 @@
     "reason": "fields: Section 3.1 'Strengthened governance structures': the Better Regulation climate consistency check applies across mitigation and adaptation policy coherence, not adaptation-only. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-1e8f8f64",
-    "policy_id": "managing-climate-risks",
-    "set": {
-      "obligation": "mandatory"
-    },
-    "reason": "fields: Section 1.2: quote uses governing 'requires' (European Climate Law requires continuous progress on adaptive capacity/resilience) -> mandatory, not voluntary. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-655fac45",
-    "policy_id": "managing-climate-risks",
-    "set": {
-      "article": "Section 1.1 — Accelerating climate risks call for proactive management",
-      "timeline": "2021-2027",
-      "climate_relevance": "both"
-    },
-    "reason": "fields: Section 1.1: sentence directly follows '...went into climate adaptation and mitigation over the past decade', and itself contains the 2021-2027 timeline - verified verbatim; should be tagged both with that timeline, not none/blank. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-677f8fbd",
-    "policy_id": "managing-climate-risks",
-    "set": {
-      "article": "Section 1.1 — Accelerating climate risks call for proactive management"
-    },
-    "reason": "fields: Verified verbatim in Section 1.1 (not generic 'Body'): GHG cuts this decade and climate neutrality by 2050 (mitigation). [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-74273615",
     "policy_id": "managing-climate-risks",
     "set": {
@@ -2506,16 +1900,6 @@
       "relevant": false
     },
     "reason": "relevance=peripheral: Section 3.1 'Clear risk ownership' - generic institutional call to consider distribution of responsibility between EU/Member States; no concrete trackable climate objective. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-83e77316",
-    "policy_id": "managing-climate-risks",
-    "set": {
-      "target_label": "commitment",
-      "obligation": "mandatory",
-      "climate_relevance": "adaptation"
-    },
-    "reason": "fields: Section 4.5 Eurocodes: the 2026 revision 'will make it mandatory to consider the future climate hazards on structures of buildings' - a forthcoming binding requirement about climate adaptation of buildings, not 'none'/'target'. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-98c09c78",
@@ -2721,15 +2105,6 @@
     "reason": "duplicate of tgt-0435 (same provision text) [fact-check 2026-07]"
   },
   {
-    "id": "tgt-b7f92812",
-    "policy_id": "methane-regulation",
-    "set": {
-      "article": "Article 36(2), point (c)",
-      "target_label": "other"
-    },
-    "reason": "article: Quote is Article 36(2), point (c), not Article 36 generally. | label: review-report criterion cross-referencing targets, not itself a target [fact-check 2026-07]"
-  },
-  {
     "id": "tgt-bd5a4311",
     "policy_id": "methane-regulation",
     "set": {
@@ -2800,14 +2175,6 @@
     "reason": "climate: Same peatland-rewetting target series; mitigation dimension omitted."
   },
   {
-    "id": "tgt-277a650a",
-    "policy_id": "nature-restoration-law",
-    "set": {
-      "article": "Article 8(1) — Restoration of urban ecosystems"
-    },
-    "reason": "article: Generic 'Article 8' citation; quote is the second sentence of Article 8(1)."
-  },
-  {
     "id": "tgt-2a19dd5e",
     "policy_id": "nature-restoration-law",
     "set": {
@@ -2822,14 +2189,6 @@
       "article": "Article 5(14), point (a) — Restoration of marine ecosystems"
     },
     "reason": "article: Generic 'Article 5' citation; quote is precisely Article 5(14), point (a)."
-  },
-  {
-    "id": "tgt-65a683ce",
-    "policy_id": "nature-restoration-law",
-    "set": {
-      "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems"
-    },
-    "reason": "article: Generic 'Article 4' citation; quote is the third sentence of Article 4(5)."
   },
   {
     "id": "tgt-72f73929",
@@ -2865,14 +2224,6 @@
     "reason": "climate: Same Article 4(2) derogation series; classified 'none' inconsistent with sibling restoration-percentage rows classified 'adaptation'. | article: Generic 'Article 4' citation; quote is precisely Article 4(2), second subparagraph, point (c)."
   },
   {
-    "id": "tgt-a362f90f",
-    "policy_id": "nature-restoration-law",
-    "set": {
-      "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems"
-    },
-    "reason": "article: Generic 'Article 4' citation; quote is the second sentence of Article 4(5)."
-  },
-  {
     "id": "tgt-ade78a12",
     "policy_id": "nature-restoration-law",
     "set": {
@@ -2896,15 +2247,6 @@
       "target_type": "quantitative"
     },
     "reason": "target_type: Quote contains explicit numeric index values (105, 110, 115); classifying as 'unspecified' is wrong."
-  },
-  {
-    "id": "tgt-c2545199",
-    "policy_id": "nature-restoration-law",
-    "set": {
-      "article": "Article 17(2), point (c) — Assessment of the national restoration plan",
-      "target_label": "other"
-    },
-    "reason": "article: Generic 'Article 17' citation; quote is precisely Article 17(2), point (c). | label: Commission assessment criterion cross-referencing existing targets [fact-check 2026-07]"
   },
   {
     "id": "tgt-c3babf4c",
@@ -3004,15 +2346,6 @@
     "reason": "article: Article citation omits the paragraph/subparagraph/point. The quote is Article 25(7), second subparagraph, point (d)."
   },
   {
-    "id": "tgt-92a9ad15",
-    "policy_id": "net-zero-industry-act",
-    "set": {
-      "article": "Article 26(2)",
-      "climate_relevance": "mitigation"
-    },
-    "reason": "article: Article citation omits the paragraph number. The quote is Article 26(2), second subparagraph. | climate: Classified as 'both' but the quote's 'resilience' concerns third-country supply-chain concentration (security of supply), not climate-change adaptation"
-  },
-  {
     "id": "tgt-950818cf",
     "policy_id": "net-zero-industry-act",
     "set": {
@@ -3036,22 +2369,6 @@
       "article": "Article 20(5) — Union level objective of CO2 injection capacity"
     },
     "reason": "article: Article citation omits the paragraph number. The quoted text is Article 20, paragraph 5, not the article as a whole."
-  },
-  {
-    "id": "tgt-f71b863a",
-    "policy_id": "one-health-amr",
-    "set": {
-      "target_type": "quantitative"
-    },
-    "reason": "fields: Section 2.5 commitment on falsified-medicines safety features (line 273); quote contains explicit date threshold 'by 2019', so target_type must be quantitative, not qualitative. Not climate-related. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-2358cc8c",
-    "policy_id": "osh-framework-directive",
-    "set": {
-      "article": "Article 12(1)"
-    },
-    "reason": "fields: Confirmed verbatim in Article 12(1) ('Training of workers'), mandatory, already correctly stored. Occupational training, no climate substance. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-2f6f24d6",
@@ -3132,37 +2449,12 @@
     "reason": "fields: Confirmed verbatim; item (a) is governed by the Art.8(3) chapeau 'The employer shall:' — mandatory, not voluntary as stored. Correction agreed with reviewer. No climate content. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-ced3883b",
-    "policy_id": "osh-framework-directive",
-    "set": {
-      "article": "Article 6(1)"
-    },
-    "reason": "fields: Confirmed verbatim in Article 6(1) ('General obligations on employers'). Substantive mandatory obligation, occupational safety only, no climate link. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-e63c579c",
     "policy_id": "osh-framework-directive",
     "set": {
       "article": "Article 9(1)(a)"
     },
     "reason": "fields: Confirmed verbatim, governed by Art.9(1) chapeau 'The employer shall:' — mandatory, already correctly stored. Occupational risk assessment, no climate link. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-dd724677",
-    "policy_id": "packaging-waste-regulation",
-    "set": {
-      "article": "Article 29(14)(a) — Re-use targets",
-      "obligation": "voluntary"
-    },
-    "reason": "article: Quote is not from a generic 'Article 29' passage but from a specific sub-clause deep in the Article; the citation should carry the paragraph/point numb | obligation: condition of a permissive Member State derogation (\"may exempt\") [fact-check 2026-07]"
-  },
-  {
-    "id": "tgt-f734cd8a",
-    "policy_id": "packaging-waste-regulation",
-    "set": {
-      "article": "Article 52(2)(b) — Recycling targets and promotion of recycling"
-    },
-    "reason": "article: Quote comes from a specific derogation condition deep in Article 52, not a generic 'Article 52' passage; citation should include the paragraph/point nu"
   },
   {
     "id": "tgt-22349827",
@@ -3187,14 +2479,6 @@
     "reason": "fields: Key Action 'Advance mutual resilience with candidate countries' (Annex 55, 2025): exact quote is a generic resilience/crisis-management cooperation commitment with candidate countries; 'resilience' is a keyword false positive, no climate content in the quote itself. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-3d61f0f8",
-    "policy_id": "preparedness-union-strategy",
-    "set": {
-      "relevant": false
-    },
-    "reason": "relevance=peripheral: Key Action 14/Annex 28 (2026), 'Population Preparedness': exact quote on 72h self-sufficiency guidelines is a genuine commitment with an explicit numeric threshold, but it is a generic all-hazards civil-preparedness measure (stockpiling-type), not climate-specific. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-ac8baf6a",
     "policy_id": "preparedness-union-strategy",
     "set": {
@@ -3211,14 +2495,6 @@
       "climate_relevance": "none"
     },
     "reason": "fields: Introduction, 'overall goal' statement (exact quote): explicitly all-hazards ('independently of their nature or origin'); 'resilient'/'protection' are false-positive keywords, not substantive climate content, so climate_relevance should be none rather than adaptation. A legitimate register goal statement, not a droppable scope clause. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-ff8d2467",
-    "policy_id": "preparedness-union-strategy",
-    "set": {
-      "climate_relevance": "adaptation"
-    },
-    "reason": "fields: Key Action 'Boost rescEU' (Annex 49, 2026): exact quote leads with maintaining/scaling the aerial firefighting fleet, a core EU adaptation capacity for climate-driven wildfire risk, alongside other all-hazards capabilities; substantively adaptation-relevant per the preparedness/resilience lens, not 'none'. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-1d58bcbd",
@@ -3293,14 +2569,6 @@
     "reason": "climate: Quote sets advanced-biofuel/biogas sub-targets expressed as a share of final consumption of energy in transport -- an energy/renewables provision, not "
   },
   {
-    "id": "tgt-9e9c53f2",
-    "policy_id": "renewable-energy-directive",
-    "set": {
-      "article": "Article 21(3), point (b)"
-    },
-    "reason": "article: Quote is specifically Article 21(3), point (b), not a generic reference to 'Article 21'."
-  },
-  {
     "id": "tgt-9edf0aa9",
     "policy_id": "renewable-energy-directive",
     "set": {
@@ -3333,28 +2601,12 @@
     "reason": "obligation: \"with the objective of arriving at\" — purpose of an enabling framework, not a duty on a bearer [fact-check 2026-07]"
   },
   {
-    "id": "tgt-ab0a6451",
-    "policy_id": "renewable-energy-directive",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "climate: Quote is an energy-consumption threshold (district heating/cooling share of overall energy consumption) used to determine renewable-energy-related exem"
-  },
-  {
     "id": "tgt-bcbe057d",
     "policy_id": "renewable-energy-directive",
     "set": {
       "climate_relevance": "mitigation"
     },
     "reason": "climate: Quote is an energy-accounting rule feeding directly into compliance measurement for the Directive's renewable-energy targets/trajectory; it repeatedly "
-  },
-  {
-    "id": "tgt-cfd33e0d",
-    "policy_id": "renewable-energy-directive",
-    "set": {
-      "climate_relevance": "mitigation"
-    },
-    "reason": "climate: Quote references the Member State's integrated national energy and climate plan and district heating/cooling development; contains 'energy' explicitly "
   },
   {
     "id": "tgt-d403b0be",
@@ -3403,16 +2655,6 @@
     "reason": "drop: Confirmed near-duplicate: only one occurrence of the EUR 275bn/year sentence in the source (Section 3.2, line 169), already captured as tgt-33360d4d. Drop upheld. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-33360d4d",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 3.2 (Reinforced, accessible and more targeted funding)",
-      "target_label": "other",
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Confirmed verbatim, Section 3.2. EUR 275bn/year investment-need estimate explicitly tied to the 55% 2030 climate target - finance channelled to mitigation, so relevant=true; it is an estimate rather than a Commission commitment/objective, so target_label corrected to 'other' (consistent with treatment of similar estimate-rows). [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-3412e98e",
     "policy_id": "renovation-wave",
     "drop": true,
@@ -3428,91 +2670,16 @@
     "reason": "fields: Confirmed verbatim, Section 1 (line 51 area). Flagship 35-million-units-by-2030 renovation target underpinning building decarbonisation; stored climate_relevance 'none' was wrong and reviewer failed to fix it - corrected to mitigation. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-58649b3a",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 4.3 (Decarbonising heating and cooling)",
-      "target_label": "other",
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Confirmed verbatim, Section 4.3 (line 446). Quantified residential heating/cooling energy-demand reduction range from the Climate Target Plan impact assessment - direct mitigation figure. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-59f08f45",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 4.3 (Decarbonising heating and cooling)"
-    },
-    "reason": "fields: Confirmed verbatim at Section 4.3; heating-equipment replacement/renewables-share targets tied to Climate Target Plan 2030 - direct mitigation content. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-6485f979",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 4.2 (Public buildings and social infrastructure showing the way)",
-      "target_type": "quantitative",
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Confirmed verbatim, Section 4.2 (line 434). Extending/raising public-building renovation obligations under the EED is a direct energy-efficiency/mitigation measure; quote contains 'by June 2021', so target_type must be quantitative, not 'qualitative'. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-6bb79aff",
     "policy_id": "renovation-wave",
     "drop": true,
     "reason": "drop: Confirmed near-duplicate: the source has only one occurrence of this 55% GHG sentence (Section 1, line 27-29), already captured as tgt-80d8f818; this row only adds a lead-in clause. Drop upheld. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-719e83ea",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 1 (Boosting building renovation for climate neutrality and recovery)",
-      "target_label": "other",
-      "target_type": "quantitative"
-    },
-    "reason": "fields: Confirmed verbatim, Section 1. '160 000' is an explicit magnitude in the quote, so target_type must be quantitative (reviewer left it 'unspecified'); speculative ('could be created') socio-economic co-benefit estimate rather than a genuine target/commitment, so target_label corrected to 'other'. No climate/energy substance in the quote itself, relevant=false stands. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-71f4c973",
     "policy_id": "renovation-wave",
     "drop": true,
     "reason": "drop: Confirmed near-duplicate: only one occurrence of the buildings GHG/energy sentence in the source (Section 1, line 29-30), already captured as tgt-f5aef2ca. Drop upheld. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-80d8f818",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 1 (Boosting building renovation for climate neutrality and recovery)"
-    },
-    "reason": "fields: Confirmed verbatim, Section 1. EU 2030 -55% net GHG target, core mitigation content. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-8192494b",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 4.2 (Public buildings and social infrastructure showing the way)",
-      "target_type": "quantitative"
-    },
-    "reason": "fields: Confirmed verbatim, Section 4.2 (line 436). Quote contains explicit date-thresholds (2030, 2040, 2050), so target_type must be quantitative, not 'unspecified'. Commitment to set renovation milestones aimed at decarbonising the stock by 2050. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-a78af789",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 3.1 (Strengthening information, legal certainty and incentives for renovation)",
-      "target_type": "quantitative",
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Confirmed verbatim, Section 3.1 (line 141). Mandatory minimum energy-performance standards under EPBD is a direct mitigation lever; quote contains the date-threshold 'by the end of 2021', so target_type must be quantitative, not 'unspecified'. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-afb0c97b",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 1 (Boosting building renovation for climate neutrality and recovery)",
-      "target_label": "other",
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Confirmed verbatim, Section 1 (line 35-37). Diagnostic baseline statistic on deep-renovation rate, so target_label 'other' is right, but the quote's substance (60% energy-consumption-reducing deep renovations, 0.2% uptake) is squarely mitigation, not 'none'; reviewer's relevant=false is overturned to true accordingly. target_type stays quantitative (explicit %s in quote) - reviewer's 'unspecified' rejected. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-afb5f9cf",
@@ -3531,30 +2698,6 @@
       "climate_relevance": "mitigation"
     },
     "reason": "fields: Confirmed verbatim, Section 1. Headline objective to double the annual renovation rate by 2030 - core buildings-mitigation objective, stored 'none' was wrong. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-be6f1989",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 4.1 (Tackling energy poverty and worst-performing buildings)"
-    },
-    "reason": "fields: Confirmed verbatim, Section 4.1. Social-housing renovation funding-gap statistic, diagnostic rather than a climate target itself; peripheral per the lens. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-c217412e",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 4 (Focus areas for building renovation)"
-    },
-    "reason": "fields: Confirmed verbatim at the Section 4 header/lead-in (lines 368-372). Defines the three priority focus areas including decarbonising heating and cooling - substantively climate/energy relevant. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-f5aef2ca",
-    "policy_id": "renovation-wave",
-    "set": {
-      "article": "Section 1 (Boosting building renovation for climate neutrality and recovery)"
-    },
-    "reason": "fields: Confirmed verbatim, Section 1. Sectoral buildings GHG/energy 2030 targets, direct mitigation content. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-f9cce434",
@@ -3601,27 +2744,10 @@
     "reason": "drop: Verified actual location is Art. 12(1), third subparagraph (line 1005) - describes the European Scientific Advisory Board on Climate Change's optional, own-initiative advisory-input mechanism; a procedural/institutional ESABCC-advisory provision, explicitly flagged as peripheral by the relevance lens, and not itself a substantive trackable target - drop justified. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-58e15d65",
-    "policy_id": "ten-e-regulation",
-    "set": {
-      "target_type": "qualitative"
-    },
-    "reason": "fields: Art. 1(1) verified verbatim (line 309, enacting terms after 'HAVE ADOPTED THIS REGULATION'). This is the Regulation's own foundational objective clause tying the TEN-E priority corridors/areas to achieving the Union's 2030 energy/climate targets and 2050 climate-neutrality objective - substantive climate content, not mere administrative scope boilerplate (cf. similarly-worded alignment clauses at Arts 4(5)(a), 11(1), 12(1), 13(1), 16 which are kept throughout this register). Rejecting reviewer's drop. Only the reference to named/dated targets (no magnitude) supports qualitative, not unspecified. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-5ea869ec",
     "policy_id": "ten-e-regulation",
     "drop": true,
     "reason": "drop: Near-duplicate of tgt-1b8a3a08 - same 'additional scenarios...consistent with 2030/2050 targets' clause repeated verbatim at Art. 16(5) (line 1135, cost-allocation dispute-resolution paragraph). [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-82fa9e65",
-    "policy_id": "ten-e-regulation",
-    "set": {
-      "article": "Art. 24(4)",
-      "target_type": "quantitative"
-    },
-    "reason": "fields: Verified actual location is Art. 24(4) (Cyprus/Malta derogation, line 1441) - requires a roadmap to convert the asset to a dedicated hydrogen asset by 2036; explicit date threshold so target_type quantitative. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-95510baa",
@@ -3653,14 +2779,6 @@
       "target_type": "quantitative"
     },
     "reason": "fields: Art. 7(7) confirmed verbatim (line 797) - administrative deadline (24 June 2023) for legislative streamlining measures; procedural, quantitative per date threshold. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-ab0429e9",
-    "policy_id": "ten-e-regulation",
-    "set": {
-      "article": "Art. 13(1)"
-    },
-    "reason": "fields: Verified actual location is Art. 13(1), third subparagraph (line 1039) - infrastructure-gaps assessment must focus on gaps affecting the Union's 2030/2050 climate and energy targets. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-bb8709d1",
@@ -3718,15 +2836,6 @@
     "reason": "fields: Art. 46(2) confirmed verbatim ('...shall be subject to climate proofing'), with the following sentence detailing climate vulnerability/risk assessment and adaptation measures. Mandatory climate proofing of projects of common interest is adaptation, not 'none'. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-482876cc",
-    "policy_id": "ten-t-regulation",
-    "set": {
-      "article": "Art. 41(1)(b)(i)",
-      "timeline": "by 31 December 2027"
-    },
-    "reason": "fields: Confirmed at Art. 41(1)(b)(i) (the chapeau of point (b) sets 'by 31 December 2027' for the SUMP sub-items). SUMP measures to shift toward sustainable mobility and promote zero/low-emission mobility are mitigation-relevant. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-87c4dd4b",
     "policy_id": "ten-t-regulation",
     "set": {
@@ -3755,15 +2864,6 @@
     "reason": "fields: Art. 18(1)(a) confirmed verbatim. Quote contains two explicit dates (2040, 2050) so target_type must be quantitative, not unspecified; timeline should capture both deadlines, not just 2040. ERTMS signalling deployment is a rail interoperability/safety requirement, non-climate -> peripheral. | relevance=peripheral: Art. 18(1)(a) confirmed verbatim. Quote contains two explicit dates (2040, 2050) so target_type must be quantitative, not unspecified; timeline should capture both deadlines, not just 2040. ERTMS signalling deployment is a rail interoperability/safety requirement, non-climate -> peripheral. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-9b10b0d8",
-    "policy_id": "ten-t-regulation",
-    "set": {
-      "article": "Art. 4(2)(a)(ii)",
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Confirmed at Art. 4(2)(a)(ii), same 'sustainability' category as the CO2/zero-emission item. Modal shift to rail/inland waterway/short-sea shipping is a recognised mitigation lever, not 'none'; per the TEN-T relevance lens, modal-shift provisions are relevant. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-9f7b0aa6",
     "policy_id": "ten-t-regulation",
     "set": {
@@ -3771,15 +2871,6 @@
       "relevant": false
     },
     "reason": "fields: Art. 6(1)(c) confirmed verbatim, contains explicit date (31 December 2050) -> quantitative, not unspecified. Generic comprehensive-network completion deadline -> peripheral. | relevance=peripheral: Art. 6(1)(c) confirmed verbatim, contains explicit date (31 December 2050) -> quantitative, not unspecified. Generic comprehensive-network completion deadline -> peripheral. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-a5cf880a",
-    "policy_id": "ten-t-regulation",
-    "set": {
-      "target_type": "quantitative",
-      "climate_relevance": "mitigation"
-    },
-    "reason": "fields: Art. 41(1)(c) confirmed verbatim (quote includes the '31 December 2030' date threshold in the quote -> quantitative, not unspecified). Full source text of the same point (c), beyond the extracted fragment, mandates that these hubs 'are equipped with at least one recharging station ... dedicated to serve buses and coaches' and requires examining hydrogen refuelling provision -- i.e. mandatory alternative-fuels infrastructure, which the relevance lens flags as relevant/mitigation, not 'none'. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-b39b1278",
@@ -3797,14 +2888,6 @@
       "relevant": false
     },
     "reason": "relevance=peripheral: Art. 16(2)(b) confirmed verbatim (740 m freight train length requirement). Technical interoperability standard with no climate/energy substance in the quote -> peripheral. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-d8f20b3d",
-    "policy_id": "ten-t-regulation",
-    "set": {
-      "obligation": "mandatory"
-    },
-    "reason": "fields: Art. 5(1) chapeau reads 'the trans-European transport network shall be planned, developed and operated ... through:' before listing (a)-(i) including (g); this is a mandatory governing 'shall', not voluntary. Covers both decarbonisation of construction (mitigation) and climate-resilient infrastructure (adaptation). [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-e999f611",
@@ -3938,29 +3021,10 @@
     "reason": "climate: Classified 'mitigation' but the 'pollution', 'priority substances' and 'emissions, discharges and losses of priority hazardous substances' referred to "
   },
   {
-    "id": "tgt-80eb4b3a",
-    "policy_id": "water-framework-directive",
-    "set": {
-      "climate_relevance": "adaptation"
-    },
-    "reason": "climate: Classified 'none' but the clause is structurally identical to Article 4(1)(a)(ii) (tgt-0642), the immediately preceding sub-point, which was correctly "
-  },
-  {
     "id": "tgt-26e96c9d",
     "policy_id": "water-resilience-strategy",
     "drop": true,
     "reason": "drop: Fragment duplicate of tgt-85f0173a (same sentence on the unmet 2008 MSFD 2020 goal); a past-tense retrospective statement that a historical goal was not met, not a current operative target - genuine non-target, correctly dropped. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-45ba053a",
-    "policy_id": "water-resilience-strategy",
-    "set": {
-      "article": "Annex II - The key 2027-2033 intermediate targets",
-      "obligation": "mandatory",
-      "target_type": "quantitative",
-      "timeline": "national plans due by 2026; building decarbonisation by 2050"
-    },
-    "reason": "fields: Annex II intermediate target under the binding Energy Performance of Buildings Directive: building decarbonisation by 2050 - mandatory EU directive obligation, direct mitigation content. Quote contains explicit date thresholds ('due by 2026', 'by 2050'), so target_type should be quantitative, not qualitative; timeline should reflect both dates. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-49f0c073",
@@ -3971,42 +3035,16 @@
     "reason": "fields: Sec.3.5 flagship action: adoption of a European Climate Adaptation Plan - direct, unambiguous adaptation commitment. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-6ad028b0",
-    "policy_id": "water-resilience-strategy",
-    "set": {
-      "article": "Section 3.2 (Finance, investments and infrastructure)",
-      "target_type": "quantitative"
-    },
-    "reason": "fields: Sec.3.2: Water Resilience Investment Accelerator for natural water retention/efficiency pilots - adaptation-relevant; quote contains an explicit magnitude ('20 pilot innovative cases'), so target_type must be quantitative, not qualitative (reviewer missed this). [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-6d6b87ad",
     "policy_id": "water-resilience-strategy",
     "drop": true,
     "reason": "drop: Sec.3.2: a descriptive investment-gap statistic (context/evidence for the funding case), not itself a stated target/goal/objective/commitment - genuine non-target, correctly dropped. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-7cf23236",
-    "policy_id": "water-resilience-strategy",
-    "set": {
-      "article": "Section 3.2 (Finance, investments and infrastructure)"
-    },
-    "reason": "fields: Sec.3.2: EIB Water Programme financing dedicated to water resilience - finance channelled to adaptation ends. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-85f0173a",
     "policy_id": "water-resilience-strategy",
     "drop": true,
     "reason": "drop: Sec.2.1: past-tense statement that the 2008 MSFD's 2020 goal 'was not met' - historical/retrospective fact, not a current target, and duplicated by tgt-26e96c9d; correctly dropped. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-a20d1fc0",
-    "policy_id": "water-resilience-strategy",
-    "set": {
-      "article": "Section 2.2 (Building a water-smart economy) - Water Efficiency First paragraph",
-      "climate_relevance": "adaptation"
-    },
-    "reason": "fields: Sec.2.2: water-efficiency target explicitly set against 'further climate change [where] the regions affected by water scarcity will increase substantially' - water-use efficiency under climate-driven scarcity is adaptation per the relevance lens. [fact-check 2026-07 new-acts]"
   },
   {
     "id": "tgt-af3bec37",
@@ -4039,26 +3077,6 @@
     "reason": "fields: Sec.2.2: leakage reduction is a core water-use-efficiency measure under the same climate-driven-scarcity framing that opens Section 2.2 ('Faced with increased water scarcity and droughts...With further climate change the regions affected by water scarcity will increase substantially'), so this should be treated as adaptation-relevant like the parallel water-efficiency target, not 'none'/peripheral (reviewer's drop of relevance here is inconsistent with its own treatment of the water-efficiency-target row). The Drinking Water Directive 'requires' Member States to reduce leakages - mandatory, not voluntary. Quote also contains explicit date thresholds ('by 2028', 'by 2030'), so target_type should be quantitative. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-ca9cf814",
-    "policy_id": "water-resilience-strategy",
-    "set": {
-      "article": "Annex II - The key 2027-2033 intermediate targets",
-      "target_label": "target",
-      "obligation": "mandatory",
-      "climate_relevance": "both"
-    },
-    "reason": "fields: Annex II intermediate target under the binding Nature Restoration Regulation ('will be put in place' restates a directly-applicable EU Regulation requirement - mandatory); 30%-by-2030 habitat restoration is a genuine quantified target (not 'other'), bearing on both ecosystem/adaptation resilience and carbon-sink mitigation. [fact-check 2026-07 new-acts]"
-  },
-  {
-    "id": "tgt-d01d7f59",
-    "policy_id": "water-resilience-strategy",
-    "set": {
-      "article": "Section 2.2 (Building a water-smart economy)",
-      "target_type": "quantitative"
-    },
-    "reason": "fields: Sec.2.2: evaluation of the Water Reuse Regulation supports drought/scarcity resilience (adaptation); quote contains an explicit date ('By June 2028'), so target_type should be quantitative, not unspecified. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-e7230635",
     "policy_id": "water-resilience-strategy",
     "set": {
@@ -4078,30 +3096,12 @@
     "reason": "fields: Sec.3.3 flagship action: Destination Earth/Digital Twin of the Ocean explicitly support assessing water risks due to climate change - adaptation. Exact quote is the Flagship-actions-table entry whose paired timeline is '2025-2030', not just 'by 2030'; quote also contains a date ('by 2030'), so target_type should be quantitative, not unspecified. [fact-check 2026-07 new-acts]"
   },
   {
-    "id": "tgt-fbb33206",
-    "policy_id": "water-resilience-strategy",
-    "set": {
-      "article": "Section 2.2 (Building a water-smart economy)",
-      "timeline": "2025-2027",
-      "climate_relevance": "both"
-    },
-    "reason": "fields: Sec.2.2 body narrative (also echoed in the Industry and Energy flagship-action bullet): data-centre standards cover both energy efficiency (mitigation) and water consumption (adaptation-relevant water efficiency), so climate_relevance should be 'both', not 'mitigation' only. Source gives inconsistent timelines for this flagship item across the document (main-text flagship box: 2025-2027 at line ~253; Annex I full action list: 2025-2026 at line ~615); citing the main-text flagship timeline. [fact-check 2026-07 new-acts]"
-  },
-  {
     "id": "tgt-4113e6d3",
     "policy_id": "zero-pollution-action-plan",
     "set": {
       "climate_relevance": "none"
     },
     "reason": "climate: The quote reports reductions in 'main air pollutants' (ammonia, sulphur oxides) — conventional air-quality pollutants, not greenhouse gases/CO2. There "
-  },
-  {
-    "id": "tgt-9f8ee271",
-    "policy_id": "zero-pollution-action-plan",
-    "set": {
-      "target_type": "quantitative"
-    },
-    "reason": "target_type: The quote specifies a concrete numeric threshold ('100 cities'), which is a quantifiable target element, yet target_type is set to 'unspecified' ra"
   },
   {
     "id": "tgt-f0855362",
@@ -4720,5 +3720,1263 @@
     "id": "tgt-051d70a0",
     "drop": true,
     "reason": "FIX: sentence was cut before its verb; re-extracted in full; superseded by the corrected row in scripts/policy-targets-input/_corrections-2026-07.json [human review 2026-07]"
+  },
+  {
+    "id": "tgt-dd724677",
+    "drop": true,
+    "reason": "NT-3: Article 29(14)(a) is one of the conditions a Member State must satisfy before it may exempt economic operators from the re-use targets; it is a criterion for granting an exemption, not a target of its own, and the recycling figures it cites are the targets set in Article 52. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-f734cd8a",
+    "drop": true,
+    "reason": "NT-3: Article 52(2)(b) is one of the conditions under which a Member State may postpone a recycling deadline; it is a criterion governing a derogation, not a recycling target the act sets. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-105b0f08",
+    "drop": true,
+    "reason": "FIX-COLON: The row stops at the colon of the Article 43(1) chapeau and the enumerated reduction figures (a) to (c) are not present as their own rows in the packet, so the chapeau must be re-extracted together with its points. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-a87c19ac",
+    "drop": true,
+    "reason": "FIX-COLON: Article 52(1)(b) is a chapeau cut at its colon; the material-specific percentages (i) to (vi) are not separate rows in the packet, so the point must be re-extracted with them. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-2eec81cb",
+    "drop": true,
+    "reason": "FIX-COLON: Article 52(1)(d) is a chapeau cut at its colon; the 2030 material-specific percentages (i) to (vi) are not separate rows in the packet, so the point must be re-extracted with them. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-291ed126",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "industry"
+      ]
+    },
+    "reason": "CLIMATE: A binding cap on lightweight plastic carrier bag consumption is a waste-prevention target that cuts the production of plastic packaging, so it enables GHG reduction like every other waste-prevention and recycled-content row of this act; 'none' is wrong. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-530fa44b",
+    "drop": true,
+    "reason": "DUP: The whole of this row is the closing sentence of the third subparagraph of Article 4(1), which is already captured verbatim inside row tgt-48d710cd of the same act; keep the fuller row. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-3769a95e",
+    "drop": true,
+    "reason": "DUP: This row is the opening sentence of Article 4(3) and is already captured verbatim inside row tgt-c5714f34 of the same act, which quotes the same paragraph in full; keep the fuller row. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-69956688",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy"
+      ]
+    },
+    "reason": "CLIMATE: The multilevel climate and energy dialogue is about discussing the achievement of the Union's climate-neutrality objective and the scenarios envisaged for energy and climate policies, which is mitigation enabling, not adaptation; the energy sector is also missing. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-bfec02c0",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "ecosystems"
+      ]
+    },
+    "reason": "CLIMATE: The cap on land flexibility is expressed in million tonnes of CO2 equivalent and applies where the Union misses the Article 4(2) net-removals target, so it protects the removals target; 'none' is wrong for a provision that is purely about GHG removals. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-3a42469b",
+    "set": {
+      "climate_relevance": "adaptation",
+      "sectors": [
+        "health"
+      ]
+    },
+    "reason": "CLIMATE: The third pillar of the AMR action plan is about shaping the global agenda on antimicrobial resistance; it has nothing to do with GHGs or energy. Like the other two pillars in this act it is a public health objective, so climate should be adaptation and the sector health, not energy. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-f71b863a",
+    "set": {
+      "climate_relevance": "adaptation",
+      "sectors": [
+        "health",
+        "industry"
+      ]
+    },
+    "reason": "CLIMATE: Safety features on the packaging of medicinal products for human use is a public health measure against falsified medicines, not a GHG measure; per the reviewer's public-health reading it is adaptation, and the health sector is missing. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-e2f06bba",
+    "drop": true,
+    "reason": "NT-1: The row quotes only the second subparagraph of Article 5(1), which lists what the Member State risk assessment must account for. The obligation to carry out the assessment (with its 17 January 2026 deadline) is the preceding subparagraph and stays; the content list goes, exactly as Floods Directive Article 7(3) went while Article 7(1) stayed. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-823b3e58",
+    "drop": true,
+    "reason": "NT-1: Article 12(2) lists what a critical entity risk assessment must account for; the obligation to carry the assessment out is in Article 12(1), which is not this row. A description of what a required document must contain is not a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-a341c43f",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "transport"
+      ]
+    },
+    "reason": "SECTOR: Article 12(4) concerns the electricity supplied to stationary aircraft at TEN-T airports under Article 12(1); the transport sector is missing, while every other Article 12 row in the packet carries it. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-fcee3e48",
+    "set": {
+      "climate_relevance": "both",
+      "sectors": [
+        "agrifood",
+        "ecosystems"
+      ]
+    },
+    "reason": "SECTOR: CAP general objective on environmental protection and climate action: sectors list only ecosystems, but the objective governs EAGF/EAFRD support to farming and food, so agrifood is missing. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-132ace67",
+    "drop": true,
+    "reason": "NT-2: Not a target but one item on the menu of areas of action from which each eco-scheme must be built, i.e. the scope of what the scheme may support; the item fixes neither a date nor a quantity. Article 31(1) (Member States shall establish eco-schemes) stays; what the scheme must cover goes. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-8c0348de",
+    "drop": true,
+    "reason": "NT-2: Same list as Article 31(4)(a) — an eligible area of action for eco-schemes rather than a target. If it were kept, climate should be adaptation, not both. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-6c3bf26d",
+    "set": {
+      "climate_relevance": "both",
+      "sectors": [
+        "agrifood"
+      ]
+    },
+    "reason": "CLIMATE: The 25 % earmark is for eco-schemes, whose areas of action expressly cover climate change mitigation AND climate change adaptation (Article 31(4)(a) and (b)); mitigation alone is too narrow, and the parallel Article 93 earmark row is classified both. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-02d626a9",
+    "drop": true,
+    "reason": "NT-1: Not a target but one item on the list of what a permit must contain under Article 14(1). The obligation to ensure the permit includes all necessary measures stays; the description of what it must contain goes, and this item fixes neither a date nor a quantity. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-55ac11e0",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'The emission limit values set in accordance with the first subparagraph' with no antecedent in the row; that first subparagraph is the Article 15(4) less-strict-ELV derogation, without which the cap is unintelligible. Re-extract with the whole of Article 15(4) first subparagraph included. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-5799ee90",
+    "set": {
+      "climate_relevance": "none",
+      "sectors": [
+        "water",
+        "industry"
+      ]
+    },
+    "reason": "CLIMATE: Article 68 sits in the titanium dioxide chapter and caps discharges of polluting substances into water; it neither cuts GHGs nor enables removals, and it does not reduce vulnerability to climate hazards, so climate should be none. The industry sector is also missing alongside water. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-eb6113d4",
+    "drop": true,
+    "reason": "NT-6: Not a target but one bullet of the 'Facing challenges' background list in section 1.3, describing a risk to cultural heritage; context with no commitment, date or quantity. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-0e91d7ca",
+    "drop": true,
+    "reason": "NT-6: Not a target but a descriptive sentence in the Horizon 2020 narrative of section 2.1 reporting research that is already carried out; illustrative material with no commitment, date or quantity. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-d2536c6b",
+    "set": {
+      "climate_relevance": "none",
+      "sectors": []
+    },
+    "reason": "CLIMATE: The item is one of the communication's own needs for strengthening the heritage sector (research, innovation, knowledge sharing, smart specialisation). It neither reduces vulnerability nor raises adaptive capacity, so climate should be none, not adaptation. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-412040e4",
+    "drop": true,
+    "reason": "NT-4: Not a target but a definitions provision: it imports ten definitions from Regulation (EU) 2019/1020 into Article 2 of this Regulation. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-eb2b9583",
+    "drop": true,
+    "reason": "NT-1: Not a target but one item on the list of information a submitted self-regulation measure shall contain — the 'X shall contain Y' pattern — and it fixes neither a date nor a quantity. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-562c68e8",
+    "drop": true,
+    "reason": "DUP: Same sentence of Article 9(1), third subparagraph is already captured by tgt-2ad08a12, which quotes the whole subparagraph (16 % and 26 % thresholds) in the same act. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-32e5f199",
+    "drop": true,
+    "reason": "DUP: First sentence of Article 9(2), first subparagraph; tgt-74ba8943 already carries that whole subparagraph in the same act. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-0b0cc7a3",
+    "drop": true,
+    "reason": "DUP: Second sentence of Article 9(2), first subparagraph; tgt-74ba8943 already carries that whole subparagraph in the same act. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-2b004764",
+    "drop": true,
+    "reason": "DUP: Point (a) of Article 9(2), third subparagraph; tgt-0adeee0d already contains the chapeau with points (a), (b) and (c) in the same act. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-86f1ac80",
+    "drop": true,
+    "reason": "DUP: Point (b) of Article 9(2), third subparagraph; tgt-0adeee0d already contains the chapeau with points (a), (b) and (c) in the same act. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-c9a5a7a2",
+    "drop": true,
+    "reason": "NT-6: Mid-sentence fragment: it is point (b) of the Article 14(5) chapeau under which Member States may decide NOT to apply the recharging requirements, i.e. a condition for an exemption, not a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-fbcb16c9",
+    "drop": true,
+    "reason": "NT-4: The sentence defines what counts as a 'deep renovation' for the purposes of Article 17(16); nothing is required to reach 60 %, so it is a definition rather than a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-3b113ab6",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "buildings"
+      ]
+    },
+    "reason": "SECTOR: Article 6(3) obliges Member States to adjust minimum energy performance requirements for buildings; the sector 'buildings' is missing (only 'energy' tagged). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-aa241309",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "buildings"
+      ]
+    },
+    "reason": "CLIMATE: Article 17(6) is only about deploying funding consistently with a zero-emission building stock by 2050; there is no vulnerability, exposure or adaptive-capacity element, so 'both' is wrong. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-173ee764",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "buildings",
+        "transport"
+      ]
+    },
+    "reason": "SECTOR: Article 14(1)(a) applies to new and majorly renovated non-residential buildings; 'buildings' is missing, while sibling rows of the same article (tgt-4d0579d6, tgt-c9a5a7a2) carry it. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-a5cd7880",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "buildings",
+        "transport"
+      ]
+    },
+    "reason": "SECTOR: Article 14(1)(b) applies to new and majorly renovated non-residential buildings; 'buildings' is missing, inconsistently with sibling rows of the same article. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-1a64dd3e",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "buildings",
+        "transport"
+      ]
+    },
+    "reason": "SECTOR: Article 14(2)(a) applies to all non-residential buildings with more than 20 car parking spaces; 'buildings' is missing, inconsistently with sibling rows of the same article. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-fa31fb21",
+    "drop": true,
+    "reason": "NT-1: Article 5(3)(f) is one item on the list of what the Union prevention, preparedness and response plan shall include provisions on; it fixes neither a date nor a quantity, so it is plan content, not a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-41fd0e32",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'shall establish ...' with no subject at all; the actor was cut off and the row must be re-extracted from the start of Article 5(1). Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-0dddb29f",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'shall ensure permanent communication ...' with no subject; the actor (the network for epidemiological surveillance) was cut off and must be re-extracted with the start of Article 13(1). Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-8b34f01e",
+    "drop": true,
+    "reason": "NT-6: Sits under the heading 'The zero pollution hierarchy' and only restates Treaty principles (precautionary, preventive action, rectification at source, polluter pays) as background; it sets nothing to be achieved. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-9f8ee271",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": []
+    },
+    "reason": "SECTOR: The Cities Mission line is a cross-cutting urban climate-neutrality target; 'buildings' is not what the sentence addresses, and the rulebook says a cross-cutting target should stay empty rather than be forced into a sector. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-78fdb2b7",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": []
+    },
+    "reason": "CLIMATE: The safety reserve is a compliance flexibility inside the Effort Sharing Regulation's GHG architecture and the quantity is measured as overachievement of GHG reduction obligations, so climate 'none' is wrong; it enables mitigation. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-897682ac",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": []
+    },
+    "reason": "CLIMATE: Same safety-reserve mechanism: amounts published correspond to 20 % of overachievement of GHG reduction obligations, so climate 'none' is wrong; it enables mitigation. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-c8e62421",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": []
+    },
+    "reason": "SECTOR: Article 22(1) applies to all large companies in scope of the Directive, not to the energy sector; coal, oil and gas appear only as a 'where relevant' exposure factor, and the three sibling CSDDD rows correctly carry no sector. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-2358cc8c",
+    "drop": true,
+    "reason": "FIX-COLON: Article 12(1) is quoted as a chapeau cut at its colon; the four indents that carry the actual trigger events are not present as separate rows in the packet, so the chapeau must be re-extracted together with them. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-d30adf3b",
+    "drop": true,
+    "reason": "DUP: The same sentence is already in the register under tgt-d09f5b9d, which quotes the whole of Article 6(6)(a) including this final sentence; this row is only its tail. It also opens on the anaphor 'For those buildings' with no antecedent, which is exactly what the fuller row supplies. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-4ca958a3",
+    "drop": true,
+    "reason": "NT-1: This is an item on the list of what the Commission's periodic evaluation report shall include, not a target: 'shall establish X' stays, 'X shall contain Y' goes (Limit 2). Its only quantity is a cross-reference to the 3 % rate already captured from Article 6(1) as tgt-1e9ea892, so it carries no date or quantity of its own (Limit 1 does not save it), and it has no deadline of its own so Limit 3 does not apply either. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-e1e825fb",
+    "drop": true,
+    "reason": "NT-1: A content requirement for a deliverable, not a target — it prescribes what the flood hazard maps must cover. This is the same pattern the reviewer applied within this very act: Article 6(1) (Member States shall prepare the maps, kept as tgt-e6e437e1) stays, while the provision setting out what those maps must contain goes, exactly as Article 7(1) stayed and Article 7(3) went. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-0fce74a9",
+    "drop": true,
+    "reason": "NT-2: This is a condition for receiving money from the Fund plus the list of areas the milestones and targets must cover — the reviewer already struck point (d) of this same paragraph as 'part of a list of measures eligible to be covered by the fund'. Its residual content is alignment with the Union's climate targets and Regulation (EU) 2021/1119, which is a pointer to other instruments' targets (NT-5). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-ca9ffc90",
+    "drop": true,
+    "reason": "NT-2: A ceiling on eligible expenditure inside Article 8 'Eligible measures and investments' — what a Member State may include in the estimated total costs of its Plan and the cap on technical-assistance costs. NT-2 names a ceiling on eligible expenditure explicitly. (Its climate value 'adaptation' is also wrong, but the row should go rather than be reclassified.) [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-00b3b2ef",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy"
+      ]
+    },
+    "reason": "CLIMATE: A Union final/primary energy consumption reduction target enables GHG cuts and is therefore mitigation; nothing in it reduces vulnerability or exposure, raises adaptive capacity or protects health from a climate hazard, so 'both' overstates the adaptation half. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-7ceff24f",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy"
+      ]
+    },
+    "reason": "CLIMATE: A cap on how far a Member State's updated indicative national energy efficiency contribution may sit above the Annex I formula — a mitigation-side constraint on the energy efficiency contribution, with no adaptation content. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-337c264c",
+    "set": {
+      "climate_relevance": "both",
+      "sectors": [
+        "ecosystems",
+        "agrifood"
+      ]
+    },
+    "reason": "SECTOR: Sector 'agrifood' is missing. The subject-matter clause this point belongs to applies the Regulation to cattle, cocoa, coffee, oil palm, rubber and soya alongside wood, so the emissions and biodiversity aim it states is carried by agrifood supply chains as much as by ecosystems. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-c2545199",
+    "drop": true,
+    "reason": "NT-3: This is one of the items the Commission must evaluate when assessing a draft national restoration plan, i.e. an assessment criterion, not a target in itself; the targets it points to (Art. 1, Art. 9(1), Art. 13) are already separate rows of this act. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-9872a437",
+    "drop": true,
+    "reason": "NT-2: The quoted words are point (b) of the list of things the funds shall NOT support, so the row is funding-scope (an exclusion) and, read alone, asserts the opposite of the provision. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-9ecb3b97",
+    "drop": true,
+    "reason": "NT-6: A background statistic on where current policies lead, used as context for arguing for more ambition; it sets no target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-6baa4b76",
+    "drop": true,
+    "reason": "NT-6: Illustrative market projection used as context, and a mid-sentence fragment (the subject 'The European remanufacturing market's' is cut off); no target is set. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-21eb9378",
+    "drop": true,
+    "reason": "NT-6: A summary of commitments made elsewhere (RED renewable targets, the 3% R&D goal, the NATO 2% goal) given as context for the EU's financing gap, and a mid-sentence fragment cut before 'and to upgrade the EU's digital infrastructure'. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-07fbd962",
+    "drop": true,
+    "reason": "NT-5: A pointer to a target set by another instrument (the 2035 CO2 standard for cars in Regulation (EU) 2019/631); the sentence itself sets no target, it only states how that existing target should be approached. It is also a mid-sentence fragment ('Moreover, reaching ...'). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-15fe7607",
+    "drop": true,
+    "reason": "DUP: Article 11(1), point (a) is already present word-for-word inside row tgt-bde25007 (Article 11(1)) of the same act; keep the paragraph-level row (fixed under FIX-COLON) and drop this one. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-bde25007",
+    "drop": true,
+    "reason": "FIX-COLON: The chapeau of Article 11(1) is cut at its colon and point (b) breaks off mid-clause ('in addition to satisfying the conditions set out in'); the enumerated points must be re-extracted in full. This is the very provision the reviewer marked 'Please extract the text following a colon.' Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-18a39815",
+    "drop": true,
+    "reason": "FIX-COLON: The Article 10(1) chapeau is cut at its colon and only point (a) is carried; points (b) to (i) are not present as their own rows anywhere in the packet, so the chapeau must be re-extracted together with all nine points. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-a362f90f",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'In such a case' and refers to 'that lower percentage' with no antecedent; the preceding sentence of Article 4(5) (the derogation that allows a percentage between 90 % and 100 %) must be included. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-65a683ce",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'those restoration measures' and refers to 'such lower percentage' with no antecedent; the preceding sentence of Article 4(5) must be included. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-277a650a",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'For the purposes of this paragraph' and excludes areas from 'those total national areas' with no antecedent; it is the carve-out from the Article 8(1) no-net-loss target and must be re-extracted with the preceding sentence. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-eee1a233",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'By way of derogation from paragraph 6, 50 % of such ERDF resources' — 'such' has no antecedent; the preceding subparagraph of Article 4(9), which identifies the resources under Article 3(1), point (b)(viii), must be included. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-8b3862c0",
+    "set": {
+      "sectors": [
+        "agrifood"
+      ]
+    },
+    "reason": "SECTOR: 'transport' is wrong: the second instrument named is the Maritime Fisheries Fund, not a transport fund, and nothing in the sentence or its paragraph concerns transport. The sentence sits in the Farm to Fork section on farmers and fishermen. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-75cad6ac",
+    "set": {
+      "sectors": [
+        "energy",
+        "transport",
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: 'energy' is missing although the objective expressly promotes the clean and fair energy transition (and its sub-objectives (i)-(iii) are energy efficiency, renewables and grids); 'buildings' has no basis in the provision. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-516064e1",
+    "set": {
+      "climate_relevance": "both",
+      "sectors": [
+        "ecosystems"
+      ]
+    },
+    "reason": "CLIMATE: The Union restoration target is classified 'adaptation' only, but Article 1(1) states that the rules contribute to the Union's climate change mitigation objectives as well, so the subject-matter target is 'both'. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-9730be62",
+    "set": {
+      "climate_relevance": "both",
+      "sectors": [
+        "ecosystems"
+      ]
+    },
+    "reason": "CLIMATE: Planting three billion additional trees increases removals, which the rulebook classifies as mitigation; it is currently 'adaptation' only, and the act itself frames restoration as serving both mitigation and adaptation. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-717c2d9a",
+    "drop": true,
+    "reason": "DUP: This single sentence is already contained, word for word, inside row tgt-19578429 of the same act, which quotes the whole of Article 23(1). It is also anaphoric on its own ('That increase'), which is what a duplicate-of-paragraph row looks like. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-21d76c47",
+    "drop": true,
+    "reason": "NT-6: A mid-sentence fragment: point (a) of the Article 23(2) chapeau 'when calculating its share of renewable energy in the heating and cooling sector and its average annual increase in accordance with that paragraph, each Member State:'. Standing alone it has no subject and states an accounting flexibility for the Article 23(1) increase already captured, not a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-d3b0abb8",
+    "drop": true,
+    "reason": "NT-6: The same mid-sentence fragment problem: point (b) of the Article 23(2) list, a counting rule hanging off the chapeau 'each Member State:', with no subject and no target of its own. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-9e9c53f2",
+    "drop": true,
+    "reason": "NT-6: A mid-sentence fragment of the list under Article 21(3) ('Member States may apply non-discriminatory and proportionate charges and fees to renewables self-consumers ... in one or more of the following cases:'). The 8 % figure is a trigger condition for levying charges, not a level anyone is required or aiming to reach. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-ab0a6451",
+    "drop": true,
+    "reason": "NT-6: Mid-sentence fragment of Article 24(10), whose chapeau is 'A Member State shall not be required to apply paragraphs 2 to 9 of this Article where:'. It is a derogation condition (opening on a bare 'its'), not a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-cfd33e0d",
+    "drop": true,
+    "reason": "NT-6: Same list as above: point (b) of the Article 24(10) derogation conditions, a mid-sentence fragment describing when a Member State escapes paragraphs 2 to 9, not a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-2e3e32a0",
+    "drop": true,
+    "reason": "NT-6: Point (c) of the same Article 24(10) derogation list; a mid-sentence fragment stating an exemption threshold, not a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-4daf0660",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'that limit' with no antecedent; the limit is defined in the preceding subparagraph of Article 26(2) (the 2019 consumption level of high indirect land-use change-risk fuels). Re-extract with that sentence included. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-4daf0660",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "transport",
+        "ecosystems"
+      ]
+    },
+    "reason": "CLIMATE: climate is recorded as 'none'. Phasing the share of high indirect land-use change-risk biofuels down to 0 % avoids the land-conversion emissions of those fuels, so it cuts GHGs and is mitigation; the sibling row for the same paragraph (tgt-e2e88dc0) is already mitigation. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-ba5fd11a",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "buildings"
+      ]
+    },
+    "reason": "CLIMATE: Article 15(4) requires minimum levels of renewable energy in new and majorly renovated buildings — a pure mitigation measure. 'both' and the 'health' sector rest only on the safeguard clause 'in so far as this does not negatively affect indoor air quality', which is a proviso, not a target to reduce vulnerability or protect health from a climate-sensitive hazard. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-6b09672e",
+    "drop": true,
+    "reason": "NT-4: This is point (b) of the definition of 'early efforts' in Article 2(20) of the Governance Regulation — a definition, not a target (the provision label in the register even says so). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-abdfdc7c",
+    "drop": true,
+    "reason": "NT-5: Article 4 chapeau reads 'Each Member State shall set out in its integrated national energy and climate plan the following main objectives, targets and contributions'. This item is a bare pointer to the target and limits set by Regulation (EU) 2018/842 with no date and no quantity of its own, so neither the NT-5 exception nor the 'plan-content item with its own date or quantity' limit saves it. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-6b6b65ed",
+    "drop": true,
+    "reason": "FIX-COLON: The quote is an amending instruction that ends on the dangling chapeau 'That reduction shall consist of:'. The enumerated points are not in this act at all — they sit in Article 7a(2) of Directive 98/70/EC — and no row in the packet carries them, so the fix is to cut the quote at the end of the target sentence. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-6b6b65ed",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "transport"
+      ]
+    },
+    "reason": "SECTOR: Sectors are empty. The provision amends the Fuel Quality Directive and obliges fuel suppliers to cut the life-cycle GHG intensity of road transport fuel and energy supplied, which is an energy and transport target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-79d6bf97",
+    "drop": true,
+    "reason": "NT-6: Context about the document package itself: it states what already accompanies the Communication (three legislative proposals), not a commitment or target to be achieved. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-67b5b233",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'The new rules' with no antecedent — the rules are identified only in the preceding sentence, which says the legal framework for recognising an EU-level emergency will be amended. Re-extract with that sentence. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-2eac638f",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'The purpose' with no antecedent — the purpose belongs to the legal proposal on medical devices introduced in the preceding sentence. Re-extract with that sentence included. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-2eac638f",
+    "set": {
+      "climate_relevance": "adaptation",
+      "sectors": [
+        "health",
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: Sector is recorded as 'industry' only. The provision is about securing the supply of medical devices for crisis preparedness and response — a health-system target — so 'health' is missing. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-a2cc85d5",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'these plans' with no antecedent; the plans are the binding EU preparedness and response plan and the national plans described in the preceding paragraph. Re-extract with that paragraph included. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-2dcdb269",
+    "drop": true,
+    "reason": "FIX-COLON: The quote stops at the colon that introduces the two prongs of the approach, and neither prong appears as its own row in the packet. Re-extract the sentence with the enumerated points. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-61fe26fe",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on the pronoun 'it' with no antecedent — the actor is the Commission, named only in the preceding sentence. Re-extract with that sentence included. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-464c9779",
+    "drop": true,
+    "reason": "FIX-COLON: The row is the bare cross-reference in Article 4(1); the actual limit is the list of dated percentage reductions in Article 4(2), whose chapeau ends in a colon and whose points are not present as rows in the packet. As extracted the row carries no quantity at all, so re-extract Article 4(1) together with paragraph 2 and its points. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-ab0429e9",
+    "drop": true,
+    "reason": "NT-5: The whole content of the sentence is that an assessment must focus on gaps affecting targets set elsewhere (the Union's 2030 climate and energy targets and the 2050 climate neutrality objective); it sets no target of its own, and it is a content requirement for the ENTSOs' infrastructure gaps report under Article 13(1). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-82fa9e65",
+    "drop": true,
+    "reason": "NT-2: This is a condition attached to applications for Union financial assistance under the Cyprus/Malta derogation in Article 24 — what a request for money must demonstrate — not a target to convert assets. The neighbouring paragraph confirms the funding-scope context ('Any eligibility for Union financial assistance under Article 18 shall end on 31 December 2027'). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-f4fc64f4",
+    "drop": true,
+    "reason": "DUP: Duplicate of tgt-bb0d4f19 in the same act: both cite Article 13(3) and tgt-bb0d4f19 already carries this sentence in full, followed by the 1 January 2025 extension. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-6e36ba24",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: `water` is wrong: Article 5(6)(a) sets leak-check frequencies for the f-gas equipment listed in Article 5(2) and (3) (refrigeration, air-conditioning, heat pumps, fire protection, organic Rankine cycles, switchgear, transport units); nothing in the provision concerns water. The parent row on Article 5(1) (tgt-1d7cca1c) correctly carries `industry` only. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-5cde3d7b",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: `water` is wrong: Article 5(6)(b) sets leak-check frequencies for the f-gas equipment listed in Article 5(2) and (3) (refrigeration, air-conditioning, heat pumps, fire protection, organic Rankine cycles, switchgear, transport units); nothing in the provision concerns water. The parent row on Article 5(1) (tgt-1d7cca1c) correctly carries `industry` only. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-4095939a",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: `water` is wrong: Article 5(6)(c) sets leak-check frequencies for the f-gas equipment listed in Article 5(2) and (3) (refrigeration, air-conditioning, heat pumps, fire protection, organic Rankine cycles, switchgear, transport units); nothing in the provision concerns water. The parent row on Article 5(1) (tgt-1d7cca1c) correctly carries `industry` only. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-07c922a0",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: `water` is wrong: Article 6(1) requires leakage detection systems on the stationary f-gas equipment listed in Article 5(2); the provision has no water dimension. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-1eb2c4e3",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: `water` is wrong: Article 6(2) requires leakage detection systems on the stationary f-gas equipment listed in Article 5(2); the provision has no water dimension. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-b6eb909a",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "industry",
+        "health"
+      ]
+    },
+    "reason": "SECTOR: `health` is missing: the ban is on a medical inhalation anaesthetic, addressed to healthcare institutions and subject to a medical-grounds derogation. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-80d8f818",
+    "drop": true,
+    "reason": "NT-6: Context: a mid-sentence fragment of the Communication recalling a target proposed in another instrument (the Climate Target Plan 2030), with no target of its own. Same character as the Zero Pollution body sentences the reviewer removed as 'a summary of other commitments as context' (NT-5 also applies). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-afb0c97b",
+    "drop": true,
+    "reason": "NT-6: Background statistic describing the current state of the building stock, not a target; it is the diagnosis that motivates the Renovation Wave. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-719e83ea",
+    "drop": true,
+    "reason": "NT-6: Illustrative projection of a co-benefit ('could be created'), cited to a Commission review; nobody is committed to it and it sets no target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-33360d4d",
+    "drop": true,
+    "reason": "NT-6: Background estimate of the investment gap ('the Commission estimates that ... are needed'), not a target; it quantifies what the 55% target would cost, it does not set anything. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-be6f1989",
+    "drop": true,
+    "reason": "NT-6: Background statistic on renovation need and funding need in the energy-poverty section; no commitment or target attaches to the figures. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-c217412e",
+    "drop": true,
+    "reason": "NT-6: Signposting sentence announcing the three sub-sections of Section 4 - effectively a heading, and a mid-sentence fragment; it states no objective of its own. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-9aa7c9fc",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'It' with no antecedent; the actor (the Commission) is only named in the preceding sentence. Re-extract with that sentence included. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-59f08f45",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "buildings"
+      ]
+    },
+    "reason": "SECTOR: `buildings` is missing: the replacement rate applies to heating equipment in the residential and services building stock (Section 4.3 'Decarbonising heating and cooling' of the building stock). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-58649b3a",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "buildings"
+      ]
+    },
+    "reason": "SECTOR: `buildings` is missing: the -19% to -23% figure is the energy demand of the residential building sector for heating and cooling. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-9e83bd7c",
+    "drop": true,
+    "reason": "FIX-COLON: The quote is the Article 7(1) chapeau cut at its colon; points (a) to (g), which carry the substance of the declaration (including the carbon footprint in kg CO2e per kWh), are not present as separate rows in the packet. Re-extract the chapeau together with those points. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-fbb33206",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on the possessive pronoun \"their\" with no antecedent in the extracted text; the preceding clause of the same sentence identifies data centres. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-5b15ccb4",
+    "drop": true,
+    "reason": "NT-2: The quantified content is a co-financing rate and prefinancing rate for water-resilience investments under Cohesion policy, i.e. funding scope and a condition for receiving money, not a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-d01d7f59",
+    "set": {
+      "climate_relevance": "adaptation",
+      "sectors": [
+        "water"
+      ]
+    },
+    "reason": "CLIMATE: Evaluating and possibly extending the Water Reuse Regulation reduces exposure to water scarcity; it does not cut GHGs or enable removals, so mitigation is wrong. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-45ba053a",
+    "set": {
+      "climate_relevance": "both",
+      "sectors": [
+        "energy",
+        "buildings",
+        "water"
+      ]
+    },
+    "reason": "CLIMATE: The reviewer's own correction on this Annex II line is that it is relevant to buildings, energy and water, the water dimension being adaptation; it is currently mitigation only. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-1a06ec5d",
+    "set": {
+      "climate_relevance": "adaptation",
+      "sectors": [
+        "agrifood",
+        "industry",
+        "water"
+      ]
+    },
+    "reason": "CLIMATE: Reducing water use in industrial and livestock processes lowers exposure to water scarcity; it is an adaptation target, not a GHG-reducing one. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-20debc4f",
+    "set": {
+      "climate_relevance": "adaptation",
+      "sectors": [
+        "agrifood",
+        "water"
+      ]
+    },
+    "reason": "CLIMATE: Promoting reuse of treated urban wastewater reduces vulnerability to water scarcity; classified mitigation, which the text does not support. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-266256bb",
+    "set": {
+      "climate_relevance": "adaptation",
+      "sectors": [
+        "ecosystems",
+        "water"
+      ]
+    },
+    "reason": "SECTOR: The target is about free-flowing rivers, so the water sector is missing; the parallel Annex II row on water bodies (tgt-435f0151) carries ecosystems and water. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-ca9cf814",
+    "set": {
+      "climate_relevance": "both",
+      "sectors": [
+        "ecosystems",
+        "water"
+      ]
+    },
+    "reason": "SECTOR: The habitats concerned are explicitly coastal and freshwater, so the water sector is missing. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-f7c9d98c",
+    "drop": true,
+    "reason": "DUP: Truncated mid-sentence fragment of the same Article 2.2.1 sentence already held in full by tgt-8c6b0235 in this act. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-1d4b407a",
+    "drop": true,
+    "reason": "DUP: Opens with the section heading and framing prose and then repeats, cut off mid-sentence, the 90%-by-2050 transport target already held in full by tgt-2025acfe in this act. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-0d509deb",
+    "drop": true,
+    "reason": "NT-6: Scene-setting first sentence of section 2.1; it states an opportunity, not a target or commitment, and is labelled 'other / qualitative / unspecified'. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-8b90cdb3",
+    "drop": true,
+    "reason": "NT-6: Background statistic on the EU's share of global CO2 emissions used as context to open section 4; no target or commitment. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-195a40f2",
+    "drop": true,
+    "reason": "NT-6: Background statistic and projection about the bioenergy share, given as context for the strengthened sustainability criteria; no target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-43362bdd",
+    "drop": true,
+    "reason": "NT-6: Rhetorical closing sentence of the Conclusion restating, as context, the 55% target already captured at tgt-f5445a08; it sets no target of its own. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-8273e96a",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on \"The proposal\" and turns on \"these sectors\", neither of which has an antecedent in the extracted text; the preceding sentence names the revised Effort Sharing Regulation and its sectors. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-19c14f8c",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on \"This will be complemented\" with no antecedent; the preceding sentence on applying emissions trading to buildings fuels supplies it. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-f3ad597b",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "buildings",
+        "transport",
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: The Social Climate Fund accompanies the extension of emissions trading to road transport and buildings and finances buildings renovation, heating and cooling and zero-emission mobility; buildings and transport are missing. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-25097ba7",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "buildings",
+        "agrifood",
+        "transport",
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: The objective names energy first among the areas whose pressures are to be reduced, but energy is absent from the sector list. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-eb488740",
+    "drop": true,
+    "reason": "NT-2: Article 8(1)(a) defines what the sustainable infrastructure policy window comprises — the list of areas the InvestEU Fund may cover. That is funding scope, not a target; the only dates in it ('eliminating fatal road accidents ... by 2050', 'in accordance with the 2030 energy framework') are pointers to targets set elsewhere (NT-5). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-62a1fa97",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on \"those operations\" and \"such an impact\", both without antecedent; the preceding sentence of Article 8(5) supplies the screening obligation they refer back to. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-8b681297",
+    "drop": true,
+    "reason": "FIX-COLON: The quote is the Article 4(1) chapeau cut at its colon; the five enumerated points of the waste hierarchy are not separate rows for this act, so the chapeau must be re-extracted with them. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-26a40b3f",
+    "drop": true,
+    "reason": "NT-6: Body prose in the opening section reasoning about emission scenarios; it states no target, obligation or commitment of the strategy, only context for why adaptation is needed. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-cfcca98e",
+    "drop": true,
+    "reason": "NT-6: Background statistic (a modelled loss estimate, footnoted to PESETA IV) in the section describing why we must act; not a target of this strategy. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-bb340a12",
+    "drop": true,
+    "reason": "NT-6: Soft-law text summarising commitments made elsewhere (European Climate Law) as context: the paragraph runs 'Europe is rising to meet the climate challenge... A climate emergency has been recognised...'; the target itself belongs to the Climate Law. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-69cf7533",
+    "drop": true,
+    "reason": "NT-6: Illustrative material: the sentence sits inside 'Box 1: The example of droughts' and reports projected drought losses; it sets no target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-d8855c4e",
+    "drop": true,
+    "reason": "NT-6: Background statistic on past climate finance flows (2019 figures, footnoted), given as context before the actual commitments listed under 'The European Union will:'. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-661ac674",
+    "drop": true,
+    "reason": "NT-5: The row has no target of its own: it reports the obligation the European Climate Law proposal places on the EU and Member States. The surrounding paragraph is about what 'The European Climate Law proposal' does, not about a commitment of this strategy. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-877cf0ab",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on 'This means' with no antecedent in the row; the preceding sentence (the 2050 long-term vision) is needed to know what 'This' refers to. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-1e8f8f64",
+    "drop": true,
+    "reason": "NT-5: Pointer to a target set by another instrument: the row states what the European Climate Law requires, and sits in the section 'EU foundations are in place' describing existing frameworks. It carries no target of this Communication. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-677f8fbd",
+    "drop": true,
+    "reason": "NT-6: Context sentence in the introduction summarising commitments made elsewhere (the 2030 package and the Climate Law's 2050 objective); it is followed by 'The Commission has initiated a debate on a 2040 climate target'. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-655fac45",
+    "drop": true,
+    "reason": "NT-6: Background statistic on planned cohesion spending, used as context for the argument that EU coordination adds value; it sets no target and its 'in this area' has no antecedent inside the row. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-05381907",
+    "drop": true,
+    "reason": "NT-6: Cited scientific finding (footnote 36 = IPCC AR6) about the share of the Earth that needs preserving, used as context in the natural-ecosystems section; it is not a target of the EU or of this Communication. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-83e77316",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote begins mid-sentence on 'will make it mandatory' with the subject (the 2026 Eurocodes update) stripped away, and is also cut off before the end of the second sentence. Re-extract from the start of the sentence. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-d4002d41",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The quote opens on a bare 'will support' with the subject 'The Commission' cut off, so the row does not say who is committing. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-c66628cb",
+    "set": {
+      "climate_relevance": "adaptation",
+      "sectors": [
+        "buildings",
+        "transport",
+        "energy"
+      ]
+    },
+    "reason": "SECTOR: The provision names power stations alongside railways as the long-lived infrastructure to be covered by the standards, so the energy sector is missing from the row. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-7d1fc3e7",
+    "drop": true,
+    "reason": "FIX-ANAPHORA: The row is a bare mid-sentence fragment with no subject or verb of its own; re-extract with the start of the sentence so it states who does what. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-91e858f2",
+    "drop": true,
+    "reason": "FIX-COLON: The quote is the chapeau of an enumeration cut off after point (i); points (ii) to (v) are not separate rows in the packet, so the chapeau must be re-extracted together with them. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-ff8d2467",
+    "set": {
+      "climate_relevance": "adaptation",
+      "sectors": [
+        "health",
+        "transport",
+        "energy"
+      ]
+    },
+    "reason": "SECTOR: The capabilities listed in the provision include medical and energy reserves, not only transport, so health and energy are missing from the row's sectors. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-239ce643",
+    "drop": true,
+    "reason": "NT-3: Point (d) is one of six conditions the Commission assesses before a third country's electricity imports may be exempted from the CBAM; it is an assessment criterion about another country's commitment, not a target of this Regulation. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-e52db04e",
+    "drop": true,
+    "reason": "NT-3: Point (c) is one of the conditions under which a third country is removed from the Annex III list; it is a de-listing criterion the Commission applies, not a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-ade6ec07",
+    "drop": true,
+    "reason": "NT-5: The row is a transitional derogation for M2/M3 registrations; the only target in it ('a 100 % zero-emission target as from the reporting period of the year 2030') is set by Regulation (EU) 2019/1242, and Euro 7 sets no target of its own here. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-92a9ad15",
+    "drop": true,
+    "reason": "NT-3: Article 26(2) expressly frames this sentence as one of the auction pre-qualification/award criteria, not as a target; Article 26(1)(b) refers back to it as 'pre-qualification criteria or award criteria to assess the auction's sustainability and resilience contribution'. NT-3 (award/selection criteria). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-57e59816",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: The target is a CO2 geological injection/storage capacity objective; 'ecosystems' and 'water' are not sectors it addresses — the EEZ/continental-shelf wording is only a geographic delimitation of eligible storage sites. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-b7f92812",
+    "drop": true,
+    "reason": "NT-1: An item on the list of what the Commission's first review report 'shall in particular review' — report content, with no date or quantity of its own (the only date, 2050, is a pointer to a target set elsewhere, NT-5). The dated reporting obligation itself sits in Article 36(1) and is unaffected. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-dca25a08",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy"
+      ]
+    },
+    "reason": "SECTOR: 'health' was taken from the derogation clause ('risks endangering ... human safety ... or health'), which is an exemption ground rather than the object of the obligation. The target is a venting and flaring prohibition at closed and abandoned coal mines. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-1204c827",
+    "drop": true,
+    "reason": "FIX-COLON: The quote is the Article 4(1) chapeau plus a truncated point (a) (it breaks off at 'granted a derogation under'); points (b) and (c) are not present as their own rows in the packet, so the chapeau must be re-extracted together with all three enumerated points. Superseded by the completed re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-594c23fe",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "transport",
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: A 45 % CO2 reduction target for the fleets of derogating car manufacturers is a road-transport CO2 target; 'transport' is missing (every other fleet-target row in this act carries it). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-f434a779",
+    "drop": true,
+    "reason": "NT-2: Annex IV holds thematic enabling conditions and 'the criteria necessary for the assessment of their fulfilment'; under Article 15(5) expenditure is not reimbursed until the Commission confirms the condition is fulfilled. That is a condition for receiving money (NT-2), and its substance is compliance with the renewable target set by Directive (EU) 2018/2001 (NT-5). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-6f980bc6",
+    "drop": true,
+    "reason": "NT-3: Article 73 is 'Selection of operations by the managing authority' and the chapeau reads 'In selecting operations, the managing authority shall'; point (j) is one of ten project-selection criteria (a)-(j), not a target. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-4d13b442",
+    "set": {
+      "climate_relevance": "both",
+      "sectors": [
+        "energy",
+        "buildings",
+        "transport",
+        "industry"
+      ]
+    },
+    "reason": "SECTOR: Policy objective 2 expressly names 'clean and fair energy transition', so 'energy' is missing from the sector list alongside the transport and industry (circular economy) elements already tagged. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-80eb4b3a",
+    "set": {
+      "climate_relevance": "adaptation",
+      "sectors": [
+        "ecosystems",
+        "industry",
+        "water"
+      ]
+    },
+    "reason": "SECTOR: The objective is 'good ecological potential and good surface water chemical status' for artificial and heavily modified water bodies — an aquatic ecosystem quality objective, so 'ecosystems' is missing (the sibling surface-water and groundwater rows in the same article carry it). [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-baacc710",
+    "set": {
+      "relevant": true
+    },
+    "reason": "LENS: Water Resilience Strategy objective 2 — objectives 1 and 3 are in the default lens, so this one belongs there too. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-a4ff486a",
+    "set": {
+      "relevant": true
+    },
+    "reason": "LENS: Fit for 55: the RRF green-transition share is a quantified, dated commitment of the package. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-3d61f0f8",
+    "set": {
+      "relevant": true
+    },
+    "reason": "LENS: Preparedness Union Strategy: the 72-hour population self-sufficiency guideline is the strategy's own quantified commitment. [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-47ff72c9",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-d0a2457e",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-71ae5547",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-f840771e",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-16b5e457",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-9417b895",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-12dfdfa6",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-b7439b50",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-310f4800",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-ced3883b",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-f5aef2ca",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-a78af789",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-6485f979",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-8192494b",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-58e15d65",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-9b10b0d8",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-d8f20b3d",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-482876cc",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-a5cf880a",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-c5f835ce",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-a20d1fc0",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-7cf23236",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
+  },
+  {
+    "id": "tgt-6ad028b0",
+    "drop": true,
+    "reason": "FIX-TRUNCATION: the quote was sliced mid-sentence (its subject or its continuation sat outside the slice); superseded by the full-sentence re-extraction in scripts/policy-targets-input/_corrections-2026-07b.json [agent review 2026-07 round 2]"
   }
 ]

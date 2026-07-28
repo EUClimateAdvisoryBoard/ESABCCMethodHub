@@ -1,0 +1,857 @@
+[
+  {
+    "policy_id": "batteries-regulation",
+    "targets": [
+      {
+        "quote": "For electric vehicle batteries, rechargeable industrial batteries with a capacity greater than 2 kWh and LMT batteries a carbon footprint declaration shall be drawn up for each battery model per manufacturing plant, in accordance with the implementing act referred to in the fourth subparagraph and containing, at least, the following information: (a) administrative information about the manufacturer; (b) information about the battery model; (c) information about the geographic location of the battery manufacturing plant; (d) the carbon footprint of the battery, calculated as kg of carbon dioxide equivalent per one kWh of the total energy provided by the battery over its expected service life; (e) the carbon footprint of the battery differentiated according to life cycle stage as described in point 4 of Annex II;",
+        "article": "Article 7(1)",
+        "label": "other",
+        "source": "FIX-COLON: The quote is the Article 7(1) chapeau cut at its colon; points (a) to (g), which carry the substance of the declaration (including the carbon footprint in kg CO2e per kWh), are not present as separate rows in the packet. Re-extract the chapeau together with those points."
+      }
+    ]
+  },
+  {
+    "policy_id": "co2-cars-regulation",
+    "targets": [
+      {
+        "quote": "The manufacturer shall ensure that its average specific emissions of CO2 do not exceed the following specific emissions targets: (a) for the calendar year 2020, the specific emissions target determined in accordance with points 1 and 2 of Part A of Annex I in the case of passenger cars, or points 1 and 2 of Part B of Annex I in the case of light commercial vehicles, or where a manufacturer is granted a derogation under Article 10, in accordance with that derogation; (b) for each calendar year from 2021 until 2024, the specific emissions targets determined in accordance with points 3 and 4 of Part A or B of Annex I, as appropriate, or, where a manufacturer is granted a derogation under Article 10, in accordance with that derogation and point 5 of Part A or B of Annex I;",
+        "article": "Article 4(1) — Specific emissions targets",
+        "label": "target",
+        "source": "FIX-COLON: The quote is the Article 4(1) chapeau plus a truncated point (a) (it breaks off at 'granted a derogation under'); points (b) and (c) are not present as their own rows in the packet, so the chapeau must be re-extracted together with all three enumerated points."
+      }
+    ]
+  },
+  {
+    "policy_id": "competitiveness-compass",
+    "targets": [
+      {
+        "quote": "For instance, in Spring 2025, the Steel and Metals Action Plan will propose concrete measures to address investment needs, access to primary and secondary materials, use of trade defence instruments, and will define a long-term solution to replace current safeguard measures in light of global non-market overcapacity.",
+        "article": "Pillar 2 — Steel and Metals Action Plan",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      }
+    ]
+  },
+  {
+    "policy_id": "cross-border-health-threats",
+    "targets": [
+      {
+        "quote": "The Commission, in cooperation with Member States and the relevant Union agencies and bodies, and in accordance with the WHO emergency preparedness and response framework set out in the IHR, shall establish a Union health crisis and pandemic plan (‘the Union prevention, preparedness and response plan’) to promote an effective and coordinated response to cross-border threats to health at Union level.",
+        "article": "Article 5(1)",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote opens on 'shall establish ...' with no subject at all; the actor was cut off and the row must be re-extracted from the start of Article 5(1)."
+      },
+      {
+        "quote": "The network for the epidemiological surveillance of communicable diseases, including those of zoonotic origin, and related special health issues referred to in Article 2(1), points (a)(i) and (a)(ii), (‘the network for epidemiological surveillance’) shall ensure permanent communication between the Commission, the ECDC, and the competent authorities responsible at national level for epidemiological surveillance.",
+        "article": "Article 13(1)",
+        "label": "objective",
+        "source": "FIX-ANAPHORA: The quote opens on 'shall ensure permanent communication ...' with no subject; the actor (the network for epidemiological surveillance) was cut off and must be re-extracted with the start of Article 13(1)."
+      },
+      {
+        "quote": "On the basis of the information provided by the Member States in accordance with Article 7 and the results of the assessment referred to in Article 8, the Commission shall by 27 December 2023 and every three years thereafter, transmit to the European Parliament and to the Council a report on the state of play and progress on prevention, preparedness and response planning at Union level.",
+        "article": "Article 9(1)",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "Where an alert is notified pursuant to Article 19, the Commission shall, where necessary for the coordination of the response at Union level referred to in Article 21 or at the request of the HSC or on its own initiative, make promptly available to the national competent authorities and to the HSC, through the EWRS, a risk assessment of the potential severity of the threat to public health, including possible public health measures.",
+        "article": "Article 20(1)",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "Where a Member State intends to adopt or to terminate public health measures to combat a serious cross-border threat to health, it shall, before adopting or terminating those measures, inform, consult and coordinate with the other Member States, in particular neighbouring Member States, and the Commission on the nature, purpose and scope of those measures, unless the need to protect public health is so urgent that the immediate adoption of those measures is necessary.",
+        "article": "Article 21(2)",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "For serious cross-border threats to health as referred to in Article 2(1), the Commission may, after considering any expert opinion issued by the ECDC, any other relevant Union agencies or bodies or the Advisory Committee referred to in Article 24, formally recognise a public health emergency at Union level, including pandemic situations where the serious cross-border threat to health in question endangers public health at Union level.",
+        "article": "Article 23(1)",
+        "label": "other",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      }
+    ]
+  },
+  {
+    "policy_id": "eighth-environment-action-programme",
+    "targets": [
+      {
+        "quote": "significantly decreasing the Union’s material and consumption footprints to bring them into planetary boundaries as soon as possible, including through the introduction of Union 2030 reduction targets, as appropriate;",
+        "article": "Article 3(i), point (s)",
+        "label": null,
+        "source": "SIBLING-GAP: point (s) was missing while its siblings were registered"
+      }
+    ]
+  },
+  {
+    "policy_id": "energy-efficiency-directive",
+    "targets": [
+      {
+        "quote": "estimate the energy savings that paragraphs 1 to 4 would generate by using appropriate standard values for the energy consumption of reference public bodies’ buildings before and after renovation to be transformed into nearly zero-energy buildings as referred to in Directive 2010/31/EU.",
+        "article": "Article 6(6)(a), point (b)",
+        "label": null,
+        "source": "SIBLING-GAP: point (b) was missing while its siblings were registered"
+      },
+      {
+        "quote": "new savings each year from 1 January 2021 to 31 December 2030 of: (i) 0,8 % of annual final energy consumption from 1 January 2021 to 31 December 2023, averaged over the most recent three-year period preceding 1 January 2019;",
+        "article": "Article 8(1)(a), point (b)",
+        "label": null,
+        "source": "SIBLING-GAP: point (b) was missing while its siblings were registered"
+      },
+      {
+        "quote": "whether Member States are to continue to achieve a share of energy savings among people affected by energy poverty, vulnerable customers and, where applicable, people living in social housing, pursuant to Article 8(3) for the ten-year periods after 2030;",
+        "article": "Article 35(7), point (f)",
+        "label": null,
+        "source": "SIBLING-GAP: point (f) was missing while its siblings were registered"
+      },
+      {
+        "quote": "whether Member States are to continue to achieve a reduction of final energy consumption in accordance with Article 5(1);",
+        "article": "Article 35(7), point (g)",
+        "label": null,
+        "source": "SIBLING-GAP: point (g) was missing while its siblings were registered"
+      }
+    ]
+  },
+  {
+    "policy_id": "erdf-regulation",
+    "targets": [
+      {
+        "quote": "The resources under the specific objective referred to in point (b)(viii) of the first subparagraph of Article 3(1) shall be programmed under a dedicated priority. By way of derogation from paragraph 6, 50 % of such ERDF resources shall be taken into account when calculating compliance with the thematic concentration requirements for PO 2 set out in paragraph 6.",
+        "article": "Article 4(9)",
+        "label": "target",
+        "source": "FIX-ANAPHORA: The quote opens on 'By way of derogation from paragraph 6, 50 % of such ERDF resources' — 'such' has no antecedent; the preceding subparagraph of Article 4(9), which identifies the resources under Article 3(1), point (b)(viii), must be included."
+      }
+    ]
+  },
+  {
+    "policy_id": "eu-adaptation-strategy",
+    "targets": [
+      {
+        "quote": "The long-term vision is that in 2050, the EU will be a climate-resilient society, fully adapted to the unavoidable impacts of climate change. This means that by 2050, when we aim to have reached climate neutrality, we will have reinforced adaptive capacity and minimised vulnerability to climate impacts, in line with the Paris Agreement and the proposed European Climate Law",
+        "article": "Section 2 — Forging a climate-resilient Union",
+        "label": "objective",
+        "source": "FIX-ANAPHORA: The quote opens on 'This means' with no antecedent in the row; the preceding sentence (the 2050 long-term vision) is needed to know what 'This' refers to."
+      },
+      {
+        "quote": "ohelp to close knowledge gaps on climate impacts and resilience, including on oceans, through Horizon Europe, Digital Europe, Copernicus and EMODnet;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 4 — Pushing the frontiers of knowledge on adaptation; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "opromote and support the use of its Risk Data Hub to harmonise the recording and collection of comprehensive and granular climate-related risk and losses data, and promote national level public private partnerships to collect and share such data;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 5 — More and better climate-related risk and losses data; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oexplore with EIOPA and industry the best ways to improve the collection of uniform and comprehensive insured loss data, and will empower EIOPA as needed;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 5 — More and better climate-related risk and losses data; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oextend the scope of public access to environmental information in the INSPIRE Directive to include climate-related risk and losses data.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 5 — More and better climate-related risk and losses data; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oupdate and expand Climate-ADAPT as source of knowledge on climate impacts and adaptation, including by federating various sources of information, and as monitoring and reporting mechanism;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 6 — Making Climate-ADAPT the authoritative European platform for adaptation; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ostimulate cooperation regionally and across borders and enhance the guidelines on national adaptation strategies in cooperation with the Member States;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 8 — Improving adaptation strategies and plans; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oprovide ex-ante project assessment tools to better identify co-benefits and positive impacts on the economy of adaptation and prevention projects;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 8 — Improving adaptation strategies and plans; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oupdate its Better Regulation guidelines and toolbox to better reflect the principles of climate-risk management policy coherence.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 8 — Improving adaptation strategies and plans; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "osupport the reskilling and requalification of workers for a just and fair resilience with education and training through ESF+, Erasmus+ and European Solidarity Corps;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 9 — Fostering local, individual, and just resilience; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ocontinue to ensure the enforcement of existing employment and social legislation, and, where relevant, consider proposing new initiatives that increase workers’ protection from climate impacts.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 9 — Fostering local, individual, and just resilience; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "odevelop ways to measure the potential impact of climate-related risks on public finances, develop tools and models for climate stress testing, and engage in discussions with Member States on better take into account climate change in national reporting and fiscal frameworks;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 10 — Integrating climate resilience in national fiscal frameworks; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oexplore and discuss with Member States actions to dampen the fiscal impact of climate-related events and reduce fiscal-sustainability risks;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 10 — Integrating climate resilience in national fiscal frameworks; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oexplore with Member States whether and to what extent Stability and Convergence Programmes could factor in the climate adaptation dimension;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 10 — Integrating climate resilience in national fiscal frameworks; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "opromote better coordination and complementarity between the post-disaster emergency and recovery operations supported by the European Union Solidarity Fund and other EU funds to encourage the “build back better” principle.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 10 — Integrating climate resilience in national fiscal frameworks; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "opropose nature-based solutions for carbon removals, including accounting and certification in upcoming carbon farming initiatives;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 11 — Promoting nature-based solutions for adaptation; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "odevelop the financial aspects of nature-based solutions and foster the development of financial approaches and products that also cover nature-based adaptation;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 11 — Promoting nature-based solutions for adaptation; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ocontinue to incentivise and assist Member States to rollout nature-based solutions through assessments, guidance, capacity building, and EU funding.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 11 — Promoting nature-based solutions for adaptation; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oimplement the planned Horizon Europe Mission on ‘Adaptation to Climate Change’ and other adaptation-relevant Missions, including on soil health, climate-neutral cities, and oceans once these are endorsed;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 13 — Accelerating the rollout of adaptation solutions; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "osupport the development of further adaptation solutions, including rapid response decision support tools to enrich the toolbox for adaptation practitioners;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 13 — Accelerating the rollout of adaptation solutions; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ointegrate adaptation in the update of Natura 2000 and climate change guidance, and in guidelines on biodiversity-friendly afforestation and reforestation, and in the forthcoming Forest Strategy;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 13 — Accelerating the rollout of adaptation solutions; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ostrengthen its support to protect the potential of genetic resources for adaptation, including by proposing legislation on the production and marketing of seeds;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 13 — Accelerating the rollout of adaptation solutions; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ofurther develop the EU taxonomy for sustainable activities for climate adaptation.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 13 — Accelerating the rollout of adaptation solutions; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oenhance climate proofing guidance, and promote its use in Europe and abroad;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 14 — Reducing climate-related risk; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oaddress EU-level preparedness and response to climate-related health threats, including through the EU Framework on Health Threats and, as relevant, the planned Health Emergency Preparedness and Response Authority;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 14 — Reducing climate-related risk; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oincrease cooperation with standardisation organisations to climate-proof standards and to develop new ones for climate adaptation solutions;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 14 — Reducing climate-related risk; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "osupport the integration of climate resilience considerations into the criteria applicable to construction and renovation of buildings and critical infrastructure.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 14 — Reducing climate-related risk; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ohelp to examine natural disaster insurance penetration in Member States, and promote it, for example through guidelines and invite EIOPA to develop its natural catastrophe dashboard allowing country level assessments;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 15 — Closing the climate protection gap; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ostrengthen dialogue between insurers, policymakers and other stakeholders;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 15 — Closing the climate protection gap; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oidentify and promote best practices in financial instruments for risk management, in close cooperation with EIOPA;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 15 — Closing the climate protection gap; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oexplore the wider use of financial instruments and innovative solutions to deal with climate-induced risks.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 15 — Closing the climate protection gap; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ohelp ensure climate-resilient, sustainable use and management of water across sectors and borders by improving coordination of thematic plans and other mechanisms, such as water resource allocation and water-permits;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 16 — Ensuring the availability and sustainability of freshwater; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ohelp reduce water use by raising the water-saving requirements for products, encouraging water efficiency and savings, and by promoting the wider use of drought management plans as well as sustainable soil management and land-use;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 16 — Ensuring the availability and sustainability of freshwater; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ohelp to guarantee a stable and secure supply of drinking water, by encouraging the incorporation of the risks of climate change in risk analyses of water management.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 16 — Ensuring the availability and sustainability of freshwater; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ostrengthen the support for the development and implementation of Nationally Determined Contributions and National Adaptation Plans in EU partner countries and mainstream conflict-sensitive, anticipatory and preventive climate resilience and preparedness in relevant EU policies and instruments for external action;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 18 — Increasing support for international climate resilience and preparedness; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "ointensify and broaden adaptation support to local authorities in EU partner countries and develop regional programmes, including for countries in the EU Southern and Eastern neighbourhoods, and in candidate countries and potential candidates;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 18 — Increasing support for international climate resilience and preparedness; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oinclude climate change considerations in the future agreement on the conservation and sustainable use of marine biodiversity of areas beyond national jurisdiction.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 18 — Increasing support for international climate resilience and preparedness; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "opromote the design and implementation of disaster risk finance strategies to increase macroeconomic climate resilience in partner countries;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 19 — Scaling up international finance to build climate resilience; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "osupport partner countries in the design of policies and incentives to promote climate resilient investment, including in nature-based solutions;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 19 — Scaling up international finance to build climate resilience; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "odeepen political engagement on climate change adaptation with international and regional partners, and partner countries;",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 20 — Strengthen global engagement and exchanges on adaptation; sibling bullets of the same list are already rows in the register, so this one is missing."
+      },
+      {
+        "quote": "oincrease the pool of knowledge and tools on adaptation available to non-EU countries and promote adaptation in Green Alliances and partnerships.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of a collated commitment list ('The Commission will:' / 'The European Union will:') in Section 20 — Strengthen global engagement and exchanges on adaptation; sibling bullets of the same list are already rows in the register, so this one is missing."
+      }
+    ]
+  },
+  {
+    "policy_id": "european-health-union",
+    "targets": [
+      {
+        "quote": "The legal framework for the recognition of an emergency at the EU level will also be amended. The new rules will enable the activation of EU emergency response mechanisms, in close coordination with the World Health Organization (WHO), without making it contingent upon the WHO’s own declaration of a Public Health Emergency of International Concern (PHEIC).",
+        "article": "EU recognition of a public health emergency",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote opens on 'The new rules' with no antecedent — the rules are identified only in the preceding sentence, which says the legal framework for recognising an EU-level emergency will be amended. Re-extract with that sentence."
+      },
+      {
+        "quote": "In the area of medical devices, the legal proposal builds on lessons learnt from the ad hoc work undertaken during the COVID-19 pandemic by the Commission Clearing House given the EMA currently has no competence in the area of medical devices. The purpose is to improve the Union’s crisis preparedness and facilitate a coordinated Union-level response by setting a permanent structure to monitor and mitigate shortages of medical devices (a Steering Group for Medical Devices) and to ensure that industry and Member States submit the necessary data to facilitate the monitoring and possible mitigation measures.",
+        "article": "EMA — Steering Group for Medical Devices",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote opens on 'The purpose' with no antecedent — the purpose belongs to the legal proposal on medical devices introduced in the preceding sentence. Re-extract with that sentence included."
+      },
+      {
+        "quote": "It is therefore proposed to strengthen coordination mechanisms for preparedness, via the development of a binding EU health crisis/pandemic preparedness and response plan. This plan will include clear provisions for the EU and Member States to adopt similar and interoperable plans at national and local levels. To ensure these plans are actually operable in times of crisis, regular full-scale exercises and carry-out after-action reviews to implement corrective measures will be organised. To further strengthen the operationalisation of these plans, an EU audit process on national level capacities will be launched.",
+        "article": "Preparedness — EU audit of national capacities",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote opens on 'these plans' with no antecedent; the plans are the binding EU preparedness and response plan and the national plans described in the preceding paragraph. Re-extract with that paragraph included."
+      },
+      {
+        "quote": "To consolidate and underpin the benefits of international cooperation and coordination on serious cross-border threats to health, the new proposals confirm the EU’s leading role in the global sphere of public health preparedness and response, with the objective of addressing outbreaks at the source via a two-pronged approach: (1) reinforced and targeted international cooperation and coordination; and (2) on the ground support to Member States and third countries, in times of need.",
+        "article": "International cooperation — addressing outbreaks at source",
+        "label": "objective",
+        "source": "FIX-COLON: The quote stops at the colon that introduces the two prongs of the approach, and neither prong appears as its own row in the packet. Re-extract the sentence with the enumerated points."
+      },
+      {
+        "quote": "Building on the experience with COVID-19 vaccines development and the central clearing house for medical equipment, the Commission will launch a preparatory action focusing on emerging biological threats to human health, such as corona-related transmissible diseases and anti-microbial resistance. In parallel, it will launch an impact assessment and consultation on the establishment of an EU authority, with a view to proposing in 2021 a properly mandated and resourced dedicated structure to start operations in 2023.",
+        "article": "HERA — new EU preparedness and response authority",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote opens on the pronoun 'it' with no antecedent — the actor is the Commission, named only in the preceding sentence. Re-extract with that sentence included."
+      },
+      {
+        "quote": "The proposed Regulation on serious cross-border threats to health will entrust all relevant EU decentralised agencies with risk assessment, scientific advice and recommendations for response measures, incorporating a mandated responsibility for the Commission 52 and Union agencies.",
+        "article": "Section 8 (Early Warning and Risk Assessment Capacity)",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "Finally, contact tracing will also be incorporated into the epidemiological surveillance network of the ECDC.",
+        "article": "Testing & contact tracing — automated contact tracing",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      }
+    ]
+  },
+  {
+    "policy_id": "f-gas-regulation",
+    "targets": [
+      {
+        "quote": "From 1 January 2035, the use of SF6 for the maintenance or servicing of electrical switchgear equipment shall be prohibited unless it is reclaimed or recycled, except if it is proved that reclaimed or recycled SF6: (a) cannot be used on technical grounds;",
+        "article": "Article 13(7) — Control of use",
+        "label": "other",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      }
+    ]
+  },
+  {
+    "policy_id": "fit-for-55",
+    "targets": [
+      {
+        "quote": "Next to a carbon price signal, clear targets are needed to drive change such as in the revised Effort Sharing Regulation (ESR), which will empower Member States to take national action to tackle emissions in the buildings, transport, agriculture, waste and small industry sectors. The proposal should deliver an EU-wide reduction of 40% in emissions from these sectors by 2030, compared to the situation in 2005.",
+        "article": "2.2 A competitive transition: New opportunities through industrial and sectoral change",
+        "label": "target",
+        "source": "FIX-ANAPHORA: The quote opens on \"The proposal\" and turns on \"these sectors\", neither of which has an antecedent in the extracted text; the preceding sentence names the revised Effort Sharing Regulation and its sectors."
+      },
+      {
+        "quote": "Similarly, applying emissions trading to fuels in the buildings sector will help bring cleaner heating fuels to the market, shorten payback periods for investments in renovation and accelerate fuel-switching in heating and cooling in existing buildings. This will be complemented by policy measures to improve the energy efficiency of buildings and energy appliances and systems so that the overall energy needs in our homes and in heating and cooling will also be reduced. This is why the Commission proposes to start applying emissions trading from 2026 for road transport and buildings.",
+        "article": "2.2.1 Industrial transformation and carbon pricing",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote opens on \"This will be complemented\" with no antecedent; the preceding sentence on applying emissions trading to buildings fuels supplies it."
+      },
+      {
+        "quote": "The target of using 35% of research and innovation funding under Horizon Europe for green investments",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Section 3 collates the package's quantified funding targets; the 30% MFF figure is a row (tgt-27f97df3) but the Horizon Europe target in the very next sentence is missing."
+      }
+    ]
+  },
+  {
+    "policy_id": "fueleu-maritime",
+    "targets": [
+      {
+        "quote": "1. The yearly average GHG intensity of the energy used on board by a ship during a reporting period shall not exceed the limit set out in paragraph 2. 2. The limit referred to in paragraph 1 shall be calculated by reducing the reference value of 91,16 grams of CO2 equivalent per MJ by the following percentage: — 2 % from 1 January 2025; — 6 % from 1 January 2030; — 14,5 % from 1 January 2035; — 31 % from 1 January 2040; — 62 % from 1 January 2045; — 80 % from 1 January 2050.",
+        "article": "Article 4(1) — GHG intensity limit on energy used on board by a ship",
+        "label": "target",
+        "source": "FIX-COLON: The row is the bare cross-reference in Article 4(1); the actual limit is the list of dated percentage reductions in Article 4(2), whose chapeau ends in a colon and whose points are not present as rows in the packet. As extracted the row carries no quantity at all, so re-extract Article 4(1) together with paragraph 2 and its points."
+      }
+    ]
+  },
+  {
+    "policy_id": "governance-regulation",
+    "targets": [
+      {
+        "quote": "Member States shall require suppliers to reduce as gradually as possible life cycle greenhouse gas emissions per unit of energy from fuel and energy supplied by up to 10 % by 31 December 2020, compared with the fuel baseline standard set out in Annex II to Council Directive (EU) 2015/652.",
+        "article": "Article 47(1)(b) — Amendments to Directive 98/70/EC",
+        "label": "target",
+        "source": "FIX-COLON: The quote is an amending instruction that ends on the dangling chapeau 'That reduction shall consist of:'. The enumerated points are not in this act at all — they sit in Article 7a(2) of Directive 98/70/EC — and no row in the packet carries them, so the fix is to cut the quote at the end of the target sentence."
+      }
+    ]
+  },
+  {
+    "policy_id": "industrial-emissions-directive",
+    "targets": [
+      {
+        "quote": "By way of derogation from paragraph 3, and without prejudice to Article 18, the competent authority may, in specific cases, set less strict emission limit values. Such a derogation may apply only where an assessment shows that the achievement of emission levels associated with the best available techniques as described in BAT conclusions would lead to disproportionately higher costs compared to the environmental benefits due to: (a) the geographical location or the local environmental conditions of the installation concerned; or (b) the technical characteristics of the installation concerned. The competent authority shall document in an annex to the permit conditions the reasons for the application of the first subparagraph including the result of the assessment and the justification for the conditions imposed.",
+        "article": "Article 15(4) - Emission limit values, equivalent parameters and technical measures",
+        "label": "target",
+        "source": "FIX-ANAPHORA: The quote opens on 'The emission limit values set in accordance with the first subparagraph' with no antecedent in the row; that first subparagraph is the Article 15(4) less-strict-ELV derogation, without which the cap is unintelligible. Re-extract with the whole of Article 15(4) first subparagraph included."
+      }
+    ]
+  },
+  {
+    "policy_id": "investeu-regulation",
+    "targets": [
+      {
+        "quote": "Financing and investment operations shall be screened to determine whether they have an environmental, climate or social impact. If those operations have such an impact they shall be subject to climate, environmental and social sustainability proofing with a view to minimising detrimental impacts and to maximising benefits to the climate, environment and social dimensions.",
+        "article": "Article 8(5)",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote opens on \"those operations\" and \"such an impact\", both without antecedent; the preceding sentence of Article 8(5) supplies the screening obligation they refer back to."
+      },
+      {
+        "quote": "A just transition scheme shall be established horizontally across all policy windows. That scheme shall comprise investments that address social, economic and environmental challenges deriving from the transition process towards the achievement of the Union’s 2030 climate target and its target of achieving climate neutrality by 2050, as well as benefit territories identified in a just transition plan prepared by a Member State in accordance with the relevant provisions of the Just Transition Fund Regulation.",
+        "article": "Article 8(2)",
+        "label": "objective",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      }
+    ]
+  },
+  {
+    "policy_id": "managing-climate-risks",
+    "targets": [
+      {
+        "quote": "The foreseen update of the standards (Eurocodes 48 ) of buildings which sets the minimum requirements on structural design in the EU in 2026, will make it mandatory to consider the future climate hazards on structures of buildings. The Commission is performing pilot studies and will prepare guidance to the Member States on the use of freely available climatic datasets to define the expected climatic loading on their territory.",
+        "article": "Section 4.5 — Infrastructure and built environment (Eurocodes)",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote begins mid-sentence on 'will make it mandatory' with the subject (the 2026 Eurocodes update) stripped away, and is also cut off before the end of the second sentence. Re-extract from the start of the sentence."
+      },
+      {
+        "quote": "The Commission will support climate risk assessments and climate proofing through its revised guidelines on the development of the Trans-European Transport Network (TEN-T).",
+        "article": "Section 4.5 — Transport infrastructure",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote opens on a bare 'will support' with the subject 'The Commission' cut off, so the row does not say who is committing."
+      },
+      {
+        "quote": "Step up measures to ensure that workers exposed to climate risks are adequately protected.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of the collated commitment list introduced by 'To further strengthen its action... the Commission will:' in Section 4.3; two other entries of the same list are already rows (tgt-9e2fe456, tgt-d03bb528), this one is missing."
+      },
+      {
+        "quote": "Strengthen cross-border mobilisation of medical personnel and patient transfer, for example through developing a framework to support the Member States with overwhelmed healthcare services.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of the collated commitment list introduced by 'To further strengthen its action... the Commission will:' in Section 4.3; two other entries of the same list are already rows (tgt-9e2fe456, tgt-d03bb528), this one is missing."
+      },
+      {
+        "quote": "Secure access to and development of critical medical countermeasures.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of the collated commitment list introduced by 'To further strengthen its action... the Commission will:' in Section 4.3; two other entries of the same list are already rows (tgt-9e2fe456, tgt-d03bb528), this one is missing."
+      },
+      {
+        "quote": "To simplify processes and render them more effective, the Commission will explore how the implementation of EU level requirements can be further facilitated, streamlined and strengthened.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of the collated commitment list in Section 3.1 ('Improving governance of climate risks requires:'); the sibling entry 'Strengthened governance structures' is already a row (tgt-1ae40518), this Commission commitment is missing."
+      }
+    ]
+  },
+  {
+    "policy_id": "nature-restoration-law",
+    "targets": [
+      {
+        "quote": "By way of derogation from paragraph 4 of this Article, if a Member State considers that it is not possible to put in place restoration measures by 2050 that are necessary to reach the favourable reference area for a specific habitat type on 100 % of the surface, the Member State concerned may set a lower percentage at a level between 90 % and 100 % in its national restoration plan as referred to in Article 15 and provide adequate justification. In such a case, the Member State shall gradually put in place restoration measures that are necessary to achieve that lower percentage by 2050.",
+        "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems",
+        "label": "target",
+        "source": "FIX-ANAPHORA: The quote opens on 'In such a case' and refers to 'that lower percentage' with no antecedent; the preceding sentence of Article 4(5) (the derogation that allows a percentage between 90 % and 100 %) must be included."
+      },
+      {
+        "quote": "In such a case, the Member State shall gradually put in place restoration measures that are necessary to achieve that lower percentage by 2050. By 2030, those restoration measures shall cover at least 30 % of the additional surface needed to achieve such lower percentage by 2050, and by 2040, they shall cover at least 60 % of the additional surface needed to achieve such lower percentage by 2050.",
+        "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems",
+        "label": "target",
+        "source": "FIX-ANAPHORA: The quote opens on 'those restoration measures' and refers to 'such lower percentage' with no antecedent; the preceding sentence of Article 4(5) must be included."
+      },
+      {
+        "quote": "By 31 December 2030, Member States shall ensure that there is no net loss in the total national area of urban green space and of urban tree canopy cover in urban ecosystem areas, determined in accordance with Article 14(4), compared to 2024. For the purposes of this paragraph, Member States may exclude from those total national areas the urban ecosystem areas in which the share of urban green space in the urban centres and urban clusters exceeds 45 % and the share of urban tree canopy cover exceeds 10 %.",
+        "article": "Article 8(1) — Restoration of urban ecosystems",
+        "label": "other",
+        "source": "FIX-ANAPHORA: The quote opens on 'For the purposes of this paragraph' and excludes areas from 'those total national areas' with no antecedent; it is the carve-out from the Article 8(1) no-net-loss target and must be re-extracted with the preceding sentence."
+      },
+      {
+        "quote": "an increasing trend towards the sufficient quality and quantity of the terrestrial, coastal and freshwater habitats of the species listed in Annexes II, IV and V to Directive 92/43/EEC and of the species falling within the scope of Directive 2009/147/EC.",
+        "article": "Article 4(17)(a), point (b)",
+        "label": null,
+        "source": "SIBLING-GAP: point (b) was missing while its siblings were registered"
+      },
+      {
+        "quote": "by 2030 on at least one third of the percentage referred to in point (a);",
+        "article": "Article 4(2), point (b)",
+        "label": null,
+        "source": "SIBLING-GAP: point (b) was missing while its siblings were registered"
+      },
+      {
+        "quote": "by 2050, on a percentage, identified in accordance with Article 14(3), of the area of group 7 of the habitat types listed in Annex II that is not in good condition, as quantified in the national restoration plan referred to in Article 15.",
+        "article": "Article 5(1)(a), point (d)",
+        "label": null,
+        "source": "SIBLING-GAP: point (d) was missing while its siblings were registered"
+      },
+      {
+        "quote": "by 2040, for all areas of the habitat types in groups 1 to 6 listed in Annex II;",
+        "article": "Article 5(7), point (b)",
+        "label": null,
+        "source": "SIBLING-GAP: point (b) was missing while its siblings were registered"
+      },
+      {
+        "quote": "by 2050, for all areas of the habitat types in group 7 listed in Annex II.",
+        "article": "Article 5(7), point (d)",
+        "label": null,
+        "source": "SIBLING-GAP: point (d) was missing while its siblings were registered"
+      },
+      {
+        "quote": "an increase of the area in good condition for habitat types of group 7 of the habitat types listed in Annex II until at least the percentage, referred to in paragraph 1, first subparagraph, point (d), is in good condition and until the favourable reference area for each habitat type in each biogeographical region of the Member State concerned is reached;",
+        "article": "Article 5(14), point (b)",
+        "label": null,
+        "source": "SIBLING-GAP: point (b) was missing while its siblings were registered"
+      },
+      {
+        "quote": "an increasing trend towards the sufficient quality and quantity of the marine habitats of the species listed in Annex III to this Regulation and in Annexes II, IV and V to Directive 92/43/EEC and of the species falling within the scope of Directive 2009/147/EC.",
+        "article": "Article 5(14), point (c)",
+        "label": null,
+        "source": "SIBLING-GAP: point (c) was missing while its siblings were registered"
+      }
+    ]
+  },
+  {
+    "policy_id": "osh-framework-directive",
+    "targets": [
+      {
+        "quote": "1. The employer shall ensure that each worker receives adequate safety and health training, in particular in the form of information and instructions specific to his workstation or job: - on recruitment, - in the event of a transfer or a change of job, - in the event of the introduction of new work equipment or a change in equipment, - in the event of the introduction of any new technology.",
+        "article": "Article 12(1)",
+        "label": "other",
+        "source": "FIX-COLON: Article 12(1) is quoted as a chapeau cut at its colon; the four indents that carry the actual trigger events are not present as separate rows in the packet, so the chapeau must be re-extracted together with them."
+      },
+      {
+        "quote": "Within the context of his responsibilities, the employer shall take the measures necessary for the safety and health protection of workers, including prevention of occupational risks and provision of information and training, as well as provision of the necessary organization and means.",
+        "article": "Article 6(1)",
+        "label": "other",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      }
+    ]
+  },
+  {
+    "policy_id": "packaging-waste-regulation",
+    "targets": [
+      {
+        "quote": "1. Each Member State shall reduce the packaging waste generated per capita, as compared to the packaging waste generated per capita in 2018 as reported to the Commission in accordance with Decision 2005/270/EC, by at least: (a) 5 % by 2030; (b) 10 % by 2035; (c) 15 % by 2040.",
+        "article": "Article 43(1)",
+        "label": "target",
+        "source": "FIX-COLON: The row stops at the colon of the Article 43(1) chapeau and the enumerated reduction figures (a) to (c) are not present as their own rows in the packet, so the chapeau must be re-extracted together with its points."
+      },
+      {
+        "quote": "by 31 December 2025, the following minimum percentages by weight of the following specific materials contained in packaging waste generated: (i) 50 % of plastic; (ii) 25 % of wood; (iii) 70 % of ferrous metals; (iv) 50 % of aluminium; (v) 70 % of glass; (vi) 75 % of paper and cardboard;",
+        "article": "Article 52(1)(b)",
+        "label": "target",
+        "source": "FIX-COLON: Article 52(1)(b) is a chapeau cut at its colon; the material-specific percentages (i) to (vi) are not separate rows in the packet, so the point must be re-extracted with them."
+      },
+      {
+        "quote": "by 31 December 2030, the following minimum percentages by weight of the following specific materials contained in packaging waste generated: (i) 55 % of plastic; (ii) 30 % of wood; (iii) 80 % of ferrous metals; (iv) 60 % of aluminium; (v) 75 % of glass; (vi) 85 % of paper and cardboard.",
+        "article": "Article 52(1)(d)",
+        "label": "target",
+        "source": "FIX-COLON: Article 52(1)(d) is a chapeau cut at its colon; the 2030 material-specific percentages (i) to (vi) are not separate rows in the packet, so the point must be re-extracted with them."
+      }
+    ]
+  },
+  {
+    "policy_id": "preparedness-union-strategy",
+    "targets": [
+      {
+        "quote": "Based on this assessment, the Commission will put forward recommendations on minimum preparedness requirements, including a monitoring mechanism.",
+        "article": "Vital functions — minimum preparedness requirements",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The row is a bare mid-sentence fragment with no subject or verb of its own; re-extract with the start of the sentence so it states who does what."
+      },
+      {
+        "quote": "The aim of the Task Force is to (i) cooperate on strengthening the continuity management of vital functions and essential services; (ii) exchange information on supply-chain vulnerabilities and disruptions; (iii) provide guidance, frameworks and incentives to help private entities to ensure minimum preparedness requirements; (iv) coordinate mitigation actions across the critical sectors providing essential services that ensure the vital societal functions, and (v) support crisis communication efforts.",
+        "article": "Public-private cooperation — Preparedness Task Force",
+        "label": "commitment",
+        "source": "FIX-COLON: The quote is the chapeau of an enumeration cut off after point (i); points (ii) to (v) are not separate rows in the packet, so the chapeau must be re-extracted together with them."
+      },
+      {
+        "quote": "Foster the use and integration of the Copernicus Emergency Management Service (CEMS) on natural hazards into national planning, monitoring and early-warning systems",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of the Annex 'Preparedness Union Strategy – Action Plan', a dated list of 63 actions; sibling entries of the same list are already rows in the register, this climate/resilience-relevant one is missing."
+      },
+      {
+        "quote": "Improve the preparedness and resilience of blue economy sectors and of coastal communities through the EU Ocean Pact and the Communication on the resilience of coastal communities.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of the Annex 'Preparedness Union Strategy – Action Plan', a dated list of 63 actions; sibling entries of the same list are already rows in the register, this climate/resilience-relevant one is missing."
+      },
+      {
+        "quote": "Review the energy security of supply framework to incorporate the lessons from the invasion of Ukraine, adapt it to the geopolitical context and deliver a future framework that is simpler, dynamic and forward-looking.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of the Annex 'Preparedness Union Strategy – Action Plan', a dated list of 63 actions; sibling entries of the same list are already rows in the register, this climate/resilience-relevant one is missing."
+      },
+      {
+        "quote": "Expand and optimise relevant services of the Galileo Emergency Warning Satellite Service (EWSS) to provide timely and accurate alerts to citizens on imminent risks, threats and safety measures or during crises.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of the Annex 'Preparedness Union Strategy – Action Plan', a dated list of 63 actions; sibling entries of the same list are already rows in the register, this climate/resilience-relevant one is missing."
+      },
+      {
+        "quote": "Expand a practitioners' network to enhance third countries', in particular enlargement and neighbouring partners’, resilience on tackling hybrid, cyber, climate, and FIMI threats.",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of the Annex 'Preparedness Union Strategy – Action Plan', a dated list of 63 actions; sibling entries of the same list are already rows in the register, this climate/resilience-relevant one is missing."
+      },
+      {
+        "quote": "Embed preparedness in EU external investments, including through scaling up implementation of climate adaptation and resilience projects in partner countries through the Global Gateway and Team Europe initiatives",
+        "article": "",
+        "label": null,
+        "source": "FIX-ANNEX: Entry of the Annex 'Preparedness Union Strategy – Action Plan', a dated list of 63 actions; sibling entries of the same list are already rows in the register, this climate/resilience-relevant one is missing."
+      }
+    ]
+  },
+  {
+    "policy_id": "renewable-energy-directive",
+    "targets": [
+      {
+        "quote": "2. For the calculation of a Member State's gross final consumption of energy from renewable sources referred to in Article 7 and the minimum share referred to in the first subparagraph of Article 25(1), the share of high indirect land-use change-risk biofuels, bioliquids or biomass fuels produced from food and feed crops for which a significant expansion of the production area into land with high-carbon stock is observed shall not exceed the level of consumption of such fuels in that Member State in 2019, unless they are certified to be low indirect land-use change-risk biofuels, bioliquids or biomass fuels pursuant to this paragraph. From 31 December 2023 until 31 December 2030 at the latest, that limit shall gradually decrease to 0 %.",
+        "article": "Article 26(2), second subparagraph",
+        "label": "target",
+        "source": "FIX-ANAPHORA: The quote opens on 'that limit' with no antecedent; the limit is defined in the preceding subparagraph of Article 26(2) (the 2019 consumption level of high indirect land-use change-risk fuels). Re-extract with that sentence included."
+      }
+    ]
+  },
+  {
+    "policy_id": "renovation-wave",
+    "targets": [
+      {
+        "quote": "The Commission promotes environmental sustainability of building solutions and materials, including wood and bio-based materials, nature-based solutions and recycled materials on the basis of a comprehensive life-cycle assessment approach. It will address the sustainability performance of construction products in the context of its revision of the Construction Product Regulation and it will develop by 2023 a roadmap leading up to 2050 for reducing whole life-cycle carbon emissions in buildings.",
+        "article": "Section 3.5 (Creating a sustainable built environment)",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote opens on 'It' with no antecedent; the actor (the Commission) is only named in the preceding sentence. Re-extract with that sentence included."
+      },
+      {
+        "quote": "To achieve the 55% emission reduction target, by 2030 the EU should reduce buildings’ greenhouse gas emissions by 60%, their final energy consumption by 14% and energy consumption for heating and cooling by 18%",
+        "article": "Section 1 (Boosting building renovation for climate neutrality and recovery)",
+        "label": "target",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "Building on such good practices, the Commission will propose mandatory minimum energy performance standards as part of the revision of the Energy Performance of Buildings Directive (EPBD) by the end of 2021, following an impact assessment looking at the scope, timeline and phasing of a progressive implementation of such requirements, including the need for accompanying support policies.",
+        "article": "Section 3.1 (Strengthening information, legal certainty and incentives for renovation)",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "Given the limited scope of existing legislative requirements for renovation of public buildings, the Commission will propose by June 2021 the need to extend the scope of the requirements to all public administration levels and to increase the annual renovation obligation as part of the revision of the EED.",
+        "article": "Section 4.2 (Public buildings and social infrastructure showing the way)",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "The Commission will also issue, based on the upcoming assessment of the Long-Term Renovation Strategies, indicative milestones for the renovation of public and private service buildings for 2030 and 2040 with a view to decarbonising the building stock by 2050.",
+        "article": "Section 4.2 (Public buildings and social infrastructure showing the way)",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      }
+    ]
+  },
+  {
+    "policy_id": "taxonomy-regulation",
+    "targets": [
+      {
+        "quote": "An economic activity shall qualify as contributing substantially to climate change adaptation where that activity: (a) includes adaptation solutions that either substantially reduce the risk of the adverse impact of the current climate and the expected future climate on that economic activity or substantially reduce that adverse impact, without increasing the risk of an adverse impact on people, nature or assets; or (b) provides adaptation solutions that, in addition to satisfying the conditions set out in Article 16, contribute substantially to preventing or reducing the risk of the adverse impact of the current climate and the expected future climate on people, nature or assets, without increasing the risk of an adverse impact on other people, nature or assets.",
+        "article": "Article 11(1) — Substantial contribution to climate change adaptation",
+        "label": "objective",
+        "source": "FIX-COLON: The chapeau of Article 11(1) is cut at its colon and point (b) breaks off mid-clause ('in addition to satisfying the conditions set out in'); the enumerated points must be re-extracted in full. This is the very provision the reviewer marked 'Please extract the text following a colon.'"
+      },
+      {
+        "quote": "An economic activity shall qualify as contributing substantially to climate change mitigation where that activity contributes substantially to the stabilisation of greenhouse gas concentrations in the atmosphere at a level which prevents dangerous anthropogenic interference with the climate system consistent with the long-term temperature goal of the Paris Agreement through the avoidance or reduction of greenhouse gas emissions or the increase of greenhouse gas removals, including through process innovations or product innovations, by: (a) generating, transmitting, storing, distributing or using renewable energy in line with Directive (EU) 2018/2001, including through using innovative technology with a potential for significant future savings or through necessary reinforcement or extension of the grid;",
+        "article": "Article 10(1) — Substantial contribution to climate change mitigation",
+        "label": "objective",
+        "source": "FIX-COLON: The Article 10(1) chapeau is cut at its colon and only point (a) is carried; points (b) to (i) are not present as their own rows anywhere in the packet, so the chapeau must be re-extracted together with all nine points."
+      }
+    ]
+  },
+  {
+    "policy_id": "ten-e-regulation",
+    "targets": [
+      {
+        "quote": "This Regulation lays down guidelines for the timely development and interoperability of the priority corridors and areas of trans-European energy infrastructure (energy infrastructure priority corridors and areas) set out in Annex I that contribute to ensuring climate change mitigation, in particular achieving the Union’s 2030 targets for energy and climate and its climate neutrality objective by 2050 at the latest, and to ensuring interconnections, energy security, market and system integration and competition that benefits all Member States, as well as affordability of energy prices.",
+        "article": "Art. 1(1)",
+        "label": "objective",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      }
+    ]
+  },
+  {
+    "policy_id": "ten-t-regulation",
+    "targets": [
+      {
+        "quote": "enabling greater use of more sustainable modes of transport, in particular by further developing an interoperable long-distance rail passenger network, including at high speed, and an interoperable rail freight network, a reliable inland waterway and short-sea shipping network for passengers and freight across the Union;",
+        "article": "Art. 4(2)(a)(ii)",
+        "label": "objective",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "the development of green, sustainable and climate resilient infrastructure, taking into account active modes, and the promotion of new technologies that aim to decarbonise the construction of transport infrastructure, including through the use of resource-efficient and climate-proof materials, designed to reduce as much as possible the negative impact on the health of citizens living around the network, the environment, including from air and noise pollution, and degradation of ecosystems;",
+        "article": "Art. 5(1)(g)",
+        "label": "objective",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "the adoption and monitoring of a sustainable urban mobility plan (SUMP) for each urban node that includes inter alia measures to integrate the different modes of transport and shift towards sustainable mobility, to promote efficient zero and low emission mobility including urban logistics, to reduce air and noise pollution and where appropriate, to assess the user’s accessibility to transport;",
+        "article": "Art. 41(1)(b)(i)",
+        "label": "target",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "by 31 December 2030, the development of multimodal passenger hubs to facilitate first and last mile connections, including the facilitation of access to public transport infrastructure and active mobility, and which are equipped with at least one recharging station as defined in Article 2, point (52), of Regulation (EU) 2023/1804 dedicated to serve buses and coaches;",
+        "article": "Art. 41(1)(c)",
+        "label": "target",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "Member States shall make all appropriate efforts to improve the security and resilience of the infrastructure to climate change, natural hazards, hybrid threats, human-made disasters, accidents, and operational interruptions, as well as intentional disruptions affecting the functioning of the Union transport system.",
+        "article": "Art. 46(1)",
+        "label": "objective",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      }
+    ]
+  },
+  {
+    "policy_id": "waste-framework-directive",
+    "targets": [
+      {
+        "quote": "The following waste hierarchy shall apply as a priority order in waste prevention and management legislation and policy: (a) prevention; (b) preparing for re-use; (c) recycling; (d) other recovery, e.g. energy recovery; and (e) disposal.",
+        "article": "Article 4(1)",
+        "label": "objective",
+        "source": "FIX-COLON: The quote is the Article 4(1) chapeau cut at its colon; the five enumerated points of the waste hierarchy are not separate rows for this act, so the chapeau must be re-extracted with them."
+      }
+    ]
+  },
+  {
+    "policy_id": "water-resilience-strategy",
+    "targets": [
+      {
+        "quote": "In particular, to promote water savings across data centres, the Commission will rate their energy efficiency and overall sustainability and propose minimum performance standards, including for water consumption",
+        "article": "Section 2.2 (Building a water-smart economy)",
+        "label": "commitment",
+        "source": "FIX-ANAPHORA: The quote opens on the possessive pronoun \"their\" with no antecedent in the extracted text; the preceding clause of the same sentence identifies data centres."
+      },
+      {
+        "quote": "To guide action on water efficiency across the EU, in view of the potential for water savings 37 , the EU should aim to enhance water efficiency by at least 10% by 2030. The Commission will work with Member States and stakeholders to develop a joint methodology for water efficiency targets, taking into account territorial and other differences between countries, regions and sectors.",
+        "article": "Section 2.2 (Building a water-smart economy) - Water Efficiency First paragraph",
+        "label": "target",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "The EIB Group, already today the largest global financier in the water sector, has developed a Water Programme to support the Commission's Water Resilience Strategy with over EUR 15 billion in planned financing during 2025-2027 for projects enhancing access to water, pollution control, resilience and competitiveness of the EU water sector, including through large infrastructures and nature-based solutions.",
+        "article": "Section 3.2 (Finance, investments and infrastructure)",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      },
+      {
+        "quote": "The Commission will establish a Water Resilience Investment Accelerator to implement 20 pilot innovative cases for natural water retention and water efficiency, bringing together local water investors, solution providers and problem holders to inspire similar actions across the EU.",
+        "article": "Section 3.2 (Finance, investments and infrastructure)",
+        "label": "commitment",
+        "source": "FIX-TRUNCATION: the quote was sliced mid-sentence; re-extracted to sentence bounds"
+      }
+    ]
+  }
+]

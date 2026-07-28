@@ -78,7 +78,20 @@ RULES = [
     ('FIX', 'Superseded by a corrected extraction',
      'The quote was truncated — cut off at a colon, or opening with a pronoun that had no antecedent — and '
      'was re-extracted in full from the source.'),
+    ('FIX-COLON', 'Chapeau completed',
+     'The quote stopped at the colon introducing a list, and the enumerated points were not separate rows; '
+     're-extracted with the points.'),
+    ('FIX-ANAPHORA', 'Antecedent restored',
+     'The quote opened on “It”, “This”, “Those” or similar with no antecedent; re-extracted with the '
+     'preceding sentence.'),
+    ('FIX-TRUNCATION', 'Sentence completed',
+     'The quote was sliced mid-sentence — its subject or its continuation sat outside the slice; '
+     're-extracted to sentence bounds.'),
 ]
+PASS_LABEL = {
+    '[human review 2026-07]': 'Pass 1 — reviewer mark-up generalised',
+    '[agent review 2026-07 round 2]': 'Pass 2 — full agent audit',
+}
 
 HEADER_FILL = PatternFill('solid', fgColor='FFE8EEF4')
 HEADER_FONT = Font(name='Arial', bold=True, size=10)
@@ -119,7 +132,7 @@ def main() -> None:
     rows = [t for t in targets if t['relevant']]
     overrides = json.loads(OVERRIDES.read_text(encoding='utf8'))
     review_drops = [o for o in overrides
-                    if o.get('drop') and '[human review 2026-07]' in (o.get('reason') or '')]
+                    if o.get('drop') and any(tag in (o.get('reason') or '') for tag in PASS_LABEL)]
 
     wb = Workbook()
 
@@ -146,11 +159,15 @@ def main() -> None:
                 [42, 15, 16, 5, 70, 26, 13, 12, 14, 20, 28, 20, 40, 16] + [13] * 8 + [62, 46])
 
     # ── Removed rows ────────────────────────────────────────────────────────
-    removed = [['Row id', 'Rule', 'Reason for removal']]
+    removed = [['Row id', 'Pass', 'Rule', 'Reason for removal']]
     for o in review_drops:
-        rule, _, rest = (o.get('reason') or '').partition(':')
-        removed.append([o['id'], rule.strip(), rest.replace('[human review 2026-07]', '').strip()])
-    write_sheet(wb.create_sheet('Removed rows'), removed, [16, 8, 120])
+        reason = o.get('reason') or ''
+        rule, _, rest = reason.partition(':')
+        which = next(label for tag, label in PASS_LABEL.items() if tag in reason)
+        for tag in PASS_LABEL:
+            rest = rest.replace(tag, '')
+        removed.append([o['id'], which, rule.strip(), rest.strip()])
+    write_sheet(wb.create_sheet('Removed rows'), removed, [16, 30, 15, 110])
 
     # ── Corrections log ─────────────────────────────────────────────────────
     counts = Counter((o.get('reason') or '').partition(':')[0].strip() for o in review_drops)
