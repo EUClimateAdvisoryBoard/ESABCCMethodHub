@@ -5,7 +5,7 @@
  *
  * On 17 July 2026 the Commission published a single package with two halves: an
  * Electrification Action Plan and a review of the EU ETS (Phase 5, 2031–2040).
- * This module splits into the two matching submodules:
+ * This module splits into three submodules:
  *
  *   1. Electrification — the interactive least-cost model (what a given 2040
  *      electrification rate costs on a price-only path vs with demand-side
@@ -14,20 +14,31 @@
  *      linked to where it is stated in the Commission's own communication of the
  *      proposal, plus the underlying assumptions and an uncertainty register.
  *      Route: /beta/ets-review/reform.
+ *   3. Advice conflicts — the package compared against the ESABCC's published
+ *      advice across all of its reports, ranked by the severity of every
+ *      conflict, with genuine alignments recorded alongside. Route:
+ *      /beta/ets-review/conflicts.
  *
- * This page is just the chooser between the two.
+ * This page is the chooser between the three.
  */
 
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import { rankedConflicts } from './conflicts/conflicts';
+import { severityScore, severityTier } from './conflicts/types';
 
-// Palette kept in sync with the two submodules (electrification/page.tsx, reform/page.tsx)
-// so a colour means the same thing everywhere in this module.
+// Palette kept in sync with the three submodules (electrification/page.tsx,
+// reform/page.tsx, conflicts/page.tsx) so a colour means the same thing
+// everywhere in this module.
 const C_TEAL = '#0D9488';   // electrification / flexibility
 const C_NAVY = '#2E3E4C';   // the gap / synthesis
-const C_RED = '#B83230';    // ambition & cap (price-only, the costly path)
+const C_RED = '#B83230';    // ambition & cap (price-only, the costly path) / conflicts
 const C_BLUE = '#2F6FB0';   // investment & revenue
 const C_PURPLE = '#8A4B9E'; // scope (removals)
+
+// Computed, not hard-coded: number of ranked conflicts and how many are critical.
+const RANKED_CONFLICTS = rankedConflicts();
+const CRITICAL_CONFLICTS = RANKED_CONFLICTS.filter((f) => severityTier(severityScore(f.scores)) === 'critical').length;
 
 function Card({ href, kicker, title, blurb, points, cta, accent }: {
   href: string; kicker: string; title: string; blurb: string; points: string[]; cta: string; accent: string;
@@ -60,6 +71,7 @@ const STATS: Stat[] = [
   { label: 'Permanent removals', value: '250', unit: 'Mt', sub: '2031–40, on top of the cap', color: C_PURPLE, href: '/beta/ets-review/reform#flexibility' },
   { label: 'International credits', value: '≈260', unit: 'Mt', sub: '2036–40, contingent on 2033 review', color: C_TEAL, href: '/beta/ets-review/reform#flexibility' },
   { label: 'Industrial Decarbonisation Bank', value: '€100', unit: 'bn', sub: 'ETS-revenue funded', color: C_BLUE, href: '/beta/ets-review/reform#changes' },
+  { label: 'Advice conflicts', value: String(RANKED_CONFLICTS.length), sub: `${CRITICAL_CONFLICTS} critical · ranked by severity`, color: C_RED, href: '/beta/ets-review/conflicts' },
 ];
 
 function StatTile({ s }: { s: Stat }) {
@@ -98,15 +110,16 @@ export default function EtsReviewHub() {
             On <strong>17 July 2026</strong> the Commission tabled a single package with two halves — an{' '}
             <strong>Electrification Action Plan</strong> (make Europe the &ldquo;first electro-powered continent&rdquo;, indicative
             46% electrification by 2040) and a <strong>review of the EU ETS</strong> for Phase 5 (2031–2040), aligned with the
-            −90% 2040 target. This module splits into the two matching submodules.
+            −90% 2040 target. This module splits into three matching submodules — what the package changes, what it costs, and
+            where it does and does not align with the ESABCC&apos;s own advice.
           </p>
         </section>
 
-        <section className="mb-7 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+        <section className="mb-7 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-7">
           {STATS.map((s) => <StatTile key={s.label} s={s} />)}
         </section>
 
-        <section className="grid gap-4 md:grid-cols-2">
+        <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <Card
             href="/beta/ets-review/electrification"
             accent={C_TEAL}
@@ -132,6 +145,20 @@ export default function EtsReviewHub() {
               'Filterable register of the uncertainties and ambiguities',
             ]}
             cta="Open the overview"
+          />
+          <Card
+            href="/beta/ets-review/conflicts"
+            accent={C_RED}
+            kicker="Submodule 3 — advice conflicts"
+            title="Where the package doesn't align with the advice"
+            blurb="The package compared, theme by theme, against the ESABCC's published advice across all of its reports — every contradiction, tension and ambition gap ranked by a transparent severity rubric, with genuine alignments recorded too."
+            points={[
+              `${RANKED_CONFLICTS.length} conflicts ranked by a four-axis severity score (0–10)`,
+              `${CRITICAL_CONFLICTS} rated critical — explicit, binding divergence from headline advice`,
+              'Full evidence trail: package quote + advice quote + reasoning chain per finding',
+              'Alignments recorded alongside, so the read stays even-handed',
+            ]}
+            cta="Open the conflict ranking"
           />
         </section>
 

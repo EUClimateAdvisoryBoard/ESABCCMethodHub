@@ -11,14 +11,15 @@ next to `esabcc-reports/` as a research folder (not a software module).
 | [`electrification-46-percent.md`](electrification-46-percent.md) | The core analysis: what the 46% electrification target measures, how much of final demand can physically be electrified, whether 46% is high or low for a 2040 pathway, what it costs to get there with and without demand-side measures, and which demand-side measures do the work. |
 | [`model/`](model/) | A least-cost model of the cost question — a reproducible Python reference model (`electrification_lcm.py`) and an interactive slider tool (`explorer.html`) to play with the assumptions. See [`model/README.md`](model/README.md). |
 
-## App module M·37 — two submodules
+## App module M·37 — three submodules
 
-The 17 July 2026 package has two halves, so beta module **M·37** ([`/beta/ets-review`](../src/app/beta/ets-review/page.tsx)) is a **hub** with two submodules:
+The 17 July 2026 package has two halves, so beta module **M·37** ([`/beta/ets-review`](../src/app/beta/ets-review/page.tsx)) is a **hub** with three submodules:
 
 | Submodule | Route / source | What it is |
 |-----------|----------------|------------|
 | **Electrification** | [`/beta/ets-review/electrification`](../src/app/beta/ets-review/electrification/page.tsx) · [`beta/modules/ets-review/electrification/page.tsx`](../beta/modules/ets-review/electrification/page.tsx) | The interactive least-cost model (native React port of `model/electrification_lcm.py`, exact parity) — the carbon price to reach a 2040 electrification rate, price-only vs with demand-side measures. |
 | **ETS reform** | [`/beta/ets-review/reform`](../src/app/beta/ets-review/reform/page.tsx) · [`beta/modules/ets-review/reform/page.tsx`](../beta/modules/ets-review/reform/page.tsx) | An overview of the most important proposed changes, **each linked to where it is stated in the Commission's communication of the proposal** (press release IP/26/1596, Q&A, ETS Directive proposal COM(2026) 616), plus the cap-trajectory and removals-cost numbers from **SWD(2026) 616** and a filterable **uncertainty & ambiguity register**. |
+| **Advice conflicts** | [`/beta/ets-review/conflicts`](../src/app/beta/ets-review/conflicts/page.tsx) · [`beta/modules/ets-review/conflicts/`](../beta/modules/ets-review/conflicts/) | The package compared against the ESABCC's published advice **across all of its reports**, with every place they do not align classified (contradiction / tension / ambition gap) and **ranked by a transparent four-axis severity score**; genuine alignments are recorded alongside so the read stays even-handed. |
 
 ## Interactive model
 
