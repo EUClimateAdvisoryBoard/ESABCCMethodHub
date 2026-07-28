@@ -12,12 +12,12 @@
  * state keyed on them survives regeneration. Reviewed corrections from the
  * fact-check pass are applied from scripts/policy-targets-overrides.json.
  *
- * 1018 targets across 62 acts.
- *   label:            {"target":424,"other":204,"objective":176,"commitment":199,"goal":15}
- *   obligation:       {"mandatory":767,"voluntary":251}
- *   type:             {"qualitative":317,"quantitative":494,"unspecified":207}
- *   climate_relevance:{"mitigation":454,"none":401,"both":47,"adaptation":116}
- *   relevant (lens):  {"true":673,"false":345}
+ * 935 targets across 62 acts.
+ *   label:            {"target":400,"other":193,"objective":142,"commitment":193,"goal":7}
+ *   obligation:       {"mandatory":685,"voluntary":250}
+ *   type:             {"qualitative":281,"quantitative":476,"unspecified":178}
+ *   climate_relevance:{"mitigation":449,"none":249,"adaptation":186,"both":51}
+ *   relevant (lens):  {"true":684,"false":251}
  *   (88 candidates rejected as non-verbatim / out of scope)
  */
 import type { RawPolicyTarget } from './policy-targets';
@@ -43,8 +43,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a5baad46",
@@ -65,8 +80,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c7fb7ca2",
@@ -87,8 +117,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2bc0527f",
@@ -110,8 +155,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "recharging",
+        "road network",
+        "ten-t"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1d85bb03",
@@ -133,8 +191,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-667001e9",
@@ -156,8 +228,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9cb011ef",
@@ -179,8 +265,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "recharging",
+        "road network",
+        "ten-t"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e206f70b",
@@ -202,8 +301,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "recharging",
+        "road network",
+        "ten-t"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2c9e6749",
@@ -225,8 +340,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c032b615",
@@ -248,8 +377,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2da26712",
@@ -268,8 +411,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "fleet*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-da652a7a",
@@ -285,11 +443,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "relevant": false,
-    "target_number": 12
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "recharging",
+        "ten-t",
+        "traffic"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
+    "relevant": true,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1d13d77c",
@@ -310,8 +485,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "heavy-duty",
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a675f706",
@@ -333,8 +520,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "heavy-duty",
+        "recharging",
+        "road network"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2e9619e4",
@@ -355,8 +559,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "heavy-duty",
+        "recharging",
+        "road network"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-94518309",
@@ -377,8 +594,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "recharging",
+        "road network",
+        "ten-t"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-708adb47",
@@ -399,8 +632,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "recharging",
+        "road network",
+        "ten-t"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b8b261df",
@@ -422,8 +671,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "heavy-duty",
+        "recharging",
+        "road network"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 18
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-985392c5",
@@ -445,8 +711,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "heavy-duty",
+        "recharging",
+        "road network"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 19
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-414687de",
@@ -468,8 +751,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "heavy-duty",
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 20
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3914b0a3",
@@ -491,8 +790,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "heavy-duty",
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 21
+    "target_number": 21,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c84353b0",
@@ -513,8 +828,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "buildings": [
+        "urban"
+      ],
+      "transport": [
+        "vehicle*",
+        "heavy-duty",
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 22
+    "target_number": 22,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ad99e542",
@@ -535,8 +870,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "buildings": [
+        "urban"
+      ],
+      "transport": [
+        "vehicle*",
+        "heavy-duty",
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 23
+    "target_number": 23,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e711f82a",
@@ -552,11 +907,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "relevant": false,
-    "target_number": 24
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "power output"
+      ],
+      "transport": [
+        "vehicle*",
+        "heavy-duty",
+        "recharging",
+        "ten-t"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
+    "relevant": true,
+    "target_number": 24,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dc368e1c",
@@ -574,11 +946,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "digitally-connected recharging points"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "relevant": false,
-    "target_number": 25
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
+    "relevant": true,
+    "target_number": 25,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ba1eca66",
@@ -599,8 +981,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "hydrogen"
+      ],
+      "transport": [
+        "vehicle*",
+        "refuelling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“hydrogen”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“refuelling”).",
     "relevant": true,
-    "target_number": 26
+    "target_number": 26,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-64e17c9a",
@@ -623,8 +1020,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "hydrogen"
+      ],
+      "transport": [
+        "refuelling",
+        "ten-t"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“hydrogen”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“refuelling”).",
     "relevant": true,
-    "target_number": 27
+    "target_number": 27,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e2381291",
@@ -645,8 +1057,27 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "hydrogen"
+      ],
+      "buildings": [
+        "urban"
+      ],
+      "transport": [
+        "transport*",
+        "refuelling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“hydrogen”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“refuelling”).",
     "relevant": true,
-    "target_number": 28
+    "target_number": 28,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7c64b132",
@@ -667,8 +1098,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity"
+      ],
+      "transport": [
+        "maritime",
+        "ships",
+        "ports",
+        "ten-t"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“shore-side”).",
     "relevant": true,
-    "target_number": 29
+    "target_number": 29,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8b105bf9",
@@ -689,8 +1137,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity"
+      ],
+      "transport": [
+        "maritime",
+        "ships",
+        "port",
+        "ports"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“shore-side”).",
     "relevant": true,
-    "target_number": 30
+    "target_number": 30,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d78f9658",
@@ -711,8 +1176,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity"
+      ],
+      "transport": [
+        "vessel*",
+        "ports",
+        "ten-t",
+        "inland waterway*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“shore-side”).",
     "relevant": true,
-    "target_number": 31
+    "target_number": 31,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a839356f",
@@ -733,8 +1215,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "refuelling",
+        "maritime",
+        "ships",
+        "ports"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“refuelling”).",
     "relevant": true,
-    "target_number": 32
+    "target_number": 32,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3e0be761",
@@ -755,8 +1250,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity"
+      ],
+      "transport": [
+        "aircraft",
+        "airport*",
+        "ten-t"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 33
+    "target_number": 33,
+    "duplicate_of": "Similar target: TEN-T Regulation — Art. 18(4) (similarity 0.25)"
   },
   {
     "id": "tgt-32fbe5f8",
@@ -777,8 +1288,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*",
+        "aircraft"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 34
+    "target_number": 34,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6f1c7eb1",
@@ -799,8 +1321,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*",
+        "aircraft"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 35
+    "target_number": 35,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a341c43f",
@@ -821,8 +1354,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity",
+        "grid",
+        "fossil fuel*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“grid”).",
     "relevant": true,
-    "target_number": 36
+    "target_number": 36,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-32d4af35",
@@ -841,8 +1386,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "aviation",
+        "aircraft"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 37
+    "target_number": 37,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ee8cf4a9",
@@ -861,8 +1417,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 38
+    "target_number": 38,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0648a8b9",
@@ -880,11 +1446,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycling efficiency"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "batteries",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dcca0c91",
@@ -902,11 +1479,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycling efficiency"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "batteries",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ac4e687c",
@@ -924,11 +1512,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycling efficiency"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "batteries",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-631a4288",
@@ -946,11 +1545,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycling efficiency"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "batteries",
+        "waste",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b4729590",
@@ -968,11 +1579,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycling efficiency"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "batteries",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e6eda40b",
@@ -990,11 +1612,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycling efficiency"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "batteries",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9e83bd7c",
@@ -1015,8 +1648,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*"
+      ],
+      "industry": [
+        "industr*",
+        "manufactur*",
+        "battery",
+        "batteries"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“carbon footprint”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e3bb9624",
@@ -1037,8 +1687,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*"
+      ],
+      "industry": [
+        "industr*",
+        "manufactur*",
+        "battery",
+        "batteries"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“carbon footprint”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-19a54597",
@@ -1059,8 +1726,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*"
+      ],
+      "industry": [
+        "industr*",
+        "manufactur*",
+        "battery",
+        "batteries"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“carbon footprint”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a3f5c1b7",
@@ -1081,8 +1765,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*"
+      ],
+      "industry": [
+        "industr*",
+        "manufactur*",
+        "battery",
+        "batteries"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-11dad2de",
@@ -1103,8 +1804,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
+    "sectors": [
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*"
+      ],
+      "industry": [
+        "industr*",
+        "manufactur*",
+        "battery",
+        "batteries"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e4805267",
@@ -1123,11 +1841,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recycling efficiency",
       "recovery of materials"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "relevant": false,
-    "target_number": 12
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recyclers”).",
+    "relevant": true,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d758fa16",
@@ -1148,8 +1876,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "species"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d73de49a",
@@ -1167,11 +1905,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "diversity and area of habitats"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
-    "relevant": false,
-    "target_number": 2
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "species"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“habitats”).",
+    "relevant": true,
+    "target_number": 2,
+    "duplicate_of": "Similar target: Habitats Directive — Article 12(1) (similarity 0.26)"
   },
   {
     "id": "tgt-8fd7ecd2",
@@ -1189,11 +1938,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "Annex I special conservation measures"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
-    "relevant": false,
-    "target_number": 3
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "species"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“habitat”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-89d15d2f",
@@ -1214,8 +1974,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "species",
+        "sea"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bfd78c3a",
@@ -1236,8 +2007,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "species",
+        "sea"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d30a6d14",
@@ -1255,11 +2037,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "avoidance of habitat deterioration"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
-    "relevant": false,
-    "target_number": 6
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“habitats”).",
+    "relevant": true,
+    "target_number": 6,
+    "duplicate_of": "Similar target: Habitats Directive — Article 6(2) (similarity 0.33)"
   },
   {
     "id": "tgt-554e2bbb",
@@ -1280,8 +2072,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "sectors": [
+      "transport",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ],
+      "ecosystems": [
+        "species"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d416dcda",
@@ -1302,8 +2108,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "species"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-08ccfed6",
@@ -1324,8 +2140,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "species"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-37d6cda7",
@@ -1346,8 +2172,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "species"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f4fc45f7",
@@ -1368,8 +2204,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32009L0147",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0147",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "species"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fcee3e48",
@@ -1392,8 +2238,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "biodiversity"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate action”). Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“biodiversity”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1fdf0d05",
@@ -1416,8 +2272,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": "Similar target: European Regional Development Fund — Article 3(1)(b)(i) (similarity 0.26)"
   },
   {
     "id": "tgt-476eee56",
@@ -1439,8 +2305,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "industry",
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "chemical*"
+      ],
+      "ecosystems": [
+        "soil"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e2fd1e7f",
@@ -1463,8 +2347,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "biodiversity"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“ecosystem”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9def1461",
@@ -1485,8 +2381,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ffd509f5",
@@ -1507,8 +2413,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "cap strategic plan*",
+        "eco-scheme*"
+      ]
+    },
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“eco-schemes”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-132ace67",
@@ -1531,8 +2448,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*",
+        "eco-scheme*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“eco-schemes”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8c0348de",
@@ -1551,11 +2479,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "resilience of food production systems",
       "climate change adaptation"
     ],
-    "climate_relevance": "adaptation",
+    "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood",
+      "health"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "food",
+        "eco-scheme*"
+      ],
+      "health": [
+        "disease*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“eco-schemes”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“diseases”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-51e7b223",
@@ -1574,8 +2517,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "farming",
+        "organic farming"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-07cb9691",
@@ -1594,8 +2548,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: increases removals or protects the sink (land, forests or engineered storage) (“removal”).",
     "relevant": false,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-71394e15",
@@ -1617,8 +2581,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "energy",
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency",
+        "energy saving*"
+      ],
+      "agrifood": [
+        "cap strategic plan*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f964611b",
@@ -1639,28 +2618,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "cap strategic plan*"
+      ]
+    },
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 12
-  },
-  {
-    "id": "tgt-03a8aa10",
-    "policy_id": "cap-strategic-plans",
-    "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
-    "policy_short": "CAP Strategic Plans Regulation",
-    "document_type": "regulation",
-    "policy_area": "Agriculture",
-    "article": "Article 73 — Investments",
-    "target_text": "purchase of land for an amount exceeding 10 % of the total eligible expenditure for the operation concerned, with the exception of land purchase for environmental conservation and carbon-rich soil preservation or land purchased by young farmers through the use of financial instruments; in the case of financial instruments, that ceiling shall apply to the eligible public expenditure paid to the final recipient, or, in the case of guarantees, to the amount of the underlying loan;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R2115",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "relevant": true,
-    "target_number": 13
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f38caa83",
@@ -1681,8 +2650,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "cap strategic plan*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 14
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-249f062b",
@@ -1701,8 +2680,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "cap strategic plan*"
+      ]
+    },
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 15
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6c3bf26d",
@@ -1720,11 +2709,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of direct-payment allocations reserved for eco-schemes"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "eco-scheme*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“eco-schemes”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-44850cc4",
@@ -1745,8 +2744,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 17
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f0b15157",
@@ -1767,8 +2776,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "cap strategic plan*"
+      ]
+    },
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 18
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-239ce643",
@@ -1789,8 +2808,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e52db04e",
@@ -1809,8 +2838,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1a4b987e",
@@ -1831,8 +2870,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "cbam"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4de361ed",
@@ -1854,8 +2903,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "cbam"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c6339652",
@@ -1877,8 +2936,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "cbam"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2392f6ce",
@@ -1900,28 +2969,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "cbam"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 6
-  },
-  {
-    "id": "tgt-8fb2521a",
-    "policy_id": "cbam-regulation",
-    "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
-    "policy_short": "CBAM Regulation",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 22(2) — Surrender of CBAM certificates (duplicate of tgt-0074; consider removing one)",
-    "target_text": "The authorised CBAM declarant shall ensure that the number of CBAM certificates on its account in the CBAM registry at the end of each quarter corresponds to at least 80 % of the embedded emissions, determined by reference to default values in accordance with the methods set out in Annex IV, in all goods it has imported since the beginning of the calendar year.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R0956",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "relevant": true,
-    "target_number": 7
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-461fa733",
@@ -1940,11 +2999,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "CBAM certificates to be surrendered",
       "EU ETS free allocation"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "relevant": false,
-    "target_number": 8
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "cbam"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“allowances”).",
+    "relevant": true,
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9974ef0b",
@@ -1965,8 +3034,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f4d46cd2",
@@ -1985,8 +3064,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2c9d6a25",
@@ -2005,8 +3094,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-eeab38dd",
@@ -2025,8 +3124,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 12
+    "target_number": 11,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 26(2)(b) — Heating and cooling supply (GHG emissions criterion) (similarity 0.25)"
   },
   {
     "id": "tgt-478572a0",
@@ -2049,8 +3158,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "passenger car*",
+        "light commercial vehicle*",
+        "cars"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“average emissions”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-742f6eb4",
@@ -2073,8 +3195,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "passenger car*",
+        "car",
+        "fleet*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“average emissions”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-79a06394",
@@ -2097,8 +3231,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "light commercial vehicle*",
+        "fleet*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“average emissions”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5483219d",
@@ -2121,8 +3267,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "passenger car*",
+        "car",
+        "fleet*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“average emissions”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a9018475",
@@ -2145,8 +3303,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "light commercial vehicle*",
+        "fleet*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“average emissions”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8c9f75ee",
@@ -2168,8 +3338,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "passenger car*",
+        "light commercial vehicle*",
+        "cars"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); switches supply or fuels to low-carbon sources (“zero- and low-emission”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1a941a88",
@@ -2191,8 +3374,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "passenger car*",
+        "cars",
+        "fleet*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a1412522",
@@ -2214,18 +3409,30 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "light commercial vehicle*",
+        "fleet*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-3b76652b",
+    "id": "tgt-1204c827",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
     "document_type": "regulation",
     "policy_area": "Transport",
     "article": "Article 4(1) — Specific emissions targets",
-    "target_text": "1. The manufacturer shall ensure that its average specific emissions of CO2 do not exceed the following specific emissions targets:",
+    "target_text": "1. The manufacturer shall ensure that its average specific emissions of CO2 do not exceed the following specific emissions targets: (a) for the calendar year 2020, the specific emissions target determined in accordance with points 1 and 2 of Part A of Annex I in the case of passenger cars, or points 1 and 2 of Part B of Annex I in the case of light commercial vehicles, or where a manufacturer is granted a derogation under",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
@@ -2237,8 +3444,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "passenger car*",
+        "light commercial vehicle*",
+        "cars"
+      ],
+      "industry": [
+        "manufactur*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“specific emissions targets”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-594c23fe",
@@ -2257,8 +3481,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“average specific emissions”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1bd89465",
@@ -2277,28 +3511,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*",
+        "vehicle*",
+        "passenger car*",
+        "light commercial vehicle*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions reduction”).",
     "relevant": true,
-    "target_number": 11
-  },
-  {
-    "id": "tgt-194cea72",
-    "policy_id": "co2-cars-regulation",
-    "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
-    "policy_short": "CO2 Standards for Cars",
-    "document_type": "regulation",
-    "policy_area": "Transport",
-    "article": "Article 15 — Review and report",
-    "target_text": "As part of the review referred to in paragraph 1 of this Article, the Commission shall evaluate the possibility to assign the revenue from the excess emissions premiums to a specific fund or a relevant programme, with the objective to ensure a just transition towards a climate-neutral economy as referred to in Article 4.1 of the Paris Agreement, in particular to support re-skilling, up-skilling and other skills training and reallocation of workers in the automotive sector in all affected Member States, in particular in the regions and the communities most affected by the transition.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32019R0631",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "relevant": true,
-    "target_number": 12
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-878a8e80",
@@ -2317,30 +3544,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "relevant": false,
-    "target_number": 13
-  },
-  {
-    "id": "tgt-a78d421c",
-    "policy_id": "common-provisions-regulation",
-    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
-    "policy_short": "Common Provisions Regulation (Cohesion)",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Annex IV 2.2 — enabling condition: governance of the energy sector",
-    "target_text": "The integrated national energy and climate plan is notified to the Commission, in accordance with Article 3 of Regulation (EU) 2018/1999 and consistent with the long-term greenhouse gas emission reduction objectives under the Paris Agreement, which includes:",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "national energy and climate plan"
+    "sectors": [
+      "transport"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1060",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
-    "relevant": true,
-    "target_number": 1
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f434a779",
@@ -2363,53 +3578,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
-    "relevant": true,
-    "target_number": 2
-  },
-  {
-    "id": "tgt-f28c636d",
-    "policy_id": "common-provisions-regulation",
-    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
-    "policy_short": "Common Provisions Regulation (Cohesion)",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Annex IV 2.4 — enabling condition: disaster risk management",
-    "target_text": "A national or regional disaster risk management plan, established on the basis of risk assessments, taking due account of the likely impacts of climate change and the existing climate adaptation strategies, is in place and includes:",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "disaster risk management plan",
-      "climate adaptation"
+    "sectors": [
+      "energy"
     ],
-    "climate_relevance": "adaptation",
-    "celex_number": "32021R1060",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "sector_evidence": {
+      "energy": [
+        "renewable energy"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 3
-  },
-  {
-    "id": "tgt-bbf5f6fe",
-    "policy_id": "common-provisions-regulation",
-    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
-    "policy_short": "Common Provisions Regulation (Cohesion)",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Annex IV 2.1 — enabling condition: building renovation strategy",
-    "target_text": "A national long term renovation strategy to support the renovation of the national stock of residential and non-residential buildings is adopted",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "milestones 2030/2040/2050",
-    "indicators": [
-      "long-term renovation strategy"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1060",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
-    "relevant": true,
-    "target_number": 4
+    "target_number": 1,
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 3(4) (similarity 0.26)"
   },
   {
     "id": "tgt-4d13b442",
@@ -2431,8 +3611,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "sectors": [
+      "buildings",
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "urban"
+      ],
+      "transport": [
+        "mobility"
+      ],
+      "industry": [
+        "circular econom*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net zero”); switches supply or fuels to low-carbon sources (“low-carbon”); cuts material and product emissions through circularity (less primary production means fewer process emissions) (“circular economy”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 2,
+    "duplicate_of": "Duplicate wording: European Regional Development Fund — Article 3(1)(b) (similarity 1.00)"
   },
   {
     "id": "tgt-cfb70166",
@@ -2454,8 +3652,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate-neutral”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-12c33847",
@@ -2476,8 +3678,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate objectives”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-12468a34",
@@ -2498,8 +3704,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“climate contribution”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-80f5e77e",
@@ -2520,8 +3730,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“climate contribution”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-334a8dfd",
@@ -2542,31 +3756,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate target”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“climate contribution”).",
     "relevant": true,
-    "target_number": 10
-  },
-  {
-    "id": "tgt-429b14c5",
-    "policy_id": "common-provisions-regulation",
-    "policy_name": "Regulation (EU) 2021/1060 laying down common provisions on the ERDF, ESF+, Cohesion Fund, JTF and other funds (Common Provisions Regulation)",
-    "policy_short": "Common Provisions Regulation (Cohesion)",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 9(4) — horizontal principle (sustainable development, DNSH)",
-    "target_text": "The objectives of the Funds shall be pursued in line with the objective of promoting sustainable development as set out in Article 11 TFEU, taking into account the UN Sustainable Development Goals, the Paris Agreement and the \"do no significant harm\" principle.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "do no significant harm",
-      "sustainable development"
-    ],
-    "climate_relevance": "both",
-    "celex_number": "32021R1060",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
-    "relevant": true,
-    "target_number": 11
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b2ceb2af",
@@ -2587,8 +3782,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 12
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f213a913",
@@ -2609,8 +3808,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6f980bc6",
@@ -2631,8 +3834,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1060",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“climate proofing”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“climate proofing”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 10,
+    "duplicate_of": "Similar target: EU Adaptation Strategy — Section 19 — Scaling up international finance to build climate resilience (similarity 0.25)"
   },
   {
     "id": "tgt-796b2e78",
@@ -2653,8 +3860,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5632efb1",
@@ -2675,8 +3886,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-442e906b",
@@ -2697,8 +3912,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c0a409a4",
@@ -2720,8 +3939,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonised”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6baa4b76",
@@ -2743,8 +3966,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "circular econom*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“circular economy”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-07fbd962",
@@ -2766,8 +3999,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "cars"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b6d57e3e",
@@ -2790,54 +4033,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 7
-  },
-  {
-    "id": "tgt-f349faa4",
-    "policy_id": "competitiveness-compass",
-    "policy_name": "Communication COM(2025) 30 — A Competitiveness Compass for the EU",
-    "policy_short": "Competitiveness Compass",
-    "document_type": "communication",
-    "policy_area": "Cross-cutting",
-    "article": "Pillar 2 — Clean Industrial Deal",
-    "target_text": "This conviction will inspire the Clean Industrial Deal initiative, aimed at securing the EU as an attractive location for manufacturing, including for energy intensive industries",
-    "target_label": "objective",
-    "obligation": "voluntary",
-    "target_type": "unspecified",
-    "timeline": "Q1 2025",
-    "indicators": [
-      "clean manufacturing investment",
-      "decarbonisation of industry"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "52025DC0030",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
-    "relevant": true,
-    "target_number": 8
-  },
-  {
-    "id": "tgt-bc73fa42",
-    "policy_id": "competitiveness-compass",
-    "policy_name": "Communication COM(2025) 30 — A Competitiveness Compass for the EU",
-    "policy_short": "Competitiveness Compass",
-    "document_type": "communication",
-    "policy_area": "Cross-cutting",
-    "article": "Pillar 2 — affordable energy",
-    "target_text": "These issues will be addressed by the Affordable Energy Action Plan, through a range of measures to ensure that households and industrial customers have a wider direct access to low-cost energy.",
-    "target_label": "objective",
-    "obligation": "voluntary",
-    "target_type": "qualitative",
-    "timeline": "Q1 2025",
-    "indicators": [
-      "energy prices",
-      "access to low-cost energy"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "52025DC0030",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
-    "relevant": true,
-    "target_number": 9
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-47ff72c9",
@@ -2859,8 +4060,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "steel"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 10
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6c77c9c4",
@@ -2882,8 +4093,62 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "industr*",
+        "raw material*",
+        "recycl*",
+        "circular econom*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recycling capacity”); cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 9,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-20bba3f0",
+    "policy_id": "competitiveness-compass",
+    "policy_name": "Communication COM(2025) 30 — A Competitiveness Compass for the EU",
+    "policy_short": "Competitiveness Compass",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "Pillar 2 — affordable energy",
+    "target_text": "But some of the cost components of energy prices can be mitigated in the short term, as they are determined by inefficiencies in the design of network tariffs and taxation or a lack of energy market integration. These issues will be addressed by the Affordable Energy Action Plan, through a range of measures to ensure that households and industrial customers have a wider direct access to low-cost energy.",
+    "target_label": "objective",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "Q1 2025",
+    "indicators": [
+      "energy prices",
+      "access to low-cost energy"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52025DC0030",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [
+      "energy",
+      "buildings",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy price*"
+      ],
+      "buildings": [
+        "household*"
+      ],
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9cc679ed",
@@ -2904,8 +4169,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 12
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b9f60429",
@@ -2926,8 +4195,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cca98628",
@@ -2948,8 +4221,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 14
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-21eb9378",
@@ -2973,8 +4250,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9bd2c1cd",
@@ -2996,8 +4283,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0030",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0030",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 16
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-84d6d6e4",
@@ -3018,8 +4309,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building"
+      ]
+    },
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ef08bf68",
@@ -3037,11 +4338,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "Member State risk assessment"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
     "relevant": false,
-    "target_number": 2
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”).",
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e2f06bba",
@@ -3059,11 +4364,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "natural and man-made risks"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
-    "relevant": false,
-    "target_number": 3
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "public health"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“natural disasters”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessments”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“public health”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b727c781",
@@ -3085,7 +4401,11 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
     "relevant": false,
-    "target_number": 4
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6bd2324c",
@@ -3106,8 +4426,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9f6e79db",
@@ -3128,8 +4452,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“training”).",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-80925f81",
@@ -3147,11 +4475,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "critical entity risk assessment"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
     "relevant": false,
-    "target_number": 7
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”).",
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-823b3e58",
@@ -3169,11 +4501,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "natural and man-made risks"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
-    "relevant": false,
-    "target_number": 8
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "public health"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“natural disasters”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessments”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“public health”).",
+    "relevant": true,
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ed4b0d6c",
@@ -3194,8 +4537,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”).",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0ceb23e4",
@@ -3217,8 +4564,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6c978936",
@@ -3239,8 +4590,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "supply chain*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0ae6da5f",
@@ -3261,8 +4622,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022L2557",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": false,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ef8df580",
@@ -3283,8 +4648,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "raw material*",
+        "value chain*"
+      ]
+    },
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“critical raw materials”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilient”).",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": "Similar target: Net-Zero Industry Act — Article 1(1) - Subject matter (similarity 0.30)"
   },
   {
     "id": "tgt-56f58432",
@@ -3303,11 +4679,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "Union extraction capacity",
       "annual consumption of strategic raw materials"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "raw material*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“strategic raw materials”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c6198b5f",
@@ -3326,11 +4712,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "Union processing capacity",
       "annual consumption of strategic raw materials"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "raw material*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“strategic raw materials”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-27fe56c5",
@@ -3349,11 +4745,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "Union recycling capacity",
       "annual consumption of strategic raw materials"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "raw material*",
+        "waste",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“strategic raw materials”); cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-706e71ff",
@@ -3372,11 +4780,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "import diversification",
       "annual consumption of strategic raw materials"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "both",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "raw material*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“strategic raw materials”). Adaptation: seizes an opportunity created by a changing climate (new markets, diversified livelihoods) (“diversify”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ca7e973f",
@@ -3395,11 +4813,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "Union consumption of critical raw materials",
       "resource efficiency"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "relevant": false,
-    "target_number": 6
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "raw material*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“critical raw materials”).",
+    "relevant": true,
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-164998bd",
@@ -3417,11 +4845,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "Union recycling capacity benchmark"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "relevant": false,
-    "target_number": 7
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "raw material*",
+        "waste",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“strategic raw materials”); cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
+    "relevant": true,
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-45d43665",
@@ -3440,8 +4880,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": "Duplicate wording: Net-Zero Industry Act — Article 6(1) - Single points of contact (similarity 0.56)"
   },
   {
     "id": "tgt-c7dccbb1",
@@ -3459,11 +4909,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "permit-granting duration"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "relevant": false,
-    "target_number": 9
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”).",
+    "relevant": true,
+    "target_number": 9,
+    "duplicate_of": "Similar target: Net-Zero Industry Act — Article 16(1)(b) - Duration of the permit-granting process for net-zero strategic projects (similarity 0.25)"
   },
   {
     "id": "tgt-c5c48a45",
@@ -3481,11 +4941,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "permit-granting duration"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "relevant": false,
-    "target_number": 10
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”); cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
+    "relevant": true,
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e8d27c91",
@@ -3503,11 +4973,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "permit-granting duration"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "relevant": false,
-    "target_number": 11
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”).",
+    "relevant": true,
+    "target_number": 11,
+    "duplicate_of": "Similar target: Net-Zero Industry Act — Article 16(1)(b) - Duration of the permit-granting process for net-zero strategic projects (similarity 0.25)"
   },
   {
     "id": "tgt-4b2497c5",
@@ -3525,11 +5005,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "permit-granting duration"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "relevant": false,
-    "target_number": 12
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”); cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
+    "relevant": true,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-06db9e02",
@@ -3548,11 +5038,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recycled content share",
       "post-consumer waste"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "relevant": false,
-    "target_number": 13
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycled content”).",
+    "relevant": true,
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-41fd0e32",
@@ -3570,11 +5071,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "Union plan established"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 1
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "pandemic*"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 1,
+    "duplicate_of": "Similar target: European Health Union — Preparedness — binding EU preparedness and response plan (similarity 0.25)"
   },
   {
     "id": "tgt-cb6d656c",
@@ -3596,8 +5108,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fa31fb21",
@@ -3616,11 +5138,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "environmental determinants",
       "One Health"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 3
+    "sectors": [
+      "agrifood",
+      "health"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "food"
+      ],
+      "health": [
+        "health",
+        "disease*"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“disease”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f5ab0ee0",
@@ -3638,11 +5175,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "national plan coherence"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 4
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3e4e5851",
@@ -3660,11 +5207,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "national preparedness report"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 5
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 5,
+    "duplicate_of": "Similar target: Union Civil Protection Mechanism — Article 6(a) — national risk assessments (similarity 0.26)"
   },
   {
     "id": "tgt-9cdebf31",
@@ -3682,11 +5239,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "ECDC preparedness assessment"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 6
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-03cc474e",
@@ -3708,8 +5275,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d0a2457e",
@@ -3727,11 +5304,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "Commission preparedness report"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 8
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 8,
+    "duplicate_of": "Similar target: Net-Zero Industry Act — Article 20(3) - Union level objective of CO2 injection capacity (similarity 0.31)"
   },
   {
     "id": "tgt-66aa3f8d",
@@ -3752,8 +5339,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0dddb29f",
@@ -3771,11 +5368,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "surveillance network"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 10
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“surveillance”).",
+    "relevant": true,
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d2d49e7c",
@@ -3794,11 +5401,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "disease trend monitoring",
       "warning thresholds"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 11
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "disease*"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“diseases”).",
+    "relevant": true,
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dab86ea5",
@@ -3817,11 +5434,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "digital surveillance platform",
       "real-time surveillance"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 12
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "disease*"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“disease”).",
+    "relevant": true,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9e5a8984",
@@ -3842,8 +5469,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-71ae5547",
@@ -3861,11 +5498,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "risk assessment"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 14
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "public health"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“public health”).",
+    "relevant": true,
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f840771e",
@@ -3883,11 +5531,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "measure coordination"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 15
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "public health"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“public health”).",
+    "relevant": true,
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-16b5e457",
@@ -3905,11 +5564,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "emergency recognition"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 16
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "pandemic*",
+        "public health"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“public health”).",
+    "relevant": true,
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-815d9483",
@@ -3930,30 +5601,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R2371",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2371",
-    "relevant": false,
-    "target_number": 17
-  },
-  {
-    "id": "tgt-a3b3ccd6",
-    "policy_id": "csddd",
-    "policy_name": "Directive (EU) 2024/1760 on corporate sustainability due diligence",
-    "policy_short": "Corporate Sustainability Due Diligence Directive (CSDDD)",
-    "document_type": "directive",
-    "policy_area": "Trade",
-    "article": "Article 1(1)(c) — Subject matter",
-    "target_text": "the obligation for companies to adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, compatibility of the business model and of the strategy of the company with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement.",
-    "target_label": "commitment",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [
-      "global warming limit of 1,5 °C"
+    "sectors": [
+      "health"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024L1760",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
-    "relevant": true,
-    "target_number": 1
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 17,
+    "duplicate_of": "Similar target: 8th Environment Action Programme — Article 6 — evaluation (similarity 0.33)"
   },
   {
     "id": "tgt-c8e62421",
@@ -3975,8 +5634,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "coal"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“transition plan”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-51ad7b1f",
@@ -3999,8 +5668,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission reduction”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 2,
+    "duplicate_of": "Similar target: Corporate Sustainability Reporting Directive — Article 1 — inserted Article 19a(2), point (b) of Directive 2013/34/EU (similarity 0.39)"
   },
   {
     "id": "tgt-d81c5383",
@@ -4021,28 +5694,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“transition plan”).",
     "relevant": true,
-    "target_number": 4
-  },
-  {
-    "id": "tgt-3f38d147",
-    "policy_id": "csddd",
-    "policy_name": "Directive (EU) 2024/1760 on corporate sustainability due diligence",
-    "policy_short": "Corporate Sustainability Due Diligence Directive (CSDDD)",
-    "document_type": "directive",
-    "policy_area": "Trade",
-    "article": "Article 22 — Combating climate change",
-    "target_text": "Member States shall ensure that companies referred to in Article 2(1), points (a), (b) and (c), and Article 2(2), points (a), (b) and (c), adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, that the business model and strategy of the company are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement and the objective of achieving climate neutrality as established in Regulation (EU) 2021/1119, including its intermediate and 2050 climate neutrality targets, and where relevant, the exposure of the company to coal-, oil- and gas-related activities.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024L1760",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
-    "relevant": true,
-    "target_number": 5
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-60077c9b",
@@ -4063,31 +5720,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“transition plan”).",
     "relevant": true,
-    "target_number": 6
-  },
-  {
-    "id": "tgt-3194cd8f",
-    "policy_id": "csrd",
-    "policy_name": "Directive (EU) 2022/2464 regarding corporate sustainability reporting (CSRD)",
-    "policy_short": "Corporate Sustainability Reporting Directive",
-    "document_type": "directive",
-    "policy_area": "Finance",
-    "article": "Article 1 — inserted Article 19a(2), point (a)(iii) of Directive 2013/34/EU",
-    "target_text": "the plans of the undertaking, including implementing actions and related financial and investment plans, to ensure that its business model and strategy are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 °C in line with the Paris Agreement under the United Nations Framework Convention on Climate Change adopted on 12 December 2015 (the ‘Paris Agreement’) and the objective of achieving climate neutrality by 2050 as established in Regulation (EU) 2021/1119 of the European Parliament and of the Council (*8), and, where relevant, the exposure of the undertaking to coal-, oil- and gas-related activities;",
-    "target_label": "commitment",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "by 2050",
-    "indicators": [
-      "global warming limit of 1,5 °C",
-      "climate neutrality"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022L2464",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
-    "relevant": true,
-    "target_number": 1
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8fcc9933",
@@ -4109,31 +5747,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“greenhouse gas emission reduction”).",
     "relevant": true,
-    "target_number": 2
-  },
-  {
-    "id": "tgt-844bb719",
-    "policy_id": "csrd",
-    "policy_name": "Directive (EU) 2022/2464 regarding corporate sustainability reporting (CSRD)",
-    "policy_short": "Corporate Sustainability Reporting Directive",
-    "document_type": "directive",
-    "policy_area": "Finance",
-    "article": "Article 1 — inserted Article 29a(2), point (a)(iii) of Directive 2013/34/EU",
-    "target_text": "the plans of the group, including implementing actions and related financial and investment plans, to ensure that its business model and strategy are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 °C in line with the Paris Agreement and the objective of achieving climate neutrality by 2050 as established in Regulation (EU) 2021/1119 and where relevant, the exposure of the group to coal-, oil- and gas-related activities;",
-    "target_label": "commitment",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "by 2050",
-    "indicators": [
-      "global warming limit of 1,5 °C",
-      "climate neutrality"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022L2464",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
-    "relevant": true,
-    "target_number": 3
+    "target_number": 1,
+    "duplicate_of": "Similar target: Corporate Sustainability Due Diligence Directive (CSDDD) — Article 22(1), second subparagraph, point (a) — Combating climate change (similarity 0.39)"
   },
   {
     "id": "tgt-3f22cbfa",
@@ -4155,8 +5774,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“greenhouse gas emission reduction”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 2,
+    "duplicate_of": "Similar target: Corporate Sustainability Due Diligence Directive (CSDDD) — Article 22(1), second subparagraph, point (a) — Combating climate change (similarity 0.39)"
   },
   {
     "id": "tgt-2f9e6f12",
@@ -4177,8 +5800,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4caab1ae",
@@ -4199,8 +5826,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d2083074",
@@ -4221,8 +5852,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e1e91d9c",
@@ -4243,8 +5878,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-eb6113d4",
@@ -4265,8 +5904,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "sea"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“extreme weather”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6eaa2044",
@@ -4287,8 +5936,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8805129f",
@@ -4309,8 +5968,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d2536c6b",
@@ -4328,11 +5991,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "strategic research and innovation"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
-    "relevant": false,
-    "target_number": 8
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“knowledge”).",
+    "relevant": true,
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f7e4636b",
@@ -4353,8 +6020,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-66573237",
@@ -4375,8 +6046,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0e91d7ca",
@@ -4397,8 +6072,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-22b8c3cb",
@@ -4419,8 +6098,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52014DC0477",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52014DC0477",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b189f5ba",
@@ -4441,8 +6124,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "forest*",
+        "deforest*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-337c264c",
@@ -4464,8 +6158,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "biodiversity"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”). Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“biodiversity”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": "Similar target: European Regional Development Fund — Article 3(1)(b)(i) (similarity 0.33)"
   },
   {
     "id": "tgt-3bdb39de",
@@ -4487,8 +6191,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "deforest*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b46fb58d",
@@ -4510,8 +6224,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "forest*",
+        "deforest*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-77effa3e",
@@ -4533,8 +6258,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ece16f6b",
@@ -4555,8 +6290,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-18119316",
@@ -4577,8 +6322,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7ee7cc78",
@@ -4599,8 +6354,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1fb31107",
@@ -4619,8 +6384,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-412040e4",
@@ -4636,11 +6411,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "unspecified",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
-    "relevant": false,
-    "target_number": 2
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“surveillance”).",
+    "relevant": true,
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-26e121b4",
@@ -4659,8 +6444,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-eb2b9583",
@@ -4676,11 +6471,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "qualitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
-    "relevant": false,
-    "target_number": 4
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "ecodesign"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“ecodesign”).",
+    "relevant": true,
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-43a429ff",
@@ -4699,8 +6504,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-60b8b5d5",
@@ -4719,8 +6534,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-66f50cd1",
@@ -4741,8 +6566,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3cbe73df",
@@ -4763,8 +6598,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": "Similar target: LULUCF Regulation — Article 1(a) — Subject matter (similarity 0.29)"
   },
   {
     "id": "tgt-6d451f41",
@@ -4785,8 +6624,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": "Similar target: Governance Regulation — Article 4(a)(1)(i) — National objectives, targets and contributions (similarity 0.25)"
   },
   {
     "id": "tgt-3e09349d",
@@ -4809,32 +6652,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 3
-  },
-  {
-    "id": "tgt-dda3bc2a",
-    "policy_id": "effort-sharing-regulation",
-    "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
-    "policy_short": "Effort Sharing Regulation",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
-    "target_text": "Member State greenhouse gas emission reductions in 2030 in relation to their 2005 levels determined in accordance with Article 4(3)",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "in 2030",
-    "indicators": [
-      "greenhouse gas emission reductions",
-      "emission reductions",
-      "greenhouse gas emissions"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R0842",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "relevant": true,
-    "target_number": 4
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c28cbdc2",
@@ -4850,11 +6673,39 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018R0842",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”).",
+    "relevant": true,
+    "target_number": 4,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-78fdb2b7",
+    "policy_id": "effort-sharing-regulation",
+    "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
+    "policy_short": "Effort Sharing Regulation",
+    "document_type": "regulation",
+    "policy_area": "Climate",
+    "article": "Article 11(3) — Safety reserve",
+    "target_text": "A Member State, which meets the conditions set out in paragraph 2 of this Article, shall receive an additional quantity from the safety reserve up to its shortfall to be used for compliance under Article 9. That quantity shall not exceed 20 % of its overall overachievement in the period from 2013 to 2020.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "from 2013 to 2020",
+    "indicators": [],
     "climate_relevance": "none",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "relevant": false,
-    "target_number": 5
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": true,
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c4b7889e",
@@ -4872,31 +6723,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "CO2 equivalent"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R0842",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "relevant": true,
-    "target_number": 6
-  },
-  {
-    "id": "tgt-c8d671ae",
-    "policy_id": "effort-sharing-regulation",
-    "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
-    "policy_short": "Effort Sharing Regulation",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 11(3) — Safety reserve",
-    "target_text": "That quantity shall not exceed 20 % of its overall overachievement in the period from 2013 to 2020.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "from 2013 to 2020",
-    "indicators": [],
     "climate_relevance": "none",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "relevant": true,
-    "target_number": 7
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 6,
+    "duplicate_of": "Similar target: LULUCF Regulation — Article 13b(3) — Land flexibility mechanism for the period from 2026 to 2030 (similarity 0.28)"
   },
   {
     "id": "tgt-897682ac",
@@ -4915,8 +6750,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 8
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d020f28f",
@@ -4938,8 +6777,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [
+      "ecosystems",
+      "health"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "biodiversity",
+        "restore*"
+      ],
+      "health": [
+        "well-being"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”); keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restored”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“well-being”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-044d8e2c",
@@ -4963,8 +6818,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“greenhouse gas emission reduction”); increases removals or protects the sink (land, forests or engineered storage) (“removals”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“just transition”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c1995bfa",
@@ -4986,8 +6845,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“ecosystem”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": "Similar target: European Climate Law — Article 5(1) — Adaptation to climate change (similarity 0.29)"
   },
   {
     "id": "tgt-b6763ec6",
@@ -5006,11 +6875,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "circular economy",
       "resource efficiency"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "both",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
-    "relevant": false,
-    "target_number": 4
+    "sectors": [
+      "industry",
+      "health"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste",
+        "circular econom*"
+      ],
+      "health": [
+        "well-being"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“circular economy”). Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“well-being”).",
+    "relevant": true,
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3c12511b",
@@ -5032,8 +6916,33 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [
+      "industry",
+      "ecosystems",
+      "water",
+      "health"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "chemical*"
+      ],
+      "ecosystems": [
+        "ecosystem*",
+        "soil"
+      ],
+      "water": [
+        "water"
+      ],
+      "health": [
+        "health",
+        "noise",
+        "well-being"
+      ]
+    },
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“ecosystems”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“noise”).",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-10002a64",
@@ -5055,8 +6964,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "biodiversity",
+        "marine",
+        "soil"
+      ],
+      "water": [
+        "water",
+        "waters"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“ecosystems”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-25097ba7",
@@ -5077,8 +7004,30 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [
+      "buildings",
+      "agrifood",
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings"
+      ],
+      "agrifood": [
+        "food"
+      ],
+      "transport": [
+        "mobility"
+      ],
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5be7bfa1",
@@ -5096,11 +7045,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "fossil fuel subsidies phase-out"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
-    "relevant": true,
-    "target_number": 8
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "fossil fuel*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4b7e95f8",
@@ -5121,8 +7080,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-de710e8e",
@@ -5143,8 +7106,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "biodiversity"
+      ]
+    },
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“biodiversity”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d900ab0a",
@@ -5162,11 +7135,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "soil health legislation"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
-    "relevant": false,
-    "target_number": 11
+    "sectors": [
+      "agrifood",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "soil health"
+      ],
+      "ecosystems": [
+        "soil"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“soil health”).",
+    "relevant": true,
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f0a3d4e7",
@@ -5188,8 +7175,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d2cf1637",
@@ -5210,8 +7201,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-42ff5154",
@@ -5232,8 +7227,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f973a29a",
@@ -5254,18 +7253,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022D0591",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022D0591",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": "Similar target: Cross-Border Health Threats Regulation — Article 33 — Evaluation of the Regulation (similarity 0.33)"
   },
   {
-    "id": "tgt-845cb005",
+    "id": "tgt-2bd87445",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
     "document_type": "directive",
     "policy_area": "Energy",
     "article": "Article 3(1) — Energy efficiency first principle",
-    "target_text": "In accordance with the energy efficiency first principle, Member States shall ensure that energy efficiency solutions, including demand-side resources and system flexibilities, are assessed in planning, policy and major investment decisions of a value of more than EUR 100 000 000 each or EUR 175 000 000 for transport infrastructure projects, relating to the following sectors:",
+    "target_text": "In accordance with the energy efficiency first principle, Member States shall ensure that energy efficiency solutions, including demand-side resources and system flexibilities, are assessed in planning, policy and major investment decisions of a value of more than EUR 100 000 000 each or EUR 175 000 000 for transport infrastructure projects, relating to the following sectors: (a) energy systems; and (b) non-energy sectors, where those sectors have an impact on energy consumption and energy efficiency such as buildings, transport, water, information and communications technology (ICT), agriculture and financial sectors.",
     "target_label": "objective",
     "obligation": "mandatory",
     "target_type": "qualitative",
@@ -5277,8 +7280,35 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy",
+      "buildings",
+      "agrifood",
+      "transport",
+      "water"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency",
+        "energy system*"
+      ],
+      "buildings": [
+        "buildings"
+      ],
+      "agrifood": [
+        "agricultur*"
+      ],
+      "transport": [
+        "transport*"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-00b3b2ef",
@@ -5298,11 +7328,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "primary energy consumption",
       "reduction of energy consumption"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "both",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency",
+        "final energy consumption",
+        "primary energy"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”). Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“scenario”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": "Similar target: Governance Regulation — Article 5(2) — Member States' contribution setting process in the area of renewable energy (similarity 0.31)"
   },
   {
     "id": "tgt-ecd28c7f",
@@ -5326,8 +7368,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency",
+        "final energy consumption",
+        "primary energy"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": "Similar target: Governance Regulation — Article 4(b)(1) — National objectives, targets and contributions (similarity 0.39)"
   },
   {
     "id": "tgt-0637c222",
@@ -5348,8 +7402,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7ceff24f",
@@ -5367,11 +7431,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "energy efficiency"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "both",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”). Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“scenario”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cb34e96a",
@@ -5393,8 +7467,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency",
+        "final energy consumption"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1e9ea892",
@@ -5417,8 +7502,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings",
+        "renovate*",
+        "zero-emission building*",
+        "nearly zero-energy"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“nearly zero-energy”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": "Similar target: Energy Performance of Buildings Directive — Article 7(1) — New buildings (similarity 0.33)"
   },
   {
     "id": "tgt-d09f5b9d",
@@ -5441,8 +7539,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "nearly zero-energy"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-26a68879",
@@ -5463,8 +7574,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings",
+        "nearly zero-energy"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“nearly zero-energy”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d30adf3b",
@@ -5483,8 +7605,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "nearly zero-energy"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-76f362d9",
@@ -5506,8 +7641,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8ed5b2ff",
@@ -5530,8 +7679,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*",
+        "final energy consumption"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3d74fc08",
@@ -5554,8 +7714,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*",
+        "final energy consumption"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e008f88b",
@@ -5578,8 +7749,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*",
+        "final energy consumption"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fbcbf203",
@@ -5602,8 +7784,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*",
+        "final energy consumption"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-44995e2a",
@@ -5626,8 +7819,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*",
+        "final energy consumption"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-109cb911",
@@ -5649,8 +7853,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d534e2a7",
@@ -5672,8 +7886,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 18
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-17d3600a",
@@ -5696,8 +7920,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*",
+        "energy poverty"
+      ],
+      "buildings": [
+        "housing",
+        "household*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 19
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-76a08e35",
@@ -5718,8 +7958,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 20
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7cece1ec",
@@ -5740,8 +7990,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 21
+    "target_number": 21,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-94c7627b",
@@ -5762,28 +8022,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 22
-  },
-  {
-    "id": "tgt-6a57e785",
-    "policy_id": "energy-efficiency-directive",
-    "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
-    "policy_short": "Energy Efficiency Directive",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Article 25(6), point (j) — Heating and cooling assessment and planning",
-    "target_text": "include a trajectory to achieve the goals of the plans in line with climate neutrality and the monitoring of the progress of the implementation of policies and measures identified;",
-    "target_label": "goal",
-    "obligation": "voluntary",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023L1791",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "relevant": true,
-    "target_number": 23
+    "target_number": 22,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7c3c42a1",
@@ -5807,8 +8057,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 24
+    "target_number": 23,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9b161e18",
@@ -5832,8 +8093,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 25
+    "target_number": 24,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e556fea0",
@@ -5857,8 +8129,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 26
+    "target_number": 25,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c31a4248",
@@ -5882,8 +8165,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 27
+    "target_number": 26,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-35e2d67c",
@@ -5906,8 +8200,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 28
+    "target_number": 27,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-64c67d8f",
@@ -5930,8 +8235,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 29
+    "target_number": 28,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-916775f4",
@@ -5952,8 +8268,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 30
+    "target_number": 29,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-44d534d0",
@@ -5974,8 +8300,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 31
+    "target_number": 30,
+    "duplicate_of": "Similar target: CBAM Regulation — Article 36(2), point (b) — Entry into force (similarity 0.25)"
   },
   {
     "id": "tgt-f665ad36",
@@ -5996,8 +8332,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 32
+    "target_number": 31,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8f201f25",
@@ -6018,8 +8364,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 33
+    "target_number": 32,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9a8d4547",
@@ -6040,8 +8396,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 34
+    "target_number": 33,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4ca958a3",
@@ -6060,8 +8426,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings",
+        "renovation*",
+        "renovate*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 35
+    "target_number": 34,
+    "duplicate_of": "Similar target: Energy Performance of Buildings Directive — Article 7(1) — New buildings (similarity 0.32)"
   },
   {
     "id": "tgt-fcbc4f23",
@@ -6084,31 +8462,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": true,
-    "target_number": 1
-  },
-  {
-    "id": "tgt-0c047e5d",
-    "policy_id": "epbd-recast",
-    "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
-    "policy_short": "Energy Performance of Buildings Directive",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Article 1 — Subject matter",
-    "target_text": "This Directive promotes the improvement of the energy performance of buildings and the reduction of greenhouse gas emissions from buildings within the Union, with a view to achieving a zero-emission building stock by 2050, taking into account the outdoor climatic conditions, the local conditions, the requirements for indoor environmental quality, and cost-effectiveness.",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "by 2050",
-    "indicators": [
-      "greenhouse gas emissions",
-      "energy performance"
+    "sectors": [
+      "buildings"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024L1275",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "buildings",
+        "zero-emission building*",
+        "building stock"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); cuts energy demand, which cuts the emissions of supplying that energy (“zero-emission building”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cb89b5a4",
@@ -6130,8 +8498,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy-efficient"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "zero-emission building*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonised”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 2,
+    "duplicate_of": "Duplicate wording: Governance Regulation — Article 53(1)(a) — Amendments to Directive 2010/31/EU (similarity 0.59)"
   },
   {
     "id": "tgt-900d5f6a",
@@ -6157,8 +8542,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*",
+        "final energy consumption"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "zero-emission building*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission reductions”); cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-237c50bb",
@@ -6177,34 +8580,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "building renovation",
       "national building renovation plan"
     ],
-    "climate_relevance": "none",
-    "celex_number": "32024L1275",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": false,
-    "target_number": 5
-  },
-  {
-    "id": "tgt-74817bd4",
-    "policy_id": "epbd-recast",
-    "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
-    "policy_short": "Energy Performance of Buildings Directive",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Article 3 — National building renovation plan",
-    "target_text": "Each Member State shall establish a national building renovation plan to ensure the renovation of the national stock of residential and non-residential buildings, both public and private, into a highly energy-efficient and decarbonised building stock by 2050, with the objective to transform existing buildings into zero-emission buildings.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "by 2050",
-    "indicators": [
-      "zero-emission buildings",
-      "building renovation"
-    ],
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cd617c8f",
@@ -6225,8 +8616,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy-efficient",
+        "energy poverty"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "zero-emission building*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3b113ab6",
@@ -6244,11 +8653,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "energy performance"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy-efficient"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy performance”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b7f9d5ee",
@@ -6269,8 +8688,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings",
+        "zero-emission building*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 7,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 6(1) — Exemplary role of public bodies’ buildings (similarity 0.33)"
   },
   {
     "id": "tgt-44ca28df",
@@ -6291,28 +8721,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "buildings"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 10
-  },
-  {
-    "id": "tgt-38354e77",
-    "policy_id": "epbd-recast",
-    "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
-    "policy_short": "Energy Performance of Buildings Directive",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Article 7 — New buildings",
-    "target_text": "Those maximum limit values shall be in line with the Union’s objective of achieving climate neutrality.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024L1275",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": true,
-    "target_number": 11
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c551d65e",
@@ -6331,11 +8752,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "energy performance",
       "minimum energy performance requirements"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": false,
-    "target_number": 12
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "renovate*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
+    "relevant": true,
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2ad08a12",
@@ -6355,11 +8789,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "maximum energy performance threshold",
       "non-residential building stock"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": false,
-    "target_number": 13
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "buildings",
+        "building stock"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy performance”).",
+    "relevant": true,
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1672096b",
@@ -6378,11 +8824,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "energy performance",
       "energy performance threshold"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy performance”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 11,
+    "duplicate_of": "Similar target: Renovation Wave — Section 1 (Boosting building renovation for climate neutrality and recovery) (similarity 0.25)"
   },
   {
     "id": "tgt-74ba8943",
@@ -6405,8 +8861,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "primary energy"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "renovate*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0adeee0d",
@@ -6427,8 +8900,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "primary energy"
+      ],
+      "buildings": [
+        "building",
+        "renovation*",
+        "zero-emission building*",
+        "building stock"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fc2da23e",
@@ -6450,8 +8940,29 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings",
+      "water"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "primary energy"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "building stock"
+      ],
+      "water": [
+        "flood*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“floods”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-562c68e8",
@@ -6469,11 +8980,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "energy performance"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": false,
-    "target_number": 18
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "building stock"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy performance”).",
+    "relevant": true,
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-98d88116",
@@ -6495,8 +9017,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "buildings",
+        "zero-emission building*",
+        "building stock"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“energy performance”).",
     "relevant": true,
-    "target_number": 19
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-32e5f199",
@@ -6517,8 +9052,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "renovation*",
+        "zero-emission building*",
+        "building stock"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 20
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0b0cc7a3",
@@ -6537,8 +9085,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "primary energy"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "renovate*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 21
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2b004764",
@@ -6557,8 +9122,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 22
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-86f1ac80",
@@ -6577,8 +9152,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 23
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-21c2285b",
@@ -6599,8 +9184,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 24
+    "target_number": 21,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a540e567",
@@ -6619,8 +9216,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "primary energy"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "zero-emission building*",
+        "building stock"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“zero-emission building”).",
     "relevant": true,
-    "target_number": 25
+    "target_number": 22,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dbfb15c4",
@@ -6641,8 +9255,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "fossil fuel*"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "zero-emission building*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“zero-emission building”).",
     "relevant": true,
-    "target_number": 26
+    "target_number": 23,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5181ad17",
@@ -6665,30 +9295,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": true,
-    "target_number": 27
-  },
-  {
-    "id": "tgt-1363ceb5",
-    "policy_id": "epbd-recast",
-    "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
-    "policy_short": "Energy Performance of Buildings Directive",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Article 11 — Zero-emission buildings",
-    "target_text": "The maximum threshold for the energy demand of a zero-emission building shall be at least 10 % lower than the threshold for total primary energy use established at Member State level for nearly zero-energy buildings on 28 May 2024.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [
-      "nearly zero-energy buildings"
+    "sectors": [
+      "energy",
+      "buildings"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024L1275",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sector_evidence": {
+      "energy": [
+        "primary energy",
+        "energy demand"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "zero-emission building*",
+        "nearly zero-energy"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“energy demand”).",
     "relevant": true,
-    "target_number": 28
+    "target_number": 24,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e25bd989",
@@ -6706,11 +9332,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "renovation passport"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": false,
-    "target_number": 29
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
+    "relevant": true,
+    "target_number": 25,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e8f3be7b",
@@ -6731,8 +9367,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "fossil fuel*"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "boiler*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“phase-out”).",
     "relevant": true,
-    "target_number": 30
+    "target_number": 26,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-173ee764",
@@ -6750,11 +9402,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recharging point"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": false,
-    "target_number": 31
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "mobility",
+        "recharging",
+        "car"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
+    "relevant": true,
+    "target_number": 27,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a5cd7880",
@@ -6770,11 +9434,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": false,
-    "target_number": 32
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "mobility",
+        "vehicle*",
+        "recharging",
+        "car"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
+    "relevant": true,
+    "target_number": 28,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d65bef80",
@@ -6793,8 +9470,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings"
+      ],
+      "transport": [
+        "mobility"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 33
+    "target_number": 29,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1a64dd3e",
@@ -6810,11 +9501,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": false,
-    "target_number": 34
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "mobility",
+        "vehicle*",
+        "recharging",
+        "car"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
+    "relevant": true,
+    "target_number": 30,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4d0579d6",
@@ -6830,11 +9534,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "by 1 January 2033",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings"
+      ],
+      "transport": [
+        "mobility",
+        "car"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“pre-cabling”).",
     "relevant": true,
-    "target_number": 35
+    "target_number": 31,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c9a5a7a2",
@@ -6850,31 +9569,59 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "relevant": false,
-    "target_number": 36
+    "sectors": [
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "renovation*"
+      ],
+      "transport": [
+        "mobility",
+        "recharging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
+    "relevant": true,
+    "target_number": 32,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-bb7b7612",
+    "id": "tgt-aa241309",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
     "document_type": "directive",
     "policy_area": "Energy",
     "article": "Article 17 — Financial incentives, skills and market barriers",
-    "target_text": "Those funding sources shall be deployed consistently with a path to achieving a zero-emission building stock by 2050.",
+    "target_text": "Member States shall make best cost-effective use of national financing and financing available established at Union level, in particular the Recovery and Resilience Facility, the Social Climate Fund, the Cohesion fund, InvestEU, auctioning revenues from emission trading pursuant to Directive 2003/87/EC of the European Parliament and of the Council (31) and other public funding sources. Those funding sources shall be deployed consistently with a path to achieving a zero-emission building stock by 2050.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "qualitative",
     "timeline": "by 2050",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "both",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "zero-emission building*",
+        "building stock"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“zero-emission building”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“auctioning revenues”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 37
+    "target_number": 33,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fbcb16c9",
@@ -6893,8 +9640,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "primary energy"
+      ],
+      "buildings": [
+        "building",
+        "renovation*",
+        "zero-emission building*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“financial incentives”).",
     "relevant": true,
-    "target_number": 38
+    "target_number": 34,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-01bce5f3",
@@ -6913,8 +9676,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "primary energy"
+      ],
+      "buildings": [
+        "buildings",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“financial incentives”).",
     "relevant": true,
-    "target_number": 39
+    "target_number": 35,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4671eda2",
@@ -6937,8 +9715,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "primary energy",
+        "energy demand"
+      ],
+      "buildings": [
+        "buildings",
+        "zero-emission building*",
+        "energy performance certificate*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); cuts energy demand, which cuts the emissions of supplying that energy (“energy demand”); switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 40
+    "target_number": 36,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-75cad6ac",
@@ -6959,8 +9755,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "sectors": [
+      "buildings",
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "urban"
+      ],
+      "transport": [
+        "mobility"
+      ],
+      "industry": [
+        "circular econom*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net zero”); switches supply or fuels to low-carbon sources (“low-carbon”); cuts material and product emissions through circularity (less primary production means fewer process emissions) (“circular economy”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": "Duplicate wording: Common Provisions Regulation (Cohesion) — Article 5(1)(b) — policy objective 2 (greener, low-carbon) (similarity 1.00)"
   },
   {
     "id": "tgt-bd266d7c",
@@ -6983,8 +9797,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": "Similar target: Deforestation Regulation — Article 1(1)(b) — Subject matter and scope (similarity 0.33)"
   },
   {
     "id": "tgt-d5a1299e",
@@ -7005,8 +9829,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2f85d592",
@@ -7028,8 +9862,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-46805553",
@@ -7050,8 +9888,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0044637b",
@@ -7072,8 +9914,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2a8611c2",
@@ -7094,8 +9940,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-eee1a233",
@@ -7116,8 +9966,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9872a437",
@@ -7139,30 +9993,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 9
-  },
-  {
-    "id": "tgt-c3ad01bb",
-    "policy_id": "erdf-regulation",
-    "policy_name": "Regulation (EU) 2021/1058 on the European Regional Development Fund and on the Cohesion Fund",
-    "policy_short": "European Regional Development Fund",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 7(1)(h)",
-    "target_text": "investment related to production, processing, transport, distribution, storage or combustion of fossil fuels, with the exception of:",
-    "target_label": "commitment",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "exclusion - fossil fuels"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1058",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
-    "relevant": true,
-    "target_number": 10
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-50b923f2",
@@ -7178,11 +10014,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
-    "relevant": true,
-    "target_number": 11
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "fossil fuel*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c816310d",
@@ -7201,8 +10047,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1058",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1058",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "urban"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate-neutral”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-26a40b3f",
@@ -7221,8 +10077,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“scenario”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cfcca98e",
@@ -7241,8 +10101,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bb340a12",
@@ -7261,8 +10131,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions reduction”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": "Similar target: Fit for 55 Package — 1.'Fit for 55': delivering the EU's 2030 Climate Target on the way to climate neutrality (similarity 0.35)"
   },
   {
     "id": "tgt-69cf7533",
@@ -7281,8 +10155,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "drought*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“droughts”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dfc0ebbe",
@@ -7304,8 +10188,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilient”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-877cf0ab",
@@ -7327,8 +10215,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilient”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": "Similar target: European Climate Law — Article 5(1) — Adaptation to climate change (similarity 0.17; cited in the text)"
   },
   {
     "id": "tgt-661ac674",
@@ -7351,8 +10243,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": "Similar target: Managing Climate Risks — Section 1.2 — EU foundations for climate risk management (similarity 0.39)"
   },
   {
     "id": "tgt-d9d32922",
@@ -7376,8 +10272,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-00f35d0e",
@@ -7398,28 +10298,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilient”).",
     "relevant": true,
-    "target_number": 9
-  },
-  {
-    "id": "tgt-07130305",
-    "policy_id": "eu-adaptation-strategy",
-    "policy_name": "Communication COM(2021) 82 — Forging a climate-resilient Europe: the new EU Strategy on Adaptation to Climate Change",
-    "policy_short": "EU Adaptation Strategy",
-    "document_type": "communication",
-    "policy_area": "Climate",
-    "article": "Section 2 — Forging a climate-resilient Union",
-    "target_text": "It sets both the framework for achieving climate neutrality and the ambition on adaptation by 2050 by integrating the internationally-shared vision for action into EU law (i.e. the global goal on adaptation in Article 7 of the Paris Agreement and Sustainable Development Goal 13).",
-    "target_label": "goal",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
-    "timeline": "by 2050",
-    "indicators": [],
-    "climate_relevance": "both",
-    "celex_number": "52021DC0082",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
-    "relevant": true,
-    "target_number": 10
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-73c54a8f",
@@ -7441,8 +10325,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f246d693",
@@ -7463,8 +10351,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“climate-adapt”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d3ae0974",
@@ -7486,8 +10384,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5505e411",
@@ -7509,8 +10411,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-203e0ccc",
@@ -7532,8 +10438,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate action”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5729b9e1",
@@ -7555,8 +10465,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate action”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1e2b4e6d",
@@ -7578,8 +10492,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-51aa6776",
@@ -7602,8 +10520,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 18
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3bdb39dc",
@@ -7622,8 +10544,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 19
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c3fd501f",
@@ -7645,8 +10571,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“disaster risk”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”).",
     "relevant": true,
-    "target_number": 20
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b224e5d0",
@@ -7668,28 +10598,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“protection gap”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“insurance”).",
     "relevant": true,
-    "target_number": 21
-  },
-  {
-    "id": "tgt-48f3d3cf",
-    "policy_id": "eu-adaptation-strategy",
-    "policy_name": "Communication COM(2021) 82 — Forging a climate-resilient Europe: the new EU Strategy on Adaptation to Climate Change",
-    "policy_short": "EU Adaptation Strategy",
-    "document_type": "communication",
-    "policy_area": "Climate",
-    "article": "Section 15 — Closing the climate protection gap",
-    "target_text": "According to a report by the insurance industry, a 1% increase in insurance coverage could reduce the global cost of climate-related disasters to taxpayers or governments by 22% 64 .",
-    "target_label": "other",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "adaptation",
-    "celex_number": "52021DC0082",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
-    "relevant": true,
-    "target_number": 22
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6d0c314e",
@@ -7710,8 +10624,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 23
+    "target_number": 21,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-090d61f8",
@@ -7732,8 +10650,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“climate proofing”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“climate proofing”).",
     "relevant": true,
-    "target_number": 24
+    "target_number": 22,
+    "duplicate_of": "Similar target: Common Provisions Regulation (Cohesion) — Article 73(2)(j) — climate proofing of infrastructure operations (similarity 0.25)"
   },
   {
     "id": "tgt-d8855c4e",
@@ -7752,8 +10674,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adapt to climate”).",
     "relevant": true,
-    "target_number": 25
+    "target_number": 23,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-19ca8dac",
@@ -7774,8 +10700,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0082",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“adaptation plans”).",
     "relevant": true,
-    "target_number": 26
+    "target_number": 24,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ca094b73",
@@ -7797,8 +10727,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-eaf1577d",
@@ -7822,8 +10756,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“reducing emissions”); increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-33205bdb",
@@ -7841,34 +10779,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "climate-neutrality objective"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 3
-  },
-  {
-    "id": "tgt-051f2228",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 2(1) — Climate-neutrality objective",
-    "target_text": "Union-wide greenhouse gas emissions and removals regulated in Union law shall be balanced within the Union at the latest by 2050, thus reducing emissions to net zero by that date, and the Union shall aim to achieve negative emissions thereafter.",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "qualitative",
-    "timeline": "by 2050",
-    "indicators": [
-      "greenhouse gas emissions",
-      "removals"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 4
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8bf4d88c",
@@ -7891,8 +10810,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net greenhouse gas emissions”); increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 4,
+    "duplicate_of": "Similar target: EU Adaptation Strategy — Section 1 — The reality of climate change impacts – the need to act NOW (similarity 0.29)"
   },
   {
     "id": "tgt-48d710cd",
@@ -7917,8 +10840,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "carbon sink*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate target”); increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c5714f34",
@@ -7939,32 +10872,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate target”).",
     "relevant": true,
-    "target_number": 7
-  },
-  {
-    "id": "tgt-1201f2df",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 4(1) — Intermediate Union climate targets",
-    "target_text": "In order to reach the climate-neutrality objective set out in Article 2(1), the binding Union 2030 climate target shall be a domestic reduction of net greenhouse gas emissions (emissions after deduction of removals) by at least 55 % compared to 1990 levels by 2030.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "by 2030",
-    "indicators": [
-      "net greenhouse gas emissions",
-      "greenhouse gas emissions",
-      "removals"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 8
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-530fa44b",
@@ -7985,8 +10898,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "carbon sink*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate targets”); increases removals or protects the sink (land, forests or engineered storage) (“carbon sink”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1ae33f36",
@@ -8005,8 +10928,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate targets”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3769a95e",
@@ -8025,8 +10952,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate target”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bdf617b6",
@@ -8046,171 +10977,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "resilience",
       "vulnerability to climate change"
     ],
-    "climate_relevance": "both",
+    "climate_relevance": "adaptation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 12
-  },
-  {
-    "id": "tgt-0913f0ed",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 6(1)(a) — Assessment of Union progress and measures",
-    "target_text": "the collective progress made by all Member States towards the achievement of the climate-neutrality objective set out in Article 2(1) of this Regulation;",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 13
-  },
-  {
-    "id": "tgt-6e446bfd",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 6(2)(a) — Assessment of Union progress and measures",
-    "target_text": "the consistency of Union measures with the climate-neutrality objective set out in Article 2(1);",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 14
-  },
-  {
-    "id": "tgt-0e50947f",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 6(3) — Assessment of Union progress and measures",
-    "target_text": "Where, based on the assessments referred to in paragraphs 1 and 2 of this Article, the Commission finds that Union measures are inconsistent with the climate-neutrality objective set out in Article 2(1) or inconsistent with ensuring progress on adaptation as referred to in Article 5, or that the progress towards that climate-neutrality objective or on adaptation as referred to in Article 5 is insufficient, it shall take the necessary measures in accordance with the Treaties.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "both",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 15
-  },
-  {
-    "id": "tgt-2b180ebd",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 6(4) — Assessment of Union progress and measures",
-    "target_text": "The Commission shall assess the consistency of any draft measure or legislative proposal, including budgetary proposals, with the climate-neutrality objective set out in Article 2(1) and the Union 2030 and 2040 climate targets before adoption, and include that assessment in any impact assessment accompanying these measures or proposals, and make the result of that assessment publicly available at the time of adoption.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 16
-  },
-  {
-    "id": "tgt-f64e6aa3",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 7(1)(a) — Assessment of national measures",
-    "target_text": "the consistency of national measures identified, on the basis of the integrated national energy and climate plans, national long-term strategies and the biennial progress reports submitted in accordance with Regulation (EU) 2018/1999, as relevant for the achievement of the climate-neutrality objective set out in Article 2(1) of this Regulation with that objective;",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 17
-  },
-  {
-    "id": "tgt-e3739f0d",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 7(2) — Assessment of national measures",
-    "target_text": "Where the Commission finds, after due consideration of the collective progress assessed in accordance with Article 6(1), that a Member State’s measures are inconsistent with the climate-neutrality objective set out in Article 2(1) or inconsistent with ensuring progress on adaptation as referred to in Article 5, it may issue recommendations to that Member State.",
-    "target_label": "objective",
-    "obligation": "voluntary",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "both",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 18
-  },
-  {
-    "id": "tgt-a8a956d9",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 8(1) — Common provisions on Commission assessment",
-    "target_text": "The Commission shall base its first and second assessments referred to in Articles 6 and 7 on an indicative, linear trajectory which sets out the pathway for the reduction of net emissions at Union level and which links the Union 2030 climate target referred to in Article 4(1), the Union 2040 climate target, when adopted, and the climate-neutrality objective set out in Article 2(1).",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 19
-  },
-  {
-    "id": "tgt-1d4e05ee",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 8(2) — Common provisions on Commission assessment",
-    "target_text": "Following the first and second assessments referred to in paragraph 1, the Commission shall base any subsequent assessment on an indicative, linear trajectory linking the Union 2040 climate target, when adopted, and the climate-neutrality objective set out in Article 2(1).",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 20
+    "target_number": 10,
+    "duplicate_of": "Duplicate wording: Managing Climate Risks — Section 1.2 — EU foundations for climate risk management (similarity 0.54)"
   },
   {
     "id": "tgt-36057ac8",
@@ -8229,8 +11004,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate-neutral”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilient”).",
     "relevant": true,
-    "target_number": 21
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-48ba823c",
@@ -8246,53 +11025,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "qualitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 22
-  },
-  {
-    "id": "tgt-8c6c81d5",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 13(1) (replacing Article 1(1)(a) of Regulation (EU) 2018/1999)",
-    "target_text": "implement strategies and measures designed to meet the objectives and targets of the Energy Union and the long-term Union greenhouse gas emissions commitments consistent with the Paris Agreement, in particular the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 of the European Parliament and of the Council (*1), and, for the first ten-year period, from 2021 to 2030, in particular the Union’s 2030 targets for energy and climate;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "from 2021 to 2030",
-    "indicators": [
-      "greenhouse gas emissions"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 23
-  },
-  {
-    "id": "tgt-5c8b9f18",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 13(3) (replacing Article 3(2)(f) of Regulation (EU) 2018/1999)",
-    "target_text": "an assessment of the impacts of the planned policies and measures to meet the objectives referred to in point (b) of this paragraph, including their consistency with the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, the long-term greenhouse gas emission reduction objectives under the Paris Agreement and the long-term strategies as referred to in Article 15 of this Regulation;’;",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 24
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5450319c",
@@ -8308,11 +11049,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "unspecified",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 25
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-69956688",
@@ -8328,11 +11073,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "qualitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "adaptation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“scenarios”).",
     "relevant": true,
-    "target_number": 26
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c35fd9ba",
@@ -8348,36 +11097,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "qualitative",
     "timeline": "By 1 January 2020",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 27
-  },
-  {
-    "id": "tgt-d337ee9a",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 13(6)(b) (replacing Article 15(3)(c) of Regulation (EU) 2018/1999)",
-    "target_text": "achieving long-term greenhouse gas emission reductions and enhancements of removals by sinks in all sectors in accordance with the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, in the context of necessary greenhouse gas emission reductions and enhancements of removals by sinks according to the Intergovernmental Panel on Climate Change (IPCC) to reduce the Union’s greenhouse gas emissions in a cost-effective manner and enhance removals by sinks in pursuit of the long-term temperature goal in the Paris Agreement so as to achieve a balance between anthropogenic emissions by sources and removals by sinks of greenhouse gases within the Union and, as appropriate, achieve negative emissions thereafter;’;",
-    "target_label": "goal",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "greenhouse gas emissions",
-      "greenhouse gas emission reductions",
-      "removals",
-      "emission reductions"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 28
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 15,
+    "duplicate_of": "Duplicate wording: Governance Regulation — Article 15(1) — Long-term strategies (similarity 0.46)"
   },
   {
     "id": "tgt-2afa204b",
@@ -8393,11 +11121,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "unspecified",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 29
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-797c8191",
@@ -8413,11 +11145,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "unspecified",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 30
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 17,
+    "duplicate_of": "Similar target: LULUCF Regulation — Article 4(4) — Commitments and targets (similarity 0.27)"
   },
   {
     "id": "tgt-182d72ef",
@@ -8436,50 +11172,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 31
-  },
-  {
-    "id": "tgt-08ced768",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 13(10)(a) (replacing point 3.1.1(i), Section A, Part 1, Annex I to Regulation (EU) 2018/1999)",
-    "target_text": "Policies and measures to achieve the target set under Regulation (EU) 2018/842 as referred to in point 2.1.1 of this Section and policies and measures to comply with Regulation (EU) 2018/841, covering all key emitting sectors and sectors for the enhancement of removals, with an outlook to the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119’;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "removals"
+    "sectors": [
+      "energy"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "sector_evidence": {
+      "energy": [
+        "energy union"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate and energy targets”).",
     "relevant": true,
-    "target_number": 32
-  },
-  {
-    "id": "tgt-434d2845",
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 13(10)(b) (inserting point 5.5, Section B, Part 1, Annex I to Regulation (EU) 2018/1999)",
-    "target_text": "The contribution of planned policies and measures to the achievement of the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119’;",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 33
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6c18debe",
@@ -8495,11 +11199,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "unspecified",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "relevant": true,
-    "target_number": 34
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cc2d0ac7",
@@ -8520,8 +11228,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "sectors": [
+      "industry",
+      "energy"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ],
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“allowance”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5a7e8ff4",
@@ -8539,11 +11261,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of allowances allocated free of charge"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "sectors": [
+      "industry",
+      "energy"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ],
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“allowances”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-75235150",
@@ -8559,11 +11295,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
-    "relevant": false,
-    "target_number": 3
+    "sectors": [
+      "industry",
+      "energy"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ],
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“allowances”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e3273d1b",
@@ -8585,8 +11335,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "sectors": [
+      "industry",
+      "energy"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ],
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“allowances”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-627e15d9",
@@ -8607,8 +11371,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "sectors": [
+      "industry",
+      "energy"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ],
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“allowances”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e2a116d1",
@@ -8629,18 +11407,32 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
+    "sectors": [
+      "industry",
+      "energy"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ],
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“allowances”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-70c2fffd",
+    "id": "tgt-b32fc266",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "1. Introduction - turning an urgent challenge into a unique opportunity",
-    "target_text": "It is a new growth strategy that aims to transform the EU into a fair and prosperous society, with a modern, resource-efficient and competitive economy where there are no net emissions of greenhouse gases in 2050 and where economic growth is decoupled from resource use.",
+    "target_text": "The European Green Deal is a response to these challenges. It is a new growth strategy that aims to transform the EU into a fair and prosperous society, with a modern, resource-efficient and competitive economy where there are no net emissions of greenhouse gases in 2050 and where economic growth is decoupled from resource use.",
     "target_label": "objective",
     "obligation": "voluntary",
     "target_type": "unspecified",
@@ -8651,30 +11443,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 1
-  },
-  {
-    "id": "tgt-8e1d4f83",
-    "policy_id": "eu-green-deal",
-    "policy_name": "Communication COM(2019) 640 - The European Green Deal",
-    "policy_short": "European Green Deal",
-    "document_type": "communication",
-    "policy_area": "Cross-cutting",
-    "article": "2.1.1 Increasing the EU’s climate ambition for 2030 and 2050",
-    "target_text": "This will enshrine the 2050 climate neutrality objective in legislation.",
-    "target_label": "objective",
-    "obligation": "voluntary",
-    "target_type": "unspecified",
-    "timeline": "2050",
-    "indicators": [
-      "climate neutrality"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "52019DC0640",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "relevant": true,
-    "target_number": 2
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a4e25ea5",
@@ -8696,8 +11470,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission reductions”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1ee15483",
@@ -8715,11 +11493,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "packaging reusable or recyclable"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "relevant": false,
-    "target_number": 4
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "industr*",
+        "packaging",
+        "recycl*",
+        "circular econom*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recyclable”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ce6f27be",
@@ -8740,8 +11531,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "coal"
+      ],
+      "industry": [
+        "industr*",
+        "steel",
+        "circular econom*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“circular economy”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e659cd0e",
@@ -8762,8 +11569,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*",
+        "mobility"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 5,
+    "duplicate_of": "Duplicate wording: Fit for 55 Package — 2.2.2 Cleaner mobility and transport fuels (similarity 0.47)"
   },
   {
     "id": "tgt-cbc6b28e",
@@ -8785,8 +11603,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "mobility",
+        "vehicle*",
+        "recharging",
+        "refuelling"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”); switches supply or fuels to low-carbon sources (“zero- and low-emission”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8b3862c0",
@@ -8804,33 +11635,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of CAP budget contributing to climate action"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "relevant": true,
-    "target_number": 8
-  },
-  {
-    "id": "tgt-94201942",
-    "policy_id": "eu-green-deal",
-    "policy_name": "Communication COM(2019) 640 - The European Green Deal",
-    "policy_short": "European Green Deal",
-    "document_type": "communication",
-    "policy_area": "Cross-cutting",
-    "article": "2.1.7 Preserving and restoring ecosystems and biodiversity",
-    "target_text": "The EU and its global partners need to halt biodiversity loss.",
-    "target_label": "objective",
-    "obligation": "voluntary",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "biodiversity loss"
+    "sectors": [
+      "agrifood",
+      "transport"
     ],
-    "climate_relevance": "adaptation",
-    "celex_number": "52019DC0640",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*",
+        "farm",
+        "common agricultural policy",
+        "food"
+      ],
+      "transport": [
+        "maritime"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate action”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f7913f3b",
@@ -8851,28 +11677,48 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "soil"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-5f7c1722",
+    "id": "tgt-b7b646cc",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "2.1.1 Increasing the EU’s climate ambition for 2030 and 2050",
-    "target_text": "The Commission has already set out a clear vision of how to achieve climate neutrality by 2050 5 .",
-    "target_label": "target",
+    "target_text": "To set out clearly the conditions for an effective and fair transition, to provide predictability for investors, and to ensure that the transition is irreversible, the Commission will propose the first European ‘Climate Law’ by March 2020. This will enshrine the 2050 climate neutrality objective in legislation.",
+    "target_label": "objective",
     "obligation": "voluntary",
     "target_type": "qualitative",
-    "timeline": "by 2050",
-    "indicators": [],
+    "timeline": "2050",
+    "indicators": [
+      "climate neutrality"
+    ],
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4fe17786",
@@ -8891,8 +11737,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 10,
+    "duplicate_of": "Similar target: Horizon Europe — Article 7 — Principles of the Programme (similarity 0.25)"
   },
   {
     "id": "tgt-9ecb3b97",
@@ -8913,8 +11763,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“reduce greenhouse gas”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 11,
+    "duplicate_of": "Similar target: Fit for 55 Package — 2.2.1 Industrial transformation and carbon pricing (similarity 0.27)"
   },
   {
     "id": "tgt-50e7fb22",
@@ -8933,8 +11787,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy infrastructure"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“energy infrastructure”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 12,
+    "duplicate_of": "Similar target: TEN-E Regulation — Art. 13(1) (similarity 0.19; cited in the text)"
   },
   {
     "id": "tgt-2587bdf1",
@@ -8950,11 +11814,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "qualitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "both",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "biodiversity",
+        "forest*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”). Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“ecosystems”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c5018ef7",
@@ -8970,11 +11846,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "relevant": false,
-    "target_number": 16
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“climate mainstreaming”).",
+    "relevant": true,
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c58aac0f",
@@ -8990,11 +11870,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "relevant": false,
-    "target_number": 17
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“just transition”).",
+    "relevant": true,
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e16d2c6d",
@@ -9010,11 +11894,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "by 2025",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate target”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“just transition”).",
     "relevant": true,
-    "target_number": 18
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5f1802a1",
@@ -9033,8 +11921,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 19
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d0cf5ab7",
@@ -9053,8 +11945,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 20
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dee030db",
@@ -9075,28 +11971,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy storage"
+      ],
+      "transport": [
+        "vehicle*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
-  },
-  {
-    "id": "tgt-e76df0ff",
-    "policy_id": "euro-7-regulation",
-    "policy_name": "Regulation (EU) 2024/1257 on type-approval of motor vehicles and engines with respect to their emissions (Euro 7)",
-    "policy_short": "Euro 7 Regulation",
-    "document_type": "regulation",
-    "policy_area": "Transport",
-    "article": "Article 4(6), point (b)",
-    "target_text": "OBM systems capable of monitoring exhaust emissions;",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024R1257",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
-    "relevant": true,
-    "target_number": 2
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ade6ec07",
@@ -9112,11 +12002,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "both",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”). Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“surveillance”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-793086cc",
@@ -9138,8 +12038,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission reductions”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-93dbf851",
@@ -9160,8 +12070,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*",
+        "heavy-duty"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f1ce8871",
@@ -9180,8 +12101,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "battery"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c7e1b871",
@@ -9200,8 +12131,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "vehicle*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0707ce8f",
@@ -9222,8 +12163,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-79d6bf97",
@@ -9243,11 +12194,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "EMA mandate",
       "cross-border health threats decision"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "relevant": false,
-    "target_number": 2
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "disease*"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“disease”).",
+    "relevant": true,
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9417b895",
@@ -9265,11 +12227,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "all-hazard risk assessment"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "relevant": false,
-    "target_number": 3
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-755ee759",
@@ -9290,8 +12262,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-67b5b233",
@@ -9309,11 +12291,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "EU emergency recognition"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "relevant": false,
-    "target_number": 5
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "public health"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“public health”).",
+    "relevant": true,
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9bdcace3",
@@ -9335,8 +12328,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2eac638f",
@@ -9355,11 +12358,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "Steering Group for Medical Devices",
       "medical device shortages"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "relevant": false,
-    "target_number": 7
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-eb2c3887",
@@ -9377,11 +12390,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "EU pandemic preparedness plan"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "relevant": false,
-    "target_number": 8
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "pandemic*"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 8,
+    "duplicate_of": "Similar target: Cross-Border Health Threats Regulation — Article 5(1) (similarity 0.25)"
   },
   {
     "id": "tgt-a2cc85d5",
@@ -9399,11 +12423,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "EU audit process"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "relevant": false,
-    "target_number": 9
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-74af2c95",
@@ -9421,11 +12455,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "epidemiological surveillance system"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "relevant": false,
-    "target_number": 10
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“surveillance”).",
+    "relevant": true,
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-12dfdfa6",
@@ -9443,11 +12487,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "contact tracing"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "relevant": false,
-    "target_number": 11
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“surveillance”).",
+    "relevant": true,
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2dcdb269",
@@ -9466,11 +12520,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "global health security",
       "outbreaks at source"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "relevant": false,
-    "target_number": 12
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "public health"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“public health”).",
+    "relevant": true,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-13b25a34",
@@ -9491,8 +12556,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-61fe26fe",
@@ -9510,33 +12585,54 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "HERA"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52020DC0724",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "relevant": false,
-    "target_number": 14
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-74fb9c09",
+    "id": "tgt-75f1b0a6",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
     "article": "Annex VII(1) — Maximum quantities and calculation of reference values and quota",
-    "target_text": "The maximum amount of hydrofluorocarbons allowed to be placed on the Union market in a given year is as follows:",
+    "target_text": "The maximum amount of hydrofluorocarbons allowed to be placed on the Union market in a given year is as follows: Years Maximum Quantity in tonnes CO2 equivalent 2025 – 2026 42 874 410 2027 – 2029 21 665 691 2030 – 2032 9 132 097 2033 – 2035 8 445 713 2036 – 2038 6 782 265 2039 – 2041 6 136 732 2042 – 2044 5 491 199 2045 – 2047 4 845 666 2048 – 2049 4 200 133 2050 onwards 0",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "unspecified",
     "timeline": "2025 to 2050 onwards",
     "indicators": [
+      "CO2 equivalent",
       "hydrofluorocarbons placed on the Union market (tonnes CO2 equivalent)"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "hydrofluorocarbon*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“hydrofluorocarbons”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-777f8d37",
@@ -9555,11 +12651,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "CO2 equivalent",
       "2015 base-value for HFC maximum quantity (tonnes CO2 equivalent)"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "relevant": true,
-    "target_number": 2
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9827d28c",
@@ -9581,8 +12687,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1d7cca1c",
@@ -9604,8 +12720,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*",
+        "fluorinated greenhouse gas*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6e36ba24",
@@ -9627,8 +12754,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry",
+      "water"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ],
+      "water": [
+        "leakage*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5cde3d7b",
@@ -9650,8 +12791,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry",
+      "water"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ],
+      "water": [
+        "leakage*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4095939a",
@@ -9673,8 +12828,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry",
+      "water"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ],
+      "water": [
+        "leakage*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-07c922a0",
@@ -9696,8 +12865,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry",
+      "water"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ],
+      "water": [
+        "leakage*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1eb2c4e3",
@@ -9719,8 +12902,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry",
+      "water"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ],
+      "water": [
+        "leakage*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ad13d0c2",
@@ -9741,8 +12938,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“global warming potential”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bb0d4f19",
@@ -9765,8 +12972,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3c2e1f1c",
@@ -9788,8 +13005,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "heat pump*"
+      ],
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”); switches supply or fuels to low-carbon sources (“heat pumps”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-23e32e4b",
@@ -9811,8 +13042,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b7439b50",
@@ -9833,8 +13074,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "recycl*",
+        "switchgear"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycled”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b6eb909a",
@@ -9855,8 +13107,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ce454cb9",
@@ -9878,8 +13140,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "fluorinated greenhouse gas*",
+        "switchgear"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-29ff133e",
@@ -9900,8 +13173,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "switchgear"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 17
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fccfd356",
@@ -9922,8 +13205,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "switchgear"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 18
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-06baa173",
@@ -9944,8 +13237,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "switchgear"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“global warming potential”).",
     "relevant": true,
-    "target_number": 19
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0a15046d",
@@ -9966,8 +13269,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "switchgear"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“global warming potential”).",
     "relevant": true,
-    "target_number": 20
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f4fc64f4",
@@ -9989,8 +13302,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”).",
     "relevant": true,
-    "target_number": 21
+    "target_number": 21,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4fe57798",
@@ -10011,8 +13334,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "hydrofluorocarbon*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“hydrofluorocarbons”).",
     "relevant": true,
-    "target_number": 22
+    "target_number": 22,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a33963ca",
@@ -10034,8 +13367,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "heat pump*"
+      ],
+      "industry": [
+        "fluorinated greenhouse gas*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“fluorinated greenhouse gases”); switches supply or fuels to low-carbon sources (“heat pumps”).",
     "relevant": true,
-    "target_number": 23
+    "target_number": 23,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f56a0626",
@@ -10054,18 +13401,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 24
+    "target_number": 24,
+    "duplicate_of": "Similar target: Multiannual Financial Framework — Article 9(2) (similarity 0.35)"
   },
   {
-    "id": "tgt-41d5088c",
+    "id": "tgt-878d2403",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
     "article": "Article 19 — Products or equipment pre-charged with hydrofluorocarbons",
-    "target_text": "This Article shall not apply to undertakings that placed on the market less than 10 tonnes of CO2 equivalent of hydrofluorocarbons, per year, contained in the products or equipment referred to in paragraph 1.",
+    "target_text": "6. This Article shall not apply to undertakings that placed on the market less than 10 tonnes of CO2 equivalent of hydrofluorocarbons, per year, contained in the products or equipment referred to in paragraph 1.",
     "target_label": "commitment",
     "obligation": "mandatory",
     "target_type": "quantitative",
@@ -10076,8 +13433,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "hydrofluorocarbon*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“hydrofluorocarbons”).",
     "relevant": true,
-    "target_number": 25
+    "target_number": 25,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-af6b2c36",
@@ -10098,8 +13465,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "hydrofluorocarbon*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“hydrofluorocarbons”).",
     "relevant": true,
-    "target_number": 26
+    "target_number": 26,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-49605178",
@@ -10118,8 +13495,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 27
+    "target_number": 27,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a1f07801",
@@ -10140,8 +13527,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "hydrofluorocarbon*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“hydrofluorocarbons”).",
     "relevant": true,
-    "target_number": 28
+    "target_number": 28,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3344bbe2",
@@ -10162,8 +13559,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "hydrofluorocarbon*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“hydrofluorocarbons”).",
     "relevant": true,
-    "target_number": 29
+    "target_number": 29,
+    "duplicate_of": "Similar target: ReFuelEU Aviation — Annex I (b)(ii) (similarity 0.25)"
   },
   {
     "id": "tgt-cc5d1fda",
@@ -10184,8 +13591,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "hydrofluorocarbon*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“hydrofluorocarbons”).",
     "relevant": true,
-    "target_number": 30
+    "target_number": 30,
+    "duplicate_of": "Similar target: ReFuelEU Aviation — Annex I (b)(ii) (similarity 0.25)"
   },
   {
     "id": "tgt-d8ae4a5f",
@@ -10206,8 +13623,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "hydrofluorocarbon*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“hydrofluorocarbons”).",
     "relevant": true,
-    "target_number": 31
+    "target_number": 31,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f5445a08",
@@ -10229,8 +13656,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate target”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": "Similar target: EU Adaptation Strategy — Section 1 — The reality of climate change impacts – the need to act NOW (similarity 0.35)"
   },
   {
     "id": "tgt-8273e96a",
@@ -10251,8 +13682,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f7c9d98c",
@@ -10274,8 +13715,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": "Similar target: Renovation Wave — Section 1 (Boosting building renovation for climate neutrality and recovery) (similarity 0.29)"
   },
   {
     "id": "tgt-5f156a66",
@@ -10297,76 +13748,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "relevant": true,
-    "target_number": 4
-  },
-  {
-    "id": "tgt-33252dd6",
-    "policy_id": "fit-for-55",
-    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
-    "policy_short": "Fit for 55 Package",
-    "document_type": "communication",
-    "policy_area": "Cross-cutting",
-    "article": "2.2.3 Energy",
-    "target_text": "This should lead to 9% reduction in energy consumption by 2030, compared to the baseline projections",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
-    "timeline": "by 2030",
-    "indicators": [
-      "energy consumption reduction"
+    "sectors": [
+      "energy"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "52021DC0550",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sector_evidence": {
+      "energy": [
+        "renewable energy"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 5
-  },
-  {
-    "id": "tgt-06fd25a7",
-    "policy_id": "fit-for-55",
-    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
-    "policy_short": "Fit for 55 Package",
-    "document_type": "communication",
-    "policy_area": "Cross-cutting",
-    "article": "2.3 A green transition: Protecting nature and increasing the EU's natural carbon sink",
-    "target_text": "It proposes to set an EU target of net greenhouse gas removals in the LULUCF sector of 310 million tons of CO2 equivalent by 2030.",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
-    "timeline": "by 2030",
-    "indicators": [
-      "CO2 equivalent",
-      "removals",
-      "net greenhouse gas removals in the LULUCF sector"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "52021DC0550",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "relevant": true,
-    "target_number": 6
-  },
-  {
-    "id": "tgt-051d70a0",
-    "policy_id": "fit-for-55",
-    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
-    "policy_short": "Fit for 55 Package",
-    "document_type": "communication",
-    "policy_area": "Cross-cutting",
-    "article": "2.2.2 Cleaner mobility and transport fuels",
-    "target_text": "Emissions remain higher than in 1990 and a 90% reduction in overall transport emissions by 2050",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
-    "timeline": "by 2050",
-    "indicators": [
-      "transport emissions"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "52021DC0550",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "relevant": true,
-    "target_number": 7
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f3ad597b",
@@ -10387,30 +13780,181 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy poverty"
+      ],
+      "industry": [
+        "emissions trading"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions trading”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 5,
+    "duplicate_of": "Similar target: Social Climate Fund — Article 1 — Subject matter and scope (similarity 0.28; cited in the text)"
   },
   {
-    "id": "tgt-e7359b3d",
+    "id": "tgt-915011a0",
+    "policy_id": "fit-for-55",
+    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
+    "policy_short": "Fit for 55 Package",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "2.2.3 Energy",
+    "target_text": "The revision of the Energy Efficiency Directive proposes to increase the level of ambition of the energy efficiency targets at EU level and to make them binding. This should lead to 9% reduction in energy consumption by 2030, compared to the baseline projections",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "energy efficiency",
+      "energy consumption reduction"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "52021DC0550",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”).",
+    "relevant": true,
+    "target_number": 6,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(1) — Energy efficiency targets (similarity 0.18; cited in the text)"
+  },
+  {
+    "id": "tgt-5c469240",
+    "policy_id": "fit-for-55",
+    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
+    "policy_short": "Fit for 55 Package",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "2.3 A green transition: Protecting nature and increasing the EU's natural carbon sink",
+    "target_text": "The new proposal looks to reverse the current trend of diminishing CO2 removals and increase the quality and quantity of the EU’s forests and other natural carbon sinks. It proposes to set an EU target of net greenhouse gas removals in the LULUCF sector of 310 million tons of CO2 equivalent by 2030.",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "CO2 equivalent",
+      "removals",
+      "carbon sink",
+      "net greenhouse gas removals in the LULUCF sector"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "52021DC0550",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "forest*",
+        "lulucf",
+        "carbon sink*"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
+    "relevant": true,
+    "target_number": 7,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-19c14f8c",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "2.2.1 Industrial transformation and carbon pricing",
-    "target_text": "This is why the Commission proposes to start applying emissions trading from 2026 for road transport and buildings.",
+    "target_text": "This will be complemented by policy measures to improve the energy efficiency of buildings and energy appliances and systems so that the overall energy needs in our homes and in heating and cooling will also be reduced. This is why the Commission proposes to start applying emissions trading from 2026 for road transport and buildings.",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "qualitative",
     "timeline": "from 2026",
     "indicators": [
+      "energy efficiency",
       "emissions trading for road transport and buildings"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "energy",
+      "buildings",
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency",
+        "heating and cooling"
+      ],
+      "buildings": [
+        "buildings"
+      ],
+      "transport": [
+        "transport*"
+      ],
+      "industry": [
+        "industr*",
+        "emissions trading"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions trading”); cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 8,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-1d4b407a",
+    "policy_id": "fit-for-55",
+    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
+    "policy_short": "Fit for 55 Package",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "2.2.2 Cleaner mobility and transport fuels",
+    "target_text": "2.2.2 Cleaner mobility and transport fuels Next to carbon pricing, other measures are needed to put transport on a firm path to zero emissions, and drive down air pollution as transport represents almost a quarter of the EU’s greenhouse gas emissions and is the main cause of air pollution in cities. Emissions remain higher than in 1990 and a 90% reduction in overall transport emissions by 2050",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2050",
+    "indicators": [
+      "greenhouse gas emissions",
+      "transport emissions"
+    ],
+    "climate_relevance": "both",
+    "celex_number": "52021DC0550",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "buildings",
+      "transport",
+      "health"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "cities"
+      ],
+      "transport": [
+        "transport*",
+        "mobility"
+      ],
+      "health": [
+        "air pollution"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”). Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“air pollution”).",
+    "relevant": true,
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0d509deb",
@@ -10429,8 +13973,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy poverty"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate action”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8c6b0235",
@@ -10452,8 +14006,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission reductions”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2025acfe",
@@ -10472,8 +14036,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*",
+        "mobility"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": "Duplicate wording: European Green Deal — 2.1.5 Accelerating the shift to sustainable and smart mobility (similarity 0.47)"
   },
   {
     "id": "tgt-195a40f2",
@@ -10494,8 +14069,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "energy",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy"
+      ],
+      "ecosystems": [
+        "carbon sink*"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“carbon sink”); switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-27f97df3",
@@ -10513,11 +14102,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of MFF for climate action"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate action”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a4ff486a",
@@ -10538,8 +14137,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": false,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8b90cdb3",
@@ -10560,8 +14163,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“co2 emissions”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-43362bdd",
@@ -10580,8 +14187,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c21f91da",
@@ -10602,8 +14213,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "water",
+      "health"
+    ],
+    "sector_evidence": {
+      "water": [
+        "flood*"
+      ],
+      "health": [
+        "health",
+        "human health"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“human health”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4e67eef1",
@@ -10624,8 +14250,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "river"
+      ],
+      "water": [
+        "flood*",
+        "river basin*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood risk”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4d746907",
@@ -10646,8 +14287,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "flood*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood risk”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0dab4982",
@@ -10668,8 +14319,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "river"
+      ],
+      "water": [
+        "flood*",
+        "river basin*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e6e437e1",
@@ -10691,8 +14357,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "river"
+      ],
+      "water": [
+        "flood*",
+        "river basin*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood risk”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e1e825fb",
@@ -10713,8 +14394,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "flood*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“scenarios”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d6f61cfe",
@@ -10736,8 +14427,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "flood*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood risk”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3f43624f",
@@ -10758,8 +14459,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "river"
+      ],
+      "water": [
+        "flood*",
+        "river basin*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood risk”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk management plans”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-58d6cfa3",
@@ -10780,30 +14496,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
-    "relevant": true,
-    "target_number": 9
-  },
-  {
-    "id": "tgt-4647befe",
-    "policy_id": "floods-directive",
-    "policy_name": "Directive 2007/60/EC on the assessment and management of flood risks (Floods Directive)",
-    "policy_short": "Floods Directive",
-    "document_type": "directive",
-    "policy_area": "Environment",
-    "article": "Article 7(3) — plan content",
-    "target_text": "Flood risk management plans shall address all aspects of flood risk management focusing on prevention, protection, preparedness, including flood forecasts and early warning systems and taking into account the characteristics of the particular river basin or sub-basin.",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "prevention, protection, preparedness"
+    "sectors": [
+      "water",
+      "health"
     ],
-    "climate_relevance": "adaptation",
-    "celex_number": "32007L0060",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sector_evidence": {
+      "water": [
+        "flood*"
+      ],
+      "health": [
+        "health",
+        "human health"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“human health”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-766fafcb",
@@ -10824,8 +14533,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "flood*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood risk”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk management plans”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a9eca80a",
@@ -10846,8 +14565,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "flood*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood risk”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessment”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-aa3b0d2b",
@@ -10868,8 +14597,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "flood*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood risk”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7dd5e003",
@@ -10890,8 +14629,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "flood*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“flood risk”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk management plan”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a55e1ca5",
@@ -10912,8 +14661,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "flood*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“floods”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-35f12812",
@@ -10935,7 +14694,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
     "relevant": false,
-    "target_number": 16
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 15,
+    "duplicate_of": "Similar target: Cross-Border Health Threats Regulation — Article 33 — Evaluation of the Regulation (similarity 0.30)"
   },
   {
     "id": "tgt-0a73166b",
@@ -10956,8 +14725,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32007L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 17
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-822f75f6",
@@ -10976,8 +14755,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*",
+        "maritime"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); switches supply or fuels to low-carbon sources (“low-carbon”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3e25e7d2",
@@ -10996,8 +14786,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "port",
+        "traffic"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-464c9779",
@@ -11018,18 +14819,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "ship"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“ghg intensity”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-4c45c1a8",
+    "id": "tgt-6e580580",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
     "document_type": "regulation",
     "policy_area": "Transport",
     "article": "Article 4(2)",
-    "target_text": "2. The limit referred to in paragraph 1 shall be calculated by reducing the reference value of 91,16 grams of CO2 equivalent per MJ by the following percentage:",
+    "target_text": "2. The limit referred to in paragraph 1 shall be calculated by reducing the reference value of 91,16 grams of CO2 equivalent per MJ by the following percentage: — 2 % from 1 January 2025; — 6 % from 1 January 2030; — 14,5 % from 1 January 2035; — 31 % from 1 January 2040; — 62 % from 1 January 2045; — 80 % from 1 January 2050.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
@@ -11040,11 +14851,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "reference value (91,16 gCO2e/MJ)",
       "percentage reduction"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "relevant": true,
-    "target_number": 4
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-98f47289",
@@ -11066,8 +14887,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "rfnbo*",
+        "renewable fuels of non-biological origin"
+      ],
+      "transport": [
+        "ship"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“ghg intensity”); switches supply or fuels to low-carbon sources (“rfnbo”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c5a7f504",
@@ -11088,28 +14924,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "rfnbo*"
+      ],
+      "transport": [
+        "ship"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“rfnbo”).",
     "relevant": true,
-    "target_number": 6
-  },
-  {
-    "id": "tgt-6c03bd42",
-    "policy_id": "fueleu-maritime",
-    "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
-    "policy_short": "FuelEU Maritime",
-    "document_type": "regulation",
-    "policy_area": "Transport",
-    "article": "Article 5(3) (duplicate of tgt-0341; consider removing one)",
-    "target_text": "If the share of RFNBO referred to in paragraph 2 is less than 1 % for the reporting period 2031, a subtarget of 2 % shall apply for such fuels in the yearly energy used on board by a ship from 1 January 2034, subject to paragraph 5.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R1805",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "relevant": true,
-    "target_number": 7
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-53b44714",
@@ -11128,8 +14958,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 8
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-31e539a8",
@@ -11150,8 +14990,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "ship",
+        "port"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-87d2e3dd",
@@ -11172,8 +15023,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "ship",
+        "port"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 10
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7e7be956",
@@ -11192,58 +15054,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "relevant": true,
-    "target_number": 11
-  },
-  {
-    "id": "tgt-52e8cbae",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
-    "policy_short": "Governance Regulation",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 1(1)(a) — Subject matter and scope",
-    "target_text": "implement strategies and measures designed to meet the objectives and targets of the Energy Union and the long-term Union greenhouse gas emissions commitments consistent with the Paris Agreement, and for the first ten-year period, from 2021 to 2030, in particular the Union's 2030 targets for energy and climate;",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "from 2021 to 2030",
-    "indicators": [
-      "greenhouse gas emissions",
-      "Union's 2030 targets for energy and climate"
+    "sectors": [
+      "transport"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sector_evidence": {
+      "transport": [
+        "ship",
+        "port",
+        "ports"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 1
-  },
-  {
-    "id": "tgt-ee1fe223",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
-    "policy_short": "Governance Regulation",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 2(11) — Definitions",
-    "target_text": "‘the Union's 2030 targets for energy and climate’ means the Union-wide binding target of at least 40 % domestic reduction in economy-wide greenhouse gas emissions as compared to 1990 to be achieved by 2030, the Union-level binding target of at least 32 % for the share of renewable energy consumed in the Union in 2030, the Union-level headline target of at least 32,5 % for improving energy efficiency in 2030, and the 15 % electricity interconnection target for 2030 or any subsequent targets in this regard agreed by the European Council or by the European Parliament and by the Council for 2030;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "by 2030",
-    "indicators": [
-      "greenhouse gas emissions",
-      "energy efficiency",
-      "share of renewable energy",
-      "renewable energy",
-      "economy-wide greenhouse gas emissions",
-      "electricity interconnection"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "relevant": true,
-    "target_number": 2
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6b09672e",
@@ -11264,8 +15088,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy from renewable",
+        "renewable sources"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 1,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(2) — Energy efficiency targets (similarity 0.26)"
   },
   {
     "id": "tgt-8154f171",
@@ -11286,8 +15122,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 2,
+    "duplicate_of": "Similar target: European Climate Law — Article 13(6)(a) (replacing Article 15(1) of Regulation (EU) 2018/1999) (similarity 0.31)"
   },
   {
     "id": "tgt-63981197",
@@ -11308,8 +15148,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy poverty"
+      ],
+      "buildings": [
+        "household*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-abdfdc7c",
@@ -11331,8 +15185,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 4,
+    "duplicate_of": "Similar target: Effort Sharing Regulation — Article 4(1) — Annual emission levels for the period from 2021 to 2030 (similarity 0.25)"
   },
   {
     "id": "tgt-53a12547",
@@ -11357,8 +15215,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency",
+        "energy saving*",
+        "final energy consumption"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 5,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(2) — Energy efficiency targets (similarity 0.39)"
   },
   {
     "id": "tgt-f72211b6",
@@ -11380,8 +15250,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dc5f6a52",
@@ -11404,8 +15284,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy saving*"
+      ],
+      "buildings": [
+        "buildings",
+        "renovate*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 7,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 6(1) — Exemplary role of public bodies’ buildings (similarity 0.29)"
   },
   {
     "id": "tgt-c12e600f",
@@ -11426,30 +15321,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "relevant": true,
-    "target_number": 10
-  },
-  {
-    "id": "tgt-8e2c58a5",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
-    "policy_short": "Governance Regulation",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 4(e)(2) — National objectives, targets and contributions",
-    "target_text": "where available, national 2050 objectives related to the promotion of clean energy technologies.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "2050",
-    "indicators": [
-      "clean energy technologies"
+    "sectors": [
+      "energy"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sector_evidence": {
+      "energy": [
+        "electricity",
+        "interconnect*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“interconnectivity”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6a33a9b7",
@@ -11472,8 +15356,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy from renewable",
+        "renewable sources",
+        "energy union"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 9,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(2) — Energy efficiency targets (similarity 0.32)"
   },
   {
     "id": "tgt-4a5ad4ec",
@@ -11494,8 +15391,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources",
+        "energy union"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cbc5be0d",
@@ -11516,8 +15425,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources",
+        "energy union"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-37e4b001",
@@ -11538,8 +15459,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources",
+        "energy union"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bc7054d3",
@@ -11560,8 +15493,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4ab436f0",
@@ -11582,8 +15525,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy from renewable",
+        "renewable sources",
+        "final energy consumption"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“final energy consumption”); switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 14,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(1) — Energy efficiency targets (similarity 0.31)"
   },
   {
     "id": "tgt-5bca178f",
@@ -11604,103 +15560,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 18
-  },
-  {
-    "id": "tgt-7a7661cf",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
-    "policy_short": "Governance Regulation",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 15(2)(a) — Long-term strategies",
-    "target_text": "various scenarios for the Union's contribution towards the objectives set out in paragraph 3 inter alia a scenario on achieving net zero greenhouse gas emissions within the Union by 2050 and negative emissions thereafter;",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "by 2050",
-    "indicators": [
-      "greenhouse gas emissions",
-      "net zero greenhouse gas emissions",
-      "negative emissions"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "relevant": true,
-    "target_number": 19
-  },
-  {
-    "id": "tgt-2ffff099",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
-    "policy_short": "Governance Regulation",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 15(3)(b) — Long-term strategies",
-    "target_text": "fulfilling the objective of the Paris Agreement of holding the increase in the global average temperature to well below 2 °C above pre-industrial levels and to pursue efforts to limit the temperature increase to 1,5 °C above pre-industrial levels;",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [
-      "global average temperature increase"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "relevant": true,
-    "target_number": 20
-  },
-  {
-    "id": "tgt-67244f0a",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
-    "policy_short": "Governance Regulation",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 15(3)(c) — Long-term strategies",
-    "target_text": "achieving long-term greenhouse gas emission reductions and enhancements of removals by sinks in all sectors in accordance with the Union's objective, in the context of necessary reductions according to the Intergovernmental Panel on Climate Change (IPCC) to reduce the Union's greenhouse gas emissions in a cost-effective manner and enhance removals by sinks in pursuit of the temperature goals in the Paris Agreement so as to achieve a balance between anthropogenic emissions by sources and removals by sinks of greenhouse gases within the Union as early as possible and, as appropriate, achieve negative emissions thereafter;",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "greenhouse gas emissions",
-      "greenhouse gas emission reductions",
-      "removals",
-      "emission reductions",
-      "removals by sinks"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "relevant": true,
-    "target_number": 21
-  },
-  {
-    "id": "tgt-23ff7417",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
-    "policy_short": "Governance Regulation",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 15(3)(d) — Long-term strategies",
-    "target_text": "a highly energy efficient and highly renewables-based energy system within the Union.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "energy efficiency",
-      "renewable energy system"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "relevant": true,
-    "target_number": 22
+    "target_number": 15,
+    "duplicate_of": "Duplicate wording: European Climate Law — Article 13(6)(a) (replacing Article 15(1) of Regulation (EU) 2018/1999) (similarity 0.46)"
   },
   {
     "id": "tgt-7dd1788d",
@@ -11722,8 +15587,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy from renewable",
+        "renewable sources"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 23
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6b6b65ed",
@@ -11744,8 +15621,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 24
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3def2076",
@@ -11766,8 +15647,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficient"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "nearly zero-energy"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonised”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 25
+    "target_number": 18,
+    "duplicate_of": "Duplicate wording: Energy Performance of Buildings Directive — Article 3(1) — National building renovation plan (similarity 0.59)"
   },
   {
     "id": "tgt-7537e9a3",
@@ -11785,11 +15683,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "biodiversity conservation"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
-    "relevant": false,
-    "target_number": 1
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“habitats”).",
+    "relevant": true,
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8e9c8073",
@@ -11810,8 +15718,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "restore*",
+        "species"
+      ]
+    },
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restore”).",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cff40ead",
@@ -11832,8 +15752,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "restore*",
+        "natura 2000",
+        "species"
+      ]
+    },
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restored”).",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fccd562e",
@@ -11851,11 +15784,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "Member State contribution to Natura 2000"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
-    "relevant": false,
-    "target_number": 4
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "natura 2000",
+        "species"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“habitat”).",
+    "relevant": true,
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a4cd2a01",
@@ -11876,8 +15821,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-560d0ce7",
@@ -11899,7 +15854,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
     "relevant": false,
-    "target_number": 6
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-66d00c43",
@@ -11921,7 +15886,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
     "relevant": false,
-    "target_number": 7
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "restoration",
+        "natura 2000",
+        "species"
+      ]
+    },
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-21b1ddc8",
@@ -11939,11 +15917,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "conservation measures and management plans"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
-    "relevant": false,
-    "target_number": 8
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "species"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“habitat”).",
+    "relevant": true,
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5afed9f2",
@@ -11961,11 +15950,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "avoidance of habitat deterioration"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
-    "relevant": false,
-    "target_number": 9
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "species"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“habitats”).",
+    "relevant": true,
+    "target_number": 9,
+    "duplicate_of": "Similar target: Birds Directive — Article 4(4) (similarity 0.33)"
   },
   {
     "id": "tgt-4d05b373",
@@ -11986,8 +15986,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-93859a6f",
@@ -12005,11 +16015,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "surveillance of conservation status"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
-    "relevant": false,
-    "target_number": 11
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "species"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“habitats”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“surveillance”).",
+    "relevant": true,
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4f9869ee",
@@ -12030,8 +16051,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "species"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": "Similar target: Birds Directive — Article 3(1) (similarity 0.26)"
   },
   {
     "id": "tgt-62385e79",
@@ -12052,8 +16083,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "species"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6f128387",
@@ -12071,11 +16112,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "education and public information"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "31992L0043",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31992L0043",
-    "relevant": false,
-    "target_number": 14
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "species"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“habitats”).",
+    "relevant": true,
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-21a925fb",
@@ -12094,8 +16146,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-33333c8e",
@@ -12116,8 +16172,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f92dd8e8",
@@ -12136,8 +16202,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate objectives”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": "Similar target: InvestEU Regulation — Article 3(1) (similarity 0.27)"
   },
   {
     "id": "tgt-f7f2bcbf",
@@ -12158,8 +16228,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fc894ad5",
@@ -12180,8 +16254,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-824cfbf4",
@@ -12202,8 +16280,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7511f2ef",
@@ -12224,8 +16306,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "best available techniques"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-02d626a9",
@@ -12246,8 +16338,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission limit”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cb8c2376",
@@ -12268,31 +16370,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "relevant": false,
-    "target_number": 3
-  },
-  {
-    "id": "tgt-6aefa963",
-    "policy_id": "industrial-emissions-directive",
-    "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
-    "policy_short": "Industrial Emissions Directive",
-    "document_type": "directive",
-    "policy_area": "Industry",
-    "article": "Article 15(3) - Emission limit values, equivalent parameters and technical measures",
-    "target_text": "The competent authority shall set emission limit values that ensure that, under normal operating conditions, emissions do not exceed the emission levels associated with the best available techniques as laid down in the decisions on BAT conclusions referred to in Article 13(5) through either of the following:",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [
-      "emission limit values",
-      "emission levels associated with the best available techniques"
+    "sectors": [
+      "industry"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32010L0075",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "relevant": true,
-    "target_number": 4
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-55ac11e0",
@@ -12313,8 +16402,51 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission limit”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 4,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-4603e529",
+    "policy_id": "industrial-emissions-directive",
+    "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
+    "policy_short": "Industrial Emissions Directive",
+    "document_type": "directive",
+    "policy_area": "Industry",
+    "article": "Article 15(3) - Emission limit values, equivalent parameters and technical measures",
+    "target_text": "The competent authority shall set emission limit values that ensure that, under normal operating conditions, emissions do not exceed the emission levels associated with the best available techniques as laid down in the decisions on BAT conclusions referred to in Article 13(5) through either of the following: (a) setting emission limit values that do not exceed the emission levels associated with the best available techniques. Those emission limit values shall be expressed for the same or shorter periods of time and under the same reference conditions as those emission levels associated with the best available techniques; or (b) setting different emission limit values than those referred to under point (a) in terms of values, periods of time and reference conditions.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "emission limit values",
+      "emission levels associated with the best available techniques"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32010L0075",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "best available techniques"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission limit”).",
+    "relevant": true,
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dfa631bf",
@@ -12336,8 +16468,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0be5f9fc",
@@ -12359,8 +16501,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "combustion plant*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission limit”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ac9f718a",
@@ -12382,8 +16534,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "combustion plant*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission limit”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-feede12b",
@@ -12402,8 +16564,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity",
+        "combustion plant*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission limit”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-262de2c4",
@@ -12425,8 +16598,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission limit”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-91d4b25e",
@@ -12445,8 +16628,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission limit”); cuts material and product emissions through circularity (less primary production means fewer process emissions) (“municipal waste”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-adc51c62",
@@ -12465,11 +16658,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "total organic carbon content",
       "loss on ignition"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "relevant": true,
-    "target_number": 12
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c25caf38",
@@ -12491,8 +16694,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7aed6db3",
@@ -12513,28 +16726,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 14
-  },
-  {
-    "id": "tgt-e3f9c8db",
-    "policy_id": "industrial-emissions-directive",
-    "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
-    "policy_short": "Industrial Emissions Directive",
-    "document_type": "directive",
-    "policy_area": "Industry",
-    "article": "Article 55(2) — Reporting and public information on waste incineration plants and waste co-incineration plants",
-    "target_text": "For waste incineration plants or waste co-incineration plants with a nominal capacity of 2 tonnes or more per hour, the report referred to in Article 72 shall include information on the functioning and monitoring of the plant and give account of the running of the incineration or co-incineration process and the level of emissions into air and water in comparison with the emission limit values.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32010L0075",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "relevant": true,
-    "target_number": 15
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fec7d7ab",
@@ -12556,8 +16759,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission limit”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5799ee90",
@@ -12579,8 +16792,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission limit”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-83e2ef7d",
@@ -12601,8 +16824,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": "Similar target: Horizon Europe — Article 7 — Principles of the Programme (similarity 0.27)"
   },
   {
     "id": "tgt-148062f3",
@@ -12620,11 +16847,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "sustainability / climate dimension of the economy"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
-    "relevant": true,
-    "target_number": 2
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f7d681f8",
@@ -12645,8 +16876,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-02a79fd9",
@@ -12667,8 +16902,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-eb488740",
@@ -12692,8 +16931,30 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "sectors": [
+      "energy",
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy efficiency",
+        "energy saving*"
+      ],
+      "buildings": [
+        "buildings",
+        "renovation*"
+      ],
+      "transport": [
+        "transport*",
+        "rail"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”); switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-310f4800",
@@ -12714,8 +16975,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate target”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“just transition”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-62a1fa97",
@@ -12736,30 +17001,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 7
-  },
-  {
-    "id": "tgt-fd70dea5",
-    "policy_id": "investeu-regulation",
-    "policy_name": "Regulation (EU) 2021/523 establishing the InvestEU Programme",
-    "policy_short": "InvestEU Regulation",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 8(5)",
-    "target_text": "Projects that are inconsistent with the climate objectives shall not be eligible for support under this Regulation.",
-    "target_label": "commitment",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "exclusion of climate-inconsistent projects"
-    ],
-    "climate_relevance": "both",
-    "celex_number": "32021R0523",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
-    "relevant": true,
-    "target_number": 8
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-774d4428",
@@ -12780,8 +17027,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 9
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-596143a5",
@@ -12802,8 +17053,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 10
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f9690145",
@@ -12825,7 +17080,11 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32021R0523",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0523",
     "relevant": false,
-    "target_number": 11
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a714b712",
@@ -12846,30 +17105,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "relevant": true,
-    "target_number": 1
-  },
-  {
-    "id": "tgt-46edce0f",
-    "policy_id": "lulucf-regulation",
-    "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
-    "policy_short": "LULUCF Regulation",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 1(c) — Subject matter",
-    "target_text": "(c) the setting of a Union net removal target for the LULUCF sector for the period from 2026 to 2030;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "for the period from 2026 to 2030",
-    "indicators": [
-      "net removals"
+    "sectors": [
+      "ecosystems"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R0841",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "sector_evidence": {
+      "ecosystems": [
+        "forest*",
+        "lulucf",
+        "land use"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“greenhouse gas emission reduction”); increases removals or protects the sink (land, forests or engineered storage) (“lulucf”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 1,
+    "duplicate_of": "Similar target: Effort Sharing Regulation — Article 1 — Subject matter (similarity 0.29)"
   },
   {
     "id": "tgt-3fd63c95",
@@ -12891,8 +17140,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "lulucf"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-742a1c15",
@@ -12914,8 +17173,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4d15af1f",
@@ -12939,8 +17208,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2b161df1",
@@ -12962,8 +17241,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-209f2d96",
@@ -12982,34 +17271,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "annual national targets",
       "net removals"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "relevant": true,
-    "target_number": 7
-  },
-  {
-    "id": "tgt-b1c22e59",
-    "policy_id": "lulucf-regulation",
-    "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
-    "policy_short": "LULUCF Regulation",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 4(2) — Commitments and targets",
-    "target_text": "The Union-wide target for net greenhouse gas removals shall be 310 million tonnes of CO2 equivalent as a sum of the Member State targets set out in Annex IIa for the year 2030, based on the average of its greenhouse gas inventory data for the years 2028, 2029 and 2030.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [
-      "CO2 equivalent",
-      "removals"
+    "sectors": [
+      "ecosystems"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R0841",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "relevant": true,
-    "target_number": 8
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 6,
+    "duplicate_of": "Similar target: European Climate Law — Article 13(8) (replacing Article 29(1)(b) of Regulation (EU) 2018/1999) (similarity 0.27)"
   },
   {
     "id": "tgt-bedce6d9",
@@ -13030,8 +17306,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "sectors": [
+      "agrifood",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*"
+      ],
+      "ecosystems": [
+        "lulucf",
+        "land use"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-89ecee41",
@@ -13054,8 +17345,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "forest*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c1827a4e",
@@ -13079,32 +17380,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "relevant": true,
-    "target_number": 11
-  },
-  {
-    "id": "tgt-b10ce60e",
-    "policy_id": "lulucf-regulation",
-    "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
-    "policy_short": "LULUCF Regulation",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 13b(1) — Land flexibility mechanism for the period from 2026 to 2030",
-    "target_text": "A land flexibility mechanism, corresponding to a maximum quantity of 178 million tonnes of CO2 equivalent, shall be available in the Union as an additional flexibility to each Member State and shall cover net removals or emissions from the land reporting categories referred to in Article 2 of this Regulation.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [
-      "CO2 equivalent",
-      "net removals",
-      "removals"
+    "sectors": [
+      "ecosystems"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R0841",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bfec02c0",
@@ -13122,11 +17409,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "CO2 equivalent"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 13
+    "target_number": 10,
+    "duplicate_of": "Similar target: Effort Sharing Regulation — Article 11 — Safety reserve (similarity 0.28)"
   },
   {
     "id": "tgt-1e8f8f64",
@@ -13149,8 +17446,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": "Duplicate wording: European Climate Law — Article 5(1) — Adaptation to climate change (similarity 0.54; cited in the text)"
   },
   {
     "id": "tgt-677f8fbd",
@@ -13168,11 +17469,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "greenhouse gas emissions"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "both",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“climate risks”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": "Similar target: European Green Deal — 2.1.5 Accelerating the shift to sustainable and smart mobility (similarity 0.33)"
   },
   {
     "id": "tgt-655fac45",
@@ -13191,8 +17496,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“climate risks”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ab1dfc69",
@@ -13214,8 +17523,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7dc68c1e",
@@ -13238,7 +17551,11 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
     "relevant": false,
-    "target_number": 5
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“climate risks”).",
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1ae40518",
@@ -13260,8 +17577,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“climate risks”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f31be2b9",
@@ -13283,31 +17604,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 7
-  },
-  {
-    "id": "tgt-5affb8d9",
-    "policy_id": "managing-climate-risks",
-    "policy_name": "Communication COM(2024) 91 — Managing climate risks: protecting people and prosperity",
-    "policy_short": "Managing Climate Risks",
-    "document_type": "communication",
-    "policy_area": "Climate",
-    "article": "Section 3.3 — Embedding climate risks in critical infrastructure",
-    "target_text": "long-term resilience of the entities in scope to climate risks and invites the Member States",
-    "target_label": "commitment",
-    "obligation": "voluntary",
-    "target_type": "unspecified",
-    "timeline": "by 2026",
-    "indicators": [
-      "Critical Entities Resilience Directive",
-      "critical infrastructure risk assessment"
-    ],
-    "climate_relevance": "adaptation",
-    "celex_number": "52024DC0091",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
-    "relevant": true,
-    "target_number": 8
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-db755dc9",
@@ -13329,8 +17631,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 8,
+    "duplicate_of": "Similar target: Multiannual Financial Framework — Article 21 (similarity 0.14; cited in the text)"
   },
   {
     "id": "tgt-ea7bfe94",
@@ -13352,8 +17658,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-adce9617",
@@ -13375,8 +17685,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9e2fe456",
@@ -13398,8 +17712,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“early warning”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d03bb528",
@@ -13421,8 +17745,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“early warning”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“surveillance”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d4684cbe",
@@ -13443,8 +17777,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*",
+        "food"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4b2bff2b",
@@ -13466,8 +17811,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*",
+        "common agricultural policy",
+        "food"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c66628cb",
@@ -13489,8 +17846,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "built environment"
+      ],
+      "transport": [
+        "railway*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-83e77316",
@@ -13512,8 +17883,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings",
+        "built environment"
+      ]
+    },
+    "climate_argument": "Adaptation: seizes an opportunity created by a changing climate (new markets, diversified livelihoods) (“future climate”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d4002d41",
@@ -13532,11 +17914,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "TEN-T",
       "transport climate proofing"
     ],
-    "climate_relevance": "adaptation",
+    "climate_relevance": "both",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*",
+        "ten-t"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“trans-european”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“climate proofing”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessments”).",
     "relevant": true,
-    "target_number": 18
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-74273615",
@@ -13555,11 +17948,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "National Budgetary Frameworks",
       "climate-related fiscal reporting"
     ],
-    "climate_relevance": "adaptation",
+    "climate_relevance": "none",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
-    "relevant": true,
-    "target_number": 19
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-05381907",
@@ -13578,8 +17975,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "restore*",
+        "ocean*"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”); keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restore”).",
     "relevant": true,
-    "target_number": 20
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0d47dc8c",
@@ -13602,7 +18011,11 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52024DC0091",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0091",
     "relevant": false,
-    "target_number": 21
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“climate risks”).",
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7a4b75ab",
@@ -13624,8 +18037,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "marine",
+        "good environmental status"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“good environmental status”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ef0b8565",
@@ -13646,8 +18070,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "restore*",
+        "marine"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restore”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d65eab7d",
@@ -13669,8 +18105,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "sectors": [
+      "ecosystems",
+      "health"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "biodiversity",
+        "marine",
+        "sea"
+      ],
+      "health": [
+        "health",
+        "human health"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“ecosystems”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“human health”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fefb1200",
@@ -13691,8 +18145,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "marine"
+      ],
+      "water": [
+        "waters"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-99e2443d",
@@ -13713,8 +18181,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "marine",
+        "good environmental status"
+      ],
+      "water": [
+        "waters"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“good environmental status”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5906dd22",
@@ -13735,8 +18218,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "marine"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e243fac9",
@@ -13757,8 +18250,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "marine"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3fcb25b0",
@@ -13780,8 +18283,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "marine",
+        "good environmental status"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“good environmental status”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7a2f728d",
@@ -13802,8 +18316,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "marine"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-82cf3575",
@@ -13821,11 +18345,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "WHO NCD targets"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
     "relevant": false,
-    "target_number": 1
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "disease*"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“diseases”).",
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6fc257b3",
@@ -13847,8 +18382,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "sectors": [
+      "buildings",
+      "health"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building"
+      ],
+      "health": [
+        "health",
+        "mental health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c2ccf3c9",
@@ -13869,8 +18419,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "sectors": [
+      "buildings",
+      "health"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building"
+      ],
+      "health": [
+        "health",
+        "mental health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cf2366ef",
@@ -13892,8 +18457,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "mental health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d80c0d38",
@@ -13913,11 +18489,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "prevention",
       "social inclusion"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
-    "relevant": false,
-    "target_number": 5
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "disease*",
+        "mental health"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“diseases”).",
+    "relevant": true,
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-30e0267f",
@@ -13939,8 +18527,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "mental health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cca2fe62",
@@ -13962,8 +18561,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "mental health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9b5dc78d",
@@ -13987,7 +18597,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
     "relevant": false,
-    "target_number": 8
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "mental health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-726c95d0",
@@ -14009,8 +18630,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "mental health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c965db33",
@@ -14032,8 +18664,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "patient*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8e22d6f2",
@@ -14055,8 +18697,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "mental health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8e59da91",
@@ -14078,8 +18731,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52023DC0298",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0298",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-62409a24",
@@ -14100,8 +18763,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "methane emission*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-29cc822d",
@@ -14122,8 +18795,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-31e1f505",
@@ -14144,8 +18827,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-310c5cc5",
@@ -14166,8 +18859,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4b14c75f",
@@ -14186,8 +18889,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-aa6f0cc3",
@@ -14208,8 +18921,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "methane emission*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-99cd6561",
@@ -14231,8 +18954,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "flaring",
+        "venting"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3e8444a4",
@@ -14253,8 +18987,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "flaring",
+        "venting"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fa11e733",
@@ -14272,11 +19017,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "flare destruction and removal efficiency"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "relevant": true,
-    "target_number": 9
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "flaring"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-28d42680",
@@ -14297,8 +19052,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-278b6e3c",
@@ -14317,8 +19082,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6a69b7e5",
@@ -14337,8 +19112,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-36f8aa1b",
@@ -14357,8 +19142,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f064e250",
@@ -14379,8 +19174,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "methane emission*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bd5a4311",
@@ -14401,8 +19206,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "methane emission*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-eea7482d",
@@ -14424,8 +19239,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "flaring",
+        "venting"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ddfc4a1f",
@@ -14444,8 +19270,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "coal",
+        "venting"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7416abd8",
@@ -14464,28 +19301,50 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "coal",
+        "venting"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 18
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-0e4ae91a",
+    "id": "tgt-5f60f47d",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
     "article": "Article 23(1)",
-    "target_text": "From 1 January 2025, drainage station operators shall notify the competent authorities of all venting events and all flaring events with a destruction and removal efficiency by design level below 99 %:",
+    "target_text": "From 1 January 2025, drainage station operators shall notify the competent authorities of all venting events and all flaring events with a destruction and removal efficiency by design level below 99 %: (a) caused by an emergency or a malfunction, (b) occurring unavoidably, due to maintenance of the drainage system.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "relevant": true,
-    "target_number": 19
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "flaring",
+        "venting"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e9bbddd2",
@@ -14504,8 +19363,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 20
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-853f9f97",
@@ -14526,8 +19395,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "methane emission*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 21
+    "target_number": 21,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dca25a08",
@@ -14549,8 +19428,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy",
+      "health"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "flaring",
+        "venting",
+        "methane emission*"
+      ],
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 22
+    "target_number": 22,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-63c7494f",
@@ -14573,8 +19468,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "natural gas",
+        "coal",
+        "methane emission*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions reductions”).",
     "relevant": true,
-    "target_number": 23
+    "target_number": 23,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2cc1ee69",
@@ -14593,8 +19500,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 24
+    "target_number": 24,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-81384094",
@@ -14613,8 +19530,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 25
+    "target_number": 25,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b7f92812",
@@ -14636,8 +19563,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "natural gas",
+        "coal",
+        "methane emission*"
+      ],
+      "industry": [
+        "value chain*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“methane”).",
     "relevant": true,
-    "target_number": 26
+    "target_number": 26,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-749f3395",
@@ -14658,8 +19601,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ae6043e4",
@@ -14680,8 +19627,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2215037a",
@@ -14703,7 +19654,11 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
     "relevant": false,
-    "target_number": 3
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f55dcd86",
@@ -14725,7 +19680,11 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
     "relevant": false,
-    "target_number": 4
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 4,
+    "duplicate_of": "Similar target: F-Gas Regulation — Article 17(8) — Determination of reference values and quota allocations for the placing on the market of… (similarity 0.35)"
   },
   {
     "id": "tgt-9d643bbb",
@@ -14746,8 +19705,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-01562a13",
@@ -14769,7 +19732,11 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
     "relevant": false,
-    "target_number": 6
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-99bbafc4",
@@ -14790,8 +19757,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R2093",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R2093",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-516064e1",
@@ -14814,8 +19785,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "restoration measure*",
+        "restoration",
+        "sea"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-20ee6336",
@@ -14836,8 +19820,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "coastal"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-38001b7a",
@@ -14858,31 +19855,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "relevant": true,
-    "target_number": 3
-  },
-  {
-    "id": "tgt-089de6db",
-    "policy_id": "nature-restoration-law",
-    "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
-    "policy_short": "Nature Restoration Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 4(4) — Restoration of terrestrial, coastal and freshwater ecosystems",
-    "target_text": "Such measures shall be in place on areas representing at least 30 % of the additional surface needed to reach the total favourable reference area for each group of habitat types listed in Annex I, as quantified in the national restoration plan referred to in Article 15, by 2030, on areas representing at least 60 % of that surface by 2040, and on 100 % of that surface by 2050.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "by 2030",
-    "indicators": [
-      "favourable reference area",
-      "additional surface re-established"
+    "sectors": [
+      "ecosystems"
     ],
-    "climate_relevance": "adaptation",
-    "celex_number": "32024R1991",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "coastal"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9ca55191",
@@ -14900,11 +19887,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of habitat area with known condition"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "relevant": false,
-    "target_number": 5
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "coastal"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
+    "relevant": true,
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0782aa5f",
@@ -14926,8 +19926,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "coastal"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cf6efe96",
@@ -14949,8 +19962,58 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "species"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 6,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-f11320a4",
+    "policy_id": "nature-restoration-law",
+    "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
+    "policy_short": "Nature Restoration Law",
+    "document_type": "regulation",
+    "policy_area": "Climate",
+    "article": "Article 4(4) — Restoration of terrestrial, coastal and freshwater ecosystems",
+    "target_text": "Member States shall put in place the restoration measures that are necessary to re-establish the habitat types listed in Annex I in areas where those habitat types do not occur, with the aim of reaching the favourable reference area for those habitat types. Such measures shall be in place on areas representing at least 30 % of the additional surface needed to reach the total favourable reference area for each group of habitat types listed in Annex I, as quantified in the national restoration plan referred to in Article 15, by 2030, on areas representing at least 60 % of that surface by 2040, and on 100 % of that surface by 2050.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "favourable reference area",
+      "restoration measures",
+      "additional surface re-established"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "32024R1991",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration measure*",
+        "restoration"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
+    "relevant": true,
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c3babf4c",
@@ -14969,8 +20032,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "coastal"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ade78a12",
@@ -14989,8 +20065,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "restoration",
+        "coastal"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a1c7fc7d",
@@ -15009,8 +20097,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "restoration",
+        "coastal"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b61da0f3",
@@ -15032,8 +20132,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration measure*",
+        "restoration"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a362f90f",
@@ -15054,8 +20167,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "restoration measure*",
+        "restoration",
+        "coastal"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-65a683ce",
@@ -15076,8 +20202,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "restoration measure*",
+        "restoration",
+        "coastal"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7960323b",
@@ -15098,8 +20237,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "marine"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c2af8f0b",
@@ -15120,8 +20272,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "marine"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-87aeeea9",
@@ -15140,8 +20305,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "marine"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e3289ec4",
@@ -15163,8 +20341,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration measure*",
+        "restoration"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2a19dd5e",
@@ -15180,11 +20371,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "by 2030",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "relevant": false,
-    "target_number": 18
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "marine"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
+    "relevant": true,
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-edfc3f37",
@@ -15200,11 +20404,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "by 2040",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "relevant": false,
-    "target_number": 19
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "marine"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
+    "relevant": true,
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-482617d6",
@@ -15225,8 +20442,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "habitat*",
+        "restoration",
+        "marine"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 20
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7ddeb721",
@@ -15248,8 +20478,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "buildings",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "urban"
+      ],
+      "ecosystems": [
+        "ecosystem*",
+        "restoration",
+        "tree"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 21
+    "target_number": 21,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-277a650a",
@@ -15268,8 +20514,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "buildings",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "urban"
+      ],
+      "ecosystems": [
+        "ecosystem*",
+        "restoration",
+        "tree"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 22
+    "target_number": 22,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1803b80e",
@@ -15291,8 +20553,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "restoration",
+        "rivers",
+        "free-flowing"
+      ],
+      "water": [
+        "waters"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 23
+    "target_number": 23,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d5164117",
@@ -15311,11 +20589,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "pollinator diversity",
       "pollinator populations trend"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "relevant": false,
-    "target_number": 24
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "restoration",
+        "pollinator*"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
+    "relevant": true,
+    "target_number": 24,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-72f73929",
@@ -15337,8 +20626,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "agrifood",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*"
+      ],
+      "ecosystems": [
+        "ecosystem*",
+        "restoration"
+      ]
+    },
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 25
+    "target_number": 25,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d3f7c8b2",
@@ -15360,8 +20664,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "agrifood",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*"
+      ],
+      "ecosystems": [
+        "ecosystem*",
+        "restoration"
+      ]
+    },
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 26
+    "target_number": 26,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-00ab563b",
@@ -15383,8 +20702,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "agrifood",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*"
+      ],
+      "ecosystems": [
+        "ecosystem*",
+        "restoration"
+      ]
+    },
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 27
+    "target_number": 27,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-836b5948",
@@ -15402,11 +20736,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "common farmland bird index"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "agrifood",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*"
+      ],
+      "ecosystems": [
+        "ecosystem*",
+        "restoration"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 28
+    "target_number": 28,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-be3670ea",
@@ -15424,11 +20773,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "common farmland bird index"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "agrifood",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*"
+      ],
+      "ecosystems": [
+        "ecosystem*",
+        "restoration"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 29
+    "target_number": 29,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9730be62",
@@ -15450,31 +20814,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "relevant": true,
-    "target_number": 30
-  },
-  {
-    "id": "tgt-e05e9ae1",
-    "policy_id": "nature-restoration-law",
-    "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
-    "policy_short": "Nature Restoration Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 15(3), point (b) — Content of the national restoration plan",
-    "target_text": "if a Member State applies the derogation laid down in Article 4(5) or Article 5(3), a justification of the reasons why it is not possible to put in place restoration measures by 2050 that are necessary to reach the favourable reference area of a specific habitat type and a justification of the lower percentage set pursuant to those Articles, as identified by that Member State;",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "by 2050",
-    "indicators": [
-      "favourable reference area",
-      "restoration measures"
+    "sectors": [
+      "ecosystems"
     ],
-    "climate_relevance": "adaptation",
-    "celex_number": "32024R1991",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sector_evidence": {
+      "ecosystems": [
+        "restoration measure*",
+        "restoration",
+        "trees"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 31
+    "target_number": 30,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c2545199",
@@ -15493,8 +20846,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "restore*",
+        "restoration",
+        "trees",
+        "rivers"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 32
+    "target_number": 31,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-950818cf",
@@ -15516,8 +20882,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*",
+        "net-zero technolog*",
+        "supply chain*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate targets”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“net-zero technologies”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": "Similar target: Critical Raw Materials Act — Article 1(1) - Subject matter and objectives (similarity 0.30)"
   },
   {
     "id": "tgt-47a4b74d",
@@ -15536,11 +20914,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "net-zero technology manufacturing capacity",
       "annual deployment needs"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate and energy targets”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8fa67f0f",
@@ -15559,11 +20947,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "Union share of world production",
       "net-zero technology manufacturing capacity"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate and energy targets”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“manufacturing capacity”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a263c360",
@@ -15582,8 +20980,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": "Duplicate wording: Critical Raw Materials Act — Article 9(1) - Single point of contact (similarity 0.56)"
   },
   {
     "id": "tgt-4b958583",
@@ -15605,8 +21013,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*",
+        "net-zero technolog*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-671e9849",
@@ -15628,8 +21047,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*",
+        "net-zero technolog*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-486dc5c0",
@@ -15650,8 +21080,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*",
+        "net-zero technolog*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-55d2bc30",
@@ -15673,8 +21114,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b5fe6c04",
@@ -15696,8 +21147,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": "Similar target: Critical Raw Materials Act — Article 11(1)(a) - Duration of the permit-granting process (similarity 0.25)"
   },
   {
     "id": "tgt-aa2d18be",
@@ -15719,8 +21180,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "storage site*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); increases removals or protects the sink (land, forests or engineered storage) (“storage site”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e226c2b6",
@@ -15741,8 +21212,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-57e59816",
@@ -15763,8 +21244,31 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "energy",
+      "industry",
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "oil and gas"
+      ],
+      "industry": [
+        "co2 injection",
+        "storage site*"
+      ],
+      "ecosystems": [
+        "sea"
+      ],
+      "water": [
+        "aquifer*"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“co2 injection”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-161faf27",
@@ -15785,8 +21289,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "co2 injection"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“co2 injection”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": "Similar target: Cross-Border Health Threats Regulation — Article 9(1) (similarity 0.31)"
   },
   {
     "id": "tgt-b548e63c",
@@ -15805,8 +21319,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "co2 injection"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“co2 injection”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-35c5943b",
@@ -15827,8 +21351,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "oil and gas"
+      ],
+      "industry": [
+        "co2 injection"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“co2 injection”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bce79ef9",
@@ -15849,28 +21387,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "oil and gas"
+      ],
+      "industry": [
+        "co2 injection"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“co2 injection”).",
     "relevant": true,
-    "target_number": 16
-  },
-  {
-    "id": "tgt-27f98575",
-    "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
-    "policy_short": "Net-Zero Industry Act",
-    "document_type": "regulation",
-    "policy_area": "Industry",
-    "article": "Article 23(1) — Contribution of authorised oil and gas producers",
-    "target_text": "Those individual contributions shall be calculated pro-rata on the basis of each entity’s share in the Union’s crude oil and natural gas production from 1 January 2020 to 31 December 2023 and shall consist of CO2 injection capacity in a storage site permitted in accordance with Directive 2009/31/EC and available to the market by 2030.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "by 2030",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024R1735",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "relevant": true,
-    "target_number": 17
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0aa0f59c",
@@ -15889,8 +21421,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "oil and gas"
+      ],
+      "industry": [
+        "co2 injection"
+      ]
+    },
+    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“co2 injection”).",
     "relevant": true,
-    "target_number": 18
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-070dc8ee",
@@ -15906,11 +21452,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "qualitative",
     "timeline": "By 31 December 2028",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "relevant": true,
-    "target_number": 19
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "oil and gas"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2f817f77",
@@ -15929,8 +21489,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "net-zero technolog*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“net-zero technology”).",
     "relevant": true,
-    "target_number": 20
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-37c82f22",
@@ -15949,8 +21519,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "net-zero technolog*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“net-zero technology”).",
     "relevant": true,
-    "target_number": 21
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-732078dd",
@@ -15969,8 +21549,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "net-zero technolog*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“net-zero technologies”).",
     "relevant": true,
-    "target_number": 22
+    "target_number": 21,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-92a9ad15",
@@ -15989,88 +21579,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "net-zero technolog*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net-zero”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“net-zero technology”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 23
-  },
-  {
-    "id": "tgt-f71c48df",
-    "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
-    "policy_short": "Net-Zero Industry Act",
-    "document_type": "regulation",
-    "policy_area": "Industry",
-    "article": "Article 26(4)",
-    "target_text": "Member States shall give to each of the criteria to assess the auction’s sustainability and resilience contribution, when applied as award criteria, a minimum weight of 5 % and a combined weight of between 15 % and 30 % of the award criteria.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024R1735",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "relevant": true,
-    "target_number": 24
-  },
-  {
-    "id": "tgt-d155c2cd",
-    "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
-    "policy_short": "Net-Zero Industry Act",
-    "document_type": "regulation",
-    "policy_area": "Industry",
-    "article": "Article 28(2)",
-    "target_text": "The additional financial compensation granted by authorities in accordance with paragraph 1 of this Article, due to the application of the criteria laid down in paragraph 4, first subparagraph, introductory part and points (b) and (c), of this Article, shall not exceed 5 % of the cost of the net-zero technology final product for the consumer, with the exception of schemes targeting citizens living in energy poverty, as defined in Article 2, point (1), of Regulation (EU) 2023/955 of the European Parliament and of the Council (57), for which the limit shall be 15 %.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024R1735",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "relevant": true,
-    "target_number": 25
-  },
-  {
-    "id": "tgt-f2429fd0",
-    "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
-    "policy_short": "Net-Zero Industry Act",
-    "document_type": "regulation",
-    "policy_area": "Industry",
-    "article": "Article 28(4)",
-    "target_text": "The sustainability and resilience contribution of other forms of public intervention shall be based on their contribution to resilience, taking into account the proportion of the net-zero technology or its main specific components originating from a third country that accounts for more than 50 % of the supply of that specific net-zero technology within the Union, and at least one of the following:",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024R1735",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "relevant": true,
-    "target_number": 26
-  },
-  {
-    "id": "tgt-b7712f6b",
-    "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
-    "policy_short": "Net-Zero Industry Act",
-    "document_type": "regulation",
-    "policy_area": "Industry",
-    "article": "Article 46(2)(b)",
-    "target_text": "whether this Regulation is fit to deliver beyond 2030 and towards the longer term 2050 climate neutrality target referred to in Article 1, taking into account, among other aspects, the possibility to include in this Regulation other technologies that can play a significant role in achieving climate neutrality by 2050;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "by 2050",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024R1735",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "relevant": true,
-    "target_number": 27
+    "target_number": 22,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b4eeb98f",
@@ -16090,11 +21610,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "coordination and surveillance",
       "control measures"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
-    "relevant": false,
-    "target_number": 1
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“surveillance”).",
+    "relevant": true,
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ed3fa064",
@@ -16114,11 +21644,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "knowledge gaps",
       "diagnosis"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
-    "relevant": false,
-    "target_number": 2
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "disease*"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“knowledge”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“diseases”).",
+    "relevant": true,
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3a42469b",
@@ -16136,11 +21676,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "global agenda on AMR"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
-    "relevant": false,
-    "target_number": 3
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "interconnect*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“interconnected”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b04f9e16",
@@ -16161,8 +21711,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0f5c83d5",
@@ -16184,8 +21744,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "antimicrobial*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f3b7b78a",
@@ -16205,11 +21775,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "infection prevention",
       "surveillance"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
-    "relevant": false,
-    "target_number": 6
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "antimicrobial*"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“surveillance”).",
+    "relevant": true,
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b0d44d6d",
@@ -16231,8 +21811,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "antimicrobial*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7a878d3b",
@@ -16250,11 +21840,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "vaccination uptake"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
-    "relevant": false,
-    "target_number": 8
+    "sectors": [
+      "agrifood",
+      "health"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "antimicrobial*"
+      ],
+      "health": [
+        "health",
+        "public health"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“public health”).",
+    "relevant": true,
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-43d0eb6f",
@@ -16276,8 +21881,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "antimicrobial*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-37e2cd3c",
@@ -16298,8 +21913,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "antimicrobial*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-edf77360",
@@ -16320,8 +21945,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f71b863a",
@@ -16340,11 +21975,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "falsified medicines",
       "safety features"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
-    "relevant": false,
-    "target_number": 12
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
+    "relevant": true,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5b37a289",
@@ -16365,8 +22010,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a098e9ab",
@@ -16385,11 +22040,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "AMR in the environment",
       "research"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
-    "relevant": false,
-    "target_number": 14
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "antimicrobial*"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“knowledge”).",
+    "relevant": true,
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1253455a",
@@ -16410,8 +22075,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3fafc5ec",
@@ -16433,8 +22108,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52017DC0339",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017DC0339",
+    "sectors": [
+      "agrifood"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "food",
+        "antimicrobial*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8595bda2",
@@ -16455,8 +22141,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ced3883b",
@@ -16474,11 +22170,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "preventive measures"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
-    "relevant": false,
-    "target_number": 2
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“training”).",
+    "relevant": true,
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-618e53ad",
@@ -16499,8 +22205,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2f6f24d6",
@@ -16521,8 +22237,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "sectors": [
+      "industry",
+      "health"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "chemical*"
+      ],
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4199f52b",
@@ -16543,8 +22273,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c054d1c8",
@@ -16565,8 +22305,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e63c579c",
@@ -16587,8 +22337,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-45da2a3d",
@@ -16609,8 +22369,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6c57c108",
@@ -16631,8 +22401,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2358cc8c",
@@ -16650,11 +22430,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "worker training"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
-    "relevant": false,
-    "target_number": 10
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health"
+      ]
+    },
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“training”).",
+    "relevant": true,
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2ff038fe",
@@ -16675,8 +22465,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b26be8ca",
@@ -16697,30 +22497,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "31989L0391",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31989L0391",
-    "relevant": false,
-    "target_number": 12
-  },
-  {
-    "id": "tgt-f2d77c02",
-    "policy_id": "packaging-waste-regulation",
-    "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
-    "policy_short": "Packaging and Packaging Waste Regulation",
-    "document_type": "regulation",
-    "policy_area": "Circular economy",
-    "article": "Article 1(3)",
-    "target_text": "3. This Regulation contributes to the transition to a circular economy and to achieving climate neutrality at the latest by 2050, as provided for under Regulation (EU) 2021/1119 of the European Parliament and of the Council (53), by laying down measures in line with the waste hierarchy set out in Article 4 of Directive 2008/98/EC (‘waste hierarchy’).",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "by 2050",
-    "indicators": [
-      "climate neutrality"
+    "sectors": [
+      "health"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32025R0040",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": true,
-    "target_number": 1
+    "sector_evidence": {
+      "health": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-17cdf20e",
@@ -16738,11 +22526,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recyclability of packaging"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 2
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recyclable”).",
+    "relevant": true,
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-685a7a80",
@@ -16760,11 +22559,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recyclability performance grades"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 3
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recyclable”).",
+    "relevant": true,
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bb0da776",
@@ -16782,11 +22592,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recyclability performance grades"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 4
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recyclable”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-012c6f71",
@@ -16805,11 +22626,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recycled content",
       "minimum recycled content in plastic packaging"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 5
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*",
+        "packaging",
+        "waste",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycled content”).",
+    "relevant": true,
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bedf9484",
@@ -16827,11 +22661,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycled content share (PET contact-sensitive)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 5,
+    "duplicate_of": "Similar target: Single-Use Plastics Directive — Article 6(5)(a) (similarity 0.28)"
   },
   {
     "id": "tgt-bb269d9e",
@@ -16849,11 +22693,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycled content share (non-PET contact-sensitive)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c56564ca",
@@ -16871,11 +22725,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycled content share (single-use plastic beverage bottles)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“single-use plastic”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c71f1ef4",
@@ -16893,11 +22757,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycled content share (other plastic packaging)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0040efea",
@@ -16916,11 +22790,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recycled content",
       "minimum recycled content in plastic packaging"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 10
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*",
+        "packaging",
+        "waste",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycled content”).",
+    "relevant": true,
+    "target_number": 9,
+    "duplicate_of": "Similar target: Single-Use Plastics Directive — Article 6(5)(b) (similarity 0.26)"
   },
   {
     "id": "tgt-5e6891f6",
@@ -16938,11 +22825,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycled content share (PET contact-sensitive)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e77d6701",
@@ -16960,11 +22857,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycled content share (non-PET contact-sensitive)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e9dcb074",
@@ -16982,11 +22889,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycled content share (single-use plastic beverage bottles)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“single-use plastic”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-782a0dc7",
@@ -17004,11 +22921,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycled content share (other plastic packaging)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c6d633ca",
@@ -17026,11 +22953,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "packaging weight and volume minimisation"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 15
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*",
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
+    "relevant": true,
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e03a5cc0",
@@ -17048,11 +22986,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "empty space ratio"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ],
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f72d6a54",
@@ -17070,11 +23022,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "restricted packaging formats (Annex V)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 17
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
+    "relevant": true,
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c7bf5165",
@@ -17092,11 +23054,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of reusable transport packaging"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ],
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“re-use”).",
     "relevant": true,
-    "target_number": 18
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5cf01ede",
@@ -17114,11 +23090,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of reusable transport packaging"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“re-use”).",
     "relevant": true,
-    "target_number": 19
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b2266e38",
@@ -17136,11 +23122,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "reusable transport packaging within re-use system"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 20
+    "sectors": [
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ],
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“re-use”).",
+    "relevant": true,
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-5b792546",
@@ -17158,11 +23158,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "reusable transport packaging within re-use system"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 21
+    "sectors": [
+      "transport",
+      "industry"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ],
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“re-use”).",
+    "relevant": true,
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-38fc3b3d",
@@ -17180,11 +23194,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of reusable grouped packaging"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“re-use”).",
     "relevant": true,
-    "target_number": 22
+    "target_number": 21,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-992819ce",
@@ -17202,11 +23226,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of reusable grouped packaging"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“re-use”).",
     "relevant": true,
-    "target_number": 23
+    "target_number": 22,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a35097ed",
@@ -17224,11 +23258,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of beverages in reusable packaging"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“re-use”).",
     "relevant": true,
-    "target_number": 24
+    "target_number": 23,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8d252139",
@@ -17246,11 +23290,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of beverages in reusable packaging"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“re-use”).",
     "relevant": true,
-    "target_number": 25
+    "target_number": 24,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dd724677",
@@ -17266,11 +23320,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "by 2025",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging",
+        "waste",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 26
+    "target_number": 25,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d8ca31e9",
@@ -17288,11 +23354,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "re-use offer for take-away (HORECA)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 27
+    "sectors": [
+      "agrifood",
+      "industry"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "food"
+      ],
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“re-use”).",
+    "relevant": true,
+    "target_number": 26,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-acc4ce38",
@@ -17310,11 +23390,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of take-away products in reusable format"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 28
+    "target_number": 27,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d43aa467",
@@ -17335,8 +23425,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 29
+    "target_number": 28,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-291ed126",
@@ -17357,8 +23457,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 30
+    "target_number": 29,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-105b0f08",
@@ -17376,11 +23486,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "packaging waste generated per capita"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 31
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging",
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
+    "relevant": true,
+    "target_number": 30,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2d420182",
@@ -17399,21 +23520,31 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recycled content",
       "mandatory collection objectives"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 32
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycled content”).",
+    "relevant": true,
+    "target_number": 31,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-31b9f479",
+    "id": "tgt-5771d109",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
     "document_type": "regulation",
     "policy_area": "Circular economy",
     "article": "Article 50(1)",
-    "target_text": "1. By 1 January 2029, Member States shall take the necessary measures to ensure the separate collection of at least 90 % per year by weight of the following packaging formats made available on the market for the first time in that Member State in a given calendar year:",
+    "target_text": "1. By 1 January 2029, Member States shall take the necessary measures to ensure the separate collection of at least 90 % per year by weight of the following packaging formats made available on the market for the first time in that Member State in a given calendar year: (a) single-use plastic beverage bottles with a capacity of up to three litres; and (b) single-use metal beverage containers with a capacity of up to three litres.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
@@ -17421,11 +23552,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "separate collection rate (beverage bottles/containers)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 33
+    "target_number": 32,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-aad1e4a5",
@@ -17443,11 +23584,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycling rate of all packaging waste"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging",
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 34
+    "target_number": 33,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a87c19ac",
@@ -17465,11 +23617,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "material-specific recycling rates"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 35
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging",
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
+    "relevant": true,
+    "target_number": 34,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0a5326f9",
@@ -17487,11 +23650,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycling rate of all packaging waste"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging",
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
     "relevant": true,
-    "target_number": 36
+    "target_number": 35,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2eec81cb",
@@ -17509,11 +23683,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "material-specific recycling rates"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 37
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "packaging",
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“packaging”).",
+    "relevant": true,
+    "target_number": 36,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f734cd8a",
@@ -17531,11 +23716,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycling rate"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "relevant": false,
-    "target_number": 38
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
+    "relevant": true,
+    "target_number": 37,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3d61f0f8",
@@ -17553,11 +23748,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "population self-sufficiency (hours)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
     "relevant": false,
-    "target_number": 1
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bca93942",
@@ -17579,8 +23778,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilient”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fee0dd76",
@@ -17601,8 +23804,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-27cf8a59",
@@ -17623,8 +23830,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ac8baf6a",
@@ -17646,8 +23857,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7d1fc3e7",
@@ -17666,11 +23881,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "minimum preparedness requirements",
       "monitoring mechanism"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
-    "relevant": false,
-    "target_number": 6
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9c1ab8b4",
@@ -17691,8 +23910,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-472b2afe",
@@ -17714,8 +23937,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7c310a06",
@@ -17737,8 +23964,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“adaptation plan”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": "Similar target: Water Resilience Strategy — Section 3.5 (Security and preparedness) (similarity 0.27)"
   },
   {
     "id": "tgt-462ac676",
@@ -17760,8 +23991,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a473e288",
@@ -17779,11 +24020,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "public awareness of risks"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
-    "relevant": false,
-    "target_number": 11
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-91e858f2",
@@ -17801,11 +24046,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "public-private cooperation"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
-    "relevant": false,
-    "target_number": 12
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b8838bf9",
@@ -17823,11 +24072,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "civil-military coordination"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
-    "relevant": false,
-    "target_number": 13
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-57ac9f4e",
@@ -17845,11 +24098,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "preparedness exercises"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
-    "relevant": false,
-    "target_number": 14
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f74982f5",
@@ -17870,8 +24127,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ff8d2467",
@@ -17893,8 +24154,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2c0245f5",
@@ -17915,8 +24186,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025JC0130",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025JC0130",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
     "relevant": false,
-    "target_number": 17
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8aac09f1",
@@ -17939,8 +24214,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "aviation",
+        "aircraft",
+        "airport*"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“synthetic aviation fuel”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3e5cefee",
@@ -17961,8 +24248,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "biofuel*"
+      ],
+      "transport": [
+        "aviation",
+        "airport*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1d58bcbd",
@@ -17983,28 +24285,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 3
-  },
-  {
-    "id": "tgt-f786b593",
-    "policy_id": "refueleu-aviation",
-    "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
-    "policy_short": "ReFuelEU Aviation",
-    "document_type": "regulation",
-    "policy_area": "Transport",
-    "article": "Article 4 — Shares of SAF available at Union airports",
-    "target_text": "For each reporting period, aviation biofuels other than advanced biofuels as defined in Article 2, second paragraph, point (34), of Directive (EU) 2018/2001 and other than biofuels produced from the feedstock listed in Part B of Annex IX to that Directive, supplied across Union airports by each aviation fuel supplier, shall account for a maximum of 3 % of aviation fuels supplied for the purposes of complying with the minimum shares referred to in paragraph 1 of this Article and Annex I to this Regulation.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R2405",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "relevant": true,
-    "target_number": 4
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4a01d6e4",
@@ -18025,28 +24317,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "refuelling",
+        "aviation",
+        "aircraft",
+        "airport*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“refuelling”).",
     "relevant": true,
-    "target_number": 5
-  },
-  {
-    "id": "tgt-0a2d425b",
-    "policy_id": "refueleu-aviation",
-    "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
-    "policy_short": "ReFuelEU Aviation",
-    "document_type": "regulation",
-    "policy_area": "Transport",
-    "article": "Article 5 — Refuelling obligation for aircraft operators",
-    "target_text": "The yearly quantity of aviation fuel uplifted by a given aircraft operator at a given Union airport shall be at least 90 % of the yearly aviation fuel required.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R2405",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "relevant": true,
-    "target_number": 6
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6d81dc1f",
@@ -18068,8 +24353,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 7
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f4140bc0",
@@ -18091,8 +24386,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "aviation"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“synthetic aviation fuels”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-36485fbf",
@@ -18114,8 +24419,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "aviation"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“synthetic aviation fuels”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 7,
+    "duplicate_of": "Similar target: F-Gas Regulation — Annex V(b) — Production rights for placing hydrofluorocarbons on the market (similarity 0.25)"
   },
   {
     "id": "tgt-f2feea34",
@@ -18137,8 +24452,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "aviation"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“synthetic aviation fuels”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-def6d915",
@@ -18160,8 +24485,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "aviation"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“synthetic aviation fuels”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2d138352",
@@ -18183,8 +24518,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "aviation"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“synthetic aviation fuels”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-728d4b37",
@@ -18206,8 +24551,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "aviation"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“synthetic aviation fuels”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3bc1efaf",
@@ -18230,8 +24585,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy from renewable",
+        "renewable sources"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonisation”); switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": "Similar target: Governance Regulation — Article 5(2) — Member States' contribution setting process in the area of renewable energy (similarity 0.30)"
   },
   {
     "id": "tgt-95a4be70",
@@ -18253,8 +24620,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(2) — Energy efficiency targets (similarity 0.30)"
   },
   {
     "id": "tgt-d8a8eedb",
@@ -18277,8 +24654,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": "Similar target: Common Provisions Regulation (Cohesion) — Annex IV 2.3 — enabling condition: renewable energy promotion (similarity 0.26)"
   },
   {
     "id": "tgt-a948a791",
@@ -18300,18 +24688,31 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "electricity",
+        "grid",
+        "interconnect*"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“grid”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-68e01242",
+    "id": "tgt-61c40aca",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
     "article": "Article 5(1)",
-    "target_text": "Such indicative shares may, in each year, amount to at least 5 % from 2023 to 2026 and at least 10 % from 2027 to 2030, or, where lower, to the level of interconnectivity of the Member State concerned in any given year.",
+    "target_text": "When opening participation in support schemes for electricity from renewable sources, Member States may provide that support for an indicative share of the newly-supported capacity, or of the budget allocated thereto, in each year is open to producers located in other Member States. Such indicative shares may, in each year, amount to at least 5 % from 2023 to 2026 and at least 10 % from 2027 to 2030, or, where lower, to the level of interconnectivity of the Member State concerned in any given year.",
     "target_label": "target",
     "obligation": "voluntary",
     "target_type": "quantitative",
@@ -18319,31 +24720,54 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "indicative share of newly-supported capacity"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable sources",
+        "electricity",
+        "interconnect*"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable sources”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“interconnectivity”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-712fc8a2",
+    "id": "tgt-6d457e2e",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
     "article": "Article 5(5)",
-    "target_text": "That evaluation shall assess the need to introduce an obligation on Member States partially to open participation in their support schemes for electricity from renewable sources to producers located in other Member States with a view to a 5 % opening by 2025 and a 10 % opening by 2030.",
+    "target_text": "By 2023, the Commission shall carry out an evaluation of the implementation of this Article. That evaluation shall assess the need to introduce an obligation on Member States partially to open participation in their support schemes for electricity from renewable sources to producers located in other Member States with a view to a 5 % opening by 2025 and a 10 % opening by 2030.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
-    "timeline": "by 2025",
+    "timeline": "By 2023",
     "indicators": [],
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable sources",
+        "electricity"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable sources”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bcbe057d",
@@ -18364,8 +24788,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources"
+      ],
+      "transport": [
+        "aviation"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a16995a5",
@@ -18386,8 +24825,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources"
+      ],
+      "transport": [
+        "aviation"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": "Similar target: Governance Regulation — Article 5(2) — Member States' contribution setting process in the area of renewable energy (similarity 0.25)"
   },
   {
     "id": "tgt-ba5fd11a",
@@ -18408,11 +24862,34 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "minimum levels of energy from renewable sources",
       "share of renewable energy in the building sector"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "both",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "buildings",
+      "health"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy from renewable",
+        "renewable sources",
+        "district heating"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*"
+      ],
+      "health": [
+        "air quality"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”); switches supply or fuels to low-carbon sources (“renewable energy”). Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“air quality”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-69d16e11",
@@ -18433,8 +24910,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "nearly zero-energy"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”); switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9e9c53f2",
@@ -18455,8 +24950,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "electricity"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-19578429",
@@ -18480,8 +24986,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "final energy consumption",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“final energy consumption”); switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-717c2d9a",
@@ -18497,11 +25015,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "relevant": false,
-    "target_number": 13
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-21d76c47",
@@ -18517,11 +25046,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "relevant": false,
-    "target_number": 14
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d3b0abb8",
@@ -18543,8 +25083,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8225ecd8",
@@ -18567,8 +25118,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources",
+        "final energy consumption",
+        "district heating"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“final energy consumption”); switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-287b5112",
@@ -18589,8 +25153,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources",
+        "district heating",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ab0a6451",
@@ -18609,8 +25186,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "district heating",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“district heating”).",
     "relevant": true,
-    "target_number": 18
+    "target_number": 18,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cfd33e0d",
@@ -18629,8 +25217,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "district heating",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“district heating”).",
     "relevant": true,
-    "target_number": 19
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2e3e32a0",
@@ -18646,11 +25245,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "relevant": false,
-    "target_number": 20
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "district heating",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“district heating”).",
+    "relevant": true,
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-10c67c82",
@@ -18673,8 +25283,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonisation”); switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 21
+    "target_number": 21,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-99c9ee28",
@@ -18696,8 +25320,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "biofuel*"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 22
+    "target_number": 22,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e6840b7b",
@@ -18720,8 +25358,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 23
+    "target_number": 23,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e2e88dc0",
@@ -18744,8 +25392,30 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "agrifood",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources",
+        "biofuel*"
+      ],
+      "agrifood": [
+        "food",
+        "crop*"
+      ],
+      "transport": [
+        "transport*",
+        "rail"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 24
+    "target_number": 24,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4daf0660",
@@ -18766,8 +25436,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 25
+    "target_number": 25,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-725ff32b",
@@ -18786,8 +25466,27 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "agrifood",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "biofuel*"
+      ],
+      "agrifood": [
+        "food",
+        "crop*"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 26
+    "target_number": 26,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d403b0be",
@@ -18809,8 +25508,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "biofuel*"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 27
+    "target_number": 27,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a6b92607",
@@ -18832,8 +25545,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "biofuel*"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 28
+    "target_number": 28,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dee6fef3",
@@ -18855,8 +25582,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "biofuel*"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 29
+    "target_number": 29,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6e693ed3",
@@ -18878,8 +25619,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "biofuel*"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 30
+    "target_number": 30,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-dc797af1",
@@ -18901,48 +25656,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 31
-  },
-  {
-    "id": "tgt-65789506",
-    "policy_id": "renewable-energy-directive",
-    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
-    "policy_short": "Renewable Energy Directive (RED II)",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Article 29(4), point (b) — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and…",
-    "target_text": "continuously forested areas, namely land spanning more than one hectare with trees higher than five metres and a canopy cover of more than 30 %, or trees able to reach those thresholds in situ;",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018L2001",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "relevant": true,
-    "target_number": 32
-  },
-  {
-    "id": "tgt-3b1337c8",
-    "policy_id": "renewable-energy-directive",
-    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
-    "policy_short": "Renewable Energy Directive (RED II)",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Article 29(4), point (c) — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and…",
-    "target_text": "land spanning more than one hectare with trees higher than five metres and a canopy cover of between 10 % and 30 %, or trees able to reach those thresholds in situ, unless evidence is provided that the carbon stock of the area before and after conversion is such that, when the methodology laid down in Part C of Annex V is applied, the conditions laid down in paragraph 10 of this Article would be fulfilled.",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018L2001",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "relevant": true,
-    "target_number": 33
+    "target_number": 31,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9edf0aa9",
@@ -18958,34 +25684,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
-    "celex_number": "32018L2001",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "relevant": false,
-    "target_number": 34
-  },
-  {
-    "id": "tgt-f552bf61",
-    "policy_id": "renewable-energy-directive",
-    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
-    "policy_short": "Renewable Energy Directive (RED II)",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Annex I — National overall targets",
-    "target_text": "NATIONAL OVERALL TARGETS FOR THE SHARE OF ENERGY FROM RENEWABLE SOURCES IN GROSS FINAL CONSUMPTION OF ENERGY IN 2020",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "in 2020",
-    "indicators": [
-      "share of energy from renewable sources",
-      "gross final consumption of energy"
-    ],
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity",
+        "biofuel*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 35
+    "target_number": 32,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b20d9477",
@@ -19006,8 +25720,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": "Similar target: Energy Performance of Buildings Directive — Article 9(1) — Minimum energy performance standards for non-residential buildings (similarity 0.25)"
   },
   {
     "id": "tgt-43962846",
@@ -19028,8 +25754,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "renovation*",
+        "renovate*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-afb5f9cf",
@@ -19050,8 +25788,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-80d8f818",
@@ -19074,8 +25823,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net greenhouse gas emissions”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": "Similar target: EU Adaptation Strategy — Section 1 — The reality of climate change impacts – the need to act NOW (similarity 0.31)"
   },
   {
     "id": "tgt-f5aef2ca",
@@ -19100,8 +25860,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "final energy consumption",
+        "heating and cooling"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); cuts energy demand, which cuts the emissions of supplying that energy (“final energy consumption”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": "Similar target: European Green Deal — 2.1.1 Increasing the EU’s climate ambition for 2030 and 2050 (similarity 0.25)"
   },
   {
     "id": "tgt-719e83ea",
@@ -19119,11 +25896,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "green jobs"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "relevant": false,
-    "target_number": 6
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
+    "relevant": true,
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-afb0c97b",
@@ -19142,8 +25930,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "renovation*",
+        "building stock"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-33360d4d",
@@ -19164,8 +25964,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate target”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a78af789",
@@ -19187,18 +25997,29 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": "Similar target: Energy Performance of Buildings Directive — Article 9(1) — Minimum energy performance standards for non-residential buildings (similarity 0.24; cited in the text)"
   },
   {
-    "id": "tgt-4a74da94",
+    "id": "tgt-9aa7c9fc",
     "policy_id": "renovation-wave",
     "policy_name": "Communication COM(2020) 662 — A Renovation Wave for Europe: greening our buildings, creating jobs, improving lives",
     "policy_short": "Renovation Wave",
     "document_type": "communication",
     "policy_area": "Buildings",
     "article": "Section 3.5 (Creating a sustainable built environment)",
-    "target_text": "it will develop by 2023 a roadmap leading up to 2050 for reducing whole life-cycle carbon emissions in buildings.",
+    "target_text": "It will address the sustainability performance of construction products in the context of its revision of the Construction Product Regulation and it will develop by 2023 a roadmap leading up to 2050 for reducing whole life-cycle carbon emissions in buildings.",
     "target_label": "commitment",
     "obligation": "voluntary",
     "target_type": "quantitative",
@@ -19209,8 +26030,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings",
+        "construction product*",
+        "built environment",
+        "whole life-cycle carbon"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-59f08f45",
@@ -19232,8 +26066,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonising”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6485f979",
@@ -19254,8 +26098,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8192494b",
@@ -19276,8 +26131,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "building stock"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonising”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-00e5a4e2",
@@ -19298,8 +26166,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy poverty"
+      ],
+      "buildings": [
+        "buildings"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-be6f1989",
@@ -19317,11 +26199,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "social homes renovation need"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
-    "relevant": false,
-    "target_number": 15
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy poverty"
+      ],
+      "buildings": [
+        "buildings",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
+    "relevant": true,
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c217412e",
@@ -19344,8 +26241,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "heating and cooling",
+        "energy poverty"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonising”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-58649b3a",
@@ -19364,8 +26278,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52020DC0662",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0662",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "heating and cooling",
+        "energy demand"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate target”); cuts energy demand, which cuts the emissions of supplying that energy (“energy demand”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-df66bf6d",
@@ -19383,11 +26308,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "alignment with the objectives of the Paris Agreement"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
-    "relevant": true,
-    "target_number": 1
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ff3b5c8d",
@@ -19408,8 +26337,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cc0eb9f6",
@@ -19430,56 +26363,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
-  },
-  {
-    "id": "tgt-5b191547",
-    "policy_id": "sfdr",
-    "policy_name": "Regulation (EU) 2019/2088 on sustainability-related disclosures in the financial services sector (SFDR)",
-    "policy_short": "Sustainable Finance Disclosure Regulation",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 9(3), first subparagraph — Transparency of sustainable investments in pre-contractual disclosures",
-    "target_text": "3. Where a financial product has a reduction in carbon emissions as its objective, the information to be disclosed pursuant to Article 6(1) and (3) shall include the objective of low carbon emission exposure in view of achieving the long‐term global warming objectives of the Paris Agreement.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "reduction in carbon emissions",
-      "low carbon emission exposure",
-      "long-term global warming objectives of the Paris Agreement"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32019R2088",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
-    "relevant": true,
-    "target_number": 4
-  },
-  {
-    "id": "tgt-f1260ec6",
-    "policy_id": "sfdr",
-    "policy_name": "Regulation (EU) 2019/2088 on sustainability-related disclosures in the financial services sector (SFDR)",
-    "policy_short": "Sustainable Finance Disclosure Regulation",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 9(3), second subparagraph — Transparency of sustainable investments in pre-contractual disclosures",
-    "target_text": "By way of derogation from paragraph 2 of this Article, where no EU Climate Transition Benchmark or EU Paris‐aligned Benchmark in accordance with Regulation (EU) 2016/1011 of the European Parliament and of the Council (20) is available, the information referred to in Article 6 shall include a detailed explanation of how the continued effort of attaining the objective of reducing carbon emissions is ensured in view of achieving the long‐term global warming objectives of the Paris Agreement.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "EU Climate Transition Benchmark",
-      "EU Paris-aligned Benchmark",
-      "reducing carbon emissions"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32019R2088",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
-    "relevant": true,
-    "target_number": 5
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c1927192",
@@ -19497,11 +26386,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "consumption of single-use plastic products (Part A)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "relevant": false,
-    "target_number": 1
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“waste prevention”).",
+    "relevant": true,
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-97dbcc82",
@@ -19519,11 +26418,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "prohibited single-use plastic products (Part B)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "relevant": false,
-    "target_number": 2
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“single-use plastic”).",
+    "relevant": true,
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b4e0e41c",
@@ -19541,11 +26450,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "tethered caps and lids"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "relevant": false,
-    "target_number": 3
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“single-use plastic”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-3e62e517",
@@ -19563,11 +26482,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycled plastic content in PET bottles"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "manufactur*",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycled”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": "Similar target: Packaging and Packaging Waste Regulation — Article 7(1)(a) (similarity 0.28)"
   },
   {
     "id": "tgt-9369ace5",
@@ -19585,11 +26515,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recycled plastic content in beverage bottles"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycled”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": "Similar target: Packaging and Packaging Waste Regulation — Article 7(2) (similarity 0.26)"
   },
   {
     "id": "tgt-f2e91381",
@@ -19608,11 +26548,30 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "collection rate",
       "national minimum annual collection rate of waste fishing gear"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "relevant": false,
-    "target_number": 6
+    "sectors": [
+      "industry",
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste",
+        "recycl*"
+      ],
+      "ecosystems": [
+        "marine"
+      ],
+      "water": [
+        "waters"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
+    "relevant": true,
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2e47a203",
@@ -19630,11 +26589,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "separate collection rate of single-use plastic products (Part F)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“single-use plastic”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-401c38dc",
@@ -19652,11 +26621,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "separate collection rate of single-use plastic products (Part F)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“single-use plastic”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-413f8054",
@@ -19677,33 +26656,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
-  },
-  {
-    "id": "tgt-2e11df41",
-    "policy_id": "social-climate-fund",
-    "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
-    "policy_short": "Social Climate Fund",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 1 — Subject matter and scope",
-    "target_text": "The measures and investments supported by the Fund shall benefit households, micro-enterprises and transport users, which are vulnerable and particularly affected by the inclusion of greenhouse gas emissions from buildings and road transport within the scope of Directive 2003/87/EC, in particular households in energy poverty or households in transport poverty.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "greenhouse gas emissions",
-      "vulnerable households",
-      "energy poverty",
-      "transport poverty"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R0955",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "relevant": true,
-    "target_number": 2
+    "target_number": 1,
+    "duplicate_of": "Similar target: Fit for 55 Package — 2.1 A socially fair transition: tackling inequality and energy poverty through climate action (similarity 0.28)"
   },
   {
     "id": "tgt-49e5ffde",
@@ -19726,8 +26684,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "sectors": [
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "buildings"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-18f21fe8",
@@ -19752,146 +26724,30 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "relevant": true,
-    "target_number": 4
-  },
-  {
-    "id": "tgt-56920fba",
-    "policy_id": "social-climate-fund",
-    "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
-    "policy_short": "Social Climate Fund",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 3 — Objectives",
-    "target_text": "The general objective of the Fund shall be to contribute to a socially fair transition towards climate neutrality by addressing the social impacts of the inclusion of greenhouse gas emissions from buildings and road transport within the scope of Directive 2003/87/EC.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "greenhouse gas emissions"
+    "sectors": [
+      "energy",
+      "buildings",
+      "transport"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R0955",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy efficiency",
+        "heating and cooling"
+      ],
+      "buildings": [
+        "buildings",
+        "household*"
+      ],
+      "transport": [
+        "transport*",
+        "mobility"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonisation”); cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”); switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 5
-  },
-  {
-    "id": "tgt-386b02bf",
-    "policy_id": "social-climate-fund",
-    "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
-    "policy_short": "Social Climate Fund",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 4(1) — Social Climate Plans",
-    "target_text": "1. Each Member State shall submit to the Commission its Plan. The Plan shall contain a coherent set of existing or new national measures and investments to address the impact of carbon pricing on vulnerable households, vulnerable micro-enterprises and vulnerable transport users in order to ensure affordable heating, cooling and mobility, while accompanying and accelerating necessary measures to meet the climate targets of the Union.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "climate targets of the Union",
-      "vulnerable households"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R0955",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "relevant": true,
-    "target_number": 6
-  },
-  {
-    "id": "tgt-6cc95723",
-    "policy_id": "social-climate-fund",
-    "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
-    "policy_short": "Social Climate Fund",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 4(4)(a) — Social Climate Plans",
-    "target_text": "carry out building renovation, and decarbonise heating and cooling of buildings, including the integration of renewable energy generation and storage;",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "renewable energy",
-      "building renovation",
-      "decarbonise heating and cooling",
-      "renewable energy generation and storage"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R0955",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "relevant": true,
-    "target_number": 7
-  },
-  {
-    "id": "tgt-86a67071",
-    "policy_id": "social-climate-fund",
-    "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
-    "policy_short": "Social Climate Fund",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 4(4)(b) — Social Climate Plans",
-    "target_text": "increase the uptake of zero- and low-emission mobility and transport.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "uptake of zero- and low-emission mobility and transport"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R0955",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "relevant": true,
-    "target_number": 8
-  },
-  {
-    "id": "tgt-7ef1a6a7",
-    "policy_id": "social-climate-fund",
-    "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
-    "policy_short": "Social Climate Fund",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 7(2) — Principles governing the Fund",
-    "target_text": "2. Payment of financial support pursuant to paragraph 1 of this Article to each Member State shall be conditional upon that Member State achieving the milestones and targets for the measures and investments in accordance with Article 8 of this Regulation. Those milestones and targets shall be compatible with the Union’s climate targets and the objective set out in Regulation (EU) 2021/1119, and shall cover in particular:",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "milestones and targets",
-      "Union's climate targets"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R0955",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "relevant": true,
-    "target_number": 9
-  },
-  {
-    "id": "tgt-c9416d96",
-    "policy_id": "social-climate-fund",
-    "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
-    "policy_short": "Social Climate Fund",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 7(2)(d) — Principles governing the Fund",
-    "target_text": "greenhouse gas emission reductions;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "greenhouse gas emission reductions",
-      "emission reductions"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R0955",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "relevant": true,
-    "target_number": 10
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-688c442a",
@@ -19914,8 +26770,75 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "sectors": [
+      "energy",
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy poverty"
+      ],
+      "buildings": [
+        "household*"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 4,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-0fce74a9",
+    "policy_id": "social-climate-fund",
+    "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
+    "policy_short": "Social Climate Fund",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 7(2) — Principles governing the Fund",
+    "target_text": "2. Payment of financial support pursuant to paragraph 1 of this Article to each Member State shall be conditional upon that Member State achieving the milestones and targets for the measures and investments in accordance with Article 8 of this Regulation. Those milestones and targets shall be compatible with the Union’s climate targets and the objective set out in Regulation (EU) 2021/1119, and shall cover in particular: (a) energy efficiency; (b) building renovation; (c) zero- and low-emission mobility and transport; (d) greenhouse gas emission reductions; (e) reductions in the number of vulnerable households, in particular households in energy poverty, of vulnerable micro-enterprises and of vulnerable transport users.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "greenhouse gas emission reductions",
+      "energy efficiency",
+      "emission reductions",
+      "building renovation",
+      "milestones and targets",
+      "Union's climate targets"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32023R0955",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "sectors": [
+      "energy",
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency",
+        "energy poverty"
+      ],
+      "buildings": [
+        "building",
+        "renovation*",
+        "household*"
+      ],
+      "transport": [
+        "transport*",
+        "mobility"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission reductions”); cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”); switches supply or fuels to low-carbon sources (“zero- and low-emission”).",
+    "relevant": true,
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ca9ffc90",
@@ -19933,11 +26856,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of technical assistance in estimated total costs of the Plan"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "relevant": false,
-    "target_number": 12
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“training”).",
+    "relevant": true,
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f2c9d86e",
@@ -19958,8 +26885,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b69b4d31",
@@ -19980,8 +26911,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 14
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-735f3427",
@@ -20002,8 +26937,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 15
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a6d47fbe",
@@ -20025,48 +26964,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 16
-  },
-  {
-    "id": "tgt-cceab404",
-    "policy_id": "social-climate-fund",
-    "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
-    "policy_short": "Social Climate Fund",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 16 — Commission assessment",
-    "target_text": "whether the Plan contains measures and investments that contribute to the green transition, including to addressing the social impacts and challenges resulting therefrom and in particular to the achievement of the Union’s 2030 climate and energy targets and long-term objective of climate neutrality in the Union at the latest by 2050 and the 2030 milestones of the Union’s Sustainable and Smart Mobility Strategy;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "by 2050",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R0955",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "relevant": true,
-    "target_number": 17
-  },
-  {
-    "id": "tgt-e2de3877",
-    "policy_id": "social-climate-fund",
-    "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
-    "policy_short": "Social Climate Fund",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 16 — Commission assessment",
-    "target_text": "whether the Plan is expected to have a lasting impact in the Member State on the challenges addressed by that Plan, in line with the Union’s 2030 climate and energy targets and long-term objective of climate neutrality in the Union at the latest by 2050, and in particular on vulnerable households, vulnerable micro-enterprises and vulnerable transport users, in particular households in energy poverty or households in transport poverty;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "by 2050",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32023R0955",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "relevant": true,
-    "target_number": 18
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-16780e11",
@@ -20087,8 +26990,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f14050a3",
@@ -20109,8 +27016,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c056a453",
@@ -20132,8 +27043,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9d39f464",
@@ -20154,51 +27069,29 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-eab05ff7",
-    "policy_id": "taxonomy-regulation",
-    "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
-    "policy_short": "EU Taxonomy Regulation",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 9 — Environmental objectives",
-    "target_text": "For the purposes of this Regulation, the following shall be environmental objectives:",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "climate change mitigation",
-      "climate change adaptation",
-      "water and marine resources",
-      "circular economy",
-      "pollution prevention and control",
-      "biodiversity and ecosystems"
-    ],
-    "climate_relevance": "both",
-    "celex_number": "32020R0852",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "relevant": true,
-    "target_number": 5
-  },
-  {
-    "id": "tgt-7d62258c",
+    "id": "tgt-18a39815",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
     "article": "Article 10(1) — Substantial contribution to climate change mitigation",
-    "target_text": "1. An economic activity shall qualify as contributing substantially to climate change mitigation where that activity contributes substantially to the stabilisation of greenhouse gas concentrations in the atmosphere at a level which prevents dangerous anthropogenic interference with the climate system consistent with the long-term temperature goal of the Paris Agreement through the avoidance or reduction of greenhouse gas emissions or the increase of greenhouse gas removals, including through process innovations or product innovations, by:",
+    "target_text": "1. An economic activity shall qualify as contributing substantially to climate change mitigation where that activity contributes substantially to the stabilisation of greenhouse gas concentrations in the atmosphere at a level which prevents dangerous anthropogenic interference with the climate system consistent with the long-term temperature goal of the Paris Agreement through the avoidance or reduction of greenhouse gas emissions or the increase of greenhouse gas removals, including through process innovations or product innovations, by: (a) generating, transmitting, storing, distributing or using renewable energy in line with Directive (EU) 2018/2001, including through using innovative technology with a potential for significant future savings or through necessary reinforcement or extension of the grid;",
     "target_label": "objective",
     "obligation": "mandatory",
     "target_type": "qualitative",
     "timeline": "",
     "indicators": [
       "greenhouse gas emissions",
+      "renewable energy",
       "removals",
       "avoidance or reduction of greenhouse gas emissions",
       "increase of greenhouse gas removals"
@@ -20206,18 +27099,29 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "grid"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); increases removals or protects the sink (land, forests or engineered storage) (“removals”); switches supply or fuels to low-carbon sources (“renewable energy”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“grid”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-921c449a",
+    "id": "tgt-1b8c90f5",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
     "article": "Article 10(2) — Substantial contribution to climate change mitigation",
-    "target_text": "2. For the purposes of paragraph 1, an economic activity for which there is no technologically and economically feasible low-carbon alternative shall qualify as contributing substantially to climate change mitigation where it supports the transition to a climate-neutral economy consistent with a pathway to limit the temperature increase to 1,5 0C above pre-industrial levels, including by phasing out greenhouse gas emissions, in particular emissions from solid fossil fuels, and where that activity:",
+    "target_text": "2. For the purposes of paragraph 1, an economic activity for which there is no technologically and economically feasible low-carbon alternative shall qualify as contributing substantially to climate change mitigation where it supports the transition to a climate-neutral economy consistent with a pathway to limit the temperature increase to 1,5 0C above pre-industrial levels, including by phasing out greenhouse gas emissions, in particular emissions from solid fossil fuels, and where that activity: (a) has greenhouse gas emission levels that correspond to the best performance in the sector or industry; (b) does not hamper the development and deployment of low-carbon alternatives; and (c) does not lead to a lock-in of carbon-intensive assets, considering the economic lifetime of those assets.",
     "target_label": "objective",
     "obligation": "mandatory",
     "target_type": "qualitative",
@@ -20230,52 +27134,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "relevant": true,
-    "target_number": 7
-  },
-  {
-    "id": "tgt-77171292",
-    "policy_id": "taxonomy-regulation",
-    "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
-    "policy_short": "EU Taxonomy Regulation",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 10 — Substantial contribution to climate change mitigation",
-    "target_text": "For the purposes of paragraph 1, an economic activity for which there is no technologically and economically feasible low-carbon alternative shall qualify as contributing substantially to climate change mitigation where it supports the transition to a climate-neutral economy consistent with a pathway to limit the temperature increase to 1,5 0C above pre-industrial levels, including by phasing out greenhouse gas emissions, in particular emissions from solid fossil fuels, and where that activity:",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "greenhouse gas emissions"
+    "sectors": [
+      "energy",
+      "industry"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32020R0852",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "sector_evidence": {
+      "energy": [
+        "fossil fuel*"
+      ],
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate-neutral”); switches supply or fuels to low-carbon sources (“low-carbon”).",
     "relevant": true,
-    "target_number": 8
-  },
-  {
-    "id": "tgt-51b84dd6",
-    "policy_id": "taxonomy-regulation",
-    "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
-    "policy_short": "EU Taxonomy Regulation",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 11(1) — Substantial contribution to climate change adaptation",
-    "target_text": "1. An economic activity shall qualify as contributing substantially to climate change adaptation where that activity:",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "climate risk adaptation solutions"
-    ],
-    "climate_relevance": "adaptation",
-    "celex_number": "32020R0852",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "relevant": true,
-    "target_number": 9
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-15fe7607",
@@ -20297,8 +27171,38 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); seizes an opportunity created by a changing climate (new markets, diversified livelihoods) (“future climate”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 7,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-bde25007",
+    "policy_id": "taxonomy-regulation",
+    "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
+    "policy_short": "EU Taxonomy Regulation",
+    "document_type": "regulation",
+    "policy_area": "Finance",
+    "article": "Article 11(1) — Substantial contribution to climate change adaptation",
+    "target_text": "1. An economic activity shall qualify as contributing substantially to climate change adaptation where that activity: (a) includes adaptation solutions that either substantially reduce the risk of the adverse impact of the current climate and the expected future climate on that economic activity or substantially reduce that adverse impact, without increasing the risk of an adverse impact on people, nature or assets; or (b) provides adaptation solutions that, in addition to satisfying the conditions set out in",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "climate risk adaptation solutions"
+    ],
+    "climate_relevance": "adaptation",
+    "celex_number": "32020R0852",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); seizes an opportunity created by a changing climate (new markets, diversified livelihoods) (“future climate”).",
+    "relevant": true,
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f3301811",
@@ -20320,48 +27224,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
-  },
-  {
-    "id": "tgt-fef57ef8",
-    "policy_id": "taxonomy-regulation",
-    "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
-    "policy_short": "EU Taxonomy Regulation",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 19 — Requirements for technical screening criteria",
-    "target_text": "The technical screening criteria referred to in paragraph 1 shall also include criteria for activities related to the switch to clean or climate-neutral mobility, including through modal shift, efficiency measures and alternative fuels, to the extent that those are substantially contributing to any of the environmental objectives.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32020R0852",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "relevant": true,
-    "target_number": 12
-  },
-  {
-    "id": "tgt-348675a0",
-    "policy_id": "taxonomy-regulation",
-    "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
-    "policy_short": "EU Taxonomy Regulation",
-    "document_type": "regulation",
-    "policy_area": "Finance",
-    "article": "Article 19 — Requirements for technical screening criteria",
-    "target_text": "To ensure that economic activities as referred to in Article 10(2) remain on a credible transition pathway consistent with a climate-neutral economy, the Commission shall review the technical screening criteria for those activities at least every three years and, where appropriate, amend the delegated act referred to in Article 10(3) in line with scientific and technological developments.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "every three years",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32020R0852",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "relevant": true,
-    "target_number": 13
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-58e15d65",
@@ -20383,8 +27251,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy infrastructure"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“energy infrastructure”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a603ee6a",
@@ -20405,161 +27283,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
-  },
-  {
-    "id": "tgt-28449d31",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Art. 4(3)(a)",
-    "target_text": "the project contributes significantly to sustainability through the integration of renewable energy into the grid, the transmission or distribution of renewable generation to major consumption centres and storage sites, and to reducing energy curtailment",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "renewable energy",
-      "renewable integration"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 3
-  },
-  {
-    "id": "tgt-18df2b57",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Art. 4(3)(d)",
-    "target_text": "the project contributes significantly to sustainability, including by reducing greenhouse gas emissions, by enhancing the deployment of renewable or low carbon hydrogen, with an emphasis on hydrogen from renewable sources",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "greenhouse gas emissions",
-      "renewable hydrogen deployment"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 4
-  },
-  {
-    "id": "tgt-aaf00973",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Art. 4(3)(c)",
-    "target_text": "the project contributes significantly to sustainability through the reduction of carbon dioxide emissions in the connected industrial installations",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "industrial CO2 reduction"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 5
-  },
-  {
-    "id": "tgt-46a464fd",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Art. 4(3)(f)",
-    "target_text": "the project contributes significantly to sustainability by ensuring the integration of a plurality of low-carbon and particularly renewable gases, including where they are locally sourced, such as biomethane or renewable hydrogen, into the gas transmission, distribution or storage systems in order to reduce greenhouse gas emissions",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "greenhouse gas emissions",
-      "renewable gas integration"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 6
-  },
-  {
-    "id": "tgt-4d22b310",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Annex I(4)",
-    "target_text": "Northern Seas offshore grids (NSOG): offshore electricity grid development, integrated offshore electricity, as well as, where appropriate, hydrogen grid development and the related interconnectors in the North Sea, the Irish Sea, the Celtic Sea, the English Channel and neighbouring waters to transport electricity or, where appropriate, hydrogen from renewable offshore energy sources to centres of consumption and storage",
-    "target_label": "goal",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "offshore renewable grids"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 7
-  },
-  {
-    "id": "tgt-4f321494",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Art. 4(2)(e)(iii)",
-    "target_text": "an energy system, including production, transmission and distribution, moving towards the objective of climate neutrality, in line with the Paris Agreement and the Union’s 2030 targets for energy and climate and its 2050 climate neutrality objective, in particular, avoiding carbon leakage;",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 8
-  },
-  {
-    "id": "tgt-f6383a62",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Art. 4(5)(a)",
-    "target_text": "the urgency and the contribution of each proposed project in order to meet the Union’s 2030 targets for energy and climate and its 2050 climate neutrality objective, market integration, competition, sustainability, and security of supply;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 9
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-503d9ce5",
@@ -20580,8 +27315,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-21edf922",
@@ -20602,8 +27347,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 11
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a9808eaa",
@@ -20624,8 +27379,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 12
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d1f19497",
@@ -20646,30 +27411,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": false,
-    "target_number": 13
-  },
-  {
-    "id": "tgt-62721a55",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Annex I(9)",
-    "target_text": "Hydrogen interconnections in Western Europe (HI West): hydrogen infrastructure and the repurposing of gas infrastructure, enabling the emergence of an integrated hydrogen backbone",
-    "target_label": "goal",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "hydrogen backbone"
+    "sectors": [
+      "energy"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 14
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9ddd23ac",
@@ -20691,7 +27444,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 15
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ec9298b8",
@@ -20713,7 +27476,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 16
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-094514e7",
@@ -20735,93 +27508,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
     "relevant": false,
-    "target_number": 17
-  },
-  {
-    "id": "tgt-ce5c38b2",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Art. 11(1)",
-    "target_text": "The methodologies referred to in the first subparagraph of this paragraph shall be drawn up in line with the principles laid down in Annex V, be based on common assumptions allowing for project comparison, and be consistent with the Union’s 2030 targets for energy and climate and its 2050 climate neutrality objective, as well as with the rules and indicators set out in Annex IV.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 18
-  },
-  {
-    "id": "tgt-4f3cf9f9",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Annex I(12)",
-    "target_text": "Smart electricity grids deployment: adopting smart grid technologies across the Union to efficiently integrate the behaviour and actions of all users connected to the electricity network, in particular the generation of large amounts of electricity from renewable or distributed energy sources and demand response by consumers, energy storage, electric vehicles and other flexibility sources",
-    "target_label": "goal",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "smart grid deployment"
+    "sectors": [
+      "energy"
     ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 19
-  },
-  {
-    "id": "tgt-b0dc6863",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Art. 12(1)",
-    "target_text": "The guidelines shall also aim to ensure that the underlying ENTSO for Electricity and ENTSO for Gas scenarios are fully in line with the energy efficiency first principle and with the Union’s 2030 targets for energy and climate and its 2050 climate neutrality objective and shall take into account the latest available Commission scenarios, as well as, when relevant, the national energy and climate plans.",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "energy efficiency"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 20
-  },
-  {
-    "id": "tgt-b4e91c4d",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Annex I(13)",
-    "target_text": "Cross-border carbon dioxide network: development of infrastructure for transport and storage of carbon dioxide between Member States and with neighbouring third countries of carbon dioxide capture and storage captured from industrial installations for the purpose of permanent geological storage",
-    "target_label": "goal",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "CO2 transport and storage network"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 21
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ab0429e9",
@@ -20840,8 +27537,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate and energy targets”).",
     "relevant": true,
-    "target_number": 22
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c38c37bb",
@@ -20860,28 +27567,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "sectors": [
+      "energy",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "grid",
+        "offshore renewable"
+      ],
+      "ecosystems": [
+        "sea"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“grid”).",
     "relevant": true,
-    "target_number": 23
-  },
-  {
-    "id": "tgt-1b8a3a08",
-    "policy_id": "ten-e-regulation",
-    "policy_name": "Regulation (EU) 2022/869 on guidelines for trans-European energy infrastructure (TEN-E)",
-    "policy_short": "TEN-E Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Art. 16(4)(a)",
-    "target_text": "Where additional scenarios are used, those shall be consistent with the Union’s 2030 targets for energy and climate and its 2050 climate neutrality objective and be subject to the same level of consultation and scrutiny as the process provided for in Article 12.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32022R0869",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
-    "relevant": true,
-    "target_number": 24
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-82fa9e65",
@@ -20900,8 +27602,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022R0869",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0869",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "hydrogen"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“hydrogen”).",
     "relevant": true,
-    "target_number": 25
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c1b1e3ba",
@@ -20919,11 +27631,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "single multimodal network"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
-    "relevant": false,
-    "target_number": 1
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“trans-european”).",
+    "relevant": true,
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f842737a",
@@ -20944,8 +27666,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "mobility"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9b10b0d8",
@@ -20966,8 +27698,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*",
+        "rail"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-85c5b03d",
@@ -20988,8 +27731,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "recharging",
+        "refuelling"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonisation”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d8f20b3d",
@@ -21010,8 +27764,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonise”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilient”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-87c4dd4b",
@@ -21033,7 +27797,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
     "relevant": false,
-    "target_number": 6
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b39b1278",
@@ -21055,7 +27829,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
     "relevant": false,
-    "target_number": 7
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9f7b0aa6",
@@ -21077,7 +27861,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
     "relevant": false,
-    "target_number": 8
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ca2ce071",
@@ -21099,7 +27893,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
     "relevant": false,
-    "target_number": 9
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e999f611",
@@ -21121,7 +27925,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
     "relevant": false,
-    "target_number": 10
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-064e3a5e",
@@ -21143,7 +27957,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
     "relevant": false,
-    "target_number": 11
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "railway*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-97dd6503",
@@ -21165,7 +27989,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
     "relevant": false,
-    "target_number": 12
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "railway*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8b729734",
@@ -21187,7 +28021,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
     "relevant": false,
-    "target_number": 13
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "railway*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "target_number": 13,
+    "duplicate_of": "Similar target: Alternative Fuels Infrastructure Regulation — Article 12(1) — Targets for supply of electricity to stationary aircraft (similarity 0.25)"
   },
   {
     "id": "tgt-482876cc",
@@ -21208,8 +28052,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "urban"
+      ],
+      "transport": [
+        "transport*",
+        "mobility"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”).",
     "relevant": true,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a5cf880a",
@@ -21230,8 +28089,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c5f835ce",
@@ -21252,8 +28121,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 16,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2572e5ee",
@@ -21274,8 +28153,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1679",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“climate proofing”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“climate proofing”).",
     "relevant": true,
-    "target_number": 17
+    "target_number": 17,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a1751f55",
@@ -21296,8 +28185,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4acd5fd9",
@@ -21318,8 +28211,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cb8ac9f5",
@@ -21337,11 +28234,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "preparedness"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
-    "relevant": false,
-    "target_number": 3
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0e1be63a",
@@ -21362,8 +28263,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-66efb4fb",
@@ -21381,11 +28286,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "public awareness"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
-    "relevant": false,
-    "target_number": 5
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e4f7ae3c",
@@ -21406,8 +28315,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e762df9f",
@@ -21428,8 +28341,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“disaster risks”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-1a62f967",
@@ -21447,11 +28364,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "national risk assessments"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
-    "relevant": false,
-    "target_number": 8
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“risk assessments”).",
+    "relevant": true,
+    "target_number": 8,
+    "duplicate_of": "Similar target: Cross-Border Health Threats Regulation — Article 7(1) (similarity 0.26)"
   },
   {
     "id": "tgt-273dcd49",
@@ -21472,8 +28393,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-cccb66b0",
@@ -21495,8 +28420,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-b8785b57",
@@ -21514,11 +28443,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "response modules"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
-    "relevant": false,
-    "target_number": 11
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a82aaf4c",
@@ -21539,8 +28472,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-21f11b25",
@@ -21561,8 +28498,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-10ba2ecc",
@@ -21580,11 +28521,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "training programme"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32013D1313",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D1313",
-    "relevant": false,
-    "target_number": 14
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
+    "relevant": true,
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8b681297",
@@ -21602,11 +28547,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "waste hierarchy priority order"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
-    "relevant": false,
-    "target_number": 1
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“waste prevention”).",
+    "relevant": true,
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-83db3834",
@@ -21627,8 +28582,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-2f609e11",
@@ -21646,11 +28611,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "preparing for re-use and recycling of household waste"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "sectors": [
+      "buildings",
+      "industry"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "household*"
+      ],
+      "industry": [
+        "waste",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bcd03946",
@@ -21668,11 +28648,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recovery of non-hazardous construction and demolition waste"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste",
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycling”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-87d4eda5",
@@ -21693,8 +28684,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-62810f77",
@@ -21715,8 +28716,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a37bd430",
@@ -21738,8 +28749,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water",
+        "surface water"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7ce857bc",
@@ -21760,8 +28782,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "restore*"
+      ],
+      "water": [
+        "water",
+        "surface water"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restore”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": "Similar target: Water Resilience Strategy — Annex II — The key 2027-2033 intermediate targets (similarity 0.33)"
   },
   {
     "id": "tgt-80eb4b3a",
@@ -21783,8 +28820,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "sectors": [
+      "industry",
+      "water"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "chemical*"
+      ],
+      "water": [
+        "water",
+        "surface water"
+      ]
+    },
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": "Similar target: Water Resilience Strategy — Annex II — The key 2027-2033 intermediate targets (similarity 0.30)"
   },
   {
     "id": "tgt-593fe449",
@@ -21806,8 +28858,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": false,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e0b591ff",
@@ -21829,8 +28891,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "groundwater"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-bade8a74",
@@ -21852,8 +28924,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "restore*"
+      ],
+      "water": [
+        "groundwater"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restore”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": "Similar target: Water Resilience Strategy — Annex II — The key 2027-2033 intermediate targets (similarity 0.30)"
   },
   {
     "id": "tgt-2e2604f6",
@@ -21874,8 +28960,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "groundwater"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-138e1e07",
@@ -21896,8 +28992,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-af443426",
@@ -21918,8 +29024,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "restore*"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restore”).",
     "relevant": true,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-baacc710",
@@ -21940,8 +29060,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "industry",
+      "water"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "industr*"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-a20d1fc0",
@@ -21962,8 +29096,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water",
+        "water efficiency"
+      ]
+    },
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-af3bec37",
@@ -21984,8 +29129,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "restoration"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”); keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-d01d7f59",
@@ -22003,11 +29162,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "water reuse"
     ],
-    "climate_relevance": "adaptation",
+    "climate_relevance": "mitigation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water",
+        "water reuse"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“reuse”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-af4aa5eb",
@@ -22028,8 +29198,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water",
+        "leakage*"
+      ]
+    },
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-fbb33206",
@@ -22051,8 +29232,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "energy",
+      "water"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy efficiency"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": "Similar target: Renovation Wave — Section 3.1 (Strengthening information, legal certainty and incentives for renovation) (similarity 0.29)"
   },
   {
     "id": "tgt-8595fc1f",
@@ -22073,8 +29268,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water",
+      "health"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water",
+        "sanitation"
+      ],
+      "health": [
+        "sanitation"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“sanitation”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7cf23236",
@@ -22095,8 +29305,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-6ad028b0",
@@ -22118,8 +29338,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water",
+        "water efficiency"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”); keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“water retention”).",
     "relevant": true,
-    "target_number": 10
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e9ef3e8d",
@@ -22140,8 +29371,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ocean*"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 11
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-49f0c073",
@@ -22162,18 +29407,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“adaptation”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 12,
+    "duplicate_of": "Similar target: EU Preparedness Union Strategy — Vital functions — Climate Adaptation Plan (similarity 0.27)"
   },
   {
-    "id": "tgt-441a6819",
+    "id": "tgt-5b15ccb4",
     "policy_id": "water-resilience-strategy",
     "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
     "policy_short": "Water Resilience Strategy",
     "document_type": "communication",
     "policy_area": "Environment",
     "article": "Section 3.2 (Finance, investments and infrastructure)",
-    "target_text": "This package includes up to 100% of EU financing and 30% of prefinancing in water resilience investments programmed under the dedicated priority for this new specific objective, as well as various flexibilities.",
+    "target_text": "In the recent mid-term review of Cohesion policy, the Commission has proposed an exceptional package of measures to encourage Members States and regions to invest in water resilience. This package includes up to 100% of EU financing and 30% of prefinancing in water resilience investments programmed under the dedicated priority for this new specific objective, as well as various flexibilities.",
     "target_label": "commitment",
     "obligation": "voluntary",
     "target_type": "quantitative",
@@ -22182,8 +29437,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 13
+    "target_number": 13,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e7230635",
@@ -22204,8 +29469,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 14
+    "target_number": 14,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-ca9cf814",
@@ -22226,8 +29501,152 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "nature restoration",
+        "restoration measure*",
+        "restoration"
+      ]
+    },
+    "climate_argument": "Mitigation + adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”).",
     "relevant": true,
-    "target_number": 15
+    "target_number": 15,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-b2dd6556",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "By 2030, at least 30% of species and habitats not currently in favourable status are in that category or show a strong positive trend (EU biodiversity strategy for 2030).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "By 2030",
+    "indicators": [],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "habitat*",
+        "biodiversity",
+        "species"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“habitats”).",
+    "relevant": true,
+    "target_number": 16,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-266256bb",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "By 2030, at least 25 000 km of rivers in the EU will have to be restored into free-flowing rivers (EU biodiversity strategy for 2030).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "By 2030",
+    "indicators": [],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "biodiversity",
+        "restore*",
+        "rivers",
+        "free-flowing"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restored”).",
+    "relevant": true,
+    "target_number": 17,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-435f0151",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "By 2027, Member States shall protect, enhance and restore all bodies of surface water and groundwater with the aim of achieving good status (Water Framework Directive).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "By 2027",
+    "indicators": [],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "restore*"
+      ],
+      "water": [
+        "water",
+        "groundwater",
+        "surface water"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restore”).",
+    "relevant": true,
+    "target_number": 18,
+    "duplicate_of": "Similar target: Water Framework Directive — Article 4(1)(a)(ii) — Environmental objectives (similarity 0.33; cited in the text)"
+  },
+  {
+    "id": "tgt-c39708a6",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "By 2030, the most water-intensive sectors will have adopted and enhanced water-efficient practices, including the following sectors, based on existing EU legislation:",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "By 2030",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 19,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-45ba053a",
@@ -22249,8 +29668,325 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52025DC0280",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "energy",
+      "buildings",
+      "water"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy-efficient"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonised”); cuts energy demand, which cuts the emissions of supplying that energy (“renovation”).",
     "relevant": true,
-    "target_number": 16
+    "target_number": 20,
+    "duplicate_of": "Similar target: Energy Performance of Buildings Directive — Article 3(1) — National building renovation plan (similarity 0.29; cited in the text)"
+  },
+  {
+    "id": "tgt-1a06ec5d",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "·Industry: water use will start being tangibly reduced across the EU’s largest industrial and livestock farming production processes (Industrial Emissions Directive).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "agrifood",
+      "industry",
+      "water"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "farming",
+        "livestock"
+      ],
+      "industry": [
+        "industr*",
+        "production process*"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
+    "relevant": true,
+    "target_number": 21,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-e2602443",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "In addition, with respect to agriculture, by 2027 the CAP Strategic Plans have provided support for practices (beyond mandatory requirements) to improve soil health (and thus improve water retention and limit erosion) on 47% of the EU’s agricultural area. Support for practices for the sustainable use of pesticides and improved nutrient management will cover 27% and 15% of EU’s agricultural area respectively (CAP support and CAP Strategic Plans).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 2027",
+    "indicators": [],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "agrifood",
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*",
+        "cap strategic plan*",
+        "pesticide*",
+        "nutrient*"
+      ],
+      "ecosystems": [
+        "soil"
+      ],
+      "water": [
+        "water"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“soil health”).",
+    "relevant": true,
+    "target_number": 22,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-43735a1a",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "By 2030, Member States with water supply leakage levels exceeding the EU-wide threshold – to be set by 2028 – will present an action plan with measures to reduce leakages across their supply networks (Drinking Water Directive).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "By 2030",
+    "indicators": [],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water",
+        "drinking water",
+        "leakage*"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“drinking water”).",
+    "relevant": true,
+    "target_number": 23,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-20debc4f",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "By 2030, the Commission and the Member States will promote the reuse of treated urban wastewater for all appropriate purposes beyond agriculture and assess the feasibility and appropriateness of setting an EU target for water reuse across economic sectors (Water Reuse Regulation).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "By 2030",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "agrifood",
+      "water"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*"
+      ],
+      "water": [
+        "water",
+        "wastewater",
+        "water reuse"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“reuse”).",
+    "relevant": true,
+    "target_number": 24,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-234e47d8",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "By 2027, Member States will set up transparent drinking water and wastewater bills, to increase consumers’ awareness of their consumption and the real price of water, as well as surveillance systems for monitoring public health parameters in urban wastewater in case of emergencies (Drinking Water Directive, Urban Wastewater Treatment Directive).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "By 2027",
+    "indicators": [],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water",
+      "health"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water",
+        "wastewater",
+        "drinking water"
+      ],
+      "health": [
+        "health",
+        "public health"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“public health”).",
+    "relevant": true,
+    "target_number": 25,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-bf261741",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "By 2029, Member States will inform the Commission about measures taken to improve access to drinking water and sanitation for all, including vulnerable and marginalised groups, and will start updating the Commission every six years on the matter (Drinking Water Directive and Urban Wastewater Treatment Directive).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "qualitative",
+    "timeline": "By 2029",
+    "indicators": [],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water",
+      "health"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water",
+        "wastewater",
+        "drinking water",
+        "sanitation"
+      ],
+      "health": [
+        "sanitation"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“sanitation”).",
+    "relevant": true,
+    "target_number": 26,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-2efaa2da",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "By 2030, the EU will support the access of 70 million individuals to an improved drinking water source and/or sanitation facility (EU commitment to the Water Action Agenda).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "By 2030",
+    "indicators": [],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "water",
+      "health"
+    ],
+    "sector_evidence": {
+      "water": [
+        "water",
+        "drinking water",
+        "sanitation"
+      ],
+      "health": [
+        "sanitation"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“sanitation”).",
+    "relevant": true,
+    "target_number": 27,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-d06c9b8e",
+    "policy_id": "water-resilience-strategy",
+    "policy_name": "Communication COM(2025) 280 — European Water Resilience Strategy",
+    "policy_short": "Water Resilience Strategy",
+    "document_type": "communication",
+    "policy_area": "Environment",
+    "article": "Annex II — The key 2027-2033 intermediate targets",
+    "target_text": "By 2033, all EU cities above 100 000 inhabitants will set up integrated urban wastewater management plans prioritising nature-based solutions and green/blue infrastructures (Urban Wastewater Treatment Directive).",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "unspecified",
+    "timeline": "By 2033",
+    "indicators": [],
+    "climate_relevance": "adaptation",
+    "celex_number": "52025DC0280",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0280",
+    "sectors": [
+      "buildings",
+      "ecosystems",
+      "water"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "cities"
+      ],
+      "ecosystems": [
+        "nature-based solution*"
+      ],
+      "water": [
+        "wastewater"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“nature-based solutions”).",
+    "relevant": true,
+    "target_number": 28,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-407d9f2d",
@@ -22271,8 +30007,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 1
+    "target_number": 1,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0752f1e7",
@@ -22290,11 +30030,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "health impacts (premature deaths) of air pollution"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [
+      "health"
+    ],
+    "sector_evidence": {
+      "health": [
+        "health",
+        "premature death*",
+        "air pollution"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“health impacts”).",
     "relevant": true,
-    "target_number": 2
+    "target_number": 2,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f44985f6",
@@ -22312,11 +30064,25 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of people chronically disturbed by transport noise"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [
+      "transport",
+      "health"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ],
+      "health": [
+        "noise"
+      ]
+    },
+    "climate_argument": "Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“noise”).",
     "relevant": true,
-    "target_number": 3
+    "target_number": 3,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-782699f0",
@@ -22337,8 +30103,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [
+      "ecosystems",
+      "health"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "biodiversity"
+      ],
+      "health": [
+        "air pollution"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“ecosystems”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“air pollution”).",
     "relevant": true,
-    "target_number": 4
+    "target_number": 4,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-e203357e",
@@ -22358,11 +30139,28 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "use and risk of chemical pesticides",
       "sales of antimicrobials"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [
+      "agrifood",
+      "industry"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "pesticide*",
+        "nutrient*",
+        "aquaculture",
+        "antimicrobial*"
+      ],
+      "industry": [
+        "chemical*"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“nutrient losses”).",
     "relevant": true,
-    "target_number": 5
+    "target_number": 5,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-c354de79",
@@ -22381,11 +30179,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "plastic litter at sea",
       "micro-plastics released into the environment"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "sea"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“litter at sea”).",
     "relevant": true,
-    "target_number": 6
+    "target_number": 6,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-682ee7da",
@@ -22404,21 +30212,31 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "total waste generation",
       "residual municipal waste"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [
+      "industry"
+    ],
+    "sector_evidence": {
+      "industry": [
+        "waste"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts material and product emissions through circularity (less primary production means fewer process emissions) (“waste generation”).",
     "relevant": true,
-    "target_number": 7
+    "target_number": 7,
+    "duplicate_of": ""
   },
   {
-    "id": "tgt-f4429175",
+    "id": "tgt-9af34bec",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
     "document_type": "communication",
     "policy_area": "Environment",
     "article": "2.3 Living within our planetary boundaries",
-    "target_text": "It will aim to ensuring that, by 2030, 75% of soils are healthy, also thanks to a specific objective on reducing soil pollution and enhancing restoration.",
+    "target_text": "Furthermore, the proposed ‘’Mission in the area of Soil Health and Food’, together with the agricultural European Innovation Partnership (EIP AGRI), will promote the wide-spread uptake of practices for pesticide and nutrient reduction by promoting innovations and exchange of knowledge. It will aim to ensuring that, by 2030, 75% of soils are healthy, also thanks to a specific objective on reducing soil pollution and enhancing restoration.",
     "target_label": "objective",
     "obligation": "voluntary",
     "target_type": "quantitative",
@@ -22429,8 +30247,27 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [
+      "agrifood",
+      "ecosystems"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*",
+        "food",
+        "pesticide*",
+        "nutrient*"
+      ],
+      "ecosystems": [
+        "restoration",
+        "soil",
+        "soils"
+      ]
+    },
+    "climate_argument": "Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“restoration”); raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“knowledge”).",
     "relevant": true,
-    "target_number": 8
+    "target_number": 8,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-9f8ee271",
@@ -22451,8 +30288,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [
+      "buildings"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "urban",
+        "cities"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
     "relevant": true,
-    "target_number": 9
+    "target_number": 9,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-4113e6d3",
@@ -22471,28 +30319,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [
+      "agrifood",
+      "industry"
+    ],
+    "sector_evidence": {
+      "agrifood": [
+        "agricultur*"
+      ],
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Neither — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": false,
-    "target_number": 10
-  },
-  {
-    "id": "tgt-26d2f223",
-    "policy_id": "zero-pollution-action-plan",
-    "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
-    "policy_short": "Zero Pollution Action Plan",
-    "document_type": "communication",
-    "policy_area": "Environment",
-    "article": "Body",
-    "target_text": "The zero pollution ambition 17 is a cross-cutting objective contributing to the UN 2030 Agenda for Sustainable Development 18 and complementing the 2050 climate-neutrality goal in synergy with the clean and circular economy and restored biodiversity goals.",
-    "target_label": "goal",
-    "obligation": "voluntary",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "52021DC0400",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "relevant": true,
-    "target_number": 11
+    "target_number": 10,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8b34f01e",
@@ -22511,8 +30353,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [],
+    "sector_evidence": {},
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
     "relevant": true,
-    "target_number": 12
+    "target_number": 11,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-f0855362",
@@ -22531,27 +30377,23 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
+    "sectors": [
+      "ecosystems",
+      "health"
+    ],
+    "sector_evidence": {
+      "ecosystems": [
+        "ecosystem*",
+        "biodiversity"
+      ],
+      "health": [
+        "air quality",
+        "air pollution"
+      ]
+    },
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission reduction”). Adaptation: keeps ecosystems and soils in a condition where they buffer climate impacts (retention, cooling, storm and flood protection) (“ecosystems”); protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“air quality”).",
     "relevant": true,
-    "target_number": 13
-  },
-  {
-    "id": "tgt-13a73978",
-    "policy_id": "zero-pollution-action-plan",
-    "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
-    "policy_short": "Zero Pollution Action Plan",
-    "document_type": "communication",
-    "policy_area": "Environment",
-    "article": "Body",
-    "target_text": "This action plan comes at a time when the EU has set itself the target of achieving climate neutrality by 2050 and has embraced with renewed determination the need to move towards a clean and circular economic model based on restored and healthy natural ecosystems, a halt to any further biodiversity loss and a healthy, toxic-free environment for all its citizens.",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "unspecified",
-    "timeline": "by 2050",
-    "indicators": [],
-    "climate_relevance": "both",
-    "celex_number": "52021DC0400",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "relevant": true,
-    "target_number": 14
+    "target_number": 12,
+    "duplicate_of": ""
   }
 ];
