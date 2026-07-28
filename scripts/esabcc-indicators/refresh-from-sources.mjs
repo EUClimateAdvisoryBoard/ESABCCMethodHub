@@ -215,18 +215,20 @@ export const RECIPES = {
   // scope/level offset can never step the series — only the source's own
   // year-on-year movement is applied to the report baseline.
   'esabcc-o1-ghg-total': {
-    // Report scope = European Climate Law: total GHG excl LULUCF incl intl
-    // aviation, plus intl maritime. TOTX4_MEMONIA carries the first part;
-    // the intl-navigation memo leg adds maritime. Splice absorbs any
-    // remaining scope residual (e.g. NF3 coverage differences).
-    kind: 'eurostat', dataset: 'env_air_gge', round: 1, mode: 'splice',
-    sumFilters: [
-      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'TOTX4_MEMONIA' },
-      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1D1B' },
-    ],
-    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=TOTX4_MEMONIA`,
-    sourceTitle: 'Eurostat env_air_gge · total excl LULUCF incl intl aviation (TOTX4_MEMONIA) + intl maritime (1.D.1.b) · EU27_2020',
-    note: 'Spliced: Climate-Law-scope proxy YoY change × report baseline.',
+    // Report scope = European Climate Law: net total incl LULUCF (TOTXMEMO)
+    // plus international aviation (1.D.1.a) and international navigation
+    // (1.D.1.b) — the report's own basis (postreport-recipes.mjs
+    // REPORT_EXACT, migration 078), a direct sum with NO splice: it
+    // reproduces the report 2005-2022 within 0.1-1.5%. The previous
+    // src_crf=TOTX4_MEMONIA leg does not exist in env_air_gge (0 values,
+    // HTTP 200 — caught by the global empty-fetch guard now), which had
+    // silently degraded the old splice to the CRF1D1B (maritime-only) leg.
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1,
+    sumFilters: ['TOTXMEMO', 'CRF1D1A', 'CRF1D1B'].map(src_crf => (
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf })),
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=TOTXMEMO`,
+    sourceTitle: 'Eurostat env_air_gge · net total incl. LULUCF (TOTXMEMO) + international aviation (1.D.1.a) + international navigation (1.D.1.b) · EU27_2020',
+    note: 'Direct sum (no splice), reproduces the report 2005-2022 within 0.1-1.5%.',
   },
   'esabcc-e2-fossil-power-share': {
     // Fossil share of gross electricity production: fossil siec legs over
@@ -282,18 +284,33 @@ export const RECIPES = {
     note: 'Spliced trend proxy for the EEA intensity indicator; hand-check against the EEA-published value when available.',
   },
   'esabcc-t3a-road-share-passenger': {
+    // 2026-07: Eurostat retired the combined CAR_BUS_TOT vehicle code (query
+    // now returns HTTP 200 with an empty `vehicle` dimension — caught by the
+    // global empty-fetch guard) and split it into separate CAR / BUS_TOT
+    // codes. Sum both legs to reconstruct the old combined series.
     kind: 'eurostat', dataset: 'tran_hv_psmod', round: 2, mode: 'splice',
-    filters: { geo: 'EU27_2020', unit: 'PC', vehicle: 'CAR_BUS_TOT' },
-    sourceUrl: `${EUROSTAT_BASE}/tran_hv_psmod?format=JSON&geo=EU27_2020&unit=PC&vehicle=CAR_BUS_TOT`,
-    sourceTitle: 'Eurostat tran_hv_psmod · car+bus share of inland passenger transport · EU27_2020',
-    note: 'Spliced: Eurostat modal-split scope (car+bus vs report car+two-wheeler) differs slightly; YoY change × report baseline.',
+    sumFilters: ['CAR', 'BUS_TOT'].map(vehicle => (
+      { geo: 'EU27_2020', unit: 'PC', vehicle })),
+    sourceUrl: `${EUROSTAT_BASE}/tran_hv_psmod?format=JSON&geo=EU27_2020&unit=PC&vehicle=CAR`,
+    sourceTitle: 'Eurostat tran_hv_psmod · car + bus/coach share of inland passenger transport (CAR + BUS_TOT) · EU27_2020',
+    note: 'Spliced: Eurostat renamed/split the combined CAR_BUS_TOT vehicle code into separate CAR and BUS_TOT codes (2026-07); recipe now sums both legs. Eurostat modal-split scope (car+bus vs report car+two-wheeler) differs slightly; YoY change × report baseline.',
   },
   'esabcc-t5b-zev-lorries-stock': {
-    kind: 'eurostat', dataset: 'road_eqs_lormot', round: 0,
-    filters: { geo: 'EU27_2020', unit: 'NR', vehicle: 'LOR_HVY', mot_nrg: 'ELC' },
-    sourceUrl: `${EUROSTAT_BASE}/road_eqs_lormot?format=JSON&geo=EU27_2020&unit=NR&vehicle=LOR_HVY&mot_nrg=ELC`,
-    sourceTitle: 'Eurostat road_eqs_lormot · battery-electric heavy lorries in the fleet · EU27_2020',
-    note: 'Direct count; anchor check guards the EAFO-vs-Eurostat scope (skipped on mismatch).',
+    // 2026-07: vehicle code LOR_HVY does not exist in road_eqs_lormot (0
+    // values, HTTP 200 — the same silent-empty bug class that broke O1/T3a,
+    // now caught by the global empty-fetch guard). The correct code is
+    // LOR_GT3P5, but its fetched level (5425 @2022) is 1.43x the report's own
+    // 2022 baseline (3794) — a real scope gap (Eurostat's "battery-electric
+    // lorries >3.5t" vs the report's broader zero-emission-lorries figure).
+    // Direct/anchor-checked mode would accept that 1.43x (within the 2x
+    // tolerance) and overwrite the series with the mismatched-scope Eurostat
+    // level, so use splice mode instead: trend only, applied to the report
+    // baseline.
+    kind: 'eurostat', dataset: 'road_eqs_lormot', round: 0, mode: 'splice',
+    filters: { geo: 'EU27_2020', unit: 'NR', vehicle: 'LOR_GT3P5', mot_nrg: 'ELC' },
+    sourceUrl: `${EUROSTAT_BASE}/road_eqs_lormot?format=JSON&geo=EU27_2020&unit=NR&vehicle=LOR_GT3P5&mot_nrg=ELC`,
+    sourceTitle: 'Eurostat road_eqs_lormot · battery-electric lorries >3.5t in the fleet (LOR_GT3P5) · EU27_2020',
+    note: 'Spliced: Eurostat vehicle code LOR_HVY no longer exists; corrected code LOR_GT3P5 is on a narrower/different scope than the report\'s zero-emission-lorries figure (2022 Eurostat level 5425 vs report baseline 3794, 1.43x) — trend only, YoY change × report baseline.',
   },
   'esabcc-t6a-fossil-transport-share': {
     kind: 'eurostat-ratio', round: 2, mode: 'splice',
@@ -318,12 +335,20 @@ export const RECIPES = {
     note: 'Spliced: report stores the sink as a positive magnitude (living biomass only) while CRF 4.A is negative net — the ratio preserves the report convention.',
   },
   'esabcc-l7-nonforest-lulucf': {
-    kind: 'eurostat', dataset: 'env_air_gge', round: 1, mode: 'splice',
-    sumFilters: ['CRF4B', 'CRF4C', 'CRF4D', 'CRF4E'].map(src_crf => (
+    // Migration 078 / postreport-recipes.mjs REPORT_EXACT established that the
+    // report's non-forest LULUCF figure is the DIRECT (no splice) sum of all
+    // FIVE non-forest categories CRF4.B-4.F (cropland, grassland, wetlands,
+    // settlements, AND other land) — not "CRF 4 minus forest" (which would
+    // wrongly pull in harvested wood products), and not a 4-category splice.
+    // A previous edit here had regressed to CRF4B-4E (dropping 4F) + splice,
+    // reintroducing a narrower version of an already-fixed mislabel; this
+    // reconciles the two recipes.
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1,
+    sumFilters: ['CRF4B', 'CRF4C', 'CRF4D', 'CRF4E', 'CRF4F'].map(src_crf => (
       { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf })),
     sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF4B`,
-    sourceTitle: 'Eurostat env_air_gge · CRF 4.B–4.E (cropland, grassland, wetlands, settlements) · EU27_2020',
-    note: 'Spliced sum of the non-forest land categories, YoY change × report baseline.',
+    sourceTitle: 'Eurostat env_air_gge · cropland + grassland + wetlands + settlements + other land (CRF 4.B–4.F) · EU27_2020',
+    note: 'Direct sum (no splice) of all five non-forest land categories; reproduces the report 2022-2024 figures directly (migration 078).',
   },
   'esabcc-l8-bioenergy-use': {
     kind: 'eurostat', dataset: 'nrg_bal_s', round: 1, mode: 'splice',
@@ -504,6 +529,32 @@ export const RECIPES = {
     sourceTitle: 'Eurostat env_air_gge swine GHG (3.A.3 + 3.B.3) ÷ apro_mt_pann pigmeat (B3100) · EU27_2020',
     note: 'Spliced ratio: swine GHG ÷ pig production; num/den unit mix cancels in the YoY ratio, only the trend is applied to the report intensity baseline (conceptual 2020 0.931×).',
   },
+
+  // ── Renewables capacity additions (July 2026): the hand-pasted 2023-2025
+  //    afterReport points (SolarPower Europe / WindEurope figures) were not
+  //    traceable to the sourceUrl on file (Eurostat nrg_inf_epcrw) and
+  //    included a fabricated-looking 2025 forecast point with no published
+  //    Eurostat data behind it. Eurostat DOES carry this series — as a
+  //    cumulative net-capacity STOCK, not annual additions — so derive the
+  //    additions as the stock's year-on-year delta. `eurostat-delta` fetches
+  //    the raw stock series and differences consecutive years before the
+  //    normal direct-mode toRepo/round/anchor-check pipeline runs.
+  'esabcc-e4a-solar-pv-add': {
+    kind: 'eurostat-delta', dataset: 'nrg_inf_epcrw', round: 2,
+    filters: { geo: 'EU27_2020', unit: 'MW', freq: 'A', plant_tec: 'CAP_NET_ELC', siec: 'RA420' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/nrg_inf_epcrw?format=JSON&geo=EU27_2020&unit=MW&plant_tec=CAP_NET_ELC&siec=RA420`,
+    sourceTitle: 'Eurostat nrg_inf_epcrw · net electrical capacity, solar photovoltaic (RA420) · EU27_2020',
+    note: 'Year-on-year delta of net capacity stock (MW→GW), direct (no splice — reproduces the report anchor within a few %). Eurostat has no 2025 row yet (latest year 2024), so the series stops there; SolarPower Europe/WindEurope market-report figures are a different (gross-installation) basis and are not used.',
+  },
+  'esabcc-e4b-wind-add': {
+    kind: 'eurostat-delta', dataset: 'nrg_inf_epcrw', round: 2,
+    filters: { geo: 'EU27_2020', unit: 'MW', freq: 'A', plant_tec: 'CAP_NET_ELC', siec: 'RA300' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/nrg_inf_epcrw?format=JSON&geo=EU27_2020&unit=MW&plant_tec=CAP_NET_ELC&siec=RA300`,
+    sourceTitle: 'Eurostat nrg_inf_epcrw · net electrical capacity, wind onshore+offshore (RA300) · EU27_2020',
+    note: 'Year-on-year delta of net capacity stock (MW→GW), direct (no splice — reproduces the report anchor within a few %). Eurostat has no 2025 row yet (latest year 2024), so the series stops there; WindEurope/SolarPower Europe market-report figures are a different (gross-installation) basis and are not used.',
+  },
 };
 
 // ───────────────────────── helpers ─────────────────────────
@@ -541,7 +592,37 @@ export async function fetchEurostat(dataset, filters) {
     if (v === null || v === undefined) continue;
     out.push({ year: Number(y), value: Number(v) });
   }
+  // GLOBAL GUARD: Eurostat happily returns HTTP 200 for a filter combination
+  // that matches nothing (e.g. a renamed/retired dimension code) — the
+  // dimension comes back with an empty category list and zero values. That
+  // must never be read as "success, nothing new" (which upstream would then
+  // report as status:"up-to-date" and leave stale/wrong data in place). Treat
+  // it as a hard fetch error instead, so the recipe is skipped and logged.
+  // This is the exact failure mode that broke O1 (TOTX4_MEMONIA), T3a
+  // (CAR_BUS_TOT) and T5b (LOR_HVY).
+  if (out.length === 0) {
+    throw new Error(`Eurostat ${dataset} → HTTP 200 but 0 values for filters ${JSON.stringify(filters)}`);
+  }
   return out.sort((a, b) => a.year - b.year);
+}
+
+/**
+ * Fetch a single Eurostat series and return its year-on-year delta (this
+ * year's value minus last year's), for datasets that publish a cumulative
+ * stock (e.g. installed capacity) rather than annual additions. Only
+ * consecutive-year pairs are differenced; a gap year is skipped rather than
+ * spanning it silently.
+ */
+export async function fetchEurostatDelta(dataset, filters) {
+  const pts = await fetchEurostat(dataset, filters);
+  const out = [];
+  for (let i = 1; i < pts.length; i++) {
+    if (pts[i].year === pts[i - 1].year + 1) {
+      out.push({ year: pts[i].year, value: pts[i].value - pts[i - 1].value });
+    }
+  }
+  if (out.length === 0) throw new Error(`${dataset}: no consecutive-year pairs to difference`);
+  return out;
 }
 
 /**
@@ -684,6 +765,11 @@ async function fetchEea({ crfCodes, sumGases }) {
     }
     totals.set(year, (totals.get(year) ?? 0) + v * factor);
   }
+  if (totals.size === 0) {
+    // Same global guard as fetchEurostat: a CRF-code/gas filter that matches
+    // no rows must fail loudly, not be read as an empty-but-successful pull.
+    throw new Error(`EEA CSV → 0 matching rows for crfCodes=${JSON.stringify(crfCodes)}`);
+  }
   return [...totals.entries()].map(([year, value]) => ({ year, value })).sort((a, b) => a.year - b.year);
 }
 
@@ -741,7 +827,9 @@ async function main() {
             : await fetchEurostat(rec.dataset, rec.filters))
         : rec.kind === 'eurostat-ratio'
           ? await fetchEurostatRatio(rec)
-          : await fetchEea(rec);
+          : rec.kind === 'eurostat-delta'
+            ? await fetchEurostatDelta(rec.dataset, rec.filters)
+            : await fetchEea(rec);
     } catch (e) {
       console.error(`! ${id}: fetch failed — ${e.message}`);
       provenance.push({ ...meta, status: 'error', message: e.message });
