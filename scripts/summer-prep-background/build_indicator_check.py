@@ -27,6 +27,7 @@ from esabcc_style import (
     TEAL_LIGHT, TEAL_PALE, WHITE, body_row, header_row, note_line, set_widths,
     sheet_setup, style_chart, text_categories, title_block,
 )
+from dataset_links import detect_link, link_cell
 
 PREPARED = "27 July 2026"
 REPORT_YEAR = "January 2024"
@@ -126,7 +127,18 @@ def factcheck_index(factcheck):
     return out
 
 
-def build(data, calc, factcheck, out_path):
+def build(data, calc, factcheck, out_path=None, wb=None):
+    """
+    Render the Indicator Check workbook.
+
+    Standalone (default): `wb` is None, a fresh Workbook is created, the
+    sheet's own "Read me" is written, and the result is saved to `out_path`.
+
+    Embedded (combined workbook): pass an existing `wb` — its sheets are
+    appended to (no "Read me" of its own; the caller supplies one merged
+    "Read me" instead), and nothing is saved here. `out_path` is ignored.
+    """
+    standalone = wb is None
     inds = [i for i in data["indicators"]]
     reads = {i["id"]: read_indicator(i) for i in inds}
     by_cat = defaultdict(list)
@@ -138,89 +150,90 @@ def build(data, calc, factcheck, out_path):
     updated = [i for i in inds if reads[i["id"]]["post"]]
     fc = factcheck_index(factcheck)
 
-    wb = Workbook()
+    if standalone:
+        wb = Workbook()
 
-    # ── Read me ──────────────────────────────────────────────────────────────
-    ws = wb.active
-    ws.title = "Read me"
-    sheet_setup(ws)
-    set_widths(ws, [24, 22, 22, 22, 22, 20, 16, 16])
-    r = title_block(
-        ws,
-        "Indicator Check — what has moved since the last report",
-        f"Every progress indicator of the 2024 ESABCC report, with the latest data points added since "
-        f"publication and the change against the report baseline. {len(updated)} of the {len(inds)} "
-        f"indicators have gained data since {REPORT_YEAR}.",
-        f"Background document for the Summer Prep · Policy Gap 2.0 Report module (Note 1) · prepared {PREPARED}.",
-    )
+        # ── Read me ──────────────────────────────────────────────────────────
+        ws = wb.active
+        ws.title = "Read me"
+        sheet_setup(ws)
+        set_widths(ws, [24, 22, 22, 22, 22, 20, 16, 16])
+        r = title_block(
+            ws,
+            "Indicator Check — what has moved since the last report",
+            f"Every progress indicator of the 2024 ESABCC report, with the latest data points added since "
+            f"publication and the change against the report baseline. {len(updated)} of the {len(inds)} "
+            f"indicators have gained data since {REPORT_YEAR}.",
+            f"Background document for the Summer Prep · Policy Gap 2.0 Report module (Note 1) · prepared {PREPARED}.",
+        )
 
-    ws.cell(row=r, column=1, value="What is in this workbook").font = H2_FONT
-    r += 1
-    sheets = [
-        ("Overview", f"All {len(inds)} indicators in one table — baseline, latest value, change — plus the two "
-                     "overview figures: the largest moves since the report, and how many indicators have new "
-                     "data per chapter."),
-        ("One tab per chapter", "Emissions, Energy supply … Finance: the chapter's indicators as a table, then "
-                                "every indicator's full series as its own small table and line chart. The "
-                                "report's own data points and the points added since publication are drawn as "
-                                "two separate lines."),
-        ("Data (long)", "Every data point of every indicator in one flat table — indicator, year, value, and "
-                        "whether it is a report point or one added since. This is the sheet to pivot or filter."),
-        ("Where the data comes from", "For every point added since the report: the calc inputs behind it, the "
-                                      "formula that turns them into the plotted figure, the exact source "
-                                      "query for each input, and the 27 July 2026 fact-check verdict — whether "
-                                      "the figure still reproduces from that source today."),
-    ]
-    header_row(ws, r, ["Sheet", "What it holds", "", "", "", "", "", ""], height=20)
-    r += 1
-    for i, (name, desc) in enumerate(sheets):
-        ws.cell(row=r, column=1, value=name).font = Font(name=FONT_SEMI, size=9, color=TEAL)
-        ws.cell(row=r, column=1).alignment = Alignment(vertical="top")
-        c = ws.cell(row=r, column=2, value=desc)
-        c.font = BODY_FONT
-        c.alignment = Alignment(vertical="top", wrap_text=True)
-        ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=8)
-        for col in range(1, 9):
-            ws.cell(row=r, column=col).fill = BODY_FILL if i % 2 == 0 else PatternFill("solid", fgColor=TEAL_PALE)
-        ws.row_dimensions[r].height = 44
+        ws.cell(row=r, column=1, value="What is in this workbook").font = H2_FONT
         r += 1
-    r += 1
-
-    ws.cell(row=r, column=1, value="How to read it").font = H2_FONT
-    r += 1
-    for line in [
-        "• “Report baseline” is the latest figure the 2024 report itself carried. “Latest” is the most recent point "
-        "in the database today. The change between them is arithmetic — no better/worse reading is applied, exactly "
-        "as on the Method Hub page. Whether a move is good news depends on the indicator, and that judgement is yours.",
-        "• A blank change column means the indicator has gained no data since the report.",
-        "• Data vintages differ by indicator: an emissions figure for 2024 and an investment figure for 2025 are both "
-        "“latest”, but they are not the same year. The year is always shown next to the value.",
-        "• Every number here also lives in the Policy Gap 2.0 Project Workspace indicator database — this workbook "
-        "shows nothing the workspace does not. If the two disagree, the workspace is the live copy.",
-    ]:
-        r = note_line(ws, r, line, width=8, font=BODY_FONT)
-        ws.row_dimensions[r - 1].height = 30
-    r += 1
-
-    ws.cell(row=r, column=1, value="Source").font = H2_FONT
-    r += 1
-    for label, value in [
-        ("Indicators", "The progress indicators of ESABCC (2024) “Towards EU climate neutrality: Progress, policy "
-                       "gaps and opportunities” (O1–O3, E1–E6, I1–I7, T1–T6, B1–B6, A1–A7, L1–L8 and the finance / "
-                       "innovation figures)."),
-        ("Data source", "The Policy Gap 2.0 Project Workspace indicator database (src/data/esabcc-indicators.ts "
-                        "and the calc grids in supabase/migrations/045, 052, 078, 079)."),
-        ("Primary sources", "Eurostat, EEA, and the sector publications named per indicator — see the “Where the "
-                            "data comes from” sheet for the exact query behind each post-report figure."),
-        ("Vintage", f"Compiled {PREPARED}. Source publishers revise: re-check before quoting a figure externally."),
-    ]:
-        ws.cell(row=r, column=1, value=label).font = LABEL_FONT
-        c = ws.cell(row=r, column=2, value=value)
-        c.font = BODY_FONT
-        c.alignment = Alignment(vertical="top", wrap_text=True)
-        ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=8)
-        ws.row_dimensions[r].height = 34
+        sheets = [
+            ("Overview", f"All {len(inds)} indicators in one table — baseline, latest value, change — plus the two "
+                         "overview figures: the largest moves since the report, and how many indicators have new "
+                         "data per chapter."),
+            ("One tab per chapter", "Emissions, Energy supply … Finance: the chapter's indicators as a table, then "
+                                    "every indicator's full series as its own small table and line chart. The "
+                                    "report's own data points and the points added since publication are drawn as "
+                                    "two separate lines."),
+            ("Data (long)", "Every data point of every indicator in one flat table — indicator, year, value, and "
+                            "whether it is a report point or one added since. This is the sheet to pivot or filter."),
+            ("Where the data comes from", "For every point added since the report: the calc inputs behind it, the "
+                                          "formula that turns them into the plotted figure, the exact source "
+                                          "query for each input, and the 27 July 2026 fact-check verdict — whether "
+                                          "the figure still reproduces from that source today."),
+        ]
+        header_row(ws, r, ["Sheet", "What it holds", "", "", "", "", "", ""], height=20)
         r += 1
+        for i, (name, desc) in enumerate(sheets):
+            ws.cell(row=r, column=1, value=name).font = Font(name=FONT_SEMI, size=9, color=TEAL)
+            ws.cell(row=r, column=1).alignment = Alignment(vertical="top")
+            c = ws.cell(row=r, column=2, value=desc)
+            c.font = BODY_FONT
+            c.alignment = Alignment(vertical="top", wrap_text=True)
+            ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=8)
+            for col in range(1, 9):
+                ws.cell(row=r, column=col).fill = BODY_FILL if i % 2 == 0 else PatternFill("solid", fgColor=TEAL_PALE)
+            ws.row_dimensions[r].height = 44
+            r += 1
+        r += 1
+
+        ws.cell(row=r, column=1, value="How to read it").font = H2_FONT
+        r += 1
+        for line in [
+            "• “Report baseline” is the latest figure the 2024 report itself carried. “Latest” is the most recent point "
+            "in the database today. The change between them is arithmetic — no better/worse reading is applied, exactly "
+            "as on the Method Hub page. Whether a move is good news depends on the indicator, and that judgement is yours.",
+            "• A blank change column means the indicator has gained no data since the report.",
+            "• Data vintages differ by indicator: an emissions figure for 2024 and an investment figure for 2025 are both "
+            "“latest”, but they are not the same year. The year is always shown next to the value.",
+            "• Every number here also lives in the Policy Gap 2.0 Project Workspace indicator database — this workbook "
+            "shows nothing the workspace does not. If the two disagree, the workspace is the live copy.",
+        ]:
+            r = note_line(ws, r, line, width=8, font=BODY_FONT)
+            ws.row_dimensions[r - 1].height = 30
+        r += 1
+
+        ws.cell(row=r, column=1, value="Source").font = H2_FONT
+        r += 1
+        for label, value in [
+            ("Indicators", "The progress indicators of ESABCC (2024) “Towards EU climate neutrality: Progress, policy "
+                           "gaps and opportunities” (O1–O3, E1–E6, I1–I7, T1–T6, B1–B6, A1–A7, L1–L8 and the finance / "
+                           "innovation figures)."),
+            ("Data source", "The Policy Gap 2.0 Project Workspace indicator database (src/data/esabcc-indicators.ts "
+                            "and the calc grids in supabase/migrations/045, 052, 078, 079)."),
+            ("Primary sources", "Eurostat, EEA, and the sector publications named per indicator — see the “Where the "
+                                "data comes from” sheet for the exact query behind each post-report figure."),
+            ("Vintage", f"Compiled {PREPARED}. Source publishers revise: re-check before quoting a figure externally."),
+        ]:
+            ws.cell(row=r, column=1, value=label).font = LABEL_FONT
+            c = ws.cell(row=r, column=2, value=value)
+            c.font = BODY_FONT
+            c.alignment = Alignment(vertical="top", wrap_text=True)
+            ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=8)
+            ws.row_dimensions[r].height = 34
+            r += 1
 
     # ── Overview ─────────────────────────────────────────────────────────────
     ov = wb.create_sheet("Overview")
@@ -279,7 +292,9 @@ def build(data, calc, factcheck, out_path):
                 name=FONT_SEMI, size=8.5, color=VERDICT_COLOR[fc[ind["id"]]["verdict"]])
         else:
             ov.cell(row=row, column=12).font = SMALL_FONT
-        ov.cell(row=row, column=13).font = SMALL_FONT
+        src_cell = ov.cell(row=row, column=13)
+        src_cell.font = SMALL_FONT
+        link_cell(src_cell, detect_link(ind.get("source")))
     last = first + len(inds) - 1
     ov.auto_filter.ref = f"A{head_row}:M{last}"
 
@@ -499,7 +514,7 @@ def build(data, calc, factcheck, out_path):
     # ── Where the data comes from ────────────────────────────────────────────
     pv = wb.create_sheet("Where the data comes from")
     sheet_setup(pv, freeze="B6")
-    set_widths(pv, [11, 34, 8, 13, 22, 18, 30, 15, 46])
+    set_widths(pv, [11, 34, 8, 13, 22, 18, 30, 15, 46, 26])
     r = title_block(
         pv,
         "Where each post-report number comes from",
@@ -510,7 +525,7 @@ def build(data, calc, factcheck, out_path):
     )
     header_row(pv, r, ["Code", "Indicator", "Year", "Value", "How this year was obtained",
                        "Checked 27 Jul 2026", "Input", "Input value",
-                       "Where that input comes from"], height=32)
+                       "Where that input comes from", "Exact dataset link (DOI where available)"], height=32)
     r += 1
     n = 0
     for ind in inds:
@@ -559,6 +574,7 @@ def build(data, calc, factcheck, out_path):
                                                          color=VERDICT_COLOR[verdict])
                 pv.cell(row=r, column=9).font = SMALL_FONT
                 pv.cell(row=r, column=7).font = Font(name=FONT_LIGHT, size=9, color=INK)
+                link_cell(pv.cell(row=r, column=10), detect_link(source))
                 r += 1
             n += 1
         # the formula that turns those inputs into the plotted value
@@ -569,7 +585,7 @@ def build(data, calc, factcheck, out_path):
             pv.merge_cells(start_row=r, start_column=7, end_row=r, end_column=9)
             pv.row_dimensions[r].height = 22
             r += 1
-    pv.auto_filter.ref = f"A5:I{r - 1}"
+    pv.auto_filter.ref = f"A5:J{r - 1}"
     note_line(pv, r + 1,
               "Notes: “Derived from the live source” means the figure is recomputed from the publisher's own data, "
               "with the query in the last column. “Reconstructed” means the sheet's own conversion pins the input "
@@ -579,15 +595,17 @@ def build(data, calc, factcheck, out_path):
               "on a different level than the report years — see "
               "docs-internal/indicator-postreport-factcheck-2026-07-27.md.", width=9)
 
-    # No cached results are written for the COUNTIFS formulas, so ask the
-    # spreadsheet app to calculate the whole book the moment it opens.
-    wb.calculation.fullCalcOnLoad = True
-    wb.properties.title = "ESABCC Indicator Check — what has moved since the 2024 report"
-    wb.properties.subject = "Summer Prep · Policy Gap 2.0 Report — background document"
-    wb.properties.creator = "ESABCC Method Hub"
-    wb.save(out_path)
-    print(f"wrote {out_path}: {len(inds)} indicators, {len(updated)} with new data, "
-          f"{len(cats)} chapter tabs")
+    if standalone:
+        # No cached results are written for the COUNTIFS formulas, so ask the
+        # spreadsheet app to calculate the whole book the moment it opens.
+        wb.calculation.fullCalcOnLoad = True
+        wb.properties.title = "ESABCC Indicator Check — what has moved since the 2024 report"
+        wb.properties.subject = "Summer Prep · Policy Gap 2.0 Report — background document"
+        wb.properties.creator = "ESABCC Method Hub"
+        wb.save(out_path)
+        print(f"wrote {out_path}: {len(inds)} indicators, {len(updated)} with new data, "
+              f"{len(cats)} chapter tabs")
+    return wb
 
 
 if __name__ == "__main__":

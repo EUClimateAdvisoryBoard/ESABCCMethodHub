@@ -1,41 +1,93 @@
 {
-  "generatedAt": "2026-07-16T11:15:36.855Z",
+  "generatedAt": "2026-07-28T09:08:08.100Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
-      "sourceTitle": "Eurostat nrg_ind_eff · primary energy consumption (PEC2020-2030) · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=PEC2020-2030&unit=MTOE",
+      "sourceTitle": "Eurostat nrg_ind_eff · primary energy consumption (PEC_EED) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=PEC_EED&unit=MTOE",
       "note": "Mtoe×11.63→TWh.",
-      "status": "up-to-date",
+      "status": "updated",
       "baseYear": 2021,
-      "newPoints": []
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 14644.7
+        },
+        {
+          "year": 2023,
+          "value": 14045.2
+        },
+        {
+          "year": 2024,
+          "value": 13883
+        }
+      ]
     },
     {
       "id": "esabcc-o2-fec",
-      "sourceTitle": "Eurostat nrg_ind_eff · final energy consumption (FEC2020-2030) · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=FEC2020-2030&unit=MTOE",
+      "sourceTitle": "Eurostat nrg_ind_eff · final energy consumption (FEC_EED) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=FEC_EED&unit=MTOE",
       "note": "Mtoe×11.63→TWh.",
-      "status": "up-to-date",
+      "status": "updated",
       "baseYear": 2021,
-      "newPoints": []
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 10704.7
+        },
+        {
+          "year": 2023,
+          "value": 10388.7
+        },
+        {
+          "year": 2024,
+          "value": 10471.8
+        }
+      ]
     },
     {
       "id": "esabcc-e5-electrification",
-      "sourceTitle": "Eurostat nrg_bal_s · electricity share of final energy · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_E&siec=E7000&unit=PC",
+      "sourceTitle": "Eurostat nrg_bal_c · electricity ÷ total final energy consumption · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_c?format=JSON&geo=EU27_2020&nrg_bal=FC_E&siec=E7000&unit=GWH",
       "note": "Stored as percent-number to match ECNO duplicate end-use-electrification.",
-      "status": "up-to-date",
+      "status": "updated",
       "baseYear": 2021,
-      "newPoints": []
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 22.93
+        },
+        {
+          "year": 2023,
+          "value": 23.08
+        },
+        {
+          "year": 2024,
+          "value": 23.44
+        }
+      ]
     },
     {
       "id": "esabcc-i6-industry-electrification",
-      "sourceTitle": "Eurostat nrg_bal_s · industry electricity share · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_IND_E&siec=E7000&unit=PC",
+      "sourceTitle": "Eurostat nrg_bal_c · industry electricity ÷ industry final energy · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_c?format=JSON&geo=EU27_2020&nrg_bal=FC_IND_E&siec=E7000&unit=GWH",
       "note": "Stored as percent-number to match ECNO duplicate industry-electrification.",
-      "status": "up-to-date",
+      "status": "updated",
       "baseYear": 2021,
-      "newPoints": []
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 33.62
+        },
+        {
+          "year": 2023,
+          "value": 33.59
+        },
+        {
+          "year": 2024,
+          "value": 34.02
+        }
+      ]
     },
     {
       "id": "esabcc-i3-circular-mat-use",
@@ -209,19 +261,19 @@
     },
     {
       "id": "esabcc-o1-ghg-total",
-      "sourceTitle": "Eurostat env_air_gge · total excl LULUCF incl intl aviation (TOTX4_MEMONIA) + intl maritime (1.D.1.b) · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=TOTX4_MEMONIA",
-      "note": "Spliced: Climate-Law-scope proxy YoY change × report baseline.",
+      "sourceTitle": "Eurostat env_air_gge · net total incl. LULUCF (TOTXMEMO) + international aviation (1.D.1.a) + international navigation (1.D.1.b) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=TOTXMEMO",
+      "note": "Direct sum (no splice), reproduces the report 2005-2022 within 0.1-1.5%.",
       "status": "updated",
       "baseYear": 2022,
       "newPoints": [
         {
           "year": 2023,
-          "value": 3104.6
+          "value": 3118
         },
         {
           "year": 2024,
-          "value": 3222.1
+          "value": 3043.2
         }
       ]
     },
@@ -245,7 +297,7 @@
     },
     {
       "id": "esabcc-e2-res-noBio-power-share",
-      "sourceTitle": "Eurostat nrg_bal_peh · (hydro + geothermal + wind + solar) ÷ total gross electricity production · EU27_2020",
+      "sourceTitle": "Eurostat nrg_bal_peh · (hydro + geothermal + wind + solar thermal + solar PV + tide) ÷ total gross electricity production · EU27_2020",
       "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=GEP",
       "note": "Spliced ratio: non-biomass renewables ÷ TOTAL, YoY change × report baseline.",
       "status": "updated",
@@ -253,11 +305,11 @@
       "newPoints": [
         {
           "year": 2023,
-          "value": 40.01
+          "value": 40.4
         },
         {
           "year": 2024,
-          "value": 41.38
+          "value": 43.21
         }
       ]
     },
@@ -281,21 +333,47 @@
     },
     {
       "id": "esabcc-t3a-road-share-passenger",
-      "sourceTitle": "Eurostat tran_hv_psmod · car+bus share of inland passenger transport · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tran_hv_psmod?format=JSON&geo=EU27_2020&unit=PC&vehicle=CAR_BUS_TOT",
-      "note": "Spliced: Eurostat modal-split scope (car+bus vs report car+two-wheeler) differs slightly; YoY change × report baseline.",
-      "status": "mismatch",
-      "message": "splice anchor 2020 missing in source",
-      "baseYear": 2020
+      "sourceTitle": "Eurostat tran_hv_psmod · car + bus/coach share of inland passenger transport (CAR + BUS_TOT) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tran_hv_psmod?format=JSON&geo=EU27_2020&unit=PC&vehicle=CAR",
+      "note": "Spliced: Eurostat renamed/split the combined CAR_BUS_TOT vehicle code into separate CAR and BUS_TOT codes (2026-07); recipe now sums both legs. Eurostat modal-split scope (car+bus vs report car+two-wheeler) differs slightly; YoY change × report baseline.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 86.23
+        },
+        {
+          "year": 2022,
+          "value": 84.12
+        },
+        {
+          "year": 2023,
+          "value": 83.67
+        },
+        {
+          "year": 2024,
+          "value": 83.3
+        }
+      ]
     },
     {
       "id": "esabcc-t5b-zev-lorries-stock",
-      "sourceTitle": "Eurostat road_eqs_lormot · battery-electric heavy lorries in the fleet · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/road_eqs_lormot?format=JSON&geo=EU27_2020&unit=NR&vehicle=LOR_HVY&mot_nrg=ELC",
-      "note": "Direct count; anchor check guards the EAFO-vs-Eurostat scope (skipped on mismatch).",
-      "status": "up-to-date",
+      "sourceTitle": "Eurostat road_eqs_lormot · battery-electric lorries >3.5t in the fleet (LOR_GT3P5) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/road_eqs_lormot?format=JSON&geo=EU27_2020&unit=NR&vehicle=LOR_GT3P5&mot_nrg=ELC",
+      "note": "Spliced: Eurostat vehicle code LOR_HVY no longer exists; corrected code LOR_GT3P5 is on a narrower/different scope than the report's zero-emission-lorries figure (2022 Eurostat level 5425 vs report baseline 3794, 1.43x) — trend only, YoY change × report baseline.",
+      "status": "updated",
       "baseYear": 2022,
-      "newPoints": []
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 6513
+        },
+        {
+          "year": 2024,
+          "value": 9831
+        }
+      ]
     },
     {
       "id": "esabcc-t6a-fossil-transport-share",
@@ -343,23 +421,23 @@
     },
     {
       "id": "esabcc-l7-nonforest-lulucf",
-      "sourceTitle": "Eurostat env_air_gge · CRF 4.B–4.E (cropland, grassland, wetlands, settlements) · EU27_2020",
+      "sourceTitle": "Eurostat env_air_gge · cropland + grassland + wetlands + settlements + other land (CRF 4.B–4.F) · EU27_2020",
       "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF4B",
-      "note": "Spliced sum of the non-forest land categories, YoY change × report baseline.",
+      "note": "Direct sum (no splice) of all five non-forest land categories; reproduces the report 2022-2024 figures directly (migration 078).",
       "status": "updated",
       "baseYear": 2021,
       "newPoints": [
         {
           "year": 2022,
-          "value": 101.2
+          "value": 121
         },
         {
           "year": 2023,
-          "value": 113.9
+          "value": 135.6
         },
         {
           "year": 2024,
-          "value": 103
+          "value": 123
         }
       ]
     },
@@ -822,6 +900,50 @@
         {
           "year": 2024,
           "value": 1.238
+        }
+      ]
+    },
+    {
+      "id": "esabcc-e4a-solar-pv-add",
+      "sourceTitle": "Eurostat nrg_inf_epcrw · net electrical capacity, solar photovoltaic (RA420) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_inf_epcrw?format=JSON&geo=EU27_2020&unit=MW&plant_tec=CAP_NET_ELC&siec=RA420",
+      "note": "Year-on-year delta of net capacity stock (MW→GW), direct (no splice — reproduces the report anchor within a few %). Eurostat has no 2025 row yet (latest year 2024), so the series stops there; SolarPower Europe/WindEurope market-report figures are a different (gross-installation) basis and are not used.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 33.34
+        },
+        {
+          "year": 2023,
+          "value": 51.63
+        },
+        {
+          "year": 2024,
+          "value": 60.96
+        }
+      ]
+    },
+    {
+      "id": "esabcc-e4b-wind-add",
+      "sourceTitle": "Eurostat nrg_inf_epcrw · net electrical capacity, wind onshore+offshore (RA300) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_inf_epcrw?format=JSON&geo=EU27_2020&unit=MW&plant_tec=CAP_NET_ELC&siec=RA300",
+      "note": "Year-on-year delta of net capacity stock (MW→GW), direct (no splice — reproduces the report anchor within a few %). Eurostat has no 2025 row yet (latest year 2024), so the series stops there; WindEurope/SolarPower Europe market-report figures are a different (gross-installation) basis and are not used.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 15.88
+        },
+        {
+          "year": 2023,
+          "value": 12.12
+        },
+        {
+          "year": 2024,
+          "value": 15.32
         }
       ]
     }

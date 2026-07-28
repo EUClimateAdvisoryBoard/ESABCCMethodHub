@@ -268,6 +268,42 @@ def check_overviews(outdir, data, calc):
     check(not stray, f"every derivation formula addresses its own row ({stray[:3]})")
 
 
+def check_combined(outdir):
+    """
+    The combined indicator workbook (build_indicator_combined.py), if one has
+    been built next to the other outputs. Gated on the file existing: the
+    combined workbook is not (yet) part of every rebuild of this directory,
+    so its absence here is not itself a failure.
+    """
+    path = outdir / "ESABCC_Indicator-Combined_2026-07.xlsx"
+    if not path.exists():
+        return
+    wb = load_workbook(path)
+    check(wb.sheetnames and wb.sheetnames[0] == "Read me",
+          f"combined workbook opens on one merged Read me ({wb.sheetnames[:1]})")
+    check(wb.sheetnames.count("Read me") == 1,
+          "combined workbook carries exactly one Read me (no per-section duplicates)")
+    for name in ["Overview", "Data (long)", "Where the data comes from", "New data",
+                 "Old vs new", "Derivations", "Sources"]:
+        check(name in wb.sheetnames, f"combined workbook carries the {name!r} sheet")
+
+    dv = wb["Derivations"]
+    formulas = sum(1 for row in dv.iter_rows() for c in row
+                   if isinstance(c.value, str) and c.value.startswith("="))
+    check(formulas > 0, f"combined Derivations sheet carries live formulas ({formulas})")
+
+    charts = sum(len(wb[s]._charts) for s in wb.sheetnames)
+    check(charts > 0, f"combined workbook carries its charts ({charts})")
+
+    doi_links = 0
+    for name in wb.sheetnames:
+        for row in wb[name].iter_rows():
+            for c in row:
+                if c.hyperlink is not None and "doi.org" in (c.hyperlink.target or ""):
+                    doi_links += 1
+    check(doi_links > 0, f"combined workbook carries DOI hyperlinks ({doi_links})")
+
+
 def check_no_errors(path):
     wb = load_workbook(path)
     bad = []
@@ -308,6 +344,7 @@ def main(data_path, calc_path, outdir, template):
     check_sector_gaps(out / "ESABCC_Policy-Gaps_Transport-Industry_2026-07.xlsx", data)
     check_indicator_check(out / "ESABCC_Indicator-Check_2026-07.xlsx", data, calc)
     check_overviews(out, data, calc)
+    check_combined(out)
     for f in out.glob("*.xlsx"):
         check_no_errors(f)
         check_chart_categories(f)
