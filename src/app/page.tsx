@@ -401,6 +401,7 @@ export default async function HomePage() {
     { code: 'M · 36', title: 'Policy Targets Register', href: '/beta/policy-targets', tags: ['Verbatim targets', 'Excel export', 'Human-confirmed'] },
     { code: 'M · 37', title: 'ETS Review & Electrification', href: '/beta/ets-review', tags: ['Electrification model', 'ETS reform overview', '17 Jul 2026 package'] },
     { code: 'M · 38', title: 'Impact Assessment — Modelling Results', href: '/beta/impact-assessment', tags: ['SWD(2026) 616', 'Reference figures', 'Screenshots + numbers'] },
+    { code: 'M · 39', title: 'EU Green Deal Policy Tracker', href: '/beta/eu-green-deal-policies', tags: ['EGDSF Annex 2', 'Adopted vs reopened', 'Omnibus watch'] },
   ];
 
   return (
