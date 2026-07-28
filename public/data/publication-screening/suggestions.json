@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T07:59:37.786Z",
+  "generatedAt": "2026-07-28T07:08:17.303Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,26 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/ae90c3",
+      "title": "Geographically differentiated strategies for limestone calcined clay cement (LC 3 ) deployment rapidly enable low-carbon cement globally",
+      "journal": "Environmental Research Letters",
+      "authors": "Lu Fan, Chunyuan Luo, Sabbie A Miller, QI LUO",
+      "published": "2026-07-27",
+      "url": "https://doi.org/10.1088/1748-9326/ae90c3",
+      "abstract": "The effective utilization of abundant low-grade clay resources is critical for reducing carbon emissions in the cement industry. Limestone calcined clay cement (LC3) offers a promising pathway, but its performance and carbon reduction potential depend strongly on clay quality and processing conditions. Here, we develop a framework that links clay resource quality, processing strategies, and concrete strength demand to enable resource-efficient deployment of LC3 . Using 79 concrete mixture datasets and Monte Carlo simulations, we quantify the variability of CO₂ reduction across different production scenarios. Results show that low-grade clays can be effectively utilized through mix design optimization at low strength levels, while higher strength applications increasingly require purification strategies. Based on global clay resource characteristics, geographically differentiated deployment pathways could achieve up to ~61% CO₂ reduction. This work provides practical insights into the large-scale valorization of low-grade resources for low-carbon cement production.",
+      "suggestedOn": "2026-07-28",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 13.5,
+          "matched": [
+            "cement",
+            "low-carbon cement"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1038/s41558-026-02700-2",
       "title": "Multi-century cooling after net-zero greenhouse gas emissions",
