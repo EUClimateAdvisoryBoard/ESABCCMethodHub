@@ -226,7 +226,12 @@ def derivation_kind(iid, calc, reportway):
     headers = [c["header"] for c in layout["columns"]]
     if any(h.startswith("Post-report figure as published") for h in headers):
         return "published"
-    expr = layout["columns"][0].get("expr") or ""
+    # The expression is nested: {"formula": {"expr": "..."}}. Reading `expr`
+    # off the column itself always came back empty, so every year-switched
+    # derivation was labelled "reconstructed" — the one label that claims the
+    # report's formula is used throughout.
+    formula = layout["columns"][0].get("formula") or ""
+    expr = formula.get("expr", "") if isinstance(formula, dict) else formula
     return "switched" if expr.startswith("IF(") else "reconstructed"
 
 
@@ -342,7 +347,12 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path):
     blocks = 0
     for ind in sorted(inds, key=lambda i: (order.get(i["category"], 99), i.get("code") or "")):
         kind = derivation_kind(ind["id"], calc, reportway)
-        layout = reportway.get(ind["id"]) or calc.get(ind["id"])
+        # The layout always comes from the calc export. A report-way entry is
+        # metadata about a grid, not a grid: its rows are the
+        # report-way-vs-plotted comparison, with no translated formulas. Its
+        # actual grid is already in the calc export, because migration 080
+        # writes it there and the export applies the migrations in order.
+        layout = calc.get(ind["id"])
         if not layout:
             continue
         blocks += 1
@@ -373,9 +383,15 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path):
             dv.row_dimensions[r].height = 26
             r += 1
         rw = reportway.get(ind["id"])
-        if rw and rw.get("refreshed"):
-            names = ", ".join(f"{c['header']}" for c in rw["refreshed"])
-            c = dv.cell(row=r, column=1, value=f"Refreshed for {', '.join(str(y) for y in rw['addedYears'])}: {names}")
+        if rw and rw.get("columns"):
+            # `columns` are the report's own input columns that were refreshed,
+            # `rows` the years they were refreshed for. (An earlier version
+            # looked for "refreshed"/"addedYears", which no entry has, so this
+            # line — the one that names what was actually re-pulled — never
+            # appeared.)
+            names = ", ".join(c["header"] for c in rw["columns"])
+            years = ", ".join(str(row["year"]) for row in rw.get("rows", []))
+            c = dv.cell(row=r, column=1, value=f"Refreshed for {years}: {names}")
             c.font = Font(name=FONT_LIGHT, size=8, color=MUTED)
             c.alignment = Alignment(vertical="top", wrap_text=True)
             dv.merge_cells(start_row=r, start_column=1, end_row=r, end_column=12)

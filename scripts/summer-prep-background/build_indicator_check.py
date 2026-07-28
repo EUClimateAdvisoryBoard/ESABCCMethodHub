@@ -106,7 +106,12 @@ def method_of(layout):
     headers = [c["header"] for c in layout["columns"]]
     if any(h.startswith("Post-report figure as published") for h in headers):
         return "as-published"
-    expr = layout["columns"][0].get("formula") or ""
+    # A column formula is stored as {"expr": "..."} (ColumnFormula in
+    # src/lib/project-workspace/indicator-sheet.ts). Older ad-hoc exports
+    # flattened it to a bare string, so both are accepted rather than raising
+    # on whichever shape the caller happens to hand over.
+    formula = layout["columns"][0].get("formula") or ""
+    expr = formula.get("expr", "") if isinstance(formula, dict) else formula
     if expr.startswith("IF("):
         return "derived"
     return "reconstructed"
