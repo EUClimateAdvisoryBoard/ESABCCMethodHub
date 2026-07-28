@@ -1,18 +1,18 @@
 {
   "date": "2026-07-28",
-  "generatedAt": "2026-07-28T07:42:43.094Z",
+  "generatedAt": "2026-07-28T12:58:11.560Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 28 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Plan for solar panels in field draws criticism",
-      "summary": "If approved, the project would see 72 solar panels installed on the site in Guernsey.",
+      "headline": "Analysis: Wind and solar power overtake fossil fuels in Germany for first time ever",
+      "summary": "More of Germany’s electricity came from wind and solar power than fossil fuels for the first time ever in 2025.&#8230; The post Analysis: Wind and solar power overtake fossil fuels in Germany for first time ever appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Wildfires 'stark reminder' of extreme climate challenge, says William",
-      "summary": "The prince's warning comes as wildfires rage in parts of Europe and the UK during a spell of extreme heat.",
+      "headline": "Analysis: 84% of nations miss deadline to identify ‘nature-harming’ subsidies by 2025",
+      "summary": "Most countries failed to meet a 2025 target to identify all of their subsidies that could be “harmful” to biodiversity,&#8230; The post Analysis: 84% of nations miss deadline to identify ‘nature-harming’ subsidies by 2025 appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,19 +34,19 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Analysis: Wind and solar power overtake fossil fuels in Germany for first time ever",
+          "link": "https://www.carbonbrief.org/analysis-wind-and-solar-power-overtake-fossil-fuels-in-germany-for-first-time-ever",
+          "source": "Carbon Brief",
+          "description": "More of Germany’s electricity came from wind and solar power than fossil fuels for the first time ever in 2025.&#8230; The post Analysis: Wind and solar power overtake fossil fuels in Germany for first time ever appeared first on Carbon Brief.",
+          "published": "2026-07-28T11:49:20.000Z",
+          "score": 13
+        },
+        {
           "title": "Plan for solar panels in field draws criticism",
           "link": "https://www.bbc.co.uk/news/articles/c05qn402406o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "If approved, the project would see 72 solar panels installed on the site in Guernsey.",
           "published": "2026-07-28T05:07:08.000Z",
-          "score": 7
-        },
-        {
-          "title": "Houthis pushing to model Iran's Hormuz control in Red Sea, Yemeni FM says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPUENSU3cxZnhXQWVEQ0VlbUlCX2U4V05HS1RqcTNqSjN3dHhVc3duLW9lNzdMSWhsWHFXSWEybzhOOU1GVUxqeHBISVUzVUFVbE9DNmNqYS01SlV0bmtYTmQ3dXBIVXFKMWZJdkpua0xZUmxWd3NqcFBHSGtDM0tILVN6b2lDZzFnTk1tY1IwWFRpTElycEwwLVpGQ2I5WVhDdHhFN1NaMV9RMXdPbmxIYmFsbzRGSzlFNWZJ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPUENSU3cxZnhXQWVEQ0VlbUlCX2U4V05HS1RqcTNqSjN3dHhVc3duLW9lNzdMSWhsWHFXSWEybzhOOU1GVUxqeHBISVUzVUFVbE9DNmNqYS01SlV0bmtYTmQ3dXBIVXFKMWZJdkpua0xZUmxWd3NqcFBHSGtDM0tILVN6b2lDZzFnTk1tY1IwWFRpTElycEwwLVpGQ2I5WVhDdHhFN1NaMV9RMXdPbmxIYmFsbzRGSzlFNWZJ?oc=5\" target=\"_blank\"&gt;Houthis pushing to model Iran's Hormuz control in Red Sea, Yemeni FM says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-27T22:13:40.000Z",
           "score": 7
         },
         {
@@ -58,19 +58,11 @@
           "score": 7
         },
         {
-          "title": "CATL-Stellantis battery plant in Spain to employ average of 1,000 Chinese workers during construction - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPclFpeVZ0UEZuQThteFVESVZ2S0VIOXlvaHY1Tk5yelpiV0E1dm1fSk81Q1ZVX3RZZjBBN1UwQzhSWUV5OU1GeWVCVDdmZzZxRXpTdFFDc2paMnZuVnJUaEtLYUFaZzdETTRzdlhrSDlGNElSdExOV19yeGltbWtaVXFQRjhxdEhoUHl1SzRieFNtdUpzUW9Zc3NudllYUGhaMENpQjVLRjRpYmFVVVRaNVp0eHZFNjJ4V0ZqOWthNUZvZHlN?oc=5",
+          "title": "Houthis pushing to model Iran's Hormuz control in Red Sea, Yemeni FM says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPUENSU3cxZnhXQWVEQ0VlbUlCX2U4V05HS1RqcTNqSjN3dHhVc3duLW9lNzdMSWhsWHFXSWEybzhOOU1GVUxqeHBISVUzVUFVbE9DNmNqYS01SlV0bmtYTmQ3dXBIVXFKMWZJdkpua0xZUmxWd3NqcFBHSGtDM0tILVN6b2lDZzFnTk1tY1IwWFRpTElycEwwLVpGQ2I5WVhDdHhFN1NaMV9RMXdPbmxIYmFsbzRGSzlFNWZJ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPclFpeVZ0UEZuQThteFVESVZ2S0VIOXlvaHY1Tk5yelpiV0E1dm1fSk81Q1ZVX3RZZjBBN1UwQzhSWUV5OU1GeWVCVDdmZzZxRXpTdFFDc2paMnZuVnJUaEtLYUFaZzdETTRzdlhrSDlGNElSdExOV19yeGltbWtaVXFQRjhxdEhoUHl1SzRieFNtdUpzUW9Zc3NudllYUGhaMENpQjVLRjRpYmFVVVRaNVp0eHZFNjJ4V0ZqOWthNUZvZHlN?oc=5\" target=\"_blank\"&gt;CATL-Stellantis battery plant in Spain to employ average of 1,000 Chinese workers during construction&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&g",
-          "published": "2026-07-27T10:31:44.000Z",
-          "score": 7
-        },
-        {
-          "title": "India firm on 'energy drink' crackdown despite Pepsi, Red Bull, Monster protest - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNNkVsQ1VtRWhIaDhxNU9OUlgydkc4ajRxTWJhTm1LT1Y0VDdhal8xbDZraFloRnpQWUZQc3hOeVJ6aHIxbmxYVXlxZXpPbzF1c3FobW1yNG0xM1k2WW0tN0JaLVVzaTNVNVJCYTgzaDk4OVQwb2NoRmZHZllaZ1VWOUx2VGthZURDaFdCN01xVWZUOWVhRlo3TVEtaHhhRjVhYmJRX1M5TzBjRGRsY1o1blQ2RG9aMlVOaUlzZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNNkVsQ1VtRWhIaDhxNU9OUlgydkc4ajRxTWJhTm1LT1Y0VDdhal8xbDZraFloRnpQWUZQc3hOeVJ6aHIxbmxYVXlxZXpPbzF1c3FobW1yNG0xM1k2WW0tN0JaLVVzaTNVNVJCYTgzaDk4OVQwb2NoRmZHZllaZ1VWOUx2VGthZURDaFdCN01xVWZUOWVhRlo3TVEtaHhhRjVhYmJRX1M5TzBjRGRsY1o1blQ2RG9aMlVOaUlzZw?oc=5\" target=\"_blank\"&gt;India firm on 'energy drink' crackdown despite Pepsi, Red Bull, Monster protest&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-27T10:56:23.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPUENSU3cxZnhXQWVEQ0VlbUlCX2U4V05HS1RqcTNqSjN3dHhVc3duLW9lNzdMSWhsWHFXSWEybzhOOU1GVUxqeHBISVUzVUFVbE9DNmNqYS01SlV0bmtYTmQ3dXBIVXFKMWZJdkpua0xZUmxWd3NqcFBHSGtDM0tILVN6b2lDZzFnTk1tY1IwWFRpTElycEwwLVpGQ2I5WVhDdHhFN1NaMV9RMXdPbmxIYmFsbzRGSzlFNWZJ?oc=5\" target=\"_blank\"&gt;Houthis pushing to model Iran's Hormuz control in Red Sea, Yemeni FM says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-27T22:13:40.000Z",
           "score": 7
         }
       ]
@@ -79,6 +71,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Analysis: 84% of nations miss deadline to identify ‘nature-harming’ subsidies by 2025",
+          "link": "https://www.carbonbrief.org/analysis-84-of-nations-miss-deadline-to-identify-nature-harming-subsidies-by-2025",
+          "source": "Carbon Brief",
+          "description": "Most countries failed to meet a 2025 target to identify all of their subsidies that could be “harmful” to biodiversity,&#8230; The post Analysis: 84% of nations miss deadline to identify ‘nature-harming’ subsidies by 2025 appeared first on Carbon Brief.",
+          "published": "2026-07-28T11:41:55.000Z",
+          "score": 10
+        },
         {
           "title": "Wildfires 'stark reminder' of extreme climate challenge, says William",
           "link": "https://www.bbc.co.uk/news/articles/cvg97dj5n16o?at_medium=RSS&amp;at_campaign=rss",
@@ -107,16 +107,8 @@
           "title": "Ben Jennings on southern Europe’s wildfires – cartoon",
           "link": "https://www.theguardian.com/commentisfree/picture/2026/jul/27/ben-jennings-on-southern-europes-wildfires-cartoon",
           "source": "The Guardian - Climate",
-          "description": "&lt;a href=\"https://www.theguardian.com/commentisfree/picture/2026/jul/27/ben-jennings-on-southern-europes-wildfires-cartoon\"&gt;Continue reading...&lt;/a&gt;",
+          "description": "&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://guardianprintshop.com/collections/ben-jennings\"&gt;&lt;strong&gt;Discover and buy more of Ben’s cartoons here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://guardianprintshop.com/collections/ben-jennings/products/products-2026-07-27-19-03-16-28th-july-2026\"&gt;&lt;strong&gt;Order your own print of this cartoon from the Guardian Print Shop&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt; &lt;a href=\"http",
           "published": "2026-07-27T17:06:23.000Z",
-          "score": 8
-        },
-        {
-          "title": "Devastating European wildfires in maps - and how they're being tackled",
-          "link": "https://www.bbc.co.uk/news/articles/cj638jx0l53o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A blaze near Bordeaux has torn through more than 162 sq miles (420 sq km) in less than four days, while the Madrid region is seeing its worst fires ever.",
-          "published": "2026-07-27T15:59:27.000Z",
           "score": 8
         }
       ]
@@ -132,14 +124,6 @@
           "description": "Peru&#039;s new president, Keiko Fujimori, has promised more security and investment. As she takes office, she&#039;ll have to find space for the South American nation amid Washington and Beijing&#039;s geopolitical rivalry.",
           "published": "2026-07-27T13:38:00.000Z",
           "score": 2
-        },
-        {
-          "title": "Poland asks US to hand over ex-minister over alleged fund misuse - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOY1B1ZzJxeXNQVENlYnZFTXZWNEVEc0R1Yy1XVmZYTzFRbngxeGVxenpYMVFhcFdVMUJGamFXWkFlVWxBTUVRaF9pLUQ0Y3Z2UXJsd0NUc19tRzVETFYtLTJ3V3BVbEc4VDVrU3pfSlJGNFhWTk4xdGk4eG9SZk5WOEVrdWpGRVdHT2VsOEFoRi1NNmxZTm1Nc3JCR1BvUmxYMlI4UWtB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxOY1B1ZzJxeXNQVENlYnZFTXZWNEVEc0R1Yy1XVmZYTzFRbngxeGVxenpYMVFhcFdVMUJGamFXWkFlVWxBTUVRaF9pLUQ0Y3Z2UXJsd0NUc19tRzVETFYtLTJ3V3BVbEc4VDVrU3pfSlJGNFhWTk4xdGk4eG9SZk5WOEVrdWpGRVdHT2VsOEFoRi1NNmxZTm1Nc3JCR1BvUmxYMlI4UWtB?oc=5\" target=\"_blank\"&gt;Poland asks US to hand over ex-minister over alleged fund misuse&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-27T16:27:28.000Z",
-          "score": 2
         }
       ]
     },
@@ -152,6 +136,22 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "The cocaine superhighway from Ecuador to Europe - the BBC reports on gangs and the police fightback",
+          "link": "https://www.bbc.co.uk/news/articles/cdx7n1r54nno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The BBC goes on patrol with Ecuador's police, who are grappling with a huge surge in drug crime.",
+          "published": "2026-07-28T05:01:19.000Z",
+          "score": 8
+        },
+        {
+          "title": "US walks out of UN Security Council meeting during France's remarks",
+          "link": "https://www.bbc.co.uk/news/articles/c87nj3w9gxjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The row sparked after the US joined North Korea and Russia in voting against extending the term of the UN high commissioner for human rights.",
+          "published": "2026-07-28T09:32:25.000Z",
+          "score": 8
+        },
         {
           "title": "Wife of Putin spokesman Peskov challenges EU sanctions on her in court - Reuters",
           "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPc191NDRCWEpsMlVCNmdzRWg5bW4zY29ZRFpYRmJmNUROMEo0bnpIQ2hiOThvYXJVRXc3OEFtaWZjdGlzcERpWTE1akhURTktSFNxWndKQ3d3emVuZ0Q5VU03UkhoNEpURHVOdUhoMkV0aUpYSjdrN3p4ZGJlc0M4N2RMX1hQUllGTjhUNWxVOEZObW1RdUtTVHh2WGlZdTQ5RzJLMk5R?oc=5",
@@ -169,36 +169,20 @@
           "score": 8
         },
         {
-          "title": "European shares steady as tech weakness offsets US-Iran optimism - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOS2VfX1hIYTZBMEM5LXBTUV96LXdUM2ZldGl4WUhjMjBGTUJ6RW5HaEJBWFVUWm4tRXV6ck9MbGozd2x5MjAtUFFTYkgxVUVQbzRKbkF1ZHNaV0RCUGhxM0N5d3JYaU92YklJNm9CUnVVTFpHY2dvcVh1MTdlbzVyNTYtcW9VZ25CTlVqSGlnUW5yd1h4V0lROXhqQ2JYMVZ3aVhmQnV3bG9maVpGNWtGUlVxWExvLVU?oc=5",
+          "title": "China's BYD enters Japan's mini-car market with low-cost EV - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUjQ1R1R0ZENFMkNIWWU0MXBYMHl2UWVTMHpmQTQzNzR3RkRmZS1uUkpZNkV1X2o0cWJTVGI0bkRTTzJjeVo0RmQ3QVZxNDhHbUxhUmhEU3BLcEhVMGVQaFhTSjUwTm8ya1ZWcGl4NkZ5TzFyNWNQM2ZMUVVabTRWYy1oQnhFYmFCaDV1VUp4UG82OWVVaUFR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOS2VfX1hIYTZBMEM5LXBTUV96LXdUM2ZldGl4WUhjMjBGTUJ6RW5HaEJBWFVUWm4tRXV6ck9MbGozd2x5MjAtUFFTYkgxVUVQbzRKbkF1ZHNaV0RCUGhxM0N5d3JYaU92YklJNm9CUnVVTFpHY2dvcVh1MTdlbzVyNTYtcW9VZ25CTlVqSGlnUW5yd1h4V0lROXhqQ2JYMVZ3aVhmQnV3bG9maVpGNWtGUlVxWExvLVU?oc=5\" target=\"_blank\"&gt;European shares steady as tech weakness offsets US-Iran optimism&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-27T16:56:46.000Z",
-          "score": 8
-        },
-        {
-          "title": "Porsche to axe one in five jobs by 2035 as China, EV woes bite - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPR1RHNHFOakt3b2EyVHIxSklHcTJNb202OXMwRFczZ1B6Ums0M1NUTm1jRXJZOUdZbDdMcHVTaGc3V3E0OW5qOTRESEtyZGJOVWU1Z0N5cFFsM25CU3ZGeUhpVXVkeU8wa0IybEpHaDV1VXJVSDNMdGw4VF9KMFltc3Z6blh5Y01lQjNGMzhpS0FDZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPR1RHNHFOakt3b2EyVHIxSklHcTJNb202OXMwRFczZ1B6Ums0M1NUTm1jRXJZOUdZbDdMcHVTaGc3V3E0OW5qOTRESEtyZGJOVWU1Z0N5cFFsM25CU3ZGeUhpVXVkeU8wa0IybEpHaDV1VXJVSDNMdGw4VF9KMFltc3Z6blh5Y01lQjNGMzhpS0FDZw?oc=5\" target=\"_blank\"&gt;Porsche to axe one in five jobs by 2035 as China, EV woes bite&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-27T22:04:12.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxQUjQ1R1R0ZENFMkNIWWU0MXBYMHl2UWVTMHpmQTQzNzR3RkRmZS1uUkpZNkV1X2o0cWJTVGI0bkRTTzJjeVo0RmQ3QVZxNDhHbUxhUmhEU3BLcEhVMGVQaFhTSjUwTm8ya1ZWcGl4NkZ5TzFyNWNQM2ZMUVVabTRWYy1oQnhFYmFCaDV1VUp4UG82OWVVaUFR?oc=5\" target=\"_blank\"&gt;China's BYD enters Japan's mini-car market with low-cost EV&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-28T08:04:08.000Z",
           "score": 7
-        },
-        {
-          "title": "Ghana&#039;s community service bill: A fix for the prison crisis?",
-          "link": "https://www.dw.com/en/ghana-s-community-service-bill-a-fix-for-the-prison-crisis/a-78104226?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The community service bill offers community service as an alternative to prison sentences, particularly for minor offenses. It&#039;s meant to decongest Ghana&#039;s prisons and prevent overcrowding once it&#039;s signed into law.",
-          "published": "2026-07-27T13:44:00.000Z",
-          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 368,
-    "articlesLast24h": 174,
-    "afterDedup": 161,
+    "totalArticlesScanned": 361,
+    "articlesLast24h": 168,
+    "afterDedup": 159,
     "feedsQueried": 19
   }
 }
