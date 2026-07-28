@@ -42,17 +42,24 @@ the same thing. It needs applying to the database like any other migration.
 ## Rebuilding them
 
 ```bash
-node --experimental-strip-types scripts/summer-prep-background/extract.mjs data.json
-python3 scripts/summer-prep-background/build_policy_gap_tracker.py data.json out.xlsx
-python3 scripts/summer-prep-background/build_indicator_check.py data.json calc.json factcheck.json out.xlsx
-python3 scripts/summer-prep-background/build_sector_policy_gaps.py data.json out.xlsx
-python3 scripts/summer-prep-background/build_synergies_docx.py data.json template.dotx out.docx
-node scripts/esabcc-indicators/build-report-way-rows.mjs          # continue the report's own derivation
-python3 scripts/summer-prep-background/build_indicator_overview.py data.json calc_excel.json factcheck.json reportway.json outdir
-python3 scripts/summer-prep-background/check_outputs.py data.json calc.json outdir template.dotx
+TEMPLATE=/path/to/Advisory_Board_blank_template.dotx \
+  bash scripts/summer-prep-background/build_all.sh
 ```
 
-The builders read the Method Hub's own data files, so re-running them after a
-data change reproduces the documents. `check_outputs.py` re-derives every
-summary figure independently and fails if a workbook's formulas would not
-produce it.
+That is the whole thing: it extracts the Hub's data, collapses the calc-grid
+migrations into the layout the database ends up with, translates every grid to
+live Excel formulas through the app's own translator, builds all six documents
+and verifies them. The Word template is not in the repository — supply it via
+`TEMPLATE=` or drop it next to the outputs.
+
+Every intermediate is regenerated into a temp directory and deleted afterwards.
+That is deliberate. A checked-in intermediate went stale once and the builders
+spent hours reproducing documents from a snapshot taken *before* a fact-check
+was applied, so the documents did not contain the corrections they were
+supposed to. `extract.mjs` prints a canary value on every run for the same
+reason — a stale read shows up in the log immediately.
+
+`check_outputs.py` re-derives every summary figure independently and fails if a
+workbook's formulas would not produce it.
+`check-series-continuity.mjs` measures each post-report step against its own
+series' normal year-on-year movement and flags the ones that break.
