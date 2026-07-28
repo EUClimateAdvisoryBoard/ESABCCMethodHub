@@ -16,7 +16,7 @@ into [Secretariat News](../modules/news-feed.md).)
 
 ## What is parked
 
-Numbered M·09–M·33, continuing the sequence after the eight core modules. The
+Numbered M·09–M·39, continuing the sequence after the eight core modules. The
 list grows roughly weekly as new prototypes land; the
 [`beta/README.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/beta/README.md)
 table and the home-page module ribbon (`src/app/page.tsx`) are the canonical,
@@ -60,6 +60,12 @@ The modules fall into three loose families:
 | M·31  | `digital-energy-roadmap/`    | Digital & AI Energy Roadmap — Coherence Check | Side-by-side reading of COM(2026) 501 final against ESABCC recommendations and binding EU goals; each commitment classified contradiction / tension / ambition gap / alignment. |
 | M·32  | `ex-post-analysis/`          | [Ex-Post Policy Assessment](../modules/ex-post-analysis.md) | Faithful rendering of the internal *Ex-Post Policy Assessment — Methods Scoping Note* (working brief for Policy Gap Report 2.0); counterfactual-availability design grid, quant attribution + qual contribution analysis. |
 | M·33  | `sector-background/`         | [Sector Background](../modules/sector-background.md) | Structured background brief for the Industry & Transport sectors; reuses the project-workspace assessment-framework flow chart and layers on mitigation/adaptation options, EU policies (live, EUR-Lex-linked) and a curated reading list. |
+| M·34  | `electricity-prices/`        | Electricity Prices    | Merit-order explainer of wholesale electricity price formation, EU vs US vs China. |
+| M·35  | `summer-prep/`               | Summer Prep           | Industry & Transport workspace: policy-gap tracker, indicator checks, synergies/trade-offs, least-cost model. Absorbed Overview Industry (ex M·34) and the Policy Gap Tracker (ex M·36) as sub-modules. |
+| M·36  | `policy-targets/`            | Policy Targets Register | Verbatim quantified targets extracted from EU climate law, with Excel export; human-confirmed entries. |
+| M·37  | `ets-review/`                | ETS Review & Electrification | Electrification model and reform overview for the 17 Jul 2026 ETS review package. |
+| M·38  | `impact-assessment/`         | Impact Assessment — Modelling Results | 80 key modelling findings from the ETS-review impact assessment SWD(2026) 616, each with verbatim numbers, page reference and source-page screenshot; AI-extracted, pending human verification. |
+| M·39  | `eu-green-deal-policies/`    | EU Green Deal Policy Tracker | 93 EGDSF legislative initiatives from ETC CE Report 2024/8 Annex 2, tracked to July 2026 with EUR-Lex/legislative-train links; Figure-1.2-style chart splitting adopted acts into stable vs reopened by the 2025-26 omnibus agenda; AI-researched and AI-fact-checked (act numbers machine-verified), pending human sign-off. |
 
 !!! note "Numbering vs. the route map"
     The `M·NN` codes are a **stable presentation index** assigned on the home
