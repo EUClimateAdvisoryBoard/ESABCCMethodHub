@@ -1,41 +1,93 @@
 {
-  "generatedAt": "2026-07-16T11:15:36.855Z",
+  "generatedAt": "2026-07-28T08:40:14.875Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
-      "sourceTitle": "Eurostat nrg_ind_eff · primary energy consumption (PEC2020-2030) · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=PEC2020-2030&unit=MTOE",
+      "sourceTitle": "Eurostat nrg_ind_eff · primary energy consumption (PEC_EED) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=PEC_EED&unit=MTOE",
       "note": "Mtoe×11.63→TWh.",
-      "status": "up-to-date",
+      "status": "updated",
       "baseYear": 2021,
-      "newPoints": []
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 14644.7
+        },
+        {
+          "year": 2023,
+          "value": 14045.2
+        },
+        {
+          "year": 2024,
+          "value": 13883
+        }
+      ]
     },
     {
       "id": "esabcc-o2-fec",
-      "sourceTitle": "Eurostat nrg_ind_eff · final energy consumption (FEC2020-2030) · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=FEC2020-2030&unit=MTOE",
+      "sourceTitle": "Eurostat nrg_ind_eff · final energy consumption (FEC_EED) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=FEC_EED&unit=MTOE",
       "note": "Mtoe×11.63→TWh.",
-      "status": "up-to-date",
+      "status": "updated",
       "baseYear": 2021,
-      "newPoints": []
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 10704.7
+        },
+        {
+          "year": 2023,
+          "value": 10388.7
+        },
+        {
+          "year": 2024,
+          "value": 10471.8
+        }
+      ]
     },
     {
       "id": "esabcc-e5-electrification",
-      "sourceTitle": "Eurostat nrg_bal_s · electricity share of final energy · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_E&siec=E7000&unit=PC",
+      "sourceTitle": "Eurostat nrg_bal_c · electricity ÷ total final energy consumption · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_c?format=JSON&geo=EU27_2020&nrg_bal=FC_E&siec=E7000&unit=GWH",
       "note": "Stored as percent-number to match ECNO duplicate end-use-electrification.",
-      "status": "up-to-date",
+      "status": "updated",
       "baseYear": 2021,
-      "newPoints": []
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 22.93
+        },
+        {
+          "year": 2023,
+          "value": 23.08
+        },
+        {
+          "year": 2024,
+          "value": 23.44
+        }
+      ]
     },
     {
       "id": "esabcc-i6-industry-electrification",
-      "sourceTitle": "Eurostat nrg_bal_s · industry electricity share · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_IND_E&siec=E7000&unit=PC",
+      "sourceTitle": "Eurostat nrg_bal_c · industry electricity ÷ industry final energy · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_c?format=JSON&geo=EU27_2020&nrg_bal=FC_IND_E&siec=E7000&unit=GWH",
       "note": "Stored as percent-number to match ECNO duplicate industry-electrification.",
-      "status": "up-to-date",
+      "status": "updated",
       "baseYear": 2021,
-      "newPoints": []
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 33.62
+        },
+        {
+          "year": 2023,
+          "value": 33.59
+        },
+        {
+          "year": 2024,
+          "value": 34.02
+        }
+      ]
     },
     {
       "id": "esabcc-i3-circular-mat-use",
@@ -245,7 +297,7 @@
     },
     {
       "id": "esabcc-e2-res-noBio-power-share",
-      "sourceTitle": "Eurostat nrg_bal_peh · (hydro + geothermal + wind + solar) ÷ total gross electricity production · EU27_2020",
+      "sourceTitle": "Eurostat nrg_bal_peh · (hydro + geothermal + wind + solar thermal + solar PV + tide) ÷ total gross electricity production · EU27_2020",
       "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=GEP",
       "note": "Spliced ratio: non-biomass renewables ÷ TOTAL, YoY change × report baseline.",
       "status": "updated",
@@ -253,11 +305,11 @@
       "newPoints": [
         {
           "year": 2023,
-          "value": 40.01
+          "value": 40.4
         },
         {
           "year": 2024,
-          "value": 41.38
+          "value": 43.21
         }
       ]
     },
