@@ -42,6 +42,7 @@ from esabcc_style import (
     body_row, header_row, note_line, set_widths, sheet_setup, style_chart,
     text_categories, title_block,
 )
+from dataset_links import detect_link, link_cell
 
 PREPARED = "27 July 2026"
 
@@ -84,10 +85,22 @@ def read(ind):
 
 # ── A. the one big figure ───────────────────────────────────────────────────
 
-def build_new_data_overview(inds, reads, fc, out_path):
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "The one big figure"
+def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The one big figure"):
+    """
+    Render the "everything that has moved" figure.
+
+    Standalone (default): `wb` is None, a fresh Workbook is created and
+    saved to `out_path`. Embedded: pass an existing `wb` — the sheet is
+    appended under `title` (the combined workbook uses "New data") and
+    nothing is saved here.
+    """
+    standalone = wb is None
+    if standalone:
+        wb = Workbook()
+        ws = wb.active
+        ws.title = title
+    else:
+        ws = wb.create_sheet(title)
     sheet_setup(ws)
     set_widths(ws, [10, 44, 17, 13, 11, 13, 11, 13, 12, 13, 26])
 
@@ -198,11 +211,13 @@ def build_new_data_overview(inds, reads, fc, out_path):
     cov.y_axis.title = "Indicators"
     ws.add_chart(cov, f"F{cr}")
 
-    wb.calculation.fullCalcOnLoad = True
-    wb.properties.title = "ESABCC indicators — everything that has moved since the 2024 report"
-    wb.properties.creator = "ESABCC Method Hub"
-    wb.save(out_path)
-    print(f"wrote {out_path}: one figure over {len(updated)} updated indicators")
+    if standalone:
+        wb.calculation.fullCalcOnLoad = True
+        wb.properties.title = "ESABCC indicators — everything that has moved since the 2024 report"
+        wb.properties.creator = "ESABCC Method Hub"
+        wb.save(out_path)
+        print(f"wrote {out_path}: one figure over {len(updated)} updated indicators")
+    return wb
 
 
 # ── B. old indicators + new data + the derivation as a live formula ─────────
@@ -230,61 +245,73 @@ def derivation_kind(iid, calc, reportway):
     return "switched" if expr.startswith("IF(") else "reconstructed"
 
 
-def build_old_vs_new(inds, reads, calc, fc, reportway, out_path):
-    wb = Workbook()
+def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None):
+    """
+    Render the Old-vs-New-with-derivations workbook.
 
-    ws = wb.active
-    ws.title = "Read me"
-    sheet_setup(ws)
-    set_widths(ws, [24, 22, 22, 22, 22, 20, 16, 16])
-    r = title_block(
-        ws,
-        "The report's indicators, and where they stand now",
-        "Every progress indicator the 2024 report carried, with the figure the report itself published, "
-        "the latest figure in the Policy Gap 2.0 workspace database, and the arithmetic in between — "
-        "written into the sheet as a live Excel formula.",
-        f"Summer Prep · Policy Gap 2.0 Report — prepared {PREPARED}.",
-    )
-    ws.cell(row=r, column=1, value="What is in this workbook").font = H2_FONT
-    r += 1
-    for i, (name, desc) in enumerate([
-        ("Old vs new", "One row per indicator: what the report published, what the database holds now, the "
-                       "change, and how that later figure was obtained. Sorted by report chapter."),
-        ("Derivations", "The calc grid behind every indicator, one block each: Year, Value and the input "
-                        "columns. The Value cells are LIVE EXCEL FORMULAS over the inputs in the same block — "
-                        "click one and Excel shows the arithmetic. Change an input and the value recomputes, "
-                        "exactly as the Method Hub's calc editor does it."),
-        ("Sources", "The exact source query behind every input column — dataset, filters and URL."),
-    ]):
-        ws.cell(row=r, column=1, value=name).font = Font(name=FONT_SEMI, size=9, color=TEAL)
-        ws.cell(row=r, column=1).alignment = Alignment(vertical="top")
-        c = ws.cell(row=r, column=2, value=desc)
-        c.font = BODY_FONT
-        c.alignment = Alignment(vertical="top", wrap_text=True)
-        ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=8)
-        for col in range(1, 9):
-            ws.cell(row=r, column=col).fill = BODY_FILL if i % 2 == 0 else PatternFill("solid", fgColor=TEAL_PALE)
-        ws.row_dimensions[r].height = 46
+    Standalone (default): `wb` is None, a fresh Workbook is created, the
+    sheet's own "Read me" is written, and the result is saved to `out_path`.
+
+    Embedded (combined workbook): pass an existing `wb` — its sheets are
+    appended to (no "Read me" of its own), and nothing is saved here.
+    `out_path` is ignored.
+    """
+    standalone = wb is None
+    if standalone:
+        wb = Workbook()
+
+        ws = wb.active
+        ws.title = "Read me"
+        sheet_setup(ws)
+        set_widths(ws, [24, 22, 22, 22, 22, 20, 16, 16])
+        r = title_block(
+            ws,
+            "The report's indicators, and where they stand now",
+            "Every progress indicator the 2024 report carried, with the figure the report itself published, "
+            "the latest figure in the Policy Gap 2.0 workspace database, and the arithmetic in between — "
+            "written into the sheet as a live Excel formula.",
+            f"Summer Prep · Policy Gap 2.0 Report — prepared {PREPARED}.",
+        )
+        ws.cell(row=r, column=1, value="What is in this workbook").font = H2_FONT
         r += 1
-    r += 1
-    for line in [
-        "• The formulas are the Method Hub's own: they are produced by the same translator the Hub uses to "
-        "export a calc grid to Excel, so what you see here is what the Hub computes, not a re-implementation.",
-        "• A formula of the form =IF(A21>=2023, ROUND(<live-source recipe>), <report recipe>) means the report "
-        "years keep the 2024 workbook's derivation and the later years are computed from the live source. That "
-        "year switch is deliberate — the two are different derivations, and both are shown.",
-        "• Where an indicator is a published figure with no derivation, the input column simply carries that "
-        "figure and names the publication. Nothing is left blank.",
-        "• Every post-report value was re-checked against its primary source on 27 July 2026; the verdict is in "
-        "the “Source check” column of the Old vs new sheet.",
-    ]:
-        r = note_line(ws, r, line, width=8, font=BODY_FONT)
-        ws.row_dimensions[r - 1].height = 30
+        for i, (name, desc) in enumerate([
+            ("Old vs new", "One row per indicator: what the report published, what the database holds now, the "
+                           "change, and how that later figure was obtained. Sorted by report chapter."),
+            ("Derivations", "The calc grid behind every indicator, one block each: Year, Value and the input "
+                            "columns. The Value cells are LIVE EXCEL FORMULAS over the inputs in the same block — "
+                            "click one and Excel shows the arithmetic. Change an input and the value recomputes, "
+                            "exactly as the Method Hub's calc editor does it."),
+            ("Sources", "The exact source query behind every input column — dataset, filters and URL."),
+        ]):
+            ws.cell(row=r, column=1, value=name).font = Font(name=FONT_SEMI, size=9, color=TEAL)
+            ws.cell(row=r, column=1).alignment = Alignment(vertical="top")
+            c = ws.cell(row=r, column=2, value=desc)
+            c.font = BODY_FONT
+            c.alignment = Alignment(vertical="top", wrap_text=True)
+            ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=8)
+            for col in range(1, 9):
+                ws.cell(row=r, column=col).fill = BODY_FILL if i % 2 == 0 else PatternFill("solid", fgColor=TEAL_PALE)
+            ws.row_dimensions[r].height = 46
+            r += 1
+        r += 1
+        for line in [
+            "• The formulas are the Method Hub's own: they are produced by the same translator the Hub uses to "
+            "export a calc grid to Excel, so what you see here is what the Hub computes, not a re-implementation.",
+            "• A formula of the form =IF(A21>=2023, ROUND(<live-source recipe>), <report recipe>) means the report "
+            "years keep the 2024 workbook's derivation and the later years are computed from the live source. That "
+            "year switch is deliberate — the two are different derivations, and both are shown.",
+            "• Where an indicator is a published figure with no derivation, the input column simply carries that "
+            "figure and names the publication. Nothing is left blank.",
+            "• Every post-report value was re-checked against its primary source on 27 July 2026; the verdict is in "
+            "the “Source check” column of the Old vs new sheet.",
+        ]:
+            r = note_line(ws, r, line, width=8, font=BODY_FONT)
+            ws.row_dimensions[r - 1].height = 30
 
     # ── Old vs new ─────────────────────────────────────────────────────────
     ov = wb.create_sheet("Old vs new")
     sheet_setup(ov, freeze="C6")
-    set_widths(ov, [11, 44, 16, 14, 12, 14, 11, 14, 12, 12, 24, 30])
+    set_widths(ov, [11, 44, 16, 14, 12, 14, 11, 14, 12, 12, 24, 30, 34])
     r = title_block(
         ov, "What the report published, and what the database holds now",
         "“Report figure” is the last value the 2024 report itself carried. “Latest” is the most recent value in "
@@ -292,7 +319,7 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path):
     header_row(ov, r, [
         "Code", "Indicator", "Chapter", "Unit", "Report year", "Report figure",
         "Latest year", "Latest value", "Change", "Change %", "How the later figure was obtained",
-        "Source check (27 Jul 2026)",
+        "Source check (27 Jul 2026)", "Primary source",
     ], height=32)
     head = r
     r += 1
@@ -313,6 +340,7 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path):
             (l["value"] - b["value"]) if (b and l and has_new) else None,
             (rd["pct"] / 100) if rd["pct"] is not None else None,
             how, VERDICT_SHORT.get(v, "—") if has_new else "—",
+            ind.get("source") or "",
         ], band=(n % 2 == 0), height=15)
         ov.cell(row=r + n, column=1).font = Font(name=FONT_SEMI, size=9,
                                                  color=CATEGORY_COLOR.get(ind["category"], TEAL))
@@ -326,7 +354,10 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path):
         ov.cell(row=r + n, column=10).alignment = Alignment(horizontal="right", vertical="center")
         ov.cell(row=r + n, column=11).font = SMALL_FONT
         ov.cell(row=r + n, column=12).font = SMALL_FONT
-    ov.auto_filter.ref = f"A{head}:L{head + len(inds)}"
+        src_cell = ov.cell(row=r + n, column=13)
+        src_cell.font = SMALL_FONT
+        link_cell(src_cell, detect_link(ind.get("source")))
+    ov.auto_filter.ref = f"A{head}:M{head + len(inds)}"
 
     # ── Derivations: the calc grid, with live formulas ─────────────────────
     dv = wb.create_sheet("Derivations")
@@ -431,8 +462,9 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path):
     # ── Sources ────────────────────────────────────────────────────────────
     sr = wb.create_sheet("Sources")
     sheet_setup(sr, freeze="A2")
-    header_row(sr, 1, ["Code", "Indicator", "Input column", "Where that input comes from"], height=22)
-    set_widths(sr, [11, 40, 40, 100])
+    header_row(sr, 1, ["Code", "Indicator", "Input column", "Where that input comes from",
+                       "Exact dataset link (DOI where available)"], height=22)
+    set_widths(sr, [11, 40, 40, 100, 26])
     row = 2
     for ind in sorted(inds, key=lambda i: (order.get(i["category"], 99), i.get("code") or "")):
         layout = calc.get(ind["id"])
@@ -445,14 +477,17 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path):
                                col["header"], col["source"]], band=(row % 2 == 0), height=26)
             sr.cell(row=row, column=1).font = Font(name=FONT_SEMI, size=9, color=TEAL)
             sr.cell(row=row, column=4).font = SMALL_FONT
+            link_cell(sr.cell(row=row, column=5), detect_link(col["source"]))
             row += 1
-    sr.auto_filter.ref = f"A1:D{row - 1}"
+    sr.auto_filter.ref = f"A1:E{row - 1}"
 
-    wb.calculation.fullCalcOnLoad = True
-    wb.properties.title = "ESABCC report indicators — old figures, new data, and the derivations"
-    wb.properties.creator = "ESABCC Method Hub"
-    wb.save(out_path)
-    print(f"wrote {out_path}: {len(inds)} indicators, {blocks} derivation blocks")
+    if standalone:
+        wb.calculation.fullCalcOnLoad = True
+        wb.properties.title = "ESABCC report indicators — old figures, new data, and the derivations"
+        wb.properties.creator = "ESABCC Method Hub"
+        wb.save(out_path)
+        print(f"wrote {out_path}: {len(inds)} indicators, {blocks} derivation blocks")
+    return wb
 
 
 def _shift_rows(formula, shift):
