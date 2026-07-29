@@ -139,24 +139,29 @@ def main() -> None:
     # ── Policy targets ──────────────────────────────────────────────────────
     ws = wb.active
     ws.title = 'Policy targets'
+    # Columns 12 ("Human confirmed") and the two mark-up columns at the far right
+    # are left empty on purpose: they are where the reviewer records the next
+    # round of confirmations and objections, as in the workbook they marked up.
     header = [
         '1 · Name of policy', '2 · Type of policy', '3 · Policy area', '#', '4 · Target text (verbatim)',
         'Provision', '5 · Target label', '6 · Obligation', '7 · Type of target', '8 · Timeline',
         '9 · Indicators', '10 · Climate-relevance', '11 · Source (EUR-Lex)', 'Relevant (transition lens)',
+        '12 · Human confirmed',
     ] + [f'{13 + i} · {label}' for i, (_, label) in enumerate(SECTORS)] + [
         '21 · Mitigation / adaptation argument',
         '22 · Duplicate / similar target in another policy',
+        'Not correct', 'reason',
     ]
     body = [[
         t['policy_name'], cap(t['document_type']), t['policy_area'], t['target_number'], t['target_text'],
         t['article'], cap(t['target_label']), cap(t['obligation']), cap(t['target_type']),
         t['timeline'] or 'Unspecified', '; '.join(t.get('indicators') or []),
-        CLIMATE_LABEL[t['climate_relevance']], t['eurlex_url'], 'Relevant',
+        CLIMATE_LABEL[t['climate_relevance']], t['eurlex_url'], 'Relevant', '',
     ] + ['Yes' if key in t['sectors'] else '' for key, _ in SECTORS] + [
-        t['climate_argument'], t['duplicate_of'],
+        t['climate_argument'], t['duplicate_of'], '', '',
     ] for t in rows]
     write_sheet(ws, [header] + body,
-                [42, 15, 16, 5, 70, 26, 13, 12, 14, 20, 28, 20, 40, 16] + [13] * 8 + [62, 46])
+                [42, 15, 16, 5, 70, 26, 13, 12, 14, 20, 28, 20, 40, 16, 16] + [13] * 8 + [62, 46, 12, 46])
 
     # ── Removed rows ────────────────────────────────────────────────────────
     removed = [['Row id', 'Pass', 'Rule', 'Reason for removal']]
@@ -263,6 +268,10 @@ def main() -> None:
                       'or seizes an opportunity (adaptation).'],
         ['Column 22', 'The closest target text in another policy — “Duplicate wording” at ≥0.45 token similarity, '
                       '“Similar target” at ≥0.25 — with a note when the other act is named in the text.'],
+        ['Column 12 and the last two columns', 'Left empty for the next review round: mark “12 · Human confirmed”, '
+                                               'and use “Not correct” / “reason” to flag a row exactly as in the '
+                                               'previous mark-up — the reasons written there become the rules of the '
+                                               'next correction pass.'],
     ]
     write_sheet(wb.create_sheet('About'), about, [30, 110], freeze=None)
 
