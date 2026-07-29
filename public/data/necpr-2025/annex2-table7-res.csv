@@ -1,0 +1,163 @@
+country,objective,objective_standardised,target_text,target_numeric,target_year,indicator,unit,year,value,comparable,description
+LT,Renewable energy use in district heating,True,0.9,0.9,2030,Share of RES in district heating,%,2022,73.1,True,
+LT,Renewables self-consumers,True,300000,300000.0,2030,Number of prosumers,number of prosumers,2022,42600.0,True,Number of prosumers using RES
+DE,Renewable energy use in district heating,True,0.45,0.45,2030,share of renewables in heating and cooling network,percent,2022,20.1,True,"The German Federal Government intends to achieve a further increase in the share of renewables in heating and cooling networks. 
+According to the recast Renewable Energy Directive, the EU Member States shall endeavor to increase the share of renewable energy from waste heat and cold in district heating networks by 2,2 percentage points as an annual average for the period between 2021 and 2030. This ambitious goal is also enshrined in the NECP. 
+The progress indicator does not yet include the share of energy from waste heat and cold."
+PL,Renewable energy use in district heating,True,Nie dotyczy,,NA,Nie dotyczy,Nie dotyczy,2022,,False,Nie dotyczy
+PL,Renewable energy use in buildings,True,brak danych,,NA,brak danych,brak danych,2022,,False,brak danych
+PL,Renewable energy produced by cities,True,brak danych,,NA,brak danych,brak danych,2022,,False,brak danych
+PL,Renewable energy communities,True,Do 300 społeczności energetycznych do 2030 r.,,2030,Liczba społeczności energetycznych,Liczba,2022,68.0,False,"Są to głównie zbiorowe podmioty, w tym m.in. klastry energii, spółdzielnie energetyczne
+oraz inne podmioty, które organizują się aby dla dobra członków swej społeczności wytwarzać energię elektryczną na
+własne potrzeby oraz podejmować się innej działalności (np. magazynowania, dzielenia się energią itd.)."
+PL,Renewables self-consumers,True,1 mln prosumentów energii odnawialnej w 2030 r.,,2030,Liczba prosumentów,Liczba,2022,1193350.0,False,"Głównie podmioty indywidualne, które
+wytwarzają energię na własne potrzeby, ale mają możliwość oddania nadwyżki wytworzonej energii elektrycznej do sieci
+lub jej sprzedaży, magazynowania energii oraz uczestniczenia w innych formach aktywności (np. DSR, efektywność
+energetyczna). Aktywni odbiorcy tworzą trzon energetyki obywatelskiej"
+PL,Energy recovered from the sludge acquired through the treatment of wastewater,True,brak danych,,NA,brak danych,brak danych,2022,,False,brak danych
+LV,Renewable energy use in district heating,True,73.9,73.9,2030,renewable share in DH,%,2022,63.9,True,indicative target in accordance with Article 24(1) of Directive 2018/2001
+LV,Renewable energy use in buildings,True,65,65.0,2030,renewable share in buildings (commercial & institutional and household sector) including renewable grid electricity and DH,%,2022,60.1,True,indicative target in accordance with Article 15a(1) of Directive 2018/2001
+FR,Renewable energy use in district heating,True,31 to 36 TWh,,2028,"Quantity of renewable and recovered heat
+delivered by heating networks",TWh,2022,17.4,False,"Quantity of renewable and recovered heat
+delivered by heating networks"
+FR,Renewable energy use in buildings,True,44 to 52 TWh,,2028,Energy produced by a heat pump,TWh,2022,47.9,False,Energy produced by a heat pump
+SK,Energy recovered from the sludge acquired through the treatment of wastewater,True,,,NA,,,2022,,False,
+SK,Renewable energy communities,True,,,NA,,,2022,,False,
+SK,Renewable energy produced by cities,True,,,NA,,,2022,,False,
+SK,Renewable energy use in buildings,True,,,NA,,,2022,,False,
+SK,Renewable energy use in district heating,True,,,NA,,,2022,,False,
+SK,Renewables self-consumers,True,,,NA,,,2022,,False,
+SI,Renewable energy use in district heating,True,NA,,NA,NA,NA,2022,,False,NA
+SI,Renewable energy use in buildings,True,NA,,NA,NA,NA,2022,,False,NA
+SI,Renewable energy produced by cities,True,NA,,NA,NA,NA,2022,,False,NA
+SI,Renewable energy communities,True,NA,,NA,NA,NA,2022,,False,NA
+SI,Renewables self-consumers,True,NA,,NA,NA,NA,2022,,False,NA
+SI,Energy recovered from the sludge acquired through the treatment of wastewater,True,NA,,NA,NA,NA,2022,,False,NA
+ES,Renewable energy use in district heating,True,NA,,NA,NA,NA,2022,,False,NA
+ES,Renewable energy use in buildings,True,NA,,NA,NA,NA,2022,,False,NA
+ES,Renewable energy produced by cities,True,NA,,NA,NA,NA,2022,,False,NA
+ES,Renewable energy communities,True,NA,,NA,NA,NA,2022,,False,NA
+ES,Renewables self-consumers,True,NA,,NA,NA,NA,2022,,False,NA
+ES,Energy recovered from the sludge acquired through the treatment of wastewater,True,NA,,NA,NA,NA,2022,,False,NA
+HU,Renewable energy use in district heating,True,"~+2,2%points/a in RES-DH",,2030,Annual increase in renewable share,(+/-)%points (compared to previous year),2022,2.1,False,The district heating sector aims to reduce the share of natural gas to 50% by 2030 and to achieve an average annual renewable growth rate of 2.2 percentage points in RES-DH.
+HU,Renewable energy produced by cities,True,,,NA,,,2022,,False,
+HU,Renewable energy use in buildings,True,Increase in renewable energy use in buildings,,2030,Annual increase in renewable share,(+/-)%points (compared to previous year),2022,1.48,False,Encouraging the increase in renewable energy use in buildings through the main RES targets and related measures
+HU,Renewable energy communities,True,Increase in the number of renewable energy communities,,2030,Number of renewable energy communities,pcs/a,2022,0.0,False,Encouraging the increase in the number of renewable energy communities through the main RES targets and related measures
+HU,Renewables self-consumers,True,Increased renewable energy self-consumption,,2030,Self-generated renewable energy production,PJ/a,2022,9.7904,False,Encouraging increased renewable energy self-consumption through the main RES targets and related measures
+HU,Energy recovered from the sludge acquired through the treatment of wastewater,True,Increase of energy recovered from sewage sludge,,2030,Sewage sludge gas-based electricity generation capacity,MW,2022,,False,Encouraging the increase of energy recovered from sewage sludge through the main RES targets and related measures
+HR,Renewable energy use in district heating,True,20.9,20.9,2030,RES share in centralized heating and cooling systems,%,2022,0.1,True,Indicative trajectory (targets) of the share of RES in centralized heating and cooling systems has been defined until 2030.
+HR,Renewable energy use in buildings,True,65.1,65.1,2030,RES share in households and services,%,2022,52.4,True,Indicative trajectory (targets) of RES share in households and services (building sector) has been defined until 2030.
+IT,Renewable energy use in district heating,True,,,NA,Energia termica da rinnovabili nel teleriscaldamento,Mtep,2022,0.268,False,"Renewable energy use in disctrict heating: 
+Nello scenario di policy del PNIEC inviato alla Commissione nel 2020 è stimato che il contributo dell'energia termica da rinnovabili immessa in reti di teleriscaldamento possa raggiungere gli 0.36 Mtep nel 2030 (non è però assolutamente da considerarsi come un obiettivo, è una stima di scenario soggetta ad aggiornamento). 
+Nell'aggiornamento del PNIEC non si è fissato un obiettivo specifico relativo all'energia termica da rinnovabili immessa in reti di teleriscaldamento."
+IT,Renewable energy communities,True,5 GW dicapacità delle configurazioni supportate,,2027,capcità supportata,MW,2022,17.5,False,"Nel PNIEC è richiamata l'importanza del sostegno alla diffusione delle configurazioni in autoconsumo e delle comunità energetiche rinnovabili, al fine di promuovere un sistema elettrico più decentrato e un ruolo attivo della domanda e della produzione distribuita. 
+Il sostegno alle configurazioni di autoconsumo collettivo e alle comunità energetiche rinnovabili è attuato attraverso provvedimenti normativi di incentivazione."
+EL,Renewable energy use in buildings,True,0.722,0.722,2030,SHARES tool 2025 v7,%,2022,40.7,True,"Penetration of RES in buildings according to Article a ""Mainstreaming renewable energy in buildings"" of REDIII"
+RO,Renewable energy use in district heating,True,Renewable energy to account for 9.4% of energy used in district heating systems.,,2030,Installed capacity in district heating from renewable sources,ktoe,2022,82.0,False,"Increase in renewable energy share in district heating.
+Progressive replacement of fossil-based heating with renewable-based district systems."
+RO,Renewable energy use in buildings,True,Indicative milestones to decarbonize the building stock: Savings 0.83 Mtoe (9%); Total consumption 8.69 Mtoe; Annual renovation rate gradual increase from 0.69% to 3.39%; Increase in NZEB buildings 1%; Decrease in worst performing buildings 19%; CO2 reduction 24%; Total CO2 emissions 7.50 Mton.,,2030,,,2022,,False,Increasing energy efficiency and using renewable sources for heating and cooling in buildings.
+RO,Renewable energy produced by cities,True,,,NA,,,2022,,False,Development of local renewable energy production capacities by municipalities.
+RO,Renewable energy communities,True,The aim of this measures it to address the required specific amendments of the legislative framework that would accelerate the establishment of energy communities and self-sufficient villages.,,2030,installed capacity,MW,2022,0.0,False,Enable the establishment of energy communities.
+RO,Renewables self-consumers,True,at least 3500 MW,,2030,installed capacity,MW,2022,40.0,False,Increase of the domestic generation capacity of Rooftop PV
+LT,Renewable energy use in district heating,True,0.9,0.9,2030,Share of RES in district heating,%,2023,73.5,True,
+LT,Renewables self-consumers,True,300000,300000.0,2030,Number of prosumers,number of prosumers,2023,87600.0,True,Number of prosumers using RES
+DE,Renewable energy use in district heating,True,0.45,0.45,2030,share of renewables in heating and cooling network,percent,2023,20.9,True,"The German Federal Government intends to achieve a further increase in the share of renewables in heating and cooling networks. 
+According to the recast Renewable Energy Directive, the EU Member States shall endeavor to increase the share of renewable energy from waste heat and cold in district heating networks by 2,2 percentage points as an annual average for the period between 2021 and 2030. This ambitious goal is also enshrined in the NECP. 
+The progress indicator does not yet include the share of energy from waste heat and cold."
+PL,Renewable energy use in district heating,True,Nie dotyczy,,NA,Nie dotyczy,Nie dotyczy,2023,,False,Nie dotyczy
+PL,Renewable energy use in buildings,True,brak danych,,NA,brak danych,brak danych,2023,,False,brak danych
+PL,Renewable energy produced by cities,True,brak danych,,NA,brak danych,brak danych,2023,,False,brak danych
+PL,Renewable energy communities,True,Do 300 społeczności energetycznych do 2030 r.,,2030,Liczba społeczności energetycznych,Liczba,2023,89.0,False,"Są to głównie zbiorowe podmioty, w tym m.in. klastry energii, spółdzielnie energetyczne
+oraz inne podmioty, które organizują się aby dla dobra członków swej społeczności wytwarzać energię elektryczną na
+własne potrzeby oraz podejmować się innej działalności (np. magazynowania, dzielenia się energią itd.)."
+PL,Renewables self-consumers,True,1 mln prosumentów energii odnawialnej w 2030 r.,,2030,Liczba prosumentów,Liczba,2023,1383480.0,False,"Głównie podmioty indywidualne, które
+wytwarzają energię na własne potrzeby, ale mają możliwość oddania nadwyżki wytworzonej energii elektrycznej do sieci
+lub jej sprzedaży, magazynowania energii oraz uczestniczenia w innych formach aktywności (np. DSR, efektywność
+energetyczna). Aktywni odbiorcy tworzą trzon energetyki obywatelskiej"
+PL,Energy recovered from the sludge acquired through the treatment of wastewater,True,brak danych,,NA,brak danych,brak danych,2023,,False,brak danych
+LV,Renewable energy use in district heating,True,73.9,73.9,2030,renewable share in DH,%,2023,65.0,True,indicative target in accordance with Article 24(1) of Directive 2018/2001
+LV,Renewable energy use in buildings,True,65,65.0,2030,renewable share in buildings (commercial & institutional and household sector) including renewable grid electricity and DH,%,2023,60.5,True,indicative target in accordance with Article 15a(1) of Directive 2018/2001
+FR,Renewable energy use in district heating,True,31 to 36 TWh,,2028,"Quantity of renewable and recovered heat
+delivered by heating networks",TWh,2023,,False,"Quantity of renewable and recovered heat
+delivered by heating networks"
+FR,Renewable energy use in buildings,True,44 to 52 TWh,,2028,Energy produced by a heat pump,TWh,2023,53.1,False,Energy produced by a heat pump
+SK,Energy recovered from the sludge acquired through the treatment of wastewater,True,,,NA,,,2023,,False,
+SK,Renewable energy communities,True,,,NA,,,2023,,False,
+SK,Renewable energy produced by cities,True,,,NA,,,2023,,False,
+SK,Renewable energy use in buildings,True,,,NA,,,2023,,False,
+SK,Renewable energy use in district heating,True,,,NA,,,2023,,False,
+SK,Renewables self-consumers,True,,,NA,,,2023,,False,
+SI,Renewable energy use in district heating,True,NA,,NA,NA,NA,2023,,False,NA
+SI,Renewable energy use in buildings,True,NA,,NA,NA,NA,2023,,False,NA
+SI,Renewable energy produced by cities,True,NA,,NA,NA,NA,2023,,False,NA
+SI,Renewable energy communities,True,NA,,NA,NA,NA,2023,,False,NA
+SI,Renewables self-consumers,True,NA,,NA,NA,NA,2023,,False,NA
+SI,Energy recovered from the sludge acquired through the treatment of wastewater,True,NA,,NA,NA,NA,2023,,False,NA
+ES,Renewable energy use in district heating,True,NA,,NA,NA,NA,2023,,False,NA
+ES,Renewable energy use in buildings,True,NA,,NA,NA,NA,2023,,False,NA
+ES,Renewable energy produced by cities,True,NA,,NA,NA,NA,2023,,False,NA
+ES,Renewable energy communities,True,NA,,NA,NA,NA,2023,,False,NA
+ES,Renewables self-consumers,True,NA,,NA,NA,NA,2023,,False,NA
+ES,Energy recovered from the sludge acquired through the treatment of wastewater,True,NA,,NA,NA,NA,2023,,False,NA
+HU,Renewable energy use in district heating,True,"~+2,2%points/a in RES-DH",,2030,Annual increase in renewable share,(+/-)%points (compared to previous year),2023,0.78,False,The district heating sector aims to reduce the share of natural gas to 50% by 2030 and to achieve an average annual renewable growth rate of 2.2 percentage points in RES-DH.
+HU,Renewable energy produced by cities,True,,,NA,,,2023,,False,
+HU,Renewable energy use in buildings,True,Increase in renewable energy use in buildings,,2030,Annual increase in renewable share,(+/-)%points (compared to previous year),2023,1.25,False,Encouraging the increase in renewable energy use in buildings through the main RES targets and related measures
+HU,Renewable energy communities,True,Increase in the number of renewable energy communities,,2030,Number of renewable energy communities,pcs/a,2023,3.0,False,Encouraging the increase in the number of renewable energy communities through the main RES targets and related measures
+HU,Renewables self-consumers,True,Increased renewable energy self-consumption,,2030,Self-generated renewable energy production,PJ/a,2023,12.743,False,Encouraging increased renewable energy self-consumption through the main RES targets and related measures
+HU,Energy recovered from the sludge acquired through the treatment of wastewater,True,Increase of energy recovered from sewage sludge,,2030,Sewage sludge gas-based electricity generation capacity,MW,2023,16.0,False,Encouraging the increase of energy recovered from sewage sludge through the main RES targets and related measures
+HR,Renewable energy use in district heating,True,20.9,20.9,2030,RES share in centralized heating and cooling systems,%,2023,0.1,True,Indicative trajectory (targets) of the share of RES in centralized heating and cooling systems has been defined until 2030.
+HR,Renewable energy use in buildings,True,65.1,65.1,2030,RES share in households and services,%,2023,52.4,True,Indicative trajectory (targets) of RES share in households and services (building sector) has been defined until 2030.
+IT,Renewable energy use in district heating,True,,,NA,Energia termica da rinnovabili nel teleriscaldamento,Mtep,2023,0.256,False,"Renewable energy use in disctrict heating: 
+Nello scenario di policy del PNIEC inviato alla Commissione nel 2020 è stimato che il contributo dell'energia termica da rinnovabili immessa in reti di teleriscaldamento possa raggiungere gli 0.36 Mtep nel 2030 (non è però assolutamente da considerarsi come un obiettivo, è una stima di scenario soggetta ad aggiornamento). 
+Nell'aggiornamento del PNIEC non si è fissato un obiettivo specifico relativo all'energia termica da rinnovabili immessa in reti di teleriscaldamento."
+IT,Renewable energy communities,True,5 GW dicapacità delle configurazioni supportate,,2027,capcità supportata,MW,2023,44.7,False,"Nel PNIEC è richiamata l'importanza del sostegno alla diffusione delle configurazioni in autoconsumo e delle comunità energetiche rinnovabili, al fine di promuovere un sistema elettrico più decentrato e un ruolo attivo della domanda e della produzione distribuita. 
+Il sostegno alle configurazioni di autoconsumo collettivo e alle comunità energetiche rinnovabili è attuato attraverso provvedimenti normativi di incentivazione."
+EL,Renewable energy use in buildings,True,0.722,0.722,2030,SHARES tool 2025 v7,%,2023,44.5,True,"Penetration of RES in buildings according to Article a ""Mainstreaming renewable energy in buildings"" of REDIII"
+RO,Renewable energy use in district heating,True,Renewable energy to account for 9.4% of energy used in district heating systems.,,2030,Installed capacity in district heating from renewable sources,ktoe,2023,85.0,False,"Increase in renewable energy share in district heating.
+Progressive replacement of fossil-based heating with renewable-based district systems."
+RO,Renewable energy use in buildings,True,Indicative milestones to decarbonize the building stock: Savings 0.83 Mtoe (9%); Total consumption 8.69 Mtoe; Annual renovation rate gradual increase from 0.69% to 3.39%; Increase in NZEB buildings 1%; Decrease in worst performing buildings 19%; CO2 reduction 24%; Total CO2 emissions 7.50 Mton.,,2030,,,2023,,False,Increasing energy efficiency and using renewable sources for heating and cooling in buildings.
+RO,Renewable energy produced by cities,True,,,NA,,,2023,,False,Development of local renewable energy production capacities by municipalities.
+RO,Renewable energy communities,True,The aim of this measures it to address the required specific amendments of the legislative framework that would accelerate the establishment of energy communities and self-sufficient villages.,,2030,installed capacity,MW,2023,0.0,False,Enable the establishment of energy communities.
+RO,Renewables self-consumers,True,at least 3500 MW,,2030,installed capacity,MW,2023,1348.0,False,Increase of the domestic generation capacity of Rooftop PV
+DE,"Other national objective and trajectory, including sectoral and long term - 1",False,NA,,2026,installed capacity,MW,2022,900.0,False,"No trajectory, just for information: renewable energy financed by long term (>5 years) power purchase agreements; (Target year is only there because something has to be stated in there)"
+PL,"Inne krajowe założenie i trajektorie, w tym sektorowe i długoterminowe",False,brak danych,,NA,brak danych,brak danych,2022,,False,brak danych
+SK,NA,False,,,NA,,,2022,,False,
+SI,"Other national objective and trajectory, including sectoral and long term - 1",False,0.1,0.1,2030,Share of RES and lowcarbon gases,%,2022,0.0,True,"Share of renewable and lowcarbon gases (biomethane, hydrogen and other synthetic gases)"
+ES,"Other national objective and trajectory, including sectoral and long term - 2",False,"An indicative objective of 0.1 percent, in energy content, of advanced biofuels and biogas in the years 2020 and 2021 and a minimum obligatory objectives of 0.2 percent in 2022, 0.3 percent in 2023, 0.5 percent in 2024, 1 percent in 2025, 1.2 percent in 2026 and 3.5 percent in 2030, all of them in energy content, for each of the obligated subjects to prove compliance with the objectives of sale or consumption of biofuels and biogas for transport purposes.",,2030,Percentage of sale or consumption of advanced biofuels and biogas in transport reached in year X,%,2022,2.7,False,Royal Decree 376/2022 regulates the annual targets for the penetration of renewable gases in the sale or consumption of natural gas for the transport sector up to 2030.
+ES,"Other national objective and trajectory, including sectoral and long term - 3",False,"A limit of biofuels produced from food and feed crops of 3,5% (2023), 3% (2024) and 2,6% (2025).
+From 2026 on, and as long as no additional limits are established, the limit of biofuels produced from food and fodder crops for the purposes of the objective of biofuels and biogas for transport purposes applicable to the year 2025 will be understood extended.",,NA,Percentage of sale or consumption of biofuels from food and feed crops in transport reached in year X.,%,2022,0.9,False,"Order TED/1342/2022, of December 23, which establishes the limit of biofuels produced from food and feed crops for the purposes of the objective of sale or consumption of biofuels and biogas for transport purposes."
+ES,"Other national objective and trajectory, including sectoral and long term - 1",False,"The entities under obligation of sale or consumption of biofuels must annually prove to the certifying entity the ownership of a minimum number of biofuel certificates that allow the objectives to be met regulated in Royal Decree 1085/2015, of December 4, for the promotion of biofuels or regulation that replaces it.
+For the years up to 2026, the biofuel target trajectory in annual calculation will be: 8,5% (2020), 9.5% (2021), 10% (2022), 10,5% (2023), 11% (2024), 11,5% (2025) and 12% (2026).",,2026,Percentage of sale or consumption of biofuels in transport reached in year X.,%,2022,9.25,False,"Royal Decree 376/2022 regulates the targets for the sale or consumption of biofuels as the percentages of sales or consumption of biofuels over the total gasoline and diesel sold or consumed, for transport purposes up to 2026."
+HU,"Other national objective and trajectory, including sectoral and long term - 1",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 2",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 3",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 4",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 5",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 6",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 7",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 8",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 9",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 10",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 11",False,,,NA,,,2022,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 12",False,,,NA,,,2022,,False,
+DE,"Other national objective and trajectory, including sectoral and long term - 1",False,NA,,2026,installed capacity,MW,2023,3600.0,False,"No trajectory, just for information: renewable energy financed by long term (>5 years) power purchase agreements; (Target year is only there because something has to be stated in there)"
+PL,"Inne krajowe założenie i trajektorie, w tym sektorowe i długoterminowe",False,brak danych,,NA,brak danych,brak danych,2023,,False,brak danych
+SK,NA,False,,,NA,,,2023,,False,
+SI,"Other national objective and trajectory, including sectoral and long term - 1",False,0.1,0.1,2030,Share of RES and lowcarbon gases,%,2023,0.0,True,"Share of renewable and lowcarbon gases (biomethane, hydrogen and other synthetic gases)"
+ES,"Other national objective and trajectory, including sectoral and long term - 2",False,"An indicative objective of 0.1 percent, in energy content, of advanced biofuels and biogas in the years 2020 and 2021 and a minimum obligatory objectives of 0.2 percent in 2022, 0.3 percent in 2023, 0.5 percent in 2024, 1 percent in 2025, 1.2 percent in 2026 and 3.5 percent in 2030, all of them in energy content, for each of the obligated subjects to prove compliance with the objectives of sale or consumption of biofuels and biogas for transport purposes.",,2030,Percentage of sale or consumption of advanced biofuels and biogas in transport reached in year X,%,2023,2.8,False,Royal Decree 376/2022 regulates the annual targets for the penetration of renewable gases in the sale or consumption of natural gas for the transport sector up to 2030.
+ES,"Other national objective and trajectory, including sectoral and long term - 3",False,"A limit of biofuels produced from food and feed crops of 3,5% (2023), 3% (2024) and 2,6% (2025).
+From 2026 on, and as long as no additional limits are established, the limit of biofuels produced from food and fodder crops for the purposes of the objective of biofuels and biogas for transport purposes applicable to the year 2025 will be understood extended.",,NA,Percentage of sale or consumption of biofuels from food and feed crops in transport reached in year X.,%,2023,2.1,False,"Order TED/1342/2022, of December 23, which establishes the limit of biofuels produced from food and feed crops for the purposes of the objective of sale or consumption of biofuels and biogas for transport purposes."
+ES,"Other national objective and trajectory, including sectoral and long term - 1",False,"The entities under obligation of sale or consumption of biofuels must annually prove to the certifying entity the ownership of a minimum number of biofuel certificates that allow the objectives to be met regulated in Royal Decree 1085/2015, of December 4, for the promotion of biofuels or regulation that replaces it.
+For the years up to 2026, the biofuel target trajectory in annual calculation will be: 8,5% (2020), 9.5% (2021), 10% (2022), 10,5% (2023), 11% (2024), 11,5% (2025) and 12% (2026).",,2026,Percentage of sale or consumption of biofuels in transport reached in year X.,%,2023,11.32,False,"Royal Decree 376/2022 regulates the targets for the sale or consumption of biofuels as the percentages of sales or consumption of biofuels over the total gasoline and diesel sold or consumed, for transport purposes up to 2026."
+HU,"Other national objective and trajectory, including sectoral and long term - 1",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 2",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 3",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 4",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 5",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 6",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 7",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 8",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 9",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 10",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 11",False,,,NA,,,2023,,False,
+HU,"Other national objective and trajectory, including sectoral and long term - 12",False,,,NA,,,2023,,False,
