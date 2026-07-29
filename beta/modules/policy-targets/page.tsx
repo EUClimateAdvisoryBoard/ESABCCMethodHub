@@ -12,6 +12,7 @@
  * so reviewers are expected to prune/confirm rather than hunt for omissions.
  */
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import PageHero from '@/components/PageHero';
 import {
@@ -200,6 +201,9 @@ export default function PolicyTargetsRegisterPage() {
           <button onClick={() => setMany(shownIds, true)} className="px-2.5 py-1 rounded border border-green-300 text-green-700 bg-green-50 hover:bg-green-100">Confirm all shown</button>
           <button onClick={() => setMany(shownIds, false)} className="px-2.5 py-1 rounded border border-grey-300 text-tertiary hover:bg-grey-100">Clear shown</button>
           <div className="ml-auto flex gap-2">
+            <Link href="/beta/policy-targets/summary" className="px-3 py-1.5 rounded-md border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] font-medium hover:bg-grey-100">
+              ▤ Summary &amp; figures
+            </Link>
             <button onClick={downloadExcel} disabled={downloading} className="px-3 py-1.5 rounded-md bg-primary text-white font-medium hover:opacity-90 disabled:opacity-50">
               {downloading ? 'Preparing…' : '⬇ Download Excel'}
             </button>
