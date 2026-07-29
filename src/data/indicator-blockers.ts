@@ -72,12 +72,13 @@ const PRODCOM =
 
 const BSO =
   'The EU Building Stock Observatory database is a Power BI report (reportId ' +
-  '5ca1ef93-d90b-43f9-94bc-0bdc51876f9d) embedded behind the EC cookie-consent iframe — the figures ' +
-  'are fetched by the Power BI client at runtime and there is no static CSV, API or file export. A ' +
-  'headless browser now works in this environment (see scripts/esabcc-indicators/browser-probe.mjs; ' +
-  'Chromium needs --ssl-version-max=tls1.2 to get through the TLS-intercepting egress proxy), and it ' +
-  'reaches the page and identifies the embed — but pulling numbers out still means driving the report ' +
-  'UI or replaying its querydata calls, which has not been built.';
+  '5ca1ef93-d90b-43f9-94bc-0bdc51876f9d) sitting behind two consent gates. It is now reachable: ' +
+  'scripts/esabcc-indicators/browser-probe.mjs renders it headlessly and reads its “Table” view ' +
+  'straight out of the DOM, so the figures are obtainable and nothing needs authenticating — the ' +
+  'report ships its data to the client rather than querying a server, so there are no API calls to ' +
+  'replay. What is missing is the last mile: driving the report’s own Subject / Year / Country ' +
+  'controls and its Trend tab, then mapping the returned rows onto this indicator. Until that is ' +
+  'built and checked against the report’s baseline, no value is published.';
 
 export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
   // ── Waiting on the EU's 2026 CRT submission (10) ─────────────────────────
@@ -126,10 +127,10 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
   },
 
   // ── No public data export (6) ────────────────────────────────────────────
-  'esabcc-b4-dwellings': { status: 'no-public-api', summary: 'Building Stock Observatory is a Power BI embed', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
-  'esabcc-b4-floor-area': { status: 'no-public-api', summary: 'Building Stock Observatory is a Power BI embed', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
-  'esabcc-b4-surface-residential': { status: 'no-public-api', summary: 'Building Stock Observatory is a Power BI embed', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
-  'esabcc-b4-surface-tertiary': { status: 'no-public-api', summary: 'Building Stock Observatory is a Power BI embed', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
+  'esabcc-b4-dwellings': { status: 'unresolved', summary: 'Power BI report now readable; extraction not built', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
+  'esabcc-b4-floor-area': { status: 'unresolved', summary: 'Power BI report now readable; extraction not built', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
+  'esabcc-b4-surface-residential': { status: 'unresolved', summary: 'Power BI report now readable; extraction not built', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
+  'esabcc-b4-surface-tertiary': { status: 'unresolved', summary: 'Power BI report now readable; extraction not built', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
   'esabcc-i7b-cement-projects': {
     status: 'no-public-api',
     summary: 'Cembureau project map publishes no data file',

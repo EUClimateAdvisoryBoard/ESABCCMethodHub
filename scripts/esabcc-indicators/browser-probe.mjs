@@ -33,8 +33,12 @@
  *        re-curated, so a comparable time series cannot be rebuilt from it.
  *   B4   The Building Stock Observatory database is a Power BI embed,
  *        reportId 5ca1ef93-d90b-43f9-94bc-0bdc51876f9d, behind the consent
- *        iframe. Extracting figures means either driving the report UI or
- *        replaying its querydata calls — not yet done.
+ *        iframe. `openBso()` below now renders it headlessly and reads its
+ *        "Table" view straight out of the DOM — the report ships its data to
+ *        the client, so there are no querydata calls to intercept and nothing
+ *        to authenticate against. What remains is driving the report's own
+ *        controls (Subject / Year / Country, and the Trend tab for a series)
+ *        and mapping the resulting rows onto B4's four indicators.
  *
  * Usage:  node scripts/esabcc-indicators/browser-probe.mjs <url> [waitMs]
  *
@@ -118,4 +122,38 @@ async function main() {
 
 if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop())) {
   main().catch(e => { console.error(e); process.exit(1); });
+}
+
+/**
+ * Open the Building Stock Observatory report and return its Power BI frame,
+ * having cleared both consent gates. The report renders its data client-side,
+ * so `frame.innerText` after switching to the "Table" tab contains the figures
+ * — no API call to intercept.
+ *
+ *   const { browser, page, frame } = await openBso();
+ *   await frame.click('text=Table');
+ *   const rows = await frame.evaluate(() => document.body.innerText);
+ *
+ * Allow ~45s for the embed: it is slow, and reading it before it settles gives
+ * an empty shell that looks like a failure.
+ */
+export async function openBso(waitMs = 40000) {
+  const browser = await chromium.launch(LAUNCH);
+  const ctx = await browser.newContext({ ignoreHTTPSErrors: true, viewport: { width: 1680, height: 1400 } });
+  const page = await ctx.newPage();
+  await page.goto('https://building-stock-observatory.energy.ec.europa.eu/database/', {
+    waitUntil: 'domcontentloaded', timeout: 75000,
+  });
+  await acceptEcCookies(page);
+  await page.waitForTimeout(5000);
+  // Second gate: the embed itself sits behind a "Show external content" placeholder
+  // inside the webtools consent iframe, and does not load until that is clicked.
+  for (const f of page.frames()) {
+    if (!/webtools\.europa\.eu\/crs/.test(f.url())) continue;
+    try { await f.click('text=Show external content', { timeout: 6000 }); } catch { /* already shown */ }
+  }
+  await page.waitForTimeout(waitMs);
+  const frame = page.frames().find(f => /app\.powerbi\.com/.test(f.url()));
+  if (!frame) throw new Error('Power BI frame never appeared — consent gate probably not cleared');
+  return { browser, page, frame };
 }
