@@ -1,0 +1,199 @@
+dataset,country,item,flag,detail
+Annex I Table 1,HU,excl_lulucf 2030 national target,implausible_magnitude,"target 475,000 kt vs own WEM projection 53,731 kt (ratio 9x) — order-of-magnitude entry error"
+Annex I Table 1,HU,incl_lulucf 2030 national target,implausible_magnitude,"target 412,000 kt vs own WEM projection 48,788 kt (ratio 8x) — order-of-magnitude entry error"
+Annex I Table 1,IE,incl_lulucf 2030 national target,implausible_magnitude,"target 335,000 kt vs own WEM projection 59,837 kt (ratio 6x) — order-of-magnitude entry error"
+Annex I Table 1,BE,climate neutrality year,not_reported,no target year given for climate neutrality
+Annex I Table 1,CZ,climate neutrality year,not_reported,no target year given for climate neutrality
+Annex I Table 1,HR,climate neutrality year,not_reported,no target year given for climate neutrality
+Annex I Table 1,PL,climate neutrality year,not_reported,no target year given for climate neutrality
+Annex I Table 1,SE,climate neutrality year,not_reported,no target year given for climate neutrality
+Annex I Table 3,BE,2030 LULUCF NECP commitment,unit_mismatch,"commitment -1 vs projection -1,106 kt — commitment appears to be in Mt while the column is kt"
+Annex I Table 3,EE,2030 LULUCF NECP commitment,commitment_equals_projection,"stated commitment 2,230.6 kt is the country's own WAM projection, not an independent commitment"
+Annex I Table 3,ES,2030 LULUCF NECP commitment,commitment_equals_projection,"stated commitment -46,008.4 kt is the country's own WAM projection, not an independent commitment"
+Annex I Table 3,FR,2030 LULUCF NECP commitment,unit_mismatch,"commitment -18 vs projection -6,481 kt — commitment appears to be in Mt while the column is kt"
+Annex I Table 3,HU,2030 LULUCF NECP commitment,commitment_equals_projection,"stated commitment -4,942.6 kt is the country's own WEM projection, not an independent commitment"
+Annex I Table 3,NL,2030 LULUCF NECP commitment,unit_mismatch,"commitment 5.4 vs projection 4,779 kt — commitment appears to be in Mt while the column is kt"
+Annex I Table 3,PL,2030 LULUCF NECP commitment,unit_mismatch,"commitment 92 vs projection -24,550 kt — commitment appears to be in Mt while the column is kt"
+Annex I Table 3,RO,2030 LULUCF NECP commitment,commitment_equals_projection,"stated commitment -49,054.4 kt is the country's own WAM projection, not an independent commitment"
+Annex I Table 3,AT,unit field,nonstandard_unit_string,reported unit(s): NA
+Annex I Table 3,BE,unit field,nonstandard_unit_string,reported unit(s): Mton CO2-eq
+Annex I Table 3,CY,unit field,nonstandard_unit_string,reported unit(s): CO2 eq
+Annex I Table 3,DE,unit field,nonstandard_unit_string,reported unit(s): Mt CO2(eq)
+Annex I Table 3,EE,unit field,nonstandard_unit_string,reported unit(s): kt CO2 eq.
+Annex I Table 3,FI,unit field,nonstandard_unit_string,reported unit(s): ktCO2
+Annex I Table 3,FR,unit field,nonstandard_unit_string,reported unit(s): MtCO2e
+Annex I Table 3,HR,unit field,nonstandard_unit_string,reported unit(s): ktCO2eq
+Annex I Table 3,HU,unit field,nonstandard_unit_string,reported unit(s): ktCO2eq
+Annex I Table 3,IE,unit field,nonstandard_unit_string,reported unit(s): MCO2 eq
+Annex I Table 3,IT,unit field,nonstandard_unit_string,reported unit(s): NA
+Annex I Table 3,LT,unit field,nonstandard_unit_string,reported unit(s): kt CO2 eq.
+Annex I Table 3,MT,unit field,nonstandard_unit_string,reported unit(s): NA
+Annex I Table 3,NL,unit field,nonstandard_unit_string,reported unit(s): MtCO2e
+Annex I Table 3,PL,unit field,nonstandard_unit_string,reported unit(s): kt CO2eq.
+Annex I Table 3,PT,unit field,nonstandard_unit_string,reported unit(s): ktCO2eq
+Annex I Table 3,SE,unit field,nonstandard_unit_string,reported unit(s): NA
+Annex I Table 3,SI,unit field,nonstandard_unit_string,reported unit(s): kt CO2 eq
+Annex I Table 4,EE,Net emissions of greenhouse gases (incl. the LULUCF sector) of 8 Mt CO2 eq. by 2,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,DK,NA,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,DK,NA,missing_unit,unit field reads 'NA'
+Annex I Table 4,PL,Redukcja emisji gazów cieplarnianych w sektorach nieobjętych systemem ETS  na po,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,PL,Redukcja emisji gazów cieplarnianych w sektorach nieobjętych systemem ETS  na po,missing_unit,unit field reads 'brak danych'
+Annex I Table 4,PL,Udział sektora LULUCF w wypełnianiu celów redukcyjnych do 2030 roku w UE,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,PL,"Dążenie do ograniczenia emisji krajowych emisji gazów cieplarnianych, w tym CO2",no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,PL,"Dążenie do ograniczenia emisji krajowych emisji gazów cieplarnianych, w tym CO2",missing_unit,unit field reads 'brak danych'
+Annex I Table 4,PL,Cel pośredni – od 2025 r. redukcja średniego poziomu emisji CO2 parku nowych sam,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,PL,Cel pośredni – od 2025 r. redukcja średniego poziomu emisji CO2 parku nowych sam,missing_unit,unit field reads 'brak danych'
+Annex I Table 4,PL,Cel główny – od 2030 r. redukcja średniego poziomu emisji CO2 parku nowych samoc,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,PL,Cel główny – od 2030 r. redukcja średniego poziomu emisji CO2 parku nowych samoc,missing_unit,unit field reads 'brak danych'
+Annex I Table 4,PL,Poprawa stanu jednolitych części wód powierzchniowych i podziemnych,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,PL,Poprawa stanu jednolitych części wód powierzchniowych i podziemnych,missing_unit,unit field reads 'brak danych'
+Annex I Table 4,PL,Osiągnięcie poziomów dopuszczalnych i docelowych substancji określonych w dyrekt,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,PL,Osiągnięcie poziomów dopuszczalnych i docelowych substancji określonych w dyrekt,missing_unit,unit field reads 'brak danych'
+Annex I Table 4,PL,Osiągnięcie w perspektywie do roku 2030 stężeń substancji w powietrzu na pozioma,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,PL,Osiągnięcie w perspektywie do roku 2030 stężeń substancji w powietrzu na pozioma,missing_unit,unit field reads 'brak danych'
+Annex I Table 4,PL,Ograniczenie emisji antropogenicznych zanieczyszczeń do atmosfery: dwutlenku sia,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,PL,Ograniczenie emisji antropogenicznych zanieczyszczeń do atmosfery: dwutlenku sia,missing_unit,unit field reads 'brak danych'
+Annex I Table 4,PL,Sprawiedliwa transformacja energetyczna w kierunku niskoemisyjnym,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 4,PL,Sprawiedliwa transformacja energetyczna w kierunku niskoemisyjnym,missing_unit,unit field reads 'brak danych'
+Annex I Table 4,PT,Sectoral greenhouse gas (GHG) emission reduction target,fraction_vs_percent,target given as a fraction (e.g. -0.7) while the progress series is in percent or absolute units
+Annex I Table 4,SI,ESR emissions from energy industries and fugitive emissions,fraction_vs_percent,target given as a fraction (e.g. -0.7) while the progress series is in percent or absolute units
+Annex I Table 4,SE,Zero net emissions,no_numeric_target,objective reported with no quantified target in any year
+Annex I Table 2,AT,2023 annual emission allocation,unit_mismatch,"AEA 45.9 labelled 'ktCO2e' but ESR emissions for the same year are 44,252 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,AT,2030 annual emission allocation,unit_mismatch,"AEA 36.1 labelled 'ktCO2e' but ESR emissions for the same year are 38,642 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,BE,2023 annual emission allocation,unit_mismatch,"AEA 66.2 labelled 'ktCO2e' but ESR emissions for the same year are 68,783 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,BE,2030 annual emission allocation,unit_mismatch,"AEA 52.9 labelled 'ktCO2e' but ESR emissions for the same year are 63,907 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,BG,2023 annual emission allocation,unit_mismatch,"AEA 24.7 labelled 'ktCO2e' but ESR emissions for the same year are 22,592 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,BG,2030 annual emission allocation,unit_mismatch,"AEA 21.9 labelled 'ktCO2e' but ESR emissions for the same year are 14,385 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,CY,2023 annual emission allocation,unit_mismatch,"AEA 3.9 labelled 'ktCO2e' but ESR emissions for the same year are 4,316 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,CY,2030 annual emission allocation,unit_mismatch,"AEA 3.2 labelled 'ktCO2e' but ESR emissions for the same year are 4,103 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,CZ,2023 annual emission allocation,unit_mismatch,"AEA 59.6 labelled 'ktCO2e' but ESR emissions for the same year are 57,588 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,CZ,2030 annual emission allocation,unit_mismatch,"AEA 54.9 labelled 'ktCO2e' but ESR emissions for the same year are 47,060 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,DE,2023 annual emission allocation,unit_mismatch,"AEA 399.7 labelled 'ktCO2e' but ESR emissions for the same year are 382,248 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,DE,2030 annual emission allocation,unit_mismatch,"AEA 298.2 labelled 'ktCO2e' but ESR emissions for the same year are 308,401 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,DK,2023 annual emission allocation,unit_mismatch,"AEA 30.1 labelled 'ktCO2e' but ESR emissions for the same year are 29,752 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,DK,2030 annual emission allocation,unit_mismatch,"AEA 24.4 labelled 'ktCO2e' but ESR emissions for the same year are 19,809 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,EE,2023 annual emission allocation,unit_mismatch,"AEA 5.9 labelled 'ktCO2e' but ESR emissions for the same year are 5,398 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,EE,2030 annual emission allocation,unit_mismatch,"AEA 5.3 labelled 'ktCO2e' but ESR emissions for the same year are 5,076 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,EL,2023 annual emission allocation,unit_mismatch,"AEA 47.3 labelled 'ktCO2e' but ESR emissions for the same year are 45,169 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,EL,2030 annual emission allocation,unit_mismatch,"AEA 52.8 labelled 'ktCO2e' but ESR emissions for the same year are 35,743 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,ES,2023 annual emission allocation,unit_mismatch,"AEA 193.2 labelled 'ktCO2e' but ESR emissions for the same year are 183,907 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,ES,2030 annual emission allocation,unit_mismatch,"AEA 178.3 labelled 'ktCO2e' but ESR emissions for the same year are 156,321 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,FI,2023 annual emission allocation,unit_mismatch,"AEA 27.2 labelled 'ktCO2e' but ESR emissions for the same year are 25,497 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,FI,2030 annual emission allocation,unit_mismatch,"AEA 20.9 labelled 'ktCO2e' but ESR emissions for the same year are 18,870 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,FR,2023 annual emission allocation,unit_mismatch,"AEA 315.9 labelled 'ktCO2e' but ESR emissions for the same year are 298,519 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,FR,2030 annual emission allocation,unit_mismatch,"AEA 251.3 labelled 'ktCO2e' but ESR emissions for the same year are 252,553 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,HR,2023 annual emission allocation,unit_mismatch,"AEA 16.4 labelled 'ktCO2e' but ESR emissions for the same year are 17,571 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,HR,2030 annual emission allocation,unit_mismatch,"AEA 16.6 labelled 'ktCO2e' but ESR emissions for the same year are 16,571 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,HU,2023 annual emission allocation,unit_mismatch,"AEA 43.2 labelled 'ktCO2e' but ESR emissions for the same year are 42,528 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,HU,2030 annual emission allocation,unit_mismatch,"AEA 44.0 labelled 'ktCO2e' but ESR emissions for the same year are 40,545 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,IE,2023 annual emission allocation,unit_mismatch,"AEA 40.4 labelled 'ktCO2e' but ESR emissions for the same year are 42,725 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,IE,2030 annual emission allocation,unit_mismatch,"AEA 32.8 labelled 'ktCO2e' but ESR emissions for the same year are 43,168 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,IT,2023 annual emission allocation,unit_mismatch,"AEA 258.2 labelled 'ktCO2e' but ESR emissions for the same year are 267,599 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,IT,2030 annual emission allocation,unit_mismatch,"AEA 228.8 labelled 'ktCO2e' but ESR emissions for the same year are 239,071 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,LT,2023 annual emission allocation,unit_mismatch,"AEA 13.3 labelled 'ktCO2e' but ESR emissions for the same year are 13,849 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,LT,2030 annual emission allocation,unit_mismatch,"AEA 11.7 labelled 'ktCO2e' but ESR emissions for the same year are 10,721 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,LU,2023 annual emission allocation,unit_mismatch,"AEA 7.9 labelled 'ktCO2e' but ESR emissions for the same year are 6,879 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,LU,2030 annual emission allocation,unit_mismatch,"AEA 6.0 labelled 'ktCO2e' but ESR emissions for the same year are 6,778 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,LV,2023 annual emission allocation,unit_mismatch,"AEA 8.8 labelled 'ktCO2e' but ESR emissions for the same year are 8,313 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,LV,2030 annual emission allocation,unit_mismatch,"AEA 8.0 labelled 'ktCO2e' but ESR emissions for the same year are 7,287 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,MT,2023 annual emission allocation,unit_mismatch,"AEA 1.2 labelled 'ktCO2e' but ESR emissions for the same year are 1,482 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,MT,2030 annual emission allocation,unit_mismatch,"AEA 0.8 labelled 'ktCO2e' but ESR emissions for the same year are 1,450 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,NL,2023 annual emission allocation,unit_mismatch,"AEA 94.4 labelled 'ktCO2e' but ESR emissions for the same year are 83,906 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,NL,2030 annual emission allocation,unit_mismatch,"AEA 81.2 labelled 'ktCO2e' but ESR emissions for the same year are 71,303 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,PL,2023 annual emission allocation,unit_mismatch,"AEA 196.7 labelled 'ktCO2e' but ESR emissions for the same year are 191,261 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,PL,2030 annual emission allocation,unit_mismatch,"AEA 175.3 labelled 'ktCO2e' but ESR emissions for the same year are 164,951 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,PT,2023 annual emission allocation,unit_mismatch,"AEA 40.4 labelled 'ktCO2e' but ESR emissions for the same year are 36,204 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,PT,2030 annual emission allocation,unit_mismatch,"AEA 39.7 labelled 'ktCO2e' but ESR emissions for the same year are 34,268 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,RO,2023 annual emission allocation,unit_mismatch,"AEA 74.9 labelled 'ktCO2e' but ESR emissions for the same year are 83,730 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,RO,2030 annual emission allocation,unit_mismatch,"AEA 73.9 labelled 'ktCO2e' but ESR emissions for the same year are 71,300 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,SE,2023 annual emission allocation,unit_mismatch,"AEA 30.0 labelled 'ktCO2e' but ESR emissions for the same year are 26,803 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,SE,2030 annual emission allocation,unit_mismatch,"AEA 25.8 labelled 'ktCO2e' but ESR emissions for the same year are 23,816 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,SI,2023 annual emission allocation,unit_mismatch,"AEA 10.7 labelled 'ktCO2e' but ESR emissions for the same year are 10,463 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,SI,2030 annual emission allocation,unit_mismatch,"AEA 10.0 labelled 'ktCO2e' but ESR emissions for the same year are 10,720 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,SK,2023 annual emission allocation,unit_mismatch,"AEA 20.5 labelled 'ktCO2e' but ESR emissions for the same year are 19,757 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex I Table 2,SK,2030 annual emission allocation,unit_mismatch,"AEA 20.0 labelled 'ktCO2e' but ESR emissions for the same year are 19,798 kt — the AEA series is in Mt, and the pre-calculated difference column subtracts Mt from kt"
+Annex II Table 7,PL,Renewable energy communities,target_as_free_text,"target field is prose, not a number: ""Do 300 społeczności energetycznych do 2030 r."""
+Annex II Table 7,PL,Renewables self-consumers,target_as_free_text,"target field is prose, not a number: ""1 mln prosumentów energii odnawialnej w 2030 r."""
+Annex II Table 7,FR,Renewable energy use in district heating,target_as_free_text,"target field is prose, not a number: ""31 to 36 TWh"""
+Annex II Table 7,FR,Renewable energy use in buildings,target_as_free_text,"target field is prose, not a number: ""44 to 52 TWh"""
+Annex II Table 7,HU,Renewable energy use in district heating,target_as_free_text,"target field is prose, not a number: ""~+2,2%points/a in RES-DH"""
+Annex II Table 7,HU,Renewable energy use in buildings,target_as_free_text,"target field is prose, not a number: ""Increase in renewable energy use in buildings"""
+Annex II Table 7,HU,Renewable energy communities,target_as_free_text,"target field is prose, not a number: ""Increase in the number of renewable energy communities"""
+Annex II Table 7,HU,Renewables self-consumers,target_as_free_text,"target field is prose, not a number: ""Increased renewable energy self-consumption"""
+Annex II Table 7,HU,Energy recovered from the sludge acquired through the treatment of wastewater,target_as_free_text,"target field is prose, not a number: ""Increase of energy recovered from sewage sludge"""
+Annex II Table 7,IT,Renewable energy communities,target_as_free_text,"target field is prose, not a number: ""5 GW dicapacità delle configurazioni supportate"""
+Annex II Table 7,RO,Renewable energy use in district heating,target_as_free_text,"target field is prose, not a number: ""Renewable energy to account for 9.4% of energy used in district heating systems."""
+Annex II Table 7,RO,Renewable energy use in buildings,target_as_free_text,"target field is prose, not a number: ""Indicative milestones to decarbonize the building stock: Savings 0.83 Mtoe (9%); Total consumption 8.69 Mtoe; Annual ren"""
+Annex II Table 7,RO,Renewable energy communities,target_as_free_text,"target field is prose, not a number: ""The aim of this measures it to address the required specific amendments of the legislative framework that would accelera"""
+Annex II Table 7,RO,Renewables self-consumers,target_as_free_text,"target field is prose, not a number: ""at least 3500 MW"""
+Annex II Table 7,PL,Renewable energy communities,target_as_free_text,"target field is prose, not a number: ""Do 300 społeczności energetycznych do 2030 r."""
+Annex II Table 7,PL,Renewables self-consumers,target_as_free_text,"target field is prose, not a number: ""1 mln prosumentów energii odnawialnej w 2030 r."""
+Annex II Table 7,FR,Renewable energy use in district heating,target_as_free_text,"target field is prose, not a number: ""31 to 36 TWh"""
+Annex II Table 7,FR,Renewable energy use in buildings,target_as_free_text,"target field is prose, not a number: ""44 to 52 TWh"""
+Annex II Table 7,HU,Renewable energy use in district heating,target_as_free_text,"target field is prose, not a number: ""~+2,2%points/a in RES-DH"""
+Annex II Table 7,HU,Renewable energy use in buildings,target_as_free_text,"target field is prose, not a number: ""Increase in renewable energy use in buildings"""
+Annex II Table 7,HU,Renewable energy communities,target_as_free_text,"target field is prose, not a number: ""Increase in the number of renewable energy communities"""
+Annex II Table 7,HU,Renewables self-consumers,target_as_free_text,"target field is prose, not a number: ""Increased renewable energy self-consumption"""
+Annex II Table 7,HU,Energy recovered from the sludge acquired through the treatment of wastewater,target_as_free_text,"target field is prose, not a number: ""Increase of energy recovered from sewage sludge"""
+Annex II Table 7,IT,Renewable energy communities,target_as_free_text,"target field is prose, not a number: ""5 GW dicapacità delle configurazioni supportate"""
+Annex II Table 7,RO,Renewable energy use in district heating,target_as_free_text,"target field is prose, not a number: ""Renewable energy to account for 9.4% of energy used in district heating systems."""
+Annex II Table 7,RO,Renewable energy use in buildings,target_as_free_text,"target field is prose, not a number: ""Indicative milestones to decarbonize the building stock: Savings 0.83 Mtoe (9%); Total consumption 8.69 Mtoe; Annual ren"""
+Annex II Table 7,RO,Renewable energy communities,target_as_free_text,"target field is prose, not a number: ""The aim of this measures it to address the required specific amendments of the legislative framework that would accelera"""
+Annex II Table 7,RO,Renewables self-consumers,target_as_free_text,"target field is prose, not a number: ""at least 3500 MW"""
+Annex II Table 7,ES,"Other national objective and trajectory, including sectoral and long term - 2",target_as_free_text,"target field is prose, not a number: ""An indicative objective of 0.1 percent, in energy content, of advanced biofuels and biogas in the years 2020 and 2021 an"""
+Annex II Table 7,ES,"Other national objective and trajectory, including sectoral and long term - 3",target_as_free_text,"target field is prose, not a number: ""A limit of biofuels produced from food and feed crops of 3,5% (2023), 3% (2024) and 2,6% (2025).
+From 2026 on, and as lo"""
+Annex II Table 7,ES,"Other national objective and trajectory, including sectoral and long term - 1",target_as_free_text,"target field is prose, not a number: ""The entities under obligation of sale or consumption of biofuels must annually prove to the certifying entity the owners"""
+Annex II Table 7,ES,"Other national objective and trajectory, including sectoral and long term - 2",target_as_free_text,"target field is prose, not a number: ""An indicative objective of 0.1 percent, in energy content, of advanced biofuels and biogas in the years 2020 and 2021 an"""
+Annex II Table 7,ES,"Other national objective and trajectory, including sectoral and long term - 3",target_as_free_text,"target field is prose, not a number: ""A limit of biofuels produced from food and feed crops of 3,5% (2023), 3% (2024) and 2,6% (2025).
+From 2026 on, and as lo"""
+Annex II Table 7,ES,"Other national objective and trajectory, including sectoral and long term - 1",target_as_free_text,"target field is prose, not a number: ""The entities under obligation of sale or consumption of biofuels must annually prove to the certifying entity the owners"""
+Annex II Table 7,(all),Renewable energy communities,incomparable_units,"3 different units used for one standardised objective: Liczba, MW, pcs/a"
+Annex II Table 7,(all),Renewable energy use in buildings,incomparable_units,"3 different units used for one standardised objective: %, (+/-)%points (compared to previous year), TWh"
+Annex II Table 7,(all),Renewable energy use in district heating,incomparable_units,"6 different units used for one standardised objective: %, (+/-)%points (compared to previous year), Mtep, TWh, ktoe, percent"
+Annex II Table 7,(all),Renewables self-consumers,incomparable_units,"4 different units used for one standardised objective: Liczba, MW, PJ/a, number of prosumers"
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,DK,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,PL,Rozwój ekologicznych i efektywnych systemów ciepłowniczych,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,SI,"Improving energy and material efficiency according to the ""energy efficiency fir",no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,SI,Reduction of final energy use in buildings by 15% by 2030 compared to 2020,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,SI,Reduction of final energy use in the public sector by 1.9% annually compared to ,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,CZ,(blank row),empty_row,row submitted with NA in every field
+Annex IV Table 6,IE,Heating - geothermal,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,IE,Public Sector Pathfinder,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,IE,Buildings - retrofit,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,IE,Buildings - NZEB,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,IE,Heating – heat policy statement,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,IE,Heating – Social Housing Retrofit,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,IE,Heat and Built Environment Taskforce,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,IE,Heating – heat pumps,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,IE,Transport - biofuel,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,IE,Heating - boilers ,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,IE,Heating - Boilers,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,EL,Annually renovate 3% of the total floor area of public buildings,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,HU,Energy use of residential building stock compared to 2018-2020 average,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,HU,Energy consumption of public building stock compared to 2018-2020 average,no_quantity_anywhere,no numeric value with a unit appears in any free-text field
+Annex IV Table 6,(all),table structure,no_value_columns,"the table has no unit, year or value column — every objective, its target and its progress are free text, so nothing is machine-comparable"
