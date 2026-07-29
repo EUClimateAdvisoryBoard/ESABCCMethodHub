@@ -1,24 +1,30 @@
 {
   "date": "2026-07-29",
-  "generatedAt": "2026-07-29T07:47:40.496Z",
+  "generatedAt": "2026-07-29T13:04:37.077Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 29 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Analysis: Wind and solar power overtake fossil fuels in Germany for first time ever",
-      "summary": "More of Germany’s electricity came from wind and solar power than fossil fuels for the first time ever in 2025.&#8230; The post Analysis: Wind and solar power overtake fossil fuels in Germany for first time ever appeared first on Carbon Brief.",
+      "headline": "Commission endorses Malta's €60 million Social Climate Plan to support vulnerable households and small companies in the clean transition",
+      "summary": "European Commission Press release Brussels, 29 Jul 2026 The European Commission has today endorsed Malta's Social Climate Plan – the fourth national plan adopted under the Social Climate Fund using revenues from carbon pricing to ensure a fair and inclusive clean transition. Malta's plan will mobilise €60.6 million until 2032, including €45.4 million from the European Union.",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Commission opens in-depth investigation into arbitration award ordering Romania to pay compensation to ten energy investors",
+      "summary": "European Commission Press release Brussels, 29 Jul 2026 The European Commission has opened an in-depth investigation to assess whether an arbitration award ordering Romania to pay compensation to ten investors for changes to a renewable electricity support measure is in line with EU State aid rules.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Analysis: 84% of nations miss deadline to identify ‘nature-harming’ subsidies by 2025",
-      "summary": "Most countries failed to meet a 2025 target to identify all of their subsidies that could be “harmful” to biodiversity,&#8230; The post Analysis: 84% of nations miss deadline to identify ‘nature-harming’ subsidies by 2025 appeared first on Carbon Brief.",
+      "headline": "Daily News 29 / 07 / 2026",
+      "summary": "European Commission Daily news Brussels, 29 Jul 2026 Commission endorses Malta's €60 million Social Climate Plan to support vulnerable households and small companies in the clean transition \r\nThe European Commissio...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Uefa and PM criticise Infantino World Cup plan",
-      "summary": "Uefa and Prime Minister Andy Burnham criticise proposals from Fifa to seek private investment in its competitions, including the World Cup.",
+      "headline": "Fujimori takes charge in Peru amid China, US balancing act",
+      "summary": "Peru&#039;s new president, Keiko Fujimori, has promised more security and investment. Now in office, she&#039;ll have to find space for the South American nation amid Washington and Beijing&#039;s geopolitical rivalry.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,18 +33,35 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Commission endorses Malta's €60 million Social Climate Plan to support vulnerable households and small companies in the clean transition",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1701",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 29 Jul 2026 The European Commission has today endorsed Malta's Social Climate Plan – the fourth national plan adopted under the Social Climate Fund using revenues from carbon pricing to ensure a fair and inclusive clean transition. Malta's plan will mobilise €60.6 million until 2032, including €45.4 million from the European Union.",
+          "published": "2026-07-28T22:00:00.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Analysis: Wind and solar power overtake fossil fuels in Germany for first time ever",
-          "link": "https://www.carbonbrief.org/analysis-wind-and-solar-power-overtake-fossil-fuels-in-germany-for-first-time-ever",
+          "title": "Commission opens in-depth investigation into arbitration award ordering Romania to pay compensation to ten energy investors",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1685",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 29 Jul 2026 The European Commission has opened an in-depth investigation to assess whether an arbitration award ordering Romania to pay compensation to ten investors for changes to a renewable electricity support measure is in line with EU State aid rules.",
+          "published": "2026-07-28T22:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "Q&#038;A: What does China’s 15th ‘five-year plan’ for renewables mean for climate change?",
+          "link": "https://www.carbonbrief.org/qa-what-does-chinas-15th-five-year-plan-for-renewables-mean-for-climate-change",
           "source": "Carbon Brief",
-          "description": "More of Germany’s electricity came from wind and solar power than fossil fuels for the first time ever in 2025.&#8230; The post Analysis: Wind and solar power overtake fossil fuels in Germany for first time ever appeared first on Carbon Brief.",
-          "published": "2026-07-28T11:49:20.000Z",
+          "description": "China has released its “15th five-year plan for the development of renewable energy”, outlining key targets and policies for the&#8230; The post Q&#038;A: What does China’s 15th ‘five-year plan’ for renewables mean for climate change? appeared first on Carbon Brief.",
+          "published": "2026-07-29T12:08:55.000Z",
           "score": 13
         },
         {
@@ -58,19 +81,11 @@
           "score": 9
         },
         {
-          "title": "Cheniere gets approval to introduce natural gas into final LNG expansion plant - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNV2FNNjBzU0xqNzd1OTNMcEdKU0kxbS01SDdtMFpwYU5LM3hLX3o1NVkyckNaM2d2SzJSQWZidmtXMzlCa2JFb2hEUjJ2dkQxdmphWThMdEtxN1hBRWlhOURFaFFUWlBiUGd0bTJxbmczMHlWQ1VVamhxd2RBWG5FVUdjczhhYjVuclhWaDByWmxiNXJQbU5xcWpKUHFuX1JrSnM2Y1A0XzVvdkVPbHVJZ1RTTm1wZnE5bzBqMENFeTlKeWdKd0cw?oc=5",
+          "title": "China in touch with Yemen's Houthis to allow ships to sail through Red Sea, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPR3VlbkFfZi10TlpkWGNLYUJ4d0NISk5JVlg4VGI2MmNma0xDUkdyX3NNalg4SDNQRkJWOWRqT0o1VkxuTS1xXzFVZi1fSTBoRnRORGxZdUZDdVN0dVNCaUo3eVBVenNpUnRWaUtpOHlCbGk3M3E1NXJaSzJ3cUszd05mWjVrQWYwX1ZuSGE2aWliVkZIeHJmdGN4T29LUUtVcEdxYnh3dHNQVTg5ZS1SdlNKaDhVeG9BT0tXdnJtYnN2UQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNV2FNNjBzU0xqNzd1OTNMcEdKU0kxbS01SDdtMFpwYU5LM3hLX3o1NVkyckNaM2d2SzJSQWZidmtXMzlCa2JFb2hEUjJ2dkQxdmphWThMdEtxN1hBRWlhOURFaFFUWlBiUGd0bTJxbmczMHlWQ1VVamhxd2RBWG5FVUdjczhhYjVuclhWaDByWmxiNXJQbU5xcWpKUHFuX1JrSnM2Y1A0XzVvdkVPbHVJZ1RTTm1wZnE5bzBqMENFeTlKeWdKd0cw?oc=5\" target=\"_blank\"&gt;Cheniere gets approval to introduce natural gas into final LNG expansion plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-07-28T18:42:45.000Z",
-          "score": 7
-        },
-        {
-          "title": "Yemen's Houthis say they fired missiles at Saudi oil tanker in Red Sea - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbnJtN1czaW5VenZ0NDdYRVM1OVVMcUhYR2E2RHNneXhfaWZBalUwSElsSWk4aEVwMC1WRnozUGs4RmkxSk1xUkV5ZXVkNWUyeEJfbTQ0Z2RRdXNmM1hsSjduWFhLOURoZHBSUm1IUDJXdHkxR0Q4NGZ3SU9FcDRudkRkVG1qcEszb1Z3bHpaV3lydjBKbWtPaUVadGJ3cmVIT2FCQzlDaGJURG4wU1NlQmFiLW1uMDl6?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbnJtN1czaW5VenZ0NDdYRVM1OVVMcUhYR2E2RHNneXhfaWZBalUwSElsSWk4aEVwMC1WRnozUGs4RmkxSk1xUkV5ZXVkNWUyeEJfbTQ0Z2RRdXNmM1hsSjduWFhLOURoZHBSUm1IUDJXdHkxR0Q4NGZ3SU9FcDRudkRkVG1qcEszb1Z3bHpaV3lydjBKbWtPaUVadGJ3cmVIT2FCQzlDaGJURG4wU1NlQmFiLW1uMDl6?oc=5\" target=\"_blank\"&gt;Yemen's Houthis say they fired missiles at Saudi oil tanker in Red Sea&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-28T21:00:10.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPR3VlbkFfZi10TlpkWGNLYUJ4d0NISk5JVlg4VGI2MmNma0xDUkdyX3NNalg4SDNQRkJWOWRqT0o1VkxuTS1xXzFVZi1fSTBoRnRORGxZdUZDdVN0dVNCaUo3eVBVenNpUnRWaUtpOHlCbGk3M3E1NXJaSzJ3cUszd05mWjVrQWYwX1ZuSGE2aWliVkZIeHJmdGN4T29LUUtVcEdxYnh3dHNQVTg5ZS1SdlNKaDhVeG9BT0tXdnJtYnN2UQ?oc=5\" target=\"_blank\"&gt;China in touch with Yemen's Houthis to allow ships to sail through Red Sea, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-07-28T17:24:00.000Z",
           "score": 7
         }
       ]
@@ -80,44 +95,44 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Analysis: 84% of nations miss deadline to identify ‘nature-harming’ subsidies by 2025",
-          "link": "https://www.carbonbrief.org/analysis-84-of-nations-miss-deadline-to-identify-nature-harming-subsidies-by-2025",
-          "source": "Carbon Brief",
-          "description": "Most countries failed to meet a 2025 target to identify all of their subsidies that could be “harmful” to biodiversity,&#8230; The post Analysis: 84% of nations miss deadline to identify ‘nature-harming’ subsidies by 2025 appeared first on Carbon Brief.",
-          "published": "2026-07-28T11:41:55.000Z",
+          "title": "Daily News 29 / 07 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1703",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 29 Jul 2026 Commission endorses Malta's €60 million Social Climate Plan to support vulnerable households and small companies in the clean transition \r\nThe European Commissio...",
+          "published": "2026-07-29T09:21:33.000Z",
+          "score": 16
+        },
+        {
+          "title": "Europe wildfires: France expands mass evacuations as Spain battles record blaze",
+          "link": "https://www.dw.com/en/europe-wildfires-france-expands-mass-evacuations-as-spain-battles-record-blaze/a-78153758?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Over 20 aircraft have been deployed to fight new fires west of Bordeaux, and Spanish firefighters fear two fires could merge west of Madrid. Scientists say climate change is fueling more extreme fires across Europe.",
+          "published": "2026-07-29T08:32:00.000Z",
           "score": 10
         },
         {
-          "title": "It’s time to prosecute climate crimes – with laws that already exist | Aaron Regunberg",
-          "link": "https://www.theguardian.com/commentisfree/2026/jul/28/prosecute-climate-crimes-big-oil",
+          "title": "Pedro Sánchez says next 12 hours will be ‘decisive’ in battle to contain wildfires – Europe live",
+          "link": "https://www.theguardian.com/world/live/2026/jul/29/france-spain-wildfires-heatwave-extreme-heat-europe-latest-news-updates",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Some have called for Nuremberg-style trials against big oil. But there are laws already on the books to describe companies’ conduct&lt;/p&gt;&lt;p&gt;The sky outside is hazy orange, and my five-year-old son is screaming bloody murder. “Sorry, buddy, we have to stay inside,” I say. “It’s not safe to breathe out there.” I had told him we’d be going to the beach today. Something inside me tears a little as I wonder how many promises he’ll see similarly broken in the coming years.&lt;/p&gt;",
-          "published": "2026-07-28T14:00:05.000Z",
-          "score": 7
+          "description": "&lt;p&gt;Authorities fear progress in containing the fires in the Gironde and Madrid regions may be set back by temperatures expected to hit the low 40s&lt;/p&gt;&lt;p&gt;&lt;em&gt;in Brussels&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;The European Union’s crisis-management team is expecting difficult weeks ahead, fearing a further outbreak of wildfires in Italy and Greece as the summer goes on.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;“&lt;strong&gt;A firefighter will focus on protecting peop",
+          "published": "2026-07-29T12:31:19.000Z",
+          "score": 8
         },
         {
-          "title": "Climate anxiety was consuming me. Then I learned to laugh about it",
-          "link": "https://www.theguardian.com/culture/ng-interactive/2026/jul/28/climate-comedy-standup-class",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The daily dread pushed me to enroll in a standup class. Could I channel my despair into something lighter?&lt;/p&gt;&lt;p&gt;If you had told me six months ago that I would soon be performing standup comedy to dozens of strangers, I would have assumed it was a bad dream.&lt;/p&gt;&lt;p&gt;Public speaking ranks about as high as driving in rush hour traffic through downtown Boston on my list of favorite activities. That I would choose to do standup, with its potential for public humiliatio",
-          "published": "2026-07-28T11:00:01.000Z",
-          "score": 7
+          "title": "Devastating European wildfires in maps - and how they're being tackled",
+          "link": "https://www.bbc.co.uk/news/articles/cj638jx0l53o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Spain and France have so far borne the burnt of this summer's wildfires, caused by a succession of heatwaves and prolonged dry spells.",
+          "published": "2026-07-29T11:53:40.000Z",
+          "score": 8
         },
         {
-          "title": "Why is Germany building roads for yesterday&#039;s climate?",
-          "link": "https://www.dw.com/en/why-is-germany-building-roads-for-yesterday-s-climate/a-78130975?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "As the Autobahn buckles under heat waves, Germany is still paving roads for a past climate. Engineers know how to fix that — so what&#039;s the holdup?",
-          "published": "2026-07-28T13:34:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Could ‘Godzilla’ El Niño bring the hottest year on record? – video explainer",
-          "link": "https://www.theguardian.com/environment/video/2026/jul/28/godzilla-el-nino-hottest-year-on-record-video-explainer",
+          "title": "Caribbean bears brunt of £43bn climate-fuelled damage to developing islands",
+          "link": "https://www.theguardian.com/world/2026/jul/29/caribbean-climate-related-economic-damage-developing-islands",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The Earth keeps getting hotter and experts fear this year's El Niño, nicknamed 'Godzilla' because of its predicted intensity, could raise global temperatures by up to 3.6C. Environment correspondent Damien Gayle spoke to climate scientists to understand how the weather phenomenon and the climate crisis pose a huge threat to the planet&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/2026/jul/12/super-el-nino-severe-shock-global-food-prices-lasting-i",
-          "published": "2026-07-28T10:50:03.000Z",
-          "score": 4
+          "description": "&lt;p&gt;Findings can inform conversations about global climate reparations and financing for mitigations, researchers say&lt;/p&gt;&lt;p&gt;Caribbean nations suffered $53.2bn (£40bn) of damage from climate-fuelled disasters between 2000 and 2024, research into the cost of the climate crisis to developing small islands has found.&lt;/p&gt;&lt;p&gt;The figure is more than 90% of the total $57bn in economic damage caused by floods, storms and drought across 39 developing island nations in the Cari",
+          "published": "2026-07-29T11:00:30.000Z",
+          "score": 7
         }
       ]
     },
@@ -125,14 +140,6 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
-        {
-          "title": "Uefa and PM criticise Infantino World Cup plan",
-          "link": "https://www.bbc.co.uk/sport/football/articles/c8xng9894z0o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Uefa and Prime Minister Andy Burnham criticise proposals from Fifa to seek private investment in its competitions, including the World Cup.",
-          "published": "2026-07-28T15:36:29.000Z",
-          "score": 2
-        },
         {
           "title": "Fujimori takes charge in Peru amid China, US balancing act",
           "link": "https://www.dw.com/en/fujimori-takes-charge-in-peru-amid-china-us-balancing-act/a-78110410?maca=en-rss-en-all-1573-xml-mrss",
@@ -148,6 +155,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNNDBBczc5Q21jMGFpRUdBbUJwWHBqem9mZDJFel9GMTlxVzFXWjEwMEhYSERVd2pPZ1Uzc2JXbGZQWG96aUdCaW9LRFlLaHRsYldNczltR2tmTmg1VmlYUkNyd3ZKRnB4NGxvaXkzeWlvWE1rSlNMdEFUTlVzSThFaGZrdjY3dF9wQXFyQ3dFR3NHdEdnekRSVDJfWDZLS1NtbEx1U3JSTF9VTHowU2c3UTV3OEVWQlozSm1zNFVtaw?oc=5\" target=\"_blank\"&gt;Coursera backs co-founder Andrew Ng's new AI education firm with $100 million investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
           "published": "2026-07-28T20:09:48.000Z",
           "score": 2
+        },
+        {
+          "title": "SAIL, Krakatau Steel plan $350 million investment in stainless steel plant - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdk5oR3Y3bFFuMXFpbk9ueVlLUnh4LUNtS19RTmxjZnBEc2dGTzkwU043QlMtTHJkRTE5NG55TFBORFg5YnJZWTRvMS15WUxSMmJFNGNaQ193SmZRQ2pPS2RSdkI5TlB0S2FROXFxbEwzbGxQM1RSUlZjVUV1MG14RDFENXdWUHhIS1JyUTh3S2huVWpudzRqUHhENE13NnlHSC1NbHpLUmNJR0VMN1lUdXVQczdFSFBy?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdk5oR3Y3bFFuMXFpbk9ueVlLUnh4LUNtS19RTmxjZnBEc2dGTzkwU043QlMtTHJkRTE5NG55TFBORFg5YnJZWTRvMS15WUxSMmJFNGNaQ193SmZRQ2pPS2RSdkI5TlB0S2FROXFxbEwzbGxQM1RSUlZjVUV1MG14RDFENXdWUHhIS1JyUTh3S2huVWpudzRqUHhENE13NnlHSC1NbHpLUmNJR0VMN1lUdXVQczdFSFBy?oc=5\" target=\"_blank\"&gt;SAIL, Krakatau Steel plan $350 million investment in stainless steel plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-29T04:40:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -160,6 +175,14 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "'Delulu', 'Clock it': 'Cockroach' protest brings Gen Z slang to India's parliament",
+          "link": "https://www.bbc.co.uk/news/articles/c9q90qvwe14o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "From \"delulu\" to \"FOMO\", Gen Z slang has made an unlikely journey from Instagram to parliament.",
+          "published": "2026-07-29T09:02:48.000Z",
+          "score": 8
+        },
         {
           "title": "EU civil protection mechanism: Coordinating Europe&#039;s firefighters",
           "link": "https://www.dw.com/en/eu-civil-protection-mechanism-coordinating-europe-s-firefighters/a-78145189?maca=en-rss-en-all-1573-xml-mrss",
@@ -177,20 +200,12 @@
           "score": 8
         },
         {
-          "title": "China's BYD enters Japan's mini-car market with low-cost EV - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUjQ1R1R0ZENFMkNIWWU0MXBYMHl2UWVTMHpmQTQzNzR3RkRmZS1uUkpZNkV1X2o0cWJTVGI0bkRTTzJjeVo0RmQ3QVZxNDhHbUxhUmhEU3BLcEhVMGVQaFhTSjUwTm8ya1ZWcGl4NkZ5TzFyNWNQM2ZMUVVabTRWYy1oQnhFYmFCaDV1VUp4UG82OWVVaUFR?oc=5",
+          "title": "FIFA’s private equity push opens new front in decades-old power-struggle with Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdFFjWXYzdTJwVkVZaFdfeEpsRnhzcGVnQWF5R2pVUy1HdThYRWJlMHA4LUNDM3c2c3JsSzROMWlSM2RNV1FfZGhIdjcwa18zeHVYU1Q4dzZ3R3lDQXpra0JuNFVVbGpBbm5WRkk2WGxRcGd1cnJMVjdtOC15Wncteno1cjFmNGhONW51dXhIQkVqTmpPeDJHQVRPUHAzU0V6dUZzYk5kNXlTUlNzcDd3OGVUbFBSWFVodGNSUGpzaXYtR3NIZTIzSEp3?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxQUjQ1R1R0ZENFMkNIWWU0MXBYMHl2UWVTMHpmQTQzNzR3RkRmZS1uUkpZNkV1X2o0cWJTVGI0bkRTTzJjeVo0RmQ3QVZxNDhHbUxhUmhEU3BLcEhVMGVQaFhTSjUwTm8ya1ZWcGl4NkZ5TzFyNWNQM2ZMUVVabTRWYy1oQnhFYmFCaDV1VUp4UG82OWVVaUFR?oc=5\" target=\"_blank\"&gt;China's BYD enters Japan's mini-car market with low-cost EV&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-28T08:04:08.000Z",
-          "score": 7
-        },
-        {
-          "title": "Iran rules out Omani proposal to manage Strait of Hormuz - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNcFJoOXIwZmxCNHBjd05nc3dlYjNXXzd1NzdyQldTOVQ4S3NjZnNDRWdqdG1WUFRUS2tRSkJJTEhQYjJWa1FraklySUtoamVybzBfbUR4aUItanFrRG1hMDZJTzlSQ3lrS25SLUo4QzR0RVQxdmFSVUFaUFpHYWV0cmdnVURNVHJ1QzBzM0pIRTMwUmVFZmxwVVpyTklTallXU2ZLOGl3TDJ1U3VnRzd3bmZnQjVfcUw2a1pWSGdFOTNlUXFa?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNcFJoOXIwZmxCNHBjd05nc3dlYjNXXzd1NzdyQldTOVQ4S3NjZnNDRWdqdG1WUFRUS2tRSkJJTEhQYjJWa1FraklySUtoamVybzBfbUR4aUItanFrRG1hMDZJTzlSQ3lrS25SLUo4QzR0RVQxdmFSVUFaUFpHYWV0cmdnVURNVHJ1QzBzM0pIRTMwUmVFZmxwVVpyTklTallXU2ZLOGl3TDJ1U3VnRzd3bmZnQjVfcUw2a1pWSGdFOTNlUXFa?oc=5\" target=\"_blank\"&gt;Iran rules out Omani proposal to manage Strait of Hormuz&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-29T03:29:00.000Z",
-          "score": 6
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNdFFjWXYzdTJwVkVZaFdfeEpsRnhzcGVnQWF5R2pVUy1HdThYRWJlMHA4LUNDM3c2c3JsSzROMWlSM2RNV1FfZGhIdjcwa18zeHVYU1Q4dzZ3R3lDQXpra0JuNFVVbGpBbm5WRkk2WGxRcGd1cnJMVjdtOC15Wncteno1cjFmNGhONW51dXhIQkVqTmpPeDJHQVRPUHAzU0V6dUZzYk5kNXlTUlNzcDd3OGVUbFBSWFVodGNSUGpzaXYtR3NIZTIzSEp3?oc=5\" target=\"_blank\"&gt;FIFA’s private equity push opens new front in decades-old power-struggle with Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+          "published": "2026-07-29T10:21:09.000Z",
+          "score": 8
         },
         {
           "title": "Musk's X says Australia social media ban crackdown undermines international law - Reuters",
@@ -204,9 +219,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 360,
-    "articlesLast24h": 156,
-    "afterDedup": 150,
+    "totalArticlesScanned": 370,
+    "articlesLast24h": 175,
+    "afterDedup": 161,
     "feedsQueried": 19
   }
 }
