@@ -130,6 +130,123 @@ export const RECIPES = {
     note: 'Stored as percent of GDP. Publisher may revise the report’s base year (vintage).',
   },
 
+  // ── Energy-balance series that were still frozen at their 2023 vintage
+  //    (July 2026 audit §4). All five reconcile against the report anchor
+  //    straight out of nrg_bal_c, so they only ever lacked a recipe.
+  'esabcc-o3-gross-inland': {
+    kind: 'eurostat', dataset: 'nrg_bal_c',
+    filters: { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'GIC', siec: 'TOTAL' },
+    toRepo: v => v / 1000, round: 1,
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_c?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=GIC&siec=TOTAL`,
+    sourceTitle: 'Eurostat nrg_bal_c · gross inland consumption, all products · EU27_2020',
+    note: 'GWh→TWh (÷1000). Direct — reproduces the report anchor 2021 at 1.000×.',
+  },
+  'esabcc-i5-industry-fec': {
+    kind: 'eurostat', dataset: 'nrg_bal_c',
+    filters: { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_IND_E', siec: 'TOTAL' },
+    toRepo: v => v / 1000, round: 1,
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_c?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=FC_IND_E&siec=TOTAL`,
+    sourceTitle: 'Eurostat nrg_bal_c · industry final energy consumption (energy use) · EU27_2020',
+    note: 'GWh→TWh (÷1000). Direct (anchor 2021 1.010×). FC_IND_E excludes non-energy use, matching the report definition.',
+  },
+  'esabcc-b2-buildings-fec': {
+    kind: 'eurostat', dataset: 'nrg_bal_c', round: 1, mode: 'splice',
+    sumFilters: [
+      { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_OTH_HH_E', siec: 'TOTAL' },
+      { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_OTH_CP_E', siec: 'TOTAL' },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_c?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=FC_OTH_HH_E&siec=TOTAL`,
+    sourceTitle: 'Eurostat nrg_bal_c · residential (FC_OTH_HH_E) + services (FC_OTH_CP_E) final energy · EU27_2020',
+    note: 'Spliced: the report’s buildings boundary is ~7% wider than households+services alone (anchor 2021 0.932×), so only the year-on-year change is applied to the report baseline.',
+  },
+  'esabcc-b5a-residential-fossil-share': {
+    kind: 'eurostat-ratio', round: 2, mode: 'splice',
+    num: {
+      dataset: 'nrg_bal_c',
+      legs: ['G3000', 'O4000XBIO', 'C0000X0350-0370'].map(siec => (
+        { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_OTH_HH_E', siec })),
+    },
+    den: {
+      dataset: 'nrg_bal_c',
+      legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_OTH_HH_E', siec: 'TOTAL' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_c?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=FC_OTH_HH_E`,
+    sourceTitle: 'Eurostat nrg_bal_c · fossil (gas + oil excl. bio + solid) ÷ total residential final energy · EU27_2020',
+    note: 'Fossil = natural gas (G3000) + oil excl. biofuels (O4000XBIO) + solid fossil (C0000X0350-0370). Reproduces the report series to within 0.1 pp (anchor 2021 1.001×); spliced to hold the report baseline exactly.',
+  },
+  'esabcc-b5b-tertiary-fossil-share': {
+    kind: 'eurostat-ratio', round: 2, mode: 'splice',
+    num: {
+      dataset: 'nrg_bal_c',
+      legs: ['G3000', 'O4000XBIO', 'C0000X0350-0370'].map(siec => (
+        { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_OTH_CP_E', siec })),
+    },
+    den: {
+      dataset: 'nrg_bal_c',
+      legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_OTH_CP_E', siec: 'TOTAL' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_c?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=FC_OTH_CP_E`,
+    sourceTitle: 'Eurostat nrg_bal_c · fossil (gas + oil excl. bio + solid) ÷ total services final energy · EU27_2020',
+    note: 'Same fossil definition as B5a. The report’s tertiary boundary sits ~1.9 pp above FC_OTH_CP_E (anchor 2021 0.951×), so the trend is spliced onto the report baseline rather than taken as a level.',
+  },
+
+  // ── Industry emission intensity = process GHG ÷ production volume. Both
+  //    inputs now run to 2024, so I4 no longer has to sit at its 2021 vintage.
+  //    Ratio recipes are splice-only by design: the numerator is in Mt CO₂-eq
+  //    and the denominator is an index (2021 = 100), so the level is
+  //    meaningless and only the year-on-year trend is applied to the report
+  //    baseline. The denominators are the same NACE classes the I2 production
+  //    recipes above already use.
+  //
+  //    I4 (chemicals) is deliberately NOT wired: CRF 2.B covers the whole
+  //    chemical industry while NACE C201 is basic chemicals only, and that
+  //    scope mismatch yields a +29% intensity rise by 2024 that cannot be
+  //    validated against the report's own DS-056120 tonnage denominator.
+  //    It stays at its 2022 report value until that denominator is sourced.
+  'esabcc-i4-steel-ghg-intensity': {
+    kind: 'eurostat-ratio', round: 4, mode: 'splice',
+    num: {
+      dataset: 'env_air_gge',
+      legs: [{ geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF2C1' }],
+    },
+    den: {
+      dataset: 'sts_inpr_a',
+      legs: [{ geo: 'EU27_2020', indic_bt: 'PRD', s_adj: 'CA', unit: 'I21', nace_r2: 'C241' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF2C1`,
+    sourceTitle: 'Eurostat env_air_gge CRF 2.C.1 iron & steel process GHG ÷ sts_inpr_a NACE C241 production index · EU27_2020',
+    note: 'Spliced ratio: process-emission intensity trend (2024 ≈ 0.947× the 2021 level) applied to the report baseline. Level is not sourced — Mt ÷ index cancels in the year-on-year ratio.',
+  },
+  'esabcc-i4-cement-ghg-intensity': {
+    kind: 'eurostat-ratio', round: 4, mode: 'splice',
+    num: {
+      dataset: 'env_air_gge',
+      legs: [{ geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF2A1' }],
+    },
+    den: {
+      dataset: 'sts_inpr_a',
+      legs: [{ geo: 'EU27_2020', indic_bt: 'PRD', s_adj: 'CA', unit: 'I21', nace_r2: 'C235' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF2A1`,
+    sourceTitle: 'Eurostat env_air_gge CRF 2.A.1 cement-production process GHG ÷ sts_inpr_a NACE C235 production index · EU27_2020',
+    note: 'Spliced ratio: clinker-process intensity trend (2024 ≈ 0.930× the 2021 level) applied to the report baseline. Same C235 denominator as the I2 cement-production recipe.',
+  },
+
+  // ── Transport demand: the report source (DG MOVE statistical pocketbook) has
+  //    no API and its published intra-EU passenger-km stop at 2023. Eurostat's
+  //    own air-passenger counts run to 2025, so the pocketbook figures are KEPT
+  //    and only the two new years are derived from them (`spliceFrom`).
+  'esabcc-t3b-air-passenger': {
+    kind: 'eurostat', dataset: 'avia_paoc', round: 1, mode: 'splice', spliceFrom: 2023,
+    sumFilters: [
+      { geo: 'EU27_2020', freq: 'A', unit: 'PAS', tra_meas: 'PAS_CRD', tra_cov: 'NAT', schedule: 'TOT' },
+      { geo: 'EU27_2020', freq: 'A', unit: 'PAS', tra_meas: 'PAS_CRD', tra_cov: 'INTL_IEU27_2020', schedule: 'TOT' },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/avia_paoc?format=JSON&geo=EU27_2020&unit=PAS&tra_meas=PAS_CRD&tra_cov=INTL_IEU27_2020&schedule=TOT`,
+    sourceTitle: 'Eurostat avia_paoc · passengers carried on national + intra-EU27 flights · EU27_2020',
+    note: 'Passenger-km proxied by passengers carried: the pocketbook’s published 2022/2023 Gpkm are kept and 2024/2025 derived from the year-on-year change in intra-EU passengers (constant average stage length). Validated on the overlap — passenger growth 2022→2023 (+14.7%) matches the pocketbook’s Gpkm growth (+13.7%) to ~1 pp. Double counting of intra-EU legs is constant and cancels in the ratio.',
+  },
+
   // ── EU GHG inventory via Eurostat env_air_gge (CO₂-eq, MIO_T = Mt) ────────
   // The EEA data-viewer "download?format=csv" URL returns HTML, not CSV, so we
   // pull the same inventory from Eurostat's env_air_gge (GHG by CRF source
@@ -795,6 +912,16 @@ function reportPoints(body) {
   return pts;
 }
 
+/** Every stored point, keeping its afterReport flag. Used by `spliceFrom`. */
+function allPoints(body) {
+  const pts = [];
+  let m; POINT_RE.lastIndex = 0;
+  while ((m = POINT_RE.exec(body))) {
+    pts.push({ year: Number(m[1]), value: Number(m[2]), afterReport: Boolean(m[3]) });
+  }
+  return pts.sort((a, b) => a.year - b.year);
+}
+
 /** Anchor check: fetched value at the report's last year must be within 2×. */
 function anchorOk(anchorVal, fetchedAtAnchor) {
   if (!Number.isFinite(fetchedAtAnchor)) return { ok: true, reason: 'no-anchor-year' };
@@ -814,9 +941,22 @@ async function main() {
   for (const [id, rec] of Object.entries(RECIPES)) {
     const loc = findDataArray(src, id);
     if (!loc) { console.error(`! ${id}: not found in TS`); continue; }
-    const reps = reportPoints(loc.body);
+    // Default: splice/anchor on the report's own last year, regenerating every
+    // afterReport point. `spliceFrom: <year>` instead anchors on an already-stored
+    // LATER point and keeps everything up to it — for series whose post-report
+    // years are themselves published figures (e.g. the DG MOVE pocketbook) that a
+    // proxy source must extend, not overwrite.
+    const stored = allPoints(loc.body);
+    const reps = rec.spliceFrom
+      ? stored.filter(p => p.year <= rec.spliceFrom)
+      : reportPoints(loc.body);
+    if (reps.length === 0) { console.error(`! ${id}: no stored points at/below anchor`); continue; }
     const baseYear = Math.max(...reps.map(p => p.year));
     const baseVal = reps.find(p => p.year === baseYear)?.value;
+    if (rec.spliceFrom && baseYear !== rec.spliceFrom) {
+      console.error(`! ${id}: spliceFrom ${rec.spliceFrom} not a stored point; skipping`);
+      continue;
+    }
     const meta = { id, sourceTitle: rec.sourceTitle, sourceUrl: rec.sourceUrl, note: rec.note };
 
     let fetched;
@@ -851,7 +991,7 @@ async function main() {
       }
       newPts = fetched.filter(p => p.year > baseYear)
         .map(p => ({ year: p.year, value: round(baseVal * (p.value / base), rec.round) }));
-      chk = { reason: `spliced onto report ${baseYear}=${baseVal}` };
+      chk = { reason: `spliced onto ${rec.spliceFrom ? 'published' : 'report'} ${baseYear}=${baseVal}` };
     } else {
       const toRepo = rec.toRepo || (v => v);
       const conv = fetched.map(p => ({ year: p.year, value: round(toRepo(p.value), rec.round) }));
@@ -873,7 +1013,9 @@ async function main() {
       continue;
     }
 
-    const kept = reps.map(p => `{ year: ${p.year}, value: ${p.value} }`);
+    const kept = reps.map(p => (p.afterReport
+      ? `{ year: ${p.year}, value: ${p.value}, afterReport: true }`
+      : `{ year: ${p.year}, value: ${p.value} }`));
     for (const p of newPts) kept.push(`{ year: ${p.year}, value: ${p.value}, afterReport: true }`);
     edits.push({ open: loc.open, close: loc.close, text: `[${kept.join(', ')}]` });
 

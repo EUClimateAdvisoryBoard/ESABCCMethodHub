@@ -60,7 +60,19 @@ interface IndicatorRead {
   post: { year: number; value: number }[];
   hasUpdate: boolean;
   pctChange: number | null; // baseline → latest, signed
+  /**
+   * Set only when the report baseline is a pandemic-depressed year, i.e. the
+   * last figure the report carried is 2020/2021 and sits materially BELOW the
+   * last pre-2020 reading. For those indicators `pctChange` measures the
+   * recovery off a collapsed base and reads far larger than the real move
+   * (intra-EU aviation: +258% off 2020, but only +9% off 2019), so the card
+   * also shows the change against the last normal year.
+   */
+  preCovid: { year: number; value: number; pctChange: number } | null;
 }
+
+/** A baseline this far below the last pre-2020 reading is treated as a COVID trough. */
+const COVID_TROUGH_THRESHOLD = 0.1;
 
 function readIndicator(ind: Indicator): IndicatorRead {
   const data = [...ind.data].sort((a, b) => a.year - b.year);
@@ -75,6 +87,25 @@ function readIndicator(ind: Indicator): IndicatorRead {
     pctChange = ((latest.value - baseline.value) / Math.abs(baseline.value)) * 100;
   }
 
+  // Only flag a *trough* (baseline below the pre-2020 level). A 2021 baseline
+  // that sits above 2019 — renewables additions, say — is genuine growth, and
+  // re-basing it on 2019 would overstate the move rather than correct it.
+  let preCovid: IndicatorRead['preCovid'] = null;
+  if (baseline && latest && hasUpdate && (baseline.year === 2020 || baseline.year === 2021)) {
+    const normal = [...data].reverse().find((d) => d.year < 2020);
+    if (
+      normal &&
+      normal.value !== 0 &&
+      (baseline.value - normal.value) / Math.abs(normal.value) < -COVID_TROUGH_THRESHOLD
+    ) {
+      preCovid = {
+        year: normal.year,
+        value: normal.value,
+        pctChange: ((latest.value - normal.value) / Math.abs(normal.value)) * 100,
+      };
+    }
+  }
+
   return {
     ind,
     baseline: baseline ? { year: baseline.year, value: baseline.value } : null,
@@ -82,6 +113,7 @@ function readIndicator(ind: Indicator): IndicatorRead {
     post: post.map((p) => ({ year: p.year, value: p.value })),
     hasUpdate,
     pctChange,
+    preCovid,
   };
 }
 
@@ -355,6 +387,22 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
                       </div>
                     </div>
 
+                    {r.preCovid && (
+                      <div className="mt-2 rounded border border-[#E6E7E8] bg-[#F7F8F9] px-2 py-1.5 text-[10px] leading-snug text-[#3D5265]/70 dark:border-[var(--mh-border)] dark:bg-transparent dark:text-[var(--mh-muted)]">
+                        The report baseline ({r.baseline.year}) is a pandemic-depressed year. Against
+                        the last normal year,{' '}
+                        <span className="font-semibold tabular-nums">
+                          {r.preCovid.year}: {fmtNum(r.preCovid.value)}
+                        </span>
+                        , the change is{' '}
+                        <span className="font-semibold tabular-nums">
+                          {r.preCovid.pctChange > 0 ? '▲' : r.preCovid.pctChange < 0 ? '▼' : '▬'}{' '}
+                          {Math.abs(r.preCovid.pctChange).toFixed(1)}%
+                        </span>
+                        .
+                      </div>
+                    )}
+
                     <div className="mt-2 text-[11px] text-[#3D5265]/65 dark:text-[var(--mh-muted)]">
                       New since report:{' '}
                       {r.post.slice(0, MAX_INLINE_POST_POINTS).map((p, i) => (
@@ -439,7 +487,10 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
           the primary publisher (Eurostat / EEA / EAFO / IRENA / EHPA) released after the
           January-2024 report. The percentage shown is the arithmetic change from the report
           baseline to the latest value (▲ = the value rose, ▼ = it fell); no better/worse
-          interpretation is applied.
+          interpretation is applied. Where the report’s last figure is a 2020/2021 year that sits
+          more than 10% below the last pre-2020 reading, the change is measured off a
+          pandemic-depressed base and overstates the real move — those cards also carry the change
+          against the last normal year.
         </p>
       </main>
       <SiteFooter />
