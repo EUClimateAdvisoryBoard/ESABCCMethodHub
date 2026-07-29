@@ -132,20 +132,55 @@ in 2021 so it never meets the 2015 anchor, but the levels agree — report 2015 
 
 Routes tested and genuinely closed:
 
-- **UNFCCC DI API** (`di.unfccc.int/api`) — would have unlocked twelve series
-  (L2 ×6, L3, L4, L5, A3 use, and the cattle dairy/non-dairy split). It returns
-  HTTP 200, but the body is an **Imperva bot-protection challenge**, not data.
-  Worth re-testing from a non-sandboxed IP: this is the single highest-value
-  remaining target.
+- **UNFCCC DI API** (`di.unfccc.int/api`) — plain `curl` returns HTTP 200 with an
+  Imperva bot-protection challenge as the body, which is what this pass tested
+  and wrongly concluded from. **Superseded by section 5b**: the Python client
+  gets through, and four of the twelve series it covers are now automated.
 - **OECD SDMX** (F4) — the structure endpoints work with the right `Accept`
   header, but the data endpoint on `DSD_GG@DF_GREEN_GROWTH` returns nothing
   parseable for any EU geography code tried.
 - **PRODCOM** (I2 chemicals use/trade, I4 chemicals) — `ds-056120` is not on
   the JSON-stat dissemination API; it is a separate bulk facility.
 
+## 5b. Third pass — the UNFCCC Data Interface
+
+**My earlier "Imperva blocks it" verdict was wrong.** Plain `curl` against
+`di.unfccc.int/api` gets a bot-protection challenge, which is what I tested and
+concluded from. The `unfccc_di_api` Python client negotiates the session
+properly and works from the same sandbox — 341,861 rows for party `EUA`.
+`scripts/esabcc-indicators/pull-unfccc-di.py` reproduces the pull.
+
+What that unlocked, and what it did not:
+
+**A2 cattle ×4 — now automated.** DI carries the split Eurostat does not:
+classifications `Dairy Cattle` / `Non-Dairy Cattle` under CRF 3.A and 3.B. On
+its own it is not enough — **DI stops at 2021**, frozen when parties moved to the
+ETF/CRT format, so it has nothing newer than the report. Combining does work:
+take the current all-cattle total from Eurostat (`CRF3A1 + CRF3B1`, to 2024) and
+allocate it by `head × emission factor`, with the factor ratio calibrated so 2021
+reproduces the inventory's own 49.4% dairy share. Herd composition is what moves
+this split, and Eurostat publishes both herds to 2025.
+
+The ratio must be calibrated against **Eurostat** herd numbers, not taken from
+DI's implied factors. DI counts 80.2 M cattle in 2021, Eurostat 75.7 M; a factor
+derived on one basis does not transfer to the other, and using DI's directly
+gives a 0.511 dairy share instead of the correct 0.494.
+
+**L2 ×6, L3, L4, L5, A3 (use) — confirmed blocked, and now for a precise
+reason.** DI has all of them, and its land areas reproduce the report to within
+0.1% (forest 167.85 vs 167.7 million ha), so DI is definitively the right
+source. It simply has no year beyond 2021. These nine are waiting on the EU's
+2026 CRT submission being published in a machine-readable form — not on anyone
+finding a source. Do not re-test DI for them.
+
+Two caveats recorded for whoever picks this up: DI's `year` column contains the
+literal `'Base year'` alongside numeric years, and the "Land Converted to X"
+areas are the cumulative area under the 20-year conversion transition, not the
+annual conversion rate L3/L4/L5 need — a naive read is ~20-36x too high.
+
 ## 6. Still not updatable, and why
 
-33 series carry no post-report point. None is blocked by a missing recipe —
+29 series carry no post-report point. None is blocked by a missing recipe —
 each is blocked by its source.
 
 **No machine-readable source.** BSO / Odyssee-Mure (B4 ×4), BloombergNEF (F2),
@@ -156,14 +191,8 @@ JRC medium-term outlook (A7), OECD Green Growth (F4).
 **Bulk file, not on the API.** I2 chemicals use and trade (PRODCOM DS-056120 /
 DS-059268).
 
-**Behind bot protection.** L2 ×6, L3, L4, L5, A3 (use) — all need CRF *area and
-activity* tables, which Eurostat's `env_air_gge` does not carry (it is emissions
-only) and which the UNFCCC DI API guards with Imperva.
-
-**Not split in the inventory.** A2 bovine and dairy GHG, and their intensities.
-`env_air_gge` gives CRF 3.A.1 as *all cattle*. Already documented at the
-`esabcc-a2-pig-ghg` recipe, which is wired precisely because swine *is*
-separable (CRF 3.A.3 / 3.B.3).
+**Source has no newer year.** L2 ×6, L3, L4, L5, A3 (use) — see section 5b.
+The UNFCCC DI has them and matches the report, but stops at 2021.
 
 **Source series capped.** A3 (NUE) — Ludemann et al. ends at 2020. The citation
 on file is also wrong: DOI `10.1093/jambio/lxac084` resolves to an unrelated
@@ -180,17 +209,17 @@ denominator.
 
 | | Before | After |
 |---|---|---|
-| Indicators with post-report data | 55 | **64** |
-| Series still frozen at their report vintage | 42 | **33** |
+| Indicators with post-report data | 55 | **68** |
+| Series still frozen at their report vintage | 42 | **29** |
 | Largest move | F5 +6566.7% (wrong) | T3b +258.5% (flagged, +8.9% vs 2019) |
 | Rose / fell | 21 / 34 | 20 / 37 |
 
 ## 8. Files
 
-- `scripts/esabcc-indicators/refresh-from-sources.mjs` — 15 new recipes (41 → 56); new `spliceFrom` option and a `faostat` recipe kind reading the FBS bulk ZIPs
+- `scripts/esabcc-indicators/refresh-from-sources.mjs` — 19 new recipes (41 → 60); new `spliceFrom` option and a `faostat` recipe kind reading the FBS bulk ZIPs
 - `src/data/esabcc-indicators.ts` — refreshed via the script, not hand-edited
 - `supabase/migrations/082_realign_refreshed_indicator_points.sql` — 185 rows, 10 indicators, `do update`
-- `supabase/migrations/055_backfill_indicator_points.sql` — regenerated (197 points / 64 indicators)
+- `supabase/migrations/055_backfill_indicator_points.sql` — regenerated (211 points / 68 indicators)
 - `supabase/combined_migrations.sql` — both blocks synced
 - `beta/modules/summer-prep/indicator-check/page.tsx` — COVID-baseline flag
 - `scripts/esabcc-indicators/refresh-provenance.json` — per-value source URL and derivation

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T11:42:56.070Z",
+  "generatedAt": "2026-07-29T12:03:17.124Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
@@ -236,6 +236,102 @@
         {
           "year": 2024,
           "value": 32.85
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-dairy-ghg",
+      "sourceTitle": "Eurostat env_air_gge CRF 3.A.1 + 3.B.1 (all cattle) split on Eurostat apro_mt_lscatl herd composition; split calibrated to UNFCCC DI 2021",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A1",
+      "note": "Dairy share of all-cattle GHG allocated by head × emission factor, the factor ratio (≈2.68) calibrated so 2021 reproduces the inventory’s own dairy share (49.4%). Spliced onto the report 2021 baseline.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 97.17
+        },
+        {
+          "year": 2023,
+          "value": 96.63
+        },
+        {
+          "year": 2024,
+          "value": 94.57
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-bovine-ghg",
+      "sourceTitle": "As A2 (dairy, GHG), taking the non-dairy residual",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3B1",
+      "note": "Non-dairy (beef) share of all-cattle GHG, same construction as the dairy series. Spliced onto the report 2021 baseline.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 98.98
+        },
+        {
+          "year": 2023,
+          "value": 97.63
+        },
+        {
+          "year": 2024,
+          "value": 96.82
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-dairy-ghg-intensity",
+      "sourceTitle": "Dairy-cattle GHG (see A2 dairy) ÷ Eurostat apro_mk_farm raw milk available · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mk_farm?format=JSON&geo=EU27_2020&dairyprod=D1100A&milkitem=PRO",
+      "note": "Spliced ratio: Mt CO₂eq ÷ thousand t cancels in the year-on-year ratio, so only the intensity trend is applied to the report baseline.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 0.5999
+        },
+        {
+          "year": 2022,
+          "value": 0.5952
+        },
+        {
+          "year": 2023,
+          "value": 0.5886
+        },
+        {
+          "year": 2024,
+          "value": 0.5728
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-bovine-ghg-intensity",
+      "sourceTitle": "Non-dairy cattle GHG (see A2 bovine) ÷ Eurostat apro_mt_pann bovine meat (B1000) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pann?format=JSON&geo=EU27_2020&meat=B1000&meatitem=SLAUGHT&unit=THS_T",
+      "note": "Spliced ratio, same construction as the dairy intensity.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 14.487
+        },
+        {
+          "year": 2022,
+          "value": 14.645
+        },
+        {
+          "year": 2023,
+          "value": 15.022
+        },
+        {
+          "year": 2024,
+          "value": 14.447
         }
       ]
     },

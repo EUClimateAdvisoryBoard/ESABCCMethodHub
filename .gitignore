@@ -43,3 +43,7 @@ __pycache__/
 
 # Reverse-engineering scratch area (chapter workbooks live on origin/main)
 scratch/
+
+# Local pull from the UNFCCC Data Interface (scripts/esabcc-indicators/pull-unfccc-di.py).
+# Regenerate rather than commit — it is ~3 MB of upstream data, not source.
+unfccc-di-out/
