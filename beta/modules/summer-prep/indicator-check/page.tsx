@@ -27,7 +27,13 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
 import type { Indicator, IndicatorCategory } from '@/data/ecno-indicators';
-import { INDICATOR_BLOCKERS, BLOCKER_META } from '@/data/indicator-blockers';
+import {
+  INDICATOR_BLOCKERS,
+  BLOCKER_META,
+  STATUS_ACTION,
+  LAST_REFRESH,
+  type BlockerStatus,
+} from '@/data/indicator-blockers';
 
 const CATEGORY_META: Record<IndicatorCategory, { label: string; color: string }> = {
   emissions: { label: 'Emissions', color: '#2E3E4C' },
@@ -219,6 +225,31 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
     };
   }, [reads]);
 
+  /**
+   * The update overview: what the last refresh covered, and for everything it
+   * did not, what each remaining series is actually waiting on. Grouped by
+   * effort so the "nothing to do" pile is visibly separate from the work.
+   */
+  const statusGroups = useMemo(() => {
+    const byStatus = new Map<BlockerStatus, { code: string; id: string }[]>();
+    reads
+      .filter((r) => !r.hasUpdate)
+      .forEach((r) => {
+        const st = INDICATOR_BLOCKERS[r.ind.id]?.status;
+        if (!st) return;
+        if (!byStatus.has(st)) byStatus.set(st, []);
+        byStatus.get(st)!.push({ code: r.ind.code ?? r.ind.id, id: r.ind.id });
+      });
+    const order: Record<'waiting' | 'work' | 'none', number> = { waiting: 0, work: 1, none: 2 };
+    return [...byStatus.entries()]
+      .map(([status, items]) => ({
+        status,
+        items: items.sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true })),
+        ...STATUS_ACTION[status],
+      }))
+      .sort((a, b) => order[a.effort] - order[b.effort] || b.items.length - a.items.length);
+  }, [reads]);
+
   const rows = useMemo(() => {
     let list = reads.slice();
     if (dataFilter === 'updated') list = list.filter((r) => r.hasUpdate);
@@ -307,6 +338,81 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
               </div>
             </div>
           ))}
+        </section>
+
+        {/* Update overview — what the last refresh covered, and what each
+            remaining series is waiting on, grouped so the work is separable
+            from the "nothing to do" pile. */}
+        <section className="mb-6 rounded-xl border border-[#E6E7E8] bg-[#FAFBFC] p-4 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+          <h2 className="text-[14px] font-bold text-[#004B7F] dark:text-[#5B9BD5]">
+            Update status — where the data stands
+          </h2>
+          <p className="mt-1.5 max-w-4xl text-[12px] leading-relaxed text-[#3D5265]/75 dark:text-[var(--mh-muted)]">
+            Last full refresh {LAST_REFRESH}.{' '}
+            <span className="font-semibold text-[#3D5265] dark:text-[var(--mh-fg)]">
+              {summary.updated} of {summary.total}
+            </span>{' '}
+            indicators are pulled automatically from their primary source and re-checked against the
+            report’s own baseline on every run. The remaining{' '}
+            <span className="font-semibold text-[#3D5265] dark:text-[var(--mh-fg)]">{summary.stale}</span>{' '}
+            carry no post-report data. They are not one problem: each is listed below with what it is
+            actually waiting on, so the ones needing work are separable from the ones that only need
+            time.
+          </p>
+
+          <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+            {statusGroups.map((g) => (
+              <div
+                key={g.status}
+                className={`rounded-lg border p-3 ${
+                  g.effort === 'waiting'
+                    ? 'border-[#E8D9B8] bg-[#FDFAF3] dark:border-[#E0A94A]/30 dark:bg-transparent'
+                    : 'border-[#E6E7E8] bg-white dark:border-[var(--mh-border)] dark:bg-transparent'
+                }`}
+              >
+                <div className="flex items-baseline gap-2">
+                  <span className="text-[18px] font-bold tabular-nums text-[#3D5265] dark:text-[var(--mh-fg)]">
+                    {g.items.length}
+                  </span>
+                  <span
+                    className={`inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${TONE_CLASS[BLOCKER_META[g.status].tone]}`}
+                  >
+                    {BLOCKER_META[g.status].label}
+                  </span>
+                  {g.effort === 'waiting' && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wide text-[#8A5A00] dark:text-[#E0A94A]">
+                      no action needed
+                    </span>
+                  )}
+                </div>
+                <p className="mt-1.5 text-[11px] leading-relaxed text-[#3D5265]/75 dark:text-[var(--mh-muted)]">
+                  {g.action}
+                </p>
+                <div className="mt-2 flex flex-wrap gap-1">
+                  {g.items.map((it) => (
+                    <Link
+                      key={it.id}
+                      href={workspaceIndicatorHref(it.id)}
+                      title="Open this indicator in the Project Workspace"
+                      className="rounded border border-[#D6DAE0] px-1.5 py-0.5 font-mono text-[10px] text-[#3D5265]/80 hover:border-[#00928F] hover:text-[#00928F] dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]"
+                    >
+                      {it.code}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-3 text-[11px] leading-relaxed text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+            Every reason shown is one that was tested against the live source, not assumed. Open any
+            card below with no new data for the full explanation and what would unblock it. Working
+            notes, including the routes that were tried and closed, are in{' '}
+            <code className="rounded bg-[#EEF1F4] px-1 py-0.5 text-[10px] dark:bg-transparent">
+              docs-internal/indicator-check-source-refresh-2026-07-29.md
+            </code>
+            .
+          </p>
         </section>
 
         {/* Controls */}

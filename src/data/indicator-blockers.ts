@@ -37,6 +37,50 @@ export interface IndicatorBlocker {
   sourceUrl?: string;
 }
 
+/** When the automated refresh last ran end to end. */
+export const LAST_REFRESH = '29 July 2026';
+
+/**
+ * What each status actually asks of a reader who wants to close the gap.
+ * `effort` drives the grouping on the page: nothing to do, waiting on someone
+ * else, or work that needs doing here.
+ */
+export const STATUS_ACTION: Record<BlockerStatus, { effort: 'none' | 'waiting' | 'work'; action: string }> = {
+  'awaiting-publication': {
+    effort: 'waiting',
+    action: 'Nothing to do. Re-check when the EU’s 2026 CRT submission is published in machine-readable form.',
+  },
+  unresolved: {
+    effort: 'work',
+    action: 'A known next step exists but is not built. Highest-yield work on this list.',
+  },
+  'not-on-api': {
+    effort: 'work',
+    action: 'Needs the PRODCOM portal driven with a browser, or the figures entered by hand.',
+  },
+  'pdf-only': {
+    effort: 'work',
+    action: 'Needs a table extractor for the publisher’s annual PDF or annex file.',
+  },
+  'no-public-api': {
+    effort: 'work',
+    action: 'Needs a data request to the publisher, or manual entry each cycle.',
+  },
+  'source-ended': {
+    effort: 'work',
+    action: 'Needs a decision: re-derive on the report’s own basis, or retire the indicator.',
+  },
+  subscription: {
+    effort: 'work',
+    action: 'Needs a licence, or a decision to substitute a comparable open source.',
+  },
+  withheld: {
+    effort: 'work',
+    action: 'Held back deliberately. Needs the correct denominator before anything is published.',
+  },
+  'never-published': { effort: 'work', action: 'No route identified.' },
+};
+
 /**
  * Display metadata per status. `tone` drives the chip colour: amber where the
  * data is expected to arrive on its own, slate where someone has to do
