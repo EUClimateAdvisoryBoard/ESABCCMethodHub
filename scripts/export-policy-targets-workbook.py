@@ -109,6 +109,12 @@ def cap(s: str) -> str:
     return s[:1].upper() + s[1:] if s else s
 
 
+def sector_list(t: dict) -> str:
+    """The eight flag columns as one readable classification, in the brief's order."""
+    names = [label for key, label in SECTORS if key in t['sectors']]
+    return '; '.join(names) if names else 'None of the eight (cross-cutting — kept for review)'
+
+
 def write_sheet(ws, rows, widths, freeze='A2'):
     for row in rows:
         ws.append(row)
@@ -148,6 +154,7 @@ def main() -> None:
         '9 · Indicators', '10 · Climate-relevance', '11 · Source (EUR-Lex)', 'Relevant (transition lens)',
         '12 · Human confirmed',
     ] + [f'{13 + i} · {label}' for i, (_, label) in enumerate(SECTORS)] + [
+        'Sector / system classification (all that apply)',
         '21 · Mitigation / adaptation argument',
         '22 · Duplicate / similar target in another policy',
         'Not correct', 'reason',
@@ -158,10 +165,10 @@ def main() -> None:
         t['timeline'] or 'Unspecified', '; '.join(t.get('indicators') or []),
         CLIMATE_LABEL[t['climate_relevance']], t['eurlex_url'], 'Relevant', '',
     ] + ['Yes' if key in t['sectors'] else '' for key, _ in SECTORS] + [
-        t['climate_argument'], t['duplicate_of'], '', '',
+        sector_list(t), t['climate_argument'], t['duplicate_of'], '', '',
     ] for t in rows]
     write_sheet(ws, [header] + body,
-                [42, 15, 16, 5, 70, 26, 13, 12, 14, 20, 28, 20, 40, 16, 16] + [13] * 8 + [62, 46, 12, 46])
+                [42, 15, 16, 5, 70, 26, 13, 12, 14, 20, 28, 20, 40, 16, 16] + [13] * 8 + [34, 62, 46, 12, 46])
 
     # ── Removed rows ────────────────────────────────────────────────────────
     removed = [['Row id', 'Pass', 'Rule', 'Reason for removal']]
@@ -260,9 +267,11 @@ def main() -> None:
         ['Sector summary', 'Descriptive statistics per sector/system, plus the cross-cutting remainder.'],
         ['Sector sheets', 'The policies contributing targets to each sector, with counts and an example target.'],
         ['', ''],
-        ['Columns 13-20', 'The eight sectors/systems. The first six matter for both mitigation and adaptation; '
-                          'Water and Health are the two that matter above all for adaptation. A target can carry '
-                          'several. Targets in none of the eight are kept for review.'],
+        ['Columns 13-20', 'The eight sectors/systems, one Yes/blank column each. The first six matter for both '
+                          'mitigation and adaptation; Water and Health are the two that matter above all for '
+                          'adaptation. A target can carry several. Targets in none of the eight are kept for review.'],
+        ['Sector / system classification', 'The same eight flags as one readable list, in the brief\'s order — for '
+                                           'filtering and pivoting without reading eight Yes/blank columns.'],
         ['Column 21', 'The mechanism-based argument for the mitigation/adaptation call: cuts GHGs, raises removals '
                       'or enables either (mitigation); reduces vulnerability or exposure, raises adaptive capacity '
                       'or seizes an opportunity (adaptation).'],

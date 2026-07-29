@@ -160,12 +160,22 @@ export const COLUMNS: ColumnDef[] = [
     width: 14,
     value: (t: PolicyTarget) => (t.sectors.includes(s.key) ? 'Yes' : ''),
   })),
+  // The eight flags again as one readable classification, for filtering and
+  // pivoting without eight columns of Yes/blank.
+  { key: 'sectors', header: 'Sector / system classification (all that apply)', width: 34, value: (t) => sectorList(t) },
   { key: 'climate_argument', header: '21 · Mitigation / adaptation argument', width: 60, value: (t) => t.climate_argument },
   { key: 'duplicate_of', header: '22 · Duplicate / similar target in another policy', width: 46, value: (t) => t.duplicate_of },
 ];
 
 function cap(s: string): string {
   return s ? s[0].toUpperCase() + s.slice(1) : s;
+}
+
+/** The sectors a target carries, named in the brief's order. Targets in none of
+ *  the eight say so rather than reading as an empty cell. */
+export function sectorList(t: PolicyTarget): string {
+  const names = SECTOR_META.filter((s) => t.sectors.includes(s.key)).map((s) => s.label);
+  return names.length ? names.join('; ') : 'None of the eight (cross-cutting — kept for review)';
 }
 
 // ─── Stats ──────────────────────────────────────────────────────────────────
