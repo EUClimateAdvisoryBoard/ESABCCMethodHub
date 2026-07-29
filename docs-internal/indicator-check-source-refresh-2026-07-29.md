@@ -58,11 +58,12 @@ carry the change against that normal year:
 Implemented in `beta/modules/summer-prep/indicator-check/page.tsx`
 (`readIndicator` → `preCovid`).
 
-## 3. New data pulled from primary sources
+## 3. New data pulled from primary sources — first batch
 
-Eight new recipes in `scripts/esabcc-indicators/refresh-from-sources.mjs`.
-Every one passes the existing anchor check — the value the source gives for the
-report's own last year reproduces the report's figure.
+Eight new recipes in `scripts/esabcc-indicators/refresh-from-sources.mjs`
+(section 5 covers a second batch of seven). Every one passes the existing anchor
+check — the value the source gives for the report's own last year reproduces the
+report's figure.
 
 | Code | Source & derivation | Anchor | Added |
 |---|---|---|---|
@@ -104,58 +105,121 @@ changed nothing for them — they were already at the current vintage. The two
 values that had drifted (O2 PEC 2023/2024) existed only in the database, not
 the TS file, and are corrected by migration 082.
 
-## 5. Still not updatable, and why
+## 5. Second pass — sources that were written off too early
 
-40 series carry no post-report point. None of them is blocked by an unwritten
-recipe — each is blocked by its source. Grouped:
+The first pass declared 40 series un-refreshable. Re-testing the *hard* routes
+rather than the convenient ones recovered seven of them.
 
-**No machine-readable source.** BSO / Odyssee-Mure (B4 dwellings, floor area,
-residential & tertiary surface), BloombergNEF (F2), Green Steel Tracker (I7a),
-Cembureau project map (I7b), CEFIC map (I7c), Cembureau tonnage (I2 cement
-use), Eurofer tonnage (I2 steel use, steel trade), JRC medium-term outlook
-(A7), OECD Green Growth (F4). All are JavaScript apps or PDF/portal
-publications with no CSV or API endpoint.
+**FAOSTAT (6 indicators: A4 consumption ×3, A5 ×3).** The July audit hit
+HTTP 521 on the JSON API at `fenixservices.fao.org` and stopped there. That host
+is still down — but the **bulk ZIPs on `bulks-faostat.fao.org` are fine**, 4 MB
+each, and carry FBS through 2023. Two wrinkles worth recording:
 
-**Source exists but the series is capped.** A3 (NUE) — Ludemann et al. ends at
-2020, and the citation on file is wrong besides (the DOI resolves to an
-unrelated microbiology paper; the audit flagged this and it is still open).
+- FAOSTAT publishes **no EU-27 aggregate** in its regional files, so the EU-27
+  is summed from member states here.
+- **Cyprus is filed under Asia**, not Europe, so the Asia archive is fetched too.
+  Summing only the Europe file silently drops a member state.
+- Population is not repeated against each commodity — it sits on its own FBS
+  "Population" item — so kcal/capita/day is computed as total EU-27 kcal ÷ total
+  EU-27 population ÷ 365, on the aggregate. Averaging national per-capita
+  figures would weight Malta like Germany.
 
-**FAOSTAT.** A4 consumption ×3, A5 ×3. The FAOSTAT API was returning HTTP 521
-during the audit; not retried here.
+**T6b (1 indicator).** Frozen at 2015 since the report because the SHARES
+successor code was never pinned down. It is `nrg_ind_urtd`, siec **`R5280S`**
+("Sustainable biofuels from food and feed crops"). The RED-II basis only starts
+in 2021 so it never meets the 2015 anchor, but the levels agree — report 2015 =
+118.1 TWh against source 2021 = 117.4 TWh — so it runs direct.
 
-**Inventory activity data, not emissions.** L2 (six land-area categories), L3,
-L4, L5, A3 (fertiliser N use). Eurostat's `env_air_gge` carries CRF *emissions*
-only; these are CRF area and activity tables, available solely in the UNFCCC
-submission zip. Fetching those is a separate piece of work.
+Routes tested and genuinely closed:
 
-**Not split in the inventory.** A2 bovine and dairy GHG, and their intensities.
-`env_air_gge` gives CRF 3.A.1 as *all cattle* — it cannot be divided into
-beef and dairy. Already documented at the `esabcc-a2-pig-ghg` recipe, which is
-wired precisely because swine *is* separable (CRF 3.A.3 / 3.B.3).
+- **UNFCCC DI API** (`di.unfccc.int/api`) — plain `curl` returns HTTP 200 with an
+  Imperva bot-protection challenge as the body, which is what this pass tested
+  and wrongly concluded from. **Superseded by section 5b**: the Python client
+  gets through, and four of the twelve series it covers are now automated.
+- **OECD SDMX** (F4) — the structure endpoints work with the right `Accept`
+  header, but the data endpoint on `DSD_GG@DF_GREEN_GROWTH` returns nothing
+  parseable for any EU geography code tried.
+- **PRODCOM** (I2 chemicals use/trade, I4 chemicals) — `ds-056120` is not on
+  the JSON-stat dissemination API; it is a separate bulk facility.
+
+## 5b. Third pass — the UNFCCC Data Interface
+
+**My earlier "Imperva blocks it" verdict was wrong.** Plain `curl` against
+`di.unfccc.int/api` gets a bot-protection challenge, which is what I tested and
+concluded from. The `unfccc_di_api` Python client negotiates the session
+properly and works from the same sandbox — 341,861 rows for party `EUA`.
+`scripts/esabcc-indicators/pull-unfccc-di.py` reproduces the pull.
+
+What that unlocked, and what it did not:
+
+**A2 cattle ×4 — now automated.** DI carries the split Eurostat does not:
+classifications `Dairy Cattle` / `Non-Dairy Cattle` under CRF 3.A and 3.B. On
+its own it is not enough — **DI stops at 2021**, frozen when parties moved to the
+ETF/CRT format, so it has nothing newer than the report. Combining does work:
+take the current all-cattle total from Eurostat (`CRF3A1 + CRF3B1`, to 2024) and
+allocate it by `head × emission factor`, with the factor ratio calibrated so 2021
+reproduces the inventory's own 49.4% dairy share. Herd composition is what moves
+this split, and Eurostat publishes both herds to 2025.
+
+The ratio must be calibrated against **Eurostat** herd numbers, not taken from
+DI's implied factors. DI counts 80.2 M cattle in 2021, Eurostat 75.7 M; a factor
+derived on one basis does not transfer to the other, and using DI's directly
+gives a 0.511 dairy share instead of the correct 0.494.
+
+**L2 ×6, L3, L4, L5, A3 (use) — confirmed blocked, and now for a precise
+reason.** DI has all of them, and its land areas reproduce the report to within
+0.1% (forest 167.85 vs 167.7 million ha), so DI is definitively the right
+source. It simply has no year beyond 2021. These nine are waiting on the EU's
+2026 CRT submission being published in a machine-readable form — not on anyone
+finding a source. Do not re-test DI for them.
+
+Two caveats recorded for whoever picks this up: DI's `year` column contains the
+literal `'Base year'` alongside numeric years, and the "Land Converted to X"
+areas are the cumulative area under the 20-year conversion transition, not the
+annual conversion rate L3/L4/L5 need — a naive read is ~20-36x too high.
+
+## 6. Still not updatable, and why
+
+29 series carry no post-report point. None is blocked by a missing recipe —
+each is blocked by its source.
+
+**No machine-readable source.** BSO / Odyssee-Mure (B4 ×4), BloombergNEF (F2),
+Green Steel Tracker (I7a), Cembureau project map (I7b), CEFIC map (I7c),
+Cembureau tonnage (I2 cement use), Eurofer tonnage (I2 steel use, steel trade),
+JRC medium-term outlook (A7), OECD Green Growth (F4).
+
+**Bulk file, not on the API.** I2 chemicals use and trade (PRODCOM DS-056120 /
+DS-059268).
+
+**Source has no newer year.** L2 ×6, L3, L4, L5, A3 (use) — see section 5b.
+The UNFCCC DI has them and matches the report, but stops at 2021.
+
+**Source series capped.** A3 (NUE) — Ludemann et al. ends at 2020. The citation
+on file is also wrong: DOI `10.1093/jambio/lxac084` resolves to an unrelated
+turfgrass-microbiology paper; the correct one is
+`10.5194/essd-16-525-2024`. Still open.
 
 **Deliberately not shipped.** I4 (chemicals). The derivation runs — CRF 2.B ÷
 NACE C201 — but CRF 2.B covers the whole chemical industry while C201 is basic
 chemicals only, and that mismatch produces a **+29% intensity rise by 2024**
 that cannot be validated against the report's own DS-056120 tonnage
-denominator. Left at its 2022 report value rather than publishing a number the
-scope mismatch may have invented. Steel and cement have no such problem: their
-NACE classes map cleanly onto the commodity.
+denominator.
 
-## 6. Net effect on the page
+## 7. Net effect on the page
 
 | | Before | After |
 |---|---|---|
-| Indicators with post-report data | 55 | 57 |
-| Latest year 2023 / 2024 / 2025 | 9 / 32 / 14 | 4 / 38 / 15 |
+| Indicators with post-report data | 55 | **68** |
+| Series still frozen at their report vintage | 42 | **29** |
 | Largest move | F5 +6566.7% (wrong) | T3b +258.5% (flagged, +8.9% vs 2019) |
 | Rose / fell | 21 / 34 | 20 / 37 |
 
-## 7. Files
+## 8. Files
 
-- `scripts/esabcc-indicators/refresh-from-sources.mjs` — 8 new recipes (41 → 49); new `spliceFrom` option
+- `scripts/esabcc-indicators/refresh-from-sources.mjs` — 19 new recipes (41 → 60); new `spliceFrom` option and a `faostat` recipe kind reading the FBS bulk ZIPs
 - `src/data/esabcc-indicators.ts` — refreshed via the script, not hand-edited
 - `supabase/migrations/082_realign_refreshed_indicator_points.sql` — 185 rows, 10 indicators, `do update`
-- `supabase/migrations/055_backfill_indicator_points.sql` — regenerated (176 points / 57 indicators)
+- `supabase/migrations/055_backfill_indicator_points.sql` — regenerated (211 points / 68 indicators)
 - `supabase/combined_migrations.sql` — both blocks synced
 - `beta/modules/summer-prep/indicator-check/page.tsx` — COVID-baseline flag
 - `scripts/esabcc-indicators/refresh-provenance.json` — per-value source URL and derivation
