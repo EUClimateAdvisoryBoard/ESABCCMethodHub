@@ -18,8 +18,10 @@
 //                     capacity, or seizes an opportunity from a changing climate.
 //   3. duplicatesOf() — cross-policy duplicate / near-duplicate target texts.
 //
-// Requested by the ESABCC reviewer, July 2026 (see
-// docs-internal/policy-targets-human-review-2026-07.md).
+// Requested by the ESABCC reviewer, July 2026. The rules these implement — and
+// the rules for what belongs in the register at all — are written up in
+// docs-internal/policy-targets-what-counts-as-a-target.md; what each correction
+// pass changed is in docs-internal/policy-targets-human-review-2026-07.md.
 // ---------------------------------------------------------------------------
 
 const lc = (s) => (s || '').toLowerCase();

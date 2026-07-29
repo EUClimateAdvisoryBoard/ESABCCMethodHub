@@ -13,6 +13,9 @@
  *   8 timeline · 9 indicators · 10 climate_relevance · 11 eurlex_url.
  * The 12th column — human confirmation — is review state, held per-user in the
  * browser (see useTargetConfirmations), not in this dataset.
+ *
+ * What counts as a target, and how to record a correction so it stays
+ * reversible: docs-internal/policy-targets-what-counts-as-a-target.md.
  */
 import { RAW_POLICY_TARGETS } from './policy-targets.generated';
 

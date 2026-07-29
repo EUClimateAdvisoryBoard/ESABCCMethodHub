@@ -20,6 +20,10 @@
 // consistency; the softer label/indicator fields keep the agent's reading with
 // a deterministic fallback.
 //
+// WHAT COUNTS AS A TARGET — and what must never be dropped — is settled by the
+// reviewer's rulebook: docs-internal/policy-targets-what-counts-as-a-target.md.
+// Read it before adding, removing or re-classifying a row.
+//
 // Run: `npm run build:policy-targets` (chains the regex sweep then this merge).
 // ---------------------------------------------------------------------------
 
