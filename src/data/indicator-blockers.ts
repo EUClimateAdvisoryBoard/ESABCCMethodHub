@@ -63,10 +63,12 @@ const UNFCCC_CRT =
   'search for in the meantime.';
 
 const PRODCOM =
-  'The report used Eurostat PRODCOM (DS-056120 sold production, DS-059268 trade). PRODCOM is not ' +
-  'served by the JSON-stat dissemination API that every other Eurostat series here comes from — ' +
-  'a search of the full 1.98 MB dissemination catalogue returns no PRODCOM dataset under any ' +
-  'code. It lives in a separate bulk-download facility that the refresh script does not yet read.';
+  'The report used Eurostat PRODCOM (DS-056120 sold production, DS-059268 trade). PRODCOM sits ' +
+  'outside Eurostat’s entire dissemination infrastructure: it appears neither in the 1.98 MB ' +
+  'dissemination catalogue nor in the bulk-file inventory (8,233 datasets, no match under any ' +
+  'code), so there is no API address and no bulk file to point a recipe at. Its own database page ' +
+  'is a Liferay portal driven by a JavaScript search portlet with no direct download links in the ' +
+  'HTML — extracting from it means driving a browser, not fetching a URL.';
 
 const BSO =
   'The EU Building Stock Observatory database is a Power BI report embedded behind an ' +

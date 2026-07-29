@@ -205,6 +205,49 @@ chemicals only, and that mismatch produces a **+29% intensity rise by 2024**
 that cannot be validated against the report's own DS-056120 tonnage
 denominator.
 
+## 6b. Can the remaining 19 be automated?
+
+Of the 29 with no new data, 10 are simply awaiting the 2026 CRT submission. The
+other 19 need someone to fetch something. Tested position on each route:
+
+**Blocked by this build environment, not by the source (7).** These would
+almost certainly work on an ordinary machine:
+
+- **I7a** — the recipe is written and the derivation validated offline; only the
+  8.8 MB download times out here.
+- **B4 ×4, I7b, I7c** — need a headless browser. Chromium and Playwright are
+  present in the image, but Chromium cannot reach the network through the egress
+  proxy at all: `example.com` fails with `ERR_CONNECTION_RESET` exactly as the
+  target sites do, and the proxy rejects the plain-HTTP absolute-form requests
+  the HTTP-only Cembureau site needs.
+
+**Automatable, but needs engineering not yet done (3).**
+
+- **F4** — OECD SDMX. Structure endpoints work and the measure exists
+  (`PT_TECH_ENV`); finding the working dataflow key is a matter of persistence.
+- **I2 (steel, use)** — Eurofer publishes it in an annual PDF at a stable URL
+  pattern. Table extraction is routine.
+- **A7** — JRC outlook annex tables, one file per edition; the landing page is
+  JS-rendered so the file has to be located per year.
+
+**No public endpoint exists (9).**
+
+- **PRODCOM cluster** (I2 chemicals use, I2 chemicals trade, I2 steel trade,
+  I2 cement use, and I4 chemicals which depends on the same denominator) —
+  confirmed absent from both the dissemination catalogue and the bulk-file
+  inventory. The portal is a JavaScript search application, so even this is
+  really a browser problem.
+- **F2** — BloombergNEF subscription.
+- **B3 ×2** — no published series anywhere; depends on Building Stock
+  Observatory floor areas, i.e. on the same Power BI blocker as B4.
+- **A3 (NUE)** — source dataset ended in 2020.
+
+**The single highest-leverage fix is a working headless browser.** It directly
+covers B4 ×4, I7b and I7c, and would also let the PRODCOM portal be driven —
+around 12 of the 19. The pattern that worked for the UNFCCC Data Interface
+(`scripts/esabcc-indicators/pull-unfccc-di.py`: a standalone script run on a
+normal machine, output handed back for wiring) applies here too.
+
 ## 7. Net effect on the page
 
 | | Before | After |
