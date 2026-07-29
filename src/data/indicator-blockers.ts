@@ -71,10 +71,13 @@ const PRODCOM =
   'HTML — extracting from it means driving a browser, not fetching a URL.';
 
 const BSO =
-  'The EU Building Stock Observatory database is a Power BI report embedded behind an ' +
-  'authenticated embed token — the figures are fetched by the Power BI client at runtime and ' +
-  'there is no static CSV, API or file export to read. A headless browser is the usual way past ' +
-  'this, but Chromium cannot reach the network through this environment’s egress proxy.';
+  'The EU Building Stock Observatory database is a Power BI report (reportId ' +
+  '5ca1ef93-d90b-43f9-94bc-0bdc51876f9d) embedded behind the EC cookie-consent iframe — the figures ' +
+  'are fetched by the Power BI client at runtime and there is no static CSV, API or file export. A ' +
+  'headless browser now works in this environment (see scripts/esabcc-indicators/browser-probe.mjs; ' +
+  'Chromium needs --ssl-version-max=tls1.2 to get through the TLS-intercepting egress proxy), and it ' +
+  'reaches the page and identifies the embed — but pulling numbers out still means driving the report ' +
+  'UI or replaying its querydata calls, which has not been built.';
 
 export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
   // ── Waiting on the EU's 2026 CRT submission (10) ─────────────────────────
@@ -138,12 +141,18 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
     sourceUrl: 'http://lowcarboneconomy.cembureau.eu/',
   },
   'esabcc-i7c-chemicals-projects': {
-    status: 'no-public-api',
-    summary: 'Cefic project map publishes no data file',
+    status: 'unresolved',
+    summary: 'Data is reachable, but no comparable time dimension',
     detail:
-      'As with the Cembureau map — a JavaScript application with no JSON, CSV or XLSX endpoint in its ' +
-      'HTML. Cefic states the map is refreshed twice a year, so the count is current; it simply is not ' +
-      'downloadable.',
+      'The map turned out to be backed by a public WordPress REST API — /wp-json/wp/v2/gips returns all ' +
+      '238 projects (214 of them in the EU-27) with a country taxonomy, no browser required. The ' +
+      'blocker is not access but time: the only date on a project is its website posting date, and ' +
+      'rebuilding the count on that basis gives 135 EU-27 projects at end-2023 against the report’s ' +
+      '171. The map has been re-curated since, so past states cannot be reproduced from the current ' +
+      'contents, and a “change since the report” figure derived from it would be measuring Cefic’s ' +
+      'editing schedule rather than project announcements. A current snapshot (214) is trustworthy; a ' +
+      'series is not. Asking Cefic for an announcement-date field, or for their historical snapshots, ' +
+      'would settle it.',
     sourceUrl: 'https://cefic.org/low-carbon-projects-map/',
   },
 
