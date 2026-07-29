@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T09:00:06.487Z",
+  "generatedAt": "2026-07-29T11:42:56.070Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
@@ -236,6 +236,160 @@
         {
           "year": 2024,
           "value": 32.85
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a4-bovine-consumption",
+      "sourceTitle": "FAOSTAT Food Balance Sheets · bovine meat, food use, EU-27 sum",
+      "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
+      "note": "EU-27 summed from member states (FAOSTAT publishes no EU aggregate; Cyprus comes from the Asia file). 1000 t → Mt. Spliced (anchor 2020 1.029×).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 6.132
+        },
+        {
+          "year": 2022,
+          "value": 6.081
+        },
+        {
+          "year": 2023,
+          "value": 5.867
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a4-dairy-consumption",
+      "sourceTitle": "FAOSTAT Food Balance Sheets · milk excl. butter, food use, EU-27 sum",
+      "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
+      "note": "As A4 bovine. The report’s dairy boundary is narrower than FBS “Milk – Excluding Butter” (anchor 2020 1.149×), so the splice applies the trend only.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 88.831
+        },
+        {
+          "year": 2022,
+          "value": 90.426
+        },
+        {
+          "year": 2023,
+          "value": 91.162
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a4-pig-consumption",
+      "sourceTitle": "FAOSTAT Food Balance Sheets · pigmeat, food use, EU-27 sum",
+      "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
+      "note": "As A4 bovine. 1000 t → Mt. Spliced (anchor 2020 1.017×).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 17.92
+        },
+        {
+          "year": 2022,
+          "value": 17.436
+        },
+        {
+          "year": 2023,
+          "value": 17.397
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a5-bovine-consumption",
+      "sourceTitle": "FAOSTAT Food Balance Sheets · bovine meat, kcal/capita/day, EU-27",
+      "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
+      "note": "Total EU-27 kcal ÷ total EU-27 population ÷ 365 — computed on the aggregate, not as an unweighted mean of national per-capita figures. Spliced (anchor 2020 1.119×).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 52.02
+        },
+        {
+          "year": 2022,
+          "value": 51.41
+        },
+        {
+          "year": 2023,
+          "value": 49.48
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a5-dairy-consumption",
+      "sourceTitle": "FAOSTAT Food Balance Sheets · milk excl. butter, kcal/capita/day, EU-27",
+      "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
+      "note": "As A5 bovine (anchor 2021 0.765× — the report’s dairy calorie boundary is wider than the FBS milk item, so only the trend is used).",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 560.36
+        },
+        {
+          "year": 2023,
+          "value": 569.13
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a5-pig-consumption",
+      "sourceTitle": "FAOSTAT Food Balance Sheets · pigmeat, kcal/capita/day, EU-27",
+      "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
+      "note": "As A5 bovine (anchor 2020 0.920×).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 209.42
+        },
+        {
+          "year": 2022,
+          "value": 203.41
+        },
+        {
+          "year": 2023,
+          "value": 201.99
+        }
+      ]
+    },
+    {
+      "id": "esabcc-t6b-foodcrop-biofuels",
+      "sourceTitle": "Eurostat nrg_ind_urtd · biofuels from food and feed crops (R5280S), transport, RED basis · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_urtd?format=JSON&geo=EU27_2020&nrg_bal=FC_TRA_E_RED&siec=R5280S&unit=KTOE",
+      "note": "ktoe × 0.01163 → TWh. Direct: the RED-II series begins in 2021 so it never meets the 2015 report anchor, but the levels agree (2015 report 118.1 vs 2021 source 117.4).",
+      "status": "updated",
+      "baseYear": 2015,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 117.4
+        },
+        {
+          "year": 2022,
+          "value": 105.8
+        },
+        {
+          "year": 2023,
+          "value": 104.7
+        },
+        {
+          "year": 2024,
+          "value": 102.9
         }
       ]
     },

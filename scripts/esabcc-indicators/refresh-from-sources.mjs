@@ -46,6 +46,34 @@ const EEA_CSV =
   '3b7fe76c-524a-439a-bfd2-a6e4046302a2/download?format=csv&country=EU27';
 
 const MTOE_TO_TWH = 11.63; // 1 Mtoe = 1000 ktoe × 0.011630 TWh
+const KTOE_TO_TWH = 0.01163;
+
+/**
+ * FAOSTAT Food Balance Sheets, pulled from the bulk-download service.
+ *
+ * The JSON API at fenixservices.fao.org has been returning HTTP 521 (origin
+ * down) since the July 2026 audit, which is why A4/A5 were written off as
+ * un-refreshable. The bulk ZIPs are served from a different host and are fine,
+ * so the six FBS-based indicators are sourced from those instead.
+ *
+ * FAOSTAT publishes no EU-27 aggregate in the regional files, so the EU-27 is
+ * summed from its member states here. Cyprus sits in FAOSTAT's *Asia* file,
+ * not Europe — both are fetched so the aggregate is complete.
+ */
+const FAOSTAT_BULKS = [
+  'https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip',
+  'https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Asia.zip',
+];
+const EU27_FAOSTAT = new Set([
+  'Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus', 'Czechia', 'Denmark', 'Estonia',
+  'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Ireland', 'Italy', 'Latvia',
+  'Lithuania', 'Luxembourg', 'Malta', 'Netherlands (Kingdom of the)', 'Poland', 'Portugal',
+  'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden',
+]);
+const FBS_FOOD = '5142';   // Food (1000 t)
+const FBS_KCAL = '661';    // Food supply (million kcal)
+const FBS_POP  = '511';    // Total population (1000 persons)
+const FBS_POP_ITEM = '2501'; // the FBS "Population" item that carries element 511
 
 /**
  * Recipes keyed by the esabcc-* indicator id. Extend this table to cover more
@@ -188,6 +216,64 @@ export const RECIPES = {
     sourceUrl: `${EUROSTAT_BASE}/nrg_bal_c?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=FC_OTH_CP_E`,
     sourceTitle: 'Eurostat nrg_bal_c · fossil (gas + oil excl. bio + solid) ÷ total services final energy · EU27_2020',
     note: 'Same fossil definition as B5a. The report’s tertiary boundary sits ~1.9 pp above FC_OTH_CP_E (anchor 2021 0.951×), so the trend is spliced onto the report baseline rather than taken as a level.',
+  },
+
+  // ── FAOSTAT Food Balance Sheets (July 2026, batch 3). The July audit wrote
+  //    these six off because the FAOSTAT JSON API returns HTTP 521; the bulk
+  //    ZIPs are served from a different host and work fine. FBS now reaches
+  //    2023, so all six series move off their 2020/2021 report vintage.
+  //    Every one runs in splice mode: FAOSTAT's commodity boundary is not the
+  //    report's (dairy especially), so only the trend is trusted.
+  'esabcc-a4-bovine-consumption': {
+    kind: 'faostat', item: '2731', element: FBS_FOOD, round: 3, mode: 'splice',
+    sourceUrl: 'https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip',
+    sourceTitle: 'FAOSTAT Food Balance Sheets · bovine meat, food use, EU-27 sum',
+    note: 'EU-27 summed from member states (FAOSTAT publishes no EU aggregate; Cyprus comes from the Asia file). 1000 t → Mt. Spliced (anchor 2020 1.029×).',
+  },
+  'esabcc-a4-dairy-consumption': {
+    kind: 'faostat', item: '2848', element: FBS_FOOD, round: 3, mode: 'splice',
+    sourceUrl: 'https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip',
+    sourceTitle: 'FAOSTAT Food Balance Sheets · milk excl. butter, food use, EU-27 sum',
+    note: 'As A4 bovine. The report’s dairy boundary is narrower than FBS “Milk – Excluding Butter” (anchor 2020 1.149×), so the splice applies the trend only.',
+  },
+  'esabcc-a4-pig-consumption': {
+    kind: 'faostat', item: '2733', element: FBS_FOOD, round: 3, mode: 'splice',
+    sourceUrl: 'https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip',
+    sourceTitle: 'FAOSTAT Food Balance Sheets · pigmeat, food use, EU-27 sum',
+    note: 'As A4 bovine. 1000 t → Mt. Spliced (anchor 2020 1.017×).',
+  },
+  'esabcc-a5-bovine-consumption': {
+    kind: 'faostat', item: '2731', perCapita: true, round: 2, mode: 'splice',
+    sourceUrl: 'https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip',
+    sourceTitle: 'FAOSTAT Food Balance Sheets · bovine meat, kcal/capita/day, EU-27',
+    note: 'Total EU-27 kcal ÷ total EU-27 population ÷ 365 — computed on the aggregate, not as an unweighted mean of national per-capita figures. Spliced (anchor 2020 1.119×).',
+  },
+  'esabcc-a5-dairy-consumption': {
+    kind: 'faostat', item: '2848', perCapita: true, round: 2, mode: 'splice',
+    sourceUrl: 'https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip',
+    sourceTitle: 'FAOSTAT Food Balance Sheets · milk excl. butter, kcal/capita/day, EU-27',
+    note: 'As A5 bovine (anchor 2021 0.765× — the report’s dairy calorie boundary is wider than the FBS milk item, so only the trend is used).',
+  },
+  'esabcc-a5-pig-consumption': {
+    kind: 'faostat', item: '2733', perCapita: true, round: 2, mode: 'splice',
+    sourceUrl: 'https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip',
+    sourceTitle: 'FAOSTAT Food Balance Sheets · pigmeat, kcal/capita/day, EU-27',
+    note: 'As A5 bovine (anchor 2020 0.920×).',
+  },
+
+  // ── T6b: frozen at its 2015 SHARES vintage because the successor code was
+  //    never pinned down. Eurostat nrg_ind_urtd DOES carry it — siec R5280S,
+  //    "Sustainable biofuels from food and feed crops". The RED-II reporting
+  //    basis only starts in 2021, so there is no overlap with the report's
+  //    2015 anchor; the magnitudes line up (report 2015 = 118.1 TWh, source
+  //    2021 = 117.4 TWh), so this runs direct rather than spliced.
+  'esabcc-t6b-foodcrop-biofuels': {
+    kind: 'eurostat', dataset: 'nrg_ind_urtd',
+    filters: { geo: 'EU27_2020', freq: 'A', nrg_bal: 'FC_TRA_E_RED', siec: 'R5280S', unit: 'KTOE' },
+    toRepo: v => v * KTOE_TO_TWH, round: 1,
+    sourceUrl: `${EUROSTAT_BASE}/nrg_ind_urtd?format=JSON&geo=EU27_2020&nrg_bal=FC_TRA_E_RED&siec=R5280S&unit=KTOE`,
+    sourceTitle: 'Eurostat nrg_ind_urtd · biofuels from food and feed crops (R5280S), transport, RED basis · EU27_2020',
+    note: 'ktoe × 0.01163 → TWh. Direct: the RED-II series begins in 2021 so it never meets the 2015 report anchor, but the levels agree (2015 report 118.1 vs 2021 source 117.4).',
   },
 
   // ── Industry emission intensity = process GHG ÷ production volume. Both
@@ -810,6 +896,98 @@ function parseCsvLine(line, delim) {
   return cells;
 }
 
+/**
+ * Load the FAOSTAT FBS bulk ZIPs once per run and index them as
+ * `itemCode|elementCode` → { year → EU-27 sum }.
+ *
+ * A member state missing from a given item/element is simply not added, so a
+ * gap shows up as a slightly low total rather than an exception — which is why
+ * every FBS recipe runs in splice mode: a constant coverage offset cancels in
+ * the year-on-year ratio and only the trend is used.
+ */
+let _fbs = null;
+async function getFbsIndex() {
+  if (_fbs) return _fbs;
+  const { default: JSZip } = await import('jszip');
+  const acc = new Map();
+  let loaded = 0;
+  for (const url of FAOSTAT_BULKS) {
+    let text;
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const zip = await JSZip.loadAsync(await res.arrayBuffer());
+      const name = Object.keys(zip.files).find(n => /_NOFLAG\.csv$/i.test(n));
+      if (!name) throw new Error('no NOFLAG csv in archive');
+      // FAOSTAT bulk CSVs are latin-1, not UTF-8.
+      text = Buffer.from(await zip.files[name].async('uint8array')).toString('latin1');
+    } catch (e) {
+      console.error(`    (FAOSTAT bulk skipped: ${url.split('/').pop()} — ${e.message})`);
+      continue;
+    }
+    const lines = text.split(/\r?\n/).filter(l => l.length);
+    const header = parseCsvLine(lines[0], ',').map(h => h.trim());
+    const col = n => header.indexOf(n);
+    const cArea = col('Area'), cItem = col('Item Code'), cEl = col('Element Code');
+    if (cArea < 0 || cItem < 0 || cEl < 0) {
+      console.error(`    (FAOSTAT bulk skipped: unexpected header in ${url.split('/').pop()})`);
+      continue;
+    }
+    const years = header
+      .map((h, i) => ({ y: /^Y(\d{4})$/.exec(h)?.[1], i }))
+      .filter(x => x.y)
+      .map(x => ({ year: Number(x.y), i: x.i }));
+    for (let r = 1; r < lines.length; r++) {
+      const cells = parseCsvLine(lines[r], ',');
+      if (!EU27_FAOSTAT.has(cells[cArea])) continue;
+      const key = `${cells[cItem]}|${cells[cEl]}`;
+      let m = acc.get(key);
+      if (!m) acc.set(key, (m = new Map()));
+      for (const { year, i } of years) {
+        const v = parseNum(cells[i]);
+        if (Number.isFinite(v)) m.set(year, (m.get(year) ?? 0) + v);
+      }
+    }
+    loaded++;
+  }
+  if (!loaded) throw new Error('no FAOSTAT bulk archive could be read');
+  _fbs = acc;
+  return _fbs;
+}
+
+/**
+ * One FBS series for the EU-27.
+ *   default        → the raw summed element (converted by `toRepo`)
+ *   perCapita:true → total kcal ÷ total population ÷ 365, i.e. kcal/capita/day
+ *                    computed on the aggregate rather than averaging national
+ *                    per-capita figures (which would weight Malta like Germany).
+ */
+async function fetchFaostat({ item, element, perCapita }) {
+  const idx = await getFbsIndex();
+  const get = (it, el) => idx.get(`${it}|${el}`);
+  if (perCapita) {
+    const kcal = get(item, FBS_KCAL);
+    // Population is not repeated against every commodity — FBS carries it on
+    // its own "Population" item, so find whichever item holds element 511.
+    let pop = get(FBS_POP_ITEM, FBS_POP);
+    if (!pop) {
+      for (const [k, v] of idx) if (k.endsWith(`|${FBS_POP}`)) { pop = v; break; }
+    }
+    if (!kcal) throw new Error(`FAOSTAT: no kcal rows for item ${item}`);
+    if (!pop) throw new Error('FAOSTAT: no population rows (element 511) in the archive');
+    const out = [];
+    for (const [year, v] of kcal) {
+      const p = pop.get(year);
+      if (Number.isFinite(p) && p > 0) out.push({ year, value: (v * 1e6) / (p * 1000) / 365 });
+    }
+    if (!out.length) throw new Error(`FAOSTAT: no overlapping years for item ${item}`);
+    return out.sort((a, b) => a.year - b.year);
+  }
+  const s = get(item, element);
+  if (!s) throw new Error(`FAOSTAT: no rows for item ${item} element ${element}`);
+  return [...s.entries()].map(([year, value]) => ({ year, value })).sort((a, b) => a.year - b.year);
+}
+
 let _eea = null;
 async function getEeaRows() {
   if (_eea) return _eea;
@@ -969,7 +1147,9 @@ async function main() {
           ? await fetchEurostatRatio(rec)
           : rec.kind === 'eurostat-delta'
             ? await fetchEurostatDelta(rec.dataset, rec.filters)
-            : await fetchEea(rec);
+            : rec.kind === 'faostat'
+              ? await fetchFaostat(rec)
+              : await fetchEea(rec);
     } catch (e) {
       console.error(`! ${id}: fetch failed — ${e.message}`);
       provenance.push({ ...meta, status: 'error', message: e.message });
