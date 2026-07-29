@@ -1,0 +1,165 @@
+# Indicator Check — source refresh & unit fix (29 July 2026)
+
+Follow-up to `indicator-check-data-provenance-audit-2026-07.md`. That audit
+listed what was wrong and what was stale; this note records what was actually
+pulled, how each new value was derived, and what is still blocked.
+
+Scope: the 97 `esabcc-*` report series behind
+`/beta/summer-prep/indicator-check` and the Policy Gap 2.0 Indicator Database.
+
+## 1. The confirmed bug: F5 read +6566.7%
+
+The page showed **Cleantech investment: report (2022) 0 → latest (2025) 0.04,
+▲ 6566.7%**.
+
+The module was doing its arithmetic correctly. The workspace database was not:
+`esabcc-f-cleantech-investment` held its **pre**-report points as fractions
+(2022 = `0.0006`) and its **post**-report points as percent-numbers
+(2023 = `0.07`). The card compared `0.0006` against `0.04` — two different
+units — and rendered the baseline as `0` because the display rounds to two
+decimals.
+
+Migrations `058` and `075` had already reconciled this fraction-vs-percent
+split for twelve indicators, but both selected on `unit = '%'`. F5's unit
+string is `'% of GDP'`, so it was never in either list.
+
+The bundled TS series was correct throughout (`2022 = 0.06`). Only the DB rows
+were wrong, which is why the drift was invisible in the repo.
+
+**Fixed** by `082_realign_refreshed_indicator_points.sql`. F5 now reads
+**0.06 (2022) → 0.04 (2025), ▼ 33.3%**.
+
+This was the only unit error found. A full point-by-point diff of the live
+database against the TS file turned up exactly two discrepancies — F5 and an
+O2 (PEC) vintage drift — so nothing else of this kind is outstanding.
+
+## 2. Baselines that are COVID troughs
+
+With F5 corrected, the largest remaining number was **T3b intra-EU aviation at
++258%**. That figure is arithmetically right and still misleading: the last
+value the report carried for T3b is **2020 = 177.9 Gpkm**, the lockdown year,
+69.6% below 2019. Measuring 2025 against it reports the pandemic rebound, not
+the trend.
+
+Two indicators are affected — T3b and T2a (total passenger demand, baseline
+2020, −26.0% vs 2019). E4a and E4b/c also have 2021 baselines, but *above*
+their 2019 level (renewables additions genuinely grew), so re-basing those
+would overstate the move rather than correct it.
+
+The headline arithmetic is unchanged — it is the page's stated method. Cards
+whose baseline sits more than 10% below the last pre-2020 reading now also
+carry the change against that normal year:
+
+| Code | Change vs report baseline | Change vs last pre-COVID year |
+|---|---|---|
+| T3b | +258.5% (vs 2020 = 177.9) | **+8.9%** (vs 2019 = 585.5) |
+| T2a | +33.7% (vs 2020 = 4435.8) | **−1.0%** (vs 2019 = 5992.2) |
+
+Implemented in `beta/modules/summer-prep/indicator-check/page.tsx`
+(`readIndicator` → `preCovid`).
+
+## 3. New data pulled from primary sources
+
+Eight new recipes in `scripts/esabcc-indicators/refresh-from-sources.mjs`.
+Every one passes the existing anchor check — the value the source gives for the
+report's own last year reproduces the report's figure.
+
+| Code | Source & derivation | Anchor | Added |
+|---|---|---|---|
+| **O3** | `nrg_bal_c` GIC / all products, GWh ÷ 1000 → TWh. Direct. | 1.000× | realigned |
+| **I5** | `nrg_bal_c` FC_IND_E (excl. non-energy use), GWh → TWh. Direct. | 1.010× | 2024 |
+| **B2** | `nrg_bal_c` FC_OTH_HH_E + FC_OTH_CP_E, GWh → TWh. Spliced — the report's buildings boundary is ~7% wider than households + services. | 0.932× | 2024 (2022/23 revised) |
+| **B5a** | fossil ÷ total in FC_OTH_HH_E, fossil = G3000 + O4000XBIO + C0000X0350-0370. Reproduces the report series to within 0.1 pp. | 1.001× | 2022, 2024 |
+| **B5b** | same definition on FC_OTH_CP_E. | 0.951× | 2022, 2024 |
+| **I4 (steel)** | `env_air_gge` CRF 2.C.1 process GHG ÷ `sts_inpr_a` NACE C241 production index. Spliced ratio — Mt ÷ index, so only the trend is used. | — | 2022–2024 |
+| **I4 (cement)** | CRF 2.A.1 ÷ NACE C235, same construction. | — | 2022–2024 |
+| **T3b** | `avia_paoc` passengers carried, national + intra-EU27 (`schedule=TOT`). | — | 2024, 2025 |
+
+### T3b deserves its own note
+
+DG MOVE's statistical pocketbook — the source the report used — has no API and
+its published intra-EU passenger-km stop at 2023. Eurostat's own air-passenger
+counts run to 2025, so passenger-km are proxied by **passengers carried**,
+holding average stage length constant.
+
+The proxy is validated on the overlap: passengers grew **+14.7%** from 2022 to
+2023 where the pocketbook's Gpkm grew **+13.7%** — agreement to about 1 pp.
+Double counting of intra-EU legs is constant across years and cancels in the
+ratio.
+
+Crucially, the pocketbook's **published 2022 and 2023 figures are kept**; only
+2024 and 2025 are derived from them. This required a new `spliceFrom` option in
+the refresh script — the default splice re-anchors on the report year and
+regenerates every post-report point, which would have overwritten two published
+DG MOVE values with proxy estimates ~1% off. `spliceFrom` anchors on a stored
+later point and extends from there.
+
+Result: **2024 = 625.9, 2025 = 637.8 Gpkm**.
+
+## 4. Everything else was already current
+
+The 41 pre-existing recipes were all re-run against their live sources. Every
+one returned values identical to what the repo already held, so the refresh
+changed nothing for them — they were already at the current vintage. The two
+values that had drifted (O2 PEC 2023/2024) existed only in the database, not
+the TS file, and are corrected by migration 082.
+
+## 5. Still not updatable, and why
+
+40 series carry no post-report point. None of them is blocked by an unwritten
+recipe — each is blocked by its source. Grouped:
+
+**No machine-readable source.** BSO / Odyssee-Mure (B4 dwellings, floor area,
+residential & tertiary surface), BloombergNEF (F2), Green Steel Tracker (I7a),
+Cembureau project map (I7b), CEFIC map (I7c), Cembureau tonnage (I2 cement
+use), Eurofer tonnage (I2 steel use, steel trade), JRC medium-term outlook
+(A7), OECD Green Growth (F4). All are JavaScript apps or PDF/portal
+publications with no CSV or API endpoint.
+
+**Source exists but the series is capped.** A3 (NUE) — Ludemann et al. ends at
+2020, and the citation on file is wrong besides (the DOI resolves to an
+unrelated microbiology paper; the audit flagged this and it is still open).
+
+**FAOSTAT.** A4 consumption ×3, A5 ×3. The FAOSTAT API was returning HTTP 521
+during the audit; not retried here.
+
+**Inventory activity data, not emissions.** L2 (six land-area categories), L3,
+L4, L5, A3 (fertiliser N use). Eurostat's `env_air_gge` carries CRF *emissions*
+only; these are CRF area and activity tables, available solely in the UNFCCC
+submission zip. Fetching those is a separate piece of work.
+
+**Not split in the inventory.** A2 bovine and dairy GHG, and their intensities.
+`env_air_gge` gives CRF 3.A.1 as *all cattle* — it cannot be divided into
+beef and dairy. Already documented at the `esabcc-a2-pig-ghg` recipe, which is
+wired precisely because swine *is* separable (CRF 3.A.3 / 3.B.3).
+
+**Deliberately not shipped.** I4 (chemicals). The derivation runs — CRF 2.B ÷
+NACE C201 — but CRF 2.B covers the whole chemical industry while C201 is basic
+chemicals only, and that mismatch produces a **+29% intensity rise by 2024**
+that cannot be validated against the report's own DS-056120 tonnage
+denominator. Left at its 2022 report value rather than publishing a number the
+scope mismatch may have invented. Steel and cement have no such problem: their
+NACE classes map cleanly onto the commodity.
+
+## 6. Net effect on the page
+
+| | Before | After |
+|---|---|---|
+| Indicators with post-report data | 55 | 57 |
+| Latest year 2023 / 2024 / 2025 | 9 / 32 / 14 | 4 / 38 / 15 |
+| Largest move | F5 +6566.7% (wrong) | T3b +258.5% (flagged, +8.9% vs 2019) |
+| Rose / fell | 21 / 34 | 20 / 37 |
+
+## 7. Files
+
+- `scripts/esabcc-indicators/refresh-from-sources.mjs` — 8 new recipes (41 → 49); new `spliceFrom` option
+- `src/data/esabcc-indicators.ts` — refreshed via the script, not hand-edited
+- `supabase/migrations/082_realign_refreshed_indicator_points.sql` — 185 rows, 10 indicators, `do update`
+- `supabase/migrations/055_backfill_indicator_points.sql` — regenerated (176 points / 57 indicators)
+- `supabase/combined_migrations.sql` — both blocks synced
+- `beta/modules/summer-prep/indicator-check/page.tsx` — COVID-baseline flag
+- `scripts/esabcc-indicators/refresh-provenance.json` — per-value source URL and derivation
+
+**Migration 082 must be applied for the site to show the corrected F5.** The
+TS file is the seed and the preview fallback; production reads
+`pw_indicator_points`.
