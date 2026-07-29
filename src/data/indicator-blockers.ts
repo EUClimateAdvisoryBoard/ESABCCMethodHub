@@ -72,13 +72,14 @@ const PRODCOM =
 
 const BSO =
   'The EU Building Stock Observatory database is a Power BI report (reportId ' +
-  '5ca1ef93-d90b-43f9-94bc-0bdc51876f9d) sitting behind two consent gates. It is now reachable: ' +
-  'scripts/esabcc-indicators/browser-probe.mjs renders it headlessly and reads its “Table” view ' +
-  'straight out of the DOM, so the figures are obtainable and nothing needs authenticating — the ' +
-  'report ships its data to the client rather than querying a server, so there are no API calls to ' +
-  'replay. What is missing is the last mile: driving the report’s own Subject / Year / Country ' +
-  'controls and its Trend tab, then mapping the returned rows onto this indicator. Until that is ' +
-  'built and checked against the report’s baseline, no value is published.';
+  '5ca1ef93-d90b-43f9-94bc-0bdc51876f9d) behind two consent gates. It is reachable: ' +
+  'scripts/esabcc-indicators/browser-probe.mjs renders it headlessly and reads its figures straight ' +
+  'out of the DOM — the report ships its data to the client, so there is no API call to replay and ' +
+  'nothing to authenticate. Its Subject list carries exactly what is needed: “Number of dwellings”, ' +
+  '“Useful floor area” (splittable by sector), and “Total renovation rate”. What remains is driving ' +
+  'the report’s own controls: Power BI slicers ignore synthetic DOM clicks and need trusted mouse ' +
+  'events, so switching the X-axis from construction period to year has not worked yet. Until that ' +
+  'is built and the result checked against the report baseline, no value is published.';
 
 export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
   // ── Waiting on the EU's 2026 CRT submission (10) ─────────────────────────
@@ -206,22 +207,25 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
 
   // ── No published series exists (2) ───────────────────────────────────────
   'esabcc-b3-residential-renovation-rate': {
-    status: 'never-published',
-    summary: 'Renovation rate is constructed, not published',
+    status: 'unresolved',
+    summary: 'Published by the BSO after all; extraction not built',
     detail:
-      'No institution publishes an annual EU renovation rate. The report built it by combining the ' +
-      'Climate Target Plan impact assessment with Eurostat inputs. Updating it means re-running that ' +
-      'construction, which needs the renovated and total floor-area figures — themselves only in the ' +
-      'Building Stock Observatory’s Power BI database.',
-    sourceUrl: 'https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficient-buildings_en',
+      'This was previously recorded here as a series nobody publishes. That was wrong. The Building ' +
+      'Stock Observatory database carries “Total renovation rate” (and “Deep renovation rate”) as ' +
+      'subjects in its own right, selectable by sector — so the figure does not have to be ' +
+      'reconstructed from the Climate Target Plan impact assessment at all. It shares the extraction ' +
+      'problem with B4: the report is now rendered headlessly and its data read from the DOM, but ' +
+      'driving its Subject and Sector controls needs trusted mouse events rather than synthetic ' +
+      'clicks, which is not yet built.',
+    sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/',
   },
   'esabcc-b3-commercial-renovation-rate': {
-    status: 'never-published',
-    summary: 'Renovation rate is constructed, not published',
+    status: 'unresolved',
+    summary: 'Published by the BSO after all; extraction not built',
     detail:
-      'As the residential series: no published annual figure exists, and rebuilding it depends on ' +
-      'floor-area data held in the Building Stock Observatory’s Power BI database.',
-    sourceUrl: 'https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficient-buildings_en',
+      'As the residential series — “Total renovation rate” is a BSO subject, taken with Sector set to ' +
+      'Service. Same extraction work outstanding.',
+    sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/',
   },
 
   // ── Source not yet cracked (2) ───────────────────────────────────────────
