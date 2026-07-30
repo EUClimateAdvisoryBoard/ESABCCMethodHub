@@ -17,11 +17,19 @@
  * Charts are hand-rolled inline SVG, matching the convention used by the other
  * estimator modules in this repo (see ai-environmental-impact): no chart
  * library, fixed viewBox, responsive via `w-full`.
+ *
+ * The "Live" section is the exception to the everything-is-a-model rule: it
+ * shows the season actually under way, from the Copernicus EFFIS statistics
+ * API (via `live.ts` / `LiveSeason.tsx`) and the EFFIS WMS map service
+ * (`LiveFireMap.tsx`, client-only via next/dynamic because Leaflet needs
+ * `window`).
  */
 
 import { useMemo, useState, type ReactNode } from 'react';
+import dynamic from 'next/dynamic';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import LiveSeason from './LiveSeason';
 import {
   ASSUMPTIONS,
   BASE_1990,
@@ -55,6 +63,16 @@ import {
   type Params,
   type Preset,
 } from './model';
+
+/** Leaflet touches `window` on mount, so the map only ever renders client-side. */
+const LiveFireMap = dynamic(() => import('./LiveFireMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-[480px] w-full items-center justify-center rounded-lg border border-grey-200 bg-grey-50 text-[12px] text-tertiary">
+      Loading live fire map…
+    </div>
+  ),
+});
 
 /* ───────────────────────────────────────────────────────────────── palette */
 
@@ -735,6 +753,15 @@ export default function WildfireSinkRiskPage() {
             <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-tertiary">
               Wildfires &amp; the land sink
             </span>
+            <span className="flex items-center gap-1.5 rounded-full border border-accent-red/30 bg-white px-2.5 py-0.5">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-pulse rounded-full bg-accent-red opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-red" />
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-accent-red">
+                2026 season tracked live · Copernicus EFFIS
+              </span>
+            </span>
           </div>
 
           <h1 className="max-w-3xl text-[38px] font-bold leading-[1.12] text-tertiary-dark">
@@ -934,6 +961,35 @@ export default function WildfireSinkRiskPage() {
       </div>
 
       <div className="mx-auto max-w-content px-6">
+
+        {/* ──────────────────────────────────────────────── 0. LIVE NOW */}
+        <Section
+          eyebrow="0 · Live"
+          title="The 2026 season, while it is still burning"
+          lede={
+            <>
+              Everything else on this page is a model. This is the season actually under way: EU-27 burnt area, fire
+              counts and fire CO₂, pulled from the Copernicus EFFIS statistics service and CAMS, with a running
+              estimate of where 2026 ends up — and what this one season costs the land sink on the reader&rsquo;s
+              current dial settings further down the page.
+            </>
+          }
+        >
+          <LiveSeason p={p} />
+
+          <div className="mt-10">
+            <h4 className="mb-1 text-[13px] font-bold text-tertiary-dark">Where Europe is burning right now</h4>
+            <p className="mb-4 max-w-text text-[12.5px] leading-relaxed text-tertiary">
+              Today&rsquo;s fire-danger forecast, this season&rsquo;s burnt-area footprint, and thermal hotspots from
+              the last 24 hours — rendered live by the Copernicus EFFIS map service. This is the geography behind the
+              module&rsquo;s central caveat: the EU is modelled as one pool, but the burning — and the exposed sink —
+              is overwhelmingly Iberian and Mediterranean.
+            </p>
+            <div className="rounded-lg border border-grey-200 bg-white p-5">
+              <LiveFireMap />
+            </div>
+          </div>
+        </Section>
 
         {/* ─────────────────────────────────────────── 1. THE FIRE RECORD */}
         <Section
