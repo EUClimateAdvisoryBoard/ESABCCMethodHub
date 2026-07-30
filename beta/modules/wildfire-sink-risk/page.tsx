@@ -26,7 +26,10 @@ import {
   ASSUMPTIONS,
   BASE_1990,
   BURNT_AREA,
+  COUNTRY_ANCHORS,
   DEFAULTS,
+  EU27_TOTAL_2023,
+  SINK_NOW,
   END_YEAR,
   FIRST_YEAR,
   FIVE_YEAR_MEAN,
@@ -40,6 +43,7 @@ import {
   SINK_TARGET_2030,
   adjustedSink,
   capBindsFrom,
+  collapse,
   cumulativeExcess,
   excessImpact,
   feasibility,
@@ -565,6 +569,43 @@ function ExtremesFanChart({ p, selectedPct }: { p: Params; selectedPct: number }
   );
 }
 
+/** Country scale — the lost sink against whole national inventories. */
+function CountryScaleChart({ burden }: { burden: number }) {
+  const W = 860;
+  const rowH = 40;
+  const m = { l: 118, r: 210, t: 6, b: 6 };
+  const rowsC = [...COUNTRY_ANCHORS, { name: 'EU-27, all of it', mt: EU27_TOTAL_2023 }];
+  const H = rowsC.length * rowH + m.t + m.b;
+  const iw = W - m.l - m.r;
+  const max = EU27_TOTAL_2023;
+  const sw = (v: number) => R((v / max) * iw);
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img"
+      aria-label="The land sink lost to wildfire compared with whole national emission inventories">
+      {rowsC.map((c, i) => {
+        const y = m.t + i * rowH;
+        const pct = (burden / c.mt) * 100;
+        return (
+          <g key={c.name}>
+            <text x={m.l - 10} y={y + rowH / 2 + 4} textAnchor="end" fontSize={12} fontWeight={600} fill="#3D5265">
+              {c.name}
+            </text>
+            <rect x={m.l} y={y + 9} width={Math.max(2, sw(c.mt))} height={rowH - 20} rx={2}
+              fill={C.planLight} fillOpacity={0.35} />
+            <rect x={m.l} y={y + 9} width={Math.max(2, sw(Math.min(burden, c.mt)))} height={rowH - 20} rx={2}
+              fill={C.fire} />
+            <text x={m.l + sw(c.mt) + 9} y={y + rowH / 2 + 4} fontSize={11} fill={C.axis} className="tabular-nums">
+              {fmt(c.mt)} Mt
+              <tspan fill={C.fire} fontWeight={700}> · {pct < 1 ? '<1' : pct.toFixed(0)}%</tspan>
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
 /** 4 — Tornado: which assumption actually drives the answer. */
 function TornadoChart({ base, p }: { base: number; p: Params }) {
   const rows = SWEEP.map((s) => {
@@ -670,6 +711,8 @@ export default function WildfireSinkRiskPage() {
   const f50 = useMemo(() => feasibility(2050, p), [p]);
   const f30 = useMemo(() => feasibility(2030, p), [p]);
   const capYear = useMemo(() => capBindsFrom(p), [p]);
+  const col40 = useMemo(() => collapse(2040, p), [p]);
+  const col50 = useMemo(() => collapse(2050, p), [p]);
   const cum = useMemo(() => cumulativeExcess(2026, 2040, p), [p]);
   const cum50 = useMemo(() => cumulativeExcess(2026, 2050, p), [p]);
   const e40 = f40.extraBurden;
@@ -788,14 +831,15 @@ export default function WildfireSinkRiskPage() {
             {[
               {
                 yr: '2040', goal: `The −${p.target2040Pct}% target`, f: f40,
-                headline: `−${f40.effectiveReductionPct.toFixed(1)}%`,
-                headlineLabel: `is what the EU actually achieves if nobody makes up the difference`,
+                headline: `${f40.shareOfSinkGrowth.toFixed(0)}%`,
+                headlineLabel:
+                  'of the entire improvement in the land sink the EU is banking on — cancelled by fire',
                 rows: [
-                  ['Land sink lost to fire', mt(f40.extraBurden, 0)],
-                  ['Target missed by', `${f40.ppMissed.toFixed(2)} percentage points`],
-                  ['Extra cuts other sectors must find', `${fmt(Math.round(f40.extraBurden))} Mt every year`],
+                  ['Land sink lost to fire, every year', mt(f40.extraBurden, 0)],
+                  ['Share of all net emissions still allowed in 2040', `${f40.shareOfNetAllowed.toFixed(0)}%`],
                   ['Months of EU-wide climate effort erased', f40.monthsOfEffort.toFixed(1)],
                   ['Cumulative extra CO₂e, 2026-2040', `${fmt(Math.round(cum))} Mt`],
+                  ['The −90% target becomes', `−${f40.effectiveReductionPct.toFixed(1)}%`],
                 ],
               },
               {
@@ -829,6 +873,55 @@ export default function WildfireSinkRiskPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* ── WHY THE PERCENTAGE LOOKS SMALL ─────────────────────────── */}
+          <div className="mt-6 rounded-xl border border-accent-orange/40 bg-surface-orange p-6">
+            <h3 className="text-[13px] font-bold uppercase tracking-[0.1em] text-accent-red">
+              Careful: &ldquo;−{f40.effectiveReductionPct.toFixed(1)}% instead of −90%&rdquo; badly understates this
+            </h3>
+            <p className="mt-3 max-w-text text-[13.5px] leading-relaxed text-tertiary">
+              Measured against 1990, everything looks small — because the 1990 baseline is{' '}
+              {fmt(BASE_1990)} Mt, so <strong className="text-tertiary-dark">one single percentage point is{' '}
+              {fmt(BASE_1990 / 100, 0)} Mt</strong>. The percentage scale is simply too coarse to show a number this
+              size. It is the wrong denominator, and it is the one that makes a serious problem sound like a rounding
+              error.
+            </p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+              {[
+                {
+                  n: `${fmt(Math.round(f40.extraBurden))} Mt`,
+                  d: 'lost every single year in 2040 — not once, but permanently, on the current dial setting',
+                },
+                {
+                  n: `${f40.shareOfSinkGrowth.toFixed(0)}%`,
+                  d: `of the planned sink improvement gone. The EU must grow the sink from ${SINK_NOW} Mt today to ${Math.round(rows.find((r) => r.year === 2040)!.refSink)} Mt — fire takes back this much of that gain`,
+                },
+                {
+                  n: `${f40.shareOfNetAllowed.toFixed(0)}%`,
+                  d: `of everything the EU is still allowed to emit in 2040. Only ${fmt(Math.round(f40.netAllowed))} Mt net is permitted in total`,
+                },
+              ].map((x) => (
+                <div key={x.n} className="rounded-lg bg-white/70 p-4">
+                  <div className="font-mono text-[28px] font-bold leading-none tabular-nums text-accent-red">{x.n}</div>
+                  <p className="mt-2 text-[11.5px] leading-snug text-tertiary">{x.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── COUNTRY SCALE ──────────────────────────────────────────── */}
+          <div className="mt-6 rounded-xl border border-grey-200 bg-white p-6">
+            <h3 className="text-[13px] font-bold uppercase tracking-[0.1em] text-tertiary">
+              What {mt(f40.extraBurden, 0)} a year actually looks like
+            </h3>
+            <p className="mt-2 max-w-text text-[12.5px] leading-relaxed text-tertiary">
+              Against whole national inventories — total 2023 emissions excluding land use. Read the bars as: the sink
+              lost to fire is equivalent to this share of that country&rsquo;s entire annual emissions.
+            </p>
+            <div className="mt-5">
+              <CountryScaleChart burden={f40.extraBurden} />
+            </div>
           </div>
 
           <p className="mt-5 max-w-text text-[11.5px] leading-relaxed text-tertiary">
@@ -1072,6 +1165,70 @@ export default function WildfireSinkRiskPage() {
                 {mt(rows.find((r) => r.year === 2050)!.refSink - rows.find((r) => r.year === 2050)!.adjSink, 0)}
               </strong>{' '}
               — a standing bill that has to be paid every year, forever, in the most expensive currency available.
+            </p>
+          </div>
+        </Section>
+
+        {/* ─────────────────────────── 4b. THE BOUND: NO SINK AT ALL */}
+        <Section
+          eyebrow="The outer bound"
+          title="And if the land sink goes entirely?"
+          lede={
+            <>
+              Worth asking, because it puts every other number on this page in proportion. This is not a wildfire
+              projection — fire alone does not plausibly get here, and the module does not claim it does. But the sink
+              has already fallen from 268 Mt in 2016-18 to 198 Mt in 2023 without anyone choosing it, and at national
+              scale the question is not hypothetical at all: several Member States have watched their land accounts
+              fall towards zero or flip into a net source within a few years, driven by harvesting, drought and forest
+              damage. Fire is one more pressure on the same pile.
+            </>
+          }
+        >
+          <div className="grid gap-4 lg:grid-cols-2">
+            {[col40, col50].map((c) => (
+              <div key={c.year} className="rounded-xl border-2 border-tertiary-dark/25 bg-tertiary-dark p-6 text-white">
+                <div className="flex items-baseline gap-2">
+                  <span className="rounded bg-white px-2 py-0.5 text-[11px] font-bold text-tertiary-dark">{c.year}</span>
+                  <span className="text-[12.5px] font-semibold text-white/70">
+                    {c.year === 2050 ? 'Net zero' : `The −${p.target2040Pct}% target`}, with no land sink at all
+                  </span>
+                </div>
+                <div className="mt-4 font-mono text-[46px] font-bold leading-none tabular-nums text-[#FF9933]">
+                  {c.year === 2050 ? 'zero' : `${c.deeperCutPct.toFixed(0)}%`}
+                </div>
+                <p className="mt-2 text-[12.5px] leading-snug text-white/75">
+                  {c.year === 2050
+                    ? 'Net zero without a sink is not net zero — it is absolute zero. Every farm, furnace, kiln, ship and plane in Europe at zero, or the difference bought in engineered removals.'
+                    : 'deeper every other sector must cut. The gross budget collapses from ' +
+                      `${fmt(Math.round(c.grossWith))} Mt to ${fmt(Math.round(c.grossWithout))} Mt.`}
+                </p>
+                <div className="mt-4 space-y-2 border-t border-white/20 pt-4 text-[12px]">
+                  {[
+                    ['Sink lost', `${fmt(Math.round(c.sinkLost))} Mt/yr`],
+                    ['Reduction achieved if nobody compensates', `−${c.effectiveReductionPct.toFixed(1)}%`],
+                    ['Replacing it with engineered removals', `€${fmt(Math.round(c.engineeredCostBn))} bn per year`],
+                    ['As a share of Spain’s entire emissions', `${((c.sinkLost / 270) * 100).toFixed(0)}%`],
+                  ].map(([k, v]) => (
+                    <div key={k} className="flex items-baseline justify-between gap-3">
+                      <span className="text-white/65">{k}</span>
+                      <strong className="whitespace-nowrap tabular-nums text-white">{v}</strong>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 rounded-lg border border-grey-200 bg-grey-50 p-5">
+            <p className="max-w-text text-[13px] leading-relaxed text-tertiary">
+              The point of the bound is not that it will happen. It is that{' '}
+              <strong className="text-tertiary-dark">
+                {fmt(Math.round(col40.sinkLost))} Mt of the 2040 target — more than everything Spain emits in a year —
+                is being delivered by trees rather than by policy
+              </strong>
+              , and trees are the only part of the plan that can be destroyed by a hot summer. Everything else in the
+              architecture fails gradually and visibly, through missed deadlines and slipped deployment. This part can
+              fail in a fortnight, and did: 22 fires in Iberia burnt 460,585 ha in under two weeks in August 2025.
             </p>
           </div>
         </Section>
