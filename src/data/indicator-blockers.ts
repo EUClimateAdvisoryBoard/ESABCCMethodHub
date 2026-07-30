@@ -1,26 +1,28 @@
 /**
  * Why a report indicator carries no data newer than the report.
  * ---------------------------------------------------------------------------
- * The Indicator Check shows all 97 report series. 68 have post-report data,
+ * The Indicator Check shows all 97 report series. 72 have post-report data,
  * pulled automatically by scripts/esabcc-indicators/refresh-from-sources.mjs.
- * The other 29 do not, and "no data added since the report" on its own is not
+ * The other 25 do not, and "no data added since the report" on its own is not
  * a useful thing to tell a reader — the reasons are genuinely different, and
  * so is what it would take to fix each one.
  *
  * Each entry below records the *tested* reason, not an assumption. Where a
  * source was written off in an earlier pass and later turned out to be
  * reachable (FAOSTAT's bulk files, the UNFCCC Data Interface via its Python
- * client, Eurostat's R5280S biofuel code), those indicators were moved onto the
- * automated path and are no longer listed here.
+ * client, Eurostat's R5280S biofuel code, and now PRODCOM on the Comext
+ * dissemination host), those indicators were moved onto the automated path and
+ * are no longer listed here. The 'not-on-api' status went with them: it existed
+ * only for PRODCOM, and PRODCOM turned out to be on an API after all.
  *
- * Keep this in step with docs-internal/indicator-check-source-refresh-2026-07-29.md.
+ * Keep this in step with docs-internal/indicator-check-source-refresh-2026-07-29.md
+ * and docs-internal/indicator-check-prodcom-unblock-2026-07-30.md.
  */
 
 export type BlockerStatus =
   | 'awaiting-publication'
   | 'source-ended'
   | 'no-public-api'
-  | 'not-on-api'
   | 'pdf-only'
   | 'subscription'
   | 'never-published'
@@ -38,7 +40,7 @@ export interface IndicatorBlocker {
 }
 
 /** When the automated refresh last ran end to end. */
-export const LAST_REFRESH = '29 July 2026';
+export const LAST_REFRESH = '30 July 2026';
 
 /**
  * What each status actually asks of a reader who wants to close the gap.
@@ -53,10 +55,6 @@ export const STATUS_ACTION: Record<BlockerStatus, { effort: 'none' | 'waiting' |
   unresolved: {
     effort: 'work',
     action: 'A known next step exists but is not built. Highest-yield work on this list.',
-  },
-  'not-on-api': {
-    effort: 'work',
-    action: 'Needs the PRODCOM portal driven with a browser, or the figures entered by hand.',
   },
   'pdf-only': {
     effort: 'work',
@@ -92,7 +90,6 @@ export const BLOCKER_META: Record<BlockerStatus, { label: string; tone: 'amber' 
   'awaiting-publication': { label: 'Not published yet', tone: 'amber' },
   'source-ended': { label: 'Source series ended', tone: 'slate' },
   'no-public-api': { label: 'No public data export', tone: 'slate' },
-  'not-on-api': { label: 'Not on the Eurostat API', tone: 'slate' },
   'pdf-only': { label: 'Published as PDF only', tone: 'slate' },
   subscription: { label: 'Subscription source', tone: 'slate' },
   'never-published': { label: 'No published series exists', tone: 'slate' },
@@ -108,13 +105,18 @@ const UNFCCC_CRT =
   'submission and become available when that is published in machine-readable form. Nothing to ' +
   'search for in the meantime.';
 
-const PRODCOM =
-  'The report used Eurostat PRODCOM (DS-056120 sold production, DS-059268 trade). PRODCOM sits ' +
-  'outside Eurostat’s entire dissemination infrastructure: it appears neither in the 1.98 MB ' +
-  'dissemination catalogue nor in the bulk-file inventory (8,233 datasets, no match under any ' +
-  'code), so there is no API address and no bulk file to point a recipe at. Its own database page ' +
-  'is a Liferay portal driven by a JavaScript search portlet with no direct download links in the ' +
-  'HTML — extracting from it means driving a browser, not fetching a URL.';
+/**
+ * Kept for the entries below that still cite PRODCOM. The access problem it
+ * used to describe is SOLVED — see the 30 July 2026 note. PRODCOM is served by
+ * a second dissemination stack under /eurostat/api/comext/, which is why every
+ * probe of the main /eurostat/api/dissemination/ host (and of the catalogue and
+ * bulk-file inventory, which only cover that host) came back empty.
+ */
+const PRODCOM_SOLVED =
+  'PRODCOM itself is no longer a blocker: ds-059358 (sold production and trade) and ds-059359 ' +
+  '(total production) answer over the Comext dissemination host, and I2 (chemicals) is refreshed ' +
+  'from them. The report’s own dataset codes (DS-056120, DS-059268, DS-056121) have been retired ' +
+  'and replaced by these.';
 
 const BSO =
   'Extraction is solved and the answer is that the data is not there. ' +
@@ -203,18 +205,20 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
     sourceUrl: 'https://cefic.org/low-carbon-projects-map/',
   },
 
-  // ── Not on the Eurostat dissemination API (4) ────────────────────────────
-  'esabcc-i2-chemicals-use': { status: 'not-on-api', summary: 'PRODCOM is not on the Eurostat JSON API', detail: `${PRODCOM} Apparent use also needs the trade legs, so it is blocked twice over.`, sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database' },
-  'esabcc-i2-chemicals-trade-balance': { status: 'not-on-api', summary: 'PRODCOM is not on the Eurostat JSON API', detail: PRODCOM, sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database' },
-  'esabcc-i2-steel-trade-balance': { status: 'not-on-api', summary: 'Trade legs come from PRODCOM, not the JSON API', detail: PRODCOM, sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database' },
+  // ── No public data export (1) ────────────────────────────────────────────
   'esabcc-i2-cement-use': {
-    status: 'not-on-api',
+    status: 'no-public-api',
     summary: 'Cembureau supplied the tonnage directly to the report',
     detail:
       'Apparent cement consumption came to the report from Cembureau on request; there is no public API ' +
-      'or recurring data file. Cement *production* is now refreshed automatically from the Eurostat ' +
-      'production index, but consumption additionally needs import and export tonnages, which sit in ' +
-      'PRODCOM and are not on the JSON API either.',
+      'or recurring data file. Cement *production* is refreshed automatically from the Eurostat ' +
+      'production index. The trade legs are no longer the obstacle — extra-EU cement trade is on the ' +
+      'Comext host as CPA 2351 — but they do not close the gap either: the report’s own workbook shows ' +
+      'production minus Cembureau use (7-15 Mt) diverging from the Eurostat trade balance, so Cembureau’s ' +
+      'consumption figure is not a production-minus-net-trade identity and cannot be rebuilt from one. ' +
+      'Unblocking this needs the series from Cembureau, or a decision to re-base the indicator on ' +
+      'apparent consumption computed from published production and trade — a different definition, ' +
+      'which would have to be applied to the whole series, not spliced onto the report’s.',
     sourceUrl: 'https://www.cembureau.eu/library/reports/',
   },
 
@@ -296,12 +300,16 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
     status: 'withheld',
     summary: 'Derivable, but the scopes do not match',
     detail:
-      'Unlike the steel and cement intensities — both now refreshed — this one cannot be derived ' +
-      'reliably. CRF 2.B covers the whole chemical industry while NACE C201 covers basic chemicals only, ' +
-      'and dividing one by the other produces a 29% rise in emission intensity by 2024 that cannot be ' +
-      'checked against the report’s own PRODCOM tonnage denominator. Publishing that would look like an ' +
-      'update and be an artefact of the mismatch, so the series is held at its report value until the ' +
-      'correct denominator is available.',
-    sourceUrl: 'https://ec.europa.eu/eurostat/web/prodcom/database',
+      'Still withheld, but for a smaller reason than before. The CRF 2.B ÷ NACE C201 ratio that was ' +
+      'tried is a scope mismatch — whole chemical industry over basic chemicals only — and produces a ' +
+      '29% rise in intensity by 2024 that is an artefact. What the report actually did is now legible: ' +
+      'emissions from the EU ETS data viewer at activity code 42 (bulk organic chemicals), divided by ' +
+      'PRODCOM *total* production (DS-056121, now ds-059359) of ethylene, propylene and aromatics. ' +
+      `${PRODCOM_SOLVED} Half the recipe therefore works: ethylene and propylene reproduce the ` +
+      'report’s denominator exactly (2013: 16.096 and 12.936 Mt). Two pieces are missing — the ' +
+      '“aromatics” line is not any subset of the PRODCOM aromatic codes tried (best fit 6% off, and ' +
+      'benzene+toluene+xylenes alone is 22% short), and the ETS activity-code numerator is not yet ' +
+      'wired. Until both are settled the series stays at its report value.',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/ds-059359/default/table?lang=en',
   },
 };
