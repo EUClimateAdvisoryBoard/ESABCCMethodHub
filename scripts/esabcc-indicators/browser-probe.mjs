@@ -31,14 +31,23 @@
  *        date on a project is its website posting date, which does not
  *        reproduce the report's own 2023 count (135 vs 171): the map has been
  *        re-curated, so a comparable time series cannot be rebuilt from it.
- *   B4   The Building Stock Observatory database is a Power BI embed,
+ *   B4/B3  The Building Stock Observatory database is a Power BI embed,
  *        reportId 5ca1ef93-d90b-43f9-94bc-0bdc51876f9d, behind the consent
- *        iframe. `openBso()` below now renders it headlessly and reads its
- *        "Table" view straight out of the DOM — the report ships its data to
- *        the client, so there are no querydata calls to intercept and nothing
- *        to authenticate against. What remains is driving the report's own
- *        controls (Subject / Year / Country, and the Trend tab for a series)
- *        and mapping the resulting rows onto B4's four indicators.
+ *        iframe. `openBso()` renders it headlessly and its controls are
+ *        driveable — but the answer is negative: the Year filter offers a
+ *        single year, 2020, for every subject except "Number of dwellings",
+ *        which adds 2022. The BSO no longer carries the multi-year series the
+ *        report was built on, so there is nothing here to refresh B4 or B3 with.
+ *        Do not re-attempt the extraction; the gap is upstream.
+ *
+ * TWO THINGS THAT COST TIME HERE, WORTH KNOWING
+ * --------------------------------------------
+ *   • Power BI slicers ignore synthetic `element.click()` entirely. They need
+ *     trusted input — a Playwright locator `.click()`. A synthetic click looks
+ *     like it worked (no error, returns true) and changes nothing.
+ *   • Slicer changes do not take effect until the report's own GO button is
+ *     pressed; until then the slicer header reads "(Not yet applied)".
+ *     Reading the visual before pressing GO gives the previous selection's data.
  *
  * Usage:  node scripts/esabcc-indicators/browser-probe.mjs <url> [waitMs]
  *

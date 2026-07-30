@@ -248,6 +248,53 @@ around 12 of the 19. The pattern that worked for the UNFCCC Data Interface
 (`scripts/esabcc-indicators/pull-unfccc-di.py`: a standalone script run on a
 normal machine, output handed back for wiring) applies here too.
 
+## 6c. The Building Stock Observatory: extraction solved, data absent
+
+B4 ×4 and B3 ×2 were the largest remaining cluster and were expected to be the
+highest-yield work. They are not recoverable, and the reason is worth recording
+so nobody spends the same time again.
+
+Getting there took two fixes, both generally useful:
+
+- **Power BI slicers ignore synthetic clicks.** `element.click()` via
+  `frame.evaluate` returns true, raises nothing, and changes nothing. They need
+  trusted input — a Playwright locator `.click()`. This alone accounted for
+  several failed attempts that looked like the page rejecting automation.
+- **Slicer changes need the report's own GO button.** Until it is pressed the
+  slicer header reads "(Not yet applied)" and the visual still shows the
+  previous selection's data.
+
+With both applied the report is fully driveable — subjects switch, the Trend
+bookmark engages, the Year filter opens. And the Year filter is the answer:
+
+| Subject | Years offered |
+|---|---|
+| Number of buildings | 2020 |
+| Number of dwellings | 2020, 2022 |
+| Useful floor area | 2020 |
+| Total renovation rate | 2020 |
+
+Confirmed on two independent runs. **The BSO no longer carries the multi-year
+series the report was built on** — it is effectively a 2020 snapshot, with 2022
+added for dwellings only.
+
+That kills all six:
+
+- **B4 (floor area)** and **B3 ×2** already hold 2020, which is the only year
+  the BSO offers. There is no newer value to take.
+- **B4 (dwellings, surface residential, surface tertiary)** end at 2016/2019 in
+  the report and are stated as an index against 2005. The BSO holds neither a
+  2005 base nor any year overlapping the report's own last value, so even the
+  2022 dwellings figure cannot be placed on the report's basis.
+
+Reclassified from `unresolved` to `source-ended`. Unblocking needs the
+historical series from DG ENER, or a decision to re-base these indicators onto a
+source that still publishes one — an editorial call, not an engineering one.
+
+One correction stands from the previous pass: B3 was recorded as a series nobody
+publishes, and that was wrong. The BSO does publish "Total renovation rate". It
+simply does not publish it for any year the report does not already have.
+
 ## 7. Net effect on the page
 
 | | Before | After |

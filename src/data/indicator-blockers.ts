@@ -68,7 +68,9 @@ export const STATUS_ACTION: Record<BlockerStatus, { effort: 'none' | 'waiting' |
   },
   'source-ended': {
     effort: 'work',
-    action: 'Needs a decision: re-derive on the report’s own basis, or retire the indicator.',
+    action:
+      'The publisher has stopped carrying the series. Needs a request to them, a re-base onto a ' +
+      'source that still publishes it, or a decision to retire the indicator.',
   },
   subscription: {
     effort: 'work',
@@ -115,15 +117,14 @@ const PRODCOM =
   'HTML — extracting from it means driving a browser, not fetching a URL.';
 
 const BSO =
-  'The EU Building Stock Observatory database is a Power BI report (reportId ' +
-  '5ca1ef93-d90b-43f9-94bc-0bdc51876f9d) behind two consent gates. It is reachable: ' +
-  'scripts/esabcc-indicators/browser-probe.mjs renders it headlessly and reads its figures straight ' +
-  'out of the DOM — the report ships its data to the client, so there is no API call to replay and ' +
-  'nothing to authenticate. Its Subject list carries exactly what is needed: “Number of dwellings”, ' +
-  '“Useful floor area” (splittable by sector), and “Total renovation rate”. What remains is driving ' +
-  'the report’s own controls: Power BI slicers ignore synthetic DOM clicks and need trusted mouse ' +
-  'events, so switching the X-axis from construction period to year has not worked yet. Until that ' +
-  'is built and the result checked against the report baseline, no value is published.';
+  'Extraction is solved and the answer is that the data is not there. ' +
+  'scripts/esabcc-indicators/browser-probe.mjs renders the Building Stock Observatory report ' +
+  'headlessly and drives its controls, and its Year filter offers a single year — 2020 — for every ' +
+  'subject except “Number of dwellings”, which adds 2022. The BSO no longer carries the multi-year ' +
+  'series the report was built on. Since the report states these as an index against 2005 and the ' +
+  'BSO holds no 2005 base and no year overlapping the report’s own last value, even the 2022 ' +
+  'dwellings figure cannot be placed on the report’s basis. Unblocking this needs the historical ' +
+  'series from DG ENER, or a decision to re-base the indicator on a source that publishes one.';
 
 export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
   // ── Waiting on the EU's 2026 CRT submission (10) ─────────────────────────
@@ -172,10 +173,10 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
   },
 
   // ── No public data export (6) ────────────────────────────────────────────
-  'esabcc-b4-dwellings': { status: 'unresolved', summary: 'Power BI report now readable; extraction not built', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
-  'esabcc-b4-floor-area': { status: 'unresolved', summary: 'Power BI report now readable; extraction not built', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
-  'esabcc-b4-surface-residential': { status: 'unresolved', summary: 'Power BI report now readable; extraction not built', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
-  'esabcc-b4-surface-tertiary': { status: 'unresolved', summary: 'Power BI report now readable; extraction not built', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
+  'esabcc-b4-dwellings': { status: 'source-ended', summary: 'BSO now holds only a 2020 snapshot, not the series', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
+  'esabcc-b4-floor-area': { status: 'source-ended', summary: 'BSO now holds only a 2020 snapshot, not the series', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
+  'esabcc-b4-surface-residential': { status: 'source-ended', summary: 'BSO now holds only a 2020 snapshot, not the series', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
+  'esabcc-b4-surface-tertiary': { status: 'source-ended', summary: 'BSO now holds only a 2020 snapshot, not the series', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
   'esabcc-i7b-cement-projects': {
     status: 'no-public-api',
     summary: 'Cembureau project map publishes no data file',
@@ -251,24 +252,24 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
 
   // ── No published series exists (2) ───────────────────────────────────────
   'esabcc-b3-residential-renovation-rate': {
-    status: 'unresolved',
-    summary: 'Published by the BSO after all; extraction not built',
+    status: 'source-ended',
+    summary: 'BSO publishes it, but only for 2020 — the report’s own last year',
     detail:
-      'This was previously recorded here as a series nobody publishes. That was wrong. The Building ' +
-      'Stock Observatory database carries “Total renovation rate” (and “Deep renovation rate”) as ' +
-      'subjects in its own right, selectable by sector — so the figure does not have to be ' +
-      'reconstructed from the Climate Target Plan impact assessment at all. It shares the extraction ' +
-      'problem with B4: the report is now rendered headlessly and its data read from the DOM, but ' +
-      'driving its Subject and Sector controls needs trusted mouse events rather than synthetic ' +
-      'clicks, which is not yet built.',
+      'Two corrections to what was recorded here before. First, this is not a series nobody ' +
+      'publishes: the Building Stock Observatory carries “Total renovation rate” (and “Deep ' +
+      'renovation rate”) as subjects in their own right, selectable by sector, so it never needed ' +
+      'reconstructing from the Climate Target Plan impact assessment. Second, that does not help — ' +
+      'driving the report’s Year filter shows a single year available, 2020, which is exactly the ' +
+      'last year the report already carries. There is no newer value to take. Unblocking this needs ' +
+      'DG ENER to publish beyond 2020.',
     sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/',
   },
   'esabcc-b3-commercial-renovation-rate': {
-    status: 'unresolved',
-    summary: 'Published by the BSO after all; extraction not built',
+    status: 'source-ended',
+    summary: 'BSO publishes it, but only for 2020 — the report’s own last year',
     detail:
-      'As the residential series — “Total renovation rate” is a BSO subject, taken with Sector set to ' +
-      'Service. Same extraction work outstanding.',
+      'As the residential series: “Total renovation rate” is a BSO subject taken with Sector set to ' +
+      'Service, but the database offers only 2020, which the report already has.',
     sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/',
   },
 
