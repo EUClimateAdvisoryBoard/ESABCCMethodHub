@@ -152,6 +152,35 @@ export const SECTOR_2040: { sector: string; mt: number; color: string }[] = [
 /** Average tailpipe CO2 of one EU passenger car, tCO2/yr — for equivalences. */
 export const CAR_TCO2_YR = 2.0;
 
+/**
+ * Cost of closing a removals shortfall with engineered (DACCS-class) removals,
+ * €/tCO2. Order-of-magnitude only: current costs run far higher, and 2040-50
+ * projections span roughly €200-600/t. Used solely to price the 2050 gap, where
+ * there is no cheaper option left because gross emissions are already at their
+ * residual floor.
+ */
+export const ENGINEERED_COST_EUR_T = 400;
+
+/**
+ * Growth-rate scenarios for burnt area. The point of the module is that nobody
+ * knows which of these is right, so they are presented as a spread rather than
+ * with one blessed as central.
+ *
+ * The 8%/yr case is worth noting: compounded from the five-year mean it reaches
+ * almost exactly the same 2040 burnt area as extending the straight line
+ * through 2021-25 (~2.1 Mha), so it is the compound equivalent of "the recent
+ * record simply continues".
+ */
+export type GrowthScenario = { pct: number; label: string; blurb: string };
+
+export const GROWTH_SCENARIOS: GrowthScenario[] = [
+  { pct: 0, label: 'Stops worsening', blurb: 'Burnt area holds at the 2021-25 average. Even this loses sink, because that average is already above the fire load the projections assume.' },
+  { pct: 2.5, label: 'Slow', blurb: 'Fire load creeps up. Roughly what you get if warming continues but prevention improves in step.' },
+  { pct: 5, label: 'Steady', blurb: 'Sustained worsening — fire seasons lengthen and intensify faster than management adapts.' },
+  { pct: 8, label: 'Recent record continues', blurb: 'Compounded, this reaches the same 2040 burnt area (~2.1 Mha) as extending the straight line through 2021-25.' },
+  { pct: 12, label: 'Compounding', blurb: 'Fire-climate feedbacks bite: drought, fuel accumulation and repeat burns reinforce each other.' },
+];
+
 /* ═══════════════════════════════════════════════════════ 3. PARAMETERS */
 
 export type ProjectionMode = 'flat' | 'growth' | 'trend';
@@ -190,7 +219,13 @@ export type Params = {
 export const DEFAULTS: Params = {
   mode: 'growth',
   anchorHa: Math.round(FIVE_YEAR_MEAN),
-  growthPct: 2.5,
+  /**
+   * No default here is neutral, so this one is stated plainly rather than
+   * dressed up as central: 5%/yr sits between "warming continues but prevention
+   * keeps pace" and "the recent record continues". The whole point of the
+   * module is that this is the reader's dial, not the author's judgement.
+   */
+  growthPct: 5,
   embeddedHa: LONG_RUN_MEAN,
 
   fuelLoad: 42,
@@ -218,34 +253,34 @@ export type Preset = {
 export const PRESETS: Preset[] = [
   {
     id: 'central',
-    label: 'Central — five-year mean, slow growth',
+    label: 'Default — 5%/yr worsening',
     blurb:
-      'Burnt area settles at the 2021-25 average and creeps up 2.5%/yr with a warming climate. Mid-range fuel loads and a 20-year recovery. This is the module’s default and the most defensible single case.',
+      'Burnt area starts at the 2021-25 average and worsens 5%/yr. Mid-range fuel loads and a 20-year recovery. Nothing about this is privileged — it is a starting point for moving the growth dial, not a forecast.',
     over: {},
   },
   {
     id: 'held',
-    label: 'Held — no worsening',
+    label: 'Fires stop getting worse',
     blurb:
-      'Optimistic. Burnt area stays flat at the five-year mean forever: better suppression and fuel management exactly cancel a hotter, drier climate. Even here the sink still loses ground, because the five-year mean is already above the long-run average the inventories assume.',
+      'Burnt area stays flat at the five-year mean forever: suppression and fuel management exactly cancel a hotter, drier climate. Even here the sink loses ground, because the five-year mean is already above the fire load the inventories assume.',
     over: { mode: 'flat', growthPct: 0 },
   },
   {
     id: 'trend',
-    label: 'Trend — the last five years continue',
+    label: 'The recent record continues',
     blurb:
-      'The stress case. The straight line through 2021-25 (about +84,000 ha every year) is simply extended. Five noisy points and a record year make this a weak statistical basis — but it is what the recent record actually says, and it is the case in which the 2040 target visibly breaks.',
+      'The straight line through 2021-25 — about +84,000 ha every year — simply extended, reaching over 2 Mha a year by 2040. Compounded, 8%/yr lands in the same place.',
     over: { mode: 'trend' },
   },
   {
     id: 'severe',
-    label: 'Severe — hotter fires, slower recovery',
+    label: 'Hotter fires, slower recovery',
     blurb:
-      'Same 2025-record starting point, faster growth, heavier fuel loads and a 35-year recovery in fire-degraded Mediterranean stands. Tests what happens if fires get worse rather than merely more frequent.',
+      'Starts from the 2025 record rather than the average, grows 8%/yr, with heavier fuel loads and a 35-year recovery in fire-degraded Mediterranean stands. Tests fires getting worse rather than merely more frequent.',
     over: {
       mode: 'growth',
       anchorHa: 1_079_538,
-      growthPct: 4,
+      growthPct: 8,
       fuelLoad: 55,
       recoveryYears: 35,
       decompShare: 0.35,
@@ -270,6 +305,22 @@ export const PRESETS: Preset[] = [
 
 export const END_YEAR = 2050;
 
+/**
+ * Crude physical saturation guard on annual burnt area, ha.
+ *
+ * Unbounded compound growth is nonsense over 25 years: at 12%/yr the naive
+ * formula reaches 11 Mha in 2050, which would be roughly 7% of all EU forest
+ * burning every single year. There is not enough fuel on the continent for
+ * that, and land that burnt last year cannot carry a full fire load this year.
+ *
+ * 5 Mha/yr is itself far beyond anything ever observed — about five times the
+ * 2025 record — so this cap never binds in any plausible scenario. It exists
+ * only to stop the high-growth extremes producing physically impossible
+ * numbers. Where it binds, the UI says so, because a saturated projection is
+ * no longer really a projection.
+ */
+export const MAX_ANNUAL_HA = 5_000_000;
+
 /** Burnt area in a given year under the chosen projection mode, ha. */
 export function areaInYear(year: number, p: Params): number {
   const obs = BURNT_AREA.find((d) => d.year === year);
@@ -277,17 +328,28 @@ export function areaInYear(year: number, p: Params): number {
   if (year < FIRST_YEAR) return p.embeddedHa;
 
   const dt = year - LAST_OBS_YEAR;
+  let v: number;
   switch (p.mode) {
     case 'flat':
-      return p.anchorHa;
+      v = p.anchorHa;
+      break;
     case 'growth':
-      return p.anchorHa * Math.pow(1 + p.growthPct / 100, dt);
-    case 'trend': {
+      v = p.anchorHa * Math.pow(1 + p.growthPct / 100, dt);
+      break;
+    case 'trend':
       // Extend the OLS line; never let it go negative.
-      const v = OLS.meanHa + OLS.slope * (year - OLS.meanYear);
-      return Math.max(0, v);
-    }
+      v = OLS.meanHa + OLS.slope * (year - OLS.meanYear);
+      break;
   }
+  return Math.min(MAX_ANNUAL_HA, Math.max(0, v));
+}
+
+/** First year in which the saturation cap binds, or null if it never does. */
+export function capBindsFrom(p: Params): number | null {
+  for (let y = LAST_OBS_YEAR + 1; y <= END_YEAR; y++) {
+    if (areaInYear(y, p) >= MAX_ANNUAL_HA - 1) return y;
+  }
+  return null;
 }
 
 export type Impact = {
@@ -430,6 +492,16 @@ export type Feasibility = {
    * framing in the module.
    */
   monthsOfEffort: number;
+  /**
+   * The reduction actually achieved if nobody compensates, % vs 1990.
+   * This is the most direct statement of the effect: a −90% target quietly
+   * becomes −89.5%, and net zero quietly becomes net positive.
+   */
+  effectiveReductionPct: number;
+  /** Percentage points of the target missed — the shortfall over the 1990 base. */
+  ppMissed: number;
+  /** Cost of closing the shortfall with engineered removals, € bn per year. */
+  engineeredCostBn: number;
 };
 
 /** Net emissions permitted in 2040 under a `target2040Pct` cut vs 1990. */
@@ -461,6 +533,9 @@ export function feasibility(year: number, p: Params): Feasibility {
     burdenPctOfSink: ref > 0 ? (loss / ref) * 100 : 0,
     carsMillions: (loss * 1e6) / CAR_TCO2_YR / 1e6,
     monthsOfEffort: annualEffort > 0 ? (loss / annualEffort) * 12 : 0,
+    effectiveReductionPct: (1 - (netAllowed + loss) / BASE_1990) * 100,
+    ppMissed: (loss / BASE_1990) * 100,
+    engineeredCostBn: (loss * 1e6 * ENGINEERED_COST_EUR_T) / 1e9,
   };
 }
 
