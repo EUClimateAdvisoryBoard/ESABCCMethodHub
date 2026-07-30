@@ -629,7 +629,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 7.021 }, { year: 2006, value: 9.012 }, { year: 2007, value: 11.50 }, { year: 2008, value: 13.99 }, { year: 2009, value: 16.88 }, { year: 2010, value: 18.76 }, { year: 2011, value: 19.87 }, { year: 2012, value: 19.58 }, { year: 2013, value: 20.40 }, { year: 2014, value: 22.09 }, { year: 2015, value: 20.52 }, { year: 2016, value: 20.36 }, { year: 2017, value: 22.28 }, { year: 2018, value: 22.29 }, { year: 2019, value: 22.14 }, { year: 2020, value: 22.95 }, { year: 2021, value: 23.89 }],
+    data: [{ year: 2005, value: 7.021 }, { year: 2006, value: 9.012 }, { year: 2007, value: 11.5 }, { year: 2008, value: 13.99 }, { year: 2009, value: 16.88 }, { year: 2010, value: 18.76 }, { year: 2011, value: 19.87 }, { year: 2012, value: 19.58 }, { year: 2013, value: 20.4 }, { year: 2014, value: 22.09 }, { year: 2015, value: 20.52 }, { year: 2016, value: 20.36 }, { year: 2017, value: 22.28 }, { year: 2018, value: 22.29 }, { year: 2019, value: 22.14 }, { year: 2020, value: 22.95 }, { year: 2021, value: 23.89 }, { year: 2022, value: 25.19, afterReport: true }, { year: 2023, value: 24.56, afterReport: true }, { year: 2024, value: 24.15, afterReport: true }, { year: 2025, value: 24.51, afterReport: true }],
   },
   {
     id: 'esabcc-l1-lulucf-net',
@@ -821,7 +821,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'up',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2008, value: 11.92 }, { year: 2009, value: 13.28 }, { year: 2010, value: 13.76 }, { year: 2011, value: 14.30 }, { year: 2012, value: 14.12 }, { year: 2013, value: 13.13 }, { year: 2014, value: 12.93 }, { year: 2015, value: 12.75 }, { year: 2016, value: 12.65 }, { year: 2017, value: 12.91 }, { year: 2018, value: 12.93 }, { year: 2019, value: 11.94 }],
+    data: [{ year: 2008, value: 11.92 }, { year: 2009, value: 13.28 }, { year: 2010, value: 13.76 }, { year: 2011, value: 14.3 }, { year: 2012, value: 14.12 }, { year: 2013, value: 13.13 }, { year: 2014, value: 12.93 }, { year: 2015, value: 12.75 }, { year: 2016, value: 12.65 }, { year: 2017, value: 12.91 }, { year: 2018, value: 12.93 }, { year: 2019, value: 11.94 }, { year: 2020, value: 12.32, afterReport: true }, { year: 2021, value: 9.41, afterReport: true }, { year: 2022, value: 6.86, afterReport: true }, { year: 2023, value: 6.75, afterReport: true }],
   },
   {
     id: 'esabcc-f-cleantech-investment',
@@ -871,7 +871,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2008, value: 173.8 }, { year: 2009, value: 113.5 }, { year: 2010, value: 139.1 }, { year: 2011, value: 147.8 }, { year: 2012, value: 132.2 }, { year: 2013, value: 132.1 }, { year: 2014, value: 135.7 }, { year: 2015, value: 142.1 }, { year: 2016, value: 146.8 }, { year: 2017, value: 148.9 }, { year: 2018, value: 152.7 }, { year: 2019, value: 144.8 }, { year: 2020, value: 129.3 }, { year: 2021, value: 149.0 }],
+    data: [{ year: 2008, value: 173.8 }, { year: 2009, value: 113.5 }, { year: 2010, value: 139.1 }, { year: 2011, value: 147.8 }, { year: 2012, value: 132.2 }, { year: 2013, value: 132.1 }, { year: 2014, value: 135.7 }, { year: 2015, value: 142.1 }, { year: 2016, value: 146.8 }, { year: 2017, value: 148.9 }, { year: 2018, value: 152.7 }, { year: 2019, value: 144.8 }, { year: 2020, value: 129.3 }, { year: 2021, value: 149 }, { year: 2022, value: 138.4, afterReport: true }, { year: 2023, value: 130.1, afterReport: true }, { year: 2024, value: 128.7, afterReport: true }, { year: 2025, value: 134.4, afterReport: true }],
   },
   {
     id: 'esabcc-i2-steel-trade-balance',

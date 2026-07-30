@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T10:00:31.692Z",
+  "generatedAt": "2026-07-30T10:58:36.034Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
@@ -254,6 +254,84 @@
         {
           "year": 2025,
           "value": 56
+        }
+      ]
+    },
+    {
+      "id": "esabcc-f-climate-patents-share",
+      "sourceTitle": "OECD DSD_PAT_DEV@DF_PAT_DEV · environment-related ÷ all-technology patent families (size 2+), EU-27 summed from member states",
+      "sourceUrl": "https://data-explorer.oecd.org/vis?df[ds]=dsDisseminate&df[id]=DSD_PAT_DEV%40DF_PAT_DEV",
+      "note": "Spliced: the current vintage revises the report years upward (report 2019 = 11.94 reads 14.44 today — counts fill in as families publish), so only the year-on-year change is applied to the report baseline. The newest one-two years are still filling in and revise upward on later runs; the refresh regenerates them each time. Member-state sum verified identical to OECD’s own EU27_2020 ENV_PAT aggregate (fractional counting), which has no TOT counterpart.",
+      "status": "updated",
+      "baseYear": 2019,
+      "newPoints": [
+        {
+          "year": 2020,
+          "value": 12.32
+        },
+        {
+          "year": 2021,
+          "value": 9.41
+        },
+        {
+          "year": 2022,
+          "value": 6.86
+        },
+        {
+          "year": 2023,
+          "value": 6.75
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a7-bioenergy-feedstock",
+      "sourceTitle": "OECD-FAO Agricultural Outlook · EU biofuel use, wheat + maize + other coarse grains + vegetable oil",
+      "sourceUrl": "https://data-explorer.oecd.org/vis?df[ds]=dsDisseminate&df[id]=DSD_AGR%40DF_OUTLOOK_2026_2035",
+      "note": "Spliced proxy for the JRC medium-term outlook figure, whose own data is now DataM-token-gated with no published annex (probed 2026-07-30). Same Aglink-Cosimo family; wheat+maize+other-coarse-grains+vegetable-oil biofuel use reproduces the report within ~2% over 2010-2019, with a 4-10% vintage gap on 2020-21 — trend only, YoY change × report baseline. Newest edition resolved from the SDMX dataflow catalogue on each run; projection years (the edition id’s first year onward) are excluded, so the series ends at the outlook’s estimate year.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 25.19
+        },
+        {
+          "year": 2023,
+          "value": 24.56
+        },
+        {
+          "year": 2024,
+          "value": 24.15
+        },
+        {
+          "year": 2025,
+          "value": 24.51
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i2-steel-use",
+      "sourceTitle": "Eurofer, European Steel in Figures (newest edition) · apparent steel consumption, chart data labels",
+      "sourceUrl": "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2026",
+      "note": "Direct — the chart’s data labels are the published figures (’000 t → Mt), and the 2021 anchor reproduces the report at 1.009×. The series row is identified by matching the report’s own 2016-2020 values, so an edition that reorders the page cannot silently swap in real consumption. Edition discovered from the publications listing each run.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 138.4
+        },
+        {
+          "year": 2023,
+          "value": 130.1
+        },
+        {
+          "year": 2024,
+          "value": 128.7
+        },
+        {
+          "year": 2025,
+          "value": 134.4
         }
       ]
     },
@@ -1030,6 +1108,76 @@
       ]
     },
     {
+      "id": "esabcc-i2-chemicals-use",
+      "sourceTitle": "Eurostat PRODCOM ds-059358/ds-059367 · sold production + imports − exports of the report’s seven base organic chemicals · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/ds-059358/1.0?c[reporter]=EU27_2020&c[product]=20141130,20141140,20141223,20141225,20141243,20141245,20141247&c[indicators]=PRODQNT,IMPQNT,EXPQNT",
+      "note": "Apparent use = production + imports − exports, over the same seven products the report used.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 24.31
+        },
+        {
+          "year": 2024,
+          "value": 26.2
+        },
+        {
+          "year": 2025,
+          "value": 22.95
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i2-chemicals-trade-balance",
+      "sourceTitle": "Eurostat PRODCOM ds-059358/ds-059367 · exports − imports of the report’s seven base organic chemicals · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/ds-059358/1.0?c[reporter]=EU27_2020&c[product]=20141130,20141140,20141223,20141225,20141243,20141245,20141247&c[indicators]=IMPQNT,EXPQNT",
+      "note": "Trade balance = exports − imports (negative = net importer), the report’s own sign convention.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": -1.239
+        },
+        {
+          "year": 2024,
+          "value": -1.457
+        },
+        {
+          "year": 2025,
+          "value": -1.357
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i2-steel-trade-balance",
+      "sourceTitle": "Eurostat ds-059366 · extra-EU27 exports − imports of CPA 2410 basic iron, steel & ferro-alloys, quantity · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/ds-059366/1.0?c[reporter]=EU27_2020&c[partner]=EXT_EU27_2020&c[product]=2410&c[indicators]=QUANTITY_KG",
+      "note": "Reproduces the report’s 2008-2021 series to 5e-5 relative error, so taken directly rather than spliced.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": -26.955
+        },
+        {
+          "year": 2023,
+          "value": -23.706
+        },
+        {
+          "year": 2024,
+          "value": -23.78
+        },
+        {
+          "year": 2025,
+          "value": -30.891
+        }
+      ]
+    },
+    {
       "id": "esabcc-a2-bovine-production",
       "sourceTitle": "Eurostat apro_mt_pann · bovine meat (B1000) slaughterings · EU27_2020",
       "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pann?format=JSON&geo=EU27_2020&meat=B1000&meatitem=SLAUGHT&unit=THS_T",
@@ -1380,76 +1528,6 @@
         {
           "year": 2024,
           "value": 15.32
-        }
-      ]
-    },
-    {
-      "id": "esabcc-i2-chemicals-use",
-      "sourceTitle": "Eurostat PRODCOM ds-059358/ds-059367 · sold production + imports − exports of the report’s seven base organic chemicals · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/ds-059358/1.0?c[reporter]=EU27_2020&c[product]=20141130,20141140,20141223,20141225,20141243,20141245,20141247&c[indicators]=PRODQNT,IMPQNT,EXPQNT",
-      "note": "Apparent use = production + imports − exports, over the same seven products the report used.",
-      "status": "updated",
-      "baseYear": 2022,
-      "newPoints": [
-        {
-          "year": 2023,
-          "value": 24.31
-        },
-        {
-          "year": 2024,
-          "value": 26.2
-        },
-        {
-          "year": 2025,
-          "value": 22.95
-        }
-      ]
-    },
-    {
-      "id": "esabcc-i2-chemicals-trade-balance",
-      "sourceTitle": "Eurostat PRODCOM ds-059358/ds-059367 · exports − imports of the report’s seven base organic chemicals · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/ds-059358/1.0?c[reporter]=EU27_2020&c[product]=20141130,20141140,20141223,20141225,20141243,20141245,20141247&c[indicators]=IMPQNT,EXPQNT",
-      "note": "Trade balance = exports − imports (negative = net importer), the report’s own sign convention.",
-      "status": "updated",
-      "baseYear": 2022,
-      "newPoints": [
-        {
-          "year": 2023,
-          "value": -1.239
-        },
-        {
-          "year": 2024,
-          "value": -1.457
-        },
-        {
-          "year": 2025,
-          "value": -1.357
-        }
-      ]
-    },
-    {
-      "id": "esabcc-i2-steel-trade-balance",
-      "sourceTitle": "Eurostat ds-059366 · extra-EU27 exports − imports of CPA 2410 basic iron, steel & ferro-alloys, quantity · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/ds-059366/1.0?c[reporter]=EU27_2020&c[partner]=EXT_EU27_2020&c[product]=2410&c[indicators]=QUANTITY_KG",
-      "note": "Reproduces the report’s 2008-2021 series to 5e-5 relative error, so taken directly rather than spliced.",
-      "status": "updated",
-      "baseYear": 2021,
-      "newPoints": [
-        {
-          "year": 2022,
-          "value": -26.955
-        },
-        {
-          "year": 2023,
-          "value": -23.706
-        },
-        {
-          "year": 2024,
-          "value": -23.78
-        },
-        {
-          "year": 2025,
-          "value": -30.891
         }
       ]
     }

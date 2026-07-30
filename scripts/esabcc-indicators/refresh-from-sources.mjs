@@ -135,6 +135,19 @@ const FBS_POP  = '511';    // Total population (1000 persons)
 const FBS_POP_ITEM = '2501'; // the FBS "Population" item that carries element 511
 
 /**
+ * OECD SDMX (July 2026, batch 4). The query mechanics that took three passes
+ * to establish: the dataflow reference must carry its agency and version
+ * (`OECD.ENV.EPI,DSD_PAT_DEV@DF_PAT_DEV,1.0`), the `@` must be URL-encoded in
+ * a path segment, and the `Accept` header decides the format — the CSV
+ * flavour below parses with the same splitter the FAOSTAT bulks use.
+ */
+const OECD_SDMX = 'https://sdmx.oecd.org/public/rest';
+const EU27_ISO3 = [
+  'AUT', 'BEL', 'BGR', 'HRV', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HUN',
+  'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'NLD', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE',
+];
+
+/**
  * Recipes keyed by the esabcc-* indicator id. Extend this table to cover more
  * indicators — CI validates new recipes empirically (anchor check) on the
  * next run.
@@ -292,6 +305,36 @@ export const RECIPES = {
     sourceUrl: 'https://www.industrytransition.org/green-steel-tracker/',
     sourceTitle: 'LeadIT Green Steel Tracker · project database (2026 Q1) · cumulative EU-27 count',
     note: 'Cumulative count of EU-27 projects by announcement year, from the tracker’s own XLSX export. Reproduces the report’s 2023 count to within 8% (52 vs 48); spliced so the report baseline is unchanged.',
+  },
+
+  // ── July 2026, batch 4: the three "known next step exists but is not
+  //    built" indicators from the Update-status panel. See the fetchers
+  //    (fetchOecdPatentShare, fetchAglinkBiofuelUse, fetchEuroferPdfSeries)
+  //    for what was tested; docs-internal/indicator-check-source-refresh-
+  //    2026-07-30.md for the routes that were tried and closed.
+  'esabcc-f-climate-patents-share': {
+    kind: 'oecd-patent-share', round: 2, mode: 'splice',
+    sourceUrl: 'https://data-explorer.oecd.org/vis?df[ds]=dsDisseminate&df[id]=DSD_PAT_DEV%40DF_PAT_DEV',
+    sourceTitle: 'OECD DSD_PAT_DEV@DF_PAT_DEV · environment-related ÷ all-technology patent families (size 2+), EU-27 summed from member states',
+    note: 'Spliced: the current vintage revises the report years upward (report 2019 = 11.94 reads 14.44 today — counts fill in as families publish), so only the year-on-year change is applied to the report baseline. The newest one-two years are still filling in and revise upward on later runs; the refresh regenerates them each time. Member-state sum verified identical to OECD’s own EU27_2020 ENV_PAT aggregate (fractional counting), which has no TOT counterpart.',
+  },
+  'esabcc-a7-bioenergy-feedstock': {
+    kind: 'aglink-bf', round: 2, mode: 'splice',
+    commodities: ['CPC_0111', 'CPC_0112', 'CPC_0114T0119', 'CPC_216'],
+    sourceUrl: 'https://data-explorer.oecd.org/vis?df[ds]=dsDisseminate&df[id]=DSD_AGR%40DF_OUTLOOK_2026_2035',
+    sourceTitle: 'OECD-FAO Agricultural Outlook · EU biofuel use, wheat + maize + other coarse grains + vegetable oil',
+    note: 'Spliced proxy for the JRC medium-term outlook figure, whose own data is now DataM-token-gated with no published annex (probed 2026-07-30). Same Aglink-Cosimo family; wheat+maize+other-coarse-grains+vegetable-oil biofuel use reproduces the report within ~2% over 2010-2019, with a 4-10% vintage gap on 2020-21 — trend only, YoY change × report baseline. Newest edition resolved from the SDMX dataflow catalogue on each run; projection years (the edition id’s first year onward) are excluded, so the series ends at the outlook’s estimate year.',
+  },
+  'esabcc-i2-steel-use': {
+    kind: 'eurofer-pdf', round: 1,
+    listUrl: 'https://www.eurofer.eu/publications/brochures-booklets-and-factsheets',
+    marker: 'REAL VS APPARENT CONSUMPTION',
+    // The report's own values on the chart's overlap years — used to pick the
+    // apparent-consumption row out of the two plotted series, not as a splice.
+    match: { 2016: 146.8, 2017: 148.9, 2018: 152.7, 2019: 144.8, 2020: 129.3 },
+    sourceUrl: 'https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2026',
+    sourceTitle: 'Eurofer, European Steel in Figures (newest edition) · apparent steel consumption, chart data labels',
+    note: 'Direct — the chart’s data labels are the published figures (’000 t → Mt), and the 2021 anchor reproduces the report at 1.009×. The series row is identified by matching the report’s own 2016-2020 values, so an edition that reorders the page cannot silently swap in real consumption. Edition discovered from the publications listing each run.',
   },
 
   // ── A2 cattle (July 2026, batch 3). Long recorded as un-sourceable because
@@ -1436,6 +1479,219 @@ export async function fetchProjectTracker({ url, sheet, headerRow, countryCol, d
   return out;
 }
 
+/**
+ * OECD SDMX GET. Two server quirks handled here: transient 500s under
+ * consecutive requests (retried), and a hard 500 with body "languageTag1"
+ * whenever the Accept-Language header is absent or a bare `*` — which is
+ * exactly what Node's fetch sends by default, so it is pinned to `en`.
+ */
+async function fetchOecd(url, accept) {
+  let res;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    if (attempt) await new Promise(r => setTimeout(r, 2000 * attempt));
+    res = await fetch(url, { headers: { accept, 'accept-language': 'en' } });
+    if (res.ok || res.status < 500) break;
+  }
+  return res;
+}
+
+/** One OECD SDMX data query as header-keyed CSV rows. */
+async function fetchOecdCsv(path) {
+  const res = await fetchOecd(`${OECD_SDMX}/data/${path}`, 'application/vnd.sdmx.data+csv;version=1.0');
+  if (!res.ok) throw new Error(`OECD SDMX → HTTP ${res.status} for ${path}`);
+  const lines = (await res.text()).split(/\r?\n/).filter(l => l.length);
+  // Same guard as fetchEurostat: a key that matches nothing must fail loudly.
+  if (lines.length < 2) throw new Error(`OECD SDMX → no observations for ${path}`);
+  const header = parseCsvLine(lines[0], ',');
+  return lines.slice(1).map(l => {
+    const cells = parseCsvLine(l, ',');
+    return Object.fromEntries(header.map((h, i) => [h, cells[i]]));
+  });
+}
+
+/**
+ * F4 — environment-related technologies as a share of all EU patent families.
+ * ---------------------------------------------------------------------------
+ * The Green Growth flow the report cites is a dead end (its EU series for this
+ * concept reads 0 for every year); the *maintained* series lives in OECD's
+ * patent-development dataset, DSD_PAT_DEV@DF_PAT_DEV, as fractional patent-
+ * family counts (family size two+, inventor country, priority year) by
+ * technology. The share is ENV_PAT ÷ TOT × 100.
+ *
+ * DF_PAT_DEV publishes an EU27_2020 aggregate for ENV_PAT but NOT for TOT, so
+ * both legs are summed from the 27 member states instead. Fractional counting
+ * makes that sum exact: the member-state sum of ENV_PAT reproduces OECD's own
+ * EU27_2020 aggregate to the last decimal for every year (verified 1990-2023).
+ *
+ * Splice-only: the current vintage revises the report's years upward (the
+ * report's 2019 = 11.94 reads 14.44 in today's data — patent counts for
+ * recent years fill in as families publish), so the level would step the
+ * series. The last two fetched years are themselves still filling in and will
+ * revise upward on future runs; the refresh regenerates every afterReport
+ * point on each run, so those revisions flow through automatically.
+ */
+async function fetchOecdPatentShare() {
+  const key = `${EU27_ISO3.join('+')}.A.TOT+ENV_PAT.PATN.TWO._T`;
+  const rows = await fetchOecdCsv(`OECD.ENV.EPI,DSD_PAT_DEV%40DF_PAT_DEV,1.0/${key}`);
+  const env = new Map(), tot = new Map();
+  for (const r of rows) {
+    const y = Number(r.TIME_PERIOD), v = Number(r.OBS_VALUE);
+    if (!Number.isFinite(y) || !Number.isFinite(v)) continue;
+    const m = r.TECH === 'ENV_PAT' ? env : r.TECH === 'TOT' ? tot : null;
+    if (m) m.set(y, (m.get(y) ?? 0) + v);
+  }
+  const out = [];
+  for (const [year, e] of env) {
+    const t = tot.get(year);
+    if (Number.isFinite(t) && t > 0) out.push({ year, value: (e / t) * 100 });
+  }
+  if (!out.length) throw new Error('OECD DSD_PAT_DEV: no overlapping ENV_PAT / TOT years');
+  return out.sort((a, b) => a.year - b.year);
+}
+
+/**
+ * A7 — agricultural products used as bioenergy feedstock.
+ * ---------------------------------------------------------------------------
+ * The JRC medium-term outlook's own numbers now live exclusively in DataM,
+ * whose REST API is token-gated (probed 2026-07-30; the once-published annex
+ * XLSX URL is dead and the 2024/2025 report PDFs no longer print per-year
+ * history). The OECD-FAO Agricultural Outlook — the same Aglink-Cosimo model
+ * family, with the EU projections built jointly with DG AGRI/JRC — publishes
+ * the equivalent variables openly: measure BF ("biofuel use") per commodity.
+ *
+ * Wheat + maize + other coarse grains + vegetable oil reproduces the report
+ * series to within ~2% over 2010-2019 (2010 1.003×, 2019 1.004×); the report's
+ * 2020-2021 sit 4-10% above (0.957×/0.904× — a JRC-vintage difference on those
+ * two years), which is why this is splice-only: only the year-on-year change
+ * after 2021 is applied to the report baseline.
+ *
+ * The dataflow id is versioned per edition (DF_OUTLOOK_2026_2035, …), so the
+ * newest edition is resolved from the agency's dataflow catalogue on each run
+ * instead of pinning a URL that goes stale annually.
+ */
+async function fetchAglinkBiofuelUse({ commodities }) {
+  const res = await fetchOecd(
+    `${OECD_SDMX}/dataflow/OECD.TAD.ATM/all/latest`,
+    'application/vnd.sdmx.structure+json;version=1.0');
+  if (!res.ok) throw new Error(`OECD dataflow catalogue → HTTP ${res.status}`);
+  const flows = (await res.json())?.data?.dataflows ?? [];
+  const editions = flows
+    .map(f => ({ f, m: /^DSD_AGR@DF_OUTLOOK_(\d{4})_\d{4}$/.exec(f.id) }))
+    .filter(x => x.m)
+    .sort((a, b) => Number(b.m[1]) - Number(a.m[1]));
+  if (!editions.length) throw new Error('OECD TAD.ATM: no DF_OUTLOOK_* dataflow in the catalogue');
+  const { f, m } = editions[0];
+  // The flow carries the projection years too (OBS_STATUS does not mark them);
+  // the id's first year is where projections start, so keep only history and
+  // the pre-projection estimate years before it.
+  const projectionStart = Number(m[1]);
+  const rows = await fetchOecdCsv(
+    `OECD.TAD.ATM,${encodeURIComponent(f.id)},${f.version}/EU.A.${commodities.join('+')}.BF..`);
+  const acc = new Map();
+  for (const r of rows) {
+    const y = Number(r.TIME_PERIOD);
+    // UNIT_MEASURE is tonnes with UNIT_MULT 3 (thousand t); normalise to Mt.
+    const v = Number(r.OBS_VALUE) * 10 ** Number(r.UNIT_MULT ?? 0);
+    if (!Number.isFinite(y) || y >= projectionStart || !Number.isFinite(v)) continue;
+    acc.set(y, (acc.get(y) ?? 0) + v / 1e6);
+  }
+  if (!acc.size) throw new Error(`${f.id}: no biofuel-use rows for ${commodities.join(',')}`);
+  return [...acc.entries()].map(([year, value]) => ({ year, value })).sort((a, b) => a.year - b.year);
+}
+
+/**
+ * I2 (steel, use) — apparent steel consumption from Eurofer's "European Steel
+ * in Figures" PDF.
+ * ---------------------------------------------------------------------------
+ * The brochure's consumption chart carries a data label for every year, and
+ * pdfjs (already a dependency) exposes each label with its x/y position, so
+ * the two plotted series come back as two rows of thousand-separated numbers
+ * aligned to a row of year labels. Nothing else on the page looks like that —
+ * the axis ticks are one number per y position, filtered out by requiring a
+ * row to cover most of the year axis.
+ *
+ * Which of the two rows is apparent (vs real) consumption is decided by
+ * matching against the report's own stored values (`match`), not by label
+ * geometry — Eurofer reorders the page freely between editions. The newest
+ * edition is discovered from the publications listing, so the recipe survives
+ * the annual URL change the same way the LeadIT tracker recipe does not.
+ */
+async function fetchEuroferPdfSeries({ listUrl, marker, match }) {
+  const ua = { headers: { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) refresh-from-sources' } };
+  const list = await fetch(listUrl, ua);
+  if (!list.ok) throw new Error(`Eurofer listing → HTTP ${list.status}`);
+  const editions = [...(await list.text()).matchAll(/href="([^"]*european-steel-in-figures-(\d{4})[^"]*)"/g)]
+    .sort((a, b) => Number(b[2]) - Number(a[2]));
+  if (!editions.length) throw new Error('Eurofer listing: no European-Steel-in-Figures edition found');
+  const editionUrl = new URL(editions[0][1], listUrl).href;
+
+  const page = await fetch(editionUrl, ua);
+  if (!page.ok) throw new Error(`Eurofer edition page → HTTP ${page.status}`);
+  const pdfHref = /href="([^"]+\.pdf)"/.exec(await page.text())?.[1];
+  if (!pdfHref) throw new Error(`Eurofer: no PDF link on ${editionUrl}`);
+  const pdfRes = await fetch(new URL(pdfHref, editionUrl).href, ua);
+  if (!pdfRes.ok) throw new Error(`Eurofer PDF → HTTP ${pdfRes.status}`);
+
+  const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
+  const doc = await pdfjs.getDocument({
+    data: new Uint8Array(await pdfRes.arrayBuffer()), useSystemFonts: true,
+  }).promise;
+  let items = null;
+  for (let p = 1; p <= doc.numPages; p++) {
+    const tc = await (await doc.getPage(p)).getTextContent();
+    const it = tc.items
+      .filter(i => i.str.trim())
+      .map(i => ({ str: i.str.trim(), x: i.transform[4], y: i.transform[5] }));
+    if (new RegExp(marker, 'i').test(it.map(i => i.str).join(' '))) { items = it; break; }
+  }
+  if (!items) throw new Error(`Eurofer PDF: no page matching "${marker}"`);
+
+  // The year axis: the largest same-y band of standalone 4-digit years.
+  const bands = arr => {
+    const m = new Map();
+    for (const i of arr) {
+      const key = Math.round(i.y / 4) * 4;
+      if (!m.has(key)) m.set(key, []);
+      m.get(key).push(i);
+    }
+    return [...m.values()];
+  };
+  const yearBand = bands(items.filter(i => /^(19|20)\d{2}$/.test(i.str)))
+    .sort((a, b) => b.length - a.length)[0];
+  if (!yearBand || yearBand.length < 4) throw new Error('Eurofer PDF: no year axis found');
+  const years = yearBand.sort((a, b) => a.x - b.x).map(i => ({ year: Number(i.str), x: i.x }));
+
+  // Candidate series: same-y bands of thousand-separated data labels that
+  // cover most of the year axis ('000 t → Mt via ÷1000).
+  const candidates = bands(items.filter(i => /^\d{1,3}(,\d{3})+$/.test(i.str)))
+    .filter(b => b.length >= years.length - 1)
+    .map(b => {
+      const pts = [];
+      for (const i of b) {
+        const nearest = years.reduce((best, y) =>
+          Math.abs(y.x - i.x) < Math.abs(best.x - i.x) ? y : best);
+        // English thousands format (the row regex guarantees it) — parseNum
+        // would read the comma as a European decimal separator here.
+        pts.push({ year: nearest.year, value: Number(i.str.replace(/,/g, '')) / 1000 });
+      }
+      return pts.sort((a, b2) => a.year - b2.year);
+    });
+  if (!candidates.length) throw new Error('Eurofer PDF: no data-label rows found');
+
+  // Pick the row that reproduces the report's own overlap values.
+  const scored = candidates.map(pts => {
+    const map = new Map(pts.map(p => [p.year, p.value]));
+    const devs = Object.entries(match)
+      .map(([y, v]) => (map.has(Number(y)) ? Math.abs(map.get(Number(y)) - v) / v : null))
+      .filter(d => d !== null);
+    return { pts, dev: devs.length ? devs.reduce((s, d) => s + d, 0) / devs.length : Infinity };
+  }).sort((a, b) => a.dev - b.dev);
+  if (!(scored[0].dev < 0.05)) {
+    throw new Error(`Eurofer PDF: best series deviates ${(scored[0].dev * 100).toFixed(1)}% from the report overlap`);
+  }
+  return scored[0].pts;
+}
+
 let _eea = null;
 async function getEeaRows() {
   if (_eea) return _eea;
@@ -1606,7 +1862,13 @@ async function main() {
                     ? await fetchProdcom(rec)
                     : rec.kind === 'comext-trade'
                       ? await fetchComextTrade(rec)
-                      : await fetchEea(rec);
+                      : rec.kind === 'oecd-patent-share'
+                        ? await fetchOecdPatentShare()
+                        : rec.kind === 'aglink-bf'
+                          ? await fetchAglinkBiofuelUse(rec)
+                          : rec.kind === 'eurofer-pdf'
+                            ? await fetchEuroferPdfSeries(rec)
+                            : await fetchEea(rec);
     } catch (e) {
       console.error(`! ${id}: fetch failed — ${e.message}`);
       provenance.push({ ...meta, status: 'error', message: e.message });
