@@ -33,6 +33,7 @@ import {
   STATUS_ACTION,
   LAST_REFRESH,
   type BlockerStatus,
+  type BlockerDataLink,
 } from '@/data/indicator-blockers';
 
 const CATEGORY_META: Record<IndicatorCategory, { label: string; color: string }> = {
@@ -189,6 +190,54 @@ const TONE_CLASS: Record<'amber' | 'slate' | 'red', string> = {
 /** Cap on the inline "new since report" points shown per card, for visual
  * consistency with the Sparkline's own `slice(-10)` cap. */
 const MAX_INLINE_POST_POINTS = 3;
+
+/** Host, minus the www., for showing a URL compactly. */
+function linkHost(url: string): string {
+  try {
+    return new URL(url).host.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
+
+/**
+ * The links behind a blocked indicator: where its numbers can actually be read.
+ * "No public data export" means there is no file or API, not that there is
+ * nowhere to look, so every such card carries the pages that do hold the data
+ * and says what each one gives you. `compact` is the summary-panel form (one
+ * line per link); the full form is used inside an indicator card.
+ */
+function DataLinkList({ links, compact }: { links: BlockerDataLink[]; compact?: boolean }) {
+  return (
+    <ul className={compact ? 'mt-1 space-y-0.5' : 'mt-1.5 space-y-1.5'}>
+      {links.map((l) => (
+        <li key={l.url} className="leading-relaxed">
+          <a
+            href={l.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={compact ? l.what : undefined}
+            className="font-medium text-[#00928F] underline decoration-[#00928F]/40 underline-offset-2 hover:decoration-[#00928F]"
+          >
+            {l.label}
+          </a>{' '}
+          <span className="text-[#3D5265]/45 dark:text-[var(--mh-muted)]">{linkHost(l.url)}</span>
+          {l.machineReadable && (
+            <span
+              title="Machine-readable: the numbers can be fetched and parsed without a browser"
+              className="ml-1 rounded bg-[#EAF4F4] px-1 py-px text-[9px] font-semibold uppercase tracking-wide text-[#00706E] dark:bg-transparent dark:text-[#4FB3B0]"
+            >
+              parseable
+            </span>
+          )}
+          {!compact && (
+            <div className="text-[#3D5265]/65 dark:text-[var(--mh-muted)]">{l.what}</div>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; error?: boolean }) {
   const reads = useMemo(
@@ -400,6 +449,56 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
                     </Link>
                   ))}
                 </div>
+
+                {/* Where the data actually is. Only the statuses that have
+                    somewhere to point carry links, so this block is absent
+                    from the "waiting on a publication" cards by construction. */}
+                {g.items.some((it) => INDICATOR_BLOCKERS[it.id]?.dataLinks?.length) && (
+                  <div className="mt-2.5 border-t border-[#EEF1F4] pt-2 text-[10px] dark:border-[var(--mh-border)]">
+                    <div className="font-semibold uppercase tracking-wide text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
+                      Where the data is
+                    </div>
+                    {g.items.map((it) => {
+                      const links = INDICATOR_BLOCKERS[it.id]?.dataLinks;
+                      if (!links?.length) return null;
+                      return (
+                        <div key={it.id} className="mt-1.5">
+                          <span className="font-mono text-[10px] text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
+                            {it.code}
+                          </span>
+                          <DataLinkList links={links} compact />
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Withheld is the one status where the question is not "where
+                    is it" but "why is it not shown". Answered in full on the
+                    card, not behind a toggle: a red "would be unreliable" chip
+                    that a reader has to click to justify is just an assertion. */}
+                {g.items.some((it) => INDICATOR_BLOCKERS[it.id]?.unreliableBecause) && (
+                  <div className="mt-2.5 border-t border-[#EEF1F4] pt-2 dark:border-[var(--mh-border)]">
+                    <div className="text-[10px] font-semibold uppercase tracking-wide text-[#B83230] dark:text-[#E08A88]">
+                      Why it would be unreliable
+                    </div>
+                    {g.items.map((it) => {
+                      const why = INDICATOR_BLOCKERS[it.id]?.unreliableBecause;
+                      if (!why) return null;
+                      return (
+                        <p
+                          key={it.id}
+                          className="mt-1 text-[11px] leading-relaxed text-[#3D5265]/75 dark:text-[var(--mh-muted)]"
+                        >
+                          <span className="font-mono text-[10px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+                            {it.code}
+                          </span>{' '}
+                          {why}
+                        </p>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -587,6 +686,22 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
                                 Why, and what would unblock it
                               </summary>
                               <p className="mt-1">{b.detail}</p>
+                              {b.unreliableBecause && (
+                                <>
+                                  <p className="mt-2 font-semibold uppercase tracking-wide text-[10px] text-[#B83230] dark:text-[#E08A88]">
+                                    Why publishing a value would be unreliable
+                                  </p>
+                                  <p className="mt-1">{b.unreliableBecause}</p>
+                                </>
+                              )}
+                              {b.dataLinks?.length ? (
+                                <>
+                                  <p className="mt-2 font-semibold uppercase tracking-wide text-[10px] text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
+                                    Where the data is
+                                  </p>
+                                  <DataLinkList links={b.dataLinks} />
+                                </>
+                              ) : null}
                             </details>
                           </>
                         ) : (
