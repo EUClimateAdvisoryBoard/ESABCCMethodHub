@@ -409,7 +409,7 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
             card below with no new data for the full explanation and what would unblock it. Working
             notes, including the routes that were tried and closed, are in{' '}
             <code className="rounded bg-[#EEF1F4] px-1 py-0.5 text-[10px] dark:bg-transparent">
-              docs-internal/indicator-check-source-refresh-2026-07-29.md
+              docs-internal/indicator-check-source-refresh-2026-07-30.md
             </code>
             .
           </p>
@@ -663,7 +663,7 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
           than hidden, each with the tested reason it has none: “not published yet” means the data
           is expected and nothing needs doing, the other labels mean someone has to go and get it.
           Reasons and what would unblock each one are recorded in
-          docs-internal/indicator-check-source-refresh-2026-07-29.md.
+          docs-internal/indicator-check-source-refresh-2026-07-30.md.
         </p>
       </main>
       <SiteFooter />

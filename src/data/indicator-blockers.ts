@@ -1,19 +1,21 @@
 /**
  * Why a report indicator carries no data newer than the report.
  * ---------------------------------------------------------------------------
- * The Indicator Check shows all 97 report series. 68 have post-report data,
+ * The Indicator Check shows all 97 report series. 72 have post-report data,
  * pulled automatically by scripts/esabcc-indicators/refresh-from-sources.mjs.
- * The other 29 do not, and "no data added since the report" on its own is not
+ * The other 25 do not, and "no data added since the report" on its own is not
  * a useful thing to tell a reader — the reasons are genuinely different, and
  * so is what it would take to fix each one.
  *
  * Each entry below records the *tested* reason, not an assumption. Where a
  * source was written off in an earlier pass and later turned out to be
  * reachable (FAOSTAT's bulk files, the UNFCCC Data Interface via its Python
- * client, Eurostat's R5280S biofuel code), those indicators were moved onto the
- * automated path and are no longer listed here.
+ * client, Eurostat's R5280S biofuel code, OECD's patent-development dataset
+ * for F4, the Eurofer PDF's chart labels for I2 steel use, the OECD-FAO
+ * outlook for A7), those indicators were moved onto the automated path and
+ * are no longer listed here.
  *
- * Keep this in step with docs-internal/indicator-check-source-refresh-2026-07-29.md.
+ * Keep this in step with docs-internal/indicator-check-source-refresh-2026-07-30.md.
  */
 
 export type BlockerStatus =
@@ -38,7 +40,7 @@ export interface IndicatorBlocker {
 }
 
 /** When the automated refresh last ran end to end. */
-export const LAST_REFRESH = '29 July 2026';
+export const LAST_REFRESH = '30 July 2026';
 
 /**
  * What each status actually asks of a reader who wants to close the gap.
@@ -188,18 +190,19 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
     sourceUrl: 'http://lowcarboneconomy.cembureau.eu/',
   },
   'esabcc-i7c-chemicals-projects': {
-    status: 'unresolved',
-    summary: 'Data is reachable, but no comparable time dimension',
+    status: 'no-public-api',
+    summary: 'API is public, but carries no announcement dates',
     detail:
       'The map turned out to be backed by a public WordPress REST API — /wp-json/wp/v2/gips returns all ' +
       '238 projects (214 of them in the EU-27) with a country taxonomy, no browser required. The ' +
-      'blocker is not access but time: the only date on a project is its website posting date, and ' +
-      'rebuilding the count on that basis gives 135 EU-27 projects at end-2023 against the report’s ' +
-      '171. The map has been re-curated since, so past states cannot be reproduced from the current ' +
-      'contents, and a “change since the report” figure derived from it would be measuring Cefic’s ' +
-      'editing schedule rather than project announcements. A current snapshot (214) is trustworthy; a ' +
-      'series is not. Asking Cefic for an announcement-date field, or for their historical snapshots, ' +
-      'would settle it.',
+      'blocker is not access but time: the only date on a project is its website posting date ' +
+      '(re-checked 30 July 2026 — the record’s ACF fields are curation metadata, still nothing ' +
+      'announcement-dated), and rebuilding the count on that basis gives 135 EU-27 projects at ' +
+      'end-2023 against the report’s 171. The map has been re-curated since, so past states cannot be ' +
+      'reproduced from the current contents, and a “change since the report” figure derived from it ' +
+      'would be measuring Cefic’s editing schedule rather than project announcements. A current ' +
+      'snapshot (214) is trustworthy; a series is not. This is a data request, not an engineering ' +
+      'task: Cefic supplying an announcement-date field, or their historical snapshots, would settle it.',
     sourceUrl: 'https://cefic.org/low-carbon-projects-map/',
   },
 
@@ -216,26 +219,6 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
       'production index, but consumption additionally needs import and export tonnages, which sit in ' +
       'PRODCOM and are not on the JSON API either.',
     sourceUrl: 'https://www.cembureau.eu/library/reports/',
-  },
-
-  // ── Published as PDF only (2) ────────────────────────────────────────────
-  'esabcc-i2-steel-use': {
-    status: 'pdf-only',
-    summary: 'Eurofer publishes apparent steel use in a PDF',
-    detail:
-      'Steel *production* is refreshed automatically (Eurostat production index for NACE C241), but ' +
-      'apparent use is published only in Eurofer’s “European Steel in Figures” brochure. Extracting the ' +
-      'table from that PDF each year is feasible and simply has not been built.',
-    sourceUrl: 'https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2025',
-  },
-  'esabcc-a7-bioenergy-feedstock': {
-    status: 'pdf-only',
-    summary: 'JRC outlook is a report plus annex tables',
-    detail:
-      'The EU Agricultural Outlook publishes its projections as a PDF with annex spreadsheets rather ' +
-      'than through an API. The 2025-2035 edition should carry 2023/24 values; wiring it up means ' +
-      'locating and parsing the annex file for each edition.',
-    sourceUrl: 'https://agriculture.ec.europa.eu/data-and-analysis/markets/outlook/medium-term_en',
   },
 
   // ── Subscription (1) ─────────────────────────────────────────────────────
@@ -271,24 +254,6 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
       'As the residential series: “Total renovation rate” is a BSO subject taken with Sector set to ' +
       'Service, but the database offers only 2020, which the report already has.',
     sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/',
-  },
-
-  // ── Source not yet cracked (2) ───────────────────────────────────────────
-  'esabcc-f-climate-patents-share': {
-    status: 'unresolved',
-    summary: 'OECD API now queryable, but this measure is empty for the EU',
-    detail:
-      'The access problem is solved: OECD’s SDMX data endpoint answers once the dataflow reference is ' +
-      'URL-encoded (DSD_GG%40DF_GREEN_GROWTH), carries its version (1.1), and uses an “all” key rather ' +
-      'than a positional one. What it does not carry is this indicator. The Green Growth dataflow has ' +
-      'no PT_TECH_ENV measure at all — its patent measures are GPAT_DE, GPAT_DE_RTA and TECHPAT_PAT — ' +
-      'and for the EU-27 the one matching this concept (environment-related inventions as a share of ' +
-      'all domestic inventions, GPAT_DE / PT_INV_D) is present but empty, reading 0 for every year ' +
-      'including 2019. The only populated EU series, GPAT_DE / PT_INV_W_ENV at 21.6% in 2019, is a ' +
-      'different concept — the EU’s share of *world* green patents rather than the green share of EU ' +
-      'filings — and does not reproduce the report’s 11.94%. This needs OECD’s patent-specific ' +
-      'ENV-Tech dataset rather than the Green Growth headline flow.',
-    sourceUrl: 'https://data-explorer.oecd.org/',
   },
 
   // ── Deliberately withheld (1) ────────────────────────────────────────────
