@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T09:55:04.607Z",
+  "generatedAt": "2026-07-30T10:58:36.034Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
@@ -1087,27 +1087,93 @@
     },
     {
       "id": "esabcc-i2-chemicals-production",
-      "sourceTitle": "Eurostat sts_inpr_a · production-volume index (2021=100), NACE C201 basic chemicals · EU27_2020",
-      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_a?format=JSON&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C201",
-      "note": "Spliced: basic-chemicals production-volume index YoY change × report 2021 baseline (26.84 Mt).",
+      "sourceTitle": "Eurostat PRODCOM ds-059358/ds-059367 · sold production of the report’s seven base organic chemicals · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/ds-059358/1.0?c[reporter]=EU27_2020&c[product]=20141130,20141140,20141223,20141225,20141243,20141245,20141247&c[indicators]=PRODQNT",
+      "note": "The report’s own method, re-run: sum of sold production (PRODQNT) of ethylene, propylene, benzene, toluene and the three xylenes. Absolute tonnage, not a spliced index.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 23.07
+        },
+        {
+          "year": 2024,
+          "value": 24.75
+        },
+        {
+          "year": 2025,
+          "value": 21.59
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i2-chemicals-use",
+      "sourceTitle": "Eurostat PRODCOM ds-059358/ds-059367 · sold production + imports − exports of the report’s seven base organic chemicals · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/ds-059358/1.0?c[reporter]=EU27_2020&c[product]=20141130,20141140,20141223,20141225,20141243,20141245,20141247&c[indicators]=PRODQNT,IMPQNT,EXPQNT",
+      "note": "Apparent use = production + imports − exports, over the same seven products the report used.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 24.31
+        },
+        {
+          "year": 2024,
+          "value": 26.2
+        },
+        {
+          "year": 2025,
+          "value": 22.95
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i2-chemicals-trade-balance",
+      "sourceTitle": "Eurostat PRODCOM ds-059358/ds-059367 · exports − imports of the report’s seven base organic chemicals · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/ds-059358/1.0?c[reporter]=EU27_2020&c[product]=20141130,20141140,20141223,20141225,20141243,20141245,20141247&c[indicators]=IMPQNT,EXPQNT",
+      "note": "Trade balance = exports − imports (negative = net importer), the report’s own sign convention.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": -1.239
+        },
+        {
+          "year": 2024,
+          "value": -1.457
+        },
+        {
+          "year": 2025,
+          "value": -1.357
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i2-steel-trade-balance",
+      "sourceTitle": "Eurostat ds-059366 · extra-EU27 exports − imports of CPA 2410 basic iron, steel & ferro-alloys, quantity · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/ds-059366/1.0?c[reporter]=EU27_2020&c[partner]=EXT_EU27_2020&c[product]=2410&c[indicators]=QUANTITY_KG",
+      "note": "Reproduces the report’s 2008-2021 series to 5e-5 relative error, so taken directly rather than spliced.",
       "status": "updated",
       "baseYear": 2021,
       "newPoints": [
         {
           "year": 2022,
-          "value": 25.36
+          "value": -26.955
         },
         {
           "year": 2023,
-          "value": 21.45
+          "value": -23.706
         },
         {
           "year": 2024,
-          "value": 19.89
+          "value": -23.78
         },
         {
           "year": 2025,
-          "value": 18.55
+          "value": -30.891
         }
       ]
     },

@@ -6,8 +6,11 @@ four indicators on the Update-status panel flagged as needing engineering:
 **I7c** under "Source not yet cracked". This note records what was built for
 three of them, and why the fourth moved category instead.
 
-Net effect: **72 of 97** indicators now refresh automatically (was 69), and
-the "Source not yet cracked" card is gone from the page.
+Net effect: this batch takes the automated count from 69 to 72; combined
+with the same-day PRODCOM unblock (see
+`indicator-check-prodcom-unblock-2026-07-30.md`, merged alongside), **75 of
+97** indicators now refresh automatically, and the "Source not yet cracked"
+card is gone from the page.
 
 ## 1. F4 — climate-related share of EU patent filings. Automated.
 
@@ -147,18 +150,19 @@ anything curl-shaped.
 
 ## 6. Files
 
-- `scripts/esabcc-indicators/refresh-from-sources.mjs` — 3 new recipes
-  (61 → 64) and 4 new fetchers: `fetchOecd` (retry + Accept-Language guard),
+- `scripts/esabcc-indicators/refresh-from-sources.mjs` — 3 new recipes and
+  5 new fetchers: `fetchOecd` (retry + Accept-Language guard),
   `fetchOecdCsv`, `fetchOecdPatentShare`, `fetchAglinkBiofuelUse`,
-  `fetchEuroferPdfSeries`
+  `fetchEuroferPdfSeries`. Merged with the PRODCOM batch this makes 67
+  recipes, all re-run clean end to end after the merge
 - `src/data/esabcc-indicators.ts` — refreshed via the script; 12 new points
-  across F4, A7, I2 (steel, use); the other 61 recipes re-ran identical
+  across F4, A7, I2 (steel, use); every other recipe re-ran identical
 - `src/data/indicator-blockers.ts` — F4/A7/I2-steel-use entries removed,
   I7c reclassified `unresolved` → `no-public-api`, counts and LAST_REFRESH
   updated
 - `supabase/migrations/055_backfill_indicator_points.sql` — regenerated
-  (225 points / 72 indicators, was 213/69); `supabase/combined_migrations.sql`
-  synced
+  (234 points / 75 indicators post-merge, was 213/69);
+  `supabase/combined_migrations.sql` synced
 
 Migration 055 must be applied for production to show the three new series —
 the TS file is the seed and preview fallback; the site reads
