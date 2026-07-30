@@ -404,7 +404,7 @@ export default async function HomePage() {
     { code: 'M · 39', title: 'EU Green Deal Policy Tracker', href: '/beta/eu-green-deal-policies', tags: ['EGDSF Annex 2', 'Adopted vs reopened', 'Omnibus watch'] },
     { code: 'M · 40', title: 'NECPR 2025 — What Actually Compares', href: '/beta/necpr-targets', tags: ['24 target families', 'EU-27 land sink', 'Data-quality flags'] },
     { code: 'M · 41', title: 'Wildfires & the Land Sink', href: '/beta/wildfire-sink-risk', tags: ['EFFIS 2021-25', 'Lost sink → 2040 target', 'Sensitivity sliders'] },
-    { code: 'M · 42', title: 'EU Policy Hierarchy', href: '/beta/policy-hierarchy', tags: ['Treaties → SWDs', '4 lenses', 'EUR-Lex linked'] },
+    { code: 'M · 42', title: 'EU Policy Hierarchy', href: '/beta/policy-hierarchy', tags: ['Treaties → SWDs', 'Mandate rings', 'Moving now', 'EUR-Lex linked'] },
   ];
 
   return (

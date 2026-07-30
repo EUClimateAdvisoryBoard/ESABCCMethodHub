@@ -216,6 +216,69 @@ export const TYPE_META: Record<InstrumentType, { label: string; abbr: string; ti
   },
 };
 
+/* ============================================================ mandate rings */
+
+/**
+ * The Board-mandate reading of each instrument, operationalising Art. 3(2)(b)
+ * of the European Climate Law ("existing and proposed Union measures" — not
+ * "climate measures"): core = the climate architecture itself; adjacent =
+ * other-purpose acts with material climate provisions, coherence-assessable;
+ * context = shapes the feasibility of climate action only.
+ */
+export type MandateRelevance = 'core' | 'adjacent' | 'context';
+
+export const RELEVANCE_ORDER: MandateRelevance[] = ['core', 'adjacent', 'context'];
+
+export const RELEVANCE_META: Record<MandateRelevance, { label: string; color: string; bg: string; description: string }> = {
+  core: {
+    label: 'Core mandate',
+    color: '#007B6C',
+    bg: '#E5F9E7',
+    description: 'The climate architecture itself — squarely inside the Board’s tasks under Art. 3(2) of the Climate Law.',
+  },
+  adjacent: {
+    label: 'Adjacent — coherence-assessable',
+    color: '#6667AB',
+    bg: '#EFEFF7',
+    description: 'Primary purpose elsewhere, but with material climate provisions: assessable for coherence with climate neutrality under Art. 3(2)(b).',
+  },
+  context: {
+    label: 'Context',
+    color: '#808285',
+    bg: '#F3F4F5',
+    description: 'No material climate provisions, but shapes the fiscal, institutional or political feasibility of climate action.',
+  },
+};
+
+/* ============================================================ legislative status */
+
+/** Where the 2025-26 legislative agenda is moving an instrument. */
+export type InstrumentStatus = 'proposal' | 'under-revision' | 'reopened' | 'watch';
+
+export const STATUS_META: Record<InstrumentStatus, { label: string; color: string; description: string }> = {
+  proposal: {
+    label: 'Proposal',
+    color: '#D97706',
+    description: 'The act itself is still a Commission proposal — not yet adopted.',
+  },
+  'under-revision': {
+    label: 'Under revision',
+    color: '#B83230',
+    description: 'Adopted act with a formal amending proposal on the table.',
+  },
+  reopened: {
+    label: 'Reopened',
+    color: '#FF6B35',
+    description: 'Adopted act reopened by the 2025-26 simplification / omnibus agenda.',
+  },
+  watch: {
+    label: 'Review ahead',
+    color: '#54728C',
+    description: 'Announced review clause or clearly signalled upcoming revision.',
+  },
+};
+
 /* ============================================================ dataset */
 
 export { DOMAIN_BRANCHES } from './instruments.generated';
+export { MANDATE, STATUS } from './annotations.generated';
