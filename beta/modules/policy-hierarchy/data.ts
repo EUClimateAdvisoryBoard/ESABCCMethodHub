@@ -282,3 +282,5 @@ export const STATUS_META: Record<InstrumentStatus, { label: string; color: strin
 
 export { DOMAIN_BRANCHES } from './instruments.generated';
 export { MANDATE, STATUS } from './annotations.generated';
+export { NAVIGATOR_BRIDGE, SECTOR_BRIDGE } from './bridges.generated';
+export { RECOMMENDATIONS } from './recommendations.generated';
