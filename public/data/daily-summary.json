@@ -1,24 +1,24 @@
 {
   "date": "2026-07-30",
-  "generatedAt": "2026-07-30T12:32:46.187Z",
+  "generatedAt": "2026-07-30T18:16:34.512Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 30 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "‘Extremely effective’ organised campaigns against wind and solar undermining support for renewable energy",
-      "summary": "&lt;p&gt;Clean Energy Council calls for a national, legislated scheme to funnel benefits of hosting renewables projects back to local councils&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.t",
+      "headline": "Danube water levels: Hungary, Romania cut nuclear output",
+      "summary": "Historically low water levels along Europe&#039;s second-longest river have led Hungary and Romania to reduce output at key nuclear plants. Danube tourism and river cargo have also been severely affected by Europe&#039;s heatwave.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Climate change is driving a ‘shift’ in childhood malaria risk across Africa",
-      "summary": "Rising temperatures are redistributing the risk of childhood malaria in sub-Saharan Africa, resulting in areas of “new risk” in the&#8230; The post Climate change is driving a ‘shift’ in childhood malaria risk across Africa appeared first on Carbon Brief.",
+      "headline": "Factcheck: No, Europe is not having its ‘quietest’ year for wildfires",
+      "summary": "In recent days, prominent climate sceptics and rightwing commentators have shared charts on social media incorrectly implying that Europe is&#8230; The post Factcheck: No, Europe is not having its ‘quietest’ year for wildfires appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Reaction to FIFA's private investment plan - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxQaHgwWkxMbUdZVHdYbG9CNEFwb3F6VER1QTFkSTZpSDNjM1FRY1lmMmNiR0Q0aTAtMlRIMjRkQUotaDhISGxJRlNtamJfbkNLR3JNWE95aV8wNzNkanFyZEgzeXp6TkoyM082Vms5RzFSOWdlam1DeHhteURjT3ZCTVpQS2RkQzdoUnRPdUtFTjlzZw?oc=5\" target=\"_blank\"&gt;Reaction to FIFA's private investment plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "USDA to fund Arizona facility to fight flesh-eating livestock pest - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNU2ZINjFSaUFSdVc5YmhGWnVqTnJuZGhBSTF3ZDBnZ3lrWDNCVFFhZUFtOVQtZlh0cm1EbjgwbWx4S21FRHZ6NEh6LTZLaVpNUl9DZGMwLUtzZ0hFeGpsZjFrNy1vdTlBSTZxY0o4SHVQWC1HWFdsM0psQjZfWFQwWWY4UjZuQzRuZGVKb2FFVXZ5M1ZjRk1iWDhLdVc1OWNSMGlZeTdtX1k?oc=5\" target=\"_blank\"&gt;USDA to fund Arizona facility to fight flesh-eating livestock pest&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,14 +34,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "‘Extremely effective’ organised campaigns against wind and solar undermining support for renewable energy",
-          "link": "https://www.theguardian.com/australia-news/2026/jul/30/australians-value-batteries-and-evs-but-renewables-industry-must-earn-trust-of-regions-summit-told",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Clean Energy Council calls for a national, legislated scheme to funnel benefits of hosting renewables projects back to local councils&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.t",
-          "published": "2026-07-29T15:00:36.000Z",
-          "score": 9
-        },
-        {
           "title": "Danube water levels: Hungary, Romania cut nuclear output",
           "link": "https://www.dw.com/en/danube-water-levels-hungary-romania-cut-nuclear-output/a-78171891?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -50,11 +42,11 @@
           "score": 9
         },
         {
-          "title": "Saudi Arabia seeks international coalition to protect Red Sea shipping from Houthis, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOdE5TWUJUaEd4QndCVnFrY2hva1NPZUVIVmZROEcwYkhPWVR0Q3gxdzVIZjFDVFVTZWIyNGwxV1dPb1luWmpveTV0cHl4cmFQbXB5bWgzUHBhenR1UFhYZWVoSGdJVjluZEx5TmYyYllqOEQtLS1UZ3VMemtWSHlHOHlvQjlpams0bGVSRjMxQzBFRmdOUEJBUVROZlZZOU5Dd2JFdldTTnRpWUFYSm5hSWdVWmhETkVTTXhPMFc0OTNCVi1DdXhxTA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOdE5TWUJUaEd4QndCVnFrY2hva1NPZUVIVmZROEcwYkhPWVR0Q3gxdzVIZjFDVFVTZWIyNGwxV1dPb1luWmpveTV0cHl4cmFQbXB5bWgzUHBhenR1UFhYZWVoSGdJVjluZEx5TmYyYllqOEQtLS1UZ3VMemtWSHlHOHlvQjlpams0bGVSRjMxQzBFRmdOUEJBUVROZlZZOU5Dd2JFdldTTnRpWUFYSm5hSWdVWmhETkVTTXhPMFc0OTNCVi1DdXhxTA?oc=5\" target=\"_blank\"&gt;Saudi Arabia seeks international coalition to protect Red Sea shipping from Houthis, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&",
-          "published": "2026-07-29T20:55:19.000Z",
+          "title": "Danube's record low levels force shutdown of Hungary's only nuclear plant",
+          "link": "https://www.bbc.co.uk/news/articles/cn0nqv05g0do?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Romania, Bulgaria and Serbia are also grappling with the effects of a series of prolonged heatwaves and low rainfall.",
+          "published": "2026-07-30T17:55:24.000Z",
           "score": 7
         },
         {
@@ -70,8 +62,16 @@
           "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPX1Q3eDhzdHJoSFI2eU82OUU0Rk5ldHpVRy1pQWFMWmZwT3FQb2xJTlA2emJvNXUycE1rZmtHU0paeVFFaW5NTlJmVlF6enhKcEpaQXJrbE83aW53RXlneU1XVzRCUHNoNG9jUEozcEZBSWdHdFgtWkZIekhjZXJaRmE0MEIwbERianVKMmlJdmRZWjdiYjloM25oTENZZVFxTmxUbF9RRlo3QzJBYWxtYndmNjBPdE83b3lPeTlUV1ZaakE?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPX1Q3eDhzdHJoSFI2eU82OUU0Rk5ldHpVRy1pQWFMWmZwT3FQb2xJTlA2emJvNXUycE1rZmtHU0paeVFFaW5NTlJmVlF6enhKcEpaQXJrbE83aW53RXlneU1XVzRCUHNoNG9jUEozcEZBSWdHdFgtWkZIekhjZXJaRmE0MEIwbERianVKMmlJdmRZWjdiYjloM25oTENZZVFxTmxUbF9RRlo3QzJBYWxtYndmNjBPdE83b3lPeTlUV1ZaakE?oc=5\" target=\"_blank\"&gt;QatarEnergy-controlled LNG tanker exits Hormuz, first in nearly three weeks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-30T03:35:00.000Z",
+          "published": "2026-07-30T07:31:20.000Z",
           "score": 7
+        },
+        {
+          "title": "Shell’s profits more than double after jump in oil and gas prices",
+          "link": "https://www.theguardian.com/business/2026/jul/30/shell-profits-double-jump-oil-gas-prices",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Environmentalists renew calls for windfall tax to support households after Q2 earnings rise to almost $10bn&lt;/p&gt;&lt;p&gt;Shell has posted its second highest quarterly earnings on record as the energy market surge caused by the Middle East crisis helped to double its net profit to almost $10bn in the three months to June.&lt;/p&gt;&lt;p&gt;Europe’s biggest oil and gas company reported a quarterly profit of $9.8bn (£7.4bn), more than double the figure for the second quarter last year",
+          "published": "2026-07-30T07:08:01.000Z",
+          "score": 6
         }
       ]
     },
@@ -80,11 +80,19 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Climate change is driving a ‘shift’ in childhood malaria risk across Africa",
-          "link": "https://www.carbonbrief.org/climate-change-is-driving-a-shift-in-childhood-malaria-risk-across-africa",
+          "title": "Factcheck: No, Europe is not having its ‘quietest’ year for wildfires",
+          "link": "https://www.carbonbrief.org/factcheck-no-europe-is-not-having-its-quietest-year-for-wildfires",
           "source": "Carbon Brief",
-          "description": "Rising temperatures are redistributing the risk of childhood malaria in sub-Saharan Africa, resulting in areas of “new risk” in the&#8230; The post Climate change is driving a ‘shift’ in childhood malaria risk across Africa appeared first on Carbon Brief.",
-          "published": "2026-07-29T15:00:09.000Z",
+          "description": "In recent days, prominent climate sceptics and rightwing commentators have shared charts on social media incorrectly implying that Europe is&#8230; The post Factcheck: No, Europe is not having its ‘quietest’ year for wildfires appeared first on Carbon Brief.",
+          "published": "2026-07-30T14:51:00.000Z",
+          "score": 16
+        },
+        {
+          "title": "Correcting climate ‘misperceptions’ may not boost climate action",
+          "link": "https://www.carbonbrief.org/correcting-climate-misperceptions-may-not-boost-climate-action",
+          "source": "Carbon Brief",
+          "description": "The general public often underestimate support for climate action, while overestimating the real-world actions taken by other people to address&#8230; The post Correcting climate ‘misperceptions’ may not boost climate action appeared first on Carbon Brief.",
+          "published": "2026-07-30T15:30:11.000Z",
           "score": 13
         },
         {
@@ -96,28 +104,20 @@
           "score": 13
         },
         {
-          "title": "World falling short on 22 of 23 nature targets for 2030, says draft UN report",
-          "link": "https://www.carbonbrief.org/world-falling-short-on-22-of-23-nature-targets-for-2030-says-draft-un-report",
-          "source": "Carbon Brief",
-          "description": "The global goal to halt and reverse nature loss by 2030 “will not be achieved” unless action by countries “accelerates&#8230; The post World falling short on 22 of 23 nature targets for 2030, says draft UN report appeared first on Carbon Brief.",
-          "published": "2026-07-29T15:00:21.000Z",
-          "score": 10
+          "title": "France and Spain win some respite, as wildfire battles rage across Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPbWpsSnpKVndGWThyUHhGTmU3SGw2LWtnTldYT2gxcUFYZmV4Rk9uVlpDb0Vyal9RWGtKdTdONFlhOF9TLTB6c3ZLaWJoVjdNWWNkZzlFWi1iZUhqOVhtdE41U0Yxejdwd05LbjB1d3gyZmIwaV81ZDdWT0EzQ0R0SVdRNmtYUUhKWE4tRkpsZjY2NjRmZlJCOUlfMl9HbEhVTmY1RU1fXzJXZjRtUEE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPbWpsSnpKVndGWThyUHhGTmU3SGw2LWtnTldYT2gxcUFYZmV4Rk9uVlpDb0Vyal9RWGtKdTdONFlhOF9TLTB6c3ZLaWJoVjdNWWNkZzlFWi1iZUhqOVhtdE41U0Yxejdwd05LbjB1d3gyZmIwaV81ZDdWT0EzQ0R0SVdRNmtYUUhKWE4tRkpsZjY2NjRmZlJCOUlfMl9HbEhVTmY1RU1fXzJXZjRtUEE?oc=5\" target=\"_blank\"&gt;France and Spain win some respite, as wildfire battles rage across Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-30T15:32:43.000Z",
+          "score": 13
         },
         {
-          "title": "Firefighters race to extinguish blazes across EU as fire weather breaks records",
-          "link": "https://www.theguardian.com/world/2026/jul/30/fire-weather-eu-wildfires-data",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;European Forest Fire Information Service figures show conditions in EU 43% more severe than for same period in last 20 years &lt;/p&gt;&lt;p&gt;Fire weather in the EU has broken records for severity for this time of year, new data shows, as firefighters race to extinguish blazes across the Mediterranean.&lt;/p&gt;&lt;p&gt;Inflamed by carbon pollution, the hot, dry and windy weather across the EU since the start of the year has been 43% more severe than the end-of-July average over the l",
-          "published": "2026-07-30T12:04:18.000Z",
+          "title": "Hormuz crisis speeds up transition to electric cars, IEA data shows",
+          "link": "https://www.climatechangenews.com/2026/07/30/hormuz-crisis-speeds-up-transition-to-electric-cars-iea-data-shows/",
+          "source": "Climate Home News",
+          "description": "With the oil price soaring amid the Iran war, drivers increasingly chose electric cars over internal combustion engines from April to June this year The post Hormuz crisis speeds up transition to electric cars, IEA data shows appeared first on Climate Home News.",
+          "published": "2026-07-30T05:00:00.000Z",
           "score": 10
-        },
-        {
-          "title": "India news: Assam flood toll rises to 78, more rain predicted",
-          "link": "https://www.dw.com/en/india-news-assam-flood-toll-rises-to-78-more-rain-predicted/live-78168101?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Monsoon floods in Assam have left 78 people dead so far as thousands remain displaced. Opposition lawmakers have staged a protest in the Indian parliament. DW has the latest.",
-          "published": "2026-07-30T07:43:00.000Z",
-          "score": 9
         }
       ]
     },
@@ -126,35 +126,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Reaction to FIFA's private investment plan - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQaHgwWkxMbUdZVHdYbG9CNEFwb3F6VER1QTFkSTZpSDNjM1FRY1lmMmNiR0Q0aTAtMlRIMjRkQUotaDhISGxJRlNtamJfbkNLR3JNWE95aV8wNzNkanFyZEgzeXp6TkoyM082Vms5RzFSOWdlam1DeHhteURjT3ZCTVpQS2RkQzdoUnRPdUtFTjlzZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxQaHgwWkxMbUdZVHdYbG9CNEFwb3F6VER1QTFkSTZpSDNjM1FRY1lmMmNiR0Q0aTAtMlRIMjRkQUotaDhISGxJRlNtamJfbkNLR3JNWE95aV8wNzNkanFyZEgzeXp6TkoyM082Vms5RzFSOWdlam1DeHhteURjT3ZCTVpQS2RkQzdoUnRPdUtFTjlzZw?oc=5\" target=\"_blank\"&gt;Reaction to FIFA's private investment plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-29T15:19:37.000Z",
-          "score": 2
-        },
-        {
           "title": "USDA to fund Arizona facility to fight flesh-eating livestock pest - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNU2ZINjFSaUFSdVc5YmhGWnVqTnJuZGhBSTF3ZDBnZ3lrWDNCVFFhZUFtOVQtZlh0cm1EbjgwbWx4S21FRHZ6NEh6LTZLaVpNUl9DZGMwLUtzZ0hFeGpsZjFrNy1vdTlBSTZxY0o4SHVQWC1HWFdsM0psQjZfWFQwWWY4UjZuQzRuZGVKb2FFVXZ5M1ZjRk1iWDhLdVc1OWNSMGlZeTdtX1k?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNU2ZINjFSaUFSdVc5YmhGWnVqTnJuZGhBSTF3ZDBnZ3lrWDNCVFFhZUFtOVQtZlh0cm1EbjgwbWx4S21FRHZ6NEh6LTZLaVpNUl9DZGMwLUtzZ0hFeGpsZjFrNy1vdTlBSTZxY0o4SHVQWC1HWFdsM0psQjZfWFQwWWY4UjZuQzRuZGVKb2FFVXZ5M1ZjRk1iWDhLdVc1OWNSMGlZeTdtX1k?oc=5\" target=\"_blank\"&gt;USDA to fund Arizona facility to fight flesh-eating livestock pest&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-29T21:31:43.000Z",
-          "score": 2
-        },
-        {
-          "title": "South Korea to cap investment in single-stock leveraged ETFs, ministry says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZXI4QWhWYlV5NnVMa1p3YlhOSjg3SkxuQVludHRYRzNucTJSWlRDZjZ4S09kbE5tenQ3X1Fsd0syX2ZuWnhZLWxaVEFyZmRGVFlaMFo3TGVEaFhkNk10SHgtZTZ6VUVtUDBCMTFtWk1TV25ENVlJZXdCUjhwdjRBNG10ZmFlLThqUm1xWTBfTTFIb2MtZnhGS0VYQW11YUxRTXhBV2dERXNYZmtFNmZhSHY5SlF4c1ZObjFzaWkzVDk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZXI4QWhWYlV5NnVMa1p3YlhOSjg3SkxuQVludHRYRzNucTJSWlRDZjZ4S09kbE5tenQ3X1Fsd0syX2ZuWnhZLWxaVEFyZmRGVFlaMFo3TGVEaFhkNk10SHgtZTZ6VUVtUDBCMTFtWk1TV25ENVlJZXdCUjhwdjRBNG10ZmFlLThqUm1xWTBfTTFIb2MtZnhGS0VYQW11YUxRTXhBV2dERXNYZmtFNmZhSHY5SlF4c1ZObjFzaWkzVDk?oc=5\" target=\"_blank\"&gt;South Korea to cap investment in single-stock leveraged ETFs, ministry says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-29T13:44:33.000Z",
-          "score": 2
-        },
-        {
-          "title": "Allied Gold's $4 billion sale to China's Zijin collapses, lands $295 million investment - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPUnNrT2R6ak5VLVRPdVJHeE5veWR6ZFM2b2ZJS2drSDRKVHV3d3hsbDhEdzNNank0Q3VBaEotcFU4UklZSUczbVNReUMzd0tjaDZ5WTUwMkloRkVUZkt4WWdpaVJTZnZDdE1hZEJURnBzS3gyUGM3RzZwdC10bUt2eFRRM0xLUGJndldNYTJLUkl5T0dhRUhmeDNhUUVSUjM3X2ctUjFKSDUydDRGSDBWSUFwTE1CaDZnOWlmZGlCMkRlaWs?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPUnNrT2R6ak5VLVRPdVJHeE5veWR6ZFM2b2ZJS2drSDRKVHV3d3hsbDhEdzNNank0Q3VBaEotcFU4UklZSUczbVNReUMzd0tjaDZ5WTUwMkloRkVUZkt4WWdpaVJTZnZDdE1hZEJURnBzS3gyUGM3RzZwdC10bUt2eFRRM0xLUGJndldNYTJLUkl5T0dhRUhmeDNhUUVSUjM3X2ctUjFKSDUydDRGSDBWSUFwTE1CaDZnOWlmZGlCMkRlaWs?oc=5\" target=\"_blank\"&gt;Allied Gold's $4 billion sale to China's Zijin collapses, lands $295 million investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
-          "published": "2026-07-29T12:45:06.000Z",
           "score": 2
         }
       ]
@@ -186,19 +162,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Thousands evacuated in Crete as European wildfires continue to rage",
-          "link": "https://www.bbc.co.uk/news/articles/c9w01781981o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Strong winds have fanned the flames in the Rethymno region as wildfires continue to ravage the Greek island.",
-          "published": "2026-07-30T09:10:11.000Z",
+          "title": "EU aims to build AI gigafactories of its own",
+          "link": "https://www.dw.com/en/eu-aims-to-build-ai-gigafactories-of-its-own/a-78179533?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The EU has unveiled a plan to raise state and private funds to hyperscale AI capabilities and gain independence from non-European governments. The plan calls for the construction of seven new sites across the bloc.",
+          "published": "2026-07-30T15:15:00.000Z",
           "score": 8
         },
         {
-          "title": "UEFA set for emergency meeting on FIFA World Cup proposal",
-          "link": "https://www.dw.com/en/uefa-set-for-emergency-meeting-on-fifa-world-cup-proposal/a-78171084?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Eurozone sees GDP growth of 0.4%, most since early 2025",
+          "link": "https://www.dw.com/en/eurozone-sees-gdp-growth-of-0-4-most-since-early-2025/a-78177668?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "UEFA is reportedly soon to hold an emergency meeting to discuss FIFA&#039;s plans to effectively sell off a stake in the World Cup. European football&#039;s governing body has expressed stiff opposition to the plan.",
-          "published": "2026-07-30T09:58:00.000Z",
+          "description": "Eurozone economies expanded by 0.4% in the second quarter of 2026, exceeding expectations and marking the strongest quarterly growth since early 2025.",
+          "published": "2026-07-30T13:12:00.000Z",
           "score": 8
         },
         {
@@ -210,28 +186,28 @@
           "score": 8
         },
         {
-          "title": "EU aims for seven AI gigafactories with €10 billion plan in race with US, China - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQemF1ckRFYmVucFp2NXhuNzA4cjNXdnNTdzcxWTBvdTJGU1NfTUdLbTFubnZEWFdjVFpGZWNBYi1CSGNTN3JPUEdzemU5TmFqQkYtU0dTb2JfS2NWa2ZvV0JfRW1pQzBubTBoS3ZEZ2VOaW9xX2dsT1c2NmZTOHpRSUU0X3REN01hb0MtRkFHYkkxbFZ5SHpsNlNmUG02UlN2Q1Y5RG5Zd2NWMWhBV0lwRWM2TlJ5Z0ZkdkE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQemF1ckRFYmVucFp2NXhuNzA4cjNXdnNTdzcxWTBvdTJGU1NfTUdLbTFubnZEWFdjVFpGZWNBYi1CSGNTN3JPUEdzemU5TmFqQkYtU0dTb2JfS2NWa2ZvV0JfRW1pQzBubTBoS3ZEZ2VOaW9xX2dsT1c2NmZTOHpRSUU0X3REN01hb0MtRkFHYkkxbFZ5SHpsNlNmUG02UlN2Q1Y5RG5Zd2NWMWhBV0lwRWM2TlJ5Z0ZkdkE?oc=5\" target=\"_blank\"&gt;EU aims for seven AI gigafactories with €10 billion plan in race with US, China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-30T11:28:39.000Z",
-          "score": 8
-        },
-        {
           "title": "Euro zone economy grows faster than expected on AI spending, confident consumers - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNNXgwY1BYbk9QMmE3WW5aUXhhampyaXFHRWZXWXp5ZlhEdGRLNlVSR2ZlRks0ak9JMjFnQXN0OXZVZFZWUnBZSDNVUG9lN0xQa21CLUJ3RnlNMV9MUEQwREFPU1lnZkVkangwTnhvbGlFZUhPWDFnQ3FfejVUMFkweVBSUnc0dk9QbVJWcUhFaWdwWHBsOWRxNk44a2tTVldnaTBPbHZMX3k4RTJPLWZCSWJ5OTloOWhLUkE?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNNXgwY1BYbk9QMmE3WW5aUXhhampyaXFHRWZXWXp5ZlhEdGRLNlVSR2ZlRks0ak9JMjFnQXN0OXZVZFZWUnBZSDNVUG9lN0xQa21CLUJ3RnlNMV9MUEQwREFPU1lnZkVkangwTnhvbGlFZUhPWDFnQ3FfejVUMFkweVBSUnc0dk9QbVJWcUhFaWdwWHBsOWRxNk44a2tTVldnaTBPbHZMX3k4RTJPLWZCSWJ5OTloOWhLUkE?oc=5\" target=\"_blank\"&gt;Euro zone economy grows faster than expected on AI spending, confident consumers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-30T09:46:28.000Z",
           "score": 8
+        },
+        {
+          "title": "Japan cuts this year's growth outlook as higher energy costs weigh - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNOXpfWWVPWTVnaklwSWdjS3JVMmdaWjV2LWVwbG9yQXF0SEJLX2RWNUstelJfOUlEdFpCYkY3cHd6ZE1iclpTajZFSXpYSUtOZW5FMjNkSWNCMTR5bDRRQzhXbE9nZFJ0THhlaVRqZjhnMFByU3d5YnE2UkFDNkJMc2Raa3ZVUksyS05fM3hPak5ST193cWUxQ0otakRrYXloNUF5OWFJbU50TDhpbUFYQkE5VXZLTm9K?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNOXpfWWVPWTVnaklwSWdjS3JVMmdaWjV2LWVwbG9yQXF0SEJLX2RWNUstelJfOUlEdFpCYkY3cHd6ZE1iclpTajZFSXpYSUtOZW5FMjNkSWNCMTR5bDRRQzhXbE9nZFJ0THhlaVRqZjhnMFByU3d5YnE2UkFDNkJMc2Raa3ZVUksyS05fM3hPak5ST193cWUxQ0otakRrYXloNUF5OWFJbU50TDhpbUFYQkE5VXZLTm9K?oc=5\" target=\"_blank\"&gt;Japan cuts this year's growth outlook as higher energy costs weigh&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-30T02:30:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 370,
-    "articlesLast24h": 170,
-    "afterDedup": 165,
+    "totalArticlesScanned": 415,
+    "articlesLast24h": 176,
+    "afterDedup": 163,
     "feedsQueried": 19
   }
 }
