@@ -252,6 +252,39 @@ you which argument is worth having.
 | Recovery time | 8–40 yr |
 | Post-fire decomposition | 5–50% |
 
+## 5a. Live 2026 season data
+
+The page opens with a live section fed by the Copernicus EFFIS statistics API,
+proxied through `/api/effis` with a 30-minute server-side cache:
+
+| Upstream endpoint | What it provides |
+|---|---|
+| `statistics/v2/effis/weeklyaoi?aoi=EU&year=2026` | Weekly cumulative EU-27 burnt area and fire counts, with the 2006–25 min/avg/max envelope per week |
+| `statistics/v2/emissions/weeklyaoi?aoi=EU&year=2026` | CAMS wildfire emissions (CO₂ and other species), weekly cumulative, tonnes |
+| `rda-stats?year=2026` | EFFIS rapid-damage-assessment estimate of the season total, including fires not yet fully mapped |
+
+All three are open Copernicus data (base URL `api2.effis.emergency.copernicus.eu`).
+The live map uses the EFFIS WMS (`maps.effis.emergency.copernicus.eu/effis`):
+fire-danger forecast (`mf010.fwi`), current-season burnt-area polygons
+(`modis.ba.poly.season`) and VIIRS thermal hotspots from the last 24 h
+(`viirs.hs`).
+
+**Year-end projection.** Full-year 2026 burnt area is projected from the season
+to date plus the historical cumulative envelope: the low / central / high
+estimates add the quietest / average / worst *remainder-of-season* in the
+2006–25 record to this year's observed head start, and a fourth,
+`proportional`, estimate assumes the season keeps running at its current
+multiple of the seasonal norm. This is a spread of historical remainders, not
+a confidence interval. The carbon consequence of the projected season reuses
+the same per-hectare parameters as the interactive model (`seasonSinkImpact`
+in `live.ts`), including the baseline subtraction of §3.3, so the live section
+and the sliders cannot drift apart.
+
+If the API route or the upstream service is unreachable, the section falls
+back to an embedded snapshot of the same payload and labels itself
+accordingly; in-season EFFIS figures are provisional and revised as new fires
+are mapped.
+
 ## 6. Known limitations
 
 **Understates the problem:**
@@ -288,7 +321,11 @@ you which argument is worth having.
 | File | Contents |
 |---|---|
 | `model.ts` | Data, parameters, presets, model functions, assumption registry |
-| `page.tsx` | UI — five inline-SVG charts, sliders, documentation table |
+| `live.ts` | Live-season types, fetch-with-fallback, year-end projection, season carbon impact |
+| `LiveSeason.tsx` | Live 2026 tracker — stat band, seasonal-trend chart, projection cards |
+| `LiveFireMap.tsx` | Leaflet map with EFFIS WMS layers (danger forecast, burnt areas, hotspots) |
+| `page.tsx` | UI — inline-SVG charts, sliders, documentation table |
+| `src/app/api/effis/route.ts` | Cached proxy for the EFFIS statistics API |
 | `src/app/beta/wildfire-sink-risk/page.tsx` | Route re-export |
 
 The model is pure and side-effect free; `page.tsx` computes nothing beyond
