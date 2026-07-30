@@ -98,6 +98,38 @@ https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6
 
 ---
 
+## 2b. Eurostat — PRODCOM & Comext (a *second* dissemination host)
+
+PRODCOM and Comext datasets (`ds-0593xx`) are **not** on the API in section 1.
+Asking for them there returns `404 … is not available for dissemination`, and
+they appear in neither the dissemination catalogue nor the bulk-file inventory
+— because both only describe that host. They live on a parallel stack:
+
+```
+https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/<dataset>/1.0?c[<dim>]=<value>&…
+```
+
+Three things that otherwise look like access denials:
+
+- **Send an Accept header** — without one you get `406 Not Acceptable`. Use
+  `application/vnd.sdmx.data+csv;version=1.0.0` (Data Browser CSV layout) or
+  `…;version=2.0.0;labels=both` (codes + labels, for reading codelists).
+  `format=csvdata` in the query string does nothing.
+- **Send `accept-encoding: identity`** — the host gzips the body without a
+  `Content-Encoding` header, so `fetch()` returns mojibake.
+- **Equality filters only** — `c[product]=sw:2014` is rejected; enumerate the
+  codes. Oversized extractions come back as a SOAP envelope with HTTP 200, so
+  check the payload, not the status.
+
+Datasets in use here: `ds-059358` sold production + trade (to 2024),
+`ds-059359` total production, `ds-059367`/`ds-059368` the same on the CPA 2.2
+list (2025), `ds-059366` international trade by CPA 2.2. These replace the
+report's retired DS-056120 / DS-056121 / DS-059268. Implemented in
+`fetchComextCsv()`; background in
+`docs-internal/indicator-check-prodcom-unblock-2026-07-30.md`.
+
+---
+
 ## 3. Other primary sources (no open API)
 
 | Source | Used for | How to get it |

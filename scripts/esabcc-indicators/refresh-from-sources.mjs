@@ -30,6 +30,7 @@
  * Usage:  node scripts/esabcc-indicators/refresh-from-sources.mjs [--dry-run]
  */
 import { readFile, writeFile } from 'node:fs/promises';
+import { gunzipSync } from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 
@@ -38,12 +39,70 @@ const ROOT = join(__dirname, '..', '..');
 const TS_FILE = join(ROOT, 'src', 'data', 'esabcc-indicators.ts');
 const PROV_FILE = join(__dirname, 'refresh-provenance.json');
 const DRY = process.argv.includes('--dry-run');
+/**
+ * `--only=<id>[,<id>…]` runs a subset of the recipe table; its provenance
+ * records are merged into the existing file rather than replacing it.
+ */
+const ONLY = (process.argv.find(a => a.startsWith('--only=')) || '').slice('--only='.length)
+  .split(',').filter(Boolean);
 
 const EUROSTAT_BASE =
   'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data';
 const EEA_CSV =
   'https://www.eea.europa.eu/en/datahub/datahubitem-view/' +
   '3b7fe76c-524a-439a-bfd2-a6e4046302a2/download?format=csv&country=EU27';
+
+/**
+ * PRODCOM and Comext trade — the "not on the API" datasets that are.
+ * ---------------------------------------------------------------------------
+ * Every earlier pass concluded that PRODCOM sits outside Eurostat's
+ * dissemination infrastructure: `…/statistics/1.0/data/DS-059358` answers
+ * "not available for dissemination", the dataset appears in neither the
+ * dissemination catalogue nor the bulk-file inventory, and its portal page
+ * carries no download link in the HTML. All of that is still true — and all of
+ * it is about the WRONG HOST. PRODCOM and Comext are served by a second,
+ * parallel dissemination stack under `/eurostat/api/comext/`, which speaks
+ * SDMX 3.0 and is what the Data Browser itself calls. Two things make it work:
+ *
+ *   • the path is `/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT/<ds>/1.0`
+ *     — the main `/api/dissemination/…` host 404s on these ids at every path
+ *     shape, including the `DS-059358$DEFAULTVIEW` id the CSV export carries;
+ *   • an explicit SDMX Accept header is REQUIRED. Without one the server
+ *     answers 406 Not Acceptable, which reads like a blocked endpoint but is
+ *     only content negotiation. `format=csvdata` in the query string does
+ *     nothing; the header is what counts.
+ *
+ * Filters are `c[<dim>]=<value>` and only equality is supported (`sw:`/`co:`
+ * operators return INVALID_OPERATOR_FOR_DIMENSION_FILTERING), so product
+ * baskets have to be listed out. Quantities are kilograms throughout.
+ */
+const COMEXT_BASE =
+  'https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/3.0/data/dataflow/ESTAT';
+const SDMX_CSV = 'application/vnd.sdmx.data+csv;version=1.0.0';
+const KG_TO_MT = 1e-9;
+
+/**
+ * The report's own basket for I2 (chemicals), named in the underlying-data
+ * workbook: "sum of sold production of ethylene, propylene, benzene, toluene,
+ * o-Xylene, p-Xylene, and m-Xylene and mixed xylene isomers". Identified in
+ * the live data by matching the report's per-product series, which reproduce
+ * to 12 significant digits.
+ *
+ * The 2025 release moved to the CPA 2.2 PRODCOM list (ds-059367), which merges
+ * the three separate xylene codes into a single `20141240 Xylenes`. Same
+ * basket, one code fewer — so the two vintages are listed separately and the
+ * completeness guard below counts against whichever list applies.
+ */
+const CHEM_BASKET_2023 = [
+  '20141130', // ethylene
+  '20141140', // propene (propylene)
+  '20141223', // benzene
+  '20141225', // toluene
+  '20141243', // o-xylene
+  '20141245', // p-xylene
+  '20141247', // m-xylene and mixed xylene isomers
+];
+const CHEM_BASKET_2025 = ['20141130', '20141140', '20141223', '20141225', '20141240'];
 
 const MTOE_TO_TWH = 11.63; // 1 Mtoe = 1000 ktoe × 0.011630 TWh
 const KTOE_TO_TWH = 0.01163;
@@ -648,12 +707,13 @@ export const RECIPES = {
     sourceTitle: 'Eurostat demo_gind · average population (indexed onto report 2005=1.0 baseline) · EU27_2020',
     note: 'Spliced: absolute EU27 average population YoY change × the report’s population index baseline.',
   },
-  // Industry material production — PRODCOM absolute tonnage (DS-056120/prom)
-  // and Comext trade (DS-045409) are NOT served by the JSON-stat dissemination
-  // API (404). The production-volume index sts_inpr_a IS, so splice its YoY
-  // change onto each report Mt baseline (splice uses trend only; index base
-  // 2021=100 cancels). Apparent-use / trade-balance need Comext flows → not
-  // wired (kept as report figures). C235/C201 are the narrowest EU27 proxies.
+  // Industry material production. Steel and cement tonnage is still spliced
+  // off the sts_inpr_a production-volume index (Eurofer/Cembureau publish the
+  // levels, and neither is on an API), so the index supplies the trend only —
+  // its 2021=100 base cancels in the splice. The chemicals series are NOT
+  // proxied any more: PRODCOM turned out to be reachable after all, on its own
+  // dissemination host, so I2 (chemicals) is now the report's own arithmetic
+  // over the report's own seven products. See COMEXT_BASE below.
   'esabcc-i2-steel-production': {
     kind: 'eurostat', dataset: 'sts_inpr_a', round: 1, mode: 'splice',
     filters: { geo: 'EU27_2020', indic_bt: 'PRD', s_adj: 'CA', unit: 'I21', nace_r2: 'C241' },
@@ -671,12 +731,32 @@ export const RECIPES = {
     note: 'Spliced: cement-dominated NACE C235 production-volume index (cement-only C2351 has no EU27 series) YoY change × report 2021 baseline (182.5 Mt).',
   },
   'esabcc-i2-chemicals-production': {
-    kind: 'eurostat', dataset: 'sts_inpr_a', round: 2, mode: 'splice',
-    filters: { geo: 'EU27_2020', indic_bt: 'PRD', s_adj: 'CA', unit: 'I21', nace_r2: 'C201' },
-    toRepo: v => v,
-    sourceUrl: `${EUROSTAT_BASE}/sts_inpr_a?format=JSON&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C201`,
-    sourceTitle: 'Eurostat sts_inpr_a · production-volume index (2021=100), NACE C201 basic chemicals · EU27_2020',
-    note: 'Spliced: basic-chemicals production-volume index YoY change × report 2021 baseline (26.84 Mt).',
+    kind: 'prodcom', series: 'production', round: 2,
+    sourceUrl: `${COMEXT_BASE}/ds-059358/1.0?c[reporter]=EU27_2020&c[product]=${CHEM_BASKET_2023.join(',')}&c[indicators]=PRODQNT`,
+    sourceTitle: 'Eurostat PRODCOM ds-059358/ds-059367 · sold production of the report’s seven base organic chemicals · EU27_2020',
+    note: 'The report’s own method, re-run: sum of sold production (PRODQNT) of ethylene, propylene, benzene, toluene and the three xylenes. Absolute tonnage, not a spliced index.',
+  },
+  'esabcc-i2-chemicals-use': {
+    kind: 'prodcom', series: 'use', round: 2,
+    sourceUrl: `${COMEXT_BASE}/ds-059358/1.0?c[reporter]=EU27_2020&c[product]=${CHEM_BASKET_2023.join(',')}&c[indicators]=PRODQNT,IMPQNT,EXPQNT`,
+    sourceTitle: 'Eurostat PRODCOM ds-059358/ds-059367 · sold production + imports − exports of the report’s seven base organic chemicals · EU27_2020',
+    note: 'Apparent use = production + imports − exports, over the same seven products the report used.',
+  },
+  'esabcc-i2-chemicals-trade-balance': {
+    kind: 'prodcom', series: 'trade', round: 3,
+    sourceUrl: `${COMEXT_BASE}/ds-059358/1.0?c[reporter]=EU27_2020&c[product]=${CHEM_BASKET_2023.join(',')}&c[indicators]=IMPQNT,EXPQNT`,
+    sourceTitle: 'Eurostat PRODCOM ds-059358/ds-059367 · exports − imports of the report’s seven base organic chemicals · EU27_2020',
+    note: 'Trade balance = exports − imports (negative = net importer), the report’s own sign convention.',
+  },
+  // Steel apparent use stays with Eurofer (PDF only), but the trade leg never
+  // needed PRODCOM: the report took it from "EU trade since 2002 by CPA 2.1"
+  // (DS-059268), whose live successor is ds-059366 on the CPA 2.2 list.
+  'esabcc-i2-steel-trade-balance': {
+    kind: 'comext-trade', round: 3,
+    product: '2410', partner: 'EXT_EU27_2020',
+    sourceUrl: `${COMEXT_BASE}/ds-059366/1.0?c[reporter]=EU27_2020&c[partner]=EXT_EU27_2020&c[product]=2410&c[indicators]=QUANTITY_KG`,
+    sourceTitle: 'Eurostat ds-059366 · extra-EU27 exports − imports of CPA 2410 basic iron, steel & ferro-alloys, quantity · EU27_2020',
+    note: 'Reproduces the report’s 2008-2021 series to 5e-5 relative error, so taken directly rather than spliced.',
   },
 
   // ── Agriculture livestock (July 2026, batch 2): meat/milk production,
@@ -835,6 +915,118 @@ export function round(v, d) {
 }
 
 // ───────────────────────── fetchers ─────────────────────────
+
+
+/** One SDMX-CSV query against the Comext dissemination host. */
+async function fetchComextCsv(dataset, filters) {
+  const qs = Object.entries(filters)
+    .map(([k, v]) => `c[${k}]=${encodeURIComponent(v)}`)
+    .join('&');
+  const url = `${COMEXT_BASE}/${dataset}/1.0?${qs}`;
+  // `accept-encoding: identity` is not optional. The Comext host gzips the
+  // body but omits the Content-Encoding header, so fetch() hands back the raw
+  // deflate stream as mojibake instead of decoding it. Asking for identity is
+  // the clean fix; the magic-byte check below covers the host changing its
+  // mind and compressing anyway.
+  const res = await fetch(url, { headers: { accept: SDMX_CSV, 'accept-encoding': 'identity' } });
+  if (!res.ok) throw new Error(`Comext ${dataset} → ${res.status} ${res.statusText}`);
+  const raw = Buffer.from(await res.arrayBuffer());
+  const text = (raw[0] === 0x1f && raw[1] === 0x8b ? gunzipSync(raw) : raw).toString('utf8');
+  // A too-large or malformed extraction comes back as a SOAP fault with HTTP
+  // 200, so check the payload shape rather than trusting the status code.
+  if (!text.startsWith('DATAFLOW,')) {
+    throw new Error(`Comext ${dataset} → non-CSV response (${text.slice(0, 160).replace(/\s+/g, ' ')})`);
+  }
+  const lines = text.trim().split('\n');
+  const head = lines[0].split(',').map(h => h.trim());
+  const rows = [];
+  for (const line of lines.slice(1)) {
+    const cells = line.split(',');
+    const row = {};
+    head.forEach((h, i) => { row[h] = cells[i]; });
+    const value = Number(row.OBS_VALUE);
+    if (!Number.isFinite(value)) continue; // ':' and ':E'-style flag rows
+    rows.push({ ...row, year: Number(row.TIME_PERIOD), value });
+  }
+  if (rows.length === 0) throw new Error(`Comext ${dataset} → HTTP 200 but 0 observations`);
+  return rows;
+}
+
+/**
+ * Sum a PRODCOM product basket per year, for one indicator (PRODQNT / IMPQNT /
+ * EXPQNT), across both list vintages.
+ *
+ * COMPLETENESS GUARD: a year is only returned when EVERY product in the basket
+ * reports. PRODCOM suppresses individual products when too few member states
+ * report them, and a silently short basket would show up as a fall in EU
+ * production rather than as missing data — the same class of error the
+ * zero-values guard on fetchEurostat exists to prevent.
+ */
+async function fetchProdcomBasketLeg(indicator) {
+  const perYear = new Map(); // year -> Map(product -> kg)
+  for (const [dataset, basket] of [['ds-059358', CHEM_BASKET_2023], ['ds-059367', CHEM_BASKET_2025]]) {
+    const rows = await fetchComextCsv(dataset, {
+      reporter: 'EU27_2020',
+      product: basket.join(','),
+      indicators: indicator,
+    });
+    for (const r of rows) {
+      if (r.indicators !== indicator || !basket.includes(r.product)) continue;
+      if (!perYear.has(r.year)) perYear.set(r.year, { basket, seen: new Map() });
+      perYear.get(r.year).seen.set(r.product, r.value);
+    }
+  }
+  const out = [];
+  for (const [year, { basket, seen }] of perYear) {
+    if (seen.size !== basket.length) continue; // incomplete basket → drop the year
+    out.push({ year, value: [...seen.values()].reduce((a, b) => a + b, 0) * KG_TO_MT });
+  }
+  return out.sort((a, b) => a.year - b.year);
+}
+
+/** I2 (chemicals): production, apparent use, or trade balance, in Mt. */
+async function fetchProdcom(rec) {
+  const [prod, imp, exp] = await Promise.all(
+    ['PRODQNT', 'IMPQNT', 'EXPQNT'].map(fetchProdcomBasketLeg));
+  if (rec.series === 'production') return prod;
+  const byYear = y => ({
+    p: prod.find(x => x.year === y)?.value,
+    i: imp.find(x => x.year === y)?.value,
+    e: exp.find(x => x.year === y)?.value,
+  });
+  const out = [];
+  for (const { year } of prod) {
+    const { p, i, e } = byYear(year);
+    if (![p, i, e].every(Number.isFinite)) continue;
+    out.push({ year, value: rec.series === 'use' ? p + i - e : e - i });
+  }
+  if (out.length === 0) throw new Error(`PRODCOM ${rec.series}: no year has all three legs`);
+  return out;
+}
+
+/** Extra-EU trade balance (exports − imports) for one CPA product, in Mt. */
+async function fetchComextTrade(rec) {
+  const rows = await fetchComextCsv('ds-059366', {
+    freq: 'A',
+    reporter: 'EU27_2020',
+    partner: rec.partner,
+    product: rec.product,
+    indicators: 'QUANTITY_KG',
+  });
+  const legs = new Map(); // year -> { 1: imports, 2: exports }
+  for (const r of rows) {
+    if (r.product !== rec.product) continue;
+    if (!legs.has(r.year)) legs.set(r.year, {});
+    legs.get(r.year)[r.flow] = r.value;
+  }
+  const out = [];
+  for (const [year, l] of legs) {
+    if (!Number.isFinite(l['1']) || !Number.isFinite(l['2'])) continue;
+    out.push({ year, value: (l['2'] - l['1']) * KG_TO_MT });
+  }
+  if (out.length === 0) throw new Error(`Comext ${rec.product}: no year has both flows`);
+  return out.sort((a, b) => a.year - b.year);
+}
 
 export async function fetchEurostat(dataset, filters) {
   const params = new URLSearchParams({ format: 'JSON', lang: 'EN', ...filters });
@@ -1373,6 +1565,7 @@ async function main() {
   const edits = [];
 
   for (const [id, rec] of Object.entries(RECIPES)) {
+    if (ONLY.length && !ONLY.includes(id)) continue;
     const loc = findDataArray(src, id);
     if (!loc) { console.error(`! ${id}: not found in TS`); continue; }
     // Default: splice/anchor on the report's own last year, regenerating every
@@ -1409,7 +1602,11 @@ async function main() {
                 ? await fetchCattleSplit(rec)
                 : rec.kind === 'project-tracker'
                   ? await fetchProjectTracker(rec)
-                  : await fetchEea(rec);
+                  : rec.kind === 'prodcom'
+                    ? await fetchProdcom(rec)
+                    : rec.kind === 'comext-trade'
+                      ? await fetchComextTrade(rec)
+                      : await fetchEea(rec);
     } catch (e) {
       console.error(`! ${id}: fetch failed — ${e.message}`);
       provenance.push({ ...meta, status: 'error', message: e.message });
@@ -1470,9 +1667,21 @@ async function main() {
     console.log('\n[dry-run] no files written');
   } else {
     await writeFile(TS_FILE, src);
+    // A targeted run MERGES its records into the existing provenance rather
+    // than replacing the file, so running one recipe never silently drops the
+    // other sixty's provenance (which the verification PDF reads).
+    let indicators = provenance;
+    if (ONLY.length) {
+      const prior = JSON.parse(await readFile(PROV_FILE, 'utf8')).indicators ?? [];
+      const fresh = new Map(provenance.map(p => [p.id, p]));
+      indicators = [
+        ...prior.map(p => fresh.get(p.id) ?? p),
+        ...provenance.filter(p => !prior.some(q => q.id === p.id)),
+      ];
+    }
     await writeFile(PROV_FILE, JSON.stringify(
-      { generatedAt: new Date().toISOString(), indicators: provenance }, null, 2));
-    console.log(`\nWrote ${TS_FILE} and ${PROV_FILE}`);
+      { generatedAt: new Date().toISOString(), indicators }, null, 2));
+    console.log(`\nWrote ${TS_FILE} and ${PROV_FILE}${ONLY.length ? ' (merged)' : ''}`);
   }
   const by = s => provenance.filter(p => p.status === s).length;
   console.log(`\nSummary: ${by('updated')} updated, ${by('up-to-date')} up-to-date, ` +
