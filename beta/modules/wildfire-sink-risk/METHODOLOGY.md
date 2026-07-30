@@ -142,8 +142,49 @@ engineeredCostBn      = loss × €400/t
 ```
 
 So a −90% target quietly becomes −89.0%, and net zero in 2050 quietly becomes
-net **positive**. Each 46.5 Mt of lost sink is one percentage point of the 2040
-target. Both cards assume no other sector compensates — that is the point of
+net **positive**.
+
+### 3.5 Choosing an honest denominator
+
+**The percentage-of-1990 framing badly understates the result, and the module
+says so on the page.** The 1990 baseline is 4,649 Mt, so one percentage point is
+**46.5 Mt** — the scale is too coarse to show a loss of this size, and "−89.0%
+instead of −90%" reads as a rounding error when it is not one.
+
+Three denominators are reported instead, all of which mean something:
+
+| Denominator | At 5%/yr | At 15%/yr |
+|---|---|---|
+| **Planned sink *improvement*** (212 → 317 Mt, i.e. +105 Mt) | **44%** | **229%** |
+| **All net emissions still allowed in 2040** (465 Mt) | **10%** | **52%** |
+| Gross budget for all other sectors (782 Mt) | 6% | 31% |
+| Percentage points of the 1990 baseline | 1.0 pp | 5.2 pp |
+
+The first is the headline on the 2040 card: the EU must *grow* the sink by
+105 Mt, and fire takes back nearly half of that gain at 5%/yr, and more than all
+of it above ~11%/yr.
+
+The loss is also shown against whole national inventories (2023, excl. LULUCF):
+Germany 672 Mt, Poland 348 Mt, Spain 270 Mt, EU-27 3,100 Mt. Only figures that
+could be verified directly are used — no mid-sized country is quoted from
+memory to sharpen a comparison.
+
+### 3.6 The outer bound — no sink at all
+
+`collapse(year, p)` answers a separate question: what the targets look like if
+the land sink is gone entirely, from any cause. **This is not a wildfire
+projection and the module does not claim fire alone gets there.** It is included
+because it is the only way to show how much of the architecture rests on land.
+
+| | 2040 | 2050 |
+|---|---|---|
+| Sink lost | 317 Mt | 317 Mt |
+| Gross budget for other sectors | 782 → 465 Mt (**41% deeper cut**) | 317 → **0 Mt** |
+| Reduction achieved if nobody compensates | −83.2% | −93.2% |
+| Engineered removals to replace it | €127 bn/yr | €127 bn/yr |
+| Share of Spain's entire emissions | 117% | 117% |
+
+Net zero in 2050 without a land sink is not net zero — it is **absolute** zero. Both cards assume no other sector compensates — that is the point of
 presenting them that way; in reality the gap is closed by cutting harder
 elsewhere, which is the bill the module exists to price.
 

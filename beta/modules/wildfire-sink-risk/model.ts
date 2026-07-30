@@ -153,6 +153,27 @@ export const SECTOR_2040: { sector: string; mt: number; color: string }[] = [
 export const CAR_TCO2_YR = 2.0;
 
 /**
+ * Whole-country emission anchors, MtCO2e in 2023, excluding LULUCF.
+ *
+ * Only the figures that could be verified directly are listed — the EU-27 total
+ * and the largest emitters. Deliberately no mid-sized countries: quoting a
+ * half-remembered number for Belgium to make a rhetorical point would undermine
+ * exactly the credibility this comparison exists to establish.
+ *
+ * Source: EEA / Eurostat 2023 inventory. EU-27 total ≈ 3.1 Gt CO2e excl. LULUCF.
+ */
+export const EU27_TOTAL_2023 = 3_100;
+
+export const COUNTRY_ANCHORS: { name: string; mt: number }[] = [
+  { name: 'Germany', mt: 672 },
+  { name: 'Poland', mt: 348 },
+  { name: 'Spain', mt: 270 },
+];
+
+/** The land sink as most recently estimated, MtCO2e — the base the plan builds from. */
+export const SINK_NOW = 212;
+
+/**
  * Cost of closing a removals shortfall with engineered (DACCS-class) removals,
  * €/tCO2. Order-of-magnitude only: current costs run far higher, and 2040-50
  * projections span roughly €200-600/t. Used solely to price the 2050 gap, where
@@ -502,6 +523,23 @@ export type Feasibility = {
   ppMissed: number;
   /** Cost of closing the shortfall with engineered removals, € bn per year. */
   engineeredCostBn: number;
+  /**
+   * The shortfall as a share of the entire planned IMPROVEMENT in the land sink
+   * (from today's ~212 Mt up to the target-year value), %.
+   *
+   * This is the denominator that actually means something. Expressed against
+   * the 1990 baseline the loss looks trivial, because one percentage point of
+   * 4,649 Mt is 46 Mt — the percentage scale is simply too coarse to show it.
+   * Expressed against the ~105 Mt of extra removals the EU is banking on, the
+   * same number says fire is eating half the plan.
+   */
+  shareOfSinkGrowth: number;
+  /**
+   * The shortfall as a share of all net emissions still permitted in the target
+   * year, %. In 2040 only ~465 Mt is allowed in total, so this is large.
+   * Meaningless at 2050 (where the allowance is zero) and returned as 0 there.
+   */
+  shareOfNetAllowed: number;
 };
 
 /** Net emissions permitted in 2040 under a `target2040Pct` cut vs 1990. */
@@ -536,6 +574,45 @@ export function feasibility(year: number, p: Params): Feasibility {
     effectiveReductionPct: (1 - (netAllowed + loss) / BASE_1990) * 100,
     ppMissed: (loss / BASE_1990) * 100,
     engineeredCostBn: (loss * 1e6 * ENGINEERED_COST_EUR_T) / 1e9,
+    shareOfSinkGrowth: ref > SINK_NOW ? (loss / (ref - SINK_NOW)) * 100 : 0,
+    shareOfNetAllowed: netAllowed > 0 ? (loss / netAllowed) * 100 : 0,
+  };
+}
+
+/**
+ * The absolute bound: what the targets look like if the land sink is gone
+ * entirely, from any cause — fire, harvest, drought, beetles, or all of them.
+ *
+ * This is not a wildfire projection and the module does not claim fire alone
+ * gets here. It is included because it is the only honest way to show how much
+ * of the 2040 and 2050 architecture rests on the land, and because it is not
+ * hypothetical at national scale: several Member States have already seen their
+ * LULUCF accounts fall to zero or flip to a net source within a few years.
+ */
+export type Collapse = {
+  year: number;
+  sinkLost: number;
+  /** Gross budget for other sectors with the sink, and without it. */
+  grossWith: number;
+  grossWithout: number;
+  /** How much deeper every other sector must cut, %. */
+  deeperCutPct: number;
+  effectiveReductionPct: number;
+  engineeredCostBn: number;
+};
+
+export function collapse(year: number, p: Params): Collapse {
+  const ref = referenceSink(year, p);
+  const netTarget = year >= 2050 ? 0 : netAllowed2040(p);
+  const grossWith = netTarget + ref;
+  return {
+    year,
+    sinkLost: ref,
+    grossWith,
+    grossWithout: netTarget,
+    deeperCutPct: grossWith > 0 ? ((grossWith - netTarget) / grossWith) * 100 : 0,
+    effectiveReductionPct: (1 - (netTarget + ref) / BASE_1990) * 100,
+    engineeredCostBn: (ref * 1e6 * ENGINEERED_COST_EUR_T) / 1e9,
   };
 }
 
