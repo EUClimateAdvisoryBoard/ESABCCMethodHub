@@ -1481,7 +1481,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'up',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2023, value: 48.00 }],
+    data: [{ year: 2023, value: 48 }, { year: 2024, value: 54, afterReport: true }, { year: 2025, value: 56, afterReport: true }],
   },
   {
     id: 'esabcc-i7b-cement-projects',

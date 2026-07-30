@@ -1132,36 +1132,113 @@ async function fetchCattleSplit(rec) {
  * `url` is versioned (…/2026/02/2026Q1-…xlsx) and will need bumping when LeadIT
  * publishes a new quarter; a 404 here skips the recipe rather than failing the run.
  */
-async function fetchProjectTracker({ url, sheet, headerRow, countryCol, dateCol, countries }) {
-  const { default: ExcelJS } = await import('exceljs');
+/**
+ * Minimal XLSX sheet reader: unzip, resolve the sheet, resolve shared strings,
+ * scan rows. Returns a sparse array indexed by 1-based row number, each row a
+ * sparse array indexed by 0-based column.
+ *
+ * This deliberately does NOT use exceljs (which the repo depends on): the
+ * LeadIT workbook is 8.8 MB with slicers and pivot caches, and exceljs does not
+ * finish parsing it in 500 s. Reading the two columns we need out of the raw
+ * sheet XML takes 0.3 s.
+ */
+async function readXlsxSheet(buffer, sheetName) {
+  const { default: JSZip } = await import('jszip');
+  const zip = await JSZip.loadAsync(buffer);
+
+  const wbXml = await zip.file('xl/workbook.xml').async('string');
+  const relsXml = await zip.file('xl/_rels/workbook.xml.rels').async('string');
+  const sheets = [...wbXml.matchAll(/<sheet[^>]*name="([^"]+)"[^>]*r:id="([^"]+)"/g)]
+    .map(m => ({ name: m[1], rid: m[2] }));
+  const rels = Object.fromEntries(
+    [...relsXml.matchAll(/Id="([^"]+)"[^>]*Target="([^"]+)"/g)].map(m => [m[1], m[2]]));
+  const target = sheets.find(x => x.name === sheetName);
+  if (!target) throw new Error(`xlsx: no sheet "${sheetName}" (have: ${sheets.map(x => x.name).join(', ')})`);
+  const path = 'xl/' + rels[target.rid].replace(/^\/?xl\//, '');
+
+  const ssFile = zip.file('xl/sharedStrings.xml');
+  const ssXml = ssFile ? await ssFile.async('string') : '';
+  const unesc = t => t
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'").replace(/&amp;/g, '&');
+  const strings = [...ssXml.matchAll(/<si>([\s\S]*?)<\/si>/g)]
+    .map(m => unesc([...m[1].matchAll(/<t[^>]*>([\s\S]*?)<\/t>/g)].map(x => x[1]).join('')));
+
+  const colIndex = ref => {
+    const letters = /^([A-Z]+)/.exec(ref)[1];
+    let n = 0;
+    for (const ch of letters) n = n * 26 + (ch.charCodeAt(0) - 64);
+    return n - 1;
+  };
+  const sheetXml = await zip.file(path).async('string');
+  const rows = [];
+  for (const rm of sheetXml.matchAll(/<row[^>]*r="(\d+)"[^>]*>([\s\S]*?)<\/row>/g)) {
+    const cells = [];
+    for (const cm of rm[2].matchAll(/<c r="([A-Z]+\d+)"([^>]*)>([\s\S]*?)<\/c>/g)) {
+      const type = /t="([^"]+)"/.exec(cm[2])?.[1];
+      const v = /<v>([\s\S]*?)<\/v>/.exec(cm[3])?.[1];
+      if (v == null) continue;
+      cells[colIndex(cm[1])] = type === 's' ? strings[Number(v)] : unesc(v);
+    }
+    rows[Number(rm[1])] = cells;
+  }
+  return rows;
+}
+
+/** Excel serial date (1900 system) or an ISO-ish string → calendar year. */
+function cellYear(raw) {
+  if (raw == null || raw === '') return null;
+  const str = String(raw).trim();
+  if (/^\d+(\.\d+)?$/.test(str)) {
+    // Excel's epoch is 1899-12-30 once its 1900 leap-year bug is accounted for.
+    return new Date(Date.UTC(1899, 11, 30) + Number(str) * 86400000).getUTCFullYear();
+  }
+  const d = new Date(str);
+  return Number.isNaN(d.getTime()) ? null : d.getUTCFullYear();
+}
+
+/**
+ * LeadIT Green Steel Tracker — cumulative count of EU-27 projects.
+ * ---------------------------------------------------------------------------
+ * The tracker is a JavaScript map with no API, which is why I7a was written
+ * off. The page does link a full project database as XLSX, and that carries a
+ * per-project announcement date and country, so the report's cumulative count
+ * can be rebuilt from it.
+ *
+ * Counting every EU-27 project announced by year-end reproduces the report's
+ * 2023 figure (52 against the report's 48). Counting only tracker-"qualified"
+ * projects gives 31, which does not — so the report evidently counted the full
+ * list, and that is what this reproduces. Still spliced, so the 8% gap between
+ * the two vintages does not move the published baseline.
+ *
+ * `url` is versioned (…/2026/02/2026Q1-…xlsx) and will need bumping when LeadIT
+ * publishes a new quarter; a 404 here skips the recipe rather than failing the run.
+ */
+export async function fetchProjectTracker({ url, sheet, headerRow, countryCol, dateCol, countries }) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`project tracker → HTTP ${res.status} (has the quarterly file moved?)`);
-  const wb = new ExcelJS.Workbook();
-  await wb.xlsx.load(await res.arrayBuffer());
-  const ws = wb.getWorksheet(sheet);
-  if (!ws) throw new Error(`project tracker: no sheet "${sheet}"`);
+  const rows = await readXlsxSheet(Buffer.from(await res.arrayBuffer()), sheet);
 
-  const header = ws.getRow(headerRow).values.map(v => String(v ?? '').trim());
+  const header = rows[headerRow];
+  if (!header) throw new Error(`project tracker: no header at row ${headerRow}`);
   const iCountry = header.findIndex(h => h === countryCol);
-  const iDate = header.findIndex(h => h === dateCol);
+  const iDate = header.findIndex(h => String(h ?? '').startsWith(dateCol));
   if (iCountry < 0 || iDate < 0) {
     throw new Error(`project tracker: columns "${countryCol}" / "${dateCol}" not found`);
   }
+
   const set = new Set(countries);
   const years = [];
-  ws.eachRow((row, n) => {
-    if (n <= headerRow) return;
-    const c = String(row.values[iCountry] ?? '').trim();
-    if (!set.has(c)) return;
-    const raw = row.values[iDate];
-    const d = raw instanceof Date ? raw : new Date(String(raw ?? ''));
-    if (!Number.isNaN(d.getTime())) years.push(d.getUTCFullYear());
-  });
+  for (let r = headerRow + 1; r < rows.length; r++) {
+    const row = rows[r];
+    if (!row || !set.has(String(row[iCountry] ?? '').trim())) continue;
+    const y = cellYear(row[iDate]);
+    if (y) years.push(y);
+  }
   if (!years.length) throw new Error('project tracker: no dated rows for the requested countries');
 
-  const last = Math.max(...years);
   const out = [];
-  for (let y = Math.min(...years); y <= last; y++) {
+  for (let y = Math.min(...years); y <= Math.max(...years); y++) {
     out.push({ year: y, value: years.filter(v => v <= y).length });
   }
   return out;

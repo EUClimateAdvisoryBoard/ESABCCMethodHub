@@ -27,6 +27,13 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
 import type { Indicator, IndicatorCategory } from '@/data/ecno-indicators';
+import {
+  INDICATOR_BLOCKERS,
+  BLOCKER_META,
+  STATUS_ACTION,
+  LAST_REFRESH,
+  type BlockerStatus,
+} from '@/data/indicator-blockers';
 
 const CATEGORY_META: Record<IndicatorCategory, { label: string; color: string }> = {
   emissions: { label: 'Emissions', color: '#2E3E4C' },
@@ -170,7 +177,14 @@ function Sparkline({ ind }: { ind: Indicator }) {
   );
 }
 
-type SortKey = 'move' | 'sector' | 'code';
+type SortKey = 'status' | 'move' | 'sector' | 'code';
+
+/** Chip colours per blocker tone. */
+const TONE_CLASS: Record<'amber' | 'slate' | 'red', string> = {
+  amber: 'bg-[#FDF3E3] text-[#8A5A00] dark:bg-transparent dark:text-[#E0A94A] dark:border dark:border-[#E0A94A]/40',
+  slate: 'bg-[#EEF1F4] text-[#54728C] dark:bg-transparent dark:text-[var(--mh-muted)] dark:border dark:border-[var(--mh-border)]',
+  red: 'bg-[#FDF3F2] text-[#B83230] dark:bg-transparent dark:text-[#E08A88] dark:border dark:border-[#E08A88]/40',
+};
 
 /** Cap on the inline "new since report" points shown per card, for visual
  * consistency with the Sparkline's own `slice(-10)` cap. */
@@ -182,9 +196,11 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
     [indicators],
   );
 
-  const [onlyUpdates, setOnlyUpdates] = useState(true);
+  // Default to the full picture: all 97 report indicators, the ones with new
+  // data first, each of the rest carrying the reason it has none.
+  const [dataFilter, setDataFilter] = useState<'all' | 'updated' | 'stale'>('all');
   const [sectorFilter, setSectorFilter] = useState<string>('all');
-  const [sortKey, setSortKey] = useState<SortKey>('move');
+  const [sortKey, setSortKey] = useState<SortKey>('status');
 
   const sectorsPresent = useMemo(() => {
     const set = new Set<IndicatorCategory>();
@@ -194,19 +210,61 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
 
   const summary = useMemo(() => {
     const updated = reads.filter((r) => r.hasUpdate);
+    const stale = reads.filter((r) => !r.hasUpdate);
     return {
       total: reads.length,
       updated: updated.length,
+      stale: stale.length,
+      // Of the series with no new data, how many are simply waiting on a
+      // publication rather than needing anyone to go and find something.
+      awaiting: stale.filter(
+        (r) => INDICATOR_BLOCKERS[r.ind.id]?.status === 'awaiting-publication',
+      ).length,
       rose: updated.filter((r) => r.pctChange !== null && r.pctChange > 0).length,
       fell: updated.filter((r) => r.pctChange !== null && r.pctChange < 0).length,
     };
   }, [reads]);
 
+  /**
+   * The update overview: what the last refresh covered, and for everything it
+   * did not, what each remaining series is actually waiting on. Grouped by
+   * effort so the "nothing to do" pile is visibly separate from the work.
+   */
+  const statusGroups = useMemo(() => {
+    const byStatus = new Map<BlockerStatus, { code: string; id: string }[]>();
+    reads
+      .filter((r) => !r.hasUpdate)
+      .forEach((r) => {
+        const st = INDICATOR_BLOCKERS[r.ind.id]?.status;
+        if (!st) return;
+        if (!byStatus.has(st)) byStatus.set(st, []);
+        byStatus.get(st)!.push({ code: r.ind.code ?? r.ind.id, id: r.ind.id });
+      });
+    const order: Record<'waiting' | 'work' | 'none', number> = { waiting: 0, work: 1, none: 2 };
+    return [...byStatus.entries()]
+      .map(([status, items]) => ({
+        status,
+        items: items.sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true })),
+        ...STATUS_ACTION[status],
+      }))
+      .sort((a, b) => order[a.effort] - order[b.effort] || b.items.length - a.items.length);
+  }, [reads]);
+
   const rows = useMemo(() => {
     let list = reads.slice();
-    if (onlyUpdates) list = list.filter((r) => r.hasUpdate);
+    if (dataFilter === 'updated') list = list.filter((r) => r.hasUpdate);
+    if (dataFilter === 'stale') list = list.filter((r) => !r.hasUpdate);
     if (sectorFilter !== 'all') list = list.filter((r) => r.ind.category === sectorFilter);
     list.sort((a, b) => {
+      // Indicators with new data first, biggest mover at the top; then the
+      // ones without, grouped by why they have none so the reasons read together.
+      if (sortKey === 'status') {
+        if (a.hasUpdate !== b.hasUpdate) return a.hasUpdate ? -1 : 1;
+        if (a.hasUpdate) return Math.abs(b.pctChange ?? -1) - Math.abs(a.pctChange ?? -1);
+        const sa = INDICATOR_BLOCKERS[a.ind.id]?.status ?? 'zzz';
+        const sb = INDICATOR_BLOCKERS[b.ind.id]?.status ?? 'zzz';
+        return sa.localeCompare(sb) || (a.ind.code ?? '').localeCompare(b.ind.code ?? '');
+      }
       if (sortKey === 'move') {
         return Math.abs(b.pctChange ?? -1) - Math.abs(a.pctChange ?? -1);
       }
@@ -220,7 +278,7 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
       return (a.ind.code ?? '').localeCompare(b.ind.code ?? '', undefined, { numeric: true });
     });
     return list;
-  }, [reads, onlyUpdates, sectorFilter, sortKey]);
+  }, [reads, dataFilter, sectorFilter, sortKey]);
 
   return (
     <div className="min-h-screen bg-white text-[#3D5265] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
@@ -229,11 +287,13 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
         title="Indicator Check — since the last report"
         subtitle={
           <>
-            The old report’s progress indicators, read for movement. For every indicator that has
+            All of the old report’s progress indicators, read for movement. Where an indicator has
             gained data since January 2024, this shows the report baseline, the newest two–three
-            points, and the arithmetic change between the two. Click an indicator to open its
-            full series in the Policy Gap 2.0 Project Workspace — every value shown here is read
-            from that workspace’s indicator database, so the two views always match.
+            points, and the arithmetic change between the two. Where it has not, the card says so
+            and gives the reason — a source that stopped publishing, one with no machine-readable
+            export, or data that simply is not out yet. Click an indicator to open its full series
+            in the Policy Gap 2.0 Project Workspace — every value shown here is read from that
+            workspace’s indicator database, so the two views always match.
           </>
         }
       />
@@ -256,14 +316,14 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
               className: 'text-[#004B7F] dark:text-[#5B9BD5]',
             },
             {
-              label: 'Value rose vs report',
-              value: summary.rose,
+              label: 'No new data (reason shown)',
+              value: summary.stale,
               className: 'text-[#54728C] dark:text-[var(--mh-muted)]',
             },
             {
-              label: 'Value fell vs report',
-              value: summary.fell,
-              className: 'text-[#54728C] dark:text-[var(--mh-muted)]',
+              label: 'Of those, awaiting publication',
+              value: summary.awaiting,
+              className: 'text-[#8A5A00] dark:text-[#E0A94A]',
             },
           ].map((t) => (
             <div
@@ -280,17 +340,92 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
           ))}
         </section>
 
+        {/* Update overview — what the last refresh covered, and what each
+            remaining series is waiting on, grouped so the work is separable
+            from the "nothing to do" pile. */}
+        <section className="mb-6 rounded-xl border border-[#E6E7E8] bg-[#FAFBFC] p-4 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+          <h2 className="text-[14px] font-bold text-[#004B7F] dark:text-[#5B9BD5]">
+            Update status — where the data stands
+          </h2>
+          <p className="mt-1.5 max-w-4xl text-[12px] leading-relaxed text-[#3D5265]/75 dark:text-[var(--mh-muted)]">
+            Last full refresh {LAST_REFRESH}.{' '}
+            <span className="font-semibold text-[#3D5265] dark:text-[var(--mh-fg)]">
+              {summary.updated} of {summary.total}
+            </span>{' '}
+            indicators are pulled automatically from their primary source and re-checked against the
+            report’s own baseline on every run. The remaining{' '}
+            <span className="font-semibold text-[#3D5265] dark:text-[var(--mh-fg)]">{summary.stale}</span>{' '}
+            carry no post-report data. They are not one problem: each is listed below with what it is
+            actually waiting on, so the ones needing work are separable from the ones that only need
+            time.
+          </p>
+
+          <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+            {statusGroups.map((g) => (
+              <div
+                key={g.status}
+                className={`rounded-lg border p-3 ${
+                  g.effort === 'waiting'
+                    ? 'border-[#E8D9B8] bg-[#FDFAF3] dark:border-[#E0A94A]/30 dark:bg-transparent'
+                    : 'border-[#E6E7E8] bg-white dark:border-[var(--mh-border)] dark:bg-transparent'
+                }`}
+              >
+                <div className="flex items-baseline gap-2">
+                  <span className="text-[18px] font-bold tabular-nums text-[#3D5265] dark:text-[var(--mh-fg)]">
+                    {g.items.length}
+                  </span>
+                  <span
+                    className={`inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${TONE_CLASS[BLOCKER_META[g.status].tone]}`}
+                  >
+                    {BLOCKER_META[g.status].label}
+                  </span>
+                  {g.effort === 'waiting' && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wide text-[#8A5A00] dark:text-[#E0A94A]">
+                      no action needed
+                    </span>
+                  )}
+                </div>
+                <p className="mt-1.5 text-[11px] leading-relaxed text-[#3D5265]/75 dark:text-[var(--mh-muted)]">
+                  {g.action}
+                </p>
+                <div className="mt-2 flex flex-wrap gap-1">
+                  {g.items.map((it) => (
+                    <Link
+                      key={it.id}
+                      href={workspaceIndicatorHref(it.id)}
+                      title="Open this indicator in the Project Workspace"
+                      className="rounded border border-[#D6DAE0] px-1.5 py-0.5 font-mono text-[10px] text-[#3D5265]/80 hover:border-[#00928F] hover:text-[#00928F] dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]"
+                    >
+                      {it.code}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-3 text-[11px] leading-relaxed text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+            Every reason shown is one that was tested against the live source, not assumed. Open any
+            card below with no new data for the full explanation and what would unblock it. Working
+            notes, including the routes that were tried and closed, are in{' '}
+            <code className="rounded bg-[#EEF1F4] px-1 py-0.5 text-[10px] dark:bg-transparent">
+              docs-internal/indicator-check-source-refresh-2026-07-29.md
+            </code>
+            .
+          </p>
+        </section>
+
         {/* Controls */}
         <section className="mb-4 flex flex-wrap items-center gap-2">
-          <label className="inline-flex items-center gap-2 rounded-md border border-[#D6DAE0] px-3 py-2 text-[13px] dark:border-[var(--mh-border)]">
-            <input
-              type="checkbox"
-              checked={onlyUpdates}
-              onChange={(e) => setOnlyUpdates(e.target.checked)}
-              className="accent-[#00928F]"
-            />
-            Only indicators with data since the report
-          </label>
+          <select
+            value={dataFilter}
+            onChange={(e) => setDataFilter(e.target.value as 'all' | 'updated' | 'stale')}
+            className="rounded-md border border-[#D6DAE0] bg-white px-2 py-2 text-[13px] dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]"
+          >
+            <option value="all">All indicators</option>
+            <option value="updated">With new data since the report</option>
+            <option value="stale">Without new data (and why)</option>
+          </select>
           <select
             value={sectorFilter}
             onChange={(e) => setSectorFilter(e.target.value)}
@@ -310,6 +445,7 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
             onChange={(e) => setSortKey(e.target.value as SortKey)}
             className="rounded-md border border-[#D6DAE0] bg-white px-2 py-2 text-[13px] dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]"
           >
+            <option value="status">Sort: new data first</option>
             <option value="move">Sort: biggest move</option>
             <option value="sector">Sort: sector</option>
             <option value="code">Sort: indicator code</option>
@@ -423,11 +559,44 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
                     </div>
                   </>
                 ) : (
-                  <div className="mt-3 text-[12px] text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
-                    No data added since the report
-                    {r.latest ? ` (report figure ${r.latest.year}: ${fmtNum(r.latest.value)} ${r.ind.unit})` : ''}
-                    .
-                  </div>
+                  (() => {
+                    const b = INDICATOR_BLOCKERS[r.ind.id];
+                    return (
+                      <div className="mt-3">
+                        <div className="text-[12px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+                          No data since the report
+                          {r.latest
+                            ? ` — still at ${r.latest.year}: ${fmtNum(r.latest.value)} ${r.ind.unit}`
+                            : ''}
+                          .
+                        </div>
+                        {b ? (
+                          <>
+                            <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                              <span
+                                className={`inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${TONE_CLASS[BLOCKER_META[b.status].tone]}`}
+                              >
+                                {BLOCKER_META[b.status].label}
+                              </span>
+                              <span className="text-[11px] font-medium text-[#3D5265]/75 dark:text-[var(--mh-fg)]">
+                                {b.summary}
+                              </span>
+                            </div>
+                            <details className="mt-1.5 text-[11px] leading-relaxed text-[#3D5265]/65 dark:text-[var(--mh-muted)]">
+                              <summary className="cursor-pointer select-none text-[#00928F] hover:underline">
+                                Why, and what would unblock it
+                              </summary>
+                              <p className="mt-1">{b.detail}</p>
+                            </details>
+                          </>
+                        ) : (
+                          <div className="mt-2 text-[11px] italic text-[#3D5265]/50 dark:text-[var(--mh-muted)]">
+                            Reason not yet recorded.
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()
                 )}
 
                 <div className="mt-auto pt-3 text-[11px] text-[#3D5265]/50 dark:text-[var(--mh-muted)]">
@@ -490,7 +659,11 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
           interpretation is applied. Where the report’s last figure is a 2020/2021 year that sits
           more than 10% below the last pre-2020 reading, the change is measured off a
           pandemic-depressed base and overstates the real move — those cards also carry the change
-          against the last normal year.
+          against the last normal year. Indicators with no post-report data are shown too rather
+          than hidden, each with the tested reason it has none: “not published yet” means the data
+          is expected and nothing needs doing, the other labels mean someone has to go and get it.
+          Reasons and what would unblock each one are recorded in
+          docs-internal/indicator-check-source-refresh-2026-07-29.md.
         </p>
       </main>
       <SiteFooter />

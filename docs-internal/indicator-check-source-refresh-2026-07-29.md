@@ -205,6 +205,134 @@ chemicals only, and that mismatch produces a **+29% intensity rise by 2024**
 that cannot be validated against the report's own DS-056120 tonnage
 denominator.
 
+## 6b. Can the remaining 19 be automated?
+
+Of the 29 with no new data, 10 are simply awaiting the 2026 CRT submission. The
+other 19 need someone to fetch something. Tested position on each route:
+
+**Blocked by this build environment, not by the source (7).** These would
+almost certainly work on an ordinary machine:
+
+- **I7a** — the recipe is written and the derivation validated offline; only the
+  8.8 MB download times out here.
+- **B4 ×4, I7b, I7c** — need a headless browser. Chromium and Playwright are
+  present in the image, but Chromium cannot reach the network through the egress
+  proxy at all: `example.com` fails with `ERR_CONNECTION_RESET` exactly as the
+  target sites do, and the proxy rejects the plain-HTTP absolute-form requests
+  the HTTP-only Cembureau site needs.
+
+**Automatable, but needs engineering not yet done (3).**
+
+- **F4** — OECD SDMX. Structure endpoints work and the measure exists
+  (`PT_TECH_ENV`); finding the working dataflow key is a matter of persistence.
+- **I2 (steel, use)** — Eurofer publishes it in an annual PDF at a stable URL
+  pattern. Table extraction is routine.
+- **A7** — JRC outlook annex tables, one file per edition; the landing page is
+  JS-rendered so the file has to be located per year.
+
+**No public endpoint exists (9).**
+
+- **PRODCOM cluster** (I2 chemicals use, I2 chemicals trade, I2 steel trade,
+  I2 cement use, and I4 chemicals which depends on the same denominator) —
+  confirmed absent from both the dissemination catalogue and the bulk-file
+  inventory. The portal is a JavaScript search application, so even this is
+  really a browser problem.
+- **F2** — BloombergNEF subscription.
+- **B3 ×2** — no published series anywhere; depends on Building Stock
+  Observatory floor areas, i.e. on the same Power BI blocker as B4.
+- **A3 (NUE)** — source dataset ended in 2020.
+
+**The single highest-leverage fix is a working headless browser.** It directly
+covers B4 ×4, I7b and I7c, and would also let the PRODCOM portal be driven —
+around 12 of the 19. The pattern that worked for the UNFCCC Data Interface
+(`scripts/esabcc-indicators/pull-unfccc-di.py`: a standalone script run on a
+normal machine, output handed back for wiring) applies here too.
+
+## 6c. The Building Stock Observatory: extraction solved, data absent
+
+B4 ×4 and B3 ×2 were the largest remaining cluster and were expected to be the
+highest-yield work. They are not recoverable, and the reason is worth recording
+so nobody spends the same time again.
+
+Getting there took two fixes, both generally useful:
+
+- **Power BI slicers ignore synthetic clicks.** `element.click()` via
+  `frame.evaluate` returns true, raises nothing, and changes nothing. They need
+  trusted input — a Playwright locator `.click()`. This alone accounted for
+  several failed attempts that looked like the page rejecting automation.
+- **Slicer changes need the report's own GO button.** Until it is pressed the
+  slicer header reads "(Not yet applied)" and the visual still shows the
+  previous selection's data.
+
+With both applied the report is fully driveable — subjects switch, the Trend
+bookmark engages, the Year filter opens. And the Year filter is the answer:
+
+| Subject | Years offered |
+|---|---|
+| Number of buildings | 2020 |
+| Number of dwellings | 2020, 2022 |
+| Useful floor area | 2020 |
+| Total renovation rate | 2020 |
+
+Confirmed on two independent runs. **The BSO no longer carries the multi-year
+series the report was built on** — it is effectively a 2020 snapshot, with 2022
+added for dwellings only.
+
+That kills all six:
+
+- **B4 (floor area)** and **B3 ×2** already hold 2020, which is the only year
+  the BSO offers. There is no newer value to take.
+- **B4 (dwellings, surface residential, surface tertiary)** end at 2016/2019 in
+  the report and are stated as an index against 2005. The BSO holds neither a
+  2005 base nor any year overlapping the report's own last value, so even the
+  2022 dwellings figure cannot be placed on the report's basis.
+
+Reclassified from `unresolved` to `source-ended`. Unblocking needs the
+historical series from DG ENER, or a decision to re-base these indicators onto a
+source that still publishes one — an editorial call, not an engineering one.
+
+One correction stands from the previous pass: B3 was recorded as a series nobody
+publishes, and that was wrong. The BSO does publish "Total renovation rate". It
+simply does not publish it for any year the report does not already have.
+
+## 6d. I7a landed; F4 is a different dataset
+
+**I7a (Green Steel Tracker) is now automated** — 2024 = 54, 2025 = 56 projects,
+spliced onto the report's 2023 = 48.
+
+It had been recorded as "download times out". That was wrong twice: the download
+takes 0.8 s, and the timeout was the *parse*. `exceljs` — which this repo already
+depends on — cannot parse the 8.8 MB LeadIT workbook at all; it was still going
+after 500 s. The workbook has slicers and pivot caches that appear to defeat it,
+while openpyxl reads the same file in seconds.
+
+Replaced with a ~60-line reader over the raw XLSX zip (jszip, already a
+dependency): resolve the sheet through `workbook.xml` + its rels, read
+`sharedStrings.xml`, scan the sheet's `<row>`/`<c>` elements for the two columns
+needed. **0.3 s**, and it reproduces the independently-computed cumulative counts
+exactly (EU-27: 2020 = 19, 2021 = 40, 2022 = 45, 2023 = 52, 2024 = 59, 2025 = 61).
+Announcement dates are Excel serials, converted from the 1899-12-30 epoch.
+
+**F4 (OECD) — access solved, wrong dataset.** The SDMX data endpoint does answer,
+once three things are right at once: the dataflow reference is URL-encoded
+(`DSD_GG%40DF_GREEN_GROWTH`), it carries its version (`1.1`), and the key is
+`all` rather than positional. Every earlier 404 was one of those three.
+
+But the Green Growth flow does not hold this indicator. There is no
+`PT_TECH_ENV` measure in it; the patent measures are `GPAT_DE`, `GPAT_DE_RTA`
+and `TECHPAT_PAT`. For the EU-27:
+
+| Measure / unit | 2019 | Concept |
+|---|---|---|
+| `GPAT_DE` / `PT_INV_D` | 0 (empty for every year) | green share of domestic inventions — the right concept |
+| `GPAT_DE` / `PT_INV_W_ENV` | 21.59 | EU share of *world* green patents — different concept |
+| `GPAT_DE_RTA` / `IX` | 0 | revealed technological advantage |
+| `TECHPAT_PAT` | null | — |
+
+The report's 11.94% for 2019 matches none of them. Finding it needs OECD's
+patent-specific ENV-Tech dataset rather than the Green Growth headline flow —
+a further search, but a well-defined one now that the query mechanics work.
+
 ## 7. Net effect on the page
 
 | | Before | After |
