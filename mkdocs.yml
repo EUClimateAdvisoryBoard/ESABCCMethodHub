@@ -191,6 +191,7 @@ nav:
       - "M·32 Ex-Post Policy Assessment (beta)": modules/ex-post-analysis.md
       - "M·33 Sector Background (beta)": modules/sector-background.md
       - "M·36 Policy Targets Register (beta)": modules/policy-targets.md
+      - "M·42 EU Policy Hierarchy (beta)": modules/policy-hierarchy.md
   - Infrastructure:
       - Overview: infrastructure/index.md
       - Architecture overview: infrastructure/architecture.md
