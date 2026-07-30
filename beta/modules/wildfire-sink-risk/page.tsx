@@ -30,6 +30,7 @@ import {
   END_YEAR,
   FIRST_YEAR,
   FIVE_YEAR_MEAN,
+  GROWTH_SCENARIOS,
   LAST_OBS_YEAR,
   LONG_RUN_MEAN,
   NET_ALLOWED_2030,
@@ -37,9 +38,12 @@ import {
   SECTOR_2040,
   SINK_2040_RANGE,
   SINK_TARGET_2030,
+  adjustedSink,
+  capBindsFrom,
   cumulativeExcess,
   excessImpact,
   feasibility,
+  referenceSink,
   fmt,
   ha,
   mt,
@@ -434,6 +438,133 @@ function SinkGapChart({ rows }: { rows: ReturnType<typeof series> }) {
   );
 }
 
+/**
+ * THE BIG ONE — the fan of sink trajectories across growth extremes.
+ *
+ * Every scenario line is drawn, the reader's own setting is drawn bold on top,
+ * and the planned sink sits above them all. The distance between the blue line
+ * and any red line at 2040 or 2050 is the entire argument of the module.
+ */
+function ExtremesFanChart({ p, selectedPct }: { p: Params; selectedPct: number }) {
+  const W = 900;
+  const H = 420;
+  const m = { l: 58, r: 176, t: 46, b: 46 };
+  const iw = W - m.l - m.r;
+  const ih = H - m.t - m.b;
+  // Full zero-based range: at the high growth rates the sink collapses towards
+  // zero, and that collapse is the story — clipping it off the bottom of the
+  // panel would hide exactly the outcome the reader came to see.
+  const lo = 0;
+  const hi = 380;
+  const sx = (y: number) => R(m.l + ((y - FIRST_YEAR) / (END_YEAR - FIRST_YEAR)) * iw);
+  const sy = (v: number) => R(m.t + ih - ((v - lo) / (hi - lo)) * ih);
+
+  const years: number[] = [];
+  for (let y = FIRST_YEAR; y <= END_YEAR; y++) years.push(y);
+
+  // Red deepens with severity, so the fan reads as a gradient of bad news.
+  const shades = ['#E9A6A5', '#DD7C7A', '#CE5250', '#B83230', '#8E1F1D'];
+
+  const scenarioPaths = GROWTH_SCENARIOS.map((s, i) => {
+    const q: Params = { ...p, mode: 'growth', growthPct: s.pct };
+    return {
+      s,
+      color: shades[i],
+      pts: years.map((y) => `${sx(y)},${sy(adjustedSink(y, q))}`).join(' '),
+      v40: adjustedSink(2040, q),
+      v50: adjustedSink(2050, q),
+    };
+  });
+
+  const sel: Params = { ...p, mode: 'growth', growthPct: selectedPct };
+  const selPts = years.map((y) => `${sx(y)},${sy(adjustedSink(y, sel))}`).join(' ');
+  const selV40 = adjustedSink(2040, sel);
+  const refPts = years.map((y) => `${sx(y)},${sy(referenceSink(y, p))}`).join(' ');
+  const ref40 = referenceSink(2040, p);
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img"
+      aria-label="EU land sink to 2050 under a range of wildfire growth rates, against the sink the targets assume">
+      {[0, 50, 100, 150, 200, 250, 300, 350].map((t) => (
+        <g key={t}>
+          <line x1={m.l} x2={m.l + iw} y1={sy(t)} y2={sy(t)} stroke={C.grid} strokeWidth={1} />
+          <text x={m.l - 8} y={sy(t) + 3} textAnchor="end" fontSize={9.5} fill={C.axis} className="tabular-nums">{t}</text>
+        </g>
+      ))}
+
+      {/* target years */}
+      {[2040, 2050].map((y) => (
+        <g key={y}>
+          <line x1={sx(y)} x2={sx(y)} y1={m.t} y2={m.t + ih} stroke={C.plan} strokeWidth={1} strokeDasharray="3 4" strokeOpacity={0.45} />
+          <text x={sx(y)} y={m.t - 10} textAnchor="middle" fontSize={11} fill={C.plan} fontWeight={700}>{y}</text>
+        </g>
+      ))}
+
+      {/* the gap for the reader's own setting */}
+      <polygon
+        points={[...years.map((y) => `${sx(y)},${sy(referenceSink(y, p))}`),
+                 ...[...years].reverse().map((y) => `${sx(y)},${sy(adjustedSink(y, sel))}`)].join(' ')}
+        fill={C.fire} fillOpacity={0.12}
+      />
+
+      {/* the fan */}
+      {scenarioPaths.map((sp) => (
+        <polyline key={sp.s.pct} points={sp.pts} fill="none" stroke={sp.color}
+          strokeWidth={1.6} strokeOpacity={0.85} />
+      ))}
+
+      {/* planned sink */}
+      <polyline points={refPts} fill="none" stroke={C.plan} strokeWidth={3} />
+      {/* the reader's setting, bold on top */}
+      <polyline points={selPts} fill="none" stroke="#5C1211" strokeWidth={3.4} strokeDasharray="7 3" />
+
+      {/* End labels, nudged apart where lines converge so none is hidden. */}
+      {(() => {
+        const labels = [
+          { y: sy(referenceSink(2050, p)), text: `planned ${Math.round(referenceSink(2050, p))}`, color: C.plan },
+          ...scenarioPaths.map((sp) => ({
+            y: sy(sp.v50),
+            text: `${sp.s.pct}%/yr → ${Math.round(sp.v50)}`,
+            color: sp.color,
+          })),
+        ].sort((a, b) => a.y - b.y);
+        for (let i = 1; i < labels.length; i++) {
+          if (labels[i].y - labels[i - 1].y < 13) labels[i].y = labels[i - 1].y + 13;
+        }
+        return labels.map((L) => (
+          <text key={L.text} x={m.l + iw + 8} y={R(L.y) + 3.5} fontSize={9.5} fill={L.color} fontWeight={700}>
+            {L.text}
+          </text>
+        ));
+      })()}
+
+      {/* the 2040 gap, called out */}
+      <g>
+        <line x1={sx(2040)} x2={sx(2040)} y1={sy(ref40)} y2={sy(selV40)} stroke="#5C1211" strokeWidth={2.5} />
+        <circle cx={sx(2040)} cy={sy(ref40)} r={4} fill={C.plan} />
+        <circle cx={sx(2040)} cy={sy(selV40)} r={4} fill="#5C1211" />
+        <rect x={sx(2040) - 62} y={(sy(ref40) + sy(selV40)) / 2 - 9} width={124} height={18} rx={3} fill="#FFFFFF" fillOpacity={0.92} />
+        <text x={sx(2040)} y={(sy(ref40) + sy(selV40)) / 2 + 4} textAnchor="middle" fontSize={11} fontWeight={700} fill="#5C1211">
+          −{(ref40 - selV40).toFixed(0)} Mt in 2040
+        </text>
+      </g>
+
+      {[2021, 2030, 2040, 2050].map((y) => (
+        <text key={y} x={sx(y)} y={H - 24} textAnchor="middle" fontSize={10} fill={C.axis}>{y}</text>
+      ))}
+
+      <line x1={m.l} x2={m.l + iw} y1={m.t + ih} y2={m.t + ih} stroke={C.axis} strokeWidth={1} />
+      <text x={m.l} y={12} fontSize={10} fill={C.axis}>
+        EU-27 net land sink, MtCO₂e/yr — blue = what the targets assume, red fan = wildfire growth rates, bold dashed = your setting
+      </text>
+      <text x={m.l} y={H - 6} fontSize={9} fill={C.axis}>
+        Each red line compounds burnt area from the 2021-25 average at the stated rate. A line reaching zero means the
+        land has stopped being a net sink at all.
+      </text>
+    </svg>
+  );
+}
+
 /** 4 — Tornado: which assumption actually drives the answer. */
 function TornadoChart({ base, p }: { base: number; p: Params }) {
   const rows = SWEEP.map((s) => {
@@ -536,7 +667,9 @@ export default function WildfireSinkRiskPage() {
 
   const rows = useMemo(() => series(p), [p]);
   const f40 = useMemo(() => feasibility(2040, p), [p]);
+  const f50 = useMemo(() => feasibility(2050, p), [p]);
   const f30 = useMemo(() => feasibility(2030, p), [p]);
+  const capYear = useMemo(() => capBindsFrom(p), [p]);
   const cum = useMemo(() => cumulativeExcess(2026, 2040, p), [p]);
   const cum50 = useMemo(() => cumulativeExcess(2026, 2050, p), [p]);
   const e40 = f40.extraBurden;
@@ -568,8 +701,9 @@ export default function WildfireSinkRiskPage() {
 
           <p className="mt-5 max-w-text text-[15px] leading-relaxed text-tertiary">
             In 2025 the EU lost <strong className="text-tertiary-dark">1,079,538 hectares</strong> to fire — an area
-            about the size of Cyprus, and the worst year in the EFFIS record. The emergency response measured that in
-            homes, evacuations and lives. This module measures it in a second currency that nobody bills for at the
+            about the size of Cyprus, and the worst year in the EFFIS record. Across 2021-25 the total reaches{' '}
+            <strong className="text-tertiary-dark">{ha(fiveYearTotal)}</strong>. The emergency response measured that
+            in homes, evacuations and lives. This module measures it in a second currency that nobody bills for at the
             time: the <strong className="text-tertiary-dark">carbon that land was supposed to absorb</strong> on the
             way to climate neutrality.
           </p>
@@ -580,22 +714,128 @@ export default function WildfireSinkRiskPage() {
             instead. The arithmetic is not a metaphor — it is subtraction, and it is done below.
           </p>
 
-          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <Stat tone="fire" value={ha(fiveYearTotal)} label="Burnt in the EU, 2021-2025"
-              sub={`Five-year mean ${ha(FIVE_YEAR_MEAN)}/yr, against a long-run ${ha(LONG_RUN_MEAN)}/yr`} />
-            <Stat tone="fire" value={mt(e40, 0)} unit="CO₂e" label="Sink lost in 2040"
-              sub={`${f40.burdenPctOfSink.toFixed(0)}% of the sink the 2040 target is counting on`} />
-            <Stat tone="default" value={f40.monthsOfEffort.toFixed(1)} unit="months" label="Of EU climate effort erased"
-              sub="Measured against the average annual net cut required between 2030 and 2040" />
-            <Stat tone="sink" value={fmt(Math.round(cum))} unit="Mt" label="Cumulative extra CO₂e, 2026-2040"
-              sub={`${fmt(Math.round(cum50))} Mt by 2050 — the budget cost, not just the target-year cost`} />
+          {/* ── THE BIG FIGURE ─────────────────────────────────────────── */}
+          <div className="mt-10 rounded-xl border border-grey-200 bg-white p-6 shadow-sm">
+            <ExtremesFanChart p={p} selectedPct={p.growthPct} />
           </div>
 
-          <p className="mt-6 max-w-text text-[11.5px] leading-relaxed text-tertiary">
-            Currently showing the <strong className="text-tertiary-dark">
-              {PRESETS.find((x) => x.id === activePreset)?.label ?? 'custom'}
-            </strong> case. Every figure on this page moves with the assumptions — all of which are exposed as sliders
-            and documented at the bottom. This is a back-of-the-envelope model, not a projection.
+          {/* ── THE DIAL ───────────────────────────────────────────────── */}
+          <div className="mt-6 rounded-xl border-2 border-accent-red/30 bg-white p-6">
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <div>
+                <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-accent-red">
+                  Set the dial — how fast do fires get worse?
+                </div>
+                <p className="mt-1 text-[12.5px] text-tertiary">
+                  Annual growth in EU burnt area from the 2021-25 average. Nobody knows this number. Everything below
+                  moves with it.
+                </p>
+              </div>
+              <div className="text-right">
+                <div className="font-mono text-[42px] font-bold leading-none tabular-nums text-accent-red">
+                  {p.growthPct.toFixed(1)}<span className="text-[20px]">%</span>
+                </div>
+                <div className="text-[10.5px] text-tertiary">per year</div>
+              </div>
+            </div>
+
+            <input
+              type="range"
+              min={0}
+              max={15}
+              step={0.5}
+              value={p.growthPct}
+              onChange={(e) => { setP((v) => ({ ...v, mode: 'growth', growthPct: Number(e.target.value) })); setActivePreset('custom'); }}
+              className="mt-5 h-2 w-full accent-[#B83230]"
+              aria-label="Annual growth rate in EU burnt area"
+            />
+
+            <div className="mt-3 flex flex-wrap gap-2">
+              {GROWTH_SCENARIOS.map((s) => (
+                <button
+                  key={s.pct}
+                  type="button"
+                  onClick={() => { setP((v) => ({ ...v, mode: 'growth', growthPct: s.pct })); setActivePreset('custom'); }}
+                  className={`rounded-full border px-3 py-1 text-[11px] font-semibold transition ${
+                    Math.abs(p.growthPct - s.pct) < 0.25
+                      ? 'border-accent-red bg-accent-red text-white'
+                      : 'border-grey-300 bg-white text-tertiary hover:border-accent-red/50'
+                  }`}
+                >
+                  {s.pct}% · {s.label}
+                </button>
+              ))}
+            </div>
+
+            <p className="mt-3 text-[12px] leading-relaxed text-tertiary">
+              {GROWTH_SCENARIOS.find((s) => Math.abs(p.growthPct - s.pct) < 0.25)?.blurb ??
+                `Burnt area compounds at ${p.growthPct}%/yr from the 2021-25 average, reaching ${ha(rows.find((r) => r.year === 2040)!.ha)} in 2040.`}
+              {capYear ? (
+                <>
+                  {' '}
+                  <strong className="text-accent-red">
+                    Beyond {capYear} this rate hits the model’s physical ceiling of 5 Mha/yr
+                  </strong>{' '}
+                  — about five times the 2025 record. Past that point the projection saturates and should be read as
+                  &ldquo;implausibly bad&rdquo; rather than as a number.
+                </>
+              ) : null}
+            </p>
+          </div>
+
+          {/* ── WHAT IT DOES TO THE TARGETS ────────────────────────────── */}
+          <div className="mt-6 grid gap-4 lg:grid-cols-2">
+            {[
+              {
+                yr: '2040', goal: `The −${p.target2040Pct}% target`, f: f40,
+                headline: `−${f40.effectiveReductionPct.toFixed(1)}%`,
+                headlineLabel: `is what the EU actually achieves if nobody makes up the difference`,
+                rows: [
+                  ['Land sink lost to fire', mt(f40.extraBurden, 0)],
+                  ['Target missed by', `${f40.ppMissed.toFixed(2)} percentage points`],
+                  ['Extra cuts other sectors must find', `${fmt(Math.round(f40.extraBurden))} Mt every year`],
+                  ['Months of EU-wide climate effort erased', f40.monthsOfEffort.toFixed(1)],
+                  ['Cumulative extra CO₂e, 2026-2040', `${fmt(Math.round(cum))} Mt`],
+                ],
+              },
+              {
+                yr: '2050', goal: 'Net zero', f: f50,
+                headline: `+${fmt(Math.round(f50.extraBurden))} Mt`,
+                headlineLabel: 'is how far the EU lands on the wrong side of net zero',
+                rows: [
+                  ['Land sink lost to fire', mt(f50.extraBurden, 0)],
+                  ['Net zero becomes', `−${f50.effectiveReductionPct.toFixed(1)}% — not zero`],
+                  ['Cost to close with engineered removals', `€${fmt(Math.round(f50.engineeredCostBn))} bn per year`],
+                  ['Cumulative extra CO₂e, 2026-2050', `${fmt(Math.round(cum50))} Mt`],
+                ],
+              },
+            ].map((card) => (
+              <div key={card.yr} className="rounded-xl border-2 border-accent-red/25 bg-white p-6">
+                <div className="flex items-baseline gap-2">
+                  <span className="rounded bg-tertiary-dark px-2 py-0.5 text-[11px] font-bold text-white">{card.yr}</span>
+                  <span className="text-[12.5px] font-semibold text-tertiary">{card.goal}</span>
+                </div>
+                <div className="mt-4 font-mono text-[52px] font-bold leading-none tabular-nums text-accent-red">
+                  {card.headline}
+                </div>
+                <p className="mt-2 text-[12.5px] leading-snug text-tertiary">{card.headlineLabel}</p>
+                <div className="mt-4 space-y-2 border-t border-grey-200 pt-4">
+                  {card.rows.map(([k, v]) => (
+                    <div key={k} className="flex items-baseline justify-between gap-3 text-[12px]">
+                      <span className="text-tertiary">{k}</span>
+                      <strong className="whitespace-nowrap tabular-nums text-tertiary-dark">{v}</strong>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-5 max-w-text text-[11.5px] leading-relaxed text-tertiary">
+            Both cards assume no other sector compensates — that is the point of showing them this way. In reality the
+            gap would be closed by cutting harder somewhere else, which is exactly the bill this module is trying to
+            put a number on. Every other assumption behind these figures is a slider further down, and all of them are
+            documented with sources and confidence ratings.
           </p>
         </div>
       </div>
@@ -632,17 +872,16 @@ export default function WildfireSinkRiskPage() {
 
           <div className="mt-5 rounded-lg border border-grey-200 bg-surface-blue p-5">
             <h4 className="mb-2 text-[12px] font-bold uppercase tracking-[0.1em] text-primary">
-              Why we do not simply extend the trend
+              What the record implies
             </h4>
             <p className="max-w-text text-[13px] leading-relaxed text-tertiary">
               A straight line through these five points rises by about{' '}
-              <strong className="text-tertiary-dark">84,000 hectares every year</strong> — roughly 13% of the five-year
-              mean, compounding. Extended to 2040 that reaches over 2 Mha a year, and the 2040 target stops being
-              arithmetically reachable through the land sector at all. But five points containing one record year is a
-              weak basis for a trend, and fire is famously volatile: 2024 was quieter than 2021. So the default here is
-              deliberately more cautious — burnt area sits at the five-year mean and creeps up{' '}
-              {DEFAULTS.growthPct}%/yr. The trend case is available as a stress test, and it is the one that should
-              worry people, because it is what the observed record actually says.
+              <strong className="text-tertiary-dark">84,000 hectares every year</strong>, reaching over 2 Mha annually
+              by 2040. Compounded, <strong className="text-tertiary-dark">8%/yr lands in the same place</strong>. That
+              is the observed record extended, not a worst case — and 2026 is running hot again, so the near-term
+              evidence is not pointing downwards. The dial at the top of this page spans 0 to 15%/yr precisely because
+              this is the assumption that decides everything, and it is not one that should be made quietly on the
+              reader&rsquo;s behalf.
             </p>
           </div>
         </Section>

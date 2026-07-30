@@ -58,15 +58,30 @@ and North Africa* annual reports.
 
 ### 3.1 Burnt-area projection
 
-Three modes, selectable in the UI:
+Growth rate is **the** control of the module: it is a prominent slider (0–15%/yr)
+at the top of the page, with five preset extremes, and the headline figure and
+both target cards move with it live. No growth rate is presented as central or
+blessed — the spread is the finding.
+
+Three modes:
 
 - **Flat** — held at the anchor (default: the five-year mean) indefinitely.
-- **Growth** — anchor compounded at *g* %/yr. **Default: 2.5%/yr.**
+- **Growth** — anchor compounded at *g* %/yr. **Default: 5%/yr**, stated in the
+  code as a starting point rather than a forecast.
 - **Trend** — the OLS line through 2021–25, extended. Reaches ~2.1 Mha/yr by
-  2040. Offered as a stress case, not a best guess.
+  2040 — the same place 8%/yr compound reaches (2.087 vs 2.090 Mha), which is
+  why 8%/yr is labelled "recent record continues".
 
-The default deliberately anchors on the five-year *mean* rather than the 2025
-record, which smooths the record year rather than projecting from a peak.
+The projection anchors on the five-year *mean* rather than the 2025 record, so
+it does not project from a peak.
+
+### 3.1a Saturation guard
+
+Unbounded compound growth is nonsense over 25 years: at 12%/yr the naive formula
+reaches 11 Mha in 2050, roughly 7% of all EU forest burning every year. Burnt
+area is therefore capped at **`MAX_ANNUAL_HA` = 5 Mha/yr** — about five times the
+2025 record, so it never binds in any plausible scenario. Where it does bind, the
+UI names the year and says the projection has saturated.
 
 ### 3.2 Three carbon terms per burnt hectare
 
@@ -114,28 +129,66 @@ extraBurden       = loss
 Because the target is net, a sink shortfall converts **one-for-one** into a
 deeper gross cut required from every other sector. The module reports that
 burden as: a share of the gross budget; a share of the planned sink; an
-equivalent number of cars removed; and — the most intuitive framing — **months
-of the EU's average 2030→2040 net-reduction effort** that the shortfall consumes.
+equivalent number of cars removed; and **months of the EU's average 2030→2040
+net-reduction effort** that the shortfall consumes.
+
+The two headline framings, shown as large cards directly under the growth dial,
+state the consequence as a missed target rather than as a quantity of carbon:
+
+```
+effectiveReductionPct = (1 − (netAllowed + loss) / 4,649) × 100
+ppMissed              = loss / 4,649 × 100
+engineeredCostBn      = loss × €400/t
+```
+
+So a −90% target quietly becomes −89.0%, and net zero in 2050 quietly becomes
+net **positive**. Each 46.5 Mt of lost sink is one percentage point of the 2040
+target. Both cards assume no other sector compensates — that is the point of
+presenting them that way; in reality the gap is closed by cutting harder
+elsewhere, which is the bill the module exists to price.
+
+The €400/tCO₂ engineered-removal cost is order-of-magnitude only (2040–50
+DACCS-class projections span roughly €200–600/t). It is applied solely to the
+2050 gap, where gross emissions are already at their residual floor and there is
+no cheaper option left.
 
 The reference sink path is anchored at 212 Mt (2024) → 310 Mt (2030) → the
 chosen 2040 value, linearly interpolated and held flat to 2050.
 
 ## 4. Results
 
-2040 sink loss under each named case (all other dials at default):
+### By growth rate — the headline table
 
-| Case | Burnt area 2040 | Sink loss 2040 | % of sink | Months of effort | Cumulative 2026–40 |
+All other dials at default. "2040 achieved" is the reduction the EU actually
+reaches if no other sector compensates; "2050 miss" is how far net zero is
+missed by.
+
+| Growth rate | Burnt area 2040 | Sink loss 2040 | 2040 achieved | Months of effort | 2050 miss | Removals cost | Cap binds |
+|---|---|---|---|---|---|---|---|
+| **0%/yr** — stops worsening | 658k ha | 7 Mt | **−89.8%** | 0.5 | **+7 Mt** | €3 bn/yr | — |
+| **2.5%/yr** — slow | 953k ha | 24 Mt | **−89.5%** | 1.8 | **+40 Mt** | €16 bn/yr | — |
+| **5%/yr** — steady (default) | 1,368k ha | 47 Mt | **−89.0%** | 3.4 | **+98 Mt** | €39 bn/yr | — |
+| **8%/yr** — recent record continues | 2,087k ha | 85 Mt | **−88.2%** | 6.3 | **+226 Mt** | €90 bn/yr | — |
+| **12%/yr** — compounding | 3,601k ha | 166 Mt | **−86.4%** | 12.2 | **+281 Mt** | €113 bn/yr | 2043 |
+
+Each **46.5 Mt** of lost sink costs one percentage point of the 2040 target.
+
+### By named preset
+
+These vary several dials at once, not just growth.
+
+| Preset | Burnt area 2040 | Sink loss 2040 | 2040 achieved | 2050 miss | Cumulative 2026–40 |
 |---|---|---|---|---|---|
-| Held (flat) | 658k ha | 7.1 Mt | 2.2% | 0.5 | 103 Mt |
-| Conservative | 953k ha | 13.7 Mt | 4.3% | 1.0 | 130 Mt |
-| **Central (default)** | **953k ha** | **23.7 Mt** | **7.5%** | **1.8** | **221 Mt** |
-| Trend | 2,090k ha | 90.1 Mt | 28.4% | 6.6 | 788 Mt |
-| Severe | 1,944k ha | 112.9 Mt | 35.6% | 8.3 | 1,076 Mt |
+| Fires stop getting worse | 658k ha | 7 Mt | −89.8% | +7 Mt | 103 Mt |
+| Conservative — small durable loss | 1,368k ha | 27 Mt | −89.4% | +57 Mt | 220 Mt |
+| Default — 5%/yr worsening | 1,368k ha | 47 Mt | −89.0% | +98 Mt | 369 Mt |
+| The recent record continues | 2,090k ha | 90 Mt | −88.1% | +145 Mt | 788 Mt |
+| Hotter fires, slower recovery | 3,424k ha | 221 Mt | −85.3% | +386 Mt | 1,716 Mt |
 
-The spread — a factor of sixteen between the mildest and harshest case — is the
-honest headline. It is why the module ships with sliders rather than a number.
+The spread — a factor of thirty between mildest and harshest — is the honest
+headline. It is why growth rate is a slider rather than a number.
 
-Note that even the **Held** case loses ground, because the five-year mean
+Note that even the **0%/yr** case loses ground, because the five-year mean
 (658k ha/yr) already sits above the long-run average (550k ha/yr) that the
 projections assume. Fire does not have to get worse to be a problem; it only has
 to stay where it now is.
@@ -180,6 +233,10 @@ you which argument is worth having.
 **Structural:**
 - The EU is treated as a single pool. Real fire risk is overwhelmingly Iberian
   and Mediterranean, and so is the exposed sink.
+- Compound growth is a crude model of a process that is really driven by fire
+  weather, fuel state and ignition. Above roughly 8%/yr the projection is best
+  read as "implausibly bad" rather than as a number, and above the 5 Mha/yr cap
+  it is not a projection at all.
 - The linear recovery ramp simplifies an S-curve and slightly understates the
   early-year deficit.
 - Sector figures in the catch-up chart are illustrative residual 2040 emissions
