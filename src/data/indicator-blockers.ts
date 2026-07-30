@@ -120,10 +120,8 @@ export const STATUS_ACTION: Record<BlockerStatus, { effort: 'none' | 'waiting' |
   withheld: {
     effort: 'work',
     action:
-      'A value could be computed today, and is deliberately not shown, because it would move for ' +
-      'the wrong reason: the numerator and denominator available do not cover the same set of ' +
-      'plants and products, so the ratio measures the mismatch rather than the industry. The card ' +
-      'below states exactly which leg is wrong and by how much.',
+      'Held back deliberately. A value could be computed today and is not shown, because it would ' +
+      'move for the wrong reason:',
   },
   'never-published': { effort: 'work', action: 'No route identified.' },
 };
@@ -408,22 +406,15 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
       'benzene+toluene+xylenes alone is 22% short), and the ETS activity-code numerator is not yet ' +
       'wired. Until both are settled the series stays at its report value.',
     unreliableBecause:
-      'This indicator is a ratio — emissions from bulk organic chemicals divided by the tonnes of ' +
-      'bulk organic chemicals produced — and a ratio is only meaningful when both legs cover the ' +
-      'same plants and products. Neither available pairing does. The substitute that was tried, CRF ' +
-      'category 2.B over Eurostat NACE C201, puts the emissions of the *whole* chemical industry ' +
-      'over the output of basic chemicals alone: the numerator counts factories the denominator ' +
-      'never counts. Because the two scopes have been drifting apart, that ratio rises 29% by 2024 ' +
-      '— a number that looks like the EU’s chemical industry getting a third dirtier, and is ' +
-      'entirely an artefact of the mismatch. The report’s own recipe (EU ETS activity code 42 over ' +
-      'PRODCOM ethylene + propylene + aromatics) is the right pairing and half of it now reproduces ' +
-      'exactly — ethylene and propylene hit the report’s denominator to three decimals for 2013 — ' +
-      'but the "aromatics" leg cannot be matched: no subset of the PRODCOM aromatic codes tried ' +
-      'reproduces it (benzene + toluene + xylenes alone is 22% short, the best four-code fit still ' +
-      '6% off). A denominator 6% wrong is not a rounding problem here: intensity changes over the ' +
-      'post-report years are of the same order, so the error would swamp the signal and the series ' +
-      'would report movement that did not happen. Publishing the report’s last value unchanged is ' +
-      'the honest option until the aromatics basket is identified and the ETS numerator is wired.',
+      'It’s a ratio, and neither available pairing puts the same plants on both sides. The ' +
+      'substitute that was tried (CRF 2.B ÷ NACE C201) divides the whole chemical industry’s ' +
+      'emissions by basic chemicals output alone — the numerator counts factories the denominator ' +
+      'never counts. Since those scopes are drifting apart, the ratio rises 29% by 2024, which ' +
+      'reads as the industry getting a third dirtier and is pure artefact. The report’s own recipe ' +
+      'is the right pairing and half works — ethylene and propylene reproduce its denominator to ' +
+      'three decimals — but the aromatics leg can’t be matched (BTX alone 22% short, best fit ' +
+      'still 6% off), and 6% is the same order as the real post-report intensity change, so the ' +
+      'error would swamp the signal.',
     sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/ds-059359/default/table?lang=en',
     dataLinks: [
       {

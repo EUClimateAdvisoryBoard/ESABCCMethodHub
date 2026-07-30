@@ -474,24 +474,27 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
                 )}
 
                 {/* Withheld is the one status where the question is not "where
-                    is it" but "why is it not shown" — answer it on the card. */}
+                    is it" but "why is it not shown". Answered in full on the
+                    card, not behind a toggle: a red "would be unreliable" chip
+                    that a reader has to click to justify is just an assertion. */}
                 {g.items.some((it) => INDICATOR_BLOCKERS[it.id]?.unreliableBecause) && (
-                  <div className="mt-2.5 border-t border-[#EEF1F4] pt-2 text-[10px] dark:border-[var(--mh-border)]">
-                    <div className="font-semibold uppercase tracking-wide text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
+                  <div className="mt-2.5 border-t border-[#EEF1F4] pt-2 dark:border-[var(--mh-border)]">
+                    <div className="text-[10px] font-semibold uppercase tracking-wide text-[#B83230] dark:text-[#E08A88]">
                       Why it would be unreliable
                     </div>
                     {g.items.map((it) => {
                       const why = INDICATOR_BLOCKERS[it.id]?.unreliableBecause;
                       if (!why) return null;
                       return (
-                        <details key={it.id} className="mt-1 leading-relaxed">
-                          <summary className="cursor-pointer select-none text-[#B83230] hover:underline dark:text-[#E08A88]">
-                            {it.code} — the two legs of the ratio cover different things
-                          </summary>
-                          <p className="mt-1 text-[10px] leading-relaxed text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
-                            {why}
-                          </p>
-                        </details>
+                        <p
+                          key={it.id}
+                          className="mt-1 text-[11px] leading-relaxed text-[#3D5265]/75 dark:text-[var(--mh-muted)]"
+                        >
+                          <span className="font-mono text-[10px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
+                            {it.code}
+                          </span>{' '}
+                          {why}
+                        </p>
                       );
                     })}
                   </div>
