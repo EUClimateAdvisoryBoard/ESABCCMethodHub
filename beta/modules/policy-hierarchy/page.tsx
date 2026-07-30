@@ -368,9 +368,11 @@ export default function PolicyHierarchyPage() {
   // Treaties + primary-rank instruments form the top tier; the rest of the
   // primary-law branch (comitology, Better Regulation…) is the "machinery" strip.
   const treaties = (primaryBranch?.instruments ?? [])
-    .filter(i => tierOf(i) === 'primary' && !i.parentId)
+    .filter(i => ['treaty', 'protocol', 'charter'].includes(i.type) && !i.parentId)
     .sort(sortInstruments);
-  const machinery = (primaryBranch?.instruments ?? []).filter(i => tierOf(i) !== 'primary' && !i.parentId).sort(sortInstruments);
+  const machinery = (primaryBranch?.instruments ?? [])
+    .filter(i => !['treaty', 'protocol', 'charter'].includes(i.type) && !i.parentId)
+    .sort(sortInstruments);
   const machineryChildren = useMemo(() => {
     const m = new Map<string, Instrument[]>();
     for (const i of primaryBranch?.instruments ?? []) {
