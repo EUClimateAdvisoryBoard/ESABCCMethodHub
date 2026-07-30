@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T12:03:17.124Z",
+  "generatedAt": "2026-07-30T08:50:28.975Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
@@ -236,6 +236,24 @@
         {
           "year": 2024,
           "value": 32.85
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i7a-steel-projects",
+      "sourceTitle": "LeadIT Green Steel Tracker · project database (2026 Q1) · cumulative EU-27 count",
+      "sourceUrl": "https://www.industrytransition.org/green-steel-tracker/",
+      "note": "Cumulative count of EU-27 projects by announcement year, from the tracker’s own XLSX export. Reproduces the report’s 2023 count to within 8% (52 vs 48); spliced so the report baseline is unchanged.",
+      "status": "updated",
+      "baseYear": 2023,
+      "newPoints": [
+        {
+          "year": 2024,
+          "value": 54
+        },
+        {
+          "year": 2025,
+          "value": 56
         }
       ]
     },

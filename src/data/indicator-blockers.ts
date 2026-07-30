@@ -276,24 +276,19 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
   // ── Source not yet cracked (2) ───────────────────────────────────────────
   'esabcc-f-climate-patents-share': {
     status: 'unresolved',
-    summary: 'OECD data endpoint returns nothing usable',
+    summary: 'OECD API now queryable, but this measure is empty for the EU',
     detail:
-      'OECD’s SDMX structure endpoints respond correctly and the relevant measure exists ' +
-      '(PT_TECH_ENV, share of environment-related technologies in the Green Growth dataflow), but the ' +
-      'data endpoint returns nothing parseable for any EU geography code tried. This is a matter of ' +
-      'finding the right dataflow key rather than a closed source — it should be solvable.',
+      'The access problem is solved: OECD’s SDMX data endpoint answers once the dataflow reference is ' +
+      'URL-encoded (DSD_GG%40DF_GREEN_GROWTH), carries its version (1.1), and uses an “all” key rather ' +
+      'than a positional one. What it does not carry is this indicator. The Green Growth dataflow has ' +
+      'no PT_TECH_ENV measure at all — its patent measures are GPAT_DE, GPAT_DE_RTA and TECHPAT_PAT — ' +
+      'and for the EU-27 the one matching this concept (environment-related inventions as a share of ' +
+      'all domestic inventions, GPAT_DE / PT_INV_D) is present but empty, reading 0 for every year ' +
+      'including 2019. The only populated EU series, GPAT_DE / PT_INV_W_ENV at 21.6% in 2019, is a ' +
+      'different concept — the EU’s share of *world* green patents rather than the green share of EU ' +
+      'filings — and does not reproduce the report’s 11.94%. This needs OECD’s patent-specific ' +
+      'ENV-Tech dataset rather than the Green Growth headline flow.',
     sourceUrl: 'https://data-explorer.oecd.org/',
-  },
-  'esabcc-i7a-steel-projects': {
-    status: 'unresolved',
-    summary: 'Recipe written from the tracker’s spreadsheet, not yet confirmed',
-    detail:
-      'The Green Steel Tracker map is JavaScript-only, but the page links a full project database as ' +
-      'XLSX with a country and announcement date per project. Rebuilding the cumulative EU-27 count ' +
-      'from it reproduces the report’s 2023 figure to within 8% (52 against 48) and yields 59 for 2024 ' +
-      'and 61 for 2025. The recipe is committed, but the 8.8 MB download could not be run to completion ' +
-      'in the build environment, so it has not been confirmed end to end and no value is published yet.',
-    sourceUrl: 'https://www.industrytransition.org/green-steel-tracker/',
   },
 
   // ── Deliberately withheld (1) ────────────────────────────────────────────

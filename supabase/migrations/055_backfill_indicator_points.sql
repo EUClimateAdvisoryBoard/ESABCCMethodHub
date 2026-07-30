@@ -177,6 +177,8 @@ values
   ('esabcc-i6-industry-electrification', 2022, 33.620),
   ('esabcc-i6-industry-electrification', 2023, 33.590),
   ('esabcc-i6-industry-electrification', 2024, 34.020),
+  ('esabcc-i7a-steel-projects', 2024, 54.000),
+  ('esabcc-i7a-steel-projects', 2025, 56.000),
   ('esabcc-l1-lulucf-net', 2023, -215.5),
   ('esabcc-l1-lulucf-net', 2024, -231.0),
   ('esabcc-l6-forest-sink', 2022, 236.7),

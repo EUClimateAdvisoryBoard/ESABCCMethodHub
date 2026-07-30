@@ -295,6 +295,44 @@ One correction stands from the previous pass: B3 was recorded as a series nobody
 publishes, and that was wrong. The BSO does publish "Total renovation rate". It
 simply does not publish it for any year the report does not already have.
 
+## 6d. I7a landed; F4 is a different dataset
+
+**I7a (Green Steel Tracker) is now automated** — 2024 = 54, 2025 = 56 projects,
+spliced onto the report's 2023 = 48.
+
+It had been recorded as "download times out". That was wrong twice: the download
+takes 0.8 s, and the timeout was the *parse*. `exceljs` — which this repo already
+depends on — cannot parse the 8.8 MB LeadIT workbook at all; it was still going
+after 500 s. The workbook has slicers and pivot caches that appear to defeat it,
+while openpyxl reads the same file in seconds.
+
+Replaced with a ~60-line reader over the raw XLSX zip (jszip, already a
+dependency): resolve the sheet through `workbook.xml` + its rels, read
+`sharedStrings.xml`, scan the sheet's `<row>`/`<c>` elements for the two columns
+needed. **0.3 s**, and it reproduces the independently-computed cumulative counts
+exactly (EU-27: 2020 = 19, 2021 = 40, 2022 = 45, 2023 = 52, 2024 = 59, 2025 = 61).
+Announcement dates are Excel serials, converted from the 1899-12-30 epoch.
+
+**F4 (OECD) — access solved, wrong dataset.** The SDMX data endpoint does answer,
+once three things are right at once: the dataflow reference is URL-encoded
+(`DSD_GG%40DF_GREEN_GROWTH`), it carries its version (`1.1`), and the key is
+`all` rather than positional. Every earlier 404 was one of those three.
+
+But the Green Growth flow does not hold this indicator. There is no
+`PT_TECH_ENV` measure in it; the patent measures are `GPAT_DE`, `GPAT_DE_RTA`
+and `TECHPAT_PAT`. For the EU-27:
+
+| Measure / unit | 2019 | Concept |
+|---|---|---|
+| `GPAT_DE` / `PT_INV_D` | 0 (empty for every year) | green share of domestic inventions — the right concept |
+| `GPAT_DE` / `PT_INV_W_ENV` | 21.59 | EU share of *world* green patents — different concept |
+| `GPAT_DE_RTA` / `IX` | 0 | revealed technological advantage |
+| `TECHPAT_PAT` | null | — |
+
+The report's 11.94% for 2019 matches none of them. Finding it needs OECD's
+patent-specific ENV-Tech dataset rather than the Green Growth headline flow —
+a further search, but a well-defined one now that the query mechanics work.
+
 ## 7. Net effect on the page
 
 | | Before | After |
