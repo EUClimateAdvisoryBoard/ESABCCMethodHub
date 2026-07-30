@@ -1491,8 +1491,11 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'projects',
     description:
       'ESABCC progress indicator I7b. Count of announced low-carbon cement projects in the EU (Figure 30), 62 in total by project scale (unspecified 5, R&D 22, pilot 24, demo 7, full scale 4) and technology (CCS/CCU, material substitution/recycling, fuel switch/electrification, energy efficiency, mineralisation). Categorical snapshot.',
-    source: 'Cembureau map of innovation projects',
-    sourceUrl: 'https://lowcarboneconomy.cembureau.eu/',
+    // The host the report cited (lowcarboneconomy.cembureau.eu) now serves an
+    // nginx placeholder and cembureau.eu redirects to the rebranded domain; the
+    // map lives here, with the project list inline in the page HTML.
+    source: 'Cement Europe (formerly Cembureau) map of innovation projects',
+    sourceUrl: 'https://www.cementeurope.eu/innovation-projects/',
     direction: 'up',
     group: 'esabcc',
     isSeed: true,

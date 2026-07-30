@@ -17,8 +17,14 @@
  * 'not-on-api' status went with them: it existed only for PRODCOM, and
  * PRODCOM turned out to be on an API after all.
  *
- * Keep this in step with docs-internal/indicator-check-source-refresh-2026-07-30.md
- * and docs-internal/indicator-check-prodcom-unblock-2026-07-30.md.
+ * Entries also carry `dataLinks`: the live URLs where the numbers can be read,
+ * with what each one holds. "No public data export" describes the absence of a
+ * file or an API, not the absence of a source — every indicator in that bucket
+ * has a page a person can open, and the card now says which.
+ *
+ * Keep this in step with docs-internal/indicator-check-source-refresh-2026-07-30.md,
+ * docs-internal/indicator-check-prodcom-unblock-2026-07-30.md and
+ * docs-internal/indicator-check-blocker-links-2026-07-30.md.
  */
 
 export type BlockerStatus =
@@ -31,6 +37,27 @@ export type BlockerStatus =
   | 'unresolved'
   | 'withheld';
 
+/**
+ * A live place the data can actually be fetched or read by hand. Kept separate
+ * from `sourceUrl` (one canonical landing page) because "no public data export"
+ * is not the same as "nowhere to look": for every indicator in that bucket
+ * there IS a URL that holds the numbers, it just isn't a data API. Each link
+ * says what you get there and in what form, so a reader can go and take the
+ * value without re-deriving the route.
+ *
+ * Every URL here was requested successfully on 30 July 2026 (plain HTTPS
+ * through the egress proxy, browser User-Agent); `what` records what came back.
+ */
+export interface BlockerDataLink {
+  url: string;
+  /** Short human label — publisher plus what the page is. */
+  label: string;
+  /** What the link holds, and in what form. */
+  what: string;
+  /** True where the numbers are machine-readable without a browser. */
+  machineReadable?: boolean;
+}
+
 export interface IndicatorBlocker {
   status: BlockerStatus;
   /** One line, shown on the card. */
@@ -39,6 +66,17 @@ export interface IndicatorBlocker {
   detail: string;
   /** Where the data would come from, when there is somewhere to point. */
   sourceUrl?: string;
+  /**
+   * Where the data can be read right now, for the statuses where someone can
+   * go and get it. Shown on the card so the reason never reads as a dead end.
+   */
+  dataLinks?: BlockerDataLink[];
+  /**
+   * For `withheld` only: what would be wrong with the number if it were
+   * published. The status says a value is being held back; this says why
+   * publishing it would mislead.
+   */
+  unreliableBecause?: string;
 }
 
 /** When the automated refresh last ran end to end. */
@@ -64,7 +102,10 @@ export const STATUS_ACTION: Record<BlockerStatus, { effort: 'none' | 'waiting' |
   },
   'no-public-api': {
     effort: 'work',
-    action: 'Needs a data request to the publisher, or manual entry each cycle.',
+    action:
+      'The publisher offers no data API or download, but the numbers are on a page that can be ' +
+      'read — the links below go straight to them. Closing the gap means extracting from those ' +
+      'pages, entering the values by hand each cycle, or asking the publisher for a file.',
   },
   'source-ended': {
     effort: 'work',
@@ -78,7 +119,11 @@ export const STATUS_ACTION: Record<BlockerStatus, { effort: 'none' | 'waiting' |
   },
   withheld: {
     effort: 'work',
-    action: 'Held back deliberately. Needs the correct denominator before anything is published.',
+    action:
+      'A value could be computed today, and is deliberately not shown, because it would move for ' +
+      'the wrong reason: the numerator and denominator available do not cover the same set of ' +
+      'plants and products, so the ratio measures the mismatch rather than the industry. The card ' +
+      'below states exactly which leg is wrong and by how much.',
   },
   'never-published': { effort: 'work', action: 'No route identified.' },
 };
@@ -183,46 +228,133 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
   'esabcc-b4-surface-tertiary': { status: 'source-ended', summary: 'BSO now holds only a 2020 snapshot, not the series', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
   'esabcc-i7b-cement-projects': {
     status: 'no-public-api',
-    summary: 'Cembureau project map publishes no data file',
+    summary: 'Map moved to Cement Europe; project list is in the page, but carries no announcement dates',
     detail:
-      'The project map exists only as a JavaScript application: its HTML carries no JSON, CSV or XLSX ' +
-      'endpoint, unlike the Green Steel Tracker, which does publish its full project database as a ' +
-      'spreadsheet. The count exists only inside the running map. The site is also HTTP-only — it has no ' +
-      'working HTTPS certificate.',
-    sourceUrl: 'http://lowcarboneconomy.cembureau.eu/',
+      'The host the report cited is gone. lowcarboneconomy.cembureau.eu now serves a 52-byte nginx ' +
+      'placeholder ("Please stand by while configuration is in progress", last modified June 2022) and ' +
+      'every sub-path under it 404s; cembureau.eu itself 301s every path to the rebranded ' +
+      'cementeurope.eu home page. The map now lives at cementeurope.eu/innovation-projects/ — and ' +
+      'the earlier "needs a headless browser" verdict no longer holds: the whole project database is ' +
+      'inlined in that page as a `var markers = [...]` array, so it can be parsed from static HTML. ' +
+      'Re-read 30 July 2026: 124 projects, one country tag each, 114 of them EU-27 (the rest UK 6, ' +
+      'Norway 3, Switzerland 1), each with technology, 5C category, EU funding programme and a scale ' +
+      'status — Desktop/R&D 46, Pilot Plant 50, Commercial/Demo scale 27, the same taxonomy the ' +
+      'report’s Figure 30 split (R&D 22, pilot 24, demo 7, full scale 4, unspecified 5) uses. ' +
+      'What is still missing is the time dimension, exactly as for I7c: the only year on a record is ' +
+      '"Operational Date", the year the plant runs (2007-2030, 6 of them still in the future), not the ' +
+      'year the project was announced. A current snapshot (114 EU-27) is trustworthy; the report’s ' +
+      '62-in-2023 cannot be reproduced from it, and the difference is part growth and part re-curation ' +
+      'of the map. Unblocking the series needs announcement dates or historical snapshots from Cement ' +
+      'Europe; unblocking the snapshot is now a parsing job, not a browser one.',
+    sourceUrl: 'https://www.cementeurope.eu/innovation-projects/',
+    dataLinks: [
+      {
+        url: 'https://www.cementeurope.eu/innovation-projects/',
+        label: 'Cement Europe — Map of Innovation Projects',
+        what:
+          'The map page. Its HTML carries the full project list inline as a JavaScript `markers` ' +
+          'array — 124 projects (114 EU-27) with country, technology, 5C category, EU funding and ' +
+          'scale status. No API and no browser needed: fetch the page and parse the array.',
+        machineReadable: true,
+      },
+      {
+        url: 'https://www.cementeurope.eu/about-us/key-facts-figures/',
+        label: 'Cement Europe — Key Facts & Figures',
+        what:
+          'Context for the same publisher: sector employees, world production shares and the EU-27 ' +
+          'production/consumption series, all as inline chart data.',
+        machineReadable: true,
+      },
+    ],
   },
   'esabcc-i7c-chemicals-projects': {
     status: 'no-public-api',
     summary: 'API is public, but carries no announcement dates',
     detail:
       'The map turned out to be backed by a public WordPress REST API — /wp-json/wp/v2/gips returns all ' +
-      '238 projects (214 of them in the EU-27) with a country taxonomy, no browser required. The ' +
+      '238 projects (215 carrying at least one EU-27 country tag; several are multi-country, which is ' +
+      'why the country tags sum to 244) with a country taxonomy, no browser required. The ' +
       'blocker is not access but time: the only date on a project is its website posting date ' +
       '(re-checked 30 July 2026 — the record’s ACF fields are curation metadata, still nothing ' +
       'announcement-dated), and rebuilding the count on that basis gives 135 EU-27 projects at ' +
       'end-2023 against the report’s 171. The map has been re-curated since, so past states cannot be ' +
       'reproduced from the current contents, and a “change since the report” figure derived from it ' +
       'would be measuring Cefic’s editing schedule rather than project announcements. A current ' +
-      'snapshot (214) is trustworthy; a series is not. This is a data request, not an engineering ' +
+      'snapshot (215) is trustworthy; a series is not. This is a data request, not an engineering ' +
       'task: Cefic supplying an announcement-date field, or their historical snapshots, would settle it.',
     sourceUrl: 'https://cefic.org/low-carbon-projects-map/',
+    dataLinks: [
+      {
+        url: 'https://cefic.org/wp-json/wp/v2/gips?per_page=100',
+        label: 'Cefic — WordPress REST endpoint (the map’s own data)',
+        what:
+          'Every project as JSON, 100 per page over 3 pages; the X-WP-Total response header gives the ' +
+          'count directly (238 on 30 July 2026, 215 carrying at least one EU-27 country tag). Country, ' +
+          'technology and status come as taxonomies — resolve the term ids against ' +
+          '/wp-json/wp/v2/taxonomy-country. The `date` field is the website posting date, not an ' +
+          'announcement date, which is why this gives a snapshot and not a series.',
+        machineReadable: true,
+      },
+      {
+        url: 'https://cefic.org/solutions-explained/low-carbon-technologies-projects/',
+        label: 'Cefic — Low-carbon technologies projects (map page)',
+        what:
+          'The human-facing page the report cited. The map itself is a React app that renders from the ' +
+          'endpoint above, so the page HTML holds no numbers — read it for the taxonomy and framing, ' +
+          'take the counts from the API.',
+      },
+    ],
   },
 
   // ── No public data export (1) ────────────────────────────────────────────
   'esabcc-i2-cement-use': {
     status: 'no-public-api',
-    summary: 'Cembureau supplied the tonnage directly to the report',
+    summary: 'The publisher now charts the series publicly — 2000-2024, but only as chart data, no file',
     detail:
-      'Apparent cement consumption came to the report from Cembureau on request; there is no public API ' +
-      'or recurring data file. Cement *production* is refreshed automatically from the Eurostat ' +
-      'production index. The trade legs are no longer the obstacle — extra-EU cement trade is on the ' +
-      'Comext host as CPA 2351 — but they do not close the gap either: the report’s own workbook shows ' +
-      'production minus Cembureau use (7-15 Mt) diverging from the Eurostat trade balance, so Cembureau’s ' +
-      'consumption figure is not a production-minus-net-trade identity and cannot be rebuilt from one. ' +
-      'Unblocking this needs the series from Cembureau, or a decision to re-base the indicator on ' +
-      'apparent consumption computed from published production and trade — a different definition, ' +
-      'which would have to be applied to the whole series, not spliced onto the report’s.',
-    sourceUrl: 'https://www.cembureau.eu/library/reports/',
+      'Apparent cement consumption came to the report from Cembureau on request, and the recorded ' +
+      'position was that there is no public API or recurring data file. Half of that is now out of ' +
+      'date. Cembureau has rebranded to Cement Europe (cembureau.eu 301s to cementeurope.eu) and its ' +
+      'Key Facts & Figures page publishes "Cement Production And Consumption EU 27 & Cement Europe, ' +
+      '2000-2024" as a Chart.js line chart whose four series sit inline in the page HTML. Checked ' +
+      '30 July 2026: the CONSUMPTION EU27 array reproduces this indicator’s stored values to the ' +
+      'tonne for every year the report carries — 2005 = 232,290,000 t against the report’s 232.3 Mt, ' +
+      '2013 = 142.2, 2020 = 159.2, 2021 = 170.5 — and continues 2022 = 163.8, 2023 = 150.8, ' +
+      '2024 = 148.1 Mt. So the series is the report’s own, extended, and needs no request and no ' +
+      'browser; what is still absent is a data *export* — no CSV, XLSX or API, just a JavaScript ' +
+      'array in a page that can be redesigned at any time, which is why this stays a manual or ' +
+      'scraped read rather than a refresh recipe. The production-minus-trade route stays closed and ' +
+      'is no longer needed: the report’s own workbook shows production minus Cembureau use (7-15 Mt) ' +
+      'diverging from the Eurostat trade balance, so the consumption figure was never a ' +
+      'production-minus-net-trade identity.',
+    sourceUrl: 'https://www.cementeurope.eu/about-us/key-facts-figures/',
+    dataLinks: [
+      {
+        url: 'https://www.cementeurope.eu/about-us/key-facts-figures/',
+        label: 'Cement Europe — Key Facts & Figures',
+        what:
+          'Holds the series itself. The "Cement Production And Consumption EU 27 & Cement Europe ' +
+          '2000-2024" chart carries four datasets inline in the page HTML (CONSUMPTION EU27, ' +
+          'CONSUMPTION Cement Europe, PRODUCTION EU27, PRODUCTION Cement Europe), in tonnes, one ' +
+          'value per year 2000-2024. CONSUMPTION EU27 is this indicator, and it matches the report ' +
+          'exactly on the overlapping years.',
+        machineReadable: true,
+      },
+      {
+        url: 'https://www.cementeurope.eu/resources/reports/',
+        label: 'Cement Europe — Reports (activity reports)',
+        what:
+          'The rebranded library, replacing the dead cembureau.eu/library/reports/ link. Carries the ' +
+          'annual activity report (2025 edition current) for the narrative figures behind the chart.',
+      },
+      {
+        url: 'https://ec.europa.eu/eurostat/databrowser/view/sts_inpr_a/default/table?lang=en',
+        label: 'Eurostat — production index sts_inpr_a (NACE C235)',
+        what:
+          'What cement *production* is already refreshed from, kept here because the two legs are ' +
+          'read together. Not a substitute for the consumption series: an index, not tonnes.',
+        machineReadable: true,
+      },
+    ],
   },
 
   // ── Subscription (1) ─────────────────────────────────────────────────────
@@ -275,6 +407,41 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
       '“aromatics” line is not any subset of the PRODCOM aromatic codes tried (best fit 6% off, and ' +
       'benzene+toluene+xylenes alone is 22% short), and the ETS activity-code numerator is not yet ' +
       'wired. Until both are settled the series stays at its report value.',
+    unreliableBecause:
+      'This indicator is a ratio — emissions from bulk organic chemicals divided by the tonnes of ' +
+      'bulk organic chemicals produced — and a ratio is only meaningful when both legs cover the ' +
+      'same plants and products. Neither available pairing does. The substitute that was tried, CRF ' +
+      'category 2.B over Eurostat NACE C201, puts the emissions of the *whole* chemical industry ' +
+      'over the output of basic chemicals alone: the numerator counts factories the denominator ' +
+      'never counts. Because the two scopes have been drifting apart, that ratio rises 29% by 2024 ' +
+      '— a number that looks like the EU’s chemical industry getting a third dirtier, and is ' +
+      'entirely an artefact of the mismatch. The report’s own recipe (EU ETS activity code 42 over ' +
+      'PRODCOM ethylene + propylene + aromatics) is the right pairing and half of it now reproduces ' +
+      'exactly — ethylene and propylene hit the report’s denominator to three decimals for 2013 — ' +
+      'but the "aromatics" leg cannot be matched: no subset of the PRODCOM aromatic codes tried ' +
+      'reproduces it (benzene + toluene + xylenes alone is 22% short, the best four-code fit still ' +
+      '6% off). A denominator 6% wrong is not a rounding problem here: intensity changes over the ' +
+      'post-report years are of the same order, so the error would swamp the signal and the series ' +
+      'would report movement that did not happen. Publishing the report’s last value unchanged is ' +
+      'the honest option until the aromatics basket is identified and the ETS numerator is wired.',
     sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/ds-059359/default/table?lang=en',
+    dataLinks: [
+      {
+        url: 'https://ec.europa.eu/eurostat/databrowser/view/ds-059359/default/table?lang=en',
+        label: 'Eurostat PRODCOM ds-059359 — total production (the denominator)',
+        what:
+          'Replaces the report’s retired DS-056121. Ethylene and propylene reproduce the report’s ' +
+          'denominator exactly; the aromatics basket is the open question. Served over the Comext ' +
+          'dissemination host, /eurostat/api/comext/, not the main dissemination API.',
+        machineReadable: true,
+      },
+      {
+        url: 'https://www.eea.europa.eu/en/analysis/maps-and-charts/emissions-trading-viewer-1-dashboards',
+        label: 'EEA — EU ETS data viewer (the numerator)',
+        what:
+          'Verified emissions by ETS activity code; code 42 is bulk organic chemicals, the numerator ' +
+          'the report used. Not yet wired into the refresh.',
+      },
+    ],
   },
 };
