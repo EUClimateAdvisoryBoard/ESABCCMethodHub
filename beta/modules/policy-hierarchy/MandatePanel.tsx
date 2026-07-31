@@ -11,27 +11,25 @@
  */
 
 import { useState } from 'react';
+import { RELEVANCE_META } from './data';
 
 const EUR_LEX_CLIMATE_LAW = 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119';
 
 const RING_META = {
   core: {
     label: 'Core',
-    color: '#007B6C',
     tagline: 'The climate architecture itself',
     description:
       'Instruments whose purpose is the EU climate framework: the Climate Law, the ETS, ESR, LULUCF, CBAM and their delegated/implementing acts. Directly and obviously within Art. 3(2).',
   },
   adjacent: {
     label: 'Adjacent',
-    color: '#6667AB',
     tagline: 'Other-purpose acts with material climate provisions',
     description:
       'Union measures adopted for a different primary purpose — industrial, fiscal, trade, energy-security, defence — that carry provisions with material consequences for the trajectory to climate neutrality. Coherence-assessable under a plain reading of "Union measures".',
   },
   context: {
     label: 'Context',
-    color: '#808285',
     tagline: 'Shapes feasibility, not coherence',
     description:
       'Instruments that shape the political and economic conditions the climate framework operates in, without a direct, material climate provision to assess coherence against. Useful background, not an assessment target.',
@@ -120,7 +118,7 @@ export default function MandatePanel({
                     className={`flex-1 rounded-md sm:rounded-none px-3 py-2.5 text-white ${
                       idx === 0 ? 'sm:rounded-l-md' : ''
                     } ${idx === RING_ORDER.length - 1 ? 'sm:rounded-r-md' : ''}`}
-                    style={{ background: meta.color }}
+                    style={{ background: RELEVANCE_META[key].color }}
                   >
                     <p className="text-[9px] uppercase tracking-wide opacity-80 font-semibold">{meta.label}</p>
                     <p className="text-[16px] font-bold leading-tight">
@@ -140,7 +138,7 @@ export default function MandatePanel({
                   <div key={key} className="flex items-start gap-2">
                     <span
                       className="mt-[3px] inline-block w-2.5 h-2.5 rounded-sm shrink-0"
-                      style={{ background: meta.color }}
+                      style={{ background: RELEVANCE_META[key].color }}
                       aria-hidden
                     />
                     <p>

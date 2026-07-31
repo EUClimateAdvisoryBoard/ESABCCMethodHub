@@ -42,8 +42,11 @@ import {
   LENS_META,
   LENS_ORDER,
   MANDATE,
+  NAVIGATOR_BRIDGE,
+  RECOMMENDATIONS,
   RELEVANCE_META,
   RELEVANCE_ORDER,
+  SECTOR_BRIDGE,
   STATUS,
   STATUS_META,
   TIER_META,
@@ -96,6 +99,13 @@ function matchesQuery(i: Instrument, q: string): boolean {
 function matchesLenses(i: Instrument, active: Set<LensId>): boolean {
   if (active.size === 0) return true;
   return i.lenses.some(l => active.has(l));
+}
+
+/** Ring and tier chips FILTER (hide), unlike lenses which only dim. */
+function matchesRingTier(i: Instrument, rings: Set<MandateRelevance>, tiers: Set<Tier>): boolean {
+  if (rings.size > 0 && !rings.has(relevanceOf(i))) return false;
+  if (tiers.size > 0 && !tiers.has(tierOf(i))) return false;
+  return true;
 }
 
 function exportCsv() {
@@ -205,6 +215,13 @@ function InstrumentRow({
   depth?: number;
 }) {
   const kids = childrenOf.get(i.id) ?? [];
+  // Act-heavy branches: collapse children by default when there are many,
+  // reusing the "▸ N …" affordance from the primary-law machinery strip.
+  // Permalink targets start expanded so a shared #id link is never hidden.
+  const [kidsOpen, setKidsOpen] = useState(
+    () => kids.length <= 3 || (typeof window !== 'undefined' && kids.some(k => window.location.hash === `#${k.id}`)),
+  );
+  const [copied, setCopied] = useState(false);
   const lit = matchesLenses(i, activeLenses);
   const rel = relevanceOf(i);
   const mandate = colourMode === 'mandate';
@@ -217,18 +234,51 @@ function InstrumentRow({
         boxShadow: firstActive ? `inset 3px 0 0 ${LENS_META[firstActive].color}` : undefined,
       };
   const hook = MANDATE[i.id]?.hook;
+  const nav = NAVIGATOR_BRIDGE[i.id];
+  const recs = RECOMMENDATIONS[i.id] ?? [];
+  const sectors = SECTOR_BRIDGE[i.id];
+  const TitleTag = depth > 0 ? 'span' : 'h3';
+
+  function copyPermalink() {
+    const url = `${window.location.origin}${window.location.pathname}#${i.id}`;
+    navigator.clipboard?.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    });
+  }
+
   return (
-    <div className={depth > 0 ? 'ml-4 sm:ml-6 border-l-2 border-[#E6E7E8] dark:border-[var(--mh-border)] pl-3' : ''}>
-      <div className={`rounded-md px-2.5 py-2 transition-colors ${dim ? 'opacity-40' : ''}`} style={rowStyle}>
+    <div id={i.id} className={depth > 0 ? 'ml-4 sm:ml-6 border-l-2 border-[#E6E7E8] dark:border-[var(--mh-border)] pl-3' : 'scroll-mt-20'}>
+      <div className={`group rounded-md px-2.5 py-2 transition-colors ${dim ? 'opacity-40' : ''}`} style={rowStyle}>
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
           <TypeBadge type={i.type} small={depth > 0} />
-          <span className={`font-semibold text-[#3D5265] dark:text-[var(--mh-fg)] ${depth > 0 ? 'text-[12px]' : 'text-[13px]'}`}>
+          <TitleTag
+            className={`font-semibold text-[#3D5265] dark:text-[var(--mh-fg)] inline m-0 ${depth > 0 ? 'text-[12px]' : 'text-[13px]'}`}
+            title={sectors ? `Sectors: ${sectors.join(', ')}` : undefined}
+          >
             {i.title}
-          </span>
+          </TitleTag>
           <span className="text-[11px] text-[#808285] dark:text-[var(--mh-muted)] whitespace-nowrap">
             {i.officialRef} · {i.year}
           </span>
           <EurLexLink i={i} />
+          {nav && (
+            <a
+              href={`/policy-navigator?policy=${encodeURIComponent(nav.policyId)}`}
+              className="text-[11px] text-[#00928F] hover:text-[#007B6C] hover:underline whitespace-nowrap shrink-0"
+              title={`Open in the Policy Navigator (full text, annotations) — domain: ${nav.domain}`}
+            >
+              Navigator ↗
+            </a>
+          )}
+          <button
+            onClick={copyPermalink}
+            className="text-[11px] text-[#808285] hover:text-[#007B6C] opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity shrink-0"
+            title="Copy a direct link to this instrument"
+            aria-label={`Copy link to ${i.title}`}
+          >
+            {copied ? 'copied ✓' : '⧉ link'}
+          </button>
           <StatusChip id={i.id} />
           {!i.confident && (
             <span
@@ -250,13 +300,39 @@ function InstrumentRow({
             Board angle: {hook}
           </p>
         )}
+        {recs.length > 0 && (
+          <p className="mt-1 flex flex-wrap items-center gap-1">
+            <span className="text-[10px] uppercase tracking-wide text-[#808285] dark:text-[var(--mh-muted)]">Board advice:</span>
+            {recs.map(r => (
+              <a
+                key={r}
+                href="/recommendations"
+                className="text-[10px] px-1.5 py-[1px] rounded-full border border-[#007B6C]/40 text-[#007B6C] hover:bg-[#E5F9E7]"
+                title={`The Board has already spoken on this file — recommendation ${r} (opens the Recommendations module)`}
+              >
+                {r}
+              </a>
+            ))}
+          </p>
+        )}
       </div>
       {kids.length > 0 && (
-        <div className="mt-1 space-y-1">
-          {kids.sort(sortInstruments).map(k => (
-            <InstrumentRow key={k.id} i={k} childrenOf={childrenOf} activeLenses={activeLenses} colourMode={colourMode} depth={depth + 1} />
-          ))}
-        </div>
+        kidsOpen ? (
+          <div className="mt-1 space-y-1">
+            {kids.length > 3 && (
+              <button onClick={() => setKidsOpen(false)} className="ml-4 sm:ml-6 text-[11px] font-semibold text-[#00928F] hover:text-[#007B6C]">
+                ▾ hide {kids.length} underlying acts
+              </button>
+            )}
+            {kids.sort(sortInstruments).map(k => (
+              <InstrumentRow key={k.id} i={k} childrenOf={childrenOf} activeLenses={activeLenses} colourMode={colourMode} depth={depth + 1} />
+            ))}
+          </div>
+        ) : (
+          <button onClick={() => setKidsOpen(true)} className="mt-1 ml-4 sm:ml-6 text-[11px] font-semibold text-[#00928F] hover:text-[#007B6C]">
+            ▸ {kids.length} underlying acts (delegated / implementing / assessments)
+          </button>
+        )
       )}
     </div>
   );
@@ -281,6 +357,8 @@ function DomainPanel({
   open,
   onToggle,
   activeLenses,
+  activeRings,
+  activeTiers,
   colourMode,
   movingOnly,
   query,
@@ -289,6 +367,8 @@ function DomainPanel({
   open: boolean;
   onToggle: () => void;
   activeLenses: Set<LensId>;
+  activeRings: Set<MandateRelevance>;
+  activeTiers: Set<Tier>;
   colourMode: ColourMode;
   movingOnly: boolean;
   query: string;
@@ -309,17 +389,21 @@ function DomainPanel({
     }
     // Text filter: keep a top-level act if it or any of its children match.
     // "Moving now": keep it if it or any child carries a status entry.
+    // Ring/tier chips filter likewise on the act or its children.
     const visible = topLevel.filter(t => {
       const kids = childrenOf.get(t.id) ?? [];
       const textOk = matchesQuery(t, query) || kids.some(k => matchesQuery(k, query));
       const movingOk = !movingOnly || STATUS[t.id] || kids.some(k => STATUS[k.id]);
-      return textOk && movingOk;
+      const ringTierOk =
+        matchesRingTier(t, activeRings, activeTiers) || kids.some(k => matchesRingTier(k, activeRings, activeTiers));
+      return textOk && movingOk && ringTierOk;
     });
     return { topLevel: visible.sort(sortInstruments), childrenOf, visibleCount: visible.length };
-  }, [branch, query, movingOnly]);
+  }, [branch, query, movingOnly, activeRings, activeTiers]);
 
-  const stats = branchStats(branch, activeLenses);
-  if ((query || movingOnly) && visibleCount === 0) return null;
+  const stats = useMemo(() => branchStats(branch, activeLenses), [branch, activeLenses]);
+  const filtering = Boolean(query) || movingOnly || activeRings.size > 0 || activeTiers.size > 0;
+  if (filtering && visibleCount === 0) return null;
 
   return (
     <div className="rounded-lg border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] overflow-hidden">
@@ -329,7 +413,7 @@ function DomainPanel({
         className="w-full flex flex-wrap items-center gap-x-3 gap-y-1 px-3 sm:px-4 py-2.5 text-left hover:bg-[#F9FAFB] dark:hover:bg-white/5 transition-colors"
       >
         <span className="text-[#00928F] text-[12px] w-3 shrink-0" aria-hidden>{open ? '▾' : '▸'}</span>
-        <span className="font-bold text-[13px] sm:text-[14px] text-[#3D5265] dark:text-[var(--mh-fg)]">{branch.name}</span>
+        <h2 className="font-bold text-[13px] sm:text-[14px] text-[#3D5265] dark:text-[var(--mh-fg)] inline m-0">{branch.name}</h2>
         <span className="text-[11px] text-[#808285] dark:text-[var(--mh-muted)]">
           {stats.binding} binding · {stats.tertiary + stats.supporting} underlying · {stats.soft} soft law
         </span>
@@ -348,7 +432,7 @@ function DomainPanel({
         {stats.lensHits !== null && (
           <span className="text-[11px] font-semibold text-[#007B6C]">{stats.lensHits} in lens</span>
         )}
-        <span className="ml-auto hidden sm:inline-flex items-center gap-2">
+        <span className="ml-auto inline-flex flex-wrap items-center gap-2">
           {LENS_ORDER.map(l => {
             const n = branch.instruments.filter(i => i.lenses.includes(l)).length;
             if (n === 0) return null;
@@ -493,31 +577,59 @@ export default function PolicyHierarchyPage() {
   const domainBranches = DOMAIN_BRANCHES.filter(b => b.id !== PRIMARY_BRANCH_ID);
 
   const [activeLenses, setActiveLenses] = useState<Set<LensId>>(new Set());
+  const [activeRings, setActiveRings] = useState<Set<MandateRelevance>>(new Set());
+  const [activeTiers, setActiveTiers] = useState<Set<Tier>>(new Set());
   const [colourMode, setColourMode] = useState<ColourMode>('lens');
   const [movingOnly, setMovingOnly] = useState(false);
   const [openDomains, setOpenDomains] = useState<Set<string>>(new Set());
   const [machineryOpen, setMachineryOpen] = useState(false);
   const [legendOpen, setLegendOpen] = useState(true);
   const [rawQuery, setRawQuery] = useState('');
-  const query = rawQuery.trim().toLowerCase();
+  // Debounced: filtering re-runs per branch over 200+ instruments per keystroke.
+  const [query, setQuery] = useState('');
+  useEffect(() => {
+    const t = setTimeout(() => setQuery(rawQuery.trim().toLowerCase()), 150);
+    return () => clearTimeout(t);
+  }, [rawQuery]);
 
   // ---- shareable URL state (read once on mount, mirror on change) ----
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
     const lens = (p.get('lens') ?? '').split(',').filter((l): l is LensId => LENS_ORDER.includes(l as LensId));
     if (lens.length) setActiveLenses(new Set(lens));
+    const rings = (p.get('rings') ?? '').split(',').filter((r): r is MandateRelevance => RELEVANCE_ORDER.includes(r as MandateRelevance));
+    if (rings.length) setActiveRings(new Set(rings));
+    const tiers = (p.get('tiers') ?? '').split(',').filter((t): t is Tier => TIER_ORDER.includes(t as Tier));
+    if (tiers.length) setActiveTiers(new Set(tiers));
     if (p.get('view') === 'mandate') setColourMode('mandate');
     if (p.get('moving') === '1') setMovingOnly(true);
+    const q = p.get('q');
+    if (q) setRawQuery(q);
+    const open = (p.get('open') ?? '').split(',').filter(id => DOMAIN_BRANCHES.some(b => b.id === id));
+    if (open.length) setOpenDomains(new Set(open));
+    // Per-instrument permalink: expand the owning branch and scroll to the row.
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      const owner = DOMAIN_BRANCHES.find(b => b.instruments.some(i => i.id === hash));
+      if (owner) {
+        setOpenDomains(prev => new Set([...prev, owner.id]));
+        setTimeout(() => document.getElementById(hash)?.scrollIntoView({ block: 'center' }), 150);
+      }
+    }
   }, []);
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
-    const lens = LENS_ORDER.filter(l => activeLenses.has(l)).join(',');
-    if (lens) p.set('lens', lens); else p.delete('lens');
-    if (colourMode === 'mandate') p.set('view', 'mandate'); else p.delete('view');
-    if (movingOnly) p.set('moving', '1'); else p.delete('moving');
+    const set = (key: string, val: string) => (val ? p.set(key, val) : p.delete(key));
+    set('lens', LENS_ORDER.filter(l => activeLenses.has(l)).join(','));
+    set('rings', RELEVANCE_ORDER.filter(r => activeRings.has(r)).join(','));
+    set('tiers', TIER_ORDER.filter(t => activeTiers.has(t)).join(','));
+    set('view', colourMode === 'mandate' ? 'mandate' : '');
+    set('moving', movingOnly ? '1' : '');
+    set('q', query);
+    set('open', DOMAIN_BRANCHES.filter(b => openDomains.has(b.id)).map(b => b.id).join(','));
     const qs = p.toString();
-    window.history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
-  }, [activeLenses, colourMode, movingOnly]);
+    window.history.replaceState(null, '', `${qs ? `?${qs}` : window.location.pathname}${window.location.hash}`);
+  }, [activeLenses, activeRings, activeTiers, colourMode, movingOnly, query, openDomains]);
 
   const totals = useMemo(() => {
     const all = DOMAIN_BRANCHES.flatMap(b => b.instruments);
@@ -565,6 +677,50 @@ export default function PolicyHierarchyPage() {
     setColourMode('mandate');
     setActiveLenses(new Set());
     setOpenDomains(new Set(domainBranches.map(b => b.id)));
+  }
+
+  /**
+   * "Export brief": a markdown one-pager of the CURRENT selection (lenses,
+   * rings, tiers, moving filter, search) for pasting into advice drafts —
+   * unlike the CSV export, which always dumps the full register.
+   */
+  function exportBrief() {
+    const parts: string[] = ['# EU Policy Hierarchy — selection brief', ''];
+    const filters: string[] = [];
+    if (activeLenses.size) filters.push(`lenses: ${[...activeLenses].join(', ')}`);
+    if (activeRings.size) filters.push(`mandate rings: ${[...activeRings].join(', ')}`);
+    if (activeTiers.size) filters.push(`tiers: ${[...activeTiers].join(', ')}`);
+    if (movingOnly) filters.push('moving now only');
+    if (query) filters.push(`search: "${query}"`);
+    parts.push(`_Filters: ${filters.length ? filters.join(' · ') : 'none (full register)'}. AI-compiled working data — verify before citing._`, '');
+    for (const b of DOMAIN_BRANCHES) {
+      const rows = b.instruments.filter(
+        i =>
+          matchesQuery(i, query) &&
+          matchesLenses(i, activeLenses) &&
+          matchesRingTier(i, activeRings, activeTiers) &&
+          (!movingOnly || STATUS[i.id]),
+      );
+      if (rows.length === 0) continue;
+      parts.push(`## ${b.name}`, '');
+      for (const i of rows.sort(sortInstruments)) {
+        const st = STATUS[i.id];
+        const m = MANDATE[i.id];
+        const recs = RECOMMENDATIONS[i.id] ?? [];
+        parts.push(`- **${i.title}** (${i.officialRef}, ${i.year}) — [EUR-Lex](${i.eurlexUrl})${i.confident ? '' : ' ⚠ unverified'}`);
+        parts.push(`  ${i.summary}`);
+        if (m) parts.push(`  _Ring: ${m.relevance} — ${m.hook}_`);
+        if (st) parts.push(`  _Status: ${STATUS_META[st.status].label}${st.confident ? '' : ' (unconfirmed)'} — ${st.note}${st.sourceRef ? ` (${st.sourceRef})` : ''}_`);
+        if (recs.length) parts.push(`  _Board advice: ${recs.join(', ')}_`);
+      }
+      parts.push('');
+    }
+    const blob = new Blob([parts.join('\n')], { type: 'text/markdown;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'policy-hierarchy-brief.md';
+    a.click();
+    URL.revokeObjectURL(a.href);
   }
 
   const allOpen = openDomains.size === domainBranches.length;
@@ -657,6 +813,13 @@ export default function PolicyHierarchyPage() {
               >
                 Export CSV
               </button>
+              <button
+                onClick={exportBrief}
+                className="rounded border border-[#E6E7E8] dark:border-[var(--mh-border)] px-2.5 py-1 text-[12px] hover:border-[#00928F] hover:text-[#007B6C]"
+                title="Download the current selection (filters applied) as a markdown brief for advice drafting"
+              >
+                Export brief
+              </button>
             </span>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -684,6 +847,76 @@ export default function PolicyHierarchyPage() {
             {activeLenses.size > 0 && (
               <button onClick={() => setActiveLenses(new Set())}
                       className="text-[11px] text-[#808285] hover:text-[#3D5265] dark:hover:text-[var(--mh-fg)] underline">
+                clear
+              </button>
+            )}
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[11px] uppercase tracking-wide text-[#808285] dark:text-[var(--mh-muted)]"
+                  title="Unlike lenses (which highlight), these chips filter the tree down to matching instruments.">
+              Show only
+            </span>
+            {RELEVANCE_ORDER.map(r => {
+              const on = activeRings.has(r);
+              return (
+                <button
+                  key={r}
+                  onClick={() =>
+                    setActiveRings(prev => {
+                      const next = new Set(prev);
+                      if (next.has(r)) next.delete(r);
+                      else next.add(r);
+                      return next;
+                    })
+                  }
+                  aria-pressed={on}
+                  className="inline-flex items-center gap-1.5 rounded border px-2 py-0.5 text-[11px] font-semibold transition-colors"
+                  style={{
+                    borderColor: RELEVANCE_META[r].color,
+                    background: on ? RELEVANCE_META[r].color : 'transparent',
+                    color: on ? '#fff' : RELEVANCE_META[r].color,
+                  }}
+                  title={RELEVANCE_META[r].description}
+                >
+                  <span className="inline-block w-2 h-2 rounded-sm" style={{ background: on ? '#fff' : RELEVANCE_META[r].color }} />
+                  {RELEVANCE_META[r].label.split(' ')[0]}
+                </button>
+              );
+            })}
+            <span className="text-[#DCDDDE]" aria-hidden>|</span>
+            {TIER_ORDER.map(t => {
+              const on = activeTiers.has(t);
+              return (
+                <button
+                  key={t}
+                  onClick={() =>
+                    setActiveTiers(prev => {
+                      const next = new Set(prev);
+                      if (next.has(t)) next.delete(t);
+                      else next.add(t);
+                      return next;
+                    })
+                  }
+                  aria-pressed={on}
+                  className={`rounded border px-2 py-0.5 text-[11px] transition-colors ${
+                    on
+                      ? 'bg-[#3D5265] border-[#3D5265] text-white'
+                      : 'border-[#DCDDDE] dark:border-[var(--mh-border)] text-[#54728C] dark:text-[var(--mh-muted)] hover:border-[#3D5265]'
+                  }`}
+                  title={TIER_META[t].description}
+                >
+                  {TIER_META[t].label}
+                </button>
+              );
+            })}
+            {(activeRings.size > 0 || activeTiers.size > 0) && (
+              <button
+                onClick={() => {
+                  setActiveRings(new Set());
+                  setActiveTiers(new Set());
+                }}
+                className="text-[11px] text-[#808285] hover:text-[#3D5265] dark:hover:text-[var(--mh-fg)] underline"
+              >
                 clear
               </button>
             )}
@@ -779,6 +1012,8 @@ export default function PolicyHierarchyPage() {
                   })
                 }
                 activeLenses={activeLenses}
+                activeRings={activeRings}
+                activeTiers={activeTiers}
                 colourMode={colourMode}
                 movingOnly={movingOnly}
                 query={query}
