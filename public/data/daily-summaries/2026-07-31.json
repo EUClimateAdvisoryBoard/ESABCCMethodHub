@@ -1,12 +1,18 @@
 {
   "date": "2026-07-31",
-  "generatedAt": "2026-07-31T07:54:05.606Z",
+  "generatedAt": "2026-07-31T12:59:38.855Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 31 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Danube water levels: Hungary, Romania cut nuclear output",
-      "summary": "Historically low water levels along Europe&#039;s second-longest river have led Hungary and Romania to reduce output at key nuclear plants. Danube tourism and river cargo have also been severely affected by Europe&#039;s heatwave.",
+      "headline": "Commission approves €59 million Slovenian State aid scheme to promote battery energy storage systems",
+      "summary": "European Commission Press release Brussels, 31 Jul 2026 The European Commission has approved a €59 million Slovenian State aid scheme to promote battery energy storage systems, in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy. The scheme was approved under the Clean Industrial Deal State Aid Framework (CISAF) adopted by the Commission on 25 June 2025.",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Wildfire near Sizewell nuclear plant causes ‘total devastation’ to Suffolk landscape",
+      "summary": "&lt;p&gt;More than 100 firefighters remain at scene after Dunwich Heath blaze spread across 150 hectares and forced evacuations&lt;/p&gt;&lt;p&gt;A wildfire near Britain’s biggest nuclear power station has caused “total devastation” to one of the UK’s most important landscapes, experts have warned, as fire crews said the situation was “stabilising”.&lt;/p&gt;&lt;p&gt;More than 100 firefighters have been battling &lt;a href=\"https://www.theguardian.com/uk-news/2026/jul/30/major-incident-fire-suff",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -27,34 +33,43 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Commission approves €59 million Slovenian State aid scheme to promote battery energy storage systems",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1505",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 31 Jul 2026 The European Commission has approved a €59 million Slovenian State aid scheme to promote battery energy storage systems, in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy. The scheme was approved under the Clean Industrial Deal State Aid Framework (CISAF) adopted by the Commission on 25 June 2025.",
+          "published": "2026-07-30T22:00:00.000Z",
+          "score": 27
+        },
+        {
+          "title": "Commission approves €290 million Dutch State aid to support sustainable aviation fuels",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1706",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 31 Jul 2026 The European Commission has approved, under EU State aid rules, two Dutch schemes with a combined budget of €290 million to support sustainable aviation fuels (‘SAF'). The schemes will contribute to the objectives of the Clean Industrial Deal to accelerate the decarbonisation of EU industry, as well as of the ReFuelEU Aviation Regulation to boost the supply and demand of SAF and accelerate the transition to climate-neutral aviation.",
+          "published": "2026-07-30T22:00:00.000Z",
+          "score": 24
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Danube water levels: Hungary, Romania cut nuclear output",
-          "link": "https://www.dw.com/en/danube-water-levels-hungary-romania-cut-nuclear-output/a-78171891?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Historically low water levels along Europe&#039;s second-longest river have led Hungary and Romania to reduce output at key nuclear plants. Danube tourism and river cargo have also been severely affected by Europe&#039;s heatwave.",
-          "published": "2026-07-30T11:00:00.000Z",
-          "score": 9
-        },
-        {
-          "title": "Suffolk wildfire near Sizewell nuclear plant ‘stabilising’ after 24 hours",
+          "title": "Wildfire near Sizewell nuclear plant causes ‘total devastation’ to Suffolk landscape",
           "link": "https://www.theguardian.com/uk-news/2026/jul/31/suffolk-wildfire-sizewell-nuclear-plant-dunwich-heath",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;More than 100 firefighters remain at scene after Dunwich Heath blaze spread across 150 hectares and forced evacuations&lt;/p&gt;&lt;p&gt;Fire crews tackling a large wildfire burning for more than 24 hours near Britain’s biggest nuclear power station have said the situation is “stabilising”.&lt;/p&gt;&lt;p&gt;More than 100 firefighters have been battling &lt;a href=\"https://www.theguardian.com/uk-news/2026/jul/30/major-incident-fire-suffolk-coast-dunwich-heath-leiston\"&gt;the blaze in Du",
-          "published": "2026-07-31T07:48:44.000Z",
+          "description": "&lt;p&gt;More than 100 firefighters remain at scene after Dunwich Heath blaze spread across 150 hectares and forced evacuations&lt;/p&gt;&lt;p&gt;A wildfire near Britain’s biggest nuclear power station has caused “total devastation” to one of the UK’s most important landscapes, experts have warned, as fire crews said the situation was “stabilising”.&lt;/p&gt;&lt;p&gt;More than 100 firefighters have been battling &lt;a href=\"https://www.theguardian.com/uk-news/2026/jul/30/major-incident-fire-suff",
+          "published": "2026-07-31T12:23:57.000Z",
           "score": 7
         },
         {
-          "title": "Danube's record low levels force shutdown of Hungary's only nuclear plant",
-          "link": "https://www.bbc.co.uk/news/articles/cn0nqv05g0do?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Romania, Bulgaria and Serbia are also grappling with the effects of a series of prolonged heatwaves and low rainfall.",
-          "published": "2026-07-30T17:55:24.000Z",
+          "title": "New solar panels in Great Britain at 15-year high as fossil fuel costs soar",
+          "link": "https://www.theguardian.com/environment/2026/jul/31/new-solar-panels-great-britain-15-year-high",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Boom in solar farms and home installations in first half of 2026 began shortly after start of US-Israel war against Iran&lt;/p&gt;&lt;p&gt;Great Britain has recorded more new solar power installations in the first half of this year than in any six-month period since 2011, as households turn to rooftop panels to help cut their energy bills.&lt;/p&gt;&lt;p&gt;An analysis of the government’s official figures shows that Great Britain added 142,536 solar installations in the first six months",
+          "published": "2026-07-31T09:00:09.000Z",
           "score": 7
         },
         {
@@ -63,6 +78,14 @@
           "source": "BBC Science & Environment",
           "description": "The UK's biggest solar eclipse since 1999 arrives on 12 August. Here's where to see it safely.",
           "published": "2026-07-31T05:09:42.000Z",
+          "score": 7
+        },
+        {
+          "title": "Danube's record low levels force shutdown of Hungary's only nuclear plant",
+          "link": "https://www.bbc.co.uk/news/articles/cn0nqv05g0do?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Romania, Bulgaria and Serbia are also grappling with the effects of a series of prolonged heatwaves and low rainfall.",
+          "published": "2026-07-30T17:55:24.000Z",
           "score": 7
         },
         {
@@ -104,20 +127,20 @@
           "score": 13
         },
         {
-          "title": "Europe is burning – and if Trump’s war on the climate is not met with sanctions, things will only get worse | Alexander Hurst",
-          "link": "https://www.theguardian.com/commentisfree/2026/jul/30/europe-burning-trump-war-climate-sanctions-white-house",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The White House seems committed to ecocide. The EU should harness the power of the single market to force it to change course&lt;/p&gt;&lt;p&gt;Are we understanding it yet? As Europe burns in the west, the south and the north, are we grasping the fact that our economies, food systems, political stability and even our ability to plan for the future, will all be charred in a world on fire?&lt;/p&gt;&lt;p&gt;Paris got a taste of what is in store for us Europeans when, weeks ago, &lt;a href",
-          "published": "2026-07-30T11:00:12.000Z",
-          "score": 13
-        },
-        {
           "title": "‘We can’t make it better again’: what Europe’s wildfires tell us about the climate crisis",
           "link": "https://www.theguardian.com/environment/2026/jul/30/europe-wildfires-climate-crisis-heat-summer",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;In this week’s newsletter: As France and Spain battle huge fires in this summer of relentless heat, will it be enough to spur us to take action? &lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://www.theguardian.com/global/2022/sep/20/sign-up-for-the-down-to-earth-newsletter-our-free-environmental-email\"&gt;Don’t get Down to Earth delivered to your inbox? Sign up here&lt;/a&gt;&lt;/p&gt;&lt;p&gt;When Stefan Rahmstorf walked through the ruined streets of Dresden after the river Elbe flooded in 200",
           "published": "2026-07-31T06:00:07.000Z",
           "score": 13
+        },
+        {
+          "title": "Record low water levels across Europe reveal mammoth skeletons and forgotten shipwrecks – video",
+          "link": "https://www.theguardian.com/environment/video/2026/jul/30/europe-record-low-water-levels",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Water levels across several of Europe’s major waterways have dropped to exceptionally low levels, setting new records in some areas.&lt;/p&gt;&lt;p&gt;Extreme heat exacerbated by the climate crisis is intensifying the drought hitting the continent as record-breaking heatwaves means the hot atmosphere is evaporating water from rivers, lakes, soils and plants quickly.&lt;/p&gt;&lt;p&gt;The Danube has hit the lowest level of water in 30 years in several countries including Hungary, Serbia ",
+          "published": "2026-07-30T22:47:27.000Z",
+          "score": 10
         }
       ]
     },
@@ -132,6 +155,14 @@
           "description": "Uefa says \"the World Cup is not for sale\" after its 55 member associations vote to boycott future tournaments if Fifa and its president, Gianni Infantino, do not back down on their investment proposals.",
           "published": "2026-07-30T16:47:40.000Z",
           "score": 6
+        },
+        {
+          "title": "FIFA plans: Infantino under pressure as senior advisor quits",
+          "link": "https://www.dw.com/en/fifa-plans-infantino-under-pressure-as-senior-advisor-quits/a-78171084?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "After regional football federations condemned FIFA plans for private investment, Carlos Cordeiro, senior advisor to FIFA President Gianni Infantino, tendered his resignation.",
+          "published": "2026-07-31T12:00:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -140,20 +171,12 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Commission disburses another €3.47 billion to Ukraine for drones, missiles, air defence and fighter jets",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1710",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 30 Jul 2026 The European Commission has today disbursed €3.47 billion to Ukraine, under the defence window of the €90 billion Ukraine Support Loan.",
-          "published": "2026-07-30T09:36:27.000Z",
-          "score": 18
-        },
-        {
-          "title": "Daily News 30 / 07 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1709",
-          "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 30 Jul 2026 Commission disburses another €3.47 billion to Ukraine for drones, missiles, air defence and fighter jets \r\nThe European Commission has today disbursed €3.47 bill...",
-          "published": "2026-07-30T08:24:13.000Z",
-          "score": 14
+          "title": "Small insects, big damage: The global ant trade is booming",
+          "link": "https://www.dw.com/en/small-insects-big-damage-the-global-ant-trade-is-booming/a-78186729?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Legal or not, the trade in African ants bound for Europe is booming. What do hobbyists find appealing about these insects, and what risks does the trade pose to ecosystems, including power outages?",
+          "published": "2026-07-31T12:20:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -162,52 +185,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU aims to build AI gigafactories of its own",
-          "link": "https://www.dw.com/en/eu-aims-to-build-ai-gigafactories-of-its-own/a-78179533?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU has unveiled a plan to raise state and private funds to hyperscale AI capabilities and gain independence from non-European governments. The plan calls for the construction of seven new sites across the bloc.",
-          "published": "2026-07-30T15:15:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Eurozone sees GDP growth of 0.4%, most since early 2025",
-          "link": "https://www.dw.com/en/eurozone-sees-gdp-growth-of-0-4-most-since-early-2025/a-78177668?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Eurozone economies expanded by 0.4% in the second quarter of 2026, exceeding expectations and marking the strongest quarterly growth since early 2025.",
-          "published": "2026-07-30T13:12:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Scenes from Europe's summer of wildfires - reuters.com",
+          "title": "Scenes from Europe's summer of wildfires - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxONWdmWllYbTFUbUQ0aE9XS2NyM1ZJQklRTWh5ZXhJeDBZaDVjNUdkNGtHVHVhallOcFI5Y3prLWdKUG56MDFyTW53VVg2T0tET1dyeFZFVWFCSlBQZ21EVHFwc3FlV1FSUGVCQk42TUlIQ2VNVFFfbkJGMUFqY0ppRmdR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxONWdmWllYbTFUbUQ0aE9XS2NyM1ZJQklRTWh5ZXhJeDBZaDVjNUdkNGtHVHVhallOcFI5Y3prLWdKUG56MDFyTW53VVg2T0tET1dyeFZFVWFCSlBQZ21EVHFwc3FlV1FSUGVCQk42TUlIQ2VNVFFfbkJGMUFqY0ppRmdR?oc=5\" target=\"_blank\"&gt;Scenes from Europe's summer of wildfires&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxONWdmWllYbTFUbUQ0aE9XS2NyM1ZJQklRTWh5ZXhJeDBZaDVjNUdkNGtHVHVhallOcFI5Y3prLWdKUG56MDFyTW53VVg2T0tET1dyeFZFVWFCSlBQZ21EVHFwc3FlV1FSUGVCQk42TUlIQ2VNVFFfbkJGMUFqY0ppRmdR?oc=5\" target=\"_blank\"&gt;Scenes from Europe's summer of wildfires&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-30T13:45:00.000Z",
           "score": 8
         },
         {
-          "title": "Euro zone economy grows faster than expected on AI spending, confident consumers - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNNXgwY1BYbk9QMmE3WW5aUXhhampyaXFHRWZXWXp5ZlhEdGRLNlVSR2ZlRks0ak9JMjFnQXN0OXZVZFZWUnBZSDNVUG9lN0xQa21CLUJ3RnlNMV9MUEQwREFPU1lnZkVkangwTnhvbGlFZUhPWDFnQ3FfejVUMFkweVBSUnc0dk9QbVJWcUhFaWdwWHBsOWRxNk44a2tTVldnaTBPbHZMX3k4RTJPLWZCSWJ5OTloOWhLUkE?oc=5",
+          "title": "Europe makes trillion-euro bet to revive its battered industry - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNVWdCLU5ySHhPVUdKWXBLakpaVVotQ2dHNE1TT29MRDhpZ0ExRFI3cjl2NFVfUlBCR2JtUmxaeUliaUVNb3FLeE15WW1ITDh2U2NBeWtsalpYc3FxS19rdjVHM3RmUHR5M3NBOU9Lc2wzWnJTcVR1ZzViSDVVd0FqalZYRmhxaDdtSU1SVC13NXpwemRURHVtTi1WM3JoTmc3ejh0TktSaFl2cDR2eVF5Z3B1TmdDSWs3WllKZUYxc1VKdE9kdVMw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNNXgwY1BYbk9QMmE3WW5aUXhhampyaXFHRWZXWXp5ZlhEdGRLNlVSR2ZlRks0ak9JMjFnQXN0OXZVZFZWUnBZSDNVUG9lN0xQa21CLUJ3RnlNMV9MUEQwREFPU1lnZkVkangwTnhvbGlFZUhPWDFnQ3FfejVUMFkweVBSUnc0dk9QbVJWcUhFaWdwWHBsOWRxNk44a2tTVldnaTBPbHZMX3k4RTJPLWZCSWJ5OTloOWhLUkE?oc=5\" target=\"_blank\"&gt;Euro zone economy grows faster than expected on AI spending, confident consumers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-07-30T09:46:28.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNVWdCLU5ySHhPVUdKWXBLakpaVVotQ2dHNE1TT29MRDhpZ0ExRFI3cjl2NFVfUlBCR2JtUmxaeUliaUVNb3FLeE15WW1ITDh2U2NBeWtsalpYc3FxS19rdjVHM3RmUHR5M3NBOU9Lc2wzWnJTcVR1ZzViSDVVd0FqalZYRmhxaDdtSU1SVC13NXpwemRURHVtTi1WM3JoTmc3ejh0TktSaFl2cDR2eVF5Z3B1TmdDSWs3WllKZUYxc1VKdE9kdVMw?oc=5\" target=\"_blank\"&gt;Europe makes trillion-euro bet to revive its battered industry&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-31T06:00:00.000Z",
           "score": 8
         },
         {
-          "title": "EU agrees rescue centre in eastern Libya as migrant departures rise - reuters.com",
+          "title": "EU agrees rescue centre in eastern Libya as migrant departures rise - Reuters",
           "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNYjZ6c21GM2lBSTFhLW0wcktza1VLTFQwUlc4Z284TmFIS0hzVWpOemRrN1lsM3hZbDBkb1R6VzhfR2NNVTNkQi1BcS16aU9YUkNMZGllWTBabEVfUmdsdUV1NjV3YldWa3RPWk9yRnd5VTJhUnJBOVF3bEFMd3JOLWtRNGcxUlAwUTE1QmtxQ0ZQZDJtX2NIX1h0Y2dJX0wxc29LUXpNc01Oa0NlVkQw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNYjZ6c21GM2lBSTFhLW0wcktza1VLTFQwUlc4Z284TmFIS0hzVWpOemRrN1lsM3hZbDBkb1R6VzhfR2NNVTNkQi1BcS16aU9YUkNMZGllWTBabEVfUmdsdUV1NjV3YldWa3RPWk9yRnd5VTJhUnJBOVF3bEFMd3JOLWtRNGcxUlAwUTE1QmtxQ0ZQZDJtX2NIX1h0Y2dJX0wxc29LUXpNc01Oa0NlVkQw?oc=5\" target=\"_blank\"&gt;EU agrees rescue centre in eastern Libya as migrant departures rise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNYjZ6c21GM2lBSTFhLW0wcktza1VLTFQwUlc4Z284TmFIS0hzVWpOemRrN1lsM3hZbDBkb1R6VzhfR2NNVTNkQi1BcS16aU9YUkNMZGllWTBabEVfUmdsdUV1NjV3YldWa3RPWk9yRnd5VTJhUnJBOVF3bEFMd3JOLWtRNGcxUlAwUTE1QmtxQ0ZQZDJtX2NIX1h0Y2dJX0wxc29LUXpNc01Oa0NlVkQw?oc=5\" target=\"_blank\"&gt;EU agrees rescue centre in eastern Libya as migrant departures rise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-30T20:29:37.000Z",
           "score": 8
+        },
+        {
+          "title": "Drone attack ignites blaze at energy plant in Russia's Volgograd, governor says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMTFsUjZfbHpiRXk1SEF4dzNmbkp0Zk92c05WdVhucm95SmpIWWtnMEI4aXhDM0R6bEhTeno2eTdaRjhnUm9RM0I2LU54d1pmcXQyYkJtVVppaU1aTXdNRHlqLVpoUHpFU010a2Jxa19pNVhxVnk4SFNTNTVGREpha0VhLVA2Q0U0M00yMXQtQWFxR1FZRlJuZ0hjdWlPcTVHczVaOUVUQ1k2aUswWnExb2RMTEpXZFN4RnExcQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNMTFsUjZfbHpiRXk1SEF4dzNmbkp0Zk92c05WdVhucm95SmpIWWtnMEI4aXhDM0R6bEhTeno2eTdaRjhnUm9RM0I2LU54d1pmcXQyYkJtVVppaU1aTXdNRHlqLVpoUHpFU010a2Jxa19pNVhxVnk4SFNTNTVGREpha0VhLVA2Q0U0M00yMXQtQWFxR1FZRlJuZ0hjdWlPcTVHczVaOUVUQ1k2aUswWnExb2RMTEpXZFN4RnExcQ?oc=5\" target=\"_blank\"&gt;Drone attack ignites blaze at energy plant in Russia's Volgograd, governor says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-31T02:25:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Fifa says 'nobody selling football' as plan continues",
+          "link": "https://www.bbc.co.uk/sport/football/articles/c79glnx1y55o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Football's governing body Fifa plans to continue the consultation process after Uefa threatens to boycott World Cups.",
+          "published": "2026-07-31T08:21:37.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 423,
-    "articlesLast24h": 178,
-    "afterDedup": 165,
+    "articlesLast24h": 173,
+    "afterDedup": 162,
     "feedsQueried": 19
   }
 }
