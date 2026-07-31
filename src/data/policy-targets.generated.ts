@@ -12,13 +12,13 @@
  * state keyed on them survives regeneration. Reviewed corrections from the
  * fact-check pass are applied from scripts/policy-targets-overrides.json.
  *
- * 918 targets across 62 acts.
- *   label:            {"target":374,"other":219,"objective":133,"commitment":185,"goal":7}
- *   obligation:       {"mandatory":649,"voluntary":269}
- *   type:             {"qualitative":287,"quantitative":423,"unspecified":208}
- *   climate_relevance:{"mitigation":400,"none":269,"adaptation":202,"both":47}
- *   relevant (lens):  {"true":645,"false":273}
- *   (88 candidates rejected as non-verbatim / out of scope)
+ * 951 targets across 62 acts.
+ *   label:            {"target":395,"other":230,"objective":133,"commitment":185,"goal":8}
+ *   obligation:       {"mandatory":678,"voluntary":273}
+ *   type:             {"qualitative":288,"quantitative":455,"unspecified":208}
+ *   climate_relevance:{"mitigation":417,"none":284,"adaptation":202,"both":48}
+ *   relevant (lens):  {"true":668,"false":283}
+ *   (89 candidates rejected as non-verbatim / out of scope)
  */
 import type { RawPolicyTarget } from './policy-targets';
 
@@ -6127,7 +6127,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
     "target_number": 2,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 25(1), first subparagraph, point (a)(ii) (similarity 0.28)"
   },
   {
     "id": "tgt-3e09349d",
@@ -6978,7 +6978,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy efficiency”).",
     "relevant": true,
     "target_number": 6,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 3(1), first subparagraph — Binding overall Union target for 2030 (similarity 0.27)"
   },
   {
     "id": "tgt-1e9ea892",
@@ -7506,7 +7506,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“energy savings”).",
     "relevant": true,
     "target_number": 21,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 27 (similarity 0.28)"
   },
   {
     "id": "tgt-7cece1ec",
@@ -11011,7 +11011,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“net greenhouse gas emissions”); increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
     "relevant": true,
     "target_number": 4,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 25(1), first subparagraph, point (a)(ii) (similarity 0.25)"
   },
   {
     "id": "tgt-48d710cd",
@@ -15128,7 +15128,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
     "target_number": 7,
-    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(2) — Energy efficiency targets (similarity 0.32)"
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 3(1), first subparagraph — Binding overall Union target for 2030 (similarity 0.34)"
   },
   {
     "id": "tgt-4a5ad4ec",
@@ -15162,7 +15162,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
     "target_number": 8,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 3(1), second subparagraph (similarity 0.26)"
   },
   {
     "id": "tgt-cbc5be0d",
@@ -15196,7 +15196,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
     "target_number": 9,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 3(1), second subparagraph (similarity 0.26)"
   },
   {
     "id": "tgt-37e4b001",
@@ -15230,7 +15230,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
     "target_number": 10,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 3(1), second subparagraph (similarity 0.26)"
   },
   {
     "id": "tgt-bc7054d3",
@@ -15262,7 +15262,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
     "target_number": 11,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 3(1), third subparagraph (similarity 0.29)"
   },
   {
     "id": "tgt-4ab436f0",
@@ -15297,7 +15297,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“final energy consumption”); switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
     "target_number": 12,
-    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(1) — Energy efficiency targets (similarity 0.31)"
+    "duplicate_of": "Duplicate wording: Renewable Energy Directive (RED II) — Article 3(1), first subparagraph — Binding overall Union target for 2030 (similarity 0.71)"
   },
   {
     "id": "tgt-5bca178f",
@@ -15358,7 +15358,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
     "target_number": 14,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED II) — Article 3(1), second subparagraph (similarity 0.28)"
   },
   {
     "id": "tgt-88b95a37",
@@ -24343,21 +24343,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "duplicate_of": ""
   },
   {
-    "id": "tgt-3bc1efaf",
+    "id": "tgt-20c17ba6",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 3(1) — Binding overall Union target for 2030",
-    "target_text": "Member States shall collectively ensure that the share of energy from renewable sources in the Union's gross final consumption of energy in 2030 is at least 32 %. The Commission shall assess that target with a view to submitting a legislative proposal by 2023 to increase it where there are further substantial costs reductions in the production of renewable energy, where needed to meet the Union's international commitments for decarbonisation, or where a significant decrease in energy consumption in the Union justifies such an increase.",
+    "article": "Article 3(1), first subparagraph — Binding overall Union target for 2030",
+    "target_text": "Member States shall collectively ensure that the share of energy from renewable sources in the Union’s gross final consumption of energy in 2030 is at least 42,5 %.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "in 2030",
     "indicators": [
       "share of energy from renewable sources",
-      "renewable energy",
       "gross final consumption of energy"
     ],
     "climate_relevance": "mitigation",
@@ -24368,15 +24367,82 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     ],
     "sector_evidence": {
       "energy": [
-        "renewable energy",
         "energy from renewable",
         "renewable sources"
       ]
     },
-    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonisation”); switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
     "target_number": 1,
-    "duplicate_of": "Similar target: Governance Regulation — Article 5(2) — Member States' contribution setting process in the area of renewable energy (similarity 0.30)"
+    "duplicate_of": "Duplicate wording: Governance Regulation — Article 5(2) — Member States' contribution setting process in the area of renewable energy (similarity 0.71)"
+  },
+  {
+    "id": "tgt-92c9dbe5",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 3(1), second subparagraph",
+    "target_text": "Member States shall collectively endeavour to increase the share of energy from renewable sources in the Union’s gross final consumption of energy in 2030 to 45 %.",
+    "target_label": "goal",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "in 2030",
+    "indicators": [
+      "share of energy from renewable sources",
+      "gross final consumption of energy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "energy from renewable",
+        "renewable sources"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
+    "relevant": true,
+    "target_number": 2,
+    "duplicate_of": "Duplicate wording: Governance Regulation — Article 5(2) — Member States' contribution setting process in the area of renewable energy (similarity 0.58)"
+  },
+  {
+    "id": "tgt-ea52e5db",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 3(1), third subparagraph",
+    "target_text": "Member States shall set an indicative target for innovative renewable energy technology of at least 5 % of newly installed renewable energy capacity by 2030.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "renewable energy",
+      "innovative renewable energy technology",
+      "newly installed renewable energy capacity"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 3,
+    "duplicate_of": "Similar target: Governance Regulation — Article 4(a)(2), second subparagraph — National objectives, targets and contributions for the five dimensions of the… (similarity 0.29)"
   },
   {
     "id": "tgt-95a4be70",
@@ -24408,7 +24474,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 2,
+    "target_number": 4,
     "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(2) — Energy efficiency targets (similarity 0.30)"
   },
   {
@@ -24443,7 +24509,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 3,
+    "target_number": 5,
     "duplicate_of": ""
   },
   {
@@ -24479,7 +24545,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“grid”).",
     "relevant": true,
-    "target_number": 4,
+    "target_number": 6,
     "duplicate_of": ""
   },
   {
@@ -24513,7 +24579,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable sources”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“interconnectivity”).",
     "relevant": true,
-    "target_number": 5,
+    "target_number": 7,
     "duplicate_of": ""
   },
   {
@@ -24544,7 +24610,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable sources”).",
     "relevant": true,
-    "target_number": 6,
+    "target_number": 8,
     "duplicate_of": ""
   },
   {
@@ -24581,7 +24647,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 7,
+    "target_number": 9,
     "duplicate_of": ""
   },
   {
@@ -24618,27 +24684,58 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 8,
+    "target_number": 10,
     "duplicate_of": "Similar target: Energy Efficiency Directive — Article 35(7), point (g) (similarity 0.25)"
   },
   {
-    "id": "tgt-ba5fd11a",
+    "id": "tgt-8a7d279c",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 15(4)",
-    "target_text": "Member States shall, in their building regulations and codes or by other means with equivalent effect, require the use of minimum levels of energy from renewable sources in new buildings and in existing buildings that are subject to major renovation in so far as technically, functionally and economically feasible, and reflecting the results of the cost-optimal calculation carried out pursuant to Article 5(2) of Directive 2010/31/EU, and in so far as this does not negatively affect indoor air quality. Member States shall permit those minimum levels to be fulfilled, inter alia, through efficient district heating and cooling using a significant share of renewable energy and waste heat and cold.",
-    "target_label": "commitment",
+    "article": "Article 9 — Joint projects between Member States",
+    "target_text": "by 31 December 2033, Member States with an annual electricity consumption of more than 100 TWh shall endeavour to agree on establishing a third joint project.",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "by 31 December 2033",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": true,
+    "target_number": 11,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-494724e4",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 15a(1) — Mainstreaming renewable energy in buildings",
+    "target_text": "In order to promote the production and use of renewable energy in the building sector, Member States shall determine an indicative national share of renewable energy produced on-site or nearby as well as renewable energy taken from the grid in final energy consumption in their building sector in 2030 that is consistent with an indicative target of at least a 49 % share of energy from renewable sources in the building sector in the Union’s final energy consumption in buildings in 2030. Member States shall include their indicative national share in the integrated national energy and climate plans submitted pursuant to Articles 3 and 14 of Regulation (EU) 2018/1999 as well as information on how they plan to achieve it.",
+    "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
+    "target_type": "quantitative",
+    "timeline": "in 2030",
     "indicators": [
+      "final energy consumption",
+      "share of energy from renewable sources",
       "share of renewable energy",
       "renewable energy",
-      "minimum levels of energy from renewable sources",
-      "share of renewable energy in the building sector"
+      "share of energy from renewable sources in the building sector"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
@@ -24652,36 +24749,78 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
         "renewable energy",
         "energy from renewable",
         "renewable sources",
-        "district heating"
+        "final energy consumption"
       ],
       "buildings": [
         "building",
-        "buildings",
-        "renovation*"
-      ],
-      "health": [
-        "air quality"
+        "buildings"
       ]
     },
-    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”); switches supply or fuels to low-carbon sources (“renewable energy”). Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“air quality”).",
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“final energy consumption”); switches supply or fuels to low-carbon sources (“renewable energy”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“grid”).",
     "relevant": true,
-    "target_number": 9,
+    "target_number": 12,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-69d16e11",
+    "id": "tgt-15aa5e48",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 15(5)",
-    "target_text": "Member States shall ensure that new public buildings, and existing public buildings that are subject to major renovation, at national, regional and local level, fulfil an exemplary role in the context of this Directive from 1 January 2012. Member States may, inter alia, allow that obligation to be fulfilled by complying with nearly zero-energy building provisions as required in Directive 2010/31/EU, or by providing for the roofs of public or mixed private-public buildings to be used by third parties for installations that produce energy from renewable sources.",
+    "article": "Article 15a(3), second subparagraph",
+    "target_text": "In order to achieve the indicative share of renewable energy provided for in paragraph 1, Member States shall, in their national regulations and building codes and, where applicable, in their support schemes or by other means with equivalent effect, require the use of minimum levels of energy from renewable sources produced on-site or nearby as well as renewable energy taken from the grid, in new buildings and in existing buildings that are undergoing major renovation or a renewal of the heating system, in accordance with Directive 2010/31/EU, where that is economically, technically and functionally feasible. Member States shall allow those minimum levels to be fulfilled through, inter alia, efficient district heating and cooling.",
     "target_label": "commitment",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "from 1 January 2012",
+    "timeline": "",
     "indicators": [
+      "share of renewable energy",
+      "renewable energy",
+      "minimum levels of energy from renewable sources in buildings"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "buildings"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy from renewable",
+        "renewable sources",
+        "grid"
+      ],
+      "buildings": [
+        "building",
+        "buildings",
+        "renovation*",
+        "heating system*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”); switches supply or fuels to low-carbon sources (“renewable energy”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“grid”).",
+    "relevant": true,
+    "target_number": 13,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-08bc8c2c",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 15a(4)",
+    "target_text": "Member States shall ensure that public buildings at national, regional and local level fulfil an exemplary role as regards the share of renewable energy used, in accordance with Article 9 of Directive 2010/31/EU and Article 5 of Directive 2012/27/EU. Member States may allow that obligation to be fulfilled by, inter alia, providing for the roofs of public or mixed private-public buildings to be used by third parties for installations that produce energy from renewable sources.",
+    "target_label": "commitment",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "share of renewable energy",
+      "renewable energy",
       "renewable energy in public buildings"
     ],
     "climate_relevance": "mitigation",
@@ -24693,38 +24832,245 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     ],
     "sector_evidence": {
       "energy": [
+        "renewable energy",
         "energy from renewable",
         "renewable sources"
       ],
       "buildings": [
-        "building",
-        "buildings",
-        "renovation*",
-        "nearly zero-energy"
+        "buildings"
       ]
     },
-    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“renovation”); switches supply or fuels to low-carbon sources (“energy from renewable”).",
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 10,
+    "target_number": 14,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-19578429",
+    "id": "tgt-c4b4fced",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 23(1) — Mainstreaming renewable energy in heating and cooling",
-    "target_text": "In order to promote the use of renewable energy in the heating and cooling sector, each Member State shall endeavour to increase the share of renewable energy in that sector by an indicative 1,3 percentage points as an annual average calculated for the periods 2021 to 2025 and 2026 to 2030, starting from the share of renewable energy in the heating and cooling sector in 2020, expressed in terms of national share of final energy consumption and calculated in accordance with the methodology set out in Article 7, without prejudice to paragraph 2 of this Article. That increase shall be limited to an indicative 1,1 percentage points for Member States where waste heat and cold is not used. Member States shall, where appropriate, prioritise the best available technologies.",
+    "article": "Article 16c — Accelerating the permit-granting procedure for repowering",
+    "target_text": "Where repowering of a renewable energy power plant does not result in an increase of the capacity of a renewable energy power plant beyond 15 %, and without prejudice to any assessment of potential environmental impact required pursuant to paragraph 2, Member States shall ensure that permit granting procedures for connections to the transmission or distribution grid shall not exceed three months following application to the relevant entity unless there are justified safety concerns or there is technical incompatibility of the system components.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "renewable energy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "grid",
+        "power plant*"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“grid”).",
+    "relevant": true,
+    "target_number": 15,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-917a41ed",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 16e — Permit-granting procedure for the installation of heat pumps",
+    "target_text": "heat pumps of up to 50 kW electrical capacity installed by renewables self-consumers, provided that the electrical capacity of a renewables self-consumer’s renewable electricity generation installation amounts to at least 60 % of the electrical capacity of the heat pump.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity",
+        "heat pump*"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“heat pumps”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“permit-granting”).",
+    "relevant": true,
+    "target_number": 16,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-f3c1d4d9",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 16f — Overriding public interest",
+    "target_text": "By 21 February 2024, until climate neutrality is achieved, Member States shall ensure that, in the permit-granting procedure, the planning, construction and operation of renewable energy plants, the connection of such plants to the grid, the related grid itself, and storage assets are presumed as being in the overriding public interest and serving public health and safety when balancing legal interests in individual cases for the purposes of Article 6(4) and Article 16(1), point (c), of Directive 92/43/EEC, Article 4(7) of Directive 2000/60/EC and Article 9(1), point (a), of Directive 2009/147/EC.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "By 21 February 2024",
+    "indicators": [
+      "renewable energy"
+    ],
+    "climate_relevance": "both",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "health"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "grid"
+      ],
+      "health": [
+        "health",
+        "public health"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”); switches supply or fuels to low-carbon sources (“renewable energy”); builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“grid”). Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“public health”).",
+    "relevant": true,
+    "target_number": 17,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-c26a110b",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 22a(1) — Mainstreaming renewable energy in industry",
+    "target_text": "Member States shall ensure that the contribution of renewable fuels of non-biological origin used for final energy and non-energy purposes shall be at least 42 % of the hydrogen used for final energy and non-energy purposes in industry by 2030, and 60 % by 2035.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "by 2030",
+    "indicators": [
+      "renewable fuels of non-biological origin",
+      "hydrogen used in industry"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "hydrogen",
+        "renewable fuels of non-biological origin"
+      ],
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 18,
+    "duplicate_of": "Similar target: Governance Regulation — Article 5(2) — Member States' contribution setting process in the area of renewable energy (similarity 0.27)"
+  },
+  {
+    "id": "tgt-d225ba67",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 22a — Mainstreaming renewable energy in industry",
+    "target_text": "Member States shall endeavour to increase the share of renewable sources in the amount of energy sources used for final energy and non-energy purposes in the industry sector by an indicative increase of at least 1,6 percentage points as an annual average calculated for the periods 2021 to 2025 and 2026 to 2030.",
     "target_label": "target",
     "obligation": "voluntary",
     "target_type": "quantitative",
-    "timeline": "for the periods 2021 to 2025 and 2026 to 2030",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "renewable sources"
+      ],
+      "industry": [
+        "industr*"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 19,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-d5cd6197",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 22b — Conditions for reduction of the target for the use of renewable fuels of non-biological origin in the…",
+    "target_text": "the share of hydrogen, or its derivatives, produced from fossil fuels which is consumed in that Member State is not more than 23 % in 2030 and not more than 20 % in 2035.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "hydrogen",
+        "fossil fuel*",
+        "renewable fuels of non-biological origin"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“hydrogen”).",
+    "relevant": true,
+    "target_number": 20,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-44d2b2e9",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 23(1) — Mainstreaming renewable energy in the heating and cooling sector",
+    "target_text": "In order to promote the use of renewable energy in the heating and cooling sector, each Member State shall increase the share of renewable energy in that sector by at least 0,8 percentage points as an annual average calculated for the period 2021 to 2025 and by at least 1,1 percentage points as an annual average calculated for the period 2026 to 2030, starting from the share of renewable energy in the heating and cooling sector in 2020, expressed in terms of national share of gross final consumption of energy and calculated in accordance with the methodology set out in Article 7.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "for the period 2021 to 2025 and for the period 2026 to 2030",
     "indicators": [
-      "final energy consumption",
       "share of renewable energy",
       "renewable energy",
+      "gross final consumption of energy",
       "share of renewable energy in heating and cooling"
     ],
     "climate_relevance": "mitigation",
@@ -24736,32 +25082,188 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "sector_evidence": {
       "energy": [
         "renewable energy",
-        "final energy consumption",
         "heating and cooling"
       ]
     },
-    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“final energy consumption”); switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 11,
+    "target_number": 21,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-8225ecd8",
+    "id": "tgt-11fc507b",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 24(4), point (a) — District heating and cooling",
-    "target_text": "Endeavour to increase the share of energy from renewable sources and from waste heat and cold in district heating and cooling by at least one percentage point as an annual average calculated for the period 2021 to 2025 and for the period 2026 to 2030, starting from the share of energy from renewable sources and from waste heat and cold in district heating and cooling in 2020, expressed in terms of share of final energy consumption in district heating and cooling, by implementing measures that can be expected to trigger that average annual increase in years with normal climatic conditions.",
+    "article": "Article 23 — Mainstreaming renewable energy in heating and cooling",
+    "target_text": "If they decide to do so, the average annual increase shall increase by half of the waste heat and cold percentage points counted to an upper limit of 1,0 percentage points for the period 2021 to 2025 and of 1,3 percentage points for the period 2026 to 2030.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 22,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-644a877c",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 23 — Mainstreaming renewable energy in heating and cooling",
+    "target_text": "Member States may count renewable electricity used for heating and cooling towards the annual average increase set out in the first subparagraph, up to a limit of 0,4 percentage points, provided that the efficiency of the heat and cold generator unit is higher than 100 %.",
+    "target_label": "other",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "electricity",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 23,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-1758da1f",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 23 — Mainstreaming renewable energy in heating and cooling",
+    "target_text": "Member States shall inform the Commission of their intention to count renewable electricity used in heating and cooling from heat and cold generators the efficiency of which is higher than 100 % towards the annual increase set out in first subparagraph of this paragraph.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "electricity",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 24,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-1d1dd297",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 23 — Mainstreaming renewable energy in heating and cooling",
+    "target_text": "Member States shall include the estimated renewable electricity capacities of heat and cold generator units the efficiency of which is higher than 100 % in their integrated national energy and climate plans submitted pursuant to Articles 3 and 14 of Regulation (EU) 2018/1999.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "electricity",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 25,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-cd192468",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 23 — Mainstreaming renewable energy in heating and cooling",
+    "target_text": "Member States shall include the amount of renewable electricity used in heating and cooling from heat and cold generator units the efficiency of which is higher than 100 % in their integrated national energy and climate progress reports submitted pursuant to Article 17 of that Regulation.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "electricity",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 26,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-f67c8bb4",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 24(4), first subparagraph — District heating and cooling",
+    "target_text": "Member States shall endeavour to increase the share of energy from renewable sources and from waste heat and cold in district heating and cooling by an indicative 2,2 percentage points as an annual average calculated for the period 2021 to 2030, starting from the share of energy from renewable sources and from waste heat and cold in district heating and cooling in 2020, and shall lay down the measures necessary to that end in their integrated national energy and climate plans submitted pursuant to Articles 3 and 14 of Regulation (EU) 2018/1999.",
     "target_label": "target",
     "obligation": "voluntary",
     "target_type": "quantitative",
-    "timeline": "for the period 2021 to 2025 and for the period 2026 to 2030",
+    "timeline": "for the period 2021 to 2030",
     "indicators": [
-      "final energy consumption",
-      "share of energy from renewable sources",
-      "share of final energy consumption"
+      "share of energy from renewable sources"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
@@ -24773,24 +25275,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "energy": [
         "energy from renewable",
         "renewable sources",
-        "final energy consumption",
-        "district heating"
+        "district heating",
+        "heating and cooling"
       ]
     },
-    "climate_argument": "Mitigation: cuts energy demand, which cuts the emissions of supplying that energy (“final energy consumption”); switches supply or fuels to low-carbon sources (“energy from renewable”).",
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 12,
+    "target_number": 27,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-287b5112",
+    "id": "tgt-dca7f4da",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
     "article": "Article 24 — District heating and cooling",
-    "target_text": "Member States with a share of energy from renewable sources and from waste heat and cold in district heating and cooling above 60 % may count any such share as fulfilling the average annual increase referred to in the first subparagraph of this point.",
+    "target_text": "Member States with a share of energy from renewable sources and from waste heat and cold in district heating and cooling above 60 % may count any such share as fulfilling the average annual increase referred to in paragraph 4, first subparagraph.",
     "target_label": "other",
     "obligation": "voluntary",
     "target_type": "quantitative",
@@ -24814,26 +25316,91 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
     "relevant": true,
-    "target_number": 13,
+    "target_number": 28,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-10c67c82",
+    "id": "tgt-fe842783",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 25(1) — Mainstreaming renewable energy in the transport sector",
-    "target_text": "In order to mainstream the use of renewable energy in the transport sector, each Member State shall set an obligation on fuel suppliers to ensure that the share of renewable energy within the final consumption of energy in the transport sector is at least 14 % by 2030 (minimum share) in accordance with an indicative trajectory set by the Member State and calculated in accordance with the methodology set out in this Article and in Articles 26 and 27. The Commission shall assess that obligation, with a view to submitting, by 2023, a legislative proposal to increase it in the event of further substantial costs reductions in the production of renewable energy, where necessary to meet the Union's international commitments for decarbonisation, or where justified on the grounds of a significant decrease in energy consumption in the Union.",
+    "article": "Article 24 — District heating and cooling",
+    "target_text": "its share of district heating and cooling was less than or equal to 2 % of the gross final consumption of energy in heating and cooling on 24 December 2018;",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "gross final consumption of energy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "district heating",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“district heating”).",
+    "relevant": true,
+    "target_number": 29,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-20170f2b",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 24 — District heating and cooling",
+    "target_text": "its share of district heating and cooling is increased above 2 % of the gross final consumption of energy in heating and cooling on 24 December 2018 by developing new efficient district heating and cooling on the basis of its integrated national energy and climate plan submitted pursuant to Articles 3 and 14 of, and in accordance with, Regulation (EU) 2018/1999 and the assessment referred to in Article 23(1b) of this Directive;",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "gross final consumption of energy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "district heating",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“district heating”).",
+    "relevant": true,
+    "target_number": 30,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-11d1a114",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 25(1), first subparagraph, point (a)(i) — Increase of renewable energy and reduction of greenhouse gas…",
+    "target_text": "share of renewable energy within the final consumption of energy in the transport sector of at least 29 % by 2030; or",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "by 2030",
     "indicators": [
       "share of renewable energy",
-      "renewable energy",
-      "minimum share"
+      "renewable energy"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
@@ -24850,27 +25417,59 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
         "transport*"
       ]
     },
-    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“decarbonisation”); switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
-    "target_number": 14,
-    "duplicate_of": ""
+    "target_number": 31,
+    "duplicate_of": "Similar target: Governance Regulation — Article 5(2) — Member States' contribution setting process in the area of renewable energy (similarity 0.26)"
   },
   {
-    "id": "tgt-99c9ee28",
+    "id": "tgt-31aeefa5",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 25(1), fourth subparagraph",
-    "target_text": "Within the minimum share referred to in the first subparagraph, the contribution of advanced biofuels and biogas produced from the feedstock listed in Part A of Annex IX as a share of final consumption of energy in the transport sector shall be at least 0,2 % in 2022, at least 1 % in 2025 and at least 3,5 % in 2030.",
+    "article": "Article 25(1), first subparagraph, point (a)(ii)",
+    "target_text": "greenhouse gas intensity reduction of at least 14,5 % by 2030, compared to the baseline set out in Article 27(1), point (b), in accordance with an indicative trajectory set by the Member State;",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
-    "timeline": "in 2022, in 2025 and in 2030",
+    "timeline": "by 2030",
     "indicators": [
-      "contribution of advanced biofuels and biogas",
-      "share of final consumption of energy in the transport sector"
+      "greenhouse gas intensity reduction"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“greenhouse gas intensity”).",
+    "relevant": true,
+    "target_number": 32,
+    "duplicate_of": "Similar target: Effort Sharing Regulation — Article 4(1) — Annual emission levels for the period from 2021 to 2030 (similarity 0.28)"
+  },
+  {
+    "id": "tgt-51716f9d",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 25(1), first subparagraph, point (b)",
+    "target_text": "the combined share of advanced biofuels and biogas produced from the feedstock listed in Part A of Annex IX and of renewable fuels of non-biological origin in the energy supplied to the transport sector is at least 1 % in 2025 and 5,5 % in 2030, of which a share of at least 1 percentage point is from renewable fuels of non-biological origin in 2030.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "in 2025 and in 2030",
+    "indicators": [
+      "advanced biofuels and biogas",
+      "renewable fuels of non-biological origin"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
@@ -24881,70 +25480,75 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     ],
     "sector_evidence": {
       "energy": [
-        "biofuel*"
+        "biofuel*",
+        "renewable fuels of non-biological origin"
       ],
       "transport": [
         "transport*"
       ]
     },
-    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable fuels of non-biological origin”).",
     "relevant": true,
-    "target_number": 15,
+    "target_number": 33,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-e6840b7b",
+    "id": "tgt-b755363c",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 25(2)",
-    "target_text": "The greenhouse gas emissions savings from the use of renewable liquid and gaseous transport fuels of non-biological origin shall be at least 70 % from 1 January 2021.",
+    "article": "Article 25(1), third subparagraph",
+    "target_text": "Member States with maritime ports shall endeavour to ensure that as of 2030 the share of renewable fuels of non-biological origin in the total amount of energy supplied to the maritime transport sector is at least 1,2 %.",
     "target_label": "target",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
-    "timeline": "from 1 January 2021",
+    "timeline": "as of 2030",
     "indicators": [
-      "greenhouse gas emissions",
-      "greenhouse gas emissions savings",
-      "renewable liquid and gaseous transport fuels of non-biological origin"
+      "renewable fuels of non-biological origin",
+      "maritime transport sector"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
     "sectors": [
+      "energy",
       "transport"
     ],
     "sector_evidence": {
+      "energy": [
+        "renewable fuels of non-biological origin"
+      ],
       "transport": [
-        "transport*"
+        "transport*",
+        "maritime",
+        "ports"
       ]
     },
-    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“share of renewable”).",
     "relevant": true,
-    "target_number": 16,
+    "target_number": 34,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-e2e88dc0",
+    "id": "tgt-9bcfedb8",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 26(1)",
-    "target_text": "For the calculation of a Member State's gross final consumption of energy from renewable sources referred to in Article 7 and the minimum share referred to in the first subparagraph of Article 25(1), the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, where produced from food and feed crops, shall be no more than one percentage point higher than the share of such fuels in the final consumption of energy in the road and rail transport sectors in 2020 in that Member State, with a maximum of 7 % of final consumption of energy in the road and rail transport sectors in that Member State.",
+    "article": "Article 26(1), first subparagraph — Specific rules for biofuels, bioliquids and biomass fuels produced from food and…",
+    "target_text": "the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, where produced from food and feed crops, shall be no more than one percentage point higher than the share of such fuels in the final consumption of energy in the transport sector in 2020 in that Member State, with a maximum of 7 % of final consumption of energy in the transport sector in that Member State.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "in 2020",
     "indicators": [
-      "gross final consumption of energy",
       "share of biofuels, bioliquids and biomass fuels from food and feed crops",
-      "final consumption of energy in the road and rail transport sectors"
+      "final consumption of energy in the transport sector"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
     "sectors": [
@@ -24954,8 +25558,6 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     ],
     "sector_evidence": {
       "energy": [
-        "energy from renewable",
-        "renewable sources",
         "biofuel*"
       ],
       "agrifood": [
@@ -24963,13 +25565,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
         "crop*"
       ],
       "transport": [
-        "transport*",
-        "rail"
+        "transport*"
       ]
     },
-    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 17,
+    "target_number": 35,
     "duplicate_of": ""
   },
   {
@@ -25003,24 +25604,114 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 18,
+    "target_number": 36,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-a2adc484",
+    "id": "tgt-399cd9d4",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 26(2), second subparagraph",
-    "target_text": "2. For the calculation of a Member State's gross final consumption of energy from renewable sources referred to in Article 7 and the minimum share referred to in the first subparagraph of Article 25(1), the share of high indirect land-use change-risk biofuels, bioliquids or biomass fuels produced from food and feed crops for which a significant expansion of the production area into land with high-carbon stock is observed shall not exceed the level of consumption of such fuels in that Member State in 2019, unless they are certified to be low indirect land-use change-risk biofuels, bioliquids or biomass fuels pursuant to this paragraph. From 31 December 2023 until 31 December 2030 at the latest, that limit shall gradually decrease to 0 %.",
+    "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops",
+    "target_text": "For the calculation of a Member State’s gross final consumption of energy from renewable sources referred to in Article 7 and of the minimum share of renewable energy and the greenhouse gas intensity reduction target referred to in Article 25(1), first subparagraph, point (a), the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, where produced from food and feed crops, shall be no more than one percentage point higher than the share of such fuels in the final consumption of energy in the transport sector in 2020 in that Member State, with a maximum of 7 % of final consumption of energy in the transport sector in that Member State.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [
+      "share of renewable energy",
+      "renewable energy",
       "gross final consumption of energy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "agrifood",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy from renewable",
+        "renewable sources",
+        "biofuel*"
+      ],
+      "agrifood": [
+        "food",
+        "crop*"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“greenhouse gas intensity”); switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 37,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-5063c7bf",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops",
+    "target_text": "Where the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, produced from food and feed crops in a Member State is limited to a share lower than 7 % or a Member State decides to limit the share further, that Member State may reduce the minimum share of renewable energy or the greenhouse gas intensity reduction target referred to in Article 25(1), first subparagraph, point (a), accordingly, in view of the contribution those fuels would have made in terms of the minimum share of renewable energy or greenhouse gas emissions savings.",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "greenhouse gas emissions",
+      "share of renewable energy",
+      "renewable energy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "agrifood",
+      "transport"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "biofuel*"
+      ],
+      "agrifood": [
+        "food",
+        "crop*"
+      ],
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“greenhouse gas intensity”); switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_number": 38,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-2322d8b4",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops",
+    "target_text": "For the purpose of the greenhouse gas intensity reduction target, Member States shall consider those fuels save 50 % greenhouse gas emissions.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "greenhouse gas emissions"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
@@ -25031,8 +25722,6 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     ],
     "sector_evidence": {
       "energy": [
-        "energy from renewable",
-        "renewable sources",
         "biofuel*"
       ],
       "agrifood": [
@@ -25040,22 +25729,22 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
         "crop*"
       ]
     },
-    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“energy from renewable”).",
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“greenhouse gas intensity”).",
     "relevant": true,
-    "target_number": 19,
+    "target_number": 39,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-725ff32b",
+    "id": "tgt-c59a2e94",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 26(1), fourth subparagraph — Specific rules for biofuels, bioliquids and biomass fuels produced from food and…",
-    "target_text": "Where the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, produced from food and feed crops in a Member State is limited to a share lower than 7 % or a Member State decides to limit the share further, that Member State may reduce the minimum share referred to in the first subparagraph of Article 25(1) accordingly, by a maximum of 7 percentage points.",
+    "article": "Article 27",
+    "target_text": "the share of biofuels and biogas produced from the feedstock listed in Part B of Annex IX in the energy content of fuels and electricity supplied to the transport sector shall, except in Cyprus and Malta, be limited to 1,7 %;",
     "target_label": "target",
-    "obligation": "voluntary",
+    "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
@@ -25064,16 +25753,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
     "sectors": [
       "energy",
-      "agrifood",
       "transport"
     ],
     "sector_evidence": {
       "energy": [
+        "electricity",
         "biofuel*"
-      ],
-      "agrifood": [
-        "food",
-        "crop*"
       ],
       "transport": [
         "transport*"
@@ -25081,44 +25766,103 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": false,
-    "target_number": 20,
+    "target_number": 40,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-d403b0be",
+    "id": "tgt-2f8ea0cb",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 27(1), point (b), second subparagraph",
-    "target_text": "For the calculation of the numerator, the share of biofuels and biogas produced from the feedstock listed in Part B of Annex IX shall, except for in Cyprus and Malta, be limited to 1,7 % of the energy content of transport fuels supplied for consumption or use on the market. Member States may, where justified, modify that limit, taking into account the availability of feedstock. Any such modification shall be subject to approval by the Commission;",
+    "article": "Article 27",
+    "target_text": "The Commission is empowered to adopt delegated acts in accordance with Article 35 to amend this Directive by adapting the limit on the share of biofuels and biogas produced from the feedstock listed in Part B of Annex IX on the basis of an assessment of the availability of feedstock. The limit shall be at least 1,7 %.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "biofuel*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 41,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-a9336439",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 27",
+    "target_text": "For the purpose of the calculations referred to in paragraph 1, first subparagraph, point (b), and in paragraph 2, first subparagraph, point (a), the amount of energy supplied to the maritime transport sector shall, as a proportion of that Member State’s gross final consumption of energy, be considered to be no more than 13 %.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [
-      "share of biofuels and biogas from feedstock in Part B of Annex IX",
-      "energy content of transport fuels"
+      "gross final consumption of energy"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
     "sectors": [
-      "energy",
       "transport"
     ],
     "sector_evidence": {
-      "energy": [
-        "biofuel*"
-      ],
       "transport": [
-        "transport*"
+        "transport*",
+        "maritime"
       ]
     },
-    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "relevant": true,
-    "target_number": 21,
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 42,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 8(9)(a) — Energy savings obligation (similarity 0.28)"
+  },
+  {
+    "id": "tgt-cc5ec29e",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 27",
+    "target_text": "For Cyprus and Malta, the amount of energy consumed in the maritime transport sector shall, as a proportion of those Member States’ gross final consumption of energy, be considered to be no more than 5 %.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "gross final consumption of energy"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*",
+        "maritime"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 43,
     "duplicate_of": ""
   },
   {
@@ -25155,7 +25899,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 22,
+    "target_number": 44,
     "duplicate_of": ""
   },
   {
@@ -25192,7 +25936,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 23,
+    "target_number": 45,
     "duplicate_of": ""
   },
   {
@@ -25229,27 +25973,27 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 24,
+    "target_number": 46,
     "duplicate_of": ""
   },
   {
-    "id": "tgt-dc797af1",
+    "id": "tgt-d30fa3b5",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
     "article": "Article 29(10), point (d)",
-    "target_text": "at least 70 % for electricity, heating and cooling production from biomass fuels used in installations starting operation from 1 January 2021 until 31 December 2025, and 80 % for installations starting operation from 1 January 2026.",
+    "target_text": "for electricity, heating and cooling production from biomass fuels used in installations that started operating after 20 November 2023, at least 80 %;",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
-    "timeline": "from 1 January 2021 until 31 December 2025, and from 1 January 2026",
+    "timeline": "after 20 November 2023",
     "indicators": [
       "greenhouse gas emission savings",
       "electricity, heating and cooling from biomass fuels"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
     "sectors": [
@@ -25261,9 +26005,77 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
         "heating and cooling"
       ]
     },
-    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
     "relevant": true,
-    "target_number": 25,
+    "target_number": 47,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-767b3265",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 29(10), point (e)",
+    "target_text": "for electricity, heating and cooling production from biomass fuels used in installations with a total rated thermal input equal to or exceeding 10 MW that started operating between 1 January 2021 and 20 November 2023, at least 70 % until 31 December 2029, and at least 80 % from 1 January 2030;",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "between 1 January 2021 and 20 November 2023",
+    "indicators": [
+      "greenhouse gas emission savings",
+      "electricity, heating and cooling from biomass fuels"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": true,
+    "target_number": 48,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-601d804c",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 29(10), point (f)",
+    "target_text": "for electricity, heating and cooling production from gaseous biomass fuels used in installations with a total rated thermal input equal to or lower than 10 MW that started operating between 1 January 2021 and 20 November 2023, at least 70 % before they have been operating for 15 years, and at least 80 % after they have been in operation for 15 years;",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "between 1 January 2021 and 20 November 2023",
+    "indicators": [
+      "greenhouse gas emission savings",
+      "gaseous biomass fuels"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "electricity",
+        "heating and cooling"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": true,
+    "target_number": 49,
     "duplicate_of": ""
   },
   {
@@ -25294,7 +26106,82 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
     "relevant": true,
-    "target_number": 26,
+    "target_number": 50,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-1a90ae77",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 29a — Greenhouse gas emissions saving criteria for renewable fuels of non-biological origin and recycled…",
+    "target_text": "Energy from renewable fuels of non-biological origin shall be counted towards Member States’ shares of renewable energy and the targets referred to in Articles 3(1), 15a(1), 22a(1), 23(1), 24(4) and 25(1) only if the greenhouse gas emissions savings from the use of those fuels are at least 70 %.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "greenhouse gas emissions",
+      "renewable energy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy from renewable",
+        "renewable fuels of non-biological origin"
+      ],
+      "industry": [
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); switches supply or fuels to low-carbon sources (“renewable energy”); cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycled”).",
+    "relevant": true,
+    "target_number": 51,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-7a8a9536",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 29a — Greenhouse gas emissions saving criteria for renewable fuels of non-biological origin and recycled…",
+    "target_text": "Energy from recycled carbon fuels may be counted towards the targets referred to in Article 25(1), first subparagraph, point (a), only if the greenhouse gas emissions savings from the use of those fuels are at least 70 %.",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [
+      "greenhouse gas emissions"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "sectors": [
+      "energy",
+      "industry"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable fuels of non-biological origin"
+      ],
+      "industry": [
+        "recycl*"
+      ]
+    },
+    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”); switches supply or fuels to low-carbon sources (“renewable fuels of non-biological origin”); cuts material and product emissions through circularity (less primary production means fewer process emissions) (“recycled”).",
+    "relevant": true,
+    "target_number": 52,
     "duplicate_of": ""
   },
   {
@@ -27104,6 +27991,36 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "duplicate_of": ""
   },
   {
+    "id": "tgt-f64b1099",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Article 15 — Transport infrastructure requirements for the comprehensive network",
+    "target_text": "enables, without special permission, an axle load of at least 22,5 tonnes; and",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 9,
+    "duplicate_of": ""
+  },
+  {
     "id": "tgt-ca2ce071",
     "policy_id": "ten-t-regulation",
     "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
@@ -27132,7 +28049,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       ]
     },
     "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "target_number": 9,
+    "target_number": 10,
     "duplicate_of": ""
   },
   {
@@ -27164,7 +28081,77 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       ]
     },
     "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "target_number": 10,
+    "target_number": 11,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-24d37a09",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Article 16 — Transport infrastructure requirements for the core network and the extended core network",
+    "target_text": "for rail sections linking the multimodal freight terminals of two urban nodes or the multimodal freight terminal of an urban node and a border crossing point, over 75 % of the length of each rail section, is designed for a speed of at least 100 km/h for freight trains on the freight lines of the extended core network.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "urban"
+      ],
+      "transport": [
+        "transport*",
+        "rail"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 12,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-6208c6ed",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Article 16 — Transport infrastructure requirements for the core network and the extended core network",
+    "target_text": "for rail sections linking the multimodal passenger hubs of two urban nodes or the multimodal passenger hubs of an urban node and a border crossing point, over 75 % of the length of each rail section is designed for a speed of at least 160 km/h for passenger trains on the passenger lines of the extended core network.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "buildings",
+      "transport"
+    ],
+    "sector_evidence": {
+      "buildings": [
+        "urban"
+      ],
+      "transport": [
+        "transport*",
+        "rail"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 13,
     "duplicate_of": ""
   },
   {
@@ -27196,7 +28183,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       ]
     },
     "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "target_number": 11,
+    "target_number": 14,
     "duplicate_of": ""
   },
   {
@@ -27228,7 +28215,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       ]
     },
     "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "target_number": 12,
+    "target_number": 15,
     "duplicate_of": ""
   },
   {
@@ -27260,8 +28247,130 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       ]
     },
     "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "target_number": 13,
+    "target_number": 16,
     "duplicate_of": "Similar target: Alternative Fuels Infrastructure Regulation — Article 12(1) — Targets for supply of electricity to stationary aircraft (similarity 0.25)"
+  },
+  {
+    "id": "tgt-8d39dbb2",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Article 19 — Operational priorities",
+    "target_text": "at least 75 % of the freight trains crossing at least one border along a European Transport Corridor arrive at their destination, or at the external Union border if their destination is outside the Union, at their scheduled time or with a delay of less than 30 minutes by reasons that are attributable to the infrastructure manager(s) of the Union; delays occurring in and attributable to third countries that are crossed by freight trains shall not be taken into account.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "transport*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 17,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-d766eef0",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Article 21 — Infrastructure components",
+    "target_text": "it has an annual freight transhipment volume exceeding 500 000 tonnes, where the total annual freight transhipment volume shall be based on the latest available three-year average, based on the statistics published by Eurostat; and",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "(act-level: this act addresses only this system)"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 18,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-39649459",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Article 33 — Infrastructure components",
+    "target_text": "for cargo airports, the total annual cargo volume is at least 0,2 % of the total annual cargo volume of all airports of the Union;",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "airport*"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 19,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-5b033f70",
+    "policy_id": "ten-t-regulation",
+    "policy_name": "Regulation (EU) 2024/1679 on Union guidelines for the development of the trans-European transport network (TEN-T)",
+    "policy_short": "TEN-T Regulation",
+    "document_type": "regulation",
+    "policy_area": "Transport",
+    "article": "Article 33 — Infrastructure components",
+    "target_text": "for passenger airports, the total annual passenger traffic is at least 0,1 % of the total annual passenger volume of all airports of the Union, unless the airport in question is situated outside a radius of 100 km from the nearest airport in the comprehensive network or outside a radius of 200 km where there is a high-speed railway line in the region in which it is situated.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32024R1679",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1679",
+    "sectors": [
+      "transport"
+    ],
+    "sector_evidence": {
+      "transport": [
+        "airport*",
+        "railway*",
+        "traffic"
+      ]
+    },
+    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": false,
+    "target_number": 20,
+    "duplicate_of": ""
   },
   {
     "id": "tgt-7e31d4f7",
@@ -27299,7 +28408,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”). Adaptation: protects human health from climate-sensitive hazards (heat, air quality, water quality, disease) (“noise”).",
     "relevant": true,
-    "target_number": 14,
+    "target_number": 21,
     "duplicate_of": ""
   },
   {
@@ -27332,7 +28441,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“recharging”).",
     "relevant": true,
-    "target_number": 15,
+    "target_number": 22,
     "duplicate_of": ""
   },
   {
@@ -27364,7 +28473,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: mitigation: builds the enabling conditions for the above (infrastructure, permitting, finance, standards or planning) (“climate proofing”). Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“climate proofing”).",
     "relevant": true,
-    "target_number": 16,
+    "target_number": 23,
     "duplicate_of": ""
   },
   {
@@ -27394,7 +28503,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     },
     "climate_argument": "Adaptation: reduces the exposure or vulnerability of people, assets or infrastructure to climate impacts (“resilience”).",
     "relevant": true,
-    "target_number": 17,
+    "target_number": 24,
     "duplicate_of": ""
   },
   {

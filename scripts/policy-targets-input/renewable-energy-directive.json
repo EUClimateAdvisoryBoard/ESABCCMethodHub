@@ -2,10 +2,10 @@
   "policy_id": "renewable-energy-directive",
   "targets": [
     {
-      "quote": "Member States shall collectively ensure that the share of energy from renewable sources in the Union's gross final consumption of energy in 2030 is at least 32 %. The Commission shall assess that target with a view to submitting a legislative proposal by 2023 to increase it where there are further substantial costs reductions in the production of renewable energy, where needed to meet the Union's international commitments for decarbonisation, or where a significant decrease in energy consumption in the Union justifies such an increase.",
-      "article": "Article 3(1) — Binding overall Union target for 2030",
+      "quote": "Member States shall collectively ensure that the share of energy from renewable sources in the Union’s gross final consumption of energy in 2030 is at least 42,5 %.",
+      "article": "Article 3(1), first subparagraph — Binding overall Union target for 2030",
       "label": "target",
-      "timeline": "by 2030",
+      "timeline": "in 2030",
       "indicators": [
         "share of energy from renewable sources",
         "gross final consumption of energy"
@@ -13,7 +13,28 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "Member States shall set national contributions to meet, collectively, the binding overall Union target set in paragraph 1 of this Article as part of their integrated national energy and climate plans in accordance with Articles 3 to 5 and 9 to 14 of Regulation (EU) 2018/1999. In preparing their draft integrated national energy and climate plans, Member States may consider the formula referred to in Annex II to that Regulation.",
+      "quote": "Member States shall collectively endeavour to increase the share of energy from renewable sources in the Union’s gross final consumption of energy in 2030 to 45 %.",
+      "article": "Article 3(1), second subparagraph",
+      "label": "goal",
+      "timeline": "in 2030",
+      "indicators": [
+        "share of energy from renewable sources"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall set an indicative target for innovative renewable energy technology of at least 5 % of newly installed renewable energy capacity by 2030.",
+      "article": "Article 3(1), third subparagraph",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "innovative renewable energy technology",
+        "newly installed renewable energy capacity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall set national contributions to meet, collectively, the binding overall Union target set in paragraph 1 of this Article as part of their integrated national energy and climate plans in accordance with Articles 3 to 5 and 9 to 14 of Regulation (EU) 2018/1999. In preparing their draft integrated national energy and climate plans, Member States may consider the formula referred to in Annex II to that Regulation.",
       "article": "Article 3(2)",
       "label": "commitment",
       "timeline": "",
@@ -24,7 +45,7 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "From 1 January 2021, the share of energy from renewable sources in each Member State's gross final consumption of energy shall not be lower than the baseline share shown in the third column of the table in Part A of Annex I to this Directive. Member States shall take the necessary measures to ensure compliance with that baseline share. If a Member State does not maintain its baseline share as measured over any one-year period, the first and second subparagraphs of Article 32(4) of Regulation (EU) 2018/1999 shall apply.",
+      "quote": "From 1 January 2021, the share of energy from renewable sources in each Member State's gross final consumption of energy shall not be lower than the baseline share shown in the third column of the table in Part A of Annex I to this Directive. Member States shall take the necessary measures to ensure compliance with that baseline share. If a Member State does not maintain its baseline share as measured over any one-year period, the first and second subparagraphs of Article 32(4) of Regulation (EU) 2018/1999 shall apply.",
       "article": "Article 3(4)",
       "label": "commitment",
       "timeline": "from 1 January 2021",
@@ -36,7 +57,7 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "developing transmission and distribution grid infrastructure, intelligent networks, storage facilities and interconnections, with the objective of arriving at a 15 % electricity interconnection target by 2030, in order to increase the technically feasible and economically affordable level of renewable energy in the electricity system;",
+      "quote": "developing transmission and distribution grid infrastructure, intelligent networks, storage facilities and interconnections, with the objective of arriving at a 15 % electricity interconnection target by 2030, in order to increase the technically feasible and economically affordable level of renewable energy in the electricity system;",
       "article": "Article 3(5), point (c)",
       "label": "objective",
       "timeline": "by 2030",
@@ -46,7 +67,7 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "Such indicative shares may, in each year, amount to at least 5 % from 2023 to 2026 and at least 10 % from 2027 to 2030, or, where lower, to the level of interconnectivity of the Member State concerned in any given year.",
+      "quote": "Such indicative shares may, in each year, amount to at least 5 % from 2023 to 2026 and at least 10 % from 2027 to 2030, or, where lower, to the level of interconnectivity of the Member State concerned in any given year.",
       "article": "Article 5(1)",
       "label": "target",
       "timeline": "from 2023 to 2026 and from 2027 to 2030",
@@ -56,94 +77,122 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "Member States shall, in their building regulations and codes or by other means with equivalent effect, require the use of minimum levels of energy from renewable sources in new buildings and in existing buildings that are subject to major renovation in so far as technically, functionally and economically feasible, and reflecting the results of the cost-optimal calculation carried out pursuant to Article 5(2) of Directive 2010/31/EU, and in so far as this does not negatively affect indoor air quality. Member States shall permit those minimum levels to be fulfilled, inter alia, through efficient district heating and cooling using a significant share of renewable energy and waste heat and cold.",
-      "article": "Article 15(4)",
-      "label": "commitment",
-      "timeline": "",
+      "quote": "In order to promote the production and use of renewable energy in the building sector, Member States shall determine an indicative national share of renewable energy produced on-site or nearby as well as renewable energy taken from the grid in final energy consumption in their building sector in 2030 that is consistent with an indicative target of at least a 49 % share of energy from renewable sources in the building sector in the Union’s final energy consumption in buildings in 2030. Member States shall include their indicative national share in the integrated national energy and climate plans submitted pursuant to Articles 3 and 14 of Regulation (EU) 2018/1999 as well as information on how they plan to achieve it.",
+      "article": "Article 15a(1) — Mainstreaming renewable energy in buildings",
+      "label": "target",
+      "timeline": "in 2030",
       "indicators": [
-        "minimum levels of energy from renewable sources",
-        "share of renewable energy in the building sector"
+        "share of energy from renewable sources in the building sector"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "Member States shall ensure that new public buildings, and existing public buildings that are subject to major renovation, at national, regional and local level, fulfil an exemplary role in the context of this Directive from 1 January 2012. Member States may, inter alia, allow that obligation to be fulfilled by complying with nearly zero-energy building provisions as required in Directive 2010/31/EU, or by providing for the roofs of public or mixed private-public buildings to be used by third parties for installations that produce energy from renewable sources.",
-      "article": "Article 15(5)",
+      "quote": "In order to achieve the indicative share of renewable energy provided for in paragraph 1, Member States shall, in their national regulations and building codes and, where applicable, in their support schemes or by other means with equivalent effect, require the use of minimum levels of energy from renewable sources produced on-site or nearby as well as renewable energy taken from the grid, in new buildings and in existing buildings that are undergoing major renovation or a renewal of the heating system, in accordance with Directive 2010/31/EU, where that is economically, technically and functionally feasible. Member States shall allow those minimum levels to be fulfilled through, inter alia, efficient district heating and cooling.",
+      "article": "Article 15a(3), second subparagraph",
       "label": "commitment",
-      "timeline": "from 1 January 2012",
+      "timeline": "",
+      "indicators": [
+        "minimum levels of energy from renewable sources in buildings"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall ensure that public buildings at national, regional and local level fulfil an exemplary role as regards the share of renewable energy used, in accordance with Article 9 of Directive 2010/31/EU and Article 5 of Directive 2012/27/EU. Member States may allow that obligation to be fulfilled by, inter alia, providing for the roofs of public or mixed private-public buildings to be used by third parties for installations that produce energy from renewable sources.",
+      "article": "Article 15a(4)",
+      "label": "commitment",
+      "timeline": "",
       "indicators": [
         "renewable energy in public buildings"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "In order to promote the use of renewable energy in the heating and cooling sector, each Member State shall endeavour to increase the share of renewable energy in that sector by an indicative 1,3 percentage points as an annual average calculated for the periods 2021 to 2025 and 2026 to 2030, starting from the share of renewable energy in the heating and cooling sector in 2020, expressed in terms of national share of final energy consumption and calculated in accordance with the methodology set out in Article 7, without prejudice to paragraph 2 of this Article. That increase shall be limited to an indicative 1,1 percentage points for Member States where waste heat and cold is not used. Member States shall, where appropriate, prioritise the best available technologies.",
-      "article": "Article 23(1) — Mainstreaming renewable energy in heating and cooling",
+      "quote": "Member States shall ensure that the contribution of renewable fuels of non-biological origin used for final energy and non-energy purposes shall be at least 42 % of the hydrogen used for final energy and non-energy purposes in industry by 2030, and 60 % by 2035.",
+      "article": "Article 22a(1) — Mainstreaming renewable energy in industry",
       "label": "target",
-      "timeline": "for the periods 2021 to 2025 and 2026 to 2030",
+      "timeline": "by 2030, and 60 % by 2035",
       "indicators": [
-        "share of renewable energy in heating and cooling",
-        "final energy consumption"
+        "renewable fuels of non-biological origin",
+        "hydrogen used in industry"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "Endeavour to increase the share of energy from renewable sources and from waste heat and cold in district heating and cooling by at least one percentage point as an annual average calculated for the period 2021 to 2025 and for the period 2026 to 2030, starting from the share of energy from renewable sources and from waste heat and cold in district heating and cooling in 2020, expressed in terms of share of final energy consumption in district heating and cooling, by implementing measures that can be expected to trigger that average annual increase in years with normal climatic conditions.",
-      "article": "Article 24(4), point (a) — District heating and cooling",
+      "quote": "In order to promote the use of renewable energy in the heating and cooling sector, each Member State shall increase the share of renewable energy in that sector by at least 0,8 percentage points as an annual average calculated for the period 2021 to 2025 and by at least 1,1 percentage points as an annual average calculated for the period 2026 to 2030, starting from the share of renewable energy in the heating and cooling sector in 2020, expressed in terms of national share of gross final consumption of energy and calculated in accordance with the methodology set out in Article 7.",
+      "article": "Article 23(1) — Mainstreaming renewable energy in the heating and cooling sector",
       "label": "target",
       "timeline": "for the period 2021 to 2025 and for the period 2026 to 2030",
       "indicators": [
-        "share of energy from renewable sources and from waste heat and cold in district heating and cooling",
-        "share of final energy consumption"
+        "share of renewable energy in heating and cooling",
+        "gross final consumption of energy"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "In order to mainstream the use of renewable energy in the transport sector, each Member State shall set an obligation on fuel suppliers to ensure that the share of renewable energy within the final consumption of energy in the transport sector is at least 14 % by 2030 (minimum share) in accordance with an indicative trajectory set by the Member State and calculated in accordance with the methodology set out in this Article and in Articles 26 and 27. The Commission shall assess that obligation, with a view to submitting, by 2023, a legislative proposal to increase it in the event of further substantial costs reductions in the production of renewable energy, where necessary to meet the Union's international commitments for decarbonisation, or where justified on the grounds of a significant decrease in energy consumption in the Union.",
-      "article": "Article 25(1) — Mainstreaming renewable energy in the transport sector",
+      "quote": "Member States shall endeavour to increase the share of energy from renewable sources and from waste heat and cold in district heating and cooling by an indicative 2,2 percentage points as an annual average calculated for the period 2021 to 2030, starting from the share of energy from renewable sources and from waste heat and cold in district heating and cooling in 2020, and shall lay down the measures necessary to that end in their integrated national energy and climate plans submitted pursuant to Articles 3 and 14 of Regulation (EU) 2018/1999.",
+      "article": "Article 24(4), first subparagraph — District heating and cooling",
+      "label": "target",
+      "timeline": "for the period 2021 to 2030",
+      "indicators": [
+        "share of energy from renewable sources and from waste heat and cold in district heating and cooling"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "share of renewable energy within the final consumption of energy in the transport sector of at least 29 % by 2030; or",
+      "article": "Article 25(1), first subparagraph, point (a)(i) — Increase of renewable energy and reduction of greenhouse gas intensity in the transport sector",
       "label": "target",
       "timeline": "by 2030",
       "indicators": [
-        "share of renewable energy in final consumption of energy in the transport sector",
-        "minimum share"
+        "share of renewable energy in final consumption of energy in the transport sector"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "Within the minimum share referred to in the first subparagraph, the contribution of advanced biofuels and biogas produced from the feedstock listed in Part A of Annex IX as a share of final consumption of energy in the transport sector shall be at least 0,2 % in 2022, at least 1 % in 2025 and at least 3,5 % in 2030.",
-      "article": "Article 25(1), fourth subparagraph",
+      "quote": "greenhouse gas intensity reduction of at least 14,5 % by 2030, compared to the baseline set out in Article 27(1), point (b), in accordance with an indicative trajectory set by the Member State;",
+      "article": "Article 25(1), first subparagraph, point (a)(ii)",
       "label": "target",
-      "timeline": "in 2022, in 2025 and in 2030",
+      "timeline": "by 2030",
       "indicators": [
-        "contribution of advanced biofuels and biogas",
-        "share of final consumption of energy in the transport sector"
+        "greenhouse gas intensity reduction"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "The greenhouse gas emissions savings from the use of renewable liquid and gaseous transport fuels of non-biological origin shall be at least 70 % from 1 January 2021.",
-      "article": "Article 25(2)",
+      "quote": "the combined share of advanced biofuels and biogas produced from the feedstock listed in Part A of Annex IX and of renewable fuels of non-biological origin in the energy supplied to the transport sector is at least 1 % in 2025 and 5,5 % in 2030, of which a share of at least 1 percentage point is from renewable fuels of non-biological origin in 2030.",
+      "article": "Article 25(1), first subparagraph, point (b)",
       "label": "target",
-      "timeline": "from 1 January 2021",
+      "timeline": "in 2025 and in 2030",
       "indicators": [
-        "greenhouse gas emissions savings",
-        "renewable liquid and gaseous transport fuels of non-biological origin"
+        "advanced biofuels and biogas",
+        "renewable fuels of non-biological origin"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "For the calculation of a Member State's gross final consumption of energy from renewable sources referred to in Article 7 and the minimum share referred to in the first subparagraph of Article 25(1), the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, where produced from food and feed crops, shall be no more than one percentage point higher than the share of such fuels in the final consumption of energy in the road and rail transport sectors in 2020 in that Member State, with a maximum of 7 % of final consumption of energy in the road and rail transport sectors in that Member State.",
-      "article": "Article 26(1)",
+      "quote": "Member States with maritime ports shall endeavour to ensure that as of 2030 the share of renewable fuels of non-biological origin in the total amount of energy supplied to the maritime transport sector is at least 1,2 %.",
+      "article": "Article 25(1), third subparagraph",
+      "label": "target",
+      "timeline": "as of 2030",
+      "indicators": [
+        "renewable fuels of non-biological origin",
+        "maritime transport sector"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, where produced from food and feed crops, shall be no more than one percentage point higher than the share of such fuels in the final consumption of energy in the transport sector in 2020 in that Member State, with a maximum of 7 % of final consumption of energy in the transport sector in that Member State.",
+      "article": "Article 26(1), first subparagraph — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops",
       "label": "target",
       "timeline": "in 2020",
       "indicators": [
         "share of biofuels, bioliquids and biomass fuels from food and feed crops",
-        "final consumption of energy in the road and rail transport sectors"
+        "final consumption of energy in the transport sector"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "From 31 December 2023 until 31 December 2030 at the latest, that limit shall gradually decrease to 0 %.",
+      "quote": "From 31 December 2023 until 31 December 2030 at the latest, that limit shall gradually decrease to 0 %.",
       "article": "Article 26(2), second subparagraph",
       "label": "target",
       "timeline": "from 31 December 2023 until 31 December 2030",
@@ -153,18 +202,7 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "For the calculation of the numerator, the share of biofuels and biogas produced from the feedstock listed in Part B of Annex IX shall, except for in Cyprus and Malta, be limited to 1,7 % of the energy content of transport fuels supplied for consumption or use on the market. Member States may, where justified, modify that limit, taking into account the availability of feedstock. Any such modification shall be subject to approval by the Commission;",
-      "article": "Article 27(1), point (b), second subparagraph",
-      "label": "target",
-      "timeline": "",
-      "indicators": [
-        "share of biofuels and biogas from feedstock in Part B of Annex IX",
-        "energy content of transport fuels"
-      ],
-      "climate_relevance": "mitigation"
-    },
-    {
-      "quote": "at least 50 % for biofuels, biogas consumed in the transport sector, and bioliquids produced in installations in operation on or before 5 October 2015;",
+      "quote": "at least 50 % for biofuels, biogas consumed in the transport sector, and bioliquids produced in installations in operation on or before 5 October 2015;",
       "article": "Article 29(10), point (a)",
       "label": "target",
       "timeline": "on or before 5 October 2015",
@@ -175,7 +213,7 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "at least 60 % for biofuels, biogas consumed in the transport sector, and bioliquids produced in installations starting operation from 6 October 2015 until 31 December 2020;",
+      "quote": "at least 60 % for biofuels, biogas consumed in the transport sector, and bioliquids produced in installations starting operation from 6 October 2015 until 31 December 2020;",
       "article": "Article 29(10), point (b)",
       "label": "target",
       "timeline": "from 6 October 2015 until 31 December 2020",
@@ -186,7 +224,7 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "at least 65 % for biofuels, biogas consumed in the transport sector, and bioliquids produced in installations starting operation from 1 January 2021;",
+      "quote": "at least 65 % for biofuels, biogas consumed in the transport sector, and bioliquids produced in installations starting operation from 1 January 2021;",
       "article": "Article 29(10), point (c)",
       "label": "target",
       "timeline": "from 1 January 2021",
@@ -197,13 +235,57 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "at least 70 % for electricity, heating and cooling production from biomass fuels used in installations starting operation from 1 January 2021 until 31 December 2025, and 80 % for installations starting operation from 1 January 2026.",
+      "quote": "for electricity, heating and cooling production from biomass fuels used in installations that started operating after 20 November 2023, at least 80 %;",
       "article": "Article 29(10), point (d)",
       "label": "target",
-      "timeline": "from 1 January 2021 until 31 December 2025, and from 1 January 2026",
+      "timeline": "after 20 November 2023",
       "indicators": [
         "greenhouse gas emission savings",
         "electricity, heating and cooling from biomass fuels"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for electricity, heating and cooling production from biomass fuels used in installations with a total rated thermal input equal to or exceeding 10 MW that started operating between 1 January 2021 and 20 November 2023, at least 70 % until 31 December 2029, and at least 80 % from 1 January 2030;",
+      "article": "Article 29(10), point (e)",
+      "label": "target",
+      "timeline": "between 1 January 2021 and 20 November 2023",
+      "indicators": [
+        "greenhouse gas emission savings",
+        "electricity, heating and cooling from biomass fuels"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for electricity, heating and cooling production from gaseous biomass fuels used in installations with a total rated thermal input equal to or lower than 10 MW that started operating between 1 January 2021 and 20 November 2023, at least 70 % before they have been operating for 15 years, and at least 80 % after they have been in operation for 15 years;",
+      "article": "Article 29(10), point (f)",
+      "label": "target",
+      "timeline": "between 1 January 2021 and 20 November 2023",
+      "indicators": [
+        "greenhouse gas emission savings",
+        "gaseous biomass fuels"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for electricity, heating and cooling production from biomass fuels used in installations with a total rated thermal input equal to or exceeding 10 MW that started operating before 1 January 2021, at least 80 % after they have been operating for 15 years, at the earliest from 1 January 2026 and at the latest from 31 December 2029;",
+      "article": "Article 29(10), point (g)",
+      "label": "target",
+      "timeline": "before 1 January 2021",
+      "indicators": [
+        "greenhouse gas emission savings",
+        "electricity, heating and cooling from biomass fuels"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for electricity, heating and cooling production from gaseous biomass fuels used in installations with a total rated thermal input equal to or lower than 10 MW that started operating before 1 January 2021, at least 80 % after they have been operating for 15 years and at the earliest from 1 January 2026.",
+      "article": "Article 29(10), point (h)",
+      "label": "target",
+      "timeline": "before 1 January 2021",
+      "indicators": [
+        "greenhouse gas emission savings",
+        "gaseous biomass fuels"
       ],
       "climate_relevance": "mitigation"
     },

@@ -115,8 +115,13 @@ binding text that lives elsewhere — and best-efforts constructions
 ## Caveats
 
 - The register mirrors **whatever version of each act is in the corpus**.
-  A few source texts are pre-consolidation (e.g. the EU ETS file is the
-  original 2003/87/EC, RED is the 2018 version), so their figures are the
-  ones in force in that text, not necessarily the latest amendment.
+  RED was updated (2026-07) to the current EUR-Lex consolidated text
+  (02018L2001 — EN — 16.07.2024, reflecting Directive (EU) 2023/2413 "RED
+  III" and the later 2024 amendments), so its rows now carry the amended
+  figures (42.5 %/45 % 2030 target, 29 %/14.5 % transport target, the new
+  49 % buildings and 42 %/60 % industry-hydrogen targets, etc.) rather than
+  the original 2018 ones. The EU ETS file remains pre-consolidation
+  (original 2003/87/EC) — its figures are the ones in force in that text,
+  not the latest amendment.
 - Extraction favours recall — **always confirm a row against the source**
   before citing it. That is exactly what column 12 is for.

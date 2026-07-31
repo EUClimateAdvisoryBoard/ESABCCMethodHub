@@ -1,5 +1,17 @@
 [
   {
+    "id": "tgt-e2597cee",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "not a target: regex safety-net matched a fragment of a heat-pump SPF efficiency formula (Article 7, Annex III methodology), not a coherent sentence [RED consolidation update 2026-07]"
+  },
+  {
+    "id": "tgt-b5408107",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "not a target: bare chapeau (\"...provided that:\") introducing the Article 22b conditions list, not itself a target; the numeric condition is captured separately [RED consolidation update 2026-07]"
+  },
+  {
     "id": "tgt-009edd20",
     "policy_id": "afir-regulation",
     "set": {

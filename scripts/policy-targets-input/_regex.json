@@ -192,7 +192,15 @@
     "source": "regex",
     "targets": [
       {
-        "quote": "Member States shall collectively ensure that the share of energy from renewable sources in the Union's gross final consumption of energy in 2030 is at least 32 %.",
+        "quote": "Member States shall collectively ensure that the share of energy from renewable sources in the Union’s gross final consumption of energy in 2030 is at least 42,5 %.",
+        "article": "Article 3 — Binding overall Union target for 2030"
+      },
+      {
+        "quote": "Member States shall collectively endeavour to increase the share of energy from renewable sources in the Union’s gross final consumption of energy in 2030 to 45 %.",
+        "article": "Article 3 — Binding overall Union target for 2030"
+      },
+      {
+        "quote": "Member States shall set an indicative target for innovative renewable energy technology of at least 5 % of newly installed renewable energy capacity by 2030.",
         "article": "Article 3 — Binding overall Union target for 2030"
       },
       {
@@ -216,19 +224,67 @@
         "article": "Article 7 — Calculation of the share of energy from renewable sources"
       },
       {
+        "quote": "by 31 December 2033, Member States with an annual electricity consumption of more than 100 TWh shall endeavour to agree on establishing a third joint project.",
+        "article": "Article 9 — Joint projects between Member States"
+      },
+      {
+        "quote": "In order to promote the production and use of renewable energy in the building sector, Member States shall determine an indicative national share of renewable energy produced on-site or nearby as well as renewable energy taken from the grid in final energy consumption in their building sector in 2030 that is consistent with an indicative target of at least a 49 % share of energy from renewable sources in the building sector in the Union’s final energy consumption in buildings in 2030.",
+        "article": "Article 15a — Mainstreaming renewable energy in buildings"
+      },
+      {
+        "quote": "Where repowering of a renewable energy power plant does not result in an increase of the capacity of a renewable energy power plant beyond 15 %, and without prejudice to any assessment of potential environmental impact required pursuant to paragraph 2, Member States shall ensure that permit granting procedures for connections to the transmission or distribution grid shall not exceed three months following application to the relevant entity unless there are justified safety concerns or there is technical incompatibility of the system components.",
+        "article": "Article 16c — Accelerating the permit-granting procedure for repowering"
+      },
+      {
+        "quote": "heat pumps of up to 50 kW electrical capacity installed by renewables self-consumers, provided that the electrical capacity of a renewables self-consumer’s renewable electricity generation installation amounts to at least 60 % of the electrical capacity of the heat pump.",
+        "article": "Article 16e — Permit-granting procedure for the installation of heat pumps"
+      },
+      {
+        "quote": "By 21 February 2024, until climate neutrality is achieved, Member States shall ensure that, in the permit-granting procedure, the planning, construction and operation of renewable energy plants, the connection of such plants to the grid, the related grid itself, and storage assets are presumed as being in the overriding public interest and serving public health and safety when balancing legal interests in individual cases for the purposes of Article 6(4) and Article 16(1), point (c), of Directive 92/43/EEC, Article 4(7) of Directive 2000/60/EC and Article 9(1), point (a), of Directive 2009/147/EC.",
+        "article": "Article 16f — Overriding public interest"
+      },
+      {
         "quote": "from 1 December 2026, if the overall share of self-consumption installations exceeds 8 % of the total installed electricity capacity of a Member State, and if it is demonstrated, by means of a cost-benefit analysis performed by the national regulatory authority of that Member State, which is conducted by way of an open, transparent and participatory process, that the provision laid down in point (a)(ii) of paragraph 2 either results in a significant disproportionate burden on the long-term financial sustainability of the electric system, or creates an incentive exceeding what is objectively needed to achieve cost-effective deployment of renewable energy, and that such burden or incentive cannot be minimised by taking other reasonable actions; or",
         "article": "Article 21 — Renewables self-consumers"
       },
       {
-        "quote": "In order to promote the use of renewable energy in the heating and cooling sector, each Member State shall endeavour to increase the share of renewable energy in that sector by an indicative 1,3 percentage points as an annual average calculated for the periods 2021 to 2025 and 2026 to 2030, starting from the share of renewable energy in the heating and cooling sector in 2020, expressed in terms of national share of final energy consumption and calculated in accordance with the methodology set out in Article 7, without prejudice to paragraph 2 of this Article.",
+        "quote": "Member States shall endeavour to increase the share of renewable sources in the amount of energy sources used for final energy and non-energy purposes in the industry sector by an indicative increase of at least 1,6 percentage points as an annual average calculated for the periods 2021 to 2025 and 2026 to 2030.",
+        "article": "Article 22a — Mainstreaming renewable energy in industry"
+      },
+      {
+        "quote": "Member States shall ensure that the contribution of renewable fuels of non-biological origin used for final energy and non-energy purposes shall be at least 42 % of the hydrogen used for final energy and non-energy purposes in industry by 2030, and 60 % by 2035.",
+        "article": "Article 22a — Mainstreaming renewable energy in industry"
+      },
+      {
+        "quote": "A Member State may reduce the contribution of renewable fuels of non-biological origin used for final energy and non-energy purposes referred to in Article 22a(1), fifth subparagraph, by 20 % in 2030, provided that:",
+        "article": "Article 22b — Conditions for reduction of the target for the use of renewable fuels of non-biological origin in the industry sector"
+      },
+      {
+        "quote": "the share of hydrogen, or its derivatives, produced from fossil fuels which is consumed in that Member State is not more than 23 % in 2030 and not more than 20 % in 2035.",
+        "article": "Article 22b — Conditions for reduction of the target for the use of renewable fuels of non-biological origin in the industry sector"
+      },
+      {
+        "quote": "In order to promote the use of renewable energy in the heating and cooling sector, each Member State shall increase the share of renewable energy in that sector by at least 0,8 percentage points as an annual average calculated for the period 2021 to 2025 and by at least 1,1 percentage points as an annual average calculated for the period 2026 to 2030, starting from the share of renewable energy in the heating and cooling sector in 2020, expressed in terms of national share of gross final consumption of energy and calculated in accordance with the methodology set out in Article 7.",
         "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
       },
       {
-        "quote": "That increase shall be limited to an indicative 1,1 percentage points for Member States where waste heat and cold is not used.",
+        "quote": "If they decide to do so, the average annual increase shall increase by half of the waste heat and cold percentage points counted to an upper limit of 1,0 percentage points for the period 2021 to 2025 and of 1,3 percentage points for the period 2026 to 2030.",
         "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
       },
       {
-        "quote": "may count waste heat and cold, subject to a limit of 40 % of the average annual increase;",
+        "quote": "Member States may count renewable electricity used for heating and cooling towards the annual average increase set out in the first subparagraph, up to a limit of 0,4 percentage points, provided that the efficiency of the heat and cold generator unit is higher than 100 %.",
+        "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
+      },
+      {
+        "quote": "Member States shall inform the Commission of their intention to count renewable electricity used in heating and cooling from heat and cold generators the efficiency of which is higher than 100 % towards the annual increase set out in first subparagraph of this paragraph.",
+        "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
+      },
+      {
+        "quote": "Member States shall include the estimated renewable electricity capacities of heat and cold generator units the efficiency of which is higher than 100 % in their integrated national energy and climate plans submitted pursuant to Articles 3 and 14 of Regulation (EU) 2018/1999.",
+        "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
+      },
+      {
+        "quote": "Member States shall include the amount of renewable electricity used in heating and cooling from heat and cold generator units the efficiency of which is higher than 100 % in their integrated national energy and climate progress reports submitted pursuant to Article 17 of that Regulation.",
         "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
       },
       {
@@ -236,39 +292,43 @@
         "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
       },
       {
-        "quote": "Member States with a share of energy from renewable sources and from waste heat and cold in district heating and cooling above 60 % may count any such share as fulfilling the average annual increase referred to in the first subparagraph of this point.",
+        "quote": "Member States with a share of energy from renewable sources and from waste heat and cold in district heating and cooling above 60 % may count any such share as fulfilling the average annual increase referred to in paragraph 4, first subparagraph.",
         "article": "Article 24 — District heating and cooling"
       },
       {
-        "quote": "its share of district heating and cooling is less than or equal to 2 % of the overall consumption of energy in heating and cooling on 24 December 2018;",
+        "quote": "its share of district heating and cooling was less than or equal to 2 % of the gross final consumption of energy in heating and cooling on 24 December 2018;",
         "article": "Article 24 — District heating and cooling"
       },
       {
-        "quote": "its share of district heating and cooling is increased above 2 % by developing new efficient district heating and cooling based on its integrated national energy and climate plan pursuant to Annex I to Regulation (EU) 2018/1999 or the assessment referred to in Article 15(7) of this Directive; or",
+        "quote": "its share of district heating and cooling is increased above 2 % of the gross final consumption of energy in heating and cooling on 24 December 2018 by developing new efficient district heating and cooling on the basis of its integrated national energy and climate plan submitted pursuant to Articles 3 and 14 of, and in accordance with, Regulation (EU) 2018/1999 and the assessment referred to in Article 23(1b) of this Directive;",
         "article": "Article 24 — District heating and cooling"
       },
       {
-        "quote": "its share of systems referred to in paragraph 6 of this Article constitutes over 90 % of total sales of its district heating and cooling.",
-        "article": "Article 24 — District heating and cooling"
+        "quote": "share of renewable energy within the final consumption of energy in the transport sector of at least 29 % by 2030; or",
+        "article": "Article 25 — Increase of renewable energy and reduction of greenhouse gas intensity in the transport sector"
       },
       {
-        "quote": "In order to mainstream the use of renewable energy in the transport sector, each Member State shall set an obligation on fuel suppliers to ensure that the share of renewable energy within the final consumption of energy in the transport sector is at least 14 % by 2030 (minimum share) in accordance with an indicative trajectory set by the Member State and calculated in accordance with the methodology set out in this Article and in Articles 26 and 27.",
-        "article": "Article 25 — Mainstreaming renewable energy in the transport sector"
+        "quote": "greenhouse gas intensity reduction of at least 14,5 % by 2030, compared to the baseline set out in Article 27(1), point (b), in accordance with an indicative trajectory set by the Member State;",
+        "article": "Article 25 — Increase of renewable energy and reduction of greenhouse gas intensity in the transport sector"
       },
       {
-        "quote": "Within the minimum share referred to in the first subparagraph, the contribution of advanced biofuels and biogas produced from the feedstock listed in Part A of Annex IX as a share of final consumption of energy in the transport sector shall be at least 0,2 % in 2022, at least 1 % in 2025 and at least 3,5 % in 2030.",
-        "article": "Article 25 — Mainstreaming renewable energy in the transport sector"
+        "quote": "the combined share of advanced biofuels and biogas produced from the feedstock listed in Part A of Annex IX and of renewable fuels of non-biological origin in the energy supplied to the transport sector is at least 1 % in 2025 and 5,5 % in 2030, of which a share of at least 1 percentage point is from renewable fuels of non-biological origin in 2030.",
+        "article": "Article 25 — Increase of renewable energy and reduction of greenhouse gas intensity in the transport sector"
       },
       {
-        "quote": "The greenhouse gas emissions savings from the use of renewable liquid and gaseous transport fuels of non-biological origin shall be at least 70 % from 1 January 2021.",
-        "article": "Article 25 — Mainstreaming renewable energy in the transport sector"
+        "quote": "Member States with maritime ports shall endeavour to ensure that as of 2030 the share of renewable fuels of non-biological origin in the total amount of energy supplied to the maritime transport sector is at least 1,2 %.",
+        "article": "Article 25 — Increase of renewable energy and reduction of greenhouse gas intensity in the transport sector"
       },
       {
-        "quote": "For the calculation of a Member State's gross final consumption of energy from renewable sources referred to in Article 7 and the minimum share referred to in the first subparagraph of Article 25(1), the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, where produced from food and feed crops, shall be no more than one percentage point higher than the share of such fuels in the final consumption of energy in the road and rail transport sectors in 2020 in that Member State, with a maximum of 7 % of final consumption of energy in the road and rail transport sectors in that Member State.",
+        "quote": "For the calculation of a Member State’s gross final consumption of energy from renewable sources referred to in Article 7 and of the minimum share of renewable energy and the greenhouse gas intensity reduction target referred to in Article 25(1), first subparagraph, point (a), the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, where produced from food and feed crops, shall be no more than one percentage point higher than the share of such fuels in the final consumption of energy in the transport sector in 2020 in that Member State, with a maximum of 7 % of final consumption of energy in the transport sector in that Member State.",
         "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops"
       },
       {
-        "quote": "Where the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, produced from food and feed crops in a Member State is limited to a share lower than 7 % or a Member State decides to limit the share further, that Member State may reduce the minimum share referred to in the first subparagraph of Article 25(1) accordingly, by a maximum of 7 percentage points.",
+        "quote": "Where the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, produced from food and feed crops in a Member State is limited to a share lower than 7 % or a Member State decides to limit the share further, that Member State may reduce the minimum share of renewable energy or the greenhouse gas intensity reduction target referred to in Article 25(1), first subparagraph, point (a), accordingly, in view of the contribution those fuels would have made in terms of the minimum share of renewable energy or greenhouse gas emissions savings.",
+        "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops"
+      },
+      {
+        "quote": "For the purpose of the greenhouse gas intensity reduction target, Member States shall consider those fuels save 50 % greenhouse gas emissions.",
         "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops"
       },
       {
@@ -276,8 +336,20 @@
         "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops"
       },
       {
-        "quote": "For the calculation of the numerator, the share of biofuels and biogas produced from the feedstock listed in Part B of Annex IX shall, except for in Cyprus and Malta, be limited to 1,7 % of the energy content of transport fuels supplied for consumption or use on the market.",
-        "article": "Article 27 — Calculation rules with regard to the minimum shares of renewable energy in the transport sector"
+        "quote": "the share of biofuels and biogas produced from the feedstock listed in Part B of Annex IX in the energy content of fuels and electricity supplied to the transport sector shall, except in Cyprus and Malta, be limited to 1,7 %;",
+        "article": "Article 27"
+      },
+      {
+        "quote": "The Commission is empowered to adopt delegated acts in accordance with Article 35 to amend this Directive by adapting the limit on the share of biofuels and biogas produced from the feedstock listed in Part B of Annex IX on the basis of an assessment of the availability of feedstock. The limit shall be at least 1,7 %.",
+        "article": "Article 27"
+      },
+      {
+        "quote": "For the purpose of the calculations referred to in paragraph 1, first subparagraph, point (b), and in paragraph 2, first subparagraph, point (a), the amount of energy supplied to the maritime transport sector shall, as a proportion of that Member State’s gross final consumption of energy, be considered to be no more than 13 %.",
+        "article": "Article 27"
+      },
+      {
+        "quote": "For Cyprus and Malta, the amount of energy consumed in the maritime transport sector shall, as a proportion of those Member States’ gross final consumption of energy, be considered to be no more than 5 %.",
+        "article": "Article 27"
       },
       {
         "quote": "continuously forested areas, namely land spanning more than one hectare with trees higher than five metres and a canopy cover of more than 30 %, or trees able to reach those thresholds in situ;",
@@ -300,12 +372,28 @@
         "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and biomass fuels"
       },
       {
-        "quote": "at least 70 % for electricity, heating and cooling production from biomass fuels used in installations starting operation from 1 January 2021 until 31 December 2025, and 80 % for installations starting operation from 1 January 2026.",
+        "quote": "for electricity, heating and cooling production from biomass fuels used in installations that started operating after 20 November 2023, at least 80 %;",
+        "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and biomass fuels"
+      },
+      {
+        "quote": "for electricity, heating and cooling production from gaseous biomass fuels used in installations with a total rated thermal input equal to or lower than 10 MW that started operating between 1 January 2021 and 20 November 2023, at least 70 % before they have been operating for 15 years, and at least 80 % after they have been in operation for 15 years;",
         "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and biomass fuels"
       },
       {
         "quote": "for installations with a total rated thermal input above 100 MW, it is produced applying high-efficiency cogeneration technology, or, for electricity-only installations, achieving an net-electrical efficiency of at least 36 %;",
         "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and biomass fuels"
+      },
+      {
+        "quote": "Energy from renewable fuels of non-biological origin shall be counted towards Member States’ shares of renewable energy and the targets referred to in Articles 3(1), 15a(1), 22a(1), 23(1), 24(4) and 25(1) only if the greenhouse gas emissions savings from the use of those fuels are at least 70 %.",
+        "article": "Article 29a — Greenhouse gas emissions saving criteria for renewable fuels of non-biological origin and recycled carbon fuels"
+      },
+      {
+        "quote": "Energy from recycled carbon fuels may be counted towards the targets referred to in Article 25(1), first subparagraph, point (a), only if the greenhouse gas emissions savings from the use of those fuels are at least 70 %.",
+        "article": "Article 29a — Greenhouse gas emissions saving criteria for renewable fuels of non-biological origin and recycled carbon fuels"
+      },
+      {
+        "quote": "For to be 100 % the minimum efficiency requirement of the cooling system shall be at least 6 (SPFpHIGH ).",
+        "article": "Article 7 — —"
       }
     ]
   },
@@ -1326,6 +1414,40 @@
       {
         "quote": "Member States shall ensure that companies referred to in Article 2(1), points (a), (b) and (c), and Article 2(2), points (a), (b) and (c), adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, that the business model and strategy of the company are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement and the objective of achieving climate neutrality as established in Regulation (EU) 2021/1119, including its intermediate and 2050 climate neutrality targets, and where relevant, the exposure of the company to coal-, oil- and gas-related activities.",
         "article": "Article 22 — Combating climate change"
+      }
+    ]
+  },
+  {
+    "policy_id": "ten-t-regulation",
+    "source": "regex",
+    "targets": [
+      {
+        "quote": "enables, without special permission, an axle load of at least 22,5 tonnes; and",
+        "article": "Article 15 — Transport infrastructure requirements for the comprehensive network"
+      },
+      {
+        "quote": "for rail sections linking the multimodal freight terminals of two urban nodes or the multimodal freight terminal of an urban node and a border crossing point, over 75 % of the length of each rail section, is designed for a speed of at least 100 km/h for freight trains on the freight lines of the extended core network.",
+        "article": "Article 16 — Transport infrastructure requirements for the core network and the extended core network"
+      },
+      {
+        "quote": "for rail sections linking the multimodal passenger hubs of two urban nodes or the multimodal passenger hubs of an urban node and a border crossing point, over 75 % of the length of each rail section is designed for a speed of at least 160 km/h for passenger trains on the passenger lines of the extended core network.",
+        "article": "Article 16 — Transport infrastructure requirements for the core network and the extended core network"
+      },
+      {
+        "quote": "at least 75 % of the freight trains crossing at least one border along a European Transport Corridor arrive at their destination, or at the external Union border if their destination is outside the Union, at their scheduled time or with a delay of less than 30 minutes by reasons that are attributable to the infrastructure manager(s) of the Union; delays occurring in and attributable to third countries that are crossed by freight trains shall not be taken into account.",
+        "article": "Article 19 — Operational priorities"
+      },
+      {
+        "quote": "it has an annual freight transhipment volume exceeding 500 000 tonnes, where the total annual freight transhipment volume shall be based on the latest available three-year average, based on the statistics published by Eurostat; and",
+        "article": "Article 21 — Infrastructure components"
+      },
+      {
+        "quote": "for cargo airports, the total annual cargo volume is at least 0,2 % of the total annual cargo volume of all airports of the Union;",
+        "article": "Article 33 — Infrastructure components"
+      },
+      {
+        "quote": "for passenger airports, the total annual passenger traffic is at least 0,1 % of the total annual passenger volume of all airports of the Union, unless the airport in question is situated outside a radius of 100 km from the nearest airport in the comprehensive network or outside a radius of 200 km where there is a high-speed railway line in the region in which it is situated.",
+        "article": "Article 33 — Infrastructure components"
       }
     ]
   },
