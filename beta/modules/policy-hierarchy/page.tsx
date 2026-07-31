@@ -42,6 +42,7 @@ import {
   DOMAIN_BRANCHES,
   LEAD_DGS,
   LENS_META,
+  LENS_RATIONALES,
   LENS_ORDER,
   MANDATE,
   NAVIGATOR_BRIDGE,
@@ -118,7 +119,7 @@ function matchesDg(i: Instrument, dg: string | null): boolean {
 function exportCsv() {
   const rows: string[][] = [[
     'branch', 'id', 'title', 'officialRef', 'type', 'year', 'celex', 'eurlexUrl', 'summary',
-    'lenses', 'mandateRing', 'boardHook', 'leadDGs', 'status', 'statusNote', 'referenceVerified',
+    'lenses', 'lensRationales', 'mandateRing', 'boardHook', 'leadDGs', 'status', 'statusNote', 'referenceVerified',
   ]];
   for (const b of DOMAIN_BRANCHES) {
     for (const i of b.instruments) {
@@ -126,7 +127,9 @@ function exportCsv() {
       const st = STATUS[i.id];
       rows.push([
         b.name, i.id, i.title, i.officialRef, i.type, String(i.year), i.celex ?? '', i.eurlexUrl,
-        i.summary, i.lenses.join('|'), m?.relevance ?? relevanceOf(i), m?.hook ?? '',
+        i.summary, i.lenses.join('|'),
+        i.lenses.map(l => `${l}: ${LENS_RATIONALES[i.id]?.[l] ?? ''}`).join(' | '),
+        m?.relevance ?? relevanceOf(i), m?.hook ?? '',
         (LEAD_DGS[i.id] ?? []).join('|'), st?.status ?? '', st?.note ?? '', i.confident ? 'yes' : 'no',
       ]);
     }
@@ -157,14 +160,14 @@ function TypeBadge({ type, small }: { type: Instrument['type']; small?: boolean 
   );
 }
 
-function LensDots({ lenses, active }: { lenses: LensId[]; active: Set<LensId> }) {
+function LensDots({ id, lenses, active }: { id?: string; lenses: LensId[]; active: Set<LensId> }) {
   if (lenses.length === 0) return null;
   return (
     <span className="inline-flex items-center gap-1 shrink-0" aria-label={`Lenses: ${lenses.join(', ')}`}>
       {LENS_ORDER.filter(l => lenses.includes(l)).map(l => (
         <span
           key={l}
-          title={LENS_META[l].label}
+          title={`${LENS_META[l].label}${id && LENS_RATIONALES[id]?.[l] ? ` — relevant because ${LENS_RATIONALES[id][l]}` : ''}`}
           className="inline-block w-2 h-2 rounded-full"
           style={{
             background: LENS_META[l].color,
@@ -334,7 +337,7 @@ function InstrumentRow({
             </span>
           )}
           <span className="ml-auto">
-            <LensDots lenses={i.lenses} active={activeLenses} />
+            <LensDots id={i.id} lenses={i.lenses} active={activeLenses} />
           </span>
         </div>
         <p className={`mt-0.5 text-[#54728C] dark:text-[var(--mh-muted)] leading-snug ${depth > 0 ? 'text-[11px]' : 'text-[12px]'}`}>
@@ -345,6 +348,17 @@ function InstrumentRow({
             Board angle: {hook}
           </p>
         )}
+        {!mandate &&
+          activeLenses.size > 0 &&
+          LENS_ORDER.filter(l => activeLenses.has(l) && i.lenses.includes(l)).map(l => {
+            const why = LENS_RATIONALES[i.id]?.[l];
+            if (!why) return null;
+            return (
+              <p key={l} className="mt-0.5 text-[11px] italic leading-snug" style={{ color: LENS_META[l].color }}>
+                {LENS_META[l].label}-relevant: {why}
+              </p>
+            );
+          })}
         {recs.length > 0 && (
           <p className="mt-1 flex flex-wrap items-center gap-1">
             <span className="text-[10px] uppercase tracking-wide text-[#808285] dark:text-[var(--mh-muted)]">Board advice:</span>
@@ -781,6 +795,12 @@ export default function PolicyHierarchyPage() {
         );
         parts.push(`  ${i.summary}`);
         if (m) parts.push(`  _Ring: ${m.relevance} — ${m.hook}_`);
+        for (const l of LENS_ORDER) {
+          if ((activeLenses.size === 0 || activeLenses.has(l)) && i.lenses.includes(l)) {
+            const why = LENS_RATIONALES[i.id]?.[l];
+            if (why) parts.push(`  _${LENS_META[l].label}: ${why}_`);
+          }
+        }
         if (st) parts.push(`  _Status: ${STATUS_META[st.status].label}${st.confident ? '' : ' (unconfirmed)'} — ${st.note}${st.sourceRef ? ` (${st.sourceRef})` : ''}_`);
         if (recs.length) parts.push(`  _Board advice: ${recs.join(', ')}_`);
       }
@@ -1042,7 +1062,7 @@ export default function PolicyHierarchyPage() {
                     <p className="mt-1 text-[11px] leading-snug text-[#54728C] dark:text-[var(--mh-muted)]">{t.summary}</p>
                     <div className="mt-1 flex items-center justify-between">
                       <EurLexLink i={t} />
-                      <LensDots lenses={t.lenses} active={activeLenses} />
+                      <LensDots id={t.id} lenses={t.lenses} active={activeLenses} />
                     </div>
                   </div>
                 );
