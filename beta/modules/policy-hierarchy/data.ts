@@ -278,9 +278,46 @@ export const STATUS_META: Record<InstrumentStatus, { label: string; color: strin
   },
 };
 
+/* ============================================================ commission services */
+
+/**
+ * The Commission services (DGs) instruments are attributed to, 2024-2029
+ * structure. Codes are the official DG abbreviations; NONE marks primary law
+ * that no DG owns.
+ */
+export const DG_META: Record<string, string> = {
+  SG: 'Secretariat-General',
+  SJ: 'Legal Service',
+  CLIMA: 'DG Climate Action',
+  ENER: 'DG Energy',
+  ENV: 'DG Environment',
+  MOVE: 'DG Mobility & Transport',
+  GROW: 'DG Internal Market, Industry, Entrepreneurship & SMEs',
+  TRADE: 'DG Trade & Economic Security',
+  TAXUD: 'DG Taxation & Customs Union',
+  FISMA: 'DG Financial Stability & Capital Markets Union',
+  ECFIN: 'DG Economic & Financial Affairs',
+  EMPL: 'DG Employment, Social Affairs & Inclusion',
+  REGIO: 'DG Regional & Urban Policy',
+  AGRI: 'DG Agriculture & Rural Development',
+  MARE: 'DG Maritime Affairs & Fisheries',
+  SANTE: 'DG Health & Food Safety',
+  HOME: 'DG Migration & Home Affairs',
+  JUST: 'DG Justice & Consumers',
+  CNECT: 'DG Communications Networks, Content & Technology',
+  RTD: 'DG Research & Innovation',
+  DEFIS: 'DG Defence Industry & Space',
+  BUDG: 'DG Budget',
+  COMP: 'DG Competition',
+  HERA: 'Health Emergency Preparedness & Response Authority',
+  EEAS: 'European External Action Service',
+  NONE: 'No lead DG — primary law owned by the Member States as Treaty parties',
+};
+
 /* ============================================================ dataset */
 
 export { DOMAIN_BRANCHES } from './instruments.generated';
 export { MANDATE, STATUS } from './annotations.generated';
 export { NAVIGATOR_BRIDGE, SECTOR_BRIDGE } from './bridges.generated';
 export { RECOMMENDATIONS } from './recommendations.generated';
+export { LEAD_DGS } from './dgs.generated';

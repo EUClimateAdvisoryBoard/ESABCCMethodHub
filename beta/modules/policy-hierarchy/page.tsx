@@ -38,7 +38,9 @@ import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
 import MandatePanel from './MandatePanel';
 import {
+  DG_META,
   DOMAIN_BRANCHES,
+  LEAD_DGS,
   LENS_META,
   LENS_ORDER,
   MANDATE,
@@ -108,10 +110,15 @@ function matchesRingTier(i: Instrument, rings: Set<MandateRelevance>, tiers: Set
   return true;
 }
 
+function matchesDg(i: Instrument, dg: string | null): boolean {
+  if (!dg) return true;
+  return (LEAD_DGS[i.id] ?? []).includes(dg);
+}
+
 function exportCsv() {
   const rows: string[][] = [[
     'branch', 'id', 'title', 'officialRef', 'type', 'year', 'celex', 'eurlexUrl', 'summary',
-    'lenses', 'mandateRing', 'boardHook', 'status', 'statusNote', 'referenceVerified',
+    'lenses', 'mandateRing', 'boardHook', 'leadDGs', 'status', 'statusNote', 'referenceVerified',
   ]];
   for (const b of DOMAIN_BRANCHES) {
     for (const i of b.instruments) {
@@ -120,7 +127,7 @@ function exportCsv() {
       rows.push([
         b.name, i.id, i.title, i.officialRef, i.type, String(i.year), i.celex ?? '', i.eurlexUrl,
         i.summary, i.lenses.join('|'), m?.relevance ?? relevanceOf(i), m?.hook ?? '',
-        st?.status ?? '', st?.note ?? '', i.confident ? 'yes' : 'no',
+        (LEAD_DGS[i.id] ?? []).join('|'), st?.status ?? '', st?.note ?? '', i.confident ? 'yes' : 'no',
       ]);
     }
   }
@@ -185,6 +192,39 @@ function StatusChip({ id }: { id: string }) {
   );
 }
 
+function DgChips({
+  id,
+  activeDg,
+  onDgClick,
+  small,
+}: {
+  id: string;
+  activeDg: string | null;
+  onDgClick: (dg: string) => void;
+  small?: boolean;
+}) {
+  const dgs = LEAD_DGS[id] ?? [];
+  if (dgs.length === 0) return null;
+  return (
+    <span className="inline-flex items-center gap-1 shrink-0">
+      {dgs.map((dg, idx) => (
+        <button
+          key={dg}
+          onClick={() => dg !== 'NONE' && onDgClick(dg)}
+          className={`rounded px-1 py-[1px] border tracking-wide transition-colors ${small ? 'text-[8px]' : 'text-[9px]'} ${
+            activeDg === dg
+              ? 'bg-[#3D5265] border-[#3D5265] text-white'
+              : 'border-[#BCBEC0]/60 text-[#54728C] dark:text-[var(--mh-muted)] hover:border-[#3D5265]'
+          } ${idx === 0 ? 'font-bold' : 'font-normal'} ${dg === 'NONE' ? 'cursor-default opacity-60' : ''}`}
+          title={`${DG_META[dg] ?? dg}${idx === 0 ? ' (lead service)' : ''}${dg === 'NONE' ? '' : ' — click to filter the tree to this DG'}`}
+        >
+          {dg === 'NONE' ? '—' : dg}
+        </button>
+      ))}
+    </span>
+  );
+}
+
 function EurLexLink({ i }: { i: Instrument }) {
   return (
     <a
@@ -206,12 +246,16 @@ function InstrumentRow({
   childrenOf,
   activeLenses,
   colourMode,
+  activeDg,
+  onDgClick,
   depth = 0,
 }: {
   i: Instrument;
   childrenOf: Map<string, Instrument[]>;
   activeLenses: Set<LensId>;
   colourMode: ColourMode;
+  activeDg: string | null;
+  onDgClick: (dg: string) => void;
   depth?: number;
 }) {
   const kids = childrenOf.get(i.id) ?? [];
@@ -261,6 +305,7 @@ function InstrumentRow({
           <span className="text-[11px] text-[#808285] dark:text-[var(--mh-muted)] whitespace-nowrap">
             {i.officialRef} · {i.year}
           </span>
+          <DgChips id={i.id} activeDg={activeDg} onDgClick={onDgClick} small={depth > 0} />
           <EurLexLink i={i} />
           {nav && (
             <a
@@ -325,7 +370,7 @@ function InstrumentRow({
               </button>
             )}
             {kids.sort(sortInstruments).map(k => (
-              <InstrumentRow key={k.id} i={k} childrenOf={childrenOf} activeLenses={activeLenses} colourMode={colourMode} depth={depth + 1} />
+              <InstrumentRow key={k.id} i={k} childrenOf={childrenOf} activeLenses={activeLenses} colourMode={colourMode} activeDg={activeDg} onDgClick={onDgClick} depth={depth + 1} />
             ))}
           </div>
         ) : (
@@ -361,6 +406,8 @@ function DomainPanel({
   activeTiers,
   colourMode,
   movingOnly,
+  activeDg,
+  onDgClick,
   query,
 }: {
   branch: DomainBranch;
@@ -371,6 +418,8 @@ function DomainPanel({
   activeTiers: Set<Tier>;
   colourMode: ColourMode;
   movingOnly: boolean;
+  activeDg: string | null;
+  onDgClick: (dg: string) => void;
   query: string;
 }) {
   const { topLevel, childrenOf, visibleCount } = useMemo(() => {
@@ -396,13 +445,14 @@ function DomainPanel({
       const movingOk = !movingOnly || STATUS[t.id] || kids.some(k => STATUS[k.id]);
       const ringTierOk =
         matchesRingTier(t, activeRings, activeTiers) || kids.some(k => matchesRingTier(k, activeRings, activeTiers));
-      return textOk && movingOk && ringTierOk;
+      const dgOk = matchesDg(t, activeDg) || kids.some(k => matchesDg(k, activeDg));
+      return textOk && movingOk && ringTierOk && dgOk;
     });
     return { topLevel: visible.sort(sortInstruments), childrenOf, visibleCount: visible.length };
-  }, [branch, query, movingOnly, activeRings, activeTiers]);
+  }, [branch, query, movingOnly, activeRings, activeTiers, activeDg]);
 
   const stats = useMemo(() => branchStats(branch, activeLenses), [branch, activeLenses]);
-  const filtering = Boolean(query) || movingOnly || activeRings.size > 0 || activeTiers.size > 0;
+  const filtering = Boolean(query) || movingOnly || activeRings.size > 0 || activeTiers.size > 0 || Boolean(activeDg);
   if (filtering && visibleCount === 0) return null;
 
   return (
@@ -464,7 +514,7 @@ function DomainPanel({
           )}
           <div className="mt-1.5 space-y-1.5">
             {topLevel.map(i => (
-              <InstrumentRow key={i.id} i={i} childrenOf={childrenOf} activeLenses={activeLenses} colourMode={colourMode} />
+              <InstrumentRow key={i.id} i={i} childrenOf={childrenOf} activeLenses={activeLenses} colourMode={colourMode} activeDg={activeDg} onDgClick={onDgClick} />
             ))}
           </div>
         </div>
@@ -547,6 +597,16 @@ function Legend({ open, onToggle }: { open: boolean; onToggle: () => void }) {
           </div>
           <div className="mt-4">
             <p className="text-[11px] font-bold uppercase tracking-wide text-[#3D5265] dark:text-[var(--mh-fg)]">
+              Lead Commission service
+              <span className="ml-2 font-normal normal-case tracking-normal text-[#808285] dark:text-[var(--mh-muted)]">
+                Each act carries the DG(s) that lead the file (bold = chef de file, up to two co-leads; &ldquo;—&rdquo; = primary
+                law, owned by the Member States). Click a DG chip to filter the tree to that service&rsquo;s files — useful for
+                targeting advice at the right part of the Commission. AI-drafted attribution, pending review.
+              </span>
+            </p>
+          </div>
+          <div className="mt-4">
+            <p className="text-[11px] font-bold uppercase tracking-wide text-[#3D5265] dark:text-[var(--mh-fg)]">
               Legislative status
               <span className="ml-2 font-normal normal-case tracking-normal text-[#808285] dark:text-[var(--mh-muted)]">
                 Where the 2025-26 agenda is moving an instrument; “?” marks unconfirmed entries.
@@ -581,6 +641,7 @@ export default function PolicyHierarchyPage() {
   const [activeTiers, setActiveTiers] = useState<Set<Tier>>(new Set());
   const [colourMode, setColourMode] = useState<ColourMode>('lens');
   const [movingOnly, setMovingOnly] = useState(false);
+  const [activeDg, setActiveDg] = useState<string | null>(null);
   const [openDomains, setOpenDomains] = useState<Set<string>>(new Set());
   const [machineryOpen, setMachineryOpen] = useState(false);
   const [legendOpen, setLegendOpen] = useState(true);
@@ -603,6 +664,8 @@ export default function PolicyHierarchyPage() {
     if (tiers.length) setActiveTiers(new Set(tiers));
     if (p.get('view') === 'mandate') setColourMode('mandate');
     if (p.get('moving') === '1') setMovingOnly(true);
+    const dg = p.get('dg');
+    if (dg && DG_META[dg]) setActiveDg(dg);
     const q = p.get('q');
     if (q) setRawQuery(q);
     const open = (p.get('open') ?? '').split(',').filter(id => DOMAIN_BRANCHES.some(b => b.id === id));
@@ -625,11 +688,12 @@ export default function PolicyHierarchyPage() {
     set('tiers', TIER_ORDER.filter(t => activeTiers.has(t)).join(','));
     set('view', colourMode === 'mandate' ? 'mandate' : '');
     set('moving', movingOnly ? '1' : '');
+    set('dg', activeDg ?? '');
     set('q', query);
     set('open', DOMAIN_BRANCHES.filter(b => openDomains.has(b.id)).map(b => b.id).join(','));
     const qs = p.toString();
     window.history.replaceState(null, '', `${qs ? `?${qs}` : window.location.pathname}${window.location.hash}`);
-  }, [activeLenses, activeRings, activeTiers, colourMode, movingOnly, query, openDomains]);
+  }, [activeLenses, activeRings, activeTiers, colourMode, movingOnly, activeDg, query, openDomains]);
 
   const totals = useMemo(() => {
     const all = DOMAIN_BRANCHES.flatMap(b => b.instruments);
@@ -672,6 +736,8 @@ export default function PolicyHierarchyPage() {
     });
   }
 
+  const toggleDg = (dg: string) => setActiveDg(prev => (prev === dg ? null : dg));
+
   /** One-click Board view: mandate colouring, no lens filter, all branches open. */
   function applyBoardView() {
     setColourMode('mandate');
@@ -691,6 +757,7 @@ export default function PolicyHierarchyPage() {
     if (activeRings.size) filters.push(`mandate rings: ${[...activeRings].join(', ')}`);
     if (activeTiers.size) filters.push(`tiers: ${[...activeTiers].join(', ')}`);
     if (movingOnly) filters.push('moving now only');
+    if (activeDg) filters.push(`DG: ${activeDg}`);
     if (query) filters.push(`search: "${query}"`);
     parts.push(`_Filters: ${filters.length ? filters.join(' · ') : 'none (full register)'}. AI-compiled working data — verify before citing._`, '');
     for (const b of DOMAIN_BRANCHES) {
@@ -699,6 +766,7 @@ export default function PolicyHierarchyPage() {
           matchesQuery(i, query) &&
           matchesLenses(i, activeLenses) &&
           matchesRingTier(i, activeRings, activeTiers) &&
+          matchesDg(i, activeDg) &&
           (!movingOnly || STATUS[i.id]),
       );
       if (rows.length === 0) continue;
@@ -707,7 +775,10 @@ export default function PolicyHierarchyPage() {
         const st = STATUS[i.id];
         const m = MANDATE[i.id];
         const recs = RECOMMENDATIONS[i.id] ?? [];
-        parts.push(`- **${i.title}** (${i.officialRef}, ${i.year}) — [EUR-Lex](${i.eurlexUrl})${i.confident ? '' : ' ⚠ unverified'}`);
+        const dgs = LEAD_DGS[i.id] ?? [];
+        parts.push(
+          `- **${i.title}** (${i.officialRef}, ${i.year})${dgs.length && dgs[0] !== 'NONE' ? ` · ${dgs.join('/')}` : ''} — [EUR-Lex](${i.eurlexUrl})${i.confident ? '' : ' ⚠ unverified'}`,
+        );
         parts.push(`  ${i.summary}`);
         if (m) parts.push(`  _Ring: ${m.relevance} — ${m.hook}_`);
         if (st) parts.push(`  _Status: ${STATUS_META[st.status].label}${st.confident ? '' : ' (unconfirmed)'} — ${st.note}${st.sourceRef ? ` (${st.sourceRef})` : ''}_`);
@@ -792,6 +863,15 @@ export default function PolicyHierarchyPage() {
             >
               Moving now · {totals.moving}
             </button>
+            {activeDg && (
+              <button
+                onClick={() => setActiveDg(null)}
+                className="rounded-full border border-[#3D5265] bg-[#3D5265] text-white px-2.5 py-1 text-[12px] font-semibold"
+                title={`Filtered to files led or co-led by ${DG_META[activeDg]} — click to clear`}
+              >
+                {activeDg} ✕
+              </button>
+            )}
             <span className="ml-auto flex items-center gap-2">
               <input
                 value={rawQuery}
@@ -978,7 +1058,7 @@ export default function PolicyHierarchyPage() {
                 {machineryOpen && (
                   <div className="mt-2 space-y-1.5">
                     {machinery.map(i => (
-                      <InstrumentRow key={i.id} i={i} childrenOf={machineryChildren} activeLenses={activeLenses} colourMode={colourMode} />
+                      <InstrumentRow key={i.id} i={i} childrenOf={machineryChildren} activeLenses={activeLenses} colourMode={colourMode} activeDg={activeDg} onDgClick={toggleDg} />
                     ))}
                   </div>
                 )}
@@ -1016,6 +1096,8 @@ export default function PolicyHierarchyPage() {
                 activeTiers={activeTiers}
                 colourMode={colourMode}
                 movingOnly={movingOnly}
+                activeDg={activeDg}
+                onDgClick={toggleDg}
                 query={query}
               />
             ))}

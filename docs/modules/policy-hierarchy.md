@@ -136,6 +136,14 @@ view, and — if the Board has already issued a recommendation on that file —
 a row of **"Board advice"** chips linking into
 [M·08 Recommendations](recommendations.md).
 
+Every instrument also carries its **lead Commission service** (chef de
+file) as one to three DG chips — bold = lead, e.g. CBAM is CLIMA/TAXUD,
+the Foreign Subsidies Regulation COMP/TRADE, primary law "—" (owned by the
+Member States, not a DG). Clicking a chip filters the whole tree to that
+service's files, so advice can be aimed at the part of the Commission that
+actually holds the pen. The attribution (`dgs.generated.ts`) is AI-drafted
+against the 2024-2029 Commission structure and pending Secretariat review.
+
 ## Export and shareable state
 
 - **Export CSV** dumps the full register — every branch, every instrument,
