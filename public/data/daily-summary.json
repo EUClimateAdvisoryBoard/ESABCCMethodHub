@@ -1,6 +1,6 @@
 {
   "date": "2026-07-31",
-  "generatedAt": "2026-07-31T12:59:38.855Z",
+  "generatedAt": "2026-07-31T18:22:23.838Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 31 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -12,19 +12,19 @@
     },
     {
       "headline": "Wildfire near Sizewell nuclear plant causes ‘total devastation’ to Suffolk landscape",
-      "summary": "&lt;p&gt;More than 100 firefighters remain at scene after Dunwich Heath blaze spread across 150 hectares and forced evacuations&lt;/p&gt;&lt;p&gt;A wildfire near Britain’s biggest nuclear power station has caused “total devastation” to one of the UK’s most important landscapes, experts have warned, as fire crews said the situation was “stabilising”.&lt;/p&gt;&lt;p&gt;More than 100 firefighters have been battling &lt;a href=\"https://www.theguardian.com/uk-news/2026/jul/30/major-incident-fire-suff",
+      "summary": "&lt;p&gt;Emergency crews say situation remains ‘dynamic’ as more than 100 firefighters battle Dunwich Heath blaze&lt;/p&gt;&lt;p&gt;A wildfire near Britain’s biggest nuclear power station has caused “total devastation” to one of the UK’s most important landscapes, as fire crews said the situation remained “dynamic”.&lt;/p&gt;&lt;p&gt;More than 100 firefighters have been battling &lt;a href=\"https://www.theguardian.com/uk-news/2026/jul/30/major-incident-fire-suffolk-coast-dunwich-heath-leiston\"&g",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Factcheck: No, Europe is not having its ‘quietest’ year for wildfires",
-      "summary": "In recent days, prominent climate sceptics and rightwing commentators have shared charts on social media incorrectly implying that Europe is&#8230; The post Factcheck: No, Europe is not having its ‘quietest’ year for wildfires appeared first on Carbon Brief.",
+      "headline": "UN chief warns climate crisis &#8220;in overdrive&#8221; as El Niño threatens to fuel the fire",
+      "summary": "Top politicians and scientists blamed the deadly fires on the climate crisis and said it should inspire more emissions reductions and adaptation measures The post UN chief warns climate crisis &#8220;in overdrive&#8221; as El Niño threatens to fuel the fire appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Uefa to boycott World Cups if Fifa plans approved",
-      "summary": "Uefa says \"the World Cup is not for sale\" after its 55 member associations vote to boycott future tournaments if Fifa and its president, Gianni Infantino, do not back down on their investment proposals.",
+      "headline": "FIFA plans: Infantino under pressure as senior advisor quits",
+      "summary": "After regional football federations condemned FIFA plans for private investment, Carlos Cordeiro, senior advisor to FIFA President Gianni Infantino, tendered his resignation.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -60,8 +60,16 @@
           "title": "Wildfire near Sizewell nuclear plant causes ‘total devastation’ to Suffolk landscape",
           "link": "https://www.theguardian.com/uk-news/2026/jul/31/suffolk-wildfire-sizewell-nuclear-plant-dunwich-heath",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;More than 100 firefighters remain at scene after Dunwich Heath blaze spread across 150 hectares and forced evacuations&lt;/p&gt;&lt;p&gt;A wildfire near Britain’s biggest nuclear power station has caused “total devastation” to one of the UK’s most important landscapes, experts have warned, as fire crews said the situation was “stabilising”.&lt;/p&gt;&lt;p&gt;More than 100 firefighters have been battling &lt;a href=\"https://www.theguardian.com/uk-news/2026/jul/30/major-incident-fire-suff",
-          "published": "2026-07-31T12:23:57.000Z",
+          "description": "&lt;p&gt;Emergency crews say situation remains ‘dynamic’ as more than 100 firefighters battle Dunwich Heath blaze&lt;/p&gt;&lt;p&gt;A wildfire near Britain’s biggest nuclear power station has caused “total devastation” to one of the UK’s most important landscapes, as fire crews said the situation remained “dynamic”.&lt;/p&gt;&lt;p&gt;More than 100 firefighters have been battling &lt;a href=\"https://www.theguardian.com/uk-news/2026/jul/30/major-incident-fire-suffolk-coast-dunwich-heath-leiston\"&g",
+          "published": "2026-07-31T15:13:37.000Z",
+          "score": 7
+        },
+        {
+          "title": "Tell us: have you installed renewable energy sources in your home?",
+          "link": "https://www.theguardian.com/environment/2026/jul/31/tell-us-have-you-installed-renewable-energy-sources-in-your-home",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;We would like to hear from people who have recently installed renewable energy sources in their home, or considered doing so&lt;/p&gt;&lt;p&gt;Great Britain has recorded&lt;a href=\"https://www.theguardian.com/environment/2026/jul/31/new-solar-panels-great-britain-15-year-high\"&gt; more new solar power installations&lt;/a&gt; in the first half of this year than in any six-month period since 2011, with most of the new panels going onto household rooftops rather than large-scale solar farm",
+          "published": "2026-07-31T14:52:37.000Z",
           "score": 7
         },
         {
@@ -81,20 +89,12 @@
           "score": 7
         },
         {
-          "title": "Danube's record low levels force shutdown of Hungary's only nuclear plant",
-          "link": "https://www.bbc.co.uk/news/articles/cn0nqv05g0do?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Romania, Bulgaria and Serbia are also grappling with the effects of a series of prolonged heatwaves and low rainfall.",
-          "published": "2026-07-30T17:55:24.000Z",
+          "title": "Nuclear firm Westinghouse confidentially files for US IPO - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUi05dGwzYTU3U0N1YWJHZ3JlSVozMUF5d0FSV2VYWjQ5eUt3YXVwQjVnSlVtSm1KbC0ycHlGYk1TNlFMa2FwZWl4bzZkbnMwNEZvZkVrbTNVWlNQb3JQR0Y3OHFNZF9XWWN5a2h5OXZXU3dic25QYmVtS0x2U1doeFR1M09TeUtWdjZSWXozd21DaEd5MV82Sl9lc2ZaMXFaaWJj?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNUi05dGwzYTU3U0N1YWJHZ3JlSVozMUF5d0FSV2VYWjQ5eUt3YXVwQjVnSlVtSm1KbC0ycHlGYk1TNlFMa2FwZWl4bzZkbnMwNEZvZkVrbTNVWlNQb3JQR0Y3OHFNZF9XWWN5a2h5OXZXU3dic25QYmVtS0x2U1doeFR1M09TeUtWdjZSWXozd21DaEd5MV82Sl9lc2ZaMXFaaWJj?oc=5\" target=\"_blank\"&gt;Nuclear firm Westinghouse confidentially files for US IPO&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-31T16:35:10.000Z",
           "score": 7
-        },
-        {
-          "title": "Burnham promises ‘pragmatic’ approach to North Sea oil and gas",
-          "link": "https://www.theguardian.com/environment/2026/jul/30/burnham-promises-pragmatic-approach-to-north-sea-oil-and-gas",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;PM tells reporters the government cannot ignore the energy resource ‘when people are struggling’&lt;/p&gt;&lt;p&gt;Andy Burnham has said he will take a “pragmatic” approach to oil and gas drilling in the North Sea, saying the government could not ignore the potential energy resources it holds.&lt;/p&gt;&lt;p&gt;The prime minister’s comments came in response to a question about his conversation with Donald Trump on his first day in No 10. Trump had said Burnham told him he would “open up",
-          "published": "2026-07-30T17:27:14.000Z",
-          "score": 4
         }
       ]
     },
@@ -103,19 +103,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Factcheck: No, Europe is not having its ‘quietest’ year for wildfires",
-          "link": "https://www.carbonbrief.org/factcheck-no-europe-is-not-having-its-quietest-year-for-wildfires",
-          "source": "Carbon Brief",
-          "description": "In recent days, prominent climate sceptics and rightwing commentators have shared charts on social media incorrectly implying that Europe is&#8230; The post Factcheck: No, Europe is not having its ‘quietest’ year for wildfires appeared first on Carbon Brief.",
-          "published": "2026-07-30T14:51:00.000Z",
-          "score": 16
-        },
-        {
-          "title": "Correcting climate ‘misperceptions’ may not boost climate action",
-          "link": "https://www.carbonbrief.org/correcting-climate-misperceptions-may-not-boost-climate-action",
-          "source": "Carbon Brief",
-          "description": "The general public often underestimate support for climate action, while overestimating the real-world actions taken by other people to address&#8230; The post Correcting climate ‘misperceptions’ may not boost climate action appeared first on Carbon Brief.",
-          "published": "2026-07-30T15:30:11.000Z",
+          "title": "UN chief warns climate crisis &#8220;in overdrive&#8221; as El Niño threatens to fuel the fire",
+          "link": "https://www.climatechangenews.com/2026/07/31/un-chief-warns-climate-crisis-in-overdrive-as-el-nino-threatens-to-fuel-the-fire/",
+          "source": "Climate Home News",
+          "description": "Top politicians and scientists blamed the deadly fires on the climate crisis and said it should inspire more emissions reductions and adaptation measures The post UN chief warns climate crisis &#8220;in overdrive&#8221; as El Niño threatens to fuel the fire appeared first on Climate Home News.",
+          "published": "2026-07-31T16:51:00.000Z",
           "score": 13
         },
         {
@@ -135,6 +127,14 @@
           "score": 13
         },
         {
+          "title": "Hundreds escape Greek wildfire by sea as blazes continue across Europe",
+          "link": "https://www.bbc.co.uk/news/articles/c0kmzx8vpv4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Around 500 people, mostly tourists, are evacuated by boat from Agios Vasileios after becoming trapped.",
+          "published": "2026-07-31T14:26:07.000Z",
+          "score": 13
+        },
+        {
           "title": "Record low water levels across Europe reveal mammoth skeletons and forgotten shipwrecks – video",
           "link": "https://www.theguardian.com/environment/video/2026/jul/30/europe-record-low-water-levels",
           "source": "The Guardian - Climate",
@@ -148,14 +148,6 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
-        {
-          "title": "Uefa to boycott World Cups if Fifa plans approved",
-          "link": "https://www.bbc.co.uk/sport/football/articles/c5y67zrrdddo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Uefa says \"the World Cup is not for sale\" after its 55 member associations vote to boycott future tournaments if Fifa and its president, Gianni Infantino, do not back down on their investment proposals.",
-          "published": "2026-07-30T16:47:40.000Z",
-          "score": 6
-        },
         {
           "title": "FIFA plans: Infantino under pressure as senior advisor quits",
           "link": "https://www.dw.com/en/fifa-plans-infantino-under-pressure-as-senior-advisor-quits/a-78171084?maca=en-rss-en-all-1573-xml-mrss",
@@ -171,6 +163,22 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
+          "title": "UPDATE — Italy temporarily suspends Schengen agreement with Spain over Ceuta breach",
+          "link": "https://www.dw.com/en/update-italy-temporarily-suspends-schengen-agreement-with-spain-over-ceuta-breach/live-78191601?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Spanish police and troops are trying to shore up Ceuta&#039;s border to Morocco after Thursday&#039;s mass breach. Prime Minister Pedro Sanchez is also inbound, as Spain&#039;s neighbors implement temporary border checks. DW has more.",
+          "published": "2026-07-31T11:47:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Spain's PM blames traffickers after 60,000 migrants reach Ceuta from Morocco",
+          "link": "https://www.bbc.co.uk/news/articles/cx2kp639yx4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Spain said most of the migrants had returned to Morocco by Friday evening, as Italy suspended its Schengen agreement on free movement with Spain.",
+          "published": "2026-07-31T17:03:47.000Z",
+          "score": 4
+        },
+        {
           "title": "Small insects, big damage: The global ant trade is booming",
           "link": "https://www.dw.com/en/small-insects-big-damage-the-global-ant-trade-is-booming/a-78186729?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -185,11 +193,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Scenes from Europe's summer of wildfires - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxONWdmWllYbTFUbUQ0aE9XS2NyM1ZJQklRTWh5ZXhJeDBZaDVjNUdkNGtHVHVhallOcFI5Y3prLWdKUG56MDFyTW53VVg2T0tET1dyeFZFVWFCSlBQZ21EVHFwc3FlV1FSUGVCQk42TUlIQ2VNVFFfbkJGMUFqY0ppRmdR?oc=5",
+          "title": "EU in talks with OpenAI, Anthropic after rogue AI agent hacks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaFU0cGsyYkR2Q3o5TnhiOW1td0YxUFhHbzFYaHd4WlNsUkFXYTJvTkR0a3hxR252aGZUelV5eENtdXhFZlpfNlNCSjBxbTRXaHpTSGZHWWdjSllxRTdxb0dsMTVLaFJabWpRbjhYQmRMeTY0Z3JmYm1wYjk4Z3N2WkF0OUpjLTRfbW9qOWpBcnFKdThPZzd4T3B6a1pkdkdZdW5BWnI1TFc5QjZnRTZ4aWFDTzdITE9JVm9iMnpUOA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxONWdmWllYbTFUbUQ0aE9XS2NyM1ZJQklRTWh5ZXhJeDBZaDVjNUdkNGtHVHVhallOcFI5Y3prLWdKUG56MDFyTW53VVg2T0tET1dyeFZFVWFCSlBQZ21EVHFwc3FlV1FSUGVCQk42TUlIQ2VNVFFfbkJGMUFqY0ppRmdR?oc=5\" target=\"_blank\"&gt;Scenes from Europe's summer of wildfires&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-30T13:45:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQaFU0cGsyYkR2Q3o5TnhiOW1td0YxUFhHbzFYaHd4WlNsUkFXYTJvTkR0a3hxR252aGZUelV5eENtdXhFZlpfNlNCSjBxbTRXaHpTSGZHWWdjSllxRTdxb0dsMTVLaFJabWpRbjhYQmRMeTY0Z3JmYm1wYjk4Z3N2WkF0OUpjLTRfbW9qOWpBcnFKdThPZzd4T3B6a1pkdkdZdW5BWnI1TFc5QjZnRTZ4aWFDTzdITE9JVm9iMnpUOA?oc=5\" target=\"_blank\"&gt;EU in talks with OpenAI, Anthropic after rogue AI agent hacks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-31T17:10:16.000Z",
           "score": 8
         },
         {
@@ -228,9 +236,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 423,
-    "articlesLast24h": 173,
-    "afterDedup": 162,
+    "totalArticlesScanned": 424,
+    "articlesLast24h": 158,
+    "afterDedup": 153,
     "feedsQueried": 19
   }
 }
