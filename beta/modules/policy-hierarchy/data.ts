@@ -321,3 +321,4 @@ export { MANDATE, STATUS } from './annotations.generated';
 export { NAVIGATOR_BRIDGE, SECTOR_BRIDGE } from './bridges.generated';
 export { RECOMMENDATIONS } from './recommendations.generated';
 export { LEAD_DGS } from './dgs.generated';
+export { LENS_RATIONALES } from './lens-rationales.generated';
