@@ -1,6 +1,6 @@
 {
   "date": "2026-08-01",
-  "generatedAt": "2026-08-01T07:29:00.643Z",
+  "generatedAt": "2026-08-01T12:03:27.047Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 1 August 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Fifa scraps controversial World Cup investment plan",
-      "summary": "Football's world governing body Fifa abandons plans to sell off stakes in its major competitions after widespread opposition to president Gianni Infantino's proposal.",
+      "headline": "Watch: Why Fifa dropped plans to sell stakes in the World Cup",
+      "summary": "The BBC's Shaimaa Khalil explains why Gianni Infantino has backed down on his controversial investment proposal.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -50,14 +50,6 @@
           "score": 7
         },
         {
-          "title": "New solar panels in Great Britain at 15-year high as fossil fuel costs soar",
-          "link": "https://www.theguardian.com/environment/2026/jul/31/new-solar-panels-great-britain-15-year-high",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Boom in solar farms and home installations in first half of 2026 began shortly after start of US-Israel war against Iran&lt;/p&gt;&lt;p&gt;Great Britain has recorded more new solar power installations in the first half of this year than in any six-month period since 2011, as households turn to rooftop panels to help cut their energy bills.&lt;/p&gt;&lt;p&gt;An analysis of the government’s official figures shows that Great Britain added 142,536 solar installations in the first six months",
-          "published": "2026-07-31T09:00:09.000Z",
-          "score": 7
-        },
-        {
           "title": "Nuclear firm Westinghouse confidentially files for US IPO - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUi05dGwzYTU3U0N1YWJHZ3JlSVozMUF5d0FSV2VYWjQ5eUt3YXVwQjVnSlVtSm1KbC0ycHlGYk1TNlFMa2FwZWl4bzZkbnMwNEZvZkVrbTNVWlNQb3JQR0Y3OHFNZF9XWWN5a2h5OXZXU3dic25QYmVtS0x2U1doeFR1M09TeUtWdjZSWXozd21DaEd5MV82Sl9lc2ZaMXFaaWJj?oc=5",
           "source": "Reuters World (via Google News)",
@@ -71,6 +63,14 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQcXFnemRGaWFpV3lfb2VYX1JWTkxKRndHU1prTTUzLWpuRGlpcDVucEFYeXRVME1kZmhLV0lJdjlnNk41c01LMzNUU0ZPVENYdjVMUDQ1bFAxZy1sdUJ1em9MZld0YXdFR2dxejJsZUliZWNzTkJGVmpxSWxYVkJZd0FLTXZkcnZVeGxSUFhsUF8zbnUtUTFsMGs4QUtCUTN2Y1dpYUI2WmtBTUloV2NhaTNiSmJGTmxvbGlrR1Vn?oc=5\" target=\"_blank\"&gt;Yemen's Houthis deny plans to impose fees on ships sailing through Red Sea&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-31T23:40:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Breakingviews - Zijin's Canada gold rush crosses China's red line - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSjJpMEhSOTB5WjBwcnBJbklIbkdDX0NNSmNRcjFaRGFFX2pUcm5sVWZHX29MVTdVWVYyamRYSnQzSGNrODFBeHd4VzRaS3hiZ1hBSXFGMXdCRmtFVGp2X3dHb05NSGZEd29fX0gzWUZjcEZ6cWxDbDZXVXZxcmU2ZkRxM2oxcTBGNmZxbktjQnQ3bWFYSWlLQVJUcHZBbk84OTZXLWtVNWp5SmdR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNSjJpMEhSOTB5WjBwcnBJbklIbkdDX0NNSmNRcjFaRGFFX2pUcm5sVWZHX29MVTdVWVYyamRYSnQzSGNrODFBeHd4VzRaS3hiZ1hBSXFGMXdCRmtFVGp2X3dHb05NSGZEd29fX0gzWUZjcEZ6cWxDbDZXVXZxcmU2ZkRxM2oxcTBGNmZxbktjQnQ3bWFYSWlLQVJUcHZBbk84OTZXLWtVNWp5SmdR?oc=5\" target=\"_blank\"&gt;Breakingviews - Zijin's Canada gold rush crosses China's red line&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-31T16:31:16.000Z",
           "score": 7
         }
       ]
@@ -112,12 +112,12 @@
           "score": 9
         },
         {
-          "title": "Daughter of British couple killed in Spanish wildfire rejects claim they ignored order to leave",
-          "link": "https://www.theguardian.com/world/2026/jul/31/spain-wildfire-bedar-british-couple-pete-fran-gillam-killed",
+          "title": "India’s monsoon rains in danger as UN chief warns planet is ‘on fire’",
+          "link": "https://www.theguardian.com/environment/2026/jul/31/india-monsoon-el-nino-hot-dry-conditions-meteorologists",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Exclusive: Danielle Kirton calls on Ed Miliband to help her get answers about why evacuation order came too late&lt;/p&gt;&lt;p&gt;The bereaved daughter of a British couple who died in a Spanish wildfire is calling on the foreign secretary, Ed Miliband, to get answers from Spain’s government about why her parents were not told to evacuate until it was too late.&lt;/p&gt;&lt;p&gt;Severe wildfires have &lt;a href=\"https://www.theguardian.com/world/2026/jul/30/europe-burns-france-spain-vis",
-          "published": "2026-07-31T16:36:26.000Z",
-          "score": 9
+          "description": "&lt;p&gt;António Guterres says strengthening El Niño will help push the world’s climate crisis into ‘uncharted territory’&lt;/p&gt;&lt;p&gt;India’s monsoon is in danger and hotter, drier conditions are forecast across much of the world as a stronger El Niño weather system is taking hold, weather experts have warned.&lt;/p&gt;&lt;p&gt;António Guterres, the UN secretary general, said the strengthening El Niño was “adding fuel to a planet already on fire” and pushing the world into “uncharted terri",
+          "published": "2026-07-31T17:37:32.000Z",
+          "score": 4
         }
       ]
     },
@@ -126,28 +126,12 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Fifa scraps controversial World Cup investment plan",
-          "link": "https://www.bbc.co.uk/sport/football/articles/czekr6kn58po?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Football's world governing body Fifa abandons plans to sell off stakes in its major competitions after widespread opposition to president Gianni Infantino's proposal.",
-          "published": "2026-08-01T05:42:31.000Z",
-          "score": 6
-        },
-        {
           "title": "Watch: Why Fifa dropped plans to sell stakes in the World Cup",
           "link": "https://www.bbc.co.uk/news/videos/cvgj0vldr1mo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The BBC's Shaimaa Khalil explains why Gianni Infantino has backed down on his controversial investment proposal.",
           "published": "2026-08-01T02:44:09.000Z",
           "score": 6
-        },
-        {
-          "title": "FIFA plans: Infantino under pressure as senior advisor quits",
-          "link": "https://www.dw.com/en/fifa-plans-infantino-under-pressure-as-senior-advisor-quits/a-78171084?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "After regional football federations condemned FIFA plans for private investment, Carlos Cordeiro, senior advisor to FIFA President Gianni Infantino, tendered his resignation.",
-          "published": "2026-07-31T12:00:00.000Z",
-          "score": 2
         }
       ]
     },
@@ -156,12 +140,28 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Spain's PM blames traffickers after 60,000 migrants reach Ceuta from Morocco",
-          "link": "https://www.bbc.co.uk/news/articles/cx2kp639yx4o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "France says Gironde ‘megafire’ is contained, as wildfires continue to burn in Greece and Spain – Europe live",
+          "link": "https://www.theguardian.com/world/live/2026/aug/01/ukraine-russia-zelenskyy-spain-france-wildfires-climate-heatwave-ceuta-morocco",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Blaze in south-western region ‘is no longer spreading’, but others have reignited or have been fuelled by strong winds&lt;/p&gt;&lt;p&gt;Back to Ukraine, where &lt;strong&gt;nine people were killed in Kyiv&lt;/strong&gt; this morning from a Russian missile and drone attack.&lt;/p&gt;&lt;p&gt;Damage was reported in seven districts of the capital, according to Ukrainian officials, with Ukrainian president &lt;strong&gt;Volodymyr Zelenskyy&lt;/strong&gt; saying fires broke out across the c",
+          "published": "2026-08-01T11:53:52.000Z",
+          "score": 8
+        },
+        {
+          "title": "Spain attacks 'selfish' response of some EU countries to Ceuta migrant crossings",
+          "link": "https://www.bbc.co.uk/news/articles/cx2v91xn1z9o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Spain said most had returned to Morocco by Friday evening, as Italy suspended its Schengen agreement on free movement with Madrid.",
-          "published": "2026-07-31T17:03:47.000Z",
-          "score": 4
+          "description": "Italy has temporarily suspended the Schengen arrangement with Spain as Prime Minister Giorgia Meloni called scenes in Ceuta \"shocking\".",
+          "published": "2026-08-01T11:00:05.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ceuta: Spain demands EU meeting, blasts &#039;selfish&#039; response",
+          "link": "https://www.dw.com/en/ceuta-spain-demands-eu-meeting-blasts-selfish-response/live-78191601?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "After Italy temporarily suspended the Schengen deal with Spain, Spanish PM Pedro Sanchez said his county was being &quot;attacked&quot; from within the EU, stressing that Madrid fully restored control over its border. DW has more.",
+          "published": "2026-08-01T08:54:00.000Z",
+          "score": 8
         },
         {
           "title": "Small insects, big damage: The global ant trade is booming",
@@ -169,14 +169,6 @@
           "source": "Deutsche Welle World",
           "description": "Legal or not, the trade in African ants bound for Europe is booming. What do hobbyists find appealing about these insects, and what risks does the trade pose to ecosystems, including power outages?",
           "published": "2026-07-31T12:20:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "Ceuta: Spain says most migrants have returned to Morocco",
-          "link": "https://www.dw.com/en/ceuta-spain-says-most-migrants-have-returned-to-morocco/live-78191601?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Spain&#039;s government said that an estimated 48,300 migrants were back in Morocco on Friday evening. Italy has temporarily suspended its Schengen free-travel pact with Spain. DW has more.",
-          "published": "2026-07-31T11:47:00.000Z",
           "score": 4
         }
       ]
@@ -218,20 +210,20 @@
           "score": 7
         },
         {
-          "title": "Infantino's senior advisor Cordeiro resigns following proposal to sell FIFA stake - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPOC0wOF9qV0lDYTRvWUQtdU1YdXJiVExGX1FsWXlESTlDS2FNN3lFYlFfU0lMQUN2QlNxbU1nOS1ZYzcxd3RSN1o4V1RRQkdhd3FTRnVGaHF6QTk4OEdNaXZpT3p0MWxvYjlGbWE0NGgtVjltNUl5azhMdVBIRWNlamZyY0hTZzBjcHN5SkdjMmt0TURmbkxJNllEWDhwR1N1TnlCdmNuQUp2ZW1qVVl4OGRNclpZMnNYbVV2ZTVmQUFCeTNmUlE?oc=5",
+          "title": "US Senate Judiciary Committee to consider Blanche nomination for attorney general on Tuesday - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQcl8wMUF6ZEl0cUlubDd3ZmtpN0tMNDB1TTBXc0dKLVdLV3BwZVJfWTloamUyT3FCOFp5ZmNzcnFFNjlySnhiLXk0ZXFNVE1ReWQzN3VsMWZFNUdTMkhTNkRVUW9pNllMN1MwMW85eFdubTE3MUVJZ1BWZ01jYzlkaE1jNEJMNnhnTFVuMWZENnVLWDZNNWpOYUdBLTEyNEdaQ1BqSDVUeFRUZVpUV1VzZmtiSlppams?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPOC0wOF9qV0lDYTRvWUQtdU1YdXJiVExGX1FsWXlESTlDS2FNN3lFYlFfU0lMQUN2QlNxbU1nOS1ZYzcxd3RSN1o4V1RRQkdhd3FTRnVGaHF6QTk4OEdNaXZpT3p0MWxvYjlGbWE0NGgtVjltNUl5azhMdVBIRWNlamZyY0hTZzBjcHN5SkdjMmt0TURmbkxJNllEWDhwR1N1TnlCdmNuQUp2ZW1qVVl4OGRNclpZMnNYbVV2ZTVmQUFCeTNmUlE?oc=5\" target=\"_blank\"&gt;Infantino's senior advisor Cordeiro resigns following proposal to sell FIFA stake&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-07-31T10:05:59.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQcl8wMUF6ZEl0cUlubDd3ZmtpN0tMNDB1TTBXc0dKLVdLV3BwZVJfWTloamUyT3FCOFp5ZmNzcnFFNjlySnhiLXk0ZXFNVE1ReWQzN3VsMWZFNUdTMkhTNkRVUW9pNllMN1MwMW85eFdubTE3MUVJZ1BWZ01jYzlkaE1jNEJMNnhnTFVuMWZENnVLWDZNNWpOYUdBLTEyNEdaQ1BqSDVUeFRUZVpUV1VzZmtiSlppams?oc=5\" target=\"_blank\"&gt;US Senate Judiciary Committee to consider Blanche nomination for attorney general on Tuesday&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-01T03:53:00.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 415,
-    "articlesLast24h": 159,
-    "afterDedup": 157,
+    "totalArticlesScanned": 416,
+    "articlesLast24h": 154,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
