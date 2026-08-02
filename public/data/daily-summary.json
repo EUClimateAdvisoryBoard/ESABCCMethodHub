@@ -1,12 +1,12 @@
 {
   "date": "2026-08-02",
-  "generatedAt": "2026-08-02T12:04:15.726Z",
+  "generatedAt": "2026-08-02T18:02:19.577Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 2 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Hungary to shut sole nuclear plant for first time on Sunday",
-      "summary": "Record-low water levels on the Danube forced the Paks plant offline, leaving Hungary facing a potential power crunch.",
+      "headline": "China draws 'red lines' around its economic model ahead of EU, US trade talks - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQWk1MXJvXzVGTkx2SW9Kak03MTJDSUlsYWtZREhuT1MwcjJUOWcyOFFwcXFHYlNrV1dlUUdHVG9yZk5JbFJwS1JzWWg4ZE9pY0NQWWdpSVhoT0g1ZERwVlBvTm51dklQLWlGU0UxeEF1NVJfQ1pvdnZUa1dRQ3RUU09lUE50NGJLcE4wYmNtUGNXT0xLV1BkNnlmR1p4ZTkwQ0pIRnpQUVQ3TGkyakUwRm5RRzNJZi1Id3Bv?oc=5\" target=\"_blank\"&gt;China draws 'red lines' around its economic model ahead of EU, US trade talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -34,11 +34,35 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "China draws 'red lines' around its economic model ahead of EU, US trade talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQWk1MXJvXzVGTkx2SW9Kak03MTJDSUlsYWtZREhuT1MwcjJUOWcyOFFwcXFHYlNrV1dlUUdHVG9yZk5JbFJwS1JzWWg4ZE9pY0NQWWdpSVhoT0g1ZERwVlBvTm51dklQLWlGU0UxeEF1NVJfQ1pvdnZUa1dRQ3RUU09lUE50NGJLcE4wYmNtUGNXT0xLV1BkNnlmR1p4ZTkwQ0pIRnpQUVQ3TGkyakUwRm5RRzNJZi1Id3Bv?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQWk1MXJvXzVGTkx2SW9Kak03MTJDSUlsYWtZREhuT1MwcjJUOWcyOFFwcXFHYlNrV1dlUUdHVG9yZk5JbFJwS1JzWWg4ZE9pY0NQWWdpSVhoT0g1ZERwVlBvTm51dklQLWlGU0UxeEF1NVJfQ1pvdnZUa1dRQ3RUU09lUE50NGJLcE4wYmNtUGNXT0xLV1BkNnlmR1p4ZTkwQ0pIRnpQUVQ3TGkyakUwRm5RRzNJZi1Id3Bv?oc=5\" target=\"_blank\"&gt;China draws 'red lines' around its economic model ahead of EU, US trade talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-02T17:10:37.000Z",
+          "score": 13
+        },
+        {
+          "title": "Solar powers record share of Britain’s electricity mix in July",
+          "link": "https://www.theguardian.com/environment/2026/aug/02/solar-powers-record-share-britain-electricity-july",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Farms and rooftop panels contribute 14.4% to the grid – and figures reveal a surge in new installations&lt;/p&gt;&lt;p&gt;Solar energy supplied more power to Great Britain’s grid in July than in any previous month as households turned to rooftop panels to cut their energy bills.&lt;/p&gt;&lt;p&gt;Solar farms and rooftop panels provided 14.4% of the country’s electricity after some parts of the UK recorded almost twice the average sunshine hours for the time of year.&lt;/p&gt; &lt;a href",
+          "published": "2026-08-02T15:46:27.000Z",
+          "score": 7
+        },
+        {
           "title": "Hungary to shut sole nuclear plant for first time on Sunday",
           "link": "https://www.dw.com/en/hungary-to-shut-sole-nuclear-plant-for-first-time-on-sunday/a-78205668?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Record-low water levels on the Danube forced the Paks plant offline, leaving Hungary facing a potential power crunch.",
+          "description": "Record-low water levels on the Danube forced the Paks plant offline, leaving Hungary facing a potential power crunch. In neighboring Serbia, energy production at two hydroelectric plants has also been reduced.",
           "published": "2026-08-02T02:16:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Two helicopters collide as Greece battles wildfires, Hungary shuts nuclear plant - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPU0hsUjhJMWI1WXh1VkRmYTVMdzNvcmpNeEplc3pyeHFsM0J5LU9mSzJkNk9sUXpUQ3JITERKRzlNQ004Sm9WMHplUVVyYm9UWmowQjR2ZXlscnJXc3JOMmtKTG1aWUMzNXduNENWY2Y5UFlPWEZnbUpNR1VzYV9kQjJrUGgxNXFvYnBpSVBKdlVEajBzRklYYThaWGtXb25BU0FIN0QzYlFxWmMyRVRUdnRzcHpua2xYdktsNklfQ1hpVE1zSHc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPU0hsUjhJMWI1WXh1VkRmYTVMdzNvcmpNeEplc3pyeHFsM0J5LU9mSzJkNk9sUXpUQ3JITERKRzlNQ004Sm9WMHplUVVyYm9UWmowQjR2ZXlscnJXc3JOMmtKTG1aWUMzNXduNENWY2Y5UFlPWEZnbUpNR1VzYV9kQjJrUGgxNXFvYnBpSVBKdlVEajBzRklYYThaWGtXb25BU0FIN0QzYlFxWmMyRVRUdnRzcHpua2xYdktsNklfQ1hpVE1zSHc?oc=5\" target=\"_blank\"&gt;Two helicopters collide as Greece battles wildfires, Hungary shuts nuclear plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
+          "published": "2026-08-02T16:42:51.000Z",
           "score": 7
         },
         {
@@ -48,30 +72,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNanEtQ2pYRHNXSmFyV0VzbmZnYlJaemNwZWJZYjdLNXBtbk1uMlBka3FWdGk5MGR2V1V1WUN1NkZsLUl2c1NQT2I2azNfVlpMZ3dKWFg3YVgzRkpBV3plU1BYbFlaaEtHUHhjZVFyM3BCMlNoUklaXzF4QW51YXpqOUdyaHpYUzJrVVJYYVdCUkdRV2NoeUQwdWUxalZ6TzN2YmFVal9YdjFFUGtDa3ptNQ?oc=5\" target=\"_blank\"&gt;Hungary to power down Paks nuclear plant on Sunday, PM Magyar says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-01T21:55:43.000Z",
           "score": 7
-        },
-        {
-          "title": "Hungary PM flags \"critical\" days ahead with looming nuclear shutdown - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZ3k3dmJWR3pfSnFZRFVOcE1KMXF6UkpsQUoyTk9JVVFLOW1XNGlLQXkxRlhnNXVuaTRnOElUT2paNnlneG1pYnNNMjhxZFVsR3R4czN3dFdab2w4S1hfZms5TC1tRDdpR3F3cGYzQnFvOVViWGtsdFdaQUpZZ1FvOFJiMl9QUk1raEF1M1BDZzdUM1NyZDB1Znp4OGlUZWdIMDRBeEptWlhpaU9BeTl2YkF6dDluS1VIRmc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNZ3k3dmJWR3pfSnFZRFVOcE1KMXF6UkpsQUoyTk9JVVFLOW1XNGlLQXkxRlhnNXVuaTRnOElUT2paNnlneG1pYnNNMjhxZFVsR3R4czN3dFdab2w4S1hfZms5TC1tRDdpR3F3cGYzQnFvOVViWGtsdFdaQUpZZ1FvOFJiMl9QUk1raEF1M1BDZzdUM1NyZDB1Znp4OGlUZWdIMDRBeEptWlhpaU9BeTl2YkF6dDluS1VIRmc?oc=5\" target=\"_blank\"&gt;Hungary PM flags \"critical\" days ahead with looming nuclear shutdown&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-02T10:45:44.000Z",
-          "score": 7
-        },
-        {
-          "title": "Greece battles wildfires, Hungary shuts nuclear power plant due to drought - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPU0hsUjhJMWI1WXh1VkRmYTVMdzNvcmpNeEplc3pyeHFsM0J5LU9mSzJkNk9sUXpUQ3JITERKRzlNQ004Sm9WMHplUVVyYm9UWmowQjR2ZXlscnJXc3JOMmtKTG1aWUMzNXduNENWY2Y5UFlPWEZnbUpNR1VzYV9kQjJrUGgxNXFvYnBpSVBKdlVEajBzRklYYThaWGtXb25BU0FIN0QzYlFxWmMyRVRUdnRzcHpua2xYdktsNklfQ1hpVE1zSHc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPU0hsUjhJMWI1WXh1VkRmYTVMdzNvcmpNeEplc3pyeHFsM0J5LU9mSzJkNk9sUXpUQ3JITERKRzlNQ004Sm9WMHplUVVyYm9UWmowQjR2ZXlscnJXc3JOMmtKTG1aWUMzNXduNENWY2Y5UFlPWEZnbUpNR1VzYV9kQjJrUGgxNXFvYnBpSVBKdlVEajBzRklYYThaWGtXb25BU0FIN0QzYlFxWmMyRVRUdnRzcHpua2xYdktsNklfQ1hpVE1zSHc?oc=5\" target=\"_blank\"&gt;Greece battles wildfires, Hungary shuts nuclear power plant due to drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-02T11:29:43.000Z",
-          "score": 7
-        },
-        {
-          "title": "Italy putting nearly all major cities on highest heat alert",
-          "link": "https://www.bbc.co.uk/news/articles/cr7k4gdrgljo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Some 19 major Italian cities - including Rome, Milan and Naples - are already on red alert, and by Monday all but two will be.",
-          "published": "2026-08-01T17:51:46.000Z",
-          "score": 4
         }
       ]
     },
@@ -88,6 +88,22 @@
           "score": 10
         },
         {
+          "title": "Britain could face food shortages as drought continues, farmers warn",
+          "link": "https://www.theguardian.com/environment/2026/aug/02/britain-food-shortages-drought-continues-farmers",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Farmers battle to salvage what they can of their crops as heatwave set to continue&lt;/p&gt;&lt;p&gt;Britain could face shortages of certain foods after punishing drought in parts of England, the National Farmers’ Union (NFU) has warned as a heatwave was forecast to continue into next week.&lt;/p&gt;&lt;p&gt;The UK’s Health Security Agency (UKHSA) has issued heat health alerts for eight regions of England, with temperatures set to rise above 30C in parts of the country. UKHSA said risin",
+          "published": "2026-08-02T16:54:07.000Z",
+          "score": 7
+        },
+        {
+          "title": "The ‘great net zero debate’ was anything but – so beware Coalition claims of renewables taking over ‘two Tasmanias’",
+          "link": "https://www.theguardian.com/environment/2026/aug/03/the-great-net-zero-debate-was-anything-but-so-beware-coalition-claims-of-renewables-taking-over-two-tasmanias",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;One expert described Nationals leader Matt Canavan’s claim of land used for clean energy as ‘plain wrong and plain silly’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.thegu",
+          "published": "2026-08-02T15:00:27.000Z",
+          "score": 7
+        },
+        {
           "title": "‘Climate change kills’: Pedro Sánchez speaks plain truth to Spain’s deniers",
           "link": "https://www.theguardian.com/environment/2026/aug/02/climate-change-kills-pedro-sanchez-speaks-plain-truth-to-spains-deniers",
           "source": "The Guardian - Climate",
@@ -101,22 +117,6 @@
           "source": "BBC Science & Environment",
           "description": "Research shows beavers are creating more wetland areas since being reintroduced to the wild.",
           "published": "2026-08-02T06:07:13.000Z",
-          "score": 7
-        },
-        {
-          "title": "Germany: As temperatures rise, so does climate skepticism",
-          "link": "https://www.dw.com/en/germany-as-temperatures-rise-so-does-climate-skepticism/a-78206354?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Some 98% of active climate scientists say climate change is happening, and is man-made. Nonetheless, a new study shows the number of climate-change skeptics in Germany has increased. Why is that?",
-          "published": "2026-08-02T08:44:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Reuters Climate Monitor - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1xcW1nTV9oSTFNczAyY3ZTTzZKc1RoaUVqdndJZmV5VnRaVldYYUs3bERrYjlSYWZQUnA4T0VBUzNDVEZNSllaelNQbHlsREQxVl94ODZsaEFUZ1c3b00zazAtNWEzRlFvYnZnVi1SQ2FuaHRmSVJ0dGd0VQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1xcW1nTV9oSTFNczAyY3ZTTzZKc1RoaUVqdndJZmV5VnRaVldYYUs3bERrYjlSYWZQUnA4T0VBUzNDVEZNSllaelNQbHlsREQxVl94ODZsaEFUZ1c3b00zazAtNWEzRlFvYnZnVi1SQ2FuaHRmSVJ0dGd0VQ?oc=5\" target=\"_blank\"&gt;Reuters Climate Monitor&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-02T04:41:34.000Z",
           "score": 7
         }
       ]
@@ -132,14 +132,6 @@
           "description": "Pressure is building on Gianni Infantino. Can he survive as Fifa president after the implosion of the controversial World Cup investment plan?",
           "published": "2026-08-01T22:23:20.000Z",
           "score": 2
-        },
-        {
-          "title": "Trump threatens to keep Blanche as acting attorney general, revive 'anti-weaponization' fund - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZWI0dFYtSFNFTTE1VUtUT2d0X0E3b1BiS2NqNC1OSVJTd0RxWWRzelo3OFY3dzc4TTJLYWh1cVhZcGJxNXpRUkRRNHFJSi1pQ1JVZWs1OGhrRVJ1VXhPRjVreXhyZ1J2STRDck93cnFvd0oxMm04ZGV0UWR5ZWtQY3Z4ckdabU1sRmhpNnZ6OEhNS1RybXR1cWxwaU9uQ1RQVXBuVThfWVlWeG9DdXhkMFRTUnBkRmEyVWNFWmxfME10RGk3ZFlqVXZjbw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxNZWI0dFYtSFNFTTE1VUtUT2d0X0E3b1BiS2NqNC1OSVJTd0RxWWRzelo3OFY3dzc4TTJLYWh1cVhZcGJxNXpRUkRRNHFJSi1pQ1JVZWs1OGhrRVJ1VXhPRjVreXhyZ1J2STRDck93cnFvd0oxMm04ZGV0UWR5ZWtQY3Z4ckdabU1sRmhpNnZ6OEhNS1RybXR1cWxwaU9uQ1RQVXBuVThfWVlWeG9DdXhkMFRTUnBkRmEyVWNFWmxfME10RGk3ZFlqVXZjbw?oc=5\" target=\"_blank\"&gt;Trump threatens to keep Blanche as acting attorney general, revive 'anti-weaponization' fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&",
-          "published": "2026-08-01T14:03:47.000Z",
-          "score": 2
         }
       ]
     },
@@ -148,19 +140,19 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "EU offered Spain support ‘from first moment’ of Ceuta crisis, says von der Leyen, after Sánchez hits out – Europe live",
-          "link": "https://www.theguardian.com/world/live/2026/aug/01/ukraine-russia-zelenskyy-spain-france-wildfires-climate-heatwave-ceuta-morocco",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;‘Not a single person reached mainland Spain or rest of EU,’ says European Commission president, after Spanish PM condemned ‘selfish, polarising’ reaction of some countries&lt;/p&gt;&lt;p&gt;Back to Ukraine, where &lt;strong&gt;nine people were killed in Kyiv&lt;/strong&gt; this morning from a Russian missile and drone attack.&lt;/p&gt;&lt;p&gt;Damage was reported in seven districts of the capital, according to Ukrainian officials, with Ukrainian president &lt;strong&gt;Volodymyr Zelensk",
-          "published": "2026-08-01T14:58:54.000Z",
-          "score": 8
-        },
-        {
           "title": "How Spain's migrant crisis created a political storm - whipped up by social media",
           "link": "https://www.bbc.co.uk/news/articles/c62vl925dqdo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The Ceuta crossings have shaken Europe politically, exposing divisions over the sensitive issue of migration, the BBC's Sarah Rainsford writes.",
           "published": "2026-08-02T10:32:28.000Z",
+          "score": 4
+        },
+        {
+          "title": "Small insects, big damage: The global ant trade is booming",
+          "link": "https://www.dw.com/en/small-insects-big-damage-the-global-ant-trade-is-booming/a-78186729?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Legal or not, the trade in African ants bound for Europe is booming. What do hobbyists find appealing about these insects, and what risks does the trade pose to ecosystems, including power outages?",
+          "published": "2026-08-02T14:30:00.000Z",
           "score": 4
         }
       ]
@@ -194,28 +186,28 @@
           "score": 8
         },
         {
+          "title": "Italian-led EU force boards sanctioned tanker from Russia's 'shadow fleet' in Mediterranean - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxONW5zbU8yMjdVdGc1Z0pTSGFZVUZRTDJPR2lQM3NNU2p0Ym5OcW5xSkgwbnZ5ZmNsUWRaWHgwckZSRFFPMHNWQWtkVS1wcHIwX19uUEdER3Ewd3BLS25NdnFEb29WNHd3dzVPaHJZRVBwamp6MWltM29hbXNNYTVTc2FCUmZpaWF4b0dsNUJzYnRYMHhfRWR4emdRaFBkd0tHX0ViZlZoMXBDN3FEWS1rV21kaXpqdWlHXzkxaU50SGlfaGdvZEI4LQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxONW5zbU8yMjdVdGc1Z0pTSGFZVUZRTDJPR2lQM3NNU2p0Ym5OcW5xSkgwbnZ5ZmNsUWRaWHgwckZSRFFPMHNWQWtkVS1wcHIwX19uUEdER3Ewd3BLS25NdnFEb29WNHd3dzVPaHJZRVBwamp6MWltM29hbXNNYTVTc2FCUmZpaWF4b0dsNUJzYnRYMHhfRWR4emdRaFBkd0tHX0ViZlZoMXBDN3FEWS1rV21kaXpqdWlHXzkxaU50SGlfaGdvZEI4LQ?oc=5\" target=\"_blank\"&gt;Italian-led EU force boards sanctioned tanker from Russia's 'shadow fleet' in Mediterranean&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
+          "published": "2026-08-02T16:06:14.000Z",
+          "score": 8
+        },
+        {
           "title": "Tracking Western Europe’s heatwave - Reuters",
           "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQb1JxTEllMHdPcll4UE44T2lsT2VkWV94Zmh6bDVVMmVmMEJHTHBoOFg5cVowc2RtSHR3VGoyR2tJYVFlWlNWZTlkbnNTUWJLV0JMbG5kM1FXdVU2Zmd6T0p2aDV3V0hJUjUzWm1xOTB1MHp1cG0yVm15TXpVc3RLTG1XU3R2UHE5TnJNR0N2MA?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQb1JxTEllMHdPcll4UE44T2lsT2VkWV94Zmh6bDVVMmVmMEJHTHBoOFg5cVowc2RtSHR3VGoyR2tJYVFlWlNWZTlkbnNTUWJLV0JMbG5kM1FXdVU2Zmd6T0p2aDV3V0hJUjUzWm1xOTB1MHp1cG0yVm15TXpVc3RLTG1XU3R2UHE5TnJNR0N2MA?oc=5\" target=\"_blank\"&gt;Tracking Western Europe’s heatwave&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-02T10:10:58.000Z",
+          "published": "2026-08-01T19:15:24.000Z",
           "score": 8
-        },
-        {
-          "title": "How Australia combines modern tech and Indigenous knowledge to fight wildfires",
-          "link": "https://www.bbc.co.uk/news/articles/czdmvr984yyo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "As Europe faces its worst wildfires in decades, Australia offers lessons in disaster preparedness.",
-          "published": "2026-08-01T21:03:42.000Z",
-          "score": 4
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 410,
-    "articlesLast24h": 144,
-    "afterDedup": 114,
+    "articlesLast24h": 145,
+    "afterDedup": 115,
     "feedsQueried": 19
   }
 }
