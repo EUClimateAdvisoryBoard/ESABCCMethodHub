@@ -19,7 +19,38 @@ import { getServerSupabase } from '@/lib/supabase-server';
  * All aggregation happens in-process because Supabase's JS client can't run
  * group-by queries; the volumes involved (thousands of rows per month) are
  * well within limits.
+ *
+ * Articles are fetched with keyset/offset paging (1000 rows/page) instead of
+ * a single `.limit()` so windows with more than one page of rows aren't
+ * silently under-reported. A hard safety cap of 20000 rows still applies; if
+ * it's hit, `summary.truncated` is set so the client can surface a warning.
  */
+const PAGE_SIZE = 1000;
+const HARD_CAP = 20000;
+
+type PageResult<T> = { data: T[] | null; error: { message: string } | null };
+
+/** Pages through a Supabase query via `.range()` until a short page or the hard cap. */
+async function fetchAllPaged<T>(
+  fetchPage: (from: number, to: number) => PromiseLike<PageResult<T>>,
+): Promise<{ rows: T[]; truncated: boolean }> {
+  const rows: T[] = [];
+  let truncated = false;
+  for (let from = 0; from < HARD_CAP; from += PAGE_SIZE) {
+    const to = Math.min(from + PAGE_SIZE, HARD_CAP) - 1;
+    const { data, error } = await fetchPage(from, to);
+    if (error) throw new Error(error.message);
+    const page = data ?? [];
+    rows.push(...page);
+    if (page.length < to - from + 1) break; // short page — reached the end
+    if (rows.length >= HARD_CAP) {
+      truncated = true;
+      break;
+    }
+  }
+  return { rows, truncated };
+}
+
 export async function GET(request: NextRequest) {
   const supabase = getServerSupabase();
   const url = new URL(request.url);
@@ -31,27 +62,55 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(emptyPayload(days));
   }
 
-  let query = supabase
-    .from('media_articles')
-    .select('id,title,url,outlet_domain,country,language,published_at,estimated_reach,matched_keywords,source_name')
-    .gte('published_at', since)
-    .order('published_at', { ascending: false })
-    .limit(5000);
+  type ArticleRow = {
+    id: string;
+    title: string;
+    url: string;
+    outlet_domain: string | null;
+    country: string | null;
+    language: string | null;
+    published_at: string | null;
+    estimated_reach: number | null;
+    matched_keywords: string[] | null;
+    source_name: string | null;
+  };
 
-  if (keyword) query = query.contains('matched_keywords', [keyword]);
+  const buildArticlesPage = (from: number, to: number) => {
+    let q = supabase
+      .from('media_articles')
+      .select('id,title,url,outlet_domain,country,language,published_at,estimated_reach,matched_keywords,source_name')
+      .gte('published_at', since)
+      .order('published_at', { ascending: false })
+      .range(from, to);
+    if (keyword) q = q.contains('matched_keywords', [keyword]);
+    return q as unknown as PromiseLike<PageResult<ArticleRow>>;
+  };
 
-  const { data: articles, error } = await query;
-  if (error) {
+  let rows: ArticleRow[];
+  let truncated = false;
+  let outlets: { domain: string; name: string; country: string | null; country_name: string | null; tier: string; latitude: number | null; longitude: number | null; estimated_readership: number }[] | null;
+  let recentRuns: Record<string, unknown>[] | null;
+  try {
+    const [articlesResult, outletsResult, recentRunsResult] = await Promise.all([
+      fetchAllPaged(buildArticlesPage),
+      supabase
+        .from('media_outlets')
+        .select('domain,name,country,country_name,tier,latitude,longitude,estimated_readership'),
+      supabase
+        .from('media_fetch_runs')
+        .select('*')
+        .order('started_at', { ascending: false })
+        .limit(10),
+    ]);
+    rows = articlesResult.rows;
+    truncated = articlesResult.truncated;
+    outlets = outletsResult.data;
+    recentRuns = recentRunsResult.data;
+  } catch (error) {
     console.error('[media-monitoring] analytics error', error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
-
-  const rows = articles ?? [];
-
-  // Outlets lookup (for tier + coordinates)
-  const { data: outlets } = await supabase
-    .from('media_outlets')
-    .select('domain,name,country,country_name,tier,latitude,longitude,estimated_readership');
 
   const outletByDomain = new Map<string, NonNullable<typeof outlets>[number]>();
   (outlets ?? []).forEach((o) => outletByDomain.set(o.domain, o));
@@ -117,8 +176,8 @@ export async function GET(request: NextRequest) {
         tier: outlet?.tier || 'regional',
         count: 0,
         reach: 0,
-        latitude: outlet?.latitude,
-        longitude: outlet?.longitude,
+        latitude: outlet?.latitude ?? undefined,
+        longitude: outlet?.longitude ?? undefined,
       };
     entry.count += 1;
     entry.reach += Number(r.estimated_reach) || 0;
@@ -156,15 +215,8 @@ export async function GET(request: NextRequest) {
     .map(([language, count]) => ({ language, count }))
     .sort((a, b) => b.count - a.count);
 
-  // Recent fetch runs
-  const { data: recentRuns } = await supabase
-    .from('media_fetch_runs')
-    .select('*')
-    .order('started_at', { ascending: false })
-    .limit(10);
-
   return NextResponse.json({
-    summary,
+    summary: { ...summary, truncated },
     timeline,
     byCountry,
     byOutlet,

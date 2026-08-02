@@ -14,7 +14,43 @@ import { ESABCC_REPORTS } from '@/data/esabcc-reports';
  *
  * Query params:
  *   ?days=180          optional cut-off (default: all time)
+ *
+ * Press and social rows are fetched with keyset/offset paging (1000
+ * rows/page, hard safety cap of 20000 rows each) instead of a single
+ * `.limit()`, so windows with more rows than one page aren't silently
+ * under-reported. If either channel hits the cap, `truncated` is set on the
+ * response so the client can surface a warning. The queries no longer filter
+ * `matched_report_slugs <> '{}'` server-side (that comparison can't use the
+ * GIN index and forces a sequential scan) — rows with no matched slugs are
+ * simply a no-op in the app-side bucketing loop below, so skipping the
+ * filter is correctness-neutral.
  */
+const PAGE_SIZE = 1000;
+const HARD_CAP = 20000;
+
+type PageResult<T> = { data: T[] | null; error: { message: string } | null };
+
+/** Pages through a Supabase query via `.range()` until a short page or the hard cap. */
+async function fetchAllPaged<T>(
+  fetchPage: (from: number, to: number) => PromiseLike<PageResult<T>>,
+): Promise<{ rows: T[]; truncated: boolean }> {
+  const rows: T[] = [];
+  let truncated = false;
+  for (let from = 0; from < HARD_CAP; from += PAGE_SIZE) {
+    const to = Math.min(from + PAGE_SIZE, HARD_CAP) - 1;
+    const { data, error } = await fetchPage(from, to);
+    if (error) throw new Error(error.message);
+    const page = data ?? [];
+    rows.push(...page);
+    if (page.length < to - from + 1) break; // short page — reached the end
+    if (rows.length >= HARD_CAP) {
+      truncated = true;
+      break;
+    }
+  }
+  return { rows, truncated };
+}
+
 export async function GET(request: NextRequest) {
   const supabase = getServerSupabase();
   const url = new URL(request.url);
@@ -35,26 +71,47 @@ export async function GET(request: NextRequest) {
         last_press_at: null,
         last_social_at: null,
       })),
+      truncated: false,
     });
   }
 
-  // Press articles
-  let pressQuery = supabase
-    .from('media_articles')
-    .select('matched_report_slugs,estimated_reach,published_at')
-    .not('matched_report_slugs', 'eq', '{}')
-    .limit(10000);
-  if (since) pressQuery = pressQuery.gte('published_at', since);
-  const { data: articles } = await pressQuery;
+  type ArticleRow = { matched_report_slugs: string[] | null; estimated_reach: number | null; published_at: string | null };
+  type PostRow = { matched_report_slugs: string[] | null; estimated_reach: number | null; posted_at: string | null };
 
-  // Social posts
-  let socialQuery = supabase
-    .from('media_social_posts')
-    .select('matched_report_slugs,estimated_reach,posted_at')
-    .not('matched_report_slugs', 'eq', '{}')
-    .limit(10000);
-  if (since) socialQuery = socialQuery.gte('posted_at', since);
-  const { data: posts } = await socialQuery;
+  const buildPressPage = (from: number, to: number) => {
+    let q = supabase
+      .from('media_articles')
+      .select('matched_report_slugs,estimated_reach,published_at')
+      .range(from, to);
+    if (since) q = q.gte('published_at', since);
+    return q as unknown as PromiseLike<PageResult<ArticleRow>>;
+  };
+
+  const buildSocialPage = (from: number, to: number) => {
+    let q = supabase
+      .from('media_social_posts')
+      .select('matched_report_slugs,estimated_reach,posted_at')
+      .range(from, to);
+    if (since) q = q.gte('posted_at', since);
+    return q as unknown as PromiseLike<PageResult<PostRow>>;
+  };
+
+  let articles: ArticleRow[];
+  let posts: PostRow[];
+  let truncated = false;
+  try {
+    const [pressResult, socialResult] = await Promise.all([
+      fetchAllPaged(buildPressPage),
+      fetchAllPaged(buildSocialPage),
+    ]);
+    articles = pressResult.rows;
+    posts = socialResult.rows;
+    truncated = pressResult.truncated || socialResult.truncated;
+  } catch (error) {
+    console.error('[media-monitoring] reports error', error);
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 
   type Bucket = {
     press_count: number;
@@ -114,5 +171,5 @@ export async function GET(request: NextRequest) {
     return { ...r, ...b };
   }).sort((a, b) => b.published_on.localeCompare(a.published_on));
 
-  return NextResponse.json({ reports, days: days || null });
+  return NextResponse.json({ reports, days: days || null, truncated });
 }
