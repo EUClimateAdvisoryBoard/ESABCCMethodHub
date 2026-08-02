@@ -15,10 +15,12 @@
 
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Chart, registerables } from 'chart.js';
+import type { ChartOptions } from 'chart.js';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
 import type { EsabccReport } from '@/data/esabcc-reports';
+import { formatNumber, formatDate, timeAgo } from '@/lib/media-format';
 
 Chart.register(...registerables);
 
@@ -139,39 +141,40 @@ type Tab = 'overview' | 'reports' | 'articles' | 'social' | 'keywords';
 
 const PALETTE = ['#004B7F', '#007B6C', '#E8712B', '#6667AB', '#B83230', '#00928F', '#A530B8', '#FF9933'];
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// ── Chart options (static — hoisted so identity is stable across renders) ──────
 
-function formatNumber(n: number): string {
-  if (n >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1)}B`;
-  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
-  if (n >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
-  return n.toString();
-}
+const TIMELINE_CHART_OPTIONS: ChartOptions<'line'> = {
+  responsive: true,
+  maintainAspectRatio: false,
+  interaction: { mode: 'index', intersect: false },
+  scales: {
+    y: {
+      position: 'left',
+      title: { display: true, text: 'Articles' },
+    },
+    y1: {
+      position: 'right',
+      grid: { drawOnChartArea: false },
+      title: { display: true, text: 'Reach' },
+      ticks: {
+        callback: (v) => formatNumber(Number(v)),
+      },
+    },
+  },
+};
 
-function formatDate(s: string | null): string {
-  if (!s) return '—';
-  try {
-    return new Date(s).toLocaleDateString('en-GB', {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    });
-  } catch {
-    return s;
-  }
-}
+const HORIZONTAL_BAR_OPTIONS: ChartOptions<'bar'> = {
+  responsive: true,
+  maintainAspectRatio: false,
+  indexAxis: 'y',
+  plugins: { legend: { display: false } },
+};
 
-function timeAgo(s: string | null): string {
-  if (!s) return '—';
-  const diffMs = Date.now() - new Date(s).getTime();
-  const mins = Math.floor(diffMs / 60_000);
-  if (mins < 1) return 'just now';
-  if (mins < 60) return `${mins}m ago`;
-  const hours = Math.floor(mins / 60);
-  if (hours < 24) return `${hours}h ago`;
-  const days = Math.floor(hours / 24);
-  return `${days}d ago`;
-}
+const DOUGHNUT_OPTIONS: ChartOptions<'doughnut'> = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: { legend: { position: 'bottom' } },
+};
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
@@ -180,13 +183,29 @@ export default function MediaMonitoringPage() {
   const [windowDays, setWindowDays] = useState(90);
   const [keywordFilter, setKeywordFilter] = useState<string>('');
 
+  // Global, dismissible error banner — set by any loader/mutation on failure.
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  // Admin key (x-media-secret) for mutation endpoints, persisted locally.
+  const [adminKey, setAdminKey] = useState('');
+
+  // window.location.origin — populated client-side only, to avoid a hydration mismatch.
+  const [origin, setOrigin] = useState('');
+
   const [analytics, setAnalytics] = useState<AnalyticsResponse | null>(null);
   const [loadingAnalytics, setLoadingAnalytics] = useState(true);
 
   const [articles, setArticles] = useState<Article[]>([]);
+  const [articlesTotal, setArticlesTotal] = useState<number | null>(null);
   const [loadingArticles, setLoadingArticles] = useState(false);
+  // Draft values track the input fields as the user types; "applied" values
+  // (used by loadArticles + filteredArticles) only change on Apply/Enter so
+  // typing doesn't re-fire a network request on every keystroke.
+  const [articleSearchDraft, setArticleSearchDraft] = useState('');
   const [articleSearch, setArticleSearch] = useState('');
+  const [articleCountryDraft, setArticleCountryDraft] = useState('');
   const [articleCountry, setArticleCountry] = useState('');
+  const [articleOutletDraft, setArticleOutletDraft] = useState('');
   const [articleOutlet, setArticleOutlet] = useState('');
   const [articleSort, setArticleSort] = useState<'reach' | 'published'>('reach');
   const [articleKnownOnly, setArticleKnownOnly] = useState(true);
@@ -204,10 +223,13 @@ export default function MediaMonitoringPage() {
   const [reportCategoryFilter, setReportCategoryFilter] = useState<string>('');
 
   const [socialPosts, setSocialPosts] = useState<SocialPost[]>([]);
+  const [socialTotal, setSocialTotal] = useState<number | null>(null);
   const [loadingSocial, setLoadingSocial] = useState(false);
+  const [socialSearchDraft, setSocialSearchDraft] = useState('');
   const [socialSearch, setSocialSearch] = useState('');
   const [socialBoardOnly, setSocialBoardOnly] = useState(false);
   const [socialReportFilter, setSocialReportFilter] = useState('');
+  const [socialAuthorFilterDraft, setSocialAuthorFilterDraft] = useState('');
   const [socialAuthorFilter, setSocialAuthorFilter] = useState('');
   const [socialSort, setSocialSort] = useState<'recent' | 'reach'>('recent');
 
@@ -225,98 +247,192 @@ export default function MediaMonitoringPage() {
   const [fetchRunning, setFetchRunning] = useState(false);
   const [fetchMessage, setFetchMessage] = useState<string | null>(null);
 
-  // ── Data loaders ────────────────────────────────────────────────────────────
+  // ── Admin key + origin bootstrapping ────────────────────────────────────────
 
+  useEffect(() => {
+    setOrigin(window.location.origin);
+    try {
+      const stored = window.localStorage.getItem('media-monitoring-admin-key');
+      if (stored) setAdminKey(stored);
+    } catch {
+      // localStorage unavailable (private browsing, etc.) — admin key just won't persist.
+    }
+  }, []);
+
+  function updateAdminKey(value: string) {
+    setAdminKey(value);
+    try {
+      if (value) {
+        window.localStorage.setItem('media-monitoring-admin-key', value);
+      } else {
+        window.localStorage.removeItem('media-monitoring-admin-key');
+      }
+    } catch {
+      // ignore — persistence is best-effort
+    }
+  }
+
+  /** Headers for mutating requests: JSON content-type + optional admin secret. */
+  const mutationHeaders = useCallback((): HeadersInit => {
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+    if (adminKey) headers['x-media-secret'] = adminKey;
+    return headers;
+  }, [adminKey]);
+
+  const UNAUTHORIZED_MESSAGE =
+    'Unauthorized — this action requires an admin key. Set it in the Keywords tab.';
+
+  // ── Data loaders ────────────────────────────────────────────────────────────
+  // Each loader aborts its own previous in-flight request before starting a
+  // new one, so a slow earlier response can never clobber a newer one.
+
+  const analyticsAbortRef = useRef<AbortController | null>(null);
   const loadAnalytics = useCallback(async () => {
+    analyticsAbortRef.current?.abort();
+    const controller = new AbortController();
+    analyticsAbortRef.current = controller;
     setLoadingAnalytics(true);
     try {
       const qs = new URLSearchParams({ days: String(windowDays) });
       if (keywordFilter) qs.set('keyword', keywordFilter);
-      const res = await fetch(`/api/media-monitoring/analytics?${qs.toString()}`);
+      const res = await fetch(`/api/media-monitoring/analytics?${qs.toString()}`, {
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
       const data = await res.json();
       setAnalytics(data);
     } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') return;
       console.error('Failed to load analytics', err);
+      setErrorMessage('Failed to load analytics data.');
     } finally {
-      setLoadingAnalytics(false);
+      if (analyticsAbortRef.current === controller) setLoadingAnalytics(false);
     }
   }, [windowDays, keywordFilter]);
 
+  const articlesAbortRef = useRef<AbortController | null>(null);
   const loadArticles = useCallback(async () => {
+    articlesAbortRef.current?.abort();
+    const controller = new AbortController();
+    articlesAbortRef.current = controller;
     setLoadingArticles(true);
     try {
-      const qs = new URLSearchParams({ limit: '100', sort: articleSort });
+      const since = new Date(Date.now() - windowDays * 24 * 3600 * 1000).toISOString();
+      const qs = new URLSearchParams({ limit: '100', sort: articleSort, since });
       if (keywordFilter) qs.set('keyword', keywordFilter);
       if (articleCountry) qs.set('country', articleCountry);
       if (articleOutlet) qs.set('outlet', articleOutlet);
       if (articleTier) qs.set('tier', articleTier);
       if (articleKnownOnly) qs.set('known_only', '1');
-      const res = await fetch(`/api/media-monitoring/articles?${qs.toString()}`);
+      const res = await fetch(`/api/media-monitoring/articles?${qs.toString()}`, {
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
       const data = await res.json();
       setArticles(data.items || []);
+      setArticlesTotal(typeof data.total === 'number' ? data.total : null);
     } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') return;
       console.error('Failed to load articles', err);
+      setErrorMessage('Failed to load articles.');
     } finally {
-      setLoadingArticles(false);
+      if (articlesAbortRef.current === controller) setLoadingArticles(false);
     }
-  }, [keywordFilter, articleCountry, articleOutlet, articleTier, articleSort, articleKnownOnly]);
+  }, [windowDays, keywordFilter, articleCountry, articleOutlet, articleTier, articleSort, articleKnownOnly]);
 
+  const keywordsAbortRef = useRef<AbortController | null>(null);
   const loadKeywords = useCallback(async () => {
+    keywordsAbortRef.current?.abort();
+    const controller = new AbortController();
+    keywordsAbortRef.current = controller;
     setLoadingKeywords(true);
     try {
-      const res = await fetch('/api/media-monitoring/keywords');
+      const res = await fetch('/api/media-monitoring/keywords', { signal: controller.signal });
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
       const data = await res.json();
       setKeywords(data.keywords || []);
     } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') return;
       console.error('Failed to load keywords', err);
+      setErrorMessage('Failed to load keywords.');
     } finally {
-      setLoadingKeywords(false);
+      if (keywordsAbortRef.current === controller) setLoadingKeywords(false);
     }
   }, []);
 
+  const reportsAbortRef = useRef<AbortController | null>(null);
   const loadReports = useCallback(async () => {
+    reportsAbortRef.current?.abort();
+    const controller = new AbortController();
+    reportsAbortRef.current = controller;
     setLoadingReports(true);
     try {
       const qs = new URLSearchParams({ days: String(windowDays) });
-      const res = await fetch(`/api/media-monitoring/reports?${qs.toString()}`);
+      const res = await fetch(`/api/media-monitoring/reports?${qs.toString()}`, {
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
       const data = await res.json();
       setReportSummaries(data.reports || []);
     } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') return;
       console.error('Failed to load reports', err);
+      setErrorMessage('Failed to load reports.');
     } finally {
-      setLoadingReports(false);
+      if (reportsAbortRef.current === controller) setLoadingReports(false);
     }
   }, [windowDays]);
 
+  const socialAbortRef = useRef<AbortController | null>(null);
   const loadSocial = useCallback(async () => {
+    socialAbortRef.current?.abort();
+    const controller = new AbortController();
+    socialAbortRef.current = controller;
     setLoadingSocial(true);
     try {
+      const since = new Date(Date.now() - windowDays * 24 * 3600 * 1000).toISOString();
       const qs = new URLSearchParams({
         limit: '100',
         sort: socialSort,
         platform: 'linkedin',
+        since,
       });
       if (socialReportFilter) qs.set('report', socialReportFilter);
       if (socialAuthorFilter) qs.set('author', socialAuthorFilter);
       if (socialBoardOnly) qs.set('board_only', '1');
       if (keywordFilter) qs.set('keyword', keywordFilter);
-      const res = await fetch(`/api/media-monitoring/social?${qs.toString()}`);
+      const res = await fetch(`/api/media-monitoring/social?${qs.toString()}`, {
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
       const data = await res.json();
       setSocialPosts(data.items || []);
+      setSocialTotal(typeof data.total === 'number' ? data.total : null);
     } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') return;
       console.error('Failed to load social posts', err);
+      setErrorMessage('Failed to load social posts.');
     } finally {
-      setLoadingSocial(false);
+      if (socialAbortRef.current === controller) setLoadingSocial(false);
     }
-  }, [socialSort, socialReportFilter, socialAuthorFilter, socialBoardOnly, keywordFilter]);
+  }, [windowDays, socialSort, socialReportFilter, socialAuthorFilter, socialBoardOnly, keywordFilter]);
 
+  const socialSourcesAbortRef = useRef<AbortController | null>(null);
   const loadSocialSources = useCallback(async () => {
+    socialSourcesAbortRef.current?.abort();
+    const controller = new AbortController();
+    socialSourcesAbortRef.current = controller;
     try {
-      const res = await fetch('/api/media-monitoring/social/sources');
+      const res = await fetch('/api/media-monitoring/social/sources', {
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
       const data = await res.json();
       setSocialSources(data.sources || []);
     } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') return;
       console.error('Failed to load social sources', err);
+      setErrorMessage('Failed to load social sources.');
     }
   }, []);
 
@@ -340,16 +456,26 @@ export default function MediaMonitoringPage() {
     setFetchRunning(true);
     setFetchMessage(null);
     try {
-      const res = await fetch('/api/media-monitoring/fetch', { method: 'POST' });
+      const res = await fetch('/api/media-monitoring/fetch', {
+        method: 'POST',
+        headers: mutationHeaders(),
+      });
+      if (res.status === 401) {
+        setFetchMessage(null);
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
       const data = await res.json();
-      if (data.success) {
+      if (res.ok && data.success) {
         setFetchMessage(
           `Fetched ${data.articles_found} articles (${data.articles_new} new) across ${data.keywords_count} keywords`,
         );
         loadAnalytics();
         if (tab === 'articles') loadArticles();
+        if (tab === 'reports') loadReports();
+        if (tab === 'social') loadSocial();
       } else {
-        setFetchMessage(`Fetch failed: ${data.error || 'unknown error'}`);
+        setFetchMessage(`Fetch failed: ${data.error || res.statusText || 'unknown error'}`);
       }
     } catch (err) {
       setFetchMessage(`Fetch failed: ${err instanceof Error ? err.message : String(err)}`);
@@ -361,38 +487,76 @@ export default function MediaMonitoringPage() {
   async function addKeyword(e: React.FormEvent) {
     e.preventDefault();
     if (!newKeyword.trim()) return;
-    const res = await fetch('/api/media-monitoring/keywords', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        keyword: newKeyword.trim(),
-        label: newLabel.trim() || null,
-        category: newCategory,
-        language: newLanguage,
-      }),
-    });
-    if (res.ok) {
+    try {
+      const res = await fetch('/api/media-monitoring/keywords', {
+        method: 'POST',
+        headers: mutationHeaders(),
+        body: JSON.stringify({
+          keyword: newKeyword.trim(),
+          label: newLabel.trim() || null,
+          category: newCategory,
+          language: newLanguage,
+        }),
+      });
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(`Failed to add keyword: ${data.error || res.statusText}`);
+        return;
+      }
       setNewKeyword('');
       setNewLabel('');
       loadKeywords();
+    } catch (err) {
+      setErrorMessage(`Failed to add keyword: ${err instanceof Error ? err.message : String(err)}`);
     }
   }
 
   async function deleteKeyword(id: string) {
     if (!confirm('Delete this keyword? Existing articles keep their matches.')) return;
-    await fetch(`/api/media-monitoring/keywords?id=${encodeURIComponent(id)}`, {
-      method: 'DELETE',
-    });
-    loadKeywords();
+    try {
+      const res = await fetch(`/api/media-monitoring/keywords?id=${encodeURIComponent(id)}`, {
+        method: 'DELETE',
+        headers: mutationHeaders(),
+      });
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(`Failed to delete keyword: ${data.error || res.statusText}`);
+        return;
+      }
+      loadKeywords();
+    } catch (err) {
+      setErrorMessage(`Failed to delete keyword: ${err instanceof Error ? err.message : String(err)}`);
+    }
   }
 
   async function toggleKeyword(k: Keyword) {
-    await fetch('/api/media-monitoring/keywords', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: k.id, is_active: !k.is_active }),
-    });
-    loadKeywords();
+    try {
+      const res = await fetch('/api/media-monitoring/keywords', {
+        method: 'PATCH',
+        headers: mutationHeaders(),
+        body: JSON.stringify({ id: k.id, is_active: !k.is_active }),
+      });
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(`Failed to update keyword: ${data.error || res.statusText}`);
+        return;
+      }
+      loadKeywords();
+    } catch (err) {
+      setErrorMessage(`Failed to update keyword: ${err instanceof Error ? err.message : String(err)}`);
+    }
   }
 
   async function submitManualPost(e: React.FormEvent) {
@@ -403,7 +567,7 @@ export default function MediaMonitoringPage() {
     try {
       const res = await fetch('/api/media-monitoring/social/ingest', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: mutationHeaders(),
         body: JSON.stringify({
           url: manualUrl.trim(),
           content: manualContent.trim() || undefined,
@@ -411,6 +575,10 @@ export default function MediaMonitoringPage() {
           posted_at: manualPosted.trim() || undefined,
         }),
       });
+      if (res.status === 401) {
+        setManualMessage(`Failed: ${UNAUTHORIZED_MESSAGE}`);
+        return;
+      }
       const data = await res.json();
       if (!res.ok || data.error) {
         setManualMessage(`Failed: ${data.error || res.statusText}`);
@@ -441,16 +609,22 @@ export default function MediaMonitoringPage() {
     try {
       const res = await fetch('/api/media-monitoring/social/fetch', {
         method: 'POST',
+        headers: mutationHeaders(),
       });
+      if (res.status === 401) {
+        setSocialFetchMessage(null);
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
       const data = await res.json();
-      if (data.success) {
+      if (res.ok && data.success) {
         setSocialFetchMessage(
           `Fetched ${data.posts_found} posts (${data.posts_new} new) across ${data.sources_count} sources`,
         );
-        loadSocial();
-        loadReports();
+        if (tab === 'social') loadSocial();
+        if (tab === 'reports') loadReports();
       } else {
-        setSocialFetchMessage(`Social fetch failed: ${data.error || 'unknown error'}`);
+        setSocialFetchMessage(`Social fetch failed: ${data.error || res.statusText || 'unknown error'}`);
       }
     } catch (err) {
       setSocialFetchMessage(
@@ -462,12 +636,40 @@ export default function MediaMonitoringPage() {
   }
 
   async function toggleSocialSource(s: SocialSource) {
-    await fetch('/api/media-monitoring/social/sources', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: s.id, is_active: !s.is_active }),
-    });
-    loadSocialSources();
+    try {
+      const res = await fetch('/api/media-monitoring/social/sources', {
+        method: 'PATCH',
+        headers: mutationHeaders(),
+        body: JSON.stringify({ id: s.id, is_active: !s.is_active }),
+      });
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(`Failed to update source: ${data.error || res.statusText}`);
+        return;
+      }
+      loadSocialSources();
+    } catch (err) {
+      setErrorMessage(`Failed to update source: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
+
+  /** Copies the draft article filters (search/country/outlet) into the applied state. */
+  function applyArticleFilters(e?: React.FormEvent) {
+    e?.preventDefault();
+    setArticleSearch(articleSearchDraft.trim());
+    setArticleCountry(articleCountryDraft.trim().toUpperCase());
+    setArticleOutlet(articleOutletDraft.trim());
+  }
+
+  /** Copies the draft social filters (search/author) into the applied state. */
+  function applySocialFilters(e?: React.FormEvent) {
+    e?.preventDefault();
+    setSocialSearch(socialSearchDraft.trim());
+    setSocialAuthorFilter(socialAuthorFilterDraft.trim());
   }
 
   // ── Derived ─────────────────────────────────────────────────────────────────
@@ -653,6 +855,19 @@ export default function MediaMonitoringPage() {
         </div>
       </div>
 
+      {errorMessage && (
+        <div className="mb-4 px-4 py-2 rounded bg-red-50 border border-red-200 text-sm text-red-700 flex items-start justify-between gap-3">
+          <span>{errorMessage}</span>
+          <button
+            onClick={() => setErrorMessage(null)}
+            aria-label="Dismiss error"
+            className="text-red-700 hover:text-red-900 font-medium leading-none"
+          >
+            ×
+          </button>
+        </div>
+      )}
+
       {fetchMessage && (
         <div className="mb-4 px-4 py-2 rounded bg-primary/5 border border-primary/20 text-sm text-primary">
           {fetchMessage}
@@ -670,7 +885,7 @@ export default function MediaMonitoringPage() {
       )}
 
       {/* Tabs */}
-      <div className="flex gap-1 mb-6 border-b border-grey-200 overflow-x-auto">
+      <div role="tablist" aria-label="Media monitoring sections" className="flex gap-1 mb-6 border-b border-grey-200 overflow-x-auto">
         {(
           [
             { key: 'overview', label: 'Overview' },
@@ -682,6 +897,8 @@ export default function MediaMonitoringPage() {
         ).map((t) => (
           <button
             key={t.key}
+            role="tab"
+            aria-selected={tab === t.key}
             onClick={() => setTab(t.key)}
             className={`px-5 py-2.5 text-sm font-medium border-b-2 transition ${
               tab === t.key
@@ -772,28 +989,7 @@ export default function MediaMonitoringPage() {
             </h2>
             {timelineData && analytics && analytics.timeline.length > 0 ? (
               <div style={{ height: 280 }}>
-                <Line
-                  data={timelineData}
-                  options={{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    interaction: { mode: 'index', intersect: false },
-                    scales: {
-                      y: {
-                        position: 'left',
-                        title: { display: true, text: 'Articles' },
-                      },
-                      y1: {
-                        position: 'right',
-                        grid: { drawOnChartArea: false },
-                        title: { display: true, text: 'Reach' },
-                        ticks: {
-                          callback: (v) => formatNumber(Number(v)),
-                        },
-                      },
-                    },
-                  }}
-                />
+                <Line data={timelineData} options={TIMELINE_CHART_OPTIONS} />
               </div>
             ) : (
               <EmptyState loading={loadingAnalytics} />
@@ -823,15 +1019,7 @@ export default function MediaMonitoringPage() {
               </h2>
               {topOutletsData && analytics && analytics.byOutlet.length > 0 ? (
                 <div style={{ height: 320 }}>
-                  <Bar
-                    data={topOutletsData}
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      indexAxis: 'y',
-                      plugins: { legend: { display: false } },
-                    }}
-                  />
+                  <Bar data={topOutletsData} options={HORIZONTAL_BAR_OPTIONS} />
                 </div>
               ) : (
                 <EmptyState loading={loadingAnalytics} />
@@ -844,15 +1032,7 @@ export default function MediaMonitoringPage() {
               </h2>
               {topCountriesData && analytics && analytics.byCountry.length > 0 ? (
                 <div style={{ height: 320 }}>
-                  <Bar
-                    data={topCountriesData}
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      indexAxis: 'y',
-                      plugins: { legend: { display: false } },
-                    }}
-                  />
+                  <Bar data={topCountriesData} options={HORIZONTAL_BAR_OPTIONS} />
                 </div>
               ) : (
                 <EmptyState loading={loadingAnalytics} />
@@ -868,15 +1048,7 @@ export default function MediaMonitoringPage() {
               </h2>
               {keywordFreqData && analytics && analytics.byKeyword.length > 0 ? (
                 <div style={{ height: 260 }}>
-                  <Bar
-                    data={keywordFreqData}
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      indexAxis: 'y',
-                      plugins: { legend: { display: false } },
-                    }}
-                  />
+                  <Bar data={keywordFreqData} options={HORIZONTAL_BAR_OPTIONS} />
                 </div>
               ) : (
                 <EmptyState loading={loadingAnalytics} />
@@ -889,14 +1061,7 @@ export default function MediaMonitoringPage() {
               </h2>
               {tierData && analytics && analytics.byTier.length > 0 ? (
                 <div style={{ height: 260 }}>
-                  <Doughnut
-                    data={tierData}
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      plugins: { legend: { position: 'bottom' } },
-                    }}
-                  />
+                  <Doughnut data={tierData} options={DOUGHNUT_OPTIONS} />
                 </div>
               ) : (
                 <EmptyState loading={loadingAnalytics} />
@@ -909,14 +1074,7 @@ export default function MediaMonitoringPage() {
               </h2>
               {languageData && analytics && analytics.byLanguage.length > 0 ? (
                 <div style={{ height: 260 }}>
-                  <Doughnut
-                    data={languageData}
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      plugins: { legend: { position: 'bottom' } },
-                    }}
-                  />
+                  <Doughnut data={languageData} options={DOUGHNUT_OPTIONS} />
                 </div>
               ) : (
                 <EmptyState loading={loadingAnalytics} />
@@ -1015,27 +1173,33 @@ export default function MediaMonitoringPage() {
       {/* ─────────────── Articles ─────────────── */}
       {tab === 'articles' && (
         <div className="space-y-4">
-          <div className="bg-white border border-grey-200 rounded p-4 flex flex-wrap gap-3 items-center">
+          <form
+            onSubmit={applyArticleFilters}
+            className="bg-white border border-grey-200 rounded p-4 flex flex-wrap gap-3 items-center"
+          >
             <input
               type="text"
-              value={articleSearch}
-              onChange={(e) => setArticleSearch(e.target.value)}
+              value={articleSearchDraft}
+              onChange={(e) => setArticleSearchDraft(e.target.value)}
               placeholder="Search title, summary, outlet…"
+              aria-label="Search articles by title, summary or outlet"
               className="flex-1 min-w-[200px] text-sm border border-grey-200 rounded px-3 py-2"
             />
             <input
               type="text"
-              value={articleCountry}
-              onChange={(e) => setArticleCountry(e.target.value.toUpperCase())}
+              value={articleCountryDraft}
+              onChange={(e) => setArticleCountryDraft(e.target.value.toUpperCase())}
               placeholder="Country (ISO, e.g. DE)"
+              aria-label="Filter by country ISO code"
               maxLength={2}
               className="text-sm border border-grey-200 rounded px-3 py-2 w-40"
             />
             <input
               type="text"
-              value={articleOutlet}
-              onChange={(e) => setArticleOutlet(e.target.value)}
+              value={articleOutletDraft}
+              onChange={(e) => setArticleOutletDraft(e.target.value)}
               placeholder="Outlet domain (e.g. politico.eu)"
+              aria-label="Filter by outlet domain"
               className="text-sm border border-grey-200 rounded px-3 py-2 w-60"
             />
             <select
@@ -1043,6 +1207,7 @@ export default function MediaMonitoringPage() {
               onChange={(e) => setArticleTier(e.target.value)}
               className="text-sm border border-grey-200 rounded px-3 py-2"
               title="Outlet tier"
+              aria-label="Filter by outlet tier"
             >
               <option value="">All tiers</option>
               <option value="global">Global only</option>
@@ -1055,6 +1220,7 @@ export default function MediaMonitoringPage() {
               onChange={(e) => setArticleSort(e.target.value as 'reach' | 'published')}
               className="text-sm border border-grey-200 rounded px-3 py-2"
               title="Sort order"
+              aria-label="Sort articles"
             >
               <option value="reach">Sort: reach ↓</option>
               <option value="published">Sort: newest</option>
@@ -1069,12 +1235,12 @@ export default function MediaMonitoringPage() {
               Reputable outlets only
             </label>
             <button
-              onClick={loadArticles}
+              type="submit"
               className="text-sm bg-primary text-white rounded px-4 py-2 hover:bg-primary-dark font-medium"
             >
               Apply
             </button>
-          </div>
+          </form>
 
           {loadingArticles ? (
             <div className="text-center text-tertiary py-10">Loading articles…</div>
@@ -1084,6 +1250,13 @@ export default function MediaMonitoringPage() {
             </div>
           ) : (
             <div className="space-y-3">
+              {articlesTotal !== null && articlesTotal > articles.length ? (
+                <p className="text-xs text-tertiary">
+                  Showing {articles.length} of {formatNumber(articlesTotal)} articles matching these filters.
+                </p>
+              ) : articlesTotal === null && articles.length === 100 ? (
+                <p className="text-xs text-tertiary">Showing first 100 results.</p>
+              ) : null}
               {filteredArticles.map((a) => (
                 <article
                   key={a.id}
@@ -1142,19 +1315,24 @@ export default function MediaMonitoringPage() {
       {/* ─────────────── Social Media ─────────────── */}
       {tab === 'social' && (
         <div className="space-y-4">
-          <div className="bg-white border border-grey-200 rounded p-4 flex flex-wrap gap-3 items-center">
+          <form
+            onSubmit={applySocialFilters}
+            className="bg-white border border-grey-200 rounded p-4 flex flex-wrap gap-3 items-center"
+          >
             <input
               type="text"
-              value={socialSearch}
-              onChange={(e) => setSocialSearch(e.target.value)}
+              value={socialSearchDraft}
+              onChange={(e) => setSocialSearchDraft(e.target.value)}
               placeholder="Search post content or author…"
+              aria-label="Search post content or author"
               className="flex-1 min-w-[200px] text-sm border border-grey-200 rounded px-3 py-2"
             />
             <input
               type="text"
-              value={socialAuthorFilter}
-              onChange={(e) => setSocialAuthorFilter(e.target.value)}
+              value={socialAuthorFilterDraft}
+              onChange={(e) => setSocialAuthorFilterDraft(e.target.value)}
               placeholder="Author handle"
+              aria-label="Filter by author handle"
               className="text-sm border border-grey-200 rounded px-3 py-2 w-48"
             />
             <select
@@ -1162,6 +1340,7 @@ export default function MediaMonitoringPage() {
               onChange={(e) => setSocialReportFilter(e.target.value)}
               className="text-sm border border-grey-200 rounded px-3 py-2"
               title="Filter by report cluster"
+              aria-label="Filter by report cluster"
             >
               <option value="">All reports</option>
               {reportSummaries.map((r) => (
@@ -1175,6 +1354,7 @@ export default function MediaMonitoringPage() {
               onChange={(e) => setSocialSort(e.target.value as 'recent' | 'reach')}
               className="text-sm border border-grey-200 rounded px-3 py-2"
               title="Sort order"
+              aria-label="Sort posts"
             >
               <option value="recent">Sort: newest</option>
               <option value="reach">Sort: reach ↓</option>
@@ -1189,12 +1369,12 @@ export default function MediaMonitoringPage() {
               Board members only
             </label>
             <button
-              onClick={loadSocial}
+              type="submit"
               className="text-sm bg-primary text-white rounded px-4 py-2 hover:bg-primary-dark font-medium"
             >
               Apply
             </button>
-          </div>
+          </form>
 
           {/* Capture tools: browser extension download + manual paste form */}
           <div className="grid md:grid-cols-2 gap-4">
@@ -1220,7 +1400,7 @@ export default function MediaMonitoringPage() {
                 <li>Click <strong>Load unpacked</strong> and select the folder.</li>
                 <li>
                   In the extension&apos;s options, set API base URL to this
-                  site (<code>{typeof window !== 'undefined' ? window.location.origin : ''}</code>).
+                  site (<code>{origin}</code>).
                 </li>
                 <li>Right-click any LinkedIn post → <strong>Send to ESABCC monitor</strong>.</li>
               </ol>
@@ -1355,6 +1535,13 @@ export default function MediaMonitoringPage() {
             </div>
           ) : (
             <div className="space-y-3">
+              {socialTotal !== null && socialTotal > socialPosts.length ? (
+                <p className="text-xs text-tertiary">
+                  Showing {socialPosts.length} of {formatNumber(socialTotal)} posts matching these filters.
+                </p>
+              ) : socialTotal === null && socialPosts.length === 100 ? (
+                <p className="text-xs text-tertiary">Showing first 100 results.</p>
+              ) : null}
               {filteredSocialPosts.map((p) => (
                 <article
                   key={p.id}
@@ -1503,6 +1690,25 @@ export default function MediaMonitoringPage() {
               </button>
             </div>
           </form>
+
+          <div className="bg-white border border-grey-200 rounded p-4 flex flex-wrap items-center gap-3">
+            <label htmlFor="media-admin-key" className="text-xs text-tertiary font-medium">
+              Admin key
+            </label>
+            <input
+              id="media-admin-key"
+              type="password"
+              value={adminKey}
+              onChange={(e) => updateAdminKey(e.target.value)}
+              placeholder="Only needed if MEDIA_MONITORING_SECRET is set on the server"
+              aria-label="Admin key for mutation endpoints"
+              className="flex-1 min-w-[240px] text-sm border border-grey-200 rounded px-3 py-2"
+            />
+            <p className="text-[10px] text-tertiary max-w-xs">
+              Stored locally in this browser and sent as <code>x-media-secret</code>{' '}
+              on keyword, social source, manual post, and refresh actions.
+            </p>
+          </div>
 
           {loadingKeywords ? (
             <div className="text-center text-tertiary py-10">Loading keywords…</div>
