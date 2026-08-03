@@ -14,9 +14,12 @@
  * that opens it. The pages themselves are unchanged — the workspace links to
  * them rather than duplicating them, so there is exactly one copy of each.
  *
- * Keep the module ids here in step with `SEED_PROJECTS` in
- * `src/data/project-workspace.ts` and with migration
- * `084_pw_report_page_modules.sql`, which seeds the same rows server-side.
+ * These modules are never written to `pw_modules`: they hold no per-project
+ * state, so `withReportPageModules()` in `src/lib/project-workspace/db.ts`
+ * merges them into every project read and the seeder skips them on write. That
+ * keeps the tabs independent of whether a migration has run on a given
+ * environment. Keep the module ids here in step with `SEED_PROJECTS` in
+ * `src/data/project-workspace.ts` — they are the join between the two.
  */
 
 export interface WorkspaceReportPage {
