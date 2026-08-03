@@ -1,24 +1,24 @@
 {
   "date": "2026-08-03",
-  "generatedAt": "2026-08-03T08:34:28.046Z",
+  "generatedAt": "2026-08-03T13:45:29.166Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 3 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "China draws 'red lines' around its economic model ahead of EU, US trade talks - reuters.com",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQWk1MXJvXzVGTkx2SW9Kak03MTJDSUlsYWtZREhuT1MwcjJUOWcyOFFwcXFHYlNrV1dlUUdHVG9yZk5JbFJwS1JzWWg4ZE9pY0NQWWdpSVhoT0g1ZERwVlBvTm51dklQLWlGU0UxeEF1NVJfQ1pvdnZUa1dRQ3RUU09lUE50NGJLcE4wYmNtUGNXT0xLV1BkNnlmR1p4ZTkwQ0pIRnpQUVQ3TGkyakUwRm5RRzNJZi1Id3Bv?oc=5\" target=\"_blank\"&gt;China draws 'red lines' around its economic model ahead of EU, US trade talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+      "headline": "Egypt seeks to unlock renewable potential to power regional clean energy hub",
+      "summary": "Europe is investing in Egypt’s bid to position itself as a clean electricity exporter to reduce its emissions and generate a new source of income The post Egypt seeks to unlock renewable potential to power regional clean energy hub appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Britain could face food shortages as drought continues, farmers warn",
-      "summary": "&lt;p&gt;Farmers battle to salvage what they can of their crops as heatwave set to continue&lt;/p&gt;&lt;p&gt;Britain could face shortages of certain foods after punishing drought in parts of England, the National Farmers’ Union (NFU) has warned as a heatwave was forecast to continue into next week.&lt;/p&gt;&lt;p&gt;The UK’s Health Security Agency (UKHSA) has issued heat health alerts for eight regions of England, with temperatures set to rise above 30C in parts of the country. UKHSA said risin",
+      "headline": "Leading scientists gather in India for final meeting to work on the Special Report on Climate Change and Cities",
+      "summary": "BHOPAL, Aug 3 &#8211; More than 100 leading scientists from 56 countries are meeting in Bhopal, India, from 3 to 7 August 2026 for the Fourth Lead Author Meeting of the Intergovernmental Panel on Climate Change (IPCC) Special Report on Climate Change and Cities. This meeting is hosted by the Indian Institute of Forest Management [&#8230;]",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Acting US Attorney General Blanche rescinds 'anti-weaponization' fund before confirmation vote - reuters.com",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQYk1mSThpSHlyUTFoVUkwRE9FdEZSVVk2NlNIamVDdTgtQUlibjN0bWNCYTZkeXljb1ZkdVRDb1YyUTB1U0xEVzd3bk1UUVJnWTZlSE9XZlZjM3BnUUd5S091Umx6U0hYdElyQks2WUdJRGhjdU12RTZ6ZGRtcHg2Uy1Oc3lvOC1FTmh3WlVuN0Y0Q2tUZ0ZFVlFuYk1Ucmt6MUoweUZFanEyaEdfNDJ1VkRMUTEwRTQ?oc=5\" target=\"_blank\"&gt;Acting US Attorney General Blanche rescinds 'anti-weaponization' fund before confirmation vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&g",
+      "headline": "Todd Blanche formally withdraws Trump's 'anti-weaponisation' fund plan",
+      "summary": "Two Republican senators wanted a written guarantee that Trump would not revive a controversial proposal.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,10 +34,26 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "China draws 'red lines' around its economic model ahead of EU, US trade talks - reuters.com",
+          "title": "Egypt seeks to unlock renewable potential to power regional clean energy hub",
+          "link": "https://www.climatechangenews.com/2026/08/03/egypt-seeks-to-unlock-renewable-riches-to-power-regional-clean-energy-hub/",
+          "source": "Climate Home News",
+          "description": "Europe is investing in Egypt’s bid to position itself as a clean electricity exporter to reduce its emissions and generate a new source of income The post Egypt seeks to unlock renewable potential to power regional clean energy hub appeared first on Climate Home News.",
+          "published": "2026-08-03T10:14:16.000Z",
+          "score": 15
+        },
+        {
+          "title": "Q&#038;A: Does the world need ‘carbon capture and storage’ to reach net-zero?",
+          "link": "https://www.carbonbrief.org/qa-does-the-world-need-carbon-capture-and-storage-to-reach-net-zero",
+          "source": "Carbon Brief",
+          "description": "When carbon dioxide (CO2) is released from a factory or power plant, the gas can be captured and permanently stored&#8230; The post Q&amp;A: Does the world need ‘carbon capture and storage’ to reach net-zero? appeared first on Carbon Brief.",
+          "published": "2026-08-03T13:05:33.000Z",
+          "score": 13
+        },
+        {
+          "title": "China draws 'red lines' around its economic model ahead of EU, US trade talks - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQWk1MXJvXzVGTkx2SW9Kak03MTJDSUlsYWtZREhuT1MwcjJUOWcyOFFwcXFHYlNrV1dlUUdHVG9yZk5JbFJwS1JzWWg4ZE9pY0NQWWdpSVhoT0g1ZERwVlBvTm51dklQLWlGU0UxeEF1NVJfQ1pvdnZUa1dRQ3RUU09lUE50NGJLcE4wYmNtUGNXT0xLV1BkNnlmR1p4ZTkwQ0pIRnpQUVQ3TGkyakUwRm5RRzNJZi1Id3Bv?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQWk1MXJvXzVGTkx2SW9Kak03MTJDSUlsYWtZREhuT1MwcjJUOWcyOFFwcXFHYlNrV1dlUUdHVG9yZk5JbFJwS1JzWWg4ZE9pY0NQWWdpSVhoT0g1ZERwVlBvTm51dklQLWlGU0UxeEF1NVJfQ1pvdnZUa1dRQ3RUU09lUE50NGJLcE4wYmNtUGNXT0xLV1BkNnlmR1p4ZTkwQ0pIRnpQUVQ3TGkyakUwRm5RRzNJZi1Id3Bv?oc=5\" target=\"_blank\"&gt;China draws 'red lines' around its economic model ahead of EU, US trade talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQWk1MXJvXzVGTkx2SW9Kak03MTJDSUlsYWtZREhuT1MwcjJUOWcyOFFwcXFHYlNrV1dlUUdHVG9yZk5JbFJwS1JzWWg4ZE9pY0NQWWdpSVhoT0g1ZERwVlBvTm51dklQLWlGU0UxeEF1NVJfQ1pvdnZUa1dRQ3RUU09lUE50NGJLcE4wYmNtUGNXT0xLV1BkNnlmR1p4ZTkwQ0pIRnpQUVQ3TGkyakUwRm5RRzNJZi1Id3Bv?oc=5\" target=\"_blank\"&gt;China draws 'red lines' around its economic model ahead of EU, US trade talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-02T17:05:00.000Z",
           "score": 13
         },
@@ -56,22 +72,6 @@
           "description": "Myanmar’s military-led government released images from the 81-year-old Nobel laureate’s meeting with ICRC’s resident representative for Myanmar, Arnaud de Baecque.",
           "published": "2026-08-03T08:28:00.000Z",
           "score": 7
-        },
-        {
-          "title": "Two tankers with Saudi oil exit Red Sea over weekend, data shows - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdEt0RUhnRlVGV0xuNmhOTDZaaVo3NVI3MWhXdERDQ3BaX19SMkh5bmlONEl5YjlRSEtyc0p0cVZGblYtd3FPdHRtX0V2RldWOVRpdzY1RTV3YnZOSk02X0gzNDhyeEpaclNaVHR1MlJVa1plZUM4a3FqOFVoYXdiY3lBYWU0MW0tcTVoSml1TFhKN0Q2aXhKQVFGNk16TnhYcGhxSXVaQlVISndNWDNyblhPM2xHajhD?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdEt0RUhnRlVGV0xuNmhOTDZaaVo3NVI3MWhXdERDQ3BaX19SMkh5bmlONEl5YjlRSEtyc0p0cVZGblYtd3FPdHRtX0V2RldWOVRpdzY1RTV3YnZOSk02X0gzNDhyeEpaclNaVHR1MlJVa1plZUM4a3FqOFVoYXdiY3lBYWU0MW0tcTVoSml1TFhKN0Q2aXhKQVFGNk16TnhYcGhxSXVaQlVISndNWDNyblhPM2xHajhD?oc=5\" target=\"_blank\"&gt;Two tankers with Saudi oil exit Red Sea over weekend, data shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-08-02T23:41:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Oil falls after Trump cancels attack on Iran to seek nuclear deal - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOVnBOaGh1VXBaaGQwVmloSzlPcmg5aFdQeENKS3JtNi1wQTZlQTRBUm02ODRrYkNVZkNDREwtTTdMeUhlNV94QjctaFhpMWhTWVVJaF9xeVhWdEdKZXBMbFA4alVQaDBXbnMzczBqRnVBUlVrVUJJTFhLQjdpSU9SV2lHV1FQd0hvOEs0QkZwLVZfUDhtSkVGUU02T2tPeDFXaU5SaWRtUWt3cjhE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxOVnBOaGh1VXBaaGQwVmloSzlPcmg5aFdQeENKS3JtNi1wQTZlQTRBUm02ODRrYkNVZkNDREwtTTdMeUhlNV94QjctaFhpMWhTWVVJaF9xeVhWdEdKZXBMbFA4alVQaDBXbnMzczBqRnVBUlVrVUJJTFhLQjdpSU9SV2lHV1FQd0hvOEs0QkZwLVZfUDhtSkVGUU02T2tPeDFXaU5SaWRtUWt3cjhE?oc=5\" target=\"_blank\"&gt;Oil falls after Trump cancels attack on Iran to seek nuclear deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-08-03T00:11:00.000Z",
-          "score": 7
         }
       ]
     },
@@ -79,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Leading scientists gather in India for final meeting to work on the Special Report on Climate Change and Cities",
+          "link": "https://www.ipcc.ch/2026/08/03/srcities-lam4/",
+          "source": "IPCC",
+          "description": "BHOPAL, Aug 3 &#8211; More than 100 leading scientists from 56 countries are meeting in Bhopal, India, from 3 to 7 August 2026 for the Fourth Lead Author Meeting of the Intergovernmental Panel on Climate Change (IPCC) Special Report on Climate Change and Cities. This meeting is hosted by the Indian Institute of Forest Management [&#8230;]",
+          "published": "2026-08-03T10:59:02.000Z",
+          "score": 11
+        },
         {
           "title": "Britain could face food shortages as drought continues, farmers warn",
           "link": "https://www.theguardian.com/environment/2026/aug/02/britain-food-shortages-drought-continues-farmers",
@@ -110,14 +118,6 @@
           "description": "With a hot summer drying out Syston Brook, volunteers have prepared the waterway ready for rain.",
           "published": "2026-08-03T05:09:06.000Z",
           "score": 7
-        },
-        {
-          "title": "Germany: As temperatures rise, so does climate skepticism",
-          "link": "https://www.dw.com/en/germany-as-temperatures-rise-so-does-climate-skepticism/a-78206354?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Some 98% of active climate scientists say climate change is happening, and is man-made. Nonetheless, a new study shows the number of climate-change skeptics in Germany has increased. Why is that?",
-          "published": "2026-08-02T08:44:00.000Z",
-          "score": 7
         }
       ]
     },
@@ -126,26 +126,34 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Acting US Attorney General Blanche rescinds 'anti-weaponization' fund before confirmation vote - reuters.com",
+          "title": "Todd Blanche formally withdraws Trump's 'anti-weaponisation' fund plan",
+          "link": "https://www.bbc.co.uk/news/articles/c3w05gx32d4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Two Republican senators wanted a written guarantee that Trump would not revive a controversial proposal.",
+          "published": "2026-08-03T11:07:13.000Z",
+          "score": 6
+        },
+        {
+          "title": "Acting US Attorney General Blanche rescinds 'anti-weaponization' fund before confirmation vote - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQYk1mSThpSHlyUTFoVUkwRE9FdEZSVVk2NlNIamVDdTgtQUlibjN0bWNCYTZkeXljb1ZkdVRDb1YyUTB1U0xEVzd3bk1UUVJnWTZlSE9XZlZjM3BnUUd5S091Umx6U0hYdElyQks2WUdJRGhjdU12RTZ6ZGRtcHg2Uy1Oc3lvOC1FTmh3WlVuN0Y0Q2tUZ0ZFVlFuYk1Ucmt6MUoweUZFanEyaEdfNDJ1VkRMUTEwRTQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQYk1mSThpSHlyUTFoVUkwRE9FdEZSVVk2NlNIamVDdTgtQUlibjN0bWNCYTZkeXljb1ZkdVRDb1YyUTB1U0xEVzd3bk1UUVJnWTZlSE9XZlZjM3BnUUd5S091Umx6U0hYdElyQks2WUdJRGhjdU12RTZ6ZGRtcHg2Uy1Oc3lvOC1FTmh3WlVuN0Y0Q2tUZ0ZFVlFuYk1Ucmt6MUoweUZFanEyaEdfNDJ1VkRMUTEwRTQ?oc=5\" target=\"_blank\"&gt;Acting US Attorney General Blanche rescinds 'anti-weaponization' fund before confirmation vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&g",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQYk1mSThpSHlyUTFoVUkwRE9FdEZSVVk2NlNIamVDdTgtQUlibjN0bWNCYTZkeXljb1ZkdVRDb1YyUTB1U0xEVzd3bk1UUVJnWTZlSE9XZlZjM3BnUUd5S091Umx6U0hYdElyQks2WUdJRGhjdU12RTZ6ZGRtcHg2Uy1Oc3lvOC1FTmh3WlVuN0Y0Q2tUZ0ZFVlFuYk1Ucmt6MUoweUZFanEyaEdfNDJ1VkRMUTEwRTQ?oc=5\" target=\"_blank\"&gt;Acting US Attorney General Blanche rescinds 'anti-weaponization' fund before confirmation vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-03T04:13:00.000Z",
           "score": 6
         },
         {
-          "title": "China securities regulator supports more yuan investment products in Hong Kong - reuters.com",
+          "title": "China securities regulator supports more yuan investment products in Hong Kong - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNV3hDaDNuOVI0TjdOQUNZLTl3WGdHbGduY3F1a2tjelFtaHlFTFJDbDFfUjZJVkxuZXFHaE9ySExmVHEzVExRc2hSZlZoeXcwWEhicTgwZUIweE9RTXR0N2lFWnJoTXBfZVRGT0RXYzdlcUplekYxMURNYmFlaTNDUWRJR1RqMlFKNWRkb3BIcjFmTFpVRVZmcWVYazhBNTQ2dnFOMVZUbHdPdFktT0ItdnpSSlQ5U0tKdnFsY2pGTjV2NVRvQjU4ZHlB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNV3hDaDNuOVI0TjdOQUNZLTl3WGdHbGduY3F1a2tjelFtaHlFTFJDbDFfUjZJVkxuZXFHaE9ySExmVHEzVExRc2hSZlZoeXcwWEhicTgwZUIweE9RTXR0N2lFWnJoTXBfZVRGT0RXYzdlcUplekYxMURNYmFlaTNDUWRJR1RqMlFKNWRkb3BIcjFmTFpVRVZmcWVYazhBNTQ2dnFOMVZUbHdPdFktT0ItdnpSSlQ5U0tKdnFsY2pGTjV2NVRvQjU4ZHlB?oc=5\" target=\"_blank\"&gt;China securities regulator supports more yuan investment products in Hong Kong&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&l",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNV3hDaDNuOVI0TjdOQUNZLTl3WGdHbGduY3F1a2tjelFtaHlFTFJDbDFfUjZJVkxuZXFHaE9ySExmVHEzVExRc2hSZlZoeXcwWEhicTgwZUIweE9RTXR0N2lFWnJoTXBfZVRGT0RXYzdlcUplekYxMURNYmFlaTNDUWRJR1RqMlFKNWRkb3BIcjFmTFpVRVZmcWVYazhBNTQ2dnFOMVZUbHdPdFktT0ItdnpSSlQ5U0tKdnFsY2pGTjV2NVRvQjU4ZHlB?oc=5\" target=\"_blank\"&gt;China securities regulator supports more yuan investment products in Hong Kong&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
           "published": "2026-08-03T01:54:00.000Z",
           "score": 2
         },
         {
-          "title": "France tightens oversight of foreign investment to protect national security - reuters.com",
+          "title": "France tightens oversight of foreign investment to protect national security - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQWXQxc1hHX3JiaFdSM095S01TQnNTMmJaZm5UQkVuXzNVRFFTZ0JBdTFJX0hzRTh2aFBEMlhCWUwyNEExZFRDbjdoWi1JWkViWmpISjQ0aU5oNjBRVzI0OEZDVFBsYW9qMk5Ya1NXb1dBYmNTODMzcGZuV3BNY29VWjZMYXU0cDhOa0VtcGRQMjNiU3B2WkNiY0hEdXNOalltWWVaTkFmTWxROU4wRXJvUmUtaHVYQQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQWXQxc1hHX3JiaFdSM095S01TQnNTMmJaZm5UQkVuXzNVRFFTZ0JBdTFJX0hzRTh2aFBEMlhCWUwyNEExZFRDbjdoWi1JWkViWmpISjQ0aU5oNjBRVzI0OEZDVFBsYW9qMk5Ya1NXb1dBYmNTODMzcGZuV3BNY29VWjZMYXU0cDhOa0VtcGRQMjNiU3B2WkNiY0hEdXNOalltWWVaTkFmTWxROU4wRXJvUmUtaHVYQQ?oc=5\" target=\"_blank\"&gt;France tightens oversight of foreign investment to protect national security&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQWXQxc1hHX3JiaFdSM095S01TQnNTMmJaZm5UQkVuXzNVRFFTZ0JBdTFJX0hzRTh2aFBEMlhCWUwyNEExZFRDbjdoWi1JWkViWmpISjQ0aU5oNjBRVzI0OEZDVFBsYW9qMk5Ya1NXb1dBYmNTODMzcGZuV3BNY29VWjZMYXU0cDhOa0VtcGRQMjNiU3B2WkNiY0hEdXNOalltWWVaTkFmTWxROU4wRXJvUmUtaHVYQQ?oc=5\" target=\"_blank\"&gt;France tightens oversight of foreign investment to protect national security&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-02T19:37:00.000Z",
           "score": 2
         }
@@ -155,14 +163,6 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
-        {
-          "title": "How Spain's migrant crisis created a political storm - whipped up by social media",
-          "link": "https://www.bbc.co.uk/news/articles/c62vl925dqdo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The Ceuta crossings have shaken Europe politically, exposing divisions over the sensitive issue of migration, the BBC's Sarah Rainsford writes.",
-          "published": "2026-08-02T10:32:28.000Z",
-          "score": 4
-        },
         {
           "title": "Small insects, big damage: The global ant trade is booming",
           "link": "https://www.dw.com/en/small-insects-big-damage-the-global-ant-trade-is-booming/a-78186729?maca=en-rss-en-all-1573-xml-mrss",
@@ -178,52 +178,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Italian-led EU force boards sanctioned tanker from Russia's 'shadow fleet' in Mediterranean - reuters.com",
+          "title": "Italian-led EU force boards sanctioned tanker from Russia's 'shadow fleet' in Mediterranean - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxONW5zbU8yMjdVdGc1Z0pTSGFZVUZRTDJPR2lQM3NNU2p0Ym5OcW5xSkgwbnZ5ZmNsUWRaWHgwckZSRFFPMHNWQWtkVS1wcHIwX19uUEdER3Ewd3BLS25NdnFEb29WNHd3dzVPaHJZRVBwamp6MWltM29hbXNNYTVTc2FCUmZpaWF4b0dsNUJzYnRYMHhfRWR4emdRaFBkd0tHX0ViZlZoMXBDN3FEWS1rV21kaXpqdWlHXzkxaU50SGlfaGdvZEI4LQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxONW5zbU8yMjdVdGc1Z0pTSGFZVUZRTDJPR2lQM3NNU2p0Ym5OcW5xSkgwbnZ5ZmNsUWRaWHgwckZSRFFPMHNWQWtkVS1wcHIwX19uUEdER3Ewd3BLS25NdnFEb29WNHd3dzVPaHJZRVBwamp6MWltM29hbXNNYTVTc2FCUmZpaWF4b0dsNUJzYnRYMHhfRWR4emdRaFBkd0tHX0ViZlZoMXBDN3FEWS1rV21kaXpqdWlHXzkxaU50SGlfaGdvZEI4LQ?oc=5\" target=\"_blank\"&gt;Italian-led EU force boards sanctioned tanker from Russia's 'shadow fleet' in Mediterranean&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;re",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxONW5zbU8yMjdVdGc1Z0pTSGFZVUZRTDJPR2lQM3NNU2p0Ym5OcW5xSkgwbnZ5ZmNsUWRaWHgwckZSRFFPMHNWQWtkVS1wcHIwX19uUEdER3Ewd3BLS25NdnFEb29WNHd3dzVPaHJZRVBwamp6MWltM29hbXNNYTVTc2FCUmZpaWF4b0dsNUJzYnRYMHhfRWR4emdRaFBkd0tHX0ViZlZoMXBDN3FEWS1rV21kaXpqdWlHXzkxaU50SGlfaGdvZEI4LQ?oc=5\" target=\"_blank\"&gt;Italian-led EU force boards sanctioned tanker from Russia's 'shadow fleet' in Mediterranean&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
           "published": "2026-08-02T22:45:08.000Z",
           "score": 8
         },
         {
-          "title": "Shell sells European onshore renewables to TotalEnergies - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHBuR2ZmM29uWDZCSnBpbXl0RjlCVUgxRFkwV2VRZUhVQS01N1ZRUW1hdVlOdW9VTWZsQ0ZuTjItYUhmT3E0TFVBbFk4MElUOWg0TUxlOHBLNjAxRlRzMVFXZWl5bDJVLUdaX0ZMVTdEUEZaUTk5TF91MUcxNHFQZW8xQ1NhdllMSHZodkV2U2ZrOHcwQXJ6dGFWT3VZMGxwblM5M3FXb212NVdRRDJVM0VmTElYakwtOG82MQ?oc=5",
+          "title": "Yen climbs for third straight session, euro/dollar awaits US data - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaXpfRUdtOGNadXREWXpDZmVoUmQtVlJCdS12NzV3S253d2NLMmpVTVJBeXNhdmk0T2hMaThCdUNnaXMxcEZrR1JtOEtxLUFsaEpfNFlnY1Y0LTJISkFqN3RnRkZCRWxzaHllRGxZLV83ZTlIX1RtQ2RkQTVoQlk0Rnc5bzFCTUluNnI4QTY1b1YwaDlMNTg1amJwT05MVUFyQUFVZ25JMU1UekVSYWVuWjVMV2Z4ZmZZaGJaeXVMdEE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHBuR2ZmM29uWDZCSnBpbXl0RjlCVUgxRFkwV2VRZUhVQS01N1ZRUW1hdVlOdW9VTWZsQ0ZuTjItYUhmT3E0TFVBbFk4MElUOWg0TUxlOHBLNjAxRlRzMVFXZWl5bDJVLUdaX0ZMVTdEUEZaUTk5TF91MUcxNHFQZW8xQ1NhdllMSHZodkV2U2ZrOHcwQXJ6dGFWT3VZMGxwblM5M3FXb212NVdRRDJVM0VmTElYakwtOG82MQ?oc=5\" target=\"_blank\"&gt;Shell sells European onshore renewables to TotalEnergies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-08-03T06:45:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaXpfRUdtOGNadXREWXpDZmVoUmQtVlJCdS12NzV3S253d2NLMmpVTVJBeXNhdmk0T2hMaThCdUNnaXMxcEZrR1JtOEtxLUFsaEpfNFlnY1Y0LTJISkFqN3RnRkZCRWxzaHllRGxZLV83ZTlIX1RtQ2RkQTVoQlk0Rnc5bzFCTUluNnI4QTY1b1YwaDlMNTg1amJwT05MVUFyQUFVZ25JMU1UekVSYWVuWjVMV2Z4ZmZZaGJaeXVMdEE?oc=5\" target=\"_blank\"&gt;Yen climbs for third straight session, euro/dollar awaits US data&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-03T00:37:00.000Z",
           "score": 8
         },
         {
-          "title": "FIFA must rebuild trust after scrapping World Cup investor proposal, says Boyce - reuters.com",
+          "title": "FIFA must rebuild trust after scrapping World Cup investor proposal, says Boyce - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPODVhaHRrdmswVFVVN3NlZ0dtblcxMmJRZVYzYWdteTR0WE00N1ZuVlcxckRYMngxdTlLZFd5VkNqdmhld2JiZEJhNUhlZ1lUaFh2V1RJeTFkVFZzWmNkRmF0eElsZWIyUFJlajUwZC1wTXJLbnlESU5qN1RLRzczaUZMX3pzOTZKeVRtTFIxckpuUFhCeGlFYzZDQTdOUVRmeHplSEhza1Y0dnhxTTNlTHMtWW9ZbFJoQVhnWXFkZjVjZExlRWp3?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPODVhaHRrdmswVFVVN3NlZ0dtblcxMmJRZVYzYWdteTR0WE00N1ZuVlcxckRYMngxdTlLZFd5VkNqdmhld2JiZEJhNUhlZ1lUaFh2V1RJeTFkVFZzWmNkRmF0eElsZWIyUFJlajUwZC1wTXJLbnlESU5qN1RLRzczaUZMX3pzOTZKeVRtTFIxckpuUFhCeGlFYzZDQTdOUVRmeHplSEhza1Y0dnhxTTNlTHMtWW9ZbFJoQVhnWXFkZjVjZExlRWp3?oc=5\" target=\"_blank\"&gt;FIFA must rebuild trust after scrapping World Cup investor proposal, says Boyce&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPODVhaHRrdmswVFVVN3NlZ0dtblcxMmJRZVYzYWdteTR0WE00N1ZuVlcxckRYMngxdTlLZFd5VkNqdmhld2JiZEJhNUhlZ1lUaFh2V1RJeTFkVFZzWmNkRmF0eElsZWIyUFJlajUwZC1wTXJLbnlESU5qN1RLRzczaUZMX3pzOTZKeVRtTFIxckpuUFhCeGlFYzZDQTdOUVRmeHplSEhza1Y0dnhxTTNlTHMtWW9ZbFJoQVhnWXFkZjVjZExlRWp3?oc=5\" target=\"_blank\"&gt;FIFA must rebuild trust after scrapping World Cup investor proposal, says Boyce&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
           "published": "2026-08-02T17:23:00.000Z",
           "score": 6
         },
         {
-          "title": "Kay Granger, first Republican woman to lead House Appropriations Committee, dies at 83 - reuters.com",
+          "title": "Kay Granger, first Republican woman to lead House Appropriations Committee, dies at 83 - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRWtWemt6RzJEWkItbV9kTTdDSzdrVGZzSFFtcHJkQXN2TkVLZXpuTHhoenZjYjRBT05LaGptaWdJdTdHQTN2d1FjME51UUxGSks5Y1hXS3hZYWsxcWlMa1d5XzZ4QWtoT04xeXc1ZldPWHNXSFZhdU9XcUhWbVYyOXdOek9HZXlvdXd3eTdiMDhTTXZqNlBpMkpsNzM2WjgzNzJNSUVaOUFRVXo0NTNYNTVDSTMxZ2o2alJGTG1vWWM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRWtWemt6RzJEWkItbV9kTTdDSzdrVGZzSFFtcHJkQXN2TkVLZXpuTHhoenZjYjRBT05LaGptaWdJdTdHQTN2d1FjME51UUxGSks5Y1hXS3hZYWsxcWlMa1d5XzZ4QWtoT04xeXc1ZldPWHNXSFZhdU9XcUhWbVYyOXdOek9HZXlvdXd3eTdiMDhTTXZqNlBpMkpsNzM2WjgzNzJNSUVaOUFRVXo0NTNYNTVDSTMxZ2o2alJGTG1vWWM?oc=5\" target=\"_blank\"&gt;Kay Granger, first Republican woman to lead House Appropriations Committee, dies at 83&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/fo",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRWtWemt6RzJEWkItbV9kTTdDSzdrVGZzSFFtcHJkQXN2TkVLZXpuTHhoenZjYjRBT05LaGptaWdJdTdHQTN2d1FjME51UUxGSks5Y1hXS3hZYWsxcWlMa1d5XzZ4QWtoT04xeXc1ZldPWHNXSFZhdU9XcUhWbVYyOXdOek9HZXlvdXd3eTdiMDhTTXZqNlBpMkpsNzM2WjgzNzJNSUVaOUFRVXo0NTNYNTVDSTMxZ2o2alJGTG1vWWM?oc=5\" target=\"_blank\"&gt;Kay Granger, first Republican woman to lead House Appropriations Committee, dies at 83&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
           "published": "2026-08-03T03:22:00.000Z",
           "score": 6
         },
         {
-          "title": "Trump suggests new talks with Iran to begin on Monday",
+          "title": "Iran denies Trump's claim that new talks will begin on Monday",
           "link": "https://www.bbc.co.uk/news/articles/c23579jzv08o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Tehran has not responded to the suggestion that new talks are imminent. Trump has previously said a negotiated end to the war is close, only for strikes to resume.",
-          "published": "2026-08-03T08:03:15.000Z",
+          "description": "While Iran denies that talks with the US are taking place, it is currently in negotiations with Oman over Strait of Hormuz access.",
+          "published": "2026-08-03T12:44:09.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 416,
-    "articlesLast24h": 145,
-    "afterDedup": 139,
+    "totalArticlesScanned": 414,
+    "articlesLast24h": 146,
+    "afterDedup": 143,
     "feedsQueried": 19
   }
 }
