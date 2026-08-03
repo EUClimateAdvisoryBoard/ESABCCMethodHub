@@ -16,8 +16,8 @@
  *   label:            {"target":348,"other":184,"objective":132,"commitment":158,"goal":7}
  *   obligation:       {"mandatory":568,"voluntary":261}
  *   type:             {"qualitative":256,"quantitative":368,"unspecified":205}
- *   climate_relevance:{"mitigation":325,"none":276,"adaptation":182,"both":46}
- *   relevant (lens):  {"true":550,"false":279}
+ *   climate_relevance:{"mitigation":325,"none":275,"adaptation":183,"both":46}
+ *   relevant (lens):  {"true":551,"false":278}
  *   target_order:     {"2":1,"null":828}
  *   revise_flag:      {"false":829}
  *   (91 candidates rejected as non-verbatim / out of scope)
@@ -29214,10 +29214,11 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "good ecological potential",
       "good surface water chemical status"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02000L0060-20260510",
     "sectors": [
+      "ecosystems",
       "industry",
       "water"
     ],
@@ -29230,8 +29231,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
         "surface water"
       ]
     },
-    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "relevant": false,
+    "climate_argument": "Adaptation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": true,
     "target_order": null,
     "target_order_source": "",
     "revise_flag": false,
