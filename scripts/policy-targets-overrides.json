@@ -6929,5 +6929,47 @@
       ]
     },
     "reason": "SECTOR: The objective is 'good ecological potential and good surface water chemical status' for artificial and heavily modified water bodies — an aquatic ecosystem quality objective, so 'ecosystems' is missing (the sibling surface-water and groundwater rows in the same article carry it). Same provision as tgt-80eb4b3a (agent review 2026-07 round 2); id changed only because 02000L0060-20260510 widens the paragraph-4(1)(a)(iii) cross-references from 'paragraphs 5, 6 and 7' to 'paragraphs 5 to 7b'. [carried to consolidated text 2026-08]"
+  },
+  {
+    "id": "tgt-6b6b65ed",
+    "policy_id": "governance-regulation",
+    "drop": true,
+    "reason": "Out of scope: this is the Governance Regulation's amending text to Article 7a of the Fuel Quality Directive (98/70/EC) — a fuel-supplier GHG-intensity obligation with a deadline (31 December 2020) that has already passed, substantively belonging to the Fuel Quality Directive rather than to the Energy Union governance/planning framework this register tracks under 'governance-regulation' [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-a82bb0ed",
+    "policy_id": "governance-regulation",
+    "drop": true,
+    "reason": "NT-7: conduct obligation to establish a multilevel climate and energy dialogue — a one-off institutional-setup duty, no progression [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-f21890ff",
+    "policy_id": "governance-regulation",
+    "drop": true,
+    "reason": "NT-7: reporting conduct obligation describing what progress reports must contain, not a target of its own [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-56dc6aae",
+    "policy_id": "governance-regulation",
+    "drop": true,
+    "reason": "NT-14: describes the content of the Commission's own progress assessment, not a Member State or Union target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-91c246b7",
+    "policy_id": "governance-regulation",
+    "drop": true,
+    "reason": "NT-14/duplicate: restates the renewable-energy indicative trajectory reference points (18%/43%/65%) as content of the Commission's assessment obligation; the same reference points are already tracked as Member States' own trajectory targets under Article 4 (tgt-d9eab39e, tgt-c6b8bfbd, tgt-00be6309) [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-3d0d95c2",
+    "policy_id": "governance-regulation",
+    "drop": true,
+    "reason": "NT-8: threshold-triggered obligation (fires only when a >500 kt CO2-equivalent LULUCF inventory discrepancy is found), not a target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-9cef77bb",
+    "policy_id": "governance-regulation",
+    "drop": true,
+    "reason": "NT-14: obligation on the Commission to report to the European Parliament and Council after each global stocktake, not a target — same pattern as the Commission-review clauses dropped elsewhere in this register [re-extraction 2026-08]"
   }
 ]
