@@ -415,7 +415,13 @@ function main() {
     rec.target_order_source = rowOrder && (rowOrder.source === 'human' || rowOrder.source === 'ai') ? rowOrder.source : '';
     rec.revise_flag = Object.prototype.hasOwnProperty.call(review.revise, rec.id);
     rec.revise_reason = rec.revise_flag ? (review.revise[rec.id] || '') : '';
-    rec.doc_replaced = (replaced[rec.policy_id] && replaced[rec.policy_id].note) || '';
+    // The consolidated version the act's text now comes from — carried as its
+    // own fields so the CELEX/date reach the table and every export, not just
+    // the prose note.
+    const rep = replaced[rec.policy_id];
+    rec.doc_replaced = (rep && rep.note) || '';
+    rec.doc_replaced_celex = (rep && rep.celex) || '';
+    rec.doc_replaced_date = (rep && rep.date) || '';
     if (!perPolicy.has(p.id)) perPolicy.set(p.id, []);
     perPolicy.get(p.id).push(rec);
   }

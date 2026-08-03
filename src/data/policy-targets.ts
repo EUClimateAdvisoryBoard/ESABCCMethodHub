@@ -101,6 +101,11 @@ export interface RawPolicyTarget {
    *  extraction (scripts/policy-targets-replaced.json, keyed by policy_id);
    *  '' when not flagged. */
   doc_replaced: string;
+  /** CELEX of the consolidated version the text now comes from, e.g.
+   *  "02018L2001-20240716"; '' when the document was not replaced. */
+  doc_replaced_celex: string;
+  /** Consolidation date of that version (YYYY-MM-DD); '' when not replaced. */
+  doc_replaced_date: string;
 }
 
 export type PolicyTarget = RawPolicyTarget;
@@ -165,7 +170,7 @@ export interface ColumnDef {
 export const COLUMNS: ColumnDef[] = [
   { key: 'policy_name', header: '1 · Name of policy', width: 42, value: (t) => t.policy_name },
   { key: 'document_type', header: '2 · Type of policy', width: 15, value: (t) => cap(t.document_type) },
-  { key: 'doc_replaced', header: 'Document updated (consolidated version)', width: 46, value: (t) => t.doc_replaced },
+  { key: 'doc_replaced', header: 'Document updated (consolidated version)', width: 46, value: docUpdatedCell },
   { key: 'policy_area', header: '3 · Policy area', width: 16, value: (t) => t.policy_area },
   { key: 'target_number', header: '#', width: 4, value: (t) => String(t.target_number) },
   { key: 'target_order', header: 'First order target (1) Second order target (2)', width: 18, value: (t) => (t.target_order ? String(t.target_order) : '') },
@@ -193,6 +198,16 @@ export const COLUMNS: ColumnDef[] = [
 
 function cap(s: string): string {
   return s ? s[0].toUpperCase() + s.slice(1) : s;
+}
+
+/** The "Document updated" cell: leads with the consolidated version the text now
+ *  comes from, so the exported column names the version, not just the reason. */
+export function docUpdatedCell(t: PolicyTarget): string {
+  if (!t.doc_replaced && !t.doc_replaced_celex) return '';
+  const head = t.doc_replaced_celex
+    ? `Consolidated version ${t.doc_replaced_celex}${t.doc_replaced_date ? ` (${t.doc_replaced_date})` : ''}`
+    : '';
+  return [head, t.doc_replaced].filter(Boolean).join(' — ');
 }
 
 // ─── Stats ──────────────────────────────────────────────────────────────────

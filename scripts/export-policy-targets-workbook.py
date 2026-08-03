@@ -141,6 +141,18 @@ def cap(s: str) -> str:
     return s[:1].upper() + s[1:] if s else s
 
 
+def doc_updated_cell(t: dict) -> str:
+    """The "Document updated" cell — leads with the consolidated version the act's
+    text now comes from, then the reason it was replaced. Mirrors docUpdatedCell()
+    in src/data/policy-targets.ts so the in-app download matches this workbook."""
+    note, celex, date = (t.get('doc_replaced') or '', t.get('doc_replaced_celex') or '',
+                         t.get('doc_replaced_date') or '')
+    if not note and not celex:
+        return ''
+    head = f'Consolidated version {celex}' + (f' ({date})' if date else '') if celex else ''
+    return ' — '.join(p for p in (head, note) if p)
+
+
 def write_sheet(ws, rows, widths, freeze='A2'):
     for row in rows:
         ws.append(row)
@@ -187,7 +199,7 @@ def main() -> None:
         'Not correct', 'reason',
     ]
     body = [[
-        t['policy_name'], cap(t['document_type']), t.get('doc_replaced') or '', t['policy_area'], t['target_number'],
+        t['policy_name'], cap(t['document_type']), doc_updated_cell(t), t['policy_area'], t['target_number'],
         t['target_order'] if t.get('target_order') in (1, 2) else '', t['target_text'],
         t['article'], cap(t['target_label']), cap(t['obligation']), cap(t['target_type']),
         t['timeline'] or 'Unspecified', '; '.join(t.get('indicators') or []),

@@ -285,10 +285,14 @@ export default function PolicyTargetsRegisterPage() {
                     </td>
                     <td className="px-2 py-2">
                       <span className="font-medium text-tertiary-dark dark:text-[var(--mh-fg)]">{t.policy_short}</span>
-                      {t.celex_number && <div className="text-[10.5px] text-tertiary">CELEX {t.celex_number}</div>}
+                      {t.celex_number && (
+                        <div className="text-[10.5px] text-tertiary">
+                          CELEX {t.doc_replaced_celex || t.celex_number}
+                        </div>
+                      )}
                       {t.doc_replaced && (
                         <div className="mt-1" title={t.doc_replaced}>
-                          <Badge label="Source doc updated" color="#0369a1" bg="#e0f2fe" />
+                          <Badge label={`Consolidated ${t.doc_replaced_date || 'version'}`} color="#0369a1" bg="#e0f2fe" />
                         </div>
                       )}
                     </td>
