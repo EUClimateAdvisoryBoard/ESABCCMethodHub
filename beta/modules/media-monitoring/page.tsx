@@ -137,7 +137,38 @@ interface AnalyticsResponse {
   window_days: number;
 }
 
-type Tab = 'overview' | 'reports' | 'articles' | 'social' | 'keywords';
+type Tab = 'overview' | 'reports' | 'articles' | 'social' | 'keywords' | 'sources';
+
+/** A registered press feed (RSS / Google Alert / Talkwalker Alert). */
+interface PressSource {
+  id: string;
+  name: string;
+  source_type: 'google_alert' | 'talkwalker_alert' | 'rss';
+  feed_url: string;
+  alert_query: string | null;
+  country: string | null;
+  language: string | null;
+  is_active: boolean;
+  last_fetched_at: string | null;
+  last_status: string | null;
+  last_error: string | null;
+  last_item_count: number;
+}
+
+/** A ready-to-paste alert query generated from the active keywords. */
+interface AlertQuery {
+  keywords: string[];
+  query: string;
+  category: string;
+  language: string;
+  country: string;
+}
+
+const PRESS_SOURCE_LABELS: Record<PressSource['source_type'], string> = {
+  google_alert: 'Google Alert',
+  talkwalker_alert: 'Talkwalker Alert',
+  rss: 'RSS feed',
+};
 
 const PALETTE = ['#004B7F', '#007B6C', '#E8712B', '#6667AB', '#B83230', '#00928F', '#A530B8', '#FF9933'];
 
@@ -243,6 +274,18 @@ export default function MediaMonitoringPage() {
   const [manualPosted, setManualPosted] = useState('');
   const [manualSubmitting, setManualSubmitting] = useState(false);
   const [manualMessage, setManualMessage] = useState<string | null>(null);
+
+  const [pressSources, setPressSources] = useState<PressSource[]>([]);
+  const [loadingPressSources, setLoadingPressSources] = useState(false);
+  const [alertQueries, setAlertQueries] = useState<AlertQuery[]>([]);
+  const [uncoveredKeywords, setUncoveredKeywords] = useState<string[]>([]);
+  const [copiedQuery, setCopiedQuery] = useState<string | null>(null);
+  const [newSourceName, setNewSourceName] = useState('');
+  const [newSourceUrl, setNewSourceUrl] = useState('');
+  const [newSourceType, setNewSourceType] =
+    useState<PressSource['source_type']>('google_alert');
+  const [newSourceQuery, setNewSourceQuery] = useState('');
+  const [addingSource, setAddingSource] = useState(false);
 
   const [fetchRunning, setFetchRunning] = useState(false);
   const [fetchMessage, setFetchMessage] = useState<string | null>(null);
@@ -436,6 +479,47 @@ export default function MediaMonitoringPage() {
     }
   }, []);
 
+  const pressSourcesAbortRef = useRef<AbortController | null>(null);
+  const loadPressSources = useCallback(async () => {
+    pressSourcesAbortRef.current?.abort();
+    const controller = new AbortController();
+    pressSourcesAbortRef.current = controller;
+    setLoadingPressSources(true);
+    try {
+      const res = await fetch('/api/media-monitoring/press-sources', {
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
+      const data = await res.json();
+      setPressSources(data.sources || []);
+    } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') return;
+      console.error('Failed to load press sources', err);
+      setErrorMessage('Failed to load feed sources.');
+    } finally {
+      setLoadingPressSources(false);
+    }
+  }, []);
+
+  const alertQueriesAbortRef = useRef<AbortController | null>(null);
+  const loadAlertQueries = useCallback(async () => {
+    alertQueriesAbortRef.current?.abort();
+    const controller = new AbortController();
+    alertQueriesAbortRef.current = controller;
+    try {
+      const res = await fetch('/api/media-monitoring/alert-queries', {
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
+      const data = await res.json();
+      setAlertQueries(data.queries || []);
+      setUncoveredKeywords(data.uncovered || []);
+    } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') return;
+      console.error('Failed to load alert queries', err);
+    }
+  }, []);
+
   useEffect(() => {
     loadAnalytics();
   }, [loadAnalytics]);
@@ -448,7 +532,20 @@ export default function MediaMonitoringPage() {
       loadSocial();
       loadSocialSources();
     }
-  }, [tab, loadArticles, loadKeywords, loadReports, loadSocial, loadSocialSources]);
+    if (tab === 'sources') {
+      loadPressSources();
+      loadAlertQueries();
+    }
+  }, [
+    tab,
+    loadArticles,
+    loadKeywords,
+    loadReports,
+    loadSocial,
+    loadSocialSources,
+    loadPressSources,
+    loadAlertQueries,
+  ]);
 
   // ── Actions ─────────────────────────────────────────────────────────────────
 
@@ -467,13 +564,21 @@ export default function MediaMonitoringPage() {
       }
       const data = await res.json();
       if (res.ok && data.success) {
+        const scope =
+          data.sources_count > 0
+            ? `${data.keywords_count} keywords and ${data.sources_count} feeds`
+            : `${data.keywords_count} keywords`;
         setFetchMessage(
-          `Fetched ${data.articles_found} articles (${data.articles_new} new) across ${data.keywords_count} keywords`,
+          `Fetched ${data.articles_found} articles (${data.articles_new} new) across ${scope}` +
+            // One channel failing still stores the other's results, so say so
+            // rather than reporting a clean success.
+            (data.degraded ? ` — degraded: ${data.degraded}` : ''),
         );
         loadAnalytics();
         if (tab === 'articles') loadArticles();
         if (tab === 'reports') loadReports();
         if (tab === 'social') loadSocial();
+        if (tab === 'sources') loadPressSources();
       } else {
         setFetchMessage(`Fetch failed: ${data.error || res.statusText || 'unknown error'}`);
       }
@@ -512,6 +617,108 @@ export default function MediaMonitoringPage() {
       loadKeywords();
     } catch (err) {
       setErrorMessage(`Failed to add keyword: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
+
+  async function addPressSource(e: React.FormEvent) {
+    e.preventDefault();
+    if (!newSourceName.trim() || !newSourceUrl.trim()) return;
+    setAddingSource(true);
+    try {
+      const res = await fetch('/api/media-monitoring/press-sources', {
+        method: 'POST',
+        headers: mutationHeaders(),
+        body: JSON.stringify({
+          name: newSourceName.trim(),
+          feed_url: newSourceUrl.trim(),
+          source_type: newSourceType,
+          alert_query: newSourceQuery.trim() || null,
+        }),
+      });
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(`Failed to add feed: ${data.error || res.statusText}`);
+        return;
+      }
+      setNewSourceName('');
+      setNewSourceUrl('');
+      setNewSourceQuery('');
+      loadPressSources();
+      loadAlertQueries();
+    } catch (err) {
+      setErrorMessage(
+        `Failed to add feed: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    } finally {
+      setAddingSource(false);
+    }
+  }
+
+  async function togglePressSource(s: PressSource) {
+    try {
+      const res = await fetch('/api/media-monitoring/press-sources', {
+        method: 'PATCH',
+        headers: mutationHeaders(),
+        body: JSON.stringify({
+          id: s.id,
+          is_active: !s.is_active,
+          source_type: s.source_type,
+        }),
+      });
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(`Failed to update feed: ${data.error || res.statusText}`);
+        return;
+      }
+      loadPressSources();
+    } catch (err) {
+      setErrorMessage(
+        `Failed to update feed: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    }
+  }
+
+  async function deletePressSource(id: string) {
+    if (!confirm('Remove this feed? Articles already collected are kept.')) return;
+    try {
+      const res = await fetch(
+        `/api/media-monitoring/press-sources?id=${encodeURIComponent(id)}`,
+        { method: 'DELETE', headers: mutationHeaders() },
+      );
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(`Failed to remove feed: ${data.error || res.statusText}`);
+        return;
+      }
+      loadPressSources();
+      loadAlertQueries();
+    } catch (err) {
+      setErrorMessage(
+        `Failed to remove feed: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    }
+  }
+
+  async function copyQuery(query: string) {
+    try {
+      await navigator.clipboard.writeText(query);
+      setCopiedQuery(query);
+      window.setTimeout(() => setCopiedQuery(null), 2000);
+    } catch {
+      // Clipboard blocked (insecure context or denied permission) — the
+      // query is selectable in the page, so this is not worth an error banner.
     }
   }
 
@@ -893,6 +1100,7 @@ export default function MediaMonitoringPage() {
             { key: 'articles', label: 'Press' },
             { key: 'social', label: 'Social Media' },
             { key: 'keywords', label: 'Keywords' },
+            { key: 'sources', label: 'Sources' },
           ] as { key: Tab; label: string }[]
         ).map((t) => (
           <button
@@ -912,7 +1120,7 @@ export default function MediaMonitoringPage() {
       </div>
 
       {/* Keyword filter chip strip (applies to overview + articles + social) */}
-      {analytics && analytics.byKeyword.length > 0 && tab !== 'keywords' && tab !== 'reports' && (
+      {analytics && analytics.byKeyword.length > 0 && tab !== 'keywords' && tab !== 'reports' && tab !== 'sources' && (
         <div className="flex flex-wrap gap-2 mb-5">
           <button
             onClick={() => setKeywordFilter('')}
@@ -1627,6 +1835,240 @@ export default function MediaMonitoringPage() {
       )}
 
       {/* ─────────────── Keywords ─────────────── */}
+      {tab === 'sources' && (
+        <div className="space-y-4">
+          <div className="bg-white border border-grey-200 rounded p-4">
+            <h2 className="text-sm font-semibold text-primary mb-2">
+              Standing feeds
+            </h2>
+            <p className="text-xs text-tertiary leading-relaxed">
+              Coverage is collected from two places. Google News is searched
+              automatically on every run using the keywords below — nothing to
+              set up. The feeds registered here are polled alongside it, which
+              matters because Google News rate-limits heavily and changes its
+              format without notice.
+            </p>
+            <p className="text-xs text-tertiary leading-relaxed mt-2">
+              <strong className="text-secondary">Alerts are created by hand.</strong>{' '}
+              Neither Google Alerts nor Talkwalker offers an API for creating
+              alerts, so each one is set up once in their website and its RSS
+              URL is pasted here. Everything after that is automatic: each new
+              item is matched against your current keywords at fetch time, so
+              adding a keyword applies to incoming coverage immediately without
+              touching the alerts.
+            </p>
+          </div>
+
+          {alertQueries.length > 0 && (
+            <div className="bg-white border border-grey-200 rounded p-4">
+              <h2 className="text-sm font-semibold text-primary mb-1">
+                Step 1 — queries built from your keywords
+              </h2>
+              <p className="text-xs text-tertiary mb-3">
+                Copy a query, then paste it into{' '}
+                <a
+                  href="https://www.google.com/alerts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary underline"
+                >
+                  google.com/alerts
+                </a>{' '}
+                or{' '}
+                <a
+                  href="https://alerts.talkwalker.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary underline"
+                >
+                  alerts.talkwalker.com
+                </a>
+                . Set delivery to <em>RSS feed</em>, then copy the feed URL back
+                into step 2. These regenerate whenever you change your keywords.
+              </p>
+              <div className="space-y-2">
+                {alertQueries.map((q) => (
+                  <div
+                    key={q.query}
+                    className="flex flex-wrap items-center gap-2 border border-grey-200 rounded px-3 py-2"
+                  >
+                    <span className="text-xs uppercase tracking-wide text-tertiary shrink-0">
+                      {q.category} · {q.language.toUpperCase()}
+                    </span>
+                    <code className="text-xs flex-1 min-w-[12rem] break-all">
+                      {q.query}
+                    </code>
+                    <button
+                      type="button"
+                      onClick={() => copyQuery(q.query)}
+                      className="text-xs border border-grey-200 rounded px-2 py-1 hover:bg-grey-50 shrink-0"
+                    >
+                      {copiedQuery === q.query ? 'Copied' : 'Copy'}
+                    </button>
+                  </div>
+                ))}
+              </div>
+              {uncoveredKeywords.length > 0 && (
+                <p className="text-xs text-orange-700 bg-orange-50 border border-orange-200 rounded px-3 py-2 mt-3">
+                  <strong>
+                    {uncoveredKeywords.length} keyword
+                    {uncoveredKeywords.length === 1 ? '' : 's'} not covered by
+                    any registered alert:
+                  </strong>{' '}
+                  {uncoveredKeywords.join(', ')}. These are still searched on
+                  Google News — adding an alert for them just adds a second,
+                  more reliable channel.
+                </p>
+              )}
+            </div>
+          )}
+
+          <form
+            onSubmit={addPressSource}
+            className="bg-white border border-grey-200 rounded p-4 space-y-3"
+          >
+            <h2 className="text-sm font-semibold text-primary">
+              Step 2 — register the feed URL
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+              <select
+                value={newSourceType}
+                onChange={(e) =>
+                  setNewSourceType(e.target.value as PressSource['source_type'])
+                }
+                className="text-sm border border-grey-200 rounded px-3 py-2"
+              >
+                <option value="google_alert">Google Alert</option>
+                <option value="talkwalker_alert">Talkwalker Alert</option>
+                <option value="rss">RSS feed</option>
+              </select>
+              <input
+                type="text"
+                value={newSourceName}
+                onChange={(e) => setNewSourceName(e.target.value)}
+                placeholder="Name (e.g. Alert: ESABCC)"
+                className="text-sm border border-grey-200 rounded px-3 py-2"
+                required
+              />
+              <input
+                type="url"
+                value={newSourceUrl}
+                onChange={(e) => setNewSourceUrl(e.target.value)}
+                placeholder="Feed URL"
+                className="md:col-span-2 text-sm border border-grey-200 rounded px-3 py-2"
+                required
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+              <input
+                type="text"
+                value={newSourceQuery}
+                onChange={(e) => setNewSourceQuery(e.target.value)}
+                placeholder="Query used (optional — drives coverage check)"
+                className="md:col-span-3 text-sm border border-grey-200 rounded px-3 py-2"
+              />
+              <button
+                type="submit"
+                disabled={addingSource}
+                className="bg-secondary text-white rounded px-4 py-2 text-sm font-medium hover:bg-secondary-dark disabled:opacity-50"
+              >
+                {addingSource ? 'Adding…' : 'Add feed'}
+              </button>
+            </div>
+            <p className="text-xs text-tertiary">
+              For a Google Alert this must be the URL behind the orange RSS
+              icon (<code>google.com/alerts/feeds/…</code>), not the alerts
+              management page.
+            </p>
+          </form>
+
+          <div className="bg-white border border-grey-200 rounded overflow-hidden">
+            {loadingPressSources ? (
+              <p className="text-sm text-tertiary p-4">Loading feeds…</p>
+            ) : pressSources.length === 0 ? (
+              <p className="text-sm text-tertiary p-4">
+                No feeds registered yet. Google News search still runs on every
+                refresh, so the dashboard keeps working without them.
+              </p>
+            ) : (
+              <table className="w-full text-sm">
+                <thead className="bg-grey-50 text-xs uppercase tracking-wide text-tertiary">
+                  <tr>
+                    <th className="text-left px-4 py-2">Feed</th>
+                    <th className="text-left px-4 py-2">Type</th>
+                    <th className="text-left px-4 py-2">Last run</th>
+                    <th className="text-right px-4 py-2">Items</th>
+                    <th className="text-right px-4 py-2">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pressSources.map((s) => (
+                    <tr key={s.id} className="border-t border-grey-200 align-top">
+                      <td className="px-4 py-2">
+                        <span
+                          className={s.is_active ? 'font-medium' : 'text-tertiary'}
+                        >
+                          {s.name}
+                        </span>
+                        {!s.is_active && (
+                          <span className="ml-2 text-xs text-tertiary">(paused)</span>
+                        )}
+                        <div className="text-xs text-tertiary break-all">
+                          {s.feed_url}
+                        </div>
+                        {s.last_error && (
+                          <div className="text-xs text-red-700 mt-1">
+                            {s.last_error}
+                          </div>
+                        )}
+                      </td>
+                      <td className="px-4 py-2 text-xs">
+                        {PRESS_SOURCE_LABELS[s.source_type] ?? s.source_type}
+                      </td>
+                      <td className="px-4 py-2 text-xs">
+                        {s.last_fetched_at ? (
+                          <span
+                            className={
+                              s.last_status === 'error'
+                                ? 'text-red-700'
+                                : 'text-tertiary'
+                            }
+                          >
+                            {s.last_status === 'error' ? 'Failed' : 'OK'} ·{' '}
+                            {new Date(s.last_fetched_at).toLocaleString()}
+                          </span>
+                        ) : (
+                          <span className="text-tertiary">Never</span>
+                        )}
+                      </td>
+                      <td className="px-4 py-2 text-right text-xs">
+                        {s.last_item_count}
+                      </td>
+                      <td className="px-4 py-2 text-right whitespace-nowrap">
+                        <button
+                          type="button"
+                          onClick={() => togglePressSource(s)}
+                          className="text-xs border border-grey-200 rounded px-2 py-1 hover:bg-grey-50"
+                        >
+                          {s.is_active ? 'Pause' : 'Resume'}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => deletePressSource(s.id)}
+                          className="text-xs border border-grey-200 rounded px-2 py-1 ml-2 hover:bg-grey-50 text-red-700"
+                        >
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </div>
+        </div>
+      )}
+
       {tab === 'keywords' && (
         <div className="space-y-4">
           <form

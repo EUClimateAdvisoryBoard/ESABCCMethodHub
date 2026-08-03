@@ -56,6 +56,10 @@ export interface FetchedArticle {
   estimated_reach: number;
   matched_keyword_ids: string[];
   matched_keywords: string[];
+  /** Which channel surfaced this article — 'google_news' or a press feed type. */
+  discovery_source?: string;
+  /** `media_press_sources.id` when the article came from a registered feed. */
+  press_source_id?: string | null;
 }
 
 /* ------------------------------------------------------------------ */
@@ -454,12 +458,80 @@ export function outletDomainFromItem(
  * through two language editions gets two different Google redirect tokens,
  * so URL-only dedup lets it through twice.
  */
-function titleKey(title: string): string {
+export function articleTitleKey(title: string): string {
   return title
     .toLowerCase()
     .replace(/\s+-\s+[^-]+$/, '')   // drop the trailing " - Outlet Name" suffix
     .replace(/[^a-z0-9]+/g, ' ')
     .trim();
+}
+
+/** Back-compat alias used inside this module. */
+const titleKey = articleTitleKey;
+
+/**
+ * Merge article sets coming from different channels into one deduplicated
+ * list.
+ *
+ * The same story routinely arrives twice: Google News hands back an opaque
+ * `news.google.com/rss/articles/CBMi...` redirect, while a Google Alert or
+ * an outlet's own RSS feed hands back the real publisher URL. Those are
+ * different strings, so URL-keyed dedup alone would store both and inflate
+ * every count on the dashboard. Matching on outlet + normalised title
+ * catches the pair.
+ *
+ * When two records describe the same story, the one with a real publisher
+ * URL wins so the dashboard links somewhere useful, and their matched
+ * keywords are unioned so no attribution is lost.
+ */
+export function mergeArticleSets(...sets: FetchedArticle[][]): FetchedArticle[] {
+  const byKey = new Map<string, FetchedArticle>();
+  const order: FetchedArticle[] = [];
+
+  for (const set of sets) {
+    for (const article of set) {
+      const key = `${article.outlet_domain ?? ''}::${titleKey(article.title)}`;
+      const existing = byKey.get(key);
+
+      if (!existing) {
+        byKey.set(key, article);
+        order.push(article);
+        continue;
+      }
+
+      // Union the keyword attribution across both copies.
+      article.matched_keyword_ids.forEach((id, idx) => {
+        if (!existing.matched_keyword_ids.includes(id)) {
+          existing.matched_keyword_ids.push(id);
+          existing.matched_keywords.push(article.matched_keywords[idx]);
+        }
+      });
+
+      // Prefer a real publisher URL over a Google News redirect.
+      if (isGoogleNewsUrl(existing.url) && !isGoogleNewsUrl(article.url)) {
+        existing.url = article.url;
+        existing.canonical_url = article.canonical_url;
+        existing.discovery_source = article.discovery_source;
+        existing.press_source_id = article.press_source_id;
+      }
+      // Prefer a known publication date over none.
+      if (!existing.published_at && article.published_at) {
+        existing.published_at = article.published_at;
+      }
+      // Prefer a resolved outlet (and its reach) over an unresolved one.
+      if (!existing.outlet && article.outlet) {
+        existing.outlet = article.outlet;
+        existing.country = article.country;
+        existing.estimated_reach = article.estimated_reach;
+      }
+    }
+  }
+
+  return order.sort((a, b) => {
+    const ta = a.published_at ? Date.parse(a.published_at) : 0;
+    const tb = b.published_at ? Date.parse(b.published_at) : 0;
+    return tb - ta;
+  });
 }
 
 /* ------------------------------------------------------------------ */
@@ -794,6 +866,8 @@ export async function fetchArticlesForKeywords(
           estimated_reach: outlet?.estimated_readership ?? 0,
           matched_keyword_ids: attributedKws.map((k) => k.id),
           matched_keywords: attributedKws.map((k) => k.keyword),
+          discovery_source: 'google_news',
+          press_source_id: null,
         };
         merged.set(canonical, record);
         merged.set(altKey, record);

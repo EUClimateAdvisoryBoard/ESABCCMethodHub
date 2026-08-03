@@ -4,9 +4,16 @@ import { authoriseMediaMutation } from '@/lib/media-auth';
 import {
   fetchArticlesForKeywords,
   emptyFetchStats,
+  mergeArticleSets,
   OUTLET_REGISTRY,
+  type FetchedArticle,
   type MediaKeyword,
 } from '@/lib/media-monitoring';
+import {
+  fetchPressFeeds,
+  emptyPressFetchStats,
+  type PressSource,
+} from '@/lib/media-press-feeds';
 import {
   matchReportsFromKeywords,
   matchReportsInText,
@@ -147,9 +154,10 @@ async function runFetch(trigger: 'manual' | 'cron', options: { force?: boolean }
   );
   if (!guard.ok) return guard;
 
-  // seedOutletsIfEmpty, opening the audit row, and reading active keywords
-  // are all independent of one another — run them concurrently.
-  const [, auditResult, kwResult] = await Promise.all([
+  // seedOutletsIfEmpty, opening the audit row, reading active keywords and
+  // reading the registered feed sources are all independent — run them
+  // concurrently.
+  const [, auditResult, kwResult, srcResult] = await Promise.all([
     seedOutletsIfEmpty(supabase),
     supabase
       .from('media_fetch_runs')
@@ -157,6 +165,7 @@ async function runFetch(trigger: 'manual' | 'cron', options: { force?: boolean }
       .select()
       .single(),
     supabase.from('media_keywords').select('*').eq('is_active', true),
+    supabase.from('media_press_sources').select('*').eq('is_active', true),
   ]);
 
   const { data: runRow, error: runErr } = auditResult;
@@ -171,23 +180,89 @@ async function runFetch(trigger: 'manual' | 'cron', options: { force?: boolean }
   }
   const keywords = (kwData ?? []) as MediaKeyword[];
 
+  // A missing `media_press_sources` table (migration 086 not yet applied)
+  // must not fail the run — the Google News channel still works without it.
+  if (srcResult.error) {
+    console.warn(
+      '[media-monitoring] press sources unavailable, continuing with Google News only:',
+      srcResult.error.message,
+    );
+  }
+  const pressSources = (srcResult.data ?? []) as PressSource[];
+
   // Look back 90 days so we build a meaningful archive of coverage.
   // Google News RSS typically only returns articles from the last ~30 days
   // anyway, but a wider window ensures we don't discard edge cases.
   const since = new Date(Date.now() - 90 * 24 * 3600 * 1000).toISOString();
 
-  console.log(`[media-monitoring] starting fetch: ${keywords.length} active keywords`);
+  console.log(
+    `[media-monitoring] starting fetch: ${keywords.length} active keywords, ${pressSources.length} feed sources`,
+  );
 
-  let articles: Awaited<ReturnType<typeof fetchArticlesForKeywords>> = [];
+  let articles: FetchedArticle[] = [];
   let errorMessage: string | null = null;
   const stats = emptyFetchStats();
-  try {
-    articles = await fetchArticlesForKeywords(keywords, { sinceIso: since, stats });
-    console.log(`[media-monitoring] fetched ${articles.length} unique articles`);
-  } catch (e) {
-    errorMessage = e instanceof Error ? e.message : String(e);
-    console.error('[media-monitoring] fetch error', e);
+  const pressStats = emptyPressFetchStats();
+
+  // The two channels are independent: Google News being rate-limited must
+  // not cost us the alert feeds, and vice versa. Run both, and only fail the
+  // run if *both* threw.
+  const [newsOutcome, feedOutcome] = await Promise.allSettled([
+    fetchArticlesForKeywords(keywords, { sinceIso: since, stats }),
+    fetchPressFeeds(pressSources, keywords, { sinceIso: since, stats: pressStats }),
+  ]);
+
+  const newsArticles = newsOutcome.status === 'fulfilled' ? newsOutcome.value : [];
+  const feedArticles = feedOutcome.status === 'fulfilled' ? feedOutcome.value : [];
+
+  const failures: string[] = [];
+  if (newsOutcome.status === 'rejected') {
+    const message =
+      newsOutcome.reason instanceof Error
+        ? newsOutcome.reason.message
+        : String(newsOutcome.reason);
+    failures.push(`Google News: ${message}`);
+    console.error('[media-monitoring] google news fetch error', newsOutcome.reason);
   }
+  if (feedOutcome.status === 'rejected') {
+    const message =
+      feedOutcome.reason instanceof Error
+        ? feedOutcome.reason.message
+        : String(feedOutcome.reason);
+    failures.push(`Press feeds: ${message}`);
+    console.error('[media-monitoring] press feed fetch error', feedOutcome.reason);
+  }
+  // A single channel failing is a degraded run, not a failed one — it is
+  // reported, but whatever the other channel found is still stored.
+  if (failures.length === 2) {
+    errorMessage = failures.join('; ');
+  } else if (failures.length === 1) {
+    console.warn(`[media-monitoring] degraded run — ${failures[0]}`);
+  }
+
+  // Cross-channel dedup: the same story arrives from Google News as an
+  // opaque redirect and from an alert feed as the real publisher URL.
+  articles = mergeArticleSets(newsArticles, feedArticles);
+  console.log(
+    `[media-monitoring] fetched ${articles.length} unique articles ` +
+      `(${newsArticles.length} google news + ${feedArticles.length} feeds before dedup)`,
+  );
+
+  // Record per-feed health so a quietly dead alert is visible in the
+  // dashboard instead of just contributing nothing.
+  await Promise.all(
+    pressStats.perSource.map((s) =>
+      supabase
+        .from('media_press_sources')
+        .update({
+          last_fetched_at: new Date().toISOString(),
+          last_status: s.status,
+          last_error: s.error,
+          last_item_count: s.items,
+        })
+        .eq('id', s.source_id),
+    ),
+  );
 
   // Resolve outlet_id for each article from the DB so relations stay clean.
   // We do one batched query on distinct outlet_domains then build a lookup.
@@ -230,6 +305,8 @@ async function runFetch(trigger: 'manual' | 'cron', options: { force?: boolean }
       matched_keyword_ids: a.matched_keyword_ids,
       matched_keywords: a.matched_keywords,
       matched_report_slugs: reportSlugs,
+      discovery_source: a.discovery_source ?? 'google_news',
+      press_source_id: a.press_source_id ?? null,
       fetched_at: new Date().toISOString(),
     };
   });
@@ -265,9 +342,12 @@ async function runFetch(trigger: 'manual' | 'cron', options: { force?: boolean }
         finished_at: new Date().toISOString(),
         status: errorMessage ? 'error' : 'success',
         keywords_count: keywords.length,
+        sources_count: pressSources.length,
+        items_seen: stats.itemsSeen + pressStats.itemsSeen,
         articles_found: articles.length,
         articles_new: Math.max(inserted, 0),
-        error_message: errorMessage,
+        error_message: errorMessage ?? (failures.length === 1 ? failures[0] : null),
+        diagnostics: { google_news: stats, press_feeds: pressStats },
       })
       .eq('id', runId);
   }
@@ -279,13 +359,17 @@ async function runFetch(trigger: 'manual' | 'cron', options: { force?: boolean }
       success: !errorMessage,
       run_id: runId,
       keywords_count: keywords.length,
+      sources_count: pressSources.length,
       articles_found: articles.length,
       articles_new: Math.max(inserted, 0),
       error: errorMessage,
+      // Reported when exactly one channel failed: the run still succeeded
+      // on the other, so this is a warning rather than an error.
+      degraded: failures.length === 1 ? failures[0] : null,
       // Returned so a zero-article run can be diagnosed from the response
-      // alone: it distinguishes "Google returned nothing" from "everything
-      // was filtered out", and shows how many feed requests failed.
-      diagnostics: stats,
+      // alone: it distinguishes "upstream returned nothing" from
+      // "everything was filtered out", and names any feed that failed.
+      diagnostics: { google_news: stats, press_feeds: pressStats },
     },
   };
 }
