@@ -1,10 +1,10 @@
 /**
- * Validation for user-supplied feed URLs stored in `media_social_sources`.
+ * Validation for user-supplied feed URLs stored in `media_press_sources`.
  *
- * These URLs are fetched server-side by the social ingestion pipeline, so an
+ * These URLs are fetched server-side by the press-feed pipeline, so an
  * unvalidated value is an SSRF vector: it could point the server at cloud
  * metadata endpoints or internal services. Validate at write time (sources
- * API) and again at fetch time (media-social.ts) as defence in depth.
+ * API) and again at fetch time (media-press-feeds.ts) as defence in depth.
  *
  * Limitation: this checks the URL as written. A public hostname that
  * resolves to a private address (DNS rebinding) is not caught here.

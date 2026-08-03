@@ -1,0 +1,106 @@
+name: Daily Media Monitoring
+
+# Runs the media-monitoring pipeline against the deployed site:
+#
+#   1. fetch   — pull Google News search results and every registered feed
+#                (Google Alerts, Talkwalker Alerts, plain RSS) into the pool
+#   2. cluster — assign the pool to reports, board members and countries so
+#                the dashboard lenses stay current
+#
+# The weekly Newton Media spreadsheet is uploaded by hand in the dashboard;
+# that upload clusters its own rows on the way in, so it does not need this
+# workflow to have run.
+#
+# Clustering is a separate step from fetching on purpose: report match-terms
+# and the board roster change over time, and when they do the whole pool needs
+# re-clustering, not just newly arrived rows.
+#
+# Required repository configuration:
+#   secrets.MEDIA_MONITORING_SECRET  — must equal the deployment's
+#                                      MEDIA_MONITORING_SECRET env var
+#   vars.MEDIA_MONITORING_BASE_URL   — deployed site origin, no trailing slash
+#                                      (e.g. https://methodhub.example.org)
+
+on:
+  schedule:
+    # 05:15 UTC. GitHub cron is typically delayed 15–90 min, so this lands in
+    # the early European morning, before the working day starts.
+    - cron: '15 5 * * *'
+  workflow_dispatch:
+    inputs:
+      full_recluster:
+        description: 'Re-cluster the entire pool, not just new rows'
+        type: boolean
+        default: false
+
+# Read-only: this workflow calls the deployed API and commits nothing.
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check configuration
+        env:
+          BASE_URL: ${{ vars.MEDIA_MONITORING_BASE_URL }}
+          SECRET: ${{ secrets.MEDIA_MONITORING_SECRET }}
+        run: |
+          if [ -z "$BASE_URL" ]; then
+            echo "::error::vars.MEDIA_MONITORING_BASE_URL is not set."
+            exit 1
+          fi
+          if [ -z "$SECRET" ]; then
+            echo "::error::secrets.MEDIA_MONITORING_SECRET is not set."
+            exit 1
+          fi
+
+      - name: Fetch coverage
+        env:
+          BASE_URL: ${{ vars.MEDIA_MONITORING_BASE_URL }}
+          SECRET: ${{ secrets.MEDIA_MONITORING_SECRET }}
+        run: |
+          # --max-time guards against a hung upstream holding the runner open.
+          # `force=true` bypasses the 3-minute rate limit, which exists to stop
+          # dashboard users hammering Google News and should not block a
+          # once-a-day scheduled run.
+          response=$(curl -sS --max-time 600 -w '\n%{http_code}' \
+            "${BASE_URL}/api/media-monitoring/fetch?secret=${SECRET}&force=true")
+          body=$(echo "$response" | head -n -1)
+          code=$(echo "$response" | tail -n 1)
+
+          # Redact the secret before anything reaches the log.
+          echo "$body" | sed "s/${SECRET}/***/g"
+
+          if [ "$code" != "200" ]; then
+            echo "::error::Fetch returned HTTP $code"
+            exit 1
+          fi
+
+          # A run can succeed overall while one channel is degraded. Surface
+          # that as a warning so it is visible without failing the job.
+          if echo "$body" | grep -q '"degraded":"'; then
+            echo "::warning::One channel was degraded — see the response above."
+          fi
+
+      - name: Cluster into reports, members and countries
+        env:
+          BASE_URL: ${{ vars.MEDIA_MONITORING_BASE_URL }}
+          SECRET: ${{ secrets.MEDIA_MONITORING_SECRET }}
+          FULL: ${{ inputs.full_recluster && 'true' || 'false' }}
+        run: |
+          response=$(curl -sS --max-time 600 -w '\n%{http_code}' \
+            "${BASE_URL}/api/media-monitoring/cluster?secret=${SECRET}&full=${FULL}")
+          body=$(echo "$response" | head -n -1)
+          code=$(echo "$response" | tail -n 1)
+
+          echo "$body" | sed "s/${SECRET}/***/g"
+
+          if [ "$code" != "200" ]; then
+            echo "::error::Clustering returned HTTP $code"
+            exit 1
+          fi
+
+      - name: Summary
+        if: always()
+        run: echo "Pipeline finished — see the step logs for per-stage counts." >> "$GITHUB_STEP_SUMMARY"

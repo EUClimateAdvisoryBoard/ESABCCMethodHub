@@ -2,13 +2,13 @@
  * ESABCC published reports.
  *
  * One entry per report the European Scientific Advisory Board on Climate
- * Change has released. Used by the media-monitoring module to cluster press
- * and social-media coverage per report so board members can see which of
- * their publications are getting the most traction.
+ * Change has released. Used by the media-monitoring module to cluster
+ * coverage per report so board members can see which of their publications
+ * are getting the most traction.
  *
- * The `match_terms` array is the source of truth for clustering: any media
- * article or social post whose matched keywords / text contain one of these
- * terms is attributed to the report. Keep the terms specific enough that they
+ * The `match_terms` array is the source of truth for clustering: any article
+ * whose matched keywords or text contain one of these terms is attributed to
+ * the report. Keep the terms specific enough that they
  * don't cross-match ("2040 climate target" is unique; "climate law" is not
  * and shouldn't be used alone).
  */
@@ -277,7 +277,7 @@ export function matchReportsInText(text: string | null | undefined): string[] {
 
 /**
  * Match a list of keyword strings (from media_articles.matched_keywords or
- * media_social_posts.matched_keywords) against the report match-terms. An
+ * matched_keywords) against the report match-terms. An
  * article can be attributed to multiple reports.
  */
 export function matchReportsFromKeywords(

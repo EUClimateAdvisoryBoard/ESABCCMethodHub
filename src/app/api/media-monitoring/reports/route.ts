@@ -5,21 +5,20 @@ import { ESABCC_REPORTS } from '@/data/esabcc-reports';
 /**
  * Per-report traction summary. For each ESABCC report we return:
  *   - press_count / press_reach: articles tagged with the report slug
- *   - social_count / social_reach: LinkedIn (and other) posts tagged likewise
- *   - last_press_at / last_social_at: freshness
+ *   - last_press_at: freshness
  *
  * Used by the Reports tab on the media-monitoring dashboard so board members
  * can see at a glance which publication is currently driving the most
- * coverage across press and social channels.
+ * coverage. Counts span the whole pool — alert and RSS feeds plus the weekly
+ * Newton Media import — since all of it lands in `media_articles`.
  *
  * Query params:
  *   ?days=180          optional cut-off (default: all time)
  *
- * Press and social rows are fetched with keyset/offset paging (1000
- * rows/page, hard safety cap of 20000 rows each) instead of a single
- * `.limit()`, so windows with more rows than one page aren't silently
- * under-reported. If either channel hits the cap, `truncated` is set on the
- * response so the client can surface a warning. The queries no longer filter
+ * Rows are fetched with keyset/offset paging (1000 rows/page, hard safety
+ * cap of 20000 rows) instead of a single `.limit()`, so windows with more
+ * rows than one page aren't silently under-reported. If the cap is hit,
+ * `truncated` is set on the response so the client can surface a warning. The queries no longer filter
  * `matched_report_slugs <> '{}'` server-side (that comparison can't use the
  * GIN index and forces a sequential scan) — rows with no matched slugs are
  * simply a no-op in the app-side bucketing loop below, so skipping the
@@ -66,17 +65,13 @@ export async function GET(request: NextRequest) {
         ...r,
         press_count: 0,
         press_reach: 0,
-        social_count: 0,
-        social_reach: 0,
         last_press_at: null,
-        last_social_at: null,
       })),
       truncated: false,
     });
   }
 
   type ArticleRow = { matched_report_slugs: string[] | null; estimated_reach: number | null; published_at: string | null };
-  type PostRow = { matched_report_slugs: string[] | null; estimated_reach: number | null; posted_at: string | null };
 
   const buildPressPage = (from: number, to: number) => {
     let q = supabase
@@ -87,26 +82,12 @@ export async function GET(request: NextRequest) {
     return q as unknown as PromiseLike<PageResult<ArticleRow>>;
   };
 
-  const buildSocialPage = (from: number, to: number) => {
-    let q = supabase
-      .from('media_social_posts')
-      .select('matched_report_slugs,estimated_reach,posted_at')
-      .range(from, to);
-    if (since) q = q.gte('posted_at', since);
-    return q as unknown as PromiseLike<PageResult<PostRow>>;
-  };
-
   let articles: ArticleRow[];
-  let posts: PostRow[];
   let truncated = false;
   try {
-    const [pressResult, socialResult] = await Promise.all([
-      fetchAllPaged(buildPressPage),
-      fetchAllPaged(buildSocialPage),
-    ]);
+    const pressResult = await fetchAllPaged(buildPressPage);
     articles = pressResult.rows;
-    posts = socialResult.rows;
-    truncated = pressResult.truncated || socialResult.truncated;
+    truncated = pressResult.truncated;
   } catch (error) {
     console.error('[media-monitoring] reports error', error);
     const message = error instanceof Error ? error.message : 'Unknown error';
@@ -116,23 +97,13 @@ export async function GET(request: NextRequest) {
   type Bucket = {
     press_count: number;
     press_reach: number;
-    social_count: number;
-    social_reach: number;
     last_press_at: string | null;
-    last_social_at: string | null;
   };
   const buckets = new Map<string, Bucket>();
   const ensure = (slug: string): Bucket => {
     let b = buckets.get(slug);
     if (!b) {
-      b = {
-        press_count: 0,
-        press_reach: 0,
-        social_count: 0,
-        social_reach: 0,
-        last_press_at: null,
-        last_social_at: null,
-      };
+      b = { press_count: 0, press_reach: 0, last_press_at: null };
       buckets.set(slug, b);
     }
     return b;
@@ -148,25 +119,11 @@ export async function GET(request: NextRequest) {
       }
     }
   }
-  for (const p of posts ?? []) {
-    for (const slug of p.matched_report_slugs ?? []) {
-      const b = ensure(slug);
-      b.social_count += 1;
-      b.social_reach += Number(p.estimated_reach) || 0;
-      if (p.posted_at && (!b.last_social_at || p.posted_at > b.last_social_at)) {
-        b.last_social_at = p.posted_at;
-      }
-    }
-  }
-
   const reports = ESABCC_REPORTS.map((r) => {
     const b = buckets.get(r.slug) ?? {
       press_count: 0,
       press_reach: 0,
-      social_count: 0,
-      social_reach: 0,
       last_press_at: null,
-      last_social_at: null,
     };
     return { ...r, ...b };
   }).sort((a, b) => b.published_on.localeCompare(a.published_on));

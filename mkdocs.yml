@@ -192,6 +192,7 @@ nav:
       - "M·33 Sector Background (beta)": modules/sector-background.md
       - "M·36 Policy Targets Register (beta)": modules/policy-targets.md
       - "M·42 EU Policy Hierarchy (beta)": modules/policy-hierarchy.md
+      - "Media Monitoring (beta)": modules/media-monitoring.md
   - Infrastructure:
       - Overview: infrastructure/index.md
       - Architecture overview: infrastructure/architecture.md
