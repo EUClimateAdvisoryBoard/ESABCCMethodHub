@@ -25,8 +25,18 @@ URL is registered in the dashboard. Everything either side of that is
 automatic.
 
 1. Open the **Sources** tab. Under *Step 1* you will find alert queries
-   generated from your active keywords, grouped by category and language.
-   Copy one.
+   generated from your active keywords, in two tiers:
+
+    - **Start here** — around five queries covering the ESABCC's own names,
+      its reports and the policy terms.
+    - **Optional** — around three more covering individual board members.
+
+    The queries deliberately mix languages, because alerts match literal
+    terms and have no per-language editions the way Google News search does.
+    Set the provider's language filter to *Any* and one alert covers all of
+    them. Start with the essential tier; the optional keywords are already
+    searched on Google News automatically, so an alert only adds a second,
+    more reliable channel.
 2. **Google Alerts** — go to [google.com/alerts](https://www.google.com/alerts),
    paste the query, open *Show options*, and set **Deliver to** to *RSS feed*.
    Create the alert, then copy the URL behind the orange RSS icon. It looks
@@ -51,6 +61,23 @@ pulled from every feed is matched against the current keyword list at fetch
 time, so new keywords apply to incoming coverage immediately. The alert only
 determines what the provider sends you — widen it when the coverage check flags
 uncovered keywords.
+
+### Practical notes
+
+- **Five alerts gets you most of the value**, eight covers everything. Queries
+  are capped at 15 OR-ed terms each, which both services handle comfortably
+  while staying checkable by eye.
+- **A new alert returns nothing at first.** Both providers only send items
+  published *after* the alert was created — there is no backfill. Give it a
+  day before concluding it is broken.
+- **Zero items with status *OK* is normal early on**, and means something
+  different from *Failed*, which means the URL is wrong or the feed is dead.
+- **Talkwalker's free tier allows only a handful of alerts.** If you hit the
+  limit, put the non-English queries there — Google News search already covers
+  English well.
+- **Google Alerts belong to one Google account** and cannot be transferred, so
+  create them under a shared team account if more than one person will need to
+  edit them.
 
 ## Weekly Newton Media upload
 

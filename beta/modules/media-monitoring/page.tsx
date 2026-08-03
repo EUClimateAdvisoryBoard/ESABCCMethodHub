@@ -173,9 +173,9 @@ interface PressSource {
 interface AlertQuery {
   keywords: string[];
   query: string;
-  category: string;
-  language: string;
-  country: string;
+  tier: 'essential' | 'optional';
+  label: string;
+  languages: string[];
 }
 
 const PRESS_SOURCE_LABELS: Record<PressSource['source_type'], string> = {
@@ -1720,31 +1720,58 @@ export default function MediaMonitoringPage() {
                 >
                   alerts.talkwalker.com
                 </a>
-                . Set delivery to <em>RSS feed</em>, then copy the feed URL back
-                into step 2. These regenerate whenever you change your keywords.
+                . Set delivery to <em>RSS feed</em> and language to{' '}
+                <em>Any</em> — the queries mix languages on purpose — then copy
+                the feed URL back into step 2. These regenerate whenever you
+                change your keywords.
               </p>
-              <div className="space-y-2">
-                {alertQueries.map((q) => (
-                  <div
-                    key={q.query}
-                    className="flex flex-wrap items-center gap-2 border border-grey-200 rounded px-3 py-2"
-                  >
-                    <span className="text-xs uppercase tracking-wide text-tertiary shrink-0">
-                      {q.category} · {q.language.toUpperCase()}
-                    </span>
-                    <code className="text-xs flex-1 min-w-[12rem] break-all">
-                      {q.query}
-                    </code>
-                    <button
-                      type="button"
-                      onClick={() => copyQuery(q.query)}
-                      className="text-xs border border-grey-200 rounded px-2 py-1 hover:bg-grey-50 shrink-0"
-                    >
-                      {copiedQuery === q.query ? 'Copied' : 'Copy'}
-                    </button>
+
+              {(['essential', 'optional'] as const).map((tier) => {
+                const group = alertQueries.filter((q) => q.tier === tier);
+                if (group.length === 0) return null;
+                return (
+                  <div key={tier} className="mb-4 last:mb-0">
+                    <p className="text-xs font-semibold text-tertiary-dark mb-1">
+                      {tier === 'essential'
+                        ? `Start here — ${group.length} alert${group.length === 1 ? '' : 's'}`
+                        : `Optional — ${group.length} more`}
+                    </p>
+                    <p className="text-xs text-tertiary mb-2">
+                      {tier === 'essential'
+                        ? 'The ESABCC’s own names, its reports and the policy terms. This is the set worth creating.'
+                        : 'Individual board-member name-watching. Every one of these keywords is already searched on Google News automatically — an alert just adds a second, more reliable channel.'}
+                    </p>
+                    <div className="space-y-2">
+                      {group.map((q) => (
+                        <div
+                          key={q.query}
+                          className="border border-grey-200 rounded px-3 py-2"
+                        >
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-xs font-medium text-tertiary-dark">
+                              {q.label}
+                            </span>
+                            <span className="text-[10px] text-tertiary">
+                              {q.keywords.length} terms ·{' '}
+                              {q.languages.join(', ').toUpperCase()}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => copyQuery(q.query)}
+                              className="text-xs border border-grey-200 rounded px-2 py-0.5 hover:bg-grey-50 ml-auto shrink-0"
+                            >
+                              {copiedQuery === q.query ? 'Copied' : 'Copy'}
+                            </button>
+                          </div>
+                          <code className="text-xs block break-all text-tertiary">
+                            {q.query}
+                          </code>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
               {uncoveredKeywords.length > 0 && (
                 <p className="text-xs text-orange-700 bg-orange-50 border border-orange-200 rounded px-3 py-2 mt-3">
                   <strong>

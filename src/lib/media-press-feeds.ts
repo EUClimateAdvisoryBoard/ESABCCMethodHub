@@ -332,9 +332,16 @@ export interface AlertQuery {
   keywords: string[];
   /** The query string to paste into the provider's UI. */
   query: string;
-  category: string;
-  language: string;
-  country: string;
+  /**
+   * 'essential' — covers the ESABCC's own names, reports and policy terms.
+   * These are worth the manual setup.
+   * 'optional'  — individual board-member name-watching. Useful, but a long
+   * tail that Google News search already covers automatically.
+   */
+  tier: 'essential' | 'optional';
+  label: string;
+  /** Languages represented, for the operator's information only. */
+  languages: string[];
 }
 
 /**
@@ -348,39 +355,82 @@ function quoteTerm(keyword: string): string {
 }
 
 /**
+ * Categories covering the ESABCC's own names, publications and policy terms.
+ * Everything else is individual name-watching.
+ */
+const ESSENTIAL_CATEGORIES = new Set([
+  'esabcc',
+  'institution',
+  'institution_quote',
+  'report',
+  'policy',
+]);
+
+/**
  * Turn keyword rows into ready-to-paste alert queries.
  *
- * Keywords are grouped by category + language so one alert covers a coherent
- * set, and each group is chunked so no single query grows past `maxTerms`
- * OR-ed terms — both providers degrade on very long queries, and a shorter
- * query is easier to check by eye in their UI.
+ * ── Why these are not grouped by language ─────────────────────────────────
+ * Grouping by category *and* language turned 129 keyword rows into 40
+ * queries, i.e. 40 alerts to create by hand — most of them covering a single
+ * keyword. That is not a setup anyone will actually complete.
+ *
+ * The language split was borrowed from the Google News search path, where it
+ * genuinely matters: `hl`/`gl` select which regional edition is searched.
+ * Alerts have no equivalent — they match the literal terms, so a query mixing
+ * German and French terms works fine with the provider's language set to
+ * "Any". Dropping the split, and raising the per-query term limit, collapses
+ * the same coverage into a handful of alerts.
+ *
+ * Queries are split into two tiers so the setup can be done in priority
+ * order rather than all at once. Every keyword is searched on Google News
+ * automatically regardless; alerts are a more reliable second channel, so a
+ * keyword without one is covered, just less robustly.
  */
 export function buildAlertQueries(
   keywords: MediaKeyword[],
   opts: { maxTerms?: number } = {},
 ): AlertQuery[] {
-  const maxTerms = opts.maxTerms ?? 6;
+  // Both providers degrade on very long queries. 15 OR-ed terms stays well
+  // inside what they handle and is still checkable by eye in their UI.
+  const maxTerms = opts.maxTerms ?? 15;
   const active = keywords.filter((k) => k.is_active && k.keyword.trim());
 
-  const groups = new Map<string, MediaKeyword[]>();
-  for (const kw of active) {
-    const key = `${kw.category || 'general'}|${kw.language || 'en'}|${kw.country || 'any'}`;
-    const list = groups.get(key) ?? [];
-    list.push(kw);
-    groups.set(key, list);
-  }
+  const tiers: { tier: 'essential' | 'optional'; rows: MediaKeyword[] }[] = [
+    {
+      tier: 'essential',
+      rows: active.filter((k) => ESSENTIAL_CATEGORIES.has(k.category)),
+    },
+    {
+      tier: 'optional',
+      rows: active.filter((k) => !ESSENTIAL_CATEGORIES.has(k.category)),
+    },
+  ];
 
   const queries: AlertQuery[] = [];
-  for (const [key, list] of groups) {
-    const [category, language, country] = key.split('|');
-    for (let i = 0; i < list.length; i += maxTerms) {
-      const slice = list.slice(i, i + maxTerms);
+  for (const { tier, rows } of tiers) {
+    // De-duplicate: several keyword rows differ only by language but carry
+    // the same literal term, and an alert has no use for the repeat.
+    const seen = new Set<string>();
+    const unique = rows.filter((k) => {
+      const key = k.keyword.trim().toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+
+    const chunks = Math.ceil(unique.length / maxTerms);
+    for (let i = 0; i < unique.length; i += maxTerms) {
+      const slice = unique.slice(i, i + maxTerms);
+      const part = Math.floor(i / maxTerms) + 1;
       queries.push({
         keywords: slice.map((k) => k.keyword),
         query: slice.map((k) => quoteTerm(k.keyword)).join(' OR '),
-        category,
-        language,
-        country,
+        tier,
+        label:
+          tier === 'essential'
+            ? `ESABCC & reports${chunks > 1 ? ` (${part}/${chunks})` : ''}`
+            : `Board members${chunks > 1 ? ` (${part}/${chunks})` : ''}`,
+        languages: Array.from(new Set(slice.map((k) => k.language || 'en'))).sort(),
       });
     }
   }
