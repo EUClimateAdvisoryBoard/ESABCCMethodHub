@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase } from '@/lib/supabase-server';
+import { authoriseMediaMutation } from '@/lib/media-auth';
+import { validateFeedUrl } from '@/lib/media-url-safety';
 
 /**
  * CRUD for `media_social_sources` — the LinkedIn profiles, company pages and
  * hashtags the social fetcher should track.
+ *
+ * POST, PATCH and DELETE are gated by `authoriseMediaMutation` (see
+ * src/lib/media-auth.ts). Any supplied `feed_url` is checked with
+ * `validateFeedUrl` (SSRF guard) before it is stored.
  */
 export async function GET() {
   const supabase = getServerSupabase();
@@ -22,6 +28,10 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  const auth = await authoriseMediaMutation(request);
+  if (!auth.ok) {
+    return NextResponse.json({ error: auth.error }, { status: auth.status });
+  }
   const supabase = getServerSupabase();
   if (!supabase) {
     return NextResponse.json(
@@ -35,13 +45,21 @@ export async function POST(request: NextRequest) {
     if (!handle) {
       return NextResponse.json({ error: 'Missing handle' }, { status: 400 });
     }
+    let feedUrl: string | null = null;
+    if (body.feed_url) {
+      const check = validateFeedUrl(String(body.feed_url));
+      if (!check.ok) {
+        return NextResponse.json({ error: check.reason }, { status: 400 });
+      }
+      feedUrl = check.url;
+    }
     const row = {
       platform: body.platform ? String(body.platform) : 'linkedin',
       handle,
       source_type: body.source_type ? String(body.source_type) : 'account',
       display_name: body.display_name ? String(body.display_name).slice(0, 200) : null,
       profile_url: body.profile_url ? String(body.profile_url).slice(0, 500) : null,
-      feed_url: body.feed_url ? String(body.feed_url).slice(0, 500) : null,
+      feed_url: feedUrl,
       country: body.country ? String(body.country).slice(0, 6) : null,
       language: body.language ? String(body.language).slice(0, 5) : 'en',
       default_report_slug: body.default_report_slug
@@ -64,6 +82,10 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PATCH(request: NextRequest) {
+  const auth = await authoriseMediaMutation(request);
+  if (!auth.ok) {
+    return NextResponse.json({ error: auth.error }, { status: auth.status });
+  }
   const supabase = getServerSupabase();
   if (!supabase) {
     return NextResponse.json(
@@ -79,7 +101,13 @@ export async function PATCH(request: NextRequest) {
     const patch: Record<string, unknown> = { updated_at: new Date().toISOString() };
     if (typeof body.is_active === 'boolean') patch.is_active = body.is_active;
     if (typeof body.is_board_member === 'boolean') patch.is_board_member = body.is_board_member;
-    if (typeof body.feed_url === 'string') patch.feed_url = body.feed_url.slice(0, 500);
+    if (typeof body.feed_url === 'string') {
+      const check = validateFeedUrl(body.feed_url);
+      if (!check.ok) {
+        return NextResponse.json({ error: check.reason }, { status: 400 });
+      }
+      patch.feed_url = check.url;
+    }
     if (typeof body.display_name === 'string') patch.display_name = body.display_name.slice(0, 200);
     if (typeof body.default_report_slug === 'string' || body.default_report_slug === null) {
       patch.default_report_slug = body.default_report_slug;
@@ -98,6 +126,10 @@ export async function PATCH(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
+  const auth = await authoriseMediaMutation(request);
+  if (!auth.ok) {
+    return NextResponse.json({ error: auth.error }, { status: auth.status });
+  }
   const supabase = getServerSupabase();
   if (!supabase) {
     return NextResponse.json(

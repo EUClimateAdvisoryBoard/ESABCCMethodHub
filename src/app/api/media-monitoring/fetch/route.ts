@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase } from '@/lib/supabase-server';
+import { authoriseMediaMutation } from '@/lib/media-auth';
 import {
   fetchArticlesForKeywords,
   OUTLET_REGISTRY,
@@ -19,12 +20,86 @@ import {
  * - Writes an audit entry into `media_fetch_runs`
  *
  * Can be invoked:
- *   - manually from the dashboard (POST)
+ *   - manually from the dashboard (POST, requires `authoriseMediaMutation`)
  *   - from a scheduler / cron (GET with ?secret=<MEDIA_MONITORING_SECRET>)
+ *
+ * Both entry points share an overlap/rate guard (`checkFetchRunGuard`) so
+ * a slow run can't be triggered twice concurrently and the dashboard can't
+ * be used to hammer Google News: a 'press' run already `running` within
+ * the last 15 minutes returns 409, and a channel that completed a run
+ * less than 3 minutes ago returns 429 unless the request is the cron path
+ * with a valid secret and `?force=true`.
  *
  * On first run it also seeds `media_outlets` from OUTLET_REGISTRY so the
  * dashboard has outlet metadata even without a manual import step.
  */
+
+const FETCH_CHANNEL = 'press';
+const RUNNING_OVERLAP_WINDOW_MS = 15 * 60 * 1000;
+const COMPLETED_RATE_LIMIT_MS = 3 * 60 * 1000;
+
+type RunGuardResult =
+  | { ok: true }
+  | { ok: false; status: number; body: { error: string } };
+
+/**
+ * Overlap/rate guard shared by the POST (dashboard) and GET (cron) paths.
+ *  - 409 if a run for this channel is already `running` and started within
+ *    the last 15 minutes (guards against overlapping/duplicate runs).
+ *  - 429 if the most recent completed run for this channel finished less
+ *    than 3 minutes ago, unless `allowForce` is set (only ever true for the
+ *    cron path, after the shared secret has already been verified).
+ */
+async function checkFetchRunGuard(
+  supabase: NonNullable<ReturnType<typeof getServerSupabase>>,
+  channel: string,
+  allowForce: boolean,
+): Promise<RunGuardResult> {
+  const overlapSince = new Date(Date.now() - RUNNING_OVERLAP_WINDOW_MS).toISOString();
+  const { data: runningRow } = await supabase
+    .from('media_fetch_runs')
+    .select('id')
+    .eq('channel', channel)
+    .eq('status', 'running')
+    .gte('started_at', overlapSince)
+    .order('started_at', { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (runningRow) {
+    return {
+      ok: false,
+      status: 409,
+      body: { error: 'A fetch run is already in progress.' },
+    };
+  }
+
+  if (!allowForce) {
+    const { data: lastRun } = await supabase
+      .from('media_fetch_runs')
+      .select('finished_at')
+      .eq('channel', channel)
+      .not('finished_at', 'is', null)
+      .order('finished_at', { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    if (lastRun?.finished_at) {
+      const elapsed = Date.now() - new Date(lastRun.finished_at).getTime();
+      if (elapsed < COMPLETED_RATE_LIMIT_MS) {
+        return {
+          ok: false,
+          status: 429,
+          body: {
+            error: 'Rate limited: this channel completed a fetch less than 3 minutes ago.',
+          },
+        };
+      }
+    }
+  }
+
+  return { ok: true };
+}
 
 async function seedOutletsIfEmpty(
   supabase: NonNullable<ReturnType<typeof getServerSupabase>>,
@@ -50,7 +125,7 @@ async function seedOutletsIfEmpty(
   if (error) console.warn('[media-monitoring] outlet seed error', error.message);
 }
 
-async function runFetch(trigger: 'manual' | 'cron') {
+async function runFetch(trigger: 'manual' | 'cron', options: { force?: boolean } = {}) {
   const supabase = getServerSupabase();
   if (!supabase) {
     return {
@@ -60,25 +135,36 @@ async function runFetch(trigger: 'manual' | 'cron') {
     };
   }
 
-  await seedOutletsIfEmpty(supabase);
+  // `force` only ever has an effect for the cron trigger, and the GET
+  // handler only sets `trigger: 'cron'` after the shared secret has
+  // already been validated — so reaching here with `trigger === 'cron'`
+  // already implies the request was authorised via the secret path.
+  const guard = await checkFetchRunGuard(
+    supabase,
+    FETCH_CHANNEL,
+    trigger === 'cron' && !!options.force,
+  );
+  if (!guard.ok) return guard;
 
-  // Start an audit row
-  const { data: runRow, error: runErr } = await supabase
-    .from('media_fetch_runs')
-    .insert({ trigger, status: 'running', channel: 'press' })
-    .select()
-    .single();
+  // seedOutletsIfEmpty, opening the audit row, and reading active keywords
+  // are all independent of one another — run them concurrently.
+  const [, auditResult, kwResult] = await Promise.all([
+    seedOutletsIfEmpty(supabase),
+    supabase
+      .from('media_fetch_runs')
+      .insert({ trigger, status: 'running', channel: FETCH_CHANNEL })
+      .select()
+      .single(),
+    supabase.from('media_keywords').select('*').eq('is_active', true),
+  ]);
 
+  const { data: runRow, error: runErr } = auditResult;
   if (runErr) {
     console.error('[media-monitoring] failed to open fetch run', runErr);
   }
   const runId: string | null = runRow?.id ?? null;
 
-  // Read active keywords
-  const { data: kwData, error: kwErr } = await supabase
-    .from('media_keywords')
-    .select('*')
-    .eq('is_active', true);
+  const { data: kwData, error: kwErr } = kwResult;
   if (kwErr) {
     return { ok: false, status: 500, body: { error: kwErr.message } };
   }
@@ -148,13 +234,15 @@ async function runFetch(trigger: 'manual' | 'cron') {
 
   let inserted = 0;
   if (rows.length > 0) {
-    // Count how many were already known so the run log is informative
+    // Count how many were already known so the run log is informative.
+    // The upsert conflicts on `url` (the DB unique column), so the
+    // pre-count must match on the same column, not `canonical_url`.
     const { count: existing } = await supabase
       .from('media_articles')
       .select('id', { count: 'exact', head: true })
       .in(
-        'canonical_url',
-        rows.map((r) => r.canonical_url),
+        'url',
+        rows.map((r) => r.url),
       );
 
     const { error: upErr } = await supabase
@@ -196,18 +284,27 @@ async function runFetch(trigger: 'manual' | 'cron') {
   };
 }
 
-export async function POST() {
+export async function POST(request: NextRequest) {
+  const auth = await authoriseMediaMutation(request);
+  if (!auth.ok) {
+    return NextResponse.json(
+      { error: auth.error ?? 'Unauthorized.' },
+      { status: auth.status ?? 401 },
+    );
+  }
   const result = await runFetch('manual');
   return NextResponse.json(result.body, { status: result.status });
 }
 
 export async function GET(request: NextRequest) {
   // Allow cron invocation with a shared secret
-  const secret = new URL(request.url).searchParams.get('secret');
+  const url = new URL(request.url);
+  const secret = url.searchParams.get('secret');
   const expected = process.env.MEDIA_MONITORING_SECRET;
   if (expected && secret !== expected) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
-  const result = await runFetch('cron');
+  const force = url.searchParams.get('force') === 'true';
+  const result = await runFetch('cron', { force });
   return NextResponse.json(result.body, { status: result.status });
 }

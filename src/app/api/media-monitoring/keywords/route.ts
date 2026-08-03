@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase } from '@/lib/supabase-server';
+import { authoriseMediaMutation } from '@/lib/media-auth';
 import type { MediaKeyword } from '@/lib/media-monitoring';
 
 /**
@@ -10,7 +11,35 @@ import type { MediaKeyword } from '@/lib/media-monitoring';
  *   POST /api/media-monitoring/keywords
  *        body: { keyword, label?, category?, language?, country? }
  *   DELETE /api/media-monitoring/keywords?id=<uuid>
+ *
+ * POST, PATCH and DELETE are gated by `authoriseMediaMutation` (see
+ * src/lib/media-auth.ts) — a shared secret or Supabase user token, unless
+ * MEDIA_MONITORING_SECRET is unset. `language` and `country` are validated
+ * as ISO-ish 2-letter codes on POST.
  */
+
+/** Validate and normalise `language`/`country`. Returns an error message on failure. */
+function parseLanguageAndCountry(
+  body: Record<string, unknown>,
+): { language: string; country: string } | { error: string } {
+  const languageRaw = body.language ? String(body.language).trim() : 'en';
+  const language = languageRaw.toLowerCase();
+  if (!/^[a-z]{2}$/.test(language)) {
+    return { error: 'language must be a 2-letter language code' };
+  }
+
+  const countryRaw = body.country ? String(body.country).trim() : 'any';
+  let country: string;
+  if (countryRaw.toLowerCase() === 'any') {
+    country = 'any';
+  } else if (/^[a-z]{2}$/i.test(countryRaw)) {
+    country = countryRaw.toUpperCase();
+  } else {
+    return { error: 'country must be "any" or a 2-letter ISO country code' };
+  }
+
+  return { language, country };
+}
 export async function GET() {
   const supabase = getServerSupabase();
   if (!supabase) {
@@ -32,6 +61,10 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  const auth = await authoriseMediaMutation(request);
+  if (!auth.ok) {
+    return NextResponse.json({ error: auth.error }, { status: auth.status });
+  }
   const supabase = getServerSupabase();
   if (!supabase) {
     return NextResponse.json(
@@ -45,12 +78,16 @@ export async function POST(request: NextRequest) {
     if (!keyword) {
       return NextResponse.json({ error: 'Missing keyword' }, { status: 400 });
     }
+    const langCountry = parseLanguageAndCountry(body);
+    if ('error' in langCountry) {
+      return NextResponse.json({ error: langCountry.error }, { status: 400 });
+    }
     const row = {
       keyword,
       label: body.label ? String(body.label).slice(0, 200) : null,
       category: body.category ? String(body.category).slice(0, 60) : 'general',
-      language: body.language ? String(body.language).slice(0, 5) : 'en',
-      country: body.country ? String(body.country).slice(0, 6) : 'any',
+      language: langCountry.language,
+      country: langCountry.country,
       is_active: body.is_active !== false,
     };
     const { data, error } = await supabase
@@ -69,6 +106,10 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PATCH(request: NextRequest) {
+  const auth = await authoriseMediaMutation(request);
+  if (!auth.ok) {
+    return NextResponse.json({ error: auth.error }, { status: auth.status });
+  }
   const supabase = getServerSupabase();
   if (!supabase) {
     return NextResponse.json(
@@ -99,6 +140,10 @@ export async function PATCH(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
+  const auth = await authoriseMediaMutation(request);
+  if (!auth.ok) {
+    return NextResponse.json({ error: auth.error }, { status: auth.status });
+  }
   const supabase = getServerSupabase();
   if (!supabase) {
     return NextResponse.json(

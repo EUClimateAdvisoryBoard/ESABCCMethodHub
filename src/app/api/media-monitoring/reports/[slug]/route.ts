@@ -10,7 +10,8 @@ import { ESABCC_REPORT_BY_SLUG } from '@/data/esabcc-reports';
  * page can render a combined timeline board members can share.
  *
  * Query params:
- *   ?limit=100   max items per channel (default 100, capped at 500)
+ *   ?limit=100   max items per channel (default 500, capped at 2000)
+ *   ?days=180    optional cut-off — only items published/posted in the last N days
  */
 export async function GET(
   request: NextRequest,
@@ -23,25 +24,37 @@ export async function GET(
 
   const supabase = getServerSupabase();
   const url = new URL(request.url);
-  const limit = Math.min(Number(url.searchParams.get('limit')) || 100, 500);
+  const limit = Math.min(Number(url.searchParams.get('limit')) || 500, 2000);
+  const daysParam = url.searchParams.get('days');
+  const days = daysParam ? Math.max(Number(daysParam) || 0, 0) : 0;
+  const since = days > 0
+    ? new Date(Date.now() - days * 24 * 3600 * 1000).toISOString()
+    : null;
 
   if (!supabase) {
     return NextResponse.json({ report, articles: [], posts: [] });
   }
 
-  const { data: articles } = await supabase
+  let articlesQuery = supabase
     .from('media_articles')
     .select('*')
     .contains('matched_report_slugs', [report.slug])
     .order('published_at', { ascending: false, nullsFirst: false })
     .limit(limit);
+  if (since) articlesQuery = articlesQuery.gte('published_at', since);
 
-  const { data: posts } = await supabase
+  let postsQuery = supabase
     .from('media_social_posts')
     .select('*')
     .contains('matched_report_slugs', [report.slug])
     .order('posted_at', { ascending: false, nullsFirst: false })
     .limit(limit);
+  if (since) postsQuery = postsQuery.gte('posted_at', since);
+
+  const [{ data: articles }, { data: posts }] = await Promise.all([
+    articlesQuery,
+    postsQuery,
+  ]);
 
   // Daily timeline across both channels for a combined chart
   const dailyMap = new Map<

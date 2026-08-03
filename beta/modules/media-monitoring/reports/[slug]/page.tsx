@@ -12,10 +12,22 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { Chart, registerables } from 'chart.js';
+import type { ChartOptions } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import type { EsabccReport } from '@/data/esabcc-reports';
+import { formatNumber, formatDate } from '@/lib/media-format';
 
 Chart.register(...registerables);
+
+const TIMELINE_CHART_OPTIONS: ChartOptions<'bar'> = {
+  responsive: true,
+  maintainAspectRatio: false,
+  scales: {
+    x: { stacked: true },
+    y: { stacked: true, beginAtZero: true },
+  },
+  plugins: { legend: { position: 'bottom' } },
+};
 
 interface Article {
   id: string;
@@ -59,26 +71,6 @@ interface ReportDetailResponse {
   };
 }
 
-function formatNumber(n: number): string {
-  if (n >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1)}B`;
-  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
-  if (n >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
-  return n.toString();
-}
-
-function formatDate(s: string | null): string {
-  if (!s) return '—';
-  try {
-    return new Date(s).toLocaleDateString('en-GB', {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    });
-  } catch {
-    return s;
-  }
-}
-
 export default function ReportDetailPage() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug;
@@ -86,22 +78,32 @@ export default function ReportDetailPage() {
   const [data, setData] = useState<ReportDetailResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
   const [channel, setChannel] = useState<'all' | 'press' | 'social'>('all');
 
   useEffect(() => {
     let cancelled = false;
     async function load() {
       setLoading(true);
+      setError(null);
+      setNotFound(false);
       try {
         const res = await fetch(`/api/media-monitoring/reports/${slug}`);
         if (res.status === 404) {
           if (!cancelled) setNotFound(true);
           return;
         }
+        if (!res.ok) {
+          throw new Error(`Request failed with status ${res.status}`);
+        }
         const json = await res.json();
         if (!cancelled) setData(json);
       } catch (err) {
         console.error('Failed to load report detail', err);
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : 'Failed to load report');
+        }
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -110,7 +112,7 @@ export default function ReportDetailPage() {
     return () => {
       cancelled = true;
     };
-  }, [slug]);
+  }, [slug, retryCount]);
 
   const timelineChart = useMemo(() => {
     if (!data || data.timeline.length === 0) return null;
@@ -144,6 +146,29 @@ export default function ReportDetailPage() {
         >
           Back to media monitoring
         </Link>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="max-w-3xl mx-auto px-6 py-20 text-center">
+        <h1 className="text-2xl font-bold text-tertiary-dark">Couldn&apos;t load this report</h1>
+        <p className="text-sm text-tertiary mt-2">{error}</p>
+        <div className="flex items-center justify-center gap-4 mt-4">
+          <button
+            onClick={() => setRetryCount((c) => c + 1)}
+            className="text-sm bg-primary text-white rounded px-4 py-2 hover:bg-primary-dark font-medium"
+          >
+            Retry
+          </button>
+          <Link
+            href="/media-monitoring"
+            className="text-sm text-primary hover:underline"
+          >
+            Back to media monitoring
+          </Link>
+        </div>
       </div>
     );
   }
@@ -228,18 +253,7 @@ export default function ReportDetailPage() {
                 Coverage timeline — press vs social
               </h2>
               <div style={{ height: 260 }}>
-                <Bar
-                  data={timelineChart}
-                  options={{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                      x: { stacked: true },
-                      y: { stacked: true, beginAtZero: true },
-                    },
-                    plugins: { legend: { position: 'bottom' } },
-                  }}
-                />
+                <Bar data={timelineChart} options={TIMELINE_CHART_OPTIONS} />
               </div>
             </div>
           )}

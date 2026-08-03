@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase } from '@/lib/supabase-server';
+import { requireIngestSecret } from '@/lib/media-auth';
 import {
   matchReportsFromKeywords,
   matchReportsInText,
 } from '@/data/esabcc-reports';
 import type { MediaKeyword } from '@/lib/media-monitoring';
+
+/** Reject request bodies larger than this to keep the stored `raw` payload bounded. */
+const MAX_BODY_BYTES = 200 * 1024;
 
 /**
  * Ingest a LinkedIn (or other social) post into `media_social_posts`.
@@ -17,9 +21,12 @@ import type { MediaKeyword } from '@/lib/media-monitoring';
  *     + optional content for times the extension isn't handy (mobile,
  *     email summaries, etc.).
  *
- * Auth: optional bearer token matching `MEDIA_MONITORING_SECRET`. Leave
- * the env var unset to allow any authenticated (or anonymous) caller —
- * fine for small internal deployments; set a secret for public ones.
+ * Auth: fails closed. `MEDIA_MONITORING_SECRET` must be configured on the
+ * server and supplied by the caller via an `Authorization: Bearer <secret>`
+ * header, an `x-media-secret` header, or a `?secret=` query param (the
+ * extension can't always set custom headers). Requests are rejected with
+ * 503 when the secret isn't configured and 401 when it doesn't match — see
+ * `requireIngestSecret` in src/lib/media-auth.ts.
  *
  * Body shape:
  *   {
@@ -31,20 +38,17 @@ import type { MediaKeyword } from '@/lib/media-monitoring';
  *     posted_at?:     string   ISO 8601
  *     platform?:      string   default 'linkedin'
  *   }
+ * Request bodies over ~200KB are rejected with 413 (the full body is
+ * stored verbatim in `media_social_posts.raw`).
  *
  * Response:
  *   { success: true, id, matched_keywords, matched_report_slugs }
  */
 export async function POST(request: NextRequest) {
-  // Optional bearer auth
-  const expected = process.env.MEDIA_MONITORING_SECRET;
-  if (expected) {
-    const header = request.headers.get('authorization') || '';
-    const token = header.replace(/^Bearer\s+/i, '');
-    const qs = new URL(request.url).searchParams.get('secret');
-    if (token !== expected && qs !== expected) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+  const qsSecret = new URL(request.url).searchParams.get('secret');
+  const auth = requireIngestSecret(request, qsSecret);
+  if (!auth.ok) {
+    return NextResponse.json({ error: auth.error }, { status: auth.status });
   }
 
   const supabase = getServerSupabase();
@@ -55,9 +59,19 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  let bodyText: string;
+  try {
+    bodyText = await request.text();
+  } catch {
+    return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+  }
+  if (Buffer.byteLength(bodyText, 'utf8') > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: 'Request body too large' }, { status: 413 });
+  }
+
   let body: Record<string, unknown>;
   try {
-    body = await request.json();
+    body = JSON.parse(bodyText);
   } catch {
     return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
   }

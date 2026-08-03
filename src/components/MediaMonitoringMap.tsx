@@ -56,20 +56,57 @@ const ISO_A2_TO_N3: Record<string, string> = {
 
 const WORLD_TOPO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
+// Module-level cache so the (fairly large) world topology is only ever
+// downloaded once per browser session, even though this component mounts
+// and unmounts every time the user leaves and revisits the Overview tab.
+let worldTopoPromise: Promise<unknown> | null = null;
+function loadWorldTopo(): Promise<unknown> {
+  if (!worldTopoPromise) {
+    worldTopoPromise = fetch(WORLD_TOPO_URL)
+      .then((r) => r.json())
+      .catch((err) => {
+        // Allow a later mount to retry instead of caching a permanent failure.
+        worldTopoPromise = null;
+        throw err;
+      });
+  }
+  return worldTopoPromise;
+}
+
 export default function MediaMonitoringMap({
   byCountry,
   outlets,
   metric = 'count',
   height = 420,
 }: Props) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const [geoData, setGeoData] = useState<unknown>(null);
+  const [width, setWidth] = useState(900);
+  const [offMapCount, setOffMapCount] = useState(0);
 
   useEffect(() => {
-    fetch(WORLD_TOPO_URL)
-      .then((r) => r.json())
-      .then(setGeoData)
+    let cancelled = false;
+    loadWorldTopo()
+      .then((data) => {
+        if (!cancelled) setGeoData(data);
+      })
       .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Track the container's width so the map redraws at the right size on
+  // window/panel resize instead of freezing at its first-render width.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const update = () => setWidth(el.clientWidth || 900);
+    update();
+    const ro = new ResizeObserver(() => update());
+    ro.observe(el);
+    return () => ro.disconnect();
   }, []);
 
   useEffect(() => {
@@ -78,7 +115,6 @@ export default function MediaMonitoringMap({
     const svg = d3.select(svgRef.current);
     svg.selectAll('*').remove();
 
-    const width = svgRef.current.clientWidth || 900;
     svg.attr('viewBox', `0 0 ${width} ${height}`);
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -97,7 +133,10 @@ export default function MediaMonitoringMap({
     const nameByN3: Record<string, string> = {};
     byCountry.forEach((c) => {
       const n3 = ISO_A2_TO_N3[c.country];
-      if (!n3) return;
+      if (!n3) {
+        console.debug(`MediaMonitoringMap: no ISO numeric mapping for country code "${c.country}"`);
+        return;
+      }
       valueByN3[n3] = metric === 'count' ? c.count : c.reach;
       nameByN3[n3] = c.country_name || c.country;
     });
@@ -146,11 +185,25 @@ export default function MediaMonitoringMap({
         return `${name}: ${v.toLocaleString()} ${metric === 'count' ? 'articles' : 'reach'}`;
       });
 
-    // Outlet pins — size scaled by sqrt(reach)
-    const pinOutlets = outlets.filter(
+    // Outlet pins — size scaled by sqrt(reach). The projection is
+    // Europe-centred, so outlets outside its visible area (e.g. the
+    // non-European entries in ISO_A2_TO_N3) are excluded here rather than
+    // left to render off-canvas/clipped; their count is surfaced in a
+    // caption instead of being silently dropped.
+    const candidateOutlets = outlets.filter(
       (o) => typeof o.latitude === 'number' && typeof o.longitude === 'number' && o.count > 0,
     );
-    const maxReach = Math.max(1, ...pinOutlets.map((o) => o.reach));
+
+    let outOfBounds = 0;
+    const pinOutlets = candidateOutlets.filter((o) => {
+      const p = projection([o.longitude!, o.latitude!]);
+      const inBounds = !!p && p[0] >= 0 && p[0] <= width && p[1] >= 0 && p[1] <= height;
+      if (!inBounds) outOfBounds += 1;
+      return inBounds;
+    });
+    setOffMapCount(outOfBounds);
+
+    const maxReach = d3.max(pinOutlets, (o) => o.reach) ?? 1;
     const rScale = d3.scaleSqrt().domain([0, maxReach]).range([2, 18]);
 
     svg
@@ -230,11 +283,18 @@ export default function MediaMonitoringMap({
       .attr('fill', '#54728C')
       .attr('font-size', 9)
       .text(`high (${vMax.toLocaleString()})`);
-  }, [geoData, byCountry, outlets, metric, height]);
+  }, [geoData, byCountry, outlets, metric, height, width]);
 
   return (
-    <div style={{ height }}>
-      <svg ref={svgRef} style={{ width: '100%', height: '100%' }} />
+    <div ref={containerRef}>
+      <div style={{ height }}>
+        <svg ref={svgRef} style={{ width: '100%', height: '100%' }} />
+      </div>
+      {offMapCount > 0 && (
+        <p className="text-[10px] text-tertiary mt-1 text-right">
+          +{offMapCount} outlet{offMapCount === 1 ? '' : 's'} outside map area
+        </p>
+      )}
     </div>
   );
 }

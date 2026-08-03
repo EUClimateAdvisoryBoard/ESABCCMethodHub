@@ -426,12 +426,31 @@ function smartQuery(keyword: string): string {
   return keyword;
 }
 
+/**
+ * `hl`/`gl`/`ceid` come from user-editable keyword rows (language/country
+ * fields). Without validation a crafted value (e.g. `en&foo=bar`) could
+ * inject extra query parameters into the outbound Google News request, so
+ * both are constrained to their expected shapes before being interpolated,
+ * and every interpolated segment is also `encodeURIComponent`-escaped as
+ * defence in depth.
+ */
+function sanitizeHl(language: string | null | undefined): string {
+  const value = (language ?? '').trim();
+  return /^[a-z]{2}(-[A-Z]{2})?$/.test(value) ? value : 'en';
+}
+
+function sanitizeGl(country: string | null | undefined): string {
+  if (!country || country === 'any') return 'US';
+  const upper = country.trim().toUpperCase();
+  return /^[A-Z]{2}$/.test(upper) ? upper : 'US';
+}
+
 export function buildGoogleNewsUrl(kw: MediaKeyword): string {
   const q = encodeURIComponent(smartQuery(kw.keyword));
-  const hl = kw.language || 'en';
-  const gl = kw.country && kw.country !== 'any' ? kw.country.toUpperCase() : 'US';
+  const hl = sanitizeHl(kw.language);
+  const gl = sanitizeGl(kw.country);
   const ceid = `${gl}:${hl}`;
-  return `https://news.google.com/rss/search?q=${q}&hl=${hl}&gl=${gl}&ceid=${ceid}`;
+  return `https://news.google.com/rss/search?q=${q}&hl=${encodeURIComponent(hl)}&gl=${encodeURIComponent(gl)}&ceid=${encodeURIComponent(ceid)}`;
 }
 
 /**
@@ -443,13 +462,13 @@ export function buildBatchGoogleNewsUrl(
   keywords: MediaKeyword[],
 ): string {
   const first = keywords[0];
-  const hl = first.language || 'en';
-  const gl = first.country && first.country !== 'any' ? first.country.toUpperCase() : 'US';
+  const hl = sanitizeHl(first.language);
+  const gl = sanitizeGl(first.country);
   const ceid = `${gl}:${hl}`;
 
   const parts = keywords.map((kw) => smartQuery(kw.keyword));
   const q = encodeURIComponent(parts.join(' OR '));
-  return `https://news.google.com/rss/search?q=${q}&hl=${hl}&gl=${gl}&ceid=${ceid}`;
+  return `https://news.google.com/rss/search?q=${q}&hl=${encodeURIComponent(hl)}&gl=${encodeURIComponent(gl)}&ceid=${encodeURIComponent(ceid)}`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -525,6 +544,12 @@ const FETCH_HEADERS = {
  *     miss niche results that get crowded out in OR queries.
  *  4. Throttle between batches to avoid Google rate-limiting.
  *  5. Deduplicate by canonical URL, merging matched keywords.
+ *
+ * Rejected requests (network/timeout errors) and non-OK HTTP responses do
+ * not throw — they are counted and reported via `console.warn` (per-wave
+ * and as a final summary) so operators can spot degraded fetches in logs,
+ * but the function still resolves with whatever articles it did manage to
+ * collect.
  */
 export async function fetchArticlesForKeywords(
   keywords: MediaKeyword[],
@@ -575,6 +600,10 @@ export async function fetchArticlesForKeywords(
 
   // ── Execute with throttling ─────────────────────────────────────────
   const merged = new Map<string, FetchedArticle>();
+  // Rejected promises (network/timeout errors) and non-OK HTTP responses
+  // used to be silently swallowed. Count them so operators can see, via
+  // logs, whether Google News is rate-limiting or a batch is misbehaving.
+  let failedJobs = 0;
 
   // Process in waves of 3 concurrent requests with delays between waves
   const CONCURRENCY = 3;
@@ -588,14 +617,21 @@ export async function fetchArticlesForKeywords(
           signal: AbortSignal.timeout(timeoutMs),
           next: { revalidate: 900 },
         });
-        if (!res.ok) return { keywords: job.keywords, items: [] as RawGoogleItem[] };
+        if (!res.ok) {
+          return { keywords: job.keywords, items: [] as RawGoogleItem[], failed: true as const, status: res.status };
+        }
         const xml = await res.text();
-        return { keywords: job.keywords, items: parseGoogleNewsFeed(xml) };
+        return { keywords: job.keywords, items: parseGoogleNewsFeed(xml), failed: false as const };
       }),
     );
 
+    let waveFailures = 0;
     for (const r of results) {
-      if (r.status !== 'fulfilled') continue;
+      if (r.status !== 'fulfilled') {
+        waveFailures += 1;
+        continue;
+      }
+      if (r.value.failed) waveFailures += 1;
       const { keywords: jobKws, items } = r.value;
 
       for (const it of items) {
@@ -665,10 +701,23 @@ export async function fetchArticlesForKeywords(
       }
     }
 
+    if (waveFailures > 0) {
+      failedJobs += waveFailures;
+      console.warn(
+        `[media-monitoring] wave ${Math.floor(i / CONCURRENCY) + 1}: ${waveFailures}/${wave.length} jobs failed (network error or non-OK response)`,
+      );
+    }
+
     // Throttle between waves
     if (i + CONCURRENCY < jobs.length) {
       await sleep(delayMs);
     }
+  }
+
+  if (failedJobs > 0) {
+    console.warn(
+      `[media-monitoring] fetch summary: ${failedJobs}/${jobs.length} jobs failed across all waves`,
+    );
   }
 
   if (dropped.blocked || dropped.unknown || dropped.lowReach) {

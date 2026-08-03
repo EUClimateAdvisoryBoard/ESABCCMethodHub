@@ -27,6 +27,7 @@ import {
   matchReportsInText,
 } from '@/data/esabcc-reports';
 import type { MediaKeyword } from '@/lib/media-monitoring';
+import { validateFeedUrl } from '@/lib/media-url-safety';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -211,23 +212,36 @@ const FETCH_HEADERS = {
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 async function fetchRss(
-  url: string,
+  source: SocialSource,
   timeoutMs: number,
-): Promise<RawFeedItem[]> {
-  const res = await fetch(url, {
+): Promise<{ items: RawFeedItem[]; failed: boolean }> {
+  const res = await fetch(source.feed_url as string, {
     headers: FETCH_HEADERS,
     signal: AbortSignal.timeout(timeoutMs),
     next: { revalidate: 900 },
   });
-  if (!res.ok) return [];
+  if (!res.ok) {
+    console.warn(
+      `[media-social] feed fetch failed for "${source.display_name ?? source.handle}" (${source.platform}): HTTP ${res.status}`,
+    );
+    return { items: [], failed: true };
+  }
   const xml = await res.text();
-  return parseFeed(xml);
+  return { items: parseFeed(xml), failed: false };
 }
 
 /**
  * Fetch posts from every source that has an `feed_url` configured.
  * Sources without a feed URL are skipped — they exist only as reference
  * data and metadata for extension-ingested posts.
+ *
+ * Before fetching, every candidate `feed_url` is re-validated with
+ * `validateFeedUrl` (defence in depth against SSRF — the same check runs
+ * at write time in the sources API, but a row could have been inserted
+ * before that validation existed, or written directly against the DB).
+ * Sources that fail validation, and feeds that fail to fetch (rejected
+ * promise or non-OK HTTP response), are logged via `console.warn` and
+ * counted; a one-line summary is logged once the run finishes.
  */
 export async function fetchSocialPosts(
   sources: SocialSource[],
@@ -238,25 +252,52 @@ export async function fetchSocialPosts(
   const activeOnly = opts.activeOnly ?? true;
   const sinceTs = opts.sinceIso ? new Date(opts.sinceIso).getTime() : 0;
 
-  const activeSources = (activeOnly ? sources.filter((s) => s.is_active) : sources)
+  const candidateSources = (activeOnly ? sources.filter((s) => s.is_active) : sources)
     .filter((s) => !!s.feed_url);
-  if (activeSources.length === 0) return [];
+
+  let invalidUrlCount = 0;
+  const activeSources = candidateSources.filter((s) => {
+    const check = validateFeedUrl(s.feed_url as string);
+    if (!check.ok) {
+      invalidUrlCount += 1;
+      console.warn(
+        `[media-social] skipping source "${s.display_name ?? s.handle}" (${s.platform}): ${check.reason}`,
+      );
+      return false;
+    }
+    return true;
+  });
+
+  if (activeSources.length === 0) {
+    if (invalidUrlCount > 0) {
+      console.warn(
+        `[media-social] fetch summary: 0/${candidateSources.length} feeds fetched, ${invalidUrlCount} skipped (invalid feed_url)`,
+      );
+    }
+    return [];
+  }
 
   const byUrl = new Map<string, FetchedSocialPost>();
+  let failedFeedCount = invalidUrlCount;
 
   // Small concurrency since typical deployments have <10 feeds
   const CONCURRENCY = 3;
   for (let i = 0; i < activeSources.length; i += CONCURRENCY) {
     const wave = activeSources.slice(i, i + CONCURRENCY);
     const settled = await Promise.allSettled(
-      wave.map(async (source) => ({
-        source,
-        items: await fetchRss(source.feed_url as string, timeoutMs),
-      })),
+      wave.map(async (source) => {
+        const { items, failed } = await fetchRss(source, timeoutMs);
+        return { source, items, failed };
+      }),
     );
 
     for (const r of settled) {
-      if (r.status !== 'fulfilled') continue;
+      if (r.status !== 'fulfilled') {
+        failedFeedCount += 1;
+        console.warn('[media-social] feed fetch rejected', r.reason);
+        continue;
+      }
+      if (r.value.failed) failedFeedCount += 1;
       const { source, items } = r.value;
 
       for (const it of items) {
@@ -329,6 +370,13 @@ export async function fetchSocialPosts(
     }
 
     if (i + CONCURRENCY < activeSources.length) await sleep(500);
+  }
+
+  if (failedFeedCount > 0) {
+    const httpFailures = failedFeedCount - invalidUrlCount;
+    console.warn(
+      `[media-social] fetch summary: ${activeSources.length - httpFailures}/${activeSources.length} feeds fetched ok, ${failedFeedCount} failed total (${invalidUrlCount} invalid feed_url, ${httpFailures} fetch/HTTP failures)`,
+    );
   }
 
   return Array.from(byUrl.values()).sort((a, b) => {
