@@ -1,57 +1,5 @@
 {
   "policy_id": "csddd",
-  "targets": [
-    {
-      "quote": "the obligation for companies to adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, compatibility of the business model and of the strategy of the company with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement.",
-      "article": "Article 1(1)(c) — Subject matter",
-      "label": "commitment",
-      "timeline": "",
-      "indicators": [
-        "global warming limit of 1,5 °C"
-      ],
-      "climate_relevance": "mitigation"
-    },
-    {
-      "quote": "1.   Member States shall ensure that companies referred to in Article 2(1), points (a), (b) and (c), and Article 2(2), points (a), (b) and (c), adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, that the business model and strategy of the company are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement and the objective of achieving climate neutrality as established in Regulation (EU) 2021/1119, including its intermediate and 2050 climate neutrality targets, and where relevant, the exposure of the company to coal-, oil- and gas-related activities.",
-      "article": "Article 22(1) — Combating climate change",
-      "label": "commitment",
-      "timeline": "by 2050",
-      "indicators": [
-        "global warming limit of 1,5 °C",
-        "climate neutrality"
-      ],
-      "climate_relevance": "mitigation"
-    },
-    {
-      "quote": "time-bound targets related to climate change for 2030 and in five-year steps up to 2050 based on conclusive scientific evidence and, where appropriate, absolute emission reduction targets for greenhouse gas for scope 1, scope 2 and scope 3 greenhouse gas emissions for each significant category;",
-      "article": "Article 22(1), second subparagraph, point (a) — Combating climate change",
-      "label": "target",
-      "timeline": "for 2030 and in five-year steps up to 2050",
-      "indicators": [
-        "absolute greenhouse gas emission reduction targets",
-        "scope 1, scope 2 and scope 3 greenhouse gas emissions"
-      ],
-      "climate_relevance": "mitigation"
-    },
-    {
-      "quote": "3.   Member States shall ensure that the transition plan for climate change mitigation referred to in paragraph 1 is updated every 12 months and contains a description of the progress the company has made towards achieving the targets referred to in paragraph 1, second subparagraph, point (a).",
-      "article": "Article 22(3) — Combating climate change",
-      "label": "obligation",
-      "timeline": "every 12 months",
-      "indicators": [
-        "progress towards climate targets"
-      ],
-      "climate_relevance": "mitigation"
-    },
-    {
-      "quote": "1.   Member States shall ensure that the supervisory authorities have adequate powers and resources to carry out the tasks assigned to them under this Directive, including the power to require companies to provide information and carry out investigations related to compliance with the obligations set out in Articles 7 to 16. Member States shall require the supervisory authorities to supervise the adoption and design of the transition plan for climate change mitigation in accordance with the requirements provided for in Article 22(1).",
-      "article": "Article 15(1) — Supervisory authorities",
-      "label": "obligation",
-      "timeline": "",
-      "indicators": [
-        "transition plan for climate change mitigation"
-      ],
-      "climate_relevance": "mitigation"
-    }
-  ]
+  "targets": [],
+  "note": "RE-EXTRACTION 2026-08 (02024L1760-20260318): the Omnibus I amendment (Directive (EU) 2026/470) repealed former Article 22 'Combating climate change' in its entirety - the consolidated text jumps directly from Article 21 (Single helpdesk) to Article 23 (Authorised representative), with a repealed-provision marker in its place. That article carried every one of this act's previous candidate quotes (Art 1(1)(c) subject-matter cross-reference, Art 22(1) transition-plan obligation, Art 22(1) 2nd subpara point (a) time-bound GHG targets, Art 22(3) 12-month update cycle, Art 15(1) supervisory-authority oversight of the transition plan) - none has a surviving equivalent. A full re-read of the remaining enacting terms (Articles 1-39 and annexes) found no other timebound or quantitatively-progressive provision: the due-diligence articles (Arts 7-14) mandate company-internal processes and self-set action-plan timelines (a process obligation to set objectives later, not a Directive-imposed target), Article 15 'Monitoring' only requires periodic reassessment at least every 5 years with no substantive goal, and Article 16 sets a reporting deadline (12 months after balance-sheet date) with no quantified content. The independent deterministic regex sweep over the same replaced source text (scripts/policy-targets-input/_regex.json) likewise returns zero candidates for csddd, corroborating this reading. Net effect: 4 -> 0, unresolved - the climate-transition-plan obligation this policy_id existed to represent in the register no longer has a textual home in CSDDD; the equivalent disclosure-only provisions (Directive 2013/34/EU Art 19a/29a inserted by CSRD) are already tracked under policy_id 'csrd'."
 }

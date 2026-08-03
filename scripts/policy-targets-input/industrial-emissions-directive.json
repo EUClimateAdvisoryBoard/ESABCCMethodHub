@@ -12,43 +12,12 @@
       "climate_relevance": "none"
     },
     {
-      "quote": "energy is used efficiently;",
-      "article": "Article 11(f) - General principles governing the basic obligations of the operator",
-      "label": "obligation",
-      "timeline": "",
-      "indicators": [
-        "energy efficiency"
-      ],
-      "climate_relevance": "mitigation"
-    },
-    {
-      "quote": "emission limit values for polluting substances listed in Annex II, and for other polluting substances, which are likely to be emitted from the installation concerned in significant quantities, having regard to their nature and their potential to transfer pollution from one medium to another;",
-      "article": "Article 14(1)(a) - Permit conditions",
-      "label": "obligation",
-      "timeline": "",
-      "indicators": [
-        "emission limit values"
-      ],
-      "climate_relevance": "none"
-    },
-    {
       "quote": "BAT conclusions shall be the reference for setting the permit conditions.",
       "article": "Article 14(3) - Permit conditions",
       "label": "obligation",
       "timeline": "",
       "indicators": [
         "BAT conclusions"
-      ],
-      "climate_relevance": "none"
-    },
-    {
-      "quote": "The competent authority shall set emission limit values that ensure that, under normal operating conditions, emissions do not exceed the emission levels associated with the best available techniques as laid down in the decisions on BAT conclusions referred to in Article 13(5) through either of the following:",
-      "article": "Article 15(3) - Emission limit values, equivalent parameters and technical measures",
-      "label": "obligation",
-      "timeline": "",
-      "indicators": [
-        "emission limit values",
-        "emission levels associated with the best available techniques"
       ],
       "climate_relevance": "none"
     },
@@ -159,6 +128,18 @@
         "titanium dioxide installations"
       ],
       "climate_relevance": "none"
+    },
+    {
+      "quote": "Member States shall require that operators by 30 June 2030 include in their EMS an indicative transformation plan covering their activities as listed in points 1, 2, 3, 4, 6.1 a, and 6.1 b of Annex I. The transformation plan shall contain information on how the operator will transform the installation during the 2030-2050 period to contribute to the emergence of a sustainable, clean, circular, resource-efficient and climate-neutral economy by 2050, including where relevant deep industrial transformation as referred to in Article 27e.",
+      "article": "Article 27d(1) - Transformation towards a clean, circular and climate-neutral industry",
+      "label": "target",
+      "timeline": "by 30 June 2030; transformation during 2030-2050 towards a climate-neutral economy by 2050",
+      "indicators": [
+        "indicative transformation plan",
+        "climate-neutral economy by 2050"
+      ],
+      "climate_relevance": "mitigation",
+      "source": "NEW-2024/1785: Article 27d(1) transformation-plan obligation inserted by Directive (EU) 2024/1785; deadline 30 June 2030, goal climate-neutral economy by 2050."
     }
   ]
 }

@@ -1,0 +1,87 @@
+{
+  "renewable-energy-directive": {
+    "celex": "02018L2001-20240716",
+    "date": "2024-07-16",
+    "note": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1))."
+  },
+  "eu-ets-directive": {
+    "celex": "02003L0087-20240301",
+    "date": "2024-03-01",
+    "note": "Replaced with current consolidated version (amended by the Fit for 55 revision, Directive (EU) 2023/959, and 16 consolidations since 2003). Stored text was the original 25.10.2003 OJ text (pre-Market Stability Reserve, pre-aviation/maritime inclusion, EUR 40/tonne 2005-2007 penalty); consolidated text includes maritime transport scope (Articles 3g-3gg) and the revised cap trajectory."
+  },
+  "co2-cars-regulation": {
+    "celex": "02019R0631-20250709",
+    "date": "2025-07-09",
+    "note": "Replaced with current consolidated version (amended by Regulation (EU) 2023/851). Stored text had only the original 2019 targets (15%/37.5% by 2025/2030 cars, 31% vans); consolidated text confirms the 2035 'EU fleet-wide target equal to a 100 % reduction' (zero-emission new cars/vans from 2035) and the raised 2030 targets (55%/50%)."
+  },
+  "effort-sharing-regulation": {
+    "celex": "02018R0842-20230516",
+    "date": "2023-05-16",
+    "note": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference."
+  },
+  "waste-framework-directive": {
+    "celex": "02008L0098-20251016",
+    "date": "2025-10-16",
+    "note": "Replaced with current consolidated version (amended by Directive (EU) 2018/851 and later acts). Stored text had the original 2008 recycling target (50% by 2020, Article 11(2)); consolidated text confirms 'by 2035, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 65 % by weight.'"
+  },
+  "industrial-emissions-directive": {
+    "celex": "02010L0075-20240804",
+    "date": "2024-08-04",
+    "note": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope."
+  },
+  "union-civil-protection-mechanism": {
+    "celex": "02013D1313-20231218",
+    "date": "2023-12-18",
+    "note": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively."
+  },
+  "mff-regulation": {
+    "celex": "02020R2093-20260424",
+    "date": "2026-04-24",
+    "note": "Replaced with current consolidated version (amended by the 2024 mid-term revision, Regulation (EU, Euratom) 2024/765). Stored text had the original Flexibility Instrument ceiling of EUR 915 million; consolidated text confirms the revised ceiling of EUR 1 346 million (2018 prices) for 2024-2027 (Article 12)."
+  },
+  "osh-framework-directive": {
+    "celex": "01989L0391-20081211",
+    "date": "2008-12-11",
+    "note": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available)."
+  },
+  "habitats-directive": {
+    "celex": "01992L0043-20250714",
+    "date": "2025-07-14",
+    "note": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule."
+  },
+  "governance-regulation": {
+    "celex": "02018R1999-20231120",
+    "date": "2023-11-20",
+    "note": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%."
+  },
+  "eu-climate-law": {
+    "celex": "02021R1119-20260407",
+    "date": "2026-04-07",
+    "note": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely."
+  },
+  "csrd": {
+    "celex": "02022L2464-20260318",
+    "date": "2026-03-18",
+    "note": "Replaced with current consolidated version (amended by the 2025-2026 'Omnibus I' simplification package). Stored text set the in-scope threshold at 'average number of 500 employees'; consolidated text raises this to 'average number of 1 000 employees' with a EUR 450 000 000 turnover floor, substantially narrowing CSRD's scope."
+  },
+  "csddd": {
+    "celex": "02024L1760-20260318",
+    "date": "2026-03-18",
+    "note": "Replaced with current consolidated version (amended by the 2025-2026 'Omnibus I' simplification package). Stored text set the threshold at '1 000 employees' and 'EUR 450 000 000' turnover; consolidated text raises this to '5 000 employees' and 'EUR 1 500 000 000' turnover, a roughly 5x narrowing of scope for both EU and third-country companies."
+  },
+  "water-framework-directive": {
+    "celex": "02000L0060-20260510",
+    "date": "2026-05-10",
+    "note": "Replaced with current consolidated version (9 consolidations, mostly technical updates to the priority-substances list under Article 16/Annex X via successive Directives, e.g. 2008/105/EC, 2013/39/EU). Core Article 4 environmental-objective obligations captured as register targets are unchanged in wording; replaced for completeness per the 'stored text predates latest consolidation' rule."
+  },
+  "common-provisions-regulation": {
+    "celex": "02021R1060-20260701",
+    "date": "2026-07-01",
+    "note": "Replaced with current consolidated version (7 consolidations, including the STEP Regulation (EU) 2024/795 amendments and later technical/simplification amendments). The ERDF 30% / Cohesion Fund 37% climate-contribution targets (Article 6) are unchanged in the consolidated text, but the Article now also cross-references the STEP mechanism for reallocating climate contributions between the two funds; replaced for completeness."
+  },
+  "erdf-regulation": {
+    "celex": "02021R1058-20250920",
+    "date": "2025-09-20",
+    "note": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule."
+  }
+}

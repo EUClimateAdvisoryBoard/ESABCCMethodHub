@@ -87,10 +87,42 @@ RULES = [
     ('FIX-TRUNCATION', 'Sentence completed',
      'The quote was sliced mid-sentence — its subject or its continuation sat outside the slice; '
      're-extracted to sentence bounds.'),
+    # Rules added by the August 2026 (v3) reviewer pass: a target must be
+    # timebound or at least imply a measurable progression of effort.
+    ('NT-7', 'Pure conduct obligation',
+     'A duty to act or refrain (take measures, prevent, ensure) with no progression over time that '
+     'could be measured — one intervention, not a target.'),
+    ('NT-8', 'Threshold-triggered obligation',
+     'An obligation that fires when an entity crosses a size or consumption threshold (e.g. '
+     'energy-audit duties for large enterprises) is a compliance rule, not a target.'),
+    ('NT-9', 'Derogation or reduced requirement',
+     'A clause letting Member States apply a lower requirement in defined cases relaxes a target; '
+     'it is not itself one.'),
+    ('NT-10', 'Bare fragment',
+     'A value or sub-point quoted without its chapeau — no actor, obligation, date or metric of its '
+     'own; the complete provision is registered instead.'),
+    ('NT-11', 'Qualifying condition for a headline target',
+     'Text specifying how a headline target must be achieved (composition, siting, accounting '
+     'conditions). Relevant for monitoring and indicator choice, but not a separate target.'),
+    ('NT-12', 'One-off ban or market restriction',
+     'A prohibition from a date is a single intervention, not a progression of effort.'),
+    ('NT-13', 'Methodology or compliance calculation',
+     'Rules for how compliance with a target is calculated or what counts towards it.'),
+    ('NT-14', 'Commission assessment or review duty',
+     'An obligation on the Commission to evaluate, review or report — process, not a target.'),
+    ('NT-15', 'Process obligation to set objectives later',
+     'A requirement that targets or objectives be established by a future act or plan; the register '
+     'captures the targets themselves once set.'),
+    ('FIX-GROUP', 'Staged sub-points grouped',
+     'Sub-points of one provision (e.g. 2030/2040/2050 stages) were split across rows; merged into '
+     'a single target per the reviewer’s instruction.'),
 ]
 PASS_LABEL = {
     '[human review 2026-07]': 'Pass 1 — reviewer mark-up generalised',
     '[agent review 2026-07 round 2]': 'Pass 2 — full agent audit',
+    '[human review 2026-08 v3]': 'Pass 3 — v3 reviewer mark-up (Aug 2026)',
+    '[re-extraction 2026-08]': 'Pass 4 — re-extraction from replaced consolidated texts (Aug 2026)',
+    '[carried to consolidated text 2026-08]': 'Pass 4 — re-extraction from replaced consolidated texts (Aug 2026)',
 }
 
 HEADER_FILL = PatternFill('solid', fgColor='FFE8EEF4')
@@ -143,9 +175,11 @@ def main() -> None:
     # are left empty on purpose: they are where the reviewer records the next
     # round of confirmations and objections, as in the workbook they marked up.
     header = [
-        '1 · Name of policy', '2 · Type of policy', '3 · Policy area', '#', '4 · Target text (verbatim)',
+        '1 · Name of policy', '2 · Type of policy', 'Document updated (consolidated version)', '3 · Policy area',
+        '#', 'First order target (1) Second order target (2)', '4 · Target text (verbatim)',
         'Provision', '5 · Target label', '6 · Obligation', '7 · Type of target', '8 · Timeline',
         '9 · Indicators', '10 · Climate-relevance', '11 · Source (EUR-Lex)', 'Relevant (transition lens)',
+        'Revise target', 'Revise reason',
         '12 · Human confirmed',
     ] + [f'{13 + i} · {label}' for i, (_, label) in enumerate(SECTORS)] + [
         '21 · Mitigation / adaptation argument',
@@ -153,15 +187,17 @@ def main() -> None:
         'Not correct', 'reason',
     ]
     body = [[
-        t['policy_name'], cap(t['document_type']), t['policy_area'], t['target_number'], t['target_text'],
+        t['policy_name'], cap(t['document_type']), t.get('doc_replaced') or '', t['policy_area'], t['target_number'],
+        t['target_order'] if t.get('target_order') in (1, 2) else '', t['target_text'],
         t['article'], cap(t['target_label']), cap(t['obligation']), cap(t['target_type']),
         t['timeline'] or 'Unspecified', '; '.join(t.get('indicators') or []),
-        CLIMATE_LABEL[t['climate_relevance']], t['eurlex_url'], 'Relevant', '',
+        CLIMATE_LABEL[t['climate_relevance']], t['eurlex_url'], 'Relevant',
+        1 if t.get('revise_flag') else '', t.get('revise_reason') or '', '',
     ] + ['Yes' if key in t['sectors'] else '' for key, _ in SECTORS] + [
         t['climate_argument'], t['duplicate_of'], '', '',
     ] for t in rows]
     write_sheet(ws, [header] + body,
-                [42, 15, 16, 5, 70, 26, 13, 12, 14, 20, 28, 20, 40, 16, 16] + [13] * 8 + [62, 46, 12, 46])
+                [42, 15, 30, 16, 5, 16, 70, 26, 13, 12, 14, 20, 28, 20, 40, 16, 12, 40, 16] + [13] * 8 + [62, 46, 12, 46])
 
     # ── Removed rows ────────────────────────────────────────────────────────
     removed = [['Row id', 'Pass', 'Rule', 'Reason for removal']]
@@ -272,6 +308,15 @@ def main() -> None:
                                                'and use “Not correct” / “reason” to flag a row exactly as in the '
                                                'previous mark-up — the reasons written there become the rules of the '
                                                'next correction pass.'],
+        ['Document updated (consolidated version)', 'Set when the act’s source document was replaced or '
+                                                     'consolidated since extraction (scripts/policy-targets-replaced.json); '
+                                                     'notes what changed.'],
+        ['First order target (1) Second order target (2)', 'The v3 reviewer’s first/second-order call '
+                                                            '(scripts/policy-targets-review-2026-08.json): 1 for the '
+                                                            'headline change the act exists to achieve, 2 for a target '
+                                                            'that depends on or complements one. Blank when unlabelled.'],
+        ['Revise target / Revise reason', 'The v3 reviewer’s "likely not a target" flag and the reason '
+                                          '(scripts/policy-targets-review-2026-08.json, `revise`).'],
     ]
     write_sheet(wb.create_sheet('About'), about, [30, 110], freeze=None)
 

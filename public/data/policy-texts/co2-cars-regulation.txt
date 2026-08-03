@@ -1,10 +1,6 @@
-25.4.2019   
+02019R0631 — EN — 09.07.2025 — 011.001
 
-EN
-
-Official Journal of the European Union
-
-L 111/13
+This text is meant purely as a documentation tool and has no legal effect. The Union's institutions do not assume any liability for its contents. The authentic versions of the relevant acts, including their preambles, are those published in the Official Journal of the European Union and available in EUR-Lex. Those official texts are directly accessible through the links embedded in this document
 
 REGULATION (EU) 2019/631 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
 
@@ -16,257 +12,123 @@ setting CO2 emission performance standards for new passenger cars and for new li
 
 (Text with EEA relevance)
 
-THE EUROPEAN PARLIAMENT AND THE COUNCIL OF THE EUROPEAN UNION,
+(OJ L 111 25.4.2019, p. 13)
 
-Having regard to the Treaty on the Functioning of the European Union, and in particular Article 192(1) thereof,
+Amended by:
 
-Having regard to the proposal from the European Commission,
+Official Journal
 
-After transmission of the draft legislative act to the national parliaments,
+No
 
-Having regard to the opinion of the European Economic and Social Committee (1),
+page
 
-After consulting the Committee of the Regions,
+date
 
-Acting in accordance with the ordinary legislative procedure (2),
+COMMISSION DELEGATED REGULATION (EU) 2020/22 of 31 October 2019
 
-Whereas:
+L 8
 
-(1)
+2
 
-Regulation (EC) No 443/2009 of the European Parliament and of the Council (3) and Regulation (EU) No 510/2011 of the European Parliament and of the Council (4) have been substantially amended several times. Since further amendments are to be made, those Regulations should be recast in the interests of clarity.
+14.1.2020
 
-(2)
+M2
 
-In order to provide a coherent and efficient transition following the recast and repeal of Regulations (EC) No 443/2009 and (EU) No 510/2011, this Regulation should apply from 1 January 2020. However, it is appropriate to maintain the CO2 emission performance standards and the modalities for achieving them as set out in those Regulations without changes until 2024.
+COMMISSION DELEGATED REGULATION (EU) 2020/1590 of 19 August 2020
 
-(3)
+L 360
 
-The Paris Agreement (5) sets out, inter alia, a long-term goal in line with the objective to keep the global average temperature increase well below 2 °C above pre-industrial levels and to pursue efforts to keep it to 1,5 °C above pre-industrial levels. The latest scientific findings reported by the Intergovernmental Panel on Climate Change (IPCC) in its special report on the impacts of global warming of 1,5 °C above pre-industrial levels and related global greenhouse gas emission pathways unequivocally confirm the negative impacts of climate change. That special report concludes that emissions reductions in all sectors are crucial to limit global warming.
+8
 
-(4)
+30.10.2020
 
-In order to contribute to the objectives of the Paris Agreement, the transformation of the entire transport sector towards zero emissions needs to be accelerated, considering the Commission's communication of 28 November 2018 entitled ‘A Clean Planet for all — a European strategic long-term vision for a prosperous, modern, competitive and climate neutral economy’, which outlines a vision of the economic and societal transformations required, engaging all sectors of the economy and society, to achieve the transition to net-zero greenhouse gas emissions by 2050. Emissions of air pollutants from transport that significantly harm our health and the environment need also to be drastically reduced without delay. Emissions from conventional combustion engine vehicles will need to be further reduced after 2020. Zero- and low-emission vehicles will need to be deployed and gain significant market share by 2030. Further CO2 emissions reductions for passenger cars and light commercial vehicles will be necessary beyond 2030.
+COMMISSION DELEGATED REGULATION (EU) 2020/2173 of 16 October 2020
 
-(5)
+L 433
 
-The Commission's communications of 31 May 2017 entitled ‘Europe on the move — An agenda for a socially fair transition towards clean, competitive and connected mobility for all’ and of 8 November 2017 entitled ‘Delivering on low-emission mobility — A European Union that protects the planet, empowers its consumers and defends its industry and workers’ highlight that the CO2 emission performance standards for passenger cars and light commercial vehicles are a strong driver for innovation and efficiency and will contribute to strengthening competitiveness of the automotive industry and pave the way for zero- and low-emission vehicles in a technology-neutral way.
+1
 
-(6)
+22.12.2020
 
-This Regulation provides a clear pathway for CO2 emissions reductions from the road transport sector and contributes to the binding target of at least a 40 % domestic reduction in economy-wide greenhouse gas emissions by 2030 compared to 1990, as was endorsed in the European Council conclusions of 23-24 October 2014, and approved as the Intended Nationally Determined Contribution of the Union and its Member States under the Paris Agreement at the Environment Council meeting on 6 March 2015.
+COMMISSION DELEGATED REGULATION (EU) 2021/1961 of 5 August 2021
 
-(7)
+L 400
 
-Regulation (EU) 2018/842 of the European Parliament and of the Council (6) lays down obligations on Member States to fulfil the Union's target of reducing its greenhouse gas emissions by 30 % below 2005 levels in 2030 for the sectors that are not part of the European Union Emissions Trading System established by Directive 2003/87/EC of the European Parliament and of the Council (7). Road transport is a major contributor to the emissions from those sectors. Moreover, emissions from road transport show an increasing trend, and remain significantly above 1990 levels. If road transport emissions increase further, such increases will continue to counteract emissions reductions made by other sectors to combat climate change.
+14
 
-(8)
+12.11.2021
 
-The European Council conclusions of 23-24 October 2014 highlighted the importance of reducing greenhouse gas emissions and risks related to fossil fuel dependency in the transport sector through a comprehensive and technology neutral approach for the promotion of emissions reduction and energy efficiency in transport, for electric transportation and for renewable energy sources in transport also after 2020.
+REGULATION (EU) 2023/851 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+of 19 April 2023
 
-(9)
+L 110
 
-In order to give consumers in the Union secure, sustainable, competitive and affordable energy, energy efficiency contributing to moderation of demand is one of the five mutually-reinforcing and closely interrelated dimensions set out in the Commission's communication of 25 February 2015 entitled ‘A Framework Strategy for a Resilient Energy Union with a Forward-Looking Climate Change Policy’. That communication states that, while all economic sectors must take steps to increase the efficiency of their energy consumption, transport has a huge energy efficiency potential, which can be realised also with a continued focus on tightening CO2 emission performance standards for passenger cars and light commercial vehicles in a 2030 perspective.
+5
 
-(10)
+25.4.2023
 
-An evaluation of Regulations (EC) No 443/2009 and (EU) No 510/2011 in 2015 concluded that those Regulations have been relevant, broadly coherent, and have generated significant emissions savings, whilst being more cost-effective than originally anticipated. They have also generated significant added value for the Union that could not have been achieved to the same extent through national measures. However, the benefits of those Regulations have been eroded due to the increasing discrepancy between the CO2 emissions measured under the New European Driving Cycle (NEDC) and the CO2 emissions emitted from vehicles driven under real-world conditions.
+COMMISSION DELEGATED REGULATION (EU) 2023/1634 of 5 June 2023
 
-(11)
+L 203
 
-It is, therefore, appropriate to pursue the objectives of Regulations (EC) No 443/2009 and (EU) No 510/2011 by setting new EU fleet-wide CO2 emissions reduction targets for passenger cars and light commercial vehicles for the period up to 2030. In defining the levels of those targets, account has been taken of their effectiveness in delivering a cost-effective contribution to reducing emissions of the sectors covered by Regulation (EU) 2018/842 by 2030, of the resulting costs and savings for society, manufacturers and vehicle users, as well as of their direct and indirect implications for employment, competitiveness and innovation and the co-benefits generated in terms of reduced air pollution and energy security. Considering that the market share and, consequently, the overall contribution of CO2 emissions from passenger cars are significantly higher than those of light commercial vehicles, a differentiated approach between passenger cars and light commercial vehicles is considered appropriate.
+1
 
-(12)
+16.8.2023
 
-A socially acceptable and just transition towards zero-emission mobility should be ensured. It is important, therefore, to take into account the social effects of such transition throughout the whole automotive value chain and to address proactively the implications on employment. Targeted programmes at Union, national and regional levels are therefore to be considered for the re-skilling, up-skilling and redeployment of workers, as well as education and job-seeking initiatives in adversely affected communities and regions, in close dialogue with the social partners and competent authorities. As part of that transition, women's employment, as well as equal opportunities in this sector, should be strengthened.
+COMMISSION DELEGATED REGULATION (EU) 2023/2502 of 7 September 2023
 
-(13)
+L 2502
 
-A successful transition to zero-emission mobility requires an integrated approach and the right enabling environment to stimulate innovation and maintain the Union's technological leadership in this sector. That includes public and private investments in research and innovation, the increasing supply of zero- and low-emission vehicles, the roll-out of recharging and refuelling infrastructure, integration into the energy systems, as well as the sustainable materials supply and sustainable production, re-use and recycling of batteries in Europe. That requires coherent action at Union, national, regional and local levels.
+1
 
-(14)
+13.11.2023
 
-As part of the implementation of Regulation (EC) No 715/2007 of the European Parliament and of the Council (8), a new test procedure for measuring CO2 emissions from, and fuel consumption of, passenger cars and light commercial vehicles, the Worldwide Harmonised Light Vehicles Test procedure (‘WLTP’), set out in Commission Regulation (EU) 2017/1151 (9), started to apply in 2017. That test procedure provides CO2 emission and fuel consumption values that are more representative of real-world conditions.
+COMMISSION DELEGATED REGULATION (EU) 2025/371 of 16 December 2024
 
-It is appropriate, therefore, that the new CO2 emissions targets should be based on the CO2 emissions determined on the basis of that test procedure. Considering, however, that WLTP-based CO2 emissions will be available for target compliance purposes from 2021, it is appropriate that the new CO2 emission performance standards should be defined as reduction levels set in relation to the 2021 targets calculated on the basis of the CO2 emissions measured for the purpose of the WLTP emissions test. In order to ensure the robustness and representativeness of the values used as the starting point for defining the emissions reduction targets to be applied in 2025 and 2030, the conditions for performing those measurements have been clarified as part of the implementation of Commission Implementing Regulations (EU) 2017/1152 (10) and (EU) 2017/1153 (11).
+L 371
 
-(15)
+1
 
-It is important that the setting of CO2 emissions reduction requirements continue to provide Union-wide predictability and planning security for vehicle manufacturers across their new passenger car and light commercial vehicle fleets in the Union.
+21.2.2025
 
-(16)
+REGULATION (EU) 2025/1214 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+of 17 June 2025
 
-The Commission's evaluation of Directive 1999/94/EC of the European Parliament and of the Council (12) in 2016 identified a need for further clarification and simplification of that legislative act, which could increase its relevance, effectiveness, efficiency and coherence. The Commission should, therefore, review that Directive no later than 31 December 2020 and, where appropriate, put forward a relevant legislative proposal. In order to support the uptake of the most fuel efficient and environmentally friendly vehicles, that review should in particular consider the inclusion of light commercial vehicles and the need for better designed and further harmonised Union requirements on labelling that could provide consumers with comparable, reliable and user friendly information about the benefits of zero- and low-emission vehicles, including information concerning air pollutants.
+L 1214
 
-(17)
+1
 
-Emissions reduction targets for the Union-wide fleets of new passenger cars and light commercial vehicles should, therefore, be set for 2025 and for 2030, taking into account the vehicle fleet renewal time and the need for the road transport sector to contribute to the 2030 climate and energy targets. That stepwise approach also provides a clear and early signal for the automotive industry not to delay the market introduction of energy efficient technologies and zero- and low-emission vehicles.
+19.6.2025
 
-(18)
+REGULATION (EU) 2019/631 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
 
-The CO2 emission performance standards set out in this Regulation apply to new passenger cars and new light commercial vehicles. With regard to the existing fleet of such vehicles, including second-hand vehicles, additional measures aimed at reducing emissions may also be taken, inter alia, at national and Union level. For instance, measures may be taken to encourage a higher fleet renewal rate, in order to replace as fast as possible older, more emitting vehicles by more performant ones. Access to more affordable zero- and low-emission vehicles could stimulate consumer behaviour change and faster deployment of low-emission technologies.
+of 17 April 2019
 
-(19)
+setting CO2 emission performance standards for new passenger cars and for new light commercial vehicles, and repealing Regulations (EC) No 443/2009 and (EU) No 510/2011
 
-While the Union is among the world's major producers of motor vehicles and demonstrates technological leadership in the global automotive sector, competition is increasing and this sector is changing rapidly through new innovations in electrified powertrains, and cooperative, connected and automated mobility. In order to retain its global competitiveness and access to markets, the Union needs a regulatory framework, including a particular incentive in the area of zero- and low-emission vehicles, which will contribute to creating a large domestic market and support technological development and innovation.
+(recast)
 
-(20)
-
-A dedicated incentive mechanism should be introduced to facilitate a smooth transition towards zero-emission mobility. That mechanism should be designed so as to promote the deployment on the Union market of zero- and low-emission vehicles. Also, a specific transitional measure should be put in place to enable access to zero- and low-emission vehicles to consumers from Member States with low levels of market penetration of such vehicles.
-
-(21)
-
-Setting appropriate benchmarks for the share of zero- and low-emission vehicles in the EU fleet, together with a well-designed mechanism for adjusting a manufacturer's specific emissions target based on the share of zero- and low-emission vehicles in the manufacturer's own fleet, should provide a strong and credible signal for the development, deployment and marketing of such vehicles while still allowing for the further improvement of the efficiency of the conventional internal combustion engines.
-
-(22)
-
-In determining the credits for the zero- and low-emission vehicles, it is appropriate to account for the difference in CO2 emissions between the vehicles. As concerns passenger cars, the role of low-emission vehicles, in particular of plug-in hybrid vehicles, in the transition towards zero-emission vehicles should be recognised. The adjustment mechanism should ensure that a manufacturer exceeding the benchmark level would benefit from a higher specific emissions target. In order to ensure a balanced approach, limits should be set to the level of adjustment possible within that mechanism. This will provide for incentives, promoting a timely roll-out of recharging and refuelling infrastructure and yielding high benefits for consumers, competitiveness and the environment.
-
-(23)
-
-The legislative framework for implementing the EU fleet-wide target should ensure competitively neutral, socially equitable and sustainable emissions reduction targets which take account of the diversity of European automobile manufacturers and avoid any unjustified distortion of competition between them.
-
-(24)
-
-In order to maintain the diversity of the market for passenger cars and light commercial vehicles and its ability to cater for different consumer needs, specific emissions targets should be defined according to the utility of the vehicles on a linear basis. Maintaining mass as the utility parameter is considered coherent with the existing regime. In order to better reflect the mass of vehicles used on the road, the parameter should be changed, with effect from 2025, from mass in running order to the vehicle's test mass, as specified in the WLTP.
-
-(25)
-
-It should be avoided that the EU fleet-wide targets are altered due to changes in the average mass of the fleet. Changes in the average mass should therefore be reflected without delay in the specific emissions target calculations, and the adjustments of the average mass value that is used to this end should take place every two years with effect from 2025.
-
-(26)
-
-In order to distribute the emissions reduction effort in a competitively neutral and fair way that reflects the diversity of the market for passenger cars and light commercial vehicles, and in view of the change in 2021 to WLTP-based specific emissions targets, it is appropriate to determine the slope of the limit value curve on the basis of the specific emissions of CO2 of all new vehicles registered in that year, and to take into account the change in the EU fleet-wide targets between 2021, 2025 and 2030 with a view to ensuring an equal emissions reduction effort of all manufacturers. With regard to light commercial vehicles, the same approach as that for passenger car manufacturers should apply to manufacturers of lighter, car derived vans, while for manufacturers of vehicles falling within the heavier segments, a higher and fixed slope should be set for the whole target period.
-
-(27)
-
-This Regulation aims to achieve its objectives by, inter alia, creating incentives for the automotive industry to invest in new technologies. This Regulation actively promotes eco-innovation and provides a mechanism that should be able to acknowledge future technological development. Experience shows that eco-innovations have successfully contributed to the cost-effectiveness of Regulations (EC) No 443/2009 and (EU) No 510/2011 and to the reduction of real-world CO2 emissions. This modality should, therefore, be maintained and the scope should be extended to incentivise efficiency improvements in air-conditioning systems.
-
-(28)
-
-A balance should be ensured, however, between incentives given to eco-innovations and those technologies for which the emissions reduction effect is demonstrated on the official test procedure. As a consequence, it is appropriate to maintain a cap on the eco-innovation savings that a manufacturer may take into account for target compliance purposes. The Commission should have the possibility to review the level of that cap, in particular, to take into account the effects of the change in the official test procedure. It is also appropriate to clarify how the savings should be calculated for target compliance purposes.
-
-(29)
-
-Sustainable light-weight components are important in reducing the energy consumption and CO2 emissions of new vehicles. Their further development and deployment should support the transition towards zero- and low-emission mobility.
-
-(30)
-
-Directive 2007/46/EC of the European Parliament and of the Council (13) established a harmonised framework containing the administrative provisions and general technical requirements for approval of all new vehicles within its scope. The entity responsible for complying with this Regulation should be the same as the entity responsible for all aspects of the type-approval process in accordance with Directive 2007/46/EC and for ensuring conformity of production.
-
-(31)
-
-For the purposes of type-approval, specific requirements apply for special-purpose vehicles, as defined in Annex II to Directive 2007/46/EC, and they should therefore be excluded from the scope of this Regulation.
-
-(32)
-
-In cases where zero-emission light commercial vehicles with a reference mass exceeding 2 610 kg or 2 840 kg, as the case may be, would fall outside the scope of this Regulation due only to the mass of the energy storage system, it is appropriate to allow those vehicles to be counted as falling within the scope.
-
-(33)
-
-It is not appropriate to use the same method to determine the emissions reduction targets for large-volume manufacturers as for small-volume manufacturers that are considered as independent on the basis of the criteria set out in this Regulation. Those small-volume manufacturers should have the possibility to apply for alternative emissions reduction targets relating to the technological potential of a given manufacturer's vehicles to reduce their specific emissions of CO2 and consistent with the characteristics of the market segments concerned.
-
-(34)
-
-In recognition of the disproportionate impact on the smallest manufacturers that would result from compliance with specific emissions targets defined on the basis of the utility of the vehicle, the high administrative burden of the derogation procedure, and the marginal resulting benefit in terms of CO2 emissions reduction from the vehicles sold by those manufacturers, manufacturers responsible for fewer than 1 000 new passenger cars and new light commercial vehicles registered annually in the Union should be excluded from the scope of the specific emissions target and the excess emissions premium. However, where a manufacturer that is covered by an exemption nevertheless applies for, and is granted, a derogation, it is appropriate that such manufacturer should be required to comply with that derogation target.
-
-(35)
-
-The procedure for granting derogations from the 95 g CO2/km EU fleet-wide target to niche car manufacturers ensures that the emissions reduction effort required by those niche manufacturers is consistent with that of large-volume manufacturers with regard to that target. It is appropriate to continue to provide those niche manufacturers with the possibility of being granted a derogation also from the targets applicable from 2025, until 2028.
-
-(36)
-
-In determining the average specific emissions of CO2 for all the new passenger cars and new light commercial vehicles registered in the Union for which manufacturers are responsible, all passenger cars and light commercial vehicles should be taken into account irrespective of their mass or other characteristics, as the case may be. Although Regulation (EC) No 715/2007 does not cover passenger cars and light commercial vehicles with a reference mass exceeding 2 610 kg and to which type-approval is not extended in accordance with Article 2(2) of that Regulation, the emissions for these vehicles should be measured in accordance with the same measurement procedures as specified pursuant to Regulation (EC) No 715/2007, notably the procedures set out in Commission Regulation (EC) No 692/2008 (14) and in Regulation (EU) 2017/1151, and the correlation procedures adopted on the basis of Regulations (EC) No 443/2009 and (EU) No 510/2011, in particular Implementing Regulations (EU) 2017/1152 and (EU) 2017/1153. The resulting CO2 emission values should be entered in the certificate of conformity of the vehicle in order to enable their inclusion in the monitoring scheme.
-
-(37)
-
-The specific emissions of CO2 of completed light commercial vehicles should be allocated to the manufacturer of the base vehicle.
-
-(38)
-
-Consideration should be given to the specific situation of manufacturers of light commercial vehicles producing incomplete vehicles that are type-approved in multiple stages. While those manufacturers are responsible for meeting the CO2 emissions targets, they should have the possibility to predict with reasonable certainty the CO2 emissions of the completed vehicles. The Commission should ensure that those needs are appropriately reflected in the implementing measures adopted pursuant to Regulation (EC) No 715/2007.
-
-(39)
-
-In order to provide for flexibility for the purposes of meeting their targets under this Regulation, manufacturers may agree to form a pool on an open, transparent and non-discriminatory basis. An agreement to form a pool should not exceed five years but should be able to be renewed. Where manufacturers form a pool, they should be deemed to have met their targets under this Regulation provided that the average emissions of the pool as a whole do not exceed the specific emissions target for the pool.
-
-(40)
-
-The possibility for manufacturers to form pools has proven a cost-effective way to achieve compliance with the CO2 emissions targets, in particular facilitating compliance for those manufacturers that produce a limited range of vehicles. In order to improve competitive neutrality, the Commission should have the powers to clarify the conditions on which independent manufacturers may form a pool in order to allow them to be placed in a position equivalent to connected undertakings.
-
-(41)
-
-A robust compliance mechanism is necessary in order to ensure that the targets under this Regulation are met.
-
-(42)
-
-For achieving the CO2 emissions reductions required under this Regulation, it is also essential that the emissions of vehicles in use are in conformity with the CO2 values determined at type-approval. It should therefore be possible for the Commission to take into account in the calculation of the average specific emissions of CO2 of a manufacturer any systemic non-conformity found by type-approval authorities with regard to the CO2 emissions of vehicles in use.
-
-(43)
-
-The Commission should have the powers to establish and implement a procedure for verifying the correspondence between the CO2 emissions of vehicles in-service, as determined in accordance with the WLTP, and the CO2 emission values recorded in the certificates of conformity. In developing that procedure, particular consideration should be given to identifying methods, including the use of data from on-board fuel and/or energy consumption monitoring devices, for detecting strategies through which a vehicle's CO2 performance is artificially improved in the type-approval test procedure. Where deviations or strategies that artificially improve a vehicle's CO2 performance are found in the course of such verifications, those findings are to be considered as sufficient reason to suspect that there is a serious risk of non-compliance with regard to the requirements laid down in Regulation (EU) 2018/858 of the European Parliament and of the Council (15) and Regulation (EC) No 715/2007, and Member States should on that basis take the necessary measures pursuant to Chapter XI of Regulation (EU) 2018/858.
-
-(44)
-
-The specific emissions of CO2 from new passenger cars and light commercial vehicles are measured on a harmonised basis in the Union in accordance with the WLTP. To minimise the administrative burden of this Regulation, compliance should be measured by reference to data on registrations of new passenger cars and light commercial vehicles in the Union collected by Member States and reported to the Commission. To ensure the consistency of the data used to assess compliance, the rules for the collection and reporting of that data should be harmonised as far as possible. The competent authorities' responsibility to provide correct and complete data should, therefore, be clearly stated as well as the need for an effective cooperation between those authorities and the Commission in addressing data quality issues.
-
-(45)
-
-Manufacturers' compliance with the targets set out in this Regulation should be assessed at Union level. Manufacturers whose average specific emissions of CO2 exceed those permitted under this Regulation should pay an excess emissions premium with respect to each calendar year. The amounts of the excess emissions premium should be considered as revenue for the general budget of the Union. The Commission should, in its 2023 review, evaluate the possibility of allocating the amounts of the excess emissions premium to a specific fund or a relevant programme that aims to ensure a just transition towards zero-emission mobility and to support re-skilling, up-skilling and other skills training of workers in the automotive sector.
-
-(46)
-
-Any national measure that Member States may maintain or introduce in accordance with Article 193 of the Treaty on the Functioning of the European Union (TFEU) should not, in consideration of the purpose of, and procedures established in, this Regulation, impose additional or more stringent penalties on manufacturers who fail to meet their targets under this Regulation.
-
-(47)
-
-This Regulation should be without prejudice to the full application of Union competition rules.
-
-(48)
-
-The effectiveness of the targets set out in this Regulation in reducing CO2 emissions in reality is strongly dependent on the real-world representativeness of the official test procedure. In accordance with scientific opinion 1/2016 of the Scientific Advice Mechanism (SAM) entitled ‘Closing the gap between light-duty vehicle real-world CO2 emissions and laboratory testing’ and the European Parliament recommendation of 4 April 2017 to the Council and the Commission following its inquiry into emission measurements in the automotive sector (16), a mechanism should be put in place to assess the real-world representativeness of vehicle CO2 emissions and energy consumption values determined in accordance with the WLTP. The most reliable way to ensure the real-world representativeness of type-approval values is by using data from the on-board fuel and/or energy consumption monitoring devices. The Commission should, therefore, have the powers to develop the procedures needed for collecting and processing fuel and energy consumption data required for making such assessments and to ensure the public availability of such data, whilst providing for the protection of any personal data. Moreover, it is appropriate, in order to ensure the availability of fuel and energy consumption data from battery electric vehicles and vehicles with power trains using gaseous fuels, including hydrogen, that the work on standardisation of the on-board fuel and/or energy consumption monitoring devices for such vehicles will be pursued without delay as part of the implementation of Regulation (EU) 2017/1151.
-
-(49)
-
-The Commission should, moreover, assess how fuel and energy consumption data may help to ensure that the vehicle CO2 emissions determined in accordance with the WLTP remain representative of real-world emissions over time for all manufacturers and, more precisely, how such data can be used to monitor the gap between laboratory and real-world CO2 emissions and, where necessary, to prevent this gap from increasing.
-
-(50)
-
-It is important to assess the full life-cycle emissions from passenger cars and light commercial vehicles at Union level. To that end, the Commission should no later than 2023 evaluate the possibility of developing a common Union methodology for the assessment and the consistent data reporting of the full life-cycle CO2 emissions of such vehicles placed on the Union market. The Commission should adopt follow-up measures, including, where appropriate, legislative proposals.
-
-(51)
-
-In 2024, a review of the progress achieved under Regulation (EU) 2018/842 and Directive 2003/87/EC will take place. It is therefore appropriate to review comprehensively the effectiveness of this Regulation in 2023 to allow a coordinated and coherent assessment of the measures implemented under all those instruments. In that review of 2023, the Commission should also identify a clear pathway for further CO2 emissions reductions for passenger cars and light commercial vehicles beyond 2030 in order to significantly contribute to achieving the long-term goal of the Paris Agreement. Where appropriate, the report on that review should be accompanied by a proposal to amend this Regulation.
-
-(52)
-
-In order to ensure uniform conditions for the implementation of this Regulation, implementing powers should be conferred on the Commission in relation to the specification of detailed conditions for pooling arrangements, adoption of detailed rules on the procedures for monitoring and reporting of data on average emissions and on the application of Annexes II and III, adoption of detailed rules on the procedures for reporting of deviations found, as a result of verifications, in the CO2 emissions of vehicles in-service and taking those deviations into account in the calculation of the average specific emissions of CO2 of a manufacturer, determination of the means for collecting excess emissions premiums, publication of performance of manufacturers, adoption of detailed provisions for a procedure to approve the innovative technologies or innovative technology packages, adoption of a detailed procedure for collecting and processing the parameters relating to real-world CO2 emissions and fuel or energy consumption of passenger cars and light commercial vehicles, determination of the procedures for performing the verifications (i) that the CO2 emission and fuel consumption values recorded in the certificates of conformity correspond to the CO2 emissions from, and fuel consumption of, vehicles in-service; and (ii) the presence of any strategies on board or relating to the sampled vehicles that artificially improve the vehicle's performance in the tests performed for the purpose of type-approval, and determination of the correlation parameters necessary in order to reflect any change in the regulatory test procedure for the measurement of specific emissions of CO2. Those powers should be exercised in accordance with Regulation (EU) No 182/2011 of the European Parliament and of the Council (17).
-
-(53)
-
-In order to amend or supplement, as appropriate, non-essential elements of the provisions of this Regulation, the power to adopt acts in accordance with Article 290 TFEU should be delegated to the Commission in respect of amending data requirements and data parameters set out in Annexes II and III of this Regulation, laying down rules, as regards the interpretation of the eligibility criteria for derogations for certain manufacturers, the content of the applications for a derogation, and the content and assessment of programmes for the reduction of specific emissions of CO2, amending Part A of Annex I of this Regulation for the purpose of setting out the calculation formulae of the derogation targets for niche manufacturers, adjusting the cap for total contribution of innovative technologies to reducing the average specific emissions of CO2 of a manufacturer with effect from 2025 onwards, setting out the guiding principles and criteria for defining the procedures for performing the verifications, establishing the measures for adjustment of M0 and TM0 values, and adapting the formulae for calculating the specific emissions targets to reflect the change in the regulatory test procedure. It is of particular importance that the Commission carry out appropriate consultations during its preparatory work, including at expert level, and that those consultations be conducted in accordance with the principles laid down in the Interinstitutional Agreement of 13 April 2016 on Better Law-Making (18). In particular, to ensure equal participation in the preparation of delegated acts, the European Parliament and the Council receive all documents at the same time as Member States' experts, and their experts systematically have access to meetings of Commission expert groups dealing with the preparation of delegated acts.
-
-(54)
-
-Regulations (EC) No 443/2009 and (EU) No 510/2011 should be repealed with effect from 1 January 2020.
-
-(55)
-
-Since the objectives of this Regulation, namely the establishment of CO2 emissions performance requirements for new passenger cars and new light commercial vehicles, cannot be sufficiently achieved by the Member States, but can rather, by reason of their scale and effects, be better achieved at Union level, the Union may adopt measures, in accordance with the principle of subsidiarity as set out in Article 5 of the Treaty on European Union. In accordance with the principle of proportionality, as set out in that Article, this Regulation does not go beyond what is necessary in order to achieve those objectives,
-
-HAVE ADOPTED THIS REGULATION:
+(Text with EEA relevance)
 
 Article 1
 
 Subject matter and objectives
 
-1.   This Regulation establishes CO2 emissions performance requirements for new passenger cars and for new light commercial vehicles in order to contribute to achieving the Union's target of reducing its greenhouse gas emissions, as laid down in Regulation (EU) 2018/842, and the objectives of the Paris Agreement and to ensure the proper functioning of the internal market.
+1.
 
-2.   From 1 January 2020, this Regulation sets an EU fleet-wide target of 95 g CO2/km for the average emissions of new passenger cars and an EU fleet-wide target of 147 g CO2/km for the average emissions of new light commercial vehicles registered in the Union, as measured until 31 December 2020 in accordance with Regulation (EC) No 692/2008 together with Implementing Regulations (EU) 2017/1152 and (EU) 2017/1153, and from 1 January 2021 measured in accordance with Regulation (EU) 2017/1151.
+This Regulation establishes CO2 emissions performance requirements for new passenger cars and for new light commercial vehicles in order to contribute to achieving the Union's target of reducing its greenhouse gas emissions, as laid down in Regulation (EU) 2018/842, and the objectives of the Paris Agreement and to ensure the proper functioning of the internal market.
 
-3.   This Regulation will, until 31 December 2024, be complemented by additional measures corresponding to a reduction of 10 g CO2/km as part of the Union's integrated approach referred to in the Commission's communication of 7 February 2007 entitled ‘Results of the review of the Community Strategy to reduce CO2 emissions from passenger cars and light-commercial vehicles’.
+2.
 
-4.   From 1 January 2025, the following EU fleet-wide targets shall apply:
+From 1 January 2020, this Regulation sets an EU fleet-wide target of 95 g CO2/km for the average emissions of new passenger cars and an EU fleet-wide target of 147 g CO2/km for the average emissions of new light commercial vehicles registered in the Union, as measured until 31 December 2020 in accordance with Regulation (EC) No 692/2008 together with Implementing Regulations (EU) 2017/1152 and (EU) 2017/1153, and from 1 January 2021 measured in accordance with Regulation (EU) 2017/1151.
+
+3.
+
+This Regulation will, until 31 December 2024, be complemented by additional measures corresponding to a reduction of 10 g CO2/km as part of the Union's integrated approach referred to in the Commission's communication of 7 February 2007 entitled ‘Results of the review of the Community Strategy to reduce CO2 emissions from passenger cars and light-commercial vehicles’.
+
+4.
+
+From 1 January 2025, the following EU fleet-wide targets shall apply:
 
 (a)
 
@@ -276,89 +138,91 @@ for the average emissions of the new passenger car fleet, an EU fleet-wide targe
 
 for the average emissions of the new light commercial vehicles fleet, an EU fleet-wide target equal to a 15 % reduction of the target in 2021 determined in accordance with point 6.1.1 of Part B of Annex I.
 
-5.   From 1 January 2030, the following EU fleet-wide targets shall apply:
+5.
+
+From 1 January 2030, the following EU fleet-wide targets shall apply:
 
 (a)
 
-for the average emissions of the new passenger car fleet, an EU fleet-wide target equal to a 37,5 % reduction of the target in 2021 determined in accordance with point 6.1.2 of Part A of Annex I;
+for the average emissions of the new passenger car fleet, an EU fleet-wide target equal to a
+
+55 %  reduction of the target in 2021 determined in accordance with point 6.1.2 of Part A of Annex I;
 
 (b)
 
-for the average emissions of the new light commercial vehicles fleet, an EU fleet- wide target equal to a 31 % reduction of the target in 2021 determined in accordance with point 6.1.2 of Part B of Annex I.
+for the average emissions of the new light commercial vehicles fleet, an EU fleet- wide target equal to a
 
-6.   From 1 January 2025, a zero- and low-emission vehicles' benchmark equal to a 15 % share of the respective fleets of new passenger cars and new light commercial vehicles shall apply in accordance with points 6.3 of Parts A and B of Annex I, respectively.
+50 %  reduction of the target in 2021 determined in accordance with point 6.1.2 of Part B of Annex I.
 
-7.   From 1 January 2030, the following zero- and low-emission vehicles' benchmarks shall apply in accordance with points 6.3 of Parts A and B of Annex I, respectively:
+5a.
+
+From 1 January 2035, the following EU fleet-wide targets shall apply:
 
 (a)
 
-a benchmark equal to a 35 % share of the fleet of new passenger cars; and
+for the average emissions of the new passenger car fleet, an EU fleet-wide target equal to a 100 % reduction of the target in 2021 determined in accordance with Part A, point 6.1.3, of Annex I;
 
 (b)
 
-a benchmark equal to a 30 % share of the fleet of new light commercial vehicles.
+for the average emissions of the new light commercial vehicles fleet, an EU fleet-wide target equal to a 100 % reduction of the target in 2021 determined in accordance with Part B, point 6.1.3, of Annex I.
+
+6.
+
+From 1 January 2025 to 31 December 2029, a zero- and low-emission vehicles' benchmark equal to a 25 % share of the fleet of new passenger cars and equal to a 17 % share of the fleet of new light commercial vehicles shall apply in accordance with points 6.3 of Parts A and B of Annex I, respectively.
+
+—————
 
 Article 2
 
 Scope
 
-1.   This Regulation shall apply to the following motor vehicles:
+1.
+
+This Regulation shall apply to the following motor vehicles:
 
 (a)
 
-category M1 as defined in Annex II to Directive 2007/46/EC (‘passenger cars’)which are registered in the Union for the first time and which have not previously been registered outside the Union (‘new passenger cars’);
+category M1 as defined in
+
+Article 4(1), point (a)(i), of Regulation (EU) 2018/858  (‘passenger cars’)which are registered in the Union for the first time and which have not previously been registered outside the Union (‘new passenger cars’);
 
 (b)
 
-category N1 as defined in Annex II to Directive 2007/46/EC with a reference mass not exceeding 2 610 kg, and vehicles of category N1 to which type-approval is extended in accordance with Article 2(2) of Regulation (EC) No 715/2007 (‘light commercial vehicles’), which are registered in the Union for the first time and which have not previously been registered outside the Union (‘new light commercial vehicles’). In the case of zero-emission vehicles of category N with a reference mass exceeding 2 610 kg or 2 840 kg, as the case may be, they shall, from 1 January 2025, for the purposes of this Regulation and without prejudice to Directive 2007/46/EC and Regulation (EC) No 715/2007, be counted as light commercial vehicles falling within the scope of this Regulation if the excess reference mass is due only to the mass of the energy storage system.
+category N1 as defined in Article 4(1), point (b)(i), of Regulation (EU) 2018/858 and falling within the scope of Regulation (EC) No 715/2007 (‘light commercial vehicles’), which are registered in the Union for the first time and which have not previously been registered outside the Union (‘new light commercial vehicles’); in the case of zero-emission vehicles of category N with a reference mass exceeding 2 610 kg or 2 840 kg, as the case may be, they shall, from 1 January 2025, for the purposes of this Regulation and without prejudice to Regulation (EU) 2018/858 and Regulation (EC) No 715/2007, be counted as light commercial vehicles falling within the scope of this Regulation if the excess reference mass is due only to the mass of the energy storage system.
 
-2.   A previous registration outside the Union made less than three months before registration in the Union shall not be taken into account.
+2.
 
-3.   This Regulation shall not apply to special purpose vehicles as defined in point 5 of Part A of Annex II to Directive 2007/46/EC.
+A previous registration outside the Union made less than three months before registration in the Union shall not be taken into account.
 
-4.   Article 4, points (b) and (c) of Article 7(4), Article 8 and points (a) and (c) of Article 9(1) shall not apply to a manufacturer which, together with all of its connected undertakings, is responsible for fewer than 1 000 new passenger cars or for fewer than 1 000 new light commercial vehicles registered in the Union in the previous calendar year, unless that manufacturer applies for and is granted a derogation in accordance with Article 10.
+3.
+
+This Regulation shall not apply to special purpose vehicles as defined in
+
+Part A, point 5, of Annex I to Regulation (EU) 2018/858  .
+
+4.
+
+Article 4, points (b) and (c) of Article 7(4), Article 8 and points (a) and (c) of Article 9(1) shall not apply to a manufacturer which, together with all of its connected undertakings, is responsible for fewer than 1 000 new passenger cars or for fewer than 1 000 new light commercial vehicles registered in the Union in the previous calendar year, unless that manufacturer applies for and is granted a derogation in accordance with Article 10.
 
 Article 3
 
 Definitions
 
-1.   For the purposes of this Regulation, the following definitions apply:
+1.
+
+For the purposes of this Regulation, the definitions in Regulation (EU) 2018/858 shall apply. The following definitions shall also apply:
 
 (a)
 
 ‘average specific emissions of CO2’ means, in relation to a manufacturer, the average of the specific emissions of CO2 of all new passenger cars or of all new light commercial vehicles of which it is the manufacturer;
 
-(b)
-
-‘certificate of conformity’ means the certificate of conformity referred to in Article 18 of Directive 2007/46/EC;
-
-(c)
-
-‘completed vehicle’ means a light commercial vehicle where type-approval is granted following completion of a process of multi-stage type-approval in accordance with Directive 2007/46/EC;
-
-(d)
-
-‘complete vehicle’ means any light commercial vehicle which does not need to be completed in order to meet the relevant technical requirements of Directive 2007/46/EC;
-
-(e)
-
-‘base vehicle’ means any light commercial vehicle which is used at the initial stage of a multi-stage type-approval process;
-
-(f)
-
-‘manufacturer’ means the person or body responsible to the approval authority for all aspects of the EC type-approval procedure in accordance with Directive 2007/46/EC and for ensuring conformity of production;
-
-(g)
-
-‘mass in running order’ or ‘M’ means the mass of the passenger car or light commercial vehicle with bodywork in running order as stated in the certificate of conformity and defined in point 2.6 of Annex I to Directive 2007/46/EC;
+—————
 
 (h)
 
 ‘specific emissions of CO2’ means the CO2 emissions of a passenger car or a light commercial vehicle measured in accordance with Regulation (EC) No 715/2007 and its implementing Regulations and specified as the CO2 mass emissions (combined) in the certificate of conformity of the vehicle. For passenger cars or light commercial vehicles which are not type-approved in accordance with Regulation (EC) No 715/2007, ‘specific emissions of CO2’ means the CO2 emissions measured pursuant to Regulation (EC) No 715/2007, notably in accordance with the same measurement procedure as specified in Regulation (EC) No 692/2008 until 31 December 2020, and from 1 January 2021 in Regulation (EU) 2017/1151, or in accordance with procedures adopted by the Commission to establish the CO2 emissions for such vehicles;
 
-(i)
-
-‘footprint’ means the average track width multiplied by the wheelbase as stated in the certificate of conformity and defined in points 2.1 and 2.3 of Annex I to Directive 2007/46/EC;
+—————
 
 (j)
 
@@ -374,13 +238,13 @@ Definitions
 
 (m)
 
-‘zero- and low-emission vehicle’ means a passenger car or a light commercial vehicle with tailpipe emissions from zero up to 50 g CO2/km, as determined in accordance with Regulation (EU) 2017/1151;
+‘zero- and low-emission vehicle’ means a passenger car or a light commercial vehicle with tailpipe emissions from zero up to 50 g CO2/km, as determined in accordance with Regulation (EU) 2017/1151.
 
-(n)
+—————
 
-‘payload’ means the difference between the technically permissible maximum laden mass pursuant to Annex II to Directive 2007/46/EC and the mass of the vehicle.
+2.
 
-2.   For the purposes of this Regulation, ‘a group of connected manufacturers’ means a manufacturer and its connected undertakings. In relation to a manufacturer, ‘connected undertakings’ means:
+For the purposes of this Regulation, ‘a group of connected manufacturers’ means a manufacturer and its connected undertakings. In relation to a manufacturer, ‘connected undertakings’ means:
 
 (a)
 
@@ -418,7 +282,9 @@ Article 4
 
 Specific emissions targets
 
-1.   The manufacturer shall ensure that its average specific emissions of CO2 do not exceed the following specific emissions targets:
+1.
+
+The manufacturer shall ensure that its average specific emissions of CO2 do not exceed the following specific emissions targets:
 
 (a)
 
@@ -432,9 +298,25 @@ for each calendar year from 2021 until 2024, the specific emissions targets dete
 
 for each calendar year, starting from 2025, the specific emissions targets determined in accordance with point 6.3 of Part A or B of Annex I, or, where a manufacturer is granted a derogation under Article 10, in accordance with that derogation.
 
-2.   In the case of light commercial vehicles, where the specific emissions of CO2 of the completed vehicle are not available, the manufacturer of the base vehicle shall use the specific emissions of CO2 of the base vehicle for determining its average specific emissions of CO2.
+For the purposes of the first subparagraph, point (c), where the specific emissions target determined in accordance with point 6.3 of Part A or B of Annex I is negative, the specific emissions target shall be 0 g/km.
 
-3.   For the purposes of determining each manufacturer's average specific emissions of CO2, the following percentages of each manufacturer's new passenger cars registered in the relevant year shall be taken into account:
+1a.
+
+By way of derogation from paragraph 1, for the three-year period comprising the calendar years 2025 to 2027, a manufacturer, including when it is a member of a pool, shall ensure that its average specific emissions of CO2 over that period do not exceed its specific emissions target over that period.
+
+Those average specific emissions of CO2 shall be calculated as the average over the three-year period of the annual average specific emissions of CO2 weighted according to the number of newly registered vehicles for the manufacturer in each calendar year.
+
+The specific emissions target shall be calculated as the average over the three-year period of the annual specific emissions targets determined in accordance with point 6.3 of Part A or Part B of Annex I or, where a manufacturer is granted a derogation under Article 10, in accordance with that derogation, weighted according to the number of newly registered vehicles for the manufacturer in each calendar year.
+
+For each calendar year in which a manufacturer was included in a pool, the annual average specific emissions of CO2 and the annual specific emissions target to be used for those calculations shall be the values for that pool.
+
+2.
+
+In the case of light commercial vehicles, where the specific emissions of CO2 of the completed vehicle are not available, the manufacturer of the base vehicle shall use the specific emissions of CO2 of the base vehicle for determining its average specific emissions of CO2.
+
+3.
+
+For the purposes of determining each manufacturer's average specific emissions of CO2, the following percentages of each manufacturer's new passenger cars registered in the relevant year shall be taken into account:
 
 —
 
@@ -472,9 +354,13 @@ Article 6
 
 Pooling
 
-1.   Manufacturers, other than manufacturers which have been granted a derogation under Article 10, may form a pool for the purposes of meeting their obligations under Article 4.
+1.
 
-2.   An agreement to form a pool may relate to one or more calendar years, provided that the overall duration of each agreement does not exceed five calendar years, and must be entered into on or before 31 December in the first calendar year for which emissions are to be pooled. Manufacturers which form a pool shall file the following information with the Commission:
+Manufacturers, other than manufacturers which have been granted a derogation under Article 10, may form a pool for the purposes of meeting their obligations under Article 4.
+
+2.
+
+An agreement to form a pool may relate to one or more calendar years, provided that the overall duration of each agreement does not exceed five calendar years, and must be entered into on or before 31 December in the first calendar year for which emissions are to be pooled. Manufacturers which form a pool shall file the following information with the Commission:
 
 (a)
 
@@ -492,11 +378,19 @@ evidence that the pool manager will be able to fulfil the obligations under poin
 
 the category of vehicles registered as M1 or N1, for which the pool shall apply.
 
-3.   Where the proposed pool manager fails to meet the requirement to pay any excess emissions premium imposed on the pool in accordance with Article 8, the Commission shall notify the manufacturers.
+By way of derogation from the first subparagraph, an agreement to form a pool covering the calendar year 2025 or 2026 may be entered into up to 31 December 2027.
 
-4.   Manufacturers included in a pool shall jointly inform the Commission of any change of pool manager or of its financial status, in so far as this may affect its ability to meet the requirement to pay any excess emissions premium imposed on the pool in accordance with Article 8, and of any changes to the membership of the pool or the dissolution of the pool.
+3.
 
-5.   Manufacturers may enter into pooling arrangements provided that their agreements comply with Articles 101 and 102 TFEU and that they allow open, transparent and non-discriminatory participation on commercially reasonable terms by any manufacturer requesting membership of the pool. Without prejudice to the general applicability of Union competition rules to such pools, all members of a pool shall in particular ensure that neither data sharing nor information exchange may occur in the context of their pooling arrangement, except in respect of the following information:
+Where the proposed pool manager fails to meet the requirement to pay any excess emissions premium imposed on the pool in accordance with Article 8, the Commission shall notify the manufacturers.
+
+4.
+
+Manufacturers included in a pool shall jointly inform the Commission of any change of pool manager or of its financial status, in so far as this may affect its ability to meet the requirement to pay any excess emissions premium imposed on the pool in accordance with Article 8, and of any changes to the membership of the pool or the dissolution of the pool.
+
+5.
+
+Manufacturers may enter into pooling arrangements provided that their agreements comply with Articles 101 and 102 TFEU and that they allow open, transparent and non-discriminatory participation on commercially reasonable terms by any manufacturer requesting membership of the pool. Without prejudice to the general applicability of Union competition rules to such pools, all members of a pool shall in particular ensure that neither data sharing nor information exchange may occur in the context of their pooling arrangement, except in respect of the following information:
 
 (a)
 
@@ -510,23 +404,37 @@ the specific emissions target;
 
 the total number of vehicles registered.
 
-6.   Paragraph 5 shall not apply where all the manufacturers included in the pool are part of the same group of connected manufacturers.
+6.
 
-7.   Except where notification is given under paragraph 3 of this Article, the manufacturers in a pool in respect of which information is filed with the Commission shall be considered as one manufacturer for the purposes of meeting their obligations under Article 4. Monitoring and reporting information in respect of individual manufacturers as well as any pools will be recorded, reported and made available in the central register referred to in Article 7(4).
+Paragraph 5 shall not apply where all the manufacturers included in the pool are part of the same group of connected manufacturers.
 
-8.   The Commission may specify, by means of implementing acts, the detailed conditions that shall apply for a pooling arrangement set up pursuant to paragraph 5 of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
+7.
+
+Except where notification is given under paragraph 3 of this Article, the manufacturers in a pool in respect of which information is filed with the Commission shall be considered as one manufacturer for the purposes of meeting their obligations under Article 4. Monitoring and reporting information in respect of individual manufacturers as well as any pools will be recorded, reported and made available in the central register referred to in Article 7(4).
+
+8.
+
+The Commission may specify, by means of implementing acts, the detailed conditions that shall apply for a pooling arrangement set up pursuant to paragraph 5 of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
 
 Article 7
 
 Monitoring and reporting of average emissions
 
-1.   For each calendar year, each Member State shall record information for each new passenger car and each new light commercial vehicle registered in its territory in accordance with Parts A of Annexes II and III to this Regulation. That information shall be made available to the manufacturers and their designated importers or representatives in each Member State. Member States shall make every effort to ensure that reporting bodies operate in a transparent manner. Each Member State shall ensure that the specific emissions of CO2 of passenger cars which are not type-approved in accordance with Regulation (EC) No 715/2007 are measured and recorded in the certificate of conformity.
+1.
 
-2.   By 28 February of each year, each Member State shall determine and transmit to the Commission the information listed in Parts A of Annexes II and III in respect of the preceding calendar year. The data shall be transmitted in accordance with the format specified in Part B of Annex II and Part C of Annex III.
+For each calendar year, each Member State shall record information for each new passenger car and each new light commercial vehicle registered in its territory in accordance with Parts A of Annexes II and III to this Regulation. That information shall be made available to the manufacturers and their designated importers or representatives in each Member State. Member States shall make every effort to ensure that reporting bodies operate in a transparent manner. Each Member State shall ensure that the specific emissions of CO2 of passenger cars which are not type-approved in accordance with Regulation (EC) No 715/2007 are measured and recorded in the certificate of conformity.
 
-3.   On request from the Commission, a Member State shall also transmit the full set of data collected pursuant to paragraph 1.
+2.
 
-4.   The Commission shall keep a central register of the data reported by Member States under this Article, and by 30 June of each year, shall provisionally calculate the following for each manufacturer:
+By 28 February of each year, each Member State shall determine and transmit to the Commission the information listed in Parts A of Annexes II and III in respect of the preceding calendar year. The data shall be transmitted in accordance with the format specified in Part B of Annex II and Part C of Annex III.
+
+3.
+
+On request from the Commission, a Member State shall also transmit the full set of data collected pursuant to paragraph 1.
+
+4.
+
+The Commission shall keep a central register of the data reported by Member States under this Article, and by 30 June of each year, shall provisionally calculate the following for each manufacturer:
 
 (a)
 
@@ -544,37 +452,69 @@ The Commission shall notify each manufacturer of its provisional calculation for
 
 The register shall be publicly available.
 
-5.   Manufacturers may, within three months of being notified of the provisional calculation under paragraph 4, notify the Commission of any errors in the data, specifying the Member State in which they consider that the error occurred.
+5.
+
+Manufacturers may, within three months of being notified of the provisional calculation under paragraph 4, notify the Commission of any errors in the data, specifying the Member State in which they consider that the error occurred.
 
 The Commission shall consider any notifications from manufacturers and shall, by 31 October, either confirm or amend the provisional calculations under paragraph 4.
 
-6.   Member States shall designate a competent authority for the collection and communication of the monitoring data in accordance with this Regulation and shall inform the Commission of the competent authority designated.
+6.
+
+Member States shall designate a competent authority for the collection and communication of the monitoring data in accordance with this Regulation and shall inform the Commission of the competent authority designated.
 
 The designated competent authorities shall ensure the correctness and completeness of the data transmitted to the Commission, and shall provide a contact point that is to be available to respond quickly to requests from the Commission to address errors and omissions in the transmitted datasets.
 
-7.   The Commission shall adopt, by means of implementing acts, detailed rules on the procedures for monitoring and reporting of data under paragraphs 1 to 6 of this Article, and on the application of Annexes II and III. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
+6a.
 
-8.   The Commission is empowered to adopt delegated acts in accordance with Article 17 in order to amend the data requirements and data parameters set out in Annexes II and III.
+Where the Commission finds that the provisional data submitted by Member States in accordance with paragraph 2, or the data notified by the manufacturers in accordance with paragraph 5, is based on incorrect data in the type-approval documentation or in the certificates of conformity, the Commission shall inform the type-approval authority or, where applicable, the manufacturer, and shall request the type-approval authority or, where applicable, the manufacturer to issue a statement of correction specifying the corrected data. The statement of correction shall be transmitted to the Commission and the corrected data shall be used to amend the provisional calculations under paragraph 4.
 
-9.   Type-approval authorities shall without delay report to the Commission deviations found in the CO2 emissions of vehicles in-service as compared to the specific emissions of CO2 indicated in the certificates of conformity as a result of verifications performed in accordance with Article 13.
+7.
+
+The Commission shall adopt, by means of implementing acts, detailed rules on the procedures for monitoring and reporting of data under paragraphs 1 to 6 of this Article, and on the application of Annexes II and III. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
+
+8.
+
+The Commission is empowered to adopt delegated acts in accordance with Article 17 in order to amend the data requirements and data parameters set out in Annexes II and III.
+
+9.
+
+Type-approval authorities shall without delay report to the Commission deviations found in the CO2 emissions of vehicles in-service as compared to the specific emissions of CO2 indicated in the certificates of conformity as a result of verifications performed in accordance with Article 13.
 
 The Commission shall take those deviations into account for the purpose of calculating the average specific emissions of CO2 of a manufacturer.
 
 The Commission shall adopt, by means of implementing acts, detailed rules on the procedures for reporting such deviations and for taking them into account in the calculation of the average specific emissions of CO2. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
 
-10.   The Commission shall no later than 2023 evaluate the possibility of developing a common Union methodology for the assessment and the consistent data reporting of the full life-cycle CO2 emissions of passenger cars and light commercial vehicles that are placed on the Union market. The Commission shall transmit to the European Parliament and to the Council that evaluation, including, where appropriate, proposals for follow-up measures, such as legislative proposals.
+—————
 
-11.   Member States shall also collect and report data, in accordance with this Article, on registrations of vehicles in categories M2 and N2, as defined in Annex II to Directive 2007/46/EC, with a reference mass not exceeding 2 610 kg, and vehicles to which type-approval is extended in accordance with Article 2(2) of Regulation (EC) No 715/2007.
+Article 7a
+
+Life-cycle CO2 emissions
+
+1.
+
+The Commission shall by 31 December 2025 publish a report setting out a methodology for the assessment and the consistent data reporting of the full life-cycle CO2 emissions of passenger cars and light commercial vehicles that are placed on the Union market. The Commission shall submit that report to the European Parliament and to the Council.
+
+2.
+
+By 31 December 2025, the Commission shall adopt delegated acts in accordance with Article 17 in order to supplement this Regulation by laying down a common Union methodology for the assessment and the consistent data reporting of the full life-cycle CO2 emissions of passenger cars and light commercial vehicles.
+
+3.
+
+From 1 June 2026, manufacturers may, on a voluntary basis, submit to the Commission the life-cycle CO2 emissions data for new passenger cars and new light commercial vehicles using the methodology referred to in paragraph 2.
 
 Article 8
 
 Excess emissions premium
 
-1.   In respect of each calendar year, the Commission shall impose an excess emissions premium on a manufacturer or pool manager, as appropriate, where a manufacturer's average specific emissions of CO2 exceed its specific emissions target.
+1.
 
-2.   The excess emissions premium under paragraph 1 shall be calculated using the following formula:
+In respect of each calendar year, the Commission shall impose an excess emissions premium on a manufacturer or pool manager, as appropriate, where a manufacturer's average specific emissions of CO2 exceed its specific emissions target.
 
- 
+By way of derogation from the first subparagraph, with respect to the calendar years 2025 to 2027, the Commission shall impose an excess emissions premium on any manufacturer whose average specific emissions of CO2 over those three years exceed its specific emissions target over the period 2025 to 2027.
+
+2.
+
+The excess emissions premium under paragraph 1 shall be calculated using the following formula:
 
 (Excess emissions × EUR 95) × number of newly registered vehicles.
 
@@ -588,15 +528,21 @@ For the purposes of this Article, the following definitions shall apply:
 
 ‘number of newly registered vehicles’ means the number of new passenger cars or new light commercial vehicles counted separately of which it is the manufacturer and which were registered in that period according to the phase-in criteria as set out in Article 4(3).
 
-3.   The Commission shall determine, by means of implementing acts, the means for collecting excess emissions premiums imposed under paragraph 1 of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
+3.
 
-4.   The amounts of the excess emissions premium shall be considered as revenue for the general budget of the Union.
+The Commission shall determine, by means of implementing acts, the means for collecting excess emissions premiums imposed under paragraph 1 of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
+
+4.
+
+The amounts of the excess emissions premium shall be considered as revenue for the general budget of the Union.
 
 Article 9
 
 Publication of performance of manufacturers
 
-1.   By 31 October of each year, the Commission shall publish, by means of implementing acts, a list indicating:
+1.
+
+By 31 October of each year, the Commission shall publish, by means of implementing acts, a list indicating:
 
 (a)
 
@@ -622,9 +568,13 @@ the average mass in running order for all new passenger cars and new light comme
 
 the average test mass of all new passenger cars and new light commercial vehicles registered in the Union in the preceding calendar year.
 
-2.   The list published under paragraph 1 of this Article shall also indicate whether the manufacturer has complied with the requirements of Article 4 with respect to the preceding calendar year.
+2.
 
-3.   The list referred to in paragraph 1 of this Article shall, for the publication by 31 October 2022, also indicate the following:
+The list published under paragraph 1 of this Article shall also indicate whether the manufacturer has complied with the requirements of Article 4 with respect to the preceding calendar year.
+
+3.
+
+The list referred to in paragraph 1 of this Article shall, for the publication by 31 October 2022, also indicate the following:
 
 (a)
 
@@ -638,7 +588,9 @@ Article 10
 
 Derogations for certain manufacturers
 
-1.   An application for a derogation from the specific emissions target calculated in accordance with Annex I may be made by a manufacturer of fewer than 10 000 new passenger cars or 22 000 new light commercial vehicles registered in the Union per calendar year, and which:
+1.
+
+An application for a derogation from the specific emissions target calculated in accordance with Annex I may be made by a manufacturer of fewer than 10 000 new passenger cars or 22 000 new light commercial vehicles registered in the Union per calendar year, and which:
 
 (a)
 
@@ -652,7 +604,9 @@ is part of a group of connected manufacturers that is responsible in total for f
 
 is part of a group of connected manufacturers but operates its own production facilities and design centre.
 
-2.   A derogation applied for under paragraph 1 may be granted for a maximum period of five calendar years, which is renewable. An application shall be made to the Commission and shall include:
+2.
+
+A derogation applied for under paragraph 1 may be granted from the specific emissions targets applicable until and including the calendar year 2035.  An application shall be made to the Commission and shall include:
 
 (a)
 
@@ -670,11 +624,15 @@ details of the passenger cars or light commercial vehicles which it manufactures
 
 a specific emissions target consistent with its reduction potential, including the economic and technological potential to reduce its specific emissions of CO2 and taking into account the characteristics of the market for the type of passenger car or light commercial vehicle manufactured.
 
-3.   Where the Commission considers that the manufacturer is eligible for a derogation applied for under paragraph 1 and is satisfied that the specific emissions target proposed by the manufacturer is consistent with its reduction potential, including the economic and technological potential to reduce its specific emissions of CO2, and taking into account the characteristics of the market for the type of passenger car or light commercial vehicle manufactured, the Commission shall grant a derogation to the manufacturer.
+3.
+
+Where the Commission considers that the manufacturer is eligible for a derogation applied for under paragraph 1 and is satisfied that the specific emissions target proposed by the manufacturer is consistent with its reduction potential, including the economic and technological potential to reduce its specific emissions of CO2, and taking into account the characteristics of the market for the type of passenger car or light commercial vehicle manufactured, the Commission shall grant a derogation to the manufacturer.
 
 The application shall be submitted at the latest by 31 October of the first year in which the derogation shall apply.
 
-4.   An application for a derogation from the specific emissions target calculated in accordance with points 1 to 4 and 6.3 of Part A of Annex I may be made by a manufacturer which is responsible, together with all of its connected undertakings, for between 10 000 and 300 000 new passenger cars registered in the Union per calendar year.
+4.
+
+An application for a derogation from the specific emissions target calculated in accordance with points 1 to 4 and 6.3 of Part A of Annex I may be made for the years until and including the calendar year 2028 by a manufacturer which is responsible, together with all of its connected undertakings, for between 10 000 and 300 000 new passenger cars registered in the Union per calendar year.
 
 Such application may be made by a manufacturer in respect of itself or in respect of itself together with any of its connected undertakings. An application shall be made to the Commission and shall include:
 
@@ -694,31 +652,59 @@ Where information on a manufacturer's average specific emissions of CO2 does not
 
 The Commission shall grant a derogation to the manufacturer where it is demonstrated that the criteria for the derogation referred to in this paragraph have been met.
 
-5.   A manufacturer which is subject to a derogation in accordance with this Article shall notify the Commission immediately of any change which affects or may affect its eligibility for a derogation.
+5.
 
-6.   Where the Commission considers, whether on the basis of a notification under paragraph 5 or otherwise, that a manufacturer is no longer eligible for the derogation, it shall revoke the derogation with effect from 1 January of the next calendar year and shall notify the manufacturer thereof.
+A manufacturer which is subject to a derogation in accordance with this Article shall notify the Commission immediately of any change which affects or may affect its eligibility for a derogation.
 
-7.   Where the manufacturer does not attain its specific emissions target, the Commission shall impose the excess emissions premium on the manufacturer, as set out in Article 8.
+6.
 
-8.   The Commission is empowered to adopt delegated acts in accordance with Article 17 laying down rules to supplement paragraphs 1 to 7 of this Article, as regards the interpretation of the eligibility criteria for derogations, the content of the applications, and the content and assessment of programmes for the reduction of specific emissions of CO2.
+Where the Commission considers, whether on the basis of a notification under paragraph 5 or otherwise, that a manufacturer is no longer eligible for the derogation, it shall revoke the derogation with effect from 1 January of the next calendar year and shall notify the manufacturer thereof.
+
+7.
+
+Where the manufacturer does not attain its specific emissions target, the Commission shall impose the excess emissions premium on the manufacturer, as set out in Article 8.
+
+8.
+
+The Commission is empowered to adopt delegated acts in accordance with Article 17 laying down rules to supplement paragraphs 1 to 7 of this Article, as regards the interpretation of the eligibility criteria for derogations, the content of the applications, and the content and assessment of programmes for the reduction of specific emissions of CO2.
 
 The Commission is also empowered to adopt delegated acts in accordance with Article 17 to amend Part A of Annex I for the purpose of setting out the calculation formulae of the derogation targets referred to in point (c) of the second subparagraph of paragraph 4 of this Article.
 
-9.   Applications for a derogation, including the information supporting it, notifications under paragraph 5, revocations under paragraph 6, any imposition of an excess emissions premium under paragraph 7 and measures adopted pursuant to paragraph 8, shall be made publicly available, subject to Regulation (EC) No 1049/2001 of the European Parliament and of the Council (19).
+9.
+
+Applications for a derogation, including the information supporting it, notifications under paragraph 5, revocations under paragraph 6, any imposition of an excess emissions premium under paragraph 7 and measures adopted pursuant to paragraph 8, shall be made publicly available, subject to Regulation (EC) No 1049/2001 of the European Parliament and of the Council (
+1
+).
 
 Article 11
 
 Eco-innovation
 
-1.   Upon application by a supplier or a manufacturer, CO2 savings achieved through the use of innovative technologies or a combination of innovative technologies (‘innovative technology packages’) shall be considered.
+1.
+
+Upon application by a supplier or a manufacturer, CO2 savings achieved through the use of innovative technologies or a combination of innovative technologies (‘innovative technology packages’) shall be considered.
 
 Such technologies shall be taken into consideration only if the methodology used to assess them is capable of producing verifiable, repeatable and comparable results.
 
-The total contribution of those technologies to reducing the average specific emissions of CO2 of a manufacturer may be up to 7 g CO2/km.
+The total contribution of those technologies to reducing the average specific emissions of CO2 of a manufacturer may be up to:
 
-The Commission is empowered to adopt delegated acts in accordance with Article 17 in order to amend this Regulation by adjusting the cap referred to in the third subparagraph of this paragraph with effect from 2025 onwards to take into account technological developments while ensuring a balanced proportion of the level of that cap in relation to the average specific emissions of CO2 of manufacturers.
+—
 
-2.   The Commission shall adopt, by means of implementing acts, detailed provisions for a procedure to approve the innovative technologies or innovative technology packages referred to in paragraph 1 of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2). Those detailed provisions shall be based on the following criteria for innovative technologies:
+7 g CO2/km until 2024;
+
+—
+
+6 g CO2/km from 2025 until 2029;
+
+—
+
+4 g CO2/km from 2030 until and including 2034.
+
+The Commission is empowered to adopt delegated acts in accordance with Article 17 in order to amend this Regulation by adjusting downwards the values of the cap referred to in the third subparagraph of this paragraph with effect from 2025 onwards to take into account technological developments while ensuring a balanced proportion of the level of that cap in relation to the average specific emissions of CO2 of manufacturers.
+
+2.
+
+The Commission shall adopt, by means of implementing acts, detailed provisions for a procedure to approve the innovative technologies or innovative technology packages referred to in paragraph 1 of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2). Those detailed provisions shall be based on the following criteria for innovative technologies:
 
 (a)
 
@@ -746,21 +732,29 @@ be mandatory under other provisions of Union law.
 
 With effect from 1 January 2025, the criterion referred to in point (d)(i) of the first subparagraph shall not apply with regard to efficiency improvements for air conditioning systems.
 
-3.   A supplier or a manufacturer that applies for a measure to be approved as an innovative technology or innovative technology package shall submit a report, including a verification report undertaken by an independent and certified body, to the Commission. In the event of a possible interaction of the measure with another innovative technology or innovative technology package already approved, that report shall mention that interaction and the verification report shall evaluate to what extent that interaction modifies the reduction achieved by each measure.
+3.
 
-4.   The Commission shall attest the reduction achieved on the basis of the criteria set out in paragraph 2.
+A supplier or a manufacturer that applies for a measure to be approved as an innovative technology or innovative technology package shall submit a report, including a verification report undertaken by an independent and certified body, to the Commission. In the event of a possible interaction of the measure with another innovative technology or innovative technology package already approved, that report shall mention that interaction and the verification report shall evaluate to what extent that interaction modifies the reduction achieved by each measure.
+
+4.
+
+The Commission shall attest the reduction achieved on the basis of the criteria set out in paragraph 2.
 
 Article 12
 
 Real-world CO2 emissions and fuel or energy consumption
 
-1.   The Commission shall monitor and assess the real-world representativeness of the CO2 emissions and fuel or energy consumption values determined pursuant to Regulation (EC) No 715/2007.
+1.
+
+The Commission shall monitor and assess the real-world representativeness of the CO2 emissions and fuel or energy consumption values determined pursuant to Regulation (EC) No 715/2007.
 
 Furthermore, the Commission shall regularly collect data on the real-world CO2 emissions and fuel or energy consumption of passenger cars and light commercial vehicles using on-board fuel and/or energy consumption monitoring devices, starting with new passenger cars and new light commercial vehicles registered in 2021.
 
 The Commission shall ensure that the public is informed of how that real-world representativeness evolves over time.
 
-2.   For the purpose referred to in paragraph 1, starting from 1 January 2021, the Commission shall ensure that the following parameters relating to real-world CO2 emissions and fuel or energy consumption of passenger cars and light commercial vehicles are made available at regular intervals to it, from manufacturers, national authorities or through direct data transfer from vehicles, as the case may be:
+2.
+
+For the purpose referred to in paragraph 1, starting from 1 January 2021, the Commission shall ensure that the following parameters relating to real-world CO2 emissions and fuel or energy consumption of passenger cars and light commercial vehicles are made available at regular intervals to it, from manufacturers, national authorities or through direct data transfer from vehicles, as the case may be:
 
 (a)
 
@@ -784,25 +778,43 @@ other parameters necessary to ensure that the obligations set out in paragraph 1
 
 The Commission shall process the data received under the first subparagraph to create anonymised and aggregated datasets, including per manufacturer, for the purposes of paragraph 1. The vehicle identification numbers shall be used only for the purpose of that data processing and shall not be retained longer than needed for that purpose.
 
-3.   In order to prevent the real-world emissions gap from growing, the Commission shall, no later than 1 June 2023, assess how fuel and energy consumption data may be used to ensure that the vehicle CO2 emissions and fuel or energy consumption values determined pursuant to Regulation (EC) No 715/2007 remain representative of real-world emissions over time for each manufacturer.
+3.
 
-The Commission shall monitor and report annually on how the gap referred to in the first subparagraph evolves over the period 2021 to 2026 and shall, with the view to preventing an increase in that gap, assess, in 2027, the feasibility of a mechanism to adjust the manufacturer's average specific emissions of CO2 as of 2030, and, if appropriate, submit a legislative proposal to put such a mechanism in place.
+In order to prevent the real-world emissions gap from growing, the Commission shall, no later than 1 June 2023, assess how real-world fuel and energy consumption data collected pursuant to Commission Implementing Regulation (EU) 2021/392 (
+2
+) may be used to ensure that the vehicle CO2 emissions and fuel or energy consumption values determined pursuant to Regulation (EC) No 715/2007 remain representative of real-world emissions over time for each manufacturer.
 
-4.   The Commission shall adopt, by means of implementing acts, the detailed procedure for collecting and processing the data referred to in paragraph 2 of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
+The Commission shall monitor and report annually on how the gap referred to in the first subparagraph evolves from 2021 onwards and shall, as soon as sufficient data is available, and no later than 31 December 2026, publish a report setting out a methodology for a mechanism to adjust the average specific emissions of CO2 of the manufacturer as of 2030 using real-world data collected pursuant to Implementing Regulation (EU) 2021/392, and assessing the feasibility of such a mechanism.
+
+The Commission shall submit that report to the European Parliament and to the Council, including, where appropriate, proposals for follow-up measures, such as legislative proposals to put such a mechanism in place.
+
+4.
+
+The Commission shall adopt, by means of implementing acts, the detailed procedure for collecting and processing the data referred to in paragraph 2 of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
 
 Article 13
 
 Verification of the CO2 emissions of vehicles in-service
 
-1.   Manufacturers shall ensure that the CO2 emission and fuel consumption values recorded in the certificates of conformity correspond to the CO2 emissions from, and fuel consumption of, vehicles in-service as determined in accordance with Regulation (EU) 2017/1151.
+1.
 
-2.   Following the entry into force of the procedures referred to in the first subparagraph of paragraph 4, type-approval authorities shall verify for those vehicle families for which they are responsible for the type-approval, on the basis of appropriate and representative vehicle samples, that the CO2 emission and fuel consumption values recorded in the certificates of conformity correspond to the CO2 emissions from, and fuel consumption of, vehicles in-service as determined in accordance with Regulation (EU) 2017/1151 while considering, inter alia, available data from on-board fuel and/or energy consumption monitoring devices.
+Manufacturers shall ensure that the CO2 emission and fuel consumption values recorded in the certificates of conformity correspond to the CO2 emissions from, and fuel consumption of, vehicles in-service as determined in accordance with Regulation (EU) 2017/1151.
+
+2.
+
+Following the entry into force of the procedures referred to in the first subparagraph of paragraph 4, type-approval authorities shall verify for those vehicle families for which they are responsible for the type-approval, on the basis of appropriate and representative vehicle samples, that the CO2 emission and fuel consumption values recorded in the certificates of conformity correspond to the CO2 emissions from, and fuel consumption of, vehicles in-service as determined in accordance with Regulation (EU) 2017/1151 while considering, inter alia, available data from on-board fuel and/or energy consumption monitoring devices.
 
 Type-approval authorities shall also verify the presence of any strategies on board or relating to the sampled vehicles that artificially improve the vehicle's performance in the tests performed for the purpose of type-approval by, inter alia, using data from on-board fuel and/or energy consumption monitoring devices.
 
-3.   Where a lack of correspondence of CO2 emission and fuel consumption values or the presence of any strategies artificially improving a vehicle's performance is found as a result of the verifications performed pursuant to paragraph 2, the responsible type-approval authority shall, in addition to taking the necessary measures set out in Chapter XI of Regulation (EU) 2018/858, ensure the correction of the certificates of conformity.
+3.
 
-4.   The Commission shall determine, by means of implementing acts, the procedures for performing the verifications referred to in paragraph 2 of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
+Where a lack of correspondence of CO2 emission and fuel consumption values or the presence of any strategies artificially improving a vehicle's performance is found as a result of the verifications performed pursuant to paragraph 2, the responsible type-approval authority shall, in addition to taking the necessary measures set out in Chapter XI of Regulation (EU) 2018/858, ensure the correction of the certificates of conformity.
+
+Where the data in the type-approval documentation may not be corrected under Regulation (EU) 2018/858, the responsible type-approval authority shall issue a statement of correction with the corrected data and transmit that statement to the Commission and the parties concerned.
+
+4.
+
+The Commission shall determine, by means of implementing acts, the procedures for performing the verifications referred to in paragraph 2 of this Article. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2).
 
 The Commission is empowered, prior to adopting the implementing acts referred to in the first subparagraph of this paragraph, to adopt a delegated act in accordance with Article 17 in order to supplement this Regulation by setting out the guiding principles and criteria for defining the procedures referred to in the first subparagraph of this paragraph.
 
@@ -810,7 +822,9 @@ Article 14
 
 Adjustment of M0 and TM0 values
 
-1.   The M0 and TM0 values referred to in Parts A and B of Annex I shall be adjusted as follows:
+1.
+
+The M0 and TM0 values referred to in Parts A and B of Annex I shall be adjusted as follows:
 
 (a)
 
@@ -828,55 +842,159 @@ by 31 October 2022, the indicative TM0 value for 2025 shall be determined as th
 
 by 31 October 2024, and every second year thereafter, the TM0 value in point 6.2 of Parts A and B of Annex I shall be adjusted to the respective average test mass of all new passenger cars and new light commercial vehicles registered in the preceding two calendar years, starting with 2022 and 2023. The new TM0 values shall apply from 1 January of the calendar year following the date of the adjustment.
 
-2.   The Commission is empowered to adopt delegated acts in accordance with Article 17 in order to supplement this Regulation by establishing the measures referred to in paragraph 1 of this Article.
+2.
+
+The Commission is empowered to adopt delegated acts in accordance with Article 17 in order to amend Annex I as provided for in paragraph 1 of this Article.
+
+Article 14a
+
+Progress report
+
+1.
+
+By 31 December 2025, and every two years thereafter, the Commission shall submit a report to the European Parliament and to the Council on the progress towards zero-emission road mobility. The report shall in particular monitor and assess the need for possible additional measures to facilitate a just transition, including through financial means.
+
+2.
+
+In the report, the Commission shall consider all factors that contribute to a cost-efficient progress towards climate neutrality by 2050, including:
+
+(a)
+
+progress in the deployment of zero- and low-emission vehicles, in particular in the light commercial vehicles segment, as well as the measures at Union, Member State and local level to facilitate Member States’ transition to zero- emission light-duty vehicles;
+
+(b)
+
+progress in the energy efficiency and affordability of zero- and low-emission vehicles;
+
+(c)
+
+the impacts on consumers, particularly on low- and medium-income households, including on electricity prices;
+
+(d)
+
+analysis of the market for second-hand vehicles;
+
+(e)
+
+the potential contribution in terms of CO2 savings of additional measures aimed to lower the average age and thus the emissions of the light-duty vehicles fleet, such as measures to support the phase out of older vehicles in a socially just and environmentally sound manner;
+
+(f)
+
+impacts on employment in the automotive sector, especially on micro, small and medium-sized enterprises (SMEs), and the effectiveness of measures to support retraining and upskilling of the workforce;
+
+(g)
+
+the effectiveness of existing financial measures and the need for further action, including adequate financial measures, at Union, Member State or local level to ensure a just transition and to mitigate any negative socioeconomic impacts, in particular in the regions and the communities most affected;
+
+(h)
+
+progress in social dialogue, as well as aspects to further facilitate an economically viable and socially fair transition towards zero-emission road mobility;
+
+(i)
+
+progress in the roll-out of public and private recharging and refuelling infrastructure, including progress under a Regulation of the European Parliament and of the Council on the deployment of alternative fuels infrastructure, and repealing Directive 2014/94/EU of the European Parliament and of the Council and a recast of Directive 2010/31/EU of the European Parliament and of the Council (
+3
+);
+
+(j)
+
+the potential contribution of innovation technologies and sustainable alternative fuels, including synthetic fuels, to reach climate neutral mobility;
+
+(k)
+
+life-cycle emissions of new passenger cars and new light commercial vehicles placed on the market, as reported in accordance with Article 7a;
+
+(l)
+
+the impact of this Regulation on the achievement of the Member States’ targets under Regulation (EU) 2018/842 and a recast of Directive 2008/50/EC of the European Parliament and of the Council (
+4
+).
+
+3.
+
+At the date of submission of the first progress report referred to in paragraph 1, the Commission shall also, in cooperation with Member States and all relevant stakeholders, submit a report to the European Parliament and to the Council which includes an analysis to identify any funding gaps in ensuring a just transition in the automotive supply chain, with particular attention for SMEs and the regions that are most affected by the transition. The report shall, where appropriate, be accompanied by proposals for adequate financial measures to address the needs identified.
 
 Article 15
 
 Review and report
 
-1.   The Commission shall, in 2023, thoroughly review the effectiveness of this Regulation and submit a report to the European Parliament and to the Council with the result of the review.
+1.
 
-2.   In the report referred to in paragraph 1, the Commission shall consider, inter alia, the real-world representativeness of the CO2 emission and fuel or energy consumption values determined pursuant to Regulation (EC) No 715/2007; the deployment on the Union market of zero- and low-emission vehicles, in particular with respect to light commercial vehicles; the roll-out of recharging and refuelling infrastructure reported under Directive 2014/94/EU of the European Parliament and of the Council (20), including their financing; the potential contribution of the use of synthetic and advanced alternative fuels produced with renewable energy to emissions reductions; the CO2 emissions reduction actually observed at the existing fleet level; the functioning of the incentive mechanism for zero- and low-emission vehicles; the potential effects of the transitional measure set out in point 6.3 of Part A of Annex I; the impact of this Regulation on consumers, particularly on those on low and medium incomes; as well as aspects to further facilitate an economically viable and socially fair transition towards clean, competitive and affordable mobility in the Union.
+The Commission shall, in 2026, review the effectiveness and impact of this Regulation, building on the two-yearly reporting, and submit a report to the European Parliament and to the Council with the result of the review. The Commission shall in particular assess progress made under this Regulation towards achieving the reduction targets set out in Article 1(5a), taking into account the technological developments, including as regards plug-in hybrid technologies, and the importance of an economically viable and socially fair transition towards zero-emission mobility. Based on that assessment, the Commission shall assess the need to review the targets set out in Article 1(5a). The Commission shall also assess the impacts of establishing minimum energy efficiency thresholds for new zero-emission passenger cars and light commercial vehicles placed on the Union market.
 
-The Commission shall, in that report, also identify a clear pathway for further CO2 emissions reductions for passenger cars and light commercial vehicles beyond 2030 in order to significantly contribute to achieving the long-term goal of the Paris Agreement.
+The report shall, where appropriate, be accompanied by a proposal to amend this Regulation.
 
-3.   The report referred to in paragraph 2 shall, where appropriate, be accompanied by a proposal for amending this Regulation, in particular, the possible revision of the EU fleet-wide targets for 2030 in light of the elements listed in paragraph 2, and the introduction of binding emissions reduction targets for 2035 and 2040 onwards for passenger cars and light commercial vehicles to ensure the timely transformation of the transport sector towards achieving net-zero emissions in line with the objectives of the Paris Agreement.
+—————
 
-4.   As part of the review referred to in paragraph 1 of this Article, the Commission shall assess the feasibility of developing real-world emission test procedures using portable emission measurement systems (PEMS). The Commission shall take into account that assessment as well as those made pursuant to Article 12 of this Regulation and may, where appropriate, review the procedures for measuring CO2 emissions as set out under Regulation (EC) No 715/2007. The Commission shall, in particular, make appropriate proposals to adapt those procedures to reflect adequately the real-world CO2 emissions of passenger cars and light commercial vehicles.
+6.
 
-5.   As part of the review referred to in paragraph 1 of this Article, the Commission shall evaluate the possibility to assign the revenue from the excess emissions premiums to a specific fund or a relevant programme, with the objective to ensure a just transition towards a climate-neutral economy as referred to in Article 4.1 of the Paris Agreement, in particular to support re-skilling, up-skilling and other skills training and reallocation of workers in the automotive sector in all affected Member States, in particular in the regions and the communities most affected by the transition. The Commission shall, if appropriate, make a legislative proposal to that effect by 2027 at the latest.
+By 31 December 2024, the Commission shall review Directive 1999/94/EC considering the need to provide consumers with accurate, robust and comparable information on the fuel and energy consumption, CO2 emissions and air pollutant emissions of new passenger cars placed on the market, including under real-world conditions, as well as evaluate the options for introducing a fuel economy and CO2 emissions label for new light commercial vehicles.
 
-6.   By 31 December 2020, the Commission shall review Directive 1999/94/EC considering the need to provide consumers with accurate, robust and comparable information on the fuel consumption, CO2 emissions and air pollutant emissions of new passenger cars placed on the market, as well as evaluate the options for introducing a fuel economy and CO2 emissions label for new light commercial vehicles. The review shall, where appropriate, be accompanied by a legislative proposal.
+The review shall, where appropriate, be accompanied by a legislative proposal.
 
-7.   The Commission shall, by means of implementing acts, determine the correlation parameters necessary in order to reflect any change in the regulatory test procedure for the measurement of specific emissions of CO2 referred to in Regulations (EC) No 715/2007 and (EC) No 692/2008 and, where applicable, Regulation (EU) 2017/1151. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2) of this Regulation.
+7.
 
-8.   The Commission is empowered to adopt delegated acts in accordance with Article 17 in order to amend this Regulation by adapting the formulae set out in Annex I, using the methodology adopted pursuant to paragraph 7 of this Article, while ensuring that reduction requirements of comparable stringency for manufacturers and vehicles of different utility are required under the old and new test procedures.
+The Commission shall, by means of implementing acts, determine the correlation parameters necessary in order to reflect any change in the regulatory test procedure for the measurement of specific emissions of CO2 referred to in Regulations (EC) No 715/2007 and (EC) No 692/2008 and, where applicable, Regulation (EU) 2017/1151. Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 16(2) of this Regulation.
+
+8.
+
+The Commission is empowered to adopt delegated acts in accordance with Article 17 in order to amend this Regulation by adapting the formulae set out in Annex I, using the methodology adopted pursuant to paragraph 7 of this Article, while ensuring that reduction requirements of comparable stringency for manufacturers and vehicles of different utility are required under the old and new test procedures.
+
+9.
+
+The Commission is empowered to adopt delegated acts in accordance with Article 17 in order to amend the formulae set out in Part B of Annex I, where such amendments are necessary in order to take into account the procedure for multi-stage N1 vehicles set out in Part A of Annex III.
 
 Article 16
 
 Committee procedure
 
-1.   The Commission shall be assisted by the Climate Change Committee referred to in point (a) of Article 44(1) of Regulation (EU) 2018/1999 of the European Parliament and of the Council (21). That committee shall be a committee within the meaning of Regulation (EU) No 182/2011.
+1.
 
-2.   Where reference is made to this paragraph, Article 5 of Regulation (EU) No 182/2011 shall apply.
+The Commission shall be assisted by the Climate Change Committee referred to in point (a) of Article 44(1) of Regulation (EU) 2018/1999 of the European Parliament and of the Council (
+5
+). That committee shall be a committee within the meaning of Regulation (EU) No 182/2011.
 
-3.   Where the committee delivers no opinion, the Commission shall not adopt the draft implementing act and the third subparagraph of Article 5(4) of Regulation (EU) No 182/2011 shall apply.
+2.
+
+Where reference is made to this paragraph, Article 5 of Regulation (EU) No 182/2011 shall apply.
+
+3.
+
+Where the committee delivers no opinion, the Commission shall not adopt the draft implementing act and the third subparagraph of Article 5(4) of Regulation (EU) No 182/2011 shall apply.
 
 Article 17
 
 Exercise of the delegation
 
-1.   The power to adopt delegated acts is conferred on the Commission subject to the conditions laid down in this Article.
+1.
 
-2.   The power to adopt delegated acts referred to in Article 7(8), Article 10(8), the fourth subparagraph of Article 11(1), Article 13(4), Article 14(2) and Article 15(8) shall be conferred on the Commission for a period of six years from 15 May 2019. The Commission shall draw up a report in respect of the delegation of power not later than nine months before the end of the six-year period. The delegation of power shall be tacitly extended for periods of an identical duration, unless the European Parliament or the Council opposes such extension not later than three months before the end of each period.
+The power to adopt delegated acts is conferred on the Commission subject to the conditions laid down in this Article.
 
-3.   The delegation of power referred to in Article 7(8), Article 10(8), the fourth subparagraph of Article 11(1), Article 13(4), Article 14(2) and Article 15(8) may be revoked at any time by the European Parliament or by the Council. A decision to revoke shall put an end to the delegation of the power specified in that decision. It shall take effect the day following the publication of the decision in the Official Journal of the European Union or at a later date specified therein. It shall not affect the validity of any delegated acts already in force.
+2.
 
-4.   Before adopting a delegated act, the Commission shall consult experts designated by each Member State in accordance with the principles laid down in the Interinstitutional Agreement of 13 April 2016 on Better Law-Making.
+The power to adopt delegated acts referred to in
 
-5.   As soon as it adopts a delegated act, the Commission shall notify it simultaneously to the European Parliament and to the Council.
+Article 7(8), Article 7a(2), Article 10(8), Article 11(1), fourth subparagraph, Article 13(4), Article 14(2) and Article 15(8) and (9)  shall be conferred on the Commission for a period of six years from 15 May 2019. The Commission shall draw up a report in respect of the delegation of power not later than nine months before the end of the six-year period. The delegation of power shall be tacitly extended for periods of an identical duration, unless the European Parliament or the Council opposes such extension not later than three months before the end of each period.
 
-6.   A delegated act adopted pursuant to Article 7(8), Article 10(8), the fourth subparagraph of Article 11(1), Article 13(4), Article 14(2) and Article 15(8) shall enter into force only if no objection has been expressed either by the European Parliament or by the Council within a period of two months of notification of that act to the European Parliament and to the Council or if, before the expiry of that period, the European Parliament and the Council have both informed the Commission that they will not object. That period shall be extended by two months at the initiative of the European Parliament or of the Council.
+3.
+
+The delegation of power referred to in
+
+Article 7(8), Article 7a(2), Article 10(8), Article 11(1), fourth subparagraph, Article 13(4), Article 14(2) and Article 15(8) and (9)  may be revoked at any time by the European Parliament or by the Council. A decision to revoke shall put an end to the delegation of the power specified in that decision. It shall take effect the day following the publication of the decision in the Official Journal of the European Union or at a later date specified therein. It shall not affect the validity of any delegated acts already in force.
+
+4.
+
+Before adopting a delegated act, the Commission shall consult experts designated by each Member State in accordance with the principles laid down in the Interinstitutional Agreement of 13 April 2016 on Better Law-Making.
+
+5.
+
+As soon as it adopts a delegated act, the Commission shall notify it simultaneously to the European Parliament and to the Council.
+
+6.
+
+A delegated act adopted pursuant to
+
+Article 7(8), Article 7a(2), Article 10(8), Article 11(1), fourth subparagraph, Article 13(4), Article 14(2) and Article 15(8) and (9)  shall enter into force only if no objection has been expressed either by the European Parliament or by the Council within a period of two months of notification of that act to the European Parliament and to the Council or if, before the expiry of that period, the European Parliament and the Council have both informed the Commission that they will not object. That period shall be extended by two months at the initiative of the European Parliament or of the Council.
 
 Article 18
 
@@ -896,73 +1014,15 @@ It shall apply from 1 January 2020.
 
 This Regulation shall be binding in its entirety and directly applicable in all Member States.
 
-Done at Strasbourg, 17 April 2019.
-
-For the European Parliament
-
-The President
-
-A. TAJANI
-
-For the Council
-
-The President
-
-G. CIAMBA
-
-(1)  
-OJ C 227, 28.6.2018, p. 52.
-
-(2)  Position of the European Parliament of 27 March 2019 (not yet published in the Official Journal) and decision of the Council of 15 April 2019.
-
-(3)  Regulation (EC) No 443/2009 of the European Parliament and of the Council of 23 April 2009 setting emission performance standards for new passenger cars as part of the Community's integrated approach to reduce CO2 emissions from light-duty vehicles (OJ L 140, 5.6.2009, p. 1).
-
-(4)  Regulation (EU) No 510/2011 of the European Parliament and of the Council of 11 May 2011 setting emission performance standards for new light commercial vehicles as part of the Union's integrated approach to reduce CO2 emissions from light-duty vehicles (OJ L 145, 31.5.2011, p. 1).
-
-(5)  
-OJ L 282, 19.10.2016, p. 4.
-
-(6)  Regulation (EU) 2018/842 of the European Parliament and of the Council of 30 May 2018 on binding annual greenhouse gas emission reductions by Member States from 2021 to 2030 contributing to climate action to meet commitments under the Paris Agreement and amending Regulation (EU) No 525/2013 (OJ L 156, 19.6.2018, p. 26).
-
-(7)  Directive 2003/87/EC of the European Parliament and of the Council of 13 October 2003 establishing a system for greenhouse gas emission allowance trading within the Union and amending Council Directive 96/61/EC (OJ L 275, 25.10.2003, p. 32).
-
-(8)  Regulation (EC) No 715/2007 of the European Parliament and of the Council of 20 June 2007 on type approval of motor vehicles with respect to emissions from light passenger and commercial vehicles (Euro 5 and Euro 6) and on access to vehicle repair and maintenance information (OJ L 171, 29.6.2007, p. 1).
-
-(9)  Commission Regulation (EU) 2017/1151 of 1 June 2017 supplementing Regulation (EC) No 715/2007 of the European Parliament and of the Council on type-approval of motor vehicles with respect to emissions from light passenger and commercial vehicles (Euro 5 and Euro 6) and on access to vehicle repair and maintenance information, amending Directive 2007/46/EC of the European Parliament and of the Council, Commission Regulation (EC) No 692/2008 and Commission Regulation (EU) No 1230/2012 and repealing Commission Regulation (EC) No 692/2008 (OJ L 175, 7.7.2017, p. 1).
-
-(10)  Commission Implementing Regulation (EU) 2017/1152 of 2 June 2017 setting out a methodology for determining the correlation parameters necessary for reflecting the change in the regulatory test procedure with regard to light commercial vehicles and amending Implementing Regulation (EU) No 293/2012 (OJ L 175, 7.7.2017, p. 644).
-
-(11)  Commission Implementing Regulation (EU) 2017/1153 of 2 June 2017 setting out a methodology for determining the correlation parameters necessary for reflecting the change in the regulatory test procedure and amending Regulation (EU) No 1014/2010 (OJ L 175, 7.7.2017, p. 679).
-
-(12)  Directive 1999/94/EC of the European Parliament and of the Council of 13 December 1999 relating to the availability of consumer information on fuel economy and CO2 emissions in respect of the marketing of new passenger cars (OJ L 12, 18.1.2000, p. 16).
-
-(13)  Directive 2007/46/EC of the European Parliament and of the Council of 5 September 2007 establishing a framework for the approval of motor vehicles and their trailers, and of systems, components and separate technical units intended for such vehicles (Framework Directive) (OJ L 263, 9.10.2007, p. 1).
-
-(14)  Commission Regulation (EC) No 692/2008 of 18 July 2008 implementing and amending Regulation (EC) No 715/2007 of the European Parliament and of the Council on type-approval of motor vehicles with respect to emissions from light passenger and commercial vehicles (Euro 5 and Euro 6) and on access to vehicle repair and maintenance information (OJ L 199, 28.7.2008, p. 1).
-
-(15)  Regulation (EU) 2018/858 of the European Parliament and of the Council of 30 May 2018 on the approval and market surveillance of motor vehicles and their trailers, and of systems, components and separate technical units intended for such vehicles, amending Regulations (EC) No 715/2007 and (EC) No 595/2009 and repealing Directive 2007/46/EC (OJ L 151, 14.6.2018, p. 1).
-
-(16)  
-OJ C 298, 23.8.2018, p. 140.
-
-(17)  Regulation (EU) No 182/2011 of the European Parliament and of the Council of 16 February 2011 laying down the rules and general principles concerning mechanisms for control by Member States of the Commission's exercise of implementing powers (OJ L 55, 28.2.2011, p. 13).
-
-(18)  
-OJ L 123, 12.5.2016, p. 1.
-
-(19)  Regulation (EC) No 1049/2001 of the European Parliament and of the Council of 30 May 2001 regarding public access to European Parliament, Council and Commission documents (OJ L 145, 31.5.2001, p. 43).
-
-(20)  Directive 2014/94/EU of the European Parliament and of the Council of 22 October 2014 on the deployment of alternative fuels infrastructure (OJ L 307, 28.10.2014, p. 1).
-
-(21)  Regulation (EU) 2018/1999 of the European Parliament and of the Council of 11 December 2018 on the Governance of the Energy Union and Climate Action, amending Regulations (EC) No 663/2009 and (EC) No 715/2009 of the European Parliament and of the Council, Directives 94/22/EC, 98/70/EC, 2009/31/EC, 2009/73/EC, 2010/31/EU, 2012/27/EU and 2013/30/EU of the European Parliament and of the Council, Council Directives 2009/119/EC and (EU) 2015/652 and repealing Regulation (EU) No 525/2013 of the European Parliament and of the Council (OJ L 328, 21.12.2018, p. 1).
-
 ANNEX I
 
 PART A
 
 SPECIFIC EMISSIONS TARGETS FOR PASSENGER CARS
 
-1.   For the calendar year 2020, the specific emissions of CO2 for each new passenger car shall, for the purposes of the calculations in this point and in point 2, be determined in accordance with the following formula:
+1.
+
+For the calendar year 2020, the specific emissions of CO2 for each new passenger car shall, for the purposes of the calculations in this point and in point 2, be determined in accordance with the following formula:
 
 Specific emissions of CO2 = 95 + a · (M – M0)
 
@@ -986,9 +1046,13 @@ a
 
 0,0333
 
-2.   The specific emissions target for a manufacturer in 2020 shall be calculated as the average of the specific emissions of CO2 determined according to point 1, of each new passenger car registered in that calendar year of which it is the manufacturer.
+2.
 
-3.   The specific emissions reference target for a manufacturer in 2021 shall be calculated as follows:
+The specific emissions target for a manufacturer in 2020 shall be calculated as the average of the specific emissions of CO2 determined according to point 1, of each new passenger car registered in that calendar year of which it is the manufacturer.
+
+3.
+
+The specific emissions reference target for a manufacturer in 2021 shall be calculated as follows:
 
 where:
 
@@ -1004,7 +1068,35 @@ NEDC2020target
 
 is the 2020 specific emissions target calculated in accordance with points 1 and 2.
 
-4.   For the calendar years 2021 to 2024, the specific emissions target for a manufacturer shall be calculated as follows:
+3a.
+
+For a manufacturer for which WLTPCO2 or NEDCCO2 is zero, the specific emission reference target in 2021 shall be NEDC2020target as defined in point 3.
+
+3b.
+
+For a manufacturer that is placing passenger cars on the market of the Union for the first time in any of the calendar years 2021 to 2024, the specific emission reference target in 2021 shall be the average of the specific emissions reference targets determined for all manufacturers in accordance with point 3, weighted according to the number of new passenger cars that were registered for those manufacturers in the Union in 2020.
+
+3c.
+
+Notwithstanding point 3b, where in any of the calendar years 2021 to 2024, a manufacturer is placing passenger cars on the market of the Union for the first time, but that manufacturer was formed by a merger of two or more manufacturers of which at least one was responsible for new passenger cars registered in the Union in 2020, the specific emission reference target in 2021 for the new manufacturer shall be one of the following:
+
+(a)
+
+where two or more of the merging manufacturers were responsible for new passenger cars registered in the Union in 2020, the specific emission reference target in 2021 shall be the average of the specific emission reference targets determined for those manufacturers in accordance with point 3, weighted according to the number of new passenger cars that were registered for those manufacturers in the Union in 2020;
+
+(b)
+
+where only one of the merging manufacturers was responsible for new passenger cars registered in the Union in 2020, the specific emission reference target in 2021 determined in accordance with point 3 for that manufacturer.
+
+3d.
+
+For a pool formed in accordance with Article 6, the WLTP specific emissions reference target shall be determined on the basis of the WLTPCO2, NEDCCO2 and NEDC2020target values calculated for that pool as a whole.
+
+In case of a pool newly formed in the years 2021 to 2024 or a change in membership of a pool that existed in 2020, the WLTP specific emissions reference target shall be calculated on the basis of the WLTPCO2, NEDCCO2 and NEDC2020target values for the new pool as a whole.
+
+4.
+
+For the calendar years 2021 to 2024, the specific emissions target for a manufacturer shall be calculated as follows:
 
 Specific emissions target = WLTPreference target + a [(Mø – M0) – (Mø2020 – M0,2020)]
 
@@ -1024,7 +1116,7 @@ is the average of the mass in running order (M) of the new passenger cars of the
 
 M0
 
-is 1 379,88 in 2021, and as defined in point (a) of Article 14(1) for the years 2022, 2023 and 2024;
+is 1 379,88 in 2021 and 1 398,50 in 2022, 2023 and 2024;
 
 Mø2020
 
@@ -1032,11 +1124,17 @@ is the average of the mass in running order (M) of the new passenger cars of the
 
 M0,2020
 
-is 1 379,88.
+is 1 379,88 .
 
-5.   For a manufacturer that has been granted a derogation with regard to a specific NEDC based emissions target in 2021, the WLTP based derogation target shall be calculated as follows:
+5.
 
-where:
+Derogation targets in accordance with Article 10(3) or 10(4)
+
+(a)
+
+For a manufacturer that has been granted a derogation in accordance with Article 10(3) from its NEDC based specific emissions target in calendar year 2021, or a derogation in accordance with Article 10(4) from its specific emission targets in any of the calendar years 2021 to 2024, the WLTP based derogation target for those years shall be calculated as follows:
+
+Where:
 
 WLTPCO2
 
@@ -1046,11 +1144,75 @@ NEDCCO2
 
 is NEDCCO2 as defined in point 3;
 
-NEDC2021target
+NEDCderogationtarget
 
-is the 2021 derogation target granted by the Commission pursuant to Article 10.
+is the derogation target granted by the Commission pursuant to Article 10(3) or 10(4) as the case may be.
 
-6.   From 1 January 2025, the EU fleet-wide targets and the specific emissions targets for a manufacturer shall be calculated as follows:
+(b)
+
+Notwithstanding point (a), where a manufacturer is granted a derogation in accordance with Article 10(4) from the specific emission targets in any of the calendar years 2021 to 2024, but was not responsible for the registration of new passenger cars in the Union prior to 2021, the derogation target for any of those calendar years shall be calculated in accordance with the formula in point (a), where the following definitions shall apply:
+
+WLTPCO2
+
+is the average value across all individual manufacturers, weighted by the number of new passenger cars registered in 2020, of WLTPCO2 as defined in point 3;
+
+NEDCCO2
+
+is the average value across all individual manufacturers, weighted by the number of new passenger cars registered in 2020, of NEDCCO2 as defined in point 3;
+
+NEDCderogationtarget
+
+is the derogation target calculated in accordance with Article 10(4), in conjunction with Article 6(3) of Regulation (EU) No 63/2011.
+
+(c)
+
+For a manufacturer that has been granted a derogation in accordance with Article 10(4) for any of the calendar years from 2025 to 2028, the specific emissions target (Derogation target2025-2028) shall be calculated as follows:
+
+Derogation target2025-2028 =
+
+·
+
+·Target2021·(1 – reduction factor2025)
+
+For such a manufacturer that was not responsible for the registration of new passenger cars in 2020 or for which WLTPCO2 as defined in point 3 or NEDCCO2 as defined in point 3 is zero, the specific emissions target (Derogation target2025-2028) shall be calculated as follows:
+
+Derogation target2025-2028 =
+
+· Target2021 · (1 – reduction factor2025)
+
+Where:
+
+WLTPCO2,measured
+
+is the average value across all individual manufacturers for which a specific emissions target applies in accordance with point 4, weighted by the number of new passenger cars registered in 2020, of WLTPCO2,measured as defined in point 6.0;
+
+WLTPCO2
+
+is the average value across all individual manufacturers for which a specific emissions target applies in accordance with point 4, weighted by the number of new passenger cars registered in 2020, of WLTPCO2 as defined in point 3;
+
+NEDCCO2
+
+is the average value across all individual manufacturers for which a specific emissions target applies in accordance with point 4, weighted by the number of new passenger cars registered in 2020, of NEDCCO2 as defined in point 3;
+
+WLTPCO2,ind
+
+is equal to WLTPCO2 as defined in point 3;
+
+NEDCCO2,ind
+
+is equal to NEDCCO2 as defined in point 3;
+
+reduction factor2025
+
+is the reduction referred to in Article 1(4), point (a);
+
+Target2021
+
+is a 45 % reduction on the average specific emissions of CO2 in 2007 of that manufacturer.
+
+6.
+
+From 1 January 2025, the EU fleet-wide targets and the specific emissions targets for a manufacturer shall be calculated as follows:
 
 6.0.   EU fleet-wide target2021
 
@@ -1084,7 +1246,9 @@ a
 
 is as defined in point 4.
 
-6.1.   EU fleet-wide targets for 2025 and 2030
+6.1.
+
+EU fleet-wide targets for 2025 onwards
 
 6.1.1.   EU fleet-wide target for 2025 to 2029
 
@@ -1100,7 +1264,9 @@ reduction factor2025
 
 is the reduction specified in point (a) of Article 1(4).
 
-6.1.2.   EU fleet-wide target for 2030 onwards
+6.1.2.
+
+EU fleet-wide target for 2030 to 2034
 
 EU fleet-wide target2030 = EU fleet-wide target2021 · (1 – reduction factor2030)
 
@@ -1114,7 +1280,23 @@ reduction factor2030
 
 is the reduction specified in point (a) of Article 1(5).
 
-6.2.   Specific emissions reference targets from 2025 onwards
+6.1.3   EU fleet-wide target for 2035 onwards
+
+EU fleet-wide target2035 = EU fleet-wide target2021 · (1 – reduction factor2035)
+
+where:
+
+EU fleet-wide target2021
+
+is as defined in point 6.0;
+
+reduction factor2035
+
+is as defined in Article 1(5a), point (a).
+
+6.2.
+
+Specific emissions reference targets
 
 6.2.1.   Specific emissions reference targets for 2025 to 2029
 
@@ -1146,11 +1328,54 @@ is the average test mass in kilograms (kg) of all new passenger cars of the manu
 
 TM0
 
-is the value in kilograms (kg) determined in accordance with point (d) of Article 14(1).
+is 1 650,15  kg in 2025 and 2026 and the value in kilograms (kg) determined in accordance with Article 14(1), point (d), in the other calendar years.
 
-6.2.2.   Specific emissions reference targets for 2030 onwards
+—————
 
-The specific emissions reference target = EU fleet-wide target2030 + a2030 · (TM – TM0)
+6.3
+
+Specific emissions targets for 2025 onwards
+
+6.3.1
+
+Specific emissions targets for 2025 to 2029:
+
+Specific emissions target = specific emissions reference target · ZLEV factor
+
+where:
+
+specific emissions reference target
+
+is the specific emissions reference target of CO2 determined in accordance with point 6.2.1;
+
+ZLEV factor
+
+is (1 + y – x), unless this sum is larger than 1,05 or lower than 1,0 in which case the ZLEV factor shall be set to 1,05 or 1,0, as the case may be;
+
+where:
+
+y
+
+is the share of zero- and low-emission vehicles in the manufacturer’s fleet of new passenger cars calculated as the total number of new zero- and low-emission vehicles, where each of them is counted as ZLEVspecific in accordance with the following formula, divided by the total number of new passenger cars registered in the relevant calendar year:
+
+ZLEVspecific = 1 –
+
+For new passenger cars registered in Member States with a share of zero- and low-emission vehicles in their fleet below 60 % of the Union average in the year 2017 and with less than 1 000 new zero- and low-emission vehicles registered in the year 2017 (
+6
+), ZLEVspecific shall, until and including 2029, be calculated in accordance with the following formula:
+
+ZLEVspecific =
+
+Where the share of zero- and low-emission vehicles in a Member State’s fleet of new passenger cars registered in a year between 2025 and 2028 exceeds 5 %, that Member State shall not be eligible for the application of the multiplier of 1,85 in the subsequent years;
+
+x
+
+is 25 % in the years 2025 to 2029.
+
+6.3.2
+
+Specific emissions targets for 2030 to 2034
+Specific emissions target = EU fleet-wide target2030 + a2030 · (TM-TM0)
 
 where:
 
@@ -1166,53 +1391,60 @@ where:
 
 a2021
 
-is as defined in point 6.2.1;
+is as defined in point 6.2.1
 
 average emissions2021
 
-is as defined in point 6.2.1;
+is as defined in point 6.2.1
 
 TM
 
-is as defined in point 6.2.1;
+is as defined in point 6.2.1
+
+TM0
+
+is as defined in point 6.2.1
+
+6.3.3
+
+Specific emissions targets for 2035 onwards
+Specific emissions target = EU fleet-wide target2035 + a2035 · (TM-TM0)
+
+where:
+
+EU fleet-wide target2035
+
+is as determined in accordance with point 6.1.3;
+
+a2035
+
+is
+
+where:
+
+a2021
+
+is as defined in point 6.2.1
+
+average emissions2021
+
+is as defined in point 6.2.1
+
+TM
+
+is as defined in point 6.2.1
 
 TM0
 
 is as defined in point 6.2.1.
 
-6.3.   Specific emissions targets from 2025 onwards
-
-Specific emissions target = specific emissions reference target · ZLEV factor
-
-where:
-
-specific emissions reference target
-
-is the specific emissions reference target of CO2 determined in accordance with point 6.2.1 for the period 2025 to 2029 and point 6.2.2 for 2030 onwards;
-
-ZLEV factor
-
-is (1 + y – x), unless this sum is larger than 1,05 or lower than 1,0 in which case the ZLEV factor shall be set to 1,05 or 1,0, as the case may be;
-
-where:
-
-y
-
-is the share of zero- and low-emission vehicles in the manufacturer's fleet of new passenger cars calculated as the total number of new zero- and low-emission vehicles, where each of them is counted as ZLEVspecific in accordance with the following formula, divided by the total number of new passenger cars registered in the relevant calendar year:
-
-For new passenger cars registered in Member States with a share of zero- and low-emission vehicles in their fleet below 60 % of the Union average in the year 2017 (1) and with less than 1 000 new zero- and low-emission vehicles registered in 2017, ZLEVspecific shall, until and including 2030, be calculated in accordance with the following formula:
-
-Where the share of zero- and low-emission vehicles in a Member State's fleet of new passenger cars registered in a year between 2025 and 2030 exceeds 5 %, that Member State shall not be eligible for the application of the multiplier of 1,85 in the subsequent years;
-
-x
-
-is 15 % in the years 2025 to 2029 and 35 % from 2030 onwards.
-
 PART B
 
 SPECIFIC EMISSIONS TARGETS FOR LIGHT COMMERCIAL VEHICLES
 
-1.   For the calendar year 2020, the specific emissions of CO2 for each new light commercial vehicle shall, for the purposes of the calculations in this point and in point 2, be determined in accordance with the following formula:
+1.
+
+For the calendar year 2020, the specific emissions of CO2 for each new light commercial vehicle shall, for the purposes of the calculations in this point and in point 2, be determined in accordance with the following formula:
 
 Specific emissions of CO2 = 147 + a · (M – M0)
 
@@ -1236,9 +1468,13 @@ a
 
 0,096
 
-2.   The specific emissions target for a manufacturer in 2020 shall be calculated as the average of the specific emissions of CO2 determined according to point 1 of each new light commercial vehicle registered in that calendar year of which it is the manufacturer.
+2.
 
-3.   The specific emissions reference target for a manufacturer in 2021 shall be calculated as follows:
+The specific emissions target for a manufacturer in 2020 shall be calculated as the average of the specific emissions of CO2 determined according to point 1 of each new light commercial vehicle registered in that calendar year of which it is the manufacturer.
+
+3.
+
+The specific emissions reference target for a manufacturer in 2021 shall be calculated as follows:
 
 where:
 
@@ -1254,7 +1490,35 @@ NEDC2020target
 
 is the 2020 specific emissions target calculated in accordance with points 1 and 2.
 
-4.   For the calendar years 2021 to 2024, the specific emissions target for a manufacturer shall be calculated as follows:
+3a.
+
+For a manufacturer for which WLTPCO2 or NEDCCO2 is zero, the specific emission reference target in 2021 shall be NEDC2020target as defined in point 3.
+
+3b.
+
+For a manufacturer that is placing light commercial vehicles on the market of the Union for the first time in any of the calendar years 2021 to 2024, the specific emission reference target in 2021 shall be the average of the specific emissions reference targets determined for all manufacturers in accordance with point 3, weighted according to the number of new light commercial vehicles that were registered for those manufacturers in the Union in 2020.
+
+3c.
+
+Notwithstanding point 3b, where in any of the calendar years 2021 to 2024, a manufacturer is placing light commercial vehicles on the market of the Union for the first time, but that manufacturer was formed by a merger of two or more manufacturers of which at least one was responsible for new light commercial vehicles registered in the Union in 2020, the specific emission reference target in 2021 for the new manufacturer shall be one of the following:
+
+(a)
+
+where two or more of the merging manufacturers were responsible for new light commercial vehicles registered in the Union in 2020, the specific emission reference target in 2021 shall be the average of the specific emission reference targets determined for those manufacturers in accordance with point 3, weighted according to the number of new light commercial vehicles that were registered for those manufacturers in the Union in 2020;
+
+(b)
+
+where only one of the merging manufacturers was responsible for new light commercial vehicles registered in the Union in 2020, the specific emission reference target in 2021 determined in accordance with point 3 for that manufacturer.
+
+3d.
+
+For a pool formed in accordance with Article 6, the WLTP specific emissions reference target shall be determined on the basis of the WLTPCO2, NEDCCO2 and NEDC2020target values calculated for that pool as a whole.
+
+In case of a pool newly formed in the years 2021 to 2024 or a change in membership of a pool that existed in 2020, the WLTP specific emissions reference target shall be calculated on the basis of the WLTPCO2, NEDCCO2 and NEDC2020target values for the new pool as a whole.
+
+4.
+
+For the calendar years 2021 to 2024, the specific emissions target for a manufacturer shall be calculated as follows:
 
 Specific emissions target = WLTPreference target + a [(Mø – M0) – (Mø2020 – M0,2020)]
 
@@ -1270,11 +1534,37 @@ is 0,096;
 
 Mø
 
-is the average of the mass in running order (M) of the new light commercial vehicles of the manufacturer registered in the relevant target year in kilograms (kg);
+is the average of the mass (M) of the new light commercial vehicles of the manufacturer registered in the relevant target year in kilograms (kg):
+
+where:
+
+—
+
+in the case of a complete vehicle, M is the mass in running order of that vehicle
+
+—
+
+in the case of a complete base vehicle related to a completed vehicle, M is the mass in running order of that base vehicle
+
+—
+
+in the case of an incomplete base vehicle related to a completed vehicle, M is the monitoring mass (Mmon) of that base vehicle, determined in accordance with the following formula:
+
+Mmon = MRObase x B0
+
+where:
+
+MRObase
+
+is the mass in running order of the base vehicle concerned
+
+B0
+
+is as defined in point 1.2.4(a) of Part A of Annex III;
 
 M0
 
-is 1 766,4 in 2020 and, for the years 2021, 2022 and 2023, the value adopted pursuant to Article 13(5) of Regulation (EU) No 510/2011, and for 2024 the value adopted pursuant to point (b) of Article 14(1) of this Regulation;
+is 1 766,4 in 2020, 1 825,23 in 2021, 2022 and 2023, and 1 875,07 in 2024;
 
 Mø2020
 
@@ -1282,9 +1572,11 @@ is the average of the mass in running order (M) of the new light commercial vehi
 
 M0,2020
 
-is 1 766,4.
+is 1 766,4 .
 
-5.   For a manufacturer that has been granted a derogation with regard to a specific NEDC based emissions target in 2021, the WLTP based derogation target shall be calculated as follows:
+5.
+
+For a manufacturer that has been granted a derogation with regard to a specific NEDC based emissions target in 2021, the WLTP based derogation target shall be calculated as follows:
 
 where:
 
@@ -1300,7 +1592,9 @@ NEDC2021target
 
 is the 2021 derogation target granted by the Commission pursuant to Article 10.
 
-6.   From 1 January 2025, the EU fleet-wide targets and the specific emissions targets for a manufacturer shall be calculated as follows:
+6.
+
+From 1 January 2025, the EU fleet-wide targets and the specific emissions targets for a manufacturer shall be calculated as follows:
 
 6.0.   EU fleet-wide target2021
 
@@ -1334,7 +1628,9 @@ a
 
 is as defined in point 4.
 
-6.1.   The EU fleet-wide targets for 2025 and 2030
+6.1.
+
+EU fleet-wide targets for 2025 onwards
 
 6.1.1.   EU fleet-wide target for 2025 to 2029
 
@@ -1350,7 +1646,9 @@ reduction factor2025
 
 is the reduction specified in point (b) of Article 1(4).
 
-6.1.2.   EU fleet-wide target for 2030 onwards
+6.1.2.
+
+EU fleet-wide targets for 2030 to 2034
 
 EU fleet-wide target2030 = EU fleet-wide target2021 · (1 – reduction factor2030)
 
@@ -1363,6 +1661,20 @@ is as defined in point 6.0;
 reduction factor2030
 
 is the reduction specified in point (b) of Article 1(5).
+
+6.1.3   EU fleet-wide targets for 2035 onwards
+
+EU fleet-wide target2035 = EU fleet-wide target2021 · (1 – reduction factor2035)
+
+where:
+
+EU fleet-wide target2021
+
+is as defined in point 6.0;
+
+reduction factor2035
+
+is as defined in Article 1(5a), point (b).
 
 6.2.   Specific emissions reference targets from 2025 onwards
 
@@ -1396,15 +1708,19 @@ is the average of the specific emissions of CO2 of all new light commercial vehi
 
 TM
 
-is the average test mass in kilograms (kg) of all new light commercial vehicles of the manufacturer registered in the relevant calendar year;
+is the average test mass in kilograms (kg) of all new light commercial vehicles of the manufacturer registered in the relevant calendar year.
+
+In the case of a complete base vehicle related to a completed vehicle, the test mass to be considered is the test mass of that base vehicle.
+
+In the case of an incomplete base vehicle related to a completed vehicle, the test mass value to be considered is the value DMbase determined in accordance with Annex III, Part A, point 1.2.4.(a);
 
 TM0
 
-is the value in kilograms (kg) determined in accordance with point (d) of Article 14(1).
+is 2 161,13  kg in 2025 and 2026 and the value in kilograms (kg) determined in accordance with Article 14(1), point (d), in the other calendar years.
 
-6.2.2.   Specific emissions reference targets from 2030 onwards
+6.2.2   Specific emissions reference targets for 2030 to 2034
 
-The specific emissions reference target = EU fleet-wide target2030 + α · (TM – TM0)
+Specific emissions reference target = EU fleet-wide target2030 + α · (TM-TM0)
 
 where:
 
@@ -1414,7 +1730,7 @@ is as determined in accordance with point 6.1.2;
 
 α
 
-is a2030 where the average test mass of a manufacturer's new light commercial vehicles is equal to or lower than TM0 determined in accordance with point (d) of Article 14(1) and a2021 where the average test mass of a manufacturer's new light commercial vehicles is higher than TM0 determined in accordance with point (d) of Article 14(1);
+is a2030 where the average test mass of a manufacturer’s new light commercial vehicles is equal to or lower than TM0, and a2021 where the average test mass of a manufacturer’s new light commercial vehicles is higher than TM0;
 
 where:
 
@@ -1424,31 +1740,70 @@ is
 
 a2021
 
-is as defined in point 6.2.1;
+is as defined in point 6.2.1
 
 average emissions2021
 
-is as defined in point 6.2.1;
+is as defined in point 6.2.1
 
 TM
 
-is as defined in point 6.2.1;
+is as defined in point 6.2.1
+
+TM0
+
+is as defined in point 6.2.1
+
+6.2.3   Specific emissions reference targets for 2035 onwards
+
+Specific emissions reference target = EU fleet-wide target2035 + α · (TM-TM0)
+
+where:
+
+EU fleet-wide target2035
+
+is as determined in accordance with point 6.1.3;
+
+α
+
+is a2035,L where the average test mass of a manufacturer’s new light commercial vehicles is equal to or lower than TM0, and a2035,H where the average test mass of a manufacturer’s new light commercial vehicles is higher than TM0;
+
+where:
+
+a2035,L
+
+is
+
+a2035,H
+
+is
+
+average emissions2021
+
+is as defined in point 6.2.1
+
+TM
+
+is as defined in point 6.2.1
 
 TM0
 
 is as defined in point 6.2.1.
 
-6.3.   Specific emissions targets from 2025 onwards
+6.3.
 
-6.3.1.   Specific emissions targets for 2025 to 2029
+Specific emissions targets from 2025 onwards
 
-The specific emissions target = (specific emissions reference target – (øtargets – EU fleet-wide target2025)) · ZLEV factor
+6.3.1
+
+Specific emissions targets for 2025 to 2029
+Specific emissions target = (specific emissions reference target – (øtargets – EU fleet-wide target2025)) · ZLEV factor
 
 where:
 
 specific emissions reference target
 
-is the specific emissions reference target for the manufacturer determined in accordance with point 6.2.1;
+is the specific emissions reference target of CO2 determined in accordance with point 6.2.1;
 
 øtargets
 
@@ -1464,13 +1819,16 @@ y
 
 is the share of zero- and low-emission vehicles in the manufacturer's fleet of new light commercial vehicles calculated as the total number of new zero- and low-emission vehicles, where each of them is counted as ZLEVspecific in accordance with the following formula, divided by the total number of new light commercial vehicles registered in the relevant calendar year:
 
+ZLEVspecific = 1 –
+
 x
 
-is 15 %.
+is 17 % in the years 2025 to 2029.
 
-6.3.2.   Specific emissions targets from 2030 onwards
+6.3.2
 
-The specific emissions target = (specific emissions reference target – (øtargets – EU fleet-wide target2030)) · ZLEV factor
+Specific emissions targets for 2030 to 2034
+Specific emissions target = specific emissions reference target – (øtargets - EU fleet-wide target2030)
 
 where:
 
@@ -1482,21 +1840,28 @@ is the specific emissions reference target for the manufacturer determined in ac
 
 is the average, weighted on the number of new light commercial vehicles of each individual manufacturer, of all the specific emissions reference targets determined in accordance with point 6.2.2;
 
-ZLEV factor
+EU fleet-wide target2030
 
-is (1 + y – x), unless this sum is larger than 1,05 or lower than 1,0 in which case the ZLEV factor shall be set to 1,05 or 1,0, as the case may be;
+is as determined in point 6.1.2.
+
+6.3.3
+
+Specific emissions targets for 2035 onwards
+Specific emissions target = specific emissions reference target – (øtargets - EU fleet-wide target2035)
 
 where:
 
-y
+specific emissions reference target
 
-is the share of zero- and low-emission vehicles in the manufacturer's fleet of new light commercial vehicles calculated as the total number of new zero- and low-emission vehicles, where each of them is counted as ZLEVspecific in accordance with the following formula, divided by the total number of new light commercial vehicles registered in the relevant calendar year:
+is the specific emissions reference target for the manufacturer determined in accordance with point 6.2.3;
 
-x
+øtargets
 
-is 30 %.
+is the average, weighted on the number of new light commercial vehicles of each individual manufacturer, of all the specific emissions reference targets determined in accordance with point 6.2.3;
 
-(1)  The share of zero- and low-emission vehicles in the new passenger car fleet of a Member State in 2017 is calculated as the total number of new zero- and low-emission vehicles registered in 2017 divided by the total number of new passenger cars registered in the same year.
+EU fleet-wide target2035
+
+is as determined in point 6.1.3.
 
 ANNEX II
 
@@ -1506,93 +1871,117 @@ PART A
 
 Collection of data on new passenger cars and determination of CO2 emissions monitoring information
 
-1.   Member States shall, for each calendar year, record the following detailed data for each new passenger car registered as an M1 vehicle in their territory:
+—————
 
-(a)
+1a.
 
-the manufacturer;
+Member States shall, for each calendar year, record the following detailed data for each new passenger car registered as an M1 vehicle in their territory and transmit it to the Commission in accordance with Article 7(2) in the format set out in Part B, Section 2A:
 
-(b)
+(1)
 
-the type-approval number and its extension;
+The manufacturer;
 
-(c)
+(2)
 
-the type, variant, and version (where applicable);
+The type approval number and its extensions;
 
-(d)
+(3)
 
-make and commercial name;
+The type, variant, and version;
 
-(e)
+(4)
 
-category of vehicle type-approved;
+Make and commercial name;
 
-(f)
+(5)
 
-total number of new registrations;
+Vehicle interpolation family identifier;
 
-(g)
+(5a)
 
-mass in running order;
+Roadload family’s identifier or Roadload Matrix family’s identifier;
 
-(h)
+(6)
 
-the specific emissions of CO2 (NEDC and WLTP);
+Vehicle identification number;
 
-(i)
+(7)
 
-footprint: the wheel base, the track width of the steered axle and the track width other axle;
+Category of vehicle type approved;
 
-(j)
+(8)
 
-the fuel type and fuel mode;
+Category of vehicle registered;
 
-(k)
+(9)
 
-engine capacity;
+Date of first registration;
 
-(l)
+(9a)
 
-electric energy consumption;
+Character corresponding to the provisions used for type-approval;
 
-(m)
+(10)
 
-code for the innovative technology or group of innovative technologies and the CO2 emissions reduction due to that technology (NEDC and WLTP);
+The specific emissions of CO2;
 
-(n)
+(11)
 
-maximum net power;
+Fuel consumption;
 
-(o)
+(12)
 
-vehicle identification number;
+Mass in running order;
 
-(p)
+(13)
 
-WLTP test mass;
+Test mass;
 
-(q)
+(14)
 
-deviation and verification factors referred to in point 3.2.8 of Annex I to Implementing Regulation (EU) 2017/1153;
+Fuel type and fuel mode;
 
-(r)
+(15)
 
-category of vehicle registered;
+Electric energy consumption;
 
-(s)
+(16)
 
-vehicle family identification number;
+Electric range;
 
-(t)
+(17)
 
-electric range, where applicable.
+Eco-innovation code(s);
 
-Member States shall make available to the Commission, in accordance with Article 7, all data listed in this point, in the format as specified in Section 2 of Part B.
+(18)
 
-2.   The detailed data referred to in point 1 shall be taken from the certificate of conformity of the relevant passenger car. In the case of bi-fuelled vehicles (petrol/gas), the certificates of conformity of which bear specific emissions of CO2 values for both types of fuel, Member States shall use only the value measured for gas.
+Eco-innovation CO2 emission savings;
 
-3.   Member States shall, for each calendar year, determine:
+—————
+
+(20)
+
+Engine capacity;
+
+(21)
+
+Maximum net power.
+
+—————
+
+2.
+
+The detailed data referred to in point 1a. shall be taken from the certificate of conformity of the relevant passenger car unless indicated otherwise in Part B, Section 2A of this Annex.
+
+2a.
+
+In the case of bi-fuelled vehicles running on petrol and liquefied petroleum gas (LPG) or on petrol and compressed natural gas (CNG), the certificates of conformity of which include specific emissions of CO2 values for both types of fuels, Member States shall report the value for LPG or CNG as the case may be.
+
+In the case of flex-fuel vehicles using petrol and ethanol (E85) fuel, Member States shall report the specific emissions of CO2 value for petrol.
+
+3.
+
+Member States shall, for each calendar year, determine:
 
 (a)
 
@@ -1618,141 +2007,211 @@ AGGREGATED MONITORING DATA
 
 Member State (1)
 
- 
-
 Year
-
- 
 
 Total number of new registrations of new passenger cars subject to EC type-approval
 
- 
-
 Total number of new registrations of new individually approved passenger cars
-
- 
 
 Total number of new registrations of new passenger cars subject to national type-approval of small series
 
- 
+(1)
 
-SECTION 2
+ISO 3166 alpha-2 codes with the exception of Greece and the United Kingdom for which the codes are ‘EL’ and ‘UK’, respectively.
 
-DETAILED MONITORING DATA — ONE VEHICLE RECORD
+—————
 
-Reference to point 1 of Part A
+SECTION 2A
+
+DETAILED MONITORING DATA – ONE VEHICLE RECORD
+
+Reference to point 1a. of Part A
 
 Detailed data per vehicle registered
 
-(a)
+Data sources
 
-Manufacturer name EU standard denomination
+Certificate of conformity (Annex VIII to Commission Implementing Regulation (EU) 2020/683 (*1)) unless otherwise indicated
 
-Manufacturer name OEM declaration
+(1)
 
-Manufacturer name in Member State registry (2)
+Manufacturer name (EU standard denomination(1)
 
-(b)
+Name assigned by the Commission
 
-Type-approval number and its extension
+Manufacturer name(2)
 
-(c)
+0.5, or in the case of more than one name of a manufacturer, the name recorded in entry 0.5.1
+
+(2)
+
+Type approval number and its extensions
+
+0.11
+
+(3)
 
 Type
+
+0.2
 
 Variant
 
 Version
 
-(d)
+(4)
 
 Make and commercial name
 
-(e)
+0.1 and 0.2.1
 
-Category of vehicle type-approved
+(5)
 
-(f)
+Vehicle interpolation family identifier
 
-Total number of new registrations
+0.2.3.1
 
-(g)
+(5a)
 
-Mass in running order
+Roadload family’s identifier or Roadload Matrix family’s identifier
 
-(h)
+0.2.3.4.
 
-Specific emissions of CO2 (combined)
+0.2.3.5
 
-NEDC value until 31 December 2020 except for vehicles that fall within the scope of Article 5 for which the NEDC value shall be determined until 31 December 2022 in accordance with Article 5 of Implementing Regulation (EU) 2017/1153
-
-Specific emissions of CO2 (combined)
-
-WLTP value
-
-(i)
-
-Wheel base
-
-Track width steered axle (Axle 1)
-
-Track width other axle (Axle 2)
-
-(j)
-
-Fuel type
-
-Fuel mode
-
-(k)
-
-Engine capacity (cm3)
-
-(l)
-
-Electric energy consumption (Wh/km)
-
-(m)
-
-Code of the eco-innovation(s)
-
-Total NEDC CO2 emissions savings due to the eco-innovation(s) until 31 December 2020
-
-Total WLTP CO2 emissions savings due to the eco-innovation(s)
-
-(n)
-
-Maximum net power
-
-(o)
+(6)
 
 Vehicle identification number
 
-(p)
+0.10
 
-WLTP test mass
+(7)
 
-(q)
+Category of vehicle type approved
 
-Deviation factor De (where available)
+0.4
 
-Verification factor (where available)
-
-(r)
+(8)
 
 Category of vehicle registered
 
-(s)
+Registration certificate
 
-Vehicle family identification number
+(9)
 
-(t)
+Date of first registration
 
-Electric range, where available
+Registration certificate
 
-(1)  ISO 3166 alpha-2 codes with the exception of Greece and the United Kingdom for which the codes are ‘EL’ and ‘UK’, respectively.
+(9a)
 
-(2)  In the case of national type-approval of small series (NSS) or individual approval (IVA), the manufacturer's name shall be provided in the column ‘Manufacturer name in Member State registry’ whilst in the column ‘Manufacturer name EU standard denomination’ either of the following shall be indicated: ‘AA-NSS’ or ‘AA-IVA’, as the case may be.
+Character corresponding to the provisions used for type-approval
+
+47
+
+(10)
+
+The specific emissions of CO2 (g/km)
+
+49.4 combined, or where applicable, weighted combined
+
+(11)
+
+Fuel consumption (l/100 km, or m3/100 km or kg/100 km)
+
+49.4 combined, or where applicable, weighted combined
+
+(12)
+
+Mass in running order (kg)
+
+13
+
+(13)
+
+Test mass (kg)
+
+47.1.1
+
+(14)
+
+Fuel type
+
+26
+
+Fuel mode
+
+26.1
+
+23 (in case of battery electric vehicles)
+
+23.1 (in case of off-vehicle charging hybrid electric vehicles)
+
+(15)
+
+Electric energy consumption (Wh/km)
+
+PEV: 49.5.1
+
+OVC-HEV: 49.5.2
+
+(16)
+
+Electric range (km)
+
+PEV: 49.5.1
+
+OVC-HEV: 49.5.2
+
+(17)
+
+Eco-innovation code(s)
+
+49.3.1
+
+(18)
+
+Eco-innovation savings (g CO2/km)
+
+49.3.2.2
+
+—————
+
+Track width steered axle (Axle 1) (mm)(3)
+
+30
+
+Track width other axle (Axle 2) (mm)(3)
+
+30
+
+(20)
+
+Engine capacity (cm3)
+
+25
+
+(21)
+
+Maximum net power (kW)
+
+27.1 and 27.3
+
+—————
+
+(*1)
+
+Commission Implementing Regulation (EU) 2020/683 of 15 April 2020 implementing Regulation (EU) 2018/858 of the European Parliament and of the Council with regards to the administrative requirements for the approval and market surveillance of motor vehicles and their trailers, and of systems, components and separate technical units intended for such vehicles (OJ L 163, 26.5.2020)
+
+Notes:
+
+(1)  List published by the Commission on CIRCABC.
+
+(2)  In the case of national type-approval of small series (NSS) or individual approval (IVA), the manufacturer’s name shall be provided in the column ‘Manufacturer name’, whilst in the column ‘Manufacturer name EU standard denomination’ either of the following shall be indicated: ‘AA-NSS’ or ‘AA-IVA’ as the case may be.
+
+(3)  Where a vehicle is equipped with axle tracks of different widths, the maximum axle width shall be reported.
+
+—————
 
 ANNEX III
 
@@ -1762,113 +2221,268 @@ A.   Collection of data on new light commercial vehicles and determination of
 
 1.   Detailed data
 
-1.1.   Complete vehicles registered as N1
+—————
 
-In the case of EC type-approved complete vehicles registered as N1, Member States shall, for each calendar year, record the following detailed data for each new light commercial vehicle the first time that it is registered in their territory:
+1.1a.   Reporting by Member States on vehicles registered as N1 vehicles
+
+Member States shall, for each calendar year, record the following detailed data for each new complete or completed light commercial vehicle registered as N1 vehicle in their territory and transmit it to the Commission in accordance with Article 7(2) in the format set out in Part C, Section 2a:
+
+(1)
+
+the manufacturer (in case of completed vehicles: the base vehicle manufacturer);
+
+(2)
+
+The type approval number and its extensions;
+
+(3)
+
+The type, variant, and version;
+
+(4)
+
+Make and, where available, commercial name;
+
+(5)
+
+Vehicle interpolation family identifier;
+
+(5a)
+
+Roadload family’s identifier or Roadload Matrix family’s identifier;
+
+(6)
+
+Vehicle identification number;
+
+(7)
+
+Category of vehicle type approved;
+
+(7a)
+
+Complete or completed vehicle;
+
+(8)
+
+Category of vehicle registered;
+
+(9)
+
+Date of first registration;
+
+(9a)
+
+Character corresponding to the provisions used for type-approval;
+
+(10)
+
+The specific emissions of CO2;
+
+(11)
+
+Fuel consumption;
+
+(12)
+
+Mass in running order of the complete or completed vehicle;
+
+(12a)
+
+In case of completed vehicles, mass in running order of the base vehicle;
+
+(13)
+
+Test mass;
+
+(14)
+
+The fuel type and fuel mode;
+
+(15)
+
+Electric energy consumption;
+
+(16)
+
+Electric range;
+
+(17)
+
+Eco-innovation code(s);
+
+(18)
+
+Eco-innovation CO2 emission savings;
+
+—————
+
+(20)
+
+Engine capacity;
+
+(21)
+
+Maximum net power;
+
+(22)
+
+Technically permissible maximum laden mass.
+
+—————
+
+1.2.
+
+Completed vehicles registered as N1 vehicles
+
+—————
+
+—————
+
+—————
+
+1.2.2.   Reporting by manufacturers
+
+For each new completed vehicle reported by the Member States in accordance with point 1.1a., the manufacturer of the base vehicle shall report to the Commission the data specified in points (a) and (b) of this point for each base vehicle with the same vehicle identification number as that of the completed vehicle. The data shall be reported within three months of the manufacturer being notified of the provisional data in accordance with Article 7(4), second subparagraph.
 
 (a)
 
-the manufacturer;
-
-(b)
-
-the type-approval number and its extension;
-
-(c)
-
-the type, variant, and version;
-
-(d)
-
-make;
-
-(e)
-
-category of vehicle type-approved;
-
-(f)
-
-category of vehicle registered;
-
-(g)
-
-the specific emissions of CO2 (NEDC and WLTP);
-
-(h)
-
-mass in running order;
+where the completed vehicle is based on an incomplete base vehicle:
 
 (i)
 
-technically permissible maximum laden mass;
+vehicle identification number;
 
-(j)
+(ii)
 
-footprint: the wheel base, the track width steered axle and the track width other axle;
+vehicle interpolation family identifier as referred to in paragraph 6.2.6 of UN Regulation 154;
 
-(k)
+(iii)
 
-the fuel type and fuel mode;
+monitoring CO2 emissions determined in accordance with point 1.2.4;
 
-(l)
+—————
 
-engine capacity;
+(vi)
 
-(m)
+monitoring mass, determined in accordance with point 4.1 of Part B of Annex I;
 
-electric energy consumption;
+(vii)
 
-(n)
+mass in running order of the incomplete base vehicle.
 
-code of the innovative technology or group of innovative technologies and the CO2 emissions reduction due to that technology (NEDC and WLTP);
-
-(o)
-
-the vehicle identification number;
-
-(p)
-
-WLTP test mass;
-
-(q)
-
-deviation and verification factors referred to in point 3.2.8 of Annex I to Implementing Regulation (EU) 2017/1152;
-
-(r)
-
-vehicle family identification number determined in accordance with point 5.0 of Annex XXI to Regulation (EU) 2017/1151;
-
-(s)
-
-electric range, where applicable.
-
-Member States shall make available to the Commission, in accordance with Article 7, all data listed in this point, in the format as specified in Section 2 of Part C of this Annex.
-
-1.2.   Vehicles approved in a multi-stage process and registered as N1 vehicles
-
-In the case of multi-stage vehicles registered as N1 vehicles, Member States shall, for each calendar year, record the following detailed data with regard to:
-
-(a)
-
-the base (incomplete) vehicle: the data specified in points (a), (b), (c), (d), (e), (g), (h), (i), (n) and (o) of point 1.1, or, instead of the data specified in points (h) and (i), the default added mass provided as part of the type-approval information specified in point 2.17.2 of Annex I to Directive 2007/46/EC;
+—————
 
 (b)
 
-the base (complete) vehicle: the data specified in points (a), (b), (c), (d), (e), (g), (h), (i), (n) and (o) of point 1.1;
+where the completed vehicle is based on a complete base vehicle:
+
+(i)
+
+vehicle identification number;
+
+(ii)
+
+vehicle family identifier as referred to in point (a)(ii) of this paragraph;
+
+(iii)
+
+specific CO2 emissions of the base vehicle;
+
+(iv)
+
+mass in running order of the complete base vehicle.
+
+1.2.3.   Calculation of the average specific emissions of CO2 and the specific emission target
+
+The Commission shall use the values reported by a base vehicle manufacturer in accordance with point 1.2.2 to calculate its average specific emissions of CO2 and the specific emission target in the calendar year in which the related completed vehicle is registered, except where the conditions referred to in point 1.2.5 are met in which case the data for the completed vehicles shall be used.
+
+Where the data referred to in point 1.2.2 is not reported by the manufacturer of the base vehicle, the specific CO2 emissions and mass in running order reported by the Member States for the related completed vehicle, in accordance with point 1.1a., shall be used for determining whether the vehicle falls within the scope of this Regulation and for the calculation of the average specific emissions of CO2 and the specific emissions target of the base vehicle manufacturer concerned.
+
+1.2.4.   Calculation of the monitoring CO2 emissions in the case of incomplete base vehicles
+
+A manufacturer shall, starting from calendar year 2020, calculate the monitoring CO2 emissions for each of its individual incomplete base vehicles in accordance with the interpolation method referred to in points 3.2.3.2. or 3.2.4. of Annex B7 to UN Regulation 154, using the same method as that applied for the EC type-approval of the base vehicle with regard to its emissions, where the terms shall be as defined in those points with the following exceptions:
+
+(a)
+
+Mass of the individual vehicle
+
+The term ‘TMind
+’ referred to in paragraph 3.2.3.2.2.1 or 3.2.4.1.1.1 of Annex B7 to UN Regulation 154 shall be replaced by the base vehicle default mass, DMbase. Where DMbase is lower than the test mass of vehicle low of the interpolation family (TML), TMind shall be replaced by TML. Where DMbase is higher than the test mass of vehicle high of the interpolation family (TMH), TMind shall be replaced by TMH.
+
+DMbase shall be determined in accordance with the following formula:
+
+DMbase = MRObase × B0 + 25 kg + 0,28 × (TPMLM – MRObase × B0 – 25 kg)
+
+Where:
+
+MRObase
+
+is the mass in running order of the base vehicle as defined in paragraph 3.2.5 of UN Regulation No 154;
+
+B0
+
+is the body mass value of 1,375 until calendar year 2022 and of 1,351 for calendar years 2023 until 2034;
+
+TPMLM
+
+is the technically permissible maximum laden mass as defined in point paragraph 3.2.23 of UN Regulation 154.
+
+(b)
+
+Rolling resistance of the individual vehicle
+
+The rolling resistance of the base vehicle shall be used for the purposes of paragraph 3.2.3.2.2.2 or 3.2.4.1.1.2 of Annex B7 to UN Regulation 154.
 
 (c)
 
-the completed vehicle: the data specified in points (a), (f), (g), (h), (j), (k), (l), (m) and (o) of point 1.1.
+Aerodynamic influence of the individual vehicle
 
-Where any of the data referred to in points (a) and (b) of the first subparagraph cannot be provided for the base vehicle, the Member State shall provide data with regard to the completed vehicle instead.
+In the case of an incomplete base vehicle that belongs to a roadload matrix family, the manufacturer shall determine the term ‘Af,ind
+’ referred to in paragraph 3.2.4.1.1.3 of Annex B7 to UN Regulation 154 in accordance with one of the following options:
 
-The format set out in Section 2 of Part C shall be used for completed N1 vehicles.
+(i)
 
-The vehicle identification number referred to in point (o) of point 1.1 shall not be made public.
+frontal area of the representative vehicle of the roadload matrix family, in m2;
 
-2.   The details referred to in point 1 shall be taken from the certificate of conformity. In the case of bi-fuelled vehicles (petrol/gas) the certificates of conformity of which bear specific emissions of CO2 values for both types of fuel, Member States shall use only the value measured for gas.
+(ii)
 
-3.   Member States shall, for each calendar year, determine:
+the mean value of the frontal area of vehicle high and vehicle low of the interpolation family, in m2;
+
+(iii)
+
+the frontal area of the vehicle high of the interpolation family, in case the interpolation method is not used, in m2.
+
+In the case of an incomplete base vehicle that does not belong to a roadload matrix family, the term ‘f2,ind
+’ referred to in paragraph 3.2.3.2.2.4 of Annex B7 to UN Regulation 154 shall be set equal to one of the following:
+
+(i)
+
+the mean value of the terms ‘f2,L’ and ‘f2,H’ referred to in that point;
+
+(ii)
+
+the term ‘f2,H’ referred to in that point.
+
+1.2.5.   Representativeness of the monitoring CO2 value
+
+The Commission shall each year assess the representativeness of the average of the monitoring CO2 emissions reported by the base vehicle manufacturer as compared to the average of the specific emissions of CO2 of the related completed vehicles registered in the relevant calendar year. The Commission shall inform the manufacturer of the base vehicle of the divergence found between those values.
+
+In case a divergence by 4 % or more is found during each of two successive calendar years, the Commission shall use the average of the specific emissions of CO2 of the completed vehicles in the following calendar year to calculate the average specific emissions of CO2 of the base vehicle manufacturer or the pool in that year.
+
+2.
+
+The detailed data referred to in point 1.1.a. shall be taken from the certificate of conformity of the relevant light commercial vehicle unless indicated otherwise in Part C, Section 2a.
+
+2a.
+
+In the case of bi-fuelled vehicles running on petrol and liquefied petroleum gas (LPG) or on petrol and compressed natural gas (CNG), the certificates of conformity of which include specific emissions of CO2 values for both types of fuels, Member States shall report the value for LPG or CNG as the case may be.
+
+In the case of flex-fuel vehicles using petrol and ethanol (E85) fuel, Member States shall report the specific emissions of CO2 value for petrol.
+
+3.
+
+Member States shall, for each calendar year, determine:
 
 (a)
 
@@ -1886,23 +2500,7 @@ the total number of new registrations of new light commercial vehicles subject t
 
 the total number of new registrations of new light commercial vehicles subject to national type-approval of small series.
 
-B.   Methodology for determining CO2 monitoring information for new light commercial vehicles
-
-Monitoring information which Member States are required to determine in accordance with points 1 and 3 of Part A shall be determined in accordance with the methodology in this Part.
-
-1.   Number of new light commercial vehicles registered
-
-Member States shall determine the number of new light commercial vehicles registered within their territory in the respective monitoring year divided into vehicles subject to EC type-approval, individual approval and national type-approval of small series and, where available, subject to multi-stage type-approval.
-
-2.   Completed vehicles
-
-In the case of multi-stage vehicles, the specific emissions of CO2 of completed vehicles shall be allocated to the manufacturer of the base vehicle.
-
-In order to ensure that the values of CO2 emissions, fuel efficiency and mass of completed vehicles are representative, without placing an excessive burden on the manufacturer of the base vehicle, the Commission shall come forward with a specific monitoring procedure and shall, where appropriate, make the necessary amendments to the relevant type-approval legislation.
-
-Notwithstanding that for the purpose of the calculation of the 2020 target in accordance with point 2 of Part B of Annex I the default added mass shall be taken from Part C of this Annex, where that mass value cannot be determined, the mass in running order of the completed vehicle may be used for the provisional calculation of the specific emissions target referred to in Article 7(4).
-
-Where the base vehicle is a complete vehicle, the mass in running order of that vehicle shall be used for the calculation of the specific emissions target. However, where that mass value cannot be determined, the mass in running order of the completed vehicle may be used for the provisional calculation of the specific emissions target.
+—————
 
 C.   Formats for transmission of data
 
@@ -1914,165 +2512,219 @@ Aggregated monitoring data
 
 Member State (1)
 
- 
-
 Year
-
- 
 
 Total number of new registrations of new light commercial vehicles subject to EC type-approval
 
- 
-
 Total number of new registrations of individually approved new light commercial vehicles
-
- 
 
 Total number of new registrations of new light commercial vehicles subject to national type-approval of small series
 
- 
-
 Total number of new registrations of new light commercial vehicles subject to multi-stage type-approval (where available)
 
- 
+(1)
 
-Section 2
+ISO 3166 alpha-2 codes with the exception of Greece and the United Kingdom for which the codes are ‘EL’ and ‘UK’, respectively.
 
-Detailed monitoring data — one vehicle record
+—————
 
-Reference to point 1.1 of Part A
+Section 2a
 
-Detailed data per vehicle registered (2)
+Detailed Monitoring Data – one vehicle record
 
-(a)
+Reference to Part A, point 1.1a
 
-Manufacturer name EU standard denomination (3)
+Detailed data per vehicle registered
 
-Manufacturer name OEM declaration
+Data sources
 
-COMPLETE VEHICLE/BASE VEHICLE (4)
+Certificate of conformity (Annex VIII to Commission Implementing Regulation (EU) 2020/683) unless otherwise indicated
 
-Manufacturer name OEM declaration
+(1)
 
-COMPLETED VEHICLE (4)
+Manufacturer name (EU standard denomination) (1)
 
-Manufacturer name in Member State registry (3)
+Name assigned by the Commission
 
-(b)
+Manufacturer name (2)
 
-Type-approval number and its extension
+0.5, or in the case of vehicles subject to multi-stage type approval, 0.5.1 (name of the base vehicle manufacturer)
 
-(c)
+(2)
+
+Type approval number and its extensions
+
+0.11
+
+(3)
 
 Type
+
+0.2
 
 Variant
 
 Version
 
-(d)
+(4)
 
-Make
+Make and commercial name
 
-(e)
+0.1 and 0.2.1
 
-Category of vehicle type-approved
+(5)
 
-(f)
+Vehicle interpolation family identifier
 
-Category of vehicle registered
+0.2.3.1
 
-(g)
+(5a)
 
-Specific emissions of CO2 (combined)
+Roadload family’s identifier or Roadload Matrix family’s identifier
 
-NEDC value until 31 December 2020
+0.2.3.4.
 
-Specific emissions of CO2 (combined)
+0.2.3.5.
 
-WLTP value
-
-(h)
-
-Mass in running order
-
-BASE VEHICLE
-
-Mass in running order
-
-COMPLETED VEHICLE/COMPLETE VEHICLE
-
-(i) (5)
-
-Technically permissible maximum laden mass
-
-(j)
-
-Wheel base
-
-Axle width steered axle (Axle 1)
-
-Axle width other axle (Axle 2)
-
-(k)
-
-Fuel type
-
-Fuel mode
-
-(l)
-
-Engine capacity (cm3)
-
-(m)
-
-Electric energy consumption (Wh/km)
-
-(n)
-
-Code of the eco-innovation(s)
-
-Total NEDC CO2 emissions savings due to the eco-innovation(s) until 31 December 2020
-
-Total WLTP CO2 emissions savings due to the eco-innovation(s)
-
-(o)
+(6)
 
 Vehicle identification number
 
-(p)
+0.10
 
-WLTP test mass
+(7)
 
-(q)
+Category of vehicle type approved
 
-Deviation factor De (where available)
+0.4
 
-Verification factor (where available)
+(7a)
 
-(r)
+Complete or completed vehicle
 
-Vehicle family identification number
+0.4
 
-(s)
+(8)
 
-Electric range, where available
+Category of vehicle registered
 
-Point 2.17.2 of Annex I to Directive 2007/46/EC (6)
+Registration certificate
 
-Default added mass (where applicable in the case of multi-stage vehicles)
+(9)
 
-(1)  ISO 3166 alpha-2 codes with the exception of Greece and the United Kingdom for which the codes are ‘EL’ and ‘UK’, respectively.
+Date of first registration
 
-(2)  Where, in the case of multi-stage vehicles, data cannot be provided for the base vehicle, the Member State shall as a minimum provide the data specified in this format for the completed vehicle.
+Registration certificate
 
-(3)  In the case of national type-approval of small series (NSS) or individual approval (IVA), the manufacturer's name shall be provided in the column ‘Manufacturer name in Member State registry’ whilst in the column ‘Manufacturer name EU standard denomination’ either of the following shall be indicated: ‘AA-NSS’ or ‘AA-IVA’, as the case may be.
+(9a)
 
-(4)  In the case of multi-stage vehicles the base (incomplete/complete) vehicle manufacturer shall be indicated. If the base vehicle manufacturer is not available, the manufacturer of the completed vehicle only shall be indicated.
+Character corresponding to the provisions used for type-approval
 
-(5)  In the case of multi-stage vehicles, the technically permissible maximum laden mass of the base vehicle shall be indicated.
+47
 
-(6)  In the case of multi-stage vehicles, the mass in running order and the technically permissible maximum laden mass of the base vehicle may be replaced by the default added mass specified in the type-approval information in accordance with point 2.17.2 of Annex I to Directive 2007/46/EC.
+(10)
+
+The specific emissions of CO2 (g/km)
+
+49.4 combined, or where applicable, weighted combined
+
+(11)
+
+Fuel consumption (l/100 km, or m3/100 km or kg/100 km)
+
+49.4 combined, or where applicable, weighted combined
+
+(12)
+
+Mass in running order of the complete or completed vehicle
+
+13
+
+(12a)
+
+Mass in running order of the base vehicle (in case of completed vehicle)
+
+14
+
+(13)
+
+Test mass (kg)
+
+47.1.1
+
+(14)
+
+Fuel type
+
+26
+
+Fuel mode
+
+26.1
+
+23 (in case of battery electric vehicles)
+
+23.1 (in case of off-vehicle charging hybrid electric vehicles)
+
+(15)
+
+Electric energy consumption (Wh/km)
+
+PEV: 49.5.1
+
+OVC-HEV: 49.5.2
+
+(16)
+
+Electric range (km)
+
+PEV: 49.5.1
+
+OVC-HEV: 49.5.2
+
+(17)
+
+Eco-innovation code(s)
+
+49.3.1
+
+(18)
+
+Eco-innovation savings (g CO2/km)
+
+49.3.2.2
+
+—————
+
+(20)
+
+Engine capacity (cm3)
+
+25
+
+(21)
+
+Maximum net power (kW)
+
+27.1 and 27.3
+
+(22)
+
+Technically permissible maximum laden mass (TPMLM)
+
+16.1
+
+—————
+
+Notes:
+
+(1)  List published by the Commission on CIRCABC.
+
+(2)  In the case of national type-approval of small series (NSS) or individual approval (IVA), the manufacturer’s name shall be provided in the column ‘Manufacturer name’, whilst in the column ‘Manufacturer name EU standard denomination’ either of the following shall be indicated: ‘AA-NSS’ or ‘AA-IVA’ as the case may be.
+
+(3)  Where a vehicle is equipped with axle tracks of different widths, the maximum axle width shall be reported.
+
+—————
 
 ANNEX IV
 
@@ -2249,8 +2901,6 @@ Article 3(1), point (j)
 —
 
 Article 3(1), points (k), (l) and (m)
-
- 
 
 Article 3(1), point (k)
 
@@ -2712,10 +3362,6 @@ Article 13(5)
 
 Article 14(1), point (b)
 
- 
-
- 
-
 Article 14(1), points (c) and (d)
 
 Article 13(2), third subparagraph
@@ -2933,3 +3579,27 @@ Annex IV
 —
 
 Annex V
+
+(
+1
+) Regulation (EC) No 1049/2001 of the European Parliament and of the Council of 30 May 2001 regarding public access to European Parliament, Council and Commission documents (OJ L 145, 31.5.2001, p. 43).
+
+(
+2
+) Commission Implementing Regulation (EU) 2021/392 of 4 March 2021 on the monitoring and reporting of data relating to CO2 emissions from passenger cars and light commercial vehicles pursuant to Regulation (EU) 2019/631 of the European Parliament and of the Council and repealing Commission Implementing Regulations (EU) No 1014/2010, (EU) No 293/2012, (EU) 2017/1152 and (EU) 2017/1153 (OJ L 77, 5.3.2021, p. 8).
+
+(
+3
+) Directive 2010/31/EU of the European Parliament and of the Council of 19 May 2010 on the energy performance of buildings (OJ L 153, 18.6.2010, p. 13).
+
+(
+4
+) Directive 2008/50/EC of the European Parliament and of the Council of 21 May 2008 on ambient air quality and cleaner air for Europe (OJ L 152, 11.6.2008, p. 1).
+
+(
+5
+) Regulation (EU) 2018/1999 of the European Parliament and of the Council of 11 December 2018 on the Governance of the Energy Union and Climate Action, amending Regulations (EC) No 663/2009 and (EC) No 715/2009 of the European Parliament and of the Council, Directives 94/22/EC, 98/70/EC, 2009/31/EC, 2009/73/EC, 2010/31/EU, 2012/27/EU and 2013/30/EU of the European Parliament and of the Council, Council Directives 2009/119/EC and (EU) 2015/652 and repealing Regulation (EU) No 525/2013 of the European Parliament and of the Council (OJ L 328, 21.12.2018, p. 1).
+
+(
+6
+) The share of zero- and low-emission vehicles in the new passenger car fleet of a Member State in 2017 is calculated as the total number of new zero- and low-emission vehicles registered in 2017 divided by the total number of new passenger cars registered in the same year.

@@ -2,7 +2,7 @@
   "policy_id": "waste-framework-directive",
   "targets": [
     {
-      "quote": "1.   The following waste hierarchy shall apply as a priority order in waste prevention and management legislation and policy:",
+      "quote": "1.   The following waste hierarchy shall apply as a priority order in waste prevention and management legislation and policy:",
       "article": "Article 4(1)",
       "label": "objective",
       "timeline": "",
@@ -12,17 +12,7 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "Subject to Article 10(2), by 2015 separate collection shall be set up for at least the following: paper, metal, plastic and glass.",
-      "article": "Article 11(1)",
-      "label": "other",
-      "timeline": "by 2015",
-      "indicators": [
-        "separate collection of paper, metal, plastic and glass"
-      ],
-      "climate_relevance": "mitigation"
-    },
-    {
-      "quote": "by 2020, the preparing for re-use and the recycling of waste materials such as at least paper, metal, plastic and glass from households and possibly from other origins as far as these waste streams are similar to waste from households, shall be increased to a minimum of overall 50 % by weight;",
+      "quote": "by 2020, the preparing for re-use and the recycling of waste materials such as at least paper, metal, plastic and glass from households and possibly from other origins as far as these waste streams are similar to waste from households, shall be increased to a minimum of overall 50 % by weight;",
       "article": "Article 11(2)(a)",
       "label": "target",
       "timeline": "by 2020",
@@ -32,34 +22,60 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "by 2020, the preparing for re-use, recycling and other material recovery, including backfilling operations using waste to substitute other materials, of non-hazardous construction and demolition waste excluding naturally occurring material defined in category 17 05 04 in the list of waste shall be increased to a minimum of 70 % by weight.",
+      "quote": "by 2020, the preparing for re-use, recycling and other material recovery, including backfilling operations using waste to substitute other materials, of non-hazardous construction and demolition waste excluding naturally occurring material defined in category 17 05 04 in the list of waste shall be increased to a minimum of 70 % by weight;",
       "article": "Article 11(2)(b)",
       "label": "target",
       "timeline": "by 2020",
       "indicators": [
         "recovery of non-hazardous construction and demolition waste"
       ],
-      "climate_relevance": "mitigation"
+      "climate_relevance": "mitigation",
+      "source": "FIX-CONSOLIDATED: point (b) now ends in a semicolon (it is followed by new points (c)-(e)) instead of the old full stop; quote re-sliced from 02008L0098-20251016."
     },
     {
-      "quote": "waste oils are collected separately, where this is technically feasible;",
-      "article": "Article 21(1)(a)",
-      "label": "objective",
-      "timeline": "",
+      "quote": "by 2025, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 55 % by weight;",
+      "article": "Article 11(2)(c)",
+      "label": "target",
+      "timeline": "by 2025",
       "indicators": [
-        "separate collection of waste oils"
+        "preparing for re-use and recycling of municipal waste"
       ],
-      "climate_relevance": "none"
+      "climate_relevance": "mitigation",
+      "source": "NEW-2025: municipal recycling target added by 02008L0098-20251016 consolidation."
     },
     {
-      "quote": "the separate collection of bio-waste with a view to the composting and digestion of bio-waste;",
-      "article": "Article 22(a)",
-      "label": "objective",
-      "timeline": "",
+      "quote": "by 2030, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 60 % by weight;",
+      "article": "Article 11(2)(d)",
+      "label": "target",
+      "timeline": "by 2030",
       "indicators": [
-        "separate collection of bio-waste"
+        "preparing for re-use and recycling of municipal waste"
       ],
-      "climate_relevance": "both"
+      "climate_relevance": "mitigation",
+      "source": "NEW-2025: municipal recycling target added by 02008L0098-20251016 consolidation."
+    },
+    {
+      "quote": "by 2035, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 65 % by weight.",
+      "article": "Article 11(2)(e)",
+      "label": "target",
+      "timeline": "by 2035",
+      "indicators": [
+        "preparing for re-use and recycling of municipal waste"
+      ],
+      "climate_relevance": "mitigation",
+      "source": "NEW-2025: municipal recycling target added by 02008L0098-20251016 consolidation."
+    },
+    {
+      "quote": "Member States shall take the necessary and appropriate measures to achieve, by 31 December 2030, the following food waste reduction targets at national level:\n\n(a)\n\nreduction of the generation of food waste in processing and manufacturing by 10 % in comparison to the amount of food waste generated as an annual average between 2021 and 2023;\n\n(b)\n\nreduction of the generation of food waste per capita, jointly in retail and other distribution of food, in restaurants and food services and in households, by 30 % in comparison to the amount of food waste generated as an annual average between 2021 and 2023.",
+      "article": "Article 9a(4)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "food waste reduction",
+        "food waste generated per capita"
+      ],
+      "climate_relevance": "mitigation",
+      "source": "NEW-2025: national food-waste reduction targets (10 % processing/manufacturing, 30 % per-capita retail/food-service/household) added by 02008L0098-20251016 consolidation."
     }
   ]
 }
