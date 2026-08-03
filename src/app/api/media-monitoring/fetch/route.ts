@@ -3,6 +3,7 @@ import { getServerSupabase } from '@/lib/supabase-server';
 import { authoriseMediaMutation } from '@/lib/media-auth';
 import {
   fetchArticlesForKeywords,
+  emptyFetchStats,
   OUTLET_REGISTRY,
   type MediaKeyword,
 } from '@/lib/media-monitoring';
@@ -179,8 +180,9 @@ async function runFetch(trigger: 'manual' | 'cron', options: { force?: boolean }
 
   let articles: Awaited<ReturnType<typeof fetchArticlesForKeywords>> = [];
   let errorMessage: string | null = null;
+  const stats = emptyFetchStats();
   try {
-    articles = await fetchArticlesForKeywords(keywords, { sinceIso: since });
+    articles = await fetchArticlesForKeywords(keywords, { sinceIso: since, stats });
     console.log(`[media-monitoring] fetched ${articles.length} unique articles`);
   } catch (e) {
     errorMessage = e instanceof Error ? e.message : String(e);
@@ -280,6 +282,10 @@ async function runFetch(trigger: 'manual' | 'cron', options: { force?: boolean }
       articles_found: articles.length,
       articles_new: Math.max(inserted, 0),
       error: errorMessage,
+      // Returned so a zero-article run can be diagnosed from the response
+      // alone: it distinguishes "Google returned nothing" from "everything
+      // was filtered out", and shows how many feed requests failed.
+      diagnostics: stats,
     },
   };
 }

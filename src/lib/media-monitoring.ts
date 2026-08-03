@@ -311,9 +311,15 @@ const OUTLET_BY_DOMAIN: Record<string, OutletInfo> = OUTLET_REGISTRY.reduce(
 /**
  * Google News RSS returns a redirect URL like
  *   https://news.google.com/rss/articles/CBMi...?oc=5
- * The `description` field usually contains the real outlet link inside an
+ * The `description` field used to contain the real outlet link inside an
  * <a href="..."> tag. This helper extracts it so we can attribute the
  * article to the correct outlet and build a clean canonical URL.
+ *
+ * Google no longer puts the publisher link there — the anchor now points
+ * back at news.google.com — so this returns the Google URL for every
+ * current feed item. Outlet attribution must come from `<source url="...">`
+ * instead (see `outletDomainFromItem`); this function is kept because the
+ * anchor form still appears in older cached feeds.
  */
 export function extractRealUrl(googleUrl: string, description: string): string {
   const hrefMatch = description.match(/<a\s+[^>]*href=["']([^"']+)["']/i);
@@ -321,6 +327,13 @@ export function extractRealUrl(googleUrl: string, description: string): string {
     return hrefMatch[1];
   }
   return googleUrl;
+}
+
+/** True when a URL is a Google News redirect rather than a publisher link. */
+export function isGoogleNewsUrl(url: string | null | undefined): boolean {
+  if (!url) return false;
+  const host = domainFromUrl(url);
+  return host === 'news.google.com' || host === 'google.com';
 }
 
 export function canonicaliseUrl(url: string): string {
@@ -348,17 +361,22 @@ export function domainFromUrl(url: string): string | null {
   }
 }
 
-export function resolveOutlet(url: string): OutletInfo | null {
-  const host = domainFromUrl(url);
+/** Look up an outlet from a bare hostname, walking up to parent domains. */
+export function resolveOutletByDomain(host: string | null): OutletInfo | null {
   if (!host) return null;
-  if (OUTLET_BY_DOMAIN[host]) return OUTLET_BY_DOMAIN[host];
+  const normalised = host.toLowerCase().replace(/^www\./, '');
+  if (OUTLET_BY_DOMAIN[normalised]) return OUTLET_BY_DOMAIN[normalised];
   // Try parent domain (e.g. edition.cnn.com -> cnn.com)
-  const parts = host.split('.');
+  const parts = normalised.split('.');
   for (let i = 1; i < parts.length - 1; i++) {
     const candidate = parts.slice(i).join('.');
     if (OUTLET_BY_DOMAIN[candidate]) return OUTLET_BY_DOMAIN[candidate];
   }
   return null;
+}
+
+export function resolveOutlet(url: string): OutletInfo | null {
+  return resolveOutletByDomain(domainFromUrl(url));
 }
 
 /* ------------------------------------------------------------------ */
@@ -385,9 +403,12 @@ interface RawGoogleItem {
   description: string;
   pubDate: string;
   source: string;
+  /** Publisher homepage from `<source url="...">` — the only reliable
+   *  publisher signal left in the feed. Empty when the attribute is absent. */
+  sourceUrl: string;
 }
 
-function parseGoogleNewsFeed(xml: string): RawGoogleItem[] {
+export function parseGoogleNewsFeed(xml: string): RawGoogleItem[] {
   const items: RawGoogleItem[] = [];
   const itemRe = /<item[\s>][\s\S]*?<\/item>/gi;
   let match: RegExpExecArray | null;
@@ -399,11 +420,46 @@ function parseGoogleNewsFeed(xml: string): RawGoogleItem[] {
     const pubDate = xmlText(block, 'pubDate');
     const sourceMatch = block.match(/<source[^>]*>([^<]*)<\/source>/i);
     const source = sourceMatch ? sourceMatch[1].trim() : '';
+    const sourceUrlMatch = block.match(/<source\s+[^>]*url=["']([^"']+)["']/i);
+    const sourceUrl = sourceUrlMatch ? sourceUrlMatch[1].trim() : '';
     if (title) {
-      items.push({ title, link, description: descriptionRaw, pubDate, source });
+      items.push({ title, link, description: descriptionRaw, pubDate, source, sourceUrl });
     }
   }
   return items;
+}
+
+/**
+ * Resolve the publishing outlet's domain for a feed item.
+ *
+ * Order of preference:
+ *  1. The article URL, when it is a real publisher link (older feed format).
+ *  2. `<source url="...">`, the publisher homepage Google still emits.
+ *
+ * Returns null when neither yields a usable hostname.
+ */
+export function outletDomainFromItem(
+  articleUrl: string,
+  sourceUrl: string | null | undefined,
+): string | null {
+  if (!isGoogleNewsUrl(articleUrl)) {
+    const direct = domainFromUrl(articleUrl);
+    if (direct) return direct;
+  }
+  return sourceUrl ? domainFromUrl(sourceUrl) : null;
+}
+
+/**
+ * Normalised title used as a secondary dedup key. The same story reached
+ * through two language editions gets two different Google redirect tokens,
+ * so URL-only dedup lets it through twice.
+ */
+function titleKey(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/\s+-\s+[^-]+$/, '')   // drop the trailing " - Outlet Name" suffix
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
 }
 
 /* ------------------------------------------------------------------ */
@@ -501,6 +557,38 @@ interface FetchOptions {
    * 0 = keep all. Applied on top of the known-outlets filter.
    */
   minReachScore?: number;
+  /**
+   * Optional sink for per-run diagnostics, mutated in place.
+   *
+   * A run returning zero articles because Google returned nothing looks
+   * identical, from the outside, to a run where every article was filtered
+   * out — which is exactly how a total outlet-attribution failure stayed
+   * invisible behind a green "success" badge. These counters tell the two
+   * cases apart without reading server logs.
+   */
+  stats?: FetchStats;
+}
+
+export interface FetchStats {
+  jobs: number;
+  failedJobs: number;
+  itemsSeen: number;
+  droppedTooOld: number;
+  droppedBlocked: number;
+  droppedUnknownOutlet: number;
+  droppedLowReach: number;
+}
+
+export function emptyFetchStats(): FetchStats {
+  return {
+    jobs: 0,
+    failedJobs: 0,
+    itemsSeen: 0,
+    droppedTooOld: 0,
+    droppedBlocked: 0,
+    droppedUnknownOutlet: 0,
+    droppedLowReach: 0,
+  };
 }
 
 /** Group keywords by language+country so they can share one query. */
@@ -563,7 +651,7 @@ export async function fetchArticlesForKeywords(
   const applyBlocklist = opts.applyBlocklist ?? true;
   const minReachScore = opts.minReachScore ?? 0;
 
-  let dropped = { blocked: 0, unknown: 0, lowReach: 0 };
+  const stats = opts.stats ?? emptyFetchStats();
 
   const active = keywords.filter((k) => k.is_active);
   if (active.length === 0) return [];
@@ -604,6 +692,7 @@ export async function fetchArticlesForKeywords(
   // used to be silently swallowed. Count them so operators can see, via
   // logs, whether Google News is rate-limiting or a batch is misbehaving.
   let failedJobs = 0;
+  stats.jobs = jobs.length;
 
   // Process in waves of 3 concurrent requests with delays between waves
   const CONCURRENCY = 3;
@@ -635,28 +724,32 @@ export async function fetchArticlesForKeywords(
       const { keywords: jobKws, items } = r.value;
 
       for (const it of items) {
+        stats.itemsSeen += 1;
         const realUrl = extractRealUrl(it.link, it.description);
         const canonical = canonicaliseUrl(realUrl);
         const publishedTs = it.pubDate ? Date.parse(it.pubDate) : NaN;
         if (sinceTs && Number.isFinite(publishedTs) && publishedTs < sinceTs) {
+          stats.droppedTooOld += 1;
           continue;
         }
 
-        const outlet = resolveOutlet(canonical);
-        const domain = domainFromUrl(canonical);
+        // Attribute to the publishing outlet. `canonical` is almost always a
+        // news.google.com redirect, so the domain comes from `<source url>`.
+        const domain = outletDomainFromItem(canonical, it.sourceUrl);
+        const outlet = domain ? resolveOutletByDomain(domain) : null;
         const cleanSummary = stripHtml(it.description).slice(0, 500);
 
         // ── Quality filters ────────────────────────────────────────────
         if (applyBlocklist && isBlockedDomain(domain)) {
-          dropped.blocked += 1;
+          stats.droppedBlocked += 1;
           continue;
         }
         if (knownOutletsOnly && !outlet) {
-          dropped.unknown += 1;
+          stats.droppedUnknownOutlet += 1;
           continue;
         }
         if (minReachScore > 0 && (outlet?.reach_score ?? 0) < minReachScore) {
-          dropped.lowReach += 1;
+          stats.droppedLowReach += 1;
           continue;
         }
 
@@ -670,7 +763,11 @@ export async function fetchArticlesForKeywords(
         // If no specific keyword matched (broad OR hit), attribute to all
         const attributedKws = matchedKws.length > 0 ? matchedKws : jobKws;
 
-        const existing = merged.get(canonical);
+        // Two keys point at the same record: the canonical URL, and
+        // outlet+title so the same story arriving via a different language
+        // edition (and therefore a different Google token) is merged too.
+        const altKey = `${outlet?.domain ?? domain ?? ''}::${titleKey(it.title)}`;
+        const existing = merged.get(canonical) ?? merged.get(altKey);
         if (existing) {
           for (const kw of attributedKws) {
             if (!existing.matched_keyword_ids.includes(kw.id)) {
@@ -681,7 +778,7 @@ export async function fetchArticlesForKeywords(
           continue;
         }
 
-        merged.set(canonical, {
+        const record: FetchedArticle = {
           url: realUrl,
           canonical_url: canonical,
           title: it.title,
@@ -697,7 +794,9 @@ export async function fetchArticlesForKeywords(
           estimated_reach: outlet?.estimated_readership ?? 0,
           matched_keyword_ids: attributedKws.map((k) => k.id),
           matched_keywords: attributedKws.map((k) => k.keyword),
-        });
+        };
+        merged.set(canonical, record);
+        merged.set(altKey, record);
       }
     }
 
@@ -714,19 +813,23 @@ export async function fetchArticlesForKeywords(
     }
   }
 
+  stats.failedJobs = failedJobs;
+
   if (failedJobs > 0) {
     console.warn(
       `[media-monitoring] fetch summary: ${failedJobs}/${jobs.length} jobs failed across all waves`,
     );
   }
 
-  if (dropped.blocked || dropped.unknown || dropped.lowReach) {
+  if (stats.droppedBlocked || stats.droppedUnknownOutlet || stats.droppedLowReach) {
     console.log(
-      `[media-monitoring] quality filter dropped: ${dropped.blocked} blocked, ${dropped.unknown} unknown, ${dropped.lowReach} low-reach`,
+      `[media-monitoring] quality filter dropped: ${stats.droppedBlocked} blocked, ${stats.droppedUnknownOutlet} unknown outlet, ${stats.droppedLowReach} low-reach (of ${stats.itemsSeen} items seen)`,
     );
   }
 
-  return Array.from(merged.values()).sort((a, b) => {
+  // `merged` holds each record under two keys (URL and outlet+title), so
+  // collapse back to unique records before returning.
+  return Array.from(new Set(merged.values())).sort((a, b) => {
     const ta = a.published_at ? Date.parse(a.published_at) : 0;
     const tb = b.published_at ? Date.parse(b.published_at) : 0;
     return tb - ta;
