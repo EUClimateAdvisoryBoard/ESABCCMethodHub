@@ -23,6 +23,7 @@ import {
   OBLIGATION_META,
   TYPE_META,
   CLIMATE_META,
+  ORDER_META,
   type PolicyTarget,
 } from '@/data/policy-targets';
 import { useTargetConfirmations } from '@/lib/useTargetConfirmations';
@@ -49,6 +50,11 @@ export default function PolicyTargetsRegisterPage() {
     policy: 'all', document_type: 'all', target_label: 'all', obligation: 'all', target_type: 'all', climate_relevance: 'all',
   });
   const [timeline, setTimeline] = useState<'all' | 'timebound' | 'unspecified'>('all');
+  // v3 review dimensions: first/second-order rank, and the "likely not a target"
+  // flag the sharpened definition (rules NT-1..NT-15) raises for the next round.
+  const [orderView, setOrderView] = useState<'all' | 'first' | 'second'>('all');
+  const [reviseView, setReviseView] = useState<'all' | 'flagged' | 'clean'>('all');
+  const [updatedView, setUpdatedView] = useState<'all' | 'updated'>('all');
   const [confirmView, setConfirmView] = useState<'all' | 'confirmed' | 'unconfirmed'>('all');
   // Relevance lens — defaults to "relevant" so the register opens on the targets
   // that materially bear on the climate/energy transition, hiding the peripheral
@@ -80,28 +86,41 @@ export default function PolicyTargetsRegisterPage() {
       if (relevanceView === 'peripheral' && t.relevant) return false;
       if (timeline === 'timebound' && !t.timeline) return false;
       if (timeline === 'unspecified' && t.timeline) return false;
+      if (orderView === 'first' && t.target_order !== 1) return false;
+      if (orderView === 'second' && t.target_order !== 2) return false;
+      if (reviseView === 'flagged' && !t.revise_flag) return false;
+      if (reviseView === 'clean' && t.revise_flag) return false;
+      if (updatedView === 'updated' && !t.doc_replaced) return false;
       if (confirmView === 'confirmed' && !isConfirmed(t.id)) return false;
       if (confirmView === 'unconfirmed' && isConfirmed(t.id)) return false;
       if (q && !t.target_text.toLowerCase().includes(q) && !t.policy_name.toLowerCase().includes(q) && !t.article.toLowerCase().includes(q) && !t.indicators.join(' ').toLowerCase().includes(q)) return false;
       return true;
     });
-  }, [query, filters, relevanceView, timeline, confirmView, isConfirmed]);
+  }, [query, filters, relevanceView, timeline, orderView, reviseView, updatedView, confirmView, isConfirmed]);
 
   const stats = useMemo(() => computeStats(policyTargets), []);
 
   // ── Exports ────────────────────────────────────────────────────────────
-  const rowRecords = (rows: PolicyTarget[]) => rows.map((t) => {
-    const rec: Record<string, string> = {};
-    for (const c of COLUMNS) rec[c.header] = c.value(t);
-    rec['12 · Human confirmed'] = isConfirmed(t.id) ? 'Yes' : 'No';
-    return rec;
-  });
+  // Column 12 (human confirmation) is per-user browser state, so it is spliced
+  // into the shared COLUMNS config at export time — at the same position it
+  // occupies in the reviewer workbook (scripts/export-policy-targets-workbook.py),
+  // so the in-app download and the shipped workbook read identically.
+  const exportColumns = useMemo(() => {
+    const cols = [...COLUMNS];
+    const at = cols.findIndex((c) => c.key === 'revise_reason') + 1;
+    cols.splice(at || cols.length, 0, {
+      key: 'confirmed',
+      header: '12 · Human confirmed',
+      width: 16,
+      value: (t: PolicyTarget) => (isConfirmed(t.id) ? 'Yes' : 'No'),
+    });
+    return cols;
+  }, [isConfirmed]);
 
   const downloadCSV = () => {
-    const headers = [...COLUMNS.map((c) => c.header), '12 · Human confirmed'];
     const esc = (v: string) => `"${(v ?? '').replace(/"/g, '""')}"`;
-    const lines = [headers.map(esc).join(',')];
-    for (const rec of rowRecords(filtered)) lines.push(headers.map((h) => esc(rec[h])).join(','));
+    const lines = [exportColumns.map((c) => esc(c.header)).join(',')];
+    for (const t of filtered) lines.push(exportColumns.map((c) => esc(c.value(t))).join(','));
     const blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -120,17 +139,14 @@ export default function PolicyTargetsRegisterPage() {
       const wb = new ExcelJS.Workbook();
       wb.creator = 'ESABCC Method Hub — Policy Targets Register';
       const ws = wb.addWorksheet('Policy targets', { views: [{ state: 'frozen', ySplit: 1 }] });
-      const cols = [...COLUMNS, { key: 'confirmed', header: '12 · Human confirmed', width: 16 } as any];
+      const cols = exportColumns;
       ws.columns = cols.map((c) => ({ header: c.header, key: c.key, width: c.width }));
       ws.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
       ws.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF00928F' } };
       ws.getRow(1).alignment = { vertical: 'middle', wrapText: true };
       for (const t of filtered) {
         const confirmedRow = isConfirmed(t.id);
-        const row = ws.addRow({
-          ...Object.fromEntries(COLUMNS.map((c) => [c.key, c.value(t)])),
-          confirmed: confirmedRow ? 'Yes' : 'No',
-        });
+        const row = ws.addRow(Object.fromEntries(cols.map((c) => [c.key, c.value(t)])));
         row.alignment = { vertical: 'top', wrapText: true };
         if (confirmedRow) {
           row.eachCell((cell) => { cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE7F6EC' } }; });
@@ -156,7 +172,7 @@ export default function PolicyTargetsRegisterPage() {
 
       <div className="max-w-[1600px] mx-auto px-3 sm:px-5 py-5">
         {/* Stats */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 mb-4">
+        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 mb-2.5">
           <Stat n={stats.total} label="Targets" color="#00928F" />
           <Stat n={stats.relevant} label="Relevant (lens)" color="#0d9488" />
           <Stat n={stats.policies} label="Policies" color="#3D5265" />
@@ -164,6 +180,13 @@ export default function PolicyTargetsRegisterPage() {
           <Stat n={stats.quantitative} label="Quantitative" color="#0f766e" />
           <Stat n={stats.byClimate.mitigation + stats.byClimate.both} label="Mitigation" color={CLIMATE_META.mitigation.color} />
           <Stat n={stats.byClimate.adaptation + stats.byClimate.both} label="Adaptation" color={CLIMATE_META.adaptation.color} />
+        </div>
+        {/* v3 review dimensions (August 2026 pass) */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-4">
+          <Stat n={stats.firstOrder} label="First order" color={ORDER_META[1].color} />
+          <Stat n={stats.secondOrder} label="Second order" color={ORDER_META[2].color} />
+          <Stat n={stats.revise} label="Flagged “revise target”" color="#a16207" />
+          <Stat n={`${stats.docUpdated} · ${stats.docUpdatedPolicies} acts`} label="From updated source docs" color="#0369a1" />
         </div>
 
         {/* Methodology + review note */}
@@ -173,6 +196,8 @@ export default function PolicyTargetsRegisterPage() {
             <p><strong>Sourcing.</strong> Each <em>Target text</em> is a verbatim slice of the act&rsquo;s enacting terms (articles/annexes) in the consolidated EUR-Lex text — the preamble/recitals are excluded. Candidates were gathered by a fan-out of reading agents (recall-first) plus a regex safety-net, then every quote was validated as an exact source substring before being kept.</p>
             <p><strong>Obligation</strong> is read from the instrument type (regulations/directives bind; communications/strategies are soft law) and the modal verb (&ldquo;shall&rdquo; → mandatory, &ldquo;should&rdquo; → voluntary). <strong>Type</strong> is quantitative when a number/%/date threshold is present, else qualitative. <strong>Climate-relevance</strong> flags mitigation and/or adaptation.</p>
             <p><strong>Relevance lens.</strong> The register spans the climate acquis plus the resilience, health and cohesion acts that were added for their transition-relevant provisions — which also carry many generic institutional, procedural or non-climate commitments. Each row is flagged <em>relevant</em> when it states a substantive target that materially bears on the climate/energy transition (mitigation, adaptation/resilience, energy, climate-linked environment/nature, clean-tech/industry, or finance channelled to those ends), or <em>peripheral</em> otherwise. The <em>Relevance</em> filter defaults to <em>relevant</em>, so the register opens on the transition-material targets; set it to <em>all</em> (or <em>peripheral</em>) to see the rest. Flags start from a deterministic rule and are refined per row by the fact-check pass.</p>
+            <p><strong>August 2026 review pass (v3).</strong> The reviewers sharpened what counts as a target: it must be <em>timebound, or imply a progression of effort that can be measured</em>. Anything achieved by a single intervention — a ban, a one-off duty, a threshold-triggered obligation, a derogation, a plan-content requirement, a calculation method or a Commission review clause — is not a target (rules NT-1…NT-15). Rows the reviewers marked were removed; rows matching the same patterns elsewhere are <em>flagged</em>, not deleted, and carry a <span className="px-1 rounded" style={{ background: '#fef9c3', color: '#a16207' }}>Revise?</span> badge with the reason on hover. Each row also carries a <strong>first / second order</strong> rank — first order is the overall change the act exists to achieve (subject-matter articles, headline targets and their staged deadlines), second order depends on, complements or narrows a headline target. A ✓ on the rank means a reviewer assigned it; the rest were assigned by a classifier calibrated on those labels.</p>
+            <p><strong>Source documents.</strong> Every act was checked against EUR-Lex for a newer <em>consolidated</em> version; 17 were outdated and their targets re-extracted from the current text — including the RED III-amended Renewable Energy Directive and the Climate Law consolidation carrying the adopted 90 %-by-2040 target. Those rows carry a <span className="px-1 rounded" style={{ background: '#e0f2fe', color: '#0369a1' }}>Source doc updated</span> badge, and the note travels with the export.</p>
             <p><strong>Review (column 12).</strong> Because extraction favours recall, every row starts <span className="px-1 rounded bg-grey-200 text-tertiary-dark">grey / unconfirmed</span>. Tick <em>Confirmed</em> to mark a row human-verified — it turns <span className="px-1 rounded" style={{ background: '#E7F6EC', color: '#15803d' }}>green</span>. Confirmations are saved in your browser and included in the Excel/CSV export. This is a screening aid — always check against the source act.</p>
           </div>
         </details>
@@ -189,6 +214,9 @@ export default function PolicyTargetsRegisterPage() {
           <Sel label="Target type" value={filters.target_type} set={(v) => setFilters({ ...filters, target_type: v })} opts={options.target_type} cap />
           <Sel label="Climate" value={filters.climate_relevance} set={(v) => setFilters({ ...filters, climate_relevance: v })} opts={options.climate_relevance} cap />
           <Sel label="Timeline" value={timeline} set={(v) => setTimeline(v as any)} opts={['timebound', 'unspecified']} />
+          <Sel label="Order" value={orderView} set={(v) => setOrderView(v as any)} opts={['first', 'second']} cap />
+          <Sel label="Revise" value={reviseView} set={(v) => setReviseView(v as any)} opts={['flagged', 'clean']} cap />
+          <Sel label="Source doc" value={updatedView} set={(v) => setUpdatedView(v as any)} opts={['updated']} cap />
           <Sel label="Review" value={confirmView} set={(v) => setConfirmView(v as any)} opts={['confirmed', 'unconfirmed']} />
         </div>
 
@@ -218,6 +246,7 @@ export default function PolicyTargetsRegisterPage() {
               <tr className="bg-grey-100 dark:bg-[var(--mh-bg)] text-left text-tertiary-dark dark:text-[var(--mh-fg)]">
                 <Th w="52px">✓ Conf.</Th>
                 <Th w="34px">#</Th>
+                <Th w="64px">Order</Th>
                 <Th w="200px">Name of policy</Th>
                 <Th w="96px">Type</Th>
                 <Th w="110px">Policy area</Th>
@@ -243,8 +272,25 @@ export default function PolicyTargetsRegisterPage() {
                     </td>
                     <td className="px-2 py-2 text-tertiary tabular-nums">{t.target_number}</td>
                     <td className="px-2 py-2">
+                      {t.target_order ? (
+                        <span
+                          title={`${ORDER_META[t.target_order].label} — ${t.target_order_source === 'human' ? 'assigned by a reviewer' : 'assigned by the classifier, calibrated on the reviewers’ labels'}`}
+                          className="inline-block text-[10.5px] font-semibold px-1.5 py-0.5 rounded whitespace-nowrap"
+                          style={{ color: ORDER_META[t.target_order].color, background: ORDER_META[t.target_order].bg }}
+                        >
+                          {ORDER_META[t.target_order].short}
+                          {t.target_order_source === 'human' && <span title="Reviewer-assigned"> ✓</span>}
+                        </span>
+                      ) : <span className="text-tertiary">—</span>}
+                    </td>
+                    <td className="px-2 py-2">
                       <span className="font-medium text-tertiary-dark dark:text-[var(--mh-fg)]">{t.policy_short}</span>
                       {t.celex_number && <div className="text-[10.5px] text-tertiary">CELEX {t.celex_number}</div>}
+                      {t.doc_replaced && (
+                        <div className="mt-1" title={t.doc_replaced}>
+                          <Badge label="Source doc updated" color="#0369a1" bg="#e0f2fe" />
+                        </div>
+                      )}
                     </td>
                     <td className="px-2 py-2 capitalize text-tertiary-dark dark:text-[var(--mh-fg)]">{t.document_type}</td>
                     <td className="px-2 py-2 text-tertiary-dark dark:text-[var(--mh-fg)]">{t.policy_area}</td>
@@ -266,6 +312,11 @@ export default function PolicyTargetsRegisterPage() {
                     <td className="px-2 py-2">
                       <Badge label={LABEL_META[t.target_label].label} color={LABEL_META[t.target_label].color} />
                       {!t.relevant && <div className="mt-1"><Badge label="Peripheral" color="#94a3b8" bg="#f1f5f9" /></div>}
+                      {t.revise_flag && (
+                        <div className="mt-1" title={t.revise_reason}>
+                          <Badge label="Revise?" color="#a16207" bg="#fef9c3" />
+                        </div>
+                      )}
                     </td>
                     <td className="px-2 py-2"><Badge label={OBLIGATION_META[t.obligation].label} color={OBLIGATION_META[t.obligation].color} bg={OBLIGATION_META[t.obligation].bg} /></td>
                     <td className="px-2 py-2"><Badge label={TYPE_META[t.target_type].label} color={TYPE_META[t.target_type].color} /></td>
@@ -277,7 +328,7 @@ export default function PolicyTargetsRegisterPage() {
                 );
               })}
               {filtered.length === 0 && (
-                <tr><td colSpan={13} className="text-center text-tertiary py-12">No targets match the current filters.</td></tr>
+                <tr><td colSpan={15} className="text-center text-tertiary py-12">No targets match the current filters.</td></tr>
               )}
             </tbody>
           </table>
