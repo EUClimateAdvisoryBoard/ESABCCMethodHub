@@ -350,7 +350,9 @@ function main() {
     // supersedes is not mistaken for a duplicate of it.
     const dropOv = overrides.get(stableId(p.id, exact));
     if (dropOv && dropOv.drop) continue;
-    const dedupeKey = c.policy_id + '::' + norm(exact).slice(0, 120).toLowerCase();
+    // 300 chars, not 120: grouped multi-point provisions can share a long
+    // chapeau and only diverge in their sub-points (e.g. NRL Art 4(1) vs 5(1)).
+    const dedupeKey = c.policy_id + '::' + norm(exact).slice(0, 300).toLowerCase();
     if (seen.has(dedupeKey)) continue;
     seen.add(dedupeKey);
 
@@ -435,7 +437,9 @@ function main() {
   // another act, or a communication collating a target set in legislation).
   const titles = new Map([...policies.values()].map((p) => [p.id, [p.title, p.short_title].filter(Boolean)]));
   const dupes = duplicatesOf(out, titles);
-  out.forEach((r, i) => { r.duplicate_of = dupes[i]; });
+  // A reviewer's explicit duplicate note (e.g. "target set by another act,
+  // kept for cross-checking") wins over the similarity scan.
+  out.forEach((r, i) => { r.duplicate_of = overrides.get(r.id)?.set?.duplicate_of ?? dupes[i]; });
 
   const tally = (key) => out.reduce((m, t) => ((m[t[key]] = (m[t[key]] || 0) + 1), m), {});
 

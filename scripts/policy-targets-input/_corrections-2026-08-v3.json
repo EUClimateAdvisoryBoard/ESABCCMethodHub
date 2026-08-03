@@ -1,0 +1,155 @@
+[
+  {
+    "policy_id": "nature-restoration-law",
+    "targets": [
+      {
+        "quote": "Member States shall put in place the restoration measures that are necessary to improve to good condition areas of habitat types listed in Annex I which are not in good condition. Such restoration measures shall be put in place:\n\n(a)\n\nby 2030 on at least 30 % of the total area of all habitat types listed in Annex I that is not in good condition, as quantified in the national restoration plan referred to in Article 15;\n\n(b)\n\nby 2040 on at least 60 % and by 2050, on at least 90 % of the area of each group of habitat types listed in Annex I that is not in good condition, as quantified in the national restoration plan referred to in Article 15.",
+        "article": "Article 4(1), points (a)–(b) — Restoration of terrestrial, coastal and freshwater ecosystems",
+        "label": "target",
+        "timeline": "by 2030 · by 2040 · by 2050",
+        "indicators": [
+          "area of habitat types in good condition"
+        ],
+        "climate_relevance": "adaptation"
+      },
+      {
+        "quote": "Where a Member State applies the derogation referred to in the first subparagraph, the Member State shall put in place restoration measures:\n\n(a)\n\nby 2050 on an area representing at least 80 % of the area that is not in good condition for each of those habitat types;\n\n(b)\n\nby 2030 on at least one third of the percentage referred to in point (a); and\n\n(c)\n\nby 2040 on at least two thirds of the percentage referred to in point (a).",
+        "article": "Article 4(2), second subparagraph, points (a)–(c) — Restoration of terrestrial, coastal and freshwater ecosystems (derogation pathway)",
+        "label": "target",
+        "timeline": "by 2050 · by 2030 · by 2040",
+        "indicators": [
+          "area of habitat types in good condition"
+        ],
+        "climate_relevance": "adaptation"
+      },
+      {
+        "quote": "Member States shall put in place the restoration measures that are necessary to improve to good condition areas of habitat types listed in Annex II which are not in good condition. Such restoration measures shall be put in place:\n\n(a)\n\nby 2030, on at least 30 % of the total area of groups 1 to 6 of the habitat types listed in Annex II that is not in good condition, as quantified in the national restoration plan referred to in Article 15;\n\n(b)\n\nby 2040, on at least 60 % and, by 2050, on at least 90 % of the area of each of the groups 1 to 6 of the habitat types listed in Annex II that is not in good condition, as quantified in the national restoration plan referred to in Article 15;\n\n(c)\n\nby 2040, on at least two thirds of the percentage referred to in point (d) of this paragraph of the area of group 7 of the habitat types listed in Annex II that is not in good condition, as quantified in the national restoration plan referred to in Article 15; and\n\n(d)\n\nby 2050, on a percentage, identified in accordance with Article 14(3), of the area of group 7 of the habitat types listed in Annex II that is not in good condition, as quantified in the national restoration plan referred to in Article 15.",
+        "article": "Article 5(1), points (a)–(d) — Restoration of marine ecosystems",
+        "label": "target",
+        "timeline": "by 2030 · by 2040 · by 2050",
+        "indicators": [
+          "area of habitat types in good condition"
+        ],
+        "climate_relevance": "adaptation"
+      },
+      {
+        "quote": "Member States shall ensure that the condition is known of the following areas:\n\n(a)\n\nby 2030, for at least 50 % of the area distributed over all habitat types in groups 1 to 6 listed in Annex II;\n\n(b)\n\nby 2040, for all areas of the habitat types in groups 1 to 6 listed in Annex II;\n\n(c)\n\nby 2040, for at least 50 % of the area distributed over all habitat types in group 7 listed in Annex II;\n\n(d)\n\nby 2050, for all areas of the habitat types in group 7 listed in Annex II.",
+        "article": "Article 5(7), points (a)–(d) — Restoration of marine ecosystems (condition known)",
+        "label": "target",
+        "timeline": "by 2030 · by 2040 · by 2050",
+        "indicators": [
+          "area of habitat types with known condition"
+        ],
+        "climate_relevance": "adaptation"
+      },
+      {
+        "quote": "Member States shall put in place measures which shall aim to restore organic soils in agricultural use constituting drained peatlands. Those measures shall be in place on at least:\n\n(a)\n\n30 % of such areas by 2030, of which at least a quarter shall be rewetted;\n\n(b)\n\n40 % of such areas by 2040, of which at least a third shall be rewetted;\n\n(c)\n\n50 % of such areas by 2050, of which at least a third shall be rewetted.",
+        "article": "Article 11(4), points (a)–(c) — Restoration of agricultural ecosystems (peatland rewetting)",
+        "label": "target",
+        "timeline": "by 2030 · by 2040 · by 2050",
+        "indicators": [
+          "share of drained agricultural peatland rewetted"
+        ],
+        "climate_relevance": "both"
+      },
+      {
+        "quote": "Member States shall put in place restoration measures which shall aim to ensure that the common farmland bird index at national level based on the species specified in Annex V, indexed on 1 September 2025 = 100, reaches the following levels:\n\n(a)\n\nfor Member States listed in Annex V with historically more depleted populations of farmland birds: 110 by 2030, 120 by 2040 and 130 by 2050;\n\n(b)\n\nfor Member States listed in Annex V with historically less depleted populations of farmland birds: 105 by 2030, 110 by 2040 and 115 by 2050.",
+        "article": "Article 11(3), points (a)–(b) — Restoration of agricultural ecosystems (common farmland bird index)",
+        "label": "target",
+        "timeline": "by 2030 · by 2040 · by 2050",
+        "indicators": [
+          "common farmland bird index"
+        ],
+        "climate_relevance": "adaptation"
+      },
+      {
+        "quote": "Member States shall ensure that there is:\n\n(a)\n\nan increase of the area in good condition for habitat types listed in Annex I until at least 90 % is in good condition and until the favourable reference area for each habitat type in each biogeographic region of the Member State concerned is reached;",
+        "article": "Article 4(17), point (a) — Restoration of terrestrial, coastal and freshwater ecosystems",
+        "label": "target",
+        "timeline": "",
+        "indicators": [
+          "area of habitat types in good condition"
+        ],
+        "climate_relevance": "adaptation"
+      },
+      {
+        "quote": "By way of derogation from paragraph 4 of this Article, if a Member State considers that it is not possible to put in place restoration measures by 2050 that are necessary to reach the favourable reference area for a specific habitat type on 100 % of the surface, the Member State concerned may set a lower percentage at a level between 90 % and 100 % in its national restoration plan as referred to in Article 15 and provide adequate justification. In such a case, the Member State shall gradually put in place restoration measures that are necessary to achieve that lower percentage by 2050. By 2030, those restoration measures shall cover at least 30 % of the additional surface needed to achieve such lower percentage by 2050, and by 2040, they shall cover at least 60 % of the additional surface needed to achieve such lower percentage by 2050.",
+        "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems (derogation phase-in)",
+        "label": "target",
+        "timeline": "by 2030 · by 2040 · by 2050",
+        "indicators": [
+          "area of habitat types in good condition"
+        ],
+        "climate_relevance": "adaptation"
+      },
+      {
+        "quote": "Member States shall put in place restoration measures for the terrestrial, coastal and freshwater habitats of the species listed in Annexes II, IV and V to Directive 92/43/EEC and of the terrestrial, coastal and freshwater habitats of wild birds falling within the scope of Directive 2009/147/EC that are, in addition to the restoration measures referred to in paragraphs 1 and 4 of this Article, necessary to improve the quality and quantity of those habitats, including by re-establishing them, and to enhance connectivity, until sufficient quality and quantity of those habitats is achieved.",
+        "article": "Article 4(7) — Restoration of terrestrial, coastal and freshwater ecosystems (habitats of species)",
+        "label": "target",
+        "timeline": "",
+        "indicators": [
+          "quality and quantity of species habitats"
+        ],
+        "climate_relevance": "adaptation"
+      },
+      {
+        "quote": "From 1 January 2031, Member States shall achieve an increasing trend in the total national area of urban green space, including through the integration of urban green space into buildings and infrastructure, in urban ecosystem areas, determined in accordance with Article 14(4), measured every six years from 1 January 2031, until a satisfactory level as set in accordance with Article 14(5) is reached.",
+        "article": "Article 8(2) — Restoration of urban ecosystems",
+        "label": "target",
+        "timeline": "from 1 January 2031 · every six years",
+        "indicators": [
+          "total national area of urban green space"
+        ],
+        "climate_relevance": "adaptation"
+      },
+      {
+        "quote": "Member States shall put in place measures which shall aim to achieve an increasing trend at national level of at least two out of the three following indicators for agricultural ecosystems, as further specified in Annex IV, measured in the period from 18 August 2024 until 31 December 2030, and every six years thereafter, until the satisfactory levels as set in accordance with Article 14(5) are reached:\n\n(a)\n\ngrassland butterfly index;\n\n(b)\n\nstock of organic carbon in cropland mineral soils;\n\n(c)\n\nshare of agricultural land with high-diversity landscape features.",
+        "article": "Article 11(2) — Restoration of agricultural ecosystems (biodiversity indicators)",
+        "label": "target",
+        "timeline": "18 August 2024 – 31 December 2030 · every six years thereafter",
+        "indicators": [
+          "grassland butterfly index",
+          "stock of organic carbon in cropland mineral soils",
+          "share of agricultural land with high-diversity landscape features"
+        ],
+        "climate_relevance": "both"
+      },
+      {
+        "quote": "Member States shall achieve an increasing trend at national level of the common forest bird index, as further specified in Annex VI, measured in the period from 18 August 2024 until 31 December 2030, and every six years thereafter, until the satisfactory levels as set in accordance with Article 14(5) are reached.",
+        "article": "Article 12(2) — Restoration of forest ecosystems (common forest bird index)",
+        "label": "target",
+        "timeline": "18 August 2024 – 31 December 2030 · every six years thereafter",
+        "indicators": [
+          "common forest bird index"
+        ],
+        "climate_relevance": "adaptation"
+      },
+      {
+        "quote": "Member States shall achieve an increasing trend at national level of at least six out of seven of the following indicators for forest ecosystems, as further specified in Annex VI, chosen on the basis of their ability to demonstrate the enhancement of biodiversity of forest ecosystems within the Member State concerned. The trend shall be measured in the period from 18 August 2024 until 31 December 2030, and every six years thereafter, until the satisfactory levels as set in accordance with Article 14(5) are reached:\n\n(a)\n\nstanding deadwood;\n\n(b)\n\nlying deadwood;\n\n(c)\n\nshare of forests with uneven-aged structure;\n\n(d)\n\nforest connectivity;\n\n(e)\n\nstock of organic carbon;\n\n(f)\n\nshare of forests dominated by native tree species;\n\n(g)\n\ntree species diversity.",
+        "article": "Article 12(3) — Restoration of forest ecosystems (biodiversity indicators)",
+        "label": "target",
+        "timeline": "18 August 2024 – 31 December 2030 · every six years thereafter",
+        "indicators": [
+          "stock of organic carbon",
+          "forest connectivity"
+        ],
+        "climate_relevance": "both"
+      }
+    ]
+  },
+  {
+    "policy_id": "water-resilience-strategy",
+    "targets": [
+      {
+        "quote": "The Drinking Water Directive requires Member States to reduce leakages in water supply networks. Member States with water supply leakage levels exceeding the EU-wide threshold – to be set by 2028 – will have to present, by 2030, national action plans to reduce leakages across their supply networks.",
+        "article": "Section 2.2 (Building a water-smart economy) — Drinking Water Directive leakage-reduction duty",
+        "label": "target",
+        "timeline": "threshold by 2028, plans by 2030",
+        "indicators": [
+          "water supply leakage"
+        ],
+        "climate_relevance": "adaptation"
+      }
+    ]
+  }
+]
