@@ -38,7 +38,7 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "for the average emissions of the new passenger car fleet, an EU fleet-wide target equal to a 37,5 % reduction of the target in 2021 determined in accordance with point 6.1.2 of Part A of Annex I;",
+      "quote": "for the average emissions of the new passenger car fleet, an EU fleet-wide target equal to a 55 % reduction of the target in 2021 determined in accordance with point 6.1.2 of Part A of Annex I;",
       "article": "Article 1(5)(a)",
       "label": "target",
       "timeline": "From 1 January 2030",
@@ -50,7 +50,20 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "for the average emissions of the new light commercial vehicles fleet, an EU fleet- wide target equal to a 31 % reduction of the target in 2021 determined in accordance with point 6.1.2 of Part B of Annex I.",
+      "quote": "for the average emissions of the new passenger car fleet, an EU fleet-wide target equal to a 100 % reduction of the target in 2021 determined in accordance with Part A, point 6.1.3, of Annex I;",
+      "article": "Article 1(5a)(a)",
+      "label": "target",
+      "timeline": "From 1 January 2035",
+      "indicators": [
+        "EU fleet-wide target",
+        "average emissions of the new passenger car fleet",
+        "reduction of the 2021 target (%)",
+        "zero-emission target"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for the average emissions of the new light commercial vehicles fleet, an EU fleet- wide target equal to a 50 % reduction of the target in 2021 determined in accordance with point 6.1.2 of Part B of Annex I.",
       "article": "Article 1(5)(b)",
       "label": "target",
       "timeline": "From 1 January 2030",
@@ -62,35 +75,26 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "6.   From 1 January 2025, a zero- and low-emission vehicles' benchmark equal to a 15 % share of the respective fleets of new passenger cars and new light commercial vehicles shall apply in accordance with points 6.3 of Parts A and B of Annex I, respectively.",
+      "quote": "for the average emissions of the new light commercial vehicles fleet, an EU fleet-wide target equal to a 100 % reduction of the target in 2021 determined in accordance with Part B, point 6.1.3, of Annex I.",
+      "article": "Article 1(5a)(b)",
+      "label": "target",
+      "timeline": "From 1 January 2035",
+      "indicators": [
+        "EU fleet-wide target",
+        "average emissions of the new light commercial vehicles fleet",
+        "reduction of the 2021 target (%)",
+        "zero-emission target"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2025 to 31 December 2029, a zero- and low-emission vehicles' benchmark equal to a 25 % share of the fleet of new passenger cars and equal to a 17 % share of the fleet of new light commercial vehicles shall apply in accordance with points 6.3 of Parts A and B of Annex I, respectively.",
       "article": "Article 1(6)",
       "label": "target",
-      "timeline": "From 1 January 2025",
+      "timeline": "From 1 January 2025 to 31 December 2029",
       "indicators": [
         "zero- and low-emission vehicles' benchmark",
         "share of fleet (%)"
-      ],
-      "climate_relevance": "mitigation"
-    },
-    {
-      "quote": "a benchmark equal to a 35 % share of the fleet of new passenger cars; and",
-      "article": "Article 1(7)(a)",
-      "label": "target",
-      "timeline": "From 1 January 2030",
-      "indicators": [
-        "zero- and low-emission vehicles' benchmark",
-        "share of new passenger cars (%)"
-      ],
-      "climate_relevance": "mitigation"
-    },
-    {
-      "quote": "a benchmark equal to a 30 % share of the fleet of new light commercial vehicles.",
-      "article": "Article 1(7)(b)",
-      "label": "target",
-      "timeline": "From 1 January 2030",
-      "indicators": [
-        "zero- and low-emission vehicles' benchmark",
-        "share of new light commercial vehicles (%)"
       ],
       "climate_relevance": "mitigation"
     },

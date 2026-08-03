@@ -2,7 +2,7 @@
   "policy_id": "eu-ets-directive",
   "targets": [
     {
-      "quote": "This Directive establishes a scheme for greenhouse gas emission allowance trading within the Community (hereinafter referred to as the ‘Community scheme’) in order to promote reductions of greenhouse gas emissions in a cost-effective and economically efficient manner.",
+      "quote": "This Directive establishes a system for greenhouse gas emission allowance trading within the Union",
       "article": "Article 1 — Subject matter",
       "label": "objective",
       "timeline": "",
@@ -12,43 +12,63 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "For the three-year period beginning 1 January 2005 Member States shall allocate at least 95 % of the allowances free of charge.",
-      "article": "Article 10 — Method of allocation",
+      "quote": "The linear factor shall be 4,3 % from 2024 to 2027 and 4,4 % from 2028.",
+      "article": "Article 9 — Union-wide quantity of allowances",
       "label": "target",
-      "timeline": "for the three-year period beginning 1 January 2005 and the five-year period beginning 1 January 2008",
+      "timeline": "from 2024 to 2027 / from 2028",
       "indicators": [
-        "share of allowances allocated free of charge"
+        "linear reduction factor (cap trajectory)",
+        "Union-wide quantity of allowances"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "Member States shall ensure that, by 30 April each year at the latest, the operator of each installation surrenders a number of allowances equal to the total emissions from that installation during the preceding calendar year as verified in accordance with Article 15, and that these are subsequently cancelled.",
-      "article": "Article 12(3) — Transfer, surrender and cancellation of allowances",
+      "quote": "From 2021 onwards, and without prejudice to a possible reduction pursuant to Article 10a(5a), the share of allowances to be auctioned shall be 57 %.",
+      "article": "Article 10(1) — Auctioning of allowances",
       "label": "target",
-      "timeline": "by 30 April each year",
+      "timeline": "from 2021 onwards",
       "indicators": [
-        "allowances surrendered",
-        "verified emissions"
+        "share of allowances auctioned"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "Member States shall ensure that any operator who does not surrender sufficient allowances by 30 April of each year to cover its emissions during the preceding year shall be held liable for the payment of an excess emissions penalty. The excess emissions penalty shall be EUR 100 for each tonne of carbon dioxide equivalent emitted by that installation for which the operator has not surrendered allowances.",
-      "article": "Article 16(3) — Penalties",
-      "label": "obligation",
-      "timeline": "by 30 April of each year",
+      "quote": "In the years 2024 and 2025, 15 % of the allowances referred to in Article 3c(5) and (7), as well as 25 % in 2024 and 50 % in 2025, respectively, of the remaining 85 % of those allowances, in respect of which free allocation would have taken place, shall be auctioned, except for the quantities of allowances referred to in Article 3c(6) and Article 10a(8), fourth subparagraph. The remainder of the allowances for those years shall be allocated for free. From 1 January 2026, the entire quantity of allowances in respect of which free allocation would have taken place in that year shall be auctioned, except for the quantity of allowances referred to in Article 3c(6) and Article 10a(8), fourth subparagraph.",
+      "article": "Article 3d(1) — Method of allocation of allowances for aviation through auctioning",
+      "label": "target",
+      "timeline": "2024-2025 phase-in; full auctioning from 1 January 2026",
       "indicators": [
-        "excess emissions penalty (EUR per tonne CO2 equivalent)"
+        "share of aviation allowances auctioned vs. allocated free"
       ],
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "During the three-year period beginning 1 January 2005, Member States shall apply a lower excess emissions penalty of EUR 40 for each tonne of carbon dioxide equivalent emitted by that installation for which the operator has not surrendered allowances.",
-      "article": "Article 16(4) — Penalties",
-      "label": "obligation",
-      "timeline": "during the three-year period beginning 1 January 2005",
+      "quote": "Shipping companies shall be liable to surrender allowances according to the following schedule: (a) 40 % of verified emissions reported for 2024 that would be subject to surrender requirements in accordance with Article 12; (b) 70 % of verified emissions reported for 2025 that would be subject to surrender requirements in accordance with Article 12; (c) 100 % of verified emissions reported for 2026 and each year thereafter in accordance with Article 12.",
+      "article": "Article 3gb — Phase-in of requirements for maritime transport",
+      "label": "target",
+      "timeline": "2024 / 2025 / 2026 and each year thereafter",
       "indicators": [
-        "excess emissions penalty (EUR per tonne CO2 equivalent)"
+        "share of verified maritime emissions subject to surrender"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The quantity shall decrease each year after 2024 by a linear reduction factor of 5,10 %. By 1 January 2025, the Commission shall publish the Union-wide quantity of allowances for the year 2027.",
+      "article": "Article 30c(1) — Union-wide quantity of allowances (ETS2: buildings, road transport and additional sectors)",
+      "label": "target",
+      "timeline": "each year after 2024 / from 2027",
+      "indicators": [
+        "linear reduction factor (ETS2 cap trajectory)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The quantity of allowances shall decrease by a linear reduction factor of 5,38 %, except if the conditions set out in point 1 of Annex IIIa apply, in which case the quantity shall decrease by a linear reduction factor adjusted in accordance with the rules set out in point 2 of Annex IIIa. By 30 June 2027, the Commission shall publish the Union-wide quantity of allowances for 2028 and, if required, the adjusted linear reduction factor.",
+      "article": "Article 30c(2) — Union-wide quantity of allowances (ETS2: buildings, road transport and additional sectors)",
+      "label": "target",
+      "timeline": "from 2028",
+      "indicators": [
+        "linear reduction factor (ETS2 cap trajectory)"
       ],
       "climate_relevance": "mitigation"
     }

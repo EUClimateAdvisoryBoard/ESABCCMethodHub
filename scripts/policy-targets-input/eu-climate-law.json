@@ -13,6 +13,16 @@
       "climate_relevance": "both"
     },
     {
+      "quote": "This Regulation also sets out a binding Union target for 2040.",
+      "article": "Article 1 — Subject matter and scope",
+      "label": "target",
+      "timeline": "for 2040",
+      "indicators": [
+        "Union 2040 climate target"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
       "quote": "1.   Union-wide greenhouse gas emissions and removals regulated in Union law shall be balanced within the Union at the latest by 2050, thus reducing emissions to net zero by that date, and the Union shall aim to achieve negative emissions thereafter.",
       "article": "Article 2(1) — Climate-neutrality objective",
       "label": "objective",
@@ -56,12 +66,12 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "3.   With a view to achieving the climate-neutrality objective set out in Article 2(1) of this Regulation, a Union-wide climate target for 2040 shall be set. To that end, at the latest within six months of the first global stocktake referred to in Article 14 of the Paris Agreement, the Commission shall make a legislative proposal, as appropriate, based on a detailed impact assessment, to amend this Regulation to include the Union 2040 climate target, taking into account the conclusions of the assessments referred to in Articles 6 and 7 of this Regulation and the outcomes of the global stocktake.",
+      "quote": "3.   In order to reach the climate-neutrality objective set out in Article 2(1), the binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions (emissions after deduction of removals) by 90 % compared to 1990 levels by 2040.",
       "article": "Article 4(3) — Intermediate Union climate targets",
       "label": "target",
-      "timeline": "for 2040",
+      "timeline": "by 2040",
       "indicators": [
-        "Union 2040 climate target"
+        "net greenhouse gas emissions"
       ],
       "climate_relevance": "mitigation"
     },
