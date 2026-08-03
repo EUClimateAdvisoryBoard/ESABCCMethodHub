@@ -5,13 +5,14 @@ import { ESABCC_REPORT_BY_SLUG } from '@/data/esabcc-reports';
 /**
  * Per-report detail endpoint.
  *
- * Returns the report metadata plus the press articles and social posts that
- * have been tagged with this slug, so the /media-monitoring/reports/[slug]
- * page can render a combined timeline board members can share.
+ * Returns the report metadata plus every article tagged with this slug, so
+ * the /media-monitoring/reports/[slug] page can render a timeline board
+ * members can share. Coverage spans the whole pool — alert and RSS feeds
+ * plus the weekly Newton Media import.
  *
  * Query params:
- *   ?limit=100   max items per channel (default 500, capped at 2000)
- *   ?days=180    optional cut-off — only items published/posted in the last N days
+ *   ?limit=100   max items (default 500, capped at 2000)
+ *   ?days=180    optional cut-off — only items published in the last N days
  */
 export async function GET(
   request: NextRequest,
@@ -32,7 +33,7 @@ export async function GET(
     : null;
 
   if (!supabase) {
-    return NextResponse.json({ report, articles: [], posts: [] });
+    return NextResponse.json({ report, articles: [] });
   }
 
   let articlesQuery = supabase
@@ -43,36 +44,17 @@ export async function GET(
     .limit(limit);
   if (since) articlesQuery = articlesQuery.gte('published_at', since);
 
-  let postsQuery = supabase
-    .from('media_social_posts')
-    .select('*')
-    .contains('matched_report_slugs', [report.slug])
-    .order('posted_at', { ascending: false, nullsFirst: false })
-    .limit(limit);
-  if (since) postsQuery = postsQuery.gte('posted_at', since);
+  const { data: articles } = await articlesQuery;
 
-  const [{ data: articles }, { data: posts }] = await Promise.all([
-    articlesQuery,
-    postsQuery,
-  ]);
-
-  // Daily timeline across both channels for a combined chart
-  const dailyMap = new Map<
-    string,
-    { date: string; press: number; social: number }
-  >();
-  const addToDay = (
-    raw: string | null,
-    key: 'press' | 'social',
-  ) => {
-    if (!raw) return;
-    const d = raw.slice(0, 10);
-    const bucket = dailyMap.get(d) ?? { date: d, press: 0, social: 0 };
-    bucket[key] += 1;
+  // Daily timeline for the chart.
+  const dailyMap = new Map<string, { date: string; press: number }>();
+  (articles ?? []).forEach((a) => {
+    if (!a.published_at) return;
+    const d = a.published_at.slice(0, 10);
+    const bucket = dailyMap.get(d) ?? { date: d, press: 0 };
+    bucket.press += 1;
     dailyMap.set(d, bucket);
-  };
-  (articles ?? []).forEach((a) => addToDay(a.published_at, 'press'));
-  (posts ?? []).forEach((p) => addToDay(p.posted_at, 'social'));
+  });
   const timeline = Array.from(dailyMap.values()).sort((a, b) =>
     a.date.localeCompare(b.date),
   );
@@ -80,19 +62,12 @@ export async function GET(
   return NextResponse.json({
     report,
     articles: articles ?? [],
-    posts: posts ?? [],
     timeline,
     summary: {
       press_count: articles?.length ?? 0,
-      social_count: posts?.length ?? 0,
       press_reach:
         (articles ?? []).reduce(
           (s, a) => s + (Number(a.estimated_reach) || 0),
-          0,
-        ),
-      social_reach:
-        (posts ?? []).reduce(
-          (s, p) => s + (Number(p.estimated_reach) || 0),
           0,
         ),
     },

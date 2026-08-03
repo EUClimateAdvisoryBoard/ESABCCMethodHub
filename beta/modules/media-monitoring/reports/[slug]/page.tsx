@@ -3,7 +3,7 @@
 /**
  * Per-ESABCC-report monitoring page.
  *
- * Shows the combined press + social (LinkedIn) coverage attributed to a
+ * Shows all coverage attributed to a
  * single ESABCC report. Board members can open this page directly from the
  * Reports tab on the main dashboard and share the URL with colleagues.
  */
@@ -43,31 +43,13 @@ interface Article {
   matched_keywords: string[];
 }
 
-interface SocialPost {
-  id: string;
-  platform: string;
-  post_url: string;
-  author_handle: string | null;
-  author_name: string | null;
-  content: string;
-  excerpt: string | null;
-  posted_at: string | null;
-  estimated_reach: number;
-  like_count: number | null;
-  comment_count: number | null;
-  matched_keywords: string[];
-}
-
 interface ReportDetailResponse {
   report: EsabccReport;
   articles: Article[];
-  posts: SocialPost[];
-  timeline: { date: string; press: number; social: number }[];
+  timeline: { date: string; press: number }[];
   summary: {
     press_count: number;
-    social_count: number;
     press_reach: number;
-    social_reach: number;
   };
 }
 
@@ -80,7 +62,6 @@ export default function ReportDetailPage() {
   const [notFound, setNotFound] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
-  const [channel, setChannel] = useState<'all' | 'press' | 'social'>('all');
 
   useEffect(() => {
     let cancelled = false;
@@ -120,14 +101,9 @@ export default function ReportDetailPage() {
       labels: data.timeline.map((t) => t.date),
       datasets: [
         {
-          label: 'Press articles',
+          label: 'Articles',
           data: data.timeline.map((t) => t.press),
           backgroundColor: '#004B7FCC',
-        },
-        {
-          label: 'LinkedIn posts',
-          data: data.timeline.map((t) => t.social),
-          backgroundColor: '#6667ABCC',
         },
       ],
     };
@@ -219,30 +195,18 @@ export default function ReportDetailPage() {
           </div>
 
           {/* Summary cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div className="grid grid-cols-2 gap-4 mb-6">
             <div className="bg-white rounded shadow-sm border border-grey-200 p-5">
               <p className="text-2xl font-bold text-primary">
                 {formatNumber(data?.summary.press_count || 0)}
               </p>
-              <p className="text-xs text-tertiary mt-1">Press articles</p>
-            </div>
-            <div className="bg-white rounded shadow-sm border border-grey-200 p-5">
-              <p className="text-2xl font-bold text-accent-violet">
-                {formatNumber(data?.summary.social_count || 0)}
-              </p>
-              <p className="text-xs text-tertiary mt-1">LinkedIn posts</p>
+              <p className="text-xs text-tertiary mt-1">Articles</p>
             </div>
             <div className="bg-white rounded shadow-sm border border-grey-200 p-5">
               <p className="text-2xl font-bold text-accent-orange">
                 {formatNumber(data?.summary.press_reach || 0)}
               </p>
-              <p className="text-xs text-tertiary mt-1">Press reach</p>
-            </div>
-            <div className="bg-white rounded shadow-sm border border-grey-200 p-5">
-              <p className="text-2xl font-bold text-secondary">
-                {formatNumber(data?.summary.social_reach || 0)}
-              </p>
-              <p className="text-xs text-tertiary mt-1">Social reach</p>
+              <p className="text-xs text-tertiary mt-1">Total reach</p>
             </div>
           </div>
 
@@ -250,7 +214,7 @@ export default function ReportDetailPage() {
           {timelineChart && (
             <div className="bg-white rounded shadow-sm border border-grey-200 p-6 mb-6">
               <h2 className="font-bold text-tertiary-dark text-sm mb-4 uppercase tracking-wider">
-                Coverage timeline — press vs social
+                Coverage timeline
               </h2>
               <div style={{ height: 260 }}>
                 <Bar data={timelineChart} options={TIMELINE_CHART_OPTIONS} />
@@ -258,28 +222,11 @@ export default function ReportDetailPage() {
             </div>
           )}
 
-          {/* Channel toggle */}
-          <div className="flex gap-2 mb-4">
-            {(['all', 'press', 'social'] as const).map((c) => (
-              <button
-                key={c}
-                onClick={() => setChannel(c)}
-                className={`text-sm px-4 py-1.5 rounded-full border transition ${
-                  channel === c
-                    ? 'bg-primary text-white border-primary'
-                    : 'bg-white text-tertiary border-grey-200 hover:border-primary'
-                }`}
-              >
-                {c === 'all' ? 'All coverage' : c === 'press' ? 'Press only' : 'Social only'}
-              </button>
-            ))}
-          </div>
-
-          {/* Press list */}
-          {(channel === 'all' || channel === 'press') && (
+          {/* Article list */}
+          {(
             <div className="mb-8">
               <h2 className="font-bold text-tertiary-dark text-sm mb-3 uppercase tracking-wider">
-                Press articles ({data?.articles.length ?? 0})
+                Articles ({data?.articles.length ?? 0})
               </h2>
               {data && data.articles.length > 0 ? (
                 <div className="space-y-3">
@@ -317,64 +264,12 @@ export default function ReportDetailPage() {
                 </div>
               ) : (
                 <p className="text-sm text-tertiary py-6 text-center">
-                  No press coverage attributed to this report yet.
+                  No coverage attributed to this report yet.
                 </p>
               )}
             </div>
           )}
 
-          {/* Social list */}
-          {(channel === 'all' || channel === 'social') && (
-            <div>
-              <h2 className="font-bold text-tertiary-dark text-sm mb-3 uppercase tracking-wider">
-                LinkedIn posts ({data?.posts.length ?? 0})
-              </h2>
-              {data && data.posts.length > 0 ? (
-                <div className="space-y-3">
-                  {data.posts.map((p) => (
-                    <article
-                      key={p.id}
-                      className="bg-white border border-grey-200 rounded p-4 hover:border-accent-violet transition"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                            <span className="text-xs px-2 py-0.5 rounded bg-accent-violet/10 text-accent-violet font-medium uppercase tracking-wider">
-                              {p.platform}
-                            </span>
-                            {p.author_name && (
-                              <span className="text-sm font-semibold text-tertiary-dark">
-                                {p.author_name}
-                              </span>
-                            )}
-                          </div>
-                          <a
-                            href={p.post_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-tertiary-dark hover:text-accent-violet line-clamp-3 block"
-                          >
-                            {p.excerpt || p.content || '(no text)'}
-                          </a>
-                          <div className="flex items-center gap-3 mt-2 text-xs text-tertiary flex-wrap">
-                            <span>{formatDate(p.posted_at)}</span>
-                            {typeof p.like_count === 'number' && <span>· {p.like_count} likes</span>}
-                            {typeof p.comment_count === 'number' && (
-                              <span>· {p.comment_count} comments</span>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-sm text-tertiary py-6 text-center">
-                  No LinkedIn posts attributed to this report yet.
-                </p>
-              )}
-            </div>
-          )}
         </>
       ) : null}
     </div>

@@ -3,14 +3,20 @@
 /**
  * Media Monitoring — dashboard page.
  *
+ * One coverage pool, several lenses. The pool is fed by two channels — the
+ * alert/RSS feeds and the weekly Newton Media spreadsheet upload — and every
+ * tab below is a view over it rather than a separate dataset.
+ *
  * Tabs:
  *   overview  — summary cards, timeline, map, top outlets, top countries
- *   reports   — ESABCC reports clustered with press + social traction
- *   articles  — searchable + filterable press article list
- *   social    — LinkedIn (+ other) posts mentioning ESABCC content
- *   keywords  — manage the keyword queries the fetcher iterates over
+ *   reports   — coverage clustered by ESABCC publication
+ *   members   — coverage clustered by board member
+ *   countries — coverage clustered by country
+ *   articles  — searchable + filterable article list
+ *   keywords  — manage the keywords driving search and alert matching
+ *   sources   — registered feeds, generated alert queries, Newton upload
  *
- * Data comes from /api/media-monitoring/{analytics,articles,reports,social,...}.
+ * Data comes from /api/media-monitoring/{analytics,articles,clusters,...}.
  */
 
 import dynamic from 'next/dynamic';
@@ -56,49 +62,50 @@ interface Article {
   matched_report_slugs?: string[];
 }
 
-interface SocialPost {
-  id: string;
-  platform: string;
-  post_url: string;
-  author_handle: string | null;
-  author_name: string | null;
-  author_profile_url: string | null;
-  content: string;
-  excerpt: string | null;
-  posted_at: string | null;
-  estimated_reach: number;
-  like_count: number | null;
-  comment_count: number | null;
-  share_count: number | null;
-  matched_keywords: string[];
-  matched_report_slugs: string[];
-  source?: {
-    display_name: string | null;
-    profile_url: string | null;
-    is_board_member: boolean;
-  } | null;
-}
-
-interface SocialSource {
-  id: string;
-  platform: string;
-  handle: string;
-  source_type: string;
-  display_name: string | null;
-  profile_url: string | null;
-  feed_url: string | null;
-  is_board_member: boolean;
-  is_active: boolean;
-  default_report_slug: string | null;
-}
-
 interface ReportSummary extends EsabccReport {
   press_count: number;
   press_reach: number;
-  social_count: number;
-  social_reach: number;
   last_press_at: string | null;
-  last_social_at: string | null;
+}
+
+/** One row of a clustered lens (report, board member or country). */
+interface ClusterBucket {
+  key: string;
+  label: string;
+  count: number;
+  reach: number;
+  countries: number;
+  outlets: number;
+  last_at: string | null;
+  top: {
+    title: string;
+    url: string;
+    outlet: string | null;
+    reach: number;
+    published_at: string | null;
+  }[];
+}
+
+interface ClustersResponse {
+  days: number;
+  total_articles: number;
+  by_discovery_source: Record<string, number>;
+  reports: ClusterBucket[];
+  members: ClusterBucket[];
+  countries: ClusterBucket[];
+}
+
+/** A past Newton Media spreadsheet upload. */
+interface MediaImport {
+  id: string;
+  filename: string;
+  status: string;
+  rows_total: number;
+  rows_imported: number;
+  rows_new: number;
+  rows_skipped: number;
+  error_message: string | null;
+  created_at: string;
 }
 
 interface AnalyticsResponse {
@@ -137,7 +144,45 @@ interface AnalyticsResponse {
   window_days: number;
 }
 
-type Tab = 'overview' | 'reports' | 'articles' | 'social' | 'keywords';
+type Tab =
+  | 'overview'
+  | 'reports'
+  | 'members'
+  | 'countries'
+  | 'articles'
+  | 'keywords'
+  | 'sources';
+
+/** A registered press feed (RSS / Google Alert / Talkwalker Alert). */
+interface PressSource {
+  id: string;
+  name: string;
+  source_type: 'google_alert' | 'talkwalker_alert' | 'rss';
+  feed_url: string;
+  alert_query: string | null;
+  country: string | null;
+  language: string | null;
+  is_active: boolean;
+  last_fetched_at: string | null;
+  last_status: string | null;
+  last_error: string | null;
+  last_item_count: number;
+}
+
+/** A ready-to-paste alert query generated from the active keywords. */
+interface AlertQuery {
+  keywords: string[];
+  query: string;
+  category: string;
+  language: string;
+  country: string;
+}
+
+const PRESS_SOURCE_LABELS: Record<PressSource['source_type'], string> = {
+  google_alert: 'Google Alert',
+  talkwalker_alert: 'Talkwalker Alert',
+  rss: 'RSS feed',
+};
 
 const PALETTE = ['#004B7F', '#007B6C', '#E8712B', '#6667AB', '#B83230', '#00928F', '#A530B8', '#FF9933'];
 
@@ -222,27 +267,28 @@ export default function MediaMonitoringPage() {
   const [loadingReports, setLoadingReports] = useState(false);
   const [reportCategoryFilter, setReportCategoryFilter] = useState<string>('');
 
-  const [socialPosts, setSocialPosts] = useState<SocialPost[]>([]);
-  const [socialTotal, setSocialTotal] = useState<number | null>(null);
-  const [loadingSocial, setLoadingSocial] = useState(false);
-  const [socialSearchDraft, setSocialSearchDraft] = useState('');
-  const [socialSearch, setSocialSearch] = useState('');
-  const [socialBoardOnly, setSocialBoardOnly] = useState(false);
-  const [socialReportFilter, setSocialReportFilter] = useState('');
-  const [socialAuthorFilterDraft, setSocialAuthorFilterDraft] = useState('');
-  const [socialAuthorFilter, setSocialAuthorFilter] = useState('');
-  const [socialSort, setSocialSort] = useState<'recent' | 'reach'>('recent');
+  const [clusters, setClusters] = useState<ClustersResponse | null>(null);
+  const [loadingClusters, setLoadingClusters] = useState(false);
+  const [expandedBucket, setExpandedBucket] = useState<string | null>(null);
 
-  const [socialSources, setSocialSources] = useState<SocialSource[]>([]);
-  const [socialFetchRunning, setSocialFetchRunning] = useState(false);
-  const [socialFetchMessage, setSocialFetchMessage] = useState<string | null>(null);
+  const [imports, setImports] = useState<MediaImport[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const [uploadMessage, setUploadMessage] = useState<string | null>(null);
+  const uploadInputRef = useRef<HTMLInputElement | null>(null);
 
-  const [manualUrl, setManualUrl] = useState('');
-  const [manualContent, setManualContent] = useState('');
-  const [manualAuthor, setManualAuthor] = useState('');
-  const [manualPosted, setManualPosted] = useState('');
-  const [manualSubmitting, setManualSubmitting] = useState(false);
-  const [manualMessage, setManualMessage] = useState<string | null>(null);
+  const [clusterRunning, setClusterRunning] = useState(false);
+
+  const [pressSources, setPressSources] = useState<PressSource[]>([]);
+  const [loadingPressSources, setLoadingPressSources] = useState(false);
+  const [alertQueries, setAlertQueries] = useState<AlertQuery[]>([]);
+  const [uncoveredKeywords, setUncoveredKeywords] = useState<string[]>([]);
+  const [copiedQuery, setCopiedQuery] = useState<string | null>(null);
+  const [newSourceName, setNewSourceName] = useState('');
+  const [newSourceUrl, setNewSourceUrl] = useState('');
+  const [newSourceType, setNewSourceType] =
+    useState<PressSource['source_type']>('google_alert');
+  const [newSourceQuery, setNewSourceQuery] = useState('');
+  const [addingSource, setAddingSource] = useState(false);
 
   const [fetchRunning, setFetchRunning] = useState(false);
   const [fetchMessage, setFetchMessage] = useState<string | null>(null);
@@ -383,56 +429,84 @@ export default function MediaMonitoringPage() {
     }
   }, [windowDays]);
 
-  const socialAbortRef = useRef<AbortController | null>(null);
-  const loadSocial = useCallback(async () => {
-    socialAbortRef.current?.abort();
+  const clustersAbortRef = useRef<AbortController | null>(null);
+  const loadClusters = useCallback(async () => {
+    clustersAbortRef.current?.abort();
     const controller = new AbortController();
-    socialAbortRef.current = controller;
-    setLoadingSocial(true);
+    clustersAbortRef.current = controller;
+    setLoadingClusters(true);
     try {
-      const since = new Date(Date.now() - windowDays * 24 * 3600 * 1000).toISOString();
-      const qs = new URLSearchParams({
-        limit: '100',
-        sort: socialSort,
-        platform: 'linkedin',
-        since,
-      });
-      if (socialReportFilter) qs.set('report', socialReportFilter);
-      if (socialAuthorFilter) qs.set('author', socialAuthorFilter);
-      if (socialBoardOnly) qs.set('board_only', '1');
-      if (keywordFilter) qs.set('keyword', keywordFilter);
-      const res = await fetch(`/api/media-monitoring/social?${qs.toString()}`, {
-        signal: controller.signal,
-      });
+      const res = await fetch(
+        `/api/media-monitoring/clusters?days=${windowDays}`,
+        { signal: controller.signal },
+      );
       if (!res.ok) throw new Error(`Server returned ${res.status}`);
-      const data = await res.json();
-      setSocialPosts(data.items || []);
-      setSocialTotal(typeof data.total === 'number' ? data.total : null);
+      setClusters(await res.json());
     } catch (err) {
       if (err instanceof DOMException && err.name === 'AbortError') return;
-      console.error('Failed to load social posts', err);
-      setErrorMessage('Failed to load social posts.');
+      console.error('Failed to load clusters', err);
+      setErrorMessage('Failed to load clustered coverage.');
     } finally {
-      if (socialAbortRef.current === controller) setLoadingSocial(false);
+      if (clustersAbortRef.current === controller) setLoadingClusters(false);
     }
-  }, [windowDays, socialSort, socialReportFilter, socialAuthorFilter, socialBoardOnly, keywordFilter]);
+  }, [windowDays]);
 
-  const socialSourcesAbortRef = useRef<AbortController | null>(null);
-  const loadSocialSources = useCallback(async () => {
-    socialSourcesAbortRef.current?.abort();
+  const importsAbortRef = useRef<AbortController | null>(null);
+  const loadImports = useCallback(async () => {
+    importsAbortRef.current?.abort();
     const controller = new AbortController();
-    socialSourcesAbortRef.current = controller;
+    importsAbortRef.current = controller;
     try {
-      const res = await fetch('/api/media-monitoring/social/sources', {
+      const res = await fetch('/api/media-monitoring/import', {
         signal: controller.signal,
       });
       if (!res.ok) throw new Error(`Server returned ${res.status}`);
       const data = await res.json();
-      setSocialSources(data.sources || []);
+      setImports(data.imports || []);
     } catch (err) {
       if (err instanceof DOMException && err.name === 'AbortError') return;
-      console.error('Failed to load social sources', err);
-      setErrorMessage('Failed to load social sources.');
+      console.error('Failed to load import history', err);
+    }
+  }, []);
+
+  const pressSourcesAbortRef = useRef<AbortController | null>(null);
+  const loadPressSources = useCallback(async () => {
+    pressSourcesAbortRef.current?.abort();
+    const controller = new AbortController();
+    pressSourcesAbortRef.current = controller;
+    setLoadingPressSources(true);
+    try {
+      const res = await fetch('/api/media-monitoring/press-sources', {
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
+      const data = await res.json();
+      setPressSources(data.sources || []);
+    } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') return;
+      console.error('Failed to load press sources', err);
+      setErrorMessage('Failed to load feed sources.');
+    } finally {
+      setLoadingPressSources(false);
+    }
+  }, []);
+
+  const alertQueriesAbortRef = useRef<AbortController | null>(null);
+  const loadAlertQueries = useCallback(async () => {
+    alertQueriesAbortRef.current?.abort();
+    const controller = new AbortController();
+    alertQueriesAbortRef.current = controller;
+    try {
+      const res = await fetch('/api/media-monitoring/alert-queries', {
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`Server returned ${res.status}`);
+      const data = await res.json();
+      setAlertQueries(data.queries || []);
+      setUncoveredKeywords(data.uncovered || []);
+    } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') return;
+      console.error('Failed to load alert queries', err);
     }
   }, []);
 
@@ -444,11 +518,24 @@ export default function MediaMonitoringPage() {
     if (tab === 'articles') loadArticles();
     if (tab === 'keywords') loadKeywords();
     if (tab === 'reports') loadReports();
-    if (tab === 'social') {
-      loadSocial();
-      loadSocialSources();
+    if (tab === 'members' || tab === 'countries' || tab === 'reports') {
+      loadClusters();
     }
-  }, [tab, loadArticles, loadKeywords, loadReports, loadSocial, loadSocialSources]);
+    if (tab === 'sources') {
+      loadPressSources();
+      loadAlertQueries();
+      loadImports();
+    }
+  }, [
+    tab,
+    loadArticles,
+    loadKeywords,
+    loadReports,
+    loadClusters,
+    loadImports,
+    loadPressSources,
+    loadAlertQueries,
+  ]);
 
   // ── Actions ─────────────────────────────────────────────────────────────────
 
@@ -467,13 +554,20 @@ export default function MediaMonitoringPage() {
       }
       const data = await res.json();
       if (res.ok && data.success) {
+        const scope =
+          data.sources_count > 0
+            ? `${data.keywords_count} keywords and ${data.sources_count} feeds`
+            : `${data.keywords_count} keywords`;
         setFetchMessage(
-          `Fetched ${data.articles_found} articles (${data.articles_new} new) across ${data.keywords_count} keywords`,
+          `Fetched ${data.articles_found} articles (${data.articles_new} new) across ${scope}` +
+            // One channel failing still stores the other's results, so say so
+            // rather than reporting a clean success.
+            (data.degraded ? ` — degraded: ${data.degraded}` : ''),
         );
         loadAnalytics();
         if (tab === 'articles') loadArticles();
         if (tab === 'reports') loadReports();
-        if (tab === 'social') loadSocial();
+        if (tab === 'sources') loadPressSources();
       } else {
         setFetchMessage(`Fetch failed: ${data.error || res.statusText || 'unknown error'}`);
       }
@@ -512,6 +606,181 @@ export default function MediaMonitoringPage() {
       loadKeywords();
     } catch (err) {
       setErrorMessage(`Failed to add keyword: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
+
+  async function uploadNewtonFile(file: File) {
+    setUploading(true);
+    setUploadMessage(null);
+    try {
+      const body = new FormData();
+      body.append('file', file);
+
+      // Deliberately not using mutationHeaders(): it sets a JSON content-type,
+      // which would stop the browser writing the multipart boundary.
+      const headers: Record<string, string> = {};
+      if (adminKey) headers['x-media-secret'] = adminKey;
+
+      const res = await fetch('/api/media-monitoring/import', {
+        method: 'POST',
+        headers,
+        body,
+      });
+      if (res.status === 401) {
+        setUploadMessage(`Failed: ${UNAUTHORIZED_MESSAGE}`);
+        return;
+      }
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        setUploadMessage(`Failed: ${data.error || res.statusText}`);
+        return;
+      }
+      setUploadMessage(
+        `Imported ${data.rows_imported} rows (${data.rows_new} new)` +
+          (data.rows_skipped ? `, ${data.rows_skipped} skipped` : ''),
+      );
+      loadImports();
+      loadAnalytics();
+      if (tab === 'reports') loadReports();
+    } catch (err) {
+      setUploadMessage(
+        `Failed: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    } finally {
+      setUploading(false);
+      // Clear the input so re-selecting the same file fires a change event.
+      if (uploadInputRef.current) uploadInputRef.current.value = '';
+    }
+  }
+
+  async function triggerRecluster() {
+    setClusterRunning(true);
+    try {
+      const res = await fetch('/api/media-monitoring/cluster?full=true', {
+        method: 'POST',
+        headers: mutationHeaders(),
+      });
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        setErrorMessage(`Re-cluster failed: ${data.error || res.statusText}`);
+        return;
+      }
+      setUploadMessage(
+        `Re-clustered ${data.scanned} articles (${data.updated} updated).`,
+      );
+      loadClusters();
+    } catch (err) {
+      setErrorMessage(
+        `Re-cluster failed: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    } finally {
+      setClusterRunning(false);
+    }
+  }
+
+  async function addPressSource(e: React.FormEvent) {
+    e.preventDefault();
+    if (!newSourceName.trim() || !newSourceUrl.trim()) return;
+    setAddingSource(true);
+    try {
+      const res = await fetch('/api/media-monitoring/press-sources', {
+        method: 'POST',
+        headers: mutationHeaders(),
+        body: JSON.stringify({
+          name: newSourceName.trim(),
+          feed_url: newSourceUrl.trim(),
+          source_type: newSourceType,
+          alert_query: newSourceQuery.trim() || null,
+        }),
+      });
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(`Failed to add feed: ${data.error || res.statusText}`);
+        return;
+      }
+      setNewSourceName('');
+      setNewSourceUrl('');
+      setNewSourceQuery('');
+      loadPressSources();
+      loadAlertQueries();
+    } catch (err) {
+      setErrorMessage(
+        `Failed to add feed: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    } finally {
+      setAddingSource(false);
+    }
+  }
+
+  async function togglePressSource(s: PressSource) {
+    try {
+      const res = await fetch('/api/media-monitoring/press-sources', {
+        method: 'PATCH',
+        headers: mutationHeaders(),
+        body: JSON.stringify({
+          id: s.id,
+          is_active: !s.is_active,
+          source_type: s.source_type,
+        }),
+      });
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(`Failed to update feed: ${data.error || res.statusText}`);
+        return;
+      }
+      loadPressSources();
+    } catch (err) {
+      setErrorMessage(
+        `Failed to update feed: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    }
+  }
+
+  async function deletePressSource(id: string) {
+    if (!confirm('Remove this feed? Articles already collected are kept.')) return;
+    try {
+      const res = await fetch(
+        `/api/media-monitoring/press-sources?id=${encodeURIComponent(id)}`,
+        { method: 'DELETE', headers: mutationHeaders() },
+      );
+      if (res.status === 401) {
+        setErrorMessage(UNAUTHORIZED_MESSAGE);
+        return;
+      }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(`Failed to remove feed: ${data.error || res.statusText}`);
+        return;
+      }
+      loadPressSources();
+      loadAlertQueries();
+    } catch (err) {
+      setErrorMessage(
+        `Failed to remove feed: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    }
+  }
+
+  async function copyQuery(query: string) {
+    try {
+      await navigator.clipboard.writeText(query);
+      setCopiedQuery(query);
+      window.setTimeout(() => setCopiedQuery(null), 2000);
+    } catch {
+      // Clipboard blocked (insecure context or denied permission) — the
+      // query is selectable in the page, so this is not worth an error banner.
     }
   }
 
@@ -559,117 +828,12 @@ export default function MediaMonitoringPage() {
     }
   }
 
-  async function submitManualPost(e: React.FormEvent) {
-    e.preventDefault();
-    if (!manualUrl.trim()) return;
-    setManualSubmitting(true);
-    setManualMessage(null);
-    try {
-      const res = await fetch('/api/media-monitoring/social/ingest', {
-        method: 'POST',
-        headers: mutationHeaders(),
-        body: JSON.stringify({
-          url: manualUrl.trim(),
-          content: manualContent.trim() || undefined,
-          author_name: manualAuthor.trim() || undefined,
-          posted_at: manualPosted.trim() || undefined,
-        }),
-      });
-      if (res.status === 401) {
-        setManualMessage(`Failed: ${UNAUTHORIZED_MESSAGE}`);
-        return;
-      }
-      const data = await res.json();
-      if (!res.ok || data.error) {
-        setManualMessage(`Failed: ${data.error || res.statusText}`);
-      } else {
-        const reports = (data.matched_report_slugs || []).join(', ');
-        setManualMessage(
-          `Added${reports ? ` (reports: ${reports})` : ''}.`,
-        );
-        setManualUrl('');
-        setManualContent('');
-        setManualAuthor('');
-        setManualPosted('');
-        loadSocial();
-        loadReports();
-      }
-    } catch (err) {
-      setManualMessage(
-        `Failed: ${err instanceof Error ? err.message : String(err)}`,
-      );
-    } finally {
-      setManualSubmitting(false);
-    }
-  }
-
-  async function triggerSocialFetch() {
-    setSocialFetchRunning(true);
-    setSocialFetchMessage(null);
-    try {
-      const res = await fetch('/api/media-monitoring/social/fetch', {
-        method: 'POST',
-        headers: mutationHeaders(),
-      });
-      if (res.status === 401) {
-        setSocialFetchMessage(null);
-        setErrorMessage(UNAUTHORIZED_MESSAGE);
-        return;
-      }
-      const data = await res.json();
-      if (res.ok && data.success) {
-        setSocialFetchMessage(
-          `Fetched ${data.posts_found} posts (${data.posts_new} new) across ${data.sources_count} sources`,
-        );
-        if (tab === 'social') loadSocial();
-        if (tab === 'reports') loadReports();
-      } else {
-        setSocialFetchMessage(`Social fetch failed: ${data.error || res.statusText || 'unknown error'}`);
-      }
-    } catch (err) {
-      setSocialFetchMessage(
-        `Social fetch failed: ${err instanceof Error ? err.message : String(err)}`,
-      );
-    } finally {
-      setSocialFetchRunning(false);
-    }
-  }
-
-  async function toggleSocialSource(s: SocialSource) {
-    try {
-      const res = await fetch('/api/media-monitoring/social/sources', {
-        method: 'PATCH',
-        headers: mutationHeaders(),
-        body: JSON.stringify({ id: s.id, is_active: !s.is_active }),
-      });
-      if (res.status === 401) {
-        setErrorMessage(UNAUTHORIZED_MESSAGE);
-        return;
-      }
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        setErrorMessage(`Failed to update source: ${data.error || res.statusText}`);
-        return;
-      }
-      loadSocialSources();
-    } catch (err) {
-      setErrorMessage(`Failed to update source: ${err instanceof Error ? err.message : String(err)}`);
-    }
-  }
-
   /** Copies the draft article filters (search/country/outlet) into the applied state. */
   function applyArticleFilters(e?: React.FormEvent) {
     e?.preventDefault();
     setArticleSearch(articleSearchDraft.trim());
     setArticleCountry(articleCountryDraft.trim().toUpperCase());
     setArticleOutlet(articleOutletDraft.trim());
-  }
-
-  /** Copies the draft social filters (search/author) into the applied state. */
-  function applySocialFilters(e?: React.FormEvent) {
-    e?.preventDefault();
-    setSocialSearch(socialSearchDraft.trim());
-    setSocialAuthorFilter(socialAuthorFilterDraft.trim());
   }
 
   // ── Derived ─────────────────────────────────────────────────────────────────
@@ -684,17 +848,6 @@ export default function MediaMonitoringPage() {
         (a.source_name || '').toLowerCase().includes(q),
     );
   }, [articles, articleSearch]);
-
-  const filteredSocialPosts = useMemo(() => {
-    if (!socialSearch) return socialPosts;
-    const q = socialSearch.toLowerCase();
-    return socialPosts.filter(
-      (p) =>
-        p.content.toLowerCase().includes(q) ||
-        (p.author_name || '').toLowerCase().includes(q) ||
-        (p.author_handle || '').toLowerCase().includes(q),
-    );
-  }, [socialPosts, socialSearch]);
 
   const filteredReports = useMemo(() => {
     if (!reportCategoryFilter) return reportSummaries;
@@ -890,9 +1043,11 @@ export default function MediaMonitoringPage() {
           [
             { key: 'overview', label: 'Overview' },
             { key: 'reports', label: 'Reports' },
+            { key: 'members', label: 'Board members' },
+            { key: 'countries', label: 'Countries' },
             { key: 'articles', label: 'Press' },
-            { key: 'social', label: 'Social Media' },
             { key: 'keywords', label: 'Keywords' },
+            { key: 'sources', label: 'Sources' },
           ] as { key: Tab; label: string }[]
         ).map((t) => (
           <button
@@ -911,8 +1066,8 @@ export default function MediaMonitoringPage() {
         ))}
       </div>
 
-      {/* Keyword filter chip strip (applies to overview + articles + social) */}
-      {analytics && analytics.byKeyword.length > 0 && tab !== 'keywords' && tab !== 'reports' && (
+      {/* Keyword filter chip strip (applies to overview + articles) */}
+      {analytics && analytics.byKeyword.length > 0 && tab !== 'keywords' && tab !== 'reports' && tab !== 'sources' && (
         <div className="flex flex-wrap gap-2 mb-5">
           <button
             onClick={() => setKeywordFilter('')}
@@ -1084,15 +1239,162 @@ export default function MediaMonitoringPage() {
         </div>
       )}
 
+      {/* ─────────────── Board members / Countries ─────────────── */}
+      {(tab === 'members' || tab === 'countries') && (
+        <div className="space-y-4">
+          <div className="flex items-start justify-between flex-wrap gap-3">
+            <p className="text-sm text-tertiary max-w-2xl">
+              {tab === 'members' ? (
+                <>
+                  Coverage clustered by board member. A member is attributed
+                  when they are named in the headline, summary or full text.
+                  Common surnames are only attributed when the article also
+                  mentions the board, so an unrelated namesake is not counted.
+                </>
+              ) : (
+                <>
+                  Coverage clustered by country, taken from the outlet&apos;s
+                  country where known and the Newton Media topic otherwise.
+                </>
+              )}
+            </p>
+            {clusters && (
+              <p className="text-xs text-tertiary shrink-0">
+                {formatNumber(clusters.total_articles)} articles in the last{' '}
+                {clusters.days} days
+                {Object.keys(clusters.by_discovery_source).length > 0 && (
+                  <>
+                    {' · '}
+                    {Object.entries(clusters.by_discovery_source)
+                      .map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}`)
+                      .join(', ')}
+                  </>
+                )}
+              </p>
+            )}
+          </div>
+
+          {loadingClusters ? (
+            <div className="text-center text-tertiary py-10">Loading…</div>
+          ) : (
+            (() => {
+              const buckets =
+                tab === 'members' ? clusters?.members ?? [] : clusters?.countries ?? [];
+              if (buckets.length === 0) {
+                return (
+                  <div className="text-center text-tertiary py-10">
+                    No coverage in this window yet.
+                  </div>
+                );
+              }
+              const maxReach = Math.max(...buckets.map((b) => b.reach), 1);
+              return (
+                <div className="bg-white border border-grey-200 rounded overflow-hidden">
+                  {buckets.map((b) => {
+                    const open = expandedBucket === `${tab}:${b.key}`;
+                    return (
+                      <div key={b.key} className="border-b border-grey-200 last:border-0">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setExpandedBucket(open ? null : `${tab}:${b.key}`)
+                          }
+                          className="w-full text-left px-4 py-3 hover:bg-grey-50 flex items-center gap-4"
+                        >
+                          <span className="flex-1 min-w-0">
+                            <span
+                              className={`text-sm ${b.count > 0 ? 'font-medium text-tertiary-dark' : 'text-tertiary'}`}
+                            >
+                              {b.label}
+                            </span>
+                            {/* Reach bar, scaled to the leader in this lens. */}
+                            <span className="block mt-1 h-1.5 bg-grey-100 rounded overflow-hidden">
+                              <span
+                                className="block h-full bg-secondary"
+                                style={{
+                                  width: `${Math.round((b.reach / maxReach) * 100)}%`,
+                                }}
+                              />
+                            </span>
+                          </span>
+                          <span className="text-right shrink-0 w-20">
+                            <span className="block text-sm font-bold text-primary">
+                              {formatNumber(b.count)}
+                            </span>
+                            <span className="block text-[10px] text-tertiary uppercase tracking-wider">
+                              articles
+                            </span>
+                          </span>
+                          <span className="text-right shrink-0 w-24 hidden sm:block">
+                            <span className="block text-sm text-tertiary-dark">
+                              {formatNumber(b.reach)}
+                            </span>
+                            <span className="block text-[10px] text-tertiary uppercase tracking-wider">
+                              reach
+                            </span>
+                          </span>
+                          <span className="text-right shrink-0 w-24 hidden md:block text-xs text-tertiary">
+                            {b.last_at ? timeAgo(b.last_at) : '—'}
+                          </span>
+                        </button>
+
+                        {open && (
+                          <div className="px-4 pb-4 bg-grey-50">
+                            {b.top.length === 0 ? (
+                              <p className="text-xs text-tertiary py-2">
+                                No articles attributed yet.
+                              </p>
+                            ) : (
+                              <ul className="space-y-2 pt-2">
+                                {b.top.map((a) => (
+                                  <li key={a.url} className="text-xs">
+                                    <a
+                                      href={a.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="text-secondary hover:underline"
+                                    >
+                                      {a.title}
+                                    </a>
+                                    <span className="text-tertiary">
+                                      {' '}
+                                      — {a.outlet ?? 'unknown outlet'}
+                                      {a.published_at
+                                        ? ` · ${formatDate(a.published_at)}`
+                                        : ''}
+                                      {a.reach > 0
+                                        ? ` · ${formatNumber(a.reach)} reach`
+                                        : ''}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                            <p className="text-[10px] text-tertiary mt-2">
+                              {b.outlets} outlet{b.outlets === 1 ? '' : 's'} ·{' '}
+                              {b.countries} countr{b.countries === 1 ? 'y' : 'ies'}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })()
+          )}
+        </div>
+      )}
+
       {/* ─────────────── Reports ─────────────── */}
       {tab === 'reports' && (
         <div className="space-y-4">
           <div className="flex items-center justify-between flex-wrap gap-3">
             <p className="text-sm text-tertiary max-w-2xl">
-              Coverage clustered by ESABCC report. Each card totals the press
-              and social (LinkedIn) mentions attributed to that publication
-              via the report&apos;s title and keywords. Click a card to open
-              the full timeline for board-member sharing.
+              Coverage clustered by ESABCC report, across the whole pool —
+              alert and RSS feeds plus the Newton Media import. An article is
+              attributed via the report&apos;s title and match terms. Click a
+              card to open the full timeline.
             </p>
             <select
               value={reportCategoryFilter}
@@ -1137,31 +1439,21 @@ export default function MediaMonitoringPage() {
                         {formatNumber(r.press_count)}
                       </p>
                       <p className="text-[10px] text-tertiary uppercase tracking-wider">
-                        Press articles
-                      </p>
-                      <p className="text-xs text-tertiary mt-0.5">
-                        {formatNumber(r.press_reach)} reach
+                        Articles
                       </p>
                     </div>
                     <div>
                       <p className="text-lg font-bold text-accent-violet">
-                        {formatNumber(r.social_count)}
+                        {formatNumber(r.press_reach)}
                       </p>
                       <p className="text-[10px] text-tertiary uppercase tracking-wider">
-                        LinkedIn posts
-                      </p>
-                      <p className="text-xs text-tertiary mt-0.5">
-                        {formatNumber(r.social_reach)} reach
+                        Total reach
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between text-[10px] text-tertiary">
-                    <span>
-                      Last press: {r.last_press_at ? timeAgo(r.last_press_at) : '—'}
-                    </span>
-                    <span>
-                      Last social: {r.last_social_at ? timeAgo(r.last_social_at) : '—'}
-                    </span>
+                  <div className="text-[10px] text-tertiary">
+                    Last coverage:{' '}
+                    {r.last_press_at ? timeAgo(r.last_press_at) : '—'}
                   </div>
                 </Link>
               ))}
@@ -1312,321 +1604,308 @@ export default function MediaMonitoringPage() {
         </div>
       )}
 
-      {/* ─────────────── Social Media ─────────────── */}
-      {tab === 'social' && (
+      {/* ─────────────── Keywords ─────────────── */}
+      {tab === 'sources' && (
         <div className="space-y-4">
-          <form
-            onSubmit={applySocialFilters}
-            className="bg-white border border-grey-200 rounded p-4 flex flex-wrap gap-3 items-center"
-          >
-            <input
-              type="text"
-              value={socialSearchDraft}
-              onChange={(e) => setSocialSearchDraft(e.target.value)}
-              placeholder="Search post content or author…"
-              aria-label="Search post content or author"
-              className="flex-1 min-w-[200px] text-sm border border-grey-200 rounded px-3 py-2"
-            />
-            <input
-              type="text"
-              value={socialAuthorFilterDraft}
-              onChange={(e) => setSocialAuthorFilterDraft(e.target.value)}
-              placeholder="Author handle"
-              aria-label="Filter by author handle"
-              className="text-sm border border-grey-200 rounded px-3 py-2 w-48"
-            />
-            <select
-              value={socialReportFilter}
-              onChange={(e) => setSocialReportFilter(e.target.value)}
-              className="text-sm border border-grey-200 rounded px-3 py-2"
-              title="Filter by report cluster"
-              aria-label="Filter by report cluster"
-            >
-              <option value="">All reports</option>
-              {reportSummaries.map((r) => (
-                <option key={r.slug} value={r.slug}>
-                  {r.short_title}
-                </option>
-              ))}
-            </select>
-            <select
-              value={socialSort}
-              onChange={(e) => setSocialSort(e.target.value as 'recent' | 'reach')}
-              className="text-sm border border-grey-200 rounded px-3 py-2"
-              title="Sort order"
-              aria-label="Sort posts"
-            >
-              <option value="recent">Sort: newest</option>
-              <option value="reach">Sort: reach ↓</option>
-            </select>
-            <label className="flex items-center gap-1.5 text-xs text-tertiary cursor-pointer">
-              <input
-                type="checkbox"
-                checked={socialBoardOnly}
-                onChange={(e) => setSocialBoardOnly(e.target.checked)}
-                className="accent-primary"
-              />
-              Board members only
-            </label>
-            <button
-              type="submit"
-              className="text-sm bg-primary text-white rounded px-4 py-2 hover:bg-primary-dark font-medium"
-            >
-              Apply
-            </button>
-          </form>
-
-          {/* Capture tools: browser extension download + manual paste form */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-white border border-grey-200 rounded p-4">
-              <h3 className="text-xs uppercase tracking-wider text-tertiary font-medium mb-2">
-                Edge / Chrome extension
-              </h3>
-              <p className="text-sm text-tertiary-dark mb-3">
-                One-click capture from any LinkedIn post you see in your
-                feed. Runs in your authenticated session so it reads the real
-                post content — no API required.
-              </p>
-              <a
-                href="/esabcc-capture.zip"
-                download
-                className="inline-block text-sm bg-accent-violet text-white rounded px-4 py-2 hover:opacity-90 font-medium mb-3"
-              >
-                Download esabcc-capture.zip
-              </a>
-              <ol className="text-xs text-tertiary space-y-1 list-decimal list-inside">
-                <li>Unzip to a folder you won&apos;t delete.</li>
-                <li>Open <code>edge://extensions</code> and enable Developer mode.</li>
-                <li>Click <strong>Load unpacked</strong> and select the folder.</li>
-                <li>
-                  In the extension&apos;s options, set API base URL to this
-                  site (<code>{origin}</code>).
-                </li>
-                <li>Right-click any LinkedIn post → <strong>Send to ESABCC monitor</strong>.</li>
-              </ol>
-            </div>
-
-            <div className="bg-white border border-grey-200 rounded p-4">
-              <h3 className="text-xs uppercase tracking-wider text-tertiary font-medium mb-2">
-                Add a post manually
-              </h3>
-              <p className="text-sm text-tertiary-dark mb-3">
-                Paste any LinkedIn post URL. Fill in the content for proper
-                report clustering — the URL alone gives us almost nothing
-                because LinkedIn hides post text from crawlers.
-              </p>
-              <form onSubmit={submitManualPost} className="space-y-2">
-                <input
-                  type="url"
-                  value={manualUrl}
-                  onChange={(e) => setManualUrl(e.target.value)}
-                  placeholder="https://www.linkedin.com/posts/..."
-                  required
-                  className="w-full text-sm border border-grey-200 rounded px-3 py-2"
-                />
-                <textarea
-                  value={manualContent}
-                  onChange={(e) => setManualContent(e.target.value)}
-                  placeholder="Post content (paste what you see — used for keyword + report matching)"
-                  rows={4}
-                  className="w-full text-sm border border-grey-200 rounded px-3 py-2"
-                />
-                <div className="grid grid-cols-2 gap-2">
-                  <input
-                    type="text"
-                    value={manualAuthor}
-                    onChange={(e) => setManualAuthor(e.target.value)}
-                    placeholder="Author name"
-                    className="text-sm border border-grey-200 rounded px-3 py-2"
-                  />
-                  <input
-                    type="text"
-                    value={manualPosted}
-                    onChange={(e) => setManualPosted(e.target.value)}
-                    placeholder="Posted (22h, 3d, or ISO date)"
-                    className="text-sm border border-grey-200 rounded px-3 py-2"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={manualSubmitting || !manualUrl.trim()}
-                  className="text-sm bg-primary text-white rounded px-4 py-2 hover:bg-primary-dark font-medium disabled:opacity-50"
-                >
-                  {manualSubmitting ? 'Adding…' : 'Add to dashboard'}
-                </button>
-                {manualMessage && (
-                  <p className={`text-xs mt-2 ${manualMessage.startsWith('Failed') ? 'text-red-600' : 'text-primary'}`}>
-                    {manualMessage}
-                  </p>
-                )}
-              </form>
-            </div>
+          <div className="bg-white border border-grey-200 rounded p-4">
+            <h2 className="text-sm font-semibold text-primary mb-2">
+              Standing feeds
+            </h2>
+            <p className="text-xs text-tertiary leading-relaxed">
+              Coverage is collected from two places. Google News is searched
+              automatically on every run using the keywords below — nothing to
+              set up. The feeds registered here are polled alongside it, which
+              matters because Google News rate-limits heavily and changes its
+              format without notice.
+            </p>
+            <p className="text-xs text-tertiary leading-relaxed mt-2">
+              <strong className="text-secondary">Alerts are created by hand.</strong>{' '}
+              Neither Google Alerts nor Talkwalker offers an API for creating
+              alerts, so each one is set up once in their website and its RSS
+              URL is pasted here. Everything after that is automatic: each new
+              item is matched against your current keywords at fetch time, so
+              adding a keyword applies to incoming coverage immediately without
+              touching the alerts.
+            </p>
           </div>
 
-          {/* Optional: RSS feed-based sources (admin-only) */}
-          {socialSources.length > 0 && (
-            <details className="bg-white border border-grey-200 rounded">
-              <summary className="px-4 py-3 cursor-pointer text-xs uppercase tracking-wider text-tertiary font-medium">
-                Tracked accounts ({socialSources.filter((s) => s.is_active).length} active)
-                {socialFetchRunning && <span className="ml-2 text-[10px]">· fetching…</span>}
-              </summary>
-              <div className="px-4 pb-4 space-y-4">
-                {(['company', 'hashtag', 'account'] as const).map((type) => {
-                  const group = socialSources.filter((s) => s.source_type === type);
-                  if (group.length === 0) return null;
-                  const typeLabel =
-                    type === 'account'
-                      ? 'Board-member accounts'
-                      : type === 'company'
-                      ? 'Company / institutional pages'
-                      : 'Hashtags';
-                  const badgeEmoji = type === 'hashtag' ? '#' : type === 'company' ? '🏛' : '★';
-                  return (
-                    <div key={type}>
-                      <p className="text-[10px] uppercase tracking-wider text-tertiary mb-2">
-                        {typeLabel}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {group.map((s) => (
-                          <button
-                            key={s.id}
-                            onClick={() => toggleSocialSource(s)}
-                            className={`text-xs px-3 py-1 rounded-full border transition ${
-                              s.is_active
-                                ? 'bg-accent-violet/10 text-accent-violet border-accent-violet/40'
-                                : 'bg-grey-100 text-tertiary border-grey-200'
-                            }`}
-                            title={s.feed_url ? `Feed: ${s.feed_url}` : 'No feed URL — posts arrive via the extension or manual ingest only'}
-                          >
-                            <span className="mr-1">{badgeEmoji}</span>
-                            {s.display_name || s.handle}
-                            {s.feed_url && <span className="ml-1 opacity-60">· feed</span>}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
-                <div className="flex items-center gap-3 pt-2 border-t border-grey-100">
-                  <button
-                    onClick={triggerSocialFetch}
-                    disabled={socialFetchRunning}
-                    className="text-xs bg-secondary text-white rounded px-3 py-1.5 hover:bg-secondary-dark disabled:opacity-50"
-                  >
-                    {socialFetchRunning ? 'Pulling feeds…' : 'Pull RSS feeds'}
-                  </button>
-                  <p className="text-[10px] text-tertiary">
-                    Only sources with an RSS feed URL are fetched. Posts for accounts without a feed come in via the extension or the manual form above.
-                  </p>
-                </div>
-                {socialFetchMessage && (
-                  <p className="text-xs text-accent-violet">{socialFetchMessage}</p>
-                )}
+          <div className="bg-white border border-grey-200 rounded p-4">
+            <div className="flex items-start justify-between flex-wrap gap-3 mb-2">
+              <h2 className="text-sm font-semibold text-primary">
+                Newton Media weekly upload
+              </h2>
+              <button
+                type="button"
+                onClick={triggerRecluster}
+                disabled={clusterRunning}
+                className="text-xs border border-grey-200 rounded px-3 py-1.5 hover:bg-grey-50 disabled:opacity-50"
+              >
+                {clusterRunning ? 'Re-clustering…' : 'Re-cluster pool'}
+              </button>
+            </div>
+            <p className="text-xs text-tertiary leading-relaxed mb-3">
+              Upload the weekly Newton Media .xlsx export. Rows join the same
+              pool as the feeds and are clustered into reports, board members
+              and countries on the way in. Re-uploading an overlapping export
+              updates those rows rather than duplicating them, so the weekly
+              overlap is safe.
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <input
+                ref={uploadInputRef}
+                type="file"
+                accept=".xlsx,.xls"
+                disabled={uploading}
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) uploadNewtonFile(file);
+                }}
+                className="text-sm"
+              />
+              {uploading && (
+                <span className="text-xs text-tertiary">Processing…</span>
+              )}
+            </div>
+            {uploadMessage && (
+              <p className="text-xs text-accent-violet mt-2">{uploadMessage}</p>
+            )}
+
+            {imports.length > 0 && (
+              <div className="mt-3 border-t border-grey-200 pt-3">
+                <p className="text-[10px] uppercase tracking-wider text-tertiary mb-1">
+                  Recent imports
+                </p>
+                <ul className="space-y-1">
+                  {imports.slice(0, 5).map((imp) => (
+                    <li key={imp.id} className="text-xs text-tertiary">
+                      <span
+                        className={
+                          imp.status === 'error' ? 'text-red-700' : 'text-tertiary-dark'
+                        }
+                      >
+                        {imp.filename}
+                      </span>{' '}
+                      · {formatDate(imp.created_at)} ·{' '}
+                      {imp.status === 'error'
+                        ? `failed: ${imp.error_message ?? 'unknown error'}`
+                        : `${imp.rows_imported} rows, ${imp.rows_new} new`}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </details>
+            )}
+          </div>
+
+          {alertQueries.length > 0 && (
+            <div className="bg-white border border-grey-200 rounded p-4">
+              <h2 className="text-sm font-semibold text-primary mb-1">
+                Step 1 — queries built from your keywords
+              </h2>
+              <p className="text-xs text-tertiary mb-3">
+                Copy a query, then paste it into{' '}
+                <a
+                  href="https://www.google.com/alerts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary underline"
+                >
+                  google.com/alerts
+                </a>{' '}
+                or{' '}
+                <a
+                  href="https://alerts.talkwalker.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary underline"
+                >
+                  alerts.talkwalker.com
+                </a>
+                . Set delivery to <em>RSS feed</em>, then copy the feed URL back
+                into step 2. These regenerate whenever you change your keywords.
+              </p>
+              <div className="space-y-2">
+                {alertQueries.map((q) => (
+                  <div
+                    key={q.query}
+                    className="flex flex-wrap items-center gap-2 border border-grey-200 rounded px-3 py-2"
+                  >
+                    <span className="text-xs uppercase tracking-wide text-tertiary shrink-0">
+                      {q.category} · {q.language.toUpperCase()}
+                    </span>
+                    <code className="text-xs flex-1 min-w-[12rem] break-all">
+                      {q.query}
+                    </code>
+                    <button
+                      type="button"
+                      onClick={() => copyQuery(q.query)}
+                      className="text-xs border border-grey-200 rounded px-2 py-1 hover:bg-grey-50 shrink-0"
+                    >
+                      {copiedQuery === q.query ? 'Copied' : 'Copy'}
+                    </button>
+                  </div>
+                ))}
+              </div>
+              {uncoveredKeywords.length > 0 && (
+                <p className="text-xs text-orange-700 bg-orange-50 border border-orange-200 rounded px-3 py-2 mt-3">
+                  <strong>
+                    {uncoveredKeywords.length} keyword
+                    {uncoveredKeywords.length === 1 ? '' : 's'} not covered by
+                    any registered alert:
+                  </strong>{' '}
+                  {uncoveredKeywords.join(', ')}. These are still searched on
+                  Google News — adding an alert for them just adds a second,
+                  more reliable channel.
+                </p>
+              )}
+            </div>
           )}
 
-          {loadingSocial ? (
-            <div className="text-center text-tertiary py-10">Loading posts…</div>
-          ) : filteredSocialPosts.length === 0 ? (
-            <div className="text-center text-tertiary py-10">
-              No LinkedIn posts captured yet. Install the browser extension or
-              paste a URL using the tools above.
+          <form
+            onSubmit={addPressSource}
+            className="bg-white border border-grey-200 rounded p-4 space-y-3"
+          >
+            <h2 className="text-sm font-semibold text-primary">
+              Step 2 — register the feed URL
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+              <select
+                value={newSourceType}
+                onChange={(e) =>
+                  setNewSourceType(e.target.value as PressSource['source_type'])
+                }
+                className="text-sm border border-grey-200 rounded px-3 py-2"
+              >
+                <option value="google_alert">Google Alert</option>
+                <option value="talkwalker_alert">Talkwalker Alert</option>
+                <option value="rss">RSS feed</option>
+              </select>
+              <input
+                type="text"
+                value={newSourceName}
+                onChange={(e) => setNewSourceName(e.target.value)}
+                placeholder="Name (e.g. Alert: ESABCC)"
+                className="text-sm border border-grey-200 rounded px-3 py-2"
+                required
+              />
+              <input
+                type="url"
+                value={newSourceUrl}
+                onChange={(e) => setNewSourceUrl(e.target.value)}
+                placeholder="Feed URL"
+                className="md:col-span-2 text-sm border border-grey-200 rounded px-3 py-2"
+                required
+              />
             </div>
-          ) : (
-            <div className="space-y-3">
-              {socialTotal !== null && socialTotal > socialPosts.length ? (
-                <p className="text-xs text-tertiary">
-                  Showing {socialPosts.length} of {formatNumber(socialTotal)} posts matching these filters.
-                </p>
-              ) : socialTotal === null && socialPosts.length === 100 ? (
-                <p className="text-xs text-tertiary">Showing first 100 results.</p>
-              ) : null}
-              {filteredSocialPosts.map((p) => (
-                <article
-                  key={p.id}
-                  className="bg-white border border-grey-200 rounded p-4 hover:border-accent-violet transition"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                        <span className="text-xs px-2 py-0.5 rounded bg-accent-violet/10 text-accent-violet font-medium uppercase tracking-wider">
-                          {p.platform}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+              <input
+                type="text"
+                value={newSourceQuery}
+                onChange={(e) => setNewSourceQuery(e.target.value)}
+                placeholder="Query used (optional — drives coverage check)"
+                className="md:col-span-3 text-sm border border-grey-200 rounded px-3 py-2"
+              />
+              <button
+                type="submit"
+                disabled={addingSource}
+                className="bg-secondary text-white rounded px-4 py-2 text-sm font-medium hover:bg-secondary-dark disabled:opacity-50"
+              >
+                {addingSource ? 'Adding…' : 'Add feed'}
+              </button>
+            </div>
+            <p className="text-xs text-tertiary">
+              For a Google Alert this must be the URL behind the orange RSS
+              icon (<code>google.com/alerts/feeds/…</code>), not the alerts
+              management page.
+            </p>
+          </form>
+
+          <div className="bg-white border border-grey-200 rounded overflow-hidden">
+            {loadingPressSources ? (
+              <p className="text-sm text-tertiary p-4">Loading feeds…</p>
+            ) : pressSources.length === 0 ? (
+              <p className="text-sm text-tertiary p-4">
+                No feeds registered yet. Google News search still runs on every
+                refresh, so the dashboard keeps working without them.
+              </p>
+            ) : (
+              <table className="w-full text-sm">
+                <thead className="bg-grey-50 text-xs uppercase tracking-wide text-tertiary">
+                  <tr>
+                    <th className="text-left px-4 py-2">Feed</th>
+                    <th className="text-left px-4 py-2">Type</th>
+                    <th className="text-left px-4 py-2">Last run</th>
+                    <th className="text-right px-4 py-2">Items</th>
+                    <th className="text-right px-4 py-2">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pressSources.map((s) => (
+                    <tr key={s.id} className="border-t border-grey-200 align-top">
+                      <td className="px-4 py-2">
+                        <span
+                          className={s.is_active ? 'font-medium' : 'text-tertiary'}
+                        >
+                          {s.name}
                         </span>
-                        {p.source?.is_board_member && (
-                          <span className="text-xs px-2 py-0.5 rounded bg-primary/10 text-primary font-medium">
-                            ★ Board member
+                        {!s.is_active && (
+                          <span className="ml-2 text-xs text-tertiary">(paused)</span>
+                        )}
+                        <div className="text-xs text-tertiary break-all">
+                          {s.feed_url}
+                        </div>
+                        {s.last_error && (
+                          <div className="text-xs text-red-700 mt-1">
+                            {s.last_error}
+                          </div>
+                        )}
+                      </td>
+                      <td className="px-4 py-2 text-xs">
+                        {PRESS_SOURCE_LABELS[s.source_type] ?? s.source_type}
+                      </td>
+                      <td className="px-4 py-2 text-xs">
+                        {s.last_fetched_at ? (
+                          <span
+                            className={
+                              s.last_status === 'error'
+                                ? 'text-red-700'
+                                : 'text-tertiary'
+                            }
+                          >
+                            {s.last_status === 'error' ? 'Failed' : 'OK'} ·{' '}
+                            {new Date(s.last_fetched_at).toLocaleString()}
                           </span>
+                        ) : (
+                          <span className="text-tertiary">Never</span>
                         )}
-                        {p.author_name && (
-                          <span className="text-sm font-semibold text-tertiary-dark">
-                            {p.author_name}
-                          </span>
-                        )}
-                        {p.author_handle && (
-                          <span className="text-xs text-tertiary">@{p.author_handle}</span>
-                        )}
-                      </div>
-                      <a
-                        href={p.post_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-tertiary-dark hover:text-accent-violet line-clamp-3 block"
-                      >
-                        {p.excerpt || p.content || '(no text)'}
-                      </a>
-                      <div className="flex items-center gap-3 mt-2 text-xs text-tertiary flex-wrap">
-                        <span>{formatDate(p.posted_at)}</span>
-                        {typeof p.like_count === 'number' && (
-                          <span>· {p.like_count} likes</span>
-                        )}
-                        {typeof p.comment_count === 'number' && (
-                          <span>· {p.comment_count} comments</span>
-                        )}
-                        {p.matched_report_slugs.length > 0 && (
-                          <span className="flex gap-1 flex-wrap">
-                            {p.matched_report_slugs.slice(0, 2).map((slug) => (
-                              <Link
-                                key={slug}
-                                href={`/media-monitoring/reports/${slug}`}
-                                className="px-2 py-0.5 rounded bg-accent-violet/10 text-accent-violet text-[10px] hover:underline"
-                              >
-                                {slug}
-                              </Link>
-                            ))}
-                          </span>
-                        )}
-                        {p.matched_keywords.length > 0 && (
-                          <span className="flex gap-1 flex-wrap">
-                            {p.matched_keywords.slice(0, 3).map((k) => (
-                              <span
-                                key={k}
-                                className="px-2 py-0.5 rounded bg-primary/10 text-primary text-[10px]"
-                              >
-                                {k}
-                              </span>
-                            ))}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    {p.estimated_reach > 0 && (
-                      <div className="text-right shrink-0">
-                        <p className="text-sm font-bold text-accent-orange">
-                          {formatNumber(p.estimated_reach)}
-                        </p>
-                        <p className="text-[10px] text-tertiary">est. reach</p>
-                      </div>
-                    )}
-                  </div>
-                </article>
-              ))}
-            </div>
-          )}
+                      </td>
+                      <td className="px-4 py-2 text-right text-xs">
+                        {s.last_item_count}
+                      </td>
+                      <td className="px-4 py-2 text-right whitespace-nowrap">
+                        <button
+                          type="button"
+                          onClick={() => togglePressSource(s)}
+                          className="text-xs border border-grey-200 rounded px-2 py-1 hover:bg-grey-50"
+                        >
+                          {s.is_active ? 'Pause' : 'Resume'}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => deletePressSource(s.id)}
+                          className="text-xs border border-grey-200 rounded px-2 py-1 ml-2 hover:bg-grey-50 text-red-700"
+                        >
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </div>
         </div>
       )}
 
-      {/* ─────────────── Keywords ─────────────── */}
       {tab === 'keywords' && (
         <div className="space-y-4">
           <form
@@ -1706,7 +1985,7 @@ export default function MediaMonitoringPage() {
             />
             <p className="text-[10px] text-tertiary max-w-xs">
               Stored locally in this browser and sent as <code>x-media-secret</code>{' '}
-              on keyword, social source, manual post, and refresh actions.
+              on keyword, feed source, import, and refresh actions.
             </p>
           </div>
 
