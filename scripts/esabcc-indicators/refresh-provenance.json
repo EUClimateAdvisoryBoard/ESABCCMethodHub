@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T10:58:36.034Z",
+  "generatedAt": "2026-08-03T09:47:49.725Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
@@ -1528,6 +1528,56 @@
         {
           "year": 2024,
           "value": 15.32
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i2-cement-use",
+      "sourceTitle": "Cement Europe (formerly Cembureau), Key Facts & Figures · \"Cement Production And Consumption EU 27 & Cement Europe 2000-2024\" · CONSUMPTION EU27 dataset",
+      "sourceUrl": "https://www.cementeurope.eu/about-us/key-facts-figures/",
+      "note": "Direct — the chart’s inline dataset IS the report’s series, extended: it reproduces every year the report carries to the tonne (2005 = 232,290,000 t vs the report’s 232.3 Mt; 2013 = 142.2; 2020 = 159.2; 2021 = 170.5). The 2024 value (148.1 Mt) is the figure Cement Europe states in prose in its 2025 Activity Report. Still no CSV/XLSX/API — the numbers are a Chart.js dataset in the page HTML — so the parse is anchored on the dataset label, not its position.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 163.8
+        },
+        {
+          "year": 2023,
+          "value": 150.8
+        },
+        {
+          "year": 2024,
+          "value": 148.1
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i7b-cement-projects",
+      "sourceTitle": "Cement Europe, Map of Innovation Projects · EU-27 projects in the page’s inline `markers` array",
+      "sourceUrl": "https://www.cementeurope.eu/innovation-projects/",
+      "note": "Snapshot, not a rebuilt series: the map carries no announcement date (its only year is the plant’s Operational Date), so the count is stamped with the run year. The report’s 62-in-2023 cannot be reproduced from the current map, and the step to this value is part growth and part re-curation.",
+      "status": "updated",
+      "baseYear": 2023,
+      "newPoints": [
+        {
+          "year": 2026,
+          "value": 114
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i7c-chemicals-projects",
+      "sourceTitle": "Cefic, Low-Carbon Technologies Projects Map · /wp-json/wp/v2/gips, projects with at least one EU-27 country tag",
+      "sourceUrl": "https://cefic.org/solutions-explained/low-carbon-technologies-projects/",
+      "note": "Snapshot, not a rebuilt series: the only date on a record is its website posting date, and those cluster in the twice-yearly batches Cefic republishes the map in, so they date the curation and not the announcement. Counted as projects carrying at least one EU-27 country tag (several are multi-country).",
+      "status": "updated",
+      "baseYear": 2023,
+      "newPoints": [
+        {
+          "year": 2026,
+          "value": 215
         }
       ]
     }

@@ -2,9 +2,12 @@
 
 /**
  * Policy Gap Tracker (beta) — heart of the "Policy Gap 2.0 Report" module
- * inside M · 35 Summer Prep (formerly stand-alone module M · 36). The three
- * internal prep notes (Indicator Check, Synergies & Trade-offs, Policy Gaps —
- * Transport & Industry) are linked from a strip under the hero.
+ * inside M · 35 Summer Prep (formerly stand-alone module M · 36). All four
+ * submodules of that report — this tracker and the three internal prep notes
+ * (Indicator Check, Synergies & Trade-offs, Policy Gaps — Transport &
+ * Industry) — are listed in a section under the hero, which also links through
+ * to the Policy Gap 2.0 project in the Project Workspace, where the same four
+ * pages appear as `report-page` tabs.
  *
  * Tracks every gap and inconsistency the European Scientific Advisory Board
  * on Climate Change identified in its January-2024 report *"Towards EU
@@ -37,6 +40,57 @@ import {
   type GapType,
   type GapStatus,
 } from '@/data/policy-gaps';
+
+/**
+ * The submodules of the Policy Gap 2.0 Report: this tracker plus the three
+ * internal notes of the prep cycle. The same four pages are seeded as
+ * `report-page` modules on the Policy Gap 2.0 project in the Project Workspace
+ * (src/data/workspace-report-pages.ts) — this strip is the in-report way in,
+ * that one is the workspace way in, and both point at the one copy of each page.
+ */
+const GAP_SUBMODULES: {
+  href: string;
+  title: string;
+  tag: string;
+  desc: string;
+  icon: string;
+  accent: string;
+  current?: boolean;
+}[] = [
+  {
+    href: '/beta/policy-gaps',
+    title: 'Policy Gap Tracker',
+    tag: 'The report itself',
+    desc: 'Every gap and inconsistency the Board identified across all 12 report chapters, with a live record of whether each still exists.',
+    icon: '▤',
+    accent: '#B83230',
+    current: true,
+  },
+  {
+    href: '/beta/summer-prep/indicator-check',
+    title: 'Indicator Check',
+    tag: 'Note 1 · all sectors',
+    desc: 'What has moved, data-wise, since the last report: the report’s progress indicators read for movement against their own baseline.',
+    icon: '📈',
+    accent: '#007B6C',
+  },
+  {
+    href: '/beta/summer-prep/synergies-tradeoffs',
+    title: 'Synergies & Trade-offs',
+    tag: 'Note 2 · industry & transport',
+    desc: 'Where cutting emissions also builds climate resilience — and where it works against it — mapped subsector by subsector.',
+    icon: '⇄',
+    accent: '#6667AB',
+  },
+  {
+    href: '/beta/summer-prep/policy-gaps-sectors',
+    title: 'Policy Gaps — Transport & Industry',
+    tag: 'Note 3 · extends this tracker',
+    desc: 'Do the transport- and industry-tagged gaps still exist after the legislation adopted since the report? Plus candidates for additional gaps.',
+    icon: '◍',
+    accent: '#FF9933',
+  },
+];
 
 const STORAGE_KEY = 'esabcc-policy-gaps-v1';
 const TYPE_KEYS = Object.keys(GAP_TYPE_META) as GapType[];
@@ -414,34 +468,68 @@ export default function PolicyGapsPage() {
       />
 
       <main className="max-w-[1280px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        {/* ── Internal notes (Policy Gap 2.0 Report) ────────────────────── */}
+        {/* ── Submodules of the Policy Gap 2.0 Report ───────────────────── */}
         <section
-          aria-label="Internal notes"
-          className="mb-6 rounded-lg border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-[#F7F9FA] dark:bg-[var(--mh-card)] p-3"
+          aria-label="Submodules of the Policy Gap 2.0 Report"
+          className="mb-6 rounded-lg border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-[#F7F9FA] dark:bg-[var(--mh-card)] p-4"
         >
-          <div className="text-[10px] font-semibold uppercase tracking-wide text-[#54728C] dark:text-[var(--mh-muted)]">
-            Policy Gap 2.0 Report · internal notes for this prep cycle
-          </div>
-          <div className="mt-2 flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <div>
+              <div className="text-[10px] font-semibold uppercase tracking-wide text-[#54728C] dark:text-[var(--mh-muted)]">
+                Policy Gap 2.0 Report · inside this module
+              </div>
+              <p className="mt-1 max-w-3xl text-[12px] leading-relaxed text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
+                This tracker plus the three internal notes built for this prep cycle. The same four
+                pages are tabs of the Policy&nbsp;Gap&nbsp;2.0 project in the Project Workspace —
+                one copy, two ways in.
+              </p>
+            </div>
             <Link
-              href="/beta/summer-prep/indicator-check"
-              className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#007B6C] hover:underline"
+              href="/project-workspace/policy-gap-2-0"
+              className="shrink-0 inline-flex items-center gap-1 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[11px] font-semibold text-[#004B7F] hover:underline"
             >
-              📈 Indicator Check
-            </Link>
-            <Link
-              href="/beta/summer-prep/synergies-tradeoffs"
-              className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#6667AB] hover:underline"
-            >
-              ⇄ Synergies &amp; Trade-offs
-            </Link>
-            <Link
-              href="/beta/summer-prep/policy-gaps-sectors"
-              className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#FF9933] hover:underline"
-            >
-              ◍ Policy Gaps — Transport &amp; Industry
+              Open in the Project Workspace →
             </Link>
           </div>
+
+          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+            {GAP_SUBMODULES.map((s) => (
+              <li key={s.href}>
+                <Link
+                  href={s.href}
+                  aria-current={s.current ? 'page' : undefined}
+                  className={`group flex h-full gap-2.5 rounded-lg border p-2.5 transition ${
+                    s.current
+                      ? 'border-[#E6E7E8] bg-white dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)]'
+                      : 'border-transparent hover:border-[#E6E7E8] hover:bg-white dark:hover:border-[var(--mh-border)] dark:hover:bg-[var(--mh-bg)]'
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-[14px] text-white"
+                    style={{ backgroundColor: s.accent }}
+                  >
+                    {s.icon}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-[9px] font-semibold uppercase tracking-wide text-[#54728C] dark:text-[var(--mh-muted)]">
+                      {s.tag}
+                      {s.current && ' · you are here'}
+                    </span>
+                    <span
+                      className="block text-[13px] font-semibold leading-snug text-[#3D5265] group-hover:underline dark:text-[var(--mh-fg)]"
+                      style={{ textDecorationColor: s.accent }}
+                    >
+                      {s.title}
+                    </span>
+                    <span className="mt-0.5 block text-[12px] leading-relaxed text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
+                      {s.desc}
+                    </span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* ── Summary cards ─────────────────────────────────────────────── */}

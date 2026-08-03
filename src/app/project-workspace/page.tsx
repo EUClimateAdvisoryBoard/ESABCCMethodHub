@@ -117,12 +117,16 @@ export default async function ProjectWorkspaceIndex() {
                     <div className="mt-4 flex flex-wrap gap-1.5">
                       {p.modules.map(m => {
                         const meta = moduleMeta(m.kind);
+                        // Every report page is the same *kind*, so the kind
+                        // label would repeat once per page ("Report page" ×5).
+                        // Those chips carry the page's own name instead.
+                        const label = m.kind === 'report-page' ? m.name : meta.label;
                         return (
                           <span
                             key={m.id}
                             className="inline-flex items-center rounded-full border border-grey-200 bg-grey-50 px-2.5 py-1 text-[11px] font-medium text-tertiary-dark"
                           >
-                            {meta.label}
+                            {label}
                           </span>
                         );
                       })}

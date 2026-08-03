@@ -307,6 +307,54 @@ export const RECIPES = {
     note: 'Cumulative count of EU-27 projects by announcement year, from the tracker’s own XLSX export. Reproduces the report’s 2023 count to within 8% (52 vs 48); spliced so the report baseline is unchanged.',
   },
 
+  // ── August 2026, batch 5: the three "no public data export" indicators.
+  //    All three publishers turned out to serve their numbers in a form a
+  //    script can read — a Chart.js dataset inlined in the page (I2 cement),
+  //    a `var markers` array inlined in the page (I7b), and a public WordPress
+  //    REST collection (I7c) — so none of them needs a browser, a licence or a
+  //    data request any more. What the two project maps still do not carry is
+  //    an announcement date, which is why their counts are stamped as
+  //    snapshots of the map on the run date rather than as a rebuilt series.
+  //    See docs-internal/indicator-check-nopublicapi-close-2026-08-03.md.
+  'esabcc-i2-cement-use': {
+    kind: 'chartjs-series', round: 1,
+    url: 'https://www.cementeurope.eu/about-us/key-facts-figures/',
+    label: 'CONSUMPTION EU27',
+    labelsNear: 2005,
+    toRepo: v => v / 1e6, // tonnes → Mt
+    sourceUrl: 'https://www.cementeurope.eu/about-us/key-facts-figures/',
+    sourceTitle:
+      'Cement Europe (formerly Cembureau), Key Facts & Figures · "Cement Production And Consumption EU 27 & Cement Europe 2000-2024" · CONSUMPTION EU27 dataset',
+    note: 'Direct — the chart’s inline dataset IS the report’s series, extended: it reproduces every year the report carries to the tonne (2005 = 232,290,000 t vs the report’s 232.3 Mt; 2013 = 142.2; 2020 = 159.2; 2021 = 170.5). The 2024 value (148.1 Mt) is the figure Cement Europe states in prose in its 2025 Activity Report. Still no CSV/XLSX/API — the numbers are a Chart.js dataset in the page HTML — so the parse is anchored on the dataset label, not its position.',
+  },
+  'esabcc-i7b-cement-projects': {
+    kind: 'map-marker-count', round: 0,
+    url: 'https://www.cementeurope.eu/innovation-projects/',
+    countries: [
+      'Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus', 'Czechia', 'Czech Republic', 'Denmark',
+      'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Ireland', 'Italy', 'Latvia',
+      'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Poland', 'Portugal', 'Romania', 'Slovakia',
+      'Slovenia', 'Spain', 'Sweden',
+    ],
+    sourceUrl: 'https://www.cementeurope.eu/innovation-projects/',
+    sourceTitle: 'Cement Europe, Map of Innovation Projects · EU-27 projects in the page’s inline `markers` array',
+    note: 'Snapshot, not a rebuilt series: the map carries no announcement date (its only year is the plant’s Operational Date), so the count is stamped with the run year. The report’s 62-in-2023 cannot be reproduced from the current map, and the step to this value is part growth and part re-curation.',
+  },
+  'esabcc-i7c-chemicals-projects': {
+    kind: 'cefic-project-count', round: 0,
+    endpoint: 'https://cefic.org/wp-json/wp/v2/gips',
+    taxonomyUrl: 'https://cefic.org/wp-json/wp/v2/taxonomy-country',
+    countries: [
+      'Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus', 'Czechia', 'Czech Republic', 'Denmark',
+      'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Ireland', 'Italy', 'Latvia',
+      'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'The Netherlands', 'Poland', 'Portugal',
+      'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden',
+    ],
+    sourceUrl: 'https://cefic.org/solutions-explained/low-carbon-technologies-projects/',
+    sourceTitle: 'Cefic, Low-Carbon Technologies Projects Map · /wp-json/wp/v2/gips, projects with at least one EU-27 country tag',
+    note: 'Snapshot, not a rebuilt series: the only date on a record is its website posting date, and those cluster in the twice-yearly batches Cefic republishes the map in, so they date the curation and not the announcement. Counted as projects carrying at least one EU-27 country tag (several are multi-country).',
+  },
+
   // ── July 2026, batch 4: the three "known next step exists but is not
   //    built" indicators from the Update-status panel. See the fetchers
   //    (fetchOecdPatentShare, fetchAglinkBiofuelUse, fetchEuroferPdfSeries)
@@ -1692,6 +1740,130 @@ async function fetchEuroferPdfSeries({ listUrl, marker, match }) {
   return scored[0].pts;
 }
 
+/** A browser UA — all three publisher sites below 403 the default fetch UA. */
+const BROWSER_UA =
+  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36';
+
+async function fetchPage(url) {
+  const res = await fetch(url, { headers: { 'User-Agent': BROWSER_UA } });
+  if (!res.ok) throw new Error(`${url} → ${res.status} ${res.statusText}`);
+  return res.text();
+}
+
+/**
+ * Cement Europe (formerly Cembureau) — the Key Facts & Figures Chart.js series.
+ * ---------------------------------------------------------------------------
+ * Apparent cement use came to the report from Cembureau on request, and was
+ * recorded as having no public API or recurring data file. Half of that is now
+ * out of date: after the rebrand (cembureau.eu 301s to cementeurope.eu) the Key
+ * Facts & Figures page publishes "Cement Production And Consumption EU 27 &
+ * Cement Europe, 2000-2024" as a Chart.js line chart whose four datasets sit
+ * inline in the page HTML, in tonnes, one value per year.
+ *
+ * There is still no CSV/XLSX/API — the numbers live in a `new Chart(…)` call —
+ * but that is a static-HTML parse, not a browser job, so the series can be
+ * refreshed on the same schedule as everything else. Two guards make the parse
+ * safe against a page redesign: the dataset is selected by its `label` rather
+ * than by position, and the labels array must be the same length as the data
+ * array. The anchor check downstream then verifies the result against the
+ * report's own last year.
+ *
+ * The CONSUMPTION EU27 dataset reproduces this indicator's stored values to the
+ * tonne for every year the report carries (2005 = 232,290,000 t against the
+ * report's 232.3 Mt; 2013 = 142.2; 2020 = 159.2; 2021 = 170.5), and its 2024
+ * value — 148,091,000 t — is the figure Cement Europe states in prose in its
+ * 2025 Activity Report ("148.1 million tonnes in the EU27").
+ */
+async function fetchChartJsSeries({ url, label, labelsNear }) {
+  const html = await fetchPage(url);
+  // The dataset object: {…label: 'CONSUMPTION EU27', … data: [ … ]}. Anchor on
+  // the label so a reordered chart cannot silently swap in a different series.
+  const dsRe = new RegExp(
+    `label:\\s*'${label.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')}'[^}]*?data:\\s*\\[([^\\]]*)\\]`,
+  );
+  const ds = dsRe.exec(html);
+  if (!ds) throw new Error(`Chart.js: no dataset labelled "${label}" at ${url}`);
+  const values = ds[1].split(',').map(s => Number(s.trim())).filter(Number.isFinite);
+
+  // The x-axis labels are declared as `const labels_<id> = ["2000", …]`. Take
+  // the one whose length matches the data array; ambiguity is an error rather
+  // than a guess, because mis-pairing shifts every value onto the wrong year.
+  const candidates = [...html.matchAll(/labels_\d+\s*=\s*\[([^\]]*)\]/g)]
+    .map(m => m[1].split(',').map(s => Number(s.replace(/["'\s]/g, ''))))
+    .filter(ys => ys.length === values.length && ys.every(y => y >= 1900 && y <= 2100));
+  const years = candidates.find(ys => !labelsNear || ys.includes(labelsNear));
+  if (!years) {
+    throw new Error(`Chart.js: no year-label array of length ${values.length} at ${url}`);
+  }
+  return years.map((year, i) => ({ year, value: values[i] }));
+}
+
+/**
+ * Cement Europe — count of EU-27 projects on the Map of Innovation Projects.
+ * ---------------------------------------------------------------------------
+ * The host the report cited (lowcarboneconomy.cembureau.eu) is gone; the map
+ * now lives at cementeurope.eu/innovation-projects/, and its whole project
+ * database is inlined in the page as a `var markers = [ … ]` array — country,
+ * technology, 5C category, EU funding programme and scale status per project.
+ * So this is a static-HTML parse, not the headless-browser job it was once
+ * written off as.
+ *
+ * What the map does NOT carry is an announcement date: the only year on a
+ * record is its "Operational Date", the year the plant runs (some of them in
+ * the future). The count is therefore a SNAPSHOT of the map as it stands on the
+ * run date, stamped with the run year — not a reconstruction of the count in
+ * any earlier year. The report's own 62-in-2023 cannot be rebuilt from it, and
+ * the step from that value to this one is part real growth and part
+ * re-curation of the map. The indicator description says so.
+ */
+async function fetchMapMarkerCount({ url, countries }) {
+  const html = await fetchPage(url);
+  const arr = /var\s+markers\s*=\s*(\[[\s\S]*?\]);/.exec(html);
+  if (!arr) throw new Error(`cement map: no \`var markers\` array at ${url}`);
+  const records = arr[1].split(/projectName:/).slice(1);
+  if (records.length < 20) throw new Error(`cement map: only ${records.length} projects parsed — page shape changed?`);
+  const set = new Set(countries);
+  const count = records.filter(r => {
+    const m = /countries:\s*\[([^\]]*)\]/.exec(r);
+    if (!m) return false;
+    return [...m[1].matchAll(/`([^`]*)`/g)].some(c => set.has(c[1].trim()));
+  }).length;
+  if (count === 0) throw new Error('cement map: no EU-27 project matched — country labels changed?');
+  return [{ year: new Date().getUTCFullYear(), value: count }];
+}
+
+/**
+ * Cefic — count of EU-27 projects on the Low-Carbon Technologies Projects Map.
+ * ---------------------------------------------------------------------------
+ * The map is a React app with no numbers in its HTML, but it renders from a
+ * public WordPress REST collection: /wp-json/wp/v2/gips returns every project
+ * with a country taxonomy, 100 per page, and X-WP-Total gives the count
+ * directly. Country term ids resolve against /wp-json/wp/v2/taxonomy-country.
+ *
+ * Same time caveat as the cement map, and for the same reason: the only date on
+ * a record is its website posting date, and those cluster in the batches Cefic
+ * republishes the map in (it is updated twice a year), so they date the
+ * curation, not the announcement. This is a snapshot stamped with the run year.
+ */
+async function fetchCeficProjectCount({ endpoint, taxonomyUrl, countries }) {
+  const terms = JSON.parse(await fetchPage(`${taxonomyUrl}?per_page=100`));
+  const names = new Map(terms.map(t => [t.id, t.name]));
+  const set = new Set(countries);
+
+  const projects = [];
+  for (let page = 1; page <= 20; page++) {
+    const batch = JSON.parse(await fetchPage(`${endpoint}?per_page=100&page=${page}`));
+    projects.push(...batch);
+    if (batch.length < 100) break;
+  }
+  if (projects.length < 50) throw new Error(`Cefic map: only ${projects.length} projects returned`);
+  const count = projects.filter(p =>
+    (p['taxonomy-country'] ?? []).some(id => set.has(names.get(id)))
+  ).length;
+  if (count === 0) throw new Error('Cefic map: no EU-27 project matched — taxonomy changed?');
+  return [{ year: new Date().getUTCFullYear(), value: count }];
+}
+
 let _eea = null;
 async function getEeaRows() {
   if (_eea) return _eea;
@@ -1868,7 +2040,13 @@ async function main() {
                           ? await fetchAglinkBiofuelUse(rec)
                           : rec.kind === 'eurofer-pdf'
                             ? await fetchEuroferPdfSeries(rec)
-                            : await fetchEea(rec);
+                            : rec.kind === 'chartjs-series'
+                              ? await fetchChartJsSeries(rec)
+                              : rec.kind === 'map-marker-count'
+                                ? await fetchMapMarkerCount(rec)
+                                : rec.kind === 'cefic-project-count'
+                                  ? await fetchCeficProjectCount(rec)
+                                  : await fetchEea(rec);
     } catch (e) {
       console.error(`! ${id}: fetch failed — ${e.message}`);
       provenance.push({ ...meta, status: 'error', message: e.message });

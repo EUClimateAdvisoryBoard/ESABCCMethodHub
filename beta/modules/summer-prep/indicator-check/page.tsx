@@ -339,8 +339,9 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
             All of the old report’s progress indicators, read for movement. Where an indicator has
             gained data since January 2024, this shows the report baseline, the newest two–three
             points, and the arithmetic change between the two. Where it has not, the card says so
-            and gives the reason — a source that stopped publishing, one with no machine-readable
-            export, or data that simply is not out yet. Click an indicator to open its full series
+            and gives the reason — a source that stopped publishing, one behind a subscription, a
+            number withheld because it would mislead, or data that simply is not out yet. Click an
+            indicator to open its full series
             in the Policy Gap 2.0 Project Workspace — every value shown here is read from that
             workspace’s indicator database, so the two views always match.
           </>
@@ -509,6 +510,10 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
             notes, including the routes that were tried and closed, are in{' '}
             <code className="rounded bg-[#EEF1F4] px-1 py-0.5 text-[10px] dark:bg-transparent">
               docs-internal/indicator-check-source-refresh-2026-07-30.md
+            </code>{' '}
+            and{' '}
+            <code className="rounded bg-[#EEF1F4] px-1 py-0.5 text-[10px] dark:bg-transparent">
+              docs-internal/indicator-check-nopublicapi-close-2026-08-03.md
             </code>
             .
           </p>
@@ -768,7 +773,8 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
           Provenance: every value is read verbatim from the Policy Gap 2.0 Project Workspace
           indicator database — the same series the workspace’s Indicator Database tab shows, so
           nothing appears here that is not also in the workspace. Post-report points are figures
-          the primary publisher (Eurostat / EEA / EAFO / IRENA / EHPA) released after the
+          the primary publisher (Eurostat / EEA / EAFO / IRENA / EHPA, and for the industry
+          project-count and cement-use series Cement Europe and Cefic) released after the
           January-2024 report. The percentage shown is the arithmetic change from the report
           baseline to the latest value (▲ = the value rose, ▼ = it fell); no better/worse
           interpretation is applied. Where the report’s last figure is a 2020/2021 year that sits
@@ -778,7 +784,12 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
           than hidden, each with the tested reason it has none: “not published yet” means the data
           is expected and nothing needs doing, the other labels mean someone has to go and get it.
           Reasons and what would unblock each one are recorded in
-          docs-internal/indicator-check-source-refresh-2026-07-30.md.
+          docs-internal/indicator-check-source-refresh-2026-07-30.md and
+          docs-internal/indicator-check-nopublicapi-close-2026-08-03.md. Two of the industry
+          series — the cement and chemicals project counts — carry a post-report point that is a
+          snapshot of the publisher’s project map on the day it was read, not a rebuilt series:
+          neither map dates a project by its announcement, so the change against the report mixes
+          real growth with re-curation of the map. Each card says so.
         </p>
       </main>
       <SiteFooter />

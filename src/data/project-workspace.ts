@@ -25,6 +25,11 @@ export type WorkspaceModuleKind =
   | 'content-analysis'
   | 'meetings'
   | 'literature-watch'
+  // One page of a report module (the Policy Gap 2.0 Report, the Industry
+  // Report) surfaced as a project tab. The page lives in `beta/modules/…`;
+  // the module carries the pointer and the description, from the catalogue in
+  // `src/data/workspace-report-pages.ts`, keyed by module id.
+  | 'report-page'
   | 'custom';
 
 export interface WorkspaceModule {
@@ -115,6 +120,46 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'screened every morning and matched to this project. Read the ' +
           'daily screening report and pick the papers worth a closer look.',
       },
+      // ── The Policy Gap 2.0 Report’s own pages ───────────────────────────
+      // The tools above hold the data; these are the report surfaces built on
+      // it. Descriptions and links come from WORKSPACE_REPORT_PAGES.
+      {
+        id: 'gap-tracker',
+        kind: 'report-page',
+        name: 'Policy Gap Tracker',
+        featured: true,
+        description:
+          'Every policy, ambition and implementation gap and inconsistency the ' +
+          'Board identified across all 12 report chapters — editable, filterable ' +
+          'and exportable, with the verbatim report quote and page behind each finding.',
+      },
+      {
+        id: 'indicator-check',
+        kind: 'report-page',
+        name: 'Indicator Check',
+        description:
+          'Note 1 · all sectors. What has moved, data-wise, since the last ' +
+          'report: the report’s progress indicators read for movement against ' +
+          'their own baseline, on this project’s indicator database.',
+      },
+      {
+        id: 'synergies-tradeoffs',
+        kind: 'report-page',
+        name: 'Synergies & Trade-offs',
+        description:
+          'Note 2 · industry & transport. Where cutting emissions also builds ' +
+          'climate resilience — and where it works against it — mapped ' +
+          'subsector by subsector.',
+      },
+      {
+        id: 'policy-gaps-sectors',
+        kind: 'report-page',
+        name: 'Policy Gaps — Transport & Industry',
+        description:
+          'Note 3 · extends the gap tracker. Do the transport- and ' +
+          'industry-tagged gaps still exist after the legislation adopted since ' +
+          'the report, and where are the candidates for additional ones?',
+      },
     ],
   },
   {
@@ -151,6 +196,53 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'New peer-reviewed publications on industrial decarbonisation — ' +
           'steel, cement, hydrogen, CBAM, CCS/CCU — screened every morning ' +
           'from the relevant journals and matched to this project.',
+      },
+      // ── The Industry Report’s own pages ─────────────────────────────────
+      // The five sub-pages of the Industry Report module (M · 35 Summer Prep,
+      // formerly M · 34 Overview Industry). Links and descriptions come from
+      // WORKSPACE_REPORT_PAGES.
+      {
+        id: 'cleantech',
+        kind: 'report-page',
+        name: 'Clean Tech',
+        featured: true,
+        description:
+          'The collapsible emissions wheel of EU manufacturing (NACE Section C ' +
+          '→ subsectors → levers with cost, readiness and real investment ' +
+          'decisions), plus the clean-tech industries’ role outside industry.',
+      },
+      {
+        id: 'trade-flows',
+        kind: 'report-page',
+        name: 'Trade flows',
+        description:
+          'The input–output map of EU-27 manufacturing trade with its ' +
+          'critical-dependencies dashboard, on live Eurostat data.',
+      },
+      {
+        id: 'downstream',
+        kind: 'report-page',
+        name: 'Downstream',
+        description:
+          'The review of EU lead-market policies (procurement, quotas, CBAM) ' +
+          'documented along the five Better Regulation criteria.',
+      },
+      {
+        id: 'report-objectives',
+        kind: 'report-page',
+        name: 'Industry report — objectives',
+        description:
+          'Roadmap & clean-tech syntheses and the report objectives, with a ' +
+          'fully sourced Excel download.',
+      },
+      {
+        id: 'optimization',
+        kind: 'report-page',
+        name: 'Optimization',
+        description:
+          'A SEAMAPS-style least-cost optimization model (Julia/JuMP) of the EU ' +
+          'energy-intensive subsectors — sourced inputs, the commented solver ' +
+          'code, sensitivity runs and the key findings.',
       },
     ],
   },
