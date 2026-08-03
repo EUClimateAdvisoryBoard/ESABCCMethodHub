@@ -127,7 +127,7 @@ def factcheck_index(factcheck):
     return out
 
 
-def build(data, calc, factcheck, out_path=None, wb=None):
+def build(data, calc, factcheck, out_path=None, wb=None, links=None):
     """
     Render the Indicator Check workbook.
 
@@ -137,6 +137,11 @@ def build(data, calc, factcheck, out_path=None, wb=None):
     Embedded (combined workbook): pass an existing `wb` — its sheets are
     appended to (no "Read me" of its own; the caller supplies one merged
     "Read me" instead), and nothing is saved here. `out_path` is ignored.
+
+    `links` is a link_derivations.DerivationLinks registry, or None. When
+    given, every cell holding an indicator-year value is marked so the caller
+    can wire it to the Derivations sheet once that sheet exists; the standalone
+    workbook has no Derivations sheet and passes None.
     """
     standalone = wb is None
     inds = [i for i in data["indicators"]]
@@ -295,6 +300,8 @@ def build(data, calc, factcheck, out_path=None, wb=None):
         src_cell = ov.cell(row=row, column=13)
         src_cell.font = SMALL_FONT
         link_cell(src_cell, detect_link(ind.get("source")))
+        if links and l:
+            links.mark(ov, row, 8, ind["id"], l["year"])
     last = first + len(inds) - 1
     ov.auto_filter.ref = f"A{head_row}:M{last}"
 
@@ -448,10 +455,15 @@ def build(data, calc, factcheck, out_path=None, wb=None):
                 sh.cell(row=r + n, column=1).number_format = "0"
                 for col in (2, 3):
                     sh.cell(row=r + n, column=col).number_format = "#,##0.00"
+                if links:
+                    links.mark(sh, r + n, 3 if is_post else 2, ind["id"], d["year"])
             # Join the two lines: repeat the last report value in the post column.
             if last_pre_idx is not None and rd["post"]:
                 sh.cell(row=t_first + last_pre_idx, column=3,
                         value=data_rows[last_pre_idx]["value"]).number_format = "#,##0.00"
+                if links:
+                    links.mark(sh, t_first + last_pre_idx, 3, ind["id"],
+                               data_rows[last_pre_idx]["year"])
             t_last = t_first + len(data_rows) - 1
 
             if len(data_rows) < 2:
@@ -508,6 +520,8 @@ def build(data, calc, factcheck, out_path=None, wb=None):
             lg.cell(row=row, column=7).font = Font(name=FONT_SEMI, size=9,
                                                    color=ACCENT_ORANGE if post else TEAL)
             lg.cell(row=row, column=9).font = SMALL_FONT
+            if links:
+                links.mark(lg, row, 6, ind["id"], d["year"])
             row += 1
     lg.auto_filter.ref = f"A1:I{row - 1}"
 

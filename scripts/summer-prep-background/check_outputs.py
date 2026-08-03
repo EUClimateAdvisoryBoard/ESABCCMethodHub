@@ -12,7 +12,10 @@ It also checks the structural things a reader would notice first: the expected
 sheets exist, the charts are attached, no cell is left holding an Excel error,
 and the Word note carries only styles that exist in the ESABCC template.
 
-Usage:  python3 check_outputs.py data.json calc.json outdir
+Usage:  python3 check_outputs.py data.json calc.json outdir [template.dotx]
+
+The template is optional — it is the Board's own file and is not in the
+repository. Without it the one check that needs it is reported as skipped.
 """
 
 import json
@@ -26,6 +29,7 @@ from openpyxl import load_workbook
 
 FAIL = []
 OK = []
+SKIPPED = []
 
 
 def check(cond, msg):
@@ -292,8 +296,78 @@ def check_combined(outdir):
                    if isinstance(c.value, str) and c.value.startswith("="))
     check(formulas > 0, f"combined Derivations sheet carries live formulas ({formulas})")
 
+    check_derivation_wiring(wb, dv)
+
+    check(wb.sheetnames[1:3] == ["Dashboard", "Dashboard data"],
+          f"the dashboard and its source sheet follow the Read me ({wb.sheetnames[1:3]})")
+    check(wb["Dashboard data"].sheet_state == "hidden",
+          "the dashboard's source blocks are hidden")
+    check(len(wb["Dashboard"]._charts) > 0,
+          f"the dashboard carries its figures ({len(wb['Dashboard']._charts)})")
+
     charts = sum(len(wb[s]._charts) for s in wb.sheetnames)
     check(charts > 0, f"combined workbook carries its charts ({charts})")
+
+
+def check_derivation_wiring(wb, dv):
+    """
+    Every `=Derivations!B<row>` written by link_derivations must land on a
+    Value cell that actually holds something. A reference into a title row, a
+    label row or past the end of the sheet renders as 0 and would quietly
+    replace a real figure with a zero — the one way this wiring can do damage.
+    """
+    dangling, refs = [], 0
+    for name in wb.sheetnames:
+        if name == "Derivations":
+            continue
+        for row in wb[name].iter_rows():
+            for c in row:
+                m = isinstance(c.value, str) and re.fullmatch(r"=Derivations!B(\d+)", c.value)
+                if not m:
+                    continue
+                refs += 1
+                target = dv.cell(row=int(m.group(1)), column=2).value
+                if target is None or (isinstance(target, str) and not target.startswith("=")):
+                    dangling.append(f"{name}!{c.coordinate} -> B{m.group(1)}={target!r}")
+    check(refs > 0, f"the workbook's figures are wired to Derivations ({refs} cells)")
+    check(not dangling,
+          f"every Derivations reference lands on a value cell ({dangling[:3]})")
+
+    # Landing on *a* value cell is not enough — it has to be the right
+    # indicator's right year. Data (long) is the one sheet that names both in
+    # the same row, so it can be checked against the Derivations blocks
+    # without trusting the builder's own bookkeeping. An off-by-one in the row
+    # index would show up here as a wholesale mismatch.
+    owner = derivation_row_owners(dv)
+    wrong = []
+    lg = wb["Data (long)"]
+    for row in lg.iter_rows(min_row=2):
+        m = isinstance(row[5].value, str) and re.fullmatch(r"=Derivations!B(\d+)", row[5].value)
+        if not m:
+            continue
+        want = (row[0].value, row[4].value)
+        got = owner.get(int(m.group(1)))
+        if got != want:
+            wrong.append(f"{row[5].coordinate}: {want} -> {got}")
+    check(not wrong,
+          f"every wired point in Data (long) resolves to its own indicator-year ({wrong[:3]})")
+
+
+def derivation_row_owners(dv):
+    """Row on the Derivations sheet -> (indicator code, year) it belongs to."""
+    owner, code = {}, None
+    for row in dv.iter_rows(min_col=1, max_col=2):
+        a, b = row[0].value, row[1].value
+        # A block title is "<code> · <name>  (<unit>)". The lines under it —
+        # the kind label, "Refreshed for …", "Derivation:  Value = …" — can
+        # also contain a middle dot, so they are excluded explicitly.
+        if (isinstance(a, str) and b is None and " · " in a
+                and a.endswith(")") and "  (" in a
+                and not a.startswith(("Derivation:", "Refreshed for"))):
+            code = a.split(" · ")[0].strip()
+        elif isinstance(a, int) and code:
+            owner[row[0].row] = (code, a)
+    return owner
 
     doi_links = 0
     for name in wb.sheetnames:
@@ -324,9 +398,15 @@ def check_docx(path, template):
     have = set(re.findall(r'w:styleId="([^"]+)"', styles))
     used = set(re.findall(r'w:(?:pStyle|tblStyle) w:val="([^"]+)"', doc))
     check(not used - have, f"Word note uses only template styles (missing: {sorted(used - have)})")
-    with zipfile.ZipFile(template) as z:
-        tpl_styles = z.read("word/styles.xml").decode("utf8")
-    check(styles == tpl_styles, "Word note keeps the template's style sheet byte-for-byte")
+    # The .dotx is the Board's own file and is not in the repository, so this
+    # comparison only runs when a copy is passed in. Skipping it is reported,
+    # not silently dropped — a run without the template proves less.
+    if template:
+        with zipfile.ZipFile(template) as z:
+            tpl_styles = z.read("word/styles.xml").decode("utf8")
+        check(styles == tpl_styles, "Word note keeps the template's style sheet byte-for-byte")
+    else:
+        SKIPPED.append("template style sheet comparison (no .dotx passed)")
     check("wordprocessingml.document.main+xml" in cts, "Word note is a .docx, not a template")
     from xml.etree import ElementTree as ET
     ET.fromstring(doc)
@@ -371,11 +451,15 @@ def main(data_path, calc_path, outdir, template):
 
     for m in OK:
         print(f"  ok   {m}")
+    for m in SKIPPED:
+        print(f"  skip {m}")
     for m in FAIL:
         print(f"  FAIL {m}")
-    print(f"\n{len(OK)} checks passed, {len(FAIL)} failed")
+    print(f"\n{len(OK)} checks passed, {len(FAIL)} failed, {len(SKIPPED)} skipped")
     sys.exit(1 if FAIL else 0)
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    # The .dotx is optional: pass it to include the template style-sheet check.
+    main(sys.argv[1], sys.argv[2], sys.argv[3],
+         sys.argv[4] if len(sys.argv) > 4 else None)

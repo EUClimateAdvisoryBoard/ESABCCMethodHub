@@ -85,7 +85,8 @@ def read(ind):
 
 # ── A. the one big figure ───────────────────────────────────────────────────
 
-def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The one big figure"):
+def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The one big figure",
+                            links=None):
     """
     Render the "everything that has moved" figure.
 
@@ -147,6 +148,9 @@ def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The 
         ws.cell(row=row, column=10).number_format = "+0.0%;-0.0%;0.0%"
         ws.cell(row=row, column=10).alignment = Alignment(horizontal="right", vertical="center")
         ws.cell(row=row, column=11).font = SMALL_FONT
+        if links:
+            links.mark(ws, row, 6, ind["id"], b["year"])
+            links.mark(ws, row, 8, ind["id"], l["year"])
     last = first + len(updated) - 1
     ws.auto_filter.ref = f"A{head}:K{last}"
 
@@ -174,8 +178,10 @@ def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The 
               "additions, ZEV shares) move by large percentages by nature.", width=11)
     note_line(ws, last + 3,
               "Source: ESABCC (2024) “Towards EU climate neutrality”, progress indicators, extended with the "
-              "post-publication points in the Policy Gap 2.0 indicator database. Every post-report value was "
-              "re-checked against its primary source on 27 July 2026 (see the “Source check” column).",
+              "post-publication points in the Policy Gap 2.0 indicator database. The “Source check” column "
+              f"carries the 27 July 2026 fact-check, which covers {sum(1 for i in updated if i['id'] in fc)} of "
+              f"these {len(updated)} indicators; series refreshed since that check show “—” rather than a "
+              "verdict, and have not been re-checked against their source.",
               width=11)
 
     # A second view: the new points per chapter, so coverage is visible too.
@@ -245,7 +251,7 @@ def derivation_kind(iid, calc, reportway):
     return "switched" if expr.startswith("IF(") else "reconstructed"
 
 
-def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None):
+def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None, links=None):
     """
     Render the Old-vs-New-with-derivations workbook.
 
@@ -302,8 +308,9 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None):
             "year switch is deliberate — the two are different derivations, and both are shown.",
             "• Where an indicator is a published figure with no derivation, the input column simply carries that "
             "figure and names the publication. Nothing is left blank.",
-            "• Every post-report value was re-checked against its primary source on 27 July 2026; the verdict is in "
-            "the “Source check” column of the Old vs new sheet.",
+            "• The “Source check” column of the Old vs new sheet carries the 27 July 2026 fact-check verdict. It "
+            "covers the post-report values as they stood on that date; series refreshed since show “—” there, "
+            "which means not yet re-checked — not that the check passed.",
         ]:
             r = note_line(ws, r, line, width=8, font=BODY_FONT)
             ws.row_dimensions[r - 1].height = 30
@@ -357,6 +364,11 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None):
         src_cell = ov.cell(row=r + n, column=13)
         src_cell.font = SMALL_FONT
         link_cell(src_cell, detect_link(ind.get("source")))
+        if links:
+            if b:
+                links.mark(ov, r + n, 6, ind["id"], b["year"])
+            if l:
+                links.mark(ov, r + n, 8, ind["id"], l["year"])
     ov.auto_filter.ref = f"A{head}:M{head + len(inds)}"
 
     # ── Derivations: the calc grid, with live formulas ─────────────────────
@@ -453,6 +465,14 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None):
                     cell.font = Font(name=FONT, size=9, color=INK, bold=(ci == 0))
                 cell.number_format = "#,##0.000"
                 cell.alignment = Alignment(horizontal="right", vertical="center")
+            # Column 0 is Value: record where this indicator-year landed, and
+            # what the block computes for it, so the rest of the workbook can
+            # be wired to this cell where the two already agree.
+            if links:
+                stored = rowdata["cells"][0] if rowdata["cells"] else None
+                if isinstance(stored, dict):
+                    stored = stored.get("v")
+                links.derivation(ind["id"], rowdata["year"], r, stored)
             r += 1
         r += 2
     note_line(dv, r, "Notes: a formula of the form =IF(A…>=2023, ROUND(<live-source recipe>), <report recipe>) "

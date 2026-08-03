@@ -43,8 +43,10 @@ import sys
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 
+import build_dashboard as dashboard
 import build_indicator_check as check
 import build_indicator_overview as overview
+from link_derivations import DerivationLinks
 from esabcc_style import (
     BODY_FILL, BODY_FONT, FONT_SEMI, H2_FONT, TEAL, TEAL_PALE,
     header_row, note_line, set_widths, sheet_setup, title_block,
@@ -76,13 +78,25 @@ def build(data, calc, calc_excel, factcheck, reportway, out_path=None, wb=None):
     fc = _collapse_factcheck(factcheck)
     reads = {i["id"]: overview.read(i) for i in inds}
 
-    # ── merged Read me ───────────────────────────────────────────────────────
     if standalone:
         wb = Workbook()
-        ws = wb.active
-        ws.title = "Read me"
-    else:
-        ws = wb.create_sheet("Read me", 0)
+        wb.remove(wb.active)
+
+    # ── the three source builders, into the same workbook ───────────────────
+    # They run BEFORE the Read me because the Read me describes what the
+    # Derivations wiring managed to connect, which is only known once the
+    # Derivations sheet exists.
+    links = DerivationLinks()
+    check.build(data, calc, factcheck, wb=wb, links=links)
+    overview.build_new_data_overview(inds, reads, fc, wb=wb, title="New data", links=links)
+    overview.build_old_vs_new(inds, reads, calc_excel, fc, reportway, wb=wb, links=links)
+
+    backed = links.backed_indicators([i["id"] for i in inds])
+    dashboard.build_dashboard(inds, reads, factcheck, backed, wb, PREPARED, links=links)
+    links.apply(wb)
+
+    # ── merged Read me ───────────────────────────────────────────────────────
+    ws = wb.create_sheet("Read me", 0)
     sheet_setup(ws)
     set_widths(ws, [24, 22, 22, 22, 22, 20, 16, 16])
     updated = [i for i in inds if reads[i["id"]]["post"]]
@@ -101,6 +115,10 @@ def build(data, calc, calc_excel, factcheck, reportway, out_path=None, wb=None):
     ws.cell(row=r, column=1, value="What is in this workbook").font = H2_FONT
     r += 1
     groups = [
+        ("Dashboard", "The module at a glance: key figures, the largest moves since the report as a diverging "
+                     "bar, chapter coverage, four headline trend lines and — where a target exists — a "
+                     f"distance-to-target panel. Its source blocks live on the hidden '{dashboard.DATA_SHEET}' "
+                     "sheet."),
         ("Overview", "All indicators in one table — baseline, latest value, change — plus the two overview "
                      "figures: the largest moves since the report, and how many indicators have new data per "
                      "chapter. Part of the Indicator Check."),
@@ -137,6 +155,24 @@ def build(data, calc, calc_excel, factcheck, reportway, out_path=None, wb=None):
         r += 1
     r += 1
 
+    ws.cell(row=r, column=1, value="How the numbers stay in sync").font = H2_FONT
+    r += 1
+    for line in [
+        f"• Derivations is the single source of truth for every derivation-backed indicator ({backed} of the "
+        f"{len(inds)}): edit an input cell there, and every other cell built from it — Overview, the chapter "
+        "tabs, Data (long), New data, Old vs new, and the Dashboard — recomputes on the workbook's next "
+        "recalculation, because those cells are live formulas pointing at Derivations, not pasted numbers.",
+        f"• A cell only carries that live link where the Derivations value it points at already agrees with "
+        f"the stored data point to within {links.tolerance:.1%} — a bigger gap is left as a plain number "
+        "instead of being wired over silently, on the view that a genuine derivation-vs-data discrepancy "
+        "should stay visible.",
+        f"• Indicators with no Derivations block ({len(inds) - backed} of the {len(inds)}) keep their figures "
+        "as plain numbers throughout, exactly as before this workbook wired the rest together.",
+    ]:
+        r = note_line(ws, r, line, width=8, font=BODY_FONT)
+        ws.row_dimensions[r - 1].height = 34
+    r += 1
+
     ws.cell(row=r, column=1, value="Exact dataset links").font = H2_FONT
     r += 1
     for line in [
@@ -168,10 +204,11 @@ def build(data, calc, calc_excel, factcheck, reportway, out_path=None, wb=None):
         ws.row_dimensions[r].height = 34
         r += 1
 
-    # ── the three source builders, into the same workbook ───────────────────
-    check.build(data, calc, factcheck, wb=wb)
-    overview.build_new_data_overview(inds, reads, fc, wb=wb, title="New data")
-    overview.build_old_vs_new(inds, reads, calc_excel, fc, reportway, wb=wb)
+    # The book opens on the orientation page, then the dashboard; the
+    # dashboard's hidden source blocks sit directly behind it.
+    for target, name in enumerate(["Read me", "Dashboard", dashboard.DATA_SHEET]):
+        if name in wb.sheetnames:
+            wb.move_sheet(name, offset=target - wb.sheetnames.index(name))
 
     if standalone:
         wb.calculation.fullCalcOnLoad = True
@@ -180,7 +217,8 @@ def build(data, calc, calc_excel, factcheck, reportway, out_path=None, wb=None):
         wb.properties.creator = "ESABCC Method Hub"
         wb.save(out_path)
         print(f"wrote {out_path}: {len(wb.sheetnames)} sheets, {len(inds)} indicators, "
-              f"{len(updated)} with new data")
+              f"{len(updated)} with new data, {links.linked} cells wired to Derivations "
+              f"({links.held_back} held back as plain numbers)")
     return wb
 
 
