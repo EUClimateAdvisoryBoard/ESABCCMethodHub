@@ -12,15 +12,15 @@
  * state keyed on them survives regeneration. Reviewed corrections from the
  * fact-check pass are applied from scripts/policy-targets-overrides.json.
  *
- * 829 targets across 61 acts.
- *   label:            {"target":348,"other":184,"objective":132,"commitment":158,"goal":7}
- *   obligation:       {"mandatory":568,"voluntary":261}
- *   type:             {"qualitative":256,"quantitative":368,"unspecified":205}
- *   climate_relevance:{"mitigation":325,"none":275,"adaptation":183,"both":46}
- *   relevant (lens):  {"true":551,"false":278}
- *   target_order:     {"2":1,"null":828}
- *   revise_flag:      {"false":829}
- *   (91 candidates rejected as non-verbatim / out of scope)
+ * 819 targets across 61 acts.
+ *   label:            {"target":341,"other":184,"objective":129,"commitment":158,"goal":7}
+ *   obligation:       {"mandatory":559,"voluntary":260}
+ *   type:             {"qualitative":252,"quantitative":364,"unspecified":203}
+ *   climate_relevance:{"mitigation":320,"none":272,"adaptation":181,"both":46}
+ *   relevant (lens):  {"true":544,"false":275}
+ *   target_order:     {"2":1,"null":818}
+ *   revise_flag:      {"false":819}
+ *   (89 candidates rejected as non-verbatim / out of scope)
  */
 import type { RawPolicyTarget } from './policy-targets';
 
@@ -6724,66 +6724,6 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 1 — Subject matter and scope (similarity 0.25)"
   },
   {
-    "id": "tgt-68a73bf3",
-    "policy_id": "effort-sharing-regulation",
-    "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation, consolidated as amended by Regulation (EU) 2023/857)",
-    "policy_short": "Effort Sharing Regulation (consolidated)",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 1 — Subject matter",
-    "target_text": "This Regulation lays down obligations on Member States with respect to their minimum contributions for the period from 2021 to 2030 to fulfilling the Union’s target of reducing its greenhouse gas emissions by 40 % below 2005 levels in 2030 in the sectors covered by Article 2 of this Regulation.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "for the period from 2021 to 2030 to fulfilling the Union’s target of reducing its greenhouse gas emissions by 40 % below 2005 levels in 2030 in the sectors covered by Article 2 of this Regulation",
-    "indicators": [
-      "greenhouse gas emissions"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R0842",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R0842-20230516",
-    "sectors": [],
-    "sector_evidence": {},
-    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
-    "relevant": true,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
-    "target_number": 2,
-    "duplicate_of": ""
-  },
-  {
-    "id": "tgt-2d1020f5",
-    "policy_id": "effort-sharing-regulation",
-    "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation, consolidated as amended by Regulation (EU) 2023/857)",
-    "policy_short": "Effort Sharing Regulation (consolidated)",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 1 — Subject matter",
-    "target_text": "It contributes to the long-term target of climate neutrality in the Union at the latest by 2050, with the aim of achieving negative emissions thereafter.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "by 2050",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R0842",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R0842-20230516",
-    "sectors": [],
-    "sector_evidence": {},
-    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
-    "relevant": true,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
-    "target_number": 3,
-    "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 2(1) — Climate-neutrality objective (similarity 0.26)"
-  },
-  {
     "id": "tgt-131f748f",
     "policy_id": "effort-sharing-regulation",
     "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation, consolidated as amended by Regulation (EU) 2023/857)",
@@ -6811,7 +6751,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
-    "target_number": 4,
+    "target_number": 2,
     "duplicate_of": ""
   },
   {
@@ -6844,36 +6784,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
-    "target_number": 5,
-    "duplicate_of": ""
-  },
-  {
-    "id": "tgt-bd260fab",
-    "policy_id": "effort-sharing-regulation",
-    "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation, consolidated as amended by Regulation (EU) 2023/857)",
-    "policy_short": "Effort Sharing Regulation (consolidated)",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 4 — Annual emission levels for the period from 2021 to 2030",
-    "target_text": "If the sum of all Member States’ total quantities exceeds the collective total of 100 million, the total quantities for each Member State shall be reduced on a pro rata basis so that the collective total is not exceeded.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R0842",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R0842-20230516",
-    "sectors": [],
-    "sector_evidence": {},
-    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emission”).",
-    "relevant": true,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
-    "target_number": 6,
+    "target_number": 3,
     "duplicate_of": ""
   },
   {
@@ -6902,7 +6813,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
-    "target_number": 7,
+    "target_number": 4,
     "duplicate_of": ""
   },
   {
@@ -6921,19 +6832,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "CO2 equivalent"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R0842-20230516",
     "sectors": [],
     "sector_evidence": {},
-    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "relevant": false,
+    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
+    "relevant": true,
     "target_order": null,
     "target_order_source": "",
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
-    "target_number": 8,
+    "target_number": 5,
     "duplicate_of": "Similar target: LULUCF Regulation — Article 13b — Land flexibility mechanism for the period from 2026 to 2030 (similarity 0.28)"
   },
   {
@@ -6962,39 +6873,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
-    "target_number": 9,
+    "target_number": 6,
     "duplicate_of": ""
-  },
-  {
-    "id": "tgt-9fa4440d",
-    "policy_id": "effort-sharing-regulation",
-    "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation, consolidated as amended by Regulation (EU) 2023/857)",
-    "policy_short": "Effort Sharing Regulation (consolidated)",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 15 — Review",
-    "target_text": "It shall also include an assessment of a reduction pathway for the greenhouse gas emissions covered by this Regulation that is compatible with the objective of climate neutrality at the latest by 2050, taking into account the projected indicative Union greenhouse gas budget referred to in Article 4(4) of Regulation (EU) 2021/1119 as well as the importance of promoting both fairness and solidarity among Member States and cost-effectiveness in achieving that objective.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "by 2050",
-    "indicators": [
-      "greenhouse gas emissions"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R0842",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R0842-20230516",
-    "sectors": [],
-    "sector_evidence": {},
-    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate neutrality”).",
-    "relevant": true,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
-    "target_number": 10,
-    "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 2(2) — Climate-neutrality objective (similarity 0.33)"
   },
   {
     "id": "tgt-d020f28f",
@@ -11077,7 +10957,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
     "target_number": 3,
-    "duplicate_of": "Similar target: Effort Sharing Regulation (consolidated) — Article 1 — Subject matter (similarity 0.26)"
+    "duplicate_of": ""
   },
   {
     "id": "tgt-33205bdb",
@@ -11108,7 +10988,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
     "target_number": 4,
-    "duplicate_of": "Similar target: Effort Sharing Regulation (consolidated) — Article 15 — Review (similarity 0.33)"
+    "duplicate_of": ""
   },
   {
     "id": "tgt-8bf4d88c",
@@ -11430,7 +11310,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
     "target_number": 14,
-    "duplicate_of": "Duplicate wording: Governance Regulation (consolidated) — Article 11 — Multilevel climate and energy dialogue (similarity 1.00)"
+    "duplicate_of": ""
   },
   {
     "id": "tgt-0d1c43a8",
@@ -11525,7 +11405,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
     "target_number": 17,
-    "duplicate_of": "Duplicate wording: Governance Regulation (consolidated) — Article 15 — Long-term strategies (similarity 1.00)"
+    "duplicate_of": "Duplicate wording: Governance Regulation (consolidated) — Article 15(1) — Long-term strategies (similarity 1.00)"
   },
   {
     "id": "tgt-2afa204b",
@@ -11554,7 +11434,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
     "target_number": 18,
-    "duplicate_of": "Duplicate wording: Governance Regulation (consolidated) — Article 17 — Integrated national energy and climate progress reports (similarity 1.00)"
+    "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 8 — Analytical basis of the integrated national energy and climate plans (similarity 0.29)"
   },
   {
     "id": "tgt-797c8191",
@@ -11583,7 +11463,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
     "target_number": 19,
-    "duplicate_of": "Duplicate wording: Governance Regulation (consolidated) — Article 29 — Assessment of progress (similarity 1.00)"
+    "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 8 — Analytical basis of the integrated national energy and climate plans (similarity 0.38)"
   },
   {
     "id": "tgt-182d72ef",
@@ -11618,7 +11498,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
     "target_number": 20,
-    "duplicate_of": "Duplicate wording: Governance Regulation (consolidated) — Article 45 — Review (similarity 1.00)"
+    "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 1 — Subject matter and scope (similarity 0.34)"
   },
   {
     "id": "tgt-6c18debe",
@@ -12887,45 +12767,6 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "duplicate_of": ""
   },
   {
-    "id": "tgt-2eac638f",
-    "policy_id": "european-health-union",
-    "policy_name": "Communication COM(2020) 724 — Building a European Health Union: Reinforcing the EU's resilience for cross-border health threats",
-    "policy_short": "European Health Union",
-    "document_type": "communication",
-    "policy_area": "Health",
-    "article": "EMA — Steering Group for Medical Devices",
-    "target_text": "The purpose is to improve the Union’s crisis preparedness and facilitate a coordinated Union-level response by setting a permanent structure to monitor and mitigate shortages of medical devices (a Steering Group for Medical Devices) and to ensure that industry and Member States submit the necessary data to facilitate the monitoring and possible mitigation measures.",
-    "target_label": "commitment",
-    "obligation": "voluntary",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "Steering Group for Medical Devices",
-      "medical device shortages"
-    ],
-    "climate_relevance": "adaptation",
-    "celex_number": "52020DC0724",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020DC0724",
-    "sectors": [
-      "health",
-      "industry"
-    ],
-    "sector_evidence": {
-      "industry": [
-        "industr*"
-      ]
-    },
-    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“preparedness”).",
-    "relevant": true,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "",
-    "target_number": 5,
-    "duplicate_of": ""
-  },
-  {
     "id": "tgt-74af2c95",
     "policy_id": "european-health-union",
     "policy_name": "Communication COM(2020) 724 — Building a European Health Union: Reinforcing the EU's resilience for cross-border health threats",
@@ -12959,7 +12800,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
-    "target_number": 6,
+    "target_number": 5,
     "duplicate_of": ""
   },
   {
@@ -12996,7 +12837,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
-    "target_number": 7,
+    "target_number": 6,
     "duplicate_of": ""
   },
   {
@@ -13032,7 +12873,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
-    "target_number": 8,
+    "target_number": 7,
     "duplicate_of": ""
   },
   {
@@ -13071,7 +12912,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
-    "target_number": 9,
+    "target_number": 8,
     "duplicate_of": ""
   },
   {
@@ -13107,7 +12948,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
-    "target_number": 10,
+    "target_number": 9,
     "duplicate_of": ""
   },
   {
@@ -13143,7 +12984,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
-    "target_number": 11,
+    "target_number": 10,
     "duplicate_of": ""
   },
   {
@@ -13180,7 +13021,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
-    "target_number": 12,
+    "target_number": 11,
     "duplicate_of": ""
   },
   {
@@ -13215,7 +13056,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
-    "target_number": 13,
+    "target_number": 12,
     "duplicate_of": ""
   },
   {
@@ -15935,6 +15776,48 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 13 — Amendments to Regulation (EU) 2018/1999 (similarity 0.43)"
   },
   {
+    "id": "tgt-af94c3fa",
+    "policy_id": "governance-regulation",
+    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action (consolidated, with consequential cross-reference updates from RED III and the Fit for 55 package)",
+    "policy_short": "Governance Regulation (consolidated)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 4(a)(2) — National objectives, targets and contributions",
+    "target_text": "With a view to achieving the Union’s binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001, a contribution to that target in terms of the Member State’s share of energy from renewable sources in gross final consumption of energy in 2030, with an indicative trajectory for that contribution from 2021 onwards.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "in 2030",
+    "indicators": [
+      "share of energy from renewable sources",
+      "renewable energy",
+      "gross final consumption of energy",
+      "share of energy from renewable sources in gross final consumption of energy"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018R1999",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1999-20231120",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy",
+        "energy from renewable",
+        "renewable sources"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_order": null,
+    "target_order_source": "",
+    "revise_flag": false,
+    "revise_reason": "",
+    "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "target_number": 5,
+    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(2), implementing the binding Union target set in Article 4(1) — Energy efficiency targets (similarity 0.32)"
+  },
+  {
     "id": "tgt-53a12547",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action (consolidated, with consequential cross-reference updates from RED III and the Fit for 55 package)",
@@ -15974,7 +15857,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 5,
+    "target_number": 6,
     "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(2), implementing the binding Union target set in Article 4(1) — Energy efficiency targets (similarity 0.39)"
   },
   {
@@ -16012,7 +15895,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 6,
+    "target_number": 7,
     "duplicate_of": ""
   },
   {
@@ -16056,7 +15939,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 7,
+    "target_number": 8,
     "duplicate_of": ""
   },
   {
@@ -16094,7 +15977,47 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 8,
+    "target_number": 9,
+    "duplicate_of": ""
+  },
+  {
+    "id": "tgt-d5d58cc1",
+    "policy_id": "governance-regulation",
+    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action (consolidated, with consequential cross-reference updates from RED III and the Fit for 55 package)",
+    "policy_short": "Governance Regulation (consolidated)",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 4(a)(2), second subparagraph — National objectives, targets and contributions for the five dimensions of the…",
+    "target_text": "By 2030, the indicative trajectory shall reach at least the Member State’s planned contribution. If a Member State expects to surpass its binding 2020 national target, its indicative trajectory may start at the level it is projected to achieve. The Member States’ indicative trajectories, taken together, shall add up to the Union reference points in 2022, 2025 and 2027 and to the Union’s binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001. Separately from its contribution to the Union target and its indicative trajectory for the purposes of this Regulation, a Member State shall be free to indicate higher ambitions for national policy purposes;",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "By 2030",
+    "indicators": [
+      "renewable energy",
+      "indicative trajectory",
+      "share of energy from renewable sources",
+      "Union reference points"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018R1999",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1999-20231120",
+    "sectors": [
+      "energy"
+    ],
+    "sector_evidence": {
+      "energy": [
+        "renewable energy"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
+    "relevant": true,
+    "target_order": null,
+    "target_order_source": "",
+    "revise_flag": false,
+    "revise_reason": "",
+    "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "target_number": 10,
     "duplicate_of": ""
   },
   {
@@ -16104,7 +16027,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "Governance Regulation (consolidated)",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 4 — National objectives, targets and contributions for the five dimensions of the Energy Union",
+    "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union",
     "target_text": "By 2022, the indicative trajectory shall reach a reference point of at least 18 % of the total increase in the share of energy from renewable sources between that Member State’s binding 2020 national target, and its contribution to the 2030 target.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -16133,7 +16056,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 9,
+    "target_number": 11,
     "duplicate_of": "Similar target: Renewable Energy Directive (RED III consolidated) — Article 3(1) — Binding overall Union target for 2030 (similarity 0.25)"
   },
   {
@@ -16143,7 +16066,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "Governance Regulation (consolidated)",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 4 — National objectives, targets and contributions for the five dimensions of the Energy Union",
+    "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union",
     "target_text": "By 2025, the indicative trajectory shall reach a reference point of at least 43 % of the total increase in the share of energy from renewable sources between that Member State’s binding 2020 national target and its contribution to the 2030 target.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -16172,7 +16095,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 10,
+    "target_number": 12,
     "duplicate_of": "Similar target: Renewable Energy Directive (RED III consolidated) — Article 3(1) — Binding overall Union target for 2030 (similarity 0.25)"
   },
   {
@@ -16182,7 +16105,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "Governance Regulation (consolidated)",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 4 — National objectives, targets and contributions for the five dimensions of the Energy Union",
+    "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union",
     "target_text": "By 2027, the indicative trajectory shall reach a reference point of at least 65 % of the total increase in the share of energy from renewable sources between that Member State’s binding 2020 national target and its contribution to the 2030 target.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -16211,42 +16134,47 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 11,
+    "target_number": 13,
     "duplicate_of": "Similar target: Renewable Energy Directive (RED III consolidated) — Article 3(1) — Binding overall Union target for 2030 (similarity 0.25)"
   },
   {
-    "id": "tgt-6b6b65ed",
+    "id": "tgt-9ae7b168",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action (consolidated, with consequential cross-reference updates from RED III and the Fit for 55 package)",
     "policy_short": "Governance Regulation (consolidated)",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 7a — (a)",
-    "target_text": "Member States shall require suppliers to reduce as gradually as possible life cycle greenhouse gas emissions per unit of energy from fuel and energy supplied by up to 10 % by 31 December 2020, compared with the fuel baseline standard set out in Annex II to Council Directive (EU) 2015/652. That reduction shall consist of:’;",
+    "article": "Article 5(2) — Member States' contribution setting process in the area of renewable energy",
+    "target_text": "Member States shall collectively ensure that the sum of their contributions amounts to at least the level of the Union’s binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
-    "timeline": "by 31 December 2020",
+    "timeline": "for 2030",
     "indicators": [
-      "greenhouse gas emissions"
+      "renewable energy",
+      "sum of Member States' contributions",
+      "share of energy from renewable sources"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1999-20231120",
     "sectors": [
-      "energy",
-      "transport"
+      "energy"
     ],
-    "sector_evidence": {},
-    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“emissions”).",
+    "sector_evidence": {
+      "energy": [
+        "renewable energy"
+      ]
+    },
+    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
     "relevant": true,
     "target_order": null,
     "target_order_source": "",
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 12,
-    "duplicate_of": ""
+    "target_number": 14,
+    "duplicate_of": "Similar target: Renewable Energy Directive (RED III consolidated) — Article 3(1) — Binding overall Union target for 2030 (similarity 0.31)"
   },
   {
     "id": "tgt-6a49cb93",
@@ -16274,37 +16202,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 13,
+    "target_number": 15,
     "duplicate_of": "Duplicate wording: European Climate Law (consolidated) — Article 13(4) (inserting Article 8(2)(e) of Regulation (EU) 2018/1999) (similarity 1.00)"
-  },
-  {
-    "id": "tgt-a82bb0ed",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action (consolidated, with consequential cross-reference updates from RED III and the Fit for 55 package)",
-    "policy_short": "Governance Regulation (consolidated)",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 11 — Multilevel climate and energy dialogue",
-    "target_text": "Each Member State shall establish a multilevel climate and energy dialogue pursuant to national rules, in which local authorities, civil society organisations, business community, investors and other relevant stakeholders and the general public are able actively to engage and discuss the achievement of the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 and the different scenarios envisaged for energy and climate policies, including for the long term, and review progress, unless it already has a structure which serves the same purpose.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "adaptation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1999-20231120",
-    "sectors": [],
-    "sector_evidence": {},
-    "climate_argument": "Adaptation: raises adaptive capacity (risk assessment, early warning, monitoring, planning, skills, insurance or finance) (“scenarios”).",
-    "relevant": true,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 14,
-    "duplicate_of": "Duplicate wording: European Climate Law (consolidated) — Article 11 — ‘Article 11 (similarity 1.00)"
   },
   {
     "id": "tgt-571df597",
@@ -16313,13 +16212,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "policy_short": "Governance Regulation (consolidated)",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 15 — Long-term strategies",
+    "article": "Article 15(1) — Long-term strategies",
     "target_text": "By 1 January 2020, and subsequently by 1 January 2029 and every 10 years thereafter, each Member State shall prepare and submit to the Commission its long-term strategy with a 30-year perspective and consistent with the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119.",
-    "target_label": "objective",
+    "target_label": "commitment",
     "obligation": "mandatory",
     "target_type": "qualitative",
     "timeline": "By 1 January 2020",
-    "indicators": [],
+    "indicators": [
+      "long-term strategy"
+    ],
     "climate_relevance": "none",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1999-20231120",
@@ -16332,7 +16233,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 15,
+    "target_number": 16,
     "duplicate_of": "Duplicate wording: European Climate Law (consolidated) — Article 13(6)(a) (replacing Article 15(1) of Regulation (EU) 2018/1999) (similarity 1.00)"
   },
   {
@@ -16366,175 +16267,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 16,
-    "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 1 — Subject matter and scope (similarity 0.30)"
-  },
-  {
-    "id": "tgt-f21890ff",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action (consolidated, with consequential cross-reference updates from RED III and the Fit for 55 package)",
-    "policy_short": "Governance Regulation (consolidated)",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 17 — Integrated national energy and climate progress reports",
-    "target_text": "information on the progress accomplished towards reaching the objectives, including progress towards the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, targets and contributions set out in the integrated national energy and climate plan, and towards financing and implementing the policies and measures necessary to meet them, including a review of actual investment against initial investment assumptions;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "none",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1999-20231120",
-    "sectors": [],
-    "sector_evidence": {},
-    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "relevant": false,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
     "target_number": 17,
-    "duplicate_of": "Duplicate wording: European Climate Law (consolidated) — Article 13(7)(a) (replacing Article 17(2)(a) of Regulation (EU) 2018/1999) (similarity 1.00)"
-  },
-  {
-    "id": "tgt-56dc6aae",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action (consolidated, with consequential cross-reference updates from RED III and the Fit for 55 package)",
-    "policy_short": "Governance Regulation (consolidated)",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 29 — Assessment of progress",
-    "target_text": "the progress made by each Member State towards meeting its objectives, including progress towards the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, targets and contributions and implementing the policies and measures set out in its integrated national energy and climate plan;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "none",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1999-20231120",
-    "sectors": [],
-    "sector_evidence": {},
-    "climate_argument": "Neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "relevant": false,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 18,
-    "duplicate_of": "Duplicate wording: European Climate Law (consolidated) — Article 13(8) (replacing Article 29(1)(b) of Regulation (EU) 2018/1999) (similarity 1.00)"
-  },
-  {
-    "id": "tgt-91c246b7",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action (consolidated, with consequential cross-reference updates from RED III and the Fit for 55 package)",
-    "policy_short": "Governance Regulation (consolidated)",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 29 — Assessment of progress",
-    "target_text": "In the area of renewable energy, as part of its assessment referred to in paragraph 1, the Commission shall assess the progress made in the share of energy from renewable sources in the Union’s gross final consumption of energy on the basis of an indicative Union trajectory that starts from 20 % in 2020, reaches reference points of at least 18 % in 2022, 43 % in 2025 and 65 % in 2027 of the total increase in the share of energy from renewable sources between the Union’s 2020 renewable energy target and the Union’s 2030 renewable energy target, and reaches the Union’s binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [
-      "share of energy from renewable sources",
-      "renewable energy",
-      "gross final consumption of energy"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1999-20231120",
-    "sectors": [
-      "energy"
-    ],
-    "sector_evidence": {
-      "energy": [
-        "renewable energy",
-        "energy from renewable",
-        "renewable sources"
-      ]
-    },
-    "climate_argument": "Mitigation: switches supply or fuels to low-carbon sources (“renewable energy”).",
-    "relevant": true,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 19,
-    "duplicate_of": ""
-  },
-  {
-    "id": "tgt-3d0d95c2",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action (consolidated, with consequential cross-reference updates from RED III and the Fit for 55 package)",
-    "policy_short": "Governance Regulation (consolidated)",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 37 — Union and national inventory systems",
-    "target_text": "Where the Commission finds during the initial check carried out pursuant to paragraph 4 of this Article a difference between the annual average of net removals in the years specified in Article 4(2) of Regulation (EU) 2018/841 reported by any Member State in the 2020 and 2023 or subsequent submission of the greenhouse gas inventory that is greater than 500 kt CO2 equivalent, the Commission shall verify:",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [
-      "CO2 equivalent",
-      "net removals",
-      "removals"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1999-20231120",
-    "sectors": [],
-    "sector_evidence": {},
-    "climate_argument": "Mitigation: increases removals or protects the sink (land, forests or engineered storage) (“removals”).",
-    "relevant": true,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 20,
-    "duplicate_of": ""
-  },
-  {
-    "id": "tgt-9cef77bb",
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action (consolidated, with consequential cross-reference updates from RED III and the Fit for 55 package)",
-    "policy_short": "Governance Regulation (consolidated)",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 45 — Review",
-    "target_text": "The Commission shall report to the European Parliament and to the Council within six months of each global stocktake agreed under Article 14 of the Paris Agreement on the operation of this Regulation, its contribution to governance of the Energy Union, its contribution to the long-term goals of the Paris Agreement, progress towards the achievement of the 2030 climate and energy targets and the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, additional Energy Union objectives and the conformity of the planning, reporting and monitoring provisions laid down in this Regulation with other Union law or decisions relating to the UNFCCC and the Paris Agreement.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "within six months of each global stocktake agreed under Article 14 of the Paris Agreement on the operation of this Regulation",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018R1999-20231120",
-    "sectors": [
-      "energy"
-    ],
-    "sector_evidence": {
-      "energy": [
-        "energy union"
-      ]
-    },
-    "climate_argument": "Mitigation: cuts greenhouse gases directly (emission limits, reduction targets or a carbon price on the emitting activity) (“climate and energy targets”).",
-    "relevant": true,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 21,
-    "duplicate_of": "Duplicate wording: European Climate Law (consolidated) — Article 13(9) (replacing Article 45 of Regulation (EU) 2018/1999) (similarity 1.00)"
+    "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 1 — Subject matter and scope (similarity 0.30)"
   },
   {
     "id": "tgt-3def2076",
@@ -16577,7 +16311,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
-    "target_number": 22,
+    "target_number": 18,
     "duplicate_of": "Similar target: Water Resilience Strategy — Annex II — The key 2027-2033 intermediate targets (similarity 0.26)"
   },
   {
@@ -24785,7 +24519,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
     "target_number": 1,
-    "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(1) — Energy efficiency targets (similarity 0.28)"
+    "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 4(a)(2) — National objectives, targets and contributions (similarity 0.32)"
   },
   {
     "id": "tgt-ea52e5db",
@@ -24824,7 +24558,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
     "target_number": 2,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 5(2) — Member States' contribution setting process in the area of renewable energy (similarity 0.28)"
   },
   {
     "id": "tgt-a948a791",
@@ -24915,7 +24649,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
     "target_number": 4,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 4(a)(2) — National objectives, targets and contributions (similarity 0.26)"
   },
   {
     "id": "tgt-15aa5e48",
@@ -25139,7 +24873,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
     "target_number": 9,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 4(a)(2) — National objectives, targets and contributions (similarity 0.27)"
   },
   {
     "id": "tgt-04ec5819",
@@ -25265,7 +24999,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
     "target_number": 12,
-    "duplicate_of": ""
+    "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 4(a)(2) — National objectives, targets and contributions (similarity 0.26)"
   },
   {
     "id": "tgt-51716f9d",
@@ -25485,6 +25219,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018L2001-20240716",
     "sectors": [
       "energy",
+      "transport",
+      "ecosystems",
       "agrifood"
     ],
     "sector_evidence": {
@@ -25507,45 +25243,6 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
     "target_number": 17,
-    "duplicate_of": ""
-  },
-  {
-    "id": "tgt-4daf0660",
-    "policy_id": "renewable-energy-directive",
-    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II, consolidated as amended by Directive (EU) 2023/2413 – RED III)",
-    "policy_short": "Renewable Energy Directive (RED III consolidated)",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Article 26(2), second subparagraph",
-    "target_text": "From 31 December 2023 until 31 December 2030 at the latest, that limit shall gradually decrease to 0 %.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "from 31 December 2023 until 31 December 2030",
-    "indicators": [
-      "high indirect land-use change-risk biofuels, bioliquids or biomass fuels"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018L2001",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02018L2001-20240716",
-    "sectors": [
-      "energy",
-      "transport",
-      "ecosystems"
-    ],
-    "sector_evidence": {
-      "energy": [
-        "(act-level: this act addresses only this system)"
-      ]
-    },
-    "climate_argument": "Mitigation — set in the fact-check review, which read the target in the context of the provision it sits in. On the quoted words alone: neither: the target sets no outcome that lowers emissions or raises removals, and none that reduces climate vulnerability, exposure or adaptive capacity — it is kept in the register for review.",
-    "relevant": true,
-    "target_order": null,
-    "target_order_source": "",
-    "revise_flag": false,
-    "revise_reason": "",
-    "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
-    "target_number": 18,
     "duplicate_of": ""
   },
   {
@@ -25587,7 +25284,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
-    "target_number": 19,
+    "target_number": 18,
     "duplicate_of": ""
   },
   {
@@ -25629,7 +25326,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
-    "target_number": 20,
+    "target_number": 19,
     "duplicate_of": ""
   },
   {
@@ -25671,7 +25368,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
-    "target_number": 21,
+    "target_number": 20,
     "duplicate_of": ""
   },
   {
@@ -25710,7 +25407,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
-    "target_number": 22,
+    "target_number": 21,
     "duplicate_of": ""
   },
   {
@@ -25746,7 +25443,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
-    "target_number": 23,
+    "target_number": 22,
     "duplicate_of": ""
   },
   {
@@ -25790,7 +25487,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
-    "target_number": 24,
+    "target_number": 23,
     "duplicate_of": ""
   },
   {
