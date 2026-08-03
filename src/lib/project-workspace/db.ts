@@ -130,6 +130,8 @@ async function ensureSeedModules(sb: Supa, projectId: string) {
   const have = new Set((existing ?? []).map(r => r.id));
   const toInsert = project.modules
     .map((m, position) => ({ m, position }))
+    // `report-page` modules are never stored — see reportPageModules() below.
+    .filter(({ m }) => m.kind !== 'report-page')
     .filter(({ m }) => !have.has(m.id));
   if (toInsert.length === 0) return;
   const { error } = await sb.from('pw_modules').insert(
@@ -586,6 +588,28 @@ async function ensureCleanTechReadingSeed(): Promise<void> {
   }
 }
 
+/**
+ * The report-page tabs a project should always show.
+ * ---------------------------------------------------------------------------
+ * A `report-page` module is a pointer to a page under /beta/… — its name,
+ * description and target all live in code (SEED_PROJECTS +
+ * src/data/workspace-report-pages.ts), and it holds no per-project state that
+ * a table could store. Persisting it would buy nothing and cost a deployment
+ * ordering problem: the tabs would be invisible on any environment where the
+ * app had shipped but the migration widening `pw_modules_kind_check` had not
+ * run yet (the inserts fail the constraint, the seeder logs, the tabs never
+ * appear).
+ *
+ * So they are merged in on read instead, and never written. Rows are still
+ * deduped by id, so an environment that did apply the seeding migration shows
+ * each tab once rather than twice.
+ */
+function withReportPageModules(projectId: string, stored: WorkspaceModule[]): WorkspaceModule[] {
+  const seeded = SEED_PROJECTS.find(p => p.id === projectId)?.modules ?? [];
+  const have = new Set(stored.map(m => m.id));
+  return [...stored, ...seeded.filter(m => m.kind === 'report-page' && !have.has(m.id))];
+}
+
 export async function listProjects(): Promise<DBProject[]> {
   noStore();
   const sb = getServerSupabase();
@@ -605,16 +629,19 @@ export async function listProjects(): Promise<DBProject[]> {
     name: p.name,
     shortDescription: p.description,
     isSeed: !!p.is_seed,
-    modules: (modules ?? [])
-      .filter(m => m.project_id === p.id)
-      .map<WorkspaceModule>(m => ({
-        id: m.id,
-        kind: m.kind as WorkspaceModuleKind,
-        name: m.name,
-        description: m.description,
-        featured: !!m.featured,
-        beta: !!m.beta,
-      })),
+    modules: withReportPageModules(
+      p.id,
+      (modules ?? [])
+        .filter(m => m.project_id === p.id)
+        .map<WorkspaceModule>(m => ({
+          id: m.id,
+          kind: m.kind as WorkspaceModuleKind,
+          name: m.name,
+          description: m.description,
+          featured: !!m.featured,
+          beta: !!m.beta,
+        })),
+    ),
   }));
 }
 
@@ -639,14 +666,17 @@ export async function getProject(projectId: string): Promise<DBProject | null> {
     name: p.name,
     shortDescription: p.description,
     isSeed: !!p.is_seed,
-    modules: (modules ?? []).map<WorkspaceModule>(m => ({
-      id: m.id,
-      kind: m.kind as WorkspaceModuleKind,
-      name: m.name,
-      description: m.description,
-      featured: !!m.featured,
-      beta: !!m.beta,
-    })),
+    modules: withReportPageModules(
+      p.id,
+      (modules ?? []).map<WorkspaceModule>(m => ({
+        id: m.id,
+        kind: m.kind as WorkspaceModuleKind,
+        name: m.name,
+        description: m.description,
+        featured: !!m.featured,
+        beta: !!m.beta,
+      })),
+    ),
   };
 }
 

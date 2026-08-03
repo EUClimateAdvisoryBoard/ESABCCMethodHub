@@ -28,7 +28,10 @@ export type WorkspaceModuleKind =
   // One page of a report module (the Policy Gap 2.0 Report, the Industry
   // Report) surfaced as a project tab. The page lives in `beta/modules/…`;
   // the module carries the pointer and the description, from the catalogue in
-  // `src/data/workspace-report-pages.ts`, keyed by module id.
+  // `src/data/workspace-report-pages.ts`, keyed by module id. Modules of this
+  // kind are defined here and never stored in `pw_modules` — the read path
+  // merges them into every project, so they do not depend on a migration
+  // having run (see `withReportPageModules` in lib/project-workspace/db.ts).
   | 'report-page'
   | 'custom';
 
