@@ -616,7 +616,7 @@
     "policy_id": "osh-framework-directive",
     "targets": [
       {
-        "quote": "1. The employer shall ensure that each worker receives adequate safety and health training, in particular in the form of information and instructions specific to his workstation or job: - on recruitment, - in the event of a transfer or a change of job, - in the event of the introduction of new work equipment or a change in equipment, - in the event of the introduction of any new technology.",
+        "quote": "1. The employer shall ensure that each worker receives adequate safety and health training, in particular in the form of information and instructions specific to his workstation or job: — on recruitment, — in the event of a transfer or a change of job, — in the event of the introduction of new work equipment or a change in equipment, — in the event of the introduction of any new technology.",
         "article": "Article 12(1)",
         "label": "other",
         "source": "FIX-COLON: Article 12(1) is quoted as a chapeau cut at its colon; the four indents that carry the actual trigger events are not present as separate rows in the packet, so the chapeau must be re-extracted together with them."
@@ -702,17 +702,6 @@
         "article": "",
         "label": null,
         "source": "FIX-ANNEX: Entry of the Annex 'Preparedness Union Strategy – Action Plan', a dated list of 63 actions; sibling entries of the same list are already rows in the register, this climate/resilience-relevant one is missing."
-      }
-    ]
-  },
-  {
-    "policy_id": "renewable-energy-directive",
-    "targets": [
-      {
-        "quote": "2. For the calculation of a Member State's gross final consumption of energy from renewable sources referred to in Article 7 and the minimum share referred to in the first subparagraph of Article 25(1), the share of high indirect land-use change-risk biofuels, bioliquids or biomass fuels produced from food and feed crops for which a significant expansion of the production area into land with high-carbon stock is observed shall not exceed the level of consumption of such fuels in that Member State in 2019, unless they are certified to be low indirect land-use change-risk biofuels, bioliquids or biomass fuels pursuant to this paragraph. From 31 December 2023 until 31 December 2030 at the latest, that limit shall gradually decrease to 0 %.",
-        "article": "Article 26(2), second subparagraph",
-        "label": "target",
-        "source": "FIX-ANAPHORA: The quote opens on 'that limit' with no antecedent; the limit is defined in the preceding subparagraph of Article 26(2) (the 2019 consumption level of high indirect land-use change-risk fuels). Re-extract with that sentence included."
       }
     ]
   },

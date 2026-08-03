@@ -425,6 +425,18 @@
     "reason": "fields: Article 5(1), second subparagraph (confirmed: the (a)-(e) list is the first subparagraph per the following sentence's own cross-reference, so the JTF sentence is the second) targets a climate-neutral Union economy by 2050 and the Union's 2030 energy/climate targets; both dates are explicit thresholds in the quote so target_type is quantitative. [fact-check 2026-07 new-acts]"
   },
   {
+    "id": "tgt-706337aa",
+    "policy_id": "common-provisions-regulation",
+    "drop": true,
+    "reason": "drop: NOT-A-TARGET(NT-11): the STEP-platform (Regulation (EU) 2024/795) cross-adjustment clause in the amended Article 6 lets Cohesion Fund climate spending exceeding its 37 % target count toward the ERDF's 30 % target. It is a qualifying condition for how the Article 6(1) headline climate contribution target is achieved/offset between the two funds, not a target itself. Picked up by the regex safety net from the 02021R1060-20260701 consolidated text. [re-extraction 2026-08 consolidated text]"
+  },
+  {
+    "id": "tgt-c75de328",
+    "policy_id": "common-provisions-regulation",
+    "drop": true,
+    "reason": "drop: NOT-A-TARGET(NT-11): the mirror-image STEP-platform (Regulation (EU) 2024/795) offset clause (ERDF surplus counted toward the Cohesion Fund's climate contribution target) — same qualifying-condition category as tgt-706337aa, not a standalone target. Picked up by the regex safety net from the 02021R1060-20260701 consolidated text. [re-extraction 2026-08 consolidated text]"
+  },
+  {
     "id": "tgt-5432b40c",
     "policy_id": "competitiveness-compass",
     "drop": true,
@@ -961,6 +973,24 @@
     "policy_id": "erdf-regulation",
     "drop": true,
     "reason": "drop: Art 3(3) confirmed at source as a scope clause allocating Cohesion Fund coverage to PO2/PO3, not a target with independent magnitude. [fact-check 2026-07 new-acts]"
+  },
+  {
+    "id": "tgt-aba4f672",
+    "policy_id": "erdf-regulation",
+    "drop": true,
+    "reason": "drop: carried from tgt-87c2c7eb (same Article 3(3) scope clause; the 02021R1058-20250920 consolidated text extends the sentence with a cross-reference to Article 3(1)(b)(x)-(xii)/(c)(iii) and Articles 6-7, which changes the row's content hash — still a scope-allocation clause, not a target with independent magnitude). [carried to consolidated text 2026-08]"
+  },
+  {
+    "id": "tgt-b513cf2e",
+    "policy_id": "erdf-regulation",
+    "drop": true,
+    "reason": "drop: NOT-A-TARGET(NT-11): Article 7a, inserted by the STEP Regulation (EU) 2024/795, is the same Cohesion Fund/ERDF climate-contribution cross-adjustment mechanism as common-provisions-regulation tgt-706337aa (dropped) — a qualifying condition for how the Article 6 CPR headline climate contribution targets are offset between funds, not a target itself. Picked up by the regex safety net from the 02021R1058-20250920 consolidated text. [re-extraction 2026-08 consolidated text]"
+  },
+  {
+    "id": "tgt-4984ac15",
+    "policy_id": "erdf-regulation",
+    "drop": true,
+    "reason": "drop: NOT-A-TARGET(NT-11): mirror-image Article 7a offset clause, same category as tgt-b513cf2e and common-provisions-regulation tgt-c75de328 (both dropped) — a qualifying condition, not a standalone target. Picked up by the regex safety net from the 02021R1058-20250920 consolidated text. [re-extraction 2026-08 consolidated text]"
   },
   {
     "id": "tgt-c816310d",
@@ -6678,5 +6708,213 @@
     "policy_id": "co2-cars-regulation",
     "drop": true,
     "reason": "NT-14: sub-point of a Commission progress-report factors list (Article 14a), not a binding target [human review 2026-08 v3]"
+  },
+  {
+    "id": "tgt-279c838c",
+    "policy_id": "csrd",
+    "drop": true,
+    "reason": "NT-5: CSRD, inserted Art. 19a(2)(a)(iii): a disclosure requirement about plans aligned with 1.5 °C — reporting, not a target. Same provision as tgt-3194cd8f (human review 2026-07); id changed only because 02022L2464-20260318 renders the Regulation (EU) 2021/1119 footnote marker as 'Council ( *8 ), and' (spaced across a line break) instead of 'Council (*8), and'. [carried to consolidated text 2026-08]"
+  },
+  {
+    "id": "tgt-20c17ba6",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-10: bare-duplicate fragment of the Art 3(1) 42.5% binding-target sentence, already captured with full context in the kept Art 3(1) row [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-92c9dbe5",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-10: bare-duplicate fragment of the Art 3(1) 45% indicative-target sentence, already captured with full context in the kept Art 3(1) row [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-11d1a114",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-10: bare fragment — sub-point (a)(i) percentage quoted without its Art 25(1) chapeau; kept with full context in the Art 25(1)(a) row [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-31aeefa5",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-10: bare fragment — sub-point (a)(ii) percentage quoted without its Art 25(1) chapeau; kept with full context in the Art 25(1)(a) row [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-2322d8b4",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-10: bare fragment — trailing sentence of Art 26(1) quoted without its antecedent; kept with full context in the Art 26(1) fourth-subparagraph row [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-dca7f4da",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-10/duplicate: shorter cut of the same Art 24(4a) sentence kept (with both the 60% and 50-60% clauses) in the Art 24(4a) row [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-e2597cee",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "Garbled regex-sweep fragment spanning a footnote/table cell ('For to be 100 % the minimum efficiency requirement...') — not coherent legislative text [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-8a7d279c",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-8: threshold-triggered obligation (Member States with annual electricity consumption above 100 TWh must endeavour to agree a third joint project) — not a target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-c4b4fced",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-7: conduct obligation on permit-granting authorities for repowering, no progression [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-917a41ed",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-8/NT-9: threshold-triggered simplified permit rule for small heat pumps, not a target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-f3c1d4d9",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-7: legal deeming/conduct rule (renewable energy projects presumed of overriding public interest in permitting procedures), not a progression target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-b5408107",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-9: derogation clause — conditions under which Member States may REDUCE the Art 22a RFNBO hydrogen target, not the target itself [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-d5cd6197",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-9: derogation clause — same Art 22b reduction-conditions provision, fossil-hydrogen sub-point [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-11fc507b",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-11: qualifying condition on how the Art 23(1) annual increase may be counted (waste heat and cold uplift ceiling), monitoring context only [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-644a877c",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-11: qualifying condition on how the Art 23(1) annual increase may be counted (renewable electricity uplift), monitoring context only [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-1758da1f",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-7: reporting/notification conduct obligation to the Commission, not a target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-1d1dd297",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-7: reporting conduct obligation (include estimated capacities in NECP), not a target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-cd192468",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-7: reporting conduct obligation (include amount used in progress reports), not a target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-fe842783",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-9: derogation threshold exempting Member States from the Art 24 disconnection-rights obligations, not a target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-20170f2b",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-9: derogation threshold (district heating share increased above 2%) exempting Member States from Art 24 obligations, not a target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-c59a2e94",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-13/NT-10: compliance-calculation cap on Part B Annex IX feedstock (bare fragment, no chapeau) — same pattern as the aviation-consumption caps the v3 reviewers dropped from Art 7 [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-2f8ea0cb",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-14: obligation on the Commission to adopt delegated acts, not a target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-a9336439",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-13: methodology/compliance-calculation rule (which paragraphs the maritime energy cap applies to), not a target [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-cc5ec29e",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-13: maritime gross-final-consumption accounting cap for Cyprus/Malta — same compliance-methodology pattern as the Art 7 aviation caps the v3 reviewers dropped [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-601d804c",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-10: bare fragment (no 'shall be' chapeau) for a narrow gaseous-biomass installation sub-tier; the Art 29(10) family is already represented by points (a)-(d) [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-7a8a9536",
+    "policy_id": "renewable-energy-directive",
+    "drop": true,
+    "reason": "NT-11/out-of-scope: recycled carbon fuels are not renewable energy; this is a qualifying GHG-savings condition for a second-order fuel category outside the register's renewable-energy target set [re-extraction 2026-08]"
+  },
+  {
+    "id": "tgt-1b550e2e",
+    "policy_id": "industrial-emissions-directive",
+    "drop": true,
+    "reason": "NT-9: Article 33(3) limited-life-time derogation for small isolated systems unable to meet the Article 30(2) emission limit values — a reduced-requirement clause, not a target. [human review 2026-08 v3]"
+  },
+  {
+    "id": "tgt-7518f4a7",
+    "policy_id": "industrial-emissions-directive",
+    "drop": true,
+    "reason": "NT-10: regex-swept second sentence of Article 27d(1) ('The transformation plan shall contain information...') is a bare fragment missing the actor/deadline ('Member States shall require that operators by 30 June 2030...'); duplicate of the fuller Article 27d(1) row kept in this pass. [human review 2026-08 v3]"
+  },
+  {
+    "id": "tgt-d30fa3b5",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same Article 29(10) GHG-emission-savings threshold family as the (a)-(c) points (all set to mitigation); carried forward from the pre-consolidation fix on tgt-dc797af1 (now-superseded id for the same point (d), reworded by RED III to the post-20 November 2023 80% threshold) [carried to consolidated text 2026-08]"
+  },
+  {
+    "id": "tgt-15aa5e48",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "buildings"
+      ],
+      "climate_argument": "Mitigation only: Article 15a(3) (formerly Article 15(4) before RED III renumbering) requires building codes/regulations and support schemes to mandate minimum levels of renewable energy in new buildings and in existing buildings undergoing major renovation or a heating-system renewal — switching energy supply to renewable sources, a mitigation mechanism. The provision does not require any reduction in energy demand itself. Reviewer (James, v3 pass) flagged the previously stored argument for the pre-RED-III wording of this provision as overstating an adaptation/air-quality/demand-reduction reading beyond what the text requires; this carries the same correction to the re-extracted row."
+    },
+    "reason": "CLIMATE-ARGUMENT: carried forward from tgt-ba5fd11a (old Article 15(4) id) — the v3 reviewer's comment that the mitigation argument must not claim energy-demand reduction or an air-quality/adaptation benefit applies identically to the RED III renumbering of this provision at Article 15a(3). [carried to consolidated text 2026-08]"
+  },
+  {
+    "id": "tgt-08bc8c2c",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation",
+      "sectors": [
+        "energy",
+        "buildings"
+      ],
+      "climate_argument": "Mitigation only: Article 15a(4) (formerly Article 15(5) before RED III renumbering) requires new and majorly-renovated public buildings to fulfil an \"exemplary role\" as regards the share of renewable energy used, fulfillable via nZEB compliance or hosting third-party renewable-energy installations on public/mixed-ownership roofs — both are renewable-energy-supply mechanisms. As with Article 15a(3), the provision targets the energy MIX used by public buildings, not a reduction in energy demand, and it carries no adaptation or air-quality dimension. Reviewer (James, v3 pass) flagged that the mitigation argument must stay narrowly on the renewable-share mechanism actually required; this carries the same correction to the re-extracted row."
+    },
+    "reason": "CLIMATE-ARGUMENT: carried forward from tgt-69d16e11 (old Article 15(5) id) — the v3 reviewer's comment (paired with the Article 15(4)/15a(3) row) applies identically to the RED III renumbering of this provision at Article 15a(4). [carried to consolidated text 2026-08]"
   }
 ]
