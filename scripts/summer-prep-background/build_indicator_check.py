@@ -23,8 +23,8 @@ from openpyxl.utils import get_column_letter
 
 from esabcc_style import (
     ACCENT_BLUE, ACCENT_ORANGE, ACCENT_PURPLE, ACCENT_RED, BODY_FILL, BODY_FONT, FONT,
-    FONT_LIGHT, FONT_SEMI, H2_FONT, INK, LABEL_FONT, MUTED, RULE, SMALL_FONT, TEAL,
-    TEAL_LIGHT, TEAL_PALE, WHITE, body_row, header_row, note_line, set_widths,
+    FONT_LIGHT, FONT_SEMI, H2_FONT, INK, LABEL_FONT, MUTED, RULE, SMALL_FONT, TEAL, TEAL_LIGHT,
+    TEAL_PALE, WHITE, body_row, fix_title_overlays, header_row, note_line, rows_for, set_widths,
     sheet_setup, style_chart, text_categories, title_block,
 )
 from dataset_links import detect_link, link_cell
@@ -341,8 +341,8 @@ def build(data, calc, factcheck, out_path=None, wb=None, links=None):
         ser.data_points[i].graphicalProperties.line.noFill = True
     ov.add_chart(chart, f"E{fr}")
 
-    # Overview figure 2 — coverage per chapter.
-    cr = m_last + 3
+    # Overview figure 2 — coverage per chapter, clear of the figure above it.
+    cr = max(m_last + 3, fr + rows_for(11.5))
     header_row(ov, cr, ["", "Chapter", "With new data since the report",
                         "Still at the report figure", "", "", "", "", "", "", "", "", ""], height=28)
     c_first = cr + 1
@@ -616,6 +616,7 @@ def build(data, calc, factcheck, out_path=None, wb=None, links=None):
         wb.properties.title = "ESABCC Indicator Check — what has moved since the 2024 report"
         wb.properties.subject = "Summer Prep · Policy Gap 2.0 Report — background document"
         wb.properties.creator = "ESABCC Method Hub"
+        fix_title_overlays(wb)
         wb.save(out_path)
         print(f"wrote {out_path}: {len(inds)} indicators, {len(updated)} with new data, "
               f"{len(cats)} chapter tabs")

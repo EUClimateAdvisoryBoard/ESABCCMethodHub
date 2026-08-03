@@ -24,7 +24,8 @@ from openpyxl.utils import get_column_letter
 from esabcc_style import (
     ACCENT_PURPLE, BODY_FILL, BODY_FONT, FONT, FONT_SEMI, GAP_STATUS_COLOR, GAP_TYPE_COLOR,
     H2_FONT, INK, LABEL_FONT, MUTED, SMALL_FONT, TEAL, TEAL_PALE, WHITE, body_row,
-    header_row, note_line, set_widths, sheet_setup, style_chart, text_categories, title_block,
+    fix_title_overlays, header_row, note_line, rows_for, set_widths, sheet_setup, style_chart,
+    text_categories, title_block,
 )
 
 PREPARED = "27 July 2026"
@@ -292,7 +293,7 @@ def build(data, out_path):
             series.graphicalProperties.line.noFill = True
         chart.legend.position = "b"
         gl.add_chart(chart, f"H{chart_anchor}")
-        chart_anchor = trow + 2
+        chart_anchor = max(trow + 2, chart_anchor + rows_for(7.4))
         r = trow + 3
 
     note_line(gl, r, "Notes: a gap that bears on more than one subsector is counted in each — the totals are "
@@ -346,6 +347,7 @@ def build(data, out_path):
     wb.properties.title = "Policy gaps — Transport & Industry (Summer Prep note 3)"
     wb.properties.subject = "Summer Prep · Policy Gap 2.0 Report — background document"
     wb.properties.creator = "ESABCC Method Hub"
+    fix_title_overlays(wb)
     wb.save(out_path)
     print(f"wrote {out_path}: {len(reassessed)} re-assessed, {len(cands)} candidates, "
           f"{len(rows)} landscape assignments")

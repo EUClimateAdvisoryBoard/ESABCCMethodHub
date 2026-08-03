@@ -21,9 +21,8 @@ from openpyxl.worksheet.datavalidation import DataValidation
 from esabcc_style import (
     ACCENT_BLUE, ACCENT_ORANGE, ACCENT_PURPLE, ACCENT_RED, BODY_FONT, GAP_STATUS_COLOR,
     GAP_TYPE_COLOR, H2_FONT, LABEL_FONT, MUTED, NOTE_FONT, SMALL_FONT, TEAL, TEAL_LIGHT,
-    body_row, header_row, note_line, set_widths, sheet_setup, style_chart, text_categories,
-    title_block,
-    BODY_FILL, FONT, FONT_SEMI, INK, LINK_FONT, WHITE,
+    BODY_FILL, FONT, FONT_SEMI, INK, LINK_FONT, WHITE, body_row, fix_title_overlays, header_row,
+    note_line, rows_for, set_widths, sheet_setup, style_chart, text_categories, title_block,
 )
 
 PREPARED = "27 July 2026"
@@ -278,7 +277,7 @@ def build(data, out_path):
     for i, key in enumerate(status_meta):
         ser.data_points[i].graphicalProperties.solidFill = GAP_STATUS_COLOR[key]
         ser.data_points[i].graphicalProperties.line.noFill = True
-    sm.add_chart(pie, f"H{r2 - 1}")
+    sm.add_chart(pie, f"H{max(r2 - 1, r + rows_for(10.5))}")
 
     note_line(sm, status_last + 2,
               "Note: all rows are seeded to the report's January-2024 baseline (“Still open”). A count against any other "
@@ -326,6 +325,7 @@ def build(data, out_path):
     wb.properties.title = "ESABCC Policy Gap Tracker — 2024 progress report"
     wb.properties.subject = "Summer Prep · Policy Gap 2.0 Report — background document"
     wb.properties.creator = "ESABCC Method Hub"
+    fix_title_overlays(wb)
     wb.save(out_path)
     print(f"wrote {out_path}: {len(gaps)} findings, {len(sectors)} chapters")
 

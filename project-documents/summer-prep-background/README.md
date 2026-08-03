@@ -51,6 +51,25 @@ reproduce their source but sit on a different *level* than the report years —
 the jump at the join is partly basis, not movement. Full detail is in
 `docs-internal/indicator-postreport-factcheck-2026-07-27.md`.
 
+## Chart titles and spacing
+
+Two layout faults were fixed in this rebuild, both of which only showed once a
+file was open in Excel:
+
+* **Titles printed over the labels.** openpyxl writes a chart title without the
+  `<c:overlay>` element; Excel reads an absent one as *overlay*, so the chart
+  title landed across the top category labels and — on every chart carrying a
+  unit — the rotated y-axis title printed straight through the tick numbers.
+  `esabcc_style.fix_title_overlays()` now sets it on every title in every
+  workbook before saving.
+* **Charts drawn on top of each other.** A chart floats above the grid at its
+  own size, so two side by side collide unless the gap between their anchors
+  is wider than the left one. The dashboard panels are now sized against their
+  strides, and three pre-existing collisions (the tracker's Summary figures,
+  the Gap landscape figures, the Overview's two figures) are spaced apart.
+
+`check_outputs.py` now fails on either, so neither can come back unnoticed.
+
 ## How the combined workbook stays in sync
 
 In `ESABCC_Indicator-Combined_2026-07.xlsx`, the Overview, the chapter tabs,

@@ -37,9 +37,9 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 from esabcc_style import (
-    ACCENT_ORANGE, ACCENT_PURPLE, ACCENT_RED, BODY_FILL, BODY_FONT, FONT, FONT_LIGHT,
-    FONT_SEMI, H2_FONT, INK, LABEL_FONT, MUTED, SMALL_FONT, TEAL, TEAL_PALE, WHITE,
-    body_row, header_row, note_line, set_widths, sheet_setup, style_chart,
+    ACCENT_ORANGE, ACCENT_PURPLE, ACCENT_RED, BODY_FILL, BODY_FONT, FONT, FONT_LIGHT, FONT_SEMI,
+    H2_FONT, INK, LABEL_FONT, MUTED, SMALL_FONT, TEAL, TEAL_PALE, WHITE, body_row,
+    fix_title_overlays, header_row, note_line, set_widths, sheet_setup, style_chart,
     text_categories, title_block,
 )
 from dataset_links import detect_link, link_cell
@@ -221,6 +221,7 @@ def build_new_data_overview(inds, reads, fc, out_path=None, wb=None, title="The 
         wb.calculation.fullCalcOnLoad = True
         wb.properties.title = "ESABCC indicators — everything that has moved since the 2024 report"
         wb.properties.creator = "ESABCC Method Hub"
+        fix_title_overlays(wb)
         wb.save(out_path)
         print(f"wrote {out_path}: one figure over {len(updated)} updated indicators")
     return wb
@@ -505,6 +506,7 @@ def build_old_vs_new(inds, reads, calc, fc, reportway, out_path=None, wb=None, l
         wb.calculation.fullCalcOnLoad = True
         wb.properties.title = "ESABCC report indicators — old figures, new data, and the derivations"
         wb.properties.creator = "ESABCC Method Hub"
+        fix_title_overlays(wb)
         wb.save(out_path)
         print(f"wrote {out_path}: {len(inds)} indicators, {blocks} derivation blocks")
     return wb

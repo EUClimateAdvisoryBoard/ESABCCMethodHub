@@ -195,6 +195,10 @@ def style_chart(chart, title, height=7.5, width=17):
     chart.height = height
     chart.width = width
     chart.style = None
+    # Without this the title is drawn ON TOP of the chart instead of above it
+    # — see fix_title_overlays() for why, and for the axis titles that are set
+    # by the caller after this function has run.
+    chart.title.overlay = False
     cp = CharacterProperties(latin=DrawingFont(typeface=FONT_SEMI), sz=1100, b=False,
                              solidFill=TEAL)
     chart.title.tx.rich.p[0].pPr = ParagraphProperties(defRPr=cp)
@@ -219,3 +223,45 @@ def style_chart(chart, title, height=7.5, width=17):
             p=[Paragraph(pPr=ParagraphProperties(defRPr=axis_cp), endParaRPr=axis_cp)],
         )
     return chart
+
+
+#: A default row is 15 pt ≈ 0.53 cm. A chart is anchored to a cell but drawn
+#: at its own size, floating over the grid, so the NEXT chart in the same
+#: column has to be anchored far enough down to clear it — the sheet's own row
+#: count says nothing about that.
+ROW_CM = 0.53
+
+
+def rows_for(height_cm, clearance=1):
+    """Rows a chart of `height_cm` covers, plus a row or two of breathing room."""
+    return int(height_cm / ROW_CM) + 1 + clearance
+
+
+def fix_title_overlays(wb):
+    """
+    Stop Excel drawing chart and axis titles on top of the labels.
+
+    openpyxl writes a `<c:title>` with no `<c:overlay>` child. The element is
+    optional, but Excel's reading of an absent one is "overlay", not "don't":
+    it lays the title over the plot instead of reserving space above it. The
+    visible result is a chart title sitting across the top category labels and
+    — worse, because it happens on every chart with a unit — a rotated y-axis
+    title printed straight through the tick numbers.
+
+    `style_chart` sets the flag on the chart title, but axis titles are
+    assigned by the callers afterwards (`ch.y_axis.title = ind["unit"]`), each
+    assignment building a fresh Title object with the flag unset again. Rather
+    than chase every call site, this runs over the finished workbook and fixes
+    every title it can reach. Call it immediately before `wb.save()`.
+
+    Returns the number of titles corrected.
+    """
+    fixed = 0
+    for ws in wb.worksheets:
+        for chart in getattr(ws, "_charts", []):
+            for holder in (chart, chart.x_axis, chart.y_axis):
+                title = getattr(holder, "title", None)
+                if title is not None and getattr(title, "overlay", None) is not False:
+                    title.overlay = False
+                    fixed += 1
+    return fixed

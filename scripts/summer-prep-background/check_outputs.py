@@ -26,6 +26,7 @@ from collections import Counter
 from pathlib import Path
 
 from openpyxl import load_workbook
+from openpyxl.utils import get_column_letter
 
 FAIL = []
 OK = []
@@ -390,6 +391,93 @@ def check_no_errors(path):
     check(not bad, f"{Path(path).name}: no error values ({bad[:3]})")
 
 
+def check_title_overlays(path):
+    """
+    Every chart and axis title must carry `<c:overlay val="0"/>`.
+
+    openpyxl omits the element, and Excel reads an absent one as "overlay":
+    the chart title lands across the top category labels and the rotated
+    y-axis title prints straight through the tick numbers. It is invisible in
+    the XML unless looked for and invisible in Python until the file is opened
+    in Excel, which is exactly why it shipped once already.
+    """
+    missing = 0
+    total = 0
+    with zipfile.ZipFile(path) as z:
+        for name in z.namelist():
+            if not name.startswith("xl/charts/chart"):
+                continue
+            xml = z.read(name).decode("utf8")
+            for m in re.finditer(r"<title>(.*?)</title>", xml, re.S):
+                total += 1
+                if '<overlay val="0"' not in m.group(1):
+                    missing += 1
+    check(not missing,
+          f"{path.name}: all {total} chart/axis titles reserve their own space "
+          f"({missing} would overlay the labels)")
+
+
+# Columns are sized in characters; this is the width of one character in cm at
+# 100 % zoom, near enough to compare a chart's width against the gap it sits in.
+CM_PER_CHAR = 0.2
+DEFAULT_COL_CHARS = 8.43
+EMU_PER_CM = 360000
+CM_PER_POINT = 0.03528
+DEFAULT_ROW_POINTS = 15
+
+
+def check_chart_collisions(path):
+    """
+    Charts must fit in the gap to the next chart beside and below them.
+
+    A chart is anchored to a cell but drawn at its own size, floating over the
+    grid — so a 15 cm chart anchored 8 default columns (~13.5 cm) to the left
+    of the next one overlaps it, and the two figures are drawn on top of each
+    other. Nothing in openpyxl objects; it only shows when the file is opened.
+    """
+    wb = load_workbook(path)
+    clashes = []
+    for ws in wb.worksheets:
+        def cm_between(a, b):
+            total = 0.0
+            for col in range(a, b):
+                dim = ws.column_dimensions.get(get_column_letter(col))
+                chars = dim.width if dim and dim.width else DEFAULT_COL_CHARS
+                total += chars * CM_PER_CHAR
+            return total
+
+        placed = []
+        for chart in getattr(ws, "_charts", []):
+            frm = getattr(chart.anchor, "_from", None)
+            ext = getattr(chart.anchor, "ext", None)
+            # `chart.width` is a write-time convenience and is NOT restored on
+            # load — every chart reads back as the class default. The drawing
+            # anchor's extent is the real size, in EMU.
+            if frm is None or ext is None:
+                continue
+            placed.append((frm.row, frm.col, ext.cx / EMU_PER_CM, ext.cy / EMU_PER_CM))
+        def cm_down(a, b):
+            total = 0.0
+            for row in range(a, b):
+                dim = ws.row_dimensions.get(row + 1)
+                pts = dim.height if dim and dim.height else DEFAULT_ROW_POINTS
+                total += pts * CM_PER_POINT
+            return total
+
+        for row, col, width, height in placed:
+            right = min((c for r, c, _w, _h in placed if r == row and c > col), default=None)
+            if right is not None:
+                gap = cm_between(col + 1, right + 1)
+                if width > gap + 0.01:
+                    clashes.append(f"{ws.title} r{row}c{col}: {width:.1f}cm wide in a {gap:.1f}cm gap")
+            below = min((r for r, c, _w, _h in placed if c == col and r > row), default=None)
+            if below is not None:
+                gap = cm_down(row, below)
+                if height > gap + 0.01:
+                    clashes.append(f"{ws.title} r{row}c{col}: {height:.1f}cm tall in a {gap:.1f}cm gap")
+    check(not clashes, f"{path.name}: no chart overlaps the one beside it ({clashes[:3]})")
+
+
 def check_docx(path, template):
     with zipfile.ZipFile(path) as z:
         doc = z.read("word/document.xml").decode("utf8")
@@ -428,6 +516,8 @@ def main(data_path, calc_path, outdir, template):
     for f in out.glob("*.xlsx"):
         check_no_errors(f)
         check_chart_categories(f)
+        check_title_overlays(f)
+        check_chart_collisions(f)
 
     # The July-2026 content fact-check must actually reach the documents — an
     # earlier run rebuilt them from a stale extract and silently shipped the

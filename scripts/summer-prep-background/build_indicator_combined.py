@@ -48,8 +48,8 @@ import build_indicator_check as check
 import build_indicator_overview as overview
 from link_derivations import DerivationLinks
 from esabcc_style import (
-    BODY_FILL, BODY_FONT, FONT_SEMI, H2_FONT, TEAL, TEAL_PALE,
-    header_row, note_line, set_widths, sheet_setup, title_block,
+    BODY_FILL, BODY_FONT, FONT_SEMI, H2_FONT, TEAL, TEAL_PALE, fix_title_overlays, header_row,
+    note_line, set_widths, sheet_setup, title_block,
 )
 
 PREPARED = "27 July 2026"
@@ -215,6 +215,7 @@ def build(data, calc, calc_excel, factcheck, reportway, out_path=None, wb=None):
         wb.properties.title = "ESABCC Indicators — combined background workbook"
         wb.properties.subject = "Summer Prep · Policy Gap 2.0 Report — combined background document"
         wb.properties.creator = "ESABCC Method Hub"
+        fix_title_overlays(wb)
         wb.save(out_path)
         print(f"wrote {out_path}: {len(wb.sheetnames)} sheets, {len(inds)} indicators, "
               f"{len(updated)} with new data, {links.linked} cells wired to Derivations "

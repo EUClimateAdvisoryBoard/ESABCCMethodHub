@@ -46,6 +46,18 @@ TRENDS = [
 # left to the chapter tabs rather than reduced to a two-bar chart here.
 TARGET_CODES = ["O1", "I3", "T5b", "B6"]
 
+# Chart geometry. A chart is anchored to a cell but floats above the grid at
+# its own size, so two charts side by side collide unless the gap between
+# their anchor columns is WIDER than the left one. A default column is about
+# 1.69 cm at 100 % zoom, so an 8-column gap is ~13.5 cm — which is why each
+# width below is set under its stride rather than to a round number.
+MOVES_SIZE = (17, 10.5)      # two figures across the sheet, 16 columns apart
+TREND_SIZE = (14, 7.5)       # two across, 10 columns apart (~17 cm)
+TREND_STRIDE = 10
+TREND_ROW_STRIDE = 15        # ~7.9 cm of rows, so 7.5 cm of chart clears it
+TARGET_SIZE = (12, 7)        # four across, 8 columns apart (~13.5 cm)
+TARGET_STRIDE = 8
+
 KPI_LABEL_FONT = Font(name=FONT_SEMI, size=9, color=WHITE)
 KPI_VALUE_FONT = Font(name=FONT_SEMI, size=18, color=WHITE, bold=True)
 KPI_FILL = PatternFill("solid", fgColor=TEAL)
@@ -145,15 +157,15 @@ def build_dashboard(inds, reads, factcheck, backed, wb, prepared, links=None):
     ws.cell(row=53, column=1, value="Headline trends").font = H2_FONT
     ws.row_dimensions[53].height = 17.25
     for n, (spec, cols) in enumerate(trend_cols):
-        anchor = f"{get_column_letter(1 + 8 * (n % 2))}{54 + 15 * (n // 2)}"
+        anchor = f"{get_column_letter(1 + TREND_STRIDE * (n % 2))}{54 + TREND_ROW_STRIDE * (n // 2)}"
         _trend_chart(ws, dd, spec, cols, anchor)
 
     ws.cell(row=85, column=1, value="Distance to target").font = H2_FONT
     ws.row_dimensions[85].height = 17.25
     for n, spec in enumerate(target_cols):
-        _target_chart(ws, dd, spec, f"{get_column_letter(1 + 8 * n)}86")
+        _target_chart(ws, dd, spec, f"{get_column_letter(1 + TARGET_STRIDE * n)}86")
 
-    note_line(ws, 97, (
+    note_line(ws, 101, (
         "Notes: “moved on” means the indicator has gained at least one data point since the 2024 report. "
         "Figures fed from a Derivations block are live formulas, exactly as in the rest of this workbook — edit "
         "an input there and this page follows on the next recalculation. Nothing here is a Board position."),
@@ -288,7 +300,7 @@ def _moves_chart(ws, dd, inds, reads):
     chart.add_data(Reference(dd, min_col=2, min_row=1, max_row=1 + rows), titles_from_data=True)
     chart.set_categories(Reference(dd, min_col=1, min_row=2, max_row=1 + rows))
     style_chart(chart, "Change vs the report's last figure — top 8 up, top 8 down",
-                height=7.5, width=15)
+                width=MOVES_SIZE[0], height=MOVES_SIZE[1])
     text_categories(chart, dd, 1, 2, 1 + rows)
     chart.legend = None
     chart.x_axis.numFmt = "0%"
@@ -313,7 +325,7 @@ def _coverage_chart(ws, dd, inds, reads):
                  titles_from_data=True)
     cov.set_categories(Reference(dd, min_col=4, min_row=2, max_row=1 + rows))
     style_chart(cov, "Indicators moved on vs still at the report figure, by chapter",
-                height=7.5, width=15)
+                width=MOVES_SIZE[0], height=MOVES_SIZE[1])
     text_categories(cov, dd, 4, 2, 1 + rows)
     cov.y_axis.title = "Indicators"
     for series, color in zip(cov.series, [TEAL, TEAL_LIGHT]):
@@ -329,7 +341,8 @@ def _trend_chart(ws, dd, spec, cols, anchor):
     ch.add_data(Reference(dd, min_col=col + 1, max_col=col + cols["series"],
                           min_row=1, max_row=last), titles_from_data=True)
     ch.set_categories(Reference(dd, min_col=col, min_row=first, max_row=last))
-    style_chart(ch, f"{spec['title']} ({spec['indicator']['unit']})", height=7.5, width=15)
+    style_chart(ch, f"{spec['title']} ({spec['indicator']['unit']})",
+                width=TREND_SIZE[0], height=TREND_SIZE[1])
     ch.y_axis.title = spec["indicator"]["unit"]
     for k, (series, color) in enumerate(zip(ch.series, [TEAL, ACCENT_ORANGE])):
         series.graphicalProperties.line.solidFill = color
@@ -350,7 +363,7 @@ def _target_chart(ws, dd, spec, anchor):
     ch.add_data(Reference(dd, min_col=col + 1, min_row=2, max_row=3))
     ch.set_categories(Reference(dd, min_col=col, min_row=2, max_row=3))
     style_chart(ch, f"{ind['code']} · latest vs {ind['targetYear']} target ({ind['unit']})",
-                height=7.5, width=15)
+                width=TARGET_SIZE[0], height=TARGET_SIZE[1])
     text_categories(ch, dd, col, 2, 3)
     ch.legend = None
     ser = ch.series[0]
