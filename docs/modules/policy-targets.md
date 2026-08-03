@@ -29,8 +29,24 @@ One row per target (a policy can have many), with twelve columns:
 | 11 | Source | link to the act on EUR-Lex. |
 | 12 | **Human confirmed** | reviewer checkbox — grey until ticked, then green. |
 
+Plus the review dimensions added by the later passes, which travel with the
+table and every export:
+
+| Column | Notes |
+|--------|-------|
+| 13–20 · Sectors/systems | Energy · Buildings · Agri-food · Transport · Industry · Land & marine ecosystems · Water · Health. A target can carry several. |
+| 21 · Mitigation / adaptation argument | The mechanism behind the climate-relevance call. |
+| 22 · Duplicate / similar target | The closest target text in another act. |
+| Relevant (transition lens) | Whether the row materially bears on the transition; the default view. |
+| **First order (1) / Second order (2)** | First order = the overall change the act exists to achieve; second order = dependent, complementary or niche. Reviewer-assigned where available, else classifier-assigned on the reviewers' calibration. |
+| **Revise target / Revise reason** | Flags a row that matches a not-a-target pattern (NT-1…NT-15) — flagged for the next round, not deleted. |
+| **Document updated (consolidated version)** | Set when the act's source text was refreshed to a newer consolidated EUR-Lex version. |
+
 The full table (including confirmation status) downloads as **`.xlsx`**
-(styled, auto-filtered, confirmed rows shaded green) or **`.csv`**.
+(styled, auto-filtered, confirmed rows shaded green) or **`.csv`**. The in-app
+download and the shipped reviewer workbook
+(`public/data/eu-policy-targets-corrected.xlsx`) carry the **same columns in the
+same order**, so the two can be diffed row for row.
 
 ## How the data is built
 

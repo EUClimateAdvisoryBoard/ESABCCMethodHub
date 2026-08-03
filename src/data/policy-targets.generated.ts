@@ -65,6 +65,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -107,6 +109,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -149,6 +153,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -190,6 +196,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -232,6 +240,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -274,6 +284,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -315,6 +327,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -359,6 +373,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -401,6 +417,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -443,6 +461,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -483,6 +503,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -522,6 +544,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -567,6 +591,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -607,6 +633,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -652,6 +680,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -697,6 +727,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -741,6 +773,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -785,6 +819,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 18,
     "duplicate_of": ""
   },
@@ -832,6 +868,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 19,
     "duplicate_of": ""
   },
@@ -879,6 +917,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 20,
     "duplicate_of": ""
   },
@@ -921,6 +961,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 21,
     "duplicate_of": ""
   },
@@ -965,6 +1007,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 22,
     "duplicate_of": ""
   },
@@ -1011,6 +1055,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 23,
     "duplicate_of": ""
   },
@@ -1055,6 +1101,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 24,
     "duplicate_of": ""
   },
@@ -1099,6 +1147,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 25,
     "duplicate_of": ""
   },
@@ -1141,6 +1191,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 26,
     "duplicate_of": ""
   },
@@ -1183,6 +1235,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 27,
     "duplicate_of": ""
   },
@@ -1227,6 +1281,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 28,
     "duplicate_of": ""
   },
@@ -1269,6 +1325,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 29,
     "duplicate_of": ""
   },
@@ -1309,6 +1367,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 30,
     "duplicate_of": ""
   },
@@ -1352,6 +1412,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 31,
     "duplicate_of": "Similar target: TEN-T Regulation — Art. 18(4) (similarity 0.25)"
   },
@@ -1390,6 +1452,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 32,
     "duplicate_of": ""
   },
@@ -1428,6 +1492,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 33,
     "duplicate_of": ""
   },
@@ -1468,6 +1534,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 34,
     "duplicate_of": ""
   },
@@ -1504,6 +1572,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 35,
     "duplicate_of": ""
   },
@@ -1539,6 +1609,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 36,
     "duplicate_of": ""
   },
@@ -1577,6 +1649,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -1615,6 +1689,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -1653,6 +1729,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -1692,6 +1770,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": "Similar target: Waste Framework Directive (consolidated) — Article 11(2)(c) (similarity 0.27)"
   },
@@ -1730,6 +1810,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -1768,6 +1850,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -1812,6 +1896,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to affix a carbon-footprint label, no quantified progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -1856,6 +1942,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: compliance-documentation duty tied to a footprint threshold not yet fixed (deferred to a future delegated act), not itself a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -1898,6 +1986,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: content-of-declaration requirement listing what a carbon-footprint declaration must contain, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -1942,6 +2032,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -1986,6 +2078,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -2024,6 +2118,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation on recyclers restating compliance with the Annex XII targets already captured elsewhere.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -2061,6 +2157,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -2099,6 +2197,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": "Similar target: Habitats Directive (consolidated) — Article 12(1) (similarity 0.26)"
   },
@@ -2137,6 +2237,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -2175,6 +2277,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to classify SPA territories, no metric or progression stated.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -2213,6 +2317,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation extending protective measures to migratory species, no progression or quantification.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -2250,6 +2356,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: qualifying condition (avoid deterioration/disturbance) for how the Art 4 headline SPA protection is achieved.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": "Similar target: Habitats Directive (consolidated) — Article 6(2) (similarity 0.33)"
   },
@@ -2291,6 +2399,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-12: market restriction banning sale/transport of birds, not a progression target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -2328,6 +2438,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation permitting regulated hunting subject to a non-jeopardy duty, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -2365,6 +2477,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: equipment/method ban (non-selective capture methods), no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -2402,6 +2516,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to encourage research, no progression or quantification.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -2439,6 +2555,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: non-regression/standstill clause, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -2479,6 +2597,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -2518,6 +2638,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": "Similar target: European Regional Development Fund (consolidated) — Article 3(1)(b)(i) (similarity 0.26)"
   },
@@ -2564,6 +2686,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -2605,6 +2729,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -2642,6 +2768,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to maintain land in good agricultural/environmental condition, no progression or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -2680,6 +2808,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: obligation to establish eco-schemes is a one-off conduct duty, no quantified progression (quantification is in Art 97)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -2716,6 +2846,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: methodology rule for counting collective commitments once an 80% membership threshold is met",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -2751,6 +2883,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-2: funding ceiling capping wine-sector green-harvesting assistance at 50% of costs, not a target",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -2794,6 +2928,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -2831,6 +2967,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-1: content-of-plan requirement — what interventions a CAP Strategic Plan must include",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -2868,6 +3006,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -2903,6 +3043,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -2940,6 +3082,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -2977,6 +3121,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -3014,6 +3160,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague 'shall aim to make a greater contribution' with no quantified metric or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -3051,6 +3199,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: customs-authorisation conduct obligation, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -3089,6 +3239,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: recurring annual declaration-submission duty, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -3127,6 +3279,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: recurring annual certificate-surrender duty, no progression itself (level is set elsewhere).",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -3165,6 +3319,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: quarterly compliance-buffer/calculation rule governing certificate holdings, not itself a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -3203,6 +3359,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: methodology adjusting CBAM certificates for free EU ETS allocation, a compliance-calculation rule.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -3240,6 +3398,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: scope-definition of the transitional period's limited reporting obligations, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -3275,6 +3435,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare entry-into-force fragment, no actor or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -3310,6 +3472,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare entry-into-force scheduling fragment listing which articles apply from a date, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -3345,6 +3509,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare entry-into-force scheduling fragment listing which articles apply from a date, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": "Similar target: Energy Efficiency Directive — Article 26(2)(b) — Heating and cooling supply (GHG emissions criterion) (similarity 0.25)"
   },
@@ -3387,6 +3553,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/851). Stored text had only the original 2019 targets (15%/37.5% by 2025/2030 cars, 31% vans); consolidated text confirms the 2035 'EU fleet-wide target equal to a 100 % reduction' (zero-emission new cars/vans from 2035) and the raised 2030 targets (55%/50%).",
+    "doc_replaced_celex": "02019R0631-20250709",
+    "doc_replaced_date": "2025-07-09",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -3428,6 +3596,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/851). Stored text had only the original 2019 targets (15%/37.5% by 2025/2030 cars, 31% vans); consolidated text confirms the 2035 'EU fleet-wide target equal to a 100 % reduction' (zero-emission new cars/vans from 2035) and the raised 2030 targets (55%/50%).",
+    "doc_replaced_celex": "02019R0631-20250709",
+    "doc_replaced_date": "2025-07-09",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -3469,6 +3639,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/851). Stored text had only the original 2019 targets (15%/37.5% by 2025/2030 cars, 31% vans); consolidated text confirms the 2035 'EU fleet-wide target equal to a 100 % reduction' (zero-emission new cars/vans from 2035) and the raised 2030 targets (55%/50%).",
+    "doc_replaced_celex": "02019R0631-20250709",
+    "doc_replaced_date": "2025-07-09",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -3510,6 +3682,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/851). Stored text had only the original 2019 targets (15%/37.5% by 2025/2030 cars, 31% vans); consolidated text confirms the 2035 'EU fleet-wide target equal to a 100 % reduction' (zero-emission new cars/vans from 2035) and the raised 2030 targets (55%/50%).",
+    "doc_replaced_celex": "02019R0631-20250709",
+    "doc_replaced_date": "2025-07-09",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -3552,6 +3726,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/851). Stored text had only the original 2019 targets (15%/37.5% by 2025/2030 cars, 31% vans); consolidated text confirms the 2035 'EU fleet-wide target equal to a 100 % reduction' (zero-emission new cars/vans from 2035) and the raised 2030 targets (55%/50%).",
+    "doc_replaced_celex": "02019R0631-20250709",
+    "doc_replaced_date": "2025-07-09",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -3593,6 +3769,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/851). Stored text had only the original 2019 targets (15%/37.5% by 2025/2030 cars, 31% vans); consolidated text confirms the 2035 'EU fleet-wide target equal to a 100 % reduction' (zero-emission new cars/vans from 2035) and the raised 2030 targets (55%/50%).",
+    "doc_replaced_celex": "02019R0631-20250709",
+    "doc_replaced_date": "2025-07-09",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -3635,6 +3813,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/851). Stored text had only the original 2019 targets (15%/37.5% by 2025/2030 cars, 31% vans); consolidated text confirms the 2035 'EU fleet-wide target equal to a 100 % reduction' (zero-emission new cars/vans from 2035) and the raised 2030 targets (55%/50%).",
+    "doc_replaced_celex": "02019R0631-20250709",
+    "doc_replaced_date": "2025-07-09",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -3676,6 +3856,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/851). Stored text had only the original 2019 targets (15%/37.5% by 2025/2030 cars, 31% vans); consolidated text confirms the 2035 'EU fleet-wide target equal to a 100 % reduction' (zero-emission new cars/vans from 2035) and the raised 2030 targets (55%/50%).",
+    "doc_replaced_celex": "02019R0631-20250709",
+    "doc_replaced_date": "2025-07-09",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -3718,6 +3900,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/851). Stored text had only the original 2019 targets (15%/37.5% by 2025/2030 cars, 31% vans); consolidated text confirms the 2035 'EU fleet-wide target equal to a 100 % reduction' (zero-emission new cars/vans from 2035) and the raised 2030 targets (55%/50%).",
+    "doc_replaced_celex": "02019R0631-20250709",
+    "doc_replaced_date": "2025-07-09",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -3765,6 +3949,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (7 consolidations, including the STEP Regulation (EU) 2024/795 amendments and later technical/simplification amendments). The ERDF 30% / Cohesion Fund 37% climate-contribution targets (Article 6) are unchanged in the consolidated text, but the Article now also cross-references the STEP mechanism for reallocating climate contributions between the two funds; replaced for completeness.",
+    "doc_replaced_celex": "02021R1060-20260701",
+    "doc_replaced_date": "2026-07-01",
     "target_number": 1,
     "duplicate_of": "Duplicate wording: European Regional Development Fund (consolidated) — Article 3(1)(b) (similarity 1.00)"
   },
@@ -3797,6 +3983,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (7 consolidations, including the STEP Regulation (EU) 2024/795 amendments and later technical/simplification amendments). The ERDF 30% / Cohesion Fund 37% climate-contribution targets (Article 6) are unchanged in the consolidated text, but the Article now also cross-references the STEP mechanism for reallocating climate contributions between the two funds; replaced for completeness.",
+    "doc_replaced_celex": "02021R1060-20260701",
+    "doc_replaced_date": "2026-07-01",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -3828,6 +4016,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (7 consolidations, including the STEP Regulation (EU) 2024/795 amendments and later technical/simplification amendments). The ERDF 30% / Cohesion Fund 37% climate-contribution targets (Article 6) are unchanged in the consolidated text, but the Article now also cross-references the STEP mechanism for reallocating climate contributions between the two funds; replaced for completeness.",
+    "doc_replaced_celex": "02021R1060-20260701",
+    "doc_replaced_date": "2026-07-01",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -3859,6 +4049,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: methodology for establishing the Member-State-level climate contribution target from the Art6(1) headline percentage, not a target itself.",
     "doc_replaced": "Replaced with current consolidated version (7 consolidations, including the STEP Regulation (EU) 2024/795 amendments and later technical/simplification amendments). The ERDF 30% / Cohesion Fund 37% climate-contribution targets (Article 6) are unchanged in the consolidated text, but the Article now also cross-references the STEP mechanism for reallocating climate contributions between the two funds; replaced for completeness.",
+    "doc_replaced_celex": "02021R1060-20260701",
+    "doc_replaced_date": "2026-07-01",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -3890,6 +4082,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: monitoring and remedial-measures process for the climate contribution target, kept only as context for the headline target.",
     "doc_replaced": "Replaced with current consolidated version (7 consolidations, including the STEP Regulation (EU) 2024/795 amendments and later technical/simplification amendments). The ERDF 30% / Cohesion Fund 37% climate-contribution targets (Article 6) are unchanged in the consolidated text, but the Article now also cross-references the STEP mechanism for reallocating climate contributions between the two funds; replaced for completeness.",
+    "doc_replaced_celex": "02021R1060-20260701",
+    "doc_replaced_date": "2026-07-01",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -3921,6 +4115,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered duty that only fires where progress toward the climate target is insufficient by 31 Dec 2024.",
     "doc_replaced": "Replaced with current consolidated version (7 consolidations, including the STEP Regulation (EU) 2024/795 amendments and later technical/simplification amendments). The ERDF 30% / Cohesion Fund 37% climate-contribution targets (Article 6) are unchanged in the consolidated text, but the Article now also cross-references the STEP mechanism for reallocating climate contributions between the two funds; replaced for completeness.",
+    "doc_replaced_celex": "02021R1060-20260701",
+    "doc_replaced_date": "2026-07-01",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -3952,6 +4148,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation ('in full respect of the Union environmental acquis') with no progression or metric.",
     "doc_replaced": "Replaced with current consolidated version (7 consolidations, including the STEP Regulation (EU) 2024/795 amendments and later technical/simplification amendments). The ERDF 30% / Cohesion Fund 37% climate-contribution targets (Article 6) are unchanged in the consolidated text, but the Article now also cross-references the STEP mechanism for reallocating climate contributions between the two funds; replaced for completeness.",
+    "doc_replaced_celex": "02021R1060-20260701",
+    "doc_replaced_date": "2026-07-01",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -3983,6 +4181,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to prepare a Partnership Agreement that will itself set out strategic orientations/objectives later.",
     "doc_replaced": "Replaced with current consolidated version (7 consolidations, including the STEP Regulation (EU) 2024/795 amendments and later technical/simplification amendments). The ERDF 30% / Cohesion Fund 37% climate-contribution targets (Article 6) are unchanged in the consolidated text, but the Article now also cross-references the STEP mechanism for reallocating climate contributions between the two funds; replaced for completeness.",
+    "doc_replaced_celex": "02021R1060-20260701",
+    "doc_replaced_date": "2026-07-01",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -4014,6 +4214,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: announces a future Commission legislative proposal (ERA Act), not itself a timebound target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -4045,6 +4247,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — Commission will propose a future legal regime, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -4076,6 +4280,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare descriptive sentence with no actor/duty of its own, just noting shortfall against a target set elsewhere.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -4108,6 +4314,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -4141,6 +4349,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — incentives 'will be developed' via a future ETS review, not a target itself.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -4182,6 +4392,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future legislative proposal announcement.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -4228,6 +4440,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future Affordable Energy Action Plan, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -4263,6 +4477,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future action plan announcement with no measurable target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -4294,6 +4510,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future legislative proposal announcement.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -4325,6 +4543,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -4356,6 +4576,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -4388,6 +4610,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare citation of an external report's estimate, no actor or duty attached to any party.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -4425,6 +4649,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: non-specific bundling of targets defined elsewhere, with no measurable content of its own.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -4462,6 +4688,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to adopt a strategy that will itself set out strategic objectives and measures.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -4493,6 +4721,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — recurring risk-assessment exercise, no measurable progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -4524,6 +4754,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off identification exercise by a date, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -4555,6 +4787,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to designate authorities, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -4586,6 +4820,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague support activities, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -4617,6 +4853,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — periodic risk assessment, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -4648,6 +4886,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation (chapeau) with no progression or metric of its own.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -4680,6 +4920,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment — list sub-point quoted without the governing chapeau's full operative content.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -4717,6 +4959,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment — list sub-point quoted without the governing chapeau's full operative content.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -4748,6 +4992,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to have and apply a plan, no progression of its own.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -4786,6 +5032,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": "Similar target: Net-Zero Industry Act — Article 1(1) - Subject matter (similarity 0.30)"
   },
@@ -4824,6 +5072,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -4862,6 +5112,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -4902,6 +5154,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -4940,6 +5194,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -4978,6 +5234,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to 'undertake efforts' to moderate consumption growth, no specific metric or date.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -5017,6 +5275,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation for the Commission to set recycling-capacity benchmarks later via delegated act.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -5052,6 +5312,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: one-off administrative single-point-of-contact designation duty, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": "Duplicate wording: Net-Zero Industry Act — Article 6(1) - Single points of contact (similarity 0.56)"
   },
@@ -5089,6 +5351,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: permit-granting duration limit that qualifies how the Art 5 headline capacity benchmarks are achieved — mirrors the NZIA Art 9/16 permit-duration rows already marked not-a-target by human reviewers.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -5126,6 +5390,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: permit-granting duration limit qualifying how the headline capacity benchmarks are achieved, mirroring the NZIA precedent.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -5163,6 +5429,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: permit-granting duration limit for strategic projects qualifying how the headline benchmarks are achieved, mirroring the NZIA precedent.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -5200,6 +5468,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: permit-granting duration limit for strategic projects qualifying how the headline benchmarks are achieved, mirroring the NZIA precedent.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -5239,6 +5509,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation for the Commission to set minimum recycled-magnet-content shares later via delegated act.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -5277,6 +5549,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — facilitate exercises and update the plan, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -5313,6 +5587,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to establish a plan that will itself define the Union's preparedness objectives.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -5350,6 +5626,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to liaise/coordinate, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -5387,6 +5665,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — periodic reporting, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -5424,6 +5704,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: obligation on an EU agency (ECDC) to periodically assess and report, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -5462,6 +5744,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered obligation ('if applicable') to present an action plan responding to ECDC recommendations.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -5497,6 +5781,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: obligation on the Commission to periodically report on the state of play, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -5534,6 +5820,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — permissive one-off procurement option, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -5572,6 +5860,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment — surveillance-aim list item quoted without a standalone operative duty.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -5608,6 +5898,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — establishing permanent communication, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -5646,6 +5938,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — continued platform development, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -5683,6 +5977,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered obligation — notify an alert only where defined criteria are fulfilled.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -5719,6 +6015,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered obligation — risk assessment triggered by a prior alert notification.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -5755,6 +6053,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — inform/consult before adopting measures, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -5792,6 +6092,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — discretionary one-off recognition power, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -5829,6 +6131,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: obligation on the Commission to evaluate the Regulation and report, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": "Similar target: 8th Environment Action Programme — Article 6 — evaluation (similarity 0.33)"
   },
@@ -5861,6 +6165,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct/disclosure obligation — requires undertakings to report on their own targets, not a progression duty of the Directive itself.",
     "doc_replaced": "Replaced with current consolidated version (amended by the 2025-2026 'Omnibus I' simplification package). Stored text set the in-scope threshold at 'average number of 500 employees'; consolidated text raises this to 'average number of 1 000 employees' with a EUR 450 000 000 turnover floor, substantially narrowing CSRD's scope.",
+    "doc_replaced_celex": "02022L2464-20260318",
+    "doc_replaced_date": "2026-03-18",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -5893,6 +6199,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct/disclosure obligation — requires groups to report on their own targets, not a progression duty of the Directive itself.",
     "doc_replaced": "Replaced with current consolidated version (amended by the 2025-2026 'Omnibus I' simplification package). Stored text set the in-scope threshold at 'average number of 500 employees'; consolidated text raises this to 'average number of 1 000 employees' with a EUR 450 000 000 turnover floor, substantially narrowing CSRD's scope.",
+    "doc_replaced_celex": "02022L2464-20260318",
+    "doc_replaced_date": "2026-03-18",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -5924,6 +6232,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -5955,6 +6265,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-6: background reasoning statement, no actor/date/commitment",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -5986,6 +6298,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment, no subject/actor/date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -6017,6 +6331,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct expectation on 'the heritage sector', no progression or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -6054,6 +6370,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-6: descriptive background statement about heritage's economic potential, no obligation",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -6085,6 +6403,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare list fragment lacking its chapeau/subject",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -6116,6 +6436,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare list fragment lacking its chapeau/subject",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -6147,6 +6469,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare list fragment lacking its chapeau/subject",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -6178,6 +6502,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare list fragment lacking its chapeau/subject",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -6209,6 +6535,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — invites stakeholders to look into future action, sets no objective itself",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -6247,6 +6575,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -6286,6 +6616,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": "Similar target: European Regional Development Fund (consolidated) — Article 3(1)(b)(i) (similarity 0.33)"
   },
@@ -6324,6 +6656,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-4: definitions provision ('deforestation-free')",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -6363,6 +6697,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-4: definitions provision ('deforestation-free')",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -6401,6 +6737,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-12: market-placement prohibition, not a progression target",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -6438,6 +6776,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: qualifying condition for how the Art 3 market prohibition is satisfied",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -6475,6 +6815,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: qualifying condition for how the Art 3 market prohibition is satisfied",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -6512,6 +6854,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct due-diligence obligation, no progression or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -6547,6 +6891,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: definitional clause, not a target — no actor, date or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -6582,6 +6928,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: technical-documentation content requirement (standard references), not a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -6617,6 +6965,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: recurring self-regulation-measure progress-reporting duty on signatories, no quantified progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -6652,6 +7002,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: Commission procedural rule for delisting non-compliant self-regulation measures, an assessment/administrative process, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -6689,6 +7041,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare scope-extension fragment referencing 'this paragraph' without its substantive content, no measurable target itself.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -6720,6 +7074,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
+    "doc_replaced_celex": "02018R0842-20230516",
+    "doc_replaced_date": "2023-05-16",
     "target_number": 1,
     "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 1 — Subject matter and scope (similarity 0.25)"
   },
@@ -6751,6 +7107,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
+    "doc_replaced_celex": "02018R0842-20230516",
+    "doc_replaced_date": "2023-05-16",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -6784,6 +7142,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
+    "doc_replaced_celex": "02018R0842-20230516",
+    "doc_replaced_date": "2023-05-16",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -6813,6 +7173,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered additional allocation from the safety reserve",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
+    "doc_replaced_celex": "02018R0842-20230516",
+    "doc_replaced_date": "2023-05-16",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -6844,6 +7206,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: compliance-reserve mechanism supporting the headline target, not itself a progression goal",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
+    "doc_replaced_celex": "02018R0842-20230516",
+    "doc_replaced_date": "2023-05-16",
     "target_number": 5,
     "duplicate_of": "Similar target: LULUCF Regulation — Article 13b — Land flexibility mechanism for the period from 2026 to 2030 (similarity 0.28)"
   },
@@ -6873,6 +7237,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: Commission publication obligation",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EU) 2023/857, raising the collective 2030 target to -40% and revising Member State trajectories/Annex I). Stored text was the original 2018 text; consolidated text has the revised Article 4 linear-trajectory sub-paragraphs for 2021-2030 and the updated Directive 2003/87/EC maritime carve-out cross-reference.",
+    "doc_replaced_celex": "02018R0842-20230516",
+    "doc_replaced_date": "2023-05-16",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -6917,6 +7283,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -6951,6 +7319,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -6989,6 +7359,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 5(1) — Adaptation to climate change (similarity 0.29)"
   },
@@ -7032,6 +7404,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -7085,6 +7459,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -7131,6 +7507,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -7181,6 +7559,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -7218,6 +7598,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — 'setting a deadline' for fossil-fuel-subsidy phase-out is deferred to a later act, not itself a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -7249,6 +7631,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: methodology for identifying and reporting other environmentally harmful subsidies.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -7286,6 +7670,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -7327,6 +7713,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — a dedicated legislative proposal on soil health 'by 2023', announcing future legislation rather than setting a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -7359,6 +7747,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — contemplates the future introduction of Union 2030 reduction targets 'as appropriate', not itself a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -7390,6 +7780,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — Commission to present a monitoring framework of headline indicators, not itself a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -7421,6 +7813,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: obligation on the Commission to carry out a mid-term review and report, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -7452,6 +7846,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: obligation on the Commission to evaluate the Programme and report, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": "Similar target: Cross-Border Health Threats Regulation — Article 33 — Evaluation of the Regulation (similarity 0.33)"
   },
@@ -7493,6 +7889,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": "Similar target: Renewable Energy Directive (RED III consolidated) — Article 3(1) — Binding overall Union target for 2030 (similarity 0.28)"
   },
@@ -7535,6 +7933,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 4(b)(1) — National objectives, targets and contributions (similarity 0.39)"
   },
@@ -7574,6 +7974,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": "Similar target: Renewable Energy Directive (RED III consolidated) — Article 3(1) — Binding overall Union target for 2030 (similarity 0.25)"
   },
@@ -7610,6 +8012,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -7648,6 +8052,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -7693,6 +8099,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -7730,6 +8138,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -7771,6 +8181,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -7812,6 +8224,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -7853,6 +8267,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -7894,6 +8310,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -7934,6 +8352,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -7974,6 +8394,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -8011,6 +8433,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -8048,6 +8472,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": "Similar target: CBAM Regulation — Article 36(2), point (b) — Entry into force (similarity 0.25)"
   },
@@ -8085,6 +8511,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -8122,6 +8550,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -8159,6 +8589,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 18,
     "duplicate_of": ""
   },
@@ -8201,6 +8633,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -8239,6 +8673,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -8280,6 +8716,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -8318,6 +8756,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": "Similar target: Renovation Wave — Section 1 (Boosting building renovation for climate neutrality and recovery) (similarity 0.25)"
   },
@@ -8364,6 +8804,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -8408,6 +8850,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -8457,6 +8901,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -8495,6 +8941,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -8534,6 +8982,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -8582,6 +9032,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -8621,6 +9073,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -8661,6 +9115,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -8701,6 +9157,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -8746,6 +9204,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02021R1058-20250920",
+    "doc_replaced_date": "2025-09-20",
     "target_number": 1,
     "duplicate_of": "Duplicate wording: Common Provisions Regulation (Cohesion, consolidated) — Article 5(1)(b) — policy objective 2 (greener, low-carbon) (similarity 1.00)"
   },
@@ -8785,6 +9245,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02021R1058-20250920",
+    "doc_replaced_date": "2025-09-20",
     "target_number": 2,
     "duplicate_of": "Similar target: Deforestation Regulation — Article 1(1)(b) — Subject matter and scope (similarity 0.33)"
   },
@@ -8822,6 +9284,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02021R1058-20250920",
+    "doc_replaced_date": "2025-09-20",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -8854,6 +9318,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02021R1058-20250920",
+    "doc_replaced_date": "2025-09-20",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -8885,6 +9351,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02021R1058-20250920",
+    "doc_replaced_date": "2025-09-20",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -8916,6 +9384,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02021R1058-20250920",
+    "doc_replaced_date": "2025-09-20",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -8947,6 +9417,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02021R1058-20250920",
+    "doc_replaced_date": "2025-09-20",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -8976,6 +9448,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: methodology/compliance-calculation rule ('by way of derogation... taken into account when calculating compliance') for the thematic concentration requirement, not a target itself.",
     "doc_replaced": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02021R1058-20250920",
+    "doc_replaced_date": "2025-09-20",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -9011,6 +9485,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered rule — the 1.55% limit applies only where a Member State's GNI per capita and fossil-fuel share meet defined thresholds.",
     "doc_replaced": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02021R1058-20250920",
+    "doc_replaced_date": "2025-09-20",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -9046,6 +9522,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague priority-setting language with no metric or progression of its own.",
     "doc_replaced": "Replaced with current consolidated version (4 consolidations). The Article 4(6) thematic-concentration shares (85%/40%/25% by region group) captured as register targets are unchanged in the consolidated text; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02021R1058-20250920",
+    "doc_replaced_date": "2025-09-20",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -9080,6 +9558,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -9111,6 +9591,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-6: conditional background aspiration ('would put Europe in a much better position'), no commitment",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -9140,6 +9622,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -9172,6 +9656,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -9209,6 +9695,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -9241,6 +9729,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -9273,6 +9763,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -9305,6 +9797,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -9337,6 +9831,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-5: pointer to the MFF 30% climate-spending target set elsewhere, stated retrospectively",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -9369,6 +9865,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -9402,6 +9900,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -9431,6 +9931,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-6: vague conditional background statement about what the Mission 'would test', no metric",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -9463,6 +9965,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -9495,6 +9999,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-6: vague background statement about an eventual outcome, no metric or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -9526,6 +10032,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -9557,6 +10065,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -9588,6 +10098,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -9623,6 +10135,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 18,
     "duplicate_of": ""
   },
@@ -9652,6 +10166,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 19,
     "duplicate_of": ""
   },
@@ -9687,6 +10203,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 20,
     "duplicate_of": ""
   },
@@ -9716,6 +10234,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 21,
     "duplicate_of": ""
   },
@@ -9745,6 +10265,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 22,
     "duplicate_of": ""
   },
@@ -9774,6 +10296,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 23,
     "duplicate_of": ""
   },
@@ -9803,6 +10327,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 24,
     "duplicate_of": ""
   },
@@ -9832,6 +10358,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 25,
     "duplicate_of": ""
   },
@@ -9861,6 +10389,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 26,
     "duplicate_of": ""
   },
@@ -9890,6 +10420,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 27,
     "duplicate_of": ""
   },
@@ -9919,6 +10451,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 28,
     "duplicate_of": ""
   },
@@ -9948,6 +10482,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 29,
     "duplicate_of": ""
   },
@@ -9977,6 +10513,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 30,
     "duplicate_of": ""
   },
@@ -10006,6 +10544,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 31,
     "duplicate_of": ""
   },
@@ -10047,6 +10587,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 32,
     "duplicate_of": ""
   },
@@ -10082,6 +10624,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 33,
     "duplicate_of": ""
   },
@@ -10117,6 +10661,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 34,
     "duplicate_of": ""
   },
@@ -10161,6 +10707,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 35,
     "duplicate_of": ""
   },
@@ -10190,6 +10738,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 36,
     "duplicate_of": ""
   },
@@ -10228,6 +10778,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 37,
     "duplicate_of": ""
   },
@@ -10257,6 +10809,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 38,
     "duplicate_of": ""
   },
@@ -10286,6 +10840,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 39,
     "duplicate_of": ""
   },
@@ -10315,6 +10871,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 40,
     "duplicate_of": ""
   },
@@ -10350,6 +10908,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 41,
     "duplicate_of": ""
   },
@@ -10379,6 +10939,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 42,
     "duplicate_of": ""
   },
@@ -10415,6 +10977,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 43,
     "duplicate_of": ""
   },
@@ -10444,6 +11008,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 44,
     "duplicate_of": ""
   },
@@ -10473,6 +11039,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 45,
     "duplicate_of": ""
   },
@@ -10502,6 +11070,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 46,
     "duplicate_of": ""
   },
@@ -10531,6 +11101,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 47,
     "duplicate_of": ""
   },
@@ -10566,6 +11138,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 48,
     "duplicate_of": ""
   },
@@ -10607,6 +11181,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 49,
     "duplicate_of": ""
   },
@@ -10643,6 +11219,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 50,
     "duplicate_of": ""
   },
@@ -10672,6 +11250,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 51,
     "duplicate_of": ""
   },
@@ -10701,6 +11281,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 52,
     "duplicate_of": ""
   },
@@ -10737,6 +11319,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 53,
     "duplicate_of": ""
   },
@@ -10766,6 +11350,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 54,
     "duplicate_of": ""
   },
@@ -10801,6 +11387,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 55,
     "duplicate_of": ""
   },
@@ -10830,6 +11418,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 56,
     "duplicate_of": ""
   },
@@ -10859,6 +11449,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare bullet-list fragment with no subject/actor/date (missing its 'The Commission will:' chapeau)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 57,
     "duplicate_of": ""
   },
@@ -10891,6 +11483,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 1,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 3 — Integrated national energy and climate plans (similarity 0.33)"
   },
@@ -10922,6 +11516,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -10956,6 +11552,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -10987,6 +11585,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation on institutions/Member States to take necessary measures, no progression itself.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -11020,6 +11620,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -11061,6 +11663,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: removals-contribution cap that qualifies how the Art 4(1) headline 2030 target is calculated, kept for monitoring context.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -11094,6 +11698,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -11123,6 +11729,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: Commission obligation to review legislation and report by a date, not a target.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 8,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 8 — Analytical basis of the integrated national energy and climate plans (similarity 0.29)"
   },
@@ -11152,6 +11760,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: Commission obligation to review legislation for the post-2030 period, not a target.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -11187,6 +11797,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to 'continue to strengthen' enabling initiatives, no metric or progression.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -11220,6 +11832,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 11,
     "duplicate_of": "Similar target: 8th Environment Action Programme — Article 2(2)(b) — thematic objective (similarity 0.29)"
   },
@@ -11249,6 +11863,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation on the Commission to engage with society, no progression or quantification.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -11278,6 +11894,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to engage sectors on voluntary roadmaps, no progression or quantification.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 13,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 8 — Analytical basis of the integrated national energy and climate plans (similarity 0.25)"
   },
@@ -11309,6 +11927,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to establish a multilevel dialogue structure, no progression or quantification.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -11346,6 +11966,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: cross-reference to existing NECP implementation duties inserted into the Governance Regulation, not a new target.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 15,
     "duplicate_of": "Duplicate wording: Governance Regulation (consolidated) — Article 1 — Subject matter and scope (similarity 1.00)"
   },
@@ -11375,6 +11997,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: content-of-plan requirement (what an NECP must report), not a quantified target.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 16,
     "duplicate_of": "Duplicate wording: Governance Regulation (consolidated) — Article 8 — Analytical basis of the integrated national energy and climate plans (similarity 1.00)"
   },
@@ -11404,6 +12028,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: recurring long-term-strategy submission/process duty, not a quantified outcome target.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 17,
     "duplicate_of": "Duplicate wording: Governance Regulation (consolidated) — Article 15(1) — Long-term strategies (similarity 1.00)"
   },
@@ -11433,6 +12059,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: content-of-report requirement for NECP progress reporting, not a quantified target.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 18,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 8 — Analytical basis of the integrated national energy and climate plans (similarity 0.29)"
   },
@@ -11462,6 +12090,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: content-of-report requirement on Member State progress, not a quantified target.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 19,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 8 — Analytical basis of the integrated national energy and climate plans (similarity 0.38)"
   },
@@ -11497,6 +12127,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: Commission reporting obligation to the European Parliament and Council, not a target.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 20,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 1 — Subject matter and scope (similarity 0.34)"
   },
@@ -11526,6 +12158,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: content-of-report requirement (policy contribution assessment), not a quantified target.",
     "doc_replaced": "Replaced with current consolidated version. Stored text only provided for a future Commission proposal to set a 2040 target (Article 4(3), 'shall make a legislative proposal ... to include the Union 2040 climate target'); consolidated text now contains the adopted, concrete 'binding Union 2040 climate target shall be a reduction of net greenhouse gas emissions ... by 90 % compared to 1990 levels by 2040' plus the international-credits provision from 2036. This is a major headline-target addition our register previously missed entirely.",
+    "doc_replaced_celex": "02021R1119-20260407",
+    "doc_replaced_date": "2026-04-07",
     "target_number": 21,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 8 — Analytical basis of the integrated national energy and climate plans (similarity 0.44)"
   },
@@ -11567,6 +12201,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the Fit for 55 revision, Directive (EU) 2023/959, and 16 consolidations since 2003). Stored text was the original 25.10.2003 OJ text (pre-Market Stability Reserve, pre-aviation/maritime inclusion, EUR 40/tonne 2005-2007 penalty); consolidated text includes maritime transport scope (Articles 3g-3gg) and the revised cap trajectory.",
+    "doc_replaced_celex": "02003L0087-20240301",
+    "doc_replaced_date": "2024-03-01",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -11604,6 +12240,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the Fit for 55 revision, Directive (EU) 2023/959, and 16 consolidations since 2003). Stored text was the original 25.10.2003 OJ text (pre-Market Stability Reserve, pre-aviation/maritime inclusion, EUR 40/tonne 2005-2007 penalty); consolidated text includes maritime transport scope (Articles 3g-3gg) and the revised cap trajectory.",
+    "doc_replaced_celex": "02003L0087-20240301",
+    "doc_replaced_date": "2024-03-01",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -11643,6 +12281,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the Fit for 55 revision, Directive (EU) 2023/959, and 16 consolidations since 2003). Stored text was the original 25.10.2003 OJ text (pre-Market Stability Reserve, pre-aviation/maritime inclusion, EUR 40/tonne 2005-2007 penalty); consolidated text includes maritime transport scope (Articles 3g-3gg) and the revised cap trajectory.",
+    "doc_replaced_celex": "02003L0087-20240301",
+    "doc_replaced_date": "2024-03-01",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -11685,6 +12325,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the Fit for 55 revision, Directive (EU) 2023/959, and 16 consolidations since 2003). Stored text was the original 25.10.2003 OJ text (pre-Market Stability Reserve, pre-aviation/maritime inclusion, EUR 40/tonne 2005-2007 penalty); consolidated text includes maritime transport scope (Articles 3g-3gg) and the revised cap trajectory.",
+    "doc_replaced_celex": "02003L0087-20240301",
+    "doc_replaced_date": "2024-03-01",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -11726,6 +12368,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the Fit for 55 revision, Directive (EU) 2023/959, and 16 consolidations since 2003). Stored text was the original 25.10.2003 OJ text (pre-Market Stability Reserve, pre-aviation/maritime inclusion, EUR 40/tonne 2005-2007 penalty); consolidated text includes maritime transport scope (Articles 3g-3gg) and the revised cap trajectory.",
+    "doc_replaced_celex": "02003L0087-20240301",
+    "doc_replaced_date": "2024-03-01",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -11761,6 +12405,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the Fit for 55 revision, Directive (EU) 2023/959, and 16 consolidations since 2003). Stored text was the original 25.10.2003 OJ text (pre-Market Stability Reserve, pre-aviation/maritime inclusion, EUR 40/tonne 2005-2007 penalty); consolidated text includes maritime transport scope (Articles 3g-3gg) and the revised cap trajectory.",
+    "doc_replaced_celex": "02003L0087-20240301",
+    "doc_replaced_date": "2024-03-01",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -11802,6 +12448,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the Fit for 55 revision, Directive (EU) 2023/959, and 16 consolidations since 2003). Stored text was the original 25.10.2003 OJ text (pre-Market Stability Reserve, pre-aviation/maritime inclusion, EUR 40/tonne 2005-2007 penalty); consolidated text includes maritime transport scope (Articles 3g-3gg) and the revised cap trajectory.",
+    "doc_replaced_celex": "02003L0087-20240301",
+    "doc_replaced_date": "2024-03-01",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -11843,6 +12491,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the Fit for 55 revision, Directive (EU) 2023/959, and 16 consolidations since 2003). Stored text was the original 25.10.2003 OJ text (pre-Market Stability Reserve, pre-aviation/maritime inclusion, EUR 40/tonne 2005-2007 penalty); consolidated text includes maritime transport scope (Articles 3g-3gg) and the revised cap trajectory.",
+    "doc_replaced_celex": "02003L0087-20240301",
+    "doc_replaced_date": "2024-03-01",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -11874,6 +12524,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -11906,6 +12558,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -11946,6 +12600,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -11989,6 +12645,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -12027,6 +12685,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": "Duplicate wording: Fit for 55 Package — 2.2.2 Cleaner mobility and transport fuels (similarity 0.47)"
   },
@@ -12068,6 +12728,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -12111,6 +12773,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -12152,6 +12816,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to adopt a zero-pollution action plan later, not itself a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -12183,6 +12849,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process/legislative obligation to propose the Climate Law by a date, duplicative of the 2050 objective captured elsewhere.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -12212,6 +12880,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague aspirational statement that all EU policies will contribute, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": "Similar target: Horizon Europe — Article 7 — Principles of the Programme (similarity 0.25)"
   },
@@ -12247,6 +12917,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to review the TEN-E framework for consistency, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -12284,6 +12956,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague aspirational statement that forested area 'needs to improve', no quantified metric or date.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -12313,6 +12987,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -12342,6 +13018,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -12371,6 +13049,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -12400,6 +13080,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -12429,6 +13111,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -12470,6 +13154,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare definitional fragment, no obligation/actor/date of its own.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -12508,6 +13194,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: obligation on the Commission to submit an evaluation report, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -12546,6 +13234,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: obligation on the Commission to submit a report, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -12581,6 +13271,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: obligation on the Commission to submit a report, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -12616,6 +13308,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: further content of the Commission's report obligation (assessing appropriateness of future requirements), not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -12653,6 +13347,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare benefit-clause fragment, no subject/actor/date of its own",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -12688,6 +13384,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: describes an institutional mandate design, no progression or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -12725,6 +13423,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: describes a strengthened institutional mandate, no progression or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -12763,6 +13463,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: describes a permanent monitoring structure, no progression or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -12800,6 +13502,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment describing a system's features, no subject/actor/date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -12837,6 +13541,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment describing a capacity, no subject/actor/date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -12873,6 +13579,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: describes a legal-framework amendment, no progression or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -12912,6 +13620,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: describes a new institutional structure, no progression or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -12948,6 +13658,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to develop/launch a preparedness plan and audit later",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -12984,6 +13696,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-6: background/aspirational statement of international role, no metric or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -13021,6 +13735,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -13056,6 +13772,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare addendum fragment, no subject/actor/date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -13094,6 +13812,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -13132,6 +13852,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -13170,6 +13892,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -13209,6 +13933,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -13250,6 +13976,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -13291,6 +14019,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -13332,6 +14062,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -13373,6 +14105,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -13414,6 +14148,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -13451,6 +14187,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -13490,6 +14228,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -13532,6 +14272,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -13570,6 +14312,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -13608,6 +14352,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -13647,6 +14393,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -13684,6 +14432,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -13721,6 +14471,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -13758,6 +14510,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 18,
     "duplicate_of": ""
   },
@@ -13795,6 +14549,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 19,
     "duplicate_of": ""
   },
@@ -13831,6 +14587,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 20,
     "duplicate_of": ""
   },
@@ -13868,6 +14626,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 21,
     "duplicate_of": ""
   },
@@ -13910,6 +14670,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 22,
     "duplicate_of": ""
   },
@@ -13945,6 +14707,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 23,
     "duplicate_of": "Similar target: Multiannual Financial Framework (consolidated) — Article 9(2) (similarity 0.37)"
   },
@@ -13982,6 +14746,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 24,
     "duplicate_of": ""
   },
@@ -14019,6 +14785,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 25,
     "duplicate_of": ""
   },
@@ -14054,6 +14822,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 26,
     "duplicate_of": ""
   },
@@ -14091,6 +14861,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 27,
     "duplicate_of": ""
   },
@@ -14128,6 +14900,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 28,
     "duplicate_of": "Similar target: ReFuelEU Aviation — Annex I (b)(ii) (similarity 0.25)"
   },
@@ -14165,6 +14939,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 29,
     "duplicate_of": "Similar target: ReFuelEU Aviation — Annex I (b)(ii) (similarity 0.25)"
   },
@@ -14202,6 +14978,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 30,
     "duplicate_of": ""
   },
@@ -14234,6 +15012,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -14272,6 +15052,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -14315,6 +15097,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": "Similar target: Social Climate Fund — Article 1 — Subject matter and scope (similarity 0.28; cited in the text)"
   },
@@ -14353,6 +15137,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(1) — Energy efficiency targets (similarity 0.18; cited in the text)"
   },
@@ -14395,6 +15181,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -14443,6 +15231,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -14495,6 +15285,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: policy-design/scheme-launch announcement (start applying emissions trading from 2026), not a quantified progression target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -14533,6 +15325,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -14569,6 +15363,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": "Duplicate wording: European Green Deal — 2.1.5 Accelerating the shift to sustainable and smart mobility (similarity 0.47)"
   },
@@ -14606,6 +15402,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -14637,6 +15435,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -14666,6 +15466,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -14708,6 +15510,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -14750,6 +15554,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -14787,6 +15593,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -14829,6 +15637,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -14872,6 +15682,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -14910,6 +15722,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -14952,6 +15766,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -14994,6 +15810,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to establish management objectives, sets no objective itself",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -15031,6 +15849,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -15068,6 +15888,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -15105,6 +15927,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -15142,6 +15966,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -15179,6 +16005,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: qualifying/methodological condition for how reviews must be conducted",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -15216,6 +16044,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: Commission obligation to report on implementation",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": "Similar target: Cross-Border Health Threats Regulation — Article 33 — Evaluation of the Regulation (similarity 0.30)"
   },
@@ -15253,6 +16083,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: boilerplate transposition duty, one-off conduct with no substantive progression",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -15289,6 +16121,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -15325,6 +16159,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered scope classification (65% transhipment share) for which ports count, not a progression target",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -15365,6 +16201,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -15402,6 +16240,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -15445,6 +16285,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: methodology/calculation-bonus rule (RFNBO reward multiplier)",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -15486,6 +16328,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered subtarget that only applies if the 2031 RFNBO share is below 1%",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -15521,6 +16365,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-9: derogation clause disapplying the Art5(3) subtarget",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -15559,6 +16405,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -15597,6 +16445,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -15634,6 +16484,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-9: caps how far the Art6 OPS-connection exceptions may be used, a derogation-limiting clause",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -15671,6 +16523,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 1,
     "duplicate_of": "Duplicate wording: European Climate Law (consolidated) — Article 13 — Amendments to Regulation (EU) 2018/1999 (similarity 1.00)"
   },
@@ -15702,6 +16556,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 2,
     "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 13(6)(a) (replacing Article 15(1) of Regulation (EU) 2018/1999) (similarity 0.31)"
   },
@@ -15743,6 +16599,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered obligation to include an energy-poverty objective",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -15772,6 +16630,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-1: NECP content requirement — impact-assessment section a plan must contain",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 4,
     "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 13 — Amendments to Regulation (EU) 2018/1999 (similarity 0.43)"
   },
@@ -15814,6 +16674,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-1: NECP content requirement — national-objectives-and-contributions list item",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 5,
     "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(2), implementing the binding Union target set in Article 4(1) — Energy efficiency targets (similarity 0.32)"
   },
@@ -15857,6 +16719,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-5: pointer to the EED 32.5% energy-efficiency target set elsewhere",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 6,
     "duplicate_of": "Similar target: Energy Efficiency Directive — Article 4(2), implementing the binding Union target set in Article 4(1) — Energy efficiency targets (similarity 0.39)"
   },
@@ -15895,6 +16759,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-1: NECP content requirement pointing to the EED Art7(1) savings obligation",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -15939,6 +16805,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-1: NECP content requirement pointing to the EED Art5 exemplary-role obligation",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -15977,6 +16845,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-1: NECP content requirement — interconnectivity level the plan must state",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -16017,6 +16887,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -16056,6 +16928,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 11,
     "duplicate_of": "Similar target: Renewable Energy Directive (RED III consolidated) — Article 3(1) — Binding overall Union target for 2030 (similarity 0.25)"
   },
@@ -16095,6 +16969,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 12,
     "duplicate_of": "Similar target: Renewable Energy Directive (RED III consolidated) — Article 3(1) — Binding overall Union target for 2030 (similarity 0.25)"
   },
@@ -16134,6 +17010,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 13,
     "duplicate_of": "Similar target: Renewable Energy Directive (RED III consolidated) — Article 3(1) — Binding overall Union target for 2030 (similarity 0.25)"
   },
@@ -16173,6 +17051,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-5: pointer to the RED Art3(1) Union renewable target set elsewhere",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 14,
     "duplicate_of": "Similar target: Renewable Energy Directive (RED III consolidated) — Article 3(1) — Binding overall Union target for 2030 (similarity 0.31)"
   },
@@ -16202,6 +17082,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-1: NECP content requirement — analytical-basis section a plan must contain",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 15,
     "duplicate_of": "Duplicate wording: European Climate Law (consolidated) — Article 13(4) (inserting Article 8(2)(e) of Regulation (EU) 2018/1999) (similarity 1.00)"
   },
@@ -16233,6 +17115,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 16,
     "duplicate_of": "Duplicate wording: European Climate Law (consolidated) — Article 13(6)(a) (replacing Article 15(1) of Regulation (EU) 2018/1999) (similarity 1.00)"
   },
@@ -16267,6 +17151,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-5: pointer to the Climate Law climate-neutrality objective set elsewhere",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 17,
     "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 1 — Subject matter and scope (similarity 0.30)"
   },
@@ -16311,6 +17197,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version. Stored text repeated the superseded hard-coded '32 %' renewable-energy figure (Articles 4(a)(2) and 5(2)) inherited from RED II; consolidated text was amended (consequentially, alongside RED III) to instead cross-reference 'the Union's binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001', which is now 42.5%.",
+    "doc_replaced_celex": "02018R1999-20231120",
+    "doc_replaced_date": "2023-11-20",
     "target_number": 18,
     "duplicate_of": "Similar target: Water Resilience Strategy — Annex II — The key 2027-2033 intermediate targets (similarity 0.26)"
   },
@@ -16348,6 +17236,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -16387,6 +17277,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -16427,6 +17319,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -16466,6 +17360,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to contribute proportionally to Natura 2000, no metric or progression.",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -16503,6 +17399,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: one-off administrative site-list transmission duty, no progression.",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -16540,6 +17438,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: one-off administrative site-list establishment duty, no progression.",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -16580,6 +17480,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -16618,6 +17520,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to establish conservation measures/management plans, no quantification or progression.",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -16656,6 +17560,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: qualifying condition (avoid deterioration/disturbance) for how the Art 3(1) headline Natura 2000 network objective is achieved.",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 9,
     "duplicate_of": "Similar target: Birds Directive — Article 4(4) (similarity 0.33)"
   },
@@ -16693,6 +17599,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: procedural impact-assessment requirement for plans/projects, no progression.",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -16731,6 +17639,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to undertake surveillance, no progression or quantification.",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -16768,6 +17678,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: establishes a strict-protection prohibition regime, an equipment/conduct-type ban, no progression.",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 12,
     "duplicate_of": "Similar target: Birds Directive — Article 3(1) (similarity 0.26)"
   },
@@ -16805,6 +17717,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation ensuring species-taking is compatible with favourable conservation status, no progression.",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -16843,6 +17757,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to promote education/information, no progression or quantification.",
     "doc_replaced": "Replaced with current consolidated version (8 consolidations, mainly Annex I/II/III technical updates from successive EU accessions and Commission Directives adapting the species/habitat-type lists to scientific and technical progress). Core Article-level obligations (Art. 2, 3, 4, 6, 11, 12, 14, 22 captured as register targets) are unchanged in wording, but the Annexes referenced by those obligations have been updated repeatedly since 1992; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "01992L0043-20250714",
+    "doc_replaced_date": "2025-07-14",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -16872,6 +17788,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-4: definitions provision ('classified information')",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -16909,6 +17827,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: describes strategic planning of R&I activities, no progression or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -16938,6 +17858,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": "Similar target: InvestEU Regulation — Article 3(1) (similarity 0.27)"
   },
@@ -16969,6 +17891,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: establishes/describes the EIC's institutional focus, no progression or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -17000,6 +17924,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-3: eligibility/selection criteria for when Institutionalised Partnerships may be implemented",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -17031,6 +17957,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-3: design characteristic required of European Partnerships, not a target",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -17068,6 +17996,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation, no progression or measurable content.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -17105,6 +18035,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: methodology/compliance rule — BAT conclusions as the reference for permit conditions, not a target.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -17143,6 +18075,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment — chapeau ('the competent authority shall ensure that:') without its own operative content.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -17181,6 +18115,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: content-of-plan requirement — operators must include a transformation plan in their EMS; the actual decarbonisation content is left to that plan, not stated as a target here.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -17219,6 +18155,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — static 'shall not exceed' compliance ceiling, no progression.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -17257,6 +18195,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — static compliance ceiling, no progression.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -17295,6 +18235,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — static compliance ceiling, no progression.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -17330,6 +18272,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered obligation — stricter ELV applies only where the hazardous-waste heat-release share exceeds 40%.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -17368,6 +18312,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — static operating-condition ceiling, no progression.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -17406,6 +18352,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — static technical operating condition, no progression.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -17443,6 +18391,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-8: threshold-triggered obligation — higher temperature applies only where halogenated organic content exceeds 1%.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -17481,6 +18431,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — static compliance ceiling, no progression.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -17520,6 +18472,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — static compliance ceiling, no progression.",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2024/1785). Stored text was the original 2010 text, which only flagged intensive cattle rearing for future Commission review; consolidated text now explicitly includes 'the intensive rearing of ... cattle' within Annex I scope.",
+    "doc_replaced_celex": "02010L0075-20240804",
+    "doc_replaced_date": "2024-08-04",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -17551,6 +18505,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment — chapeau ('...that contribute to:') without its own operative content; the substance follows in Art3(1)(b).",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": "Similar target: Horizon Europe — Article 7 — Principles of the Programme (similarity 0.27)"
   },
@@ -17582,6 +18538,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -17613,6 +18571,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -17644,6 +18604,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off amount/rate setting, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -17675,6 +18637,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — information provision, no measurable progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -17706,6 +18670,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -17737,6 +18703,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — discretionary option, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -17766,6 +18734,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: methodology — climate/environmental/social sustainability proofing procedure, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -17795,6 +18765,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off establishment of a scheme, no progression of its own beyond referencing targets set elsewhere.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -17834,6 +18806,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -17872,6 +18846,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -17910,6 +18886,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -17950,6 +18928,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -17988,6 +18968,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -18026,6 +19008,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: process obligation to submit a national trajectory document by a date, not itself a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": "Similar target: European Climate Law (consolidated) — Article 13(8) (replacing Article 29(1)(b) of Regulation (EU) 2018/1999) (similarity 0.27)"
   },
@@ -18068,6 +19052,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation for the Commission to propose post-2030 national targets later.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -18107,6 +19093,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: managed-forest-land accounting cap, a compliance-calculation rule, not itself an emissions target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -18147,6 +19135,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-9: land-flexibility mechanism providing additional flexibility against the headline targets, a reduced-requirement-type mechanism.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -18184,6 +19174,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-9: land-flexibility cap available if the Union misses the Art 4(2) headline target, a reduced-requirement-type mechanism.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": "Similar target: Effort Sharing Regulation (consolidated) — Article 11 — Safety reserve (similarity 0.28)"
   },
@@ -18216,6 +19208,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -18248,6 +19242,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation calling on institutions to 'consider' risk distribution, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -18280,6 +19276,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague internal-process commitment to embed climate risk controls, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -18312,6 +19310,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -18344,6 +19344,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague, conditional ('where feasible and appropriate') integration commitment, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -18376,6 +19378,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conditional commitment to 'consider' climate risk in a possible future procurement review, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -18408,6 +19412,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to convene a reflection group to figure out financing approaches later, no metric itself.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -18446,6 +19452,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to 'enhance' an observatory, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -18484,6 +19492,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to 'strengthen' surveillance mechanisms, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -18522,6 +19532,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-14: Commission obligation to conduct and finalise a study by a date, an assessment obligation not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -18562,6 +19574,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague ongoing conduct obligation to 'continue to work with' Member States, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -18605,6 +19619,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to 'ask' standardisation bodies to integrate considerations, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -18637,6 +19653,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: describes inserted reporting-requirement content in a budgetary-framework directive, not itself a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -18673,6 +19691,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — a future standard update (Eurocodes) still in development via pilot studies and guidance, no fixed requirement yet.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -18709,6 +19729,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to 'support' climate risk assessments via guidelines, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -18741,6 +19763,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: highly conditional exploratory commitment ('will look into the possibility'), no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -18770,6 +19794,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to 'step up measures', no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -18805,6 +19831,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to 'strengthen' cross-border mobilisation, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 18,
     "duplicate_of": ""
   },
@@ -18834,6 +19862,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to 'secure access', no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 19,
     "duplicate_of": ""
   },
@@ -18863,6 +19893,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague exploratory commitment to 'explore' facilitation of requirements, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 20,
     "duplicate_of": ""
   },
@@ -18902,6 +19934,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -18941,6 +19975,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -18987,6 +20023,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -19028,6 +20066,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -19070,6 +20110,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -19107,6 +20149,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -19144,6 +20188,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -19183,6 +20229,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -19220,6 +20268,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -19258,6 +20308,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare reference to a WHO target defined and owned externally, no operative EU duty or metric of its own.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -19301,6 +20353,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off funding allocation, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -19343,6 +20397,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future blueprint/toolkit launch announcement.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -19382,6 +20438,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off funding allocation, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -19423,6 +20481,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off funding allocation, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -19462,6 +20522,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague empowerment description, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -19501,6 +20563,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future revision of the victims' rights Directive.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -19541,6 +20605,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -19580,6 +20646,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off data-collection expansion, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -19618,6 +20686,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague quality-of-life aim, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -19657,6 +20727,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare descriptive statement of funding identified to date, no forward-looking obligation or metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -19695,6 +20767,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare descriptive statement of funding mobilised to date, no forward-looking obligation or metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -19732,6 +20806,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -19769,6 +20845,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -19804,6 +20882,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -19839,6 +20919,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -19874,6 +20956,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -19910,6 +20994,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -19945,6 +21031,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -19980,6 +21068,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -20011,6 +21101,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation on institutions to comply with annual expenditure ceilings, no progression.",
     "doc_replaced": "Replaced with current consolidated version (amended by the 2024 mid-term revision, Regulation (EU, Euratom) 2024/765). Stored text had the original Flexibility Instrument ceiling of EUR 915 million; consolidated text confirms the revised ceiling of EUR 1 346 million (2018 prices) for 2024-2027 (Article 12).",
+    "doc_replaced_celex": "02020R2093-20260424",
+    "doc_replaced_date": "2026-04-24",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -20042,6 +21134,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: own-resources ceiling calculation methodology, not itself a quantified target.",
     "doc_replaced": "Replaced with current consolidated version (amended by the 2024 mid-term revision, Regulation (EU, Euratom) 2024/765). Stored text had the original Flexibility Instrument ceiling of EUR 915 million; consolidated text confirms the revised ceiling of EUR 1 346 million (2018 prices) for 2024-2027 (Article 12).",
+    "doc_replaced_celex": "02020R2093-20260424",
+    "doc_replaced_date": "2026-04-24",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -20073,6 +21167,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the 2024 mid-term revision, Regulation (EU, Euratom) 2024/765). Stored text had the original Flexibility Instrument ceiling of EUR 915 million; consolidated text confirms the revised ceiling of EUR 1 346 million (2018 prices) for 2024-2027 (Article 12).",
+    "doc_replaced_celex": "02020R2093-20260424",
+    "doc_replaced_date": "2026-04-24",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -20104,6 +21200,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the 2024 mid-term revision, Regulation (EU, Euratom) 2024/765). Stored text had the original Flexibility Instrument ceiling of EUR 915 million; consolidated text confirms the revised ceiling of EUR 1 346 million (2018 prices) for 2024-2027 (Article 12).",
+    "doc_replaced_celex": "02020R2093-20260424",
+    "doc_replaced_date": "2026-04-24",
     "target_number": 4,
     "duplicate_of": "Similar target: F-Gas Regulation — Article 17(8) — Determination of reference values and quota allocations for the placing on the market of… (similarity 0.37)"
   },
@@ -20135,6 +21233,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the 2024 mid-term revision, Regulation (EU, Euratom) 2024/765). Stored text had the original Flexibility Instrument ceiling of EUR 915 million; consolidated text confirms the revised ceiling of EUR 1 346 million (2018 prices) for 2024-2027 (Article 12).",
+    "doc_replaced_celex": "02020R2093-20260424",
+    "doc_replaced_date": "2026-04-24",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -20166,6 +21266,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by the 2024 mid-term revision, Regulation (EU, Euratom) 2024/765). Stored text had the original Flexibility Instrument ceiling of EUR 915 million; consolidated text confirms the revised ceiling of EUR 1 346 million (2018 prices) for 2024-2027 (Article 12).",
+    "doc_replaced_celex": "02020R2093-20260424",
+    "doc_replaced_date": "2026-04-24",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -20197,6 +21299,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation for the Commission to present a proposal for the next MFF later.",
     "doc_replaced": "Replaced with current consolidated version (amended by the 2024 mid-term revision, Regulation (EU, Euratom) 2024/765). Stored text had the original Flexibility Instrument ceiling of EUR 915 million; consolidated text confirms the revised ceiling of EUR 1 346 million (2018 prices) for 2024-2027 (Article 12).",
+    "doc_replaced_celex": "02020R2093-20260424",
+    "doc_replaced_date": "2026-04-24",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -20240,6 +21344,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -20280,6 +21386,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -20322,6 +21430,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -20363,6 +21473,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -20404,6 +21516,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -20445,6 +21559,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -20487,6 +21603,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -20528,6 +21646,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -20570,6 +21690,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -20611,6 +21733,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -20653,6 +21777,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -20694,6 +21820,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -20738,6 +21866,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -20782,6 +21912,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -20821,6 +21953,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -20865,6 +21999,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -20910,6 +22046,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -20958,6 +22096,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 18,
     "duplicate_of": ""
   },
@@ -20997,6 +22137,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 19,
     "duplicate_of": ""
   },
@@ -21038,6 +22180,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 20,
     "duplicate_of": ""
   },
@@ -21078,6 +22222,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 21,
     "duplicate_of": ""
   },
@@ -21118,6 +22264,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": "Similar target: Critical Raw Materials Act — Article 1(1) - Subject matter and objectives (similarity 0.30)"
   },
@@ -21157,6 +22305,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -21196,6 +22346,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -21231,6 +22383,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": "Duplicate wording: Critical Raw Materials Act — Article 9(1) - Single point of contact (similarity 0.56)"
   },
@@ -21279,6 +22433,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -21320,6 +22476,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -21359,6 +22517,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -21398,6 +22558,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -21437,6 +22599,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -21474,6 +22638,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -21511,6 +22677,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -21549,6 +22717,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -21588,6 +22758,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague statement of priority focus areas, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -21626,6 +22798,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: indicator-development methodology commitment, not itself a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -21668,6 +22842,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to promote vaccination uptake, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -21706,6 +22882,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to work towards future implementing/delegated acts, no metric itself.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -21743,6 +22921,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to develop EU guidelines later, no metric itself.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -21780,6 +22960,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to adopt a strategic approach later, no metric itself.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -21819,6 +23001,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -21856,6 +23040,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague ongoing conduct obligation to continue supporting research, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -21894,6 +23080,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to support research into knowledge gaps, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -21931,6 +23119,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague ongoing conduct obligation to contribute to international normative work, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -21970,6 +23160,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — indicators will help Member States set their own measurable goals later, not itself a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -22007,6 +23199,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -22044,6 +23238,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to apply prevention principles, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -22085,6 +23281,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare list fragment, no subject/actor/date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -22120,6 +23318,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -22157,6 +23357,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation to designate workers, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -22194,6 +23396,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -22231,6 +23435,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct/documentation obligation, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -22268,6 +23474,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare list fragment introducing an information list, no date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -22305,6 +23513,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -22340,6 +23550,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -22377,6 +23589,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment, no specific subject/actor/date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -22414,6 +23628,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Regulation (EC) No 1137/2008, the 'Omnibus I' comitology adaptation). Stored text was the original 1989 text referencing the pre-Lisbon 'Article 148(2) of the Treaty' committee procedure and the old 'Advisory Committee on Safety, Hygiene and Health Protection at Work' name; consolidated text updates the committee procedure article and committee name. No consolidation exists beyond 2008-12-11 (this is the latest available).",
+    "doc_replaced_celex": "01989L0391-20081211",
+    "doc_replaced_date": "2008-12-11",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -22452,6 +23668,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -22490,6 +23708,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -22528,6 +23748,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -22569,6 +23791,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -22610,6 +23834,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": "Similar target: Single-Use Plastics Directive — Article 6(5)(b) (similarity 0.26)"
   },
@@ -22648,6 +23874,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -22689,6 +23917,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -22730,6 +23960,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -22767,6 +23999,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -22808,6 +24042,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -22849,6 +24085,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -22886,6 +24124,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -22923,6 +24163,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -22960,6 +24202,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -22997,6 +24241,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -23034,6 +24280,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -23071,6 +24319,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -23108,6 +24358,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 18,
     "duplicate_of": ""
   },
@@ -23144,6 +24396,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 19,
     "duplicate_of": ""
   },
@@ -23181,6 +24435,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 20,
     "duplicate_of": ""
   },
@@ -23219,6 +24475,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 21,
     "duplicate_of": "Similar target: Waste Framework Directive (consolidated) — Article 11(2)(c) (similarity 0.33)"
   },
@@ -23257,6 +24515,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 22,
     "duplicate_of": "Similar target: Waste Framework Directive (consolidated) — Article 11(2)(d) (similarity 0.33)"
   },
@@ -23293,6 +24553,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 23,
     "duplicate_of": ""
   },
@@ -23329,6 +24591,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 24,
     "duplicate_of": ""
   },
@@ -23360,6 +24624,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — Commission will propose non-binding guidelines containing the 72-hour figure, not itself a binding target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -23392,6 +24658,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -23423,6 +24691,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future development of a risk and threat assessment.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -23454,6 +24724,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague strengthening commitment, no measurable progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -23486,6 +24758,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — assess feasibility of a future law that would set objectives/targets later.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -23517,6 +24791,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future legislative revision announcement.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -23549,6 +24825,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future strategy proposal announcement.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -23581,6 +24859,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future plan announcement.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -23619,6 +24899,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future strategy proposal announcement.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -23650,6 +24932,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future proposal announcement.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -23681,6 +24965,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future arrangements to be developed.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -23712,6 +24998,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — organise regular exercises, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -23743,6 +25031,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off creation of a hub, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -23783,6 +25073,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague maintenance/scaling commitment, no measurable progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -23814,6 +25106,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague resilience-building commitment, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -23843,6 +25137,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future recommendations to be put forward.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -23872,6 +25168,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — describes a body's aims, no progression or metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -23901,6 +25199,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague fostering commitment, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 18,
     "duplicate_of": ""
   },
@@ -23937,6 +25237,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — improvement to be delivered through a future Pact/Communication.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 19,
     "duplicate_of": ""
   },
@@ -23966,6 +25268,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — future review of a framework.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 20,
     "duplicate_of": ""
   },
@@ -23995,6 +25299,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague expansion commitment, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 21,
     "duplicate_of": ""
   },
@@ -24024,6 +25330,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague expansion commitment, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 22,
     "duplicate_of": ""
   },
@@ -24053,6 +25361,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — vague embedding commitment, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 23,
     "duplicate_of": ""
   },
@@ -24094,6 +25404,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -24136,6 +25448,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: qualifying condition restricting which biofuels count toward the Art4(1)/Annex I headline SAF shares.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -24173,6 +25487,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -24213,6 +25529,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -24251,6 +25569,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -24289,6 +25609,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -24327,6 +25649,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": "Similar target: F-Gas Regulation — Annex V(b) — Production rights for placing hydrofluorocarbons on the market (similarity 0.25)"
   },
@@ -24365,6 +25689,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -24403,6 +25729,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -24441,6 +25769,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -24479,6 +25809,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -24518,6 +25850,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 1,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 4(a)(2) — National objectives, targets and contributions (similarity 0.32)"
   },
@@ -24557,6 +25891,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 2,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 5(2) — Member States' contribution setting process in the area of renewable energy (similarity 0.28)"
   },
@@ -24598,6 +25934,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -24648,6 +25986,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 4,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 4(a)(2) — National objectives, targets and contributions (similarity 0.26)"
   },
@@ -24698,6 +26038,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -24743,6 +26085,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -24786,6 +26130,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -24830,6 +26176,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -24872,6 +26220,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 9,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 4(a)(2) — National objectives, targets and contributions (similarity 0.27)"
   },
@@ -24913,6 +26263,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -24953,6 +26305,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -24998,6 +26352,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 12,
     "duplicate_of": "Similar target: Governance Regulation (consolidated) — Article 4(a)(2) — National objectives, targets and contributions (similarity 0.26)"
   },
@@ -25043,6 +26399,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -25088,6 +26446,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -25141,6 +26501,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -25192,6 +26554,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 16,
     "duplicate_of": ""
   },
@@ -25242,6 +26606,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -25284,6 +26650,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 18,
     "duplicate_of": ""
   },
@@ -25326,6 +26694,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 19,
     "duplicate_of": ""
   },
@@ -25368,6 +26738,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 20,
     "duplicate_of": ""
   },
@@ -25407,6 +26779,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 21,
     "duplicate_of": ""
   },
@@ -25443,6 +26817,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 22,
     "duplicate_of": ""
   },
@@ -25487,6 +26863,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2023/2413 / RED III). Stored text was the original 21.12.2018 OJ text (32% by 2030 headline framing); consolidated text confirms 'at least 42,5 %' by 2030 (Article 3(1)).",
+    "doc_replaced_celex": "02018L2001-20240716",
+    "doc_replaced_date": "2024-07-16",
     "target_number": 23,
     "duplicate_of": ""
   },
@@ -25526,6 +26904,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": "Similar target: Energy Performance of Buildings Directive — Article 9(1) — Minimum energy performance standards for non-residential buildings (similarity 0.25)"
   },
@@ -25565,6 +26945,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -25603,6 +26985,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -25648,6 +27032,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -25694,6 +27080,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to develop a life-cycle-carbon roadmap by 2023, sets no objective itself",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -25732,6 +27120,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — Commission will propose EPBD minimum performance standards, sets no objective itself",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -25771,6 +27161,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-6: modelled scenario figures ('would have to reach'), no binding commitment",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -25812,6 +27204,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-6: background statistic on energy poverty, no commitment or date",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -25848,6 +27242,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — Commission will propose extending EED scope, sets no objective itself",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -25886,6 +27282,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — Commission will issue indicative milestones later",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -25923,6 +27321,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-6: background modelling statistic from an impact assessment, no commitment",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -25954,6 +27354,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: pre-contractual disclosure content requirement (reference to Paris Agreement alignment), not a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -25985,6 +27387,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: chapeau listing pre-contractual disclosure content requirements, not a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -26016,6 +27420,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: disclosure content requirement (explanation of how a sustainable-investment objective is attained), not a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -26053,6 +27459,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -26090,6 +27498,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-12: one-off market-restriction ban on Part B products and oxo-degradable plastic, not a progression target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -26127,6 +27537,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: product-design (tethered caps) equipment requirement, a one-off intervention, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -26165,6 +27577,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -26202,6 +27616,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": "Similar target: Packaging and Packaging Waste Regulation — Article 7(2) (similarity 0.26)"
   },
@@ -26249,6 +27665,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation for Member States to set their own national fishing-gear collection rate later, no metric itself.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -26286,6 +27704,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -26323,6 +27743,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -26354,6 +27776,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": "Similar target: Fit for 55 Package — 2.1 A socially fair transition: tackling inequality and energy poverty through climate action (similarity 0.28)"
   },
@@ -26397,6 +27821,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -26450,6 +27876,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -26497,6 +27925,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-11: guiding principle (reductions in vulnerable households) that qualifies the Fund's headline objectives, not itself a quantified target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -26540,6 +27970,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: cap on income-support costs as a share of Plan costs, a funding-methodology rule, not a quantified outcome target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -26571,6 +28003,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -26602,6 +28036,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-9: optional flexibility letting Member States transfer up to 15% of allocation to shared-management funds, a reduced-requirement-type mechanism.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -26633,6 +28069,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: cap on technical-support costs as a share of Plan allocation, a funding-methodology rule.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -26665,6 +28103,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: national co-financing floor, a funding-methodology requirement rather than a quantified outcome target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -26696,6 +28136,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: classification criterion (substantial contribution) rather than a timebound/progression target, though foundational to the Regulation's framework.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -26727,6 +28169,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: classification criterion (do no significant harm) rather than a timebound/progression target, though foundational to the Regulation's framework.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -26759,6 +28203,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: methodology/disclosure-content rule for calculating and disclosing the proportion of sustainable investments, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -26790,6 +28236,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct/disclosure obligation, no progression or metric of its own.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -26833,6 +28281,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: classification criterion/methodology for climate-change-mitigation eligibility, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -26873,6 +28323,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: classification criterion/methodology for climate-change-mitigation eligibility, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -26902,6 +28354,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: classification criterion/methodology for climate-change-adaptation eligibility, not a target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -26934,6 +28388,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment — chapeau introducing a significant-harm list without its own operative content.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -26971,6 +28427,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -27008,6 +28466,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off adoption of a delegated act by a date, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -27045,6 +28505,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — recurring reporting duty, no progression metric.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -27082,6 +28544,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off compliance deadline, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -27119,6 +28583,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off compliance deadline, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -27156,6 +28622,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: pure conduct obligation — one-off designation duty, no progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -27193,6 +28661,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: procedural timeline for the permit-granting process, a compliance/methodology rule rather than a progression target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -27230,6 +28700,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: procedural timeline for the permit-granting process, a compliance/methodology rule rather than a progression target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -27267,6 +28739,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-13: procedural timeline for the permit-granting process, a compliance/methodology rule rather than a progression target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -27307,6 +28781,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation — non-binding agreement to cooperate on future offshore generation goals, not itself a binding target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -27344,6 +28820,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -27381,6 +28859,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -27423,6 +28903,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -27461,6 +28943,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -27505,6 +28989,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -27542,6 +29028,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -27579,6 +29067,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -27616,6 +29106,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -27651,6 +29143,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment ('...at least 22,5 tonnes; and') from an enumerated infrastructure-requirement list, no actor or date of its own.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -27688,6 +29182,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -27725,6 +29221,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -27765,6 +29263,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12,
     "duplicate_of": ""
   },
@@ -27805,6 +29305,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13,
     "duplicate_of": ""
   },
@@ -27842,6 +29344,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14,
     "duplicate_of": ""
   },
@@ -27879,6 +29383,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15,
     "duplicate_of": ""
   },
@@ -27916,6 +29422,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16,
     "duplicate_of": "Similar target: Alternative Fuels Infrastructure Regulation — Article 12(1) — Targets for supply of electricity to stationary aircraft (similarity 0.25)"
   },
@@ -27951,6 +29459,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17,
     "duplicate_of": ""
   },
@@ -27986,6 +29496,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment ('...500 000 tonnes; and') from an enumerated eligibility-criteria list defining infrastructure-component scope.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 18,
     "duplicate_of": ""
   },
@@ -28021,6 +29533,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment from an enumerated airport-eligibility criteria list defining network scope, not a deployment target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 19,
     "duplicate_of": ""
   },
@@ -28058,6 +29572,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-10: bare fragment from an enumerated airport-eligibility criteria list defining network scope, not a deployment target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 20,
     "duplicate_of": ""
   },
@@ -28102,6 +29618,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-15: process obligation to adopt a sustainable urban mobility plan, content not itself quantified.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 21,
     "duplicate_of": ""
   },
@@ -28140,6 +29658,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 22,
     "duplicate_of": ""
   },
@@ -28177,6 +29697,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: procedural climate-proofing requirement for EIA-subject projects, no progression itself.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 23,
     "duplicate_of": ""
   },
@@ -28212,6 +29734,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: vague conduct obligation to make 'all appropriate efforts' to improve resilience, no metric or progression.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 24,
     "duplicate_of": ""
   },
@@ -28243,6 +29767,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively.",
+    "doc_replaced_celex": "02013D1313-20231218",
+    "doc_replaced_date": "2023-12-18",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -28284,6 +29810,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively.",
+    "doc_replaced_celex": "02013D1313-20231218",
+    "doc_replaced_date": "2023-12-18",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -28315,6 +29843,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively.",
+    "doc_replaced_celex": "02013D1313-20231218",
+    "doc_replaced_date": "2023-12-18",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -28346,6 +29876,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively.",
+    "doc_replaced_celex": "02013D1313-20231218",
+    "doc_replaced_date": "2023-12-18",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -28377,6 +29909,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively.",
+    "doc_replaced_celex": "02013D1313-20231218",
+    "doc_replaced_date": "2023-12-18",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -28408,6 +29942,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively.",
+    "doc_replaced_celex": "02013D1313-20231218",
+    "doc_replaced_date": "2023-12-18",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -28439,6 +29975,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: conduct obligation to encourage exchange of good practices, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively.",
+    "doc_replaced_celex": "02013D1313-20231218",
+    "doc_replaced_date": "2023-12-18",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -28470,6 +30008,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: conduct obligation to establish/update a risk overview, no quantified progression",
     "doc_replaced": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively.",
+    "doc_replaced_celex": "02013D1313-20231218",
+    "doc_replaced_date": "2023-12-18",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -28502,6 +30042,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively.",
+    "doc_replaced_celex": "02013D1313-20231218",
+    "doc_replaced_date": "2023-12-18",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -28533,6 +30075,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: voluntary conduct obligation to work towards developing modules, no progression or date",
     "doc_replaced": "Replaced with current consolidated version (amended by Decision (EU) 2019/420 introducing rescEU, and Regulation (EU) 2021/836). Stored text was the original 2013 Decision with no mention of rescEU; consolidated text adds the rescEU reserve (Article 12) and related provisions extensively.",
+    "doc_replaced_celex": "02013D1313-20231218",
+    "doc_replaced_date": "2023-12-18",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -28569,6 +30113,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2018/851 and later acts). Stored text had the original 2008 recycling target (50% by 2020, Article 11(2)); consolidated text confirms 'by 2035, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 65 % by weight.'",
+    "doc_replaced_celex": "02008L0098-20251016",
+    "doc_replaced_date": "2025-10-16",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -28616,6 +30162,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2018/851 and later acts). Stored text had the original 2008 recycling target (50% by 2020, Article 11(2)); consolidated text confirms 'by 2035, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 65 % by weight.'",
+    "doc_replaced_celex": "02008L0098-20251016",
+    "doc_replaced_date": "2025-10-16",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -28658,6 +30206,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2018/851 and later acts). Stored text had the original 2008 recycling target (50% by 2020, Article 11(2)); consolidated text confirms 'by 2035, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 65 % by weight.'",
+    "doc_replaced_celex": "02008L0098-20251016",
+    "doc_replaced_date": "2025-10-16",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -28696,6 +30246,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2018/851 and later acts). Stored text had the original 2008 recycling target (50% by 2020, Article 11(2)); consolidated text confirms 'by 2035, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 65 % by weight.'",
+    "doc_replaced_celex": "02008L0098-20251016",
+    "doc_replaced_date": "2025-10-16",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -28734,6 +30286,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2018/851 and later acts). Stored text had the original 2008 recycling target (50% by 2020, Article 11(2)); consolidated text confirms 'by 2035, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 65 % by weight.'",
+    "doc_replaced_celex": "02008L0098-20251016",
+    "doc_replaced_date": "2025-10-16",
     "target_number": 5,
     "duplicate_of": "Similar target: Packaging and Packaging Waste Regulation — Article 52(1)(a) (similarity 0.33)"
   },
@@ -28772,6 +30326,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2018/851 and later acts). Stored text had the original 2008 recycling target (50% by 2020, Article 11(2)); consolidated text confirms 'by 2035, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 65 % by weight.'",
+    "doc_replaced_celex": "02008L0098-20251016",
+    "doc_replaced_date": "2025-10-16",
     "target_number": 6,
     "duplicate_of": "Similar target: Packaging and Packaging Waste Regulation — Article 52(1)(c) (similarity 0.33)"
   },
@@ -28810,6 +30366,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (amended by Directive (EU) 2018/851 and later acts). Stored text had the original 2008 recycling target (50% by 2020, Article 11(2)); consolidated text confirms 'by 2035, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 65 % by weight.'",
+    "doc_replaced_celex": "02008L0098-20251016",
+    "doc_replaced_date": "2025-10-16",
     "target_number": 7,
     "duplicate_of": "Similar target: Batteries Regulation — Annex XII, Part B, point 1(d) (similarity 0.27)"
   },
@@ -28849,6 +30407,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (9 consolidations, mostly technical updates to the priority-substances list under Article 16/Annex X via successive Directives, e.g. 2008/105/EC, 2013/39/EU). Core Article 4 environmental-objective obligations captured as register targets are unchanged in wording; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02000L0060-20260510",
+    "doc_replaced_date": "2026-05-10",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -28891,6 +30451,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (9 consolidations, mostly technical updates to the priority-substances list under Article 16/Annex X via successive Directives, e.g. 2008/105/EC, 2013/39/EU). Core Article 4 environmental-objective obligations captured as register targets are unchanged in wording; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02000L0060-20260510",
+    "doc_replaced_date": "2026-05-10",
     "target_number": 2,
     "duplicate_of": "Similar target: Water Resilience Strategy — Annex II — The key 2027-2033 intermediate targets (similarity 0.33)"
   },
@@ -28935,6 +30497,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (9 consolidations, mostly technical updates to the priority-substances list under Article 16/Annex X via successive Directives, e.g. 2008/105/EC, 2013/39/EU). Core Article 4 environmental-objective obligations captured as register targets are unchanged in wording; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02000L0060-20260510",
+    "doc_replaced_date": "2026-05-10",
     "target_number": 3,
     "duplicate_of": "Similar target: Water Resilience Strategy — Annex II — The key 2027-2033 intermediate targets (similarity 0.30)"
   },
@@ -28973,6 +30537,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (9 consolidations, mostly technical updates to the priority-substances list under Article 16/Annex X via successive Directives, e.g. 2008/105/EC, 2013/39/EU). Core Article 4 environmental-objective obligations captured as register targets are unchanged in wording; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02000L0060-20260510",
+    "doc_replaced_date": "2026-05-10",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -29011,6 +30577,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (9 consolidations, mostly technical updates to the priority-substances list under Article 16/Annex X via successive Directives, e.g. 2008/105/EC, 2013/39/EU). Core Article 4 environmental-objective obligations captured as register targets are unchanged in wording; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02000L0060-20260510",
+    "doc_replaced_date": "2026-05-10",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -29053,6 +30621,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (9 consolidations, mostly technical updates to the priority-substances list under Article 16/Annex X via successive Directives, e.g. 2008/105/EC, 2013/39/EU). Core Article 4 environmental-objective obligations captured as register targets are unchanged in wording; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02000L0060-20260510",
+    "doc_replaced_date": "2026-05-10",
     "target_number": 6,
     "duplicate_of": "Similar target: Water Resilience Strategy — Annex II — The key 2027-2033 intermediate targets (similarity 0.29)"
   },
@@ -29090,6 +30660,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (9 consolidations, mostly technical updates to the priority-substances list under Article 16/Annex X via successive Directives, e.g. 2008/105/EC, 2013/39/EU). Core Article 4 environmental-objective obligations captured as register targets are unchanged in wording; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02000L0060-20260510",
+    "doc_replaced_date": "2026-05-10",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -29127,6 +30699,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "Replaced with current consolidated version (9 consolidations, mostly technical updates to the priority-substances list under Article 16/Annex X via successive Directives, e.g. 2008/105/EC, 2013/39/EU). Core Article 4 environmental-objective obligations captured as register targets are unchanged in wording; replaced for completeness per the 'stored text predates latest consolidation' rule.",
+    "doc_replaced_celex": "02000L0060-20260510",
+    "doc_replaced_date": "2026-05-10",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -29168,6 +30742,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -29209,6 +30785,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -29245,6 +30823,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -29284,6 +30864,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -29325,6 +30907,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -29362,6 +30946,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -29404,6 +30990,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7
   },
   {
@@ -29441,6 +31029,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8
   },
   {
@@ -29480,6 +31070,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9
   },
   {
@@ -29521,6 +31113,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10
   },
   {
@@ -29555,6 +31149,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   },
@@ -29604,6 +31200,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 12
   },
   {
@@ -29649,6 +31247,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 13
   },
   {
@@ -29695,6 +31295,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 14
   },
   {
@@ -29732,6 +31334,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 15
   },
   {
@@ -29773,6 +31377,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 16
   },
   {
@@ -29815,6 +31421,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 17
   },
   {
@@ -29857,6 +31465,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 18
   },
   {
@@ -29898,6 +31508,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 19
   },
   {
@@ -29941,6 +31553,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 20
   },
   {
@@ -29978,6 +31592,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 21,
     "duplicate_of": ""
   },
@@ -30009,6 +31625,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 1,
     "duplicate_of": ""
   },
@@ -30048,6 +31666,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 2,
     "duplicate_of": ""
   },
@@ -30089,6 +31709,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 3,
     "duplicate_of": ""
   },
@@ -30131,6 +31753,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 4,
     "duplicate_of": ""
   },
@@ -30177,6 +31801,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 5,
     "duplicate_of": ""
   },
@@ -30215,6 +31841,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 6,
     "duplicate_of": ""
   },
@@ -30253,6 +31881,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 7,
     "duplicate_of": ""
   },
@@ -30299,6 +31929,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 8,
     "duplicate_of": ""
   },
@@ -30335,6 +31967,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": false,
     "revise_reason": "",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 9,
     "duplicate_of": ""
   },
@@ -30374,6 +32008,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: descriptive statement about past (2000-2017) GDP/emissions trends, not a forward-looking target.",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 10,
     "duplicate_of": ""
   },
@@ -30415,6 +32051,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "revise_flag": true,
     "revise_reason": "NT-7: Commission follow-up/monitoring obligation on NEC Directive implementation, a process obligation rather than a new quantified target (duplicates the Target 3 metric).",
     "doc_replaced": "",
+    "doc_replaced_celex": "",
+    "doc_replaced_date": "",
     "target_number": 11,
     "duplicate_of": ""
   }

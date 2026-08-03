@@ -101,6 +101,11 @@ export interface RawPolicyTarget {
    *  extraction (scripts/policy-targets-replaced.json, keyed by policy_id);
    *  '' when not flagged. */
   doc_replaced: string;
+  /** CELEX of the consolidated version the text now comes from, e.g.
+   *  "02018L2001-20240716"; '' when the document was not replaced. */
+  doc_replaced_celex: string;
+  /** Consolidation date of that version (YYYY-MM-DD); '' when not replaced. */
+  doc_replaced_date: string;
 }
 
 export type PolicyTarget = RawPolicyTarget;
@@ -134,6 +139,15 @@ export const CLIMATE_META: Record<ClimateRelevance, { label: string; color: stri
   none: { label: 'Not climate-specific', color: '#64748b' },
 };
 
+/** First vs second order, per the v3 reviewer definitions: a first-order target
+ *  states the overall change the act exists to achieve (subject-matter articles,
+ *  headline quantified targets and their staged deadlines); a second-order one
+ *  depends on, complements or narrows a headline target. */
+export const ORDER_META: Record<1 | 2, { label: string; short: string; color: string; bg: string }> = {
+  1: { label: 'First order target', short: '1st order', color: '#7c2d12', bg: '#fff7ed' },
+  2: { label: 'Second order target', short: '2nd order', color: '#3730a3', bg: '#eef2ff' },
+};
+
 export const SECTOR_META: { key: SectorKey; label: string; lens: string; color: string }[] = [
   { key: 'energy', label: 'Energy', lens: 'mitigation + adaptation', color: '#f59e0b' },
   { key: 'buildings', label: 'Buildings and built environment', lens: 'mitigation + adaptation', color: '#0ea5e9' },
@@ -156,8 +170,10 @@ export interface ColumnDef {
 export const COLUMNS: ColumnDef[] = [
   { key: 'policy_name', header: '1 · Name of policy', width: 42, value: (t) => t.policy_name },
   { key: 'document_type', header: '2 · Type of policy', width: 15, value: (t) => cap(t.document_type) },
+  { key: 'doc_replaced', header: 'Document updated (consolidated version)', width: 46, value: docUpdatedCell },
   { key: 'policy_area', header: '3 · Policy area', width: 16, value: (t) => t.policy_area },
   { key: 'target_number', header: '#', width: 4, value: (t) => String(t.target_number) },
+  { key: 'target_order', header: 'First order target (1) Second order target (2)', width: 18, value: (t) => (t.target_order ? String(t.target_order) : '') },
   { key: 'target_text', header: '4 · Target text (verbatim)', width: 70, value: (t) => t.target_text },
   { key: 'article', header: 'Provision', width: 24, value: (t) => t.article },
   { key: 'target_label', header: '5 · Target label', width: 13, value: (t) => LABEL_META[t.target_label].label },
@@ -168,6 +184,8 @@ export const COLUMNS: ColumnDef[] = [
   { key: 'climate_relevance', header: '10 · Climate-relevance', width: 20, value: (t) => CLIMATE_META[t.climate_relevance].label },
   { key: 'eurlex_url', header: '11 · Source (EUR-Lex)', width: 40, value: (t) => t.eurlex_url },
   { key: 'relevant', header: 'Relevant (transition lens)', width: 16, value: (t) => (t.relevant ? 'Relevant' : 'Peripheral') },
+  { key: 'revise_flag', header: 'Revise target', width: 13, value: (t) => (t.revise_flag ? '1' : '') },
+  { key: 'revise_reason', header: 'Revise reason', width: 46, value: (t) => t.revise_reason },
   ...SECTOR_META.map((s, i) => ({
     key: `sector_${s.key}`,
     header: `${13 + i} · ${s.label}`,
@@ -182,6 +200,16 @@ function cap(s: string): string {
   return s ? s[0].toUpperCase() + s.slice(1) : s;
 }
 
+/** The "Document updated" cell: leads with the consolidated version the text now
+ *  comes from, so the exported column names the version, not just the reason. */
+export function docUpdatedCell(t: PolicyTarget): string {
+  if (!t.doc_replaced && !t.doc_replaced_celex) return '';
+  const head = t.doc_replaced_celex
+    ? `Consolidated version ${t.doc_replaced_celex}${t.doc_replaced_date ? ` (${t.doc_replaced_date})` : ''}`
+    : '';
+  return [head, t.doc_replaced].filter(Boolean).join(' — ');
+}
+
 // ─── Stats ──────────────────────────────────────────────────────────────────
 export interface TargetStats {
   total: number;
@@ -189,6 +217,16 @@ export interface TargetStats {
   mandatory: number;
   quantitative: number;
   relevant: number;
+  /** First- and second-order counts, and how many of those calls a human made. */
+  firstOrder: number;
+  secondOrder: number;
+  humanOrdered: number;
+  /** Rows flagged as likely not targets by the v3 rules, awaiting review. */
+  revise: number;
+  /** Rows whose source act was refreshed to a newer consolidated EUR-Lex text. */
+  docUpdated: number;
+  /** Distinct acts behind `docUpdated`. */
+  docUpdatedPolicies: number;
   byClimate: Record<ClimateRelevance, number>;
   byLabel: Record<TargetLabel, number>;
 }
@@ -197,7 +235,9 @@ export function computeStats(targets: PolicyTarget[]): TargetStats {
   const byClimate = { mitigation: 0, adaptation: 0, both: 0, none: 0 } as Record<ClimateRelevance, number>;
   const byLabel = { target: 0, goal: 0, objective: 0, commitment: 0, other: 0 } as Record<TargetLabel, number>;
   const policies = new Set<string>();
+  const updatedPolicies = new Set<string>();
   let mandatory = 0, quantitative = 0, relevant = 0;
+  let firstOrder = 0, secondOrder = 0, humanOrdered = 0, revise = 0, docUpdated = 0;
   for (const t of targets) {
     byClimate[t.climate_relevance]++;
     byLabel[t.target_label]++;
@@ -205,6 +245,15 @@ export function computeStats(targets: PolicyTarget[]): TargetStats {
     if (t.obligation === 'mandatory') mandatory++;
     if (t.target_type === 'quantitative') quantitative++;
     if (t.relevant) relevant++;
+    if (t.target_order === 1) firstOrder++;
+    if (t.target_order === 2) secondOrder++;
+    if (t.target_order && t.target_order_source === 'human') humanOrdered++;
+    if (t.revise_flag) revise++;
+    if (t.doc_replaced) { docUpdated++; updatedPolicies.add(t.policy_id); }
   }
-  return { total: targets.length, policies: policies.size, mandatory, quantitative, relevant, byClimate, byLabel };
+  return {
+    total: targets.length, policies: policies.size, mandatory, quantitative, relevant,
+    firstOrder, secondOrder, humanOrdered, revise,
+    docUpdated, docUpdatedPolicies: updatedPolicies.size, byClimate, byLabel,
+  };
 }

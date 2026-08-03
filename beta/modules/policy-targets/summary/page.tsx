@@ -118,6 +118,13 @@ export default function PolicyTargetsSummaryPage() {
       timebound: rows.filter((t) => t.timeline).length,
       multi: rows.filter((t) => t.sectors.length > 1).length,
       duplicates: rows.filter((t) => t.duplicate_of).length,
+      // August-2026 (v3) review dimensions.
+      firstOrder: rows.filter((t) => t.target_order === 1).length,
+      secondOrder: rows.filter((t) => t.target_order === 2).length,
+      humanOrdered: rows.filter((t) => t.target_order && t.target_order_source === 'human').length,
+      revise: rows.filter((t) => t.revise_flag).length,
+      docUpdated: rows.filter((t) => t.doc_replaced).length,
+      docUpdatedActs: new Set(rows.filter((t) => t.doc_replaced).map((t) => t.policy_id)).size,
     };
     // Heatmap: the acts carrying the most targets × the eight systems.
     const perAct = new Map<string, number>();
@@ -164,7 +171,28 @@ export default function PolicyTargetsSummaryPage() {
             {totals.duplicates} targets have a duplicate or closely similar counterpart in another policy (column 22 of
             the export names it). The register is the corrected dataset — rows removed as non-targets, duplicates, or
             truncated extractions are listed with their reason in the Excel workbook and in{' '}
-            <code className="text-[11.5px]">docs-internal/policy-targets-human-review-2026-07.md</code>.
+            <code className="text-[11.5px]">docs-internal/policy-targets-human-review-2026-08.md</code>.
+          </p>
+        </section>
+
+        {/* ── The August-2026 review pass ─────────────────────────────── */}
+        <section>
+          <H2>After the August 2026 review pass</H2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+            <Tile n={totals.firstOrder} label="First order" note={`${pct(totals.firstOrder)}% — the act's headline change`} />
+            <Tile n={totals.secondOrder} label="Second order" note={`${pct(totals.secondOrder)}% — dependent or niche`} />
+            <Tile n={totals.humanOrdered} label="Ranked by a reviewer" note="the rest calibrated on those labels" />
+            <Tile n={totals.revise} label="Flagged “revise target”" note="likely not targets — kept for review" />
+            <Tile n={totals.docUpdated} label="From updated source docs" note={`${totals.docUpdatedActs} acts re-extracted`} />
+          </div>
+          <p className="mt-2.5 text-[12.5px] text-tertiary dark:text-[var(--mh-muted)] leading-relaxed">
+            The reviewers sharpened the definition: a target must be time-bound, or imply a progression of effort that
+            can be measured — a single intervention (a ban, a one-off duty, a threshold-triggered obligation, a
+            derogation, a plan-content requirement, a calculation rule, a Commission review clause) is not one. Rows
+            matching those patterns are <strong>flagged, not deleted</strong>, so the next round starts from a candidate
+            list rather than a silent removal. Separately, every act was checked against EUR-Lex for a newer consolidated
+            version: 17 were outdated and their targets re-extracted from the current text — including the RED III-amended
+            Renewable Energy Directive and the Climate Law consolidation carrying the adopted 90 %-by-2040 target.
           </p>
         </section>
 
