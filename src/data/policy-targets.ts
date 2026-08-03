@@ -84,6 +84,23 @@ export interface RawPolicyTarget {
    *  matter ("Duplicate wording" ≥0.45 similarity, "Similar target" ≥0.25).
    *  Empty when the target has no close counterpart elsewhere. */
   duplicate_of: string;
+  /** First (1) vs second (2) order target, per the v3 reviewer definitions
+   *  (scripts/policy-targets-review-2026-08.json, `target_order`). null when
+   *  unlabelled. An override's `set.target_order` wins when both exist. */
+  target_order: 1 | 2 | null;
+  /** Who assigned `target_order` — 'human' or 'ai' — from the review file's
+   *  `source` field; '' when target_order is null or unlabelled. */
+  target_order_source: 'human' | 'ai' | '';
+  /** True when the v3 reviewer mark-up (scripts/policy-targets-review-2026-08.json,
+   *  `revise`) flags this row as likely not a target. */
+  revise_flag: boolean;
+  /** The reviewer's reason the row is likely not a target; '' when revise_flag
+   *  is false. */
+  revise_reason: string;
+  /** Note that this row's source document was replaced/consolidated since
+   *  extraction (scripts/policy-targets-replaced.json, keyed by policy_id);
+   *  '' when not flagged. */
+  doc_replaced: string;
 }
 
 export type PolicyTarget = RawPolicyTarget;

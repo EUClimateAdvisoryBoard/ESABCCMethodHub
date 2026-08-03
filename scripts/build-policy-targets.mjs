@@ -36,10 +36,19 @@ const POLICIES_TS = path.join(ROOT, 'src/data/policies.ts');
 const AGENT_DIR = process.env.AGENT_TARGETS_DIR
   || path.join(ROOT, 'scripts/policy-targets-input');
 const OVERRIDES_FILE = path.join(ROOT, 'scripts/policy-targets-overrides.json');
+// v3 reviewer pass (Aug 2026): first/second-order labels + "likely not a
+// target" flags, keyed by stable row id. Optional — absent or empty is a
+// no-op (every row gets target_order: null, target_order_source: '',
+// revise_flag: false, revise_reason: '').
+const REVIEW_FILE = path.join(ROOT, 'scripts/policy-targets-review-2026-08.json');
+// Optional map of policy_id -> { celex, date, note } recording that a policy's
+// source document was replaced/consolidated since the last extraction pass.
+// Absent or empty is a no-op (every row gets doc_replaced: '').
+const REPLACED_FILE = path.join(ROOT, 'scripts/policy-targets-replaced.json');
 const OUTPUT_FILE = path.join(ROOT, 'src/data/policy-targets.generated.ts');
 
 const MIN_QUOTE = 30;
-const MAX_QUOTE = 900;
+const MAX_QUOTE = 2000;
 
 // ─── Policy metadata (scalar-parsed from the seed dataset) ──────────────────
 function loadPolicies() {
@@ -260,10 +269,40 @@ function loadOverrides() {
   return m;
 }
 
+// v3 reviewer workbook (scripts/policy-targets-review-2026-08.json): row-level
+// first/second-order labels and "likely not a target" mark-up. Shape:
+//   {"target_order": {"<id>": {"order": 1|2, "source": "human"|"ai", "rationale": "…"}},
+//    "revise": {"<id>": "<reason>"}}
+// Absent file or either map missing/empty is a no-op.
+function loadReview() {
+  if (!fs.existsSync(REVIEW_FILE)) return { target_order: {}, revise: {} };
+  try {
+    const j = JSON.parse(fs.readFileSync(REVIEW_FILE, 'utf8'));
+    return { target_order: j.target_order || {}, revise: j.revise || {} };
+  } catch (e) {
+    console.warn(`  ! skipped ${path.basename(REVIEW_FILE)}: ${e.message}`);
+    return { target_order: {}, revise: {} };
+  }
+}
+
+// Documents replaced/consolidated since extraction (scripts/policy-targets-replaced.json):
+// {"<policy_id>": {"celex": "…", "date": "…", "note": "…"}}. Absent file is a no-op.
+function loadReplaced() {
+  if (!fs.existsSync(REPLACED_FILE)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(REPLACED_FILE, 'utf8'));
+  } catch (e) {
+    console.warn(`  ! skipped ${path.basename(REPLACED_FILE)}: ${e.message}`);
+    return {};
+  }
+}
+
 // ─── Merge ──────────────────────────────────────────────────────────────────
 function main() {
   const policies = loadPolicies();
   const overrides = loadOverrides();
+  const review = loadReview();
+  const replaced = loadReplaced();
   const sources = [];
   if (fs.existsSync(AGENT_DIR)) {
     // Agent files first, the regex safety-net (_regex.json) LAST, so that on a
@@ -363,6 +402,18 @@ function main() {
     if (!(ov && ov.set && Object.prototype.hasOwnProperty.call(ov.set, 'relevant'))) {
       rec.relevant = relevantDefault(rec);
     }
+    // v3 reviewer mark-up (scripts/policy-targets-review-2026-08.json) + the
+    // replaced-document register (scripts/policy-targets-replaced.json).
+    // An override's `set.target_order` wins over the review file when both exist.
+    const rowOrder = review.target_order[rec.id];
+    const validOrder = rowOrder && (rowOrder.order === 1 || rowOrder.order === 2) ? rowOrder.order : null;
+    rec.target_order = (ov && ov.set && Object.prototype.hasOwnProperty.call(ov.set, 'target_order'))
+      ? ov.set.target_order
+      : validOrder;
+    rec.target_order_source = rowOrder && (rowOrder.source === 'human' || rowOrder.source === 'ai') ? rowOrder.source : '';
+    rec.revise_flag = Object.prototype.hasOwnProperty.call(review.revise, rec.id);
+    rec.revise_reason = rec.revise_flag ? (review.revise[rec.id] || '') : '';
+    rec.doc_replaced = (replaced[rec.policy_id] && replaced[rec.policy_id].note) || '';
     if (!perPolicy.has(p.id)) perPolicy.set(p.id, []);
     perPolicy.get(p.id).push(rec);
   }
@@ -408,6 +459,8 @@ function main() {
  *   type:             ${JSON.stringify(tally('target_type'))}
  *   climate_relevance:${JSON.stringify(tally('climate_relevance'))}
  *   relevant (lens):  ${JSON.stringify(tally('relevant'))}
+ *   target_order:     ${JSON.stringify(tally('target_order'))}
+ *   revise_flag:      ${JSON.stringify(tally('revise_flag'))}
  *   (${dropped} candidates rejected as non-verbatim / out of scope)
  */
 import type { RawPolicyTarget } from './policy-targets';
@@ -419,6 +472,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = ${JSON.stringify(out, null,
   console.log(`  label=${JSON.stringify(tally('target_label'))}`);
   console.log(`  obligation=${JSON.stringify(tally('obligation'))} type=${JSON.stringify(tally('target_type'))}`);
   console.log(`  climate=${JSON.stringify(tally('climate_relevance'))} relevant=${JSON.stringify(tally('relevant'))}`);
+  console.log(`  target_order=${JSON.stringify(tally('target_order'))} revise_flag=${JSON.stringify(tally('revise_flag'))}`);
 }
 
 main();

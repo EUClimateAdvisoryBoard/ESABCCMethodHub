@@ -91,6 +91,7 @@ RULES = [
 PASS_LABEL = {
     '[human review 2026-07]': 'Pass 1 — reviewer mark-up generalised',
     '[agent review 2026-07 round 2]': 'Pass 2 — full agent audit',
+    '[human review 2026-08 v3]': 'Pass 3 — v3 reviewer mark-up (Aug 2026)',
 }
 
 HEADER_FILL = PatternFill('solid', fgColor='FFE8EEF4')
@@ -143,9 +144,11 @@ def main() -> None:
     # are left empty on purpose: they are where the reviewer records the next
     # round of confirmations and objections, as in the workbook they marked up.
     header = [
-        '1 · Name of policy', '2 · Type of policy', '3 · Policy area', '#', '4 · Target text (verbatim)',
+        '1 · Name of policy', '2 · Type of policy', 'Document updated (consolidated version)', '3 · Policy area',
+        '#', 'First order target (1) Second order target (2)', '4 · Target text (verbatim)',
         'Provision', '5 · Target label', '6 · Obligation', '7 · Type of target', '8 · Timeline',
         '9 · Indicators', '10 · Climate-relevance', '11 · Source (EUR-Lex)', 'Relevant (transition lens)',
+        'Revise target', 'Revise reason',
         '12 · Human confirmed',
     ] + [f'{13 + i} · {label}' for i, (_, label) in enumerate(SECTORS)] + [
         '21 · Mitigation / adaptation argument',
@@ -153,15 +156,17 @@ def main() -> None:
         'Not correct', 'reason',
     ]
     body = [[
-        t['policy_name'], cap(t['document_type']), t['policy_area'], t['target_number'], t['target_text'],
+        t['policy_name'], cap(t['document_type']), t.get('doc_replaced') or '', t['policy_area'], t['target_number'],
+        t['target_order'] if t.get('target_order') in (1, 2) else '', t['target_text'],
         t['article'], cap(t['target_label']), cap(t['obligation']), cap(t['target_type']),
         t['timeline'] or 'Unspecified', '; '.join(t.get('indicators') or []),
-        CLIMATE_LABEL[t['climate_relevance']], t['eurlex_url'], 'Relevant', '',
+        CLIMATE_LABEL[t['climate_relevance']], t['eurlex_url'], 'Relevant',
+        1 if t.get('revise_flag') else '', t.get('revise_reason') or '', '',
     ] + ['Yes' if key in t['sectors'] else '' for key, _ in SECTORS] + [
         t['climate_argument'], t['duplicate_of'], '', '',
     ] for t in rows]
     write_sheet(ws, [header] + body,
-                [42, 15, 16, 5, 70, 26, 13, 12, 14, 20, 28, 20, 40, 16, 16] + [13] * 8 + [62, 46, 12, 46])
+                [42, 15, 30, 16, 5, 16, 70, 26, 13, 12, 14, 20, 28, 20, 40, 16, 12, 40, 16] + [13] * 8 + [62, 46, 12, 46])
 
     # ── Removed rows ────────────────────────────────────────────────────────
     removed = [['Row id', 'Pass', 'Rule', 'Reason for removal']]
@@ -272,6 +277,15 @@ def main() -> None:
                                                'and use “Not correct” / “reason” to flag a row exactly as in the '
                                                'previous mark-up — the reasons written there become the rules of the '
                                                'next correction pass.'],
+        ['Document updated (consolidated version)', 'Set when the act’s source document was replaced or '
+                                                     'consolidated since extraction (scripts/policy-targets-replaced.json); '
+                                                     'notes what changed.'],
+        ['First order target (1) Second order target (2)', 'The v3 reviewer’s first/second-order call '
+                                                            '(scripts/policy-targets-review-2026-08.json): 1 for the '
+                                                            'headline change the act exists to achieve, 2 for a target '
+                                                            'that depends on or complements one. Blank when unlabelled.'],
+        ['Revise target / Revise reason', 'The v3 reviewer’s "likely not a target" flag and the reason '
+                                          '(scripts/policy-targets-review-2026-08.json, `revise`).'],
     ]
     write_sheet(wb.create_sheet('About'), about, [30, 110], freeze=None)
 
