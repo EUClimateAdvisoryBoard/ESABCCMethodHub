@@ -68,6 +68,17 @@ flowchart LR
    mandates, EV-charging infrastructure), and drops for heading-only or
    duplicate rows. Each entry records its reason and is applied after
    deterministic classification.
+5. **The August 2026 (v3) reviewer pass** sharpened the target definition —
+   a target must be timebound or imply a measurable progression of effort
+   (rules NT-7..NT-15) — and added three dimensions: **first/second-order**
+   classification (human labels + calibrated agent assignments in
+   `scripts/policy-targets-review-2026-08.json`), a **Revise target** flag
+   marking likely non-targets for the next review round, and a
+   **Document updated** marker for the 17 acts whose source texts were
+   replaced with the current consolidated EUR-Lex version
+   (`scripts/policy-targets-replaced.json`) — including the RED III-amended
+   Renewable Energy Directive and the Climate Law's adopted 2040 target.
+   See `docs-internal/policy-targets-human-review-2026-08.md`.
 
 Row ids are **stable content hashes** of (policy, quote) — regenerating the
 dataset does not shift them, so human confirmations (column 12) keep

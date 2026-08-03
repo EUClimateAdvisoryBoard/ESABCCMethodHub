@@ -87,6 +87,35 @@ RULES = [
     ('FIX-TRUNCATION', 'Sentence completed',
      'The quote was sliced mid-sentence — its subject or its continuation sat outside the slice; '
      're-extracted to sentence bounds.'),
+    # Rules added by the August 2026 (v3) reviewer pass: a target must be
+    # timebound or at least imply a measurable progression of effort.
+    ('NT-7', 'Pure conduct obligation',
+     'A duty to act or refrain (take measures, prevent, ensure) with no progression over time that '
+     'could be measured — one intervention, not a target.'),
+    ('NT-8', 'Threshold-triggered obligation',
+     'An obligation that fires when an entity crosses a size or consumption threshold (e.g. '
+     'energy-audit duties for large enterprises) is a compliance rule, not a target.'),
+    ('NT-9', 'Derogation or reduced requirement',
+     'A clause letting Member States apply a lower requirement in defined cases relaxes a target; '
+     'it is not itself one.'),
+    ('NT-10', 'Bare fragment',
+     'A value or sub-point quoted without its chapeau — no actor, obligation, date or metric of its '
+     'own; the complete provision is registered instead.'),
+    ('NT-11', 'Qualifying condition for a headline target',
+     'Text specifying how a headline target must be achieved (composition, siting, accounting '
+     'conditions). Relevant for monitoring and indicator choice, but not a separate target.'),
+    ('NT-12', 'One-off ban or market restriction',
+     'A prohibition from a date is a single intervention, not a progression of effort.'),
+    ('NT-13', 'Methodology or compliance calculation',
+     'Rules for how compliance with a target is calculated or what counts towards it.'),
+    ('NT-14', 'Commission assessment or review duty',
+     'An obligation on the Commission to evaluate, review or report — process, not a target.'),
+    ('NT-15', 'Process obligation to set objectives later',
+     'A requirement that targets or objectives be established by a future act or plan; the register '
+     'captures the targets themselves once set.'),
+    ('FIX-GROUP', 'Staged sub-points grouped',
+     'Sub-points of one provision (e.g. 2030/2040/2050 stages) were split across rows; merged into '
+     'a single target per the reviewer’s instruction.'),
 ]
 PASS_LABEL = {
     '[human review 2026-07]': 'Pass 1 — reviewer mark-up generalised',
