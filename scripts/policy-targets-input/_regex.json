@@ -32,7 +32,11 @@
         "article": "Article 4 — Intermediate Union climate targets"
       },
       {
-        "quote": "With a view to achieving the climate-neutrality objective set out in Article 2(1) of this Regulation, a Union-wide climate target for 2040 shall be set.",
+        "quote": "With a view to the period after 2030, the Commission shall review relevant Union legislation in order to enable the achievement of the target set out in paragraph 3 of this Article and the climate-neutrality objective set out in Article 2(1) and consider taking the necessary measures as appropriate and based on detailed impact assessments, in accordance with the Treaties.",
+        "article": "Article 4 — Intermediate Union climate targets"
+      },
+      {
+        "quote": "The Commission shall continue to strengthen the initiatives concerning the enabling framework and aim to accelerate their adoption and implementation to ensure that conditions are in place to support affected legal and natural persons, such as European industry and citizens, throughout the transition, towards the targets set out in paragraphs 1 and 3 of this Article, the climate-neutrality objective set out in Article 2(1) and a climate-neutral economy.",
         "article": "Article 4 — Intermediate Union climate targets"
       },
       {
@@ -76,7 +80,7 @@
         "article": "Article 10 — Sectoral roadmaps"
       },
       {
-        "quote": "implement strategies and measures designed to meet the objectives and targets of the Energy Union and the long-term Union greenhouse gas emissions commitments consistent with the Paris Agreement, in particular the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 of the European Parliament and of the Council (*1), and, for the first ten-year period, from 2021 to 2030, in particular the Union’s 2030 targets for energy and climate;",
+        "quote": "implement strategies and measures designed to meet the objectives and targets of the Energy Union and the long-term Union greenhouse gas emissions commitments consistent with the Paris Agreement, in particular the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 of the European Parliament and of the Council ( *1 ), and, for the first ten-year period, from 2021 to 2030, in particular the Union’s 2030 targets for energy and climate;",
         "article": "Article 13 — Amendments to Regulation (EU) 2018/1999"
       },
       {
@@ -130,12 +134,376 @@
     "source": "regex",
     "targets": [
       {
-        "quote": "For the three-year period beginning 1 January 2005 Member States shall allocate at least 95 % of the allowances free of charge.",
-        "article": "Article 10 — Method of allocation"
+        "quote": "It contributes to the achievement of the Union’s climate-neutrality objective and its climate targets as laid down in Regulation (EU) 2021/1119 of the European Parliament and of the Council ( 1 ) and thereby to the objectives of the Paris Agreement ( 2 ).",
+        "article": "Article 1 — Subject matter"
       },
       {
-        "quote": "For the five-year period beginning 1 January 2008, Member States shall allocate at least 90 % of the allowances free of charge.",
-        "article": "Article 10 — Method of allocation"
+        "quote": "Union reduction commitment exceeding 20 %, to be applied upon the approval by the",
+        "article": "Article 1 — Subject matter"
+      },
+      {
+        "quote": "Union of an international agreement on climate change leading to greenhouse gas emission reductions exceeding those required in Article 9, as reflected in the 30 % commitment endorsed by the European Council of March 2007.",
+        "article": "Article 1 — Subject matter"
+      },
+      {
+        "quote": "For the period from 1 January 2012 to 31 December 2012, the total quantity of allowances to be allocated to aircraft operators shall be equivalent to 97 % of the historical aviation emissions.",
+        "article": "Article 3c — Total quantity of allowances for aviation"
+      },
+      {
+        "quote": "For the period from 1 January 2024 until 31 December 2030, a maximum of 20 million of the total quantity of allowances referred to in paragraph 5 shall be reserved in respect of commercial aircraft operators, on a transparent, equal-treatment and non-discriminatory basis, for the use of sustainable aviation fuels, and other aviation fuels that are not derived from fossil fuels, identified in a regulation on ensuring a level playing field for sustainable air transport as counting towards reaching the minimum share of sustainable aviation fuels that aviation fuel made available to aircraft operators at Union airports by aviation fuel suppliers is required to contain under that Regulation, for subsonic flights for which allowances have to be surrendered in accordance with Article 12(3) of this Directive.",
+        "article": "Article 3c — Total quantity of allowances for aviation"
+      },
+      {
+        "quote": "In the years 2024 and 2025, 15 % of the allowances referred to in Article 3c(5) and (7), as well as 25 % in 2024 and 50 % in 2025, respectively, of the remaining 85 % of those allowances, in respect of which free allocation would have taken place, shall be auctioned, except for the quantities of allowances referred to in Article 3c(6) and Article 10a(8), fourth subparagraph.",
+        "article": "Article 3d — Method of allocation of allowances for aviation through auctioning"
+      },
+      {
+        "quote": "Those implementing acts shall list a port as a neighbouring container transhipment port where the share of transhipment of containers, measured in twenty-foot equivalent units, exceeds 65 % of the total container traffic of that port during the most recent twelve-month period for which relevant data are available and where that port is located outside the Union but less than 300 nautical miles from a port under the jurisdiction of a Member State.",
+        "article": "Article 3g — Monitoring and reporting plans"
+      },
+      {
+        "quote": "The quantity of allowances shall correspond to 3,5 % of the additional quantity of allowances due to the increase in the cap for maritime transport referred to in Article 9, third paragraph, in the relevant year.",
+        "article": "Article 3g — Monitoring and reporting plans"
+      },
+      {
+        "quote": "The revenue generated from the auctioning of that share of allowances should be used for the purposes referred to in Article 10(3), first subparagraph, point (g), with regard to the maritime sector, and points (f) and (i). 50 % of the quantity of allowances shall be distributed among the relevant Member States based on the share of shipping companies under their responsibility and the remainder distributed in equal shares between them.",
+        "article": "Article 3g — Monitoring and reporting plans"
+      },
+      {
+        "quote": "Where appropriate, the Commission may accompany the report referred to in the second subparagraph of this paragraph with a legislative proposal to amend this Directive in a manner that is consistent with the Union 2030 climate target and the climate-neutrality objective set out in Regulation (EU) 2021/1119, and with the aim of preserving the environmental integrity and effectiveness of Union climate action, in order to ensure coherence between the implementation of the global market-based measure and the EU ETS, while avoiding any significant double burden.",
+        "article": "Article 3g — Monitoring and reporting plans"
+      },
+      {
+        "quote": "In the event that the IMO does not adopt by 2028 a global market-based measure to reduce greenhouse gas emissions from maritime transport in line with the objectives of the Paris Agreement and at least to a level comparable to that resulting from the Union measures taken under this Directive, the Commission shall submit a report to the European Parliament and to the Council in which it shall examine the need to apply the allocation of allowances and surrender requirements in respect of more than fifty percent (50 %) of the emissions from ships performing voyages between a port of call under the jurisdiction of a Member State and a port of call outside the jurisdiction of a Member State, in light of the objectives of the Paris Agreement.",
+        "article": "Article 3g — Monitoring and reporting plans"
+      },
+      {
+        "quote": "The quantity shall decrease by a linear factor of 1,74 % compared to the average annual total quantity of allowances issued by Member States in accordance with the Commission Decisions on their national allocation plans for the period from 2008 to 2012.",
+        "article": "Article 9 — Union  -wide quantity of allowances"
+      },
+      {
+        "quote": "Starting in 2021, the linear factor shall be 2,2 %.",
+        "article": "Article 9 — Union  -wide quantity of allowances"
+      },
+      {
+        "quote": "In 2024, the Union-wide quantity of allowances shall be decreased by 90 million allowances.",
+        "article": "Article 9 — Union  -wide quantity of allowances"
+      },
+      {
+        "quote": "In 2026, the Union-wide quantity of allowances shall be decreased by 27 million allowances.",
+        "article": "Article 9 — Union  -wide quantity of allowances"
+      },
+      {
+        "quote": "In 2024, the Union-wide quantity of allowances shall be increased by 78,4 million allowances for maritime transport.",
+        "article": "Article 9 — Union  -wide quantity of allowances"
+      },
+      {
+        "quote": "The linear factor shall be 4,3 % from 2024 to 2027 and 4,4 % from 2028.",
+        "article": "Article 9 — Union  -wide quantity of allowances"
+      },
+      {
+        "quote": "From 2021 onwards, and without prejudice to a possible reduction pursuant to Article 10a(5a), the share of allowances to be auctioned shall be 57 %.",
+        "article": "Article 10 — Auctioning of allowances"
+      },
+      {
+        "quote": "2 % of the total quantity of allowances between 2021 and 2030 shall be auctioned to establish a fund to improve energy efficiency and modernise the energy systems of certain Member States (the ‘beneficiary Member States’) as set out in Article 10d (the ‘Modernisation Fund’).",
+        "article": "Article 10 — Auctioning of allowances"
+      },
+      {
+        "quote": "The beneficiary Member States for that amount of allowances shall be the Member States with a GDP per capita at market prices below 60 % of the Union average in 2013.",
+        "article": "Article 10 — Auctioning of allowances"
+      },
+      {
+        "quote": "In addition, 2,5 % of the total quantity of allowances between 2024 and 2030 shall be auctioned for the Modernisation Fund.",
+        "article": "Article 10 — Auctioning of allowances"
+      },
+      {
+        "quote": "90 % of the total quantity of allowances to be auctioned being distributed amongst Member States in shares that are identical to the share of verified emissions under the",
+        "article": "Article 13"
+      },
+      {
+        "quote": "If necessary, the percentages referred to in point (b) shall be adapted in a proportional manner to ensure that the distribution is 10 %.",
+        "article": "Article 13"
+      },
+      {
+        "quote": "If an installation is covered by the obligation to conduct an energy audit or to implement a certified energy management system under Article 8 of Directive 2012/27/EU of the European Parliament and of the Council ( 17 ) and if the recommendations of the audit report or of the certified energy management system are not implemented, unless the pay-back time for the relevant investments exceeds three years or unless the costs of those investments are disproportionate, then the amount of free allocation shall be reduced by 20 %.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "In addition to the requirements set out in the third subparagraph of this paragraph, the reduction by 20 % referred to in that subparagraph shall be applied where, by 1 May 2024, operators of installations whose greenhouse gas emission levels are higher than the 80th percentile of emission levels for the relevant product benchmarks have not established a climate-neutrality plan for each of those installations for its activities covered by this Directive.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "No free allowances beyond 80 % shall be allocated if achievement of the intermediate targets and milestones has not been verified in respect of the period until the end of 2025 or in respect of the period from 2026 to 2030.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Where any such allowances remain, 50 % of those allowances shall be made available to support innovation in accordance with paragraph 8 of this Article.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "The other 50 % of those allowances shall be auctioned in accordance with Article 10(1) of this Directive and Member States should use the respective revenues to address any residual risk of carbon leakage in the sectors covered by Annex I to Regulation (EU) 2023/956, supporting the transition and promoting their decarbonisation in accordance with State aid rules.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "The CBAM factor shall be equal to 100 % for the period between the entry into force of that Regulation and the end of 2025 and, subject to the application of provisions referred to in Article 36(2), point (b), of that Regulation, shall be equal to 97,5 % in 2026, 95 % in 2027, 90 % in 2028, 77,5 % in 2029, 51,5 % in 2030, 39 % in 2031, 26,5 % in 2032 and 14 % in 2033.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "In defining the principles for setting ex-ante benchmarks in individual sectors or subsectors, the starting point shall be the average performance of the 10 % most efficient installations in a sector or subsector in the",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Where the annual reduction rate exceeds 1,6 % or is below 0,2 %, the benchmark values for the period from 2021 to 2025 shall be the benchmark values applicable in the period from 2013 to 2020 reduced by whichever of those two percentage rates is relevant, in respect of each year between 2008 and 2023.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Where the annual reduction rate exceeds 2,5 % or is below 0,3 %, the benchmark values for the period from 2026 to 2030 shall be the benchmark values applicable in the period from 2013 to 2020 reduced by whichever of those two percentage rates is relevant, in respect of each year between 2008 and 2028.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "In order to promote efficient energy recovery from waste gases, for the period referred to in point (b) of the third subparagraph, the benchmark value for hot metal, which predominantly relates to waste gases, shall be updated with an annual reduction rate of 0,2 %.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "However, installations whose greenhouse gas emission levels are below the average of the 10 % most efficient installations in a sector or subsector in the Union for the relevant benchmarks in a year when the adjustment applies shall be exempted from that adjustment.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "By way of derogation from paragraph 5, an additional amount of up to 3 % of the total quantity of allowances shall, to the extent necessary, be used to increase the maximum amount available under paragraph 5.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Where less than 3 % of the total quantity of allowances is needed to increase the maximum amount available under paragraph 5:",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "a maximum of 50 million allowances shall be used to increase the amount of allowances available to support innovation in accordance with Article 10a(8); and",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "a maximum of 0,5 % of the total quantity of allowances shall be used to increase the amount of allowances available to modernise the energy systems of certain Member States in accordance with Article 10d.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Where a Member State spends an amount higher than the equivalent of 25 % of the auction revenues referred to in Article 10(3) for the year in which the indirect costs were incurred, it shall set out the reasons for exceeding that amount.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Member States shall also seek to use no more than 25 % of the revenues generated from the auctioning of allowances for the financial measures referred to in the first subparagraph.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "As from 2018, in any year in which a Member State uses more than 25 % of the revenues generated from the auctioning of allowances for such purposes, it shall publish a report setting out the reasons for exceeding that amount.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Allowances from the maximum amount referred to in paragraph 5 of this Article which were not allocated for free by 2020 shall be set aside for new entrants, together with 200 million allowances placed in the market stability reserve pursuant to Article 1(3) of Decision (EU) 2015/1814.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Of the allowances set aside, up to 200 million shall be returned to the market stability reserve at the end of the period from 2021 to 2030 if not allocated for that period.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "345 million allowances from the quantity which could otherwise be allocated for free pursuant to this Article, and 80 million allowances from the quantity which could otherwise be auctioned pursuant to Article 10, as well as the allowances resulting from the reduction of free allocation referred to in paragraph 1a of this Article, shall be made available to a fund (the ‘Innovation Fund’) with the objective of supporting innovation in low- and zero-carbon techniques, processes and technologies that contribute significantly to the decarbonisation of the sectors covered by this Directive and contribute to zero pollution and circularity objectives, including projects aimed at scaling up such techniques, processes and technologies with a view to their broad roll-out across the Union.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Moreover, 5 million allowances from the quantity referred to in Article 3c(5) and (7) relating to aviation allocations for 2026 shall be made available for innovation support as referred to in the first subparagraph of this paragraph.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "In addition, 50 million unallocated allowances from the market stability reserve shall supplement any remaining revenues from the 300 million allowances available in the period from 2013 to 2020 under Commission Decision 2010/670/EU ( 19 ), and shall be used in a timely manner for innovation support as referred to in the first subparagraph of this paragraph.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Projects shall have the potential for widespread application or to significantly lower the costs of transitioning towards a climate-neutral economy in the sectors concerned.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "No project shall receive support via the mechanism under this paragraph that exceeds 15 % of the total number of allowances available for this purpose.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "By 31 December 2023 and every year thereafter, the Commission shall report to the Climate Change Committee referred to in Article 22a(1) of this Directive, on the implementation of the Innovation Fund, providing an analysis of projects awarded funding, by sector and by Member State, and the expected contribution of those projects towards the objective of climate neutrality in the Union as set out in Regulation (EU) 2021/1119.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "The Commission shall not use more than 30 % of the proceeds of the auctioning of allowances allocated to the Innovation Fund pursuant to paragraph 8 for provisioning for CDs and CCDs.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "The provisioning rate shall be no lower than 50 % of the total financial liability borne by the Union budget for CDs and CCDs.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "40 million allowances from the quantity which could otherwise be allocated for free pursuant to this Article, and 10 million allowances from the quantity which could otherwise be auctioned pursuant to Article 10 of this Directive shall be made available for the Social Climate Fund established by Regulation (EU) 2023/955 of the European Parliament and of the Council ( 23 ).",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Subject to Article 10b, the amount of allowances allocated free of charge under paragraphs 4 to 7 of this Article in 2013 shall be 80 % of the quantity determined in accordance with the measures referred to in paragraph 1.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Thereafter the free allocation shall decrease each year by equal amounts resulting in 30 % free allocation in 2020",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "The level of free allocations given to installations whose operations have increased or decreased, as assessed on the basis of a rolling average of two years, by more than 15 % compared to the level initially used to determine the free allocation for the relevant period referred to in Article 11(1) shall, as appropriate, be adjusted.",
+        "article": "Article 10a — Transitional"
+      },
+      {
+        "quote": "Such sectors and subsectors shall be allocated allowances free of charge for the period until 2030 at 100 % of the quantity determined pursuant to Article 10a.",
+        "article": "Article 10b — Transitional measures to support certain energy intensive industries in the event of carbon leakage"
+      },
+      {
+        "quote": "Other sectors and subsectors are considered to be able to pass on more of the costs of allowances in product prices, and shall be allocated allowances free of charge at 30 % of the quantity determined pursuant to Article 10a.",
+        "article": "Article 10b — Transitional measures to support certain energy intensive industries in the event of carbon leakage"
+      },
+      {
+        "quote": "In a Member State where, on average in the years from 2014 to 2018, its share of emissions from district heating of the Union total of such emissions, divided by that Member State’s share of GDP of the Union’s total GDP, is greater than five, an additional free allocation of 30 % of the quantity determined pursuant to Article 10a shall be given to district heating for the period from 2026 to 2030, provided that an investment volume equivalent to the value of that additional free allocation is invested to significantly reduce emissions before 2030 in accordance with climate-neutrality plans referred to in the third subparagraph of this paragraph and that the achievement of the targets and milestones referred to in point (b) of that subparagraph is confirmed by the verification carried out in accordance with the fourth subparagraph of this paragraph.",
+        "article": "Article 10b — Transitional measures to support certain energy intensive industries in the event of carbon leakage"
+      },
+      {
+        "quote": "By 1 May 2024, operators of district heating shall establish a climate-neutrality plan for the installations for which they apply for additional free allocation in accordance with the second subparagraph of this paragraph.",
+        "article": "Article 10b — Transitional measures to support certain energy intensive industries in the event of carbon leakage"
+      },
+      {
+        "quote": "That plan shall be consistent with the climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 and shall set out:",
+        "article": "Article 10b — Transitional measures to support certain energy intensive industries in the event of carbon leakage"
+      },
+      {
+        "quote": "measures and investments to reach climate neutrality by 2050 at installation or company level, excluding the use of carbon offset credits;",
+        "article": "Article 10b — Transitional measures to support certain energy intensive industries in the event of carbon leakage"
+      },
+      {
+        "quote": "The Commission shall adopt implementing acts to specify the minimal content of the information referred to in the third subparagraph, points (a), (b) and (c), of this paragraph, and the format of the climate-neutrality plans referred to in that subparagraph and in Article 10a(1), fifth subparagraph.",
+        "article": "Article 10b — Transitional measures to support certain energy intensive industries in the event of carbon leakage"
+      },
+      {
+        "quote": "The Member State concerned shall organise a competitive bidding process, to take place in one or more rounds between 2021 and 2030, for projects involving a total amount of investment exceeding EUR 12,5 million, in order to select the investments to be financed with free allocation.",
+        "article": "Article 10c — Option for transitional free allocation for the modernisation of the energy sector"
+      },
+      {
+        "quote": "Where investments with a value of less than EUR 12,5 million are to be supported with free allocation and are not selected through the competitive bidding process referred to in this paragraph, the Member State shall select projects based on objective and transparent criteria.",
+        "article": "Article 10c — Option for transitional free allocation for the modernisation of the energy sector"
+      },
+      {
+        "quote": "Where more than one investment is carried out within the same installation, they shall be assessed as a whole to establish whether or not the value threshold of EUR 12,5 million is exceeded, unless those investments are, independently, technically or financially viable.",
+        "article": "Article 10c — Option for transitional free allocation for the modernisation of the energy sector"
+      },
+      {
+        "quote": "The total free allocation shall be no more than 40 % of the allowances which the Member State concerned will receive, pursuant to Article 10(2)(a), in the period from 2021 to 2030, spread out in equal annual volumes over that period.",
+        "article": "Article 10c — Option for transitional free allocation for the modernisation of the energy sector"
+      },
+      {
+        "quote": "Where such allowances are allocated over the period from 2021 to 2030, a corresponding amount of allowances shall be taken into account for the application of the 60 % limit set out in the first subparagraph of this paragraph.",
+        "article": "Article 10c — Option for transitional free allocation for the modernisation of the energy sector"
+      },
+      {
+        "quote": "At least 80 % of the revenue from allowances referred to in Article 10(1), third subparagraph, and from allowances covered by a notification pursuant to paragraph 4 of this Article, and at least 90 % of the revenue from allowances referred to in Article 10(1), fourth subparagraph, shall be used to support investments in the following:",
+        "article": "Article 10d — Modernisation Fund"
+      },
+      {
+        "quote": "This subparagraph shall not apply to small-scale projects funded through loans provided by a national promotional bank or through grants contributing to the implementation of a national programme serving specific objectives in line with the objectives of the Modernisation Fund, provided that not more than 10 % of the Member States' share set out in Annex IIb is used under the programme.",
+        "article": "Article 10d — Modernisation Fund"
+      },
+      {
+        "quote": "As an extraordinary and one-time measure, until 31 August 2026, the allowances auctioned pursuant to paragraphs 2 and 3 of this Article shall be auctioned until the total amount of revenue obtained from such auctioning has reached EUR 20 billion.",
+        "article": "Article 10e — Recovery and Resilience Facility"
+      },
+      {
+        "quote": "By way of derogation from Article 10a(8), until 31 August 2026, a part of the allowances referred to in that paragraph shall be auctioned to support the objectives set out in Article 21c(3), points (b) to (f), of Regulation (EU) 2021/241, until the amount of revenue obtained from such auctioning has reached EUR 12 billion.",
+        "article": "Article 10e — Recovery and Resilience Facility"
+      },
+      {
+        "quote": "Until 31 August 2026, a number of allowances from the quantity which would otherwise be auctioned from 1 January 2027 to 31 December 2030 by the Member States under Article 10(2), point (a), shall be auctioned to support the objectives set out in Article 21c(3), points (b) to (f), of Regulation (EU) 2021/241 until the amount of revenue obtained from such auctioning has reached EUR 8 billion.",
+        "article": "Article 10e — Recovery and Resilience Facility"
+      },
+      {
+        "quote": "By way of derogation from Article 1(5a) of Decision (EU) 2015/1814, until 31 December 2030, 27 million unallocated allowances in the market stability reserve from the total quantity which would otherwise be invalidated over that period shall be used to support innovation, as referred to in Article 10a(8), first subparagraph, of this Directive.",
+        "article": "Article 10e — Recovery and Resilience Facility"
+      },
+      {
+        "quote": "The Commission shall adopt an implementing act listing States other than EEA countries, Switzerland and the United Kingdom which are considered to be applying CORSIA for the purposes of this Directive, with a baseline of 2019 for 2021 to 2023 and a baseline of 85 % of 2019 emissions for each year from 2024.",
+        "article": "Article 25a — Third country measures to reduce the climate change impact of aviation"
+      },
+      {
+        "quote": "EU ETS installations which have reported to the competent authority emissions of less than 25 000 tonnes of carbon dioxide equivalent and, where they carry out combustion activities, have a rated thermal input below 35 MW, excluding emissions from biomass, in each of the three years preceding the notification under point (a), and which are subject to measures that will achieve an equivalent contribution to emission reductions, if the Member State concerned complies with the following conditions:",
+        "article": "Article 27 — Exclusion of small installations subject to equivalent measures"
+      },
+      {
+        "quote": "it confirms that if any installation emits 25 000 tonnes or more of carbon dioxide equivalent, excluding emissions from biomass, in any one calendar year or the measures applying to that installation that will achieve an equivalent contribution to emission reductions are no longer in place, the installation will be reintroduced into the",
+        "article": "Article 27 — Exclusion of small installations subject to equivalent measures"
+      },
+      {
+        "quote": "Union of an international agreement on climate change leading, by 2020, to mandatory reductions of greenhouse gas emissions exceeding 20 % compared to 1990 levels, as reflected in the 30 % reduction commitment as endorsed by the European Council of March 2007, the Commission shall submit a report assessing, in particular, the following elements:",
+        "article": "Article 28 — Adjustments applicable upon the approval by the"
+      },
+      {
+        "quote": "Union level, in order to move to the more ambitious 30 % reduction target in a balanced, transparent and equitable way, taking into account work under the Kyoto Protocol's first commitment period;",
+        "article": "Article 28 — Adjustments applicable upon the approval by the"
+      },
+      {
+        "quote": "By way of derogation from Articles 3g, 12, 15 and 18a, where an aircraft operator has total annual emissions lower than 25 000 tonnes of CO2, or where an aircraft operator has total annual emissions lower than 3 000 tonnes of CO2 from flights other than those referred to in points (a) and (b) of paragraph 1 of this Article, its emissions shall be considered to be verified emissions if determined by using the small emitters tool approved under Commission Regulation (EU) No 606/2010 ( 37 ) and populated by Eurocontrol with data from its ETS support facility.",
+        "article": "Article 28a — Derogations applicable in advance of the mandatory implementation of ICAO’s global market-based measure"
+      },
+      {
+        "quote": "In line with the global stocktake of the Paris Agreement, the Commission shall also report on efforts to meet the aviation sector’s long-term global aspirational goal of reducing aviation CO2 emissions to net zero by 2050, assessed in line with the criteria referred to in the first subparagraph, points (a) to (f).",
+        "article": "Article 28b — Reporting and review by the Commission concerning the implementation of ICAO’s global market-based measure"
+      },
+      {
+        "quote": "The Commission’s report referred to in paragraph 2 shall be accompanied by a legislative proposal, where appropriate, to amend this Directive in a way that is consistent with the Paris Agreement temperature goal, the Union’s economy-wide greenhouse gas emission reduction commitment for 2030 and the objective of achieving climate neutrality by 2050 at the latest, and with the aim of preserving the environmental integrity and effectiveness of the Union’s climate action.",
+        "article": "Article 28b — Reporting and review by the Commission concerning the implementation of ICAO’s global market-based measure"
+      },
+      {
+        "quote": "If the average allowance price for the six preceding calendar months is more than 2,4 times the average allowance price for the preceding two-year reference period, 75 million allowances shall be released from the market stability reserve in accordance with Article 1(7) of Decision (EU) 2015/1814.",
+        "article": "Article 29a — Measures in the event of excessive price fluctuations"
+      },
+      {
+        "quote": "The Commission may, where appropriate, submit legislative proposals to the European Parliament and to the Council to amend this Directive, in particular in order to ensure compliance with the climate-neutrality objective laid down in Article 2(1) of Regulation (EU) 2021/1119 and the Union climate targets laid down in Article 4 of that Regulation.",
+        "article": "Article 30"
+      },
+      {
+        "quote": "When reviewing this Directive, in accordance with paragraphs 1, 2 and 3 of this Article, the Commission shall analyse how linkages between the EU ETS and other carbon markets can be established without impeding the achievement of the climate-neutrality objective and the Union climate targets laid down in Regulation (EU) 2021/1119.",
+        "article": "Article 30"
+      },
+      {
+        "quote": "The quantity shall decrease each year after 2024 by a linear reduction factor of 5,10 %.",
+        "article": "Article 30c — Union-wide quantity of allowances"
+      },
+      {
+        "quote": "The quantity of allowances shall decrease by a linear reduction factor of 5,38 %, except if the conditions set out in point 1 of Annex IIIa apply, in which case the quantity shall decrease by a linear reduction factor adjusted in accordance with the rules set out in point 2 of Annex IIIa.",
+        "article": "Article 30c — Union-wide quantity of allowances"
+      },
+      {
+        "quote": "The auctioning of the allowances under this Chapter shall start in 2027 with an amount corresponding to 130 % of the auction volumes for 2027 established on the basis of the Union-wide quantity of allowances for that year and the respective auction shares and volumes pursuant to paragraphs 3 to 6 of this Article.",
+        "article": "Article 30d — Auctioning of allowances for the activity referred to in Annex III"
+      },
+      {
+        "quote": "The additional 30 % to be auctioned shall only be used for surrendering allowances pursuant to Article 30e(2) and may be auctioned until 31 May 2028.",
+        "article": "Article 30d — Auctioning of allowances for the activity referred to in Annex III"
+      },
+      {
+        "quote": "The additional 30% shall be deducted from the auction volumes for the period from 2029 to 2031.",
+        "article": "Article 30d — Auctioning of allowances for the activity referred to in Annex III"
+      },
+      {
+        "quote": "In 2027, 600 million allowances covered by this Chapter shall be created as holdings in the market stability reserve pursuant to Article 1a(3) of Decision (EU) 2015/1814.",
+        "article": "Article 30d — Auctioning of allowances for the activity referred to in Annex III"
+      },
+      {
+        "quote": "150 million allowances issued under this Chapter shall be auctioned and all revenues from those auctions made available for the Social Climate Fund established by Regulation (EU) 2023/955 until 2032.",
+        "article": "Article 30d — Auctioning of allowances for the activity referred to in Annex III"
+      },
+      {
+        "quote": "Where, for more than three consecutive months, the average price of allowances in the auctions carried out in accordance with the delegated acts adopted pursuant to Article 10(4) of this Directive is more than twice the average price of allowances during the six preceding consecutive months in the auctions for the allowances covered by this Chapter, 50 million allowances covered by this Chapter shall be released from the market stability reserve in accordance with Article 1a(7) of Decision (EU) 2015/1814.",
+        "article": "Article 30h — Measures in the event of an excessive price increase"
+      },
+      {
+        "quote": "Where the average price of allowances referred to in paragraph 1 of this Article exceeds a price of EUR 45 for a period of two consecutive months, 20 million allowances covered by this Chapter shall be released from the market stability reserve in accordance with Article 1a(7) of Decision (EU) 2015/1814.",
+        "article": "Article 30h — Measures in the event of an excessive price increase"
       }
     ]
   },
@@ -144,11 +512,15 @@
     "source": "regex",
     "targets": [
       {
-        "quote": "This Regulation lays down obligations on Member States with respect to their minimum contributions for the period from 2021 to 2030 to fulfilling the Union’s target of reducing its greenhouse gas emissions by 30 % below 2005 levels in 2030 in the sectors covered by Article 2 of this Regulation and contributes to achieving the objectives of the Paris Agreement.",
+        "quote": "This Regulation lays down obligations on Member States with respect to their minimum contributions for the period from 2021 to 2030 to fulfilling the Union’s target of reducing its greenhouse gas emissions by 40 % below 2005 levels in 2030 in the sectors covered by Article 2 of this Regulation.",
         "article": "Article 1 — Subject matter"
       },
       {
-        "quote": "If the sum of all Member States’ total quantities were to exceed the collective total of 100 million, the total quantities for each Member State shall be reduced on a pro rata basis so that the collective total is not exceeded.",
+        "quote": "It contributes to the long-term target of climate neutrality in the Union at the latest by 2050, with the aim of achieving negative emissions thereafter.",
+        "article": "Article 1 — Subject matter"
+      },
+      {
+        "quote": "If the sum of all Member States’ total quantities exceeds the collective total of 100 million, the total quantities for each Member State shall be reduced on a pro rata basis so that the collective total is not exceeded.",
         "article": "Article 4 — Annual emission levels for the period from 2021 to 2030"
       },
       {
@@ -162,6 +534,10 @@
       {
         "quote": "After the completion of the review referred to in Article 19 of Regulation (EU) No 525/2013 for the year 2020, the Commission shall, for each Member State that fulfils the conditions in points (a) and (b) of paragraph 2 of this Article, publish the amounts corresponding to 20 % of the overall overachievement in the period from 2013 to 2020 as referred to in the first subparagraph of paragraph 3 of this Article.",
         "article": "Article 11 — Safety reserve"
+      },
+      {
+        "quote": "It shall also include an assessment of a reduction pathway for the greenhouse gas emissions covered by this Regulation that is compatible with the objective of climate neutrality at the latest by 2050, taking into account the projected indicative Union greenhouse gas budget referred to in Article 4(4) of Regulation (EU) 2021/1119 as well as the importance of promoting both fairness and solidarity among Member States and cost-effectiveness in achieving that objective.",
+        "article": "Article 15 — Review"
       }
     ]
   },
@@ -192,7 +568,15 @@
     "source": "regex",
     "targets": [
       {
-        "quote": "Member States shall collectively ensure that the share of energy from renewable sources in the Union's gross final consumption of energy in 2030 is at least 32 %.",
+        "quote": "Member States shall collectively ensure that the share of energy from renewable sources in the Union’s gross final consumption of energy in 2030 is at least 42,5 %.",
+        "article": "Article 3 — Binding overall Union target for 2030"
+      },
+      {
+        "quote": "Member States shall collectively endeavour to increase the share of energy from renewable sources in the Union’s gross final consumption of energy in 2030 to 45 %.",
+        "article": "Article 3 — Binding overall Union target for 2030"
+      },
+      {
+        "quote": "Member States shall set an indicative target for innovative renewable energy technology of at least 5 % of newly installed renewable energy capacity by 2030.",
         "article": "Article 3 — Binding overall Union target for 2030"
       },
       {
@@ -216,19 +600,67 @@
         "article": "Article 7 — Calculation of the share of energy from renewable sources"
       },
       {
+        "quote": "by 31 December 2033, Member States with an annual electricity consumption of more than 100 TWh shall endeavour to agree on establishing a third joint project.",
+        "article": "Article 9 — Joint projects between Member States"
+      },
+      {
+        "quote": "In order to promote the production and use of renewable energy in the building sector, Member States shall determine an indicative national share of renewable energy produced on-site or nearby as well as renewable energy taken from the grid in final energy consumption in their building sector in 2030 that is consistent with an indicative target of at least a 49 % share of energy from renewable sources in the building sector in the Union’s final energy consumption in buildings in 2030.",
+        "article": "Article 15a — Mainstreaming renewable energy in buildings"
+      },
+      {
+        "quote": "Where repowering of a renewable energy power plant does not result in an increase of the capacity of a renewable energy power plant beyond 15 %, and without prejudice to any assessment of potential environmental impact required pursuant to paragraph 2, Member States shall ensure that permit granting procedures for connections to the transmission or distribution grid shall not exceed three months following application to the relevant entity unless there are justified safety concerns or there is technical incompatibility of the system components.",
+        "article": "Article 16c — Accelerating the permit-granting procedure for repowering"
+      },
+      {
+        "quote": "heat pumps of up to 50 kW electrical capacity installed by renewables self-consumers, provided that the electrical capacity of a renewables self-consumer’s renewable electricity generation installation amounts to at least 60 % of the electrical capacity of the heat pump.",
+        "article": "Article 16e — Permit-granting procedure for the installation of heat pumps"
+      },
+      {
+        "quote": "By 21 February 2024, until climate neutrality is achieved, Member States shall ensure that, in the permit-granting procedure, the planning, construction and operation of renewable energy plants, the connection of such plants to the grid, the related grid itself, and storage assets are presumed as being in the overriding public interest and serving public health and safety when balancing legal interests in individual cases for the purposes of Article 6(4) and Article 16(1), point (c), of Directive 92/43/EEC, Article 4(7) of Directive 2000/60/EC and Article 9(1), point (a), of Directive 2009/147/EC.",
+        "article": "Article 16f — Overriding public interest"
+      },
+      {
         "quote": "from 1 December 2026, if the overall share of self-consumption installations exceeds 8 % of the total installed electricity capacity of a Member State, and if it is demonstrated, by means of a cost-benefit analysis performed by the national regulatory authority of that Member State, which is conducted by way of an open, transparent and participatory process, that the provision laid down in point (a)(ii) of paragraph 2 either results in a significant disproportionate burden on the long-term financial sustainability of the electric system, or creates an incentive exceeding what is objectively needed to achieve cost-effective deployment of renewable energy, and that such burden or incentive cannot be minimised by taking other reasonable actions; or",
         "article": "Article 21 — Renewables self-consumers"
       },
       {
-        "quote": "In order to promote the use of renewable energy in the heating and cooling sector, each Member State shall endeavour to increase the share of renewable energy in that sector by an indicative 1,3 percentage points as an annual average calculated for the periods 2021 to 2025 and 2026 to 2030, starting from the share of renewable energy in the heating and cooling sector in 2020, expressed in terms of national share of final energy consumption and calculated in accordance with the methodology set out in Article 7, without prejudice to paragraph 2 of this Article.",
+        "quote": "Member States shall endeavour to increase the share of renewable sources in the amount of energy sources used for final energy and non-energy purposes in the industry sector by an indicative increase of at least 1,6 percentage points as an annual average calculated for the periods 2021 to 2025 and 2026 to 2030.",
+        "article": "Article 22a — Mainstreaming renewable energy in industry"
+      },
+      {
+        "quote": "Member States shall ensure that the contribution of renewable fuels of non-biological origin used for final energy and non-energy purposes shall be at least 42 % of the hydrogen used for final energy and non-energy purposes in industry by 2030, and 60 % by 2035.",
+        "article": "Article 22a — Mainstreaming renewable energy in industry"
+      },
+      {
+        "quote": "A Member State may reduce the contribution of renewable fuels of non-biological origin used for final energy and non-energy purposes referred to in Article 22a(1), fifth subparagraph, by 20 % in 2030, provided that:",
+        "article": "Article 22b — Conditions for reduction of the target for the use of renewable fuels of non-biological origin in the industry sector"
+      },
+      {
+        "quote": "the share of hydrogen, or its derivatives, produced from fossil fuels which is consumed in that Member State is not more than 23 % in 2030 and not more than 20 % in 2035.",
+        "article": "Article 22b — Conditions for reduction of the target for the use of renewable fuels of non-biological origin in the industry sector"
+      },
+      {
+        "quote": "In order to promote the use of renewable energy in the heating and cooling sector, each Member State shall increase the share of renewable energy in that sector by at least 0,8 percentage points as an annual average calculated for the period 2021 to 2025 and by at least 1,1 percentage points as an annual average calculated for the period 2026 to 2030, starting from the share of renewable energy in the heating and cooling sector in 2020, expressed in terms of national share of gross final consumption of energy and calculated in accordance with the methodology set out in Article 7.",
         "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
       },
       {
-        "quote": "That increase shall be limited to an indicative 1,1 percentage points for Member States where waste heat and cold is not used.",
+        "quote": "If they decide to do so, the average annual increase shall increase by half of the waste heat and cold percentage points counted to an upper limit of 1,0 percentage points for the period 2021 to 2025 and of 1,3 percentage points for the period 2026 to 2030.",
         "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
       },
       {
-        "quote": "may count waste heat and cold, subject to a limit of 40 % of the average annual increase;",
+        "quote": "Member States may count renewable electricity used for heating and cooling towards the annual average increase set out in the first subparagraph, up to a limit of 0,4 percentage points, provided that the efficiency of the heat and cold generator unit is higher than 100 %.",
+        "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
+      },
+      {
+        "quote": "Member States shall inform the Commission of their intention to count renewable electricity used in heating and cooling from heat and cold generators the efficiency of which is higher than 100 % towards the annual increase set out in first subparagraph of this paragraph.",
+        "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
+      },
+      {
+        "quote": "Member States shall include the estimated renewable electricity capacities of heat and cold generator units the efficiency of which is higher than 100 % in their integrated national energy and climate plans submitted pursuant to Articles 3 and 14 of Regulation (EU) 2018/1999.",
+        "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
+      },
+      {
+        "quote": "Member States shall include the amount of renewable electricity used in heating and cooling from heat and cold generator units the efficiency of which is higher than 100 % in their integrated national energy and climate progress reports submitted pursuant to Article 17 of that Regulation.",
         "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
       },
       {
@@ -236,39 +668,43 @@
         "article": "Article 23 — Mainstreaming renewable energy in heating and cooling"
       },
       {
-        "quote": "Member States with a share of energy from renewable sources and from waste heat and cold in district heating and cooling above 60 % may count any such share as fulfilling the average annual increase referred to in the first subparagraph of this point.",
+        "quote": "Member States with a share of energy from renewable sources and from waste heat and cold in district heating and cooling above 60 % may count any such share as fulfilling the average annual increase referred to in paragraph 4, first subparagraph.",
         "article": "Article 24 — District heating and cooling"
       },
       {
-        "quote": "its share of district heating and cooling is less than or equal to 2 % of the overall consumption of energy in heating and cooling on 24 December 2018;",
+        "quote": "its share of district heating and cooling was less than or equal to 2 % of the gross final consumption of energy in heating and cooling on 24 December 2018;",
         "article": "Article 24 — District heating and cooling"
       },
       {
-        "quote": "its share of district heating and cooling is increased above 2 % by developing new efficient district heating and cooling based on its integrated national energy and climate plan pursuant to Annex I to Regulation (EU) 2018/1999 or the assessment referred to in Article 15(7) of this Directive; or",
+        "quote": "its share of district heating and cooling is increased above 2 % of the gross final consumption of energy in heating and cooling on 24 December 2018 by developing new efficient district heating and cooling on the basis of its integrated national energy and climate plan submitted pursuant to Articles 3 and 14 of, and in accordance with, Regulation (EU) 2018/1999 and the assessment referred to in Article 23(1b) of this Directive;",
         "article": "Article 24 — District heating and cooling"
       },
       {
-        "quote": "its share of systems referred to in paragraph 6 of this Article constitutes over 90 % of total sales of its district heating and cooling.",
-        "article": "Article 24 — District heating and cooling"
+        "quote": "share of renewable energy within the final consumption of energy in the transport sector of at least 29 % by 2030; or",
+        "article": "Article 25 — Increase of renewable energy and reduction of greenhouse gas intensity in the transport sector"
       },
       {
-        "quote": "In order to mainstream the use of renewable energy in the transport sector, each Member State shall set an obligation on fuel suppliers to ensure that the share of renewable energy within the final consumption of energy in the transport sector is at least 14 % by 2030 (minimum share) in accordance with an indicative trajectory set by the Member State and calculated in accordance with the methodology set out in this Article and in Articles 26 and 27.",
-        "article": "Article 25 — Mainstreaming renewable energy in the transport sector"
+        "quote": "greenhouse gas intensity reduction of at least 14,5 % by 2030, compared to the baseline set out in Article 27(1), point (b), in accordance with an indicative trajectory set by the Member State;",
+        "article": "Article 25 — Increase of renewable energy and reduction of greenhouse gas intensity in the transport sector"
       },
       {
-        "quote": "Within the minimum share referred to in the first subparagraph, the contribution of advanced biofuels and biogas produced from the feedstock listed in Part A of Annex IX as a share of final consumption of energy in the transport sector shall be at least 0,2 % in 2022, at least 1 % in 2025 and at least 3,5 % in 2030.",
-        "article": "Article 25 — Mainstreaming renewable energy in the transport sector"
+        "quote": "the combined share of advanced biofuels and biogas produced from the feedstock listed in Part A of Annex IX and of renewable fuels of non-biological origin in the energy supplied to the transport sector is at least 1 % in 2025 and 5,5 % in 2030, of which a share of at least 1 percentage point is from renewable fuels of non-biological origin in 2030.",
+        "article": "Article 25 — Increase of renewable energy and reduction of greenhouse gas intensity in the transport sector"
       },
       {
-        "quote": "The greenhouse gas emissions savings from the use of renewable liquid and gaseous transport fuels of non-biological origin shall be at least 70 % from 1 January 2021.",
-        "article": "Article 25 — Mainstreaming renewable energy in the transport sector"
+        "quote": "Member States with maritime ports shall endeavour to ensure that as of 2030 the share of renewable fuels of non-biological origin in the total amount of energy supplied to the maritime transport sector is at least 1,2 %.",
+        "article": "Article 25 — Increase of renewable energy and reduction of greenhouse gas intensity in the transport sector"
       },
       {
-        "quote": "For the calculation of a Member State's gross final consumption of energy from renewable sources referred to in Article 7 and the minimum share referred to in the first subparagraph of Article 25(1), the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, where produced from food and feed crops, shall be no more than one percentage point higher than the share of such fuels in the final consumption of energy in the road and rail transport sectors in 2020 in that Member State, with a maximum of 7 % of final consumption of energy in the road and rail transport sectors in that Member State.",
+        "quote": "For the calculation of a Member State’s gross final consumption of energy from renewable sources referred to in Article 7 and of the minimum share of renewable energy and the greenhouse gas intensity reduction target referred to in Article 25(1), first subparagraph, point (a), the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, where produced from food and feed crops, shall be no more than one percentage point higher than the share of such fuels in the final consumption of energy in the transport sector in 2020 in that Member State, with a maximum of 7 % of final consumption of energy in the transport sector in that Member State.",
         "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops"
       },
       {
-        "quote": "Where the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, produced from food and feed crops in a Member State is limited to a share lower than 7 % or a Member State decides to limit the share further, that Member State may reduce the minimum share referred to in the first subparagraph of Article 25(1) accordingly, by a maximum of 7 percentage points.",
+        "quote": "Where the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, produced from food and feed crops in a Member State is limited to a share lower than 7 % or a Member State decides to limit the share further, that Member State may reduce the minimum share of renewable energy or the greenhouse gas intensity reduction target referred to in Article 25(1), first subparagraph, point (a), accordingly, in view of the contribution those fuels would have made in terms of the minimum share of renewable energy or greenhouse gas emissions savings.",
+        "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops"
+      },
+      {
+        "quote": "For the purpose of the greenhouse gas intensity reduction target, Member States shall consider those fuels save 50 % greenhouse gas emissions.",
         "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops"
       },
       {
@@ -276,8 +712,20 @@
         "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced from food and feed crops"
       },
       {
-        "quote": "For the calculation of the numerator, the share of biofuels and biogas produced from the feedstock listed in Part B of Annex IX shall, except for in Cyprus and Malta, be limited to 1,7 % of the energy content of transport fuels supplied for consumption or use on the market.",
-        "article": "Article 27 — Calculation rules with regard to the minimum shares of renewable energy in the transport sector"
+        "quote": "the share of biofuels and biogas produced from the feedstock listed in Part B of Annex IX in the energy content of fuels and electricity supplied to the transport sector shall, except in Cyprus and Malta, be limited to 1,7 %;",
+        "article": "Article 27"
+      },
+      {
+        "quote": "The Commission is empowered to adopt delegated acts in accordance with Article 35 to amend this Directive by adapting the limit on the share of biofuels and biogas produced from the feedstock listed in Part B of Annex IX on the basis of an assessment of the availability of feedstock. The limit shall be at least 1,7 %.",
+        "article": "Article 27"
+      },
+      {
+        "quote": "For the purpose of the calculations referred to in paragraph 1, first subparagraph, point (b), and in paragraph 2, first subparagraph, point (a), the amount of energy supplied to the maritime transport sector shall, as a proportion of that Member State’s gross final consumption of energy, be considered to be no more than 13 %.",
+        "article": "Article 27"
+      },
+      {
+        "quote": "For Cyprus and Malta, the amount of energy consumed in the maritime transport sector shall, as a proportion of those Member States’ gross final consumption of energy, be considered to be no more than 5 %.",
+        "article": "Article 27"
       },
       {
         "quote": "continuously forested areas, namely land spanning more than one hectare with trees higher than five metres and a canopy cover of more than 30 %, or trees able to reach those thresholds in situ;",
@@ -300,12 +748,28 @@
         "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and biomass fuels"
       },
       {
-        "quote": "at least 70 % for electricity, heating and cooling production from biomass fuels used in installations starting operation from 1 January 2021 until 31 December 2025, and 80 % for installations starting operation from 1 January 2026.",
+        "quote": "for electricity, heating and cooling production from biomass fuels used in installations that started operating after 20 November 2023, at least 80 %;",
+        "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and biomass fuels"
+      },
+      {
+        "quote": "for electricity, heating and cooling production from gaseous biomass fuels used in installations with a total rated thermal input equal to or lower than 10 MW that started operating between 1 January 2021 and 20 November 2023, at least 70 % before they have been operating for 15 years, and at least 80 % after they have been in operation for 15 years;",
         "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and biomass fuels"
       },
       {
         "quote": "for installations with a total rated thermal input above 100 MW, it is produced applying high-efficiency cogeneration technology, or, for electricity-only installations, achieving an net-electrical efficiency of at least 36 %;",
         "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and biomass fuels"
+      },
+      {
+        "quote": "Energy from renewable fuels of non-biological origin shall be counted towards Member States’ shares of renewable energy and the targets referred to in Articles 3(1), 15a(1), 22a(1), 23(1), 24(4) and 25(1) only if the greenhouse gas emissions savings from the use of those fuels are at least 70 %.",
+        "article": "Article 29a — Greenhouse gas emissions saving criteria for renewable fuels of non-biological origin and recycled carbon fuels"
+      },
+      {
+        "quote": "Energy from recycled carbon fuels may be counted towards the targets referred to in Article 25(1), first subparagraph, point (a), only if the greenhouse gas emissions savings from the use of those fuels are at least 70 %.",
+        "article": "Article 29a — Greenhouse gas emissions saving criteria for renewable fuels of non-biological origin and recycled carbon fuels"
+      },
+      {
+        "quote": "For to be 100 % the minimum efficiency requirement of the cooling system shall be at least 6 (SPFpHIGH ).",
+        "article": "Article 7 — —"
       }
     ]
   },
@@ -444,15 +908,15 @@
         "article": "Article 1 — Subject matter and objectives"
       },
       {
-        "quote": "From 1 January 2025, a zero- and low-emission vehicles' benchmark equal to a 15 % share of the respective fleets of new passenger cars and new light commercial vehicles shall apply in accordance with points 6.3 of Parts A and B of Annex I, respectively.",
+        "quote": "55 % reduction of the target in 2021 determined in accordance with point 6.1.2 of Part A of Annex I;",
         "article": "Article 1 — Subject matter and objectives"
       },
       {
-        "quote": "a benchmark equal to a 35 % share of the fleet of new passenger cars; and",
+        "quote": "50 % reduction of the target in 2021 determined in accordance with point 6.1.2 of Part B of Annex I.",
         "article": "Article 1 — Subject matter and objectives"
       },
       {
-        "quote": "a benchmark equal to a 30 % share of the fleet of new light commercial vehicles.",
+        "quote": "From 1 January 2025 to 31 December 2029, a zero- and low-emission vehicles' benchmark equal to a 25 % share of the fleet of new passenger cars and equal to a 17 % share of the fleet of new light commercial vehicles shall apply in accordance with points 6.3 of Parts A and B of Annex I, respectively.",
         "article": "Article 1 — Subject matter and objectives"
       },
       {
@@ -460,16 +924,12 @@
         "article": "Article 10 — Derogations for certain manufacturers"
       },
       {
-        "quote": "The report referred to in paragraph 2 shall, where appropriate, be accompanied by a proposal for amending this Regulation, in particular, the possible revision of the EU fleet-wide targets for 2030 in light of the elements listed in paragraph 2, and the introduction of binding emissions reduction targets for 2035 and 2040 onwards for passenger cars and light commercial vehicles to ensure the timely transformation of the transport sector towards achieving net-zero emissions in line with the objectives of the Paris Agreement.",
-        "article": "Article 15 — Review and report"
+        "quote": "In the report, the Commission shall consider all factors that contribute to a cost-efficient progress towards climate neutrality by 2050, including:",
+        "article": "Article 14a — Progress report"
       },
       {
-        "quote": "As part of the review referred to in paragraph 1 of this Article, the Commission shall evaluate the possibility to assign the revenue from the excess emissions premiums to a specific fund or a relevant programme, with the objective to ensure a just transition towards a climate-neutral economy as referred to in Article 4.1 of the Paris Agreement, in particular to support re-skilling, up-skilling and other skills training and reallocation of workers in the automotive sector in all affected Member States, in particular in the regions and the communities most affected by the transition.",
-        "article": "Article 15 — Review and report"
-      },
-      {
-        "quote": "The Commission shall, if appropriate, make a legislative proposal to that effect by 2027 at the latest.",
-        "article": "Article 15 — Review and report"
+        "quote": "the potential contribution of innovation technologies and sustainable alternative fuels, including synthetic fuels, to reach climate neutral mobility;",
+        "article": "Article 14a — Progress report"
       }
     ]
   },
@@ -956,7 +1416,7 @@
     "source": "regex",
     "targets": [
       {
-        "quote": "the plans of the undertaking, including implementing actions and related financial and investment plans, to ensure that its business model and strategy are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 °C in line with the Paris Agreement under the United Nations Framework Convention on Climate Change adopted on 12 December 2015 (the ‘Paris Agreement’) and the objective of achieving climate neutrality by 2050 as established in Regulation (EU) 2021/1119 of the European Parliament and of the Council (*8), and, where relevant, the exposure of the undertaking to coal-, oil- and gas-related activities;",
+        "quote": "the plans of the undertaking, including implementing actions and related financial and investment plans, to ensure that its business model and strategy are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 °C in line with the Paris Agreement under the United Nations Framework Convention on Climate Change adopted on 12 December 2015 (the ‘Paris Agreement’) and the objective of achieving climate neutrality by 2050 as established in Regulation (EU) 2021/1119 of the European Parliament and of the Council ( *8 ), and, where relevant, the exposure of the undertaking to coal-, oil- and gas-related activities;",
         "article": "Article 19a — ‘Article 19a"
       },
       {
@@ -1010,27 +1470,23 @@
     "source": "regex",
     "targets": [
       {
-        "quote": "in the context of Commission recommendations based on the assessment pursuant to point (b) of Article 29(1) with regard to energy from renewable sources, a Member State's early implementation of its contribution to the Union's binding target of at least 32 % of renewable energy in 2030 as measured against its national reference points for renewable energy;",
-        "article": "Article 2 — Definitions"
+        "quote": "implement strategies and measures designed to meet the objectives and targets of the Energy Union and the long-term Union greenhouse gas emissions commitments consistent with the Paris Agreement, in particular the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 of the European Parliament and of the Council ( 1 ), and, for the first ten-year period, from 2021 to 2030, in particular the Union’s 2030 targets for energy and climate;",
+        "article": "Article 1 — Subject matter and scope"
       },
       {
-        "quote": "With a view to achieving the Union's binding target of at least 32 % renewable energy in 2030 as referred to in Article 3 of Directive (EU) 2018/2001, a contribution to that target in terms of the Member State's share of energy from renewable sources in gross final consumption of energy in 2030, with an indicative trajectory for that contribution from 2021 onwards.",
+        "quote": "an assessment of the impacts of the planned policies and measures to meet the objectives referred to in point (b) of this paragraph, including their consistency with the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, the long-term greenhouse gas emission reduction objectives under the Paris Agreement and the long-term strategies as referred to in Article 15 of this Regulation;",
+        "article": "Article 3 — Integrated national energy and climate plans"
+      },
+      {
+        "quote": "By 2022, the indicative trajectory shall reach a reference point of at least 18 % of the total increase in the share of energy from renewable sources between that Member State’s binding 2020 national target, and its contribution to the 2030 target.",
         "article": "Article 4 — National objectives, targets and contributions for the five dimensions of the Energy Union"
       },
       {
-        "quote": "By 2022, the indicative trajectory shall reach a reference point of at least 18 % of the total increase in the share of energy from renewable sources between that Member State's binding 2020 national target, and its contribution to the 2030 target.",
+        "quote": "By 2025, the indicative trajectory shall reach a reference point of at least 43 % of the total increase in the share of energy from renewable sources between that Member State’s binding 2020 national target and its contribution to the 2030 target.",
         "article": "Article 4 — National objectives, targets and contributions for the five dimensions of the Energy Union"
       },
       {
-        "quote": "By 2025, the indicative trajectory shall reach a reference point of at least 43 % of the total increase in the share of energy from renewable sources between that Member State's binding 2020 national target and its contribution to the 2030 target.",
-        "article": "Article 4 — National objectives, targets and contributions for the five dimensions of the Energy Union"
-      },
-      {
-        "quote": "By 2027, the indicative trajectory shall reach a reference point of at least 65 % of the total increase in the share of energy from renewable sources between that Member State's binding 2020 national target and its contribution to the 2030 target.",
-        "article": "Article 4 — National objectives, targets and contributions for the five dimensions of the Energy Union"
-      },
-      {
-        "quote": "The Member States' indicative trajectories, taken together, shall add up to the Union reference points in 2022, 2025 and 2027 and to the Union's binding target of at least 32 % renewable energy in 2030.",
+        "quote": "By 2027, the indicative trajectory shall reach a reference point of at least 65 % of the total increase in the share of energy from renewable sources between that Member State’s binding 2020 national target and its contribution to the 2030 target.",
         "article": "Article 4 — National objectives, targets and contributions for the five dimensions of the Energy Union"
       },
       {
@@ -1042,12 +1498,40 @@
         "article": "Article 4 — National objectives, targets and contributions for the five dimensions of the Energy Union"
       },
       {
-        "quote": "Member States shall collectively ensure that the sum of their contributions amounts to at least 32 % of energy from renewable sources in gross final energy consumption at Union level by 2030.",
-        "article": "Article 5 — Member States' contribution setting process in the area of renewable energy"
+        "quote": "the manner in which existing policies and measures and planned policies and measures contribute to the achievement of the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119.",
+        "article": "Article 8 — Analytical basis of the integrated national energy and climate plans"
       },
       {
-        "quote": "In the area of renewable energy, as part of its assessment referred to in paragraph 1, the Commission shall assess the progress made in the share of energy from renewable sources in the Union's gross final consumption on the basis of an indicative Union trajectory that starts from 20 % in 2020, reaches reference points of at least 18 % in 2022, 43 % in 2025 and 65 % in 2027 of the total increase in the share of energy from renewable sources between the Union's 2020 renewable energy target and the Union's 2030 renewable energy target, and reaches the Union's 2030 renewable energy target of at least 32 % in 2030.",
+        "quote": "Each Member State shall establish a multilevel climate and energy dialogue pursuant to national rules, in which local authorities, civil society organisations, business community, investors and other relevant stakeholders and the general public are able actively to engage and discuss the achievement of the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 and the different scenarios envisaged for energy and climate policies, including for the long term, and review progress, unless it already has a structure which serves the same purpose.",
+        "article": "Article 11 — Multilevel climate and energy dialogue"
+      },
+      {
+        "quote": "By 1 January 2020, and subsequently by 1 January 2029 and every 10 years thereafter, each Member State shall prepare and submit to the Commission its long-term strategy with a 30-year perspective and consistent with the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119.",
+        "article": "Article 15 — Long-term strategies"
+      },
+      {
+        "quote": "achieving long-term greenhouse gas emission reductions and enhancements of removals by sinks in all sectors in accordance with the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, in the context of necessary greenhouse gas emission reductions and enhancements of removals by sinks according to the Intergovernmental Panel on Climate Change (IPCC) to reduce the Union’s greenhouse gas emissions in a cost-effective manner and enhance removals by sinks in pursuit of the long-term temperature goal in the Paris Agreement so as to achieve a balance between anthropogenic emissions by sources and removals by sinks of greenhouse gases within the Union and, as appropriate, achieve negative emissions thereafter;",
+        "article": "Article 15 — Long-term strategies"
+      },
+      {
+        "quote": "information on the progress accomplished towards reaching the objectives, including progress towards the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, targets and contributions set out in the integrated national energy and climate plan, and towards financing and implementing the policies and measures necessary to meet them, including a review of actual investment against initial investment assumptions;",
+        "article": "Article 17 — Integrated national energy and climate progress reports"
+      },
+      {
+        "quote": "the progress made by each Member State towards meeting its objectives, including progress towards the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, targets and contributions and implementing the policies and measures set out in its integrated national energy and climate plan;",
         "article": "Article 29 — Assessment of progress"
+      },
+      {
+        "quote": "In the area of renewable energy, as part of its assessment referred to in paragraph 1, the Commission shall assess the progress made in the share of energy from renewable sources in the Union’s gross final consumption of energy on the basis of an indicative Union trajectory that starts from 20 % in 2020, reaches reference points of at least 18 % in 2022, 43 % in 2025 and 65 % in 2027 of the total increase in the share of energy from renewable sources between the Union’s 2020 renewable energy target and the Union’s 2030 renewable energy target, and reaches the Union’s binding target for renewable energy for 2030 set in Article 3(1) of Directive (EU) 2018/2001.",
+        "article": "Article 29 — Assessment of progress"
+      },
+      {
+        "quote": "Where the Commission finds during the initial check carried out pursuant to paragraph 4 of this Article a difference between the annual average of net removals in the years specified in Article 4(2) of Regulation (EU) 2018/841 reported by any Member State in the 2020 and 2023 or subsequent submission of the greenhouse gas inventory that is greater than 500 kt CO2 equivalent, the Commission shall verify:",
+        "article": "Article 37 — Union and national inventory systems"
+      },
+      {
+        "quote": "The Commission shall report to the European Parliament and to the Council within six months of each global stocktake agreed under Article 14 of the Paris Agreement on the operation of this Regulation, its contribution to governance of the Energy Union, its contribution to the long-term goals of the Paris Agreement, progress towards the achievement of the 2030 climate and energy targets and the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, additional Energy Union objectives and the conformity of the planning, reporting and monitoring provisions laid down in this Regulation with other Union law or decisions relating to the UNFCCC and the Paris Agreement.",
+        "article": "Article 45 — Review"
       },
       {
         "quote": "Member States shall require suppliers to reduce as gradually as possible life cycle greenhouse gas emissions per unit of energy from fuel and energy supplied by up to 10 % by 31 December 2020, compared with the fuel baseline standard set out in Annex II to Council Directive (EU) 2015/652. That reduction shall consist of:’;",
@@ -1064,7 +1548,11 @@
     "source": "regex",
     "targets": [
       {
-        "quote": "In case of a combustion plant being, on 6 January 2011, part of a small isolated system and accounting at that date for at least 35 % of the electricity supply within that system, which is unable, due to its technical characteristics, to comply with the emission limit values referred to in Article 30(2), the number of operating hours referred to in paragraph 1(a) of this Article shall be 18 000, starting from 1 January 2020 and ending no later than 31 December 2023, and the date referred to in paragraph 1(b) and paragraph 2 of this Article shall be 1 January 2020.",
+        "quote": "The transformation plan shall contain information on how the operator will transform the installation during the 2030-2050 period to contribute to the emergence of a sustainable, clean, circular, resource-efficient and climate-neutral economy by 2050, including where relevant deep industrial transformation as referred to in Article 27e.",
+        "article": "Article 27d — Transformation towards a clean, circular and climate-neutral industry"
+      },
+      {
+        "quote": "In case of a combustion plant being, on 6 January 2011, part of a small isolated system and accounting at that date for at least 35 % of the electricity supply within that system, which is unable, due to its technical characteristics, to comply with the emission limit values referred to in Article 30(2), the number of operating hours referred to in paragraph 1(a) of this Article shall be 18 000 , starting from 1 January 2020 and ending no later than 31 December 2023, and the date referred to in paragraph 1(b) and paragraph 2 of this Article shall be 1 January 2020.",
         "article": "Article 33 — Limited life time derogation"
       },
       {
@@ -1283,11 +1771,23 @@
     "targets": [
       {
         "quote": "by 2020, the preparing for re-use and the recycling of waste materials such as at least paper, metal, plastic and glass from households and possibly from other origins as far as these waste streams are similar to waste from households, shall be increased to a minimum of overall 50 % by weight;",
-        "article": "Article 11 — Re-use and recycling"
+        "article": "Article 11 — Preparing for re-use and recycling"
       },
       {
-        "quote": "by 2020, the preparing for re-use, recycling and other material recovery, including backfilling operations using waste to substitute other materials, of non-hazardous construction and demolition waste excluding naturally occurring material defined in category 17 05 04 in the list of waste shall be increased to a minimum of 70 % by weight.",
-        "article": "Article 11 — Re-use and recycling"
+        "quote": "by 2020, the preparing for re-use, recycling and other material recovery, including backfilling operations using waste to substitute other materials, of non-hazardous construction and demolition waste excluding naturally occurring material defined in category 17 05 04 in the list of waste shall be increased to a minimum of 70 % by weight;",
+        "article": "Article 11 — Preparing for re-use and recycling"
+      },
+      {
+        "quote": "by 2025, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 55 % by weight;",
+        "article": "Article 11 — Preparing for re-use and recycling"
+      },
+      {
+        "quote": "by 2030, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 60 % by weight;",
+        "article": "Article 11 — Preparing for re-use and recycling"
+      },
+      {
+        "quote": "by 2035, the preparing for re-use and the recycling of municipal waste shall be increased to a minimum of 65 % by weight.",
+        "article": "Article 11 — Preparing for re-use and recycling"
       }
     ]
   },
@@ -1320,12 +1820,36 @@
     ]
   },
   {
-    "policy_id": "csddd",
+    "policy_id": "ten-t-regulation",
     "source": "regex",
     "targets": [
       {
-        "quote": "Member States shall ensure that companies referred to in Article 2(1), points (a), (b) and (c), and Article 2(2), points (a), (b) and (c), adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, that the business model and strategy of the company are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement and the objective of achieving climate neutrality as established in Regulation (EU) 2021/1119, including its intermediate and 2050 climate neutrality targets, and where relevant, the exposure of the company to coal-, oil- and gas-related activities.",
-        "article": "Article 22 — Combating climate change"
+        "quote": "enables, without special permission, an axle load of at least 22,5 tonnes; and",
+        "article": "Article 15 — Transport infrastructure requirements for the comprehensive network"
+      },
+      {
+        "quote": "for rail sections linking the multimodal freight terminals of two urban nodes or the multimodal freight terminal of an urban node and a border crossing point, over 75 % of the length of each rail section, is designed for a speed of at least 100 km/h for freight trains on the freight lines of the extended core network.",
+        "article": "Article 16 — Transport infrastructure requirements for the core network and the extended core network"
+      },
+      {
+        "quote": "for rail sections linking the multimodal passenger hubs of two urban nodes or the multimodal passenger hubs of an urban node and a border crossing point, over 75 % of the length of each rail section is designed for a speed of at least 160 km/h for passenger trains on the passenger lines of the extended core network.",
+        "article": "Article 16 — Transport infrastructure requirements for the core network and the extended core network"
+      },
+      {
+        "quote": "at least 75 % of the freight trains crossing at least one border along a European Transport Corridor arrive at their destination, or at the external Union border if their destination is outside the Union, at their scheduled time or with a delay of less than 30 minutes by reasons that are attributable to the infrastructure manager(s) of the Union; delays occurring in and attributable to third countries that are crossed by freight trains shall not be taken into account.",
+        "article": "Article 19 — Operational priorities"
+      },
+      {
+        "quote": "it has an annual freight transhipment volume exceeding 500 000 tonnes, where the total annual freight transhipment volume shall be based on the latest available three-year average, based on the statistics published by Eurostat; and",
+        "article": "Article 21 — Infrastructure components"
+      },
+      {
+        "quote": "for cargo airports, the total annual cargo volume is at least 0,2 % of the total annual cargo volume of all airports of the Union;",
+        "article": "Article 33 — Infrastructure components"
+      },
+      {
+        "quote": "for passenger airports, the total annual passenger traffic is at least 0,1 % of the total annual passenger volume of all airports of the Union, unless the airport in question is situated outside a radius of 100 km from the nearest airport in the comprehensive network or outside a radius of 200 km where there is a high-speed railway line in the region in which it is situated.",
+        "article": "Article 33 — Infrastructure components"
       }
     ]
   },
@@ -1556,16 +2080,6 @@
     ]
   },
   {
-    "policy_id": "union-civil-protection-mechanism",
-    "source": "regex",
-    "targets": [
-      {
-        "quote": "Those adaptation costs may consist of unit costs or lump sums determined per type of capacity, covering up to 100 % of the eligible costs, provided this does not exceed 30 % of the average cost of developing the capacity; and",
-        "article": "Article 21 — Eligible prevention and preparedness actions"
-      }
-    ]
-  },
-  {
     "policy_id": "common-provisions-regulation",
     "source": "regex",
     "targets": [
@@ -1575,6 +2089,14 @@
       },
       {
         "quote": "The ERDF and the Cohesion Fund shall contribute with 30 % and 37 % respectively of the Union contribution to expenditure supported for the achievement of the climate objectives set for the Union budget.",
+        "article": "Article 6 — Climate targets and climate adjustment mechanism"
+      },
+      {
+        "quote": "Where, as a result of a programme amendment for the Strategic Technologies for Europe Platform (STEP) established by Regulation (EU) 2024/795, the climate contribution of the Cohesion Fund would exceed the target of 37 % of its total allocation, the amount exceeding that target may be taken into account when calculating the climate contribution of the ERDF for the purpose of reaching the target of 30 % of its total allocation.",
+        "article": "Article 6 — Climate targets and climate adjustment mechanism"
+      },
+      {
+        "quote": "The amounts exceeding the ERDF climate contribution target of 30 % of its total allocation may be taken into account when calculating the climate contribution of the Cohesion Fund.",
         "article": "Article 6 — Climate targets and climate adjustment mechanism"
       }
     ]
@@ -1586,6 +2108,14 @@
       {
         "quote": "for Member States whose gross national income (GNI) per capita is below 60 % of the EU average GNI per capita, or for Member States whose GNI per capita is below 90 % of the EU average GNI per capita and which have a share of solid fossil fuels in gross inland energy consumption equal to or above 25 %, the limit shall be 1,55 %;",
         "article": "Article 7 — Exclusion from the scope of the ERDF and the Cohesion Fund"
+      },
+      {
+        "quote": "Where the climate contribution of the Cohesion Fund referred to in Article 6(1) of Regulation (EU) 2021/1060 would exceed the target of 37 % of its total allocation, the amount exceeding that target may be taken into account when calculating the climate contribution of the ERDF for the purpose of reaching the target of 30 % of its total allocation.",
+        "article": "Article 7a — Specific provisions linked to the mid-term review and related flexibility"
+      },
+      {
+        "quote": "The amounts exceeding the ERDF climate contribution target of 30 % of its total allocation may be taken into account when calculating the climate contribution of the Cohesion Fund.",
+        "article": "Article 7a — Specific provisions linked to the mid-term review and related flexibility"
       },
       {
         "quote": "Special attention shall be given to tackling environmental and climate challenges, in particular the transition towards a climate-neutral economy by 2050, to harnessing the potential of digital technologies for innovation purposes, and to support the development of functional urban areas.",

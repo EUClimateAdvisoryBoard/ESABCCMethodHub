@@ -2,7 +2,7 @@
   "policy_id": "effort-sharing-regulation",
   "targets": [
     {
-      "quote": "This Regulation lays down obligations on Member States with respect to their minimum contributions for the period from 2021 to 2030 to fulfilling the Union’s target of reducing its greenhouse gas emissions by 30 % below 2005 levels in 2030 in the sectors covered by Article 2 of this Regulation and contributes to achieving the objectives of the Paris Agreement. This Regulation also lays down rules on determining annual emission allocations and for the evaluation of Member States’ progress towards meeting their minimum contributions.",
+      "quote": "This Regulation lays down obligations on Member States with respect to their minimum contributions for the period from 2021 to 2030 to fulfilling the Union’s target of reducing its greenhouse gas emissions by 40 % below 2005 levels in 2030 in the sectors covered by Article 2 of this Regulation. It contributes to the long-term target of climate neutrality in the Union at the latest by 2050, with the aim of achieving negative emissions thereafter.",
       "article": "Article 1 — Subject matter",
       "label": "target",
       "timeline": "in 2030 / period from 2021 to 2030",
@@ -12,7 +12,7 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "1.   Each Member State shall, in 2030, limit its greenhouse gas emissions at least by the percentage set for that Member State in Annex I in relation to its greenhouse gas emissions in 2005, determined pursuant to paragraph 3 of this Article.",
+      "quote": "Each Member State shall, in 2030, limit its greenhouse gas emissions at least by the percentage set for that Member State in column 2 of Annex I in relation to its greenhouse gas emissions in 2005, determined pursuant to paragraph 3 of this Article.",
       "article": "Article 4(1) — Annual emission levels for the period from 2021 to 2030",
       "label": "target",
       "timeline": "in 2030",
@@ -22,10 +22,10 @@
       "climate_relevance": "mitigation"
     },
     {
-      "quote": "2.   Subject to the flexibilities provided for in Articles 5, 6 and 7 of this Regulation, to the adjustment pursuant to Article 10(2) of this Regulation and taking into account any deduction resulting from the application of Article 7 of Decision No 406/2009/EC, each Member State shall ensure that its greenhouse gas emissions in each year between 2021 and 2029 do not exceed the limit defined by a linear trajectory, starting on the average of its greenhouse gas emissions during 2016, 2017 and 2018 determined pursuant to paragraph 3 of this Article and ending in 2030 on the limit set for that Member State in Annex I to this Regulation. The linear trajectory of a Member State shall start either at five-twelfths of the distance from 2019 to 2020 or in 2020, whichever results in a lower allocation for that Member State.",
+      "quote": "Subject to the flexibilities provided for in Articles 5, 6 and 7 of this Regulation and to the adjustment pursuant to Article 10(2) of this Regulation, and taking into account any deduction resulting from the application of Article 7 of Decision No 406/2009/EC, each Member State shall ensure that its greenhouse gas emissions: (a) do not exceed, in the years 2021 and 2022, the limit defined by a linear trajectory, starting on the average of that Member State’s greenhouse gas emissions in 2016, 2017 and 2018, as set out pursuant to paragraph 3 of this Article, and ending in 2030 at the limit set for that Member State in column 1 of Annex I to this Regulation; the linear trajectory of a Member State shall start either at five-twelfths of the distance from 2019 to 2020 or in 2020, whichever results in a lower annual emission allocation for that Member State; (b) do not exceed, in the years 2023, 2024 and 2025, the limit defined by a linear trajectory, starting in 2022 at the annual emission allocation for that Member State, as set out pursuant to paragraph 3 of this Article for that year, and ending in 2030 at the limit set for that Member State in column 2 of Annex I to this Regulation; (c) do not exceed, in the years 2026 to 2030, the limit defined by a linear trajectory, starting on the average of that Member State’s greenhouse gas emissions in 2021, 2022 and 2023, as submitted by that Member State pursuant to Article 26 of Regulation (EU) 2018/1999 and in accordance with paragraph 3 of this Article, and ending in 2030 at the limit set for that Member State in column 2 of Annex I to this Regulation; the linear trajectory of a Member State shall start at nine-twelfths of the distance from 2023 to 2024.",
       "article": "Article 4(2) — Annual emission levels for the period from 2021 to 2030",
       "label": "target",
-      "timeline": "each year between 2021 and 2029",
+      "timeline": "for the years 2021 to 2030 (linear trajectory to the amended 2030 target)",
       "indicators": [
         "greenhouse gas emissions",
         "annual emission allocations",

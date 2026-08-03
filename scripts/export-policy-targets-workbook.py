@@ -92,6 +92,8 @@ PASS_LABEL = {
     '[human review 2026-07]': 'Pass 1 — reviewer mark-up generalised',
     '[agent review 2026-07 round 2]': 'Pass 2 — full agent audit',
     '[human review 2026-08 v3]': 'Pass 3 — v3 reviewer mark-up (Aug 2026)',
+    '[re-extraction 2026-08]': 'Pass 4 — re-extraction from replaced consolidated texts (Aug 2026)',
+    '[carried to consolidated text 2026-08]': 'Pass 4 — re-extraction from replaced consolidated texts (Aug 2026)',
 }
 
 HEADER_FILL = PatternFill('solid', fgColor='FFE8EEF4')
