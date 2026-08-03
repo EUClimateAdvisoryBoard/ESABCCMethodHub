@@ -85,6 +85,14 @@ const LiteratureWatchIcon = ({ className }: { className?: string }) => (
   </IconBase>
 );
 
+const ReportPageIcon = ({ className }: { className?: string }) => (
+  <IconBase className={className}>
+    <path d="M4 4h9l7 7v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z" />
+    <path d="M13 4v7h7" />
+    <path d="M7 15h7" />
+  </IconBase>
+);
+
 const NotesIcon = ({ className }: { className?: string }) => (
   <IconBase className={className}>
     <path d="M12 20h9" />
@@ -150,6 +158,13 @@ export const MODULE_META: Record<WorkspaceModuleKind, ModuleMeta> = {
     accent: '#7A3E9D',
     accentBg: '#F4EFF8',
     Icon: LiteratureWatchIcon,
+  },
+  'report-page': {
+    label: 'Report page',
+    blurb: 'A page of this project’s report — what is on it, and a link that opens it.',
+    accent: '#B83230',
+    accentBg: '#FBEFEF',
+    Icon: ReportPageIcon,
   },
   custom: {
     label: 'Notes',

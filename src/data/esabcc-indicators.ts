@@ -910,13 +910,13 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     category: 'industry',
     unit: 'Mt',
     description:
-      'ESABCC progress indicator I2 (cement use). EU apparent use (consumption) of cement (Figure 24). Production, use and trade balance together show how much demand is met domestically versus through net trade — a context indicator with no policy target.',
-    source: 'Cembureau (data provided)',
+      'ESABCC progress indicator I2 (cement use). EU apparent use (consumption) of cement (Figure 24). Production, use and trade balance together show how much demand is met domestically versus through net trade — a context indicator with no policy target. The report took these figures from Cembureau on request; the rebranded Cement Europe now publishes the same series on its Key Facts & Figures page (the chart’s CONSUMPTION EU27 dataset reproduces every report year to the tonne), so 2022-2024 are refreshed from there — 2024 = 148.1 Mt is also the figure stated in prose in Cement Europe’s 2025 Activity Report.',
+    source: 'Cement Europe (formerly Cembureau), Key Facts & Figures — CONSUMPTION EU27',
     sourceUrl: 'https://www.cementeurope.eu/about-us/key-facts-figures/',
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 232.3 }, { year: 2006, value: 250.2 }, { year: 2007, value: 254.0 }, { year: 2008, value: 235.6 }, { year: 2009, value: 189.1 }, { year: 2010, value: 176.4 }, { year: 2011, value: 178.3 }, { year: 2012, value: 151.8 }, { year: 2013, value: 142.2 }, { year: 2014, value: 140.5 }, { year: 2015, value: 141.4 }, { year: 2016, value: 142.7 }, { year: 2017, value: 147.8 }, { year: 2018, value: 155.3 }, { year: 2019, value: 157.4 }, { year: 2020, value: 159.2 }, { year: 2021, value: 170.5 }],
+    data: [{ year: 2005, value: 232.3 }, { year: 2006, value: 250.2 }, { year: 2007, value: 254 }, { year: 2008, value: 235.6 }, { year: 2009, value: 189.1 }, { year: 2010, value: 176.4 }, { year: 2011, value: 178.3 }, { year: 2012, value: 151.8 }, { year: 2013, value: 142.2 }, { year: 2014, value: 140.5 }, { year: 2015, value: 141.4 }, { year: 2016, value: 142.7 }, { year: 2017, value: 147.8 }, { year: 2018, value: 155.3 }, { year: 2019, value: 157.4 }, { year: 2020, value: 159.2 }, { year: 2021, value: 170.5 }, { year: 2022, value: 163.8, afterReport: true }, { year: 2023, value: 150.8, afterReport: true }, { year: 2024, value: 148.1, afterReport: true }],
   },
   {
     id: 'esabcc-i2-chemicals-production',
@@ -1490,7 +1490,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     category: 'industry',
     unit: 'projects',
     description:
-      'ESABCC progress indicator I7b. Count of announced low-carbon cement projects in the EU (Figure 30), 62 in total by project scale (unspecified 5, R&D 22, pilot 24, demo 7, full scale 4) and technology (CCS/CCU, material substitution/recycling, fuel switch/electrification, energy efficiency, mineralisation). Categorical snapshot.',
+      'ESABCC progress indicator I7b. Count of announced low-carbon cement projects in the EU (Figure 30), 62 in total by project scale (unspecified 5, R&D 22, pilot 24, demo 7, full scale 4) and technology (CCS/CCU, material substitution/recycling, fuel switch/electrification, energy efficiency, mineralisation). Categorical snapshot. The later point is a fresh snapshot of Cement Europe’s map, not a rebuilt series: the map carries no announcement date (its only year is the plant’s Operational Date), so the report’s 62-in-2023 cannot be reproduced from it and the step to 114 is part real growth and part re-curation of the map. Read 3 August 2026 — 124 projects in 21 countries, of which 114 EU-27, by scale Pilot Plant 50, Desktop/R&D 46, Commercial/Demo 27.',
     // The host the report cited (lowcarboneconomy.cembureau.eu) now serves an
     // nginx placeholder and cembureau.eu redirects to the rebranded domain; the
     // map lives here, with the project list inline in the page HTML.
@@ -1499,7 +1499,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'up',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2023, value: 62.00 }],
+    data: [{ year: 2023, value: 62 }, { year: 2026, value: 114, afterReport: true }],
   },
   {
     id: 'esabcc-i7c-chemicals-projects',
@@ -1508,13 +1508,13 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     category: 'industry',
     unit: 'projects',
     description:
-      'ESABCC progress indicator I7c. Count of low-carbon base-chemicals projects in the EU (Figure 31), 171 in total by technology — renewables 54, chemical recycling 28, H₂ & derivatives 27, CCS/CCU 18, efficiency 15, biochemicals 14, mechanical recycling 13, e-cracker 2 — split by status (planned/started). Categorical snapshot.',
-    source: 'CEFIC low carbon projects map',
+      'ESABCC progress indicator I7c. Count of low-carbon base-chemicals projects in the EU (Figure 31), 171 in total by technology — renewables 54, chemical recycling 28, H₂ & derivatives 27, CCS/CCU 18, efficiency 15, biochemicals 14, mechanical recycling 13, e-cracker 2 — split by status (planned/started). Categorical snapshot. The later point is a fresh snapshot of the map, not a rebuilt series: the only date on a record is its website posting date, and those cluster in the twice-yearly batches Cefic republishes the map in, so they date the curation rather than the announcement. Read 3 August 2026 from the map’s own WordPress REST collection — 238 projects across 19 countries, of which 215 carry at least one EU-27 country tag; by technology (EU-27) renewable electricity & PPAs 77, hydrogen 29, chemical recycling 28, efficiency 25, waste/biomass to energy 18, mechanical recycling 15, biochemicals 13, CCS 8, CCU 8, e-cracker/electrification 6.',
+    source: 'Cefic Low-Carbon Technologies Projects Map (/wp-json/wp/v2/gips)',
     sourceUrl: 'https://cefic.org/solutions-explained/low-carbon-technologies-projects/',
     direction: 'up',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2023, value: 171.0 }],
+    data: [{ year: 2023, value: 171 }, { year: 2026, value: 215, afterReport: true }],
   },
   {
     id: 'esabcc-b3-residential-renovation-rate',

@@ -18,6 +18,11 @@
  *
  * The folded-in routes stay alive; they simply no longer appear as
  * stand-alone modules on the landing page.
+ *
+ * Every sub-page listed under a module here is also seeded as a `report-page`
+ * tab on that module's project in the Project Workspace (Policy Gap 2.0 /
+ * Industry Project) — see src/data/workspace-report-pages.ts. There is one copy
+ * of each page; the workspace and this landing page are two ways in.
  */
 
 import Link from 'next/link';
@@ -44,6 +49,13 @@ interface PrepModule {
   cta: string;
   contents: SubLink[];
   contentsLabel: string;
+  /**
+   * The module's project in the Project Workspace. Every sub-page listed under
+   * `contents` is seeded there as a `report-page` tab, so the workspace and the
+   * beta landing pages are two ways into the same set of pages.
+   */
+  workspaceHref: string;
+  workspaceLabel: string;
 }
 
 const MODULES: PrepModule[] = [
@@ -57,6 +69,8 @@ const MODULES: PrepModule[] = [
       'The cross-cutting industry surface for the next report’s industry chapter — evidence catalogue, trade dependencies, demand-side policy review and the report objectives themselves.',
     cta: 'Open the Industry Report',
     contentsLabel: 'Inside this module',
+    workspaceHref: '/project-workspace/industry-project',
+    workspaceLabel: 'These five pages as tabs of the Industry Project',
     contents: [
       {
         href: '/beta/overview-industry/cleantech',
@@ -106,6 +120,8 @@ const MODULES: PrepModule[] = [
       'Everything for the policy-gap work of the next report: the gap tracker seeded from the last report, plus the three internal notes built for this prep cycle.',
     cta: 'Open the Gap Tracker',
     contentsLabel: 'Inside this module',
+    workspaceHref: '/project-workspace/policy-gap-2-0',
+    workspaceLabel: 'These four pages as tabs of the Policy Gap 2.0 project',
     contents: [
       {
         href: '/beta/policy-gaps',
@@ -216,6 +232,13 @@ function ModuleCard({ m }: { m: PrepModule }) {
             </li>
           ))}
         </ul>
+
+        <Link
+          href={m.workspaceHref}
+          className="mt-3 inline-flex items-center gap-1 text-[12px] font-semibold text-[#004B7F] hover:underline dark:text-[var(--mh-fg)]"
+        >
+          {m.workspaceLabel} →
+        </Link>
       </div>
     </section>
   );

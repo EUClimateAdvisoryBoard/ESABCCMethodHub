@@ -30,6 +30,7 @@ import MemberStatesModule from './MemberStatesModule';
 import ContentAnalysisModule from './ContentAnalysisModule';
 import LiteratureWatchModule from './LiteratureWatchModule';
 import CustomNotesModule from './CustomNotesModule';
+import ReportPageModule from './ReportPageModule';
 import MeetingsModule from './MeetingsModule';
 import ActivityLogPanel from './ActivityLogPanel';
 import { moduleMeta } from './moduleMeta';
@@ -97,10 +98,14 @@ export default function ProjectShell({
   return (
     <div>
       <TooltipProvider delayDuration={120}>
+        {/* The tab row scrolls on its own; the Activity log and Add tool
+            buttons sit outside it so they stay reachable however many tools a
+            project has (the report-page modules took Policy Gap 2.0 to nine). */}
+        <div className="flex items-stretch border-b border-grey-200">
         <div
           role="tablist"
           aria-label="Project tools"
-          className="flex gap-1 border-b border-grey-200 overflow-x-auto"
+          className="flex min-w-0 flex-1 gap-1 overflow-x-auto"
         >
           {project.modules.map(m => {
             const meta = moduleMeta(m.kind);
@@ -131,11 +136,13 @@ export default function ProjectShell({
               </Tooltip>
             );
           })}
+        </div>
+        <div className="flex shrink-0 items-center">
           <Tooltip content="Every change made in this project — who did what, and when.">
             <button
               type="button"
               onClick={() => setShowLog(true)}
-              className="shrink-0 ml-auto inline-flex items-center gap-1 px-3 py-2.5 text-xs font-medium text-secondary hover:text-primary"
+              className="shrink-0 inline-flex items-center gap-1 px-3 py-2.5 text-xs font-medium text-secondary hover:text-primary"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
@@ -155,6 +162,7 @@ export default function ProjectShell({
             </svg>
             Add tool
           </button>
+        </div>
         </div>
       </TooltipProvider>
 
@@ -201,6 +209,13 @@ export default function ProjectShell({
               initialMeetings={meetings}
               initialMilestones={milestones}
               initialPhases={phases}
+            />
+          )}
+          {current.kind === 'report-page' && (
+            <ReportPageModule
+              moduleId={current.id}
+              moduleName={current.name}
+              moduleDescription={current.description}
             />
           )}
           {current.kind === 'custom' && (

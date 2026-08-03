@@ -1,9 +1,9 @@
 /**
  * Why a report indicator carries no data newer than the report.
  * ---------------------------------------------------------------------------
- * The Indicator Check shows all 97 report series. 75 have post-report data,
+ * The Indicator Check shows all 97 report series. 78 have post-report data,
  * pulled automatically by scripts/esabcc-indicators/refresh-from-sources.mjs.
- * The other 22 do not, and "no data added since the report" on its own is not
+ * The other 19 do not, and "no data added since the report" on its own is not
  * a useful thing to tell a reader — the reasons are genuinely different, and
  * so is what it would take to fix each one.
  *
@@ -17,20 +17,32 @@
  * 'not-on-api' status went with them: it existed only for PRODCOM, and
  * PRODCOM turned out to be on an API after all.
  *
- * Entries also carry `dataLinks`: the live URLs where the numbers can be read,
- * with what each one holds. "No public data export" describes the absence of a
- * file or an API, not the absence of a source — every indicator in that bucket
- * has a page a person can open, and the card now says which.
+ * The 'no-public-api' status went the same way on 3 August 2026. It held three
+ * indicators — I2 (cement, use), I7b and I7c — on the grounds that their
+ * publishers offer no file and no API, so the numbers would have to be read by
+ * hand each cycle. All three turned out to be machine-readable without a
+ * browser: Cement Europe inlines the cement production/consumption series as a
+ * Chart.js dataset in its Key Facts & Figures page and its innovation-projects
+ * map as a `var markers` array, and Cefic's map renders from a public WordPress
+ * REST collection. Each now has a recipe in refresh-from-sources.mjs, so the
+ * bucket is empty and the status is gone. The two project counts carry a
+ * caveat that lives in the indicator description rather than here: neither map
+ * dates a project by its announcement, so their post-report points are
+ * snapshots of the map, not a rebuilt series.
+ *
+ * Entries can also carry `dataLinks`: the live URLs where the numbers can be
+ * read, with what each one holds — kept for the entries where the reason is
+ * about the *shape* of a source rather than its absence.
  *
  * Keep this in step with docs-internal/indicator-check-source-refresh-2026-07-30.md,
- * docs-internal/indicator-check-prodcom-unblock-2026-07-30.md and
- * docs-internal/indicator-check-blocker-links-2026-07-30.md.
+ * docs-internal/indicator-check-prodcom-unblock-2026-07-30.md,
+ * docs-internal/indicator-check-blocker-links-2026-07-30.md and
+ * docs-internal/indicator-check-nopublicapi-close-2026-08-03.md.
  */
 
 export type BlockerStatus =
   | 'awaiting-publication'
   | 'source-ended'
-  | 'no-public-api'
   | 'pdf-only'
   | 'subscription'
   | 'never-published'
@@ -39,11 +51,10 @@ export type BlockerStatus =
 
 /**
  * A live place the data can actually be fetched or read by hand. Kept separate
- * from `sourceUrl` (one canonical landing page) because "no public data export"
- * is not the same as "nowhere to look": for every indicator in that bucket
- * there IS a URL that holds the numbers, it just isn't a data API. Each link
- * says what you get there and in what form, so a reader can go and take the
- * value without re-deriving the route.
+ * from `sourceUrl` (one canonical landing page) so that a blocked indicator
+ * never reads as a dead end: where the numbers exist somewhere but the recipe
+ * does not, each link says what you get there and in what form, so a reader can
+ * go and take the value without re-deriving the route.
  *
  * Every URL here was requested successfully on 30 July 2026 (plain HTTPS
  * through the egress proxy, browser User-Agent); `what` records what came back.
@@ -80,7 +91,7 @@ export interface IndicatorBlocker {
 }
 
 /** When the automated refresh last ran end to end. */
-export const LAST_REFRESH = '30 July 2026';
+export const LAST_REFRESH = '3 August 2026';
 
 /**
  * What each status actually asks of a reader who wants to close the gap.
@@ -99,13 +110,6 @@ export const STATUS_ACTION: Record<BlockerStatus, { effort: 'none' | 'waiting' |
   'pdf-only': {
     effort: 'work',
     action: 'Needs a table extractor for the publisher’s annual PDF or annex file.',
-  },
-  'no-public-api': {
-    effort: 'work',
-    action:
-      'The publisher offers no data API or download, but the numbers are on a page that can be ' +
-      'read — the links below go straight to them. Closing the gap means extracting from those ' +
-      'pages, entering the values by hand each cycle, or asking the publisher for a file.',
   },
   'source-ended': {
     effort: 'work',
@@ -134,7 +138,6 @@ export const STATUS_ACTION: Record<BlockerStatus, { effort: 'none' | 'waiting' |
 export const BLOCKER_META: Record<BlockerStatus, { label: string; tone: 'amber' | 'slate' | 'red' }> = {
   'awaiting-publication': { label: 'Not published yet', tone: 'amber' },
   'source-ended': { label: 'Source series ended', tone: 'slate' },
-  'no-public-api': { label: 'No public data export', tone: 'slate' },
   'pdf-only': { label: 'Published as PDF only', tone: 'slate' },
   subscription: { label: 'Subscription source', tone: 'slate' },
   'never-published': { label: 'No published series exists', tone: 'slate' },
@@ -219,141 +222,11 @@ export const INDICATOR_BLOCKERS: Record<string, IndicatorBlocker> = {
     sourceUrl: 'https://doi.org/10.5194/essd-16-525-2024',
   },
 
-  // ── No public data export (6) ────────────────────────────────────────────
+  // ── Building Stock Observatory: source series has ended (4) ──────────────
   'esabcc-b4-dwellings': { status: 'source-ended', summary: 'BSO now holds only a 2020 snapshot, not the series', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
   'esabcc-b4-floor-area': { status: 'source-ended', summary: 'BSO now holds only a 2020 snapshot, not the series', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
   'esabcc-b4-surface-residential': { status: 'source-ended', summary: 'BSO now holds only a 2020 snapshot, not the series', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
   'esabcc-b4-surface-tertiary': { status: 'source-ended', summary: 'BSO now holds only a 2020 snapshot, not the series', detail: BSO, sourceUrl: 'https://building-stock-observatory.energy.ec.europa.eu/database/' },
-  'esabcc-i7b-cement-projects': {
-    status: 'no-public-api',
-    summary: 'Map moved to Cement Europe; project list is in the page, but carries no announcement dates',
-    detail:
-      'The host the report cited is gone. lowcarboneconomy.cembureau.eu now serves a 52-byte nginx ' +
-      'placeholder ("Please stand by while configuration is in progress", last modified June 2022) and ' +
-      'every sub-path under it 404s; cembureau.eu itself 301s every path to the rebranded ' +
-      'cementeurope.eu home page. The map now lives at cementeurope.eu/innovation-projects/ — and ' +
-      'the earlier "needs a headless browser" verdict no longer holds: the whole project database is ' +
-      'inlined in that page as a `var markers = [...]` array, so it can be parsed from static HTML. ' +
-      'Re-read 30 July 2026: 124 projects, one country tag each, 114 of them EU-27 (the rest UK 6, ' +
-      'Norway 3, Switzerland 1), each with technology, 5C category, EU funding programme and a scale ' +
-      'status — Desktop/R&D 46, Pilot Plant 50, Commercial/Demo scale 27, the same taxonomy the ' +
-      'report’s Figure 30 split (R&D 22, pilot 24, demo 7, full scale 4, unspecified 5) uses. ' +
-      'What is still missing is the time dimension, exactly as for I7c: the only year on a record is ' +
-      '"Operational Date", the year the plant runs (2007-2030, 6 of them still in the future), not the ' +
-      'year the project was announced. A current snapshot (114 EU-27) is trustworthy; the report’s ' +
-      '62-in-2023 cannot be reproduced from it, and the difference is part growth and part re-curation ' +
-      'of the map. Unblocking the series needs announcement dates or historical snapshots from Cement ' +
-      'Europe; unblocking the snapshot is now a parsing job, not a browser one.',
-    sourceUrl: 'https://www.cementeurope.eu/innovation-projects/',
-    dataLinks: [
-      {
-        url: 'https://www.cementeurope.eu/innovation-projects/',
-        label: 'Cement Europe — Map of Innovation Projects',
-        what:
-          'The map page. Its HTML carries the full project list inline as a JavaScript `markers` ' +
-          'array — 124 projects (114 EU-27) with country, technology, 5C category, EU funding and ' +
-          'scale status. No API and no browser needed: fetch the page and parse the array.',
-        machineReadable: true,
-      },
-      {
-        url: 'https://www.cementeurope.eu/about-us/key-facts-figures/',
-        label: 'Cement Europe — Key Facts & Figures',
-        what:
-          'Context for the same publisher: sector employees, world production shares and the EU-27 ' +
-          'production/consumption series, all as inline chart data.',
-        machineReadable: true,
-      },
-    ],
-  },
-  'esabcc-i7c-chemicals-projects': {
-    status: 'no-public-api',
-    summary: 'API is public, but carries no announcement dates',
-    detail:
-      'The map turned out to be backed by a public WordPress REST API — /wp-json/wp/v2/gips returns all ' +
-      '238 projects (215 carrying at least one EU-27 country tag; several are multi-country, which is ' +
-      'why the country tags sum to 244) with a country taxonomy, no browser required. The ' +
-      'blocker is not access but time: the only date on a project is its website posting date ' +
-      '(re-checked 30 July 2026 — the record’s ACF fields are curation metadata, still nothing ' +
-      'announcement-dated), and rebuilding the count on that basis gives 135 EU-27 projects at ' +
-      'end-2023 against the report’s 171. The map has been re-curated since, so past states cannot be ' +
-      'reproduced from the current contents, and a “change since the report” figure derived from it ' +
-      'would be measuring Cefic’s editing schedule rather than project announcements. A current ' +
-      'snapshot (215) is trustworthy; a series is not. This is a data request, not an engineering ' +
-      'task: Cefic supplying an announcement-date field, or their historical snapshots, would settle it.',
-    sourceUrl: 'https://cefic.org/low-carbon-projects-map/',
-    dataLinks: [
-      {
-        url: 'https://cefic.org/wp-json/wp/v2/gips?per_page=100',
-        label: 'Cefic — WordPress REST endpoint (the map’s own data)',
-        what:
-          'Every project as JSON, 100 per page over 3 pages; the X-WP-Total response header gives the ' +
-          'count directly (238 on 30 July 2026, 215 carrying at least one EU-27 country tag). Country, ' +
-          'technology and status come as taxonomies — resolve the term ids against ' +
-          '/wp-json/wp/v2/taxonomy-country. The `date` field is the website posting date, not an ' +
-          'announcement date, which is why this gives a snapshot and not a series.',
-        machineReadable: true,
-      },
-      {
-        url: 'https://cefic.org/solutions-explained/low-carbon-technologies-projects/',
-        label: 'Cefic — Low-carbon technologies projects (map page)',
-        what:
-          'The human-facing page the report cited. The map itself is a React app that renders from the ' +
-          'endpoint above, so the page HTML holds no numbers — read it for the taxonomy and framing, ' +
-          'take the counts from the API.',
-      },
-    ],
-  },
-
-  // ── No public data export (1) ────────────────────────────────────────────
-  'esabcc-i2-cement-use': {
-    status: 'no-public-api',
-    summary: 'The publisher now charts the series publicly — 2000-2024, but only as chart data, no file',
-    detail:
-      'Apparent cement consumption came to the report from Cembureau on request, and the recorded ' +
-      'position was that there is no public API or recurring data file. Half of that is now out of ' +
-      'date. Cembureau has rebranded to Cement Europe (cembureau.eu 301s to cementeurope.eu) and its ' +
-      'Key Facts & Figures page publishes "Cement Production And Consumption EU 27 & Cement Europe, ' +
-      '2000-2024" as a Chart.js line chart whose four series sit inline in the page HTML. Checked ' +
-      '30 July 2026: the CONSUMPTION EU27 array reproduces this indicator’s stored values to the ' +
-      'tonne for every year the report carries — 2005 = 232,290,000 t against the report’s 232.3 Mt, ' +
-      '2013 = 142.2, 2020 = 159.2, 2021 = 170.5 — and continues 2022 = 163.8, 2023 = 150.8, ' +
-      '2024 = 148.1 Mt. So the series is the report’s own, extended, and needs no request and no ' +
-      'browser; what is still absent is a data *export* — no CSV, XLSX or API, just a JavaScript ' +
-      'array in a page that can be redesigned at any time, which is why this stays a manual or ' +
-      'scraped read rather than a refresh recipe. The production-minus-trade route stays closed and ' +
-      'is no longer needed: the report’s own workbook shows production minus Cembureau use (7-15 Mt) ' +
-      'diverging from the Eurostat trade balance, so the consumption figure was never a ' +
-      'production-minus-net-trade identity.',
-    sourceUrl: 'https://www.cementeurope.eu/about-us/key-facts-figures/',
-    dataLinks: [
-      {
-        url: 'https://www.cementeurope.eu/about-us/key-facts-figures/',
-        label: 'Cement Europe — Key Facts & Figures',
-        what:
-          'Holds the series itself. The "Cement Production And Consumption EU 27 & Cement Europe ' +
-          '2000-2024" chart carries four datasets inline in the page HTML (CONSUMPTION EU27, ' +
-          'CONSUMPTION Cement Europe, PRODUCTION EU27, PRODUCTION Cement Europe), in tonnes, one ' +
-          'value per year 2000-2024. CONSUMPTION EU27 is this indicator, and it matches the report ' +
-          'exactly on the overlapping years.',
-        machineReadable: true,
-      },
-      {
-        url: 'https://www.cementeurope.eu/resources/reports/',
-        label: 'Cement Europe — Reports (activity reports)',
-        what:
-          'The rebranded library, replacing the dead cembureau.eu/library/reports/ link. Carries the ' +
-          'annual activity report (2025 edition current) for the narrative figures behind the chart.',
-      },
-      {
-        url: 'https://ec.europa.eu/eurostat/databrowser/view/sts_inpr_a/default/table?lang=en',
-        label: 'Eurostat — production index sts_inpr_a (NACE C235)',
-        what:
-          'What cement *production* is already refreshed from, kept here because the two legs are ' +
-          'read together. Not a substitute for the consumption series: an index, not tonnes.',
-        machineReadable: true,
-      },
-    ],
-  },
 
   // ── Subscription (1) ─────────────────────────────────────────────────────
   'esabcc-f-green-bonds': {

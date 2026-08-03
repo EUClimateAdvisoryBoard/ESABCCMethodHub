@@ -27,6 +27,14 @@
  *                   of the clean-tech industry's role in economy-wide
  *                   decarbonisation, with overview figures and a fully sourced
  *                   Excel download (every data point linked to its paper).
+ *   • Optimization — the SEAMAPS-style least-cost model of the EU
+ *                   energy-intensive subsectors. It lives under
+ *                   /beta/summer-prep/optimization but belongs to this module,
+ *                   so it is listed here too.
+ *
+ * The same five sub-pages are seeded as `report-page` tabs on the Industry
+ * Project in the Project Workspace (src/data/workspace-report-pages.ts) — one
+ * copy of each page, two ways in.
  */
 
 import Link from 'next/link';
@@ -49,10 +57,18 @@ export default function OverviewIndustryPage() {
         </div>
         <h1 className="mt-2 text-3xl font-bold text-grey-900 dark:text-[var(--mh-fg)]">Overview Industry</h1>
         <p className="mt-2 max-w-text text-grey-700 dark:text-[var(--mh-muted)]">
-          A cross-cutting overview surface for EU industrial decarbonisation. Four sub-pages so far
+          A cross-cutting overview surface for EU industrial decarbonisation. Five sub-pages so far
           — an evidence catalogue of clean-tech options, a trade-flows view, a demand-side review
-          of lead-market policies and downstream standards, and the objectives &amp; evidence base
-          for the next report&apos;s industry chapter.
+          of lead-market policies and downstream standards, the objectives &amp; evidence base
+          for the next report&apos;s industry chapter, and the least-cost optimization model.
+        </p>
+        <p className="mt-3 text-sm">
+          <Link
+            href="/project-workspace/industry-project"
+            className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
+          >
+            The same five pages as tabs of the Industry Project in the Project Workspace →
+          </Link>
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -161,6 +177,32 @@ export default function OverviewIndustryPage() {
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-tertiary">
               Open the objectives →
+            </span>
+          </Link>
+
+          {/* Lives under /beta/summer-prep/ for historical reasons; it is a
+              sub-page of this module and is listed as one here. */}
+          <Link
+            href="/beta/summer-prep/optimization"
+            className="group rounded-xl border border-grey-200 bg-white p-5 shadow-sm transition hover:border-secondary hover:shadow dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]"
+          >
+            <div className="flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-white">
+                ∑
+              </span>
+              <h2 className="text-lg font-bold text-grey-900 group-hover:text-secondary dark:text-[var(--mh-fg)]">
+                Optimization
+              </h2>
+            </div>
+            <p className="mt-2 text-sm text-grey-600 dark:text-[var(--mh-muted)]">
+              A SEAMAPS-style least-cost optimization model (Julia/JuMP) of the EU energy-intensive
+              subsectors: sourced cost &amp; technology inputs in an Excel workbook, the fully
+              commented solver code, built-in sensitivity runs across CAPEX, carbon price, demand,
+              fuel prices and build rates, and the key findings — every scenario&apos;s results
+              viewable and downloadable.
+            </p>
+            <span className="mt-3 inline-block text-sm font-semibold text-secondary">
+              Open the model →
             </span>
           </Link>
         </div>
