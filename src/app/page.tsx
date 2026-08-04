@@ -405,6 +405,7 @@ export default async function HomePage() {
     { code: 'M · 40', title: 'NECPR 2025 — What Actually Compares', href: '/beta/necpr-targets', tags: ['24 target families', 'EU-27 land sink', 'Data-quality flags'] },
     { code: 'M · 41', title: 'Wildfires & the Land Sink', href: '/beta/wildfire-sink-risk', tags: ['EFFIS 2021-25', 'Lost sink → 2040 target', 'Sensitivity sliders'] },
     { code: 'M · 42', title: 'EU Policy Hierarchy', href: '/beta/policy-hierarchy', tags: ['Treaties → SWDs', 'Mandate rings', 'Moving now', 'EUR-Lex linked'] },
+    { code: 'M · 43', title: 'Committed Damages — EU Cost of Climate Change', href: '/beta/committed-damages', tags: ['Kotz et al. (retracted)', '5 damage functions', 'EU-27 sliders'] },
   ];
 
   return (
