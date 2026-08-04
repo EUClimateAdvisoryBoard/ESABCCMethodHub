@@ -130,6 +130,7 @@ export function policyToReference(policy: Policy): Reference {
     tags: Array.from(new Set(baseTags)),
     notes: formatOfficialPolicyCitation(policy),
     pdf_url: null,
+    pdf_full_text: null,
     funding: null,
     created_at: updatedAt,
     updated_at: updatedAt,
