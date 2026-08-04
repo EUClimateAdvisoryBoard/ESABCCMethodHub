@@ -153,6 +153,9 @@ export default function PolicyTargetsSummaryPage() {
         <Link href="/beta/policy-targets" className="inline-block text-[12.5px] font-medium text-primary hover:underline">
           ← Back to the full register (table, filters, Excel export)
         </Link>
+        <Link href="/beta/policy-targets/sectors" className="inline-block ml-4 text-[12.5px] font-medium text-primary hover:underline">
+          Sector summaries &amp; timelines (v5 clean set) →
+        </Link>
       </PageHero>
 
       <div className="pt-viz max-w-[1280px] mx-auto px-3 sm:px-5 py-6 space-y-7">

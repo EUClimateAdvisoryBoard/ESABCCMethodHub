@@ -232,6 +232,9 @@ export default function PolicyTargetsRegisterPage() {
             <Link href="/beta/policy-targets/summary" className="px-3 py-1.5 rounded-md border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] font-medium hover:bg-grey-100">
               ▤ Summary &amp; figures
             </Link>
+            <Link href="/beta/policy-targets/sectors" className="px-3 py-1.5 rounded-md border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] font-medium hover:bg-grey-100">
+              ▦ Sector summaries
+            </Link>
             <button onClick={downloadExcel} disabled={downloading} className="px-3 py-1.5 rounded-md bg-primary text-white font-medium hover:opacity-90 disabled:opacity-50">
               {downloading ? 'Preparing…' : '⬇ Download Excel'}
             </button>

@@ -125,11 +125,38 @@ even when the quoted passage contains "shall", it is quoting or proposing
 binding text that lives elsewhere — and best-efforts constructions
 ("shall endeavour / aim / strive") count as voluntary in binding acts too.
 
+## v5 Masterfile & sector summaries (August 2026)
+
+The August 2026 iteration promoted the reviewed workbook to a **Masterfile**
+(`public/data/eu-policy-targets-master.xlsx`): the *Revised* tab is the record
+of all targets/commitments/objectives after the human review (rows the
+reviewers marked `Revise target = 2` deleted, the two truncated target texts
+restored, every change noted in *Revision note (Aug 2026 iteration)*); the
+*Clean targets* tab is the analysis set — live targets beyond 2026, no
+duplicates/cross-references — with a human-authored layman **Short version**
+per row. `scripts/build-sector-targets.py` turns that tab into
+`src/data/sector-targets.generated.ts`, which drives two further pages:
+
+- `/beta/policy-targets/sectors` — summaries for the eight sectors plus
+  cross-cutting: short-form targets grouped by act, mandatory vs indicative,
+  mitigation/adaptation, linked indicators, collapsible second-order targets,
+  and a 2020–2050 timeline mark per target (deadline / applies-from / window /
+  stepped / periodic).
+- `/beta/policy-targets/frameworks` — suggested expansions of the indicator
+  assessment framework in *Towards EU climate neutrality* (pp. 33–37) per
+  sectoral chapter, plus a worked Land-and-marine-ecosystems framework that
+  combines adaptation targets, outcomes and levers with the mitigation ones.
+
 ## Code surface
 
 | Path | Role |
 |------|------|
 | `beta/modules/policy-targets/page.tsx` | Table UI, filters, Excel/CSV export, confirm workflow. |
+| `beta/modules/policy-targets/sectors/page.tsx` | Sector summaries + timelines (v5 clean set). |
+| `beta/modules/policy-targets/frameworks/page.tsx` | Progress-framework suggestions + worked example. |
+| `public/data/eu-policy-targets-master.xlsx` | v5 Masterfile (Revised = record, Clean targets = analysis set). |
+| `scripts/build-sector-targets.py` | Clean-targets tab → `sector-targets.generated.ts`. |
+| `src/data/sector-targets.ts` | Typed model for the sectoral dataset. |
 | `src/app/beta/policy-targets/page.tsx` | Route re-export. |
 | `src/data/policy-targets.ts` | Types, display metadata, shared column config, stats. |
 | `src/data/policy-targets.generated.ts` | Generated dataset (verbatim rows). |
