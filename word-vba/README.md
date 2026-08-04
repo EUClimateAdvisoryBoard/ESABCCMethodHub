@@ -38,11 +38,20 @@ flowchart LR
 - **Cite from Project Workspace** dialog: browse a workspace's literature
   clustered by source type, with:
   - a **Chapter** filter (report-chapter / sector classification) alongside
-    the tag filter,
-  - a read-only **summary panel** that shows the selected reference's
-    whole-document workspace summary plus its chapter and tags,
+    the tag filter, listed in report order rather than by document count,
+  - a read-only **summary panel** that shows, for the selected reference, how
+    many times it is already cited in the open document, its chapter and tags,
+    its **angle note** (this report's own reason to cite it) and its
+    **whole-document summary**,
   - the workspace selection **kept across insertions** — after citing, the
     dialog reopens on the same workspace instead of resetting to the top one.
+
+  The angle note and the summary are the *same* shared artefacts the web
+  Content-analysis **Chapter view** reads and writes — a note added on the web
+  shows up here and stays in sync. Both are served by
+  `/api/references/project-workspace` (fields `chaptersText`, `note`,
+  `summary`, `summarySlides`, plus a `chapters` facet). The add-in shows plain
+  text only; `summarySlides` reports how many rich slides exist on the web.
 
 > **Note:** the dialogs are generated at install time. After updating
 > `ESABCC_RefManager.bas`, re-run `install.cmd` (or re-embed) so the new

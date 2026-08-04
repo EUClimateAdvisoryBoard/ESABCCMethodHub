@@ -77,6 +77,7 @@ Private m_WsRowCount As Long
 Private m_ResTiers() As String      ' per-result source tier (policy/scientific/grey)
 Private m_ResTags() As String       ' per-result joined tag names
 Private m_ResChapters() As String   ' per-result chapter (report-chapter / sector) names
+Private m_ResNotes() As String      ' per-result angle note: THIS report's reason to cite it
 Private m_ResSummaries() As String  ' per-result whole-document workspace summary
 Private m_ResCitedCount() As Long   ' per-result: times cited in the active doc
                                     ' (computed each search; drives the tick +
@@ -1159,6 +1160,7 @@ Private Sub ParseWorkspaceItems(json As String)
     ReDim m_ResTiers(1 To objCount)
     ReDim m_ResTags(1 To objCount)
     ReDim m_ResChapters(1 To objCount)
+    ReDim m_ResNotes(1 To objCount)
     ReDim m_ResSummaries(1 To objCount)
 
     Dim pos As Long: pos = 1
@@ -1190,6 +1192,7 @@ Private Sub ParseWorkspaceItems(json As String)
         m_ResTiers(idx) = JsonVal(obj, "tier")
         m_ResTags(idx) = JsonVal(obj, "tagsText")
         m_ResChapters(idx) = JsonVal(obj, "chaptersText")
+        m_ResNotes(idx) = JsonVal(obj, "note")
         m_ResSummaries(idx) = JsonVal(obj, "summary")
 
         If m_ResCitations(idx) = "" Then
@@ -3377,6 +3380,10 @@ Public Function FormBridge_WS_RowSummary(rowIndex As Long) As String
     End If
     If m_ResChapters(r) <> "" Then out = out & "Chapter: " & m_ResChapters(r) & vbCrLf
     If m_ResTags(r) <> "" Then out = out & "Tags: " & m_ResTags(r) & vbCrLf
+    ' The angle note (this workspace's own reason to cite the document) goes
+    ' above the whole-document summary: it is the project-specific one, and it
+    ' is what an author drafting in this report actually needs first.
+    If m_ResNotes(r) <> "" Then out = out & vbCrLf & "Angle: " & m_ResNotes(r) & vbCrLf
     If m_ResSummaries(r) <> "" Then out = out & vbCrLf & m_ResSummaries(r)
     FormBridge_WS_RowSummary = out
 End Function
