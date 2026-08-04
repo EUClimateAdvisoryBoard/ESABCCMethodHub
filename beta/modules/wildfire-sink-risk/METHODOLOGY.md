@@ -316,11 +316,51 @@ are mapped.
 - Sector figures in the catch-up chart are illustrative residual 2040 emissions
   for scale only — not a Commission scenario read-out.
 
-## 7. Files
+## 7. Sub-analyses (`analyses/`, routes `/beta/wildfire-sink-risk/analyses/…`)
+
+Seven deep-dive analyses (A1-A7) run the module's cohort machinery into policy
+questions the single-pool EU model cannot answer, plus a synthesis overview
+page whose every headline number is imported from the analysis models at
+default settings (so the summary cannot drift from the pages). All inherit the
+module's status: beta, illustrative, not citable as quantitative findings.
+
+Shared data layer (`analyses/data.ts`, generated, provenance in header):
+EFFIS per-country annual estimates and the EU-wide weekly-product annual
+series fetched from the open Copernicus API on 2026-08-04, plus Annex IIa of
+Regulation (EU) 2023/839 copied verbatim from the Official Journal (fetched
+from the Publications Office). The EFFIS API products differ a few percent
+from the JRC-report figures used in `model.ts`; every analysis stays inside
+one product for any within-product comparison, and this is documented in the
+data file and on the pages. `model.ts` exports its cohort function as
+`cohortImpact` so the analyses reuse the machinery instead of duplicating it.
+
+| # | Slug | Question | Key result at defaults |
+|---|---|---|---|
+| A1 | `member-states` | Per-country cohort runs vs Annex IIa 2030 targets | Spain's 2030 fire loss ≈ 169% of its entire required sink improvement; 4 countries hold ~75% of EU fire but ~27% of the sink obligation |
+| A2 | `disturbance-flexibility` | How much fire can legally leave the compliance accounts (Art 10/13b, Annex VI)? | ~51 Mt excludable 2026-30; foregone removals have no route; Art 13b voids itself once the Union misses 310 Mt by > 20 Mt |
+| A3 | `prevention` | €/tCO₂ of an avoided hectare vs €400/t removals | ~77.5 tCO₂ lifecycle per hectare → ~€39/t at conservative dials, ~10× cheaper than engineered removals |
+| A4 | `hindcast` | Cohort model run backwards over EFFIS 2006-2024 | Fire explains ~2-18% of the observed ~70 Mt sink decline; 2025 fire drag is the record. Validates the baseline subtraction |
+| A5 | `crcf-reversal` | CRCF buffer-pool sizing under fire scenarios | ~13% of certified units reversed by fire alone over 20 yr at 5%/yr — most of a typical all-causes registry buffer |
+| A6 | `natura2000` | Weighting by the 39% Natura 2000 burnt share | Protected land burnt at ≈2.8× the outside rate in 2025; ~7.6% of the network burns cumulatively by 2040 at 5%/yr |
+| A7 | `fwi-scenarios` | Which dial settings does the climate literature support? | Mean climate signal (Turco et al. 2018, warming-adjusted) ≈ 0.5-1.5%/yr at 2 °C by 2050, vs 12.8%/yr observed 2021-25 trend |
+
+Each analysis directory holds a pure `model.ts` (assumptions and reasoning in
+the header) and a `page.tsx` presentation layer; `analyses/lib.tsx` carries the
+shared shell/controls; `analyses/page.tsx` is the synthesis. The synthesis page
+also maps the findings onto the Policy Gap report's four-type gap taxonomy with
+four concrete integration routes (candidate tracker rows, a Ch. 9 fire
+indicator, a LULUCF risk box, a costed prevention recommendation).
+
+## 8. Files
 
 | File | Contents |
 |---|---|
 | `model.ts` | Data, parameters, presets, model functions, assumption registry |
+| `analyses/data.ts` | Generated data layer: EFFIS country/EU snapshots, Annex IIa (OJ verbatim) |
+| `analyses/lib.tsx` | Shared shell, controls and registry for the A1-A7 pages |
+| `analyses/page.tsx` | Synthesis overview — computed findings + Policy Gap report mapping |
+| `analyses/<slug>/model.ts` | Pure model for each analysis (A1-A7) |
+| `analyses/<slug>/page.tsx` | Presentation layer for each analysis |
 | `live.ts` | Live-season types, fetch-with-fallback, year-end projection, season carbon impact |
 | `LiveSeason.tsx` | Live 2026 tracker — stat band, seasonal-trend chart, projection cards |
 | `LiveFireMap.tsx` | Leaflet map with EFFIS WMS layers (danger forecast, burnt areas, hotspots) |
