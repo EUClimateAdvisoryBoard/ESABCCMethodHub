@@ -16,7 +16,7 @@ This section is split into a few focused pages.
   EEA Postgres · OIDC via EU Login · either **Azure OpenAI EU** or
   **per-user M365 Copilot via Microsoft Graph**.
 - **Stewardship:** CCE5 owns the code. EEA IT operates the service.
-- **Scope lock:** eight production modules. Twenty-five beta modules parked
+- **Scope lock:** eight production modules. Thirty-five beta modules parked
   under `beta/modules/` and unrouted by the live app.
 - **Blueprint:** the same stack is the recommended shape for any EEA
   unit that needs an internal research / reporting workspace.

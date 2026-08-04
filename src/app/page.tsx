@@ -655,7 +655,7 @@ export default async function HomePage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────
-          BETA MODULES  (M·09 – M·25)
+          BETA MODULES  (M·09 – M·43)
           Eighteen experimental modules routed under `/beta/<slug>`. Each card
           links to its own page; the source lives at `beta/modules/<slug>`
           and is wired into Next.js via a thin re-export under
