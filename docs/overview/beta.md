@@ -1,6 +1,6 @@
 # Beta parking lot
 
-**Twenty-five** experimental modules sit outside the Next.js route tree at
+**Thirty-five** experimental modules sit outside the Next.js route tree at
 [`beta/modules/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/beta/modules)
 in the repository. They are **intentionally unrouted** — the file-system
 location is the feature flag. (Former beta work has graduated before: the
@@ -16,22 +16,26 @@ into [Secretariat News](../modules/news-feed.md).)
 
 ## What is parked
 
-Numbered M·09–M·39, continuing the sequence after the eight core modules. The
+Numbered M·09–M·43, continuing the sequence after the eight core modules. The
 list grows roughly weekly as new prototypes land; the
 [`beta/README.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/beta/README.md)
 table and the home-page module ribbon (`src/app/page.tsx`) are the canonical,
 always-current registry — this page mirrors them.
 
-The modules fall into three loose families:
+The modules fall into four loose families:
 
 - **Data surfaces awaiting a pipeline or licence** (M·09–M·20) — working UI,
   blocked on a backend service, a procured dataset, or editorial sign-off.
-- **Analysis & coherence tools** (M·23, M·25, M·26, M·28, M·29, M·31, M·32) —
-  faithful, interactive renderings of internal method notes and position
-  papers, or transparent what-if accounting models.
-- **Narrative & briefing surfaces** (M·21, M·22, M·24, M·27, M·30, M·33) —
-  scrollytelling data essays, sector briefs and explainers built on published
-  report content and ESABCC recommendations.
+- **Analysis & coherence tools** (M·23, M·25, M·26, M·28, M·29, M·31, M·32,
+  M·41, M·43) — faithful, interactive renderings of internal method notes and
+  position papers, or transparent what-if / reduced-form accounting models.
+- **Narrative & briefing surfaces** (M·21, M·22, M·24, M·27, M·30, M·33,
+  M·34) — scrollytelling data essays, sector briefs and explainers built on
+  published report content and ESABCC recommendations.
+- **Report-preparation working spaces & registers** (M·35–M·40, M·42) —
+  working surfaces for the next progress report: the Summer Prep workspace,
+  verbatim target and policy registers, the ETS-review package hub, and
+  structural maps of the acquis.
 
 | #     | Folder                       | Module                | Why it is beta                                                  |
 |-------|------------------------------|-----------------------|-----------------------------------------------------------------|
@@ -66,6 +70,10 @@ The modules fall into three loose families:
 | M·37  | `ets-review/`                | ETS Review & Electrification | Electrification model and reform overview for the 17 Jul 2026 ETS review package. |
 | M·38  | `impact-assessment/`         | Impact Assessment — Modelling Results | 80 key modelling findings from the ETS-review impact assessment SWD(2026) 616, each with verbatim numbers, page reference and source-page screenshot; AI-extracted, pending human verification. |
 | M·39  | `eu-green-deal-policies/`    | EU Green Deal Policy Tracker | 93 EGDSF legislative initiatives from ETC CE Report 2024/8 Annex 2, tracked to July 2026 with EUR-Lex/legislative-train links; Figure-1.2-style chart splitting adopted acts into stable vs reopened by the 2025-26 omnibus agenda; AI-researched and AI-fact-checked (act numbers machine-verified), pending human sign-off. |
+| M·40  | `necpr-targets/`             | NECPR 2025 — What Actually Compares | Hand-built mapping of the 209 "other national objectives" reported by 22 Member States across NECPR Annexes I/II/IV into 26 target families, plus the EU-27 net LULUCF aggregate, headline-target coverage and ten data-quality flags; extraction reproducible via `scripts/extract-necpr-2025.py`. Family mapping is a manual reading pending Secretariat review. |
+| M·41  | `wildfire-sink-risk/`        | Wildfires & the Land Sink | Cohort model converting EFFIS burnt area (2021–25) into a land-sink shortfall and the extra mitigation burden it puts on the 2040 (−90%) and 2050 net-zero targets, with a live 2026 season tracker (Copernicus EFFIS API) and seven deep-dive analyses (member states vs Annex IIa, disturbance flexibility, prevention cost, hindcast, CRCF buffer, Natura 2000, FWI climate scenarios). Full write-up in [`METHODOLOGY.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/beta/modules/wildfire-sink-risk/METHODOLOGY.md). Illustrative arithmetic only — not citable as a quantitative finding. |
+| M·42  | `policy-hierarchy/`          | [EU Policy Hierarchy](../modules/policy-hierarchy.md) | The EU legal order as one collapsible figure — primary → secondary → tertiary → soft law across all domains, four cross-cutting lenses, Art. 3(2)(b) mandate rings and a "moving now" status layer, every instrument EUR-Lex-linked. Instrument register AI-compiled, pending Secretariat verification. |
+| M·43  | `committed-damages/`         | Committed Damages — EU Cost of Climate Change | Interactive, slider-driven rebuild of the damage-projection pipeline of the **retracted** Kotz, Levermann & Wenz (Nature 628, 2024) paper, refocused on the EU-27: five damage channels, switchable persistence logic, per-member-state gradient, and a prominent retraction panel. Stylised teaching reconstruction — explicitly not a citable damage estimate. |
 
 !!! note "Numbering vs. the route map"
     The `M·NN` codes are a **stable presentation index** assigned on the home
@@ -74,6 +82,12 @@ The modules fall into three loose families:
     re-export stub under `src/app/beta/<folder>/page.tsx` that points at the
     real page in `beta/modules/<folder>/`. Promotion renumbers nothing — it
     just moves the folder into the route tree.
+
+    Two additional folders sit under `beta/modules/` without their own `M·NN`
+    entry: `overview-industry/` (ex M·34) and `policy-gaps/` (ex M·36) were
+    absorbed into **Summer Prep (M·35)** as sub-modules — their routes stay
+    alive, but they are no longer listed as stand-alone modules, and their old
+    numbers were reassigned.
 
 ## Promoting a beta module
 

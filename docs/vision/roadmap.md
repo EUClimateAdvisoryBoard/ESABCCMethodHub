@@ -64,6 +64,6 @@ codebases instead of one.
 
 - Rewriting the scope — the eight production modules are the locked core.
 - Adding new beta modules to the locked core — the parking lot already
-  holds twenty-five; promoting more without hardening would dilute the
+  holds thirty-five; promoting more without hardening would dilute the
   production signal.
 - Migrating off Next.js, Postgres or Docker — the stack is the value.

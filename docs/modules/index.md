@@ -94,3 +94,23 @@ Every production module now sits inside a shared **User Space** — see
 </a></li>
 
 </ul>
+
+## Beta modules with deep-dives
+
+Most of the thirty-five parked modules are documented only in the
+[beta parking lot](../overview/beta.md) registry, but seven have grown their
+own deep-dive pages here:
+
+- [M·16 Funding Sources](funding-sources.md)
+- [M·17 Strategy & Framework Docs](strategy-docs.md)
+- [M·32 Ex-Post Policy Assessment](ex-post-analysis.md)
+- [M·33 Sector Background](sector-background.md)
+- [M·36 Policy Targets Register](policy-targets.md)
+- [M·42 EU Policy Hierarchy](policy-hierarchy.md)
+- [Media Monitoring (M·13)](media-monitoring.md)
+
+In-repo methodology notes also ship next to the code for the analytical beta
+modules — most extensively
+[`beta/modules/wildfire-sink-risk/METHODOLOGY.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/beta/modules/wildfire-sink-risk/METHODOLOGY.md)
+(M·41), which documents the cohort model, the baseline subtraction, the live
+EFFIS season tracker and the seven A1–A7 sub-analyses.
