@@ -130,6 +130,7 @@ export default function EtsReviewHub() {
               'Drive the assumptions with sliders (target, baseline, barriers, measures)',
               'Price-only ≈ €166/t vs with measures ≈ €55/t — the €111/t gap',
               'Supply curve, sector breakdown, physical outputs',
+              'Liebreich’s “final-energy fallacy” — 46% in devices: ≈¾ heat pumps, ≈⅘ EVs',
             ]}
             cta="Open the model"
           />

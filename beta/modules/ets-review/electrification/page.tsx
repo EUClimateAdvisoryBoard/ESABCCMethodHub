@@ -22,6 +22,17 @@
  * Stylised policy-analysis model — NOT PyPSA-Eur, no hourly dispatch, ETS1+ETS2
  * collapsed to one price. Treat the gap and the ordering as robust and absolute
  * price levels as indicative. For a full power-system solve see pypsa-service/.
+ *
+ * Also hosts the FINAL-ENERGY FALLACY section (after M. Liebreich, via Euractiv
+ * reporting, July 2026): a device-stock identity that translates the 46%
+ * final-energy target into the heat-pump and EV adoption it implies. Because
+ * electric devices need ~3× less input energy for the same service, every
+ * fossil→electric switch shrinks the final-energy denominator, so the share is
+ * a non-linear, lagging read on device adoption — one gas boiler plus one heat
+ * pump delivering the same heat is only a "25% electrification rate". The
+ * closed-form iso-target inversion is exact (verified round-trip): hitting 46%
+ * with no help from other sectors needs ≈¾ of building heat from heat pumps
+ * and ≈4 in 5 car-km electric, exactly Liebreich's numbers.
  */
 
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -306,12 +317,176 @@ function TornadoChart({ rows, center, color }: { rows: TornadoRow[]; center: num
   );
 }
 
+/* ------------------------------------------ final-energy fallacy (model) */
+// Liebreich's 'final energy fallacy': the 46% target is a share of FINAL
+// energy, but electric devices need far less input energy for the same
+// service — so every switch shrinks the denominator the share is measured
+// against, and the metric badly lags device adoption. Buildings heat and
+// cars are modelled in fixed useful-service terms with device efficiencies;
+// everything else is one aggregate with an optional electrification lever.
+
+interface FalAssumptions {
+  hp: number;    // % of building heat delivered by heat pumps
+  ev: number;    // % of car-km driven electric
+  other: number; // % of other fossil final energy electrified
+  cop: number;   // heat-pump seasonal COP
+  eta: number;   // fossil boiler efficiency
+  rEv: number;   // ICE:EV final-energy ratio per km
+}
+const FAL_DEFAULTS: FalAssumptions = { hp: 13, ev: 4, other: 0, cop: 3.0, eta: 0.9, rEv: 3.3 };
+
+// Stylised EU calibration (TWh), consistent with FE_TWH at today's ~23% share.
+const HEAT_FE_NOW = 2500; // buildings space & water heat, final energy today
+const CARS_FE_NOW = 1700; // passenger cars, final energy today
+const SHARE_NOW = 23;     // electricity share of final energy today, %
+const R_OTHER = 1.8;      // fossil:electric final-energy ratio, aggregated rest
+// Fixed service demands, backed out from today's stock at the default techs;
+// holding these fixed is what isolates the metric's arithmetic from demand.
+const U_HEAT = HEAT_FE_NOW / (0.13 / FAL_DEFAULTS.cop + 0.87 / FAL_DEFAULTS.eta);
+const A_CARS = CARS_FE_NOW / (0.96 + 0.04 / FAL_DEFAULTS.rEv);
+const OTHER_ELEC = (FE_TWH * SHARE_NOW) / 100 - (U_HEAT * 0.13) / FAL_DEFAULTS.cop - (A_CARS * 0.04) / FAL_DEFAULTS.rEv;
+const OTHER_FOSSIL = FE_TWH - HEAT_FE_NOW - CARS_FE_NOW - OTHER_ELEC;
+
+function falOther(f: FalAssumptions) {
+  const x = f.other / 100;
+  const e = OTHER_ELEC + (OTHER_FOSSIL * x) / R_OTHER;
+  return { e, f: e + OTHER_FOSSIL * (1 - x) };
+}
+function falPoint(f: FalAssumptions) {
+  const hp = f.hp / 100, ev = f.ev / 100;
+  const eHeat = (U_HEAT * hp) / f.cop;
+  const fHeat = eHeat + (U_HEAT * (1 - hp)) / f.eta;
+  const eCars = (A_CARS * ev) / f.rEv;
+  const fCars = eCars + A_CARS * (1 - ev);
+  const o = falOther(f);
+  const E = eHeat + eCars + o.e, F = fHeat + fCars + o.f;
+  return { rate: (100 * E) / F, E, F, eHeat, fHeat };
+}
+// Closed-form inversions of rate == target (exact — rate is a ratio of two
+// expressions linear in the adoption share). Results can leave [0, 100]:
+// >100 means the target is unreachable on this axis alone, <0 already met.
+function evNeeded(f: FalAssumptions, hpPct: number, targetPct: number): number {
+  const T = targetPct / 100, hp = hpPct / 100;
+  const eHeat = (U_HEAT * hp) / f.cop;
+  const fHeat = eHeat + (U_HEAT * (1 - hp)) / f.eta;
+  const o = falOther(f);
+  const num = T * (fHeat + o.f + A_CARS) - eHeat - o.e;
+  const den = A_CARS * (1 / f.rEv + T * (1 - 1 / f.rEv));
+  return (100 * num) / den;
+}
+function hpNeeded(f: FalAssumptions, evPct: number, targetPct: number): number {
+  const T = targetPct / 100, ev = evPct / 100;
+  const eCars = (A_CARS * ev) / f.rEv;
+  const fCars = eCars + A_CARS * (1 - ev);
+  const o = falOther(f);
+  const num = T * (U_HEAT / f.eta + fCars + o.f) - eCars - o.e;
+  const den = U_HEAT * ((1 - T) / f.cop + T / f.eta);
+  return (100 * num) / den;
+}
+
+const FAL_PRESETS: { name: string; f: FalAssumptions }[] = [
+  { name: 'Today (~23%)', f: FAL_DEFAULTS },
+  { name: 'Liebreich 46% point', f: { ...FAL_DEFAULTS, hp: 75, ev: 80 } },
+  { name: 'Other sectors help', f: { ...FAL_DEFAULTS, hp: 60, ev: 65, other: 25 } },
+];
+function sameFal(x: FalAssumptions, y: FalAssumptions): boolean {
+  return x.hp === y.hp && x.ev === y.ev && x.other === y.other &&
+    x.cop === y.cop && x.eta === y.eta && x.rEv === y.rEv;
+}
+
+/* ---------------------------------------------------- Fallacy iso-target SVG */
+function FallacyChart({ fal, target, met }: { fal: FalAssumptions; target: number; met: boolean }) {
+  const W = 720, H = 400, M = { l: 56, r: 18, t: 18, b: 46 };
+  const PX = W - M.l - M.r, PY = H - M.t - M.b;
+  const xPx = (hp: number) => M.l + (hp / 100) * PX;
+  const yPx = (ev: number) => M.t + (1 - ev / 100) * PY;
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [hover, setHover] = useState<{ hp: number; ev: number } | null>(null);
+
+  // Iso-target boundary: the EV share needed at each heat-pump share, clamped
+  // into the plot; everything above/right of it meets the target.
+  const boundary: { hp: number; ev: number }[] = [];
+  for (let hp = 0; hp <= 100; hp += 0.5) {
+    const ev = evNeeded(fal, hp, target);
+    if (ev <= 100) boundary.push({ hp, ev: Math.max(ev, 0) });
+  }
+  const curveD = boundary.map((p, i) => `${i ? 'L' : 'M'}${xPx(p.hp).toFixed(1)} ${yPx(p.ev).toFixed(1)}`).join('');
+  const regionD = boundary.length
+    ? `${curveD}L${xPx(100).toFixed(1)} ${M.t}L${xPx(boundary[0].hp).toFixed(1)} ${M.t}Z`
+    : '';
+  const ticks = [0, 20, 40, 60, 80, 100];
+
+  const onPointerMove = (e: ReactPointerEvent<SVGRectElement>) => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const rect = svg.getBoundingClientRect();
+    const lx = ((e.clientX - rect.left) / rect.width) * W;
+    const ly = ((e.clientY - rect.top) / rect.height) * H;
+    setHover({
+      hp: clamp(((lx - M.l) / PX) * 100, 0, 100),
+      ev: clamp((1 - (ly - M.t) / PY) * 100, 0, 100),
+    });
+  };
+  const pointMark = (hp: number, ev: number, color: string, label: string, r = 5, above = true) => (
+    <g>
+      <circle cx={xPx(hp)} cy={yPx(ev)} r={r} fill={color} stroke="white" strokeWidth={2} />
+      <text x={xPx(hp)} y={yPx(ev) + (above ? -10 : 16)} textAnchor="middle" fontSize={10.5} fontWeight={700} fill={color}>{label}</text>
+    </g>
+  );
+  return (
+    <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="w-full" role="img"
+      aria-label="Heat-pump and EV adoption combinations that reach the electrification target">
+      {ticks.map((v) => (
+        <g key={v}>
+          <line x1={M.l} y1={yPx(v)} x2={W - M.r} y2={yPx(v)} stroke="#eef3f2" strokeWidth={1} />
+          <line x1={xPx(v)} y1={M.t} x2={xPx(v)} y2={M.t + PY} stroke="#eef3f2" strokeWidth={1} />
+          <text x={M.l - 8} y={yPx(v) + 3} textAnchor="end" fontSize={11} fill="#8fa1a0" className="tabular-nums">{v}%</text>
+          <text x={xPx(v)} y={H - M.b + 16} textAnchor="middle" fontSize={11} fill="#8fa1a0" className="tabular-nums">{v}%</text>
+        </g>
+      ))}
+      <text x={M.l + PX / 2} y={H - 4} textAnchor="middle" fontSize={11.5} fontWeight={600} fill="#5d6f6e">Heat pumps — share of building heat delivered</text>
+      <text transform={`translate(14 ${M.t + PY / 2}) rotate(-90)`} textAnchor="middle" fontSize={11.5} fontWeight={600} fill="#5d6f6e">Fully-electric share of car-km</text>
+      {regionD && <path d={regionD} fill={C_MEAS} opacity={0.07} />}
+      {boundary.length > 0 && <path d={curveD} fill="none" stroke={C_MEAS} strokeWidth={2.5} />}
+      {boundary.length > 0 && (
+        <text x={xPx(Math.min(boundary[0].hp + 4, 92))} y={M.t + 14} fontSize={10.5} fontWeight={600} fill={C_MEAS}>
+          meets {target}% ↗
+        </text>
+      )}
+      {pointMark(13, 4, '#9aa7a6', 'today', 4.5, false)}
+      {pointMark(75, 80, C_NAVY, 'Liebreich ¾ · ⅘', 4.5)}
+      {pointMark(fal.hp, fal.ev, met ? C_MEAS : C_ONLY, 'your scenario', 6, fal.ev < 90)}
+      {hover && (() => {
+        const r = falPoint({ ...fal, hp: hover.hp, ev: hover.ev }).rate;
+        const boxW = 148, boxH = 40;
+        const bx = clamp(xPx(hover.hp) + 10, M.l, W - M.r - boxW);
+        const by = clamp(yPx(hover.ev) - boxH - 8, M.t, M.t + PY - boxH);
+        return (
+          <g pointerEvents="none">
+            <rect x={bx} y={by} width={boxW} height={boxH} rx={4} fill="white" stroke="#d8e0df" />
+            <text x={bx + 8} y={by + 16} fontSize={10.5} fill="#5d6f6e" className="font-mono tabular-nums">
+              HP {hover.hp.toFixed(0)}% · EV {hover.ev.toFixed(0)}%
+            </text>
+            <text x={bx + 8} y={by + 31} fontSize={11.5} fontWeight={700} fill={r >= target ? C_MEAS : C_ONLY} className="font-mono tabular-nums">
+              → {r.toFixed(1)}% of final energy
+            </text>
+          </g>
+        );
+      })()}
+      <rect x={M.l} y={M.t} width={PX} height={PY} fill="transparent"
+        onPointerMove={onPointerMove} onPointerLeave={() => setHover(null)} style={{ cursor: 'crosshair', touchAction: 'none' }} />
+    </svg>
+  );
+}
+
 /* ------------------------------------------------------------------ page */
 export default function EtsReviewModule() {
   // Initial render always uses DEFAULTS (server and client match); the URL is
   // only consulted after mount, in an effect — see hydration-safety note above.
   const [a, setA] = useState<Assumptions>(DEFAULTS);
+  const [fal, setFal] = useState<FalAssumptions>(FAL_DEFAULTS);
   const [copied, setCopied] = useState(false);
+  const setF = (patch: Partial<FalAssumptions>) => setFal((prev) => ({ ...prev, ...patch }));
   const set = (patch: Partial<Assumptions>) => setA((prev) => ({ ...prev, ...patch }));
   const setStrength = (s: Sector, v: number) => setA((prev) => ({ ...prev, strength: { ...prev.strength, [s]: v } }));
 
@@ -423,6 +598,22 @@ export default function EtsReviewModule() {
     rows.sort((x, y) => y.impact - x.impact);
     return rows;
   }, [a, m.pOnly]);
+
+  // Final-energy fallacy: the identity itself is cheap; recompute per change.
+  const fx = useMemo(() => {
+    const pt = falPoint(fal);
+    const met = pt.rate >= a.target;
+    return {
+      ...pt, met,
+      evReq: evNeeded(fal, fal.hp, a.target),
+      hpReq: hpNeeded(fal, fal.ev, a.target),
+      toy: (100 * (1 / fal.cop)) / (1 / fal.cop + 1 / fal.eta),
+      heatShare: (100 * pt.eHeat) / pt.fHeat,
+      dF: (100 * (pt.F - FE_TWH)) / FE_TWH,
+    };
+  }, [fal, a.target]);
+  const activeFalPreset = FAL_PRESETS.find((p) => sameFal(p.f, fal))?.name ?? 'Custom';
+  const reqLabel = (v: number) => (v > 100 ? 'not reachable' : v < 0 ? 'already met' : null);
 
   const cards: { k: string; v: string; u: string; c: string }[] = [
     { k: 'Price only', v: m.pOnly != null ? `€${m.pOnly}` : '—', u: '/t', c: C_ONLY },
@@ -629,6 +820,103 @@ export default function EtsReviewModule() {
           </div>
         </section>
 
+        {/* final-energy fallacy */}
+        <section className="mb-8">
+          <h2 className="text-lg font-bold text-tertiary-dark">The final-energy fallacy — what 46% means in devices</h2>
+          <p className="mt-1 max-w-3xl text-[13px] text-tertiary">
+            Michael Liebreich (BloombergNEF founder) calls the 46% target <em>&ldquo;mathematically
+            unachievable&rdquo;</em> — his <strong>&lsquo;final energy fallacy&rsquo;</strong>: the target is a share
+            of <em>final energy</em>, but electric devices need ~3× less input energy for the same service, so every
+            fossil→electric switch <strong>shrinks the denominator</strong> the share is measured against. A country
+            of one gas boiler and one heat pump delivering the same heat has an electrification rate of just{' '}
+            <span className="font-mono tabular-nums">{fx.toy.toFixed(0)}%</span> at the boiler efficiency and COP set
+            below (25% with a perfect boiler) — from a 50% device share. This section rebuilds his arithmetic as a
+            device-stock identity calibrated to today&rsquo;s ~23%: drag the adoption sliders and see what the{' '}
+            {a.target}% target set above actually demands.
+          </p>
+          <div className="mt-3 grid gap-4 lg:grid-cols-[320px_1fr]">
+            {/* controls */}
+            <div className="rounded-lg border border-grey-200 bg-white p-4">
+              <p className="mb-3 flex items-baseline justify-between gap-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-tertiary">
+                Device stock 2040
+                <span className="normal-case tracking-normal text-tertiary/80">
+                  scenario: <span className={activeFalPreset === 'Custom' ? 'text-accent-orange' : 'text-primary'}>{activeFalPreset}</span>
+                </span>
+              </p>
+              <div className="mb-3.5 flex flex-wrap gap-1.5">
+                {FAL_PRESETS.map((p) => (
+                  <button key={p.name} type="button" onClick={() => setFal(p.f)}
+                    className={`rounded-full border px-2.5 py-1 text-[10.5px] font-semibold ${activeFalPreset === p.name
+                      ? 'border-primary bg-primary/10 text-primary'
+                      : 'border-grey-200 text-tertiary hover:border-primary hover:text-primary'}`}>
+                    {p.name}
+                  </button>
+                ))}
+              </div>
+              <div className="space-y-3.5">
+                <Slider label="Heat pumps — share of building heat" hint="~13% of delivered heat today" value={fal.hp} min={0} max={100} step={1} unit="%" std={13} onChange={(v) => setF({ hp: v })} />
+                <Slider label="Fully-electric share of car-km" hint="Low single digits of the fleet today" value={fal.ev} min={0} max={100} step={1} unit="%" std={4} onChange={(v) => setF({ ev: v })} />
+                <Slider label="Other sectors electrified" hint="Industry heat, trucks… of today's other fossil use" value={fal.other} min={0} max={60} step={1} unit="%" std={0} onChange={(v) => setF({ other: v })} />
+                <div className="border-t border-grey-200 pt-3">
+                  <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-tertiary">Device efficiencies</p>
+                  <div className="space-y-3.5">
+                    <Slider label="Heat-pump seasonal COP" hint="≥3 kWh heat per kWh electricity" value={fal.cop} min={2} max={5} step={0.1} unit="×" std={3} onChange={(v) => setF({ cop: v })} />
+                    <Slider label="Fossil boiler efficiency" hint="Even the best gas boilers stay below 1" value={fal.eta} min={0.7} max={1} step={0.01} unit="×" std={0.9} onChange={(v) => setF({ eta: v })} />
+                    <Slider label="ICE ÷ EV energy per km" hint="How much more final energy an ICE car uses" value={fal.rEv} min={2} max={4.5} step={0.1} unit="×" std={3.3} onChange={(v) => setF({ rEv: v })} />
+                  </div>
+                </div>
+                <p className="rounded-md bg-surface-blue px-3 py-2 text-[11.5px] leading-relaxed text-tertiary">
+                  At these settings <strong className="text-tertiary-dark">{fal.hp}%</strong> of heat is heat-pump
+                  delivered, yet electricity is only{' '}
+                  <strong className="text-tertiary-dark">{fx.heatShare.toFixed(0)}%</strong> of heating{' '}
+                  <em>final energy</em> — the fallacy in one number.
+                </p>
+              </div>
+            </div>
+            {/* chart */}
+            <div className="rounded-lg border border-grey-200 bg-white p-3">
+              <FallacyChart fal={fal} target={a.target} met={fx.met} />
+              <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 px-1 text-[11px] text-tertiary">
+                <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-[2px]" style={{ background: C_MEAS }} />adoption mixes reaching the target (frontier + shaded region)</span>
+                <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-full" style={{ background: C_NAVY }} />Liebreich&rsquo;s ¾ heat pumps · ⅘ EVs</span>
+                <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-full bg-[#9aa7a6]" />today</span>
+              </div>
+            </div>
+          </div>
+
+          {/* readouts */}
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            {[
+              { k: 'Electrification rate', v: `${fx.rate.toFixed(1)}%`, u: `target ${a.target}%`, c: fx.met ? C_MEAS : C_ONLY },
+              { k: 'Final energy (the denominator)', v: thou(Math.round(fx.F)), u: `TWh · ${fx.dF <= -0.5 ? `${fx.dF.toFixed(0)}% vs today` : '≈ today'}`, c: C_NAVY },
+              { k: 'EVs needed at this heat-pump share', v: reqLabel(fx.evReq) ?? `${fx.evReq.toFixed(0)}%`, u: 'of car-km', c: C_NAVY },
+              { k: 'Heat pumps needed at this EV share', v: reqLabel(fx.hpReq) ?? `${fx.hpReq.toFixed(0)}%`, u: 'of heat', c: C_NAVY },
+            ].map((k) => (
+              <div key={k.k} className="rounded-lg border border-grey-200 bg-white p-3">
+                <p className="text-[11px] text-tertiary">{k.k}</p>
+                <p className="mt-1 font-mono text-lg font-bold tabular-nums" style={{ color: k.c }}>
+                  {k.v}<span className="text-[11px] font-normal text-tertiary"> {k.u}</span>
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* findings */}
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            {[
+              { h: 'The denominator shrinks', b: 'Each boiler or engine replaced deletes ~2–3 kWh of fossil final energy per kWh of electricity added — the share is measured against a total that falls as you succeed. At Liebreich’s point, EU final energy is ~26% below today with identical heat and mobility.' },
+              { h: 'Devices, not shares', b: 'With no help from other sectors, 46% needs ≈¾ of building heat from heat pumps (~13% today) and ~4 in 5 car-km electric. With a ~15-year fleet life that means near-all-electric sales starting now — while the 2035 ICE-ban is being dismantled. “We need a course correction” (Liebreich).' },
+              { h: 'Other sectors buy slack', b: 'Electrifying industrial heat and trucks relieves the burden: with a quarter of other fossil use switched, ~60% heat pumps and ~65% EVs suffice (the “Other sectors help” preset). The fallacy is about where 46% must come from, not whether electrification is right.' },
+              { h: 'A contested metric', b: 'Of five Commission officials involved in the target, one points to “further work until the end of this year in terms of analytical basis”, another concedes no good solution exists yet; others had not heard of the fallacy. Bruce Douglas (Global Renewables Alliance) counters it is the “best metric we have” and a “powerful market signal”. Electrification could enter the 2040 target architecture as early as 2027.' },
+            ].map((f) => (
+              <div key={f.h} className="rounded-lg border border-grey-200 bg-white p-4">
+                <p className="text-[13px] font-bold text-tertiary-dark">{f.h}</p>
+                <p className="mt-1 text-[12.5px] leading-relaxed text-tertiary">{f.b}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* method + caveat */}
         <section className="mb-4">
           <div className="rounded-md bg-surface-blue px-4 py-3 text-[12px] leading-relaxed text-tertiary">
@@ -640,6 +928,13 @@ export default function EtsReviewModule() {
             so treat the <em>gap</em> and the <em>ordering</em> (price-only ≫ €45 trigger ≫ price-with-measures) as
             robust and absolute price levels as indicative. For a full power-system solve, see{' '}
             <code className="rounded bg-white px-1 py-0.5">pypsa-service/</code>.
+            {' '}The <strong className="text-tertiary-dark">final-energy fallacy</strong> section is a separate
+            device-stock <em>identity</em> (no optimisation): fixed useful-service demand for buildings heat and
+            car-km, device efficiencies as sliders, stylised calibration to today&rsquo;s ~23% share; the iso-target
+            frontier is the exact closed-form inversion. Source: Euractiv reporting on Michael Liebreich&rsquo;s
+            &lsquo;final energy fallacy&rsquo; analysis (July 2026), incl. the quoted Commission and Global
+            Renewables Alliance positions. It shows the metric&rsquo;s arithmetic, not a demand scenario — the
+            least-cost model above remains the module&rsquo;s cost engine.
           </div>
         </section>
       </main>
