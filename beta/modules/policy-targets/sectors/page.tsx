@@ -318,7 +318,7 @@ export default function SectorSummariesPage() {
           <Link href="/beta/policy-targets" className="px-2.5 py-1 rounded border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] hover:bg-grey-100">← Full register</Link>
           <Link href="/beta/policy-targets/summary" className="px-2.5 py-1 rounded border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] hover:bg-grey-100">▤ Register statistics</Link>
           <Link href="/beta/policy-targets/frameworks" className="px-2.5 py-1 rounded border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] hover:bg-grey-100">▦ Progress-framework suggestions</Link>
-          <a href="/data/eu-policy-targets-master.xlsx" className="px-2.5 py-1 rounded border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] hover:bg-grey-100">⬇ Masterfile (Excel)</a>
+          <a href="/data/eu-policy-targets-master.xlsx" download className="px-2.5 py-1 rounded border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] hover:bg-grey-100">⬇ Masterfile (Excel)</a>
         </div>
 
         {/* ── Overall summary across sectors ── */}
