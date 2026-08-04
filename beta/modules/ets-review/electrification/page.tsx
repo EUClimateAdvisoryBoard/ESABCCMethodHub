@@ -149,10 +149,10 @@ function computeMeasPrice(aa: Assumptions): number | null {
 
 /* ------------------------------------------------------------- Slider UI */
 function Slider(props: {
-  label: string; hint?: string; value: number; min: number; max: number;
+  label: string; hint?: string; live?: string; value: number; min: number; max: number;
   step: number; unit?: string; std?: number; onChange: (v: number) => void;
 }) {
-  const { label, hint, value, min, max, step, unit, std, onChange } = props;
+  const { label, hint, live, value, min, max, step, unit, std, onChange } = props;
   const modified = std !== undefined && Math.abs(value - std) > step / 2;
   const stdPct = std !== undefined ? ((std - min) / (max - min)) * 100 : null;
   return (
@@ -181,6 +181,9 @@ function Slider(props: {
           </button>
         )}
       </div>
+      {live && (
+        <p className="mt-0.5 font-mono text-[10px] tabular-nums" style={{ color: C_MEAS }}>{live}</p>
+      )}
     </label>
   );
 }
@@ -490,6 +493,16 @@ export default function EtsReviewModule() {
   const set = (patch: Partial<Assumptions>) => setA((prev) => ({ ...prev, ...patch }));
   const setStrength = (s: Sector, v: number) => setA((prev) => ({ ...prev, strength: { ...prev.strength, [s]: v } }));
 
+  // Concrete per-sector readout for the measure-strength sliders: the switching
+  // cost of the sector's hardest (last) tranche without vs with the full package
+  // (barrier spread cut by the strength %, base shifted by the price reform).
+  const hardest = (s: Sector) => {
+    const f = Math.pow((N - 0.5) / N, GAMMA[s]);
+    const before = Math.round(BASE_C[s] + SPREAD[s] * a.barrierMult * f);
+    const after = Math.round(BASE_C[s] - a.reform + SPREAD[s] * a.barrierMult * (1 - a.strength[s] / 100) * f);
+    return { before, after };
+  };
+
   // Read a shared scenario from the URL query string, once, after mount.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -699,12 +712,19 @@ export default function EtsReviewModule() {
                 <Slider label="Baseline rate, no new policy" hint="Autonomous 2040 electrification" value={a.baseline} min={20} max={32} step={1} unit="%" std={26} onChange={(v) => set({ baseline: v })} />
                 <Slider label="Barrier-cost multiplier" hint="Uncertainty band on hidden costs (±25%)" value={a.barrierMult} min={0.6} max={1.6} step={0.05} unit="×" std={1} onChange={(v) => set({ barrierMult: v })} />
                 <div className="border-t border-grey-200 pt-3">
-                  <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.1em]" style={{ color: C_MEAS }}>Demand-side package</p>
+                  <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.1em]" style={{ color: C_MEAS }}>Demand-side package</p>
+                  <p className="mb-2.5 text-[10.5px] leading-snug text-tertiary">
+                    Each sector&apos;s % is the share of its <strong>non-price barrier cost</strong> (split incentives, upfront
+                    capital, hassle, grid queues) that the listed instruments remove: 0% = no package, the preset ≈ the
+                    proposed package delivered in full, 100% = barriers fully gone. The green line under each slider
+                    translates the % into euros: what the sector&apos;s hardest tranche costs to switch <em>without</em> vs{' '}
+                    <em>with</em> the package.
+                  </p>
                   <div className="space-y-3.5">
-                    <Slider label="Electricity-price reform" hint="Lowers electricity/gas running-cost ratio (Pillar 1)" value={a.reform} min={0} max={60} step={1} unit="€/t" std={28} onChange={(v) => set({ reform: v })} />
-                    <Slider label="Buildings measures" hint="Boiler phase-out, retrofit support, Social Climate Fund" value={a.strength.buildings} min={0} max={100} step={5} unit="%" std={65} onChange={(v) => setStrength('buildings', v)} />
-                    <Slider label="Transport measures" hint="Vehicle CO₂ standards, AFIR charging" value={a.strength.transport} min={0} max={100} step={5} unit="%" std={70} onChange={(v) => setStrength('transport', v)} />
-                    <Slider label="Industry measures" hint="CCfDs for electrified heat, fast grid connections" value={a.strength.industry} min={0} max={100} step={5} unit="%" std={55} onChange={(v) => setStrength('industry', v)} />
+                    <Slider label="Electricity-price reform" hint="Cheaper power vs gas (Pillar 1): shifts every tranche's switching cost down by this much" value={a.reform} min={0} max={60} step={1} unit="€/t" std={28} onChange={(v) => set({ reform: v })} />
+                    <Slider label="Buildings measures" hint="Boiler phase-out, retrofit support, Social Climate Fund" live={`hardest tranche: €${hardest('buildings').before} → €${hardest('buildings').after}/t with the package`} value={a.strength.buildings} min={0} max={100} step={5} unit="%" std={65} onChange={(v) => setStrength('buildings', v)} />
+                    <Slider label="Transport measures" hint="Vehicle CO₂ standards, AFIR charging build-out" live={`hardest tranche: €${hardest('transport').before} → €${hardest('transport').after}/t with the package`} value={a.strength.transport} min={0} max={100} step={5} unit="%" std={70} onChange={(v) => setStrength('transport', v)} />
+                    <Slider label="Industry measures" hint="CCfDs for electrified heat, fast grid connections" live={`hardest tranche: €${hardest('industry').before} → €${hardest('industry').after}/t with the package`} value={a.strength.industry} min={0} max={100} step={5} unit="%" std={55} onChange={(v) => setStrength('industry', v)} />
                   </div>
                 </div>
                 <div className="mt-1 flex gap-2">

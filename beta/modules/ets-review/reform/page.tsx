@@ -259,24 +259,28 @@ function RangeBars({ rows, max, unit }: { rows: { name: string; lo: number; hi: 
 }
 
 /* ---------------------------------------------------- legislative timeline (2026 → 2040) */
-interface TimelineItem { year: number; dateLabel: string; lines: string[]; color: string; kind: 'event' | 'review'; }
+interface TimelineItem {
+  year: number; dateLabel: string; lines: string[]; color: string; kind: 'event' | 'review';
+  side: 'up' | 'down';           // explicit label side (index-parity alternation collided for 2031/2033)
+  tier?: 1 | 2;                  // 2 = longer stem, second label band, for markers too close horizontally
+  anchor?: 'start' | 'middle' | 'end'; // edge markers anchor inward so labels stay inside the viewBox
+}
 const TIMELINE: TimelineItem[] = [
-  { year: 2026 + 198 / 365, dateLabel: '17 Jul 2026', lines: ['Proposal tabled,', 'trialogue begins'], color: C_NAVY, kind: 'event' },
-  { year: 2029, dateLabel: '2029', lines: ['Aviation scope starts', '(departing ≤5,000 km)'], color: CAT.scope.color, kind: 'event' },
-  { year: 2031, dateLabel: '2031', lines: ['Phase 5 starts —', 'LRF 3.7%, removals open'], color: CAT.ambition.color, kind: 'event' },
-  { year: 2032, dateLabel: '2032', lines: ['CORSIA review —', 'aviation scope may revert'], color: CAT.scope.color, kind: 'review' },
-  { year: 2033, dateLabel: '2033', lines: ['Credits review —', 'fail ⇒ LRF reverts 2.7%'], color: CAT.flex.color, kind: 'review' },
-  { year: 2036, dateLabel: '2036', lines: ['Credits window opens,', 'LRF steps to 1.7%'], color: CAT.flex.color, kind: 'event' },
-  { year: 2038, dateLabel: '2038', lines: ['CBAM free-allocation', 'phase-out ends'], color: CAT.industry.color, kind: 'event' },
-  { year: 2040, dateLabel: '2040', lines: ['Endpoint: −90% net /', '85% domestic, cap ≈330 Mt'], color: CAT.ambition.color, kind: 'event' },
+  { year: 2026 + 198 / 365, dateLabel: '17 Jul 2026', lines: ['Proposal tabled,', 'trialogue begins'], color: C_NAVY, kind: 'event', side: 'up' },
+  { year: 2029, dateLabel: '2029', lines: ['Aviation scope starts', '(departing ≤5,000 km)'], color: CAT.scope.color, kind: 'event', side: 'down' },
+  { year: 2031, dateLabel: '2031', lines: ['Phase 5 starts —', 'LRF 3.7%, removals open'], color: CAT.ambition.color, kind: 'event', side: 'up' },
+  { year: 2032, dateLabel: '2032', lines: ['CORSIA review —', 'aviation scope may revert'], color: CAT.scope.color, kind: 'review', side: 'down' },
+  { year: 2033, dateLabel: '2033', lines: ['Credits review —', 'fail ⇒ LRF reverts 2.7%'], color: CAT.flex.color, kind: 'review', side: 'up', tier: 2 },
+  { year: 2036, dateLabel: '2036', lines: ['Credits window opens,', 'LRF steps to 1.7%'], color: CAT.flex.color, kind: 'event', side: 'down' },
+  { year: 2038, dateLabel: '2038', lines: ['CBAM free-allocation', 'phase-out ends'], color: CAT.industry.color, kind: 'event', side: 'up' },
+  { year: 2040, dateLabel: '2040', lines: ['Endpoint: −90% net /', '85% domestic, cap ≈330 Mt'], color: CAT.ambition.color, kind: 'event', side: 'down', anchor: 'end' },
 ];
 function TimelineChart() {
-  const W = 780, H = 250, M = { l: 30, r: 30 };
+  const W = 780, H = 270, M = { l: 30, r: 30 };
   const PX = W - M.l - M.r;
   const axisY = H / 2;
   const minY = 2026, maxY = 2040;
   const x = (yr: number) => M.l + ((yr - minY) / (maxY - minY)) * PX;
-  const stemLen = 36;
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Legislative timeline of the ETS reform, 2026 to 2040, with scheduled milestones and review points">
       <line x1={M.l} y1={axisY} x2={W - M.r} y2={axisY} stroke={GRID} strokeWidth={2} />
@@ -284,10 +288,12 @@ function TimelineChart() {
         <line key={yr} x1={x(yr)} y1={axisY - 3} x2={x(yr)} y2={axisY + 3} stroke="#c9d6d5" />
       ))}
       {TIMELINE.map((t, i) => {
-        const above = i % 2 === 0;
+        const above = t.side === 'up';
         const cx = x(t.year);
-        const tipY = above ? axisY - stemLen : axisY + stemLen;
-        const dateY = above ? axisY - stemLen - 26 : axisY + stemLen + 14;
+        const stem = t.tier === 2 ? 70 : 36;
+        const tipY = above ? axisY - stem : axisY + stem;
+        const dateY = above ? tipY - 26 : tipY + 14;
+        const anchor = t.anchor ?? 'middle';
         return (
           <g key={t.dateLabel + i}>
             <title>{`${t.dateLabel} — ${t.lines.join(' ')}`}</title>
@@ -297,9 +303,9 @@ function TimelineChart() {
             ) : (
               <circle cx={cx} cy={axisY} r={4.5} fill={t.color} stroke="#fff" strokeWidth={1.25} />
             )}
-            <text x={cx} y={dateY} textAnchor="middle" fontSize={9.5} fontWeight={700} fill={t.color} className="tabular-nums">{t.dateLabel}</text>
+            <text x={cx} y={dateY} textAnchor={anchor} fontSize={9.5} fontWeight={700} fill={t.color} className="tabular-nums">{t.dateLabel}</text>
             {t.lines.map((ln, li) => (
-              <text key={li} x={cx} y={dateY + 11 * (li + 1)} textAnchor="middle" fontSize={9} fill={INK}>{ln}</text>
+              <text key={li} x={cx} y={dateY + 11 * (li + 1)} textAnchor={anchor} fontSize={9} fill={INK}>{ln}</text>
             ))}
           </g>
         );
@@ -638,6 +644,13 @@ export default function EtsReformPage() {
           </p>
           <Card>
             <TimelineChart />
+            <p className="mt-2 rounded-md bg-surface-blue px-3 py-2 text-[11px] leading-relaxed text-tertiary">
+              <strong className="text-tertiary-dark">Not on the timeline — maritime.</strong> The maritime changes (scope
+              extension toward smaller vessels of ~400–5,000 GT, the ≈46 M-EUA SMAP clean-fuel mechanism, anti-evasion
+              safeguards) carry <strong>no confirmed start year</strong> in the communication as transcribed here — the 2029
+              and 2032 aviation dates do not apply to shipping. Start dates are expected to be fixed in trialogue; verify
+              against the final Directive text before citing.
+            </p>
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 px-1 text-[11px] text-tertiary">
               <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: INK }} />Scheduled milestone</span>
               <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rotate-45 border-2" style={{ borderColor: INK, background: '#fff' }} />Review / decision point</span>
