@@ -98,7 +98,6 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         id: 'member-states',
         kind: 'member-states',
         name: 'Member state space',
-        beta: true,
         description:
           'EEA-style profile for each EU-27 member state: choropleth ' +
           'map, indicator heatmap and full per-country detail page ' +
@@ -108,7 +107,6 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         id: 'recommendations',
         kind: 'recommendations',
         name: 'Past recommendations tracker',
-        beta: true,
         description:
           'Recommendations from every ESABCC report, with status and dated ' +
           'uptake events.',
@@ -117,7 +115,6 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         id: 'literature-watch',
         kind: 'literature-watch',
         name: 'Literature watch',
-        beta: true,
         description:
           'New peer-reviewed publications from the relevant journals, ' +
           'screened every morning and matched to this project. Read the ' +
@@ -194,7 +191,6 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         id: 'literature-watch',
         kind: 'literature-watch',
         name: 'Literature watch',
-        beta: true,
         description:
           'New peer-reviewed publications on industrial decarbonisation — ' +
           'steel, cement, hydrogen, CBAM, CCS/CCU — screened every morning ' +
