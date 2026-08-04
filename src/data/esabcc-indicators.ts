@@ -398,12 +398,25 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     unit: 'Gpkm',
     description:
       'ESABCC progress indicator T3b. Intra-EU passenger-kilometres travelled by air; Fit-for-55 MIX 2030 plus 1.5LIFE/TECH 2050 benchmarks.',
-    source: 'European Commission, DG MOVE — EU transport in figures: statistical pocketbook',
-    sourceUrl: 'https://transport.ec.europa.eu/facts-funding/studies-data/eu-transport-figures-statistical-pocketbook_en',
+    source:
+      'European Commission, DG MOVE — EU transport in figures: statistical pocketbook (2025 edition, published to 2023); 2024-2025 extended with Eurostat avia_paoc',
+    sourceUrl: 'https://transport.ec.europa.eu/facts-funding/studies-data/eu-transport-figures-statistical-pocketbook/statistical-pocketbook-2025_en',
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 361.3 }, { year: 2006, value: 376.4 }, { year: 2007, value: 392.2 }, { year: 2008, value: 383.8 }, { year: 2009, value: 361.8 }, { year: 2010, value: 377.3 }, { year: 2011, value: 408.5 }, { year: 2012, value: 402.1 }, { year: 2013, value: 406 }, { year: 2014, value: 425.6 }, { year: 2015, value: 451.8 }, { year: 2016, value: 492.6 }, { year: 2017, value: 538.4 }, { year: 2018, value: 571.8 }, { year: 2019, value: 585.5 }, { year: 2020, value: 177.9 }, { year: 2022, value: 512, afterReport: true }, { year: 2023, value: 582, afterReport: true }, { year: 2024, value: 625.9, afterReport: true }, { year: 2025, value: 637.8, afterReport: true }],
+    // 2021-2023 are re-pulled from the Pocketbook 2025 workbook itself
+    // (Part 2 Section 3, sheet `modal_split` = table 2.3.2, "Air" row) rather
+    // than spliced from the EEA republication: that added 2022/2023 but left
+    // 2021 missing, so the chart jumped straight from the 2020 COVID trough to
+    // 2022 and the recovery year was invisible. 2022 also moves 512 → 511.1
+    // (EEA's rounded republication → the Pocketbook's own figure), so 2021-2023
+    // now sit on one vintage.
+    // 2024/2025 are not DG MOVE figures — the pocketbook's passenger-kilometre
+    // series ends at 2023. They are extended from the stored 2023 point with
+    // the Eurostat avia_paoc intra-EU passenger-count recipe (spliceFrom), which
+    // tracks the pocketbook's Gpkm growth closely on the overlap: passengers
+    // +14.7% over 2022→2023 against +13.7% for Gpkm.
+    data: [{ year: 2005, value: 361.3 }, { year: 2006, value: 376.4 }, { year: 2007, value: 392.2 }, { year: 2008, value: 383.8 }, { year: 2009, value: 361.8 }, { year: 2010, value: 377.3 }, { year: 2011, value: 408.5 }, { year: 2012, value: 402.1 }, { year: 2013, value: 406 }, { year: 2014, value: 425.6 }, { year: 2015, value: 451.8 }, { year: 2016, value: 492.6 }, { year: 2017, value: 538.4 }, { year: 2018, value: 571.8 }, { year: 2019, value: 585.5 }, { year: 2020, value: 177.9 }, { year: 2021, value: 270.1, afterReport: true }, { year: 2022, value: 511.1, afterReport: true }, { year: 2023, value: 582, afterReport: true }, { year: 2024, value: 625.9, afterReport: true }, { year: 2025, value: 637.8, afterReport: true }],
   },
   {
     id: 'esabcc-t4-car-co2-intensity',

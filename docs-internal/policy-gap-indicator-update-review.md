@@ -128,7 +128,7 @@ published.
 | F5 cleantech investment | 2023 = 0.0007, 2024 = 0.0005, 2025 = 0.0004 (fraction of GDP) | Cleantech for Europe annual briefings: €11.6 bn (2023), €8.7–8.8 bn (2024), €8.2 bn (2025) ÷ Eurostat EU-27 nominal GDP (≈ €17.1 / 17.9 / 18.3 tn) | medium (GDP denominator approximated; series stores 1-significant-digit fractions) |
 | T2a passenger demand | 2022 ≈ 5 617, 2023 = 5 932 Gpkm | EEA "Sustainability of Europe's mobility systems" 2024/2025 editions (republishing the Statistical Pocketbook; excl. extra-EU aviation) | high, but see the revision caveat below |
 | T2b freight demand | 2023 ≈ 2 319 Gtkm | Sum of same-vintage EEA 2025-edition components (road 1 807 + rail ~396 + IWW ~116); 2021/2022 deliberately skipped — their published components mix data vintages | medium (computed sum, single vintage) |
-| T3b intra-EU air | 2022 = 512, 2023 = 582 Gpkm | EEA mobility systems 2024/2025 editions | high |
+| T3b intra-EU air | 2022 = 512, 2023 = 582 Gpkm | EEA mobility systems 2024/2025 editions | high — *superseded, see §6* |
 | T4 new-car CO₂ | 2024 = 106.8, 2025 = 96.7 g CO₂/km | EEA new-car CO₂ monitoring press releases (2024 provisional +0.4 vs 2023 confirms the EU-27 basis; 2025 provisional covers EU+NO+IS — verify EU-27-only when the dataset lands) | 2024 high / 2025 medium-high |
 | T5a ZEV share of new cars | 2025 = 17.4 % | ACEA full-year 2025 registrations (BEV; FCEV volumes are negligible at one decimal); ACEA's 13.6 % for 2024 matches the series | high |
 
@@ -173,3 +173,43 @@ Deliberately **not** added, with reasons:
    works for report-coded indicators.
 4. Regenerate/audit `combined_migrations.sql` on every migration-adding PR —
   066–074 were missing for weeks without anything catching it.
+
+## 6. Follow-up (July 2026): T3b re-pulled from the Pocketbook itself
+
+The caveat closing §4 — *"when network access to transport.ec.europa.eu is
+available, re-pull the full series from the Pocketbook 2025 Excel files instead
+of splicing editions"* — has now been done for **T3b (intra-EU air passenger
+transport)**. Migration `082_t3b_pocketbook_2025_vintage.sql`.
+
+The splice was not just imprecise, it left a hole: the EEA republication quotes
+2022 and 2023 but not 2021, so the plotted line ran 2020 → 2022 and the recovery
+year was simply absent from the chart.
+
+Primary source: DG MOVE, *EU transport in figures: statistical pocketbook 2025*,
+Part 2 Section 3 (`pb2025-section23.xlsx`), sheet `modal_split` = table 2.3.2,
+"Air" row — EU-27 domestic + intra-EU passenger-kilometres, the same row the
+report's Figure 38 uses.
+
+| Year | Was | Now | Note |
+|---|---|---|---|
+| 2021 | *(missing)* | 270.1 | the gap in the chart |
+| 2022 | 512 | 511.1 | EEA's rounded republication → the pocketbook's own figure |
+| 2023 | 582 | 582.0 | unchanged, already matched |
+
+Report years (2005–2020) are deliberately left on the Pocketbook 2022 vintage
+the ESABCC report used. The 2025 edition revised them down (2019: 585.5 → 575.4;
+2020: 177.9 → 175.8), so there is a ~1 % step at the 2020/2021 joint; it is the
+publisher's back-revision, and it is now stated in the indicator's calc sheet.
+
+**No 2024/2025 point exists to add.** EU air passenger-kilometres are a DG MOVE
+estimate published only in this pocketbook, and the 2025 edition (the newest;
+no 2026 edition is out) ends at 2023 — as does the EEA's *Sustainability of
+Europe's mobility systems 2025* (published Feb 2026), which republishes it.
+Eurostat's own aviation tables (`avia_paoc` and siblings) do run into 2025, but
+they carry passengers and flights, never passenger-kilometres, and `tran_hv_psmod`
+is inland-only. The indicator's source label now names the edition and its latest
+data year, so a chart ending at 2023 reads as the source's own limit.
+
+**Still outstanding on the same source:** T2a (2021 missing; pocketbook total
+2021 = 4 940.3 Gpkm) and T2b (2021, 2022 missing) have the identical splice gap
+and can now be repaired the same way from `pb2025-section22/23.xlsx`.
