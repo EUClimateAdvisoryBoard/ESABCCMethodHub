@@ -1,24 +1,24 @@
 {
   "date": "2026-08-04",
-  "generatedAt": "2026-08-04T07:44:01.349Z",
+  "generatedAt": "2026-08-04T13:06:50.456Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 4 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Egypt seeks to unlock renewable potential to power regional clean energy hub",
-      "summary": "Europe is investing in Egypt’s bid to position itself as a clean electricity exporter to reduce its emissions and generate a new source of income The post Egypt seeks to unlock renewable potential to power regional clean energy hub appeared first on Climate Home News.",
+      "headline": "Commission opens in-depth State aid investigation into arbitration award ordering Spain to pay compensation to JGC Holdings Corporation",
+      "summary": "European Commission Press release Brussels, 04 Aug 2026 The European Commission has opened an in-depth investigation to assess whether an arbitration award ordering Spain to pay compensation to JGC Holdings Corporation (‘JGC') for changes to a renewable electricity support measure is in line with EU State aid rules.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Leading scientists gather in India for final meeting to work on the Special Report on Climate Change and Cities",
-      "summary": "BHOPAL, Aug 3 &#8211; More than 100 leading scientists from 56 countries are meeting in Bhopal, India, from 3 to 7 August 2026 for the Fourth Lead Author Meeting of the Intergovernmental Panel on Climate Change (IPCC) Special Report on Climate Change and Cities. This meeting is hosted by the Indian Institute of Forest Management [&#8230;]",
+      "headline": "Governments weigh response to US going alone on deep-sea mining",
+      "summary": "At annual talks in Kingston, the International Seabed Authority (ISA) launched legal processes to challenge a unilateral US push for deep-sea mining The post Governments weigh response to US going alone on deep-sea mining appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Mali says mining-backed fund could unlock up to $800 million for infrastructure projects - reuters.com",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSVMxZFFEamJoenlua3BNY2NPdE51Y0lUYjVMZkljckFqaVZmQm9YbEpkc3lyZDFvaEVGUEIzLURsWkpSemZ4OF9rVWVnOGRMaXVPR3pVcHJncWRlck0zNjRVaFVQWWpWcGxCZWpsSW5Uay1BdkMxRllIN0dmRDhLRjh3cllZZ1RrRm5aYmFUdGw2Z05qV0ZURDR2ekFOeWJWbFg0MTYwWGMtRFVuQjl0VTVrc0x4WEpSN1FiakY5WGhqWHRpRTBGWQ?oc=5\" target=\"_blank\"&gt;Mali says mining-backed fund could unlock up to $800 million for infrastructure projects&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reute",
+      "headline": "Jio-BlackRock enters India's ETF market with Nifty 50 fund - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUHhwSUw1TkU4WmdTbkhDdEo3WE1qLW9iNWw2ZllOeXBJV0stOXBNM1VOcVBXX0lnMjhLeEZMcW9ERlI3OXBsTlhYbXRkZTViSXNRYlhCTXFEdmplZk1rWVpvc09lbkpjRmZqbmkzWmwyaXpzcldWblg2WDZqWHF4T3FxS2Rsc0hEdTFGcDFITUUtQTlCN1BfM3pJMjZMaWVFbF9HZ2NJQlg?oc=5\" target=\"_blank\"&gt;Jio-BlackRock enters India's ETF market with Nifty 50 fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,20 +34,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Egypt seeks to unlock renewable potential to power regional clean energy hub",
-          "link": "https://www.climatechangenews.com/2026/08/03/egypt-seeks-to-unlock-renewable-riches-to-power-regional-clean-energy-hub/",
-          "source": "Climate Home News",
-          "description": "Europe is investing in Egypt’s bid to position itself as a clean electricity exporter to reduce its emissions and generate a new source of income The post Egypt seeks to unlock renewable potential to power regional clean energy hub appeared first on Climate Home News.",
-          "published": "2026-08-03T10:14:16.000Z",
-          "score": 15
-        },
-        {
-          "title": "Q&#038;A: Does the world need ‘carbon capture and storage’ to reach net-zero?",
-          "link": "https://www.carbonbrief.org/qa-does-the-world-need-carbon-capture-and-storage-to-reach-net-zero",
-          "source": "Carbon Brief",
-          "description": "When carbon dioxide (CO2) is released from a factory or power plant, the gas can be captured and permanently stored&#8230; The post Q&amp;A: Does the world need ‘carbon capture and storage’ to reach net-zero? appeared first on Carbon Brief.",
-          "published": "2026-08-03T13:05:33.000Z",
-          "score": 13
+          "title": "Commission opens in-depth State aid investigation into arbitration award ordering Spain to pay compensation to JGC Holdings Corporation",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1719",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 04 Aug 2026 The European Commission has opened an in-depth investigation to assess whether an arbitration award ordering Spain to pay compensation to JGC Holdings Corporation (‘JGC') for changes to a renewable electricity support measure is in line with EU State aid rules.",
+          "published": "2026-08-04T08:02:27.000Z",
+          "score": 20
         },
         {
           "title": "Rhine falls to record low levels as drought strains Europe's rivers",
@@ -66,6 +58,14 @@
           "score": 7
         },
         {
+          "title": "Where to see the biggest solar eclipse since 1999",
+          "link": "https://www.bbc.co.uk/news/articles/cjrvn0wez48o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The UK's biggest solar eclipse since 1999 arrives on 12 August. Here's where to see it safely.",
+          "published": "2026-08-04T12:19:55.000Z",
+          "score": 7
+        },
+        {
           "title": "Cuba: Further blackouts disrupt energy restoration attempts",
           "link": "https://www.dw.com/en/cuba-further-blackouts-disrupt-energy-restoration-attempts/a-78224862?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -80,12 +80,28 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Leading scientists gather in India for final meeting to work on the Special Report on Climate Change and Cities",
-          "link": "https://www.ipcc.ch/2026/08/03/srcities-lam4/",
-          "source": "IPCC",
-          "description": "BHOPAL, Aug 3 &#8211; More than 100 leading scientists from 56 countries are meeting in Bhopal, India, from 3 to 7 August 2026 for the Fourth Lead Author Meeting of the Intergovernmental Panel on Climate Change (IPCC) Special Report on Climate Change and Cities. This meeting is hosted by the Indian Institute of Forest Management [&#8230;]",
-          "published": "2026-08-03T10:59:02.000Z",
-          "score": 11
+          "title": "Governments weigh response to US going alone on deep-sea mining",
+          "link": "https://www.climatechangenews.com/2026/08/04/governments-weigh-response-to-us-going-alone-on-deep-sea-mining/",
+          "source": "Climate Home News",
+          "description": "At annual talks in Kingston, the International Seabed Authority (ISA) launched legal processes to challenge a unilateral US push for deep-sea mining The post Governments weigh response to US going alone on deep-sea mining appeared first on Climate Home News.",
+          "published": "2026-08-04T12:21:06.000Z",
+          "score": 10
+        },
+        {
+          "title": "Spain says 70,000 out of 72,000 migrants that entered Ceuta in mass border crossing have returned to Morocco – Europe live",
+          "link": "https://www.theguardian.com/world/live/2026/aug/04/europe-drought-extreme-heat-wildfires-climate-crisis-hungary-romania-ceuta-spain-migration-eu-latest-news-updates",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Minister tells reporters least 75 people died after EU ministers meet to discuss response to the crisis&lt;/p&gt;&lt;p&gt;Meanwhile, &lt;strong&gt;the European Commission said it was “monitoring very closely” the situation in Bulgaria, Hungary and Romania as the region faces an energy crunch caused by the ongoing heatwave and drought.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Energy spokesperson &lt;strong&gt;Anna-Kaisa Itkonen&lt;/strong&gt; said “the low Danube levels will clearly have an impa",
+          "published": "2026-08-04T12:47:54.000Z",
+          "score": 10
+        },
+        {
+          "title": "We launched a war on nature. Now we are in a climate warzone | Rebecca Solnit",
+          "link": "https://www.theguardian.com/commentisfree/2026/aug/04/summer-heat-climate-war-zone",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Summer is not what it once was. We have been robbed of one of life’s great joys &lt;/p&gt;&lt;p&gt;Far beyond the fires raging across Europe and North America, the smoke, dangerous to breathe, hangs in the air, dimming the view, changing the very color of sunlight into something grimly unsettling.&lt;/p&gt;&lt;p&gt;An estimated 20,000 are said to have died in the extreme heat in Europe earlier this year, and heat is climate change’s quiet killer, compared to the dramatic violence of dea",
+          "published": "2026-08-04T10:00:47.000Z",
+          "score": 9
         },
         {
           "title": "Tuesday briefing: Inside the right’s heated climate-denial debate",
@@ -102,22 +118,6 @@
           "description": "BBC Verify has matched videos posted online in the aftermath with images of the same streets before the fires to assess the damage in Washington state.",
           "published": "2026-08-03T21:23:42.000Z",
           "score": 7
-        },
-        {
-          "title": "July was driest month in southern England since records began",
-          "link": "https://www.theguardian.com/environment/2026/aug/03/july-driest-month-southern-england-since-records-began",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;England and Wales provisionally record driest July in nearly 200 years, Met Office says&lt;/p&gt;&lt;p&gt;July 2026 was the driest month in southern England since records began nearly 200 years ago, the Met Office has said.&lt;/p&gt;&lt;p&gt;England and Wales also provisionally recorded their driest July since records began in 1836. Wales had its joint warmest July on record for mean temperature, and England recorded its second warmest July.&lt;/p&gt; &lt;a href=\"https://www.theguardian",
-          "published": "2026-08-03T15:44:20.000Z",
-          "score": 2
-        },
-        {
-          "title": "Rebecca Hendin on Britain’s air con debate – cartoon",
-          "link": "https://www.theguardian.com/commentisfree/picture/2026/aug/03/rebecca-hendin-on-britains-air-con-debate-cartoon",
-          "source": "The Guardian - Climate",
-          "description": "&lt;a href=\"https://www.theguardian.com/commentisfree/picture/2026/aug/03/rebecca-hendin-on-britains-air-con-debate-cartoon\"&gt;Continue reading...&lt;/a&gt;",
-          "published": "2026-08-03T17:04:29.000Z",
-          "score": 2
         }
       ]
     },
@@ -126,11 +126,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Mali says mining-backed fund could unlock up to $800 million for infrastructure projects - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSVMxZFFEamJoenlua3BNY2NPdE51Y0lUYjVMZkljckFqaVZmQm9YbEpkc3lyZDFvaEVGUEIzLURsWkpSemZ4OF9rVWVnOGRMaXVPR3pVcHJncWRlck0zNjRVaFVQWWpWcGxCZWpsSW5Uay1BdkMxRllIN0dmRDhLRjh3cllZZ1RrRm5aYmFUdGw2Z05qV0ZURDR2ekFOeWJWbFg0MTYwWGMtRFVuQjl0VTVrc0x4WEpSN1FiakY5WGhqWHRpRTBGWQ?oc=5",
+          "title": "Jio-BlackRock enters India's ETF market with Nifty 50 fund - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUHhwSUw1TkU4WmdTbkhDdEo3WE1qLW9iNWw2ZllOeXBJV0stOXBNM1VOcVBXX0lnMjhLeEZMcW9ERlI3OXBsTlhYbXRkZTViSXNRYlhCTXFEdmplZk1rWVpvc09lbkpjRmZqbmkzWmwyaXpzcldWblg2WDZqWHF4T3FxS2Rsc0hEdTFGcDFITUUtQTlCN1BfM3pJMjZMaWVFbF9HZ2NJQlg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSVMxZFFEamJoenlua3BNY2NPdE51Y0lUYjVMZkljckFqaVZmQm9YbEpkc3lyZDFvaEVGUEIzLURsWkpSemZ4OF9rVWVnOGRMaXVPR3pVcHJncWRlck0zNjRVaFVQWWpWcGxCZWpsSW5Uay1BdkMxRllIN0dmRDhLRjh3cllZZ1RrRm5aYmFUdGw2Z05qV0ZURDR2ekFOeWJWbFg0MTYwWGMtRFVuQjl0VTVrc0x4WEpSN1FiakY5WGhqWHRpRTBGWQ?oc=5\" target=\"_blank\"&gt;Mali says mining-backed fund could unlock up to $800 million for infrastructure projects&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reute",
-          "published": "2026-08-03T11:23:01.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUHhwSUw1TkU4WmdTbkhDdEo3WE1qLW9iNWw2ZllOeXBJV0stOXBNM1VOcVBXX0lnMjhLeEZMcW9ERlI3OXBsTlhYbXRkZTViSXNRYlhCTXFEdmplZk1rWVpvc09lbkpjRmZqbmkzWmwyaXpzcldWblg2WDZqWHF4T3FxS2Rsc0hEdTFGcDFITUUtQTlCN1BfM3pJMjZMaWVFbF9HZ2NJQlg?oc=5\" target=\"_blank\"&gt;Jio-BlackRock enters India's ETF market with Nifty 50 fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-04T07:32:09.000Z",
           "score": 2
         }
       ]
@@ -148,11 +148,19 @@
           "score": 8
         },
         {
-          "title": "EU can give Morocco more border support, von der Leyen tells Spain after Ceuta spat - reuters.com",
+          "title": "EU can give Morocco more border support, von der Leyen tells Spain after Ceuta spat - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNC1XNmpUMjU2RUMyZE04eEY4VFp0eU5YUUZ0bDdLTExPR3BPT3ExOFpmSmVaOHdzQjVmNllkalBHMVlVVHB4LWZGWFM5S3hkeElyMXhWN05aczJKMjI1SUdQakt1dmFjYXVTZTkteVRmTXVQVDFjeTNNQWY0T0lQVFB3TC1EMEFHcGx2NDVHSjJva0t3ZzhsTC1pWThVUFBNejNLYUNGX0pfR0lsZFBFQllldWdfeDNDTi1zWHpZTTJsRDFKRHhwcQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNC1XNmpUMjU2RUMyZE04eEY4VFp0eU5YUUZ0bDdLTExPR3BPT3ExOFpmSmVaOHdzQjVmNllkalBHMVlVVHB4LWZGWFM5S3hkeElyMXhWN05aczJKMjI1SUdQakt1dmFjYXVTZTkteVRmTXVQVDFjeTNNQWY0T0lQVFB3TC1EMEFHcGx2NDVHSjJva0t3ZzhsTC1pWThVUFBNejNLYUNGX0pfR0lsZFBFQllldWdfeDNDTi1zWHpZTTJsRDFKRHhwcQ?oc=5\" target=\"_blank\"&gt;EU can give Morocco more border support, von der Leyen tells Spain after Ceuta spat&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.co",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNC1XNmpUMjU2RUMyZE04eEY4VFp0eU5YUUZ0bDdLTExPR3BPT3ExOFpmSmVaOHdzQjVmNllkalBHMVlVVHB4LWZGWFM5S3hkeElyMXhWN05aczJKMjI1SUdQakt1dmFjYXVTZTkteVRmTXVQVDFjeTNNQWY0T0lQVFB3TC1EMEFHcGx2NDVHSjJva0t3ZzhsTC1pWThVUFBNejNLYUNGX0pfR0lsZFBFQllldWdfeDNDTi1zWHpZTTJsRDFKRHhwcQ?oc=5\" target=\"_blank\"&gt;EU can give Morocco more border support, von der Leyen tells Spain after Ceuta spat&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt",
           "published": "2026-08-03T21:38:36.000Z",
+          "score": 8
+        },
+        {
+          "title": "As Europe migration debate rages, Bologna businessman's death highlights human cost - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPWkFnVDBvZGt1WV94d2c3bzl6dDJQUmhPSU03Y3ctekw0eEVROHV0MnFCUEd0aWRnTlpGNEVudkI3alFpZXhBejlqLUNHTGlJcUw2YlRHVHJKaFdQdmFtaG5QQW8wNnhKM1Z3YmgtV0FHOHROSVdYeHR5S1MxY1lWeGpUb3VDWXFkSWN1V3kwZ0J5ck52cG5DSzM5TlJ5b09LT19aTkp6bnFNeWlWT3poQk9xUnA0X2U5WGUyVXI3TDQ5RHBlUUE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPWkFnVDBvZGt1WV94d2c3bzl6dDJQUmhPSU03Y3ctekw0eEVROHV0MnFCUEd0aWRnTlpGNEVudkI3alFpZXhBejlqLUNHTGlJcUw2YlRHVHJKaFdQdmFtaG5QQW8wNnhKM1Z3YmgtV0FHOHROSVdYeHR5S1MxY1lWeGpUb3VDWXFkSWN1V3kwZ0J5ck52cG5DSzM5TlJ5b09LT19aTkp6bnFNeWlWT3poQk9xUnA0X2U5WGUyVXI3TDQ5RHBlUUE?oc=5\" target=\"_blank\"&gt;As Europe migration debate rages, Bologna businessman's death highlights human cost&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
+          "published": "2026-08-04T05:02:00.000Z",
           "score": 8
         }
       ]
@@ -170,44 +178,44 @@
           "score": 8
         },
         {
-          "title": "Denmark targets August 21 for second Security Council UN chief poll - reuters.com",
+          "title": "Denmark targets August 21 for second Security Council UN chief poll - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNLWotN25lQnFTRkRwWnRoMnlDeEhsWnE2TGpVNDJPdTVrRVoxbzdERnlsZlRCc1NUYkVjZU5aLWphcW9UTjFJTTFNZGg3WVRDeUVIUlNPMnB5ak1oTi1fdWEtV3IwdmxCQmdIOENnZG9Ub0VVZ2pVdnJvbE9kbkZtZWJ2QXJFdXV0dGttWUYzYWpJdk5yZUdtS0dhRlRxdEp4dktuOTc0R0xsWFYyUU95QldfS2Y?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNLWotN25lQnFTRkRwWnRoMnlDeEhsWnE2TGpVNDJPdTVrRVoxbzdERnlsZlRCc1NUYkVjZU5aLWphcW9UTjFJTTFNZGg3WVRDeUVIUlNPMnB5ak1oTi1fdWEtV3IwdmxCQmdIOENnZG9Ub0VVZ2pVdnJvbE9kbkZtZWJ2QXJFdXV0dGttWUYzYWpJdk5yZUdtS0dhRlRxdEp4dktuOTc0R0xsWFYyUU95QldfS2Y?oc=5\" target=\"_blank\"&gt;Denmark targets August 21 for second Security Council UN chief poll&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNLWotN25lQnFTRkRwWnRoMnlDeEhsWnE2TGpVNDJPdTVrRVoxbzdERnlsZlRCc1NUYkVjZU5aLWphcW9UTjFJTTFNZGg3WVRDeUVIUlNPMnB5ak1oTi1fdWEtV3IwdmxCQmdIOENnZG9Ub0VVZ2pVdnJvbE9kbkZtZWJ2QXJFdXV0dGttWUYzYWpJdk5yZUdtS0dhRlRxdEp4dktuOTc0R0xsWFYyUU95QldfS2Y?oc=5\" target=\"_blank\"&gt;Denmark targets August 21 for second Security Council UN chief poll&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-03T20:02:28.000Z",
           "score": 8
         },
         {
-          "title": "Euro zone factory output near 4 1/2-year high in July but demand still weak, PMI shows - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPSWh6RGxabHZsWkJKOEFqN1ljbUduSWxkOW5LVG05bnJBVEdnd3Jodno1Zlh2Yy1seXV3YVJFSzA3UWdvZlFuZ1RBTVVWeUZTRmc5TDJPSmRlX3ltNFBJSzNzZXdWOFFoN3VHdTNmUDRLOHo5NHYweE5qZDhFbnUtUTkzV1N6S0VNV0o5bVoxQjlxTGVZaEdOSmt5YW4teUhhVkh1ZExzMEZrRi1BQ2sxdlVBRC1zS0xCVUZ2YUxvUFRjeVBH?oc=5",
+          "title": "Italy to ask for EU-funded migrant centres at emergency EU talks on Ceuta - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUUFqeFNGMy1BTG8zemhjYUxxeWVuaGZZdjBQM3k1cW0xRzk3Tm1JckFLVDh5MDBBbkF6a2stVGY1cGRQZklvc0lCaWljbUFHOGV3bDhhbGlESU9mS2tCUEJjLUg5SklnLVpmYVk3WTFvV09BendxYUc4XzJLYmJuc0FGOFg2cjNmeGNvTi1iQUtLenBQbkU5YmZVd3V6TkxlaHc3RQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPSWh6RGxabHZsWkJKOEFqN1ljbUduSWxkOW5LVG05bnJBVEdnd3Jodno1Zlh2Yy1seXV3YVJFSzA3UWdvZlFuZ1RBTVVWeUZTRmc5TDJPSmRlX3ltNFBJSzNzZXdWOFFoN3VHdTNmUDRLOHo5NHYweE5qZDhFbnUtUTkzV1N6S0VNV0o5bVoxQjlxTGVZaEdOSmt5YW4teUhhVkh1ZExzMEZrRi1BQ2sxdlVBRC1zS0xCVUZ2YUxvUFRjeVBH?oc=5\" target=\"_blank\"&gt;Euro zone factory output near 4 1/2-year high in July but demand still weak, PMI shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&l",
-          "published": "2026-08-03T08:37:34.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOUUFqeFNGMy1BTG8zemhjYUxxeWVuaGZZdjBQM3k1cW0xRzk3Tm1JckFLVDh5MDBBbkF6a2stVGY1cGRQZklvc0lCaWljbUFHOGV3bDhhbGlESU9mS2tCUEJjLUg5SklnLVpmYVk3WTFvV09BendxYUc4XzJLYmJuc0FGOFg2cjNmeGNvTi1iQUtLenBQbkU5YmZVd3V6TkxlaHc3RQ?oc=5\" target=\"_blank\"&gt;Italy to ask for EU-funded migrant centres at emergency EU talks on Ceuta&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-04T11:05:26.000Z",
           "score": 8
         },
         {
-          "title": "Australia household spending posts solid June gain as EV sales jump - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWmFiV1FrMXpIdW5QRGN2UmFUVDlINGFiMEs1MHIyTjEyUm9JVG9PemluTlJjaUptWndXM3pXNE1takpKRWd6aHBJYm5JNHV4dkZnSW9jYXdCWmduMmg4Y01XRjFISk84aXhPckpUTnhTTzZpaXlrWDRTTWlET01nc00wT0Z3bExZOUxfMnFuYmxqSkxtbU1XdGFIeG00UFJOV3JURmswVUw5cDd2Ymp5a2JzWnBSTExTa3Rz?oc=5",
+          "title": "Europe's shrinking rivers curb power output, transport and company earnings - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNUkU4R0ZEVWd5enVhT0hmUzRjb3lkc1N3M1d4Xy1NczJqN2xpc1F6cVhvZ0tva1lLMUc0dGlrM2JnZWhfRWt0ek9CX1lJTnVldEhRYXgtTnhnR254enZIbFIwdFQ3Tl8tZDdidHozQk9oeld5UXVSRmJoZnVFS3ZOUFBDdEU5S3M2VEpESklZSHRzMmZQbDctZ09QMFFtRHNhaTV0cFBtbDB1ZzVWNm9ZM000X1ZWMUh1T1gxVGhn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWmFiV1FrMXpIdW5QRGN2UmFUVDlINGFiMEs1MHIyTjEyUm9JVG9PemluTlJjaUptWndXM3pXNE1takpKRWd6aHBJYm5JNHV4dkZnSW9jYXdCWmduMmg4Y01XRjFISk84aXhPckpUTnhTTzZpaXlrWDRTTWlET01nc00wT0Z3bExZOUxfMnFuYmxqSkxtbU1XdGFIeG00UFJOV3JURmswVUw5cDd2Ymp5a2JzWnBSTExTa3Rz?oc=5\" target=\"_blank\"&gt;Australia household spending posts solid June gain as EV sales jump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-08-04T02:34:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNUkU4R0ZEVWd5enVhT0hmUzRjb3lkc1N3M1d4Xy1NczJqN2xpc1F6cVhvZ0tva1lLMUc0dGlrM2JnZWhfRWt0ek9CX1lJTnVldEhRYXgtTnhnR254enZIbFIwdFQ3Tl8tZDdidHozQk9oeld5UXVSRmJoZnVFS3ZOUFBDdEU5S3M2VEpESklZSHRzMmZQbDctZ09QMFFtRHNhaTV0cFBtbDB1ZzVWNm9ZM000X1ZWMUh1T1gxVGhn?oc=5\" target=\"_blank\"&gt;Europe's shrinking rivers curb power output, transport and company earnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-04T10:28:02.000Z",
+          "score": 8
         },
         {
-          "title": "South African coalition party goes to court over law that angered Trump - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOVJoUFhZNHZlMGxCeTVmT3RuQS1NUExhUGhpZHE2c0RnWU1SQlVSbjI4WG9LMnkxRTJOdkQ4UWM0SUJCZlBDa1Vod0FUOURaM2lZZzhZcGJ2UVJKTlVZS25wN2JHSlJseUY5TU9IMktKcXB6bzQtVE1sMW5mQWR0SWJ3ZWRUd0xscnFCSnMwY0tVRW9kQzdCWkxrX19mQ2t3Y1BxNFJrODBTUHRCcU5KRVoydnQ3Q0xF?oc=5",
+          "title": "Australia household spending posts solid June gain as EV sales jump - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWmFiV1FrMXpIdW5QRGN2UmFUVDlINGFiMEs1MHIyTjEyUm9JVG9PemluTlJjaUptWndXM3pXNE1takpKRWd6aHBJYm5JNHV4dkZnSW9jYXdCWmduMmg4Y01XRjFISk84aXhPckpUTnhTTzZpaXlrWDRTTWlET01nc00wT0Z3bExZOUxfMnFuYmxqSkxtbU1XdGFIeG00UFJOV3JURmswVUw5cDd2Ymp5a2JzWnBSTExTa3Rz?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOVJoUFhZNHZlMGxCeTVmT3RuQS1NUExhUGhpZHE2c0RnWU1SQlVSbjI4WG9LMnkxRTJOdkQ4UWM0SUJCZlBDa1Vod0FUOURaM2lZZzhZcGJ2UVJKTlVZS25wN2JHSlJseUY5TU9IMktKcXB6bzQtVE1sMW5mQWR0SWJ3ZWRUd0xscnFCSnMwY0tVRW9kQzdCWkxrX19mQ2t3Y1BxNFJrODBTUHRCcU5KRVoydnQ3Q0xF?oc=5\" target=\"_blank\"&gt;South African coalition party goes to court over law that angered Trump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-08-03T11:21:34.000Z",
-          "score": 6
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWmFiV1FrMXpIdW5QRGN2UmFUVDlINGFiMEs1MHIyTjEyUm9JVG9PemluTlJjaUptWndXM3pXNE1takpKRWd6aHBJYm5JNHV4dkZnSW9jYXdCWmduMmg4Y01XRjFISk84aXhPckpUTnhTTzZpaXlrWDRTTWlET01nc00wT0Z3bExZOUxfMnFuYmxqSkxtbU1XdGFIeG00UFJOV3JURmswVUw5cDd2Ymp5a2JzWnBSTExTa3Rz?oc=5\" target=\"_blank\"&gt;Australia household spending posts solid June gain as EV sales jump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-04T02:34:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 413,
-    "articlesLast24h": 155,
-    "afterDedup": 151,
+    "totalArticlesScanned": 417,
+    "articlesLast24h": 165,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
