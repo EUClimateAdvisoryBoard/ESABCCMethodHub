@@ -603,11 +603,21 @@ async function ensureCleanTechReadingSeed(): Promise<void> {
  * So they are merged in on read instead, and never written. Rows are still
  * deduped by id, so an environment that did apply the seeding migration shows
  * each tab once rather than twice.
+ *
+ * They are always flagged `isSeed`, which is what keeps the lifecycle UI honest:
+ * having no `pw_modules` row, they would otherwise read as non-seed and offer a
+ * "remove tool" action that deletes nothing and leaves the tab in place on the
+ * next read.
  */
 function withReportPageModules(projectId: string, stored: WorkspaceModule[]): WorkspaceModule[] {
   const seeded = SEED_PROJECTS.find(p => p.id === projectId)?.modules ?? [];
   const have = new Set(stored.map(m => m.id));
-  return [...stored, ...seeded.filter(m => m.kind === 'report-page' && !have.has(m.id))];
+  return [
+    ...stored,
+    ...seeded
+      .filter(m => m.kind === 'report-page' && !have.has(m.id))
+      .map(m => ({ ...m, isSeed: true })),
+  ];
 }
 
 export async function listProjects(): Promise<DBProject[]> {
@@ -640,6 +650,7 @@ export async function listProjects(): Promise<DBProject[]> {
           description: m.description,
           featured: !!m.featured,
           beta: !!m.beta,
+          isSeed: !!m.is_seed,
         })),
     ),
   }));
@@ -675,6 +686,7 @@ export async function getProject(projectId: string): Promise<DBProject | null> {
         description: m.description,
         featured: !!m.featured,
         beta: !!m.beta,
+        isSeed: !!m.is_seed,
       })),
     ),
   };
@@ -933,6 +945,7 @@ export async function listRecommendations(projectId: string): Promise<DBRecommen
 }
 
 export async function listMemberStateCells(projectId: string): Promise<MemberStateCell[]> {
+  noStore();
   const sb = getServerSupabase();
   if (!sb) return [];
   const { data } = await sb

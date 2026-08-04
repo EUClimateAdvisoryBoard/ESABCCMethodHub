@@ -12,15 +12,7 @@
  * reference-creation form.
  */
 import { NextRequest, NextResponse } from 'next/server';
-
-function sanitize(str: string): string {
-  return str
-    .replace(/[\u2018\u2019\u201A]/g, "'")
-    .replace(/[\u201C\u201D\u201E]/g, '"')
-    .replace(/[\u2013\u2014]/g, '-')
-    .replace(/[\u2026]/g, '...')
-    .replace(/[\u00A0]/g, ' ');
-}
+import { sanitize } from '@/lib/references/server/route-helpers';
 
 export async function GET(request: NextRequest) {
   const doi = request.nextUrl.searchParams.get('doi');

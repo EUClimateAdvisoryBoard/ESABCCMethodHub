@@ -141,6 +141,7 @@ const staticReferences: Reference[] = staticReferencesRaw.map((r) => {
     tags: mergeFundingTags(r.id, r.tags),
     notes: r.notes || null,
     pdf_url: PDF_LINKS[r.id] || null,
+    pdf_full_text: null,
     funding: null,
     created_at: r.addedDate || '2024-01-01T00:00:00Z',
     updated_at: r.addedDate || '2024-01-01T00:00:00Z',
@@ -857,7 +858,7 @@ export default function ReferencesPage() {
         steps={[
           { title: 'Add by DOI or PDF', body: 'Drop a PDF or paste a DOI to auto-fill metadata via Crossref.' },
           { title: 'Filter and sort', body: 'Type filter narrows by article / report / chapter; click a column header to sort.' },
-          { title: 'Bulk actions', body: 'Tick the boxes to select; export BibTeX or add to a Collection in one click.' },
+          { title: 'Bulk actions', body: 'Tick the boxes to select; export BibTeX, RIS, or CSL-JSON, or add to a Collection in one click.' },
           { title: 'Word add-in', body: 'Cite directly into Word documents — see the setup link in the page header.' },
         ]}
       />
@@ -1616,6 +1617,9 @@ function AddReferenceForm({
         : (defaultProject.trim() ? [toProjectTag(defaultProject)] : null),
       notes: notes || null,
       pdf_url: finalPdfUrl || null,
+      // Extracted lazily by /api/references/extract-text after the PDF lands;
+      // preserve whatever the reference already carries rather than clearing it.
+      pdf_full_text: editingRef?.pdf_full_text ?? null,
       funding: funding.length > 0 ? funding : null,
       created_at: editingRef?.created_at || new Date().toISOString(),
       updated_at: new Date().toISOString(),

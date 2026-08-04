@@ -135,6 +135,8 @@ export interface Reference {
   tags: string[] | null;
   notes: string | null;
   pdf_url: string | null;
+  /** Extracted plain text from the uploaded PDF (migration 038). */
+  pdf_full_text: string | null;
   /** Lifted out of csl_json for cheap aggregation across a library. */
   funding: FundingEntry[] | null;
   created_at: string;

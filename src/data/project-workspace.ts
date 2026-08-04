@@ -3,15 +3,19 @@
  * ----------------------------------------------------------------
  * The workspace lets Secretariat users group analytical work into
  * "projects" (e.g. Policy Gap 2.0, Industry Project). Each project has
- * its own set of modules; today these are stubs that point at the
- * built-in seed data, but they are designed to be user-extensible
- * through the workspace UI.
+ * its own set of modules ("tools" in the UI).
  *
- * Persistence: the in-page state (new projects, new modules, indicator
- * overrides, recommendation status, sectoral-overview annotations) is
- * stored in localStorage under the keys exported from
- * `src/lib/workspace-storage.ts`. A future migration to Supabase can
- * import the same shapes.
+ * Persistence: Supabase-backed since migration 038
+ * (`supabase/migrations/038_project_workspace.sql`), which defines the
+ * `pw_projects` / `pw_modules` / … tables and reads/writes go through
+ * `src/lib/project-workspace/db.ts`. The arrays exported below are the
+ * seed catalogue for "Policy Gap 2.0" and "Industry Project" — mirrored
+ * into the `pw_*` tables by that migration and lazily re-applied by
+ * `ensureSeedDataFor` (in `db.ts`) so a fresh deploy is usable before a
+ * manual seed step runs. When no Supabase project is configured
+ * (`isWorkspaceDbEnabled()` is false — "preview mode"), the workspace
+ * pages fall back to these arrays directly and hide every mutation
+ * affordance, since there is no database to write to.
  */
 
 export type WorkspaceModuleKind =
@@ -51,6 +55,13 @@ export interface WorkspaceModule {
    * marker next to the tab label.
    */
   beta?: boolean;
+  /**
+   * Seed modules ship with the project (see the arrays below / migration
+   * 038 and friends) and cannot be removed or renamed from the UI — the
+   * delete API refuses them too. Defaults to `true` for every module
+   * literal in `SEED_PROJECTS`, since all of them are exactly that.
+   */
+  isSeed?: boolean;
 }
 
 export interface WorkspaceProject {
@@ -75,6 +86,7 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         kind: 'indicators',
         name: 'Indicator database',
         featured: true,
+        isSeed: true,
         description:
           'Two clusters: existing indicators rebuilt from the 2024 ESABCC ' +
           'progress report (Towards EU climate neutrality), and additional ' +
@@ -87,6 +99,7 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         kind: 'content-analysis',
         name: 'Content analysis',
         featured: true,
+        isSeed: true,
         description:
           'MAXQDA-style qualitative coding for this project. Choose a source — ' +
           'the EU policy corpus, scientific literature or grey literature & ' +
@@ -98,6 +111,7 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         id: 'member-states',
         kind: 'member-states',
         name: 'Member state space',
+        isSeed: true,
         description:
           'EEA-style profile for each EU-27 member state: choropleth ' +
           'map, indicator heatmap and full per-country detail page ' +
@@ -107,6 +121,7 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         id: 'recommendations',
         kind: 'recommendations',
         name: 'Past recommendations tracker',
+        isSeed: true,
         description:
           'Recommendations from every ESABCC report, with status and dated ' +
           'uptake events.',
@@ -115,6 +130,7 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         id: 'literature-watch',
         kind: 'literature-watch',
         name: 'Literature watch',
+        isSeed: true,
         description:
           'New peer-reviewed publications from the relevant journals, ' +
           'screened every morning and matched to this project. Read the ' +
@@ -176,6 +192,7 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         id: 'content-analysis',
         kind: 'content-analysis',
         name: 'Content analysis',
+        isSeed: true,
         description:
           'MAXQDA-style qualitative coding scoped to industry. Choose a source — ' +
           'the EU policy corpus (pre-filtered to industry-tagged policies: ETS, ' +
@@ -191,6 +208,7 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         id: 'literature-watch',
         kind: 'literature-watch',
         name: 'Literature watch',
+        isSeed: true,
         description:
           'New peer-reviewed publications on industrial decarbonisation — ' +
           'steel, cement, hydrogen, CBAM, CCS/CCU — screened every morning ' +
