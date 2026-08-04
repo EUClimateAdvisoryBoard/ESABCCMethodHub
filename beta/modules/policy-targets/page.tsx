@@ -239,6 +239,11 @@ export default function PolicyTargetsRegisterPage() {
               {downloading ? 'Preparing…' : '⬇ Download Excel'}
             </button>
             <button onClick={downloadCSV} className="px-3 py-1.5 rounded-md border border-grey-300 text-tertiary-dark dark:text-[var(--mh-fg)] font-medium hover:bg-grey-100">⬇ CSV</button>
+            <a href="/data/eu-policy-targets-master.xlsx" download
+              title="The reviewed v5 Masterfile workbook (August 2026): Revised tab = the full record after the correction pass, Clean targets tab = live targets beyond 2026 with layman short versions and revision notes. The Excel/CSV buttons export the live table instead."
+              className="px-3 py-1.5 rounded-md border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] font-medium hover:bg-grey-100">
+              ⬇ Masterfile v5
+            </a>
           </div>
         </div>
 

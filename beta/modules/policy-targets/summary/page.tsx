@@ -156,6 +156,10 @@ export default function PolicyTargetsSummaryPage() {
         <Link href="/beta/policy-targets/sectors" className="inline-block ml-4 text-[12.5px] font-medium text-primary hover:underline">
           Sector summaries &amp; timelines (v5 clean set) →
         </Link>
+        <a href="/data/eu-policy-targets-master.xlsx" download className="inline-block ml-4 text-[12.5px] font-medium text-primary hover:underline"
+          title="The reviewed v5 Masterfile workbook (August 2026): Revised = full record, Clean targets = analysis set with layman short versions and revision notes.">
+          ⬇ Masterfile v5 (Excel)
+        </a>
       </PageHero>
 
       <div className="pt-viz max-w-[1280px] mx-auto px-3 sm:px-5 py-6 space-y-7">
