@@ -31,6 +31,7 @@ import dynamic from 'next/dynamic';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import LiveSeason from './LiveSeason';
+import FindingsStrip from './analyses/FindingsStrip';
 import {
   ASSUMPTIONS,
   BASE_1990,
@@ -804,6 +805,9 @@ export default function WildfireSinkRiskPage() {
               Open the analyses →
             </span>
           </Link>
+
+          {/* one computed headline per analysis, in lock-step with the pages */}
+          <FindingsStrip />
 
           {/* ── THE BIG FIGURE ─────────────────────────────────────────── */}
           <div className="mt-10 rounded-xl border border-grey-200 bg-white p-6 shadow-sm">
