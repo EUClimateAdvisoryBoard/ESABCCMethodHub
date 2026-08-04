@@ -388,12 +388,21 @@ const ZERO: Impact = { combustion: 0, decomposition: 0, foregone: 0, total: 0 };
 
 /**
  * Gross fire impact on the inventory in `year`, for an arbitrary burnt-area
- * path. Cohorts are accumulated from `FIRST_YEAR` forward, so the foregone-
+ * path. Cohorts are accumulated from `startYear` forward, so the foregone-
  * removals term correctly builds up as successive years of fire leave more and
  * more land in a recovering, under-performing state.
+ *
+ * Exported (as `cohortImpact`) so the sub-analyses under `analyses/` can run
+ * the identical machinery over other burnt-area paths — per-country series,
+ * the 2006-2024 hindcast — without re-implementing it and drifting.
  */
-function grossImpact(year: number, area: (y: number) => number, p: Params): Impact {
-  if (year < FIRST_YEAR) return ZERO;
+export function cohortImpact(
+  year: number,
+  area: (y: number) => number,
+  p: Params,
+  startYear: number = FIRST_YEAR
+): Impact {
+  if (year < startYear) return ZERO;
 
   const combustion = (area(year) * p.fuelLoad) / 1e6;
 
@@ -401,7 +410,7 @@ function grossImpact(year: number, area: (y: number) => number, p: Params): Impa
   // combustion-equivalent carbon, spread evenly over decompYears.
   let decomposition = 0;
   const dY = Math.max(1, p.decompYears);
-  for (let c = Math.max(FIRST_YEAR, year - dY + 1); c <= year; c++) {
+  for (let c = Math.max(startYear, year - dY + 1); c <= year; c++) {
     decomposition += (area(c) * p.fuelLoad * p.decompShare) / dY / 1e6;
   }
 
@@ -410,7 +419,7 @@ function grossImpact(year: number, area: (y: number) => number, p: Params): Impa
   // recoveryYears.
   let foregone = 0;
   const R = Math.max(1, p.recoveryYears);
-  for (let c = Math.max(FIRST_YEAR, year - R + 1); c <= year; c++) {
+  for (let c = Math.max(startYear, year - R + 1); c <= year; c++) {
     const k = year - c;
     const deficitShare = Math.max(0, 1 - k / R);
     foregone += (area(c) * p.forestShare * p.seqRate * deficitShare) / 1e6;
@@ -422,6 +431,10 @@ function grossImpact(year: number, area: (y: number) => number, p: Params): Impa
     foregone,
     total: combustion + decomposition + foregone,
   };
+}
+
+function grossImpact(year: number, area: (y: number) => number, p: Params): Impact {
+  return cohortImpact(year, area, p, FIRST_YEAR);
 }
 
 /**

@@ -26,6 +26,7 @@
  */
 
 import { useMemo, useState, type ReactNode } from 'react';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -783,6 +784,26 @@ export default function WildfireSinkRiskPage() {
             forest fails to absorb is a tonne that steel, cement, farming, aviation or shipping has to stop emitting
             instead. The arithmetic is not a metaphor — it is subtraction, and it is done below.
           </p>
+
+          {/* ── THE ANALYSES ───────────────────────────────────────────── */}
+          <Link
+            href="/beta/wildfire-sink-risk/analyses"
+            className="group mt-8 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-accent-red/30 bg-white p-5 transition-shadow hover:shadow-md"
+          >
+            <div>
+              <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-accent-red">
+                New · seven deep-dive analyses
+              </div>
+              <p className="mt-1 max-w-2xl text-[13px] leading-relaxed text-tertiary">
+                Whose sink burns (per Member State vs Annex IIa) · the natural-disturbance accounting wedge · the
+                €/tCO₂ of prevention · the 2006-24 hindcast · CRCF buffer pools · Natura 2000 exposure · which growth
+                rate the climate literature supports — each with its own model, plus a synthesis of all seven.
+              </p>
+            </div>
+            <span className="whitespace-nowrap text-[13px] font-bold text-primary group-hover:underline">
+              Open the analyses →
+            </span>
+          </Link>
 
           {/* ── THE BIG FIGURE ─────────────────────────────────────────── */}
           <div className="mt-10 rounded-xl border border-grey-200 bg-white p-6 shadow-sm">
