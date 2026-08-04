@@ -34,7 +34,7 @@ import { policies } from '@/data/policies';
 import { SEED_PROJECTS } from '@/data/project-workspace';
 import { INDUSTRY_READING_SEED } from '@/data/industry-reading-list';
 import { CLEAN_TECH_READING_LIST } from '@/data/clean-tech-reading-list';
-import { ensureSeedLoaded, getStore } from '@/lib/references/custom-store';
+import { listRefs } from '@/lib/references/custom-store';
 import { findPolicyFlatRef, POLICY_REF_PREFIX } from '@/lib/references/policy-entries';
 import { getCaCorpus, getCaDocuments, getCodes, listCaCorpusProjects } from '@/lib/content-analysis-store';
 import { getMasterCode } from '@/lib/content-analysis/master-code-catalog';
@@ -43,6 +43,7 @@ import { POLICY_TAG_ASSIGNMENTS } from '@/lib/content-analysis/policy-master-tag
 import { listProjects } from '@/lib/project-workspace/db';
 import { getServerSupabase } from '@/lib/supabase-server';
 import type { CorpusDocMeta } from '@/lib/content-analysis/types';
+import { normalize, sanitize } from '@/lib/references/server/route-helpers';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -96,25 +97,8 @@ function kindLabelOf(meta: CorpusDocMeta): string {
   return kind.charAt(0).toUpperCase() + kind.slice(1);
 }
 
-// Sanitize strings for the VBA add-in (mirrors /api/references).
-function sanitize(str: string): string {
-  return str
-    .replace(/[\u2018\u2019\u201A]/g, "'")   // smart single quotes
-    .replace(/[\u201C\u201D\u201E]/g, '"')    // smart double quotes
-    .replace(/[\u2013\u2014]/g, '-')           // en-dash, em-dash
-    .replace(/[\u2026]/g, '...')               // ellipsis
-    .replace(/[\u00A0]/g, ' ');                // non-breaking space
-}
-
-// Lowercase + strip diacritics for fuzzy matching (mirrors /api/references).
-function normalize(s: string): string {
-  return (s || '')
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/\s+/g, ' ')
-    .trim();
-}
+// `sanitize` / `normalize` now live in `@/lib/references/server/route-helpers`
+// (WP-01 dedup -- shared with `/api/references`).
 
 interface FlatRefLike {
   id: string;
@@ -611,11 +595,10 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  await ensureSeedLoaded();
   const rawEntries = await getCaCorpus(projectId);
 
   const refById = new Map<string, FlatRefLike>();
-  for (const r of [...getStore(), ...staticReferences] as FlatRefLike[]) {
+  for (const r of [...(await listRefs()), ...staticReferences] as FlatRefLike[]) {
     if (!refById.has(r.id)) refById.set(r.id, r);
   }
 

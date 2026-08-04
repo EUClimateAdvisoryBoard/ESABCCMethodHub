@@ -14,5 +14,6 @@
  */
 export * from './types';
 export * from './citation-utils';
+export * from './format-citation';
 export * from './reference-service';
 export * from './projects';

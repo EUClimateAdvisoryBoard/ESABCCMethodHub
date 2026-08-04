@@ -62,6 +62,23 @@ export const pwApi = {
   createModule(projectId: string, body: { id?: string; kind: string; name: string; description?: string }) {
     return send(`${BASE}/projects/${projectId}/modules`, 'POST', body);
   },
+  updateProject(id: string, body: { name?: string; description?: string }) {
+    return send<{ project: { id: string; name: string; description: string } }>(
+      `${BASE}/projects/${id}`,
+      'PATCH',
+      body
+    );
+  },
+  deleteProject(id: string) {
+    return send(`${BASE}/projects/${id}`, 'DELETE');
+  },
+  deleteModule(projectId: string, moduleId: string) {
+    return send(`${BASE}/projects/${projectId}/modules/${moduleId}`, 'DELETE');
+  },
+  /** Reorder a project's tools; `moduleIds` is the full new tab order. */
+  reorderModules(projectId: string, moduleIds: string[]) {
+    return send(`${BASE}/projects/${projectId}/modules`, 'PATCH', { moduleIds });
+  },
   createIndicator(body: {
     projectId: string;
     name: string;

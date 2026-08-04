@@ -2,7 +2,7 @@
 // Citation Key Generation & Formatting Utilities
 // ============================================================================
 
-import { CSLItem, CSLName, FundingEntry } from './types';
+import { CSLItem, CSLName, FundingEntry, Reference } from './types';
 
 /**
  * Generate a citation key from CSL-JSON data (e.g., "smith2024climate")
@@ -327,4 +327,103 @@ export function parseRIS(ris: string): CSLItem[] {
   }
 
   return entries;
+}
+
+// ============================================================================
+// Export — RIS / CSL-JSON
+// ============================================================================
+// Mirrors `exportBibTeX` (src/lib/references/reference-service.ts): same
+// `(references: Reference[]) => string` signature, same "best-effort, only
+// emit fields that are present" escaping discipline (no field is emitted
+// with an empty value; the module does not attempt full RIS/CSL escaping
+// beyond stripping newlines, since none of the hand-rolled parsers here
+// support escape sequences either).
+
+/** Reverse of `parseRIS`'s type map — CSL type → RIS `TY` tag. */
+const RIS_TYPE_MAP: Record<string, string> = {
+  'article-journal': 'JOUR',
+  book: 'BOOK',
+  chapter: 'CHAP',
+  'paper-conference': 'CONF',
+  report: 'RPRT',
+  thesis: 'THES',
+  webpage: 'ELEC',
+  dataset: 'DATA',
+  'article-newspaper': 'NEWS',
+  'article-magazine': 'MGZN',
+};
+
+/** Strip newlines/carriage-returns so a field can never break RIS's
+ *  one-tag-per-line format. */
+function risSafe(value: string): string {
+  return value.replace(/\r?\n/g, ' ').trim();
+}
+
+/**
+ * Export references as an RIS file. Round-trips through this module's own
+ * `parseRIS` for type, title, authors, year, journal, volume, issue, pages,
+ * DOI and URL.
+ */
+export function exportRIS(references: Reference[]): string {
+  return references.map(ref => {
+    const csl = ref.csl_json;
+    const lines: string[] = [];
+
+    lines.push(`TY  - ${RIS_TYPE_MAP[ref.item_type] || 'GEN'}`);
+
+    const authors = ref.authors && ref.authors.length > 0 ? ref.authors : csl.author;
+    if (authors) {
+      for (const a of authors) {
+        const authorLine = a.literal
+          ? a.literal
+          : a.given ? `${a.family}, ${a.given}` : a.family;
+        lines.push(`AU  - ${risSafe(authorLine)}`);
+      }
+    }
+
+    if (ref.title || csl.title) lines.push(`TI  - ${risSafe(ref.title || csl.title)}`);
+    if (ref.year) lines.push(`PY  - ${ref.year}`);
+    else if (csl.issued?.['date-parts']?.[0]?.[0]) lines.push(`PY  - ${csl.issued['date-parts'][0][0]}`);
+
+    const journal = ref.container_title || csl['container-title'];
+    if (journal) lines.push(`JO  - ${risSafe(journal)}`);
+    if (csl.volume) lines.push(`VL  - ${risSafe(String(csl.volume))}`);
+    if (csl.issue) lines.push(`IS  - ${risSafe(String(csl.issue))}`);
+
+    const page = csl.page ? String(csl.page) : '';
+    if (page) {
+      const [start, end] = page.split('-').map(p => p.trim());
+      if (start) lines.push(`SP  - ${start}`);
+      if (end) lines.push(`EP  - ${end}`);
+    }
+
+    const doi = ref.doi || csl.DOI;
+    if (doi) lines.push(`DO  - ${risSafe(doi)}`);
+
+    const url = csl.URL;
+    if (url) lines.push(`UR  - ${risSafe(url)}`);
+
+    if (csl.publisher) lines.push(`PB  - ${risSafe(csl.publisher)}`);
+    if (csl.ISSN) lines.push(`SN  - ${risSafe(csl.ISSN)}`);
+    if (ref.abstract || csl.abstract) lines.push(`AB  - ${risSafe(ref.abstract || csl.abstract || '')}`);
+    if (ref.citation_key || ref.id) lines.push(`ID  - ${risSafe(ref.citation_key || ref.id)}`);
+
+    lines.push('ER  - ');
+
+    return lines.join('\n');
+  }).join('\n\n');
+}
+
+/**
+ * Export references as CSL-JSON — the lossless interchange format the
+ * reference data model is built on (Zotero / citeproc-compatible). Each
+ * item's `id` is set to the citation key (falling back to the row id) so
+ * the export is self-contained without a separate key lookup.
+ */
+export function exportCSLJSON(references: Reference[]): string {
+  const items: CSLItem[] = references.map(ref => ({
+    ...ref.csl_json,
+    id: ref.citation_key || ref.id,
+  }));
+  return JSON.stringify(items, null, 2);
 }

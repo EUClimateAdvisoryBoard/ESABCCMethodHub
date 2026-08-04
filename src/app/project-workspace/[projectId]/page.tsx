@@ -26,6 +26,7 @@ import {
   listRecommendations,
   listMemberStateCells,
   getCustomModuleContent,
+  isWorkspaceDbEnabled,
 } from '@/lib/project-workspace/db';
 import { listMeetings, listMilestones } from '@/lib/project-workspace/meetings';
 import { listPhases } from '@/lib/project-workspace/phases';
@@ -47,6 +48,7 @@ export default async function ProjectPage({
 }) {
   const project = await getProject(params.projectId);
   if (!project) notFound();
+  const dbEnabled = isWorkspaceDbEnabled();
 
   const activeModule =
     searchParams.module && project.modules.some(m => m.id === searchParams.module)
@@ -105,6 +107,7 @@ export default async function ProjectPage({
 
         <ProjectShell
           project={project}
+          dbEnabled={dbEnabled}
           activeModule={activeModule}
           indicators={indicators}
           indicatorSheets={indicatorSheets}

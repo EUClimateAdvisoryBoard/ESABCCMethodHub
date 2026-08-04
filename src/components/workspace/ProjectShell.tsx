@@ -17,9 +17,9 @@
  */
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
-import type { WorkspaceProject, WorkspaceModuleKind } from '@/data/project-workspace';
+import type { WorkspaceProject, WorkspaceModule, WorkspaceModuleKind } from '@/data/project-workspace';
 import type { Indicator } from '@/data/ecno-indicators';
 import type { PastRecommendation } from '@/data/esabcc-recommendations';
 import type { MemberStateCell } from '@/lib/project-workspace/db';
@@ -39,6 +39,8 @@ import { pwApi, type Meeting, type Milestone, type Phase } from '@/lib/project-w
 
 interface Props {
   project: WorkspaceProject;
+  /** False in preview mode (no Supabase configured) — hides every mutation affordance. */
+  dbEnabled: boolean;
   activeModule?: string;
   indicators: Indicator[];
   indicatorSheets: Record<string, IndicatorSheetLayout>;
@@ -62,6 +64,7 @@ const MODULE_KIND_OPTIONS: { id: string; label: string; blurb: string }[] = [
 
 export default function ProjectShell({
   project,
+  dbEnabled,
   activeModule,
   indicators,
   indicatorSheets,
@@ -80,6 +83,9 @@ export default function ProjectShell({
   const currentMeta = current ? moduleMeta(current.kind) : null;
   const [adding, setAdding] = useState(false);
   const [showLog, setShowLog] = useState(false);
+  const [renamingProject, setRenamingProject] = useState(false);
+  const [deletingProject, setDeletingProject] = useState(false);
+  const [managingModules, setManagingModules] = useState(false);
 
   // The seed Industry Project scopes its copied tools to industry: policies
   // pre-filter to the industry sector and the member-state space is framed
@@ -93,6 +99,24 @@ export default function ProjectShell({
     // navigation, not to the tab — drop them on a manual tab switch.
     params.delete('doc');
     router.push(`${pathname}?${params.toString()}`);
+  }
+
+  // Removing the active tab must not leave the URL pointing at a module
+  // that no longer exists — fall back to the project's (new) default tab.
+  function handleModuleDeleted(moduleId: string) {
+    if (moduleId === active) {
+      const remaining = project.modules.filter(m => m.id !== moduleId);
+      if (remaining[0]) {
+        setActive(remaining[0].id);
+      } else {
+        const params = new URLSearchParams(search.toString());
+        params.delete('module');
+        params.delete('doc');
+        const qs = params.toString();
+        router.push(qs ? `${pathname}?${qs}` : pathname);
+      }
+    }
+    router.refresh();
   }
 
   return (
@@ -152,6 +176,19 @@ export default function ProjectShell({
               Activity log
             </button>
           </Tooltip>
+          {dbEnabled && project.modules.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setManagingModules(true)}
+              className="shrink-0 inline-flex items-center gap-1 px-3 py-2.5 text-xs font-medium text-secondary hover:text-primary"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M3 6h18M3 12h18M3 18h18" />
+                <path d="M8 6l-2 2-2-2M8 18l-2-2-2 2" />
+              </svg>
+              Reorder / remove
+            </button>
+          )}
           <button
             type="button"
             onClick={() => setAdding(true)}
@@ -162,6 +199,13 @@ export default function ProjectShell({
             </svg>
             Add tool
           </button>
+          {dbEnabled && (
+            <ProjectMenu
+              project={project}
+              onRename={() => setRenamingProject(true)}
+              onDelete={() => setDeletingProject(true)}
+            />
+          )}
         </div>
         </div>
       </TooltipProvider>
@@ -253,6 +297,37 @@ export default function ProjectShell({
             setAdding(false);
             router.refresh();
           }}
+        />
+      )}
+
+      {renamingProject && (
+        <RenameProjectDialog
+          project={project}
+          onClose={() => setRenamingProject(false)}
+          onSaved={() => {
+            setRenamingProject(false);
+            router.refresh();
+          }}
+        />
+      )}
+
+      {deletingProject && (
+        <DeleteProjectDialog
+          project={project}
+          onClose={() => setDeletingProject(false)}
+          onDeleted={() => {
+            router.push('/project-workspace');
+            router.refresh();
+          }}
+        />
+      )}
+
+      {managingModules && (
+        <ManageModulesDialog
+          project={project}
+          onClose={() => setManagingModules(false)}
+          onReordered={() => router.refresh()}
+          onDeleted={moduleId => handleModuleDeleted(moduleId)}
         />
       )}
     </div>
@@ -396,6 +471,400 @@ function AddModuleDialog({
             className="px-3 py-1.5 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark disabled:opacity-50"
           >
             {busy ? 'Adding…' : 'Add tool'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Small "…" menu on the project chrome: rename, and (for non-seed projects) delete. */
+function ProjectMenu({
+  project,
+  onRename,
+  onDelete,
+}: {
+  project: WorkspaceProject;
+  onRename: () => void;
+  onDelete: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    function onDocClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    function onEsc(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpen(false);
+    }
+    document.addEventListener('mousedown', onDocClick);
+    document.addEventListener('keydown', onEsc);
+    return () => {
+      document.removeEventListener('mousedown', onDocClick);
+      document.removeEventListener('keydown', onEsc);
+    };
+  }, [open]);
+
+  return (
+    <div ref={ref} className="relative shrink-0">
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-label="Project settings"
+        title="Project settings"
+        className="inline-flex items-center justify-center w-8 h-8 rounded-md text-secondary hover:text-primary hover:bg-grey-50"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+          <circle cx="5" cy="12" r="2" />
+          <circle cx="12" cy="12" r="2" />
+          <circle cx="19" cy="12" r="2" />
+        </svg>
+      </button>
+      {open && (
+        <div
+          role="menu"
+          className="absolute right-0 z-50 mt-1 w-44 rounded-lg border border-grey-200 bg-white shadow-xl py-1 text-left"
+        >
+          <button
+            type="button"
+            role="menuitem"
+            onClick={() => {
+              setOpen(false);
+              onRename();
+            }}
+            className="w-full text-left px-3 py-1.5 text-xs text-tertiary-dark hover:bg-primary/10 hover:text-primary"
+          >
+            Rename project
+          </button>
+          {!project.isSeed && (
+            <button
+              type="button"
+              role="menuitem"
+              onClick={() => {
+                setOpen(false);
+                onDelete();
+              }}
+              className="w-full text-left px-3 py-1.5 text-xs text-red-700 hover:bg-red-50"
+            >
+              Delete project
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function RenameProjectDialog({
+  project,
+  onClose,
+  onSaved,
+}: {
+  project: WorkspaceProject;
+  onClose: () => void;
+  onSaved: () => void;
+}) {
+  const [name, setName] = useState(project.name);
+  const [description, setDescription] = useState(project.shortDescription);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function submit() {
+    const trimmed = name.trim();
+    if (!trimmed) {
+      setError('Name cannot be empty.');
+      return;
+    }
+    setBusy(true);
+    setError(null);
+    try {
+      await pwApi.updateProject(project.id, { name: trimmed, description });
+      onSaved();
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Rename project"
+    >
+      <div
+        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-md w-full p-5 max-h-[90vh] overflow-y-auto"
+        onClick={e => e.stopPropagation()}
+      >
+        <h3 className="text-sm font-bold text-tertiary-dark mb-3">Rename project</h3>
+        <label className="block text-xs text-tertiary mb-3">
+          <span className="block mb-1 font-medium text-tertiary-dark">Name</span>
+          <input
+            value={name}
+            onChange={e => setName(e.target.value)}
+            className="w-full px-2 py-1.5 border border-grey-200 rounded text-sm"
+          />
+        </label>
+        <label className="block text-xs text-tertiary mb-3">
+          <span className="block mb-1 font-medium text-tertiary-dark">Description</span>
+          <textarea
+            value={description}
+            onChange={e => setDescription(e.target.value)}
+            className="w-full px-2 py-1.5 border border-grey-200 rounded text-sm h-20"
+          />
+        </label>
+        {error && <p className="text-xs text-red-700 mb-2">{error}</p>}
+        <div className="flex justify-end gap-2">
+          <button
+            type="button"
+            onClick={onClose}
+            className="px-3 py-1.5 rounded-md border border-grey-200 text-xs text-tertiary-dark hover:bg-grey-50"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            disabled={!name.trim() || busy}
+            onClick={submit}
+            className="px-3 py-1.5 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark disabled:opacity-50"
+          >
+            {busy ? 'Saving…' : 'Save'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Destructive — requires typing the project's name to enable the Delete button. */
+function DeleteProjectDialog({
+  project,
+  onClose,
+  onDeleted,
+}: {
+  project: WorkspaceProject;
+  onClose: () => void;
+  onDeleted: () => void;
+}) {
+  const [confirmText, setConfirmText] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const canDelete = confirmText.trim() === project.name;
+
+  async function submit() {
+    if (!canDelete) return;
+    setBusy(true);
+    setError(null);
+    try {
+      await pwApi.deleteProject(project.id);
+      onDeleted();
+    } catch (e) {
+      setError((e as Error).message);
+      setBusy(false);
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Delete project"
+    >
+      <div
+        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-md w-full p-5 max-h-[90vh] overflow-y-auto"
+        onClick={e => e.stopPropagation()}
+      >
+        <h3 className="text-sm font-bold text-red-700 mb-1">Delete project</h3>
+        <p className="text-xs text-tertiary mb-3 leading-relaxed">
+          This permanently deletes <strong>{project.name}</strong> and everything in
+          it — indicators, recommendations, member-state notes, meetings and
+          all its tools. This cannot be undone.
+        </p>
+        <label className="block text-xs text-tertiary mb-3">
+          <span className="block mb-1 font-medium text-tertiary-dark">
+            Type <strong>{project.name}</strong> to confirm
+          </span>
+          <input
+            value={confirmText}
+            onChange={e => setConfirmText(e.target.value)}
+            className="w-full px-2 py-1.5 border border-grey-200 rounded text-sm"
+          />
+        </label>
+        {error && <p className="text-xs text-red-700 mb-2">{error}</p>}
+        <div className="flex justify-end gap-2">
+          <button
+            type="button"
+            onClick={onClose}
+            className="px-3 py-1.5 rounded-md border border-grey-200 text-xs text-tertiary-dark hover:bg-grey-50"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            disabled={!canDelete || busy}
+            onClick={submit}
+            className="px-3 py-1.5 rounded-md bg-red-600 text-white text-xs font-semibold hover:bg-red-700 disabled:opacity-50"
+          >
+            {busy ? 'Deleting…' : 'Delete project'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Reorder tools (up/down) and remove non-seed ones. No drag-and-drop per convention. */
+function ManageModulesDialog({
+  project,
+  onClose,
+  onReordered,
+  onDeleted,
+}: {
+  project: WorkspaceProject;
+  onClose: () => void;
+  onReordered: () => void;
+  onDeleted: (moduleId: string) => void;
+}) {
+  const [order, setOrder] = useState(() => project.modules.map(m => m.id));
+  const [busyId, setBusyId] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const byId = new Map(project.modules.map(m => [m.id, m]));
+  const rows = order.map(id => byId.get(id)).filter((m): m is WorkspaceModule => !!m);
+
+  async function move(id: string, direction: -1 | 1) {
+    const idx = order.indexOf(id);
+    const swapWith = idx + direction;
+    if (idx < 0 || swapWith < 0 || swapWith >= order.length) return;
+    const next = order.slice();
+    [next[idx], next[swapWith]] = [next[swapWith], next[idx]];
+    setOrder(next);
+    setBusyId(id);
+    setError(null);
+    try {
+      await pwApi.reorderModules(project.id, next);
+      onReordered();
+    } catch (e) {
+      setOrder(order); // revert on failure
+      setError((e as Error).message);
+    } finally {
+      setBusyId(null);
+    }
+  }
+
+  async function remove(m: WorkspaceModule) {
+    if (m.isSeed) return;
+    if (!confirm(`Remove "${m.name}" from this project? This cannot be undone.`)) return;
+    setBusyId(m.id);
+    setError(null);
+    try {
+      await pwApi.deleteModule(project.id, m.id);
+      setOrder(prev => prev.filter(id => id !== m.id));
+      onDeleted(m.id);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setBusyId(null);
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Reorder or remove tools"
+    >
+      <div
+        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-md w-full p-5 max-h-[90vh] overflow-y-auto"
+        onClick={e => e.stopPropagation()}
+      >
+        <h3 className="text-sm font-bold text-tertiary-dark mb-1">Reorder / remove tools</h3>
+        <p className="text-xs text-tertiary mb-4">
+          Use the arrows to change tab order. Seed tools are built in and can&apos;t be removed.
+        </p>
+        <ul className="space-y-1.5 mb-4">
+          {rows.map((m, i) => {
+            const meta = moduleMeta(m.kind);
+            const busy = busyId === m.id;
+            return (
+              <li
+                key={m.id}
+                className="flex items-center gap-2 rounded-md border border-grey-200 px-2.5 py-2"
+              >
+                <span className="shrink-0" style={{ color: meta.accent }}>
+                  <meta.Icon className="w-4 h-4" />
+                </span>
+                <span className="min-w-0 flex-1 truncate text-xs font-medium text-tertiary-dark">
+                  {m.name}
+                  {m.isSeed && (
+                    <span className="ml-1.5 text-[9px] uppercase tracking-wide text-tertiary-light font-normal">
+                      seed
+                    </span>
+                  )}
+                </span>
+                <button
+                  type="button"
+                  disabled={busy || i === 0}
+                  onClick={() => move(m.id, -1)}
+                  aria-label={`Move ${m.name} up`}
+                  title="Move up"
+                  className="inline-flex items-center justify-center w-6 h-6 rounded text-tertiary hover:text-primary hover:bg-grey-50 disabled:opacity-30"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M12 19V5M5 12l7-7 7 7" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  disabled={busy || i === rows.length - 1}
+                  onClick={() => move(m.id, 1)}
+                  aria-label={`Move ${m.name} down`}
+                  title="Move down"
+                  className="inline-flex items-center justify-center w-6 h-6 rounded text-tertiary hover:text-primary hover:bg-grey-50 disabled:opacity-30"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M12 5v14M5 12l7 7 7-7" />
+                  </svg>
+                </button>
+                {!m.isSeed && (
+                  <button
+                    type="button"
+                    disabled={busy}
+                    onClick={() => remove(m)}
+                    aria-label={`Remove ${m.name}`}
+                    title="Remove tool"
+                    className="inline-flex items-center justify-center w-6 h-6 rounded text-tertiary hover:text-red-700 hover:bg-red-50 disabled:opacity-30"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M18 6 6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+        {rows.length === 0 && (
+          <p className="text-xs text-tertiary mb-4">No tools left to manage.</p>
+        )}
+        {error && <p className="text-xs text-red-700 mb-2">{error}</p>}
+        <div className="flex justify-end">
+          <button
+            type="button"
+            onClick={onClose}
+            className="px-3 py-1.5 rounded-md border border-grey-200 text-xs text-tertiary-dark hover:bg-grey-50"
+          >
+            Done
           </button>
         </div>
       </div>

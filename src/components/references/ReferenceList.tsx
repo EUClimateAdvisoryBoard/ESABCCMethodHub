@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Reference, ITEM_TYPE_LABELS, CSLItemType, isEuFunder } from '@/lib/references/types';
 import { formatAuthors } from '@/lib/references/citation-utils';
 import { deleteReference, exportBibTeX } from '@/lib/references/reference-service';
+import { exportRIS, exportCSLJSON } from '@/lib/references/citation-utils';
 import { getAllPdfAnnotationCounts } from '@/lib/references/pdf-annotations';
 import { formatCitation, CITATION_STYLE_LABELS, type CitationStyle } from '@/lib/references/format-citation';
 import { usePreferences } from '@/lib/preferences-context';
@@ -43,9 +44,26 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
   const overallTags = useOverallTags();
   // Citation-style switcher (M·01 #7). Defaults to the user's preference;
   // a per-page override (state below) lets the user toggle without changing
-  // the global default. Pref maps 'bibtex' → 'esabcc' for display purposes.
+  // the global default. The persisted preference schema (preferences-context)
+  // only knows 'apa' | 'chicago' | 'harvard' | 'bibtex' — a legacy, narrower
+  // set than the full `CitationStyle` union rendered here (which matches
+  // `CITATION_STYLES`). These two small maps translate between the two so
+  // every advertised style can still be selected and, where a matching pref
+  // slot exists, saved as the default.
   const { prefs, update } = usePreferences();
-  const prefDefault: CitationStyle = (prefs.default_citation === 'bibtex' ? 'esabcc' : prefs.default_citation) as CitationStyle;
+  const PREF_TO_STYLE: Record<typeof prefs.default_citation, CitationStyle> = {
+    apa: 'apa',
+    chicago: 'chicago-author-date',
+    harvard: 'harvard-cite-them-right',
+    bibtex: 'esabcc',
+  };
+  const STYLE_TO_PREF: Partial<Record<CitationStyle, typeof prefs.default_citation>> = {
+    apa: 'apa',
+    'chicago-author-date': 'chicago',
+    'harvard-cite-them-right': 'harvard',
+    esabcc: 'bibtex',
+  };
+  const prefDefault: CitationStyle = PREF_TO_STYLE[prefs.default_citation] ?? 'apa';
   const [styleOverride, setStyleOverride] = useState<CitationStyle | null>(null);
   const activeStyle: CitationStyle = styleOverride ?? prefDefault;
   const [showFormatted, setShowFormatted] = useState(false);
@@ -157,16 +175,35 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
     setSelectedIds(new Set());
   };
 
-  const handleExportSelected = () => {
-    const selected = references.filter(r => selectedIds.has(r.id));
-    const bibtex = exportBibTeX(selected.length > 0 ? selected : references);
-    const blob = new Blob([bibtex], { type: 'text/plain' });
+  // Shared download helper for the three export formats below (BibTeX, RIS,
+  // CSL-JSON). CSL-JSON is the lossless interchange format the M·01 data
+  // model is built on; RIS is what Zotero/EndNote expect on import — see
+  // WP-02.
+  const downloadExport = (content: string, filename: string, mime: string) => {
+    const blob = new Blob([content], { type: mime });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'references.bib';
+    a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
+  };
+
+  const selectedOrAll = () => {
+    const selected = references.filter(r => selectedIds.has(r.id));
+    return selected.length > 0 ? selected : references;
+  };
+
+  const handleExportSelected = () => {
+    downloadExport(exportBibTeX(selectedOrAll()), 'references.bib', 'text/plain');
+  };
+
+  const handleExportRIS = () => {
+    downloadExport(exportRIS(selectedOrAll()), 'references.ris', 'application/x-research-info-systems');
+  };
+
+  const handleExportCSLJSON = () => {
+    downloadExport(exportCSLJSON(selectedOrAll()), 'references.json', 'application/json');
   };
 
   const toggleSort = (field: typeof sortField) => {
@@ -257,9 +294,17 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
             + Collection ({selectedIds.size})
           </button>
         )}
-        <button onClick={handleExportSelected} className="px-3 py-1.5 bg-grey-200 hover:bg-grey-200 text-white text-sm rounded">
-          Export BibTeX {selectedIds.size > 0 ? `(${selectedIds.size})` : '(All)'}
-        </button>
+        <div className="flex rounded overflow-hidden" role="group" aria-label="Export references">
+          <button onClick={handleExportSelected} className="px-3 py-1.5 bg-grey-200 hover:bg-grey-300 text-white text-sm" title="Export as BibTeX (.bib)">
+            Export BibTeX {selectedIds.size > 0 ? `(${selectedIds.size})` : '(All)'}
+          </button>
+          <button onClick={handleExportRIS} className="px-3 py-1.5 bg-grey-200 hover:bg-grey-300 text-white text-sm border-l border-white/20" title="Export as RIS (.ris) — for Zotero/EndNote">
+            RIS
+          </button>
+          <button onClick={handleExportCSLJSON} className="px-3 py-1.5 bg-grey-200 hover:bg-grey-300 text-white text-sm border-l border-white/20" title="Export as CSL-JSON (.json) — lossless interchange format">
+            CSL-JSON
+          </button>
+        </div>
       </div>
 
       {/* Citation-style switcher row (M·01 #7). Toggle expands a formatted
@@ -299,18 +344,18 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
                 </button>
               ))}
             </div>
-            {styleOverride && styleOverride !== prefDefault && (
+            {styleOverride && styleOverride !== prefDefault && STYLE_TO_PREF[styleOverride] && (
               <button
                 type="button"
                 onClick={() => {
-                  // Map our 'esabcc' back to the persisted 'bibtex' slot until
-                  // the prefs schema gets a dedicated 'esabcc' value.
-                  const persistAs = (styleOverride === 'esabcc' ? 'bibtex' : styleOverride);
-                  void update({ default_citation: persistAs as typeof prefs.default_citation });
+                  const persistAs = STYLE_TO_PREF[styleOverride];
+                  if (!persistAs) return;
+                  void update({ default_citation: persistAs });
                   setStyleOverride(null);
                 }}
                 className="mh-focus underline text-[var(--mh-status-primary)]"
                 style={{ fontSize: 'var(--mh-text-2xs)' }}
+                title="Styles without a matching saved-preference slot (IEEE, Vancouver, Nature, Science, MLA, Elsevier Harvard, Springer) can be used here but not yet saved as the account default."
               >
                 Save as my default
               </button>
