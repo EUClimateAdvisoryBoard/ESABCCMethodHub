@@ -4170,6 +4170,20 @@ Done at Strasbourg, 12 July 2023.`,
     last_updated: '2024-01-15',
   },
   {
+    id: 'eu-ocean-pact',
+    title: 'Communication COM(2025) 281 - The European Ocean Pact',
+    short_title: 'European Ocean Pact',
+    celex_number: '52025DC0281',
+    document_type: 'communication',
+    domain: 'environment',
+    status: 'in_force',
+    adoption_date: '2025-06-05',
+    entry_into_force: null,
+    summary: 'A non-legislative strategy establishing a single reference framework for all ocean-related EU policies, adopted ahead of the 2025 UN Ocean Conference. Groups actions under six priorities: ocean health; a sustainable blue economy; coastal communities and islands; ocean research, skills and ocean literacy; maritime security and defence; and ocean governance. Rather than creating new obligations it aims to streamline coordination, simplify reporting and drive more coherent implementation of the existing marine acquis. Announces an Ocean Act by 2027, based on a revision of the Maritime Spatial Planning Directive, together with a stakeholder-led ocean board and a scoreboard to monitor delivery.',
+    eurlex_url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025DC0281',
+    last_updated: '2026-08-04',
+  },
+  {
     id: 'zero-pollution-action-plan',
     title: 'Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution',
     short_title: 'Zero Pollution Action Plan',
@@ -6295,6 +6309,8 @@ export const connections: PolicyConnection[] = [
   { id: 88, source_policy_id: 'ipi-regulation', target_policy_id: 'foreign-subsidies-regulation', connection_type: 'complements', description: 'The International Procurement Instrument and the Foreign Subsidies Regulation together protect EU public procurement markets from distortions caused by third-country practices. The IPI addresses countries that restrict EU companies\' access to their procurement markets by enabling reciprocal access restrictions, while the FSR reviews foreign subsidies that distort competition in EU procurement procedures. Together they ensure that public contracts are awarded on a level playing field, free from both market access barriers and subsidy-driven underbidding.', articles_source: 'Art. 1, Art. 3-6, Art. 8', articles_target: 'Art. 28, Art. 29-35, Art. 37' },
   { id: 89, source_policy_id: 'crr-regulation', target_policy_id: 'solvency2-directive', connection_type: 'complements', description: 'The Capital Requirements Regulation (for banks and investment firms) and the Solvency II Directive (for insurance and reinsurance undertakings) together form the EU\'s prudential supervisory framework for the financial sector. The CRR sets risk-based capital requirements, leverage ratios, and liquidity standards for banking, while Solvency II establishes risk-based capital requirements and governance standards for insurers. Both frameworks are being amended to integrate climate-related financial risk, including transition risk and physical risk assessments.', articles_source: 'Art. 1, Art. 92, Art. 430-455', articles_target: 'Art. 1, Art. 100-131, Art. 44-46' },
   { id: 90, source_policy_id: 'mifid2-directive', target_policy_id: 'sfdr', connection_type: 'complements', description: 'MiFID II\'s suitability assessment requirements for investment advice and portfolio management have been amended to integrate sustainability preferences, directly linking to the SFDR\'s product classification system (Art. 8 and Art. 9 products). Investment firms must ask clients about their sustainability preferences and match these to products classified under SFDR. This creates a regulatory chain from product-level sustainability disclosure (SFDR) through to point-of-sale integration (MiFID II), ensuring sustainability information reaches end investors.', articles_source: 'Art. 25(2), Delegated Regulation Art. 54(5)-(12)', articles_target: 'Art. 2(17), Art. 8, Art. 9' },
+  { id: 91, source_policy_id: 'eu-ocean-pact', target_policy_id: 'marine-strategy-framework-directive', connection_type: 'complements', description: 'The Ocean Pact\'s ocean-health priority is built on the existing marine acquis rather than replacing it: the Marine Strategy Framework Directive remains the binding instrument requiring Member States to achieve good environmental status in their marine waters, while the Pact supplies the coordinating framework, the delivery scoreboard and the political impetus behind it. The Pact does not amend the Directive; it sets out how its implementation is to be made more coherent alongside the other ocean-related strands of EU policy.', articles_source: 'Priority 1 (Ocean health)', articles_target: 'Art. 1, Art. 5, Art. 10' },
+  { id: 92, source_policy_id: 'eu-ocean-pact', target_policy_id: 'zero-pollution-action-plan', connection_type: 'complements', description: 'Both instruments target marine pollution from the same direction: the Zero Pollution Action Plan carries the quantified 2030 targets for reducing plastic litter at sea and nutrient losses, and the Ocean Pact folds those targets into its ocean health priority as part of a single reference framework for ocean policy. The Pact adds no new pollution targets of its own — its contribution is coordination and monitoring of delivery against the ones already set.', articles_source: 'Priority 1 (Ocean health)', articles_target: 'Target 1, Target 2' },
 ];
 
 export const citations: Citation[] = [];

@@ -60,6 +60,7 @@ const CELEX_MAP: Record<string, string> = {
   'cap-strategic-plans': '32021R2115',
   'water-framework-directive': '32000L0060',
   'marine-strategy-framework-directive': '32008L0056',
+  'eu-ocean-pact': '52025DC0281',
   'zero-pollution-action-plan': '52021DC0400',
   'reach-regulation': '32006R1907',
   'f-gas-regulation': '32024R0573',
