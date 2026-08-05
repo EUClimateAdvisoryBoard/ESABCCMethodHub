@@ -1,7 +1,7 @@
 /**
  * GENERATED FILE — do not hand-edit.
  * Produced directly from:
- *   beta/modules/summer-prep/optimization/model/data/capex_trajectory.csv
+ *   src/app/project-workspace/industry-project/optimization/model/data/capex_trajectory.csv
  * Regenerate with scratch tooling's gen_capex_trajectory.py whenever that CSV
  * changes. Deliberately kept separate from src/data/summer-prep-optimization.ts
  * (gen_data.py's output) so this file's own tiny generator can be re-run on its

@@ -1,18 +1,18 @@
 /**
  * Report pages carried inside a Project Workspace project.
  * ---------------------------------------------------------------------------
- * The two report modules built in Summer Prep (M · 35) — the Policy Gap 2.0
- * Report and the Industry Report — are each a landing page plus a handful of
- * sub-pages ("submodules"). Those sub-pages were only reachable from the beta
- * landing pages, which meant the Project Workspace, where the team actually
- * works, showed the underlying *tools* (indicators, content analysis, …) but
- * none of the report surfaces built on top of them.
+ * The two report modules built during the summer-2026 prep — the Policy Gap
+ * 2.0 Report and the Industry Report — are each a handful of pages
+ * ("submodules"). Each entry here is one such page, keyed by the workspace
+ * module id that carries it, and the `report-page` module kind renders it as a
+ * project tab: what the page is, what is inside it, and a link that opens it.
+ * There is exactly one copy of each page.
  *
- * This catalogue closes that gap. Each entry is one sub-page, keyed by the
- * workspace module id that carries it, and the `report-page` module kind
- * renders it as a project tab: what the page is, what is inside it, and a link
- * that opens it. The pages themselves are unchanged — the workspace links to
- * them rather than duplicating them, so there is exactly one copy of each.
+ * The former Summer Prep notes (Indicator Check, Synergies & Trade-offs,
+ * Policy Gaps — Transport & Industry, Optimization) now live under the
+ * Project Workspace routes themselves (`/project-workspace/<project>/…`);
+ * the Industry Report evidence pages still live under `/beta/overview-industry`
+ * and the Gap Tracker under `/beta/policy-gaps`, linked from here.
  *
  * These modules are never written to `pw_modules`: they hold no per-project
  * state, so `withReportPageModules()` in `src/lib/project-workspace/db.ts`
@@ -56,7 +56,7 @@ export const WORKSPACE_REPORT_PAGES: Record<string, WorkspaceReportPage> = {
     icon: '▤',
   },
   'indicator-check': {
-    href: '/beta/summer-prep/indicator-check',
+    href: '/project-workspace/policy-gap-2-0/indicator-check',
     tag: 'Note 1 · all sectors',
     summary:
       'What has moved, data-wise, since the last report — the report’s 97 progress indicators read for movement against their own baseline.',
@@ -72,7 +72,7 @@ export const WORKSPACE_REPORT_PAGES: Record<string, WorkspaceReportPage> = {
     icon: '📈',
   },
   'synergies-tradeoffs': {
-    href: '/beta/summer-prep/synergies-tradeoffs',
+    href: '/project-workspace/policy-gap-2-0/synergies-tradeoffs',
     tag: 'Note 2 · industry & transport',
     summary:
       'Where cutting emissions also builds climate resilience, and where it works against it — mapped subsector by subsector.',
@@ -87,7 +87,7 @@ export const WORKSPACE_REPORT_PAGES: Record<string, WorkspaceReportPage> = {
     icon: '⇄',
   },
   'policy-gaps-sectors': {
-    href: '/beta/summer-prep/policy-gaps-sectors',
+    href: '/project-workspace/policy-gap-2-0/policy-gaps-sectors',
     tag: 'Note 3 · extends the gap tracker',
     summary:
       'Do the transport- and industry-tagged gaps still exist after the legislation adopted since the report, and where are the candidates for additional ones?',
@@ -164,7 +164,7 @@ export const WORKSPACE_REPORT_PAGES: Record<string, WorkspaceReportPage> = {
     icon: '◎',
   },
   optimization: {
-    href: '/beta/summer-prep/optimization',
+    href: '/project-workspace/industry-project/optimization',
     tag: 'Sector least-cost model',
     summary:
       'A SEAMAPS-style least-cost optimization model of the EU energy-intensive subsectors, with its inputs, its code and its runs all open.',

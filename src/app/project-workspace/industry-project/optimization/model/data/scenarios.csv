@@ -1,0 +1,16 @@
+scenario,description,param,factor,source,source_url
+central,Central-case assumptions across all parameters,none,1.0,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+co2_low,EU ETS carbon price follows the low column of carbon_price.csv,carbon_price_low,1.0,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+co2_high,EU ETS carbon price follows the high column of carbon_price.csv,carbon_price_high,1.0,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+capex_low,Clean (non-reference) technology CAPEX 30% lower (faster learning/cost-down),capex_clean,0.7,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+capex_high,"Clean (non-reference) technology CAPEX 30% higher (slower learning, supply-chain cost pressure)",capex_clean,1.3,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+demand_low,Product demand 20% lower across all subsectors (material efficiency & circularity),demand,0.8,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+demand_high,Product demand 10% higher across all subsectors (continued growth),demand,1.1,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+elec_cheap,Electricity price 30% lower (faster renewables build-out),elec_price,0.7,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+elec_exp,Electricity price 30% higher (slower grid build-out / tight power markets),elec_price,1.3,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+h2_cheap,"Hydrogen price 40% lower (electrolyser cost-down, cheap renewable power)",h2_price,0.6,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+h2_exp,"Hydrogen price 40% higher (slow electrolyser scale-up, feedstock power scarcity)",h2_price,1.4,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+eff_gain,Energy intensity of clean technologies 10% lower (learning-by-doing efficiency gains),energy_intensity_clean,0.9,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+slow_build,Maximum build rate for new capacity halved (permitting / supply-chain / grid bottlenecks),max_build_share,0.5,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+learning_fast,Technology learning accelerates: 2025->2050 capex decline exponent x1.5 (deeper cost cuts for clean tech),learning_rate,1.5,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md
+learning_slow,Technology learning slows: 2025->2050 capex decline exponent x0.5 (learning stalls),learning_rate,0.5,Model assumption (prototype),src/app/project-workspace/industry-project/optimization/model/README.md

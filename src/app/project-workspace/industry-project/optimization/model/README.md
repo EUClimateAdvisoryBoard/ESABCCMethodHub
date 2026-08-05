@@ -20,7 +20,7 @@ Requires Julia 1.11. All dependencies (JuMP, HiGHS, CSV, DataFrames, JSON) are p
 `Project.toml`.
 
 ```bash
-cd beta/modules/summer-prep/optimization/model
+cd src/app/project-workspace/industry-project/optimization/model
 julia --project=. -e 'import Pkg; Pkg.instantiate()'   # first time only: installs dependencies
 julia --project=. industry_optimization.jl
 ```

@@ -2,7 +2,7 @@
  * Shared types for the in-browser EU industry least-cost LP port.
  *
  * This mirrors (in TypeScript, solver-agnostic form) the Julia/JuMP model at
- * `beta/modules/summer-prep/optimization/model/industry_optimization.jl`.
+ * `src/app/project-workspace/industry-project/optimization/model/industry_optimization.jl`.
  * Nothing in this file touches React, the DOM, or a specific solver — it is
  * pure data shape.
  */

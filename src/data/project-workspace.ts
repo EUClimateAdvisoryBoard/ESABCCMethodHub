@@ -215,9 +215,9 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'from the relevant journals and matched to this project.',
       },
       // ── The Industry Report’s own pages ─────────────────────────────────
-      // The five sub-pages of the Industry Report module (M · 35 Summer Prep,
-      // formerly M · 34 Overview Industry). Links and descriptions come from
-      // WORKSPACE_REPORT_PAGES.
+      // The five sub-pages of the Industry Report (formerly M · 34 Overview
+      // Industry, then M · 35 Summer Prep — both retired). Links and
+      // descriptions come from WORKSPACE_REPORT_PAGES.
       {
         id: 'cleantech',
         kind: 'report-page',

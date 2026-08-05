@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Summer Prep · Note 2 — Synergies & trade-offs (mitigation ↔ adaptation)
+ * Policy Gap 2.0 · Note 2 — Synergies & trade-offs (mitigation ↔ adaptation)
  * for INDUSTRY and TRANSPORT.
  * -----------------------------------------------------------------------
  * A literature note, structured by the report's own subsectors, mapping where
@@ -12,6 +12,7 @@
  */
 
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
@@ -208,7 +209,15 @@ function SynergiesInner() {
             .
           </>
         }
-      />
+      >
+        <nav aria-label="Breadcrumb" className="text-[11px] text-[#54728C] dark:text-[var(--mh-muted)]">
+          <Link href="/project-workspace" className="hover:underline">Project Workspace</Link>
+          <span className="mx-1">/</span>
+          <Link href="/project-workspace/policy-gap-2-0" className="hover:underline">Policy Gap 2.0</Link>
+          <span className="mx-1">/</span>
+          <span className="font-medium text-[#3D5265] dark:text-[var(--mh-fg)]">Synergies &amp; Trade-offs</span>
+        </nav>
+      </PageHero>
 
       <main className="mx-auto max-w-[1080px] px-4 py-6 sm:px-6 sm:py-8">
         {/* Sector switch + export */}

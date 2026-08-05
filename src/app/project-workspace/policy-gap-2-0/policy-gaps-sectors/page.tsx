@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Summer Prep · Note 3 — Policy gaps for TRANSPORT & INDUSTRY (extends the
+ * Policy Gap 2.0 · Note 3 — Policy gaps for TRANSPORT & INDUSTRY (extends the
  * Policy Gap Tracker sub-module, formerly M · 36).
  * ---------------------------------------------------------------------------
  * Three things the base Policy Gap Tracker does not do:
@@ -164,7 +164,15 @@ function SectorGapsInner() {
             landscape look like per sector? <span className="italic">{SECTOR_GAP_META.reassessmentAsOf}.</span>
           </>
         }
-      />
+      >
+        <nav aria-label="Breadcrumb" className="text-[11px] text-[#54728C] dark:text-[var(--mh-muted)]">
+          <Link href="/project-workspace" className="hover:underline">Project Workspace</Link>
+          <span className="mx-1">/</span>
+          <Link href="/project-workspace/policy-gap-2-0" className="hover:underline">Policy Gap 2.0</Link>
+          <span className="mx-1">/</span>
+          <span className="font-medium text-[#3D5265] dark:text-[var(--mh-fg)]">Policy Gaps — Transport &amp; Industry</span>
+        </nav>
+      </PageHero>
 
       <main className="mx-auto max-w-[1120px] px-4 py-6 sm:px-6 sm:py-8">
         {/* ── Internal notes (Policy Gap 2.0 Report) ────────────────────── */}
@@ -183,13 +191,13 @@ function SectorGapsInner() {
               ☰ Policy Gap Tracker
             </Link>
             <Link
-              href="/beta/summer-prep/indicator-check"
+              href="/project-workspace/policy-gap-2-0/indicator-check"
               className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#007B6C] hover:underline"
             >
               📈 Indicator Check
             </Link>
             <Link
-              href="/beta/summer-prep/synergies-tradeoffs"
+              href="/project-workspace/policy-gap-2-0/synergies-tradeoffs"
               className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#6667AB] hover:underline"
             >
               ⇄ Synergies &amp; Trade-offs

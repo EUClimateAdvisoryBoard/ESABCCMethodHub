@@ -23,7 +23,7 @@ monitoring, EU policy tracking, content analysis, anonymous
 voting, per-project workspaces and recommendation tracking — behind a
 single sign-in. Eight production modules ship in
 `src/`; thirty-five experimental
-modules (numbered M·09–M·43) sit unrouted in `beta/` and are pulled
+modules (numbered M·09–M·44; M·35 is retired) sit unrouted in `beta/` and are pulled
 into production once the science team signs off (Project Workspace and
 Recommendations were the two most recent promotions). The beta list
 grows roughly weekly — [`beta/README.md`](beta/README.md) is the
@@ -55,7 +55,7 @@ Module index: [modules overview](https://methodhub.vercel.app/docs/modules/).
 | Path | Contents |
 | --- | --- |
 | `src/` | Next.js 14 application — eight production modules. |
-| `beta/` | Thirty-five experimental modules (M·09–M·43), intentionally unrouted. |
+| `beta/` | Thirty-five experimental modules (M·09–M·44; M·35 retired), intentionally unrouted. |
 | `docs/` | MkDocs source for the `/docs/` documentation subpage. |
 | `scripts/` | Data pipelines, migration tooling, IT handoff kit. |
 | `supabase/` | Postgres migrations. |

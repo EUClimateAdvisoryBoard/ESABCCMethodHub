@@ -151,11 +151,6 @@ export default function ProjectShell({
                 >
                   <meta.Icon className="w-4 h-4 shrink-0" />
                   {m.name}
-                  {m.beta && (
-                    <span className="ml-0.5 align-middle text-[9px] uppercase tracking-wide text-secondary/70 font-normal">
-                      beta
-                    </span>
-                  )}
                 </button>
               </Tooltip>
             );

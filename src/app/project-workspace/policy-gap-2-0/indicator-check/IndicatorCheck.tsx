@@ -1,8 +1,8 @@
 'use client';
 
 /**
- * Summer Prep · Note 1 — Indicator Check (all sectors).
- * -----------------------------------------------------
+ * Policy Gap 2.0 · Note 1 — Indicator Check (all sectors).
+ * --------------------------------------------------------
  * "What has moved, data-wise, since the last report?" A dashboard over the
  * OLD report's progress indicators (the same series that back the Policy Gap
  * 2.0 indicator database). For every indicator that has gained data points
@@ -13,7 +13,7 @@
  *     the page shows the numbers and leaves the judgement to the reader).
  *
  * The indicator series are NOT bundled here: the server wrapper
- * (src/app/beta/summer-prep/indicator-check/page.tsx) reads them from the
+ * (./page.tsx) reads them from the
  * Policy Gap 2.0 Project Workspace indicator database (`listIndicators`) and
  * passes them in as a prop. That is the same read the workspace's own
  * Indicator Database tab renders from, so this dashboard can only ever show
@@ -346,7 +346,15 @@ function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; e
             workspace’s indicator database, so the two views always match.
           </>
         }
-      />
+      >
+        <nav aria-label="Breadcrumb" className="text-[11px] text-[#54728C] dark:text-[var(--mh-muted)]">
+          <Link href="/project-workspace" className="hover:underline">Project Workspace</Link>
+          <span className="mx-1">/</span>
+          <Link href="/project-workspace/policy-gap-2-0" className="hover:underline">Policy Gap 2.0</Link>
+          <span className="mx-1">/</span>
+          <span className="font-medium text-[#3D5265] dark:text-[var(--mh-fg)]">Indicator Check</span>
+        </nav>
+      </PageHero>
 
       <main className="mx-auto max-w-[1180px] px-4 py-6 sm:px-6 sm:py-8">
         {/* Summary tiles */}
