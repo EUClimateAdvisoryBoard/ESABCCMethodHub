@@ -406,6 +406,7 @@ export default async function HomePage() {
     { code: 'M · 41', title: 'Wildfires & the Land Sink', href: '/beta/wildfire-sink-risk', tags: ['EFFIS 2021-25', 'Lost sink → 2040 target', 'Sensitivity sliders'] },
     { code: 'M · 42', title: 'EU Policy Hierarchy', href: '/beta/policy-hierarchy', tags: ['Treaties → SWDs', 'Mandate rings', 'Moving now', 'EUR-Lex linked'] },
     { code: 'M · 43', title: 'Committed Damages — EU Cost of Climate Change', href: '/beta/committed-damages', tags: ['Kotz et al. (retracted)', '5 damage functions', 'EU-27 sliders'] },
+    { code: 'M · 44', title: 'ETS: Impact Assessment ↔ Proposal Mismatch', href: '/beta/ets-ia-proposal-mismatch', tags: ['COM vs SWD(2026) 616', 'Passage screenshots', 'Ranked divergences'] },
   ];
 
   return (
