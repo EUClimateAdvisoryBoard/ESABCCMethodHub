@@ -67,7 +67,7 @@ const GAP_SUBMODULES: {
     current: true,
   },
   {
-    href: '/beta/summer-prep/indicator-check',
+    href: '/project-workspace/policy-gap-2-0/indicator-check',
     title: 'Indicator Check',
     tag: 'Note 1 · all sectors',
     desc: 'What has moved, data-wise, since the last report: the report’s progress indicators read for movement against their own baseline.',
@@ -75,7 +75,7 @@ const GAP_SUBMODULES: {
     accent: '#007B6C',
   },
   {
-    href: '/beta/summer-prep/synergies-tradeoffs',
+    href: '/project-workspace/policy-gap-2-0/synergies-tradeoffs',
     title: 'Synergies & Trade-offs',
     tag: 'Note 2 · industry & transport',
     desc: 'Where cutting emissions also builds climate resilience — and where it works against it — mapped subsector by subsector.',
@@ -83,7 +83,7 @@ const GAP_SUBMODULES: {
     accent: '#6667AB',
   },
   {
-    href: '/beta/summer-prep/policy-gaps-sectors',
+    href: '/project-workspace/policy-gap-2-0/policy-gaps-sectors',
     title: 'Policy Gaps — Transport & Industry',
     tag: 'Note 3 · extends this tracker',
     desc: 'Do the transport- and industry-tagged gaps still exist after the legislation adopted since the report? Plus candidates for additional gaps.',

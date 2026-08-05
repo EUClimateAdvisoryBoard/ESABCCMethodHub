@@ -59,7 +59,7 @@
 #
 # HOW TO RUN
 # ------------
-#   cd beta/modules/summer-prep/optimization/model
+#   cd src/app/project-workspace/industry-project/optimization/model
 #   julia --project=. industry_optimization.jl
 #
 # Reads everything from ./data/*.csv, solves one scenario at a time, writes

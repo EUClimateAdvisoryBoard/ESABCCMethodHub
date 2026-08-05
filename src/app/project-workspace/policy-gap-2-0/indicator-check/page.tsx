@@ -1,6 +1,7 @@
 /**
- * Server wrapper for the Summer Prep Indicator Check.
- * ---------------------------------------------------
+ * Server wrapper for the Indicator Check page of the Policy Gap 2.0 project
+ * (formerly /beta/summer-prep/indicator-check — the old route redirects here).
+ * -------------------------------------------------------------------------
  * Reads the ESABCC report indicators from the Policy Gap 2.0 Project
  * Workspace indicator database (`listIndicators` — the exact same read the
  * workspace's Indicator Database tab renders from) and passes them to the
@@ -19,7 +20,7 @@
  */
 import { listIndicators, ListIndicatorsError } from '@/lib/project-workspace/db';
 import type { Indicator } from '@/data/ecno-indicators';
-import IndicatorCheck from '../../../../../beta/modules/summer-prep/indicator-check/page';
+import IndicatorCheck from './IndicatorCheck';
 
 export const dynamic = 'force-dynamic';
 

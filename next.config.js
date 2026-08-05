@@ -37,7 +37,7 @@ const nextConfig = {
   },
 
   // The `highs` package (HiGHS LP solver compiled to WebAssembly, used by the in-browser
-  // industry-optimization LP at beta/modules/summer-prep/optimization) ships one Emscripten glue
+  // industry-optimization LP at src/app/project-workspace/industry-project/optimization) ships one Emscripten glue
   // file for both Node and the browser. It gated its Node-only `require("node:fs")` /
   // `require("node:crypto")` calls behind a runtime environment check, but webpack still parses
   // them statically while bundling the client chunk and fails with "UnhandledSchemeError" for the
@@ -67,6 +67,13 @@ const nextConfig = {
       { source: '/policy-text', destination: '/policy-navigator/policy-text', permanent: true },
       { source: '/analytics', destination: '/policy-navigator/analytics', permanent: true },
       { source: '/guide', destination: '/policy-navigator/guide', permanent: true },
+      // Summer Prep (ex M · 35) is retired: its pages moved into the Project
+      // Workspace projects they belong to. Old bookmarks keep working.
+      { source: '/beta/summer-prep', destination: '/project-workspace', permanent: true },
+      { source: '/beta/summer-prep/indicator-check', destination: '/project-workspace/policy-gap-2-0/indicator-check', permanent: true },
+      { source: '/beta/summer-prep/synergies-tradeoffs', destination: '/project-workspace/policy-gap-2-0/synergies-tradeoffs', permanent: true },
+      { source: '/beta/summer-prep/policy-gaps-sectors', destination: '/project-workspace/policy-gap-2-0/policy-gaps-sectors', permanent: true },
+      { source: '/beta/summer-prep/optimization', destination: '/project-workspace/industry-project/optimization', permanent: true },
     ];
   },
 

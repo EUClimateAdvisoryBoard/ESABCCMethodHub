@@ -3,7 +3,7 @@
  * run on demand, client-side, in the browser.
  *
  * This is a line-for-line semantic port of
- * `beta/modules/summer-prep/optimization/model/industry_optimization.jl`
+ * `src/app/project-workspace/industry-project/optimization/model/industry_optimization.jl`
  * (Julia/JuMP + HiGHS) — same decision variables (B = new build, K =
  * installed capacity, Q = production), same constraints, same CRF-annualized,
  * VINTAGE-COSTED capex (a unit built in year yb keeps paying yb's capex rate

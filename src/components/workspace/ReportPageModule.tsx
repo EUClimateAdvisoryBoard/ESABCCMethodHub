@@ -1,11 +1,12 @@
 /**
  * Report-page module — one page of a project's report, as a project tab.
  * ---------------------------------------------------------------------------
- * The Policy Gap 2.0 Report and the Industry Report are each a set of pages
- * under `/beta/…`. Rather than copy them into the workspace (two copies of the
- * same analysis is how they drift apart), this module carries the pointer: it
- * says what the page is, what a reader will find on it and where its numbers
- * come from, and opens the page itself.
+ * The Policy Gap 2.0 Report and the Industry Report are each a set of pages —
+ * the former Summer Prep notes live under `/project-workspace/<project>/…`,
+ * the rest under `/beta/…`. Rather than copy them into the tab (two copies of
+ * the same analysis is how they drift apart), this module carries the pointer:
+ * it says what the page is, what a reader will find on it and where its
+ * numbers come from, and opens the page itself.
  *
  * Content comes from `WORKSPACE_REPORT_PAGES`, keyed by module id. A module
  * whose id has no catalogue entry — someone renamed it, or a row was seeded by

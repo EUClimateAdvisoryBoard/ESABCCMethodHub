@@ -591,7 +591,8 @@ async function ensureCleanTechReadingSeed(): Promise<void> {
 /**
  * The report-page tabs a project should always show.
  * ---------------------------------------------------------------------------
- * A `report-page` module is a pointer to a page under /beta/… — its name,
+ * A `report-page` module is a pointer to one of the project's report pages
+ * (under /project-workspace/<project>/… or /beta/…) — its name,
  * description and target all live in code (SEED_PROJECTS +
  * src/data/workspace-report-pages.ts), and it holds no per-project state that
  * a table could store. Persisting it would buy nothing and cost a deployment

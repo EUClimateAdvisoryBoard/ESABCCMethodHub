@@ -32,10 +32,10 @@ The modules fall into four loose families:
 - **Narrative & briefing surfaces** (M·21, M·22, M·24, M·27, M·30, M·33,
   M·34) — scrollytelling data essays, sector briefs and explainers built on
   published report content and ESABCC recommendations.
-- **Report-preparation working spaces & registers** (M·35–M·40, M·42) —
-  working surfaces for the next progress report: the Summer Prep workspace,
-  verbatim target and policy registers, the ETS-review package hub, and
-  structural maps of the acquis.
+- **Report-preparation working spaces & registers** (M·36–M·40, M·42) —
+  working surfaces for the next progress report: verbatim target and policy
+  registers, the ETS-review package hub, and structural maps of the acquis.
+  (M·35 Summer Prep is retired — its pages moved into the Project Workspace.)
 
 | #     | Folder                       | Module                | Why it is beta                                                  |
 |-------|------------------------------|-----------------------|-----------------------------------------------------------------|
@@ -65,7 +65,6 @@ The modules fall into four loose families:
 | M·32  | `ex-post-analysis/`          | [Ex-Post Policy Assessment](../modules/ex-post-analysis.md) | Faithful rendering of the internal *Ex-Post Policy Assessment — Methods Scoping Note* (working brief for Policy Gap Report 2.0); counterfactual-availability design grid, quant attribution + qual contribution analysis. |
 | M·33  | `sector-background/`         | [Sector Background](../modules/sector-background.md) | Structured background brief for the Industry & Transport sectors; reuses the project-workspace assessment-framework flow chart and layers on mitigation/adaptation options, EU policies (live, EUR-Lex-linked) and a curated reading list. |
 | M·34  | `electricity-prices/`        | Electricity Prices    | Merit-order explainer of wholesale electricity price formation, EU vs US vs China. |
-| M·35  | `summer-prep/`               | Summer Prep           | Industry & Transport workspace: policy-gap tracker, indicator checks, synergies/trade-offs, least-cost model. Absorbed Overview Industry (ex M·34) and the Policy Gap Tracker (ex M·36) as sub-modules. |
 | M·36  | `policy-targets/`            | Policy Targets Register | Verbatim quantified targets extracted from EU climate law, with Excel export; human-confirmed entries. |
 | M·37  | `ets-review/`                | ETS Review & Electrification | Electrification model and reform overview for the 17 Jul 2026 ETS review package. |
 | M·38  | `impact-assessment/`         | Impact Assessment — Modelling Results | 80 key modelling findings from the ETS-review impact assessment SWD(2026) 616, each with verbatim numbers, page reference and source-page screenshot; AI-extracted, pending human verification. |
@@ -84,10 +83,14 @@ The modules fall into four loose families:
     just moves the folder into the route tree.
 
     Two additional folders sit under `beta/modules/` without their own `M·NN`
-    entry: `overview-industry/` (ex M·34) and `policy-gaps/` (ex M·36) were
-    absorbed into **Summer Prep (M·35)** as sub-modules — their routes stay
-    alive, but they are no longer listed as stand-alone modules, and their old
-    numbers were reassigned.
+    entry: `overview-industry/` (ex M·34) and `policy-gaps/` (ex M·36) — their
+    routes stay alive as report pages of the Industry Project and Policy Gap
+    2.0 projects in the Project Workspace, but they are no longer listed as
+    stand-alone modules, and their old numbers were reassigned. **M·35 Summer
+    Prep** was dissolved in August 2026: its four pages (Indicator Check,
+    Synergies & Trade-offs, Policy Gaps — Transport & Industry, Optimization)
+    now live under `/project-workspace/…` and `/beta/summer-prep/*` redirects
+    there; the number is not reused.
 
 ## Promoting a beta module
 

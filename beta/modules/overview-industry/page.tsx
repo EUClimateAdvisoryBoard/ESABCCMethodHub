@@ -29,8 +29,8 @@
  *                   Excel download (every data point linked to its paper).
  *   • Optimization — the SEAMAPS-style least-cost model of the EU
  *                   energy-intensive subsectors. It lives under
- *                   /beta/summer-prep/optimization but belongs to this module,
- *                   so it is listed here too.
+ *                   /project-workspace/industry-project/optimization but
+ *                   belongs to this module, so it is listed here too.
  *
  * The same five sub-pages are seeded as `report-page` tabs on the Industry
  * Project in the Project Workspace (src/data/workspace-report-pages.ts) — one
@@ -180,10 +180,10 @@ export default function OverviewIndustryPage() {
             </span>
           </Link>
 
-          {/* Lives under /beta/summer-prep/ for historical reasons; it is a
+          {/* Lives under the Industry Project workspace; it is a
               sub-page of this module and is listed as one here. */}
           <Link
-            href="/beta/summer-prep/optimization"
+            href="/project-workspace/industry-project/optimization"
             className="group rounded-xl border border-grey-200 bg-white p-5 shadow-sm transition hover:border-secondary hover:shadow dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]"
           >
             <div className="flex items-center gap-2">

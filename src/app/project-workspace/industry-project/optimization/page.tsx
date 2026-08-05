@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Summer Prep · Industry Report — Optimization.
+ * Industry Project · Industry Report — Optimization.
  * -----------------------------------------------------------
  * Web front-end for the SEAMAPS-style (https://github.com/SebastianFra/SEAMAPS)
  * least-cost technology optimization of EU-27 energy-intensive industry
@@ -12,11 +12,12 @@
  * exact source files). Nothing on this page is hand-typed data.
  *
  * The model itself lives at
- * `beta/modules/summer-prep/optimization/model/industry_optimization.jl`
+ * `src/app/project-workspace/industry-project/optimization/model/industry_optimization.jl`
  * and is downloadable in full (code + data + results + README) as a zip.
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
@@ -1827,7 +1828,15 @@ function OptimizationInner() {
       <PageHero
         title="Optimization — sector least-cost model"
         subtitle="A SEAMAPS-style least-cost technology optimization of the 7 EU-27 energy-intensive industry subsectors: what would a cost-minimiser build between 2025 and 2050, and how much CO2 would that pathway emit?"
-      />
+      >
+        <nav aria-label="Breadcrumb" className="text-[11px] text-[#54728C] dark:text-[var(--mh-muted)]">
+          <Link href="/project-workspace" className="hover:underline">Project Workspace</Link>
+          <span className="mx-1">/</span>
+          <Link href="/project-workspace/industry-project" className="hover:underline">Industry Project</Link>
+          <span className="mx-1">/</span>
+          <span className="font-medium text-[#3D5265] dark:text-[var(--mh-fg)]">Optimization</span>
+        </nav>
+      </PageHero>
 
       <main className="mx-auto max-w-[1080px] px-4 py-6 sm:px-6 sm:py-8">
         {/* 1. Intro */}
@@ -2184,8 +2193,8 @@ function OptimizationInner() {
           OPEX/lifetime/availability, energy intensities, fuel and carbon prices, constraint ceilings) is
           keyed to a real, named source — IEA, JRC, Eurofer, Cembureau, Fertilizers Europe, IAI, FEVE,
           CEPI, Material Economics, IEAGHG, EPRS and others — row by row in the input workbook's Sources
-          sheet above. The model, its inputs and this page were AI-assembled as a working prototype for
-          the Summer Prep exploration and are pending expert (sector-lead) verification. Nothing here is
+          sheet above. The model, its inputs and this page were AI-assembled as a working prototype during
+          the summer-2026 report preparation and are pending expert (sector-lead) verification. Nothing here is
           a Board position.
         </p>
       </main>
