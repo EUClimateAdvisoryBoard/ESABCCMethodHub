@@ -161,6 +161,20 @@ export default function EtsReviewHub() {
             ]}
             cta="Open the conflict ranking"
           />
+          <Card
+            href="/beta/ets-ia-proposal-mismatch"
+            accent={C_PURPLE}
+            kicker="Related · M·44"
+            title="Does the proposal match its own impact assessment?"
+            blurb="The proposal COM(2026) 616 compared against its impact assessment SWD(2026) 616: every divergence documented with the verbatim passage from both documents and a screenshot of each passage, ranked by how far the proposal moves from what was actually assessed."
+            points={[
+              'The admitted one: the cap "deviates from the options assessed"',
+              'LRF 3.7% → 1.7% — outside every assessed option on both halves',
+              'Unassessed mechanisms: 260 Mt credits, 400 M Booster allowances',
+              'Öko-Institut supply/demand brief cross-checked — and questioned',
+            ]}
+            cta="Open the mismatch register"
+          />
         </section>
 
         <section className="mt-7">
