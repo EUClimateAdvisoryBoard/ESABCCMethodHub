@@ -221,22 +221,38 @@ export function seasonSinkImpact(totalHa: number, p: Params): SeasonImpact {
 /* ══════════════════════════════════════════════ 5. EMBEDDED FALLBACK DATA */
 
 /**
- * Snapshot of the real `/api/effis?q=season` payload, taken 2026-07-30 from
+ * Snapshot of the real `/api/effis?q=season` payload, taken 2026-08-05 from
  * the live EFFIS statistics API. Shown — clearly labelled — whenever the live
  * fetch fails, so the page never renders an empty live section.
+ *
+ * Refreshed 2026-08-05 from the previous 2026-07-30 snapshot. The season is
+ * still anchored on week 30 (data date 2026-07-29) — week 31 closes on the
+ * refresh date itself and EFFIS had not yet published it — but EFFIS has since
+ * remapped five of the already-published weeks, which is exactly the in-season
+ * revision behaviour the module warns about:
+ *
+ *   week 26  126,829 →   126,831 ha
+ *   week 27  165,311 →   165,317 ha
+ *   week 28  199,039 →   197,680 ha   (revised down)
+ *   week 29  386,840 →   383,607 ha   (revised down)
+ *   week 30  434,976 →   463,669 ha   (+28,693; fires 1,407 → 1,443)
+ *
+ * The rapid-damage-assessment estimate moved with it (521,353 → 568,355 ha),
+ * as did cumulative CAMS wildfire CO2 (17.98 → 18.37 MtCO2). The 2006-25
+ * envelope and the unobserved weeks 31-52 are unchanged.
  */
 export const FALLBACK_SEASON: LiveSeasonPayload = {
   year: 2026,
-  fetchedAt: '2026-07-30T13:45:00Z',
+  fetchedAt: '2026-08-05T14:21:00Z',
   lastDataDate: '2026-07-29',
   lastWeek: 30,
-  baToDateHa: 434_976,
+  baToDateHa: 463_669,
   baAvgToDateHa: 172_186,
   baMaxToDateHa: 594_113,
-  firesToDate: 1_407,
+  firesToDate: 1_443,
   firesAvgToDate: 632,
-  estimatedTotalHa: 521_353,
-  co2ToDateMt: 17.98,
+  estimatedTotalHa: 568_355,
+  co2ToDateMt: 18.37,
   co2AvgToDateMt: 10.26,
   co2MaxToDateMt: 21.52,
   co2AvgAnnualMt: 23.91,
@@ -269,11 +285,11 @@ export const FALLBACK_SEASON: LiveSeasonPayload = {
   { week: 23, date: '2026-06-10', events: 881, areaHa: 103021, areaMinHa: 745, areaAvgHa: 66903, areaMaxHa: 248584, eventsAvg: 390.1 },
   { week: 24, date: '2026-06-17', events: 911, areaHa: 107296, areaMinHa: 1053, areaAvgHa: 72677, areaMaxHa: 288230, eventsAvg: 401.8 },
   { week: 25, date: '2026-06-24', events: 950, areaHa: 111754, areaMinHa: 4290, areaAvgHa: 78466, areaMaxHa: 315852, eventsAvg: 419.4 },
-  { week: 26, date: '2026-07-01', events: 994, areaHa: 126829, areaMinHa: 7542, areaAvgHa: 88440, areaMaxHa: 323958, eventsAvg: 446.0 },
-  { week: 27, date: '2026-07-08', events: 1102, areaHa: 165311, areaMinHa: 9545, areaAvgHa: 98442, areaMaxHa: 363930, eventsAvg: 476.0 },
-  { week: 28, date: '2026-07-15', events: 1175, areaHa: 199039, areaMinHa: 10440, areaAvgHa: 112078, areaMaxHa: 457448, eventsAvg: 516.1 },
-  { week: 29, date: '2026-07-22', events: 1348, areaHa: 386840, areaMinHa: 18896, areaAvgHa: 138242, areaMaxHa: 560877, eventsAvg: 569.0 },
-  { week: 30, date: '2026-07-29', events: 1407, areaHa: 434976, areaMinHa: 33455, areaAvgHa: 172186, areaMaxHa: 594113, eventsAvg: 631.5 },
+  { week: 26, date: '2026-07-01', events: 994, areaHa: 126831, areaMinHa: 7542, areaAvgHa: 88440, areaMaxHa: 323958, eventsAvg: 446.0 },
+  { week: 27, date: '2026-07-08', events: 1102, areaHa: 165317, areaMinHa: 9545, areaAvgHa: 98442, areaMaxHa: 363930, eventsAvg: 476.0 },
+  { week: 28, date: '2026-07-15', events: 1175, areaHa: 197680, areaMinHa: 10440, areaAvgHa: 112078, areaMaxHa: 457448, eventsAvg: 516.1 },
+  { week: 29, date: '2026-07-22', events: 1348, areaHa: 383607, areaMinHa: 18896, areaAvgHa: 138242, areaMaxHa: 560877, eventsAvg: 569.0 },
+  { week: 30, date: '2026-07-29', events: 1443, areaHa: 463669, areaMinHa: 33455, areaAvgHa: 172186, areaMaxHa: 594113, eventsAvg: 631.5 },
   { week: 31, date: '2026-08-05', events: null, areaHa: null, areaMinHa: 36745, areaAvgHa: 197347, areaMaxHa: 611945, eventsAvg: 685.8 },
   { week: 32, date: '2026-08-12', events: null, areaHa: null, areaMinHa: 47275, areaAvgHa: 243189, areaMaxHa: 713870, eventsAvg: 766.0 },
   { week: 33, date: '2026-08-19', events: null, areaHa: null, areaMinHa: 58322, areaAvgHa: 280045, areaMaxHa: 964680, eventsAvg: 822.7 },
