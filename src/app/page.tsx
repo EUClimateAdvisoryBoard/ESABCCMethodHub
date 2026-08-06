@@ -408,6 +408,14 @@ export default async function HomePage() {
     { code: 'M · 42', title: 'EU Policy Hierarchy', href: '/beta/policy-hierarchy', tags: ['Treaties → SWDs', 'Mandate rings', 'Moving now', 'EUR-Lex linked'] },
     { code: 'M · 43', title: 'Committed Damages — EU Cost of Climate Change', href: '/beta/committed-damages', tags: ['Kotz et al. (retracted)', '5 damage functions', 'EU-27 sliders'] },
     { code: 'M · 44', title: 'ETS: Impact Assessment ↔ Proposal Mismatch', href: '/beta/ets-ia-proposal-mismatch', tags: ['COM vs SWD(2026) 616', 'Passage screenshots', 'Ranked divergences'] },
+    { code: 'M · 45', title: 'Climate Security Ledger', href: '/beta/climate-security', tags: ['Avoided fossil imports', 'Frozen baselines', '2030 exposure'] },
+    { code: 'M · 46', title: 'Clean-Tech Manufacturing Scoreboard', href: '/beta/cleantech-manufacturing', tags: ['NZIA 40 %', 'Pace ratios', 'Import HHI'] },
+    { code: 'M · 47', title: 'Competitiveness Claims Register', href: '/beta/competitiveness-claims', tags: ['7 vs 7 claims', 'Verdict bands', 'Steel-manned'] },
+    { code: 'M · 48', title: 'Critical Raw Materials × 2040 Stress Test', href: '/beta/crm-pathway-stress', tags: ['CRMA benchmarks', '8 materials', 'Months-at-risk'] },
+    { code: 'M · 49', title: 'CBAM & Leakage Watch', href: '/beta/cbam-leakage-watch', tags: ['3 indicators', 'Screws & cars gap', 'Event ledger'] },
+    { code: 'M · 50', title: 'Grid & Interconnection Security', href: '/beta/grid-security', tags: ['15 % target', 'Investment gap', 'Incident ledger'] },
+    { code: 'M · 51', title: 'Climate Investment vs Rearmament', href: '/beta/climate-defence-fiscal', tags: ['Crowd-out slider', 'Ranges not averages', 'MFF 2028-34'] },
+    { code: 'M · 52', title: 'Trade Partners & Article 6', href: '/beta/trade-partner-climate', tags: ['8 partners', '260 Mt credit bet', 'Snapshot 2026-08'] },
   ];
 
   return (
