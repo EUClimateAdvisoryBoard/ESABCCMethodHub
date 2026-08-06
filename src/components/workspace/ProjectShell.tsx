@@ -122,14 +122,17 @@ export default function ProjectShell({
   return (
     <div>
       <TooltipProvider delayDuration={120}>
-        {/* The tab row scrolls on its own; the Activity log and Add tool
-            buttons sit outside it so they stay reachable however many tools a
-            project has (the report-page modules took Policy Gap 2.0 to nine). */}
-        <div className="flex items-stretch border-b border-grey-200">
+        {/* The tab row wraps rather than scrolling: with nine tabs (the
+            report-page modules took Policy Gap 2.0 there) a scrolling row cut
+            the last labels mid-word and hid the rest behind a scrollbar most
+            people never noticed. The Activity log and Add tool buttons sit
+            outside the row so they stay reachable however many tools a project
+            has. */}
+        <div className="flex flex-wrap items-end justify-between gap-x-4 border-b border-grey-200">
         <div
           role="tablist"
           aria-label="Project tools"
-          className="flex min-w-0 flex-1 gap-1 overflow-x-auto"
+          className="flex w-full flex-wrap items-end gap-x-1 sm:w-auto sm:min-w-0 sm:flex-1"
         >
           {project.modules.map(m => {
             const meta = moduleMeta(m.kind);
@@ -141,7 +144,7 @@ export default function ProjectShell({
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setActive(m.id)}
-                  className={`shrink-0 inline-flex items-center gap-1.5 px-3 py-2.5 text-xs border-b-2 -mb-px transition-colors ${
+                  className={`inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-2.5 text-xs border-b-2 -mb-px transition-colors ${
                     m.featured ? 'font-bold' : 'font-medium'
                   } ${
                     isActive
@@ -156,7 +159,9 @@ export default function ProjectShell({
             );
           })}
         </div>
-        <div className="flex shrink-0 items-center">
+        {/* On a phone the tab row takes the full width and these drop onto
+            their own line beneath it, still flush right. */}
+        <div className="flex shrink-0 items-center ml-auto">
           <Tooltip content="Every change made in this project — who did what, and when.">
             <button
               type="button"
@@ -205,9 +210,12 @@ export default function ProjectShell({
         </div>
       </TooltipProvider>
 
-      {/* Plain-language helper: what the open tool is for. */}
+      {/* Plain-language helper: what the open tool is for. It stays the short
+          kind-level blurb on purpose — every module renders its own heading and
+          description below, so the module's own text here would say the same
+          thing twice. */}
       {currentMeta ? (
-        <p className="mt-3 mb-6 flex items-start gap-2 text-xs text-tertiary leading-relaxed">
+        <p className="mt-3 mb-6 flex max-w-3xl items-start gap-2 text-xs text-tertiary leading-relaxed">
           <span className="shrink-0 mt-px" style={{ color: currentMeta.accent }}>
             <currentMeta.Icon className="w-4 h-4" />
           </span>

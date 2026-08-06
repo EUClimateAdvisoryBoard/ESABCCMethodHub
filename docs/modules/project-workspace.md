@@ -36,7 +36,7 @@ developer — the workspace is **user-extensible**.
 ## Modules a project can bundle
 
 Each project owns a list of **modules** (`pw_modules`), each with a `kind`.
-Seven kinds are defined:
+Nine kinds are defined:
 
 | Kind                | What the tab is                                                            | Backing component                    |
 |---------------------|----------------------------------------------------------------------------|--------------------------------------|
@@ -47,15 +47,30 @@ Seven kinds are defined:
 | `policy-analysis`   | Sectoral-overview annotations (approve / fact-check / edit) on policies.     | `PolicyAnalysisModule` (→ content-analysis) |
 | `meetings`          | Meeting notes, phases / milestones, optional transcription + AI summary.    | `MeetingsModule`                    |
 | `custom`            | A free-form Markdown scratchpad for anything that doesn't fit the above.     | `CustomNotesModule`                 |
+| `literature-watch`  | The morning journal screening, matched to the project.                      | `LiteratureWatchModule`             |
+| `report-page`       | A pointer to one page of the project's report — never stored, merged in on read. | `ReportPageModule`             |
 
 Two projects ship seeded by the migration:
 
-- **Policy Gap 2.0** (`policy-gap-2-0`) — bundles `indicators`,
-  `content-analysis`, `member-states` and `recommendations`.
+- **Policy Gap 2.0** (`policy-gap-2-0`) — `indicators`,
+  `content-analysis` and `literature-watch`, then the four report pages,
+  then the two standing reference spaces (`member-states`,
+  `recommendations`). Migration
+  [`091_pw_policy_gap_module_order.sql`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/supabase/migrations/091_pw_policy_gap_module_order.sql)
+  holds the stored positions.
 - **Industry Project** (`industry-project`) — an industry-tagged
-  `content-analysis` corpus (plus a second module added in migration 044).
+  `content-analysis` corpus and its literature watch (plus a second module
+  added in migration 044), then the five Industry Report pages.
 
 Anything users create lives in the same tables alongside the seeds.
+
+**Tab order.** Stored modules sort on `pw_modules.position`, which the
+*Reorder / remove* dialog rewrites. Report pages hold no row and so no
+position: `withReportPageModules()` in `db.ts` inserts each one directly after
+the nearest module that precedes it in the seed catalogue, so they follow the
+tool they are built on even after the team reorders the bar. The bar itself
+wraps rather than scrolling — at nine tabs a scrolling row cut the last labels
+mid-word.
 
 ## Data flow
 

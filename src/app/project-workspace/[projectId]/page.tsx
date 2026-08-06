@@ -56,6 +56,8 @@ export default async function ProjectPage({
       : project.modules[0]?.id;
   const current = project.modules.find(m => m.id === activeModule);
   const kind = current?.kind;
+  const toolCount = project.modules.filter(m => m.kind !== 'report-page').length;
+  const reportPageCount = project.modules.length - toolCount;
 
   // Only fetch data for the active tab. Empty defaults flow into ProjectShell
   // for the modules it won't render this turn.
@@ -99,10 +101,30 @@ export default async function ProjectPage({
           <span className="text-tertiary-dark font-medium">{project.name}</span>
         </nav>
         <header className="mb-6">
+          <p className="text-[10px] tracking-[0.18em] uppercase text-primary font-semibold mb-1">
+            Project
+          </p>
           <h1 className="text-2xl font-bold text-tertiary-dark">{project.name}</h1>
-          <p className="text-sm text-tertiary mt-2 max-w-3xl">
+          <p className="text-sm text-tertiary mt-2 max-w-3xl leading-relaxed">
             {project.shortDescription}
           </p>
+          {/* What the tab bar below actually holds. The counts are the honest
+              orientation a nine-tab bar no longer gives on its own. */}
+          <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-xs text-tertiary">
+            <span className="inline-flex items-center rounded-full border border-grey-200 bg-grey-50 px-2.5 py-1 font-medium text-tertiary-dark">
+              {toolCount} tool{toolCount === 1 ? '' : 's'}
+            </span>
+            {reportPageCount > 0 && (
+              <>
+                <span className="inline-flex items-center rounded-full border border-grey-200 bg-grey-50 px-2.5 py-1 font-medium text-tertiary-dark">
+                  {reportPageCount} report page{reportPageCount === 1 ? '' : 's'}
+                </span>
+                <span className="leading-relaxed">
+                  The tools hold the data; the report pages are the surfaces built on them.
+                </span>
+              </>
+            )}
+          </div>
         </header>
 
         <ProjectShell

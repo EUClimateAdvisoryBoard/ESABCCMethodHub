@@ -108,25 +108,6 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'what each project is coding.',
       },
       {
-        id: 'member-states',
-        kind: 'member-states',
-        name: 'Member state space',
-        isSeed: true,
-        description:
-          'EEA-style profile for each EU-27 member state: choropleth ' +
-          'map, indicator heatmap and full per-country detail page ' +
-          'with editor and external-contributor workflow.',
-      },
-      {
-        id: 'recommendations',
-        kind: 'recommendations',
-        name: 'Past recommendations tracker',
-        isSeed: true,
-        description:
-          'Recommendations from every ESABCC report, with status and dated ' +
-          'uptake events.',
-      },
-      {
         id: 'literature-watch',
         kind: 'literature-watch',
         name: 'Literature watch',
@@ -175,6 +156,30 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'Note 3 · extends the gap tracker. Do the transport- and ' +
           'industry-tagged gaps still exist after the legislation adopted since ' +
           'the report, and where are the candidates for additional ones?',
+      },
+      // ── Reference spaces ───────────────────────────────────────────────
+      // Two standing collections rather than working surfaces of this prep
+      // cycle: the team consults them, but does not edit them week to week.
+      // They therefore sit at the end of the tab bar, behind the tools and
+      // the report pages (see migration 091 for the stored positions).
+      {
+        id: 'member-states',
+        kind: 'member-states',
+        name: 'Member state space',
+        isSeed: true,
+        description:
+          'EEA-style profile for each EU-27 member state: choropleth ' +
+          'map, indicator heatmap and full per-country detail page ' +
+          'with editor and external-contributor workflow.',
+      },
+      {
+        id: 'recommendations',
+        kind: 'recommendations',
+        name: 'Past recommendations tracker',
+        isSeed: true,
+        description:
+          'Recommendations from every ESABCC report, with status and dated ' +
+          'uptake events.',
       },
     ],
   },
