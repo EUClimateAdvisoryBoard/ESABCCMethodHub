@@ -8,6 +8,18 @@
  * blocked from the sandbox). Every figure below must be re-checked against
  * its named source before any use beyond internal method discussion.
  *
+ * PARTIALLY FACT-CHECKED 2026-08-06 (see
+ * docs-internal/beta-modules-m45-m52-factcheck-2026-08.md). The legal
+ * layer — the CRMA Art. 5(1) benchmarks and the Batteries Regulation
+ * recovery targets — has been verified verbatim against the enacting
+ * terms and is no longer compiled from memory. The material-intensity
+ * coefficients, deployment rates and current EU shares have NOT been
+ * re-checked and remain as compiled. Note also that the claim above that
+ * Eurostat is blocked from this sandbox is FALSE: the dissemination API
+ * answers over plain HTTPS, and EUR-Lex enacting terms are reachable via
+ * the Publications Office Cellar service even though eur-lex.europa.eu
+ * itself sits behind a JavaScript challenge.
+ *
  * PROVENANCE AND COMPILATION RULES
  *
  *   · Material-intensity coefficients are RANGES, spanning the published
@@ -36,9 +48,16 @@
  *   · CRMA benchmark levels (10 % extraction, 40 % processing, 25 %
  *     recycling, ≤ 65 % single-third-country share, by 2030) are from
  *     Regulation (EU) 2024/1252, Article 5(1), points (a) and (b)
- *     (CELEX 32024R1252). The quoted fragments ("at least 10 %", "at
- *     least 40 %", "at least 25 %", "not more than 65 %") are the only
- *     verbatim text carried; everything else is paraphrase with locator.
+ *     (CELEX 32024R1252). Since the 2026-08-06 fact-check these carry the
+ *     WHOLE provision verbatim, extracted from the Publications Office
+ *     Cellar service and checked as exact substrings of the enacting
+ *     terms. The earlier compile carried short fragments, and one of them
+ *     — "not more than 65 %" — did not appear in the act at all: the text
+ *     reads "no third country accounts for more than 65 %". Two
+ *     qualifiers the earlier paraphrases dropped are also restored: the
+ *     extraction benchmark applies "to the extent possible in light of
+ *     the Union's reserves", and the recycling benchmark has a second
+ *     limb about significantly increasing amounts of EACH material.
  *   · Coverage gaps accepted rather than filled: grid-network copper
  *     (transmission/distribution build-out), heat pumps, platinum-group
  *     metals for electrolysers, and steel-route manganese are all OUT of
@@ -218,47 +237,68 @@ export const ALL_SOURCES: SourceRef[] = [
 export type CrmaBenchmark = {
   key: 'extraction' | 'processing' | 'recycling' | 'singleSupplier';
   title: string;
-  /** Verbatim fragment from Art. 5(1) — kept short so it is checkable as a substring. */
-  quotedFragment: string;
+  /**
+   * Verbatim text of the benchmark from Reg. (EU) 2024/1252 Art. 5(1),
+   * extracted from the Publications Office Cellar service on 2026-08-06 and
+   * checked as an exact substring of the enacting terms. The earlier compile
+   * carried short fragments instead, one of which ("not more than 65 %") did
+   * not appear in the act at all — the text reads "no third country accounts
+   * for more than 65 %". Fragments are gone; whole provisions are quoted.
+   */
+  quote: string;
   paraphrase: string;
   targetPct: number;
   locator: string;
 };
 
+/**
+ * The chapeau the four benchmarks hang off, verbatim. It matters for how
+ * this module may be read: the benchmarks are framed as something Union
+ * capacity should "approach or reach" OVERALL, across strategic raw
+ * materials as a set, not as a per-material legal test. The per-material
+ * scoring below is a presentational choice, and the UI says so.
+ */
+export const CRMA_CHAPEAU =
+  'The Commission and Member States shall strengthen the different stages of the strategic raw materials value chain through the measures provided for in this Chapter in order to: … ensure that, by 2030, Union capacities for each strategic raw material have significantly increased so that, overall, Union capacity approaches or reaches the following benchmarks';
+
 export const CRMA_BENCHMARKS: CrmaBenchmark[] = [
   {
     key: 'extraction',
     title: 'EU extraction',
-    quotedFragment: 'at least 10 %',
+    quote:
+      'Union extraction capacity is capable of extracting the ores, minerals or concentrates needed to produce at least 10 % of the Union’s annual consumption of strategic raw materials, to the extent possible in light of the Union’s reserves',
     paraphrase:
-      'Union extraction capacity able to extract the ores, minerals or concentrates needed to produce at least 10 % of the Union’s annual consumption of strategic raw materials, by 2030.',
+      'Union extraction capacity able to extract the ores, minerals or concentrates needed to produce at least 10 % of the Union’s annual consumption of strategic raw materials, by 2030 — subject to the reserves qualifier, which is part of the provision and is the reason this is the softest of the three capacity benchmarks.',
     targetPct: 10,
     locator: 'Art. 5(1)(a)(i)',
   },
   {
     key: 'processing',
     title: 'EU processing',
-    quotedFragment: 'at least 40 %',
+    quote:
+      'Union processing capacity, including for all intermediate processing steps, is capable of producing at least 40 % of the Union’s annual consumption of strategic raw materials',
     paraphrase:
-      'Union processing capacity able to produce at least 40 % of the Union’s annual consumption of strategic raw materials, by 2030.',
+      'Union processing capacity, intermediate steps included, able to produce at least 40 % of the Union’s annual consumption of strategic raw materials, by 2030.',
     targetPct: 40,
     locator: 'Art. 5(1)(a)(ii)',
   },
   {
     key: 'recycling',
     title: 'EU recycling',
-    quotedFragment: 'at least 25 %',
+    quote:
+      'Union recycling capacity, including for all intermediate recycling steps, is capable of producing at least 25 % of the Union’s annual consumption of strategic raw materials and is capable of recycling significantly increasing amounts of each strategic raw material from waste',
     paraphrase:
-      'Union recycling capacity able to produce at least 25 % of the Union’s annual consumption of strategic raw materials, by 2030.',
+      'Union recycling capacity, intermediate steps included, able to produce at least 25 % of the Union’s annual consumption of strategic raw materials by 2030, plus a second limb requiring significantly increasing recycled amounts of EACH strategic raw material — so the aggregate percentage alone does not discharge the benchmark.',
     targetPct: 25,
     locator: 'Art. 5(1)(a)(iii)',
   },
   {
     key: 'singleSupplier',
     title: 'Single-supplier cap',
-    quotedFragment: 'not more than 65 %',
+    quote:
+      'diversify the Union’s imports of strategic raw materials with a view to ensuring that, by 2030, the Union’s annual consumption of each strategic raw material at any relevant stage of processing can rely on imports from several third countries or from overseas countries or territories (OCTs) and that no third country accounts for more than 65 % of the Union’s annual consumption of such a strategic raw material',
     paraphrase:
-      'Not more than 65 % of the Union’s annual consumption of each strategic raw material, at any relevant stage of processing, from a single third country, by 2030.',
+      'By 2030, no single third country should account for more than 65 % of the Union’s annual consumption of any given strategic raw material, at any relevant stage of processing. Unlike the other three, this one IS expressed per material.',
     targetPct: 65,
     locator: 'Art. 5(1)(b)',
   },
@@ -693,7 +733,7 @@ export const REDUCES_DEPENDENCY: DirectionEntry[] = [
   {
     title: 'Recycling loops scale with the deployed stock',
     mechanism:
-      'Every battery and turbine installed is future secondary supply. The Batteries Regulation’s recovery targets (lithium 50 % by 2027 and 80 % by 2031; cobalt, copper and nickel 90 %/95 %) turn the 2025–2035 import surge into a post-2035 domestic feedstock — the CRMA 25 % recycling benchmark is only reachable because ambition creates the scrap.',
+      'Every battery and turbine installed is future secondary supply. The Batteries Regulation’s material-recovery targets — Reg. (EU) 2023/1542, Annex XII, Part C, verified verbatim 2026-08-06: 50 % for lithium and 90 % for cobalt, copper and nickel no later than 31 December 2027, rising to 80 % for lithium and 95 % for cobalt, copper and nickel no later than 31 December 2031 — turn the 2025–2035 import surge into a post-2035 domestic feedstock. The CRMA 25 % recycling benchmark is only reachable because ambition creates the scrap.',
     source: BATTERIES_REG,
   },
   {

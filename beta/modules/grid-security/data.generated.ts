@@ -4,15 +4,21 @@
  * GENERATED — AI-compiled 2026-08 — pending Secretariat verification.
  *
  * Provenance and compile rules:
- *   - Interconnection ratios: the per-member-state levels are taken from the
- *     table of 2017 interconnection levels in the Commission Communication on
- *     strengthening Europe's energy networks, COM(2017) 718 final (the last
- *     complete per-MS table the compiling agent could anchor to a single
- *     locator), with the basis year stated on every row. They are ORDERS OF
- *     MAGNITUDE, not current values: interconnectors commissioned since 2017
- *     are flagged in the row notes but NOT folded into the numbers, because
- *     no post-2017 full table could be verified from this sandbox (ENTSO-E,
- *     Eurostat, EEA and EUR-Lex hosts are blocked here). Definitions differ
+ *   - Interconnection ratios: the per-member-state levels are taken from
+ *     Table 2 of the Commission Communication on strengthening Europe's
+ *     energy networks, COM(2017) 718 final, with the basis year stated on
+ *     every row. CHECKED ROW BY ROW against that table on 2026-08-06: 24 of
+ *     27 matched exactly; Czechia (17 -> 19 %), Slovakia (61 -> 43 %) and
+ *     Luxembourg (245 -> 109 %) were wrong and are corrected. Table 2 also
+ *     publishes an EXPECTED 2020 level per Member State, which is now
+ *     carried in each row note — that column had simply been left on the
+ *     table. The values remain 2017-basis and are NOT current:
+ *     interconnectors commissioned since are flagged in the row notes but
+ *     not folded into the numbers, because no post-2017 complete per-MS
+ *     table has been located. (The earlier claim that Eurostat and EUR-Lex
+ *     are blocked from this sandbox is false — Eurostat answers over plain
+ *     HTTPS and EUR-Lex texts are reachable through the Publications Office
+ *     Cellar service, which is how this check was done.) Definitions differ
  *     across monitoring reports (import capacity ÷ installed generation vs
  *     peak-load-based measures); ratios are indicative and NOT comparable
  *     with NECP self-reported levels without checking the definition used.
@@ -44,7 +50,7 @@ import type { LedgerEntry, LedgerSource, MemberStateRatio, PaceInputs, Uncertain
 
 /** The target card: text and origin locators for the 15 %-by-2030 target. */
 export const TARGET_CARD = {
-  headline: '15 % electricity interconnection by 2030',
+  headline: 'At least 15 % electricity interconnection by 2030',
   /**
    * Paraphrase of EUCO 169/14 para. 4 — the European Council endorsed
    * extending the 10 %-by-2020 electricity interconnection objective to
@@ -72,7 +78,7 @@ export const TARGET_CARD = {
   ] as LedgerSource[],
   /** Legal nature, stated plainly. */
   natureNote:
-    'A European Council political objective, not a binding legal obligation on Member States. The Governance Regulation makes it a mandatory NECP reporting dimension; the 2017 Commission expert group added urgency indicators (wholesale price differential above roughly €2/MWh; nominal transmission capacity below 30 % of peak load or of installed renewable capacity) — threshold values at medium uncertainty, pending verification against COM(2017) 718.',
+    'A European Council political objective, not a binding legal obligation on Member States. The Governance Regulation makes it a mandatory NECP reporting dimension. The three urgency thresholds are VERIFIED verbatim against COM(2017) 718, section 4.2 (checked 2026-08-06): additional interconnections should be prioritised where "the price differential exceeds an indicative threshold of 2€/MWh between Member States, regions or bidding zones"; "countries where the nominal transmission capacity of interconnectors is below 30% of their peak load should urgently investigate options of further interconnectors"; and likewise "below 30% of installed renewable generation capacity". The Communication scores Member States green, yellow or red on how many of the three they meet.',
 };
 
 /**
@@ -81,33 +87,33 @@ export const TARGET_CARD = {
  * values; commissioned-since links are noted, not folded in.
  */
 export const MEMBER_STATE_RATIOS: MemberStateRatio[] = [
-  { code: 'AT', name: 'Austria', ratioPct: 15, basisYear: 2017, uncertainty: 'medium' },
-  { code: 'BE', name: 'Belgium', ratioPct: 19, basisYear: 2017, uncertainty: 'medium', note: 'Nemo Link to GB (2019) and ALEGrO to DE (2020) commissioned since — current level higher.' },
-  { code: 'BG', name: 'Bulgaria', ratioPct: 7, basisYear: 2017, uncertainty: 'high', note: 'IBS internal reinforcements and Greece–Bulgaria links since; level likely higher.' },
-  { code: 'HR', name: 'Croatia', ratioPct: 52, basisYear: 2017, uncertainty: 'medium' },
-  { code: 'CY', name: 'Cyprus', ratioPct: 0, basisYear: 2017, uncertainty: 'low', note: 'Isolated system — still 0 %. The Great Sea Interconnector to Greece is under development.' },
-  { code: 'CZ', name: 'Czechia', ratioPct: 17, basisYear: 2017, uncertainty: 'medium' },
-  { code: 'DK', name: 'Denmark', ratioPct: 51, basisYear: 2017, uncertainty: 'medium', note: 'Viking Link to GB (2023) commissioned since; GB links count in the indicator but are now third-country links.' },
-  { code: 'EE', name: 'Estonia', ratioPct: 63, basisYear: 2017, uncertainty: 'medium', note: 'EstLink 2 was out of service Dec 2024 – Jun 2025 after cable damage (see ledger).' },
-  { code: 'FI', name: 'Finland', ratioPct: 29, basisYear: 2017, uncertainty: 'medium' },
-  { code: 'FR', name: 'France', ratioPct: 9, basisYear: 2017, uncertainty: 'medium', note: 'IFA2 to GB (2021) and Savoy–Piedmont to IT (2021) since; Celtic Interconnector to IE under construction.' },
-  { code: 'DE', name: 'Germany', ratioPct: 9, basisYear: 2017, uncertainty: 'medium', note: 'NordLink to NO (2021) and ALEGrO to BE (2020) since.' },
-  { code: 'EL', name: 'Greece', ratioPct: 11, basisYear: 2017, uncertainty: 'high', note: 'Crete–Peloponnese/Attica links (2021–2023) are internal, not interconnection; EuroAsia/Great Sea link under development.' },
-  { code: 'HU', name: 'Hungary', ratioPct: 58, basisYear: 2017, uncertainty: 'medium' },
-  { code: 'IE', name: 'Ireland', ratioPct: 7, basisYear: 2017, uncertainty: 'medium', note: 'Greenlink to GB (2025) since; Celtic Interconnector to FR (first EU link) under construction.' },
-  { code: 'IT', name: 'Italy', ratioPct: 8, basisYear: 2017, uncertainty: 'medium' },
-  { code: 'LV', name: 'Latvia', ratioPct: 45, basisYear: 2017, uncertainty: 'high', note: 'Third Estonia–Latvia interconnector (2020) since.' },
-  { code: 'LT', name: 'Lithuania', ratioPct: 88, basisYear: 2017, uncertainty: 'high', note: 'Includes NordBalt and LitPol Link; links to BY/RU severed with the Feb 2025 desynchronisation (see ledger).' },
-  { code: 'LU', name: 'Luxembourg', ratioPct: 245, basisYear: 2017, uncertainty: 'medium', note: 'Above 100 % because the denominator is installed generation, which is small relative to imports.' },
-  { code: 'MT', name: 'Malta', ratioPct: 24, basisYear: 2017, uncertainty: 'medium', note: 'Single interconnector to Sicily; a second is planned.' },
-  { code: 'NL', name: 'Netherlands', ratioPct: 18, basisYear: 2017, uncertainty: 'medium' },
-  { code: 'PL', name: 'Poland', ratioPct: 4, basisYear: 2017, uncertainty: 'medium', note: 'Harmony Link to LT postponed/reconfigured; level remains among the lowest.' },
-  { code: 'PT', name: 'Portugal', ratioPct: 9, basisYear: 2017, uncertainty: 'medium', note: 'Effectively bounded by the Spain–France bottleneck.' },
-  { code: 'RO', name: 'Romania', ratioPct: 7, basisYear: 2017, uncertainty: 'high' },
-  { code: 'SK', name: 'Slovakia', ratioPct: 61, basisYear: 2017, uncertainty: 'medium' },
-  { code: 'SI', name: 'Slovenia', ratioPct: 84, basisYear: 2017, uncertainty: 'medium' },
-  { code: 'ES', name: 'Spain', ratioPct: 6, basisYear: 2017, uncertainty: 'medium', note: 'Long-standing lowest tier; Biscay Gulf link to FR under construction (planned late 2020s).' },
-  { code: 'SE', name: 'Sweden', ratioPct: 26, basisYear: 2017, uncertainty: 'medium' },
+  { code: 'AT', name: 'Austria', ratioPct: 15, basisYear: 2017, uncertainty: 'medium', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 32 %.' },
+  { code: 'BE', name: 'Belgium', ratioPct: 19, basisYear: 2017, uncertainty: 'medium', note: 'Nemo Link to GB (2019) and ALEGrO to DE (2020) commissioned since — current level higher. COM(2017) 718 Table 2 also gives an expected 2020 level of 33 %.' },
+  { code: 'BG', name: 'Bulgaria', ratioPct: 7, basisYear: 2017, uncertainty: 'high', note: 'IBS internal reinforcements and Greece–Bulgaria links since; level likely higher. COM(2017) 718 Table 2 also gives an expected 2020 level of 18 %.' },
+  { code: 'HR', name: 'Croatia', ratioPct: 52, basisYear: 2017, uncertainty: 'medium', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 102 %.' },
+  { code: 'CY', name: 'Cyprus', ratioPct: 0, basisYear: 2017, uncertainty: 'low', note: 'Isolated system — still 0 %. The Great Sea Interconnector to Greece is under development. COM(2017) 718 Table 2 also gives an expected 2020 level of 0 %.' },
+  { code: 'CZ', name: 'Czechia', ratioPct: 19, basisYear: 2017, uncertainty: 'medium', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 23 %.' },
+  { code: 'DK', name: 'Denmark', ratioPct: 51, basisYear: 2017, uncertainty: 'medium', note: 'Viking Link to GB (2023) commissioned since; GB links count in the indicator but are now third-country links. COM(2017) 718 Table 2 also gives an expected 2020 level of 59 %.' },
+  { code: 'EE', name: 'Estonia', ratioPct: 63, basisYear: 2017, uncertainty: 'medium', note: 'EstLink 2 was out of service Dec 2024 – Jun 2025 after cable damage (see ledger). COM(2017) 718 Table 2 also gives an expected 2020 level of 76 %.' },
+  { code: 'FI', name: 'Finland', ratioPct: 29, basisYear: 2017, uncertainty: 'medium', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 19 %.' },
+  { code: 'FR', name: 'France', ratioPct: 9, basisYear: 2017, uncertainty: 'medium', note: 'IFA2 to GB (2021) and Savoy–Piedmont to IT (2021) since; Celtic Interconnector to IE under construction. COM(2017) 718 Table 2 also gives an expected 2020 level of 12 %.' },
+  { code: 'DE', name: 'Germany', ratioPct: 9, basisYear: 2017, uncertainty: 'medium', note: 'NordLink to NO (2021) and ALEGrO to BE (2020) since. COM(2017) 718 Table 2 also gives an expected 2020 level of 13 %.' },
+  { code: 'EL', name: 'Greece', ratioPct: 11, basisYear: 2017, uncertainty: 'high', note: 'Crete–Peloponnese/Attica links (2021–2023) are internal, not interconnection; EuroAsia/Great Sea link under development. COM(2017) 718 Table 2 also gives an expected 2020 level of 15 %.' },
+  { code: 'HU', name: 'Hungary', ratioPct: 58, basisYear: 2017, uncertainty: 'medium', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 98 %.' },
+  { code: 'IE', name: 'Ireland', ratioPct: 7, basisYear: 2017, uncertainty: 'medium', note: 'Greenlink to GB (2025) since; Celtic Interconnector to FR (first EU link) under construction. COM(2017) 718 Table 2 also gives an expected 2020 level of 18 %.' },
+  { code: 'IT', name: 'Italy', ratioPct: 8, basisYear: 2017, uncertainty: 'medium', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 10 %.' },
+  { code: 'LV', name: 'Latvia', ratioPct: 45, basisYear: 2017, uncertainty: 'high', note: 'Third Estonia–Latvia interconnector (2020) since. COM(2017) 718 Table 2 also gives an expected 2020 level of 75 %.' },
+  { code: 'LT', name: 'Lithuania', ratioPct: 88, basisYear: 2017, uncertainty: 'high', note: 'Includes NordBalt and LitPol Link; links to BY/RU severed with the Feb 2025 desynchronisation (see ledger). COM(2017) 718 Table 2 also gives an expected 2020 level of 79 %.' },
+  { code: 'LU', name: 'Luxembourg', ratioPct: 109, basisYear: 2017, uncertainty: 'medium', note: 'Above 100 % because the denominator is installed generation, which is small relative to imports. COM(2017) 718 Table 2 also gives an expected 2020 level of 185 %.' },
+  { code: 'MT', name: 'Malta', ratioPct: 24, basisYear: 2017, uncertainty: 'medium', note: 'Single interconnector to Sicily; a second is planned. COM(2017) 718 Table 2 also gives an expected 2020 level of 24 %.' },
+  { code: 'NL', name: 'Netherlands', ratioPct: 18, basisYear: 2017, uncertainty: 'medium', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 28 %.' },
+  { code: 'PL', name: 'Poland', ratioPct: 4, basisYear: 2017, uncertainty: 'medium', note: 'Harmony Link to LT postponed/reconfigured; level remains among the lowest. COM(2017) 718 Table 2 also gives an expected 2020 level of 8 %.' },
+  { code: 'PT', name: 'Portugal', ratioPct: 9, basisYear: 2017, uncertainty: 'medium', note: 'Effectively bounded by the Spain–France bottleneck. COM(2017) 718 Table 2 also gives an expected 2020 level of 21 %.' },
+  { code: 'RO', name: 'Romania', ratioPct: 7, basisYear: 2017, uncertainty: 'high', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 15 %.' },
+  { code: 'SK', name: 'Slovakia', ratioPct: 43, basisYear: 2017, uncertainty: 'medium', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 59 %.' },
+  { code: 'SI', name: 'Slovenia', ratioPct: 84, basisYear: 2017, uncertainty: 'medium', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 132 %.' },
+  { code: 'ES', name: 'Spain', ratioPct: 6, basisYear: 2017, uncertainty: 'medium', note: 'Long-standing lowest tier; Biscay Gulf link to FR under construction (planned late 2020s). COM(2017) 718 Table 2 also gives an expected 2020 level of 6 %.' },
+  { code: 'SE', name: 'Sweden', ratioPct: 26, basisYear: 2017, uncertainty: 'medium', note: 'COM(2017) 718 Table 2 also gives an expected 2020 level of 28 %.' },
 ];
 
 /* --------------------------------------------- panel 2 · investment gap */
@@ -133,9 +139,9 @@ export const INVESTMENT_ROWS: InvestmentRow[] = [
   {
     id: 'com-2022-552-need',
     label: 'Electricity grid investment need, 2020–2030 (Commission)',
-    figure: '≈ €584 bn over 2020–2030, of which ≈ €400 bn in distribution grids (incl. ≈ €170 bn for digitalisation)',
-    locator: 'COM(2022) 552 final — Digitalising the energy system: EU action plan, 18 Oct 2022, section 2',
-    scopeNote: 'EU-27, transmission + distribution. The origin of the €584 bn figure later reused by the Grid Action Plan. Distribution breakdown at medium uncertainty.',
+    figure: '≈ €584 bn over 2020–2030, of which €375–425 bn in distribution grids',
+    locator: 'COM(2022) 552 final — Digitalising the energy system: EU action plan, 18 Oct 2022, section 2; distribution range verbatim from COM(2023) 757 final, section 1',
+    scopeNote: 'EU-27, transmission + distribution. The origin of the €584 bn figure later reused by the Grid Action Plan. Corrected 2026-08-06 against the Grid Action Plan text: the distribution leg is a published RANGE, not a point — "Industry estimates around EUR 375-425 billion of investment in distribution grids is necessary by 2030" — and it is attributed there to industry, not to the Commission, unlike the €584 bn total. A previous "≈ €400 bn incl. ≈ €170 bn for digitalisation" stated the midpoint as a point estimate and carried a digitalisation split that could not be verified in either Communication; the split is withdrawn.',
     uncertainty: 'medium',
     url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52022DC0552',
   },
@@ -144,7 +150,7 @@ export const INVESTMENT_ROWS: InvestmentRow[] = [
     label: 'EU Action Plan for Grids (restates the need)',
     figure: '≈ €584 bn in electricity grid investment this decade',
     locator: 'COM(2023) 757 final — Grids, the missing link: an EU Action Plan for Grids, 28 Nov 2023, section 1',
-    scopeNote: 'Same headline number as COM(2022) 552; the Action Plan’s contribution is the 14-point delivery plan, not a new estimate.',
+    scopeNote: 'Verified verbatim 2026-08-06: "the Commission estimates that EUR 584 billion in investments are necessary for the electricity grids this decade". Same headline number as COM(2022) 552; the Action Plan’s contribution is the 14-point delivery plan, not a new estimate.',
     uncertainty: 'low',
     url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023DC0757',
   },

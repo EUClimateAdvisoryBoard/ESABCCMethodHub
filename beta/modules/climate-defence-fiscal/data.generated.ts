@@ -84,10 +84,26 @@ export type AlignmentRow = {
 
 /* ------------------------------------------------------------- constants */
 
-/** EU-27 nominal GDP 2024, €bn, rounded (Eurostat nama_10_gdp). Pending verification of the rounding. */
-export const EU_GDP_2024_BN = 17_900;
+/**
+ * EU-27 nominal GDP 2024, €bn. Live Eurostat pull 2026-08-06:
+ * nama_10_gdp, na_item B1GQ, unit CP_MEUR, geo EU27_2020 gives
+ * €18,043bn for 2024 (and €18,796bn for 2025, if this module is ever
+ * rebased). The stored value was 17,900 — about 0.8 % low — which came
+ * from a rounding the compile could not verify. It can now: the Eurostat
+ * dissemination API answers over plain HTTPS from this sandbox.
+ */
+export const EU_GDP_2024_BN = 18_043;
 
-/** EU-27 defence expenditure 2024 as % of GDP (EDA Defence Data, 2024 estimate ≈ €326bn ≈ 1.9 %). */
+/**
+ * EU-27 defence expenditure 2024 as % of GDP. EDA Defence Data 2024-2025
+ * (published 2 September 2025) reports €343bn in 2024, a 19 % rise on 2023,
+ * at 1.9 % of GDP — so the PERCENTAGE stored here was right but the €
+ * figure it was derived from was not: the compile had €326bn, about 5 %
+ * low. Checked 2026-08-06. EDA also reports an expected €381bn in 2025 at
+ * 2.1 % of GDP, the first time EU-wide spending has passed 2 % in the EDA
+ * series — relevant context for the squeeze this module models, but not
+ * folded into the 2024-based arithmetic.
+ */
 export const CURRENT_DEFENCE_PCT = 1.9;
 
 /** EU climate investment actually realised, €bn/yr — I4CE 2022 figure on the 22-sector scope. */
@@ -235,26 +251,28 @@ export const DEFENCE_ROWS: LedgerRow[] = [
   {
     id: 'hague',
     label: 'NATO Hague Summit commitment',
-    amountLabel: '3.5 % of GDP core defence + 1.5 % defence- and security-related, by 2035',
+    amountLabel: 'at least 3.5 % of GDP core defence + up to 1.5 % defence- and security-related, by 2035',
     status: 'political commitment',
     scope:
       'Applies to NATO allies — 23 of 27 EU member states (Austria, Ireland, Malta and Cyprus are outside it). The 1.5 % band covers infrastructure, resilience and industrial-base spending, which is where the dual-use overlap with climate investment sits. A summit declaration, not law.',
     source: 'NATO, The Hague Summit Declaration (25 June 2025)',
-    locator: 'Declaration para. on the 5 % commitment (3.5 % + 1.5 % split) — quote pending verification against the published text',
-    url: 'https://www.nato.int/cps/en/natohq/official_texts_236705.htm',
-    confidence: 'medium',
+    locator:
+      'Declaration para. 2, verified verbatim 2026-08-06: "Allies will allocate at least 3.5% of GDP annually based on the agreed definition of NATO defence expenditure by 2035" and "Allies will account for up to 1.5% of GDP annually to inter alia protect our critical infrastructure, defend our networks, ensure our civil preparedness and resilience, unleash innovation, and strengthen our defence industrial base." Note the asymmetry the earlier label lost: the core-defence leg is a FLOOR ("at least") and the second leg is a CEILING ("up to"), so 5 % is not a simple sum of two equally binding parts.',
+    url: 'https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2025/06/25/the-hague-summit-declaration',
+    confidence: 'high',
   },
   {
     id: 'eda-current',
     label: 'Current EU defence spending',
-    amountLabel: '≈ €326bn in 2024 (≈ 1.9 % of EU GDP)',
+    amountLabel: '€343bn in 2024 (1.9 % of EU GDP); €381bn expected in 2025 (2.1 %)',
     status: 'in force',
     scope:
       'EDA Defence Data estimate for 2024, total defence expenditure of EDA member states — the baseline the Hague increment is measured against in this module.',
-    source: 'European Defence Agency, Defence Data (2024 estimate)',
-    locator: 'EDA Defence Data publication, 2024 headline estimate — pending verification',
+    source: 'European Defence Agency, Defence Data 2024-2025 (published 2 September 2025)',
+    locator:
+      'EDA headline figures, verified 2026-08-06: defence expenditure by the 27 EU Member States reached €343bn in 2024, a 19 % rise on 2023, at 1.9 % of GDP; €381bn is expected in 2025, at 2.1 % of GDP — the first time EU-wide spending passes 2 % in the EDA series. The earlier compile carried ≈ €326bn, about 5 % low, though its 1.9 % of GDP was right.',
     url: 'https://eda.europa.eu/publications-and-data/defence-data',
-    confidence: 'medium',
+    confidence: 'high',
   },
   {
     id: 'safe',

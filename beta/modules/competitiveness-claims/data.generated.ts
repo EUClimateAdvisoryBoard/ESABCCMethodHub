@@ -47,10 +47,20 @@
  * proves and what it cannot prove (a price comparison cannot prove a
  * causation claim, etc.).
  *
- * KNOWN WEAK LOCATORS (flagged for the human pass): the COM(2025) 95
- * automotive-action-plan number, the consilium meeting URL for the
- * Budapest Declaration, and the exact ESRS data-point inventory count
- * are compiled from memory and must be verified before any use.
+ * LOCATORS VERIFIED 2026-08-06 (all three that this compile flagged as
+ * weak have now been checked, and none of them was wrong):
+ *   · the automotive action plan is COM(2025) 95 final, 5.3.2025 —
+ *     confirmed from the Communication PDF header, and the source now
+ *     points at the CELEX record rather than a topic landing page;
+ *   · the Budapest Declaration was adopted on 8 November 2024 (Council
+ *     document ST 15518/2024) — the locator now points at the declaration
+ *     text rather than at the meeting index page;
+ *   · the ESRS inventory is over 1,100 data points in EFRAG IG 3 (final
+ *     list, May 2024), down from 1,178 in the October 2023 draft.
+ * What has NOT changed: no verbatim quote is asserted anywhere in this
+ * file, and every `claim` remains an explicit paraphrase. Re-extracting
+ * ≤60-word verbatim substrings with locators is still the first task of
+ * the human pass, and is the reason this module stays unpublished.
  */
 
 export type Direction = 'against-ambition' | 'for-ambition';
@@ -136,7 +146,7 @@ export const CLAIMS: Claim[] = [
         text: 'Retail electricity prices for EU industry were roughly two to three times US industrial prices in 2023–24.',
         verdict: 'SUPPORTED',
         basis:
-          'Eurostat industrial-band electricity prices (≈ €0.18–0.20/kWh, 2023) against the US EIA industrial average (≈ $0.08/kWh) give a ratio of about 2.5–3 for the years the report covers.',
+          'Re-checked against live Eurostat nrg_pc_205 on 2026-08-06, and the earlier band was too high at the top. EU-27 2023 averages: €0.175/kWh for consumption band ID (2 000–19 999 MWh) excluding taxes and levies, €0.156/kWh for the larger band IE (20 000–69 999 MWh), rising to €0.233 and €0.203/kWh respectively with all taxes included. Against the US EIA industrial average of roughly $0.08/kWh in 2023, and converting at the ECB 2023 rate of 1.081 USD/EUR, the ex-tax ratio is about 2.1–2.3 rather than 2.5–3; it only reaches 2.5–3 on a tax-inclusive EU figure compared with a US average that is not tax-inclusive, which is not a like-for-like comparison. IMPORTANT UPDATE beyond the report’s window: EU industrial prices have fallen materially since, to €0.143/kWh in 2024 and €0.137/kWh in 2025 (band ID, ex-tax), so the gap the report describes has narrowed.',
         proves:
           'Proves a retail-price ratio for the checked years. It cannot prove the gap is permanent, nor that climate policy caused it — the report itself attributes it mainly to imported-gas dependence, network charges and taxation.',
       },
@@ -271,7 +281,7 @@ export const CLAIMS: Claim[] = [
         text: 'The first-set ESRS contain on the order of 1,000+ data points.',
         verdict: 'REVISION',
         basis:
-          'EFRAG’s own implementation guidance lists roughly 1,100 potential data points across the full first set — but a large share are voluntary or conditional on materiality, so the mandatory set for a typical undertaking is far smaller.',
+          'Confirmed 2026-08-06. EFRAG’s own implementation guidance IG 3 (final Excel list, May 2024) covers over 1,100 data points across the full first set, up from 1,178 in the October 2023 draft — but a large share are voluntary or conditional on materiality, so the mandatory set for a typical undertaking is far smaller. The verdict stays REVISION because the claim is right about the inventory and wrong about what it implies for a given filer, not because the count itself is off.',
         proves:
           'Proves what the standard’s full inventory contains — the order of magnitude is right as a ceiling. It cannot prove what an average company must actually report, which is what the claim insinuates.',
       },
@@ -297,8 +307,8 @@ export const CLAIMS: Claim[] = [
     speaker: 'European Council (heads of state or government)',
     forum: 'Budapest Declaration on the New European Competitiveness Deal (informal European Council)',
     date: 'November 2024',
-    sourceLabel: 'European Council meeting, Budapest, 7–8 November 2024',
-    sourceUrl: 'https://www.consilium.europa.eu/en/meetings/european-council/2024/11/07-08/',
+    sourceLabel: 'Budapest Declaration on the New European Competitiveness Deal, informal meeting of heads of state or government, 8 November 2024 (Council document ST 15518/2024). Locator verified 2026-08-06 and pointed at the declaration text rather than at the meeting index page.',
+    sourceUrl: 'https://www.consilium.europa.eu/en/press/press-releases/2024/11/08/the-budapest-declaration/',
     propositions: [
       {
         id: 'a5-p1',
@@ -371,8 +381,8 @@ export const CLAIMS: Claim[] = [
     steelman: {
       text:
         'The strongest defensible version: regulatory timing risk is real. Fixed CO₂ fleet-target steps interact badly with a demand cycle the regulator does not control, and the Commission implicitly conceded the point by proposing 2025–27 compliance averaging and bringing the 2035 review forward in its automotive action plan. The cost-of-timing argument survives even though “the target is destroying the industry” does not.',
-      sourceLabel: 'Commission industrial action plan for the automotive sector (2025) — COM number pending verification',
-      sourceUrl: 'https://commission.europa.eu/topics/eu-competitiveness_en',
+      sourceLabel: 'European Commission, Industrial Action Plan for the European automotive sector, COM(2025) 95 final, Brussels, 5.3.2025 (document number verified against the Communication PDF, 2026-08-06)',
+      sourceUrl: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52025DC0095',
     },
   },
   {
@@ -508,10 +518,10 @@ export const CLAIMS: Claim[] = [
     propositions: [
       {
         id: 'f3-p1',
-        text: 'Net GHG emissions fell by roughly 37 % (1990–2023) while real GDP grew by roughly two thirds.',
+        text: 'Net GHG emissions fell by roughly 37 % (1990–2023) while real GDP grew by roughly 70 %.',
         verdict: 'SUPPORTED',
         basis:
-          'EEA greenhouse-gas inventory (2023 net emissions about 37 % below 1990) and Eurostat national accounts (real GDP growth in the mid-60s % over the same period).',
+          'Checked 2026-08-06 against the EEA’s own paired statement: between 1990 and 2023 EU GDP increased by 70 % while greenhouse gas emissions fell by 37 %. The emissions leg is confirmed; the GDP leg was previously stated as "roughly two thirds" / "mid-60s %" and is corrected upward to roughly 70 %, which makes the decoupling claim stronger, not weaker. Note that EEA publications quote both 36 % and 37 % for the emissions fall depending on vintage and scope, so the pairing is taken from a single source statement rather than assembled from two.',
         proves:
           'Proves the two series and their joint trend. A joint trend cannot prove causation in either direction.',
       },
@@ -599,7 +609,7 @@ export const CLAIMS: Claim[] = [
         text: 'Specific damage magnitudes — double-digit percentage GDP losses by mid-century — are established.',
         verdict: 'UNSUPPORTED',
         basis:
-          'The most-cited recent empirical estimate (Kotz et al. 2024: −19 % world income by 2049) was retracted by its authors in December 2025, and surviving estimates span an order of magnitude.',
+          'Confirmed 2026-08-06. Kotz, Wenz and Levermann, "The economic commitment of climate change" (Nature, April 2024), which projected a 19 % reduction in world income within 26 years, was retracted by its authors on 3 December 2025: the result proved sensitive to removing a single country, Uzbekistan, whose 1995–1999 economic data were inaccurate, and spatial auto-correlation affected the uncertainty ranges. The authors’ revised central estimate is 17 % with the range widening from 11–29 % to 6–31 %. Surviving estimates across the literature still span an order of magnitude.',
         proves:
           'Proves the fragility of any specific headline magnitude. It does not prove damages are small — the retraction removed a number, not the phenomenon.',
       },

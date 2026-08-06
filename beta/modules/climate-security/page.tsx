@@ -23,10 +23,11 @@
  *      advised path) as extra import volume and bill, with a 2022-style
  *      price-shock stress slider.
  *
- * Epistemic status: AI-compiled order-of-magnitude reconstruction, pending
- * Secretariat verification. The arithmetic (model.ts) is deterministic and
- * exact; the calibration anchors (data.generated.ts) are rounded public
- * figures with explicit ranges, not yet validated by a live data pull.
+ * Epistemic status: mixed, and the page says which is which. Since the
+ * 2026-08 fact-check the BACKWARD leg runs on live Eurostat observations
+ * and published World Bank price averages; the FORWARD leg still runs on
+ * AI-inferred 2030 per-fuel levels and is pending Secretariat verification.
+ * The arithmetic (model.ts) is deterministic and exact throughout.
  * This is NOT an attribution study: the frozen-structure counterfactual
  * cannot separate the effect of climate policy from the effect of the 2022
  * price shock itself. Not citable as a quantitative finding.
@@ -518,18 +519,21 @@ export default function ClimateSecurityPage() {
         {/* caveat box */}
         <section className="mb-8 rounded-lg border-2 border-accent-orange/60 bg-surface-orange p-4">
           <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-tertiary-dark">
-            ⚠ AI-compiled — pending Secretariat verification · read this first
+            ⚠ Forward leg AI-compiled — pending Secretariat verification · read this first
           </p>
           <p className="mt-1.5 max-w-4xl text-[12.5px] leading-relaxed text-tertiary-dark">
-            This is an <strong>order-of-magnitude reconstruction, not an attribution study</strong>. The
-            frozen-structure counterfactual <strong>cannot separate the effect of climate policy from the effect of
-            the 2022 price shock itself</strong> — the post-2022 demand fall mixes efficiency, renewables, fuel
-            switching, demand destruction and mild winters, and this module makes no attempt to disentangle them.
-            That is why the baseline choice sits as the most prominent control on the page: the choice of
-            counterfactual <em>is</em> the result. All calibration anchors are AI-compiled rounded values with
-            explicit ranges (compile date 2026-08, no live data pull yet — see{' '}
-            <code className="rounded bg-white/60 px-1 text-[11px]">data.generated.ts</code>); nothing here is
-            citable as a quantitative finding without Secretariat verification.
+            This is a <strong>reconstruction, not an attribution study</strong>. The frozen-structure
+            counterfactual <strong>cannot separate the effect of climate policy from the effect of the 2022 price
+            shock itself</strong> — the post-2022 demand fall mixes efficiency, renewables, fuel switching, demand
+            destruction and mild winters, and this module makes no attempt to disentangle them. That is why the
+            baseline choice sits as the most prominent control on the page: the choice of counterfactual{' '}
+            <em>is</em> the result. On the inputs, the two legs differ and the difference matters: the{' '}
+            <strong>backward leg is built from live Eurostat observations</strong> (demand, import dependency, GDP,
+            supplier mix; refreshed 6 August 2026) priced with <strong>published World Bank annual averages</strong>,
+            while the <strong>2030 per-fuel levels of the forward leg remain AI-inferred</strong> from GHG
+            aggregates and are the softest numbers here — see{' '}
+            <code className="rounded bg-white/60 px-1 text-[11px]">data.generated.ts</code>. Treat the forward leg as
+            indicative pending Secretariat verification.
           </p>
         </section>
 
@@ -732,9 +736,11 @@ export default function ClimateSecurityPage() {
                 Pathway levels (gas, bcm): WEM {PROJ_2030.levels.wem.gas.lo}–{PROJ_2030.levels.wem.gas.hi} · WAM{' '}
                 {PROJ_2030.levels.wam.gas.lo}–{PROJ_2030.levels.wam.gas.hi} · advised{' '}
                 {PROJ_2030.levels.advised.gas.lo}–{PROJ_2030.levels.advised.gas.hi}. EEA publishes GHG aggregates
-                (WEM ≈ −43 %, WAM ≈ −49 % vs 1990), not per-fuel demand — the per-fuel split here is AI-inferred from
-                Commission scenario material and carries the widest ranges in this module. The per-gap join onto the
-                Policy Gap Tracker is deferred (see caveats).
+                (WEM ≈ −47 %, WAM ≈ −54 % net vs 1990, November 2025 update), not per-fuel demand — the per-fuel
+                split here is AI-inferred from Commission scenario material, was inferred against the older
+                −43 %/−49 % aggregates, and therefore understates 2030 progress on both projected pathways. These are
+                the widest ranges and the softest numbers in this module. The per-gap join onto the Policy Gap
+                Tracker is deferred (see caveats).
               </p>
             </div>
           </div>
@@ -744,20 +750,28 @@ export default function ClimateSecurityPage() {
         <section className="mb-10 rounded-lg border border-grey-200 bg-surface-blue p-4">
           <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-tertiary-dark">Caveats &amp; sources</p>
           <p className="mt-1.5 max-w-4xl text-[12px] leading-relaxed text-tertiary">
-            AI-compiled — pending Secretariat verification (compile date 2026-08). The arithmetic is deterministic and
-            reproducible from <code className="rounded bg-white/70 px-1 text-[11px]">model.ts</code>; every anchor in{' '}
-            <code className="rounded bg-white/70 px-1 text-[11px]">data.generated.ts</code> carries a source locator
-            and, where sources disagree or precision is limited, an explicit lo–hi range. Known limits, stated rather
-            than hidden: (1) the counterfactual attributes the whole demand fall to &ldquo;structure&rdquo;, so
-            climate policy, the price shock, demand destruction and warm winters are inseparable here; (2) demand
-            series carry ± 5–10 % tolerances that are NOT compounded into the headline range (only price disagreement
-            is); (3) the 2030 per-fuel splits are AI-inferred from GHG aggregates and are the softest numbers on the
-            page; (4) supplier shares for 2024 are contested between trackers and shown as ranges. Deferred backlog,
-            deliberately not in this round: the per-gap security-cost join onto{' '}
+            Refreshed 6 August 2026. The arithmetic is deterministic and reproducible from{' '}
+            <code className="rounded bg-white/70 px-1 text-[11px]">model.ts</code>; every value in{' '}
+            <code className="rounded bg-white/70 px-1 text-[11px]">data.generated.ts</code> carries a source locator.
+            Demand, import dependency, activity and supplier mix are regenerated by{' '}
+            <code className="rounded bg-white/70 px-1 text-[11px]">scripts/refresh-climate-security-eurostat.mjs</code>{' '}
+            and prices by{' '}
+            <code className="rounded bg-white/70 px-1 text-[11px]">scripts/refresh-climate-security-prices.mjs</code>,
+            with the raw pulls kept under{' '}
+            <code className="rounded bg-white/70 px-1 text-[11px]">public/data/climate-security/</code>. Known limits,
+            stated rather than hidden: (1) the counterfactual attributes the whole demand fall to
+            &ldquo;structure&rdquo;, so climate policy, the price shock, demand destruction and warm winters are
+            inseparable here; (2) the headline lo–hi band propagates only the published price bands — the
+            within-year monthly spread for gas and oil, the gap between the two steam-coal markers for coal — and is
+            a cheapest-month/dearest-month bracket, not a confidence interval; (3) the 2030 per-fuel splits are
+            AI-inferred from GHG aggregates and remain the softest numbers on the page; (4) gas supplier shares are
+            attributed by country of dispatch, so LNG trans-shipment can sit under the wrong flag and trackers that
+            reallocate it report a higher Russian share than Eurostat does. Deferred backlog, deliberately not in
+            this round: the per-gap security-cost join onto{' '}
             <code className="rounded bg-white/70 px-1 text-[11px]">beta/modules/policy-gaps/</code> by gap id; a
-            heating-degree-day correction of household demand; a live Eurostat/EEA snapshot pull into{' '}
-            <code className="rounded bg-white/70 px-1 text-[11px]">public/data/climate-security/</code> via the
-            GitHub-runner workflows, after which the data file is regenerated.
+            heating-degree-day correction of household demand; replacing the AI-inferred 2030 per-fuel levels with a
+            published Commission scenario table; a COMEXT unit-value series so the border price is the EU&apos;s own
+            paid price rather than a world marker.
           </p>
           <ul className="mt-3 grid gap-x-6 gap-y-1 text-[12px] sm:grid-cols-2">
             {SOURCES.map((s) => (

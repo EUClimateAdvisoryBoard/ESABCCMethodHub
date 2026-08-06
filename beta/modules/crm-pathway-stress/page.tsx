@@ -511,9 +511,13 @@ export default function CrmPathwayStressPage() {
         <section className="mb-8">
           <h2 className="text-lg font-bold text-tertiary-dark">2 · The CRMA 2030 benchmarks — and each material’s distance to them</h2>
           <p className="mt-1 max-w-3xl text-[13px] text-tertiary">
-            Regulation (EU) 2024/1252 sets four capacity benchmarks for 2030, per strategic raw
-            material, in Article 5(1). They are benchmarks the Union is to reach, not binding quotas
-            on any actor.
+            Regulation (EU) 2024/1252 sets four benchmarks for 2030 in Article 5(1). They are
+            benchmarks the Union is to reach, not binding quotas on any actor — and the scope is
+            narrower than a per-material reading suggests. The chapeau asks that Union capacity
+            &ldquo;approaches or reaches&rdquo; the first three <em>overall</em>, across strategic
+            raw materials as a set; only the single-supplier cap is expressed per material. The
+            per-material bars below are therefore a presentational choice, not a legal test, and a
+            material short of a bar is not by itself a compliance finding.
           </p>
           <div className="mt-3 grid grid-cols-2 gap-3 lg:grid-cols-4">
             {CRMA_BENCHMARKS.map((b) => (
@@ -523,9 +527,13 @@ export default function CrmPathwayStressPage() {
                   {b.key === 'singleSupplier' ? '≤ ' : '≥ '}
                   {fmt(b.targetPct)} %
                 </p>
-                <p className="mt-1 text-[10.5px] leading-snug text-tertiary">
-                  “{b.quotedFragment}” — {b.paraphrase}
-                </p>
+                <p className="mt-1 text-[10.5px] leading-snug text-tertiary">{b.paraphrase}</p>
+                <details className="mt-1">
+                  <summary className="cursor-pointer text-[10px] text-primary hover:underline">
+                    Verbatim provision
+                  </summary>
+                  <p className="mt-1 text-[10px] leading-snug text-tertiary">&ldquo;{b.quote}&rdquo;</p>
+                </details>
                 <p className="mt-1.5 text-[10px] text-tertiary">
                   <a href={CRMA.url} target="_blank" rel="noreferrer" className="text-primary hover:underline">
                     Reg. (EU) 2024/1252, {b.locator} ↗

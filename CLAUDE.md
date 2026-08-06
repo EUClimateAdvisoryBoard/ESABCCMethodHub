@@ -229,7 +229,19 @@ extracted source text.
   `refresh-indicators.yml` (opens a PR, never pushes to main — every
   automated value gets fact-checked before merge), report/reference
   fetchers, `gdpr-retention.yml`, backups.
-- Eurostat/EEA/EUR-Lex hosts are blocked from this sandbox (403);
-  follow the API recipes in `docs/how-to-access-eurostat-eea-data.md`
-  and run live pulls via the GitHub-runner workflows rather than
-  dropping a check.
+- Network access to primary sources varies by host, and **the old blanket
+  "Eurostat/EEA/EUR-Lex are blocked" rule was wrong** — it licensed six
+  beta modules to be compiled from model knowledge, with errors up to
+  20 percentage points (see
+  `docs-internal/beta-modules-m45-m52-factcheck-2026-08.md`). As of
+  August 2026: the Eurostat dissemination API and `eea.europa.eu` are
+  **reachable** over plain HTTPS; `eur-lex.europa.eu` is behind an AWS
+  WAF JavaScript challenge and answers **202 with a challenge page**, but
+  enacting terms are reachable through the Publications Office Cellar
+  service (`publications.europa.eu/resource/celex/<CELEX>` with
+  `Accept: application/xhtml+xml`). Probe before assuming, and read the
+  body not just the status: 403/407 is an allowlist denial, 202 with a
+  short body is a bot challenge, 200 with an empty payload is a wrong
+  query. Recipes in `docs/how-to-access-eurostat-eea-data.md`; fall back
+  to the GitHub-runner workflows only when a host really is blocked,
+  never drop a check.

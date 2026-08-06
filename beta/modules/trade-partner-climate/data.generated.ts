@@ -9,8 +9,16 @@
  * captured, so the register must be read as stale by up to two quarters.
  * Partner-policy status changes weekly — this is a snapshot, not a feed.
  *
- * Documents and trackers drawn on (no live pulls run from this sandbox;
- * Eurostat/EEA/EUR-Lex hosts are blocked here in any case):
+ * PARTIALLY FACT-CHECKED 2026-08-06 (see
+ * docs-internal/beta-modules-m45-m52-factcheck-2026-08.md): the NDC column
+ * for the United States, the United Kingdom and China has been verified
+ * and two `uncertain` flags closed. Carbon-price levels, coverage shares
+ * and Article 6 volumes have NOT been re-checked and stay as compiled.
+ * The header note below that Eurostat and EUR-Lex are blocked from this
+ * sandbox is FALSE: Eurostat answers over plain HTTPS and EUR-Lex texts
+ * are reachable through the Publications Office Cellar service.
+ *
+ * Documents and trackers drawn on (no live pulls run at compile time):
  *  - World Bank, State and Trends of Carbon Pricing 2025 (May 2025) and
  *    the Carbon Pricing Dashboard — carbon-price levels and coverage.
  *  - ICAP ETS Status Report 2025 and the ICAP ETS map — system status.
@@ -127,8 +135,8 @@ export const PARTNERS: Partner[] = [
     },
     ndc2035: {
       status: 'adopted',
-      headline: '81 % below 1990 by 2035 — submitted',
-      note: 'Announced at COP29 (November 2024) and submitted to the UNFCCC registry on 30 January 2025, in line with Climate Change Committee advice.',
+      headline: '81 % below 1990 by 2035 — submitted 30 January 2025',
+      note: 'Announced at COP29 (November 2024) and submitted to the UNFCCC registry on 30 January 2025, all sectors and all gases, in line with Climate Change Committee advice. Verified 2026-08-06 against the UK submission and its ICTU annex.',
       sourceYear: '2025',
     },
     cbam: {
@@ -170,11 +178,10 @@ export const PARTNERS: Partner[] = [
     },
     ndc2035: {
       status: 'adopted',
-      headline: '7–10 % below peak by 2035 — announced Sept 2025',
+      headline: '7–10 % below peak by 2035 — submitted 3 November 2025',
       note:
-        'Announced by Xi Jinping at the UN on 24 September 2025: first absolute, economy-wide, all-gas target. Formal registry submission around COP30 could not be verified at compile.',
+        'Announced by Xi Jinping at the UN climate summit on 24 September 2025 — the first absolute, economy-wide, all-gas Chinese target — and formally submitted to the UNFCCC on 3 November 2025, ahead of COP30 in Belém. The compile could not verify the submission and flagged it; verified 2026-08-06.',
       sourceYear: '2025',
-      uncertain: true,
     },
     cbam: {
       status: 'none',
