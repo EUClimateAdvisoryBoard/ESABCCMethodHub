@@ -2,11 +2,16 @@
  * Clean-Tech Manufacturing Scoreboard — curated dataset (beta module M · 46).
  *
  * AI-compiled — pending Secretariat verification. Compiled 2026-08 from
- * published industry and JRC sources; no live pulls were run from this
- * sandbox (Eurostat/EEA hosts are blocked), so the COMEXT figures below are
- * taken from published summaries, not from a committed CN-code pipeline —
- * building that deterministic CN-code list is deferred work, recorded in
- * the module's caveat panel.
+ * published industry and JRC sources, fact-checked 2026-08-06 (see
+ * docs-internal/beta-modules-m45-m52-factcheck-2026-08.md). The COMEXT
+ * figures below are still taken from published summaries, not from a
+ * committed CN-code pipeline — building that deterministic CN-code list is
+ * deferred work, recorded in the module's caveat panel. Note for future
+ * passes: the claim that "Eurostat/EEA hosts are blocked" from this sandbox
+ * is FALSE — the Eurostat dissemination API answers over plain HTTPS, and
+ * M · 45 is now built on live pulls. EUR-Lex itself sits behind a JS
+ * challenge, but the enacting terms are reachable through the Publications
+ * Office Cellar service.
  *
  * Provenance and method notes:
  *  - Reference documents: JRC Clean Energy Technology Observatory (CETO)
@@ -28,9 +33,9 @@
  *  - The announced pipeline column is SOFT everywhere:
  *    announcement-to-FID attrition is severe (Northvolt is the canonical
  *    example) and the flag is structural, not decorative.
- *  - NZIA benchmark values (40 % / ≈15 %) are paraphrased from
- *    Reg. (EU) 2024/1735 (CELEX 32024R1735); verbatim provision text for
- *    the Policy-Targets Register is a separate, pending extraction pass.
+ *  - NZIA benchmark values (40 % / 15 %) are now VERBATIM enacting terms
+ *    from Reg. (EU) 2024/1735 Art. 5(1), extracted 2026-08-06 — see the
+ *    NZIA constant below for what the earlier paraphrase got wrong.
  */
 
 export type TechId =
@@ -118,15 +123,46 @@ export interface Technology {
 }
 
 /** NZIA — Reg. (EU) 2024/1735 (CELEX 32024R1735), OJ L, 28.6.2024.
- *  Benchmarks paraphrased; verbatim extraction to the Policy-Targets
- *  Register is pending. No consolidated version exists yet (act as adopted). */
+ *  Enacting terms extracted verbatim from the EU Publications Office Cellar
+ *  service (publications.europa.eu/resource/celex/32024R1735, Accept:
+ *  application/xhtml+xml) on 2026-08-06 and checked as exact substrings of
+ *  that text. No consolidated version exists yet (act as adopted).
+ *
+ *  The 2026-08 fact-check corrected three things here. The benchmarks were
+ *  attributed to Article 1, which is the subject-matter article and states
+ *  no benchmark at all — they are in ARTICLE 5(1). The 2040 benchmark was
+ *  paraphrased as "around 15 %"; the enacting term says "15 %" without the
+ *  hedge, and carries an exception clause that the paraphrase dropped
+ *  entirely. And the 40 % benchmark reads differently in the recital and in
+ *  the enacting terms in a way that matters for this module — see
+ *  `benchmark2030Scope`. */
 export const NZIA = {
   celex: '32024R1735',
   url: 'https://eur-lex.europa.eu/eli/reg/2024/1735/oj',
+  /** Verbatim, Art. 5(1) chapeau + point (a). */
   benchmark2030:
-    'Union manufacturing capacity of the listed net-zero technologies approaches or reaches at least 40 % of the Union’s annual deployment needs by 2030 (paraphrase of Reg. (EU) 2024/1735, Art. 1 — verbatim extraction pending).',
+    'The Commission and Member States shall support net-zero manufacturing projects in accordance with this Chapter in order to ensure the reduction of strategic dependencies in the Union of net-zero technologies and their supply chains by reaching a manufacturing capacity for those technologies of: … a benchmark of at least 40 % of the Union’s annual deployment needs for the corresponding technologies necessary to achieve the Union’s 2030 climate and energy targets',
+  benchmark2030Locator: 'Reg. (EU) 2024/1735, Art. 5(1)(a)',
+  /** Verbatim, Art. 5(1)(b), exception clause included. */
   benchmark2040:
-    'An increased Union share of world production of those technologies, with a view to reaching around 15 % of world production by 2040 (paraphrase of Reg. (EU) 2024/1735, Art. 1 — verbatim extraction pending).',
+    'an increased Union share for the corresponding technologies with a view to reaching 15 % of world production by 2040 on the basis of monitoring pursuant to Article 42, except where the increased Union manufacturing capacity would be significantly higher than the Union’s deployment needs for the corresponding technologies necessary to achieve the Union’s 2040 climate and energy targets',
+  benchmark2040Locator: 'Reg. (EU) 2024/1735, Art. 5(1)(b)',
+  /**
+   * The scope caveat this module has to state, because its whole layout is
+   * one distance-to-benchmark bar PER TECHNOLOGY. Recital 18 frames the 40 %
+   * figure as an aggregate — verbatim: "The Union net-zero technologies
+   * annual capacity should aim to approach or reach an overall annual
+   * manufacturing benchmark of at least 40 % of annual deployment needs by
+   * 2030 for net-zero technologies considered as a whole." Article 5(1)(a)
+   * instead ties it to "the corresponding technologies". A technology-by-
+   * technology reading is therefore defensible but is NOT the only one: on
+   * the recital's aggregate reading, a shortfall in one technology can be
+   * offset by a surplus in another, and no single bar below is a legal test
+   * of compliance on its own.
+   */
+  benchmark2030Scope:
+    'Recital 18 states the 40 % figure as an OVERALL benchmark "for net-zero technologies considered as a whole", while Art. 5(1)(a) ties it to "the corresponding technologies". The per-technology bars here follow the latter reading; on the aggregate reading a shortfall in one technology may be offset by a surplus in another. No single bar is a compliance test.',
+  extractedAt: '2026-08-06',
 } as const;
 
 export const COMPILED = '2026-08' as const;
@@ -228,7 +264,7 @@ export const TECHNOLOGIES: Technology[] = [
         year: 2024,
         uncertain: true,
       },
-      note: 'Against EU installations of ≈13 GW in 2024 (WindEurope) — the deployment gap is currently larger than the manufacturing gap.',
+      note: 'Against EU-27 installations of 12.9 GW in 2024 (WindEurope, "Wind energy in Europe: 2024 statistics and the outlook for 2025-2030"; Europe as a whole installed 16.4 GW, of which 84 % onshore — checked 2026-08-06). WindEurope expects the EU-27 to add 140 GW over 2025-2030, about 23 GW a year, against the roughly 32 GW a year implied by moving from 231 GW installed at end-2024 to the 425 GW consistent with the 42.5 % renewables target. The deployment gap is currently larger than the manufacturing gap.',
     },
     capacity: {
       low: {
@@ -283,7 +319,7 @@ export const TECHNOLOGIES: Technology[] = [
     },
     bottleneck: {
       text:
-        'The binding constraint has been profitability, not tooling: the major European OEMs booked heavy combined losses in 2021–23 on fixed-price backlogs signed before the input-cost shock, and price-only auction design kept margins thin. Chinese entrants offer turbines reported 20–50 % cheaper with deferred-payment financing, winning first orders at the EU periphery. Component dependence (permanent magnets, castings) and slow deployment — ≈13 GW installed in the EU in 2024 against a ≈30 GW/yr need — hold back investment in new EU capacity more than any hard factory limit.',
+        'The binding constraint has been profitability, not tooling: the major European OEMs booked heavy combined losses in 2021–23 on fixed-price backlogs signed before the input-cost shock, and price-only auction design kept margins thin. Chinese entrants offer turbines reported 20–50 % cheaper with deferred-payment financing, winning first orders at the EU periphery. Component dependence (permanent magnets, castings) and slow deployment — 12.9 GW installed in the EU-27 in 2024 against a ≈30 GW/yr need — hold back investment in new EU capacity more than any hard factory limit.',
       sources: ['WindEurope 2024', 'JRC CETO 2023', 'ETIPWind 2023'],
     },
   },
@@ -396,7 +432,7 @@ export const TECHNOLOGIES: Technology[] = [
         year: 2023,
         uncertain: true,
       },
-      note: 'Actual EU production ≈2.2 m units in 2023 — capacity is part-idle after the 2023–25 sales slump, so the utilisation gap, not the capacity gap, is the story.',
+      note: 'Capacity is part-idle after the 2023–25 sales slump, so the utilisation gap, not the capacity gap, is the story. EHPA reports 2.8 m units sold across 14 European countries in 2023 falling 21 % to 2.2 m in 2024 (press release, March 2025, checked 2026-08-06); on the JRC CETO ratio that EU production meets about two-thirds of EU sales, EU production is of the order of 1.7–1.9 m units. A figure of "≈2.2 m units produced in the EU in 2023" previously stood here — it was the 2024 SALES number under a production label, and it is withdrawn. Note that EHPA country coverage varies between editions (14, 19 and 21 countries all appear), so its sales totals are not directly comparable across releases.',
     },
     capacityYear: 2023,
     capacityPast: {

@@ -6,9 +6,9 @@
  *
  * Six net-zero technologies (solar PV, wind, batteries, heat pumps,
  * electrolysers, grid equipment), each scored against the Net-Zero
- * Industry Act benchmarks — Reg. (EU) 2024/1735: manufacturing capacity
- * reaching at least 40 % of the Union's annual deployment needs by 2030,
- * and ≈15 % of world production by 2040. For each technology: the 2030
+ * Industry Act benchmarks — Reg. (EU) 2024/1735 Art. 5(1): manufacturing
+ * capacity of at least 40 % of the Union's annual deployment needs by 2030,
+ * and a Union share reaching 15 % of world production by 2040. For each technology: the 2030
  * deployment need and current EU manufacturing capacity (shown as a
  * source-labelled RANGE where sources disagree, never a silent average),
  * the announced pipeline (flagged soft), import penetration and supplier
@@ -314,8 +314,9 @@ export default function CleantechManufacturingPage() {
           </h1>
           <p className="mt-2 max-w-3xl text-[13.5px] leading-relaxed text-tertiary">
             The competitiveness debate is mostly argued on prices; the other half is manufacturing. The Net-Zero
-            Industry Act (Reg. (EU) 2024/1735) sets the Union a benchmark of manufacturing at least 40 % of its own
-            annual deployment needs by 2030, and ≈15 % of world production by 2040. This scoreboard measures the
+            Industry Act (Reg. (EU) 2024/1735, Art. 5(1)) sets the Union a benchmark of manufacturing at least
+            40 % of its own annual deployment needs by 2030, and a Union share reaching 15 % of world production by
+            2040. This scoreboard measures the
             distance for solar PV, wind, batteries, heat pumps, electrolysers and grid equipment — deployment need,
             EU capacity (as a range where sources disagree), announced pipeline (soft), import penetration and
             supplier concentration, and an EEA-style pace ratio on the observed capacity trend.
@@ -375,21 +376,28 @@ export default function CleantechManufacturingPage() {
             <div className="rounded-lg border border-grey-200 bg-white p-4">
               <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-primary">2030 · domestic manufacturing</p>
               <p className="mt-1 font-mono text-3xl font-bold tabular-nums text-tertiary-dark">{NZIA_2030_DOMESTIC_SHARE} %</p>
-              <p className="mt-1.5 text-[12px] leading-relaxed text-tertiary">{NZIA.benchmark2030}</p>
+              <p className="mt-1.5 text-[12px] leading-relaxed text-tertiary">
+                &ldquo;{NZIA.benchmark2030}&rdquo;
+              </p>
               <p className="mt-2 text-[10.5px] text-tertiary">
-                Reg. (EU) 2024/1735 · CELEX {NZIA.celex} ·{' '}
+                {NZIA.benchmark2030Locator} · CELEX {NZIA.celex} ·{' '}
                 <a href={NZIA.url} target="_blank" rel="noreferrer" className="text-primary hover:underline">
                   EUR-Lex ↗
                 </a>
               </p>
+              <p className="mt-2 text-[10.5px] leading-snug text-tertiary">{NZIA.benchmark2030Scope}</p>
             </div>
             <div className="rounded-lg border border-grey-200 bg-white p-4">
               <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-primary">2040 · share of world production</p>
-              <p className="mt-1 font-mono text-3xl font-bold tabular-nums text-tertiary-dark">≈{NZIA_2040_WORLD_SHARE} %</p>
-              <p className="mt-1.5 text-[12px] leading-relaxed text-tertiary">{NZIA.benchmark2040}</p>
+              <p className="mt-1 font-mono text-3xl font-bold tabular-nums text-tertiary-dark">{NZIA_2040_WORLD_SHARE} %</p>
+              <p className="mt-1.5 text-[12px] leading-relaxed text-tertiary">
+                &ldquo;{NZIA.benchmark2040}&rdquo;
+              </p>
               <p className="mt-2 text-[10.5px] text-tertiary">
-                Where an EU world-production share is published it is shown in the detail view below — solar PV sits
-                near ≈1–2 %, electrolysers near ≈25 %.
+                {NZIA.benchmark2040Locator} · note the closing exception: the benchmark does not apply where Union
+                capacity would run significantly above the Union&apos;s own 2040 deployment needs. Where an EU
+                world-production share is published it is shown in the detail view below — solar PV sits near
+                ≈1–2 %, electrolysers near ≈25 %.
               </p>
             </div>
           </div>
