@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T07:09:27.112Z",
+  "generatedAt": "2026-08-06T07:11:47.322Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,27 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/ae9563",
+      "title": "Equity-centered dietary transitions: food-related GHG emissions and climate target alignment",
+      "journal": "Environmental Research Letters",
+      "authors": "Yaling Li, Fujin Yi, Xiaoxi Wang",
+      "published": "2026-08-05",
+      "url": "https://doi.org/10.1088/1748-9326/ae9563",
+      "abstract": "Global dietary transitions confront the dual challenge of reconciling nutrition equity with environmental sustainability. This study evaluates three equity-centered dietary transitions scenarios grounded in country-specific dietary recommendations across 181 countries: CP (current patterns), LP (low-emission substitutions, e.g., poultry replacing ruminants), and HP (high-emission alternatives), to quantify emission dynamics and assess alignment with Paris Agreement temperature targets. Business-as-usual trends (BAU) result in cumulative food-related emissions of 1768 Gt CO₂e between 2020 and 2100. While CP reduces this to 1411 Gt CO₂e, achieving only marginal alignment with the 2 °C limit, LP achieves a 37% reduction to 1113 GtCO₂e, ensuring robust compatibility with the 2 °C target. In contrast, HP emissions surpass even BAU levels. Central to the LP pathway, we propose an equity-centered allocation framework that differentiates mitigation obligations and emission allowances based on deviations from national dietary guidelines. Countries with excessive intakes, particularly of animal-source foods, are thus assigned stringent obligations (e.g., USA: 58.85 Gt CO₂e; China: 131.10 Gt CO₂e). Conversely, those with inadequate nutritional intake are allocated safeguarded allowances (e.g., Nigeria: 25.63 Gt CO₂e; Ethiopia: 24.94 Gt CO₂e), scaled to population size to uphold nutritional rights. However, even under this optimized pathway, the residual emission budget for non-food sect",
+      "suggestedOn": "2026-08-06",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 5,
+          "matched": [
+            "climate target",
+            "decarbonization",
+            "paris agreement"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/ae90c3",
       "title": "Geographically differentiated strategies for limestone calcined clay cement (LC 3 ) deployment rapidly enable low-carbon cement globally",
