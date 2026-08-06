@@ -41,8 +41,19 @@
  *      from this sandbox carry verification: 'unverified' rather than
  *      being asserted.
  *
- * EUR-Lex, Eurostat and EEA hosts are blocked from this sandbox, so no
- * link in this file has been live-checked; URLs follow the repository's
+ * FACT-CHECKED 2026-08-06 (see
+ * docs-internal/beta-modules-m45-m52-factcheck-2026-08.md). The
+ * free-allocation phase-down was verified verbatim against the
+ * consolidated ETS Directive and is exactly right; the CBAM Simplification
+ * Regulation that this compile left as "instrument number pending" is
+ * Reg. (EU) 2025/2083 and is now in the event ledger. The import series
+ * remains illustrative and unextracted.
+ *
+ * The claim below that Eurostat and EUR-Lex are blocked is FALSE and is
+ * retained only to mark what the original compile believed: the Eurostat
+ * dissemination API answers over plain HTTPS, and EUR-Lex enacting terms
+ * are reachable through the Publications Office Cellar service. Links in
+ * this file still follow the repository's
  * standard citation formats (CELEX links to consolidated versions where
  * provisions are relied on).
  */
@@ -631,12 +642,26 @@ export const EVENTS: CbamEvent[] = [
     actor: 'European Commission',
     title: 'Omnibus I: CBAM simplification proposed',
     summary:
-      'A 50-tonne annual de minimis threshold exempting the large majority of importers while keeping the vast bulk of embedded emissions in scope, plus authorisation and declaration simplifications. Final adopted instrument number pending verification.',
+      'A 50-tonne annual de minimis threshold exempting the large majority of importers while keeping the vast bulk of embedded emissions in scope, plus authorisation and declaration simplifications.',
     kind: 'scope-review',
-    verification: 'unverified',
+    verification: 'sourced',
     source: {
       label: 'European Commission — CBAM policy page',
       url: 'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en',
+    },
+  },
+  {
+    date: '2025-10-17',
+    datePrecision: 'day',
+    actor: 'European Parliament and Council',
+    title: 'CBAM Simplification Regulation adopted — Reg. (EU) 2025/2083',
+    summary:
+      'Regulation (EU) 2025/2083 of 8 October 2025, amending Reg. (EU) 2023/956 as regards simplifying and strengthening the carbon border adjustment mechanism, published in the Official Journal on 17 October 2025 and in force from 20 October 2025. It sets a single mass-based de minimis threshold of 50 tonnes applying cumulatively across iron and steel, aluminium, fertilisers and cement; the threshold does NOT apply to imports of electricity or hydrogen. This closes the instrument number that the 2026-08 compile left pending, and it means the scope register and the definitive-regime narrative in this module describe a regime that has since been amended.',
+    kind: 'scope-review',
+    verification: 'sourced',
+    source: {
+      label: 'Reg. (EU) 2025/2083 (CELEX 32025R2083), OJ 17.10.2025 — verified 2026-08-06',
+      url: 'https://eur-lex.europa.eu/eli/reg/2025/2083/oj',
     },
   },
   {
