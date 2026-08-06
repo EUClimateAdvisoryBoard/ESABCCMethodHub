@@ -1,0 +1,20 @@
+{
+  "_readme": [
+    "Reviewed corrections to the M·53 target → indicator assessment ledger.",
+    "One entry per M·36 target id. The build script (scripts/build-target-indicators.mjs)",
+    "applies them on top of the deterministic vocabulary match, so a correction is",
+    "reversible by deleting one entry and rebuilding — never by editing the generated file.",
+    "",
+    "Fields:",
+    "  id       — the M·36 target id (stable content hash; see src/data/policy-targets.generated.ts).",
+    "  families — replaces the matched measurement families (keys from scripts/target-indicator-catalogue.mjs,",
+    "             or 'compliance-milestone'). Omit to keep the vocabulary match.",
+    "  route    — forces the assessment route ('series' | 'dataset' | 'milestone'). Omit to derive it.",
+    "  rung     — forces the flow-chart row ('outcome' | 'lever' | 'enabling'). Omit to derive it.",
+    "  label    — replaces the card label. Only ever a trim of the act's own wording.",
+    "  reason   — REQUIRED prose reason, tagged with the pass, e.g. '[human review 2026-08] …'.",
+    "",
+    "A stale id (one that matches no relevant target) fails the build rather than being ignored."
+  ],
+  "entries": []
+}

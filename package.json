@@ -8,6 +8,8 @@
     "prebuild": "node scripts/build-extension-zip.mjs && node scripts/build-eu27-geojson.mjs && node scripts/build-policy-bodies-from-texts.mjs",
     "build:policy-bodies": "node scripts/build-policy-bodies-from-texts.mjs",
     "build:policy-targets": "node scripts/extract-policy-targets.mjs && node scripts/build-policy-targets.mjs",
+    "build:target-indicators": "node scripts/build-target-indicators.mjs",
+    "check:target-indicators": "node scripts/build-target-indicators.mjs --check",
     "check:policies": "node scripts/check-policy-registries.mjs",
     "build": "next build",
     "build:docs": "bash scripts/build-docs.sh",

@@ -235,6 +235,11 @@ export default function PolicyTargetsRegisterPage() {
             <Link href="/beta/policy-targets/sectors" className="px-3 py-1.5 rounded-md border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] font-medium hover:bg-grey-100">
               ▦ Sector summaries
             </Link>
+            {/* M·53 — the measurement layer: how each relevant target is measured. */}
+            <Link href="/beta/policy-target-flows" title="M·53 — every relevant target on a sector flow chart, matched to the indicator that measures it"
+              className="px-3 py-1.5 rounded-md border border-grey-300 dark:border-[var(--mh-border)] text-tertiary-dark dark:text-[var(--mh-fg)] font-medium hover:bg-grey-100">
+              ⇢ Indicators &amp; flow charts
+            </Link>
             <button onClick={downloadExcel} disabled={downloading} className="px-3 py-1.5 rounded-md bg-primary text-white font-medium hover:opacity-90 disabled:opacity-50">
               {downloading ? 'Preparing…' : '⬇ Download Excel'}
             </button>
