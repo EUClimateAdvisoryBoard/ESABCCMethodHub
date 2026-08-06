@@ -1,0 +1,74 @@
+{
+  "fetchedAt": "2026-08-06",
+  "sources": {
+    "pinkSheetAnnual": "https://thedocs.worldbank.org/en/doc/18675f1d1639c7a34d463f59263ba0a2-0050012025/related/CMO-Historical-Data-Annual.xlsx",
+    "pinkSheetMonthly": "https://thedocs.worldbank.org/en/doc/18675f1d1639c7a34d463f59263ba0a2-0050012025/related/CMO-Historical-Data-Monthly.xlsx",
+    "ecb": "https://data-api.ecb.europa.eu/service/data/EXR/A.USD.EUR.SP00.A?format=csvdata&startPeriod=2015"
+  },
+  "usdPerEur": {
+    "2019": 1.1194745098039,
+    "2022": 1.0530486381323,
+    "2025": 1.1299831372549
+  },
+  "conversions": {
+    "mmbtuPerMwh": 3.412142,
+    "twhPerBcm": 10.55,
+    "bblPerTonne": 7.33
+  },
+  "scenarios": {
+    "avg2019": {
+      "year": 2019,
+      "gas": {
+        "value": 154.42559028990277,
+        "lo": 115.37682125049876,
+        "hi": 233.52969796462762
+      },
+      "oil": {
+        "value": 419.2611020226876,
+        "lo": 387.9521116350183,
+        "hi": 466.19730545845243
+      },
+      "coal": {
+        "value": 66.91867420288358,
+        "lo": 64.26378272719414,
+        "hi": 69.57356567857303
+      }
+    },
+    "crisis2022": {
+      "year": 2022,
+      "gas": {
+        "value": 1379.014113488543,
+        "lo": 930.8382813001341,
+        "hi": 2394.4172430587355
+      },
+      "oil": {
+        "value": 694.8502805762732,
+        "lo": 563.1240367508065,
+        "hi": 835.8459126456963
+      },
+      "coal": {
+        "value": 277.97876039707995,
+        "lo": 228.43861915535524,
+        "hi": 327.51890163880466
+      }
+    },
+    "forward": {
+      "year": 2025,
+      "gas": {
+        "value": 381.0565307406285,
+        "lo": 302.08923710525175,
+        "hi": 488.70639110398037
+      },
+      "oil": {
+        "value": 447.81941058811645,
+        "lo": 406.8535050149983,
+        "hi": 513.7952601756689
+      },
+      "coal": {
+        "value": 89.94402289362506,
+        "lo": 83.96552291080533,
+        "hi": 95.92252287644477
+      }
+    }
+  }
+}

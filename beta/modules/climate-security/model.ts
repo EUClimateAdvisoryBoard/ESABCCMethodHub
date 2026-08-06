@@ -30,10 +30,12 @@
  *   linearly from the recent forward level (s = 0) to the 2022 crisis
  *   average (s = 1), replaying a 2022-style shock on the 2030 exposure.
  *
- * Epistemic status: the arithmetic is exact; the anchors it runs on are
- * AI-compiled order-of-magnitude values pending Secretariat verification
- * (see data.generated.ts). This is an order-of-magnitude reconstruction,
- * not an attribution study — the frozen-structure counterfactual cannot
+ * Epistemic status: the arithmetic is exact. Since the 2026-08 fact-check
+ * the backward leg runs on live Eurostat observations and published World
+ * Bank price averages, so it is no longer order-of-magnitude; the FORWARD
+ * leg still runs on AI-inferred 2030 per-fuel levels and should be read as
+ * indicative only (see data.generated.ts). Neither leg is an attribution
+ * study — the frozen-structure counterfactual cannot
  * separate the effect of climate policy from the effect of the 2022 price
  * shock itself, and does not try to.
  */
@@ -118,9 +120,12 @@ export function billSeries(b: BaselineKey, coupling: number, sc: PriceScenario):
 }
 
 /**
- * Total avoided bill, € million, with a lo–hi range propagated from the
- * price-source disagreement ranges (volume tolerances are stated in prose,
- * not compounded here — see the caveats panel).
+ * Total avoided bill, € million, with a lo–hi range propagated from each
+ * price's published band — the within-year monthly spread for gas and oil,
+ * the spread between the two steam-coal markers for coal. It is therefore a
+ * "what if the whole window had cleared at the cheapest / dearest month"
+ * bracket, NOT a confidence interval. Volume tolerances are stated in prose
+ * and are not compounded here — see the caveats panel.
  */
 export function totalBill(
   b: BaselineKey,
