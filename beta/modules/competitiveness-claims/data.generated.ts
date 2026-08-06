@@ -28,11 +28,28 @@
  *   4. Steel-manning is mandatory wherever any proposition of a claim is
  *      rated UNSUPPORTED — on both sides.
  *
- * QUOTE POLICY: this compile asserts NO verbatim quotes. Every `claim`
- * text is an explicit paraphrase (attribution: 'paraphrase'), because
- * the source texts could not be machine-checked from this sandbox
- * (EUR-Lex/consilium fetches blocked). Re-extracting ≤60-word verbatim
- * substrings, with locators, is the first task of the human pass.
+ * QUOTE POLICY (rewritten by the 2026-08-06 quote-extraction pass):
+ * every `claim` text remains an explicit paraphrase — the register's own
+ * compressed statement of a position, written so claims from different
+ * speakers compare on one page — and it is no longer rendered in
+ * quotation marks, because showing a paraphrase quoted was the single
+ * most misleading thing on the page.
+ *
+ * ALONGSIDE the paraphrase, 8 of the 14 claims now carry the speaker's
+ * own words in `quote`, each an exact substring of a stored source
+ * excerpt under scripts/competitiveness-claims-sources/, revalidated by
+ * `npm run check:claims` on every run. The remaining 6 carry
+ * `quote: null` with a `quoteStatus` naming exactly what was tried and
+ * what failed; the checker enforces that pairing in both directions, so
+ * a gap can never be quietly closed by promoting a paraphrase.
+ *
+ * The old note that "EUR-Lex/consilium fetches are blocked" was half
+ * right. EUR-Lex enacting terms and Commission documents are reachable
+ * through the Publications Office Cellar service, which is how the COM
+ * quotes here were extracted. consilium.europa.eu genuinely is not
+ * reachable from this environment — 403 to plain HTTPS and a connection
+ * reset to a headless browser — which is why claim a5 has no quote from
+ * the Budapest Declaration itself.
  *
  * VERDICT BANDS (docs-internal bands, generalised for causal claims):
  *   SUPPORTED     — the proposition matches the checked evidence (≤~2 %
@@ -96,11 +113,34 @@ export interface Claim {
   direction: Direction;
   topic: Topic;
   /**
-   * The claim text. attribution is 'paraphrase' for every entry in this
-   * compile — no invented sentence is ever presented as a verbatim quote.
+   * The claim text. ALWAYS a paraphrase, and always labelled as one: it is
+   * the register's own compressed statement of the position, written so
+   * that claims from different speakers can be compared on one page. It is
+   * never presented as the speaker's words. For those, see `quote`.
    */
   claim: string;
   attribution: 'paraphrase';
+  /**
+   * The speaker's own words, verbatim. Added by the 2026-08 quote-extraction
+   * pass, which is what made this module publishable: a register that judges
+   * named actors' claims cannot rest on the compiler's paraphrase of them.
+   *
+   * `text` is an exact substring of the excerpt named in `sourceFile`, held
+   * under scripts/competitiveness-claims-sources/ and revalidated by
+   * `npm run check:claims` on every run. Elisions use ' … ' and each segment
+   * is checked in order, so an ellipsis cannot stitch together text that does
+   * not appear in that sequence in the source.
+   *
+   * `null` where the source could not be reached to extract from — a
+   * declared coverage gap, never a paraphrase promoted to a quote. Every
+   * null carries a `quoteStatus` saying exactly what was tried.
+   */
+  quote: { text: string; locator: string; sourceFile: string } | null;
+  /**
+   * Why there is no quote. Non-null if and only if `quote` is null; the
+   * checker enforces that pairing in both directions.
+   */
+  quoteStatus: string | null;
   speaker: string;
   forum: string;
   /** Approximate date, deliberately coarse. */
@@ -135,6 +175,14 @@ export const CLAIMS: Claim[] = [
     claim:
       'EU companies pay electricity prices two to three times those in the United States, and natural gas prices four to five times higher — a structural drag on European industrial competitiveness.',
     attribution: 'paraphrase',
+    quote: {
+      text:
+        'Even though energy prices have fallen considerably from their peaks, EU companies still face electricity prices that are 2-3 times those in the US. Natural gas prices paid are 4-5 times higher. This price gap is primarily driven by Europe\'s lack of natural resources, but also by fundamental issues with our common energy market.',
+      locator:
+        'Draghi, \'The future of European competitiveness — Part A: A competitiveness strategy for Europe\' (September 2024), energy-costs section',
+      sourceFile: 'a1-draghi.txt',
+    },
+    quoteStatus: null,
     speaker: 'Mario Draghi',
     forum: '“The future of European competitiveness” report, presented to the Commission',
     date: 'September 2024',
@@ -178,6 +226,14 @@ export const CLAIMS: Claim[] = [
     claim:
       'Europe’s industrial base is being lost — plants are closing and investment is going elsewhere — and an Industrial Deal cutting energy costs and regulatory burden must complement the Green Deal.',
     attribution: 'paraphrase',
+    quote: {
+      text:
+        'The undersigned companies and organisations express their full support for a European Industrial Deal to complement the Green Deal and keep high quality jobs for European workers in Europe. … Our companies face this challenge every day. Sites are being closed, production halted, people let go. Europe needs a business case, urgently.',
+      locator:
+        'Antwerp Declaration for a European Industrial Deal (20 February 2024), preamble',
+      sourceFile: 'a2-antwerp.txt',
+    },
+    quoteStatus: null,
     speaker: 'Cross-sector industry CEOs (initiated by chemical and energy-intensive producers)',
     forum: 'Antwerp Declaration for a European Industrial Deal',
     date: 'February 2024',
@@ -221,6 +277,9 @@ export const CLAIMS: Claim[] = [
     claim:
       'The rising ETS carbon price, with free allocation phasing out, is driving energy-intensive production and investment out of Europe.',
     attribution: 'paraphrase',
+    quote: null,
+    quoteStatus:
+      'No quote extracted. The claim is a recurring position rather than a single text, and the representative source (Eurofer position papers on the ETS/CBAM review) did not yield a dated, machine-readable position document on 2026-08-06. A quote must come from one dated document with a locator, so none is asserted.',
     speaker: 'Energy-intensive industry associations (recurring position; representative: European steel association Eurofer)',
     forum: 'Position papers and hearings on the ETS/CBAM review',
     date: '2024–25 (recurring)',
@@ -270,6 +329,9 @@ export const CLAIMS: Claim[] = [
     claim:
       'Sustainability reporting under CSRD/ESRS forces companies to report more than a thousand data points, at a cost out of proportion to any benefit.',
     attribution: 'paraphrase',
+    quote: null,
+    quoteStatus:
+      'No quote extracted. Same reason as a3: a recurring business-association position rather than one text. The BusinessEurope site did not yield a dated position document carrying the data-point claim in machine-readable form on 2026-08-06.',
     speaker: 'Business associations (recurring; representative: BusinessEurope), echoed by Commissioners in the omnibus debate',
     forum: 'Position papers and public statements on the simplification omnibus',
     date: '2024–25 (recurring)',
@@ -304,10 +366,18 @@ export const CLAIMS: Claim[] = [
     claim:
       'A “simplification revolution” is needed: reporting requirements should be cut by at least 25 %, with proposals in the first half of 2025.',
     attribution: 'paraphrase',
+    quote: {
+      text:
+        'This Commission will deliver an unprecedented simplification effort. … the Commission has set ambitious quantified targets for reducing reporting burden: at least 25% for all companies and at least 35% for SMEs.',
+      locator:
+        'European Commission, A Competitiveness Compass for the EU, COM(2025) 30 final, simplification section. NOTE THE SPEAKER: this is the Commission restating the target, not the European Council Budapest Declaration text this claim is attributed to — see quoteStatus on the shortfall.',
+      sourceFile: 'a5-compass.txt',
+    },
+    quoteStatus: null,
     speaker: 'European Council (heads of state or government)',
     forum: 'Budapest Declaration on the New European Competitiveness Deal (informal European Council)',
     date: 'November 2024',
-    sourceLabel: 'Budapest Declaration on the New European Competitiveness Deal, informal meeting of heads of state or government, 8 November 2024 (Council document ST 15518/2024). Locator verified 2026-08-06 and pointed at the declaration text rather than at the meeting index page.',
+    sourceLabel: 'Budapest Declaration on the New European Competitiveness Deal, informal meeting of heads of state or government, 8 November 2024. CORRECTION: an earlier pass recorded this as "Council document ST 15518/2024". That is WRONG — ST 15518/2024 is a Presidency note to Coreper on the contribution of research and innovation to competitiveness, checked directly against the Council register on 2026-08-06. The declaration was adopted at an INFORMAL European Council and appears to carry no ST number; it is cited by title and date only.',
     sourceUrl: 'https://www.consilium.europa.eu/en/press/press-releases/2024/11/08/the-budapest-declaration/',
     propositions: [
       {
@@ -344,6 +414,9 @@ export const CLAIMS: Claim[] = [
     claim:
       'The 2035 zero-CO₂ requirement for new cars — and the 2025 fleet targets on the way there — is destroying the European automotive industry, so the targets must be revised.',
     attribution: 'paraphrase',
+    quote: null,
+    quoteStatus:
+      'No quote extracted. acea.auto answered HTTP 202 with a challenge page to every request on 2026-08-06 — a bot challenge, not an allowlist denial, and not resolvable from this environment. The claim also blends an ACEA position with an EPP manifesto line, so it would need two quotes rather than one.',
     speaker: 'European automotive industry (ACEA) and allied political groups (EPP 2024 manifesto line)',
     forum: 'ACEA statements and letters on CO₂ standards; European-election platforms',
     date: '2024–25',
@@ -392,6 +465,14 @@ export const CLAIMS: Claim[] = [
     claim:
       'The first omnibus package will save companies around €6.3 billion a year in administrative costs and mobilise around €50 billion in additional investment capacity — simplification without deregulation.',
     attribution: 'paraphrase',
+    quote: {
+      text:
+        'In its work programme for 2025, the Commission announced a series of measures to address overlapping, unnecessary or disproportionate rules that create barriers for EU companies. Collectively, with these measures, the Commission wants to reduce administrative burdens by 25%, and by 35% for small and medium-sized businesses, by the end of its mandate in 2029.',
+      locator:
+        'European Commission news item, "Commission proposes to cut red tape and simplify business environment", 26 February 2025',
+      sourceFile: 'a7-omnibus-pr.txt',
+    },
+    quoteStatus: null,
     speaker: 'European Commission',
     forum: 'Omnibus I package (COM(2025) 80/81) and Clean Industrial Deal communication',
     date: 'February 2025',
@@ -434,6 +515,14 @@ export const CLAIMS: Claim[] = [
     claim:
       'Decarbonisation is a growth strategy: the global market for key mass-manufactured clean technologies is heading towards roughly USD 2 trillion a year by 2035, and Europe can capture a major share of it.',
     attribution: 'paraphrase',
+    quote: {
+      text:
+        'According to the International Energy Agency, the global market for clean energy technology will be worth USD 2 trillion in 2035. To achieve climate neutrality in a competitive manner, it is essential that European companies, investors and workers secure the largest possible share of this opportunity.',
+      locator:
+        'European Commission, The Clean Industrial Deal, COM(2025) 85 final, section 6.1 (Clean Trade and Investment Partnerships)',
+      sourceFile: 'f1-cid.txt',
+    },
+    quoteStatus: null,
     speaker: 'European Commission (citing IEA projections)',
     forum: 'Clean Industrial Deal, COM(2025) 85',
     date: 'February 2025',
@@ -467,6 +556,14 @@ export const CLAIMS: Claim[] = [
     claim:
       'The 2021–23 energy-price crisis was a fossil-gas price crisis, not a climate-policy crisis: gas set the marginal electricity price in most hours, and the carbon price was a minor component of the spike.',
     attribution: 'paraphrase',
+    quote: {
+      text:
+        'The extreme wholesale gas price rises during 2022 can be primarily attributed to the Russian supply shock.',
+      locator:
+        'ACER, "ACER monitoring shows declining gas prices due to increased LNG imports and decreasing demand" (news item accompanying the gas market monitoring report)',
+      sourceFile: 'f2-acer.txt',
+    },
+    quoteStatus: null,
     speaker: 'European Commission and ACER (recurring; widely echoed by civil society)',
     forum: 'ACER wholesale market assessments; REPowerEU communications',
     date: '2022–24 (recurring)',
@@ -510,6 +607,14 @@ export const CLAIMS: Claim[] = [
     claim:
       'The EU has cut emissions by over a third since 1990 while the economy grew by about two thirds — proof that climate policy and growth go together and that ambition does not cost competitiveness.',
     attribution: 'paraphrase',
+    quote: {
+      text:
+        'Between 1990 and 2023, EU net GHG emissions fell by 36%, while GDP grew by nearly 70% over the same period.',
+      locator:
+        'EEA indicator, "Total net greenhouse gas emission trends and projections in Europe"',
+      sourceFile: 'f3-eea.txt',
+    },
+    quoteStatus: null,
     speaker: 'European Commission',
     forum: 'Recurring; prominently in the 2040 climate target communication',
     date: 'February 2024 (recurring)',
@@ -549,6 +654,9 @@ export const CLAIMS: Claim[] = [
     claim:
       'New solar and onshore wind are now the cheapest sources of new electricity generation almost everywhere, so accelerating renewables is the competitiveness answer to Europe’s energy prices.',
     attribution: 'paraphrase',
+    quote: null,
+    quoteStatus:
+      'No quote extracted. irena.org returned HTTP 403 to every request on 2026-08-06. The IEA and IRENA cost findings are widely restated in reachable secondary sources, but a secondary restatement is not the speaker’s words and is not accepted here.',
     speaker: 'IRENA; echoed by renewables associations and the Commission',
     forum: 'IRENA renewable power generation cost reports and derived advocacy',
     date: '2024 (recurring)',
@@ -589,6 +697,9 @@ export const CLAIMS: Claim[] = [
     claim:
       'The costs of climate inaction far exceed the costs of action: unchecked warming would cut EU GDP by several per cent by mid-century, dwarfing mitigation costs of the order of 1–2 % of GDP.',
     attribution: 'paraphrase',
+    quote: null,
+    quoteStatus:
+      'No quote extracted, and the reason is structural rather than technical: this claim aggregates several modelling literatures rather than quoting one actor, and the register names no single dated text for it. The honest fix is to split it into separately attributable claims — a content decision for the Secretariat, not an extraction task.',
     speaker: 'European Commission (2040 target analysis); widely echoed in the ambition debate',
     forum: '2040 climate target communication and impact assessment',
     date: 'February 2024 (recurring)',
@@ -629,6 +740,9 @@ export const CLAIMS: Claim[] = [
     claim:
       'Because the EU moved first on climate regulation, its industries gain a first-mover advantage in the technologies the rest of the world will need.',
     attribution: 'paraphrase',
+    quote: null,
+    quoteStatus:
+      'No quote extracted. Same shape as f5: a recurring argument attributed to no single dated text in this compile. Left as a paraphrase pending a decision on whom to attribute it to.',
     speaker: 'European Commission (Green Deal framing, carried into the Clean Industrial Deal)',
     forum: 'Commission communications, 2019–25',
     date: '2019–25 (recurring)',
@@ -668,6 +782,14 @@ export const CLAIMS: Claim[] = [
     claim:
       'The omnibus is deregulation dressed up as simplification: cutting some four in five companies out of sustainability reporting and narrowing due-diligence duties changes the substance of the Green Deal, not the paperwork.',
     attribution: 'paraphrase',
+    quote: {
+      text:
+        'this is not simplification, it is full-scale deregulation designed to dismantle corporate accountability and abandon the EU\'s Green Deal commitments.',
+      locator:
+        'European Coalition for Corporate Justice, press release on the Omnibus I proposal (February 2025)',
+      sourceFile: 'f7-eccj.txt',
+    },
+    quoteStatus: null,
     speaker: 'Civil-society coalition (CAN Europe, WWF European Policy Office and others)',
     forum: 'Joint statements on the Omnibus I package',
     date: 'February 2025',
@@ -679,7 +801,7 @@ export const CLAIMS: Claim[] = [
         text: 'Omnibus I removes roughly 80 % of previously covered companies from CSRD scope.',
         verdict: 'SUPPORTED',
         basis:
-          'The Commission’s own explanatory material for COM(2025) 81 states that about 80 % of undertakings would leave scope under the raised employee threshold.',
+          'Verified verbatim 2026-08-06 against the explanatory memorandum of COM(2025) 81 final (excerpt stored as a7-omnibus-scope.txt): "The number of undertakings subject to mandatory sustainability reporting requirements would be reduced by about 80%, taking out of scope large undertakings with up to 1000 employees ... and listed SMEs". The figure is the Commission’s own, stated as an aim of the proposal, so the claim does not rest on a critic’s estimate.',
         proves:
           'Proves what the proposal does to scope, on the proposer’s own figures. It cannot prove the final adopted law.',
       },

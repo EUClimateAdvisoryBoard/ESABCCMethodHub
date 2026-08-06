@@ -52,13 +52,24 @@ python scripts/fetch_iiasa_data.py --db ar6 --region "EU27" --variable "Emission
 |---------------------------------------|-----------------------------------------------------------|
 | `validate-connections.ts`             | Validates `src/data/policies.ts` graph: no duplicates, descriptions ≥ 40 chars, valid types. Exits non-zero on error. (Policy Navigator) |
 | `fix-truncated-urls.js`               | Repairs truncated `url` columns in `src/data/references.ts` by extracting full URLs from `fullCitation`. One-shot. (References) |
+| `check-competitiveness-quotes.mjs`    | Revalidates every verbatim quote in the Competitiveness Claims Register (M · 47) as an exact substring of its stored source excerpt in `competitiveness-claims-sources/`. Enforces that a claim carries either a quote or a stated reason for having none, never both and never neither. Exits non-zero on any failure. (`npm run check:claims`) |
 
 Run manually:
 
 ```bash
 npx tsx scripts/validate-connections.ts
 node scripts/fix-truncated-urls.js
+npm run check:claims
 ```
+
+### `competitiveness-claims-sources/`
+
+Normalised excerpts of the primary documents behind M · 47's quotes, one file
+per quote, cut with roughly 1–2 kB of context on each side so a reviewer can
+see what surrounds the quoted words. These are inputs to the checker above and
+are not rendered anywhere: the module stores the quote, and these files are
+what make the quote falsifiable. Add a file whenever a new quote is added, and
+never edit a quote to make the check pass — re-extract it from the source.
 
 ## Supabase → Postgres migration
 
