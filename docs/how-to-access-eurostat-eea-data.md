@@ -7,13 +7,29 @@ that the automated update **could not** retrieve (see
 `docs/Indicator-Database-Post-Report-Update.pdf`), because those exact,
 scope-matched figures live only in these two services.
 
-> **Why the automated run came up short.** In the Claude Code web
-> sandbox, outbound requests to `ec.europa.eu` and `eea.europa.eu` are
-> blocked by the environment's network allowlist (they return
-> `HTTP 403` / `Host not in allowlist`). The recipes below work from any
-> **unrestricted machine**, from the **deployed app server**, or once
-> those hosts are **added to the environment's allowlist**
-> (see <https://code.claude.com/docs/en/claude-code-on-the-web>).
+> **Access from the Claude Code web sandbox — corrected 2026-08-06.**
+> This guide used to state flatly that `ec.europa.eu` and `eea.europa.eu`
+> are blocked by the environment's network allowlist. **That is not
+> generally true, and assuming it caused real damage**: six of the eight
+> beta modules M·45–M·52 were compiled from model knowledge rather than
+> live pulls on the strength of it, and the resulting figures were wrong
+> by up to 20 percentage points in places (see
+> [`docs-internal/beta-modules-m45-m52-factcheck-2026-08.md`](../docs-internal/beta-modules-m45-m52-factcheck-2026-08.md)).
+> Check before you assume. As of August 2026, from the standard web
+> sandbox:
+>
+> | Host | Status | Notes |
+> |---|---|---|
+> | `ec.europa.eu/eurostat/api/…` | **Reachable** | The dissemination API answers ordinary HTTPS and returns JSON-stat. Use the recipes below directly. |
+> | `eea.europa.eu` | **Reachable** | Web pages and indicator pages load. |
+> | `eur-lex.europa.eu` | **Blocked, and it lies about it** | Behind an AWS WAF JavaScript challenge. Returns **HTTP 202 with a challenge page** — which a naive fetcher records as success. Use the Cellar recipe in §4. |
+>
+> Network policy is per-environment and can change, so treat the table as
+> a starting point rather than a guarantee: make one probe request and
+> look at the body, not just the status code. An allowlist denial from
+> the agent proxy is a `403`/`407`; a `202` with a short body is a bot
+> challenge; a `200` with an empty payload is the dataset query being
+> wrong. These three need different fixes and are easy to confuse.
 
 ---
 
@@ -221,3 +237,43 @@ record the source URL in the verification PDF.
 *Maintained alongside the MethodHub codebase. The live-source recipes
 mirror `src/lib/project-workspace/{eurostat.ts,live-sources.ts}` — keep
 them in sync if the adapters change.*
+
+---
+
+## 6. EUR-Lex — reading enacting terms without a browser
+
+`eur-lex.europa.eu` sits behind an AWS WAF JavaScript challenge and cannot
+be scraped with `curl` or `fetch`: it answers **HTTP 202** with a challenge
+page rather than a 403, so a fetcher that only checks `res.ok` will happily
+store the challenge HTML as if it were the law.
+
+The EU Publications Office **Cellar** service serves the same documents
+without a challenge. It is content-negotiated, so the `Accept` header is
+not optional — and note that it rejects a media type with a charset
+parameter (`text/html; charset=utf-8` returns a 400).
+
+```bash
+curl -sSL \
+  -H "Accept: application/xhtml+xml" \
+  -H "Accept-Language: eng" \
+  "https://publications.europa.eu/resource/celex/32024R1735" \
+  -o nzia.xhtml
+```
+
+Strip the tags and you have the enacting terms, which is what quotes must
+be exact substrings of. This is how the M·45–M·52 fact-check verified the
+NZIA, CRMA, Batteries Regulation, consolidated ETS Directive and two
+Commission Communications.
+
+Useful CELEX forms:
+
+| Want | CELEX |
+|---|---|
+| Regulation as adopted | `32024R1735` |
+| Directive as adopted | `32023L0959` |
+| **Consolidated** directive at a date | `02003L0087-20240301` |
+| Commission Communication | `52023DC0757` |
+
+Cite the **consolidated** version wherever one exists, per the repository's
+standing rule; where a text is pre-consolidation, say so explicitly in a
+caveat.
