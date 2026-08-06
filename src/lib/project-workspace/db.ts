@@ -609,16 +609,38 @@ async function ensureCleanTechReadingSeed(): Promise<void> {
  * having no `pw_modules` row, they would otherwise read as non-seed and offer a
  * "remove tool" action that deletes nothing and leaves the tab in place on the
  * next read.
+ *
+ * Position. Holding no row, a report page also holds no `position`, so it
+ * cannot simply be sorted with the rest. It is instead anchored to the module
+ * it follows in the seed catalogue: the page is inserted directly after the
+ * nearest catalogue entry that precedes it and is present in `stored`. That
+ * keeps the code-defined reading order (tools → report pages → the standing
+ * reference spaces) without pinning the pages to the end of the bar, and it
+ * follows a stored module the team reorders rather than ignoring the move.
  */
 function withReportPageModules(projectId: string, stored: WorkspaceModule[]): WorkspaceModule[] {
   const seeded = SEED_PROJECTS.find(p => p.id === projectId)?.modules ?? [];
   const have = new Set(stored.map(m => m.id));
-  return [
-    ...stored,
-    ...seeded
-      .filter(m => m.kind === 'report-page' && !have.has(m.id))
-      .map(m => ({ ...m, isSeed: true })),
-  ];
+  const missing = seeded.filter(m => m.kind === 'report-page' && !have.has(m.id));
+  if (missing.length === 0) return stored;
+
+  const merged = stored.slice();
+  for (const page of missing) {
+    const catalogueIndex = seeded.indexOf(page);
+    // Walk back through the catalogue for the nearest predecessor already in
+    // the list — a stored module, or a report page inserted on an earlier turn
+    // of this loop, which is what keeps a run of report pages in order.
+    let insertAt = 0;
+    for (let i = catalogueIndex - 1; i >= 0; i--) {
+      const at = merged.findIndex(m => m.id === seeded[i].id);
+      if (at >= 0) {
+        insertAt = at + 1;
+        break;
+      }
+    }
+    merged.splice(insertAt, 0, { ...page, isSeed: true });
+  }
+  return merged;
 }
 
 export async function listProjects(): Promise<DBProject[]> {
