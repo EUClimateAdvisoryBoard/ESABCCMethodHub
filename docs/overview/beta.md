@@ -1,6 +1,6 @@
 # Beta parking lot
 
-**Forty-three** experimental modules sit outside the Next.js route tree at
+**Forty-four** experimental modules sit outside the Next.js route tree at
 [`beta/modules/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/beta/modules)
 in the repository. They are **intentionally unrouted** — the file-system
 location is the feature flag. (Former beta work has graduated before: the
@@ -16,7 +16,7 @@ into [Secretariat News](../modules/news-feed.md).)
 
 ## What is parked
 
-Numbered M·09–M·43, continuing the sequence after the eight core modules. The
+Numbered M·09–M·53, continuing the sequence after the eight core modules. The
 list grows roughly weekly as new prototypes land; the
 [`beta/README.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/beta/README.md)
 table and the home-page module ribbon (`src/app/page.tsx`) are the canonical,
@@ -82,6 +82,7 @@ The modules fall into four loose families:
 | M·50  | `grid-security/`             | Grid & Interconnection Security Ledger | The 15 % interconnection target per member state, the grid investment gap with pace ratio, and a sourced incident/milestone ledger (2022–25) where attribution is only ever the investigating authority's conclusion. |
 | M·51  | `climate-defence-fiscal/`    | Climate Investment vs Rearmament | The fiscal squeeze: non-comparable need estimates kept visibly apart, committed flows, the Hague defence ramp and a crowd-out slider labelled a political variable. Highest-fabrication-risk topic; fact-check pass required before merge. |
 | M·52  | `trade-partner-climate/`     | Trade-Partner Climate & Article 6 Tracker | Eight-partner snapshot register (carbon pricing, NDCs, CBAM stance, linkage) plus plausible Article 6 supply-at-quality vs the ≈260 Mt demand in COM(2026) 616 — issued credits to date cover under 1 % of the bet. Snapshot 2026-08. |
+| M·53  | `policy-target-flows/`       | Policy Targets → Indicators | Every relevant M·36 target on a sector flow chart in the Policy Gap 2.0 style, matched to the series, dataset or compliance milestone that measures it — no target left unassessed, and the measurement gaps ranked by the dataset that would close them. |
 
 !!! note "Numbering vs. the route map"
     The `M·NN` codes are a **stable presentation index** assigned on the home
