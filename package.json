@@ -11,6 +11,7 @@
     "build:target-indicators": "node scripts/build-target-indicators.mjs",
     "check:target-indicators": "node scripts/build-target-indicators.mjs --check",
     "check:policies": "node scripts/check-policy-registries.mjs",
+    "check:claims": "node scripts/check-competitiveness-quotes.mjs",
     "build": "next build",
     "build:docs": "bash scripts/build-docs.sh",
     "vercel-build": "bash scripts/build-docs.sh && npm run build",
