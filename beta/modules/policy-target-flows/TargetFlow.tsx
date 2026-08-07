@@ -19,15 +19,33 @@ import {
   RUNG_META,
   type TargetAssessment,
 } from '@/data/target-indicators';
-import { resolveIndicators, type ActGroup, type FlowChart } from './model';
+import {
+  ROUTE_ORDER,
+  resolveIndicators,
+  routeCounts,
+  type ActGroup,
+  type FlowChart,
+} from './model';
 
 const CONNECTOR = '#94a3b8';
+
+/**
+ * How much of each act group is drawn.
+ *
+ * `compact` is the default: every act group collapses to its header and a route
+ * bar, so a whole sector — a dozen acts across three rows — is one figure that
+ * fits a screen, and the reader expands the groups they care about. `full`
+ * opens every group to the first four cards, which is the older behaviour and
+ * the one to use when reading a single act closely.
+ */
+export type FlowDensity = 'compact' | 'full';
 
 interface Props {
   chart: FlowChart;
   /** The card the detail panel is showing, if any. */
   selectedId: string | null;
   onSelect: (row: TargetAssessment) => void;
+  density: FlowDensity;
 }
 
 /** White indicator box — the report figures' progress-indicator boxes. */
@@ -116,54 +134,103 @@ function TargetCard({
   );
 }
 
-/** How many cards a group shows before it has to be expanded. Without this an
- *  act like AFIR turns one row of the chart into a 24-card tower and the
- *  connectors between rows stop being readable. */
-const COLLAPSED_CARDS = 4;
+/** How many cards a group shows before it has to be expanded, by density.
+ *  Without a cap an act like AFIR turns one row of the chart into a 24-card
+ *  tower and the connectors between rows stop being readable; at `compact` the
+ *  cap is zero, so the group is a labelled box until the reader opens it. */
+const COLLAPSED_CARDS: Record<FlowDensity, number> = { compact: 0, full: 4 };
+
+/** The act group's route mix, drawn as one bar — what a collapsed group still
+ *  has to tell the reader: how much of this act is actually measured. */
+function RouteBar({ group }: { group: ActGroup }) {
+  const counts = routeCounts(group.rows);
+  return (
+    <Tooltip
+      content={ROUTE_ORDER.map((r) => `${counts[r]} ${ROUTE_META[r].short.toLowerCase()}`).join(' · ')}
+    >
+      <span className="flex h-1.5 w-full overflow-hidden rounded-sm bg-grey-200">
+        {ROUTE_ORDER.map((r) => (counts[r] ? (
+          <span key={r} style={{ width: `${(counts[r] / counts.total) * 100}%`, background: ROUTE_META[r].color }} />
+        ) : null))}
+      </span>
+    </Tooltip>
+  );
+}
 
 function GroupBox({
-  group, color, register, selectedId, onSelect,
+  group, color, register, selectedId, onSelect, density,
 }: {
   group: ActGroup;
   color: string;
   register: (id: string) => (el: HTMLElement | null) => void;
   selectedId: string | null;
   onSelect: (row: TargetAssessment) => void;
+  density: FlowDensity;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const cap = COLLAPSED_CARDS[density];
   // A selected card must stay visible even when it sits below the fold.
   const holdsSelection = group.rows.some((r) => r.id === selectedId);
   const showAll = expanded || holdsSelection;
-  const shown = showAll ? group.rows : group.rows.slice(0, COLLAPSED_CARDS);
+  const shown = showAll ? group.rows : group.rows.slice(0, cap);
   const hidden = group.rows.length - shown.length;
+  // Weak matches are the reason to open a group, so a collapsed one still says
+  // how many it holds rather than hiding the rows a reviewer is looking for.
+  const weak = group.rows.filter((r) => r.confidence === 'weak').length;
   return (
     <div
       ref={register(group.id)}
-      className="w-[268px] shrink-0 rounded-lg border border-grey-200 bg-grey-50 p-2"
+      className={`${density === 'compact' && !showAll ? 'w-[188px]' : 'w-[268px]'} shrink-0 rounded-lg border border-grey-200 bg-grey-50 p-2`}
     >
-      <div className="mb-1.5 flex items-baseline justify-between gap-2">
-        <Tooltip content={group.policyName}>
-          <span className="truncate text-[11px] font-semibold text-tertiary-dark">{group.policyShort}</span>
-        </Tooltip>
-        <span className="shrink-0 font-mono text-[10px] tabular-nums text-tertiary-light">
-          {group.rows.length}
+      {/* The act header is the expand control: in the compact figure the whole
+          box is one click target, so no group needs a separate button row. */}
+      <button
+        type="button"
+        onClick={() => setExpanded(!showAll)}
+        aria-expanded={showAll}
+        aria-label={`${group.policyName} — ${group.rows.length} target${group.rows.length === 1 ? '' : 's'}, ${showAll ? 'collapse' : 'expand'}`}
+        className="mh-focus block w-full text-left"
+      >
+        <span className="flex items-baseline justify-between gap-1.5">
+          <Tooltip content={group.policyName}>
+            <span className="truncate text-[11px] font-semibold text-tertiary-dark">{group.policyShort}</span>
+          </Tooltip>
+          <span className="flex shrink-0 items-baseline gap-1">
+            {weak > 0 && (
+              <Tooltip content={`${weak} of these ${weak === 1 ? 'targets matches' : 'targets match'} only on the provision heading or the act's title — review first`}>
+                <span className="rounded bg-surface-orange px-1 text-[9px] font-semibold text-tertiary-dark">
+                  {weak} check
+                </span>
+              </Tooltip>
+            )}
+            <span className="font-mono text-[10px] tabular-nums text-tertiary-light">{group.rows.length}</span>
+            <span aria-hidden="true" className="text-[9px] text-tertiary-light">{showAll ? '▾' : '▸'}</span>
+          </span>
         </span>
-      </div>
-      <div className="space-y-1.5">
-        {shown.map((row) => (
-          <TargetCard
-            key={row.id}
-            row={row}
-            color={color}
-            selected={selectedId === row.id}
-            onSelect={() => onSelect(row)}
-          />
-        ))}
-      </div>
-      {(hidden > 0 || (showAll && group.rows.length > COLLAPSED_CARDS)) && (
+        <span className="mt-1 mb-1.5 block" style={{ borderTop: `2px solid ${color}` }}>
+          <span className="mt-1 block">
+            <RouteBar group={group} />
+          </span>
+        </span>
+      </button>
+      {shown.length > 0 && (
+        <div className="space-y-1.5">
+          {shown.map((row) => (
+            <TargetCard
+              key={row.id}
+              row={row}
+              color={color}
+              selected={selectedId === row.id}
+              onSelect={() => onSelect(row)}
+            />
+          ))}
+        </div>
+      )}
+      {shown.length > 0 && (hidden > 0 || group.rows.length > cap) && (
         <button
           type="button"
           onClick={() => setExpanded(!showAll)}
+          aria-expanded={showAll}
           className="mh-focus mt-1.5 w-full rounded border border-grey-300 bg-white py-1 text-[10.5px] font-semibold text-tertiary hover:bg-grey-100"
         >
           {hidden > 0 ? `Show ${hidden} more target${hidden === 1 ? '' : 's'}` : 'Show fewer'}
@@ -186,9 +253,9 @@ function RowLabel({ rung, count }: { rung: keyof typeof RUNG_META; count: number
   );
 }
 
-export default function TargetFlow({ chart, selectedId, onSelect }: Props) {
+export default function TargetFlow({ chart, selectedId, onSelect, density }: Props) {
   const edges = useMemo<Edge[]>(() => chart.edges.map((e) => ({ from: e.from, to: e.to })), [chart]);
-  const { containerRef, register, lines, size } = useConnectors(edges, [chart, selectedId]);
+  const { containerRef, register, lines, size } = useConnectors(edges, [chart, selectedId, density]);
 
   const outcomeCount = chart.outcomes.reduce((n, g) => n + g.rows.length, 0);
   const leverCount = chart.levers.reduce((n, g) => n + g.rows.length, 0);
@@ -251,9 +318,17 @@ export default function TargetFlow({ chart, selectedId, onSelect }: Props) {
         {chart.outcomes.length > 0 && (
           <div className="flex gap-3">
             <RowLabel rung="outcome" count={outcomeCount} />
-            <div className="flex flex-1 flex-wrap gap-3">
+            <div className="flex flex-1 flex-wrap items-start gap-3">
               {chart.outcomes.map((g) => (
-                <GroupBox key={g.id} group={g} color={RUNG_META.outcome.color} register={register} selectedId={selectedId} onSelect={onSelect} />
+                <GroupBox
+                  key={`${g.id}:${density}`}
+                  group={g}
+                  color={RUNG_META.outcome.color}
+                  register={register}
+                  selectedId={selectedId}
+                  onSelect={onSelect}
+                  density={density}
+                />
               ))}
             </div>
           </div>
@@ -262,9 +337,17 @@ export default function TargetFlow({ chart, selectedId, onSelect }: Props) {
         {chart.levers.length > 0 && (
           <div className="flex gap-3">
             <RowLabel rung="lever" count={leverCount} />
-            <div className="flex flex-1 flex-wrap gap-3">
+            <div className="flex flex-1 flex-wrap items-start gap-3">
               {chart.levers.map((g) => (
-                <GroupBox key={g.id} group={g} color={RUNG_META.lever.color} register={register} selectedId={selectedId} onSelect={onSelect} />
+                <GroupBox
+                  key={`${g.id}:${density}`}
+                  group={g}
+                  color={RUNG_META.lever.color}
+                  register={register}
+                  selectedId={selectedId}
+                  onSelect={onSelect}
+                  density={density}
+                />
               ))}
             </div>
           </div>
@@ -273,20 +356,30 @@ export default function TargetFlow({ chart, selectedId, onSelect }: Props) {
         {chart.enabling.length > 0 && (
           <div className="flex gap-3 rounded-lg" style={{ background: '#FBF8DD' }}>
             <RowLabel rung="enabling" count={enablingCount} />
-            <div className="flex flex-1 flex-wrap gap-3 py-2 pr-2">
+            <div className="flex flex-1 flex-wrap items-start gap-3 py-2 pr-2">
               {chart.enabling.map((g) => (
-                <GroupBox key={g.id} group={g} color={RUNG_META.enabling.color} register={register} selectedId={selectedId} onSelect={onSelect} />
+                <GroupBox
+                  key={`${g.id}:${density}`}
+                  group={g}
+                  color={RUNG_META.enabling.color}
+                  register={register}
+                  selectedId={selectedId}
+                  onSelect={onSelect}
+                  density={density}
+                />
               ))}
             </div>
           </div>
         )}
       </div>
 
-      <p className="mt-3 text-[11px] text-tertiary-light">
-        Cards are targets, grouped by the act that sets them; the white boxes beneath each card are the
-        indicators that measure it. Arrows run from an act&apos;s second-order targets to its first-order
-        targets and on to the sector goal. Procedural obligations sit in the band below without a causal
-        arrow — they are assessed as milestones, not measured.
+      <p className="mt-3 text-[11px] leading-snug text-tertiary-light">
+        Each box is an act, on the row its targets belong to; the bar under its name is the mix of
+        assessment routes it carries ({ROUTE_ORDER.map((r) => ROUTE_META[r].short.toLowerCase()).join(' · ')}).
+        Open a box to read its targets as cards, and the white boxes beneath each card are the indicators
+        that measure it. Arrows run from an act&apos;s second-order targets to its first-order targets and
+        on to the sector goal. Procedural obligations sit in the band below without a causal arrow — they
+        are assessed as milestones, not measured.
       </p>
     </div>
   );

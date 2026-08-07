@@ -17,7 +17,21 @@ missing a stated way of being measured.
 
 ## What it produces
 
-### 1. Sector flow charts
+### 1. The overview figure
+
+The flow view opens on a single figure carrying **all nine sector columns at
+once**, drawn on the same rows the charts below use — first-order targets,
+second-order targets, procedural obligations — plus each column's route mix and
+its count of weak matches. It is the map: it says which sector is the big one,
+where the measurement is thin, and where the rows needing review sit, before any
+chart is opened. Clicking a column expands it into that sector's full flow chart
+and scrolls there.
+
+Bars compare sectors **within a row**, never across rows, and every bar carries
+its number. The figure is filter-aware: narrowing to weak matches or to one act
+redraws all nine columns, so the map and the chart below it can never disagree.
+
+### 2. Sector flow charts
 
 One chart per sector column, drawn in the visual language of the **Policy Gap
 2.0** boards in the Project Workspace and of the report's own sector
@@ -33,12 +47,18 @@ assessment-framework figures:
 [ procedural obligations ]          enabling band — no causal arrow
 ```
 
-Cards are **targets**, grouped by the act that sets them; the white boxes
+Each box is an **act**, on the row its targets belong to, and the bar under its
+name is the mix of assessment routes it carries. Acts start **collapsed**, so a
+whole sector — up to 126 targets across two dozen acts — is one figure that fits
+a screen; opening a box turns it into **target** cards, and the white boxes
 beneath each card are the **indicators** that measure it, exactly as the white
-progress boxes work in the report figures. Grouping by act is what keeps the
-chart readable at 544 targets, and connectors therefore run between act groups:
-an act's second-order targets feed its first-order targets, which feed the
-sector goal.
+progress boxes work in the report figures. A collapsed box still shows how many
+weak matches it holds, because those are the rows a reviewer is looking for.
+"Open every act" expands the lot at once.
+
+Grouping by act is what keeps the chart readable at 544 targets, and connectors
+therefore run between act groups: an act's second-order targets feed its
+first-order targets, which feed the sector goal.
 
 Columns are the eight sectors/systems M·36 classifies targets against (Energy ·
 Buildings · Agri-food · Transport · Industry · Land & marine ecosystems · Water
@@ -46,14 +66,14 @@ Buildings · Agri-food · Transport · Industry · Land & marine ecosystems · W
 action. A target that bears on several sectors is drawn in each column; the
 ledger counts it once.
 
-### 2. The assessment ledger
+### 3. The assessment ledger
 
 Every relevant target as a row — verbatim requirement, timeline, flow-chart
 position, assessment route, measurement family, indicator ids, source dataset,
 matched terms and match confidence — filterable and downloadable as CSV. This
 is the artefact the report cites.
 
-### 3. Measurement gaps
+### 4. Measurement gaps
 
 The families no curated series covers yet, ranked by how many targets each one
 would measure, each with the **named public dataset** that would close it — so

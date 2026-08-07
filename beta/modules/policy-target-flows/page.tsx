@@ -9,11 +9,14 @@
  * met, and where can we not?
  *
  * Three views, all over the same ledger (src/data/target-indicators.ts):
- *   1. FLOW CHARTS — one per sector, drawn in the visual language of the Policy
- *      Gap 2.0 boards in the Project Workspace: dark sector goal at the top,
- *      first-order targets below it, second-order targets below those, and a
- *      procedural band at the foot. Cards are targets, grouped by the act that
- *      sets them; the white boxes beneath each card are its indicators.
+ *   1. FLOW CHARTS — an overview figure carrying all nine sector columns at
+ *      once (SectorOverview), from which any column expands into its own chart,
+ *      drawn in the visual language of the Policy Gap 2.0 boards in the Project
+ *      Workspace: dark sector goal at the top, first-order targets below it,
+ *      second-order targets below those, and a procedural band at the foot.
+ *      Acts start collapsed so a sector stays one figure; opening one turns it
+ *      into target cards, and the white boxes beneath each card are its
+ *      indicators.
  *   2. LEDGER — the whole assessment as a table, exportable as CSV, which is the
  *      artefact the report cites when it claims systematic coverage.
  *   3. MEASUREMENT GAPS — the targets no curated series measures yet, ranked by
@@ -29,7 +32,7 @@
  * target — and that is what a reviewer should challenge. Corrections belong in
  * scripts/target-indicators-overrides.json, never in the generated file.
  */
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -45,20 +48,22 @@ import {
   computeCoverage,
   targetAssessments,
   type AssessmentRoute,
+  type FlowColumnKey,
   type TargetAssessment,
 } from '@/data/target-indicators';
 import {
   EMPTY_FILTERS,
-  FLOW_COLUMNS,
   applyFilters,
   buildFlowChart,
   columnCoverage,
   gapFamilies,
   ledgerCsv,
+  overviewColumns,
   resolveIndicators,
   type Filters,
 } from './model';
-import TargetFlow from './TargetFlow';
+import SectorOverview from './SectorOverview';
+import TargetFlow, { type FlowDensity } from './TargetFlow';
 
 type View = 'flow' | 'ledger' | 'gaps';
 
@@ -204,9 +209,19 @@ export default function PolicyTargetFlowsPage() {
   const [view, setView] = useState<View>('flow');
   const [filters, setFilters] = useState<Filters>(EMPTY_FILTERS);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  // Act groups start collapsed: the chart is a figure first, a card wall second.
+  const [density, setDensity] = useState<FlowDensity>('compact');
+  const chartRef = useRef<HTMLDivElement | null>(null);
 
   const coverage = useMemo(() => computeCoverage(targetAssessments), []);
   const chart = useMemo(() => buildFlowChart(targetAssessments, filters), [filters]);
+  const overview = useMemo(() => overviewColumns(targetAssessments, filters), [filters]);
+  const chartGroups = useMemo(
+    () => [...chart.outcomes, ...chart.levers, ...chart.enabling],
+    [chart],
+  );
+  const chartTotal = chartGroups.reduce((n, g) => n + g.rows.length, 0);
+  const chartActs = new Set(chartGroups.map((g) => g.policyId)).size;
   const perColumn = useMemo(() => columnCoverage(targetAssessments), []);
   const gaps = useMemo(() => gapFamilies(targetAssessments), []);
   const ledgerRows = useMemo(
@@ -224,6 +239,18 @@ export default function PolicyTargetFlowsPage() {
     setFilters((f) => ({ ...f, ...p }));
     setSelectedId(null);
   };
+
+  /** Expand one column of the overview figure into its chart, and take the
+   *  reader there — the figure is above the fold, the chart it opens is not. */
+  const openColumn = useCallback((key: FlowColumnKey, selectId: string | null = null) => {
+    setFilters((f) => ({ ...f, column: key }));
+    setSelectedId(selectId);
+    const reduced = typeof window !== 'undefined'
+      && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    requestAnimationFrame(() => {
+      chartRef.current?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    });
+  }, []);
 
   const downloadCsv = () => {
     const blob = new Blob([`﻿${ledgerCsv(ledgerRows)}`], { type: 'text/csv;charset=utf-8;' });
@@ -326,23 +353,6 @@ export default function PolicyTargetFlowsPage() {
 
         {/* ── Filters ──────────────────────────────────────────────────── */}
         <div className="mt-4 rounded-xl border border-grey-200 bg-white p-3">
-          {view === 'flow' && (
-            <div className="mb-3 flex flex-wrap gap-1.5">
-              {FLOW_COLUMNS.map((c) => {
-                const cov = perColumn.find((x) => x.column.key === c.key);
-                return (
-                  <FilterPill
-                    key={c.key}
-                    label={c.short}
-                    count={cov?.total}
-                    active={filters.column === c.key}
-                    onClick={() => patch({ column: c.key })}
-                  />
-                );
-              })}
-            </div>
-          )}
-
           <div className="flex flex-wrap items-center gap-2">
             <input
               type="search"
@@ -396,11 +406,38 @@ export default function PolicyTargetFlowsPage() {
         {/* ── Flow charts ──────────────────────────────────────────────── */}
         {view === 'flow' && (
           <section className="mt-5 space-y-4">
-            <div className="rounded-xl border border-grey-200 bg-white p-3">
+            <SectorOverview
+              overview={overview}
+              selected={filters.column}
+              onSelect={openColumn}
+              filtered={Boolean(filters.query || filters.policy || filters.route || filters.gapsOnly || filters.weakOnly)}
+            />
+
+            <div ref={chartRef} className="scroll-mt-4 rounded-xl border border-grey-200 bg-white p-3">
+              <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2 border-b border-grey-200 pb-2">
+                <div>
+                  <h2 className="text-[13.5px] font-semibold text-tertiary-dark">
+                    {chart.column.label}
+                  </h2>
+                  <p className="mt-0.5 text-[11.5px] text-tertiary">
+                    {fmt(chartTotal)} target{chartTotal === 1 ? '' : 's'} in view across{' '}
+                    {chartActs} act{chartActs === 1 ? '' : 's'} — expand an act to read its targets.
+                  </p>
+                </div>
+                <FilterPill
+                  label={density === 'full' ? 'Cards open' : 'Open every act'}
+                  active={density === 'full'}
+                  onClick={() => setDensity(density === 'full' ? 'compact' : 'full')}
+                  ariaLabel={density === 'full'
+                    ? 'Collapse every act group back to the compact figure'
+                    : 'Open every act group to show its target cards'}
+                />
+              </div>
               <TargetFlow
                 chart={chart}
                 selectedId={selectedId}
                 onSelect={(row) => setSelectedId(row.id === selectedId ? null : row.id)}
+                density={density}
               />
             </div>
             {selected && <TargetDetail row={selected} onClose={() => setSelectedId(null)} />}
@@ -464,7 +501,7 @@ export default function PolicyTargetFlowsPage() {
                       <td className="max-w-[380px] px-3 py-2">
                         <button
                           type="button"
-                          onClick={() => { setSelectedId(r.id); setView('flow'); patch({ column: r.columns[0] }); }}
+                          onClick={() => { setView('flow'); openColumn(r.columns[0], r.id); }}
                           className="mh-focus text-left text-tertiary-dark underline decoration-grey-300 underline-offset-2"
                         >
                           {r.label}
