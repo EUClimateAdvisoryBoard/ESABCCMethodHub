@@ -1,12 +1,12 @@
 {
   "date": "2026-08-07",
-  "generatedAt": "2026-08-07T17:50:44.708Z",
+  "generatedAt": "2026-08-07T23:34:47.054Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 7 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Drought threatens power supplies in Danube countries",
-      "summary": "Droughts, heat and falling water levels in the Danube are hitting central and southeastern Europe hard. Hungary and Romania are experiencing an energy crisis — whereas countries like Bulgaria are better prepared.",
+      "headline": "Trump orders new 15% tariff on key material for solar panels and microchips",
+      "summary": "&lt;p&gt;Move to raise levy on goods made with polysilicon aims to protect domestic US supply chains from China, the major producer&lt;/p&gt;&lt;p&gt;Donald Trump has ordered a new 15% &lt;a href=\"https://www.theguardian.com/business/tariffs\"&gt;tariff&lt;/a&gt; on imported products made of polysilicon, an important ingredient in microchip manufacturing that is primarily produced by China.&lt;/p&gt;&lt;p&gt;The new tariff, which will take effect on 4 December, is aimed at supporting &lt;a href=\"",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Meta ordered to pay $567 million in New Mexico for teen mental health fund - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZ25adU40RDVWeVlvNTZDdmNqdHZpOERIODV6XzhBRmY3bFdPYmlYN2liNTloRWRkaEVNaDRpSXRXdEh5RVN2SFZGSTZRdXFsaGRyNENpMkRnTDBNdm5EX0trbWJQS3FFcmNMMzZabGRCb2VaZW5LYVExdVp2Zy1uWkFQTU54cC0xbTZKaU1FbDBKVW5TeGdFUDVZLXVjbGd3eW5JNl9mYlNodw?oc=5\" target=\"_blank\"&gt;Meta ordered to pay $567 million in New Mexico for teen mental health fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Meat packer JBS agrees joint venture with Indonesian wealth fund arm - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPa1pfMURrc0Z2R2FwS21aYTZuT3NrX005bUJaWWRFZVozaXNOT2gxZkZOendqV2E1eGJ2SlJVT212a3NIYVpiczkxekplcVJQN1AzVDl5ZGw5RzlsSEhqUmdkQ2I2R2tiSWg1U2NDaXZDVG52T1lsdGttajlXUFJOQ3Npak5acnVrOVFNalh5T28xdVotZHdSZ2RvbVZDNi1jMUtSdDJEdnVyQXRSbW9fZ295OWxvWHk1SVpaYS0tR19yb1k?oc=5\" target=\"_blank\"&gt;Meat packer JBS agrees joint venture with Indonesian wealth fund arm&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,14 +34,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Drought threatens power supplies in Danube countries",
-          "link": "https://www.dw.com/en/drought-threatens-power-supplies-in-danube-countries/a-78269916?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Droughts, heat and falling water levels in the Danube are hitting central and southeastern Europe hard. Hungary and Romania are experiencing an energy crisis — whereas countries like Bulgaria are better prepared.",
-          "published": "2026-08-06T19:55:00.000Z",
-          "score": 9
-        },
-        {
           "title": "Trump orders new 15% tariff on key material for solar panels and microchips",
           "link": "https://www.theguardian.com/us-news/2026/aug/07/trump-orders-tariff-solar-panels-microchips-manufacturing-ingredient",
           "source": "The Guardian - Energy",
@@ -50,11 +42,11 @@
           "score": 7
         },
         {
-          "title": "Trump administration to pay German firm $1.22bn to cut offshore wind leases",
-          "link": "https://www.theguardian.com/us-news/2026/aug/06/rwe-deal-wind-leases",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Agreement with RWE is fifth deal Trump team has made with energy companies, offering payouts to give up projects&lt;/p&gt;&lt;p&gt;The German energy company RWE has reached a $1.22bn deal with the US government to relinquish its offshore wind leases and instead redirect funds towards fossil fuel investments.&lt;/p&gt;&lt;p&gt;The agreement marks the fifth deal the Donald Trump administration &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/10/bills-trump-clean-energy-coal\"&gt;ha",
-          "published": "2026-08-06T18:20:49.000Z",
+          "title": "Trump administration to pay German firm $1.2bn to halt US wind projects",
+          "link": "https://www.bbc.co.uk/news/articles/c1e1vg0gjl5o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The RWE payout is the latest in a string of deals cancelling wind energy projects, a power source long derided by Trump.",
+          "published": "2026-08-07T13:32:41.000Z",
           "score": 7
         },
         {
@@ -66,12 +58,20 @@
           "score": 7
         },
         {
-          "title": "Trump unveils trade actions to compete with China on solar and chips - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVHo3TzdXT2NRVmFWeEd0Y1JjaFJPbjBZWnZ2b2hKcGxDNHZjb3ZoWS1ZZElGMGplSVhIUEZ3WEQ0cTd6R1haV2NseVVLWGpfMF9ZbDIySkg3Vm1KUlBKejRibkFYZWFzMzYyRVZiWHZuVHdSZndpVHVYbEVJNEtTdEZwZkNsZzBxWi1JTlVkQ2Z3ME5Td1EwUUZaQlM3M2VqS2xkV1Q4RjR4aXppTTVReUl3UnI?oc=5",
+          "title": "Middle East buyers interested in LNG cargoes from Canada, Pacific Energy says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNTW1IcWhpOWZDUW5XUFFvUzllYVpSY1lNRDVobjktbjJzMWZrQjR2UkVfTGI5OUItbVNjMTVGNlE5YzZBeVY0elJMMUdueElxUkU1YTktQktOMlRSNlpJYU11VTB4MnlnR0h2NVpuUzZIVzB3Y1paZktqbVBJbXBqdUhzaHhYekE3WXF4MnBRSDJwREtmU3I3OGZuVU1KQU8wUzhfd1k0UktIQ3dyT0RHZ2Fma09ISEVhMHlQYQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQVHo3TzdXT2NRVmFWeEd0Y1JjaFJPbjBZWnZ2b2hKcGxDNHZjb3ZoWS1ZZElGMGplSVhIUEZ3WEQ0cTd6R1haV2NseVVLWGpfMF9ZbDIySkg3Vm1KUlBKejRibkFYZWFzMzYyRVZiWHZuVHdSZndpVHVYbEVJNEtTdEZwZkNsZzBxWi1JTlVkQ2Z3ME5Td1EwUUZaQlM3M2VqS2xkV1Q4RjR4aXppTTVReUl3UnI?oc=5\" target=\"_blank\"&gt;Trump unveils trade actions to compete with China on solar and chips&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-06T20:46:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNTW1IcWhpOWZDUW5XUFFvUzllYVpSY1lNRDVobjktbjJzMWZrQjR2UkVfTGI5OUItbVNjMTVGNlE5YzZBeVY0elJMMUdueElxUkU1YTktQktOMlRSNlpJYU11VTB4MnlnR0h2NVpuUzZIVzB3Y1paZktqbVBJbXBqdUhzaHhYekE3WXF4MnBRSDJwREtmU3I3OGZuVU1KQU8wUzhfd1k0UktIQ3dyT0RHZ2Fma09ISEVhMHlQYQ?oc=5\" target=\"_blank\"&gt;Middle East buyers interested in LNG cargoes from Canada, Pacific Energy says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-07T18:02:02.000Z",
           "score": 7
+        },
+        {
+          "title": "Police drop charges against 125 Rising Tide protesters two years after Newcastle port blockade",
+          "link": "https://www.theguardian.com/australia-news/2026/aug/07/police-drop-charges-against-125-rising-tide-protesters-two-years-after-newcastle-port-blockade",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Climate change activists faced up to two years in prison if convicted over blockade of world’s largest coal port&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/aug/07/royal-commission-antisemitism-national-cabinet-datacentres-icac-liberal-party-labor-anthony-albanese-one-nation-pauline-hanson-angus-taylor-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a",
+          "published": "2026-08-07T05:39:57.000Z",
+          "score": 6
         }
       ]
     },
@@ -85,6 +85,14 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWkIzNlhJa1VFenpqa3RMRWxkazY0d2dYQzQ0VlM1eTJyR2ZTTXVsOGJlOXNjMU45N3JlZERaaEpUTGk2UlZfVm9CUjJMVi1mMTNNV0k0RDVvdWNYZExsclBHX1FBTkYwS2s5T3dld1lCakRxeVNjVHY1SndvOG1WRjZGVVZIWGhRY0NWX19YbGtxX0ZyU1NEUUFiQVFvVUpQWVVGOWdBZlBsczV5RTJCUVN3bFdHbThOWDRaWXJSSi0yZw?oc=5\" target=\"_blank\"&gt;Rosatom says seven Chinese vessels will sail to Europe via Russia's Arctic route&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-07T13:11:04.000Z",
+          "score": 13
+        },
+        {
+          "title": "Europe's drought reveals medieval buildings, Nazi warships, mammoth remains and more - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNdm12c2twcEs2ZjFfaGs4OXJpaVRVcElZbkNjVG82SjlFUjJkdEE4RzBCQjRpSm9LRVd6cEZONGhIRHY4X3hoTVBCMkFmcnBZX0tMUUdBVFBVWlFQdTlfSndVYXFkR3ZSbWZ3ZVJqbjBuSmNfbHR4RHZ5RF9TdGhPVDZfY3VYTWN3WVZhY2dGNHhPWWxDT1gyY1RuejV5a1RJNnhnVUM1eG1wbnhfWXV1QlpDSjNqeGZjM09lTlBJOA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNdm12c2twcEs2ZjFfaGs4OXJpaVRVcElZbkNjVG82SjlFUjJkdEE4RzBCQjRpSm9LRVd6cEZONGhIRHY4X3hoTVBCMkFmcnBZX0tMUUdBVFBVWlFQdTlfSndVYXFkR3ZSbWZ3ZVJqbjBuSmNfbHR4RHZ5RF9TdGhPVDZfY3VYTWN3WVZhY2dGNHhPWWxDT1gyY1RuejV5a1RJNnhnVUM1eG1wbnhfWXV1QlpDSjNqeGZjM09lTlBJOA?oc=5\" target=\"_blank\"&gt;Europe's drought reveals medieval buildings, Nazi warships, mammoth remains and more&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-07T15:03:00.000Z",
           "score": 13
         },
         {
@@ -110,14 +118,6 @@
           "description": "&lt;p&gt;Scientists say global blazes account for 10% of UK’s particle pollution – and climate crisis could make the problem worse&lt;/p&gt;&lt;p&gt;Smoke rising above wildlife habitats, thousands of people evacuated and homes and livelihoods reduced to ashes – this is fast &lt;a href=\"https://www.theguardian.com/world/2026/jul/31/wildfires-extreme-weather-europe-spain-france-climate-crisis-analysis\"&gt;becoming&lt;/a&gt; the defining image of &lt;a href=\"https://www.theguardian.com/world/2026/j",
           "published": "2026-08-07T05:00:08.000Z",
           "score": 9
-        },
-        {
-          "title": "Extreme heat breaks temperature records in central and eastern Europe",
-          "link": "https://www.theguardian.com/world/2026/aug/07/extreme-heat-breaks-temperature-records-central-eastern-europe",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Slovakia reaches new high of 42C as authorities in Poland forced to shut down Kozienice and Połaniec power plants&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/gallery/2026/aug/07/europe-dry-riverbeds-scorched-earth-hot-weather-in-pictures\"&gt;Europe’s dry riverbeds and scorched earth – in pictures&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Temperature records have been broken in several countries across central and eastern Europe as the extr",
-          "published": "2026-08-07T05:00:08.000Z",
-          "score": 8
         }
       ]
     },
@@ -125,6 +125,14 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
+        {
+          "title": "Meat packer JBS agrees joint venture with Indonesian wealth fund arm - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPa1pfMURrc0Z2R2FwS21aYTZuT3NrX005bUJaWWRFZVozaXNOT2gxZkZOendqV2E1eGJ2SlJVT212a3NIYVpiczkxekplcVJQN1AzVDl5ZGw5RzlsSEhqUmdkQ2I2R2tiSWg1U2NDaXZDVG52T1lsdGttajlXUFJOQ3Npak5acnVrOVFNalh5T28xdVotZHdSZ2RvbVZDNi1jMUtSdDJEdnVyQXRSbW9fZ295OWxvWHk1SVpaYS0tR19yb1k?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPa1pfMURrc0Z2R2FwS21aYTZuT3NrX005bUJaWWRFZVozaXNOT2gxZkZOendqV2E1eGJ2SlJVT212a3NIYVpiczkxekplcVJQN1AzVDl5ZGw5RzlsSEhqUmdkQ2I2R2tiSWg1U2NDaXZDVG52T1lsdGttajlXUFJOQ3Npak5acnVrOVFNalh5T28xdVotZHdSZ2RvbVZDNi1jMUtSdDJEdnVyQXRSbW9fZ295OWxvWHk1SVpaYS0tR19yb1k?oc=5\" target=\"_blank\"&gt;Meat packer JBS agrees joint venture with Indonesian wealth fund arm&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-07T14:50:25.000Z",
+          "score": 2
+        },
         {
           "title": "Meta ordered to pay $567 million in New Mexico for teen mental health fund - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZ25adU40RDVWeVlvNTZDdmNqdHZpOERIODV6XzhBRmY3bFdPYmlYN2liNTloRWRkaEVNaDRpSXRXdEh5RVN2SFZGSTZRdXFsaGRyNENpMkRnTDBNdm5EX0trbWJQS3FFcmNMMzZabGRCb2VaZW5LYVExdVp2Zy1uWkFQTU54cC0xbTZKaU1FbDBKVW5TeGdFUDVZLXVjbGd3eW5JNl9mYlNodw?oc=5",
@@ -146,59 +154,68 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Ukraine&#039;s Zelenskyy makes first visit to Russia-friendly Serbia",
+          "link": "https://www.dw.com/en/ukraine-s-zelenskyy-makes-first-visit-to-russia-friendly-serbia/a-78285302?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Ukrainian President Zelenskyy is making his first visit to Serbia. His host, President Aleksandar Vucic, hopes to score points with the EU, while Zelenskyy seeks more arms from a country that remains Russia-friendly.",
+          "published": "2026-08-07T19:34:00.000Z",
+          "score": 4
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "What should Europe do about its drying rivers?",
-          "link": "https://www.dw.com/en/what-should-europe-do-about-its-drying-rivers/a-78276662?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Iceland’s EU vote: A nation divided over Europe",
+          "link": "https://www.dw.com/en/iceland-s-eu-vote-a-nation-divided-over-europe/a-78285133?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Security concerns, control over fishing rights and rising living costs are shaping Iceland&#039;s debate over whether to restart talks on joining the European Union.",
+          "published": "2026-08-07T19:37:00.000Z",
+          "score": 12
+        },
+        {
+          "title": "Europe&#039;s rivers are drying up. Can they be saved?",
+          "link": "https://www.dw.com/en/europe-s-rivers-are-drying-up-can-they-be-saved/a-78276662?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The Rhine and Danube have reached historic lows. Dwindling water levels are affecting shipping, agriculture and ecosystems — and raising concerns about the future of drinking water supplies.",
           "published": "2026-08-07T13:36:00.000Z",
           "score": 8
         },
         {
-          "title": "India regulator won't ease 'energy drink' label deadline, unnerving companies, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZHZtdU1SaGJYWXNzVHRZY0k3MUR6QTdibkREdWxSeTNMaVVZYWlzc1VLSDhFaU1mY3AtT2I4TzRjWGpvZ3J4WEh4ZzdpRkUzaXB1cktfd0hWWV8xQWpQUjh6MjJoN3k1TE9aOFQyVFhxMWRKUWU2T2Exa3pLS2lRekdYTFpUTnhDQlhwMFNrX1c4NGtPbDdZZ2JUYTFPb0IwZjZTcFRlRGhxYVE0bzlCRFNRZnNyY0gyYmZzSXZn?oc=5",
+          "title": "Trump nominates agency lawyer to serve on Federal Communications Commission - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTC1WVjNWY2ZCcFktRWt1OGZlOEt6X2lDM1M2VzFvWU1SRFZjQlR3NnU2NGJOZUVucXR0aElBajZqYkNiN0p4NzJJTkVSSjlhb3hZNXRGTzNUNnZlX2lYSTM1amlkUlBSLWQtTl84SXdzWExMb0M1ZDY4M1VUdnZXOG5kckhYeFlYTGx5WS15N2prUWgwT0FWYXFHc1hva1JBUllHcy1rSFpmTW0zVk0tdA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNZHZtdU1SaGJYWXNzVHRZY0k3MUR6QTdibkREdWxSeTNMaVVZYWlzc1VLSDhFaU1mY3AtT2I4TzRjWGpvZ3J4WEh4ZzdpRkUzaXB1cktfd0hWWV8xQWpQUjh6MjJoN3k1TE9aOFQyVFhxMWRKUWU2T2Exa3pLS2lRekdYTFpUTnhDQlhwMFNrX1c4NGtPbDdZZ2JUYTFPb0IwZjZTcFRlRGhxYVE0bzlCRFNRZnNyY0gyYmZzSXZn?oc=5\" target=\"_blank\"&gt;India regulator won't ease 'energy drink' label deadline, unnerving companies, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-08-07T08:41:17.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNTC1WVjNWY2ZCcFktRWt1OGZlOEt6X2lDM1M2VzFvWU1SRFZjQlR3NnU2NGJOZUVucXR0aElBajZqYkNiN0p4NzJJTkVSSjlhb3hZNXRGTzNUNnZlX2lYSTM1amlkUlBSLWQtTl84SXdzWExMb0M1ZDY4M1VUdnZXOG5kckhYeFlYTGx5WS15N2prUWgwT0FWYXFHc1hva1JBUllHcy1rSFpmTW0zVk0tdA?oc=5\" target=\"_blank\"&gt;Trump nominates agency lawyer to serve on Federal Communications Commission&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-07T17:05:37.000Z",
+          "score": 8
         },
         {
-          "title": "Thai PM vows new gun law after deadly school shooting - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOLW53bUxYeW15OS1Hc2tXTjEwWWZEVGw2ajRxMk9PcnBFZE5mTHNITWJlc2ZmSGhNNFNFRjRRNE5SWG5uTmI1bldVOUlfanB6Z05iX090NzVRcUFDUzFJNDFUUFREMnZEQ0Z2ekFqUXcxUFFtcVc0Qi1CYy05RjNJQjV6VFNCX0RGckxyMVZJV2x3S1pUZ19YY1VCLUs4eFU5b1lTM1NuY2MxX0dz?oc=5",
+          "title": "Heatwaves expose overcrowding crisis in Europe's ageing prisons - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNTVkzS3NlVm56cG5pSXQ1czE2N1o4aFozQ01KREU0RDVXR04zaGlKNmpuLV9mNGhJRGZjMEVmdnViejhiWGRKVWJvT1NLNTJOb0NpRjZfQTJ2VU5BUWZkNlJBTXk4eGN3aF80bTd6clpUWkdCdkpDU3RmZ2w1WXRWcW1TLWFZSDQwM1dBRnp0YjVtUk1GQTBOODR3Z2FWVjZMV3ZYODVMOUxONTNf?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxOLW53bUxYeW15OS1Hc2tXTjEwWWZEVGw2ajRxMk9PcnBFZE5mTHNITWJlc2ZmSGhNNFNFRjRRNE5SWG5uTmI1bldVOUlfanB6Z05iX090NzVRcUFDUzFJNDFUUFREMnZEQ0Z2ekFqUXcxUFFtcVc0Qi1CYy05RjNJQjV6VFNCX0RGckxyMVZJV2x3S1pUZ19YY1VCLUs4eFU5b1lTM1NuY2MxX0dz?oc=5\" target=\"_blank\"&gt;Thai PM vows new gun law after deadly school shooting&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-07T11:37:30.000Z",
-          "score": 6
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNTVkzS3NlVm56cG5pSXQ1czE2N1o4aFozQ01KREU0RDVXR04zaGlKNmpuLV9mNGhJRGZjMEVmdnViejhiWGRKVWJvT1NLNTJOb0NpRjZfQTJ2VU5BUWZkNlJBTXk4eGN3aF80bTd6clpUWkdCdkpDU3RmZ2w1WXRWcW1TLWFZSDQwM1dBRnp0YjVtUk1GQTBOODR3Z2FWVjZMV3ZYODVMOUxONTNf?oc=5\" target=\"_blank\"&gt;Heatwaves expose overcrowding crisis in Europe's ageing prisons&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-07T12:57:20.000Z",
+          "score": 8
         },
         {
-          "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVWd6ZjFIZXZHQ2JsNi1UdXBvS1JIUm0xYWtjaDQ1UXVOczhzTzZLNEY0ZTRtb1l5N2lrY09ERHFySlMyakJJNndhRUx5M0FabFZ5TllJZWZPU05na2VqMkRVckJ2VndLdUlFUGd1NklHQlN6V1VJUzRxS09jUmtVVWhMTGRuVlN3YzctZjhBWVI2UUZkQkJqZ0NvdF9uQ1I0RGtCNVNORThqQQ?oc=5",
+          "title": "Europe's getting hotter, markets are taking note - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOWGVzcGFNZ1c5WlpIeXI4dWlKLUNPWmNUYXFCbWxCazFPV2swT3dyR0ZvUW54X2Nnb3ZsMWh5NmtoUHpUb3B4V1l2dV9aTGd6V2tlbTQ1aGNrUEIzdWZ3YkhWNW81dDFGdVhmdnM4N3dka1lYTy1ZZFZaSGE4RzZBTVJCTm8wb21CUGN0aTd0MU5NMFNjd2lUV2k4dTRsNG9XWWhFdmtB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVWd6ZjFIZXZHQ2JsNi1UdXBvS1JIUm0xYWtjaDQ1UXVOczhzTzZLNEY0ZTRtb1l5N2lrY09ERHFySlMyakJJNndhRUx5M0FabFZ5TllJZWZPU05na2VqMkRVckJ2VndLdUlFUGd1NklHQlN6V1VJUzRxS09jUmtVVWhMTGRuVlN3YzctZjhBWVI2UUZkQkJqZ0NvdF9uQ1I0RGtCNVNORThqQQ?oc=5\" target=\"_blank\"&gt;Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-06T19:30:42.000Z",
-          "score": 6
-        },
-        {
-          "title": "Seven killed after Thai student opens fire at home and school",
-          "link": "https://www.bbc.co.uk/news/articles/c980j3j578do?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Authorities say the 14-year-old killed his grandparents before gunning down five teachers at his school.",
-          "published": "2026-08-07T15:51:16.000Z",
-          "score": 2
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxOWGVzcGFNZ1c5WlpIeXI4dWlKLUNPWmNUYXFCbWxCazFPV2swT3dyR0ZvUW54X2Nnb3ZsMWh5NmtoUHpUb3B4V1l2dV9aTGd6V2tlbTQ1aGNrUEIzdWZ3YkhWNW81dDFGdVhmdnM4N3dka1lYTy1ZZFZaSGE4RzZBTVJCTm8wb21CUGN0aTd0MU5NMFNjd2lUV2k4dTRsNG9XWWhFdmtB?oc=5\" target=\"_blank\"&gt;Europe's getting hotter, markets are taking note&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-07T04:02:00.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 416,
-    "articlesLast24h": 167,
-    "afterDedup": 151,
+    "totalArticlesScanned": 420,
+    "articlesLast24h": 160,
+    "afterDedup": 149,
     "feedsQueried": 19
   }
 }
