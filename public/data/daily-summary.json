@@ -1,18 +1,18 @@
 {
   "date": "2026-08-07",
-  "generatedAt": "2026-08-07T11:49:00.537Z",
+  "generatedAt": "2026-08-07T17:50:44.708Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 7 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Octopus Energy denies it is anti-union as GMB pushes for recognition for workers",
-      "summary": "&lt;p&gt;Union says that as a top-rated ethical company, UK’s largest energy firm should welcome its involvement&lt;/p&gt;&lt;p&gt;GMB is pushing for union recognition at the UK’s largest energy company, Octopus Energy, known as a progressive organisation with a focus on renewable energy.&lt;/p&gt;&lt;p&gt;The union is planning to submit a formal proposal for voluntary recognition at the London-based company and says Octopus, as a top rated ethical business, should welcome the involvement of tra",
+      "headline": "Drought threatens power supplies in Danube countries",
+      "summary": "Droughts, heat and falling water levels in the Danube are hitting central and southeastern Europe hard. Hungary and Romania are experiencing an energy crisis — whereas countries like Bulgaria are better prepared.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Q&#038;A: What is in China’s new five-year plan for climate change?",
-      "summary": "China has released a five-year plan dedicated to addressing climate change.&#160; The 15th five-year plan for a national response to&#8230; The post Q&amp;A: What is in China’s new five-year plan for climate change? appeared first on Carbon Brief.",
+      "headline": "Rosatom says seven Chinese vessels will sail to Europe via Russia's Arctic route - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWkIzNlhJa1VFenpqa3RMRWxkazY0d2dYQzQ0VlM1eTJyR2ZTTXVsOGJlOXNjMU45N3JlZERaaEpUTGk2UlZfVm9CUjJMVi1mMTNNV0k0RDVvdWNYZExsclBHX1FBTkYwS2s5T3dld1lCakRxeVNjVHY1SndvOG1WRjZGVVZIWGhRY0NWX19YbGtxX0ZyU1NEUUFiQVFvVUpQWVVGOWdBZlBsczV5RTJCUVN3bFdHbThOWDRaWXJSSi0yZw?oc=5\" target=\"_blank\"&gt;Rosatom says seven Chinese vessels will sail to Europe via Russia's Arctic route&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -33,14 +33,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Octopus Energy denies it is anti-union as GMB pushes for recognition for workers",
-          "link": "https://www.theguardian.com/business/2026/aug/06/octopus-energy-workers-union-recognition",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Union says that as a top-rated ethical company, UK’s largest energy firm should welcome its involvement&lt;/p&gt;&lt;p&gt;GMB is pushing for union recognition at the UK’s largest energy company, Octopus Energy, known as a progressive organisation with a focus on renewable energy.&lt;/p&gt;&lt;p&gt;The union is planning to submit a formal proposal for voluntary recognition at the London-based company and says Octopus, as a top rated ethical business, should welcome the involvement of tra",
-          "published": "2026-08-06T14:00:50.000Z",
-          "score": 11
-        },
         {
           "title": "Drought threatens power supplies in Danube countries",
           "link": "https://www.dw.com/en/drought-threatens-power-supplies-in-danube-countries/a-78269916?maca=en-rss-en-all-1573-xml-mrss",
@@ -66,11 +58,19 @@
           "score": 7
         },
         {
-          "title": "US strikes $1.2bn deal to pay German firm to halt offshore wind projects",
-          "link": "https://www.bbc.co.uk/news/articles/c1e1vg0gjl5o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The RWE payout is the latest in a string of deals cancelling wind energy projects, a power source long derided by Trump.",
-          "published": "2026-08-07T09:50:54.000Z",
+          "title": "Eco wins: Hungary goes solar, marmots go viral and Rome gets an upgrade",
+          "link": "https://www.dw.com/en/eco-wins-hungary-goes-solar-marmots-go-viral-and-rome-gets-an-upgrade/a-78281783?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "From Hungary&#039;s accidental solar revolution to marmot crowdfunding and a long-overdue upgrade for Rome&#039;s big snake, good news comes in strange packages this week.",
+          "published": "2026-08-07T14:06:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Trump unveils trade actions to compete with China on solar and chips - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVHo3TzdXT2NRVmFWeEd0Y1JjaFJPbjBZWnZ2b2hKcGxDNHZjb3ZoWS1ZZElGMGplSVhIUEZ3WEQ0cTd6R1haV2NseVVLWGpfMF9ZbDIySkg3Vm1KUlBKejRibkFYZWFzMzYyRVZiWHZuVHdSZndpVHVYbEVJNEtTdEZwZkNsZzBxWi1JTlVkQ2Z3ME5Td1EwUUZaQlM3M2VqS2xkV1Q4RjR4aXppTTVReUl3UnI?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQVHo3TzdXT2NRVmFWeEd0Y1JjaFJPbjBZWnZ2b2hKcGxDNHZjb3ZoWS1ZZElGMGplSVhIUEZ3WEQ0cTd6R1haV2NseVVLWGpfMF9ZbDIySkg3Vm1KUlBKejRibkFYZWFzMzYyRVZiWHZuVHdSZndpVHVYbEVJNEtTdEZwZkNsZzBxWi1JTlVkQ2Z3ME5Td1EwUUZaQlM3M2VqS2xkV1Q4RjR4aXppTTVReUl3UnI?oc=5\" target=\"_blank\"&gt;Trump unveils trade actions to compete with China on solar and chips&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-06T20:46:00.000Z",
           "score": 7
         }
       ]
@@ -80,19 +80,19 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Q&#038;A: What is in China’s new five-year plan for climate change?",
-          "link": "https://www.carbonbrief.org/qa-what-is-in-chinas-new-five-year-plan-for-climate-change",
-          "source": "Carbon Brief",
-          "description": "China has released a five-year plan dedicated to addressing climate change.&#160; The 15th five-year plan for a national response to&#8230; The post Q&amp;A: What is in China’s new five-year plan for climate change? appeared first on Carbon Brief.",
-          "published": "2026-08-06T14:48:40.000Z",
+          "title": "Rosatom says seven Chinese vessels will sail to Europe via Russia's Arctic route - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWkIzNlhJa1VFenpqa3RMRWxkazY0d2dYQzQ0VlM1eTJyR2ZTTXVsOGJlOXNjMU45N3JlZERaaEpUTGk2UlZfVm9CUjJMVi1mMTNNV0k0RDVvdWNYZExsclBHX1FBTkYwS2s5T3dld1lCakRxeVNjVHY1SndvOG1WRjZGVVZIWGhRY0NWX19YbGtxX0ZyU1NEUUFiQVFvVUpQWVVGOWdBZlBsczV5RTJCUVN3bFdHbThOWDRaWXJSSi0yZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWkIzNlhJa1VFenpqa3RMRWxkazY0d2dYQzQ0VlM1eTJyR2ZTTXVsOGJlOXNjMU45N3JlZERaaEpUTGk2UlZfVm9CUjJMVi1mMTNNV0k0RDVvdWNYZExsclBHX1FBTkYwS2s5T3dld1lCakRxeVNjVHY1SndvOG1WRjZGVVZIWGhRY0NWX19YbGtxX0ZyU1NEUUFiQVFvVUpQWVVGOWdBZlBsczV5RTJCUVN3bFdHbThOWDRaWXJSSi0yZw?oc=5\" target=\"_blank\"&gt;Rosatom says seven Chinese vessels will sail to Europe via Russia's Arctic route&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-07T13:11:04.000Z",
           "score": 13
         },
         {
-          "title": "When taps run dry in the Caribbean, it’s not enough to blame El Niño",
-          "link": "https://www.climatechangenews.com/2026/08/06/as-heatwave-hits-caribbean-its-not-just-el-nino-to-blame/",
+          "title": "As fires burn and temperatures soar, it’s time to imagine a world beyond GDP",
+          "link": "https://www.climatechangenews.com/2026/08/07/as-fires-burn-and-temperatures-soar-its-time-to-imagine-a-world-beyond-gdp/",
           "source": "Climate Home News",
-          "description": "Climate change means El Niño is heating already hotter land and sea, causing devastation across the region and the world The post When taps run dry in the Caribbean, it’s not enough to blame El Niño appeared first on Climate Home News.",
-          "published": "2026-08-06T15:36:14.000Z",
+          "description": "Environmental destruction, like clear-cutting a forest, can boost gross domestic product but it reduces a country's real wealth The post As fires burn and temperatures soar, it’s time to imagine a world beyond GDP appeared first on Climate Home News.",
+          "published": "2026-08-07T12:57:20.000Z",
           "score": 10
         },
         {
@@ -132,34 +132,33 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZ25adU40RDVWeVlvNTZDdmNqdHZpOERIODV6XzhBRmY3bFdPYmlYN2liNTloRWRkaEVNaDRpSXRXdEh5RVN2SFZGSTZRdXFsaGRyNENpMkRnTDBNdm5EX0trbWJQS3FFcmNMMzZabGRCb2VaZW5LYVExdVp2Zy1uWkFQTU54cC0xbTZKaU1FbDBKVW5TeGdFUDVZLXVjbGd3eW5JNl9mYlNodw?oc=5\" target=\"_blank\"&gt;Meta ordered to pay $567 million in New Mexico for teen mental health fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-06T23:51:00.000Z",
           "score": 2
+        },
+        {
+          "title": "India reviewing bilateral investment treaty model, official says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNT2tTUTU0T1B4dnlDRlkzREhGd2I2WXJWYVdGOTh1YUpFNW5PWm44NFR6TDdZa0l2MWZ4ODk0bWxmaWs1dm0xcUdiNjNFNE5HXzlKYVg2Y0E4cGdVVGpfSDlkWERpZXBuTzRFajQ5eGN2bGxwdnV1VXVNRjkzMkJJbUJ2ZHRORjFLckU0ZHJreW1vNUh3M0p1eVc4cURxa1VBZGpMNHptXzhWU1E4V1VQXw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNT2tTUTU0T1B4dnlDRlkzREhGd2I2WXJWYVdGOTh1YUpFNW5PWm44NFR6TDdZa0l2MWZ4ODk0bWxmaWs1dm0xcUdiNjNFNE5HXzlKYVg2Y0E4cGdVVGpfSDlkWERpZXBuTzRFajQ5eGN2bGxwdnV1VXVNRjkzMkJJbUJ2ZHRORjFLckU0ZHJreW1vNUh3M0p1eVc4cURxa1VBZGpMNHptXzhWU1E4V1VQXw?oc=5\" target=\"_blank\"&gt;India reviewing bilateral investment treaty model, official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-07T10:49:49.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "EU should use leverage with Morocco after Ceuta crossings, EU migration chief says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdWw3QWJiaUlhdXZOS09UYnlJWjMwQlc4QmRoV1JMU0ZxMHNsb0JfM1JHUWlGQTA0cWNhcm1sc1pPRGluTHNUV3ozT1QtclRnSzd5RHhTLUVvS0FDTUR2M1FCdU9tbDkyM0V3QXZNSWlCampxSktpWXhZemd5SGJ4NEgwZzgzRmNnZVViODBHeWhLQ3JkVlFxLTYyOE8zbnlBeWtyVkd5UXJSVXlMQlVyTUxuTWhRS3dNanNuUUNOaGlCWWQ3Wnc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPdWw3QWJiaUlhdXZOS09UYnlJWjMwQlc4QmRoV1JMU0ZxMHNsb0JfM1JHUWlGQTA0cWNhcm1sc1pPRGluTHNUV3ozT1QtclRnSzd5RHhTLUVvS0FDTUR2M1FCdU9tbDkyM0V3QXZNSWlCampxSktpWXhZemd5SGJ4NEgwZzgzRmNnZVViODBHeWhLQ3JkVlFxLTYyOE8zbnlBeWtyVkd5UXJSVXlMQlVyTUxuTWhRS3dNanNuUUNOaGlCWWQ3Wnc?oc=5\" target=\"_blank\"&gt;EU should use leverage with Morocco after Ceuta crossings, EU migration chief says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
-          "published": "2026-08-06T16:33:15.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Ford's new EV truck Fathom to be priced starting at about $28,000 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZXpzWXQwOWdjTW5oOVdVSW9ZZ2laU19FWUtJVERKRnlKd3NDdzl5dEJDSzlaS25kSkVpaWVHSXRsbEsxd3JpUy1lNEcxbFliMkpUaThKMjF0QWFXMmtqMHpMVDllempPNkNKdEdMX29YY0RCMnQwTHdNMjRyNmNyT1p3RFc5UnJidFNYd1AwU3RHMEhvc0lOZFp3U2xsdDFPS1FDc0VsOUItRk5xY3B4TTBCbFkxMlpORThYMEkxSQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQZXpzWXQwOWdjTW5oOVdVSW9ZZ2laU19FWUtJVERKRnlKd3NDdzl5dEJDSzlaS25kSkVpaWVHSXRsbEsxd3JpUy1lNEcxbFliMkpUaThKMjF0QWFXMmtqMHpMVDllempPNkNKdEdMX29YY0RCMnQwTHdNMjRyNmNyT1p3RFc5UnJidFNYd1AwU3RHMEhvc0lOZFp3U2xsdDFPS1FDc0VsOUItRk5xY3B4TTBCbFkxMlpORThYMEkxSQ?oc=5\" target=\"_blank\"&gt;Ford's new EV truck Fathom to be priced starting at about $28,000&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-06T13:03:43.000Z",
-          "score": 7
+          "title": "What should Europe do about its drying rivers?",
+          "link": "https://www.dw.com/en/what-should-europe-do-about-its-drying-rivers/a-78276662?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Rhine and Danube have reached historic lows. Dwindling water levels are affecting shipping, agriculture and ecosystems — and raising concerns about the future of drinking water supplies.",
+          "published": "2026-08-07T13:36:00.000Z",
+          "score": 8
         },
         {
           "title": "India regulator won't ease 'energy drink' label deadline, unnerving companies, sources say - Reuters",
@@ -170,36 +169,36 @@
           "score": 7
         },
         {
-          "title": "Marine One: Helicopter carrying Trump flew close to passenger jet, FAA plans probe",
-          "link": "https://www.dw.com/en/marine-one-helicopter-carrying-trump-flew-close-to-passenger-jet-faa-plans-probe/a-78261319?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Trump&#039;s helicopter and a passenger jet briefly were too close near Reagan National Airport, prompting an inquiry into what happened to the safety rules adopted after last year&#039;s deadly collision.",
-          "published": "2026-08-06T12:49:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Iranian parliamentary committee reviews draft bill to bar US, Israeli ships from Hormuz, Fars says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNRFZOdUowaEpSY3VBZWRQSmRjOGZRXzUtM0xDV3BHOTJCYk9VUTdkc1dLUUU2c1hsOTY0c3R3c294bnVoYzJ4eWgxX0k4QVdpaVViSHRsdXBlTzFpZVpXZ20yNzV2cndvUk04N29XOUIxSUl0VlJWM3BDMVJIQWFwcDN0Wl9CRzdMZlM0SlBjYUNtTmtrSU9BQXBnXzh1bWI2OXBPUVlpcVYxclZ5S3pTdDU5VGNVNzRuU0RfeU1BU0lXNG9uZXRLUG14TEI?oc=5",
+          "title": "Thai PM vows new gun law after deadly school shooting - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOLW53bUxYeW15OS1Hc2tXTjEwWWZEVGw2ajRxMk9PcnBFZE5mTHNITWJlc2ZmSGhNNFNFRjRRNE5SWG5uTmI1bldVOUlfanB6Z05iX090NzVRcUFDUzFJNDFUUFREMnZEQ0Z2ekFqUXcxUFFtcVc0Qi1CYy05RjNJQjV6VFNCX0RGckxyMVZJV2x3S1pUZ19YY1VCLUs4eFU5b1lTM1NuY2MxX0dz?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNRFZOdUowaEpSY3VBZWRQSmRjOGZRXzUtM0xDV3BHOTJCYk9VUTdkc1dLUUU2c1hsOTY0c3R3c294bnVoYzJ4eWgxX0k4QVdpaVViSHRsdXBlTzFpZVpXZ20yNzV2cndvUk04N29XOUIxSUl0VlJWM3BDMVJIQWFwcDN0Wl9CRzdMZlM0SlBjYUNtTmtrSU9BQXBnXzh1bWI2OXBPUVlpcVYxclZ5S3pTdDU5VGNVNzRuU0RfeU1BU0lXNG9uZXRLUG14TEI?oc=5\" target=\"_blank\"&gt;Iranian parliamentary committee reviews draft bill to bar US, Israeli ships from Hormuz, Fars says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6",
-          "published": "2026-08-06T16:56:10.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxOLW53bUxYeW15OS1Hc2tXTjEwWWZEVGw2ajRxMk9PcnBFZE5mTHNITWJlc2ZmSGhNNFNFRjRRNE5SWG5uTmI1bldVOUlfanB6Z05iX090NzVRcUFDUzFJNDFUUFREMnZEQ0Z2ekFqUXcxUFFtcVc0Qi1CYy05RjNJQjV6VFNCX0RGckxyMVZJV2x3S1pUZ19YY1VCLUs4eFU5b1lTM1NuY2MxX0dz?oc=5\" target=\"_blank\"&gt;Thai PM vows new gun law after deadly school shooting&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-07T11:37:30.000Z",
           "score": 6
         },
         {
-          "title": "Meta fined $567m in largest child safety ruling against social media giant",
-          "link": "https://www.bbc.co.uk/news/articles/cd7lz3wr2rlo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVWd6ZjFIZXZHQ2JsNi1UdXBvS1JIUm0xYWtjaDQ1UXVOczhzTzZLNEY0ZTRtb1l5N2lrY09ERHFySlMyakJJNndhRUx5M0FabFZ5TllJZWZPU05na2VqMkRVckJ2VndLdUlFUGd1NklHQlN6V1VJUzRxS09jUmtVVWhMTGRuVlN3YzctZjhBWVI2UUZkQkJqZ0NvdF9uQ1I0RGtCNVNORThqQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVWd6ZjFIZXZHQ2JsNi1UdXBvS1JIUm0xYWtjaDQ1UXVOczhzTzZLNEY0ZTRtb1l5N2lrY09ERHFySlMyakJJNndhRUx5M0FabFZ5TllJZWZPU05na2VqMkRVckJ2VndLdUlFUGd1NklHQlN6V1VJUzRxS09jUmtVVWhMTGRuVlN3YzctZjhBWVI2UUZkQkJqZ0NvdF9uQ1I0RGtCNVNORThqQQ?oc=5\" target=\"_blank\"&gt;Gold pares gains to trade steady as oil rises on Iran proposal to bar 'hostile' vessels in Hormuz&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-06T19:30:42.000Z",
+          "score": 6
+        },
+        {
+          "title": "Seven killed after Thai student opens fire at home and school",
+          "link": "https://www.bbc.co.uk/news/articles/c980j3j578do?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The ruling is in addition to $375m in fines Meta was already ordered to pay in the case, for a total of $942m.",
-          "published": "2026-08-07T09:22:03.000Z",
+          "description": "Authorities say the 14-year-old killed his grandparents before gunning down five teachers at his school.",
+          "published": "2026-08-07T15:51:16.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 412,
-    "articlesLast24h": 172,
-    "afterDedup": 155,
+    "totalArticlesScanned": 416,
+    "articlesLast24h": 167,
+    "afterDedup": 151,
     "feedsQueried": 19
   }
 }
