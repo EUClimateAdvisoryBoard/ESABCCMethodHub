@@ -29,6 +29,7 @@
 import {
   FAMILY_BY_KEY,
   MILESTONE_FAMILY_KEY,
+  type AssessmentRoute,
   type FlowColumnKey,
   type MeasurementFamily,
   type Rung,
@@ -328,6 +329,84 @@ export function columnCoverage(all: TargetAssessment[]): ColumnCoverage[] {
       dataset,
       milestone,
       seriesShare: rows.length ? (series / rows.length) * 100 : 0,
+    };
+  });
+}
+
+// ── The one-figure overview ─────────────────────────────────────────────────
+/** Route mix of an arbitrary set of rows — the unit both the overview figure
+ *  and the collapsed act chips are drawn from. */
+export interface RouteCounts {
+  series: number;
+  dataset: number;
+  milestone: number;
+  total: number;
+}
+
+export function routeCounts(rows: TargetAssessment[]): RouteCounts {
+  return {
+    series: rows.filter((r) => r.route === 'series').length,
+    dataset: rows.filter((r) => r.route === 'dataset').length,
+    milestone: rows.filter((r) => r.route === 'milestone').length,
+    total: rows.length,
+  };
+}
+
+export const ROUTE_ORDER: AssessmentRoute[] = ['series', 'dataset', 'milestone'];
+
+/**
+ * One sector column reduced to the numbers the overview figure draws: how many
+ * targets sit on each row of that sector's chart, how they are measured, and
+ * how much of the sector the filters have left standing.
+ *
+ * `total` is filter-aware so the map and the chart below it can never disagree;
+ * `unfilteredTotal` is kept alongside it so the figure can still say what share
+ * of the sector is in view rather than silently shrinking.
+ */
+export interface ColumnOverview {
+  column: FlowColumn;
+  /** Rows in this column under the current filters, sector selection aside. */
+  total: number;
+  /** Rows in this column with no filters applied — the denominator. */
+  unfilteredTotal: number;
+  /** Acts contributing at least one row in view. */
+  acts: number;
+  /** Rows whose family match rests on the heading or the act's title. */
+  weak: number;
+  byRung: Record<Rung, number>;
+  routes: RouteCounts;
+  /** Share of the rows in view that a curated series already measures, 0–100. */
+  seriesShare: number;
+  /** The acts carrying most of the column, biggest first — the chart's own order. */
+  topActs: { short: string; count: number }[];
+}
+
+export function overviewColumns(all: TargetAssessment[], f: Filters): ColumnOverview[] {
+  // Every filter except the sector selection: the figure exists to show where
+  // the filtered rows are, across all nine columns at once.
+  const inScope = applyFilters(all, f, false);
+  return FLOW_COLUMNS.map((column) => {
+    const rows = inScope.filter((r) => r.columns.includes(column.key));
+    const byAct = new Map<string, number>();
+    for (const r of rows) byAct.set(r.target.policy_short, (byAct.get(r.target.policy_short) ?? 0) + 1);
+    const routes = routeCounts(rows);
+    return {
+      column,
+      total: rows.length,
+      unfilteredTotal: all.filter((r) => r.columns.includes(column.key)).length,
+      acts: byAct.size,
+      weak: rows.filter((r) => r.confidence === 'weak').length,
+      byRung: {
+        outcome: rows.filter((r) => r.rung === 'outcome').length,
+        lever: rows.filter((r) => r.rung === 'lever').length,
+        enabling: rows.filter((r) => r.rung === 'enabling').length,
+      },
+      routes,
+      seriesShare: rows.length ? (routes.series / rows.length) * 100 : 0,
+      topActs: [...byAct.entries()]
+        .map(([short, count]) => ({ short, count }))
+        .sort((a, b) => b.count - a.count || a.short.localeCompare(b.short))
+        .slice(0, 3),
     };
   });
 }
