@@ -1,12 +1,12 @@
 {
   "date": "2026-08-07",
-  "generatedAt": "2026-08-07T06:10:34.564Z",
+  "generatedAt": "2026-08-07T11:49:00.537Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 7 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Daily News 06 / 08 / 2026",
-      "summary": "European Commission Daily news Brussels, 06 Aug 2026 Commission approves €780 million Dutch State aid scheme to support renewable hydrogen production \r\nThe European Commission has approved, under EU State aid rules...",
+      "headline": "Octopus Energy denies it is anti-union as GMB pushes for recognition for workers",
+      "summary": "&lt;p&gt;Union says that as a top-rated ethical company, UK’s largest energy firm should welcome its involvement&lt;/p&gt;&lt;p&gt;GMB is pushing for union recognition at the UK’s largest energy company, Octopus Energy, known as a progressive organisation with a focus on renewable energy.&lt;/p&gt;&lt;p&gt;The union is planning to submit a formal proposal for voluntary recognition at the London-based company and says Octopus, as a top rated ethical business, should welcome the involvement of tra",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -34,28 +34,28 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Daily News 06 / 08 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1724",
-          "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 06 Aug 2026 Commission approves €780 million Dutch State aid scheme to support renewable hydrogen production \r\nThe European Commission has approved, under EU State aid rules...",
-          "published": "2026-08-06T08:57:01.000Z",
-          "score": 16
-        },
-        {
-          "title": "How drought threatens electricity supplies in Europe",
-          "link": "https://www.dw.com/en/how-drought-threatens-electricity-supplies-in-europe/a-78269916?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Droughts, heat and falling water levels in the Danube are hitting central and southeastern Europe hard. Hungary and Romania are experiencing an energy crisis — whereas countries like Bulgaria are better prepared.",
-          "published": "2026-08-06T19:55:00.000Z",
-          "score": 13
-        },
-        {
           "title": "Octopus Energy denies it is anti-union as GMB pushes for recognition for workers",
           "link": "https://www.theguardian.com/business/2026/aug/06/octopus-energy-workers-union-recognition",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Union says that as a top-rated ethical company, UK’s largest energy firm should welcome its involvement&lt;/p&gt;&lt;p&gt;GMB is pushing for union recognition at the UK’s largest energy company, Octopus Energy, known as a progressive organisation with a focus on renewable energy.&lt;/p&gt;&lt;p&gt;The union is planning to submit a formal proposal for voluntary recognition at the London-based company and says Octopus, as a top rated ethical business, should welcome the involvement of tra",
           "published": "2026-08-06T14:00:50.000Z",
           "score": 11
+        },
+        {
+          "title": "Drought threatens power supplies in Danube countries",
+          "link": "https://www.dw.com/en/drought-threatens-power-supplies-in-danube-countries/a-78269916?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Droughts, heat and falling water levels in the Danube are hitting central and southeastern Europe hard. Hungary and Romania are experiencing an energy crisis — whereas countries like Bulgaria are better prepared.",
+          "published": "2026-08-06T19:55:00.000Z",
+          "score": 9
+        },
+        {
+          "title": "Trump orders new 15% tariff on key material for solar panels and microchips",
+          "link": "https://www.theguardian.com/us-news/2026/aug/07/trump-orders-tariff-solar-panels-microchips-manufacturing-ingredient",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Move to raise levy on goods made with polysilicon aims to protect domestic US supply chains from China, the major producer&lt;/p&gt;&lt;p&gt;Donald Trump has ordered a new 15% &lt;a href=\"https://www.theguardian.com/business/tariffs\"&gt;tariff&lt;/a&gt; on imported products made of polysilicon, an important ingredient in microchip manufacturing that is primarily produced by China.&lt;/p&gt;&lt;p&gt;The new tariff, which will take effect on 4 December, is aimed at supporting &lt;a href=\"",
+          "published": "2026-08-07T09:11:36.000Z",
+          "score": 7
         },
         {
           "title": "Trump administration to pay German firm $1.22bn to cut offshore wind leases",
@@ -66,11 +66,11 @@
           "score": 7
         },
         {
-          "title": "Trump unveils trade actions to compete with China on solar and chips - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVHo3TzdXT2NRVmFWeEd0Y1JjaFJPbjBZWnZ2b2hKcGxDNHZjb3ZoWS1ZZElGMGplSVhIUEZ3WEQ0cTd6R1haV2NseVVLWGpfMF9ZbDIySkg3Vm1KUlBKejRibkFYZWFzMzYyRVZiWHZuVHdSZndpVHVYbEVJNEtTdEZwZkNsZzBxWi1JTlVkQ2Z3ME5Td1EwUUZaQlM3M2VqS2xkV1Q4RjR4aXppTTVReUl3UnI?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQVHo3TzdXT2NRVmFWeEd0Y1JjaFJPbjBZWnZ2b2hKcGxDNHZjb3ZoWS1ZZElGMGplSVhIUEZ3WEQ0cTd6R1haV2NseVVLWGpfMF9ZbDIySkg3Vm1KUlBKejRibkFYZWFzMzYyRVZiWHZuVHdSZndpVHVYbEVJNEtTdEZwZkNsZzBxWi1JTlVkQ2Z3ME5Td1EwUUZaQlM3M2VqS2xkV1Q4RjR4aXppTTVReUl3UnI?oc=5\" target=\"_blank\"&gt;Trump unveils trade actions to compete with China on solar and chips&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-06T20:46:00.000Z",
+          "title": "US strikes $1.2bn deal to pay German firm to halt offshore wind projects",
+          "link": "https://www.bbc.co.uk/news/articles/c1e1vg0gjl5o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The RWE payout is the latest in a string of deals cancelling wind energy projects, a power source long derided by Trump.",
+          "published": "2026-08-07T09:50:54.000Z",
           "score": 7
         }
       ]
@@ -88,19 +88,19 @@
           "score": 13
         },
         {
-          "title": "Quarter of countries still missing UN climate plans 18 months after deadline",
-          "link": "https://www.climatechangenews.com/2026/08/06/quarter-of-countries-still-missing-un-climate-plans-18-months-after-deadline/",
-          "source": "Climate Home News",
-          "description": "Egypt, Vietnam, Argentina and the Philippines are among the 45 nations which have breached the Paris Agreement by not submitting their climate plan to the UN The post Quarter of countries still missing UN climate plans 18 months after deadline appeared first on Climate Home News.",
-          "published": "2026-08-06T11:05:57.000Z",
-          "score": 13
-        },
-        {
           "title": "When taps run dry in the Caribbean, it’s not enough to blame El Niño",
           "link": "https://www.climatechangenews.com/2026/08/06/as-heatwave-hits-caribbean-its-not-just-el-nino-to-blame/",
           "source": "Climate Home News",
           "description": "Climate change means El Niño is heating already hotter land and sea, causing devastation across the region and the world The post When taps run dry in the Caribbean, it’s not enough to blame El Niño appeared first on Climate Home News.",
           "published": "2026-08-06T15:36:14.000Z",
+          "score": 10
+        },
+        {
+          "title": "Europe’s dry riverbeds and scorched earth – in pictures",
+          "link": "https://www.theguardian.com/world/gallery/2026/aug/07/europe-dry-riverbeds-scorched-earth-hot-weather-in-pictures",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Much of the continent is battling wildfires and drought during a summer of extreme heat&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/world/gallery/2026/aug/07/europe-dry-riverbeds-scorched-earth-hot-weather-in-pictures\"&gt;Continue reading...&lt;/a&gt;",
+          "published": "2026-08-07T07:31:19.000Z",
           "score": 10
         },
         {
@@ -115,7 +115,7 @@
           "title": "Extreme heat breaks temperature records in central and eastern Europe",
           "link": "https://www.theguardian.com/world/2026/aug/07/extreme-heat-breaks-temperature-records-central-eastern-europe",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Slovakia reaches new high of 42C as authorities in Poland forced to shut down Kozienice and Połaniec power plants&lt;/p&gt;&lt;p&gt;Temperature records have been broken in several countries across central and eastern Europe as the extreme weather that has caused wildfires and droughts across the continent continues.&lt;/p&gt;&lt;p&gt;Countries including Slovakia, Austria and Hungary registered record temperatures. On Thursday, the Slovakian hydrometeorological agency said a new high of ",
+          "description": "&lt;p&gt;Slovakia reaches new high of 42C as authorities in Poland forced to shut down Kozienice and Połaniec power plants&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/gallery/2026/aug/07/europe-dry-riverbeds-scorched-earth-hot-weather-in-pictures\"&gt;Europe’s dry riverbeds and scorched earth – in pictures&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Temperature records have been broken in several countries across central and eastern Europe as the extr",
           "published": "2026-08-07T05:00:08.000Z",
           "score": 8
         }
@@ -162,12 +162,12 @@
           "score": 7
         },
         {
-          "title": "US Senate committee votes to hold Fauci in contempt over Covid hearing",
-          "link": "https://www.bbc.co.uk/news/articles/c1m18158my9o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The committee will now refer him for possible prosecution for refusing to answer questions about his handling of the Covid-19 pandemic.",
-          "published": "2026-08-06T14:47:45.000Z",
-          "score": 6
+          "title": "India regulator won't ease 'energy drink' label deadline, unnerving companies, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZHZtdU1SaGJYWXNzVHRZY0k3MUR6QTdibkREdWxSeTNMaVVZYWlzc1VLSDhFaU1mY3AtT2I4TzRjWGpvZ3J4WEh4ZzdpRkUzaXB1cktfd0hWWV8xQWpQUjh6MjJoN3k1TE9aOFQyVFhxMWRKUWU2T2Exa3pLS2lRekdYTFpUTnhDQlhwMFNrX1c4NGtPbDdZZ2JUYTFPb0IwZjZTcFRlRGhxYVE0bzlCRFNRZnNyY0gyYmZzSXZn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNZHZtdU1SaGJYWXNzVHRZY0k3MUR6QTdibkREdWxSeTNMaVVZYWlzc1VLSDhFaU1mY3AtT2I4TzRjWGpvZ3J4WEh4ZzdpRkUzaXB1cktfd0hWWV8xQWpQUjh6MjJoN3k1TE9aOFQyVFhxMWRKUWU2T2Exa3pLS2lRekdYTFpUTnhDQlhwMFNrX1c4NGtPbDdZZ2JUYTFPb0IwZjZTcFRlRGhxYVE0bzlCRFNRZnNyY0gyYmZzSXZn?oc=5\" target=\"_blank\"&gt;India regulator won't ease 'energy drink' label deadline, unnerving companies, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-08-07T08:41:17.000Z",
+          "score": 7
         },
         {
           "title": "Marine One: Helicopter carrying Trump flew close to passenger jet, FAA plans probe",
@@ -186,20 +186,20 @@
           "score": 6
         },
         {
-          "title": "Uefa says boycott may still go ahead as FA withdraws Infantino support",
-          "link": "https://www.bbc.co.uk/sport/football/articles/c2k74yevgzwo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Meta fined $567m in largest child safety ruling against social media giant",
+          "link": "https://www.bbc.co.uk/news/articles/cd7lz3wr2rlo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Fifa's backing of president Gianni Infantino at a meeting on Wednesday \"changes nothing\", says European governing body Uefa.",
-          "published": "2026-08-07T01:57:02.000Z",
-          "score": 4
+          "description": "The ruling is in addition to $375m in fines Meta was already ordered to pay in the case, for a total of $942m.",
+          "published": "2026-08-07T09:22:03.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 424,
-    "articlesLast24h": 185,
-    "afterDedup": 168,
+    "totalArticlesScanned": 412,
+    "articlesLast24h": 172,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
