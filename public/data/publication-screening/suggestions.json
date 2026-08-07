@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T07:11:47.322Z",
+  "generatedAt": "2026-08-07T05:55:19.205Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,45 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/ae9628",
+      "title": "A new approach to determine national greenhouse gas budgets",
+      "journal": "Environmental Research Letters",
+      "authors": "Antti-Ilari Partanen, Tommi Ekholm, Jyri Seppälä et al.",
+      "published": "2026-08-06",
+      "url": "https://doi.org/10.1088/1748-9326/ae9628",
+      "abstract": "We propose a new approach to determine national greenhouse gas (GHG) budgets that are collectively consistent with the 1.5 °C goal of the Paris Agreement and compatible with the accounting method of national GHG inventories. Our approach is designed to bridge global mitigation assessments and national GHG inventory accounting, enabling fair and transparent nationally determined contributions aligned with a given temperature goal. It is flexible, allowing the use of different equity principles and timeframes. GHG budgets are based on a fair share of the allowable warming contributions of GHG emissions. The approach translates the CO 2 -warming-equivalent GHG budget to be compatible with national GHG inventories by applying adjustment terms for non-CO 2 GHG emissions and anthropogenic emissions from land use, land-use change, and the forestry (LULUCF) sector. The adjustment term for non-CO 2 GHGs equals the bias introduced to estimate CO 2 -warming-equivalent emissions using Global Warming Potentials. The adjustment term for emissions in the LULUCF sector equals the projected indirect effects on managed lands due to climate change and CO 2 fertilization. These adjustments can be made either at the global or national level, leading to different national GHG budgets, depending on the country’s mix of non-CO 2 GHG emissions and projected indirect effects. We demonstrate this by showing that Finland’s GHG budget is much larger if the adjustments are made at the global level compare",
+      "suggestedOn": "2026-08-07",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 4,
+          "matched": [
+            "lulucf",
+            "paris agreement"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1088/1748-9326/ae962c",
+      "title": "Emissions gap between rail and Arctic shipping: Poland-Belarus border closure, September 2025",
+      "journal": "Environmental Research Letters",
+      "authors": "Lin Wang, Feiteng Wang, Zhencai Du, Jing Ming",
+      "published": "2026-08-06",
+      "url": "https://doi.org/10.1088/1748-9326/ae962c",
+      "abstract": "Quantifies rail-to-Arctic route emissions gap from a 2025 geopolitical disruption.• Arctic shipping produces 4.7% less CO₂ alone than rail for diverted cargo.• Including Black Carbon reverses the gap: Arctic emits +2.8% to +8.6% more CO₂e.• Highlights climate trade-offs of modal substitution for resilient supply chains.",
+      "suggestedOn": "2026-08-07",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 4,
+          "matched": [
+            "emissions gap"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/ae9563",
       "title": "Equity-centered dietary transitions: food-related GHG emissions and climate target alignment",
