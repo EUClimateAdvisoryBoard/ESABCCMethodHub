@@ -1,12 +1,12 @@
 {
   "date": "2026-08-08",
-  "generatedAt": "2026-08-08T05:43:45.584Z",
+  "generatedAt": "2026-08-08T11:29:31.294Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 8 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Trump orders new 15% tariff on key material for solar panels and microchips",
-      "summary": "&lt;p&gt;Move to raise levy on goods made with polysilicon aims to protect domestic US supply chains from China, the major producer&lt;/p&gt;&lt;p&gt;Donald Trump has ordered a new 15% &lt;a href=\"https://www.theguardian.com/business/tariffs\"&gt;tariff&lt;/a&gt; on imported products made of polysilicon, an important ingredient in microchip manufacturing that is primarily produced by China.&lt;/p&gt;&lt;p&gt;The new tariff, which will take effect on 4 December, is aimed at supporting &lt;a href=\"",
+      "headline": "This burning summer is the proof: the voices of climate denial aren’t just delusional, they’re deadly | Sadiq Khan",
+      "summary": "&lt;p&gt;Look at our blazing forests and parched cities. Green policies aren’t a ‘luxury’, and we can’t burn more oil and gas. People need the truth&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/aug/08/sadiq-khan-calls-on-andy-burnham-to-commit-to-climate-action-as-pressure-grows-over-north-sea-oil\"&gt;Report: Sadiq Khan calls on Andy Burnham to commit to climate action as pressure grows over North Sea oil&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -34,11 +34,11 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Trump orders new 15% tariff on key material for solar panels and microchips",
-          "link": "https://www.theguardian.com/us-news/2026/aug/07/trump-orders-tariff-solar-panels-microchips-manufacturing-ingredient",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Move to raise levy on goods made with polysilicon aims to protect domestic US supply chains from China, the major producer&lt;/p&gt;&lt;p&gt;Donald Trump has ordered a new 15% &lt;a href=\"https://www.theguardian.com/business/tariffs\"&gt;tariff&lt;/a&gt; on imported products made of polysilicon, an important ingredient in microchip manufacturing that is primarily produced by China.&lt;/p&gt;&lt;p&gt;The new tariff, which will take effect on 4 December, is aimed at supporting &lt;a href=\"",
-          "published": "2026-08-07T09:11:36.000Z",
+          "title": "This burning summer is the proof: the voices of climate denial aren’t just delusional, they’re deadly | Sadiq Khan",
+          "link": "https://www.theguardian.com/commentisfree/2026/aug/08/burning-summer-climate-denial-green-policies-sadiq-khan",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Look at our blazing forests and parched cities. Green policies aren’t a ‘luxury’, and we can’t burn more oil and gas. People need the truth&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/aug/08/sadiq-khan-calls-on-andy-burnham-to-commit-to-climate-action-as-pressure-grows-over-north-sea-oil\"&gt;Report: Sadiq Khan calls on Andy Burnham to commit to climate action as pressure grows over North Sea oil&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;",
+          "published": "2026-08-08T08:00:41.000Z",
           "score": 7
         },
         {
@@ -47,6 +47,14 @@
           "source": "BBC Science & Environment",
           "description": "The RWE payout is the latest in a string of deals cancelling wind energy projects, a power source long derided by Trump.",
           "published": "2026-08-07T13:32:41.000Z",
+          "score": 7
+        },
+        {
+          "title": "What can we see during the partial solar eclipse?",
+          "link": "https://www.bbc.co.uk/news/articles/c86n5w392xjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Ways to safely enjoy the partial solar eclipse on Wednesday evening.",
+          "published": "2026-08-08T06:26:21.000Z",
           "score": 7
         },
         {
@@ -64,14 +72,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNTW1IcWhpOWZDUW5XUFFvUzllYVpSY1lNRDVobjktbjJzMWZrQjR2UkVfTGI5OUItbVNjMTVGNlE5YzZBeVY0elJMMUdueElxUkU1YTktQktOMlRSNlpJYU11VTB4MnlnR0h2NVpuUzZIVzB3Y1paZktqbVBJbXBqdUhzaHhYekE3WXF4MnBRSDJwREtmU3I3OGZuVU1KQU8wUzhfd1k0UktIQ3dyT0RHZ2Fma09ISEVhMHlQYQ?oc=5\" target=\"_blank\"&gt;Middle East buyers interested in LNG cargoes from Canada, Pacific Energy says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-07T18:02:02.000Z",
           "score": 7
-        },
-        {
-          "title": "Myanmar&#039;s Min Aung Hlaing seeks legitimacy in Thailand",
-          "link": "https://www.dw.com/en/myanmar-s-min-aung-hlaing-seeks-legitimacy-in-thailand/a-78278172?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Bangkok rolled out the red carpet for the Myanmar leader, but experts say the former junta chief still faces major obstacles in his bid for regional acceptance.",
-          "published": "2026-08-07T11:49:00.000Z",
-          "score": 4
         }
       ]
     },
@@ -104,19 +104,19 @@
           "score": 10
         },
         {
-          "title": "Europe’s dry riverbeds and scorched earth – in pictures",
-          "link": "https://www.theguardian.com/world/gallery/2026/aug/07/europe-dry-riverbeds-scorched-earth-hot-weather-in-pictures",
+          "title": "Nazi shipwrecks emerge from the depths as Europe’s Danube dries up",
+          "link": "https://www.theguardian.com/environment/2026/aug/08/nazi-shipwrecks-emerge-europe-danube-dries-up-record-heat",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Much of the continent is battling wildfires and drought during a summer of extreme heat&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/world/gallery/2026/aug/07/europe-dry-riverbeds-scorched-earth-hot-weather-in-pictures\"&gt;Continue reading...&lt;/a&gt;",
-          "published": "2026-08-07T07:31:19.000Z",
+          "description": "&lt;p&gt;Unexploded ordnance and a military motorcycle also recovered owing to record heat and drought conditions&lt;/p&gt;&lt;p&gt;Record-low water levels in the Danube have exposed remnants of Europe’s Nazi past, with dozens of second world war warships emerging from the riverbed during an intense drought.&lt;/p&gt;&lt;p&gt;In the middle of the river on the Serbian and Romanian border, a broken-up hull was visible on a sandbank that is normally underwater. Other vessels were partly submerged, ",
+          "published": "2026-08-08T10:55:15.000Z",
           "score": 10
         },
         {
-          "title": "‘I couldn’t breathe’: the deadly health burden of wildfire smoke",
-          "link": "https://www.theguardian.com/news/ng-interactive/2026/aug/08/wildfire-smoke-unknown-health-impacts",
+          "title": "Sadiq Khan calls on Andy Burnham to commit to climate action as pressure grows over North Sea oil",
+          "link": "https://www.theguardian.com/environment/2026/aug/08/sadiq-khan-calls-on-andy-burnham-to-commit-to-climate-action-as-pressure-grows-over-north-sea-oil",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Scientists race to untangle complex links between exposure and mortality as fire weather grows more prevalent&lt;/p&gt;&lt;p&gt;A thousand kilometres from the infernos gorging on northern Ontario’s boreal forests, Erin O’Connor watched the sky above Canada’s biggest city turn an “almost post-apocalyptic” orange as it filled with light-scattering particles of soot and ash. Stepping outside the halls of Toronto General hospital, where air filters were keeping patients safe from the worst ",
-          "published": "2026-08-08T05:00:37.000Z",
+          "description": "&lt;p&gt;London mayor points to ‘terrifying scenes’ this summer amid speculation Burnham may back Jackdaw and Rosebank projects&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2026/aug/08/burning-summer-climate-denial-green-policies-sadiq-khan\"&gt;Sadiq Khan: This burning summer is the proof: the voices of climate denial aren’t just delusional, they’re deadly&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Sadiq Khan has called on the government to c",
+          "published": "2026-08-08T08:00:40.000Z",
           "score": 7
         }
       ]
@@ -132,14 +132,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPa1pfMURrc0Z2R2FwS21aYTZuT3NrX005bUJaWWRFZVozaXNOT2gxZkZOendqV2E1eGJ2SlJVT212a3NIYVpiczkxekplcVJQN1AzVDl5ZGw5RzlsSEhqUmdkQ2I2R2tiSWg1U2NDaXZDVG52T1lsdGttajlXUFJOQ3Npak5acnVrOVFNalh5T28xdVotZHdSZ2RvbVZDNi1jMUtSdDJEdnVyQXRSbW9fZ295OWxvWHk1SVpaYS0tR19yb1k?oc=5\" target=\"_blank\"&gt;Meat packer JBS agrees joint venture with Indonesian wealth fund arm&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-07T14:50:25.000Z",
           "score": 2
-        },
-        {
-          "title": "India reviewing bilateral investment treaty model, official says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNT2tTUTU0T1B4dnlDRlkzREhGd2I2WXJWYVdGOTh1YUpFNW5PWm44NFR6TDdZa0l2MWZ4ODk0bWxmaWs1dm0xcUdiNjNFNE5HXzlKYVg2Y0E4cGdVVGpfSDlkWERpZXBuTzRFajQ5eGN2bGxwdnV1VXVNRjkzMkJJbUJ2ZHRORjFLckU0ZHJreW1vNUh3M0p1eVc4cURxa1VBZGpMNHptXzhWU1E4V1VQXw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNT2tTUTU0T1B4dnlDRlkzREhGd2I2WXJWYVdGOTh1YUpFNW5PWm44NFR6TDdZa0l2MWZ4ODk0bWxmaWs1dm0xcUdiNjNFNE5HXzlKYVg2Y0E4cGdVVGpfSDlkWERpZXBuTzRFajQ5eGN2bGxwdnV1VXVNRjkzMkJJbUJ2ZHRORjFLckU0ZHJreW1vNUh3M0p1eVc4cURxa1VBZGpMNHptXzhWU1E4V1VQXw?oc=5\" target=\"_blank\"&gt;India reviewing bilateral investment treaty model, official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-07T10:49:49.000Z",
-          "score": 2
         }
       ]
     },
@@ -148,10 +140,18 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
+          "title": "EU holds talks with big tech over Ceuta misinformation",
+          "link": "https://www.dw.com/en/eu-holds-talks-with-big-tech-over-ceuta-misinformation/a-78288214?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "EU digital chief Henna Virkkunen has called for closer monitoring on social media platforms moving forward, amid the spread of misinformation during the recent migration influx at Spain&#039;s Ceuta.",
+          "published": "2026-08-08T11:02:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Ukraine&#039;s Zelenskyy makes first visit to Russia-friendly Serbia",
           "link": "https://www.dw.com/en/ukraine-s-zelenskyy-makes-first-visit-to-russia-friendly-serbia/a-78285302?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Ukrainian President Zelenskyy is making his first visit to Serbia. His host, President Aleksandar Vucic, hopes to score points with the EU, while Zelenskyy seeks more arms from a country that remains Russia-friendly.",
+          "description": "Ukrainian President Zelenskyy is making his first visit to Serbia. His host, President Aleksandar Vucic, hopes to score points with the EU, while Zelenskyy seeks more arms from a country that remains friendly to Russia.",
           "published": "2026-08-07T19:34:00.000Z",
           "score": 4
         }
@@ -178,19 +178,19 @@
           "score": 8
         },
         {
-          "title": "Trump nominates agency lawyer to serve on Federal Communications Commission - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTC1WVjNWY2ZCcFktRWt1OGZlOEt6X2lDM1M2VzFvWU1SRFZjQlR3NnU2NGJOZUVucXR0aElBajZqYkNiN0p4NzJJTkVSSjlhb3hZNXRGTzNUNnZlX2lYSTM1amlkUlBSLWQtTl84SXdzWExMb0M1ZDY4M1VUdnZXOG5kckhYeFlYTGx5WS15N2prUWgwT0FWYXFHc1hva1JBUllHcy1rSFpmTW0zVk0tdA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNTC1WVjNWY2ZCcFktRWt1OGZlOEt6X2lDM1M2VzFvWU1SRFZjQlR3NnU2NGJOZUVucXR0aElBajZqYkNiN0p4NzJJTkVSSjlhb3hZNXRGTzNUNnZlX2lYSTM1amlkUlBSLWQtTl84SXdzWExMb0M1ZDY4M1VUdnZXOG5kckhYeFlYTGx5WS15N2prUWgwT0FWYXFHc1hva1JBUllHcy1rSFpmTW0zVk0tdA?oc=5\" target=\"_blank\"&gt;Trump nominates agency lawyer to serve on Federal Communications Commission&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-07T17:05:37.000Z",
-          "score": 8
-        },
-        {
           "title": "Heatwaves expose overcrowding crisis in Europe's ageing prisons - Reuters",
           "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNTVkzS3NlVm56cG5pSXQ1czE2N1o4aFozQ01KREU0RDVXR04zaGlKNmpuLV9mNGhJRGZjMEVmdnViejhiWGRKVWJvT1NLNTJOb0NpRjZfQTJ2VU5BUWZkNlJBTXk4eGN3aF80bTd6clpUWkdCdkpDU3RmZ2w1WXRWcW1TLWFZSDQwM1dBRnp0YjVtUk1GQTBOODR3Z2FWVjZMV3ZYODVMOUxONTNf?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNTVkzS3NlVm56cG5pSXQ1czE2N1o4aFozQ01KREU0RDVXR04zaGlKNmpuLV9mNGhJRGZjMEVmdnViejhiWGRKVWJvT1NLNTJOb0NpRjZfQTJ2VU5BUWZkNlJBTXk4eGN3aF80bTd6clpUWkdCdkpDU3RmZ2w1WXRWcW1TLWFZSDQwM1dBRnp0YjVtUk1GQTBOODR3Z2FWVjZMV3ZYODVMOUxONTNf?oc=5\" target=\"_blank\"&gt;Heatwaves expose overcrowding crisis in Europe's ageing prisons&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-07T12:57:20.000Z",
+          "score": 8
+        },
+        {
+          "title": "Trump nominates agency lawyer to serve on Federal Communications Commission - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTC1WVjNWY2ZCcFktRWt1OGZlOEt6X2lDM1M2VzFvWU1SRFZjQlR3NnU2NGJOZUVucXR0aElBajZqYkNiN0p4NzJJTkVSSjlhb3hZNXRGTzNUNnZlX2lYSTM1amlkUlBSLWQtTl84SXdzWExMb0M1ZDY4M1VUdnZXOG5kckhYeFlYTGx5WS15N2prUWgwT0FWYXFHc1hva1JBUllHcy1rSFpmTW0zVk0tdA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNTC1WVjNWY2ZCcFktRWt1OGZlOEt6X2lDM1M2VzFvWU1SRFZjQlR3NnU2NGJOZUVucXR0aElBajZqYkNiN0p4NzJJTkVSSjlhb3hZNXRGTzNUNnZlX2lYSTM1amlkUlBSLWQtTl84SXdzWExMb0M1ZDY4M1VUdnZXOG5kckhYeFlYTGx5WS15N2prUWgwT0FWYXFHc1hva1JBUllHcy1rSFpmTW0zVk0tdA?oc=5\" target=\"_blank\"&gt;Trump nominates agency lawyer to serve on Federal Communications Commission&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-07T17:05:37.000Z",
           "score": 8
         },
         {
@@ -205,9 +205,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 420,
-    "articlesLast24h": 153,
-    "afterDedup": 144,
+    "totalArticlesScanned": 418,
+    "articlesLast24h": 156,
+    "afterDedup": 146,
     "feedsQueried": 19
   }
 }
