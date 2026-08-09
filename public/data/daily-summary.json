@@ -1,18 +1,18 @@
 {
   "date": "2026-08-09",
-  "generatedAt": "2026-08-09T17:32:42.452Z",
+  "generatedAt": "2026-08-09T23:32:37.499Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 9 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "‘Super El Niño’ could bring wet winter and flooding to western US, climate scientists warn",
-      "summary": "&lt;p&gt;Weather system tied to warming sea surface expected to intensify in fall and winter, persisting until early spring 2027&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/apr/13/el-nino-explainer\"&gt;El Niño&lt;/a&gt;, a recurring climate phenomenon marked by above-average sea surface temperatures, when changes in wind patterns allow warmer water to spread across the central and eastern equatorial Pacific, could spell a wet winter for portions of the western and ",
+      "headline": "1999: Solar eclipse experienced from Alderney",
+      "summary": "Footage of people in Alderney catching the best view in the British Isles of the solar eclipse.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
       "headline": "Residents warned to brace for the worst as Canada wildfire rages out of control",
-      "summary": "The Bald Range wildfire in British Columbia, still considered \"out of control\", has spread over more than 39 sq miles (103 sq km).",
+      "summary": "The Bald Range wildfire in British Columbia, still considered \"out of control\", has spread over 53 sq miles (136 sq km).",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -27,14 +27,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "‘Super El Niño’ could bring wet winter and flooding to western US, climate scientists warn",
-          "link": "https://www.theguardian.com/us-news/2026/aug/08/super-el-nino-winter-flooding",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Weather system tied to warming sea surface expected to intensify in fall and winter, persisting until early spring 2027&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/apr/13/el-nino-explainer\"&gt;El Niño&lt;/a&gt;, a recurring climate phenomenon marked by above-average sea surface temperatures, when changes in wind patterns allow warmer water to spread across the central and eastern equatorial Pacific, could spell a wet winter for portions of the western and ",
-          "published": "2026-08-08T19:21:14.000Z",
-          "score": 7
-        },
         {
           "title": "1999: Solar eclipse experienced from Alderney",
           "link": "https://www.bbc.co.uk/news/videos/c1e1v0q257jo?at_medium=RSS&amp;at_campaign=rss",
@@ -52,19 +44,19 @@
           "score": 7
         },
         {
-          "title": "Red Sox send C Adley Rutschman on rehab assignment to Worcester - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQeWp0YXhXeVVPSkpfTjItRG5TSTJpSzY3eWZNUGtxT2d3TXNaM0dnaFdtc0lKVGgyQ2p2Ri1rTnVnT201bnFPZ2hvM2E4NEtFdGp1b3YzOU5pcUhTSnFQUWZ3UkVfY203QlJCVzcyd0FfajBQd3huUmtWNTBPaG1YYVJQT3hZaGJ2bGROdzNYZTByREFDTHBaQkx3VjBBRklyMWRVTTdqdFk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQeWp0YXhXeVVPSkpfTjItRG5TSTJpSzY3eWZNUGtxT2d3TXNaM0dnaFdtc0lKVGgyQ2p2Ri1rTnVnT201bnFPZ2hvM2E4NEtFdGp1b3YzOU5pcUhTSnFQUWZ3UkVfY203QlJCVzcyd0FfajBQd3huUmtWNTBPaG1YYVJQT3hZaGJ2bGROdzNYZTByREFDTHBaQkx3VjBBRklyMWRVTTdqdFk?oc=5\" target=\"_blank\"&gt;Red Sox send C Adley Rutschman on rehab assignment to Worcester&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-08T20:11:43.000Z",
-          "score": 7
-        },
-        {
           "title": "The Guardian view on India’s green growth gamble: it will need more than private finance | Editorial",
           "link": "https://www.theguardian.com/commentisfree/2026/aug/09/the-guardian-view-on-indias-green-growth-gamble-it-will-need-more-than-private-finance",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;The world’s most populous country needs state-generated demand to industrialise, decarbonise and avoid China’s overcapacity trap&lt;/p&gt;&lt;p&gt;India is attempting to do something the world has never seen before. So &lt;a href=\"https://timesofindia.indiatimes.com/india/india-needs-22tn-for-net-zero-by-2070-coal-use-to-rise-till-2047-niti-aayog/articleshow/128139161.cms\"&gt;claimed&lt;/a&gt; Niti Aayog, the government of India’s policy thinktank, earlier this year. It said that no maj",
           "published": "2026-08-09T16:25:19.000Z",
+          "score": 4
+        },
+        {
+          "title": "Most of sun to be eclipsed across island of Ireland",
+          "link": "https://www.bbc.co.uk/news/articles/c39epmz7ex4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Skywatchers are set to witness two major celestial events next week, with a deep partial solar eclipse followed by the peak of the Perseid meteor shower.",
+          "published": "2026-08-09T05:19:17.000Z",
           "score": 4
         }
       ]
@@ -77,8 +69,8 @@
           "title": "Residents warned to brace for the worst as Canada wildfire rages out of control",
           "link": "https://www.bbc.co.uk/news/articles/cx25dkwk3e3o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The Bald Range wildfire in British Columbia, still considered \"out of control\", has spread over more than 39 sq miles (103 sq km).",
-          "published": "2026-08-09T13:08:21.000Z",
+          "description": "The Bald Range wildfire in British Columbia, still considered \"out of control\", has spread over 53 sq miles (136 sq km).",
+          "published": "2026-08-09T22:27:53.000Z",
           "score": 7
         },
         {
@@ -139,15 +131,7 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Kosovo PM Kurti egged in parliament amid political crisis",
-          "link": "https://www.dw.com/en/kosovo-pm-kurti-egged-in-parliament-amid-political-crisis/a-78291171?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Kosovo has held three elections in over two years. Albin Kurti&#039;s ruling Vetevendosje is struggling to garner the two-thirds majority required to elect a president.",
-          "published": "2026-08-08T20:31:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Tracking Western Europe’s heatwave - Reuters",
+          "title": "Tracking Western Europe���s heatwave - Reuters",
           "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQb1JxTEllMHdPcll4UE44T2lsT2VkWV94Zmh6bDVVMmVmMEJHTHBoOFg5cVowc2RtSHR3VGoyR2tJYVFlWlNWZTlkbnNTUWJLV0JMbG5kM1FXdVU2Zmd6T0p2aDV3V0hJUjUzWm1xOTB1MHp1cG0yVm15TXpVc3RLTG1XU3R2UHE5TnJNR0N2MA?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQb1JxTEllMHdPcll4UE44T2lsT2VkWV94Zmh6bDVVMmVmMEJHTHBoOFg5cVowc2RtSHR3VGoyR2tJYVFlWlNWZTlkbnNTUWJLV0JMbG5kM1FXdVU2Zmd6T0p2aDV3V0hJUjUzWm1xOTB1MHp1cG0yVm15TXpVc3RLTG1XU3R2UHE5TnJNR0N2MA?oc=5\" target=\"_blank\"&gt;Tracking Western Europe’s heatwave&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
@@ -159,7 +143,15 @@
           "link": "https://www.bbc.co.uk/news/articles/c5yw4lpe0yeo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Israel's PM says its military will not pull out from Gaza until Hamas is \"genuinely\" disarmed.",
-          "published": "2026-08-09T14:18:10.000Z",
+          "published": "2026-08-09T21:25:04.000Z",
+          "score": 2
+        },
+        {
+          "title": "Suspected crime boss Daniel Kinahan appears in court after extradition",
+          "link": "https://www.bbc.co.uk/news/articles/c62qd5plzp6o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Irish Prison Service bought a bulletproof and bombproof van to transport the 49-year-old to court after his extradition from Dubai.",
+          "published": "2026-08-09T20:58:18.000Z",
           "score": 2
         },
         {
@@ -171,20 +163,20 @@
           "score": 2
         },
         {
-          "title": "Perez Hilton faces long recovery after reports he self-harmed during livestream",
-          "link": "https://www.bbc.co.uk/news/articles/cg5lnqjz497o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Ecuador charges ex-minister over presidential candidate assassination case",
+          "link": "https://www.bbc.co.uk/news/articles/cgjeznj6979o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The US blogger is in a \"serious but stable\" condition in hospital, according to his family.",
-          "published": "2026-08-09T04:32:06.000Z",
+          "description": "Prosecutors accuse six others, including the leader of cartel Los Lobos, of having an indirect role in the murder of Fernando Villavicencio.",
+          "published": "2026-08-09T15:34:04.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 412,
-    "articlesLast24h": 146,
-    "afterDedup": 117,
+    "totalArticlesScanned": 414,
+    "articlesLast24h": 144,
+    "afterDedup": 120,
     "feedsQueried": 19
   }
 }
