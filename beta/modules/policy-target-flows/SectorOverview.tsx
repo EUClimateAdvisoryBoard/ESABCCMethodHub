@@ -108,6 +108,10 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
         <p className="text-[11.5px] text-tertiary">
           {fmt(seriesSum)} of {fmt(shown)} column entries tracked by a curated series
           {' — '}{fmt(reportSum)} of them by the Policy Gap report&apos;s own indicator set
+          {seriesSum > 0 && (
+            <> ({((reportSum / shown) * 100).toFixed(0)} % of the ledger in view,{' '}
+            {((reportSum / seriesSum) * 100).toFixed(0)} % of what is measured)</>
+          )}
           {' · '}{fmt(datasetSum)} specified, not yet built
           {' · '}{fmt(milestoneSum)} milestone{milestoneSum === 1 ? '' : 's'}
           {weakSum > 0 && (
@@ -286,6 +290,10 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
                   <span className="font-mono text-[12.5px] tabular-nums text-tertiary-dark">
                     <span className="font-semibold">{ov.total ? `${ov.seriesShare.toFixed(0)} %` : '—'}</span>{' '}
                     <span className="font-sans text-[10.5px] font-normal text-tertiary-light">measured</span>
+                  </span>
+                  <span className="font-mono text-[11px] tabular-nums text-tertiary">
+                    {ov.total ? `${((ov.routes.reportSet / ov.total) * 100).toFixed(0)} %` : '—'}{' '}
+                    <span className="font-sans text-[10px] text-tertiary-light">in report set</span>
                   </span>
                   {ov.weak > 0 ? (
                     <span className="rounded bg-surface-orange px-1 text-[9.5px] font-semibold text-tertiary-dark">
