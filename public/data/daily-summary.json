@@ -1,6 +1,6 @@
 {
   "date": "2026-08-10",
-  "generatedAt": "2026-08-10T17:53:56.180Z",
+  "generatedAt": "2026-08-10T23:36:08.300Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 10 August 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -42,12 +42,12 @@
           "score": 13
         },
         {
-          "title": "People flocking to Spain to view solar eclipse could spark more ‘devastating’ wildfires",
-          "link": "https://www.theguardian.com/science/2026/aug/10/spain-tourists-solar-eclipse-increased-wildfires-risk",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Northern Spain will be one of the best places in world to view phenomenon with 460,000 extra visitors expected&lt;/p&gt;&lt;p&gt;Authorities in Spain have warned of an increased risk of fires when hundreds of thousands of people head to the hills and beaches to get a better view of Wednesday’s&lt;a href=\"https://www.theguardian.com/science/2026/aug/09/nasa-mission-total-solar-eclipse-iceland-sun-nanoflares\"&gt; total solar eclipse&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;“The vegetation is extraord",
-          "published": "2026-08-10T13:21:07.000Z",
-          "score": 7
+          "title": "Who will be able to see the solar eclipse?",
+          "link": "https://www.bbc.co.uk/news/videos/c78gleevweno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "What you need to know about the UK and Europe's best eclipse in 27 years.",
+          "published": "2026-08-10T18:20:02.000Z",
+          "score": 9
         },
         {
           "title": "Octopus Energy urges millions of households to use less electricity during solar eclipse",
@@ -104,19 +104,19 @@
           "score": 9
         },
         {
+          "title": "‘National priority’ to equip UK firefighters amid growing wildfire threat",
+          "link": "https://www.theguardian.com/uk-news/2026/aug/10/firefighters-fbu-wildfires-drought-heatwave-weather",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Exclusive: FBU calls for more funding as ‘unprecedented summer’ puts rising demands on already stretched crews&lt;/p&gt;&lt;p&gt;Firefighters in the UK are under increased pressure as a result of an “unprecedented summer of dangerous and volatile wildfires”, the Fire Brigades Union has said, as many parts of the country brace for a fifth heatwave of the year.&lt;/p&gt;&lt;p&gt;As authorities declared almost three-quarters of England was now in drought, Steve Wright, the FBU general secr",
+          "published": "2026-08-10T19:16:38.000Z",
+          "score": 7
+        },
+        {
           "title": "‘It’s very challenging’: how the Duke of Westminster’s farm is taking on the climate crisis",
           "link": "https://www.theguardian.com/environment/2026/aug/10/duke-of-westminster-farm-climate-crisis",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Amid world pressure from heatwaves and fertiliser shortages, billionaire’s business has invested in circular farming and biomethane&lt;/p&gt;&lt;p&gt;There is a distinctive smell of cow manure in the air at the &lt;a href=\"https://www.theguardian.com/news/2023/apr/25/duke-of-westminster-hugh-grosvenor-profile\"&gt;Duke of Westminster&lt;/a&gt;’s dairy farm near Chester. It is a world away from the collection of grand West End properties controlled by the duke that form the backbone of hi",
           "published": "2026-08-10T14:00:46.000Z",
-          "score": 7
-        },
-        {
-          "title": "'That fire came so fast': Wildfire rages in British Columbia",
-          "link": "https://www.bbc.co.uk/news/videos/cx2d4gg57eqo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Officials in British Columbia are still trying to determine how many homes were lost to the fire, which remains out of control as of Monday.",
-          "published": "2026-08-10T17:29:05.000Z",
           "score": 7
         }
       ]
@@ -146,12 +146,37 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Turkey MPs back historic law on reintegrating PKK militants",
+          "link": "https://www.dw.com/en/turkey-mps-back-historic-law-on-reintegrating-pkk-militants/a-78313397?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Turkey&#039;s parliament has taken a major step toward ending four decades of conflict with the PKK. The new law sets out how some militants can return to civilian life, but leaves Abdullah Ocalan&#039;s future unresolved.",
+          "published": "2026-08-10T22:22:00.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Turkish parliament passes landmark law to advance PKK peace process - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZ29RNHpoTnE2N0RlbFFnS1dsTEFVWVRPX1dNOEVNOHNLUmNWcWs0a1dMOUx1U1hveGxlWTBwQjRKVmN2bFZuNkNfUzNrYmgtN0pKbkVqRHgxREhTaWJvQ3dPNWxBVFRqU1hqNmotY21oSW1YYTBraC1SMWJfdU1qRFNCbUhOLWtpQkpJU3dwNHpqcGg4NzJGTDNyNG9Rallkbkk0RmVZZ3lsaUlhM1JvSWZmakJmN1RibkE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNZ29RNHpoTnE2N0RlbFFnS1dsTEFVWVRPX1dNOEVNOHNLUmNWcWs0a1dMOUx1U1hveGxlWTBwQjRKVmN2bFZuNkNfUzNrYmgtN0pKbkVqRHgxREhTaWJvQ3dPNWxBVFRqU1hqNmotY21oSW1YYTBraC1SMWJfdU1qRFNCbUhOLWtpQkpJU3dwNHpqcGg4NzJGTDNyNG9Rallkbkk0RmVZZ3lsaUlhM1JvSWZmakJmN1RibkE?oc=5\" target=\"_blank\"&gt;Turkish parliament passes landmark law to advance PKK peace process&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-10T19:47:21.000Z",
+          "score": 12
+        },
+        {
+          "title": "Estonia government loses parliament majority as two MPs defect - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPa1lGY1I4R1FyUWxORHRrcDhtUUIyMGRYbHVXSFIweGp0X2lZMTRRcWR2NEVqcDRxamZXNnpiN1c4V1FsTnJfOWRTZkFPamRsY1djUF9TdHBLc3BoLW9DQnQyNzh6T1NFbW00LUlrRTA0ZlFpUlJTNnYzQnhBOHJBV1BIaHdmYmh5X1ZZbHNqVDdmOW1GS0pZSThSREYzbXZHUXJj?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPa1lGY1I4R1FyUWxORHRrcDhtUUIyMGRYbHVXSFIweGp0X2lZMTRRcWR2NEVqcDRxamZXNnpiN1c4V1FsTnJfOWRTZkFPamRsY1djUF9TdHBLc3BoLW9DQnQyNzh6T1NFbW00LUlrRTA0ZlFpUlJTNnYzQnhBOHJBV1BIaHdmYmh5X1ZZbHNqVDdmOW1GS0pZSThSREYzbXZHUXJj?oc=5\" target=\"_blank\"&gt;Estonia government loses parliament majority as two MPs defect&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-10T06:31:44.000Z",
+          "score": 8
+        },
         {
           "title": "Imperial Brands to cut thousands of jobs in U.S. and Europe, Bloomberg News reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUlZlclBDeVVPdWV4Q1FJeGF5T0d1cXNQQThiLXIxNVRoVmJTbUJvZThOMFNzVGs1dFBLTC1FaExpc2ZNM0tOaUU1ckUtZmhZcmdpazgzUGJtVFpNS0FJNE5FTS1McWwyanVGZXhaeFNYeEotOGNxUGdjQTM1UXBVa01PM2VQUjFoVWRMa2R6ZzAzTEJJeFpLMVVmaHVQall1SFBHOVZJMA?oc=5",
@@ -161,35 +186,19 @@
           "score": 8
         },
         {
-          "title": "Estonia government loses parliament majority as two MPs defect - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPa1lGY1I4R1FyUWxORHRrcDhtUUIyMGRYbHVXSFIweGp0X2lZMTRRcWR2NEVqcDRxamZXNnpiN1c4V1FsTnJfOWRTZkFPamRsY1djUF9TdHBLc3BoLW9DQnQyNzh6T1NFbW00LUlrRTA0ZlFpUlJTNnYzQnhBOHJBV1BIaHdmYmh5X1ZZbHNqVDdmOW1GS0pZSThSREYzbXZHUXJj?oc=5",
+          "title": "Europe’s extreme heat could wipe out EU growth in 2026, Triodos bank says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPczMzd050cV81UVNrTTMwVlVvdHl0T2xBWVg5dEc2UUN2bVRfN0pjMUZvY1c2ZFNTSHg2ZXlXNnNtMjBRX2NDMjFVNDU4TkF4LThfSVpJVXV4dGU0RmZVWmdNVUdjOGxGSmpyNFhzZzVhWXNEcGpPQkNnUHhZUmZSSVFJaFdTNC1QSVNOZnNnZ3pabUN6TmZocWdzVnJRRjJxUGxEWUtXMld1VG1JeEt1czFTOA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPa1lGY1I4R1FyUWxORHRrcDhtUUIyMGRYbHVXSFIweGp0X2lZMTRRcWR2NEVqcDRxamZXNnpiN1c4V1FsTnJfOWRTZkFPamRsY1djUF9TdHBLc3BoLW9DQnQyNzh6T1NFbW00LUlrRTA0ZlFpUlJTNnYzQnhBOHJBV1BIaHdmYmh5X1ZZbHNqVDdmOW1GS0pZSThSREYzbXZHUXJj?oc=5\" target=\"_blank\"&gt;Estonia government loses parliament majority as two MPs defect&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-10T06:30:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPczMzd050cV81UVNrTTMwVlVvdHl0T2xBWVg5dEc2UUN2bVRfN0pjMUZvY1c2ZFNTSHg2ZXlXNnNtMjBRX2NDMjFVNDU4TkF4LThfSVpJVXV4dGU0RmZVWmdNVUdjOGxGSmpyNFhzZzVhWXNEcGpPQkNnUHhZUmZSSVFJaFdTNC1QSVNOZnNnZ3pabUN6TmZocWdzVnJRRjJxUGxEWUtXMld1VG1JeEt1czFTOA?oc=5\" target=\"_blank\"&gt;Europe’s extreme heat could wipe out EU growth in 2026, Triodos bank says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-10T06:17:00.000Z",
           "score": 8
         },
         {
-          "title": "Oil prices jump, Wall Street and European shares under pressure with Hormuz, inflation in focus - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQa0JfVHdob1VJM3o3c2RjRHBySGdOb0h0OFVfVTNUdGo5ems0NjhoaGhMaVhpWG9iR3J4dlJkZVBlYVgwS0w2SUd6ZGZiLUtMUndydTZycjNJQ1l0MENqTmdpOTFycEZBRkJ3ZUEyWlM3RERCOGhoYk5ISEdLZnNIUm9HYw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxQa0JfVHdob1VJM3o3c2RjRHBySGdOb0h0OFVfVTNUdGo5ems0NjhoaGhMaVhpWG9iR3J4dlJkZVBlYVgwS0w2SUd6ZGZiLUtMUndydTZycjNJQ1l0MENqTmdpOTFycEZBRkJ3ZUEyWlM3RERCOGhoYk5ISEdLZnNIUm9HYw?oc=5\" target=\"_blank\"&gt;Oil prices jump, Wall Street and European shares under pressure with Hormuz, inflation in focus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-10T00:25:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "UEFA, AFC, CONCACAF hit out at Infantino over failed World Cup stake sale proposal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOa3k1MmQ0NXQ1SXJLbTdKbVM4blFGTDh1MUNPZHB0M0dzcGhSYUZ2YkljeTZNM05tYlhJczdGaEs5anljMDc1SlkxWEphZVdWTVViV1A3dGFtXzdyUkxZNzI3VWpXZ3VfMkV3QXIzUFlMdFZfcnJIM1ZFWnFtSmFkZWVxV3Nld18zZVRJLUd4MHRxWDc0eTA1U1RyOWlaNC12X01rWWxmOXJKNVBZcS1TUw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOa3k1MmQ0NXQ1SXJLbTdKbVM4blFGTDh1MUNPZHB0M0dzcGhSYUZ2YkljeTZNM05tYlhJczdGaEs5anljMDc1SlkxWEphZVdWTVViV1A3dGFtXzdyUkxZNzI3VWpXZ3VfMkV3QXIzUFlMdFZfcnJIM1ZFWnFtSmFkZWVxV3Nld18zZVRJLUd4MHRxWDc0eTA1U1RyOWlaNC12X01rWWxmOXJKNVBZcS1TUw?oc=5\" target=\"_blank\"&gt;UEFA, AFC, CONCACAF hit out at Infantino over failed World Cup stake sale proposal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-10T14:39:53.000Z",
-          "score": 6
-        },
-        {
-          "title": "Final vote delayed in parts of Pakistan-administered Kashmir over security fears - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTndXb0JjaW0yVEQ3VG82UzVHSC1pU21NbzlqakY3Z1dZUkpGLXFxMmdEMTIyZTBaY0QtUFpFM0VjTi12M01JdDJqNkZPdWxFY1FhMGdUSmNrc3NiV1JEYV9ROEk4NHNacXdqY1lBWDE1Sy02NElsX0JnMHY1clJSazF5S3QwS3F3SU5jbnNNdnRGNkNGb3JFVUpNeEoyTW1iT2ZFWGU5X0EtRzVtV1BabS1sbmJzRWxaUlN5NzJkenJ4M1VyTHhDcw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTndXb0JjaW0yVEQ3VG82UzVHSC1pU21NbzlqakY3Z1dZUkpGLXFxMmdEMTIyZTBaY0QtUFpFM0VjTi12M01JdDJqNkZPdWxFY1FhMGdUSmNrc3NiV1JEYV9ROEk4NHNacXdqY1lBWDE1Sy02NElsX0JnMHY1clJSazF5S3QwS3F3SU5jbnNNdnRGNkNGb3JFVUpNeEoyTW1iT2ZFWGU5X0EtRzVtV1BabS1sbmJzRWxaUlN5NzJkenJ4M1VyTHhDcw?oc=5\" target=\"_blank\"&gt;Final vote delayed in parts of Pakistan-administered Kashmir over security fears&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
-          "published": "2026-08-10T10:30:09.000Z",
+          "title": "Russia: Top court bans opposition anti-war party from vote",
+          "link": "https://www.dw.com/en/russia-top-court-bans-opposition-anti-war-party-from-vote/a-78313252?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Yabloko, Russia&#039;s only anti-war party, has been barred from September&#039;s parliamentary elections. The motion to bar Yabloko was filed by the nationalist pro-Kremlin party Rodina.",
+          "published": "2026-08-10T20:56:00.000Z",
           "score": 6
         }
       ]
@@ -198,7 +207,7 @@
   "stats": {
     "totalArticlesScanned": 403,
     "articlesLast24h": 161,
-    "afterDedup": 147,
+    "afterDedup": 151,
     "feedsQueried": 19
   }
 }
