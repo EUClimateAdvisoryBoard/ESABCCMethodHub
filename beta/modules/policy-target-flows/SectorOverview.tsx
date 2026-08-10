@@ -1,40 +1,23 @@
 'use client';
 /**
- * The one-figure overview of M·53 — all nine sector columns of the ledger on a
- * single figure that fits a screen, from which any one sector expands into its
- * full flow chart below.
+ * The one-figure overview of M·53 — the whole ledger on a single spine chart,
+ * from which any one sector expands into its full flow chart below.
  *
- * The detailed charts are large by construction: a sector carries up to ~126
- * targets across a dozen acts, so a reader who lands on one chart sees a
- * fragment of one column and has no way to tell whether it is the big column or
- * a small one. This figure is the map that was missing. Every column is drawn to
- * the same rows as the chart it opens — first-order targets, second-order
- * targets, procedural obligations — so the reader moves from map to chart
- * without re-learning the layout.
+ * Every sector is one row and every bar shares one scale (targets). The spine
+ * is the boundary between measured and not yet measured: the curated-series
+ * count grows leftward, the measurement gap (specified + milestone) grows
+ * rightward, and rows are sorted by gap size — so the right-hand side reads as
+ * a ranked list of the gaps the Policy Gap report needs to name. The figure
+ * leads with the one number the ledger supports: the share of all column
+ * entries in view that a curated series already measures.
  *
- * Bars are shares within a row, never across rows: the widest bar on the
- * "first-order targets" row is the sector with the most first-order targets, and
- * says nothing about the row below it. Every bar carries its number, so colour
+ * The first-order / second-order / procedural split deliberately does not
+ * appear here — it answers a different question and has its home in the rung
+ * bands of the expanded sector chart. Every bar carries its number, so colour
  * never carries the meaning alone.
  */
-import {
-  ROUTE_META,
-  RUNG_META,
-  type FlowColumnKey,
-  type Rung,
-} from '@/data/target-indicators';
-import { ROUTE_ORDER, type ColumnOverview } from './model';
-
-const RUNGS: Rung[] = ['outcome', 'lever', 'enabling'];
-
-/** Fixed row heights, so the label column and the nine sector columns line up
- *  as one figure without a grid — each column stays a single click target. */
-const H = {
-  head: 'h-[62px]',
-  rung: 'h-[28px]',
-  route: 'h-[42px]',
-  foot: 'h-[20px]',
-};
+import { ROUTE_META, type FlowColumnKey } from '@/data/target-indicators';
+import type { ColumnOverview } from './model';
 
 const fmt = (n: number) => n.toLocaleString('en-GB');
 
@@ -46,121 +29,44 @@ interface Props {
   filtered: boolean;
 }
 
-function LabelColumn({ overview }: { overview: ColumnOverview[] }) {
-  const totalRung = (rung: Rung) => overview.reduce((n, o) => n + o.byRung[rung], 0);
-  return (
-    <div className="w-[176px] shrink-0">
-      <div className={`${H.head} flex flex-col justify-end pb-1.5`}>
-        <p className="text-[10.5px] uppercase tracking-wide text-tertiary-light">Sector column</p>
-        <p className="text-[11px] leading-snug text-tertiary">Click one to open its chart</p>
-      </div>
-      {RUNGS.map((rung) => (
-        <div key={rung} className={`${H.rung} flex items-center gap-1.5`}>
-          <span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: RUNG_META[rung].color }} />
-          <span className="truncate text-[11px] font-medium text-tertiary-dark" title={RUNG_META[rung].description}>
-            {RUNG_META[rung].label}
-          </span>
-          <span className="ml-auto shrink-0 font-mono text-[10px] tabular-nums text-tertiary-light">
-            {fmt(totalRung(rung))}
-          </span>
-        </div>
-      ))}
-      <div className={`${H.route} flex flex-col justify-center`}>
-        <span className="text-[11px] font-medium text-tertiary-dark">How it is measured</span>
-        <span className="text-[10px] leading-snug text-tertiary-light">series · specified · milestone</span>
-      </div>
-      <div className={`${H.foot} flex items-center`}>
-        <span className="text-[10px] text-tertiary-light">Weak matches</span>
-      </div>
-    </div>
-  );
-}
+/** Targets with no curated series yet — the right-hand side of the spine. */
+const gapOf = (o: ColumnOverview) => o.routes.dataset + o.routes.milestone;
 
-function SectorColumn({
-  ov, rungMax, active, onSelect,
-}: {
-  ov: ColumnOverview;
-  rungMax: Record<Rung, number>;
-  active: boolean;
-  onSelect: () => void;
-}) {
-  const dim = ov.total === 0;
-  return (
-    <button
-      type="button"
-      onClick={onSelect}
-      aria-pressed={active}
-      title={`${ov.column.label} — ${fmt(ov.total)} targets, ${ov.acts} acts. ${
-        ov.topActs.map((a) => `${a.short} (${a.count})`).join(', ')
-      }`}
-      className={`mh-focus mh-motion-fast flex min-w-[104px] flex-1 flex-col rounded-lg border px-2 pb-1.5 text-left hover:shadow-sm ${
-        active ? 'border-primary bg-surface-blue ring-1 ring-primary' : 'border-grey-200 bg-white hover:border-grey-300'
-      } ${dim ? 'opacity-55' : ''}`}
-    >
-      <span className={`${H.head} flex flex-col justify-end pb-1.5`}>
-        <span className="mb-1 block h-1 w-8 rounded-full" style={{ background: ov.column.color }} />
-        <span className="block truncate text-[11.5px] font-semibold text-tertiary-dark">{ov.column.short}</span>
-        <span className="flex items-baseline gap-1">
-          <span className="font-mono text-[15px] leading-none tabular-nums text-tertiary-dark">{fmt(ov.total)}</span>
-          <span className="text-[9.5px] uppercase tracking-wide text-tertiary-light">
-            {ov.total === ov.unfilteredTotal ? `${ov.acts} acts` : `of ${fmt(ov.unfilteredTotal)}`}
-          </span>
-        </span>
-      </span>
-
-      {RUNGS.map((rung) => {
-        const n = ov.byRung[rung];
-        const max = rungMax[rung] || 1;
-        return (
-          <span key={rung} className={`${H.rung} flex items-center gap-1.5`}>
-            <span className="relative h-2 flex-1 overflow-hidden rounded-sm bg-grey-100">
-              <span
-                className="absolute inset-y-0 left-0 rounded-sm"
-                style={{ width: `${(n / max) * 100}%`, background: RUNG_META[rung].color }}
-              />
-            </span>
-            <span className="w-6 shrink-0 text-right font-mono text-[10px] tabular-nums text-tertiary">{n}</span>
-          </span>
-        );
-      })}
-
-      <span className={`${H.route} flex flex-col justify-center gap-1`}>
-        <span className="flex h-2.5 overflow-hidden rounded-sm bg-grey-100">
-          {ROUTE_ORDER.map((r) => {
-            const n = ov.routes[r];
-            if (!n || !ov.total) return null;
-            return (
-              <span key={r} style={{ width: `${(n / ov.total) * 100}%`, background: ROUTE_META[r].color }} />
-            );
-          })}
-        </span>
-        <span className="font-mono text-[10px] tabular-nums text-tertiary">
-          {ov.total ? `${ov.seriesShare.toFixed(0)} %` : '—'}{' '}
-          <span className="font-sans text-tertiary-light">measured</span>
-        </span>
-      </span>
-
-      <span className={`${H.foot} flex items-center`}>
-        {ov.weak > 0 ? (
-          <span className="rounded bg-surface-orange px-1 text-[9.5px] font-semibold text-tertiary-dark">
-            {ov.weak} to check
-          </span>
-        ) : (
-          <span className="text-[9.5px] text-tertiary-light">—</span>
-        )}
-      </span>
-    </button>
-  );
-}
+const tickStep = (max: number) => (max > 80 ? 50 : max > 30 ? 25 : 10);
+const ticksUpTo = (max: number) => {
+  const step = tickStep(max);
+  const out: number[] = [];
+  for (let t = step; t <= max; t += step) out.push(t);
+  return out;
+};
 
 export default function SectorOverview({ overview, selected, onSelect, filtered }: Props) {
-  const rungMax: Record<Rung, number> = {
-    outcome: Math.max(...overview.map((o) => o.byRung.outcome), 1),
-    lever: Math.max(...overview.map((o) => o.byRung.lever), 1),
-    enabling: Math.max(...overview.map((o) => o.byRung.enabling), 1),
-  };
+  // Ledger-wide totals for the hero figure (respect the active filters, like
+  // the columns themselves do).
   const shown = overview.reduce((n, o) => n + o.total, 0);
   const all = overview.reduce((n, o) => n + o.unfilteredTotal, 0);
+  const seriesSum = overview.reduce((n, o) => n + o.routes.series, 0);
+  const datasetSum = overview.reduce((n, o) => n + o.routes.dataset, 0);
+  const milestoneSum = overview.reduce((n, o) => n + o.routes.milestone, 0);
+  const weakSum = overview.reduce((n, o) => n + o.weak, 0);
+  const overallShare = shown ? (seriesSum / shown) * 100 : 0;
+
+  // One shared scale for every row: measured targets to the left of the spine,
+  // the gap to the right, plus headroom on the right for the outboard label.
+  const maxSeries = Math.max(...overview.map((o) => o.routes.series), 1);
+  const maxGap = Math.max(...overview.map(gapOf), 1);
+  const left = maxSeries;
+  const right = maxGap + Math.max(12, Math.round(maxGap * 0.25));
+  const units = left + right;
+  const x = (n: number) => (n / units) * 100;
+  const spine = x(left);
+  const leftTicks = ticksUpTo(maxSeries);
+  const rightTicks = ticksUpTo(maxGap);
+
+  // Biggest measurement gap first — the ranking is the point of the figure.
+  const rows = [...overview].sort((a, b) => gapOf(b) - gapOf(a) || b.total - a.total);
+
+  const grid = 'grid grid-cols-[172px_1fr_112px] items-center gap-x-4';
 
   return (
     <div className="rounded-xl border border-grey-200 bg-white p-3">
@@ -170,8 +76,9 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
             The whole ledger, one figure
           </h2>
           <p className="mt-0.5 max-w-3xl text-[11.5px] leading-snug text-tertiary">
-            All nine sector columns on the rows their charts use. Pick a column to expand it into the
-            full flow chart below; bars compare sectors within a row, not across rows.
+            All nine sector columns on one scale: measured targets grow left from the spine, the
+            measurement gap grows right, biggest gap first. Pick a row to expand that sector&apos;s
+            flow chart below.
           </p>
         </div>
         <p className="font-mono text-[11px] tabular-nums text-tertiary-light">
@@ -179,25 +86,195 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
         </p>
       </div>
 
+      {/* ── Hero: the ledger-wide share ─────────────────────────────────── */}
+      <div className="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <p className="font-mono text-[30px] font-semibold leading-none tabular-nums text-tertiary-dark">
+          {shown ? `${overallShare.toFixed(0)} %` : '—'}
+          <span className="ml-1.5 font-sans text-[13px] font-medium text-tertiary-light">measured</span>
+        </p>
+        <p className="text-[11.5px] text-tertiary">
+          {fmt(seriesSum)} of {fmt(shown)} column entries tracked by a curated series
+          {' · '}{fmt(datasetSum)} specified, not yet built
+          {' · '}{fmt(milestoneSum)} milestone{milestoneSum === 1 ? '' : 's'}
+          {weakSum > 0 && (
+            <>
+              {' · '}
+              <span className="rounded bg-surface-orange px-1 text-[10px] font-semibold text-tertiary-dark">
+                {fmt(weakSum)} weak match{weakSum === 1 ? '' : 'es'} to check
+              </span>
+            </>
+          )}
+        </p>
+      </div>
+      {shown > 0 && (
+        <div className="mt-2 flex h-2.5 gap-[2px] overflow-hidden rounded" aria-hidden="true">
+          <span style={{ width: `${(seriesSum / shown) * 100}%`, background: ROUTE_META.series.color }} />
+          {datasetSum > 0 && (
+            <span style={{ width: `${(datasetSum / shown) * 100}%`, background: ROUTE_META.dataset.color }} />
+          )}
+          {milestoneSum > 0 && (
+            <span style={{ width: `${(milestoneSum / shown) * 100}%`, background: ROUTE_META.milestone.color }} />
+          )}
+        </div>
+      )}
+
+      {/* ── Legend ──────────────────────────────────────────────────────── */}
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-tertiary">
+        {(['series', 'dataset', 'milestone'] as const).map((r) => (
+          <span key={r} className="flex items-center gap-1.5" title={ROUTE_META[r].description}>
+            <span className="h-2.5 w-2.5 rounded-sm" style={{ background: ROUTE_META[r].color }} />
+            {ROUTE_META[r].label}
+          </span>
+        ))}
+        <span className="flex items-center gap-1.5">
+          <span className="rounded bg-surface-orange px-1 text-[10px] font-semibold text-tertiary-dark">
+            n to check
+          </span>
+          = weak matches
+        </span>
+      </div>
+
+      {/* ── The spine chart ─────────────────────────────────────────────── */}
       <div className="mt-3 overflow-x-auto pb-1">
-        <div className="flex min-w-[980px] gap-1.5">
-          <LabelColumn overview={overview} />
-          {overview.map((ov) => (
-            <SectorColumn
-              key={ov.column.key}
-              ov={ov}
-              rungMax={rungMax}
-              active={ov.column.key === selected}
-              onSelect={() => onSelect(ov.column.key)}
-            />
-          ))}
+        <div className="min-w-[860px]">
+          {rows.map((ov) => {
+            const gap = gapOf(ov);
+            const active = ov.column.key === selected;
+            const dim = ov.total === 0;
+            const serW = x(ov.routes.series);
+            const datW = x(ov.routes.dataset);
+            const milW = x(ov.routes.milestone);
+            return (
+              <button
+                key={ov.column.key}
+                type="button"
+                onClick={() => onSelect(ov.column.key)}
+                aria-pressed={active}
+                title={`${ov.column.label} — ${fmt(ov.total)} targets, ${ov.acts} acts. Measured ${
+                  fmt(ov.routes.series)} · specified ${fmt(ov.routes.dataset)} · milestone ${
+                  fmt(ov.routes.milestone)}. ${ov.topActs.map((a) => `${a.short} (${a.count})`).join(', ')}`}
+                className={`mh-focus mh-motion-fast ${grid} w-full rounded-lg border px-2 py-1 text-left ${
+                  active ? 'border-primary bg-surface-blue ring-1 ring-primary' : 'border-transparent hover:bg-grey-50'
+                } ${dim ? 'opacity-55' : ''}`}
+              >
+                <span className="min-w-0">
+                  <span className="flex items-center gap-1.5">
+                    <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: ov.column.color }} />
+                    <span className="truncate text-[12px] font-semibold text-tertiary-dark">
+                      {ov.column.short}
+                    </span>
+                  </span>
+                  <span className="block pl-3.5 text-[10.5px] text-tertiary-light">
+                    {ov.total === ov.unfilteredTotal
+                      ? `${fmt(ov.total)} targets · ${ov.acts} acts`
+                      : `${fmt(ov.total)} of ${fmt(ov.unfilteredTotal)} in view`}
+                  </span>
+                </span>
+
+                <span className="relative h-[30px]">
+                  {/* shared gridlines, drawn per row so they read as columns */}
+                  {leftTicks.map((t) => (
+                    <span key={`l${t}`} className="absolute inset-y-0 w-px bg-grey-100" style={{ left: `${x(left - t)}%` }} />
+                  ))}
+                  <span className="absolute inset-y-0 w-px bg-grey-400" style={{ left: `${spine}%` }} />
+                  {rightTicks.map((t) => (
+                    <span key={`r${t}`} className="absolute inset-y-0 w-px bg-grey-100" style={{ left: `${spine + x(t)}%` }} />
+                  ))}
+
+                  {/* measured, growing left from the spine */}
+                  {ov.routes.series > 0 && (
+                    <span
+                      className="absolute top-1.5 flex h-[18px] items-center rounded-l"
+                      style={{ left: `${spine - serW}%`, width: `${serW}%`, background: ROUTE_META.series.color }}
+                    >
+                      {serW > 6 && (
+                        <span className="pl-1.5 font-mono text-[10px] tabular-nums text-white">
+                          {fmt(ov.routes.series)}
+                        </span>
+                      )}
+                    </span>
+                  )}
+
+                  {/* the gap, growing right from the spine */}
+                  {gap > 0 && (
+                    <span
+                      className="absolute top-1.5 flex h-[18px] gap-[2px]"
+                      style={{ left: `${spine}%`, width: `${datW + milW}%` }}
+                    >
+                      {ov.routes.dataset > 0 && (
+                        <span
+                          className={ov.routes.milestone > 0 ? '' : 'rounded-r'}
+                          style={{ flex: `${ov.routes.dataset} 0 0`, background: ROUTE_META.dataset.color }}
+                        />
+                      )}
+                      {ov.routes.milestone > 0 && (
+                        <span
+                          className="rounded-r"
+                          style={{ flex: `${ov.routes.milestone} 0 0`, background: ROUTE_META.milestone.color }}
+                        />
+                      )}
+                    </span>
+                  )}
+                  {gap > 0 && (
+                    <span
+                      className="absolute top-1.5 flex h-[18px] items-center whitespace-nowrap font-mono text-[10px] tabular-nums text-tertiary-light"
+                      style={{ left: `${spine + datW + milW + 0.7}%` }}
+                    >
+                      {fmt(gap)} unmeasured
+                    </span>
+                  )}
+                </span>
+
+                <span className="flex flex-col items-end gap-0.5">
+                  <span className="font-mono text-[12.5px] tabular-nums text-tertiary-dark">
+                    <span className="font-semibold">{ov.total ? `${ov.seriesShare.toFixed(0)} %` : '—'}</span>{' '}
+                    <span className="font-sans text-[10.5px] font-normal text-tertiary-light">measured</span>
+                  </span>
+                  {ov.weak > 0 ? (
+                    <span className="rounded bg-surface-orange px-1 text-[9.5px] font-semibold text-tertiary-dark">
+                      {ov.weak} to check
+                    </span>
+                  ) : (
+                    <span className="text-[9.5px] text-tertiary-light">—</span>
+                  )}
+                </span>
+              </button>
+            );
+          })}
+
+          {/* ── Axis ──────────────────────────────────────────────────── */}
+          <div className={`${grid} mt-1 px-2`}>
+            <span />
+            <span className="relative h-4 text-[9.5px] text-grey-500">
+              {leftTicks.map((t) => (
+                <span key={`l${t}`} className="absolute -translate-x-1/2 font-mono tabular-nums" style={{ left: `${x(left - t)}%` }}>
+                  {t}
+                </span>
+              ))}
+              <span className="absolute -translate-x-1/2 font-mono tabular-nums" style={{ left: `${spine}%` }}>0</span>
+              {rightTicks.map((t) => (
+                <span key={`r${t}`} className="absolute -translate-x-1/2 font-mono tabular-nums" style={{ left: `${spine + x(t)}%` }}>
+                  {t}
+                </span>
+              ))}
+              <span className="absolute" style={{ right: `${100 - spine + 1.5}%` }}>← measured</span>
+              <span
+                className="absolute"
+                style={{ left: `${spine + x(rightTicks[rightTicks.length - 1] ?? 0) + 2}%` }}
+              >
+                gap →
+              </span>
+            </span>
+            <span />
+          </div>
         </div>
       </div>
 
       <p className="mt-2 text-[10.5px] leading-snug text-tertiary-light">
         A target bearing on several sectors appears in each of their columns, so the column entries
         sum to more than the number of targets. Percentages are the share of a column&apos;s targets a
-        curated series already measures.
+        curated series already measures; the first-order / second-order / procedural split lives in
+        the expanded chart below.
       </p>
     </div>
   );
