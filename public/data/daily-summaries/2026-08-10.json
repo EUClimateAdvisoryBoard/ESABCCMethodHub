@@ -1,12 +1,12 @@
 {
   "date": "2026-08-10",
-  "generatedAt": "2026-08-10T06:14:09.009Z",
+  "generatedAt": "2026-08-10T11:51:36.083Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 10 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "When and where to see the solar eclipse in London",
-      "summary": "What you need to know about the solar eclipse on 12 August and the best viewing spots in London.",
+      "headline": "When extreme heat threatens Europe&#039;s nuclear power",
+      "summary": "Warm rivers and low water levels are forcing nuclear power plants to reduce output across Europe. Over a year, the losses are minimal, but on critical days the loss of power has consequences for grids and prices.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,6 +15,12 @@
       "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNNFFOeHJsTmtMNUdzeWw0WnhwY2xRQlJvOURPczNwdjNtVXk4Z2x6dDFYVS0xdFJDQ3JMOEpla19XMmdRVU52V2xMalotMmdvRGtodFJSdEN2RHlxdjVsbDlQYkk2ZmlVajV1blVlTDYtQko3UGZtbXlrM3hndm1aX2dYcnl1LXpHZjdlSDhWcF9qMUVQZlVzOE9NOEU2RlBzcGRqbjllbWdEM1NpV3FrRmVSczduMy1EN0h6ag?oc=5\" target=\"_blank\"&gt;How the hard reality of climate change hit Europe's economy this summer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "South Korea to establish fund for semiconductor materials, parts and equipment, official says - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcVRHZVRKcW90cHJRVDZLcEU4NTlTSVZhSy0yOTU2ZVI2SFdBQ0tNNUFSQXZ1LWRvWkRjT1pkdndpbkxFVFJZbDlaOFBDdVNIRDlCR2RkRC11VFV3UElNLWZBYVlTNTFXZWtIQ1RYZnV0UXp4YXNqbHRGSXpGYWloVjktTzBWM0owd2VQZUkzSmJ2SlY3bmVlZnVvN1BUQlZaVTUxRzJmblVRV0NuRlZZRUNrY1VQeklJV0JFUUdiYjBIYWozekFnRDNBOGFhVTUy?oc=5\" target=\"_blank\"&gt;South Korea to establish fund for semiconductor materials, parts and equipment, official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -28,6 +34,30 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "When extreme heat threatens Europe&#039;s nuclear power",
+          "link": "https://www.dw.com/en/when-extreme-heat-threatens-europe-s-nuclear-power/a-78297778?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Warm rivers and low water levels are forcing nuclear power plants to reduce output across Europe. Over a year, the losses are minimal, but on critical days the loss of power has consequences for grids and prices.",
+          "published": "2026-08-10T07:04:00.000Z",
+          "score": 13
+        },
+        {
+          "title": "How to view the solar eclipse from Guernsey",
+          "link": "https://www.bbc.co.uk/news/videos/c86neldy315o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Five things to remember when watching the partial solar eclipse from Guernsey",
+          "published": "2026-08-10T11:16:43.000Z",
+          "score": 7
+        },
+        {
+          "title": "What can we see during the partial solar eclipse?",
+          "link": "https://www.bbc.co.uk/news/articles/c86n5w392xjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Ways to safely enjoy the partial solar eclipse on Wednesday evening.",
+          "published": "2026-08-10T07:15:43.000Z",
+          "score": 7
+        },
+        {
           "title": "When and where to see the solar eclipse in London",
           "link": "https://www.bbc.co.uk/news/articles/c62x3pyrxrmo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -36,20 +66,12 @@
           "score": 7
         },
         {
-          "title": "1999: Solar eclipse experienced from Alderney",
-          "link": "https://www.bbc.co.uk/news/videos/c1e1v0q257jo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Footage of people in Alderney catching the best view in the British Isles of the solar eclipse.",
-          "published": "2026-08-09T06:30:43.000Z",
+          "title": "Wildfires near Spokane, Washington, wind down as evacuees begin to return - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOam94Uk9yTTA5elAzanBjSTRsVnZOZ0VhWmNPWWZ5LU11TVlobUttX3lYMDJpbEp4T2JBYTRQdHVLSjZFWVI1TXJDYnJjanlmcDh0QXE2N0ZGTzZWazVzbllsX3NPU1htTDdTVE9uSjhobERhU2xEZXRFTEtXeklha29UamU0LXlnSFEtNkxNVWFjbWduSVdYUDVCQ01HVDgyWF9LRTN5LXVNYV9KNnZRMWhsNnlDbVpkMXpFRkx0SQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOam94Uk9yTTA5elAzanBjSTRsVnZOZ0VhWmNPWWZ5LU11TVlobUttX3lYMDJpbEp4T2JBYTRQdHVLSjZFWVI1TXJDYnJjanlmcDh0QXE2N0ZGTzZWazVzbllsX3NPU1htTDdTVE9uSjhobERhU2xEZXRFTEtXeklha29UamU0LXlnSFEtNkxNVWFjbWduSVdYUDVCQ01HVDgyWF9LRTN5LXVNYV9KNnZRMWhsNnlDbVpkMXpFRkx0SQ?oc=5\" target=\"_blank\"&gt;Wildfires near Spokane, Washington, wind down as evacuees begin to return&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-10T04:28:00.000Z",
           "score": 7
-        },
-        {
-          "title": "The Guardian view on India’s green growth gamble: it will need more than private finance | Editorial",
-          "link": "https://www.theguardian.com/commentisfree/2026/aug/09/the-guardian-view-on-indias-green-growth-gamble-it-will-need-more-than-private-finance",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The world’s most populous country needs state-generated demand to industrialise, decarbonise and avoid China’s overcapacity trap&lt;/p&gt;&lt;p&gt;India is attempting to do something the world has never seen before. So &lt;a href=\"https://timesofindia.indiatimes.com/india/india-needs-22tn-for-net-zero-by-2070-coal-use-to-rise-till-2047-niti-aayog/articleshow/128139161.cms\"&gt;claimed&lt;/a&gt; Niti Aayog, the government of India’s policy thinktank, earlier this year. It said that no maj",
-          "published": "2026-08-09T16:25:19.000Z",
-          "score": 4
         }
       ]
     },
@@ -90,11 +112,11 @@
           "score": 7
         },
         {
-          "title": "Indonesia: Mount Bromo wildfire grows, spurs park closure",
-          "link": "https://www.dw.com/en/indonesia-mount-bromo-wildfire-grows-spurs-park-closure/a-78293431?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Indonesian authorities have closed a popular national park until further notice. Strong winds and rough terrain are making it difficult for firefighters to extinguish the blaze.",
-          "published": "2026-08-09T08:38:00.000Z",
+          "title": "UK announces nearly £130 million funding for zero-emission vehicle technology - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOaW1xcXdvQ1hnWmlvT29seTF0bEk3bnpmVWJ0V2JVTmJCNW51Rl95YndDcFdQWnY2UjJWenNycGV0NUZzck40MHhaUEhXa0R0cUplOTc0eGxhOUJPZERURzZ5Q3JYc0MyaXdOWHgwR2hZSnE5M1JGN3ZQNnNxREVuSzFoWENmUEc0T2t1Wlo4NUlnR0dyblZtVDFqMUhCNEJxSzZRUHNtdjc4ZjFiRmt0NW1Wakx6NlJm?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOaW1xcXdvQ1hnWmlvT29seTF0bEk3bnpmVWJ0V2JVTmJCNW51Rl95YndDcFdQWnY2UjJWenNycGV0NUZzck40MHhaUEhXa0R0cUplOTc0eGxhOUJPZERURzZ5Q3JYc0MyaXdOWHgwR2hZSnE5M1JGN3ZQNnNxREVuSzFoWENmUEc0T2t1Wlo4NUlnR0dyblZtVDFqMUhCNEJxSzZRUHNtdjc4ZjFiRmt0NW1Wakx6NlJm?oc=5\" target=\"_blank\"&gt;UK announces nearly £130 million funding for zero-emission vehicle technology&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-09T23:13:43.000Z",
           "score": 7
         }
       ]
@@ -102,73 +124,81 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "South Korea to establish fund for semiconductor materials, parts and equipment, official says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcVRHZVRKcW90cHJRVDZLcEU4NTlTSVZhSy0yOTU2ZVI2SFdBQ0tNNUFSQXZ1LWRvWkRjT1pkdndpbkxFVFJZbDlaOFBDdVNIRDlCR2RkRC11VFV3UElNLWZBYVlTNTFXZWtIQ1RYZnV0UXp4YXNqbHRGSXpGYWloVjktTzBWM0owd2VQZUkzSmJ2SlY3bmVlZnVvN1BUQlZaVTUxRzJmblVRV0NuRlZZRUNrY1VQeklJV0JFUUdiYjBIYWozekFnRDNBOGFhVTUy?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcVRHZVRKcW90cHJRVDZLcEU4NTlTSVZhSy0yOTU2ZVI2SFdBQ0tNNUFSQXZ1LWRvWkRjT1pkdndpbkxFVFJZbDlaOFBDdVNIRDlCR2RkRC11VFV3UElNLWZBYVlTNTFXZWtIQ1RYZnV0UXp4YXNqbHRGSXpGYWloVjktTzBWM0owd2VQZUkzSmJ2SlY3bmVlZnVvN1BUQlZaVTUxRzJmblVRV0NuRlZZRUNrY1VQeklJV0JFUUdiYjBIYWozekFnRDNBOGFhVTUy?oc=5\" target=\"_blank\"&gt;South Korea to establish fund for semiconductor materials, parts and equipment, official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6",
+          "published": "2026-08-10T09:20:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "South Korea to launch $3.5 bln chip fund, speed development of semiconductor hubs - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdnZjclJ4ZTNzOU1TQllqMUJkMTRUWDVXakRfV21XQWpXWGg1OVlzYUhDV2RPSTlwQnhrVVhCZm5ZMWVVZmNPMUlPN2FVZ0RtOVBOTHNWRzZmRXRJYUh5bU00UW0yYjY2SC1jcEE2ekIxbHpyNTM1YzQ3TTdOaExTN3o0cnM2WTRsNExXVFVSN0wtclpxVDctZWl6Uk9FM2RMREIwbGV0Z3NhRW9Xa0VENUhFdGo4SV9sdHV2QXctSTJnVERCM2I1LQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdnZjclJ4ZTNzOU1TQllqMUJkMTRUWDVXakRfV21XQWpXWGg1OVlzYUhDV2RPSTlwQnhrVVhCZm5ZMWVVZmNPMUlPN2FVZ0RtOVBOTHNWRzZmRXRJYUh5bU00UW0yYjY2SC1jcEE2ekIxbHpyNTM1YzQ3TTdOaExTN3o0cnM2WTRsNExXVFVSN0wtclpxVDctZWl6Uk9FM2RMREIwbGV0Z3NhRW9Xa0VENUhFdGo4SV9sdHV2QXctSTJnVERCM2I1LQ?oc=5\" target=\"_blank\"&gt;South Korea to launch $3.5 bln chip fund, speed development of semiconductor hubs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+          "published": "2026-08-10T06:13:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "German trade deficit with China grows as Beijing relies less on European industry - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOODQ2YlF3a0ZsOFRad3lFOW5WTzdtOFVSWmYwTEhTVkNhQ283ckFGd0YtR2hxa1EzYTd0LWVSN2NHNnhESFNpLXhJVTNMRlVCTW8waDI2RFpOeGZKX2dvTGZoM3JzNWJ3ZjRUMFdMaHZleVo1ZG5ackJES1lBZ2ZvelE4Tm1hbGdCaWoxaWE4dlExZGNsaWdKV085cDNFcml3aGxkZUJYdnJvYk8wZnJ2MVNMOXdxbFA4Tk1RQVo1cGc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOODQ2YlF3a0ZsOFRad3lFOW5WTzdtOFVSWmYwTEhTVkNhQ283ckFGd0YtR2hxa1EzYTd0LWVSN2NHNnhESFNpLXhJVTNMRlVCTW8waDI2RFpOeGZKX2dvTGZoM3JzNWJ3ZjRUMFdMaHZleVo1ZG5ackJES1lBZ2ZvelE4Tm1hbGdCaWoxaWE4dlExZGNsaWdKV085cDNFcml3aGxkZUJYdnJvYk8wZnJ2MVNMOXdxbFA4Tk1RQVo1cGc?oc=5\" target=\"_blank\"&gt;German trade deficit with China grows as Beijing relies less on European industry&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-09T09:55:36.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Suspected crime boss Daniel Kinahan appears in court after extradition",
-          "link": "https://www.bbc.co.uk/news/articles/c62qd5plzp6o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The Irish Prison Service bought a bulletproof and bombproof van to transport the 49-year-old to court after his extradition from Dubai.",
-          "published": "2026-08-09T20:58:18.000Z",
-          "score": 2
+          "title": "Estonia government loses parliament majority as two MPs defect - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPa1lGY1I4R1FyUWxORHRrcDhtUUIyMGRYbHVXSFIweGp0X2lZMTRRcWR2NEVqcDRxamZXNnpiN1c4V1FsTnJfOWRTZkFPamRsY1djUF9TdHBLc3BoLW9DQnQyNzh6T1NFbW00LUlrRTA0ZlFpUlJTNnYzQnhBOHJBV1BIaHdmYmh5X1ZZbHNqVDdmOW1GS0pZSThSREYzbXZHUXJj?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPa1lGY1I4R1FyUWxORHRrcDhtUUIyMGRYbHVXSFIweGp0X2lZMTRRcWR2NEVqcDRxamZXNnpiN1c4V1FsTnJfOWRTZkFPamRsY1djUF9TdHBLc3BoLW9DQnQyNzh6T1NFbW00LUlrRTA0ZlFpUlJTNnYzQnhBOHJBV1BIaHdmYmh5X1ZZbHNqVDdmOW1GS0pZSThSREYzbXZHUXJj?oc=5\" target=\"_blank\"&gt;Estonia government loses parliament majority as two MPs defect&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-10T06:30:00.000Z",
+          "score": 8
         },
         {
-          "title": "Israel rejects Trump's 15-point plan for Gaza, Netanyahu says",
-          "link": "https://www.bbc.co.uk/news/articles/c5yw4lpe0yeo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Israel's PM says its military will not pull out from Gaza until Hamas is \"genuinely\" disarmed.",
-          "published": "2026-08-09T21:25:04.000Z",
-          "score": 2
+          "title": "Europe’s extreme heat could wipe out EU growth in 2026, Triodos bank says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPczMzd050cV81UVNrTTMwVlVvdHl0T2xBWVg5dEc2UUN2bVRfN0pjMUZvY1c2ZFNTSHg2ZXlXNnNtMjBRX2NDMjFVNDU4TkF4LThfSVpJVXV4dGU0RmZVWmdNVUdjOGxGSmpyNFhzZzVhWXNEcGpPQkNnUHhZUmZSSVFJaFdTNC1QSVNOZnNnZ3pabUN6TmZocWdzVnJRRjJxUGxEWUtXMld1VG1JeEt1czFTOA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPczMzd050cV81UVNrTTMwVlVvdHl0T2xBWVg5dEc2UUN2bVRfN0pjMUZvY1c2ZFNTSHg2ZXlXNnNtMjBRX2NDMjFVNDU4TkF4LThfSVpJVXV4dGU0RmZVWmdNVUdjOGxGSmpyNFhzZzVhWXNEcGpPQkNnUHhZUmZSSVFJaFdTNC1QSVNOZnNnZ3pabUN6TmZocWdzVnJRRjJxUGxEWUtXMld1VG1JeEt1czFTOA?oc=5\" target=\"_blank\"&gt;Europe’s extreme heat could wipe out EU growth in 2026, Triodos bank says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-10T06:17:00.000Z",
+          "score": 8
         },
         {
-          "title": "Evidence that South African special forces murdered top detective shared with BBC",
-          "link": "https://www.bbc.co.uk/news/articles/cly8djwgem0o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Frans Mathipa was shot while driving - we got access to the prosecution case against eight accused men.",
-          "published": "2026-08-09T23:05:29.000Z",
-          "score": 2
+          "title": "UK's Revolut gets French bank licence in European expansion drive - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNLW0ydllRVHUyVU1yOVZwTlNpQkhXWmFXVTJ5S2w4Mm81Vjc0bzBCUEhyUktKWFlrZ0lEZnpvc2lKYktjRzkwVERnaEw0aEVvSzR0UW9nR2J4NGxWSU90QTBadjAzekhXRzBzLXNjOG55YTVqWEdpRlNPX25sUDJNQUdSZ01GNGI5NFZMX0Nn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxNLW0ydllRVHUyVU1yOVZwTlNpQkhXWmFXVTJ5S2w4Mm81Vjc0bzBCUEhyUktKWFlrZ0lEZnpvc2lKYktjRzkwVERnaEw0aEVvSzR0UW9nR2J4NGxWSU90QTBadjAzekhXRzBzLXNjOG55YTVqWEdpRlNPX25sUDJNQUdSZ01GNGI5NFZMX0Nn?oc=5\" target=\"_blank\"&gt;UK's Revolut gets French bank licence in European expansion drive&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-10T09:19:27.000Z",
+          "score": 8
         },
         {
-          "title": "Drones spotted over German base days after Leipzig bomb incident",
-          "link": "https://www.bbc.co.uk/news/articles/cwyeg1ljp2eo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Police are investigating a drone sighting over a miltary base reportedly used for housing Patriot missile system parts.",
-          "published": "2026-08-09T16:18:10.000Z",
-          "score": 2
+          "title": "Final vote delayed in parts of Pakistan-administered Kashmir over security fears - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTndXb0JjaW0yVEQ3VG82UzVHSC1pU21NbzlqakY3Z1dZUkpGLXFxMmdEMTIyZTBaY0QtUFpFM0VjTi12M01JdDJqNkZPdWxFY1FhMGdUSmNrc3NiV1JEYV9ROEk4NHNacXdqY1lBWDE1Sy02NElsX0JnMHY1clJSazF5S3QwS3F3SU5jbnNNdnRGNkNGb3JFVUpNeEoyTW1iT2ZFWGU5X0EtRzVtV1BabS1sbmJzRWxaUlN5NzJkenJ4M1VyTHhDcw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTndXb0JjaW0yVEQ3VG82UzVHSC1pU21NbzlqakY3Z1dZUkpGLXFxMmdEMTIyZTBaY0QtUFpFM0VjTi12M01JdDJqNkZPdWxFY1FhMGdUSmNrc3NiV1JEYV9ROEk4NHNacXdqY1lBWDE1Sy02NElsX0JnMHY1clJSazF5S3QwS3F3SU5jbnNNdnRGNkNGb3JFVUpNeEoyTW1iT2ZFWGU5X0EtRzVtV1BabS1sbmJzRWxaUlN5NzJkenJ4M1VyTHhDcw?oc=5\" target=\"_blank\"&gt;Final vote delayed in parts of Pakistan-administered Kashmir over security fears&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
+          "published": "2026-08-10T10:30:09.000Z",
+          "score": 6
         },
         {
-          "title": "Ancient Roman shipwreck discovered off Sicily coast",
-          "link": "https://www.bbc.co.uk/news/articles/cvgx1kpz17go?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Italy's culture minister says it is one of the most important underwater archaeological finds in years.",
-          "published": "2026-08-09T12:27:26.000Z",
-          "score": 2
+          "title": "International unit of China's Guotai Junan surges 36% on take-private proposal - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPTXBMU2gtMldwRXRMc1JKbnlzbHNVVFNqVEFQQXJTSTd1WWd0VUttVHhYaDZCMFg2UHlfM0h6X1FWSW1SeEwzbnkxajFWbGJMRjFXYnhINE91YzBFVWpla0c3SEhGVW15WEcyY2lDcEVPalpKWGxabEZDemNkOERibndMZEJJTHJwalNwbVRpWnB5ckNLUFVEd2VpRERzcWxEUjEzQ1VQUnVRVDBaeVFheURSZk1PT3ZRRExvY0lFc0JUYXBM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPTXBMU2gtMldwRXRMc1JKbnlzbHNVVFNqVEFQQXJTSTd1WWd0VUttVHhYaDZCMFg2UHlfM0h6X1FWSW1SeEwzbnkxajFWbGJMRjFXYnhINE91YzBFVWpla0c3SEhGVW15WEcyY2lDcEVPalpKWGxabEZDemNkOERibndMZEJJTHJwalNwbVRpWnB5ckNLUFVEd2VpRERzcWxEUjEzQ1VQUnVRVDBaeVFheURSZk1PT3ZRRExvY0lFc0JUYXBM?oc=5\" target=\"_blank\"&gt;International unit of China's Guotai Junan surges 36% on take-private proposal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-10T02:03:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 409,
-    "articlesLast24h": 134,
-    "afterDedup": 119,
+    "totalArticlesScanned": 413,
+    "articlesLast24h": 154,
+    "afterDedup": 147,
     "feedsQueried": 19
   }
 }
