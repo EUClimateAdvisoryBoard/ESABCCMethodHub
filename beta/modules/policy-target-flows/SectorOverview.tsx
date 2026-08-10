@@ -21,6 +21,18 @@ import type { ColumnOverview } from './model';
 
 const fmt = (n: number) => n.toLocaleString('en-GB');
 
+/**
+ * The measured side of the spine, split by whether the matched series sits in
+ * the Policy Gap report's own indicator set. Two steps of the series blue —
+ * checked (with the amber/purple route colours adjacent) for colour-vision-
+ * deficiency-safe separation and ≥3:1 contrast on white; the split also
+ * carries its numbers, so colour never carries the meaning alone.
+ */
+const MEASURED_SPLIT = {
+  reportSet: ROUTE_META.series.color,
+  other: '#4899D2',
+} as const;
+
 interface Props {
   overview: ColumnOverview[];
   selected: FlowColumnKey;
@@ -46,6 +58,7 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
   const shown = overview.reduce((n, o) => n + o.total, 0);
   const all = overview.reduce((n, o) => n + o.unfilteredTotal, 0);
   const seriesSum = overview.reduce((n, o) => n + o.routes.series, 0);
+  const reportSum = overview.reduce((n, o) => n + o.routes.reportSet, 0);
   const datasetSum = overview.reduce((n, o) => n + o.routes.dataset, 0);
   const milestoneSum = overview.reduce((n, o) => n + o.routes.milestone, 0);
   const weakSum = overview.reduce((n, o) => n + o.weak, 0);
@@ -94,6 +107,7 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
         </p>
         <p className="text-[11.5px] text-tertiary">
           {fmt(seriesSum)} of {fmt(shown)} column entries tracked by a curated series
+          {' — '}{fmt(reportSum)} of them by the Policy Gap report&apos;s own indicator set
           {' · '}{fmt(datasetSum)} specified, not yet built
           {' · '}{fmt(milestoneSum)} milestone{milestoneSum === 1 ? '' : 's'}
           {weakSum > 0 && (
@@ -108,7 +122,12 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
       </div>
       {shown > 0 && (
         <div className="mt-2 flex h-2.5 gap-[2px] overflow-hidden rounded" aria-hidden="true">
-          <span style={{ width: `${(seriesSum / shown) * 100}%`, background: ROUTE_META.series.color }} />
+          {reportSum > 0 && (
+            <span style={{ width: `${(reportSum / shown) * 100}%`, background: MEASURED_SPLIT.reportSet }} />
+          )}
+          {seriesSum - reportSum > 0 && (
+            <span style={{ width: `${((seriesSum - reportSum) / shown) * 100}%`, background: MEASURED_SPLIT.other }} />
+          )}
           {datasetSum > 0 && (
             <span style={{ width: `${(datasetSum / shown) * 100}%`, background: ROUTE_META.dataset.color }} />
           )}
@@ -120,7 +139,21 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
 
       {/* ── Legend ──────────────────────────────────────────────────────── */}
       <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-tertiary">
-        {(['series', 'dataset', 'milestone'] as const).map((r) => (
+        <span
+          className="flex items-center gap-1.5"
+          title={`${ROUTE_META.series.description} The matched series is one of the Policy Gap report's own progress indicators (or its declared ECNO duplicate), so the report can track it with its existing framework.`}
+        >
+          <span className="h-2.5 w-2.5 rounded-sm" style={{ background: MEASURED_SPLIT.reportSet }} />
+          Measured — in the Policy Gap report&apos;s indicator set
+        </span>
+        <span
+          className="flex items-center gap-1.5"
+          title={`${ROUTE_META.series.description} The matched series is curated in MethodHub but is not part of the report's own indicator set.`}
+        >
+          <span className="h-2.5 w-2.5 rounded-sm" style={{ background: MEASURED_SPLIT.other }} />
+          Measured — other curated series
+        </span>
+        {(['dataset', 'milestone'] as const).map((r) => (
           <span key={r} className="flex items-center gap-1.5" title={ROUTE_META[r].description}>
             <span className="h-2.5 w-2.5 rounded-sm" style={{ background: ROUTE_META[r].color }} />
             {ROUTE_META[r].label}
@@ -141,7 +174,10 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
             const gap = gapOf(ov);
             const active = ov.column.key === selected;
             const dim = ov.total === 0;
+            const otherSeries = ov.routes.series - ov.routes.reportSet;
             const serW = x(ov.routes.series);
+            const repW = x(ov.routes.reportSet);
+            const othW = x(otherSeries);
             const datW = x(ov.routes.dataset);
             const milW = x(ov.routes.milestone);
             return (
@@ -151,7 +187,8 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
                 onClick={() => onSelect(ov.column.key)}
                 aria-pressed={active}
                 title={`${ov.column.label} — ${fmt(ov.total)} targets, ${ov.acts} acts. Measured ${
-                  fmt(ov.routes.series)} · specified ${fmt(ov.routes.dataset)} · milestone ${
+                  fmt(ov.routes.series)} (${fmt(ov.routes.reportSet)} in the Policy Gap report's indicator set) · specified ${
+                  fmt(ov.routes.dataset)} · milestone ${
                   fmt(ov.routes.milestone)}. ${ov.topActs.map((a) => `${a.short} (${a.count})`).join(', ')}`}
                 className={`mh-focus mh-motion-fast ${grid} w-full rounded-lg border px-2 py-1 text-left ${
                   active ? 'border-primary bg-surface-blue ring-1 ring-primary' : 'border-transparent hover:bg-grey-50'
@@ -181,15 +218,35 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
                     <span key={`r${t}`} className="absolute inset-y-0 w-px bg-grey-100" style={{ left: `${spine + x(t)}%` }} />
                   ))}
 
-                  {/* measured, growing left from the spine */}
+                  {/* measured, growing left from the spine: the report's own
+                      indicator set outermost, other curated series at the spine */}
                   {ov.routes.series > 0 && (
                     <span
-                      className="absolute top-1.5 flex h-[18px] items-center rounded-l"
-                      style={{ left: `${spine - serW}%`, width: `${serW}%`, background: ROUTE_META.series.color }}
+                      className="absolute top-1.5 flex h-[18px] gap-[2px]"
+                      style={{ left: `${spine - serW}%`, width: `${serW}%` }}
                     >
-                      {serW > 6 && (
-                        <span className="pl-1.5 font-mono text-[10px] tabular-nums text-white">
-                          {fmt(ov.routes.series)}
+                      {ov.routes.reportSet > 0 && (
+                        <span
+                          className="flex items-center overflow-hidden rounded-l"
+                          style={{ flex: `${ov.routes.reportSet} 0 0`, background: MEASURED_SPLIT.reportSet }}
+                        >
+                          {repW > 5 && (
+                            <span className="pl-1.5 font-mono text-[10px] tabular-nums text-white">
+                              {fmt(ov.routes.reportSet)}
+                            </span>
+                          )}
+                        </span>
+                      )}
+                      {otherSeries > 0 && (
+                        <span
+                          className={`flex items-center overflow-hidden ${ov.routes.reportSet > 0 ? '' : 'rounded-l'}`}
+                          style={{ flex: `${otherSeries} 0 0`, background: MEASURED_SPLIT.other }}
+                        >
+                          {othW > 5 && (
+                            <span className="pl-1.5 font-mono text-[10px] tabular-nums text-white">
+                              {fmt(otherSeries)}
+                            </span>
+                          )}
                         </span>
                       )}
                     </span>
@@ -273,8 +330,10 @@ export default function SectorOverview({ overview, selected, onSelect, filtered 
       <p className="mt-2 text-[10.5px] leading-snug text-tertiary-light">
         A target bearing on several sectors appears in each of their columns, so the column entries
         sum to more than the number of targets. Percentages are the share of a column&apos;s targets a
-        curated series already measures; the first-order / second-order / procedural split lives in
-        the expanded chart below.
+        curated series already measures; &quot;in the Policy Gap report&apos;s indicator set&quot; means
+        the matched series is one of the 2024 report&apos;s progress indicators (or its declared ECNO
+        duplicate), so the report could track that target with its existing framework today. The
+        first-order / second-order / procedural split lives in the expanded chart below.
       </p>
     </div>
   );

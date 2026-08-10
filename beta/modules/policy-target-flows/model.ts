@@ -334,6 +334,21 @@ export function columnCoverage(all: TargetAssessment[]): ColumnCoverage[] {
 }
 
 // ── The one-figure overview ─────────────────────────────────────────────────
+/**
+ * The Policy Gap report's own indicator set: the 2024 report progress
+ * indicators, plus the ECNO ids they are declared duplicates of (the ESABCC
+ * copy is authoritative, but a target matched to the ECNO twin is measuring
+ * the same concept). A measured target whose series sits in this set is one
+ * the report could track today with its existing indicator framework.
+ */
+const REPORT_SET_IDS: Set<string> = new Set(
+  ESABCC_REPORT_INDICATORS.flatMap((i) => (i.duplicateOf ? [i.id, i.duplicateOf] : [i.id])),
+);
+
+export function inReportSet(r: TargetAssessment): boolean {
+  return r.route === 'series' && r.indicator_ids.some((id) => REPORT_SET_IDS.has(id));
+}
+
 /** Route mix of an arbitrary set of rows — the unit both the overview figure
  *  and the collapsed act chips are drawn from. */
 export interface RouteCounts {
@@ -341,6 +356,8 @@ export interface RouteCounts {
   dataset: number;
   milestone: number;
   total: number;
+  /** Of the `series` rows, those measured by the Policy Gap report's own set. */
+  reportSet: number;
 }
 
 export function routeCounts(rows: TargetAssessment[]): RouteCounts {
@@ -349,6 +366,7 @@ export function routeCounts(rows: TargetAssessment[]): RouteCounts {
     dataset: rows.filter((r) => r.route === 'dataset').length,
     milestone: rows.filter((r) => r.route === 'milestone').length,
     total: rows.length,
+    reportSet: rows.filter(inReportSet).length,
   };
 }
 
