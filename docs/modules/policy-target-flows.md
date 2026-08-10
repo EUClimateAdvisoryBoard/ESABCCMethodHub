@@ -25,9 +25,13 @@ curated series already measures, then draws each sector as one row of a spine
 chart: measured targets grow leftward from the spine, the measurement gap
 (the specified and milestone routes) grows rightward, and rows are sorted
 biggest gap first — so the right-hand side reads as a ranked list of the gaps
-the Policy Gap report needs to name. Each row carries its "% measured" figure
-and its count of weak matches. Clicking a row expands it into that sector's
-full flow chart and scrolls there.
+the Policy Gap report needs to name. The measured side is split in two: a
+darker segment for targets whose matched series is one of the Policy Gap
+report's own progress indicators (or its declared ECNO duplicate) — targets
+the report could track today with its existing indicator framework — and a
+lighter one for targets measured only by other curated MethodHub series. Each
+row carries its "% measured" figure and its count of weak matches. Clicking a
+row expands it into that sector's full flow chart and scrolls there.
 
 Every bar shares the same targets scale and carries its number, so colour
 never carries the meaning alone. The first-order / second-order / procedural
