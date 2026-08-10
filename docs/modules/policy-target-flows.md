@@ -30,8 +30,10 @@ darker segment for targets whose matched series is one of the Policy Gap
 report's own progress indicators (or its declared ECNO duplicate) — targets
 the report could track today with its existing indicator framework — and a
 lighter one for targets measured only by other curated MethodHub series. Each
-row carries its "% measured" figure and its count of weak matches. Clicking a
-row expands it into that sector's full flow chart and scrolls there.
+row carries its "% measured" and "% in report set" figures (both shares of
+the column's targets, so the second is always contained in the first) and its
+count of weak matches. Clicking a row expands it into that sector's full flow
+chart and scrolls there.
 
 Every bar shares the same targets scale and carries its number, so colour
 never carries the meaning alone. The first-order / second-order / procedural
