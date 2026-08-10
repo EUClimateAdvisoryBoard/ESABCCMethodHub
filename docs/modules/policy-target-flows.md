@@ -19,17 +19,22 @@ missing a stated way of being measured.
 
 ### 1. The overview figure
 
-The flow view opens on a single figure carrying **all nine sector columns at
-once**, drawn on the same rows the charts below use — first-order targets,
-second-order targets, procedural obligations — plus each column's route mix and
-its count of weak matches. It is the map: it says which sector is the big one,
-where the measurement is thin, and where the rows needing review sit, before any
-chart is opened. Clicking a column expands it into that sector's full flow chart
-and scrolls there.
+The flow view opens on a single figure carrying **all nine sector columns on
+one shared scale**. It leads with the ledger-wide share of column entries a
+curated series already measures, then draws each sector as one row of a spine
+chart: measured targets grow leftward from the spine, the measurement gap
+(the specified and milestone routes) grows rightward, and rows are sorted
+biggest gap first — so the right-hand side reads as a ranked list of the gaps
+the Policy Gap report needs to name. Each row carries its "% measured" figure
+and its count of weak matches. Clicking a row expands it into that sector's
+full flow chart and scrolls there.
 
-Bars compare sectors **within a row**, never across rows, and every bar carries
-its number. The figure is filter-aware: narrowing to weak matches or to one act
-redraws all nine columns, so the map and the chart below it can never disagree.
+Every bar shares the same targets scale and carries its number, so colour
+never carries the meaning alone. The first-order / second-order / procedural
+split is deliberately not drawn here — it answers a different question and
+lives in the rung bands of the expanded charts. The figure is filter-aware:
+narrowing to weak matches or to one act redraws the whole figure, hero number
+included, so the map and the chart below it can never disagree.
 
 ### 2. Sector flow charts
 
