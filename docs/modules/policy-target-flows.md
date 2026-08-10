@@ -6,14 +6,16 @@
 The **measurement layer** of the Policy Gap report. The
 [Policy Targets Register (M·36)](policy-targets.md) established what EU climate
 law actually requires — 819 verbatim targets from 61 acts, 544 of them relevant
-to the transition. This module answers the question that follows: for every one
-of those relevant targets, **how do we measure whether it is being met, and
-where can we not?**
+to the transition, of which **356** survive the August 2026 review pass's
+"revise target" flags (rows the reviewers judged likely not targets at all,
+under the NT-7..NT-15 rules). This module runs on that reduced set and answers
+the question that follows: for every one of those targets, **how do we measure
+whether it is being met, and where can we not?**
 
 It exists so the report can say "we assessed every relevant EU climate policy
 target systematically" and have a checkable artefact behind the sentence — not
-a claim of comprehensiveness, but a ledger in which no relevant target is
-missing a stated way of being measured.
+a claim of comprehensiveness, but a ledger in which no relevant, unflagged
+target is missing a stated way of being measured.
 
 ## What it produces
 
@@ -60,14 +62,14 @@ assessment-framework figures:
 
 Each box is an **act**, on the row its targets belong to, and the bar under its
 name is the mix of assessment routes it carries. Acts start **collapsed**, so a
-whole sector — up to 126 targets across two dozen acts — is one figure that fits
+whole sector — up to 100 targets across two dozen acts — is one figure that fits
 a screen; opening a box turns it into **target** cards, and the white boxes
 beneath each card are the **indicators** that measure it, exactly as the white
 progress boxes work in the report figures. A collapsed box still shows how many
 weak matches it holds, because those are the rows a reviewer is looking for.
 "Open every act" expands the lot at once.
 
-Grouping by act is what keeps the chart readable at 544 targets, and connectors
+Grouping by act is what keeps the chart readable at 356 targets, and connectors
 therefore run between act groups: an act's second-order targets feed its
 first-order targets, which feed the sector goal.
 
@@ -79,7 +81,7 @@ ledger counts it once.
 
 ### 3. The assessment ledger
 
-Every relevant target as a row — verbatim requirement, timeline, flow-chart
+Every relevant, unflagged target as a row — verbatim requirement, timeline, flow-chart
 position, assessment route, measurement family, indicator ids, source dataset,
 matched terms and match confidence — filterable and downloadable as CSV. This
 is the artefact the report cites.
@@ -102,7 +104,7 @@ them, or the register is missing the act that does).
 | **Milestone** | The target names no measurable state of the world (adopt a plan, submit a report). It is assessed as done / not done against the act's own deadline, not with a statistical series. |
 
 There is deliberately **no fourth "not assessed" route**. The build script exits
-non-zero if any relevant target ends without one — which is what makes the
+non-zero if any in-scope target ends without one — which is what makes the
 systematic-coverage claim checkable rather than rhetorical.
 
 ## How the data is built
@@ -131,7 +133,7 @@ flowchart LR
    duties are not dressed up as measured.
 4. **Integrity checks fail loudly**: an indicator id that does not resolve in the
    four curated sets, a family without dataset provenance, a stale override id,
-   or any relevant target left unassessed all stop the build.
+   or any in-scope target left unassessed all stop the build.
 5. **Reviewed corrections** live in `scripts/target-indicators-overrides.json`,
    one entry per target id with a prose reason tagged with the pass. A
    correction is reversible by deleting one entry and rebuilding — never by
@@ -146,17 +148,19 @@ npm run check:target-indicators   # verify the committed dataset reproduces
 
 ## What it does and does not claim
 
-- **Claimed.** Every target M·36 marks relevant has an assessment route, and the
-  route names either a curated series, a public dataset, or the act's own
-  deadline.
+- **Claimed.** Every target M·36 marks relevant and leaves unflagged has an
+  assessment route, and the route names either a curated series, a public
+  dataset, or the act's own deadline.
 - **Not claimed.** That any target is met, missed or on track. No numeric value
   is asserted anywhere in the module — reading progress off the indicators is
   the indicator database's job.
 - **Not claimed.** That a linked series is the *best* measure of a target. The
   mapping is AI-compiled and deterministic, not verified; a family can be right
   in subject and still be the wrong measure of a particular target.
-- **Out of scope.** The targets M·36 classifies as peripheral to the transition.
-  That relevance call is inherited from the register, not re-made here.
+- **Out of scope.** The 275 targets M·36 classifies as peripheral to the
+  transition, and the 188 relevant rows the August 2026 review pass flagged
+  "revise target". Both calls are inherited from the register, not re-made
+  here; lifting a flag in the register re-admits the row on the next rebuild.
 
 ## Relationship to the other modules
 

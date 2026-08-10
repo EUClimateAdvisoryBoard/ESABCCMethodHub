@@ -9,8 +9,12 @@
 //         scripts/target-indicators-overrides.json — reviewed corrections
 // Output  src/data/target-indicators.generated.ts
 //
-// One row per RELEVANT M·36 target (the register's own transition-relevance
-// lens). Each row says how that target is measured:
+// One row per RELEVANT, UNFLAGGED M·36 target: the register's own
+// transition-relevance lens, minus the rows the August 2026 review pass flagged
+// "revise target" (NT-7..NT-15 — likely not targets under the reviewers'
+// definition; see docs-internal/policy-targets-human-review-2026-08.md). Both
+// calls are inherited from the register, not re-made here. Each row says how
+// that target is measured:
 //
 //   route 'series'    — a curated MethodHub time series already measures it.
 //   route 'dataset'   — no curated series yet, but the indicator is specified
@@ -184,7 +188,11 @@ if (badIds.length) {
   process.exit(1);
 }
 
-const relevant = targets.filter((t) => t.relevant);
+// The reduced set: relevant under the transition lens AND not flagged "revise
+// target" by the August 2026 review pass. Flagged rows are the register's
+// candidate list for removal — assessing them here would claim measurement
+// coverage for rows the reviewers consider likely not targets at all.
+const relevant = targets.filter((t) => t.relevant && !t.revise_flag);
 const rows = [];
 const unassessed = [];
 const overridesUsed = new Set();
@@ -267,7 +275,7 @@ for (const t of relevant) {
 
 const unknownOverrides = (overrides.entries || []).filter((e) => !overridesUsed.has(e.id));
 if (unknownOverrides.length) {
-  console.error('Overrides that match no relevant target (stale ids — fix or delete them):');
+  console.error('Overrides that match no in-scope target (stale ids, or rows now revise-flagged/peripheral in M·36 — fix or delete them):');
   for (const e of unknownOverrides) console.error(`  ${e.id} — ${e.reason}`);
   process.exit(1);
 }
@@ -301,7 +309,9 @@ const body = `/**
  * Produced by scripts/build-target-indicators.mjs (npm run build:target-indicators).
  *
  * The M·53 assessment ledger: one row for every RELEVANT target in the M·36
- * Policy Targets Register, with the route by which that target is measured.
+ * Policy Targets Register that is NOT flagged "revise target" by the August
+ * 2026 review pass (the reduced set — both calls inherited from the register),
+ * with the route by which that target is measured.
  * Routes: 'series' (a curated MethodHub series measures it), 'dataset' (the
  * indicator is specified against a named public dataset but not yet built here),
  * 'milestone' (no measurable state of the world — assessed as compliance with
@@ -317,7 +327,8 @@ const body = `/**
  * it asserts a MAPPING between a legal target and a way of measuring it, and
  * that mapping is what a reviewer should challenge.
  *
- * ${rows.length} relevant targets of ${targets.length} in the register, across ${new Set(rows.map((r) => r.policy_id)).size} acts.
+ * ${rows.length} relevant unflagged targets of ${targets.length} in the register, across ${new Set(rows.map((r) => r.policy_id)).size} acts
+ * (${targets.filter((t) => t.relevant).length} relevant in total; ${targets.filter((t) => t.relevant && t.revise_flag).length} of those revise-flagged and excluded).
  *   route:   ${stamp(byRoute)}
  *   rung:    ${stamp(byRung)}
  *   match confidence (how much of the match rests on the target's own wording,
