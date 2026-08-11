@@ -1,24 +1,24 @@
 {
   "date": "2026-08-11",
-  "generatedAt": "2026-08-11T11:47:23.493Z",
+  "generatedAt": "2026-08-11T17:58:00.173Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 11 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "AI’s potential climate benefits outweighed by role in boosting fossil fuels, study finds",
-      "summary": "&lt;p&gt;Modelling finds AI-driven productivity gains in coal, oil and gas enable more emissions than applications in renewables avoid&lt;/p&gt;&lt;p&gt;AI-driven productivity gains enable more planet-heating pollution from fossil fuels than they avoid from renewables, a &lt;a href=\"https://www.nature.com/articles/s44168-026-00411-0\"&gt;study&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Researchers modelled the technical potential for AI to boost clean power generation along with projections for how i",
+      "headline": "Where to see the August 12, 2026 total solar eclipse in Europe and when to catch the next one - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMickFVX3lxTE9SZk5LYjRMSUUxejY5UERWS0R1dy1ZaDJxZklRaEtvRDV4U3RkTDhHcTZSTXZZMW9xSGZsd0lJaWJFZFpJclVNUFpqSFJ4dldxRkpLcUtpcnlRMHp4QTFNVVdDMnEyZWNFbk9BNnFXVTgyZw?oc=5\" target=\"_blank\"&gt;Where to see the August 12, 2026 total solar eclipse in Europe and when to catch the next one&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Drought, water rationing and dry rivers: our water crisis is here | Peter Gleick",
-      "summary": "&lt;p&gt;It doesn’t have to be this way. We know what needs to be done&lt;/p&gt;&lt;p&gt;Disturbing news about our water resources is now constant and unrelenting. In just the past few weeks, media have reported that Puerto Rico is &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/13/puerto-rico-water-shortages\"&gt;suffering a deep water crisis&lt;/a&gt; as severe drought has cut water supplies to thousands. The &lt;a href=\"https://www.theguardian.com/commentisfree/2026/aug/05/europe-rive",
+      "headline": "Authors of IPCC’s 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage gather in Mexico City to advance the report’s draft",
+      "summary": "GENEVA, Aug 11 – More than 120 IPCC authors are meeting in Mexico City, Mexico, from 11 to 14 August to advance the First Order Draft of the 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage (CDR-CCUS). This report is being prepared by the IPCC’s Task Force on National Greenhouse [&#8230;]",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Wall Street giants hand Nvidia $500bn to fund boom in AI projects",
-      "summary": "The money will be used to develop new data centres to house, operate, and cool miles of stacked computer chips that process AI data and actions.",
+      "headline": "Trump says future of 'weaponization' fund is up to Blanche - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2Jva1gzS2MwTnNvRVRFWWk5SUF4aXpaYy1RcEhUTjdFQ2dYbEsxOHZKSTU4czYydE9JNEJvd0k1TkxNWnZudmVJaXU0Yl9sMUJIblJ0bm5tOC1EMDlzUHVLc1doYW1zQ2s3ZGVRNk55Q25adEx4OHo0MHhKXzVFQkUzUExaRWJJVkVhUllVQmk0ZjdZTXdMRFhGRQ?oc=5\" target=\"_blank\"&gt;Trump says future of 'weaponization' fund is up to Blanche&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,6 +33,22 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Where to see the August 12, 2026 total solar eclipse in Europe and when to catch the next one - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9SZk5LYjRMSUUxejY5UERWS0R1dy1ZaDJxZklRaEtvRDV4U3RkTDhHcTZSTXZZMW9xSGZsd0lJaWJFZFpJclVNUFpqSFJ4dldxRkpLcUtpcnlRMHp4QTFNVVdDMnEyZWNFbk9BNnFXVTgyZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMickFVX3lxTE9SZk5LYjRMSUUxejY5UERWS0R1dy1ZaDJxZklRaEtvRDV4U3RkTDhHcTZSTXZZMW9xSGZsd0lJaWJFZFpJclVNUFpqSFJ4dldxRkpLcUtpcnlRMHp4QTFNVVdDMnEyZWNFbk9BNnFXVTgyZw?oc=5\" target=\"_blank\"&gt;Where to see the August 12, 2026 total solar eclipse in Europe and when to catch the next one&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-11T08:00:00.000Z",
+          "score": 13
+        },
+        {
+          "title": "South Africa&#8217;s offshore oil push meets grassroots resistance in court",
+          "link": "https://www.climatechangenews.com/2026/08/11/south-africas-offshore-oil-push-ground-resistance-courts-litigation-ocean/",
+          "source": "Climate Home News",
+          "description": "Two court cases against oil majors TotalEnergies and Shell could derail South Africa's plan to expand offshore fossil fuels The post South Africa&#8217;s offshore oil push meets grassroots resistance in court appeared first on Climate Home News.",
+          "published": "2026-08-11T16:30:26.000Z",
+          "score": 10
+        },
         {
           "title": "AI’s potential climate benefits outweighed by role in boosting fossil fuels, study finds",
           "link": "https://www.theguardian.com/technology/2026/aug/11/ai-will-do-more-to-boost-fossil-fuel-production-than-green-energy",
@@ -50,27 +66,11 @@
           "score": 7
         },
         {
-          "title": "Octopus Energy urges millions of households to use less electricity during solar eclipse",
-          "link": "https://www.theguardian.com/business/2026/aug/10/octopus-energy-electricity-solar-eclipse-washing-machines-dishwashers",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Firm urges customers to avoid running washing machines and dishwashers between 6pm and 8pm on Wednesday&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/science/2026/aug/08/when-where-how-uk-best-view-of-the-solar-eclipse\"&gt;Where in the UK will get the best view of the solar eclipse?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Great Britain’s biggest household energy supplier is calling on its customers to use less electricity this week during the de",
-          "published": "2026-08-10T15:28:53.000Z",
-          "score": 7
-        },
-        {
-          "title": "When and where to see the solar eclipse in Scotland",
-          "link": "https://www.bbc.co.uk/news/articles/cwyrk522pxro?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Solar eclipse 2026 weather forecast – where and when will the best view be?",
+          "link": "https://www.bbc.co.uk/weather/articles/c23592z7gppo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Up to 95% of the Sun will slowly disappear behind the Moon in the most dramatic eclipse visible from the UK since August 1999.",
-          "published": "2026-08-11T11:17:16.000Z",
-          "score": 7
-        },
-        {
-          "title": "Isle of Man 'very well placed' for solar eclipse",
-          "link": "https://www.bbc.co.uk/news/articles/c89n5lxp84wo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The island is particularly well placed to see the celestial spectacle, sitting just outside the path of totality.",
-          "published": "2026-08-11T05:13:46.000Z",
+          "description": "Look to the skies on Wednesday because one of the most spectacular solar eclipses for decades is coming the UK's way with likely optimum viewing conditions for many.",
+          "published": "2026-08-11T15:02:33.000Z",
           "score": 7
         }
       ]
@@ -79,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Authors of IPCC’s 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage gather in Mexico City to advance the report’s draft",
+          "link": "https://www.ipcc.ch/2026/08/11/prtficdrlam2/",
+          "source": "IPCC",
+          "description": "GENEVA, Aug 11 – More than 120 IPCC authors are meeting in Mexico City, Mexico, from 11 to 14 August to advance the First Order Draft of the 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage (CDR-CCUS). This report is being prepared by the IPCC’s Task Force on National Greenhouse [&#8230;]",
+          "published": "2026-08-11T14:36:08.000Z",
+          "score": 11
+        },
         {
           "title": "Drought, water rationing and dry rivers: our water crisis is here | Peter Gleick",
           "link": "https://www.theguardian.com/commentisfree/2026/aug/11/drought-water-climate-crisis",
@@ -96,11 +104,11 @@
           "score": 9
         },
         {
-          "title": "Reader Q&amp;A: ask our reporters anything about fossil fuel profits and the climate crisis",
+          "title": "‘Subsidies for fossil fuels ... are pouring fuel on the fire’: your questions on fossil fuel profits and the climate crisis answered",
           "link": "https://www.theguardian.com/environment/live/2026/aug/11/reader-qa-ask-our-reporters-anything-about-fossil-fuel-profits-and-the-climate-crisis",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Last week reporters Jillian Ambrose and Damian Carrington published a piece which revealed that biggest oil firms made $93bn in profits in three months amid the war in Iran and the climate crisis. They will be online at 2pm BST to discuss their story and any other questions you might have &lt;/p&gt;&lt;p&gt;&lt;strong&gt;Ask a question: log in or sign up &lt;/strong&gt;&lt;a href=\"https://profile.theguardian.com/signin\"&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&l",
-          "published": "2026-08-11T10:41:53.000Z",
+          "description": "&lt;p&gt;Reporters Jillian Ambrose and Damian Carrington discussed &lt;a href=\"https://www.theguardian.com/business/ng-interactive/2026/aug/04/revealed-major-oil-firms-make-93bn-profits-amid-war-and-climate-crisis\"&gt;their story on oil firms’ profits amid the war in Iran&lt;/a&gt; and the climate crisis and answered your related questions&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=\"https://discussion.theguardian.com/comment-permalink/175370926\"&gt;PCMcGarry&lt;/a&gt",
+          "published": "2026-08-11T15:58:35.000Z",
           "score": 7
         },
         {
@@ -110,14 +118,6 @@
           "description": "&lt;p&gt;Exclusive: FBU calls for more funding as ‘unprecedented summer’ puts rising demands on already stretched crews&lt;/p&gt;&lt;p&gt;Firefighters in the UK are under increased pressure as a result of an “unprecedented summer of dangerous and volatile wildfires”, the Fire Brigades Union has said, as many parts of the country brace for a fifth heatwave of the year.&lt;/p&gt;&lt;p&gt;As authorities declared almost three-quarters of England was now in drought, Steve Wright, the FBU general secr",
           "published": "2026-08-10T19:16:38.000Z",
           "score": 7
-        },
-        {
-          "title": "‘It’s very challenging’: how the Duke of Westminster’s farm is taking on the climate crisis",
-          "link": "https://www.theguardian.com/environment/2026/aug/10/duke-of-westminster-farm-climate-crisis",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Amid world pressure from heatwaves and fertiliser shortages, billionaire’s business has invested in circular farming and biomethane&lt;/p&gt;&lt;p&gt;There is a distinctive smell of cow manure in the air at the &lt;a href=\"https://www.theguardian.com/news/2023/apr/25/duke-of-westminster-hugh-grosvenor-profile\"&gt;Duke of Westminster&lt;/a&gt;’s dairy farm near Chester. It is a world away from the collection of grand West End properties controlled by the duke that form the backbone of hi",
-          "published": "2026-08-10T14:00:46.000Z",
-          "score": 7
         }
       ]
     },
@@ -125,14 +125,6 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
-        {
-          "title": "Wall Street giants hand Nvidia $500bn to fund boom in AI projects",
-          "link": "https://www.bbc.co.uk/news/articles/c78gr0jv0mdo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The money will be used to develop new data centres to house, operate, and cool miles of stacked computer chips that process AI data and actions.",
-          "published": "2026-08-11T08:44:52.000Z",
-          "score": 2
-        },
         {
           "title": "Trump says future of 'weaponization' fund is up to Blanche - Reuters",
           "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2Jva1gzS2MwTnNvRVRFWWk5SUF4aXpaYy1RcEhUTjdFQ2dYbEsxOHZKSTU4czYydE9JNEJvd0k1TkxNWnZudmVJaXU0Yl9sMUJIblJ0bm5tOC1EMDlzUHVLc1doYW1zQ2s3ZGVRNk55Q25adEx4OHo0MHhKXzVFQkUzUExaRWJJVkVhUllVQmk0ZjdZTXdMRFhGRQ?oc=5",
@@ -142,11 +134,19 @@
           "score": 2
         },
         {
-          "title": "South Korea to launch $3.5 billion chip fund, speed development of semiconductor hubs - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdnZjclJ4ZTNzOU1TQllqMUJkMTRUWDVXakRfV21XQWpXWGg1OVlzYUhDV2RPSTlwQnhrVVhCZm5ZMWVVZmNPMUlPN2FVZ0RtOVBOTHNWRzZmRXRJYUh5bU00UW0yYjY2SC1jcEE2ekIxbHpyNTM1YzQ3TTdOaExTN3o0cnM2WTRsNExXVFVSN0wtclpxVDctZWl6Uk9FM2RMREIwbGV0Z3NhRW9Xa0VENUhFdGo4SV9sdHV2QXctSTJnVERCM2I1LQ?oc=5",
+          "title": "Norway wealth fund CEO says fund's entire value could be lost if market collapses - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUXM4c0FCQ01mNlZ0S2RJNVZWdnBiNHFSYjRnWFFEZ0VYR3U2WWw2bjFkdWwybkEwZDJjeTI1aE9rQ1ZRTUVrVWFuN1FaYXdBSUllVVZZeWlmUEVBd0FIbHM4TElBd3FKUnlpalJSR2NxaVBidjJ6VFN6dXNUZmlKQWhMREZvZnVheEk3VDRrTXNyOVhCT3pCQndxZEFkeXdrVUVVeTBpWkt3TGVLaTMzVFhnWW51UVp6Rnd3YQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdnZjclJ4ZTNzOU1TQllqMUJkMTRUWDVXakRfV21XQWpXWGg1OVlzYUhDV2RPSTlwQnhrVVhCZm5ZMWVVZmNPMUlPN2FVZ0RtOVBOTHNWRzZmRXRJYUh5bU00UW0yYjY2SC1jcEE2ekIxbHpyNTM1YzQ3TTdOaExTN3o0cnM2WTRsNExXVFVSN0wtclpxVDctZWl6Uk9FM2RMREIwbGV0Z3NhRW9Xa0VENUhFdGo4SV9sdHV2QXctSTJnVERCM2I1LQ?oc=5\" target=\"_blank\"&gt;South Korea to launch $3.5 billion chip fund, speed development of semiconductor hubs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-08-10T12:50:32.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPUXM4c0FCQ01mNlZ0S2RJNVZWdnBiNHFSYjRnWFFEZ0VYR3U2WWw2bjFkdWwybkEwZDJjeTI1aE9rQ1ZRTUVrVWFuN1FaYXdBSUllVVZZeWlmUEVBd0FIbHM4TElBd3FKUnlpalJSR2NxaVBidjJ6VFN6dXNUZmlKQWhMREZvZnVheEk3VDRrTXNyOVhCT3pCQndxZEFkeXdrVUVVeTBpWkt3TGVLaTMzVFhnWW51UVp6Rnd3YQ?oc=5\" target=\"_blank\"&gt;Norway wealth fund CEO says fund's entire value could be lost if market collapses&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-11T15:55:48.000Z",
+          "score": 2
+        },
+        {
+          "title": "EM investment flows turn positive as equity exodus slowed, IIF says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWUFoOU9ZZTV2MWx6TmttaVZaQm5nVjZlaFFlcVhwbkw4SWlra2haOFlMUnk1QU9ieUQ3by1TVHh6dlFoX2cxR0UwWWw1dmtNekN2OVlUQ1ppTGhEano0TkllSm1ueHExSU43b2FZZFJ5WHNOeWRTQkZGa2ZLWFd6YWZsbmVnQnVqb3JwUGJTOWM3cFNCT2xMZlRWY2RSZTRUc3Qwa05JM21jekFPdkUyUE4ydU1KUk50anc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNWUFoOU9ZZTV2MWx6TmttaVZaQm5nVjZlaFFlcVhwbkw4SWlra2haOFlMUnk1QU9ieUQ3by1TVHh6dlFoX2cxR0UwWWw1dmtNekN2OVlUQ1ppTGhEano0TkllSm1ueHExSU43b2FZZFJ5WHNOeWRTQkZGa2ZLWFd6YWZsbmVnQnVqb3JwUGJTOWM3cFNCT2xMZlRWY2RSZTRUc3Qwa05JM21jekFPdkUyUE4ydU1KUk50anc?oc=5\" target=\"_blank\"&gt;EM investment flows turn positive as equity exodus slowed, IIF says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-11T13:17:43.000Z",
           "score": 2
         },
         {
@@ -178,6 +178,14 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "Lebanon parliament votes to abolish death penalty",
+          "link": "https://www.bbc.co.uk/news/articles/c8enj8p1xwgo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The new law - which next goes to the cabinet for approval - would make Lebanon the first country in the Middle East to end capital punishment.",
+          "published": "2026-08-11T15:24:07.000Z",
+          "score": 12
+        },
+        {
           "title": "Turkish parliament passes landmark law to advance PKK peace process - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZ29RNHpoTnE2N0RlbFFnS1dsTEFVWVRPX1dNOEVNOHNLUmNWcWs0a1dMOUx1U1hveGxlWTBwQjRKVmN2bFZuNkNfUzNrYmgtN0pKbkVqRHgxREhTaWJvQ3dPNWxBVFRqU1hqNmotY21oSW1YYTBraC1SMWJfdU1qRFNCbUhOLWtpQkpJU3dwNHpqcGg4NzJGTDNyNG9Rallkbkk0RmVZZ3lsaUlhM1JvSWZmakJmN1RibkE?oc=5",
           "source": "Reuters World (via Google News)",
@@ -186,44 +194,36 @@
           "score": 12
         },
         {
-          "title": "Imperial Brands to cut thousands of jobs in U.S. and Europe, Bloomberg News reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUlZlclBDeVVPdWV4Q1FJeGF5T0d1cXNQQThiLXIxNVRoVmJTbUJvZThOMFNzVGs1dFBLTC1FaExpc2ZNM0tOaUU1ckUtZmhZcmdpazgzUGJtVFpNS0FJNE5FTS1McWwyanVGZXhaeFNYeEotOGNxUGdjQTM1UXBVa01PM2VQUjFoVWRMa2R6ZzAzTEJJeFpLMVVmaHVQall1SFBHOVZJMA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNUlZlclBDeVVPdWV4Q1FJeGF5T0d1cXNQQThiLXIxNVRoVmJTbUJvZThOMFNzVGs1dFBLTC1FaExpc2ZNM0tOaUU1ckUtZmhZcmdpazgzUGJtVFpNS0FJNE5FTS1McWwyanVGZXhaeFNYeEotOGNxUGdjQTM1UXBVa01PM2VQUjFoVWRMa2R6ZzAzTEJJeFpLMVVmaHVQall1SFBHOVZJMA?oc=5\" target=\"_blank\"&gt;Imperial Brands to cut thousands of jobs in U.S. and Europe, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-10T14:57:05.000Z",
-          "score": 8
-        },
-        {
-          "title": "Ingebrigtsen wins first race in nearly a year with 5,000m title at Euro champs - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNOFd1dW1keEVKZG0ycXJJRlZCbW9UWjl5eXh2ZWt2dWdyd2g2cV9Rc3BrSnMwZm9VbHp2WmtZUHQtMDRBNWU2REdLeFVqREpjTVVPMW5NV0JUR09WUUxFQ25jamFKX3J3NUdfbmFzNFJsN2pLdkVQOXA5eVdDRldlSi1DVEZXQXp1am1kUDJqSmM1d2plLTJuRzNBbVlZZUxfa0hpdUNjSC1jZWx5U2lmRzV3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNOFd1dW1keEVKZG0ycXJJRlZCbW9UWjl5eXh2ZWt2dWdyd2g2cV9Rc3BrSnMwZm9VbHp2WmtZUHQtMDRBNWU2REdLeFVqREpjTVVPMW5NV0JUR09WUUxFQ25jamFKX3J3NUdfbmFzNFJsN2pLdkVQOXA5eVdDRldlSi1DVEZXQXp1am1kUDJqSmM1d2plLTJuRzNBbVlZZUxfa0hpdUNjSC1jZWx5U2lmRzV3?oc=5\" target=\"_blank\"&gt;Ingebrigtsen wins first race in nearly a year with 5,000m title at Euro champs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-10T21:17:07.000Z",
-          "score": 8
-        },
-        {
-          "title": "Russia: Top court bans opposition anti-war party from vote",
-          "link": "https://www.dw.com/en/russia-top-court-bans-opposition-anti-war-party-from-vote/a-78313252?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Can the new PKK law bring peace to Turkey?",
+          "link": "https://www.dw.com/en/can-the-new-pkk-law-bring-peace-to-turkey/a-78326063?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Yabloko, Russia&#039;s only anti-war party, has been barred from September&#039;s parliamentary elections. The motion to bar Yabloko was filed by the nationalist pro-Kremlin party Rodina.",
-          "published": "2026-08-10T20:56:00.000Z",
-          "score": 6
+          "description": "Turkey’s parliament has passed a framework law for the peace process with the Kurdistan Workers’ Party (PKK). What does it stipulate, why is it controversial and what does it mean for the future of the peace process?",
+          "published": "2026-08-11T16:28:00.000Z",
+          "score": 8
         },
         {
-          "title": "New train service connects Finland and Sweden for first time in decades",
-          "link": "https://www.bbc.co.uk/news/articles/cx2lwpzz6qjo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The service will enable rail travel from Portugal to Lapland - what is believed to be the longest train journey in Europe.",
-          "published": "2026-08-10T18:28:11.000Z",
-          "score": 4
+          "title": "Hungary&#039;s parliament elects Orban critic as new president",
+          "link": "https://www.dw.com/en/hungary-s-parliament-elects-orban-critic-as-new-president/a-78325589?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Hungary&#039;s parliament has overwhelmingly confirmed Andras Baka, formerly the head of the Supreme Court, to the largely ceremonial role of president. New Prime Minister Peter Magyar controversially removed his predecessor.",
+          "published": "2026-08-11T16:00:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Hungary parliament elects former supreme court head Andras Baka as president - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOU3dlWVJ6OFQ1cWYtQWRtdk5Mbk4waXkzWVhLNEFrNkZWbXpMc3NXazZSZ2xiUVZPN2NZbnpNNjRtOVp1TFJqX0hhV2xJNkNVRUhrQktLalJ0aGlURVR0Y1Z0NGhSUVh2eTNrSzF3c0VvSjNRZkUzamxzSlc5NnVpU2h3Q01SOGpJOTdzbVhoeXJHcnpUWGZ0QnZsaVhwdWtsWlpqaUxMcEQyTVBLTWJJYTFxTUZjZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOU3dlWVJ6OFQ1cWYtQWRtdk5Mbk4waXkzWVhLNEFrNkZWbXpMc3NXazZSZ2xiUVZPN2NZbnpNNjRtOVp1TFJqX0hhV2xJNkNVRUhrQktLalJ0aGlURVR0Y1Z0NGhSUVh2eTNrSzF3c0VvSjNRZkUzamxzSlc5NnVpU2h3Q01SOGpJOTdzbVhoeXJHcnpUWGZ0QnZsaVhwdWtsWlpqaUxMcEQyTVBLTWJJYTFxTUZjZw?oc=5\" target=\"_blank\"&gt;Hungary parliament elects former supreme court head Andras Baka as president&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-11T14:34:43.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 404,
-    "articlesLast24h": 168,
-    "afterDedup": 155,
+    "totalArticlesScanned": 408,
+    "articlesLast24h": 174,
+    "afterDedup": 158,
     "feedsQueried": 19
   }
 }
