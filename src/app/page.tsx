@@ -417,6 +417,7 @@ export default async function HomePage() {
     { code: 'M · 51', title: 'Climate Investment vs Rearmament', href: '/beta/climate-defence-fiscal', tags: ['Crowd-out slider', 'Ranges not averages', 'MFF 2028-34'] },
     { code: 'M · 52', title: 'Trade Partners & Article 6', href: '/beta/trade-partner-climate', tags: ['8 partners', '260 Mt credit bet', 'Snapshot 2026-08'] },
     { code: 'M · 53', title: 'Policy Targets → Indicators', href: '/beta/policy-target-flows', tags: ['356 targets assessed', 'Sector flow charts', 'Measurement gaps'] },
+    { code: 'M · 54', title: 'Summer 2026 Damage Ledger', href: '/beta/summer-2026-damages', tags: ['Heat · fire · low rivers', 'Sourced € figures', 'Preparedness gap'] },
   ];
 
   return (
