@@ -54,6 +54,11 @@ import {
   type TargetAssessment,
 } from '@/data/target-indicators';
 import {
+  WORKSPACE_INDICATOR_PROJECT_ID,
+  isSeededIndicator,
+  workspaceIndicatorHref,
+} from '@/data/workspace-indicator-seed';
+import {
   EMPTY_FILTERS,
   applyFilters,
   buildFlowChart,
@@ -72,6 +77,10 @@ type View = 'flow' | 'ledger' | 'gaps';
 /** Where the module's claims come from. */
 const SOURCES: { label: string; url: string }[] = [
   { label: 'M·36 Policy Targets Register — the verbatim targets this module measures', url: '/beta/policy-targets' },
+  {
+    label: 'Policy Gap 2.0 indicator database — the stored series behind every ↗ chip',
+    url: '/project-workspace/policy-gap-2-0?module=indicators',
+  },
   { label: 'EUR-Lex — consolidated texts of every act cited', url: 'https://eur-lex.europa.eu/homepage.html' },
   { label: 'Eurostat dissemination database', url: 'https://ec.europa.eu/eurostat/data/database' },
   { label: 'EEA datahub and indicator catalogue', url: 'https://www.eea.europa.eu/en/datahub' },
@@ -180,7 +189,18 @@ function TargetDetail({ row, onClose }: { row: TargetAssessment; onClose: () => 
           <ul className="mt-1 space-y-1">
             {indicators.map((ind) => (
               <li key={ind.id} className="flex flex-wrap items-baseline gap-x-2 text-[12px] text-tertiary">
-                <span className="font-medium text-tertiary-dark">{ind.name}</span>
+                {isSeededIndicator(ind.id) ? (
+                  <Link
+                    href={workspaceIndicatorHref(ind.id)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mh-focus font-medium text-tertiary-dark underline decoration-grey-300 underline-offset-2 hover:text-primary"
+                  >
+                    {ind.name} <span aria-hidden="true" className="text-tertiary-light">↗</span>
+                  </Link>
+                ) : (
+                  <span className="font-medium text-tertiary-dark">{ind.name}</span>
+                )}
                 <span className="font-mono tabular-nums text-[11px]">{ind.unit}</span>
                 <a href={ind.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-[11px] text-primary-light underline">
                   {ind.source} ↗
@@ -189,6 +209,11 @@ function TargetDetail({ row, onClose }: { row: TargetAssessment; onClose: () => 
               </li>
             ))}
           </ul>
+          <p className="mt-1.5 text-[11px] leading-snug text-tertiary-light">
+            Series names link into the Policy Gap 2.0 indicator database, where the stored values, their
+            provenance and the chart live. Names without a link are curated in MethodHub but not held in
+            that database.
+          </p>
         </div>
       )}
 
@@ -236,6 +261,15 @@ export default function PolicyTargetFlowsPage() {
     () => targetAssessments.find((r) => r.id === selectedId) ?? null,
     [selectedId],
   );
+  /** How many of the series doing the measuring can actually be opened — i.e.
+   *  are seeded, with a stored series, in the Policy Gap 2.0 indicator
+   *  database. Counted rather than assumed, so the figure moves with the seed
+   *  catalogue instead of asserting that every chip links somewhere. */
+  const linkedSeries = useMemo(() => {
+    const ids = new Set<string>();
+    for (const r of targetAssessments) for (const id of r.indicator_ids) ids.add(id);
+    return [...ids].filter(isSeededIndicator).length;
+  }, []);
 
   const patch = (p: Partial<Filters>) => {
     setFilters((f) => ({ ...f, ...p }));
@@ -337,7 +371,11 @@ export default function PolicyTargetFlowsPage() {
             sub="dataset named, series to build"
           />
           <StatTile label="Compliance milestones" value={fmt(coverage.byRoute.milestone)} sub="no measurable state of the world" />
-          <StatTile label="Curated series in use" value={fmt(coverage.indicators)} sub={`${coverage.families} measurement families`} />
+          <StatTile
+            label="Curated series in use"
+            value={fmt(coverage.indicators)}
+            sub={`${coverage.families} measurement families · ${fmt(linkedSeries)} open in the indicator database`}
+          />
         </div>
 
         {/* ── View switcher ────────────────────────────────────────────── */}
@@ -659,6 +697,22 @@ export default function PolicyTargetFlowsPage() {
               here says a target is met, missed or on track, and no numeric value is asserted. The
               module maps targets to measurements; reading progress off those measurements is the
               indicator database&apos;s job.
+            </li>
+            <li>
+              <span className="font-medium text-tertiary-dark">Links into the indicator database.</span>{' '}
+              An indicator chip marked ↗ opens that series in the{' '}
+              <Link
+                href={`/project-workspace/${WORKSPACE_INDICATOR_PROJECT_ID}?module=indicators`}
+                className="text-primary-light underline"
+              >
+                Policy Gap 2.0 indicator database
+              </Link>
+              , where the stored values and their provenance live. {fmt(linkedSeries)} of the{' '}
+              {fmt(coverage.indicators)} series used here are seeded there with data; the rest render
+              as plain chips rather than as links that would open on nothing. The test is against the
+              seed catalogue this deployment ships, not a live query — it proves the series is in the
+              set the workspace seeds and is not empty, not that a particular database has finished
+              seeding it.
             </li>
             <li>
               <span className="font-medium text-tertiary-dark">The 463 out-of-scope rows.</span> Of

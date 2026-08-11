@@ -69,6 +69,19 @@ progress boxes work in the report figures. A collapsed box still shows how many
 weak matches it holds, because those are the rows a reviewer is looking for.
 "Open every act" expands the lot at once.
 
+An indicator chip marked **↗** is a link: it opens that series in the Policy Gap
+2.0 indicator database — the Project Workspace's Indicator Database module, at
+`/project-workspace/policy-gap-2-0?module=indicators&indicator=<id>` — in a new
+tab, so the chart keeps its filters and selection. Chips are linked only where
+the series is in the seed catalogue that populates that database *and* carries
+at least one data point; everything else stays a plain chip rather than a link
+that would open on an empty chart. The membership test is `isSeededIndicator()`
+in `src/data/workspace-indicator-seed.ts`, which holds the same catalogue the
+workspace seeder writes, so the two cannot drift apart. What it proves is that
+the series is in the seeded set and is not empty — not that a given deployment's
+Supabase has finished seeding it; an id the workspace does not know falls back
+to the module's default landing.
+
 Grouping by act is what keeps the chart readable at 356 targets, and connectors
 therefore run between act groups: an act's second-order targets feed its
 first-order targets, which feed the sector goal.
@@ -169,6 +182,7 @@ npm run check:target-indicators   # verify the committed dataset reproduces
   legal content of its own beyond the sector goal statements in the dark band.
 - **M·07 Project Workspace** — the Policy Gap 2.0 flow-chart versions this
   module's charts are modelled on; the indicator chips resolve against the same
-  four curated indicator sets the workspace boards use.
+  four curated indicator sets the workspace boards use, and link into the
+  workspace's indicator database wherever the series is seeded there.
 - **Policy Gap Tracker** (`/beta/policy-gaps`) — the gap register from the 2024
   report; M·53 is the measurement counterpart to it.

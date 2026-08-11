@@ -27,6 +27,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
 import type { Indicator, IndicatorCategory } from '@/data/ecno-indicators';
+import { workspaceIndicatorHref } from '@/data/workspace-indicator-seed';
 import {
   INDICATOR_BLOCKERS,
   BLOCKER_META,
@@ -50,15 +51,11 @@ const CATEGORY_META: Record<IndicatorCategory, { label: string; color: string }>
   adaptation: { label: 'Adaptation', color: '#478EA5' },
 };
 
-/**
- * Deep link into the Policy Gap 2.0 Project Workspace: opens the Indicator
- * Database module with this indicator pre-selected (the workspace seeds the
- * same `esabcc-*` indicator ids as `esabcc-indicators.ts`).
- */
-const WORKSPACE_PROJECT_ID = 'policy-gap-2-0';
-function workspaceIndicatorHref(indicatorId: string): string {
-  return `/project-workspace/${WORKSPACE_PROJECT_ID}?module=indicators&indicator=${encodeURIComponent(indicatorId)}`;
-}
+// Deep links into the Policy Gap 2.0 indicator database come from the shared
+// helper in `src/data/workspace-indicator-seed.ts`, alongside the seed
+// catalogue itself, so every module linking into the workspace builds the same
+// URL. (This page's own indicators are read from that database, so they are
+// seeded by construction and need no membership test.)
 
 interface IndicatorRead {
   ind: Indicator;

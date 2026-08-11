@@ -10,8 +10,10 @@
  * keeps the chart legible with hundreds of targets in a column.
  */
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import { useConnectors, type Edge } from '@/components/frameworks/useConnectors';
 import { Tooltip } from '@/components/ui/Tooltip';
+import type { Indicator } from '@/data/ecno-indicators';
 import {
   CONFIDENCE_META,
   FAMILY_BY_KEY,
@@ -19,6 +21,10 @@ import {
   RUNG_META,
   type TargetAssessment,
 } from '@/data/target-indicators';
+import {
+  isSeededIndicator,
+  workspaceIndicatorHref,
+} from '@/data/workspace-indicator-seed';
 import {
   ROUTE_ORDER,
   resolveIndicators,
@@ -48,25 +54,74 @@ interface Props {
   density: FlowDensity;
 }
 
+/**
+ * One indicator chip. When the series is already seeded in the Policy Gap 2.0
+ * indicator database the chip is a link that opens it there — the white box
+ * stops being a label and becomes the way to read the data behind it. Chips
+ * whose series is not in that database stay inert rather than promising a page
+ * that would open empty.
+ *
+ * The link opens in a new tab: the reader is mid-chart, with filters and a
+ * selected card, and navigating away in place would throw that state out.
+ */
+function IndicatorChip({ ind, onSelect }: { ind: Indicator; onSelect: () => void }) {
+  const body = (
+    <>
+      <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: ROUTE_META.series.color }} />
+      <span className="truncate">{ind.name}</span>
+      <span className="shrink-0 font-mono tabular-nums text-tertiary-light">{ind.unit}</span>
+    </>
+  );
+  // `relative z-20` on every chip lifts it above the card's stretched select
+  // button, which covers the card and would otherwise swallow both the hover
+  // (no tooltip) and the click.
+  const base = 'mh-focus relative z-20 inline-flex max-w-[190px] items-center gap-1 rounded border '
+    + 'border-grey-300 bg-white px-1.5 py-[3px] text-[10px] text-tertiary';
+  if (!isSeededIndicator(ind.id)) {
+    return (
+      <Tooltip
+        content={`${ind.name} — ${ind.source}. Not held in the Policy Gap 2.0 indicator database, so there is no stored series to open.`}
+      >
+        <button type="button" onClick={onSelect} className={base}>
+          {body}
+        </button>
+      </Tooltip>
+    );
+  }
+  return (
+    <Tooltip content={`${ind.name} — ${ind.source}. Open its series in the Policy Gap 2.0 indicator database (new tab).`}>
+      <Link
+        href={workspaceIndicatorHref(ind.id)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${base} hover:border-primary hover:text-primary`}
+      >
+        {body}
+        <span aria-hidden="true" className="shrink-0 text-tertiary-light">↗</span>
+      </Link>
+    </Tooltip>
+  );
+}
+
 /** White indicator box — the report figures' progress-indicator boxes. */
-function IndicatorBox({ row }: { row: TargetAssessment }) {
+function IndicatorBox({ row, onSelect }: { row: TargetAssessment; onSelect: () => void }) {
   const indicators = resolveIndicators(row.indicator_ids).slice(0, 2);
   if (row.route === 'series' && indicators.length) {
     return (
       <div className="flex flex-wrap gap-1">
         {indicators.map((ind) => (
-          <Tooltip key={ind.id} content={`${ind.name} — ${ind.source}`}>
-            <span className="inline-flex items-center gap-1 rounded border border-grey-300 bg-white px-1.5 py-[3px] text-[10px] text-tertiary max-w-[190px]">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: ROUTE_META.series.color }} />
-              <span className="truncate">{ind.name}</span>
-              <span className="shrink-0 font-mono tabular-nums text-tertiary-light">{ind.unit}</span>
-            </span>
-          </Tooltip>
+          <IndicatorChip key={ind.id} ind={ind} onSelect={onSelect} />
         ))}
         {row.indicator_ids.length > 2 && (
-          <span className="rounded border border-grey-300 bg-white px-1.5 py-[3px] text-[10px] text-tertiary-light">
-            +{row.indicator_ids.length - 2} more
-          </span>
+          <Tooltip content={`Open the target to see all ${row.indicator_ids.length} series measuring it.`}>
+            <button
+              type="button"
+              onClick={onSelect}
+              className="mh-focus relative z-20 rounded border border-grey-300 bg-white px-1.5 py-[3px] text-[10px] text-tertiary-light"
+            >
+              +{row.indicator_ids.length - 2} more
+            </button>
+          </Tooltip>
         )}
       </div>
     );
@@ -75,14 +130,16 @@ function IndicatorBox({ row }: { row: TargetAssessment }) {
   const meta = ROUTE_META[row.route];
   return (
     <Tooltip content={family ? `${family.label} — ${family.dataset.name}` : meta.label}>
-      <span
-        className="inline-flex max-w-full items-center gap-1 rounded border border-dashed px-1.5 py-[3px] text-[10px]"
+      <button
+        type="button"
+        onClick={onSelect}
+        className="mh-focus relative z-20 inline-flex max-w-full items-center gap-1 rounded border border-dashed px-1.5 py-[3px] text-[10px]"
         style={{ borderColor: meta.color, color: meta.color, background: meta.bg }}
       >
         <span className="truncate">
           {row.route === 'milestone' ? 'Milestone — act’s own deadline' : family?.label ?? 'Indicator to build'}
         </span>
-      </span>
+      </button>
     </Tooltip>
   );
 }
@@ -92,15 +149,23 @@ function TargetCard({
 }: { row: TargetAssessment; color: string; selected: boolean; onSelect: () => void }) {
   const meta = ROUTE_META[row.route];
   return (
-    <button
-      type="button"
-      onClick={onSelect}
-      aria-pressed={selected}
-      className={`mh-focus w-full rounded-md border bg-white p-2 text-left transition-shadow hover:shadow-sm ${
+    <div
+      className={`relative rounded-md border bg-white p-2 text-left transition-shadow hover:shadow-sm ${
         selected ? 'border-primary ring-1 ring-primary' : 'border-grey-200'
       }`}
       style={{ borderLeft: `3px solid ${color}` }}
     >
+      {/* The whole card stays one click target — opening the detail panel — but
+          its indicator chips are now links, and a link nested inside a button is
+          invalid HTML. So the select control is a stretched, transparent button
+          and the interactive bits (chips, the weak-match badge) sit above it. */}
+      <button
+        type="button"
+        onClick={onSelect}
+        aria-pressed={selected}
+        aria-label={`${row.target.policy_short} — ${row.label}`}
+        className="mh-focus absolute inset-0 z-10 rounded-md"
+      />
       <span className="flex items-start justify-between gap-2">
         <span className="min-w-0">
           <span className="block truncate text-[9.5px] uppercase tracking-wide text-tertiary-light">
@@ -121,16 +186,25 @@ function TargetCard({
         </span>
         {row.confidence === 'weak' && (
           <Tooltip content={CONFIDENCE_META.weak.note}>
-            <span className="rounded bg-surface-orange px-1 text-[9.5px] font-semibold text-tertiary-dark">
+            {/* Sits above the stretched select button like the chips do, so it
+                keeps its tooltip; it selects the card, as clicking it did when
+                the whole card was one button. */}
+            <button
+              type="button"
+              onClick={onSelect}
+              className="mh-focus relative z-20 rounded bg-surface-orange px-1 text-[9.5px] font-semibold text-tertiary-dark"
+            >
               check
-            </span>
+            </button>
           </Tooltip>
         )}
       </span>
-      <span className="mt-1.5 block">
-        <IndicatorBox row={row} />
-      </span>
-    </button>
+      {/* A div now the card is one — the chip row is flow content, which the
+          old <span> wrapper could not legally hold. */}
+      <div className="mt-1.5">
+        <IndicatorBox row={row} onSelect={onSelect} />
+      </div>
+    </div>
   );
 }
 
@@ -296,14 +370,29 @@ export default function TargetFlow({ chart, selectedId, onSelect, density }: Pro
             <p className="mt-1 text-[10.5px] opacity-85">Source: {chart.column.goalSource}</p>
             {goalIndicators.length > 0 && (
               <div className="mt-2 flex flex-wrap gap-1">
-                {goalIndicators.map((ind) => (
+                {goalIndicators.map((ind) => (isSeededIndicator(ind.id) ? (
+                  <Tooltip
+                    key={ind.id}
+                    content={`${ind.name} — ${ind.source}. Open its series in the Policy Gap 2.0 indicator database (new tab).`}
+                  >
+                    <Link
+                      href={workspaceIndicatorHref(ind.id)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mh-focus rounded border border-white/40 bg-white/15 px-1.5 py-[3px] text-[10px] hover:bg-white/25"
+                    >
+                      {ind.name} <span className="font-mono tabular-nums opacity-80">{ind.unit}</span>
+                      <span aria-hidden="true" className="opacity-70"> ↗</span>
+                    </Link>
+                  </Tooltip>
+                ) : (
                   <span
                     key={ind.id}
                     className="rounded border border-white/40 bg-white/15 px-1.5 py-[3px] text-[10px]"
                   >
                     {ind.name} <span className="font-mono tabular-nums opacity-80">{ind.unit}</span>
                   </span>
-                ))}
+                )))}
               </div>
             )}
           </div>
@@ -377,7 +466,8 @@ export default function TargetFlow({ chart, selectedId, onSelect, density }: Pro
         Each box is an act, on the row its targets belong to; the bar under its name is the mix of
         assessment routes it carries ({ROUTE_ORDER.map((r) => ROUTE_META[r].short.toLowerCase()).join(' · ')}).
         Open a box to read its targets as cards, and the white boxes beneath each card are the indicators
-        that measure it. Arrows run from an act&apos;s second-order targets to its first-order targets and
+        that measure it — a chip marked ↗ opens that series in the Policy Gap 2.0 indicator database, in a
+        new tab. Arrows run from an act&apos;s second-order targets to its first-order targets and
         on to the sector goal. Procedural obligations sit in the band below without a causal arrow — they
         are assessed as milestones, not measured.
       </p>

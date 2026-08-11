@@ -32,6 +32,7 @@ import {
 } from '@/data/esabcc-recommendations';
 import { INDUSTRY_INDICATORS } from '@/data/industry-indicators';
 import { BPIE_BUILDINGS_INDICATORS } from '@/data/bpie-buildings-indicators';
+import { POLICY_GAP_SEED_INDICATORS } from '@/data/workspace-indicator-seed';
 import { INDUSTRY_READING_SEED } from '@/data/industry-reading-list';
 import { CLEAN_TECH_READING_LIST } from '@/data/clean-tech-reading-list';
 import { CHAPTER_TAGS } from '@/lib/content-analysis/chapter-tags';
@@ -387,16 +388,10 @@ const ensureSeedDataFor = cache(async function ensureSeedDataFor(
   if (projectId === 'policy-gap-2-0') {
     // ESABCC report indicators are the "existing" group; ECNO ones are the
     // "additional" group. Both seed into the same table — the UI derives the
-    // group from the indicator id prefix.
-    await ensureSeedIndicators(sb, projectId, [
-      ...ESABCC_REPORT_INDICATORS,
-      ...ECNO_INDICATORS,
-      ...BETA_INDICATORS,
-      ...BETA_ADAPTATION_INDICATORS,
-      ...ADVANCED_INDICATORS,
-      ...ADVANCED_ADAPTATION_INDICATORS,
-      ...BPIE_BUILDINGS_INDICATORS,
-    ], backfillPoints);
+    // group from the indicator id prefix. The catalogue itself lives in
+    // `src/data/workspace-indicator-seed.ts`, so the list the seeder writes and
+    // the list other modules test their deep links against cannot drift apart.
+    await ensureSeedIndicators(sb, projectId, POLICY_GAP_SEED_INDICATORS, backfillPoints);
     await ensureSeedRecommendations(sb, projectId, SEED_RECOMMENDATIONS);
   } else if (projectId === 'industry-project') {
     // The Industry Project is scoped to a single tool: the industry-tagged
@@ -721,23 +716,7 @@ function seedIndicators(projectId: string): DBIndicator[] {
     return INDUSTRY_INDICATORS.map(i => ({ ...i, group: 'additional' as const }));
   }
   if (projectId !== 'policy-gap-2-0') return [];
-  return [
-    ...ESABCC_REPORT_INDICATORS.map(i => ({ ...i, group: 'esabcc' as const })),
-    ...ECNO_INDICATORS.map(i => ({
-      ...i,
-      group: 'additional' as const,
-      duplicateOf: i.duplicateOf ?? ECNO_TO_ESABCC_DUPLICATE[i.id],
-    })),
-    // Beta indicators carry their own group ('beta' / 'beta-adaptation').
-    ...BETA_INDICATORS.map(i => ({ ...i, group: 'beta' as const })),
-    ...BETA_ADAPTATION_INDICATORS.map(i => ({ ...i, group: 'beta-adaptation' as const })),
-    // Advanced indicators carry their own group ('advanced' / 'advanced-adaptation').
-    ...ADVANCED_INDICATORS.map(i => ({ ...i, group: 'advanced' as const })),
-    ...ADVANCED_ADAPTATION_INDICATORS.map(i => ({ ...i, group: 'advanced-adaptation' as const })),
-    // BPIE EU Buildings Climate Tracker indicators — listed with the other
-    // "additional" indicators under the Buildings category.
-    ...BPIE_BUILDINGS_INDICATORS.map(i => ({ ...i, group: 'additional' as const })),
-  ];
+  return POLICY_GAP_SEED_INDICATORS;
 }
 
 /**
