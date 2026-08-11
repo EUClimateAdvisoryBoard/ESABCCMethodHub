@@ -147,7 +147,9 @@ function anchorXml(anchors) {
         `<xdr:graphicFrame macro=""><xdr:nvGraphicFramePr><xdr:cNvPr id="${i + 10}" name="${esc(a2.name)}"/>` +
         `<xdr:cNvGraphicFramePr/></xdr:nvGraphicFramePr>` +
         `<xdr:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/></xdr:xfrm>` +
-        `<xdr:graphic><a:graphicData uri="${C}"><c:chart xmlns:c="${C}" xmlns:r="${R}" r:id="rId${i + 1}"/></a:graphicData></xdr:graphic>` +
+        // the graphic element lives in the DrawingML MAIN namespace (a:), not
+        // xdr: — Excel silently discards the whole drawing part otherwise
+        `<a:graphic><a:graphicData uri="${C}"><c:chart xmlns:c="${C}" xmlns:r="${R}" r:id="rId${i + 1}"/></a:graphicData></a:graphic>` +
         `</xdr:graphicFrame><xdr:clientData/></xdr:oneCellAnchor>`,
     )
     .join('');
