@@ -16,7 +16,7 @@ into [Secretariat News](../modules/news-feed.md).)
 
 ## What is parked
 
-Numbered M·09–M·53, continuing the sequence after the eight core modules. The
+Numbered M·09–M·54, continuing the sequence after the eight core modules. The
 list grows roughly weekly as new prototypes land; the
 [`beta/README.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/beta/README.md)
 table and the home-page module ribbon (`src/app/page.tsx`) are the canonical,
@@ -83,6 +83,7 @@ The modules fall into four loose families:
 | M·51  | `climate-defence-fiscal/`    | Climate Investment vs Rearmament | The fiscal squeeze: non-comparable need estimates kept visibly apart, committed flows, the Hague defence ramp and a crowd-out slider labelled a political variable. Highest-fabrication-risk topic; fact-check pass required before merge. |
 | M·52  | `trade-partner-climate/`     | Trade-Partner Climate & Article 6 Tracker | Eight-partner snapshot register (carbon pricing, NDCs, CBAM stance, linkage) plus plausible Article 6 supply-at-quality vs the ≈260 Mt demand in COM(2026) 616 — issued credits to date cover under 1 % of the bet. Snapshot 2026-08. |
 | M·53  | `policy-target-flows/`       | Policy Targets → Indicators | Every relevant, unflagged M·36 target (the reduced set after the August 2026 "revise target" review pass) on a sector flow chart in the Policy Gap 2.0 style, matched to the series, dataset or compliance milestone that measures it — opening on a one-figure overview of all nine sector columns, each expandable into its chart — no target left unassessed, and the measurement gaps ranked by the dataset that would close them. |
+| M·54  | `summer-2026-damages/`       | Summer 2026 Damage Ledger | Economic damage dashboard for the summer of 2026 — record heat, a record fire season, the Rhine at its lowest since 1880 — asking whether the EU is ready for the climate it already has: sourced build-up chain ("why this summer"), the 2003→2026 escalation series, a five-strand event ledger with live EFFIS/Pegelonline pulls, a deliberate refusal to print a season total, and a gap-vs-steel-man preparedness ledger. AI-compiled mid-season (2026-08-11), editorial framing flagged, pending Secretariat verification. |
 
 !!! note "Numbering vs. the route map"
     The `M·NN` codes are a **stable presentation index** assigned on the home
