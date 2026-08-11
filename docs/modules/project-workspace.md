@@ -109,9 +109,18 @@ sequenceDiagram
 | [`src/lib/project-workspace/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/src/lib/project-workspace) | Supporting: `indicator-sheet.ts`, `indicator-revisions.ts`, `indicator-excel.ts`, `phases.ts`, `collaboration.ts`, `meetings.ts`, `meeting-ai.ts`. |
 | [`src/components/workspace/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/src/components/workspace) | `ProjectShell` + per-kind modules (`IndicatorModule`, `RecommendationsModule`, `MemberStatesModule`, `ContentAnalysisModule`, `MeetingsModule`, `CustomNotesModule`) plus `IndicatorDataEditor`, `IndicatorHistory`, `DownloadMenu`, `WorkspaceComments`. |
 | [`src/data/project-workspace.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/data/project-workspace.ts) | Seed projects + module lists, used when the DB is disabled. |
+| [`src/data/workspace-indicator-seed.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/data/workspace-indicator-seed.ts) | The Policy Gap 2.0 indicator catalogue (`POLICY_GAP_SEED_INDICATORS`), the `isSeededIndicator()` test other modules use before deep-linking, and `workspaceIndicatorHref()`. |
 
 When the workspace DB env is not configured, `listProjects()` falls back to
 the bundled `SEED_PROJECTS` so the surface is still browsable read-only.
+
+`POLICY_GAP_SEED_INDICATORS` is the one definition of what the Policy Gap 2.0
+indicator database holds: `db.ts` seeds `pw_indicators` from it and falls back
+to it in preview mode, and modules that link into the database (M·53 Policy
+Targets → Indicators, the Indicator Check note) test membership against it with
+`isSeededIndicator()` rather than assuming a series is there. An indicator with
+no data point is excluded from that test, so a chip never links to a chart that
+would open empty.
 
 ## API surface
 
