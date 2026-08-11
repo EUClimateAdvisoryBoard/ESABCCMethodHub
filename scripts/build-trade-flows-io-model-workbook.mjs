@@ -404,7 +404,8 @@ async function main() {
     ['How to make changes', '1) Edit the underlying cell (Z sheets, Trade backbone, or a curated register). 2) Let Excel recalculate (F9 / on open). 3) Record the edit in the Change log sheet (date, cell, old → new, reason, source). 4) For changes that should persist, carry them back to the repository — the canonical data lives in trade-data.ts / the generated extracts, and this file is regenerated from them; a hand-edited copy of this workbook is a working copy, not the source of truth.'],
     ['Model scope', `Reference year ${YEAR}; EU-27 treated as one economy ("imported" = from outside the EU). 64 A*64 industries (the whole economy, not only manufacturing — a manufacturing-only model would misstate the chains through energy, mining and services). € million, current basic prices. Matrices condensed from Eurostat FIGARO naio_10_fcp_ii4 (~11 M cells) by scripts/fetch-figaro-io-dataset.mjs; aggregation choices are documented in that script's header.`],
     ['Three data layers', 'Layer 1 — trade backbone: ext_tec01, all 24 Section C divisions, 2023 + 2024, enterprise attribution. Layer 2 — input–output: the FIGARO matrices modelled here, plus the published application datasets (use-table input mixes, import origins, export destinations, foreign value added). Layer 3 — curated dependency registers: EC/JRC critical raw materials, SWD(2021) 352 strategic families, manufactured-product dependencies, energy dependency — "as reported by <source>", NOT derivable from official statistics and never arithmetically combined with the statistical layers.'],
-    ['Sheet map', 'Dashboard → Figures (NATIVE Excel charts generated from the sheet data: trade balance, dependency map, import content — they recalculate with the sheets) → Methodology → Method figure (the model as one diagram) → Concepts (plain-language glossary: what an IO table is, what the Leontief inverse does, …) → IO model → Z total / Z domestic / Z imported → A domestic / A import → I minus A → Leontief inverse → Import requirements → Multipliers → Trade backbone → FIGARO partners → Foreign value added → Imported inputs → Critical materials → Product dependencies → Strategic dependencies → Energy dependency → Risk map → Critical inputs → Sources → Change log. The Methodology sheet states, for every derived sheet, the formula it implements and the exact cell references. Only the method diagram is an image; the data figures are real charts over live ranges.'],
+    ['Raw data included', `The ENTIRE condensed FIGARO account is embedded: "FIGARO raw 2023" and "FIGARO raw 2022" hold every origin block (24 origins × 70 product/VA rows × 69 use columns per year, € million, zero cells blank), and "FIGARO exports raw" holds extra-EU exports by industry × destination (intermediate + final, both years). NOTHING between the raw sheets and the Dashboard is pre-computed outside Excel: the Z sheets are SUMs/references over the raw ${YEAR} sheet (fixed 24-row stride per product row, EU27 origin first), the IO model reads the Z and exports-raw sheets, and everything above reads the IO model — edit one raw cell and the whole chain recalculates. 2022 is included for reference; to model it, repoint the Z-sheet formulas (same layout).`],
+    ['Sheet map', 'Dashboard → Figures (NATIVE Excel charts generated from the sheet data: trade balance, dependency map, import content — they recalculate with the sheets) → Methodology → Method figure (the model as one diagram) → Concepts (plain-language glossary: what an IO table is, what the Leontief inverse does, …) → FIGARO raw 2023 / FIGARO raw 2022 / FIGARO exports raw (the full embedded dataset) → IO model → Z total / Z domestic / Z imported (derived from the raw sheets by formula) → A domestic / A import → I minus A → Leontief inverse → Import requirements → Multipliers → Trade backbone → FIGARO partners → Foreign value added → Imported inputs → Critical materials → Product dependencies → Strategic dependencies → Energy dependency → Risk map → Critical inputs → Sources → Change log. The Methodology sheet states, for every derived sheet, the formula it implements and the exact cell references. Only the method diagram is an image; the data figures are real charts over live ranges.'],
     ['Reproducible', 'node scripts/build-trade-flows-io-model-workbook.mjs rebuilds this file. Upstream: node scripts/fetch-figaro-io-dataset.mjs (FIGARO matrices), node scripts/fetch-trade-flows-io-data.mjs (backbone + published IO layers). Curated registers: beta/modules/overview-industry/trade-flows/trade-data.ts.'],
     ['Live module', '/beta/overview-industry/trade-flows on the MethodHub — same data, with the FIGARO table viewer and analysis dashboard at /trade-flows/figaro.'],
   ];
@@ -441,7 +442,8 @@ async function main() {
     ['10 · Curated-layer definitions', 'Import reliance (critical materials, risk map x-axis): IR = (imports − exports) / (domestic production + imports − exports) — the EC criticality methodology; it nets out re-exports, so it differs from customs shares. Supplier concentration (y-axis): the largest single supplier\'s share of EU supply — a first-moment proxy for the HHI; it understates concentration when suppliers two and three are also non-diversified and says nothing about substitutability, stocks or recyclability. Product-dependency shares are customs-based ("largest supplier\'s share of extra-EU imports") unless the Share basis column says otherwise. All curated figures are quoted "as reported by <source>" and must not be arithmetically combined with the statistical layers.'],
     ['11 · Known limits', 'Modelled statistics: FIGARO balances supply and use across countries and can differ from raw customs data (CIF/FOB, re-exports, balancing). Proportionality: every euro of an industry\'s output is assumed to use the same input recipe (no scale effects, no substitution). Current prices: year-on-year changes mix price and volume. Named partners: FIGARO names 23 partner areas — Taiwan is inside "Rest of the world", so the semiconductor dependency is invisible in the named-partner shares and appears only in the curated layer. The Section C aggregate of ext_tec01 does not equal the sum of its 24 divisions (non-allocable trade; both are shown on the Trade backbone sheet).'],
     ['12 · Where every derivation lives', [
-      'IO model: x_j = SUM of Z total column j (rows 3–72); exports from FIGARO inter-country accounts; residual check per industry.',
+      `Z total C3 = SUM of the 24 origin rows of 'FIGARO raw ${YEAR}' for that product row × use column; Z domestic C3 = the EU27 origin row; Z imported C3 = SUM of the 23 partner rows (fixed 24-row stride per product row).`,
+      `IO model: x_j = SUM of Z total column j (rows 3–72); exports = SUM of the industry's row in both ${YEAR} blocks of 'FIGARO exports raw'; residual check per industry.`,
       'A domestic C3 = \'Z domestic\'!C3/\'IO model\'!$D$4 (and so on cell by cell).',
       'A import C3 = \'Z imported\'!C3/\'IO model\'!$D$4.',
       'I minus A C3 = 1−\'A domestic\'!C3 on the diagonal, else −\'A domestic\'!C3.',
@@ -552,12 +554,114 @@ async function main() {
   styleHeaderRow(co, NAVY);
   wrapAll(co);
 
+  /* ---------- FIGARO raw dataset (both years) ----------
+   * The ENTIRE condensed FIGARO account, one sheet per year: one row per
+   * (product row × origin), the 24 origins CONTIGUOUS per product row
+   * (EU27 first, then the 23 partner areas). That fixed 24-row stride is what
+   * lets the Z sheets derive by plain formulas: Z domestic = the EU27 row,
+   * Z imported = SUM of the 23 partner rows, Z total = SUM of all 24.
+   */
+  const RAW0 = 4; // first data row of a raw sheet
+  const RAW_STRIDE = io.origins.length; // 24
+  const rawSheetName = (yr) => `FIGARO raw ${yr}`;
+  const rawBase = (i) => RAW0 + i * RAW_STRIDE; // EU27 row of product row i
+  const rawCol = (j) => colLetter(4 + j); // use column j on a raw sheet
+  if (io.origins[0] !== 'EU27') throw new Error('Expected EU27 as the first origin');
+  for (const yr of [...io.meta.years].sort().reverse()) {
+    const ws = wb.addWorksheet(rawSheetName(yr), { properties: { tabColor: { argb: GREY } } });
+    ws.getCell('A1').value =
+      `FIGARO raw dataset — ${yr}, € million (${io.meta.dataset}, condensed to EU-27 as one economy; extract of ${io.meta.generated}). ` +
+      'One row per product row × origin, the 24 origins contiguous per product row: origin EU27 is intra-EU supply (and carries the six ' +
+      'value-added rows); every other origin is that partner\'s exports into EU-27 use. Zero cells are left blank. ' +
+      (yr === YEAR
+        ? 'The Z sheets derive from THIS sheet by formula (fixed 24-row stride) — edit a cell here and the whole model recalculates.'
+        : `Reference year only — the model reads ${YEAR}. To model ${yr} instead, repoint the Z-sheet formulas (same layout, same stride).`);
+    ws.getCell('A1').font = { size: 9, color: { argb: GREY } };
+    ws.getCell('A1').alignment = { wrapText: true };
+    ws.mergeCells(1, 1, 1, 14);
+    ws.getRow(1).height = 46;
+    ws.getRow(2).values = ['Row code', 'Row label', 'Origin', ...io.indUse];
+    ws.getRow(3).values = ['', '', '', ...io.indUse.map((c) => label(c))];
+    ws.getRow(2).font = { bold: true, size: 9, color: { argb: 'FFFFFFFF' } };
+    ws.getRow(2).eachCell((cell) => {
+      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: GREY } };
+    });
+    ws.getRow(3).font = { size: 8, color: { argb: GREY } };
+    ws.getRow(3).alignment = { wrapText: true, vertical: 'top' };
+    ws.getRow(3).height = 40;
+    ws.getColumn(1).width = 10;
+    ws.getColumn(2).width = 32;
+    ws.getColumn(3).width = 9;
+    for (let j = 0; j < io.indUse.length; j++) ws.getColumn(4 + j).width = 10;
+    ws.views = [{ state: 'frozen', xSplit: 3, ySplit: 3 }];
+    const byOrigin = io.matrix[yr];
+    io.indAva.forEach((rowCode, i) => {
+      io.origins.forEach((origin, o) => {
+        const vals = new Array(3 + io.indUse.length);
+        vals[0] = rowCode;
+        vals[1] = label(rowCode);
+        vals[2] = origin;
+        const m = byOrigin[origin];
+        for (let j2 = 0; j2 < io.indUse.length; j2++) {
+          const v = m[i][j2];
+          if (v !== 0) vals[3 + j2] = v;
+        }
+        const row = ws.getRow(RAW0 + i * RAW_STRIDE + o);
+        row.values = vals;
+        row.getCell(1).font = { bold: o === 0, size: 8 };
+        row.getCell(2).font = { size: 8, color: { argb: GREY } };
+        row.getCell(3).font = { bold: origin === 'EU27', size: 8 };
+      });
+    });
+  }
+
+  /* ---------- FIGARO exports raw (extra-EU exports by destination) ---------- */
+  const ex = wb.addWorksheet('FIGARO exports raw', { properties: { tabColor: { argb: GREY } } });
+  ex.getCell('A1').value =
+    'FIGARO raw extra-EU exports — EU-27 exports by supplying industry × destination partner, € million, split into deliveries to the ' +
+    "partners' intermediate use and to their final demand (figaro-global-flows.json, same naio_10_fcp_ii4 extract). " +
+    `The IO model sheet derives each industry's total extra-EU exports from the two ${YEAR} blocks by formula.`;
+  ex.getCell('A1').font = { size: 9, color: { argb: GREY } };
+  ex.getCell('A1').alignment = { wrapText: true };
+  ex.mergeCells(1, 1, 1, 14);
+  ex.getRow(1).height = 40;
+  ex.getColumn(1).width = 10;
+  ex.getColumn(2).width = 34;
+  for (let j = 0; j < glob.extra.length; j++) ex.getColumn(3 + j).width = 10;
+  const exDataRow = {}; // `${year}-${kind}` → first data row
+  {
+    let r = 3;
+    for (const yr of [...io.meta.years].sort().reverse()) {
+      for (const kind of ['int', 'fin']) {
+        ex.getCell(r, 1).value =
+          `${yr} · deliveries to partners' ${kind === 'int' ? 'intermediate use' : 'final demand'}`;
+        ex.getCell(r, 1).font = { bold: true, size: 10, color: { argb: NAVY } };
+        ex.getRow(r + 1).values = ['Industry', 'Label', ...glob.extra];
+        ex.getRow(r + 1).font = { bold: true, size: 8 };
+        exDataRow[`${yr}-${kind}`] = r + 2;
+        const block = glob.euExportsByIndustry[yr][kind];
+        inds.forEach((code, i) => {
+          const vals = new Array(2 + glob.extra.length);
+          vals[0] = code;
+          vals[1] = label(code);
+          for (let d = 0; d < glob.extra.length; d++) if (block[i][d] !== 0) vals[2 + d] = block[i][d];
+          ex.getRow(r + 2 + i).values = vals;
+          ex.getRow(r + 2 + i).getCell(1).font = { bold: true, size: 8 };
+          ex.getRow(r + 2 + i).getCell(2).font = { size: 8, color: { argb: GREY } };
+        });
+        r += 2 + inds.length + 2;
+      }
+    }
+  }
+  ex.views = [{ state: 'frozen', xSplit: 2, ySplit: 0 }];
+  const exLastCol = colLetter(2 + glob.extra.length); // last destination column
+
   /* ---------- 4 · IO model (per-industry accounts; formulas over Z sheets) ---------- */
   const im = wb.addWorksheet('IO model', { properties: { tabColor: { argb: TEAL } } });
   im.getCell('A1').value =
     `IO model — per-industry accounts, ${YEAR}, € million, EU-27 as one economy. ` +
-    'Output, value added and intermediate totals are formulas over the Z sheets; extra-EU exports are values from the FIGARO inter-country accounts ' +
-    '(euExportsByIndustry, figaro-global-flows.json). The residual column checks column-based against row-based output — keep it near zero.';
+    'Output, value added and intermediate totals are formulas over the Z sheets (themselves derived from the FIGARO raw sheet); extra-EU exports ' +
+    'are formulas over the FIGARO exports raw sheet. The residual column checks column-based against row-based output — keep it near zero.';
   im.getCell('A1').font = { size: 9, color: { argb: GREY } };
   im.getCell('A1').alignment = { wrapText: true };
   im.mergeCells('A1:N1');
@@ -595,7 +699,12 @@ async function main() {
       { formula: `IF(D${r}=0,0,F${r}/D${r})`, result: x[j] > 0 ? vaAll / x[j] : 0 },
       { formula: `SUM('Z domestic'!C${r}:${zLast}${r})`, result: rowInter },
       { formula: `SUM('Z domestic'!${fdFirst}${r}:${fdLast}${r})`, result: rowFd },
-      exportsTotal[j],
+      {
+        formula:
+          `SUM('FIGARO exports raw'!C${exDataRow[`${YEAR}-int`] + j}:${exLastCol}${exDataRow[`${YEAR}-int`] + j})` +
+          `+SUM('FIGARO exports raw'!C${exDataRow[`${YEAR}-fin`] + j}:${exLastCol}${exDataRow[`${YEAR}-fin`] + j})`,
+        result: exportsTotal[j],
+      },
       { formula: `K${r}+L${r}+M${r}`, result: rowInter + rowFd + exportsTotal[j] },
       { formula: `IF(D${r}=0,0,100*(N${r}-D${r})/D${r})`, result: x[j] > 0 ? (100 * (rowOut[j] - x[j])) / x[j] : 0 },
     ];
@@ -609,18 +718,23 @@ async function main() {
     for (let r = IM0; r < IM0 + N; r++) im.getCell(r, c).numFmt = c === 10 ? '0.0000' : '#,##0.0';
   for (let r = IM0; r < IM0 + N; r++) im.getCell(r, 15).numFmt = '0.000';
 
-  /* ---------- 5–7 · Z matrices (values) ---------- */
+  /* ---------- 5–7 · Z matrices — DERIVED by formula from the raw sheet ---------- */
   matrixSheet('Z total', NAVY, io.indAva, io.indUse, {
-    corner: `Use matrix, ALL origins summed — ${YEAR}, € million. Rows: 64 industries + 6 VA/adjustment rows (a row is TOTAL supply of that product to EU-27 use, domestic + imported). Columns: 64 industries + 5 final-demand categories. Source: ${io.meta.dataset}.`,
-    values: ZT, numFmt: '#,##0.0',
+    corner: `Use matrix, ALL origins summed — ${YEAR}, € million. Rows: 64 industries + 6 VA/adjustment rows (a row is TOTAL supply of that product to EU-27 use, domestic + imported). Columns: 64 industries + 5 final-demand categories. DERIVED: each cell sums the 24 origin rows of the FIGARO raw ${YEAR} sheet.`,
+    formula: (i, j) =>
+      `SUM('${rawSheetName(YEAR)}'!${rawCol(j)}${rawBase(i)}:${rawCol(j)}${rawBase(i) + RAW_STRIDE - 1})`,
+    results: ZT, numFmt: '#,##0.0',
   });
   matrixSheet('Z domestic', NAVY, io.indAva, io.indUse, {
-    corner: `Intra-EU (domestic) block, origin EU27 incl. value-added rows — ${YEAR}, € million.`,
-    values: ZD, numFmt: '#,##0.0',
+    corner: `Intra-EU (domestic) block, origin EU27 incl. value-added rows — ${YEAR}, € million. DERIVED: each cell references the EU27 origin row of the FIGARO raw ${YEAR} sheet.`,
+    formula: (i, j) => `0+'${rawSheetName(YEAR)}'!${rawCol(j)}${rawBase(i)}`,
+    results: ZD, numFmt: '#,##0.0',
   });
   matrixSheet('Z imported', NAVY, inds, io.indUse, {
-    corner: `Extra-EU (imported) block, 23 partner areas summed — ${YEAR}, € million. Value-added rows are zero by construction and omitted.`,
-    values: ZM, numFmt: '#,##0.0',
+    corner: `Extra-EU (imported) block, 23 partner areas summed — ${YEAR}, € million. Value-added rows are zero by construction and omitted. DERIVED: each cell sums the 23 partner-origin rows of the FIGARO raw ${YEAR} sheet.`,
+    formula: (i, j) =>
+      `SUM('${rawSheetName(YEAR)}'!${rawCol(j)}${rawBase(i) + 1}:${rawCol(j)}${rawBase(i) + RAW_STRIDE - 1})`,
+    results: ZM, numFmt: '#,##0.0',
   });
 
   /* ---------- 8–9 · coefficient matrices (formulas) ---------- */

@@ -101,14 +101,15 @@ export default function TradeFlowsPage() {
             <a
               href="/data/trade-flows-io-model-masterfile.xlsx"
               download
-              title="28 sheets — Read me · Dashboard (formula-driven KPIs and aggregations) · Figures (trade balance, dependency map, import content) · Methodology & derivations · Method figure (the model as one diagram) · Concepts (plain-language glossary) · IO model (output, value added, exports, balance checks) · Z total / Z domestic / Z imported use matrices · A domestic / A import coefficient matrices · I minus A · Leontief inverse (live MINVERSE) · Import requirements (live MMULT) · Multipliers & content · Trade backbone · FIGARO partners · Foreign value added · Imported inputs · Critical materials · Product dependencies · Strategic dependencies · Energy dependency · Risk map · Critical inputs · Sources · Change log"
+              title="31 sheets — Read me · Dashboard (formula-driven KPIs and aggregations) · Figures (native charts: trade balance, dependency map, import content) · Methodology & derivations · Method figure (the model as one diagram) · Concepts (plain-language glossary) · FIGARO raw 2023 / 2022 + exports raw (the full embedded dataset) · IO model (output, value added, exports, balance checks) · Z total / Z domestic / Z imported use matrices (derived from the raw sheets by formula) · A domestic / A import coefficient matrices · I minus A · Leontief inverse (live MINVERSE) · Import requirements (live MMULT) · Multipliers & content · Trade backbone · FIGARO partners · Foreign value added · Imported inputs · Critical materials · Product dependencies · Strategic dependencies · Energy dependency · Risk map · Critical inputs · Sources · Change log"
               className="inline-flex items-center gap-2 rounded-lg border border-primary bg-white px-4 py-2 text-sm font-semibold text-primary shadow-sm transition hover:bg-surface-blue dark:bg-transparent dark:hover:bg-primary/15"
             >
               ⬇ IO-model masterfile v1 (.xlsx)
             </a>
             <span className="text-[12px] text-grey-500 dark:text-[var(--mh-muted)]">
-              Handover ({SHEET_NAMES.length} sheets): the result tables. Masterfile (28 sheets): the
-              full input–output model as live formulas — Z matrices, coefficients, Leontief inverse,
+              Handover ({SHEET_NAMES.length} sheets): the result tables. Masterfile (31 sheets): the
+              full FIGARO raw dataset (both years) with the entire input–output model derived from it
+              as live formulas — Z matrices, coefficients, Leontief inverse,
               multipliers, dashboard, native charts generated from the sheet data plus a method
               diagram, a plain-language concepts glossary, every curated register, sources and a
               change log — rebuilt by{' '}
