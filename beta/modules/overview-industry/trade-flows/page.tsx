@@ -101,15 +101,16 @@ export default function TradeFlowsPage() {
             <a
               href="/data/trade-flows-io-model-masterfile.xlsx"
               download
-              title="25 sheets — Read me · Dashboard (formula-driven KPIs and aggregations) · Methodology & derivations · IO model (output, value added, exports, balance checks) · Z total / Z domestic / Z imported use matrices · A domestic / A import coefficient matrices · I minus A · Leontief inverse (live MINVERSE) · Import requirements (live MMULT) · Multipliers & content · Trade backbone · FIGARO partners · Foreign value added · Imported inputs · Critical materials · Product dependencies · Strategic dependencies · Energy dependency · Risk map · Critical inputs · Sources · Change log"
+              title="28 sheets — Read me · Dashboard (formula-driven KPIs and aggregations) · Figures (trade balance, dependency map, import content) · Methodology & derivations · Method figure (the model as one diagram) · Concepts (plain-language glossary) · IO model (output, value added, exports, balance checks) · Z total / Z domestic / Z imported use matrices · A domestic / A import coefficient matrices · I minus A · Leontief inverse (live MINVERSE) · Import requirements (live MMULT) · Multipliers & content · Trade backbone · FIGARO partners · Foreign value added · Imported inputs · Critical materials · Product dependencies · Strategic dependencies · Energy dependency · Risk map · Critical inputs · Sources · Change log"
               className="inline-flex items-center gap-2 rounded-lg border border-primary bg-white px-4 py-2 text-sm font-semibold text-primary shadow-sm transition hover:bg-surface-blue dark:bg-transparent dark:hover:bg-primary/15"
             >
               ⬇ IO-model masterfile v1 (.xlsx)
             </a>
             <span className="text-[12px] text-grey-500 dark:text-[var(--mh-muted)]">
-              Handover ({SHEET_NAMES.length} sheets): the result tables. Masterfile (25 sheets): the
+              Handover ({SHEET_NAMES.length} sheets): the result tables. Masterfile (28 sheets): the
               full input–output model as live formulas — Z matrices, coefficients, Leontief inverse,
-              multipliers, dashboard, every curated register, sources and a change log — rebuilt by{' '}
+              multipliers, dashboard, rendered figures and a method diagram, a plain-language
+              concepts glossary, every curated register, sources and a change log — rebuilt by{' '}
               <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1 text-[11px]">
                 scripts/build-trade-flows-io-model-workbook.mjs
               </code>

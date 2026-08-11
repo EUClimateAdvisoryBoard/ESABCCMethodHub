@@ -72,6 +72,13 @@ const require = createRequire(import.meta.url);
 const ts = require('typescript');
 const ExcelJS = require('exceljs');
 
+import {
+  renderMethodFigure,
+  renderBalanceFigure,
+  renderRiskMapFigure,
+  renderImportContentFigure,
+} from './trade-flows-workbook-figures.mjs';
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MODULE_DIR = join(ROOT, 'beta/modules/overview-industry/trade-flows');
 const OUT_PATH = join(ROOT, 'public/data/trade-flows-io-model-masterfile.xlsx');
@@ -401,7 +408,7 @@ async function main() {
     ['How to make changes', '1) Edit the underlying cell (Z sheets, Trade backbone, or a curated register). 2) Let Excel recalculate (F9 / on open). 3) Record the edit in the Change log sheet (date, cell, old → new, reason, source). 4) For changes that should persist, carry them back to the repository — the canonical data lives in trade-data.ts / the generated extracts, and this file is regenerated from them; a hand-edited copy of this workbook is a working copy, not the source of truth.'],
     ['Model scope', `Reference year ${YEAR}; EU-27 treated as one economy ("imported" = from outside the EU). 64 A*64 industries (the whole economy, not only manufacturing — a manufacturing-only model would misstate the chains through energy, mining and services). € million, current basic prices. Matrices condensed from Eurostat FIGARO naio_10_fcp_ii4 (~11 M cells) by scripts/fetch-figaro-io-dataset.mjs; aggregation choices are documented in that script's header.`],
     ['Three data layers', 'Layer 1 — trade backbone: ext_tec01, all 24 Section C divisions, 2023 + 2024, enterprise attribution. Layer 2 — input–output: the FIGARO matrices modelled here, plus the published application datasets (use-table input mixes, import origins, export destinations, foreign value added). Layer 3 — curated dependency registers: EC/JRC critical raw materials, SWD(2021) 352 strategic families, manufactured-product dependencies, energy dependency — "as reported by <source>", NOT derivable from official statistics and never arithmetically combined with the statistical layers.'],
-    ['Sheet map', 'Dashboard → Methodology → IO model → Z total / Z domestic / Z imported → A domestic / A import → I minus A → Leontief inverse → Import requirements → Multipliers → Trade backbone → FIGARO partners → Foreign value added → Imported inputs → Critical materials → Product dependencies → Strategic dependencies → Energy dependency → Risk map → Critical inputs → Sources → Change log. The Methodology sheet states, for every derived sheet, the formula it implements and the exact cell references.'],
+    ['Sheet map', 'Dashboard → Figures (rendered charts: trade balance, dependency map, import content) → Methodology → Method figure (the model as one diagram) → Concepts (plain-language glossary: what an IO table is, what the Leontief inverse does, …) → IO model → Z total / Z domestic / Z imported → A domestic / A import → I minus A → Leontief inverse → Import requirements → Multipliers → Trade backbone → FIGARO partners → Foreign value added → Imported inputs → Critical materials → Product dependencies → Strategic dependencies → Energy dependency → Risk map → Critical inputs → Sources → Change log. The Methodology sheet states, for every derived sheet, the formula it implements and the exact cell references. The figures are build-time snapshots; the tables stay live.'],
     ['Reproducible', 'node scripts/build-trade-flows-io-model-workbook.mjs rebuilds this file. Upstream: node scripts/fetch-figaro-io-dataset.mjs (FIGARO matrices), node scripts/fetch-trade-flows-io-data.mjs (backbone + published IO layers). Curated registers: beta/modules/overview-industry/trade-flows/trade-data.ts.'],
     ['Live module', '/beta/overview-industry/trade-flows on the MethodHub — same data, with the FIGARO table viewer and analysis dashboard at /trade-flows/figaro.'],
   ];
@@ -418,6 +425,9 @@ async function main() {
 
   /* ---------- 2 · Dashboard (all formulas — filled in after the data sheets exist) ---------- */
   const dash = wb.addWorksheet('Dashboard', { properties: { tabColor: { argb: TEAL } } });
+
+  /* ---------- 3 · Figures (rendered charts — filled in at the end) ---------- */
+  const figs = wb.addWorksheet('Figures', { properties: { tabColor: { argb: TEAL } } });
 
   /* ---------- 3 · Methodology ---------- */
   const me = wb.addWorksheet('Methodology', { properties: { tabColor: { argb: NAVY } } });
@@ -456,6 +466,95 @@ async function main() {
   me.getCell('A1').value = 'Methodology & derivations — how every number in this workbook is computed';
   me.getCell('A1').font = { bold: true, size: 13, color: { argb: NAVY } };
   me.mergeCells('A1:B1');
+
+  /* ---------- Method figure (diagram — image embedded at the end) ---------- */
+  const mf = wb.addWorksheet('Method figure', { properties: { tabColor: { argb: NAVY } } });
+
+  /* ---------- Concepts — plain-language glossary ---------- */
+  const co = wb.addWorksheet('Concepts', { properties: { tabColor: { argb: NAVY } } });
+  co.columns = [
+    { header: 'Term', key: 'term', width: 34 },
+    { header: 'Plain-language explanation', key: 'text', width: 120 },
+    { header: 'Where it lives in this workbook', key: 'where', width: 46 },
+  ];
+  const CONCEPTS = [
+    ['Input–output (IO) table',
+      'A grid of the whole economy. Each ROW is an industry as a seller (who buys its product); each COLUMN is the same industry as a buyer (what it must purchase to produce). Reading a column down gives that industry\'s complete shopping list — its "recipe". Invented by Wassily Leontief in the 1930s (Nobel Prize 1973); today every EU national accounts system publishes one.',
+      'Z total / Z domestic / Z imported'],
+    ['Use table (at basic prices)',
+      'The half of the IO framework used here: what each industry USES as inputs, valued at the prices producers actually receive (basic prices — before trade margins, transport margins and product taxes are stacked on top). Its counterpart, the supply table, records who makes what; Eurostat balances the two before publication.',
+      'Z sheets; the published mixes on "Imported inputs"'],
+    ['Intermediate consumption / intermediate demand',
+      'Goods and services bought by one industry and USED UP making something else — crude oil into a refinery, steel into a car, electricity into a smelter. This is what the Z matrix contains. It is the opposite of final demand: intermediate purchases stay inside the production system.',
+      'Z sheets; "IO model" columns E and K'],
+    ['Final demand (f)',
+      'Where output leaves the production system for good: household consumption, government consumption, non-profit consumption, investment (gross fixed capital formation) and inventory changes. In this EU-27 account, extra-EU exports are a sixth destination, held in their own column on the IO model sheet.',
+      'Z sheets, last 5 columns; exports on "IO model" col M'],
+    ['Gross output (x)',
+      'Everything an industry produces in a year, in euros. Two ways to count it must agree: everything the industry PAYS FOR (all inputs + all value added — the column sum) and everything it SELLS (intermediate deliveries + final demand + exports — the row sum). The IO model sheet computes both and shows the residual; if an edit makes them disagree, the edit broke the accounting.',
+      '"IO model" cols D and N, residual col O'],
+    ['Value added (v)',
+      'What is left of an industry\'s revenue after paying for inputs: wages (compensation of employees, D1), profits (gross operating surplus, B2A3G) and production taxes net of subsidies. Value added is what GDP sums. In the FIGARO account it occupies six extra rows under the 64 industry rows.',
+      '"Z domestic" rows 67–72; "IO model" cols F–I'],
+    ['Technical coefficient (a_ij)',
+      'The recipe per euro: how many cents of product i industry j needs to produce one euro of its own output. Computed by dividing every cell of the domestic Z matrix by the buying industry\'s output. The full 64×64 grid of these is the A matrix — the economy\'s complete recipe book.',
+      '"A domestic" (every cell a live division)'],
+    ['Import coefficient (m_ij)',
+      'The same recipe, but counting only inputs bought from OUTSIDE the EU: cents of imported product i per euro of industry j\'s output. Together, domestic coefficients + import coefficients + value added per euro sum to exactly 1 for every industry — every euro of output is fully accounted for.',
+      '"A import"'],
+    ['Leontief inverse (L = (I − A)⁻¹)',
+      'THE central object of IO modelling. A alone only gives the DIRECT inputs. But the steel in a car needed iron ore; the ore needed mining machinery; the machinery needed steel again — an infinite ripple (I + A + A² + A³ + …). The Leontief inverse sums that entire infinite chain in one matrix operation: cell (i,j) says how much TOTAL output of industry i is needed, directly and indirectly, per euro of final demand for industry j. In this workbook it is one live MINVERSE formula, so it re-solves itself whenever A changes. ("Leontief reserve" is a common mishearing — the term is Leontief INVERSE, after Wassily Leontief.)',
+      '"Leontief inverse" (one MINVERSE array formula)'],
+    ['Output multiplier',
+      'The column sum of the Leontief inverse: total euros of economy-wide output triggered by one euro of final demand for an industry\'s product. A multiplier of 1.6 means one euro of car demand generates €1.60 of production across the whole EU economy — the car itself plus €0.60 of upstream deliveries.',
+      '"Multipliers" col D; top-10 on the Dashboard'],
+    ['Import content of final demand',
+      'The column sum of the import-requirements matrix M = A_import · L: cents of every euro of final demand that end up as extra-EU imports, counting both direct imports and imports hidden deep in the domestic supply chain. Refined petroleum is the extreme case — most of a euro spent on it leaks abroad as crude.',
+      '"Import requirements", "Multipliers" col E'],
+    ['Value-added content of final demand',
+      'The mirror image: cents of every euro of final demand that become EU wages, profits and taxes (v′ · L). Import content + VA content = 100 % exactly, for every industry — the workbook carries this check and the Dashboard surfaces its worst deviation.',
+      '"Multipliers" cols F–G'],
+    ['Imports embodied in exports',
+      'Applying the import content to extra-EU exports: how much of what the EU sells abroad was itself imported first. This is the workbook\'s own derivation of the idea behind "foreign value added in exports".',
+      '"Multipliers" cols H–J'],
+    ['Foreign value added (FVA)',
+      'Eurostat\'s published measure of the same phenomenon: the euros of NON-EU value added embedded in EU exports, computed from the full 46-country FIGARO model. Close to, but not identical with, this workbook\'s import content: import content counts gross imported inputs (which contain the partners\' own imports and even re-imported EU value), FVA counts only genuinely foreign value added. A few percentage points of difference is the method, not an error — e.g. refining: model 63.7 % vs published FVA 64.2 %.',
+      '"Foreign value added" (published); comparison in "Multipliers" cols K–L'],
+    ['EU-27 as one economy',
+      'All 27 member states are merged into a single economy: intra-EU trade nets out, "imported" always means from OUTSIDE the EU, and the 23 named partner areas (plus a rest-of-world block) supply the imported layer. Taiwan is not separately named in FIGARO — which is why the semiconductor dependency appears only in the curated registers.',
+      'All model sheets; caveat in Methodology §11'],
+    ['Enterprise vs product attribution',
+      'The trade backbone (ext_tec01) books a trade flow to the NACE code of the COMPANY that trades; the IO layer follows the PRODUCT. Refiners import crude, so division C19 shows ~€218 bn of imports in the enterprise view — but crude is a mining product, so the product view shows only ~€62 bn, and the crude reappears in the model as mining inputs INTO refining. Neither is wrong; they answer different questions.',
+      'Methodology §8; "Trade backbone" vs "FIGARO partners"'],
+    ['NACE / CPA / A*64',
+      'NACE Rev. 2 classifies INDUSTRIES (C24 = basic metals); CPA classifies PRODUCTS on the same skeleton. A*64 is the 64-industry aggregation national accounts publish (some divisions only as groups: C10-12, C13-15, C31_32). Section letters: A agriculture, B mining, C manufacturing, D energy … — the model covers the whole economy because manufacturing\'s chains run through mining, energy and services.',
+      'Row/column codes on every matrix sheet'],
+    ['FIGARO',
+      'Eurostat\'s "Full International and Global Accounts for Research in input–Output analysis": inter-country supply-use and IO tables linking the EU-27 and 22 partner economies plus rest-of-world, published annually (July, data to t−2). The Z matrices here are the EU-27 condensation of naio_10_fcp_ii4 (~11 million cells), rebuilt by scripts/fetch-figaro-io-dataset.mjs.',
+      'Meta note on "Z total"; Sources sheet'],
+    ['Import reliance (IR)',
+      'The EC criticality-methodology measure used in the curated registers: IR = (imports − exports) ÷ (domestic production + imports − exports). It nets out re-exports, so it can differ from simple customs shares. 100 % means the EU produces essentially none of the material itself.',
+      '"Critical materials", "Risk map" x-axis'],
+    ['Supplier concentration',
+      'The largest single supplier\'s share of EU supply of a material or product — the y-axis of the dependency map. A first-moment proxy for the Herfindahl-Hirschman index: it understates risk when suppliers two and three are also non-diversified, and says nothing about substitutability, stocks or recyclability.',
+      '"Risk map" y-axis; Methodology §10'],
+    ['Proportionality assumption',
+      'The one strong assumption behind every IO result: each industry is assumed to use the same recipe for every euro of output — no economies of scale, no input substitution, one national recipe per industry. IO figures are therefore modelled statistics, not raw observations.',
+      'Methodology §11'],
+    ['Current prices',
+      'All values are euros of the year they describe. Year-on-year changes mix price and volume effects: most of the 2023→2024 fall in the import bill is energy prices coming down, not fewer barrels.',
+      '"Trade backbone" (2023 vs 2024)'],
+    ['CBAM / CRMA',
+      'The policy front lines this module feeds: the Carbon Border Adjustment Mechanism (imports of cement, steel, aluminium, fertilisers, electricity, hydrogen pay a carbon price at the border) and the Critical Raw Materials Act, Reg. (EU) 2024/1252 (34 critical materials, 17 of them strategic, with 2030 extraction/processing/recycling benchmarks). The dependency registers use the CRMA\'s legal Annex I/II designations, not editorial ratings.',
+      '"Critical materials", "Strategic dependencies"'],
+  ];
+  CONCEPTS.forEach(([term, text, where]) => {
+    const row = co.addRow({ term, text, where });
+    row.getCell(1).font = { bold: true, size: 10, color: { argb: NAVY } };
+    row.getCell(3).font = { size: 9, color: { argb: GREY } };
+  });
+  styleHeaderRow(co, NAVY);
+  wrapAll(co);
 
   /* ---------- 4 · IO model (per-industry accounts; formulas over Z sheets) ---------- */
   const im = wb.addWorksheet('IO model', { properties: { tabColor: { argb: TEAL } } });
@@ -937,6 +1036,79 @@ async function main() {
 
   /* ---------- 2 (deferred) · Dashboard ---------- */
   buildDashboard();
+
+  /* ---------- deferred · Figures + Method figure (rendered images) ---------- */
+  const addPng = (ws, buffer, row, wPx, hPx, caption) => {
+    if (caption) {
+      ws.getCell(row, 1).value = caption;
+      ws.getCell(row, 1).font = { bold: true, size: 11, color: { argb: NAVY } };
+    }
+    const id = wb.addImage({ buffer, extension: 'png' });
+    ws.addImage(id, {
+      tl: { col: 0, row: row + (caption ? 1 : 0) },
+      ext: { width: wPx, height: hPx },
+      editAs: 'oneCell',
+    });
+    // rows are ~20 px at default height; reserve enough plus padding
+    return row + (caption ? 1 : 0) + Math.ceil(hPx / 20) + 3;
+  };
+
+  figs.getCell('A1').value =
+    'Figures — rendered at build time from the sheets named in each caption. They are SNAPSHOTS (Excel images cannot recalculate); ' +
+    'the tables next to them stay live. Regenerate after edits: node scripts/build-trade-flows-io-model-workbook.mjs. ' +
+    'Chart colours are colour-vision-deficiency checked (teal = surplus, red = deficit; blue = raw material, orange = product).';
+  figs.getCell('A1').font = { size: 9, color: { argb: GREY } };
+  figs.getCell('A1').alignment = { wrapText: true };
+  figs.mergeCells('A1:L1');
+  figs.getRow(1).height = 40;
+  let figRow = 3;
+  figRow = addPng(
+    figs,
+    renderBalanceFigure(
+      td.DIVISION_TRADE.map((d) => ({
+        code: d.code,
+        label: d.label,
+        balance: d.flows[YEAR].expExt - d.flows[YEAR].impExt,
+      })),
+      YEAR,
+    ),
+    figRow, 1400, (86 + 24 * 30 + 56),
+    'Figure 1 · Extra-EU trade balance by division (data: Trade backbone sheet)',
+  );
+  figRow = addPng(
+    figs,
+    renderRiskMapFigure([
+      ...td.RISK_HOTSPOTS.map((h) => ({
+        label: h.label, kind: 'Raw material',
+        ir: Math.round(h.importReliance * 100), conc: Math.round(h.supplierConcentration * 100),
+        supplier: h.supplier,
+      })),
+      ...td.productMapPoints().map((h) => ({
+        label: h.label, kind: 'Product',
+        ir: Math.round(h.importReliance * 100), conc: Math.round(h.supplierConcentration * 100),
+        supplier: h.supplier,
+      })),
+    ]),
+    figRow, 1280, 900,
+    'Figure 2 · The import-dependency map (data: Risk map sheet)',
+  );
+  const topImport = inds
+    .map((code, j) => ({ code, label: label(code), value: 100 * importContent[j] }))
+    .sort((a, b2) => b2.value - a.value)
+    .slice(0, 12);
+  addPng(
+    figs,
+    renderImportContentFigure(topImport, YEAR),
+    figRow, 1280, (86 + 12 * 34 + 46),
+    'Figure 3 · Import content of final demand — top 12 industries (data: Multipliers sheet)',
+  );
+
+  mf.getCell('A1').value =
+    'The method, as one picture — read with the Methodology and Concepts sheets. Every box names the workbook sheet that holds that step as live formulas.';
+  mf.getCell('A1').font = { size: 9, color: { argb: GREY } };
+  mf.getCell('A1').alignment = { wrapText: true };
+  mf.mergeCells('A1:L1');
+  addPng(mf, renderMethodFigure(), 3, 1500, 990, 'Method figure · From the FIGARO table to every derived number');
 
   function buildDashboard() {
     dash.columns = [{ width: 46 }, { width: 16 }, { width: 16 }, { width: 16 }, { width: 16 }, { width: 60 }];
