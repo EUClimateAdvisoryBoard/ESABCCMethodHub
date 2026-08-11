@@ -1,24 +1,24 @@
 {
   "date": "2026-08-11",
-  "generatedAt": "2026-08-11T05:57:47.578Z",
+  "generatedAt": "2026-08-11T11:47:23.493Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 11 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "When extreme heat threatens Europe&#039;s nuclear power",
-      "summary": "Warm rivers and low water levels are forcing nuclear power plants to reduce output across Europe. Over a year, the losses are minimal, but on critical days the loss of power has consequences for grids and prices.",
+      "headline": "AI’s potential climate benefits outweighed by role in boosting fossil fuels, study finds",
+      "summary": "&lt;p&gt;Modelling finds AI-driven productivity gains in coal, oil and gas enable more emissions than applications in renewables avoid&lt;/p&gt;&lt;p&gt;AI-driven productivity gains enable more planet-heating pollution from fossil fuels than they avoid from renewables, a &lt;a href=\"https://www.nature.com/articles/s44168-026-00411-0\"&gt;study&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Researchers modelled the technical potential for AI to boost clean power generation along with projections for how i",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Three-quarters of England in drought as summer’s fifth heatwave looms",
-      "summary": "&lt;p&gt;Four more regions given drought status, putting 27 million people under restrictions on water use&lt;/p&gt;&lt;p&gt;Almost three-quarters of England is now in drought, as much of Europe braces for its fifth climate crisis-driven heatwave this summer.&lt;/p&gt;&lt;p&gt;Four more regions of England have officially been declared to be in drought: the East Midlands, Lincolnshire and Northamptonshire, Kent and East Sussex, and Solent and the South Downs.&lt;/p&gt; &lt;a href=\"https://www.the",
+      "headline": "Drought, water rationing and dry rivers: our water crisis is here | Peter Gleick",
+      "summary": "&lt;p&gt;It doesn’t have to be this way. We know what needs to be done&lt;/p&gt;&lt;p&gt;Disturbing news about our water resources is now constant and unrelenting. In just the past few weeks, media have reported that Puerto Rico is &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/13/puerto-rico-water-shortages\"&gt;suffering a deep water crisis&lt;/a&gt; as severe drought has cut water supplies to thousands. The &lt;a href=\"https://www.theguardian.com/commentisfree/2026/aug/05/europe-rive",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Trump says future of 'weaponization' fund is up to Blanche - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2Jva1gzS2MwTnNvRVRFWWk5SUF4aXpaYy1RcEhUTjdFQ2dYbEsxOHZKSTU4czYydE9JNEJvd0k1TkxNWnZudmVJaXU0Yl9sMUJIblJ0bm5tOC1EMDlzUHVLc1doYW1zQ2s3ZGVRNk55Q25adEx4OHo0MHhKXzVFQkUzUExaRWJJVkVhUllVQmk0ZjdZTXdMRFhGRQ?oc=5\" target=\"_blank\"&gt;Trump says future of 'weaponization' fund is up to Blanche&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Wall Street giants hand Nvidia $500bn to fund boom in AI projects",
+      "summary": "The money will be used to develop new data centres to house, operate, and cool miles of stacked computer chips that process AI data and actions.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,20 +34,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "When extreme heat threatens Europe&#039;s nuclear power",
-          "link": "https://www.dw.com/en/when-extreme-heat-threatens-europe-s-nuclear-power/a-78297778?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Warm rivers and low water levels are forcing nuclear power plants to reduce output across Europe. Over a year, the losses are minimal, but on critical days the loss of power has consequences for grids and prices.",
-          "published": "2026-08-10T07:04:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "Who will be able to see the solar eclipse?",
-          "link": "https://www.bbc.co.uk/news/videos/c78gleevweno?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "What you need to know about the UK and Europe's best eclipse in 27 years.",
-          "published": "2026-08-10T18:20:02.000Z",
-          "score": 9
+          "title": "AI’s potential climate benefits outweighed by role in boosting fossil fuels, study finds",
+          "link": "https://www.theguardian.com/technology/2026/aug/11/ai-will-do-more-to-boost-fossil-fuel-production-than-green-energy",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Modelling finds AI-driven productivity gains in coal, oil and gas enable more emissions than applications in renewables avoid&lt;/p&gt;&lt;p&gt;AI-driven productivity gains enable more planet-heating pollution from fossil fuels than they avoid from renewables, a &lt;a href=\"https://www.nature.com/articles/s44168-026-00411-0\"&gt;study&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Researchers modelled the technical potential for AI to boost clean power generation along with projections for how i",
+          "published": "2026-08-11T09:15:45.000Z",
+          "score": 7
         },
         {
           "title": "Tuesday briefing: To drill or not to drill – Burnham’s first big climate test",
@@ -70,7 +62,15 @@
           "link": "https://www.bbc.co.uk/news/articles/cwyrk522pxro?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Up to 95% of the Sun will slowly disappear behind the Moon in the most dramatic eclipse visible from the UK since August 1999.",
-          "published": "2026-08-10T15:29:51.000Z",
+          "published": "2026-08-11T11:17:16.000Z",
+          "score": 7
+        },
+        {
+          "title": "Isle of Man 'very well placed' for solar eclipse",
+          "link": "https://www.bbc.co.uk/news/articles/c89n5lxp84wo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The island is particularly well placed to see the celestial spectacle, sitting just outside the path of totality.",
+          "published": "2026-08-11T05:13:46.000Z",
           "score": 7
         }
       ]
@@ -80,12 +80,28 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Three-quarters of England in drought as summer’s fifth heatwave looms",
-          "link": "https://www.theguardian.com/uk-news/2026/aug/10/uk-temperatures-heatwave-summer-met-office-warning",
+          "title": "Drought, water rationing and dry rivers: our water crisis is here | Peter Gleick",
+          "link": "https://www.theguardian.com/commentisfree/2026/aug/11/drought-water-climate-crisis",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Four more regions given drought status, putting 27 million people under restrictions on water use&lt;/p&gt;&lt;p&gt;Almost three-quarters of England is now in drought, as much of Europe braces for its fifth climate crisis-driven heatwave this summer.&lt;/p&gt;&lt;p&gt;Four more regions of England have officially been declared to be in drought: the East Midlands, Lincolnshire and Northamptonshire, Kent and East Sussex, and Solent and the South Downs.&lt;/p&gt; &lt;a href=\"https://www.the",
-          "published": "2026-08-10T16:32:53.000Z",
+          "description": "&lt;p&gt;It doesn’t have to be this way. We know what needs to be done&lt;/p&gt;&lt;p&gt;Disturbing news about our water resources is now constant and unrelenting. In just the past few weeks, media have reported that Puerto Rico is &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/13/puerto-rico-water-shortages\"&gt;suffering a deep water crisis&lt;/a&gt; as severe drought has cut water supplies to thousands. The &lt;a href=\"https://www.theguardian.com/commentisfree/2026/aug/05/europe-rive",
+          "published": "2026-08-11T11:00:01.000Z",
           "score": 9
+        },
+        {
+          "title": "How one German city is preparing for climate extremes",
+          "link": "https://www.dw.com/en/how-one-german-city-is-preparing-for-climate-extremes/a-78278373?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Western Europe has recorded its hottest-ever June and July, and extreme weather from wildfires to storms is here to stay. How can we adapt to what seems to be the new normal? Cities like Kiel are trying new ideas.",
+          "published": "2026-08-11T07:25:00.000Z",
+          "score": 9
+        },
+        {
+          "title": "Reader Q&amp;A: ask our reporters anything about fossil fuel profits and the climate crisis",
+          "link": "https://www.theguardian.com/environment/live/2026/aug/11/reader-qa-ask-our-reporters-anything-about-fossil-fuel-profits-and-the-climate-crisis",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Last week reporters Jillian Ambrose and Damian Carrington published a piece which revealed that biggest oil firms made $93bn in profits in three months amid the war in Iran and the climate crisis. They will be online at 2pm BST to discuss their story and any other questions you might have &lt;/p&gt;&lt;p&gt;&lt;strong&gt;Ask a question: log in or sign up &lt;/strong&gt;&lt;a href=\"https://profile.theguardian.com/signin\"&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&l",
+          "published": "2026-08-11T10:41:53.000Z",
+          "score": 7
         },
         {
           "title": "‘National priority’ to equip UK firefighters amid growing wildfire threat",
@@ -102,22 +118,6 @@
           "description": "&lt;p&gt;Amid world pressure from heatwaves and fertiliser shortages, billionaire’s business has invested in circular farming and biomethane&lt;/p&gt;&lt;p&gt;There is a distinctive smell of cow manure in the air at the &lt;a href=\"https://www.theguardian.com/news/2023/apr/25/duke-of-westminster-hugh-grosvenor-profile\"&gt;Duke of Westminster&lt;/a&gt;’s dairy farm near Chester. It is a world away from the collection of grand West End properties controlled by the duke that form the backbone of hi",
           "published": "2026-08-10T14:00:46.000Z",
           "score": 7
-        },
-        {
-          "title": "'We've had a lot of close calls': Canada wildfire evacuees wonder if they still have homes",
-          "link": "https://www.bbc.co.uk/news/articles/cx2lwv032j9o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "More than 12,000 people have been forced to evacuate and some homes have been lost after a wildfire tore through Canada's picturesque Okanagan region.",
-          "published": "2026-08-10T19:17:11.000Z",
-          "score": 7
-        },
-        {
-          "title": "'That fire came so fast': Wildfire rages in British Columbia",
-          "link": "https://www.bbc.co.uk/news/videos/cx2d4gg57eqo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Officials in British Columbia are still trying to determine how many homes were lost to the fire, which remains out of control as of Monday.",
-          "published": "2026-08-10T17:29:05.000Z",
-          "score": 7
         }
       ]
     },
@@ -126,19 +126,19 @@
       "title": "Green Finance & Investment",
       "items": [
         {
+          "title": "Wall Street giants hand Nvidia $500bn to fund boom in AI projects",
+          "link": "https://www.bbc.co.uk/news/articles/c78gr0jv0mdo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The money will be used to develop new data centres to house, operate, and cool miles of stacked computer chips that process AI data and actions.",
+          "published": "2026-08-11T08:44:52.000Z",
+          "score": 2
+        },
+        {
           "title": "Trump says future of 'weaponization' fund is up to Blanche - Reuters",
           "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2Jva1gzS2MwTnNvRVRFWWk5SUF4aXpaYy1RcEhUTjdFQ2dYbEsxOHZKSTU4czYydE9JNEJvd0k1TkxNWnZudmVJaXU0Yl9sMUJIblJ0bm5tOC1EMDlzUHVLc1doYW1zQ2s3ZGVRNk55Q25adEx4OHo0MHhKXzVFQkUzUExaRWJJVkVhUllVQmk0ZjdZTXdMRFhGRQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2Jva1gzS2MwTnNvRVRFWWk5SUF4aXpaYy1RcEhUTjdFQ2dYbEsxOHZKSTU4czYydE9JNEJvd0k1TkxNWnZudmVJaXU0Yl9sMUJIblJ0bm5tOC1EMDlzUHVLc1doYW1zQ2s3ZGVRNk55Q25adEx4OHo0MHhKXzVFQkUzUExaRWJJVkVhUllVQmk0ZjdZTXdMRFhGRQ?oc=5\" target=\"_blank\"&gt;Trump says future of 'weaponization' fund is up to Blanche&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-10T23:56:41.000Z",
-          "score": 2
-        },
-        {
-          "title": "South Korea to establish fund for semiconductor materials, parts and equipment, official says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcVRHZVRKcW90cHJRVDZLcEU4NTlTSVZhSy0yOTU2ZVI2SFdBQ0tNNUFSQXZ1LWRvWkRjT1pkdndpbkxFVFJZbDlaOFBDdVNIRDlCR2RkRC11VFV3UElNLWZBYVlTNTFXZWtIQ1RYZnV0UXp4YXNqbHRGSXpGYWloVjktTzBWM0owd2VQZUkzSmJ2SlY3bmVlZnVvN1BUQlZaVTUxRzJmblVRV0NuRlZZRUNrY1VQeklJV0JFUUdiYjBIYWozekFnRDNBOGFhVTUy?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcVRHZVRKcW90cHJRVDZLcEU4NTlTSVZhSy0yOTU2ZVI2SFdBQ0tNNUFSQXZ1LWRvWkRjT1pkdndpbkxFVFJZbDlaOFBDdVNIRDlCR2RkRC11VFV3UElNLWZBYVlTNTFXZWtIQ1RYZnV0UXp4YXNqbHRGSXpGYWloVjktTzBWM0owd2VQZUkzSmJ2SlY3bmVlZnVvN1BUQlZaVTUxRzJmblVRV0NuRlZZRUNrY1VQeklJV0JFUUdiYjBIYWozekFnRDNBOGFhVTUy?oc=5\" target=\"_blank\"&gt;South Korea to establish fund for semiconductor materials, parts and equipment, official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6",
-          "published": "2026-08-10T09:20:00.000Z",
+          "published": "2026-08-10T19:51:00.000Z",
           "score": 2
         },
         {
@@ -146,7 +146,15 @@
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdnZjclJ4ZTNzOU1TQllqMUJkMTRUWDVXakRfV21XQWpXWGg1OVlzYUhDV2RPSTlwQnhrVVhCZm5ZMWVVZmNPMUlPN2FVZ0RtOVBOTHNWRzZmRXRJYUh5bU00UW0yYjY2SC1jcEE2ekIxbHpyNTM1YzQ3TTdOaExTN3o0cnM2WTRsNExXVFVSN0wtclpxVDctZWl6Uk9FM2RMREIwbGV0Z3NhRW9Xa0VENUhFdGo4SV9sdHV2QXctSTJnVERCM2I1LQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdnZjclJ4ZTNzOU1TQllqMUJkMTRUWDVXakRfV21XQWpXWGg1OVlzYUhDV2RPSTlwQnhrVVhCZm5ZMWVVZmNPMUlPN2FVZ0RtOVBOTHNWRzZmRXRJYUh5bU00UW0yYjY2SC1jcEE2ekIxbHpyNTM1YzQ3TTdOaExTN3o0cnM2WTRsNExXVFVSN0wtclpxVDctZWl6Uk9FM2RMREIwbGV0Z3NhRW9Xa0VENUhFdGo4SV9sdHV2QXctSTJnVERCM2I1LQ?oc=5\" target=\"_blank\"&gt;South Korea to launch $3.5 billion chip fund, speed development of semiconductor hubs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-08-10T06:13:00.000Z",
+          "published": "2026-08-10T12:50:32.000Z",
+          "score": 2
+        },
+        {
+          "title": "US officials work to close supply chain gaps as foreign investment grows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTTRUWmpFNVJUbUl3c1FNTWU2T3ZnR3VNclhLQlBZSUx4aXJTb0lNc0RMNTc3VXdJX1RLMDc3QUJvSERPdmhERExKQzlSVWZSRng4WndTU1ZhZkh2NUc5S1IwVDYyLWhrUE5YNjdmYmhDdjVPV0tqekxGeVNEWERyY0t5WE5uYlM4QjJhQjZ3SGlORVhPWkdzS1NtVm05dDNOSTJkdkctTFVKNjN4ZXBXV1FCOU9hdkd4ZXd5dGdn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPTTRUWmpFNVJUbUl3c1FNTWU2T3ZnR3VNclhLQlBZSUx4aXJTb0lNc0RMNTc3VXdJX1RLMDc3QUJvSERPdmhERExKQzlSVWZSRng4WndTU1ZhZkh2NUc5S1IwVDYyLWhrUE5YNjdmYmhDdjVPV0tqekxGeVNEWERyY0t5WE5uYlM4QjJhQjZ3SGlORVhPWkdzS1NtVm05dDNOSTJkdkctTFVKNjN4ZXBXV1FCOU9hdkd4ZXd5dGdn?oc=5\" target=\"_blank\"&gt;US officials work to close supply chain gaps as foreign investment grows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-11T00:59:00.000Z",
           "score": 2
         }
       ]
@@ -178,14 +186,6 @@
           "score": 12
         },
         {
-          "title": "Estonia government loses parliament majority as two MPs defect - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPa1lGY1I4R1FyUWxORHRrcDhtUUIyMGRYbHVXSFIweGp0X2lZMTRRcWR2NEVqcDRxamZXNnpiN1c4V1FsTnJfOWRTZkFPamRsY1djUF9TdHBLc3BoLW9DQnQyNzh6T1NFbW00LUlrRTA0ZlFpUlJTNnYzQnhBOHJBV1BIaHdmYmh5X1ZZbHNqVDdmOW1GS0pZSThSREYzbXZHUXJj?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPa1lGY1I4R1FyUWxORHRrcDhtUUIyMGRYbHVXSFIweGp0X2lZMTRRcWR2NEVqcDRxamZXNnpiN1c4V1FsTnJfOWRTZkFPamRsY1djUF9TdHBLc3BoLW9DQnQyNzh6T1NFbW00LUlrRTA0ZlFpUlJTNnYzQnhBOHJBV1BIaHdmYmh5X1ZZbHNqVDdmOW1GS0pZSThSREYzbXZHUXJj?oc=5\" target=\"_blank\"&gt;Estonia government loses parliament majority as two MPs defect&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-10T06:30:00.000Z",
-          "score": 8
-        },
-        {
           "title": "Imperial Brands to cut thousands of jobs in U.S. and Europe, Bloomberg News reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUlZlclBDeVVPdWV4Q1FJeGF5T0d1cXNQQThiLXIxNVRoVmJTbUJvZThOMFNzVGs1dFBLTC1FaExpc2ZNM0tOaUU1ckUtZmhZcmdpazgzUGJtVFpNS0FJNE5FTS1McWwyanVGZXhaeFNYeEotOGNxUGdjQTM1UXBVa01PM2VQUjFoVWRMa2R6ZzAzTEJJeFpLMVVmaHVQall1SFBHOVZJMA?oc=5",
           "source": "Reuters World (via Google News)",
@@ -208,14 +208,22 @@
           "description": "Yabloko, Russia&#039;s only anti-war party, has been barred from September&#039;s parliamentary elections. The motion to bar Yabloko was filed by the nationalist pro-Kremlin party Rodina.",
           "published": "2026-08-10T20:56:00.000Z",
           "score": 6
+        },
+        {
+          "title": "New train service connects Finland and Sweden for first time in decades",
+          "link": "https://www.bbc.co.uk/news/articles/cx2lwpzz6qjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The service will enable rail travel from Portugal to Lapland - what is believed to be the longest train journey in Europe.",
+          "published": "2026-08-10T18:28:11.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 402,
-    "articlesLast24h": 169,
-    "afterDedup": 159,
+    "totalArticlesScanned": 404,
+    "articlesLast24h": 168,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
