@@ -17,7 +17,7 @@
  * white boxes beneath each card are its indicators — exactly the white progress
  * boxes of the report figures, but sourced from the assessment ledger.
  *
- * Grouping by act is what keeps the chart readable at this scale: 544 targets do
+ * Grouping by act is what keeps the chart readable at this scale: 356 targets do
  * not fit as free-standing cards, and an act is the unit the Policy Gap report
  * argues about anyway. Connectors therefore run between act groups: an act's
  * second-order group feeds its first-order group, which feeds the sector goal.

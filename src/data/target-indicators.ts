@@ -6,9 +6,11 @@
  * require, verbatim?"; this dataset answers the follow-up the Policy Gap report
  * needs: "and how do we measure whether it is being met?".
  *
- * One row per RELEVANT M·36 target — relevance being the register's own
- * transition lens, not a new judgement — assigned to one of three assessment
- * routes:
+ * One row per RELEVANT, UNFLAGGED M·36 target — the register's own transition
+ * lens, minus the rows the August 2026 review pass flagged "revise target"
+ * (likely not targets under the reviewers' NT-7..NT-15 rules). Both calls are
+ * inherited from the register, not re-made here. Each in-scope target is
+ * assigned to one of three assessment routes:
  *
  *   'series'    a curated MethodHub time series already measures the target;
  *   'dataset'   no curated series yet, but the indicator is specified against a
@@ -18,9 +20,9 @@
  *               own deadline.
  *
  * There is deliberately no fourth "not assessed" route: the build script
- * (scripts/build-target-indicators.mjs) exits non-zero if any relevant target
- * ends without one, which is what makes the claim "every relevant target was
- * systematically assessed" checkable rather than rhetorical.
+ * (scripts/build-target-indicators.mjs) exits non-zero if any in-scope target
+ * ends without one, which is what makes the claim "every relevant unflagged
+ * target was systematically assessed" checkable rather than rhetorical.
  *
  * What the dataset does NOT claim: that a linked series is the *best* measure of
  * a target, or that a 'dataset' route has been pulled. Route and family are a
@@ -106,9 +108,10 @@ export const ORPHANED_ASSESSMENTS: string[] = RAW_TARGET_ASSESSMENTS
   .filter((a) => !TARGET_BY_ID[a.id])
   .map((a) => a.id);
 
-/** Relevant targets in M·36 that carry no assessment row — must be empty. */
+/** In-scope targets in M·36 (relevant and not revise-flagged) that carry no
+ *  assessment row — must be empty. */
 export const UNASSESSED_TARGETS: string[] = policyTargets
-  .filter((t) => t.relevant && !RAW_TARGET_ASSESSMENTS.some((a) => a.id === t.id))
+  .filter((t) => t.relevant && !t.revise_flag && !RAW_TARGET_ASSESSMENTS.some((a) => a.id === t.id))
   .map((t) => t.id);
 
 export const targetAssessments: TargetAssessment[] = RAW_TARGET_ASSESSMENTS

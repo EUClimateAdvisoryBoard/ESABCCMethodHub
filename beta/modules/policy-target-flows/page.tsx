@@ -4,9 +4,11 @@
  *
  * The measurement layer of the Policy Gap report. M·36 established what EU
  * climate law actually requires — 819 verbatim targets from 61 acts, 544 of them
- * relevant to the transition. This module answers the question that follows:
- * for every one of those relevant targets, HOW do we measure whether it is being
- * met, and where can we not?
+ * relevant to the transition, of which 356 survive the August 2026 review pass's
+ * "revise target" flags (the reviewers' NT-7..NT-15 rules for what is likely not
+ * a target at all). This module runs on that reduced set and answers the
+ * question that follows: for every one of those targets, HOW do we measure
+ * whether it is being met, and where can we not?
  *
  * Three views, all over the same ledger (src/data/target-indicators.ts):
  *   1. FLOW CHARTS — an overview figure carrying all nine sector columns at
@@ -280,9 +282,9 @@ export default function PolicyTargetFlowsPage() {
           <Link href="/beta/policy-targets" className="text-primary-light underline">
             Policy Targets Register (M·36)
           </Link>{' '}
-          judges relevant to the transition, placed on a sector flow chart and matched to the
-          indicator that measures it. {fmt(coverage.total)} relevant targets across{' '}
-          {coverage.policies} acts, none left unassessed: {fmt(coverage.byRoute.series)} are measured
+          judges relevant to the transition — and does not flag for revision — placed on a sector
+          flow chart and matched to the indicator that measures it. {fmt(coverage.total)} targets
+          across {coverage.policies} acts, none left unassessed: {fmt(coverage.byRoute.series)} are measured
           by a series MethodHub already curates, {fmt(coverage.byRoute.dataset)} have an indicator
           specified against a named public dataset that is not yet built here, and{' '}
           {fmt(coverage.byRoute.milestone)} name no measurable state of the world and are assessed
@@ -308,7 +310,7 @@ export default function PolicyTargetFlowsPage() {
             <p className="text-[13px] font-semibold text-accent-red">Ledger integrity failure</p>
             <p className="mt-1 text-[12.5px] text-tertiary-dark">
               {UNASSESSED_TARGETS.length > 0 && (
-                <>{UNASSESSED_TARGETS.length} relevant M·36 target(s) carry no assessment row. </>
+                <>{UNASSESSED_TARGETS.length} in-scope M·36 target(s) carry no assessment row. </>
               )}
               {ORPHANED_ASSESSMENTS.length > 0 && (
                 <>{ORPHANED_ASSESSMENTS.length} assessment row(s) point at a target that no longer
@@ -323,11 +325,11 @@ export default function PolicyTargetFlowsPage() {
 
         {/* ── Stat strip ───────────────────────────────────────────────── */}
         <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-          <StatTile label="Relevant targets assessed" value={fmt(coverage.total)} sub={`across ${coverage.policies} acts`} />
+          <StatTile label="Targets assessed" value={fmt(coverage.total)} sub={`relevant & unflagged, across ${coverage.policies} acts`} />
           <StatTile
             label="Measured by a series"
             value={`${fmt(coverage.byRoute.series)}`}
-            sub={`${pct((coverage.byRoute.series / coverage.total) * 100)} of relevant targets`}
+            sub={`${pct((coverage.byRoute.series / coverage.total) * 100)} of assessed targets`}
           />
           <StatTile
             label="Indicator specified only"
@@ -468,8 +470,8 @@ export default function PolicyTargetFlowsPage() {
           <section className="mt-5 space-y-3">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="text-[12.5px] text-tertiary">
-                {fmt(ledgerRows.length)} of {fmt(coverage.total)} rows shown — every relevant target,
-                its verbatim requirement and how it is measured.
+                {fmt(ledgerRows.length)} of {fmt(coverage.total)} rows shown — every relevant
+                unflagged target, its verbatim requirement and how it is measured.
               </p>
               <button
                 type="button"
@@ -551,7 +553,7 @@ export default function PolicyTargetFlowsPage() {
               </h2>
               <p className="mt-1 max-w-3xl text-[12.5px] leading-relaxed text-tertiary">
                 Measurement families that no curated MethodHub series covers, ranked by how many
-                relevant targets each one would measure. Every row names the public dataset the
+                assessed targets each one would measure. Every row names the public dataset the
                 series would be built from, so closing a gap is a data pull with a known source
                 rather than an open research question.
               </p>
@@ -647,8 +649,8 @@ export default function PolicyTargetFlowsPage() {
           <ul className="mt-2 space-y-1.5 text-[12.5px] leading-relaxed text-tertiary">
             <li>
               <span className="font-medium text-tertiary-dark">What is claimed.</span> Every target
-              M·36 marks relevant has been assigned an assessment route — the build fails if one has
-              not. That is a claim about coverage of the <em>assessment</em>, not that every target is
+              M·36 marks relevant and leaves unflagged has been assigned an assessment route — the
+              build fails if one has not. That is a claim about coverage of the <em>assessment</em>, not that every target is
               currently measured: {fmt(coverage.byRoute.dataset)} rows are specified against a dataset
               that has not been pulled into MethodHub.
             </li>
@@ -659,9 +661,12 @@ export default function PolicyTargetFlowsPage() {
               indicator database&apos;s job.
             </li>
             <li>
-              <span className="font-medium text-tertiary-dark">The 275 peripheral targets.</span> Rows
-              M·36 classifies as peripheral to the transition are deliberately out of scope. That
-              relevance call is inherited from the register, not re-made here.
+              <span className="font-medium text-tertiary-dark">The 463 out-of-scope rows.</span> Of
+              the register&apos;s 819 rows, 275 classified as peripheral to the transition and a
+              further 188 flagged &ldquo;revise target&rdquo; by the August 2026 review pass (likely
+              not targets under the reviewers&apos; rules) are deliberately out of scope. Both calls
+              are inherited from the register, not re-made here; if a revise flag is lifted there,
+              the row re-enters this ledger on the next rebuild.
             </li>
             <li>
               <span className="font-medium text-tertiary-dark">Match quality.</span>{' '}
