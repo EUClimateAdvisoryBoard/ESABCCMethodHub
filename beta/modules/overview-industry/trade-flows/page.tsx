@@ -109,8 +109,9 @@ export default function TradeFlowsPage() {
             <span className="text-[12px] text-grey-500 dark:text-[var(--mh-muted)]">
               Handover ({SHEET_NAMES.length} sheets): the result tables. Masterfile (28 sheets): the
               full input–output model as live formulas — Z matrices, coefficients, Leontief inverse,
-              multipliers, dashboard, rendered figures and a method diagram, a plain-language
-              concepts glossary, every curated register, sources and a change log — rebuilt by{' '}
+              multipliers, dashboard, native charts generated from the sheet data plus a method
+              diagram, a plain-language concepts glossary, every curated register, sources and a
+              change log — rebuilt by{' '}
               <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1 text-[11px]">
                 scripts/build-trade-flows-io-model-workbook.mjs
               </code>

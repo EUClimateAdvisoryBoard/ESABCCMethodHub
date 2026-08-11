@@ -72,12 +72,8 @@ const require = createRequire(import.meta.url);
 const ts = require('typescript');
 const ExcelJS = require('exceljs');
 
-import {
-  renderMethodFigure,
-  renderBalanceFigure,
-  renderRiskMapFigure,
-  renderImportContentFigure,
-} from './trade-flows-workbook-figures.mjs';
+import { renderMethodFigure } from './trade-flows-workbook-figures.mjs';
+import { injectNativeCharts } from './trade-flows-workbook-charts.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MODULE_DIR = join(ROOT, 'beta/modules/overview-industry/trade-flows');
@@ -408,7 +404,7 @@ async function main() {
     ['How to make changes', '1) Edit the underlying cell (Z sheets, Trade backbone, or a curated register). 2) Let Excel recalculate (F9 / on open). 3) Record the edit in the Change log sheet (date, cell, old → new, reason, source). 4) For changes that should persist, carry them back to the repository — the canonical data lives in trade-data.ts / the generated extracts, and this file is regenerated from them; a hand-edited copy of this workbook is a working copy, not the source of truth.'],
     ['Model scope', `Reference year ${YEAR}; EU-27 treated as one economy ("imported" = from outside the EU). 64 A*64 industries (the whole economy, not only manufacturing — a manufacturing-only model would misstate the chains through energy, mining and services). € million, current basic prices. Matrices condensed from Eurostat FIGARO naio_10_fcp_ii4 (~11 M cells) by scripts/fetch-figaro-io-dataset.mjs; aggregation choices are documented in that script's header.`],
     ['Three data layers', 'Layer 1 — trade backbone: ext_tec01, all 24 Section C divisions, 2023 + 2024, enterprise attribution. Layer 2 — input–output: the FIGARO matrices modelled here, plus the published application datasets (use-table input mixes, import origins, export destinations, foreign value added). Layer 3 — curated dependency registers: EC/JRC critical raw materials, SWD(2021) 352 strategic families, manufactured-product dependencies, energy dependency — "as reported by <source>", NOT derivable from official statistics and never arithmetically combined with the statistical layers.'],
-    ['Sheet map', 'Dashboard → Figures (rendered charts: trade balance, dependency map, import content) → Methodology → Method figure (the model as one diagram) → Concepts (plain-language glossary: what an IO table is, what the Leontief inverse does, …) → IO model → Z total / Z domestic / Z imported → A domestic / A import → I minus A → Leontief inverse → Import requirements → Multipliers → Trade backbone → FIGARO partners → Foreign value added → Imported inputs → Critical materials → Product dependencies → Strategic dependencies → Energy dependency → Risk map → Critical inputs → Sources → Change log. The Methodology sheet states, for every derived sheet, the formula it implements and the exact cell references. The figures are build-time snapshots; the tables stay live.'],
+    ['Sheet map', 'Dashboard → Figures (NATIVE Excel charts generated from the sheet data: trade balance, dependency map, import content — they recalculate with the sheets) → Methodology → Method figure (the model as one diagram) → Concepts (plain-language glossary: what an IO table is, what the Leontief inverse does, …) → IO model → Z total / Z domestic / Z imported → A domestic / A import → I minus A → Leontief inverse → Import requirements → Multipliers → Trade backbone → FIGARO partners → Foreign value added → Imported inputs → Critical materials → Product dependencies → Strategic dependencies → Energy dependency → Risk map → Critical inputs → Sources → Change log. The Methodology sheet states, for every derived sheet, the formula it implements and the exact cell references. Only the method diagram is an image; the data figures are real charts over live ranges.'],
     ['Reproducible', 'node scripts/build-trade-flows-io-model-workbook.mjs rebuilds this file. Upstream: node scripts/fetch-figaro-io-dataset.mjs (FIGARO matrices), node scripts/fetch-trade-flows-io-data.mjs (backbone + published IO layers). Curated registers: beta/modules/overview-industry/trade-flows/trade-data.ts.'],
     ['Live module', '/beta/overview-industry/trade-flows on the MethodHub — same data, with the FIGARO table viewer and analysis dashboard at /trade-flows/figaro.'],
   ];
@@ -1054,54 +1050,78 @@ async function main() {
   };
 
   figs.getCell('A1').value =
-    'Figures — rendered at build time from the sheets named in each caption. They are SNAPSHOTS (Excel images cannot recalculate); ' +
-    'the tables next to them stay live. Regenerate after edits: node scripts/build-trade-flows-io-model-workbook.mjs. ' +
-    'Chart colours are colour-vision-deficiency checked (teal = surplus, red = deficit; blue = raw material, orange = product).';
+    'Figures — NATIVE Excel charts, generated from the sheet data: each chart reads a live range (named in its caption), so editing the ' +
+    'underlying sheets moves the charts. The chart-data blocks in columns N–V are formulas over the data sheets — do not delete them. ' +
+    'Only the row ORDER of figures 1 and 3 is fixed at build time (Excel cannot re-sort a chart range); values, bar lengths, positions and the ' +
+    'surplus/deficit colour routing are all live. Chart colours are colour-vision-deficiency checked (teal = surplus, red = deficit; ' +
+    'blue = raw material, orange = product).';
   figs.getCell('A1').font = { size: 9, color: { argb: GREY } };
   figs.getCell('A1').alignment = { wrapText: true };
   figs.mergeCells('A1:L1');
-  figs.getRow(1).height = 40;
-  let figRow = 3;
-  figRow = addPng(
-    figs,
-    renderBalanceFigure(
-      td.DIVISION_TRADE.map((d) => ({
-        code: d.code,
-        label: d.label,
-        balance: d.flows[YEAR].expExt - d.flows[YEAR].impExt,
-      })),
-      YEAR,
-    ),
-    figRow, 1400, (86 + 24 * 30 + 56),
-    'Figure 1 · Extra-EU trade balance by division (data: Trade backbone sheet)',
-  );
-  figRow = addPng(
-    figs,
-    renderRiskMapFigure([
-      ...td.RISK_HOTSPOTS.map((h) => ({
-        label: h.label, kind: 'Raw material',
-        ir: Math.round(h.importReliance * 100), conc: Math.round(h.supplierConcentration * 100),
-        supplier: h.supplier,
-      })),
-      ...td.productMapPoints().map((h) => ({
-        label: h.label, kind: 'Product',
-        ir: Math.round(h.importReliance * 100), conc: Math.round(h.supplierConcentration * 100),
-        supplier: h.supplier,
-      })),
-    ]),
-    figRow, 1280, 900,
-    'Figure 2 · The import-dependency map (data: Risk map sheet)',
-  );
+  figs.getRow(1).height = 52;
+
+  /* Chart-data blocks (live formulas the native charts read). */
+  const sortedBalance = td.DIVISION_TRADE
+    .map((d) => ({ code: d.code, label: d.label, balance: Math.round((d.flows[YEAR].expExt - d.flows[YEAR].impExt) * 10) / 10 }))
+    .sort((a, b2) => b2.balance - a.balance);
+  figs.getCell('N2').value = 'Chart data — live formulas over the data sheets. The charts read these ranges; do not delete.';
+  figs.getCell('N2').font = { bold: true, size: 9, color: { argb: GREY } };
+  figs.getCell('N4').value = 'Division';
+  figs.getCell('O4').value = `Extra-EU balance ${YEAR} €bn`;
+  figs.getCell('P4').value = 'Surplus';
+  figs.getCell('Q4').value = 'Deficit';
+  const BAL0 = 5; // first data row of the balance block
+  sortedBalance.forEach((d, i) => {
+    const r = BAL0 + i;
+    figs.getCell(`N${r}`).value = `${d.code} · ${d.label.length > 34 ? `${d.label.slice(0, 33)}…` : d.label}`;
+    figs.getCell(`O${r}`).value = {
+      formula: `INDEX('Trade backbone'!$F:$F,MATCH("${d.code}",'Trade backbone'!$A:$A,0))`,
+      result: d.balance,
+    };
+    figs.getCell(`P${r}`).value = {
+      formula: `IF(O${r}>=0,O${r},NA())`,
+      result: d.balance >= 0 ? d.balance : { error: '#N/A' },
+    };
+    figs.getCell(`Q${r}`).value = {
+      formula: `IF(O${r}<0,O${r},NA())`,
+      result: d.balance < 0 ? d.balance : { error: '#N/A' },
+    };
+  });
   const topImport = inds
-    .map((code, j) => ({ code, label: label(code), value: 100 * importContent[j] }))
+    .map((code, j) => ({ code, label: label(code), value: Math.round(1000 * importContent[j]) / 10 }))
     .sort((a, b2) => b2.value - a.value)
     .slice(0, 12);
-  addPng(
-    figs,
-    renderImportContentFigure(topImport, YEAR),
-    figRow, 1280, (86 + 12 * 34 + 46),
-    'Figure 3 · Import content of final demand — top 12 industries (data: Multipliers sheet)',
-  );
+  figs.getCell('T4').value = 'Code';
+  figs.getCell('U4').value = 'Industry';
+  figs.getCell('V4').value = 'Import content %';
+  const IMP0 = 5; // first data row of the import-content block
+  topImport.forEach((t, i) => {
+    const r = IMP0 + i;
+    figs.getCell(`T${r}`).value = t.code;
+    figs.getCell(`U${r}`).value = {
+      formula: `$T${r}&" · "&INDEX('Multipliers'!$B:$B,MATCH($T${r},'Multipliers'!$A:$A,0))`,
+      result: `${t.code} · ${t.label}`,
+    };
+    figs.getCell(`V${r}`).value = {
+      formula: `INDEX('Multipliers'!$E:$E,MATCH($T${r},'Multipliers'!$A:$A,0))`,
+      result: t.value,
+    };
+  });
+  ['N', 'U'].forEach((c) => { figs.getColumn(c).width = 42; });
+  ['O', 'P', 'Q', 'T', 'V'].forEach((c) => { figs.getColumn(c).width = 13; });
+
+  /* Captions; the charts themselves are injected into the file after ExcelJS
+   * writes it (injectNativeCharts) — ExcelJS cannot author chart parts. */
+  const CHART_ANCHORS = { balance: 3, risk: 49, imports: 84 };
+  figs.getCell(`A${CHART_ANCHORS.balance}`).value =
+    `Figure 1 · Extra-EU trade balance by division, ${YEAR} — native chart over Figures!P${BAL0}:Q${BAL0 + sortedBalance.length - 1} (live formulas over the Trade backbone sheet)`;
+  figs.getCell(`A${CHART_ANCHORS.risk}`).value =
+    "Figure 2 · The import-dependency map — native scatter over the Risk map sheet columns D:E; per-point details are in that sheet's table";
+  figs.getCell(`A${CHART_ANCHORS.imports}`).value =
+    `Figure 3 · Import content of final demand, top 12 industries — native chart over Figures!U${IMP0}:V${IMP0 + topImport.length - 1} (live formulas over the Multipliers sheet)`;
+  [CHART_ANCHORS.balance, CHART_ANCHORS.risk, CHART_ANCHORS.imports].forEach((r) => {
+    figs.getCell(`A${r}`).font = { bold: true, size: 11, color: { argb: NAVY } };
+  });
 
   mf.getCell('A1').value =
     'The method, as one picture — read with the Methodology and Concepts sheets. Every box names the workbook sheet that holds that step as live formulas.';
@@ -1311,10 +1331,55 @@ async function main() {
   styleHeaderRow(cl, GREY);
   wrapAll(cl);
 
-  await wb.xlsx.writeFile(OUT_PATH);
+  /* Write, then inject the three native charts (ExcelJS cannot author chart
+   * parts) — the charts read the live ranges declared on the Figures sheet. */
+  const rawBuffer = await wb.xlsx.writeBuffer();
+  const nMat = td.RISK_HOTSPOTS.length;
+  const nProd = td.productMapPoints().length;
+  const balLast = BAL0 + sortedBalance.length - 1;
+  const impLast = IMP0 + topImport.length - 1;
+  const finalBuffer = await injectNativeCharts(rawBuffer, {
+    sheetName: 'Figures',
+    charts: {
+      balance: {
+        anchorRow: CHART_ANCHORS.balance,
+        catRange: `Figures!$N$${BAL0}:$N$${balLast}`,
+        surplusRange: `Figures!$P$${BAL0}:$P$${balLast}`,
+        deficitRange: `Figures!$Q$${BAL0}:$Q$${balLast}`,
+        cats: sortedBalance.map((d) => `${d.code} · ${d.label.length > 34 ? `${d.label.slice(0, 33)}…` : d.label}`),
+        surplus: sortedBalance.map((d) => (d.balance >= 0 ? d.balance : null)),
+        deficit: sortedBalance.map((d) => (d.balance < 0 ? d.balance : null)),
+      },
+      risk: {
+        anchorRow: CHART_ANCHORS.risk,
+        materials: {
+          xRange: `'Risk map'!$D$2:$D$${1 + nMat}`,
+          yRange: `'Risk map'!$E$2:$E$${1 + nMat}`,
+          x: td.RISK_HOTSPOTS.map((h) => Math.round(h.importReliance * 100)),
+          y: td.RISK_HOTSPOTS.map((h) => Math.round(h.supplierConcentration * 100)),
+        },
+        products: {
+          xRange: `'Risk map'!$D$${2 + nMat}:$D$${1 + nMat + nProd}`,
+          yRange: `'Risk map'!$E$${2 + nMat}:$E$${1 + nMat + nProd}`,
+          x: td.productMapPoints().map((h) => Math.round(h.importReliance * 100)),
+          y: td.productMapPoints().map((h) => Math.round(h.supplierConcentration * 100)),
+        },
+        xTitle: 'Import reliance — share of EU demand met by imports (%)',
+        yTitle: 'Supplier concentration — largest supplier share (%)',
+      },
+      imports: {
+        anchorRow: CHART_ANCHORS.imports,
+        catRange: `Figures!$U$${IMP0}:$U$${impLast}`,
+        valRange: `Figures!$V$${IMP0}:$V$${impLast}`,
+        cats: topImport.map((t) => `${t.code} · ${t.label}`),
+        values: topImport.map((t) => t.value),
+      },
+    },
+  });
+  writeFileSync(OUT_PATH, finalBuffer);
   const sheetCount = wb.worksheets.length;
   console.log(`Wrote ${OUT_PATH}`);
-  console.log(`  ${sheetCount} sheets; ${sources.size} deduplicated sources; ${N} industries; year ${YEAR}.`);
+  console.log(`  ${sheetCount} sheets; 3 native charts; ${sources.size} deduplicated sources; ${N} industries; year ${YEAR}.`);
 }
 
 main().catch((err) => {
