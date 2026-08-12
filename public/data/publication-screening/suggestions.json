@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T05:33:45.431Z",
+  "generatedAt": "2026-08-12T05:52:21.756Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,26 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1016/j.erss.2026.104910",
+      "title": "The geopolitics of decarbonization: How changing international relations reshape the European Union's sustainability transition",
+      "journal": "Energy Research &amp; Social Science",
+      "authors": "Christoph P. Kiefer",
+      "published": "2026-09",
+      "url": "https://doi.org/10.1016/j.erss.2026.104910",
+      "abstract": "",
+      "suggestedOn": "2026-08-12",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6.5,
+          "matched": [
+            "decarbonization",
+            "european union"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/ae9628",
       "title": "A new approach to determine national greenhouse gas budgets",
