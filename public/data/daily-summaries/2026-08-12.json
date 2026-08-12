@@ -1,12 +1,12 @@
 {
   "date": "2026-08-12",
-  "generatedAt": "2026-08-12T17:58:55.118Z",
+  "generatedAt": "2026-08-12T23:42:16.724Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 12 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "EU waste packaging rules: Why small businesses are worried",
-      "summary": "The EU has introduced new rules targeting packaging waste and &quot;forever chemicals.&quot; Although the changes will be phased in slowly, some small sellers have already paused shipments due to the additional red tape.",
+      "headline": "Once-in-a-generation solar eclipse wows millions in UK and Europe",
+      "summary": "More than 95% of the Sun was covered by the Moon in Cornwall, while parts of Spain experienced the magic of a total eclipse.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,7 +17,7 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Due to the Iran war, Iraq is running out of money",
+      "headline": "No oil, no salary: Iraqi state employees are feeling the crunch of the Hormuz blockade",
       "summary": "Because of the blockage of the Strait of Hormuz, Iraq cannot export enough oil to fund the country&#039;s huge public sector. Protests have already started. Will the Iran war destabilize Iraq again?",
       "tag": "FINANCE",
       "color": "#7C3AED"
@@ -34,12 +34,28 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Once-in-a-generation solar eclipse wows millions in UK and Europe",
+          "link": "https://www.bbc.co.uk/news/articles/ckgdp4923rdo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "More than 95% of the Sun was covered by the Moon in Cornwall, while parts of Spain experienced the magic of a total eclipse.",
+          "published": "2026-08-12T21:53:45.000Z",
+          "score": 13
+        },
+        {
           "title": "EU waste packaging rules: Why small businesses are worried",
           "link": "https://www.dw.com/en/eu-waste-packaging-rules-why-small-businesses-are-worried/a-78326555?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The EU has introduced new rules targeting packaging waste and &quot;forever chemicals.&quot; Although the changes will be phased in slowly, some small sellers have already paused shipments due to the additional red tape.",
           "published": "2026-08-12T09:21:00.000Z",
           "score": 10
+        },
+        {
+          "title": "Watch: Solar eclipse seen over UK skies",
+          "link": "https://www.bbc.co.uk/news/videos/cwym2w32rn0o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Millions of people in the UK and Europe have been wowed by a once-in-a-generation solar eclipse.",
+          "published": "2026-08-12T21:46:21.000Z",
+          "score": 9
         },
         {
           "title": "Great Britain braced to pay millions for backup electricity during solar eclipse",
@@ -50,27 +66,11 @@
           "score": 7
         },
         {
-          "title": "Households near new pylons to get £250 taken off annual energy bills",
-          "link": "https://www.theguardian.com/business/2026/aug/12/households-near-new-pylons-to-get-250-taken-off-annual-energy-bills",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Discounts confirmed near more than 40 locations across Great Britain amid biggest upgrade to electricity grid since 1960s&lt;/p&gt;&lt;p&gt;Households living near new power pylons will have £250 a year taken off their energy bills as the UK government prepares to push ahead with more than 40 grid upgrade projects across the country.&lt;/p&gt;&lt;p&gt;The government has promised hundreds of thousands of homes living within 500 metres of new grid infrastructure a saving of up to £2,500 on",
-          "published": "2026-08-11T23:01:12.000Z",
-          "score": 7
-        },
-        {
           "title": "Watch: Hydrogen car breaks land speed record at 406 mph",
           "link": "https://www.bbc.co.uk/news/videos/cvgjz88zpr1o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "The new record surpasses the previous official hydrogen combustion title set in 2004 by more than double the speed.",
           "published": "2026-08-12T16:30:07.000Z",
-          "score": 7
-        },
-        {
-          "title": "What time and where might you see the solar eclipse in Scotland",
-          "link": "https://www.bbc.co.uk/news/articles/cwyrk522pxro?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Hopes of catching the best view are fading in parts of Scotland as clouds threaten to hide the celestial event.",
-          "published": "2026-08-12T15:01:46.000Z",
           "score": 7
         }
       ]
@@ -104,12 +104,12 @@
           "score": 10
         },
         {
-          "title": "UK to get best eclipse since 1999 as Moon blocks out Sun across Europe",
-          "link": "https://www.bbc.co.uk/news/articles/cx2jr1ew2v1o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Up to 96% of the Sun will be covered by the Moon in the UK, while parts of Spain, Greenland, Iceland, Portugal and Russia will see a total eclipse.",
-          "published": "2026-08-11T23:17:15.000Z",
-          "score": 8
+          "title": "Trump administration pulls support for annual Arctic environmental report",
+          "link": "https://www.theguardian.com/us-news/2026/aug/12/trump-administration-arctic-environmental-report",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Move by National Oceanic and Atmospheric Administration is latest government rollback of climate science activity&lt;/p&gt;&lt;p&gt;The &lt;a href=\"https://www.theguardian.com/us-news/trump-administration\"&gt;Trump administration&lt;/a&gt; has pulled its support for an annual report on the environmental changes across the &lt;a href=\"https://www.theguardian.com/world/arctic\"&gt;Arctic&lt;/a&gt;, a region that is already heating up&lt;a href=\"https://www.theguardian.com/world/2025/dec/16",
+          "published": "2026-08-12T18:17:51.000Z",
+          "score": 7
         },
         {
           "title": "I was enjoying growing vegetables. Then the climate crisis raised its ugly head | Bim Adewunmi",
@@ -126,19 +126,35 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Due to the Iran war, Iraq is running out of money",
-          "link": "https://www.dw.com/en/due-to-the-iran-war-iraq-is-running-out-of-money/a-78341409?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "No oil, no salary: Iraqi state employees are feeling the crunch of the Hormuz blockade",
+          "link": "https://www.dw.com/en/no-oil-no-salary-iraqi-state-employees-are-feeling-the-crunch-of-the-hormuz-blockade/a-78341409?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "Because of the blockage of the Strait of Hormuz, Iraq cannot export enough oil to fund the country&#039;s huge public sector. Protests have already started. Will the Iran war destabilize Iraq again?",
           "published": "2026-08-12T17:00:00.000Z",
           "score": 2
         },
         {
-          "title": "Norway wealth fund posts record $184 billion profit in first half of 2026 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcHFOUndUSGhkUDVOYXRlcXNzUkZUazF1cHBHa2o0OEx1Ylh5Rk9lU1ZYMzM5ZW5obmtDS2MtcGdkUEpHREszYWlVSUsxM241RVR2dE1MYUs4emFySnpYS3VwdjRMRXBieWl0aXpxQVE5OTdweHVIMjlIbTUzVVFwXzh6b0Y0RC14Z0JuTDY4VkZDdTRlZVVVLUNvUlo2RVp0V0xfOWk3Um8?oc=5",
+          "title": "Malawi FA chief backs Infantino, credits FIFA investment for World Cup breakthrough - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNejR2WHZkaWNtdDFyTnFtTFhtUnE1cEJ5SkhVMlBLNG9rWmd1Sjc0OFlSczVJR24xdVJLUUpQY1VjbW9HeVZaNTY3ZXFhcnlVY3RtUXhCbEJfRnlDYklWM05jbFp6MkxWM1dGUWxTalM4QjF5SVd0aXhncEpBVXoxR3dsSTVPdGlYeTlzcXd5Rl8tSndmNEczNFR5UDR4dGswUWxWck1iVUhfSnBTbzQ5WGxPNm9iMjBzdXdINUl5aUU4OHdZQVA4?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcHFOUndUSGhkUDVOYXRlcXNzUkZUazF1cHBHa2o0OEx1Ylh5Rk9lU1ZYMzM5ZW5obmtDS2MtcGdkUEpHREszYWlVSUsxM241RVR2dE1MYUs4emFySnpYS3VwdjRMRXBieWl0aXpxQVE5OTdweHVIMjlIbTUzVVFwXzh6b0Y0RC14Z0JuTDY4VkZDdTRlZVVVLUNvUlo2RVp0V0xfOWk3Um8?oc=5\" target=\"_blank\"&gt;Norway wealth fund posts record $184 billion profit in first half of 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-11T19:19:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNejR2WHZkaWNtdDFyTnFtTFhtUnE1cEJ5SkhVMlBLNG9rWmd1Sjc0OFlSczVJR24xdVJLUUpQY1VjbW9HeVZaNTY3ZXFhcnlVY3RtUXhCbEJfRnlDYklWM05jbFp6MkxWM1dGUWxTalM4QjF5SVd0aXhncEpBVXoxR3dsSTVPdGlYeTlzcXd5Rl8tSndmNEczNFR5UDR4dGswUWxWck1iVUhfSnBTbzQ5WGxPNm9iMjBzdXdINUl5aUU4OHdZQVA4?oc=5\" target=\"_blank\"&gt;Malawi FA chief backs Infantino, credits FIFA investment for World Cup breakthrough&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+          "published": "2026-08-12T15:59:10.000Z",
+          "score": 2
+        },
+        {
+          "title": "Norway wealth fund posts record $184 bln profit in first half of 2026 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNDZub2h4eDBheXFFVVp2Q0JFcE1DWGtSSUJWTWpRek1NRV9vYXR0VUtMdWxGV2dmaWNGdFh6QzdQNFBxa3ZPY0NUQjhFdUk2MWNuZ3g1ZnEzMFpyMmtsYmd1YnlaSnNyMlpfbFI1S2xhR1I3TnNBRWFuT0dlVk1FalUzdEFpVF8wR2JVRDRBcy1zTzlaVkswdURNemFRejJEOXd1ZUcwMzFtZ0kxbXRwVg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNNDZub2h4eDBheXFFVVp2Q0JFcE1DWGtSSUJWTWpRek1NRV9vYXR0VUtMdWxGV2dmaWNGdFh6QzdQNFBxa3ZPY0NUQjhFdUk2MWNuZ3g1ZnEzMFpyMmtsYmd1YnlaSnNyMlpfbFI1S2xhR1I3TnNBRWFuT0dlVk1FalUzdEFpVF8wR2JVRDRBcy1zTzlaVkswdURNemFRejJEOXd1ZUcwMzFtZ0kxbXRwVg?oc=5\" target=\"_blank\"&gt;Norway wealth fund posts record $184 bln profit in first half of 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-12T06:14:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Trump says future of 'weaponization' fund is up to Blanche - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2Jva1gzS2MwTnNvRVRFWWk5SUF4aXpaYy1RcEhUTjdFQ2dYbEsxOHZKSTU4czYydE9JNEJvd0k1TkxNWnZudmVJaXU0Yl9sMUJIblJ0bm5tOC1EMDlzUHVLc1doYW1zQ2s3ZGVRNk55Q25adEx4OHo0MHhKXzVFQkUzUExaRWJJVkVhUllVQmk0ZjdZTXdMRFhGRQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2Jva1gzS2MwTnNvRVRFWWk5SUF4aXpaYy1RcEhUTjdFQ2dYbEsxOHZKSTU4czYydE9JNEJvd0k1TkxNWnZudmVJaXU0Yl9sMUJIblJ0bm5tOC1EMDlzUHVLc1doYW1zQ2s3ZGVRNk55Q25adEx4OHo0MHhKXzVFQkUzUExaRWJJVkVhUllVQmk0ZjdZTXdMRFhGRQ?oc=5\" target=\"_blank\"&gt;Trump says future of 'weaponization' fund is up to Blanche&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-12T09:37:13.000Z",
           "score": 2
         },
         {
@@ -178,20 +194,12 @@
           "score": 8
         },
         {
-          "title": "EU pledges €2 million in aid for Colombia after earthquake - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZjJNSW1TM1BoQlM2NUJ0Y2xUR3RmT1Rzc3lMUTN4SEhVNTg2Z3BmeHdpVXZyRWRKckFXZGtJd2hmeWZkZ2o3QkFmUEJvMkdzdXBpUnJveUJKQW1pOWlFeUt0aUROQWh6blM4RjE1a0RuZTVucGI0S1Y5MDhZQTBJZ0xNNkk1SUFRYlJ6SnFRVnMyY24wbzQ3OG1aNmYwRlE0WExEVUpkRk1lNmM?oc=5",
+          "title": "EU, 26 countries condemn Iran's executions of protesters - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQN1ltMHdDSEFsNmlFUlJGbXVPWmhpUWp2U01YaEV1cGloSk9hT2ttWENpRmg1VjVrOE0xWXhac2dSQk5xZDFaUk5XY0NPWmtjdWZ5c2wyRDVHQUxRc0JHOTFQTnk3MlFNbWFzaE1LMldIdWNWUHVkU0dzbXNtYUo4dGs2MDRoVlBsaUtLTkdxZVRaTTdvbGpwUXR2NDB3bVZGRUNwU2FlVng?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZjJNSW1TM1BoQlM2NUJ0Y2xUR3RmT1Rzc3lMUTN4SEhVNTg2Z3BmeHdpVXZyRWRKckFXZGtJd2hmeWZkZ2o3QkFmUEJvMkdzdXBpUnJveUJKQW1pOWlFeUt0aUROQWh6blM4RjE1a0RuZTVucGI0S1Y5MDhZQTBJZ0xNNkk1SUFRYlJ6SnFRVnMyY24wbzQ3OG1aNmYwRlE0WExEVUpkRk1lNmM?oc=5\" target=\"_blank\"&gt;EU pledges €2 million in aid for Colombia after earthquake&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-12T05:52:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQN1ltMHdDSEFsNmlFUlJGbXVPWmhpUWp2U01YaEV1cGloSk9hT2ttWENpRmg1VjVrOE0xWXhac2dSQk5xZDFaUk5XY0NPWmtjdWZ5c2wyRDVHQUxRc0JHOTFQTnk3MlFNbWFzaE1LMldIdWNWUHVkU0dzbXNtYUo4dGs2MDRoVlBsaUtLTkdxZVRaTTdvbGpwUXR2NDB3bVZGRUNwU2FlVng?oc=5\" target=\"_blank\"&gt;EU, 26 countries condemn Iran's executions of protesters&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-12T14:13:44.000Z",
           "score": 8
-        },
-        {
-          "title": "New Zealand PM survives second leadership challenge ahead of election",
-          "link": "https://www.bbc.co.uk/news/articles/cx2ve2jk5qeo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Christopher Luxon says he has \"full support\" of his party, after a vote of confidence 12 weeks before a general election.",
-          "published": "2026-08-12T02:51:02.000Z",
-          "score": 6
         },
         {
           "title": "Zambia&#039;s 2026 election: Key issues to watch",
@@ -208,14 +216,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNSUlyVmZoall3ZGpDOFpHYUlDdEhTdndpOG5nYWtCUTA5ZjRnXzY4MTBUb0xxak9rZkVKZkFQNjdYUnZGVjFYM1FrVGV1VlZGWTlvbmJuQVlxeU9QZkRydkVFUFRzempONEtYX1c1WUV2UXJfNjJsZW9QUVh0QXc1RjVnbVc2bl80LThVc1hCZFVJbUoteGs0a21odUxWMWxTOHpfZkllMmRra0FwbEJaQlQ0Um44cVJROGtRcWJiaHRncWwx?oc=5\" target=\"_blank\"&gt;Adopted Indian women find 'missing piece' when DNA test reveals they are sisters&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
           "published": "2026-08-12T11:17:43.000Z",
           "score": 6
+        },
+        {
+          "title": "Turkey's PKK peace law brings hope to mothers, anguish to veterans - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX0Y1TmcwM2ozOWtKN2ExbVRLNmN4NEk4eC1WeE8wY3FnRUQ3cUdsOEFlaHRwNEVHU0RBdGNLeTBfMmhEb3cxcVFjWTVFX2FlUDBGUjZldzE5aHJEMU5iLTJCY3phT1RHcGc4Wl9iQ0o0c21LaFlJbHZ1WFRGNnFmQU1Bc2FOeGN2VlNzN1p3X09NMEZiNnBvVHhNVWpTOFYxWXZWbWZMU3JOcUg5ZnlnN1VqVkpscUk1?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX0Y1TmcwM2ozOWtKN2ExbVRLNmN4NEk4eC1WeE8wY3FnRUQ3cUdsOEFlaHRwNEVHU0RBdGNLeTBfMmhEb3cxcVFjWTVFX2FlUDBGUjZldzE5aHJEMU5iLTJCY3phT1RHcGc4Wl9iQ0o0c21LaFlJbHZ1WFRGNnFmQU1Bc2FOeGN2VlNzN1p3X09NMEZiNnBvVHhNVWpTOFYxWXZWbWZMU3JOcUg5ZnlnN1VqVkpscUk1?oc=5\" target=\"_blank\"&gt;Turkey's PKK peace law brings hope to mothers, anguish to veterans&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-12T17:10:10.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 413,
-    "articlesLast24h": 179,
-    "afterDedup": 163,
+    "totalArticlesScanned": 411,
+    "articlesLast24h": 173,
+    "afterDedup": 161,
     "feedsQueried": 19
   }
 }
