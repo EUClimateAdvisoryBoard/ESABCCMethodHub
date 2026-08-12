@@ -1,24 +1,24 @@
 {
   "date": "2026-08-12",
-  "generatedAt": "2026-08-12T11:50:07.875Z",
+  "generatedAt": "2026-08-12T17:58:55.118Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 12 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "South Africa&#8217;s offshore oil push meets grassroots resistance in court",
-      "summary": "Two court cases against oil majors TotalEnergies and Shell could derail South Africa's plan to expand offshore fossil fuels The post South Africa&#8217;s offshore oil push meets grassroots resistance in court appeared first on Climate Home News.",
+      "headline": "EU waste packaging rules: Why small businesses are worried",
+      "summary": "The EU has introduced new rules targeting packaging waste and &quot;forever chemicals.&quot; Although the changes will be phased in slowly, some small sellers have already paused shipments due to the additional red tape.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "NEWSLETTER: Europe’s deepening drought - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPejUtZWRCZUd3aTl2ajZNaG80aW5TWjhaVW8ybjlYZFlBVy1qNXhqZ052VVNEbF80dmRDWU5CWlcxTEhEenBWTGJYMDF2aGpVYXlMczZjNWFONlVCQjAxQW5ZZ1pPOTR5eUxUa3lZcVFtSFh5YWtYb2VqRkJNOFBZZmtn?oc=5\" target=\"_blank\"&gt;NEWSLETTER: Europe’s deepening drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Analysis: Weaker EV targets could cost UK consumers £3bn a year by 2030",
+      "summary": "An upcoming UK government consultation on weakening targets for electric vehicles (EVs) could cost consumers as much as £3bn a&#8230; The post Analysis: Weaker EV targets could cost UK consumers £3bn a year by 2030 appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Norway wealth fund posts record $184 billion profit in first half of 2026 - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcHFOUndUSGhkUDVOYXRlcXNzUkZUazF1cHBHa2o0OEx1Ylh5Rk9lU1ZYMzM5ZW5obmtDS2MtcGdkUEpHREszYWlVSUsxM241RVR2dE1MYUs4emFySnpYS3VwdjRMRXBieWl0aXpxQVE5OTdweHVIMjlIbTUzVVFwXzh6b0Y0RC14Z0JuTDY4VkZDdTRlZVVVLUNvUlo2RVp0V0xfOWk3Um8?oc=5\" target=\"_blank\"&gt;Norway wealth fund posts record $184 billion profit in first half of 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Due to the Iran war, Iraq is running out of money",
+      "summary": "Because of the blockage of the Strait of Hormuz, Iraq cannot export enough oil to fund the country&#039;s huge public sector. Protests have already started. Will the Iran war destabilize Iraq again?",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,27 +34,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "South Africa&#8217;s offshore oil push meets grassroots resistance in court",
-          "link": "https://www.climatechangenews.com/2026/08/11/south-africas-offshore-oil-push-ground-resistance-courts-litigation-ocean/",
-          "source": "Climate Home News",
-          "description": "Two court cases against oil majors TotalEnergies and Shell could derail South Africa's plan to expand offshore fossil fuels The post South Africa&#8217;s offshore oil push meets grassroots resistance in court appeared first on Climate Home News.",
-          "published": "2026-08-11T16:30:26.000Z",
-          "score": 10
-        },
-        {
-          "title": "EU packaging rules: Why small firms are sounding the alarm",
-          "link": "https://www.dw.com/en/eu-packaging-rules-why-small-firms-are-sounding-the-alarm/a-78326555?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU waste packaging rules: Why small businesses are worried",
+          "link": "https://www.dw.com/en/eu-waste-packaging-rules-why-small-businesses-are-worried/a-78326555?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The EU has introduced new rules targeting packaging waste and &quot;forever chemicals.&quot; Although the changes will be phased in slowly, some small sellers have already paused shipments due to the additional red tape.",
           "published": "2026-08-12T09:21:00.000Z",
           "score": 10
         },
         {
-          "title": "Great Britain faces electricity supply shortfall during solar eclipse",
+          "title": "Great Britain braced to pay millions for backup electricity during solar eclipse",
           "link": "https://www.theguardian.com/business/2026/aug/12/great-britain-faces-electricity-supply-shortfall-during-solar-eclipse",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Event expected to hit solar power just as fifth heatwave of summer increases use of air conditioning and fans&lt;/p&gt;&lt;p&gt;Great Britain faces a shortfall of electricity supplies on Wednesday evening as the near total solar eclipse is expected to wipe out solar power generation.&lt;/p&gt;&lt;p&gt;The government’s electricity grid operator raised an official alarm that there is currently not enough power generation expected as the moon blocks &lt;a href=\"https://www.theguardian.com/",
-          "published": "2026-08-12T09:18:21.000Z",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Event expected to curtail solar power just as summer’s fifth heatwave increases use of air conditioning and fans&lt;/p&gt;&lt;p&gt;Great Britain is braced to pay millions for backup electricity supplies to prevent a shortfall on Wednesday evening as the near-total solar eclipse is expected to wipe out solar power generation.&lt;/p&gt;&lt;p&gt;The government’s electricity grid operator is expected to make multimillion-pound payments to secure electricity at short notice before the moon b",
+          "published": "2026-08-12T16:21:52.000Z",
           "score": 7
         },
         {
@@ -66,11 +58,19 @@
           "score": 7
         },
         {
-          "title": "What time and where to see the solar eclipse in Scotland",
+          "title": "Watch: Hydrogen car breaks land speed record at 406 mph",
+          "link": "https://www.bbc.co.uk/news/videos/cvgjz88zpr1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The new record surpasses the previous official hydrogen combustion title set in 2004 by more than double the speed.",
+          "published": "2026-08-12T16:30:07.000Z",
+          "score": 7
+        },
+        {
+          "title": "What time and where might you see the solar eclipse in Scotland",
           "link": "https://www.bbc.co.uk/news/articles/cwyrk522pxro?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Up to 95% of the Sun will slowly disappear behind the Moon in the most dramatic eclipse visible from the UK since August 1999.",
-          "published": "2026-08-12T10:01:43.000Z",
+          "description": "Hopes of catching the best view are fading in parts of Scotland as clouds threaten to hide the celestial event.",
+          "published": "2026-08-12T15:01:46.000Z",
           "score": 7
         }
       ]
@@ -80,20 +80,20 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "NEWSLETTER: Europe’s deepening drought - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPejUtZWRCZUd3aTl2ajZNaG80aW5TWjhaVW8ybjlYZFlBVy1qNXhqZ052VVNEbF80dmRDWU5CWlcxTEhEenBWTGJYMDF2aGpVYXlMczZjNWFONlVCQjAxQW5ZZ1pPOTR5eUxUa3lZcVFtSFh5YWtYb2VqRkJNOFBZZmtn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPejUtZWRCZUd3aTl2ajZNaG80aW5TWjhaVW8ybjlYZFlBVy1qNXhqZ052VVNEbF80dmRDWU5CWlcxTEhEenBWTGJYMDF2aGpVYXlMczZjNWFONlVCQjAxQW5ZZ1pPOTR5eUxUa3lZcVFtSFh5YWtYb2VqRkJNOFBZZmtn?oc=5\" target=\"_blank\"&gt;NEWSLETTER: Europe’s deepening drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-11T13:05:37.000Z",
-          "score": 13
+          "title": "Analysis: Weaker EV targets could cost UK consumers £3bn a year by 2030",
+          "link": "https://www.carbonbrief.org/analysis-weaker-ev-targets-could-cost-uk-consumers-3bn-a-year-by-2030",
+          "source": "Carbon Brief",
+          "description": "An upcoming UK government consultation on weakening targets for electric vehicles (EVs) could cost consumers as much as £3bn a&#8230; The post Analysis: Weaker EV targets could cost UK consumers £3bn a year by 2030 appeared first on Carbon Brief.",
+          "published": "2026-08-12T14:50:39.000Z",
+          "score": 17
         },
         {
-          "title": "Authors of IPCC’s 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage gather in Mexico City to advance the report’s draft",
-          "link": "https://www.ipcc.ch/2026/08/11/prtficdrlam2/",
-          "source": "IPCC",
-          "description": "GENEVA, Aug 11 – More than 120 IPCC authors are meeting in Mexico City, Mexico, from 11 to 14 August to advance the First Order Draft of the 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage (CDR-CCUS). This report is being prepared by the IPCC’s Task Force on National Greenhouse [&#8230;]",
-          "published": "2026-08-11T14:36:08.000Z",
-          "score": 11
+          "title": "&#8220;We&#8217;ve gone backwards&#8221; &#8211; new plastics treaty text dims hopes for production curbs",
+          "link": "https://www.climatechangenews.com/2026/08/12/weve-gone-backwards-new-plastics-treaty-text-dims-hopes-for-production-curbs/",
+          "source": "Climate Home News",
+          "description": "During troubled talks, fossil fuel-producing nations have pushed for a global pact to tackle only plastic waste rather than reducing the size of the problem The post &#8220;We&#8217;ve gone backwards&#8221; &#8211; new plastics treaty text dims hopes for production curbs appeared first on Climate Home News.",
+          "published": "2026-08-12T14:11:10.000Z",
+          "score": 10
         },
         {
           "title": "Europe braces for next heat wave",
@@ -112,11 +112,11 @@
           "score": 8
         },
         {
-          "title": "Just 20 of 6,600 Defra staff working on climate adaptation amid drought and wildfires",
-          "link": "https://www.theguardian.com/environment/2026/aug/12/just-20-of-6600-defra-staff-working-on-climate-adaptation-amid-drought-and-wildfires",
+          "title": "I was enjoying growing vegetables. Then the climate crisis raised its ugly head | Bim Adewunmi",
+          "link": "https://www.theguardian.com/commentisfree/2026/aug/12/growing-vegetables-climate-crisis-heatwaves-drought",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Exclusive: England ‘desperately unprepared’ for effects of crisis including water shortages and heatwaves&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/live/2026/aug/12/heatwave-extreme-heat-cobra-uk-wildfires-drought-latest-news-updates\"&gt;UK heatwave live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Just 20 staff are working on climate adaptation within a key government department tasked with protecting the environment",
-          "published": "2026-08-12T09:36:34.000Z",
+          "description": "&lt;p&gt;My child and I were bonding over our hit-and-miss approach to reaping crops. But with heatwaves pushing more of Britain into drought, it’s starting to feel like a luxury we can’t afford&lt;/p&gt;&lt;p&gt;For the first time in my life, I live in a home that has real outdoor space. What a concept! There are no downsides to a garden. Back in spring, I made grand plans – I watched all the TikToks, I bought seeds and trays and pots and grow bags, I ordered soil, a trowel and a watering can. ",
+          "published": "2026-08-12T10:00:26.000Z",
           "score": 7
         }
       ]
@@ -126,19 +126,19 @@
       "title": "Green Finance & Investment",
       "items": [
         {
+          "title": "Due to the Iran war, Iraq is running out of money",
+          "link": "https://www.dw.com/en/due-to-the-iran-war-iraq-is-running-out-of-money/a-78341409?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Because of the blockage of the Strait of Hormuz, Iraq cannot export enough oil to fund the country&#039;s huge public sector. Protests have already started. Will the Iran war destabilize Iraq again?",
+          "published": "2026-08-12T17:00:00.000Z",
+          "score": 2
+        },
+        {
           "title": "Norway wealth fund posts record $184 billion profit in first half of 2026 - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcHFOUndUSGhkUDVOYXRlcXNzUkZUazF1cHBHa2o0OEx1Ylh5Rk9lU1ZYMzM5ZW5obmtDS2MtcGdkUEpHREszYWlVSUsxM241RVR2dE1MYUs4emFySnpYS3VwdjRMRXBieWl0aXpxQVE5OTdweHVIMjlIbTUzVVFwXzh6b0Y0RC14Z0JuTDY4VkZDdTRlZVVVLUNvUlo2RVp0V0xfOWk3Um8?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcHFOUndUSGhkUDVOYXRlcXNzUkZUazF1cHBHa2o0OEx1Ylh5Rk9lU1ZYMzM5ZW5obmtDS2MtcGdkUEpHREszYWlVSUsxM241RVR2dE1MYUs4emFySnpYS3VwdjRMRXBieWl0aXpxQVE5OTdweHVIMjlIbTUzVVFwXzh6b0Y0RC14Z0JuTDY4VkZDdTRlZVVVLUNvUlo2RVp0V0xfOWk3Um8?oc=5\" target=\"_blank\"&gt;Norway wealth fund posts record $184 billion profit in first half of 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-11T19:19:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Norway wealth fund CEO says fund's entire value could be lost if market collapses - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUXM4c0FCQ01mNlZ0S2RJNVZWdnBiNHFSYjRnWFFEZ0VYR3U2WWw2bjFkdWwybkEwZDJjeTI1aE9rQ1ZRTUVrVWFuN1FaYXdBSUllVVZZeWlmUEVBd0FIbHM4TElBd3FKUnlpalJSR2NxaVBidjJ6VFN6dXNUZmlKQWhMREZvZnVheEk3VDRrTXNyOVhCT3pCQndxZEFkeXdrVUVVeTBpWkt3TGVLaTMzVFhnWW51UVp6Rnd3YQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPUXM4c0FCQ01mNlZ0S2RJNVZWdnBiNHFSYjRnWFFEZ0VYR3U2WWw2bjFkdWwybkEwZDJjeTI1aE9rQ1ZRTUVrVWFuN1FaYXdBSUllVVZZeWlmUEVBd0FIbHM4TElBd3FKUnlpalJSR2NxaVBidjJ6VFN6dXNUZmlKQWhMREZvZnVheEk3VDRrTXNyOVhCT3pCQndxZEFkeXdrVUVVeTBpWkt3TGVLaTMzVFhnWW51UVp6Rnd3YQ?oc=5\" target=\"_blank\"&gt;Norway wealth fund CEO says fund's entire value could be lost if market collapses&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-11T15:55:48.000Z",
           "score": 2
         },
         {
@@ -170,52 +170,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Lebanon parliament votes to abolish death penalty",
-          "link": "https://www.bbc.co.uk/news/articles/c8enj8p1xwgo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Putin says Russia will start seizing European vessels if its ships targeted - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQakNBZk1WeHVZd2NFMWx4QS04YWNWZDd2OTdUeGtEbGI1WHNBR3FFd3huTllRR1BUTEdJMjhBRS1JeEpoSWdUNUhsOWtpa1NRV2ZJOFZ6RXJYVmU2QkNuNEFzcUQtMXZvS0V2SDViQnRUZXFHLXd0c0UwVUFRLVRxTVc1MmhXbmtPQjc0dm40ektkVXpMdXpUVUUyRVJDYnJ6d015Ulp2M0I3Mk1sOWdYTU5Sdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQakNBZk1WeHVZd2NFMWx4QS04YWNWZDd2OTdUeGtEbGI1WHNBR3FFd3huTllRR1BUTEdJMjhBRS1JeEpoSWdUNUhsOWtpa1NRV2ZJOFZ6RXJYVmU2QkNuNEFzcUQtMXZvS0V2SDViQnRUZXFHLXd0c0UwVUFRLVRxTVc1MmhXbmtPQjc0dm40ektkVXpMdXpUVUUyRVJDYnJ6d015Ulp2M0I3Mk1sOWdYTU5Sdw?oc=5\" target=\"_blank\"&gt;Putin says Russia will start seizing European vessels if its ships targeted&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-12T15:37:56.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU pledges €2 million in aid for Colombia after earthquake - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZjJNSW1TM1BoQlM2NUJ0Y2xUR3RmT1Rzc3lMUTN4SEhVNTg2Z3BmeHdpVXZyRWRKckFXZGtJd2hmeWZkZ2o3QkFmUEJvMkdzdXBpUnJveUJKQW1pOWlFeUt0aUROQWh6blM4RjE1a0RuZTVucGI0S1Y5MDhZQTBJZ0xNNkk1SUFRYlJ6SnFRVnMyY24wbzQ3OG1aNmYwRlE0WExEVUpkRk1lNmM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZjJNSW1TM1BoQlM2NUJ0Y2xUR3RmT1Rzc3lMUTN4SEhVNTg2Z3BmeHdpVXZyRWRKckFXZGtJd2hmeWZkZ2o3QkFmUEJvMkdzdXBpUnJveUJKQW1pOWlFeUt0aUROQWh6blM4RjE1a0RuZTVucGI0S1Y5MDhZQTBJZ0xNNkk1SUFRYlJ6SnFRVnMyY24wbzQ3OG1aNmYwRlE0WExEVUpkRk1lNmM?oc=5\" target=\"_blank\"&gt;EU pledges €2 million in aid for Colombia after earthquake&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-12T05:52:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "New Zealand PM survives second leadership challenge ahead of election",
+          "link": "https://www.bbc.co.uk/news/articles/cx2ve2jk5qeo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The new law - which next goes to the cabinet for approval - would make Lebanon the first country in the Middle East to end capital punishment.",
-          "published": "2026-08-11T15:24:07.000Z",
-          "score": 12
+          "description": "Christopher Luxon says he has \"full support\" of his party, after a vote of confidence 12 weeks before a general election.",
+          "published": "2026-08-12T02:51:02.000Z",
+          "score": 6
         },
         {
-          "title": "Can Turkey&#039;s new PKK law bring peace?",
-          "link": "https://www.dw.com/en/can-turkey-s-new-pkk-law-bring-peace/a-78326063?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Zambia&#039;s 2026 election: Key issues to watch",
+          "link": "https://www.dw.com/en/zambia-s-2026-election-key-issues-to-watch/a-78320087?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Turkey&#039;s parliament has passed a framework law for the peace process with the Kurdistan Workers&#039; Party (PKK). What does it stipulate, why is it controversial and what does it mean for the future of the peace process?",
-          "published": "2026-08-11T16:28:00.000Z",
-          "score": 8
+          "description": "Economic recovery, youth turnout, women&#039;s representation and judicial independence are among the issues shaping Zambia&#039;s vote on Thursday.",
+          "published": "2026-08-12T08:57:00.000Z",
+          "score": 6
         },
         {
-          "title": "Hungary&#039;s parliament elects Orban critic as new president",
-          "link": "https://www.dw.com/en/hungary-s-parliament-elects-orban-critic-as-new-president/a-78325589?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Hungary&#039;s parliament has overwhelmingly confirmed Andras Baka, formerly the head of the Supreme Court, to the largely ceremonial role of president. New Prime Minister Peter Magyar controversially removed his predecessor.",
-          "published": "2026-08-11T16:00:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Hormuz Strait to remain closed unless U.S. meets Iran's conditions, Iranian security council says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPcFUwQU11ZTNtdlg0Zm1iSlQ0QlBkaFhUSzI2ZkdPY2M2anViX2l3R2xsUkxXdmszWlVDZU91ckpmeUZFOTlJUzB3T1NXZ3VNZm81R19hX25kdldEcUNZYlh0RDZYUlFYY05hVkM4dkdOUi1IMlVyak96OVphU0U5T3RwYkpqZlpQcVk4cThFM3M5U1dEcS13TDBIamk5OW5TcmEwaDY2d1JRbU80bzVFRGVSbnJTOUItdlhfNFgxRVpnTnRnNHVRRzJZOA?oc=5",
+          "title": "Adopted Indian women find 'missing piece' when DNA test reveals they are sisters - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNSUlyVmZoall3ZGpDOFpHYUlDdEhTdndpOG5nYWtCUTA5ZjRnXzY4MTBUb0xxak9rZkVKZkFQNjdYUnZGVjFYM1FrVGV1VlZGWTlvbmJuQVlxeU9QZkRydkVFUFRzempONEtYX1c1WUV2UXJfNjJsZW9QUVh0QXc1RjVnbVc2bl80LThVc1hCZFVJbUoteGs0a21odUxWMWxTOHpfZkllMmRra0FwbEJaQlQ0Um44cVJROGtRcWJiaHRncWwx?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPcFUwQU11ZTNtdlg0Zm1iSlQ0QlBkaFhUSzI2ZkdPY2M2anViX2l3R2xsUkxXdmszWlVDZU91ckpmeUZFOTlJUzB3T1NXZ3VNZm81R19hX25kdldEcUNZYlh0RDZYUlFYY05hVkM4dkdOUi1IMlVyak96OVphU0U5T3RwYkpqZlpQcVk4cThFM3M5U1dEcS13TDBIamk5OW5TcmEwaDY2d1JRbU80bzVFRGVSbnJTOUItdlhfNFgxRVpnTnRnNHVRRzJZOA?oc=5\" target=\"_blank\"&gt;Hormuz Strait to remain closed unless U.S. meets Iran's conditions, Iranian security council says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6",
-          "published": "2026-08-11T16:09:56.000Z",
-          "score": 8
-        },
-        {
-          "title": "Hungary parliament elects former supreme court head Andras Baka as president - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOU3dlWVJ6OFQ1cWYtQWRtdk5Mbk4waXkzWVhLNEFrNkZWbXpMc3NXazZSZ2xiUVZPN2NZbnpNNjRtOVp1TFJqX0hhV2xJNkNVRUhrQktLalJ0aGlURVR0Y1Z0NGhSUVh2eTNrSzF3c0VvSjNRZkUzamxzSlc5NnVpU2h3Q01SOGpJOTdzbVhoeXJHcnpUWGZ0QnZsaVhwdWtsWlpqaUxMcEQyTVBLTWJJYTFxTUZjZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOU3dlWVJ6OFQ1cWYtQWRtdk5Mbk4waXkzWVhLNEFrNkZWbXpMc3NXazZSZ2xiUVZPN2NZbnpNNjRtOVp1TFJqX0hhV2xJNkNVRUhrQktLalJ0aGlURVR0Y1Z0NGhSUVh2eTNrSzF3c0VvSjNRZkUzamxzSlc5NnVpU2h3Q01SOGpJOTdzbVhoeXJHcnpUWGZ0QnZsaVhwdWtsWlpqaUxMcEQyTVBLTWJJYTFxTUZjZw?oc=5\" target=\"_blank\"&gt;Hungary parliament elects former supreme court head Andras Baka as president&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-11T14:34:43.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNSUlyVmZoall3ZGpDOFpHYUlDdEhTdndpOG5nYWtCUTA5ZjRnXzY4MTBUb0xxak9rZkVKZkFQNjdYUnZGVjFYM1FrVGV1VlZGWTlvbmJuQVlxeU9QZkRydkVFUFRzempONEtYX1c1WUV2UXJfNjJsZW9QUVh0QXc1RjVnbVc2bl80LThVc1hCZFVJbUoteGs0a21odUxWMWxTOHpfZkllMmRra0FwbEJaQlQ0Um44cVJROGtRcWJiaHRncWwx?oc=5\" target=\"_blank\"&gt;Adopted Indian women find 'missing piece' when DNA test reveals they are sisters&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+          "published": "2026-08-12T11:17:43.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 407,
-    "articlesLast24h": 174,
-    "afterDedup": 165,
+    "totalArticlesScanned": 413,
+    "articlesLast24h": 179,
+    "afterDedup": 163,
     "feedsQueried": 19
   }
 }
