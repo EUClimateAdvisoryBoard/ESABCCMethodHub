@@ -1,6 +1,6 @@
 {
   "date": "2026-08-12",
-  "generatedAt": "2026-08-12T06:18:05.672Z",
+  "generatedAt": "2026-08-12T11:50:07.875Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 12 August 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,10 +11,16 @@
       "color": "#E87722"
     },
     {
-      "headline": "Authors of IPCC’s 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage gather in Mexico City to advance the report’s draft",
-      "summary": "GENEVA, Aug 11 – More than 120 IPCC authors are meeting in Mexico City, Mexico, from 11 to 14 August to advance the First Order Draft of the 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage (CDR-CCUS). This report is being prepared by the IPCC’s Task Force on National Greenhouse [&#8230;]",
+      "headline": "NEWSLETTER: Europe’s deepening drought - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPejUtZWRCZUd3aTl2ajZNaG80aW5TWjhaVW8ybjlYZFlBVy1qNXhqZ052VVNEbF80dmRDWU5CWlcxTEhEenBWTGJYMDF2aGpVYXlMczZjNWFONlVCQjAxQW5ZZ1pPOTR5eUxUa3lZcVFtSFh5YWtYb2VqRkJNOFBZZmtn?oc=5\" target=\"_blank\"&gt;NEWSLETTER: Europe’s deepening drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Norway wealth fund posts record $184 billion profit in first half of 2026 - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcHFOUndUSGhkUDVOYXRlcXNzUkZUazF1cHBHa2o0OEx1Ylh5Rk9lU1ZYMzM5ZW5obmtDS2MtcGdkUEpHREszYWlVSUsxM241RVR2dE1MYUs4emFySnpYS3VwdjRMRXBieWl0aXpxQVE5OTdweHVIMjlIbTUzVVFwXzh6b0Y0RC14Z0JuTDY4VkZDdTRlZVVVLUNvUlo2RVp0V0xfOWk3Um8?oc=5\" target=\"_blank\"&gt;Norway wealth fund posts record $184 billion profit in first half of 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -36,11 +42,19 @@
           "score": 10
         },
         {
-          "title": "AI’s potential climate benefits outweighed by role in boosting fossil fuels, study finds",
-          "link": "https://www.theguardian.com/technology/2026/aug/11/ai-will-do-more-to-boost-fossil-fuel-production-than-green-energy",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Modelling finds AI-driven productivity gains in coal, oil and gas enable more emissions than applications in renewables avoid&lt;/p&gt;&lt;p&gt;AI-driven productivity gains enable more planet-heating pollution from fossil fuels than they avoid from renewables, a &lt;a href=\"https://www.nature.com/articles/s44168-026-00411-0\"&gt;study&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Researchers modelled the technical potential for AI to boost clean power generation along with projections for how i",
-          "published": "2026-08-11T09:15:45.000Z",
+          "title": "EU packaging rules: Why small firms are sounding the alarm",
+          "link": "https://www.dw.com/en/eu-packaging-rules-why-small-firms-are-sounding-the-alarm/a-78326555?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The EU has introduced new rules targeting packaging waste and &quot;forever chemicals.&quot; Although the changes will be phased in slowly, some small sellers have already paused shipments due to the additional red tape.",
+          "published": "2026-08-12T09:21:00.000Z",
+          "score": 10
+        },
+        {
+          "title": "Great Britain faces electricity supply shortfall during solar eclipse",
+          "link": "https://www.theguardian.com/business/2026/aug/12/great-britain-faces-electricity-supply-shortfall-during-solar-eclipse",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Event expected to hit solar power just as fifth heatwave of summer increases use of air conditioning and fans&lt;/p&gt;&lt;p&gt;Great Britain faces a shortfall of electricity supplies on Wednesday evening as the near total solar eclipse is expected to wipe out solar power generation.&lt;/p&gt;&lt;p&gt;The government’s electricity grid operator raised an official alarm that there is currently not enough power generation expected as the moon blocks &lt;a href=\"https://www.theguardian.com/",
+          "published": "2026-08-12T09:18:21.000Z",
           "score": 7
         },
         {
@@ -52,19 +66,11 @@
           "score": 7
         },
         {
-          "title": "Solar eclipse glasses 'sold out everywhere' as people look for alternatives",
-          "link": "https://www.bbc.co.uk/news/articles/c2lqwyxj024o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "What time and where to see the solar eclipse in Scotland",
+          "link": "https://www.bbc.co.uk/news/articles/cwyrk522pxro?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Eclipse glasses can offer protection from harmful rays of sunlight but most high street stores have sold out.",
-          "published": "2026-08-11T17:58:11.000Z",
-          "score": 7
-        },
-        {
-          "title": "Solar eclipse 2026 weather forecast – where and when will the best view be?",
-          "link": "https://www.bbc.co.uk/weather/articles/c23592z7gppo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Look to the skies on Wednesday because one of the most spectacular solar eclipses for decades is coming the UK's way with likely optimum viewing conditions for many.",
-          "published": "2026-08-11T15:02:33.000Z",
+          "description": "Up to 95% of the Sun will slowly disappear behind the Moon in the most dramatic eclipse visible from the UK since August 1999.",
+          "published": "2026-08-12T10:01:43.000Z",
           "score": 7
         }
       ]
@@ -74,6 +80,14 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "NEWSLETTER: Europe’s deepening drought - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPejUtZWRCZUd3aTl2ajZNaG80aW5TWjhaVW8ybjlYZFlBVy1qNXhqZ052VVNEbF80dmRDWU5CWlcxTEhEenBWTGJYMDF2aGpVYXlMczZjNWFONlVCQjAxQW5ZZ1pPOTR5eUxUa3lZcVFtSFh5YWtYb2VqRkJNOFBZZmtn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPejUtZWRCZUd3aTl2ajZNaG80aW5TWjhaVW8ybjlYZFlBVy1qNXhqZ052VVNEbF80dmRDWU5CWlcxTEhEenBWTGJYMDF2aGpVYXlMczZjNWFONlVCQjAxQW5ZZ1pPOTR5eUxUa3lZcVFtSFh5YWtYb2VqRkJNOFBZZmtn?oc=5\" target=\"_blank\"&gt;NEWSLETTER: Europe’s deepening drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-11T13:05:37.000Z",
+          "score": 13
+        },
+        {
           "title": "Authors of IPCC’s 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage gather in Mexico City to advance the report’s draft",
           "link": "https://www.ipcc.ch/2026/08/11/prtficdrlam2/",
           "source": "IPCC",
@@ -82,20 +96,12 @@
           "score": 11
         },
         {
-          "title": "Drought, water rationing and dry rivers: our water crisis is here | Peter Gleick",
-          "link": "https://www.theguardian.com/commentisfree/2026/aug/11/drought-water-climate-crisis",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;It doesn’t have to be this way. We know what needs to be done&lt;/p&gt;&lt;p&gt;Disturbing news about our water resources is now constant and unrelenting. In just the past few weeks, media have reported that Puerto Rico is &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/13/puerto-rico-water-shortages\"&gt;suffering a deep water crisis&lt;/a&gt; as severe drought has cut water supplies to thousands. The &lt;a href=\"https://www.theguardian.com/commentisfree/2026/aug/05/europe-rive",
-          "published": "2026-08-11T11:00:01.000Z",
-          "score": 9
-        },
-        {
-          "title": "How one German city plans to challenge climate extremes",
-          "link": "https://www.dw.com/en/how-one-german-city-plans-to-challenge-climate-extremes/a-78278373?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Europe braces for next heat wave",
+          "link": "https://www.dw.com/en/europe-braces-for-next-heat-wave/a-78334723?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Western Europe has recorded its hottest-ever June and July, and extreme weather from wildfires to storms is here to stay. How can we adapt to what seems to be the new normal? Cities like Kiel are trying new ideas.",
-          "published": "2026-08-11T07:25:00.000Z",
-          "score": 9
+          "description": "More than half the continent, including much of Germany, is set for a third wave of extreme heat this summer. The prolonged hot weather has significantly worsened wildfires and drought conditions across Europe.",
+          "published": "2026-08-12T11:41:00.000Z",
+          "score": 10
         },
         {
           "title": "UK to get best eclipse since 1999 as Moon blocks out Sun across Europe",
@@ -106,11 +112,11 @@
           "score": 8
         },
         {
-          "title": "‘Subsidies for fossil fuels ... are pouring fuel on the fire’: your questions on fossil fuel profits and the climate crisis answered",
-          "link": "https://www.theguardian.com/environment/live/2026/aug/11/reader-qa-ask-our-reporters-anything-about-fossil-fuel-profits-and-the-climate-crisis",
+          "title": "Just 20 of 6,600 Defra staff working on climate adaptation amid drought and wildfires",
+          "link": "https://www.theguardian.com/environment/2026/aug/12/just-20-of-6600-defra-staff-working-on-climate-adaptation-amid-drought-and-wildfires",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Reporters Jillian Ambrose and Damian Carrington discussed &lt;a href=\"https://www.theguardian.com/business/ng-interactive/2026/aug/04/revealed-major-oil-firms-make-93bn-profits-amid-war-and-climate-crisis\"&gt;their story on oil firms’ profits amid the war in Iran&lt;/a&gt; and the climate crisis and answered your related questions&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=\"https://discussion.theguardian.com/comment-permalink/175370926\"&gt;PCMcGarry&lt;/a&gt",
-          "published": "2026-08-11T15:58:35.000Z",
+          "description": "&lt;p&gt;Exclusive: England ‘desperately unprepared’ for effects of crisis including water shortages and heatwaves&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/live/2026/aug/12/heatwave-extreme-heat-cobra-uk-wildfires-drought-latest-news-updates\"&gt;UK heatwave live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Just 20 staff are working on climate adaptation within a key government department tasked with protecting the environment",
+          "published": "2026-08-12T09:36:34.000Z",
           "score": 7
         }
       ]
@@ -118,12 +124,46 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Norway wealth fund posts record $184 billion profit in first half of 2026 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcHFOUndUSGhkUDVOYXRlcXNzUkZUazF1cHBHa2o0OEx1Ylh5Rk9lU1ZYMzM5ZW5obmtDS2MtcGdkUEpHREszYWlVSUsxM241RVR2dE1MYUs4emFySnpYS3VwdjRMRXBieWl0aXpxQVE5OTdweHVIMjlIbTUzVVFwXzh6b0Y0RC14Z0JuTDY4VkZDdTRlZVVVLUNvUlo2RVp0V0xfOWk3Um8?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcHFOUndUSGhkUDVOYXRlcXNzUkZUazF1cHBHa2o0OEx1Ylh5Rk9lU1ZYMzM5ZW5obmtDS2MtcGdkUEpHREszYWlVSUsxM241RVR2dE1MYUs4emFySnpYS3VwdjRMRXBieWl0aXpxQVE5OTdweHVIMjlIbTUzVVFwXzh6b0Y0RC14Z0JuTDY4VkZDdTRlZVVVLUNvUlo2RVp0V0xfOWk3Um8?oc=5\" target=\"_blank\"&gt;Norway wealth fund posts record $184 billion profit in first half of 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-11T19:19:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Norway wealth fund CEO says fund's entire value could be lost if market collapses - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUXM4c0FCQ01mNlZ0S2RJNVZWdnBiNHFSYjRnWFFEZ0VYR3U2WWw2bjFkdWwybkEwZDJjeTI1aE9rQ1ZRTUVrVWFuN1FaYXdBSUllVVZZeWlmUEVBd0FIbHM4TElBd3FKUnlpalJSR2NxaVBidjJ6VFN6dXNUZmlKQWhMREZvZnVheEk3VDRrTXNyOVhCT3pCQndxZEFkeXdrVUVVeTBpWkt3TGVLaTMzVFhnWW51UVp6Rnd3YQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPUXM4c0FCQ01mNlZ0S2RJNVZWdnBiNHFSYjRnWFFEZ0VYR3U2WWw2bjFkdWwybkEwZDJjeTI1aE9rQ1ZRTUVrVWFuN1FaYXdBSUllVVZZeWlmUEVBd0FIbHM4TElBd3FKUnlpalJSR2NxaVBidjJ6VFN6dXNUZmlKQWhMREZvZnVheEk3VDRrTXNyOVhCT3pCQndxZEFkeXdrVUVVeTBpWkt3TGVLaTMzVFhnWW51UVp6Rnd3YQ?oc=5\" target=\"_blank\"&gt;Norway wealth fund CEO says fund's entire value could be lost if market collapses&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-11T15:55:48.000Z",
+          "score": 2
+        },
+        {
+          "title": "Japan fund managers chase retail cash as JGB yields surge - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOaUJDMkhDRV9BVl9wM2JSTXpRTGhwSGptNkVTYUdnVTVvdGwwTGQ0LS1lZnlhSTRIVi1NaHAxdVRxT29kcV9JM3F4c3BBSnhIYTFScU14QWRuM3g2QWxWSFg3WFZqeHVQcE1aWm5BNGhQeTA1bmcwMnZDUnRFWU1FTmVqZ0xfYjNkT2d3eTRGeTRlZUprT1JXZ3BHcGNnTzN4NGFDb0NvdXJDalcyN2c?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxOaUJDMkhDRV9BVl9wM2JSTXpRTGhwSGptNkVTYUdnVTVvdGwwTGQ0LS1lZnlhSTRIVi1NaHAxdVRxT29kcV9JM3F4c3BBSnhIYTFScU14QWRuM3g2QWxWSFg3WFZqeHVQcE1aWm5BNGhQeTA1bmcwMnZDUnRFWU1FTmVqZ0xfYjNkT2d3eTRGeTRlZUprT1JXZ3BHcGNnTzN4NGFDb0NvdXJDalcyN2c?oc=5\" target=\"_blank\"&gt;Japan fund managers chase retail cash as JGB yields surge&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-12T06:08:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Short on US Patriot missiles, Ukraine looks for alternatives",
+          "link": "https://www.dw.com/en/short-on-us-patriot-missiles-ukraine-looks-for-alternatives/a-78328784?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Russia is putting pressure on Ukraine with ballistic missiles, but Kyiv is short of Patriot interceptors. Domestic production and European alternatives take time. Can Kyiv realistically reduce its dependence on the US?",
+          "published": "2026-08-12T11:43:00.000Z",
+          "score": 4
+        }
+      ]
     },
     {
       "id": "other_world",
@@ -138,10 +178,10 @@
           "score": 12
         },
         {
-          "title": "Can the new PKK law bring peace to Turkey?",
-          "link": "https://www.dw.com/en/can-the-new-pkk-law-bring-peace-to-turkey/a-78326063?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Can Turkey&#039;s new PKK law bring peace?",
+          "link": "https://www.dw.com/en/can-turkey-s-new-pkk-law-bring-peace/a-78326063?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Turkey’s parliament has passed a framework law for the peace process with the Kurdistan Workers’ Party (PKK). What does it stipulate, why is it controversial and what does it mean for the future of the peace process?",
+          "description": "Turkey&#039;s parliament has passed a framework law for the peace process with the Kurdistan Workers&#039; Party (PKK). What does it stipulate, why is it controversial and what does it mean for the future of the peace process?",
           "published": "2026-08-11T16:28:00.000Z",
           "score": 8
         },
@@ -154,28 +194,28 @@
           "score": 8
         },
         {
-          "title": "New Zealand PM survives second leadership challenge ahead of election",
-          "link": "https://www.bbc.co.uk/news/articles/cx2ve2jk5qeo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Christopher Luxon says he has \"full support\" of his party, after a vote of confidence 12 weeks before a general election.",
-          "published": "2026-08-12T02:51:02.000Z",
-          "score": 6
+          "title": "Hormuz Strait to remain closed unless U.S. meets Iran's conditions, Iranian security council says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPcFUwQU11ZTNtdlg0Zm1iSlQ0QlBkaFhUSzI2ZkdPY2M2anViX2l3R2xsUkxXdmszWlVDZU91ckpmeUZFOTlJUzB3T1NXZ3VNZm81R19hX25kdldEcUNZYlh0RDZYUlFYY05hVkM4dkdOUi1IMlVyak96OVphU0U5T3RwYkpqZlpQcVk4cThFM3M5U1dEcS13TDBIamk5OW5TcmEwaDY2d1JRbU80bzVFRGVSbnJTOUItdlhfNFgxRVpnTnRnNHVRRzJZOA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPcFUwQU11ZTNtdlg0Zm1iSlQ0QlBkaFhUSzI2ZkdPY2M2anViX2l3R2xsUkxXdmszWlVDZU91ckpmeUZFOTlJUzB3T1NXZ3VNZm81R19hX25kdldEcUNZYlh0RDZYUlFYY05hVkM4dkdOUi1IMlVyak96OVphU0U5T3RwYkpqZlpQcVk4cThFM3M5U1dEcS13TDBIamk5OW5TcmEwaDY2d1JRbU80bzVFRGVSbnJTOUItdlhfNFgxRVpnTnRnNHVRRzJZOA?oc=5\" target=\"_blank\"&gt;Hormuz Strait to remain closed unless U.S. meets Iran's conditions, Iranian security council says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6",
+          "published": "2026-08-11T16:09:56.000Z",
+          "score": 8
         },
         {
-          "title": "Key issues in Zambia&#039;s 2026 general election",
-          "link": "https://www.dw.com/en/key-issues-in-zambia-s-2026-general-election/a-78320087?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Economic recovery, youth turnout, women&#039;s representation and judicial independence are among the issues shaping Zambia&#039;s vote on Thursday.",
-          "published": "2026-08-11T13:38:00.000Z",
-          "score": 6
+          "title": "Hungary parliament elects former supreme court head Andras Baka as president - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOU3dlWVJ6OFQ1cWYtQWRtdk5Mbk4waXkzWVhLNEFrNkZWbXpMc3NXazZSZ2xiUVZPN2NZbnpNNjRtOVp1TFJqX0hhV2xJNkNVRUhrQktLalJ0aGlURVR0Y1Z0NGhSUVh2eTNrSzF3c0VvSjNRZkUzamxzSlc5NnVpU2h3Q01SOGpJOTdzbVhoeXJHcnpUWGZ0QnZsaVhwdWtsWlpqaUxMcEQyTVBLTWJJYTFxTUZjZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOU3dlWVJ6OFQ1cWYtQWRtdk5Mbk4waXkzWVhLNEFrNkZWbXpMc3NXazZSZ2xiUVZPN2NZbnpNNjRtOVp1TFJqX0hhV2xJNkNVRUhrQktLalJ0aGlURVR0Y1Z0NGhSUVh2eTNrSzF3c0VvSjNRZkUzamxzSlc5NnVpU2h3Q01SOGpJOTdzbVhoeXJHcnpUWGZ0QnZsaVhwdWtsWlpqaUxMcEQyTVBLTWJJYTFxTUZjZw?oc=5\" target=\"_blank\"&gt;Hungary parliament elects former supreme court head Andras Baka as president&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-11T14:34:43.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 309,
-    "articlesLast24h": 74,
-    "afterDedup": 68,
+    "totalArticlesScanned": 407,
+    "articlesLast24h": 174,
+    "afterDedup": 165,
     "feedsQueried": 19
   }
 }
