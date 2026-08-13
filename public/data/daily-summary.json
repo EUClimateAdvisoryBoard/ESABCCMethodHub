@@ -1,12 +1,12 @@
 {
   "date": "2026-08-13",
-  "generatedAt": "2026-08-13T18:00:21.988Z",
+  "generatedAt": "2026-08-13T23:41:48.792Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 13 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Once-in-a-generation solar eclipse wows millions in UK and Europe",
-      "summary": "More than 95% of the Sun was covered by the Moon in Cornwall, while parts of Spain experienced the magic of a total eclipse.",
+      "headline": "Romania shuts only nuclear plant as heat causes huge drop in Danube River level",
+      "summary": "The Cernavodă plant, which produces 20% of Romania's electricity, is not expected to be restarted within the next 10 days.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "India's Tata Motors says change of group chairman won't affect investment plans - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRHQ3XzVZdl9vTXN3cUxYUExTbFlRQ1JLWHUwUzVYWDBNSDdydWVmWlVoVzVjVnlfUm54WmRjTlpBR0lXSTdWTC1Sc1E0RVlNYnA5c0RJbVZXVnlhaVdYUVVWOXkzcXFtRmRfMDdzOWh4OGp3RVUxLVgzTGZxc3NtMVpKWFpPRklDY0hFbFA4Wk9aQ01Nb3g5Zlp0Q3pZRnFidXozUURBMnFtaXZSMEM5bWxqcWdRbk5tSHdJcUliT2YyUQ?oc=5\" target=\"_blank\"&gt;India's Tata Motors says change of group chairman won't affect investment plans&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "India's Tata Motors says change of group chairman won't affect investment plans - reuters.com",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRHQ3XzVZdl9vTXN3cUxYUExTbFlRQ1JLWHUwUzVYWDBNSDdydWVmWlVoVzVjVnlfUm54WmRjTlpBR0lXSTdWTC1Sc1E0RVlNYnA5c0RJbVZXVnlhaVdYUVVWOXkzcXFtRmRfMDdzOWh4OGp3RVUxLVgzTGZxc3NtMVpKWFpPRklDY0hFbFA4Wk9aQ01Nb3g5Zlp0Q3pZRnFidXozUURBMnFtaXZSMEM5bWxqcWdRbk5tSHdJcUliT2YyUQ?oc=5\" target=\"_blank\"&gt;India's Tata Motors says change of group chairman won't affect investment plans&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&g",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,19 +34,11 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Once-in-a-generation solar eclipse wows millions in UK and Europe",
-          "link": "https://www.bbc.co.uk/news/articles/ckgdp4923rdo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "More than 95% of the Sun was covered by the Moon in Cornwall, while parts of Spain experienced the magic of a total eclipse.",
-          "published": "2026-08-12T21:53:45.000Z",
-          "score": 13
-        },
-        {
           "title": "Romania shuts only nuclear plant as heat causes huge drop in Danube River level",
           "link": "https://www.bbc.co.uk/news/articles/cqlxpq5q799o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "The Cernavodă plant, which produces 20% of Romania's electricity, is not expected to be restarted within the next 10 days.",
-          "published": "2026-08-13T16:05:35.000Z",
+          "published": "2026-08-13T19:46:27.000Z",
           "score": 7
         },
         {
@@ -66,12 +58,20 @@
           "score": 7
         },
         {
-          "title": "Photos show rare solar eclipse in Yorkshire",
-          "link": "https://www.bbc.co.uk/news/articles/cy8m212vexko?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The astronomical phenomenon - the best since 1999 - was captured by camera lenses across Yorkshire.",
-          "published": "2026-08-13T06:34:06.000Z",
+          "title": "Does the clean energy transition need forever chemicals?",
+          "link": "https://www.dw.com/en/does-the-clean-energy-transition-need-forever-chemicals/a-77888704?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "As nations globally move to ban forever chemicals, should renewable energy technologies be exempt for the sake of saving the climate?",
+          "published": "2026-08-13T07:13:00.000Z",
           "score": 7
+        },
+        {
+          "title": "India fuels worldwide jump in planned coal production",
+          "link": "https://www.theguardian.com/environment/2026/aug/13/india-planned-coal-production-new-mine",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Rise in new mine proposals, mainly in states of Odisha and Jharkhand, comes despite plateau in global demand&lt;/p&gt;&lt;p&gt;Enough new coalmining projects were proposed last year to increase global supplies by 2.5bn tonnes a year, an increase of 11% from the year before, even as demand for coal plateaus, according to a new report.&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://globalenergymonitor.org/\"&gt;Global Energy Monitor&lt;/a&gt;, an NGO, found that India ignited a rise in new coalmine",
+          "published": "2026-08-13T04:00:48.000Z",
+          "score": 4
         }
       ]
     },
@@ -104,19 +104,19 @@
           "score": 10
         },
         {
-          "title": "Europe heatwave live: UK sees temperatures of 38.1C, the hottest day of 2026; Greece battles wildfires after gale force winds",
-          "link": "https://www.theguardian.com/environment/live/2026/aug/13/europe-heatwave-france-spain-italy-uk-degrees-temperature-record-summer-drought-latest-news-updates",
+          "title": "Fossils show huge carbon emissions harm forests, not ‘green the planet’",
+          "link": "https://www.theguardian.com/us-news/2026/aug/13/forests-carbon-dioxide-emissions",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;A former UK government scientific adviser warned amid the ‘shattering’ heat that worse is still to come&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Met Office has just &lt;a href=\"https://x.com/metoffice/status/2087839648823251426\"&gt;offered an update&lt;/a&gt; on temperatures across the UK, with several stations already reporting temperatures above 30C&lt;/strong&gt; – and it’s not even 11am.&lt;/p&gt;&lt;p&gt;It’s 30.4C in Wych Cross, 30.3C in Charlwood, 30.2C at Kenly Airfield.&lt;/p&gt; &lt;a ",
-          "published": "2026-08-13T17:47:14.000Z",
-          "score": 8
+          "description": "&lt;p&gt;Study of 56m-year-old leaves counters claims from Trump administration members of ‘benefits’ of fossil fuel pollution&lt;/p&gt;&lt;p&gt;Adding huge quantities of carbon dioxide into the atmosphere is set to cause the Earth’s forests to wither and die rather than flourish, according to a new study that counters erroneous claims that fossil fuel pollution will green the planet.&lt;/p&gt;&lt;p&gt;An analysis of fossilized leaf cells from a period known as the Paleocene-Eocene Thermal Maxim",
+          "published": "2026-08-13T18:00:04.000Z",
+          "score": 7
         },
         {
-          "title": "Trump administration pulls support for annual Arctic environmental report",
-          "link": "https://www.theguardian.com/us-news/2026/aug/12/trump-administration-arctic-environmental-report",
+          "title": "‘Everyone is scared’: flood-hit Porto Alegre braces for another El Niño",
+          "link": "https://www.theguardian.com/global-development/2026/aug/13/porto-alegre-brazil-2024-floods-el-nino-climate-crisis-injustice",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Move by National Oceanic and Atmospheric Administration is latest government rollback of climate science activity&lt;/p&gt;&lt;p&gt;The &lt;a href=\"https://www.theguardian.com/us-news/trump-administration\"&gt;Trump administration&lt;/a&gt; has pulled its support for an annual report on the environmental changes across the &lt;a href=\"https://www.theguardian.com/world/arctic\"&gt;Arctic&lt;/a&gt;, a region that is already heating up&lt;a href=\"https://www.theguardian.com/world/2025/dec/16",
-          "published": "2026-08-12T18:17:51.000Z",
+          "description": "&lt;p&gt;Two years after southern Brazil’s worst climate disaster ravaged the city, and with poor areas still recovering, many fear official neglect has left them exposed once again&lt;/p&gt;&lt;p&gt;In the backstreets of Porto Alegre, a state capital in southern &lt;a href=\"https://www.theguardian.com/world/brazil\"&gt;Brazil&lt;/a&gt;, you can still see signs of the devastating flood that swept through the city two years ago: scattered debris, waterlogged homes and destroyed businesses.&lt;/p&g",
+          "published": "2026-08-13T10:00:55.000Z",
           "score": 7
         }
       ]
@@ -126,10 +126,10 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "India's Tata Motors says change of group chairman won't affect investment plans - Reuters",
+          "title": "India's Tata Motors says change of group chairman won't affect investment plans - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRHQ3XzVZdl9vTXN3cUxYUExTbFlRQ1JLWHUwUzVYWDBNSDdydWVmWlVoVzVjVnlfUm54WmRjTlpBR0lXSTdWTC1Sc1E0RVlNYnA5c0RJbVZXVnlhaVdYUVVWOXkzcXFtRmRfMDdzOWh4OGp3RVUxLVgzTGZxc3NtMVpKWFpPRklDY0hFbFA4Wk9aQ01Nb3g5Zlp0Q3pZRnFidXozUURBMnFtaXZSMEM5bWxqcWdRbk5tSHdJcUliT2YyUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRHQ3XzVZdl9vTXN3cUxYUExTbFlRQ1JLWHUwUzVYWDBNSDdydWVmWlVoVzVjVnlfUm54WmRjTlpBR0lXSTdWTC1Sc1E0RVlNYnA5c0RJbVZXVnlhaVdYUVVWOXkzcXFtRmRfMDdzOWh4OGp3RVUxLVgzTGZxc3NtMVpKWFpPRklDY0hFbFA4Wk9aQ01Nb3g5Zlp0Q3pZRnFidXozUURBMnFtaXZSMEM5bWxqcWdRbk5tSHdJcUliT2YyUQ?oc=5\" target=\"_blank\"&gt;India's Tata Motors says change of group chairman won't affect investment plans&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRHQ3XzVZdl9vTXN3cUxYUExTbFlRQ1JLWHUwUzVYWDBNSDdydWVmWlVoVzVjVnlfUm54WmRjTlpBR0lXSTdWTC1Sc1E0RVlNYnA5c0RJbVZXVnlhaVdYUVVWOXkzcXFtRmRfMDdzOWh4OGp3RVUxLVgzTGZxc3NtMVpKWFpPRklDY0hFbFA4Wk9aQ01Nb3g5Zlp0Q3pZRnFidXozUURBMnFtaXZSMEM5bWxqcWdRbk5tSHdJcUliT2YyUQ?oc=5\" target=\"_blank\"&gt;India's Tata Motors says change of group chairman won't affect investment plans&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&g",
           "published": "2026-08-13T14:45:59.000Z",
           "score": 2
         }
@@ -145,14 +145,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Global EV sales rise in July as Europe offsets weakness in China and North America - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUWJNS21tWXhVV085U2s4MWY5M1M5ODFZT1I3NWlfU1JMeE50YlpIdHlNaTBMNkViS0s0d21JYTQ2QVdYcmU4N3JxNFgwVndoQWxidDQwUzZjN282eDdRekpUeTh0WWZsUzh1VEdYWkVKdDRrQnZ1UDZTcGZxeFc3MzBEYmhOVGlFVnJMRkV1dHFrSXNCYjd4Z1FFTERqdWZIaFkxT3FyS21aeUJzdm1TOGNSTnpCc2kwSUo0RjdJSHgyNGdheHdMYVJzT3NSLTAx?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUWJNS21tWXhVV085U2s4MWY5M1M5ODFZT1I3NWlfU1JMeE50YlpIdHlNaTBMNkViS0s0d21JYTQ2QVdYcmU4N3JxNFgwVndoQWxidDQwUzZjN282eDdRekpUeTh0WWZsUzh1VEdYWkVKdDRrQnZ1UDZTcGZxeFc3MzBEYmhOVGlFVnJMRkV1dHFrSXNCYjd4Z1FFTERqdWZIaFkxT3FyS21aeUJzdm1TOGNSTnpCc2kwSUo0RjdJSHgyNGdheHdMYVJzT3NSLTAx?oc=5\" target=\"_blank\"&gt;Global EV sales rise in July as Europe offsets weakness in China and North America&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;R",
-          "published": "2026-08-12T23:12:12.000Z",
-          "score": 13
-        },
-        {
           "title": "India news: Parliament ends turbulent monsoon session",
           "link": "https://www.dw.com/en/india-news-parliament-ends-turbulent-monsoon-session/live-78345872?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -161,36 +153,44 @@
           "score": 8
         },
         {
-          "title": "Stocks rise with oil price below $90, euro edges up, Iran in focus - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNazlfTWozZlI1am8yV1pmREdVZGswQ1NPWl92dGhIN3lVbWJRaFA2YWhWNDQ4NWwweXZpbmpLOGFmcDlUdDhBSGFyU1piOVBzam1JOEN2RVFDOXdWOFk2LTB1MklsRzRfVmlaR3BTb2ZFNmw2U0hjUnhNLUd3cVV0WElxVQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxNazlfTWozZlI1am8yV1pmREdVZGswQ1NPWl92dGhIN3lVbWJRaFA2YWhWNDQ4NWwweXZpbmpLOGFmcDlUdDhBSGFyU1piOVBzam1JOEN2RVFDOXdWOFk2LTB1MklsRzRfVmlaR3BTb2ZFNmw2U0hjUnhNLUd3cVV0WElxVQ?oc=5\" target=\"_blank\"&gt;Stocks rise with oil price below $90, euro edges up, Iran in focus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-13T01:02:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Diesel prices overtake jet fuel in Europe as global shortage widens - Reuters",
+          "title": "Diesel prices overtake jet fuel in Europe as global shortage widens - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQejlyV0VLYkdZTjh6Z2JGUF8tczNIMGNic1RNSlY4cC13b01ERjV0ZnpmSFNpSHFRSThUUDIzY25KbmpLTVVLMzB1aXJEODJMMUl5QkY3OU95TlR0S215YnJTelNxYy1PT2NKbHdqZ0xidV9lRGRxa3ppekp3aENoRmFleG53RF9XVFFpRmtvNEwwSFJ2WHpxZExaS1FyZDZpdmJoeUtpYjJ0U18wa3FLTUNmYw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQejlyV0VLYkdZTjh6Z2JGUF8tczNIMGNic1RNSlY4cC13b01ERjV0ZnpmSFNpSHFRSThUUDIzY25KbmpLTVVLMzB1aXJEODJMMUl5QkY3OU95TlR0S215YnJTelNxYy1PT2NKbHdqZ0xidV9lRGRxa3ppekp3aENoRmFleG53RF9XVFFpRmtvNEwwSFJ2WHpxZExaS1FyZDZpdmJoeUtpYjJ0U18wa3FLTUNmYw?oc=5\" target=\"_blank\"&gt;Diesel prices overtake jet fuel in Europe as global shortage widens&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQejlyV0VLYkdZTjh6Z2JGUF8tczNIMGNic1RNSlY4cC13b01ERjV0ZnpmSFNpSHFRSThUUDIzY25KbmpLTVVLMzB1aXJEODJMMUl5QkY3OU95TlR0S215YnJTelNxYy1PT2NKbHdqZ0xidV9lRGRxa3ppekp3aENoRmFleG53RF9XVFFpRmtvNEwwSFJ2WHpxZExaS1FyZDZpdmJoeUtpYjJ0U18wa3FLTUNmYw?oc=5\" target=\"_blank\"&gt;Diesel prices overtake jet fuel in Europe as global shortage widens&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
           "published": "2026-08-13T12:12:14.000Z",
           "score": 8
         },
         {
-          "title": "Blast at Rotterdam port energy facility kills one person - Reuters",
+          "title": "Blast at Rotterdam port energy facility kills one person - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTHMzY0ljNHJlVEdIUEJETWVOYXdZWU90aHg1QmJRMzVwLXhCLVhwNkg2aFBhdE1CNVVzRF84UHl4ODI5NG5pY3pNS1A2UDFPUTdjODNiMEtObVJyX0JKUkVjV1VUTWRtOHdKazhhenlaVjNIcUI3VVRtbFdhS1psY21xLVc5RWpZdUVQM0JhWk1ENURVekdkWmx4QXBoRFMwdVg0?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPTHMzY0ljNHJlVEdIUEJETWVOYXdZWU90aHg1QmJRMzVwLXhCLVhwNkg2aFBhdE1CNVVzRF84UHl4ODI5NG5pY3pNS1A2UDFPUTdjODNiMEtObVJyX0JKUkVjV1VUTWRtOHdKazhhenlaVjNIcUI3VVRtbFdhS1psY21xLVc5RWpZdUVQM0JhWk1ENURVekdkWmx4QXBoRFMwdVg0?oc=5\" target=\"_blank\"&gt;Blast at Rotterdam port energy facility kills one person&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-13T14:46:16.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPTHMzY0ljNHJlVEdIUEJETWVOYXdZWU90aHg1QmJRMzVwLXhCLVhwNkg2aFBhdE1CNVVzRF84UHl4ODI5NG5pY3pNS1A2UDFPUTdjODNiMEtObVJyX0JKUkVjV1VUTWRtOHdKazhhenlaVjNIcUI3VVRtbFdhS1psY21xLVc5RWpZdUVQM0JhWk1ENURVekdkWmx4QXBoRFMwdVg0?oc=5\" target=\"_blank\"&gt;Blast at Rotterdam port energy facility kills one person&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-08-13T18:05:07.000Z",
           "score": 7
+        },
+        {
+          "title": "India clears law to curb new state taxes on mining - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQeVlLMjE3c3hDQWhycXZoQ0UxemJzTVNXSG1ZWlA0bTdPREk2OFM3NFo0VzY2MGt6bHpRa1RpZnVDQzFaNHFsNnJvZG9EWlpicjJVN19oSDVfUkZIek95ZTRCV1pSdGsyb2RQdk1SOGxlX1JGYkZlNUVwRjBvckxXbzlJSnB0VGlYVVRyX1lDRTE3UlQwT0E4?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxQeVlLMjE3c3hDQWhycXZoQ0UxemJzTVNXSG1ZWlA0bTdPREk2OFM3NFo0VzY2MGt6bHpRa1RpZnVDQzFaNHFsNnJvZG9EWlpicjJVN19oSDVfUkZIek95ZTRCV1pSdGsyb2RQdk1SOGxlX1JGYkZlNUVwRjBvckxXbzlJSnB0VGlYVVRyX1lDRTE3UlQwT0E4?oc=5\" target=\"_blank\"&gt;India clears law to curb new state taxes on mining&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-08-13T12:21:14.000Z",
+          "score": 6
+        },
+        {
+          "title": "Ghana's cocoa farmers push back against new law on land use - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQT3Z4X2M0R2o1VVZDdUhUTWNaQ3piM1BpSWdlSDQ0aFlUMUhLVGZOQWY0cnVia0cxdDJJS19mMzgtQ242T2wwU2JNejkzUHY1NE5QelBaWk9EQTk0aThBaXVMNDNZd2NoQVFFaXJUdzRBV2tybTRMbU1NZ0RPeWZnaTN4QzBMSFZfSlVOSWNQSXU1OHMzR3VRRTY1NF8tazhBTFFPMzVBVEdpOEV6UWFuRVpB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQT3Z4X2M0R2o1VVZDdUhUTWNaQ3piM1BpSWdlSDQ0aFlUMUhLVGZOQWY0cnVia0cxdDJJS19mMzgtQ242T2wwU2JNejkzUHY1NE5QelBaWk9EQTk0aThBaXVMNDNZd2NoQVFFaXJUdzRBV2tybTRMbU1NZ0RPeWZnaTN4QzBMSFZfSlVOSWNQSXU1OHMzR3VRRTY1NF8tazhBTFFPMzVBVEdpOEV6UWFuRVpB?oc=5\" target=\"_blank\"&gt;Ghana's cocoa farmers push back against new law on land use&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-08-13T11:03:58.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 419,
-    "articlesLast24h": 176,
-    "afterDedup": 171,
+    "articlesLast24h": 160,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
