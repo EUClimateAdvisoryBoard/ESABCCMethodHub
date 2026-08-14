@@ -1,26 +1,20 @@
 {
   "date": "2026-08-14",
-  "generatedAt": "2026-08-14T11:47:00.468Z",
+  "generatedAt": "2026-08-14T17:54:01.942Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 14 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "New coal mine openings slow as East Asian demand plateaus",
-      "summary": "China and Australia drove global decline in new capacity additions in 2025, but planned production kept growing The post New coal mine openings slow as East Asian demand plateaus appeared first on Climate Home News.",
+      "headline": "Q&#038;A: What does China’s 15th five-year plan for coal mean for climate action?",
+      "summary": "China has published a new five-year plan for coal, the latest in a slew of important policy documents for the&#8230; The post Q&amp;A: What does China’s 15th five-year plan for coal mean for climate action? appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Will the world&#8217;s drying lands get relief from COP17 in Mongolia?",
-      "summary": "Governments will discuss ways to combat drought and protect herders and their pastures from land degradation in a warming world The post Will the world&#8217;s drying lands get relief from COP17 in Mongolia? appeared first on Climate Home News.",
+      "headline": "Five reservoirs in England and Wales ‘exceptionally low’ as drought persists",
+      "summary": "&lt;p&gt;Extreme heat and lack of rain threatening public water supply, with ‘real trouble’ predicted if autumn stays dry&lt;/p&gt;&lt;p&gt;Five key reservoirs across England and Wales are “exceptionally low” as drought and extreme heat piles pressure on public water supply that is likely to continue into the autumn.&lt;/p&gt;&lt;p&gt;Most of Europe has endured back-to-back climate crisis-driven heatwaves this summer. The extreme heat, coupled with strikingly little rainfall, means almost &lt;a ",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "India's Tata Motors says change of group chairman won't affect investment plans - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRHQ3XzVZdl9vTXN3cUxYUExTbFlRQ1JLWHUwUzVYWDBNSDdydWVmWlVoVzVjVnlfUm54WmRjTlpBR0lXSTdWTC1Sc1E0RVlNYnA5c0RJbVZXVnlhaVdYUVVWOXkzcXFtRmRfMDdzOWh4OGp3RVUxLVgzTGZxc3NtMVpKWFpPRklDY0hFbFA4Wk9aQ01Nb3g5Zlp0Q3pZRnFidXozUURBMnFtaXZSMEM5bWxqcWdRbk5tSHdJcUliT2YyUQ?oc=5\" target=\"_blank\"&gt;India's Tata Motors says change of group chairman won't affect investment plans&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -33,6 +27,22 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Q&#038;A: What does China’s 15th five-year plan for coal mean for climate action?",
+          "link": "https://www.carbonbrief.org/qa-what-does-chinas-15th-five-year-plan-for-coal-mean-for-climate-action",
+          "source": "Carbon Brief",
+          "description": "China has published a new five-year plan for coal, the latest in a slew of important policy documents for the&#8230; The post Q&amp;A: What does China’s 15th five-year plan for coal mean for climate action? appeared first on Carbon Brief.",
+          "published": "2026-08-14T14:09:31.000Z",
+          "score": 13
+        },
+        {
+          "title": "South Africa&#8217;s top court blocks Shell&#8217;s offshore oil exploration right",
+          "link": "https://www.climatechangenews.com/2026/08/14/south-africas-top-court-blocks-shells-offshore-oil-exploration-right/",
+          "source": "Climate Home News",
+          "description": "South Africa's Constitutional Court ruled that Shell and its partners failed to consult affected communities and did not properly consider the environmental risks of offshore oil exploration The post South Africa&#8217;s top court blocks Shell&#8217;s offshore oil exploration right appeared first on Climate Home News.",
+          "published": "2026-08-14T17:18:04.000Z",
+          "score": 10
+        },
         {
           "title": "New coal mine openings slow as East Asian demand plateaus",
           "link": "https://www.climatechangenews.com/2026/08/14/new-coal-mine-openings-slow-as-east-asian-demand-plateaus/",
@@ -56,22 +66,6 @@
           "description": "Why is the Sun's corona millions of degrees hotter than its surface? And how does it maintain its inexplicably high temperature?",
           "published": "2026-08-14T02:13:27.000Z",
           "score": 7
-        },
-        {
-          "title": "Romania shuts only nuclear plant as heat causes huge drop in Danube River level",
-          "link": "https://www.bbc.co.uk/news/articles/cqlxpq5q799o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The Cernavodă plant, which produces 20% of Romania's electricity, is not expected to be restarted within the next 10 days.",
-          "published": "2026-08-13T19:46:27.000Z",
-          "score": 7
-        },
-        {
-          "title": "Builder with own observatory captures solar eclipse",
-          "link": "https://www.bbc.co.uk/news/articles/c980r6327y1o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Simon Wallace, who got hooked on astrophotography in lockdown, shares his images of the spectacle.",
-          "published": "2026-08-13T16:37:11.000Z",
-          "score": 7
         }
       ]
     },
@@ -80,43 +74,43 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Will the world&#8217;s drying lands get relief from COP17 in Mongolia?",
-          "link": "https://www.climatechangenews.com/2026/08/13/will-the-worlds-drying-lands-get-relief-from-cop17-in-mongolia/",
-          "source": "Climate Home News",
-          "description": "Governments will discuss ways to combat drought and protect herders and their pastures from land degradation in a warming world The post Will the world&#8217;s drying lands get relief from COP17 in Mongolia? appeared first on Climate Home News.",
-          "published": "2026-08-13T13:49:42.000Z",
-          "score": 10
-        },
-        {
-          "title": "19 people taken to hospital after West Midlands fire, as thousands evacuated in Croatia – Europe live",
-          "link": "https://www.theguardian.com/world/live/2026/aug/14/fires-wildfires-extreme-heat-west-midlands-stourbridge-uk-greece-france-croatia-climate-crisis-europe-latest-news-updates",
+          "title": "Five reservoirs in England and Wales ‘exceptionally low’ as drought persists",
+          "link": "https://www.theguardian.com/environment/2026/aug/14/reservoirs-england-wales-exceptionally-low-water-drought",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;54 people were also treated by paramedics Stourbridge fire as blazes continue across Europe as extreme heat continues&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/uk-news/2026/aug/13/several-homes-ablaze-as-firefighters-try-to-contain-west-midlands-grassfire\"&gt;Four taken to hospital and homes damaged in West Midlands fires&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;England has received just 4mm of rain so far in August, or 6% of th",
-          "published": "2026-08-14T11:16:03.000Z",
-          "score": 8
+          "description": "&lt;p&gt;Extreme heat and lack of rain threatening public water supply, with ‘real trouble’ predicted if autumn stays dry&lt;/p&gt;&lt;p&gt;Five key reservoirs across England and Wales are “exceptionally low” as drought and extreme heat piles pressure on public water supply that is likely to continue into the autumn.&lt;/p&gt;&lt;p&gt;Most of Europe has endured back-to-back climate crisis-driven heatwaves this summer. The extreme heat, coupled with strikingly little rainfall, means almost &lt;a ",
+          "published": "2026-08-14T14:00:28.000Z",
+          "score": 9
         },
         {
-          "title": "Fossils show huge carbon emissions harm forests, not ‘green the planet’",
-          "link": "https://www.theguardian.com/us-news/2026/aug/13/forests-carbon-dioxide-emissions",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Study of 56m-year-old leaves counters claims from Trump administration members of ‘benefits’ of fossil fuel pollution&lt;/p&gt;&lt;p&gt;Adding huge quantities of carbon dioxide into the atmosphere is set to cause the Earth’s forests to wither and die rather than flourish, according to a new study that counters erroneous claims that fossil fuel pollution will green the planet.&lt;/p&gt;&lt;p&gt;An analysis of fossilized leaf cells from a period known as the Paleocene-Eocene Thermal Maxim",
-          "published": "2026-08-13T18:00:04.000Z",
-          "score": 7
-        },
-        {
-          "title": "Germany news: Wildfire forces evacuations in western woods",
-          "link": "https://www.dw.com/en/germany-news-wildfire-forces-evacuations-in-western-woods/live-78361311?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Eco wins: A Dutch gym for crops, a climate-ready city and a beaver comeback",
+          "link": "https://www.dw.com/en/eco-wins-a-dutch-gym-for-crops-a-climate-ready-city-and-a-beaver-comeback/a-78372639?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Hundreds of villagers have been evacuated in western Germany after a wildfire spread close to a village. Meanwhile, farmers have warned that drought and high temperatures could cause major crop losses. DW has the latest.",
-          "published": "2026-08-14T09:03:00.000Z",
+          "description": "Dutch crops hit the &quot;climate gym,&quot; a German city is constructing for more extreme weather, and beavers are restoring rivers across Europe. This week&#039;s eco wins are all about building for a changing climate.",
+          "published": "2026-08-14T14:11:00.000Z",
+          "score": 9
+        },
+        {
+          "title": "‘It’s due to climate’: the people of Stourbridge on the town’s wildfires",
+          "link": "https://www.theguardian.com/environment/2026/aug/14/stourbridge-wildfires-climate-change",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Thursday has been described by residents as ‘horrendous’, ‘distressing’ and ‘one of the scariest days of my life’&lt;/p&gt;&lt;p&gt;People in Stourbridge have described the fires that devastated more than a dozen homes as “horrendous” and “distressing”, with one describing blazes that surpassed the height of residential houses.&lt;/p&gt;&lt;p&gt;Multiple fires spread across the West Midlands on Thursday as temperatures reached record highs of 38.1C in the UK, during the country’s fifth ",
+          "published": "2026-08-14T17:17:27.000Z",
           "score": 7
         },
         {
-          "title": "Several homes affected by central England wildfire, fire service says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPaU9JY3VXTE53X3FFdkpKQW9WMG9veHZWZXVtSEl1ek52OVRrZ0VjajBnM0pFVnpkUEIxaksxVUVHa096N0NIRGZvRzhRRnJ2WEJMRHlLNzZ4bnZiSWtmaTN4aXZtQUpGZjBrV05yWlllVWI5Y1JLd016QXlKck5NU2M3RXJnUzc1dXJVd1pVUEhvNy1ER0dubEJ1aHB6b1FmWmQtdERYT1BsZnBT?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPaU9JY3VXTE53X3FFdkpKQW9WMG9veHZWZXVtSEl1ek52OVRrZ0VjajBnM0pFVnpkUEIxaksxVUVHa096N0NIRGZvRzhRRnJ2WEJMRHlLNzZ4bnZiSWtmaTN4aXZtQUpGZjBrV05yWlllVWI5Y1JLd016QXlKck5NU2M3RXJnUzc1dXJVd1pVUEhvNy1ER0dubEJ1aHB6b1FmWmQtdERYT1BsZnBT?oc=5\" target=\"_blank\"&gt;Several homes affected by central England wildfire, fire service says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-13T17:42:37.000Z",
+          "title": "The Great Barrier Reef isn’t dead yet. According to News Corp that makes climate science a ‘pseudo-religion’ | Temperature Check",
+          "link": "https://www.theguardian.com/environment/2026/aug/15/the-great-barrier-reef-isnt-dead-yet-according-to-news-corp-that-makes-climate-science-a-pseudo-religion",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;‘High coral cover is evidence of recovery and resilience, not evidence that the disturbances causing mortality didn’t happen,’ scientist says&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The Australian n",
+          "published": "2026-08-14T15:00:32.000Z",
+          "score": 7
+        },
+        {
+          "title": "Electric vehicle sales targets could be cut after pressure from car makers",
+          "link": "https://www.bbc.co.uk/news/articles/c1l1yj0zd9no?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The government says it is considering cutting the new electric car sales target from 80% to 50% by 2030.",
+          "published": "2026-08-14T15:58:21.000Z",
           "score": 7
         }
       ]
@@ -124,24 +118,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "India's Tata Motors says change of group chairman won't affect investment plans - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRHQ3XzVZdl9vTXN3cUxYUExTbFlRQ1JLWHUwUzVYWDBNSDdydWVmWlVoVzVjVnlfUm54WmRjTlpBR0lXSTdWTC1Sc1E0RVlNYnA5c0RJbVZXVnlhaVdYUVVWOXkzcXFtRmRfMDdzOWh4OGp3RVUxLVgzTGZxc3NtMVpKWFpPRklDY0hFbFA4Wk9aQ01Nb3g5Zlp0Q3pZRnFidXozUURBMnFtaXZSMEM5bWxqcWdRbk5tSHdJcUliT2YyUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRHQ3XzVZdl9vTXN3cUxYUExTbFlRQ1JLWHUwUzVYWDBNSDdydWVmWlVoVzVjVnlfUm54WmRjTlpBR0lXSTdWTC1Sc1E0RVlNYnA5c0RJbVZXVnlhaVdYUVVWOXkzcXFtRmRfMDdzOWh4OGp3RVUxLVgzTGZxc3NtMVpKWFpPRklDY0hFbFA4Wk9aQ01Nb3g5Zlp0Q3pZRnFidXozUURBMnFtaXZSMEM5bWxqcWdRbk5tSHdJcUliT2YyUQ?oc=5\" target=\"_blank\"&gt;India's Tata Motors says change of group chairman won't affect investment plans&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-13T14:45:59.000Z",
-          "score": 2
-        },
-        {
-          "title": "Mighty Norway wealth fund warns of erosion in shareholder rights - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOFdQTUM2blBTRDR3NFBQOElEclJzTFV1OG50c2tCSnRVeFhESGQ1TlpoaWstTTNZaW5jR0hRckx1RWpLdXRwOUc2S1IyeWtraWdGZTFiZjhXQjY2Q1BxOXNhMDZoWVdMQVpsSWtEVjlBbGUySWYzb09ZRC1DTmR1SHNEZXpVYlQwWmw0S0d5eE5GOFNvd1ByYVM5b25hS28wRzhLNm1TZ0xxWmJNYkhySE5lRjZMV21z?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOFdQTUM2blBTRDR3NFBQOElEclJzTFV1OG50c2tCSnRVeFhESGQ1TlpoaWstTTNZaW5jR0hRckx1RWpLdXRwOUc2S1IyeWtraWdGZTFiZjhXQjY2Q1BxOXNhMDZoWVdMQVpsSWtEVjlBbGUySWYzb09ZRC1DTmR1SHNEZXpVYlQwWmw0S0d5eE5GOFNvd1ByYVM5b25hS28wRzhLNm1TZ0xxWmJNYkhySE5lRjZMV21z?oc=5\" target=\"_blank\"&gt;Mighty Norway wealth fund warns of erosion in shareholder rights&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-13T17:08:59.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -153,11 +130,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Presidential vote counting halted in Zambia over alleged attacks on polling staff",
+          "title": "Zambia vote counting resumes after pause over alleged attacks on polling staff",
           "link": "https://www.bbc.co.uk/news/articles/c5yr8r04edvo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The electoral commission said violence had \"resulted in the theft of marked ballot papers\".",
-          "published": "2026-08-14T11:37:31.000Z",
+          "published": "2026-08-14T16:28:59.000Z",
           "score": 8
         },
         {
@@ -169,14 +146,6 @@
           "score": 8
         },
         {
-          "title": "Diesel prices overtake jet fuel in Europe as global shortage widens - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQejlyV0VLYkdZTjh6Z2JGUF8tczNIMGNic1RNSlY4cC13b01ERjV0ZnpmSFNpSHFRSThUUDIzY25KbmpLTVVLMzB1aXJEODJMMUl5QkY3OU95TlR0S215YnJTelNxYy1PT2NKbHdqZ0xidV9lRGRxa3ppekp3aENoRmFleG53RF9XVFFpRmtvNEwwSFJ2WHpxZExaS1FyZDZpdmJoeUtpYjJ0U18wa3FLTUNmYw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQejlyV0VLYkdZTjh6Z2JGUF8tczNIMGNic1RNSlY4cC13b01ERjV0ZnpmSFNpSHFRSThUUDIzY25KbmpLTVVLMzB1aXJEODJMMUl5QkY3OU95TlR0S215YnJTelNxYy1PT2NKbHdqZ0xidV9lRGRxa3ppekp3aENoRmFleG53RF9XVFFpRmtvNEwwSFJ2WHpxZExaS1FyZDZpdmJoeUtpYjJ0U18wa3FLTUNmYw?oc=5\" target=\"_blank\"&gt;Diesel prices overtake jet fuel in Europe as global shortage widens&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-13T12:12:14.000Z",
-          "score": 8
-        },
-        {
           "title": "Cook Islands PM's party likely to retain parliament in preliminary results - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWFBVSG5XTFk4cmNwOEFSUFRHSVVFYVB6dTZmenJaZ3NJMDdBcXVVeElPUDV1WGZ0ZTJ0WFk2WGp3RmsyN01Zem5acmpPcnd3czdsdjlOVG5qa0lMVUFweG9Lb1ZuTnlJbXc5ekpKOEVpQk9CR0w4WEZXNENXRUJIcEVLSHdtUDljMFI2ZXBwUklHSHlMZWdfcTZlTEkzeDFHQnltZTRKTld0d01NcFZFYy1uQnFoa1d2MmcxZVRKTQ?oc=5",
           "source": "Reuters World (via Google News)",
@@ -185,20 +154,28 @@
           "score": 8
         },
         {
-          "title": "Blast at Rotterdam port energy facility kills one person - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTHMzY0ljNHJlVEdIUEJETWVOYXdZWU90aHg1QmJRMzVwLXhCLVhwNkg2aFBhdE1CNVVzRF84UHl4ODI5NG5pY3pNS1A2UDFPUTdjODNiMEtObVJyX0JKUkVjV1VUTWRtOHdKazhhenlaVjNIcUI3VVRtbFdhS1psY21xLVc5RWpZdUVQM0JhWk1ENURVekdkWmx4QXBoRFMwdVg0?oc=5",
+          "title": "Taiwan parliament approves holding of three referendums, including on caning sex criminals - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOOGhmdUhuWGdHbHczcXBEejNtM0RWTld1dUlfcUdVeEhDNkhrMF9ldFhoY0MzWTVFME04T0h2Y2JmcmNBNE13bGZMMmtyY3NjV3lmdGRDVzNTWUR5TGNOd2hibUNtYk5TRm1kcnR2Zjl4eTA3Q3FfMmNNeWhmY0Jwai02eERERGxYYjJCOVB0SEFQMG5yZ3R3dEZnRU1uampCS1c3MlJiajBIUDBQUzhRTlQzQ0RybDdycG1wbFI1YmZ4VUdIdDZB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPTHMzY0ljNHJlVEdIUEJETWVOYXdZWU90aHg1QmJRMzVwLXhCLVhwNkg2aFBhdE1CNVVzRF84UHl4ODI5NG5pY3pNS1A2UDFPUTdjODNiMEtObVJyX0JKUkVjV1VUTWRtOHdKazhhenlaVjNIcUI3VVRtbFdhS1psY21xLVc5RWpZdUVQM0JhWk1ENURVekdkWmx4QXBoRFMwdVg0?oc=5\" target=\"_blank\"&gt;Blast at Rotterdam port energy facility kills one person&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-13T18:05:07.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOOGhmdUhuWGdHbHczcXBEejNtM0RWTld1dUlfcUdVeEhDNkhrMF9ldFhoY0MzWTVFME04T0h2Y2JmcmNBNE13bGZMMmtyY3NjV3lmdGRDVzNTWUR5TGNOd2hibUNtYk5TRm1kcnR2Zjl4eTA3Q3FfMmNNeWhmY0Jwai02eERERGxYYjJCOVB0SEFQMG5yZ3R3dEZnRU1uampCS1c3MlJiajBIUDBQUzhRTlQzQ0RybDdycG1wbFI1YmZ4VUdIdDZB?oc=5\" target=\"_blank\"&gt;Taiwan parliament approves holding of three referendums, including on caning sex criminals&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
+          "published": "2026-08-14T06:38:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Hundreds evacuated from Croatian and Greek resorts as wildfires stretch across Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPdGhObVd4bVhZVVg5VVdsMnNHZzlZNEF0ckRfdHB4UEQ5QkRGZUo0ZGxESjZzSTBmQ2V6S2h0eEhhZmR2S05BbWtrT0oxXzlWVHJma1pKNzBJNFlyMzZ5azFlM2dqOEg0Szd6a3BpVkswUnBZUlNDQjNXdXRXV1pNQXJUR2VuTEhPeGtSY05qZXJrbUZWRGtxYWNZT3h2bjNLMzNzTU5vLVJmaVhJd1hiZ0xoSFJLODZDZHh6Q3A0WEV4M1E5ejEwWmF3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPdGhObVd4bVhZVVg5VVdsMnNHZzlZNEF0ckRfdHB4UEQ5QkRGZUo0ZGxESjZzSTBmQ2V6S2h0eEhhZmR2S05BbWtrT0oxXzlWVHJma1pKNzBJNFlyMzZ5azFlM2dqOEg0Szd6a3BpVkswUnBZUlNDQjNXdXRXV1pNQXJUR2VuTEhPeGtSY05qZXJrbUZWRGtxYWNZT3h2bjNLMzNzTU5vLVJmaVhJd1hiZ0xoSFJLODZDZHh6Q3A0WEV4M1E5ejEwWmF3?oc=5\" target=\"_blank\"&gt;Hundreds evacuated from Croatian and Greek resorts as wildfires stretch across Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
+          "published": "2026-08-14T14:30:10.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 407,
-    "articlesLast24h": 160,
-    "afterDedup": 154,
+    "articlesLast24h": 166,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
