@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "generatedAt": "2026-08-14T17:54:01.942Z",
+  "generatedAt": "2026-08-14T23:22:08.773Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 14 August 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -82,35 +82,35 @@
           "score": 9
         },
         {
-          "title": "Eco wins: A Dutch gym for crops, a climate-ready city and a beaver comeback",
-          "link": "https://www.dw.com/en/eco-wins-a-dutch-gym-for-crops-a-climate-ready-city-and-a-beaver-comeback/a-78372639?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Eco wins: A Dutch lab for crops, a climate-ready city, and a beaver comeback",
+          "link": "https://www.dw.com/en/eco-wins-a-dutch-lab-for-crops-a-climate-ready-city-and-a-beaver-comeback/a-78372639?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Dutch crops hit the &quot;climate gym,&quot; a German city is constructing for more extreme weather, and beavers are restoring rivers across Europe. This week&#039;s eco wins are all about building for a changing climate.",
+          "description": "Dutch crops hit the &quot;climate gym,&quot; a German city is preparing for more extreme weather, and beavers are restoring rivers across Europe. This week&#039;s eco wins are all about building and adapting to a changing climate.",
           "published": "2026-08-14T14:11:00.000Z",
           "score": 9
         },
         {
-          "title": "‘It’s due to climate’: the people of Stourbridge on the town’s wildfires",
-          "link": "https://www.theguardian.com/environment/2026/aug/14/stourbridge-wildfires-climate-change",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Thursday has been described by residents as ‘horrendous’, ‘distressing’ and ‘one of the scariest days of my life’&lt;/p&gt;&lt;p&gt;People in Stourbridge have described the fires that devastated more than a dozen homes as “horrendous” and “distressing”, with one describing blazes that surpassed the height of residential houses.&lt;/p&gt;&lt;p&gt;Multiple fires spread across the West Midlands on Thursday as temperatures reached record highs of 38.1C in the UK, during the country’s fifth ",
-          "published": "2026-08-14T17:17:27.000Z",
-          "score": 7
-        },
-        {
-          "title": "The Great Barrier Reef isn’t dead yet. According to News Corp that makes climate science a ‘pseudo-religion’ | Temperature Check",
-          "link": "https://www.theguardian.com/environment/2026/aug/15/the-great-barrier-reef-isnt-dead-yet-according-to-news-corp-that-makes-climate-science-a-pseudo-religion",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;‘High coral cover is evidence of recovery and resilience, not evidence that the disturbances causing mortality didn’t happen,’ scientist says&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The Australian n",
-          "published": "2026-08-14T15:00:32.000Z",
-          "score": 7
-        },
-        {
-          "title": "Electric vehicle sales targets could be cut after pressure from car makers",
-          "link": "https://www.bbc.co.uk/news/articles/c1l1yj0zd9no?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Draft dark skies guidance drawn up for the Highlands",
+          "link": "https://www.bbc.co.uk/news/articles/cg4dw2e9dedo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "The government says it is considering cutting the new electric car sales target from 80% to 50% by 2030.",
-          "published": "2026-08-14T15:58:21.000Z",
+          "description": "The plan to reduce light pollution could be put out for public consultation at a later date.",
+          "published": "2026-08-14T21:46:55.000Z",
+          "score": 8
+        },
+        {
+          "title": "Burnham announces £65m for drought-hit farmers after Labour pressure",
+          "link": "https://www.theguardian.com/environment/2026/aug/14/andy-burnham-climate-response-drought-hit-farmers-labour-pressure",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;PM steps up climate response with measures including better water access and support for building farm reservoirs&lt;/p&gt;&lt;p&gt;Farmers must not carry the risks of the climate crisis alone, Andy Burnham has said, as he announced £65m of funding to help them manage the devastating drought.&lt;/p&gt;&lt;p&gt;The prime minister is stepping up his response to the immediate climate crisis after facing a backlash from his own MPs and Labour’s grassroots &lt;a href=\"https://www.theguardian",
+          "published": "2026-08-14T21:30:38.000Z",
+          "score": 7
+        },
+        {
+          "title": "Burnham criticised for EV and North Sea approach amid climate crisis",
+          "link": "https://www.theguardian.com/environment/2026/aug/14/andy-burnham-new-ev-sales-targets",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Cut in electric vehicle sales targets could add millions of tonnes of CO&lt;sub&gt;2&lt;/sub&gt; to emissions in UK, say green campaigners&lt;/p&gt;&lt;p&gt;Andy Burnham has been criticised for moving to cut electric vehicle (EV) sales targets and accept North Sea drilling at a time of devastating wildfires caused by the climate emergency.&lt;/p&gt;&lt;p&gt;The prime minister for the first time acknowledged on Friday that the climate crisis was behind hundreds of wildfires that have rip",
+          "published": "2026-08-14T18:51:11.000Z",
           "score": 7
         }
       ]
@@ -123,7 +123,16 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "US raises pressure on EU to 'deliver' on non-tariff trade commitments - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQaDhZN1ZqY3p4WTd3WjdaWC1NWHhGdUNmUjBJSmNqV0Q2TTd2YzV2eXh1U2FkbnRTNHpNeXpPWERMald3cXBNZFFLTU9qMVg0dUdMN05fd1RHZlUxTmxDd050TVZXVkF4YVhmSlp4V0hCZWlPMFhnXzQ5dDFOVFFlMENZVkdtUmE4cTZHd2lISmwwbVJGd2ZaYUpFLTQ0Qzc4aGIySzZ5TFppVU5VQXU1VjV4M2N2OWNZdEo0cWhuOGpWUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQaDhZN1ZqY3p4WTd3WjdaWC1NWHhGdUNmUjBJSmNqV0Q2TTd2YzV2eXh1U2FkbnRTNHpNeXpPWERMald3cXBNZFFLTU9qMVg0dUdMN05fd1RHZlUxTmxDd050TVZXVkF4YVhmSlp4V0hCZWlPMFhnXzQ5dDFOVFFlMENZVkdtUmE4cTZHd2lISmwwbVJGd2ZaYUpFLTQ0Qzc4aGIySzZ5TFppVU5VQXU1VjV4M2N2OWNZdEo0cWhuOGpWUQ?oc=5\" target=\"_blank\"&gt;US raises pressure on EU to 'deliver' on non-tariff trade commitments&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-14T17:24:42.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
@@ -138,19 +147,11 @@
           "score": 8
         },
         {
-          "title": "Zambia suspends vote count after violence",
-          "link": "https://www.dw.com/en/zambia-suspends-vote-count-after-violence/a-78368601?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Zambia vote count resumes after suspension amid reports of violence",
+          "link": "https://www.dw.com/en/zambia-vote-count-resumes-after-suspension-amid-reports-of-violence/a-78368601?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Zambia has halted the counting and publication of election results after violence targeting poll workers and reports of stolen ballots. The electoral commission says it will reassess the suspension within 24 hours.",
+          "description": "Earlier, the electoral commission suspended vote counting after alleged attacks on polling staff and the theft of marked ballot papers.",
           "published": "2026-08-14T10:56:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Cook Islands PM's party likely to retain parliament in preliminary results - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWFBVSG5XTFk4cmNwOEFSUFRHSVVFYVB6dTZmenJaZ3NJMDdBcXVVeElPUDV1WGZ0ZTJ0WFk2WGp3RmsyN01Zem5acmpPcnd3czdsdjlOVG5qa0lMVUFweG9Lb1ZuTnlJbXc5ekpKOEVpQk9CR0w4WEZXNENXRUJIcEVLSHdtUDljMFI2ZXBwUklHSHlMZWdfcTZlTEkzeDFHQnltZTRKTld0d01NcFZFYy1uQnFoa1d2MmcxZVRKTQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQWFBVSG5XTFk4cmNwOEFSUFRHSVVFYVB6dTZmenJaZ3NJMDdBcXVVeElPUDV1WGZ0ZTJ0WFk2WGp3RmsyN01Zem5acmpPcnd3czdsdjlOVG5qa0lMVUFweG9Lb1ZuTnlJbXc5ekpKOEVpQk9CR0w4WEZXNENXRUJIcEVLSHdtUDljMFI2ZXBwUklHSHlMZWdfcTZlTEkzeDFHQnltZTRKTld0d01NcFZFYy1uQnFoa1d2MmcxZVRKTQ?oc=5\" target=\"_blank\"&gt;Cook Islands PM's party likely to retain parliament in preliminary results&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-13T23:07:44.000Z",
           "score": 8
         },
         {
@@ -168,13 +169,21 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPdGhObVd4bVhZVVg5VVdsMnNHZzlZNEF0ckRfdHB4UEQ5QkRGZUo0ZGxESjZzSTBmQ2V6S2h0eEhhZmR2S05BbWtrT0oxXzlWVHJma1pKNzBJNFlyMzZ5azFlM2dqOEg0Szd6a3BpVkswUnBZUlNDQjNXdXRXV1pNQXJUR2VuTEhPeGtSY05qZXJrbUZWRGtxYWNZT3h2bjNLMzNzTU5vLVJmaVhJd1hiZ0xoSFJLODZDZHh6Q3A0WEV4M1E5ejEwWmF3?oc=5\" target=\"_blank\"&gt;Hundreds evacuated from Croatian and Greek resorts as wildfires stretch across Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
           "published": "2026-08-14T14:30:10.000Z",
           "score": 8
+        },
+        {
+          "title": "European shares flat, but set for weekly loss as Iran tensions lift oil - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPa3JRTDJxWjQ5cXhiMXUwMkJSb2FrXzg0S3FvMkV0Z1VYRFV1a0dKcHEwaG9yWG1hb0RyWF9qQzFlek0zT2hXOGl0b2pSTHVTZ1lhclRuY1FsUm00alVhUkYzVEtVN1BTRUVzdmZHVXdVX2g5emE2NGRWN1ZyMXFMTnFVdmhvbVhVclFHajE5LUtGU0VnS2hJTVJTZGJHWDgzMDNhcmlWNHhtVm5MWXZz?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPa3JRTDJxWjQ5cXhiMXUwMkJSb2FrXzg0S3FvMkV0Z1VYRFV1a0dKcHEwaG9yWG1hb0RyWF9qQzFlek0zT2hXOGl0b2pSTHVTZ1lhclRuY1FsUm00alVhUkYzVEtVN1BTRUVzdmZHVXdVX2g5emE2NGRWN1ZyMXFMTnFVdmhvbVhVclFHajE5LUtGU0VnS2hJTVJTZGJHWDgzMDNhcmlWNHhtVm5MWXZz?oc=5\" target=\"_blank\"&gt;European shares flat, but set for weekly loss as Iran tensions lift oil&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-14T07:23:46.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 407,
-    "articlesLast24h": 166,
+    "totalArticlesScanned": 413,
+    "articlesLast24h": 164,
     "afterDedup": 156,
     "feedsQueried": 19
   }
