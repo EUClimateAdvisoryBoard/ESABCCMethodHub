@@ -1,6 +1,6 @@
 {
   "date": "2026-08-15",
-  "generatedAt": "2026-08-15T05:24:44.691Z",
+  "generatedAt": "2026-08-15T11:21:11.313Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 15 August 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -12,13 +12,13 @@
     },
     {
       "headline": "Europe's scorched landscapes seen from space after summer heatwaves",
-      "summary": "BBC Verify examines the impact of drought and extreme heat on western European rivers, fields and mountains.",
+      "summary": "From glaciers shrinking to an exposed shipwreck, satellites capture the impact of extreme heat and drought.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Alphabet becomes Berkshire Hathaway's third-largest investment - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPTERjbHBXeUxvR0JSMUpreTA0SnpXOFVpUUtXLXZCdnhaemtsTjFBeWNfU01Xa0pWMDJUZUt6M0RuMVdLMmdpNTJhSERFZzNYclV3TDdGc1l6OWsyRGF2ejR1aHFmWUlIQWNzb1Q2SXBKWlZHWnljQ2pmdk9GdDB5a3haeFRUcWFfNGJCdVRQWjIyUy0tS0tKek51OVc5aV9nUWhuWWFENm1BLXdJYXNjWVRfaVEyTkdyNG5iQXhCVFBfaHRDLTFBdEtn?oc=5\" target=\"_blank\"&gt;Alphabet becomes Berkshire Hathaway's third-largest investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "SEC proposes easing 'pay-to-play' rules for investment advisers - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPVlVxX3RWZ01iMUJNTFNaV184aS1Ncjh6cEcxQUJYTE1USWxHRGJBVjBabnhzTXo5RXduV1JpTWwxald6NmhxalBaTEJ5OE5peEN0TUpfc3o1YWQxdWhMZXp3YnhoZHJTZVpTUTVlTU9DRG1TMVdPNHRVcGtTQUQyZWJjRGdGYTNhNGpNZnl1ZlBUa2hwRjkyQlE3dGlBTEgxXzM1bjNaSUktN3R5a1hJ?oc=5\" target=\"_blank\"&gt;SEC proposes easing 'pay-to-play' rules for investment advisers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -58,19 +58,19 @@
           "score": 10
         },
         {
+          "title": "Solar eclipse inspires talk of Pac-man and Shinto myths",
+          "link": "https://www.bbc.co.uk/news/articles/c33020jgyllo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Thousands turned out to watch the solar eclipse in the South West; here's what they made of it.",
+          "published": "2026-08-15T06:08:29.000Z",
+          "score": 7
+        },
+        {
           "title": "Vast German wildfire forces evacuation in Eifel forest",
           "link": "https://www.dw.com/en/vast-german-wildfire-forces-evacuation-in-eifel-forest/live-78361311?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "Firefighters tackling the biggest forest fire in the history of North Rhine-Westphalia say residents are unlikely to be able to return on Friday amid high temperatures, humidity and wind. DW has the latest.",
           "published": "2026-08-14T19:32:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "India opens nuclear sector to proven foreign technology - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRDlheFE0eXlha2U3QTR5TUpFQU5iSFQ5d0NaVXZCdVNxbmI1cVE0emU1ZExfcl9nbDhmb1JFbS04NXQtMk9hVzFVNDZZVXV0cHJEVW5IWUNkbEhGWHhjMGVPRVNweFlmdkhpY1BaYmJDZmRRdzZxaUU0M19aNzBqeVlYY3lnZVlqWTc1WnBRXzRnNjZNdFh1TkR4U1NjWlZSUmF4aElNYngtNmhaSjVSZVIzX05rSzg2QTVhRjlaTVdyQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRDlheFE0eXlha2U3QTR5TUpFQU5iSFQ5d0NaVXZCdVNxbmI1cVE0emU1ZExfcl9nbDhmb1JFbS04NXQtMk9hVzFVNDZZVXV0cHJEVW5IWUNkbEhGWHhjMGVPRVNweFlmdkhpY1BaYmJDZmRRdzZxaUU0M19aNzBqeVlYY3lnZVlqWTc1WnBRXzRnNjZNdFh1TkR4U1NjWlZSUmF4aElNYngtNmhaSjVSZVIzX05rSzg2QTVhRjlaTVdyQQ?oc=5\" target=\"_blank\"&gt;India opens nuclear sector to proven foreign technology&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-14T19:59:15.000Z",
           "score": 7
         }
       ]
@@ -82,8 +82,8 @@
         {
           "title": "Europe's scorched landscapes seen from space after summer heatwaves",
           "link": "https://www.bbc.co.uk/news/articles/c4gxy0wqqd9o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "BBC Verify examines the impact of drought and extreme heat on western European rivers, fields and mountains.",
+          "source": "BBC World News",
+          "description": "From glaciers shrinking to an exposed shipwreck, satellites capture the impact of extreme heat and drought.",
           "published": "2026-08-15T05:01:13.000Z",
           "score": 10
         },
@@ -108,7 +108,7 @@
           "link": "https://www.bbc.co.uk/news/articles/cg4dw2e9dedo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "The plan to reduce light pollution could be put out for public consultation at a later date.",
-          "published": "2026-08-14T21:46:55.000Z",
+          "published": "2026-08-15T08:32:34.000Z",
           "score": 8
         },
         {
@@ -126,6 +126,14 @@
       "title": "Green Finance & Investment",
       "items": [
         {
+          "title": "SEC proposes easing 'pay-to-play' rules for investment advisers - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVlVxX3RWZ01iMUJNTFNaV184aS1Ncjh6cEcxQUJYTE1USWxHRGJBVjBabnhzTXo5RXduV1JpTWwxald6NmhxalBaTEJ5OE5peEN0TUpfc3o1YWQxdWhMZXp3YnhoZHJTZVpTUTVlTU9DRG1TMVdPNHRVcGtTQUQyZWJjRGdGYTNhNGpNZnl1ZlBUa2hwRjkyQlE3dGlBTEgxXzM1bjNaSUktN3R5a1hJ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPVlVxX3RWZ01iMUJNTFNaV184aS1Ncjh6cEcxQUJYTE1USWxHRGJBVjBabnhzTXo5RXduV1JpTWwxald6NmhxalBaTEJ5OE5peEN0TUpfc3o1YWQxdWhMZXp3YnhoZHJTZVpTUTVlTU9DRG1TMVdPNHRVcGtTQUQyZWJjRGdGYTNhNGpNZnl1ZlBUa2hwRjkyQlE3dGlBTEgxXzM1bjNaSUktN3R5a1hJ?oc=5\" target=\"_blank\"&gt;SEC proposes easing 'pay-to-play' rules for investment advisers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-14T19:00:09.000Z",
+          "score": 2
+        },
+        {
           "title": "Alphabet becomes Berkshire Hathaway's third-largest investment - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPTERjbHBXeUxvR0JSMUpreTA0SnpXOFVpUUtXLXZCdnhaemtsTjFBeWNfU01Xa0pWMDJUZUt6M0RuMVdLMmdpNTJhSERFZzNYclV3TDdGc1l6OWsyRGF2ejR1aHFmWUlIQWNzb1Q2SXBKWlZHWnljQ2pmdk9GdDB5a3haeFRUcWFfNGJCdVRQWjIyUy0tS0tKek51OVc5aV9nUWhuWWFENm1BLXdJYXNjWVRfaVEyTkdyNG5iQXhCVFBfaHRDLTFBdEtn?oc=5",
           "source": "Reuters World (via Google News)",
@@ -138,7 +146,16 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "US raises pressure on EU to 'deliver' on non-tariff trade commitments - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQaDhZN1ZqY3p4WTd3WjdaWC1NWHhGdUNmUjBJSmNqV0Q2TTd2YzV2eXh1U2FkbnRTNHpNeXpPWERMald3cXBNZFFLTU9qMVg0dUdMN05fd1RHZlUxTmxDd050TVZXVkF4YVhmSlp4V0hCZWlPMFhnXzQ5dDFOVFFlMENZVkdtUmE4cTZHd2lISmwwbVJGd2ZaYUpFLTQ0Qzc4aGIySzZ5TFppVU5VQXU1VjV4M2N2OWNZdEo0cWhuOGpWUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQaDhZN1ZqY3p4WTd3WjdaWC1NWHhGdUNmUjBJSmNqV0Q2TTd2YzV2eXh1U2FkbnRTNHpNeXpPWERMald3cXBNZFFLTU9qMVg0dUdMN05fd1RHZlUxTmxDd050TVZXVkF4YVhmSlp4V0hCZWlPMFhnXzQ5dDFOVFFlMENZVkdtUmE4cTZHd2lISmwwbVJGd2ZaYUpFLTQ0Qzc4aGIySzZ5TFppVU5VQXU1VjV4M2N2OWNZdEo0cWhuOGpWUQ?oc=5\" target=\"_blank\"&gt;US raises pressure on EU to 'deliver' on non-tariff trade commitments&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-14T17:24:42.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
@@ -153,19 +170,11 @@
           "score": 8
         },
         {
-          "title": "Zambia vote count resumes after suspension amid reports of violence",
-          "link": "https://www.dw.com/en/zambia-vote-count-resumes-after-suspension-amid-reports-of-violence/a-78368601?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Earlier, the electoral commission suspended vote counting after alleged attacks on polling staff and the theft of marked ballot papers.",
-          "published": "2026-08-14T10:56:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Taiwan parliament approves holding of three referendums, including on caning sex criminals - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOOGhmdUhuWGdHbHczcXBEejNtM0RWTld1dUlfcUdVeEhDNkhrMF9ldFhoY0MzWTVFME04T0h2Y2JmcmNBNE13bGZMMmtyY3NjV3lmdGRDVzNTWUR5TGNOd2hibUNtYk5TRm1kcnR2Zjl4eTA3Q3FfMmNNeWhmY0Jwai02eERERGxYYjJCOVB0SEFQMG5yZ3R3dEZnRU1uampCS1c3MlJiajBIUDBQUzhRTlQzQ0RybDdycG1wbFI1YmZ4VUdIdDZB?oc=5",
+          "title": "Italy's Euro 2020 winner Immobile retires after 17-year career - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSks5SmNQV2ZiWkIxZks5d05tMUZqVWtmVTNDY3FlOUxxMXdyN3d0a1ZEcDdqcGl3OGowTDdPTkxjM0VwV19Cb1c2Qlh2al9YNUlQeVREQ1g3T3o4cHRLbExqUGQyb2ZVbzNNajRGcjI4YjdPR2pJVHVydUR3bGNIcXctek10a1VOT3FMRmxIcGZSVnBuTG8zNGpGU2t6YzNPcXg1amkwOE5zLXNXbml3Zw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOOGhmdUhuWGdHbHczcXBEejNtM0RWTld1dUlfcUdVeEhDNkhrMF9ldFhoY0MzWTVFME04T0h2Y2JmcmNBNE13bGZMMmtyY3NjV3lmdGRDVzNTWUR5TGNOd2hibUNtYk5TRm1kcnR2Zjl4eTA3Q3FfMmNNeWhmY0Jwai02eERERGxYYjJCOVB0SEFQMG5yZ3R3dEZnRU1uampCS1c3MlJiajBIUDBQUzhRTlQzQ0RybDdycG1wbFI1YmZ4VUdIdDZB?oc=5\" target=\"_blank\"&gt;Taiwan parliament approves holding of three referendums, including on caning sex criminals&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
-          "published": "2026-08-14T06:38:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOSks5SmNQV2ZiWkIxZks5d05tMUZqVWtmVTNDY3FlOUxxMXdyN3d0a1ZEcDdqcGl3OGowTDdPTkxjM0VwV19Cb1c2Qlh2al9YNUlQeVREQ1g3T3o4cHRLbExqUGQyb2ZVbzNNajRGcjI4YjdPR2pJVHVydUR3bGNIcXctek10a1VOT3FMRmxIcGZSVnBuTG8zNGpGU2t6YzNPcXg1amkwOE5zLXNXbml3Zw?oc=5\" target=\"_blank\"&gt;Italy's Euro 2020 winner Immobile retires after 17-year career&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-14T19:58:11.000Z",
           "score": 8
         },
         {
@@ -183,14 +192,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc0xNRjl0dDVFdENwd0lyeF9hTnh6dTJrSjBkM09GSHZKLVBGZVB2N0NZWjVrLTZSRVNZRDYwbDRMNFRMeEJ0dFRFYktJVXBzZ0VPeC1WQ3JtWHEyNjlrb2dURmRyUkRaSWs0aENFNG9EdTlBeWxxOGNfczFPNnh1c01xMG14LUg0TXcyRVIyX0tTU1ZvQ0RFR0U3N25pM1B0SkxQSTN4SnB1SHo0TlNyRGZZdldUanEzUTRN?oc=5\" target=\"_blank\"&gt;Zambia resumes vote counting after election officials attacked&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-14T17:17:33.000Z",
           "score": 6
+        },
+        {
+          "title": "France's top court blocks social media ban for under-15s",
+          "link": "https://www.bbc.co.uk/news/articles/cx2vj433xqlo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Constitutional Council says it infringes upon freedom of expression - but President Macron vows to prepare a new draft.",
+          "published": "2026-08-14T16:35:06.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 406,
-    "articlesLast24h": 161,
-    "afterDedup": 151,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 158,
+    "afterDedup": 148,
     "feedsQueried": 19
   }
 }
