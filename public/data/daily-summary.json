@@ -1,6 +1,6 @@
 {
   "date": "2026-08-17",
-  "generatedAt": "2026-08-17T11:29:28.238Z",
+  "generatedAt": "2026-08-17T17:27:46.964Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 17 August 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,20 +11,20 @@
       "color": "#007B6C"
     },
     {
-      "headline": "India lets renewable power producers pay to keep grid connectivity after delays - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQZm1XMEhVNWZ3Q0p4Ty1qWjJKOVluTFNTbHBOVU1RZG5tTVZWM2F1NHpZa3JBYlBjY1Z6ejVmaVAtaHFqVmlLZHhmS2J4ZTJDZUZ4U0VUVEJvTDBHU1g0S0dMcXBPT19yWHFpVWc0Zm1kLVdWbktta2h3R1NFekx0WFZ4dXR3UjBvb1plT0E2c2lkSmFJUU84U0tTc084RVBfM2lfNlNqX1ZPOUdRdDVqWWtXdGxYaVZiMlltSlA2dkUtdHZvUzVj?oc=5\" target=\"_blank\"&gt;India lets renewable power producers pay to keep grid connectivity after delays&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
+      "headline": "British Gas paid me £38,000 by mistake, and I can’t give it back",
+      "summary": "&lt;p&gt;It said that was what I was due after I submitted a claim for £300 for energy exported through my solar panels&lt;/p&gt;&lt;p&gt;&lt;strong&gt;British Gas paid me &lt;/strong&gt;&lt;strong&gt;more than £38,000 by mistake, then had no idea how to reclaim it. I receive quarterly feed-in tariff (Fit) payments for energy exported by my solar panels.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;In May, I submitted a claim for £300, based on my &lt;/strong&gt;&lt;strong&gt;meter reading, an",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "French PM booed on visit to wildfire-affected region as Belgium tackles enormous blaze – Europe live",
-      "summary": "&lt;p&gt;Wildfire thought to be largest in Belgium’s history creeps closer to German border prompting evacuations&lt;/p&gt;&lt;p&gt;As flagged earlier, &lt;strong&gt;Belgium’s King Philippe is now visiting the emergency coordination centre looking after the firefighters tackling the major fire in the eastern part of the country &lt;/strong&gt;(&lt;a href=\"https://www.theguardian.com/world/live/2026/aug/17/europe-wildfires-france-greece-belgium-germany-climate-crisis-drought-extreme-heat-latest-n",
+      "headline": "EU mobilises civil protection assistance for earthquake-hit Colombia",
+      "summary": "European Commission Press release Brussels, 17 Aug 2026 The European Union continues to mobilise assistance for Colombia following the devastating 7.4 magnitude earthquake.  Sweden has offered 150 tents and 360 blankets, Germany is sending 3,000 kitchen sets and 2,500 water filters, while Luxembourg has offered 79 tents through the EU Civil Protection Mechanism.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Taiwan's president says record defence spending an investment in peace - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNMUhtZ0k5WElRd1ZLNlEtejNuLTZGcXQ0ZXMzRkpVWnk3aFVGaC1GV1EtOWwxQjM5eEdfNm85WGowWGlWQlhSekw2WnV3OXNtV1JRVjdsY2NzcF9HY1VPSDNhcktuV2l3ZWZXaVBNZExsaFN6dGZpcFBBall2MktGME84N2dHbi03WnVqRHRCU1hSMWxOdE5MZE94QnRUTHZWcDBYWFM0MkRqejlUc2xlanlIWQ?oc=5\" target=\"_blank\"&gt;Taiwan's president says record defence spending an investment in peace&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Norway wealth fund warns of AI-driven stock market bubble",
+      "summary": "The head of Norway&#039;s sovereign wealth fund has warned that soaring AI-driven stock valuations could trigger a sharp correction. How exposed is the world&#039;s largest sovereign wealth fund to a market downturn?",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -49,28 +49,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "India lets renewable power producers pay to keep grid connectivity after delays - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZm1XMEhVNWZ3Q0p4Ty1qWjJKOVluTFNTbHBOVU1RZG5tTVZWM2F1NHpZa3JBYlBjY1Z6ejVmaVAtaHFqVmlLZHhmS2J4ZTJDZUZ4U0VUVEJvTDBHU1g0S0dMcXBPT19yWHFpVWc0Zm1kLVdWbktta2h3R1NFekx0WFZ4dXR3UjBvb1plT0E2c2lkSmFJUU84U0tTc084RVBfM2lfNlNqX1ZPOUdRdDVqWWtXdGxYaVZiMlltSlA2dkUtdHZvUzVj?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQZm1XMEhVNWZ3Q0p4Ty1qWjJKOVluTFNTbHBOVU1RZG5tTVZWM2F1NHpZa3JBYlBjY1Z6ejVmaVAtaHFqVmlLZHhmS2J4ZTJDZUZ4U0VUVEJvTDBHU1g0S0dMcXBPT19yWHFpVWc0Zm1kLVdWbktta2h3R1NFekx0WFZ4dXR3UjBvb1plT0E2c2lkSmFJUU84U0tTc084RVBfM2lfNlNqX1ZPOUdRdDVqWWtXdGxYaVZiMlltSlA2dkUtdHZvUzVj?oc=5\" target=\"_blank\"&gt;India lets renewable power producers pay to keep grid connectivity after delays&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
-          "published": "2026-08-17T03:53:00.000Z",
-          "score": 7
-        },
-        {
           "title": "British Gas paid me £38,000 by mistake, and I can’t give it back",
           "link": "https://www.theguardian.com/money/2026/aug/17/british-gas-mistake-energy-solar-panels",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;It said that was what I was due after I submitted a claim for £300 for energy exported through my solar panels&lt;/p&gt;&lt;p&gt;&lt;strong&gt;British Gas paid me &lt;/strong&gt;&lt;strong&gt;more than £38,000 by mistake, then had no idea how to reclaim it. I receive quarterly feed-in tariff (Fit) payments for energy exported by my solar panels.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;In May, I submitted a claim for £300, based on my &lt;/strong&gt;&lt;strong&gt;meter reading, an",
           "published": "2026-08-17T06:00:48.000Z",
           "score": 4
-        },
-        {
-          "title": "Two dead after gas leak at India's Indo Amines plant - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZXRXcVFWNFFnTWZfWk91SGtqejRUdzVDR3Q2enZ0VGtXNHpzNENnRHFBM0lOeE41UXhjVGR1T3VVM19ORjc2UnZNdWNmdTFUamRORWdzM29HMmFIcUJEZ1RyMzFvcVZiSVQ2ZlRNejhMSldYM0VCbkZ4ZkRJaXpKdWNDSGZySGhXZ1FLbTg1QnliMnh3ZkUzc21rYnc0QzVf?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPZXRXcVFWNFFnTWZfWk91SGtqejRUdzVDR3Q2enZ0VGtXNHpzNENnRHFBM0lOeE41UXhjVGR1T3VVM19ORjc2UnZNdWNmdTFUamRORWdzM29HMmFIcUJEZ1RyMzFvcVZiSVQ2ZlRNejhMSldYM0VCbkZ4ZkRJaXpKdWNDSGZySGhXZ1FLbTg1QnliMnh3ZkUzc21rYnc0QzVf?oc=5\" target=\"_blank\"&gt;Two dead after gas leak at India's Indo Amines plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-17T09:01:23.000Z",
-          "score": 2
         }
       ]
     },
@@ -79,11 +63,27 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "French PM booed on visit to wildfire-affected region as Belgium tackles enormous blaze – Europe live",
+          "title": "EU mobilises civil protection assistance for earthquake-hit Colombia",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1738",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 17 Aug 2026 The European Union continues to mobilise assistance for Colombia following the devastating 7.4 magnitude earthquake.  Sweden has offered 150 tents and 360 blankets, Germany is sending 3,000 kitchen sets and 2,500 water filters, while Luxembourg has offered 79 tents through the EU Civil Protection Mechanism.",
+          "published": "2026-08-17T14:45:21.000Z",
+          "score": 18
+        },
+        {
+          "title": "&#8220;Dangerous consequences&#8221; &#8211; how AI&#8217;s climate framing lets Big Tech off the hook",
+          "link": "https://www.climatechangenews.com/2026/08/17/dangerous-consequences-how-ais-climate-framing-lets-big-tech-off-the-hook/",
+          "source": "Climate Home News",
+          "description": "Former Microsoft manager Holly Alpine explains why AI's climate danger isn't just data centres but also its unchecked use across the fossil fuel industry The post &#8220;Dangerous consequences&#8221; &#8211; how AI&#8217;s climate framing lets Big Tech off the hook appeared first on Climate Home News.",
+          "published": "2026-08-17T14:09:40.000Z",
+          "score": 13
+        },
+        {
+          "title": "French PM booed on visit to wildfire-affected region as EU sends assistance to Belgium and Spain – as it happened",
           "link": "https://www.theguardian.com/world/live/2026/aug/17/europe-wildfires-france-greece-belgium-germany-climate-crisis-drought-extreme-heat-latest-news-updates",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Wildfire thought to be largest in Belgium’s history creeps closer to German border prompting evacuations&lt;/p&gt;&lt;p&gt;As flagged earlier, &lt;strong&gt;Belgium’s King Philippe is now visiting the emergency coordination centre looking after the firefighters tackling the major fire in the eastern part of the country &lt;/strong&gt;(&lt;a href=\"https://www.theguardian.com/world/live/2026/aug/17/europe-wildfires-france-greece-belgium-germany-climate-crisis-drought-extreme-heat-latest-n",
-          "published": "2026-08-17T11:10:01.000Z",
+          "description": "&lt;p&gt;Belgium wildfire creeps closer to German border, as 104 firefighters and 36 vehicles from France help with Spain wildfire effort &lt;/p&gt;&lt;p&gt;As flagged earlier, &lt;strong&gt;Belgium’s King Philippe is now visiting the emergency coordination centre looking after the firefighters tackling the major fire in the eastern part of the country &lt;/strong&gt;(&lt;a href=\"https://www.theguardian.com/world/live/2026/aug/17/europe-wildfires-france-greece-belgium-germany-climate-crisis-drou",
+          "published": "2026-08-17T15:48:39.000Z",
           "score": 13
         },
         {
@@ -91,32 +91,16 @@
           "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPejJSeDRUNDE1NUNwZWRoWlFLR2JXWFpsR0NZbEZrVlZZYVFsSmZFR2lEZ21rUmJxaUlKMl9VY2pJWjM1RXpZbUZ2bGlxQzNrd2QxQkl0SnpxUWZ5LUliVGZKQkExQnRMb0ExZXBPLTVCSV9FRmNhU01BU2t2VHdkRVYxdHZzZXVudndHM3hOX0dERnhkcWEtREZEVUdkdHpDUWhpX3c4SF9ZWkkyYUs5MzRPbzZFQlpwRVBuUGF3QVpfQjVvb3h2TkQ1WEg?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxPejJSeDRUNDE1NUNwZWRoWlFLR2JXWFpsR0NZbEZrVlZZYVFsSmZFR2lEZ21rUmJxaUlKMl9VY2pJWjM1RXpZbUZ2bGlxQzNrd2QxQkl0SnpxUWZ5LUliVGZKQkExQnRMb0ExZXBPLTVCSV9FRmNhU01BU2t2VHdkRVYxdHZzZXVudndHM3hOX0dERnhkcWEtREZEVUdkdHpDUWhpX3c4SF9ZWkkyYUs5MzRPbzZFQlpwRVBuUGF3QVpfQjVvb3h2TkQ1WEg?oc=5\" target=\"_blank\"&gt;West Africa cocoa sector struggles to meet EU anti-deforestation rules, raising supply concerns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f",
-          "published": "2026-08-17T07:14:09.000Z",
+          "published": "2026-08-17T13:55:39.000Z",
           "score": 13
         },
         {
-          "title": "Rainfall aids fight against Belgium's biggest wildfire, as blazes rip through Europe - Reuters",
+          "title": "Rain aids fight against Belgium's biggest wildfire, as blazes rip through Europe - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQSXFOQklWSmxLTG1DQkQxZC1oc2ZVRHhrLWR3U3dzY0lrenQweEV0QTJVeTR2T19FLXhhcDExSFNrcS1tUXNFZXZuSnZld3NYRXBqM0NMZDBSaHd0b2pxdG5pQ1llaVdlc1BkelJneDhuOWVQZTR0VF8xam5ZV0tKQ3dULU9rU3JtVnA2eWtTZUZlSUtYVlhvVzl0VHVkNmprbW9qdlRuWktlbE5Ha0NXTXVHNldxeFNJcXRBTkxn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQSXFOQklWSmxLTG1DQkQxZC1oc2ZVRHhrLWR3U3dzY0lrenQweEV0QTJVeTR2T19FLXhhcDExSFNrcS1tUXNFZXZuSnZld3NYRXBqM0NMZDBSaHd0b2pxdG5pQ1llaVdlc1BkelJneDhuOWVQZTR0VF8xam5ZV0tKQ3dULU9rU3JtVnA2eWtTZUZlSUtYVlhvVzl0VHVkNmprbW9qdlRuWktlbE5Ha0NXTXVHNldxeFNJcXRBTkxn?oc=5\" target=\"_blank\"&gt;Rainfall aids fight against Belgium's biggest wildfire, as blazes rip through Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-17T06:56:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQSXFOQklWSmxLTG1DQkQxZC1oc2ZVRHhrLWR3U3dzY0lrenQweEV0QTJVeTR2T19FLXhhcDExSFNrcS1tUXNFZXZuSnZld3NYRXBqM0NMZDBSaHd0b2pxdG5pQ1llaVdlc1BkelJneDhuOWVQZTR0VF8xam5ZV0tKQ3dULU9rU3JtVnA2eWtTZUZlSUtYVlhvVzl0VHVkNmprbW9qdlRuWktlbE5Ha0NXTXVHNldxeFNJcXRBTkxn?oc=5\" target=\"_blank\"&gt;Rain aids fight against Belgium's biggest wildfire, as blazes rip through Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-17T17:09:55.000Z",
           "score": 13
-        },
-        {
-          "title": "Belgian wildfire doubles in size on third day tearing through nature reserve",
-          "link": "https://www.bbc.co.uk/news/articles/cp8eex1nmpvo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Hundreds of firefighters are trying to contain the flames consuming the major park.",
-          "published": "2026-08-16T20:01:51.000Z",
-          "score": 7
-        },
-        {
-          "title": "Hundreds flee as Belgium battles wildfire at German border",
-          "link": "https://www.dw.com/en/hundreds-flee-as-belgium-battles-wildfire-at-german-border/a-78386242?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A rapidly spreading wildfire has scorched about 2,700 hectares in the High Fens nature reserve near Belgium&#039;s border with Germany. Some homes in the German town of Monschau were evacuated overnight as a precaution.",
-          "published": "2026-08-17T05:24:00.000Z",
-          "score": 7
         }
       ]
     },
@@ -124,6 +108,22 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
+        {
+          "title": "Norway wealth fund warns of AI-driven stock market bubble",
+          "link": "https://www.dw.com/en/norway-wealth-fund-warns-of-ai-driven-stock-market-bubble/a-78351371?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The head of Norway&#039;s sovereign wealth fund has warned that soaring AI-driven stock valuations could trigger a sharp correction. How exposed is the world&#039;s largest sovereign wealth fund to a market downturn?",
+          "published": "2026-08-17T14:00:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Jio-BlackRock to launch regular mutual fund plans through distributors in India - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPQ0xsc0hIT3A0Rmp3M3pSVE1hTzFhVTYyVUZkOHkzeDNiVmVyNmp0Ty00WVY4QmducWdBV2hRdW5jb2lZaVBBYlh6TTdlcVJKcllWR2Jack5KOE5TWmJmcGZnczVLSGdqeVk3bzZLMHNfczM2dkxQWEhFaUozUFpncVdFM21rR0FrM2R3QjNXMVRnNzg4RVg5dVNmVTU0Z3A2ZVVXUjVlM0dEQ0FMOVV5WkdzaEd6dUgyNjJwa1BR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPQ0xsc0hIT3A0Rmp3M3pSVE1hTzFhVTYyVUZkOHkzeDNiVmVyNmp0Ty00WVY4QmducWdBV2hRdW5jb2lZaVBBYlh6TTdlcVJKcllWR2Jack5KOE5TWmJmcGZnczVLSGdqeVk3bzZLMHNfczM2dkxQWEhFaUozUFpncVdFM21rR0FrM2R3QjNXMVRnNzg4RVg5dVNmVTU0Z3A2ZVVXUjVlM0dEQ0FMOVV5WkdzaEd6dUgyNjJwa1BR?oc=5\" target=\"_blank\"&gt;Jio-BlackRock to launch regular mutual fund plans through distributors in India&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-17T11:15:43.000Z",
+          "score": 2
+        },
         {
           "title": "Taiwan's president says record defence spending an investment in peace - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNMUhtZ0k5WElRd1ZLNlEtejNuLTZGcXQ0ZXMzRkpVWnk3aFVGaC1GV1EtOWwxQjM5eEdfNm85WGowWGlWQlhSekw2WnV3OXNtV1JRVjdsY2NzcF9HY1VPSDNhcktuV2l3ZWZXaVBNZExsaFN6dGZpcFBBall2MktGME84N2dHbi03WnVqRHRCU1hSMWxOdE5MZE94QnRUTHZWcDBYWFM0MkRqejlUc2xlanlIWQ?oc=5",
@@ -139,73 +139,74 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOU21ldTFQWE1HaTVtdWZqVW5QTllNV3p1ckpqcFNnYXAxUzBZVTVkNGFYWmduXy1UQWJ2ZUJyQmZxTkt1RldUTWNtUTltLTBJb2h2My1zbGltQWp2V0NNRGpBZ0k1dFVOSjlwZkUyZmFVWEJNQTd1S3RITFJ4bzdxRmhNVjlVQUhnX3hKbnRsYWpkQ0wwQWZSZm5XTTNhczlJZlFUZm1tdWppc1E?oc=5\" target=\"_blank\"&gt;Japan Q2 growth misses forecasts on weaker spending, investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-17T00:19:00.000Z",
           "score": 2
-        },
-        {
-          "title": "Jio-BlackRock to launch regular mutual fund plans through distributors in India - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPQ0xsc0hIT3A0Rmp3M3pSVE1hTzFhVTYyVUZkOHkzeDNiVmVyNmp0Ty00WVY4QmducWdBV2hRdW5jb2lZaVBBYlh6TTdlcVJKcllWR2Jack5KOE5TWmJmcGZnczVLSGdqeVk3bzZLMHNfczM2dkxQWEhFaUozUFpncVdFM21rR0FrM2R3QjNXMVRnNzg4RVg5dVNmVTU0Z3A2ZVVXUjVlM0dEQ0FMOVV5WkdzaEd6dUgyNjJwa1BR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPQ0xsc0hIT3A0Rmp3M3pSVE1hTzFhVTYyVUZkOHkzeDNiVmVyNmp0Ty00WVY4QmducWdBV2hRdW5jb2lZaVBBYlh6TTdlcVJKcllWR2Jack5KOE5TWmJmcGZnczVLSGdqeVk3bzZLMHNfczM2dkxQWEhFaUozUFpncVdFM21rR0FrM2R3QjNXMVRnNzg4RVg5dVNmVTU0Z3A2ZVVXUjVlM0dEQ0FMOVV5WkdzaEd6dUgyNjJwa1BR?oc=5\" target=\"_blank\"&gt;Jio-BlackRock to launch regular mutual fund plans through distributors in India&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-17T11:15:43.000Z",
-          "score": 2
         }
       ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Breakingviews - China’s unplanned surpluses put EU in trade bind - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbGhDeEVsMmdnY1VXNlVJRHV2TXYteW92OGhTNjJyX3Y4Wlk3UmFtU0lWclFzbzRRLXhjQVprcGtHYjBORlhXeWI2SVcyc0NTbnhGNkE4Q0ladVRZbUFaaTZfR1lfakgzVzJ3c3g2T0JCaVdWMzhHNXZIOTl1Zld0aFZPdVhoT1QyUm9Ld1YxRVNRU0hBUS1aVFBQVnVlb3F0VDY3LVlzbTY?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbGhDeEVsMmdnY1VXNlVJRHV2TXYteW92OGhTNjJyX3Y4Wlk3UmFtU0lWclFzbzRRLXhjQVprcGtHYjBORlhXeWI2SVcyc0NTbnhGNkE4Q0ladVRZbUFaaTZfR1lfakgzVzJ3c3g2T0JCaVdWMzhHNXZIOTl1Zld0aFZPdVhoT1QyUm9Ld1YxRVNRU0hBUS1aVFBQVnVlb3F0VDY3LVlzbTY?oc=5\" target=\"_blank\"&gt;Breakingviews - China’s unplanned surpluses put EU in trade bind&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-17T04:19:00.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU plans most far-reaching sanctions package against Russia in autumn, foreign chief says - Reuters",
+          "title": "Dollar falls against euro as markets trim rate hike bets - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcEx2UnRQT3N2aTdDejItdVFGZ280ZXJ1ZzYtSHRoeDg0WEd1dGxmbkRvd1ZJMVRaUkdsMEZsMWx6ZUh1Wk1NeExBUTRxbHNuaW01TFpBd1F5dWlOOWoydXdETU8tamlmU2xpeEptdDRDTk52LW9GZW5oV201MmRubl85SnNSdnVwT2NxT0VHdmxxVGJ4TGdIWFhQcUN4dnBEcmFUUENqRQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNcEx2UnRQT3N2aTdDejItdVFGZ280ZXJ1ZzYtSHRoeDg0WEd1dGxmbkRvd1ZJMVRaUkdsMEZsMWx6ZUh1Wk1NeExBUTRxbHNuaW01TFpBd1F5dWlOOWoydXdETU8tamlmU2xpeEptdDRDTk52LW9GZW5oV201MmRubl85SnNSdnVwT2NxT0VHdmxxVGJ4TGdIWFhQcUN4dnBEcmFUUENqRQ?oc=5\" target=\"_blank\"&gt;Dollar falls against euro as markets trim rate hike bets&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-17T00:41:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU plans most far-reaching sanctions against Russia in coming months, Kallas says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNbk1aZnI3eEd5X0NiUWJ6M005Sm9hekNHZkFDX21fcHQ5QTdnajFBV2xQalhOOFJHTWRmMlJXQ1ViXzIzdnFzb1YyMnpVWGRPNG1fUlNDZzVGb3VjN1I5RjVtZ05DdzlCU2RNNkhkTkNCWjNISnZuLWxzZjRFZlMyNEo1YjVvTVRsRnFBVklaWTZWcDZxSWN0SWlwdTJ4RW1VTnFhdXhtajlCbXRnUVA4Um44ZGVEZTFpTVNYYnMzWGJTcXU1RHdSag?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNbk1aZnI3eEd5X0NiUWJ6M005Sm9hekNHZkFDX21fcHQ5QTdnajFBV2xQalhOOFJHTWRmMlJXQ1ViXzIzdnFzb1YyMnpVWGRPNG1fUlNDZzVGb3VjN1I5RjVtZ05DdzlCU2RNNkhkTkNCWjNISnZuLWxzZjRFZlMyNEo1YjVvTVRsRnFBVklaWTZWcDZxSWN0SWlwdTJ4RW1VTnFhdXhtajlCbXRnUVA4Um44ZGVEZTFpTVNYYnMzWGJTcXU1RHdSag?oc=5\" target=\"_blank\"&gt;EU plans most far-reaching sanctions package against Russia in autumn, foreign chief says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNbk1aZnI3eEd5X0NiUWJ6M005Sm9hekNHZkFDX21fcHQ5QTdnajFBV2xQalhOOFJHTWRmMlJXQ1ViXzIzdnFzb1YyMnpVWGRPNG1fUlNDZzVGb3VjN1I5RjVtZ05DdzlCU2RNNkhkTkNCWjNISnZuLWxzZjRFZlMyNEo1YjVvTVRsRnFBVklaWTZWcDZxSWN0SWlwdTJ4RW1VTnFhdXhtajlCbXRnUVA4Um44ZGVEZTFpTVNYYnMzWGJTcXU1RHdSag?oc=5\" target=\"_blank\"&gt;EU plans most far-reaching sanctions against Russia in coming months, Kallas says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
           "published": "2026-08-17T00:05:00.000Z",
           "score": 8
         },
         {
-          "title": "Man arrested on suspicion of fraud after security operation disrupts European Championships - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQODdzYm8zSkE5UEprd2dhc1kxRDVqaDZKX0cxMXdXZ192M1ozaEpuWXRrb0pXTmd0RVJ3aHo5QVVjVXNmMUh5cldGY3Jsb2FqdjVnZ19xQ2l4N1Z0S1YwUzVLdW1jU19uSUFxZllYWEd3bTFDb0VHeEVDN1MzSFREcWpOWjlvdTA5UUVrNXRXOWREU2tGYVpTUXRPelBQODBicmhaUU5UcVQxSEZaWlhaS05tLXN5QUJBbHlhQ3V3?oc=5",
+          "title": "Britain's Hunt and Asher-Smith set medal records at European Championships - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcWlxaEtoeHdaSUxWYkp1X2xHZmtOWkpOay1VV3doalBTaXd3U1Q5VzhBSWpBWHJucm5hZHBRSXB0ZnBTbDlaU3ZHQzZxeFhJMUF2WXNaSnJSUzA0YlRhY0FBb1I1WHQ3empORlMwR1dFMXlRMjBtN29MS1ByakM1dF9pbDFJbXdsblFndnRsbm5ZLW5FZjJqd0pfNjQxSTRwcEJWZFo1eUtTOFZhZHc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQODdzYm8zSkE5UEprd2dhc1kxRDVqaDZKX0cxMXdXZ192M1ozaEpuWXRrb0pXTmd0RVJ3aHo5QVVjVXNmMUh5cldGY3Jsb2FqdjVnZ19xQ2l4N1Z0S1YwUzVLdW1jU19uSUFxZllYWEd3bTFDb0VHeEVDN1MzSFREcWpOWjlvdTA5UUVrNXRXOWREU2tGYVpTUXRPelBQODBicmhaUU5UcVQxSEZaWlhaS05tLXN5QUJBbHlhQ3V3?oc=5\" target=\"_blank\"&gt;Man arrested on suspicion of fraud after security operation disrupts European Championships&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
-          "published": "2026-08-16T13:37:34.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQcWlxaEtoeHdaSUxWYkp1X2xHZmtOWkpOay1VV3doalBTaXd3U1Q5VzhBSWpBWHJucm5hZHBRSXB0ZnBTbDlaU3ZHQzZxeFhJMUF2WXNaSnJSUzA0YlRhY0FBb1I1WHQ3empORlMwR1dFMXlRMjBtN29MS1ByakM1dF9pbDFJbXdsblFndnRsbm5ZLW5FZjJqd0pfNjQxSTRwcEJWZFo1eUtTOFZhZHc?oc=5\" target=\"_blank\"&gt;Britain's Hunt and Asher-Smith set medal records at European Championships&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-16T23:11:00.000Z",
           "score": 8
         },
         {
-          "title": "Iranian parliament advances bill to curb foreign influence - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOS1l5UHpVYkM5cWxRVlYyTGVJWkVlWXJaWkxrNXZYaEhOSG9nYU9sdWVwSm4xeGkxV1U2ZXJrVlR2WlhFbjBZTWxYeE5sOWFWaWVLUC1CQ0NoV0VsVFJnU2Q3T2g4UFRUSUk1WWZDZGp1SVMzZ2xzdHJSRXRMWDctVXlBekt4ODhIeGJjOUFvLUtrb2NZclVBejZtbkg2djNWeG15QjEwNTE1eEZ6YlA5ZXNJdlljdDlRS2U3WklxZURuZ2VOSmJrRFF3cEw3QQ?oc=5",
+          "title": "Canadian miner NexGen Energy holds talks with BHP as it seeks $1 billion for uranium project - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOd3djNHpLcE13bUN0Ry01bnIyejBKQWdjQWtHcHZ5UjVzYlpNb3pib2RPcElvOVQ5RXNOd0RJcHRJcEZKN0xrZ3RzUHdkUTJla21TZDRnN3hwQUcwR2FuRy1hNUl6NkkzSjg2V2pIZmZMNFV5aUhJeUpaZUk1V3dZeGJwcjk1enJKcWJCbTFHZUk3bHN6SmctQ1hWN3Mtb3hiU1d3cXJVeW5PY2MwYWpEOXRYd1I3TU1yLWhiX1RKX3RUSnY1bEdR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOS1l5UHpVYkM5cWxRVlYyTGVJWkVlWXJaWkxrNXZYaEhOSG9nYU9sdWVwSm4xeGkxV1U2ZXJrVlR2WlhFbjBZTWxYeE5sOWFWaWVLUC1CQ0NoV0VsVFJnU2Q3T2g4UFRUSUk1WWZDZGp1SVMzZ2xzdHJSRXRMWDctVXlBekt4ODhIeGJjOUFvLUtrb2NZclVBejZtbkg2djNWeG15QjEwNTE1eEZ6YlA5ZXNJdlljdDlRS2U3WklxZURuZ2VOSmJrRFF3cEw3QQ?oc=5\" target=\"_blank\"&gt;Iranian parliament advances bill to curb foreign influence&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-16T16:43:44.000Z",
-          "score": 8
-        },
-        {
-          "title": "Ferrari's bespoke Luce EV one-off fetches $40 million at charity auction - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNcGlQdG4zOHEyaHJKd3hWS1ZiY1daMmp6NkJrTVFRZU5jVndwelg3WHZxbkFRNjE2M0U2dW5NSTJkWDl3NkJQR3Q0Mm1BdU5aNlM0VGxvd0VTNDI5eVVqRVdyOGdOTWhTR0UwcGpRZU1XUnhmeDdLb3VpRHlhYUNLUUhwZ0RKeVhmeF9lTUhlN2pzRnMtU3g3S1hOd1dha3Z2N0lHUHprNU01Tmg3Tmg5SlVYb3FxRE5VNm9PQlI2aWFoemZYNGJTWFdFbFJhQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxNcGlQdG4zOHEyaHJKd3hWS1ZiY1daMmp6NkJrTVFRZU5jVndwelg3WHZxbkFRNjE2M0U2dW5NSTJkWDl3NkJQR3Q0Mm1BdU5aNlM0VGxvd0VTNDI5eVVqRVdyOGdOTWhTR0UwcGpRZU1XUnhmeDdLb3VpRHlhYUNLUUhwZ0RKeVhmeF9lTUhlN2pzRnMtU3g3S1hOd1dha3Z2N0lHUHprNU01Tmg3Tmg5SlVYb3FxRE5VNm9PQlI2aWFoemZYNGJTWFdFbFJhQQ?oc=5\" target=\"_blank\"&gt;Ferrari's bespoke Luce EV one-off fetches $40 million at charity auction&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
-          "published": "2026-08-17T08:47:44.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOd3djNHpLcE13bUN0Ry01bnIyejBKQWdjQWtHcHZ5UjVzYlpNb3pib2RPcElvOVQ5RXNOd0RJcHRJcEZKN0xrZ3RzUHdkUTJla21TZDRnN3hwQUcwR2FuRy1hNUl6NkkzSjg2V2pIZmZMNFV5aUhJeUpaZUk1V3dZeGJwcjk1enJKcWJCbTFHZUk3bHN6SmctQ1hWN3Mtb3hiU1d3cXJVeW5PY2MwYWpEOXRYd1I3TU1yLWhiX1RKX3RUSnY1bEdR?oc=5\" target=\"_blank\"&gt;Canadian miner NexGen Energy holds talks with BHP as it seeks $1 billion for uranium project&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
+          "published": "2026-08-17T14:40:26.000Z",
           "score": 7
         },
         {
-          "title": "Trump envoy Kushner meets Netanyahu after Hamas talks on peace plan",
-          "link": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "US President Trump's son-in-law Jared Kushner is seeking to gain Israeli backing for the US-backed Gaza peace plan.",
-          "published": "2026-08-17T11:16:31.000Z",
-          "score": 6
+          "title": "China sets new 2030 targets for energy infrastructure development - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPS0RXV2Y5YWdkYmdqcENpd1FuWkdiMC1KQVByRFNwNzNmWVl0SVAyd0NxV2s1WGViMFR4WnVGb3VOWlREQ1IzU0ZOR2xoWmZyM0w0a2xqY3BTdXJkTHFucVdMXzJjLTd1b0Y1M2UtMFhnejZ6LTFhUW0tSTNWakRCbm42TDZHdmJGUm9XLUJHbER2UGFuX3lScVZoVS14NHhSREtDQTJtMTk0XzZHYzBvSWdTaw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPS0RXV2Y5YWdkYmdqcENpd1FuWkdiMC1KQVByRFNwNzNmWVl0SVAyd0NxV2s1WGViMFR4WnVGb3VOWlREQ1IzU0ZOR2xoWmZyM0w0a2xqY3BTdXJkTHFucVdMXzJjLTd1b0Y1M2UtMFhnejZ6LTFhUW0tSTNWakRCbm42TDZHdmJGUm9XLUJHbER2UGFuX3lScVZoVS14NHhSREtDQTJtMTk0XzZHYzBvSWdTaw?oc=5\" target=\"_blank\"&gt;China sets new 2030 targets for energy infrastructure development&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-17T10:41:43.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 404,
-    "articlesLast24h": 150,
-    "afterDedup": 141,
+    "articlesLast24h": 166,
+    "afterDedup": 159,
     "feedsQueried": 19
   }
 }
