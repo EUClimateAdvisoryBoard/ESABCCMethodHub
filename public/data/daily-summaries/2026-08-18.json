@@ -1,26 +1,20 @@
 {
   "date": "2026-08-18",
-  "generatedAt": "2026-08-18T11:29:07.095Z",
+  "generatedAt": "2026-08-18T17:27:53.366Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 18 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Solar panel critic now 'supporter of plan'",
-      "summary": "A dispute over a solar panel plan is resolved, with the complainant now a proponent for the site.",
+      "headline": "Every country needs a model to help optimise its energy transition",
+      "summary": "National pledges and platforms alone won’t lead to secure and affordable decarbonised energy systems The post Every country needs a model to help optimise its energy transition appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "EU mobilises civil protection assistance for earthquake-hit Colombia",
-      "summary": "European Commission Press release Brussels, 17 Aug 2026 The European Union continues to mobilise assistance for Colombia following the devastating 7.4 magnitude earthquake.  Sweden has offered 150 tents and 360 blankets, Germany is sending 3,000 kitchen sets and 2,500 water filters, while Luxembourg has offered 79 tents through the EU Civil Protection Mechanism.",
+      "headline": "Explainer: How the ‘super El Niño’ will reshape the world’s weather",
+      "summary": "The world is currently experiencing what is&#160;expected&#160;to become the strongest El Niño on record – dubbed a “super El Niño”&#8230; The post Explainer: How the ‘super El Niño’ will reshape the world’s weather appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Norway wealth fund sounds alarm on AI stock market bubble",
-      "summary": "The head of Norway&#039;s sovereign wealth fund has warned that soaring AI-driven stock valuations could trigger a sharp correction. How exposed is the world&#039;s largest sovereign wealth fund to a market downturn?",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -33,6 +27,14 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Every country needs a model to help optimise its energy transition",
+          "link": "https://www.climatechangenews.com/2026/08/18/every-country-needs-a-model-to-help-optimise-its-energy-transition/",
+          "source": "Climate Home News",
+          "description": "National pledges and platforms alone won’t lead to secure and affordable decarbonised energy systems The post Every country needs a model to help optimise its energy transition appeared first on Climate Home News.",
+          "published": "2026-08-18T17:24:55.000Z",
+          "score": 13
+        },
         {
           "title": "Solar panel critic now 'supporter of plan'",
           "link": "https://www.bbc.co.uk/news/articles/cx2dzjnzkqxo?at_medium=RSS&amp;at_campaign=rss",
@@ -50,6 +52,14 @@
           "score": 7
         },
         {
+          "title": "Nine bodies of migrants recovered off eastern Tripoli, Red Crescent says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRG04cTE1ZEV2NC1sWnJVY0JoY05CY0oxRmRpQzZkS1hjX0NRdUNjaWpDMUkxNVVVR3JUc2poOW5qTGlYeVBtU1RfdUE3UV9MLWo1aTZYN3Rmd1duN05XTnE3MlNWOXZKMnRrUTlDOTR5WmxiQy1hVGNtdGxEUFVwdkNoUnBTQzQ5REVKZVduS1ZKcWNvWTlfMi1lclRuNE51a0xFVWloV3RfNUxfa0FhZHNEblNESWtH?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRG04cTE1ZEV2NC1sWnJVY0JoY05CY0oxRmRpQzZkS1hjX0NRdUNjaWpDMUkxNVVVR3JUc2poOW5qTGlYeVBtU1RfdUE3UV9MLWo1aTZYN3Rmd1duN05XTnE3MlNWOXZKMnRrUTlDOTR5WmxiQy1hVGNtdGxEUFVwdkNoUnBTQzQ5REVKZVduS1ZKcWNvWTlfMi1lclRuNE51a0xFVWloV3RfNUxfa0FhZHNEblNESWtH?oc=5\" target=\"_blank\"&gt;Nine bodies of migrants recovered off eastern Tripoli, Red Crescent says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-18T09:22:06.000Z",
+          "score": 7
+        },
+        {
           "title": "Glencore’s planned Australian debut draws interest as investors look past coal - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQRzh6dFR4M0l6bnBfbFZBakJ3eVpOa2FSd2Vfb1lMOGI1TUdqb3FDbEtWUFg4czVuRDRDNzBHTTRNQ25KZmZwQXZIdElZaTNHdEh3WG14ZE84NUxTSkdzVmtnelJFWm9oODJWb3BlSkhwQ3hYZ3RuQWZzUVBiRWVNU3dYVlNpRXZGV3dQWllkTUI1dzUtT1cyMll1SFBwUHFJSV9nZ2M1THYyRlRHdVJVUE1EYlgxYzBKb2ZpRTdoSzVuVy1HTWV0VQ?oc=5",
           "source": "Reuters World (via Google News)",
@@ -64,84 +74,76 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "EU mobilises civil protection assistance for earthquake-hit Colombia",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1738",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 17 Aug 2026 The European Union continues to mobilise assistance for Colombia following the devastating 7.4 magnitude earthquake.  Sweden has offered 150 tents and 360 blankets, Germany is sending 3,000 kitchen sets and 2,500 water filters, while Luxembourg has offered 79 tents through the EU Civil Protection Mechanism.",
-          "published": "2026-08-17T14:45:21.000Z",
-          "score": 18
+          "title": "Explainer: How the ‘super El Niño’ will reshape the world’s weather",
+          "link": "https://interactive.carbonbrief.org/el-nino-explainer/index.html",
+          "source": "Carbon Brief",
+          "description": "The world is currently experiencing what is&#160;expected&#160;to become the strongest El Niño on record – dubbed a “super El Niño”&#8230; The post Explainer: How the ‘super El Niño’ will reshape the world’s weather appeared first on Carbon Brief.",
+          "published": "2026-08-18T12:58:53.000Z",
+          "score": 10
         },
         {
-          "title": "&#8220;Dangerous consequences&#8221; &#8211; how AI&#8217;s climate framing lets Big Tech off the hook",
-          "link": "https://www.climatechangenews.com/2026/08/17/dangerous-consequences-how-ais-climate-framing-lets-big-tech-off-the-hook/",
-          "source": "Climate Home News",
-          "description": "Former Microsoft manager Holly Alpine explains why AI's climate danger isn't just data centres but also its unchecked use across the fossil fuel industry The post &#8220;Dangerous consequences&#8221; &#8211; how AI&#8217;s climate framing lets Big Tech off the hook appeared first on Climate Home News.",
-          "published": "2026-08-17T14:09:40.000Z",
-          "score": 13
-        },
-        {
-          "title": "French PM booed on visit to wildfire-affected region as EU sends assistance to Belgium and Spain – as it happened",
-          "link": "https://www.theguardian.com/world/live/2026/aug/17/europe-wildfires-france-greece-belgium-germany-climate-crisis-drought-extreme-heat-latest-news-updates",
+          "title": "Rebecca Hendin on Richard Tice and the climate crisis – cartoon",
+          "link": "https://www.theguardian.com/commentisfree/picture/2026/aug/18/rebecca-hendin-richard-tice-climate-crisis-cartoon",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Belgium wildfire creeps closer to German border, as 104 firefighters and 36 vehicles from France help with Spain wildfire effort &lt;/p&gt;&lt;p&gt;As flagged earlier, &lt;strong&gt;Belgium’s King Philippe is now visiting the emergency coordination centre looking after the firefighters tackling the major fire in the eastern part of the country &lt;/strong&gt;(&lt;a href=\"https://www.theguardian.com/world/live/2026/aug/17/europe-wildfires-france-greece-belgium-germany-climate-crisis-drou",
-          "published": "2026-08-17T15:48:39.000Z",
-          "score": 13
+          "description": "&lt;a href=\"https://www.theguardian.com/commentisfree/picture/2026/aug/18/rebecca-hendin-richard-tice-climate-crisis-cartoon\"&gt;Continue reading...&lt;/a&gt;",
+          "published": "2026-08-18T15:34:22.000Z",
+          "score": 7
         },
         {
-          "title": "French PM heckled over wildfire response as blazes continue across Europe",
-          "link": "https://www.bbc.co.uk/news/articles/cx2rzx5g5yro?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The prime minister announced on Monday €12m worth of aid to French regions that had been worst affected by the fires.",
-          "published": "2026-08-17T18:00:55.000Z",
-          "score": 13
+          "title": "How soon will the drought be over?",
+          "link": "https://www.bbc.co.uk/news/articles/c0kmlrkypjpo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Rain has returned to parts of the UK this week but is it enough to end the drought some regions are facing?",
+          "published": "2026-08-18T12:26:05.000Z",
+          "score": 7
         },
         {
-          "title": "West Africa cocoa sector struggles to meet EU anti-deforestation rules, raising supply concerns - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPejJSeDRUNDE1NUNwZWRoWlFLR2JXWFpsR0NZbEZrVlZZYVFsSmZFR2lEZ21rUmJxaUlKMl9VY2pJWjM1RXpZbUZ2bGlxQzNrd2QxQkl0SnpxUWZ5LUliVGZKQkExQnRMb0ExZXBPLTVCSV9FRmNhU01BU2t2VHdkRVYxdHZzZXVudndHM3hOX0dERnhkcWEtREZEVUdkdHpDUWhpX3c4SF9ZWkkyYUs5MzRPbzZFQlpwRVBuUGF3QVpfQjVvb3h2TkQ1WEg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxPejJSeDRUNDE1NUNwZWRoWlFLR2JXWFpsR0NZbEZrVlZZYVFsSmZFR2lEZ21rUmJxaUlKMl9VY2pJWjM1RXpZbUZ2bGlxQzNrd2QxQkl0SnpxUWZ5LUliVGZKQkExQnRMb0ExZXBPLTVCSV9FRmNhU01BU2t2VHdkRVYxdHZzZXVudndHM3hOX0dERnhkcWEtREZEVUdkdHpDUWhpX3c4SF9ZWkkyYUs5MzRPbzZFQlpwRVBuUGF3QVpfQjVvb3h2TkQ1WEg?oc=5\" target=\"_blank\"&gt;West Africa cocoa sector struggles to meet EU anti-deforestation rules, raising supply concerns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f",
-          "published": "2026-08-17T13:55:39.000Z",
-          "score": 13
+          "title": "As drought hits Germany&#039;s harvest, will food prices rise?",
+          "link": "https://www.dw.com/en/as-drought-hits-germany-s-harvest-will-food-prices-rise/a-78408203?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany&#039;s main farmers&#039; association has warned of a below-average harvest after drought and crops damaged by extreme heat. DW looks into what lower yields could mean for food prices and grocery bills.",
+          "published": "2026-08-18T14:46:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Belgium wildfire: Rains help High Fens containment efforts",
+          "link": "https://www.dw.com/en/belgium-wildfire-rains-help-high-fens-containment-efforts/a-78411972?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Firefighters continue to battle one of the worst wildfires in Belgian history near the German border. Rains and cooler temperatures are helping them bring it to heel after it ravaged an area half the size of Manhattan.",
+          "published": "2026-08-18T12:38:00.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Norway wealth fund sounds alarm on AI stock market bubble",
-          "link": "https://www.dw.com/en/norway-wealth-fund-sounds-alarm-on-ai-stock-market-bubble/a-78351371?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The head of Norway&#039;s sovereign wealth fund has warned that soaring AI-driven stock valuations could trigger a sharp correction. How exposed is the world&#039;s largest sovereign wealth fund to a market downturn?",
-          "published": "2026-08-17T14:00:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Former Spain defender Pique joins chess investment boom - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTVhZM1JIYkZST1k5MjlwdXdUOGo5WWYxLUx3V05oRkc4bnZJUkxyd3l4U1ZyUFVpOFJWV0xZc1Jjd3ZvOURpekN3dzBFYXFlLWd3M3ZvNC1DcTFmbWhiSlpSREFkcjBFQ21kSmRvNFN6YmVuaTZ3aVdrbGcySjI2NkMwRVJoZUg3b3JydnJFclliYlpsdVRxUU1qMlMtazVfRnZneHdzZm42YXNuN2hFNQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNTVhZM1JIYkZST1k5MjlwdXdUOGo5WWYxLUx3V05oRkc4bnZJUkxyd3l4U1ZyUFVpOFJWV0xZc1Jjd3ZvOURpekN3dzBFYXFlLWd3M3ZvNC1DcTFmbWhiSlpSREFkcjBFQ21kSmRvNFN6YmVuaTZ3aVdrbGcySjI2NkMwRVJoZUg3b3JydnJFclliYlpsdVRxUU1qMlMtazVfRnZneHdzZm42YXNuN2hFNQ?oc=5\" target=\"_blank\"&gt;Former Spain defender Pique joins chess investment boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-17T11:58:25.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "EU sees Iceland vote as potential boost for enlargement optics - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZklUekZKNGd4RVNvenNzbTRZb1VHb0Z5THBYT2hvNzFPVXNteDBVaFM0cm1hcmtoUnUwOUxCbVcxLXAxQ2VNTG50TS0tQkdEU3E2ek5Cb2pHdTl0b283UkFqWmFBYWtNYmVfdnJFRlZvWkZMZEpZMjRvR3dlZHVvRzRmQnhhZFBiVUNlR1NmMVpmU1FFeEcxcHFnbW1GUkJPT19ibjNmYw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxOZklUekZKNGd4RVNvenNzbTRZb1VHb0Z5THBYT2hvNzFPVXNteDBVaFM0cm1hcmtoUnUwOUxCbVcxLXAxQ2VNTG50TS0tQkdEU3E2ek5Cb2pHdTl0b283UkFqWmFBYWtNYmVfdnJFRlZvWkZMZEpZMjRvR3dlZHVvRzRmQnhhZFBiVUNlR1NmMVpmU1FFeEcxcHFnbW1GUkJPT19ibjNmYw?oc=5\" target=\"_blank\"&gt;EU sees Iceland vote as potential boost for enlargement optics&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-18T14:19:43.000Z",
+          "score": 12
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EXCLUSIVE: Canadian miner NexGen Energy holds talks with BHP as it seeks $1 billion for uranium project - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOd3djNHpLcE13bUN0Ry01bnIyejBKQWdjQWtHcHZ5UjVzYlpNb3pib2RPcElvOVQ5RXNOd0RJcHRJcEZKN0xrZ3RzUHdkUTJla21TZDRnN3hwQUcwR2FuRy1hNUl6NkkzSjg2V2pIZmZMNFV5aUhJeUpaZUk1V3dZeGJwcjk1enJKcWJCbTFHZUk3bHN6SmctQ1hWN3Mtb3hiU1d3cXJVeW5PY2MwYWpEOXRYd1I3TU1yLWhiX1RKX3RUSnY1bEdR?oc=5",
+          "title": "Ferrari's bespoke Luce EV one-off fetches $40 million at charity auction - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNcGlQdG4zOHEyaHJKd3hWS1ZiY1daMmp6NkJrTVFRZU5jVndwelg3WHZxbkFRNjE2M0U2dW5NSTJkWDl3NkJQR3Q0Mm1BdU5aNlM0VGxvd0VTNDI5eVVqRVdyOGdOTWhTR0UwcGpRZU1XUnhmeDdLb3VpRHlhYUNLUUhwZ0RKeVhmeF9lTUhlN2pzRnMtU3g3S1hOd1dha3Z2N0lHUHprNU01Tmg3Tmg5SlVYb3FxRE5VNm9PQlI2aWFoemZYNGJTWFdFbFJhQQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOd3djNHpLcE13bUN0Ry01bnIyejBKQWdjQWtHcHZ5UjVzYlpNb3pib2RPcElvOVQ5RXNOd0RJcHRJcEZKN0xrZ3RzUHdkUTJla21TZDRnN3hwQUcwR2FuRy1hNUl6NkkzSjg2V2pIZmZMNFV5aUhJeUpaZUk1V3dZeGJwcjk1enJKcWJCbTFHZUk3bHN6SmctQ1hWN3Mtb3hiU1d3cXJVeW5PY2MwYWpEOXRYd1I3TU1yLWhiX1RKX3RUSnY1bEdR?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Canadian miner NexGen Energy holds talks with BHP as it seeks $1 billion for uranium project&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6",
-          "published": "2026-08-17T14:32:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxNcGlQdG4zOHEyaHJKd3hWS1ZiY1daMmp6NkJrTVFRZU5jVndwelg3WHZxbkFRNjE2M0U2dW5NSTJkWDl3NkJQR3Q0Mm1BdU5aNlM0VGxvd0VTNDI5eVVqRVdyOGdOTWhTR0UwcGpRZU1XUnhmeDdLb3VpRHlhYUNLUUhwZ0RKeVhmeF9lTUhlN2pzRnMtU3g3S1hOd1dha3Z2N0lHUHprNU01Tmg3Tmg5SlVYb3FxRE5VNm9PQlI2aWFoemZYNGJTWFdFbFJhQQ?oc=5\" target=\"_blank\"&gt;Ferrari's bespoke Luce EV one-off fetches $40 million at charity auction&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
+          "published": "2026-08-17T18:01:47.000Z",
           "score": 7
         },
         {
@@ -161,19 +163,19 @@
           "score": 6
         },
         {
-          "title": "Zambia&#039;s Hichilema wins second presidential term",
-          "link": "https://www.dw.com/en/zambia-s-hichilema-wins-second-presidential-term/a-78406328?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Hakainde Hichilema won over 60% of the vote in the first round of Zambia&#039;s presidential election, which also saw authorities launch raids against leading opposition figures on election night.",
-          "published": "2026-08-18T04:03:00.000Z",
-          "score": 6
-        },
-        {
           "title": "Board overseeing Washington Dulles airport to vote on $19.9 billion overhaul plan - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOQ1JRNWlHVl9oenl3QTlBenFTV1pXRWxYTTktSHlfdkhUS05ZalItdUdPeGZzUlJPc1B2UVNTdk9UUDBjbUx5eGFodFZLZ3lYSTNOUXVpUW82S3R2Y003Y3JKN0VPU19xSi1xX0MwemJPSE84TjFvYWc1UHFKQ1AyZTNEWUhLZFV0d0IxcGtmSmV6Q29veVBEOTNDeDlZNXAwUUZKcV9qR1NXSjY4VC1GS0ZvOXVSZHdYRmc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOQ1JRNWlHVl9oenl3QTlBenFTV1pXRWxYTTktSHlfdkhUS05ZalItdUdPeGZzUlJPc1B2UVNTdk9UUDBjbUx5eGFodFZLZ3lYSTNOUXVpUW82S3R2Y003Y3JKN0VPU19xSi1xX0MwemJPSE84TjFvYWc1UHFKQ1AyZTNEWUhLZFV0d0IxcGtmSmV6Q29veVBEOTNDeDlZNXAwUUZKcV9qR1NXSjY4VC1GS0ZvOXVSZHdYRmc?oc=5\" target=\"_blank\"&gt;Board overseeing Washington Dulles airport to vote on $19.9 billion overhaul plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-17T23:03:03.000Z",
+          "score": 6
+        },
+        {
+          "title": "Cargill workers vote to end dispute at US beef plant idled since April - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMnVGc04xQW9lN3ZxMDdlZnd3a2Rya0tRRFBiRWNGcTh0bTdXNDBzMGV4THJmSGVaZFBvMHNGaDltMzdOdGVoamY2dXVmaUpnbHAtSXc4RWFwWFIyYlp5R2FIMTYydTZaN3JwTkVSbkZFaGl3VjNWNThpV1c0b1pDdUJyRk80SG1sQ0VBZFYzMkp1T1JkSWl3dWJuUTVTdnVMRFpOTUkwTEVPempqUDlLMDhyTmV0T2c?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOMnVGc04xQW9lN3ZxMDdlZnd3a2Rya0tRRFBiRWNGcTh0bTdXNDBzMGV4THJmSGVaZFBvMHNGaDltMzdOdGVoamY2dXVmaUpnbHAtSXc4RWFwWFIyYlp5R2FIMTYydTZaN3JwTkVSbkZFaGl3VjNWNThpV1c0b1pDdUJyRk80SG1sQ0VBZFYzMkp1T1JkSWl3dWJuUTVTdnVMRFpOTUkwTEVPempqUDlLMDhyTmV0T2c?oc=5\" target=\"_blank\"&gt;Cargill workers vote to end dispute at US beef plant idled since April&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-17T23:52:41.000Z",
           "score": 6
         }
       ]
@@ -181,8 +183,8 @@
   ],
   "stats": {
     "totalArticlesScanned": 405,
-    "articlesLast24h": 157,
-    "afterDedup": 152,
+    "articlesLast24h": 155,
+    "afterDedup": 146,
     "feedsQueried": 19
   }
 }
