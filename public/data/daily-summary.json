@@ -1,17 +1,11 @@
 {
   "date": "2026-08-18",
-  "generatedAt": "2026-08-18T05:33:15.231Z",
+  "generatedAt": "2026-08-18T11:29:07.095Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 18 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Daily News 17 / 08 / 2026",
-      "summary": "European Commission Daily news Brussels, 17 Aug 2026 Commission adopts guidance on fiscal flexibility for energy security measures\r\nThe European Commission has adopted a notice providing Member States with further ...",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "Solar panel complainer now 'supporter of plan'",
+      "headline": "Solar panel critic now 'supporter of plan'",
       "summary": "A dispute over a solar panel plan is resolved, with the complainant now a proponent for the site.",
       "tag": "ENERGY",
       "color": "#E87722"
@@ -23,7 +17,7 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Norway wealth fund warns of AI-driven stock market bubble",
+      "headline": "Norway wealth fund sounds alarm on AI stock market bubble",
       "summary": "The head of Norway&#039;s sovereign wealth fund has warned that soaring AI-driven stock valuations could trigger a sharp correction. How exposed is the world&#039;s largest sovereign wealth fund to a market downturn?",
       "tag": "FINANCE",
       "color": "#7C3AED"
@@ -33,23 +27,14 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Daily News 17 / 08 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1737",
-          "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 17 Aug 2026 Commission adopts guidance on fiscal flexibility for energy security measures\r\nThe European Commission has adopted a notice providing Member States with further ...",
-          "published": "2026-08-17T08:46:28.000Z",
-          "score": 20
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Solar panel complainer now 'supporter of plan'",
+          "title": "Solar panel critic now 'supporter of plan'",
           "link": "https://www.bbc.co.uk/news/articles/cx2dzjnzkqxo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "A dispute over a solar panel plan is resolved, with the complainant now a proponent for the site.",
@@ -57,12 +42,20 @@
           "score": 7
         },
         {
-          "title": "British Gas paid me £38,000 by mistake, and I can’t give it back",
-          "link": "https://www.theguardian.com/money/2026/aug/17/british-gas-mistake-energy-solar-panels",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;It said that was what I was due after I submitted a claim for £300 for energy exported through my solar panels&lt;/p&gt;&lt;p&gt;&lt;strong&gt;British Gas paid me &lt;/strong&gt;&lt;strong&gt;more than £38,000 by mistake, then had no idea how to reclaim it. I receive quarterly feed-in tariff (Fit) payments for energy exported by my solar panels.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;In May, I submitted a claim for £300, based on my &lt;/strong&gt;&lt;strong&gt;meter reading, an",
-          "published": "2026-08-17T06:00:48.000Z",
-          "score": 4
+          "title": "ExxonMobil awards $1.1 billion in contracts for Mozambique's Rovuma LNG project - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPd2RFc2lvczBlN2tNbE1QRkVpUnZhaUpkUmRfN1pZNXlHMmtZUHRJX0F2dHhaS0lyRUh4dWVHSk9VVU01WEFpaFdCclg5U0MyM2NBVHhvMFpzYXo5a0JrbkFXckdKWlFlMFBMYUJiYUdYRml4VlY5R0ZwVC02R0lSd3BGTXN4d3htdE5tYUljZkZ5WFFPeVBwSDJOb0xjM0JySi15VGhENTZKTEVrdkhjaVp1WmFVM1B5Zlg2Zndn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPd2RFc2lvczBlN2tNbE1QRkVpUnZhaUpkUmRfN1pZNXlHMmtZUHRJX0F2dHhaS0lyRUh4dWVHSk9VVU01WEFpaFdCclg5U0MyM2NBVHhvMFpzYXo5a0JrbkFXckdKWlFlMFBMYUJiYUdYRml4VlY5R0ZwVC02R0lSd3BGTXN4d3htdE5tYUljZkZ5WFFPeVBwSDJOb0xjM0JySi15VGhENTZKTEVrdkhjaVp1WmFVM1B5Zlg2Zndn?oc=5\" target=\"_blank\"&gt;ExxonMobil awards $1.1 billion in contracts for Mozambique's Rovuma LNG project&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-17T18:58:40.000Z",
+          "score": 7
+        },
+        {
+          "title": "Glencore’s planned Australian debut draws interest as investors look past coal - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQRzh6dFR4M0l6bnBfbFZBakJ3eVpOa2FSd2Vfb1lMOGI1TUdqb3FDbEtWUFg4czVuRDRDNzBHTTRNQ25KZmZwQXZIdElZaTNHdEh3WG14ZE84NUxTSkdzVmtnelJFWm9oODJWb3BlSkhwQ3hYZ3RuQWZzUVBiRWVNU3dYVlNpRXZGV3dQWllkTUI1dzUtT1cyMll1SFBwUHFJSV9nZ2M1THYyRlRHdVJVUE1EYlgxYzBKb2ZpRTdoSzVuVy1HTWV0VQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQRzh6dFR4M0l6bnBfbFZBakJ3eVpOa2FSd2Vfb1lMOGI1TUdqb3FDbEtWUFg4czVuRDRDNzBHTTRNQ25KZmZwQXZIdElZaTNHdEh3WG14ZE84NUxTSkdzVmtnelJFWm9oODJWb3BlSkhwQ3hYZ3RuQWZzUVBiRWVNU3dYVlNpRXZGV3dQWllkTUI1dzUtT1cyMll1SFBwUHFJSV9nZ2M1THYyRlRHdVJVUE1EYlgxYzBKb2ZpRTdoSzVuVy1HTWV0VQ?oc=5\" target=\"_blank\"&gt;Glencore’s planned Australian debut draws interest as investors look past coal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
+          "published": "2026-08-18T06:40:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -103,12 +96,12 @@
           "score": 13
         },
         {
-          "title": "Analysis: The two largest reservoirs in the US have hit record-low levels",
-          "link": "https://www.carbonbrief.org/analysis-the-two-largest-reservoirs-in-the-us-have-hit-record-low-levels",
-          "source": "Carbon Brief",
-          "description": "The second-largest reservoir in the US reached a record-low water height on Saturday – just days after the country’s largest&#8230; The post Analysis: The two largest reservoirs in the US have hit record-low levels appeared first on Carbon Brief.",
-          "published": "2026-08-17T16:08:27.000Z",
-          "score": 10
+          "title": "West Africa cocoa sector struggles to meet EU anti-deforestation rules, raising supply concerns - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPejJSeDRUNDE1NUNwZWRoWlFLR2JXWFpsR0NZbEZrVlZZYVFsSmZFR2lEZ21rUmJxaUlKMl9VY2pJWjM1RXpZbUZ2bGlxQzNrd2QxQkl0SnpxUWZ5LUliVGZKQkExQnRMb0ExZXBPLTVCSV9FRmNhU01BU2t2VHdkRVYxdHZzZXVudndHM3hOX0dERnhkcWEtREZEVUdkdHpDUWhpX3c4SF9ZWkkyYUs5MzRPbzZFQlpwRVBuUGF3QVpfQjVvb3h2TkQ1WEg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxPejJSeDRUNDE1NUNwZWRoWlFLR2JXWFpsR0NZbEZrVlZZYVFsSmZFR2lEZ21rUmJxaUlKMl9VY2pJWjM1RXpZbUZ2bGlxQzNrd2QxQkl0SnpxUWZ5LUliVGZKQkExQnRMb0ExZXBPLTVCSV9FRmNhU01BU2t2VHdkRVYxdHZzZXVudndHM3hOX0dERnhkcWEtREZEVUdkdHpDUWhpX3c4SF9ZWkkyYUs5MzRPbzZFQlpwRVBuUGF3QVpfQjVvb3h2TkQ1WEg?oc=5\" target=\"_blank\"&gt;West Africa cocoa sector struggles to meet EU anti-deforestation rules, raising supply concerns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f",
+          "published": "2026-08-17T13:55:39.000Z",
+          "score": 13
         }
       ]
     },
@@ -117,11 +110,19 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Norway wealth fund warns of AI-driven stock market bubble",
-          "link": "https://www.dw.com/en/norway-wealth-fund-warns-of-ai-driven-stock-market-bubble/a-78351371?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Norway wealth fund sounds alarm on AI stock market bubble",
+          "link": "https://www.dw.com/en/norway-wealth-fund-sounds-alarm-on-ai-stock-market-bubble/a-78351371?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The head of Norway&#039;s sovereign wealth fund has warned that soaring AI-driven stock valuations could trigger a sharp correction. How exposed is the world&#039;s largest sovereign wealth fund to a market downturn?",
           "published": "2026-08-17T14:00:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Former Spain defender Pique joins chess investment boom - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTVhZM1JIYkZST1k5MjlwdXdUOGo5WWYxLUx3V05oRkc4bnZJUkxyd3l4U1ZyUFVpOFJWV0xZc1Jjd3ZvOURpekN3dzBFYXFlLWd3M3ZvNC1DcTFmbWhiSlpSREFkcjBFQ21kSmRvNFN6YmVuaTZ3aVdrbGcySjI2NkMwRVJoZUg3b3JydnJFclliYlpsdVRxUU1qMlMtazVfRnZneHdzZm42YXNuN2hFNQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNTVhZM1JIYkZST1k5MjlwdXdUOGo5WWYxLUx3V05oRkc4bnZJUkxyd3l4U1ZyUFVpOFJWV0xZc1Jjd3ZvOURpekN3dzBFYXFlLWd3M3ZvNC1DcTFmbWhiSlpSREFkcjBFQ21kSmRvNFN6YmVuaTZ3aVdrbGcySjI2NkMwRVJoZUg3b3JydnJFclliYlpsdVRxUU1qMlMtazVfRnZneHdzZm42YXNuN2hFNQ?oc=5\" target=\"_blank\"&gt;Former Spain defender Pique joins chess investment boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-17T11:58:25.000Z",
           "score": 2
         }
       ]
@@ -136,6 +137,14 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "EXCLUSIVE: Canadian miner NexGen Energy holds talks with BHP as it seeks $1 billion for uranium project - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOd3djNHpLcE13bUN0Ry01bnIyejBKQWdjQWtHcHZ5UjVzYlpNb3pib2RPcElvOVQ5RXNOd0RJcHRJcEZKN0xrZ3RzUHdkUTJla21TZDRnN3hwQUcwR2FuRy1hNUl6NkkzSjg2V2pIZmZMNFV5aUhJeUpaZUk1V3dZeGJwcjk1enJKcWJCbTFHZUk3bHN6SmctQ1hWN3Mtb3hiU1d3cXJVeW5PY2MwYWpEOXRYd1I3TU1yLWhiX1RKX3RUSnY1bEdR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOd3djNHpLcE13bUN0Ry01bnIyejBKQWdjQWtHcHZ5UjVzYlpNb3pib2RPcElvOVQ5RXNOd0RJcHRJcEZKN0xrZ3RzUHdkUTJla21TZDRnN3hwQUcwR2FuRy1hNUl6NkkzSjg2V2pIZmZMNFV5aUhJeUpaZUk1V3dZeGJwcjk1enJKcWJCbTFHZUk3bHN6SmctQ1hWN3Mtb3hiU1d3cXJVeW5PY2MwYWpEOXRYd1I3TU1yLWhiX1RKX3RUSnY1bEdR?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Canadian miner NexGen Energy holds talks with BHP as it seeks $1 billion for uranium project&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6",
+          "published": "2026-08-17T14:32:00.000Z",
+          "score": 7
+        },
+        {
           "title": "Inside secret police warehouse as Germany targets small boats gangs",
           "link": "https://www.bbc.co.uk/news/articles/cpq809zrvqdo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -144,44 +153,36 @@
           "score": 6
         },
         {
-          "title": "Kushner hails 'very good' meeting with Netanyahu after Hamas talks on Gaza peace plan",
-          "link": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Why Indian law students don't want top judge at their graduation ceremony",
+          "link": "https://www.bbc.co.uk/news/articles/c171j0k74d8o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Donald Trump's Middle East envoy and son-in-law, Jared Kushner, is seeking to gain Israeli backing for the US-backed Gaza peace plan.",
-          "published": "2026-08-17T16:02:58.000Z",
-          "score": 6
-        },
-        {
-          "title": "Top Zambian opposition figures arrested days after presidential vote",
-          "link": "https://www.bbc.co.uk/news/articles/cn0nj3ln8r5o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The leading opposition candidate calls allegations of a planned insurrection \"total fabrications\".",
-          "published": "2026-08-17T14:23:04.000Z",
+          "description": "Students from two premier law universities say they don't want Chief Justice Surya Kant to attend their convocations.",
+          "published": "2026-08-18T04:16:42.000Z",
           "score": 6
         },
         {
           "title": "Zambia&#039;s Hichilema wins second presidential term",
           "link": "https://www.dw.com/en/zambia-s-hichilema-wins-second-presidential-term/a-78406328?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Hakainde Hichilema won over 60% of the vote in the first round of Zambia&#039;s presidential election. which also saw authorities launch raids against leading opposition figures on election night.",
+          "description": "Hakainde Hichilema won over 60% of the vote in the first round of Zambia&#039;s presidential election, which also saw authorities launch raids against leading opposition figures on election night.",
           "published": "2026-08-18T04:03:00.000Z",
           "score": 6
         },
         {
-          "title": "Norway's king admitted to hospital and put on sick leave",
-          "link": "https://www.bbc.co.uk/news/articles/c4g3qdj1z77o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The 89-year-old - one of Europe's longest-serving monarchs - is suffering from a rare blood condition.",
-          "published": "2026-08-17T21:34:26.000Z",
-          "score": 4
+          "title": "Board overseeing Washington Dulles airport to vote on $19.9 billion overhaul plan - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOQ1JRNWlHVl9oenl3QTlBenFTV1pXRWxYTTktSHlfdkhUS05ZalItdUdPeGZzUlJPc1B2UVNTdk9UUDBjbUx5eGFodFZLZ3lYSTNOUXVpUW82S3R2Y003Y3JKN0VPU19xSi1xX0MwemJPSE84TjFvYWc1UHFKQ1AyZTNEWUhLZFV0d0IxcGtmSmV6Q29veVBEOTNDeDlZNXAwUUZKcV9qR1NXSjY4VC1GS0ZvOXVSZHdYRmc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOQ1JRNWlHVl9oenl3QTlBenFTV1pXRWxYTTktSHlfdkhUS05ZalItdUdPeGZzUlJPc1B2UVNTdk9UUDBjbUx5eGFodFZLZ3lYSTNOUXVpUW82S3R2Y003Y3JKN0VPU19xSi1xX0MwemJPSE84TjFvYWc1UHFKQ1AyZTNEWUhLZFV0d0IxcGtmSmV6Q29veVBEOTNDeDlZNXAwUUZKcV9qR1NXSjY4VC1GS0ZvOXVSZHdYRmc?oc=5\" target=\"_blank\"&gt;Board overseeing Washington Dulles airport to vote on $19.9 billion overhaul plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-17T23:03:03.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 313,
-    "articlesLast24h": 65,
-    "afterDedup": 62,
+    "totalArticlesScanned": 405,
+    "articlesLast24h": 157,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
