@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T05:05:33.546Z",
+  "generatedAt": "2026-08-18T05:00:29.454Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,33 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/ae9ab2",
+      "title": "Decarbonization Pathways and Mitigation Potential Assessment for the Steel Sector in Southeast Asia",
+      "journal": "Environmental Research Letters",
+      "authors": "Tae Yong Jung, Yoonha Lee, Hyunkyung Joo et al.",
+      "published": "2026-08-17",
+      "url": "https://doi.org/10.1088/1748-9326/ae9ab2",
+      "abstract": "Southeast Asia's steel sector faces the dual challenge of expanding production to meet rising demand while reducing carbon emissions. This study develops a bottom-up cost minimization model with 19 steelmaking technologies for six Southeast Asian countries over 2020-2070 and applies a three-dimensional scenario design that varies carbon pricing, technology cooperation, and infrastructure readiness at two levels each, yielding nine scenarios including a business-as-usual scenario (SC0). Rather than treating the three dimensions as strictly independent, we use the design to diagnose how they interact along a combined axis of policy ambition. Without climate policy, BF-BOF expansion locks in rising emission intensity, reaching 1.14 tCO2/t by 2040, 18% above the 2020 level. Under the most favorable policy combination, emissions fall by 67% from SC0 by 2050. Carbon pricing contributes the largest emission reduction at 27.1 percentage points on average but raises costs. Infrastructure readiness adds 20.9 pp while simultaneously lowering costs. Technology cooperation adds 2.4 pp of emission reduction and delivers a 6 to 9% cost saving, and diversifies the technology mix during the transition. Deep decarbonization at 67% reduction is achieved at no higher per-tonne cost than shallow decarbonization at 17% reduction when infrastructure and cooperation accompany carbon pricing, indicating that the perceived trade-off between emission ambition and cost is largely an artifact of incomple",
+      "suggestedOn": "2026-08-18",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 8,
+          "matched": [
+            "carbon pricing",
+            "decarbonization"
+          ]
+        },
+        {
+          "projectId": "industry-project",
+          "score": 4,
+          "matched": [
+            "steel"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1038/s41558-026-02691-0",
       "title": "Empirical insights into residual emissions in urban net-zero targets",
@@ -389,25 +416,6 @@
             "net-zero",
             "decarbonisation",
             "energy transition"
-          ]
-        }
-      ]
-    },
-    {
-      "doi": "10.1088/1748-9326/ae7e98",
-      "title": "Sufficiency as a key driver of domestic and imported emissions reductions in France's net-zero transition",
-      "journal": "Environmental Research Letters",
-      "authors": "Bruno Fontaine, Julien LEFEVRE, Antoine Teixeira, Fanny VICARD Vicard",
-      "published": "2026-06-17",
-      "url": "https://doi.org/10.1088/1748-9326/ae7e98",
-      "abstract": "Sufficiency is increasingly recognized as a core pillar of demand-side climate mitigation, alongside efficiency improvements and end-use electrification. Yet its specific contribution to reducing a country’s carbon footprint—including emissions embodied in imports—remains insufficiently understood in national transition scenarios. Here, we quantify the mitigation potential of sufficiency measures across transportation, buildings, food, and other consumption domains in France, and compare their impacts with those of efficiency and electrification in four contrasting societal transition scenarios towards net-zero greenhouse gas (GHG) emissions by 2050. We identify and isolate measures corresponding to sufficiency, efficiency, and electrification from fully quantified scenarios, and assess their effects on both production- and consumption-based GHG emissions using a national Environmentally Extended Input-Output model. Our results show that sufficiency measures alone can deliver up to 25% reduction in both production and consumption-based emissions by 2050 relative to a trend scenario. They also substantially curb imported emissions: for every ton of CO2e avoided domestically, an additional ~1.40 tCO2e can be avoided abroad, whereas efficiency and electrification measures generate almost exclusively territorial reductions. Sufficiency achieves the largest impacts by reducing emissions from food, road and air travel, and energy use in buildings, while also significantly lowering ",
-      "suggestedOn": "2026-06-18",
-      "projects": [
-        {
-          "projectId": "policy-gap-2-0",
-          "score": 4,
-          "matched": [
-            "net-zero"
           ]
         }
       ]
