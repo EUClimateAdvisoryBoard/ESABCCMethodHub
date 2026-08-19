@@ -1,12 +1,12 @@
 {
   "date": "2026-08-19",
-  "generatedAt": "2026-08-19T05:31:13.780Z",
+  "generatedAt": "2026-08-19T11:28:46.195Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 19 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Every country needs a model to help optimise its energy transition",
-      "summary": "National pledges and platforms alone won’t lead to secure and affordable decarbonised energy systems The post Every country needs a model to help optimise its energy transition appeared first on Climate Home News.",
+      "headline": "Q&#038;A: What is ‘long-duration energy storage’ – and why does the UK need it?",
+      "summary": "The UK is pioneering the use of “super batteries” that can store energy for long periods, smoothing the output from&#8230; The post Q&amp;A: What is ‘long-duration energy storage’ – and why does the UK need it? appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,6 +15,12 @@
       "summary": "&lt;p&gt;Hottest periods this year in most sea regions would have been ‘virtually impossible’ in a preindustrial climate&lt;/p&gt;&lt;p&gt;Carbon pollution has fuelled a “massive expansion” of marine heatwaves in Europe this summer, research has found, with some waters recording temperatures 6C higher than normal.&lt;/p&gt;&lt;p&gt;The hottest fortnights of this year would have been “virtually impossible” in a preindustrial climate in three of the four sea regions studied, according to &lt;a hre",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Singapore to offer tax breaks and improved visa access for fund sector - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPalJxODhFVVNSV3pzN0c2cVdjU3hsVTJENU02NUwyMlRLUjkzc2ViT05pWUpMZGVGNW4zSGhxcW80U3o1ZjNnaXBVS2tBaDg0VWQyTUUxRjFzaUtncmRNWU45WDhPTXg5Vy1lWldmcm92YS11ZGU3RUFTc2k4WXhSbkRCejM2MTBSY0lVcVA4Tk9MZndsNWhnR3pkLVF4aWprSmxSdXVmZDhWQ01FUzdEeTI3aGo?oc=5\" target=\"_blank\"&gt;Singapore to offer tax breaks and improved visa access for fund sector&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -28,20 +34,20 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Q&#038;A: What is ‘long-duration energy storage’ – and why does the UK need it?",
+          "link": "https://www.carbonbrief.org/qa-what-is-long-duration-energy-storage-and-why-does-the-uk-need-it",
+          "source": "Carbon Brief",
+          "description": "The UK is pioneering the use of “super batteries” that can store energy for long periods, smoothing the output from&#8230; The post Q&amp;A: What is ‘long-duration energy storage’ – and why does the UK need it? appeared first on Carbon Brief.",
+          "published": "2026-08-19T11:18:11.000Z",
+          "score": 13
+        },
+        {
           "title": "Every country needs a model to help optimise its energy transition",
           "link": "https://www.climatechangenews.com/2026/08/18/every-country-needs-a-model-to-help-optimise-its-energy-transition/",
           "source": "Climate Home News",
           "description": "National pledges and platforms alone won’t lead to secure and affordable decarbonised energy systems The post Every country needs a model to help optimise its energy transition appeared first on Climate Home News.",
           "published": "2026-08-18T17:24:55.000Z",
           "score": 13
-        },
-        {
-          "title": "Nine bodies of migrants recovered off eastern Tripoli, Red Crescent says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRG04cTE1ZEV2NC1sWnJVY0JoY05CY0oxRmRpQzZkS1hjX0NRdUNjaWpDMUkxNVVVR3JUc2poOW5qTGlYeVBtU1RfdUE3UV9MLWo1aTZYN3Rmd1duN05XTnE3MlNWOXZKMnRrUTlDOTR5WmxiQy1hVGNtdGxEUFVwdkNoUnBTQzQ5REVKZVduS1ZKcWNvWTlfMi1lclRuNE51a0xFVWloV3RfNUxfa0FhZHNEblNESWtH?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRG04cTE1ZEV2NC1sWnJVY0JoY05CY0oxRmRpQzZkS1hjX0NRdUNjaWpDMUkxNVVVR3JUc2poOW5qTGlYeVBtU1RfdUE3UV9MLWo1aTZYN3Rmd1duN05XTnE3MlNWOXZKMnRrUTlDOTR5WmxiQy1hVGNtdGxEUFVwdkNoUnBTQzQ5REVKZVduS1ZKcWNvWTlfMi1lclRuNE51a0xFVWloV3RfNUxfa0FhZHNEblNESWtH?oc=5\" target=\"_blank\"&gt;Nine bodies of migrants recovered off eastern Tripoli, Red Crescent says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-18T09:22:06.000Z",
-          "score": 7
         },
         {
           "title": "Nuclear material found in Syria will remain in the country, minister says - Reuters",
@@ -58,14 +64,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQX3c5bmFOV1dxSlpjUzVSMWNlMEpMMDR2T1JEc0ZuUERMQmFLUGhrdEVjSXpFYlhhNnFuNTBZQUU0Wm4xeEVlbGVyS195NGFSeWl5Ty1FUEt3aU9mSEp0MjdiejlIc2k3NnZDX0N2djhYQ1BQNzZqcTNHSDE4UmY0d3dZMTdTYmJUYnlZLVJjNGl6MXY0MF8teTBTNzJOYkgyZTV3RUp1djJrUDNUNVE?oc=5\" target=\"_blank\"&gt;IAEA: drone exploded at Zaporizhzhia nuclear plant bus stop, killing one&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-18T14:04:13.000Z",
           "score": 7
-        },
-        {
-          "title": "Glencore’s planned Australian debut draws interest as investors look past coal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQRzh6dFR4M0l6bnBfbFZBakJ3eVpOa2FSd2Vfb1lMOGI1TUdqb3FDbEtWUFg4czVuRDRDNzBHTTRNQ25KZmZwQXZIdElZaTNHdEh3WG14ZE84NUxTSkdzVmtnelJFWm9oODJWb3BlSkhwQ3hYZ3RuQWZzUVBiRWVNU3dYVlNpRXZGV3dQWllkTUI1dzUtT1cyMll1SFBwUHFJSV9nZ2M1THYyRlRHdVJVUE1EYlgxYzBKb2ZpRTdoSzVuVy1HTWV0VQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQRzh6dFR4M0l6bnBfbFZBakJ3eVpOa2FSd2Vfb1lMOGI1TUdqb3FDbEtWUFg4czVuRDRDNzBHTTRNQ25KZmZwQXZIdElZaTNHdEh3WG14ZE84NUxTSkdzVmtnelJFWm9oODJWb3BlSkhwQ3hYZ3RuQWZzUVBiRWVNU3dYVlNpRXZGV3dQWllkTUI1dzUtT1cyMll1SFBwUHFJSV9nZ2M1THYyRlRHdVJVUE1EYlgxYzBKb2ZpRTdoSzVuVy1HTWV0VQ?oc=5\" target=\"_blank\"&gt;Glencore’s planned Australian debut draws interest as investors look past coal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-08-18T06:40:00.000Z",
-          "score": 2
         }
       ]
     },
@@ -79,14 +77,6 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Hottest periods this year in most sea regions would have been ‘virtually impossible’ in a preindustrial climate&lt;/p&gt;&lt;p&gt;Carbon pollution has fuelled a “massive expansion” of marine heatwaves in Europe this summer, research has found, with some waters recording temperatures 6C higher than normal.&lt;/p&gt;&lt;p&gt;The hottest fortnights of this year would have been “virtually impossible” in a preindustrial climate in three of the four sea regions studied, according to &lt;a hre",
           "published": "2026-08-19T04:00:05.000Z",
-          "score": 13
-        },
-        {
-          "title": "Climate change is driving record heat in Europe's seas, scientists say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOU1FBVXpKZjd1bEs1T0NZMVFaUGROeHR6b05nU0otbTAzMWlIOTd3eFljT1NhcDhZY3lrZUI4Q1loOUJTMElKUGR1NHNFZl80Tm1RdVJZdTd3WlZlSm1DX3JkT1l6TjU1UHhpdl9nTHFqRnhfSDZTRENqNHNMTUQxRGxjVmxQeXNVaEFsOW9ybzBCczhTZU1yNlgwZGx1bWdkRW9rbC1YZFdCdDlmcktWSmM2dGdXeXhhVC1yOQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOU1FBVXpKZjd1bEs1T0NZMVFaUGROeHR6b05nU0otbTAzMWlIOTd3eFljT1NhcDhZY3lrZUI4Q1loOUJTMElKUGR1NHNFZl80Tm1RdVJZdTd3WlZlSm1DX3JkT1l6TjU1UHhpdl9nTHFqRnhfSDZTRENqNHNMTUQxRGxjVmxQeXNVaEFsOW9ybzBCczhTZU1yNlgwZGx1bWdkRW9rbC1YZFdCdDlmcktWSmM2dGdXeXhhVC1yOQ?oc=5\" target=\"_blank\"&gt;Climate change is driving record heat in Europe's seas, scientists say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-18T23:18:41.000Z",
           "score": 13
         },
         {
@@ -112,13 +102,38 @@
           "description": "&lt;a href=\"https://www.theguardian.com/commentisfree/picture/2026/aug/18/rebecca-hendin-richard-tice-climate-crisis-cartoon\"&gt;Continue reading...&lt;/a&gt;",
           "published": "2026-08-18T15:34:22.000Z",
           "score": 7
+        },
+        {
+          "title": "How soon will the drought be over?",
+          "link": "https://www.bbc.co.uk/news/articles/c0kmlrkypjpo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Rain has returned to parts of the UK this week but is it enough to end the drought some regions are facing?",
+          "published": "2026-08-18T12:26:05.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Singapore to offer tax breaks and improved visa access for fund sector - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPalJxODhFVVNSV3pzN0c2cVdjU3hsVTJENU02NUwyMlRLUjkzc2ViT05pWUpMZGVGNW4zSGhxcW80U3o1ZjNnaXBVS2tBaDg0VWQyTUUxRjFzaUtncmRNWU45WDhPTXg5Vy1lWldmcm92YS11ZGU3RUFTc2k4WXhSbkRCejM2MTBSY0lVcVA4Tk9MZndsNWhnR3pkLVF4aWprSmxSdXVmZDhWQ01FUzdEeTI3aGo?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPalJxODhFVVNSV3pzN0c2cVdjU3hsVTJENU02NUwyMlRLUjkzc2ViT05pWUpMZGVGNW4zSGhxcW80U3o1ZjNnaXBVS2tBaDg0VWQyTUUxRjFzaUtncmRNWU45WDhPTXg5Vy1lWldmcm92YS11ZGU3RUFTc2k4WXhSbkRCejM2MTBSY0lVcVA4Tk9MZndsNWhnR3pkLVF4aWprSmxSdXVmZDhWQ01FUzdEeTI3aGo?oc=5\" target=\"_blank\"&gt;Singapore to offer tax breaks and improved visa access for fund sector&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-19T05:03:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "South Korea minister says Trump appears to be pressuring Seoul over Iran, investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTVZrYXM5NGpibkZyR1hqU0JpVWV4S084VkR4UGhsUDItUlpodjhuSl90NkJXdXBSc3NEcFZ2QzVIZFpoLXpDNWliT014aW9IbnNOd2o4eWUyZ2gyOFU4bHhSam1uczNnMVRrdlhHcVBKZDNqdWk2eTBJUkdWcjdSZEJfZ0pwQ0YzVk9vbmU2RFdOOTdQVE53WDNyOFUzend2Z01CaHBGaVFWc2hrSWxPdXMzV3Zfa083S2poUTI4b3hhM3FtVURfWXRsTmp5cFNY?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTVZrYXM5NGpibkZyR1hqU0JpVWV4S084VkR4UGhsUDItUlpodjhuSl90NkJXdXBSc3NEcFZ2QzVIZFpoLXpDNWliT014aW9IbnNOd2o4eWUyZ2gyOFU4bHhSam1uczNnMVRrdlhHcVBKZDNqdWk2eTBJUkdWcjdSZEJfZ0pwQ0YzVk9vbmU2RFdOOTdQVE53WDNyOFUzend2Z01CaHBGaVFWc2hrSWxPdXMzV3Zfa083S2poUTI4b3hhM3FtVURfWXRsTmp5cFNY?oc=5\" target=\"_blank\"&gt;South Korea minister says Trump appears to be pressuring Seoul over Iran, investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt",
+          "published": "2026-08-19T05:19:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -139,6 +154,22 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "Amanal Petros: From refugee to European champion",
+          "link": "https://www.dw.com/en/amanal-petros-from-refugee-to-european-champion/a-78428504?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Amanal Petros fled to Germany as a teenager. Now one of the world&#039;s top marathon runners, he recently won gold at the European Athletics Championships.",
+          "published": "2026-08-19T11:07:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "UK inflation picks up after July surge in household energy bills - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPVDlHUDNTVHV0SHFvcWN2UEZSQmN3TENFSklmWXJlRjY0ZFBhOU0zcUdwN0JNRE5JNFMtVmxiZTdMeW9ZRFZlSm5lcjhwcTRpd04xanJQMkhhSGQydTVmeGhEZk9VUzlDOEZRak02ZDVMdWNjaHl2VEpPaThuNExYMVl0eGNHdnRWdTVtNFk5NHU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxPVDlHUDNTVHV0SHFvcWN2UEZSQmN3TENFSklmWXJlRjY0ZFBhOU0zcUdwN0JNRE5JNFMtVmxiZTdMeW9ZRFZlSm5lcjhwcTRpd04xanJQMkhhSGQydTVmeGhEZk9VUzlDOEZRak02ZDVMdWNjaHl2VEpPaThuNExYMVl0eGNHdnRWdTVtNFk5NHU?oc=5\" target=\"_blank\"&gt;UK inflation picks up after July surge in household energy bills&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-19T06:04:00.000Z",
+          "score": 7
+        },
+        {
           "title": "FTSE 100 steady as energy stocks offset bond jitters - Reuters",
           "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQMlFYeHFieTNRSFZ2Z01Hci02VUdqdFdYbW1mUThhbmJ0TThKSGJEOXByYldoQTAwVVJyckhvbTN0V1BzRXR5LTduUHR1NUNuczc5bmszUURoMUMxaWhPVlp4cXlUS29VSXZ2dy14WmFYbGlOTng1LWY2Ylh0ekxyREhjUFl6RHpRcHBwZ2swY0xZN09GUURWTFNn?oc=5",
           "source": "Reuters World (via Google News)",
@@ -151,7 +182,7 @@
           "link": "https://www.bbc.co.uk/news/articles/cdew8n9erlwo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Martial law has been in place in Ukraine since February 2022, under which elections are suspended.",
-          "published": "2026-08-19T04:44:41.000Z",
+          "published": "2026-08-19T11:00:21.000Z",
           "score": 6
         },
         {
@@ -161,30 +192,14 @@
           "description": "Twisha Sharma, a model and actor, had been married for just five months when she was found dead in May.",
           "published": "2026-08-19T03:04:07.000Z",
           "score": 6
-        },
-        {
-          "title": "Lindsay Clancy begged for help before her children's killings, mother-in-law testifies",
-          "link": "https://www.bbc.co.uk/news/articles/c62emm4yp8go?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Lindsay Clancy has admitted killing her daughter and two sons but has pleaded not guilty to murder, saying she was experiencing postpartum psychosis.",
-          "published": "2026-08-18T17:54:46.000Z",
-          "score": 6
-        },
-        {
-          "title": "US imposes new sanctions on ICC president, senior lawyer in latest escalation",
-          "link": "https://www.dw.com/en/us-imposes-new-sanctions-on-icc-president-senior-lawyer-in-latest-escalation/a-78420261?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The US has announced it will impose additional sanctions on members of the International Criminal Court. The ICC said the latest US move against it &quot;undermines the rule of law.&quot;",
-          "published": "2026-08-18T21:45:00.000Z",
-          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 413,
-    "articlesLast24h": 161,
-    "afterDedup": 147,
+    "totalArticlesScanned": 408,
+    "articlesLast24h": 162,
+    "afterDedup": 151,
     "feedsQueried": 19
   }
 }
