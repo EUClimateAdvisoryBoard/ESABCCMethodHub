@@ -1,6 +1,6 @@
 {
   "date": "2026-08-20",
-  "generatedAt": "2026-08-20T11:29:56.689Z",
+  "generatedAt": "2026-08-20T17:29:42.659Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 20 August 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -15,12 +15,6 @@
       "summary": "&lt;p&gt;Improvements in fire management however could mitigate increases by more than 70%, study shows&lt;/p&gt;&lt;p&gt;Wildfires are projected to burn 39% more of Europe by the end of the century even in the best-case scenario for stopping the planet from heating, &lt;a href=\"http://www.doi.org/10.1111/gcb.71043\"&gt;a study has found&lt;/a&gt;, unless action is taken to manage them better.&lt;/p&gt;&lt;p&gt;The increase in hot, dry and windy weather that leads to small fires turning into ragi",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Global shocks, IPO wave could temper India's earnings-led market revival, Abakkus Investment says - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNRlFUV3hURzVDU2t0SjlDQXl4MVFZTTFfRVVUcnF0NkJ1a1hPMXlfWTBaTko2RHJ3dGZob0Y5Uk40UDYySjZObHYyc0JSWmhMRGNLcVFSMzhYVXlTUEJlWXRpclg1TlR5amlwejJrT0FBSkJpc0dqQlh0ZVJDTjVwQ01CVmlBVjdkRnljZFJJQmlCNUdtd2RsVTgyS2VSOUJDVDd1TDdKVjl3NndLY3FjYlhxSVppZ19DMUtBdGdIRnp5UlZf?oc=5\" target=\"_blank\"&gt;Global shocks, IPO wave could temper India's earnings-led market revival, Abakkus Investment says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -50,11 +44,19 @@
           "score": 13
         },
         {
-          "title": "The Iran war energy crisis is just getting started - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOXzN3VmVtUVpMWHBXcnNDdUJXbkNFMFRxRjkxSzJjWEtZMWpnV2V1WWNfWFBNWlNENWhJVFBsUjhrcEtEa1ViaXhwcDRCR3BqeHFTX0JCektpb0dPYjIwTm55eXVGdm5yaDBQSUtjbWxEWllxUWJGVXBTVkVybi12U3pnT1hnQ0g0cW9UbE1jdjFGT3BUVWdKcHJNX1EzMHEybXNOcS1waEZyVk1qaVNFaFpyZHpjQQ?oc=5",
+          "title": "Factcheck: 10 flaws in the Conservative report on ‘cheap power’",
+          "link": "https://www.carbonbrief.org/factcheck-10-flaws-in-the-conservative-report-on-cheap-power",
+          "source": "Carbon Brief",
+          "description": "In a new report, the opposition Conservatives argue that UK electricity prices are too high and that it would be&#8230; The post Factcheck: 10 flaws in the Conservative report on ‘cheap power’ appeared first on Carbon Brief.",
+          "published": "2026-08-20T15:56:40.000Z",
+          "score": 10
+        },
+        {
+          "title": "Verstappen commits to Red Bull until end of 2030 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSENOVFFhM2NfLVlVc1ZxeWZlNHZaNzl5RklLZlg3M0J5czdCclNkX1VLb3NxeWJ0TFFOOUtQbjBKVEpOaGlWTnVHLTFCZjY2dG4wTzExQnJCVzNHZTBsVm01MG1ZV1cyRnZ5Qk9Yd01udjRQR3k0RG11bEIwcDA3bnZnV0txWDVDSEthblB0bTAtYmlUU3BfbU9USlpoWTBLOGhNV1J0YkxkR3hWVEJjc2FTUlp3OXgyRkU2TFJveVRkY2VVOTEtOU1xcw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOXzN3VmVtUVpMWHBXcnNDdUJXbkNFMFRxRjkxSzJjWEtZMWpnV2V1WWNfWFBNWlNENWhJVFBsUjhrcEtEa1ViaXhwcDRCR3BqeHFTX0JCektpb0dPYjIwTm55eXVGdm5yaDBQSUtjbWxEWllxUWJGVXBTVkVybi12U3pnT1hnQ0g0cW9UbE1jdjFGT3BUVWdKcHJNX1EzMHEybXNOcS1waEZyVk1qaVNFaFpyZHpjQQ?oc=5\" target=\"_blank\"&gt;The Iran war energy crisis is just getting started&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-20T06:00:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxNSENOVFFhM2NfLVlVc1ZxeWZlNHZaNzl5RklLZlg3M0J5czdCclNkX1VLb3NxeWJ0TFFOOUtQbjBKVEpOaGlWTnVHLTFCZjY2dG4wTzExQnJCVzNHZTBsVm01MG1ZV1cyRnZ5Qk9Yd01udjRQR3k0RG11bEIwcDA3bnZnV0txWDVDSEthblB0bTAtYmlUU3BfbU9USlpoWTBLOGhNV1J0YkxkR3hWVEJjc2FTUlp3OXgyRkU2TFJveVRkY2VVOTEtOU1xcw?oc=5\" target=\"_blank\"&gt;Verstappen commits to Red Bull until end of 2030&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-20T10:31:13.000Z",
           "score": 7
         },
         {
@@ -63,14 +65,6 @@
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;&lt;strong&gt;Helena Horton&lt;/strong&gt; on why the government may decide to allow more oil and gas drilling in the North Sea&lt;/p&gt;&lt;p&gt;The government is considering whether to allow new oil and gas drilling at two sites in the North Sea, a move environmental activists warn will accelerate climate chaos. &lt;strong&gt;Helen Pidd&lt;/strong&gt; speaks to reporter &lt;strong&gt;Helena Horton&lt;/strong&gt; about the government’s dilemma – and what it tells us about Andy Burnham’",
           "published": "2026-08-20T02:00:39.000Z",
-          "score": 4
-        },
-        {
-          "title": "Extreme heat feeds water conflict around Berlin",
-          "link": "https://www.dw.com/en/extreme-heat-feeds-water-conflict-around-berlin/a-78428993?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Though the German state of Brandenburg that wraps around Berlin is getting drier, it is also home to thirsty industrial plants such as Tesla and Red Bull. Is there enough water to go around?",
-          "published": "2026-08-19T12:10:00.000Z",
           "score": 4
         }
       ]
@@ -88,16 +82,24 @@
           "score": 13
         },
         {
-          "title": "South Korean container ship will test Arctic route to Europe amid Western concern - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOMV96VDN2NnFUYzU4cjBWOTdTTm1lOHZNalNSQXVmcGxCV1gtdVR5R3FxSTltWWFRajJOdDAtUGdXdTFvZ2lidHVpeVZJdGpjN1dpdXI5SUdSUFpzTEdfajIyWFJCbUVkYWwzcGhoRlhNVUs1YW9pckIxOUFKV1ZpSzBab2w5WURWaV91bXh1NnpEdzNBd1ZUbk43QUdNY0VoRTFSb3Z4bE1QMUJHcnUxRXV4WENWT3BId2hMSlRsZUF2WGIt?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOMV96VDN2NnFUYzU4cjBWOTdTTm1lOHZNalNSQXVmcGxCV1gtdVR5R3FxSTltWWFRajJOdDAtUGdXdTFvZ2lidHVpeVZJdGpjN1dpdXI5SUdSUFpzTEdfajIyWFJCbUVkYWwzcGhoRlhNVUs1YW9pckIxOUFKV1ZpSzBab2w5WURWaV91bXh1NnpEdzNBd1ZUbk43QUdNY0VoRTFSb3Z4bE1QMUJHcnUxRXV4WENWT3BId2hMSlRsZUF2WGIt?oc=5\" target=\"_blank\"&gt;South Korean container ship will test Arctic route to Europe amid Western concern&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-          "published": "2026-08-19T17:04:00.000Z",
+          "title": "Drought in Germany and Europe are driving up costs",
+          "link": "https://www.dw.com/en/drought-in-germany-and-europe-are-driving-up-costs/a-78447266?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Ongoing drought in Europe is causing rivers to dry up and crops to fail. Transport costs are rising and the price of food has exploded. Is inflation due to extreme weather?",
+          "published": "2026-08-20T16:30:00.000Z",
           "score": 13
         },
         {
-          "title": "How to better protect Europe from wildfires",
-          "link": "https://www.dw.com/en/how-to-better-protect-europe-from-wildfires/a-78435243?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "As marine heat breaks records, countries seek ocean roadmap at COP31",
+          "link": "https://www.climatechangenews.com/2026/08/20/marine-heat-records-countries-ocean-roadmap-australia-turkiye-cop31/",
+          "source": "Climate Home News",
+          "description": "Africa and the EU are leading a push for COP31 to deliver a roadmap that lays out measures to protect fast-warming oceans The post As marine heat breaks records, countries seek ocean roadmap at COP31 appeared first on Climate Home News.",
+          "published": "2026-08-20T15:07:29.000Z",
+          "score": 12
+        },
+        {
+          "title": "How Europe can better protect against extreme wildfires",
+          "link": "https://www.dw.com/en/how-europe-can-better-protect-against-extreme-wildfires/a-78435243?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "In another summer of European wildfires that have even seen wetlands burning, scientists say the situation is set to worsen in the future. What&#039;s needed is fire prevention and climate protection.",
           "published": "2026-08-20T09:00:00.000Z",
@@ -107,33 +109,16 @@
           "title": "California becomes first US state to set efficiency rules for replacement tires",
           "link": "https://www.theguardian.com/us-news/2026/aug/19/california-replacement-tires",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Regulations that would block sale of older tires praised by environmental groups amid rightwing backlash&lt;/p&gt;&lt;p&gt;California has become the first state in the nation to mandate that replacement tires be energy efficient, a major auto industry regulation set to block the sale of older tires and make vehicles on the road greener.&lt;/p&gt;&lt;p&gt;State regulators have said the new rules will reduce emissions and drivers’ fuel costs. But the rules – which come as the Trump admini",
+          "description": "&lt;p&gt;Regulations that would block sale of older tires praised by environmental groups amid rightwing backlash&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/us-news/california\"&gt;California&lt;/a&gt; has become the first state in the nation to mandate that replacement tires be energy efficient, a major auto industry regulation set to block the sale of older tires and make vehicles on the road greener.&lt;/p&gt;&lt;p&gt;State regulators have said the new rules will reduce emission",
           "published": "2026-08-19T23:48:06.000Z",
           "score": 8
-        },
-        {
-          "title": "Human remains again found at Lake Mead as water levels drop amid drought",
-          "link": "https://www.theguardian.com/us-news/2026/aug/19/lake-mead-human-remains",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Discovery marks latest grim finding in lake as water levels in crucial reservoir outside Las Vegas continue to decline&lt;/p&gt;&lt;p&gt;Human remains have once again been discovered at Lake Mead outside Las Vegas, Nevada, marking the latest in a line of gruesome discoveries as water levels in the crucial reservoir continue to drop, authorities said.&lt;/p&gt;&lt;p&gt;These remains were discovered on 16 August, USA Today &lt;a href=\"https://www.usatoday.com/story/news/nation/2026/08/18/",
-          "published": "2026-08-19T17:30:28.000Z",
-          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Global shocks, IPO wave could temper India's earnings-led market revival, Abakkus Investment says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNRlFUV3hURzVDU2t0SjlDQXl4MVFZTTFfRVVUcnF0NkJ1a1hPMXlfWTBaTko2RHJ3dGZob0Y5Uk40UDYySjZObHYyc0JSWmhMRGNLcVFSMzhYVXlTUEJlWXRpclg1TlR5amlwejJrT0FBSkJpc0dqQlh0ZVJDTjVwQ01CVmlBVjdkRnljZFJJQmlCNUdtd2RsVTgyS2VSOUJDVDd1TDdKVjl3NndLY3FjYlhxSVppZ19DMUtBdGdIRnp5UlZf?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNRlFUV3hURzVDU2t0SjlDQXl4MVFZTTFfRVVUcnF0NkJ1a1hPMXlfWTBaTko2RHJ3dGZob0Y5Uk40UDYySjZObHYyc0JSWmhMRGNLcVFSMzhYVXlTUEJlWXRpclg1TlR5amlwejJrT0FBSkJpc0dqQlh0ZVJDTjVwQ01CVmlBVjdkRnljZFJJQmlCNUdtd2RsVTgyS2VSOUJDVDd1TDdKVjl3NndLY3FjYlhxSVppZ19DMUtBdGdIRnp5UlZf?oc=5\" target=\"_blank\"&gt;Global shocks, IPO wave could temper India's earnings-led market revival, Abakkus Investment says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
-          "published": "2026-08-19T11:43:07.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -153,44 +138,44 @@
           "score": 13
         },
         {
-          "title": "Germany's VDMA lobby calls on Europe to step up on humanoid robotics as Unitree surges - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNak9xaFBuTzVTWl9tM2FRNzNCeF9xbXJmY291MVVnMW5mNHFGTVRwRDNub3NxbGpXX2pZWDBZTjFzSm9kVlF1QUF3OURCTl9fRzNzemRRVkRodDAzNXRpRkNTTU9YbjZvTWpBVHpZWTk3ZjBhSzh0TjN3WU9kS05xb3pkQmxCaTVHd3BzazJfVkFvTzdvLXhqT2JWQWd0MFA5WWQ1QUtYV3dVaGFPdlJYRHVvVllDa1lpYXJZaURn?oc=5",
+          "title": "Dollar hits 3-month low vs euro, pares losses after Treasury move - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPamFxZlBhRm1DcmRBZF9VSDd4aXllSmNTWEttZ2dLUkprSnJ5c2xBNXRKT1lQTDdrbXlUUjBnTXdWdVRrWENPYkRkal9pbm9UVDNueFd0am56Z3JCakxsZ2ZHclBRMHpyUUMzeVJHV1FPcVp1dXBYNUtMNk81Z3k1QkRmV1RnRHdPVjhDU3hNYS1xaWxYOU4wMUQwWk5nTDJPWG9kblZIQV9xOG11QTJR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNak9xaFBuTzVTWl9tM2FRNzNCeF9xbXJmY291MVVnMW5mNHFGTVRwRDNub3NxbGpXX2pZWDBZTjFzSm9kVlF1QUF3OURCTl9fRzNzemRRVkRodDAzNXRpRkNTTU9YbjZvTWpBVHpZWTk3ZjBhSzh0TjN3WU9kS05xb3pkQmxCaTVHd3BzazJfVkFvTzdvLXhqT2JWQWd0MFA5WWQ1QUtYV3dVaGFPdlJYRHVvVllDa1lpYXJZaURn?oc=5\" target=\"_blank\"&gt;Germany's VDMA lobby calls on Europe to step up on humanoid robotics as Unitree surges&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-19T12:58:36.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPamFxZlBhRm1DcmRBZF9VSDd4aXllSmNTWEttZ2dLUkprSnJ5c2xBNXRKT1lQTDdrbXlUUjBnTXdWdVRrWENPYkRkal9pbm9UVDNueFd0am56Z3JCakxsZ2ZHclBRMHpyUUMzeVJHV1FPcVp1dXBYNUtMNk81Z3k1QkRmV1RnRHdPVjhDU3hNYS1xaWxYOU4wMUQwWk5nTDJPWG9kblZIQV9xOG11QTJR?oc=5\" target=\"_blank\"&gt;Dollar hits 3-month low vs euro, pares losses after Treasury move&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-20T00:53:00.000Z",
           "score": 8
         },
         {
-          "title": "Fish, ships and sovereignty: Iceland weighs its European future - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPYWoyNk5nSjFYSk5hRlZkZmg5VlR6VmRER3Q0YjlqSHBoeUphR0NGOVdxWVFKWmxMQlJIbkFMWDF5MlJoZ0c4dW5YTEF2MmtnZVhSRWF5cWNEQ3dsUlF3NU9FRGpKajZLcWhURmZnY1ZYejNrWlRMR0hrdWRYR3Z2ZmEyOUZOUktRTXdYM25iR2w3amtPODFzQ0lXdnRKMExl?oc=5",
+          "title": "Regional powerhouses weigh no-confidence vote in bid to oust Infantino, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQVjJ6TVk2TGJSWlNGU1NiQWNNeDRDaGhRa1ZmNlNQSUxFSEFiZjI2SHViczZveVJ6ZWdta1o4Q0pDcC1VWGd3NFI5WjhvekFNM1VwWkQ5bjlqZ29YRXFYS1A4bGdfMTQzUkdPWGx2SjZERVZ4dkNwcmp4U2N0bmQ5MGE5SUw2WnJkRkV6Sy1GYjBFZWRRcFgtbE40YndqRGVSWDE3RDVGNDh2MDE5emd0TUhzZDdoMGZVeUVtYW14MA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPYWoyNk5nSjFYSk5hRlZkZmg5VlR6VmRER3Q0YjlqSHBoeUphR0NGOVdxWVFKWmxMQlJIbkFMWDF5MlJoZ0c4dW5YTEF2MmtnZVhSRWF5cWNEQ3dsUlF3NU9FRGpKajZLcWhURmZnY1ZYejNrWlRMR0hrdWRYR3Z2ZmEyOUZOUktRTXdYM25iR2w3amtPODFzQ0lXdnRKMExl?oc=5\" target=\"_blank\"&gt;Fish, ships and sovereignty: Iceland weighs its European future&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-19T13:47:37.000Z",
-          "score": 8
-        },
-        {
-          "title": "Britain's energy price cap to hit three-year high in October, Cornwall Insight says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOTUkzcjBJVHphRWJDcFhBSjFzaVZoS0VpblpPRzNLT0VrajJPZUoyZXFBa1JQV25Va3ZEODhIbVp0bU5zb2RDLUN5MlI2TjRkX0FkaFV4aGlLNTBRQl9JSDNoMF9GNnZFYWk5X08xMUtnLVFjN3l2UktNQjQ5eWJwVGVVbU9lUGpKNHJZd1p0TU1DT0o2eDlVVlU2cGNwdlc1X3loc3NmTVZTeUh5N1pjR3liajFlVEN6c1RTckhaVkFwWF95THY5WkpB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOTUkzcjBJVHphRWJDcFhBSjFzaVZoS0VpblpPRzNLT0VrajJPZUoyZXFBa1JQV25Va3ZEODhIbVp0bU5zb2RDLUN5MlI2TjRkX0FkaFV4aGlLNTBRQl9JSDNoMF9GNnZFYWk5X08xMUtnLVFjN3l2UktNQjQ5eWJwVGVVbU9lUGpKNHJZd1p0TU1DT0o2eDlVVlU2cGNwdlc1X3loc3NmTVZTeUh5N1pjR3liajFlVEN6c1RTckhaVkFwWF95THY5WkpB?oc=5\" target=\"_blank\"&gt;Britain's energy price cap to hit three-year high in October, Cornwall Insight says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-08-19T11:40:44.000Z",
-          "score": 7
-        },
-        {
-          "title": "Sacked Ukrainian defence minister calls for presidential election",
-          "link": "https://www.bbc.co.uk/news/articles/cdew8n9erlwo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Martial law has been in place in Ukraine since February 2022, under which elections are suspended.",
-          "published": "2026-08-19T20:34:39.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQVjJ6TVk2TGJSWlNGU1NiQWNNeDRDaGhRa1ZmNlNQSUxFSEFiZjI2SHViczZveVJ6ZWdta1o4Q0pDcC1VWGd3NFI5WjhvekFNM1VwWkQ5bjlqZ29YRXFYS1A4bGdfMTQzUkdPWGx2SjZERVZ4dkNwcmp4U2N0bmQ5MGE5SUw2WnJkRkV6Sy1GYjBFZWRRcFgtbE40YndqRGVSWDE3RDVGNDh2MDE5emd0TUhzZDdoMGZVeUVtYW14MA?oc=5\" target=\"_blank\"&gt;Regional powerhouses weigh no-confidence vote in bid to oust Infantino, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-20T14:19:16.000Z",
           "score": 6
+        },
+        {
+          "title": "At least 15 killed in Kyiv as Ukraine grapples with air defence shortages",
+          "link": "https://www.bbc.co.uk/news/articles/c98vzmden5yo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Blocks of flats and warehouses were targeted in the \"massive attack\" on Thursday, Ukrainian officials say.",
+          "published": "2026-08-20T17:14:55.000Z",
+          "score": 2
+        },
+        {
+          "title": "Trump vows tougher economic measures on Iran and supporting countries",
+          "link": "https://www.bbc.co.uk/news/articles/c2k7e83ynj4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "It comes after a 60-day ceasefire expired on Monday, with no sign of a diplomatic or military off-ramp to the conflict.",
+          "published": "2026-08-20T09:13:18.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 408,
-    "articlesLast24h": 166,
-    "afterDedup": 156,
+    "articlesLast24h": 163,
+    "afterDedup": 153,
     "feedsQueried": 19
   }
 }
