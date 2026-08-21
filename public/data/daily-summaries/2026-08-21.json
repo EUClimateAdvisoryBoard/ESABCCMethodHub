@@ -1,24 +1,24 @@
 {
   "date": "2026-08-21",
-  "generatedAt": "2026-08-21T11:29:55.477Z",
+  "generatedAt": "2026-08-21T17:32:44.955Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 21 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Factcheck: 10 flaws in the Conservative report on ‘cheap power’",
-      "summary": "In a new report, the opposition Conservatives argue that UK electricity prices are too high and that it would be&#8230; The post Factcheck: 10 flaws in the Conservative report on ‘cheap power’ appeared first on Carbon Brief.",
+      "headline": "Cut cost of loans for solar panels on UK homes, ministers urged",
+      "summary": "&lt;p&gt;Report says ‘solar bonds’ could fund wider access to clean energy, reducing household bills&lt;/p&gt;&lt;p&gt;Solar panels could be cheaper for people on lower incomes if the government stepped in to reduce the cost of loans, a report argues.&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/the-good-energy-guide/2026/jul/31/are-solar-panels-worth-it-your-questions-answered\"&gt;Solar panel installations&lt;/a&gt; can save households hundreds of pounds a year in energy bills, but",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Drought in Germany and Europe are driving up costs",
-      "summary": "Ongoing drought in Europe is causing rivers to dry up and crops to fail. Transport costs are rising and the price of food has exploded. Is inflation due to extreme weather?",
+      "headline": "Europe's hottest town says climate change is reshaping daily life - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPNGprSDRDTVlCc044X3ZGN0VKUkNfb3o2azduVG9Ed2hfU0JYMHFJeERrTGN5WFdHeWJWR2Jwak95MlZGWmN0bVE1M253QWZtdzRid21zbllXTUJtSVhQOGNZY040ekdmMHFhWUY5bXRJMXUyaXQyZzZ0ZTJxZTM2X0tkOUR3VGlrdE5STlpBTUp5NnZUSFdHd1MtQndRX05KdnZUVHlsQ3lRTGg2Q3V4UW1BQ2xJNVNkb1JHRmxn?oc=5\" target=\"_blank\"&gt;Europe's hottest town says climate change is reshaping daily life&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "South Korea plans chip windfall fund to back youth, AI investment - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQYWx2Uko2TGV3T04xUFk4dXpjR1Y2V2FDQ295Rm5ydHNSYUdKcWFWM1daM3VuWkdveFl2MTNiY19hdmhVUTBud3cyR3A1YmtGd0licHpNN2xoWmdTeE85WTRyVW9OWVd4Vi01bERRWGtvbzNJaDY4VUlETEcwMzZYMW1DLTBPWXQ3MUFoSUFXSVNzSnlpdFAyOWdPZlNLZHBuZERhTkpmTFNCVEhGTU5NUjl1RldmR28?oc=5\" target=\"_blank\"&gt;South Korea plans chip windfall fund to back youth, AI investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Global equity fund inflows hit three-week high before late selloff - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxNcFhpQkxvOHk5Qk1zS25sckFOVjJBRnZMblRlRzFCSHFpWWlMQS16MGdFdEdkZHYxbnhqMS1qYWdkN1FsREFhYjNGSnBtWDNkWWI5R0xnX0xoYTYzejJweGtvNldHNUQ3THRER0dvYXJrZTVLb3FPQ1hMRmJkU3pkeWRR?oc=5\" target=\"_blank\"&gt;Global equity fund inflows hit three-week high before late selloff&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,28 +34,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Factcheck: 10 flaws in the Conservative report on ‘cheap power’",
-          "link": "https://www.carbonbrief.org/factcheck-10-flaws-in-the-conservative-report-on-cheap-power",
-          "source": "Carbon Brief",
-          "description": "In a new report, the opposition Conservatives argue that UK electricity prices are too high and that it would be&#8230; The post Factcheck: 10 flaws in the Conservative report on ‘cheap power’ appeared first on Carbon Brief.",
-          "published": "2026-08-20T15:56:40.000Z",
-          "score": 10
-        },
-        {
           "title": "Cut cost of loans for solar panels on UK homes, ministers urged",
           "link": "https://www.theguardian.com/environment/2026/aug/21/cut-cost-of-loans-for-solar-panels-on-uk-homes-ministers-urged",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Report says ‘solar bonds’ could fund wider access to clean energy, reducing household bills&lt;/p&gt;&lt;p&gt;Solar panels could be cheaper for people on lower incomes if the government stepped in to reduce the cost of loans, a report argues.&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/the-good-energy-guide/2026/jul/31/are-solar-panels-worth-it-your-questions-answered\"&gt;Solar panel installations&lt;/a&gt; can save households hundreds of pounds a year in energy bills, but",
           "published": "2026-08-21T08:00:28.000Z",
           "score": 7
-        },
-        {
-          "title": "Why Germany&#039;s gas storage levels are so low",
-          "link": "https://www.dw.com/en/why-germany-s-gas-storage-levels-are-so-low/a-78440677?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Germany&#039;s gas storage facilities are only 50% full as traders bet that wholesale prices will fall if the Iran war ends. With around three months until winter, DW asks whether the country can refill its reserves in time.",
-          "published": "2026-08-20T14:36:00.000Z",
-          "score": 2
         },
         {
           "title": "Romania destroys marine drone near Neptun Deep gas project, minister says - Reuters",
@@ -72,11 +56,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Drought in Germany and Europe are driving up costs",
-          "link": "https://www.dw.com/en/drought-in-germany-and-europe-are-driving-up-costs/a-78447266?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Ongoing drought in Europe is causing rivers to dry up and crops to fail. Transport costs are rising and the price of food has exploded. Is inflation due to extreme weather?",
-          "published": "2026-08-20T16:30:00.000Z",
+          "title": "Europe's hottest town says climate change is reshaping daily life - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPNGprSDRDTVlCc044X3ZGN0VKUkNfb3o2azduVG9Ed2hfU0JYMHFJeERrTGN5WFdHeWJWR2Jwak95MlZGWmN0bVE1M253QWZtdzRid21zbllXTUJtSVhQOGNZY040ekdmMHFhWUY5bXRJMXUyaXQyZzZ0ZTJxZTM2X0tkOUR3VGlrdE5STlpBTUp5NnZUSFdHd1MtQndRX05KdnZUVHlsQ3lRTGg2Q3V4UW1BQ2xJNVNkb1JHRmxn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPNGprSDRDTVlCc044X3ZGN0VKUkNfb3o2azduVG9Ed2hfU0JYMHFJeERrTGN5WFdHeWJWR2Jwak95MlZGWmN0bVE1M253QWZtdzRid21zbllXTUJtSVhQOGNZY040ekdmMHFhWUY5bXRJMXUyaXQyZzZ0ZTJxZTM2X0tkOUR3VGlrdE5STlpBTUp5NnZUSFdHd1MtQndRX05KdnZUVHlsQ3lRTGg2Q3V4UW1BQ2xJNVNkb1JHRmxn?oc=5\" target=\"_blank\"&gt;Europe's hottest town says climate change is reshaping daily life&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-21T06:03:00.000Z",
           "score": 13
         },
         {
@@ -88,14 +72,6 @@
           "score": 13
         },
         {
-          "title": "As marine heat breaks records, countries seek ocean roadmap at COP31",
-          "link": "https://www.climatechangenews.com/2026/08/20/marine-heat-records-countries-ocean-roadmap-australia-turkiye-cop31/",
-          "source": "Climate Home News",
-          "description": "Africa and the EU are leading a push for COP31 to deliver a roadmap that lays out measures to protect fast-warming oceans The post As marine heat breaks records, countries seek ocean roadmap at COP31 appeared first on Climate Home News.",
-          "published": "2026-08-20T15:07:29.000Z",
-          "score": 12
-        },
-        {
           "title": "How safeguarding land protects our future",
           "link": "https://www.climatechangenews.com/2026/08/21/how-safeguarding-land-protects-our-future/",
           "source": "Climate Home News",
@@ -104,12 +80,20 @@
           "score": 10
         },
         {
-          "title": "Proposed London datacentre will have annual carbon footprint of 27,000 flights to New York",
+          "title": "Proposed London datacentre ‘incompatible’ with net zero with 1m-tonne carbon footprint",
           "link": "https://www.theguardian.com/uk-news/2026/aug/21/proposed-london-datacentre-will-have-annual-carbon-footprint-of-27000-flights-to-new-york",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Exclusive: Planning documents show datacentre in North Ockendon would be incompatible with UK net zero targets&lt;/p&gt;&lt;p&gt;A “hyperscale” datacentre in outer London would generate more than 1m tonnes of carbon dioxide a year, equivalent to the carbon footprint of 27,000 flights from London to New York, planning documents show.&lt;/p&gt;&lt;p&gt;The East Havering Data Centre Campus (EHDCC) in North Ockendon would be one of the largest datacentres in Europe if approved by Havering c",
+          "description": "&lt;p&gt;Exclusive: Planning documents show annual emissions from North Ockendon project would be equivalent to 8,480 flights to New York&lt;/p&gt;&lt;p&gt;A “hyperscale” datacentre in outer London would generate more than 1m tonnes of carbon dioxide a year, equivalent to the carbon footprint of 8,480 flights from London to New York, planning documents show.&lt;/p&gt;&lt;p&gt;The East Havering Data Centre Campus (EHDCC) in North Ockendon would be one of the largest datacentres in Europe if appro",
           "published": "2026-08-21T10:00:31.000Z",
           "score": 9
+        },
+        {
+          "title": "Wildfire-hit residents remove Greenpeace mural of Burnham from scorched mountain",
+          "link": "https://www.bbc.co.uk/news/articles/cn7n0yvpm7vo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "After wildfires the group painted an image bearing the words \"Our house is on fire, Andy\".",
+          "published": "2026-08-21T09:02:24.000Z",
+          "score": 7
         }
       ]
     },
@@ -118,19 +102,19 @@
       "title": "Green Finance & Investment",
       "items": [
         {
+          "title": "Global equity fund inflows hit three-week high before late selloff - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNcFhpQkxvOHk5Qk1zS25sckFOVjJBRnZMblRlRzFCSHFpWWlMQS16MGdFdEdkZHYxbnhqMS1qYWdkN1FsREFhYjNGSnBtWDNkWWI5R0xnX0xoYTYzejJweGtvNldHNUQ3THRER0dvYXJrZTVLb3FPQ1hMRmJkU3pkeWRR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxNcFhpQkxvOHk5Qk1zS25sckFOVjJBRnZMblRlRzFCSHFpWWlMQS16MGdFdEdkZHYxbnhqMS1qYWdkN1FsREFhYjNGSnBtWDNkWWI5R0xnX0xoYTYzejJweGtvNldHNUQ3THRER0dvYXJrZTVLb3FPQ1hMRmJkU3pkeWRR?oc=5\" target=\"_blank\"&gt;Global equity fund inflows hit three-week high before late selloff&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-21T09:23:43.000Z",
+          "score": 2
+        },
+        {
           "title": "South Korea plans chip windfall fund to back youth, AI investment - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQYWx2Uko2TGV3T04xUFk4dXpjR1Y2V2FDQ295Rm5ydHNSYUdKcWFWM1daM3VuWkdveFl2MTNiY19hdmhVUTBud3cyR3A1YmtGd0licHpNN2xoWmdTeE85WTRyVW9OWVd4Vi01bERRWGtvbzNJaDY4VUlETEcwMzZYMW1DLTBPWXQ3MUFoSUFXSVNzSnlpdFAyOWdPZlNLZHBuZERhTkpmTFNCVEhGTU5NUjl1RldmR28?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQYWx2Uko2TGV3T04xUFk4dXpjR1Y2V2FDQ295Rm5ydHNSYUdKcWFWM1daM3VuWkdveFl2MTNiY19hdmhVUTBud3cyR3A1YmtGd0licHpNN2xoWmdTeE85WTRyVW9OWVd4Vi01bERRWGtvbzNJaDY4VUlETEcwMzZYMW1DLTBPWXQ3MUFoSUFXSVNzSnlpdFAyOWdPZlNLZHBuZERhTkpmTFNCVEhGTU5NUjl1RldmR28?oc=5\" target=\"_blank\"&gt;South Korea plans chip windfall fund to back youth, AI investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-21T04:11:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Malaysia PM orders probe into unit of sovereign wealth fund - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPNmx1TE1UNVRUVTJqOGtWU2k2MHYzVDhHdVJueU05OTRHbmg4ckgxUGxQRTVZMHFhamhXWHE4eEFsX2gwb09EblhBbFoyaGh3XzlkLWZVMUM1ZU5NbTFOVnRlM3YzR2U4Z3BUcm9yNDM4VkgtSE0tODN1TEZhQngtVWhjQjhtNERSdm8wVWxVQjhHMWIwRkFiRkhjd0ZIUVdTUFlUaTZQYk1FSEJYS1JyUw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPNmx1TE1UNVRUVTJqOGtWU2k2MHYzVDhHdVJueU05OTRHbmg4ckgxUGxQRTVZMHFhamhXWHE4eEFsX2gwb09EblhBbFoyaGh3XzlkLWZVMUM1ZU5NbTFOVnRlM3YzR2U4Z3BUcm9yNDM4VkgtSE0tODN1TEZhQngtVWhjQjhtNERSdm8wVWxVQjhHMWIwRkFiRkhjd0ZIUVdTUFlUaTZQYk1FSEJYS1JyUw?oc=5\" target=\"_blank\"&gt;Malaysia PM orders probe into unit of sovereign wealth fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-20T11:49:43.000Z",
           "score": 2
         }
       ]
@@ -145,35 +129,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Chinese e-commerce giant JD.com offers EU remedies in Ceconomy takeover probe - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQV1kyWGRJRFg2YURDZDlvOEtjaFlOYWQxRW1Pcml0UjNkVEJ4R0lnVk9hNmtJQkRWbnNZVHpBa2tnV0JpVWRWcURVVHBqOVU0Y0lKM1ZVOWZld21XS1k5SVU0Umk0ckZDckZCbllRbnFCRmRQaEdIZDdHcVJHYzRnN1hpQVRzbWdaMzh0UVljYzNEQ2lHaDU0dy1tejhSVGI2LWVXS0UtTFFiZ1h6MjVWdDhiYTNuQ0lEZHhqWU9NaUxhQ3dmeVZpb0xZZE5KM1E?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxQV1kyWGRJRFg2YURDZDlvOEtjaFlOYWQxRW1Pcml0UjNkVEJ4R0lnVk9hNmtJQkRWbnNZVHpBa2tnV0JpVWRWcURVVHBqOVU0Y0lKM1ZVOWZld21XS1k5SVU0Umk0ckZDckZCbllRbnFCRmRQaEdIZDdHcVJHYzRnN1hpQVRzbWdaMzh0UVljYzNEQ2lHaDU0dy1tejhSVGI2LWVXS0UtTFFiZ1h6MjVWdDhiYTNuQ0lEZHhqWU9NaUxhQ3dmeVZpb0xZZE5KM1E?oc=5\" target=\"_blank\"&gt;Chinese e-commerce giant JD.com offers EU remedies in Ceconomy takeover probe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
-          "published": "2026-08-20T15:30:32.000Z",
-          "score": 8
-        },
-        {
-          "title": "Europe's STOXX 600 slips on inflation fears - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQeDlZbm1VZjNFaEdVbnVGVkcyZkVlS3F2ci1DSERqUnVlYVNxaVBzaWprS25aeGcyWHBkVDUxM1A4V3JRVVJONjZyN3JCR2xqa29RblRsSm9GTjU3SmNZRnhIcTBRdkYxYkdyN01QTXprdG52ZV9oR2ZTdkxLUDlKTi1sRTdmOUhmc2QxOUtuT0lLby1NZ0thTlpvWkZhTnRNaEFyWHZOSC1MU0lxYnNjLWxTUzU1dw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQeDlZbm1VZjNFaEdVbnVGVkcyZkVlS3F2ci1DSERqUnVlYVNxaVBzaWprS25aeGcyWHBkVDUxM1A4V3JRVVJONjZyN3JCR2xqa29RblRsSm9GTjU3SmNZRnhIcTBRdkYxYkdyN01QTXprdG52ZV9oR2ZTdkxLUDlKTi1sRTdmOUhmc2QxOUtuT0lLby1NZ0thTlpvWkZhTnRNaEFyWHZOSC1MU0lxYnNjLWxTUzU1dw?oc=5\" target=\"_blank\"&gt;Europe's STOXX 600 slips on inflation fears&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-20T16:33:50.000Z",
-          "score": 8
-        },
-        {
           "title": "Euro zone business activity growing at fastest pace since November, PMIs show - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPeVJRUTVFVzFGV1dITUg0YmRpcFBpN18wZGdmTVgwdU1oWU5xU3dWaWhzWUtONDdWWElvbnpmTHhGLXJDcDBSczdnTnZKVFo0T2hMWEpydGhIOG9rT3g5NW1fWk5nZXBKOFRRbG4yWldPZXc3ak9XTEhqRzVyUTF0X3VNZXo3NVMyenJndGhpTkQ2ZXFzalRYUXZCX0E4SGFQU21LWFpCTmxkMlBWUmx5bG11WlRNM2ZPNnlMSkdn?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPeVJRUTVFVzFGV1dITUg0YmRpcFBpN18wZGdmTVgwdU1oWU5xU3dWaWhzWUtONDdWWElvbnpmTHhGLXJDcDBSczdnTnZKVFo0T2hMWEpydGhIOG9rT3g5NW1fWk5nZXBKOFRRbG4yWldPZXc3ak9XTEhqRzVyUTF0X3VNZXo3NVMyenJndGhpTkQ2ZXFzalRYUXZCX0E4SGFQU21LWFpCTmxkMlBWUmx5bG11WlRNM2ZPNnlMSkdn?oc=5\" target=\"_blank\"&gt;Euro zone business activity growing at fastest pace since November, PMIs show&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-21T09:58:40.000Z",
-          "score": 8
-        },
-        {
-          "title": "Lufthansa's Discover Airline says jet fuel shortage affects flights from Namibia to Europe - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSF95VlNpbHpVYW5pUXFDWG45czgtQUFscFd5aC1iUDNocHhLNmR0UHhNcENfbnk0YUc1VzhyNGFfSjRQN2M2aHlwc0pLc095QW5sOTJQemdDV2lwLUNTcTZPZTE2M01DWTd4WnFZVG83a3hueVdaYUJDdnlySURNMlV2akZfLWdMcFhUTml4TV9yMVlGRFNtLXZ3WVNLSC05VTZnSnkyUUJCZXhob3pSNjBBTGI5enUwcDF3a3RZdTc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSF95VlNpbHpVYW5pUXFDWG45czgtQUFscFd5aC1iUDNocHhLNmR0UHhNcENfbnk0YUc1VzhyNGFfSjRQN2M2aHlwc0pLc095QW5sOTJQemdDV2lwLUNTcTZPZTE2M01DWTd4WnFZVG83a3hueVdaYUJDdnlySURNMlV2akZfLWdMcFhUTml4TV9yMVlGRFNtLXZ3WVNLSC05VTZnSnkyUUJCZXhob3pSNjBBTGI5enUwcDF3a3RZdTc?oc=5\" target=\"_blank\"&gt;Lufthansa's Discover Airline says jet fuel shortage affects flights from Namibia to Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
-          "published": "2026-08-20T15:42:10.000Z",
           "score": 8
         },
         {
@@ -183,14 +143,38 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPYS1vaHdfWG55NkRDMU1xRU1DYnB4MV94eElsODBWaF95c0VoZGxHUlB5dEk2N2w1Qkt3U3JhbThRUDdpM1ZCM05GWWtqQmhBU1VNaFMtNloxbklpUEUtV1NDcllNN0hmVUhSc00zcDJiT0JaWkRjV0VsemRVelNLWVExWGxLejExNHZ3LURtOUVsTmxaeEV4c0lleDBaNDdJLTBwQjdvaGZnNE5SUkRoNjFJSUtodDIwbHc?oc=5\" target=\"_blank\"&gt;China, Indonesia agree to boost military ties, work closer on minerals, energy and tech&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-20T23:02:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Hong Kong's Tiananmen activists guilty in national security trial",
+          "link": "https://www.bbc.co.uk/news/articles/c1l10mdrld5o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Three activists were accused of inciting others to subvert state power under the China-introduced law.",
+          "published": "2026-08-21T05:47:32.000Z",
+          "score": 6
+        },
+        {
+          "title": "Priyanka Chopra Jonas on making a film about love and caste inequality",
+          "link": "https://www.bbc.co.uk/news/videos/cn4nk1915vxo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Priyanka Chopra Jonas has executive produced The Cycle of Love, based on an Indian artist who cycled from India to Europe to reunite with his wife.",
+          "published": "2026-08-21T13:32:28.000Z",
+          "score": 4
+        },
+        {
+          "title": "Israel re-establishes closed West Bank settlement, defying growing international protests",
+          "link": "https://www.bbc.co.uk/news/articles/cn7n0l4p0kzo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Thirty \"pioneer families\" have arrived on a wave of nationalism driven by Israel's government, but the rapid change has left nearby Palestinian residents fearful.",
+          "published": "2026-08-21T05:00:57.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 404,
-    "articlesLast24h": 166,
-    "afterDedup": 157,
+    "totalArticlesScanned": 412,
+    "articlesLast24h": 171,
+    "afterDedup": 163,
     "feedsQueried": 19
   }
 }
