@@ -1,6 +1,6 @@
 {
   "date": "2026-08-22",
-  "generatedAt": "2026-08-22T17:21:13.975Z",
+  "generatedAt": "2026-08-22T23:21:29.098Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 22 August 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -15,12 +15,6 @@
       "summary": "Barnsley Council says a review is under way to asses climate and net zero-related activity.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "EXCLUSIVE: Fauci's lawyers set up legal defense fund as US probes multiply - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxQc3ZKSm5RMU83dFhuYWFPU2JpUWc4TUg5ckc3NXJtT1N3b24wWm92Ykx3ZFFfazdyckpwZW82V2h4YW5IbFhRS0N0ZEF5ZUk2VEVKYVVrUFQwSE1KdUxDTmcwQXlCWENtOHhBaWRBcUZKZUpCZ19PbWt5MmppMF93RjZ0ZS1MYkRzQWtldUhHbklpQ3V0YW54SXI1MXhoVzZJSG9j?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Fauci's lawyers set up legal defense fund as US probes multiply&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -54,15 +48,7 @@
           "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWGw0X0lOUmZESVVqMWhVeV84V3ptaFJTWDhqSzdPUm9CUEF5QmppQUExYWVwN09OZjhqYnpOcUxaRDZHdngzTHNaWWtPZy1namVHODNULWtCNkpSV0hvSmRfMkRFeXQ2bkNIR05qQUFSdzc4bWV4ZFZud0ppWWVGQVVnbTR0ZXhSMUVWQ3Y5ZXluc1VrUXh6NUhmNEJ2RDAzdElkMjZKS3lqMXNHdHR1ZlJB?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQWGw0X0lOUmZESVVqMWhVeV84V3ptaFJTWDhqSzdPUm9CUEF5QmppQUExYWVwN09OZjhqYnpOcUxaRDZHdngzTHNaWWtPZy1namVHODNULWtCNkpSV0hvSmRfMkRFeXQ2bkNIR05qQUFSdzc4bWV4ZFZud0ppWWVGQVVnbTR0ZXhSMUVWQ3Y5ZXluc1VrUXh6NUhmNEJ2RDAzdElkMjZKS3lqMXNHdHR1ZlJB?oc=5\" target=\"_blank\"&gt;Let there be sunlight: Vatican plans solar and agriculture plant to cover its electricity needs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-22T13:51:03.000Z",
-          "score": 7
-        },
-        {
-          "title": "US EPA to extend renewable fuel standard compliance deadline for refiners - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPaVR5Vk1QaU92VFlzMURiQzh4Yl9QblJJc2NzcndRdDdJVk9EMnNxY296Y3lZOW5rc0RENkNVa2ZJaWlveDlzNFZBUmNWZGZ2czdFMDV6QTFsTlNXQnZNWkwzSFhVXy1ZRXlORjNYamZ1ZVFwYjZvLTl4VWZ0QThHZ2VSdHQ1V3JXSzdmSTNZSHAtNmhKcHlVYi1XR0FRaVNTUFhHVS05UTlLTmJQZnJsTjFkRk5BaTQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPaVR5Vk1QaU92VFlzMURiQzh4Yl9QblJJc2NzcndRdDdJVk9EMnNxY296Y3lZOW5rc0RENkNVa2ZJaWlveDlzNFZBUmNWZGZ2czdFMDV6QTFsTlNXQnZNWkwzSFhVXy1ZRXlORjNYamZ1ZVFwYjZvLTl4VWZ0QThHZ2VSdHQ1V3JXSzdmSTNZSHAtNmhKcHlVYi1XR0FRaVNTUFhHVS05UTlLTmJQZnJsTjFkRk5BaTQ?oc=5\" target=\"_blank\"&gt;US EPA to extend renewable fuel standard compliance deadline for refiners&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-21T19:15:39.000Z",
+          "published": "2026-08-22T21:46:16.000Z",
           "score": 7
         },
         {
@@ -71,6 +57,14 @@
           "source": "BBC World News",
           "description": "Erik Slavin believes he was fired for saying in an interview that \"in a hypothetical situation, censorship would be a red line\".",
           "published": "2026-08-22T16:57:19.000Z",
+          "score": 4
+        },
+        {
+          "title": "Industry and residents clash over water near Berlin",
+          "link": "https://www.dw.com/en/industry-and-residents-clash-over-water-near-berlin/a-78428993?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The state surrounding Berlin is drying out, but local Tesla and Red Bull plants are looking to expand. Is Brandenburg running out of water to share?",
+          "published": "2026-08-22T04:31:00.000Z",
           "score": 4
         }
       ]
@@ -124,24 +118,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "EXCLUSIVE: Fauci's lawyers set up legal defense fund as US probes multiply - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQc3ZKSm5RMU83dFhuYWFPU2JpUWc4TUg5ckc3NXJtT1N3b24wWm92Ykx3ZFFfazdyckpwZW82V2h4YW5IbFhRS0N0ZEF5ZUk2VEVKYVVrUFQwSE1KdUxDTmcwQXlCWENtOHhBaWRBcUZKZUpCZ19PbWt5MmppMF93RjZ0ZS1MYkRzQWtldUhHbklpQ3V0YW54SXI1MXhoVzZJSG9j?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxQc3ZKSm5RMU83dFhuYWFPU2JpUWc4TUg5ckc3NXJtT1N3b24wWm92Ykx3ZFFfazdyckpwZW82V2h4YW5IbFhRS0N0ZEF5ZUk2VEVKYVVrUFQwSE1KdUxDTmcwQXlCWENtOHhBaWRBcUZKZUpCZ19PbWt5MmppMF93RjZ0ZS1MYkRzQWtldUhHbklpQ3V0YW54SXI1MXhoVzZJSG9j?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Fauci's lawyers set up legal defense fund as US probes multiply&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-21T22:03:48.000Z",
-          "score": 2
-        },
-        {
-          "title": "SEC charges former Bank of America investment banker with insider trading - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOMU4yOXN1ZWhTdkplbWUwX2xldjh1TWxjN3NCOUhJNjdzR1JKYzZZeGR4SHdjc1Q5elpCUFJQdXFwMmtyZ29jMTFnUXFxTExpSGZ6TUtZT3BCZEtaQXZkbFRhMTFrNGtqUlVobWZVSjltQXhfZHdERzlwNXlfS3F5WENBRUsxc3l0QmRFR0J5VmItVDdnOHpkVV9ESUEzMUpfRVlnOFA1b0NmeER3SWhPaXcyM3N5YzAzVDdoRzRKWkw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOMU4yOXN1ZWhTdkplbWUwX2xldjh1TWxjN3NCOUhJNjdzR1JKYzZZeGR4SHdjc1Q5elpCUFJQdXFwMmtyZ29jMTFnUXFxTExpSGZ6TUtZT3BCZEtaQXZkbFRhMTFrNGtqUlVobWZVSjltQXhfZHdERzlwNXlfS3F5WENBRUsxc3l0QmRFR0J5VmItVDdnOHpkVV9ESUEzMUpfRVlnOFA1b0NmeER3SWhPaXcyM3N5YzAzVDdoRzRKWkw?oc=5\" target=\"_blank\"&gt;SEC charges former Bank of America investment banker with insider trading&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-21T20:27:46.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -161,14 +138,6 @@
           "score": 8
         },
         {
-          "title": "German state politician calls for EU tariffs on Chinese hybrid cars, letter shows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUURnbnNMX3ZZUFNzdFEzSlQ2SV9aelhVaHhBYUdhTHRHMjhVdHVkS1RCUm1FSE1NdDVkYTdFS1NEbTlMeHRxdGxHTlhTZ2hDMFhXYlh0M0RQNWhyTFZ2bWFpZ0x5dWpqRHZvWEo2eXlJNXZRTUs2TDdjcHFLNTFnOVdoNVF0SzIwT19BZXdOUHFld0F0eG5xdHUtUm9ybmpkWE9DQnpLM09mTUxDcWFXMEZTTWRwMkJ2S0lZUXlR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQUURnbnNMX3ZZUFNzdFEzSlQ2SV9aelhVaHhBYUdhTHRHMjhVdHVkS1RCUm1FSE1NdDVkYTdFS1NEbTlMeHRxdGxHTlhTZ2hDMFhXYlh0M0RQNWhyTFZ2bWFpZ0x5dWpqRHZvWEo2eXlJNXZRTUs2TDdjcHFLNTFnOVdoNVF0SzIwT19BZXdOUHFld0F0eG5xdHUtUm9ybmpkWE9DQnpLM09mTUxDcWFXMEZTTWRwMkJ2S0lZUXlR?oc=5\" target=\"_blank\"&gt;German state politician calls for EU tariffs on Chinese hybrid cars, letter shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-21T18:24:41.000Z",
-          "score": 8
-        },
-        {
           "title": "EU sends helicopters, firefighters to Serbia to tackle wildfires - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNUGlKOVc4ZDFhMlNOWE8wNXpPb1paZW5RRG5oZFd3VV9YaThScFlPYmRCZ2xfMU9sRFNpNUpsNk9Jb1BES19nOVJDdnJER241VzNyZWc0UGNSZWJEMEFnSW1vaDhacGEzQW1WYU9pU21mcTlWWHBOU3BiTm05cFNGY05QVFhwd1pGOEhLenNoSnliZUhEYnh3ZFpTNTMxYzZoeURya04zdy12c3NmQVUtTDcyRVE?oc=5",
           "source": "Reuters World (via Google News)",
@@ -185,20 +154,28 @@
           "score": 6
         },
         {
-          "title": "Trump administration moves to end attorney group's law school oversight - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQYjRxeEYzVFV2OGpXcmp5LVJXc0EzU1dUVk0tWmVQdHRSUWdEdmY3SUhqdXNsTlNMSTFTaDhXWW1LZUJGMTkwNnNLalRYZ3FrVVdGQk1JN3BNcUs2NEJ3Nnl1aDVNOVVJb1dMVnNRWEhYeVNhTnlOdWZIVVJpejJZX05qMGJwNjl5WFZvUHIyb0NGeXpJaUFEazFtaW1MSWdIMUlWY1ZyMWVrRk9QUkNNSXNlcHdmTURPb1Vndg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQYjRxeEYzVFV2OGpXcmp5LVJXc0EzU1dUVk0tWmVQdHRSUWdEdmY3SUhqdXNsTlNMSTFTaDhXWW1LZUJGMTkwNnNLalRYZ3FrVVdGQk1JN3BNcUs2NEJ3Nnl1aDVNOVVJb1dMVnNRWEhYeVNhTnlOdWZIVVJpejJZX05qMGJwNjl5WFZvUHIyb0NGeXpJaUFEazFtaW1MSWdIMUlWY1ZyMWVrRk9QUkNNSXNlcHdmTURPb1Vndg?oc=5\" target=\"_blank\"&gt;Trump administration moves to end attorney group's law school oversight&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-21T20:15:13.000Z",
-          "score": 6
+          "title": "Carney calls Trump's fresh tariffs a 'miscalculation' after trade talks collapse",
+          "link": "https://www.bbc.co.uk/news/articles/cx272np7vgyo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Canada's prime minister said he was \"reluctantly\" announcing retaliatory tariffs as he accused the US of starting a trade war.",
+          "published": "2026-08-22T20:10:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Carney faces crucial test after walking away from Trump's deal",
+          "link": "https://www.bbc.co.uk/news/articles/c3040pn8lmmo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Canadian prime minister will have to sell his gamble that walking away from talks with the White House will be worth the consequences.",
+          "published": "2026-08-22T20:02:46.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 407,
-    "articlesLast24h": 144,
-    "afterDedup": 130,
+    "totalArticlesScanned": 406,
+    "articlesLast24h": 110,
+    "afterDedup": 96,
     "feedsQueried": 19
   }
 }
