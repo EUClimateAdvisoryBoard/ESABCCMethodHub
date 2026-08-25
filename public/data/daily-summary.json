@@ -1,9 +1,15 @@
 {
   "date": "2026-08-25",
-  "generatedAt": "2026-08-25T11:31:22.054Z",
+  "generatedAt": "2026-08-25T17:32:44.552Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 25 August 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Climate-saving wonder – or €240m vanity bauble that ages like milk? The rocks set to hit Rotterdam docks",
+      "summary": "&lt;p&gt;MVRDV – the firm behind Marble Arch Mound – says Rotterdam ROCKS! will inspire visitors to live sustainably. But in an era when the greenest building is the one that already exists, this tottering cairn looks set to misfire&lt;/p&gt;&lt;p&gt;‘It looks like something Shrek would throw up,” sniffed one online commentator, unflatteringly comparing Rotterdam ROCKS!, the recently unveiled proposal for a waterfront site in Europe’s largest port, with the vomitings of a cartoon ogre. Designed ",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Woodside scraps long-term emissions and clean energy targets despite windfall oil profits caused by Iran war",
       "summary": "&lt;p&gt;Australia’s biggest oil and gas company recorded a 27% increase in sales profit to $1.67bn in the six-month reporting period&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/aug/25/australia-news-live-sydney-trains-delays-cancellations-albanese-gst-wa-one-nation-coalition-secret-harbour-election-tax-reform-royal-commission-antisemitism-icac-victorian-rail-loop-alan-jones-trial-ntwnfb\"&gt;Follow our Australia news live blog for latest",
@@ -11,23 +17,26 @@
       "color": "#E87722"
     },
     {
-      "headline": "New Zealand moves to protect business with law curtailing climate litigation",
-      "summary": "A new bill prevents corporations being sued for the climate damage their emissions cause, as the government says climate action should be handled at the national level not in court The post New Zealand moves to protect business with law curtailing climate litigation appeared first on Climate Home News.",
+      "headline": "Daily News 25 / 08 / 2026",
+      "summary": "European Commission Daily news Brussels, 25 Aug 2026 Extreme weather affects Europe's crops and fodder supply as Commission continues to work to adapt agriculture to climate change\r\nPersistent heat and lack of rain...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "U.S-based Invesco bullish on India debt, prefers long-term bonds, fund manager says - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQckFfNGR5cnlseVlXODhNTGNhNjI1d09FUjZsbWx2UkFGOEZOeWEwZWE0Zll1TkpSOVlxRmxnUkVzSGhLU1JUS2R1U1hFWTc4T1JScWEybDBlUGhuMzZSeDgzQzhxQXZEYm1vS1J1Z1FEVzBoTWJEZXZOMjMwbm1QNFNqaHFxVjdQX2NrUUVwLUNqSDFSaWZhSE5jNlpBdjBzQTMzWGZlbkNUdDFlWEhsaUVYWS1JaVlYelhZQU84UQ?oc=5\" target=\"_blank\"&gt;U.S-based Invesco bullish on India debt, prefers long-term bonds, fund manager says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Climate-saving wonder – or €240m vanity bauble that ages like milk? The rocks set to hit Rotterdam docks",
+          "link": "https://www.theguardian.com/artanddesign/2026/aug/25/rotterdam-rocks-mvrdv",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;MVRDV – the firm behind Marble Arch Mound – says Rotterdam ROCKS! will inspire visitors to live sustainably. But in an era when the greenest building is the one that already exists, this tottering cairn looks set to misfire&lt;/p&gt;&lt;p&gt;‘It looks like something Shrek would throw up,” sniffed one online commentator, unflatteringly comparing Rotterdam ROCKS!, the recently unveiled proposal for a waterfront site in Europe’s largest port, with the vomitings of a cartoon ogre. Designed ",
+          "published": "2026-08-25T11:37:02.000Z",
+          "score": 13
+        }
+      ]
     },
     {
       "id": "energy",
@@ -66,11 +75,11 @@
           "score": 7
         },
         {
-          "title": "India wanted red flags on chip packets and soda. Big Food fought back. - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPYmJzNHBHdF9hWEg5U1RHTDFPUy1zZ2pfWk1wamVfOUpRMGFJUDl2UHg1dC1RLTdwUzBsWldvTHlaak1TWXYtQWFkbEQzNVJ1bzdScmJhcVVETVhVTExGa1FVYmdwQkRWMGt5aGRmTEoxNGk5X3VXWm9zRmNGZjJBQ2V2Uk40Zmtnb2VxVTA2Z1lNdkcyRjJ6NzJwQ2pCd3hBcW1UQXd4TXhIRThYbWc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPYmJzNHBHdF9hWEg5U1RHTDFPUy1zZ2pfWk1wamVfOUpRMGFJUDl2UHg1dC1RLTdwUzBsWldvTHlaak1TWXYtQWFkbEQzNVJ1bzdScmJhcVVETVhVTExGa1FVYmdwQkRWMGt5aGRmTEoxNGk5X3VXWm9zRmNGZjJBQ2V2Uk40Zmtnb2VxVTA2Z1lNdkcyRjJ6NzJwQ2pCd3hBcW1UQXd4TXhIRThYbWc?oc=5\" target=\"_blank\"&gt;India wanted red flags on chip packets and soda. Big Food fought back.&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-25T04:05:00.000Z",
+          "title": "Will Iran withdraw from nuclear non-proliferation treaty?",
+          "link": "https://www.dw.com/en/will-iran-withdraw-from-nuclear-non-proliferation-treaty/a-78495930?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Iranian lawmakers have again raised the possibility of leaving a decades-old international nuclear weapons treaty. Analysts say the threat to quit may offer Tehran more leverage than an actual withdrawal.",
+          "published": "2026-08-25T12:01:00.000Z",
           "score": 7
         }
       ]
@@ -79,14 +88,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "New Zealand moves to protect business with law curtailing climate litigation",
-          "link": "https://www.climatechangenews.com/2026/08/24/new-zealand-moves-to-protect-business-with-law-curtailing-climate-litigation/",
-          "source": "Climate Home News",
-          "description": "A new bill prevents corporations being sued for the climate damage their emissions cause, as the government says climate action should be handled at the national level not in court The post New Zealand moves to protect business with law curtailing climate litigation appeared first on Climate Home News.",
-          "published": "2026-08-24T12:05:01.000Z",
-          "score": 17
-        },
         {
           "title": "Daily News 25 / 08 / 2026",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1757",
@@ -104,6 +105,14 @@
           "score": 8
         },
         {
+          "title": "UK to warn citizens to stock up on food amid threat from climate crisis and hostile states",
+          "link": "https://www.theguardian.com/politics/2026/aug/25/uk-to-warn-citizens-to-stock-up-on-food-amid-threat-from-climate-crisis-and-hostile-states",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Government resilience campaign aims to ensure people can cope in a national disaster, in order to free resources for most vulnerable&lt;/p&gt;&lt;p&gt;UK citizens will be told to stock up on tinned food and take steps to ensure they are prepared for national emergencies as part of a new government campaign to improve the nation’s resilience.&lt;/p&gt;&lt;p&gt;The new campaign from the Cabinet Office will set out ways people can prepare for extreme weather events and potential attacks fr",
+          "published": "2026-08-25T16:55:08.000Z",
+          "score": 7
+        },
+        {
           "title": "Two planned datacentres will have higher UK carbon emissions than ExxonMobil, analysis finds",
           "link": "https://www.theguardian.com/uk-news/2026/aug/25/planned-datacentres-carbon-emissions-uk-exxonmobil",
           "source": "The Guardian - Climate",
@@ -112,11 +121,11 @@
           "score": 7
         },
         {
-          "title": "Our climate is changing rapidly – and our politicians sound increasingly surreal | Zoe Williams",
-          "link": "https://www.theguardian.com/commentisfree/2026/aug/24/our-climate-is-changing-rapidly-our-politicians-sound-increasingly-surreal",
+          "title": "We asked our climate reporters to highlight one idea for positive change. We got a chronicle of global transformation",
+          "link": "https://www.theguardian.com/membership/ng-interactive/2026/aug/25/we-asked-our-climate-reporters-to-highlight-one-idea-for-positive-change-we-got-a-chronicle-of-global-transformation",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;On a panel show last week, everyone in the audience wanted to talk about the climate emergency, but the lines rolled out by a Tory MP simply dissolved on contact with reality&lt;/p&gt;&lt;p&gt;As it is August, and everyone with stronger opinions is currently on holiday, last week I went on &lt;a href=\"https://www.bbc.co.uk/programmes/b006qgvj\"&gt;Any Questions?&lt;/a&gt;, the BBC Radio 4 panel show. I had prepared beforehand with a friend whose life’s work it is to make sure people don’",
-          "published": "2026-08-24T15:17:07.000Z",
+          "description": "&lt;p&gt;There are countless initiatives around the world that can inspire people and spur them into action. Amid the devastation of the climate crisis, our journalists strive to highlight these stories of hope &lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://support.theguardian.com/\"&gt;Climate campaign 2026: help us reach 30,000 acts of support&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The news is very often about the bad things (especially if you’re on the Guardian’s environ",
+          "published": "2026-08-25T12:27:21.000Z",
           "score": 7
         }
       ]
@@ -124,16 +133,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "U.S-based Invesco bullish on India debt, prefers long-term bonds, fund manager says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQckFfNGR5cnlseVlXODhNTGNhNjI1d09FUjZsbWx2UkFGOEZOeWEwZWE0Zll1TkpSOVlxRmxnUkVzSGhLU1JUS2R1U1hFWTc4T1JScWEybDBlUGhuMzZSeDgzQzhxQXZEYm1vS1J1Z1FEVzBoTWJEZXZOMjMwbm1QNFNqaHFxVjdQX2NrUUVwLUNqSDFSaWZhSE5jNlpBdjBzQTMzWGZlbkNUdDFlWEhsaUVYWS1JaVlYelhZQU84UQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQckFfNGR5cnlseVlXODhNTGNhNjI1d09FUjZsbWx2UkFGOEZOeWEwZWE0Zll1TkpSOVlxRmxnUkVzSGhLU1JUS2R1U1hFWTc4T1JScWEybDBlUGhuMzZSeDgzQzhxQXZEYm1vS1J1Z1FEVzBoTWJEZXZOMjMwbm1QNFNqaHFxVjdQX2NrUUVwLUNqSDFSaWZhSE5jNlpBdjBzQTMzWGZlbkNUdDFlWEhsaUVYWS1JaVlYelhZQU84UQ?oc=5\" target=\"_blank\"&gt;U.S-based Invesco bullish on India debt, prefers long-term bonds, fund manager says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-24T13:13:44.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -145,12 +145,20 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Xpeng forecast disappoints as China EV competition heats up - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPcGRiM0NNUFBsQjVfR0RTMUJXUFJELS1JdnZ5NHFaalNHTi1IVVFzek1LUUNVZGVEWXNPRDJsbnVfVEgwY0pOVVZnTndzbUhOUF9iNUN0S3UzQVNkT1d3cVlGMEQwNXBxQUdudExEM2tTaklEVDBmbHA4R3pYVENiSkk3U0VIZ3BuTVFCbjNxLV9JN1RoTHZHN3dtMFNSOXA5blhnZHhnVlBHdnNvTDh5Y2dWUkRVelBtNEVGWEEzaw?oc=5",
+          "title": "European rights court orders Turkey to free imprisoned businessman",
+          "link": "https://www.bbc.co.uk/news/articles/cn5drvyg92no?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Philanthropist and activist Osman Kavala has spent almost a decade in jail over charges rights groups say are politically motivated.",
+          "published": "2026-08-25T15:58:20.000Z",
+          "score": 8
+        },
+        {
+          "title": "Japanese bond funds see record inflows as yields attract European buyers - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOYWI2akJWd0lKNmQtSXZJYzVQU0k3X0JneXhDTHF2UXBDV0V5c2JZY1R1RDNvekoxUjA1d3AtVFNaRHYyOERaREJMaldMOTdsM2JPQWZkT1NUaXpfSm1BSEtIWS1XQlB4ZGpVcE1WbWE1LWoyWTl1X21VRDAzbXhhd016Sjg5WkE0dC1pRkExTHJyTUNrN3BuWDgtYTBYSlQxUlNsMEN1dU1ycUJVeDFOTDhnTXZQSjM2eDNidzhlNjVqcUttZEJkNF9ER3I0QTdn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPcGRiM0NNUFBsQjVfR0RTMUJXUFJELS1JdnZ5NHFaalNHTi1IVVFzek1LUUNVZGVEWXNPRDJsbnVfVEgwY0pOVVZnTndzbUhOUF9iNUN0S3UzQVNkT1d3cVlGMEQwNXBxQUdudExEM2tTaklEVDBmbHA4R3pYVENiSkk3U0VIZ3BuTVFCbjNxLV9JN1RoTHZHN3dtMFNSOXA5blhnZHhnVlBHdnNvTDh5Y2dWUkRVelBtNEVGWEEzaw?oc=5\" target=\"_blank\"&gt;Xpeng forecast disappoints as China EV competition heats up&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-24T13:19:44.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxOYWI2akJWd0lKNmQtSXZJYzVQU0k3X0JneXhDTHF2UXBDV0V5c2JZY1R1RDNvekoxUjA1d3AtVFNaRHYyOERaREJMaldMOTdsM2JPQWZkT1NUaXpfSm1BSEtIWS1XQlB4ZGpVcE1WbWE1LWoyWTl1X21VRDAzbXhhd016Sjg5WkE0dC1pRkExTHJyTUNrN3BuWDgtYTBYSlQxUlNsMEN1dU1ycUJVeDFOTDhnTXZQSjM2eDNidzhlNjVqcUttZEJkNF9ER3I0QTdn?oc=5\" target=\"_blank\"&gt;Japanese bond funds see record inflows as yields attract European buyers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
+          "published": "2026-08-25T12:38:36.000Z",
+          "score": 8
         },
         {
           "title": "Focus: Shein's stock market listing will not mask sustainability challenges - Reuters",
@@ -161,36 +169,28 @@
           "score": 7
         },
         {
+          "title": "China proposes road traffic law amendment with autonomous vehicles section, Xinhua says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPc0R4MDJJa3pkbWRqUWZVeE8yUkRXYlRYLXVjSHFkdVVNdEIxcFl0MjBWZEpPUGk4SzBncjhGU0d3UGpPVGpmb1N1LWlnTlFjMzg3bDQ0Q09aUW5xWlRGX1V6b2EwZi1TZlZ2UDNoRmVkbkpvWFZGRjdTaG81dm13X19Ta0I0QjNBczVPSTkwZkZMbVRDNEtmVUxRS01KRVVHaWlfQW1HQmxQTTdLczhILVcxSkU3ZkRBSUVlek5kSQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPc0R4MDJJa3pkbWRqUWZVeE8yUkRXYlRYLXVjSHFkdVVNdEIxcFl0MjBWZEpPUGk4SzBncjhGU0d3UGpPVGpmb1N1LWlnTlFjMzg3bDQ0Q09aUW5xWlRGX1V6b2EwZi1TZlZ2UDNoRmVkbkpvWFZGRjdTaG81dm13X19Ta0I0QjNBczVPSTkwZkZMbVRDNEtmVUxRS01KRVVHaWlfQW1HQmxQTTdLczhILVcxSkU3ZkRBSUVlek5kSQ?oc=5\" target=\"_blank\"&gt;China proposes road traffic law amendment with autonomous vehicles section, Xinhua says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-08-25T02:09:00.000Z",
+          "score": 6
+        },
+        {
           "title": "South Korea's SK Hynix union members reject wage agreement in vote - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOMGcwQ3J4dGJOYk9BUXB3Ulc4ZzI4SmROcGgyWVRWQkxaQk1zNVQ4RVpVQmZMeUZuR2dlRmtWNHVDbnN2SHEyMWNCZWl2TVQxU0NPbjVjaTNXWFl6ZVZKNTZOZlFBTXB2cEFzU0c4czZJT0JuaVh0UG51clZTbnhtbFU3ZTE4cnZCcTE5Wm5CeUkxc2FHNkJlOVZJbkcwR2dJZ0FjU3RKSHhBazloNkp1clBwU3Vzakl3?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOMGcwQ3J4dGJOYk9BUXB3Ulc4ZzI4SmROcGgyWVRWQkxaQk1zNVQ4RVpVQmZMeUZuR2dlRmtWNHVDbnN2SHEyMWNCZWl2TVQxU0NPbjVjaTNXWFl6ZVZKNTZOZlFBTXB2cEFzU0c4czZJT0JuaVh0UG51clZTbnhtbFU3ZTE4cnZCcTE5Wm5CeUkxc2FHNkJlOVZJbkcwR2dJZ0FjU3RKSHhBazloNkp1clBwU3Vzakl3?oc=5\" target=\"_blank\"&gt;South Korea's SK Hynix union members reject wage agreement in vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-25T00:34:00.000Z",
           "score": 6
-        },
-        {
-          "title": "Sudan: US proposes expanding UN arms embargo",
-          "link": "https://www.dw.com/en/sudan-us-proposes-expanding-un-arms-embargo/a-78490440?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The US has called for a UN arms embargo for Darfur to be broadened to the whole of Sudan. The change would require Security Council approval, with Russia warning it would hurt the Sudanese army.",
-          "published": "2026-08-24T19:39:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "China warns it will safeguard its interests after US widens sanctions against Iran",
-          "link": "https://www.bbc.co.uk/news/articles/clyl8965j5go?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The US has threatened to isolate nations that continue to do business with Tehran, which sells much of its oil to Beijing.",
-          "published": "2026-08-25T10:56:03.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 157,
-    "afterDedup": 150,
+    "totalArticlesScanned": 401,
+    "articlesLast24h": 156,
+    "afterDedup": 151,
     "feedsQueried": 19
   }
 }
