@@ -1,6 +1,6 @@
 {
   "date": "2026-08-26",
-  "generatedAt": "2026-08-26T05:38:09.543Z",
+  "generatedAt": "2026-08-26T11:33:46.083Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 26 August 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Woodside scraps long-term emissions and clean energy targets despite windfall oil profits caused by Iran war",
-      "summary": "&lt;p&gt;Australia’s biggest oil and gas company recorded a 27% increase in sales profit to $1.67bn in the six-month reporting period&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/aug/25/australia-news-live-sydney-trains-delays-cancellations-albanese-gst-wa-one-nation-coalition-secret-harbour-election-tax-reform-royal-commission-antisemitism-icac-victorian-rail-loop-alan-jones-trial-ntwnfb\"&gt;Follow our Australia news live blog for latest",
+      "headline": "As war strands Qatari gas for 6 months, US sales rise and European stocks plummet - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPWkp0YndfNmRJZEdMN2dnMFl4TXhSR2RMal9zTTA2NUtoOV83Um5ZNXB2LWEtSGNZZldsZl93V2RVQzNiZXFpMnN6Wlhzdy1CRFl1X1ZOSHU5eWVsTUpYV2N2R285LU5pS1ZsaTI4bUFuYTVsUC1VRzlqa2o1dVl1VC1BcE1OakRwMWtJNUxlWXBIMklmanZSeDY3M012QzlRVENLeDRkZjdmZjNJamFsazZOdFFrNFZRWnI1UUtR?oc=5\" target=\"_blank\"&gt;As war strands Qatari gas for 6 months, US sales rise and European stocks plummet&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Daily News 25 / 08 / 2026",
-      "summary": "European Commission Daily news Brussels, 25 Aug 2026 Extreme weather affects Europe's crops and fodder supply as Commission continues to work to adapt agriculture to climate change\r\nPersistent heat and lack of rain...",
+      "headline": "Commission sends Statement of Objections over proposed joint venture between UPM and Sappi",
+      "summary": "European Commission Press release Brussels, 26 Aug 2026 The European Commission has informed UPM-Kymmene Corporation ('UPM') and Sappi Limited ('Sappi') of its preliminary view that its proposed joint venture may restrict competition in the markets for different types of communication paper, which is used for printed materials, such as magazines or books.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -49,35 +49,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Woodside scraps long-term emissions and clean energy targets despite windfall oil profits caused by Iran war",
-          "link": "https://www.theguardian.com/australia-news/2026/aug/25/woodside-scraps-emissions-clean-energy-targets-australia",
+          "title": "As war strands Qatari gas for 6 months, US sales rise and European stocks plummet - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWkp0YndfNmRJZEdMN2dnMFl4TXhSR2RMal9zTTA2NUtoOV83Um5ZNXB2LWEtSGNZZldsZl93V2RVQzNiZXFpMnN6Wlhzdy1CRFl1X1ZOSHU5eWVsTUpYV2N2R285LU5pS1ZsaTI4bUFuYTVsUC1VRzlqa2o1dVl1VC1BcE1OakRwMWtJNUxlWXBIMklmanZSeDY3M012QzlRVENLeDRkZjdmZjNJamFsazZOdFFrNFZRWnI1UUtR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPWkp0YndfNmRJZEdMN2dnMFl4TXhSR2RMal9zTTA2NUtoOV83Um5ZNXB2LWEtSGNZZldsZl93V2RVQzNiZXFpMnN6Wlhzdy1CRFl1X1ZOSHU5eWVsTUpYV2N2R285LU5pS1ZsaTI4bUFuYTVsUC1VRzlqa2o1dVl1VC1BcE1OakRwMWtJNUxlWXBIMklmanZSeDY3M012QzlRVENLeDRkZjdmZjNJamFsazZOdFFrNFZRWnI1UUtR?oc=5\" target=\"_blank\"&gt;As war strands Qatari gas for 6 months, US sales rise and European stocks plummet&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-26T05:03:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Albanese backs down on states powering AI datacentres using renewable energy",
+          "link": "https://www.theguardian.com/australia-news/2026/aug/26/albanese-backs-down-on-states-powering-ai-datacentres-using-sustainable-energy",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Australia’s biggest oil and gas company recorded a 27% increase in sales profit to $1.67bn in the six-month reporting period&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/aug/25/australia-news-live-sydney-trains-delays-cancellations-albanese-gst-wa-one-nation-coalition-secret-harbour-election-tax-reform-royal-commission-antisemitism-icac-victorian-rail-loop-alan-jones-trial-ntwnfb\"&gt;Follow our Australia news live blog for latest",
-          "published": "2026-08-25T06:18:26.000Z",
-          "score": 9
-        },
-        {
-          "title": "‘Environmental violence’: inside the fight to save indigenous land from becoming a nuclear dumping ground",
-          "link": "https://www.theguardian.com/film/2026/aug/25/to-use-a-mountain-documentary-interview",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;New documentary To Use a Mountain spotlights the pain and triumph of resisting government efforts to turn parts of rural US into disposal sites&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/nuclearpower+energy\"&gt;Nuclear energy&lt;/a&gt; was supposed to be our salvation, humanity’s chance to retool technology first conceived as a weapon of mass destruction into an engine of limitless prosperity. But even as the industry touted nuclear fission as an economic game",
-          "published": "2026-08-25T09:00:53.000Z",
-          "score": 7
-        },
-        {
-          "title": "Moon set to turn red as rare partial lunar eclipse graces UK skies",
-          "link": "https://www.bbc.co.uk/weather/articles/c5y4n7y89w7o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "There will be a partial lunar eclipse in the UK on 28 August, and may cause the Moon appear reddish in colour.",
-          "published": "2026-08-25T06:27:24.000Z",
-          "score": 7
-        },
-        {
-          "title": "Will Iran withdraw from nuclear non-proliferation treaty?",
-          "link": "https://www.dw.com/en/will-iran-withdraw-from-nuclear-non-proliferation-treaty/a-78495930?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Iranian lawmakers have again raised the possibility of leaving a decades-old international nuclear weapons treaty. Analysts say the threat to quit may offer Tehran more leverage than an actual withdrawal.",
-          "published": "2026-08-25T12:01:00.000Z",
+          "description": "&lt;p&gt;Shift comes after Chris Bowen said Labor would use constitutional powers to override states resisting rules on sustainable energy&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&",
+          "published": "2026-08-26T08:36:50.000Z",
           "score": 7
         },
         {
@@ -87,6 +71,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOQlo4djdVdDNyZ2pOQWpMS2ZnblpzdUhoSzZRRGxpR29YSW1PUl9JUmNNYzgtSXZtbDh0a0xxekVuNlVYTWVGWS1RdkE2RXdqVGJFdGE0Z2l3V0ZvaE1hWGFjNHo2RXJjOGw1RFhOSkJnTGpuMHJId1BqcTRDRmhERkZWMGh0bDMzaWpHMTVHZ05UN29UbzZMTG5Valh1dkgwbFNRZFZqRmFZU3dVdXlpbkpZVm5vVzhQeEZEWEtaOHEzeTZ1VUE?oc=5\" target=\"_blank\"&gt;Trump sends Saudi nuclear deal to Congress but says Riyadh must recognize Israel&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
           "published": "2026-08-25T23:24:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Around the world, people are rejecting divisive and dangerous politics. We can – and must – build on that | Gordon Brown",
+          "link": "https://www.theguardian.com/commentisfree/2026/aug/26/world-people-dangerous-politics-global-public-human-rights",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;The vast majority of the global public wants international cooperation on human rights, climate and AI. Like-minded countries must stand together to deliver&lt;/p&gt;&lt;p&gt;Britain’s new prime minister,&lt;strong&gt; &lt;/strong&gt;Andy Burnham, is already having to make one of his gravest decisions. He has to issue the instructions that he alone gives to the military, setting out the UK response in a doomsday scenario of a nuclear weapons attack on us. He will, as I did two decades a",
+          "published": "2026-08-26T05:00:35.000Z",
+          "score": 4
+        },
+        {
+          "title": "Houthi strikes threaten to pull Yemen back into full-scale war",
+          "link": "https://www.dw.com/en/houthi-strikes-threaten-to-pull-yemen-back-into-full-scale-war/a-78497448?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Iran-backed Houthis are using regional warfare to increase pressure on Saudi Arabia, while their attacks risk reopening Yemen&#039;s own conflict and disrupting shipping in the Red Sea.",
+          "published": "2026-08-25T15:31:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -95,12 +95,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Daily News 25 / 08 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1757",
+          "title": "Commission sends Statement of Objections over proposed joint venture between UPM and Sappi",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1747",
           "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 25 Aug 2026 Extreme weather affects Europe's crops and fodder supply as Commission continues to work to adapt agriculture to climate change\r\nPersistent heat and lack of rain...",
-          "published": "2026-08-25T09:14:19.000Z",
-          "score": 16
+          "description": "European Commission Press release Brussels, 26 Aug 2026 The European Commission has informed UPM-Kymmene Corporation ('UPM') and Sappi Limited ('Sappi') of its preliminary view that its proposed joint venture may restrict competition in the markets for different types of communication paper, which is used for printed materials, such as magazines or books.",
+          "published": "2026-08-25T22:00:00.000Z",
+          "score": 18
         },
         {
           "title": "UK to warn citizens to stock up on food amid threat from climate crisis and hostile states",
@@ -108,14 +108,6 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Government resilience campaign aims to ensure people can cope in a national disaster, in order to free resources for most vulnerable&lt;/p&gt;&lt;p&gt;UK citizens will be told to stock up on tinned food and take steps to ensure they are prepared for national emergencies as part of a new government campaign to improve the nation’s resilience.&lt;/p&gt;&lt;p&gt;The new campaign from the Cabinet Office will set out ways people can prepare for extreme weather events and potential attacks fr",
           "published": "2026-08-25T16:55:08.000Z",
-          "score": 7
-        },
-        {
-          "title": "Two planned datacentres will have higher UK carbon emissions than ExxonMobil, analysis finds",
-          "link": "https://www.theguardian.com/uk-news/2026/aug/25/planned-datacentres-carbon-emissions-uk-exxonmobil",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Exclusive: Buckinghamshire and Bedfordshire sites predicted to emit 4.5m tonnes a year when fully running&lt;/p&gt;&lt;p&gt;The carbon emissions from just two planned datacentres in England will exceed all of the fossil fuel company ExxonMobil’s UK emissions, analysis has revealed.&lt;/p&gt;&lt;p&gt;Experts have said this demonstrates the “serious threat” datacentres pose to the UK’s legally binding climate goals.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/uk-news/2026/aug/25/pla",
-          "published": "2026-08-25T11:04:56.000Z",
           "score": 7
         },
         {
@@ -133,6 +125,14 @@
           "description": "&lt;p&gt;Local governments working with firms also linked to fossil fuel giants, analysis of federal lobbying disclosures shows&lt;/p&gt;&lt;p&gt;Congressional lobbyists working for fossil fuel firms that are exacerbating the climate crisis are simultaneously representing more than 300 local governments raising funding to recover from climate damage, according to a new analysis.&lt;/p&gt;&lt;p&gt;The research by &lt;a href=\"https://fminus.org/#database\"&gt;F Minus&lt;/a&gt; and &lt;a href=\"https",
           "published": "2026-08-25T12:00:35.000Z",
           "score": 7
+        },
+        {
+          "title": "Fires still burn in charred landscape as focus turns to wildfire prevention",
+          "link": "https://www.bbc.co.uk/news/articles/cvgye1999n8o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The RSPB is considering measures it can take to improve resilience in the wake of a five-week long fire in the Cairngorms.",
+          "published": "2026-08-26T05:25:20.000Z",
+          "score": 7
         }
       ]
     },
@@ -147,6 +147,14 @@
           "description": "The operation included the arrest of 39 people in South Africa for romance and investment scams.",
           "published": "2026-08-25T19:30:37.000Z",
           "score": 2
+        },
+        {
+          "title": "Breakingviews - Beware hedge fund managers trashing US policy - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxONlJWQndYVGJxSlBDR0VEWlRCOE41WjBCWFJOcXY0dlJLQjJYaU5rUERUQURGdjFkOGdXaldjcnR1dzJkR1gxTWFJRkVZWmpZQ281VGZobVVpT2x0dUUxLW5pSnhhdFRSTGtzNWl0Smt4TURDSWtwVFdXWnlBdExyVVU4Q1hZd3VueTVpejA3TUo3OTFJU3QxOFh2TXphemFzcjdxUEM3Y0pJdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxONlJWQndYVGJxSlBDR0VEWlRCOE41WjBCWFJOcXY0dlJLQjJYaU5rUERUQURGdjFkOGdXaldjcnR1dzJkR1gxTWFJRkVZWmpZQ281VGZobVVpT2x0dUUxLW5pSnhhdFRSTGtzNWl0Smt4TURDSWtwVFdXWnlBdExyVVU4Q1hZd3VueTVpejA3TUo3OTFJU3QxOFh2TXphemFzcjdxUEM3Y0pJdw?oc=5\" target=\"_blank\"&gt;Breakingviews - Beware hedge fund managers trashing US policy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-25T17:39:16.000Z",
+          "score": 2
         }
       ]
     },
@@ -154,6 +162,14 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
+        {
+          "title": "Some Chinese workers see an ally in Brussels as EU trade tensions mount - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcGRtUVpOeWFvQWFUbmNJeGxjYlRuaktxd1AtbUw2bFAtOWJCbjBfSmNfMlJYT2xMcThMOUQ4bXNQUzV2N19kNHBkWGtOZXd1aHRfZTV5WXNsZ2RyR1hhcFB5MGN2VTlCSGYzaGJUYUpnWWZQSHVzN3plaDY0V2VtNzlYMFV4WG9NR2JIalFfeFdkWG1pQ1hnSFdCMTdFVHJXNWdIeUQwUktVeUxHM0NRdTJjQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQcGRtUVpOeWFvQWFUbmNJeGxjYlRuaktxd1AtbUw2bFAtOWJCbjBfSmNfMlJYT2xMcThMOUQ4bXNQUzV2N19kNHBkWGtOZXd1aHRfZTV5WXNsZ2RyR1hhcFB5MGN2VTlCSGYzaGJUYUpnWWZQSHVzN3plaDY0V2VtNzlYMFV4WG9NR2JIalFfeFdkWG1pQ1hnSFdCMTdFVHJXNWdIeUQwUktVeUxHM0NRdTJjQQ?oc=5\" target=\"_blank\"&gt;Some Chinese workers see an ally in Brussels as EU trade tensions mount&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-26T10:49:35.000Z",
+          "score": 8
+        },
         {
           "title": "Despite international bans, landmines are back in force",
           "link": "https://www.dw.com/en/despite-international-bans-landmines-are-back-in-force/a-78501702?maca=en-rss-en-all-1573-xml-mrss",
@@ -185,36 +201,36 @@
           "score": 8
         },
         {
+          "title": "European shares flat ahead of Nvidia earnings - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNV1pZeWdGeTdjVWRoOE0zZi1zQzhRVTdhU3g3U3VPV2J4dHVRQWtiRF9CUHlWVGllbFpPYnIyUmc5TDZPVlJrX0lrNDZCME5rcWZEYmN2a1JFY1diVE5oeDk1WEFDNmhIeDZfUmdFMFBBVUh6M1ZibFFvdkNzSDRVc1NEcFdZZmVhRDVjTGtxQWZwd2JDd3hzS1lHalBGUmMwRkZDUTRidDZIQ3lM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNV1pZeWdGeTdjVWRoOE0zZi1zQzhRVTdhU3g3U3VPV2J4dHVRQWtiRF9CUHlWVGllbFpPYnIyUmc5TDZPVlJrX0lrNDZCME5rcWZEYmN2a1JFY1diVE5oeDk1WEFDNmhIeDZfUmdFMFBBVUh6M1ZibFFvdkNzSDRVc1NEcFdZZmVhRDVjTGtxQWZwd2JDd3hzS1lHalBGUmMwRkZDUTRidDZIQ3lM?oc=5\" target=\"_blank\"&gt;European shares flat ahead of Nvidia earnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-26T08:46:36.000Z",
+          "score": 8
+        },
+        {
+          "title": "US-Iran war spurs Europe, Asia to boost renewables - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNTTVNd3JBNVpOVlFWcUlabjhLbU52TmV4WXNjbUwyVzVlWXFHMFBvenNoUVItMnhFbkh6VWM0dXBrVVpmbmhDTEROdlVlNG43OElCeVY3Uy1jQVNIRnljcUt6b1h2Uy1RZzN3c1lHbkhXeGlLTnhfc2g3WlRlTERCb2VON3NTQU1uTUtGTVpad2gyY3pnYUo1cU9pNlNRRVU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNTTVNd3JBNVpOVlFWcUlabjhLbU52TmV4WXNjbUwyVzVlWXFHMFBvenNoUVItMnhFbkh6VWM0dXBrVVpmbmhDTEROdlVlNG43OElCeVY3Uy1jQVNIRnljcUt6b1h2Uy1RZzN3c1lHbkhXeGlLTnhfc2g3WlRlTERCb2VON3NTQU1uTUtGTVpad2gyY3pnYUo1cU9pNlNRRVU?oc=5\" target=\"_blank\"&gt;US-Iran war spurs Europe, Asia to boost renewables&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-26T08:37:44.000Z",
+          "score": 8
+        },
+        {
           "title": "New coach Xavi promises Netherlands new energy after poor World Cup - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRVNGSjk3aU1LTVAySG1iVzY5ZUpZSkZMTjFyMU5KTmZMdGx3dGNWc3NDRzZaaXBZNnRfNmpWWGJEZjYtTHB5SlJXZExrN21WQmJzQmVzR0pZRXluM2NnaFRjU0JCaHFuMVhaR25kQVVIdHBtZjJKaF9LelhkQ294Zy1wWVVqaXJlaUlJV2U4amZ4dHJ6Ym14LTUzVThRSWhsNUdGS0tYY1BTTkMtYXR2QlBRamNKd2pG?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRVNGSjk3aU1LTVAySG1iVzY5ZUpZSkZMTjFyMU5KTmZMdGx3dGNWc3NDRzZaaXBZNnRfNmpWWGJEZjYtTHB5SlJXZExrN21WQmJzQmVzR0pZRXluM2NnaFRjU0JCaHFuMVhaR25kQVVIdHBtZjJKaF9LelhkQ294Zy1wWVVqaXJlaUlJV2U4amZ4dHJ6Ym14LTUzVThRSWhsNUdGS0tYY1BTTkMtYXR2QlBRamNKd2pG?oc=5\" target=\"_blank\"&gt;New coach Xavi promises Netherlands new energy after poor World Cup&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-25T15:46:19.000Z",
           "score": 7
-        },
-        {
-          "title": "China: Dissident artist jailed for satirical Mao sculptures",
-          "link": "https://www.dw.com/en/china-dissident-artist-jailed-for-satirical-mao-sculptures/a-78502724?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Sculptor Gao Zhen was charged under China&#039;s &quot;Law on the Protection ⁠of Heroes ​and Martyrs.&quot; His supporters have called for his immediate release.",
-          "published": "2026-08-26T03:46:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Guinea-Bissau to vote on new constitution that would expand presidential powers - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOOVR1WFpsNDRTell6Y1B3d1VtaTlxS1otMjVkdVVUX041LVFoTG1EWmk4a0ZPWGFqc0NBQ052VlNXaWVhRUZzRXpiMUEzZ1dESlJsVUxwbHk2dk11U09rTDVQTUhvV3I0YUdEaFZ5V0VKUzVkRlhDY2ZhUGp2TEEtVGU2Skt6bUZjT0Z0UkhKYzBYMnVRWU1STEJPdlI2YTNqWXo1ME51ZTdtcm1PRHg3ZXlfV2VROS1RbjA5TTNFMA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOOVR1WFpsNDRTell6Y1B3d1VtaTlxS1otMjVkdVVUX041LVFoTG1EWmk4a0ZPWGFqc0NBQ052VlNXaWVhRUZzRXpiMUEzZ1dESlJsVUxwbHk2dk11U09rTDVQTUhvV3I0YUdEaFZ5V0VKUzVkRlhDY2ZhUGp2TEEtVGU2Skt6bUZjT0Z0UkhKYzBYMnVRWU1STEJPdlI2YTNqWXo1ME51ZTdtcm1PRHg3ZXlfV2VROS1RbjA5TTNFMA?oc=5\" target=\"_blank\"&gt;Guinea-Bissau to vote on new constitution that would expand presidential powers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-25T15:28:06.000Z",
-          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 402,
-    "articlesLast24h": 159,
-    "afterDedup": 151,
+    "totalArticlesScanned": 400,
+    "articlesLast24h": 165,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
