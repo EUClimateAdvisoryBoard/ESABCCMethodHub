@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T05:02:16.291Z",
+  "generatedAt": "2026-08-26T05:02:48.425Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,25 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/ae9e4b",
+      "title": "Identifying a gap between decarbonization needs and practical solar and wind deployment in ASEAN",
+      "journal": "Environmental Research Letters",
+      "authors": "Hideaki Obane",
+      "published": "2026-08-25",
+      "url": "https://doi.org/10.1088/1748-9326/ae9e4b",
+      "abstract": "For decarbonization in ASEAN, large-scale deployment of solar photovoltaic (PV) and wind power is widely assumed in scenario-based studies. However, these studies rarely account for the multiple spatial constraints that determine where and how renewable energy can practically be deployed. Here, we reveal a gap between decarbonization needs and practical PV and wind deployment in ASEAN using a high-resolution, spatially explicit framework tailored to ASEAN that integrates building footprints, land use and offshore data to quantify practical solar PV and wind deployment across key location types and their underlying constraints. Even if all large rooftops (≥200 m²) were used for PV deployment, they would provide only 683 TWh of electricity, far below the 1,681 TWh required under the IEA Announced Pledges Scenario. Expanding deployment to all relatively low-constraint areas increases generation to only 1,239 TWh, indicating that achieving decarbonization requires development in progressively more constrained locations. We further show that renewable deployment is constrained not only by resource availability but also by the spatial mismatch between renewable resources, electricity demand and transmission infrastructure. We also reveal previously overlooked constraints on rooftop PV deployment, including building characteristics and socioeconomic conditions. These findings demonstrate that renewable deployment pathways are inherently region-specific and require spatially explicit",
+      "suggestedOn": "2026-08-26",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6,
+          "matched": [
+            "decarbonization"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/ae9ab2",
       "title": "Decarbonization Pathways and Mitigation Potential Assessment for the Steel Sector in Southeast Asia",
