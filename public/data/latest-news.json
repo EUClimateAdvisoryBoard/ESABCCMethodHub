@@ -1,5 +1,16 @@
 [
   {
+    "title": "Commission sends Statement of Objections over proposed joint venture between UPM and Sappi",
+    "summary": "European Commission Press release Brussels, 26 Aug 2026 The European Commission has informed UPM-Kymmene Corporation ('UPM') and Sappi Limited ('Sappi') of its preliminary view that its proposed joint venture may restrict competition in the markets for different types of communication paper, which is used for printed materials, such as magazines or books.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1747",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-08-25T22:00:00.000Z",
+    "tags": [
+      "emissions"
+    ]
+  },
+  {
     "title": "Daily News 25 / 08 / 2026",
     "summary": "European Commission Daily news Brussels, 25 Aug 2026 Extreme weather affects Europe's crops and fodder supply as Commission continues to work to adapt agriculture to climate change\r\nPersistent heat and lack of rain...",
     "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1757",
@@ -21,17 +32,6 @@
     "tags": [
       "energy",
       "industry"
-    ]
-  },
-  {
-    "title": "Commission proposes fishing opportunities for 2027 in the Baltic Sea*",
-    "summary": "European Commission Press release Brussels, 24 Aug 2026 Today, the Commission adopted its proposal for the 2027 fishing opportunities for the Baltic Sea. The proposal sets the total allowable catches (TACs) and quotas for the ten EU-managed fish stocks in the Baltic Sea: Bothnian herring, central Baltic herring, Gulf of Riga herring, sprat, plaice, Main Basin salmon, Gulf of Finland salmon, western Baltic cod, eastern Baltic cod, and western Baltic herring.",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1751",
-    "source": "european_commission",
-    "sourceLabel": "European Commission",
-    "publishedDate": "2026-08-24T08:11:13.000Z",
-    "tags": [
-      "emissions"
     ]
   }
 ]
