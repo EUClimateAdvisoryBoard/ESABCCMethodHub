@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T05:02:48.425Z",
+  "generatedAt": "2026-08-27T15:22:31.968Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,26 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1080/14693062.2026.2722557",
+      "title": "Institutional compression in climate policy integration: coordinating green electricity certificates and carbon emissions trading in China",
+      "journal": "Climate Policy",
+      "authors": "Yu Tian, Bangjun Wang",
+      "published": "2026-08-27",
+      "url": "https://doi.org/10.1080/14693062.2026.2722557",
+      "abstract": "",
+      "suggestedOn": "2026-08-27",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6,
+          "matched": [
+            "emissions trading",
+            "climate policy integration"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/ae9e4b",
       "title": "Identifying a gap between decarbonization needs and practical solar and wind deployment in ASEAN",
@@ -413,28 +433,6 @@
           "matched": [
             "carbon budget",
             "decarbonization"
-          ]
-        }
-      ]
-    },
-    {
-      "doi": "10.1088/1748-9326/ae8318",
-      "title": "Navigating India's low-carbon development futures: An interpretive assessment of model scenarios",
-      "journal": "Environmental Research Letters",
-      "authors": "Aman Srivastava, Easwaran Narassimhan, Navroz K Dubash",
-      "published": "2026-06-26",
-      "url": "https://doi.org/10.1088/1748-9326/ae8318",
-      "abstract": "As India pursues economic opportunities alongside undertaking climate actions, its low-carbon development policymaking is informed by an expanding ecosystem of emissions-economy modelling studies. In India’s rapidly changing economic context, it is important to assess whether and how such studies represent real development contexts facing policymakers. To explore this question, this paper examines the results and implications of eight emissions-economy modelling studies that offer policy guidance for India. By highlighting areas where findings converge and diverge, it draws out aggregated insights relevant to six of India’s policy priorities. It finds that [1] Studies do not explore the full range of India’s future growth and urbanisation possibilities. [2] The discourse on the energy transition inadequately addresses demand-side approaches and alternative patterns of energy demand. [3] The projected emissions trajectories can impact the carbon budget as much as the peaking year can, and can have a bigger impact on cumulative emissions than even the choice of net-zero year. [4] Required investments are inversely related with cumulative emissions, though investment patterns can look different for similar emissions trajectories. [5] Discussions on energy security are limited, and require greater consideration of patterns of growth that emphasise domestic manufacturing. [6] While decarbonisation can have positive employment impacts, there is no consensus about their scale. Conte",
-      "suggestedOn": "2026-06-27",
-      "projects": [
-        {
-          "projectId": "policy-gap-2-0",
-          "score": 5,
-          "matched": [
-            "carbon budget",
-            "net-zero",
-            "decarbonisation",
-            "energy transition"
           ]
         }
       ]
