@@ -1,5 +1,29 @@
 [
   {
+    "title": "Daily News 27 / 08 / 2026",
+    "summary": "European Commission Daily news Brussels, 27 Aug 2026 Commission endorses Greece's €4.8 billion Social Climate Plan to support vulnerable households, transport users and micro-enterprises in the clean transition\r\nTo...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1763",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-08-27T09:00:50.000Z",
+    "tags": [
+      "transport"
+    ]
+  },
+  {
+    "title": "Commission endorses Greece's €4.8 billion Social Climate Plan to support vulnerable households, transport users and micro-enterprises in the clean transition",
+    "summary": "European Commission Press release Brussels, 27 Aug 2026 Today, the European Commission adopted Greece's Social Climate Plan. It is the fifth and largest national plan adopted under the Social Climate Fund so far, which will use the revenues from emission allowances to advance the clean transition and support vulnerable consumers and enterprises.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1762",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-08-26T22:00:00.000Z",
+    "tags": [
+      "emissions",
+      "finance",
+      "transport"
+    ]
+  },
+  {
     "title": "Commission sends Statement of Objections over proposed joint venture between UPM and Sappi",
     "summary": "European Commission Press release Brussels, 26 Aug 2026 The European Commission has informed UPM-Kymmene Corporation ('UPM') and Sappi Limited ('Sappi') of its preliminary view that its proposed joint venture may restrict competition in the markets for different types of communication paper, which is used for printed materials, such as magazines or books.",
     "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1747",
@@ -20,18 +44,6 @@
     "tags": [
       "adaptation",
       "agriculture"
-    ]
-  },
-  {
-    "title": "Video message by President von der Leyen at the ONS Conference",
-    "summary": "European Commission Speech Brussels, 24 Aug 2026 Ladies and gentlemen,\r\nFor more than fifty years, ONS has brought together governments and industry to tackle the world's energy challenges. Today, that mission ...",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1754",
-    "source": "european_commission",
-    "sourceLabel": "European Commission",
-    "publishedDate": "2026-08-24T10:00:44.000Z",
-    "tags": [
-      "energy",
-      "industry"
     ]
   }
 ]
