@@ -1,24 +1,30 @@
 {
   "date": "2026-08-27",
-  "generatedAt": "2026-08-27T04:20:00.847Z",
+  "generatedAt": "2026-08-27T16:12:24.887Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 27 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Plug-in balcony solar panels to go on sale in UK for first time",
-      "summary": "&lt;p&gt;DIY system will be stocked by big retailers, starting with Argos, enabling more homes to lower bills by generating own electricity&lt;/p&gt;&lt;p&gt;Plug-in solar panels will go on sale in the UK for the first time from Thursday, allowing households unable to use rooftop panels to also generate their own cheap electricity.&lt;/p&gt;&lt;p&gt;Households across the country will be able to join the millions across mainland Europe who generate their own renewable electricity using “balcony s",
+      "headline": "Commission endorses Greece's €4.8 billion Social Climate Plan to support vulnerable households, transport users and micro-enterprises in the clean transition",
+      "summary": "European Commission Press release Brussels, 27 Aug 2026 Today, the European Commission adopted Greece's Social Climate Plan. It is the fifth and largest national plan adopted under the Social Climate Fund so far, which will use the revenues from emission allowances to advance the clean transition and support vulnerable consumers and enterprises.",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Thursday briefing: Will the government reform the system to bring down our energy bills?",
+      "summary": "&lt;p&gt;In today’s newsletter: As ​UK households face another price‑cap rise, experts warn that years of political drift have left us with one of Europe’s most expensive power systems, ​b​ut the tools to fix it already exist&lt;/p&gt;&lt;p&gt;Good morning. For too many people, this just doesn’t feel like breathing room. Andy Burnham entered Downing Street in July pledging to give consumers respite from the cost of living crisis. A day later he announced a VAT cut on domestic electricity from 5%",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Climate change exposes 580 million children to 20 extra ‘heat-stress days’ every year",
-      "summary": "More than 40% of children under the age of 10 globally are already experiencing at least 20 additional “heat-stress days”&#8230; The post Climate change exposes 580 million children to 20 extra ‘heat-stress days’ every year appeared first on Carbon Brief.",
+      "headline": "Daily News 27 / 08 / 2026",
+      "summary": "European Commission Daily news Brussels, 27 Aug 2026 Commission endorses Greece's €4.8 billion Social Climate Plan to support vulnerable households, transport users and micro-enterprises in the clean transition\r\nTo...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "South Korea's chip windfall fund to back long-term growth, not welfare spending, official says - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZU54SnVzSmRWa0hKbWl4Q2JubUZpZWIyUmFoeWRCcnRuSGsxUzFMUW1LMkdCRFRIUGdIZmEzakcxSUxYVjI3SzZmRWlaRmdvTlJ3UEhsMmJuX2VHOE5PT1Q2LTFMRWNWZDQ2cnhzMVVYd2R3VjlfVFZjSXpYcWhKSkRnbjRPbWFQUEprZkxKREdlejAwQllhSFNMdTFaVmdCRkEtZ0JnZW85MmdSRTVLdURrazJzZXdYTFpPMTVwX1RZc0o0VmZVMA?oc=5\" target=\"_blank\"&gt;South Korea's chip windfall fund to back long-term growth, not welfare spending, official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt",
+      "headline": "Argentina, Chile revive cross-border mining framework for investment - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNaFhZUTQ4OFUxdjl0MlRRUTR3ZmdHVjJGdHRhRDNRaE5XeVU5STNUcU9QZWZsUGJZSHRsd3dYSElHRnZUR3NYMXpCWGxYNlRaY2oxeUhYYzBnMk5EM1ZXcjRuaHBvUFNlUE1EMHZUN1RfMXZaM24zRGJVaFlaVWM5bnVURXRxQXZRbDB5aHRjSy10MjFoX2NXOUIyNFBSbm0wSi1ZMmktaWE4QndSeEVKQ1phbmM?oc=5\" target=\"_blank\"&gt;Argentina, Chile revive cross-border mining framework for investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,51 +33,60 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Commission endorses Greece's €4.8 billion Social Climate Plan to support vulnerable households, transport users and micro-enterprises in the clean transition",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1762",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 27 Aug 2026 Today, the European Commission adopted Greece's Social Climate Plan. It is the fifth and largest national plan adopted under the Social Climate Fund so far, which will use the revenues from emission allowances to advance the clean transition and support vulnerable consumers and enterprises.",
+          "published": "2026-08-26T22:00:00.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Plug-in balcony solar panels to go on sale in UK for first time",
-          "link": "https://www.theguardian.com/environment/2026/aug/26/plug-in-balcony-solar-panels-to-go-on-sale-in-uk-for-first-time",
+          "title": "Thursday briefing: Will the government reform the system to bring down our energy bills?",
+          "link": "https://www.theguardian.com/world/2026/aug/27/thursday-briefing-will-the-government-reform-the-system-to-bring-down-our-energy-bills",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;DIY system will be stocked by big retailers, starting with Argos, enabling more homes to lower bills by generating own electricity&lt;/p&gt;&lt;p&gt;Plug-in solar panels will go on sale in the UK for the first time from Thursday, allowing households unable to use rooftop panels to also generate their own cheap electricity.&lt;/p&gt;&lt;p&gt;Households across the country will be able to join the millions across mainland Europe who generate their own renewable electricity using “balcony s",
-          "published": "2026-08-26T21:30:23.000Z",
+          "description": "&lt;p&gt;In today’s newsletter: As ​UK households face another price‑cap rise, experts warn that years of political drift have left us with one of Europe’s most expensive power systems, ​b​ut the tools to fix it already exist&lt;/p&gt;&lt;p&gt;Good morning. For too many people, this just doesn’t feel like breathing room. Andy Burnham entered Downing Street in July pledging to give consumers respite from the cost of living crisis. A day later he announced a VAT cut on domestic electricity from 5%",
+          "published": "2026-08-27T05:46:33.000Z",
           "score": 9
         },
         {
-          "title": "Albanese backs down on states powering AI datacentres using renewable energy",
-          "link": "https://www.theguardian.com/australia-news/2026/aug/26/albanese-backs-down-on-states-powering-ai-datacentres-using-sustainable-energy",
+          "title": "A new energy scheme gives Australians three hours of free power a day – but there could be an expensive catch",
+          "link": "https://www.theguardian.com/environment/2026/aug/28/solar-sharer-energy-scheme-australia-three-free-hours-power-daily-more-expensive",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Shift comes after Chris Bowen said Labor would use constitutional powers to override states resisting rules on sustainable energy&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&",
-          "published": "2026-08-26T08:36:50.000Z",
+          "description": "&lt;p&gt;Solar Sharer program was designed for homes without rooftop solar, but observers say supply and peak use charges are ‘much higher’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;A government energy deal th",
+          "published": "2026-08-27T15:00:33.000Z",
           "score": 7
         },
         {
-          "title": "US Army to spend $2 billion nuclear microreactors for bases",
-          "link": "https://www.dw.com/en/us-army-to-spend-2-billion-nuclear-microreactors-for-bases/a-78518374?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The US Army has announced a plan to install what it calls nuclear microreactors at five of its bases across the country. The move would ensure the facilities&#039; energy independence from the rest of the electric grid.",
-          "published": "2026-08-27T01:55:00.000Z",
+          "title": "Plug-in balcony solar panels to go on sale in UK for first time",
+          "link": "https://www.theguardian.com/environment/2026/aug/26/plug-in-balcony-solar-panels-to-go-on-sale-in-uk-for-first-time",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;DIY system will be stocked by big retailers, starting with Argos, enabling more homes to lower bills by generating own electricity&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/money/2026/aug/22/plug-in-solar-cost-panel-cut-bills-balcony\"&gt;Plug-in solar: could a low-cost panel cut your bills?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Plug-in solar panels will go on sale in the UK for the first time from Thursday, allowing households unable to us",
+          "published": "2026-08-26T21:30:23.000Z",
           "score": 7
         },
         {
-          "title": "CD Projekt RED to launch remastered version of 'The Witcher 3' ahead of new expansion - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOeFRMc1JpOURTNEZGYTJlMm9OSmppOTlLWVg3NmVVYVo3OVpDU2hrMm1RWlRjREh4TVdSZmRUeW9UOUR6QVpTYl9sdmVwU2ZlTldXWVYyS3l5QVVOa0ZtR0JtSXp5QWo4Vnp1Z1lVZUZaRm5qNHU0aTNDdmktdFpkaEpSMk5MbXd4c1c2Sno1SFVxclhZSko2aVZTck8xNTJTVm13MkZ6bG5iUXBqZ1Nucm05QjU0bG94cUhVeFl3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOeFRMc1JpOURTNEZGYTJlMm9OSmppOTlLWVg3NmVVYVo3OVpDU2hrMm1RWlRjREh4TVdSZmRUeW9UOUR6QVpTYl9sdmVwU2ZlTldXWVYyS3l5QVVOa0ZtR0JtSXp5QWo4Vnp1Z1lVZUZaRm5qNHU0aTNDdmktdFpkaEpSMk5MbXd4c1c2Sno1SFVxclhZSko2aVZTck8xNTJTVm13MkZ6bG5iUXBqZ1Nucm05QjU0bG94cUhVeFl3?oc=5\" target=\"_blank\"&gt;CD Projekt RED to launch remastered version of 'The Witcher 3' ahead of new expansion&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-26T06:15:00.000Z",
+          "title": "Moon set to turn red as rare partial lunar eclipse graces UK skies on Friday",
+          "link": "https://www.bbc.co.uk/weather/articles/c5y4n7y89w7o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The Moon could glow an eerie red in the early hours of Friday but cloud cover may spoil the spectacle for some parts of the UK.",
+          "published": "2026-08-27T06:03:15.000Z",
           "score": 7
         },
         {
-          "title": "Around the world, people are rejecting divisive and dangerous politics. We can – and must – build on that | Gordon Brown",
-          "link": "https://www.theguardian.com/commentisfree/2026/aug/26/world-people-dangerous-politics-global-public-human-rights",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The vast majority of the global public wants international cooperation on human rights, climate and AI. Like-minded countries must stand together to deliver&lt;/p&gt;&lt;p&gt;Britain’s new prime minister,&lt;strong&gt; &lt;/strong&gt;Andy Burnham, is already having to make one of his gravest decisions. He has to issue the instructions that he alone gives to the military, setting out the UK response in a doomsday scenario of a nuclear weapons attack on us. He will, as I did two decades a",
-          "published": "2026-08-26T05:00:35.000Z",
-          "score": 4
+          "title": "Jellyfish force partial shutdown of French nuclear plant",
+          "link": "https://www.bbc.co.uk/news/articles/cy8znx3g4e2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "It is the second consecutive year that jellyfish has forced the closure of the Gravelines power station in northern France.",
+          "published": "2026-08-27T14:49:23.000Z",
+          "score": 7
         }
       ]
     },
@@ -79,6 +94,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Daily News 27 / 08 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1763",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 27 Aug 2026 Commission endorses Greece's €4.8 billion Social Climate Plan to support vulnerable households, transport users and micro-enterprises in the clean transition\r\nTo...",
+          "published": "2026-08-27T09:00:50.000Z",
+          "score": 16
+        },
         {
           "title": "Climate change exposes 580 million children to 20 extra ‘heat-stress days’ every year",
           "link": "https://www.carbonbrief.org/climate-change-exposes-580-million-children-to-20-extra-heat-stress-days-every-year",
@@ -88,35 +111,27 @@
           "score": 13
         },
         {
-          "title": "​W​hy are European leaders staying silent after our summer of climate shock?",
-          "link": "https://www.theguardian.com/world/2026/aug/26/why-are-european-leaders-staying-silent-after-our-summer-of-climate-shock",
+          "title": "West Point’s only climate scientist fired after continuing to teach human causes of climate change",
+          "link": "https://www.theguardian.com/us-news/2026/aug/27/west-point-climate-scientist-fired",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Lethal temperatures ​and wildfires have exposed a widening gulf between voters demanding ​action and politicians unwilling to confront the long-term choices global heating requires&lt;/p&gt;&lt;p&gt;&lt;strong&gt;•&lt;/strong&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2018/mar/22/this-is-europe-sign-up-guardian-email-updates\"&gt;&lt;strong&gt; Don’t get This Is Europe delivered to your inbox? Sign up here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The climate crisis means ",
-          "published": "2026-08-26T14:40:15.000Z",
-          "score": 13
+          "description": "&lt;p&gt;Adam Kalkstein compared administration’s order to ‘trying to teach the law’ without mentioning ‘the constitution’&lt;/p&gt;&lt;p&gt;The only climate scientist teaching at West Point, the US army’s &lt;a href=\"https://www.theguardian.com/us-news/us-military\"&gt;military&lt;/a&gt; academy, was fired after he resisted an order to stop teaching about the human causes of the climate emergency, a lawsuit claims.&lt;/p&gt;&lt;p&gt;Dr Adam Kalkstein, a civilian professor of geography at the New",
+          "published": "2026-08-27T14:15:02.000Z",
+          "score": 11
         },
         {
-          "title": "Battle over cleaning up shipping set to resume at London talks",
-          "link": "https://www.climatechangenews.com/2026/08/26/battle-over-cleaning-up-shipping-set-to-resume-at-london-talks/",
-          "source": "Climate Home News",
-          "description": "The US and Saudi Arabia want to scrap shipping's Net-Zero Framework and have swung behind a far less ambitious alternative The post Battle over cleaning up shipping set to resume at London talks appeared first on Climate Home News.",
-          "published": "2026-08-26T12:31:01.000Z",
-          "score": 10
-        },
-        {
-          "title": "‘You can taste the ash’: surviving in America’s wildfire smoke capital",
-          "link": "https://www.theguardian.com/us-news/ng-interactive/2026/aug/26/oregon-wildfire-smoke-deaths",
+          "title": "A Britain of wildfires and flood risks: be sure, the climate crisis is real, and we will deal with it | Angela Eagle",
+          "link": "https://www.theguardian.com/commentisfree/2026/aug/27/britain-wildfires-flood-risks-climate-crisis",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;A magical corner of Oregon has the highest US rate of wildfire smoke deaths. How do residents live with the haze – and grief?&lt;/p&gt;&lt;p&gt;Driving into the county, you can’t miss the sign.&lt;/p&gt;&lt;p&gt;“IT’S THE CLIMATE”.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/us-news/ng-interactive/2026/aug/26/oregon-wildfire-smoke-deaths\"&gt;Continue reading...&lt;/a&gt;",
-          "published": "2026-08-26T12:00:11.000Z",
+          "description": "&lt;p&gt;Reform and the Conservatives are willing to mislead the public, but as environment secretary, I believe we must be honest – and act boldly&lt;/p&gt;&lt;p&gt;This long, hot summer has brought our third drought in five years and the &lt;a href=\"https://www.metoffice.gov.uk/about-us/news-and-media/media-centre/weather-and-climate-news/2026/historic-july-sees-record-dryness-unprecedented-sunshine-and-exceptional-warmth\"&gt;driest July in almost two centuries&lt;/a&gt;. We’ve seen &lt;a href",
+          "published": "2026-08-27T12:05:25.000Z",
           "score": 7
         },
         {
-          "title": "Fires still burn in charred landscape as focus turns to wildfire prevention",
-          "link": "https://www.bbc.co.uk/news/articles/cvgye1999n8o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "'The flood took everything': Nepal survivors describe horror of loved ones being swept away",
+          "link": "https://www.bbc.co.uk/news/articles/cd08z840p8lo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "The RSPB is considering measures it can take to improve resilience in the wake of a five-week long fire in the Cairngorms.",
-          "published": "2026-08-26T05:25:20.000Z",
+          "description": "One woman says her father, mother, sister and sister's children were carried away before her eyes.",
+          "published": "2026-08-27T07:09:52.000Z",
           "score": 7
         }
       ]
@@ -126,11 +141,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "South Korea's chip windfall fund to back long-term growth, not welfare spending, official says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZU54SnVzSmRWa0hKbWl4Q2JubUZpZWIyUmFoeWRCcnRuSGsxUzFMUW1LMkdCRFRIUGdIZmEzakcxSUxYVjI3SzZmRWlaRmdvTlJ3UEhsMmJuX2VHOE5PT1Q2LTFMRWNWZDQ2cnhzMVVYd2R3VjlfVFZjSXpYcWhKSkRnbjRPbWFQUEprZkxKREdlejAwQllhSFNMdTFaVmdCRkEtZ0JnZW85MmdSRTVLdURrazJzZXdYTFpPMTVwX1RZc0o0VmZVMA?oc=5",
+          "title": "Argentina, Chile revive cross-border mining framework for investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNaFhZUTQ4OFUxdjl0MlRRUTR3ZmdHVjJGdHRhRDNRaE5XeVU5STNUcU9QZWZsUGJZSHRsd3dYSElHRnZUR3NYMXpCWGxYNlRaY2oxeUhYYzBnMk5EM1ZXcjRuaHBvUFNlUE1EMHZUN1RfMXZaM24zRGJVaFlaVWM5bnVURXRxQXZRbDB5aHRjSy10MjFoX2NXOUIyNFBSbm0wSi1ZMmktaWE4QndSeEVKQ1phbmM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZU54SnVzSmRWa0hKbWl4Q2JubUZpZWIyUmFoeWRCcnRuSGsxUzFMUW1LMkdCRFRIUGdIZmEzakcxSUxYVjI3SzZmRWlaRmdvTlJ3UEhsMmJuX2VHOE5PT1Q2LTFMRWNWZDQ2cnhzMVVYd2R3VjlfVFZjSXpYcWhKSkRnbjRPbWFQUEprZkxKREdlejAwQllhSFNMdTFaVmdCRkEtZ0JnZW85MmdSRTVLdURrazJzZXdYTFpPMTVwX1RZc0o0VmZVMA?oc=5\" target=\"_blank\"&gt;South Korea's chip windfall fund to back long-term growth, not welfare spending, official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt",
-          "published": "2026-08-26T08:35:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNaFhZUTQ4OFUxdjl0MlRRUTR3ZmdHVjJGdHRhRDNRaE5XeVU5STNUcU9QZWZsUGJZSHRsd3dYSElHRnZUR3NYMXpCWGxYNlRaY2oxeUhYYzBnMk5EM1ZXcjRuaHBvUFNlUE1EMHZUN1RfMXZaM24zRGJVaFlaVWM5bnVURXRxQXZRbDB5aHRjSy10MjFoX2NXOUIyNFBSbm0wSi1ZMmktaWE4QndSeEVKQ1phbmM?oc=5\" target=\"_blank\"&gt;Argentina, Chile revive cross-border mining framework for investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-27T12:51:52.000Z",
           "score": 2
         }
       ]
@@ -140,11 +155,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Some Chinese workers see an ally in Brussels as EU trade tensions mount - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcGRtUVpOeWFvQWFUbmNJeGxjYlRuaktxd1AtbUw2bFAtOWJCbjBfSmNfMlJYT2xMcThMOUQ4bXNQUzV2N19kNHBkWGtOZXd1aHRfZTV5WXNsZ2RyR1hhcFB5MGN2VTlCSGYzaGJUYUpnWWZQSHVzN3plaDY0V2VtNzlYMFV4WG9NR2JIalFfeFdkWG1pQ1hnSFdCMTdFVHJXNWdIeUQwUktVeUxHM0NRdTJjQQ?oc=5",
+          "title": "EU states revive plan to use frozen Russian assets for Ukraine, FT reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPa0JXV3h5Ni1OcElMWG5tUUFZekJFd0RwZGc2dVludDRaY0FfTGw1Q1VqNVNNTFRwWEpMTjdRMkdPTVZGWDNyMWVaSW5LWV9GNWRvNnJGbWpGcmdYV1NIYWxMUFN5aUJNeld2NFVrM19lSDVITlBkZEhuV3hlV0xQNi1VVW1RZTZmZVVFYVBQbElhUDJWWnc3TmhIeDA2T3doejIxRnRJeGo5ZzJWTXJhbVhKeUg2dw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQcGRtUVpOeWFvQWFUbmNJeGxjYlRuaktxd1AtbUw2bFAtOWJCbjBfSmNfMlJYT2xMcThMOUQ4bXNQUzV2N19kNHBkWGtOZXd1aHRfZTV5WXNsZ2RyR1hhcFB5MGN2VTlCSGYzaGJUYUpnWWZQSHVzN3plaDY0V2VtNzlYMFV4WG9NR2JIalFfeFdkWG1pQ1hnSFdCMTdFVHJXNWdIeUQwUktVeUxHM0NRdTJjQQ?oc=5\" target=\"_blank\"&gt;Some Chinese workers see an ally in Brussels as EU trade tensions mount&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-26T10:49:35.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPa0JXV3h5Ni1OcElMWG5tUUFZekJFd0RwZGc2dVludDRaY0FfTGw1Q1VqNVNNTFRwWEpMTjdRMkdPTVZGWDNyMWVaSW5LWV9GNWRvNnJGbWpGcmdYV1NIYWxMUFN5aUJNeld2NFVrM19lSDVITlBkZEhuV3hlV0xQNi1VVW1RZTZmZVVFYVBQbElhUDJWWnc3TmhIeDA2T3doejIxRnRJeGo5ZzJWTXJhbVhKeUg2dw?oc=5\" target=\"_blank\"&gt;EU states revive plan to use frozen Russian assets for Ukraine, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-27T04:19:00.000Z",
           "score": 8
         }
       ]
@@ -162,19 +177,27 @@
           "score": 12
         },
         {
-          "title": "Infantino has no future at FIFA, European Leagues chief says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaEFLY2VTTVdxalVMVGs1NXRDSjhKNFdITzF2bEtsSjZnNEEyUTcycDNtTk1TdW5JWG1wdGl2d3Etd05Zc0xvcHRTZ1ZrVEhuM1JNOE5GSkxuVzdTLUJ1WVlnNDJraWM5V1FNb2xZZWYwNHBMQkUwaWpuOEZNT3M4T1plY0tHZG5Yd1lIckJtV1hvdGlFV1dtMVN2dkk5UVc5ZExmbEtLZHZYUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaEFLY2VTTVdxalVMVGs1NXRDSjhKNFdITzF2bEtsSjZnNEEyUTcycDNtTk1TdW5JWG1wdGl2d3Etd05Zc0xvcHRTZ1ZrVEhuM1JNOE5GSkxuVzdTLUJ1WVlnNDJraWM5V1FNb2xZZWYwNHBMQkUwaWpuOEZNT3M4T1plY0tHZG5Yd1lIckJtV1hvdGlFV1dtMVN2dkk5UVc5ZExmbEtLZHZYUQ?oc=5\" target=\"_blank\"&gt;Infantino has no future at FIFA, European Leagues chief says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-26T09:23:46.000Z",
+          "title": "Germany news: Merz courts &#039;frugals&#039; to trim EU budget",
+          "link": "https://www.dw.com/en/germany-news-merz-courts-frugals-to-trim-eu-budget/live-78519551?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Chancellor Friedrich Merz is hosting leaders from several European Union net contributor countries as Berlin pushes for a smaller bloc budget. DW has more.",
+          "published": "2026-08-27T07:51:00.000Z",
           "score": 8
         },
         {
-          "title": "Narrow majority of Icelanders back EU membership talks, poll shows ahead of referendum - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPMS0yd2lIZndjLWdPYkxnUzlncHRYY053OWJEYXhvMlQ4dnJYaVRkbmlsNzEyRWdkVmU5VUtVemdvS1lVNVpEcG1Qc1o0NUROSUZkV0tNS1ZseElQaVU4bVhua1A0NDhDeFdoWm9LeFE0clhVNGdZSGFZSElVaEw5N2RqN2gzYWdYMEQzOXdLNU5MWEk5bjBmZ1F4RDMzYVJacnJBY00zVW9XSVFuVGk2NExXeDctM2RTT3dUYjdR?oc=5",
+          "title": "Ivory Coast's delayed cocoa crop could mean congested ports ahead of EU rules, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNSGFRdmdMUl80ZTQ4LXhFYUpVZjYzOERfa0dFRkZUV3NUSmEyMy1xUzFDMTVhTl83ODZIQlViNXZjLTF3T093eFRvWDczOFJ1VXV4eGhfQ0tkTFByWEV1QkhHWEFobHZnUGs4aTF3SURBYy1kb1IwdTgyVm9uMExoSWdHbG5zSklhWVQtWHU1ZDVyWjZERGFaa1ZUeVozXzZ1di1IMDBacFdWTTZ1MmRLUG93bHc4TXMwbnFlbXIwaw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPMS0yd2lIZndjLWdPYkxnUzlncHRYY053OWJEYXhvMlQ4dnJYaVRkbmlsNzEyRWdkVmU5VUtVemdvS1lVNVpEcG1Qc1o0NUROSUZkV0tNS1ZseElQaVU4bVhua1A0NDhDeFdoWm9LeFE0clhVNGdZSGFZSElVaEw5N2RqN2gzYWdYMEQzOXdLNU5MWEk5bjBmZ1F4RDMzYVJacnJBY00zVW9XSVFuVGk2NExXeDctM2RTT3dUYjdR?oc=5\" target=\"_blank\"&gt;Narrow majority of Icelanders back EU membership talks, poll shows ahead of referendum&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-26T11:55:46.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNSGFRdmdMUl80ZTQ4LXhFYUpVZjYzOERfa0dFRkZUV3NUSmEyMy1xUzFDMTVhTl83ODZIQlViNXZjLTF3T093eFRvWDczOFJ1VXV4eGhfQ0tkTFByWEV1QkhHWEFobHZnUGs4aTF3SURBYy1kb1IwdTgyVm9uMExoSWdHbG5zSklhWVQtWHU1ZDVyWjZERGFaa1ZUeVozXzZ1di1IMDBacFdWTTZ1MmRLUG93bHc4TXMwbnFlbXIwaw?oc=5\" target=\"_blank\"&gt;Ivory Coast's delayed cocoa crop could mean congested ports ahead of EU rules, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
+          "published": "2026-08-26T19:39:51.000Z",
+          "score": 8
+        },
+        {
+          "title": "PNG parliament to consider Bougainville region's bid for independence - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT2Z5aUl3bHJ6RmtjdndoNGN2OU1TN2Uyb3NLMTQ4YzhjWkFPSW83RTVLZW5KVjdIdjdNbTVlWDlCSWp6cVh4a2xsRDQ1NDJ5bmNTQmtWMGRrbWNJeU92NlZuV1cwRjVMbmx1NWtDY0pwVnZJYWFVdXNVZ0YxYXhPRTI5ZWZ0S0ppUk44TkpfcTdlc0dSYTk0endQU2p0U1E2OF9VdFBEdHoyRkVWdjBjYW9ROEdyT0E?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOT2Z5aUl3bHJ6RmtjdndoNGN2OU1TN2Uyb3NLMTQ4YzhjWkFPSW83RTVLZW5KVjdIdjdNbTVlWDlCSWp6cVh4a2xsRDQ1NDJ5bmNTQmtWMGRrbWNJeU92NlZuV1cwRjVMbmx1NWtDY0pwVnZJYWFVdXNVZ0YxYXhPRTI5ZWZ0S0ppUk44TkpfcTdlc0dSYTk0endQU2p0U1E2OF9VdFBEdHoyRkVWdjBjYW9ROEdyT0E?oc=5\" target=\"_blank\"&gt;PNG parliament to consider Bougainville region's bid for independence&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-26T23:26:32.000Z",
           "score": 8
         },
         {
@@ -184,14 +207,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNV1pZeWdGeTdjVWRoOE0zZi1zQzhRVTdhU3g3U3VPV2J4dHVRQWtiRF9CUHlWVGllbFpPYnIyUmc5TDZPVlJrX0lrNDZCME5rcWZEYmN2a1JFY1diVE5oeDk1WEFDNmhIeDZfUmdFMFBBVUh6M1ZibFFvdkNzSDRVc1NEcFdZZmVhRDVjTGtxQWZwd2JDd3hzS1lHalBGUmMwRkZDUTRidDZIQ3lM?oc=5\" target=\"_blank\"&gt;European shares muted as investors assess Iran-Oman talks, U.S. inflation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-26T16:41:46.000Z",
           "score": 8
-        },
-        {
-          "title": "No Tesla recall in Europe at present, Dutch regulator says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOVHU1aEhOTHRRUC05aFZ6eXdZWEdUNjlENXFqdTBGa3JUSFBQeGhXeUtmdy1QRTFUcXlLNTBXbzN4R2I5RW5lT3F5VlQyS2JqanpzcVNIUDlDeHZvdXpCaV9DeGRkRlZGeDdWbnFCbWlWSnRCenJkRThPUWtrQnVXdFRlVFhXT1BUcE9yc3JlX0hLS1haZHV6RjY2dThRRTUx?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxOVHU1aEhOTHRRUC05aFZ6eXdZWEdUNjlENXFqdTBGa3JUSFBQeGhXeUtmdy1QRTFUcXlLNTBXbzN4R2I5RW5lT3F5VlQyS2JqanpzcVNIUDlDeHZvdXpCaV9DeGRkRlZGeDdWbnFCbWlWSnRCenJkRThPUWtrQnVXdFRlVFhXT1BUcE9yc3JlX0hLS1haZHV6RjY2dThRRTUx?oc=5\" target=\"_blank\"&gt;No Tesla recall in Europe at present, Dutch regulator says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-26T14:54:03.000Z",
-          "score": 8
         }
       ]
     }
@@ -199,7 +214,7 @@
   "stats": {
     "totalArticlesScanned": 399,
     "articlesLast24h": 163,
-    "afterDedup": 154,
+    "afterDedup": 149,
     "feedsQueried": 19
   }
 }
