@@ -1,9 +1,15 @@
 {
   "date": "2026-08-30",
-  "generatedAt": "2026-08-30T10:18:33.558Z",
+  "generatedAt": "2026-08-30T15:11:59.947Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 30 August 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Red-hot Royals chase series sweep of Guardians - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOQjl6bEJFdkVTYWlua3JsRXJGa01EWFpDbnMxOUNVMENDN3F0cnU3UnFvb3MtYi1oYVM3QVNmODBncnNxd1lHU1MyTk5zXzZhb1JOdVBkOUxtcEd2ekczbFJvSVhSY21vSXRfLXZLc0N1NHNQaFpQb3NQU2xIZzlrSnZaM2FkRUp6ZzFnVlF0OW9LcDdVUEVvTlhfYXVZZks5VGc?oc=5\" target=\"_blank\"&gt;Red-hot Royals chase series sweep of Guardians&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
     {
       "headline": "Nepal issues fresh flood warning as 3,000 still missing",
       "summary": "Rescuers are trying to reach dozens of hydropower workers trapped in flooded tunnels, but have been hampered by further rainfall.",
@@ -26,7 +32,16 @@
     {
       "id": "energy",
       "title": "Energy Transition",
-      "items": []
+      "items": [
+        {
+          "title": "Red-hot Royals chase series sweep of Guardians - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQjl6bEJFdkVTYWlua3JsRXJGa01EWFpDbnMxOUNVMENDN3F0cnU3UnFvb3MtYi1oYVM3QVNmODBncnNxd1lHU1MyTk5zXzZhb1JOdVBkOUxtcEd2ekczbFJvSVhSY21vSXRfLXZLc0N1NHNQaFpQb3NQU2xIZzlrSnZaM2FkRUp6ZzFnVlF0OW9LcDdVUEVvTlhfYXVZZks5VGc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOQjl6bEJFdkVTYWlua3JsRXJGa01EWFpDbnMxOUNVMENDN3F0cnU3UnFvb3MtYi1oYVM3QVNmODBncnNxd1lHU1MyTk5zXzZhb1JOdVBkOUxtcEd2ekczbFJvSVhSY21vSXRfLXZLc0N1NHNQaFpQb3NQU2xIZzlrSnZaM2FkRUp6ZzFnVlF0OW9LcDdVUEVvTlhfYXVZZks5VGc?oc=5\" target=\"_blank\"&gt;Red-hot Royals chase series sweep of Guardians&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-30T11:51:08.000Z",
+          "score": 7
+        }
+      ]
     },
     {
       "id": "climate",
@@ -41,35 +56,35 @@
           "score": 7
         },
         {
-          "title": "Bears are being driven into US towns in record numbers after drought - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1KcDdCVnRRVEpkX2NxUVBpT05tdUg5MS1OekFvU0xtMTNHZkNWUDVLOTlHbklTOElPZTNVRkViVU1GUlE5QndHMWtKRllJWURpQ1UwUnBKVDhZaGFXYWJoc2tENzhWZw?oc=5",
+          "title": "Nepal resumes flood rescue, seeks technical help and billions of dollars - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNb1FVWFg4dHUzMWZmVXotWUoxNTE4MGQ1ZFhZdExvV2JlU0dwSmZMZ25FcjY5dzVKLTZETVBaQnZaLXFBS29EZ2Jfc0w0YWw1a2c1WHlHNXFoallfb1libC1LUFg3ekpySWp4M1A5OFJpVUFVWEtfempZODBNRDhtRmM2VVZJRHlhN29WakRHMFFVZGtZVGFEYy1yQ1k1Y3VGaTM1aTdkZ3Ntd0gtVDZia1pRZ3VaakNsWll0Vg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZkFVX3lxTE1KcDdCVnRRVEpkX2NxUVBpT05tdUg5MS1OekFvU0xtMTNHZkNWUDVLOTlHbklTOElPZTNVRkViVU1GUlE5QndHMWtKRllJWURpQ1UwUnBKVDhZaGFXYWJoc2tENzhWZw?oc=5\" target=\"_blank\"&gt;Bears are being driven into US towns in record numbers after drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-29T12:21:33.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNb1FVWFg4dHUzMWZmVXotWUoxNTE4MGQ1ZFhZdExvV2JlU0dwSmZMZ25FcjY5dzVKLTZETVBaQnZaLXFBS29EZ2Jfc0w0YWw1a2c1WHlHNXFoallfb1libC1LUFg3ekpySWp4M1A5OFJpVUFVWEtfempZODBNRDhtRmM2VVZJRHlhN29WakRHMFFVZGtZVGFEYy1yQ1k1Y3VGaTM1aTdkZ3Ntd0gtVDZia1pRZ3VaakNsWll0Vg?oc=5\" target=\"_blank\"&gt;Nepal resumes flood rescue, seeks technical help and billions of dollars&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-29T18:43:05.000Z",
           "score": 7
         },
         {
-          "title": "The race to stop England running out of water",
-          "link": "https://www.bbc.co.uk/news/articles/clyrv84yd9ko?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Who is to blame for the summer drought, and can England future-proof its water supplies?",
-          "published": "2026-08-29T14:50:35.000Z",
-          "score": 4
+          "title": "Flood waters rise in Nepal as rescuers search for survivors - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9MUXAxaDVwWHM1bnA0U2E0SUZIN1RqTG1JWHZzMVc1Unp0TGRQRnU3cHdpcVk3bGZmZTN3dDlfUlZFOEoyaXNXcnQyVDZlVkNUVDdRV3U1NGtqbzJjc1lWMEFhSlU4TVVnTUVQbmlNMlh5NHZTWlVqVXVYc3M?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE9MUXAxaDVwWHM1bnA0U2E0SUZIN1RqTG1JWHZzMVc1Unp0TGRQRnU3cHdpcVk3bGZmZTN3dDlfUlZFOEoyaXNXcnQyVDZlVkNUVDdRV3U1NGtqbzJjc1lWMEFhSlU4TVVnTUVQbmlNMlh5NHZTWlVqVXVYc3M?oc=5\" target=\"_blank\"&gt;Flood waters rise in Nepal as rescuers search for survivors&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-30T12:14:26.000Z",
+          "score": 7
         },
         {
-          "title": "Islanders asked to report sightings of rare eel",
-          "link": "https://www.bbc.co.uk/news/articles/cew91wykg2qo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The Nature Commission asks people to record sightings of the critically endangered eels.",
-          "published": "2026-08-29T11:04:45.000Z",
-          "score": 4
+          "title": "Nepal begins mass burials of unidentified flood victims as families seek missing - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQQVFHVmljdEdJUTJ0Z24zM21xcVM1QmdnVVo0ZDQtcHB2c0dMbVBoN18zZzdWVXcwMGp4LXRXRmF1TDVCUXJUTjFURnpEUlRqUTBRdkROajdPcUJLc213ejhQYm5BZ1J3TzRsbXEwY0duWmZwUGFHejhwd0RsRHVVRzdmU2JLc0ZzN1Qyd25IOF83RGlFQkdTWmhxSm9GaG10UG5WQjRFZkt6Q25SZ0dpN0FGcDJlZGtBbnpqR3k2T1VnSVR5UlJGZmFGWQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxQQVFHVmljdEdJUTJ0Z24zM21xcVM1QmdnVVo0ZDQtcHB2c0dMbVBoN18zZzdWVXcwMGp4LXRXRmF1TDVCUXJUTjFURnpEUlRqUTBRdkROajdPcUJLc213ejhQYm5BZ1J3TzRsbXEwY0duWmZwUGFHejhwd0RsRHVVRzdmU2JLc0ZzN1Qyd25IOF83RGlFQkdTWmhxSm9GaG10UG5WQjRFZkt6Q25SZ0dpN0FGcDJlZGtBbnpqR3k2T1VnSVR5UlJGZmFGWQ?oc=5\" target=\"_blank\"&gt;Nepal begins mass burials of unidentified flood victims as families seek missing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
+          "published": "2026-08-30T12:41:07.000Z",
+          "score": 7
         },
         {
-          "title": "‘The world needs to pay attention’: Nepalis and Tibetans in New York City respond to the Himalayan disaster",
-          "link": "https://www.theguardian.com/world/2026/aug/29/new-york-nepal-tibet-disaster",
+          "title": "Flooding devastated swathes of Indiana but response is hampered by politics",
+          "link": "https://www.theguardian.com/us-news/2026/aug/30/indiana-flooding-emergency-response",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Half the world away, a Himalayan diaspora reacts in sorrow and pitches in to help victims in their home countries&lt;/p&gt;&lt;p&gt;Geeta Tamang was getting ready for bed when her aunts shared news that upended her world.&lt;/p&gt;&lt;p&gt;“My aunts came into my room and told me what had happened,” said Tamang, a 24-year-old computer science student at Queens College. She lives in Jackson Heights, home to one of the largest Nepali and Tibetan communities in New York City.&lt;/p&gt; &lt;",
-          "published": "2026-08-29T13:43:05.000Z",
+          "description": "&lt;p&gt;Record inundations wrecked homes and took seven lives but Trump has not approved emergency aid and the state has cut funds for environmental agencies&lt;/p&gt;&lt;p&gt;It’s been 10 days since the floodwater receded from Cambridge City’s main street and yet signs of disaster are all around.&lt;/p&gt;&lt;p&gt;Abandoned cars, toilets and bathtubs are strewn across parks and side streets on a recent visit to the city. Garages have been lifted from their foundations and moved by the rushing ",
+          "published": "2026-08-30T12:00:55.000Z",
           "score": 2
         }
       ]
@@ -93,11 +108,19 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
+          "title": "Iceland votes against restarting EU membership talks",
+          "link": "https://www.bbc.co.uk/news/articles/c70le8ed1plo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Broadcaster RUV reports that 52.8% of voters rejected the government's proposal to resume accession talks.",
+          "published": "2026-08-30T14:45:05.000Z",
+          "score": 12
+        },
+        {
           "title": "Iceland voters reject EU accession talks",
           "link": "https://www.dw.com/en/iceland-voters-reject-eu-accession-talks/a-78560633?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "A nationwide referendum failed to win enough support to restart negotiations on European Union membership, despite geopolitical tensions in the North Atlantic.",
-          "published": "2026-08-30T09:52:00.000Z",
+          "published": "2026-08-30T10:21:00.000Z",
           "score": 8
         }
       ]
@@ -107,27 +130,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Iceland votes against restarting talks on joining EU",
-          "link": "https://www.bbc.co.uk/news/articles/c70le8ed1plo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Broadcaster RUV reports that 52.8% of voters rejected the government's proposal to resume talks.",
-          "published": "2026-08-30T09:49:05.000Z",
-          "score": 12
-        },
-        {
           "title": "Europe's central bankers fear more turbulence in testy U.S. relations - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOTFd1SEtUeS1UNHY5aUFHVk9FeS1NRzROLUZUQjlDVk9pOGdBcmtuNTB5ZUVmR1QyOWRkTm9HRXBmT3Q1M3ZvUEk3MDBRajJLNVhYb09tS2xNeGVhUFRVa3N1TkxmWHVVNWpyT1pGQU1xQU9lTlU2aVBtU05tUUpSVnZNZnIwT29idFNwcHhvTFMxSTJvOWdMSUt3MkhUNGhrM1JJb0ZtMFpnYjlNcFg3aFZOMy1aQWM?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOTFd1SEtUeS1UNHY5aUFHVk9FeS1NRzROLUZUQjlDVk9pOGdBcmtuNTB5ZUVmR1QyOWRkTm9HRXBmT3Q1M3ZvUEk3MDBRajJLNVhYb09tS2xNeGVhUFRVa3N1TkxmWHVVNWpyT1pGQU1xQU9lTlU2aVBtU05tUUpSVnZNZnIwT29idFNwcHhvTFMxSTJvOWdMSUt3MkhUNGhrM1JJb0ZtMFpnYjlNcFg3aFZOMy1aQWM?oc=5\" target=\"_blank\"&gt;Europe's central bankers fear more turbulence in testy U.S. relations&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-30T05:07:43.000Z",
-          "score": 8
-        },
-        {
-          "title": "Icelanders head to the polls divided on whether to start EU talks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5Sb2FqR0ZoeFNRWnpGS3IxUGdnQ1hVZ2NpTmZMTUFHa09OblBQZXMxWkdNUExJWUVBMzNaeXk3X1hTa2FXUWFKTUloQ2NMc1FhXzlmYk1OV3B6Znd6VWx4ekRyd3l1X1k1aFlrcExGb1ZfQ2twaXB3TW9POW4?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE5Sb2FqR0ZoeFNRWnpGS3IxUGdnQ1hVZ2NpTmZMTUFHa09OblBQZXMxWkdNUExJWUVBMzNaeXk3X1hTa2FXUWFKTUloQ2NMc1FhXzlmYk1OV3B6Znd6VWx4ekRyd3l1X1k1aFlrcExGb1ZfQ2twaXB3TW9POW4?oc=5\" target=\"_blank\"&gt;Icelanders head to the polls divided on whether to start EU talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-29T14:17:36.000Z",
+          "published": "2026-08-30T05:06:00.000Z",
           "score": 8
         },
         {
@@ -142,17 +149,33 @@
           "title": "Manhunt after shooting at Swiss rave kills woman, 22, and injures five",
           "link": "https://www.bbc.co.uk/news/articles/c9qr750je1go?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Five others in their twenties were injured after shots were fired in Aarau, near Zurich overnight.",
-          "published": "2026-08-30T09:15:35.000Z",
+          "description": "Five others in their twenties were injured after shots were fired at a techno event near Zurich.",
+          "published": "2026-08-30T12:44:08.000Z",
+          "score": 2
+        },
+        {
+          "title": "Canada installs large Lake Ontario sign in latest jab at US",
+          "link": "https://www.bbc.co.uk/news/articles/cpq09594vw7o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Ontario Premier Doug Ford unveiled a billboard on Canada's shoreline with the message: \"Lake Ontario. Now and Always.\"",
+          "published": "2026-08-30T14:25:43.000Z",
+          "score": 2
+        },
+        {
+          "title": "WhatsApp chat used to send cash for crime and extremism",
+          "link": "https://www.bbc.co.uk/news/articles/cgk57lg7566o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The WhatsApp money launderers arranged cash transfers in the UK and around the world with no paper trail.",
+          "published": "2026-08-30T04:59:56.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 409,
-    "articlesLast24h": 134,
-    "afterDedup": 112,
+    "totalArticlesScanned": 412,
+    "articlesLast24h": 129,
+    "afterDedup": 114,
     "feedsQueried": 19
   }
 }
