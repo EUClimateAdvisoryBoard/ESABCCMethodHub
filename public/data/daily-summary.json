@@ -1,26 +1,20 @@
 {
   "date": "2026-08-30",
-  "generatedAt": "2026-08-30T15:11:59.947Z",
+  "generatedAt": "2026-08-30T19:40:44.940Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 30 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Red-hot Royals chase series sweep of Guardians - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOQjl6bEJFdkVTYWlua3JsRXJGa01EWFpDbnMxOUNVMENDN3F0cnU3UnFvb3MtYi1oYVM3QVNmODBncnNxd1lHU1MyTk5zXzZhb1JOdVBkOUxtcEd2ekczbFJvSVhSY21vSXRfLXZLc0N1NHNQaFpQb3NQU2xIZzlrSnZaM2FkRUp6ZzFnVlF0OW9LcDdVUEVvTlhfYXVZZks5VGc?oc=5\" target=\"_blank\"&gt;Red-hot Royals chase series sweep of Guardians&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Why solar bonds are a bright idea | Letter",
+      "summary": "&lt;p&gt;A financial model that could cut the cost of installing solar panels for many homeowners is welcomed by &lt;strong&gt;Alexis Abramson&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The UK proposal to use “solar bonds” to make rooftop solar more affordable is a smart solution to a fundamental problem: the rising cost of capital (&lt;a href=\"https://www.theguardian.com/environment/2026/aug/21/cut-cost-of-loans-for-solar-panels-on-uk-homes-ministers-urged\"&gt;Cut cost of loans for solar panels on UK hom",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Nepal issues fresh flood warning as 3,000 still missing",
-      "summary": "Rescuers are trying to reach dozens of hydropower workers trapped in flooded tunnels, but have been hampered by further rainfall.",
+      "headline": "Nicola Jennings on Donald Trump, fossil fuels and climate disaster – cartoon",
+      "summary": "&lt;a href=\"https://www.theguardian.com/commentisfree/picture/2026/aug/30/nicola-jennings-donald-trump-fossil-fuels-climate-disaster-cartoon\"&gt;Continue reading...&lt;/a&gt;",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Russian-American heads Trump&#039;s planned Caucasus trade route",
-      "summary": "A Russian-born businessman heads the investment fund financing the so-called &quot;Trump Route,&quot; a planned corridor through Armenia linking Azerbaijan with Nakhchivan. Who is Konstantin Sokolov, and what role does he play?",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,11 +28,27 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Why solar bonds are a bright idea | Letter",
+          "link": "https://www.theguardian.com/environment/2026/aug/30/why-solar-bonds-are-a-bright-idea",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;A financial model that could cut the cost of installing solar panels for many homeowners is welcomed by &lt;strong&gt;Alexis Abramson&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The UK proposal to use “solar bonds” to make rooftop solar more affordable is a smart solution to a fundamental problem: the rising cost of capital (&lt;a href=\"https://www.theguardian.com/environment/2026/aug/21/cut-cost-of-loans-for-solar-panels-on-uk-homes-ministers-urged\"&gt;Cut cost of loans for solar panels on UK hom",
+          "published": "2026-08-30T16:16:57.000Z",
+          "score": 11
+        },
+        {
           "title": "Red-hot Royals chase series sweep of Guardians - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQjl6bEJFdkVTYWlua3JsRXJGa01EWFpDbnMxOUNVMENDN3F0cnU3UnFvb3MtYi1oYVM3QVNmODBncnNxd1lHU1MyTk5zXzZhb1JOdVBkOUxtcEd2ekczbFJvSVhSY21vSXRfLXZLc0N1NHNQaFpQb3NQU2xIZzlrSnZaM2FkRUp6ZzFnVlF0OW9LcDdVUEVvTlhfYXVZZks5VGc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOQjl6bEJFdkVTYWlua3JsRXJGa01EWFpDbnMxOUNVMENDN3F0cnU3UnFvb3MtYi1oYVM3QVNmODBncnNxd1lHU1MyTk5zXzZhb1JOdVBkOUxtcEd2ekczbFJvSVhSY21vSXRfLXZLc0N1NHNQaFpQb3NQU2xIZzlrSnZaM2FkRUp6ZzFnVlF0OW9LcDdVUEVvTlhfYXVZZks5VGc?oc=5\" target=\"_blank\"&gt;Red-hot Royals chase series sweep of Guardians&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-08-30T11:51:08.000Z",
+          "score": 7
+        },
+        {
+          "title": "Spain's Enric Mas triumphs in Vuelta stage nine, retains red jersey - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOMkN2ZDM0NHIxR0huREVfQmloMkZCZUlGUnl2RU9JajljdnIteDBxYklIdS1FZVAtZjJ3ZzRzdUhQRjdGanZUQ1FhWWJTbGRVR3FTa2xZMmRVVTI3cGdUb2d6Yko0NUV5TUxyTXllRklIZlFaR2hiZFFnYUhkTV8wX3NyN2N6SXZXMnBzeUZR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxOMkN2ZDM0NHIxR0huREVfQmloMkZCZUlGUnl2RU9JajljdnIteDBxYklIdS1FZVAtZjJ3ZzRzdUhQRjdGanZUQ1FhWWJTbGRVR3FTa2xZMmRVVTI3cGdUb2d6Yko0NUV5TUxyTXllRklIZlFaR2hiZFFnYUhkTV8wX3NyN2N6SXZXMnBzeUZR?oc=5\" target=\"_blank\"&gt;Spain's Enric Mas triumphs in Vuelta stage nine, retains red jersey&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-30T16:54:16.000Z",
           "score": 7
         }
       ]
@@ -48,6 +58,14 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Nicola Jennings on Donald Trump, fossil fuels and climate disaster – cartoon",
+          "link": "https://www.theguardian.com/commentisfree/picture/2026/aug/30/nicola-jennings-donald-trump-fossil-fuels-climate-disaster-cartoon",
+          "source": "The Guardian - Climate",
+          "description": "&lt;a href=\"https://www.theguardian.com/commentisfree/picture/2026/aug/30/nicola-jennings-donald-trump-fossil-fuels-climate-disaster-cartoon\"&gt;Continue reading...&lt;/a&gt;",
+          "published": "2026-08-30T15:36:06.000Z",
+          "score": 7
+        },
+        {
           "title": "Nepal issues fresh flood warning as 3,000 still missing",
           "link": "https://www.dw.com/en/nepal-issues-fresh-flood-warning-as-3-000-still-missing/a-78561068?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -56,52 +74,35 @@
           "score": 7
         },
         {
-          "title": "Nepal resumes flood rescue, seeks technical help and billions of dollars - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNb1FVWFg4dHUzMWZmVXotWUoxNTE4MGQ1ZFhZdExvV2JlU0dwSmZMZ25FcjY5dzVKLTZETVBaQnZaLXFBS29EZ2Jfc0w0YWw1a2c1WHlHNXFoallfb1libC1LUFg3ekpySWp4M1A5OFJpVUFVWEtfempZODBNRDhtRmM2VVZJRHlhN29WakRHMFFVZGtZVGFEYy1yQ1k1Y3VGaTM1aTdkZ3Ntd0gtVDZia1pRZ3VaakNsWll0Vg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNb1FVWFg4dHUzMWZmVXotWUoxNTE4MGQ1ZFhZdExvV2JlU0dwSmZMZ25FcjY5dzVKLTZETVBaQnZaLXFBS29EZ2Jfc0w0YWw1a2c1WHlHNXFoallfb1libC1LUFg3ekpySWp4M1A5OFJpVUFVWEtfempZODBNRDhtRmM2VVZJRHlhN29WakRHMFFVZGtZVGFEYy1yQ1k1Y3VGaTM1aTdkZ3Ntd0gtVDZia1pRZ3VaakNsWll0Vg?oc=5\" target=\"_blank\"&gt;Nepal resumes flood rescue, seeks technical help and billions of dollars&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-29T18:43:05.000Z",
-          "score": 7
-        },
-        {
-          "title": "Flood waters rise in Nepal as rescuers search for survivors - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9MUXAxaDVwWHM1bnA0U2E0SUZIN1RqTG1JWHZzMVc1Unp0TGRQRnU3cHdpcVk3bGZmZTN3dDlfUlZFOEoyaXNXcnQyVDZlVkNUVDdRV3U1NGtqbzJjc1lWMEFhSlU4TVVnTUVQbmlNMlh5NHZTWlVqVXVYc3M?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE9MUXAxaDVwWHM1bnA0U2E0SUZIN1RqTG1JWHZzMVc1Unp0TGRQRnU3cHdpcVk3bGZmZTN3dDlfUlZFOEoyaXNXcnQyVDZlVkNUVDdRV3U1NGtqbzJjc1lWMEFhSlU4TVVnTUVQbmlNMlh5NHZTWlVqVXVYc3M?oc=5\" target=\"_blank\"&gt;Flood waters rise in Nepal as rescuers search for survivors&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-30T12:14:26.000Z",
-          "score": 7
-        },
-        {
           "title": "Nepal begins mass burials of unidentified flood victims as families seek missing - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQQVFHVmljdEdJUTJ0Z24zM21xcVM1QmdnVVo0ZDQtcHB2c0dMbVBoN18zZzdWVXcwMGp4LXRXRmF1TDVCUXJUTjFURnpEUlRqUTBRdkROajdPcUJLc213ejhQYm5BZ1J3TzRsbXEwY0duWmZwUGFHejhwd0RsRHVVRzdmU2JLc0ZzN1Qyd25IOF83RGlFQkdTWmhxSm9GaG10UG5WQjRFZkt6Q25SZ0dpN0FGcDJlZGtBbnpqR3k2T1VnSVR5UlJGZmFGWQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxQQVFHVmljdEdJUTJ0Z24zM21xcVM1QmdnVVo0ZDQtcHB2c0dMbVBoN18zZzdWVXcwMGp4LXRXRmF1TDVCUXJUTjFURnpEUlRqUTBRdkROajdPcUJLc213ejhQYm5BZ1J3TzRsbXEwY0duWmZwUGFHejhwd0RsRHVVRzdmU2JLc0ZzN1Qyd25IOF83RGlFQkdTWmhxSm9GaG10UG5WQjRFZkt6Q25SZ0dpN0FGcDJlZGtBbnpqR3k2T1VnSVR5UlJGZmFGWQ?oc=5\" target=\"_blank\"&gt;Nepal begins mass burials of unidentified flood victims as families seek missing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
-          "published": "2026-08-30T12:41:07.000Z",
+          "published": "2026-08-30T14:33:34.000Z",
           "score": 7
         },
         {
-          "title": "Flooding devastated swathes of Indiana but response is hampered by politics",
-          "link": "https://www.theguardian.com/us-news/2026/aug/30/indiana-flooding-emergency-response",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Record inundations wrecked homes and took seven lives but Trump has not approved emergency aid and the state has cut funds for environmental agencies&lt;/p&gt;&lt;p&gt;It’s been 10 days since the floodwater receded from Cambridge City’s main street and yet signs of disaster are all around.&lt;/p&gt;&lt;p&gt;Abandoned cars, toilets and bathtubs are strewn across parks and side streets on a recent visit to the city. Garages have been lifted from their foundations and moved by the rushing ",
-          "published": "2026-08-30T12:00:55.000Z",
-          "score": 2
+          "title": "Before flood catastrophe, Nepal asked China for early warnings as risks mounted - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNV0RNRm1FcEdvZkdNd1U1OGExWlFqeE1fdFZEa0NrbUh4ZERYN21aem1oT1pNY3VQLUw4LTJZTDBkZFVsVWg1MUt6aHEyZlB0dHZPSk9DMDJsc3c3cFRTNVlBSGYybGp5b1lvTDZTazBUaVYxd1dDMkszMWtLZEh1SDBudVdSWUdwYTZ6NnFkajlFY1gwNExOTTdvb01ZenkybkE5emVBWUdJaWRiMjJoa0ZlYjE0Ymtha2t0MkVCUktlaUNZWFo4?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNV0RNRm1FcEdvZkdNd1U1OGExWlFqeE1fdFZEa0NrbUh4ZERYN21aem1oT1pNY3VQLUw4LTJZTDBkZFVsVWg1MUt6aHEyZlB0dHZPSk9DMDJsc3c3cFRTNVlBSGYybGp5b1lvTDZTazBUaVYxd1dDMkszMWtLZEh1SDBudVdSWUdwYTZ6NnFkajlFY1gwNExOTTdvb01ZenkybkE5emVBWUdJaWRiMjJoa0ZlYjE0Ymtha2t0MkVCUktlaUNZWFo4?oc=5\" target=\"_blank\"&gt;Before flood catastrophe, Nepal asked China for early warnings as risks mounted&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
+          "published": "2026-08-30T17:34:14.000Z",
+          "score": 7
+        },
+        {
+          "title": "Flood waters rise in Nepal as rescuers search for survivors - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9KMGcyX3YtVC1NaDU0ODlEZWl0cElndl9ETVBibER2R0VvZ2syenZQZW1IajU5dGVPbFl6WTB0Tm1nYlZ0MVh6XzMySG1ETlNTMGhVUTV3dEExeGU0Ty1sVjZYa3BrTXc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9KMGcyX3YtVC1NaDU0ODlEZWl0cElndl9ETVBibER2R0VvZ2syenZQZW1IajU5dGVPbFl6WTB0Tm1nYlZ0MVh6XzMySG1ETlNTMGhVUTV3dEExeGU0Ty1sVjZYa3BrTXc?oc=5\" target=\"_blank\"&gt;Flood waters rise in Nepal as rescuers search for survivors&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-30T12:14:27.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Russian-American heads Trump&#039;s planned Caucasus trade route",
-          "link": "https://www.dw.com/en/russian-american-heads-trump-s-planned-caucasus-trade-route/a-78547064?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A Russian-born businessman heads the investment fund financing the so-called &quot;Trump Route,&quot; a planned corridor through Armenia linking Azerbaijan with Nakhchivan. Who is Konstantin Sokolov, and what role does he play?",
-          "published": "2026-08-29T16:20:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -112,7 +113,7 @@
           "link": "https://www.bbc.co.uk/news/articles/c70le8ed1plo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Broadcaster RUV reports that 52.8% of voters rejected the government's proposal to resume accession talks.",
-          "published": "2026-08-30T14:45:05.000Z",
+          "published": "2026-08-30T16:11:44.000Z",
           "score": 12
         },
         {
@@ -122,6 +123,14 @@
           "description": "A nationwide referendum failed to win enough support to restart negotiations on European Union membership, despite geopolitical tensions in the North Atlantic.",
           "published": "2026-08-30T10:21:00.000Z",
           "score": 8
+        },
+        {
+          "title": "Iceland rejects EU-accession talks in close-fought referendum - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9YT1FDTy1xVTN0Um5NTnl2SDBGam1mOXZHMjFOdVFJLWlKVXBaY0RoOFUtLXoyQzBZV3NGbmoxMFJWcUNpRmlqN0ZNVmtIZGYyM2RxYU5BNzR0NnFRVWx4MFJ0cFVGeVRkay16NWNZb2RBT1pjNDRRY0lsNEQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE9YT1FDTy1xVTN0Um5NTnl2SDBGam1mOXZHMjFOdVFJLWlKVXBaY0RoOFUtLXoyQzBZV3NGbmoxMFJWcUNpRmlqN0ZNVmtIZGYyM2RxYU5BNzR0NnFRVWx4MFJ0cFVGeVRkay16NWNZb2RBT1pjNDRRY0lsNEQ?oc=5\" target=\"_blank\"&gt;Iceland rejects EU-accession talks in close-fought referendum&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-30T18:12:39.000Z",
+          "score": 8
         }
       ]
     },
@@ -129,6 +138,14 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "EU wants drones to spray pesticides — but it could backfire",
+          "link": "https://www.dw.com/en/eu-wants-drones-to-spray-pesticides-but-it-could-backfire/a-78557154?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The EU wants to lift a decades-old ban on spraying pesticides from the air, allowing drones to be used for greater precision. But experts warn the plan could lead to even more pesticides being used in agriculture.",
+          "published": "2026-08-30T15:11:00.000Z",
+          "score": 8
+        },
         {
           "title": "Europe's central bankers fear more turbulence in testy U.S. relations - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOTFd1SEtUeS1UNHY5aUFHVk9FeS1NRzROLUZUQjlDVk9pOGdBcmtuNTB5ZUVmR1QyOWRkTm9HRXBmT3Q1M3ZvUEk3MDBRajJLNVhYb09tS2xNeGVhUFRVa3N1TkxmWHVVNWpyT1pGQU1xQU9lTlU2aVBtU05tUUpSVnZNZnIwT29idFNwcHhvTFMxSTJvOWdMSUt3MkhUNGhrM1JJb0ZtMFpnYjlNcFg3aFZOMy1aQWM?oc=5",
@@ -146,36 +163,28 @@
           "score": 7
         },
         {
-          "title": "Manhunt after shooting at Swiss rave kills woman, 22, and injures five",
-          "link": "https://www.bbc.co.uk/news/articles/c9qr750je1go?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Five others in their twenties were injured after shots were fired at a techno event near Zurich.",
-          "published": "2026-08-30T12:44:08.000Z",
-          "score": 2
+          "title": "Pakistan says inaugural defence committee meeting to take place in Istanbul - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPYURxMVJxczJfRE5YU2ZGQnBqcHFYd3luVjRuenp3enhUVGFXNU5PRG0xTEY4Y0o4RndqME9abFRmbnBHUDEtNnVlR2FDX0haZXpSanlSaHl6N2dKazFSQlAwVTlDWUVfOUtEdUhNTDNKZ2QtSnlPWkJyMmlYRFpXTE5VWWNNdWNHWk9KdzU2T2VfYktKUkxzUVk4SG01czI0NGhVWU11aVlUVEdFWHB0OEpOc3p3NkktMnF3SmcyTUozdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPYURxMVJxczJfRE5YU2ZGQnBqcHFYd3luVjRuenp3enhUVGFXNU5PRG0xTEY4Y0o4RndqME9abFRmbnBHUDEtNnVlR2FDX0haZXpSanlSaHl6N2dKazFSQlAwVTlDWUVfOUtEdUhNTDNKZ2QtSnlPWkJyMmlYRFpXTE5VWWNNdWNHWk9KdzU2T2VfYktKUkxzUVk4SG01czI0NGhVWU11aVlUVEdFWHB0OEpOc3p3NkktMnF3SmcyTUozdw?oc=5\" target=\"_blank\"&gt;Pakistan says inaugural defence committee meeting to take place in Istanbul&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-30T18:01:46.000Z",
+          "score": 6
         },
         {
-          "title": "Canada installs large Lake Ontario sign in latest jab at US",
-          "link": "https://www.bbc.co.uk/news/articles/cpq09594vw7o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Nasa launches new space telescope able to see 100 times more than Hubble",
+          "link": "https://www.bbc.co.uk/news/articles/ce87e55vgpjo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Ontario Premier Doug Ford unveiled a billboard on Canada's shoreline with the message: \"Lake Ontario. Now and Always.\"",
-          "published": "2026-08-30T14:25:43.000Z",
-          "score": 2
-        },
-        {
-          "title": "WhatsApp chat used to send cash for crime and extremism",
-          "link": "https://www.bbc.co.uk/news/articles/cgk57lg7566o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The WhatsApp money launderers arranged cash transfers in the UK and around the world with no paper trail.",
-          "published": "2026-08-30T04:59:56.000Z",
-          "score": 2
+          "description": "The US space agency's telescope is starting a multi-year mission to create a new map of the universe and learn more about dark energy and dark matter.",
+          "published": "2026-08-30T18:53:53.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 412,
-    "articlesLast24h": 129,
-    "afterDedup": 114,
+    "totalArticlesScanned": 408,
+    "articlesLast24h": 133,
+    "afterDedup": 115,
     "feedsQueried": 19
   }
 }
