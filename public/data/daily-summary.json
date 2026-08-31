@@ -1,12 +1,12 @@
 {
   "date": "2026-08-31",
-  "generatedAt": "2026-08-31T11:26:53.485Z",
+  "generatedAt": "2026-08-31T21:46:01.691Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 31 August 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Why solar bonds are a bright idea | Letter",
-      "summary": "&lt;p&gt;A financial model that could cut the cost of installing solar panels for many homeowners is welcomed by &lt;strong&gt;Alexis Abramson&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The UK proposal to use “solar bonds” to make rooftop solar more affordable is a smart solution to a fundamental problem: the rising cost of capital (&lt;a href=\"https://www.theguardian.com/environment/2026/aug/21/cut-cost-of-loans-for-solar-panels-on-uk-homes-ministers-urged\"&gt;Cut cost of loans for solar panels on UK hom",
+      "headline": "‘Breakthrough’ as Turkmenistan starts fixing ‘mindboggling’ methane mega-leaks",
+      "summary": "&lt;p&gt;Secretive state begins repairs on ageing facilities after being revealed as worst country for leaks of potent greenhouse gas&lt;/p&gt;&lt;p&gt;Turkmenistan has started plugging the mega-leaks of methane that spew from its ageing oil and gas facilities, the latest UN data shows, in a move hailed as a breakthrough.&lt;/p&gt;&lt;p&gt;Methane, also called natural or fossil gas, is a potent greenhouse gas. It traps &lt;a href=\"https://www.theguardian.com/environment/2025/nov/16/methane-cuts-",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Ukraine's former defence chief seeks US investment for defence tech fund, FT reports - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxObFFWa1NKZk9lb1hMejA1R1lhT3FHTjhjNTluNWNfZXRNc2pVXzAyZjQ5UGQxTHZ0OElqR0hOYXlGaXd4cnJXQXZ6RW1ldDNuYktjZEVLR3pmZlVQQXlGQnZtb19kYm5tZnVkLXN2SWJ1bXVkcGZIOEZ5eklqaVI5X3JCOTJzMUFGanRkcG5zZHBuM2NHUlJrMTNUOF9QVW9sVGJIaDJibUJxU2YybDFwUmR6QXBfMkdVYWtXTkpLOFlTRUZCRTB3ckxkMUl0NTVhV092WVhJYmQ?oc=5\" target=\"_blank\"&gt;Ukraine's former defence chief seeks US investment for defence tech fund, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"",
+      "headline": "EXCLUSIVE: Turkey's wealth fund to become shareholder in local EV maker TOGG, Vestel and Anadolu to exit - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNV2RrbjUxQWdINldfLTBrZlJmZExhOWxZUWZOeWwtWHdmX0x4TVhYU0FQV3dOVWtRNzYtS05BcjhwVW5XN3o3dno2ZFRkSnVvRVdnbzlxaEs3UWxUTG9ud2NDU3Z5OUhhTU4wd3dHUDNfZEVyRGxKYjkxWnNWRkdSWWx3TGdHMFNRaDBVUTZPb1A5UGJ1Y0MySjBTWXJjSWxGVVl2MjNxd0Q5Ym5vWnZRbVV1UjRNSVlxRm53bTdmMG9lSWQyVUVHMng4eTI?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Turkey's wealth fund to become shareholder in local EV maker TOGG, Vestel and Anadolu to exit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font col",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,14 +34,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Why solar bonds are a bright idea | Letter",
-          "link": "https://www.theguardian.com/environment/2026/aug/30/why-solar-bonds-are-a-bright-idea",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;A financial model that could cut the cost of installing solar panels for many homeowners is welcomed by &lt;strong&gt;Alexis Abramson&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The UK proposal to use “solar bonds” to make rooftop solar more affordable is a smart solution to a fundamental problem: the rising cost of capital (&lt;a href=\"https://www.theguardian.com/environment/2026/aug/21/cut-cost-of-loans-for-solar-panels-on-uk-homes-ministers-urged\"&gt;Cut cost of loans for solar panels on UK hom",
-          "published": "2026-08-30T16:16:57.000Z",
-          "score": 11
-        },
-        {
           "title": "‘Breakthrough’ as Turkmenistan starts fixing ‘mindboggling’ methane mega-leaks",
           "link": "https://www.theguardian.com/environment/2026/aug/31/turkmenistan-methane-leaks-un-alerts-mars",
           "source": "The Guardian - Climate",
@@ -50,19 +42,11 @@
           "score": 7
         },
         {
-          "title": "North Korea says hostile US policy unchanged, vows to strengthen nuclear force - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQb0F3OEVRMm9EclRnQjJYYUtMcWU3b0VkNnVOV1BFZFc3Y2hFakhtdFlQX0pkOHRyUF9ZdVExclFmNmY3d21mMWJGSG1HRmxMV2V3M25iX3B0OW9vV1pFTk9FLU1TMWRxX2YzR0lhcEl3eHN1S1QySzViZV9sRll1SFZFSmhUVVhHM0FBeW5NQmlGb0p3a0FzbXo3RDhVRXhCYWNtekNua3duOTZ2OHd6dVBlem5WR0J1TUdwZlZjeUs4SURnT3dUZlNKelB6Zw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQb0F3OEVRMm9EclRnQjJYYUtMcWU3b0VkNnVOV1BFZFc3Y2hFakhtdFlQX0pkOHRyUF9ZdVExclFmNmY3d21mMWJGSG1HRmxMV2V3M25iX3B0OW9vV1pFTk9FLU1TMWRxX2YzR0lhcEl3eHN1S1QySzViZV9sRll1SFZFSmhUVVhHM0FBeW5NQmlGb0p3a0FzbXo3RDhVRXhCYWNtekNua3duOTZ2OHd6dVBlem5WR0J1TUdwZlZjeUs4SURnT3dUZlNKelB6Zw?oc=5\" target=\"_blank\"&gt;North Korea says hostile US policy unchanged, vows to strengthen nuclear force&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
-          "published": "2026-08-31T05:18:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "South Korea's SK On signs energy storage battery deal with US firm NeoVolta Power - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPdV81NkdQRngzcGlaNDR4bzBlQVJJWEVTRlFjLU55MWx5VW1SR3pTY1lIMGV3RlFUbEZySHIzVU5XeEl5ZklEZGFwRTZmWGhlR2p2WW55WXMwOGZJZG5vbVE5Z0luT0lNcEVKWktDdnA0d25leWxyTVpBZ0JELWpraW5hYXI4ZXNNLWRVRXBjMGVvUERONmpiV3N3a2JQenp3WWlBamFhMno2QU1RQUJUVWN0NF81TWJJT2lHOWhiRldxMW8w?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPdV81NkdQRngzcGlaNDR4bzBlQVJJWEVTRlFjLU55MWx5VW1SR3pTY1lIMGV3RlFUbEZySHIzVU5XeEl5ZklEZGFwRTZmWGhlR2p2WW55WXMwOGZJZG5vbVE5Z0luT0lNcEVKWktDdnA0d25leWxyTVpBZ0JELWpraW5hYXI4ZXNNLWRVRXBjMGVvUERONmpiV3N3a2JQenp3WWlBamFhMno2QU1RQUJUVWN0NF81TWJJT2lHOWhiRldxMW8w?oc=5\" target=\"_blank\"&gt;South Korea's SK On signs energy storage battery deal with US firm NeoVolta Power&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-          "published": "2026-08-30T23:05:00.000Z",
+          "title": "How to tackle the climate impact of datacentres | Letters",
+          "link": "https://www.theguardian.com/uk-news/2026/aug/31/how-to-tackle-the-climate-impact-of-datacentres",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Datacentres should generate their own power and control their emissions, writes &lt;strong&gt;Richard Lamming&lt;/strong&gt;, while &lt;strong&gt;Michael McClelland &lt;/strong&gt;says we should reduce our digital communication. Plus a letter from &lt;strong&gt;Malcolm Fraser&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The case of future datacentres demanding more electricity than the entire United Kingdom (&lt;a href=\"https://www.theguardian.com/uk-news/2026/aug/25/planned-datacentres-carbon-emis",
+          "published": "2026-08-31T16:10:40.000Z",
           "score": 7
         }
       ]
@@ -80,6 +64,14 @@
           "score": 13
         },
         {
+          "title": "Cross-party talks needed to tackle climate crisis, say Lib Dems",
+          "link": "https://www.theguardian.com/environment/2026/aug/31/talks-el-nino-climate-crisis-lib-dems-andy-burnham",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Andy Burnham urged to seek consensus over response to extreme heat and forthcoming ‘super El Niño’&lt;/p&gt;&lt;p&gt;Andy Burnham should call a cross-party meeting to discuss the UK’s response to worsening extreme weather, including the &lt;a href=\"https://www.theguardian.com/environment/2026/aug/27/el-nino-climate-patterns-fossil-fuels\"&gt;forthcoming ‘super El Niño’&lt;/a&gt;, the Liberal Democrats have said.&lt;/p&gt;&lt;p&gt;The prime minister &lt;a href=\"https://www.theguardian.com",
+          "published": "2026-08-31T11:48:23.000Z",
+          "score": 7
+        },
+        {
           "title": "The Nepal floods seem a world away – but make no mistake, climate breakdown will affect us all | Nesrine Malik",
           "link": "https://www.theguardian.com/commentisfree/2026/aug/31/climate-crisis-nepal-floods-india-caribbean",
           "source": "The Guardian - Climate",
@@ -88,27 +80,19 @@
           "score": 7
         },
         {
-          "title": "Nicola Jennings on Donald Trump, fossil fuels and climate disaster – cartoon",
-          "link": "https://www.theguardian.com/commentisfree/picture/2026/aug/30/nicola-jennings-donald-trump-fossil-fuels-climate-disaster-cartoon",
-          "source": "The Guardian - Climate",
-          "description": "&lt;a href=\"https://www.theguardian.com/commentisfree/picture/2026/aug/30/nicola-jennings-donald-trump-fossil-fuels-climate-disaster-cartoon\"&gt;Continue reading...&lt;/a&gt;",
-          "published": "2026-08-30T15:36:06.000Z",
-          "score": 7
-        },
-        {
-          "title": "One dead and more than a dozen missing after 'terrifying' flash flood hits Grand Canyon",
+          "title": "Two dead and more than a dozen missing after 'terrifying' flash flood hits Grand Canyon",
           "link": "https://www.bbc.co.uk/news/articles/clylkjyez1do?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "\"It was a beautiful day - and then people were screaming,\" one hiker tells the BBC, as 15 people are missing.",
-          "published": "2026-08-31T08:17:25.000Z",
+          "description": "\"It was a beautiful day - and then people were screaming,\" one hiker tells the BBC, as 14 people are missing.",
+          "published": "2026-08-31T20:47:38.000Z",
           "score": 7
         },
         {
-          "title": "Nepal flood relief vehicles trapped as heavy rain turns roads to mud",
-          "link": "https://www.bbc.co.uk/news/videos/c5ydwy004v0o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Heavy rain has hampered relief efforts in Nepal where thousands remain missing after flash floods hit its border with Tibet.",
-          "published": "2026-08-30T20:40:02.000Z",
+          "title": "How China buried Tibet flood images after Nepal disaster",
+          "link": "https://www.dw.com/en/how-china-buried-tibet-flood-images-after-nepal-disaster/a-78576472?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "In Tibet, a digital crackdown followed the deadly flood that has devastated communities along the China-Nepal border. Censors erased viral footage while Chinese state media flooded platforms with official content.",
+          "published": "2026-08-31T14:19:00.000Z",
           "score": 7
         }
       ]
@@ -118,19 +102,27 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Ukraine's former defence chief seeks US investment for defence tech fund, FT reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxObFFWa1NKZk9lb1hMejA1R1lhT3FHTjhjNTluNWNfZXRNc2pVXzAyZjQ5UGQxTHZ0OElqR0hOYXlGaXd4cnJXQXZ6RW1ldDNuYktjZEVLR3pmZlVQQXlGQnZtb19kYm5tZnVkLXN2SWJ1bXVkcGZIOEZ5eklqaVI5X3JCOTJzMUFGanRkcG5zZHBuM2NHUlJrMTNUOF9QVW9sVGJIaDJibUJxU2YybDFwUmR6QXBfMkdVYWtXTkpLOFlTRUZCRTB3ckxkMUl0NTVhV092WVhJYmQ?oc=5",
+          "title": "EXCLUSIVE: Turkey's wealth fund to become shareholder in local EV maker TOGG, Vestel and Anadolu to exit - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNV2RrbjUxQWdINldfLTBrZlJmZExhOWxZUWZOeWwtWHdmX0x4TVhYU0FQV3dOVWtRNzYtS05BcjhwVW5XN3o3dno2ZFRkSnVvRVdnbzlxaEs3UWxUTG9ud2NDU3Z5OUhhTU4wd3dHUDNfZEVyRGxKYjkxWnNWRkdSWWx3TGdHMFNRaDBVUTZPb1A5UGJ1Y0MySjBTWXJjSWxGVVl2MjNxd0Q5Ym5vWnZRbVV1UjRNSVlxRm53bTdmMG9lSWQyVUVHMng4eTI?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxObFFWa1NKZk9lb1hMejA1R1lhT3FHTjhjNTluNWNfZXRNc2pVXzAyZjQ5UGQxTHZ0OElqR0hOYXlGaXd4cnJXQXZ6RW1ldDNuYktjZEVLR3pmZlVQQXlGQnZtb19kYm5tZnVkLXN2SWJ1bXVkcGZIOEZ5eklqaVI5X3JCOTJzMUFGanRkcG5zZHBuM2NHUlJrMTNUOF9QVW9sVGJIaDJibUJxU2YybDFwUmR6QXBfMkdVYWtXTkpLOFlTRUZCRTB3ckxkMUl0NTVhV092WVhJYmQ?oc=5\" target=\"_blank\"&gt;Ukraine's former defence chief seeks US investment for defence tech fund, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"",
-          "published": "2026-08-30T18:29:21.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNV2RrbjUxQWdINldfLTBrZlJmZExhOWxZUWZOeWwtWHdmX0x4TVhYU0FQV3dOVWtRNzYtS05BcjhwVW5XN3o3dno2ZFRkSnVvRVdnbzlxaEs3UWxUTG9ud2NDU3Z5OUhhTU4wd3dHUDNfZEVyRGxKYjkxWnNWRkdSWWx3TGdHMFNRaDBVUTZPb1A5UGJ1Y0MySjBTWXJjSWxGVVl2MjNxd0Q5Ym5vWnZRbVV1UjRNSVlxRm53bTdmMG9lSWQyVUVHMng4eTI?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Turkey's wealth fund to become shareholder in local EV maker TOGG, Vestel and Anadolu to exit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font col",
+          "published": "2026-08-31T11:36:03.000Z",
+          "score": 7
+        },
+        {
+          "title": "Fed's Warsh says past global savings glut is turning into investment surge - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWi1zcHNfcVRRSzFXS0FDQi1DeVRraC1uYXdwRXBMVnNtbHBjeklnaktpYlR3YWxsSXZOTV9vZ19sUUZxM3JjS2tsWFJrNG9EekxpaGZQMzRuQ2t5TzUzcDBrLUdGaThiMnM4b2ZKVjF6RlU5aTFHWTRRN0NtUlpKd1NreXltRzdPQ3NyQXZELVVOcjhBckNyLUJYYklhallNcnBkQXdhTGsxMHlDVHp2TW42Yzd5M1Zzd2JwS21Qd0J3OXRR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQWi1zcHNfcVRRSzFXS0FDQi1DeVRraC1uYXdwRXBMVnNtbHBjeklnaktpYlR3YWxsSXZOTV9vZ19sUUZxM3JjS2tsWFJrNG9EekxpaGZQMzRuQ2t5TzUzcDBrLUdGaThiMnM4b2ZKVjF6RlU5aTFHWTRRN0NtUlpKd1NreXltRzdPQ3NyQXZELVVOcjhBckNyLUJYYklhallNcnBkQXdhTGsxMHlDVHp2TW42Yzd5M1Zzd2JwS21Qd0J3OXRR?oc=5\" target=\"_blank\"&gt;Fed's Warsh says past global savings glut is turning into investment surge&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-31T19:01:43.000Z",
           "score": 2
         },
         {
-          "title": "Foreign investment in Germany rose 50% in 2025, IW says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQSzdJTmExTkd5eGFjYXNnYXlWem55LUc5eVFvRVZOU3FpSlU2TkEwU0NfcENNNUpkaVV6Y0xxYnd4TUZoaUY2bGNleGp6VjBtQ2NkTFFIalVKOGh1cWFCZkxWSEZ2UnZvOVpPaUZpSWVwaUhiZ3dhdkJUc21oWFpfY1ZDSklOdTlmX2hnNjZjNzNJYllUcmJR?oc=5",
+          "title": "India smashes growth forecasts as investment surges in April-June - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOOWt2ZFNZVXBBeVItLUpMOVktRlBOME11YWduTkoySi1LV3F2Tk95U1Y3MnVYOXVSejd2OEJnZ0RlVlZXcEpSWVNScXlVWWQwb0REbldJSlNEZ1hkLXhwejNHV0I3R1Fqemt2TFJJTmZpTjJHNmV3QkNNUWt4a0Y3Zg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxQSzdJTmExTkd5eGFjYXNnYXlWem55LUc5eVFvRVZOU3FpSlU2TkEwU0NfcENNNUpkaVV6Y0xxYnd4TUZoaUY2bGNleGp6VjBtQ2NkTFFIalVKOGh1cWFCZkxWSEZ2UnZvOVpPaUZpSWVwaUhiZ3dhdkJUc21oWFpfY1ZDSklOdTlmX2hnNjZjNzNJYllUcmJR?oc=5\" target=\"_blank\"&gt;Foreign investment in Germany rose 50% in 2025, IW says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-31T05:37:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxOOWt2ZFNZVXBBeVItLUpMOVktRlBOME11YWduTkoySi1LV3F2Tk95U1Y3MnVYOXVSejd2OEJnZ0RlVlZXcEpSWVNScXlVWWQwb0REbldJSlNEZ1hkLXhwejNHV0I3R1Fqemt2TFJJTmZpTjJHNmV3QkNNUWt4a0Y3Zg?oc=5\" target=\"_blank\"&gt;India smashes growth forecasts as investment surges in April-June&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-31T19:28:27.000Z",
           "score": 2
         }
       ]
@@ -140,12 +132,28 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Iceland votes against restarting EU membership talks",
-          "link": "https://www.bbc.co.uk/news/articles/c70le8ed1plo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Broadcaster RUV reports that 52.8% of voters rejected the government's proposal to resume accession talks.",
-          "published": "2026-08-30T16:11:44.000Z",
-          "score": 12
+          "title": "EU puts ChatGPT, Reddit and Roblox under stricter rules",
+          "link": "https://www.dw.com/en/eu-puts-chatgpt-reddit-and-roblox-under-stricter-rules/a-78577019?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "ChatGPT, Reddit and Roblox now have over 45 million average monthly users in Europe, making them subject to the Digital Services Act.",
+          "published": "2026-08-31T13:36:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Italy extends Schengen suspension with Spain",
+          "link": "https://www.dw.com/en/italy-extends-schengen-suspension-with-spain/a-78573029?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Italy&#039;s far-right government announced that it will continue to exclude Spanish nationals from the free movement agreement for another 15 days.",
+          "published": "2026-08-31T11:51:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Iceland to seek new security partnerships after voters reject EU accession talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWE53YkdvdnV0c3pzMXpqclZDdTlaQTVoenpoNDhETzNydlNjdjJiUFpHSlV1bFRqeFFNRG5fRHhyTjZIdFJiYjJLRU9YVnBDZTI0TDZsdXVDSHVLTTB1RXpLbTNfcmQ2dzB3cHR6TWJTeER0Y1hPb296a3lNdmxzbmZWOUo0VU55cXpTYllOTzdSZUswdmtiMDlyTFh0OW12M2ZZdFdSdzk3aDUtTWJ4RG5DQ0JacGdoT3o0?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWE53YkdvdnV0c3pzMXpqclZDdTlaQTVoenpoNDhETzNydlNjdjJiUFpHSlV1bFRqeFFNRG5fRHhyTjZIdFJiYjJLRU9YVnBDZTI0TDZsdXVDSHVLTTB1RXpLbTNfcmQ2dzB3cHR6TWJTeER0Y1hPb296a3lNdmxzbmZWOUo0VU55cXpTYllOTzdSZUswdmtiMDlyTFh0OW12M2ZZdFdSdzk3aDUtTWJ4RG5DQ0JacGdoT3o0?oc=5\" target=\"_blank\"&gt;Iceland to seek new security partnerships after voters reject EU accession talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-31T18:20:40.000Z",
+          "score": 8
         }
       ]
     },
@@ -154,19 +162,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU wants drones to spray pesticides, but it could backfire",
-          "link": "https://www.dw.com/en/eu-wants-drones-to-spray-pesticides-but-it-could-backfire/a-78557154?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU wants to lift a decades-old ban on spraying pesticides from the air, allowing drones to be used for greater precision. But experts warn the plan could lead to even more pesticides being used in agriculture.",
-          "published": "2026-08-30T15:11:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Europe expands AI computing network with €390 million order from France's Bull - Reuters",
+          "title": "EU orders AI supercomputer from Bull as demand exceeds capacity - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOaG84MDdUdXlvbzJldndVZWpseUMyeGloNXBCeGZZVG5qYkNlMlJyY0lyakQyWUpvSXhrSHp3UF9idUFsVG43bXRJemIxSTNmOU5Cd2VuNjdJaVJuQzUteHN5NWgzV3JzZjB1NXpFeUlWc2J0cTZCLWs0SzB2SDZaeDNheFdwQzIyUFRzdHR0cm9Tci1oRGhuRm01NVZOamU1M2llSHl5X0Z4QWNsbENHZUhsNkdielRXM3F3Vw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOaG84MDdUdXlvbzJldndVZWpseUMyeGloNXBCeGZZVG5qYkNlMlJyY0lyakQyWUpvSXhrSHp3UF9idUFsVG43bXRJemIxSTNmOU5Cd2VuNjdJaVJuQzUteHN5NWgzV3JzZjB1NXpFeUlWc2J0cTZCLWs0SzB2SDZaeDNheFdwQzIyUFRzdHR0cm9Tci1oRGhuRm01NVZOamU1M2llSHl5X0Z4QWNsbENHZUhsNkdielRXM3F3Vw?oc=5\" target=\"_blank\"&gt;Europe expands AI computing network with €390 million order from France's Bull&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-31T07:05:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOaG84MDdUdXlvbzJldndVZWpseUMyeGloNXBCeGZZVG5qYkNlMlJyY0lyakQyWUpvSXhrSHp3UF9idUFsVG43bXRJemIxSTNmOU5Cd2VuNjdJaVJuQzUteHN5NWgzV3JzZjB1NXpFeUlWc2J0cTZCLWs0SzB2SDZaeDNheFdwQzIyUFRzdHR0cm9Tci1oRGhuRm01NVZOamU1M2llSHl5X0Z4QWNsbENHZUhsNkdielRXM3F3Vw?oc=5\" target=\"_blank\"&gt;EU orders AI supercomputer from Bull as demand exceeds capacity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-31T13:39:56.000Z",
           "score": 8
         },
         {
@@ -174,7 +174,7 @@
           "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSWJncHI5S2dKdUNUVWFDZi1BbkNENXJ6VEVNSXY4VmNrc0I3N05TSnBNRXpCeGVkVXNkNHp2UmRfckNPdjQwcUFsQlc4dS1VLXd2T1NxdE11T0ptRHZ6eTltN3RYVjBlOUx6SDE4T0FHbXZPSlpYN04yeHYtcW1wa1N2VldHM0NISnFEMHZMOXBPLWV2TXVhVHR6YTZ0eFFNWlE?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPSWJncHI5S2dKdUNUVWFDZi1BbkNENXJ6VEVNSXY4VmNrc0I3N05TSnBNRXpCeGVkVXNkNHp2UmRfckNPdjQwcUFsQlc4dS1VLXd2T1NxdE11T0ptRHZ6eTltN3RYVjBlOUx6SDE4T0FHbXZPSlpYN04yeHYtcW1wa1N2VldHM0NISnFEMHZMOXBPLWV2TXVhVHR6YTZ0eFFNWlE?oc=5\" target=\"_blank\"&gt;ChatGPT, Reddit, Roblox to adhere to EU's \"very large platform\" rules&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-31T10:10:07.000Z",
+          "published": "2026-08-31T20:15:55.000Z",
           "score": 8
         },
         {
@@ -186,20 +186,28 @@
           "score": 8
         },
         {
-          "title": "Germany's OHB lands first major EU IRIS² satellite contract worth nearly €1 billion - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcUhTUmRDVDBMcVFlNW41cWF0SjROR0g4X040NnpBRmNzLU1UQTJHbkhldWpQRkQycjJ0d0tna25yR05BcGR4a1NXMEFqYzZvUmZsTEdqSEVGX252SDRHUEtBV1NiMklxTml6UkR0TG00T1Q1LVMzZlMyRTZxMVhHekFPZUVrSkcyVm03WkdTb0JkcEJjNEF0VE5TeGh2Y1dvNnJPeUFkLXd6V3RwZzFNcGFsRDRYQkVuQmplWVV3Y1UzMEk4eWNLbzJSMWNRcVpJ?oc=5",
+          "title": "EU aviation safety agency narrows Gulf airspace warning - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbVczeUFtaTZ6UjkwS0lSdkI1ZE9xU195ZE5FTDJQZ01QdGNtelZHc3YwUXhfMDFwUUJidGFCTmtrVElnYjRNaU84N0FRb2I2cEdOQTE2dnBySDZFVFhxdlV3MkxSSmRURzRBSG9ENHA1Qkc4VTFZeUo4ZXJycjRDek9uX0ZIWGk1ZlJkWEZUZ3dQTEdlanFMVVhhSzJadmJJTjZLS3FwWTc1NGRTaFE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcUhTUmRDVDBMcVFlNW41cWF0SjROR0g4X040NnpBRmNzLU1UQTJHbkhldWpQRkQycjJ0d0tna25yR05BcGR4a1NXMEFqYzZvUmZsTEdqSEVGX252SDRHUEtBV1NiMklxTml6UkR0TG00T1Q1LVMzZlMyRTZxMVhHekFPZUVrSkcyVm03WkdTb0JkcEJjNEF0VE5TeGh2Y1dvNnJPeUFkLXd6V3RwZzFNcGFsRDRYQkVuQmplWVV3Y1UzMEk4eWNLbzJSMWNRcVpJ?oc=5\" target=\"_blank\"&gt;Germany's OHB lands first major EU IRIS² satellite contract worth nearly €1 billion&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;",
-          "published": "2026-08-31T07:56:45.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNbVczeUFtaTZ6UjkwS0lSdkI1ZE9xU195ZE5FTDJQZ01QdGNtelZHc3YwUXhfMDFwUUJidGFCTmtrVElnYjRNaU84N0FRb2I2cEdOQTE2dnBySDZFVFhxdlV3MkxSSmRURzRBSG9ENHA1Qkc4VTFZeUo4ZXJycjRDek9uX0ZIWGk1ZlJkWEZUZ3dQTEdlanFMVVhhSzJadmJJTjZLS3FwWTc1NGRTaFE?oc=5\" target=\"_blank\"&gt;EU aviation safety agency narrows Gulf airspace warning&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-31T12:41:30.000Z",
           "score": 8
+        },
+        {
+          "title": "Qatar's first-quarter GDP falls 7% as Iran war weighs on energy production - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOUDRKOEZ0M3JrM0M1RTFRSHZubzF4SF9UX21fUWNJNjJIc1pSZnVORnIxaHNzdENEbEtiLV85NG9sQVlDdjBaWW00ZlpDUzhzT0RGbHdScUliNnlsUlEzNHpaSHNXTEx4S1pyTm5MRGNERDQ1czI1dzZkOG4xVkVPTUVpb1ZiaEk0b1FIY2c3OURDYUpETjItd19sbHpXMDRubDhiRGNVZFQ3X2hLTFhMbmo2bExSc3NXRmlFSQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOUDRKOEZ0M3JrM0M1RTFRSHZubzF4SF9UX21fUWNJNjJIc1pSZnVORnIxaHNzdENEbEtiLV85NG9sQVlDdjBaWW00ZlpDUzhzT0RGbHdScUliNnlsUlEzNHpaSHNXTEx4S1pyTm5MRGNERDQ1czI1dzZkOG4xVkVPTUVpb1ZiaEk0b1FIY2c3OURDYUpETjItd19sbHpXMDRubDhiRGNVZFQ3X2hLTFhMbmo2bExSc3NXRmlFSQ?oc=5\" target=\"_blank\"&gt;Qatar's first-quarter GDP falls 7% as Iran war weighs on energy production&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-31T10:31:43.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 399,
-    "articlesLast24h": 148,
-    "afterDedup": 137,
+    "totalArticlesScanned": 402,
+    "articlesLast24h": 152,
+    "afterDedup": 147,
     "feedsQueried": 19
   }
 }
