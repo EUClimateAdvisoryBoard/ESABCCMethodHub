@@ -1,6 +1,6 @@
 {
   "date": "2026-09-01",
-  "generatedAt": "2026-09-01T09:51:05.414Z",
+  "generatedAt": "2026-09-01T15:28:28.528Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 1 September 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "Explainer: The CMIP7 emissions scenarios – and how they explore future climate change",
-      "summary": "Every six to seven years, climate modelling groups around the world run a coordinated set of simulations that explore how&#8230; The post Explainer: The CMIP7 emissions scenarios – and how they explore future climate change appeared first on Carbon Brief.",
+      "headline": "Speech by Commissioner Jozef Síkela at the Opening of the EU Arctic Forum in Brussels",
+      "summary": "European Commission Speech Brussels, 01 Sep 2026 Thank you, Commissioner Kadis.\r\nDistinguished guests,Ladies and gentlemen,\r\nWe meet after a summer that showed us again how exposed Europe is to climate change.\r\nF...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "EXCLUSIVE: Turkey's wealth fund to become shareholder in local EV maker TOGG, Vestel and Anadolu to exit - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNV2RrbjUxQWdINldfLTBrZlJmZExhOWxZUWZOeWwtWHdmX0x4TVhYU0FQV3dOVWtRNzYtS05BcjhwVW5XN3o3dno2ZFRkSnVvRVdnbzlxaEs3UWxUTG9ud2NDU3Z5OUhhTU4wd3dHUDNfZEVyRGxKYjkxWnNWRkdSWWx3TGdHMFNRaDBVUTZPb1A5UGJ1Y0MySjBTWXJjSWxGVVl2MjNxd0Q5Ym5vWnZRbVV1UjRNSVlxRm53bTdmMG9lSWQyVUVHMng4eTI?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Turkey's wealth fund to become shareholder in local EV maker TOGG, Vestel and Anadolu to exit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font col",
+      "headline": "Key player Kushner regrets the way FIFA private investment proposal played out - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZ0xaSGRSMjE1aV9sbHdtcGpyRVdYclphdVR5VnhPTXNfeFJUQUZNdGFNSC01cFBYc01RUGxaellSM1VEMlVhOXQ0OGY3YkVqNU4tRFJmZDBqMjdON2FOcEM2NGdKSEF1QkJPQlJEUEZsQXZUNXl6a1BZUmE2dDNXTXI5RG1IZTV4VW9Ga1NtRXVMc3RZODE5amg1eGJSTkMyOGNUc1kwLXltSThOeTkxXzUwemM2U3VtTU1fQUduanhTQQ?oc=5\" target=\"_blank\"&gt;Key player Kushner regrets the way FIFA private investment proposal played out&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -56,6 +56,14 @@
           "description": "&lt;p&gt;Datacentres should generate their own power and control their emissions, writes &lt;strong&gt;Richard Lamming&lt;/strong&gt;, while &lt;strong&gt;Michael McClelland &lt;/strong&gt;says we should reduce our digital communication. Plus a letter from &lt;strong&gt;Malcolm Fraser&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The case of future datacentres demanding more electricity than the entire United Kingdom (&lt;a href=\"https://www.theguardian.com/uk-news/2026/aug/25/planned-datacentres-carbon-emis",
           "published": "2026-08-31T16:10:40.000Z",
           "score": 7
+        },
+        {
+          "title": "Germany news: Explosive devices found near power plant",
+          "link": "https://www.dw.com/en/germany-news-explosive-devices-found-near-power-plant/live-78583741?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Police say they found unconventional explosive and incendiary devices near the Jänschwalde power plant in Brandenburg. Meanwhile, Germany&#039;s top diplomat says Algeria could become an important supplier of gas.",
+          "published": "2026-09-01T10:07:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -63,6 +71,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Speech by Commissioner Jozef Síkela at the Opening of the EU Arctic Forum in Brussels",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1784",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 01 Sep 2026 Thank you, Commissioner Kadis.\r\nDistinguished guests,Ladies and gentlemen,\r\nWe meet after a summer that showed us again how exposed Europe is to climate change.\r\nF...",
+          "published": "2026-09-01T10:41:08.000Z",
+          "score": 23
+        },
         {
           "title": "Explainer: The CMIP7 emissions scenarios – and how they explore future climate change",
           "link": "https://www.carbonbrief.org/explainer-the-cmip7-emissions-scenarios-and-how-they-explore-future-climate-change",
@@ -88,20 +104,12 @@
           "score": 11
         },
         {
-          "title": "Cross-party talks needed to tackle climate crisis, say Lib Dems",
-          "link": "https://www.theguardian.com/environment/2026/aug/31/talks-el-nino-climate-crisis-lib-dems-andy-burnham",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Andy Burnham urged to seek consensus over response to extreme heat and forthcoming ‘super El Niño’&lt;/p&gt;&lt;p&gt;Andy Burnham should call a cross-party meeting to discuss the UK’s response to worsening extreme weather, including the &lt;a href=\"https://www.theguardian.com/environment/2026/aug/27/el-nino-climate-patterns-fossil-fuels\"&gt;forthcoming ‘super El Niño’&lt;/a&gt;, the Liberal Democrats have said.&lt;/p&gt;&lt;p&gt;The prime minister &lt;a href=\"https://www.theguardian.com",
-          "published": "2026-08-31T11:48:23.000Z",
-          "score": 7
-        },
-        {
-          "title": "Nepal’s glacial collapse foreshadowed a future of climate disaster | Michael Mann",
-          "link": "https://www.theguardian.com/commentisfree/2026/sep/01/nepal-flooding-climate-disaster",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The deluge capped a summer of extreme climate events, from deadly heatwaves to wildfires. We must take action now&lt;/p&gt;&lt;p&gt;For millennia, the high peaks of the Himalayas were held together by an invisible, frozen cement – permafrost and glacial ice that bound ancient rock into seemingly unshakable fortresses. But as the planet continues to warm, this alpine glue is liquefying.&lt;/p&gt;&lt;p&gt;The glacial collapse and deluge in Nepal and Tibet was &lt;a href=\"https://www.thegu",
-          "published": "2026-09-01T09:00:05.000Z",
-          "score": 7
+          "title": "From firefighting to future-proofing: Preventing wildfires must be the priority",
+          "link": "https://www.climatechangenews.com/2026/09/01/from-firefighting-to-future-proofing-preventing-wildfires-must-be-the-priority/",
+          "source": "Climate Home News",
+          "description": "While many countries remain locked in a reactive cycle of disaster response, public policy can shift investment upstream to build resilience and cut risks The post From firefighting to future-proofing: Preventing wildfires must be the priority appeared first on Climate Home News.",
+          "published": "2026-09-01T13:54:36.000Z",
+          "score": 10
         }
       ]
     },
@@ -110,35 +118,27 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "EXCLUSIVE: Turkey's wealth fund to become shareholder in local EV maker TOGG, Vestel and Anadolu to exit - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNV2RrbjUxQWdINldfLTBrZlJmZExhOWxZUWZOeWwtWHdmX0x4TVhYU0FQV3dOVWtRNzYtS05BcjhwVW5XN3o3dno2ZFRkSnVvRVdnbzlxaEs3UWxUTG9ud2NDU3Z5OUhhTU4wd3dHUDNfZEVyRGxKYjkxWnNWRkdSWWx3TGdHMFNRaDBVUTZPb1A5UGJ1Y0MySjBTWXJjSWxGVVl2MjNxd0Q5Ym5vWnZRbVV1UjRNSVlxRm53bTdmMG9lSWQyVUVHMng4eTI?oc=5",
+          "title": "Key player Kushner regrets the way FIFA private investment proposal played out - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZ0xaSGRSMjE1aV9sbHdtcGpyRVdYclphdVR5VnhPTXNfeFJUQUZNdGFNSC01cFBYc01RUGxaellSM1VEMlVhOXQ0OGY3YkVqNU4tRFJmZDBqMjdON2FOcEM2NGdKSEF1QkJPQlJEUEZsQXZUNXl6a1BZUmE2dDNXTXI5RG1IZTV4VW9Ga1NtRXVMc3RZODE5amg1eGJSTkMyOGNUc1kwLXltSThOeTkxXzUwemM2U3VtTU1fQUduanhTQQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNV2RrbjUxQWdINldfLTBrZlJmZExhOWxZUWZOeWwtWHdmX0x4TVhYU0FQV3dOVWtRNzYtS05BcjhwVW5XN3o3dno2ZFRkSnVvRVdnbzlxaEs3UWxUTG9ud2NDU3Z5OUhhTU4wd3dHUDNfZEVyRGxKYjkxWnNWRkdSWWx3TGdHMFNRaDBVUTZPb1A5UGJ1Y0MySjBTWXJjSWxGVVl2MjNxd0Q5Ym5vWnZRbVV1UjRNSVlxRm53bTdmMG9lSWQyVUVHMng4eTI?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Turkey's wealth fund to become shareholder in local EV maker TOGG, Vestel and Anadolu to exit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font col",
-          "published": "2026-08-31T11:36:03.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZ0xaSGRSMjE1aV9sbHdtcGpyRVdYclphdVR5VnhPTXNfeFJUQUZNdGFNSC01cFBYc01RUGxaellSM1VEMlVhOXQ0OGY3YkVqNU4tRFJmZDBqMjdON2FOcEM2NGdKSEF1QkJPQlJEUEZsQXZUNXl6a1BZUmE2dDNXTXI5RG1IZTV4VW9Ga1NtRXVMc3RZODE5amg1eGJSTkMyOGNUc1kwLXltSThOeTkxXzUwemM2U3VtTU1fQUduanhTQQ?oc=5\" target=\"_blank\"&gt;Key player Kushner regrets the way FIFA private investment proposal played out&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-01T01:44:10.000Z",
+          "score": 6
         },
         {
           "title": "New Zealand, US to fund Cook Islands port upgrade - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNRC1pM01aSVhXWmhaT2VaOHFGNUp2VWtnb2JLRml5TWJmRkJZTl9OeUtyMVpvaVFZczdUSkZEQk1Gd1VTWHJMeER3N1g4OGM0ajQ1NVRNLUpsb3MzaU9VYnROY1ZIWU5wSTh6dGRUdnd3cURlTEY0LUJXcDVNSElxbXVJcWtrOW9fS05QSnZZaHFyNXZHSmdPbDhZVXVpS0U1UWc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNRC1pM01aSVhXWmhaT2VaOHFGNUp2VWtnb2JLRml5TWJmRkJZTl9OeUtyMVpvaVFZczdUSkZEQk1Gd1VTWHJMeER3N1g4OGM0ajQ1NVRNLUpsb3MzaU9VYnROY1ZIWU5wSTh6dGRUdnd3cURlTEY0LUJXcDVNSElxbXVJcWtrOW9fS05QSnZZaHFyNXZHSmdPbDhZVXVpS0U1UWc?oc=5\" target=\"_blank\"&gt;New Zealand, US to fund Cook Islands port upgrade&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-01T01:50:00.000Z",
+          "published": "2026-09-01T03:33:01.000Z",
           "score": 2
         },
         {
-          "title": "Fed's Warsh says past global savings glut is turning into investment surge - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWi1zcHNfcVRRSzFXS0FDQi1DeVRraC1uYXdwRXBMVnNtbHBjeklnaktpYlR3YWxsSXZOTV9vZ19sUUZxM3JjS2tsWFJrNG9EekxpaGZQMzRuQ2t5TzUzcDBrLUdGaThiMnM4b2ZKVjF6RlU5aTFHWTRRN0NtUlpKd1NreXltRzdPQ3NyQXZELVVOcjhBckNyLUJYYklhallNcnBkQXdhTGsxMHlDVHp2TW42Yzd5M1Zzd2JwS21Qd0J3OXRR?oc=5",
+          "title": "South Korea proposes record $597 billion 2027 budget to supercharge AI investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTFc4bTExbGQweGt4OHNVVjRRS2RlcmN3dDBDWFVzeTFfd3BNUHhXT09ORzVzd2hVbnhlZVI5MlNpOWZrNUxHSGtjWTBsai13R1ZzaHpSUnAtLVRaNUljdmdqTDVsOElKR3ByQ3Rka3ZxaEhsSEpSNldBVm0xSVlVenBKV3VRaTdteDJxY3dUUmF1ZVM2NjBLSEpIQXlrTEZrSnNiVHdQX2JOSDJfVjFocWZjSVJfMjcxYkxTMw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQWi1zcHNfcVRRSzFXS0FDQi1DeVRraC1uYXdwRXBMVnNtbHBjeklnaktpYlR3YWxsSXZOTV9vZ19sUUZxM3JjS2tsWFJrNG9EekxpaGZQMzRuQ2t5TzUzcDBrLUdGaThiMnM4b2ZKVjF6RlU5aTFHWTRRN0NtUlpKd1NreXltRzdPQ3NyQXZELVVOcjhBckNyLUJYYklhallNcnBkQXdhTGsxMHlDVHp2TW42Yzd5M1Zzd2JwS21Qd0J3OXRR?oc=5\" target=\"_blank\"&gt;Fed's Warsh says past global savings glut is turning into investment surge&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-31T19:01:43.000Z",
-          "score": 2
-        },
-        {
-          "title": "Ares raises $4 billion for Japan logistics fund in unit's largest fundraise - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZ1lSd2VLQVBJcWhMVDdNV1BMRk5tRFdQdUJKV19TODRlclJEN1RnNTR6dFhWNjZhQm1mbW5VcmVxbzhzdkVRU0JkMXBOTVduS2Jzek1SczloWWY4QjIwRDFGT1JHcTIyN01zRGdEMWdOUTBOQXZRazU5Q0JpSWFMM1RVby0wVUJGejVveXNQSEdlRHlKUzZNM1o5OUdjZ0UzVjF6VXEwZjhzZXcycENNY3FscnBkVGoycjEyWnl3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQZ1lSd2VLQVBJcWhMVDdNV1BMRk5tRFdQdUJKV19TODRlclJEN1RnNTR6dFhWNjZhQm1mbW5VcmVxbzhzdkVRU0JkMXBOTVduS2Jzek1SczloWWY4QjIwRDFGT1JHcTIyN01zRGdEMWdOUTBOQXZRazU5Q0JpSWFMM1RVby0wVUJGejVveXNQSEdlRHlKUzZNM1o5OUdjZ0UzVjF6VXEwZjhzZXcycENNY3FscnBkVGoycjEyWnl3?oc=5\" target=\"_blank\"&gt;Ares raises $4 billion for Japan logistics fund in unit's largest fundraise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-31T22:08:27.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPTFc4bTExbGQweGt4OHNVVjRRS2RlcmN3dDBDWFVzeTFfd3BNUHhXT09ORzVzd2hVbnhlZVI5MlNpOWZrNUxHSGtjWTBsai13R1ZzaHpSUnAtLVRaNUljdmdqTDVsOElKR3ByQ3Rka3ZxaEhsSEpSNldBVm0xSVlVenBKV3VRaTdteDJxY3dUUmF1ZVM2NjBLSEpIQXlrTEZrSnNiVHdQX2JOSDJfVjFocWZjSVJfMjcxYkxTMw?oc=5\" target=\"_blank\"&gt;South Korea proposes record $597 billion 2027 budget to supercharge AI investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-01T06:48:13.000Z",
           "score": 2
         }
       ]
@@ -148,20 +148,12 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "EU puts ChatGPT, Reddit and Roblox under stricter rules",
-          "link": "https://www.dw.com/en/eu-puts-chatgpt-reddit-and-roblox-under-stricter-rules/a-78577019?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "ChatGPT, Reddit and Roblox now have over 45 million average monthly users in Europe, making them subject to the Digital Services Act.",
-          "published": "2026-08-31T13:36:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Italy extends Schengen suspension with Spain",
-          "link": "https://www.dw.com/en/italy-extends-schengen-suspension-with-spain/a-78573029?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Italy&#039;s far-right government announced that it will continue to exclude Spanish nationals from the free movement agreement for another 15 days.",
-          "published": "2026-08-31T11:51:00.000Z",
-          "score": 8
+          "title": "Ukraine parliament fails to pass parcel tax law tied to IMF, EU funding - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZDFPb01fMEJTdWFPVEk2Mmc3SVBJWTByeXJmZG1jSVdQOEJ1TFZpaXJrYkNLbV9ObGlMbHVLdEJfWnROVDVGTHpjNUliRmd4OWJ4dzRzYnd4Z0dkRTRBY0plR2JjWGJBU0pPakxpT1JMcjdwcHVfWjVoNFFhczVZNl9fS3N0OTBad0tRekRrZFI1YU1TRGkwT1hNQjRFclIwNTBrZ1pGRThXZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZDFPb01fMEJTdWFPVEk2Mmc3SVBJWTByeXJmZG1jSVdQOEJ1TFZpaXJrYkNLbV9ObGlMbHVLdEJfWnROVDVGTHpjNUliRmd4OWJ4dzRzYnd4Z0dkRTRBY0plR2JjWGJBU0pPakxpT1JMcjdwcHVfWjVoNFFhczVZNl9fS3N0OTBad0tRekRrZFI1YU1TRGkwT1hNQjRFclIwNTBrZ1pGRThXZw?oc=5\" target=\"_blank\"&gt;Ukraine parliament fails to pass parcel tax law tied to IMF, EU funding&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-01T12:16:31.000Z",
+          "score": 12
         },
         {
           "title": "Iceland to seek new security partnerships after voters reject EU accession talks - Reuters",
@@ -178,14 +170,6 @@
           "description": "Amazon responded to the lawsuit, arguing the US Federal Trade Commission \"misunderstands\" their ad market.",
           "published": "2026-08-31T21:28:49.000Z",
           "score": 4
-        },
-        {
-          "title": "Ukraine updates: Russia hits Kyiv for sixth straight day",
-          "link": "https://www.dw.com/en/ukraine-updates-russia-hits-kyiv-for-sixth-straight-day/live-78582421?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Deadly attacks both in Ukraine and Russia continue as European Union defense ministers discuss the &quot;hybrid&quot; threat from Moscow in Europe. Follow DW for more.",
-          "published": "2026-09-01T06:34:00.000Z",
-          "score": 4
         }
       ]
     },
@@ -194,27 +178,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU orders AI supercomputer from Bull as demand exceeds capacity - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOaG84MDdUdXlvbzJldndVZWpseUMyeGloNXBCeGZZVG5qYkNlMlJyY0lyakQyWUpvSXhrSHp3UF9idUFsVG43bXRJemIxSTNmOU5Cd2VuNjdJaVJuQzUteHN5NWgzV3JzZjB1NXpFeUlWc2J0cTZCLWs0SzB2SDZaeDNheFdwQzIyUFRzdHR0cm9Tci1oRGhuRm01NVZOamU1M2llSHl5X0Z4QWNsbENHZUhsNkdielRXM3F3Vw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOaG84MDdUdXlvbzJldndVZWpseUMyeGloNXBCeGZZVG5qYkNlMlJyY0lyakQyWUpvSXhrSHp3UF9idUFsVG43bXRJemIxSTNmOU5Cd2VuNjdJaVJuQzUteHN5NWgzV3JzZjB1NXpFeUlWc2J0cTZCLWs0SzB2SDZaeDNheFdwQzIyUFRzdHR0cm9Tci1oRGhuRm01NVZOamU1M2llSHl5X0Z4QWNsbENHZUhsNkdielRXM3F3Vw?oc=5\" target=\"_blank\"&gt;EU orders AI supercomputer from Bull as demand exceeds capacity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-31T13:39:56.000Z",
+          "title": "Norway&#039;s new King Haakon VIII takes oath in parliament",
+          "link": "https://www.dw.com/en/norway-s-new-king-haakon-viii-takes-oath-in-parliament/a-78606923?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The new king swore to uphold the constitution in parliament in Oslo, the first major institutional step of his reign. Haakon VIII&#039;s wife Queen Mette-Marit had to skip the event in the aftermath of her lung transplant.",
+          "published": "2026-09-01T12:23:00.000Z",
           "score": 8
         },
         {
-          "title": "EU aviation safety agency narrows Gulf airspace warning - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbVczeUFtaTZ6UjkwS0lSdkI1ZE9xU195ZE5FTDJQZ01QdGNtelZHc3YwUXhfMDFwUUJidGFCTmtrVElnYjRNaU84N0FRb2I2cEdOQTE2dnBySDZFVFhxdlV3MkxSSmRURzRBSG9ENHA1Qkc4VTFZeUo4ZXJycjRDek9uX0ZIWGk1ZlJkWEZUZ3dQTEdlanFMVVhhSzJadmJJTjZLS3FwWTc1NGRTaFE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNbVczeUFtaTZ6UjkwS0lSdkI1ZE9xU195ZE5FTDJQZ01QdGNtelZHc3YwUXhfMDFwUUJidGFCTmtrVElnYjRNaU84N0FRb2I2cEdOQTE2dnBySDZFVFhxdlV3MkxSSmRURzRBSG9ENHA1Qkc4VTFZeUo4ZXJycjRDek9uX0ZIWGk1ZlJkWEZUZ3dQTEdlanFMVVhhSzJadmJJTjZLS3FwWTc1NGRTaFE?oc=5\" target=\"_blank\"&gt;EU aviation safety agency narrows Gulf airspace warning&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-31T12:41:30.000Z",
-          "score": 8
-        },
-        {
-          "title": "Trump administration plans $4 million for right-wing media in Europe, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVGswbWJvSDVEV0RVVENfOE5QX1BNUXhwRDNteUlJbVNNSEt5OWpKbTZmRXQ0NE9rbkI4SHFVOG9TVVdWQVJvX2c0cV84TGNib24tZURBb191cXNJZEpLdW5OcGxXOG5selZGNjU3TVBvN1ozTGotTFNGTWlRc0M5a09UaVVtMWRFNzJMZWJTaThGaE1NeHRpWk1TZDJ6UEFZajA5Y0drSHNJWGdkc25FS0lPMzltR2M?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNVGswbWJvSDVEV0RVVENfOE5QX1BNUXhwRDNteUlJbVNNSEt5OWpKbTZmRXQ0NE9rbkI4SHFVOG9TVVdWQVJvX2c0cV84TGNib24tZURBb191cXNJZEpLdW5OcGxXOG5selZGNjU3TVBvN1ozTGotTFNGTWlRc0M5a09UaVVtMWRFNzJMZWJTaThGaE1NeHRpWk1TZDJ6UEFZajA5Y0drSHNJWGdkc25FS0lPMzltR2M?oc=5\" target=\"_blank\"&gt;Trump administration plans $4 million for right-wing media in Europe, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-08-31T22:32:50.000Z",
+          "title": "US irks Germany, Europe with Russian G20 invite, press bans",
+          "link": "https://www.dw.com/en/us-irks-germany-europe-with-russian-g20-invite-press-bans/a-78583919?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Russia&#039;s finance minister is at the G20 meeting in Asheville but some key US press corps members are not. The mood was already tense amid the lengthy Iran war and Trump&#039;s renewed beef with neighbor Canada.",
+          "published": "2026-09-01T10:23:00.000Z",
           "score": 8
         },
         {
@@ -226,20 +202,28 @@
           "score": 8
         },
         {
-          "title": "Bond selloff deepens as rising energy prices stoke inflation fears - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUzRjcDczTGxqaGRleWZNeUwtZnpOTjRjNWhmSEt2YkQtY1ZwaDdhZ2RxX0hCWEZZdXpPSmlWZW45ZVBHM2lsMU9XalYtNEl1cGxpWjVhVTR2cDU1ajlNMzRJb3FZaGZ4akprMWhPNmd4cmJFOFI1Q29iWlI0ZnFXNXljcw?oc=5",
+          "title": "Norway's new king takes oath before parliament after Harald's death - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPUnIySndhcW1yNFZwdXFBbXUtc3QxQnAtVVF1dXlYRW1sY1ZMNHNjUW9BUkFhSUtIZFFNVzM5MTl3dWE3d0c3RGxlcHdOc3ZyNFhXeXNQZjBQcFp1UVduQVI5UFJxeDB2UTR2SVVWRW9udnA5Wm1GZWUyOFJFeDdTU25UdnFFM3BWMlViMGUxbTN5X245SlpFRS1wSV9ZM0FrNGlKZVRCN3dKRFdtTE1zeTlENGk?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPUzRjcDczTGxqaGRleWZNeUwtZnpOTjRjNWhmSEt2YkQtY1ZwaDdhZ2RxX0hCWEZZdXpPSmlWZW45ZVBHM2lsMU9XalYtNEl1cGxpWjVhVTR2cDU1ajlNMzRJb3FZaGZ4akprMWhPNmd4cmJFOFI1Q29iWlI0ZnFXNXljcw?oc=5\" target=\"_blank\"&gt;Bond selloff deepens as rising energy prices stoke inflation fears&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-01T01:46:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPUnIySndhcW1yNFZwdXFBbXUtc3QxQnAtVVF1dXlYRW1sY1ZMNHNjUW9BUkFhSUtIZFFNVzM5MTl3dWE3d0c3RGxlcHdOc3ZyNFhXeXNQZjBQcFp1UVduQVI5UFJxeDB2UTR2SVVWRW9udnA5Wm1GZWUyOFJFeDdTU25UdnFFM3BWMlViMGUxbTN5X245SlpFRS1wSV9ZM0FrNGlKZVRCN3dKRFdtTE1zeTlENGk?oc=5\" target=\"_blank\"&gt;Norway's new king takes oath before parliament after Harald's death&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-01T12:33:32.000Z",
+          "score": 8
+        },
+        {
+          "title": "Trump administration plans $4 million for right-wing media in Europe, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVGswbWJvSDVEV0RVVENfOE5QX1BNUXhwRDNteUlJbVNNSEt5OWpKbTZmRXQ0NE9rbkI4SHFVOG9TVVdWQVJvX2c0cV84TGNib24tZURBb191cXNJZEpLdW5OcGxXOG5selZGNjU3TVBvN1ozTGotTFNGTWlRc0M5a09UaVVtMWRFNzJMZWJTaThGaE1NeHRpWk1TZDJ6UEFZajA5Y0drSHNJWGdkc25FS0lPMzltR2M?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNVGswbWJvSDVEV0RVVENfOE5QX1BNUXhwRDNteUlJbVNNSEt5OWpKbTZmRXQ0NE9rbkI4SHFVOG9TVVdWQVJvX2c0cV84TGNib24tZURBb191cXNJZEpLdW5OcGxXOG5selZGNjU3TVBvN1ozTGotTFNGTWlRc0M5a09UaVVtMWRFNzJMZWJTaThGaE1NeHRpWk1TZDJ6UEFZajA5Y0drSHNJWGdkc25FS0lPMzltR2M?oc=5\" target=\"_blank\"&gt;Trump administration plans $4 million for right-wing media in Europe, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-08-31T22:32:50.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 408,
-    "articlesLast24h": 167,
-    "afterDedup": 163,
+    "totalArticlesScanned": 418,
+    "articlesLast24h": 170,
+    "afterDedup": 165,
     "feedsQueried": 19
   }
 }
