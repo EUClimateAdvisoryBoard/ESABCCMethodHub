@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T11:00:49.089Z",
+  "generatedAt": "2026-09-01T09:31:04.935Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -394,45 +394,6 @@
           "score": 4,
           "matched": [
             "industrial decarbonization"
-          ]
-        }
-      ]
-    },
-    {
-      "doi": "10.1088/1748-9326/ae84e8",
-      "title": "An assessment of the alignment of the COP28 energy pledges with the Paris Agreement Goals",
-      "journal": "Environmental Research Letters",
-      "authors": "Anastasis Giannousakis, Roberto Schaeffer, Alice D Bella et al.",
-      "published": "2026-07-01",
-      "url": "https://doi.org/10.1088/1748-9326/ae84e8",
-      "abstract": "COP28 marked the first time that climate negotiations at the highest level, i.e. an official Conference of the Parties’ (COP) decision, indicated clear energy-related milestones for urgent climate action by adopting specific renewable energy and energy efficiency targets for 2030, and phasing down fossil fuels by 2050. These milestones are meant to serve as yardsticks to guide the path towards mitigating climate change and meeting the Paris Agreement (PA) goals. We assess the alignment of COP28 energy outcomes with the PA goals using several leading Integrated Assessment Models (IAMs) featuring high technological, sectoral, and regional detail. This detailed assessment could inform country- and technology-specific target design, which is becoming increasingly important in a fragmented world and under growing uncertainty regarding the prioritization of climate protection in governmental agendas. We additionally use and quantify novel transformation narratives such as “electrification” versus “combustion”, which could help develop a new generation of demand-side COP mitigation targets.",
-      "suggestedOn": "2026-07-02",
-      "projects": [
-        {
-          "projectId": "policy-gap-2-0",
-          "score": 4,
-          "matched": [
-            "paris agreement"
-          ]
-        }
-      ]
-    },
-    {
-      "doi": "10.1016/j.joule.2026.102542",
-      "title": "Accelerated pathways for China’s industrial decarbonization lower system costs and preserve the carbon budget",
-      "journal": "Joule",
-      "authors": "Xinyuan Liu, Yan Yan, Xiao Wu et al.",
-      "published": "2026-07",
-      "url": "https://doi.org/10.1016/j.joule.2026.102542",
-      "abstract": "",
-      "suggestedOn": "2026-07-02",
-      "projects": [
-        {
-          "projectId": "policy-gap-2-0",
-          "score": 6,
-          "matched": [
-            "carbon budget",
-            "decarbonization"
           ]
         }
       ]
