@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T09:47:49.725Z",
+  "generatedAt": "2026-09-01T11:09:34.761Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
@@ -244,16 +244,56 @@
       "sourceTitle": "LeadIT Green Steel Tracker · project database (2026 Q1) · cumulative EU-27 count",
       "sourceUrl": "https://www.industrytransition.org/green-steel-tracker/",
       "note": "Cumulative count of EU-27 projects by announcement year, from the tracker’s own XLSX export. Reproduces the report’s 2023 count to within 8% (52 vs 48); spliced so the report baseline is unchanged.",
+      "status": "error",
+      "message": "Cannot find package 'jszip' imported from /home/runner/work/ESABCCMethodHub/ESABCCMethodHub/scripts/esabcc-indicators/refresh-from-sources.mjs"
+    },
+    {
+      "id": "esabcc-i2-cement-use",
+      "sourceTitle": "Cement Europe (formerly Cembureau), Key Facts & Figures · \"Cement Production And Consumption EU 27 & Cement Europe 2000-2024\" · CONSUMPTION EU27 dataset",
+      "sourceUrl": "https://www.cementeurope.eu/about-us/key-facts-figures/",
+      "note": "Direct — the chart’s inline dataset IS the report’s series, extended: it reproduces every year the report carries to the tonne (2005 = 232,290,000 t vs the report’s 232.3 Mt; 2013 = 142.2; 2020 = 159.2; 2021 = 170.5). The 2024 value (148.1 Mt) is the figure Cement Europe states in prose in its 2025 Activity Report. Still no CSV/XLSX/API — the numbers are a Chart.js dataset in the page HTML — so the parse is anchored on the dataset label, not its position.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 163.8
+        },
+        {
+          "year": 2023,
+          "value": 150.8
+        },
+        {
+          "year": 2024,
+          "value": 148.1
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i7b-cement-projects",
+      "sourceTitle": "Cement Europe, Map of Innovation Projects · EU-27 projects in the page’s inline `markers` array",
+      "sourceUrl": "https://www.cementeurope.eu/innovation-projects/",
+      "note": "Snapshot, not a rebuilt series: the map carries no announcement date (its only year is the plant’s Operational Date), so the count is stamped with the run year. The report’s 62-in-2023 cannot be reproduced from the current map, and the step to this value is part growth and part re-curation.",
       "status": "updated",
       "baseYear": 2023,
       "newPoints": [
         {
-          "year": 2024,
-          "value": 54
-        },
+          "year": 2026,
+          "value": 114
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i7c-chemicals-projects",
+      "sourceTitle": "Cefic, Low-Carbon Technologies Projects Map · /wp-json/wp/v2/gips, projects with at least one EU-27 country tag",
+      "sourceUrl": "https://cefic.org/solutions-explained/low-carbon-technologies-projects/",
+      "note": "Snapshot, not a rebuilt series: the only date on a record is its website posting date, and those cluster in the twice-yearly batches Cefic republishes the map in, so they date the curation and not the announcement. Counted as projects carrying at least one EU-27 country tag (several are multi-country).",
+      "status": "updated",
+      "baseYear": 2023,
+      "newPoints": [
         {
-          "year": 2025,
-          "value": 56
+          "year": 2026,
+          "value": 215
         }
       ]
     },
@@ -314,26 +354,8 @@
       "sourceTitle": "Eurofer, European Steel in Figures (newest edition) · apparent steel consumption, chart data labels",
       "sourceUrl": "https://www.eurofer.eu/publications/brochures-booklets-and-factsheets/european-steel-in-figures-2026",
       "note": "Direct — the chart’s data labels are the published figures (’000 t → Mt), and the 2021 anchor reproduces the report at 1.009×. The series row is identified by matching the report’s own 2016-2020 values, so an edition that reorders the page cannot silently swap in real consumption. Edition discovered from the publications listing each run.",
-      "status": "updated",
-      "baseYear": 2021,
-      "newPoints": [
-        {
-          "year": 2022,
-          "value": 138.4
-        },
-        {
-          "year": 2023,
-          "value": 130.1
-        },
-        {
-          "year": 2024,
-          "value": 128.7
-        },
-        {
-          "year": 2025,
-          "value": 134.4
-        }
-      ]
+      "status": "error",
+      "message": "Cannot find package 'pdfjs-dist' imported from /home/runner/work/ESABCCMethodHub/ESABCCMethodHub/scripts/esabcc-indicators/refresh-from-sources.mjs"
     },
     {
       "id": "esabcc-a2-dairy-ghg",
@@ -436,128 +458,48 @@
       "sourceTitle": "FAOSTAT Food Balance Sheets · bovine meat, food use, EU-27 sum",
       "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
       "note": "EU-27 summed from member states (FAOSTAT publishes no EU aggregate; Cyprus comes from the Asia file). 1000 t → Mt. Spliced (anchor 2020 1.029×).",
-      "status": "updated",
-      "baseYear": 2020,
-      "newPoints": [
-        {
-          "year": 2021,
-          "value": 6.132
-        },
-        {
-          "year": 2022,
-          "value": 6.081
-        },
-        {
-          "year": 2023,
-          "value": 5.867
-        }
-      ]
+      "status": "error",
+      "message": "Cannot find package 'jszip' imported from /home/runner/work/ESABCCMethodHub/ESABCCMethodHub/scripts/esabcc-indicators/refresh-from-sources.mjs"
     },
     {
       "id": "esabcc-a4-dairy-consumption",
       "sourceTitle": "FAOSTAT Food Balance Sheets · milk excl. butter, food use, EU-27 sum",
       "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
       "note": "As A4 bovine. The report’s dairy boundary is narrower than FBS “Milk – Excluding Butter” (anchor 2020 1.149×), so the splice applies the trend only.",
-      "status": "updated",
-      "baseYear": 2020,
-      "newPoints": [
-        {
-          "year": 2021,
-          "value": 88.831
-        },
-        {
-          "year": 2022,
-          "value": 90.426
-        },
-        {
-          "year": 2023,
-          "value": 91.162
-        }
-      ]
+      "status": "error",
+      "message": "Cannot find package 'jszip' imported from /home/runner/work/ESABCCMethodHub/ESABCCMethodHub/scripts/esabcc-indicators/refresh-from-sources.mjs"
     },
     {
       "id": "esabcc-a4-pig-consumption",
       "sourceTitle": "FAOSTAT Food Balance Sheets · pigmeat, food use, EU-27 sum",
       "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
       "note": "As A4 bovine. 1000 t → Mt. Spliced (anchor 2020 1.017×).",
-      "status": "updated",
-      "baseYear": 2020,
-      "newPoints": [
-        {
-          "year": 2021,
-          "value": 17.92
-        },
-        {
-          "year": 2022,
-          "value": 17.436
-        },
-        {
-          "year": 2023,
-          "value": 17.397
-        }
-      ]
+      "status": "error",
+      "message": "Cannot find package 'jszip' imported from /home/runner/work/ESABCCMethodHub/ESABCCMethodHub/scripts/esabcc-indicators/refresh-from-sources.mjs"
     },
     {
       "id": "esabcc-a5-bovine-consumption",
       "sourceTitle": "FAOSTAT Food Balance Sheets · bovine meat, kcal/capita/day, EU-27",
       "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
       "note": "Total EU-27 kcal ÷ total EU-27 population ÷ 365 — computed on the aggregate, not as an unweighted mean of national per-capita figures. Spliced (anchor 2020 1.119×).",
-      "status": "updated",
-      "baseYear": 2020,
-      "newPoints": [
-        {
-          "year": 2021,
-          "value": 52.02
-        },
-        {
-          "year": 2022,
-          "value": 51.41
-        },
-        {
-          "year": 2023,
-          "value": 49.48
-        }
-      ]
+      "status": "error",
+      "message": "Cannot find package 'jszip' imported from /home/runner/work/ESABCCMethodHub/ESABCCMethodHub/scripts/esabcc-indicators/refresh-from-sources.mjs"
     },
     {
       "id": "esabcc-a5-dairy-consumption",
       "sourceTitle": "FAOSTAT Food Balance Sheets · milk excl. butter, kcal/capita/day, EU-27",
       "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
       "note": "As A5 bovine (anchor 2021 0.765× — the report’s dairy calorie boundary is wider than the FBS milk item, so only the trend is used).",
-      "status": "updated",
-      "baseYear": 2021,
-      "newPoints": [
-        {
-          "year": 2022,
-          "value": 560.36
-        },
-        {
-          "year": 2023,
-          "value": 569.13
-        }
-      ]
+      "status": "error",
+      "message": "Cannot find package 'jszip' imported from /home/runner/work/ESABCCMethodHub/ESABCCMethodHub/scripts/esabcc-indicators/refresh-from-sources.mjs"
     },
     {
       "id": "esabcc-a5-pig-consumption",
       "sourceTitle": "FAOSTAT Food Balance Sheets · pigmeat, kcal/capita/day, EU-27",
       "sourceUrl": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_Europe.zip",
       "note": "As A5 bovine (anchor 2020 0.920×).",
-      "status": "updated",
-      "baseYear": 2020,
-      "newPoints": [
-        {
-          "year": 2021,
-          "value": 209.42
-        },
-        {
-          "year": 2022,
-          "value": 203.41
-        },
-        {
-          "year": 2023,
-          "value": 201.99
-        }
-      ]
+      "status": "error",
+      "message": "Cannot find package 'jszip' imported from /home/runner/work/ESABCCMethodHub/ESABCCMethodHub/scripts/esabcc-indicators/refresh-from-sources.mjs"
     },
     {
       "id": "esabcc-t6b-foodcrop-biofuels",
@@ -634,18 +576,8 @@
       "sourceTitle": "Eurostat avia_paoc · passengers carried on national + intra-EU27 flights · EU27_2020",
       "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/avia_paoc?format=JSON&geo=EU27_2020&unit=PAS&tra_meas=PAS_CRD&tra_cov=INTL_IEU27_2020&schedule=TOT",
       "note": "Passenger-km proxied by passengers carried: the pocketbook’s published 2022/2023 Gpkm are kept and 2024/2025 derived from the year-on-year change in intra-EU passengers (constant average stage length). Validated on the overlap — passenger growth 2022→2023 (+14.7%) matches the pocketbook’s Gpkm growth (+13.7%) to ~1 pp. Double counting of intra-EU legs is constant and cancels in the ratio.",
-      "status": "updated",
-      "baseYear": 2023,
-      "newPoints": [
-        {
-          "year": 2024,
-          "value": 625.9
-        },
-        {
-          "year": 2025,
-          "value": 637.8
-        }
-      ]
+      "status": "error",
+      "message": "all sum legs failed"
     },
     {
       "id": "esabcc-e1-energy-supply-ghg",
@@ -1103,7 +1035,7 @@
         },
         {
           "year": 2025,
-          "value": 21.59
+          "value": 20
         }
       ]
     },
@@ -1125,7 +1057,7 @@
         },
         {
           "year": 2025,
-          "value": 22.95
+          "value": 21.36
         }
       ]
     },
@@ -1165,15 +1097,15 @@
         },
         {
           "year": 2023,
-          "value": -23.706
+          "value": -23.734
         },
         {
           "year": 2024,
-          "value": -23.78
+          "value": -23.806
         },
         {
           "year": 2025,
-          "value": -30.891
+          "value": -30.87
         }
       ]
     },
@@ -1528,56 +1460,6 @@
         {
           "year": 2024,
           "value": 15.32
-        }
-      ]
-    },
-    {
-      "id": "esabcc-i2-cement-use",
-      "sourceTitle": "Cement Europe (formerly Cembureau), Key Facts & Figures · \"Cement Production And Consumption EU 27 & Cement Europe 2000-2024\" · CONSUMPTION EU27 dataset",
-      "sourceUrl": "https://www.cementeurope.eu/about-us/key-facts-figures/",
-      "note": "Direct — the chart’s inline dataset IS the report’s series, extended: it reproduces every year the report carries to the tonne (2005 = 232,290,000 t vs the report’s 232.3 Mt; 2013 = 142.2; 2020 = 159.2; 2021 = 170.5). The 2024 value (148.1 Mt) is the figure Cement Europe states in prose in its 2025 Activity Report. Still no CSV/XLSX/API — the numbers are a Chart.js dataset in the page HTML — so the parse is anchored on the dataset label, not its position.",
-      "status": "updated",
-      "baseYear": 2021,
-      "newPoints": [
-        {
-          "year": 2022,
-          "value": 163.8
-        },
-        {
-          "year": 2023,
-          "value": 150.8
-        },
-        {
-          "year": 2024,
-          "value": 148.1
-        }
-      ]
-    },
-    {
-      "id": "esabcc-i7b-cement-projects",
-      "sourceTitle": "Cement Europe, Map of Innovation Projects · EU-27 projects in the page’s inline `markers` array",
-      "sourceUrl": "https://www.cementeurope.eu/innovation-projects/",
-      "note": "Snapshot, not a rebuilt series: the map carries no announcement date (its only year is the plant’s Operational Date), so the count is stamped with the run year. The report’s 62-in-2023 cannot be reproduced from the current map, and the step to this value is part growth and part re-curation.",
-      "status": "updated",
-      "baseYear": 2023,
-      "newPoints": [
-        {
-          "year": 2026,
-          "value": 114
-        }
-      ]
-    },
-    {
-      "id": "esabcc-i7c-chemicals-projects",
-      "sourceTitle": "Cefic, Low-Carbon Technologies Projects Map · /wp-json/wp/v2/gips, projects with at least one EU-27 country tag",
-      "sourceUrl": "https://cefic.org/solutions-explained/low-carbon-technologies-projects/",
-      "note": "Snapshot, not a rebuilt series: the only date on a record is its website posting date, and those cluster in the twice-yearly batches Cefic republishes the map in, so they date the curation and not the announcement. Counted as projects carrying at least one EU-27 country tag (several are multi-country).",
-      "status": "updated",
-      "baseYear": 2023,
-      "newPoints": [
-        {
-          "year": 2026,
-          "value": 215
         }
       ]
     }
