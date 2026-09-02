@@ -1,6 +1,6 @@
 {
   "date": "2026-09-02",
-  "generatedAt": "2026-09-02T09:23:50.864Z",
+  "generatedAt": "2026-09-02T15:03:16.095Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 2 September 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,10 @@
       "color": "#E87722"
     },
     {
-      "headline": "Speech by Commissioner Jozef Síkela at the Opening of the EU Arctic Forum in Brussels",
-      "summary": "European Commission Speech Brussels, 01 Sep 2026 Thank you, Commissioner Kadis.\r\nDistinguished guests,Ladies and gentlemen,\r\nWe meet after a summer that showed us again how exposed Europe is to climate change.\r\nF...",
+      "headline": "From Belém to Antalya &#8211; gains, gaps and challenges for a new Just Transition Mechanism",
+      "summary": "Civil society wants a mechanism to be launched at COP31 but insists it must be more than a talking shop and include different social groups and a wide view of transition The post From Belém to Antalya &#8211; gains, gaps and challenges for a new Just Transition Mechanism appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "New foreign investment in Mexico stalls as companies fret over USMCA uncertainty - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPWmpGcVJWdmdkamRxbFY3YlI1NXlNVVA3Wm02ZElyaWZfS2FMejFEU0pGUGN4Y2dpWXFQV2swT1VsNEplMWwyRVFOSmJ0d1dMWDJNMW9FSjFCVjBFVTgtWXExMU01Tjc5SVFUQ2xnSEhDdW1NTWh6Q3llZmMwbmo4alNwYTFLRUJOQWxVU1FkckJaMnpObzZwa1J5b0VrbmQ0YkdNLVF6N3hTYTl3bWNUdHNXTXhKemhFR0RiWXVkWWp4U2hwT0E?oc=5\" target=\"_blank\"&gt;New foreign investment in Mexico stalls as companies fret over USMCA uncertainty&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -42,11 +36,11 @@
           "score": 11
         },
         {
-          "title": "Bus crash on Egypt's Red Sea coast kills 16",
+          "title": "Bus crash on Egypt's Red Sea coast kills 22",
           "link": "https://www.bbc.co.uk/news/articles/cn8mr1myy2ko?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Another 28 people are injured in the accident in the South Sinai governorate, officials say.",
-          "published": "2026-09-02T08:24:24.000Z",
+          "description": "Reports say Jordanian nationals are among those killed in the accident in the South Sinai governorate.",
+          "published": "2026-09-02T12:07:32.000Z",
           "score": 7
         },
         {
@@ -58,11 +52,19 @@
           "score": 7
         },
         {
-          "title": "Britain is OK with public ownership, but only by foreign powers. Why?",
-          "link": "https://www.theguardian.com/business/2026/sep/02/britain-public-ownership-energy-transition-foreign-powers-arthur-downing",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Arthur Downing, author of Power and the People: A History of British Energy, says all-encompassing rapid transition will need a mutualised system&lt;/p&gt;&lt;p&gt;Have you ever wondered why it is that most houses in the UK are reliant on gas boilers? Not what’s stopping more people from replacing them with heat pumps, but instead why and how the gas boiler became so ubiquitous in the first place?&lt;/p&gt;&lt;p&gt;Arthur Downing, the author of the &lt;a href=\"https://guardianbookshop.c",
-          "published": "2026-09-02T07:00:26.000Z",
+          "title": "Germany probes second power grid sabotage case, fears of hybrid warfare grow - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVnhHa3pMVHB4TzBwMmZZd3NGb1hYSERTNmJIRXZyY0twUlhRMnRwdGt3dzNRRHhKVkk1WDdyTnNLVnRsdWVlUXFEdXR1eWdLQml2Q1hOM1pfRk5MRFYwX2ZQRmdkRDdjZkFMa2p3NjVpTUpIMDY1cThnVkt4SDZTNnBFazkxcC1TWTVRdTF2QWdWU2NNWnZHUGdlWGc0X2JBTDNLcDJRcS0?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVnhHa3pMVHB4TzBwMmZZd3NGb1hYSERTNmJIRXZyY0twUlhRMnRwdGt3dzNRRHhKVkk1WDdyTnNLVnRsdWVlUXFEdXR1eWdLQml2Q1hOM1pfRk5MRFYwX2ZQRmdkRDdjZkFMa2p3NjVpTUpIMDY1cThnVkt4SDZTNnBFazkxcC1TWTVRdTF2QWdWU2NNWnZHUGdlWGc0X2JBTDNLcDJRcS0?oc=5\" target=\"_blank\"&gt;Germany probes second power grid sabotage case, fears of hybrid warfare grow&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-02T05:58:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Barclays faces complaint over backing for power plant near world’s largest mangrove forest",
+          "link": "https://www.theguardian.com/global-development/2026/sep/02/bangladesh-india-barclays-bank-legal-complaint-backing-polluting-rampal-power-plant-sundarbans",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Bangladeshi complainants allege Rampal power station’s pollution and climate risks threaten the Sunderbans, a world heritage site&lt;/p&gt;&lt;p&gt;Barclays Bank is facing a formal complaint over its financial links to a coal-fired power station near the Sundarbans, the world’s largest mangrove forest and home to millions of people in Bangladesh and India.&lt;/p&gt;&lt;p&gt;Three complainants from the region have submitted a case to the UK government’s Office for Responsible Business Co",
+          "published": "2026-09-02T10:00:21.000Z",
           "score": 4
         }
       ]
@@ -72,12 +74,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Speech by Commissioner Jozef Síkela at the Opening of the EU Arctic Forum in Brussels",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1784",
-          "source": "European Commission",
-          "description": "European Commission Speech Brussels, 01 Sep 2026 Thank you, Commissioner Kadis.\r\nDistinguished guests,Ladies and gentlemen,\r\nWe meet after a summer that showed us again how exposed Europe is to climate change.\r\nF...",
-          "published": "2026-09-01T10:41:08.000Z",
-          "score": 23
+          "title": "From Belém to Antalya &#8211; gains, gaps and challenges for a new Just Transition Mechanism",
+          "link": "https://www.climatechangenews.com/2026/09/02/from-belem-to-antalya-gains-gaps-and-challenges-for-a-new-just-transition-mechanism/",
+          "source": "Climate Home News",
+          "description": "Civil society wants a mechanism to be launched at COP31 but insists it must be more than a talking shop and include different social groups and a wide view of transition The post From Belém to Antalya &#8211; gains, gaps and challenges for a new Just Transition Mechanism appeared first on Climate Home News.",
+          "published": "2026-09-02T12:01:06.000Z",
+          "score": 13
         },
         {
           "title": "What really helps Europe deal with drought",
@@ -86,6 +88,14 @@
           "description": "Fix leaks, or ban pools? As European countries prepare for hotter, drier years to come, here&#039;s what the data says about how to really save water",
           "published": "2026-09-02T07:56:00.000Z",
           "score": 13
+        },
+        {
+          "title": "IWMI and IPCC to hold a Co-sponsored Expert Meeting to advance the science of water in climate change",
+          "link": "https://www.ipcc.ch/2026/09/02/iwmi-ipcc-co-sponsored-expert-meeting/",
+          "source": "IPCC",
+          "description": "COLOMBO, Sri Lanka, 8 September 2026 – The International Water Management Institute (IWMI) and the Intergovernmental Panel on Climate Change (IPCC) are bringing together experts at a co-sponsored meeting titled ‘Addressing Water Risks and Building Resilience to Climate Change: Evidence, Gaps and Policy Pathways’. The meeting will take place from September 8–10, 2026 at IWMI’s [&#8230;]",
+          "published": "2026-09-02T13:09:30.000Z",
+          "score": 11
         },
         {
           "title": "Keeping to 1.5C of warming is no longer possible &#8211; but we must still limit the overshoot",
@@ -102,42 +112,25 @@
           "description": "Leading scientists say warming must peak at 1.8C to be able to reverse course this century, but current government climate policies are way off track The post UN sets out narrow path back to 1.5C warming after inevitable overshoot appeared first on Climate Home News.",
           "published": "2026-09-02T04:15:00.000Z",
           "score": 10
-        },
-        {
-          "title": "From firefighting to future-proofing: Preventing wildfires must be the priority",
-          "link": "https://www.climatechangenews.com/2026/09/01/from-firefighting-to-future-proofing-preventing-wildfires-must-be-the-priority/",
-          "source": "Climate Home News",
-          "description": "While many countries remain locked in a reactive cycle of disaster response, public policy can shift investment upstream to build resilience and cut risks The post From firefighting to future-proofing: Preventing wildfires must be the priority appeared first on Climate Home News.",
-          "published": "2026-09-01T13:54:36.000Z",
-          "score": 10
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "New foreign investment in Mexico stalls as companies fret over USMCA uncertainty - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPWmpGcVJWdmdkamRxbFY3YlI1NXlNVVA3Wm02ZElyaWZfS2FMejFEU0pGUGN4Y2dpWXFQV2swT1VsNEplMWwyRVFOSmJ0d1dMWDJNMW9FSjFCVjBFVTgtWXExMU01Tjc5SVFUQ2xnSEhDdW1NTWh6Q3llZmMwbmo4alNwYTFLRUJOQWxVU1FkckJaMnpObzZwa1J5b0VrbmQ0YkdNLVF6N3hTYTl3bWNUdHNXTXhKemhFR0RiWXVkWWp4U2hwT0E?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPWmpGcVJWdmdkamRxbFY3YlI1NXlNVVA3Wm02ZElyaWZfS2FMejFEU0pGUGN4Y2dpWXFQV2swT1VsNEplMWwyRVFOSmJ0d1dMWDJNMW9FSjFCVjBFVTgtWXExMU01Tjc5SVFUQ2xnSEhDdW1NTWh6Q3llZmMwbmo4alNwYTFLRUJOQWxVU1FkckJaMnpObzZwa1J5b0VrbmQ0YkdNLVF6N3hTYTl3bWNUdHNXTXhKemhFR0RiWXVkWWp4U2hwT0E?oc=5\" target=\"_blank\"&gt;New foreign investment in Mexico stalls as companies fret over USMCA uncertainty&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
-          "published": "2026-09-01T13:35:44.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Ukraine parliament fails to pass parcel tax law tied to IMF, EU funding - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZDFPb01fMEJTdWFPVEk2Mmc3SVBJWTByeXJmZG1jSVdQOEJ1TFZpaXJrYkNLbV9ObGlMbHVLdEJfWnROVDVGTHpjNUliRmd4OWJ4dzRzYnd4Z0dkRTRBY0plR2JjWGJBU0pPakxpT1JMcjdwcHVfWjVoNFFhczVZNl9fS3N0OTBad0tRekRrZFI1YU1TRGkwT1hNQjRFclIwNTBrZ1pGRThXZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZDFPb01fMEJTdWFPVEk2Mmc3SVBJWTByeXJmZG1jSVdQOEJ1TFZpaXJrYkNLbV9ObGlMbHVLdEJfWnROVDVGTHpjNUliRmd4OWJ4dzRzYnd4Z0dkRTRBY0plR2JjWGJBU0pPakxpT1JMcjdwcHVfWjVoNFFhczVZNl9fS3N0OTBad0tRekRrZFI1YU1TRGkwT1hNQjRFclIwNTBrZ1pGRThXZw?oc=5\" target=\"_blank\"&gt;Ukraine parliament fails to pass parcel tax law tied to IMF, EU funding&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-01T21:36:37.000Z",
-          "score": 12
+          "title": "EU and Nato vow to step up pressure on Russia after 'new escalation' in Germany",
+          "link": "https://www.bbc.co.uk/news/articles/ce9e810pg7ko?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Russia is accused of growing increasingly reckless after Berlin blamed Russia for a failed drone attack on Leipzig airport.",
+          "published": "2026-09-02T14:34:22.000Z",
+          "score": 8
         },
         {
           "title": "EU summons Russian envoy over failed Leipzig drone attack",
@@ -148,11 +141,27 @@
           "score": 8
         },
         {
+          "title": "Opera loses court challenge against EU exemption of Microsoft's Edge from DMA rules - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPUVU3ZU0tdWEzMDFwQUx0ZnRHZnpqT1YtbWc3eS1QbXZXNDRIUDM5Nm9VcURCX3lCazVRaE1xTUJYWEdMa3hnRFRxNjRJb0p2MW9qTlQtekNlandfRmNYWFIyWm1OWlNSWGM1OVVaNGN4OFJTR3ItTHNLWGZjSS1jb0lSQ25jdEhqTkN6dFNTR21abTRxRmtnX2kweWhWOHMxaGRja2xzVmdkNzNYOW9WeDJhbFJaSnYxeHBXQVhn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPUVU3ZU0tdWEzMDFwQUx0ZnRHZnpqT1YtbWc3eS1QbXZXNDRIUDM5Nm9VcURCX3lCazVRaE1xTUJYWEdMa3hnRFRxNjRJb0p2MW9qTlQtekNlandfRmNYWFIyWm1OWlNSWGM1OVVaNGN4OFJTR3ItTHNLWGZjSS1jb0lSQ25jdEhqTkN6dFNTR21abTRxRmtnX2kweWhWOHMxaGRja2xzVmdkNzNYOW9WeDJhbFJaSnYxeHBXQVhn?oc=5\" target=\"_blank\"&gt;Opera loses court challenge against EU exemption of Microsoft's Edge from DMA rules&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-02T10:16:01.000Z",
+          "score": 8
+        },
+        {
           "title": "'Significant' number of EU countries back speeding up Ukraine funding, Ireland says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZVUyZjJSamZMaXltRmRCdmhoT3FsbmpGc2VUb2JFVDRFV2E2OENrYUFFcWZlZ1VUbmZveW9FRzdqR3BMaVAxWDNBWTh2YmNnS0toZWtBQTFpMFc5bzNfWnJWY05TejJyUHJkcnlLVWF3QjBWMzU4VFZXVVV0Z0ZxamJDZF82NWdzTGMzTTl1V1BlcFotWEJsRmN2UjBRcmRxUWRERHdGS0tRN1VDZ09MRUl5ZW1heEhLUTlF?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZVUyZjJSamZMaXltRmRCdmhoT3FsbmpGc2VUb2JFVDRFV2E2OENrYUFFcWZlZ1VUbmZveW9FRzdqR3BMaVAxWDNBWTh2YmNnS0toZWtBQTFpMFc5bzNfWnJWY05TejJyUHJkcnlLVWF3QjBWMzU4VFZXVVV0Z0ZxamJDZF82NWdzTGMzTTl1V1BlcFotWEJsRmN2UjBRcmRxUWRERHdGS0tRN1VDZ09MRUl5ZW1heEhLUTlF?oc=5\" target=\"_blank\"&gt;'Significant' number of EU countries back speeding up Ukraine funding, Ireland says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-01T15:47:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU to hit back at Russia after drone attack as Germany probes new sabotage cases - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPRzFCdE02NmRoUGVHUmVoUTMtbzRyV1VkSkN4OTR6U2pudFdXdlFqbFVmMldMX2RPZWxOSklmY2JCV0IwSmdOU3ktNjVVNXRubXlTWV9HcUI1OWNTMklxUDFSUlpXV3NOdEk0YUhFRlFjMUx6X3lmTHo3S29UR2hLSkVpNE1TeEQxY3ZvOS1KTkJpU3ZmY21nT2hydFBDeEJIV00yakNZc0R5NzFVbXN3a3R0cXdiU0JveHc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPRzFCdE02NmRoUGVHUmVoUTMtbzRyV1VkSkN4OTR6U2pudFdXdlFqbFVmMldMX2RPZWxOSklmY2JCV0IwSmdOU3ktNjVVNXRubXlTWV9HcUI1OWNTMklxUDFSUlpXV3NOdEk0YUhFRlFjMUx6X3lmTHo3S29UR2hLSkVpNE1TeEQxY3ZvOS1KTkJpU3ZmY21nT2hydFBDeEJIV00yakNZc0R5NzFVbXN3a3R0cXdiU0JveHc?oc=5\" target=\"_blank\"&gt;EU to hit back at Russia after drone attack as Germany probes new sabotage cases&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-02T13:44:03.000Z",
           "score": 8
         }
       ]
@@ -162,35 +171,27 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Norway&#039;s new King Haakon VIII takes oath in parliament",
-          "link": "https://www.dw.com/en/norway-s-new-king-haakon-viii-takes-oath-in-parliament/a-78606923?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The new king swore to uphold the constitution in parliament in Oslo, the first major institutional step of his reign. Haakon VIII&#039;s wife Queen Mette-Marit had to skip the event in the aftermath of her lung transplant.",
-          "published": "2026-09-01T12:23:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "US irks Germany, Europe with Russian G20 invite, press bans",
-          "link": "https://www.dw.com/en/us-irks-germany-europe-with-russian-g20-invite-press-bans/a-78583919?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Russia&#039;s finance minister is at the G20 meeting in Asheville but some key US press corps members are not. The mood was already tense amid the lengthy Iran war and Trump&#039;s renewed beef with neighbor Canada.",
-          "published": "2026-09-01T10:23:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Ousted UK Prime Minister Starmer quits parliament to focus on international affairs - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdVczaDkwemNDVXRnM1FVUnAzS0d2cXNMVTNrLVF1OHFTVnhKRUZDMm1hSkxJUUQzQzNqamc0V0kzNjZIREoxYnlDWkJUdnFobWZ5ZG1kUTNSUzJvOFZudl9CNmwwM1NjUEFIWkwtZTFycllBNmMzMGVEY0oyMjd3Y2hSUzJrWklXNGpGM3VHTV9Qa0RPRFpQQ3dtX0FjMlU1MElZa1Vn?oc=5",
+          "title": "EU's Kallas says Leipzig attack had hallmarks of state-sponsored terrorism - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNSk9pYWk1NTFtU3FFWjB5RGF4R1lLbEVGTUJJVjNuN2d1YktKSDZxdDRqTFVISWxwMDdwTUVFT0xERVBHSWpKZzlqSEd3NTR6S1Q0TndpTlhiR2ZhZ2RYYjFNbUNBal82ZDIyYU9fN1pyeVRyTzhaRGNuaVVFMXBjYlh6Z3F5YzloZ0JuXzZXNGROOGUxQks1S2Rub2xaU1NlMmFuR1oyVmM5c2F1VklFU05B?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNdVczaDkwemNDVXRnM1FVUnAzS0d2cXNMVTNrLVF1OHFTVnhKRUZDMm1hSkxJUUQzQzNqamc0V0kzNjZIREoxYnlDWkJUdnFobWZ5ZG1kUTNSUzJvOFZudl9CNmwwM1NjUEFIWkwtZTFycllBNmMzMGVEY0oyMjd3Y2hSUzJrWklXNGpGM3VHTV9Qa0RPRFpQQ3dtX0FjMlU1MElZa1Vn?oc=5\" target=\"_blank\"&gt;Ousted UK Prime Minister Starmer quits parliament to focus on international affairs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-01T12:55:25.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNSk9pYWk1NTFtU3FFWjB5RGF4R1lLbEVGTUJJVjNuN2d1YktKSDZxdDRqTFVISWxwMDdwTUVFT0xERVBHSWpKZzlqSEd3NTR6S1Q0TndpTlhiR2ZhZ2RYYjFNbUNBal82ZDIyYU9fN1pyeVRyTzhaRGNuaVVFMXBjYlh6Z3F5YzloZ0JuXzZXNGROOGUxQks1S2Rub2xaU1NlMmFuR1oyVmM5c2F1VklFU05B?oc=5\" target=\"_blank\"&gt;EU's Kallas says Leipzig attack had hallmarks of state-sponsored terrorism&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-02T09:40:14.000Z",
           "score": 8
         },
         {
-          "title": "Norway's new king takes oath before parliament after Harald's death - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPUnIySndhcW1yNFZwdXFBbXUtc3QxQnAtVVF1dXlYRW1sY1ZMNHNjUW9BUkFhSUtIZFFNVzM5MTl3dWE3d0c3RGxlcHdOc3ZyNFhXeXNQZjBQcFp1UVduQVI5UFJxeDB2UTR2SVVWRW9udnA5Wm1GZWUyOFJFeDdTU25UdnFFM3BWMlViMGUxbTN5X245SlpFRS1wSV9ZM0FrNGlKZVRCN3dKRFdtTE1zeTlENGk?oc=5",
+          "title": "More than 10 EU countries willing to contribute to Lebanon mission - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdGNSczYxM3gxdEFGMU9kQ3NDOGFnU2VXUHF1NjZHS3A0NVhRVGRvRW5ibF9vajB4a0pGLVZGWnhsaGxUSzVZRHlDYXJxRTNWVnVXMjE3ZHVWTThCS2FNQXZTUlR4WHMtcnBMcE01ZWxjZjhXVzVPeHdJTUdKbEN4ZVJtNjZnY2V4d1pNMkFXb05URm5McVl6VERmVGR0ZkZtYUtITU1JaUhBdlFZYW5rb1pYX0k?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPUnIySndhcW1yNFZwdXFBbXUtc3QxQnAtVVF1dXlYRW1sY1ZMNHNjUW9BUkFhSUtIZFFNVzM5MTl3dWE3d0c3RGxlcHdOc3ZyNFhXeXNQZjBQcFp1UVduQVI5UFJxeDB2UTR2SVVWRW9udnA5Wm1GZWUyOFJFeDdTU25UdnFFM3BWMlViMGUxbTN5X245SlpFRS1wSV9ZM0FrNGlKZVRCN3dKRFdtTE1zeTlENGk?oc=5\" target=\"_blank\"&gt;Norway's new king takes oath before parliament after Harald's death&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-01T12:33:32.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOdGNSczYxM3gxdEFGMU9kQ3NDOGFnU2VXUHF1NjZHS3A0NVhRVGRvRW5ibF9vajB4a0pGLVZGWnhsaGxUSzVZRHlDYXJxRTNWVnVXMjE3ZHVWTThCS2FNQXZTUlR4WHMtcnBMcE01ZWxjZjhXVzVPeHdJTUdKbEN4ZVJtNjZnY2V4d1pNMkFXb05URm5McVl6VERmVGR0ZkZtYUtITU1JaUhBdlFZYW5rb1pYX0k?oc=5\" target=\"_blank\"&gt;More than 10 EU countries willing to contribute to Lebanon mission&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-01T17:12:08.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU to work on further sanctions against Russian individuals, Germany says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNc0lGSnplSUJBTXVxTjJBb1k3UzBOV0xuQXlFNS1Vd0s5TF9CajVIMGRDWDF2SGlCUzdMQ1FVTld2dFhadjZsVGc4TFZTUEl5bzBPMWdZNTZzbjkwaGJCQ1YtdDZ4LUdMNkh2V094bllPdEk1YjFjdWxWejZpYjZoeWNFcDB5UkJ6Z01TdG9iZ0x1R0NvRDcyM0lJaGlwWG9kU1VrOUZKZllnanZTVHJxaTNDOG1NUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNc0lGSnplSUJBTXVxTjJBb1k3UzBOV0xuQXlFNS1Vd0s5TF9CajVIMGRDWDF2SGlCUzdMQ1FVTld2dFhadjZsVGc4TFZTUEl5bzBPMWdZNTZzbjkwaGJCQ1YtdDZ4LUdMNkh2V094bllPdEk1YjFjdWxWejZpYjZoeWNFcDB5UkJ6Z01TdG9iZ0x1R0NvRDcyM0lJaGlwWG9kU1VrOUZKZllnanZTVHJxaTNDOG1NUQ?oc=5\" target=\"_blank\"&gt;EU to work on further sanctions against Russian individuals, Germany says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-02T08:01:43.000Z",
           "score": 8
         },
         {
@@ -200,14 +201,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPM0V1QTV5dF9BZGQ2MllvdGMwU2dQbDIydFAwYTFlXzA5LUZ4UnBIT29raUFCZDd3QjdnQjFYMHctam5TNUZRRERjVHFxWHpiVVY1Um1VTFNoWXd1anhsckwwSVNiamdiY0dNNjFBR0k4c1piRkZNR2d6ZjFCVDlMQk13Z25XdUZnWkFESU14THVFb3kyR1RkUGpMWlRibjRyOEVFV3kxeWtjenlEOFN3QzBR?oc=5\" target=\"_blank\"&gt;Senegal agrees to restore 'debt sustainability' in return for IMF programme&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-01T15:34:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Pistol in a lake gives hope for French cold case",
+          "link": "https://www.bbc.co.uk/news/articles/c74eklrm344o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Saad al-Hilli was shot dead with his wife and mother-in-law while holidaying in eastern France in September 2012.",
+          "published": "2026-09-01T16:33:29.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 401,
-    "articlesLast24h": 163,
-    "afterDedup": 147,
+    "totalArticlesScanned": 404,
+    "articlesLast24h": 165,
+    "afterDedup": 154,
     "feedsQueried": 19
   }
 }
