@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T09:31:04.935Z",
+  "generatedAt": "2026-09-02T08:53:55.226Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -368,32 +368,6 @@
           "matched": [
             "net zero",
             "energy transition"
-          ]
-        }
-      ]
-    },
-    {
-      "doi": "10.1080/14693062.2026.2685655",
-      "title": "Decarbonization from the ground up: what Local Industrial Decarbonization Plans reveal about place-based approaches to decarbonizing industry in the UK",
-      "journal": "Climate Policy",
-      "authors": "Imogen Rattle, Peter G. Taylor",
-      "published": "2026-07-02",
-      "url": "https://doi.org/10.1080/14693062.2026.2685655",
-      "abstract": "",
-      "suggestedOn": "2026-07-03",
-      "projects": [
-        {
-          "projectId": "policy-gap-2-0",
-          "score": 6,
-          "matched": [
-            "decarbonization"
-          ]
-        },
-        {
-          "projectId": "industry-project",
-          "score": 4,
-          "matched": [
-            "industrial decarbonization"
           ]
         }
       ]
