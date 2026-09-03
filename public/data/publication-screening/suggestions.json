@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T08:53:55.226Z",
+  "generatedAt": "2026-09-03T09:03:31.098Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -348,26 +348,6 @@
           "score": 6.5,
           "matched": [
             "carbon pricing"
-          ]
-        }
-      ]
-    },
-    {
-      "doi": "10.1016/j.enpol.2026.115467",
-      "title": "Evaluating the effectiveness of green recovery measures on sectoral energy transition pathways and employment opportunities towards net zero: Evidence from the Greek National Recovery and Resilience Plan",
-      "journal": "Energy Policy",
-      "authors": "Nikos Kleanthis, Vassilis Stavrakas, Dimitris Papantonis, Alexandros Flamos",
-      "published": "2026-10",
-      "url": "https://doi.org/10.1016/j.enpol.2026.115467",
-      "abstract": "",
-      "suggestedOn": "2026-07-04",
-      "projects": [
-        {
-          "projectId": "policy-gap-2-0",
-          "score": 6,
-          "matched": [
-            "net zero",
-            "energy transition"
           ]
         }
       ]
