@@ -1,6 +1,6 @@
 {
   "date": "2026-09-04",
-  "generatedAt": "2026-09-04T14:53:52.491Z",
+  "generatedAt": "2026-09-04T19:20:27.443Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 4 September 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "IEA chief says Nigeria could double energy investment within five years - reuters.com",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPV1pvcEJlekJ2WUx1aEthd1R0S3FVMGczX04zOUU3QVR3MjVYd2lWbmJrbGxudjJJaW56c3pOckIzVUQ5SDByWVVfQ3FNNEFYYnIwZDg1aU5hWjg0amZGQ2VCUGxtLW9KcU1BMlpOMFI1TmxEVDBhRWdjZW0xSU5WM1B5SzdnYXZSVHp5Q3pPZVBfUzhqUEVzNHlGZVRzUWR1M3JuRGllVWV3cEhYeHJYdzlHOEg1a09BNlQycg?oc=5\" target=\"_blank\"&gt;IEA chief says Nigeria could double energy investment within five years&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+      "headline": "Two Reform UK officials resign amid donation breach reports",
+      "summary": "A Channel 4 report alleges that the party officials accepted foreign donations to fund three polls, illegal under the UK&#039;s electoral law. The allegations, which the party denies, come amid its annual conference.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -64,6 +64,14 @@
           "description": "The Iranian Red Crescent Society (IRCS) said shrapnel from a missile hit the ceremony and killed four people on Tuesday.",
           "published": "2026-09-03T22:19:59.000Z",
           "score": 4
+        },
+        {
+          "title": "Yemen: Fighting intensifies amid Houthi push in the west",
+          "link": "https://www.dw.com/en/yemen-fighting-intensifies-amid-houthi-push-in-the-west/a-79039588?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Houthi forces are trying to secure high ground and solidify their control of the entry to the Red Sea in the southwest. The Iran-backed militia abandoned a shaky truce with the Saudi-backed government-in-exile in July.",
+          "published": "2026-09-04T19:15:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -88,27 +96,27 @@
           "score": 13
         },
         {
-          "title": "Annett Möhner appointed as the Secretary of the IPCC",
-          "link": "https://www.ipcc.ch/2026/09/03/annett-mohner-next-secretary-ipcc/",
-          "source": "IPCC",
-          "description": "GENEVA, Sep 4 &#8211; The Intergovernmental Panel on Climate Change (IPCC) today announced the appointment of Annett Möhner as the next Secretary of the IPCC. Ms Möhner will lead the IPCC Secretariat effective 1 November 2026. Ms Möhner, currently a Senior Manager at the UN Framework Convention on Climate Change (UNFCCC), is an international climate [&#8230;]",
-          "published": "2026-09-03T17:01:20.000Z",
-          "score": 11
-        },
-        {
-          "title": "BoM forecasts strongest El Niño on record as research points to ‘alarming’ climate change influence",
-          "link": "https://www.theguardian.com/australia-news/2026/sep/04/bom-forecasts-strongest-el-nino-on-record-as-research-points-to-alarming-climate-change-influence",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Bureau of Meteorology suggests El Niño has already broken records, with Pacific Ocean temperature change exceeding 2C in six months&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/sep/04/anthony-albanese-pauline-hanson-actu-union-labor-one-nation-coalition-angus-taylor-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment",
-          "published": "2026-09-03T15:00:51.000Z",
-          "score": 7
-        },
-        {
           "title": "Is a whale fossil the leftovers of a Bronze Age Sunday roast?",
           "link": "https://www.bbc.co.uk/news/articles/cly4zkpvl4wo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "A 10-year-old boy was out looking for fossils along the shore in Islandmagee when he spotted the back of the skull.",
           "published": "2026-09-04T05:13:54.000Z",
+          "score": 7
+        },
+        {
+          "title": "'A rare moment of joy': Nepal tunnel rescues bring hope for more flood survivors",
+          "link": "https://www.bbc.co.uk/news/videos/cd79vp91321o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "There are still hundreds of workers trapped in a network of tunnels that run along the Trishuli river.",
+          "published": "2026-09-04T14:40:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Nepal flood disaster puts climate justice under spotlight",
+          "link": "https://www.dw.com/en/nepal-flood-disaster-puts-climate-justice-under-spotlight/a-78998617?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The devastating Himalayan glacial floods have raised broader questions about who should bear the costs and responsibility for the impacts of climate-related disasters.",
+          "published": "2026-09-04T13:59:00.000Z",
           "score": 7
         }
       ]
@@ -118,14 +126,6 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "IEA chief says Nigeria could double energy investment within five years - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPV1pvcEJlekJ2WUx1aEthd1R0S3FVMGczX04zOUU3QVR3MjVYd2lWbmJrbGxudjJJaW56c3pOckIzVUQ5SDByWVVfQ3FNNEFYYnIwZDg1aU5hWjg0amZGQ2VCUGxtLW9KcU1BMlpOMFI1TmxEVDBhRWdjZW0xSU5WM1B5SzdnYXZSVHp5Q3pPZVBfUzhqUEVzNHlGZVRzUWR1M3JuRGllVWV3cEhYeHJYdzlHOEg1a09BNlQycg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPV1pvcEJlekJ2WUx1aEthd1R0S3FVMGczX04zOUU3QVR3MjVYd2lWbmJrbGxudjJJaW56c3pOckIzVUQ5SDByWVVfQ3FNNEFYYnIwZDg1aU5hWjg0amZGQ2VCUGxtLW9KcU1BMlpOMFI1TmxEVDBhRWdjZW0xSU5WM1B5SzdnYXZSVHp5Q3pPZVBfUzhqUEVzNHlGZVRzUWR1M3JuRGllVWV3cEhYeHJYdzlHOEg1a09BNlQycg?oc=5\" target=\"_blank\"&gt;IEA chief says Nigeria could double energy investment within five years&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-09-03T15:07:44.000Z",
-          "score": 7
-        },
-        {
           "title": "Two Reform UK officials resign amid donation breach reports",
           "link": "https://www.dw.com/en/two-reform-uk-officials-resign-amid-donation-breach-reports/a-78958681?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -134,11 +134,11 @@
           "score": 6
         },
         {
-          "title": "Norway's $2 trillion sovereign fund proposes deep cuts to US Treasury holdings - reuters.com",
+          "title": "Norway's $2 trillion sovereign fund proposes deep cuts to US Treasury holdings - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcmxGOEpiUDZLcDdndTZmQVVRblBRSzBzTmV4V0lQbGFOQUNJRGt6NW11MTNSZHdzdGtfZ3Fzc2FlVEN0akRuREtUYkNqMUcxME1aRVhYYmtOWjRnekxlaW52M2ZvZmhJSHN4ZE9qUy1xcTdNNDBKd2Z5OTlpYjJ1SHh0V2dUVUNQU2RKV3kzSWFKZjRHWnRmZ1ZCUXpia19iNVNWRl9CM0FTcTFCWWRaVXJuOHB4UFZlWnc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPcmxGOEpiUDZLcDdndTZmQVVRblBRSzBzTmV4V0lQbGFOQUNJRGt6NW11MTNSZHdzdGtfZ3Fzc2FlVEN0akRuREtUYkNqMUcxME1aRVhYYmtOWjRnekxlaW52M2ZvZmhJSHN4ZE9qUy1xcTdNNDBKd2Z5OTlpYjJ1SHh0V2dUVUNQU2RKV3kzSWFKZjRHWnRmZ1ZCUXpia19iNVNWRl9CM0FTcTFCWWRaVXJuOHB4UFZlWnc?oc=5\" target=\"_blank\"&gt;Norway's $2 trillion sovereign fund proposes deep cuts to US Treasury holdings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-09-04T13:17:07.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPcmxGOEpiUDZLcDdndTZmQVVRblBRSzBzTmV4V0lQbGFOQUNJRGt6NW11MTNSZHdzdGtfZ3Fzc2FlVEN0akRuREtUYkNqMUcxME1aRVhYYmtOWjRnekxlaW52M2ZvZmhJSHN4ZE9qUy1xcTdNNDBKd2Z5OTlpYjJ1SHh0V2dUVUNQU2RKV3kzSWFKZjRHWnRmZ1ZCUXpia19iNVNWRl9CM0FTcTFCWWRaVXJuOHB4UFZlWnc?oc=5\" target=\"_blank\"&gt;Norway's $2 trillion sovereign fund proposes deep cuts to US Treasury holdings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-04T16:01:29.000Z",
           "score": 2
         }
       ]
@@ -148,18 +148,10 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Denmark expects to send first migrants to return hub outside EU in 2027 - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQTG5NWl8zU1h3cmpuMEtDT1ZtVnNxdnlBdmtyd3QtUTBBV1VZc0tUdXYwTGozMmt2TEllU2s3RU1CZkVRWDJxd2RHb2hpT09yb3B6aU5zOGpXR2dnREhnWUhweHBVY1k5V0N2QTA2cVRObEdYelJEZmRaYmdGT2NQbjlsd0lOQWd3ZGw1MFNUb2IwUFBOV3N4MlppTGd5d2pPZjlzNmJucw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQTG5NWl8zU1h3cmpuMEtDT1ZtVnNxdnlBdmtyd3QtUTBBV1VZc0tUdXYwTGozMmt2TEllU2s3RU1CZkVRWDJxd2RHb2hpT09yb3B6aU5zOGpXR2dnREhnWUhweHBVY1k5V0N2QTA2cVRObEdYelJEZmRaYmdGT2NQbjlsd0lOQWd3ZGw1MFNUb2IwUFBOV3N4MlppTGd5d2pPZjlzNmJucw?oc=5\" target=\"_blank\"&gt;Denmark expects to send first migrants to return hub outside EU in 2027&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-09-04T06:53:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Germany probes suspected arson at defence firm as European sabotage concerns mount - reuters.com",
+          "title": "Germany probes suspected arson at defence firm as European sabotage concerns mount - Reuters",
           "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZUFlNjVwR3h5YnlMZDMybUpvMkJoZ1E5UzR5WkhSZDM1VmltYmpGTGlhblNYcXpGM0VRbVB3MFh4ajY3czFLcTRVcGxfNW9sVkVaU3cxXzdRQ2NKVnhLUHppeFY5QU4zZXlJZFdjaS1HdktzRlZra0o1NXIyd29iSTFPVG9RX3JpOEctRjhaZmdzd0d0NlFKS2V6M2ZqQ2la?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPZUFlNjVwR3h5YnlMZDMybUpvMkJoZ1E5UzR5WkhSZDM1VmltYmpGTGlhblNYcXpGM0VRbVB3MFh4ajY3czFLcTRVcGxfNW9sVkVaU3cxXzdRQ2NKVnhLUHppeFY5QU4zZXlJZFdjaS1HdktzRlZra0o1NXIyd29iSTFPVG9RX3JpOEctRjhaZmdzd0d0NlFKS2V6M2ZqQ2la?oc=5\" target=\"_blank\"&gt;Germany probes suspected arson at defence firm as European sabotage concerns mount&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPZUFlNjVwR3h5YnlMZDMybUpvMkJoZ1E5UzR5WkhSZDM1VmltYmpGTGlhblNYcXpGM0VRbVB3MFh4ajY3czFLcTRVcGxfNW9sVkVaU3cxXzdRQ2NKVnhLUHppeFY5QU4zZXlJZFdjaS1HdktzRlZra0o1NXIyd29iSTFPVG9RX3JpOEctRjhaZmdzd0d0NlFKS2V6M2ZqQ2la?oc=5\" target=\"_blank\"&gt;Germany probes suspected arson at defence firm as European sabotage concerns mount&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-03T20:33:15.000Z",
           "score": 8
         },
@@ -167,7 +159,7 @@
           "title": "Germany, partners aim to finalize &#039;return hubs&#039; by year end",
           "link": "https://www.dw.com/en/germany-partners-aim-to-finalize-return-hubs-by-year-end/a-79004242?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "German Interior Minister Dobrindt said &quot;technical discussions&quot; were underway with countries outside the EU. He was meeting Danish, Greek, Austrian and Dutch counterparts to agree on the controversial hubs.",
+          "description": "German Interior Minister Dobrindt said &quot;technical discussions&quot; were underway with non-EU countries to establish controversial &quot;return hubs.&quot; Rights organizations have questioned the legality and morality of the plans.",
           "published": "2026-09-04T14:08:00.000Z",
           "score": 4
         }
@@ -182,48 +174,48 @@
           "link": "https://www.bbc.co.uk/news/articles/c5y4g6meekro?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Germany has blamed Russia for an attack on Leipzig airport but there has been a series of suspicious incidents elsewhere.",
-          "published": "2026-09-04T14:17:35.000Z",
+          "published": "2026-09-04T16:49:15.000Z",
           "score": 8
         },
         {
-          "title": "Brazil warns of reciprocal measures against EU if talks to lift meat ban stall - reuters.com",
+          "title": "US and allies push IAEA board to report Iran to UN Security Council, diplomats say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOTWN6cU9lV0RMREdsVnRUZW1vS0tKZk9tZUJmMnFpTTdNM2c4c2J2bUtzOElSbjA2WnFCQzdZSnotczdsYnNPRWFLckFyV0EwNWg1akIyTFo4NDF4ODVMTnVSNnBjcWREd1Q4dWk3Q3FyWFkwMFdLbzY5YU9yLVkySDlEOGJBVktZQTJ1d2NJMkJSUGpKaks5dTNUb2xySnVBb3VGUUdILXZpaVZqeHVtcWR4Nm03M1oxNUFUNA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOTWN6cU9lV0RMREdsVnRUZW1vS0tKZk9tZUJmMnFpTTdNM2c4c2J2bUtzOElSbjA2WnFCQzdZSnotczdsYnNPRWFLckFyV0EwNWg1akIyTFo4NDF4ODVMTnVSNnBjcWREd1Q4dWk3Q3FyWFkwMFdLbzY5YU9yLVkySDlEOGJBVktZQTJ1d2NJMkJSUGpKaks5dTNUb2xySnVBb3VGUUdILXZpaVZqeHVtcWR4Nm03M1oxNUFUNA?oc=5\" target=\"_blank\"&gt;US and allies push IAEA board to report Iran to UN Security Council, diplomats say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-04T15:36:48.000Z",
+          "score": 8
+        },
+        {
+          "title": "Brazil warns of reciprocal measures against EU if talks to lift meat ban stall - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQd2ZLa0FRNXMxUWdycEF2cUxVakhYeGpSNzdSQU13NTNZc0plWkxSVnY3MWZBSldPdzNheUFLRnFiTDB0SFZTUTIxVVFYbWZQd1kwQVlLNGJMc2FYMWJiWGdiUktFUzZ2U19wSVdHbzE3azdqWTJHM1hXVFdvaU5Pc0FqSTJZWTFSR0RNd1k0dDh2R0k1bmZ4b3Y3WWJOajNrQUwybjRjMlZFNVNJMlNHand4UUpyTnpfNUJPZXI4Qnc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQd2ZLa0FRNXMxUWdycEF2cUxVakhYeGpSNzdSQU13NTNZc0plWkxSVnY3MWZBSldPdzNheUFLRnFiTDB0SFZTUTIxVVFYbWZQd1kwQVlLNGJMc2FYMWJiWGdiUktFUzZ2U19wSVdHbzE3azdqWTJHM1hXVFdvaU5Pc0FqSTJZWTFSR0RNd1k0dDh2R0k1bmZ4b3Y3WWJOajNrQUwybjRjMlZFNVNJMlNHand4UUpyTnpfNUJPZXI4Qnc?oc=5\" target=\"_blank\"&gt;Brazil warns of reciprocal measures against EU if talks to lift meat ban stall&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQd2ZLa0FRNXMxUWdycEF2cUxVakhYeGpSNzdSQU13NTNZc0plWkxSVnY3MWZBSldPdzNheUFLRnFiTDB0SFZTUTIxVVFYbWZQd1kwQVlLNGJMc2FYMWJiWGdiUktFUzZ2U19wSVdHbzE3azdqWTJHM1hXVFdvaU5Pc0FqSTJZWTFSR0RNd1k0dDh2R0k1bmZ4b3Y3WWJOajNrQUwybjRjMlZFNVNJMlNHand4UUpyTnpfNUJPZXI4Qnc?oc=5\" target=\"_blank\"&gt;Brazil warns of reciprocal measures against EU if talks to lift meat ban stall&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-03T21:00:00.000Z",
           "score": 8
         },
         {
-          "title": "Burnham and Macron discuss drive to get UK 'closer to Europe' - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNa29YMmdudk13MHVVSV9sZ0szZFBUVmJ6d3I2eHVyTDJTbjk4QVZVUWNFS2x2clJGNFRSRjNKQmhWMkpFdTN3QnIxVnhndmNqTGtWVXoxNlkxeFZCaFBfQkxndVpwZ1UySFloZ3MySS1hS3FPTHV5RjhzeEZMeEZkQUJfcllPeWFtalJrSklvV3ZyYldmMnpNaENn?oc=5",
+          "title": "Five European nations seek deals to send migrants out of the EU - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQTG5NWl8zU1h3cmpuMEtDT1ZtVnNxdnlBdmtyd3QtUTBBV1VZc0tUdXYwTGozMmt2TEllU2s3RU1CZkVRWDJxd2RHb2hpT09yb3B6aU5zOGpXR2dnREhnWUhweHBVY1k5V0N2QTA2cVRObEdYelJEZmRaYmdGT2NQbjlsd0lOQWd3ZGw1MFNUb2IwUFBOV3N4MlppTGd5d2pPZjlzNmJucw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNa29YMmdudk13MHVVSV9sZ0szZFBUVmJ6d3I2eHVyTDJTbjk4QVZVUWNFS2x2clJGNFRSRjNKQmhWMkpFdTN3QnIxVnhndmNqTGtWVXoxNlkxeFZCaFBfQkxndVpwZ1UySFloZ3MySS1hS3FPTHV5RjhzeEZMeEZkQUJfcllPeWFtalJrSklvV3ZyYldmMnpNaENn?oc=5\" target=\"_blank\"&gt;Burnham and Macron discuss drive to get UK 'closer to Europe'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-09-03T15:00:20.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQTG5NWl8zU1h3cmpuMEtDT1ZtVnNxdnlBdmtyd3QtUTBBV1VZc0tUdXYwTGozMmt2TEllU2s3RU1CZkVRWDJxd2RHb2hpT09yb3B6aU5zOGpXR2dnREhnWUhweHBVY1k5V0N2QTA2cVRObEdYelJEZmRaYmdGT2NQbjlsd0lOQWd3ZGw1MFNUb2IwUFBOV3N4MlppTGd5d2pPZjlzNmJucw?oc=5\" target=\"_blank\"&gt;Five European nations seek deals to send migrants out of the EU&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-04T06:53:00.000Z",
           "score": 8
         },
         {
-          "title": "Trump says Britain 'on the edge of disaster,' citing immigration and energy concerns - reuters.com",
+          "title": "Trump says Britain 'on the edge of disaster,' citing immigration and energy concerns - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNHNWOV94SXJ4ZFltV2tiSEZBRENTSk1ZdExzNndHUzhaSTFoaXAza0xfQ0F3VkJrNTN1UUEyMEk0WFJ2dEJzWHoyNTNMSTVtZGVMb1luWFY3UXVaTlpXNnMycTEtMEZNbllpQ0JZejdVbXNqakEzWFpQQ0IxZndKY21oWW5PZ3haYWIxdmxwRl82OV9rcnBkVW5jV20zZ1NzVmJEMUs2TzByeW9jSl9wSUNHSEJjQQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNNHNWOV94SXJ4ZFltV2tiSEZBRENTSk1ZdExzNndHUzhaSTFoaXAza0xfQ0F3VkJrNTN1UUEyMEk0WFJ2dEJzWHoyNTNMSTVtZGVMb1luWFY3UXVaTlpXNnMycTEtMEZNbllpQ0JZejdVbXNqakEzWFpQQ0IxZndKY21oWW5PZ3haYWIxdmxwRl82OV9rcnBkVW5jV20zZ1NzVmJEMUs2TzByeW9jSl9wSUNHSEJjQQ?oc=5\" target=\"_blank\"&gt;Trump says Britain 'on the edge of disaster,' citing immigration and energy concerns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNNHNWOV94SXJ4ZFltV2tiSEZBRENTSk1ZdExzNndHUzhaSTFoaXAza0xfQ0F3VkJrNTN1UUEyMEk0WFJ2dEJzWHoyNTNMSTVtZGVMb1luWFY3UXVaTlpXNnMycTEtMEZNbllpQ0JZejdVbXNqakEzWFpQQ0IxZndKY21oWW5PZ3haYWIxdmxwRl82OV9rcnBkVW5jV20zZ1NzVmJEMUs2TzByeW9jSl9wSUNHSEJjQQ?oc=5\" target=\"_blank\"&gt;Trump says Britain 'on the edge of disaster,' citing immigration and energy concerns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-03T20:08:00.000Z",
           "score": 7
-        },
-        {
-          "title": "US billionaire Leon Black defies summons and sues Epstein panel",
-          "link": "https://www.bbc.co.uk/news/articles/cddve618plzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The lawsuit calls the House Oversight Committee's subpoenas, which ordered him to share nondisclosure agreements, \"invalid\".",
-          "published": "2026-09-03T18:14:57.000Z",
-          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 405,
-    "articlesLast24h": 165,
-    "afterDedup": 159,
+    "totalArticlesScanned": 408,
+    "articlesLast24h": 160,
+    "afterDedup": 154,
     "feedsQueried": 19
   }
 }
