@@ -1,12 +1,18 @@
 {
   "date": "2026-09-06",
-  "generatedAt": "2026-09-06T09:11:42.333Z",
+  "generatedAt": "2026-09-06T13:58:57.425Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 6 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Reform continues to cast doubt on climate science. Do its supporters agree?",
-      "summary": "&lt;p&gt;Climate scepticism is common at the Reform party conference, but many also criticise Labour for failing to protect Britons from hot weather&lt;/p&gt;&lt;p&gt;On the second day of the Reform UK conference, &lt;a href=\"https://www.theguardian.com/politics/2026/sep/04/nigel-farage-aides-step-down-reform-uk-investigation-political-donation-rules-breach\"&gt;in the wake of an undercover investigation&lt;/a&gt; alleging party officials plotted to evade the law on foreign donations, the deputy ",
+      "headline": "Brokered ceasefire takes effect for repairs at Zaporizhzhia nuclear plant - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPNXJwQ1BPMFoxZ1JOZjRpMmJhaDktQ01QbzhoMUZsTjY4VURwSjBLQnRXNUg2dzY1MDVrbFoyeTZmMTNhTmFhV1FOaThxbEQyVmJ5VzN4ZllJTnFGOXpaMHhKNWNIM3JhY3diNG9DM3hMcC1kNlc1TTFRSXhVenRPanpaWERNVmpDNE1GVUszWklKQm5STEhpUmYwVmFCR0hrcDI0RUhVeVZCa3pfdUNfUUdURDY0U005NkE?oc=5\" target=\"_blank\"&gt;Brokered ceasefire takes effect for repairs at Zaporizhzhia nuclear plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
+    {
+      "headline": "How climate change and food insecurity could fuel future conflicts",
+      "summary": "Climate change, conflict, and trade tensions are putting pressure on the global food system. New research suggests the biggest risk is not food shortages, but whether societies can peacefully adapt to change.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -20,20 +26,21 @@
     {
       "id": "energy",
       "title": "Energy Transition",
-      "items": []
+      "items": [
+        {
+          "title": "Brokered ceasefire takes effect for repairs at Zaporizhzhia nuclear plant - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNXJwQ1BPMFoxZ1JOZjRpMmJhaDktQ01QbzhoMUZsTjY4VURwSjBLQnRXNUg2dzY1MDVrbFoyeTZmMTNhTmFhV1FOaThxbEQyVmJ5VzN4ZllJTnFGOXpaMHhKNWNIM3JhY3diNG9DM3hMcC1kNlc1TTFRSXhVenRPanpaWERNVmpDNE1GVUszWklKQm5STEhpUmYwVmFCR0hrcDI0RUhVeVZCa3pfdUNfUUdURDY0U005NkE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPNXJwQ1BPMFoxZ1JOZjRpMmJhaDktQ01QbzhoMUZsTjY4VURwSjBLQnRXNUg2dzY1MDVrbFoyeTZmMTNhTmFhV1FOaThxbEQyVmJ5VzN4ZllJTnFGOXpaMHhKNWNIM3JhY3diNG9DM3hMcC1kNlc1TTFRSXhVenRPanpaWERNVmpDNE1GVUszWklKQm5STEhpUmYwVmFCR0hrcDI0RUhVeVZCa3pfdUNfUUdURDY0U005NkE?oc=5\" target=\"_blank\"&gt;Brokered ceasefire takes effect for repairs at Zaporizhzhia nuclear plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-05T16:25:43.000Z",
+          "score": 7
+        }
+      ]
     },
     {
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Reform continues to cast doubt on climate science. Do its supporters agree?",
-          "link": "https://www.theguardian.com/politics/2026/sep/05/reform-continues-to-cast-doubt-on-climate-science-do-its-supporters-agree",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Climate scepticism is common at the Reform party conference, but many also criticise Labour for failing to protect Britons from hot weather&lt;/p&gt;&lt;p&gt;On the second day of the Reform UK conference, &lt;a href=\"https://www.theguardian.com/politics/2026/sep/04/nigel-farage-aides-step-down-reform-uk-investigation-political-donation-rules-breach\"&gt;in the wake of an undercover investigation&lt;/a&gt; alleging party officials plotted to evade the law on foreign donations, the deputy ",
-          "published": "2026-09-05T11:00:34.000Z",
-          "score": 11
-        },
         {
           "title": "How climate change and food insecurity could fuel future conflicts",
           "link": "https://www.dw.com/en/how-climate-change-and-food-insecurity-could-fuel-future-conflicts/a-78871431?maca=en-rss-en-all-1573-xml-mrss",
@@ -43,28 +50,36 @@
           "score": 7
         },
         {
-          "title": "Aviation faces hotter, stormier skies – and passengers might have to accept more disruption",
-          "link": "https://www.bbc.co.uk/news/articles/cm274p8m88lo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Are people going to have to increasingly accept more delays and diversions as the effects of climate change intensify?",
-          "published": "2026-09-05T23:20:00.000Z",
-          "score": 4
+          "title": "At flood-destroyed border, China teams scour ruins of once-busy port - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQbndid2VJNko4cVpiOGlLdFlhX0JEN0trbG1oWjh0cTlsdml4SVF1TWNtTFY0Vlp2ckhTb2JOR3NaZ0hoTThOeG9JRWlTVVd3djNKRFpwWnk3eGxEYTM5bkVKSmloRm4wQnptWUlyTGE3a1FpOEpyQ1pRbFFSX2V2VE5iN2ZTN2EyRzdwaUh0R0d4cFI3NFMyWjhSNTJWOGQ2RnVsM2FZcmtIZmNzQXpCUk9vblhPOUw4WXNBd1V5LTI?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQbndid2VJNko4cVpiOGlLdFlhX0JEN0trbG1oWjh0cTlsdml4SVF1TWNtTFY0Vlp2ckhTb2JOR3NaZ0hoTThOeG9JRWlTVVd3djNKRFpwWnk3eGxEYTM5bkVKSmloRm4wQnptWUlyTGE3a1FpOEpyQ1pRbFFSX2V2VE5iN2ZTN2EyRzdwaUh0R0d4cFI3NFMyWjhSNTJWOGQ2RnVsM2FZcmtIZmNzQXpCUk9vblhPOUw4WXNBd1V5LTI?oc=5\" target=\"_blank\"&gt;At flood-destroyed border, China teams scour ruins of once-busy port&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-06T13:28:51.000Z",
+          "score": 7
         },
         {
-          "title": "The world is being driven to the brink by thugs and dictators, but there is a route to a brighter future | Simon Tisdall",
-          "link": "https://www.theguardian.com/commentisfree/2026/sep/06/world-brink-thugs-dictators-brighter-future-ordinary-people",
+          "title": "Reuters sees first-hand the flood devastated China-Nepal border - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0zX0ZyWGRRVVA1NnBvUkRxc0dBZ1IxMy1HLVhmWjE3SDctcGxYRW9fdWY4b0Vvb002ZG1hb3l0N0tlU2FfMGExM2JlM2NMZWFid0psQjhBNThTVC1CNjVyQmtFMjNucjA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0zX0ZyWGRRVVA1NnBvUkRxc0dBZ1IxMy1HLVhmWjE3SDctcGxYRW9fdWY4b0Vvb002ZG1hb3l0N0tlU2FfMGExM2JlM2NMZWFid0psQjhBNThTVC1CNjVyQmtFMjNucjA?oc=5\" target=\"_blank\"&gt;Reuters sees first-hand the flood devastated China-Nepal border&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-06T11:43:36.000Z",
+          "score": 7
+        },
+        {
+          "title": "Chinese national rescued from Nepal tunnel 10 days after flash flood - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB3NGh2Xzhoa2JBcjRxUURNb21zTEEzYUNfSXJUU1ZEUlhkZ1Q5ZTFqQnhUQVN2M214MlZuSFFEbDh2MnJzRThjNkZDMnE1QTVNOUhHcm5fV2l3NGYwandmSlg0Ml90dWM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB3NGh2Xzhoa2JBcjRxUURNb21zTEEzYUNfSXJUU1ZEUlhkZ1Q5ZTFqQnhUQVN2M214MlZuSFFEbDh2MnJzRThjNkZDMnE1QTVNOUhHcm5fV2l3NGYwandmSlg0Ml90dWM?oc=5\" target=\"_blank\"&gt;Chinese national rescued from Nepal tunnel 10 days after flash flood&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-05T18:50:26.000Z",
+          "score": 7
+        },
+        {
+          "title": "Air conditioners are our best bet in the fight against extreme heat – whether we like it or not",
+          "link": "https://www.theguardian.com/environment/2026/sep/06/climate-crisis-air-conditioning-access",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;It’s no surprise some analysts say we are already in the midst of the third world war, but ordinary people have more power than we think &lt;/p&gt;&lt;p&gt;Don’t look up! The world is a mess. The sky could fall in any day. Unending wars, expanding humanitarian crises, rising authoritarianism, dysfunctional democracies, rampant racial and religious extremism, and unchecked lawlessness cast a dark cloud as the west’s new political year begins. Set all that against a backdrop of staggering",
-          "published": "2026-09-06T05:00:57.000Z",
-          "score": 2
-        },
-        {
-          "title": "Trump signs order to remove endangered species protection for grey wolves",
-          "link": "https://www.bbc.co.uk/news/articles/c62k677d4lzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The US president says the move will help ranchers, but conservationists say it could derail efforts to recover populations.",
-          "published": "2026-09-05T09:12:48.000Z",
-          "score": 2
+          "description": "&lt;p&gt;Global AC demand will inevitably accelerate as the world continues to warm amid the climate crisis&lt;/p&gt;&lt;p&gt;The greenest campaigners against climate change have long suffered from a crippling shortcoming: they too often frame the challenge as a problem of excess consumption. This motivates calls to &lt;a href=\"https://degrowth.info/international-degrowth-network\"&gt;“degrow”&lt;/a&gt; the economy and to &lt;a href=\"https://www.biologicaldiversity.org/programs/population_and_sus",
+          "published": "2026-09-06T11:00:03.000Z",
+          "score": 4
         }
       ]
     },
@@ -83,12 +98,20 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "How might Lindsay Clancy’s case have unfolded in another country?",
-          "link": "https://www.bbc.co.uk/news/videos/cqlw6q0xv4zo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The US mother was on trial for strangling her three children. In other western countries, there’s a specific law for mums who kill their young children.",
-          "published": "2026-09-05T09:12:34.000Z",
-          "score": 6
+          "title": "Italy's far-right Vannacci lashes EU in business summit address - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNSEp1UTRodERpdTkyUHB6b0FNV2M3SVRRQXZ6VXE0U19mNHY3TkFHZFFWMkJCWEpVeHp1RXYtYzVtY1Rmc01FeWdOQXFKUldTLU53eTNTLVJQYVBYc1VGNXpSRFJueEZxaEdkQjk1RE03UUlaQzdrZk1lSDhURndaUWR5bFB3X1FfUnQtaURxeWZWdXBoM3NLRWxyRWVueXRyMnUw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNSEp1UTRodERpdTkyUHB6b0FNV2M3SVRRQXZ6VXE0U19mNHY3TkFHZFFWMkJCWEpVeHp1RXYtYzVtY1Rmc01FeWdOQXFKUldTLU53eTNTLVJQYVBYc1VGNXpSRFJueEZxaEdkQjk1RE03UUlaQzdrZk1lSDhURndaUWR5bFB3X1FfUnQtaURxeWZWdXBoM3NLRWxyRWVueXRyMnUw?oc=5\" target=\"_blank\"&gt;Italy's far-right Vannacci lashes EU in business summit address&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-05T14:41:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "German space rocket reaches orbit in Europe's first commercial launch - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSWtGQzdRb3BkZlNlZXdoamc5LU9Qc1RTaFJYNjJzemV0NU9ONDVmM0JFTW5wRWNvbW43LTRhOEw0cmZkcDFsUDFRd2lXSHk2dV9sOHNTcTdZRWFBTXN2VmlMRkRZTzdIX1lOZUFUMm9wWXQwUmpRanowbERtLWJnRWc1dGQ2dFdCNXJOU3NjYjhJeWR2c0xsWUZxZzlJZ0hVVHc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNSWtGQzdRb3BkZlNlZXdoamc5LU9Qc1RTaFJYNjJzemV0NU9ONDVmM0JFTW5wRWNvbW43LTRhOEw0cmZkcDFsUDFRd2lXSHk2dV9sOHNTcTdZRWFBTXN2VmlMRkRZTzdIX1lOZUFUMm9wWXQwUmpRanowbERtLWJnRWc1dGQ2dFdCNXJOU3NjYjhJeWR2c0xsWUZxZzlJZ0hVVHc?oc=5\" target=\"_blank\"&gt;German space rocket reaches orbit in Europe's first commercial launch&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-05T20:17:00.000Z",
+          "score": 8
         },
         {
           "title": "Saxony-Anhalt: Far-right AfD eyes power in German state vote",
@@ -113,22 +136,14 @@
           "description": "Bavaria-based Isar Aerospace managed to launch its Spectrum rocket into orbit, 18 months after its first attempt. This is the first such launch from European soil.",
           "published": "2026-09-05T22:26:00.000Z",
           "score": 4
-        },
-        {
-          "title": "US envoys set for Ukraine talks after meeting Putin in Russia",
-          "link": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "It will be the first trip by Steve Witkoff and Jared Kushner, Trump's top negotiators, to Kyiv.",
-          "published": "2026-09-06T02:24:16.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 303,
-    "articlesLast24h": 39,
-    "afterDedup": 35,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 135,
+    "afterDedup": 108,
     "feedsQueried": 19
   }
 }
