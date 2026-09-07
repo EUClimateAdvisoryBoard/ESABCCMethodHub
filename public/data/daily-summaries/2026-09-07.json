@@ -1,20 +1,26 @@
 {
   "date": "2026-09-07",
-  "generatedAt": "2026-09-07T10:02:36.827Z",
+  "generatedAt": "2026-09-07T16:22:04.105Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 7 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "North Korea's Kim Jong Un says new destroyer part of nuclear response system - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxPbFRSUlNzcW9sRk4xbGh3VkY3WC1sRmVGX0h6QUJnSmNnY294UHRaQzZuVndJTk1neFVXN3FfVzRwRFo0Y3VYNEdnOER1OHhBRHpkU1NoQTR4ZHByc1dKNlRjd0lTdGpadnBLYndzaktLc0ZUQUxkUzNTdDFTRVBBNU5GSm5YcHRFdC02b2QybkdwUVJmY0pyaHhHQjJWVlVKVWRTQzZDRnpUeks4cGpCUERXc1dXU3QxYjJzRnpYcDFqNjdUWGRlYWNmeEVmUnRk?oc=5\" target=\"_blank\"&gt;North Korea's Kim Jong Un says new destroyer part of nuclear response system&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+      "headline": "Public asked to have their say on proposed new renewable energy company",
+      "summary": "The proposed plans aim to reduce the cost of energy in the long-term, but won't be able to set bills.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "At regional summit, Pacific islands demand COP31 support for clean energy and finance",
-      "summary": "Pacific island nations call for COP31 to deliver finance for renewables and ocean protection, as the UN warns of devastating sea level rise The post At regional summit, Pacific islands demand COP31 support for clean energy and finance appeared first on Climate Home News.",
+      "headline": "Speech by Commissioner Hoekstra at the launch of Europe's largest carbon capture and storage project at Yara Sluiskil, the Netherlands",
+      "summary": "European Commission Speech Sluiskil, 07 Sep 2026 Prime Ministers, Ladies and Gentlemen, \r\nPrime Minister Støre, first of all, my sincere condolences on the passing of the late King Harold V. And may I also than...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Taiwan's Wistron launches $1.5 billion GDS sale to fund raw material purchases - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVnBsdmtBcXdDT1BaNGRDUWFRRVFKeG1YSEhIRzFldGJMTkV3VXhhcnZkclM0bFBVZnh6OENrU2xOejJnNF9OSWJYbmZYUzllaE9WQ3pvYkhaZHdyNmJjRF9RcGxBR25PT3Zhellkek9qOUpyOHMwcWxNMFVHYWswYkU3VXBjZ2RzdkZLVEUzTlktYVgtaTVwRW9fazZOMkdIZW1CY1h3NlFJa3VhY09TZ1U5ZDJNS2I0QUc0?oc=5\" target=\"_blank\"&gt;Taiwan's Wistron launches $1.5 billion GDS sale to fund raw material purchases&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -27,6 +33,30 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Public asked to have their say on proposed new renewable energy company",
+          "link": "https://www.bbc.co.uk/news/articles/c780n702pp4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The proposed plans aim to reduce the cost of energy in the long-term, but won't be able to set bills.",
+          "published": "2026-09-07T14:35:38.000Z",
+          "score": 7
+        },
+        {
+          "title": "Belgium withholds support for Infantino over Balogun red-card row - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcGs0T19QVTNkU3pzaTRlbE1zQnRXVzNKVUlVOEpCMnhVblBnOGxKUHV2cnVleDNqazhiVkFOaVZPeGpUNFQ3SnliWlluTEROVWMyUVc0bExMWUVmQkZHQm9WS3FsdndsV25yQWpIN1BfZHk4c241dzVRU0RlRWxkTVdBS1htamRLTnlqUTV5M1lIOXFvel9fMVZpVEZXQjg1WllRUHBTa3I5V2FVYWl6Sg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNcGs0T19QVTNkU3pzaTRlbE1zQnRXVzNKVUlVOEpCMnhVblBnOGxKUHV2cnVleDNqazhiVkFOaVZPeGpUNFQ3SnliWlluTEROVWMyUVc0bExMWUVmQkZHQm9WS3FsdndsV25yQWpIN1BfZHk4c241dzVRU0RlRWxkTVdBS1htamRLTnlqUTV5M1lIOXFvel9fMVZpVEZXQjg1WllRUHBTa3I5V2FVYWl6Sg?oc=5\" target=\"_blank\"&gt;Belgium withholds support for Infantino over Balogun red-card row&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-07T09:11:34.000Z",
+          "score": 7
+        },
+        {
+          "title": "Police in eastern German state defuse 21 explosive devices found near power grid - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQcHIwbk54R2tSMHM2RGpjbDFBSmhJeGlXdERIWE9MTk5WNkhtZGllSFlmbE1jOU5lUVh3RWNUSGJ6RnNoRkJxZWpQWmo1aV9DdkliNGdmN05QNGNEQkcxUW13ak51X3RraVRNb0JoeFc4aVV6R1lqOEdoa3hXOXBQZHZqaUp3Wkg1TGRkaElVRjFHbmJEUjJNRmcxazhSdkVpMmU3d0xyX3FYVXJUd19tQzhZaTZlamZoemM2el9Ucm12TzB5?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQcHIwbk54R2tSMHM2RGpjbDFBSmhJeGlXdERIWE9MTk5WNkhtZGllSFlmbE1jOU5lUVh3RWNUSGJ6RnNoRkJxZWpQWmo1aV9DdkliNGdmN05QNGNEQkcxUW13ak51X3RraVRNb0JoeFc4aVV6R1lqOEdoa3hXOXBQZHZqaUp3Wkg1TGRkaElVRjFHbmJEUjJNRmcxazhSdkVpMmU3d0xyX3FYVXJUd19tQzhZaTZlamZoemM2el9Ucm12TzB5?oc=5\" target=\"_blank\"&gt;Police in eastern German state defuse 21 explosive devices found near power grid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+          "published": "2026-09-07T10:39:52.000Z",
+          "score": 7
+        },
         {
           "title": "North Korea's Kim Jong Un says new destroyer part of nuclear response system - Reuters",
           "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPbFRSUlNzcW9sRk4xbGh3VkY3WC1sRmVGX0h6QUJnSmNnY294UHRaQzZuVndJTk1neFVXN3FfVzRwRFo0Y3VYNEdnOER1OHhBRHpkU1NoQTR4ZHByc1dKNlRjd0lTdGpadnBLYndzaktLc0ZUQUxkUzNTdDFTRVBBNU5GSm5YcHRFdC02b2QybkdwUVJmY0pyaHhHQjJWVlVKVWRTQzZDRnpUeks4cGpCUERXc1dXU3QxYjJzRnpYcDFqNjdUWGRlYWNmeEVmUnRk?oc=5",
@@ -42,30 +72,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNUktHTlBXbS1YOE5lNFhESXgzVTFTQnFYd0tmNkY1N0dHSjBUTEtTMS1tM2NILXB6NWpwWXBycWt5RXFrSGhOdGh0UzB4aEQwcVZwTjVUM3NMTktCNGRISlItV2czRFNFcThpQmc1NU80UW1aZ1RUV2JsMkFmN3o2TVZHRExFdkZYdGtWU2huSUZrWGJoMVpmNGd5WjRIUGNYcFgxZXhrYVlHaGdYSno3OXJHR3BmSDBsWXJKUXZidWh2YWdmYTRNVjluZnc?oc=5\" target=\"_blank\"&gt;China pauses approvals for battery storage manufacturing projects, Cailianshe reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
           "published": "2026-09-07T04:55:00.000Z",
           "score": 7
-        },
-        {
-          "title": "India ramps up coal rail shipments as power plant stocks dwindle - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTUt5X2o4dDVlWE5NQUlWVFc1aEJnYVExQV9MV3RvLTdaSnlqTEtsVnVtenU1bmxiOUxnU2k3UEEtdjFwSFVVcFliQnBzRm5rRWVUNTMxM1Z4ZFdVNXg1UC0zLXBaNjhITnJoM0RQcE9aME9WVk80ZHJkamFOZ0M1NFREU1IzdUliajZvRUtLcnk5Z1JsaExjcEtVNWxvZXRzelZDRTNNRC1IbjVIMVE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQTUt5X2o4dDVlWE5NQUlWVFc1aEJnYVExQV9MV3RvLTdaSnlqTEtsVnVtenU1bmxiOUxnU2k3UEEtdjFwSFVVcFliQnBzRm5rRWVUNTMxM1Z4ZFdVNXg1UC0zLXBaNjhITnJoM0RQcE9aME9WVk80ZHJkamFOZ0M1NFREU1IzdUliajZvRUtLcnk5Z1JsaExjcEtVNWxvZXRzelZDRTNNRC1IbjVIMVE?oc=5\" target=\"_blank\"&gt;India ramps up coal rail shipments as power plant stocks dwindle&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-07T05:34:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "South Korea, US agree on more than $20 billion gas plant investment in Texas, media reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNUFJ0bXhENGNBcGlGYzNhMlZXRTBQbm5HM19oWWdMYkk3ZHprN1pDckNOUWpNaXp4bk9RbTZjaGlwd0ZIeW51dW1EQkVXaGVvWmlGMVBrSmJ2azU3ZENWdVY5NE9ib3c4aFlNR1V0OFZRdWZQMVRaRFNVMnZ4M1gwSkEzcFplVEx3SFQ0Rlg4N01HSEppUTY0bk5PWDVHUUd1dE0xdjJYaXV0VVk1dkpNZXlxdDREQ19lUUJYcFJ2YkhOSTRa?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNUFJ0bXhENGNBcGlGYzNhMlZXRTBQbm5HM19oWWdMYkk3ZHprN1pDckNOUWpNaXp4bk9RbTZjaGlwd0ZIeW51dW1EQkVXaGVvWmlGMVBrSmJ2azU3ZENWdVY5NE9ib3c4aFlNR1V0OFZRdWZQMVRaRFNVMnZ4M1gwSkEzcFplVEx3SFQ0Rlg4N01HSEppUTY0bk5PWDVHUUd1dE0xdjJYaXV0VVk1dkpNZXlxdDREQ19lUUJYcFJ2YkhOSTRa?oc=5\" target=\"_blank\"&gt;South Korea, US agree on more than $20 billion gas plant investment in Texas, media reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-09-07T03:42:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Antonelli takes sensational home Italian GP win from back of grid - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdTlKSVhMVEhIUTlaWUluWkprc2t3emw5c3pKLW5YS1JUQXRqUW1MalRBQzdxZ01vbUo0eFpYOU1ZZ280aEFQS1hBRlF4WTlwUWk2NGdkVDNybm53VGl3RGw3ckhhZ1dtTzJEWU9LRjVJRXpHZVJqQzhoSUs3NDA0MnFBbmxtcnoyQmVOUWJvWEdWZlBQZ1UyVXR4UlVMMzktbHktVHJ4M1R1MGRnNXc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNdTlKSVhMVEhIUTlaWUluWkprc2t3emw5c3pKLW5YS1JUQXRqUW1MalRBQzdxZ01vbUo0eFpYOU1ZZ280aEFQS1hBRlF4WTlwUWk2NGdkVDNybm53VGl3RGw3ckhhZ1dtTzJEWU9LRjVJRXpHZVJqQzhoSUs3NDA0MnFBbmxtcnoyQmVOUWJvWEdWZlBQZ1UyVXR4UlVMMzktbHktVHJ4M1R1MGRnNXc?oc=5\" target=\"_blank\"&gt;Antonelli takes sensational home Italian GP win from back of grid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-06T17:16:56.000Z",
-          "score": 2
         }
       ]
     },
@@ -74,51 +80,60 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "At regional summit, Pacific islands demand COP31 support for clean energy and finance",
+          "title": "Speech by Commissioner Hoekstra at the launch of Europe's largest carbon capture and storage project at Yara Sluiskil, the Netherlands",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1809",
+          "source": "European Commission",
+          "description": "European Commission Speech Sluiskil, 07 Sep 2026 Prime Ministers, Ladies and Gentlemen, \r\nPrime Minister Støre, first of all, my sincere condolences on the passing of the late King Harold V. And may I also than...",
+          "published": "2026-09-07T15:25:10.000Z",
+          "score": 23
+        },
+        {
+          "title": "At regional summit, Pacific islands ask for COP31 support for clean energy and finance",
           "link": "https://www.climatechangenews.com/2026/09/07/pacific-islands-forum-cop31-clean-energy-finance-ocean-renewables/",
           "source": "Climate Home News",
-          "description": "Pacific island nations call for COP31 to deliver finance for renewables and ocean protection, as the UN warns of devastating sea level rise The post At regional summit, Pacific islands demand COP31 support for clean energy and finance appeared first on Climate Home News.",
+          "description": "Pacific nations want the annual climate conference to deliver funding for renewables and ocean protection, as the UN warns of devastating sea level rise The post At regional summit, Pacific islands ask for COP31 support for clean energy and finance appeared first on Climate Home News.",
           "published": "2026-09-07T10:00:34.000Z",
           "score": 13
         },
         {
-          "title": "Von der Leyen in Greenland with EU investments amid Trump pressure",
-          "link": "https://www.dw.com/en/von-der-leyen-in-greenland-with-eu-investments-amid-trump-pressure/a-79109197?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU is preparing a major investment package and closer political ties with the Danish Arctic territory amid Donald Trump&#039;s demand for greater US control of the mineral-rich island.",
-          "published": "2026-09-07T03:58:00.000Z",
+          "title": "London talks raise hopes for green shipping deal",
+          "link": "https://www.climatechangenews.com/2026/09/07/london-talks-raise-hopes-of-green-shipping-deal/",
+          "source": "Climate Home News",
+          "description": "Despite fears of US wrecking tactics, the IMO says there have been \"constructive discussions\" over how to meet the industry's green targets The post London talks raise hopes for green shipping deal appeared first on Climate Home News.",
+          "published": "2026-09-07T12:23:10.000Z",
           "score": 10
         },
         {
-          "title": "Pioneering fossil hunter recognised with blue plaque",
-          "link": "https://www.bbc.co.uk/news/articles/cx2zx1v8ye3o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Dorothea Bate discovered the dwarf elephant and the myotragus, an extinct goat-like antelope.",
-          "published": "2026-09-07T06:01:33.000Z",
-          "score": 7
+          "title": "EU&#039;s Von der Leyen pledges $232 million Greenland investment",
+          "link": "https://www.dw.com/en/eu-s-von-der-leyen-pledges-232-million-greenland-investment/a-79109197?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The EU is preparing a major investment package and closer political ties with the Danish Arctic territory amid Donald Trump&#039;s demand for greater US control of the mineral-rich island.",
+          "published": "2026-09-07T13:35:00.000Z",
+          "score": 10
         },
         {
-          "title": "The volunteers risking their lives to defuse Indonesia's wildfire 'carbon bombs'",
-          "link": "https://www.bbc.co.uk/news/articles/c1kx4lgy4z4o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Peat fires in Borneo are releasing ancient stores of carbon - and sending a toxic smog across South East Asia.",
-          "published": "2026-09-06T23:13:29.000Z",
-          "score": 7
-        },
-        {
-          "title": "'Slumping' South Korean corals worry divers, scientists studying climate change - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQckVTa1VNM2JwZ2RfQ3d5VGxILTlpT2VYS3NSUlFWNVNJX3RUdGFYV0piM0ptUlZUTUstRm5VTHJPS1BzY1cxaW8yanc4eTNuWjVmTDZ6dEJhcEVwa2dCTXByQWRmcWNFQ25uNE5RZF85c0NBd01YVVhhbWluZnBjM1l2RTRPcGJXRHJZTWRlc3BmQmhlMncyc0JrNXBvMDZLNkhLaEl1UmlMT1ctU0hFUllBT0pZTXNaczNuVGxvN3BpT3VZaGpwbEp1MnR0dw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQckVTa1VNM2JwZ2RfQ3d5VGxILTlpT2VYS3NSUlFWNVNJX3RUdGFYV0piM0ptUlZUTUstRm5VTHJPS1BzY1cxaW8yanc4eTNuWjVmTDZ6dEJhcEVwa2dCTXByQWRmcWNFQ25uNE5RZF85c0NBd01YVVhhbWluZnBjM1l2RTRPcGJXRHJZTWRlc3BmQmhlMncyc0JrNXBvMDZLNkhLaEl1UmlMT1ctU0hFUllBT0pZTXNaczNuVGxvN3BpT3VZaGpwbEp1MnR0dw?oc=5\" target=\"_blank\"&gt;'Slumping' South Korean corals worry divers, scientists studying climate change&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
-          "published": "2026-09-07T01:03:00.000Z",
-          "score": 7
+          "title": "Carbon capture tech exists. Scaling it up is the hard part",
+          "link": "https://www.dw.com/en/carbon-capture-tech-exists-scaling-it-up-is-the-hard-part/a-79147600?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Europe just opened a carbon capture and storage plant billed as the continent&#039;s largest. But global climate scenarios call for far more capacity than exists anywhere on Earth.",
+          "published": "2026-09-07T14:12:00.000Z",
+          "score": 9
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Taiwan's Wistron launches $1.5 billion GDS sale to fund raw material purchases - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVnBsdmtBcXdDT1BaNGRDUWFRRVFKeG1YSEhIRzFldGJMTkV3VXhhcnZkclM0bFBVZnh6OENrU2xOejJnNF9OSWJYbmZYUzllaE9WQ3pvYkhaZHdyNmJjRF9RcGxBR25PT3Zhellkek9qOUpyOHMwcWxNMFVHYWswYkU3VXBjZ2RzdkZLVEUzTlktYVgtaTVwRW9fazZOMkdIZW1CY1h3NlFJa3VhY09TZ1U5ZDJNS2I0QUc0?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVnBsdmtBcXdDT1BaNGRDUWFRRVFKeG1YSEhIRzFldGJMTkV3VXhhcnZkclM0bFBVZnh6OENrU2xOejJnNF9OSWJYbmZYUzllaE9WQ3pvYkhaZHdyNmJjRF9RcGxBR25PT3Zhellkek9qOUpyOHMwcWxNMFVHYWswYkU3VXBjZ2RzdkZLVEUzTlktYVgtaTVwRW9fazZOMkdIZW1CY1h3NlFJa3VhY09TZ1U5ZDJNS2I0QUc0?oc=5\" target=\"_blank\"&gt;Taiwan's Wistron launches $1.5 billion GDS sale to fund raw material purchases&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-07T09:52:31.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -138,44 +153,44 @@
           "score": 8
         },
         {
-          "title": "EU to give Greenland a cash boost amid Trump annexation drive - Reuters",
+          "title": "Singapore's high ministerial salaries under scrutiny in parliament this week - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSzlNcnZmVGlTa2I1bUVGZDJjSC1kSDNBRzQyV1BVcHlUaUlJVlRLSGtKeFh6OWp3MnhPZVlVRkNCMFFsX2RxUUNUUXFJNHh2dGprM1FwM3Z5Z3YzNzB1bnRXakJfSTJ5aU83NjVNam5qeXJsclNEcVZ6bWxoaVZDRGMteTZ3VjdROHFQbU44UkZnYzhWVWEybVplU09FZ1dRRXRxNHJ1Z3ZsV3pjTEc3UEE4NUMycS1fcGNDLTQtMnAzdklHUkE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNSzlNcnZmVGlTa2I1bUVGZDJjSC1kSDNBRzQyV1BVcHlUaUlJVlRLSGtKeFh6OWp3MnhPZVlVRkNCMFFsX2RxUUNUUXFJNHh2dGprM1FwM3Z5Z3YzNzB1bnRXakJfSTJ5aU83NjVNam5qeXJsclNEcVZ6bWxoaVZDRGMteTZ3VjdROHFQbU44UkZnYzhWVWEybVplU09FZ1dRRXRxNHJ1Z3ZsV3pjTEc3UEE4NUMycS1fcGNDLTQtMnAzdklHUkE?oc=5\" target=\"_blank\"&gt;Singapore's high ministerial salaries under scrutiny in parliament this week&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-07T06:33:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU pledges Greenland investments amid Trump's push for control - Reuters",
           "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUEowN0xTcUtyLU1rMXoxb0NNYWZaVi02WHJXNlhWZzRqWTNKbFpKckFNdUEzOFJaUWxRZHNyMUJBZXBuUk9VZXF0VkVsNjl3ZEtnWDI5aTlwSjdCS2FxcmUyclExS3lNTVZJTUlFMmY5dXhEREFKR1A0Qkg4Z0syanJmNWdialFqTHdIakZaQlgwMW5tYjA4YnRwbE5fOWc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNUEowN0xTcUtyLU1rMXoxb0NNYWZaVi02WHJXNlhWZzRqWTNKbFpKckFNdUEzOFJaUWxRZHNyMUJBZXBuUk9VZXF0VkVsNjl3ZEtnWDI5aTlwSjdCS2FxcmUyclExS3lNTVZJTUlFMmY5dXhEREFKR1A0Qkg4Z0syanJmNWdialFqTHdIakZaQlgwMW5tYjA4YnRwbE5fOWc?oc=5\" target=\"_blank\"&gt;EU to give Greenland a cash boost amid Trump annexation drive&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNUEowN0xTcUtyLU1rMXoxb0NNYWZaVi02WHJXNlhWZzRqWTNKbFpKckFNdUEzOFJaUWxRZHNyMUJBZXBuUk9VZXF0VkVsNjl3ZEtnWDI5aTlwSjdCS2FxcmUyclExS3lNTVZJTUlFMmY5dXhEREFKR1A0Qkg4Z0syanJmNWdialFqTHdIakZaQlgwMW5tYjA4YnRwbE5fOWc?oc=5\" target=\"_blank\"&gt;EU pledges Greenland investments amid Trump's push for control&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-06T23:57:00.000Z",
           "score": 8
         },
         {
-          "title": "Wildfires, heat waves threaten to undermine air quality, UN weather agency says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNmdsbHIzdVk0TWxDaGJjMnZvdkdUY3J0SExNNzE4THBud3N0ejFIelUyRTJNR3c3bERId3N0bTRuZ3YxRTE5RlRjN0tCR0o5QnM2d0dPVnh5X0Jwd3FuV0JOU1JFWkp0d0dNYVd6M3Q1VmVkS0pjNFZwUWNqS0FPVlFvUGlYYkRPaEdSOVRIZ0dzcjF2WnZJWXFCMWVVNnZGSFBEY3hxTEduRXlYX21YMVdNSzIxYUJzeEU5cXRkSzlPU2pDLW93eQ?oc=5",
+          "title": "Saxony-Anhalt election delivers a blow to Merz and a warning to Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMmdkeWFmV2FTc2lKQlRsS3YxZ3Fkbjg1Q1VMY25hZ0ViWmdGUGRjSk45QU5Zbmg1aVk5UjZZVlVaTU9KX0pCRDVTSDdIZVhtM2d3ZEdJQ1RQVW9VSy1FUTNTT04yemtkaXFXMV9vUl80R0Rhend5bkM5UGZudkRGaWlQMGR4Z0duc0pXME4tUWF1NHkxQnhNbUZsMWp4cjg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNmdsbHIzdVk0TWxDaGJjMnZvdkdUY3J0SExNNzE4THBud3N0ejFIelUyRTJNR3c3bERId3N0bTRuZ3YxRTE5RlRjN0tCR0o5QnM2d0dPVnh5X0Jwd3FuV0JOU1JFWkp0d0dNYVd6M3Q1VmVkS0pjNFZwUWNqS0FPVlFvUGlYYkRPaEdSOVRIZ0dzcjF2WnZJWXFCMWVVNnZGSFBEY3hxTEduRXlYX21YMVdNSzIxYUJzeEU5cXRkSzlPU2pDLW93eQ?oc=5\" target=\"_blank\"&gt;Wildfires, heat waves threaten to undermine air quality, UN weather agency says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
-          "published": "2026-09-07T04:01:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPMmdkeWFmV2FTc2lKQlRsS3YxZ3Fkbjg1Q1VMY25hZ0ViWmdGUGRjSk45QU5Zbmg1aVk5UjZZVlVaTU9KX0pCRDVTSDdIZVhtM2d3ZEdJQ1RQVW9VSy1FUTNTT04yemtkaXFXMV9vUl80R0Rhend5bkM5UGZudkRGaWlQMGR4Z0duc0pXME4tUWF1NHkxQnhNbUZsMWp4cjg?oc=5\" target=\"_blank\"&gt;Saxony-Anhalt election delivers a blow to Merz and a warning to Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-07T13:11:34.000Z",
+          "score": 8
         },
         {
-          "title": "UAE builds alternative trade, energy routes after Iran attacks, official says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNX2k1aEFKNWUzaXRzZXlkTVZNb3MyOTZoSjBoa2N5Zmtpd1Z2VVRWbV9JcnNHN0hkS1ZPRXEyb1UxdGMzN1pFNUFCUmpPVTNvQndsa3c1TzBwNEVvVXNLVXZjNGVnbzF6TUdGS2N5SVdLT2k2Nlk1TmREb0ZlTVp1cGlLRzJTMWJqLTN4VVRiY2s1emV6YldrQnJHQWRmZFBKRUdDalJjb1lFM1NxaHI2eDdWWFN1R0tydFJYOUh3Z0phb0paZUNRMw?oc=5",
+          "title": "Euro zone investor morale hits four-year-plus high in September, Sentix survey shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUVBLRnBSSzNMdDY2eGY1a040aFBQQ1hqSFVjNTNkTDUwOURNMk0wWDI4eDExOU9oc0d3LXR3LURta3FXRU9HX3pPeElOTUxjRWdDdFg5SkJydzhIN3B2d0F0YTJtSk5waWloVzlILXQ5T1Q5MXVmVlFBUDdYd3lnNElwd2VOSG5CYTBYYzMzTV9SY2ZfWEx1RXQ0RkdOT3NyUFZWOXVpMHJkemw1RGNpWHZmeHZjekRTZFFfZU8yc3l4dVNSRm8yXw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNX2k1aEFKNWUzaXRzZXlkTVZNb3MyOTZoSjBoa2N5Zmtpd1Z2VVRWbV9JcnNHN0hkS1ZPRXEyb1UxdGMzN1pFNUFCUmpPVTNvQndsa3c1TzBwNEVvVXNLVXZjNGVnbzF6TUdGS2N5SVdLT2k2Nlk1TmREb0ZlTVp1cGlLRzJTMWJqLTN4VVRiY2s1emV6YldrQnJHQWRmZFBKRUdDalJjb1lFM1NxaHI2eDdWWFN1R0tydFJYOUh3Z0phb0paZUNRMw?oc=5\" target=\"_blank\"&gt;UAE builds alternative trade, energy routes after Iran attacks, official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
-          "published": "2026-09-07T08:46:23.000Z",
-          "score": 7
-        },
-        {
-          "title": "Malaysia lifts emergency declaration in Sarawak district as fire haze eases, though air quality still poor - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPajJ3U1ZSWkpvMFlUMkVkeGJQejhfeTFoX1VrU0drcHpoTmR2WGFDNmV2WjI4VTh4UzhkSU1IYS1lZVpXMmpEcGpFSmlTZ2xZVG1VYjFhVXJ3bWNNa282RFEtYUFFd196WHAyeWdQeGdqN1J0bmpvWDhvdmJBaGJwRzJ5Tnc3YW15T1A1UTNmWHI4R3d6SDBtZWI5RVBHOXJKSGpsc0NmS3l4SmlGZDN2bXQ3cWQxaDVEbVN5blViZHgxMjBIRU9qMmxyWVBBcERMRzdj?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPajJ3U1ZSWkpvMFlUMkVkeGJQejhfeTFoX1VrU0drcHpoTmR2WGFDNmV2WjI4VTh4UzhkSU1IYS1lZVpXMmpEcGpFSmlTZ2xZVG1VYjFhVXJ3bWNNa282RFEtYUFFd196WHAyeWdQeGdqN1J0bmpvWDhvdmJBaGJwRzJ5Tnc3YW15T1A1UTNmWHI4R3d6SDBtZWI5RVBHOXJKSGpsc0NmS3l4SmlGZDN2bXQ3cWQxaDVEbVN5blViZHgxMjBIRU9qMmxyWVBBcERMRzdj?oc=5\" target=\"_blank\"&gt;Malaysia lifts emergency declaration in Sarawak district as fire haze eases, though air quality still poor&lt;/a&gt;&amp;nbsp;&amp;nbsp;&",
-          "published": "2026-09-07T04:42:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUVBLRnBSSzNMdDY2eGY1a040aFBQQ1hqSFVjNTNkTDUwOURNMk0wWDI4eDExOU9oc0d3LXR3LURta3FXRU9HX3pPeElOTUxjRWdDdFg5SkJydzhIN3B2d0F0YTJtSk5waWloVzlILXQ5T1Q5MXVmVlFBUDdYd3lnNElwd2VOSG5CYTBYYzMzTV9SY2ZfWEx1RXQ0RkdOT3NyUFZWOXVpMHJkemw1RGNpWHZmeHZjekRTZFFfZU8yc3l4dVNSRm8yXw?oc=5\" target=\"_blank\"&gt;Euro zone investor morale hits four-year-plus high in September, Sentix survey shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
+          "published": "2026-09-07T08:34:09.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 402,
-    "articlesLast24h": 148,
-    "afterDedup": 135,
+    "articlesLast24h": 160,
+    "afterDedup": 147,
     "feedsQueried": 19
   }
 }
