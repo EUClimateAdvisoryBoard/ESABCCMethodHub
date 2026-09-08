@@ -1,18 +1,18 @@
 {
   "date": "2026-09-08",
-  "generatedAt": "2026-09-08T14:59:51.244Z",
+  "generatedAt": "2026-09-08T19:46:16.920Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 8 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Nepal says big polluters must ‘wake up’ as it calls for climate compensation over flood disaster",
-      "summary": "&lt;p&gt;Foreign minister Shisir Khanal tells the Guardian the world’s biggest economies need to help Nepal, which contributes less than 0.1% of global greenhouse gas emissions &lt;/p&gt;&lt;p&gt;Nepal is demanding $20m in climate compensation for the recent devastating floods, as a senior minister called on the world’s most polluting countries to “wake up” and accept shared responsibility for a disaster that led to the death or disappearance of more than 6,000 people.&lt;/p&gt;&lt;p&gt;Scientis",
+      "headline": "China’s industrial engine starts to break its fossil fuel habit",
+      "summary": "Despite a rebound in coal generation this year, clean energy from wind and solar is gaining ground on the fossil fuels that have powered decades of industry growth The post China’s industrial engine starts to break its fossil fuel habit appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Speech by Commissioner Hoekstra at the launch of Europe's largest carbon capture and storage project at Yara Sluiskil, the Netherlands",
-      "summary": "European Commission Speech Sluiskil, 07 Sep 2026 Prime Ministers, Ladies and Gentlemen, \r\nPrime Minister Støre, first of all, my sincere condolences on the passing of the late King Harold V. And may I also than...",
+      "headline": "Industry and NGOs lobby to weaken UN carbon credit rules in &#8220;coordinated&#8221; push",
+      "summary": "In copycat submissions and a private briefing to government officials, the groups have opposed a proposal to tighten safeguards for emissions offsets The post Industry and NGOs lobby to weaken UN carbon credit rules in &#8220;coordinated&#8221; push appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,6 +34,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "China’s industrial engine starts to break its fossil fuel habit",
+          "link": "https://www.climatechangenews.com/2026/09/08/chinas-industrial-engine-starts-to-break-its-fossil-fuel-habit/",
+          "source": "Climate Home News",
+          "description": "Despite a rebound in coal generation this year, clean energy from wind and solar is gaining ground on the fossil fuels that have powered decades of industry growth The post China’s industrial engine starts to break its fossil fuel habit appeared first on Climate Home News.",
+          "published": "2026-09-08T15:30:15.000Z",
+          "score": 13
+        },
+        {
           "title": "Nepal says big polluters must ‘wake up’ as it calls for climate compensation over flood disaster",
           "link": "https://www.theguardian.com/world/2026/sep/08/nepal-floods-climate-compensation",
           "source": "The Guardian - Climate",
@@ -42,19 +50,11 @@
           "score": 7
         },
         {
-          "title": "Syrian reactor could have been used for nuclear weapons if completed, UN says",
-          "link": "https://www.theguardian.com/world/2026/sep/07/syrian-reactor-could-nuclear-weapons-if-completed-un",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Chief of nuclear watchdog says secret Assad-era facility would have been able to produce fissile material &lt;/p&gt;&lt;p&gt;A nearly complete nuclear reactor built secretly during the rule of the toppled Syrian leader Bashar al-Assad would have been able to produce fissile material for possible use in nuclear weapons, the chief of the UN nuclear watchdog has revealed.&lt;/p&gt;&lt;p&gt;Inspectors from the International Atomic Energy Agency (IAEA) last month visited two sites, one in De",
-          "published": "2026-09-07T16:37:31.000Z",
-          "score": 7
-        },
-        {
-          "title": "Public asked to have their say on proposed new renewable energy company",
-          "link": "https://www.bbc.co.uk/news/articles/c780n702pp4o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The proposed plans aim to reduce the cost of energy in the long-term, but won't be able to set bills.",
-          "published": "2026-09-07T18:02:43.000Z",
+          "title": "Sabotage suspect held in Germany after spate of attacks on power grid",
+          "link": "https://www.bbc.co.uk/news/articles/cy5zw56lnx3o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The suspect had reportedly claimed responsibility for attacks on electricity substations in letters.",
+          "published": "2026-09-08T15:57:06.000Z",
           "score": 7
         },
         {
@@ -66,11 +66,11 @@
           "score": 7
         },
         {
-          "title": "Germany news: Gas reserves historically low ahead of winter",
-          "link": "https://www.dw.com/en/germany-news-gas-reserves-historically-low-ahead-of-winter/live-79153944?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Gas storage operator association INES has warned that Germany&#039;s gas reserves could run out in the event of a cold winter. Meanwhile, fallout from the AfD&#039;s state election victory continues. Follow DW for the latest.",
-          "published": "2026-09-08T06:31:00.000Z",
+          "title": "Save our seabirds from the huge windfarm due to be built near Bass Rock | Letter",
+          "link": "https://www.theguardian.com/environment/2026/sep/08/save-our-seabirds-from-the-huge-windfarm-due-to-be-built-near-bass-rock",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;The offshore windfarm at Berwick Bank is predicted to kill more than 4,000 birds in its first year alone – among them gannets, puffins and kittiwakes, writes &lt;strong&gt;Ashley Davies&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Lev Parikian paints a vivid picture of the gannets of the Bass Rock and the impact that avian flu has had on their numbers (&lt;a href=\"https://www.theguardian.com/environment/2026/aug/31/country-diary-for-the-gannets-of-bass-rock-its-a-slow-road-to-recovery\"&gt;Country d",
+          "published": "2026-09-08T16:49:12.000Z",
           "score": 2
         }
       ]
@@ -80,14 +80,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Speech by Commissioner Hoekstra at the launch of Europe's largest carbon capture and storage project at Yara Sluiskil, the Netherlands",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1809",
-          "source": "European Commission",
-          "description": "European Commission Speech Sluiskil, 07 Sep 2026 Prime Ministers, Ladies and Gentlemen, \r\nPrime Minister Støre, first of all, my sincere condolences on the passing of the late King Harold V. And may I also than...",
-          "published": "2026-09-07T15:25:10.000Z",
-          "score": 23
-        },
-        {
           "title": "Industry and NGOs lobby to weaken UN carbon credit rules in &#8220;coordinated&#8221; push",
           "link": "https://www.climatechangenews.com/2026/09/08/industry-and-ngos-lobby-to-weaken-un-carbon-credit-rules-in-coordinated-push/",
           "source": "Climate Home News",
@@ -96,28 +88,36 @@
           "score": 17
         },
         {
-          "title": "French winemakers forecast 30-year low harvest after severe drought and heat",
-          "link": "https://www.theguardian.com/world/2026/sep/07/french-winemakers-forecast-30-year-low-harvest-after-severe-drought-and-heat",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Estimates suggest drop in production with vineyards also concerned ‘smoke taint’ from wildfires may affect quality&lt;/p&gt;&lt;p&gt;French vineyards hit by severe drought and heatwaves are expected to report a 30-year low in wine production after the country’s hottest ever recorded summer, according to the agriculture ministry.&lt;/p&gt;&lt;p&gt;Initial estimates suggest winemakers will produce just under 34m hectolitres from this year’s harvest: a drop of 6% on last year, and 17% less",
-          "published": "2026-09-07T15:10:51.000Z",
-          "score": 7
+          "title": "Q&#038;A: What can – and cannot – be said about global warming’s role in the 2026 Himalayan floods",
+          "link": "https://www.carbonbrief.org/qa-what-can-and-cannot-be-said-about-global-warmings-role-in-the-2026-himalayan-floods",
+          "source": "Carbon Brief",
+          "description": "On the morning of 26 August, flash floods surged through a Himalayan border region of Nepal and the Chinese region&#8230; The post Q&amp;A: What can – and cannot – be said about global warming’s role in the 2026 Himalayan floods appeared first on Carbon Brief.",
+          "published": "2026-09-08T16:03:25.000Z",
+          "score": 10
         },
         {
-          "title": "Nepal cracks down on online abuse of flood survivors",
-          "link": "https://www.bbc.co.uk/news/articles/cq5x3n38308o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Authorities will \"show no leniency\" to people who \"belittle\" those who are suffering, the prime minister says.",
-          "published": "2026-09-08T08:31:01.000Z",
-          "score": 7
-        },
-        {
-          "title": "EXCLUSIVE: How two men survived nine days in a Nepal flood tunnel - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQWDNVSGFNakxmWDZzWmJRVW9XQTFlNk1nYWphVld1bmtEdEM3ZU9pZ1N5cGNTcG9Db1pYVy1CLUVZQmYwczhhOEtKTlphc2JlRThwdXdlLWNNbnhZODVhTW5wYWN5OXBBSVVoMHpTNVZQTUFmS0V6Q1lWZVdTQ0JqbUxvZEQ5SUlSTGJLc2tkTDdGMENiNFZBSjlpTm4wdHdBam12VW1kTjNuMU0zN2RVSlhEeHI?oc=5",
+          "title": "Norway returns 69 Russians stranded in Arctic after ship arrest - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQT0w1eGtaZ0I5UTdlRzEzMVdBUWpHdHQ3bnBlNThSeEw0TG1WQ0R0STVFd3RFY3dyV1JaTFg5VzU2a2w4T0lveUZvUVFYVWptT1B5SkdTcVhhcTh6S0RaU3NzOWI3dG5WWVBBR0s4ZGpaQ19jN1laMzl2SEFGbW1RUlprakY3UlI2M2p6V2hUMExrWllJdTZWaXJPeVBsTjBxUWNudA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQWDNVSGFNakxmWDZzWmJRVW9XQTFlNk1nYWphVld1bmtEdEM3ZU9pZ1N5cGNTcG9Db1pYVy1CLUVZQmYwczhhOEtKTlphc2JlRThwdXdlLWNNbnhZODVhTW5wYWN5OXBBSVVoMHpTNVZQTUFmS0V6Q1lWZVdTQ0JqbUxvZEQ5SUlSTGJLc2tkTDdGMENiNFZBSjlpTm4wdHdBam12VW1kTjNuMU0zN2RVSlhEeHI?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: How two men survived nine days in a Nepal flood tunnel&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-08T00:30:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxQT0w1eGtaZ0I5UTdlRzEzMVdBUWpHdHQ3bnBlNThSeEw0TG1WQ0R0STVFd3RFY3dyV1JaTFg5VzU2a2w4T0lveUZvUVFYVWptT1B5SkdTcVhhcTh6S0RaU3NzOWI3dG5WWVBBR0s4ZGpaQ19jN1laMzl2SEFGbW1RUlprakY3UlI2M2p6V2hUMExrWllJdTZWaXJPeVBsTjBxUWNudA?oc=5\" target=\"_blank\"&gt;Norway returns 69 Russians stranded in Arctic after ship arrest&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-08T14:14:56.000Z",
           "score": 7
+        },
+        {
+          "title": "Wildlife and access boost planned for city park",
+          "link": "https://www.bbc.co.uk/news/articles/cd947jkqvk9o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Coventry City Council will use developers' money to make the improvements to Longford Nature Park.",
+          "published": "2026-09-08T04:56:17.000Z",
+          "score": 4
+        },
+        {
+          "title": "Global move away from oil could lead to conflict and migration, experts say",
+          "link": "https://www.theguardian.com/environment/2026/sep/08/global-move-away-from-oil-could-lead-to-conflict-and-migration-experts-say",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Researchers urge governments to help worst afflicted countries, such as Nigeria and Algeria, which rely on oil revenues for public services&lt;/p&gt;&lt;p&gt;Conflict, migration and economic upheaval will accompany the global move away from oil, unless governments act urgently to help the worst afflicted countries to cope, research has found.&lt;/p&gt;&lt;p&gt;Nigeria, Iran, Angola and Algeria are among the countries that will be severely affected, as they rely strongly on oil revenues ",
+          "published": "2026-09-08T00:00:21.000Z",
+          "score": 2
         }
       ]
     },
@@ -142,19 +142,27 @@
           "score": 2
         },
         {
+          "title": "EXCLUSIVE: Solvay in talks with One Investment Management on rare earths partnership - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUHk3MXc1T3RYSTNIYUotTkp5TEhQUEd5Z1NQYzVDMWppVHlkOUY3ek9jMjk3ZnRfbTFoamcySlhWa3dfb2stVnB6U2lveTdIN0Z3RWhRS1JmN0ozYmhLNC12a21qeklmdzg1dUNjSU1pNUhBSG9FcDhlMi1Bc3dnai1kYTNJaWhVemxfNHVod1hsUlRpVTJzSTltZGJidHpUZEpjTXZVazRMUlZ5WVlJMXR3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOUHk3MXc1T3RYSTNIYUotTkp5TEhQUEd5Z1NQYzVDMWppVHlkOUY3ek9jMjk3ZnRfbTFoamcySlhWa3dfb2stVnB6U2lveTdIN0Z3RWhRS1JmN0ozYmhLNC12a21qeklmdzg1dUNjSU1pNUhBSG9FcDhlMi1Bc3dnai1kYTNJaWhVemxfNHVod1hsUlRpVTJzSTltZGJidHpUZEpjTXZVazRMUlZ5WVlJMXR3?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Solvay in talks with One Investment Management on rare earths partnership&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-08T12:35:40.000Z",
+          "score": 2
+        },
+        {
           "title": "JPMorgan names APAC, EMEA tech investment banking chiefs as international co-heads - Reuters",
           "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPaVRsOUJVWUI0aHlEbVJaRy1OYVpXWWxvS0VSWk5MTWQybzllRGFSbEhPb19BemlTQzJEdl9tRl9qaEVYS0w3ZnhWcE14MWcyV3FmZXk4Ty0wdmpMOXViUGk4VDVURlZubUlXWHVYUVJ0QkJBYlQzU0VTYzhnTmpsdURuZUdWSENkdDI2QVYwZDJ0VGZhWjVoTU5PTHVKUXB6ZjZSRnZnNGZxTDRNeXF1MzBzSEx3Y19tdkR6dzRDcTJQZUNtaWtEQS02eEFXZw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPaVRsOUJVWUI0aHlEbVJaRy1OYVpXWWxvS0VSWk5MTWQybzllRGFSbEhPb19BemlTQzJEdl9tRl9qaEVYS0w3ZnhWcE14MWcyV3FmZXk4Ty0wdmpMOXViUGk4VDVURlZubUlXWHVYUVJ0QkJBYlQzU0VTYzhnTmpsdURuZUdWSENkdDI2QVYwZDJ0VGZhWjVoTU5PTHVKUXB6ZjZSRnZnNGZxTDRNeXF1MzBzSEx3Y19tdkR6dzRDcTJQZUNtaWtEQS02eEFXZw?oc=5\" target=\"_blank\"&gt;JPMorgan names APAC, EMEA tech investment banking chiefs as international co-heads&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
-          "published": "2026-09-08T04:41:00.000Z",
+          "published": "2026-09-08T05:15:56.000Z",
           "score": 2
         },
         {
-          "title": "Taiwan's Wistron raises $1.5 billion in global share sale to fund raw material purchases - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVnBsdmtBcXdDT1BaNGRDUWFRRVFKeG1YSEhIRzFldGJMTkV3VXhhcnZkclM0bFBVZnh6OENrU2xOejJnNF9OSWJYbmZYUzllaE9WQ3pvYkhaZHdyNmJjRF9RcGxBR25PT3Zhellkek9qOUpyOHMwcWxNMFVHYWswYkU3VXBjZ2RzdkZLVEUzTlktYVgtaTVwRW9fazZOMkdIZW1CY1h3NlFJa3VhY09TZ1U5ZDJNS2I0QUc0?oc=5",
+          "title": "Africa50 infrastructure fund plans to more than double project value in five years - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOa3ZTSmRMNDB4V0JLRllCVWg3dUtvbkVtQXRIcnNwaEdvNmFRREpvOFdoRFVLSDl1ZjE0SkkxSC04elg2Z3NIdlRCMnVRZEVXc0tOX2VnSFdsUEd1a2VGbkZkcnlaSzNSaW9MU2ZoY2hZamQxWURNMjdnZWJVQmwzRFQ3WUNvVFN5UjlmMTlGV2xtTmxyY0pzeHZva253bkh6N1Z3eFFVXzdzTVFCZzZjbGF4ZEV0VEoyM0VvbGxOdGZFUUU?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVnBsdmtBcXdDT1BaNGRDUWFRRVFKeG1YSEhIRzFldGJMTkV3VXhhcnZkclM0bFBVZnh6OENrU2xOejJnNF9OSWJYbmZYUzllaE9WQ3pvYkhaZHdyNmJjRF9RcGxBR25PT3Zhellkek9qOUpyOHMwcWxNMFVHYWswYkU3VXBjZ2RzdkZLVEUzTlktYVgtaTVwRW9fazZOMkdIZW1CY1h3NlFJa3VhY09TZ1U5ZDJNS2I0QUc0?oc=5\" target=\"_blank\"&gt;Taiwan's Wistron raises $1.5 billion in global share sale to fund raw material purchases&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-07T16:00:55.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOa3ZTSmRMNDB4V0JLRllCVWg3dUtvbkVtQXRIcnNwaEdvNmFRREpvOFdoRFVLSDl1ZjE0SkkxSC04elg2Z3NIdlRCMnVRZEVXc0tOX2VnSFdsUEd1a2VGbkZkcnlaSzNSaW9MU2ZoY2hZamQxWURNMjdnZWJVQmwzRFQ3WUNvVFN5UjlmMTlGV2xtTmxyY0pzeHZva253bkh6N1Z3eFFVXzdzTVFCZzZjbGF4ZEV0VEoyM0VvbGxOdGZFUUU?oc=5\" target=\"_blank\"&gt;Africa50 infrastructure fund plans to more than double project value in five years&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-09-08T12:23:01.000Z",
           "score": 2
         }
       ]
@@ -162,19 +170,28 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "EU wants initial Chinese action on trade gap by early October - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPWjNtYW00MklwT1hHUEVPaWVaQmpWVzFJUFE2N05VcUdSOEdldDF2M21WX2VwTWE4NHlndXVaNnVQemp4VFl5UDlpZjBLaXJNMmlmNkxqRmJPZEQ3Y2hVckljVEZjaXkwMDlyNTVqVTNWY1pZODJJMHhNeTgwc2J1Tkd5UkpKeEc2OVpfYVROcW5HZmItRk1tZUF4WVpMOUszTjc3MGNERWk4UQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPWjNtYW00MklwT1hHUEVPaWVaQmpWVzFJUFE2N05VcUdSOEdldDF2M21WX2VwTWE4NHlndXVaNnVQemp4VFl5UDlpZjBLaXJNMmlmNkxqRmJPZEQ3Y2hVckljVEZjaXkwMDlyNTVqVTNWY1pZODJJMHhNeTgwc2J1Tkd5UkpKeEc2OVpfYVROcW5HZmItRk1tZUF4WVpMOUszTjc3MGNERWk4UQ?oc=5\" target=\"_blank\"&gt;EU wants initial Chinese action on trade gap by early October&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-08T14:19:47.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Dacia to bring popular EV Spring back home to Europe from China - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOdVVVSjRsSkZGQko0VThMZXZNRXN2WkE5OG9zX0ZjTVlSelNSZVNPQ3ZCb2VneERJUHJOak1pdkFENEp5TE1uYk5mOE4tR2loREpxbVFfaW1neTNqaDVfTmFKZ0JsZ1JLUkpZY0R2X1VES083ZVJoV1FfR01seXhpYU5vNDBJWjdHcEZPZVA2b2lXVklJbWYwdWJjNVVCVG43VlE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOdVVVSjRsSkZGQko0VThMZXZNRXN2WkE5OG9zX0ZjTVlSelNSZVNPQ3ZCb2VneERJUHJOak1pdkFENEp5TE1uYk5mOE4tR2loREpxbVFfaW1neTNqaDVfTmFKZ0JsZ1JLUkpZY0R2X1VES083ZVJoV1FfR01seXhpYU5vNDBJWjdHcEZPZVA2b2lXVklJbWYwdWJjNVVCVG43VlE?oc=5\" target=\"_blank\"&gt;Dacia to bring popular EV Spring back home to Europe from China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-08T14:26:31.000Z",
-          "score": 13
+          "title": "EU, UK express dismay over Mladic funeral in Serbia",
+          "link": "https://www.dw.com/en/eu-uk-express-dismay-over-mladic-funeral-in-serbia/a-79190233?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The EU is deliberating an official response to the glorification of war criminal Ratko Mladic in Belgrade. The UK, meanwhile, summoned Serbia&#039;s charge d&#039;affaires over the display.",
+          "published": "2026-09-08T16:52:00.000Z",
+          "score": 8
         },
         {
           "title": "EU court rules against Belgian far-right party in IKEA case",
@@ -185,19 +202,11 @@
           "score": 8
         },
         {
-          "title": "Europe’s biggest mobile operators in talks for satellite-to-mobile venture, Bloomberg News reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPak9uVy11YWtPVHl1aVdrQWVOZ3JLOTJfODVENVFoRmVzaVpob2FScl9CNlhaOWctSlhNTlI1ZzVnM013ZC0yMnRPZWxGdDNaRmtRSEZVS2ZFZi1ZZnNmZncxNWU0UmFha1Nqclkwb1Z1UTgwdkw5bTFxVW5uem1rT3BXWjg2M3dSdGUxZnRXOUdZRTFncV9ZUlR0Z2h1SWVEVEhfUWJhWmttQjRVNHlic0NFbVBybUJuVktneWFHZ1lzeHo4c0tnc0JVVm5wUjg1?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxPak9uVy11YWtPVHl1aVdrQWVOZ3JLOTJfODVENVFoRmVzaVpob2FScl9CNlhaOWctSlhNTlI1ZzVnM013ZC0yMnRPZWxGdDNaRmtRSEZVS2ZFZi1ZZnNmZncxNWU0UmFha1Nqclkwb1Z1UTgwdkw5bTFxVW5uem1rT3BXWjg2M3dSdGUxZnRXOUdZRTFncV9ZUlR0Z2h1SWVEVEhfUWJhWmttQjRVNHlic0NFbVBybUJuVktneWFHZ1lzeHo4c0tnc0JVVm5wUjg1?oc=5\" target=\"_blank\"&gt;Europe’s biggest mobile operators in talks for satellite-to-mobile venture, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font colo",
-          "published": "2026-09-07T19:19:13.000Z",
-          "score": 8
-        },
-        {
           "title": "EXCLUSIVE: Google warns of lower quality as it revamps Europe search results to avoid EU fines - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNcUx1SUpiY29kQzBaZ0I0UmVKN0J1UkFoRlRmN0I1c0xwUjZackt2T3BVNHBvSFYwTzg3YUd6VUZlV3JrZ1FYUXVVUVpJWlRqZGN1VTNxUTZVNndVWXNJTkZ5Ui1YVjkyUDZuSW9ZWmNiR1NQYmtfOEhaVVhFWUE0dDROaVBOckhYZ3pvcnFwNXR4M3lkdmpxdUZ5eFRBT01jOGpzR0oyX2t1UHNValpzRmZJOWhnWGc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNcUx1SUpiY29kQzBaZ0I0UmVKN0J1UkFoRlRmN0I1c0xwUjZackt2T3BVNHBvSFYwTzg3YUd6VUZlV3JrZ1FYUXVVUVpJWlRqZGN1VTNxUTZVNndVWXNJTkZ5Ui1YVjkyUDZuSW9ZWmNiR1NQYmtfOEhaVVhFWUE0dDROaVBOckhYZ3pvcnFwNXR4M3lkdmpxdUZ5eFRBT01jOGpzR0oyX2t1UHNValpzRmZJOWhnWGc?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Google warns of lower quality as it revamps Europe search results to avoid EU fines&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-08T11:41:15.000Z",
+          "published": "2026-09-08T16:36:14.000Z",
           "score": 8
         },
         {
@@ -207,14 +216,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxQcWUtQUpIYmJ6RnU0d2JBM05nWE5MTXVnOWNjaDZBV3FFN1BpbFplN1FLQ0ZBVTE4ZVFzdExqLWZRQ0VBbzR1emY2dmlJZF80aGtjTlEyUWU3ZS1IT0xOYUFiS04wV0cta3Q5d2txNWJrYWphYjdsQ3lueVpmOXZJMVQ0djUtS2FDZEJvSXNSQ2JHNTg?oc=5\" target=\"_blank\"&gt;EU's von der Leyen slams turnout for Mladic's funeral&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-08T07:34:20.000Z",
           "score": 8
+        },
+        {
+          "title": "EXCLUSIVE: Some critical mineral firms chosen by EU flag project liquidity concerns - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQUF91el93am9MaGNZYWxkR2F4N1B3UEV4SWxMeVVIVUxBamY0VkJrODZCNno2Tmhtb29saDM1UFVOUlk0Vkc4QmRQUTZKRGVubzNnSmlXS0hMV0dBTTlDM250ODZZcC1SZjFQal8tQW1nWWVhOThFenB6Q3JOWU9fb2M4d3RJVmplMHljT3FzbFNlTmhReW1sUEp0Ym5KU1lWNWdfa2NtTGxZN2lLLXFvUnY5WW9HUU1aTm0tNQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQUF91el93am9MaGNZYWxkR2F4N1B3UEV4SWxMeVVIVUxBamY0VkJrODZCNno2Tmhtb29saDM1UFVOUlk0Vkc4QmRQUTZKRGVubzNnSmlXS0hMV0dBTTlDM250ODZZcC1SZjFQal8tQW1nWWVhOThFenB6Q3JOWU9fb2M4d3RJVmplMHljT3FzbFNlTmhReW1sUEp0Ym5KU1lWNWdfa2NtTGxZN2lLLXFvUnY5WW9HUU1aTm0tNQ?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Some critical mineral firms chosen by EU flag project liquidity concerns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-08T11:11:11.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 406,
-    "articlesLast24h": 162,
-    "afterDedup": 154,
+    "totalArticlesScanned": 404,
+    "articlesLast24h": 155,
+    "afterDedup": 147,
     "feedsQueried": 19
   }
 }
