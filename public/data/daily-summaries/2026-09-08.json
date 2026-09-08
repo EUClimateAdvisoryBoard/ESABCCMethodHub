@@ -1,12 +1,12 @@
 {
   "date": "2026-09-08",
-  "generatedAt": "2026-09-08T00:57:22.885Z",
+  "generatedAt": "2026-09-08T09:28:28.493Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 8 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Syrian reactor could have been used for nuclear weapons if completed, UN says",
-      "summary": "&lt;p&gt;Chief of nuclear watchdog says secret Assad-era facility would have been able to produce fissile material &lt;/p&gt;&lt;p&gt;A nearly complete nuclear reactor built secretly during the rule of the toppled Syrian leader Bashar al-Assad would have been able to produce fissile material for possible use in nuclear weapons, the chief of the UN nuclear watchdog has revealed.&lt;/p&gt;&lt;p&gt;Inspectors from the International Atomic Energy Agency (IAEA) last month visited two sites, one in De",
+      "headline": "Nepal says big polluters must ‘wake up’ as it calls for climate compensation over flood disaster",
+      "summary": "&lt;p&gt;Foreign minister Shisir Khanal tells the Guardian the world’s biggest economies need to help Nepal, which contributes less than 0.1% of global greenhouse gas emissions &lt;/p&gt;&lt;p&gt;Nepal is demanding $20m in climate compensation for the recent devastating floods, as a senior minister called on the world’s most polluting countries to “wake up” and accept shared responsibility for a disaster that led to the death or disappearance of more than 6,000 people.&lt;/p&gt;&lt;p&gt;Scientis",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Taiwan's Wistron raises $1.5 billion in global share sale to fund raw material purchases - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVnBsdmtBcXdDT1BaNGRDUWFRRVFKeG1YSEhIRzFldGJMTkV3VXhhcnZkclM0bFBVZnh6OENrU2xOejJnNF9OSWJYbmZYUzllaE9WQ3pvYkhaZHdyNmJjRF9RcGxBR25PT3Zhellkek9qOUpyOHMwcWxNMFVHYWswYkU3VXBjZ2RzdkZLVEUzTlktYVgtaTVwRW9fazZOMkdIZW1CY1h3NlFJa3VhY09TZ1U5ZDJNS2I0QUc0?oc=5\" target=\"_blank\"&gt;Taiwan's Wistron raises $1.5 billion in global share sale to fund raw material purchases&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Shetland spaceport project secures £30m of UK government investment",
+      "summary": "The funding will be used to build two more launchpads.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,6 +33,14 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Nepal says big polluters must ‘wake up’ as it calls for climate compensation over flood disaster",
+          "link": "https://www.theguardian.com/world/2026/sep/08/nepal-floods-climate-compensation",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Foreign minister Shisir Khanal tells the Guardian the world’s biggest economies need to help Nepal, which contributes less than 0.1% of global greenhouse gas emissions &lt;/p&gt;&lt;p&gt;Nepal is demanding $20m in climate compensation for the recent devastating floods, as a senior minister called on the world’s most polluting countries to “wake up” and accept shared responsibility for a disaster that led to the death or disappearance of more than 6,000 people.&lt;/p&gt;&lt;p&gt;Scientis",
+          "published": "2026-09-08T00:58:09.000Z",
+          "score": 7
+        },
         {
           "title": "Syrian reactor could have been used for nuclear weapons if completed, UN says",
           "link": "https://www.theguardian.com/world/2026/sep/07/syrian-reactor-could-nuclear-weapons-if-completed-un",
@@ -50,28 +58,20 @@
           "score": 7
         },
         {
-          "title": "Belgium withholds support for Infantino over Balogun red-card row - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcGs0T19QVTNkU3pzaTRlbE1zQnRXVzNKVUlVOEpCMnhVblBnOGxKUHV2cnVleDNqazhiVkFOaVZPeGpUNFQ3SnliWlluTEROVWMyUVc0bExMWUVmQkZHQm9WS3FsdndsV25yQWpIN1BfZHk4c241dzVRU0RlRWxkTVdBS1htamRLTnlqUTV5M1lIOXFvel9fMVZpVEZXQjg1WllRUHBTa3I5V2FVYWl6Sg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNcGs0T19QVTNkU3pzaTRlbE1zQnRXVzNKVUlVOEpCMnhVblBnOGxKUHV2cnVleDNqazhiVkFOaVZPeGpUNFQ3SnliWlluTEROVWMyUVc0bExMWUVmQkZHQm9WS3FsdndsV25yQWpIN1BfZHk4c241dzVRU0RlRWxkTVdBS1htamRLTnlqUTV5M1lIOXFvel9fMVZpVEZXQjg1WllRUHBTa3I5V2FVYWl6Sg?oc=5\" target=\"_blank\"&gt;Belgium withholds support for Infantino over Balogun red-card row&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-07T09:11:34.000Z",
-          "score": 7
-        },
-        {
-          "title": "Police in eastern German state defuse 21 explosive devices found near power grid - Reuters",
+          "title": "Police in eastern German state defuse 21 explosive devices found near power grid - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQcHIwbk54R2tSMHM2RGpjbDFBSmhJeGlXdERIWE9MTk5WNkhtZGllSFlmbE1jOU5lUVh3RWNUSGJ6RnNoRkJxZWpQWmo1aV9DdkliNGdmN05QNGNEQkcxUW13ak51X3RraVRNb0JoeFc4aVV6R1lqOEdoa3hXOXBQZHZqaUp3Wkg1TGRkaElVRjFHbmJEUjJNRmcxazhSdkVpMmU3d0xyX3FYVXJUd19tQzhZaTZlamZoemM2el9Ucm12TzB5?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQcHIwbk54R2tSMHM2RGpjbDFBSmhJeGlXdERIWE9MTk5WNkhtZGllSFlmbE1jOU5lUVh3RWNUSGJ6RnNoRkJxZWpQWmo1aV9DdkliNGdmN05QNGNEQkcxUW13ak51X3RraVRNb0JoeFc4aVV6R1lqOEdoa3hXOXBQZHZqaUp3Wkg1TGRkaElVRjFHbmJEUjJNRmcxazhSdkVpMmU3d0xyX3FYVXJUd19tQzhZaTZlamZoemM2el9Ucm12TzB5?oc=5\" target=\"_blank\"&gt;Police in eastern German state defuse 21 explosive devices found near power grid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQcHIwbk54R2tSMHM2RGpjbDFBSmhJeGlXdERIWE9MTk5WNkhtZGllSFlmbE1jOU5lUVh3RWNUSGJ6RnNoRkJxZWpQWmo1aV9DdkliNGdmN05QNGNEQkcxUW13ak51X3RraVRNb0JoeFc4aVV6R1lqOEdoa3hXOXBQZHZqaUp3Wkg1TGRkaElVRjFHbmJEUjJNRmcxazhSdkVpMmU3d0xyX3FYVXJUd19tQzhZaTZlamZoemM2el9Ucm12TzB5?oc=5\" target=\"_blank\"&gt;Police in eastern German state defuse 21 explosive devices found near power grid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/fon",
           "published": "2026-09-07T10:39:52.000Z",
           "score": 7
         },
         {
-          "title": "China pauses approvals for battery storage manufacturing projects, Cailianshe reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNUktHTlBXbS1YOE5lNFhESXgzVTFTQnFYd0tmNkY1N0dHSjBUTEtTMS1tM2NILXB6NWpwWXBycWt5RXFrSGhOdGh0UzB4aEQwcVZwTjVUM3NMTktCNGRISlItV2czRFNFcThpQmc1NU80UW1aZ1RUV2JsMkFmN3o2TVZHRExFdkZYdGtWU2huSUZrWGJoMVpmNGd5WjRIUGNYcFgxZXhrYVlHaGdYSno3OXJHR3BmSDBsWXJKUXZidWh2YWdmYTRNVjluZnc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNUktHTlBXbS1YOE5lNFhESXgzVTFTQnFYd0tmNkY1N0dHSjBUTEtTMS1tM2NILXB6NWpwWXBycWt5RXFrSGhOdGh0UzB4aEQwcVZwTjVUM3NMTktCNGRISlItV2czRFNFcThpQmc1NU80UW1aZ1RUV2JsMkFmN3o2TVZHRExFdkZYdGtWU2huSUZrWGJoMVpmNGd5WjRIUGNYcFgxZXhrYVlHaGdYSno3OXJHR3BmSDBsWXJKUXZidWh2YWdmYTRNVjluZnc?oc=5\" target=\"_blank\"&gt;China pauses approvals for battery storage manufacturing projects, Cailianshe reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
-          "published": "2026-09-07T04:55:00.000Z",
-          "score": 7
+          "title": "Germany news: Gas reserves historically low ahead of winter",
+          "link": "https://www.dw.com/en/germany-news-gas-reserves-historically-low-ahead-of-winter/live-79153944?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Gas storage operator association INES has warned that Germany&#039;s gas reserves could run out in the event of a cold winter. Meanwhile, fallout from the AfD&#039;s state election victory continues. Follow DW for the latest.",
+          "published": "2026-09-08T06:31:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -104,20 +104,20 @@
           "score": 10
         },
         {
-          "title": "EU&#039;s von der Leyen pledges $232 million Greenland investment",
-          "link": "https://www.dw.com/en/eu-s-von-der-leyen-pledges-232-million-greenland-investment/a-79109197?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU is preparing a major investment package and closer political ties with the Danish Arctic territory amid Donald Trump&#039;s demand for greater US control of the mineral-rich island.",
-          "published": "2026-09-07T13:35:00.000Z",
-          "score": 10
-        },
-        {
           "title": "Carbon capture tech exists. Scaling it up is the hard part",
           "link": "https://www.dw.com/en/carbon-capture-tech-exists-scaling-it-up-is-the-hard-part/a-79147600?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "Europe just opened a carbon capture and storage plant billed as the continent&#039;s largest. But global climate scenarios call for far more capacity than exists anywhere on Earth.",
           "published": "2026-09-07T14:12:00.000Z",
           "score": 9
+        },
+        {
+          "title": "French winemakers forecast 30-year low harvest after severe drought and heat",
+          "link": "https://www.theguardian.com/world/2026/sep/07/french-winemakers-forecast-30-year-low-harvest-after-severe-drought-and-heat",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Estimates suggest drop in production with vineyards also concerned ‘smoke taint’ from wildfires may affect quality&lt;/p&gt;&lt;p&gt;French vineyards hit by severe drought and heatwaves are expected to report a 30-year low in wine production after the country’s hottest ever recorded summer, according to the agriculture ministry.&lt;/p&gt;&lt;p&gt;Initial estimates suggest winemakers will produce just under 34m hectolitres from this year’s harvest: a drop of 6% on last year, and 17% less",
+          "published": "2026-09-07T15:10:51.000Z",
+          "score": 7
         }
       ]
     },
@@ -126,10 +126,18 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Taiwan's Wistron raises $1.5 billion in global share sale to fund raw material purchases - Reuters",
+          "title": "Shetland spaceport project secures £30m of UK government investment",
+          "link": "https://www.bbc.co.uk/news/articles/cwyze8ed774o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The funding will be used to build two more launchpads.",
+          "published": "2026-09-08T08:48:33.000Z",
+          "score": 2
+        },
+        {
+          "title": "Taiwan's Wistron raises $1.5 billion in global share sale to fund raw material purchases - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVnBsdmtBcXdDT1BaNGRDUWFRRVFKeG1YSEhIRzFldGJMTkV3VXhhcnZkclM0bFBVZnh6OENrU2xOejJnNF9OSWJYbmZYUzllaE9WQ3pvYkhaZHdyNmJjRF9RcGxBR25PT3Zhellkek9qOUpyOHMwcWxNMFVHYWswYkU3VXBjZ2RzdkZLVEUzTlktYVgtaTVwRW9fazZOMkdIZW1CY1h3NlFJa3VhY09TZ1U5ZDJNS2I0QUc0?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVnBsdmtBcXdDT1BaNGRDUWFRRVFKeG1YSEhIRzFldGJMTkV3VXhhcnZkclM0bFBVZnh6OENrU2xOejJnNF9OSWJYbmZYUzllaE9WQ3pvYkhaZHdyNmJjRF9RcGxBR25PT3Zhellkek9qOUpyOHMwcWxNMFVHYWswYkU3VXBjZ2RzdkZLVEUzTlktYVgtaTVwRW9fazZOMkdIZW1CY1h3NlFJa3VhY09TZ1U5ZDJNS2I0QUc0?oc=5\" target=\"_blank\"&gt;Taiwan's Wistron raises $1.5 billion in global share sale to fund raw material purchases&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVnBsdmtBcXdDT1BaNGRDUWFRRVFKeG1YSEhIRzFldGJMTkV3VXhhcnZkclM0bFBVZnh6OENrU2xOejJnNF9OSWJYbmZYUzllaE9WQ3pvYkhaZHdyNmJjRF9RcGxBR25PT3Zhellkek9qOUpyOHMwcWxNMFVHYWswYkU3VXBjZ2RzdkZLVEUzTlktYVgtaTVwRW9fazZOMkdIZW1CY1h3NlFJa3VhY09TZ1U5ZDJNS2I0QUc0?oc=5\" target=\"_blank\"&gt;Taiwan's Wistron raises $1.5 billion in global share sale to fund raw material purchases&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt",
           "published": "2026-09-07T16:00:55.000Z",
           "score": 2
         }
@@ -145,15 +153,15 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "How significant are AfD's historic gains for Germany and the rest of Europe?",
-          "link": "https://www.bbc.co.uk/news/articles/c986w38r4j5o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The BBC's Europe editor Katya Adler sees the far-right win in Saxony-Anhalt state ringing alarm bells for the EU and traditional parties.",
-          "published": "2026-09-07T04:07:23.000Z",
-          "score": 8
+          "title": "Dacia to bring popular EV Spring back home to Europe from China - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOdVVVSjRsSkZGQko0VThMZXZNRXN2WkE5OG9zX0ZjTVlSelNSZVNPQ3ZCb2VneERJUHJOak1pdkFENEp5TE1uYk5mOE4tR2loREpxbVFfaW1neTNqaDVfTmFKZ0JsZ1JLUkpZY0R2X1VES083ZVJoV1FfR01seXhpYU5vNDBJWjdHcEZPZVA2b2lXVklJbWYwdWJjNVVCVG43VlE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOdVVVSjRsSkZGQko0VThMZXZNRXN2WkE5OG9zX0ZjTVlSelNSZVNPQ3ZCb2VneERJUHJOak1pdkFENEp5TE1uYk5mOE4tR2loREpxbVFfaW1neTNqaDVfTmFKZ0JsZ1JLUkpZY0R2X1VES083ZVJoV1FfR01seXhpYU5vNDBJWjdHcEZPZVA2b2lXVklJbWYwdWJjNVVCVG43VlE?oc=5\" target=\"_blank\"&gt;Dacia to bring popular EV Spring back home to Europe from China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-09-08T04:04:00.000Z",
+          "score": 13
         },
         {
-          "title": "Europe’s biggest mobile operators in talks for satellite-to-mobile venture, Bloomberg News reports - Reuters",
+          "title": "Europe’s biggest mobile operators in talks for satellite-to-mobile venture, Bloomberg News reports - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPak9uVy11YWtPVHl1aVdrQWVOZ3JLOTJfODVENVFoRmVzaVpob2FScl9CNlhaOWctSlhNTlI1ZzVnM013ZC0yMnRPZWxGdDNaRmtRSEZVS2ZFZi1ZZnNmZncxNWU0UmFha1Nqclkwb1Z1UTgwdkw5bTFxVW5uem1rT3BXWjg2M3dSdGUxZnRXOUdZRTFncV9ZUlR0Z2h1SWVEVEhfUWJhWmttQjRVNHlic0NFbVBybUJuVktneWFHZ1lzeHo4c0tnc0JVVm5wUjg1?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxPak9uVy11YWtPVHl1aVdrQWVOZ3JLOTJfODVENVFoRmVzaVpob2FScl9CNlhaOWctSlhNTlI1ZzVnM013ZC0yMnRPZWxGdDNaRmtRSEZVS2ZFZi1ZZnNmZncxNWU0UmFha1Nqclkwb1Z1UTgwdkw5bTFxVW5uem1rT3BXWjg2M3dSdGUxZnRXOUdZRTFncV9ZUlR0Z2h1SWVEVEhfUWJhWmttQjRVNHlic0NFbVBybUJuVktneWFHZ1lzeHo4c0tnc0JVVm5wUjg1?oc=5\" target=\"_blank\"&gt;Europe’s biggest mobile operators in talks for satellite-to-mobile venture, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font colo",
@@ -161,36 +169,36 @@
           "score": 8
         },
         {
-          "title": "Singapore's high ministerial salaries under scrutiny in parliament this week - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSzlNcnZmVGlTa2I1bUVGZDJjSC1kSDNBRzQyV1BVcHlUaUlJVlRLSGtKeFh6OWp3MnhPZVlVRkNCMFFsX2RxUUNUUXFJNHh2dGprM1FwM3Z5Z3YzNzB1bnRXakJfSTJ5aU83NjVNam5qeXJsclNEcVZ6bWxoaVZDRGMteTZ3VjdROHFQbU44UkZnYzhWVWEybVplU09FZ1dRRXRxNHJ1Z3ZsV3pjTEc3UEE4NUMycS1fcGNDLTQtMnAzdklHUkE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNSzlNcnZmVGlTa2I1bUVGZDJjSC1kSDNBRzQyV1BVcHlUaUlJVlRLSGtKeFh6OWp3MnhPZVlVRkNCMFFsX2RxUUNUUXFJNHh2dGprM1FwM3Z5Z3YzNzB1bnRXakJfSTJ5aU83NjVNam5qeXJsclNEcVZ6bWxoaVZDRGMteTZ3VjdROHFQbU44UkZnYzhWVWEybVplU09FZ1dRRXRxNHJ1Z3ZsV3pjTEc3UEE4NUMycS1fcGNDLTQtMnAzdklHUkE?oc=5\" target=\"_blank\"&gt;Singapore's high ministerial salaries under scrutiny in parliament this week&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-07T06:33:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Saxony-Anhalt election delivers a blow to Merz and a warning to Europe - Reuters",
+          "title": "Saxony-Anhalt election delivers a blow to Merz and a warning to Europe - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMmdkeWFmV2FTc2lKQlRsS3YxZ3Fkbjg1Q1VMY25hZ0ViWmdGUGRjSk45QU5Zbmg1aVk5UjZZVlVaTU9KX0pCRDVTSDdIZVhtM2d3ZEdJQ1RQVW9VSy1FUTNTT04yemtkaXFXMV9vUl80R0Rhend5bkM5UGZudkRGaWlQMGR4Z0duc0pXME4tUWF1NHkxQnhNbUZsMWp4cjg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPMmdkeWFmV2FTc2lKQlRsS3YxZ3Fkbjg1Q1VMY25hZ0ViWmdGUGRjSk45QU5Zbmg1aVk5UjZZVlVaTU9KX0pCRDVTSDdIZVhtM2d3ZEdJQ1RQVW9VSy1FUTNTT04yemtkaXFXMV9vUl80R0Rhend5bkM5UGZudkRGaWlQMGR4Z0duc0pXME4tUWF1NHkxQnhNbUZsMWp4cjg?oc=5\" target=\"_blank\"&gt;Saxony-Anhalt election delivers a blow to Merz and a warning to Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-07T17:26:30.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPMmdkeWFmV2FTc2lKQlRsS3YxZ3Fkbjg1Q1VMY25hZ0ViWmdGUGRjSk45QU5Zbmg1aVk5UjZZVlVaTU9KX0pCRDVTSDdIZVhtM2d3ZEdJQ1RQVW9VSy1FUTNTT04yemtkaXFXMV9vUl80R0Rhend5bkM5UGZudkRGaWlQMGR4Z0duc0pXME4tUWF1NHkxQnhNbUZsMWp4cjg?oc=5\" target=\"_blank\"&gt;Saxony-Anhalt election delivers a blow to Merz and a warning to Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-09-07T11:42:00.000Z",
           "score": 8
         },
         {
-          "title": "Euro zone investor morale hits four-year-plus high in September, Sentix survey shows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUVBLRnBSSzNMdDY2eGY1a040aFBQQ1hqSFVjNTNkTDUwOURNMk0wWDI4eDExOU9oc0d3LXR3LURta3FXRU9HX3pPeElOTUxjRWdDdFg5SkJydzhIN3B2d0F0YTJtSk5waWloVzlILXQ5T1Q5MXVmVlFBUDdYd3lnNElwd2VOSG5CYTBYYzMzTV9SY2ZfWEx1RXQ0RkdOT3NyUFZWOXVpMHJkemw1RGNpWHZmeHZjekRTZFFfZU8yc3l4dVNSRm8yXw?oc=5",
+          "title": "Serbia's government asks president to dissolve parliament, paving way for elections - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZEh3SFlxOFNTMkRDWXdmdGZYTTcxRl8xQUtRNVJJa2pXaXUxWlVYcUJSWHRuT1BVa191S21PeHZvSFJ0c3J2RVN3TlRTd2Y3ME0wYWJMaC0wZXZodk5mVG9BcUlUUWlScG5xTTBwcDdYV2VrRmZuNXFsbmZDZHc1TGZwUTVxSnU3UUZHVlM4eGdRSGxuMW9XNXBHdEZIanE5TjhKVXc4OXJ2dmNudm5RNWh2YS1TcUU?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUVBLRnBSSzNMdDY2eGY1a040aFBQQ1hqSFVjNTNkTDUwOURNMk0wWDI4eDExOU9oc0d3LXR3LURta3FXRU9HX3pPeElOTUxjRWdDdFg5SkJydzhIN3B2d0F0YTJtSk5waWloVzlILXQ5T1Q5MXVmVlFBUDdYd3lnNElwd2VOSG5CYTBYYzMzTV9SY2ZfWEx1RXQ0RkdOT3NyUFZWOXVpMHJkemw1RGNpWHZmeHZjekRTZFFfZU8yc3l4dVNSRm8yXw?oc=5\" target=\"_blank\"&gt;Euro zone investor morale hits four-year-plus high in September, Sentix survey shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
-          "published": "2026-09-07T08:34:09.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPZEh3SFlxOFNTMkRDWXdmdGZYTTcxRl8xQUtRNVJJa2pXaXUxWlVYcUJSWHRuT1BVa191S21PeHZvSFJ0c3J2RVN3TlRTd2Y3ME0wYWJMaC0wZXZodk5mVG9BcUlUUWlScG5xTTBwcDdYV2VrRmZuNXFsbmZDZHc1TGZwUTVxSnU3UUZHVlM4eGdRSGxuMW9XNXBHdEZIanE5TjhKVXc4OXJ2dmNudm5RNWh2YS1TcUU?oc=5\" target=\"_blank\"&gt;Serbia's government asks president to dissolve parliament, paving way for elections&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-09-07T13:55:44.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU's von der Leyen slams turnout for Mladic's funeral - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQcWUtQUpIYmJ6RnU0d2JBM05nWE5MTXVnOWNjaDZBV3FFN1BpbFplN1FLQ0ZBVTE4ZVFzdExqLWZRQ0VBbzR1emY2dmlJZF80aGtjTlEyUWU3ZS1IT0xOYUFiS04wV0cta3Q5d2txNWJrYWphYjdsQ3lueVpmOXZJMVQ0djUtS2FDZEJvSXNSQ2JHNTg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxQcWUtQUpIYmJ6RnU0d2JBM05nWE5MTXVnOWNjaDZBV3FFN1BpbFplN1FLQ0ZBVTE4ZVFzdExqLWZRQ0VBbzR1emY2dmlJZF80aGtjTlEyUWU3ZS1IT0xOYUFiS04wV0cta3Q5d2txNWJrYWphYjdsQ3lueVpmOXZJMVQ0djUtS2FDZEJvSXNSQ2JHNTg?oc=5\" target=\"_blank\"&gt;EU's von der Leyen slams turnout for Mladic's funeral&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-09-08T07:34:20.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 401,
-    "articlesLast24h": 158,
-    "afterDedup": 150,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 155,
+    "afterDedup": 148,
     "feedsQueried": 19
   }
 }
