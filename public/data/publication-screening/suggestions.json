@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T09:03:26.399Z",
+  "generatedAt": "2026-09-10T09:02:26.314Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,26 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1038/s41893-026-01931-7",
+      "title": "Emissions and system-level decarbonization pathways for global petrochemical production",
+      "journal": "Nature Sustainability",
+      "authors": "Fanran Meng, Luke Cullen, Philip Mitchell et al.",
+      "published": "2026-09-09",
+      "url": "https://doi.org/10.1038/s41893-026-01931-7",
+      "abstract": "The petrochemical industry is responsible for 13% of global industrial and 3.5% of total greenhouse gas emissions, yet a globally consistent facility-level emissions inventory is lacking. Here we present a bottom-up assessment of historical, current and prospective emissions from 37,379 production facilities, covering 81 chemicals and 2,043 manufacturing processes. We estimate that petrochemical production emitted 2.0 ± 0.8 GtCO 2 e in 2023 and this could increase to 3.0 ± 1.2 GtCO 2 e by 2050 under a business-as-usual scenario. Emissions are highly concentrated, with 53% of 2023 emissions arising from 10% of facilities. Among primary chemicals, ethylene and ammonia were the largest emitters, at 290 ± 50 and 250 ± 50 MtCO 2 e, respectively, in 2023. Our scenario analysis indicates that decarbonization efforts should prioritize the highest-emitting facilities through efficiency improvements, alternative fuels and feedstocks, alongside broad demand reduction and power grid decarbonization. The analysis provides insights for industry, researchers and policymakers to target effective decarbonization in the petrochemical sector.",
+      "suggestedOn": "2026-09-10",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 7,
+          "matched": [
+            "greenhouse gas emissions",
+            "decarbonization"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1080/14693062.2026.2722557",
       "title": "Institutional compression in climate policy integration: coordinating green electricity certificates and carbon emissions trading in China",
