@@ -1,12 +1,12 @@
 {
   "date": "2026-09-10",
-  "generatedAt": "2026-09-10T00:56:57.760Z",
+  "generatedAt": "2026-09-10T09:28:54.091Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 10 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Iran referred to UN Security Council for nuclear non-compliance",
-      "summary": "Tehran condemns the resolution, blaming US and Israeli strikes on its nuclear facilities for disrupting inspections.",
+      "headline": "Finland: Google announces €13 billion AI, energy investment",
+      "summary": "Google has announced a plan to expand AI data centers and buy massive amounts of nuclear energy. Finland&#039;s security services have warned of there are risks, but the right-wing government says the deal will bring jobs.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -33,14 +33,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Iran referred to UN Security Council for nuclear non-compliance",
-          "link": "https://www.bbc.co.uk/news/articles/ckgwj4kl5lno?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Tehran condemns the resolution, blaming US and Israeli strikes on its nuclear facilities for disrupting inspections.",
-          "published": "2026-09-09T20:22:51.000Z",
-          "score": 13
-        },
         {
           "title": "Finland: Google announces €13 billion AI, energy investment",
           "link": "https://www.dw.com/en/finland-google-announces-€13-billion-ai-energy-investment/a-79208034?maca=en-rss-en-all-1573-xml-mrss",
@@ -104,20 +96,20 @@
           "score": 13
         },
         {
-          "title": "Reclaiming the streets: the architects clawing back Europe’s car-centric spaces",
-          "link": "https://www.theguardian.com/artanddesign/2026/sep/09/european-prize-urban-public-space-climate-crisis-architects",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The European Prize for Urban Public Space’s shortlist highlights projects helping people cope with climate crisis&lt;/p&gt;&lt;p&gt;In the words of Joni Mitchell, the planners of many urban centres around the world “paved paradise and put up a parking lot”. The European Prize for Urban Public Space tries to show that cities don’t have to be locked in the automotive age for ever.&lt;/p&gt;&lt;p&gt;The prize’s latest shortlist, announced on Wednesday, highlights architectural projects tha",
-          "published": "2026-09-09T04:00:59.000Z",
-          "score": 10
-        },
-        {
           "title": "Peter’s farm is on ‘flood country’. As Australia’s sea levels rise, safe land is vanishing and costs are huge",
           "link": "https://www.theguardian.com/environment/2026/sep/10/peters-farm-is-on-flood-country-as-australias-sea-levels-rise-safe-land-is-vanishing-and-costs-are-huge",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Climate Council forecasts more than 267,000 coastal properties will be damaged by flooding by 2100, costing hundreds of billions of dollars&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/sep/10/anthony-albanese-labor-uk-west-bank-trade-ban-kevin-rudd-diplomacy-one-nation-pauline-hanson-liberal-party-angus-taylor-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get ou",
           "published": "2026-09-09T14:01:01.000Z",
           "score": 9
+        },
+        {
+          "title": "Climate ‘feedback loops’ could worsen global warming by 30%, study finds",
+          "link": "https://www.theguardian.com/environment/2026/sep/10/climate-feedback-loops-global-warming-study",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Emissions of planet-heating methane and CO2 from natural sources are worsening the climate crisis, paper says&lt;/p&gt;&lt;p&gt;Rising global temperatures caused by the burning of fossil fuels are transforming the world’s forests, wetlands and tundra to the point they are releasing emissions that could further worsen global heating by as much as 30%, a new study has found.&lt;/p&gt;&lt;p&gt;As the world heats up, permafrost in the high latitudes is thawing, fiercer wildfires are burning",
+          "published": "2026-09-10T08:00:19.000Z",
+          "score": 7
         }
       ]
     },
@@ -144,15 +136,7 @@
           "link": "https://www.dw.com/en/serbia-the-conflicted-eu-candidate/a-79203774?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "On paper, Belgrade has pursued EU membership for years. But accession has long been stalled. The hero&#039;s farewell given to war criminal Mladic exposed just how far Serbia has alienated itself from Europe.",
-          "published": "2026-09-09T16:50:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "The billion-euro trade driving Europe&#039;s eels to extinction",
-          "link": "https://www.dw.com/en/the-billion-euro-trade-driving-europe-s-eels-to-extinction/a-78523145?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Traffickers are making big bucks smuggling millions of critically endangered eels across continents, using suitcases on planes and legal loopholes to deliver them to dinnerplates. Where are the smuggling hotspots?",
-          "published": "2026-09-09T08:36:00.000Z",
+          "published": "2026-09-10T05:53:00.000Z",
           "score": 8
         },
         {
@@ -186,27 +170,11 @@
           "score": 8
         },
         {
-          "title": "EU proposes more restrictions for Airbnb, holiday rentals",
-          "link": "https://www.dw.com/en/eu-proposes-more-restrictions-for-airbnb-holiday-rentals/a-79202023?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The European Union wants tighter rules on short-term rentals to tackle housing shortages in tourist hotspots.",
-          "published": "2026-09-09T12:27:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Serbia dissolves parliament as snap elections called",
-          "link": "https://www.dw.com/en/serbia-dissolves-parliament-as-snap-elections-called/a-79200868?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Serbia will head to the polls in late October after President Aleksandar Vucic dissolved parliament following growing pressure from protesters demanding political change. However, Vucic plans to stand as a PM candidate.",
-          "published": "2026-09-09T11:04:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU sports commissioner says FIFA is &#039;damaging to football&#039;",
-          "link": "https://www.dw.com/en/eu-sports-commissioner-says-fifa-is-damaging-to-football/a-79193424?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Speaking to DW, EU Commissioner Glenn Micallef hit out at world football&#039;s governing body over its &quot;poor governance.&quot;",
-          "published": "2026-09-09T07:16:00.000Z",
+          "title": "Euro firm ahead of ECB decision; $100 oil dampens activity - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYU50UmRVNmIyeFBOSmd6azlDeDMxNlh1S0cycHpnYjU4NERYWjhoN2diSmthTngzdWZScmFTdldrTGtUcTh3SDFKbVIySmU2TUx3cnMtOEdKMnFkV3J1d3pYRmdvZDVWb2VPSXNjcG52cEVPTGtLNF9UT1BFSnJ3WlUzOXNuU1FwZmNSdGVTdV9Na1h6M3dPVGVtU0ttYlBlRWc0S1Q0Rl9HSmVCNlZaZXhjMVc0OUduMk1mOGRqVkxjY0d2SGhRbWJsUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxOYU50UmRVNmIyeFBOSmd6azlDeDMxNlh1S0cycHpnYjU4NERYWjhoN2diSmthTngzdWZScmFTdldrTGtUcTh3SDFKbVIySmU2TUx3cnMtOEdKMnFkV3J1d3pYRmdvZDVWb2VPSXNjcG52cEVPTGtLNF9UT1BFSnJ3WlUzOXNuU1FwZmNSdGVTdV9Na1h6M3dPVGVtU0ttYlBlRWc0S1Q0Rl9HSmVCNlZaZXhjMVc0OUduMk1mOGRqVkxjY0d2SGhRbWJsUQ?oc=5\" target=\"_blank\"&gt;Euro firm ahead of ECB decision; $100 oil dampens activity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-10T02:07:00.000Z",
           "score": 8
         },
         {
@@ -216,14 +184,30 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxOVmN6cEJWVjQ5NnhMYkpTR0J0cndCT1NadzdwVTVrd3dZdGFvZGFPQTBEUktPb21pcXkyOVl5WkpvUUVRX3RQSFliNmRhTjhHYW96Vkk4RlQxWVRlejZSREFUVEtjR2s0bDZha3FkUU5MaEJxVjZoU0VrejV3cGpROEFwdVRlaS1tSkh0YXhBY1B4bVR6NDVNaUhkdmhERldS?oc=5\" target=\"_blank\"&gt;Booking loses court fight against EU veto of ETraveli deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-09T09:49:23.000Z",
           "score": 8
+        },
+        {
+          "title": "Germany: Energy boss urges better infrastructure protection",
+          "link": "https://www.dw.com/en/germany-energy-boss-urges-better-infrastructure-protection/live-79209302?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The chief of power giant RWE says Germany&#039;s rules for protecting vital infrastructure are outdated, calling for greater secrecy. Meanwhile, German inflation rose as the ECB consideres interest rates. DW has the latest.",
+          "published": "2026-09-10T07:44:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "China's EV penetration could reach 80% by 2030, Sinopec researcher says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRWxpRXI4OWJ4UW1tNmRLamJ5d3E2cFdSTnduanp1MkpFYm96MHdNVnVsVmYwZzV4aVhBOTJKVGU3LTczSnlqd0o3OWVDZG4tQkJfck9maHhuUUt4bzd4enhZb0VHdmRVbFE4YzNpTExjZFlLM0h1a1MyNU10UVVUTEEzNXJCUnJiQUsyNXNrZkNPckNreUZMZFgtVEllOHBndGxnUFdBemVEem9PcDh2VXFtU2hlQXhGelRXV2ZlRC0?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRWxpRXI4OWJ4UW1tNmRLamJ5d3E2cFdSTnduanp1MkpFYm96MHdNVnVsVmYwZzV4aVhBOTJKVGU3LTczSnlqd0o3OWVDZG4tQkJfck9maHhuUUt4bzd4enhZb0VHdmRVbFE4YzNpTExjZFlLM0h1a1MyNU10UVVUTEEzNXJCUnJiQUsyNXNrZkNPckNreUZMZFgtVEllOHBndGxnUFdBemVEem9PcDh2VXFtU2hlQXhGelRXV2ZlRC0?oc=5\" target=\"_blank\"&gt;China's EV penetration could reach 80% by 2030, Sinopec researcher says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-10T05:48:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 405,
-    "articlesLast24h": 162,
-    "afterDedup": 157,
+    "totalArticlesScanned": 409,
+    "articlesLast24h": 160,
+    "afterDedup": 144,
     "feedsQueried": 19
   }
 }
