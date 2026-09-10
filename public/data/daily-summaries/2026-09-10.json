@@ -1,12 +1,18 @@
 {
   "date": "2026-09-10",
-  "generatedAt": "2026-09-10T14:56:27.762Z",
+  "generatedAt": "2026-09-10T19:29:35.052Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 10 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Finland: Google announces €13 billion AI, energy investment",
-      "summary": "Google has announced a plan to expand AI data centers and buy massive amounts of nuclear energy. Finland&#039;s security services have warned of there are risks, but the right-wing government says the deal will bring jobs.",
+      "headline": "Introductory remarks by Commissioner Hoekstra during an exchange of views with the European Parliament's Committee on the Environment, Climate and Food Safety (ENVI)",
+      "summary": "European Commission Speech Brussels, 10 Sep 2026 Chair, Honourable Members, \r\nI'm delighted to have the opportunity to exchange on this important file.\r\nIn terms of climate, if anyone needed an additional remind...",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Yemen's Houthis reportedly seize strategic Red Sea port of Mokha",
+      "summary": "Mokha's capture would bring the Iran-backed group closer to controlling the Bab al-Mandab Strait waterway, a key shipping route.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -21,26 +27,51 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Introductory remarks by Commissioner Hoekstra during an exchange of views with the European Parliament's Committee on the Environment, Climate and Food Safety (ENVI)",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1844",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 10 Sep 2026 Chair, Honourable Members, \r\nI'm delighted to have the opportunity to exchange on this important file.\r\nIn terms of climate, if anyone needed an additional remind...",
+          "published": "2026-09-10T15:14:27.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Finland: Google announces €13 billion AI, energy investment",
-          "link": "https://www.dw.com/en/finland-google-announces-€13-billion-ai-energy-investment/a-79208034?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Google has announced a plan to expand AI data centers and buy massive amounts of nuclear energy. Finland&#039;s security services have warned of there are risks, but the right-wing government says the deal will bring jobs.",
-          "published": "2026-09-09T22:27:00.000Z",
+          "title": "Yemen's Houthis reportedly seize strategic Red Sea port of Mokha",
+          "link": "https://www.bbc.co.uk/news/articles/c4g7vr0lngwo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Mokha's capture would bring the Iran-backed group closer to controlling the Bab al-Mandab Strait waterway, a key shipping route.",
+          "published": "2026-09-10T18:15:47.000Z",
           "score": 7
         },
         {
-          "title": "Houthis seize key Yemeni Red Sea port, sources say, threatening global energy flows - Reuters",
+          "title": "Yemen: Houthis take control of strategic Red Sea port city",
+          "link": "https://www.dw.com/en/yemen-houthis-take-control-of-strategic-red-sea-port-city/a-79220628?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Houthi takeover of Mokha comes amid intensified fighting that has sparked fears of a return to civil war. The Red Sea has served as a key alternative to the Strait of Hormuz amid the US war with Iran.",
+          "published": "2026-09-10T17:01:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Houthis advance along Yemeni coast, threaten Saudi oil exports in the Red Sea - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQX1VBYmFiQnhuQWRpWDFRNjQ3ZzBFUTEzUmxneFZQTmtfOHducTVIZlU3LXFwRjVSbS1EYTNjMVY1dGlzODdfblBPSzFqWm90bWhfeFBUVVlDdjN2YUFoS1VNekY4U1VHcW1WTXQzS1ZTYjI2YzZ1OFFaZzJMZm9DTEpWY25jMlJsOHNUYklSbkR3Z2pNc1ZUcUNhN3VnWHdIV2U5RklKVldodktsWE5rczRlMVFfZzJZV3VJSzlhdEpRV1VzLXc2Sw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQX1VBYmFiQnhuQWRpWDFRNjQ3ZzBFUTEzUmxneFZQTmtfOHducTVIZlU3LXFwRjVSbS1EYTNjMVY1dGlzODdfblBPSzFqWm90bWhfeFBUVVlDdjN2YUFoS1VNekY4U1VHcW1WTXQzS1ZTYjI2YzZ1OFFaZzJMZm9DTEpWY25jMlJsOHNUYklSbkR3Z2pNc1ZUcUNhN3VnWHdIV2U5RklKVldodktsWE5rczRlMVFfZzJZV3VJSzlhdEpRV1VzLXc2Sw?oc=5\" target=\"_blank\"&gt;Houthis seize key Yemeni Red Sea port, sources say, threatening global energy flows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt",
-          "published": "2026-09-10T12:30:32.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQX1VBYmFiQnhuQWRpWDFRNjQ3ZzBFUTEzUmxneFZQTmtfOHducTVIZlU3LXFwRjVSbS1EYTNjMVY1dGlzODdfblBPSzFqWm90bWhfeFBUVVlDdjN2YUFoS1VNekY4U1VHcW1WTXQzS1ZTYjI2YzZ1OFFaZzJMZm9DTEpWY25jMlJsOHNUYklSbkR3Z2pNc1ZUcUNhN3VnWHdIV2U5RklKVldodktsWE5rczRlMVFfZzJZV3VJSzlhdEpRV1VzLXc2Sw?oc=5\" target=\"_blank\"&gt;Houthis advance along Yemeni coast, threaten Saudi oil exports in the Red Sea&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
+          "published": "2026-09-10T06:13:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Iranian arms and advice helped Yemen's Houthis seize key Red Sea city, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxON1UxOEFocWZUYXJVTUdzcW10bmc3SGRzLWdXOFBUMjUxbVAyOUFrZTJQMXJpeFI3U1BheDVPYzdzOG5yOG04TjU0VWpCS2hBdDlmd3VVcV9VYzZXVjN6dHlSeklJR2ZkdWRlaGcyN2dFMjlHbFpHbjVybUJySmZTSGowSFNRYUhBQm9IajBENWFQeG5KOF9zNTk0NFhUYzFEOXczbHFpb2tPaW1ZSDlmUXgyZFRVNUZrNG1SSnFWZUw3LUh2LTdRNE9n?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxON1UxOEFocWZUYXJVTUdzcW10bmc3SGRzLWdXOFBUMjUxbVAyOUFrZTJQMXJpeFI3U1BheDVPYzdzOG5yOG04TjU0VWpCS2hBdDlmd3VVcV9VYzZXVjN6dHlSeklJR2ZkdWRlaGcyN2dFMjlHbFpHbjVybUJySmZTSGowSFNRYUhBQm9IajBENWFQeG5KOF9zNTk0NFhUYzFEOXczbHFpb2tPaW1ZSDlmUXgyZFRVNUZrNG1SSnFWZUw3LUh2LTdRNE9n?oc=5\" target=\"_blank\"&gt;Iranian arms and advice helped Yemen's Houthis seize key Red Sea city, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
+          "published": "2026-09-10T16:30:56.000Z",
           "score": 7
         },
         {
@@ -74,14 +105,6 @@
           "score": 13
         },
         {
-          "title": "The world doesn’t need a Paris Agreement for plastics",
-          "link": "https://www.climatechangenews.com/2026/09/09/the-world-doesnt-need-a-paris-agreement-for-plastics/",
-          "source": "Climate Home News",
-          "description": "As governments prepare for new talks, ambitious countries must reject a framework that locks in the wrong response to the plastic crisis, before the crisis outpaces diplomacy The post The world doesn’t need a Paris Agreement for plastics appeared first on Climate Home News.",
-          "published": "2026-09-09T16:35:36.000Z",
-          "score": 13
-        },
-        {
           "title": "Guest post: How extreme heat is ‘creeping’ from summer into autumn and spring",
           "link": "https://www.carbonbrief.org/guest-post-how-extreme-heat-is-creeping-from-summer-into-autumn-and-spring",
           "source": "Carbon Brief",
@@ -96,6 +119,14 @@
           "description": "The UK government has slashed its hopes for electric planes and “sustainable aviation fuels” (SAFs), ahead of giving the green&#8230; The post UK aviation emissions to be 50% higher than thought by 2050, government admits appeared first on Carbon Brief.",
           "published": "2026-09-10T10:42:50.000Z",
           "score": 10
+        },
+        {
+          "title": "World must reject climate culture wars or face economic ruin, says UN’s Stiell",
+          "link": "https://www.theguardian.com/environment/2026/sep/10/august-joint-hottest-month-recorded-globally",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Warning by United Nations climate chief comes as EU data shows August 2026 was joint hottest month ever&lt;/p&gt;&lt;p&gt;Attempts to stoke a climate crisis culture war must be rejected or the world will face economic disaster, the UN’s climate chief has warned.&lt;/p&gt;&lt;p&gt;Simon Stiell, the executive secretary of the UN Framework Convention on Climate Change, warned that this year’s “hot as hell” summer had killed tens of thousands of people in Europe alone and “hammered” infrast",
+          "published": "2026-09-10T10:42:44.000Z",
+          "score": 9
         }
       ]
     },
@@ -123,14 +154,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Europe's royalty pay respects to King Harald V in Norway",
-          "link": "https://www.bbc.co.uk/news/articles/cd94jgy7e94o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The Prince of Wales and three Nordic kings were among those who attended proceedings on Wednesday.",
-          "published": "2026-09-09T16:30:28.000Z",
-          "score": 8
-        },
-        {
           "title": "Europe needs to compete in spaceflight, says France&#039;s Macron",
           "link": "https://www.dw.com/en/europe-needs-to-compete-in-spaceflight-says-france-s-macron/a-79212006?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -139,36 +162,44 @@
           "score": 8
         },
         {
-          "title": "Serbia's President Vucic dissolves parliament, calls snap elections - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUExsUV9LV2lxRTBJYjRLQXV1Uk5UeFdrcUhuNlgzaGxfNFIzczNSaUY1UnZpM0pmQmMteTI5MWRIbUpjWmtRak1tYnJSdnZrRGRURlZ2TFZvcXRTN0h4OG9iNkRLLU5QSjQxaHRlUGU2eVdwaDlsVjVBcUgwRGtVV29hMk5TLVMyRDE4LVdvU0g4MFh4OEhJaXNfTHZqMnZhbkNUSzcyUkhtSWs?oc=5",
+          "title": "Dollar gains, euro slips after expected ECB rate increase - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYU50UmRVNmIyeFBOSmd6azlDeDMxNlh1S0cycHpnYjU4NERYWjhoN2diSmthTngzdWZScmFTdldrTGtUcTh3SDFKbVIySmU2TUx3cnMtOEdKMnFkV3J1d3pYRmdvZDVWb2VPSXNjcG52cEVPTGtLNF9UT1BFSnJ3WlUzOXNuU1FwZmNSdGVTdV9Na1h6M3dPVGVtU0ttYlBlRWc0S1Q0Rl9HSmVCNlZaZXhjMVc0OUduMk1mOGRqVkxjY0d2SGhRbWJsUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUExsUV9LV2lxRTBJYjRLQXV1Uk5UeFdrcUhuNlgzaGxfNFIzczNSaUY1UnZpM0pmQmMteTI5MWRIbUpjWmtRak1tYnJSdnZrRGRURlZ2TFZvcXRTN0h4OG9iNkRLLU5QSjQxaHRlUGU2eVdwaDlsVjVBcUgwRGtVV29hMk5TLVMyRDE4LVdvU0g4MFh4OEhJaXNfTHZqMnZhbkNUSzcyUkhtSWs?oc=5\" target=\"_blank\"&gt;Serbia's President Vucic dissolves parliament, calls snap elections&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-09T16:26:22.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxOYU50UmRVNmIyeFBOSmd6azlDeDMxNlh1S0cycHpnYjU4NERYWjhoN2diSmthTngzdWZScmFTdldrTGtUcTh3SDFKbVIySmU2TUx3cnMtOEdKMnFkV3J1d3pYRmdvZDVWb2VPSXNjcG52cEVPTGtLNF9UT1BFSnJ3WlUzOXNuU1FwZmNSdGVTdV9Na1h6M3dPVGVtU0ttYlBlRWc0S1Q0Rl9HSmVCNlZaZXhjMVc0OUduMk1mOGRqVkxjY0d2SGhRbWJsUQ?oc=5\" target=\"_blank\"&gt;Dollar gains, euro slips after expected ECB rate increase&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-10T02:07:00.000Z",
           "score": 8
         },
         {
-          "title": "China's EV penetration could reach 80% by 2030, Sinopec researcher says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRWxpRXI4OWJ4UW1tNmRLamJ5d3E2cFdSTnduanp1MkpFYm96MHdNVnVsVmYwZzV4aVhBOTJKVGU3LTczSnlqd0o3OWVDZG4tQkJfck9maHhuUUt4bzd4enhZb0VHdmRVbFE4YzNpTExjZFlLM0h1a1MyNU10UVVUTEEzNXJCUnJiQUsyNXNrZkNPckNreUZMZFgtVEllOHBndGxnUFdBemVEem9PcDh2VXFtU2hlQXhGelRXV2ZlRC0?oc=5",
+          "title": "Funeral for a King: Norway bids farewell to Europe's oldest monarch - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPS2prV1lieFplam9EUXpKUFF4dm8zUTdaU1Zhb0JfaVRzM3lEYTVnQjRuY1ZrZmo0bTZBSGtTMzE5d1pMMWhJRzBUVlBJbVhlZHJEY0MwWWlBM2M4eXM1WV80VUJlM0JTSDFNb3h3VTBpWmNHVGtEY2lKeDdnMDBoSXk3cUZ3bkV3dG1hWjktMDdJaVNGazBYbm1TV2VQSklNc0U0?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRWxpRXI4OWJ4UW1tNmRLamJ5d3E2cFdSTnduanp1MkpFYm96MHdNVnVsVmYwZzV4aVhBOTJKVGU3LTczSnlqd0o3OWVDZG4tQkJfck9maHhuUUt4bzd4enhZb0VHdmRVbFE4YzNpTExjZFlLM0h1a1MyNU10UVVUTEEzNXJCUnJiQUsyNXNrZkNPckNreUZMZFgtVEllOHBndGxnUFdBemVEem9PcDh2VXFtU2hlQXhGelRXV2ZlRC0?oc=5\" target=\"_blank\"&gt;China's EV penetration could reach 80% by 2030, Sinopec researcher says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-10T05:48:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPS2prV1lieFplam9EUXpKUFF4dm8zUTdaU1Zhb0JfaVRzM3lEYTVnQjRuY1ZrZmo0bTZBSGtTMzE5d1pMMWhJRzBUVlBJbVhlZHJEY0MwWWlBM2M4eXM1WV80VUJlM0JTSDFNb3h3VTBpWmNHVGtEY2lKeDdnMDBoSXk3cUZ3bkV3dG1hWjktMDdJaVNGazBYbm1TV2VQSklNc0U0?oc=5\" target=\"_blank\"&gt;Funeral for a King: Norway bids farewell to Europe's oldest monarch&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-09T22:03:00.000Z",
+          "score": 8
         },
         {
-          "title": "Uganda: Traditional kingdom plunged into succession crisis",
-          "link": "https://www.dw.com/en/uganda-traditional-kingdom-plunged-into-succession-crisis/a-79214786?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A royal succession committee and the family of late King Oyo Nyimba of Toroo have put forward competing candidates. Questions have been raised as to whether the late monarch indeed had a son as his family claims.",
-          "published": "2026-09-10T13:51:00.000Z",
-          "score": 6
+          "title": "EXCLUSIVE: EU countries to seek import curbs on chemicals, plastics, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQX2RENzlWLV9HRWM5eHpVY2l4YjZEal9MMWdvS2o0ajVhdUJKTThlc2NQb2RYS1E2UnBtS0dLVS1USlFTaEZ4NHltNjBzNUxDLWplV1FET1FCN1UyZi1KZHNEbXJ2TGx5NjZLQ2x3NFFZeEhWYThNZFRndFNlSTRwcks1aUpqUEhsTEJpQXI3TFJwekdrMDdCTkJ3aW1WcWpiRV9SYkNreVdZQm5ySnc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQX2RENzlWLV9HRWM5eHpVY2l4YjZEal9MMWdvS2o0ajVhdUJKTThlc2NQb2RYS1E2UnBtS0dLVS1USlFTaEZ4NHltNjBzNUxDLWplV1FET1FCN1UyZi1KZHNEbXJ2TGx5NjZLQ2x3NFFZeEhWYThNZFRndFNlSTRwcks1aUpqUEhsTEJpQXI3TFJwekdrMDdCTkJ3aW1WcWpiRV9SYkNreVdZQm5ySnc?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: EU countries to seek import curbs on chemicals, plastics, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-10T11:56:50.000Z",
+          "score": 8
+        },
+        {
+          "title": "Volvo Cars to become Lynk &amp; Co's European distributor starting 2027 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSXVBb1RJVHlOMk9LN3gyWUotcDJLNU5nWW1vaV92Y1pyMEtJWmdxb0xuQTctNmowaGRmNm1jYnE5bzV5WUNWRURYR2pYcHlOQU9RTm1VRkFMZkUyMzhETXBFckdDenhBdlVuLWt6OE5JY0E0a2VOb3hIbmZxdVlvcHl1M21kZFBxZmtVVzdiNHEtbE5iVHZVZkExemNIY051ZHNERTMyOWNNTGxCTWc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNSXVBb1RJVHlOMk9LN3gyWUotcDJLNU5nWW1vaV92Y1pyMEtJWmdxb0xuQTctNmowaGRmNm1jYnE5bzV5WUNWRURYR2pYcHlOQU9RTm1VRkFMZkUyMzhETXBFckdDenhBdlVuLWt6OE5JY0E0a2VOb3hIbmZxdVlvcHl1M21kZFBxZmtVVzdiNHEtbE5iVHZVZkExemNIY051ZHNERTMyOWNNTGxCTWc?oc=5\" target=\"_blank\"&gt;Volvo Cars to become Lynk &amp; Co's European distributor starting 2027&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-10T12:13:53.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 399,
-    "articlesLast24h": 158,
-    "afterDedup": 144,
+    "totalArticlesScanned": 401,
+    "articlesLast24h": 159,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
