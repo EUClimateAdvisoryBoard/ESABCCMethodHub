@@ -1,15 +1,9 @@
 {
   "date": "2026-09-11",
-  "generatedAt": "2026-09-11T14:55:32.693Z",
+  "generatedAt": "2026-09-11T19:29:57.703Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 11 September 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Introductory remarks by Commissioner Hoekstra during an exchange of views with the European Parliament's Committee on the Environment, Climate and Food Safety (ENVI)",
-      "summary": "European Commission Speech Brussels, 10 Sep 2026 Chair, Honourable Members, \r\nI'm delighted to have the opportunity to exchange on this important file.\r\nIn terms of climate, if anyone needed an additional remind...",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "Made in Nigeria: The race to build an African solar industry from scratch",
       "summary": "A solar power revolution is gathering pace in Africa and Nigeria wants a slice of the fast-growing industry, but competing with Chinese imports won’t be easy The post Made in Nigeria: The race to build an African solar industry from scratch appeared first on Climate Home News.",
@@ -33,16 +27,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Introductory remarks by Commissioner Hoekstra during an exchange of views with the European Parliament's Committee on the Environment, Climate and Food Safety (ENVI)",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1844",
-          "source": "European Commission",
-          "description": "European Commission Speech Brussels, 10 Sep 2026 Chair, Honourable Members, \r\nI'm delighted to have the opportunity to exchange on this important file.\r\nIn terms of climate, if anyone needed an additional remind...",
-          "published": "2026-09-10T15:14:27.000Z",
-          "score": 27
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -57,6 +42,22 @@
           "score": 13
         },
         {
+          "title": "Australia and Canada can learn from each other on climate if we separate action from declaration | Rosa Galvez",
+          "link": "https://www.theguardian.com/commentisfree/2026/sep/12/australia-canada-climate-integrity-summit-rosa-galvez",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Climate integrity means being honest about the gap between emissions reduced on paper and emissions reduced in the atmosphere&lt;/p&gt;&lt;p&gt;Canada and Australia are both democracies built on abundant resources, extraordinary biodiversity and world-class science, with prosperity built substantially on mining, &lt;a href=\"https://www.theguardian.com/environment/2026/sep/08/global-move-away-from-oil-could-lead-to-conflict-and-migration-experts-say\"&gt;oil and gas&lt;/a&gt;. We are majo",
+          "published": "2026-09-11T15:00:08.000Z",
+          "score": 7
+        },
+        {
+          "title": "Houthis claim major advance in Yemen and tighten grip on Red Sea shipping lane",
+          "link": "https://www.bbc.co.uk/news/articles/c23x72yx2rvo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Iran-backed Houthis are also reported to have seized Perim - a strategic island on the major shipping route.",
+          "published": "2026-09-11T16:58:34.000Z",
+          "score": 7
+        },
+        {
           "title": "Yemen: Houthis tighten control of strategic Red Sea towns",
           "link": "https://www.dw.com/en/yemen-houthis-tighten-control-of-strategic-red-sea-towns/a-79220628?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -65,28 +66,12 @@
           "score": 7
         },
         {
-          "title": "Iranian arms and advice helped Yemen's Houthis seize key Red Sea city, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxON1UxOEFocWZUYXJVTUdzcW10bmc3SGRzLWdXOFBUMjUxbVAyOUFrZTJQMXJpeFI3U1BheDVPYzdzOG5yOG04TjU0VWpCS2hBdDlmd3VVcV9VYzZXVjN6dHlSeklJR2ZkdWRlaGcyN2dFMjlHbFpHbjVybUJySmZTSGowSFNRYUhBQm9IajBENWFQeG5KOF9zNTk0NFhUYzFEOXczbHFpb2tPaW1ZSDlmUXgyZFRVNUZrNG1SSnFWZUw3LUh2LTdRNE9n?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxON1UxOEFocWZUYXJVTUdzcW10bmc3SGRzLWdXOFBUMjUxbVAyOUFrZTJQMXJpeFI3U1BheDVPYzdzOG5yOG04TjU0VWpCS2hBdDlmd3VVcV9VYzZXVjN6dHlSeklJR2ZkdWRlaGcyN2dFMjlHbFpHbjVybUJySmZTSGowSFNRYUhBQm9IajBENWFQeG5KOF9zNTk0NFhUYzFEOXczbHFpb2tPaW1ZSDlmUXgyZFRVNUZrNG1SSnFWZUw3LUh2LTdRNE9n?oc=5\" target=\"_blank\"&gt;Iranian arms and advice helped Yemen's Houthis seize key Red Sea city, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
-          "published": "2026-09-10T16:25:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Kremlin warns Lithuania against hosting Western nuclear weapons - Reuters",
+          "title": "Kremlin warns Lithuania against hosting Western nuclear weapons - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcVRFUkZiQ2pweEllOGR1M0h1WFE2Rk5lckZNUmhmYlJGUkRaZVMzTUN2MnlrQmVYQ3J0SURLbFp6dnBPalQ1dFZIRXBqb0hHQ3hhX28wSUtfaUtDWXJLMzRSV1EtR24yM1pYUWNWVE5zRHBVTHhnTUwxazFSOUNyUHBzWHdvTDVreHI5MVdUeHUxTGNPRDlLdVd0cGhsQUpQSWdPQWpGVzM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcVRFUkZiQ2pweEllOGR1M0h1WFE2Rk5lckZNUmhmYlJGUkRaZVMzTUN2MnlrQmVYQ3J0SURLbFp6dnBPalQ1dFZIRXBqb0hHQ3hhX28wSUtfaUtDWXJLMzRSV1EtR24yM1pYUWNWVE5zRHBVTHhnTUwxazFSOUNyUHBzWHdvTDVreHI5MVdUeHUxTGNPRDlLdVd0cGhsQUpQSWdPQWpGVzM?oc=5\" target=\"_blank\"&gt;Kremlin warns Lithuania against hosting Western nuclear weapons&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcVRFUkZiQ2pweEllOGR1M0h1WFE2Rk5lckZNUmhmYlJGUkRaZVMzTUN2MnlrQmVYQ3J0SURLbFp6dnBPalQ1dFZIRXBqb0hHQ3hhX28wSUtfaUtDWXJLMzRSV1EtR24yM1pYUWNWVE5zRHBVTHhnTUwxazFSOUNyUHBzWHdvTDVreHI5MVdUeHUxTGNPRDlLdVd0cGhsQUpQSWdPQWpGVzM?oc=5\" target=\"_blank\"&gt;Kremlin warns Lithuania against hosting Western nuclear weapons&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
           "published": "2026-09-11T09:25:10.000Z",
           "score": 7
-        },
-        {
-          "title": "Speed up electricity grid upgrade or else face higher bills, warns UK watchdog",
-          "link": "https://www.theguardian.com/business/2026/sep/11/speed-up-electricity-grid-upgrade-or-else-face-higher-bills-warns-uk-watchdog",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;National Audit Office says failure to implement £70bn modernisation would also hold back economic growth&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/nils-pratley-on-finance/2026/sep/11/grid-upgrade-electricity-transmission-bills-nils-pratley\"&gt;The ‘great grid upgrade’ is off track – ministers should spell out the risks for bills&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Consumers will pay higher energy bills unless the UK government s",
-          "published": "2026-09-11T05:00:02.000Z",
-          "score": 4
         }
       ]
     },
@@ -111,6 +96,14 @@
           "score": 13
         },
         {
+          "title": "Graphic Designer in the IPCC Working Group I Technical Support Unit",
+          "link": "https://www.ipcc.ch/2026/09/11/graphic-designer-ipcc-wg1-tsu/",
+          "source": "IPCC",
+          "description": "Working Group I of the Intergovernmental Panel on Climate Change is filling the position of Graphic Designer in the Technical Support Unit This entry-level design position is located in the Paris area, at Gif-sur-Yvette (France). The Intergovernmental Panel on Climate Change (IPCC) The IPCC was established by the United Nations Environment Programme (UN Environment) and [&#8230;]",
+          "published": "2026-09-11T17:13:05.000Z",
+          "score": 11
+        },
+        {
           "title": "El Niño: Indonesia fire emissions in 2026 ‘on track’ to match record for this century",
           "link": "https://www.carbonbrief.org/el-nino-indonesia-fire-emissions-in-2026-on-track-to-match-record-for-this-century",
           "source": "Carbon Brief",
@@ -124,14 +117,6 @@
           "source": "Carbon Brief",
           "description": "More than 1,000 operations at NHS hospitals were cancelled due to heat during the UK’s record May and June heatwaves,&#8230; The post Revealed: More than 1,000 NHS operations cancelled due to record UK heatwaves appeared first on Carbon Brief.",
           "published": "2026-09-11T07:00:00.000Z",
-          "score": 10
-        },
-        {
-          "title": "Türkiye says it has &#8220;final decision&#8221; at COP31 despite Australia running negotiations",
-          "link": "https://www.climatechangenews.com/2026/09/11/turkiye-says-it-has-final-decision-at-cop31-despite-australia-running-negotiations/",
-          "source": "Climate Home News",
-          "description": "COP31 President-Designate Murat Kurum told journalists that, while the two countries have been working well together, Türkiye has the final say over the Antalya summit The post Türkiye says it has &#8220;final decision&#8221; at COP31 despite Australia running negotiations appeared first on Climate Home News.",
-          "published": "2026-09-11T10:52:01.000Z",
           "score": 10
         }
       ]
@@ -160,7 +145,7 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Europe drives global EV sales growth in August, offsetting China, North America weakness - Reuters",
+          "title": "Europe drives global EV sales growth in August, offsetting China, North America weakness - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOMEFud0V2S3VZYk1Xc2F1ZTlFMmgzcFdKNXk2ZHU0RGo3ZnB1a1l4Z21ZeWx3UDAtOGFBNkJaemNkY21rejJUdi0zRFRqcXU3RmRUMnFFc2ItRWNYMjM2N0FMS3c1SC00OElKSFBtaHdKRnRsQXB1YlRGb0xfTklHQWRDeV9YTjk1Z3hwQnpkUE5kVjZtaWlaRVN2REcxak5oMlRqaVVYcXZpaGNVVXFSOTZUc182QmdSYkFoRVRlYzFmdmNKbmpMa3RzLVhKMWVJMWJ4VjA5cw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxOMEFud0V2S3VZYk1Xc2F1ZTlFMmgzcFdKNXk2ZHU0RGo3ZnB1a1l4Z21ZeWx3UDAtOGFBNkJaemNkY21rejJUdi0zRFRqcXU3RmRUMnFFc2ItRWNYMjM2N0FMS3c1SC00OElKSFBtaHdKRnRsQXB1YlRGb0xfTklHQWRDeV9YTjk1Z3hwQnpkUE5kVjZtaWlaRVN2REcxak5oMlRqaVVYcXZpaGNVVXFSOTZUc182QmdSYkFoRVRlYzFmdmNKbmpMa3RzLVhKMWVJMWJ4VjA5cw?oc=5\" target=\"_blank\"&gt;Europe drives global EV sales growth in August, offsetting China, North America weakness&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font colo",
@@ -184,28 +169,28 @@
           "score": 8
         },
         {
-          "title": "Dollar edges higher against euro after U.S. inflation data - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTUI0bHIwbWRHUzNiQmxNam13azJMSHZvUzhkMThQSDJpOGZqOUpfYVMtMG5taXlrRGVBcGViVWpPT20xTm12RnJLT1BIR2luVmZWOEl0TFVyTC1UX25qZU00cTY5UEMyTWpXd3ctZnVCSXVQMEswa21hTl85ZExMMm9xNkNHRDlHQnVTSlZNMFV5U1l3am1BQVprSUJqQ1VONTBOb3dBSnQxTm9YXzU0aldn?oc=5",
+          "title": "Taiwan's vice president on rare Europe visit which China calls 'despicable' - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSmpwWU50ZjFvWTFHRl9QSzFBTnlwMmQtZ3JQVlgxbkxRVl9vd1pqb0pjZzBqSE5ZTDg3T1hiaE9QY2Q4cVhZczVEZ3RfXzdiUC1BOGVNZHNrNE9sNW5GdXM1Z1NFcW9FZG5objdqUlhRN043QVJBMWN2THU3U21aR3FSblcyaGhSUHlScUgtLXVSZlc2eWNiSm1vVm9DS1BqeTJvS3lkLVRSRDFOVzFoLU9ETWlwX2M5ZVVVcEF0cUVBZHdCLXlwdURn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPTUI0bHIwbWRHUzNiQmxNam13azJMSHZvUzhkMThQSDJpOGZqOUpfYVMtMG5taXlrRGVBcGViVWpPT20xTm12RnJLT1BIR2luVmZWOEl0TFVyTC1UX25qZU00cTY5UEMyTWpXd3ctZnVCSXVQMEswa21hTl85ZExMMm9xNkNHRDlHQnVTSlZNMFV5U1l3am1BQVprSUJqQ1VONTBOb3dBSnQxTm9YXzU0aldn?oc=5\" target=\"_blank\"&gt;Dollar edges higher against euro after U.S. inflation data&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-11T01:08:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPSmpwWU50ZjFvWTFHRl9QSzFBTnlwMmQtZ3JQVlgxbkxRVl9vd1pqb0pjZzBqSE5ZTDg3T1hiaE9QY2Q4cVhZczVEZ3RfXzdiUC1BOGVNZHNrNE9sNW5GdXM1Z1NFcW9FZG5objdqUlhRN043QVJBMWN2THU3U21aR3FSblcyaGhSUHlScUgtLXVSZlc2eWNiSm1vVm9DS1BqeTJvS3lkLVRSRDFOVzFoLU9ETWlwX2M5ZVVVcEF0cUVBZHdCLXlwdURn?oc=5\" target=\"_blank\"&gt;Taiwan's vice president on rare Europe visit which China calls 'despicable'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/",
+          "published": "2026-09-11T01:27:00.000Z",
           "score": 8
         },
         {
-          "title": "Taiwan's vice president on rare Europe visit which China calls 'despicable' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSmpwWU50ZjFvWTFHRl9QSzFBTnlwMmQtZ3JQVlgxbkxRVl9vd1pqb0pjZzBqSE5ZTDg3T1hiaE9QY2Q4cVhZczVEZ3RfXzdiUC1BOGVNZHNrNE9sNW5GdXM1Z1NFcW9FZG5objdqUlhRN043QVJBMWN2THU3U21aR3FSblcyaGhSUHlScUgtLXVSZlc2eWNiSm1vVm9DS1BqeTJvS3lkLVRSRDFOVzFoLU9ETWlwX2M5ZVVVcEF0cUVBZHdCLXlwdURn?oc=5",
+          "title": "UK Green leader confirmed as candidate for parliament seat vacated by Starmer - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPcmdTbnRlSUo3UWpKWkMtY1p6RXlMTGFwSVpyQXpUdXFaclQ1T2tselFzQjF0S3ZoaFJqeDlBNUFPZ0k0WEhIN3N0ZEFLcDdybXlqWk1ZSTNORmhPaWs5OXNuVkhzMGU4aU4xNklVSkFKWFhKSkE2VFg1NnI0UERsVGlaT1I3cU5WSmg5RUdZMUQ0dTRENHhMVjhmSmQycmpUbFQyZFVnY2NJQU1lU0ZmZjNn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPSmpwWU50ZjFvWTFHRl9QSzFBTnlwMmQtZ3JQVlgxbkxRVl9vd1pqb0pjZzBqSE5ZTDg3T1hiaE9QY2Q4cVhZczVEZ3RfXzdiUC1BOGVNZHNrNE9sNW5GdXM1Z1NFcW9FZG5objdqUlhRN043QVJBMWN2THU3U21aR3FSblcyaGhSUHlScUgtLXVSZlc2eWNiSm1vVm9DS1BqeTJvS3lkLVRSRDFOVzFoLU9ETWlwX2M5ZVVVcEF0cUVBZHdCLXlwdURn?oc=5\" target=\"_blank\"&gt;Taiwan's vice president on rare Europe visit which China calls 'despicable'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
-          "published": "2026-09-11T01:27:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPcmdTbnRlSUo3UWpKWkMtY1p6RXlMTGFwSVpyQXpUdXFaclQ1T2tselFzQjF0S3ZoaFJqeDlBNUFPZ0k0WEhIN3N0ZEFLcDdybXlqWk1ZSTNORmhPaWs5OXNuVkhzMGU4aU4xNklVSkFKWFhKSkE2VFg1NnI0UERsVGlaT1I3cU5WSmg5RUdZMUQ0dTRENHhMVjhmSmQycmpUbFQyZFVnY2NJQU1lU0ZmZjNn?oc=5\" target=\"_blank\"&gt;UK Green leader confirmed as candidate for parliament seat vacated by Starmer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-09-11T10:13:43.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 161,
-    "afterDedup": 155,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 162,
+    "afterDedup": 153,
     "feedsQueried": 19
   }
 }
