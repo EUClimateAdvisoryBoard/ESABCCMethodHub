@@ -1,6 +1,6 @@
 {
   "date": "2026-09-11",
-  "generatedAt": "2026-09-11T00:52:09.233Z",
+  "generatedAt": "2026-09-11T09:27:11.052Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 11 September 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,22 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Yemen's Houthis reportedly seize strategic Red Sea port of Mokha",
-      "summary": "Mokha's capture would bring the Iran-backed group closer to controlling the Bab al-Mandab Strait waterway, a key shipping route.",
+      "headline": "Yemen's Houthis seize strategic Red Sea port of Mokha",
+      "summary": "Mokha's capture brings the Iran-backed group closer to controlling a key international shipping route.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Commission sets out next chapter for European Capitals of Culture after over 40 years of success",
-      "summary": "European Commission Press release Brussels, 10 Sep 2026 Today, the European Commission renews and strengthens the framework for the European Capitals of Culture beyond 2033, applying the lessons of more than 40 years of experience into the programme's next generation.",
+      "headline": "Revealed: More than 1,000 NHS operations cancelled due to record UK heatwaves",
+      "summary": "More than 1,000 operations at NHS hospitals were cancelled due to heat during the UK’s record May and June heatwaves,&#8230; The post Revealed: More than 1,000 NHS operations cancelled due to record UK heatwaves appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Bernie Sanders speaks to the BBC about proposal to ban AI superintelligence",
+      "summary": "The senator has also proposed a sort of sovereign wealth fund in which the US would take a 50% stake in AI companies.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -43,11 +49,11 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Yemen's Houthis reportedly seize strategic Red Sea port of Mokha",
+          "title": "Yemen's Houthis seize strategic Red Sea port of Mokha",
           "link": "https://www.bbc.co.uk/news/articles/c4g7vr0lngwo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Mokha's capture would bring the Iran-backed group closer to controlling the Bab al-Mandab Strait waterway, a key shipping route.",
-          "published": "2026-09-10T18:15:47.000Z",
+          "description": "Mokha's capture brings the Iran-backed group closer to controlling a key international shipping route.",
+          "published": "2026-09-11T09:20:45.000Z",
           "score": 7
         },
         {
@@ -59,19 +65,11 @@
           "score": 7
         },
         {
-          "title": "Houthis advance along Yemeni coast, threaten Saudi oil exports in the Red Sea - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQX1VBYmFiQnhuQWRpWDFRNjQ3ZzBFUTEzUmxneFZQTmtfOHducTVIZlU3LXFwRjVSbS1EYTNjMVY1dGlzODdfblBPSzFqWm90bWhfeFBUVVlDdjN2YUFoS1VNekY4U1VHcW1WTXQzS1ZTYjI2YzZ1OFFaZzJMZm9DTEpWY25jMlJsOHNUYklSbkR3Z2pNc1ZUcUNhN3VnWHdIV2U5RklKVldodktsWE5rczRlMVFfZzJZV3VJSzlhdEpRV1VzLXc2Sw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQX1VBYmFiQnhuQWRpWDFRNjQ3ZzBFUTEzUmxneFZQTmtfOHducTVIZlU3LXFwRjVSbS1EYTNjMVY1dGlzODdfblBPSzFqWm90bWhfeFBUVVlDdjN2YUFoS1VNekY4U1VHcW1WTXQzS1ZTYjI2YzZ1OFFaZzJMZm9DTEpWY25jMlJsOHNUYklSbkR3Z2pNc1ZUcUNhN3VnWHdIV2U5RklKVldodktsWE5rczRlMVFfZzJZV3VJSzlhdEpRV1VzLXc2Sw?oc=5\" target=\"_blank\"&gt;Houthis advance along Yemeni coast, threaten Saudi oil exports in the Red Sea&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
-          "published": "2026-09-10T06:13:00.000Z",
-          "score": 7
-        },
-        {
           "title": "Iranian arms and advice helped Yemen's Houthis seize key Red Sea city, sources say - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxON1UxOEFocWZUYXJVTUdzcW10bmc3SGRzLWdXOFBUMjUxbVAyOUFrZTJQMXJpeFI3U1BheDVPYzdzOG5yOG04TjU0VWpCS2hBdDlmd3VVcV9VYzZXVjN6dHlSeklJR2ZkdWRlaGcyN2dFMjlHbFpHbjVybUJySmZTSGowSFNRYUhBQm9IajBENWFQeG5KOF9zNTk0NFhUYzFEOXczbHFpb2tPaW1ZSDlmUXgyZFRVNUZrNG1SSnFWZUw3LUh2LTdRNE9n?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxON1UxOEFocWZUYXJVTUdzcW10bmc3SGRzLWdXOFBUMjUxbVAyOUFrZTJQMXJpeFI3U1BheDVPYzdzOG5yOG04TjU0VWpCS2hBdDlmd3VVcV9VYzZXVjN6dHlSeklJR2ZkdWRlaGcyN2dFMjlHbFpHbjVybUJySmZTSGowSFNRYUhBQm9IajBENWFQeG5KOF9zNTk0NFhUYzFEOXczbHFpb2tPaW1ZSDlmUXgyZFRVNUZrNG1SSnFWZUw3LUh2LTdRNE9n?oc=5\" target=\"_blank\"&gt;Iranian arms and advice helped Yemen's Houthis seize key Red Sea city, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
-          "published": "2026-09-10T16:30:56.000Z",
+          "published": "2026-09-10T16:25:00.000Z",
           "score": 7
         },
         {
@@ -81,6 +79,14 @@
           "description": "Some German politicians are calling for a delay to the EU plan to phase out gas-powered vehicles, saying cars must be judged on the entire carbon footprint. But the full picture still says EVs are more climate friendly.",
           "published": "2026-09-10T13:18:00.000Z",
           "score": 6
+        },
+        {
+          "title": "Speed up electricity grid upgrade or else face higher bills, warns UK watchdog",
+          "link": "https://www.theguardian.com/business/2026/sep/11/speed-up-electricity-grid-upgrade-or-else-face-higher-bills-warns-uk-watchdog",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;National Audit Office says failure to implement £70bn modernisation would also hold back economic growth&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/nils-pratley-on-finance/2026/sep/11/grid-upgrade-electricity-transmission-bills-nils-pratley\"&gt;The ‘great grid upgrade’ is off track – ministers should spell out the risks for bills&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Consumers will pay higher energy bills unless the UK government s",
+          "published": "2026-09-11T05:00:02.000Z",
+          "score": 4
         }
       ]
     },
@@ -89,12 +95,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Commission sets out next chapter for European Capitals of Culture after over 40 years of success",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1833",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 10 Sep 2026 Today, the European Commission renews and strengthens the framework for the European Capitals of Culture beyond 2033, applying the lessons of more than 40 years of experience into the programme's next generation.",
-          "published": "2026-09-10T07:38:40.000Z",
-          "score": 18
+          "title": "Revealed: More than 1,000 NHS operations cancelled due to record UK heatwaves",
+          "link": "https://www.carbonbrief.org/revealed-more-than-1000-nhs-operations-cancelled-due-to-record-uk-heatwaves",
+          "source": "Carbon Brief",
+          "description": "More than 1,000 operations at NHS hospitals were cancelled due to heat during the UK’s record May and June heatwaves,&#8230; The post Revealed: More than 1,000 NHS operations cancelled due to record UK heatwaves appeared first on Carbon Brief.",
+          "published": "2026-09-11T07:00:00.000Z",
+          "score": 10
         },
         {
           "title": "Guest post: How extreme heat is ‘creeping’ from summer into autumn and spring",
@@ -121,60 +127,60 @@
           "score": 9
         },
         {
-          "title": "Climate ‘feedback loops’ could worsen global warming by 30%, study finds",
-          "link": "https://www.theguardian.com/environment/2026/sep/10/climate-feedback-loops-global-warming-study",
+          "title": "English winemakers expect ‘vintage year’ after record-breaking summer heat",
+          "link": "https://www.theguardian.com/uk-news/2026/sep/10/english-winemakers-vintage-grapes-harvest-heatwave",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Emissions of planet-heating methane and CO2 from natural sources are worsening the climate crisis, paper says&lt;/p&gt;&lt;p&gt;Rising global temperatures caused by the burning of fossil fuels are transforming the world’s forests, wetlands and tundra to the point they are releasing emissions that could further worsen global heating by as much as 30%, a new study has found.&lt;/p&gt;&lt;p&gt;As the world heats up, permafrost in the high latitudes is thawing, fiercer wildfires are burning",
-          "published": "2026-09-10T08:00:19.000Z",
-          "score": 7
+          "description": "&lt;p&gt;Hot weather means sweeter grapes, but outlook gloomier for beermakers, as drought diminishes barley harvest&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;English sparkling winemakers expect their earliest grape harvest and a “vintage year” after a scorching summer quickly ripened grapes.&lt;/p&gt;&lt;p&gt;However, beer sellers have warned of a potential shortage after record-breaking temperatures and a drought hitting much of England has caused poor yields of barley.&lt;/p&gt; &lt;a href=\"https:",
+          "published": "2026-09-10T14:00:37.000Z",
+          "score": 4
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Bernie Sanders speaks to the BBC about proposal to ban AI superintelligence",
+          "link": "https://www.bbc.co.uk/news/videos/cgjq11576q2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The senator has also proposed a sort of sovereign wealth fund in which the US would take a 50% stake in AI companies.",
+          "published": "2026-09-10T22:48:37.000Z",
+          "score": 6
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "Serbia, the conflicted EU candidate",
-          "link": "https://www.dw.com/en/serbia-the-conflicted-eu-candidate/a-79203774?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "On paper, Belgrade has pursued EU membership for years. But accession has long been stalled. The hero&#039;s farewell given to war criminal Mladic exposed just how far Serbia has alienated itself from Europe.",
-          "published": "2026-09-10T05:53:00.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Europe needs to compete in spaceflight, says France&#039;s Macron",
-          "link": "https://www.dw.com/en/europe-needs-to-compete-in-spaceflight-says-france-s-macron/a-79212006?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Why are European banks moving their gold out of the US?",
+          "link": "https://www.dw.com/en/why-are-european-banks-moving-their-gold-out-of-the-us/a-79213013?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The French president called for setting goals like European cargo missions, lunar landings, and crewed spaceflight while urging the bloc to reduce its reliance on US and Russia.",
-          "published": "2026-09-10T11:00:00.000Z",
+          "description": "The Netherlands and France have moved their gold out of US vaults. Part of the reason is fear over US reliability, but equally important is the need to have their gold closer to home in the event of a crisis.",
+          "published": "2026-09-11T05:17:00.000Z",
           "score": 8
         },
         {
-          "title": "Dollar rises, euro slips after ECB rate increase - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYU50UmRVNmIyeFBOSmd6azlDeDMxNlh1S0cycHpnYjU4NERYWjhoN2diSmthTngzdWZScmFTdldrTGtUcTh3SDFKbVIySmU2TUx3cnMtOEdKMnFkV3J1d3pYRmdvZDVWb2VPSXNjcG52cEVPTGtLNF9UT1BFSnJ3WlUzOXNuU1FwZmNSdGVTdV9Na1h6M3dPVGVtU0ttYlBlRWc0S1Q0Rl9HSmVCNlZaZXhjMVc0OUduMk1mOGRqVkxjY0d2SGhRbWJsUQ?oc=5",
+          "title": "Volvo Cars to become Lynk &amp; Co's European distributor starting 2027 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSXVBb1RJVHlOMk9LN3gyWUotcDJLNU5nWW1vaV92Y1pyMEtJWmdxb0xuQTctNmowaGRmNm1jYnE5bzV5WUNWRURYR2pYcHlOQU9RTm1VRkFMZkUyMzhETXBFckdDenhBdlVuLWt6OE5JY0E0a2VOb3hIbmZxdVlvcHl1M21kZFBxZmtVVzdiNHEtbE5iVHZVZkExemNIY051ZHNERTMyOWNNTGxCTWc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxOYU50UmRVNmIyeFBOSmd6azlDeDMxNlh1S0cycHpnYjU4NERYWjhoN2diSmthTngzdWZScmFTdldrTGtUcTh3SDFKbVIySmU2TUx3cnMtOEdKMnFkV3J1d3pYRmdvZDVWb2VPSXNjcG52cEVPTGtLNF9UT1BFSnJ3WlUzOXNuU1FwZmNSdGVTdV9Na1h6M3dPVGVtU0ttYlBlRWc0S1Q0Rl9HSmVCNlZaZXhjMVc0OUduMk1mOGRqVkxjY0d2SGhRbWJsUQ?oc=5\" target=\"_blank\"&gt;Dollar rises, euro slips after ECB rate increase&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-10T02:07:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNSXVBb1RJVHlOMk9LN3gyWUotcDJLNU5nWW1vaV92Y1pyMEtJWmdxb0xuQTctNmowaGRmNm1jYnE5bzV5WUNWRURYR2pYcHlOQU9RTm1VRkFMZkUyMzhETXBFckdDenhBdlVuLWt6OE5JY0E0a2VOb3hIbmZxdVlvcHl1M21kZFBxZmtVVzdiNHEtbE5iVHZVZkExemNIY051ZHNERTMyOWNNTGxCTWc?oc=5\" target=\"_blank\"&gt;Volvo Cars to become Lynk &amp; Co's European distributor starting 2027&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-10T12:13:53.000Z",
           "score": 8
         },
         {
-          "title": "EXCLUSIVE: US grant for MAGA-aligned groups in Europe excludes French applicants over election fears - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOckxmYUk4UllYMlI0YWMtOEc5MkxMMW1QNjRLbDlMTUNPWkcyb0hCYmxyUEt4RXhQSEZGejF4TkRERGNXRjU3YmRNdUctX0M4YjJVUTFibTl3bWI3cGFKR29oNnNuNGRXZWR5UmNwOVZ4X2ZvUlc4UFVXM01qS2szNTJISWMyV09LNkVlZmFMcE5ZeDlKd2FNWXp3M3VybVViUHFJWEJZZGhjaFdoUTRDRHpFalFVQmI3T1FPRHdLQWt1dDg?oc=5",
+          "title": "Taiwan's vice president on rare Europe visit which China calls 'despicable' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSmpwWU50ZjFvWTFHRl9QSzFBTnlwMmQtZ3JQVlgxbkxRVl9vd1pqb0pjZzBqSE5ZTDg3T1hiaE9QY2Q4cVhZczVEZ3RfXzdiUC1BOGVNZHNrNE9sNW5GdXM1Z1NFcW9FZG5objdqUlhRN043QVJBMWN2THU3U21aR3FSblcyaGhSUHlScUgtLXVSZlc2eWNiSm1vVm9DS1BqeTJvS3lkLVRSRDFOVzFoLU9ETWlwX2M5ZVVVcEF0cUVBZHdCLXlwdURn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOckxmYUk4UllYMlI0YWMtOEc5MkxMMW1QNjRLbDlMTUNPWkcyb0hCYmxyUEt4RXhQSEZGejF4TkRERGNXRjU3YmRNdUctX0M4YjJVUTFibTl3bWI3cGFKR29oNnNuNGRXZWR5UmNwOVZ4X2ZvUlc4UFVXM01qS2szNTJISWMyV09LNkVlZmFMcE5ZeDlKd2FNWXp3M3VybVViUHFJWEJZZGhjaFdoUTRDRHpFalFVQmI3T1FPRHdLQWt1dDg?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: US grant for MAGA-aligned groups in Europe excludes French applicants over election fears&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;",
-          "published": "2026-09-10T05:04:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPSmpwWU50ZjFvWTFHRl9QSzFBTnlwMmQtZ3JQVlgxbkxRVl9vd1pqb0pjZzBqSE5ZTDg3T1hiaE9QY2Q4cVhZczVEZ3RfXzdiUC1BOGVNZHNrNE9sNW5GdXM1Z1NFcW9FZG5objdqUlhRN043QVJBMWN2THU3U21aR3FSblcyaGhSUHlScUgtLXVSZlc2eWNiSm1vVm9DS1BqeTJvS3lkLVRSRDFOVzFoLU9ETWlwX2M5ZVVVcEF0cUVBZHdCLXlwdURn?oc=5\" target=\"_blank\"&gt;Taiwan's vice president on rare Europe visit which China calls 'despicable'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
+          "published": "2026-09-11T01:27:00.000Z",
           "score": 8
         },
         {
@@ -186,20 +192,20 @@
           "score": 8
         },
         {
-          "title": "Volvo Cars to become Lynk &amp; Co's European distributor starting 2027 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSXVBb1RJVHlOMk9LN3gyWUotcDJLNU5nWW1vaV92Y1pyMEtJWmdxb0xuQTctNmowaGRmNm1jYnE5bzV5WUNWRURYR2pYcHlOQU9RTm1VRkFMZkUyMzhETXBFckdDenhBdlVuLWt6OE5JY0E0a2VOb3hIbmZxdVlvcHl1M21kZFBxZmtVVzdiNHEtbE5iVHZVZkExemNIY051ZHNERTMyOWNNTGxCTWc?oc=5",
+          "title": "Major central banks strike a more hawkish tone as energy costs jump - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPNk1nNlUtaThXZUlNUFQ2R19vM20wZFhrT0pZYXM2b3lrU19sSGZzLUZOd2VWdkp3MW1ZajAxSExEUUd4UGhkY2Z5RDcxZkxCVHlDWEI5UlNDb2NYX0ZfS2dVR05mYmE0bWE1V2tfSzU2VHl1RmV2STBVWFZhVnBBSGo3Q01GUUYtZ3g3cklPSFNLQmk3Tmc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNSXVBb1RJVHlOMk9LN3gyWUotcDJLNU5nWW1vaV92Y1pyMEtJWmdxb0xuQTctNmowaGRmNm1jYnE5bzV5WUNWRURYR2pYcHlOQU9RTm1VRkFMZkUyMzhETXBFckdDenhBdlVuLWt6OE5JY0E0a2VOb3hIbmZxdVlvcHl1M21kZFBxZmtVVzdiNHEtbE5iVHZVZkExemNIY051ZHNERTMyOWNNTGxCTWc?oc=5\" target=\"_blank\"&gt;Volvo Cars to become Lynk &amp; Co's European distributor starting 2027&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-10T12:13:53.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxPNk1nNlUtaThXZUlNUFQ2R19vM20wZFhrT0pZYXM2b3lrU19sSGZzLUZOd2VWdkp3MW1ZajAxSExEUUd4UGhkY2Z5RDcxZkxCVHlDWEI5UlNDb2NYX0ZfS2dVR05mYmE0bWE1V2tfSzU2VHl1RmV2STBVWFZhVnBBSGo3Q01GUUYtZ3g3cklPSFNLQmk3Tmc?oc=5\" target=\"_blank\"&gt;Major central banks strike a more hawkish tone as energy costs jump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-10T14:20:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 399,
-    "articlesLast24h": 156,
-    "afterDedup": 150,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 162,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
