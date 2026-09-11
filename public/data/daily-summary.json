@@ -1,6 +1,6 @@
 {
   "date": "2026-09-11",
-  "generatedAt": "2026-09-11T09:27:11.052Z",
+  "generatedAt": "2026-09-11T14:55:32.693Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 11 September 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Yemen's Houthis seize strategic Red Sea port of Mokha",
-      "summary": "Mokha's capture brings the Iran-backed group closer to controlling a key international shipping route.",
+      "headline": "Made in Nigeria: The race to build an African solar industry from scratch",
+      "summary": "A solar power revolution is gathering pace in Africa and Nigeria wants a slice of the fast-growing industry, but competing with Chinese imports won’t be easy The post Made in Nigeria: The race to build an African solar industry from scratch appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Revealed: More than 1,000 NHS operations cancelled due to record UK heatwaves",
-      "summary": "More than 1,000 operations at NHS hospitals were cancelled due to heat during the UK’s record May and June heatwaves,&#8230; The post Revealed: More than 1,000 NHS operations cancelled due to record UK heatwaves appeared first on Carbon Brief.",
+      "headline": "Factcheck: Reform UK’s 45 false or misleading claims about climate and energy",
+      "summary": "Reform UK, led by Nigel Farage, has emerged as a major force in UK politics in recent years – pushing&#8230; The post Factcheck: Reform UK’s 45 false or misleading claims about climate and energy appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -49,19 +49,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Yemen's Houthis seize strategic Red Sea port of Mokha",
-          "link": "https://www.bbc.co.uk/news/articles/c4g7vr0lngwo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Mokha's capture brings the Iran-backed group closer to controlling a key international shipping route.",
-          "published": "2026-09-11T09:20:45.000Z",
-          "score": 7
+          "title": "Made in Nigeria: The race to build an African solar industry from scratch",
+          "link": "https://www.climatechangenews.com/2026/09/11/made-in-nigeria-the-race-to-build-an-african-solar-industry-from-scratch/",
+          "source": "Climate Home News",
+          "description": "A solar power revolution is gathering pace in Africa and Nigeria wants a slice of the fast-growing industry, but competing with Chinese imports won’t be easy The post Made in Nigeria: The race to build an African solar industry from scratch appeared first on Climate Home News.",
+          "published": "2026-09-11T13:00:00.000Z",
+          "score": 13
         },
         {
-          "title": "Yemen: Houthis take control of strategic Red Sea port city",
-          "link": "https://www.dw.com/en/yemen-houthis-take-control-of-strategic-red-sea-port-city/a-79220628?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Yemen: Houthis tighten control of strategic Red Sea towns",
+          "link": "https://www.dw.com/en/yemen-houthis-tighten-control-of-strategic-red-sea-towns/a-79220628?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The Houthi takeover of Mokha comes amid intensified fighting that has sparked fears of a return to civil war. The Red Sea has served as a key alternative to the Strait of Hormuz amid the US war with Iran.",
-          "published": "2026-09-10T17:01:00.000Z",
+          "description": "Reports indicate Houthi militants have taken over the port city of Mokha along with Perim Island, which occupies a strategic position on a vital transport waterway in the Red Sea.",
+          "published": "2026-09-11T10:10:00.000Z",
           "score": 7
         },
         {
@@ -73,12 +73,12 @@
           "score": 7
         },
         {
-          "title": "Are electric vehicles really bad for the environment?",
-          "link": "https://www.dw.com/en/are-electric-vehicles-really-bad-for-the-environment/a-79213336?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Some German politicians are calling for a delay to the EU plan to phase out gas-powered vehicles, saying cars must be judged on the entire carbon footprint. But the full picture still says EVs are more climate friendly.",
-          "published": "2026-09-10T13:18:00.000Z",
-          "score": 6
+          "title": "Kremlin warns Lithuania against hosting Western nuclear weapons - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcVRFUkZiQ2pweEllOGR1M0h1WFE2Rk5lckZNUmhmYlJGUkRaZVMzTUN2MnlrQmVYQ3J0SURLbFp6dnBPalQ1dFZIRXBqb0hHQ3hhX28wSUtfaUtDWXJLMzRSV1EtR24yM1pYUWNWVE5zRHBVTHhnTUwxazFSOUNyUHBzWHdvTDVreHI5MVdUeHUxTGNPRDlLdVd0cGhsQUpQSWdPQWpGVzM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcVRFUkZiQ2pweEllOGR1M0h1WFE2Rk5lckZNUmhmYlJGUkRaZVMzTUN2MnlrQmVYQ3J0SURLbFp6dnBPalQ1dFZIRXBqb0hHQ3hhX28wSUtfaUtDWXJLMzRSV1EtR24yM1pYUWNWVE5zRHBVTHhnTUwxazFSOUNyUHBzWHdvTDVreHI5MVdUeHUxTGNPRDlLdVd0cGhsQUpQSWdPQWpGVzM?oc=5\" target=\"_blank\"&gt;Kremlin warns Lithuania against hosting Western nuclear weapons&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-11T09:25:10.000Z",
+          "score": 7
         },
         {
           "title": "Speed up electricity grid upgrade or else face higher bills, warns UK watchdog",
@@ -95,6 +95,30 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Factcheck: Reform UK’s 45 false or misleading claims about climate and energy",
+          "link": "https://www.carbonbrief.org/factcheck-reform-uks-45-false-or-misleading-claims-about-climate-and-energy",
+          "source": "Carbon Brief",
+          "description": "Reform UK, led by Nigel Farage, has emerged as a major force in UK politics in recent years – pushing&#8230; The post Factcheck: Reform UK’s 45 false or misleading claims about climate and energy appeared first on Carbon Brief.",
+          "published": "2026-09-11T10:12:49.000Z",
+          "score": 13
+        },
+        {
+          "title": "With multilateralism in crisis, what&#8217;s next for climate philanthropy?",
+          "link": "https://www.climatechangenews.com/2026/09/11/with-multilateralism-in-crisis-whats-next-for-climate-philanthropy/",
+          "source": "Climate Home News",
+          "description": "Climate philanthropy must do more than fill the gaps left by retreating governments and find new ways to support climate action in a fragmented global landscape The post With multilateralism in crisis, what&#8217;s next for climate philanthropy? appeared first on Climate Home News.",
+          "published": "2026-09-11T11:46:17.000Z",
+          "score": 13
+        },
+        {
+          "title": "El Niño: Indonesia fire emissions in 2026 ‘on track’ to match record for this century",
+          "link": "https://www.carbonbrief.org/el-nino-indonesia-fire-emissions-in-2026-on-track-to-match-record-for-this-century",
+          "source": "Carbon Brief",
+          "description": "Wildfires currently burning large swathes of land in Indonesia are on track to produce emissions on a par with the&#8230; The post El Niño: Indonesia fire emissions in 2026 ‘on track’ to match record for this century appeared first on Carbon Brief.",
+          "published": "2026-09-11T14:06:49.000Z",
+          "score": 10
+        },
+        {
           "title": "Revealed: More than 1,000 NHS operations cancelled due to record UK heatwaves",
           "link": "https://www.carbonbrief.org/revealed-more-than-1000-nhs-operations-cancelled-due-to-record-uk-heatwaves",
           "source": "Carbon Brief",
@@ -103,36 +127,12 @@
           "score": 10
         },
         {
-          "title": "Guest post: How extreme heat is ‘creeping’ from summer into autumn and spring",
-          "link": "https://www.carbonbrief.org/guest-post-how-extreme-heat-is-creeping-from-summer-into-autumn-and-spring",
-          "source": "Carbon Brief",
-          "description": "Extreme heat is one of the deadliest climate hazards, but no two heatwaves are the same. Heat extremes that happen&#8230; The post Guest post: How extreme heat is ‘creeping’ from summer into autumn and spring appeared first on Carbon Brief.",
-          "published": "2026-09-10T13:00:00.000Z",
+          "title": "Türkiye says it has &#8220;final decision&#8221; at COP31 despite Australia running negotiations",
+          "link": "https://www.climatechangenews.com/2026/09/11/turkiye-says-it-has-final-decision-at-cop31-despite-australia-running-negotiations/",
+          "source": "Climate Home News",
+          "description": "COP31 President-Designate Murat Kurum told journalists that, while the two countries have been working well together, Türkiye has the final say over the Antalya summit The post Türkiye says it has &#8220;final decision&#8221; at COP31 despite Australia running negotiations appeared first on Climate Home News.",
+          "published": "2026-09-11T10:52:01.000Z",
           "score": 10
-        },
-        {
-          "title": "UK aviation emissions to be 50% higher than thought by 2050, government admits",
-          "link": "https://www.carbonbrief.org/uk-aviation-emissions-to-be-50-higher-than-thought-by-2050-government-admits",
-          "source": "Carbon Brief",
-          "description": "The UK government has slashed its hopes for electric planes and “sustainable aviation fuels” (SAFs), ahead of giving the green&#8230; The post UK aviation emissions to be 50% higher than thought by 2050, government admits appeared first on Carbon Brief.",
-          "published": "2026-09-10T10:42:50.000Z",
-          "score": 10
-        },
-        {
-          "title": "World must reject climate culture wars or face economic ruin, says UN’s Stiell",
-          "link": "https://www.theguardian.com/environment/2026/sep/10/august-joint-hottest-month-recorded-globally",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Warning by United Nations climate chief comes as EU data shows August 2026 was joint hottest month ever&lt;/p&gt;&lt;p&gt;Attempts to stoke a climate crisis culture war must be rejected or the world will face economic disaster, the UN’s climate chief has warned.&lt;/p&gt;&lt;p&gt;Simon Stiell, the executive secretary of the UN Framework Convention on Climate Change, warned that this year’s “hot as hell” summer had killed tens of thousands of people in Europe alone and “hammered” infrast",
-          "published": "2026-09-10T10:42:43.000Z",
-          "score": 9
-        },
-        {
-          "title": "English winemakers expect ‘vintage year’ after record-breaking summer heat",
-          "link": "https://www.theguardian.com/uk-news/2026/sep/10/english-winemakers-vintage-grapes-harvest-heatwave",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Hot weather means sweeter grapes, but outlook gloomier for beermakers, as drought diminishes barley harvest&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;English sparkling winemakers expect their earliest grape harvest and a “vintage year” after a scorching summer quickly ripened grapes.&lt;/p&gt;&lt;p&gt;However, beer sellers have warned of a potential shortage after record-breaking temperatures and a drought hitting much of England has caused poor yields of barley.&lt;/p&gt; &lt;a href=\"https:",
-          "published": "2026-09-10T14:00:37.000Z",
-          "score": 4
         }
       ]
     },
@@ -160,19 +160,35 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Why are European banks moving their gold out of the US?",
-          "link": "https://www.dw.com/en/why-are-european-banks-moving-their-gold-out-of-the-us/a-79213013?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Europe drives global EV sales growth in August, offsetting China, North America weakness - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOMEFud0V2S3VZYk1Xc2F1ZTlFMmgzcFdKNXk2ZHU0RGo3ZnB1a1l4Z21ZeWx3UDAtOGFBNkJaemNkY21rejJUdi0zRFRqcXU3RmRUMnFFc2ItRWNYMjM2N0FMS3c1SC00OElKSFBtaHdKRnRsQXB1YlRGb0xfTklHQWRDeV9YTjk1Z3hwQnpkUE5kVjZtaWlaRVN2REcxak5oMlRqaVVYcXZpaGNVVXFSOTZUc182QmdSYkFoRVRlYzFmdmNKbmpMa3RzLVhKMWVJMWJ4VjA5cw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxOMEFud0V2S3VZYk1Xc2F1ZTlFMmgzcFdKNXk2ZHU0RGo3ZnB1a1l4Z21ZeWx3UDAtOGFBNkJaemNkY21rejJUdi0zRFRqcXU3RmRUMnFFc2ItRWNYMjM2N0FMS3c1SC00OElKSFBtaHdKRnRsQXB1YlRGb0xfTklHQWRDeV9YTjk1Z3hwQnpkUE5kVjZtaWlaRVN2REcxak5oMlRqaVVYcXZpaGNVVXFSOTZUc182QmdSYkFoRVRlYzFmdmNKbmpMa3RzLVhKMWVJMWJ4VjA5cw?oc=5\" target=\"_blank\"&gt;Europe drives global EV sales growth in August, offsetting China, North America weakness&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font colo",
+          "published": "2026-09-10T23:44:41.000Z",
+          "score": 13
+        },
+        {
+          "title": "China angered by Taiwan VP&#039;s visit to EU democracy forum",
+          "link": "https://www.dw.com/en/china-angered-by-taiwan-vp-s-visit-to-eu-democracy-forum/a-79226311?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The Netherlands and France have moved their gold out of US vaults. Part of the reason is fear over US reliability, but equally important is the need to have their gold closer to home in the event of a crisis.",
+          "description": "Beijing has lodged a complaint with Italy and the EU over top Taiwanese officials visiting a democracy conference. The EU is navigating contentious issues with China and high-ranking Taiwanese visits are rare.",
+          "published": "2026-09-11T10:02:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Why are European banks moving gold out of United States?",
+          "link": "https://www.dw.com/en/why-are-european-banks-moving-gold-out-of-united-states/a-79213013?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Netherlands and France have moved their gold out of US vaults. Part of the reason is fears about the reliability of the US, but equally important is the need to keep gold closer to home in the event of a crisis.",
           "published": "2026-09-11T05:17:00.000Z",
           "score": 8
         },
         {
-          "title": "Volvo Cars to become Lynk &amp; Co's European distributor starting 2027 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSXVBb1RJVHlOMk9LN3gyWUotcDJLNU5nWW1vaV92Y1pyMEtJWmdxb0xuQTctNmowaGRmNm1jYnE5bzV5WUNWRURYR2pYcHlOQU9RTm1VRkFMZkUyMzhETXBFckdDenhBdlVuLWt6OE5JY0E0a2VOb3hIbmZxdVlvcHl1M21kZFBxZmtVVzdiNHEtbE5iVHZVZkExemNIY051ZHNERTMyOWNNTGxCTWc?oc=5",
+          "title": "Dollar edges higher against euro after U.S. inflation data - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTUI0bHIwbWRHUzNiQmxNam13azJMSHZvUzhkMThQSDJpOGZqOUpfYVMtMG5taXlrRGVBcGViVWpPT20xTm12RnJLT1BIR2luVmZWOEl0TFVyTC1UX25qZU00cTY5UEMyTWpXd3ctZnVCSXVQMEswa21hTl85ZExMMm9xNkNHRDlHQnVTSlZNMFV5U1l3am1BQVprSUJqQ1VONTBOb3dBSnQxTm9YXzU0aldn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNSXVBb1RJVHlOMk9LN3gyWUotcDJLNU5nWW1vaV92Y1pyMEtJWmdxb0xuQTctNmowaGRmNm1jYnE5bzV5WUNWRURYR2pYcHlOQU9RTm1VRkFMZkUyMzhETXBFckdDenhBdlVuLWt6OE5JY0E0a2VOb3hIbmZxdVlvcHl1M21kZFBxZmtVVzdiNHEtbE5iVHZVZkExemNIY051ZHNERTMyOWNNTGxCTWc?oc=5\" target=\"_blank\"&gt;Volvo Cars to become Lynk &amp; Co's European distributor starting 2027&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-10T12:13:53.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPTUI0bHIwbWRHUzNiQmxNam13azJMSHZvUzhkMThQSDJpOGZqOUpfYVMtMG5taXlrRGVBcGViVWpPT20xTm12RnJLT1BIR2luVmZWOEl0TFVyTC1UX25qZU00cTY5UEMyTWpXd3ctZnVCSXVQMEswa21hTl85ZExMMm9xNkNHRDlHQnVTSlZNMFV5U1l3am1BQVprSUJqQ1VONTBOb3dBSnQxTm9YXzU0aldn?oc=5\" target=\"_blank\"&gt;Dollar edges higher against euro after U.S. inflation data&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-11T01:08:00.000Z",
           "score": 8
         },
         {
@@ -182,30 +198,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPSmpwWU50ZjFvWTFHRl9QSzFBTnlwMmQtZ3JQVlgxbkxRVl9vd1pqb0pjZzBqSE5ZTDg3T1hiaE9QY2Q4cVhZczVEZ3RfXzdiUC1BOGVNZHNrNE9sNW5GdXM1Z1NFcW9FZG5objdqUlhRN043QVJBMWN2THU3U21aR3FSblcyaGhSUHlScUgtLXVSZlc2eWNiSm1vVm9DS1BqeTJvS3lkLVRSRDFOVzFoLU9ETWlwX2M5ZVVVcEF0cUVBZHdCLXlwdURn?oc=5\" target=\"_blank\"&gt;Taiwan's vice president on rare Europe visit which China calls 'despicable'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
           "published": "2026-09-11T01:27:00.000Z",
           "score": 8
-        },
-        {
-          "title": "EXCLUSIVE: EU countries to seek import curbs on chemicals, plastics, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQX2RENzlWLV9HRWM5eHpVY2l4YjZEal9MMWdvS2o0ajVhdUJKTThlc2NQb2RYS1E2UnBtS0dLVS1USlFTaEZ4NHltNjBzNUxDLWplV1FET1FCN1UyZi1KZHNEbXJ2TGx5NjZLQ2x3NFFZeEhWYThNZFRndFNlSTRwcks1aUpqUEhsTEJpQXI3TFJwekdrMDdCTkJ3aW1WcWpiRV9SYkNreVdZQm5ySnc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQX2RENzlWLV9HRWM5eHpVY2l4YjZEal9MMWdvS2o0ajVhdUJKTThlc2NQb2RYS1E2UnBtS0dLVS1USlFTaEZ4NHltNjBzNUxDLWplV1FET1FCN1UyZi1KZHNEbXJ2TGx5NjZLQ2x3NFFZeEhWYThNZFRndFNlSTRwcks1aUpqUEhsTEJpQXI3TFJwekdrMDdCTkJ3aW1WcWpiRV9SYkNreVdZQm5ySnc?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: EU countries to seek import curbs on chemicals, plastics, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-10T11:56:50.000Z",
-          "score": 8
-        },
-        {
-          "title": "Major central banks strike a more hawkish tone as energy costs jump - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPNk1nNlUtaThXZUlNUFQ2R19vM20wZFhrT0pZYXM2b3lrU19sSGZzLUZOd2VWdkp3MW1ZajAxSExEUUd4UGhkY2Z5RDcxZkxCVHlDWEI5UlNDb2NYX0ZfS2dVR05mYmE0bWE1V2tfSzU2VHl1RmV2STBVWFZhVnBBSGo3Q01GUUYtZ3g3cklPSFNLQmk3Tmc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxPNk1nNlUtaThXZUlNUFQ2R19vM20wZFhrT0pZYXM2b3lrU19sSGZzLUZOd2VWdkp3MW1ZajAxSExEUUd4UGhkY2Z5RDcxZkxCVHlDWEI5UlNDb2NYX0ZfS2dVR05mYmE0bWE1V2tfSzU2VHl1RmV2STBVWFZhVnBBSGo3Q01GUUYtZ3g3cklPSFNLQmk3Tmc?oc=5\" target=\"_blank\"&gt;Major central banks strike a more hawkish tone as energy costs jump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-10T14:20:00.000Z",
-          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 403,
-    "articlesLast24h": 162,
-    "afterDedup": 157,
+    "totalArticlesScanned": 400,
+    "articlesLast24h": 161,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
