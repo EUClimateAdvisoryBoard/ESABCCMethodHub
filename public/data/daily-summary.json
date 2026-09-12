@@ -1,18 +1,18 @@
 {
   "date": "2026-09-12",
-  "generatedAt": "2026-09-12T09:03:42.124Z",
+  "generatedAt": "2026-09-12T13:55:40.441Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 12 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Made in Nigeria: The race to build an African solar industry from scratch",
-      "summary": "A solar power revolution is gathering pace in Africa and Nigeria wants a slice of the fast-growing industry, but competing with Chinese imports won’t be easy The post Made in Nigeria: The race to build an African solar industry from scratch appeared first on Climate Home News.",
+      "headline": "Australia and Canada can learn from each other on climate if we separate action from declaration | Rosa Galvez",
+      "summary": "&lt;p&gt;Climate integrity means being honest about the gap between emissions reduced on paper and emissions reduced in the atmosphere&lt;/p&gt;&lt;p&gt;Canada and Australia are both democracies built on abundant resources, extraordinary biodiversity and world-class science, with prosperity built substantially on mining, &lt;a href=\"https://www.theguardian.com/environment/2026/sep/08/global-move-away-from-oil-could-lead-to-conflict-and-migration-experts-say\"&gt;oil and gas&lt;/a&gt;. We are majo",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Factcheck: Reform UK’s 45 false or misleading claims about climate and energy",
-      "summary": "Reform UK, led by Nigel Farage, has emerged as a major force in UK politics in recent years – pushing&#8230; The post Factcheck: Reform UK’s 45 false or misleading claims about climate and energy appeared first on Carbon Brief.",
+      "headline": "Graphic Designer in the IPCC Working Group I Technical Support Unit",
+      "summary": "Working Group I of the Intergovernmental Panel on Climate Change is filling the position of Graphic Designer in the Technical Support Unit This entry-level design position is located in the Paris area, at Gif-sur-Yvette (France). The Intergovernmental Panel on Climate Change (IPCC) The IPCC was established by the United Nations Environment Programme (UN Environment) and [&#8230;]",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -27,14 +27,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Made in Nigeria: The race to build an African solar industry from scratch",
-          "link": "https://www.climatechangenews.com/2026/09/11/made-in-nigeria-the-race-to-build-an-african-solar-industry-from-scratch/",
-          "source": "Climate Home News",
-          "description": "A solar power revolution is gathering pace in Africa and Nigeria wants a slice of the fast-growing industry, but competing with Chinese imports won’t be easy The post Made in Nigeria: The race to build an African solar industry from scratch appeared first on Climate Home News.",
-          "published": "2026-09-11T13:00:00.000Z",
-          "score": 13
-        },
         {
           "title": "Australia and Canada can learn from each other on climate if we separate action from declaration | Rosa Galvez",
           "link": "https://www.theguardian.com/commentisfree/2026/sep/12/australia-canada-climate-integrity-summit-rosa-galvez",
@@ -52,19 +44,27 @@
           "score": 7
         },
         {
-          "title": "Yemen: Houthis tighten control of strategic Red Sea towns",
-          "link": "https://www.dw.com/en/yemen-houthis-tighten-control-of-strategic-red-sea-towns/a-79220628?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Reports indicate Houthi militants have taken over the port city of Mokha along with Perim Island, which occupies a strategic position on a vital transport waterway in the Red Sea.",
-          "published": "2026-09-11T10:10:00.000Z",
+          "title": "Saudis shut down oil pipeline as Houthis tighten grip on Red Sea shipping - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQczRVMDVmcFFkMWs3TDRSemk1SnA1SW1NSTRmaGU3VXRmbDlvUnlGTll6VHRRYWxjOTl1N3QzcFhIYWs5RjJaRGRmclRQYmpLdW8tNHNXWExZTnpmSklXaFU4YWJvOC1EcEpvcDdQVnpfWnBYT3l6X1pCRW9Bc19YQzNmYnFrbHBNQXd4aE1nVkpKWktoTjFoM2dSa1BGMnlSb3dVMnJhOFVTRHRrXzlHSFVXTDFvZVNzQ19r?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQczRVMDVmcFFkMWs3TDRSemk1SnA1SW1NSTRmaGU3VXRmbDlvUnlGTll6VHRRYWxjOTl1N3QzcFhIYWs5RjJaRGRmclRQYmpLdW8tNHNXWExZTnpmSklXaFU4YWJvOC1EcEpvcDdQVnpfWnBYT3l6X1pCRW9Bc19YQzNmYnFrbHBNQXd4aE1nVkpKWktoTjFoM2dSa1BGMnlSb3dVMnJhOFVTRHRrXzlHSFVXTDFvZVNzQ19r?oc=5\" target=\"_blank\"&gt;Saudis shut down oil pipeline as Houthis tighten grip on Red Sea shipping&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-12T00:55:00.000Z",
           "score": 7
         },
         {
-          "title": "Red carpets, reels and racing: athletics leans into the creator era - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQZDc0YVJqYS1ETDViOWcyUWlyanVTV213ODdsRWdkMXJlZmxpWEdrR04tMmstQThMak9TdDVDTUZsNS1NZW9lZ2RjM2k3Z1JIMkdkaWNLMGZyV0NmY0lYRDZoR0FycEJOc2tPSjN5dnZ1MGZNQ3JFYU5FTHdVSGJPRjVIZkhsYlRPQlNveThzOWhWRnRZWEY4T2pGSlNFM3RJQ3c?oc=5",
+          "title": "QatarEnergy seeks US LNG deals through to 2031, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOamNKczJ6ZUdjUjBKNHBRbDRfNHo2cnFFR2NvU0tVU3B4VTh5X2tCQW9DRG1EdVFKeXJXeEM4ZTF4SmkzdU10Qm15dVFXYmFKSEFGSFhEemd2RWZsOHhZSlpzLWdKUDl3eU1fSFEwT2FIcmZVczR3c19sRjhSRFhjS0xJcmxacTdqWVlaS0dtSEJuaU8yRkx2U1BYTE8tZlZ6bUppZFRzZmxJd0k?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxQZDc0YVJqYS1ETDViOWcyUWlyanVTV213ODdsRWdkMXJlZmxpWEdrR04tMmstQThMak9TdDVDTUZsNS1NZW9lZ2RjM2k3Z1JIMkdkaWNLMGZyV0NmY0lYRDZoR0FycEJOc2tPSjN5dnZ1MGZNQ3JFYU5FTHdVSGJPRjVIZkhsYlRPQlNveThzOWhWRnRZWEY4T2pGSlNFM3RJQ3c?oc=5\" target=\"_blank\"&gt;Red carpets, reels and racing: athletics leans into the creator era&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-11T11:52:33.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOamNKczJ6ZUdjUjBKNHBRbDRfNHo2cnFFR2NvU0tVU3B4VTh5X2tCQW9DRG1EdVFKeXJXeEM4ZTF4SmkzdU10Qm15dVFXYmFKSEFGSFhEemd2RWZsOHhZSlpzLWdKUDl3eU1fSFEwT2FIcmZVczR3c19sRjhSRFhjS0xJcmxacTdqWVlaS0dtSEJuaU8yRkx2U1BYTE8tZlZ6bUppZFRzZmxJd0k?oc=5\" target=\"_blank\"&gt;QatarEnergy seeks US LNG deals through to 2031, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-11T15:58:44.000Z",
+          "score": 7
+        },
+        {
+          "title": "US Commerce Department finalizes steep duties on solar imports from India, Indonesia, Laos - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQNGxXeDZUYl9tZThrU2hrNmhkUjFmT25vTEhBVDBWZ2l4THVNVWl1akxnenBTNFViVV9IckIzYXdLSGhlTkN6ZWd2SHZFYmRsX1N6OU82aDZCVnlDb2dSUVdrUVY4WEZzUUVYeFRkaFpSUGl5MU5sbmdiRXdjYkRtTVM4d1FDWXlYQXY2VU15NGtEbFhFWWNIVncwVEhRXzg2LUxtUzNLajd0WE54OEM4RjV5WVdzSm52U2dsLUVJeldoTERTdzhyME9nR2U?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxQNGxXeDZUYl9tZThrU2hrNmhkUjFmT25vTEhBVDBWZ2l4THVNVWl1akxnenBTNFViVV9IckIzYXdLSGhlTkN6ZWd2SHZFYmRsX1N6OU82aDZCVnlDb2dSUVdrUVY4WEZzUUVYeFRkaFpSUGl5MU5sbmdiRXdjYkRtTVM4d1FDWXlYQXY2VU15NGtEbFhFWWNIVncwVEhRXzg2LUxtUzNLajd0WE54OEM4RjV5WVdzSm52U2dsLUVJeldoTERTdzhyME9nR2U?oc=5\" target=\"_blank\"&gt;US Commerce Department finalizes steep duties on solar imports from India, Indonesia, Laos&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&g",
+          "published": "2026-09-11T19:47:43.000Z",
           "score": 7
         }
       ]
@@ -73,22 +73,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Factcheck: Reform UK’s 45 false or misleading claims about climate and energy",
-          "link": "https://www.carbonbrief.org/factcheck-reform-uks-45-false-or-misleading-claims-about-climate-and-energy",
-          "source": "Carbon Brief",
-          "description": "Reform UK, led by Nigel Farage, has emerged as a major force in UK politics in recent years – pushing&#8230; The post Factcheck: Reform UK’s 45 false or misleading claims about climate and energy appeared first on Carbon Brief.",
-          "published": "2026-09-11T10:12:49.000Z",
-          "score": 13
-        },
-        {
-          "title": "With multilateralism in crisis, what&#8217;s next for climate philanthropy?",
-          "link": "https://www.climatechangenews.com/2026/09/11/with-multilateralism-in-crisis-whats-next-for-climate-philanthropy/",
-          "source": "Climate Home News",
-          "description": "Climate philanthropy must do more than fill the gaps left by retreating governments and find new ways to support climate action in a fragmented global landscape The post With multilateralism in crisis, what&#8217;s next for climate philanthropy? appeared first on Climate Home News.",
-          "published": "2026-09-11T11:46:17.000Z",
-          "score": 13
-        },
         {
           "title": "Graphic Designer in the IPCC Working Group I Technical Support Unit",
           "link": "https://www.ipcc.ch/2026/09/11/graphic-designer-ipcc-wg1-tsu/",
@@ -106,12 +90,28 @@
           "score": 10
         },
         {
-          "title": "Türkiye says it has &#8220;final decision&#8221; at COP31 despite Australia running negotiations",
-          "link": "https://www.climatechangenews.com/2026/09/11/turkiye-says-it-has-final-decision-at-cop31-despite-australia-running-negotiations/",
-          "source": "Climate Home News",
-          "description": "COP31 President-Designate Murat Kurum told journalists that, while the two countries have been working well together, Türkiye has the final say over the Antalya summit The post Türkiye says it has &#8220;final decision&#8221; at COP31 despite Australia running negotiations appeared first on Climate Home News.",
-          "published": "2026-09-11T10:52:01.000Z",
-          "score": 10
+          "title": "Corals as climate archive: Are El Ninos intensifying?",
+          "link": "https://www.dw.com/en/corals-as-climate-archive-are-el-ninos-intensifying/a-79243425?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Records from the past few decades show that, during this period, El Nino events have been frequent and often extreme. But is this normal, or is it the result of climate change? Corals can give us a clear indication.",
+          "published": "2026-09-12T08:53:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Heatwaves hit the Sunday roast: why the RHS says cauliflower is off the menu",
+          "link": "https://www.theguardian.com/environment/2026/sep/12/heatwaves-hit-sunday-roast-rhs-cauliflower-off-menu",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Charity urges gardeners in England to swap thirsty brassicas for drought-tolerant crops&lt;/p&gt;&lt;p&gt;They are an integral part of the British Sunday roast – but cauliflowers are now going to be off the menu, according to the Royal Horticultural Society.&lt;/p&gt;&lt;p&gt;England’s climate has changed so much that the RHS is now recommending that gardeners exclude the brassicas from their vegetable patches.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/environment/2026/sep/12/he",
+          "published": "2026-09-12T11:00:32.000Z",
+          "score": 4
+        },
+        {
+          "title": "North Sea gasfield decision likely delayed until after Holborn and St Pancras byelection",
+          "link": "https://www.theguardian.com/environment/2026/sep/11/nnorth-sea-gasfield-decision-likely-delayed-holborn-byelection-labour-greens",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Greens accuse Labour of hiding position to avoid criticism before contest, in which Zack Polanski is standing&lt;/p&gt;&lt;p&gt;A decision on approving the controversial Jackdaw gasfield in the North Sea is to be delayed until later this autumn, with the Greens accusing Labour of hiding their position before the crucial Holborn and St Pancras byelection.&lt;/p&gt;&lt;p&gt;Miatta Fahnbulleh, the energy secretary, had been poised to give her recommendation to &lt;a href=\"https://www.thegu",
+          "published": "2026-09-11T15:50:25.000Z",
+          "score": 4
         }
       ]
     },
@@ -133,16 +133,8 @@
           "title": "Five minutes to steal a Renoir: Why museum thefts are becoming bolder across Europe",
           "link": "https://www.bbc.co.uk/news/articles/c804dvky833o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Art detectives and security experts say the number of museum thefts across Europe is increasing.",
+          "description": "Art crime investigators and security experts say burglaries from galleries across Europe are becoming more brazen.",
           "published": "2026-09-12T00:24:08.000Z",
-          "score": 8
-        },
-        {
-          "title": "China angered by Taiwan VP&#039;s visit to EU democracy forum",
-          "link": "https://www.dw.com/en/china-angered-by-taiwan-vp-s-visit-to-eu-democracy-forum/a-79226311?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Beijing has lodged a complaint with Italy and the EU over top Taiwanese officials visiting a democracy conference. The EU is navigating contentious issues with China and high-ranking Taiwanese visits are rare.",
-          "published": "2026-09-11T10:02:00.000Z",
           "score": 8
         },
         {
@@ -154,11 +146,11 @@
           "score": 8
         },
         {
-          "title": "UK Green leader confirmed as candidate for parliament seat vacated by Starmer - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPcmdTbnRlSUo3UWpKWkMtY1p6RXlMTGFwSVpyQXpUdXFaclQ1T2tselFzQjF0S3ZoaFJqeDlBNUFPZ0k0WEhIN3N0ZEFLcDdybXlqWk1ZSTNORmhPaWs5OXNuVkhzMGU4aU4xNklVSkFKWFhKSkE2VFg1NnI0UERsVGlaT1I3cU5WSmg5RUdZMUQ0dTRENHhMVjhmSmQycmpUbFQyZFVnY2NJQU1lU0ZmZjNn?oc=5",
+          "title": "Dollar rises against euro and Swiss franc after US inflation data - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTUI0bHIwbWRHUzNiQmxNam13azJMSHZvUzhkMThQSDJpOGZqOUpfYVMtMG5taXlrRGVBcGViVWpPT20xTm12RnJLT1BIR2luVmZWOEl0TFVyTC1UX25qZU00cTY5UEMyTWpXd3ctZnVCSXVQMEswa21hTl85ZExMMm9xNkNHRDlHQnVTSlZNMFV5U1l3am1BQVprSUJqQ1VONTBOb3dBSnQxTm9YXzU0aldn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPcmdTbnRlSUo3UWpKWkMtY1p6RXlMTGFwSVpyQXpUdXFaclQ1T2tselFzQjF0S3ZoaFJqeDlBNUFPZ0k0WEhIN3N0ZEFLcDdybXlqWk1ZSTNORmhPaWs5OXNuVkhzMGU4aU4xNklVSkFKWFhKSkE2VFg1NnI0UERsVGlaT1I3cU5WSmg5RUdZMUQ0dTRENHhMVjhmSmQycmpUbFQyZFVnY2NJQU1lU0ZmZjNn?oc=5\" target=\"_blank\"&gt;UK Green leader confirmed as candidate for parliament seat vacated by Starmer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-11T10:13:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPTUI0bHIwbWRHUzNiQmxNam13azJMSHZvUzhkMThQSDJpOGZqOUpfYVMtMG5taXlrRGVBcGViVWpPT20xTm12RnJLT1BIR2luVmZWOEl0TFVyTC1UX25qZU00cTY5UEMyTWpXd3ctZnVCSXVQMEswa21hTl85ZExMMm9xNkNHRDlHQnVTSlZNMFV5U1l3am1BQVprSUJqQ1VONTBOb3dBSnQxTm9YXzU0aldn?oc=5\" target=\"_blank\"&gt;Dollar rises against euro and Swiss franc after US inflation data&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-11T20:30:54.000Z",
           "score": 8
         },
         {
@@ -168,14 +160,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQV1NQYW5PZjBhRlpIdDMwdFJWVTgtWWEzWXJzSjJZeDlBaG93LXRPMWZTWW9md0hTallxWDUxMGIzVlN3bVJLRTJINWNqTWFhWl9tWm5Wc3R3SHkxcFNOaDc4Y0x0RHZyekQ4OHE4OFhHMTc4UlJ1N3RrZmhZMFZtU3lJTGVrSndsMWtrT2d4eWdVY0R0S0czZGpmNFJnaXJGMUY4NHB1RzBkNUdL?oc=5\" target=\"_blank\"&gt;Putin says events in Europe, like AfD's win in Germany, caused by Western globalists&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-11T21:46:00.000Z",
           "score": 8
+        },
+        {
+          "title": "EU dropped aluminium scrap duty plan over India concerns, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNc1BMdElZOE1VUkUyaUh2dTU0VUlfNE1EZGFKQWxfWE14czJnVngzLXpIMnhYZ3FrNGdDVEp0cGtyZEhpZzhJTHhaNjVzWExuNDVBTjdaWHBfWmF3cV9VdnFGSkRvU1RndlBxOFpIRzB6Nk9LWDhPRVZaT3Y2b2tOR2R6NFU5a3hLQUhZanBEVEhjVVRRVVhmWkV2TGRNZklYa1c2bm9ia0NIYzRlc3ZOdmh0TVVZMUE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNc1BMdElZOE1VUkUyaUh2dTU0VUlfNE1EZGFKQWxfWE14czJnVngzLXpIMnhYZ3FrNGdDVEp0cGtyZEhpZzhJTHhaNjVzWExuNDVBTjdaWHBfWmF3cV9VdnFGSkRvU1RndlBxOFpIRzB6Nk9LWDhPRVZaT3Y2b2tOR2R6NFU5a3hLQUhZanBEVEhjVVRRVVhmWkV2TGRNZklYa1c2bm9ia0NIYzRlc3ZOdmh0TVVZMUE?oc=5\" target=\"_blank\"&gt;EU dropped aluminium scrap duty plan over India concerns, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-11T16:15:54.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 399,
-    "articlesLast24h": 155,
-    "afterDedup": 148,
+    "articlesLast24h": 146,
+    "afterDedup": 137,
     "feedsQueried": 19
   }
 }
