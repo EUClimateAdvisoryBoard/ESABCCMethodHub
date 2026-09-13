@@ -1,20 +1,26 @@
 {
   "date": "2026-09-13",
-  "generatedAt": "2026-09-13T00:40:00.363Z",
+  "generatedAt": "2026-09-13T10:05:29.723Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 13 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Saudis shut down oil pipeline as Houthis tighten grip on Red Sea shipping - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQczRVMDVmcFFkMWs3TDRSemk1SnA1SW1NSTRmaGU3VXRmbDlvUnlGTll6VHRRYWxjOTl1N3QzcFhIYWs5RjJaRGRmclRQYmpLdW8tNHNXWExZTnpmSklXaFU4YWJvOC1EcEpvcDdQVnpfWnBYT3l6X1pCRW9Bc19YQzNmYnFrbHBNQXd4aE1nVkpKWktoTjFoM2dSa1BGMnlSb3dVMnJhOFVTRHRrXzlHSFVXTDFvZVNzQ19r?oc=5\" target=\"_blank\"&gt;Saudis shut down oil pipeline as Houthis tighten grip on Red Sea shipping&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Mapped: the £150bn megaproject that aims to protect Britain from energy shocks",
+      "summary": "&lt;p&gt;Thousands of miles of new power lines are needed to deliver climate targets and energy security, but bills will rise in the short term and opponents are mobilising &lt;/p&gt;&lt;p&gt;Britain is embarking on one of the largest overhauls of its electricity grid in generations – a megaproject in which five times more infrastructure will be built by 2030 than was constructed during the previous three decades.&lt;/p&gt;&lt;p&gt;Tens of billions of pounds are being spent on new pylons, subsea",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Corals as climate archive: Are El Ninos intensifying?",
-      "summary": "Records from the past few decades show that, during this period, El Nino events have been frequent and often extreme. But is this normal, or is it the result of climate change? Corals can give us a clear indication.",
+      "headline": "Heatwaves hit the Sunday roast: why the RHS says cauliflower is off the menu",
+      "summary": "&lt;p&gt;Charity urges gardeners in England to swap thirsty brassicas for drought-tolerant crops&lt;/p&gt;&lt;p&gt;They are an integral part of the British Sunday roast – but cauliflowers are now going to be off the menu, according to the Royal Horticultural Society.&lt;/p&gt;&lt;p&gt;England’s climate has changed so much that the RHS is now recommending that gardeners exclude the brassicas from their vegetable patches.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/environment/2026/sep/12/he",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "German firms lift China investment as US outlays fall, IW study shows - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNMjh4NHdubTBlTmlHbkNLR1RKZ0R1OGV3ZEFMR3Zidmk2X2Z4Z1UzNXJPVUhvUHRwTFU2ZkNMaEJlSUJqMWt4Zjl2RVQ1S0c4UU1pXzg3WkpMOWM5dS1BMU9iTXNvU2xqWHcyTUx3djZSODVQbGdDTTR0ZFpBVzhVcUhyc2hnTmh0UHplS1JzU0Q4dFpYQ2ZnV01Od2dWSDNTbHByX00zaHZ3aTFXRklxbWE2dw?oc=5\" target=\"_blank\"&gt;German firms lift China investment as US outlays fall, IW study shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -28,11 +34,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Saudis shut down oil pipeline as Houthis tighten grip on Red Sea shipping - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQczRVMDVmcFFkMWs3TDRSemk1SnA1SW1NSTRmaGU3VXRmbDlvUnlGTll6VHRRYWxjOTl1N3QzcFhIYWs5RjJaRGRmclRQYmpLdW8tNHNXWExZTnpmSklXaFU4YWJvOC1EcEpvcDdQVnpfWnBYT3l6X1pCRW9Bc19YQzNmYnFrbHBNQXd4aE1nVkpKWktoTjFoM2dSa1BGMnlSb3dVMnJhOFVTRHRrXzlHSFVXTDFvZVNzQ19r?oc=5",
+          "title": "Mapped: the £150bn megaproject that aims to protect Britain from energy shocks",
+          "link": "https://www.theguardian.com/business/ng-interactive/2026/sep/13/mapped-150bn-megaproject-aims-to-protect-britain-from-energy-shocks",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Thousands of miles of new power lines are needed to deliver climate targets and energy security, but bills will rise in the short term and opponents are mobilising &lt;/p&gt;&lt;p&gt;Britain is embarking on one of the largest overhauls of its electricity grid in generations – a megaproject in which five times more infrastructure will be built by 2030 than was constructed during the previous three decades.&lt;/p&gt;&lt;p&gt;Tens of billions of pounds are being spent on new pylons, subsea",
+          "published": "2026-09-13T06:00:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Russian nuclear head says Ukraine attacked fuel trucks, endangered Zaporizhzhia plant - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSFYySWw1NWJ0UTM5Nk9pckRNeE5Ka3JIcHVuN0JFZEtmTUJKekZyT2NXSlBVdTJPeUZrc1Q5R0o3V0hPS3dlbkZHNUpxckFJZEQ3VWVQNFVnMVYwN0dXR0lBNXpkcEdJTlVoZG9yVi1aUmoyUDdrN3VDWmxkRnF6TDZNdm9TLUhha3d3R1cySFpWd0lBMmlPcTAxZktuZFVOc1cxZExwUFBLVHNRaG1YLWZkS0JWalU0V0JJWkE1T2xDOXR4Z3p4LTR3?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQczRVMDVmcFFkMWs3TDRSemk1SnA1SW1NSTRmaGU3VXRmbDlvUnlGTll6VHRRYWxjOTl1N3QzcFhIYWs5RjJaRGRmclRQYmpLdW8tNHNXWExZTnpmSklXaFU4YWJvOC1EcEpvcDdQVnpfWnBYT3l6X1pCRW9Bc19YQzNmYnFrbHBNQXd4aE1nVkpKWktoTjFoM2dSa1BGMnlSb3dVMnJhOFVTRHRrXzlHSFVXTDFvZVNzQ19r?oc=5\" target=\"_blank\"&gt;Saudis shut down oil pipeline as Houthis tighten grip on Red Sea shipping&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-12T00:55:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNSFYySWw1NWJ0UTM5Nk9pckRNeE5Ka3JIcHVuN0JFZEtmTUJKekZyT2NXSlBVdTJPeUZrc1Q5R0o3V0hPS3dlbkZHNUpxckFJZEQ3VWVQNFVnMVYwN0dXR0lBNXpkcEdJTlVoZG9yVi1aUmoyUDdrN3VDWmxkRnF6TDZNdm9TLUhha3d3R1cySFpWd0lBMmlPcTAxZktuZFVOc1cxZExwUFBLVHNRaG1YLWZkS0JWalU0V0JJWkE1T2xDOXR4Z3p4LTR3?oc=5\" target=\"_blank\"&gt;Russian nuclear head says Ukraine attacked fuel trucks, endangered Zaporizhzhia plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
+          "published": "2026-09-13T07:48:57.000Z",
           "score": 7
         },
         {
@@ -42,14 +56,6 @@
           "description": "&lt;p&gt;Silicosis sufferers are getting younger as Trump and the coal mining industry push back on protections&lt;/p&gt;&lt;p&gt;Silicosis is one of the oldest workplace hazards and public health experts have known for decades how to prevent it. Yet a new wave of workers, from Appalachian coalminers to Latino countertop fabrication workers, are developing and dying from the disease as industry fights new protections and regulators fail to defend the rules that could protect them.&lt;/p&gt;&lt;p",
           "published": "2026-09-12T11:00:34.000Z",
           "score": 2
-        },
-        {
-          "title": "US inflation accelerates in August as gas prices jump - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBOOTc4Zkt1enFpVF9fMldIa3VoOWhyeXYzdGdZWjFkSkQ2bzlyWkltd3NveHN5ZjVjejJTUlZOUjBzWFp1ek96bHlFUU9nekVzX2RnWTRIclN5Vk1qaFMyWjFEbEhQRU0?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBOOTc4Zkt1enFpVF9fMldIa3VoOWhyeXYzdGdZWjFkSkQ2bzlyWkltd3NveHN5ZjVjejJTUlZOUjBzWFp1ek96bHlFUU9nekVzX2RnWTRIclN5Vk1qaFMyWjFEbEhQRU0?oc=5\" target=\"_blank\"&gt;US inflation accelerates in August as gas prices jump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-12T02:40:46.000Z",
-          "score": 2
         }
       ]
     },
@@ -57,14 +63,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Corals as climate archive: Are El Ninos intensifying?",
-          "link": "https://www.dw.com/en/corals-as-climate-archive-are-el-ninos-intensifying/a-79243425?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Records from the past few decades show that, during this period, El Nino events have been frequent and often extreme. But is this normal, or is it the result of climate change? Corals can give us a clear indication.",
-          "published": "2026-09-12T08:53:00.000Z",
-          "score": 7
-        },
         {
           "title": "Heatwaves hit the Sunday roast: why the RHS says cauliflower is off the menu",
           "link": "https://www.theguardian.com/environment/2026/sep/12/heatwaves-hit-sunday-roast-rhs-cauliflower-off-menu",
@@ -74,10 +72,26 @@
           "score": 4
         },
         {
+          "title": "Think of the parable of a frog in boiling water. That’s us dithering as the ‘unprecedented‘ weather becomes more extreme | Helen Pilcher",
+          "link": "https://www.theguardian.com/commentisfree/2026/sep/13/extreme-weather-unprecedented-feel-normal",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;The complacency is staggering: just another hot summer, a flooded street, a crop failure. We are accepting this extraordinary deterioration as normal&lt;/p&gt;&lt;p&gt;Recently, I overheard a conversation in a cafe where someone described their toast as “awesome”. I felt myself bristle. Not because the toast wasn’t good – I didn’t taste it – but because I remember a time when “awesome” meant something that inspired awe: towering mountains, the vastness of the night sky, the haunting son",
+          "published": "2026-09-13T07:00:01.000Z",
+          "score": 2
+        },
+        {
+          "title": "Who are the 514 people accused of starting French wildfires and what motivates them?",
+          "link": "https://www.theguardian.com/world/2026/sep/13/france-confronts-arson-problem-after-devastating-summer-of-wildfires",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Experts believe one-third of wildfires in France are set deliberately, with arson the biggest single cause of forest fires last year&lt;/p&gt;&lt;p&gt;One is a boy of 15, who threw a burning cigarette into a wood near Bordeaux. Another is a 36-year-old man who set a paper bag of rubbish on fire in bushes near Perpignan. A third is a 50-year-old woman accused of lighting 17 fires south of La Rochelle.&lt;/p&gt;&lt;p&gt;According to the French interior ministry, since the start of a summe",
+          "published": "2026-09-13T06:00:01.000Z",
+          "score": 2
+        },
+        {
           "title": "Warm ski season a warning of bleak future for Australia’s snow tourism: ‘So this is our new normal’",
           "link": "https://www.theguardian.com/australia-news/2026/sep/13/warm-ski-season-a-warning-of-bleak-future-for-australias-snow-tourism-so-this-is-our-new-normal",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;While holidaymakers have maintained ‘super positive attitudes’, average snow depths measured since 1954 have declined by nearly 20%&lt;/p&gt;&lt;p&gt;If you freeze it, they will come. For now.&lt;/p&gt;&lt;p&gt;On a weekday morning in early September, Perisher is beautiful. Too beautiful. The snow guns have just laid down a blanket of fresh powder when the lifts open at 8.30am, the front valley glistening as the sun rises over the Snowy Mountains.&lt;/p&gt;&lt;p&gt;People ski on human-m",
+          "description": "&lt;p&gt;While holidaymakers have maintained ‘super positive attitudes’, average snow depths measured since 1954 have declined by nearly 20%&lt;/p&gt;&lt;p&gt;If you freeze it, they will come. For now.&lt;/p&gt;&lt;p&gt;On a weekday morning in early September, Perisher is beautiful. Too beautiful. The snow guns have just laid down a blanket of fresh powder when the lifts open at 8.30am, the front valley glistening as the sun rises over the Snowy Mountains.&lt;/p&gt;&lt;p&gt;People ski on man-mad",
           "published": "2026-09-12T20:00:42.000Z",
           "score": 2
         },
@@ -88,21 +102,22 @@
           "description": "From meteor showers to a November supermoon, there are a number of impressive sights to behold in the autumn night sky.",
           "published": "2026-09-12T23:53:07.000Z",
           "score": 2
-        },
-        {
-          "title": "Record heatwaves in France set to make champagne stronger",
-          "link": "https://www.bbc.co.uk/news/articles/cvgydvrlep1o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Winemakers can produce bubbly up to 15% ABV following an unusual harvest that produced sweeter grapes.",
-          "published": "2026-09-12T13:00:32.000Z",
-          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "German firms lift China investment as US outlays fall, IW study shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNMjh4NHdubTBlTmlHbkNLR1RKZ0R1OGV3ZEFMR3Zidmk2X2Z4Z1UzNXJPVUhvUHRwTFU2ZkNMaEJlSUJqMWt4Zjl2RVQ1S0c4UU1pXzg3WkpMOWM5dS1BMU9iTXNvU2xqWHcyTUx3djZSODVQbGdDTTR0ZFpBVzhVcUhyc2hnTmh0UHplS1JzU0Q4dFpYQ2ZnV01Od2dWSDNTbHByX00zaHZ3aTFXRklxbWE2dw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNMjh4NHdubTBlTmlHbkNLR1RKZ0R1OGV3ZEFMR3Zidmk2X2Z4Z1UzNXJPVUhvUHRwTFU2ZkNMaEJlSUJqMWt4Zjl2RVQ1S0c4UU1pXzg3WkpMOWM5dS1BMU9iTXNvU2xqWHcyTUx3djZSODVQbGdDTTR0ZFpBVzhVcUhyc2hnTmh0UHplS1JzU0Q4dFpYQ2ZnV01Od2dWSDNTbHByX00zaHZ3aTFXRklxbWE2dw?oc=5\" target=\"_blank\"&gt;German firms lift China investment as US outlays fall, IW study shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-13T06:32:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -131,20 +146,20 @@
           "score": 8
         },
         {
-          "title": "Meloni sees Italy 2026 growth at 1%, matching euro zone - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQallZcGJiQW1wU1JNa1ljd3FBNDdMNFF4c1NjaDBZMlo0aWt1MUkySGVPMHNHVjBqajctUkpvS1g1TnJvcDg2OGZXMElDd2Q4OXpfSnpvVlprdlhUOGJleU9NVVpGVS1CTm9qQVd3azloS2J1eXBUVER5cU56SGtkUFlvNktFMW9wTmlRdTJGTndSQzZVaGc3dF9DUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQallZcGJiQW1wU1JNa1ljd3FBNDdMNFF4c1NjaDBZMlo0aWt1MUkySGVPMHNHVjBqajctUkpvS1g1TnJvcDg2OGZXMElDd2Q4OXpfSnpvVlprdlhUOGJleU9NVVpGVS1CTm9qQVd3azloS2J1eXBUVER5cU56SGtkUFlvNktFMW9wTmlRdTJGTndSQzZVaGc3dF9DUQ?oc=5\" target=\"_blank\"&gt;Meloni sees Italy 2026 growth at 1%, matching euro zone&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-12T07:27:43.000Z",
-          "score": 8
-        },
-        {
           "title": "American Rose wins ILCA women's world title, ends 20 years of European dominance - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTTFvMHZHeEh5SUNNOVo2N0tPRVJIdGN2azVWWFVqbVBucUlfYVRMUERGNkswYmRxRmhDMlo2LVRRZW02UXpScmFhX0xVQnF4ZGY4dnViaUFQREE0YnNnOEpRYTE1UWdRRW1BUEFzbFhSeGx3NmxxYTVOUFR1X0N4dEZIOTYwclZYZ0xkakUxSW1zRjBIaWd3MmdvVXlfbjkxajc4SE91RWJLTWNKbFd0c1pnQ29IdGU1TGc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPTTFvMHZHeEh5SUNNOVo2N0tPRVJIdGN2azVWWFVqbVBucUlfYVRMUERGNkswYmRxRmhDMlo2LVRRZW02UXpScmFhX0xVQnF4ZGY4dnViaUFQREE0YnNnOEpRYTE1UWdRRW1BUEFzbFhSeGx3NmxxYTVOUFR1X0N4dEZIOTYwclZYZ0xkakUxSW1zRjBIaWd3MmdvVXlfbjkxajc4SE91RWJLTWNKbFd0c1pnQ29IdGU1TGc?oc=5\" target=\"_blank\"&gt;American Rose wins ILCA women's world title, ends 20 years of European dominance&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-12T15:16:03.000Z",
           "score": 8
+        },
+        {
+          "title": "Best friends for decades - until a DNA test revealed they were sisters",
+          "link": "https://www.bbc.co.uk/news/articles/c5y6z72z9lno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Meena Geltink and Minal Tijssen were adopted from orphanages in Mumbai in the 1980s and grew up in the Netherlands.",
+          "published": "2026-09-12T22:00:28.000Z",
+          "score": 6
         },
         {
           "title": "Ukraine: Several killed in series of Russian strikes",
@@ -155,20 +170,20 @@
           "score": 6
         },
         {
-          "title": "US judge rules that Trump plan to halve FEMA workforce violated law - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNeWdsd2ZWR24waE95b3NaLUtKbTQzOTJOSm91NjdBY3hnOUExLXpvZVBTWGw1eXFxTFVYOTdjd3Q2UXkycEZEMTI5elFuSDZOSmotdWJoX254Um9JckVrbWFNQm05VHhUcVU4bWlONlExMzNBeTgtLWwzWldmNjdmRGRNeUpJbllyczJSX1dmaE1CeUhxUWRhOVBNNEUyRWJKNDJXLUE3RUdEaDBQOUY5M2RhY19WalAx?oc=5",
+          "title": "South Korea's expanded espionage law takes effect amid push to protect chip technology - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPeVc2VklDSTJqenp5QnFhX2s4NFg3SHlkMndlZ3dXT3NfdDhYUnlVMXU0eldKbktyWmNrUkRMZkw4bTJyMHE1cldIUDVKNk41clpBWjkyUlA4c2RMM1dONkZPZEZMTlpCTk5nMmxxcjVXcU50RXoxM2xWOGlLZWtlOE5iTUR6ZkNiaTVGbzVfdXJrNkZxT2ljamQ5MWNsQ0h3UHJLYWlxOG45YVlqa2FsOHRZbDlRbWprY19F?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNeWdsd2ZWR24waE95b3NaLUtKbTQzOTJOSm91NjdBY3hnOUExLXpvZVBTWGw1eXFxTFVYOTdjd3Q2UXkycEZEMTI5elFuSDZOSmotdWJoX254Um9JckVrbWFNQm05VHhUcVU4bWlONlExMzNBeTgtLWwzWldmNjdmRGRNeUpJbllyczJSX1dmaE1CeUhxUWRhOVBNNEUyRWJKNDJXLUE3RUdEaDBQOUY5M2RhY19WalAx?oc=5\" target=\"_blank\"&gt;US judge rules that Trump plan to halve FEMA workforce violated law&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-12T19:16:27.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPeVc2VklDSTJqenp5QnFhX2s4NFg3SHlkMndlZ3dXT3NfdDhYUnlVMXU0eldKbktyWmNrUkRMZkw4bTJyMHE1cldIUDVKNk41clpBWjkyUlA4c2RMM1dONkZPZEZMTlpCTk5nMmxxcjVXcU50RXoxM2xWOGlLZWtlOE5iTUR6ZkNiaTVGbzVfdXJrNkZxT2ljamQ5MWNsQ0h3UHJLYWlxOG45YVlqa2FsOHRZbDlRbWprY19F?oc=5\" target=\"_blank\"&gt;South Korea's expanded espionage law takes effect amid push to protect chip technology&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-13T00:05:00.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 399,
-    "articlesLast24h": 142,
-    "afterDedup": 127,
+    "totalArticlesScanned": 397,
+    "articlesLast24h": 139,
+    "afterDedup": 124,
     "feedsQueried": 19
   }
 }
