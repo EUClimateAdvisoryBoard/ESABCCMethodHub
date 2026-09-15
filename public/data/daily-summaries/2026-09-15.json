@@ -1,9 +1,15 @@
 {
   "date": "2026-09-15",
-  "generatedAt": "2026-09-15T09:52:15.016Z",
+  "generatedAt": "2026-09-15T15:31:51.953Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 15 September 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Daily News 15 / 09 / 2026",
+      "summary": "European Commission Daily news Brussels, 15 Sep 2026 Commission launches Energy Regulation Academy to support public officials in implementing EU energy measuresThe European Commission and the European University ...",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "US ends limits on coal and gas plant emissions, removing key tool to battle climate crisis",
       "summary": "&lt;p&gt;Trump’s EPA strips itself of regulation ability, gutting Clean Air Act in what experts say is a gift to planet polluters&lt;/p&gt;&lt;p&gt;On the heels of the hottest summer ever &lt;a href=\"https://www.ncei.noaa.gov/news/national-climate-202608\"&gt;recorded&lt;/a&gt; in the US, the Trump administration has said it will erase any limits on emissions from coal and gas plants that are dangerously heating up our planet.&lt;/p&gt;&lt;p&gt;The US Environmental Protection Agency said it will ",
@@ -17,8 +23,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Kremlin-linked Russian oligarch helped fund Trump Jr.&#039;s wedding celebration",
-      "summary": "Trump&#039;s son and his wife confirmed reports that Umar Kremlev paid for parts of the festivities. Kremlev was awarded the &quot;Order of Friendship&quot; by Putin earlier this year.",
+      "headline": "Canada is a 'safe harbour' for global finance, Carney says",
+      "summary": "The prime minister is hosting a major global investment summit, with the goal of attracting money into the country amid a trade war with the US.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,7 +33,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Daily News 15 / 09 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1883",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 15 Sep 2026 Commission launches Energy Regulation Academy to support public officials in implementing EU energy measuresThe European Commission and the European University ...",
+          "published": "2026-09-15T15:05:31.000Z",
+          "score": 20
+        }
+      ]
     },
     {
       "id": "energy",
@@ -42,6 +57,14 @@
           "score": 11
         },
         {
+          "title": "Russia: Trump&#039;s Ukraine ceasefire proposal is &#039;good idea&#039;",
+          "link": "https://www.dw.com/en/russia-trump-s-ukraine-ceasefire-proposal-is-good-idea/a-79280087?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Kremlin has hailed an &quot;energy ceasefire&quot; proposed by US President Trump, but has criticized a French initiative to share its nuclear deterrent. Meanwhile, hostilities have continued on the ground and in the air.",
+          "published": "2026-09-15T15:12:00.000Z",
+          "score": 8
+        },
+        {
           "title": "US ‘super-emitters’ of planet heating methane identified by satellite analysis",
           "link": "https://www.theguardian.com/environment/2026/sep/14/us-companies-methane-pollution-rankings",
           "source": "The Guardian - Climate",
@@ -50,27 +73,19 @@
           "score": 7
         },
         {
-          "title": "Yemen&#039;s Houthis attack Saudis, seize crucial Red Sea islands",
-          "link": "https://www.dw.com/en/yemen-s-houthis-attack-saudis-seize-crucial-red-sea-islands/a-79263838?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Iran-backed Houthi rebels have tightened their grip on a key shipping route, capturing two strategic Red Sea islands. The closure of another global transport route is the latest ripple effect of the US war with Iran.",
-          "published": "2026-09-14T15:30:00.000Z",
+          "title": "World’s top 20 private equity firms produce more greenhouse gases a year than most countries, report finds",
+          "link": "https://www.theguardian.com/us-news/2026/sep/15/private-equity-firms-energy-assets-greenhouse-gas",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Firms manage $7.3tn in assets and could afford to transition away from fossil fuels yet invest in natural gas and coal-fired plants to power datacenters&lt;/p&gt;&lt;p&gt;The energy portfolios of 20 private equity firms produce 1.5bn tons of greenhouse gases a year, more than the annual emissions of any country except China, the US, India and Russia, according to a new report.&lt;/p&gt;&lt;p&gt;Together, these firms manage $7.3tn in assets of all kinds, affording them the ability to sha",
+          "published": "2026-09-15T12:42:59.000Z",
           "score": 7
         },
         {
-          "title": "Iran protests as US prevents its nuclear chief attending IAEA meeting - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOQmFYd0hqU3pUXzRwRklUdC1WMkl4N2xFZHZkdnJndndRRTlITmctYlhjOWFQc013NWdoRUxuMFRzRWcwZWF2Q203aF84cE8zVF9ZZ0h6YnVNUk9wRjdnMFlFTW9YSWdVOWppMUJFOHNDTllGVTZlMHd6eFpERTlVbzB4c2t1amtmMldEYWZGZXBZWHZ5RThHS2dMWkJEUnBibm5WTFRCaGVQNGQtRUpBWDZMZ3F1dm9td25qXw?oc=5",
+          "title": "Most Gulf bourses in red on Houthi attack and Hormuz shipping slump - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSExSUVU1Q05HQlpsVG5mSngtVTZFUkYtV1dhYVNqZDdFTTVvWWsxU0d5SUZWV1luUXJXMG9Hb1JKeU9MSTdzb3I5MDZEWVlzZWMzN3dQRHNMZk5nSzIxSW1KWGFvMkVHSlYxdnowc2x3c2xPamVScEhCYXhBS0VheDd6VFR6SkZ4SkROR1UwQi1BR0dCdUd3T1FZYnhrc2ZqTTdvMkRJZzhGZUluRHRJ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOQmFYd0hqU3pUXzRwRklUdC1WMkl4N2xFZHZkdnJndndRRTlITmctYlhjOWFQc013NWdoRUxuMFRzRWcwZWF2Q203aF84cE8zVF9ZZ0h6YnVNUk9wRjdnMFlFTW9YSWdVOWppMUJFOHNDTllGVTZlMHd6eFpERTlVbzB4c2t1amtmMldEYWZGZXBZWHZ5RThHS2dMWkJEUnBibm5WTFRCaGVQNGQtRUpBWDZMZ3F1dm9td25qXw?oc=5\" target=\"_blank\"&gt;Iran protests as US prevents its nuclear chief attending IAEA meeting&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-14T11:49:07.000Z",
-          "score": 7
-        },
-        {
-          "title": "Finland joins France's nuclear deterrent initiative - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcktHNEV1ZlFSZURLbU84bjA5bVZQX2c2dTBSaE5jNjZ6MHZaek9GV3hfaHktN25Xb19qYVNqVnFKUUd1alZfQVZDa2FZZ2V6TGZmdzhRcjA0eFZsa1RFa0dEX3ZfUEQ5LVJTS052YnNoWXdPVWE2S2hCS2c4aTNkZmlST3lYUmtLT2ZIOVNKS0w3NVpHbXJz?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPcktHNEV1ZlFSZURLbU84bjA5bVZQX2c2dTBSaE5jNjZ6MHZaek9GV3hfaHktN25Xb19qYVNqVnFKUUd1alZfQVZDa2FZZ2V6TGZmdzhRcjA0eFZsa1RFa0dEX3ZfUEQ5LVJTS052YnNoWXdPVWE2S2hCS2c4aTNkZmlST3lYUmtLT2ZIOVNKS0w3NVpHbXJz?oc=5\" target=\"_blank\"&gt;Finland joins France's nuclear deterrent initiative&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-14T14:32:12.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPSExSUVU1Q05HQlpsVG5mSngtVTZFUkYtV1dhYVNqZDdFTTVvWWsxU0d5SUZWV1luUXJXMG9Hb1JKeU9MSTdzb3I5MDZEWVlzZWMzN3dQRHNMZk5nSzIxSW1KWGFvMkVHSlYxdnowc2x3c2xPamVScEhCYXhBS0VheDd6VFR6SkZ4SkROR1UwQi1BR0dCdUd3T1FZYnhrc2ZqTTdvMkRJZzhGZUluRHRJ?oc=5\" target=\"_blank\"&gt;Most Gulf bourses in red on Houthi attack and Hormuz shipping slump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-15T13:16:59.000Z",
           "score": 7
         }
       ]
@@ -96,28 +111,28 @@
           "score": 13
         },
         {
-          "title": "Arctic power plays: EU searches for a new strategy",
-          "link": "https://www.dw.com/en/arctic-power-plays-eu-searches-for-a-new-strategy/a-79266739?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU seeks Arctic strategy amid growing power rivalry",
+          "link": "https://www.dw.com/en/eu-seeks-arctic-strategy-amid-growing-power-rivalry/a-79266739?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "Russia&#039;s aggression, Trump&#039;s threats against Greenland and the race for critical raw materials are pushing the Arctic to the top of Europe&#039;s agenda.",
           "published": "2026-09-14T19:28:00.000Z",
           "score": 13
         },
         {
-          "title": "EU should take more strategic and proactive role in Arctic, 12 member states say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNOHpzazh3WHVmYTNaVGpDSUNrR2p6S1pIaHh4bDh1d2lMRW5SR1BMVjdZTDVDSDBiZEtMWUVwZTNsOS1VdGxoZ1R4OGhlSURxWG1qRnpkN244ajZlTGxhWXVFd3h3Zm90aUZSMnAzbzNiTm1hRTVxZ3hZU3BIbnJYazY5S0Q2SkFIMzIwOGU1SWktZnFNalA1Y2dmUHgwVEhiQ0hmUWdrMlZjaEhDY1hZM1lvSlk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNOHpzazh3WHVmYTNaVGpDSUNrR2p6S1pIaHh4bDh1d2lMRW5SR1BMVjdZTDVDSDBiZEtMWUVwZTNsOS1VdGxoZ1R4OGhlSURxWG1qRnpkN244ajZlTGxhWXVFd3h3Zm90aUZSMnAzbzNiTm1hRTVxZ3hZU3BIbnJYazY5S0Q2SkFIMzIwOGU1SWktZnFNalA1Y2dmUHgwVEhiQ0hmUWdrMlZjaEhDY1hZM1lvSlk?oc=5\" target=\"_blank\"&gt;EU should take more strategic and proactive role in Arctic, 12 member states say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-14T13:51:08.000Z",
-          "score": 13
+          "title": "International trade linked to 20% of global emissions &#8211; but imports ignored",
+          "link": "https://www.climatechangenews.com/2026/09/15/international-trade-global-emissions-study-europe-china-us-imports/",
+          "source": "Climate Home News",
+          "description": "Researchers say governments should discuss how to tackle emissions linked to globally traded goods and services, especially in large importing countries The post International trade linked to 20% of global emissions &#8211; but imports ignored appeared first on Climate Home News.",
+          "published": "2026-09-15T08:19:17.000Z",
+          "score": 10
         },
         {
-          "title": "India gains wider EU steel access, but carbon levy remains - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNekNBZWwxSDJKTHl3ZUNJZ0Mwd0xDbERTVXFOcXZxa3hVejJfdDZGWTVMcEhhbXlkaW5nTm9JVEF0N1ZBdnF1bWZHeGRDWDBoTnZMVlBiTWZDQ3lUUF9teU9ndmZvdHZCM0EtWTRfaEFTTTE0VlBxWG5NZkkzOHBmSXFTZ2w2Y1BrVmJHUmgxRVR2YkN6SF83M3ZhQkdrSENqbTJF?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNekNBZWwxSDJKTHl3ZUNJZ0Mwd0xDbERTVXFOcXZxa3hVejJfdDZGWTVMcEhhbXlkaW5nTm9JVEF0N1ZBdnF1bWZHeGRDWDBoTnZMVlBiTWZDQ3lUUF9teU9ndmZvdHZCM0EtWTRfaEFTTTE0VlBxWG5NZkkzOHBmSXFTZ2w2Y1BrVmJHUmgxRVR2YkN6SF83M3ZhQkdrSENqbTJF?oc=5\" target=\"_blank\"&gt;India gains wider EU steel access, but carbon levy remains&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-14T12:45:43.000Z",
-          "score": 13
+          "title": "Europe’s summer emergency was a dire warning for Australia. What can be learned before it’s too late? | Nick Rowley",
+          "link": "https://www.theguardian.com/commentisfree/2026/sep/15/europes-summer-emergency-was-a-dire-warning-for-australia-what-can-be-learned-before-its-too-late",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Between 2000 and 2018, extreme heat caused more deaths in Australia than all our bushfires, floods, storms and cyclones combined&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/sep/15/one-nation-pauline-hanson-immigration-coalition-andrew-hastie-angus-taylor-labor-anthony-albanese-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguar",
+          "published": "2026-09-15T01:36:10.000Z",
+          "score": 8
         }
       ]
     },
@@ -126,11 +141,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Kremlin-linked Russian oligarch helped fund Trump Jr.&#039;s wedding celebration",
-          "link": "https://www.dw.com/en/kremlin-linked-russian-oligarch-helped-fund-trump-jr-s-wedding-celebration/a-79267341?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Trump&#039;s son and his wife confirmed reports that Umar Kremlev paid for parts of the festivities. Kremlev was awarded the &quot;Order of Friendship&quot; by Putin earlier this year.",
-          "published": "2026-09-14T23:02:00.000Z",
+          "title": "Canada is a 'safe harbour' for global finance, Carney says",
+          "link": "https://www.bbc.co.uk/news/articles/cmq8jdgel128o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The prime minister is hosting a major global investment summit, with the goal of attracting money into the country amid a trade war with the US.",
+          "published": "2026-09-15T13:43:01.000Z",
           "score": 2
         },
         {
@@ -148,50 +163,41 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPdWRLalExTUhGMEdPaklvanpiMi02MXYxRlV4ZG5DcnBBZlMwWjhoUS01RjlZS1F4SUpuQ1V1U0haWkJISy1VRWZIbW5GWkpEV0FzWi1FcmRCTWxIbC0wMEJoNHZ3QmJPMXpaZHZHSkVKbmpzSnktZkw0emE1QjJsbGY4ZFhkR2RTRlFMNUFNR2wxZzlOUTZFaFRoRG5yVVpBMHZ1bGF1cHRsT2RpbHdMd01DdWJwUQ?oc=5\" target=\"_blank\"&gt;Bank of America CEO sees at least 10% drop in Q3 investment banking fees&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-14T18:58:00.000Z",
           "score": 2
+        },
+        {
+          "title": "Hundreds march in Toronto against Carney's investment summit - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPbDJZNkRRWWM4cmFDZFNTMFVaRWRULWM1ODFHeHZMV0VPUWNZTXY0ZE00OFlQRDgzQ1kzX09CY3k5ZlU2S3pSRUlmQzFsd1VsY0tBMkRIcncxeFlfNHNGTnM3WE1DQW9lZW5rMXJVeWo4ajlxLVZiX3dSM3pVaExyRzZjNlpPdVd5bnFjTlQ4cWV2eWVNcktjYUxaT21sOTA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPbDJZNkRRWWM4cmFDZFNTMFVaRWRULWM1ODFHeHZMV0VPUWNZTXY0ZE00OFlQRDgzQ1kzX09CY3k5ZlU2S3pSRUlmQzFsd1VsY0tBMkRIcncxeFlfNHNGTnM3WE1DQW9lZW5rMXJVeWo4ajlxLVZiX3dSM3pVaExyRzZjNlpPdVd5bnFjTlQ4cWV2eWVNcktjYUxaT21sOTA?oc=5\" target=\"_blank\"&gt;Hundreds march in Toronto against Carney's investment summit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-15T02:39:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Carney, locked in US trade war, pitches Canada to global investment titans - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZ3JPQXNDM2tRbmo0bHhxcE5yaHVkZ2txeVd5T2IzUFpYWkFYZTNsWmloNEUybWhxa3ZPVDdlZ0F0VnBnTmRzM09TekhtRHV3WGRQc0QwSmZuTy10R3BGbUdUc2dkOW5PRGpfRWdpblRtRHZYcnFHMy1HOGljNVFzcW8yOEY5VXg1d3BQY3d5ZWZJRU1JZEQtNTl2bW85NEhCckZpeWRPYlNrY09FckpjbA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQZ3JPQXNDM2tRbmo0bHhxcE5yaHVkZ2txeVd5T2IzUFpYWkFYZTNsWmloNEUybWhxa3ZPVDdlZ0F0VnBnTmRzM09TekhtRHV3WGRQc0QwSmZuTy10R3BGbUdUc2dkOW5PRGpfRWdpblRtRHZYcnFHMy1HOGljNVFzcW8yOEY5VXg1d3BQY3d5ZWZJRU1JZEQtNTl2bW85NEhCckZpeWRPYlNrY09FckpjbA?oc=5\" target=\"_blank\"&gt;Carney, locked in US trade war, pitches Canada to global investment titans&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-14T21:22:45.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "EU leaders urge unity after Russian strike on train",
-          "link": "https://www.dw.com/en/eu-leaders-urge-unity-after-russian-strike-on-train/a-79259807?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Russia&#039;s drone attack on a train near the Ukraine-Poland border has triggered EU calls to up support for Kyiv. Allies of Ukraine should show they &quot;are not scared,&quot; said the bloc&#039;s top diplomat, Kaja Kallas.",
-          "published": "2026-09-14T12:12:00.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "FIFPRO Europe calls for FIFA reform after Infantino's failed proposal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdXFYUzVpWlhrdGJFMWJwd25MVUppRlFnQnFJYi1RVlhRUnh0OW1vdVBNdUVFMl9RRVh2dEtyOU5SV3R3U0pzWGxNU3YxTG1QbTFYZjFMT1JERC11NlU0eXVHUGdjOXBuSl9ZaldjbkhtZ2Y2c3JJbkN0MUZRWW1GMHNXbnNqSDl1N1ZoUUsxbkpyV2Nqa3J0OWxhMXRpd0pPSWMzRkdoU1J5YnNNYk5JSkZSZXA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNdXFYUzVpWlhrdGJFMWJwd25MVUppRlFnQnFJYi1RVlhRUnh0OW1vdVBNdUVFMl9RRVh2dEtyOU5SV3R3U0pzWGxNU3YxTG1QbTFYZjFMT1JERC11NlU0eXVHUGdjOXBuSl9ZaldjbkhtZ2Y2c3JJbkN0MUZRWW1GMHNXbnNqSDl1N1ZoUUsxbkpyV2Nqa3J0OWxhMXRpd0pPSWMzRkdoU1J5YnNNYk5JSkZSZXA?oc=5\" target=\"_blank\"&gt;FIFPRO Europe calls for FIFA reform after Infantino's failed proposal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-14T13:46:00.000Z",
-          "score": 12
-        },
-        {
-          "title": "BYD to produce trucks in Europe in bid to become \"European company\" - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSk9sU2JTLXY3NTc2LXdCX3NYOE1nZ0RzajdoUFh6cXZ6MXJKNUZScVJoTUExTm9tdEtsRWJOSm9OenJNd1VMeDlGNWtBc1l4VDkta0NtQV9lUnZ4TmVuMDdOakVTUWdmYzM1WFZudGh6NGNtVFVvam5vdVRmbUtxVnhTZml0VnFpX2ZIVFR3ck8zRXpKRjBaSjdGbTJvZ0Z2YjVTamJkZ0VtVDJtMXJiajJGajBGbHU4N0t3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSk9sU2JTLXY3NTc2LXdCX3NYOE1nZ0RzajdoUFh6cXZ6MXJKNUZScVJoTUExTm9tdEtsRWJOSm9OenJNd1VMeDlGNWtBc1l4VDkta0NtQV9lUnZ4TmVuMDdOakVTUWdmYzM1WFZudGh6NGNtVFVvam5vdVRmbUtxVnhTZml0VnFpX2ZIVFR3ck8zRXpKRjBaSjdGbTJvZ0Z2YjVTamJkZ0VtVDJtMXJiajJGajBGbHU4N0t3?oc=5\" target=\"_blank\"&gt;BYD to produce trucks in Europe in bid to become \"European company\"&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-14T15:10:52.000Z",
-          "score": 8
-        },
-        {
-          "title": "Europe's security trumps debates about my future, Germany's Merz says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPM1pZbXlIOHd6NDJuODVsN0FYaHpHclRka3AyXzdNZ0lVdG9sM2w3cklIM2pKNjBhaHFJT2d2TThxQ1FyOWNsb2U0ZWkwZ0wtQXpxenNDWVF1Zjk3SERzODFiaDNLcjBlc3paZVMwc1dZd3VMR2RWTlllamsybGlMZjlCUFpuQUg1QWZIajhnbzFSNnk1R0xLVEM4b09zVUliZmxr?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPM1pZbXlIOHd6NDJuODVsN0FYaHpHclRka3AyXzdNZ0lVdG9sM2w3cklIM2pKNjBhaHFJT2d2TThxQ1FyOWNsb2U0ZWkwZ0wtQXpxenNDWVF1Zjk3SERzODFiaDNLcjBlc3paZVMwc1dZd3VMR2RWTlllamsybGlMZjlCUFpuQUg1QWZIajhnbzFSNnk1R0xLVEM4b09zVUliZmxr?oc=5\" target=\"_blank\"&gt;Europe's security trumps debates about my future, Germany's Merz says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-14T14:05:42.000Z",
-          "score": 8
+          "title": "Spanish scientists find first evidence of Diplodocus dinosaur in Europe",
+          "link": "https://www.dw.com/en/spanish-scientists-find-first-evidence-of-diplodocus-dinosaur-in-europe/a-79277825?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Paleontologists in Spain say they have found the first evidence of the long-necked Diplodocus genus of dinosaur outside of North America. They found bones at the rich La Tejeria fossil site in Teruel in eastern Spain.",
+          "published": "2026-09-15T14:42:00.000Z",
+          "score": 10
         },
         {
           "title": "EU envoys extend Russia sanctions by seven days to debate six-month renewal, EU presidency says - Reuters",
@@ -202,20 +208,36 @@
           "score": 8
         },
         {
-          "title": "EXCLUSIVE: Kimberly-Clark prepares asset sales to win EU nod for Kenvue deal, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYVllQzdsaXNMUGJlWWpYdmZyLUZ6SWdIUENRS2NxdDUzY1Mzc093Z2twd3MzUEhGNUlBMWNqVVhHZWZWTnlZNFdiZFVNTTU5a3FpbGZsX2RHTmdIUHlZYlFIdU14bGF5REZkX2RpYWhWYmx1b0hGOFdQUEpJWmh6WEc0TkxtQUlqU21MTTFCekNBcUJjMEZ2NzYzT3YtZm9KT3RUZlkxNA?oc=5",
+          "title": "Trump seeks halt to energy attacks by both Russia, Ukraine",
+          "link": "https://www.dw.com/en/trump-seeks-halt-to-energy-attacks-by-both-russia-ukraine/a-79265774?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Donald Trump, under fire for record US diesel prices, claims Russia and Ukraine have agreed to stop striking energy targets. Russia said nothing; Ukraine said &quot;we expect specifics from our partners&quot; on any such move.",
+          "published": "2026-09-14T17:59:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Ukraine will support energy ceasefire if US ensures Moscow's intent, Zelenskiy says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPOVNFQ1g2OHVHZ2dKdEVraENQbDVtV0xnTDBmUzNqaEd6YmJiSG9EWE43V2ZCWEdzUlBOVjVPTGRmdi1uajU1c1VrdXNuQlVPS2c1am9TNzJzMEo4bERnUnlfMEdUNjZjaWc0QmRsR1E1TEotekZyUWZuZ052QXowT2tuUFlOcWE1dzVNMDhVOERueXZ5ZG9RNVFLdVN2N3N5dVVGRXlsV3NrQmwwM1V0MTlR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNYVllQzdsaXNMUGJlWWpYdmZyLUZ6SWdIUENRS2NxdDUzY1Mzc093Z2twd3MzUEhGNUlBMWNqVVhHZWZWTnlZNFdiZFVNTTU5a3FpbGZsX2RHTmdIUHlZYlFIdU14bGF5REZkX2RpYWhWYmx1b0hGOFdQUEpJWmh6WEc0TkxtQUlqU21MTTFCekNBcUJjMEZ2NzYzT3YtZm9KT3RUZlkxNA?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Kimberly-Clark prepares asset sales to win EU nod for Kenvue deal, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-14T15:47:41.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPOVNFQ1g2OHVHZ2dKdEVraENQbDVtV0xnTDBmUzNqaEd6YmJiSG9EWE43V2ZCWEdzUlBOVjVPTGRmdi1uajU1c1VrdXNuQlVPS2c1am9TNzJzMEo4bERnUnlfMEdUNjZjaWc0QmRsR1E1TEotekZyUWZuZ052QXowT2tuUFlOcWE1dzVNMDhVOERueXZ5ZG9RNVFLdVN2N3N5dVVGRXlsV3NrQmwwM1V0MTlR?oc=5\" target=\"_blank\"&gt;Ukraine will support energy ceasefire if US ensures Moscow's intent, Zelenskiy says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-14T17:46:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Stocks down on energy shock concerns, global yields hit fresh highs - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNa2swZ0ZXMUlmM25iamJCQWM5NWV1OG1yUHA0MWZwVkVyempxRGlyWGdXeDRuN25IYXdGb1J0a05HazdLSEtsZUNBNzlBWVA3cmtJVElCREdQeWx2amlXZnAxNHBFN1pZdnFVQ3NhYTBrbF9sMVhZM1Z2djlBUWdCcnkxNHJMMFJTOHJRSQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxNa2swZ0ZXMUlmM25iamJCQWM5NWV1OG1yUHA0MWZwVkVyempxRGlyWGdXeDRuN25IYXdGb1J0a05HazdLSEtsZUNBNzlBWVA3cmtJVElCREdQeWx2amlXZnAxNHBFN1pZdnFVQ3NhYTBrbF9sMVhZM1Z2djlBUWdCcnkxNHJMMFJTOHJRSQ?oc=5\" target=\"_blank\"&gt;Stocks down on energy shock concerns, global yields hit fresh highs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-15T01:44:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 412,
-    "articlesLast24h": 175,
-    "afterDedup": 159,
+    "totalArticlesScanned": 404,
+    "articlesLast24h": 167,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
