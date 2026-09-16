@@ -1,24 +1,24 @@
 {
   "date": "2026-09-16",
-  "generatedAt": "2026-09-16T15:24:58.150Z",
+  "generatedAt": "2026-09-16T19:52:53.153Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 16 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Saudi Arabia says Houthis target Mecca, warns of &#039;red line&#039;",
-      "summary": "The Saudi-led coalition said its air defenses had destroyed a Houthi-deployed drone just outside Mecca, Islam&#039;s holiest city.",
+      "headline": "North Korea says US-driven nuclear submarine push justifies its own weapons buildup - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOUFMzenhabFJFenV0VG9rZFBSUTN5Z3hORkNqdTk5X2tEZC1NWUYzcS1lWDhndXJjWkpUb0NReDludVlmRUtkRWxjbFdXWUM3dEFTSkxTRG11ZXp6Y3BfNEVrZmZNZnlPakJscW1yVk1ZUXVyYzRfUVZ6c2J2QXMtNU42OTJOSmt1aHUyYkUyOWw4T0J0OHc5WTFCdklKUzdqSFY4VEZGUnVSY25qVmU2VkprN18wT1l3aGlZYzFrOUpBb25wdk9oNXZn?oc=5\" target=\"_blank\"&gt;North Korea says US-driven nuclear submarine push justifies its own weapons buildup&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Analysis: Global fossil-fuel emissions set to fall in 2026 amid Hormuz crisis",
-      "summary": "Global fossil-fuel emissions are set to fall by around 0.5% in 2026 amid the fallout from the Hormuz crisis, according&#8230; The post Analysis: Global fossil-fuel emissions set to fall in 2026 amid Hormuz crisis appeared first on Carbon Brief.",
+      "headline": "Commission sends Statement of Objections over the proposed acquisition of Anglo American's nickel business by MMG",
+      "summary": "European Commission Press release Brussels, 16 Sep 2026 The European Commission has informed MMG Limited ('MMG') of its preliminary view that its proposed acquisition of Anglo American's nickel business ('the target') may restrict competition in the market for low-carbon ferronickel, a key alloying material in stainless steel production.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Five takeaways from Canada's push to woo the world's richest investors",
-      "summary": "A $1tn sales pitch, more than 160 projects on offer, pivot to the EU amid a bitter trade war with the US - takeaways from the first Canada Investment Summit.",
+      "headline": "FIFA says review of shelved investment plan to be presented to Council - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNNXVYTG8yd0VIaTdkSDVidXBBQkwzaFBBU1Y3QTdCOXhJSkw2YXM1YThjNVZOa1hvXzd4amdSOEhtN25Wd1ltMFlqUy1oSjk3MkJMeWhVTS1NZmk3dFBTQ0ZZdmdxZ1YzTmdzYWtwendvVUhRZ0pNRTZoQlQ2aTN0T1FuaHdQOHJtUm16Qkx0akNEOFF4NTlMcWNvR1lUWHJ0Tndla2gwVlE1NWoxYWNiTg?oc=5\" target=\"_blank\"&gt;FIFA says review of shelved investment plan to be presented to Council&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,14 +33,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Saudi Arabia says Houthis target Mecca, warns of &#039;red line&#039;",
-          "link": "https://www.dw.com/en/saudi-arabia-says-houthis-target-mecca-warns-of-red-line/a-79285099?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The Saudi-led coalition said its air defenses had destroyed a Houthi-deployed drone just outside Mecca, Islam&#039;s holiest city.",
-          "published": "2026-09-16T09:10:00.000Z",
-          "score": 7
-        },
         {
           "title": "North Korea says US-driven nuclear submarine push justifies its own weapons buildup - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUFMzenhabFJFenV0VG9rZFBSUTN5Z3hORkNqdTk5X2tEZC1NWUYzcS1lWDhndXJjWkpUb0NReDludVlmRUtkRWxjbFdXWUM3dEFTSkxTRG11ZXp6Y3BfNEVrZmZNZnlPakJscW1yVk1ZUXVyYzRfUVZ6c2J2QXMtNU42OTJOSmt1aHUyYkUyOWw4T0J0OHc5WTFCdklKUzdqSFY4VEZGUnVSY25qVmU2VkprN18wT1l3aGlZYzFrOUpBb25wdk9oNXZn?oc=5",
@@ -80,6 +72,14 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Commission sends Statement of Objections over the proposed acquisition of Anglo American's nickel business by MMG",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1877",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 16 Sep 2026 The European Commission has informed MMG Limited ('MMG') of its preliminary view that its proposed acquisition of Anglo American's nickel business ('the target') may restrict competition in the market for low-carbon ferronickel, a key alloying material in stainless steel production.",
+          "published": "2026-09-15T22:00:00.000Z",
+          "score": 20
+        },
+        {
           "title": "Analysis: Global fossil-fuel emissions set to fall in 2026 amid Hormuz crisis",
           "link": "https://www.carbonbrief.org/analysis-global-fossil-fuel-emissions-set-to-fall-in-2026-amid-hormuz-crisis",
           "source": "Carbon Brief",
@@ -92,7 +92,7 @@
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPS2Q2T2Vrd0ZtN2tXZjF5SGotMUwzc01FOS1JTW85a3lwaWhLaGNVeW5aMU9CYS05Y2ZLX1haLUFDWmU5TVNfWUFhTnJJTjAyVm96R2EyVFNWNE5BblBRMGg3cG1vaXhWSVpwdU5aQkppczk3T2d4VHBZa2N3WmpNa3UxWHduVUp2Z3lfRFBScERmeVNuWkxCRUpDNUc5Z2V0TTZRNkJZSmg?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPS2Q2T2Vrd0ZtN2tXZjF5SGotMUwzc01FOS1JTW85a3lwaWhLaGNVeW5aMU9CYS05Y2ZLX1haLUFDWmU5TVNfWUFhTnJJTjAyVm96R2EyVFNWNE5BblBRMGg3cG1vaXhWSVpwdU5aQkppczk3T2d4VHBZa2N3WmpNa3UxWHduVUp2Z3lfRFBScERmeVNuWkxCRUpDNUc5Z2V0TTZRNkJZSmg?oc=5\" target=\"_blank\"&gt;EU to launch climate insurance scheme after summer of extreme weather&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-16T10:32:12.000Z",
+          "published": "2026-09-16T14:00:46.000Z",
           "score": 13
         },
         {
@@ -110,14 +110,6 @@
           "description": "Aviation is on track to be responsible for 80% of the UK’s carbon dioxide (CO2) emissions by 2050, according to&#8230; The post CCC: Heathrow expansion could push flights to ‘80% of UK emissions by 2050’ appeared first on Carbon Brief.",
           "published": "2026-09-15T23:01:00.000Z",
           "score": 10
-        },
-        {
-          "title": "‘We’re near a breaking point:’ firefighters say US government is failing them amid intense wildfire season",
-          "link": "https://www.theguardian.com/us-news/2026/sep/16/wildfires-government-firefighter-shortage",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;US grapples with federal firefighter shortage as crews say they’re spread thin and lack resources during unrelenting year of fire&lt;/p&gt;&lt;p&gt;Firefighters battling enormous wildfires in the United States say the federal government is failing them at a time when supercharged blazes have made their jobs exponentially more dangerous.&lt;/p&gt;&lt;p&gt;While the US continues to grapple with a critical shortage of federal firefighters – with especially large gaps in essential managemen",
-          "published": "2026-09-16T10:00:16.000Z",
-          "score": 7
         }
       ]
     },
@@ -126,12 +118,28 @@
       "title": "Green Finance & Investment",
       "items": [
         {
+          "title": "FIFA says review of shelved investment plan to be presented to Council - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNXVYTG8yd0VIaTdkSDVidXBBQkwzaFBBU1Y3QTdCOXhJSkw2YXM1YThjNVZOa1hvXzd4amdSOEhtN25Wd1ltMFlqUy1oSjk3MkJMeWhVTS1NZmk3dFBTQ0ZZdmdxZ1YzTmdzYWtwendvVUhRZ0pNRTZoQlQ2aTN0T1FuaHdQOHJtUm16Qkx0akNEOFF4NTlMcWNvR1lUWHJ0Tndla2gwVlE1NWoxYWNiTg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNNXVYTG8yd0VIaTdkSDVidXBBQkwzaFBBU1Y3QTdCOXhJSkw2YXM1YThjNVZOa1hvXzd4amdSOEhtN25Wd1ltMFlqUy1oSjk3MkJMeWhVTS1NZmk3dFBTQ0ZZdmdxZ1YzTmdzYWtwendvVUhRZ0pNRTZoQlQ2aTN0T1FuaHdQOHJtUm16Qkx0akNEOFF4NTlMcWNvR1lUWHJ0Tndla2gwVlE1NWoxYWNiTg?oc=5\" target=\"_blank\"&gt;FIFA says review of shelved investment plan to be presented to Council&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-16T11:29:43.000Z",
+          "score": 8
+        },
+        {
           "title": "Five takeaways from Canada's push to woo the world's richest investors",
           "link": "https://www.bbc.co.uk/news/articles/cmq8jdgel128o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "A $1tn sales pitch, more than 160 projects on offer, pivot to the EU amid a bitter trade war with the US - takeaways from the first Canada Investment Summit.",
           "published": "2026-09-15T22:46:20.000Z",
           "score": 4
+        },
+        {
+          "title": "JPMorgan expects investment banking, trading to shine in third quarter - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPQUlHLUFMV1hHcjIyaTE5dXNSVVpfYzkyQUMxTWxvbzd6Sm9UWDR3UXZ2LWZHTE1hZUw2OUFBdDlfZHd2RGdoRHdXTFVHcThmanFwbzhNUkNNMDR6NlhRTkhvS0ZaRU12UlZkQkR6MURmbU5odE1Mc2FCSnlkaUJZWVg3QkVQd203UEJQME9rSWJIbTU0MFN0UURKWkExQUQ0aDF1dFpFWHM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPQUlHLUFMV1hHcjIyaTE5dXNSVVpfYzkyQUMxTWxvbzd6Sm9UWDR3UXZ2LWZHTE1hZUw2OUFBdDlfZHd2RGdoRHdXTFVHcThmanFwbzhNUkNNMDR6NlhRTkhvS0ZaRU12UlZkQkR6MURmbU5odE1Mc2FCSnlkaUJZWVg3QkVQd203UEJQME9rSWJIbTU0MFN0UURKWkExQUQ0aDF1dFpFWHM?oc=5\" target=\"_blank\"&gt;JPMorgan expects investment banking, trading to shine in third quarter&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-15T20:40:09.000Z",
+          "score": 2
         }
       ]
     },
@@ -148,19 +156,19 @@
           "score": 8
         },
         {
-          "title": "EU will use all tools to cut China trade deficit, von der Leyen says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVldpSXhsdm5HUlJwTEZ5ZDc2Ykwwak9rUG1jaW9XTk9XSmlwb0p4VGlvUEw1ZDEzWVRvTm9zRENEb3BrdkF3YkU2LWQtbzFzYUhGUkR1cXhmcmJoX0FwSHpOcXpFZHRTeW9EZm5uVUhVelc0WnRJRE1Tb3plbUZaaVNnWTEwODdIZzBHWTdIZXMtd2ZHUzk2TUtxV3ZqRmpZRW9QMGszUk1NU01hVXVyVldB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQVldpSXhsdm5HUlJwTEZ5ZDc2Ykwwak9rUG1jaW9XTk9XSmlwb0p4VGlvUEw1ZDEzWVRvTm9zRENEb3BrdkF3YkU2LWQtbzFzYUhGUkR1cXhmcmJoX0FwSHpOcXpFZHRTeW9EZm5uVUhVelc0WnRJRE1Tb3plbUZaaVNnWTEwODdIZzBHWTdIZXMtd2ZHUzk2TUtxV3ZqRmpZRW9QMGszUk1NU01hVXVyVldB?oc=5\" target=\"_blank\"&gt;EU will use all tools to cut China trade deficit, von der Leyen says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-16T07:35:28.000Z",
-          "score": 8
-        },
-        {
           "title": "New Zealand parliament passes India trade deal, cutting tariffs on most exports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZlRsdXdHb2dDYTBpODY1eVIyc09aQkY5UjZpajFnaTFUZnIxeEM3cmNVVG14TEVaazRtaHpkRDd6bUhISzluUU9ZMW5VU1dFQkJ0aXZqZXB3cXdjd3NacmFELVAzRXlWNDZMeVNNVHVlX0hMVzNRWDlmV0lXUEh2d2tOR3pwT1VEVFJ5cURIZFdjb0p1bTlVY2dOWVRDSi1Yb29WU25TMldYeTJKMTl4aVd6cERhd0JjNVpkTkljaDI?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZlRsdXdHb2dDYTBpODY1eVIyc09aQkY5UjZpajFnaTFUZnIxeEM3cmNVVG14TEVaazRtaHpkRDd6bUhISzluUU9ZMW5VU1dFQkJ0aXZqZXB3cXdjd3NacmFELVAzRXlWNDZMeVNNVHVlX0hMVzNRWDlmV0lXUEh2d2tOR3pwT1VEVFJ5cURIZFdjb0p1bTlVY2dOWVRDSi1Yb29WU25TMldYeTJKMTl4aVd6cERhd0JjNVpkTkljaDI?oc=5\" target=\"_blank\"&gt;New Zealand parliament passes India trade deal, cutting tariffs on most exports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-16T00:14:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU will use all tools to cut China trade deficit, von der Leyen says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVldpSXhsdm5HUlJwTEZ5ZDc2Ykwwak9rUG1jaW9XTk9XSmlwb0p4VGlvUEw1ZDEzWVRvTm9zRENEb3BrdkF3YkU2LWQtbzFzYUhGUkR1cXhmcmJoX0FwSHpOcXpFZHRTeW9EZm5uVUhVelc0WnRJRE1Tb3plbUZaaVNnWTEwODdIZzBHWTdIZXMtd2ZHUzk2TUtxV3ZqRmpZRW9QMGszUk1NU01hVXVyVldB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQVldpSXhsdm5HUlJwTEZ5ZDc2Ykwwak9rUG1jaW9XTk9XSmlwb0p4VGlvUEw1ZDEzWVRvTm9zRENEb3BrdkF3YkU2LWQtbzFzYUhGUkR1cXhmcmJoX0FwSHpOcXpFZHRTeW9EZm5uVUhVelc0WnRJRE1Tb3plbUZaaVNnWTEwODdIZzBHWTdIZXMtd2ZHUzk2TUtxV3ZqRmpZRW9QMGszUk1NU01hVXVyVldB?oc=5\" target=\"_blank\"&gt;EU will use all tools to cut China trade deficit, von der Leyen says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-16T07:35:28.000Z",
           "score": 8
         }
       ]
@@ -186,19 +194,11 @@
           "score": 8
         },
         {
-          "title": "Von der Leyen eyes Canada as EU&#039;s first &#039;associate member&#039;",
-          "link": "https://www.dw.com/en/von-der-leyen-eyes-canada-as-eu-s-first-associate-member/a-79286148?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Can Canada and the EU build a deeper partnership?",
+          "link": "https://www.dw.com/en/can-canada-and-the-eu-build-a-deeper-partnership/a-79295388?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "EU chief Ursula von der Leyen said the bloc and Canada saw the world with the same eyes. At her annual State of the European Union address, she said the bloc was dealing with an &quot;openly hostile world.&quot;",
-          "published": "2026-09-16T09:18:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Turkey&#039;s rights groups, EU call out LGBTQ+ crackdown",
-          "link": "https://www.dw.com/en/turkey-s-rights-groups-eu-call-out-lgbtq-crackdown/a-79284021?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Several raids and arrests of LGBTQ+ persons in Turkey have triggered sharp criticism from numerous Turkish organizations — and also from Brussels.",
-          "published": "2026-09-15T19:32:00.000Z",
+          "description": "Canadian Prime Minister Carney is known for standing up to US President Donald Trump. Now he wants to forge a &quot;unique alliance&quot; with Europe. But what could such a partnership look like?",
+          "published": "2026-09-16T16:50:00.000Z",
           "score": 8
         },
         {
@@ -208,14 +208,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPM3NNS0lVWUJaRWx0UWh5Y0tyWHloOS1zQW55RzdQR1kxN3diNUxrcU1aSkIxYjgzV0hBWUlHak5fdFZ3TUNTYkZlb1NrVlBoRnZ4cC1jOGFaTXhyT2F1dVE5OFRqTEE1ckZGbjBsaWk4a05DclRTVkNaa2UzY1hhLVlDZVpHLWdJU1BsdGtIVmRpVHZRWVMtZ2ktTUdGSHhldnR2SExEVmpfNXA4LXYwaWVSa2RNNmth?oc=5\" target=\"_blank\"&gt;EU's von der Leyen backs partnership with Canada in 'openly hostile world'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-16T04:11:00.000Z",
           "score": 8
+        },
+        {
+          "title": "EU's von der Leyen wants Canada to become bloc's first associate member - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdDFWcUdmR2RJTzZXM3ZMQ2ZqVTI4Z2JBVmRfUnpuZEk4c2lfbU5iY3hCaHdwcTFZd0JEdDBaREdQSWlhUTVaTUFvaUxabjRpTFVjTjJEcl95Y1cwb01hOWZOUGpoWTE1NnJfU1RPZ2Z3SlRZSkg1eGwyaU9kMTd3UkpQNF9KT1lKRm81c0dHNC1YbjFUWjgwdXZpX2FkR0lXQTUxWFVCS1FSY01aZF9jVl9Md3FXUGxhM3NsYmRB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOdDFWcUdmR2RJTzZXM3ZMQ2ZqVTI4Z2JBVmRfUnpuZEk4c2lfbU5iY3hCaHdwcTFZd0JEdDBaREdQSWlhUTVaTUFvaUxabjRpTFVjTjJEcl95Y1cwb01hOWZOUGpoWTE1NnJfU1RPZ2Z3SlRZSkg1eGwyaU9kMTd3UkpQNF9KT1lKRm81c0dHNC1YbjFUWjgwdXZpX2FkR0lXQTUxWFVCS1FSY01aZF9jVl9Md3FXUGxhM3NsYmRB?oc=5\" target=\"_blank\"&gt;EU's von der Leyen wants Canada to become bloc's first associate member&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-16T17:54:35.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 407,
-    "articlesLast24h": 164,
-    "afterDedup": 155,
+    "totalArticlesScanned": 406,
+    "articlesLast24h": 159,
+    "afterDedup": 148,
     "feedsQueried": 19
   }
 }
