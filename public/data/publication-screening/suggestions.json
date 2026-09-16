@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T09:31:06.910Z",
+  "generatedAt": "2026-09-16T09:23:52.298Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,45 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/aea7b7",
+      "title": "Assessing irrigation-driven carbon emissions across the Murray–Darling Basin: first insight from publicly available datasets",
+      "journal": "Environmental Research Letters",
+      "authors": "arezoo boroomandnia, Reihaneh Bandari, Behzad Rismanchi, Andrew Merchant",
+      "published": "2026-09-15",
+      "url": "https://doi.org/10.1088/1748-9326/aea7b7",
+      "abstract": "Agricultural irrigation is the largest consumptive use of water in Australia. It heavily relies on energy-intensive pumping systems, linking water use to greenhouse gas emissions within the energy–water–food nexus. This study provides the first basin-scale estimate of irrigation energy use and associated emissions across the Murray–Darling Basin (MDB). It integrates publicly accessible datasets on agricultural energy, water use, and irrigation activity within a transparent and replicable top-down framework. Three scenarios were developed to estimate irrigation energy demand and associated emissions while reflecting uncertainty in irrigation’s share of agricultural energy use. Results indicate that irrigation-related emissions range from 4.5 to 9.01 Mt CO₂-e annually, corresponding to 0.53–1.06 t CO₂-e per ML of water applied. Emissions are dominated by grid electricity, although diesel use remains important in regions with limited grid access. Spatial analysis of proximity to electricity infrastructure enables a more refined allocation of energy sources. The results highlight spatial disparities in decarbonisation potential across the Basin. The findings demonstrate that electricity decarbonisation offers the greatest mitigation opportunity, complemented by electrification and decentralised renewable energy systems in off-grid areas. The framework provides the first transparent, and transferable basin-scale benchmark for irrigation-related emissions. It establishes a foundati",
+      "suggestedOn": "2026-09-16",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 4,
+          "matched": [
+            "greenhouse gas emissions",
+            "decarbonisation"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1088/1748-9326/aea7bb",
+      "title": "Future Energy Transition Mineral Demands and Barriers for South and Southeast Asia",
+      "journal": "Environmental Research Letters",
+      "authors": "Seaver Wang, Peter Cook, Ryan Alimento et al.",
+      "published": "2026-09-15",
+      "url": "https://doi.org/10.1088/1748-9326/aea7bb",
+      "abstract": "While the global geological availability of critical minerals is likely sufficient to support energy transition efforts, geographically imbalanced energy transition mineral production and consumption raise concerns around supply chain disruption and import dependence. While regions like Europe and the United States are actively studying such vulnerabilities, they remain relatively underexplored for emerging economies. This study uses a new, customizable mineral demand model for a wide set of commodities to estimate future energy transition mineral demand in the power generation and transport sectors for India, Bangladesh, and countries in ASEAN. Results indicate that ASEAN and South Asia may become significant consumers by 2050 on par with developed economies like the United States. In many cases, current mining in South and Southeast Asia falls short of projected regional demands. Both regions lack requisite graphite and lithium production. South Asia faces additional nickel, rare earths, copper, polysilicon, and cobalt deficits. Our results identify mineral supply-demand imbalances that may present future tradeoff risks between import dependence, downstream clean technology manufacturing ambitions, and public policy efforts to secure energy transition mineral supplies. Such results pose important implications particularly for countries like India, Vietnam, and Indonesia seeking to develop domestic solar, battery, and electric vehicle industries. This analysis highlights the",
+      "suggestedOn": "2026-09-16",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6.5,
+          "matched": [
+            "energy transition"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1038/s41893-026-01931-7",
       "title": "Emissions and system-level decarbonization pathways for global petrochemical production",
