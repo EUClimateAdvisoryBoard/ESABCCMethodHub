@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T09:23:52.298Z",
+  "generatedAt": "2026-09-17T09:33:42.743Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,26 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/aea872",
+      "title": "Persistence of inequality in regional warming patterns under net-zero and overshoot pathways",
+      "journal": "Environmental Research Letters",
+      "authors": "Andrew King, Spencer Clark, Aditya Sengupta et al.",
+      "published": "2026-09-16",
+      "url": "https://doi.org/10.1088/1748-9326/aea872",
+      "abstract": "As the world warms due to humanity’s continuing greenhouse gas emissions, almost every location across the planet is also warming significantly. Under net-zero or net-negative emissions pathways it is expected that global warming will greatly slow and global cooling may begin. However, relatively little is known about the pattern of post net-zero local temperature changes under these pathways compared with the warming pattern of today. Here, we explore the robustness of local temperature changes post net-zero using multiple modelling frameworks, and we investigate associated exposure and vulnerability. We find that a distinct pattern of Northern Hemisphere cooling and Southern Hemisphere warming can be found across temporal scales and model frameworks when examining local changes relative to global mean changes. By examining the signal-to-noise ratio of temperature changes we find that post net-zero warming or cooling is most detectable in tropical areas, not because the temperature changes there are largest but because interannual variability is small. The inequality seen in the pattern of present-day warming, where warming relative to background variability is higher in poorer tropical areas than in present-day wealthier high-latitude locations, will not reverse under net-zero emissions pathways and may take many decades to begin to reverse under net-negative emissions. Our study provides more detail on expected local temperature changes in a post net-zero world and highlig",
+      "suggestedOn": "2026-09-17",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 7,
+          "matched": [
+            "net-zero",
+            "greenhouse gas emissions"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aea7b7",
       "title": "Assessing irrigation-driven carbon emissions across the Murray–Darling Basin: first insight from publicly available datasets",
