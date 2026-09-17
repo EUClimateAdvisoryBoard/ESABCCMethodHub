@@ -1,6 +1,6 @@
 {
   "date": "2026-09-17",
-  "generatedAt": "2026-09-17T01:07:36.884Z",
+  "generatedAt": "2026-09-17T09:55:04.468Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 17 September 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -42,12 +42,20 @@
           "score": 13
         },
         {
-          "title": "How the Houthis are also putting Egypt under pressure",
-          "link": "https://www.dw.com/en/how-the-houthis-are-also-putting-egypt-under-pressure/a-79291103?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "India news: New Delhi vows to ensure &#039;energy security&#039; amid Trump&#039;s 100% tariffs threat",
+          "link": "https://www.dw.com/en/india-news-new-delhi-vows-to-ensure-energy-security-amid-trump-s-100-tariffs-threat/live-79300604?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The Houthis, a Yemeni rebel group, are expanding their control of maritime corridors in the Red Sea area. Their target is their avowed enemy Saudi Arabia. But the military moves also endanger Egypt.",
-          "published": "2026-09-16T13:56:00.000Z",
-          "score": 4
+          "description": "India defended its right to buy oil from diverse sources after the US passed a new sanctions bill. Meanwhile, the Foreign Ministry has denied claims that leaders fell ill after the BRICS summit. Follow for the latest.",
+          "published": "2026-09-17T08:04:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "US, China security experts propose nuclear-style safeguards for AI risks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNd01DQXNsMmI1M3p2T1pRSjlGNEdjZHJHVGRPSE5lS2lNXzZYWi0wTmxCNUthU0ZmX1NQUklKeHZOWkZyZDVWMjNlTlBlOGl6NVFEclVyNFdJbmppMG13VkdWOXlfUXR3WnM1d3M0Y19xYWhuTTNxMGhIbGo2ek1OVU0xbXZuWnJOT29SazNfLXF4VF9IRC1ZVThUeXBWUTUyYzluVFBUa3NzQVhSMGExeEdxb1dKdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNd01DQXNsMmI1M3p2T1pRSjlGNEdjZHJHVGRPSE5lS2lNXzZYWi0wTmxCNUthU0ZmX1NQUklKeHZOWkZyZDVWMjNlTlBlOGl6NVFEclVyNFdJbmppMG13VkdWOXlfUXR3WnM1d3M0Y19xYWhuTTNxMGhIbGo2ek1OVU0xbXZuWnJOT29SazNfLXF4VF9IRC1ZVThUeXBWUTUyYzluVFBUa3NzQVhSMGExeEdxb1dKdw?oc=5\" target=\"_blank\"&gt;US, China security experts propose nuclear-style safeguards for AI risks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-17T04:43:00.000Z",
+          "score": 7
         },
         {
           "title": "Wildlife trust wants marina silt disposed offshore",
@@ -55,14 +63,6 @@
           "source": "BBC Science & Environment",
           "description": "Brighton Marina wants to restart dredging next year but still needs a site to dispose of the silt.",
           "published": "2026-09-16T13:27:53.000Z",
-          "score": 2
-        },
-        {
-          "title": "India news: US bill sanctioning Russia could hit India with tariffs of up to 100%",
-          "link": "https://www.dw.com/en/india-news-us-bill-sanctioning-russia-could-hit-india-with-tariffs-of-up-to-100/live-79285577?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A new bill could give President Trump the power to impose tariffs of up to 100% on countries buying Russian oil and gas, potentially affecting major importer India.",
-          "published": "2026-09-16T11:21:00.000Z",
           "score": 2
         }
       ]
@@ -96,19 +96,19 @@
           "score": 13
         },
         {
-          "title": "Airlines should pay for CO2 removal if Heathrow expands, say climate advisers",
-          "link": "https://www.theguardian.com/environment/2026/sep/16/heathrow-airport-should-pay-co2-removal-expand-climate-advisers",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Climate Change Committee says government cannot expand airport without requiring aviation industry to clean up its emissions &lt;/p&gt;&lt;p&gt;Heathrow airport should be allowed to expand only if airlines pay for the removal of carbon dioxide from the atmosphere, the government’s climate advisers have said.&lt;/p&gt;&lt;p&gt;Building a &lt;a href=\"https://www.theguardian.com/environment/2026/jul/27/heathrow-expansion-would-take-jobs-from-other-uk-regions-third-runway\"&gt;third runway a",
-          "published": "2026-09-16T04:00:12.000Z",
-          "score": 11
-        },
-        {
-          "title": "Climate crisis likely behind devastating Nepal-Tibet floods that killed more than 1,300, first study finds",
+          "title": "Climate crisis probably weakened glacier that caused devastating Nepal-Tibet floods, first study finds",
           "link": "https://www.theguardian.com/science/2026/sep/17/climate-crisis-likely-behind-deadly-nepal-tibet-floods",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Scientists say global heating was a destabilising factor in collapse of 200,000 sq metre glacier in August&lt;/p&gt;&lt;p&gt;Climate breakdown probably weakened the glacier that collapsed causing catastrophic floods and killing hundreds of people in Nepal and Tibet last month, the first scientific study of the disaster has found.&lt;/p&gt;&lt;p&gt;Researchers identified unusually warm conditions before &lt;a href=\"https://www.theguardian.com/world/2026/aug/27/what-caused-the-catastrophi",
           "published": "2026-09-16T23:01:32.000Z",
+          "score": 7
+        },
+        {
+          "title": "‘We’re near a breaking point:’ firefighters say US government is failing them amid intense wildfire season",
+          "link": "https://www.theguardian.com/us-news/2026/sep/16/wildfires-government-firefighter-shortage",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;US grapples with federal firefighter shortage as crews say they’re spread thin and lack resources during unrelenting year of fire&lt;/p&gt;&lt;p&gt;Firefighters battling enormous wildfires in the United States say the federal government is failing them at a time when supercharged blazes have made their jobs exponentially more dangerous.&lt;/p&gt;&lt;p&gt;While the US continues to grapple with a critical shortage of federal firefighters – with especially large gaps in essential managemen",
+          "published": "2026-09-16T10:00:16.000Z",
           "score": 7
         }
       ]
@@ -124,6 +124,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNNXVYTG8yd0VIaTdkSDVidXBBQkwzaFBBU1Y3QTdCOXhJSkw2YXM1YThjNVZOa1hvXzd4amdSOEhtN25Wd1ltMFlqUy1oSjk3MkJMeWhVTS1NZmk3dFBTQ0ZZdmdxZ1YzTmdzYWtwendvVUhRZ0pNRTZoQlQ2aTN0T1FuaHdQOHJtUm16Qkx0akNEOFF4NTlMcWNvR1lUWHJ0Tndla2gwVlE1NWoxYWNiTg?oc=5\" target=\"_blank\"&gt;FIFA says review of shelved investment plan to be presented to Council&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-16T11:29:43.000Z",
           "score": 8
+        },
+        {
+          "title": "Japan, US discussing chip factory construction as part of $550 billion investment talks, Nikkei reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPQnkxalpqc3lHUW1ocW1MZ3d0UGdjOS14b3hqRmVUbV9ZMWZnb1I1eFIwemJEcWZsWlZkSldQY2tmZFdEQThiR3UySmZnSW15cVMwcV9FM0JaQ2hORnFwdlAyWWhnQ2xBYXAtZ0wxOUVkaWVkcTJPRG84Rkk4RDFGN0tucUcwT19lZlhSLWJlYkZ5ZUk2ODdUQlUzM0VmMmNpNldTRnNGVGxFdWlESS1xVFVxVHROanFrMWRUZ3NvYzlpX2dwaUFBSGJHUl9RQjA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxPQnkxalpqc3lHUW1ocW1MZ3d0UGdjOS14b3hqRmVUbV9ZMWZnb1I1eFIwemJEcWZsWlZkSldQY2tmZFdEQThiR3UySmZnSW15cVMwcV9FM0JaQ2hORnFwdlAyWWhnQ2xBYXAtZ0wxOUVkaWVkcTJPRG84Rkk4RDFGN0tucUcwT19lZlhSLWJlYkZ5ZUk2ODdUQlUzM0VmMmNpNldTRnNGVGxFdWlESS1xVFVxVHROanFrMWRUZ3NvYzlpX2dwaUFBSGJHUl9RQjA?oc=5\" target=\"_blank\"&gt;Japan, US discussing chip factory construction as part of $550 billion investment talks, Nikkei reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font ",
+          "published": "2026-09-17T06:23:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -132,27 +140,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "EU chief backs plan for Canada to become 'associate member'",
-          "link": "https://www.bbc.co.uk/news/articles/cjwyzrr9d3dko?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Trump, who has frequently clashed with Canada's PM, threatens to cut trade with the European Union in response to the proposal.",
-          "published": "2026-09-17T00:32:05.000Z",
-          "score": 12
-        },
-        {
-          "title": "Carney visits Europe to seek closer ties amid worsening trade war with Trump - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONzF1T2dwQjhVTWdieGs3bkI0NEY2MjJrdUIxSE5Xc0k4SkJJTXh3MFFLcW13a2hVSEpfY3hfN25XTHFPYUMxQzJ4S2ZfRmdIc3NsNWxqOTR3WFo2LU1ZdHFFVUh6c0JyTFZ5RnhPNTlaODZrUzNZdVV5Qm5mTHdBOF9XZW44R1F1VFNpWkcyaVJGdFprc3ZrbjJxbkxqYldDaHAzOGJYNjJ0dDdxLWllRFBaTmI1QQ?oc=5",
+          "title": "EU seeks China curbs on hybrid car exports to avert trade row, FT reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNRWJJNjFfalQxUWJJTEI1UjBCNDhyUFpvOXpqTUNHeW9ucXFJemVLajBadkQ5aF9tWnpjdWFoZ282dXM2b3pTbHpmQUtVVzNteTZXUjNEN1ZqQUJnWEFuUkQtMXpXYS1OX1oySWVNcXJVaE1uc2ViaE5lTDlFbUd5UEFNVGVQN3BlVlUzVWo0VFU2cjlrdjNfR2o1Y2FEdVpXamF3ZEgtcWNHU25iU2E4Y3cxaVc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxONzF1T2dwQjhVTWdieGs3bkI0NEY2MjJrdUIxSE5Xc0k4SkJJTXh3MFFLcW13a2hVSEpfY3hfN25XTHFPYUMxQzJ4S2ZfRmdIc3NsNWxqOTR3WFo2LU1ZdHFFVUh6c0JyTFZ5RnhPNTlaODZrUzNZdVV5Qm5mTHdBOF9XZW44R1F1VFNpWkcyaVJGdFprc3ZrbjJxbkxqYldDaHAzOGJYNjJ0dDdxLWllRFBaTmI1QQ?oc=5\" target=\"_blank\"&gt;Carney visits Europe to seek closer ties amid worsening trade war with Trump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-16T05:03:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU will use all tools to cut China trade deficit, von der Leyen says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVldpSXhsdm5HUlJwTEZ5ZDc2Ykwwak9rUG1jaW9XTk9XSmlwb0p4VGlvUEw1ZDEzWVRvTm9zRENEb3BrdkF3YkU2LWQtbzFzYUhGUkR1cXhmcmJoX0FwSHpOcXpFZHRTeW9EZm5uVUhVelc0WnRJRE1Tb3plbUZaaVNnWTEwODdIZzBHWTdIZXMtd2ZHUzk2TUtxV3ZqRmpZRW9QMGszUk1NU01hVXVyVldB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQVldpSXhsdm5HUlJwTEZ5ZDc2Ykwwak9rUG1jaW9XTk9XSmlwb0p4VGlvUEw1ZDEzWVRvTm9zRENEb3BrdkF3YkU2LWQtbzFzYUhGUkR1cXhmcmJoX0FwSHpOcXpFZHRTeW9EZm5uVUhVelc0WnRJRE1Tb3plbUZaaVNnWTEwODdIZzBHWTdIZXMtd2ZHUzk2TUtxV3ZqRmpZRW9QMGszUk1NU01hVXVyVldB?oc=5\" target=\"_blank\"&gt;EU will use all tools to cut China trade deficit, von der Leyen says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-16T07:35:28.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNRWJJNjFfalQxUWJJTEI1UjBCNDhyUFpvOXpqTUNHeW9ucXFJemVLajBadkQ5aF9tWnpjdWFoZ282dXM2b3pTbHpmQUtVVzNteTZXUjNEN1ZqQUJnWEFuUkQtMXpXYS1OX1oySWVNcXJVaE1uc2ViaE5lTDlFbUd5UEFNVGVQN3BlVlUzVWo0VFU2cjlrdjNfR2o1Y2FEdVpXamF3ZEgtcWNHU25iU2E4Y3cxaVc?oc=5\" target=\"_blank\"&gt;EU seeks China curbs on hybrid car exports to avert trade row, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-17T05:15:00.000Z",
           "score": 8
         }
       ]
@@ -162,12 +154,12 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "South Sudan names new election commission chief ahead of December vote - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZHpJQVFScnpQYnJ3TUd1dUZxUDJ5ZTdWbko0aGg5bTh0ZWNJWjZ2UVl0T2xDM2dKWGtxWEp1bGV5UDlOX2pPNy1XU1dWZUI5aHZxRS1UWGNCOUpBbzRjSXFNcHRLVkRqZVpadFVING55Yl9BRVFoQVYyU0JQYVFHcjNHdkw2MXN1WGd2S0prSlQxWDdGaGdUTmhsaDFqRUJ2X1ozeUtidEVFanlPUVdKaUNvUVZEdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPZHpJQVFScnpQYnJ3TUd1dUZxUDJ5ZTdWbko0aGg5bTh0ZWNJWjZ2UVl0T2xDM2dKWGtxWEp1bGV5UDlOX2pPNy1XU1dWZUI5aHZxRS1UWGNCOUpBbzRjSXFNcHRLVkRqZVpadFVING55Yl9BRVFoQVYyU0JQYVFHcjNHdkw2MXN1WGd2S0prSlQxWDdGaGdUTmhsaDFqRUJ2X1ozeUtidEVFanlPUVdKaUNvUVZEdw?oc=5\" target=\"_blank\"&gt;South Sudan names new election commission chief ahead of December vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-16T08:36:09.000Z",
-          "score": 12
+          "title": "EU announces plan to restrict social media access for under-15s",
+          "link": "https://www.bbc.co.uk/news/articles/c3j4jz8vpz1xo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Under the plans, only children over 15 would be able to set up their own social media accounts.",
+          "published": "2026-09-17T09:11:32.000Z",
+          "score": 8
         },
         {
           "title": "Carney's new love-in with EU has everything to do with Trump",
@@ -178,19 +170,19 @@
           "score": 8
         },
         {
-          "title": "Can Canada and the EU build a deeper partnership?",
-          "link": "https://www.dw.com/en/can-canada-and-the-eu-build-a-deeper-partnership/a-79295388?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Trump threatens EU with further sanctions over Canada",
+          "link": "https://www.dw.com/en/trump-threatens-eu-with-further-sanctions-over-canada/a-79299548?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Canadian Prime Minister Carney is known for standing up to US President Donald Trump. Now he wants to forge a &quot;unique alliance&quot; with Europe. But what could such a partnership look like?",
-          "published": "2026-09-16T16:50:00.000Z",
+          "description": "The EU had signaled that Canada is poised to become the bloc&#039;s first associate member. Trump called the idea both &quot;laughable&quot; and a &quot;hostile act.&quot;",
+          "published": "2026-09-17T01:35:00.000Z",
           "score": 8
         },
         {
-          "title": "EU's von der Leyen backs partnership with Canada in 'openly hostile world' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPM3NNS0lVWUJaRWx0UWh5Y0tyWHloOS1zQW55RzdQR1kxN3diNUxrcU1aSkIxYjgzV0hBWUlHak5fdFZ3TUNTYkZlb1NrVlBoRnZ4cC1jOGFaTXhyT2F1dVE5OFRqTEE1ckZGbjBsaWk4a05DclRTVkNaa2UzY1hhLVlDZVpHLWdJU1BsdGtIVmRpVHZRWVMtZ2ktTUdGSHhldnR2SExEVmpfNXA4LXYwaWVSa2RNNmth?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPM3NNS0lVWUJaRWx0UWh5Y0tyWHloOS1zQW55RzdQR1kxN3diNUxrcU1aSkIxYjgzV0hBWUlHak5fdFZ3TUNTYkZlb1NrVlBoRnZ4cC1jOGFaTXhyT2F1dVE5OFRqTEE1ckZGbjBsaWk4a05DclRTVkNaa2UzY1hhLVlDZVpHLWdJU1BsdGtIVmRpVHZRWVMtZ2ktTUdGSHhldnR2SExEVmpfNXA4LXYwaWVSa2RNNmth?oc=5\" target=\"_blank\"&gt;EU's von der Leyen backs partnership with Canada in 'openly hostile world'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-16T04:11:00.000Z",
+          "title": "Can Canada and the EU deepen ties to counter Trump?",
+          "link": "https://www.dw.com/en/can-canada-and-the-eu-deepen-ties-to-counter-trump/a-79295388?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Canadian Prime Minister Mark Carney is known for standing up to US President Donald Trump. Now he wants to forge a &quot;unique alliance&quot; with Europe. But what could such a partnership look like?",
+          "published": "2026-09-16T16:50:00.000Z",
           "score": 8
         },
         {
@@ -198,16 +190,16 @@
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdDFWcUdmR2RJTzZXM3ZMQ2ZqVTI4Z2JBVmRfUnpuZEk4c2lfbU5iY3hCaHdwcTFZd0JEdDBaREdQSWlhUTVaTUFvaUxabjRpTFVjTjJEcl95Y1cwb01hOWZOUGpoWTE1NnJfU1RPZ2Z3SlRZSkg1eGwyaU9kMTd3UkpQNF9KT1lKRm81c0dHNC1YbjFUWjgwdXZpX2FkR0lXQTUxWFVCS1FSY01aZF9jVl9Md3FXUGxhM3NsYmRB?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOdDFWcUdmR2RJTzZXM3ZMQ2ZqVTI4Z2JBVmRfUnpuZEk4c2lfbU5iY3hCaHdwcTFZd0JEdDBaREdQSWlhUTVaTUFvaUxabjRpTFVjTjJEcl95Y1cwb01hOWZOUGpoWTE1NnJfU1RPZ2Z3SlRZSkg1eGwyaU9kMTd3UkpQNF9KT1lKRm81c0dHNC1YbjFUWjgwdXZpX2FkR0lXQTUxWFVCS1FSY01aZF9jVl9Md3FXUGxhM3NsYmRB?oc=5\" target=\"_blank\"&gt;EU's von der Leyen wants Canada to become bloc's first associate member&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-16T17:54:35.000Z",
+          "published": "2026-09-16T23:32:04.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 367,
-    "articlesLast24h": 162,
-    "afterDedup": 156,
+    "totalArticlesScanned": 369,
+    "articlesLast24h": 164,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
