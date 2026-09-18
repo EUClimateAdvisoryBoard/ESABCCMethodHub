@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T09:33:42.743Z",
+  "generatedAt": "2026-09-18T09:05:52.843Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,25 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1038/s41560-026-02126-2",
+      "title": "Spatially informed demand-side policies for green hydrogen diffusion in Europe",
+      "journal": "Nature Energy",
+      "authors": "Christian Rumpelnik, Behnam Zakeri, Kavita Surana",
+      "published": "2026-09-17",
+      "url": "https://doi.org/10.1038/s41560-026-02126-2",
+      "abstract": "Green hydrogen faces an implementation gap: demand substantially lags policy ambitions. Here, combining an installation-level model of green hydrogen demand with an original database of >14,000 potential offtakers in Europe, we show that, conditional on diffusion patterns mirroring natural gas power generation (a historical analogue), demand-side spatial considerations are critical for closing this gap. Spatial spillovers—where local adoption increases adoption likelihood nearby—strongly shape diffusion, and their effect rises (>20-fold) when green hydrogen is not cost competitive. Spillover potential is concentrated in Central–Western Europe and hard-to-abate sectors: over half of the 10% most central installations are located in five German or Belgian industrial regions. Spatially informed policies deliver superior outcomes: targeting the most central offtakers improves policy cost-effectiveness by up to 41% (€0.96 kg −1 ) in a size, sector and cost-controlled setting and 15% (€0.20 kg −1 ) when following the European Hydrogen Bank auction format.",
+      "suggestedOn": "2026-09-18",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 7.5,
+          "matched": [
+            "green hydrogen"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aea872",
       "title": "Persistence of inequality in regional warming patterns under net-zero and overshoot pathways",
