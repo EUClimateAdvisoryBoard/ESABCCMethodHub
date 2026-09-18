@@ -1,6 +1,6 @@
 {
   "date": "2026-09-18",
-  "generatedAt": "2026-09-18T09:28:52.566Z",
+  "generatedAt": "2026-09-18T14:52:31.782Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 18 September 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "Andy Burnham: UK must fully commit to reaching net zero by 2050",
-      "summary": "&lt;p&gt;Exclusive: PM, who is facing pressure over whether to approve North Sea oil and gasfields, makes strongest comments yet on issue&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2026/sep/17/andy-burnham-climate-crisis-funding-peoples-power-projects\"&gt;British people understand the climate crisis threat. Today I’m empowering them to tackle it&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The UK must fully commit to reaching net zero by 2050",
+      "headline": "Drone footage shows severe drought hitting river in Brazil – video",
+      "summary": "&lt;p&gt;Drone footage from 17 September shows the Araguaia River drying up, as severe drought grips parts of Brazil. The country is preparing for potential El Niño impacts in late 2026-27, with the Tocantins-Araguaia basin already experiencing severe drought conditions&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/world/video/2026/sep/18/drone-footage-shows-severe-drought-hitting-brazils-northern-river-video\"&gt;Continue reading...&lt;/a&gt;",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Jefferies-linked fund suing Radiant World says it may only hold $10,000 in cash - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOTDd2VDFjY2lsQUhxYW5UcG9QUmZTWktsN1VZR3NsNERZc1pPSjBncmhSS05oM0QzZEZnN1h3TFBvelJsMUhKcWJ1N0sycXF5MVYwaWNGbzdCQmlBVFVPYlNiZ0Rzb0VrREFQcFdrVFo5UjFNTzRQbUZiMUNPaUdfSHVJMUlCTzdaM2FGaDRiN192MF93ZEtqNWZBVW9la1doOEN5SkNlVFV5MXpaWWNNa291Rk03RXBHNGc?oc=5\" target=\"_blank\"&gt;Jefferies-linked fund suing Radiant World says it may only hold $10,000 in cash&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Germany faces energy tax losses as EV sales rise",
+      "summary": "The rapid shift to electric vehicles in Germany is cutting fuel tax revenue. As EV sales surge, policymakers face growing pressure to find new ways to fund roads and transportation infrastructure.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -42,6 +42,14 @@
           "score": 7
         },
         {
+          "title": "Hormuz traffic below 10-day average, LNG vessels reappear outside strait - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNUxiUzdsYTJRdFoyOG1oY0FHU0daRGxzTzhwQVhiYXg1ZUpEVDM4Rk1td01IZEV2Z0VDVVlTY0hHTElnTnZ1cnNuMWxDWUZCWjNhYmpZVkN1bFAyZ1RtT0xQVko0OExlUm9wc3lFNjZNNnU1eE1DcjlmTkZQY2ZuWkFvUGEwTnNZOVhqdmh1dlRsZk1nd3I3emo1dnRybG51Z09xMTR4a3lPak9WbDFsd25qTVEtSFVVTmpKZkZ0OUlFYXpT?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNNUxiUzdsYTJRdFoyOG1oY0FHU0daRGxzTzhwQVhiYXg1ZUpEVDM4Rk1td01IZEV2Z0VDVVlTY0hHTElnTnZ1cnNuMWxDWUZCWjNhYmpZVkN1bFAyZ1RtT0xQVko0OExlUm9wc3lFNjZNNnU1eE1DcjlmTkZQY2ZuWkFvUGEwTnNZOVhqdmh1dlRsZk1nd3I3emo1dnRybG51Z09xMTR4a3lPak9WbDFsd25qTVEtSFVVTmpKZkZ0OUlFYXpT?oc=5\" target=\"_blank\"&gt;Hormuz traffic below 10-day average, LNG vessels reappear outside strait&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-18T03:27:00.000Z",
+          "score": 7
+        },
+        {
           "title": "BBC Inside Science",
           "link": "https://www.bbc.co.uk/sounds/play/w3ct9785?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -56,6 +64,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPNlRDR3luU3FFOHprTUE0VkdCMmJjZXM4NGQxOWowb1hDLVRWb3Q0VVZiNWt0Y25lb3E5elE5RUZPdVRRVW9hM05udDFtRy05YnZlVWV3dGdkSmpDOElGTWRZSGF1dDJKODQ2RUhYNlNUSGFLXzBLS21GLUZYSnVlWW90X0Rudm9KMkgtb1VnRlcxazU5OWhUelpGN1R4dGdIVng4UW04aGJwY3VwaWM3MTZLTzlmTHJLRzhxcA?oc=5\" target=\"_blank\"&gt;Exxon raises 2050 global emissions forecast, sees slower coal decline&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-17T15:44:52.000Z",
           "score": 2
+        },
+        {
+          "title": "EXCLUSIVE: Putin envoy and far-right AfD prepare talks to get Russian gas back for Germany, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOYW1YaE5VZXdZbXVmcVlIMVBDRVFZNC1BRjlmSmplVHdSbXJuX0c0eTJPTkVVeWZZME1kODNrVkV4Wi1ZVmRDd1lTV1h1WDJoYmFKVzhtZDRrRmpub0hPV3RuZDduM29Bb2o3QkhnRmJBZ0tydnNrZGFTLVppWFlBNk9TdHc1QnNRd2h4X3c0U2hyWnNXa2dJdkVTU0FsZ0doNjVFb0NOZHNaT05KaFc3SVpWRGptcUZXTVE2Nlcxdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOYW1YaE5VZXdZbXVmcVlIMVBDRVFZNC1BRjlmSmplVHdSbXJuX0c0eTJPTkVVeWZZME1kODNrVkV4Wi1ZVmRDd1lTV1h1WDJoYmFKVzhtZDRrRmpub0hPV3RuZDduM29Bb2o3QkhnRmJBZ0tydnNrZGFTLVppWFlBNk9TdHc1QnNRd2h4X3c0U2hyWnNXa2dJdkVTU0FsZ0doNjVFb0NOZHNaT05KaFc3SVpWRGptcUZXTVE2Nlcxdw?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Putin envoy and far-right AfD prepare talks to get Russian gas back for Germany, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
+          "published": "2026-09-18T12:47:43.000Z",
+          "score": 2
         }
       ]
     },
@@ -64,11 +80,19 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Andy Burnham: UK must fully commit to reaching net zero by 2050",
-          "link": "https://www.theguardian.com/environment/2026/sep/17/andy-burnham-uk-must-fully-commit-to-reaching-net-zero-by-2050",
+          "title": "Drone footage shows severe drought hitting river in Brazil – video",
+          "link": "https://www.theguardian.com/world/video/2026/sep/18/drone-footage-shows-severe-drought-hitting-brazils-northern-river-video",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Exclusive: PM, who is facing pressure over whether to approve North Sea oil and gasfields, makes strongest comments yet on issue&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2026/sep/17/andy-burnham-climate-crisis-funding-peoples-power-projects\"&gt;British people understand the climate crisis threat. Today I’m empowering them to tackle it&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The UK must fully commit to reaching net zero by 2050",
-          "published": "2026-09-17T12:00:48.000Z",
+          "description": "&lt;p&gt;Drone footage from 17 September shows the Araguaia River drying up, as severe drought grips parts of Brazil. The country is preparing for potential El Niño impacts in late 2026-27, with the Tocantins-Araguaia basin already experiencing severe drought conditions&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/world/video/2026/sep/18/drone-footage-shows-severe-drought-hitting-brazils-northern-river-video\"&gt;Continue reading...&lt;/a&gt;",
+          "published": "2026-09-18T14:04:13.000Z",
+          "score": 7
+        },
+        {
+          "title": "US wheat farmers navigate uncertainty amid drought and geopolitical chaos",
+          "link": "https://www.theguardian.com/business/2026/sep/18/wheat-farmers-drought-geopolitics",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Some experts worry factors affecting wheat exports could push global food prices even higher than they are now&lt;/p&gt;&lt;p&gt;Wheat prices are at their highest level in three years, which means farmer Merrill Nielsen should be getting more for his crops out of his 2,500-acre (1,010-hectare) &lt;a href=\"https://www.theguardian.com/us-news/kansas\"&gt;Kansas&lt;/a&gt; farm.&lt;/p&gt;&lt;p&gt;Yet even as future prices for bread-type wheat are up 39%, Nielsen is unsure whether increased p",
+          "published": "2026-09-18T11:00:17.000Z",
           "score": 7
         },
         {
@@ -88,19 +112,11 @@
           "score": 7
         },
         {
-          "title": "British people understand the climate crisis threat. Today I’m empowering them to tackle it | Andy Burnham",
-          "link": "https://www.theguardian.com/commentisfree/2026/sep/17/andy-burnham-climate-crisis-funding-peoples-power-projects",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;With nearly £30m of funding, I’m giving communities power over local energy. They know the gravity of global heating, and they want to be part of the solution&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/sep/17/andy-burnham-uk-must-fully-commit-to-reaching-net-zero-by-2050\"&gt;Andy Burnham: UK must fully commit to reaching net zero by 2050&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;On the day I became prime minister, &lt;a href=\"h",
-          "published": "2026-09-17T12:00:48.000Z",
-          "score": 7
-        },
-        {
-          "title": "Nepal to use new flood study to claim millions from UN climate disaster fund",
-          "link": "https://www.bbc.co.uk/news/articles/cmlyrzve5pwzo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Move faster to solve climate challenges, Prince William says",
+          "link": "https://www.bbc.co.uk/news/articles/cwe8e2j5xxy3o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "A new study says climate change was a likely factor in the massive flood on the Nepal-Tibet border last month.",
-          "published": "2026-09-17T10:31:35.000Z",
+          "description": "The Prince of Wales tells the BBC we need to \"accelerate\" in finding solutions to climate challenges as Earthshot nominees are unveiled.",
+          "published": "2026-09-18T10:12:32.000Z",
           "score": 7
         }
       ]
@@ -109,6 +125,22 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
+        {
+          "title": "Germany faces energy tax losses as EV sales rise",
+          "link": "https://www.dw.com/en/germany-faces-energy-tax-losses-as-ev-sales-rise/a-79320422?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The rapid shift to electric vehicles in Germany is cutting fuel tax revenue. As EV sales surge, policymakers face growing pressure to find new ways to fund roads and transportation infrastructure.",
+          "published": "2026-09-18T10:55:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Women&#039;s football in Germany booming, but still much to do",
+          "link": "https://www.dw.com/en/women-s-football-in-germany-booming-but-still-much-to-do/a-79291687?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Women&#039;s football is growing rapidly, particularly in Germany. Nevertheless, equal pay and investment remain major talking points.",
+          "published": "2026-09-18T10:35:00.000Z",
+          "score": 2
+        },
         {
           "title": "Jefferies-linked fund suing Radiant World says it may only hold $10,000 in cash - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOTDd2VDFjY2lsQUhxYW5UcG9QUmZTWktsN1VZR3NsNERZc1pPSjBncmhSS05oM0QzZEZnN1h3TFBvelJsMUhKcWJ1N0sycXF5MVYwaWNGbzdCQmlBVFVPYlNiZ0Rzb0VrREFQcFdrVFo5UjFNTzRQbUZiMUNPaUdfSHVJMUlCTzdaM2FGaDRiN192MF93ZEtqNWZBVW9la1doOEN5SkNlVFV5MXpaWWNNa291Rk03RXBHNGc?oc=5",
@@ -140,19 +172,19 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
+          "title": "Russian hybrid attacks against Europe intensifying, says Macron",
+          "link": "https://www.bbc.co.uk/news/articles/cm2dw1w9d3yjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The French president says he has tasked the government with protecting critical infrastructure and defence industry sites.",
+          "published": "2026-09-18T14:42:01.000Z",
+          "score": 8
+        },
+        {
           "title": "Is Canada about to join the EU?",
           "link": "https://www.bbc.co.uk/news/videos/c6wyz8kk2nepo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Ties between Canada and the European Union have been getting closer as trade dispute with the US continue.",
           "published": "2026-09-17T16:18:35.000Z",
-          "score": 8
-        },
-        {
-          "title": "Russia votes for new parliament in controlled elections",
-          "link": "https://www.dw.com/en/russia-votes-for-new-parliament-in-controlled-elections/a-79318392?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Russia is holding elections for the State Duma for the first time since Moscow sent troops into Ukraine in 2022. The party of President Vladimir Putin is expected to win the highly controlled affair.",
-          "published": "2026-09-18T06:39:00.000Z",
           "score": 8
         },
         {
@@ -168,7 +200,15 @@
           "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUEpxdW9QQURmU29jSHEwTk9JMzk1NFU3dVVQOWdNZF9PQlJldE83S1FyUmxIWlJlcXRLeV9nc2p3TGZCX29sUFdSSGhFeEFlTWNxZmdJMXdENnZGWHZ3RmxSYUpzRVJMeU5KbjJBOVJiSTBVRHFzMWpiQ1ZXOENBVkJyY2x4V0gtc2c2RVFtbGdtNzZBOGJ4UnZRUm1ZNXU1VDB6WUt6aUw1MmxlbHVmcVp3MXZSZw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPUEpxdW9QQURmU29jSHEwTk9JMzk1NFU3dVVQOWdNZF9PQlJldE83S1FyUmxIWlJlcXRLeV9nc2p3TGZCX29sUFdSSGhFeEFlTWNxZmdJMXdENnZGWHZ3RmxSYUpzRVJMeU5KbjJBOVJiSTBVRHFzMWpiQ1ZXOENBVkJyY2x4V0gtc2c2RVFtbGdtNzZBOGJ4UnZRUm1ZNXU1VDB6WUt6aUw1MmxlbHVmcVp3MXZSZw?oc=5\" target=\"_blank\"&gt;EU to disburse €3.3 billion to Ukraine to procure missiles and drones, von der Leyen says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-17T19:48:23.000Z",
+          "published": "2026-09-17T19:45:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ukraine receives €3.3 billion under EU loan, PM says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZVFXM2ljb2Q4Tzd1aEl4dFg0ZWpBV0MybERrcl9pOS03eEpsZFg4bUg3a2dGdmw4V0dNTVZJTDJYN1dkTEtXeVpXazI2SEhxLWlnREw5YW8zSXg5Q1NBS2cwV3hNQmtkY0VvLUFvZlZBRWdqelgzN0doQkluMjRUeUVibTFyRkV6TUs2TjRLWk9sQnNSSUE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxPZVFXM2ljb2Q4Tzd1aEl4dFg0ZWpBV0MybERrcl9pOS03eEpsZFg4bUg3a2dGdmw4V0dNTVZJTDJYN1dkTEtXeVpXazI2SEhxLWlnREw5YW8zSXg5Q1NBS2cwV3hNQmtkY0VvLUFvZlZBRWdqelgzN0doQkluMjRUeUVibTFyRkV6TUs2TjRLWk9sQnNSSUE?oc=5\" target=\"_blank\"&gt;Ukraine receives €3.3 billion under EU loan, PM says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-18T08:40:05.000Z",
           "score": 8
         }
       ]
@@ -178,22 +218,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Canada welcomes EU proposal to become 'associate member'",
-          "link": "https://www.bbc.co.uk/news/articles/cwly7vkke4jxo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Canadian Prime Minister Mark Carney said a Canada-EU alliance would create a \"beacon for other democracies\".",
-          "published": "2026-09-17T12:27:18.000Z",
-          "score": 12
-        },
-        {
-          "title": "EU announces plan to restrict social media access for under-15s",
-          "link": "https://www.bbc.co.uk/news/articles/c3j4jz8vpz1xo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Under the plans, only children over 15 would be able to set up their own social media accounts.",
-          "published": "2026-09-17T10:00:14.000Z",
-          "score": 8
-        },
-        {
           "title": "Canadians dream of Europe as Carney floats longshot plan for living and working in EU",
           "link": "https://www.bbc.co.uk/news/articles/cx980qj57r89o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -202,11 +226,11 @@
           "score": 8
         },
         {
-          "title": "Democratic senator calls for US diplomats to help guide Europe troop review - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZVhaa3VLZTZUeldHOWJON3RjR05DLUtyOF9taUw3eG9IV2V3Q0hnZm5RbW95MEg5ZnhtcEtycmpQZ2JPNG1IOUFHNnp3dURXM0NsdktpdnpTMlM2aTI0RGlNVW5NemVLRVpMT3dWWm16Ul9ZN0xZb2hLWmZSWFA5TG82TGpuUnN0X3RMNGNKM0Z2MUw2Nk9qV0tJcnVHV1NaUXRHRThiY29Bd0lfRDdjV1Z5RQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOZVhaa3VLZTZUeldHOWJON3RjR05DLUtyOF9taUw3eG9IV2V3Q0hnZm5RbW95MEg5ZnhtcEtycmpQZ2JPNG1IOUFHNnp3dURXM0NsdktpdnpTMlM2aTI0RGlNVW5NemVLRVpMT3dWWm16Ul9ZN0xZb2hLWmZSWFA5TG82TGpuUnN0X3RMNGNKM0Z2MUw2Nk9qV0tJcnVHV1NaUXRHRThiY29Bd0lfRDdjV1Z5RQ?oc=5\" target=\"_blank\"&gt;Democratic senator calls for US diplomats to help guide Europe troop review&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-17T14:50:47.000Z",
+          "title": "Canada and EU association: Are there other arrangements?",
+          "link": "https://www.dw.com/en/canada-and-eu-association-are-there-other-arrangements/a-79328797?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "While Canada may be some distance from Europe geographically, closer political ties are in the cards. With talk of an associate membership, DW takes a look at other arrangements the EU has with particular countries.",
+          "published": "2026-09-18T14:26:00.000Z",
           "score": 8
         },
         {
@@ -216,14 +240,30 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxQRTVvWFhsNXV6V19jalZ3WkNuSndKa1RSS2xrVVJZM3gwa0JuLVEtNFk2Vk9MbTR0Uk90YnR0ZGFFR2lrMldvUTNuMk5fcnJ1THlnY2RIQTZnVFRodVhOSmloMnBGWERUVDJ2djU3enpFOTBUZ1EtWUxPSFo2Mk03cnFRR0Y0M2hvMGV6T0UwY0ROYUNiWW1NbHpMek9teUot?oc=5\" target=\"_blank\"&gt;EU Commission proposes under-13s social media ban&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-17T15:39:46.000Z",
           "score": 8
+        },
+        {
+          "title": "New Zealand says it has not held talks with EU about becoming associate member - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOOUFIZmhEenJYYllacUhESXZBdzZWSC1PNGtXcGtOQXVPa1hWZ0VnMVRyNWJoUVZvODZKOVJIYm9HbENtanV3MV9PcU42T0JZSGs1WFhEb0Q0XzVfVjdETGdKN2RNRS1GNlEyeHRzTGdFV3FrdWZ4WmZDVWtwdWwzMFB3ZFFCMkhkd2tYVEU1MGYwMGJiY1RLUlpPVHg0blpiTmt2aTFfTHdJOS1QYzA2V3h2dlBpWmUtNTBnUVdSYjhONkk0Z0ZJNw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOOUFIZmhEenJYYllacUhESXZBdzZWSC1PNGtXcGtOQXVPa1hWZ0VnMVRyNWJoUVZvODZKOVJIYm9HbENtanV3MV9PcU42T0JZSGs1WFhEb0Q0XzVfVjdETGdKN2RNRS1GNlEyeHRzTGdFV3FrdWZ4WmZDVWtwdWwzMFB3ZFFCMkhkd2tYVEU1MGYwMGJiY1RLUlpPVHg0blpiTmt2aTFfTHdJOS1QYzA2V3h2dlBpWmUtNTBnUVdSYjhONkk0Z0ZJNw?oc=5\" target=\"_blank\"&gt;New Zealand says it has not held talks with EU about becoming associate member&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
+          "published": "2026-09-18T01:15:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Canada, EU face limits to relationship after symbolic EU overture to Carney - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPQXhTVllCdG5wQmpkSXlmUHY2YUQza04yNjRkcWFOMEVIaXNxVVY3U1hzd2FuZGZPaGp6NHg4dW9HZDc4NElmbERraUFCMVpKdHFqdHZ5Wl9yVjdUSy1KVDNuY3NSUVZTemVsUW1DUEJKOFhTdWV0cEVIR3c4MkcwUGZlNlNzUUFtSVpEbFNmMzduTTNLSTJ2aUdrZW5oS2dsWTRMajA4OFZoX3luQWRR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPQXhTVllCdG5wQmpkSXlmUHY2YUQza04yNjRkcWFOMEVIaXNxVVY3U1hzd2FuZGZPaGp6NHg4dW9HZDc4NElmbERraUFCMVpKdHFqdHZ5Wl9yVjdUSy1KVDNuY3NSUVZTemVsUW1DUEJKOFhTdWV0cEVIR3c4MkcwUGZlNlNzUUFtSVpEbFNmMzduTTNLSTJ2aUdrZW5oS2dsWTRMajA4OFZoX3luQWRR?oc=5\" target=\"_blank\"&gt;Canada, EU face limits to relationship after symbolic EU overture to Carney&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-18T05:01:00.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 364,
-    "articlesLast24h": 165,
-    "afterDedup": 153,
+    "totalArticlesScanned": 366,
+    "articlesLast24h": 164,
+    "afterDedup": 154,
     "feedsQueried": 19
   }
 }
