@@ -1,12 +1,12 @@
 {
   "date": "2026-09-19",
-  "generatedAt": "2026-09-19T09:14:09.398Z",
+  "generatedAt": "2026-09-19T14:13:17.152Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 19 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Red Cross says no access to Ukrainian POWs in two years - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxOUHVITGlTVEhPOS1kM2pZWU9sUUNTdThUVm0wMXVhWXRzekg1ZlZHb0VDeldoYXZzQ2VYOFphTGJodWxGaG02Qkp5aFUxcUZDMTVFQWpQamRtbDVoWktuMHdreTZHTVRCQjhoNUpHcmYyTElrR1lTUmt6d2ZWY0VwelQwSzAySllQVS1vUEhaaXhOZUY4Q3c?oc=5\" target=\"_blank\"&gt;Red Cross says no access to Ukrainian POWs in two years&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Brazil’s wind farms have been a huge success. So why isn’t everybody reaping the benefits?",
+      "summary": "&lt;p&gt;While the country’s ambition is to be the ��Saudi Arabia of green energy’, communities in the north-east are bearing the cost in diminished health and livelihoods&lt;/p&gt;&lt;p&gt;Beneath the power lines cutting across Antonio de Souza’s property in Serra do Mel, in north-east &lt;a href=\"https://www.theguardian.com/world/brazil\"&gt;Brazil&lt;/a&gt;’s Rio Grande do Norte state, rows of cashew trees once stood – until the clean energy company ordered them to be cut down.&lt;/p&gt;&lt;p&",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,12 +15,6 @@
       "summary": "&lt;p&gt;Amid record-shattering heatwaves and popular demand for climate action, why are politicians often timid or in denial?&lt;/p&gt;&lt;p&gt;It was, according to the European Commission president, Ursula von der Leyen, the &lt;a href=\"https://www.youtube.com/watch?v=4EwEJX-kMaU\"&gt;“summer of truth”&lt;/a&gt;. Climate chaos ripped through Europe and the northern hemisphere, sending heat records tumbling, scorching crops in the fields, burning forests, emptying rivers and reservoirs, warping ",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Germany faces energy tax losses as EV sales rise",
-      "summary": "The rapid shift to electric vehicles in Germany is cutting fuel tax revenue. As EV sales surge, policymakers face growing pressure to find new ways to fund roads and transportation infrastructure.",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,35 +28,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Red Cross says no access to Ukrainian POWs in two years - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUHVITGlTVEhPOS1kM2pZWU9sUUNTdThUVm0wMXVhWXRzekg1ZlZHb0VDeldoYXZzQ2VYOFphTGJodWxGaG02Qkp5aFUxcUZDMTVFQWpQamRtbDVoWktuMHdreTZHTVRCQjhoNUpHcmYyTElrR1lTUmt6d2ZWY0VwelQwSzAySllQVS1vUEhaaXhOZUY4Q3c?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxOUHVITGlTVEhPOS1kM2pZWU9sUUNTdThUVm0wMXVhWXRzekg1ZlZHb0VDeldoYXZzQ2VYOFphTGJodWxGaG02Qkp5aFUxcUZDMTVFQWpQamRtbDVoWktuMHdreTZHTVRCQjhoNUpHcmYyTElrR1lTUmt6d2ZWY0VwelQwSzAySllQVS1vUEhaaXhOZUY4Q3c?oc=5\" target=\"_blank\"&gt;Red Cross says no access to Ukrainian POWs in two years&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-18T15:29:10.000Z",
+          "title": "Brazil’s wind farms have been a huge success. So why isn’t everybody reaping the benefits?",
+          "link": "https://www.theguardian.com/global-development/2026/sep/19/brazils-wind-farms-have-been-a-huge-success-so-why-isnt-everybody-reaping-the-benefits",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;While the country’s ambition is to be the ��Saudi Arabia of green energy’, communities in the north-east are bearing the cost in diminished health and livelihoods&lt;/p&gt;&lt;p&gt;Beneath the power lines cutting across Antonio de Souza’s property in Serra do Mel, in north-east &lt;a href=\"https://www.theguardian.com/world/brazil\"&gt;Brazil&lt;/a&gt;’s Rio Grande do Norte state, rows of cashew trees once stood – until the clean energy company ordered them to be cut down.&lt;/p&gt;&lt;p&",
+          "published": "2026-09-19T12:00:46.000Z",
           "score": 7
         },
         {
-          "title": "Italy's minister calls for more ships to protect Red Sea navigation - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQd1ZpMF94eC1HRWJjbjQxRlhMcjdnQ3RTdjk4OERmeFdLdms5R1FCZzdybkU0Zl9NbzktTVk3aVUzcDdHSDBKSlJLUjU4TlVkX1lDaER5ODF6VV9LNFdmT3NSQWhCYXB4SnhTNU9DSGF0aG84WENEVlM0MFdDWXkzdDJ2VVRLZHMzZTUtODdrZ09zUE1uNzlVTWhUTUZtallJajhncmdUQjFhckxOVWdQZ0xyRQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQd1ZpMF94eC1HRWJjbjQxRlhMcjdnQ3RTdjk4OERmeFdLdms5R1FCZzdybkU0Zl9NbzktTVk3aVUzcDdHSDBKSlJLUjU4TlVkX1lDaER5ODF6VV9LNFdmT3NSQWhCYXB4SnhTNU9DSGF0aG84WENEVlM0MFdDWXkzdDJ2VVRLZHMzZTUtODdrZ09zUE1uNzlVTWhUTUZtallJajhncmdUQjFhckxOVWdQZ0xyRQ?oc=5\" target=\"_blank\"&gt;Italy's minister calls for more ships to protect Red Sea navigation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-18T12:09:53.000Z",
-          "score": 7
-        },
-        {
-          "title": "Drone hit cooling tower on Thursday at Russian Kursk nuclear plant, IAEA says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQbzBpLWw1RUNBVmo1R0ZpSkR0Z0hPNG52dktlU181NDhaMUN5Q0g3dDJ1OU5reDJ4MzFjb2dRVldsVkExUm4xTlQ2UzZfUWVSbkdsTkNzdUlDUWg3cFhZQ0I1ejNwb3ZzbTAtQWVXMjkxZ2xwZGRqckxTYVRneDJ0TlZqeHo4MDNGR24wQUZVZEdFc0FPcml2WllxSGVNdGRKWl9hREIyNHg0RW5FVG0xSGxkSUllSGhZYUxz?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQbzBpLWw1RUNBVmo1R0ZpSkR0Z0hPNG52dktlU181NDhaMUN5Q0g3dDJ1OU5reDJ4MzFjb2dRVldsVkExUm4xTlQ2UzZfUWVSbkdsTkNzdUlDUWg3cFhZQ0I1ejNwb3ZzbTAtQWVXMjkxZ2xwZGRqckxTYVRneDJ0TlZqeHo4MDNGR24wQUZVZEdFc0FPcml2WllxSGVNdGRKWl9hREIyNHg0RW5FVG0xSGxkSUllSGhZYUxz?oc=5\" target=\"_blank\"&gt;Drone hit cooling tower on Thursday at Russian Kursk nuclear plant, IAEA says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-18T19:22:07.000Z",
-          "score": 7
-        },
-        {
-          "title": "North Korea says nuclear status 'irreversible' after UN atomic agency rebuke - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUzlRTjFCMURCNF9XUkcySmFGZzdUdlBNcEs0TmNZb00zbV9oYXp6Z2JZZVM2amh6VVZhU1VBbm5jTENUOG9tMHg1VVQ2NTdHbVdFWjRNcF9DV2RfUE5KU1ZhWmRKR1pPcTIyXzM2N2FUYmJUSlNkX3BRalhIYk5vUmRvNjJpcmlvd3B4aGdaZ0hPb0hUYzAyRG1EWkh6UklLekZiajlFMXdBM3R4QzJvYXRIRU1GdXlkbDFyQ2wydE1RenB5UmJRQTNB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOUzlRTjFCMURCNF9XUkcySmFGZzdUdlBNcEs0TmNZb00zbV9oYXp6Z2JZZVM2amh6VVZhU1VBbm5jTENUOG9tMHg1VVQ2NTdHbVdFWjRNcF9DV2RfUE5KU1ZhWmRKR1pPcTIyXzM2N2FUYmJUSlNkX3BRalhIYk5vUmRvNjJpcmlvd3B4aGdaZ0hPb0hUYzAyRG1EWkh6UklLekZiajlFMXdBM3R4QzJvYXRIRU1GdXlkbDFyQ2wydE1RenB5UmJRQTNB?oc=5\" target=\"_blank\"&gt;North Korea says nuclear status 'irreversible' after UN atomic agency rebuke&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-09-18T23:40:54.000Z",
+          "title": "Rebels, workers, radicals: The making of &#039;Red Berlin&#039;",
+          "link": "https://www.dw.com/en/rebels-workers-radicals-the-making-of-red-berlin/a-79325410?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Bloody May, student sit-ins and the squatter movement: Berlin has long been a hotbed for working-class organizing and radical left-wing politics.",
+          "published": "2026-09-19T09:14:00.000Z",
           "score": 7
         },
         {
@@ -71,6 +49,14 @@
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;A gap looms between the Albanese government’s goal of 82% renewable energy and planned solar and wind projects&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;",
           "published": "2026-09-18T15:00:21.000Z",
+          "score": 4
+        },
+        {
+          "title": "Cuba faces another nationwide blackout amid US fuel blockade",
+          "link": "https://www.dw.com/en/cuba-faces-another-nationwide-blackout-amid-us-fuel-blockade/a-79335396?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Millions were left without electricity as Cuba&#039;s aging power grid collapsed under the weight of fuel shortages, deteriorating infrastructure and US sanctions.",
+          "published": "2026-09-19T03:57:00.000Z",
           "score": 4
         }
       ]
@@ -88,22 +74,6 @@
           "score": 10
         },
         {
-          "title": "Drone footage shows severe drought hitting river in Brazil – video",
-          "link": "https://www.theguardian.com/world/video/2026/sep/18/drone-footage-shows-severe-drought-hitting-brazils-northern-river-video",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Drone footage from 17 September shows the Araguaia River drying up, as severe drought grips parts of Brazil. The country is preparing for potential El Niño impacts in late 2026-27, with the Tocantins-Araguaia basin already experiencing severe drought conditions&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/world/video/2026/sep/18/drone-footage-shows-severe-drought-hitting-brazils-northern-river-video\"&gt;Continue reading...&lt;/a&gt;",
-          "published": "2026-09-18T14:04:13.000Z",
-          "score": 7
-        },
-        {
-          "title": "US wheat farmers navigate uncertainty amid drought and geopolitical chaos",
-          "link": "https://www.theguardian.com/business/2026/sep/18/wheat-farmers-drought-geopolitics",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Some experts worry factors affecting wheat exports could push global food prices even higher than they are now&lt;/p&gt;&lt;p&gt;Wheat prices are at their highest level in three years, which means farmer Merrill Nielsen should be getting more for his crops out of his 2,500-acre (1,010-hectare) &lt;a href=\"https://www.theguardian.com/us-news/kansas\"&gt;Kansas&lt;/a&gt; farm.&lt;/p&gt;&lt;p&gt;Yet even as future prices for bread-type wheat are up 39%, Nielsen is unsure whether increased p",
-          "published": "2026-09-18T11:00:17.000Z",
-          "score": 7
-        },
-        {
           "title": "Australia’s big polluters rely on carbon offsets for climate credibility. But the system looks like a house of cards | Adam Morton",
           "link": "https://www.theguardian.com/global/commentisfree/2026/sep/19/australias-big-polluters-rely-on-carbon-offsets-for-climate-credibility-but-the-system-looks-like-a-house-of-cards",
           "source": "The Guardian - Climate",
@@ -118,46 +88,29 @@
           "description": "&lt;p&gt;After summer’s heatwaves, prepare for winter of storms and heavy rain, with millions of UK homes at risk of flooding &lt;/p&gt;&lt;p&gt;The accelerating climate crisis and this year’s record-breaking El Niño mean that, although the summer’s heatwaves are still fresh in the memory, households in the UK are already &lt;a href=\"https://www.theguardian.com/environment/2026/sep/03/angela-eagle-uk-stock-up-supplies-el-nino-warning\"&gt;being told&lt;/a&gt; to prepare for a potentially destruct",
           "published": "2026-09-19T05:00:40.000Z",
           "score": 7
+        },
+        {
+          "title": "Alleged underworld supporters and unfounded health claims: One Nation rolls out more Victorian election candidates",
+          "link": "https://www.theguardian.com/australia-news/2026/sep/19/one-nation-victorian-election-candidates-michael-piastrino-elita-dabrowski-ben-lucas-ntwnfb",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Party has unveiled a steady stream of contenders for state election, including a former councillor who lost his licence for drink-driving&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;new political email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;",
+          "published": "2026-09-18T15:00:23.000Z",
+          "score": 2
+        },
+        {
+          "title": "When a beloved tree began withering away, locals suspected a killer in their midst",
+          "link": "https://www.bbc.co.uk/news/articles/cw5yl228lvzlo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "A neighbourhood’s fight to save a cherished ginkgo pits them against an unlikely foe.",
+          "published": "2026-09-18T22:03:40.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Germany faces energy tax losses as EV sales rise",
-          "link": "https://www.dw.com/en/germany-faces-energy-tax-losses-as-ev-sales-rise/a-79320422?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The rapid shift to electric vehicles in Germany is cutting fuel tax revenue. As EV sales surge, policymakers face growing pressure to find new ways to fund roads and transportation infrastructure.",
-          "published": "2026-09-18T10:55:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Women&#039;s football in Germany booming, but still much to do",
-          "link": "https://www.dw.com/en/women-s-football-in-germany-booming-but-still-much-to-do/a-79291687?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Women&#039;s football is growing rapidly, particularly in Germany. Nevertheless, equal pay and investment remain major talking points.",
-          "published": "2026-09-18T10:35:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Global equity fund outflows hit nine-month high on inflation fears - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQTkF4ekljMmF4bDRiM09NaTQySFROSi05T1QzemVVcTZad0dQWVBxb05RVFdNUnREbC04dG9IZVczWkEtNm5vdEdHOWhwZ1ZQQ1RSdmJ2SFhMeHlZRDFqd0RkWHNRLVBYaUIyTWhZZVVkQzl4b1BnSndNMExneUdJcDRkU21qX0k?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxQTkF4ekljMmF4bDRiM09NaTQySFROSi05T1QzemVVcTZad0dQWVBxb05RVFdNUnREbC04dG9IZVczWkEtNm5vdEdHOWhwZ1ZQQ1RSdmJ2SFhMeHlZRDFqd0RkWHNRLVBYaUIyTWhZZVVkQzl4b1BnSndNMExneUdJcDRkU21qX0k?oc=5\" target=\"_blank\"&gt;Global equity fund outflows hit nine-month high on inflation fears&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-18T10:29:08.000Z",
-          "score": 2
-        },
-        {
-          "title": "South Korea, US discuss Seoul's role in Middle East, investment pact - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOeFE0ZXJJemcxUUNHVE9mUEh2N2M1aWRKa210RVcwcUtsQ3FnOXV4U1QxM3BBemt6WkRESUx5c3ZhaHBUX09IN1VORXZKeXdlRHF3Ym5hQU93MlhOUW9Oa2pseGpJQWRUSGNNTjVKSXhtYmpsaHNCYjF4V1F6WF8yNjV2d2ppazZrd0Q1X1daM3FxTHpXRVRsT25ENDFORTFFM0UzSkk4WW1YZmlOU3dSeGlJdlpzUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOeFE0ZXJJemcxUUNHVE9mUEh2N2M1aWRKa210RVcwcUtsQ3FnOXV4U1QxM3BBemt6WkRESUx5c3ZhaHBUX09IN1VORXZKeXdlRHF3Ym5hQU93MlhOUW9Oa2pseGpJQWRUSGNNTjVKSXhtYmpsaHNCYjF4V1F6WF8yNjV2d2ppazZrd0Q1X1daM3FxTHpXRVRsT25ENDFORTFFM0UzSkk4WW1YZmlOU3dSeGlJdlpzUQ?oc=5\" target=\"_blank\"&gt;South Korea, US discuss Seoul's role in Middle East, investment pact&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-18T23:25:08.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -178,22 +131,6 @@
           "description": "Russia is holding its first State Duma election since invading Ukraine, with voting also imposed in occupied Ukrainian regions. President Vladimir Putin&#039;s party is expected to dominate the tightly controlled contest.",
           "published": "2026-09-19T07:21:00.000Z",
           "score": 8
-        },
-        {
-          "title": "Ceuta border crisis fuels EU's far right despite fall in migrant arrivals, commissioner says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPOTFzZ25sR3paWUh2S0JwYlhkVzdFTEExMFgxaUNnU2ctZU0tellIaDRjN1FiaVdoVTZVc1ZQX2ZOUjlDNXN6V3NFbEZ0S0QxU2MyQnRPLWk1UHU0bDRnanhiQU1odzVzSW9Za1E5WVVIaS1USXpjQ3RuMEw5dVRSNVFuSkxWUTFITGtPZTVRMWd2VEtfSTRyOGptLThEUklQTE1Fbnc3RVkwWEtKZjlYLWRSM1ZZazhwTmc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPOTFzZ25sR3paWUh2S0JwYlhkVzdFTEExMFgxaUNnU2ctZU0tellIaDRjN1FiaVdoVTZVc1ZQX2ZOUjlDNXN6V3NFbEZ0S0QxU2MyQnRPLWk1UHU0bDRnanhiQU1odzVzSW9Za1E5WVVIaS1USXpjQ3RuMEw5dVRSNVFuSkxWUTFITGtPZTVRMWd2VEtfSTRyOGptLThEUklQTE1Fbnc3RVkwWEtKZjlYLWRSM1ZZazhwTmc?oc=5\" target=\"_blank\"&gt;Ceuta border crisis fuels EU's far right despite fall in migrant arrivals, commissioner says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-18T14:59:45.000Z",
-          "score": 8
-        },
-        {
-          "title": "Deal with Denmark gives US &#039;permanent control&#039; over Greenland security, Trump says",
-          "link": "https://www.dw.com/en/deal-with-denmark-gives-us-permanent-control-over-greenland-security-trump-says/a-79334915?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The deal with Denmark, according to President Donald Trump, would give the US &quot;permanent control&quot; over Greenland&#039;s security. Denmark said the deal is &quot;great for NATO and Europe.&quot;",
-          "published": "2026-09-18T21:53:00.000Z",
-          "score": 4
         }
       ]
     },
@@ -210,44 +147,44 @@
           "score": 8
         },
         {
-          "title": "Russia says Nestle, Auchan asset seizures are payback for hostile actions by Europe - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPTVlPeFV6MGxJSDN5b2VWcENqbmN1bFhNaDFaUEE4ZjJYa1ZsQW9kRGE3Q2dWc3FfdVVjc0pyUWEtejhyX0tvbE8xWHRGTEo0ZXJmV20zSllEdmpDdlFuMnRCRndzM2tDZXNSanZleG85c252aWk3SW1IRl9maXJZT24zWlNFSTRlX2tyRmpJU0VNdTdZU2hvaTBZOXFzdWxoOTFHUTZScHFLVGxCUE1mdHZwMXhMdFRrMnF2RGJGblExQm5ILXR6cS0tLVk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxPTVlPeFV6MGxJSDN5b2VWcENqbmN1bFhNaDFaUEE4ZjJYa1ZsQW9kRGE3Q2dWc3FfdVVjc0pyUWEtejhyX0tvbE8xWHRGTEo0ZXJmV20zSllEdmpDdlFuMnRCRndzM2tDZXNSanZleG85c252aWk3SW1IRl9maXJZT24zWlNFSTRlX2tyRmpJU0VNdTdZU2hvaTBZOXFzdWxoOTFHUTZScHFLVGxCUE1mdHZwMXhMdFRrMnF2RGJGblExQm5ILXR6cS0tLVk?oc=5\" target=\"_blank\"&gt;Russia says Nestle, Auchan asset seizures are payback for hostile actions by Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
-          "published": "2026-09-18T15:59:27.000Z",
-          "score": 8
+          "title": "US and Denmark reach deal over Greenland after Trump annexation threats",
+          "link": "https://www.bbc.co.uk/news/articles/c63d7lexyym1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Denmark and Greenland have welcomed the deal, which Trump claims will give the US \"permanent control over security and all other needs\" in the Danish territory.",
+          "published": "2026-09-19T11:36:55.000Z",
+          "score": 2
         },
         {
-          "title": "Azerbaijan rejects reports it pressured France over billionaire's EU sanctions - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd2FTcS1ITEtQOE9sckNoQXg5T0dNY080VkNsUGlaT1JnX1lkV1JSSEZ5QU9VSS1RUUIyYnEyaDV4SnFuRGltSlRCOWs0Qnp3LXkxV0VhdlBOVllCQ0d2MmRNTVlIRzBFTHF2RG1HNmdadldnb3lqeGV1MG01MmdNcmR3b0ZPTXJYMzNweS01cXJhdHRlZTFfdDd4OFNoQWlaa2xoUmo3bEpTMW9ybU5MSVJUMS1uY25sZzE4?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd2FTcS1ITEtQOE9sckNoQXg5T0dNY080VkNsUGlaT1JnX1lkV1JSSEZ5QU9VSS1RUUIyYnEyaDV4SnFuRGltSlRCOWs0Qnp3LXkxV0VhdlBOVllCQ0d2MmRNTVlIRzBFTHF2RG1HNmdadldnb3lqeGV1MG01MmdNcmR3b0ZPTXJYMzNweS01cXJhdHRlZTFfdDd4OFNoQWlaa2xoUmo3bEpTMW9ybU5MSVJUMS1uY25sZzE4?oc=5\" target=\"_blank\"&gt;Azerbaijan rejects reports it pressured France over billionaire's EU sanctions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-18T13:46:41.000Z",
-          "score": 8
+          "title": "Trump says he is banning CNN and Politico from White House",
+          "link": "https://www.bbc.co.uk/news/articles/c6e30580jqjpo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The US president has had a tense and fiery relationship with the US media throughout his political career.",
+          "published": "2026-09-19T05:36:36.000Z",
+          "score": 2
         },
         {
-          "title": "UK's Healey to press EU to include UK in 'Made in Europe' policy - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPaWRKR2RvR0I1Wng3WHNmQzhxTEQxSWw2aDlIcnVpdzdmY0pxYnJqSnhCTUhWWmRsR0lsanJVWExYeGNBd2U1U1VBRmZGeTNOMFpsQk1qZWlBUW5YSjZoUkYwWlJSVWF3elU2N25MN1dxX1h0U2hLaEZpeXB1Z25WUHlfNC1LbWVmQnFSaXJidFYyZERMM3ppNmln?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxPaWRKR2RvR0I1Wng3WHNmQzhxTEQxSWw2aDlIcnVpdzdmY0pxYnJqSnhCTUhWWmRsR0lsanJVWExYeGNBd2U1U1VBRmZGeTNOMFpsQk1qZWlBUW5YSjZoUkYwWlJSVWF3elU2N25MN1dxX1h0U2hLaEZpeXB1Z25WUHlfNC1LbWVmQnFSaXJidFYyZERMM3ppNmln?oc=5\" target=\"_blank\"&gt;UK's Healey to press EU to include UK in 'Made in Europe' policy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-18T10:58:02.000Z",
-          "score": 8
+          "title": "Google's Gemini AI hacked three companies in security test",
+          "link": "https://www.bbc.co.uk/news/articles/c607l0k72rlvo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The AI model accessed the internet and guessed credentials to three websites, a Google official told the BBC.",
+          "published": "2026-09-19T13:39:32.000Z",
+          "score": 2
         },
         {
-          "title": "China says it will monitor EU moves on Chinese hybrid cars, opposes 'voluntary limit' on exports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOT09Jd0tFOEZkOFllMmVadUwtWDY0RDctRzU2VXNiYUszaHRydVhSNEUwUXBpRFp6OERaOTR2dk5SY3lsNExxUnMyYWZNdHc5bG1YcjJrVWVCWmpIZFhXYk9QcXh4NllJN1pOdlFiUk11cllCWFdWMVkwS3dwR1NYeHluOERMbUFWbzI0ZmpBVF9Lb1Yya1FwYl9zd3RSZklOTkphM0w5RklEa1VPUUFNajlRSEFDZFFyNGxxTS15Vk5KQnVIU0E?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOT09Jd0tFOEZkOFllMmVadUwtWDY0RDctRzU2VXNiYUszaHRydVhSNEUwUXBpRFp6OERaOTR2dk5SY3lsNExxUnMyYWZNdHc5bG1YcjJrVWVCWmpIZFhXYk9QcXh4NllJN1pOdlFiUk11cllCWFdWMVkwS3dwR1NYeHluOERMbUFWbzI0ZmpBVF9Lb1Yya1FwYl9zd3RSZklOTkphM0w5RklEa1VPUUFNajlRSEFDZFFyNGxxTS15Vk5KQnVIU0E?oc=5\" target=\"_blank\"&gt;China says it will monitor EU moves on Chinese hybrid cars, opposes 'voluntary limit' on exports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;",
-          "published": "2026-09-18T15:09:43.000Z",
-          "score": 8
+          "title": "Trump signs sweeping Russia sanctions bill",
+          "link": "https://www.bbc.co.uk/news/articles/cqvgy34ndj4eo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The bill is named after the late Senator Lindsey Graham, a staunch advocate of aid for Ukraine.",
+          "published": "2026-09-18T22:05:47.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 362,
-    "articlesLast24h": 162,
-    "afterDedup": 153,
+    "totalArticlesScanned": 305,
+    "articlesLast24h": 54,
+    "afterDedup": 51,
     "feedsQueried": 19
   }
 }
