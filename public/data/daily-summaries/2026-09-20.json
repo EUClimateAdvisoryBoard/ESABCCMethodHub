@@ -1,12 +1,12 @@
 {
   "date": "2026-09-20",
-  "generatedAt": "2026-09-20T09:38:34.574Z",
+  "generatedAt": "2026-09-20T14:33:19.170Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 20 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Brazil’s wind farms have been a huge success. So why isn’t everybody reaping the benefits?",
-      "summary": "&lt;p&gt;While the country’s ambition is to be the ��Saudi Arabia of green energy’, communities in the north-east are bearing the cost in diminished health and livelihoods&lt;/p&gt;&lt;p&gt;Beneath the power lines cutting across Antonio de Souza’s property in Serra do Mel, in north-east &lt;a href=\"https://www.theguardian.com/world/brazil\"&gt;Brazil&lt;/a&gt;’s Rio Grande do Norte state, rows of cashew trees once stood – until the clean energy company ordered them to be cut down.&lt;/p&gt;&lt;p&",
+      "headline": "‘Do you have to be dead?’: US coalminers plead for benefits as black-lung disease cases surge",
+      "summary": "&lt;p&gt;Trump says he digs coal – but pneumoconiosis cases are at a 50-year high, and sick miners are mired in benefit delays&lt;/p&gt;&lt;p&gt;For 38 years, Josh Armes worked as a coal miner in West Virginia and Virginia.&lt;/p&gt;&lt;p&gt;After retirement, Armes, 74, of Grundy, Virginia, was diagnosed with black lung disease, &lt;a href=\"https://www.lung.org/lung-health-diseases/lung-disease-lookup/black-lung\"&gt;medically known&lt;/a&gt; as coal workers’ pneumoconiosis (CWP), caused by breat",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Turkey detains five as part of fund liquidation investigation, ministry says - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdDFNX1JIanNrakpGbGlCT2E5aEZBYXNpTGRHZm5PY1AyT2NRMVVDWGs1SDlrTjB4dXNfWEFCYzNEOElZNWdTWUVNQ1pWWHdsMi1CVmEzLTh2aW1QWEx3ODlFLU9vRWR1Z05qT05mT3hhMC1tZ2syeDAydGlXcmFxQkNiUUc4RHl3Zi0yUTZjTE9OOVZGb3lWRVBaMGZKRnVBMFhmX18xVmE0b1V6bGtRTVlqSFQ0MktoNGxPZHhDdGU?oc=5\" target=\"_blank\"&gt;Turkey detains five as part of fund liquidation investigation, ministry says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Germany faces energy tax losses as EV sales rise",
+      "summary": "The rapid shift to electric vehicles in Germany is cutting fuel tax revenue for the government. As EV sales surge, policymakers face growing pressure to find new ways to fund roads and transportation infrastructure.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,12 +34,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Brazil’s wind farms have been a huge success. So why isn’t everybody reaping the benefits?",
-          "link": "https://www.theguardian.com/global-development/2026/sep/19/brazils-wind-farms-have-been-a-huge-success-so-why-isnt-everybody-reaping-the-benefits",
+          "title": "‘Do you have to be dead?’: US coalminers plead for benefits as black-lung disease cases surge",
+          "link": "https://www.theguardian.com/us-news/2026/sep/20/us-coalminers-black-lung-disease",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;While the country’s ambition is to be the ��Saudi Arabia of green energy’, communities in the north-east are bearing the cost in diminished health and livelihoods&lt;/p&gt;&lt;p&gt;Beneath the power lines cutting across Antonio de Souza’s property in Serra do Mel, in north-east &lt;a href=\"https://www.theguardian.com/world/brazil\"&gt;Brazil&lt;/a&gt;’s Rio Grande do Norte state, rows of cashew trees once stood – until the clean energy company ordered them to be cut down.&lt;/p&gt;&lt;p&",
-          "published": "2026-09-19T12:00:46.000Z",
-          "score": 7
+          "description": "&lt;p&gt;Trump says he digs coal – but pneumoconiosis cases are at a 50-year high, and sick miners are mired in benefit delays&lt;/p&gt;&lt;p&gt;For 38 years, Josh Armes worked as a coal miner in West Virginia and Virginia.&lt;/p&gt;&lt;p&gt;After retirement, Armes, 74, of Grundy, Virginia, was diagnosed with black lung disease, &lt;a href=\"https://www.lung.org/lung-health-diseases/lung-disease-lookup/black-lung\"&gt;medically known&lt;/a&gt; as coal workers’ pneumoconiosis (CWP), caused by breat",
+          "published": "2026-09-20T11:00:16.000Z",
+          "score": 2
         },
         {
           "title": "TotalEnergies' offshore project in Suriname on track for first output in mid-2028 - Reuters",
@@ -102,6 +102,14 @@
       "title": "Green Finance & Investment",
       "items": [
         {
+          "title": "Germany faces energy tax losses as EV sales rise",
+          "link": "https://www.dw.com/en/germany-faces-energy-tax-losses-as-ev-sales-rise/a-79320422?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The rapid shift to electric vehicles in Germany is cutting fuel tax revenue for the government. As EV sales surge, policymakers face growing pressure to find new ways to fund roads and transportation infrastructure.",
+          "published": "2026-09-20T14:02:00.000Z",
+          "score": 7
+        },
+        {
           "title": "Turkey detains five as part of fund liquidation investigation, ministry says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdDFNX1JIanNrakpGbGlCT2E5aEZBYXNpTGRHZm5PY1AyT2NRMVVDWGs1SDlrTjB4dXNfWEFCYzNEOElZNWdTWUVNQ1pWWHdsMi1CVmEzLTh2aW1QWEx3ODlFLU9vRWR1Z05qT05mT3hhMC1tZ2syeDAydGlXcmFxQkNiUUc4RHl3Zi0yUTZjTE9OOVZGb3lWRVBaMGZKRnVBMFhmX18xVmE0b1V6bGtRTVlqSFQ0MktoNGxPZHhDdGU?oc=5",
           "source": "Reuters World (via Google News)",
@@ -129,19 +137,19 @@
           "score": 8
         },
         {
-          "title": "IMF tells EU ministers AI could boost growth but increase economic strains - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQR2lXSXpMMndMb252WEs4QzA5enZuMFJQWm03MnV5TlgxM0Z6dm1ZZGYzdEk1OUplWjFuYTdUMGxLUlpfSkZ2SWNuUWJEaVpPWmpSV3ZPUW94NHNrZzdsYVN6ZzJaTVdhZVFiUnpiVnFVbnh1ME5EVGVPSkt5VmRVdEVrd0pfM1NRRm9YYjA4R0RhSW1SSTlXYjlCajMyZXZFX08wZ2ZmY2tnQUtEM2pYRTFQNmRydw?oc=5",
+          "title": "US fashion council CEO Kolb resigns after clash with runway show protesters - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxObC1BTTdnczRjeEFURXpvZEtvOTMtcGEzWWRrVmtqYzZxdkNZQy1yXzJpRmluYUNCNFNFWXgtdUp3aWRaaVFBVWYtbkthRDN1bEhPdXJ6MmZFblJVR2dfNF90cUJGRnctaGoyMWtfbXpNTnZxT1JOT2NXUVdaVDFoRUJJOFUxb0VaOVZhbDljWmNBWVlpOXJIblQxSGk4MEE3NUhiZklhcWF0SG5nMnM2dUwzUURxQUNjTGI1MmxB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQR2lXSXpMMndMb252WEs4QzA5enZuMFJQWm03MnV5TlgxM0Z6dm1ZZGYzdEk1OUplWjFuYTdUMGxLUlpfSkZ2SWNuUWJEaVpPWmpSV3ZPUW94NHNrZzdsYVN6ZzJaTVdhZVFiUnpiVnFVbnh1ME5EVGVPSkt5VmRVdEVrd0pfM1NRRm9YYjA4R0RhSW1SSTlXYjlCajMyZXZFX08wZ2ZmY2tnQUtEM2pYRTFQNmRydw?oc=5\" target=\"_blank\"&gt;IMF tells EU ministers AI could boost growth but increase economic strains&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-19T12:23:08.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxObC1BTTdnczRjeEFURXpvZEtvOTMtcGEzWWRrVmtqYzZxdkNZQy1yXzJpRmluYUNCNFNFWXgtdUp3aWRaaVFBVWYtbkthRDN1bEhPdXJ6MmZFblJVR2dfNF90cUJGRnctaGoyMWtfbXpNTnZxT1JOT2NXUVdaVDFoRUJJOFUxb0VaOVZhbDljWmNBWVlpOXJIblQxSGk4MEE3NUhiZklhcWF0SG5nMnM2dUwzUURxQUNjTGI1MmxB?oc=5\" target=\"_blank\"&gt;US fashion council CEO Kolb resigns after clash with runway show protesters&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-19T14:56:29.000Z",
           "score": 8
         },
         {
-          "title": "Fashion council boss Kolb resigns after runway protester clash - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1adUw3OExuTlRobmh5cEt6N2pCbkVqbWdOMVp5bFg5YmtfZGs2V2NoZ2NUUkpTVV9NbEMxQjdTazdzVlp4ZXpRX1ZlbWhZSjZDZ1lvdFk3dnZyYlVOTlUyT0NTeHZSMTA?oc=5",
+          "title": "European Commissioner discussed EU-Israel relationship, Gaza with Israeli minister - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcWJqeXlJTjQxcDVjYU03Q09mYWE3clFzVVBpRENyRGoydU1BVzl2dHlxR3Y0Zm83WjJOVmJJaEhuQlVnUEtLNTZxcXlsbDhQeUlja2lGNHozV3M1Ym5UTUxCQ1ZBamtILVBqSlo4QUQ2YjNvNE9saE1tN1BKTUU0U245dzBOYWIzYzMzZC1OZVdPMElfZHllUHY4TmtLU19VdU1nM0k2d0pBR0dicU92ZHlhZXk1SS1uVXZCVENCQktYVWpv?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1adUw3OExuTlRobmh5cEt6N2pCbkVqbWdOMVp5bFg5YmtfZGs2V2NoZ2NUUkpTVV9NbEMxQjdTazdzVlp4ZXpRX1ZlbWhZSjZDZ1lvdFk3dnZyYlVOTlUyT0NTeHZSMTA?oc=5\" target=\"_blank\"&gt;Fashion council boss Kolb resigns after runway protester clash&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-19T15:15:51.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOcWJqeXlJTjQxcDVjYU03Q09mYWE3clFzVVBpRENyRGoydU1BVzl2dHlxR3Y0Zm83WjJOVmJJaEhuQlVnUEtLNTZxcXlsbDhQeUlja2lGNHozV3M1Ym5UTUxCQ1ZBamtILVBqSlo4QUQ2YjNvNE9saE1tN1BKTUU0U245dzBOYWIzYzMzZC1OZVdPMElfZHllUHY4TmtLU19VdU1nM0k2d0pBR0dicU92ZHlhZXk1SS1uVXZCVENCQktYVWpv?oc=5\" target=\"_blank\"&gt;European Commissioner discussed EU-Israel relationship, Gaza with Israeli minister&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-09-20T11:55:54.000Z",
           "score": 8
         },
         {
@@ -153,11 +161,11 @@
           "score": 6
         },
         {
-          "title": "Russia reports online attacks on electoral system on second day of parliamentary vote - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOUjhnX1U4Y1h3LXgzS1FVRjg1X2xNR3BfU3FQbk9MT3ZrZG9BSFFGQ3FyUzM4Szk5cV94VWNUd0hkckRZNVVjMTBuak0wUXdMenJ0WHd3WXZaQnZaT3lyY2N5NkV3UzlNRzNvc1BkYWdCZjhiMmVTOG03czV3LTJfeGVJSUpkdHVWTE1kU0kzXzNQZFVXTmh2d29oa0JLNDFzblhVRGtvQURpd013NVpldHhSV1NJYk1kZjNpdVY0aHhnODA?oc=5",
+          "title": "Deadly drone attack on Moscow region during wartime vote - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9NdHAtcVhEdF9wT3ZfUkk3OHpUYU5VbFJOMENDcFBWZzBzODByVkNwRDJHNl9SeUFOU29yb1RMNGZlSW1CZjRoUTIxWk5OeGN0WjkzSTUxZmttREYtX1oxRm5oN3Rtbnc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOUjhnX1U4Y1h3LXgzS1FVRjg1X2xNR3BfU3FQbk9MT3ZrZG9BSFFGQ3FyUzM4Szk5cV94VWNUd0hkckRZNVVjMTBuak0wUXdMenJ0WHd3WXZaQnZaT3lyY2N5NkV3UzlNRzNvc1BkYWdCZjhiMmVTOG03czV3LTJfeGVJSUpkdHVWTE1kU0kzXzNQZFVXTmh2d29oa0JLNDFzblhVRGtvQURpd013NVpldHhSV1NJYk1kZjNpdVY0aHhnODA?oc=5\" target=\"_blank\"&gt;Russia reports online attacks on electoral system on second day of parliamentary vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-09-19T11:30:28.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9NdHAtcVhEdF9wT3ZfUkk3OHpUYU5VbFJOMENDcFBWZzBzODByVkNwRDJHNl9SeUFOU29yb1RMNGZlSW1CZjRoUTIxWk5OeGN0WjkzSTUxZmttREYtX1oxRm5oN3Rtbnc?oc=5\" target=\"_blank\"&gt;Deadly drone attack on Moscow region during wartime vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-20T12:55:59.000Z",
           "score": 6
         }
       ]
@@ -165,8 +173,8 @@
   ],
   "stats": {
     "totalArticlesScanned": 400,
-    "articlesLast24h": 145,
-    "afterDedup": 135,
+    "articlesLast24h": 140,
+    "afterDedup": 127,
     "feedsQueried": 19
   }
 }
