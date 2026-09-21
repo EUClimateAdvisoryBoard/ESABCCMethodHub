@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "title": "Daily News 21 / 09 / 2026",
+    "summary": "European Commission Daily news Brussels, 21 Sep 2026 Commission enhances energy efficiency and sustainability of data centres in the EU\r\nThe European Commission proposed today a common rating scheme for data centre...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1918",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-09-21T10:02:15.000Z",
+    "tags": [
+      "energy"
+    ]
+  },
+  {
+    "title": "Commission enhances energy efficiency and sustainability of data centres in the EU",
+    "summary": "European Commission Press release Brussels, 21 Sep 2026 The European Commission proposed today a common rating scheme for data centres aimed at increasing transparency on their energy use and supporting their sustainable integration into Europe's energy system.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1667",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-09-20T22:00:00.000Z",
+    "tags": [
+      "energy"
+    ]
+  }
+]
