@@ -1,18 +1,18 @@
 {
   "date": "2026-09-21",
-  "generatedAt": "2026-09-21T00:53:27.304Z",
+  "generatedAt": "2026-09-21T10:30:01.009Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 21 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "‘Do you have to be dead?’: US coalminers plead for benefits as black-lung disease cases surge",
-      "summary": "&lt;p&gt;Trump says he digs coal – but pneumoconiosis cases are at a 50-year high, and sick miners are mired in benefit delays&lt;/p&gt;&lt;p&gt;For 38 years, Josh Armes worked as a coal miner in West Virginia and Virginia.&lt;/p&gt;&lt;p&gt;After retirement, Armes, 74, of Grundy, Virginia, was diagnosed with black lung disease, &lt;a href=\"https://www.lung.org/lung-health-diseases/lung-disease-lookup/black-lung\"&gt;medically known&lt;/a&gt; as coal workers’ pneumoconiosis (CWP), caused by breat",
+      "headline": "Why the global electrification agenda misses the point on Africa&#8217;s energy crisis",
+      "summary": "With hundreds of millions of Africans still lacking electricity access, global electrification goals must reflect the continent’s realities and deliver development alongside connections The post Why the global electrification agenda misses the point on Africa&#8217;s energy crisis appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "India news: PM Modi says developing nations unfairly blamed for emissions",
-      "summary": "PM Narendra Modi has told a climate conference that developed countries emit six times more CO2 than India. Meanwhile, an IIT Bombay professor has been accused of caste abuse. DW has more.",
+      "headline": "Commission enhances energy efficiency and sustainability of data centres in the EU",
+      "summary": "European Commission Press release Brussels, 21 Sep 2026 The European Commission proposed today a common rating scheme for data centres aimed at increasing transparency on their energy use and supporting their sustainable integration into Europe's energy system.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,6 +34,30 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Why the global electrification agenda misses the point on Africa&#8217;s energy crisis",
+          "link": "https://www.climatechangenews.com/2026/09/21/why-the-global-electrification-agenda-misses-the-point-on-africas-energy-crisis/",
+          "source": "Climate Home News",
+          "description": "With hundreds of millions of Africans still lacking electricity access, global electrification goals must reflect the continent’s realities and deliver development alongside connections The post Why the global electrification agenda misses the point on Africa&#8217;s energy crisis appeared first on Climate Home News.",
+          "published": "2026-09-21T08:53:49.000Z",
+          "score": 13
+        },
+        {
+          "title": "Europe's gas price surge may feed into inflation more quickly, ECB finds - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYlZORjIxVTNxX0RoX2h1WS1idFNvSGFRN09nZ0dmRGtfbm9wR0thb01MbnNpUkZWU0lNSFdNU28tQWp3UndBMFNBQ0tQQm9KaGwzYjVkSmVselNOb3EwQ1U2MU1yUFhSTC1HM0FadE5NV2UwWi1Ya1BjYkFZUnFyZmRlYU43bTN1Z1JPT1pjcGtMZWY2b1I0SEp3eVE4aHpZMmNHRFFsZTVmRlVDeU5OWnpNWU80ZDNhWVZmaF9PVQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPYlZORjIxVTNxX0RoX2h1WS1idFNvSGFRN09nZ0dmRGtfbm9wR0thb01MbnNpUkZWU0lNSFdNU28tQWp3UndBMFNBQ0tQQm9KaGwzYjVkSmVselNOb3EwQ1U2MU1yUFhSTC1HM0FadE5NV2UwWi1Ya1BjYkFZUnFyZmRlYU43bTN1Z1JPT1pjcGtMZWY2b1I0SEp3eVE4aHpZMmNHRFFsZTVmRlVDeU5OWnpNWU80ZDNhWVZmaF9PVQ?oc=5\" target=\"_blank\"&gt;Europe's gas price surge may feed into inflation more quickly, ECB finds&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-21T08:08:17.000Z",
+          "score": 8
+        },
+        {
+          "title": "Poland's Orlen to supply Ukraine's Naftogaz 3 LNG cargoes and fuel - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQX0JXQ19PLWlNUHU5UkxOTk1LelNUVC1yTzRRN1R4eFd5Ym5zVFFVM1dTSURvdHpLaGRnVWlFMVZKM09BaG91cmlEbFNuOHpPMVoyUHYyeUVaNmJiSFpfY2habGNiMGhpVmVocHNBcjZ1NVJoQ1lYS3l5T2VJcjRBVU9iZEJWMlh5RXFMazR4dlZCM19NVjlaYWdnSEFuSEVXMlhGblVrYVNiR1dyYWc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQX0JXQ19PLWlNUHU5UkxOTk1LelNUVC1yTzRRN1R4eFd5Ym5zVFFVM1dTSURvdHpLaGRnVWlFMVZKM09BaG91cmlEbFNuOHpPMVoyUHYyeUVaNmJiSFpfY2habGNiMGhpVmVocHNBcjZ1NVJoQ1lYS3l5T2VJcjRBVU9iZEJWMlh5RXFMazR4dlZCM19NVjlaYWdnSEFuSEVXMlhGblVrYVNiR1dyYWc?oc=5\" target=\"_blank\"&gt;Poland's Orlen to supply Ukraine's Naftogaz 3 LNG cargoes and fuel&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-21T07:46:20.000Z",
+          "score": 7
+        },
+        {
           "title": "‘Do you have to be dead?’: US coalminers plead for benefits as black-lung disease cases surge",
           "link": "https://www.theguardian.com/us-news/2026/sep/20/us-coalminers-black-lung-disease",
           "source": "The Guardian - Energy",
@@ -48,44 +72,44 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "India news: PM Modi says developing nations unfairly blamed for emissions",
-          "link": "https://www.dw.com/en/india-news-pm-modi-says-developing-nations-unfairly-blamed-for-emissions/live-79335891?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Commission enhances energy efficiency and sustainability of data centres in the EU",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1667",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 21 Sep 2026 The European Commission proposed today a common rating scheme for data centres aimed at increasing transparency on their energy use and supporting their sustainable integration into Europe's energy system.",
+          "published": "2026-09-20T22:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "Daily News 21 / 09 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1918",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 21 Sep 2026 Commission enhances energy efficiency and sustainability of data centres in the EU\r\nThe European Commission proposed today a common rating scheme for data centre...",
+          "published": "2026-09-21T10:02:15.000Z",
+          "score": 16
+        },
+        {
+          "title": "Babies ‘will face almost twice as much’ extreme fire weather in Europe than great-grandparents",
+          "link": "https://www.theguardian.com/world/2026/sep/21/babies-extreme-fire-weather-europe-great-grandparents",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Children born after 2025 will experience three more years of brutally fire-conducive weather as global heating intensifies&lt;/p&gt;&lt;p&gt;European babies will face almost twice as much extreme fire weather as their great-grandparents if climate action does not ramp up quickly, a &lt;a href=\"https://doi.org/10.1088/1748-9326/ae93de\"&gt;study&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Global heating under current policies will expose a child born in Europe in 2025 to three more years of br",
+          "published": "2026-09-21T09:00:19.000Z",
+          "score": 10
+        },
+        {
+          "title": "How Saudi oil scientists ended up working on the world’s most important climate reports",
+          "link": "https://www.theguardian.com/environment/2026/sep/21/saudi-arabia-aramco-oil-scientists-ipcc-climate-reports",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Guardian investigation reveals fossil fuel links of IPCC authors, with experts declaring the body’s conflict of interest policy ‘not fit for purpose’&lt;/p&gt;&lt;p&gt;On her first day as an expert author on the world’s most important climate reports, Prof Julia Steinberger knew nobody else, so she sat down at a stranger’s table for breakfast.&lt;/p&gt;&lt;p&gt;“Hi, I’m Julia. I’m from the University of Lausanne,” she said. The man across the table replied: “I’m Mustafa Babiker. I work ",
+          "published": "2026-09-21T05:00:36.000Z",
+          "score": 7
+        },
+        {
+          "title": "Japan: Typhoon Dujuan sparks flood, landslide warnings",
+          "link": "https://www.dw.com/en/japan-typhoon-dujuan-sparks-flood-landslide-warnings/a-79349957?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "PM Narendra Modi has told a climate conference that developed countries emit six times more CO2 than India. Meanwhile, an IIT Bombay professor has been accused of caste abuse. DW has more.",
-          "published": "2026-09-20T06:50:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "What food items should you stock up on in case of an emergency?",
-          "link": "https://www.bbc.co.uk/news/articles/c20veglyjp8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Extreme weather may be changing the way we need to shop, with the UK government urging people to stock up on canned goods.",
-          "published": "2026-09-20T23:02:27.000Z",
-          "score": 2
-        },
-        {
-          "title": "New £1m grant to help groups protect green spaces",
-          "link": "https://www.bbc.co.uk/news/articles/c9y7zmg53nrzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The cash can be used by local communities to protect threatened green spaces and wildlife sites.",
-          "published": "2026-09-20T06:55:28.000Z",
-          "score": 2
-        },
-        {
-          "title": "'You never quite know what you're going to pull out'",
-          "link": "https://www.bbc.co.uk/news/articles/c5y4zgdd3ny3o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The group is marking a decade of fishing everything from an inflatable doll to a Nintendo out of the harbour.",
-          "published": "2026-09-20T06:38:44.000Z",
-          "score": 2
-        },
-        {
-          "title": "When did grey squirrels start posing a threat to reds?",
-          "link": "https://www.bbc.co.uk/news/articles/c6wyzglny0xyo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A pair of grey squirrels was reportedly brought to the United Kingdom by a Cheshire banker in 1876.",
-          "published": "2026-09-20T06:13:36.000Z",
-          "score": 2
+          "description": "Hundreds of flights have been canceled in Japan, which is in the middle of a five-day holiday. The storm could dump record levels of rain on the country.",
+          "published": "2026-09-21T06:27:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -110,11 +134,11 @@
           "score": 2
         },
         {
-          "title": "South Korea government to brief National Assembly on $350 billion US investment project, Yonhap News reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxONW11RGtzbHFLSmN6VDJDTEpIYl9JbUkyZU4wbmMtSEpMdGROdmRsUi1RWFlDNThZMURGdG41WVhwQ3RSYkZ5Z2h3Y010cThyQkk2ZkJYOW43SWtxUWwxak5aSF81eEVCdjhzckRPYzRiMEdvS2RmMXE1dy1mSzFmWGZZQXhURUxxN2N5UG5aNWFpc3l1bEQ4eWphLVY1T0lOTmpHZEQyRVJiV3dNclBKUEZxbVdrVlphMURSNXB5MjFGMmNXTWM2MmNWd0pSTnA4?oc=5",
+          "title": "Softbank Group launches over $10 billion in bonds for OpenAI investment, term sheet shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQRFpJSWkxMGJsX2cyM3pnVGxFdi0yU3BIRHd0RUM0MUZwWE42WTJhVmwwLUNQUkNhakRLQW1xZWlSMTRWZElIZXNQWFZEbWdpX1Z0aXctRzkxT1VvdlhxZFBSclJNQzlFSUM1cXc4by0yOU51bmZDYUxhdi1GS0RLbzB1VUpqMVRoeGpVTkRjSTltcEdtdldZVldpQ1RtcFJmdkl3VGowWll5cmxFSHE4SnVzOGVYWGEzZDhPOTNDSzNUZ2MxeExISmVyS1FwY01pc1dlcDdR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxONW11RGtzbHFLSmN6VDJDTEpIYl9JbUkyZU4wbmMtSEpMdGROdmRsUi1RWFlDNThZMURGdG41WVhwQ3RSYkZ5Z2h3Y010cThyQkk2ZkJYOW43SWtxUWwxak5aSF81eEVCdjhzckRPYzRiMEdvS2RmMXE1dy1mSzFmWGZZQXhURUxxN2N5UG5aNWFpc3l1bEQ4eWphLVY1T0lOTmpHZEQyRVJiV3dNclBKUEZxbVdrVlphMURSNXB5MjFGMmNXTWM2MmNWd0pSTnA4?oc=5\" target=\"_blank\"&gt;South Korea government to brief National Assembly on $350 billion US investment project, Yonhap News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt",
-          "published": "2026-09-20T16:01:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxQRFpJSWkxMGJsX2cyM3pnVGxFdi0yU3BIRHd0RUM0MUZwWE42WTJhVmwwLUNQUkNhakRLQW1xZWlSMTRWZElIZXNQWFZEbWdpX1Z0aXctRzkxT1VvdlhxZFBSclJNQzlFSUM1cXc4by0yOU51bmZDYUxhdi1GS0RLbzB1VUpqMVRoeGpVTkRjSTltcEdtdldZVldpQ1RtcFJmdkl3VGowWll5cmxFSHE4SnVzOGVYWGEzZDhPOTNDSzNUZ2MxeExISmVyS1FwY01pc1dlcDdR?oc=5\" target=\"_blank\"&gt;Softbank Group launches over $10 billion in bonds for OpenAI investment, term sheet shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color",
+          "published": "2026-09-21T01:43:00.000Z",
           "score": 2
         }
       ]
@@ -129,6 +153,22 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "UK should 'team up' with Canada in new Europe alliance, Canadian minister tells BBC",
+          "link": "https://www.bbc.co.uk/news/articles/cmed7p06epxjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "It comes after European Commission President proposed \"opening the door\" for Canada to become an associate member of the EU.",
+          "published": "2026-09-21T04:00:38.000Z",
+          "score": 8
+        },
+        {
+          "title": "Australia to seek UN security council seat from 2029 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWG1mVUdBZjlrZEU2OGhnbVpXLVdYTjNVYlAxUllLUDRXVFFBb0ZFVWEtR19FcmVwejBMejlBSkNvYmxuT3hMMVh1YkJ5ODFfNkZ6NXhTSDJUcW9KYXhVNVhvRHo3eVctRHozOEh5WE9KbVhHWEN0WVExMmdNaFR3b1lYai11Y195UDRtMDFFZ0ZnVHA3T21hazM3OW16NUFZ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxQWG1mVUdBZjlrZEU2OGhnbVpXLVdYTjNVYlAxUllLUDRXVFFBb0ZFVWEtR19FcmVwejBMejlBSkNvYmxuT3hMMVh1YkJ5ODFfNkZ6NXhTSDJUcW9KYXhVNVhvRHo3eVctRHozOEh5WE9KbVhHWEN0WVExMmdNaFR3b1lYai11Y195UDRtMDFFZ0ZnVHA3T21hazM3OW16NUFZ?oc=5\" target=\"_blank\"&gt;Australia to seek UN security council seat from 2029&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-21T00:48:00.000Z",
+          "score": 8
+        },
+        {
           "title": "European Commissioner discussed EU-Israel relationship, Gaza with Israeli minister - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcWJqeXlJTjQxcDVjYU03Q09mYWE3clFzVVBpRENyRGoydU1BVzl2dHlxR3Y0Zm83WjJOVmJJaEhuQlVnUEtLNTZxcXlsbDhQeUlja2lGNHozV3M1Ym5UTUxCQ1ZBamtILVBqSlo4QUQ2YjNvNE9saE1tN1BKTUU0U245dzBOYWIzYzMzZC1OZVdPMElfZHllUHY4TmtLU19VdU1nM0k2d0pBR0dicU92ZHlhZXk1SS1uVXZCVENCQktYVWpv?oc=5",
           "source": "Reuters World (via Google News)",
@@ -137,44 +177,28 @@
           "score": 8
         },
         {
-          "title": "US fashion council CEO Kolb resigns after clash with runway show protesters - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxObC1BTTdnczRjeEFURXpvZEtvOTMtcGEzWWRrVmtqYzZxdkNZQy1yXzJpRmluYUNCNFNFWXgtdUp3aWRaaVFBVWYtbkthRDN1bEhPdXJ6MmZFblJVR2dfNF90cUJGRnctaGoyMWtfbXpNTnZxT1JOT2NXUVdaVDFoRUJJOFUxb0VaOVZhbDljWmNBWVlpOXJIblQxSGk4MEE3NUhiZklhcWF0SG5nMnM2dUwzUURxQUNjTGI1MmxB?oc=5",
+          "title": "Europe faces Q4 jet fuel supply deficit even as South Korea becomes latest big supplier - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOVVgydHlkOXlLQ1Q4SWtQNmtjZjNoLTRUNnptMkdnUndRQlhhQWVCVTJ6VzlabXdZSUIxOG9BNDRKOGswSHlZSC1RS3pqMnlMS0R5U25ZZnFMUUNYemhXSVo4aVBhVlNjRnRQWVo2b0h4a2FvT29vMkFyQV8yZVBRSGZmUldDWkRsYVlhVFljYk44QWdTRFJnMUw5bk9BVEpRNVpNa0gtZV90ZVRUYXVSYUtRZ1VHZXFOVmdxbzJTTmFJOEZ4d1E?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxObC1BTTdnczRjeEFURXpvZEtvOTMtcGEzWWRrVmtqYzZxdkNZQy1yXzJpRmluYUNCNFNFWXgtdUp3aWRaaVFBVWYtbkthRDN1bEhPdXJ6MmZFblJVR2dfNF90cUJGRnctaGoyMWtfbXpNTnZxT1JOT2NXUVdaVDFoRUJJOFUxb0VaOVZhbDljWmNBWVlpOXJIblQxSGk4MEE3NUhiZklhcWF0SG5nMnM2dUwzUURxQUNjTGI1MmxB?oc=5\" target=\"_blank\"&gt;US fashion council CEO Kolb resigns after clash with runway show protesters&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-20T04:11:41.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOVVgydHlkOXlLQ1Q4SWtQNmtjZjNoLTRUNnptMkdnUndRQlhhQWVCVTJ6VzlabXdZSUIxOG9BNDRKOGswSHlZSC1RS3pqMnlMS0R5U25ZZnFMUUNYemhXSVo4aVBhVlNjRnRQWVo2b0h4a2FvT29vMkFyQV8yZVBRSGZmUldDWkRsYVlhVFljYk44QWdTRFJnMUw5bk9BVEpRNVpNa0gtZV90ZVRUYXVSYUtRZ1VHZXFOVmdxbzJTTmFJOEZ4d1E?oc=5\" target=\"_blank\"&gt;Europe faces Q4 jet fuel supply deficit even as South Korea becomes latest big supplier&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
+          "published": "2026-09-21T06:38:59.000Z",
           "score": 8
         },
         {
-          "title": "UBS CEO Ermotti warns against harsh capital rules ahead of vote - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOSVlUcU5uX0dwYXlSZFc4Q19ENDFwdG1VRnV1VDczQ2tHb2tTRmRxVnlTU0Y3Ukh4ajh1YTNXOHNPU09jUThMdzYwSUhPVE1DVUpTUnhyVkQwX3F3bVhSeTBrRnhHNzJxSlhQMUhJbWVmUy1Fdi1fU08tVHBXZlZHSzE1RlhDa2hiQ0hhdzZESFRHaUEwMGF1TDlYNzVpVkhhSk5tblJrNUJFeXhVa2owX256eEVMWDA?oc=5",
+          "title": "COMMENTARY: Oil shock raises risk of metals shock as EV sales accelerate - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSHczWUtjYjdodWhSTDM4Z1g4Y0hBcmUxd2JRcUR2QXp4SVVCYU94XzkwOFhNeW5HNzVMTnEwaHdiWVNPWXBvMlByQ0pyNi1KSUdlWW1BM3lBdGRXSUNwUlhyY2d5X3hXazd6aFM0eHZlNU1KSGs3UDNVX0tKaTVPMVdseGlSTWdvdXFWRGRpeVhPal9EUVMtUzkyX0k3alp1S2R4b3dYVkRYT0xCRy1HWTIydHM0a2drRWhsSEdEN1o?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOSVlUcU5uX0dwYXlSZFc4Q19ENDFwdG1VRnV1VDczQ2tHb2tTRmRxVnlTU0Y3Ukh4ajh1YTNXOHNPU09jUThMdzYwSUhPVE1DVUpTUnhyVkQwX3F3bVhSeTBrRnhHNzJxSlhQMUhJbWVmUy1Fdi1fU08tVHBXZlZHSzE1RlhDa2hiQ0hhdzZESFRHaUEwMGF1TDlYNzVpVkhhSk5tblJrNUJFeXhVa2owX256eEVMWDA?oc=5\" target=\"_blank\"&gt;UBS CEO Ermotti warns against harsh capital rules ahead of vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-20T19:33:52.000Z",
-          "score": 6
-        },
-        {
-          "title": "Deadly drone attack on Moscow region during wartime vote - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9NdHAtcVhEdF9wT3ZfUkk3OHpUYU5VbFJOMENDcFBWZzBzODByVkNwRDJHNl9SeUFOU29yb1RMNGZlSW1CZjRoUTIxWk5OeGN0WjkzSTUxZmttREYtX1oxRm5oN3Rtbnc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9NdHAtcVhEdF9wT3ZfUkk3OHpUYU5VbFJOMENDcFBWZzBzODByVkNwRDJHNl9SeUFOU29yb1RMNGZlSW1CZjRoUTIxWk5OeGN0WjkzSTUxZmttREYtX1oxRm5oN3Rtbnc?oc=5\" target=\"_blank\"&gt;Deadly drone attack on Moscow region during wartime vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-20T17:28:08.000Z",
-          "score": 6
-        },
-        {
-          "title": "Germans vote in state polls amid far-right rise pressuring Merz - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8yVmdyRDR1Z0w2SzU3emhGZlR2M0pjV2loaVpzaVRTcDdlM0VaekwzZm5RalVoYkNNeFprYWJHX0IxQ3BDNXJnR3h3cG9HWjluZWRKUmJvNE1Ha016d2JScUZBUy1odkU?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8yVmdyRDR1Z0w2SzU3emhGZlR2M0pjV2loaVpzaVRTcDdlM0VaekwzZm5RalVoYkNNeFprYWJHX0IxQ3BDNXJnR3h3cG9HWjluZWRKUmJvNE1Ha016d2JScUZBUy1odkU?oc=5\" target=\"_blank\"&gt;Germans vote in state polls amid far-right rise pressuring Merz&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-20T17:28:08.000Z",
-          "score": 6
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSHczWUtjYjdodWhSTDM4Z1g4Y0hBcmUxd2JRcUR2QXp4SVVCYU94XzkwOFhNeW5HNzVMTnEwaHdiWVNPWXBvMlByQ0pyNi1KSUdlWW1BM3lBdGRXSUNwUlhyY2d5X3hXazd6aFM0eHZlNU1KSGs3UDNVX0tKaTVPMVdseGlSTWdvdXFWRGRpeVhPal9EUVMtUzkyX0k3alp1S2R4b3dYVkRYT0xCRy1HWTIydHM0a2drRWhsSEdEN1o?oc=5\" target=\"_blank\"&gt;COMMENTARY: Oil shock raises risk of metals shock as EV sales accelerate&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-21T06:00:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 402,
-    "articlesLast24h": 125,
-    "afterDedup": 111,
+    "totalArticlesScanned": 410,
+    "articlesLast24h": 142,
+    "afterDedup": 134,
     "feedsQueried": 19
   }
 }
