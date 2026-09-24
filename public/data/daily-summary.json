@@ -1,18 +1,18 @@
 {
   "date": "2026-09-24",
-  "generatedAt": "2026-09-24T09:48:15.535Z",
+  "generatedAt": "2026-09-24T15:47:38.108Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 24 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Speech by President von der Leyen at the High-Level meeting on Climate Action and Just Transition",
-      "summary": "European Commission Speech New York, 24 Sep 2026 President Erdoğan,\r\nPrime Minister Albanese,\r\nIt is good to be back in the United Nations to discuss climate and energy policy. I think this summer was a summer o...",
+      "headline": "UN Climate Summit: UN chief says world has tools to end fossil fuel age",
+      "summary": "At the UN Secretary-General's climate summit in New York, countries shared their energy transition plans while Nepal and island nations advocated for more international support The post UN Climate Summit: UN chief says world has tools to end fossil fuel age appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Germany unveils plan to end use of fossil fuels in energy sector by 2045",
-      "summary": "Germany became the third country to publish a roadmap to phase out fossil fuels after France and the Netherlands, as the UN chief calls on all governments to follow The post Germany unveils plan to end use of fossil fuels in energy sector by 2045 appeared first on Climate Home News.",
+      "headline": "Interactive: What China’s dozens of ‘five-year plans’ say about climate and energy",
+      "summary": "Almost three-quarters of the 72 five-year plans published by China this year include policies or targets related to climate change&#8230; The post Interactive: What China’s dozens of ‘five-year plans’ say about climate and energy appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,27 +34,11 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Speech by President von der Leyen at the High-Level meeting on Climate Action and Just Transition",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1955",
-          "source": "European Commission",
-          "description": "European Commission Speech New York, 24 Sep 2026 President Erdoğan,\r\nPrime Minister Albanese,\r\nIt is good to be back in the United Nations to discuss climate and energy policy. I think this summer was a summer o...",
-          "published": "2026-09-23T15:17:38.000Z",
-          "score": 23
-        },
-        {
-          "title": "UN SUMMIT LIVE: UN chief says world has tools to end the fossil fuel age",
+          "title": "UN Climate Summit: UN chief says world has tools to end fossil fuel age",
           "link": "https://www.climatechangenews.com/2026/09/23/un-summit-live-un-chief-says-world-has-tools-to-end-the-fossil-fuel-age/",
           "source": "Climate Home News",
-          "description": "At the UN Secretary-General's climate summit in New York, countries shared their energy transition plans while Nepal and island nations advocated for more international support The post UN SUMMIT LIVE: UN chief says world has tools to end the fossil fuel age appeared first on Climate Home News.",
+          "description": "At the UN Secretary-General's climate summit in New York, countries shared their energy transition plans while Nepal and island nations advocated for more international support The post UN Climate Summit: UN chief says world has tools to end fossil fuel age appeared first on Climate Home News.",
           "published": "2026-09-23T19:54:55.000Z",
-          "score": 13
-        },
-        {
-          "title": "Italian parliament backs Meloni's plan to restart nuclear power - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVDc2TkdTUlNKbzZiUHJFOUlqc25NNm05ZXNKQW5TMlNnNlBZVC1UM0MyaTNrMy13ZGpiQVBrNG52SDI3VEYzak9oYnIyVTJlWXg3Mi1oWkpnelRfNGp6MGJzUUpwRVVDX0RlbjlyV1RhZnBlRU0zamNFR3RPY2tFaUI1ZkJkdzVVNFNwRlliSVdoRUpSQkhYczRNczB2d2JLR0Vv?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNVDc2TkdTUlNKbzZiUHJFOUlqc25NNm05ZXNKQW5TMlNnNlBZVC1UM0MyaTNrMy13ZGpiQVBrNG52SDI3VEYzak9oYnIyVTJlWXg3Mi1oWkpnelRfNGp6MGJzUUpwRVVDX0RlbjlyV1RhZnBlRU0zamNFR3RPY2tFaUI1ZkJkdzVVNFNwRlliSVdoRUpSQkhYczRNczB2d2JLR0Vv?oc=5\" target=\"_blank\"&gt;Italian parliament backs Meloni's plan to restart nuclear power&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-23T15:31:44.000Z",
           "score": 13
         },
         {
@@ -72,6 +56,22 @@
           "description": "&lt;p&gt;Campaigners say plan marks notable shift away from oil and gas as previously pledges were only for carbon neutrality&lt;/p&gt;&lt;p&gt;Europe’s biggest economy, Germany, has committed to phasing out fossil fuels by 2045, despite fierce debate about its green policies.&lt;/p&gt;&lt;p&gt;In a &lt;a href=\"https://www.bundesumweltministerium.de/download/deutschlands-roadmap-fuer-die-schrittweise-abkehr-von-fossilen-energien\"&gt;roadmap published on Wednesday&lt;/a&gt;, the German government",
           "published": "2026-09-23T16:37:52.000Z",
           "score": 9
+        },
+        {
+          "title": "A red carpet and military flyover - How Trump welcomed Xi",
+          "link": "https://www.bbc.co.uk/news/videos/c6804ne8knklo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The two B-1 bombers that flew overhead are a key part of the US's combat arsenal, and produce a notoriously loud roar when they pass by.",
+          "published": "2026-09-23T23:03:56.000Z",
+          "score": 7
+        },
+        {
+          "title": "The Coalition says it wants cheaper power, not ideology. But its evidence-free plan is all ideology | Adam Morton",
+          "link": "https://www.theguardian.com/environment/commentisfree/2026/sep/24/the-coalition-says-it-wants-cheaper-power-not-ideology-but-its-evidence-free-plan-is-ideology",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;The reheated plans to scrap renewable schemes, boost fossil fuels and revive nuclear are transparently Trumpian&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Want to get this in your inbox when it publishes?&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt; Sign up for the Clear Air Australia newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Give the Coalition points for ch",
+          "published": "2026-09-24T00:23:22.000Z",
+          "score": 4
         }
       ]
     },
@@ -79,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Interactive: What China’s dozens of ‘five-year plans’ say about climate and energy",
+          "link": "https://interactive.carbonbrief.org/china-plan-tracker/index.html",
+          "source": "Carbon Brief",
+          "description": "Almost three-quarters of the 72 five-year plans published by China this year include policies or targets related to climate change&#8230; The post Interactive: What China’s dozens of ‘five-year plans’ say about climate and energy appeared first on Carbon Brief.",
+          "published": "2026-09-24T14:00:00.000Z",
+          "score": 13
+        },
         {
           "title": "Germany unveils plan to end use of fossil fuels in energy sector by 2045",
           "link": "https://www.climatechangenews.com/2026/09/23/germany-plan-end-fossil-fuel-phase-out-energy-2045-new-york/",
@@ -88,12 +96,12 @@
           "score": 13
         },
         {
-          "title": "The response to Nepal&#8217;s disaster is a test for global climate institutions",
-          "link": "https://www.climatechangenews.com/2026/09/23/the-response-to-nepals-disaster-is-a-test-for-global-climate-institutions/",
-          "source": "Climate Home News",
-          "description": "Nepal's recent flash flood represents a shared emergency the world over, as more and more communities become victims to a climate crisis they did not create The post The response to Nepal&#8217;s disaster is a test for global climate institutions appeared first on Climate Home News.",
-          "published": "2026-09-23T13:45:19.000Z",
-          "score": 13
+          "title": "Analysis: EVs are now nine times cheaper than petrol or diesel to drive in the UK",
+          "link": "https://www.carbonbrief.org/analysis-evs-are-now-nine-times-cheaper-than-petrol-or-diesel-to-drive-in-the-uk",
+          "source": "Carbon Brief",
+          "description": "The latest surge in fossil-fuel prices means it is now up to nine times cheaper in the UK to drive&#8230; The post Analysis: EVs are now nine times cheaper than petrol or diesel to drive in the UK appeared first on Carbon Brief.",
+          "published": "2026-09-24T11:49:03.000Z",
+          "score": 10
         },
         {
           "title": "Despite &#8220;real progress&#8221;, third of countries still lack early warning systems",
@@ -104,20 +112,12 @@
           "score": 10
         },
         {
-          "title": "Women are on deck &#8211; it&#8217;s time they steered",
-          "link": "https://www.climatechangenews.com/2026/09/23/women-are-on-deck-its-time-they-steered/",
-          "source": "Climate Home News",
-          "description": "The climate crisis is also a governance crisis - one with a persistent blindspot for women's leadership, ingenuity and readiness to take decisions for stronger action The post Women are on deck &#8211; it&#8217;s time they steered appeared first on Climate Home News.",
-          "published": "2026-09-23T13:23:43.000Z",
-          "score": 10
-        },
-        {
-          "title": "UK to join EU ocean science scheme to better predict extreme weather events",
-          "link": "https://www.theguardian.com/environment/2026/sep/23/britain-to-join-eu-global-ocean-monitoring-system-oceaneye",
+          "title": "UK shares findings of damning climate crisis national security report suppressed under Starmer",
+          "link": "https://www.theguardian.com/environment/2026/sep/23/uk-climate-crisis-national-security-report-suppressed-starmer-ed-miliband",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Cooperation on OceanEye, which aims to create ‘real-time’ model of world’s oceans, comes amid efforts to boost EU ties&lt;/p&gt;&lt;p&gt;Britain is to join a major new ocean science programme, led by the EU, to better forecast extreme weather and climate events, the environment secretary is to announce in New York.&lt;/p&gt;&lt;p&gt;The announcement on Wednesday will come as Andy Burnham’s government aims to rebuild the UK’s relationship with Europe, and follows warnings this year’s &lt",
-          "published": "2026-09-23T14:24:37.000Z",
-          "score": 10
+          "description": "&lt;p&gt;El Niño poses critical threat to nations’ defences, says Ed Miliband in presentation to global foreign ministers&lt;/p&gt;&lt;p&gt;The UK has warned countries around the world that the climate and nature crises and the coming El Niño threaten their national security and defence, presenting foreign ministries with the findings of a report suppressed under Keir Starmer.&lt;/p&gt;&lt;p&gt;Ed Miliband, the UK’s foreign secretary, made a presentation to the foreign ministers of the EU as wel",
+          "published": "2026-09-23T21:21:33.000Z",
+          "score": 9
         }
       ]
     },
@@ -138,12 +138,53 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "EU to condemn war in Ukraine at G20 even if Putin attends",
+          "link": "https://www.dw.com/en/eu-to-condemn-war-in-ukraine-at-g20-even-if-putin-attends/a-79413317?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Russian President Vladimir Putin has been invited to the G20 summit in Miami by the United States. Multiple members of the group have called for Moscow&#039;s exclusion over its invasion of Ukraine.",
+          "published": "2026-09-24T13:30:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "As the EU advances free trade with Southeast Asia, why is there no ASEAN-wide deal?",
+          "link": "https://www.dw.com/en/as-the-eu-advances-free-trade-with-southeast-asia-why-is-there-no-asean-wide-deal/a-79388278?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "After years of arduous negotiations, the EU is closing on a string of bilateral trade deals with countries in Southeast Asia. And yet, a bloc-to-bloc agreement between the EU and ASEAN remains a distant prospect.",
+          "published": "2026-09-24T11:40:00.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Europe August car sales rise as EV demand offsets petrol, diesel slump - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQejJBa29lQjVkeGpKQnlfU0dMd2xRVUZvVk5iWHlNTE1XMVlBV2ZyUGFLUTVkWTd0TjBXZi1FaUlJWHpScmFGMHhTM3I5anFkUG1VbGgzanlNN2RQNmh5SlFqT203SkpFc1g3MldFakFWR2QzSndIWk1Zcm9ENkRCczVYRmJIaXFPQlluRUVNbWZoa1ZuT1d6UWEzWmIxSnBLNHYwVk5fcENlSkdWd1Q0UlprMlM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQejJBa29lQjVkeGpKQnlfU0dMd2xRVUZvVk5iWHlNTE1XMVlBV2ZyUGFLUTVkWTd0TjBXZi1FaUlJWHpScmFGMHhTM3I5anFkUG1VbGgzanlNN2RQNmh5SlFqT203SkpFc1g3MldFakFWR2QzSndIWk1Zcm9ENkRCczVYRmJIaXFPQlluRUVNbWZoa1ZuT1d6UWEzWmIxSnBLNHYwVk5fcENlSkdWd1Q0UlprMlM?oc=5\" target=\"_blank\"&gt;Europe August car sales rise as EV demand offsets petrol, diesel slump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-24T04:07:43.000Z",
+          "score": 13
+        },
+        {
+          "title": "Moroccan centrist party tops parliament vote after boost from football chief - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmNYZUlQOGhLd3QzeXNoOTd5SmctdlMwQ2VGT3BUVU1ZRDZ4YWtLMWlCVmRvT09NcW91TzA2TGRLdnJTSFh3WERFeUxxcUwtYnIxdXVJMnhmeGdxTXBQZ3JwR3IzM2FYaFJDcFFqUWFMRG8wLWJhakwwNzhYZ21FazdNMjljLVE0OFh5TG5hSFo1SFJBOUR0ekZSTjlXbngy?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmNYZUlQOGhLd3QzeXNoOTd5SmctdlMwQ2VGT3BUVU1ZRDZ4YWtLMWlCVmRvT09NcW91TzA2TGRLdnJTSFh3WERFeUxxcUwtYnIxdXVJMnhmeGdxTXBQZ3JwR3IzM2FYaFJDcFFqUWFMRG8wLWJhakwwNzhYZ21FazdNMjljLVE0OFh5TG5hSFo1SFJBOUR0ekZSTjlXbngy?oc=5\" target=\"_blank\"&gt;Moroccan centrist party tops parliament vote after boost from football chief&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-24T11:55:45.000Z",
+          "score": 12
+        },
+        {
+          "title": "Why India's Election Commission is in the eye of a storm - again",
+          "link": "https://www.bbc.co.uk/news/articles/cqkgw68yjg29o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "India's polling monitor is facing yet another crisis of credibility with fresh allegations against its chief.",
+          "published": "2026-09-24T08:26:19.000Z",
+          "score": 8
+        },
         {
           "title": "Baltic nations seek EU support to combat drones, Lithuania says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPc1RvY3RpX2dvSTlsUkpkTXkwNHhHZWxraDdEemJmNllGLXhZR3oybmZWM2RZazVoYVVwWEViOVlPakRkdmdQempoZFF1WFNGWGhmWXpfOEVzZEg1a2VZdEMyME0yY2Vseng1cmNONGs0V2loTV9FUFhPT2ltVEZmbWZub18xZGx6blFKT0N5czlweHBKWjgyVTViVm53NHZqMUJJ?oc=5",
@@ -153,44 +194,20 @@
           "score": 8
         },
         {
-          "title": "EU could recoup third of US economic lead with bigger firms, ECB says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNdG1FYUdLS0FhVEJGYmJNY0EzZnY4c01lZTh4eDBaX19manp5QVRRNC1lSWpJYUFXNkpQRm9pa0FBem0wQlB1SVpjamx0YUZOejRHSXVpdkRucGhqdTJySGhZYW5rS0wwek9nMXhUV1p0OGh2d3E1NkJFTFNlSUNhYW5pYTJhMXQtUWpta0h0WmNZdGc2dkoxbTFtejlKRWxBUTBHMHZtOFBUNXNKMU9LM2RMNnhycmRQVWZMc0RiOUkxUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNdG1FYUdLS0FhVEJGYmJNY0EzZnY4c01lZTh4eDBaX19manp5QVRRNC1lSWpJYUFXNkpQRm9pa0FBem0wQlB1SVpjamx0YUZOejRHSXVpdkRucGhqdTJySGhZYW5rS0wwek9nMXhUV1p0OGh2d3E1NkJFTFNlSUNhYW5pYTJhMXQtUWpta0h0WmNZdGc2dkoxbTFtejlKRWxBUTBHMHZtOFBUNXNKMU9LM2RMNnhycmRQVWZMc0RiOUkxUQ?oc=5\" target=\"_blank\"&gt;EU could recoup third of US economic lead with bigger firms, ECB says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-23T12:15:47.000Z",
-          "score": 8
-        },
-        {
           "title": "EU faces backlash after lifting sanctions on Russian billionaires - Reuters",
           "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQjRvVmg0d0MzSkY1OUprdGlXa1Z4cmJLY2dsWEptR0QyQ3YxNFVDWTRtQjQ1UmZsNEc1LWNjMU1TZjhFSVRvWWVCRWJmc2szU2tnb1JUR1hJZWlvZTJUUlBoN3RqLTFtOUtEalY5cnlrMUNPMDR5VF9yS0o1ODFOUlhyakx3X0VOYjdRS3BNQXVXZ0VveTM0aDlHc0NQMjQwLXhuUndNcGdYMnBjaUhiUw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOQjRvVmg0d0MzSkY1OUprdGlXa1Z4cmJLY2dsWEptR0QyQ3YxNFVDWTRtQjQ1UmZsNEc1LWNjMU1TZjhFSVRvWWVCRWJmc2szU2tnb1JUR1hJZWlvZTJUUlBoN3RqLTFtOUtEalY5cnlrMUNPMDR5VF9yS0o1ODFOUlhyakx3X0VOYjdRS3BNQXVXZ0VveTM0aDlHc0NQMjQwLXhuUndNcGdYMnBjaUhiUw?oc=5\" target=\"_blank\"&gt;EU faces backlash after lifting sanctions on Russian billionaires&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-23T16:04:34.000Z",
           "score": 8
-        },
-        {
-          "title": "Azerbaijan pardons French national after EU drops sanctions on Usmanov - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNldBQXliTFpySThuQlRkUlBMVVBLaUYzMS00N2NwM0JnZVBUUTdxaE1ZdmQ2U2NCNFU0dmVQV1hiU1hxWXJoRnJzTGktVjVKeUE0cm82elZ6U3pMc0FES2NJMU8wcWFmc2s0SXRDZDFiX3FHeWtVQnR1a3k2N2RHUkZzdXR4d0dUMjFPZ1dOSW4xZ004TWRMYmNnV2xrT3Z0WDJsTmx1YXI3b2hYa1lKdkFhbXFaZ0stWHROTVd1cw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPNldBQXliTFpySThuQlRkUlBMVVBLaUYzMS00N2NwM0JnZVBUUTdxaE1ZdmQ2U2NCNFU0dmVQV1hiU1hxWXJoRnJzTGktVjVKeUE0cm82elZ6U3pMc0FES2NJMU8wcWFmc2s0SXRDZDFiX3FHeWtVQnR1a3k2N2RHUkZzdXR4d0dUMjFPZ1dOSW4xZ004TWRMYmNnV2xrT3Z0WDJsTmx1YXI3b2hYa1lKdkFhbXFaZ0stWHROTVd1cw?oc=5\" target=\"_blank\"&gt;Azerbaijan pardons French national after EU drops sanctions on Usmanov&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-23T11:54:45.000Z",
-          "score": 8
-        },
-        {
-          "title": "South Africa races to keep auto exports competitive in EV era - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPZ0ZPWk1RMmNNdlhDX244YkpEc3BHcHVibFhRd1hxZWxnS2FJZVpUejlLSjFtbXY3eE05anE4ZEpKWUtQM3VDRzVHdDc1bzdJMzd5SXlTd0ZILTJhN2VEOU1USDItTnRrM0xydWVFZDRnT05qUjU3VHBreFpFNnFWeDhEd2FVQXhKQmEzMVZjWWlhZGltZVp0aTJRanFEUzU4VE5tRndtQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPZ0ZPWk1RMmNNdlhDX244YkpEc3BHcHVibFhRd1hxZWxnS2FJZVpUejlLSjFtbXY3eE05anE4ZEpKWUtQM3VDRzVHdDc1bzdJMzd5SXlTd0ZILTJhN2VEOU1USDItTnRrM0xydWVFZDRnT05qUjU3VHBreFpFNnFWeDhEd2FVQXhKQmEzMVZjWWlhZGltZVp0aTJRanFEUzU4VE5tRndtQQ?oc=5\" target=\"_blank\"&gt;South Africa races to keep auto exports competitive in EV era&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-24T05:35:29.000Z",
-          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 169,
-    "afterDedup": 159,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 163,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
