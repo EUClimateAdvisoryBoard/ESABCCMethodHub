@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T09:24:43.684Z",
+  "generatedAt": "2026-09-24T09:24:51.884Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,45 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1038/s41893-026-01935-3",
+      "title": "Far-right political support and clean technology adoption in Germany",
+      "journal": "Nature Sustainability",
+      "authors": "Sebastian Reining, Moritz Wussow, Chad Zanocco et al.",
+      "published": "2026-09-23",
+      "url": "https://doi.org/10.1038/s41893-026-01935-3",
+      "abstract": "The diffusion of clean technologies is critical for climate goals, yet political polarization influences adoption. Here we examine how ideology affects residential solar photovoltaic (PV) and electric vehicle (EV) uptake in Germany, drawing on responses from a three-wave individual-level survey, municipality-level observations of PV and EV registrations and election results. Supporters of the far-right Alternative für Deutschland (AfD) show significantly lower willingness to adopt EVs and, to a lesser degree, PV systems compared with supporters of the pro-environmental Bündnis 90 / Die Grünen (GRÜNE) party. However, polarization is not static. The relative adoption gap between municipalities with strong AfD support and those with strong GRÜNE support declined from 76% to 31% for solar PV between 2000 and 2023, and from 84% to 60% for EVs between 2015 and 2019. Here, using an instrumental-variable strategy based on wolf attacks as a predictor of AfD vote share, we provide complementary evidence on the relationship between far-right voting and the adoption of clean technology. Counterfactual simulations indicate that, by 2023, solar PV diffusion could have been up to 1.3% higher and EV diffusion up to 2.9% higher in the absence of rising electoral support for the far right.",
+      "suggestedOn": "2026-09-24",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 4,
+          "matched": [
+            "clean technology"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1088/1748-9326/aeabbb",
+      "title": "Decoupling the cost estimations and equity implications of decarbonisation from carbon pricing",
+      "journal": "Environmental Research Letters",
+      "authors": "Shiya Zhao, Shinichiro Fujimori, Ken Oshiro, Tomoko Hasegawa",
+      "published": "2026-09-23",
+      "url": "https://doi.org/10.1088/1748-9326/aeabbb",
+      "abstract": "Existing long-term climate mitigation scenarios typically rely on carbon pricing to estimate macroeconomic impacts and equity implications of decarbonisation, often projecting adverse distributional outcomes. However, substantial emissions reduction can also be achieved through non-carbon-pricing measures, raising concerns about the insights of these scenarios. Here, we decoupled the cost and equity assessment of decarbonisation from carbon pricing by developing decarbonisation scenarios independent of carbon pricing. We found that while the macroeconomic cost mainly comes from the system transition, the distributional effects indicated in conventional carbon-price-based scenarios are mainly caused by carbon prices, contributing to increases on poverty, hunger risks, and domestic income inequality by 86%, 84%, and 90%, respectively. Our findings indicate the great potential to moderate the concerns on the equity implications of climate change mitigation associated with carbon pricing and the need for improved policy representations in scenarios to better inform equitable and sustainable decarbonisation transitions.",
+      "suggestedOn": "2026-09-24",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 12,
+          "matched": [
+            "carbon pricing",
+            "decarbonisation"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1038/s41560-026-02126-2",
       "title": "Spatially informed demand-side policies for green hydrogen diffusion in Europe",
@@ -301,26 +340,6 @@
           "matched": [
             "cement",
             "low-carbon cement"
-          ]
-        }
-      ]
-    },
-    {
-      "doi": "10.1038/s41558-026-02700-2",
-      "title": "Multi-century cooling after net-zero greenhouse gas emissions",
-      "journal": "Nature Climate Change",
-      "authors": "Nathaniel Tarshish, Nadir Jeevanjee, Inez Fung",
-      "published": "2026-07-24",
-      "url": "https://doi.org/10.1038/s41558-026-02700-2",
-      "abstract": "",
-      "suggestedOn": "2026-07-25",
-      "projects": [
-        {
-          "projectId": "policy-gap-2-0",
-          "score": 6,
-          "matched": [
-            "net-zero",
-            "greenhouse gas emissions"
           ]
         }
       ]
