@@ -1,12 +1,12 @@
 {
   "date": "2026-09-24",
-  "generatedAt": "2026-09-24T15:47:38.108Z",
+  "generatedAt": "2026-09-24T20:21:32.223Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 24 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "UN Climate Summit: UN chief says world has tools to end fossil fuel age",
-      "summary": "At the UN Secretary-General's climate summit in New York, countries shared their energy transition plans while Nepal and island nations advocated for more international support The post UN Climate Summit: UN chief says world has tools to end fossil fuel age appeared first on Climate Home News.",
+      "headline": "A red carpet and military flyover - How Trump welcomed Xi",
+      "summary": "The two B-1 bombers that flew overhead are a key part of the US's combat arsenal, and produce a notoriously loud roar when they pass by.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Florida fund sues New York Times over alleged anti-Israel bias, demands records - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPM0VRbGl1dS1VcC1GWGc2RnBTWFNyckNCQ2J3Ri1tdjktNUpuVzRfTGNOUFdMR0Y3N3FiUmlEM3V2ekhFM1JtaUNQbVNKdnliZkNoa3FKVVFVclphSG53V3VXbUlPSWFFLWI1Vnp3eWpiMU5zaDBCN2ZCSHRfWUo0d1l1NmRXWFl2dWpsZ242TFloWGVWd01qenNWNnBjNFRQMFVFTmdqYno5OFk3aTM5NnRvZmdqdkk?oc=5\" target=\"_blank\"&gt;Florida fund sues New York Times over alleged anti-Israel bias, demands records&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Nigeria, US agree to boost mining investment on sidelines of UN General Assembly",
+      "summary": "On the sidelines of the UN General Assembly, Nigeria and the US inked a new mining deal. Nigeria is home to deposits of lithium, gold, tin, gemstones, iron ore and phosphate.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,30 +34,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "UN Climate Summit: UN chief says world has tools to end fossil fuel age",
-          "link": "https://www.climatechangenews.com/2026/09/23/un-summit-live-un-chief-says-world-has-tools-to-end-the-fossil-fuel-age/",
-          "source": "Climate Home News",
-          "description": "At the UN Secretary-General's climate summit in New York, countries shared their energy transition plans while Nepal and island nations advocated for more international support The post UN Climate Summit: UN chief says world has tools to end fossil fuel age appeared first on Climate Home News.",
-          "published": "2026-09-23T19:54:55.000Z",
-          "score": 13
-        },
-        {
-          "title": "UN backs push to upgrade grids slowing clean power uptake in Africa and SE Asia",
-          "link": "https://www.climatechangenews.com/2026/09/23/un-backs-push-to-upgrade-grids-slowing-clean-power-uptake-in-africa-and-southeast-asia/",
-          "source": "Climate Home News",
-          "description": "The Global Grids Accelerator will help turn national and regional plans to expand electricity infrastructure into viable projects on the ground The post UN backs push to upgrade grids slowing clean power uptake in Africa and SE Asia appeared first on Climate Home News.",
-          "published": "2026-09-23T17:11:37.000Z",
-          "score": 10
-        },
-        {
-          "title": "Germany pledges to phase out fossil fuels for first time with target of 2045",
-          "link": "https://www.theguardian.com/environment/2026/sep/23/germany-commits-for-first-time-to-phasing-out-fossil-fuels-by-2045",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Campaigners say plan marks notable shift away from oil and gas as previously pledges were only for carbon neutrality&lt;/p&gt;&lt;p&gt;Europe’s biggest economy, Germany, has committed to phasing out fossil fuels by 2045, despite fierce debate about its green policies.&lt;/p&gt;&lt;p&gt;In a &lt;a href=\"https://www.bundesumweltministerium.de/download/deutschlands-roadmap-fuer-die-schrittweise-abkehr-von-fossilen-energien\"&gt;roadmap published on Wednesday&lt;/a&gt;, the German government",
-          "published": "2026-09-23T16:37:52.000Z",
-          "score": 9
-        },
-        {
           "title": "A red carpet and military flyover - How Trump welcomed Xi",
           "link": "https://www.bbc.co.uk/news/videos/c6804ne8knklo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -71,6 +47,14 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;The reheated plans to scrap renewable schemes, boost fossil fuels and revive nuclear are transparently Trumpian&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Want to get this in your inbox when it publishes?&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt; Sign up for the Clear Air Australia newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Give the Coalition points for ch",
           "published": "2026-09-24T00:23:22.000Z",
+          "score": 4
+        },
+        {
+          "title": "‘You can’t just bet everything on exports’: as its gas runs out, is Bolivia doomed to repeat history?",
+          "link": "https://www.theguardian.com/global-development/2026/sep/24/fossil-gas-runs-out-bolivia-poverty-inflation",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;A fossil gas boom that lifted millions out of poverty has collapsed and inflation is rising – but not everyone believes selling gold and soya is the answer&lt;/p&gt;&lt;p&gt;Once hailed as the “energy heart of South America”, &lt;a href=\"https://www.theguardian.com/world/bolivia\"&gt;Bolivia&lt;/a&gt;’s economy was buoyed up by a fossil gas boom from 2006 to 2014. At its height, then-president Evo Morales commissioned a &lt;a href=\"https://www.theguardian.com/world/2018/aug/16/bolivian-p",
+          "published": "2026-09-24T13:00:18.000Z",
           "score": 4
         }
       ]
@@ -104,11 +88,11 @@
           "score": 10
         },
         {
-          "title": "Despite &#8220;real progress&#8221;, third of countries still lack early warning systems",
-          "link": "https://www.climatechangenews.com/2026/09/23/despite-real-progress-third-of-countries-still-lack-early-warning-systems/",
+          "title": "Push for cooking to be part of COP31&#8217;s electrification agenda",
+          "link": "https://www.climatechangenews.com/2026/09/24/push-for-cooking-to-be-part-of-cop31s-electrification-agenda/",
           "source": "Climate Home News",
-          "description": "About 60 nations have yet to put in place a multi-hazard early warning system to protect people from disasters before they happen, the UN says The post Despite &#8220;real progress&#8221;, third of countries still lack early warning systems appeared first on Climate Home News.",
-          "published": "2026-09-23T16:07:52.000Z",
+          "description": "The President of Kenya and the British climate envoy said Africa should use the global electrification push to roll out clean cooking The post Push for cooking to be part of COP31&#8217;s electrification agenda appeared first on Climate Home News.",
+          "published": "2026-09-24T16:51:36.000Z",
           "score": 10
         },
         {
@@ -126,11 +110,27 @@
       "title": "Green Finance & Investment",
       "items": [
         {
+          "title": "Nigeria, US agree to boost mining investment on sidelines of UN General Assembly",
+          "link": "https://www.dw.com/en/nigeria-us-agree-to-boost-mining-investment-on-sidelines-of-un-general-assembly/a-79417444?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "On the sidelines of the UN General Assembly, Nigeria and the US inked a new mining deal. Nigeria is home to deposits of lithium, gold, tin, gemstones, iron ore and phosphate.",
+          "published": "2026-09-24T15:46:00.000Z",
+          "score": 2
+        },
+        {
           "title": "Florida fund sues New York Times over alleged anti-Israel bias, demands records - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPM0VRbGl1dS1VcC1GWGc2RnBTWFNyckNCQ2J3Ri1tdjktNUpuVzRfTGNOUFdMR0Y3N3FiUmlEM3V2ekhFM1JtaUNQbVNKdnliZkNoa3FKVVFVclphSG53V3VXbUlPSWFFLWI1Vnp3eWpiMU5zaDBCN2ZCSHRfWUo0d1l1NmRXWFl2dWpsZ242TFloWGVWd01qenNWNnBjNFRQMFVFTmdqYno5OFk3aTM5NnRvZmdqdkk?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPM0VRbGl1dS1VcC1GWGc2RnBTWFNyckNCQ2J3Ri1tdjktNUpuVzRfTGNOUFdMR0Y3N3FiUmlEM3V2ekhFM1JtaUNQbVNKdnliZkNoa3FKVVFVclphSG53V3VXbUlPSWFFLWI1Vnp3eWpiMU5zaDBCN2ZCSHRfWUo0d1l1NmRXWFl2dWpsZ242TFloWGVWd01qenNWNnBjNFRQMFVFTmdqYno5OFk3aTM5NnRvZmdqdkk?oc=5\" target=\"_blank\"&gt;Florida fund sues New York Times over alleged anti-Israel bias, demands records&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-23T21:09:09.000Z",
+          "score": 2
+        },
+        {
+          "title": "Nigeria, US sign agreement to boost mining investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZk0zSmRqbnA5dF9KT1NPWVNyT2JpdDh1N2J5WXFwbmwzQkNPdy1HcXkwQkFkY3NmdlhlV1JXZkU3OVowWEVIWkN4OWt5MG5PY1lTcWp5a0NqcldFcjdIREROYmNHMXg1RWVvSXB3YkVET1lfbm10RG9ycE9ScUFnTk9hb2dxaDdIVlNkS2h4UUJQak1hRmRPVi13U0JBajg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNZk0zSmRqbnA5dF9KT1NPWVNyT2JpdDh1N2J5WXFwbmwzQkNPdy1HcXkwQkFkY3NmdlhlV1JXZkU3OVowWEVIWkN4OWt5MG5PY1lTcWp5a0NqcldFcjdIREROYmNHMXg1RWVvSXB3YkVET1lfbm10RG9ycE9ScUFnTk9hb2dxaDdIVlNkS2h4UUJQak1hRmRPVi13U0JBajg?oc=5\" target=\"_blank\"&gt;Nigeria, US sign agreement to boost mining investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-24T12:24:45.000Z",
           "score": 2
         }
       ]
@@ -148,8 +148,8 @@
           "score": 8
         },
         {
-          "title": "As the EU advances free trade with Southeast Asia, why is there no ASEAN-wide deal?",
-          "link": "https://www.dw.com/en/as-the-eu-advances-free-trade-with-southeast-asia-why-is-there-no-asean-wide-deal/a-79388278?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU finally clinching trade deals with Southeast Asian states",
+          "link": "https://www.dw.com/en/eu-finally-clinching-trade-deals-with-southeast-asian-states/a-79388278?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "After years of arduous negotiations, the EU is closing on a string of bilateral trade deals with countries in Southeast Asia. And yet, a bloc-to-bloc agreement between the EU and ASEAN remains a distant prospect.",
           "published": "2026-09-24T11:40:00.000Z",
@@ -166,7 +166,7 @@
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQejJBa29lQjVkeGpKQnlfU0dMd2xRVUZvVk5iWHlNTE1XMVlBV2ZyUGFLUTVkWTd0TjBXZi1FaUlJWHpScmFGMHhTM3I5anFkUG1VbGgzanlNN2RQNmh5SlFqT203SkpFc1g3MldFakFWR2QzSndIWk1Zcm9ENkRCczVYRmJIaXFPQlluRUVNbWZoa1ZuT1d6UWEzWmIxSnBLNHYwVk5fcENlSkdWd1Q0UlprMlM?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQejJBa29lQjVkeGpKQnlfU0dMd2xRVUZvVk5iWHlNTE1XMVlBV2ZyUGFLUTVkWTd0TjBXZi1FaUlJWHpScmFGMHhTM3I5anFkUG1VbGgzanlNN2RQNmh5SlFqT203SkpFc1g3MldFakFWR2QzSndIWk1Zcm9ENkRCczVYRmJIaXFPQlluRUVNbWZoa1ZuT1d6UWEzWmIxSnBLNHYwVk5fcENlSkdWd1Q0UlprMlM?oc=5\" target=\"_blank\"&gt;Europe August car sales rise as EV demand offsets petrol, diesel slump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-24T04:07:43.000Z",
+          "published": "2026-09-24T04:02:00.000Z",
           "score": 13
         },
         {
@@ -174,7 +174,7 @@
           "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmNYZUlQOGhLd3QzeXNoOTd5SmctdlMwQ2VGT3BUVU1ZRDZ4YWtLMWlCVmRvT09NcW91TzA2TGRLdnJTSFh3WERFeUxxcUwtYnIxdXVJMnhmeGdxTXBQZ3JwR3IzM2FYaFJDcFFqUWFMRG8wLWJhakwwNzhYZ21FazdNMjljLVE0OFh5TG5hSFo1SFJBOUR0ekZSTjlXbngy?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmNYZUlQOGhLd3QzeXNoOTd5SmctdlMwQ2VGT3BUVU1ZRDZ4YWtLMWlCVmRvT09NcW91TzA2TGRLdnJTSFh3WERFeUxxcUwtYnIxdXVJMnhmeGdxTXBQZ3JwR3IzM2FYaFJDcFFqUWFMRG8wLWJhakwwNzhYZ21FazdNMjljLVE0OFh5TG5hSFo1SFJBOUR0ekZSTjlXbngy?oc=5\" target=\"_blank\"&gt;Moroccan centrist party tops parliament vote after boost from football chief&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-24T11:55:45.000Z",
+          "published": "2026-09-24T03:56:00.000Z",
           "score": 12
         },
         {
@@ -186,28 +186,28 @@
           "score": 8
         },
         {
-          "title": "Baltic nations seek EU support to combat drones, Lithuania says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPc1RvY3RpX2dvSTlsUkpkTXkwNHhHZWxraDdEemJmNllGLXhZR3oybmZWM2RZazVoYVVwWEViOVlPakRkdmdQempoZFF1WFNGWGhmWXpfOEVzZEg1a2VZdEMyME0yY2Vseng1cmNONGs0V2loTV9FUFhPT2ltVEZmbWZub18xZGx6blFKT0N5czlweHBKWjgyVTViVm53NHZqMUJJ?oc=5",
+          "title": "South Africa races to keep auto exports competitive in EV era - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPZ0ZPWk1RMmNNdlhDX244YkpEc3BHcHVibFhRd1hxZWxnS2FJZVpUejlLSjFtbXY3eE05anE4ZEpKWUtQM3VDRzVHdDc1bzdJMzd5SXlTd0ZILTJhN2VEOU1USDItTnRrM0xydWVFZDRnT05qUjU3VHBreFpFNnFWeDhEd2FVQXhKQmEzMVZjWWlhZGltZVp0aTJRanFEUzU4VE5tRndtQQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPc1RvY3RpX2dvSTlsUkpkTXkwNHhHZWxraDdEemJmNllGLXhZR3oybmZWM2RZazVoYVVwWEViOVlPakRkdmdQempoZFF1WFNGWGhmWXpfOEVzZEg1a2VZdEMyME0yY2Vseng1cmNONGs0V2loTV9FUFhPT2ltVEZmbWZub18xZGx6blFKT0N5czlweHBKWjgyVTViVm53NHZqMUJJ?oc=5\" target=\"_blank\"&gt;Baltic nations seek EU support to combat drones, Lithuania says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-23T16:13:16.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPZ0ZPWk1RMmNNdlhDX244YkpEc3BHcHVibFhRd1hxZWxnS2FJZVpUejlLSjFtbXY3eE05anE4ZEpKWUtQM3VDRzVHdDc1bzdJMzd5SXlTd0ZILTJhN2VEOU1USDItTnRrM0xydWVFZDRnT05qUjU3VHBreFpFNnFWeDhEd2FVQXhKQmEzMVZjWWlhZGltZVp0aTJRanFEUzU4VE5tRndtQQ?oc=5\" target=\"_blank\"&gt;South Africa races to keep auto exports competitive in EV era&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-24T05:03:00.000Z",
+          "score": 7
         },
         {
-          "title": "EU faces backlash after lifting sanctions on Russian billionaires - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQjRvVmg0d0MzSkY1OUprdGlXa1Z4cmJLY2dsWEptR0QyQ3YxNFVDWTRtQjQ1UmZsNEc1LWNjMU1TZjhFSVRvWWVCRWJmc2szU2tnb1JUR1hJZWlvZTJUUlBoN3RqLTFtOUtEalY5cnlrMUNPMDR5VF9yS0o1ODFOUlhyakx3X0VOYjdRS3BNQXVXZ0VveTM0aDlHc0NQMjQwLXhuUndNcGdYMnBjaUhiUw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOQjRvVmg0d0MzSkY1OUprdGlXa1Z4cmJLY2dsWEptR0QyQ3YxNFVDWTRtQjQ1UmZsNEc1LWNjMU1TZjhFSVRvWWVCRWJmc2szU2tnb1JUR1hJZWlvZTJUUlBoN3RqLTFtOUtEalY5cnlrMUNPMDR5VF9yS0o1ODFOUlhyakx3X0VOYjdRS3BNQXVXZ0VveTM0aDlHc0NQMjQwLXhuUndNcGdYMnBjaUhiUw?oc=5\" target=\"_blank\"&gt;EU faces backlash after lifting sanctions on Russian billionaires&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-23T16:04:34.000Z",
-          "score": 8
+          "title": "UK survivor of Canadian poison seller says he exploited her despair",
+          "link": "https://www.bbc.co.uk/news/articles/cmvgy4237gq9o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Elisabeth Belien tells Kenneth Law's sentencing hearing she took the poison when she was just 23 years old.",
+          "published": "2026-09-23T21:16:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 403,
+    "totalArticlesScanned": 410,
     "articlesLast24h": 163,
-    "afterDedup": 155,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
