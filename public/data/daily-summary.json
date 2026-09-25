@@ -1,26 +1,20 @@
 {
   "date": "2026-09-25",
-  "generatedAt": "2026-09-25T10:05:22.968Z",
+  "generatedAt": "2026-09-25T15:48:57.779Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 25 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Germany news: Parliament to vote on fuel tax cut",
+      "headline": "Germany news: Parliament approves fuel tax cut",
       "summary": "German lawmakers hope to drive down fuel prices by cutting taxes on gas and diesel from October 1. Meanwhile, students in many cities are set to protest against military conscription. DW has the latest.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Interactive: What China’s dozens of ‘five-year plans’ say about climate and energy",
-      "summary": "Almost three-quarters of the 72 five-year plans published by China this year include policies or targets related to climate change&#8230; The post Interactive: What China’s dozens of ‘five-year plans’ say about climate and energy appeared first on Carbon Brief.",
+      "headline": "‘Concerning’ low sea ice persists as Antarctic hits third-lowest winter peak",
+      "summary": "Antarctic sea ice has recorded its third-smallest winter peak extent since satellite records began 48 years ago, new data reveals.&#8230; The post ‘Concerning’ low sea ice persists as Antarctic hits third-lowest winter peak appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Nigeria, US agree to boost mining investment on sidelines of UN General Assembly",
-      "summary": "On the sidelines of the UN General Assembly, Nigeria and the US inked a new mining deal. Nigeria is home to deposits of lithium, gold, tin, gemstones, iron ore and phosphate.",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,12 +28,28 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Germany news: Parliament to vote on fuel tax cut",
-          "link": "https://www.dw.com/en/germany-news-parliament-to-vote-on-fuel-tax-cut/live-79424882?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Germany news: Parliament approves fuel tax cut",
+          "link": "https://www.dw.com/en/germany-news-parliament-approves-fuel-tax-cut/live-79424882?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "German lawmakers hope to drive down fuel prices by cutting taxes on gas and diesel from October 1. Meanwhile, students in many cities are set to protest against military conscription. DW has the latest.",
-          "published": "2026-09-25T08:28:00.000Z",
-          "score": 12
+          "published": "2026-09-25T15:21:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "India news: Protests against election chief escalate as Gandhi, Cockroach party allege &#039;rigged&#039; vote",
+          "link": "https://www.dw.com/en/india-news-protests-against-election-chief-escalate-as-gandhi-cockroach-party-allege-rigged-vote/live-79422469?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Police have used tear gas on protests by the opposition Congress party demanding India&#039;s election commission head steps down, following a report alleging &quot;rigged&quot; elections. DW has more.",
+          "published": "2026-09-25T14:15:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "‘Robust little’ vessel begins treacherous 22,000km journey around Antarctica in the name of climate science",
+          "link": "https://www.theguardian.com/environment/2026/sep/26/saildrone-unmanned-hurricane-proof-ship-antarctica-climate-hobart",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Powered by sun and wind, the uncrewed vehicle will collect data to help Australian scientists better understand how oceans absorb emissions&lt;/p&gt;&lt;p&gt;A small uncrewed vessel has embarked on a lap around Antarctica and may not return for months.&lt;/p&gt;&lt;p&gt;The seven-metre craft, which looks like a large kayak in hi-vis orange, is expected to travel about 22,000km through inhospitable waters, propelled by powerful westerly winds and energy from the sun. The journey is seven",
+          "published": "2026-09-25T15:00:11.000Z",
+          "score": 7
         },
         {
           "title": "Xi got Trump's red carpet welcome - but not everything he wanted",
@@ -50,27 +60,11 @@
           "score": 7
         },
         {
-          "title": "Why farmers are pairing crops with solar panels",
-          "link": "https://www.dw.com/en/why-farmers-are-pairing-crops-with-solar-panels/a-79233970?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Bulgaria&#039;s battery boom: From zero to global leader",
+          "link": "https://www.dw.com/en/bulgaria-s-battery-boom-from-zero-to-global-leader/a-79428289?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "From cooler soil to paid grazing land, farmers are finding solar panels can do more than generate power.",
-          "published": "2026-09-25T09:31:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "France to send military to protect Saudi Arabia on Red Sea oil route, Macron says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNY0Z6R1B2THkxTXRCQXNqNE5ZUkVSbU9RR1Jsd1hwSzk4bkVTYTNpRVJVMjFZdkp5WEpXb1RwWDhOb0xPdW92WGx3dF84UGh2dkI1ZmxHUTdYZTJiREpHZm5XVjIzcUtXWHkzeGh2amdiNEhITkc1Y1BtTElUMWxta25yWUFwVXVKajdISE5RSWRZMmFsMkNNVTJ6bUhwcGN4R0tDODd1Qk5nSXdaQ2g3emE2b3RLbklEaGlLbFN3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNY0Z6R1B2THkxTXRCQXNqNE5ZUkVSbU9RR1Jsd1hwSzk4bkVTYTNpRVJVMjFZdkp5WEpXb1RwWDhOb0xPdW92WGx3dF84UGh2dkI1ZmxHUTdYZTJiREpHZm5XVjIzcUtXWHkzeGh2amdiNEhITkc1Y1BtTElUMWxta25yWUFwVXVKajdISE5RSWRZMmFsMkNNVTJ6bUhwcGN4R0tDODd1Qk5nSXdaQ2g3emE2b3RLbklEaGlLbFN3?oc=5\" target=\"_blank\"&gt;France to send military to protect Saudi Arabia on Red Sea oil route, Macron says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-24T19:51:02.000Z",
-          "score": 7
-        },
-        {
-          "title": "North Korea rejects call to halt nuclear tests - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQ0tGSzR6cTBTeXYtblYwUXdEX2ppeFRTUEEwNlo1VnFxbndoalFZd1BwdWtTZ0JrTkIyTThaS0NkbFhxRmIwRTRKX09fWldha2dxYUUtaXMteEV1c29KNDhKTEZvTHdTVDhfTk5qQWJNdVNKaFhUcmpUaUJtb3MxUWt2ZVhoWmlkd1VuU3BfZDJ1dTFvMnJsTENFMXQtU0k?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPQ0tGSzR6cTBTeXYtblYwUXdEX2ppeFRTUEEwNlo1VnFxbndoalFZd1BwdWtTZ0JrTkIyTThaS0NkbFhxRmIwRTRKX09fWldha2dxYUUtaXMteEV1c29KNDhKTEZvTHdTVDhfTk5qQWJNdVNKaFhUcmpUaUJtb3MxUWt2ZVhoWmlkd1VuU3BfZDJ1dTFvMnJsTENFMXQtU0k?oc=5\" target=\"_blank\"&gt;North Korea rejects call to halt nuclear tests&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-24T15:05:44.000Z",
+          "description": "In under two years, Bulgaria has become one of the world&#039;s most battery-intensive energy markets. Can the surge last — and what will it mean for conventional power generators?",
+          "published": "2026-09-25T11:38:00.000Z",
           "score": 7
         }
       ]
@@ -80,20 +74,20 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Interactive: What China’s dozens of ‘five-year plans’ say about climate and energy",
-          "link": "https://interactive.carbonbrief.org/china-plan-tracker/index.html",
+          "title": "‘Concerning’ low sea ice persists as Antarctic hits third-lowest winter peak",
+          "link": "https://www.carbonbrief.org/concerning-low-sea-ice-persists-as-antarctic-hits-third-lowest-winter-peak",
           "source": "Carbon Brief",
-          "description": "Almost three-quarters of the 72 five-year plans published by China this year include policies or targets related to climate change&#8230; The post Interactive: What China’s dozens of ‘five-year plans’ say about climate and energy appeared first on Carbon Brief.",
-          "published": "2026-09-24T14:00:00.000Z",
+          "description": "Antarctic sea ice has recorded its third-smallest winter peak extent since satellite records began 48 years ago, new data reveals.&#8230; The post ‘Concerning’ low sea ice persists as Antarctic hits third-lowest winter peak appeared first on Carbon Brief.",
+          "published": "2026-09-25T12:45:39.000Z",
           "score": 13
         },
         {
-          "title": "Analysis: EVs are now nine times cheaper than petrol or diesel to drive in the UK",
-          "link": "https://www.carbonbrief.org/analysis-evs-are-now-nine-times-cheaper-than-petrol-or-diesel-to-drive-in-the-uk",
-          "source": "Carbon Brief",
-          "description": "The latest surge in fossil-fuel prices means it is now up to nine times cheaper in the UK to drive&#8230; The post Analysis: EVs are now nine times cheaper than petrol or diesel to drive in the UK appeared first on Carbon Brief.",
-          "published": "2026-09-24T11:49:03.000Z",
-          "score": 10
+          "title": "WTO dispute body agrees to Russia's panel request on EU carbon border levy - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa3dGeGdiNXVGQkRHV3dDM29rak9SSFZRTVFjV1ZTS0JfR0dLR1NzQVFaY0dVZ0Z1U28yLW1GUE1GMUFmNkFfcndERmlZTU1XMkFJX01TRVU1WXNPcXh3NUtwQTdyMUFrZWdMdW1uSklaSWVnOThMMWlkMWZlWkFNVDVCMW9MS3NZNTRJOFVVNXU2Tm9TODM2WGwtQXZ4bzRVWExRVXdpUTdaVG1PV180LVpR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNa3dGeGdiNXVGQkRHV3dDM29rak9SSFZRTVFjV1ZTS0JfR0dLR1NzQVFaY0dVZ0Z1U28yLW1GUE1GMUFmNkFfcndERmlZTU1XMkFJX01TRVU1WXNPcXh3NUtwQTdyMUFrZWdMdW1uSklaSWVnOThMMWlkMWZlWkFNVDVCMW9MS3NZNTRJOFVVNXU2Tm9TODM2WGwtQXZ4bzRVWExRVXdpUTdaVG1PV180LVpR?oc=5\" target=\"_blank\"&gt;WTO dispute body agrees to Russia's panel request on EU carbon border levy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-25T11:57:43.000Z",
+          "score": 13
         },
         {
           "title": "COP31 attendees told not to interfere in Türkiye&#8217;s &#8220;internal affairs&#8221;",
@@ -124,57 +118,31 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Nigeria, US agree to boost mining investment on sidelines of UN General Assembly",
-          "link": "https://www.dw.com/en/nigeria-us-agree-to-boost-mining-investment-on-sidelines-of-un-general-assembly/a-79417444?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "On the sidelines of the UN General Assembly, Nigeria and the US inked a new mining deal. Nigeria is home to deposits of lithium, gold, tin, gemstones, iron ore and phosphate.",
-          "published": "2026-09-24T15:46:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Nigeria, US sign agreement to boost mining investment - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZk0zSmRqbnA5dF9KT1NPWVNyT2JpdDh1N2J5WXFwbmwzQkNPdy1HcXkwQkFkY3NmdlhlV1JXZkU3OVowWEVIWkN4OWt5MG5PY1lTcWp5a0NqcldFcjdIREROYmNHMXg1RWVvSXB3YkVET1lfbm10RG9ycE9ScUFnTk9hb2dxaDdIVlNkS2h4UUJQak1hRmRPVi13U0JBajg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNZk0zSmRqbnA5dF9KT1NPWVNyT2JpdDh1N2J5WXFwbmwzQkNPdy1HcXkwQkFkY3NmdlhlV1JXZkU3OVowWEVIWkN4OWt5MG5PY1lTcWp5a0NqcldFcjdIREROYmNHMXg1RWVvSXB3YkVET1lfbm10RG9ycE9ScUFnTk9hb2dxaDdIVlNkS2h4UUJQak1hRmRPVi13U0JBajg?oc=5\" target=\"_blank\"&gt;Nigeria, US sign agreement to boost mining investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-24T12:24:45.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "EU to condemn war in Ukraine at G20 even if Putin attends",
-          "link": "https://www.dw.com/en/eu-to-condemn-war-in-ukraine-at-g20-even-if-putin-attends/a-79413317?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Russian President Vladimir Putin has been invited to the G20 summit in Miami by the United States. Multiple members of the group have called for Moscow&#039;s exclusion over its invasion of Ukraine.",
-          "published": "2026-09-24T13:30:00.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "India hopes GST Council will review tax on UPI merchant fees, source says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTnJjY2NXOHpCYW5OLTBrcTAxNFFOYXRiYWpwUXRjNElDTm1WX0ExR1J3MTdaMThFQ0N0SnpwTVVJR0F1WlNNOWVhaDZ3RVpySXRhSExCd2N1QkpVdXoxSWpSTGVqNnY2bldPSEd2aTNKTFV1TWtaTXN3enY3MUc1MkdHcGdOVWRLdVVsT2RlbzZPNE15aVZDb0wzZWNfcHlzdlQyLVVTS2V6WWxLX0VXVGlteENUdk1a?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTnJjY2NXOHpCYW5OLTBrcTAxNFFOYXRiYWpwUXRjNElDTm1WX0ExR1J3MTdaMThFQ0N0SnpwTVVJR0F1WlNNOWVhaDZ3RVpySXRhSExCd2N1QkpVdXoxSWpSTGVqNnY2bldPSEd2aTNKTFV1TWtaTXN3enY3MUc1MkdHcGdOVWRLdVVsT2RlbzZPNE15aVZDb0wzZWNfcHlzdlQyLVVTS2V6WWxLX0VXVGlteENUdk1a?oc=5\" target=\"_blank\"&gt;India hopes GST Council will review tax on UPI merchant fees, source says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-24T15:11:25.000Z",
+          "title": "US backs Elon Musk's bid to overturn €120m EU fine against X",
+          "link": "https://www.bbc.co.uk/news/articles/cq0m373ee0v0o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The EU had said X \"deceives users\" by selling blue ticks without \"meaningfully verifying\" accounts.",
+          "published": "2026-09-25T09:48:33.000Z",
           "score": 8
         },
         {
-          "title": "US government seeks to join Elon Musk in challenge against EU's fine on X - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOb3VpWGF0eE1IT19OODViaGo4SHB0QjFieHhFdWVMOTJ1QVZWS0N2WU90WThWUmYtZGtKTGxKRkpEZ1JBeUZ5eGdJOXZoc0RzeUtISW9iclFfaE5QM3UxYzFQODBwX000dWdQejJieDZzR19EcWxZdEo5dVZHanEtZE5JdjVMRl9KQk4xVGNzRkloMGVDc1RHU0ZUdFZaZFd2OGhFamc2SlA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOb3VpWGF0eE1IT19OODViaGo4SHB0QjFieHhFdWVMOTJ1QVZWS0N2WU90WThWUmYtZGtKTGxKRkpEZ1JBeUZ5eGdJOXZoc0RzeUtISW9iclFfaE5QM3UxYzFQODBwX000dWdQejJieDZzR19EcWxZdEo5dVZHanEtZE5JdjVMRl9KQk4xVGNzRkloMGVDc1RHU0ZUdFZaZFd2OGhFamc2SlA?oc=5\" target=\"_blank\"&gt;US government seeks to join Elon Musk in challenge against EU's fine on X&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-24T21:34:27.000Z",
+          "title": "Bundesliga and three other top European leagues call for major FIFA reforms",
+          "link": "https://www.dw.com/en/bundesliga-and-three-other-top-european-leagues-call-for-major-fifa-reforms/a-79431717?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Bundesliga and three other leading European football leagues have called for major reforms to the world-governing body FIFA. However, they stopped short of calling for FIFA boss Gianni Infantino&#039;s resignation.",
+          "published": "2026-09-25T13:52:00.000Z",
           "score": 8
         },
         {
@@ -186,28 +154,28 @@
           "score": 8
         },
         {
-          "title": "Polymarket sues New York attorney general to block regulation of its prediction market - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQRXE0TXRLY3JFVHd1ZHF3clF6N0gxSnVwN0VQU0pGU1p0azVxcjZCQmw3bXphdXQ4QmwzNXlaR0xpM29qakpha3prdWZBYTJXbUpVZExsVTB6eXppbmJ6MUdUZUN6NGxlQ3dnSHA4UEV5MDkzekIyazBUOXRRU3p1b1pkZUNZaldTQkh6WTNfYkQ3aGo3UlZET3pudVVoazZ5TVptVXdsQVFnX3hhcVk0VVp0eTdrUGMtVlU5Z1RXOA?oc=5",
+          "title": "US government seeks to join Elon Musk in challenge against EU's fine on X - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOb3VpWGF0eE1IT19OODViaGo4SHB0QjFieHhFdWVMOTJ1QVZWS0N2WU90WThWUmYtZGtKTGxKRkpEZ1JBeUZ5eGdJOXZoc0RzeUtISW9iclFfaE5QM3UxYzFQODBwX000dWdQejJieDZzR19EcWxZdEo5dVZHanEtZE5JdjVMRl9KQk4xVGNzRkloMGVDc1RHU0ZUdFZaZFd2OGhFamc2SlA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQRXE0TXRLY3JFVHd1ZHF3clF6N0gxSnVwN0VQU0pGU1p0azVxcjZCQmw3bXphdXQ4QmwzNXlaR0xpM29qakpha3prdWZBYTJXbUpVZExsVTB6eXppbmJ6MUdUZUN6NGxlQ3dnSHA4UEV5MDkzekIyazBUOXRRU3p1b1pkZUNZaldTQkh6WTNfYkQ3aGo3UlZET3pudVVoazZ5TVptVXdsQVFnX3hhcVk0VVp0eTdrUGMtVlU5Z1RXOA?oc=5\" target=\"_blank\"&gt;Polymarket sues New York attorney general to block regulation of its prediction market&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
-          "published": "2026-09-24T23:24:57.000Z",
-          "score": 6
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOb3VpWGF0eE1IT19OODViaGo4SHB0QjFieHhFdWVMOTJ1QVZWS0N2WU90WThWUmYtZGtKTGxKRkpEZ1JBeUZ5eGdJOXZoc0RzeUtISW9iclFfaE5QM3UxYzFQODBwX000dWdQejJieDZzR19EcWxZdEo5dVZHanEtZE5JdjVMRl9KQk4xVGNzRkloMGVDc1RHU0ZUdFZaZFd2OGhFamc2SlA?oc=5\" target=\"_blank\"&gt;US government seeks to join Elon Musk in challenge against EU's fine on X&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-24T21:34:27.000Z",
+          "score": 8
         },
         {
-          "title": "Abbas pledges first Palestinian parliamentary vote in 20 years as doubts mount - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPY0M5eHhzaTFicHgxS21zMmY1SUNfcV9Nd3l0Z3N2N3RXX3lBVVRJamx0aGhSTzVQUzIxdmRaTU1LR2dPSEdCaDYydV9BZjFkdlVrcS1NQjEydjZfRzhfY0NlNjFrdVc4Y1ZHeGFZUlVqeDVITXg3SGFBa3JyUXFONXJCTmlJUEdzdW5SRHFvUWNNbWs2OXBiZ0RYZUJXUmFGdDg1a3RNVGxQeVhwaDVTSzV0Y214ZWUxTTJhTUZ3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPY0M5eHhzaTFicHgxS21zMmY1SUNfcV9Nd3l0Z3N2N3RXX3lBVVRJamx0aGhSTzVQUzIxdmRaTU1LR2dPSEdCaDYydV9BZjFkdlVrcS1NQjEydjZfRzhfY0NlNjFrdVc4Y1ZHeGFZUlVqeDVITXg3SGFBa3JyUXFONXJCTmlJUEdzdW5SRHFvUWNNbWs2OXBiZ0RYZUJXUmFGdDg1a3RNVGxQeVhwaDVTSzV0Y214ZWUxTTJhTUZ3?oc=5\" target=\"_blank\"&gt;Abbas pledges first Palestinian parliamentary vote in 20 years as doubts mount&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-24T18:41:37.000Z",
+          "title": "After Xi-Trump summit, US-China rivalry remains frozen. Is this to Beijing&#039;s advantage?",
+          "link": "https://www.dw.com/en/after-xi-trump-summit-us-china-rivalry-remains-frozen-is-this-to-beijing-s-advantage/a-79427127?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The US president showcased White House construction projects and hosted a lavish dinner with tech CEOs, but the summit made little progress on key issues such as trade tensions and AI regulation.",
+          "published": "2026-09-25T11:35:00.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 405,
-    "articlesLast24h": 169,
-    "afterDedup": 160,
+    "totalArticlesScanned": 407,
+    "articlesLast24h": 165,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
