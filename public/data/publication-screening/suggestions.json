@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T09:24:51.884Z",
+  "generatedAt": "2026-09-25T09:42:40.310Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,28 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1038/s41558-026-02756-0",
+      "title": "The impact of financing cost differences on global energy and industry decarbonization",
+      "journal": "Nature Climate Change",
+      "authors": "Paul Waidelich, Constance Crassier, Harmen Sytze de Boer et al.",
+      "published": "2026-09-24",
+      "url": "https://doi.org/10.1038/s41558-026-02756-0",
+      "abstract": "Integrated assessment models usually neglect differences in financing conditions across countries, sectors and time. This omission could distort outcomes concerning electricity generation and also other sectors. Here we estimate and implement dynamic, country-specific cost of capital (CoC) for eight energy and industry sectors in the IMAGE integrated assessment model. Compared with assuming a uniform low-risk CoC, accounting for developing countries’ investment risks increases global mitigation costs through 2100 for staying well below +2 °C by around 9% and shifts cost-effective mitigation efforts to lower-risk regions. Sector-level analysis shows that using granular CoC estimates reduces grid investments in developing countries, shifts centralized heat production towards natural gas and raises green hydrogen costs, slowing electrolysis uptake. In industries such as steel and cement, sector and country risks hinder capital-intensive carbon capture and electricity-based technologies. Our results reveal biases from omitting country-specific financing conditions and highlight the need for climate finance across many sectors.",
+      "suggestedOn": "2026-09-25",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 4.5,
+          "matched": [
+            "steel",
+            "cement",
+            "green hydrogen",
+            "carbon capture"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1038/s41893-026-01935-3",
       "title": "Far-right political support and clean technology adoption in Germany",
