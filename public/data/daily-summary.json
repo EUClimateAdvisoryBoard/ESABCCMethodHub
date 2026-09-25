@@ -1,12 +1,12 @@
 {
   "date": "2026-09-25",
-  "generatedAt": "2026-09-25T15:48:57.779Z",
+  "generatedAt": "2026-09-25T20:22:06.792Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 25 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
       "headline": "Germany news: Parliament approves fuel tax cut",
-      "summary": "German lawmakers hope to drive down fuel prices by cutting taxes on gas and diesel from October 1. Meanwhile, students in many cities are set to protest against military conscription. DW has the latest.",
+      "summary": "German lawmakers hope to drive down fuel prices by cutting taxes on gas and diesel from October 1. Meanwhile, Germany&#039;s defense minister visited Budapest to ramp up defense and military ties. DW has the latest.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -31,15 +31,15 @@
           "title": "Germany news: Parliament approves fuel tax cut",
           "link": "https://www.dw.com/en/germany-news-parliament-approves-fuel-tax-cut/live-79424882?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "German lawmakers hope to drive down fuel prices by cutting taxes on gas and diesel from October 1. Meanwhile, students in many cities are set to protest against military conscription. DW has the latest.",
-          "published": "2026-09-25T15:21:00.000Z",
+          "description": "German lawmakers hope to drive down fuel prices by cutting taxes on gas and diesel from October 1. Meanwhile, Germany&#039;s defense minister visited Budapest to ramp up defense and military ties. DW has the latest.",
+          "published": "2026-09-25T19:51:00.000Z",
           "score": 8
         },
         {
           "title": "India news: Protests against election chief escalate as Gandhi, Cockroach party allege &#039;rigged&#039; vote",
           "link": "https://www.dw.com/en/india-news-protests-against-election-chief-escalate-as-gandhi-cockroach-party-allege-rigged-vote/live-79422469?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Police have used tear gas on protests by the opposition Congress party demanding India&#039;s election commission head steps down, following a report alleging &quot;rigged&quot; elections. DW has more.",
+          "description": "Police have used tear gas on protests by the opposition Congress party demanding India&#039;s election commission head steps down, following a report alleging &quot;rigged&quot; elections.",
           "published": "2026-09-25T14:15:00.000Z",
           "score": 8
         },
@@ -60,8 +60,8 @@
           "score": 7
         },
         {
-          "title": "Bulgaria&#039;s battery boom: From zero to global leader",
-          "link": "https://www.dw.com/en/bulgaria-s-battery-boom-from-zero-to-global-leader/a-79428289?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "How Bulgaria become a global leader in battery storage and what this means for the country&#039;s grid and energy market?",
+          "link": "https://www.dw.com/en/how-bulgaria-become-a-global-leader-in-battery-storage-and-what-this-means-for-the-country-s-grid-and-energy-market/a-79428289?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "In under two years, Bulgaria has become one of the world&#039;s most battery-intensive energy markets. Can the surge last — and what will it mean for conventional power generators?",
           "published": "2026-09-25T11:38:00.000Z",
@@ -106,12 +106,12 @@
           "score": 10
         },
         {
-          "title": "Push for cooking to be part of COP31&#8217;s electrification agenda",
-          "link": "https://www.climatechangenews.com/2026/09/24/push-for-cooking-to-be-part-of-cop31s-electrification-agenda/",
-          "source": "Climate Home News",
-          "description": "The President of Kenya and the British climate envoy said Africa should use the global electrification push to roll out clean cooking The post Push for cooking to be part of COP31&#8217;s electrification agenda appeared first on Climate Home News.",
-          "published": "2026-09-24T16:51:36.000Z",
-          "score": 10
+          "title": "Friday briefing: How a ​grassroots ​film ​is ​turning ​climate anxiety ​into ​action",
+          "link": "https://www.theguardian.com/world/2026/sep/25/friday-briefing-how-a-grassroots-film-is-turning-climate-anxiety-into-action",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;In today’s newsletter: The People’s Emergency Briefing delivers a stark warning about ​o​ur future in a warming world. ​B​ut sharing difficult truths collectively​ shows us that there is still hope to be found&lt;/p&gt;&lt;p&gt;Good morning. Here we are, stumbling into an oddly warm autumn and with the aftermath of a ceaselessly dry summer all around us in our parched parks and fire-ravaged forests.&lt;/p&gt;&lt;p&gt;With the change in season, the headlines are no less gruelling. At the",
+          "published": "2026-09-25T05:45:15.000Z",
+          "score": 7
         }
       ]
     },
@@ -123,7 +123,16 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "EU officials dismiss fears French, German elections could derail Ukraine support - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPaHNkV1llV2N1MHVSdmpTMlBxS3BLWG5LM2JpMmF0ZXdnOEl4WW5wT19hQ2J2Wkdkem1kTzUtUHpRN2pNc0VsOHMyY3NjQlFaOXJmZGlzdGI5dWpuU0RSODVsNTBJcktHMGtoU2ZLckhGQmd6UUtsenRxVmFVYXpLZ3Z4UTA3ZFVhU2RWUXNudFFjN1lSWWtQR1lqeDF5RVFOMkFKd2dPaHl1VUhmRkRPbExrQ2FpZ3dkaWVMck03bDhuRGx4aE00?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPaHNkV1llV2N1MHVSdmpTMlBxS3BLWG5LM2JpMmF0ZXdnOEl4WW5wT19hQ2J2Wkdkem1kTzUtUHpRN2pNc0VsOHMyY3NjQlFaOXJmZGlzdGI5dWpuU0RSODVsNTBJcktHMGtoU2ZLckhGQmd6UUtsenRxVmFVYXpLZ3Z4UTA3ZFVhU2RWUXNudFFjN1lSWWtQR1lqeDF5RVFOMkFKd2dPaHl1VUhmRkRPbExrQ2FpZ3dkaWVMck03bDhuRGx4aE00?oc=5\" target=\"_blank\"&gt;EU officials dismiss fears French, German elections could derail Ukraine support&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
+          "published": "2026-09-25T16:55:51.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
@@ -138,10 +147,10 @@
           "score": 8
         },
         {
-          "title": "Bundesliga and three other top European leagues call for major FIFA reforms",
-          "link": "https://www.dw.com/en/bundesliga-and-three-other-top-european-leagues-call-for-major-fifa-reforms/a-79431717?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Bundesliga, other top European leagues call for major FIFA reforms",
+          "link": "https://www.dw.com/en/bundesliga-other-top-european-leagues-call-for-major-fifa-reforms/a-79431717?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The Bundesliga and three other leading European football leagues have called for major reforms to the world-governing body FIFA. However, they stopped short of calling for FIFA boss Gianni Infantino&#039;s resignation.",
+          "description": "The Bundesliga and three other leading European football leagues have said major reforms to world-governing body FIFA are &quot;essential.&quot; However, they stopped short of calling for the resignation of boss Gianni Infantino.",
           "published": "2026-09-25T13:52:00.000Z",
           "score": 8
         },
@@ -150,7 +159,7 @@
           "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNRk5yTGFvdlVQVXJQdVJPVlpOR01fWnlDb2VzbzNlbG14ME9MY3c5R1FuN3QxZFd3OVZyT2x3MFNDVVFocHFXSEdLLXJhQWF0RGl0ZlFaaTNBZXlhYTZzUmw0VklNUUhaMFR0N0JsdHRZR3o2Q1NfbGZzU0t2bUVMWjFkVURydUViWnFKNUpmSWFsdWxlUXJSMWlHbzBXYk9l?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNRk5yTGFvdlVQVXJQdVJPVlpOR01fWnlDb2VzbzNlbG14ME9MY3c5R1FuN3QxZFd3OVZyT2x3MFNDVVFocHFXSEdLLXJhQWF0RGl0ZlFaaTNBZXlhYTZzUmw0VklNUUhaMFR0N0JsdHRZR3o2Q1NfbGZzU0t2bUVMWjFkVURydUViWnFKNUpmSWFsdWxlUXJSMWlHbzBXYk9l?oc=5\" target=\"_blank\"&gt;EU urges Britain to raise tariffs on Chinese cars, FT says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-25T05:03:00.000Z",
+          "published": "2026-09-25T14:44:11.000Z",
           "score": 8
         },
         {
@@ -162,19 +171,19 @@
           "score": 8
         },
         {
-          "title": "After Xi-Trump summit, US-China rivalry remains frozen. Is this to Beijing&#039;s advantage?",
-          "link": "https://www.dw.com/en/after-xi-trump-summit-us-china-rivalry-remains-frozen-is-this-to-beijing-s-advantage/a-79427127?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The US president showcased White House construction projects and hosted a lavish dinner with tech CEOs, but the summit made little progress on key issues such as trade tensions and AI regulation.",
-          "published": "2026-09-25T11:35:00.000Z",
-          "score": 6
+          "title": "Europe's biggest leagues demand sweeping FIFA reforms - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMmdMNnItSEVWbjFXLUhsUGVtQkZhb25XemRUUGI1RE1MU1Y2b3lQRGhqbGpCOXZtVEIwUk0tOVV5VGw2NjRJRnhxVDdnYjNOZ29BLTdnRHRMSjZDcWlzcWdrVllKVFJ2V3pYZUNEbXZfeHIxQnNQMEhZT0hSVnVXTHBPTHVLOXBBUXh3ZnVVX0pINno1OWx0ajNHSXA1RGRDbGh4Tw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOMmdMNnItSEVWbjFXLUhsUGVtQkZhb25XemRUUGI1RE1MU1Y2b3lQRGhqbGpCOXZtVEIwUk0tOVV5VGw2NjRJRnhxVDdnYjNOZ29BLTdnRHRMSjZDcWlzcWdrVllKVFJ2V3pYZUNEbXZfeHIxQnNQMEhZT0hSVnVXTHBPTHVLOXBBUXh3ZnVVX0pINno1OWx0ajNHSXA1RGRDbGh4Tw?oc=5\" target=\"_blank\"&gt;Europe's biggest leagues demand sweeping FIFA reforms&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-25T10:53:12.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 407,
-    "articlesLast24h": 165,
+    "totalArticlesScanned": 409,
+    "articlesLast24h": 160,
     "afterDedup": 157,
     "feedsQueried": 19
   }
