@@ -1,18 +1,18 @@
 {
   "date": "2026-09-27",
-  "generatedAt": "2026-09-27T01:10:55.672Z",
+  "generatedAt": "2026-09-27T10:27:13.556Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 27 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "British national among six dead in building explosion close to Acropolis in Athens",
-      "summary": "Four Americans and a Greek national are among those killed in a suspected gas explosion, officials said.",
+      "headline": "Why farmers are pairing crops with solar panels",
+      "summary": "From cooler soil to paid grazing land, farmers in the US are finding that solar panels can do more than generate power.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
       "headline": "Bangkok roads submerged as flood disaster declared",
-      "summary": "An emergency has been declared across the capital of Thailand as days of heavy rain leave the city inundated.",
+      "summary": "Authorities said the heavy rains have subsided but the flooding is not yet over.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,6 +34,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Why farmers are pairing crops with solar panels",
+          "link": "https://www.dw.com/en/why-farmers-are-pairing-crops-with-solar-panels/a-79233970?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "From cooler soil to paid grazing land, farmers in the US are finding that solar panels can do more than generate power.",
+          "published": "2026-09-27T04:45:00.000Z",
+          "score": 7
+        },
+        {
           "title": "British national among six dead in building explosion close to Acropolis in Athens",
           "link": "https://www.bbc.co.uk/news/articles/c6p3kk78l4l1o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -42,19 +50,19 @@
           "score": 2
         },
         {
-          "title": "India orders captive coal plants to maximise power output on surging demand - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxObnN6VllxYW5Yc3JDTVVLSjVrQXJiWlpTVmV3N2ZWd0tzbXUtVVo4dnVuQVJ6TW9VdXMzeEdCUzBfVDQxNGt6UXVfSkZjM3o0a1V2Skc5SUlrb1RGcWR1ZGJid0ZLWWVYdlZLMDJlU0NPSzVUUWs1RFRRWWhzWUxKZWpLS1lYTUs4eFVtdGhXbjZMMDR0dEEtNHdSMkNmdDUzaEkzdzFoNXBVWlR4OXBkWTdDeENVcE50LWxyMFdR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxObnN6VllxYW5Yc3JDTVVLSjVrQXJiWlpTVmV3N2ZWd0tzbXUtVVo4dnVuQVJ6TW9VdXMzeEdCUzBfVDQxNGt6UXVfSkZjM3o0a1V2Skc5SUlrb1RGcWR1ZGJid0ZLWWVYdlZLMDJlU0NPSzVUUWs1RFRRWWhzWUxKZWpLS1lYTUs4eFVtdGhXbjZMMDR0dEEtNHdSMkNmdDUzaEkzdzFoNXBVWlR4OXBkWTdDeENVcE50LWxyMFdR?oc=5\" target=\"_blank\"&gt;India orders captive coal plants to maximise power output on surging demand&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-26T06:47:00.000Z",
-          "score": 2
-        },
-        {
           "title": "Saudi Aramco is working with Evercore on gas unit plans, Bloomberg News reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZC11YWhLc0hmeG1xeFdGQmx5Y3REbmQzSzE4SHNmMURDbzd6Uk1WX0xlWEtlamw5dVJuT0N6c21ZTFZOZndkSGpPcWE4bGdVd0gxejBVRFRvR1RpUzR5b3NNdmZuTk43d2hOdzV4QW5tT2xqLWdkalJWTVhuVEswTFROYUlsbGNVeTE1YzA4c09MUE9oVlF5OWw4S2E2VWZBNF9BM2pueUx4VHY1R194SGdSbURXSFBvbmNJR0JfcVVPcFRwcHc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNZC11YWhLc0hmeG1xeFdGQmx5Y3REbmQzSzE4SHNmMURDbzd6Uk1WX0xlWEtlamw5dVJuT0N6c21ZTFZOZndkSGpPcWE4bGdVd0gxejBVRFRvR1RpUzR5b3NNdmZuTk43d2hOdzV4QW5tT2xqLWdkalJWTVhuVEswTFROYUlsbGNVeTE1YzA4c09MUE9oVlF5OWw4S2E2VWZBNF9BM2pueUx4VHY1R194SGdSbURXSFBvbmNJR0JfcVVPcFRwcHc?oc=5\" target=\"_blank\"&gt;Saudi Aramco is working with Evercore on gas unit plans, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
           "published": "2026-09-26T16:05:45.000Z",
+          "score": 2
+        },
+        {
+          "title": "Several die after gas-linked explosion collapses a building in Athens - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBVU0pYaGk0S3lPbjVNa0Uwb3hrVkVSNmZDS21seGd4MHh6VHgwTlFaZF9Nc2NoeERVaTZuUDgzZUJHelJHekY4OGd5NnpSMVZ4cnlfYmJsT2VlanRhM3IweG5kUkNmWVE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBVU0pYaGk0S3lPbjVNa0Uwb3hrVkVSNmZDS21seGd4MHh6VHgwTlFaZF9Nc2NoeERVaTZuUDgzZUJHelJHekY4OGd5NnpSMVZ4cnlfYmJsT2VlanRhM3IweG5kUkNmWVE?oc=5\" target=\"_blank\"&gt;Several die after gas-linked explosion collapses a building in Athens&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-26T14:53:11.000Z",
           "score": 2
         }
       ]
@@ -67,9 +75,25 @@
           "title": "Bangkok roads submerged as flood disaster declared",
           "link": "https://www.bbc.co.uk/news/articles/ck1wxx8n2x3zo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "An emergency has been declared across the capital of Thailand as days of heavy rain leave the city inundated.",
-          "published": "2026-09-26T07:21:30.000Z",
+          "description": "Authorities said the heavy rains have subsided but the flooding is not yet over.",
+          "published": "2026-09-27T04:45:08.000Z",
           "score": 7
+        },
+        {
+          "title": "Drone video shows beached boats in drought-hit Serbia - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5aMmdCVW03QVRhc3NDUGN4aEJ5eVlEcXBtWFhyZC1DUHZ5MU9uaUhXeWUtejdjZjVVN3lQWHJHbEVJeU9mY2Y4WWxja19tUDg4YzlDWlZmNncxaHlTa2lXS2VZajllWUk?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5aMmdCVW03QVRhc3NDUGN4aEJ5eVlEcXBtWFhyZC1DUHZ5MU9uaUhXeWUtejdjZjVVN3lQWHJHbEVJeU9mY2Y4WWxja19tUDg4YzlDWlZmNncxaHlTa2lXS2VZajllWUk?oc=5\" target=\"_blank\"&gt;Drone video shows beached boats in drought-hit Serbia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-27T02:09:01.000Z",
+          "score": 7
+        },
+        {
+          "title": "Nor'easter brings flooding as New York and New Jersey declare emergency",
+          "link": "https://www.bbc.co.uk/news/articles/ck1wxxzn5jndo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Tens of millions of people from Maine to Virginia are in the path of the powerful storm.",
+          "published": "2026-09-27T04:23:09.000Z",
+          "score": 2
         },
         {
           "title": "The young women guiding tourists through India's night sky",
@@ -80,27 +104,11 @@
           "score": 2
         },
         {
-          "title": "Nor'easter brings flooding as New York and New Jersey declare emergency",
-          "link": "https://www.bbc.co.uk/news/articles/ck1wxxzn5jndo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Why families are being urged to look closer on autumn walks",
+          "link": "https://www.bbc.co.uk/news/articles/cvlylxxp3xg9o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Tens of millions of people from Maine to Virginia are in the path of the powerful storm.",
-          "published": "2026-09-26T22:04:26.000Z",
-          "score": 2
-        },
-        {
-          "title": "Hundreds of wildflowers to be planted at meadow",
-          "link": "https://www.bbc.co.uk/news/articles/ckq631d25dvlo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Friends of the Lake District wants to reintroduce species lost to some farming practices.",
-          "published": "2026-09-26T11:22:43.000Z",
-          "score": 2
-        },
-        {
-          "title": "Butterfly populations 'could crash' due to weather",
-          "link": "https://www.bbc.co.uk/news/articles/cw8d322y7y15o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "More than 77,000 butterflies were recorded in Devon while 47,000 were spotted in Cornwall this July.",
-          "published": "2026-09-26T11:05:36.000Z",
+          "description": "Experts urge families to spot, photograph and enjoy autumn fungi on their doorstep.",
+          "published": "2026-09-27T06:25:05.000Z",
           "score": 2
         }
       ]
@@ -154,14 +162,6 @@
           "score": 10
         },
         {
-          "title": "India's election commission orders review of voter-roll changes - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUThFdWt2TU8zOHVxdTZVTXRDVENOd3VienVZUG1WckRCeUQ4bGlJRmF5R1hlN01JLVMzVmc0cksxSFNGMUlEemlOam1fd09vU09sbTdhcjFtZTlBdmxRN2VLekpsMDUycWZxUGs3anRNSFJkRi1wNU5mZ2taQThqaDhEejJJT1NCX0F3aHV6d3llN2Jfd3hoZzBpdnlFb2ZjUXVwZ092QXIteVU?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUThFdWt2TU8zOHVxdTZVTXRDVENOd3VienVZUG1WckRCeUQ4bGlJRmF5R1hlN01JLVMzVmc0cksxSFNGMUlEemlOam1fd09vU09sbTdhcjFtZTlBdmxRN2VLekpsMDUycWZxUGs3anRNSFJkRi1wNU5mZ2taQThqaDhEejJJT1NCX0F3aHV6d3llN2Jfd3hoZzBpdnlFb2ZjUXVwZ092QXIteVU?oc=5\" target=\"_blank\"&gt;India's election commission orders review of voter-roll changes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-26T13:39:06.000Z",
-          "score": 8
-        },
-        {
           "title": "How Europe’s intensifying marine heatwaves threaten its fisheries - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOazRBRDJfTmZvQW52RkYtOWpyLXhvYzcyVmdBSDk4aDlMUWJVNTBGcEdDM1l4ZjY2NzRlVFFSVHhQYlQzVWxySlVqc19wWVVoal9ySkdKUFIxX0d3MUc0d3FoMUt6ckxKakdaSWdyczctWFVMY3hYOWhZYWZ3SFF0Znk4SW5OT1VCMFltMVRjLUtydklCM25VUFhjMmtWdGV3b3VKSjQ3SXloU3hNSGh4T2FXSQ?oc=5",
           "source": "Reuters World (via Google News)",
@@ -170,11 +170,11 @@
           "score": 8
         },
         {
-          "title": "‘Made in EU’ rules: Brexit strikes back and the China factor - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBiOEdNTVBCOEtLb0hVM2ctOHMyazhySjdGdTZOYU9LaE1mSFZmREF0NUVUYkV3VVFwQjA2ODZKVWZpdWRRQVpodHFzdktEZFNVSTYwOC1hR2ttY216ZGFqSDMtUGlHekU?oc=5",
+          "title": "India's election commission orders review of voter-roll changes - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUThFdWt2TU8zOHVxdTZVTXRDVENOd3VienVZUG1WckRCeUQ4bGlJRmF5R1hlN01JLVMzVmc0cksxSFNGMUlEemlOam1fd09vU09sbTdhcjFtZTlBdmxRN2VLekpsMDUycWZxUGs3anRNSFJkRi1wNU5mZ2taQThqaDhEejJJT1NCX0F3aHV6d3llN2Jfd3hoZzBpdnlFb2ZjUXVwZ092QXIteVU?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBiOEdNTVBCOEtLb0hVM2ctOHMyazhySjdGdTZOYU9LaE1mSFZmREF0NUVUYkV3VVFwQjA2ODZKVWZpdWRRQVpodHFzdktEZFNVSTYwOC1hR2ttY216ZGFqSDMtUGlHekU?oc=5\" target=\"_blank\"&gt;‘Made in EU’ rules: Brexit strikes back and the China factor&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-26T09:15:57.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUThFdWt2TU8zOHVxdTZVTXRDVENOd3VienVZUG1WckRCeUQ4bGlJRmF5R1hlN01JLVMzVmc0cksxSFNGMUlEemlOam1fd09vU09sbTdhcjFtZTlBdmxRN2VLekpsMDUycWZxUGs3anRNSFJkRi1wNU5mZ2taQThqaDhEejJJT1NCX0F3aHV6d3llN2Jfd3hoZzBpdnlFb2ZjUXVwZ092QXIteVU?oc=5\" target=\"_blank\"&gt;India's election commission orders review of voter-roll changes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-26T13:39:06.000Z",
           "score": 8
         },
         {
@@ -184,14 +184,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQMko5UlZNdWRxNkN2eDJ4VlJIUkQtbmFjenI1SkhRQXpZSjF6cHgyWS1FcWlBZDRCM2lGbmpCYkVJdkhpdTBBTXlMUW9nX0ttcjV0WGdBUmotMGZpa2oyQzJITER0b1N0S3dFTkpla3BzQ3BITW1IcWlMYlh2UFE1eFVja3lOMlRlU1ZISDc5RVMxbnEtb3Z0MC1KNEJ5UUczSWc0NGh4b1g0aWZrYWo5dGpVN0xRRjlsdHc?oc=5\" target=\"_blank\"&gt;VIDEO: Europe’s seas are breaking heat records. Its fisheries are paying the price&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-26T17:11:04.000Z",
           "score": 8
+        },
+        {
+          "title": "Pope praises young people's 'energy and commitment' at huge open-air Mass in Paris",
+          "link": "https://www.bbc.co.uk/news/articles/cm4gjjwvvlzro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Around 700,000 people gathered in central Paris to hear the Catholic leader speak and offer prayer.",
+          "published": "2026-09-26T19:48:06.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 398,
-    "articlesLast24h": 133,
-    "afterDedup": 113,
+    "totalArticlesScanned": 396,
+    "articlesLast24h": 143,
+    "afterDedup": 123,
     "feedsQueried": 19
   }
 }
