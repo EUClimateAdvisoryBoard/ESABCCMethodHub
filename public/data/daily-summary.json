@@ -1,20 +1,26 @@
 {
   "date": "2026-09-28",
-  "generatedAt": "2026-09-28T01:30:02.503Z",
+  "generatedAt": "2026-09-28T11:32:29.838Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 28 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Why farmers are pairing crops with solar panels",
-      "summary": "From cooler soil to paid grazing land, farmers in the US are finding that solar panels can do more than generate power.",
+      "headline": "Offshore wind plant to bring jobs boost to Montrose",
+      "summary": "The new facility will manufacture parts for offshore wind farms in Scottish waters and for overseas markets.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Bangkok roads submerged as flood disaster declared",
-      "summary": "Authorities said the heavy rains have subsided but the flooding is not yet over.",
+      "headline": "EU provides €61 million in humanitarian aid amidst rapidly deteriorating situation in Ethiopia",
+      "summary": "European Commission Press release Brussels, 28 Sep 2026 Amid fears of renewed conflict in Northern Ethiopia, the European Union is providing €61 million in humanitarian funding to help the most vulnerable people in Ethiopia affected by conflict, displacement, disease outbreaks and climate-related hazards, including the impact of El Niño.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "EU trade agreements continue to benefit European businesses",
+      "summary": "European Commission Press release Brussels, 28 Sep 2026 The EU's growing network of trade agreements helps European businesses to access new export markets and creates a more predictable trade and investment environment, according to a report published today.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -28,19 +34,27 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Why farmers are pairing crops with solar panels",
-          "link": "https://www.dw.com/en/why-farmers-are-pairing-crops-with-solar-panels/a-79233970?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "From cooler soil to paid grazing land, farmers in the US are finding that solar panels can do more than generate power.",
-          "published": "2026-09-27T04:45:00.000Z",
+          "title": "Offshore wind plant to bring jobs boost to Montrose",
+          "link": "https://www.bbc.co.uk/news/articles/cq62jyk4ekp7o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The new facility will manufacture parts for offshore wind farms in Scottish waters and for overseas markets.",
+          "published": "2026-09-28T11:01:46.000Z",
           "score": 7
         },
         {
-          "title": "NIO inks battery-swapping deal with Geely, values energy unit at $2.4 billion - Reuters",
+          "title": "NIO inks battery-swapping deal with Geely, open to other peers joining - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPVFliVE9FdWtJNFVqcWZGZEEtb2lSLWNqSENfMWJhVEVNQlZJdkZyLXJuZWJPLWhrdzZaU0ZZMlpDWmp4Wm54XzRsVDhaZFdHQUd6dlRlMG1la0ZWaVplT2tLN3VtUlhTMUdqSWVuRFBaWWNNd3ZCWEhUOWNqd3lFZ1BGSGkxUzhiT2pwaHdDbGtMVVBHek9OVWMzbUFUVnItSGRxaEVIMDU4cTdoT2dJelgtSUc4SFJ1a3BaVFVTZjFJTFlw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPVFliVE9FdWtJNFVqcWZGZEEtb2lSLWNqSENfMWJhVEVNQlZJdkZyLXJuZWJPLWhrdzZaU0ZZMlpDWmp4Wm54XzRsVDhaZFdHQUd6dlRlMG1la0ZWaVplT2tLN3VtUlhTMUdqSWVuRFBaWWNNd3ZCWEhUOWNqd3lFZ1BGSGkxUzhiT2pwaHdDbGtMVVBHek9OVWMzbUFUVnItSGRxaEVIMDU4cTdoT2dJelgtSUc4SFJ1a3BaVFVTZjFJTFlw?oc=5\" target=\"_blank\"&gt;NIO inks battery-swapping deal with Geely, values energy unit at $2.4 billion&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPVFliVE9FdWtJNFVqcWZGZEEtb2lSLWNqSENfMWJhVEVNQlZJdkZyLXJuZWJPLWhrdzZaU0ZZMlpDWmp4Wm54XzRsVDhaZFdHQUd6dlRlMG1la0ZWaVplT2tLN3VtUlhTMUdqSWVuRFBaWWNNd3ZCWEhUOWNqd3lFZ1BGSGkxUzhiT2pwaHdDbGtMVVBHek9OVWMzbUFUVnItSGRxaEVIMDU4cTdoT2dJelgtSUc4SFJ1a3BaVFVTZjFJTFlw?oc=5\" target=\"_blank\"&gt;NIO inks battery-swapping deal with Geely, open to other peers joining&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-09-27T23:56:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Every outfit from the MTV VMAs red carpet - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYkhrUFRFTnBnclE4MmVMV1hVOHd1a2VFdU1sSEdTWTRqLUppNXJiMjk4ak91a1F3WGp2OVZGRzk4VXMxaGhNZXIxc1FvSE9RTXV6NmpnQ21seVFtU3JWV0RZU3M3RG5uNVNKcmlnN1d2c2N2OXFINGNGalRHeUc2blA0Yw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOYkhrUFRFTnBnclE4MmVMV1hVOHd1a2VFdU1sSEdTWTRqLUppNXJiMjk4ak91a1F3WGp2OVZGRzk4VXMxaGhNZXIxc1FvSE9RTXV6NmpnQ21seVFtU3JWV0RZU3M3RG5uNVNKcmlnN1d2c2N2OXFINGNGalRHeUc2blA0Yw?oc=5\" target=\"_blank\"&gt;Every outfit from the MTV VMAs red carpet&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-27T23:32:00.000Z",
           "score": 7
         },
         {
@@ -50,6 +64,14 @@
           "description": "In a system often marked by red tape and exhausting delays, officers seen to be following the rules get adulation.",
           "published": "2026-09-27T23:01:37.000Z",
           "score": 4
+        },
+        {
+          "title": "German gas supply is secure despite low storage levels, VNG chief says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOVDRjSXY3THA4d0lJaGlLM05DM3FVeDc3TFVFa3p2d1Z5OWRiNnBxbVhqMkVoZmw0M0xNeDVaNXhrTVN6bnhTRy1Pc0E4VXEwSjhsS3VkcE9BSjZMQ0hUM0FfM010Zk8zNGlZTUN0MmRZbS1ZTEhxQUFGWUVDUFBESzRKWkYxUUZMVjJIZzd0ZjZVbDViRFRDTkFpUjlCalJfODhOQUk5OC1Nc3d1X2NOdE5aUk1tWS1PdDdJZkNR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOVDRjSXY3THA4d0lJaGlLM05DM3FVeDc3TFVFa3p2d1Z5OWRiNnBxbVhqMkVoZmw0M0xNeDVaNXhrTVN6bnhTRy1Pc0E4VXEwSjhsS3VkcE9BSjZMQ0hUM0FfM010Zk8zNGlZTUN0MmRZbS1ZTEhxQUFGWUVDUFBESzRKWkYxUUZMVjJIZzd0ZjZVbDViRFRDTkFpUjlCalJfODhOQUk5OC1Nc3d1X2NOdE5aUk1tWS1PdDdJZkNR?oc=5\" target=\"_blank\"&gt;German gas supply is secure despite low storage levels, VNG chief says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-28T06:02:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -58,56 +80,74 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Bangkok roads submerged as flood disaster declared",
-          "link": "https://www.bbc.co.uk/news/articles/ck1wxx8n2x3zo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Authorities said the heavy rains have subsided but the flooding is not yet over.",
-          "published": "2026-09-27T04:45:08.000Z",
-          "score": 7
+          "title": "EU provides €61 million in humanitarian aid amidst rapidly deteriorating situation in Ethiopia",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1991",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 28 Sep 2026 Amid fears of renewed conflict in Northern Ethiopia, the European Union is providing €61 million in humanitarian funding to help the most vulnerable people in Ethiopia affected by conflict, displacement, disease outbreaks and climate-related hazards, including the impact of El Niño.",
+          "published": "2026-09-28T09:26:41.000Z",
+          "score": 20
         },
         {
-          "title": "McNulty wins road world title to end US men's 33-year drought - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNM1hpNFQ2aWMwUU1PZ3VDQ1poUngtVUZPTGdGNlZxVDc4VUl4d1Rla2Q1VlZ5OXpHQjhkRVkxRTB5eDExMHQ1NFJsRV9mOG0tWkhnMXJ6TGQxbHdwQnZta243YURnSTlvcm1MTXUxQjRndlpnaFJiXzQzWHAwZUgyVlJ2MktLR19qMV9JYlVkRGkwUDhqQWlsa2hRcE9uM1NWN2c?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNM1hpNFQ2aWMwUU1PZ3VDQ1poUngtVUZPTGdGNlZxVDc4VUl4d1Rla2Q1VlZ5OXpHQjhkRVkxRTB5eDExMHQ1NFJsRV9mOG0tWkhnMXJ6TGQxbHdwQnZta243YURnSTlvcm1MTXUxQjRndlpnaFJiXzQzWHAwZUgyVlJ2MktLR19qMV9JYlVkRGkwUDhqQWlsa2hRcE9uM1NWN2c?oc=5\" target=\"_blank\"&gt;McNulty wins road world title to end US men's 33-year drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-27T20:22:34.000Z",
-          "score": 7
+          "title": "Analysis: Lula presidency saved at least 20,000km2 of Brazilian Amazon since 2022",
+          "link": "https://www.carbonbrief.org/analysis-lula-presidency-saved-at-least-20000km2-of-brazilian-amazon-since-2022",
+          "source": "Carbon Brief",
+          "description": "An area of Amazon forest roughly the size of the US state of New Jersey has remained standing due to&#8230; The post Analysis: Lula presidency saved at least 20,000km2 of Brazilian Amazon since 2022 appeared first on Carbon Brief.",
+          "published": "2026-09-28T10:35:12.000Z",
+          "score": 10
         },
         {
-          "title": "Anatomy of an inferno: inside the push to map, predict and prevent spread of increasing UK wildfires",
+          "title": "As El Niño intensifies, we should be investing more in the world&#8217;s farmers",
+          "link": "https://www.climatechangenews.com/2026/09/28/as-el-nino-intensifies-we-should-be-investing-more-in-the-worlds-farmers/",
+          "source": "Climate Home News",
+          "description": "Finance to help agriculture adapt to a hotter world and more extreme weather is vital for food security – but new data shows it’s on a downward trend The post As El Niño intensifies, we should be investing more in the world&#8217;s farmers appeared first on Climate Home News.",
+          "published": "2026-09-28T11:06:59.000Z",
+          "score": 10
+        },
+        {
+          "title": "The UK wildfire investigators: ‘If someone has used a match, chances are you’ll find it’",
           "link": "https://www.theguardian.com/uk-news/2026/sep/27/inferno-inside-map-predict-prevent-wildfires-uk",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Scientists are racing to understand how fires behave as hotter summers turn green landscapes into tinderboxes&lt;/p&gt;&lt;p&gt;From the scorched heathlands of the &lt;a href=\"https://www.theguardian.com/world/2026/aug/10/rare-animals-threatened-as-wildfire-ravages-new-forest-heathland\"&gt;New Forest&lt;/a&gt; to the smouldering valleys of &lt;a href=\"https://www.theguardian.com/world/2026/aug/24/country-diary-south-waless-summer-of-fires-will-linger-long-in-the-memory\"&gt;south Wales&l",
+          "description": "&lt;p&gt;Scientists are racing to understand how fires behave to predict and prevent them as hotter summers create tinderboxes&lt;/p&gt;&lt;p&gt;From the scorched heathlands of the &lt;a href=\"https://www.theguardian.com/world/2026/aug/10/rare-animals-threatened-as-wildfire-ravages-new-forest-heathland\"&gt;New Forest&lt;/a&gt; to the smouldering valleys of &lt;a href=\"https://www.theguardian.com/world/2026/aug/24/country-diary-south-waless-summer-of-fires-will-linger-long-in-the-memory\"&gt;south",
           "published": "2026-09-27T15:00:07.000Z",
-          "score": 4
+          "score": 7
         },
         {
-          "title": "Readers reply: Which leader from history does the world need now?",
-          "link": "https://www.theguardian.com/lifeandstyle/2026/sep/27/readers-reply-which-historic-leader-does-the-world-need-now",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The long-running series in which readers answer other readers’ questions on subjects ranging from trivial flights of fancy to profound scientific and philosophical concepts&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;This week’s question: &lt;a href=\"https://www.theguardian.com/lifeandstyle/2026/sep/27/is-it-possible-that-3-is-the-most-common-number-in-uk-street-addresses\"&gt;Is it possible that 3 is the most common number in UK street addresses?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p",
-          "published": "2026-09-27T13:00:05.000Z",
-          "score": 2
-        },
-        {
-          "title": "Grizzly reality: US states grapple with uptick in encounters between bears and humans",
-          "link": "https://www.theguardian.com/us-news/2026/sep/27/bear-human-encounters",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Bears are increasingly entering places where humans live in the US, forcing wildlife workers to make tough decisions&lt;/p&gt;&lt;p&gt;Dan Thompson, supervisor of the large carnivore section of the Wyoming game and fish department, enjoys the field work of capturing mountain lions, wolves, black bears and grizzly bears to study them.&lt;/p&gt;&lt;p&gt;“I have always been personally intrigued with carnivores and their role throughout any ecosystem,” Thompson said. “I actually feel very f",
-          "published": "2026-09-27T12:00:04.000Z",
-          "score": 2
+          "title": "Getting river pollution investigated like 'pulling teeth'",
+          "link": "https://www.bbc.co.uk/news/articles/c95y4ejvl655o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Bristol residents say an oil-like substance has been bubbling up for years and killing wildlife.",
+          "published": "2026-09-28T05:02:57.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "EU trade agreements continue to benefit European businesses",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1983",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 28 Sep 2026 The EU's growing network of trade agreements helps European businesses to access new export markets and creates a more predictable trade and investment environment, according to a report published today.",
+          "published": "2026-09-27T22:00:00.000Z",
+          "score": 18
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Diesel prices are surging. Ukraine is only part of the story",
+          "link": "https://www.dw.com/en/diesel-prices-are-surging-ukraine-is-only-part-of-the-story/a-79390992?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Trucks, farms and industry are powered with diesel. Now prices are soaring due to refinery disruptions, supply shortages and geopolitical tensions. A potential US export ban could make Europe&#039;s diesel crunch even worse.",
+          "published": "2026-09-28T10:35:00.000Z",
+          "score": 4
+        }
+      ]
     },
     {
       "id": "other_world",
@@ -130,36 +170,36 @@
           "score": 8
         },
         {
+          "title": "EU imposes sanctions over deportation of Ukrainian children to Russia - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQY1dmdFlnNnVwd3NndFlUZ0ZrcU9kSnRhMnJnYUFXalhpekx3LWVHazdLb1NMRWFrcTFqVVZDc2FIMDBQX1hxMXY4cng0ekJOeFpnU1NnQ1pwaW9JSUh6X1RPcjdlV1MyYnNlY253WUNHNkZqeUxPaUo1Z3lDSzZCRjZsTVpES2hjQzhpaHFrQ2lqX2lNRUdQWGk0ZGt5ZjNRMW5jMlg0V0Y?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQY1dmdFlnNnVwd3NndFlUZ0ZrcU9kSnRhMnJnYUFXalhpekx3LWVHazdLb1NMRWFrcTFqVVZDc2FIMDBQX1hxMXY4cng0ekJOeFpnU1NnQ1pwaW9JSUh6X1RPcjdlV1MyYnNlY253WUNHNkZqeUxPaUo1Z3lDSzZCRjZsTVpES2hjQzhpaHFrQ2lqX2lNRUdQWGk0ZGt5ZjNRMW5jMlg0V0Y?oc=5\" target=\"_blank\"&gt;EU imposes sanctions over deportation of Ukrainian children to Russia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-28T10:19:31.000Z",
+          "score": 8
+        },
+        {
+          "title": "Breakingviews - COMMENTARY: Eastern Europe's miracle can survive protectionism - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQREtHWHJrV2U1UXpYNXRGcXF3SEg4Y0JvaGFmTXMwMnBMTmxkWGhqOGtrWXpQdzQzREo3SzNtYVdBT2kyM1BaeVZXeFdfcVE0MVJmTWFpdUJwZGgwR3ZCQndoVFBQTVVpcFByVEozYU9QeDZVWmdPalA2b1oxalZJNzRCVm5ZSVRWUnU1X3o1YTNMV2RyVVBwQjdYZzhzUDFHLTlYN3ZPdnZxckpfME0w?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQREtHWHJrV2U1UXpYNXRGcXF3SEg4Y0JvaGFmTXMwMnBMTmxkWGhqOGtrWXpQdzQzREo3SzNtYVdBT2kyM1BaeVZXeFdfcVE0MVJmTWFpdUJwZGgwR3ZCQndoVFBQTVVpcFByVEozYU9QeDZVWmdPalA2b1oxalZJNzRCVm5ZSVRWUnU1X3o1YTNMV2RyVVBwQjdYZzhzUDFHLTlYN3ZPdnZxckpfME0w?oc=5\" target=\"_blank\"&gt;Breakingviews - COMMENTARY: Eastern Europe's miracle can survive protectionism&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-28T05:00:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Iran-linked diesel price spike makes electric trucks cheaper than diesel in key EU markets, environmental group says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPZVBWUjdTSkRRcUtpSUp6djB6M1NoZHpMQmlsRXBpU3R2Z0ZuT2dOa09tYzBoQ1hQbXFGbVJGa3c2TmFiZ0JaUF85cU15bXVOcTBKdUgyYWdoUGRJT1htcmZEN0NJMGJlT0JtWHBPQjZJeDhiMzlQWFBYWFl3WDRMNE5nem12bkFobF8yMFJMaTZ4bkZwRVVQbEUwZG5UY0lXR1VZTnRFNVhZSkcxYnkxT3hsQTZlOF9UaEt4Q1VTem1PUURnQjdFRWViN0QtSzBVb0tlcFFpUnFFSFBMMnc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxPZVBWUjdTSkRRcUtpSUp6djB6M1NoZHpMQmlsRXBpU3R2Z0ZuT2dOa09tYzBoQ1hQbXFGbVJGa3c2TmFiZ0JaUF85cU15bXVOcTBKdUgyYWdoUGRJT1htcmZEN0NJMGJlT0JtWHBPQjZJeDhiMzlQWFBYWFl3WDRMNE5nem12bkFobF8yMFJMaTZ4bkZwRVVQbEUwZG5UY0lXR1VZTnRFNVhZSkcxYnkxT3hsQTZlOF9UaEt4Q1VTem1PUURnQjdFRWViN0QtSzBVb0tlcFFpUnFFSFBMMnc?oc=5\" target=\"_blank\"&gt;Iran-linked diesel price spike makes electric trucks cheaper than diesel in key EU markets, environmental group says&lt;/a",
           "published": "2026-09-27T22:02:38.000Z",
           "score": 8
-        },
-        {
-          "title": "Iran sticks to Hormuz plan after Trump rejects it",
-          "link": "https://www.dw.com/en/iran-sticks-to-hormuz-plan-after-trump-rejects-it/a-79447432?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Iranian officials that while they were aware of Trump&#039;s comments on rejecting the new proposal, they had not received a formal message rejecting the plan that would open the Strait of Hormuz.",
-          "published": "2026-09-27T08:07:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Inside Yemen's front-line city as Houthis battle for control",
-          "link": "https://www.bbc.co.uk/news/articles/cw98005ndz7no?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "In rare access to Yemen's conflict zone the BBC travels to the front line with pro-government soldiers.",
-          "published": "2026-09-27T21:16:31.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 396,
-    "articlesLast24h": 136,
-    "afterDedup": 120,
+    "totalArticlesScanned": 394,
+    "articlesLast24h": 152,
+    "afterDedup": 143,
     "feedsQueried": 19
   }
 }
