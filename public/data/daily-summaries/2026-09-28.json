@@ -1,12 +1,12 @@
 {
   "date": "2026-09-28",
-  "generatedAt": "2026-09-28T11:32:29.838Z",
+  "generatedAt": "2026-09-28T22:29:34.776Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 28 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Offshore wind plant to bring jobs boost to Montrose",
-      "summary": "The new facility will manufacture parts for offshore wind farms in Scottish waters and for overseas markets.",
+      "headline": "Heat pump sales soar across Europe after states cut electricity taxes, data shows",
+      "summary": "&lt;p&gt;EU to push member states to cut tax rate below duty on gas, with 11% surge in sales also put down to fallout from Iran war&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/sep/28/uk-housebuilders-stocks-new-homes-scheme-first-time-buyers-business-live-news\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/sep/28/europe-ukraine-defence-ministers-pope-l",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,12 +15,6 @@
       "summary": "European Commission Press release Brussels, 28 Sep 2026 Amid fears of renewed conflict in Northern Ethiopia, the European Union is providing €61 million in humanitarian funding to help the most vulnerable people in Ethiopia affected by conflict, displacement, disease outbreaks and climate-related hazards, including the impact of El Niño.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "EU trade agreements continue to benefit European businesses",
-      "summary": "European Commission Press release Brussels, 28 Sep 2026 The EU's growing network of trade agreements helps European businesses to access new export markets and creates a more predictable trade and investment environment, according to a report published today.",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,6 +28,22 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Heat pump sales soar across Europe after states cut electricity taxes, data shows",
+          "link": "https://www.theguardian.com/environment/2026/sep/28/heat-pump-sales-soar-across-europe-after-ciuntries-cut-electricity-taxes-data-shows",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;EU to push member states to cut tax rate below duty on gas, with 11% surge in sales also put down to fallout from Iran war&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/sep/28/uk-housebuilders-stocks-new-homes-scheme-first-time-buyers-business-live-news\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/sep/28/europe-ukraine-defence-ministers-pope-l",
+          "published": "2026-09-28T13:53:52.000Z",
+          "score": 13
+        },
+        {
+          "title": "Trump administration to slash clean car rules aimed at cutting climate emissions",
+          "link": "https://www.theguardian.com/us-news/2026/sep/28/trump-administration-slashes-clean-car-rules",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Environmentalists decry move that relaxes requirements on automakers to control pollution from gas-powered cars&lt;/p&gt;&lt;p&gt;The Trump administration on Monday announced it was slashing clean car rules that had been aimed at reducing planet-heating emissions and boosting electric vehicles.&lt;/p&gt;&lt;p&gt;The move, which was criticized by environmentalists, relaxes requirements on automakers to control pollution from gasoline-powered cars and light trucks for model years 2022 thr",
+          "published": "2026-09-28T15:56:32.000Z",
+          "score": 7
+        },
+        {
           "title": "Offshore wind plant to bring jobs boost to Montrose",
           "link": "https://www.bbc.co.uk/news/articles/cq62jyk4ekp7o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -42,19 +52,11 @@
           "score": 7
         },
         {
-          "title": "NIO inks battery-swapping deal with Geely, open to other peers joining - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPVFliVE9FdWtJNFVqcWZGZEEtb2lSLWNqSENfMWJhVEVNQlZJdkZyLXJuZWJPLWhrdzZaU0ZZMlpDWmp4Wm54XzRsVDhaZFdHQUd6dlRlMG1la0ZWaVplT2tLN3VtUlhTMUdqSWVuRFBaWWNNd3ZCWEhUOWNqd3lFZ1BGSGkxUzhiT2pwaHdDbGtMVVBHek9OVWMzbUFUVnItSGRxaEVIMDU4cTdoT2dJelgtSUc4SFJ1a3BaVFVTZjFJTFlw?oc=5",
+          "title": "China's Gotion invests $1.25 billion in Volkswagen battery plant in Spain - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQYjhtWENMaGdMc2tUUkhCcFVFNXVfU1JwWmhKM2kwLUxnS2Z3X0tYNTkyamdaNzcxbUxOY2RscGtMbVJSZ3FHNHoyYlJRa0RNaUNnVXR4SWU2ODYzeG5LWHVZS3lqYXVDaS0yd0k1S2RqU2lkZmxGODczQ3B6UFRqMU91d0Jvb3BvdElyYm5xQWtwRlRlc19WT1hsVGtDdEk4THhSQnVfZm94aHMxRC0w?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPVFliVE9FdWtJNFVqcWZGZEEtb2lSLWNqSENfMWJhVEVNQlZJdkZyLXJuZWJPLWhrdzZaU0ZZMlpDWmp4Wm54XzRsVDhaZFdHQUd6dlRlMG1la0ZWaVplT2tLN3VtUlhTMUdqSWVuRFBaWWNNd3ZCWEhUOWNqd3lFZ1BGSGkxUzhiT2pwaHdDbGtMVVBHek9OVWMzbUFUVnItSGRxaEVIMDU4cTdoT2dJelgtSUc4SFJ1a3BaVFVTZjFJTFlw?oc=5\" target=\"_blank\"&gt;NIO inks battery-swapping deal with Geely, open to other peers joining&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-27T23:56:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Every outfit from the MTV VMAs red carpet - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYkhrUFRFTnBnclE4MmVMV1hVOHd1a2VFdU1sSEdTWTRqLUppNXJiMjk4ak91a1F3WGp2OVZGRzk4VXMxaGhNZXIxc1FvSE9RTXV6NmpnQ21seVFtU3JWV0RZU3M3RG5uNVNKcmlnN1d2c2N2OXFINGNGalRHeUc2blA0Yw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOYkhrUFRFTnBnclE4MmVMV1hVOHd1a2VFdU1sSEdTWTRqLUppNXJiMjk4ak91a1F3WGp2OVZGRzk4VXMxaGhNZXIxc1FvSE9RTXV6NmpnQ21seVFtU3JWV0RZU3M3RG5uNVNKcmlnN1d2c2N2OXFINGNGalRHeUc2blA0Yw?oc=5\" target=\"_blank\"&gt;Every outfit from the MTV VMAs red carpet&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-27T23:32:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQYjhtWENMaGdMc2tUUkhCcFVFNXVfU1JwWmhKM2kwLUxnS2Z3X0tYNTkyamdaNzcxbUxOY2RscGtMbVJSZ3FHNHoyYlJRa0RNaUNnVXR4SWU2ODYzeG5LWHVZS3lqYXVDaS0yd0k1S2RqU2lkZmxGODczQ3B6UFRqMU91d0Jvb3BvdElyYm5xQWtwRlRlc19WT1hsVGtDdEk4THhSQnVfZm94aHMxRC0w?oc=5\" target=\"_blank\"&gt;China's Gotion invests $1.25 billion in Volkswagen battery plant in Spain&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-28T16:12:39.000Z",
           "score": 7
         },
         {
@@ -64,14 +66,6 @@
           "description": "In a system often marked by red tape and exhausting delays, officers seen to be following the rules get adulation.",
           "published": "2026-09-27T23:01:37.000Z",
           "score": 4
-        },
-        {
-          "title": "German gas supply is secure despite low storage levels, VNG chief says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOVDRjSXY3THA4d0lJaGlLM05DM3FVeDc3TFVFa3p2d1Z5OWRiNnBxbVhqMkVoZmw0M0xNeDVaNXhrTVN6bnhTRy1Pc0E4VXEwSjhsS3VkcE9BSjZMQ0hUM0FfM010Zk8zNGlZTUN0MmRZbS1ZTEhxQUFGWUVDUFBESzRKWkYxUUZMVjJIZzd0ZjZVbDViRFRDTkFpUjlCalJfODhOQUk5OC1Nc3d1X2NOdE5aUk1tWS1PdDdJZkNR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOVDRjSXY3THA4d0lJaGlLM05DM3FVeDc3TFVFa3p2d1Z5OWRiNnBxbVhqMkVoZmw0M0xNeDVaNXhrTVN6bnhTRy1Pc0E4VXEwSjhsS3VkcE9BSjZMQ0hUM0FfM010Zk8zNGlZTUN0MmRZbS1ZTEhxQUFGWUVDUFBESzRKWkYxUUZMVjJIZzd0ZjZVbDViRFRDTkFpUjlCalJfODhOQUk5OC1Nc3d1X2NOdE5aUk1tWS1PdDdJZkNR?oc=5\" target=\"_blank\"&gt;German gas supply is secure despite low storage levels, VNG chief says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-28T06:02:00.000Z",
-          "score": 2
         }
       ]
     },
@@ -86,6 +80,14 @@
           "description": "European Commission Press release Brussels, 28 Sep 2026 Amid fears of renewed conflict in Northern Ethiopia, the European Union is providing €61 million in humanitarian funding to help the most vulnerable people in Ethiopia affected by conflict, displacement, disease outbreaks and climate-related hazards, including the impact of El Niño.",
           "published": "2026-09-28T09:26:41.000Z",
           "score": 20
+        },
+        {
+          "title": "Nearly 200 experts meet in Bangkok to advance IPCC assessment of climate change mitigation",
+          "link": "https://www.ipcc.ch/2026/09/28/pr18-2026/",
+          "source": "IPCC",
+          "description": "PATHUM, Sept 28 – Nearly 200 authors from 79 countries are gathered at the Asian Institute of Technology in Pathum, Thailand, from 28 September to 1 October to draft the Working Group III contribution to the Intergovernmental Panel on Climate Change (IPCC) Seventh Assessment Report (AR7) on the mitigation of climate change. This is the [&#8230;]",
+          "published": "2026-09-28T12:46:57.000Z",
+          "score": 11
         },
         {
           "title": "Analysis: Lula presidency saved at least 20,000km2 of Brazilian Amazon since 2022",
@@ -104,69 +106,43 @@
           "score": 10
         },
         {
-          "title": "The UK wildfire investigators: ‘If someone has used a match, chances are you’ll find it’",
-          "link": "https://www.theguardian.com/uk-news/2026/sep/27/inferno-inside-map-predict-prevent-wildfires-uk",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Scientists are racing to understand how fires behave to predict and prevent them as hotter summers create tinderboxes&lt;/p&gt;&lt;p&gt;From the scorched heathlands of the &lt;a href=\"https://www.theguardian.com/world/2026/aug/10/rare-animals-threatened-as-wildfire-ravages-new-forest-heathland\"&gt;New Forest&lt;/a&gt; to the smouldering valleys of &lt;a href=\"https://www.theguardian.com/world/2026/aug/24/country-diary-south-waless-summer-of-fires-will-linger-long-in-the-memory\"&gt;south",
-          "published": "2026-09-27T15:00:07.000Z",
-          "score": 7
-        },
-        {
-          "title": "Getting river pollution investigated like 'pulling teeth'",
-          "link": "https://www.bbc.co.uk/news/articles/c95y4ejvl655o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Fossil found on Welsh beach ends 'confusion' over 200-million-year-old fish teeth",
+          "link": "https://www.bbc.co.uk/news/articles/ckz7zd7nxj73o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Bristol residents say an oil-like substance has been bubbling up for years and killing wildlife.",
-          "published": "2026-09-28T05:02:57.000Z",
-          "score": 7
+          "description": "Fossilised teeth across Europe had been wrongly identified until the latest find in south Wales.",
+          "published": "2026-09-28T16:04:59.000Z",
+          "score": 9
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "EU trade agreements continue to benefit European businesses",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1983",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 28 Sep 2026 The EU's growing network of trade agreements helps European businesses to access new export markets and creates a more predictable trade and investment environment, according to a report published today.",
-          "published": "2026-09-27T22:00:00.000Z",
-          "score": 18
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "Diesel prices are surging. Ukraine is only part of the story",
-          "link": "https://www.dw.com/en/diesel-prices-are-surging-ukraine-is-only-part-of-the-story/a-79390992?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Trucks, farms and industry are powered with diesel. Now prices are soaring due to refinery disruptions, supply shortages and geopolitical tensions. A potential US export ban could make Europe&#039;s diesel crunch even worse.",
-          "published": "2026-09-28T10:35:00.000Z",
-          "score": 4
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "European cities seek ways of boosting affordable housing",
-          "link": "https://www.dw.com/en/european-cities-seek-ways-of-boosting-affordable-housing/a-79438939?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Diesel prices are surging putting further pressure on Europe",
+          "link": "https://www.dw.com/en/diesel-prices-are-surging-putting-further-pressure-on-europe/a-79390992?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "In many major urban centers of Europe, the housing shortage has become an explosive social issue. DW looks into various models that have been put in place across the continent.",
-          "published": "2026-09-27T13:47:00.000Z",
+          "description": "Trucks, farms and industry are powered with diesel. Now prices are soaring due to refinery disruptions, supply shortages and geopolitical tensions. A potential US export ban could make Europe&#039;s diesel crunch even worse.",
+          "published": "2026-09-28T10:35:00.000Z",
           "score": 8
         },
         {
-          "title": "Team Europe cruise past Team World to win sixth Laver Cup title - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOOW5qeHZFenJVYThGNzNvc0pqUEMzempGTkktM3hxSElDZ1ZlNnJIa29KOG1VTTlTMmJka0xMVEdsQ0psY1Y2TkhjVEJ6WmdEVDBLRUo5cUpzM2lSZ1ZENUdMb3p6Q2FIQVJuT0R0R3pkTHhBTHlldlEtTFRPU3E4NUdOWmdGRkRUOEIxZ2xoTkJEcVRYT3VfdS12TF9JcTBmRnNqd19EcUs3SWRwNzVR?oc=5",
+          "title": "Sterling rebounds against dollar, euro on bets for tighter BoE policy - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOYTQtM2RFOXdKTkV1WGJHVXJ2bVkzeDNWUXdiZ21xcXJpLXFKc1h4OElSaU1YbUk2eHA2d1VPQWY3NTJ3MlBRckd1NTQzbGZzekZ1VlNVZ1FmR1NGR1o4eXo2Y1AyMW5fcVR2RXhabHNjQ1MzSktSUFJzUkZuaDNLMHBmczA3SXEtZ2VjT1NGMkxpNmZQNC1LX2lkbW4yRi1VcXF1bi14dHJqZw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOOW5qeHZFenJVYThGNzNvc0pqUEMzempGTkktM3hxSElDZ1ZlNnJIa29KOG1VTTlTMmJka0xMVEdsQ0psY1Y2TkhjVEJ6WmdEVDBLRUo5cUpzM2lSZ1ZENUdMb3p6Q2FIQVJuT0R0R3pkTHhBTHlldlEtTFRPU3E4NUdOWmdGRkRUOEIxZ2xoTkJEcVRYT3VfdS12TF9JcTBmRnNqd19EcUs3SWRwNzVR?oc=5\" target=\"_blank\"&gt;Team Europe cruise past Team World to win sixth Laver Cup title&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-27T16:50:54.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOYTQtM2RFOXdKTkV1WGJHVXJ2bVkzeDNWUXdiZ21xcXJpLXFKc1h4OElSaU1YbUk2eHA2d1VPQWY3NTJ3MlBRckd1NTQzbGZzekZ1VlNVZ1FmR1NGR1o4eXo2Y1AyMW5fcVR2RXhabHNjQ1MzSktSUFJzUkZuaDNLMHBmczA3SXEtZ2VjT1NGMkxpNmZQNC1LX2lkbW4yRi1VcXF1bi14dHJqZw?oc=5\" target=\"_blank\"&gt;Sterling rebounds against dollar, euro on bets for tighter BoE policy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-28T10:45:59.000Z",
           "score": 8
         },
         {
@@ -178,28 +154,28 @@
           "score": 8
         },
         {
-          "title": "Breakingviews - COMMENTARY: Eastern Europe's miracle can survive protectionism - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQREtHWHJrV2U1UXpYNXRGcXF3SEg4Y0JvaGFmTXMwMnBMTmxkWGhqOGtrWXpQdzQzREo3SzNtYVdBT2kyM1BaeVZXeFdfcVE0MVJmTWFpdUJwZGgwR3ZCQndoVFBQTVVpcFByVEozYU9QeDZVWmdPalA2b1oxalZJNzRCVm5ZSVRWUnU1X3o1YTNMV2RyVVBwQjdYZzhzUDFHLTlYN3ZPdnZxckpfME0w?oc=5",
+          "title": "Macron invokes Europe’s Judeo-Christian foundation as Leo visits - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbERRRVQwNzAxb0ZpZ1lrME5OaTZSVW5fRlRBSk44SGJNamVjVGpqOWhmRnpxQWVBdUhROTh2WkhTSVp0WVV2NXB3amttUmJCSkp3UHdhYnhJQV9XekViNE5sSXhWSGl0U09qb3JSdEdsMjVwMW83ZERoSnBoM3BET1hPSDVmMm56RDNSbC1OY0NKNS1hLXdRNEVMSUZOMUw5Tk5GaQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQREtHWHJrV2U1UXpYNXRGcXF3SEg4Y0JvaGFmTXMwMnBMTmxkWGhqOGtrWXpQdzQzREo3SzNtYVdBT2kyM1BaeVZXeFdfcVE0MVJmTWFpdUJwZGgwR3ZCQndoVFBQTVVpcFByVEozYU9QeDZVWmdPalA2b1oxalZJNzRCVm5ZSVRWUnU1X3o1YTNMV2RyVVBwQjdYZzhzUDFHLTlYN3ZPdnZxckpfME0w?oc=5\" target=\"_blank\"&gt;Breakingviews - COMMENTARY: Eastern Europe's miracle can survive protectionism&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-28T05:00:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxNbERRRVQwNzAxb0ZpZ1lrME5OaTZSVW5fRlRBSk44SGJNamVjVGpqOWhmRnpxQWVBdUhROTh2WkhTSVp0WVV2NXB3amttUmJCSkp3UHdhYnhJQV9XekViNE5sSXhWSGl0U09qb3JSdEdsMjVwMW83ZERoSnBoM3BET1hPSDVmMm56RDNSbC1OY0NKNS1hLXdRNEVMSUZOMUw5Tk5GaQ?oc=5\" target=\"_blank\"&gt;Macron invokes Europe’s Judeo-Christian foundation as Leo visits&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-28T11:36:27.000Z",
           "score": 8
         },
         {
-          "title": "Iran-linked diesel price spike makes electric trucks cheaper than diesel in key EU markets, environmental group says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPZVBWUjdTSkRRcUtpSUp6djB6M1NoZHpMQmlsRXBpU3R2Z0ZuT2dOa09tYzBoQ1hQbXFGbVJGa3c2TmFiZ0JaUF85cU15bXVOcTBKdUgyYWdoUGRJT1htcmZEN0NJMGJlT0JtWHBPQjZJeDhiMzlQWFBYWFl3WDRMNE5nem12bkFobF8yMFJMaTZ4bkZwRVVQbEUwZG5UY0lXR1VZTnRFNVhZSkcxYnkxT3hsQTZlOF9UaEt4Q1VTem1PUURnQjdFRWViN0QtSzBVb0tlcFFpUnFFSFBMMnc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxPZVBWUjdTSkRRcUtpSUp6djB6M1NoZHpMQmlsRXBpU3R2Z0ZuT2dOa09tYzBoQ1hQbXFGbVJGa3c2TmFiZ0JaUF85cU15bXVOcTBKdUgyYWdoUGRJT1htcmZEN0NJMGJlT0JtWHBPQjZJeDhiMzlQWFBYWFl3WDRMNE5nem12bkFobF8yMFJMaTZ4bkZwRVVQbEUwZG5UY0lXR1VZTnRFNVhZSkcxYnkxT3hsQTZlOF9UaEt4Q1VTem1PUURnQjdFRWViN0QtSzBVb0tlcFFpUnFFSFBMMnc?oc=5\" target=\"_blank\"&gt;Iran-linked diesel price spike makes electric trucks cheaper than diesel in key EU markets, environmental group says&lt;/a",
-          "published": "2026-09-27T22:02:38.000Z",
-          "score": 8
+          "title": "Iranian human rights lawyer Nasrin Sotoudeh wins the 2026 Vaclav Havel Human Rights Prize",
+          "link": "https://www.dw.com/en/iranian-human-rights-lawyer-nasrin-sotoudeh-wins-the-2026-vaclav-havel-human-rights-prize/a-79462111?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Council of Europe awarded human rights lawyer Nasrin Sotoudeh with the Vaclav Havel human rights prize. She is a prominent advocate for the rights of women, children and political prisoners.",
+          "published": "2026-09-28T16:32:00.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 394,
-    "articlesLast24h": 152,
-    "afterDedup": 143,
+    "totalArticlesScanned": 407,
+    "articlesLast24h": 164,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
