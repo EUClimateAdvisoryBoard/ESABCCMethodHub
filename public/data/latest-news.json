@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "title": "EU provides €61 million in humanitarian aid amidst rapidly deteriorating situation in Ethiopia",
+    "summary": "European Commission Press release Brussels, 28 Sep 2026 Amid fears of renewed conflict in Northern Ethiopia, the European Union is providing €61 million in humanitarian funding to help the most vulnerable people in Ethiopia affected by conflict, displacement, disease outbreaks and climate-related hazards, including the impact of El Niño.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1991",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-09-28T09:26:41.000Z",
+    "tags": [
+      "finance"
+    ]
+  },
+  {
+    "title": "EU trade agreements continue to benefit European businesses",
+    "summary": "European Commission Press release Brussels, 28 Sep 2026 The EU's growing network of trade agreements helps European businesses to access new export markets and creates a more predictable trade and investment environment, according to a report published today.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1983",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-09-27T22:00:00.000Z",
+    "tags": [
+      "emissions",
+      "finance"
+    ]
+  }
+]
