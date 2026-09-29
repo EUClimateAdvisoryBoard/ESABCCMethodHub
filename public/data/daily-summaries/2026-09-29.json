@@ -1,24 +1,24 @@
 {
   "date": "2026-09-29",
-  "generatedAt": "2026-09-29T11:14:18.217Z",
+  "generatedAt": "2026-09-29T21:21:22.353Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 29 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Heat pump sales soar across Europe after states cut electricity taxes, data shows",
-      "summary": "&lt;p&gt;EU to push member states to cut tax rate below duty on gas, with 11% surge in sales also put down to fallout from Iran war&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/sep/28/uk-housebuilders-stocks-new-homes-scheme-first-time-buyers-business-live-news\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/sep/28/europe-ukraine-defence-ministers-pope-l",
+      "headline": "Trump denies offering Iran sanctions relief for nuclear concessions - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQLVF4LWZMa3hVb1J2cTVXVjRXdmh0RkFkMkY4MHVWVTVhQmZCQjJpT1l2QmExeFBXd3FRa256Z1Z1Z3k3UFQzOGY5VW1OSHBrcFVGQjkzVkdRaG1rc3FkR19CY3dhajI3cy0zOFZUb2tkTkRLUDN1aHdYd0tRMHM2ZVZiMk1Ld0dvZEhzX0JsblduWjdGa0dfZ3pzSDRqejRRdWZUY0RQUzA?oc=5\" target=\"_blank\"&gt;Trump denies offering Iran sanctions relief for nuclear concessions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Nearly 200 experts meet in Bangkok to advance IPCC assessment of climate change mitigation",
-      "summary": "PATHUM, Sept 28 – Nearly 200 authors from 79 countries are gathered at the Asian Institute of Technology in Pathum, Thailand, from 28 September to 1 October to draft the Working Group III contribution to the Intergovernmental Panel on Climate Change (IPCC) Seventh Assessment Report (AR7) on the mitigation of climate change. This is the [&#8230;]",
+      "headline": "Opening remarks by Commissioner Jørgensen at the press conference concluding the Informal Energy Council",
+      "summary": "European Commission Speech Dublin, 29 Sep 2026 Thank you, Minister, for hosting these important discussions here in Dublin.And thank you for your putting energy affordability and security at the top of the a...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "AI: Concern as Germany plans to double data center capacity",
-      "summary": "Germany is rewriting the rules to attract data center investment from AI companies. But local communities are becoming increasingly skeptical.",
+      "headline": "Burnham says he would put PR in Labour manifesto and scrap triple lock to fund social care – UK politics live",
+      "summary": "&lt;p&gt;PM, in first speech to party conference as leader, insists his plans are a ‘good deal’ for older people&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/2026/sep/29/andy-burnham-labour-conference-pension-triple-lock-social-care\"&gt;Burnham to signal willingness to look at scrapping pension triple lock to fund social care&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Angela Rayner&lt;/strong&gt;, the housing secretary, has apparentl",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,22 +34,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Heat pump sales soar across Europe after states cut electricity taxes, data shows",
-          "link": "https://www.theguardian.com/environment/2026/sep/28/heat-pump-sales-soar-across-europe-after-ciuntries-cut-electricity-taxes-data-shows",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;EU to push member states to cut tax rate below duty on gas, with 11% surge in sales also put down to fallout from Iran war&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/sep/28/uk-housebuilders-stocks-new-homes-scheme-first-time-buyers-business-live-news\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/sep/28/europe-ukraine-defence-ministers-pope-l",
-          "published": "2026-09-28T13:53:52.000Z",
-          "score": 13
-        },
-        {
-          "title": "Trump administration to slash clean car rules aimed at cutting climate emissions",
-          "link": "https://www.theguardian.com/us-news/2026/sep/28/trump-administration-slashes-clean-car-rules",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Environmentalists decry move that relaxes requirements on automakers to control pollution from gas-powered cars&lt;/p&gt;&lt;p&gt;The Trump administration on Monday announced it was slashing clean car rules that had been aimed at reducing planet-heating emissions and boosting electric vehicles.&lt;/p&gt;&lt;p&gt;The move, which was criticized by environmentalists, relaxes requirements on automakers to control pollution from gasoline-powered cars and light trucks for model years 2022 thr",
-          "published": "2026-09-28T15:56:32.000Z",
-          "score": 7
-        },
-        {
           "title": "Trump denies offering Iran sanctions relief for nuclear concessions - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQLVF4LWZMa3hVb1J2cTVXVjRXdmh0RkFkMkY4MHVWVTVhQmZCQjJpT1l2QmExeFBXd3FRa256Z1Z1Z3k3UFQzOGY5VW1OSHBrcFVGQjkzVkdRaG1rc3FkR19CY3dhajI3cy0zOFZUb2tkTkRLUDN1aHdYd0tRMHM2ZVZiMk1Ld0dvZEhzX0JsblduWjdGa0dfZ3pzSDRqejRRdWZUY0RQUzA?oc=5",
           "source": "Reuters World (via Google News)",
@@ -58,20 +42,36 @@
           "score": 7
         },
         {
-          "title": "White House weighs red-dyed diesel tax relief to lower fuel prices - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOOGVaUEhyZkFiZjllQjF6QzRaV2ZmVXk4TVdaUnJQNzg0VEhUZFFleC1WVHByOE16QV8wb3lucjNybVdCM2sxU1NWMTJTamV0MENoMVktQ0h0d0Y1VlpDRmhfbVBybng4dFhDTHN5WWQxZDV2V2lsWUtRUllsci1FQzk0S0cteTQxNlo1WU90UGg5dG4ydmpid3BPSjNGMlNQYl9xYWhMMFJjeFFRMUh6OHhncHhybmM?oc=5",
+          "title": "Shell-led LNG Canada greenlights Phase 2 expansion, doubling export capacity - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxON1lWTTdxaVZMaDlmeS1TNERQbGRyNENwTzhUZGt5d2pMSFMwSFZpQUtHWks4UklrU2lKU2EyMWVuUnU3U1Y1Vk9icjlYR1F4M0pCNjdUWDZIVVpIeC1SMVVnT05ySmRSaGZYdEZnVXFaR01ISHlqdEttMVJoWXdGbTB0RlBUdVEwWDFnd3J5S2Q5TjExN0FFVkMwcHRES0k4R1luZDNJMUNmaVMydXBRX3g4RERlZHc4emUxN2xiMllTQlpWbUE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOOGVaUEhyZkFiZjllQjF6QzRaV2ZmVXk4TVdaUnJQNzg0VEhUZFFleC1WVHByOE16QV8wb3lucjNybVdCM2sxU1NWMTJTamV0MENoMVktQ0h0d0Y1VlpDRmhfbVBybng4dFhDTHN5WWQxZDV2V2lsWUtRUllsci1FQzk0S0cteTQxNlo1WU90UGg5dG4ydmpid3BPSjNGMlNQYl9xYWhMMFJjeFFRMUh6OHhncHhybmM?oc=5\" target=\"_blank\"&gt;White House weighs red-dyed diesel tax relief to lower fuel prices&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-28T20:20:38.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxON1lWTTdxaVZMaDlmeS1TNERQbGRyNENwTzhUZGt5d2pMSFMwSFZpQUtHWks4UklrU2lKU2EyMWVuUnU3U1Y1Vk9icjlYR1F4M0pCNjdUWDZIVVpIeC1SMVVnT05ySmRSaGZYdEZnVXFaR01ISHlqdEttMVJoWXdGbTB0RlBUdVEwWDFnd3J5S2Q5TjExN0FFVkMwcHRES0k4R1luZDNJMUNmaVMydXBRX3g4RERlZHc4emUxN2xiMllTQlpWbUE?oc=5\" target=\"_blank\"&gt;Shell-led LNG Canada greenlights Phase 2 expansion, doubling export capacity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-29T18:34:50.000Z",
           "score": 7
         },
         {
-          "title": "China's Gotion invests $1.25 billion in Volkswagen battery plant in Spain - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQYjhtWENMaGdMc2tUUkhCcFVFNXVfU1JwWmhKM2kwLUxnS2Z3X0tYNTkyamdaNzcxbUxOY2RscGtMbVJSZ3FHNHoyYlJRa0RNaUNnVXR4SWU2ODYzeG5LWHVZS3lqYXVDaS0yd0k1S2RqU2lkZmxGODczQ3B6UFRqMU91d0Jvb3BvdElyYm5xQWtwRlRlc19WT1hsVGtDdEk4THhSQnVfZm94aHMxRC0w?oc=5",
+          "title": "North Korea says US approval for South Korea's nuclear submarine increases regional instability - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOT3dSNjZ4UE14NUlmSUpBREZoVEZ5cl9zYTJfT1M2MTUwdnJnbUZfXzlURmdvWFlHcmI2a2NWUzA0MWhXbDA1RDlJdk95OHBvZ0huXzYwMjZ2VlYxZlJLc3JNcFlYbWdsM2dld0dncXNLZEg4MkFSZmRDZEtESUpZTTM2NFVSNl9uTlRmUGhXa0JWY25HSUI0S1RVY1JQMWpnZ1BCNENYbVVWTlUwc1QzTzh0YUtJZEdQako3TGVLT1BMb1RxQ21FWmVUT21SQQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQYjhtWENMaGdMc2tUUkhCcFVFNXVfU1JwWmhKM2kwLUxnS2Z3X0tYNTkyamdaNzcxbUxOY2RscGtMbVJSZ3FHNHoyYlJRa0RNaUNnVXR4SWU2ODYzeG5LWHVZS3lqYXVDaS0yd0k1S2RqU2lkZmxGODczQ3B6UFRqMU91d0Jvb3BvdElyYm5xQWtwRlRlc19WT1hsVGtDdEk4THhSQnVfZm94aHMxRC0w?oc=5\" target=\"_blank\"&gt;China's Gotion invests $1.25 billion in Volkswagen battery plant in Spain&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-28T16:12:39.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOT3dSNjZ4UE14NUlmSUpBREZoVEZ5cl9zYTJfT1M2MTUwdnJnbUZfXzlURmdvWFlHcmI2a2NWUzA0MWhXbDA1RDlJdk95OHBvZ0huXzYwMjZ2VlYxZlJLc3JNcFlYbWdsM2dld0dncXNLZEg4MkFSZmRDZEtESUpZTTM2NFVSNl9uTlRmUGhXa0JWY25HSUI0S1RVY1JQMWpnZ1BCNENYbVVWTlUwc1QzTzh0YUtJZEdQako3TGVLT1BMb1RxQ21FWmVUT21SQQ?oc=5\" target=\"_blank\"&gt;North Korea says US approval for South Korea's nuclear submarine increases regional instability&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6",
+          "published": "2026-09-28T21:39:22.000Z",
           "score": 7
+        },
+        {
+          "title": "‘It’s just cruel’: US households hit by surge in electricity shutoffs amid record hot summer",
+          "link": "https://www.theguardian.com/environment/2026/sep/29/electricity-disconnected-record-heat",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Utility disconnections were up 28% in 10 states in July 2026 – the hottest month ever recorded in the US – compared with July 2024, data shows&lt;/p&gt;&lt;p&gt;A &lt;a href=\"https://www.theguardian.com/us-news/2026/aug/10/july-hottest-month-ever-recorded-heatwaves\"&gt;record&lt;/a&gt; hot summer collided unhappily with rising energy costs for households across the US that struggled to the point where many were disconnected from their electricity supply, even as dangerous heat baked the",
+          "published": "2026-09-29T13:00:51.000Z",
+          "score": 4
+        },
+        {
+          "title": "Burnham promises to roll back privatisation with government-backed grid plan",
+          "link": "https://www.theguardian.com/politics/2026/sep/28/burnham-to-announce-government-backed-body-to-invest-in-electricity-grid",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Exclusive: Creation of GB Grid will be major step towards putting Britain’s utility companies into public control &lt;/p&gt;&lt;p&gt;Andy Burnham will take his first major step to putting Britain’s utility companies into public control when, at the Labour conference, he announces a new government-backed body to invest in the electricity grid.&lt;/p&gt;&lt;p&gt;The prime minister will use his first speech as party leader to announce the creation of GB Grid, which will use money previousl",
+          "published": "2026-09-28T21:33:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -80,12 +80,36 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Nearly 200 experts meet in Bangkok to advance IPCC assessment of climate change mitigation",
-          "link": "https://www.ipcc.ch/2026/09/28/pr18-2026/",
-          "source": "IPCC",
-          "description": "PATHUM, Sept 28 – Nearly 200 authors from 79 countries are gathered at the Asian Institute of Technology in Pathum, Thailand, from 28 September to 1 October to draft the Working Group III contribution to the Intergovernmental Panel on Climate Change (IPCC) Seventh Assessment Report (AR7) on the mitigation of climate change. This is the [&#8230;]",
-          "published": "2026-09-28T12:46:57.000Z",
-          "score": 11
+          "title": "Opening remarks by Commissioner Jørgensen at the press conference concluding the Informal Energy Council",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2016",
+          "source": "European Commission",
+          "description": "European Commission Speech Dublin, 29 Sep 2026 Thank you, Minister, for hosting these important discussions here in Dublin.And thank you for your putting energy affordability and security at the top of the a...",
+          "published": "2026-09-29T17:02:17.000Z",
+          "score": 23
+        },
+        {
+          "title": "Speech by President von der Leyen at the inauguration ceremony for the David Maria Sassoli building of the European Parliament",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2006",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 29 Sep 2026 President Metsola, dear Roberta,\r\nExcellencies,\r\nCara Alessandra, Giulio and Livia, \r\nDavid Sassoli was a true custodian of the values our Union was built on. The ...",
+          "published": "2026-09-29T10:56:10.000Z",
+          "score": 18
+        },
+        {
+          "title": "Brazil confident new rainforest fund will reach $10bn donor milestone",
+          "link": "https://www.climatechangenews.com/2026/09/29/brazil-confident-new-rainforest-fund-tfff-10bn-fund-finance/",
+          "source": "Climate Home News",
+          "description": "Brazil's environment minister João Paulo Capobianco said their new rainforest fund proposal has raised billions in record time, which he hopes will convince more investors The post Brazil confident new rainforest fund will reach $10bn donor milestone appeared first on Climate Home News.",
+          "published": "2026-09-29T15:22:03.000Z",
+          "score": 14
+        },
+        {
+          "title": "Euro's dollar resilience faces energy price, political risk tests - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPR0U4dHpHSkRBSUQ4VnFlY2RNb3U5OGVINGNleGNyTWwyN1NVeEVBR0xZV295T3RmeTI3V3N6WnJvakxYV3pBbVdDcGFWOFBEVDc4dzZKb1hTU3otNFpBNzBwU05kXy1IM09hSHJQa0ZZWVBhRVpUWk9yb2RsUmZfRG5ZQWRuenBsYklPSVhWTjRyMHJ3NHZ2YW1YSzBXNVNhdmRkcnBrNU94MGlwNnBIMkVR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPR0U4dHpHSkRBSUQ4VnFlY2RNb3U5OGVINGNleGNyTWwyN1NVeEVBR0xZV295T3RmeTI3V3N6WnJvakxYV3pBbVdDcGFWOFBEVDc4dzZKb1hTU3otNFpBNzBwU05kXy1IM09hSHJQa0ZZWVBhRVpUWk9yb2RsUmZfRG5ZQWRuenBsYklPSVhWTjRyMHJ3NHZ2YW1YSzBXNVNhdmRkcnBrNU94MGlwNnBIMkVR?oc=5\" target=\"_blank\"&gt;Euro's dollar resilience faces energy price, political risk tests&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-29T05:02:00.000Z",
+          "score": 13
         },
         {
           "title": "COP31 must aim higher to cut emissions from the use of materials",
@@ -94,30 +118,6 @@
           "description": "November's climate summit is an opportunity to connect material circularity with stronger carbon-cutting pathways but Türkiye's proposed goals need to be a lot more ambitious The post COP31 must aim higher to cut emissions from the use of materials appeared first on Climate Home News.",
           "published": "2026-09-29T10:37:14.000Z",
           "score": 10
-        },
-        {
-          "title": "Spain grows fruit and vegetables for Europe — but it&#039;s running out of water",
-          "link": "https://www.dw.com/en/spain-grows-fruit-and-vegetables-for-europe-but-it-s-running-out-of-water/a-79399905?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Spain&#039;s southern coast produces up to 25% of Europe&#039;s fruit and vegetables. But amid intensive farming, climate change and illegal wells, the water it takes to grow them is drying up.",
-          "published": "2026-09-29T09:51:00.000Z",
-          "score": 10
-        },
-        {
-          "title": "Fossil found on Welsh beach ends 'confusion' over 200-million-year-old fish teeth",
-          "link": "https://www.bbc.co.uk/news/articles/ckz7zd7nxj73o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Fossilised teeth across Europe had been wrongly identified until the latest find in south Wales.",
-          "published": "2026-09-28T16:04:59.000Z",
-          "score": 9
-        },
-        {
-          "title": "Samuel Alito steps aside in a major climate case amid scrutiny over oil stock holdings",
-          "link": "https://www.theguardian.com/us-news/2026/sep/28/samuel-alito-supreme-court-oil-climate-case",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Decision from conservative justice comes before court hears case on whether fossil-fuel firms deceived US public&lt;/p&gt;&lt;p&gt;Supreme court justice Samuel Alito recused himself on Monday from a major climate-change case after facing calls to step aside due to stock holdings in oil companies.&lt;/p&gt;&lt;p&gt;A letter posted in the case did not specify a reason, but the conservative justice has previously recused himself from other cases involving companies where he holds stock.&lt",
-          "published": "2026-09-28T21:47:41.000Z",
-          "score": 7
         }
       ]
     },
@@ -125,6 +125,14 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
+        {
+          "title": "Burnham says he would put PR in Labour manifesto and scrap triple lock to fund social care – UK politics live",
+          "link": "https://www.theguardian.com/politics/live/2026/sep/29/andy-burnham-labour-conference-liverpool-speech-triple-lock-pension-angela-rayner-lucy-powell-bridget-phillipson-uk-politics-latest-news-updates",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;PM, in first speech to party conference as leader, insists his plans are a ‘good deal’ for older people&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/2026/sep/29/andy-burnham-labour-conference-pension-triple-lock-social-care\"&gt;Burnham to signal willingness to look at scrapping pension triple lock to fund social care&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Angela Rayner&lt;/strong&gt;, the housing secretary, has apparentl",
+          "published": "2026-09-29T17:20:06.000Z",
+          "score": 2
+        },
         {
           "title": "AI: Concern as Germany plans to double data center capacity",
           "link": "https://www.dw.com/en/ai-concern-as-germany-plans-to-double-data-center-capacity/a-79407981?maca=en-rss-en-all-1573-xml-mrss",
@@ -138,59 +146,84 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Brussels seeks to strengthen EU border controls after Ceuta crisis - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNNzM1WE1JWTZUUGd6YmczOVpzRGNCYkNpVHliOFNQajctVFdzU2lsZXM2VVJESThsck9WOTZpZXBUVjBSd0xIX3ZUZzBPZWtDV3VDTHI5Q2FrZmxmV3JDdnkzR3VWRHFMb2tHS1VmRnFXX1VNN21ZMzJFWmlSQ2Y1Nklsb0NlN3FQVTVwekpsbi00M195Mnd0d0ZKblJUNWlVblRZX3VlTDBScVRwMkNXUGlPd2RIdEpUbG82T3ZTM181cFM1X2Rrag?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNNzM1WE1JWTZUUGd6YmczOVpzRGNCYkNpVHliOFNQajctVFdzU2lsZXM2VVJESThsck9WOTZpZXBUVjBSd0xIX3ZUZzBPZWtDV3VDTHI5Q2FrZmxmV3JDdnkzR3VWRHFMb2tHS1VmRnFXX1VNN21ZMzJFWmlSQ2Y1Nklsb0NlN3FQVTVwekpsbi00M195Mnd0d0ZKblJUNWlVblRZX3VlTDBScVRwMkNXUGlPd2RIdEpUbG82T3ZTM181cFM1X2Rrag?oc=5\" target=\"_blank\"&gt;Brussels seeks to strengthen EU border controls after Ceuta crisis&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-29T12:06:52.000Z",
+          "score": 8
+        },
+        {
+          "title": "Estonia blames Russia for arson at defence company supplying Ukraine",
+          "link": "https://www.bbc.co.uk/news/articles/c6m27l4er4jxo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Russia has been accused of launching sabotage attacks across a number of European Nato countries which have been helping Ukraine.",
+          "published": "2026-09-29T19:36:41.000Z",
+          "score": 4
+        },
+        {
+          "title": "Germany news: Bremerhaven port to receive defense boost",
+          "link": "https://www.dw.com/en/germany-news-bremerhaven-port-to-receive-defense-boost/live-79468663?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Bremerhaven&#039;s port and Bremen&#039;s airport will be upgraded for German, NATO defense needs in case of an attack on the alliance. It comes as European countries upgrade militarily amid Russia&#039;s war in Ukraine. Follow DW.",
+          "published": "2026-09-29T17:28:00.000Z",
+          "score": 4
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Germany news: Merz revolts over EU budget, report says",
-          "link": "https://www.dw.com/en/germany-news-merz-revolts-over-eu-budget-report-says/live-79468663?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Chancellor Friedrich Merz and his counterparts from five countries have threatened to withhold approval to the EU budget proposal unless it&#039;s cut by billions of euros. Follow DW.",
-          "published": "2026-09-29T07:54:00.000Z",
-          "score": 12
+          "title": "Explainer: What are Europe's methane emissions rules and why are they being delayed? - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaEdMQ0ZlemRNTTNOWHlDd3ZyU1oydDk1dkVqakQzdVBsWDJWcFBTdUo5QU9Pc1VjbUVEbUxVNWxraTQ5YjJWVWhvbko3eHVHamQtVmpwaUlCWkhvSW1iOGRob0tJUHVPQWtObENYOVBQLXFYS0JlS3NuQnNsTWZMTkZCNEF4ZndkVXJ2WmpkZ0VlYzdSWFVIblYzQmFLX0d0TXNOdjRjUVVRWUpZSVhnZWl6U2c3Q2ZPamlN?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaEdMQ0ZlemRNTTNOWHlDd3ZyU1oydDk1dkVqakQzdVBsWDJWcFBTdUo5QU9Pc1VjbUVEbUxVNWxraTQ5YjJWVWhvbko3eHVHamQtVmpwaUlCWkhvSW1iOGRob0tJUHVPQWtObENYOVBQLXFYS0JlS3NuQnNsTWZMTkZCNEF4ZndkVXJ2WmpkZ0VlYzdSWFVIblYzQmFLX0d0TXNOdjRjUVVRWUpZSVhnZWl6U2c3Q2ZPamlN?oc=5\" target=\"_blank\"&gt;Explainer: What are Europe's methane emissions rules and why are they being delayed?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-29T10:33:44.000Z",
+          "score": 13
         },
         {
-          "title": "Macron invokes Europe’s Judeo-Christian foundation as Leo visits - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbERRRVQwNzAxb0ZpZ1lrME5OaTZSVW5fRlRBSk44SGJNamVjVGpqOWhmRnpxQWVBdUhROTh2WkhTSVp0WVV2NXB3amttUmJCSkp3UHdhYnhJQV9XekViNE5sSXhWSGl0U09qb3JSdEdsMjVwMW83ZERoSnBoM3BET1hPSDVmMm56RDNSbC1OY0NKNS1hLXdRNEVMSUZOMUw5Tk5GaQ?oc=5",
+          "title": "Dollar hits 16-month high on euro and Swiss franc as US yields top 5% - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNcm1xMjE3YTBSdTBJRVI5blBWcFFOS1ZSQWZlcVhMZU1iWU1kZTkyaElQUXhyRzZ4My1UcmdUVW1MZldrdjMzblF5eEh5amIwb2tlWmozYjloa29GaEhoT2dMbFFteHRwLV9pem9OYkowV3RUaGhnTUhDUjcwLXozSG1rT0dOMmdsdERFUlVwM1p4TjBZQlFZZWx2aTc4VC03QURrOWM1c1IwVXc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxNbERRRVQwNzAxb0ZpZ1lrME5OaTZSVW5fRlRBSk44SGJNamVjVGpqOWhmRnpxQWVBdUhROTh2WkhTSVp0WVV2NXB3amttUmJCSkp3UHdhYnhJQV9XekViNE5sSXhWSGl0U09qb3JSdEdsMjVwMW83ZERoSnBoM3BET1hPSDVmMm56RDNSbC1OY0NKNS1hLXdRNEVMSUZOMUw5Tk5GaQ?oc=5\" target=\"_blank\"&gt;Macron invokes Europe’s Judeo-Christian foundation as Leo visits&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-28T11:36:27.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNcm1xMjE3YTBSdTBJRVI5blBWcFFOS1ZSQWZlcVhMZU1iWU1kZTkyaElQUXhyRzZ4My1UcmdUVW1MZldrdjMzblF5eEh5amIwb2tlWmozYjloa29GaEhoT2dMbFFteHRwLV9pem9OYkowV3RUaGhnTUhDUjcwLXozSG1rT0dOMmdsdERFUlVwM1p4TjBZQlFZZWx2aTc4VC03QURrOWM1c1IwVXc?oc=5\" target=\"_blank\"&gt;Dollar hits 16-month high on euro and Swiss franc as US yields top 5%&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-29T01:57:00.000Z",
           "score": 8
         },
         {
-          "title": "Sign before praying: A new conversion law is affecting churchgoers in Indian state",
-          "link": "https://www.bbc.co.uk/news/articles/cmj4jg2vxvpdo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "A new anti-conversion law in Maharashtra is raising questions about faith, choice and freedom.",
-          "published": "2026-09-29T00:50:19.000Z",
-          "score": 6
-        },
-        {
-          "title": "Tata shares slip as trusts' proposal clouds Tata Sons listing prospects - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNRVJSaDVWOVF1ZWJkd29rRjJJNURsd2dlZnJQQ0w1aE1mZEF3Q3lfd1B3WUo0TU5SYThJN2dudG1RSHU0djZnVGs3bW91bjFyWmZOanFCbUdKTEpCMHhCc1c5cTRaLVNlMXNCN2RjMEdjOUpIMEJGYkhnUXVsLVlMRHR3NWREMFZmNHBwMkVfb3o3ZERtc19SbnhWdTU2WTJHUXVtVmNSa1JxdmM3SmRJRk5OT3RxajZSVkloZjhVWQ?oc=5",
+          "title": "'Let them be scared': Moscow sends EU message with widening corporate crackdown - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOeUpiNFhHVVZjSFowMlNkRHE5WW85cFhCM3FPYU1tTFlPZ3Z4bDVtN1VGU1JXUmFJcFpQY1V2R19LUkRCa2VXTWl0SFBVWmp0SFIwN21KNTR6NnNzQWl0eW54SkpFTkU0TkdxXzNfa3Q1ekZBTWUyenFWMFgwdjd3SlhiNnNGUnN0ZVRGRDh1eTY2V2VUbkNDNFhjYndLb2hORzdTWXpxMDBnMk1NRjZMRFV6dlF4YzlOQnl2OHZGaWN0Q2c?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNRVJSaDVWOVF1ZWJkd29rRjJJNURsd2dlZnJQQ0w1aE1mZEF3Q3lfd1B3WUo0TU5SYThJN2dudG1RSHU0djZnVGs3bW91bjFyWmZOanFCbUdKTEpCMHhCc1c5cTRaLVNlMXNCN2RjMEdjOUpIMEJGYkhnUXVsLVlMRHR3NWREMFZmNHBwMkVfb3o3ZERtc19SbnhWdTU2WTJHUXVtVmNSa1JxdmM3SmRJRk5OT3RxajZSVkloZjhVWQ?oc=5\" target=\"_blank\"&gt;Tata shares slip as trusts' proposal clouds Tata Sons listing prospects&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-29T04:19:00.000Z",
-          "score": 6
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOeUpiNFhHVVZjSFowMlNkRHE5WW85cFhCM3FPYU1tTFlPZ3Z4bDVtN1VGU1JXUmFJcFpQY1V2R19LUkRCa2VXTWl0SFBVWmp0SFIwN21KNTR6NnNzQWl0eW54SkpFTkU0TkdxXzNfa3Q1ekZBTWUyenFWMFgwdjd3SlhiNnNGUnN0ZVRGRDh1eTY2V2VUbkNDNFhjYndLb2hORzdTWXpxMDBnMk1NRjZMRFV6dlF4YzlOQnl2OHZGaWN0Q2c?oc=5\" target=\"_blank\"&gt;'Let them be scared': Moscow sends EU message with widening corporate crackdown&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-29T14:09:49.000Z",
+          "score": 8
         },
         {
-          "title": "UK: US government questions bail for Fairford base suspects",
-          "link": "https://www.dw.com/en/uk-us-government-questions-bail-for-fairford-base-suspects/a-79468803?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The US government sees &quot;the hand of a foreign actor&quot; in the security scare at RAF Fairford, a hub for US heavy bombers in Europe. Donald Trump criticized the suspects being released on bail amid ongoing investigations.",
-          "published": "2026-09-29T08:17:00.000Z",
-          "score": 4
+          "title": "Questioning Russian threat to Europe is irresponsible, Germany's top diplomat says in Slovakia - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQMnRha204VWMzb3Nqa0RRZXFZVENrTnE5Nk1RYnFhSU1jdDdKNFBZWHg3R204TURtRzFTZFREbTBHMnVfZkJLWWtyNjloOFhDYTZjTHBNNUVoaXItM29ISHhYOUdqa05PQW9hZm5MNTlZZjJuTGxGLS03RUU0a19CdDhNeS05MTdXMFl1dU5QSVN6a1F0NDhsTmF0M2plU3lEWThyVVczTVRBeC05aFhubTlhYXdNaHZTNFdZ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQMnRha204VWMzb3Nqa0RRZXFZVENrTnE5Nk1RYnFhSU1jdDdKNFBZWHg3R204TURtRzFTZFREbTBHMnVfZkJLWWtyNjloOFhDYTZjTHBNNUVoaXItM29ISHhYOUdqa05PQW9hZm5MNTlZZjJuTGxGLS03RUU0a19CdDhNeS05MTdXMFl1dU5QSVN6a1F0NDhsTmF0M2plU3lEWThyVVczTVRBeC05aFhubTlhYXdNaHZTNFdZ?oc=5\" target=\"_blank\"&gt;Questioning Russian threat to Europe is irresponsible, Germany's top diplomat says in Slovakia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-09-29T13:34:18.000Z",
+          "score": 8
+        },
+        {
+          "title": "Putin envoy, US officials discussed Ukraine war and energy initiatives, US official says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPc2otb2lvVXpwNDJHTmRWeEdOeGhfOTZWcU85a3JsejM5bENpOXpjU3B3TGVCeG1BOGRVWXRMOWd6YUY1RWZOQzNlM0YyaUhPZlMxbUJNb1l2T1g1R0RCaFFvUXdVSGpqN0lIdExEOVR4Si1tTUdvTVRyUDdkbDdDOWdzM3lLYlF4V1JrdU1wR2dmLTBFN296bTROLWF0V0JEUFdNRXNnTjJhTEV6cHNFUzBObGJPcWxsY2hr?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPc2otb2lvVXpwNDJHTmRWeEdOeGhfOTZWcU85a3JsejM5bENpOXpjU3B3TGVCeG1BOGRVWXRMOWd6YUY1RWZOQzNlM0YyaUhPZlMxbUJNb1l2T1g1R0RCaFFvUXdVSGpqN0lIdExEOVR4Si1tTUdvTVRyUDdkbDdDOWdzM3lLYlF4V1JrdU1wR2dmLTBFN296bTROLWF0V0JEUFdNRXNnTjJhTEV6cHNFUzBObGJPcWxsY2hr?oc=5\" target=\"_blank\"&gt;Putin envoy, US officials discussed Ukraine war and energy initiatives, US official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-29T12:27:47.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 397,
-    "articlesLast24h": 168,
-    "afterDedup": 157,
+    "totalArticlesScanned": 406,
+    "articlesLast24h": 166,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
