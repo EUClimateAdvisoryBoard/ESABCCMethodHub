@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "generatedAt": "2026-09-29T02:31:00.807Z",
+  "generatedAt": "2026-09-29T11:14:18.217Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 29 September 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,10 +11,16 @@
       "color": "#E87722"
     },
     {
-      "headline": "EU provides €61 million in humanitarian aid amidst rapidly deteriorating situation in Ethiopia",
-      "summary": "European Commission Press release Brussels, 28 Sep 2026 Amid fears of renewed conflict in Northern Ethiopia, the European Union is providing €61 million in humanitarian funding to help the most vulnerable people in Ethiopia affected by conflict, displacement, disease outbreaks and climate-related hazards, including the impact of El Niño.",
+      "headline": "Nearly 200 experts meet in Bangkok to advance IPCC assessment of climate change mitigation",
+      "summary": "PATHUM, Sept 28 – Nearly 200 authors from 79 countries are gathered at the Asian Institute of Technology in Pathum, Thailand, from 28 September to 1 October to draft the Working Group III contribution to the Intergovernmental Panel on Climate Change (IPCC) Seventh Assessment Report (AR7) on the mitigation of climate change. This is the [&#8230;]",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "AI: Concern as Germany plans to double data center capacity",
+      "summary": "Germany is rewriting the rules to attract data center investment from AI companies. But local communities are becoming increasingly skeptical.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -44,19 +50,19 @@
           "score": 7
         },
         {
-          "title": "Offshore wind plant to bring jobs boost to Montrose",
-          "link": "https://www.bbc.co.uk/news/articles/cq62jyk4ekp7o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The new facility will manufacture parts for offshore wind farms in Scottish waters and for overseas markets.",
-          "published": "2026-09-28T11:01:46.000Z",
+          "title": "Trump denies offering Iran sanctions relief for nuclear concessions - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQLVF4LWZMa3hVb1J2cTVXVjRXdmh0RkFkMkY4MHVWVTVhQmZCQjJpT1l2QmExeFBXd3FRa256Z1Z1Z3k3UFQzOGY5VW1OSHBrcFVGQjkzVkdRaG1rc3FkR19CY3dhajI3cy0zOFZUb2tkTkRLUDN1aHdYd0tRMHM2ZVZiMk1Ld0dvZEhzX0JsblduWjdGa0dfZ3pzSDRqejRRdWZUY0RQUzA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQLVF4LWZMa3hVb1J2cTVXVjRXdmh0RkFkMkY4MHVWVTVhQmZCQjJpT1l2QmExeFBXd3FRa256Z1Z1Z3k3UFQzOGY5VW1OSHBrcFVGQjkzVkdRaG1rc3FkR19CY3dhajI3cy0zOFZUb2tkTkRLUDN1aHdYd0tRMHM2ZVZiMk1Ld0dvZEhzX0JsblduWjdGa0dfZ3pzSDRqejRRdWZUY0RQUzA?oc=5\" target=\"_blank\"&gt;Trump denies offering Iran sanctions relief for nuclear concessions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-29T03:15:00.000Z",
           "score": 7
         },
         {
-          "title": "North Korea says US approval for South Korea's nuclear submarine increases regional instability - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOT3dSNjZ4UE14NUlmSUpBREZoVEZ5cl9zYTJfT1M2MTUwdnJnbUZfXzlURmdvWFlHcmI2a2NWUzA0MWhXbDA1RDlJdk95OHBvZ0huXzYwMjZ2VlYxZlJLc3JNcFlYbWdsM2dld0dncXNLZEg4MkFSZmRDZEtESUpZTTM2NFVSNl9uTlRmUGhXa0JWY25HSUI0S1RVY1JQMWpnZ1BCNENYbVVWTlUwc1QzTzh0YUtJZEdQako3TGVLT1BMb1RxQ21FWmVUT21SQQ?oc=5",
+          "title": "White House weighs red-dyed diesel tax relief to lower fuel prices - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOOGVaUEhyZkFiZjllQjF6QzRaV2ZmVXk4TVdaUnJQNzg0VEhUZFFleC1WVHByOE16QV8wb3lucjNybVdCM2sxU1NWMTJTamV0MENoMVktQ0h0d0Y1VlpDRmhfbVBybng4dFhDTHN5WWQxZDV2V2lsWUtRUllsci1FQzk0S0cteTQxNlo1WU90UGg5dG4ydmpid3BPSjNGMlNQYl9xYWhMMFJjeFFRMUh6OHhncHhybmM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOT3dSNjZ4UE14NUlmSUpBREZoVEZ5cl9zYTJfT1M2MTUwdnJnbUZfXzlURmdvWFlHcmI2a2NWUzA0MWhXbDA1RDlJdk95OHBvZ0huXzYwMjZ2VlYxZlJLc3JNcFlYbWdsM2dld0dncXNLZEg4MkFSZmRDZEtESUpZTTM2NFVSNl9uTlRmUGhXa0JWY25HSUI0S1RVY1JQMWpnZ1BCNENYbVVWTlUwc1QzTzh0YUtJZEdQako3TGVLT1BMb1RxQ21FWmVUT21SQQ?oc=5\" target=\"_blank\"&gt;North Korea says US approval for South Korea's nuclear submarine increases regional instability&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6",
-          "published": "2026-09-28T21:39:22.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOOGVaUEhyZkFiZjllQjF6QzRaV2ZmVXk4TVdaUnJQNzg0VEhUZFFleC1WVHByOE16QV8wb3lucjNybVdCM2sxU1NWMTJTamV0MENoMVktQ0h0d0Y1VlpDRmhfbVBybng4dFhDTHN5WWQxZDV2V2lsWUtRUllsci1FQzk0S0cteTQxNlo1WU90UGg5dG4ydmpid3BPSjNGMlNQYl9xYWhMMFJjeFFRMUh6OHhncHhybmM?oc=5\" target=\"_blank\"&gt;White House weighs red-dyed diesel tax relief to lower fuel prices&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-28T20:20:38.000Z",
           "score": 7
         },
         {
@@ -74,14 +80,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "EU provides €61 million in humanitarian aid amidst rapidly deteriorating situation in Ethiopia",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1991",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 28 Sep 2026 Amid fears of renewed conflict in Northern Ethiopia, the European Union is providing €61 million in humanitarian funding to help the most vulnerable people in Ethiopia affected by conflict, displacement, disease outbreaks and climate-related hazards, including the impact of El Niño.",
-          "published": "2026-09-28T09:26:41.000Z",
-          "score": 20
-        },
-        {
           "title": "Nearly 200 experts meet in Bangkok to advance IPCC assessment of climate change mitigation",
           "link": "https://www.ipcc.ch/2026/09/28/pr18-2026/",
           "source": "IPCC",
@@ -90,19 +88,19 @@
           "score": 11
         },
         {
-          "title": "Analysis: Lula presidency saved at least 20,000km2 of Brazilian Amazon since 2022",
-          "link": "https://www.carbonbrief.org/analysis-lula-presidency-saved-at-least-20000km2-of-brazilian-amazon-since-2022",
-          "source": "Carbon Brief",
-          "description": "An area of Amazon forest roughly the size of the US state of New Jersey has remained standing due to&#8230; The post Analysis: Lula presidency saved at least 20,000km2 of Brazilian Amazon since 2022 appeared first on Carbon Brief.",
-          "published": "2026-09-28T10:35:12.000Z",
+          "title": "COP31 must aim higher to cut emissions from the use of materials",
+          "link": "https://www.climatechangenews.com/2026/09/29/cop31-must-aim-higher-to-cut-emissions-from-the-use-of-materials/",
+          "source": "Climate Home News",
+          "description": "November's climate summit is an opportunity to connect material circularity with stronger carbon-cutting pathways but Türkiye's proposed goals need to be a lot more ambitious The post COP31 must aim higher to cut emissions from the use of materials appeared first on Climate Home News.",
+          "published": "2026-09-29T10:37:14.000Z",
           "score": 10
         },
         {
-          "title": "As El Niño intensifies, we should be investing more in the world&#8217;s farmers",
-          "link": "https://www.climatechangenews.com/2026/09/28/as-el-nino-intensifies-we-should-be-investing-more-in-the-worlds-farmers/",
-          "source": "Climate Home News",
-          "description": "Finance to help agriculture adapt to a hotter world and more extreme weather is vital for food security – but new data shows it’s on a downward trend The post As El Niño intensifies, we should be investing more in the world&#8217;s farmers appeared first on Climate Home News.",
-          "published": "2026-09-28T11:06:59.000Z",
+          "title": "Spain grows fruit and vegetables for Europe — but it&#039;s running out of water",
+          "link": "https://www.dw.com/en/spain-grows-fruit-and-vegetables-for-europe-but-it-s-running-out-of-water/a-79399905?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Spain&#039;s southern coast produces up to 25% of Europe&#039;s fruit and vegetables. But amid intensive farming, climate change and illegal wells, the water it takes to grow them is drying up.",
+          "published": "2026-09-29T09:51:00.000Z",
           "score": 10
         },
         {
@@ -112,13 +110,30 @@
           "description": "Fossilised teeth across Europe had been wrongly identified until the latest find in south Wales.",
           "published": "2026-09-28T16:04:59.000Z",
           "score": 9
+        },
+        {
+          "title": "Samuel Alito steps aside in a major climate case amid scrutiny over oil stock holdings",
+          "link": "https://www.theguardian.com/us-news/2026/sep/28/samuel-alito-supreme-court-oil-climate-case",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Decision from conservative justice comes before court hears case on whether fossil-fuel firms deceived US public&lt;/p&gt;&lt;p&gt;Supreme court justice Samuel Alito recused himself on Monday from a major climate-change case after facing calls to step aside due to stock holdings in oil companies.&lt;/p&gt;&lt;p&gt;A letter posted in the case did not specify a reason, but the conservative justice has previously recused himself from other cases involving companies where he holds stock.&lt",
+          "published": "2026-09-28T21:47:41.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "AI: Concern as Germany plans to double data center capacity",
+          "link": "https://www.dw.com/en/ai-concern-as-germany-plans-to-double-data-center-capacity/a-79407981?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany is rewriting the rules to attract data center investment from AI companies. But local communities are becoming increasingly skeptical.",
+          "published": "2026-09-29T10:00:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -130,28 +145,12 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Diesel prices are surging putting further pressure on Europe",
-          "link": "https://www.dw.com/en/diesel-prices-are-surging-putting-further-pressure-on-europe/a-79390992?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Germany news: Merz revolts over EU budget, report says",
+          "link": "https://www.dw.com/en/germany-news-merz-revolts-over-eu-budget-report-says/live-79468663?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Trucks, farms and industry are powered with diesel. Now prices are soaring due to refinery disruptions, supply shortages and geopolitical tensions. A potential US export ban could make Europe&#039;s diesel crunch even worse.",
-          "published": "2026-09-28T10:35:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Sterling rebounds against dollar, euro on bets for tighter BoE policy - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOYTQtM2RFOXdKTkV1WGJHVXJ2bVkzeDNWUXdiZ21xcXJpLXFKc1h4OElSaU1YbUk2eHA2d1VPQWY3NTJ3MlBRckd1NTQzbGZzekZ1VlNVZ1FmR1NGR1o4eXo2Y1AyMW5fcVR2RXhabHNjQ1MzSktSUFJzUkZuaDNLMHBmczA3SXEtZ2VjT1NGMkxpNmZQNC1LX2lkbW4yRi1VcXF1bi14dHJqZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOYTQtM2RFOXdKTkV1WGJHVXJ2bVkzeDNWUXdiZ21xcXJpLXFKc1h4OElSaU1YbUk2eHA2d1VPQWY3NTJ3MlBRckd1NTQzbGZzekZ1VlNVZ1FmR1NGR1o4eXo2Y1AyMW5fcVR2RXhabHNjQ1MzSktSUFJzUkZuaDNLMHBmczA3SXEtZ2VjT1NGMkxpNmZQNC1LX2lkbW4yRi1VcXF1bi14dHJqZw?oc=5\" target=\"_blank\"&gt;Sterling rebounds against dollar, euro on bets for tighter BoE policy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-28T10:45:59.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU imposes sanctions over deportation of Ukrainian children to Russia - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQY1dmdFlnNnVwd3NndFlUZ0ZrcU9kSnRhMnJnYUFXalhpekx3LWVHazdLb1NMRWFrcTFqVVZDc2FIMDBQX1hxMXY4cng0ekJOeFpnU1NnQ1pwaW9JSUh6X1RPcjdlV1MyYnNlY253WUNHNkZqeUxPaUo1Z3lDSzZCRjZsTVpES2hjQzhpaHFrQ2lqX2lNRUdQWGk0ZGt5ZjNRMW5jMlg0V0Y?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQY1dmdFlnNnVwd3NndFlUZ0ZrcU9kSnRhMnJnYUFXalhpekx3LWVHazdLb1NMRWFrcTFqVVZDc2FIMDBQX1hxMXY4cng0ekJOeFpnU1NnQ1pwaW9JSUh6X1RPcjdlV1MyYnNlY253WUNHNkZqeUxPaUo1Z3lDSzZCRjZsTVpES2hjQzhpaHFrQ2lqX2lNRUdQWGk0ZGt5ZjNRMW5jMlg0V0Y?oc=5\" target=\"_blank\"&gt;EU imposes sanctions over deportation of Ukrainian children to Russia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-28T10:19:31.000Z",
-          "score": 8
+          "description": "Chancellor Friedrich Merz and his counterparts from five countries have threatened to withhold approval to the EU budget proposal unless it&#039;s cut by billions of euros. Follow DW.",
+          "published": "2026-09-29T07:54:00.000Z",
+          "score": 12
         },
         {
           "title": "Macron invokes Europe’s Judeo-Christian foundation as Leo visits - Reuters",
@@ -162,19 +161,35 @@
           "score": 8
         },
         {
-          "title": "Breakingviews - COMMENTARY: Eastern Europe's miracle can survive protectionism - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQREtHWHJrV2U1UXpYNXRGcXF3SEg4Y0JvaGFmTXMwMnBMTmxkWGhqOGtrWXpQdzQzREo3SzNtYVdBT2kyM1BaeVZXeFdfcVE0MVJmTWFpdUJwZGgwR3ZCQndoVFBQTVVpcFByVEozYU9QeDZVWmdPalA2b1oxalZJNzRCVm5ZSVRWUnU1X3o1YTNMV2RyVVBwQjdYZzhzUDFHLTlYN3ZPdnZxckpfME0w?oc=5",
+          "title": "Sign before praying: A new conversion law is affecting churchgoers in Indian state",
+          "link": "https://www.bbc.co.uk/news/articles/cmj4jg2vxvpdo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "A new anti-conversion law in Maharashtra is raising questions about faith, choice and freedom.",
+          "published": "2026-09-29T00:50:19.000Z",
+          "score": 6
+        },
+        {
+          "title": "Tata shares slip as trusts' proposal clouds Tata Sons listing prospects - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNRVJSaDVWOVF1ZWJkd29rRjJJNURsd2dlZnJQQ0w1aE1mZEF3Q3lfd1B3WUo0TU5SYThJN2dudG1RSHU0djZnVGs3bW91bjFyWmZOanFCbUdKTEpCMHhCc1c5cTRaLVNlMXNCN2RjMEdjOUpIMEJGYkhnUXVsLVlMRHR3NWREMFZmNHBwMkVfb3o3ZERtc19SbnhWdTU2WTJHUXVtVmNSa1JxdmM3SmRJRk5OT3RxajZSVkloZjhVWQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQREtHWHJrV2U1UXpYNXRGcXF3SEg4Y0JvaGFmTXMwMnBMTmxkWGhqOGtrWXpQdzQzREo3SzNtYVdBT2kyM1BaeVZXeFdfcVE0MVJmTWFpdUJwZGgwR3ZCQndoVFBQTVVpcFByVEozYU9QeDZVWmdPalA2b1oxalZJNzRCVm5ZSVRWUnU1X3o1YTNMV2RyVVBwQjdYZzhzUDFHLTlYN3ZPdnZxckpfME0w?oc=5\" target=\"_blank\"&gt;Breakingviews - COMMENTARY: Eastern Europe's miracle can survive protectionism&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-28T05:00:00.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNRVJSaDVWOVF1ZWJkd29rRjJJNURsd2dlZnJQQ0w1aE1mZEF3Q3lfd1B3WUo0TU5SYThJN2dudG1RSHU0djZnVGs3bW91bjFyWmZOanFCbUdKTEpCMHhCc1c5cTRaLVNlMXNCN2RjMEdjOUpIMEJGYkhnUXVsLVlMRHR3NWREMFZmNHBwMkVfb3o3ZERtc19SbnhWdTU2WTJHUXVtVmNSa1JxdmM3SmRJRk5OT3RxajZSVkloZjhVWQ?oc=5\" target=\"_blank\"&gt;Tata shares slip as trusts' proposal clouds Tata Sons listing prospects&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-29T04:19:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "UK: US government questions bail for Fairford base suspects",
+          "link": "https://www.dw.com/en/uk-us-government-questions-bail-for-fairford-base-suspects/a-79468803?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The US government sees &quot;the hand of a foreign actor&quot; in the security scare at RAF Fairford, a hub for US heavy bombers in Europe. Donald Trump criticized the suspects being released on bail amid ongoing investigations.",
+          "published": "2026-09-29T08:17:00.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 406,
-    "articlesLast24h": 164,
+    "totalArticlesScanned": 397,
+    "articlesLast24h": 168,
     "afterDedup": 157,
     "feedsQueried": 19
   }
