@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T10:48:58.454Z",
+  "generatedAt": "2026-09-30T10:36:47.497Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,37 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/aeadb5",
+      "title": "Beyond 2030: what sectoral shifts in EU and China reveal about Long Term climate commitments",
+      "journal": "Environmental Research Letters",
+      "authors": "Eleftheria Zisarou, Panagiotis Fragkos, Dirk-Jan van de Ven, Songmin Yu",
+      "published": "2026-09-29",
+      "url": "https://doi.org/10.1088/1748-9326/aeadb5",
+      "abstract": "The European Union (EU) and China, as two of the largest economies and emitters, play a pivotal role in the global energy transition. While both economies have committed to ambitious decarbonization pledges in the form of Nationally Determined Contributions (NDCs) and Long-Term Targets (LTTs) under the Paris Agreement, the feasibility of their mid-century climate goals remains uncertain. This work employs two leading Integrated Assessment Models (IAMs)—PROMETHEUS and GCAM—to compare the sectoral emissions reductions, final-energy mix, electrification rates and technology mixes associated with NDC–LTT-consistent pathways in the two regions. The study uses a scenario based on the combination of NDCs and LTTs to identify post-2030 sectoral shifts across major economic and emitting sectors. The findings show that China relies on concentrated post-2030 power and industrial decarbonisation, while the EU pathway depends more on sustained fossilfuel exit in end-use sectors. These contrasts point to different implementation risks: China needs early preparation for a compressed post-2030 power–industry transition, whereas the EU needs stronger delivery in residual fossil-fuel use across buildings, transport and industrial heat. By distinguishing robust requirements from model dependent uncertainties, the analysis identifies where future NDCs should move from aggregate pledges to sector-specific roadmaps backed by policy instruments, investment strategies and implementation capacity",
+      "suggestedOn": "2026-09-30",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6,
+          "matched": [
+            "decarbonisation",
+            "decarbonization",
+            "european union",
+            "paris agreement",
+            "energy transition"
+          ]
+        },
+        {
+          "projectId": "industry-project",
+          "score": 4,
+          "matched": [
+            "industrial decarbonisation",
+            "industrial heat"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aead03",
       "title": "Beyond efficiency: Disentangling structural and behavioral sufficiency in U.S. residential decarbonization pathways",
