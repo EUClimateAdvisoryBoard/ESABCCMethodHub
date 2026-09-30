@@ -143,6 +143,29 @@ Defined in
 seed rows carry `is_seed = true` so they can be told apart from user-added
 recommendations. See [Data & GDPR](../infrastructure/data-gdpr.md).
 
+## By-report table view
+
+[`/recommendations/by-report`](../../src/app/recommendations/by-report/page.tsx)
+is a read-only companion to the tracker. It lists the same recommendations under
+a header for each ESABCC report (newest report first), with one table per report
+and five columns: recommendation title, full text, mitigation / adaptation /
+both, sector, and EU policy role (the nine roles in Box 1 of the assessment
+framework). Every column except the title can be hidden; the choice is kept in
+the URL (`?hide=text,role`). The Download button exports the visible columns.
+
+- The focus, sector and role labels are **AI-compiled — pending Secretariat
+  verification**. They come from fixed word-boundary vocabularies with veto
+  phrases in
+  [`src/lib/recommendations/classify.ts`](../../src/lib/recommendations/classify.ts)
+  and are computed at render time, so recommendations added in the tracker are
+  classified too. Sectors and roles read only the title (plus the January 2024
+  chapter code and a few whole-report rules, such as the TEN-E advice being
+  energy supply); a blank cell means no clear evidence, not "not relevant".
+- The full-text column shows the stored tracker summary up to its "Map:"
+  instrument list. It is a compiled summary, not a verbatim quotation.
+- If the database returns no rows the page says so and shows the built-in seed
+  set, so an unconfigured database is distinguishable from an empty tracker.
+
 ## Known limits
 
 - **Single seeded project.** The stand-alone page is hard-wired to

@@ -78,7 +78,9 @@ export const codecs = {
 
 // ---- Hook ------------------------------------------------------------------
 
-type Schema = Record<string, UrlCodec<unknown>>;
+// `any` (not `unknown`): codecs are contravariant in their value type, so a
+// typed codec such as `UrlCodec<string[]>` is not assignable to `UrlCodec<unknown>`.
+type Schema = Record<string, UrlCodec<any>>;
 type Values<S extends Schema> = { [K in keyof S]: S[K] extends UrlCodec<infer T> ? T : never };
 
 export type UseUrlStateOptions = {

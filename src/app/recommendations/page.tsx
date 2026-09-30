@@ -32,7 +32,10 @@ export default async function RecommendationsPage() {
         >
           Project Workspace · Policy Gap 2.0
         </Link>
-        {' '}— changes here and in the workspace stay in sync.
+        {' '}— changes here and in the workspace stay in sync.{' '}
+        <Link href="/recommendations/by-report" className="underline hover:text-primary">
+          Open the by-report table view →
+        </Link>
       </p>
       <RecommendationsModule projectId={PROJECT_ID} initial={recommendations} />
     </div>
