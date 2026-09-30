@@ -1,18 +1,18 @@
 {
   "date": "2026-09-30",
-  "generatedAt": "2026-09-30T10:59:33.479Z",
+  "generatedAt": "2026-09-30T16:45:28.163Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 30 September 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Approval of biggest coal project in NSW planning commission’s history described as ‘infamous betrayal’",
-      "summary": "&lt;p&gt;Independent Planning Commission says climate change impacts from Hunter Valley project will be ‘outweighed’ by economic benefits&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/sep/30/labor-anthony-albanese-coalition-polling-new-greens-leader-openai-hack-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?",
+      "headline": "Analysis: Wind and solar save UK from gas imports worth £5.9bn during Hormuz crisis",
+      "summary": "The UK has avoided the need for gas imports worth £5.9bn since the start of the Hormuz crisis as a&#8230; The post Analysis: Wind and solar save UK from gas imports worth £5.9bn during Hormuz crisis appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Commission report finds devastating shifts in the Arctic and record-breaking marine heatwaves",
-      "summary": "European Commission Press release Brussels, 30 Sep 2026 The ocean is changing at an alarming pace with direct consequences for marine life, coastlines and communities all across the world. That is the main conclusion of the tenth report on the state of the ocean, published today by the Marine Environment Monitoring Service of Copernicus, the EU Earth observation programme.",
+      "headline": "Nepal&#8217;s disaster has laid bare the world&#8217;s adaptation accountability gap",
+      "summary": "Knowledge about accelerating climate risks and how to adapt to them has grown over the past two decades - but it hasn't been put into practice fast enough to protect communities The post Nepal&#8217;s disaster has laid bare the world&#8217;s adaptation accountability gap appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,6 +34,22 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Analysis: Wind and solar save UK from gas imports worth £5.9bn during Hormuz crisis",
+          "link": "https://www.carbonbrief.org/analysis-wind-and-solar-save-uk-from-gas-imports-worth-5-9bn-during-hormuz-crisis",
+          "source": "Carbon Brief",
+          "description": "The UK has avoided the need for gas imports worth £5.9bn since the start of the Hormuz crisis as a&#8230; The post Analysis: Wind and solar save UK from gas imports worth £5.9bn during Hormuz crisis appeared first on Carbon Brief.",
+          "published": "2026-09-30T14:12:01.000Z",
+          "score": 13
+        },
+        {
+          "title": "UK banks are Europe’s biggest coal financiers, report finds",
+          "link": "https://www.theguardian.com/environment/2026/sep/30/uk-banks-are-europe-biggest-providers-coal-financing-report-finds",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Study says UK-based banks provided $8.3bn in coal financing in four years, with Barclays and HSBC leading rise&lt;/p&gt;&lt;p&gt;UK banks are Europe’s biggest financial backers of the global coal industry, providing billions of pounds in funding for the climate-wrecking fossil fuel in the past four years, according to a report.&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://stillbankingoncoal.org/\"&gt;The study&lt;/a&gt; found UK-based banks had provided $8.3bn (£6.2bn) in coal financing since &",
+          "published": "2026-09-30T11:58:24.000Z",
+          "score": 10
+        },
+        {
           "title": "Approval of biggest coal project in NSW planning commission’s history described as ‘infamous betrayal’",
           "link": "https://www.theguardian.com/australia-news/2026/sep/30/hunter-valley-coal-project-singleton-ipc-planning-decision",
           "source": "The Guardian - Energy",
@@ -42,27 +58,19 @@
           "score": 10
         },
         {
-          "title": "Trump set to tout Korean investment in Alaska LNG, other projects, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOR2FpZW1yeUwwUnRGdklIbHNsOVVhU0F4YWZUeW1IbU9pRmsxTG9RMkNGdFZqWWJabzNlM0xwMTI4RXFPV0lXZnBYR2tYdnY4X2laMFk3YUVRVzVKU1UtV1VTWDFPaXpmNFExRW1Bdm9SRnl3OEVheXFRUzhkSTcyQjJKTUphNjR4TmRXWnBodGVkbG1Wel9IZ0xKSE5KeHcwNElsa1Rnbmozd3ZZVGs0QUVibw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOR2FpZW1yeUwwUnRGdklIbHNsOVVhU0F4YWZUeW1IbU9pRmsxTG9RMkNGdFZqWWJabzNlM0xwMTI4RXFPV0lXZnBYR2tYdnY4X2laMFk3YUVRVzVKU1UtV1VTWDFPaXpmNFExRW1Bdm9SRnl3OEVheXFRUzhkSTcyQjJKTUphNjR4TmRXWnBodGVkbG1Wel9IZ0xKSE5KeHcwNElsa1Rnbmozd3ZZVGs0QUVibw?oc=5\" target=\"_blank\"&gt;Trump set to tout Korean investment in Alaska LNG, other projects, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-29T21:11:00.000Z",
+          "title": "Iran&#039;s nuclear program remains shrouded in mystery as the regime debates ditching non-proliferation",
+          "link": "https://www.dw.com/en/iran-s-nuclear-program-remains-shrouded-in-mystery-as-the-regime-debates-ditching-non-proliferation/a-79488197?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Iran&#039;s nuclear program is entering a critical phase as Tehran debates dropping out of a nuclear non-proliferation treaty. Satellite images also show activity at known nuclear sites.",
+          "published": "2026-09-30T14:01:00.000Z",
           "score": 7
         },
         {
-          "title": "Shell-led LNG Canada greenlights Phase 2 expansion, doubling export capacity - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxON1lWTTdxaVZMaDlmeS1TNERQbGRyNENwTzhUZGt5d2pMSFMwSFZpQUtHWks4UklrU2lKU2EyMWVuUnU3U1Y1Vk9icjlYR1F4M0pCNjdUWDZIVVpIeC1SMVVnT05ySmRSaGZYdEZnVXFaR01ISHlqdEttMVJoWXdGbTB0RlBUdVEwWDFnd3J5S2Q5TjExN0FFVkMwcHRES0k4R1luZDNJMUNmaVMydXBRX3g4RERlZHc4emUxN2xiMllTQlpWbUE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxON1lWTTdxaVZMaDlmeS1TNERQbGRyNENwTzhUZGt5d2pMSFMwSFZpQUtHWks4UklrU2lKU2EyMWVuUnU3U1Y1Vk9icjlYR1F4M0pCNjdUWDZIVVpIeC1SMVVnT05ySmRSaGZYdEZnVXFaR01ISHlqdEttMVJoWXdGbTB0RlBUdVEwWDFnd3J5S2Q5TjExN0FFVkMwcHRES0k4R1luZDNJMUNmaVMydXBRX3g4RERlZHc4emUxN2xiMllTQlpWbUE?oc=5\" target=\"_blank\"&gt;Shell-led LNG Canada greenlights Phase 2 expansion, doubling export capacity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-29T18:34:50.000Z",
-          "score": 7
-        },
-        {
-          "title": "‘It’s just cruel’: US households hit by surge in electricity shutoffs amid record hot summer",
-          "link": "https://www.theguardian.com/environment/2026/sep/29/electricity-disconnected-record-heat",
+          "title": "New UK gas and oil projects are a ‘no-brainer’, says EDF boss",
+          "link": "https://www.theguardian.com/business/2026/sep/30/uk-gas-and-oil-climate-crisis-energy-edf-boss",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Utility disconnections were up 28% in 10 states in July 2026 – the hottest month ever recorded in the US – compared with July 2024, data shows&lt;/p&gt;&lt;p&gt;A &lt;a href=\"https://www.theguardian.com/us-news/2026/aug/10/july-hottest-month-ever-recorded-heatwaves\"&gt;record&lt;/a&gt; hot summer collided unhappily with rising energy costs for households across the US that struggled to the point where many were disconnected from their electricity supply, even as dangerous heat baked the",
-          "published": "2026-09-29T13:00:51.000Z",
+          "description": "&lt;p&gt;Developing North Sea fields does not contradict net zero goals, according to Simone Rossi&lt;/p&gt;&lt;p&gt;New oil and gas projects are a “no-brainer” that pose “no contradiction” to the net zero agenda, according to the head of EDF Energy.&lt;/p&gt;&lt;p&gt;Simone Rossi has joined a string of renewables leaders in making the case for more North Sea production as the government prepares to decide on two projects there.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/business/2026/sep",
+          "published": "2026-09-30T16:24:53.000Z",
           "score": 4
         }
       ]
@@ -72,35 +80,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Commission report finds devastating shifts in the Arctic and record-breaking marine heatwaves",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2017",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 30 Sep 2026 The ocean is changing at an alarming pace with direct consequences for marine life, coastlines and communities all across the world. That is the main conclusion of the tenth report on the state of the ocean, published today by the Marine Environment Monitoring Service of Copernicus, the EU Earth observation programme.",
-          "published": "2026-09-29T22:00:00.000Z",
-          "score": 23
-        },
-        {
-          "title": "Opening remarks by Commissioner Jørgensen at the press conference concluding the Informal Energy Council",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2016",
-          "source": "European Commission",
-          "description": "European Commission Speech Dublin, 29 Sep 2026 Thank you, Minister, for hosting these important discussions here in Dublin.And thank you for your putting energy affordability and security at the top of the a...",
-          "published": "2026-09-29T17:02:17.000Z",
-          "score": 23
-        },
-        {
           "title": "Nepal&#8217;s disaster has laid bare the world&#8217;s adaptation accountability gap",
           "link": "https://www.climatechangenews.com/2026/09/30/nepals-disaster-has-laid-bare-the-worlds-adaptation-accountability-gap/",
           "source": "Climate Home News",
           "description": "Knowledge about accelerating climate risks and how to adapt to them has grown over the past two decades - but it hasn't been put into practice fast enough to protect communities The post Nepal&#8217;s disaster has laid bare the world&#8217;s adaptation accountability gap appeared first on Climate Home News.",
           "published": "2026-09-30T10:27:45.000Z",
-          "score": 10
-        },
-        {
-          "title": "Brazil confident new rainforest fund will reach $10bn donor milestone",
-          "link": "https://www.climatechangenews.com/2026/09/29/brazil-confident-new-rainforest-fund-tfff-10bn-fund-finance/",
-          "source": "Climate Home News",
-          "description": "Brazil's environment minister said the Tropical Forest Forever Facility has raised billions in record time - which he hopes will convince more investors The post Brazil confident new rainforest fund will reach $10bn donor milestone appeared first on Climate Home News.",
-          "published": "2026-09-29T15:22:03.000Z",
           "score": 10
         },
         {
@@ -110,6 +94,30 @@
           "description": "&lt;p&gt;The injection of thermal energy comes amid an increasing rise in sea levels and continuing acidification&lt;/p&gt;&lt;p&gt;A record-breaking 23 zettajoules of heat was sunk into the world’s seas last year, leaving ocean waters hotter, higher and less hospitable, a report has found.&lt;/p&gt;&lt;p&gt;The explosive addition of thermal energy, which was almost 40 times greater than all the energy humanity used that year, comes amid far-reaching changes to the deep water bodies fundamental ",
           "published": "2026-09-30T06:00:13.000Z",
           "score": 7
+        },
+        {
+          "title": "Young minds develop ideas to tackle climate change",
+          "link": "https://www.bbc.co.uk/news/articles/cv62kpj70585o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Sixteen teenagers take part in a hackathon to devise ways to combat issues such as light pollution.",
+          "published": "2026-09-30T09:36:10.000Z",
+          "score": 7
+        },
+        {
+          "title": "Two million people in England unaware their properties are at risk of flooding",
+          "link": "https://www.theguardian.com/environment/2026/sep/30/two-million-people-uk-unaware-flooding-risk",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Environment Agency warns residents of 6m at-risk properties to prepare for wet and windy three months ahead&lt;/p&gt;&lt;p&gt;More than two million people in England are unaware their properties are at risk of flooding, as the UK braces for a wet and stormy start to the winter, according to the Environment Agency.&lt;/p&gt;&lt;p&gt;Experts say the next three months are more likely than usual to be wet and windy – due to a combination of large-scale weather patterns and the “subtle” impa",
+          "published": "2026-09-30T13:50:05.000Z",
+          "score": 2
+        },
+        {
+          "title": "Half a million trees to be planted in England in three years, says government",
+          "link": "https://www.theguardian.com/environment/2026/sep/30/half-million-trees-planted-england-three-years-angela-eagle",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Exclusive: Environment secretary Angela Eagle to make pledge as part of efforts to protect against extreme weather&lt;/p&gt;&lt;p&gt;Half a million trees will be planted across England in the next three years to protect against extreme weather, the environment secretary, Angela Eagle, will pledge on Wednesday morning.&lt;/p&gt;&lt;p&gt;Mayors, local authorities, charities and grassroots groups will be given new funding and responsibilities for restoring natural landscapes such as wetlan",
+          "published": "2026-09-30T06:08:17.000Z",
+          "score": 2
         }
       ]
     },
@@ -124,98 +132,65 @@
           "description": "&lt;p&gt;PM, in first speech to party conference as leader, insists his plans are a ‘good deal’ for older people&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/2026/sep/29/andy-burnham-labour-conference-pension-triple-lock-social-care\"&gt;Burnham to signal willingness to look at scrapping pension triple lock to fund social care&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Angela Rayner&lt;/strong&gt;, the housing secretary, has apparentl",
           "published": "2026-09-29T17:20:06.000Z",
           "score": 2
-        },
-        {
-          "title": "TSMC evaluates potential Texas investment, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbk5sR25ad2FWc2RmSWZua1F3Mi1OR1NtTGx5bi1lQ1I0MHlmSHNyUXRGNUd5WmtOVEFMazFUY0FnM0tHdG8zbUF4QjlsaUNJWHhaZ2RXaWtUZHZhN0QteXRiNFNzb3pWcjA0Ty14cFJPenZhV0xnWktra01NaTNYa2s0Q0pEY0FxS20wV0lleWYzWGstYllNc1c3MFFxLXY1X3F4YjI5LXBhbG1J?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQbk5sR25ad2FWc2RmSWZua1F3Mi1OR1NtTGx5bi1lQ1I0MHlmSHNyUXRGNUd5WmtOVEFMazFUY0FnM0tHdG8zbUF4QjlsaUNJWHhaZ2RXaWtUZHZhN0QteXRiNFNzb3pWcjA0Ty14cFJPenZhV0xnWktra01NaTNYa2s0Q0pEY0FxS20wV0lleWYzWGstYllNc1c3MFFxLXY1X3F4YjI5LXBhbG1J?oc=5\" target=\"_blank\"&gt;TSMC evaluates potential Texas investment, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-30T09:23:45.000Z",
-          "score": 2
         }
       ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "China vows response if EU introduces moves targeting Chinese trade - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPQ0FPcDBVWmJlMnBCSGdYZTQwN25iOVVneEVLU3RadEczS2ZiOXQwaG9qajM1aWIxMEJDblhRbVNlNjdnZUpiTldnT3hUeEQ3UWxNLWVUY056ancwUE9VVGM5b3pZTzZxUm9pY0VmMzQ3ak9uYldlNExVcTd6QnJvQXBMN1FtZWJFdDBvTU1uSmI3VjZhQUZ6ZVNxSHF0Ym5QN1ozd2ZSa25fV0kzYjVyTmZtWDE0UlJYV1QyMGFn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPQ0FPcDBVWmJlMnBCSGdYZTQwN25iOVVneEVLU3RadEczS2ZiOXQwaG9qajM1aWIxMEJDblhRbVNlNjdnZUpiTldnT3hUeEQ3UWxNLWVUY056ancwUE9VVGM5b3pZTzZxUm9pY0VmMzQ3ak9uYldlNExVcTd6QnJvQXBMN1FtZWJFdDBvTU1uSmI3VjZhQUZ6ZVNxSHF0Ym5QN1ozd2ZSa25fV0kzYjVyTmZtWDE0UlJYV1QyMGFn?oc=5\" target=\"_blank\"&gt;China vows response if EU introduces moves targeting Chinese trade&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-29T23:32:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Estonia blames Russia for arson attack on defense company",
-          "link": "https://www.dw.com/en/estonia-blames-russia-for-arson-attack-on-defense-company/a-79478937?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The Estonian government accused Moscow of an &quot;act of sabotage&quot; that is part of Russia&#039;s broader campaign across Europe. The Baltic state has received support from EU and NATO leaders.",
-          "published": "2026-09-29T18:08:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "Germany news: Bremerhaven port to receive defense boost",
-          "link": "https://www.dw.com/en/germany-news-bremerhaven-port-to-receive-defense-boost/live-79468663?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Bremerhaven&#039;s port and Bremen&#039;s airport will be upgraded for German, NATO defense needs in case of an attack on the alliance. It comes as European countries upgrade militarily amid Russia&#039;s war in Ukraine. DW has more.",
-          "published": "2026-09-29T17:28:00.000Z",
-          "score": 4
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "European telcos may get more time to phase out high-risk suppliers under EU proposal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcFpWalFPaWVvOUhvVXd6bWRjTkRrV01LNVEyOERWVFlaMTRiY0VyOVA2VEdmbzhMNXpZTjlZeWJUV1lwX1AzajhWX2h3dDVMVlduUE1od1k3VnJQVmxJWVNxS1ZzVE9pSE1paHVub2hZeThfRU9POE9HMFBPZWdOUUxpcVNiMzRtNGxFWE5VYlkxMDFCYjFFRndJcnpHV3VJNFNLaHhTZ2x2MFJNZ3hzQUE4T0FTWVZKSHBycQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQcFpWalFPaWVvOUhvVXd6bWRjTkRrV01LNVEyOERWVFlaMTRiY0VyOVA2VEdmbzhMNXpZTjlZeWJUV1lwX1AzajhWX2h3dDVMVlduUE1od1k3VnJQVmxJWVNxS1ZzVE9pSE1paHVub2hZeThfRU9POE9HMFBPZWdOUUxpcVNiMzRtNGxFWE5VYlkxMDFCYjFFRndJcnpHV3VJNFNLaHhTZ2x2MFJNZ3hzQUE4T0FTWVZKSHBycQ?oc=5\" target=\"_blank\"&gt;European telcos may get more time to phase out high-risk suppliers under EU proposal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-29T15:54:30.000Z",
-          "score": 12
+          "title": "Russia launches largest attack on Ukraine energy infrastructure since spring",
+          "link": "https://www.bbc.co.uk/news/articles/ckjw5jx2l393o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "In total 11 regions of the country were attacked overnight, with residential buildings and railways also targeted, the Ukrainian PM says.",
+          "published": "2026-09-30T14:53:02.000Z",
+          "score": 7
         },
         {
-          "title": "Norway parliament probes Epstein links to politicians, diplomats - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZWtnZ2FfQ0RKNW96WWxoWkxvN3l5MjdLdXI0eXRkNDAyZU41R1Y1Y3ozbXZkU1F1elgxcUhzUkNlRkJlQ0l4YUVKLVZUV19NQ3pNRjJBNl9TZWRBOGozcndUd0VQVE1GSUh5eVRlZHVIUXZoT01MNmJfMFRpb1ByYklQV2xrYXMtTmpDdTE1Y1dFdzNOd21hRUMwSnhuSFBjZGVxSw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPZWtnZ2FfQ0RKNW96WWxoWkxvN3l5MjdLdXI0eXRkNDAyZU41R1Y1Y3ozbXZkU1F1elgxcUhzUkNlRkJlQ0l4YUVKLVZUV19NQ3pNRjJBNl9TZWRBOGozcndUd0VQVE1GSUh5eVRlZHVIUXZoT01MNmJfMFRpb1ByYklQV2xrYXMtTmpDdTE1Y1dFdzNOd21hRUMwSnhuSFBjZGVxSw?oc=5\" target=\"_blank\"&gt;Norway parliament probes Epstein links to politicians, diplomats&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-30T01:03:00.000Z",
-          "score": 8
+          "title": "Hungary&#039;s reckoning with Orban&#039;s corrupt system picks up speed",
+          "link": "https://www.dw.com/en/hungary-s-reckoning-with-orban-s-corrupt-system-picks-up-speed/a-79473714?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Hungary&#039;s Prime Minister Peter Magyar vowed to dismantle Orban&#039;s corrupt networks. High-profile figures are being arrested and many Hungarians are pushing for swift accountability, but the rule of law takes time.",
+          "published": "2026-09-30T04:37:00.000Z",
+          "score": 6
         },
         {
-          "title": "Burnham says Britain should weigh EU options, including rejoining bloc - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeHFKNWtOV0FDeHFJZ1N6SjVQdTNHaFdPOThkYktaTGZuY09ObnRjNFVJdGpHM21NVGlfQ0hwR0hfdmo1NHZpUkxkODY5czZ4TTliUHNnR3R4dkZRX0Vkaks5cmxBdmN1WE1mTVR5UzhNYWZsWjYwM2pWR1AwN19NNExSSmVWSFJKc1p1bmpOYkJJd0lWNlEyTkUxLWVBNHg4RFVpWXpLczBNOUNvc3dVMGxnNGU?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQeHFKNWtOV0FDeHFJZ1N6SjVQdTNHaFdPOThkYktaTGZuY09ObnRjNFVJdGpHM21NVGlfQ0hwR0hfdmo1NHZpUkxkODY5czZ4TTliUHNnR3R4dkZRX0Vkaks5cmxBdmN1WE1mTVR5UzhNYWZsWjYwM2pWR1AwN19NNExSSmVWSFJKc1p1bmpOYkJJd0lWNlEyTkUxLWVBNHg4RFVpWXpLczBNOUNvc3dVMGxnNGU?oc=5\" target=\"_blank\"&gt;Burnham says Britain should weigh EU options, including rejoining bloc&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-30T05:01:00.000Z",
-          "score": 8
+          "title": "Execution of US murderer Christa Pike halted shortly before it was due to happen",
+          "link": "https://www.bbc.co.uk/news/articles/cw20vxxn876no?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Pike was convicted and sentenced to death in 1996 for the murder of Colleen Slemmer.",
+          "published": "2026-09-30T15:29:11.000Z",
+          "score": 2
         },
         {
-          "title": "Dollar set for big rise in September, mainly at euro's expense - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdXZZWnNiSFFfUWVOeFNjX3hjdGxCOHRmWlR4NnMxT1NZUHFLN1pVYV9MajdTTkljQWVOZm55UDR0MTdaN2hScW41Y1Y4TGoxSi1kZTZNdmNpVkFIa2VUSklhSzZPNVdVRUQ3WkNOZG8yUHBiQUVwajlCVGJ2TG1XYlY4R3ZtTmkxWEEyQUoxZmtyQ09JelJfZWlUUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxNdXZZWnNiSFFfUWVOeFNjX3hjdGxCOHRmWlR4NnMxT1NZUHFLN1pVYV9MajdTTkljQWVOZm55UDR0MTdaN2hScW41Y1Y4TGoxSi1kZTZNdmNpVkFIa2VUSklhSzZPNVdVRUQ3WkNOZG8yUHBiQUVwajlCVGJ2TG1XYlY4R3ZtTmkxWEEyQUoxZmtyQ09JelJfZWlUUQ?oc=5\" target=\"_blank\"&gt;Dollar set for big rise in September, mainly at euro's expense&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-30T01:29:00.000Z",
-          "score": 8
+          "title": "Last UK and US troops leave Iraq as anti-Islamic State mission ends",
+          "link": "https://www.bbc.co.uk/news/articles/c65ym1dyn92mo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The withdrawal of coalition forces, under a deal agreed two years ago, was a key demand of the Iraqi government.",
+          "published": "2026-09-30T11:36:23.000Z",
+          "score": 2
         },
         {
-          "title": "UK's Burnham risks reopening Brexit debate with bid to find consensus on EU ties - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQLXo3ZllWQVVmLV8tVTZVWS1EdjRjb2d5MG5Ia3J0Wnp6c1VqS2dyT3l5M1FMbE85T1ZHblR6dTluVHBlRVNhem13SHRaY1pCQmp1NXhNZnJkSjN3QlhKbmhDOUVJdHhSeGJkSmw0Uy1GMDRIc2tWUDMyakdVcC1EbkViRzJhWFVMeG5lbS1tT3BuX3NET1hVQXNBaWdOdWk3cFU5b3hzZU02ZWFYUGhNLV9idWEzblByNVE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQLXo3ZllWQVVmLV8tVTZVWS1EdjRjb2d5MG5Ia3J0Wnp6c1VqS2dyT3l5M1FMbE85T1ZHblR6dTluVHBlRVNhem13SHRaY1pCQmp1NXhNZnJkSjN3QlhKbmhDOUVJdHhSeGJkSmw0Uy1GMDRIc2tWUDMyakdVcC1EbkViRzJhWFVMeG5lbS1tT3BuX3NET1hVQXNBaWdOdWk3cFU5b3hzZU02ZWFYUGhNLV9idWEzblByNVE?oc=5\" target=\"_blank\"&gt;UK's Burnham risks reopening Brexit debate with bid to find consensus on EU ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-09-29T17:26:42.000Z",
-          "score": 8
+          "title": "Ethiopia fighting escalates in Tigray killing 52 civilians, medic tells the BBC",
+          "link": "https://www.bbc.co.uk/news/articles/c6grveejg1e2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The deadly fighting has also spread to neighbouring regions, stranding tourists in Lalibela.",
+          "published": "2026-09-30T15:04:32.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 403,
-    "articlesLast24h": 166,
-    "afterDedup": 159,
+    "totalArticlesScanned": 298,
+    "articlesLast24h": 64,
+    "afterDedup": 59,
     "feedsQueried": 19
   }
 }
