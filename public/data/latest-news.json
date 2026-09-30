@@ -1,5 +1,16 @@
 [
   {
+    "title": "Commission report finds devastating shifts in the Arctic and record-breaking marine heatwaves",
+    "summary": "European Commission Press release Brussels, 30 Sep 2026 The ocean is changing at an alarming pace with direct consequences for marine life, coastlines and communities all across the world. That is the main conclusion of the tenth report on the state of the ocean, published today by the Marine Environment Monitoring Service of Copernicus, the EU Earth observation programme.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2017",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-09-29T22:00:00.000Z",
+    "tags": [
+      "adaptation"
+    ]
+  },
+  {
     "title": "Opening remarks by Commissioner Jørgensen at the press conference concluding the Informal Energy Council",
     "summary": "European Commission Speech Dublin, 29 Sep 2026 Thank you, Minister, for hosting these important discussions here in Dublin.And thank you for your putting energy affordability and security at the top of the a...",
     "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2016",
@@ -8,17 +19,6 @@
     "publishedDate": "2026-09-29T17:02:17.000Z",
     "tags": [
       "energy"
-    ]
-  },
-  {
-    "title": "Speech by President von der Leyen at the inauguration ceremony for the David Maria Sassoli building of the European Parliament",
-    "summary": "European Commission Speech Brussels, 29 Sep 2026 President Metsola, dear Roberta,\r\nExcellencies,\r\nCara Alessandra, Giulio and Livia, \r\nDavid Sassoli was a true custodian of the values our Union was built on. The ...",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2006",
-    "source": "european_commission",
-    "sourceLabel": "European Commission",
-    "publishedDate": "2026-09-29T10:56:10.000Z",
-    "tags": [
-      "emissions"
     ]
   }
 ]
