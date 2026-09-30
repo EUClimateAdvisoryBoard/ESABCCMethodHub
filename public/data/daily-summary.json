@@ -1,6 +1,6 @@
 {
   "date": "2026-09-30",
-  "generatedAt": "2026-09-30T16:45:28.163Z",
+  "generatedAt": "2026-09-30T21:18:33.116Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 30 September 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Burnham says he would put PR in Labour manifesto and scrap triple lock to fund social care – as it happened",
-      "summary": "&lt;p&gt;PM, in first speech to party conference as leader, insists his plans are a ‘good deal’ for older people&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/2026/sep/29/andy-burnham-labour-conference-pension-triple-lock-social-care\"&gt;Burnham to signal willingness to look at scrapping pension triple lock to fund social care&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Angela Rayner&lt;/strong&gt;, the housing secretary, has apparentl",
+      "headline": "TSMC evaluates potential Texas investment, sources say - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQbk5sR25ad2FWc2RmSWZua1F3Mi1OR1NtTGx5bi1lQ1I0MHlmSHNyUXRGNUd5WmtOVEFMazFUY0FnM0tHdG8zbUF4QjlsaUNJWHhaZ2RXaWtUZHZhN0QteXRiNFNzb3pWcjA0Ty14cFJPenZhV0xnWktra01NaTNYa2s0Q0pEY0FxS20wV0lleWYzWGstYllNc1c3MFFxLXY1X3F4YjI5LXBhbG1J?oc=5\" target=\"_blank\"&gt;TSMC evaluates potential Texas investment, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -40,6 +40,14 @@
           "description": "The UK has avoided the need for gas imports worth £5.9bn since the start of the Hormuz crisis as a&#8230; The post Analysis: Wind and solar save UK from gas imports worth £5.9bn during Hormuz crisis appeared first on Carbon Brief.",
           "published": "2026-09-30T14:12:01.000Z",
           "score": 13
+        },
+        {
+          "title": "Senate Democrats block datacenter energy bill, saying ‘toothless’ legislation ‘misses the mark’",
+          "link": "https://www.theguardian.com/us-news/2026/sep/30/senate-datacenter-energy-bill",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Republicans supported legislation although Democrats said it wouldn’t effectively address energy consumption&lt;/p&gt;&lt;p&gt;Senate &lt;a href=\"https://www.theguardian.com/us-news/democrats\"&gt;Democrats&lt;/a&gt; on Wednesday blocked legislation intended to offset the impact of &lt;a href=\"https://www.theguardian.com/us-news/datacenters--us-\"&gt;datacenters&lt;/a&gt; on consumer electricity bills, calling it a “toothless” attempt to address a top voter concern ahead of &lt;a href=\"ht",
+          "published": "2026-09-30T17:48:30.000Z",
+          "score": 11
         },
         {
           "title": "UK banks are Europe’s biggest coal financiers, report finds",
@@ -64,14 +72,6 @@
           "description": "Iran&#039;s nuclear program is entering a critical phase as Tehran debates dropping out of a nuclear non-proliferation treaty. Satellite images also show activity at known nuclear sites.",
           "published": "2026-09-30T14:01:00.000Z",
           "score": 7
-        },
-        {
-          "title": "New UK gas and oil projects are a ‘no-brainer’, says EDF boss",
-          "link": "https://www.theguardian.com/business/2026/sep/30/uk-gas-and-oil-climate-crisis-energy-edf-boss",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Developing North Sea fields does not contradict net zero goals, according to Simone Rossi&lt;/p&gt;&lt;p&gt;New oil and gas projects are a “no-brainer” that pose “no contradiction” to the net zero agenda, according to the head of EDF Energy.&lt;/p&gt;&lt;p&gt;Simone Rossi has joined a string of renewables leaders in making the case for more North Sea production as the government prepares to decide on two projects there.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/business/2026/sep",
-          "published": "2026-09-30T16:24:53.000Z",
-          "score": 4
         }
       ]
     },
@@ -126,11 +126,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Burnham says he would put PR in Labour manifesto and scrap triple lock to fund social care – as it happened",
-          "link": "https://www.theguardian.com/politics/live/2026/sep/29/andy-burnham-labour-conference-liverpool-speech-triple-lock-pension-angela-rayner-lucy-powell-bridget-phillipson-uk-politics-latest-news-updates",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;PM, in first speech to party conference as leader, insists his plans are a ‘good deal’ for older people&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/2026/sep/29/andy-burnham-labour-conference-pension-triple-lock-social-care\"&gt;Burnham to signal willingness to look at scrapping pension triple lock to fund social care&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Angela Rayner&lt;/strong&gt;, the housing secretary, has apparentl",
-          "published": "2026-09-29T17:20:06.000Z",
+          "title": "TSMC evaluates potential Texas investment, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbk5sR25ad2FWc2RmSWZua1F3Mi1OR1NtTGx5bi1lQ1I0MHlmSHNyUXRGNUd5WmtOVEFMazFUY0FnM0tHdG8zbUF4QjlsaUNJWHhaZ2RXaWtUZHZhN0QteXRiNFNzb3pWcjA0Ty14cFJPenZhV0xnWktra01NaTNYa2s0Q0pEY0FxS20wV0lleWYzWGstYllNc1c3MFFxLXY1X3F4YjI5LXBhbG1J?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQbk5sR25ad2FWc2RmSWZua1F3Mi1OR1NtTGx5bi1lQ1I0MHlmSHNyUXRGNUd5WmtOVEFMazFUY0FnM0tHdG8zbUF4QjlsaUNJWHhaZ2RXaWtUZHZhN0QteXRiNFNzb3pWcjA0Ty14cFJPenZhV0xnWktra01NaTNYa2s0Q0pEY0FxS20wV0lleWYzWGstYllNc1c3MFFxLXY1X3F4YjI5LXBhbG1J?oc=5\" target=\"_blank\"&gt;TSMC evaluates potential Texas investment, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-30T09:23:45.000Z",
           "score": 2
         }
       ]
@@ -138,59 +138,76 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Russia says European arms factories supplying Ukraine are potential military targets for Moscow - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNa2poSndWXzNaQkNiZURIVnNxZ3hHbUpnSUVrRWJsdFp5bE1CZE5fSmNGa3BSZnhad3hwRWh0MmNZTXViX2RtdUpnT2xTZVlWMTc2SWpGY3g1X3c2VFFEeUlyVHlyaC1yOWd0N19adktIUnJvbzRZNVhOam9KcmRTTldZU0ZFZUEzWHBoYXNjUXZkM1IxckpnSV9JWTY4aVBfOFpFOGl6V25DWTV6NXB0OUdlclJDSksxVmxjNlFubEJKU0U?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNa2poSndWXzNaQkNiZURIVnNxZ3hHbUpnSUVrRWJsdFp5bE1CZE5fSmNGa3BSZnhad3hwRWh0MmNZTXViX2RtdUpnT2xTZVlWMTc2SWpGY3g1X3c2VFFEeUlyVHlyaC1yOWd0N19adktIUnJvbzRZNVhOam9KcmRTTldZU0ZFZUEzWHBoYXNjUXZkM1IxckpnSV9JWTY4aVBfOFpFOGl6V25DWTV6NXB0OUdlclJDSksxVmxjNlFubEJKU0U?oc=5\" target=\"_blank\"&gt;Russia says European arms factories supplying Ukraine are potential military targets for Moscow&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
+          "published": "2026-09-30T15:08:14.000Z",
+          "score": 8
+        },
+        {
+          "title": "China vows response if EU introduces moves targeting Chinese trade - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPQ0FPcDBVWmJlMnBCSGdYZTQwN25iOVVneEVLU3RadEczS2ZiOXQwaG9qajM1aWIxMEJDblhRbVNlNjdnZUpiTldnT3hUeEQ3UWxNLWVUY056ancwUE9VVGM5b3pZTzZxUm9pY0VmMzQ3ak9uYldlNExVcTd6QnJvQXBMN1FtZWJFdDBvTU1uSmI3VjZhQUZ6ZVNxSHF0Ym5QN1ozd2ZSa25fV0kzYjVyTmZtWDE0UlJYV1QyMGFn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPQ0FPcDBVWmJlMnBCSGdYZTQwN25iOVVneEVLU3RadEczS2ZiOXQwaG9qajM1aWIxMEJDblhRbVNlNjdnZUpiTldnT3hUeEQ3UWxNLWVUY056ancwUE9VVGM5b3pZTzZxUm9pY0VmMzQ3ak9uYldlNExVcTd6QnJvQXBMN1FtZWJFdDBvTU1uSmI3VjZhQUZ6ZVNxSHF0Ym5QN1ozd2ZSa25fV0kzYjVyTmZtWDE0UlJYV1QyMGFn?oc=5\" target=\"_blank\"&gt;China vows response if EU introduces moves targeting Chinese trade&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-29T23:32:00.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Russia launches largest attack on Ukraine energy infrastructure since spring",
-          "link": "https://www.bbc.co.uk/news/articles/ckjw5jx2l393o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "In total 11 regions of the country were attacked overnight, with residential buildings and railways also targeted, the Ukrainian PM says.",
-          "published": "2026-09-30T14:53:02.000Z",
-          "score": 7
-        },
-        {
-          "title": "Hungary&#039;s reckoning with Orban&#039;s corrupt system picks up speed",
-          "link": "https://www.dw.com/en/hungary-s-reckoning-with-orban-s-corrupt-system-picks-up-speed/a-79473714?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Five EU states plan first deportation center in Africa for 2027",
+          "link": "https://www.dw.com/en/five-eu-states-plan-first-deportation-center-in-africa-for-2027/a-79490162?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Hungary&#039;s Prime Minister Peter Magyar vowed to dismantle Orban&#039;s corrupt networks. High-profile figures are being arrested and many Hungarians are pushing for swift accountability, but the rule of law takes time.",
-          "published": "2026-09-30T04:37:00.000Z",
-          "score": 6
+          "description": "Greece, Germany, Austria, Denmark and the Netherlands are moving forward with plans to establish deportation centers outside the EU. An African partner country has reportedly already been selected.",
+          "published": "2026-09-30T19:16:00.000Z",
+          "score": 8
         },
         {
-          "title": "Execution of US murderer Christa Pike halted shortly before it was due to happen",
-          "link": "https://www.bbc.co.uk/news/articles/cw20vxxn876no?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Pike was convicted and sentenced to death in 1996 for the murder of Colleen Slemmer.",
-          "published": "2026-09-30T15:29:11.000Z",
-          "score": 2
+          "title": "France&#039;s Macron, Spain&#039;s Sanchez welcome idea of UK rejoining EU after Burnham remarks",
+          "link": "https://www.dw.com/en/france-s-macron-spain-s-sanchez-welcome-idea-of-uk-rejoining-eu-after-burnham-remarks/a-79493469?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "During a visit to Spain, France&#039;s Emmanuel Macron said it would be &quot;good news&quot; if the UK moves towards the EU, with Pedro Sanchez also embracing the idea. UK PM Andy Burnham has not ruled out rejoining the bloc.",
+          "published": "2026-09-30T17:34:00.000Z",
+          "score": 8
         },
         {
-          "title": "Last UK and US troops leave Iraq as anti-Islamic State mission ends",
-          "link": "https://www.bbc.co.uk/news/articles/c65ym1dyn92mo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The withdrawal of coalition forces, under a deal agreed two years ago, was a key demand of the Iraqi government.",
-          "published": "2026-09-30T11:36:23.000Z",
-          "score": 2
+          "title": "Sterling at strongest in over a month versus euro after GDP revision reinforces BoE hike bets - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNUsxN2JZZXRRY01sZ01ETml2UmUyd2hYRDhSYXRFSTIxWF94eHpxdFlJV1A4WENXTkdGcnFGRDdSeXcyZ1dtQzBmNTRkYmhGaER1anJpQ0thZTIxb1docmktSk1Ta1BjVFNtRTV2SHBzVWVaQklaeWFrQnhnSDZSaE80NUpwZGRkUXdvWWwyd2hOVWNHalc0TVRSYUxHMUpxVmR1aHo3Q2pkSEdyNDZ2TGR1cmxIVVRqMTVRT3RpYlBRRkE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNUsxN2JZZXRRY01sZ01ETml2UmUyd2hYRDhSYXRFSTIxWF94eHpxdFlJV1A4WENXTkdGcnFGRDdSeXcyZ1dtQzBmNTRkYmhGaER1anJpQ0thZTIxb1docmktSk1Ta1BjVFNtRTV2SHBzVWVaQklaeWFrQnhnSDZSaE80NUpwZGRkUXdvWWwyd2hOVWNHalc0TVRSYUxHMUpxVmR1aHo3Q2pkSEdyNDZ2TGR1cmxIVVRqMTVRT3RpYlBRRkE?oc=5\" target=\"_blank\"&gt;Sterling at strongest in over a month versus euro after GDP revision reinforces BoE hike bets&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+          "published": "2026-09-30T10:49:43.000Z",
+          "score": 8
         },
         {
-          "title": "Ethiopia fighting escalates in Tigray killing 52 civilians, medic tells the BBC",
-          "link": "https://www.bbc.co.uk/news/articles/c6grveejg1e2o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The deadly fighting has also spread to neighbouring regions, stranding tourists in Lalibela.",
-          "published": "2026-09-30T15:04:32.000Z",
-          "score": 2
+          "title": "Norway parliament probes Epstein links to politicians and diplomats - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZWtnZ2FfQ0RKNW96WWxoWkxvN3l5MjdLdXI0eXRkNDAyZU41R1Y1Y3ozbXZkU1F1elgxcUhzUkNlRkJlQ0l4YUVKLVZUV19NQ3pNRjJBNl9TZWRBOGozcndUd0VQVE1GSUh5eVRlZHVIUXZoT01MNmJfMFRpb1ByYklQV2xrYXMtTmpDdTE1Y1dFdzNOd21hRUMwSnhuSFBjZGVxSw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPZWtnZ2FfQ0RKNW96WWxoWkxvN3l5MjdLdXI0eXRkNDAyZU41R1Y1Y3ozbXZkU1F1elgxcUhzUkNlRkJlQ0l4YUVKLVZUV19NQ3pNRjJBNl9TZWRBOGozcndUd0VQVE1GSUh5eVRlZHVIUXZoT01MNmJfMFRpb1ByYklQV2xrYXMtTmpDdTE1Y1dFdzNOd21hRUMwSnhuSFBjZGVxSw?oc=5\" target=\"_blank\"&gt;Norway parliament probes Epstein links to politicians and diplomats&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-30T14:06:37.000Z",
+          "score": 8
+        },
+        {
+          "title": "Burnham says UK should weigh post-Brexit EU options, including rejoining - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeHFKNWtOV0FDeHFJZ1N6SjVQdTNHaFdPOThkYktaTGZuY09ObnRjNFVJdGpHM21NVGlfQ0hwR0hfdmo1NHZpUkxkODY5czZ4TTliUHNnR3R4dkZRX0Vkaks5cmxBdmN1WE1mTVR5UzhNYWZsWjYwM2pWR1AwN19NNExSSmVWSFJKc1p1bmpOYkJJd0lWNlEyTkUxLWVBNHg4RFVpWXpLczBNOUNvc3dVMGxnNGU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQeHFKNWtOV0FDeHFJZ1N6SjVQdTNHaFdPOThkYktaTGZuY09ObnRjNFVJdGpHM21NVGlfQ0hwR0hfdmo1NHZpUkxkODY5czZ4TTliUHNnR3R4dkZRX0Vkaks5cmxBdmN1WE1mTVR5UzhNYWZsWjYwM2pWR1AwN19NNExSSmVWSFJKc1p1bmpOYkJJd0lWNlEyTkUxLWVBNHg4RFVpWXpLczBNOUNvc3dVMGxnNGU?oc=5\" target=\"_blank\"&gt;Burnham says UK should weigh post-Brexit EU options, including rejoining&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-09-30T05:01:00.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 298,
-    "articlesLast24h": 64,
-    "afterDedup": 59,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 168,
+    "afterDedup": 163,
     "feedsQueried": 19
   }
 }
