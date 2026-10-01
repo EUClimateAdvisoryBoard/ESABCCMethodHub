@@ -819,7 +819,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     targetYear: 2030,
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2012, value: 2.02 }, { year: 2013, value: 2.08 }, { year: 2014, value: 2.1 }, { year: 2015, value: 2.11 }, { year: 2016, value: 2.12 }, { year: 2017, value: 2.12 }, { year: 2018, value: 2.15 }, { year: 2019, value: 2.19 }, { year: 2020, value: 2.23 }, { year: 2021, value: 2.31 }, { year: 2022, value: 2.27 }, { year: 2023, value: 2.26, afterReport: true }, { year: 2024, value: 2.24, afterReport: true }],
+    data: [{ year: 2012, value: 2.02 }, { year: 2013, value: 2.08 }, { year: 2014, value: 2.1 }, { year: 2015, value: 2.11 }, { year: 2016, value: 2.12 }, { year: 2017, value: 2.12 }, { year: 2018, value: 2.15 }, { year: 2019, value: 2.19 }, { year: 2020, value: 2.23 }, { year: 2021, value: 2.31 }, { year: 2022, value: 2.27 }, { year: 2023, value: 2.25, afterReport: true }, { year: 2024, value: 2.26, afterReport: true }],
   },
   {
     id: 'esabcc-f-climate-patents-share',
@@ -899,7 +899,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'up',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2008, value: -19.02 }, { year: 2009, value: 0.1428 }, { year: 2010, value: -2.915 }, { year: 2011, value: -8.426 }, { year: 2012, value: 3.113 }, { year: 2013, value: -3.513 }, { year: 2014, value: -5.43 }, { year: 2015, value: -14.21 }, { year: 2016, value: -16.22 }, { year: 2017, value: -16.43 }, { year: 2018, value: -23.3 }, { year: 2019, value: -18.51 }, { year: 2020, value: -15.18 }, { year: 2021, value: -25.77 }, { year: 2022, value: -26.955, afterReport: true }, { year: 2023, value: -23.706, afterReport: true }, { year: 2024, value: -23.78, afterReport: true }, { year: 2025, value: -30.891, afterReport: true }],
+    data: [{ year: 2008, value: -19.02 }, { year: 2009, value: 0.1428 }, { year: 2010, value: -2.915 }, { year: 2011, value: -8.426 }, { year: 2012, value: 3.113 }, { year: 2013, value: -3.513 }, { year: 2014, value: -5.43 }, { year: 2015, value: -14.21 }, { year: 2016, value: -16.22 }, { year: 2017, value: -16.43 }, { year: 2018, value: -23.3 }, { year: 2019, value: -18.51 }, { year: 2020, value: -15.18 }, { year: 2021, value: -25.77 }, { year: 2022, value: -26.955, afterReport: true }, { year: 2023, value: -23.734, afterReport: true }, { year: 2024, value: -23.806, afterReport: true }, { year: 2025, value: -30.87, afterReport: true }],
   },
   {
     id: 'esabcc-i2-cement-production',
@@ -944,7 +944,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2006, value: 33.52 }, { year: 2007, value: 36.25 }, { year: 2008, value: 31.12 }, { year: 2009, value: 28.08 }, { year: 2010, value: 30.66 }, { year: 2011, value: 32.08 }, { year: 2012, value: 31.2 }, { year: 2013, value: 29.59 }, { year: 2014, value: 30.58 }, { year: 2015, value: 30.13 }, { year: 2016, value: 30.14 }, { year: 2017, value: 31.96 }, { year: 2018, value: 29.64 }, { year: 2019, value: 28.35 }, { year: 2020, value: 28.01 }, { year: 2021, value: 28.72 }, { year: 2022, value: 26.84 }, { year: 2023, value: 23.07, afterReport: true }, { year: 2024, value: 24.75, afterReport: true }, { year: 2025, value: 21.59, afterReport: true }],
+    data: [{ year: 2006, value: 33.52 }, { year: 2007, value: 36.25 }, { year: 2008, value: 31.12 }, { year: 2009, value: 28.08 }, { year: 2010, value: 30.66 }, { year: 2011, value: 32.08 }, { year: 2012, value: 31.2 }, { year: 2013, value: 29.59 }, { year: 2014, value: 30.58 }, { year: 2015, value: 30.13 }, { year: 2016, value: 30.14 }, { year: 2017, value: 31.96 }, { year: 2018, value: 29.64 }, { year: 2019, value: 28.35 }, { year: 2020, value: 28.01 }, { year: 2021, value: 28.72 }, { year: 2022, value: 26.84 }, { year: 2023, value: 23.07, afterReport: true }, { year: 2024, value: 24.75, afterReport: true }, { year: 2025, value: 20, afterReport: true }],
   },
   {
     id: 'esabcc-i2-chemicals-use',
@@ -959,7 +959,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2006, value: 35.99 }, { year: 2007, value: 39.39 }, { year: 2008, value: 33.35 }, { year: 2009, value: 29.56 }, { year: 2010, value: 32.74 }, { year: 2011, value: 33.95 }, { year: 2012, value: 32.58 }, { year: 2013, value: 30.98 }, { year: 2014, value: 31.76 }, { year: 2015, value: 31.54 }, { year: 2016, value: 31.7 }, { year: 2017, value: 33.75 }, { year: 2018, value: 31.72 }, { year: 2019, value: 31.19 }, { year: 2020, value: 30.39 }, { year: 2021, value: 31.34 }, { year: 2022, value: 29.11 }, { year: 2023, value: 24.31, afterReport: true }, { year: 2024, value: 26.2, afterReport: true }, { year: 2025, value: 22.95, afterReport: true }],
+    data: [{ year: 2006, value: 35.99 }, { year: 2007, value: 39.39 }, { year: 2008, value: 33.35 }, { year: 2009, value: 29.56 }, { year: 2010, value: 32.74 }, { year: 2011, value: 33.95 }, { year: 2012, value: 32.58 }, { year: 2013, value: 30.98 }, { year: 2014, value: 31.76 }, { year: 2015, value: 31.54 }, { year: 2016, value: 31.7 }, { year: 2017, value: 33.75 }, { year: 2018, value: 31.72 }, { year: 2019, value: 31.19 }, { year: 2020, value: 30.39 }, { year: 2021, value: 31.34 }, { year: 2022, value: 29.11 }, { year: 2023, value: 24.31, afterReport: true }, { year: 2024, value: 26.2, afterReport: true }, { year: 2025, value: 21.36, afterReport: true }],
   },
   {
     id: 'esabcc-i2-chemicals-trade-balance',
@@ -1314,7 +1314,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     duplicateOf: 'food-waste-per-capita',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2020, value: 131 }, { year: 2021, value: 129, afterReport: true }, { year: 2022, value: 129, afterReport: true }, { year: 2023, value: 129, afterReport: true }],
+    data: [{ year: 2020, value: 131 }, { year: 2021, value: 129, afterReport: true }, { year: 2022, value: 129, afterReport: true }, { year: 2023, value: 128, afterReport: true }, { year: 2024, value: 129, afterReport: true }],
   },
   {
     id: 'esabcc-b4-dwellings',
