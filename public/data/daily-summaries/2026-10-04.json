@@ -1,6 +1,6 @@
 {
   "date": "2026-10-04",
-  "generatedAt": "2026-10-04T02:29:40.907Z",
+  "generatedAt": "2026-10-04T11:00:30.165Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 4 October 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Drought-stricken Kenya - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE5CR1RvQzlDTURVbzZZQnhEa2tXRTFPZVJoWlFTMkJJUlRjNnJRa3lhT2JkWFlwV2lLRDNSZHhycWt0bzhCNFR0VzFiN3FRaTB5Nk80X0hEUExCc0pDYURZ?oc=5\" target=\"_blank\"&gt;Drought-stricken Kenya&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Trust warns of 'tangible' climate threat to heritage sites",
+      "summary": "A National Trust manager says recent summers have \"brought home\" the impact of climate change.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -39,9 +39,17 @@
           "title": "AI giants &#039;not being nearly careful enough,&#039; warns outgoing OpenAI safety engineer",
           "link": "https://www.dw.com/en/ai-giants-not-being-nearly-careful-enough-warns-outgoing-openai-safety-engineer/a-79533080?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Days after President Donald Trump signed a voluntary pact with artificial intelligence giants, a former OpenAI worker said his industry needs the same safeguards as nuclear power or aviation.",
+          "description": "Days after US President Donald Trump signed a voluntary pact with artificial intelligence giants, a former OpenAI worker said his industry needs the same safeguards as nuclear power or aviation.",
           "published": "2026-10-03T21:55:00.000Z",
           "score": 4
+        },
+        {
+          "title": "US father and son arrested after 'gas station heroin' deaths",
+          "link": "https://www.bbc.co.uk/news/articles/c6qjnlk4r2jjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "They are accused of selling at least one student derivatives of kratom, often called \"gas station heroin\" in the US.",
+          "published": "2026-10-03T22:39:06.000Z",
+          "score": 2
         }
       ]
     },
@@ -50,12 +58,20 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Drought-stricken Kenya - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5CR1RvQzlDTURVbzZZQnhEa2tXRTFPZVJoWlFTMkJJUlRjNnJRa3lhT2JkWFlwV2lLRDNSZHhycWt0bzhCNFR0VzFiN3FRaTB5Nk80X0hEUExCc0pDYURZ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE5CR1RvQzlDTURVbzZZQnhEa2tXRTFPZVJoWlFTMkJJUlRjNnJRa3lhT2JkWFlwV2lLRDNSZHhycWt0bzhCNFR0VzFiN3FRaTB5Nk80X0hEUExCc0pDYURZ?oc=5\" target=\"_blank\"&gt;Drought-stricken Kenya&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-03T09:34:51.000Z",
+          "title": "Trust warns of 'tangible' climate threat to heritage sites",
+          "link": "https://www.bbc.co.uk/news/articles/c9vgy02038vko?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "A National Trust manager says recent summers have \"brought home\" the impact of climate change.",
+          "published": "2026-10-04T06:21:07.000Z",
           "score": 7
+        },
+        {
+          "title": "Revealed: Government quietly dropped plan to prepare England for wildfires",
+          "link": "https://www.theguardian.com/world/2026/oct/04/government-dropped-plan-england-countryside-wildfires",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;FOI request shows wildfire risk scheme scrapped, as survey highlights many fire services lack proper protective gear&lt;/p&gt;&lt;p&gt;The government quietly scrapped plans to prepare the countryside in England for wildfires, it has been revealed. This was despite new data showing fire crews do not have the proper protective gear to tackle them.&lt;/p&gt;&lt;p&gt;This summer has been a potent reminder of the scale of the threat posed by the climate crisis, with the UK experiencing recor",
+          "published": "2026-10-04T07:00:21.000Z",
+          "score": 4
         },
         {
           "title": "Southern California swelters as late-season heatwave smothers region",
@@ -66,19 +82,11 @@
           "score": 4
         },
         {
-          "title": "Worst ever outbreak of bluetongue hits British farms",
-          "link": "https://www.theguardian.com/environment/2026/oct/03/bluetongue-hits-british-farmers",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Climate crisis blamed as virus that originated in Africa spreads to livestock as far north as Aberdeenshire&lt;/p&gt;&lt;p&gt;British farmers are experiencing the worst bluetongue season on record, with the number of cases surpassing the past three years combined.&lt;/p&gt;&lt;p&gt;The viral disease, which affects sheep and cattle among other animals, can cause fevers, ulcers, a swollen head and lameness. The tongue may go blue and even protrude from the mouth. In the most severe cases,",
-          "published": "2026-10-03T05:00:52.000Z",
-          "score": 4
-        },
-        {
-          "title": "The expansion of Heathrow would be an expensive disaster for Britain and the world. Burnham needs to block it | George Monbiot",
-          "link": "https://www.theguardian.com/commentisfree/2026/oct/03/heathrow-third-runway-climate-warnings-economic-reality",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;A third runway would fly in the face of reason. If we are to prioritise human life over short-term ‘growth’, we need to use planes less, not more&lt;/p&gt;&lt;p&gt;&lt;br&gt; If a third runway is built at Heathrow, what will be the impact on the wealth of the nation? It will cost us somewhere between £23.4bn and £62.5bn. These are not my &lt;a href=\"https://www.theguardian.com/uk-news/2026/jun/19/heathrow-third-runway-boost-gdp-less-than-stated\"&gt;figures&lt;/a&gt;; they weren’t calcul",
-          "published": "2026-10-03T07:00:53.000Z",
+          "title": "Queen's University students blast off to US for Nasa robotics competition",
+          "link": "https://www.bbc.co.uk/news/articles/cq20v0e7vjkgo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The students will head to Florida to compete against university teams from Australia, India and the US.",
+          "published": "2026-10-04T05:19:30.000Z",
           "score": 2
         },
         {
@@ -110,23 +118,31 @@
           "link": "https://www.bbc.co.uk/news/articles/cm2kej47095no?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "More than 50 protests took place on Saturday after the government failed to get emergency legislation through parliament.",
-          "published": "2026-10-04T02:04:11.000Z",
+          "published": "2026-10-04T03:42:15.000Z",
           "score": 8
         },
         {
-          "title": "Bosnia and Herzegovina is still shaped by war, separatism, EU ambitions",
-          "link": "https://www.dw.com/en/bosnia-and-herzegovina-is-still-shaped-by-war-separatism-eu-ambitions/a-79523557?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Bosnia-Herzegovina votes amid divisive campaigns, EU bid",
+          "link": "https://www.dw.com/en/bosnia-herzegovina-votes-amid-divisive-campaigns-eu-bid/a-79535336?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Bosnia and Herzegovina is governed by a system established after the Bosnian war — more than 30 years ago. Ethnic divisions, a complex administration and European integration all shape the country&#039;s political reality.",
-          "published": "2026-10-03T06:51:00.000Z",
+          "description": "Polls have opened in Bosnia and Herzegovina, where voters are taking part in parliamentary, presidential and local elections.",
+          "published": "2026-10-04T09:30:00.000Z",
           "score": 8
         },
         {
-          "title": "China initiates anti-dumping investigation into p-nitrotoluene from EU - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORW9ZcVdfdDduQ3E4UDVUMUlkRHZSVTlVUU94UnFtdTVGUU1QVVJnb3E2MjkxMlFMWldkY0xDa0xmdm4yWllzVWJSV3VMR3BlWjk2SFA3ZDdmaDBxN2s0WTVGOW5abmpRWkJweGFPRTVXYnRKeGhhc1dSM0NsTmkyTkU0RVM2ZV96T1FwOC1UNFlBeHJOdXZqMkd5TkVXRUJRVXE5djBxZlM2bmRGanVPMzFXNA?oc=5",
+          "title": "Bosnia votes Sunday in election that could affect EU bid - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdnB0bzdlVUpKdEdIZkhBZU1wLVhPTF8zLW5YMy1NRF9hSlJsM0ZmMS1DNG5JbVIwQkk4QTQwMmdSU0JCUHd5blNMdzhnME1ycHBCdm5IcVhLUTRVU1d6dENmYXgwYlV4dU5HOWVyR0oxLVNYYTVTeWVNNEVaSTFaMVhZRkk5aFlUTnE1ZHo2bVZrdHZWZG93UTd5Yw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxORW9ZcVdfdDduQ3E4UDVUMUlkRHZSVTlVUU94UnFtdTVGUU1QVVJnb3E2MjkxMlFMWldkY0xDa0xmdm4yWllzVWJSV3VMR3BlWjk2SFA3ZDdmaDBxN2s0WTVGOW5abmpRWkJweGFPRTVXYnRKeGhhc1dSM0NsTmkyTkU0RVM2ZV96T1FwOC1UNFlBeHJOdXZqMkd5TkVXRUJRVXE5djBxZlM2bmRGanVPMzFXNA?oc=5\" target=\"_blank\"&gt;China initiates anti-dumping investigation into p-nitrotoluene from EU&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-03T02:52:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxNdnB0bzdlVUpKdEdIZkhBZU1wLVhPTF8zLW5YMy1NRF9hSlJsM0ZmMS1DNG5JbVIwQkk4QTQwMmdSU0JCUHd5blNMdzhnME1ycHBCdm5IcVhLUTRVU1d6dENmYXgwYlV4dU5HOWVyR0oxLVNYYTVTeWVNNEVaSTFaMVhZRkk5aFlUTnE1ZHo2bVZrdHZWZG93UTd5Yw?oc=5\" target=\"_blank\"&gt;Bosnia votes Sunday in election that could affect EU bid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-04T05:01:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Revolut's rise to become Europe's $115 billion big bank rival - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQWDBEcXY1UUtrRGxIaE9neHYxeDlTWDNYaVlWdlp2UUhxSGtUV2RVZlR4Q25UUTlDTTR0QXlLYlVNZ1lMNEJfQkVmZnVtcFNaVW5mZE42d21uV1BZZzRESkxvVkxoM19FNkhoVThRWXYtUGR1eGZ6VmYtUHNrTWs5eXZfV1kxZ3ZnSHR2UWtmQWd5YVltQlNseWs0RGhXeVItVGVwQXNKbXpZVG9G?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQWDBEcXY1UUtrRGxIaE9neHYxeDlTWDNYaVlWdlp2UUhxSGtUV2RVZlR4Q25UUTlDTTR0QXlLYlVNZ1lMNEJfQkVmZnVtcFNaVW5mZE42d21uV1BZZzRESkxvVkxoM19FNkhoVThRWXYtUGR1eGZ6VmYtUHNrTWs5eXZfV1kxZ3ZnSHR2UWtmQWd5YVltQlNseWs0RGhXeVItVGVwQXNKbXpZVG9G?oc=5\" target=\"_blank\"&gt;Revolut's rise to become Europe's $115 billion big bank rival&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-04T10:29:33.000Z",
           "score": 8
         },
         {
@@ -136,22 +152,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5fV0pxeDBORmNYdVFRNHFXaTFSRkpxWFRQZE1HdzRBRkNrM3VjdVp5R0t1UDFjMFV0TFRCdjhrcjBiSGJsMjRaVGV1TTVTRlcxdWFOY3JLVkwtMzZOSWRJZHp6QVVHSmM?oc=5\" target=\"_blank\"&gt;Tens of thousands protest in Spain after parliament rejects housing measures&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-03T16:59:38.000Z",
           "score": 8
-        },
-        {
-          "title": "EV drivers love their cars, but some passengers feel sick - this could be why",
-          "link": "https://www.bbc.co.uk/news/articles/c3y0zx822wlzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Research shows there are several reasons people might experience motion sickness in electric vehicles.",
-          "published": "2026-10-03T02:36:19.000Z",
-          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 413,
-    "articlesLast24h": 138,
-    "afterDedup": 124,
+    "totalArticlesScanned": 393,
+    "articlesLast24h": 137,
+    "afterDedup": 123,
     "feedsQueried": 19
   }
 }
