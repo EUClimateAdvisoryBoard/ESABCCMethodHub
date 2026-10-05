@@ -1,18 +1,18 @@
 {
   "date": "2026-10-05",
-  "generatedAt": "2026-10-05T12:08:35.178Z",
+  "generatedAt": "2026-10-05T23:05:20.957Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 5 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Shadow chancellor to address Tory conference as he claims slashing red tape could cut cost of new houses by £50,000 – UK politics live",
-      "summary": "&lt;p&gt;Andrew Griffith makes speech today as Reform UK accuses party of copying policies they ‘announced weeks and months ago’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/2026/oct/04/tories-scrap-environment-agency-natural-england-conservative-conference\"&gt;Tories to pledge to scrap Environment Agency and Natural England&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Yesterday, as a gimmick, the Tories were handing out “Bottler Burnham” bottles of",
+      "headline": "Green party drops longstanding opposition to nuclear power",
+      "summary": "&lt;p&gt;Party in England and Wales ditches commitment to phase out nuclear in major shift in its energy policy&lt;/p&gt;&lt;p&gt;Green party members have voted to end the party’s opposition to nuclear power, dropping a commitment to phase out the technology in a major shift in its energy policy.&lt;/p&gt;&lt;p&gt;The motion, adopted at conference, removes a “&lt;a href=\"https://www.theguardian.com/environment/2023/mar/09/a-long-overdue-moment-the-uk-greens-pushing-for-the-nuclear-option\"&gt;bla",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "The UK’s G20 presidency will push Andy Burnham to the centre of the global stage. What will he use it for? | Michael Jacobs",
-      "summary": "&lt;p&gt;This is a chance for the PM to advance his progressive agenda and tackle urgent issues such as AI regulation and climate action&lt;/p&gt;&lt;p&gt;Among the many crucial decisions Andy Burnham has to make over the next few weeks, one has gone almost completely unremarked: what Britain’s priorities will be when it assumes the presidency of the G20 next year.&lt;/p&gt;&lt;p&gt;Burnham has said he wants to concentrate on domestic policy. But with the world in turmoil, chairing the group of ",
+      "headline": "Africa should not have to adapt to an unjust climate system",
+      "summary": "Adaptation must go beyond infrastructure and resilience to address colonial extraction, unequal development and debt dependency, which continue to fuel Africa's vulnerability The post Africa should not have to adapt to an unjust climate system appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,20 +34,20 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Shadow chancellor to address Tory conference as he claims slashing red tape could cut cost of new houses by £50,000 – UK politics live",
-          "link": "https://www.theguardian.com/politics/live/2026/oct/05/tory-party-conference-labour-reform-planning-economy-business-latest-news-updates",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Andrew Griffith makes speech today as Reform UK accuses party of copying policies they ‘announced weeks and months ago’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/2026/oct/04/tories-scrap-environment-agency-natural-england-conservative-conference\"&gt;Tories to pledge to scrap Environment Agency and Natural England&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Yesterday, as a gimmick, the Tories were handing out “Bottler Burnham” bottles of",
-          "published": "2026-10-05T11:57:22.000Z",
-          "score": 7
+          "title": "Green party drops longstanding opposition to nuclear power",
+          "link": "https://www.theguardian.com/politics/2026/oct/05/green-party-nuclear-power-policy",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Party in England and Wales ditches commitment to phase out nuclear in major shift in its energy policy&lt;/p&gt;&lt;p&gt;Green party members have voted to end the party’s opposition to nuclear power, dropping a commitment to phase out the technology in a major shift in its energy policy.&lt;/p&gt;&lt;p&gt;The motion, adopted at conference, removes a “&lt;a href=\"https://www.theguardian.com/environment/2023/mar/09/a-long-overdue-moment-the-uk-greens-pushing-for-the-nuclear-option\"&gt;bla",
+          "published": "2026-10-05T15:53:49.000Z",
+          "score": 11
         },
         {
-          "title": "Australia and Turkey criticised for hosting UN climate conference while embracing coal",
-          "link": "https://www.theguardian.com/environment/2026/oct/05/australia-and-turkey-criticised-for-hosting-un-climate-conference-while-embracing-coal",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Global campaign group 350.org urges Cop31 hosts to announce a coal phase-out date and national roadmaps to get off fossil fuels&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The hosts of the next major Un",
-          "published": "2026-10-04T14:00:32.000Z",
-          "score": 7
+          "title": "Australia&#039;s migrant policy offers lessons for EU and US",
+          "link": "https://www.dw.com/en/australia-s-migrant-policy-offers-lessons-for-eu-and-us/a-79388096?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Australia has used offshore processing centers to deter asylum seekers for more than two decades. As the EU and US pursue similar third-country arrangements, Australia&#039;s experience highlights the potential problems.",
+          "published": "2026-10-05T19:26:00.000Z",
+          "score": 8
         },
         {
           "title": "Revealed: the methane mega-leaks from UN climate summit host Turkey",
@@ -58,20 +58,20 @@
           "score": 7
         },
         {
-          "title": "Alaska LNG shipping savings justifies billions in investment, developer says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNYVFHYzRzRk12Yy1PRnBCaGppbXJNaWd2VERlUzZ2ZkIzWVRjZFJ6anV3ZUxhdzdmRXdOcFc0RlNQZ2NKajdXOWxRd2luMFU4a1p0SWExMlVCemVYQmFYclN2ZWFRZ3R3bDRqWF9mN2l5ZUlBaWVGb01NT055X1pFeTMwajhzRjRFaWJfVG15N2NkaE5iamdyd3pFZDk4MGhoOWxsZE93WEpXSWVkYkJXM19DZlZUMGtBTm1tU2RSaVFmVU0?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNYVFHYzRzRk12Yy1PRnBCaGppbXJNaWd2VERlUzZ2ZkIzWVRjZFJ6anV3ZUxhdzdmRXdOcFc0RlNQZ2NKajdXOWxRd2luMFU4a1p0SWExMlVCemVYQmFYclN2ZWFRZ3R3bDRqWF9mN2l5ZUlBaWVGb01NT055X1pFeTMwajhzRjRFaWJfVG15N2NkaE5iamdyd3pFZDk4MGhoOWxsZE93WEpXSWVkYkJXM19DZlZUMGtBTm1tU2RSaVFmVU0?oc=5\" target=\"_blank\"&gt;Alaska LNG shipping savings justifies billions in investment, developer says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-04T19:52:10.000Z",
+          "title": "Yemeni military says it has retaken Mokha and 'secured' Red Sea waterway",
+          "link": "https://www.bbc.co.uk/news/articles/cw8rzd6lp0xpo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Saudi-backed forces say they seized the port city of Mocha, near the Bab al-Mandab Strait, at the start of an offensive against the Houthis.",
+          "published": "2026-10-05T17:49:59.000Z",
           "score": 7
         },
         {
-          "title": "Ukraine's Naftogaz considers buying gas-turbine compressors from Siemens - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOeThMZ3M3SklzTmlXaU5XUmc1WWlBeDc2bURVcFhzWUJkS1BnRFExOExqa3JLaTlYQTZ0SGpLU2NMVlVWTTd5TzRXQjB2WGxWbVFRQVJKZlh3VnpseTUwM0tnb2JJajR5blJzcTVVZXRZUklYa0FzZkctZDB4WWFoWkpVaWJyWHJUUVZhcjBhalRvS2VZSnFUcHktb0V4Vk5kMmd1b0NzZmpfM3U0Y2d6aFVaWC05MEVYOVE?oc=5",
+          "title": "Trump heads to Nebraska as Republicans defend red-state Senate seat - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYTRMTjZxcmQ1dWc0ak0wdEJNM18tQ0VsMHJsS0FHclFaSFdsTWJnTlBzRHd4VS1hLWtKMlVScEJwZ0hmRm93aGxwUDRLeGh3U2JNVDV1V3hFQUZVaWJWSjRTS1BWQXVvNC1sbFVOaUREb3lxZGRHVmFscmdLNjlzMWxReVpscE1ZeEpYV1R3Q2VQWmYxdmQyMURTRFVQWlpGSTZZa0FwTXFmZw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOeThMZ3M3SklzTmlXaU5XUmc1WWlBeDc2bURVcFhzWUJkS1BnRFExOExqa3JLaTlYQTZ0SGpLU2NMVlVWTTd5TzRXQjB2WGxWbVFRQVJKZlh3VnpseTUwM0tnb2JJajR5blJzcTVVZXRZUklYa0FzZkctZDB4WWFoWkpVaWJyWHJUUVZhcjBhalRvS2VZSnFUcHktb0V4Vk5kMmd1b0NzZmpfM3U0Y2d6aFVaWC05MEVYOVE?oc=5\" target=\"_blank\"&gt;Ukraine's Naftogaz considers buying gas-turbine compressors from Siemens&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-05T08:22:18.000Z",
-          "score": 2
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYTRMTjZxcmQ1dWc0ak0wdEJNM18tQ0VsMHJsS0FHclFaSFdsTWJnTlBzRHd4VS1hLWtKMlVScEJwZ0hmRm93aGxwUDRLeGh3U2JNVDV1V3hFQUZVaWJWSjRTS1BWQXVvNC1sbFVOaUREb3lxZGRHVmFscmdLNjlzMWxReVpscE1ZeEpYV1R3Q2VQWmYxdmQyMURTRFVQWlpGSTZZa0FwTXFmZw?oc=5\" target=\"_blank\"&gt;Trump heads to Nebraska as Republicans defend red-state Senate seat&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-10-05T11:24:51.000Z",
+          "score": 7
         }
       ]
     },
@@ -79,6 +79,22 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Africa should not have to adapt to an unjust climate system",
+          "link": "https://www.climatechangenews.com/2026/10/05/africa-should-not-have-to-adapt-to-an-unjust-climate-system/",
+          "source": "Climate Home News",
+          "description": "Adaptation must go beyond infrastructure and resilience to address colonial extraction, unequal development and debt dependency, which continue to fuel Africa's vulnerability The post Africa should not have to adapt to an unjust climate system appeared first on Climate Home News.",
+          "published": "2026-10-05T15:54:01.000Z",
+          "score": 13
+        },
+        {
+          "title": "At pre-COP, UN climate chief warns of heat threat to mothers and babies",
+          "link": "https://www.climatechangenews.com/2026/10/05/at-pre-cop-un-climate-chief-warns-of-heat-threat-to-mothers-and-babies/",
+          "source": "Climate Home News",
+          "description": "The spotlight on maternal health came on the first day of the pre-COP31 meeting in Fiji, where Pacific concerns are set to top the agenda as ministers gather for talks The post At pre-COP, UN climate chief warns of heat threat to mothers and babies appeared first on Climate Home News.",
+          "published": "2026-10-05T12:43:43.000Z",
+          "score": 13
+        },
         {
           "title": "The UK’s G20 presidency will push Andy Burnham to the centre of the global stage. What will he use it for? | Michael Jacobs",
           "link": "https://www.theguardian.com/commentisfree/2026/oct/05/uk-g20-presidency-andy-burnham-global-stage-technology-food-climate-economy",
@@ -88,35 +104,19 @@
           "score": 8
         },
         {
-          "title": "Mixed start for pre-Cop as just two non-Pacific leaders accept Australian invitation to climate summit",
-          "link": "https://www.theguardian.com/australia-news/2026/oct/05/mixed-start-for-pre-cop-as-just-two-non-pacific-leaders-accept-australian-invitation-to-climate-summit",
+          "title": "US supreme court hears big oil’s bid to block climate damage lawsuits",
+          "link": "https://www.theguardian.com/us-news/2026/oct/05/supreme-court-big-oil-climate-damage-lawsuits",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Anthony Albanese joins about 4,000 people in Fiji for preparatory meeting for year-ending Cop31 UN climate summit&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The Australian prime minister, Anthony Alban",
-          "published": "2026-10-05T09:52:03.000Z",
+          "description": "&lt;p&gt;How court will lean is unclear amid Suncor Energy and ExxonMobil’s attempt to stop lawsuits at state level&lt;/p&gt;&lt;p&gt;The &lt;a href=\"https://www.theguardian.com/us-news/us-supreme-court\"&gt;US supreme court&lt;/a&gt; began its new nine-month term hearing arguments on Monday in a major &lt;a href=\"https://www.theguardian.com/us-news/2026/feb/23/supreme-court-suncor-exxonmobil-case\"&gt;case&lt;/a&gt; in which big oil companies attempted to strike a fatal blow against lawsuits that",
+          "published": "2026-10-05T19:57:36.000Z",
           "score": 7
         },
         {
-          "title": "Australia experiences second hottest September on record as El Niño and climate crisis combine",
-          "link": "https://www.theguardian.com/australia-news/2026/oct/05/australia-weather-el-nino-climate-crisisseptember-record",
+          "title": "Tory plan to cut energy efficiency rule for builders will cost new home owners £1,000 a year, says thinktank – as it happened",
+          "link": "https://www.theguardian.com/politics/live/2026/oct/05/tory-party-conference-labour-reform-planning-economy-business-latest-news-updates",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Alpine areas also experience record-breaking heat with snow depth recorded at zero in Kosciuszko national park&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;",
-          "published": "2026-10-05T06:20:46.000Z",
-          "score": 7
-        },
-        {
-          "title": "More than 1,200 Colorado students have earned a climate ‘seal’: ‘We’re the ones growing up in this world’",
-          "link": "https://www.theguardian.com/us-news/2026/oct/04/colorado-climate-high-school-students",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;A statewide initiative pairs climate-focused coursework with community service – and is spreading to other states&lt;/p&gt;&lt;p&gt;As a student at a high school not far from Denver’s main airport, Anthony Muñoz wondered whether the jet fuel from airplanes flying above his campus was harming living things.&lt;/p&gt;&lt;p&gt;An avid gardener, Muñoz partnered with a local university to create a garden on the campus of his charter school, Vista Academy, filling it with native plants that c",
-          "published": "2026-10-04T12:30:27.000Z",
-          "score": 7
-        },
-        {
-          "title": "As rising seas threaten low-lying Pacific Islands, regional leaders call on the world to take climate more seriously",
-          "link": "https://www.dw.com/en/as-rising-seas-threaten-low-lying-pacific-islands-regional-leaders-call-on-the-world-to-take-climate-more-seriously/a-79540127?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "For Pacific island nations, climate change is no distant threat. As seas rise, they&#039;re bringing the real-time consequences of a warming planet directly to world leaders in Tuvalu.",
-          "published": "2026-10-05T09:37:00.000Z",
+          "description": "&lt;p&gt;A researcher at a climate change think tank says the Conservative policy would be a ‘disaster for first time buyers’&lt;/p&gt;&lt;p&gt;Yesterday, as a gimmick, the Tories were handing out “Bottler Burnham” bottles of water (“0% strength”) to make a point about Burnham supposedly cancelling plans for an early election under pressure from the Tories. It is a version of a stunt they pulled in 2008 when they gave journalists bottles of a “Bottler Brown” beer. (Gordon Brown did pull plans fo",
+          "published": "2026-10-05T17:06:50.000Z",
           "score": 7
         }
       ]
@@ -132,65 +132,98 @@
           "description": "The government wants developers to fund waterways projects in Norfolk.",
           "published": "2026-10-05T05:35:03.000Z",
           "score": 2
+        },
+        {
+          "title": "France braces for national day of school protests after injuries and mass arrests",
+          "link": "https://www.bbc.co.uk/news/articles/cr4g1q1elxnjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "France prepares for a day of protests in support of students who’ve been demanding more investment in education.",
+          "published": "2026-10-05T21:18:10.000Z",
+          "score": 2
+        },
+        {
+          "title": "Lidl GB to open 50-plus stores in $793 million investment drive - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPczVXY3A2b3o3RjRXbkt3N0g3WDNpV3luWTJHaDFHcTF3YzllWTRwYk1CRE9OUXVPRjZvSHZ4azJNTUNVWWF3el9xUGFfYkhJclM2UlZCUmRPX0p6X1hOcjFPSGJiUS1JZjdmdThMd0xZYUNYUno1X1o0R3lYNWZpdWNxT2VUaEo2R3hLWGp4UnloczltYzN0WTNJZE9GNzJDeVE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPczVXY3A2b3o3RjRXbkt3N0g3WDNpV3luWTJHaDFHcTF3YzllWTRwYk1CRE9OUXVPRjZvSHZ4azJNTUNVWWF3el9xUGFfYkhJclM2UlZCUmRPX0p6X1hOcjFPSGJiUS1JZjdmdThMd0xZYUNYUno1X1o0R3lYNWZpdWNxT2VUaEo2R3hLWGp4UnloczltYzN0WTNJZE9GNzJDeVE?oc=5\" target=\"_blank\"&gt;Lidl GB to open 50-plus stores in $793 million investment drive&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-10-05T06:26:00.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Merz, Macron seek tougher EU measures against unfair trade",
+          "link": "https://www.dw.com/en/merz-macron-seek-tougher-eu-measures-against-unfair-trade/a-79554905?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Emmanuel Macron and Friedrich Merz have written to Ursula von der Leyen, calling for tougher EU mechanisms against unfair trade practices by other states. They name no names but seem to have China or the US in mind.",
+          "published": "2026-10-05T17:23:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "France, Germany push for EU rapid-response trade tool with likely focus on China - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWDQ0OVBka2szNklkWXItcVUwNElEU1RVai0tcTQ5Rm5sNVhjZzBIWnRYRkFVYVV4aHlibWUybzYtVGhIa203N19GZlI0ZkFzMlVGLVVRNGpQZ3BSTC1JWllRUjlxenc1MHBRdEk0T0Y4QUhVcFZhWEs0c0dlLWlJVFhzUlhORzZ4U3VNWVBEMDBhS0RtQU5IT3YyNkxTWlhzNm80ZDFn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxQWDQ0OVBka2szNklkWXItcVUwNElEU1RVai0tcTQ5Rm5sNVhjZzBIWnRYRkFVYVV4aHlibWUybzYtVGhIa203N19GZlI0ZkFzMlVGLVVRNGpQZ3BSTC1JWllRUjlxenc1MHBRdEk0T0Y4QUhVcFZhWEs0c0dlLWlJVFhzUlhORzZ4U3VNWVBEMDBhS0RtQU5IT3YyNkxTWlhzNm80ZDFn?oc=5\" target=\"_blank\"&gt;France, Germany push for EU rapid-response trade tool with likely focus on China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-10-05T16:23:22.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "European EV sales hit record in 'pivotal' year for affordable cars, study shows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNcF9raGxmUjJpXzVQQmNiWmNwT1B3d3I5VGVVNnBPUk5hTzlkZGlSMjRNOURObXI3TVJqQlhqNWFHWUVRTWFaT0toa054MWFGSzRfTGR0OXdOWWJwcnJ5cnBpTjhDWkM1cDhGMUhmaHFWV3pKRkItaWQyb2FheTFqVW1KTlVmVGdzb0xHVktkVGppSVZ4cDdvdUdoai03Q3pVYTlmNDVnaHE5WXY1Y2RWX2lOVzViZ0g4cXBpLVZTTTVVd1RCTG1BQkNPaHlwTXZJMDg5RnhB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxNcF9raGxmUjJpXzVQQmNiWmNwT1B3d3I5VGVVNnBPUk5hTzlkZGlSMjRNOURObXI3TVJqQlhqNWFHWUVRTWFaT0toa054MWFGSzRfTGR0OXdOWWJwcnJ5cnBpTjhDWkM1cDhGMUhmaHFWV3pKRkItaWQyb2FheTFqVW1KTlVmVGdzb0xHVktkVGppSVZ4cDdvdUdoai03Q3pVYTlmNDVnaHE5WXY1Y2RWX2lOVzViZ0g4cXBpLVZTTTVVd1RCTG1BQkNPaHlwTXZJMDg5RnhB?oc=5\" target=\"_blank\"&gt;European EV sales hit record in 'pivotal' year for affordable cars, study shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"",
-          "published": "2026-10-05T05:01:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "COMMENTARY: EU risks becoming sick man of the world if it doesn’t reform quickly - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQYS1VMGxXLVE0OWcxc2tGZWFhUXUyd2JIbjNsV3RFektCYXc3VmloX1FuS3dqOXNzbnNybjhwN1JtYm1vYWdfRWF1V2dMcHZ1NkxsWlpkVEFJV2pWNHZNaGRZZk14eGpIbk5wMWJ4eTNMd2xKS0hSNXp1SXlZRjl3MjFheWc2LTNaSFBBWnctZ09xaEF2U1BwbC1qa0NCQ2ZlM1RBT3M2RGw0elVybXpoV3pmakcyTlRXUWhjSmtXUE5jT3ZkNTh6aWNnQmFDNTB2cXVUWTVBV2lNUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxQYS1VMGxXLVE0OWcxc2tGZWFhUXUyd2JIbjNsV3RFektCYXc3VmloX1FuS3dqOXNzbnNybjhwN1JtYm1vYWdfRWF1V2dMcHZ1NkxsWlpkVEFJV2pWNHZNaGRZZk14eGpIbk5wMWJ4eTNMd2xKS0hSNXp1SXlZRjl3MjFheWc2LTNaSFBBWnctZ09xaEF2U1BwbC1qa0NCQ2ZlM1RBT3M2RGw0elVybXpoV3pmakcyTlRXUWhjSmtXUE5jT3ZkNTh6aWNnQmFDNTB2cXVUWTVBV2lNUQ?oc=5\" target=\"_blank\"&gt;COMMENTARY: EU risks becoming sick man of the world if it doesn’t reform quickly&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#",
-          "published": "2026-10-05T08:08:28.000Z",
+          "title": "Euro plummets against US dollar: has the next financial crisis begun?",
+          "link": "https://www.dw.com/en/euro-plummets-against-us-dollar-has-the-next-financial-crisis-begun/a-79549031?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The euro has fallen to a 17-month low against the dollar. That will make inflation worse in the EU, where political worries and concern over French debt are already troubling investors. Is a fiscal crisis at hand?",
+          "published": "2026-10-05T14:28:00.000Z",
           "score": 8
         },
         {
-          "title": "Euro hits 17-month low, dollar near pre-Liberation Day highs - Reuters",
+          "title": "COMMENTARY: EU risks becoming sick man of the world if it doesn’t reform quickly - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQYS1VMGxXLVE0OWcxc2tGZWFhUXUyd2JIbjNsV3RFektCYXc3VmloX1FuS3dqOXNzbnNybjhwN1JtYm1vYWdfRWF1V2dMcHZ1NkxsWlpkVEFJV2pWNHZNaGRZZk14eGpIbk5wMWJ4eTNMd2xKS0hSNXp1SXlZRjl3MjFheWc2LTNaSFBBWnctZ09xaEF2U1BwbC1qa0NCQ2ZlM1RBT3M2RGw0elVybXpoV3pmakcyTlRXUWhjSmtXUE5jT3ZkNTh6aWNnQmFDNTB2cXVUWTVBV2lNUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxQYS1VMGxXLVE0OWcxc2tGZWFhUXUyd2JIbjNsV3RFektCYXc3VmloX1FuS3dqOXNzbnNybjhwN1JtYm1vYWdfRWF1V2dMcHZ1NkxsWlpkVEFJV2pWNHZNaGRZZk14eGpIbk5wMWJ4eTNMd2xKS0hSNXp1SXlZRjl3MjFheWc2LTNaSFBBWnctZ09xaEF2U1BwbC1qa0NCQ2ZlM1RBT3M2RGw0elVybXpoV3pmakcyTlRXUWhjSmtXUE5jT3ZkNTh6aWNnQmFDNTB2cXVUWTVBV2lNUQ?oc=5\" target=\"_blank\"&gt;COMMENTARY: EU risks becoming sick man of the world if it doesn’t reform quickly&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#",
+          "published": "2026-10-05T14:13:32.000Z",
+          "score": 8
+        },
+        {
+          "title": "Euro zone business growth hits over 3-1/2-year high despite inflation worries, PMI shows - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMFZ6bGhqZlRxMUFpUXVSc2RzR2UwU1hHdjRxT2d2MUVxam45U040WFo3R0xQd2g3UHhJMFRKMXctY0FXeExJRkhZaWxDdTltWFdQYnJlbHdlaEVvcGh2VEUwTDd2M0hlV2hKVDNQdVgtTGIwMmlfSnNUd0xWZUg1cWROeHBMMUVOLXlJVGpnNnFPNUlJbURuMGJRbzB0QmZ3cnlTSXlBT25WYWEzSzB0b3h2NnNVTXJQMEIzM2plUExaMXloemNTcA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMFZ6bGhqZlRxMUFpUXVSc2RzR2UwU1hHdjRxT2d2MUVxam45U040WFo3R0xQd2g3UHhJMFRKMXctY0FXeExJRkhZaWxDdTltWFdQYnJlbHdlaEVvcGh2VEUwTDd2M0hlV2hKVDNQdVgtTGIwMmlfSnNUd0xWZUg1cWROeHBMMUVOLXlJVGpnNnFPNUlJbURuMGJRbzB0QmZ3cnlTSXlBT25WYWEzSzB0b3h2NnNVTXJQMEIzM2plUExaMXloemNTcA?oc=5\" target=\"_blank\"&gt;Euro zone business growth hits over 3-1/2-year high despite inflation worries, PMI shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reute",
+          "published": "2026-10-05T08:03:35.000Z",
+          "score": 8
+        },
+        {
+          "title": "Euro drops to 17-month low on France debt concerns - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcGxIREdRUUNadXowQXZKbi1McVN1X2toZXZEdGNFMnR1QVZvSk5DMTcteEVlQjhVR3hhbFFfNGNGa1BmcE5DUFRETThCMVVOMDNLa2ZsZkVpY1lxWm9GeUVZNGpnYVRoV1ZIdkZKNC11bzJMUlV2V3JJTUhiQnV5akg1YmNuVFljclA4VW1vRnF1OWJOYmdXLVBPMU1fVkxOb1FKWnZjVTBNQ2FRblMzbQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOcGxIREdRUUNadXowQXZKbi1McVN1X2toZXZEdGNFMnR1QVZvSk5DMTcteEVlQjhVR3hhbFFfNGNGa1BmcE5DUFRETThCMVVOMDNLa2ZsZkVpY1lxWm9GeUVZNGpnYVRoV1ZIdkZKNC11bzJMUlV2V3JJTUhiQnV5akg1YmNuVFljclA4VW1vRnF1OWJOYmdXLVBPMU1fVkxOb1FKWnZjVTBNQ2FRblMzbQ?oc=5\" target=\"_blank\"&gt;Euro hits 17-month low, dollar near pre-Liberation Day highs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOcGxIREdRUUNadXowQXZKbi1McVN1X2toZXZEdGNFMnR1QVZvSk5DMTcteEVlQjhVR3hhbFFfNGNGa1BmcE5DUFRETThCMVVOMDNLa2ZsZkVpY1lxWm9GeUVZNGpnYVRoV1ZIdkZKNC11bzJMUlV2V3JJTUhiQnV5akg1YmNuVFljclA4VW1vRnF1OWJOYmdXLVBPMU1fVkxOb1FKWnZjVTBNQ2FRblMzbQ?oc=5\" target=\"_blank\"&gt;Euro drops to 17-month low on France debt concerns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
           "published": "2026-10-05T01:53:00.000Z",
           "score": 8
         },
         {
-          "title": "Euro slides on France worries; Fed pause hopes support stocks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOUzk3bWZMY2M2d1ZHLWhKbzhqV2VPZjY0N2JCcm0tMGRLUTAzM2V5TmZ3RzI1dGZNZ0duR2NmZXIxQU1qaWZvdGI5SUwtRWpiQ0dkWTBVdUIxNFZzVDAxOWpQa0FmQWFTRWZUTV9lWE1yRGR5MmN6WG16UGJNamRNUzB4WQ?oc=5",
+          "title": "Russia puts lives at risk across Europe with hybrid attacks, Kallas says - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNN1Qzb0NqaHlCdjd2NGlfYkR0cmlYbC1GU0dTOGhKallsaHJEdGJkQTJqRTBNbWF3eHFDRTRuRW4zWDZmMW1fcEJSXzdkdmc1LTViMlRvRFY2UEV2UXJlUjFrQlF6Q1Y1aGFtb0dSU1EtLXhQYS15VTB1N1FXMldYWXhCWVhEc1A3c0NYTW50R0pjQU1EVUVLQi1TUGhxRFRVYndYU2RpUm1RdFhHUk5v?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOUzk3bWZMY2M2d1ZHLWhKbzhqV2VPZjY0N2JCcm0tMGRLUTAzM2V5TmZ3RzI1dGZNZ0duR2NmZXIxQU1qaWZvdGI5SUwtRWpiQ0dkWTBVdUIxNFZzVDAxOWpQa0FmQWFTRWZUTV9lWE1yRGR5MmN6WG16UGJNamRNUzB4WQ?oc=5\" target=\"_blank\"&gt;Euro slides on France worries; Fed pause hopes support stocks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-05T01:22:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Nicaragua announces withdrawal from Central American Parliament - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQRU13M2lrLWxPLW1IS1I3ZVlxQ1UxMndqV2ZFaDVBQTFvTnZoSFhscXd3OFVxR2V2b0lDN3lRekxVRnpIODNkaTZZSnFnMU91M05kZElaS2d1a2pfQk10ejJhYUFsRWRSU1B2RGFaUl8ybW9RRXNNWHBXMjl0VVB3VzIxdDg5T0hnODdGMXZ4X29nZXpmbjNkM1Z2eURNWU04RUg0aDIxeDZ6RmdxWmc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQRU13M2lrLWxPLW1IS1I3ZVlxQ1UxMndqV2ZFaDVBQTFvTnZoSFhscXd3OFVxR2V2b0lDN3lRekxVRnpIODNkaTZZSnFnMU91M05kZElaS2d1a2pfQk10ejJhYUFsRWRSU1B2RGFaUl8ybW9RRXNNWHBXMjl0VVB3VzIxdDg5T0hnODdGMXZ4X29nZXpmbjNkM1Z2eURNWU04RUg0aDIxeDZ6RmdxWmc?oc=5\" target=\"_blank\"&gt;Nicaragua announces withdrawal from Central American Parliament&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-04T14:52:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNN1Qzb0NqaHlCdjd2NGlfYkR0cmlYbC1GU0dTOGhKallsaHJEdGJkQTJqRTBNbWF3eHFDRTRuRW4zWDZmMW1fcEJSXzdkdmc1LTViMlRvRFY2UEV2UXJlUjFrQlF6Q1Y1aGFtb0dSU1EtLXhQYS15VTB1N1FXMldYWXhCWVhEc1A3c0NYTW50R0pjQU1EVUVLQi1TUGhxRFRVYndYU2RpUm1RdFhHUk5v?oc=5\" target=\"_blank\"&gt;Russia puts lives at risk across Europe with hybrid attacks, Kallas says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-10-05T10:39:43.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 394,
-    "articlesLast24h": 154,
-    "afterDedup": 144,
+    "totalArticlesScanned": 393,
+    "articlesLast24h": 156,
+    "afterDedup": 147,
     "feedsQueried": 19
   }
 }
