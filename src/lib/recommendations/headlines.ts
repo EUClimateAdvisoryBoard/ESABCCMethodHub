@@ -29,7 +29,8 @@
  *
  * Stored rows not named here (e.g. recommendations added in the tracker) are
  * shown as their own headline rows after the mapped ones, so nothing is
- * silently dropped. Seed ids are stable: they are the primary keys of the
+ * silently dropped; the only rows left out are those listed, with a reason,
+ * in `EXCLUDED`. Seed ids are stable: they are the primary keys of the
  * `pw_recommendations` seed rows.
  *
  * Compiled 2026-10-06 from the report PDFs in `esabcc-reports/`; titles of
@@ -161,8 +162,8 @@ export const HEADLINES: Record<string, HeadlineDef[]> = {
   // Energy-crisis advice, Feb 2023, cover letter p.2: eight key
   // recommendations, stored one-to-one. The ninth stored row
   // (energy-crisis-2023-biogas-hydrogen) is measure 5 of the detailed section
-  // (p.38) and has no counterpart in the eight; it is deliberately left
-  // unmapped, so it shows as its own row, pending a decision.
+  // (p.38) and has no counterpart in the eight, so it is excluded from these
+  // views (see EXCLUDED).
   'energy-crisis-2023': [
     self('energy-crisis-2023-root-causes'),
     self('energy-crisis-2023-efficiency'),
@@ -373,6 +374,17 @@ export const HEADLINES: Record<string, HeadlineDef[]> = {
   ],
 };
 
+/**
+ * Stored rows left out of these views because they are not headline
+ * recommendations and have no headline to sit under. The tracker keeps them.
+ * Delete an entry to show the row again.
+ */
+export const EXCLUDED: Record<string, string> = {
+  'energy-crisis-2023-biogas-hydrogen':
+    'Measure 5 of the detailed recommendations (PDF p.38) with no counterpart among the eight key ' +
+    'recommendations in the cover letter (p.2); not a headline recommendation. [human review 2026-10]',
+};
+
 /** Minimal shape of a stored recommendation this module needs. */
 export interface StoredRec {
   id: string;
@@ -399,11 +411,13 @@ const chapterOf = (area: string): string | null => {
 };
 
 /**
- * Arrange one report's stored rows into headline rows. Headlines whose rows are
- * all missing (e.g. deleted in the tracker) are dropped; rows the mapping does
- * not name are appended as their own headline rows.
+ * Arrange one report's stored rows into headline rows. Rows in `EXCLUDED` are
+ * left out; headlines whose rows are all missing (e.g. deleted in the tracker)
+ * are dropped; rows the mapping does not name are appended as their own
+ * headline rows.
  */
-export function toHeadlineRows<R extends StoredRec>(reportId: string, rows: R[]): HeadlineRow<R>[] {
+export function toHeadlineRows<R extends StoredRec>(reportId: string, allRows: R[]): HeadlineRow<R>[] {
+  const rows = allRows.filter(r => !(r.id in EXCLUDED));
   const defs = HEADLINES[reportId];
   if (!defs) return rows.map(r => ({ key: r.id, title: r.title, self: r, subs: [], quoted: false }));
 

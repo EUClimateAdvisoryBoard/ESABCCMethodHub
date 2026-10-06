@@ -168,7 +168,10 @@ from the report with a PDF page locator. In the January 2024 report the 13 key
 recommendations stay as headlines and the chapter recommendations are grouped
 under one "Detailed recommendations for …" row per chapter. Rows the mapping
 does not name, such as recommendations added in the tracker, appear as their
-own rows. The mapping is presentation only; tracker rows are unchanged.
+own rows. Rows that are not headline recommendations and have no headline to
+sit under are listed, with a reason, in `EXCLUDED` and left out of these views
+(currently one: the biogas and green hydrogen measure of the February 2023
+energy-crisis advice). The mapping is presentation only; tracker rows are unchanged.
 
 - The focus, sector and role labels are **AI-compiled — pending Secretariat
   verification**. They come from fixed word-boundary vocabularies with veto
