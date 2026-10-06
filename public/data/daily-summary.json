@@ -1,6 +1,6 @@
 {
   "date": "2026-10-06",
-  "generatedAt": "2026-10-06T11:53:38.304Z",
+  "generatedAt": "2026-10-06T21:28:30.496Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 6 October 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,22 +11,16 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Green party drops longstanding opposition to nuclear power",
-      "summary": "&lt;p&gt;Party in England and Wales ditches commitment to phase out nuclear in major shift in its energy policy&lt;/p&gt;&lt;p&gt;Green party members have voted to end the party’s opposition to nuclear power, dropping a commitment to phase out the technology in a major shift in its energy policy.&lt;/p&gt;&lt;p&gt;The motion, adopted at conference, removes a “&lt;a href=\"https://www.theguardian.com/environment/2023/mar/09/a-long-overdue-moment-the-uk-greens-pushing-for-the-nuclear-option\"&gt;bla",
+      "headline": "Pacific leaders rail at climate finance failures after pre-COP trip to Tuvalu",
+      "summary": "Island nations seek invest in their own Pacific Resilience Facility, as they struggle with the red-tape of international climate funds The post Pacific leaders rail at climate finance failures after pre-COP trip to Tuvalu appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Africa should not have to adapt to an unjust climate system",
-      "summary": "Adaptation must go beyond infrastructure and resilience to address colonial extraction, unequal development and debt dependency, which continue to fuel Africa's vulnerability The post Africa should not have to adapt to an unjust climate system appeared first on Climate Home News.",
+      "headline": "Questions and answers on the new Standardisation Regulation",
+      "summary": "European Commission Questions and answers Brussels, 06 Oct 2026 What is a standard and how are standards developed in Europe?\r\nA standard is a technical document that sets specifications for a product, service, or process. It...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Trump says taxpayers will no longer fund ads touting administration",
-      "summary": "Trump faced criticism from across the political divide after at least $1.5 million in federal funds was spent on TV ads. He says his MAGA Inc. super PAC will pay for future ads.",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -49,20 +43,28 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Green party drops longstanding opposition to nuclear power",
-          "link": "https://www.theguardian.com/politics/2026/oct/05/green-party-nuclear-power-policy",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Party in England and Wales ditches commitment to phase out nuclear in major shift in its energy policy&lt;/p&gt;&lt;p&gt;Green party members have voted to end the party’s opposition to nuclear power, dropping a commitment to phase out the technology in a major shift in its energy policy.&lt;/p&gt;&lt;p&gt;The motion, adopted at conference, removes a “&lt;a href=\"https://www.theguardian.com/environment/2023/mar/09/a-long-overdue-moment-the-uk-greens-pushing-for-the-nuclear-option\"&gt;bla",
-          "published": "2026-10-05T15:53:49.000Z",
-          "score": 11
+          "title": "Pacific leaders rail at climate finance failures after pre-COP trip to Tuvalu",
+          "link": "https://www.climatechangenews.com/2026/10/06/pacific-leaders-rail-at-climate-finance-failures-after-pre-cop-trip-to-tuvalu/",
+          "source": "Climate Home News",
+          "description": "Island nations seek invest in their own Pacific Resilience Facility, as they struggle with the red-tape of international climate funds The post Pacific leaders rail at climate finance failures after pre-COP trip to Tuvalu appeared first on Climate Home News.",
+          "published": "2026-10-06T16:40:55.000Z",
+          "score": 13
         },
         {
-          "title": "Australia&#039;s migrant policy offers lessons for EU and US",
-          "link": "https://www.dw.com/en/australia-s-migrant-policy-offers-lessons-for-eu-and-us/a-79388096?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Australia has used offshore processing centers to deter asylum seekers for more than two decades. As the EU and US pursue similar third-country arrangements, Australia&#039;s experience highlights the potential problems.",
-          "published": "2026-10-05T19:26:00.000Z",
-          "score": 8
+          "title": "Thousands of European wind and solar power systems exposed online, Dutch researchers say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOYWxWNTRLdzc2eUgzMExZQzBtWkR5c25zT2s1Y0J0dFBONWlSeXRlbU9LRnNZM2JxSGhxdUJCSm1FTUtrLV9ZelF3aUFkWDN2YWJHbW01VVZKeGpSTUtuZURTUHZUX3JpZWw5Qm9EMVdpeFNnWVFJZ2hnbGEzUVFwMTF6bHpQUWtZV1BTUlFRRW1ib1MzbTlJVUlYREc3UXhuTXVFR25qLVNobnVJcW1McjlSblFjQlpaaWtSb3lQU1FXMWhoZkE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOYWxWNTRLdzc2eUgzMExZQzBtWkR5c25zT2s1Y0J0dFBONWlSeXRlbU9LRnNZM2JxSGhxdUJCSm1FTUtrLV9ZelF3aUFkWDN2YWJHbW01VVZKeGpSTUtuZURTUHZUX3JpZWw5Qm9EMVdpeFNnWVFJZ2hnbGEzUVFwMTF6bHpQUWtZV1BTUlFRRW1ib1MzbTlJVUlYREc3UXhuTXVFR25qLVNobnVJcW1McjlSblFjQlpaaWtSb3lQU1FXMWhoZkE?oc=5\" target=\"_blank\"&gt;Thousands of European wind and solar power systems exposed online, Dutch researchers say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
+          "published": "2026-10-06T15:44:20.000Z",
+          "score": 13
+        },
+        {
+          "title": "Coal mines and hypocrisy must not be Australia&#8217;s COP31 legacy",
+          "link": "https://www.climatechangenews.com/2026/10/06/australias-cop31-legacy-should-not-be-coal-mines-and-hypocrisy/",
+          "source": "Climate Home News",
+          "description": "Still without a coal phase-out plan, Australia must course-correct to earn the mantle it has been given and do right by the Pacific nations that backed its bid for COP’s co-presidency The post Coal mines and hypocrisy must not be Australia&#8217;s COP31 legacy appeared first on Climate Home News.",
+          "published": "2026-10-06T11:56:34.000Z",
+          "score": 10
         },
         {
           "title": "Yemeni military says it has 'secured' Red Sea waterway",
@@ -70,14 +72,6 @@
           "source": "BBC World News",
           "description": "Saudi-backed forces gave conflicting reports of whether they had also seized the port city of Mokha, near the Bab al-Mandab Strait.",
           "published": "2026-10-06T07:43:07.000Z",
-          "score": 7
-        },
-        {
-          "title": "Russia says Ukraine hit two facilities at Zaporizhzhia nuclear plant - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORmxpVkR3ZG4tSXRMbGJXZGNuVE1DZi1UUk5iRWNLaUVkam85T3VJR2NkaktBRUR2OHVEeGhhSnEzNzJGS0tISzJlSHdNajBtckdJV0ZIRXRxQ0JuOTUxMTJiMjlrWS1uRDlGVWl3bWVfaHNQVGkzQ1pGLTR6UEtzdnNHdmZhNGo4Mmg4UFlHbzM5X0tWSmRVY3VaTENnQkQxWUMzN0NrblducUlJSUhYRVl2X1Y?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxORmxpVkR3ZG4tSXRMbGJXZGNuVE1DZi1UUk5iRWNLaUVkam85T3VJR2NkaktBRUR2OHVEeGhhSnEzNzJGS0tISzJlSHdNajBtckdJV0ZIRXRxQ0JuOTUxMTJiMjlrWS1uRDlGVWl3bWVfaHNQVGkzQ1pGLTR6UEtzdnNHdmZhNGo4Mmg4UFlHbzM5X0tWSmRVY3VaTENnQkQxWUMzN0NrblducUlJSUhYRVl2X1Y?oc=5\" target=\"_blank\"&gt;Russia says Ukraine hit two facilities at Zaporizhzhia nuclear plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-05T23:00:26.000Z",
           "score": 7
         },
         {
@@ -95,20 +89,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Africa should not have to adapt to an unjust climate system",
-          "link": "https://www.climatechangenews.com/2026/10/05/africa-should-not-have-to-adapt-to-an-unjust-climate-system/",
-          "source": "Climate Home News",
-          "description": "Adaptation must go beyond infrastructure and resilience to address colonial extraction, unequal development and debt dependency, which continue to fuel Africa's vulnerability The post Africa should not have to adapt to an unjust climate system appeared first on Climate Home News.",
-          "published": "2026-10-05T15:54:01.000Z",
-          "score": 13
-        },
-        {
-          "title": "At pre-COP, UN climate chief warns of heat threat to mothers and babies",
-          "link": "https://www.climatechangenews.com/2026/10/05/at-pre-cop-un-climate-chief-warns-of-heat-threat-to-mothers-and-babies/",
-          "source": "Climate Home News",
-          "description": "The spotlight on maternal health came on the first day of the pre-COP31 meeting in Fiji, where Pacific concerns are set to top the agenda as ministers gather for talks The post At pre-COP, UN climate chief warns of heat threat to mothers and babies appeared first on Climate Home News.",
-          "published": "2026-10-05T12:43:43.000Z",
-          "score": 13
+          "title": "Questions and answers on the new Standardisation Regulation",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_2071",
+          "source": "European Commission",
+          "description": "European Commission Questions and answers Brussels, 06 Oct 2026 What is a standard and how are standards developed in Europe?\r\nA standard is a technical document that sets specifications for a product, service, or process. It...",
+          "published": "2026-10-05T22:00:00.000Z",
+          "score": 18
         },
         {
           "title": "Race to host High Seas Treaty HQ heats up as Chile reaffirms bid",
@@ -127,11 +113,19 @@
           "score": 10
         },
         {
-          "title": "US supreme court hears big oil’s bid to block climate damage lawsuits",
-          "link": "https://www.theguardian.com/us-news/2026/oct/05/supreme-court-big-oil-climate-damage-lawsuits",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;How the court will lean is unclear amid Suncor Energy and ExxonMobil’s attempt to stop lawsuits at state level&lt;/p&gt;&lt;p&gt;The &lt;a href=\"https://www.theguardian.com/us-news/us-supreme-court\"&gt;US supreme court&lt;/a&gt; began its new nine-month term hearing arguments on Monday in a major &lt;a href=\"https://www.theguardian.com/us-news/2026/feb/23/supreme-court-suncor-exxonmobil-case\"&gt;case&lt;/a&gt; in which big oil companies attempted to strike a fatal blow against lawsuits ",
-          "published": "2026-10-05T19:57:36.000Z",
+          "title": "UK oil refinery broke toxic pollution limits dozens of times, documents reveal",
+          "link": "https://www.bbc.co.uk/news/articles/c64g15v2jqy8o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Pollution was spilled into local rivers and protected sites, documents shared with the BBC suggest.",
+          "published": "2026-10-06T06:01:12.000Z",
+          "score": 7
+        },
+        {
+          "title": "Carbon tracking tower put on Scotland's largest saltmarsh",
+          "link": "https://www.bbc.co.uk/news/articles/cky8302y7zejo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "It will track how much carbon is being taken out of the atmosphere by the saltmarsh on the Solway Firth.",
+          "published": "2026-10-06T09:35:01.000Z",
           "score": 7
         }
       ]
@@ -139,35 +133,18 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Trump says taxpayers will no longer fund ads touting administration",
-          "link": "https://www.dw.com/en/trump-says-taxpayers-will-no-longer-fund-ads-touting-administration/a-79557317?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Trump faced criticism from across the political divide after at least $1.5 million in federal funds was spent on TV ads. He says his MAGA Inc. super PAC will pay for future ads.",
-          "published": "2026-10-06T02:32:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Merz, Macron seek tougher EU measures against unfair trade",
-          "link": "https://www.dw.com/en/merz-macron-seek-tougher-eu-measures-against-unfair-trade/a-79554905?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU seeks ways to make expansion more palatable to members",
+          "link": "https://www.dw.com/en/eu-seeks-ways-to-make-expansion-more-palatable-to-members/a-79567297?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Emmanuel Macron and Friedrich Merz have written to Ursula von der Leyen, calling for tougher EU mechanisms against unfair trade practices by other states. They name no names but seem to have China or the US in mind.",
-          "published": "2026-10-05T17:23:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "France, Germany push for EU rapid-response trade tool with likely focus on China - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWDQ0OVBka2szNklkWXItcVUwNElEU1RVai0tcTQ5Rm5sNVhjZzBIWnRYRkFVYVV4aHlibWUybzYtVGhIa203N19GZlI0ZkFzMlVGLVVRNGpQZ3BSTC1JWllRUjlxenc1MHBRdEk0T0Y4QUhVcFZhWEs0c0dlLWlJVFhzUlhORzZ4U3VNWVBEMDBhS0RtQU5IT3YyNkxTWlhzNm80ZDFn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxQWDQ0OVBka2szNklkWXItcVUwNElEU1RVai0tcTQ5Rm5sNVhjZzBIWnRYRkFVYVV4aHlibWUybzYtVGhIa203N19GZlI0ZkFzMlVGLVVRNGpQZ3BSTC1JWllRUjlxenc1MHBRdEk0T0Y4QUhVcFZhWEs0c0dlLWlJVFhzUlhORzZ4U3VNWVBEMDBhS0RtQU5IT3YyNkxTWlhzNm80ZDFn?oc=5\" target=\"_blank\"&gt;France, Germany push for EU rapid-response trade tool with likely focus on China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-05T12:51:00.000Z",
+          "description": "The European Commission has put forward ideas it hopes will both ease the EU expansion process and allay concerns among existing members. Several countries, not least war-torn Ukraine, are among the candidates.",
+          "published": "2026-10-06T18:02:00.000Z",
           "score": 8
         }
       ]
@@ -177,52 +154,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "India news: Opposition leaders march towards Election Commission",
-          "link": "https://www.dw.com/en/india-news-opposition-leaders-march-towards-election-commission/live-79557629?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "India&#039;s opposition is amping up pressure on Chief Election Commissioner Gyanesh Kumar to resign over alleged voter roll manipulation. DW has more.",
-          "published": "2026-10-06T05:02:00.000Z",
+          "title": "AfD candidate elected speaker of German regional parliament for first time",
+          "link": "https://www.bbc.co.uk/news/articles/c54g1m2g1pg3o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Although Tobias Rausch's role is largely symbolic, opponents have described the result as a watershed moment.",
+          "published": "2026-10-06T14:44:03.000Z",
           "score": 8
         },
         {
-          "title": "Euro plummets against US dollar: Has the next financial crisis begun?",
-          "link": "https://www.dw.com/en/euro-plummets-against-us-dollar-has-the-next-financial-crisis-begun/a-79549031?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The euro has fallen to a 17-month low against the dollar. That will make inflation worse in the EU, where political worries and concern over French debt are already troubling investors. Is a fiscal crisis at hand?",
-          "published": "2026-10-05T14:28:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "COMMENTARY: EU risks becoming sick man of the world if it doesn’t reform quickly - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQYS1VMGxXLVE0OWcxc2tGZWFhUXUyd2JIbjNsV3RFektCYXc3VmloX1FuS3dqOXNzbnNybjhwN1JtYm1vYWdfRWF1V2dMcHZ1NkxsWlpkVEFJV2pWNHZNaGRZZk14eGpIbk5wMWJ4eTNMd2xKS0hSNXp1SXlZRjl3MjFheWc2LTNaSFBBWnctZ09xaEF2U1BwbC1qa0NCQ2ZlM1RBT3M2RGw0elVybXpoV3pmakcyTlRXUWhjSmtXUE5jT3ZkNTh6aWNnQmFDNTB2cXVUWTVBV2lNUQ?oc=5",
+          "title": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNWnVmemk1UXMxZ3RBSlAzNUFRbHpxTm5IRmZFOWZoNG90VURmMkZzaU0yeGJUUXRzaVFyTUZPLUtxZEF4QXhBNHpXZXFGaWNrNFpBOFJTbGRQVHNpRGt0NGN0aXR1YkJldG14ZXdsWTB1VnAzLThaR2t6dmFZeXo5b0diZUpJdnhEbmxFdl9sSWFtMHV5MFRUNDV5ZmNKek55NDR2N0hMdk1qLU1sV2NBaUhOMG9WNmNh?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxQYS1VMGxXLVE0OWcxc2tGZWFhUXUyd2JIbjNsV3RFektCYXc3VmloX1FuS3dqOXNzbnNybjhwN1JtYm1vYWdfRWF1V2dMcHZ1NkxsWlpkVEFJV2pWNHZNaGRZZk14eGpIbk5wMWJ4eTNMd2xKS0hSNXp1SXlZRjl3MjFheWc2LTNaSFBBWnctZ09xaEF2U1BwbC1qa0NCQ2ZlM1RBT3M2RGw0elVybXpoV3pmakcyTlRXUWhjSmtXUE5jT3ZkNTh6aWNnQmFDNTB2cXVUWTVBV2lNUQ?oc=5\" target=\"_blank\"&gt;COMMENTARY: EU risks becoming sick man of the world if it doesn’t reform quickly&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#",
-          "published": "2026-10-05T14:13:32.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNWnVmemk1UXMxZ3RBSlAzNUFRbHpxTm5IRmZFOWZoNG90VURmMkZzaU0yeGJUUXRzaVFyTUZPLUtxZEF4QXhBNHpXZXFGaWNrNFpBOFJTbGRQVHNpRGt0NGN0aXR1YkJldG14ZXdsWTB1VnAzLThaR2t6dmFZeXo5b0diZUpJdnhEbmxFdl9sSWFtMHV5MFRUNDV5ZmNKek55NDR2N0hMdk1qLU1sV2NBaUhOMG9WNmNh?oc=5\" target=\"_blank\"&gt;Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-06T11:01:43.000Z",
           "score": 8
         },
         {
-          "title": "French bond contagion fears are rattling the euro - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOU2I0a3Vldm9aWFp4WTFxOHFSR1lBMVFsYThLV1JqZnF2SWY5anFKZzVPTW9mVWNFUEJQOHRUYjNFOVFsNXBjQ253Y09QdV8tNTVsMGZfejgyb0o0Q09SMUJYQ0hjWm1PbkpHSHRja1VQeFBlZkI5YlhWR1VidVhLQWVob0RKN2ZkSUJ5VThTRTdLcGR0TXR0aXp3?oc=5",
+          "title": "Belgian strike prompts flight cancellations at Brussels Airport on Friday - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQeUIzWUJBT0luWGp4S1hSaGQ1S2xaaU5KbmM5bmFkWXlEUno0WkFWcTZ2Y0FtbFMyc1Q1eTFMQ1Z0T3RtOWxfM2ktTjhZbGhqM1V3VnJEQVNydFBncVNPQm5nZ0dCU3N1MjI4NnVrMWhZRzlvRHZVQW9CUURSN2FmN0QxSGtOUHNsTmgwaFVSalppVkFYb2N4YTRtRF8yWlg1eU5ObkZxeV9MclhnZFE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxOU2I0a3Vldm9aWFp4WTFxOHFSR1lBMVFsYThLV1JqZnF2SWY5anFKZzVPTW9mVWNFUEJQOHRUYjNFOVFsNXBjQ253Y09QdV8tNTVsMGZfejgyb0o0Q09SMUJYQ0hjWm1PbkpHSHRja1VQeFBlZkI5YlhWR1VidVhLQWVob0RKN2ZkSUJ5VThTRTdLcGR0TXR0aXp3?oc=5\" target=\"_blank\"&gt;French bond contagion fears are rattling the euro&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-05T17:05:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQeUIzWUJBT0luWGp4S1hSaGQ1S2xaaU5KbmM5bmFkWXlEUno0WkFWcTZ2Y0FtbFMyc1Q1eTFMQ1Z0T3RtOWxfM2ktTjhZbGhqM1V3VnJEQVNydFBncVNPQm5nZ0dCU3N1MjI4NnVrMWhZRzlvRHZVQW9CUURSN2FmN0QxSGtOUHNsTmgwaFVSalppVkFYb2N4YTRtRF8yWlg1eU5ObkZxeV9MclhnZFE?oc=5\" target=\"_blank\"&gt;Belgian strike prompts flight cancellations at Brussels Airport on Friday&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-06T14:46:03.000Z",
           "score": 8
         },
         {
-          "title": "South Asia growth holds firm, but energy shock, weather pose risks, says World Bank economist - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWEtFY3hhRWFpbUowaVlMbDdVb3MzaXo4bElPcS1JUF9wOXJnaFkybFc5ZVVHRjNOUFR3ZUtDM3Nnem5ocXBxdlhuWVZUQnI4Sjg0ODFMWVQzVVdvanQtWHpMazF1S2x3MkhHbmZaT0ZHQ1hLclVBWjBpUjB3NWJPLWFlOEZUQXNVZkY1VlFTU0ZXSkRIOUwwYXBlZGxuX19QQnNPdWZWNUw0VEppS1dUWnNkYWJpVVJBb0F2ajVn?oc=5",
+          "title": "EU envoys set to approve major new Russia sanctions on Wednesday - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOTDJ4ZF9TakJ4NF9aZUlEV2ZEanBXX2xoRzRhOUU1TldVUy1pdWYyM2ZQVndneV9GSlJSMTRaaFhPdk5pZm1tY3FfWlJPOHFOVE1EbkZIR2l5dW5mYlZnWlVDZmVFaXRCTmk1cG1vc2hybmVNdnhzdk9rX0xzS3VvVi1hLTFCanpEQXREd21Ib1R3MHRRUWJ5QVBmZUZZYW5IY1E?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPWEtFY3hhRWFpbUowaVlMbDdVb3MzaXo4bElPcS1JUF9wOXJnaFkybFc5ZVVHRjNOUFR3ZUtDM3Nnem5ocXBxdlhuWVZUQnI4Sjg0ODFMWVQzVVdvanQtWHpMazF1S2x3MkhHbmZaT0ZHQ1hLclVBWjBpUjB3NWJPLWFlOEZUQXNVZkY1VlFTU0ZXSkRIOUwwYXBlZGxuX19QQnNPdWZWNUw0VEppS1dUWnNkYWJpVVJBb0F2ajVn?oc=5\" target=\"_blank\"&gt;South Asia growth holds firm, but energy shock, weather pose risks, says World Bank economist&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
-          "published": "2026-10-06T06:03:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOTDJ4ZF9TakJ4NF9aZUlEV2ZEanBXX2xoRzRhOUU1TldVUy1pdWYyM2ZQVndneV9GSlJSMTRaaFhPdk5pZm1tY3FfWlJPOHFOVE1EbkZIR2l5dW5mYlZnWlVDZmVFaXRCTmk1cG1vc2hybmVNdnhzdk9rX0xzS3VvVi1hLTFCanpEQXREd21Ib1R3MHRRUWJ5QVBmZUZZYW5IY1E?oc=5\" target=\"_blank\"&gt;EU envoys set to approve major new Russia sanctions on Wednesday&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-06T16:39:20.000Z",
+          "score": 8
+        },
+        {
+          "title": "Philippine security council looking into China-linked remittances to Duterte family firm - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQd09aWlJ6UXRQck85VUkyaGJXcWpDQ0tsamhjODVtWU5oT05sVkxlRkVpdTB5dkpDcF8tTHBsSFVuamxrODI4TVNLRUFmWGNmR1hXVmtOZUFWSk85Mno1ZW1VdmJ3Rk50dEx6Y0tfWmttbEFSQ0Jvb3BwTmEyZng0NExaNXVQUDJwamQ1TXdIS2dseGFhcFdYVmd2SG9waWl2dXYzbnl3b2dYaTZNYmRHVWpJR3k1Yk84aHpUbTlrRTFhQ21aY0dV?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQd09aWlJ6UXRQck85VUkyaGJXcWpDQ0tsamhjODVtWU5oT05sVkxlRkVpdTB5dkpDcF8tTHBsSFVuamxrODI4TVNLRUFmWGNmR1hXVmtOZUFWSk85Mno1ZW1VdmJ3Rk50dEx6Y0tfWmttbEFSQ0Jvb3BwTmEyZng0NExaNXVQUDJwamQ1TXdIS2dseGFhcFdYVmd2SG9waWl2dXYzbnl3b2dYaTZNYmRHVWpJR3k1Yk84aHpUbTlrRTFhQ21aY0dV?oc=5\" target=\"_blank\"&gt;Philippine security council looking into China-linked remittances to Duterte family firm&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+          "published": "2026-10-06T09:19:14.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 399,
-    "articlesLast24h": 162,
-    "afterDedup": 155,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 160,
+    "afterDedup": 154,
     "feedsQueried": 19
   }
 }
