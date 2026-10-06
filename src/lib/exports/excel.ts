@@ -28,10 +28,22 @@ export interface LinkCell {
   hyperlink: string;
 }
 
-export type CellValue = string | number | LinkCell | null | undefined;
+/** A cell with a solid background fill (ARGB/RGB hex, e.g. '004B7F'). */
+export interface FillCell {
+  text: string;
+  fill: string;
+  /** Optional font colour (hex); defaults to the normal body text colour. */
+  color?: string;
+}
+
+export type CellValue = string | number | LinkCell | FillCell | null | undefined;
 
 function isLinkCell(v: CellValue): v is LinkCell {
   return typeof v === 'object' && v != null && 'hyperlink' in v;
+}
+
+function isFillCell(v: CellValue): v is FillCell {
+  return typeof v === 'object' && v != null && 'fill' in v;
 }
 
 export interface SheetSpec {
@@ -116,13 +128,21 @@ export async function downloadTableWorkbook(
         if (isLinkCell(v)) {
           cell.value = { text: v.text, hyperlink: v.hyperlink };
           cell.font = { size: 10, color: { argb: '0563C1' }, underline: true };
+        } else if (isFillCell(v)) {
+          cell.value = v.text;
+          cell.font = { size: 10, ...(v.color ? { color: { argb: v.color } } : {}) };
+          cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: v.fill } };
         } else {
           cell.value = v == null ? '' : v;
           cell.font = { size: 10 };
+          if (typeof v === 'string' && v.includes('\n')) {
+            cell.alignment = { wrapText: true, vertical: 'top' };
+          }
         }
       });
       if (ri % 2 === 0) {
         for (let c = 1; c <= lastCol; c++) {
+          if (isFillCell(r[c - 1])) continue; // keep explicit fills
           row.getCell(c).fill = {
             type: 'pattern',
             pattern: 'solid',
@@ -137,7 +157,11 @@ export async function downloadTableWorkbook(
       let maxLen = h.length;
       for (const r of spec.rows.slice(0, 200)) {
         const v = r[ci];
-        if (v != null) maxLen = Math.max(maxLen, (isLinkCell(v) ? v.text : String(v)).length);
+        if (v != null) {
+          const t = isLinkCell(v) || isFillCell(v) ? v.text : String(v);
+          // Multi-line cells size to their longest line.
+          maxLen = Math.max(maxLen, ...t.split('\n').map(l => l.length));
+        }
       }
       ws.getColumn(ci + 1).width = Math.min(Math.max(maxLen + 2, 10), 60);
     });

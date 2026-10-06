@@ -1,7 +1,7 @@
 /**
  * Recommendations tracker — "by report" view (sub-page of M·08).
  * A read-only companion to the editable tracker: one table per report, newest
- * first. Reads the same `pw_recommendations` rows as the tracker, so
+ * first, at headline level, plus a role matrix across all reports. Reads the same `pw_recommendations` rows as the tracker, so
  * recommendations added or removed there appear here. Focus, sector and role
  * labels are AI-compiled — pending Secretariat verification.
  */
@@ -61,7 +61,7 @@ export default async function RecommendationsByReportPage() {
       <header>
         <h1 className="text-xl font-bold text-tertiary-dark">Recommendations by report</h1>
         <p className="mt-1 max-w-3xl text-sm text-tertiary">
-          Every tracked recommendation, listed under the ESABCC report it comes from, newest report first.
+          Every tracked headline recommendation, listed under the ESABCC report it comes from, newest report first.
         </p>
       </header>
 
@@ -70,10 +70,14 @@ export default async function RecommendationsByReportPage() {
           ⚠ AI-compiled — pending Secretariat verification
         </p>
         <p className="mt-1.5 max-w-4xl text-[12.5px] leading-relaxed text-tertiary-dark">
-          The mitigation/adaptation, sector and EU policy role columns are assigned by fixed keyword rules
-          (<code>src/lib/recommendations/classify.ts</code>) and only where the title or the report&apos;s own scope makes
-          the label clear. A blank cell means no clear evidence was found, not that the recommendation is
-          not relevant. The full-text column shows the stored tracker summary, not a verbatim quotation of the report.
+          Recommendations are shown at headline level. Where the tracker stores a report&apos;s detailed
+          recommendations, they are grouped under the report&apos;s headline recommendation and listed as
+          sub-recommendations (<code>src/lib/recommendations/headlines.ts</code>); the January 2024 chapter
+          recommendations sit under one &ldquo;Detailed recommendations for …&rdquo; row per chapter. The
+          mitigation/adaptation, sector and EU policy role labels are assigned by fixed keyword rules
+          (<code>src/lib/recommendations/classify.ts</code>), only where the title or the report&apos;s own scope makes
+          the label clear; a headline carries the labels of its own title and of all its sub-recommendations. A blank
+          cell means no clear evidence was found, not that the recommendation is not relevant.
         </p>
       </section>
 

@@ -143,26 +143,44 @@ Defined in
 seed rows carry `is_seed = true` so they can be told apart from user-added
 recommendations. See [Data & GDPR](../infrastructure/data-gdpr.md).
 
-## By-report table view
+## By-report and role-matrix views
 
 [`/recommendations/by-report`](../../src/app/recommendations/by-report/page.tsx)
-is a read-only companion to the tracker. It lists the same recommendations under
-a header for each ESABCC report (newest report first), with one table per report
-and five columns: recommendation title, full text, mitigation / adaptation /
-both, sector, and EU policy role (the nine roles in Box 1 of the assessment
-framework). Every column except the title can be hidden; the choice is kept in
-the URL (`?hide=text,role`). The Download button exports the visible columns.
+is a read-only companion to the tracker with two modes (`?view=`):
+
+- **Read by report** (default): one table per ESABCC report, newest first, with
+  five columns: recommendation title, sub-recommendations (numbered), mitigation
+  / adaptation / both, sector, and EU policy role (the nine roles in Box 1 of the
+  assessment framework). Every column except the title can be hidden; the
+  choice is kept in the URL (`?hide=subs,role`).
+- **Compare roles** (`?view=matrix`): one table across all reports with the
+  report, the recommendation title, a colour-coded mitigation / adaptation
+  column and one column per EU policy role, filled blue where the role applies.
+
+Both modes show recommendations at **headline level**.
+[`src/lib/recommendations/headlines.ts`](../../src/lib/recommendations/headlines.ts)
+maps each stored row to its report's headline recommendation: reports the
+tracker stores as detailed sub-recommendations (TEN-E scenario guidelines 2022,
+the energy-infrastructure CBA advice 2023, the January 2023 initial advice on
+climate targets, the TEN-E draft-scenarios advice 2024 and the February 2026
+adaptation report) are regrouped under their headlines, whose titles are quoted
+from the report with a PDF page locator. In the January 2024 report the 13 key
+recommendations stay as headlines and the chapter recommendations are grouped
+under one "Detailed recommendations for …" row per chapter. Rows the mapping
+does not name, such as recommendations added in the tracker, appear as their
+own rows. The mapping is presentation only; tracker rows are unchanged.
 
 - The focus, sector and role labels are **AI-compiled — pending Secretariat
   verification**. They come from fixed word-boundary vocabularies with veto
   phrases in
   [`src/lib/recommendations/classify.ts`](../../src/lib/recommendations/classify.ts)
-  and are computed at render time, so recommendations added in the tracker are
-  classified too. Sectors and roles read only the title (plus the January 2024
-  chapter code and a few whole-report rules, such as the TEN-E advice being
-  energy supply); a blank cell means no clear evidence, not "not relevant".
-- The full-text column shows the stored tracker summary up to its "Map:"
-  instrument list. It is a compiled summary, not a verbatim quotation.
+  and are computed at render time. A grouped headline carries the union of the
+  labels for its own title and for each sub-recommendation, so it can lose
+  detail on which sub-recommendation a label comes from. A blank cell means no
+  clear evidence, not "not relevant".
+- Downloads export what the current mode shows: Excel and CSV as one sheet with
+  a Report column (role cells filled blue in the matrix workbook), Word as one
+  table per report or one matrix table.
 - If the database returns no rows the page says so and shows the built-in seed
   set, so an unconfigured database is distinguishable from an empty tracker.
 
