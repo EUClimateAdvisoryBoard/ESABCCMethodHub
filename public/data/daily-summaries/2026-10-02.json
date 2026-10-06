@@ -1,0 +1,221 @@
+{
+  "date": "2026-10-02",
+  "generatedAt": "2026-10-02T21:15:18.629Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Friday, 2 October 2026 — Key developments from the last 24 hours",
+  "highlights": [
+    {
+      "headline": "G7 Leaders' Statement on global energy security and market stability",
+      "summary": "European Commission Statement Brussels, 02 Oct 2026 Today, we, the Leaders of the G7, convened a virtual meeting to address the deepening challenges to our energy security. Facing unprecedented volatility in oil ...",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
+    {
+      "headline": "As COP31 co-host, Australia should make its polluters pay for climate damage",
+      "summary": "With UN climate funds running short on cash, now is the time to start taxing the companies whose emissions are driving harm in the Pacific and other vulnerable parts of the world The post As COP31 co-host, Australia should make its polluters pay for climate damage appeared first on Climate Home News.",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
+    },
+    {
+      "headline": "Wall Street regulator proposes rules on investment adviser crypto asset custody - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQcFpoVVFIbWRuYW1BRXZCWGY4LXQ5N2xTZGRjOFNNbHhOTXBmRG5IR3JJVFhLUjBocGU4MnRJVlJPQWR2NWhhbDNNbm1tS1dRMHpfdU9pYjB6SWt2SnN4a180X2w0YTVjdUxGMUd0SklGbXMwUjhMY3pZVjhHaVY0UFNod1ZIdlhhZUE4cWlpLXhrbjFYbk11YjZSeXp5QnN2UGlld0VMYW9ydkxiakwtdWpEMFFCZi1Hbmc?oc=5\" target=\"_blank\"&gt;Wall Street regulator proposes rules on investment adviser crypto asset custody&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
+    }
+  ],
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": [
+        {
+          "title": "G7 Leaders' Statement on global energy security and market stability",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2057",
+          "source": "European Commission",
+          "description": "European Commission Statement Brussels, 02 Oct 2026 Today, we, the Leaders of the G7, convened a virtual meeting to address the deepening challenges to our energy security. Facing unprecedented volatility in oil ...",
+          "published": "2026-10-02T14:23:24.000Z",
+          "score": 19
+        },
+        {
+          "title": "Big banks behind &#8220;net zero&#8221; alliance continued lending to coal firms",
+          "link": "https://www.climatechangenews.com/2026/10/02/major-banks-behind-net-zero-alliance-continued-lending-to-coal-firms/",
+          "source": "Climate Home News",
+          "description": "New data shows coal finance has stayed steady at the global level since 2022, as international efforts to cut the ties between lending and emissions faded The post Big banks behind &#8220;net zero&#8221; alliance continued lending to coal firms appeared first on Climate Home News.",
+          "published": "2026-10-02T15:20:10.000Z",
+          "score": 13
+        },
+        {
+          "title": "US senators expect vote after midterms on Trump's nuclear power pact with Saudi Arabia - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNSzRTNFR3cXdZcnJ1NTZWcTl0RXZRZFpRS09tQW5lQ0lDZDdoSGdtcXdGRGJyaV9QR1VnZnJJNFlRZzU5R25MTUl5Z1IzRU5abFZHQlRlWGREQ1YtMDNrR0F6NzNiQUlXUVVpMHRkWDI0TkNZTld2WmVfY0ptQjF0cGJzclBFV3hTMVhqQTRMRmNuZTJfOEg1Y0kxSEVPb2xacXM2dHZnQmhLdkUyT29ETGlFeTBqSDBTdUtxdlktU19UTW9pcUpvMGRhazZGdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxNSzRTNFR3cXdZcnJ1NTZWcTl0RXZRZFpRS09tQW5lQ0lDZDdoSGdtcXdGRGJyaV9QR1VnZnJJNFlRZzU5R25MTUl5Z1IzRU5abFZHQlRlWGREQ1YtMDNrR0F6NzNiQUlXUVVpMHRkWDI0TkNZTld2WmVfY0ptQjF0cGJzclBFV3hTMVhqQTRMRmNuZTJfOEg1Y0kxSEVPb2xacXM2dHZnQmhLdkUyT29ETGlFeTBqSDBTdUtxdlktU19UTW9pcUpvMGRhazZGdw?oc=5\" target=\"_blank\"&gt;US senators expect vote after midterms on Trump's nuclear power pact with Saudi Arabia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt",
+          "published": "2026-10-02T20:11:30.000Z",
+          "score": 11
+        },
+        {
+          "title": "Can there be solar for all, everywhere by 2030?",
+          "link": "https://www.dw.com/en/can-there-be-solar-for-all-everywhere-by-2030/a-79517056?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Prominent climate leaders have called on governments, businesses, institutions and the public to make a push for solar power before the decade is out, repowering the world with cheap, clean energy. Is that possible?",
+          "published": "2026-10-02T13:48:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Saudis plan assault on Houthis to break Red Sea chokehold - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPUVJialJyWHg0VzlHXzBiaTU3elZhbWEtQzd0TjhNOGNsWFFZNTYyMGFqODJGcVc3aVBaYVY3QkRzWWpEZDlQNEpJeVp6ZjMxYkZKYi1nZ0FUenFUSFRFRTNCb3NaTmdCaTJ1WWV1RmlqcmhSZGtsZWZobE5jSHp3RkJiVXpueWdVOHJmbDhzUEEzVXB6OF9jYkJHcnpfQklTNDVHZ20yS1J6QQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPUVJialJyWHg0VzlHXzBiaTU3elZhbWEtQzd0TjhNOGNsWFFZNTYyMGFqODJGcVc3aVBaYVY3QkRzWWpEZDlQNEpJeVp6ZjMxYkZKYi1nZ0FUenFUSFRFRTNCb3NaTmdCaTJ1WWV1RmlqcmhSZGtsZWZobE5jSHp3RkJiVXpueWdVOHJmbDhzUEEzVXB6OF9jYkJHcnpfQklTNDVHZ20yS1J6QQ?oc=5\" target=\"_blank\"&gt;Saudis plan assault on Houthis to break Red Sea chokehold&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-02T18:13:41.000Z",
+          "score": 7
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "As COP31 co-host, Australia should make its polluters pay for climate damage",
+          "link": "https://www.climatechangenews.com/2026/10/02/as-cop31-co-host-australia-should-make-its-polluters-pay-for-climate-damage/",
+          "source": "Climate Home News",
+          "description": "With UN climate funds running short on cash, now is the time to start taxing the companies whose emissions are driving harm in the Pacific and other vulnerable parts of the world The post As COP31 co-host, Australia should make its polluters pay for climate damage appeared first on Climate Home News.",
+          "published": "2026-10-02T06:44:49.000Z",
+          "score": 13
+        },
+        {
+          "title": "Half of Europe witnessed record heat stress this summer — EU",
+          "link": "https://www.dw.com/en/half-of-europe-witnessed-record-heat-stress-this-summer-eu/a-79514799?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The EU&#039;s climate monitor said this summer was third-warmest for the continent on record. European rivers also registered their lowest average flows since records began in 1992.",
+          "published": "2026-10-02T11:53:00.000Z",
+          "score": 10
+        },
+        {
+          "title": "May heatwaves, deaths, ruined harvests: study of Europe’s summer paints grim picture for the future",
+          "link": "https://www.theguardian.com/environment/2026/oct/02/may-heatwaves-deaths-ruined-harvests-study-of-europes-summer-paints-grim-picture-for-the-future",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;EU Copernicus report shows surface air temperatures from June to August were 2.5C above decadal average&lt;/p&gt;&lt;p&gt;The scorching heat that persistently &lt;a href=\"https://www.theguardian.com/environment/2026/aug/25/at-least-35000-excess-deaths-europe-back-to-back-heatwaves\"&gt;baked western Europe this summer&lt;/a&gt; was the worst on record, a report has found, with more than half the continent seared by “very strong” heat stress that felt hotter than 38C.&lt;/p&gt;&lt;p&gt;Su",
+          "published": "2026-10-02T02:00:07.000Z",
+          "score": 8
+        },
+        {
+          "title": "Pacific Islands get their climate moment with pre-COP meeting, but the guest list is thin - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOaFU3VE4tWktZV1p6MkcyTzdoMjZreEhDUTdYTGV2VWhxUTZDVnVtQlBLcGtZUjA1Nm14QjVxc2FYOVkwWEpZRjJEN3kxcDRINnoyU0pyeE5hOHdVdVRBTFZIc0hYSTVPVnN2RUw5elpRMTJwMlhsSjlpTmhDRGt0RjZMTHZEVnU4dTJLV1h5N2p6bEJmeEx5U19oRVZpc0dQX0xGUEVndlJxVkRVQXc3em04VjQtMU9QZWgwTTN5bmx5bEtnNlhHeER4anozaGto?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxOaFU3VE4tWktZV1p6MkcyTzdoMjZreEhDUTdYTGV2VWhxUTZDVnVtQlBLcGtZUjA1Nm14QjVxc2FYOVkwWEpZRjJEN3kxcDRINnoyU0pyeE5hOHdVdVRBTFZIc0hYSTVPVnN2RUw5elpRMTJwMlhsSjlpTmhDRGt0RjZMTHZEVnU4dTJLV1h5N2p6bEJmeEx5U19oRVZpc0dQX0xGUEVndlJxVkRVQXc3em04VjQtMU9QZWgwTTN5bmx5bEtnNlhHeER4anozaGto?oc=5\" target=\"_blank\"&gt;Pacific Islands get their climate moment with pre-COP meeting, but the guest list is thin&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6",
+          "published": "2026-10-02T04:34:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Thai Airways chief says he was fired by board after Bangkok flood chaos - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQNkhhZnd4enhJNk9ER1hBSmllaW51bXBIaGJCYVItNUd4OFBOZ3ZweTI1cTRxY3FXYmVXU2Y2Wm02anIyYVA4amkzZjJBa0wyU2dGYmlyemFiaUxPeE5GRkRFa0h3a0x3dTNtUGxOLXcwdGJXMzRVUUZyM3JRM055aEZ3c0sxamhXUzdvYzhpMXFrakx5akE0LW1iSVMtMldXVHBSTjF3cTMtUk13cU9XeHBRYUJhLUlEZXRsakxIMDZpMFFBMGNmUUNn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxQNkhhZnd4enhJNk9ER1hBSmllaW51bXBIaGJCYVItNUd4OFBOZ3ZweTI1cTRxY3FXYmVXU2Y2Wm02anIyYVA4amkzZjJBa0wyU2dGYmlyemFiaUxPeE5GRkRFa0h3a0x3dTNtUGxOLXcwdGJXMzRVUUZyM3JRM055aEZ3c0sxamhXUzdvYzhpMXFrakx5akE0LW1iSVMtMldXVHBSTjF3cTMtUk13cU9XeHBRYUJhLUlEZXRsakxIMDZpMFFBMGNmUUNn?oc=5\" target=\"_blank\"&gt;Thai Airways chief says he was fired by board after Bangkok flood chaos&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-02T10:58:29.000Z",
+          "score": 7
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": [
+        {
+          "title": "Wall Street regulator proposes rules on investment adviser crypto asset custody - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcFpoVVFIbWRuYW1BRXZCWGY4LXQ5N2xTZGRjOFNNbHhOTXBmRG5IR3JJVFhLUjBocGU4MnRJVlJPQWR2NWhhbDNNbm1tS1dRMHpfdU9pYjB6SWt2SnN4a180X2w0YTVjdUxGMUd0SklGbXMwUjhMY3pZVjhHaVY0UFNod1ZIdlhhZUE4cWlpLXhrbjFYbk11YjZSeXp5QnN2UGlld0VMYW9ydkxiakwtdWpEMFFCZi1Hbmc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQcFpoVVFIbWRuYW1BRXZCWGY4LXQ5N2xTZGRjOFNNbHhOTXBmRG5IR3JJVFhLUjBocGU4MnRJVlJPQWR2NWhhbDNNbm1tS1dRMHpfdU9pYjB6SWt2SnN4a180X2w0YTVjdUxGMUd0SklGbXMwUjhMY3pZVjhHaVY0UFNod1ZIdlhhZUE4cWlpLXhrbjFYbk11YjZSeXp5QnN2UGlld0VMYW9ydkxiakwtdWpEMFFCZi1Hbmc?oc=5\" target=\"_blank\"&gt;Wall Street regulator proposes rules on investment adviser crypto asset custody&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-01T21:19:45.000Z",
+          "score": 2
+        },
+        {
+          "title": "Explainer: How Turkey's investment fund bubble burst - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZ0l1bkJFbVQwY0lWdXRvbmM1aUxFQUZVLWQwd1RPM1JINHhNLTZqLWY0cEFMb3RKVnFFbmQ2ZERnX0tuam9KdG90aW5RaGtsV0ZXOUd1WkdVNjUteXVTSHYxUTkwSWdZdnI3RXRmTEVMWEpyTXB0NF9GSnQ5UTNOU1V4ZWtLaUdTVFJQT1F5NG84cWdRVFZveXh3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNZ0l1bkJFbVQwY0lWdXRvbmM1aUxFQUZVLWQwd1RPM1JINHhNLTZqLWY0cEFMb3RKVnFFbmQ2ZERnX0tuam9KdG90aW5RaGtsV0ZXOUd1WkdVNjUteXVTSHYxUTkwSWdZdnI3RXRmTEVMWEpyTXB0NF9GSnQ5UTNOU1V4ZWtLaUdTVFJQT1F5NG84cWdRVFZveXh3?oc=5\" target=\"_blank\"&gt;Explainer: How Turkey's investment fund bubble burst&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-02T14:58:56.000Z",
+          "score": 2
+        },
+        {
+          "title": "Argentina announces citizenship-by-investment program - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQb243dkFXUFRfeDBROHdUbVdxNTJranlUNUdoRkhwNlI5WWFPSG11dzlvWm55cnl5TW5Gay10bVptbUhSWWxQcThfMTBkMWtFdGliUTlZTkpQN2RKSDFNeVdrblc0cjdOWmFOOEZxYkpYd2g5Qy1DQ2owU1lCME1scS1ldWUyekhLdEFTQU9pTmozamE3YVJTTFdZM1NLUGpTNzFGVGUzYw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQb243dkFXUFRfeDBROHdUbVdxNTJranlUNUdoRkhwNlI5WWFPSG11dzlvWm55cnl5TW5Gay10bVptbUhSWWxQcThfMTBkMWtFdGliUTlZTkpQN2RKSDFNeVdrblc0cjdOWmFOOEZxYkpYd2g5Qy1DQ2owU1lCME1scS1ldWUyekhLdEFTQU9pTmozamE3YVJTTFdZM1NLUGpTNzFGVGUzYw?oc=5\" target=\"_blank\"&gt;Argentina announces citizenship-by-investment program&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-02T15:13:19.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": [
+        {
+          "title": "EU ministers mull new ways to curb irregular migration",
+          "link": "https://www.dw.com/en/eu-ministers-mull-new-ways-to-curb-irregular-migration/a-79509375?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The proposals include setting up so-called return hubs outside the EU and strengthening the border agency Frontex. Greece has even proposed temporarily suspending asylum applications in emergency situations.",
+          "published": "2026-10-02T00:54:00.000Z",
+          "score": 8
+        }
+      ]
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": [
+        {
+          "title": "Spain and China are cosying up - to the anger of many in the EU",
+          "link": "https://www.bbc.co.uk/news/articles/c6vgyg824m02o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Amid global tumult, the two countries' alliance is not the only unlikely pairing.",
+          "published": "2026-10-01T23:42:33.000Z",
+          "score": 8
+        },
+        {
+          "title": "Spain&#039;s parliament rejects housing bill as protests continue",
+          "link": "https://www.dw.com/en/spain-s-parliament-rejects-housing-bill-as-protests-continue/a-79522683?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Spain&#039;s minority government suffered defeat in parliament as it tried to push through a pair of emergency measures aimed at making housing more affordable. A pensioner&#039;s eviction and protests led to the bid.",
+          "published": "2026-10-02T16:39:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Europe to release diesel reserves after Trump request",
+          "link": "https://www.dw.com/en/europe-to-release-diesel-reserves-after-trump-request/a-79522810?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The US leader asked European countries to release some of their diesel reserves to ease the rising prices. The issue has damaged Trump&#039;s popularity back home.",
+          "published": "2026-10-02T15:02:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Dollar set for fourth weekly gain versus euro - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOcDJ0MVcydW5OMDJ6dmo1YlhfXzBFN3d2Z3RsV0x2TGdJanNiX2xmejRaRnRybkdNOXNqTkw0RlhrRkxmbXAzUS1wc3JfVENRRHViZHVYbnp3TU5OVFFVQU5NY1lBaU1aVHlfMXVlZTBsWmRuNDFpZVN0SGN3cXdwWDdCYVBuVXNnT2FzNEdKMC1JX2dORE5QQURlRGZ1T01tSkpQTA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOcDJ0MVcydW5OMDJ6dmo1YlhfXzBFN3d2Z3RsV0x2TGdJanNiX2xmejRaRnRybkdNOXNqTkw0RlhrRkxmbXAzUS1wc3JfVENRRHViZHVYbnp3TU5OVFFVQU5NY1lBaU1aVHlfMXVlZTBsWmRuNDFpZVN0SGN3cXdwWDdCYVBuVXNnT2FzNEdKMC1JX2dORE5QQURlRGZ1T01tSkpQTA?oc=5\" target=\"_blank\"&gt;Dollar set for fourth weekly gain versus euro&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-02T01:46:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "JD.com set to win EU approval for Ceconomy deal, source says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQaDdiVzduWlpSTUNVR2VORGp4b093TWNzYjB3Y2I3eW9vR1g3WmZrdmFNNlppQ0F3YkI5X2FrSWYzVjRNR1U1em9tVGUzeUpwNkNJU3dpVmt5eDVKOGtCZTNUcFdFcDQ5VTV3Y0ZHOG5QeVFXa1ZhcS16UUpjTVQ3Nkt5NHd0alRrZEZYOFNJU1N2TnZ3alBoUDdCNlprMUp4Z2VyTFczS01CRGwzeXgwR2Jn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQaDdiVzduWlpSTUNVR2VORGp4b093TWNzYjB3Y2I3eW9vR1g3WmZrdmFNNlppQ0F3YkI5X2FrSWYzVjRNR1U1em9tVGUzeUpwNkNJU3dpVmt5eDVKOGtCZTNUcFdFcDQ5VTV3Y0ZHOG5QeVFXa1ZhcS16UUpjTVQ3Nkt5NHd0alRrZEZYOFNJU1N2TnZ3alBoUDdCNlprMUp4Z2VyTFczS01CRGwzeXgwR2Jn?oc=5\" target=\"_blank\"&gt;JD.com set to win EU approval for Ceconomy deal, source says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-02T14:56:56.000Z",
+          "score": 8
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 408,
+    "articlesLast24h": 159,
+    "afterDedup": 153,
+    "feedsQueried": 19
+  }
+}

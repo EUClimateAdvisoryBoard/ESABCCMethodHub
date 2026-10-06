@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T10:48:58.454Z",
+  "generatedAt": "2026-10-06T11:24:08.124Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,58 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/aeb03a",
+      "title": "Lithium Constraints on India’s Transport Electrification: System-Level Impacts and Policy Implications for the Net-Zero Transition",
+      "journal": "Environmental Research Letters",
+      "authors": "Anu Agarwal, Amit Kanudia, Tarun Sharma",
+      "published": "2026-10-05",
+      "url": "https://doi.org/10.1088/1748-9326/aeb03a",
+      "abstract": "Energy transition pathways have largely treated critical minerals as unconstrained for the deployment of low-carbon energy technologies. This paper challenges this assumption for India, the third-largest energy consumer globally and a major importer of battery-grade minerals, by incorporating lithium supply limitations within an integrated energy-system framework and quantifying the consequences on technology choices, electrification, and transition costs. This study assesses the feasibility of decarbonization pathways using the long-term energy-system models from a critical minerals availability constraints perspective. Using the KINESYS-TIMES model, seventeen scenarios combine three lithium-intensity sensitivities (kg of lithium per kWh of installed battery capacity) with four availability cases (30%, 60% and 90% of unconstrained net-zero requirements, and unconstrained), two dynamic recycling variants, and three runs under an Accelerated Policies scenario of intermediate ambition. The availability is enforced within the optimization; hence the substitutability comes from cost minimization, not from post hoc accounting, and the marginal value of the constraint becomes apparent. Lithium retained in the operational fleet grows twentyfold between 2030 and 2070 from 36.8 to 728.4 kt/yr with post-2040 being the risk period. Under severe constraint, within the fixed lithium-ion technology set modelled, the system reconfigures rather than fails; electrification is throttled back, ",
+      "suggestedOn": "2026-10-06",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 8,
+          "matched": [
+            "net-zero",
+            "decarbonization",
+            "energy transition"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1088/1748-9326/aeadb5",
+      "title": "Beyond 2030: what sectoral shifts in EU and China reveal about Long Term climate commitments",
+      "journal": "Environmental Research Letters",
+      "authors": "Eleftheria Zisarou, Panagiotis Fragkos, Dirk-Jan van de Ven, Songmin Yu",
+      "published": "2026-09-29",
+      "url": "https://doi.org/10.1088/1748-9326/aeadb5",
+      "abstract": "The European Union (EU) and China, as two of the largest economies and emitters, play a pivotal role in the global energy transition. While both economies have committed to ambitious decarbonization pledges in the form of Nationally Determined Contributions (NDCs) and Long-Term Targets (LTTs) under the Paris Agreement, the feasibility of their mid-century climate goals remains uncertain. This work employs two leading Integrated Assessment Models (IAMs)—PROMETHEUS and GCAM—to compare the sectoral emissions reductions, final-energy mix, electrification rates and technology mixes associated with NDC–LTT-consistent pathways in the two regions. The study uses a scenario based on the combination of NDCs and LTTs to identify post-2030 sectoral shifts across major economic and emitting sectors. The findings show that China relies on concentrated post-2030 power and industrial decarbonisation, while the EU pathway depends more on sustained fossilfuel exit in end-use sectors. These contrasts point to different implementation risks: China needs early preparation for a compressed post-2030 power–industry transition, whereas the EU needs stronger delivery in residual fossil-fuel use across buildings, transport and industrial heat. By distinguishing robust requirements from model dependent uncertainties, the analysis identifies where future NDCs should move from aggregate pledges to sector-specific roadmaps backed by policy instruments, investment strategies and implementation capacity",
+      "suggestedOn": "2026-09-30",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6,
+          "matched": [
+            "decarbonisation",
+            "decarbonization",
+            "european union",
+            "paris agreement",
+            "energy transition"
+          ]
+        },
+        {
+          "projectId": "industry-project",
+          "score": 4,
+          "matched": [
+            "industrial decarbonisation",
+            "industrial heat"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aead03",
       "title": "Beyond efficiency: Disentangling structural and behavioral sufficiency in U.S. residential decarbonization pathways",
@@ -340,27 +392,6 @@
           "score": 4,
           "matched": [
             "emissions gap"
-          ]
-        }
-      ]
-    },
-    {
-      "doi": "10.1088/1748-9326/ae9563",
-      "title": "Equity-centered dietary transitions: food-related GHG emissions and climate target alignment",
-      "journal": "Environmental Research Letters",
-      "authors": "Yaling Li, Fujin Yi, Xiaoxi Wang",
-      "published": "2026-08-05",
-      "url": "https://doi.org/10.1088/1748-9326/ae9563",
-      "abstract": "Global dietary transitions confront the dual challenge of reconciling nutrition equity with environmental sustainability. This study evaluates three equity-centered dietary transitions scenarios grounded in country-specific dietary recommendations across 181 countries: CP (current patterns), LP (low-emission substitutions, e.g., poultry replacing ruminants), and HP (high-emission alternatives), to quantify emission dynamics and assess alignment with Paris Agreement temperature targets. Business-as-usual trends (BAU) result in cumulative food-related emissions of 1768 Gt CO₂e between 2020 and 2100. While CP reduces this to 1411 Gt CO₂e, achieving only marginal alignment with the 2 °C limit, LP achieves a 37% reduction to 1113 GtCO₂e, ensuring robust compatibility with the 2 °C target. In contrast, HP emissions surpass even BAU levels. Central to the LP pathway, we propose an equity-centered allocation framework that differentiates mitigation obligations and emission allowances based on deviations from national dietary guidelines. Countries with excessive intakes, particularly of animal-source foods, are thus assigned stringent obligations (e.g., USA: 58.85 Gt CO₂e; China: 131.10 Gt CO₂e). Conversely, those with inadequate nutritional intake are allocated safeguarded allowances (e.g., Nigeria: 25.63 Gt CO₂e; Ethiopia: 24.94 Gt CO₂e), scaled to population size to uphold nutritional rights. However, even under this optimized pathway, the residual emission budget for non-food sect",
-      "suggestedOn": "2026-08-06",
-      "projects": [
-        {
-          "projectId": "policy-gap-2-0",
-          "score": 5,
-          "matched": [
-            "climate target",
-            "decarbonization",
-            "paris agreement"
           ]
         }
       ]
