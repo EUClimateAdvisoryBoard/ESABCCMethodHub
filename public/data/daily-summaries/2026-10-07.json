@@ -1,15 +1,9 @@
 {
   "date": "2026-10-07",
-  "generatedAt": "2026-10-07T02:13:32.165Z",
+  "generatedAt": "2026-10-07T11:37:53.906Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 7 October 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Speech by President von der Leyen at the European Parliament plenary debate in preparation of the European Council meeting of 15-16 October 2026",
-      "summary": "European Commission Speech Strasbourg, 06 Oct 2026 Madam President, dear Roberta,\r\nMinister Byrne,\r\nHonourable Members,\r\nLet me start directly with a topic affecting us all – the high energy costs. Families and ind...",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "Pacific leaders rail at climate finance failures after pre-COP trip to Tuvalu",
       "summary": "Island nations seek invest in their own Pacific Resilience Facility, as they struggle with the red-tape of international climate funds The post Pacific leaders rail at climate finance failures after pre-COP trip to Tuvalu appeared first on Climate Home News.",
@@ -17,26 +11,23 @@
       "color": "#E87722"
     },
     {
-      "headline": "Race to host High Seas Treaty HQ heats up as Chile reaffirms bid",
-      "summary": "Chile’s ocean protection record and concerns over a rival Chinese bid keep it in play, despite questions over the Kast government’s environmental policies The post Race to host High Seas Treaty HQ heats up as Chile reaffirms bid appeared first on Climate Home News.",
+      "headline": "IPCC invites experts to review the first draft of the report on climate impacts, adaptation, and vulnerabilities",
+      "summary": "GENEVA, Oct 7 – Registration is open for experts worldwide to review the First Order Draft of the Working Group II contribution to the IPCC Seventh Assessment Report (AR7). The Working Group II contribution to AR7 assesses the vulnerability of socio-economic and natural systems to climate change, its consequences, and adaptation options. The authors have [&#8230;]",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Judge lets US fund seek New York Fed documents tied to Radiant World - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxOSW1iZld0NzdBZEMtQ0tZd04zLWxIOE1HbVFLZlZSRUtfM3NheUVTdjNoYkF1QnlNOGFBNlFqWTR2WGhGUFVhQThJdGZPN2VUTGRrWFFVZjZRM2NsckhRRlk3MkdUdDdJdm93dHVOZVJIMkhoTFY1c1JGcXFrWXpscmlSa2x5R0lNeXZGYUE1aGlVck1DQ2tOVGpDNkFtWmp5Sjd1MjFPTFZLVTdNOUpGaWdTVk5jaVhZTnRSYkNxQ0V6VHlta3U5QS11VQ?oc=5\" target=\"_blank\"&gt;Judge lets US fund seek New York Fed documents tied to Radiant World&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Speech by President von der Leyen at the European Parliament plenary debate in preparation of the European Council meeting of 15-16 October 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2077",
-          "source": "European Commission",
-          "description": "European Commission Speech Strasbourg, 06 Oct 2026 Madam President, dear Roberta,\r\nMinister Byrne,\r\nHonourable Members,\r\nLet me start directly with a topic affecting us all – the high energy costs. Families and ind...",
-          "published": "2026-10-06T05:53:03.000Z",
-          "score": 24
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -48,6 +39,14 @@
           "source": "Climate Home News",
           "description": "Island nations seek invest in their own Pacific Resilience Facility, as they struggle with the red-tape of international climate funds The post Pacific leaders rail at climate finance failures after pre-COP trip to Tuvalu appeared first on Climate Home News.",
           "published": "2026-10-06T16:40:55.000Z",
+          "score": 13
+        },
+        {
+          "title": "Poland’s ‘solidarity’ push for EU energy resilience in face of Russian aggression",
+          "link": "https://www.theguardian.com/world/2026/oct/07/poland-solidarity-eu-energy-resilience-russian-aggression-economy",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;In the second article in a series on the Polish economy, we look at how the country is forging closer ties with its neighbours&lt;/p&gt;&lt;p&gt;Two miles off the coast of Gdańsk, the white steel piles of Poland’s first offshore gas terminal rise from the slate-grey Baltic. Installed at a height eight metres above the waves, the floating cranes and construction vessels here are on the frontline of Europe’s push for energy security.&lt;/p&gt;&lt;p&gt;Since the taps were turned off on Rus",
+          "published": "2026-10-07T04:00:33.000Z",
           "score": 13
         },
         {
@@ -73,14 +72,6 @@
           "description": "&lt;p&gt;Ruling on Mount Pleasant coalmine shows ‘we cannot continue to dig up coal … and pretend the consequences have nothing to do with us’, group says&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p",
           "published": "2026-10-07T01:44:47.000Z",
           "score": 7
-        },
-        {
-          "title": "New Zealand greenhouse gas levels hit record highs threatening catastrophic glacier melts",
-          "link": "https://www.theguardian.com/world/2026/oct/07/new-zealand-greenhouse-gas-record-high-threatening-catastrophic-glacier-melts-climate",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Government report finds the country could be hit with more frequent and intense heatwaves, as well as damaging storms and cyclones&lt;/p&gt;&lt;p&gt;New Zealand could be hit with more frequent and intense heatwaves and catastrophic glacier melts in the near future, as greenhouse gas levels hit record highs, a new report about the nation’s climate has revealed.&lt;/p&gt;&lt;p&gt;Released on Wednesday, the Our Atmosphere and Climate 2026 report shows New Zealand is experiencing mounting c",
-          "published": "2026-10-06T23:11:27.000Z",
-          "score": 7
         }
       ]
     },
@@ -89,51 +80,60 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Race to host High Seas Treaty HQ heats up as Chile reaffirms bid",
-          "link": "https://www.climatechangenews.com/2026/10/06/race-to-host-high-seas-treaty-hq-heats-up-as-chile-reaffirms-bid/",
-          "source": "Climate Home News",
-          "description": "Chile’s ocean protection record and concerns over a rival Chinese bid keep it in play, despite questions over the Kast government’s environmental policies The post Race to host High Seas Treaty HQ heats up as Chile reaffirms bid appeared first on Climate Home News.",
-          "published": "2026-10-06T07:00:00.000Z",
-          "score": 10
+          "title": "IPCC invites experts to review the first draft of the report on climate impacts, adaptation, and vulnerabilities",
+          "link": "https://www.ipcc.ch/2026/10/07/ipcc-invites-experts-to-review-the-first-draft-of-the-report-on-climate-impacts-adaptation-and-vulnerabilities/",
+          "source": "IPCC",
+          "description": "GENEVA, Oct 7 – Registration is open for experts worldwide to review the First Order Draft of the Working Group II contribution to the IPCC Seventh Assessment Report (AR7). The Working Group II contribution to AR7 assesses the vulnerability of socio-economic and natural systems to climate change, its consequences, and adaptation options. The authors have [&#8230;]",
+          "published": "2026-10-07T10:58:40.000Z",
+          "score": 11
         },
         {
-          "title": "Germany news: Far-right AfD gets first house speaker in a German state parliament",
-          "link": "https://www.dw.com/en/germany-news-far-right-afd-gets-first-house-speaker-in-a-german-state-parliament/live-79558497?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Scientists who put faith in technology less likely to take climate action",
+          "link": "https://www.theguardian.com/environment/2026/oct/07/scientists-technology-less-likely-climate-crisis-action",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;‘Techno-optimism’ may lead to reliance on unproven solutions at expense of societal changes needed&lt;/p&gt;&lt;p&gt;Scientists who believe technology will largely solve the problems caused by the &lt;a href=\"https://www.theguardian.com/environment/climate-crisis\"&gt;climate crisis&lt;/a&gt; are less likely to engage in civic action on the issue, according to a study.&lt;/p&gt;&lt;p&gt;The report from the London School of Economics found they are 23% less likelyto sign petitions or take",
+          "published": "2026-10-07T06:00:36.000Z",
+          "score": 7
+        },
+        {
+          "title": "A ‘Godzilla-level’ El Niño is causing extreme weather conditions around the world – put your questions to our environment writers",
+          "link": "https://www.theguardian.com/community/live/2026/oct/07/a-godzilla-level-el-nino-is-causing-extreme-weather-conditions-around-the-world-put-your-questions-to-our-environment-writers",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Guardian journalists Jonathan Watts and Gabrielle Canon will be online from 4pm BST (11am EDT) today to answer your El Niño questions.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://profile.theguardian.com/signin\"&gt;&lt;strong&gt;Sign in or sign up&lt;/strong&gt;&lt;/a&gt; to join the conversation&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This year’s huge El Niño is causing climate chaos around the world. Temperate records have &lt;a href=\"https://www.theguardian.com/environme",
+          "published": "2026-10-07T08:52:06.000Z",
+          "score": 4
+        },
+        {
+          "title": "Naked Trump statue goes on display in Strasbourg",
+          "link": "https://www.dw.com/en/naked-trump-statue-goes-on-display-in-strasbourg/a-79568640?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "For the first time since World War II, a far-right party has a house speaker in a German state parliament. And Germany&#039;s foreign minister has warned that the climate crisis could fuel extremism. DW has more.",
-          "published": "2026-10-06T06:21:00.000Z",
-          "score": 10
+          "description": "Titled &quot;The Orange Plague,&quot; a gold-coated statue presents Donald Trump sitting on a smaller man&#039;s back. The Danish artist blamed Trump for getting in the way of efforts to address climate change.",
+          "published": "2026-10-06T18:18:00.000Z",
+          "score": 4
         },
         {
-          "title": "UK oil refinery broke toxic pollution limits dozens of times, documents reveal",
-          "link": "https://www.bbc.co.uk/news/articles/c64g15v2jqy8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Pollution was spilled into local rivers and protected sites, documents shared with the BBC suggest.",
-          "published": "2026-10-06T06:01:12.000Z",
-          "score": 7
-        },
-        {
-          "title": "Carbon tracking tower put on Scotland's largest saltmarsh",
-          "link": "https://www.bbc.co.uk/news/articles/cky8302y7zejo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "It will track how much carbon is being taken out of the atmosphere by the saltmarsh on the Solway Firth.",
-          "published": "2026-10-06T09:35:01.000Z",
-          "score": 7
-        },
-        {
-          "title": "Pacific leaders watch Tuvalu reclamation effort ahead of UN climate meet - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYmh3UDRwdDJJNVVtSlZ4T1pPM2RuUjVwa18xc25zUUxxMl9mQkF2cFZsOUl2bVljVjJPNzcxQmVMUi04UEhRM2JjN0xFd0NIdUhCYWFWZG1ON1NVcUJiZ2F5b0twRVZmRmtVbVc5LWI4SzdLV0VDUF9uTFJiUGEwUFNBdWptVU1xazhvUTlYU3FaUkkxQTdiWmhwazV0MVNkb1JEQzl5WWhrLWJvMlNNSWtDZDQ3VzhmaTRMczFhZGUtUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYmh3UDRwdDJJNVVtSlZ4T1pPM2RuUjVwa18xc25zUUxxMl9mQkF2cFZsOUl2bVljVjJPNzcxQmVMUi04UEhRM2JjN0xFd0NIdUhCYWFWZG1ON1NVcUJiZ2F5b0twRVZmRmtVbVc5LWI4SzdLV0VDUF9uTFJiUGEwUFNBdWptVU1xazhvUTlYU3FaUkkxQTdiWmhwazV0MVNkb1JEQzl5WWhrLWJvMlNNSWtDZDQ3VzhmaTRMczFhZGUtUQ?oc=5\" target=\"_blank\"&gt;Pacific leaders watch Tuvalu reclamation effort ahead of UN climate meet&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-06T06:20:00.000Z",
-          "score": 7
+          "title": "‘We’ll borrow a stargazing kit next’: first public nature library in US helps visitors explore great outdoors",
+          "link": "https://www.theguardian.com/environment/2026/oct/07/nature-library-colorado-us-wilderness-stargazing-camping-outdoors-aoe",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;As well as books, the new facility offers hundreds of kits to connect people with the natural world, including hammocks and nightvision binoculars. We asked five of the first visitors what they thought of it&lt;/p&gt;&lt;p&gt;Mark Fink knows exactly why he opened the first public nature library in the US. “There are a lot of barriers for people to access nature here. We want people to learn about the birds and the plants in their own back yard and to appreciate that you don’t need a thr",
+          "published": "2026-10-07T11:00:07.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Judge lets US fund seek New York Fed documents tied to Radiant World - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOSW1iZld0NzdBZEMtQ0tZd04zLWxIOE1HbVFLZlZSRUtfM3NheUVTdjNoYkF1QnlNOGFBNlFqWTR2WGhGUFVhQThJdGZPN2VUTGRrWFFVZjZRM2NsckhRRlk3MkdUdDdJdm93dHVOZVJIMkhoTFY1c1JGcXFrWXpscmlSa2x5R0lNeXZGYUE1aGlVck1DQ2tOVGpDNkFtWmp5Sjd1MjFPTFZLVTdNOUpGaWdTVk5jaVhZTnRSYkNxQ0V6VHlta3U5QS11VQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxOSW1iZld0NzdBZEMtQ0tZd04zLWxIOE1HbVFLZlZSRUtfM3NheUVTdjNoYkF1QnlNOGFBNlFqWTR2WGhGUFVhQThJdGZPN2VUTGRrWFFVZjZRM2NsckhRRlk3MkdUdDdJdm93dHVOZVJIMkhoTFY1c1JGcXFrWXpscmlSa2x5R0lNeXZGYUE1aGlVck1DQ2tOVGpDNkFtWmp5Sjd1MjFPTFZLVTdNOUpGaWdTVk5jaVhZTnRSYkNxQ0V6VHlta3U5QS11VQ?oc=5\" target=\"_blank\"&gt;Judge lets US fund seek New York Fed documents tied to Radiant World&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-06T23:27:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -154,19 +154,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "AfD candidate elected speaker of German regional parliament for first time",
-          "link": "https://www.bbc.co.uk/news/articles/c54g1m2g1pg3o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Although Tobias Rausch's role is largely symbolic, opponents have described the result as a watershed moment.",
-          "published": "2026-10-06T14:44:03.000Z",
-          "score": 8
+          "title": "European shares, euro fall as energy shock, fiscal worries bite - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZW5YUkkzdjhfTWJXY25aWkVLeExISGkybXo1YmFoS256Qk5DclZaVVc4ODRnejkzYlBYOTBVWWp5YTVHRDVyMmtBUDVZWHlFclVhYUtIU2d0Tm1GWmRzMnhQNlg4aVVfWEZjb21nQ0tTUzc0WjQ5bEhmWVJuNzFwX25Bdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxQZW5YUkkzdjhfTWJXY25aWkVLeExISGkybXo1YmFoS256Qk5DclZaVVc4ODRnejkzYlBYOTBVWWp5YTVHRDVyMmtBUDVZWHlFclVhYUtIU2d0Tm1GWmRzMnhQNlg4aVVfWEZjb21nQ0tTUzc0WjQ5bEhmWVJuNzFwX25Bdw?oc=5\" target=\"_blank\"&gt;European shares, euro fall as energy shock, fiscal worries bite&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-07T02:40:00.000Z",
+          "score": 13
         },
         {
-          "title": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNWnVmemk1UXMxZ3RBSlAzNUFRbHpxTm5IRmZFOWZoNG90VURmMkZzaU0yeGJUUXRzaVFyTUZPLUtxZEF4QXhBNHpXZXFGaWNrNFpBOFJTbGRQVHNpRGt0NGN0aXR1YkJldG14ZXdsWTB1VnAzLThaR2t6dmFZeXo5b0diZUpJdnhEbmxFdl9sSWFtMHV5MFRUNDV5ZmNKek55NDR2N0hMdk1qLU1sV2NBaUhOMG9WNmNh?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNWnVmemk1UXMxZ3RBSlAzNUFRbHpxTm5IRmZFOWZoNG90VURmMkZzaU0yeGJUUXRzaVFyTUZPLUtxZEF4QXhBNHpXZXFGaWNrNFpBOFJTbGRQVHNpRGt0NGN0aXR1YkJldG14ZXdsWTB1VnAzLThaR2t6dmFZeXo5b0diZUpJdnhEbmxFdl9sSWFtMHV5MFRUNDV5ZmNKek55NDR2N0hMdk1qLU1sV2NBaUhOMG9WNmNh?oc=5\" target=\"_blank\"&gt;Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-06T11:01:43.000Z",
+          "title": "India news: Opposition protest clouds Modi&#039;s 25-year milestone",
+          "link": "https://www.dw.com/en/india-news-opposition-protest-clouds-modi-s-25-year-milestone/live-79570653?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Delhi police has beefed up security around the Election Commission of India, likely preparing for another day of &#039;vote theft&#039; protests. Meanwhile, PM Modi marks 25 years in public service. Follow live.",
+          "published": "2026-10-07T05:03:00.000Z",
           "score": 8
         },
         {
@@ -186,20 +186,20 @@
           "score": 8
         },
         {
-          "title": "Philippine security council looking into China-linked remittances to Duterte family firm - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQd09aWlJ6UXRQck85VUkyaGJXcWpDQ0tsamhjODVtWU5oT05sVkxlRkVpdTB5dkpDcF8tTHBsSFVuamxrODI4TVNLRUFmWGNmR1hXVmtOZUFWSk85Mno1ZW1VdmJ3Rk50dEx6Y0tfWmttbEFSQ0Jvb3BwTmEyZng0NExaNXVQUDJwamQ1TXdIS2dseGFhcFdYVmd2SG9waWl2dXYzbnl3b2dYaTZNYmRHVWpJR3k1Yk84aHpUbTlrRTFhQ21aY0dV?oc=5",
+          "title": "Kosovo parliament elects new president, avoiding snap election - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNWjZDY05YVm45RHBWLXp1ekFlMmhyMjRYZngwMmN1MlIyQUZVRVM3eTgxN1lXcmY0dTBlQmRfcHZsVUh4UTJ6WmZoajZuUVJERmtWaW15MUNPNDZBZzRUUkdCbElsWkdTN2V2c1FQaGQwNU1ZdFc1LVJWM0g1NXAwaktVQlNoMUI4aW5RcXJnc3c5aUdDNnpKRXU0NmVXT2hJRWJQTEhB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQd09aWlJ6UXRQck85VUkyaGJXcWpDQ0tsamhjODVtWU5oT05sVkxlRkVpdTB5dkpDcF8tTHBsSFVuamxrODI4TVNLRUFmWGNmR1hXVmtOZUFWSk85Mno1ZW1VdmJ3Rk50dEx6Y0tfWmttbEFSQ0Jvb3BwTmEyZng0NExaNXVQUDJwamQ1TXdIS2dseGFhcFdYVmd2SG9waWl2dXYzbnl3b2dYaTZNYmRHVWpJR3k1Yk84aHpUbTlrRTFhQ21aY0dV?oc=5\" target=\"_blank\"&gt;Philippine security council looking into China-linked remittances to Duterte family firm&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
-          "published": "2026-10-06T09:19:14.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNWjZDY05YVm45RHBWLXp1ekFlMmhyMjRYZngwMmN1MlIyQUZVRVM3eTgxN1lXcmY0dTBlQmRfcHZsVUh4UTJ6WmZoajZuUVJERmtWaW15MUNPNDZBZzRUUkdCbElsWkdTN2V2c1FQaGQwNU1ZdFc1LVJWM0g1NXAwaktVQlNoMUI4aW5RcXJnc3c5aUdDNnpKRXU0NmVXT2hJRWJQTEhB?oc=5\" target=\"_blank\"&gt;Kosovo parliament elects new president, avoiding snap election&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-07T00:08:00.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 405,
-    "articlesLast24h": 165,
-    "afterDedup": 156,
+    "totalArticlesScanned": 396,
+    "articlesLast24h": 164,
+    "afterDedup": 153,
     "feedsQueried": 19
   }
 }
