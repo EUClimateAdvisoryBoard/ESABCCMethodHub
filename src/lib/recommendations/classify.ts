@@ -251,3 +251,21 @@ export function classify(input: ClassifyInput): Classification {
     roles: classifyRoles(input),
   };
 }
+
+/**
+ * Union of several classifications: every sector and role found in any of
+ * them, and "both" when mitigation and adaptation are each found somewhere.
+ * Used for a headline recommendation together with its sub-recommendations.
+ */
+export function mergeClassifications(cs: Classification[]): Classification {
+  const foci = new Set(cs.map(c => c.focus).filter((f): f is Focus => f !== null));
+  const mit = foci.has('mitigation') || foci.has('both');
+  const ada = foci.has('adaptation') || foci.has('both');
+  const sectors = new Set(cs.flatMap(c => c.sectors));
+  const roles = new Set(cs.flatMap(c => c.roles));
+  return {
+    focus: mit && ada ? 'both' : mit ? 'mitigation' : ada ? 'adaptation' : null,
+    sectors: SECTORS.filter(s => sectors.has(s)),
+    roles: ROLES.filter(r => roles.has(r)),
+  };
+}

@@ -20,6 +20,8 @@ export {
   downloadTableWorkbook,
   downloadTable,
   type SheetSpec,
+  type CellValue,
+  type FillCell,
 } from './excel';
 export { downloadWord, buildDocxBlob, type DocBlock } from './word';
 
