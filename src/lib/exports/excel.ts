@@ -55,6 +55,18 @@ export interface SheetSpec {
   subtitle?: string;
   headers: string[];
   rows: CellValue[][];
+  /**
+   * Optional row above the headers that groups consecutive columns under a
+   * merged label, left to right; a group with an empty label is left blank.
+   * Spans must not add up to more than `headers.length`.
+   */
+  headerGroups?: { label: string; span: number }[];
+  /** Fixed column widths (characters), overriding the automatic widths. */
+  columnWidths?: number[];
+  /** Wrap header text (for long headers over narrow columns). */
+  wrapHeaders?: boolean;
+  /** Freeze the header rows and this many leading columns. */
+  freezeColumns?: number;
 }
 
 function sanitizeSheetName(name: string, fallback: string): string {
@@ -113,12 +125,44 @@ export async function downloadTableWorkbook(
     }
     if (spec.title || spec.subtitle) cursor++; // blank spacer row
 
+    if (spec.headerGroups?.length) {
+      const total = spec.headerGroups.reduce((n, g) => n + g.span, 0);
+      if (total > spec.headers.length) {
+        throw new Error(`headerGroups span ${total} columns but the sheet has ${spec.headers.length}`);
+      }
+      let col = 1;
+      for (const g of spec.headerGroups) {
+        if (g.span > 1) ws.mergeCells(cursor, col, cursor, col + g.span - 1);
+        ws.getCell(cursor, col).value = g.label;
+        col += g.span;
+      }
+      // Style every cell in the row (merged and blank ones too) like a header.
+      for (let c = 1; c <= lastCol; c++) {
+        const cell = ws.getCell(cursor, c);
+        cell.font = { bold: true, size: 10, color: { argb: COLORS.headerText } };
+        cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.headerBg } };
+        cell.alignment = { horizontal: 'center', vertical: 'middle', wrapText: true };
+        cell.border = { left: { style: 'thin', color: { argb: 'FFFFFF' } } };
+      }
+      ws.getRow(cursor).height = 30;
+      cursor++;
+    }
+
     const headerRowNum = cursor;
     const headerRow = ws.getRow(headerRowNum);
     spec.headers.forEach((h, i) => {
       headerRow.getCell(i + 1).value = h;
     });
     styleHeaderRow(ws, headerRowNum);
+    if (spec.wrapHeaders) {
+      headerRow.eachCell(cell => {
+        cell.alignment = { horizontal: 'left', vertical: 'bottom', wrapText: true };
+      });
+      headerRow.height = 90;
+    }
+    if (spec.freezeColumns != null) {
+      ws.views = [{ state: 'frozen', xSplit: spec.freezeColumns, ySplit: headerRowNum }];
+    }
 
     spec.rows.forEach((r, ri) => {
       const row = ws.getRow(headerRowNum + 1 + ri);
@@ -163,7 +207,7 @@ export async function downloadTableWorkbook(
           maxLen = Math.max(maxLen, ...t.split('\n').map(l => l.length));
         }
       }
-      ws.getColumn(ci + 1).width = Math.min(Math.max(maxLen + 2, 10), 60);
+      ws.getColumn(ci + 1).width = spec.columnWidths?.[ci] ?? Math.min(Math.max(maxLen + 2, 10), 60);
     });
   });
 
