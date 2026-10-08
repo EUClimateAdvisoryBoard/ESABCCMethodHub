@@ -16,9 +16,11 @@
  * The January 2024 report is shown in parts (summary and key
  * recommendations, then one part per chapter) via `splitReport`.
  *
- * The Excel download has three sheets whichever view is open: the
- * recommendations list, the role matrix, and the role rationale (the matrix
- * layout with a short reason, tied to a sub-role, in each relevant cell).
+ * The Excel download has four sheets whichever view is open: the
+ * recommendations list, the role matrix, the sub-role matrix (one column per
+ * outline sub-role under a merged role header, filled blue where relevant),
+ * and the role rationale (the matrix layout with a short reason, tied to a
+ * sub-role, in each relevant cell).
  *
  * Focus, sector and role labels are AI-compiled by the deterministic rules in
  * `src/lib/recommendations/classify.ts` — pending Secretariat verification. A
@@ -34,6 +36,7 @@ import { EmptyState } from '@/components/ui/StateView';
 import { codecs, useUrlState } from '@/lib/useUrlState';
 import {
   ROLES,
+  SUB_ROLES,
   classify,
   focusLabel,
   matrixSector,
@@ -105,6 +108,11 @@ function classifyHeadline(h: HeadlineRow<ByReportRec>, reportId: string): Classi
   );
 }
 
+/** Sub-role numbers in outline order ("1.1" … "9.4"), and grouped by role. */
+const SUB_KEYS = Object.keys(SUB_ROLES);
+const roleIndex = (sub: string) => Number(sub.split('.')[0]) - 1;
+const SUBS_BY_ROLE = ROLES.map((_, i) => SUB_KEYS.filter(k => roleIndex(k) === i));
+
 const subsText = (r: Row) => r.subs.map((s, i) => `${i + 1}. ${s.title}`).join('\n');
 
 export default function RecommendationsByReport({ recs, reportOrder }: Props) {
@@ -174,7 +182,7 @@ export default function RecommendationsByReport({ recs, reportOrder }: Props) {
 
   const MATRIX_HEADERS = ['Report', 'Recommendation title', 'Mitigation / adaptation', 'Sector', ...ROLES];
 
-  // Three sheets whichever view is open; CSV takes the first.
+  // Four sheets whichever view is open; CSV takes the first.
   const getSheets = (): SheetSpec[] => [
     {
       name: 'Recommendations',
@@ -196,6 +204,29 @@ export default function RecommendationsByReport({ recs, reportOrder }: Props) {
         matrixSector(r.sectors),
         ...ROLES.map<CellValue>(role =>
           r.roles.includes(role) ? { text: 'Yes', fill: hex(ROLE_FILL), color: 'FFFFFF' } : ''
+        ),
+      ]),
+    },
+    {
+      name: 'Sub-role matrix',
+      subtitle: `${CAVEAT} Sub-roles as numbered in the policy assessment report outline.`,
+      headerGroups: [
+        { label: '', span: 4 },
+        ...ROLES.map((role, i) => ({ label: `${i + 1} ${role}`, span: SUBS_BY_ROLE[i].length })),
+      ],
+      headers: [...MATRIX_HEADERS.slice(0, 4), ...SUB_KEYS.map(k => `${k} ${SUB_ROLES[k]}`)],
+      columnWidths: [28, 60, 14, 16, ...SUB_KEYS.map(() => 12)],
+      wrapHeaders: true,
+      freezeColumns: 2,
+      rows: allRows.map(r => [
+        r.reportLabel,
+        r.title,
+        focusCell(r),
+        matrixSector(r.sectors),
+        ...SUB_KEYS.map<CellValue>(k =>
+          r.roleHits[ROLES[roleIndex(k)]]?.some(h => h.sub === k)
+            ? { text: 'Yes', fill: hex(ROLE_FILL), color: 'FFFFFF' }
+            : ''
         ),
       ]),
     },

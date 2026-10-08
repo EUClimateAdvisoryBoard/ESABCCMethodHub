@@ -194,9 +194,11 @@ energy-crisis advice). The mapping is presentation only; tracker rows are unchan
   markets): each rule maps its words to one sub-role, and the energy-network
   advices (ACER 2022, TEN-E 2022 and 2024, CBA 2023) also carry a whole-report
   rule for 4.2 Cross-border infrastructure and network planning.
-- The Excel download has three sheets whichever mode is open: the
+- The Excel download has four sheets whichever mode is open: the
   recommendations list (with a Report column), the role matrix (role cells
-  filled blue), and the role rationale, which has the matrix layout with a
+  filled blue), the sub-role matrix (one column per outline sub-role, 1.1 to
+  9.4, under a merged header row naming each numbered role, cells filled blue
+  where the sub-role applies), and the role rationale, which has the matrix layout with a
   short reason in each relevant cell (the words that matched, "Sub-rec N"
   where they came from a sub-recommendation, and the sub-role). CSV exports
   the first sheet; Word exports one table per report or one matrix table.
