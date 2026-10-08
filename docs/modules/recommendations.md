@@ -155,7 +155,13 @@ is a read-only companion to the tracker with two modes (`?view=`):
   choice is kept in the URL (`?hide=subs,role`).
 - **Compare roles** (`?view=matrix`): one table across all reports with the
   report, the recommendation title, a colour-coded mitigation / adaptation
-  column and one column per EU policy role, filled blue where the role applies.
+  column, a sector column, and one column per EU policy role, filled blue where
+  the role applies. The sector column names one of the January 2024 report's
+  sector chapters (energy supply, industry, transport, buildings, agriculture,
+  and LULUCF broadened to "LULUCF and permanent removals") when exactly one
+  applies, and says "Cross-cutting" otherwise. Roles are numbered and ordered
+  as in the policy assessment report outline; hovering a blue cell shows the
+  rule behind it.
 
 Both modes show recommendations at **headline level**.
 [`src/lib/recommendations/headlines.ts`](../../src/lib/recommendations/headlines.ts)
@@ -164,9 +170,11 @@ tracker stores as detailed sub-recommendations (TEN-E scenario guidelines 2022,
 the energy-infrastructure CBA advice 2023, the January 2023 initial advice on
 climate targets, the TEN-E draft-scenarios advice 2024 and the February 2026
 adaptation report) are regrouped under their headlines, whose titles are quoted
-from the report with a PDF page locator. In the January 2024 report the 13 key
-recommendations stay as headlines and the chapter recommendations are grouped
-under one "Detailed recommendations for …" row per chapter. Rows the mapping
+from the report with a PDF page locator. The January 2024 report is shown in
+parts, each under its own header: "Summary and key recommendations"
+(KR1–KR13), then one part per sector or cross-cutting chapter (4 Energy supply …
+15 Labour, skills and capacity building), each recommendation its own row.
+Chapter 13 (Innovation) has no stored recommendations. Rows the mapping
 does not name, such as recommendations added in the tracker, appear as their
 own rows. Rows that are not headline recommendations and have no headline to
 sit under are listed, with a reason, in `EXCLUDED` and left out of these views
@@ -181,9 +189,17 @@ energy-crisis advice). The mapping is presentation only; tracker rows are unchan
   labels for its own title and for each sub-recommendation, so it can lose
   detail on which sub-recommendation a label comes from. A blank cell means no
   clear evidence, not "not relevant".
-- Downloads export what the current mode shows: Excel and CSV as one sheet with
-  a Report column (role cells filled blue in the matrix workbook), Word as one
-  table per report or one matrix table.
+- Every role hit is tied to a sub-role of the policy assessment report outline
+  (`SUB_ROLES` in `classify.ts`, e.g. 3.1 Carbon pricing and emissions
+  markets): each rule maps its words to one sub-role, and the energy-network
+  advices (ACER 2022, TEN-E 2022 and 2024, CBA 2023) also carry a whole-report
+  rule for 4.2 Cross-border infrastructure and network planning.
+- The Excel download has three sheets whichever mode is open: the
+  recommendations list (with a Report column), the role matrix (role cells
+  filled blue), and the role rationale, which has the matrix layout with a
+  short reason in each relevant cell (the words that matched, "Sub-rec N"
+  where they came from a sub-recommendation, and the sub-role). CSV exports
+  the first sheet; Word exports one table per report or one matrix table.
 - If the database returns no rows the page says so and shows the built-in seed
   set, so an unconfigured database is distinguishable from an empty tracker.
 

@@ -72,12 +72,15 @@ export default async function RecommendationsByReportPage() {
         <p className="mt-1.5 max-w-4xl text-[12.5px] leading-relaxed text-tertiary-dark">
           Recommendations are shown at headline level. Where the tracker stores a report&apos;s detailed
           recommendations, they are grouped under the report&apos;s headline recommendation and listed as
-          sub-recommendations (<code>src/lib/recommendations/headlines.ts</code>); the January 2024 chapter
-          recommendations sit under one &ldquo;Detailed recommendations for …&rdquo; row per chapter. The
+          sub-recommendations (<code>src/lib/recommendations/headlines.ts</code>). The January 2024 report is
+          shown in parts: its summary and key recommendations, then one part per chapter. The
           mitigation/adaptation, sector and EU policy role labels are assigned by fixed keyword rules
           (<code>src/lib/recommendations/classify.ts</code>), only where the title or the report&apos;s own scope makes
-          the label clear; a headline carries the labels of its own title and of all its sub-recommendations. A blank
-          cell means no clear evidence was found, not that the recommendation is not relevant.
+          the label clear; a headline carries the labels of its own title and of all its sub-recommendations. Each
+          role is tied to a sub-role of the policy assessment report outline, and roles are numbered as in that
+          outline; hover over a blue cell, or see the &ldquo;Role rationale&rdquo; sheet of the Excel download, for
+          the words that matched. A blank cell means no clear evidence was found, not that the recommendation is not
+          relevant.
         </p>
       </section>
 

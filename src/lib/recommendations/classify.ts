@@ -10,7 +10,8 @@
  *   • sectors — energy supply, industry, buildings, transport, agriculture,
  *               LULUCF & CDR, health, water;
  *   • roles   — the nine EU climate policy roles in Box 1 of the ESABCC
- *               assessment framework.
+ *               assessment framework, each hit tied to a sub-role of the
+ *               policy assessment report outline (`SUB_ROLES`).
  *
  * The rules are word-boundary vocabularies with explicit veto phrases for
  * known traps (e.g. "Recovery and Resilience Facility" is not adaptation;
@@ -23,7 +24,8 @@
  * advice concerns mitigation or adaptation.
  *
  * The same input always gives the same output. To change a label, edit the
- * vocabularies below (or `REPORT_SECTORS`) — never a rendered cell.
+ * vocabularies below (or `REPORT_SECTORS` / `REPORT_ROLE_HITS`) — never a
+ * rendered cell.
  */
 
 export type Focus = 'mitigation' | 'adaptation' | 'both';
@@ -40,15 +42,19 @@ export const SECTORS = [
 ] as const;
 export type Sector = (typeof SECTORS)[number];
 
-/** Box 1 of the ESABCC assessment framework: nine EU climate policy roles. */
+/**
+ * The nine EU climate policy roles (Box 1 of the ESABCC assessment framework),
+ * in the order and numbering of the policy assessment report outline, so role
+ * N's sub-roles are N.1, N.2 … (see `SUB_ROLES`).
+ */
 export const ROLES = [
   'Direction and goals',
+  'Monitoring and enforcement',
   'Regulation and pricing',
   'Coordination and planning',
   'Finance and investment',
   'Implementation',
   'Knowledge and innovation',
-  'Monitoring and enforcement',
   'Solidarity and cohesion',
   'International climate action',
 ] as const;
@@ -62,10 +68,24 @@ export interface ClassifyInput {
   reportId?: string;
 }
 
+/** Why a role was assigned: the sub-role a rule maps to and the words it matched. */
+export interface RoleHit {
+  /** Sub-role number from the report outline, e.g. "3.1". */
+  sub: string;
+  /** The words in the title that fired the rule, or a report-scope note. */
+  evidence: string;
+  /** Set for merged headlines: which row the hit came from ("Sub-rec 2"). */
+  source?: string;
+  /** True when the hit comes from a whole-report rule, not the title. */
+  reportRule?: boolean;
+}
+
 export interface Classification {
   focus: Focus | null;
   sectors: Sector[];
   roles: Role[];
+  /** For every role in `roles`, the rule hits that put it there. */
+  roleHits: Partial<Record<Role, RoleHit[]>>;
 }
 
 const FOCUS_LABEL: Record<Focus, string> = {
@@ -196,76 +216,271 @@ export function classifySectors(input: ClassifyInput): Sector[] {
 }
 
 /* -------------------------------------------------------------- roles */
-// Title-only. "target" is matched as a noun only, so the verb in "Target
-// CCU/CCS at no-alternative uses" does not read as target-setting.
-const ROLE_TERMS: Record<Role, RegExp> = {
-  'Direction and goals': re(
-    '(?:climate|emission|legally-binding|EU|20[345]0|adaptation|resilience|removal|separate)\\s+(?:sub-)?targets?\\b',
-    '(?:sub-)?targets\\b', 'vision\\b', 'climate neutrality', 'climate-neutrality',
-  ),
-  'Regulation and pricing': re(
-    'ETS\\d?\\b', 'pric(?:e|ing)\\b', 'tax\\w*', 'CBAM', 'free allocation', 'standards?\\b',
-    'regulatory', 'mandat\\w*', 'disclosure', 'financial supervision', 'taxonomy',
-    'carbon leakage',
-  ),
-  'Coordination and planning': re(
-    'planning', 'coordinat\\w*', 'TYNDP', 'scenarios?\\b', 'risk assessments?', 'climate risks?',
-    'long-term strateg\\w*', 'renovation strateg\\w*', 'multilevel', 'infrastructure', 'pathways?\\b',
-    'CBA\\b', 'cost-benefit',
-  ),
-  'Finance and investment': re(
-    'invest\\w*', 'financ\\w*', 'funding', 'funds?\\b', 'MFF', 'RRF', 'recovery and resilience',
-    'subsid\\w*', 'bonds?\\b', 'revenue', 'Innovation Fund', 'spending', 'SCF', 'JTF',
-    'common-debt', 'fiscal', 'CAP payments', 'insurance',
-  ),
-  Implementation: re(
-    'CAP\\b', 'programmes?\\b', 'Solidarity Fund', 'Civil Protection', 'crisis response',
-    'Renovation Wave', 'Technical Support Instrument',
-  ),
-  'Knowledge and innovation': re(
-    'innovation', 'R&D', 'research', 'technolog\\w*', 'demonstration', 'value chains?',
-  ),
-  'Monitoring and enforcement': re(
-    'monitor\\w*', 'enforce\\w*', 'compliance', 'MRV', 'tracking', 'evaluation',
-    'access to justice',
-  ),
-  'Solidarity and cohesion': re(
-    'just[- ]transition', 'just resilience', 'Social Climate Fund', 'vulnerable', 'fairness',
-    'distributional', 'solidarity', 'income support', 'social[–-]climate', 'at-risk',
-    'equitable', 'cohesion',
-  ),
-  'International climate action': re(
-    'international', 'diplomacy', 'third countr\\w*', 'trade partners?', 'partnerships?\\b',
-  ),
+/** Sub-roles from the policy assessment report outline, keyed by number. */
+export const SUB_ROLES: Record<string, string> = {
+  '1.1': 'Long-term vision and objectives',
+  '1.2': 'Intermediate EU targets and milestones',
+  '1.3': 'National contributions and burden allocation',
+  '1.4': 'Reference scenarios',
+  '2.1': 'Common indicators and data quality',
+  '2.2': 'Monitoring progress against targets',
+  '2.3': 'Monitoring of implementation and expenditure',
+  '2.4': 'Compliance mechanisms and enforcement',
+  '2.5': 'Adaptation monitoring, evaluation and learning',
+  '3.1': 'Carbon pricing and emissions markets',
+  '3.2': 'Direct emissions and performance standards',
+  '3.3': 'Climate-risk and resilience standards',
+  '3.4': 'Disclosure, due diligence and financial regulation',
+  '3.5': 'Liability and risk internalisation',
+  '4.1': 'EU, national and subnational policy coordination',
+  '4.2': 'Cross-border infrastructure and network planning',
+  '4.3': 'Management of cascading and transboundary risks',
+  '4.4': 'Preparedness, contingency planning and emergency coordination',
+  '5.1': 'EU climate-investment needs and gaps',
+  '5.2': 'EU budget and public expenditure',
+  '5.3': 'Mobilisation of private finance',
+  '5.4': 'Insurance, guarantees and risk-sharing',
+  '6.1': 'Implementation of EU legislation and programmes',
+  '6.2': 'Consistency of legislation, delegated acts, state aid and public investment',
+  '6.3': 'Mainstreaming mitigation and adaptation across EU policies',
+  '6.4': 'Direct provision of programmes and common services',
+  '7.1': 'Research and evidence generation',
+  '7.2': 'Climate scenarios and risk assessment',
+  '7.3': 'Technology and practice innovation',
+  '7.4': 'Demonstration, diffusion and learning',
+  '7.5': 'Climate data, services and early warning',
+  '8.1': 'Just resilience and unequal vulnerability',
+  '8.2': 'Territorial and regional cohesion',
+  '8.3': 'Acute disaster relief and civil protection',
+  '8.4': 'Long-term distribution of costs, benefits and residual losses',
+  '8.5': 'Insurance protection gaps and public risk-sharing',
+  '9.1': 'International commitments and EU leadership',
+  '9.2': 'International climate finance',
+  '9.3': 'International and neighbouring-country coordination',
+  '9.4': 'Trade-related regulation and carbon leakage (external dimension)',
 };
 
+/** The role a sub-role number belongs to ("3.1" → ROLES[2]). */
+const roleOf = (sub: string): Role => ROLES[Number(sub.split('.')[0]) - 1];
+
+interface RoleRule {
+  sub: string;
+  re: RegExp;
+  /** Used only when no other rule of the same role matched the title. */
+  fallback?: boolean;
+}
+const rule = (sub: string, ...alts: string[]): RoleRule => ({ sub, re: re(...alts) });
+const fallback = (sub: string, ...alts: string[]): RoleRule => ({ ...rule(sub, ...alts), fallback: true });
+
+// Title-only, one rule per sub-role (plus a few generic fallbacks). "target"
+// is matched as a noun only, so the verb in "Target CCU/CCS at
+// no-alternative uses" does not read as target-setting. Where the outline
+// puts a topic under a specific sub-role (climate risk assessment under 7.2,
+// carbon leakage under 9.4), the vocabulary follows the outline.
+const ROLE_RULES: RoleRule[] = [
+  // 1 Direction and goals
+  rule('1.1', 'vision\\b', 'climate[- ]neutrality', 'long-term (?:objectives?|goals?)'),
+  rule(
+    '1.2',
+    '(?:climate|emissions?|legally-binding|EU|20[345]0|adaptation|resilience|removal|separate|efficiency)\\s+(?:sub-)?targets?\\b',
+    '(?:sub-)?targets\\b',
+  ),
+  rule('1.3', 'NECPs?\\b', 'national (?:contributions?|measures)', 'burden[- ]shar\\w*'),
+  rule('1.4', 'common reference', 'reference scenarios?', 'planning reference'),
+  // 2 Monitoring and enforcement
+  rule('2.1', 'indicators?\\b', 'MRV', 'data quality', 'GHG accounting', 'accounting approach', 'measurement'),
+  rule('2.2', 'monitor\\w*', 'progress\\b', 'visib\\w*'),
+  rule('2.3', 'tracking', 'spending', 'expenditure', 'ex-post evaluation', 'do no significant harm'),
+  rule('2.4', 'enforce\\w*', 'compliance (?:frameworks?|mechanisms?|obligations?|for)', 'access to justice'),
+  rule('2.5', 'monitoring, evaluation and learning', 'MEL\\b'),
+  // 3 Regulation and pricing
+  rule(
+    '3.1',
+    'ETS\\d?\\b', 'emissions trading', 'carbon pric\\w*', 'GHG pricing', 'pric(?:e|ing)\\b', 'tax(?:ation|es)?\\b',
+    'ETD\\b', 'free allocation', 'AgETS',
+  ),
+  rule(
+    '3.2',
+    '(?:emission|performance|CO2) standards?', 'minimum energy[- ]performance', 'EPBD', 'EPCs?\\b',
+    'efficiency first', 'regulatory',
+  ),
+  rule('3.3', 'methodological standards', 'resilience[- ]by[- ]design', 'climate[- ]proof\\w*', 'mandat\\w* climate risk'),
+  rule('3.4', 'disclosure', 'financial supervision', 'corporate reporting', 'taxonomy', 'Green Bond Standard', 'due diligence'),
+  rule('3.5', 'liability', 'polluter[- ]pays', 'emitter responsibility'),
+  // 4 Coordination and planning
+  rule(
+    '4.1', 'coordinat\\w*', 'multilevel', 'governance', 'long-term strateg\\w*', 'renovation strateg\\w*',
+    'adaptation planning', 'planning across',
+  ),
+  rule(
+    '4.2', 'cross-border', 'TYNDP', 'ENTSO\\w*', 'networks?\\b', 'grids?\\b', 'energy infrastructure',
+    'CO2 (?:transport and storage )?infrastructure',
+  ),
+  rule('4.3', 'cascading', 'transboundary', 'compound\\w*'),
+  rule('4.4', 'contingency', 'preparedness', 'crisis response', 'emergency', 'stress[- ]test\\w*'),
+  // 5 Finance and investment
+  rule('5.1', 'investment (?:gap|needs|outlook)', 'required versus actual'),
+  rule(
+    '5.2', 'MFF', 'budget', 'public (?:funding|expenditure|investment|finance)', 'subsid\\w*', 'common-debt',
+    'fiscal', 'Innovation Fund', 'funds?\\b', 'funding', 'revenue', 'CAP payments', 'support schemes?',
+  ),
+  rule('5.3', 'private (?:finance|investment|capital)', 'mobilis\\w*', 'bonds?\\b'),
+  rule('5.4', 'insurance', 'reinsurance', 'guarantees?', 'risk[- ]sharing'),
+  fallback('5.1', 'invest\\w*', 'financ(?:e|ing)\\b'),
+  // 6 Implementation
+  rule('6.1', 'implement\\w*', 'CAP\\b', 'programmes?\\b', 'Renovation Wave', 'Technical Support Instrument'),
+  rule('6.2', 'polic\\w* (?:fully )?consistent', 'policy consisten\\w*', 'state aid', 'delegated acts?', 'coherent (?:EU )?polic\\w*'),
+  rule('6.3', 'mainstream\\w*', 'across (?:all )?(?:relevant )?(?:EU )?polic\\w*', 'in all (?:its |EU )?polic\\w*', 'resilience[- ]by[- ]design'),
+  rule('6.4', 'Solidarity Fund', 'Civil Protection', 'common services', 'Copernicus'),
+  // 7 Knowledge and innovation
+  rule('7.1', 'research', 'R&D', 'evidence', 'scien\\w*', 'impact assessments?'),
+  rule('7.2', 'climate(?:[- ]change)? (?:risks?|scenarios?|projections?)', 'risk assessments?', 'stress[- ]test\\w*', 'SSP\\d'),
+  rule('7.3', 'innovation', 'technolog(?:y|ies)\\b(?!-specific)', 'value chains?'),
+  rule('7.4', 'demonstration', 'diffusion', 'skills?\\b', 'training', 'awareness', 'learning'),
+  rule('7.5', 'early warning', 'climate services', '(?:climate|buildings) data'),
+  // 8 Solidarity and cohesion
+  rule('8.1', 'just resilience', 'vulnerable', 'socio-economic vulnerabilit\\w*', 'fairness', 'at-risk', 'equitable'),
+  rule('8.2', 'cohesion', 'just[- ]transition', 'territorial', 'regions most'),
+  rule('8.3', 'Solidarity Fund', 'Civil Protection', 'crisis response', 'disasters?'),
+  rule(
+    '8.4', 'distribution\\w*', 'social[–-]climate', 'Social Climate Fund', 'income support', 'households?',
+    'affordab\\w*', 'consumers?',
+  ),
+  rule('8.5', 'protection gap', 'public risk-sharing'),
+  // 9 International climate action
+  rule('9.1', 'Paris Agreement', 'international (?:commitments?|action|cooperation|support)', 'leadership', 'fair share',
+    'global (?:goal|stocktake|action|climate action|emissions)'),
+  rule('9.2', 'international (?:climate )?finance'),
+  rule('9.3', 'diplomacy', 'partnerships?\\b', 'third countr\\w*', 'neighbour\\w*', 'trade partners?'),
+  rule('9.4', 'CBAM', 'carbon[- ]leakage', 'border adjust\\w*'),
+];
+
+/** Phrases removed before role matching (a smaller list than `VETOES`). */
+const ROLE_VETOES: RegExp[] = [
+  /\bbuilding (?:on|blocks?|up)\b/gi,
+  /\bbuilding-blocks?\b/gi,
+  /public-private partnerships?/gi,
+  /\bcap\b/g, // lowercase: an ETS cap, not the Common Agricultural Policy
+  /\b(?:GHG|carbon|greenhouse gas|emissions?)[- ]budgets?\b/gi, // not the EU budget
+  /\bprice interventions?\b/gi, // crisis price caps, not carbon pricing
+  /\bproject implementation\b/gi, // a project's delivery, not EU implementation
+  /\bnon-ETS\b/gi, // the sectors outside the ETS, not carbon pricing
+];
+
+/**
+ * Reports whose whole scope places every recommendation in a sub-role: the
+ * four energy-infrastructure advices all concern TEN-E network planning.
+ */
+const TENE_NOTE = 'TEN-E network-planning advice';
+const REPORT_ROLE_HITS: Record<string, RoleHit[]> = {
+  'acer-energy-infrastructure-2022': [{ sub: '4.2', evidence: TENE_NOTE, reportRule: true }],
+  'scenario-guidelines-2022': [{ sub: '4.2', evidence: TENE_NOTE, reportRule: true }],
+  'decarbonised-energy-infrastructure-2023': [{ sub: '4.2', evidence: TENE_NOTE, reportRule: true }],
+  'ten-e-draft-scenarios-2024': [{ sub: '4.2', evidence: TENE_NOTE, reportRule: true }],
+};
+
+/** Every role rule that fires on the title, plus whole-report rules. */
+export function roleHits(input: ClassifyInput): Partial<Record<Role, RoleHit[]>> {
+  const title = ROLE_VETOES.reduce((t, v) => t.replace(v, ' '), input.title);
+  const out: Partial<Record<Role, RoleHit[]>> = {};
+  const add = (h: RoleHit) => {
+    const role = roleOf(h.sub);
+    const list = (out[role] ??= []);
+    if (!list.some(x => x.sub === h.sub)) list.push(h);
+  };
+  for (const r of ROLE_RULES.filter(r => !r.fallback)) {
+    const m = r.re.exec(title);
+    if (m) add({ sub: r.sub, evidence: m[0] });
+  }
+  for (const r of ROLE_RULES.filter(r => r.fallback)) {
+    if (out[roleOf(r.sub)]) continue;
+    const m = r.re.exec(title);
+    if (m) add({ sub: r.sub, evidence: m[0] });
+  }
+  for (const h of REPORT_ROLE_HITS[input.reportId ?? ''] ?? []) add(h);
+  for (const list of Object.values(out)) list?.sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+  return out;
+}
+
 export function classifyRoles(input: ClassifyInput): Role[] {
-  const title = clean(input.title);
-  return ROLES.filter(r => ROLE_TERMS[r].test(title));
+  const hits = roleHits(input);
+  return ROLES.filter(r => hits[r]);
 }
 
 export function classify(input: ClassifyInput): Classification {
+  const hits = roleHits(input);
   return {
     focus: classifyFocus(input),
     sectors: classifySectors(input),
-    roles: classifyRoles(input),
+    roles: ROLES.filter(r => hits[r]),
+    roleHits: hits,
   };
 }
 
 /**
  * Union of several classifications: every sector and role found in any of
  * them, and "both" when mitigation and adaptation are each found somewhere.
- * Used for a headline recommendation together with its sub-recommendations.
+ * Used for a headline recommendation together with its sub-recommendations;
+ * `sources[i]` labels where classification `i` came from (e.g. "Sub-rec 2"),
+ * and is carried into the role hits.
  */
-export function mergeClassifications(cs: Classification[]): Classification {
+export function mergeClassifications(cs: Classification[], sources: (string | undefined)[] = []): Classification {
   const foci = new Set(cs.map(c => c.focus).filter((f): f is Focus => f !== null));
   const mit = foci.has('mitigation') || foci.has('both');
   const ada = foci.has('adaptation') || foci.has('both');
   const sectors = new Set(cs.flatMap(c => c.sectors));
-  const roles = new Set(cs.flatMap(c => c.roles));
+  const roleHits: Partial<Record<Role, RoleHit[]>> = {};
+  cs.forEach((c, i) => {
+    for (const role of ROLES) {
+      for (const h of c.roleHits[role] ?? []) {
+        const list = (roleHits[role] ??= []);
+        // Each sub-role is listed once: from the whole-report rule, else from
+        // the first row (headline, then sub-recommendations) that hits it.
+        if (list.some(x => x.sub === h.sub)) continue;
+        list.push(h.reportRule ? h : { ...h, source: sources[i] });
+      }
+    }
+  });
+  for (const list of Object.values(roleHits)) list?.sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
   return {
     focus: mit && ada ? 'both' : mit ? 'mitigation' : ada ? 'adaptation' : null,
     sectors: SECTORS.filter(s => sectors.has(s)),
-    roles: ROLES.filter(r => roles.has(r)),
+    roles: ROLES.filter(r => roleHits[r]),
+    roleHits,
   };
+}
+
+/**
+ * A short reason for one role cell: the first hit in full, e.g.
+ * `"ETS" → 3.1 Carbon pricing and emissions markets` (for a merged headline
+ * `Sub-rec 2: "MFF" → 5.2 …`), then any other sub-roles by number only
+ * ("also 3.2, 3.4") so cells stay short.
+ */
+export function roleReason(hits: RoleHit[] | undefined): string {
+  if (!hits || hits.length === 0) return '';
+  const [h, ...rest] = hits;
+  const where = h.source && h.source !== 'Headline' ? `${h.source}: ` : '';
+  const what = h.reportRule ? h.evidence : `“${h.evidence}”`;
+  const also = rest.length > 0 ? `; also ${rest.map(x => x.sub).join(', ')}` : '';
+  return `${where}${what} → ${h.sub} ${SUB_ROLES[h.sub]}${also}`;
+}
+
+/* -------------------------------------------- matrix sector column */
+/**
+ * Sectors of the January 2024 report's sector chapters (4–9), with LULUCF
+ * broadened to cover permanent removals, for the role matrix's text column.
+ */
+const MATRIX_SECTOR: Partial<Record<Sector, string>> = {
+  'Energy supply': 'Energy supply',
+  Industry: 'Industry',
+  Transport: 'Transport',
+  Buildings: 'Buildings',
+  Agriculture: 'Agriculture',
+  'LULUCF & CDR': 'LULUCF and permanent removals',
+};
+
+/** One sector name when exactly one applies, otherwise "Cross-cutting". */
+export function matrixSector(sectors: Sector[]): string {
+  const names = [...new Set(sectors.map(s => MATRIX_SECTOR[s]).filter((n): n is string => !!n))];
+  return names.length === 1 ? names[0] : 'Cross-cutting';
 }
