@@ -17,12 +17,14 @@
  *                 gives the PDF page in `esabcc-reports/`), and the stored rows
  *                 listed in `subIds` are shown as numbered sub-recommendations.
  *
- * For the January 2024 report the 13 key recommendations are `self`
- * headlines, and the 55 chapter recommendations are grouped under one generic
- * headline per chapter ("Detailed recommendations for …"). That generic title
- * is a MethodHub label, not a quotation; chapter membership follows the
- * chapter code in `area` (E1, I2 …), so chapter rows added in the tracker
- * later join their chapter automatically.
+ * The January 2024 report is split into parts (`REPORT_PARTS`), each shown
+ * under its own header: "Summary and key recommendations" (KR1–KR13) and one
+ * part per sector or cross-cutting chapter, named and numbered as in the
+ * report's table of contents (PDF p.5–6). Every row in these parts is its own
+ * headline. Chapter membership follows the chapter code in `area` (E1, I2 …),
+ * so chapter rows added in the tracker later join their chapter
+ * automatically. Chapter 13 (Innovation) has no stored recommendations and so
+ * does not appear.
  *
  * Page locators are PDF page numbers (the viewer's page index), not the
  * printed folio.
@@ -49,29 +51,9 @@ export interface HeadlineDef {
   locator?: string;
   /** Stored rows shown as sub-recommendations, in report order. */
   subIds?: string[];
-  /**
-   * January 2024 only: chapter letter whose rows (area "E1 · …") form the
-   * sub-recommendations of this generic chapter headline.
-   */
-  chapter?: string;
 }
 
 const self = (id: string): HeadlineDef => ({ key: id, selfId: id });
-
-/** January 2024 chapter letters, in report order, with their chapter names. */
-const CHAPTERS_2024: [string, string][] = [
-  ['E', 'energy supply'],
-  ['I', 'industry'],
-  ['T', 'transport'],
-  ['B', 'buildings'],
-  ['A', 'agriculture and food'],
-  ['L', 'LULUCF and adaptation'],
-  ['C', 'pricing and removals'],
-  ['W', 'fairness and wellbeing'],
-  ['F', 'investment and finance'],
-  ['G', 'climate governance'],
-  ['S', 'labour, skills and just transition'],
-];
 
 export const HEADLINES: Record<string, HeadlineDef[]> = {
   // Letter to ACER, 11 Nov 2022, p.1–2: three bulleted key recommendations,
@@ -230,30 +212,8 @@ export const HEADLINES: Record<string, HeadlineDef[]> = {
 
   '2040-target-advice-2023': [self('advice-2023-2040-target')],
 
-  // January 2024: 13 key recommendations, then one generic headline per
-  // chapter (see CHAPTERS_2024).
-  'towards-eu-climate-neutrality-2024': [
-    ...[
-      'kr1-necps-implementation',
-      'kr2-adopt-pending-greendeal',
-      'kr3-renewables-investment-outlook',
-      'kr4-phase-out-ff-subsidies',
-      'kr5-policy-consistency-climate-neutrality',
-      'kr6-strengthen-governance',
-      'kr7-ets-fit-for-net-zero',
-      'kr8-impact-assessment-just-transition',
-      'kr9-agriculture-food-incentives',
-      'kr10-target-ccs-hydrogen-bioenergy',
-      'kr11-scale-climate-investment',
-      'kr12-energy-material-demand-reduction',
-      'kr13-expand-ghg-pricing-and-removal-incentives',
-    ].map(self),
-    ...CHAPTERS_2024.map(([letter, name]) => ({
-      key: `towards-2024-chapter-${letter}`,
-      title: `Detailed recommendations for ${name}`,
-      chapter: letter,
-    })),
-  ],
+  // January 2024: no entry. Its rows are all headlines and are split into
+  // parts by REPORT_PARTS instead.
 
   // TEN-E draft scenarios advice, Jun 2024, p.5–7: three key
   // recommendations; the tracker stores 11 rows drawn from their bullets and
@@ -410,6 +370,68 @@ const chapterOf = (area: string): string | null => {
   return m ? m[1] : null;
 };
 
+interface PartDef {
+  key: string;
+  /** Appended to the report label: "Towards EU climate neutrality (Jan 2024) — <label>". */
+  label: string;
+  /** Rows whose `area` starts with this code ("KR" or a chapter letter). */
+  match: (area: string) => boolean;
+}
+
+/**
+ * Reports shown as several parts. January 2024: the key recommendations of
+ * the summary, then the sector chapters 4–9 and cross-cutting chapters 10–15
+ * in table-of-contents order (PDF p.5–6).
+ */
+const REPORT_PARTS: Record<string, PartDef[]> = {
+  'towards-eu-climate-neutrality-2024': [
+    { key: 'summary', label: 'Summary and key recommendations', match: a => /^KR\d+/.test(a) },
+    ...(
+      [
+        ['E', '4 Energy supply'],
+        ['I', '5 Industry'],
+        ['T', '6 Transport'],
+        ['B', '7 Buildings'],
+        ['A', '8 Agriculture'],
+        ['L', '9 Land use, land use change and forestry'],
+        ['C', '10 Pricing emissions and rewarding removals'],
+        ['W', '11 Whole-of-society approach'],
+        ['F', '12 Finance and investments'],
+        ['G', '14 Climate governance'],
+        ['S', '15 Labour, skills and capacity building'],
+      ] as const
+    ).map(([letter, label]) => ({ key: letter, label, match: (a: string) => chapterOf(a) === letter })),
+  ],
+};
+
+export interface ReportPart<R> {
+  /** Unique key within the page, e.g. "towards-eu-climate-neutrality-2024#E". */
+  key: string;
+  /** Part label, or null when the report is shown whole. */
+  label: string | null;
+  rows: R[];
+}
+
+/**
+ * Split one report's rows into the parts it is shown as. Reports without an
+ * entry in `REPORT_PARTS` come back whole; rows of a split report that match
+ * no part are kept in a final "Other recommendations" part.
+ */
+export function splitReport<R extends StoredRec>(reportId: string, rows: R[]): ReportPart<R>[] {
+  const parts = REPORT_PARTS[reportId];
+  if (!parts) return [{ key: reportId, label: null, rows }];
+  const used = new Set<string>();
+  const out: ReportPart<R>[] = [];
+  for (const p of parts) {
+    const mine = rows.filter(r => !used.has(r.id) && p.match(r.area));
+    mine.forEach(r => used.add(r.id));
+    if (mine.length > 0) out.push({ key: `${reportId}#${p.key}`, label: p.label, rows: mine });
+  }
+  const rest = rows.filter(r => !used.has(r.id));
+  if (rest.length > 0) out.push({ key: `${reportId}#other`, label: 'Other recommendations', rows: rest });
+  return out;
+}
+
 /**
  * Arrange one report's stored rows into headline rows. Rows in `EXCLUDED` are
  * left out; headlines whose rows are all missing (e.g. deleted in the tracker)
@@ -432,12 +454,10 @@ export function toHeadlineRows<R extends StoredRec>(reportId: string, allRows: R
       out.push({ key: d.key, title: r.title, self: r, subs: [], quoted: false });
       continue;
     }
-    const subs = d.chapter
-      ? rows.filter(r => chapterOf(r.area) === d.chapter)
-      : (d.subIds ?? []).map(id => byId.get(id)).filter((r): r is R => !!r);
+    const subs = (d.subIds ?? []).map(id => byId.get(id)).filter((r): r is R => !!r);
     if (subs.length === 0) continue;
     subs.forEach(r => used.add(r.id));
-    out.push({ key: d.key, title: d.title ?? '', subs, quoted: !d.chapter, locator: d.locator });
+    out.push({ key: d.key, title: d.title ?? '', subs, quoted: true, locator: d.locator });
   }
   for (const r of rows) {
     if (!used.has(r.id)) out.push({ key: r.id, title: r.title, self: r, subs: [], quoted: false });

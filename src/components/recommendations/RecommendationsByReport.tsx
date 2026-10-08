@@ -9,8 +9,16 @@
  *     mitigation/adaptation focus, sector, EU policy role. Every column except
  *     the title can be hidden (`?hide=subs,role`).
  *   • Role matrix — one table across all reports: report, title, focus
- *     (colour-coded) and one column per EU policy role, filled blue where the
- *     role is relevant (`?view=matrix`).
+ *     (colour-coded), sector (one 2024-report sector or "Cross-cutting") and
+ *     one column per EU policy role, filled blue where the role is relevant
+ *     (`?view=matrix`); hovering a blue cell shows the rule behind it.
+ *
+ * The January 2024 report is shown in parts (summary and key
+ * recommendations, then one part per chapter) via `splitReport`.
+ *
+ * The Excel download has three sheets whichever view is open: the
+ * recommendations list, the role matrix, and the role rationale (the matrix
+ * layout with a short reason, tied to a sub-role, in each relevant cell).
  *
  * Focus, sector and role labels are AI-compiled by the deterministic rules in
  * `src/lib/recommendations/classify.ts` — pending Secretariat verification. A
@@ -28,11 +36,13 @@ import {
   ROLES,
   classify,
   focusLabel,
+  matrixSector,
   mergeClassifications,
+  roleReason,
   type Classification,
   type Focus,
 } from '@/lib/recommendations/classify';
-import { toHeadlineRows, type HeadlineRow } from '@/lib/recommendations/headlines';
+import { splitReport, toHeadlineRows, type HeadlineRow } from '@/lib/recommendations/headlines';
 import type { CellValue, SheetSpec, DocBlock } from '@/lib/exports';
 
 export interface ByReportRec {
@@ -89,7 +99,10 @@ function classifyHeadline(h: HeadlineRow<ByReportRec>, reportId: string): Classi
   const one = (r: ByReportRec) =>
     classify({ title: r.title, area: r.area, summary: r.summary, reportId });
   if (h.self) return one(h.self);
-  return mergeClassifications([classify({ title: h.title, reportId }), ...h.subs.map(one)]);
+  return mergeClassifications(
+    [classify({ title: h.title, reportId }), ...h.subs.map(one)],
+    ['Headline', ...h.subs.map((_, i) => `Sub-rec ${i + 1}`)]
+  );
 }
 
 const subsText = (r: Row) => r.subs.map((s, i) => `${i + 1}. ${s.title}`).join('\n');
@@ -115,16 +128,21 @@ export default function RecommendationsByReport({ recs, reportOrder }: Props) {
     };
     return [...byId.values()]
       .sort((a, b) => rank(a.id) - rank(b.id))
-      .map(g => ({
-        id: g.id,
-        label: g.label,
-        url: g.url,
-        rows: toHeadlineRows(g.id, g.recs).map(h => ({
-          ...h,
-          ...classifyHeadline(h, g.id),
-          reportLabel: g.label,
-        })),
-      }));
+      .flatMap(g =>
+        splitReport(g.id, g.recs).map(part => {
+          const label = part.label ? `${g.label} — ${part.label}` : g.label;
+          return {
+            id: part.key,
+            label,
+            url: g.url,
+            rows: toHeadlineRows(g.id, part.rows).map(h => ({
+              ...h,
+              ...classifyHeadline(h, g.id),
+              reportLabel: label,
+            })),
+          };
+        })
+      );
   }, [recs, reportOrder]);
 
   const allRows = groups.flatMap(g => g.rows);
@@ -152,36 +170,49 @@ export default function RecommendationsByReport({ recs, reportOrder }: Props) {
       : '';
 
   const CAVEAT =
-    'AI-compiled — pending Secretariat verification. Focus, sector and role labels are assigned by fixed keyword rules; a headline carries the labels of its own title and of all its sub-recommendations; a blank cell means no clear evidence.';
+    'AI-compiled — pending Secretariat verification. Focus, sector and role labels are assigned by fixed keyword rules; a headline carries the labels of its own title and of all its sub-recommendations; a blank cell means no clear evidence. Roles are numbered as in the policy assessment report outline.';
 
-  const getSheets = (): SheetSpec[] =>
-    view === 'matrix'
-      ? [
-          {
-            name: 'Role matrix',
-            subtitle: CAVEAT,
-            headers: ['Report', 'Recommendation title', 'Mitigation / adaptation', ...ROLES],
-            rows: allRows.map(r => [
-              r.reportLabel,
-              r.title,
-              focusCell(r),
-              ...ROLES.map<CellValue>(role =>
-                r.roles.includes(role) ? { text: 'Yes', fill: hex(ROLE_FILL), color: 'FFFFFF' } : ''
-              ),
-            ]),
-          },
-        ]
-      : [
-          {
-            name: 'Recommendations',
-            subtitle: CAVEAT,
-            headers: ['Report', ...visible.map(c => c.label)],
-            rows: allRows.map(r => [
-              r.reportLabel,
-              ...visible.map<CellValue>(c => (c.key === 'focus' ? focusCell(r) : cell(r, c.key))),
-            ]),
-          },
-        ];
+  const MATRIX_HEADERS = ['Report', 'Recommendation title', 'Mitigation / adaptation', 'Sector', ...ROLES];
+
+  // Three sheets whichever view is open; CSV takes the first.
+  const getSheets = (): SheetSpec[] => [
+    {
+      name: 'Recommendations',
+      subtitle: CAVEAT,
+      headers: ['Report', ...visible.map(c => c.label)],
+      rows: allRows.map(r => [
+        r.reportLabel,
+        ...visible.map<CellValue>(c => (c.key === 'focus' ? focusCell(r) : cell(r, c.key))),
+      ]),
+    },
+    {
+      name: 'Role matrix',
+      subtitle: CAVEAT,
+      headers: MATRIX_HEADERS,
+      rows: allRows.map(r => [
+        r.reportLabel,
+        r.title,
+        focusCell(r),
+        matrixSector(r.sectors),
+        ...ROLES.map<CellValue>(role =>
+          r.roles.includes(role) ? { text: 'Yes', fill: hex(ROLE_FILL), color: 'FFFFFF' } : ''
+        ),
+      ]),
+    },
+    {
+      name: 'Role rationale',
+      subtitle:
+        'Why each role was assigned: the words that matched (or the report-wide rule) and the sub-role of the policy assessment report outline they map to. "Sub-rec N" points to the numbered sub-recommendation. AI-compiled — pending Secretariat verification.',
+      headers: MATRIX_HEADERS,
+      rows: allRows.map(r => [
+        r.reportLabel,
+        r.title,
+        focusLabel(r.focus),
+        matrixSector(r.sectors),
+        ...ROLES.map(role => roleReason(r.roleHits[role])),
+      ]),
+    },
+  ];
 
   const getBlocks = (): DocBlock[] => [
     { type: 'heading', level: 1, text: 'ESABCC recommendations by report' },
@@ -190,11 +221,12 @@ export default function RecommendationsByReport({ recs, reportOrder }: Props) {
       ? [
           {
             type: 'table',
-            headers: ['Report', 'Recommendation title', 'Mitigation / adaptation', ...ROLES],
+            headers: MATRIX_HEADERS,
             rows: allRows.map(r => [
               r.reportLabel,
               r.title,
               focusLabel(r.focus),
+              matrixSector(r.sectors),
               ...ROLES.map(role => (r.roles.includes(role) ? '●' : '')),
             ]),
           } satisfies DocBlock,
@@ -366,11 +398,14 @@ function RoleMatrix({ groups }: { groups: Group[] }) {
             <th scope="col" className="w-32 border-b border-grey-200 px-3 py-2 font-semibold uppercase tracking-wide">
               Report
             </th>
-            <th scope="col" className="min-w-[18rem] border-b border-grey-200 px-3 py-2 font-semibold uppercase tracking-wide">
+            <th scope="col" className="min-w-[14rem] border-b border-grey-200 px-3 py-2 font-semibold uppercase tracking-wide">
               Recommendation title
             </th>
             <th scope="col" className="w-24 border-b border-grey-200 px-2 py-2 font-semibold uppercase tracking-wide">
               Mitigation / adaptation
+            </th>
+            <th scope="col" className="w-20 border-b border-grey-200 px-2 py-2 font-semibold uppercase tracking-wide">
+              Sector
             </th>
             {ROLES.map((role, i) => (
               <th
@@ -403,6 +438,9 @@ function RoleMatrix({ groups }: { groups: Group[] }) {
                 <td className="border-b border-grey-100 px-2 py-1.5">
                   <FocusChip focus={r.focus} />
                 </td>
+                <td className="border-b border-grey-100 px-2 py-1.5 text-xs text-tertiary-dark">
+                  {matrixSector(r.sectors)}
+                </td>
                 {ROLES.map(role => {
                   const on = r.roles.includes(role);
                   return (
@@ -411,9 +449,9 @@ function RoleMatrix({ groups }: { groups: Group[] }) {
                       className="border-b border-l border-grey-100"
                       // The inset white ring keeps neighbouring filled cells visibly separate.
                       style={on ? { backgroundColor: ROLE_FILL, boxShadow: 'inset 0 0 0 2px #fff' } : undefined}
-                      title={on ? role : undefined}
+                      title={on ? `${role}: ${roleReason(r.roleHits[role])}` : undefined}
                     >
-                      {on && <span className="sr-only">{role}: relevant</span>}
+                      {on && <span className="sr-only">{role}: relevant ({roleReason(r.roleHits[role])})</span>}
                     </td>
                   );
                 })}
