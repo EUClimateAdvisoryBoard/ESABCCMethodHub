@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T11:12:36.550Z",
+  "generatedAt": "2026-10-08T11:30:18.356Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,25 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/aeb14a",
+      "title": "Dynamic urban decarbonisation pathways revealed in rapidly urbanizing Chinese cities",
+      "journal": "Environmental Research Letters",
+      "authors": "Tong Chen, Felix Creutzig, Ramit Debnath",
+      "published": "2026-10-07",
+      "url": "https://doi.org/10.1088/1748-9326/aeb14a",
+      "abstract": "Urban economies and their associated $CO_2$ emissions depend on a specific urban structure and change dynamically. However, few studies have captured the co-evolution of carbon and broader urban development, or identified the governance-related factors associated with such change across different types of cities. This study addresses this gap by analysing data from 232 Chinese cities between 1999 and 2019. As a key novel contribution, we investigate urban types as dynamic states {by applying K-Means++ clustering to pooled city-year observations,} and identify six archetypes of urban carbon evolution, together with three typical transition pathways. We further apply a Low Carbon City indicator framework and develop a pooled CatBoost model selected from five candidate algorithms, using SHAP values to interpret archetype-stratified feature contributions to carbon emission predictions. Our identified pathways indicate that carbon control can be compatible with rapid economic development. Cities with similar per capita emissions can nevertheless differ in transition maturity, highlighting distinct capacities and priorities for further decarbonisation. SHAP analysis shows that, in earlier industry-led phases, predicted emissions are most strongly associated with industrial-activity and energy-mix indicators; the broader predictor profiles in more mature phases suggest a shift in decarbonisation priorities from sector-specific improvements towards systemic action within and across s",
+      "suggestedOn": "2026-10-08",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6,
+          "matched": [
+            "decarbonisation"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aeb03a",
       "title": "Lithium Constraints on India’s Transport Electrification: System-Level Impacts and Policy Implications for the Net-Zero Transition",
