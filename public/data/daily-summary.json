@@ -1,18 +1,24 @@
 {
   "date": "2026-10-09",
-  "generatedAt": "2026-10-09T02:53:05.806Z",
+  "generatedAt": "2026-10-09T11:44:53.087Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 9 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Why are more roofs not made of solar tiles?",
-      "summary": "Solar tiles were touted as an attractive alternative to solar panels - why have they not taken off?",
+      "headline": "IPCC’s Sixty-Fifth Session in Addis Ababa, Ethiopia",
+      "summary": "GENEVA, Oct 8– The Intergovernmental Panel on Climate Change (IPCC) will be holding its Sixty-Fifth Plenary Session in Addis Ababa, Ethiopia, from 12 to 16 October 2026. The 65th Session of the IPCC is hosted by the United Nations Economic Commission for Africa (UNECA) and the Federal Democratic Republic of Ethiopia. Opening session The opening [&#8230;]",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Launch of Africa Energy Bank delayed again in blow to oil and gas hopes",
+      "summary": "Repeated delays are raising questions about the bank's momentum and whether it can mobilise investment to finance Africa’s oil and gas ambitions in an era of energy transition The post Launch of Africa Energy Bank delayed again in blow to oil and gas hopes appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Pre-COP draws attention to Pacific’s climate plight and 1.5C goal",
-      "summary": "After visiting Tuvalu's shrinking land, COP31 President Murat Kurum said that the global 1.5C warming limit is \"a matter of survival\" for the Pacific The post Pre-COP draws attention to Pacific’s climate plight and 1.5C goal appeared first on Climate Home News.",
+      "headline": "Factcheck: UK Conservatives double the ‘cost of net-zero’ after spreadsheet blunder",
+      "summary": "A booklet published by the UK’s opposition Conservative party includes a “cost of net-zero” that appears to have been doubled&#8230; The post Factcheck: UK Conservatives double the ‘cost of net-zero’ after spreadsheet blunder appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -21,12 +27,29 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "IPCC’s Sixty-Fifth Session in Addis Ababa, Ethiopia",
+          "link": "https://www.ipcc.ch/2026/10/09/media-advisory-ipcc65/",
+          "source": "IPCC",
+          "description": "GENEVA, Oct 8– The Intergovernmental Panel on Climate Change (IPCC) will be holding its Sixty-Fifth Plenary Session in Addis Ababa, Ethiopia, from 12 to 16 October 2026. The 65th Session of the IPCC is hosted by the United Nations Economic Commission for Africa (UNECA) and the Federal Democratic Republic of Ethiopia. Opening session The opening [&#8230;]",
+          "published": "2026-10-09T08:32:36.000Z",
+          "score": 17
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Launch of Africa Energy Bank delayed again in blow to oil and gas hopes",
+          "link": "https://www.climatechangenews.com/2026/10/09/launch-of-africa-energy-bank-delayed-again-in-blow-to-oil-and-gas-hopes/",
+          "source": "Climate Home News",
+          "description": "Repeated delays are raising questions about the bank's momentum and whether it can mobilise investment to finance Africa’s oil and gas ambitions in an era of energy transition The post Launch of Africa Energy Bank delayed again in blow to oil and gas hopes appeared first on Climate Home News.",
+          "published": "2026-10-09T05:00:00.000Z",
+          "score": 13
+        },
         {
           "title": "Why are more roofs not made of solar tiles?",
           "link": "https://www.bbc.co.uk/news/articles/cdr7n610rmzo?at_medium=RSS&amp;at_campaign=rss",
@@ -34,22 +57,6 @@
           "description": "Solar tiles were touted as an attractive alternative to solar panels - why have they not taken off?",
           "published": "2026-10-08T23:09:56.000Z",
           "score": 7
-        },
-        {
-          "title": "How the Houthi-Saudi conflict is affecting countries on Africa&#039;s Red Sea coast — and beyond",
-          "link": "https://www.dw.com/en/how-the-houthi-saudi-conflict-is-affecting-countries-on-africa-s-red-sea-coast-and-beyond/a-79588992?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The Bab el-Mandeb Strait, which Yemeni government forces are trying to take back from the Houthis, is located not far from Djibouti and other African states.",
-          "published": "2026-10-08T16:11:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "July 2026 was worst on record for wildfires in England, data shows",
-          "link": "https://www.theguardian.com/world/2026/oct/08/july-record-wildfires-england-data-shows",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Devastating blaze near Sizewell B nuclear power station in Suffolk among a record 624 wildfires in July this year&lt;/p&gt;&lt;p&gt;This July was the worst on record for wildfires in England, provisional data shows, with England experiencing a clear upward trend in the total number of wildfires recorded.&lt;/p&gt;&lt;p&gt;This summer has been a &lt;a href=\"https://www.theguardian.com/environment/2026/may/20/uk-built-for-climate-that-no-longer-exists-and-needs-urgent-changes-to-survive-g",
-          "published": "2026-10-08T10:34:34.000Z",
-          "score": 4
         },
         {
           "title": "MoD has objected to four windfarms in past year over radar interference fears",
@@ -66,6 +73,14 @@
           "description": "President Donald Trump said the US will not resume strikes on Iran before the midterm elections on November 3. High gas and grocery prices are top concerns for voters.",
           "published": "2026-10-08T18:18:00.000Z",
           "score": 2
+        },
+        {
+          "title": "France: Police clash with protesters at Paris student rally",
+          "link": "https://www.dw.com/en/france-police-clash-with-protesters-at-paris-student-rally/a-79603684?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Police fired tear gas at protesters in Paris again as students continue to voice grievances about school conditions across France. The education minister has said 3,000 substitute teachers will reach schools soon.",
+          "published": "2026-10-08T17:10:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -73,6 +88,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Factcheck: UK Conservatives double the ‘cost of net-zero’ after spreadsheet blunder",
+          "link": "https://www.carbonbrief.org/factcheck-uk-conservatives-double-the-cost-of-net-zero-after-spreadsheet-blunder",
+          "source": "Carbon Brief",
+          "description": "A booklet published by the UK’s opposition Conservative party includes a “cost of net-zero” that appears to have been doubled&#8230; The post Factcheck: UK Conservatives double the ‘cost of net-zero’ after spreadsheet blunder appeared first on Carbon Brief.",
+          "published": "2026-10-09T06:00:00.000Z",
+          "score": 13
+        },
         {
           "title": "Pre-COP draws attention to Pacific’s climate plight and 1.5C goal",
           "link": "https://www.climatechangenews.com/2026/10/08/pre-cop-draws-attention-to-pacifics-climate-plight-and-1-5c-goal/",
@@ -82,20 +105,20 @@
           "score": 13
         },
         {
-          "title": "Britons kept in dark about scale of climate crisis, say viewers of ‘first-of-its-kind’ emergency briefing",
-          "link": "https://www.theguardian.com/environment/2026/oct/08/britons-kept-in-dark-scale-of-climate-crisis-first-of-its-kind-emergency-briefing",
+          "title": "AI and the climate crisis pose existential risks. The law offers a way to reduce them | Robert Reich",
+          "link": "https://www.theguardian.com/commentisfree/2026/oct/09/ai-climate-change-liability-lawsuits",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Nine out of 10 people felt motivated to act after watching film outlining threats to food security, economy and public health&lt;/p&gt;&lt;p&gt;The British government must be honest about the scale of the threat posed by climate and nature breakdown, researchers have said, after nine out of 10 people surveyed after watching a briefing on the issue felt more motivated to act.&lt;/p&gt;&lt;p&gt;Last November, in the “first-of-its-kind national emergency briefing”, &lt;a href=\"https://www.",
-          "published": "2026-10-08T08:00:13.000Z",
-          "score": 7
+          "description": "&lt;p&gt;Liability lawsuits have held tobacco, oil and pharma companies to account in the past. AI investors won’t ignore this threat&lt;/p&gt;&lt;p&gt;The most basic function of government is to protect people from harm. Two growing phenomena – the climate crisis and AI – pose escalating risks of &lt;em&gt;extraordinary&lt;/em&gt; harm.&lt;/p&gt;&lt;p&gt;The climate crisis is already causing floods, wildfires, drought and record heat. AI agents are already escaping super-secure environments to ",
+          "published": "2026-10-09T11:00:26.000Z",
+          "score": 11
         },
         {
-          "title": "Chris Minns says activists shouldn’t get ‘overexcited’ about ‘technical’ landmark coalmine decision",
-          "link": "https://www.theguardian.com/australia-news/2026/oct/08/chris-minns-responds-landmark-high-court-decision-mount-pleasant-coalmine",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;High court judgment blocking Mount Pleasant mine expansion will not affect state regulation, NSW premier says&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;new political email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;C",
-          "published": "2026-10-08T05:04:49.000Z",
-          "score": 6
+          "title": "Tories overstate net zero cost by nearly £500bn in apparent spreadsheet error",
+          "link": "https://www.theguardian.com/politics/2026/oct/09/tories-overstate-net-zero-cost-500bn-spreadsheet-error",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Exclusive: Badenoch’s flagship conference policy document cites £957bn estimate, twice the total in climate advisers’ data&lt;/p&gt;&lt;p&gt;Kemi Badenoch’s flagship party conference policy document overestimated the cost of net zero by nearly £500bn, seemingly after someone accidentally double-counted figures on a spreadsheet.&lt;/p&gt;&lt;p&gt;The apparent error appears in a chapter on net zero in &lt;a href=\"https://cdn.prod.website-files.com/6760307b23436bea5cfc749e/6abe82ddb8322e0c",
+          "published": "2026-10-09T06:00:41.000Z",
+          "score": 7
         },
         {
           "title": "Can hope save the planet? An endangered parrot that is beating the odds can help us find out | Helen Pilcher",
@@ -104,14 +127,6 @@
           "description": "&lt;p&gt;A new global biodiversity report strikes an encouraging note. But we cannot rest on our laurels – and resilience is key&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://livingplanet.panda.org/en-GB/?utm_source=web&amp;amp;utm_medium=referral&amp;amp;utm_campaign=lpr&amp;amp;utm_content=uk-core-site-press-release&amp;amp;pc=PA-0000575002\"&gt;The new Living Planet Report is out&lt;/a&gt;. Published every two years, it assesses the health of the natural world and, historically, it’s made for gloomy r",
           "published": "2026-10-08T15:05:53.000Z",
           "score": 4
-        },
-        {
-          "title": "Will El Niño and the polar vortex bring snow to the UK this winter?",
-          "link": "https://www.bbc.co.uk/weather/articles/c6pqg9j7d2w7o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The developing El Niño may impact the UK's weather prospects this autumn and winter but cold conditions are far from guaranteed.",
-          "published": "2026-10-08T23:03:33.000Z",
-          "score": 2
         }
       ]
     },
@@ -125,11 +140,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "EU envoy in Beijing for talks to calm trade tensions",
-          "link": "https://www.dw.com/en/eu-envoy-in-beijing-for-talks-to-calm-trade-tensions/a-79598713?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Ukraine, Europe, US to meet in Miami for talks on ending war",
+          "link": "https://www.dw.com/en/ukraine-europe-us-to-meet-in-miami-for-talks-on-ending-war/a-79606735?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The EU trade envoy said he hoped to make progress in tackling the bloc&#039;s &quot;unsustainable&quot; trade imbalance with China. Beijing called for trade disputes to be resolved through equal dialogue.",
-          "published": "2026-10-08T14:42:00.000Z",
+          "description": "Officials from Ukraine, Europe and the US are meeting in Miami to discuss ways to break the deadlock in the war. The meeting comes as Russian strikes on Ukraine killed more than 70 people this week.",
+          "published": "2026-10-09T03:07:00.000Z",
           "score": 8
         },
         {
@@ -141,27 +156,11 @@
           "score": 8
         },
         {
-          "title": "Middle Corridor: Can Bulgaria be a safe gateway for Asian imports to the EU?",
-          "link": "https://www.dw.com/en/middle-corridor-can-bulgaria-be-a-safe-gateway-for-asian-imports-to-the-eu/a-79584530?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU wants more trade via the Middle Corridor, which could bring big benefits for Bulgaria. But Tuesday&#039;s drone attacks on commercial ships off the Bulgarian coast are a stark reminder of the security risks involved.",
-          "published": "2026-10-08T08:38:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "As Munir's military takes on Gulf role, Pakistan's parliament is not involved - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQblJ3TUVya3VIYjNCdzZfeEJOeUpDbE9RdVloYUllQ0dxMk5oeHVWck5NaTcxVVdUTG94aW1oc3pzakZyWk9hTkwwQ0w2bXVydGxISlRtOHdYZWhpM2NnNHdrejBOX2tUN3lQd1I5Z3ZQMHl1Y1NSc0ZKVWpITnY1Zl81LVdvX2FWLVplRjAxTVQ2NGs1N2V3dnpxQnRpQXRQMlVONHhURkY2bnl6U2RIVE5WcE4wUDNaWGdBaEtCTjI?oc=5",
+          "title": "European industry groups call for urgent EU action on China trade - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQU2lOVm5tWG83Uzl6OHA2UGlPN1M2OHM1aHJXTGlkTjU1YUY4S1BodWhERHZXcl9nRGdOVV9tallCdF9EbTM0TGdUbU1rVzgyN3Z4QVQ0cDhJWkJ6ZG51amk1aTBDN3ZsRzZLUnFqRjVSVlNaWF90RF9ON0dzNHpnekh0ZXRmMVNyNzBVeWdqbHp0WFJydHRuYmdpTHlfRWc5bElaTXVBeU1MZw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQblJ3TUVya3VIYjNCdzZfeEJOeUpDbE9RdVloYUllQ0dxMk5oeHVWck5NaTcxVVdUTG94aW1oc3pzakZyWk9hTkwwQ0w2bXVydGxISlRtOHdYZWhpM2NnNHdrejBOX2tUN3lQd1I5Z3ZQMHl1Y1NSc0ZKVWpITnY1Zl81LVdvX2FWLVplRjAxTVQ2NGs1N2V3dnpxQnRpQXRQMlVONHhURkY2bnl6U2RIVE5WcE4wUDNaWGdBaEtCTjI?oc=5\" target=\"_blank\"&gt;As Munir's military takes on Gulf role, Pakistan's parliament is not involved&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-08T10:43:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "China defends yuan policy as Europe steps up pressure over trade surplus - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMndSd19fTHdFQ01xZEp2Vzh5Zlg2M0g3YjhNTFNlZ3M5eUphc3RzNTAxcTh6LXlKSWpVTDI4dl9OR1VTM1pDZVhLa2dGbEZGMEdIVDNnT1hyRjh5WWRVN0xNcjRKVGdyclhndEF5cEo3V3p5aE9PTkdQWktTN1M2S1hRRFRnZ1F0NmYwWEJrUDBEcUZXYXE1ZFpfVEI4aWZqNnpkYTNJQ1FpZ2NpQ2tJR2c0eGFkeTRkenFpZTZYRmI4R292?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQMndSd19fTHdFQ01xZEp2Vzh5Zlg2M0g3YjhNTFNlZ3M5eUphc3RzNTAxcTh6LXlKSWpVTDI4dl9OR1VTM1pDZVhLa2dGbEZGMEdIVDNnT1hyRjh5WWRVN0xNcjRKVGdyclhndEF5cEo3V3p5aE9PTkdQWktTN1M2S1hRRFRnZ1F0NmYwWEJrUDBEcUZXYXE1ZFpfVEI4aWZqNnpkYTNJQ1FpZ2NpQ2tJR2c0eGFkeTRkenFpZTZYRmI4R292?oc=5\" target=\"_blank\"&gt;China defends yuan policy as Europe steps up pressure over trade surplus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-08T17:21:27.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQU2lOVm5tWG83Uzl6OHA2UGlPN1M2OHM1aHJXTGlkTjU1YUY4S1BodWhERHZXcl9nRGdOVV9tallCdF9EbTM0TGdUbU1rVzgyN3Z4QVQ0cDhJWkJ6ZG51amk1aTBDN3ZsRzZLUnFqRjVSVlNaWF90RF9ON0dzNHpnekh0ZXRmMVNyNzBVeWdqbHp0WFJydHRuYmdpTHlfRWc5bElaTXVBeU1MZw?oc=5\" target=\"_blank\"&gt;European industry groups call for urgent EU action on China trade&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-08T21:44:16.000Z",
           "score": 8
         }
       ]
@@ -170,6 +169,14 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Why EV sales are lukewarm in America, but hot in Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPajRUTl9xbW4wSDZYc1hpcEZZczJfa3ZXWXN2UF94THlDNVNvWlYwUTBqOTI5YUp6V2hhWUZHaHU0NXJFMkNkMXkxS1F4WjY3Z1gyU3FZQUctUnVQeDUyMy1BTG02WThsMlQ0eXVHazFZOEpLUW52cmVfTlZSSkdsTVJFLV84M3Q0VTN6VWExXzQ5bU1FWVkwUUlkSTQxMGhmSDVkN2tHWGVUZlFBM2ZZ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPajRUTl9xbW4wSDZYc1hpcEZZczJfa3ZXWXN2UF94THlDNVNvWlYwUTBqOTI5YUp6V2hhWUZHaHU0NXJFMkNkMXkxS1F4WjY3Z1gyU3FZQUctUnVQeDUyMy1BTG02WThsMlQ0eXVHazFZOEpLUW52cmVfTlZSSkdsTVJFLV84M3Q0VTN6VWExXzQ5bU1FWVkwUUlkSTQxMGhmSDVkN2tHWGVUZlFBM2ZZ?oc=5\" target=\"_blank\"&gt;Why EV sales are lukewarm in America, but hot in Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-08T18:08:06.000Z",
+          "score": 13
+        },
         {
           "title": "EU pulls sponsorship from Disinfo2026 event in Lithuania",
           "link": "https://www.dw.com/en/eu-pulls-sponsorship-from-disinfo2026-event-in-lithuania/a-79599615?maca=en-rss-en-all-1573-xml-mrss",
@@ -201,22 +208,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQM2lCUXM3TlNMZjNYekktcFNOODM1UXNucEg5bWRPTGtoYzZFbWZfbE1NaGl4SDNXNUdmdVFqWjdBamNzd2hnN1FJQ1Nmb0czMXNab0poN0hqVlY3MkFXVjFRR18wRmV2QmZTR3VmR0t1dFRZcU91X1BjcVBiNUNHUWo1WUxnMWhsVDBfNklMSVVMWnZiYXNQMHExWFBwNTlsXzY0T2YtVl84R19KYnc?oc=5\" target=\"_blank\"&gt;Kingspan hit with €40 million EU fine for misleading data on Slovenian deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-08T21:53:43.000Z",
           "score": 8
-        },
-        {
-          "title": "India inflation likely accelerated in September on food and energy pressures - Reuters poll - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSEV1dTJiZkotclZ1TEpQOTVIMHVRZnhLb2hfV21MYklEel9VWVdKcnNtTHZESXpmWXVnb01Oa1NYUV9Sa0UtZ0JIX2cyQkVZWlpqZURLZFhhVjBMcmhOYmoyWnJwY2pDN002R2NHM0Z6d3BsYk5KQjU0aFJpalRHQmYzbnVtMjJHRFBBbm9SU1RjQ2x5TGRNbEhyYUZ6NDBscTVXRlIzSFFRVDFObFZ4ZG9manA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNSEV1dTJiZkotclZ1TEpQOTVIMHVRZnhLb2hfV21MYklEel9VWVdKcnNtTHZESXpmWXVnb01Oa1NYUV9Sa0UtZ0JIX2cyQkVZWlpqZURLZFhhVjBMcmhOYmoyWnJwY2pDN002R2NHM0Z6d3BsYk5KQjU0aFJpalRHQmYzbnVtMjJHRFBBbm9SU1RjQ2x5TGRNbEhyYUZ6NDBscTVXRlIzSFFRVDFObFZ4ZG9manA?oc=5\" target=\"_blank\"&gt;India inflation likely accelerated in September on food and energy pressures - Reuters poll&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-08T03:31:00.000Z",
-          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 413,
-    "articlesLast24h": 181,
-    "afterDedup": 168,
+    "totalArticlesScanned": 411,
+    "articlesLast24h": 176,
+    "afterDedup": 166,
     "feedsQueried": 19
   }
 }
