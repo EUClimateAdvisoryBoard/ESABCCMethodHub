@@ -1,6 +1,6 @@
 {
   "date": "2026-10-09",
-  "generatedAt": "2026-10-09T11:44:53.087Z",
+  "generatedAt": "2026-10-09T21:33:44.978Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 9 October 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -21,6 +21,12 @@
       "summary": "A booklet published by the UK’s opposition Conservative party includes a “cost of net-zero” that appears to have been doubled&#8230; The post Factcheck: UK Conservatives double the ‘cost of net-zero’ after spreadsheet blunder appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Schools crisis in France: Investment fails to inspire confidence",
+      "summary": "For weeks, schoolchildren in France have been protesting the failing education system. Compared to many other countries, France invests heavily in education but critics say that the funds are not distributed fairly.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -51,6 +57,14 @@
           "score": 13
         },
         {
+          "title": "Brussels: Rioters clash with police at anti-austerity rally",
+          "link": "https://www.dw.com/en/brussels-rioters-clash-with-police-at-anti-austerity-rally/a-79620594?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Violent rioters, many of whom were masked, confronted police at the edge of an anti-austerity march in Brussels. Police responded with water cannons and tear gas.",
+          "published": "2026-10-09T15:54:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Why are more roofs not made of solar tiles?",
           "link": "https://www.bbc.co.uk/news/articles/cdr7n610rmzo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -59,27 +73,19 @@
           "score": 7
         },
         {
-          "title": "MoD has objected to four windfarms in past year over radar interference fears",
-          "link": "https://www.theguardian.com/environment/2026/oct/08/mod-objection-four-windfarms-radar-interference-fears",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Complaints risks putting defence ministry on collision course with Department for Energy Security and Net Zero&lt;/p&gt;&lt;p&gt;The Ministry of Defence has objected to at least four planned windfarms in the past year over fears the spinning blades could cause “unacceptable interference” with radars used to detect military aircraft.&lt;/p&gt;&lt;p&gt;MoD officials raised concerns in late June over plans for an onshore windfarm in County Durham that could result in aircraft “not being de",
-          "published": "2026-10-08T17:00:24.000Z",
-          "score": 4
+          "title": "Tuscan winemaker Antinori sees red after $6 million theft - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRGNRVDd1dGxLLTcxUFdnSFdLUWRGRlN6SVJxTjE4dlVmZllSdWdRSFo3aHFCWEQwdEdFR3VZbFdCcGlMZHk5TlVGaVBUOTNyazhTRk5tWElXc01RQ3lRd1hQYjhyWnpmMjFEZWtvMHdTRFhKbTlZM3lMbTBVT0MxUnNWN1E4cmQ4MXo0V1AxLUpQRlJPUmxScE1HMzVQclE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQRGNRVDd1dGxLLTcxUFdnSFdLUWRGRlN6SVJxTjE4dlVmZllSdWdRSFo3aHFCWEQwdEdFR3VZbFdCcGlMZHk5TlVGaVBUOTNyazhTRk5tWElXc01RQ3lRd1hQYjhyWnpmMjFEZWtvMHdTRFhKbTlZM3lMbTBVT0MxUnNWN1E4cmQ4MXo0V1AxLUpQRlJPUmxScE1HMzVQclE?oc=5\" target=\"_blank\"&gt;Tuscan winemaker Antinori sees red after $6 million theft&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-09T11:19:45.000Z",
+          "score": 7
         },
         {
-          "title": "US will not resume strikes on Iran before midterms — Trump",
-          "link": "https://www.dw.com/en/us-will-not-resume-strikes-on-iran-before-midterms-trump/a-79603731?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Hurricane Isaias intensifies en route to US Gulf Coast",
+          "link": "https://www.dw.com/en/hurricane-isaias-intensifies-en-route-to-us-gulf-coast/a-79612756?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "President Donald Trump said the US will not resume strikes on Iran before the midterm elections on November 3. High gas and grocery prices are top concerns for voters.",
-          "published": "2026-10-08T18:18:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "France: Police clash with protesters at Paris student rally",
-          "link": "https://www.dw.com/en/france-police-clash-with-protesters-at-paris-student-rally/a-79603684?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Police fired tear gas at protesters in Paris again as students continue to voice grievances about school conditions across France. The education minister has said 3,000 substitute teachers will reach schools soon.",
-          "published": "2026-10-08T17:10:00.000Z",
+          "description": "Oil and gas production in the Gulf of Mexico has already been affected by the approaching hurricane, which has strengthened so far to Category 2.",
+          "published": "2026-10-09T11:55:00.000Z",
           "score": 2
         }
       ]
@@ -97,20 +103,20 @@
           "score": 13
         },
         {
-          "title": "Pre-COP draws attention to Pacific’s climate plight and 1.5C goal",
-          "link": "https://www.climatechangenews.com/2026/10/08/pre-cop-draws-attention-to-pacifics-climate-plight-and-1-5c-goal/",
-          "source": "Climate Home News",
-          "description": "After visiting Tuvalu's shrinking land, COP31 President Murat Kurum said that the global 1.5C warming limit is \"a matter of survival\" for the Pacific The post Pre-COP draws attention to Pacific’s climate plight and 1.5C goal appeared first on Climate Home News.",
-          "published": "2026-10-08T11:52:15.000Z",
-          "score": 13
-        },
-        {
           "title": "AI and the climate crisis pose existential risks. The law offers a way to reduce them | Robert Reich",
           "link": "https://www.theguardian.com/commentisfree/2026/oct/09/ai-climate-change-liability-lawsuits",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Liability lawsuits have held tobacco, oil and pharma companies to account in the past. AI investors won’t ignore this threat&lt;/p&gt;&lt;p&gt;The most basic function of government is to protect people from harm. Two growing phenomena – the climate crisis and AI – pose escalating risks of &lt;em&gt;extraordinary&lt;/em&gt; harm.&lt;/p&gt;&lt;p&gt;The climate crisis is already causing floods, wildfires, drought and record heat. AI agents are already escaping super-secure environments to ",
           "published": "2026-10-09T11:00:26.000Z",
           "score": 11
+        },
+        {
+          "title": "Cop31 host urges wealthy countries to spend ‘much more’ on climate than defence",
+          "link": "https://www.theguardian.com/environment/2026/oct/09/cop31-host-wealthy-countries-climate-crisis-spending-defence-nato",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;‘The climate issue is the security issue,’ says Turkish minister at Pacific pre-Cop summit in Fiji&lt;/p&gt;&lt;p&gt;Wealthy countries should spend far more on dealing with the climate crisis than the 5% of GDP promised by Nato members for defence because “the climate issue is the security issue”, the host of the next UN summit has said.&lt;/p&gt;&lt;p&gt;But, in comments that are likely to prove contentious, the Cop31 president-designate, Murat Kurum, hedged on whether countries should",
+          "published": "2026-10-09T12:00:28.000Z",
+          "score": 7
         },
         {
           "title": "Tories overstate net zero cost by nearly £500bn in apparent spreadsheet error",
@@ -121,38 +127,39 @@
           "score": 7
         },
         {
-          "title": "Can hope save the planet? An endangered parrot that is beating the odds can help us find out | Helen Pilcher",
-          "link": "https://www.theguardian.com/commentisfree/2026/oct/08/hope-save-planet-endangered-parrot-global-biodiversity-report",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;A new global biodiversity report strikes an encouraging note. But we cannot rest on our laurels – and resilience is key&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://livingplanet.panda.org/en-GB/?utm_source=web&amp;amp;utm_medium=referral&amp;amp;utm_campaign=lpr&amp;amp;utm_content=uk-core-site-press-release&amp;amp;pc=PA-0000575002\"&gt;The new Living Planet Report is out&lt;/a&gt;. Published every two years, it assesses the health of the natural world and, historically, it’s made for gloomy r",
-          "published": "2026-10-08T15:05:53.000Z",
-          "score": 4
+          "title": "Inside the deadlock at the world's top climate science body - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQkFJRWlmcmZtRXBVSHoyQzF5a0FqVkE4RkRuLUExQWxxaTRtTDdNTnBXLUFVSVFlbUw5Zm1YWDFoRzk4dDBlNm1CWEpNa1NOV3BRbFdKd3J5dVZ2MVhRVlBOVUhTenFEOXZYLUdCREl3dHA5OTRDMEE3YjhOdW5LTmttSThFWkpPX2psU0VsNXItVFJYY0VTNDVIX2ludThsaGdHbg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPQkFJRWlmcmZtRXBVSHoyQzF5a0FqVkE4RkRuLUExQWxxaTRtTDdNTnBXLUFVSVFlbUw5Zm1YWDFoRzk4dDBlNm1CWEpNa1NOV3BRbFdKd3J5dVZ2MVhRVlBOVUhTenFEOXZYLUdCREl3dHA5OTRDMEE3YjhOdW5LTmttSThFWkpPX2psU0VsNXItVFJYY0VTNDVIX2ludThsaGdHbg?oc=5\" target=\"_blank\"&gt;Inside the deadlock at the world's top climate science body&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-09T06:04:00.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Schools crisis in France: Investment fails to inspire confidence",
+          "link": "https://www.dw.com/en/schools-crisis-in-france-investment-fails-to-inspire-confidence/a-79621916?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "For weeks, schoolchildren in France have been protesting the failing education system. Compared to many other countries, France invests heavily in education but critics say that the funds are not distributed fairly.",
+          "published": "2026-10-09T19:52:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Ukraine, Europe, US to meet in Miami for talks on ending war",
-          "link": "https://www.dw.com/en/ukraine-europe-us-to-meet-in-miami-for-talks-on-ending-war/a-79606735?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "China, EU reach deal to &#039;moderate&#039; China&#039;s car exports to EU",
+          "link": "https://www.dw.com/en/china-eu-reach-deal-to-moderate-china-s-car-exports-to-eu/a-79621394?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Officials from Ukraine, Europe and the US are meeting in Miami to discuss ways to break the deadlock in the war. The meeting comes as Russian strikes on Ukraine killed more than 70 people this week.",
-          "published": "2026-10-09T03:07:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Security in the Black Sea region: is Bulgaria the weak link in Europe&#039;s defense against threats from Russia?",
-          "link": "https://www.dw.com/en/security-in-the-black-sea-region-is-bulgaria-the-weak-link-in-europe-s-defense-against-threats-from-russia/a-79592663?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Two ships have sunk off the coast of Bulgaria and Romania after drone attacks in recent days. Bulgaria has held back on pointing the finger at Russia. What does that mean for security in the Black Sea and the region?",
-          "published": "2026-10-08T11:45:00.000Z",
+          "description": "An agreement between the EU and China would reduce exports of Chinese electric and plug-in hybrid cars to the 27-member European bloc by up to 50%, according to the EU trade envoy.",
+          "published": "2026-10-09T17:09:00.000Z",
           "score": 8
         },
         {
@@ -170,19 +177,27 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Why EV sales are lukewarm in America, but hot in Europe - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPajRUTl9xbW4wSDZYc1hpcEZZczJfa3ZXWXN2UF94THlDNVNvWlYwUTBqOTI5YUp6V2hhWUZHaHU0NXJFMkNkMXkxS1F4WjY3Z1gyU3FZQUctUnVQeDUyMy1BTG02WThsMlQ0eXVHazFZOEpLUW52cmVfTlZSSkdsTVJFLV84M3Q0VTN6VWExXzQ5bU1FWVkwUUlkSTQxMGhmSDVkN2tHWGVUZlFBM2ZZ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPajRUTl9xbW4wSDZYc1hpcEZZczJfa3ZXWXN2UF94THlDNVNvWlYwUTBqOTI5YUp6V2hhWUZHaHU0NXJFMkNkMXkxS1F4WjY3Z1gyU3FZQUctUnVQeDUyMy1BTG02WThsMlQ0eXVHazFZOEpLUW52cmVfTlZSSkdsTVJFLV84M3Q0VTN6VWExXzQ5bU1FWVkwUUlkSTQxMGhmSDVkN2tHWGVUZlFBM2ZZ?oc=5\" target=\"_blank\"&gt;Why EV sales are lukewarm in America, but hot in Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-08T18:08:06.000Z",
-          "score": 13
+          "title": "India&#039;s &#039;cockroaches&#039; vs Election Commission: What you need to know ahead of CJP&#039;s October 10 protests",
+          "link": "https://www.dw.com/en/india-s-cockroaches-vs-election-commission-what-you-need-to-know-ahead-of-cjp-s-october-10-protests/a-79608760?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Indian capital New Delhi has been turned into a fortress with train and metro cancelations, barricades and heavy police presence ahead of Saturday&#039;s planned protests against the chief of India&#039;s electoral body.",
+          "published": "2026-10-09T12:23:00.000Z",
+          "score": 8
         },
         {
-          "title": "EU pulls sponsorship from Disinfo2026 event in Lithuania",
-          "link": "https://www.dw.com/en/eu-pulls-sponsorship-from-disinfo2026-event-in-lithuania/a-79599615?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU&#039;s diplomatic service, Canada and host nation Lithuania all pulled support from a disinformation event in Vilnius. Amid reports of US pressure, the EU said it was &quot;uncomfortable with the framing&quot; of some panels.",
-          "published": "2026-10-08T16:20:00.000Z",
+          "title": "China, EU strike deal to halve Chinese hybrid exports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTHg5eDd4SHlldjU0OVlpTEVOaHB0QVpIOGhaTm9CSVN2WmE2RUtobThWUkpGM1NrMFVxeVFKMnctbEF4aV9JQnZIT0RjaXlWVHBhb3Noam5HemZnd0ZRTy1TSEJjUFljMl9md29ESGFUeVFha29xaWd0a050VjVjV2pFRS1qUWVJVm04SDJJUjRGcXBQUzE3TzhDaV9SWHR6TndZaGhMRUlib0NSekZFenBpUUtuTnZZSy1JekRHaDZoLTA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTHg5eDd4SHlldjU0OVlpTEVOaHB0QVpIOGhaTm9CSVN2WmE2RUtobThWUkpGM1NrMFVxeVFKMnctbEF4aV9JQnZIT0RjaXlWVHBhb3Noam5HemZnd0ZRTy1TSEJjUFljMl9md29ESGFUeVFha29xaWd0a050VjVjV2pFRS1qUWVJVm04SDJJUjRGcXBQUzE3TzhDaV9SWHR6TndZaGhMRUlib0NSekZFenBpUUtuTnZZSy1JekRHaDZoLTA?oc=5\" target=\"_blank\"&gt;China, EU strike deal to halve Chinese hybrid exports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-09T16:58:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "IKEA's Danish stores could become shelters as Europe boosts preparedness - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcC1iZ1lnRk9BNUt5bGFxTHNvU3U4bU1oczkya2MzbEJ0MFNSTGppUHZseGxiS2V1SUFXdElFdDFHcG95TzhfLXJSNENVb1JQZGtSTmFnTTFfMW41RHdoam5KRVROODZPdkw5cXhKa2JLWkc1OEdPT0t5Y19EMFJ4dHdaSW1adi1hQjVGMzI3cm5ZVGJBYV9zU2lKVHdlOTU5dlRqc2pUam5NSG80ekUw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQcC1iZ1lnRk9BNUt5bGFxTHNvU3U4bU1oczkya2MzbEJ0MFNSTGppUHZseGxiS2V1SUFXdElFdDFHcG95TzhfLXJSNENVb1JQZGtSTmFnTTFfMW41RHdoam5KRVROODZPdkw5cXhKa2JLWkc1OEdPT0t5Y19EMFJ4dHdaSW1adi1hQjVGMzI3cm5ZVGJBYV9zU2lKVHdlOTU5dlRqc2pUam5NSG80ekUw?oc=5\" target=\"_blank\"&gt;IKEA's Danish stores could become shelters as Europe boosts preparedness&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-09T14:05:03.000Z",
           "score": 8
         },
         {
@@ -194,28 +209,20 @@
           "score": 8
         },
         {
-          "title": "AkzoNobel, Axalta set to win EU antitrust nod for $25 billion deal, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOXhNTjhLSmI1NTZVMGszNVhsdXFqSVFET190Ym5DTUVHbW82d2VOMHpIRG1ubzdSX2xnWkxBTHA0VmRFN1dXVWZlV0dKbW5FejdxNlc0NWtSVUlHZ3hNazAtcFdWb0xoZHJ4YUc0SVhNWDJuazB0Z0ROdkJGQUlsU3FGbm54bm04aUUwVmJDSjBFVDcxWGJiUlNUb1dGV2xHRUxuY0FYMW5ycDNtSm5qWGQ1SUZpZDdYOHc?oc=5",
+          "title": "EU commissioner says recent Turkish actions widen gap with its EU membership goal - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQRHJYazRLcEVuM014X2hYRDVnWEgyXzVjTmZSY0E4ckx6V2ZLV0tQUFZjTGtmUUQzQU4zX2ItR2dhblNCV0ZjTHZ4ODV1SlZ0QzFjanhROXpOaVk2aktRZ0pOQVdENU5RSGJZVy1YczJtTllCcUpobWhUVGxCS3gwLWJIUEZBcnJTdjkwdXlTRGd0cU02eW15TjVmYXlVZk5ZWDdEU1dCQ1duVTFCNHFaWXlaRjJLMklKUXc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNOXhNTjhLSmI1NTZVMGszNVhsdXFqSVFET190Ym5DTUVHbW82d2VOMHpIRG1ubzdSX2xnWkxBTHA0VmRFN1dXVWZlV0dKbW5FejdxNlc0NWtSVUlHZ3hNazAtcFdWb0xoZHJ4YUc0SVhNWDJuazB0Z0ROdkJGQUlsU3FGbm54bm04aUUwVmJDSjBFVDcxWGJiUlNUb1dGV2xHRUxuY0FYMW5ycDNtSm5qWGQ1SUZpZDdYOHc?oc=5\" target=\"_blank\"&gt;AkzoNobel, Axalta set to win EU antitrust nod for $25 billion deal, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-08T18:48:04.000Z",
-          "score": 8
-        },
-        {
-          "title": "Kingspan hit with €40 million EU fine for misleading data on Slovenian deal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQM2lCUXM3TlNMZjNYekktcFNOODM1UXNucEg5bWRPTGtoYzZFbWZfbE1NaGl4SDNXNUdmdVFqWjdBamNzd2hnN1FJQ1Nmb0czMXNab0poN0hqVlY3MkFXVjFRR18wRmV2QmZTR3VmR0t1dFRZcU91X1BjcVBiNUNHUWo1WUxnMWhsVDBfNklMSVVMWnZiYXNQMHExWFBwNTlsXzY0T2YtVl84R19KYnc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQM2lCUXM3TlNMZjNYekktcFNOODM1UXNucEg5bWRPTGtoYzZFbWZfbE1NaGl4SDNXNUdmdVFqWjdBamNzd2hnN1FJQ1Nmb0czMXNab0poN0hqVlY3MkFXVjFRR18wRmV2QmZTR3VmR0t1dFRZcU91X1BjcVBiNUNHUWo1WUxnMWhsVDBfNklMSVVMWnZiYXNQMHExWFBwNTlsXzY0T2YtVl84R19KYnc?oc=5\" target=\"_blank\"&gt;Kingspan hit with €40 million EU fine for misleading data on Slovenian deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-08T21:53:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQRHJYazRLcEVuM014X2hYRDVnWEgyXzVjTmZSY0E4ckx6V2ZLV0tQUFZjTGtmUUQzQU4zX2ItR2dhblNCV0ZjTHZ4ODV1SlZ0QzFjanhROXpOaVk2aktRZ0pOQVdENU5RSGJZVy1YczJtTllCcUpobWhUVGxCS3gwLWJIUEZBcnJTdjkwdXlTRGd0cU02eW15TjVmYXlVZk5ZWDdEU1dCQ1duVTFCNHFaWXlaRjJLMklKUXc?oc=5\" target=\"_blank\"&gt;EU commissioner says recent Turkish actions widen gap with its EU membership goal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-09T13:53:44.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 411,
+    "totalArticlesScanned": 408,
     "articlesLast24h": 176,
-    "afterDedup": 166,
+    "afterDedup": 164,
     "feedsQueried": 19
   }
 }
