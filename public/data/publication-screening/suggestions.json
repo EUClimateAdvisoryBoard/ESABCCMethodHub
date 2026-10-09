@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T11:30:18.356Z",
+  "generatedAt": "2026-10-09T11:25:57.961Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,45 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/aeb1e2",
+      "title": "Nearly ninety percent of Indonesian coffee area is classified as deforestation-free under the European Union Deforestation Regulation (EUDR)",
+      "journal": "Environmental Research Letters",
+      "authors": "Tin Widyani Satriawan, Xiangzhong (Remi) Luo, Shafira N Ramdhania et al.",
+      "published": "2026-10-08",
+      "url": "https://doi.org/10.1088/1748-9326/aeb1e2",
+      "abstract": "Indonesia is the third-largest coffee producer globally and exports a substantial share of its production to European Union (EU) countries. Recent implementation of the EU Deforestation Regulation (EUDR), which requires deforestation-free supply chains, highlights the need for spatially-explicit coffee mapping to support the assessment of coffee-associated deforestation. In this study, we utilized multitemporal and multi-sensor remote sensing to produce annual maps of coffee distribution from 2016 to 2024. We analyzed the spatial patterns of annual coffee distribution during this period, and evaluated the potential implications of EUDR for coffee production in Indonesia. Our maps of coffee agroecosystems demonstrate an overall classification accuracy exceeding 80%, and are broadly consistent with independent coffee datasets (i.e., national statistics and coffee probability maps from the Forest Data Partnership). We detected a net increase of ~15% in coffee area over the eight-year period, although the patterns of change vary across provinces. Based on these maps, we estimate that 87.9% of the coffee area in 2024 meets the EUDR deforestation-free criterion, and only a relatively small proportion of agroecosystems are classified as non-deforestation-free. These findings highlight opportunities for spatially targeted EUDR implementation, where deforestation-free coffee agroecosystems can be supported towards meeting broader EUDR requirements, while areas associated with forest c",
+      "suggestedOn": "2026-10-09",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 5,
+          "matched": [
+            "european union"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.enpol.2026.115653",
+      "title": "Driving low-carbon technology diffusion in heterogeneous steel enterprises through carbon emissions trading: An evolutionary game analysis",
+      "journal": "Energy Policy",
+      "authors": "Hui Wang, Yujian Sun, Zhenghua Rao et al.",
+      "published": "2027-01",
+      "url": "https://doi.org/10.1016/j.enpol.2026.115653",
+      "abstract": "",
+      "suggestedOn": "2026-10-09",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 6,
+          "matched": [
+            "steel",
+            "emissions trading"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aeb14a",
       "title": "Dynamic urban decarbonisation pathways revealed in rapidly urbanizing Chinese cities",
