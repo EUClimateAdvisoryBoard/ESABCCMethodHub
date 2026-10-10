@@ -15,10 +15,12 @@
  * Epistemic status: AI-compiled, August 2026, pending Secretariat
  * verification. Politically the most sensitive module on the policy-gap
  * list — verdicts on named actors' claims require Secretariat sign-off
- * before anything here is shown beyond the team. No verbatim quotes are
- * asserted in this compile: every claim text is an explicit paraphrase
- * (see data.generated.ts for the provenance block, the claim-selection
- * rule and the quote policy).
+ * before anything here is shown beyond the team. Since 2026-08-06, 8 of
+ * the 14 claims carry the speaker's own words verbatim alongside the
+ * register's paraphrase, machine-revalidated as exact substrings of
+ * stored source excerpts by `npm run check:claims`; the other 6 say
+ * plainly why no quote could be extracted (see data.generated.ts for the
+ * provenance block, the claim-selection rule and the quote policy).
  */
 
 import { useMemo, useState } from 'react';
@@ -75,12 +77,32 @@ function ClaimCard({ claim }: { claim: Claim }) {
           {TOPIC_META[claim.topic]}
         </span>
         <span className="rounded border border-grey-300 bg-grey-100 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.06em] text-tertiary">
-          paraphrase
+          {claim.quote ? 'paraphrase + verbatim quote' : 'paraphrase only'}
         </span>
         <span className="ml-auto text-[10.5px] text-tertiary">{claim.date}</span>
       </div>
 
-      <p className="mt-2 text-[13px] font-semibold leading-relaxed text-tertiary-dark">“{claim.claim}”</p>
+      {/* The register's own compressed statement of the position. Deliberately
+          NOT in quotation marks: it is not the speaker's words, and showing it
+          quoted was the single most misleading thing on this page. */}
+      <p className="mt-2 text-[13px] font-semibold leading-relaxed text-tertiary-dark">{claim.claim}</p>
+
+      {claim.quote ? (
+        <figure className="mt-2 border-l-2 border-primary/40 pl-3">
+          <blockquote className="text-[12px] italic leading-relaxed text-tertiary-dark">
+            &ldquo;{claim.quote.text}&rdquo;
+          </blockquote>
+          <figcaption className="mt-1 text-[10.5px] leading-snug text-tertiary">
+            Verbatim · {claim.quote.locator}
+          </figcaption>
+        </figure>
+      ) : (
+        <p className="mt-2 border-l-2 border-accent-orange/50 pl-3 text-[10.5px] leading-snug text-tertiary">
+          <span className="font-semibold text-tertiary-dark">No verbatim quote. </span>
+          {claim.quoteStatus}
+        </p>
+      )}
+
       <p className="mt-1.5 text-[11px] leading-snug text-tertiary">
         <span className="font-semibold text-tertiary-dark">{claim.speaker}</span> · {claim.forum} ·{' '}
         <a href={claim.sourceUrl} target="_blank" rel="noreferrer" className="text-primary hover:underline">
@@ -176,6 +198,7 @@ export default function CompetitivenessClaimsPage() {
 
   const nProps = propositionCount(CLAIMS);
   const nSteel = steelmanCount(CLAIMS);
+  const nQuoted = CLAIMS.filter((c) => c.quote !== null).length;
   const nAgainst = CLAIMS.filter((c) => c.direction === 'against-ambition').length;
   const nFor = CLAIMS.length - nAgainst;
 
@@ -212,14 +235,19 @@ export default function CompetitivenessClaimsPage() {
             claims by named institutions — the most politically sensitive material in this workspace.{' '}
             <strong>Nothing here may be shown or cited beyond the team before Secretariat sign-off</strong>, on both
             the verdicts and the claim selection (the selection rule is recorded below so its balance can be audited).
-            No verbatim quotes are asserted: every claim text is an explicit <em>paraphrase</em>, because the source
-            texts could not be machine-checked at compile time — re-extracting ≤60-word verbatim substrings with
-            locators is the first task of the human pass.
+            On quoting: the bold line on each card is the register&apos;s own <em>paraphrase</em> of a position,
+            written so claims from different speakers compare on one page — it is deliberately not shown in
+            quotation marks, because it is not the speaker&apos;s words. Where the speaker&apos;s own words could be
+            extracted from a primary source they appear beneath it as an indented verbatim quote with a locator;
+            those are machine-revalidated as exact substrings of stored source excerpts on every run of{' '}
+            <code className="rounded bg-white/60 px-1 text-[11px]">npm run check:claims</code>. Six claims carry no
+            quote and say exactly why — an unreachable source or, for two of them, an argument this register has not
+            yet attributed to any single dated text.
           </p>
         </section>
 
         {/* stat strip */}
-        <section className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <section className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           <StatTile
             label="Claims registered"
             value={String(CLAIMS.length)}
@@ -234,6 +262,11 @@ export default function CompetitivenessClaimsPage() {
             label="Steel-mans recorded"
             value={String(nSteel)}
             sub="Mandatory for every claim with an UNSUPPORTED proposition — on both sides."
+          />
+          <StatTile
+            label="Claims quoted verbatim"
+            value={`${nQuoted} / ${CLAIMS.length}`}
+            sub="Speaker's own words, revalidated as exact substrings of a stored source excerpt. The rest say why not."
           />
           <StatTile
             label="Verdicts confirmed by humans"
@@ -401,13 +434,16 @@ export default function CompetitivenessClaimsPage() {
           <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-tertiary-dark">Caveats &amp; sources</p>
           <p className="mt-1.5 max-w-4xl text-[12px] leading-relaxed text-tertiary">
             All verdicts are AI-drafted against the compiler’s reading of the sources listed below and are pending
-            Secretariat verification; none of the claim texts is a verified verbatim quote (all are labelled
-            paraphrases). Several locators are flagged as weak in the provenance block — the automotive-action-plan
-            COM number, the Budapest Declaration URL and the exact ESRS data-point inventory — and must be verified
-            before any use. Verdicts on ex-ante estimates and counterfactuals are deliberately NOT CHECKABLE rather
-            than asserted; a fact-check pass over this register changes no stored values and produces decisions for
-            the Secretariat via the overrides mechanism. Claims about the ETS should be resolved against M · 37 /
-            M · 29, price claims against M · 34, omnibus rows against M · 39.
+            Secretariat verification. Quoting status as of 6 August 2026: 8 of the 14 claims carry a verbatim quote
+            from a primary source, each stored with a source excerpt and revalidated as an exact substring by{' '}
+            <code className="rounded bg-white/70 px-1 text-[11px]">npm run check:claims</code>; 6 carry none and say
+            why on the card. The three locators previously flagged as weak have all been checked — the automotive
+            action plan is COM(2025) 95 final of 5.3.2025 and the ESRS inventory is over 1,100 data points in EFRAG
+            IG 3, both confirmed. The Budapest Declaration locator was corrected twice: it is cited by title and
+            date only, because an earlier pass wrongly attached Council document number ST 15518/2024 to it, and
+            that document is a Presidency note on research and innovation. Verdicts on ex-ante estimates and
+            counterfactuals remain deliberately NOT CHECKABLE rather than asserted. Claims about the ETS should be
+            resolved against M · 37 / M · 29, price claims against M · 34, omnibus rows against M · 39.
           </p>
           <ul className="mt-3 grid gap-x-6 gap-y-1 text-[12px] sm:grid-cols-2">
             {SOURCES.map((s) => (
