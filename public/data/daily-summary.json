@@ -1,24 +1,18 @@
 {
   "date": "2026-10-10",
-  "generatedAt": "2026-10-10T02:12:28.635Z",
+  "generatedAt": "2026-10-10T10:59:17.487Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 10 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "IPCC’s Sixty-Fifth Session in Addis Ababa, Ethiopia",
-      "summary": "GENEVA, Oct 8– The Intergovernmental Panel on Climate Change (IPCC) will be holding its Sixty-Fifth Plenary Session in Addis Ababa, Ethiopia, from 12 to 16 October 2026. The 65th Session of the IPCC is hosted by the United Nations Economic Commission for Africa (UNECA) and the Federal Democratic Republic of Ethiopia. Opening session The opening [&#8230;]",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "Launch of Africa Energy Bank delayed again in blow to oil and gas hopes",
-      "summary": "Repeated delays are raising questions about the bank's momentum and whether it can mobilise investment to finance Africa’s oil and gas ambitions in an era of energy transition The post Launch of Africa Energy Bank delayed again in blow to oil and gas hopes appeared first on Climate Home News.",
+      "headline": "Brussels: Rioters clash with police at anti-austerity rally",
+      "summary": "Violent rioters, many of whom were masked, confronted police at the edge of an anti-austerity march in Brussels. Police responded with water cannons and tear gas.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Factcheck: UK Conservatives double the ‘cost of net-zero’ after spreadsheet blunder",
-      "summary": "A booklet published by the UK’s opposition Conservative party includes a “cost of net-zero” that appears to have been doubled&#8230; The post Factcheck: UK Conservatives double the ‘cost of net-zero’ after spreadsheet blunder appeared first on Carbon Brief.",
+      "headline": "AI and the climate crisis pose existential risks. The law offers a way to reduce them | Robert Reich",
+      "summary": "&lt;p&gt;Liability lawsuits have held tobacco, oil and pharma companies to account in the past. AI investors won’t ignore this threat&lt;/p&gt;&lt;p&gt;The most basic function of government is to protect people from harm. Two growing phenomena – the climate crisis and AI – pose escalating risks of &lt;em&gt;extraordinary&lt;/em&gt; harm.&lt;/p&gt;&lt;p&gt;The climate crisis is already causing floods, wildfires, drought and record heat. AI agents are already escaping super-secure environments to ",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -33,29 +27,12 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "IPCC’s Sixty-Fifth Session in Addis Ababa, Ethiopia",
-          "link": "https://www.ipcc.ch/2026/10/09/media-advisory-ipcc65/",
-          "source": "IPCC",
-          "description": "GENEVA, Oct 8– The Intergovernmental Panel on Climate Change (IPCC) will be holding its Sixty-Fifth Plenary Session in Addis Ababa, Ethiopia, from 12 to 16 October 2026. The 65th Session of the IPCC is hosted by the United Nations Economic Commission for Africa (UNECA) and the Federal Democratic Republic of Ethiopia. Opening session The opening [&#8230;]",
-          "published": "2026-10-09T08:32:36.000Z",
-          "score": 17
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Launch of Africa Energy Bank delayed again in blow to oil and gas hopes",
-          "link": "https://www.climatechangenews.com/2026/10/09/launch-of-africa-energy-bank-delayed-again-in-blow-to-oil-and-gas-hopes/",
-          "source": "Climate Home News",
-          "description": "Repeated delays are raising questions about the bank's momentum and whether it can mobilise investment to finance Africa’s oil and gas ambitions in an era of energy transition The post Launch of Africa Energy Bank delayed again in blow to oil and gas hopes appeared first on Climate Home News.",
-          "published": "2026-10-09T05:00:00.000Z",
-          "score": 13
-        },
         {
           "title": "Brussels: Rioters clash with police at anti-austerity rally",
           "link": "https://www.dw.com/en/brussels-rioters-clash-with-police-at-anti-austerity-rally/a-79620594?maca=en-rss-en-all-1573-xml-mrss",
@@ -65,20 +42,20 @@
           "score": 8
         },
         {
+          "title": "How the Houthi-Saudi conflict is affecting countries on Africa&#039;s Red Sea coast — and beyond",
+          "link": "https://www.dw.com/en/how-the-houthi-saudi-conflict-is-affecting-countries-on-africa-s-red-sea-coast-and-beyond/a-79588992?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Bab el-Mandeb Strait, which Yemeni government forces are trying to take back from the Houthis, is located not far from Djibouti and other African states.",
+          "published": "2026-10-10T06:10:00.000Z",
+          "score": 7
+        },
+        {
           "title": "Tuscan winemaker Antinori sees red after $6 million theft - Reuters",
           "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRGNRVDd1dGxLLTcxUFdnSFdLUWRGRlN6SVJxTjE4dlVmZllSdWdRSFo3aHFCWEQwdEdFR3VZbFdCcGlMZHk5TlVGaVBUOTNyazhTRk5tWElXc01RQ3lRd1hQYjhyWnpmMjFEZWtvMHdTRFhKbTlZM3lMbTBVT0MxUnNWN1E4cmQ4MXo0V1AxLUpQRlJPUmxScE1HMzVQclE?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQRGNRVDd1dGxLLTcxUFdnSFdLUWRGRlN6SVJxTjE4dlVmZllSdWdRSFo3aHFCWEQwdEdFR3VZbFdCcGlMZHk5TlVGaVBUOTNyazhTRk5tWElXc01RQ3lRd1hQYjhyWnpmMjFEZWtvMHdTRFhKbTlZM3lMbTBVT0MxUnNWN1E4cmQ4MXo0V1AxLUpQRlJPUmxScE1HMzVQclE?oc=5\" target=\"_blank\"&gt;Tuscan winemaker Antinori sees red after $6 million theft&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-09T11:19:45.000Z",
           "score": 7
-        },
-        {
-          "title": "Hurricane Isaias intensifies en route to US Gulf Coast",
-          "link": "https://www.dw.com/en/hurricane-isaias-intensifies-en-route-to-us-gulf-coast/a-79612756?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Oil and gas production in the Gulf of Mexico has already been affected by the approaching hurricane, which has strengthened so far to Category 2.",
-          "published": "2026-10-09T11:55:00.000Z",
-          "score": 2
         }
       ]
     },
@@ -87,20 +64,20 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Factcheck: UK Conservatives double the ‘cost of net-zero’ after spreadsheet blunder",
-          "link": "https://www.carbonbrief.org/factcheck-uk-conservatives-double-the-cost-of-net-zero-after-spreadsheet-blunder",
-          "source": "Carbon Brief",
-          "description": "A booklet published by the UK’s opposition Conservative party includes a “cost of net-zero” that appears to have been doubled&#8230; The post Factcheck: UK Conservatives double the ‘cost of net-zero’ after spreadsheet blunder appeared first on Carbon Brief.",
-          "published": "2026-10-09T06:00:00.000Z",
-          "score": 13
-        },
-        {
           "title": "AI and the climate crisis pose existential risks. The law offers a way to reduce them | Robert Reich",
           "link": "https://www.theguardian.com/commentisfree/2026/oct/09/ai-climate-change-liability-lawsuits",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Liability lawsuits have held tobacco, oil and pharma companies to account in the past. AI investors won’t ignore this threat&lt;/p&gt;&lt;p&gt;The most basic function of government is to protect people from harm. Two growing phenomena – the climate crisis and AI – pose escalating risks of &lt;em&gt;extraordinary&lt;/em&gt; harm.&lt;/p&gt;&lt;p&gt;The climate crisis is already causing floods, wildfires, drought and record heat. AI agents are already escaping super-secure environments to ",
           "published": "2026-10-09T11:00:26.000Z",
           "score": 11
+        },
+        {
+          "title": "Climate crisis is coming to crush many of world’s best surf breaks, study warns",
+          "link": "https://www.theguardian.com/environment/2026/oct/10/climate-crisis-putting-world-best-surf-breaks-at-risk",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Changing tide levels, shifting sands and hardened shorelines put waves at risk, affecting more than just surfers&lt;/p&gt;&lt;p&gt;The climate crisis is coming for some of the world’s greatest surf breaks, submerging some as sea level rises and wiping out others as classic breaks get crushed against coastal developments.&lt;/p&gt;&lt;p&gt;Analysis of dozens of famous waves in &lt;a href=\"https://www.savethewaves.org/wsr/\"&gt;world surfing reserves&lt;/a&gt; (WSR) found more than three-q",
+          "published": "2026-10-10T03:00:45.000Z",
+          "score": 7
         },
         {
           "title": "Cop31 host urges wealthy countries to spend ‘much more’ on climate than defence",
@@ -111,20 +88,20 @@
           "score": 7
         },
         {
-          "title": "Tories overstate net zero cost by nearly £500bn in apparent spreadsheet error",
-          "link": "https://www.theguardian.com/politics/2026/oct/09/tories-overstate-net-zero-cost-500bn-spreadsheet-error",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Exclusive: Badenoch’s flagship conference policy document cites £957bn estimate, twice the total in climate advisers’ data&lt;/p&gt;&lt;p&gt;Kemi Badenoch’s flagship party conference policy document overestimated the cost of net zero by nearly £500bn, seemingly after someone accidentally double-counted figures on a spreadsheet.&lt;/p&gt;&lt;p&gt;The apparent error appears in a chapter on net zero in &lt;a href=\"https://cdn.prod.website-files.com/6760307b23436bea5cfc749e/6abe82ddb8322e0c",
-          "published": "2026-10-09T06:00:41.000Z",
-          "score": 7
+          "title": "How drones are hunting fires hidden beneath the Cairngorms",
+          "link": "https://www.bbc.co.uk/news/articles/cwm24n9v8rdeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Dramatic flames from the huge Cairngorms wildfire in July have disappeared - but hot spots can continue to burn beneath the earth.",
+          "published": "2026-10-10T09:31:14.000Z",
+          "score": 4
         },
         {
-          "title": "Inside the deadlock at the world's top climate science body - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQkFJRWlmcmZtRXBVSHoyQzF5a0FqVkE4RkRuLUExQWxxaTRtTDdNTnBXLUFVSVFlbUw5Zm1YWDFoRzk4dDBlNm1CWEpNa1NOV3BRbFdKd3J5dVZ2MVhRVlBOVUhTenFEOXZYLUdCREl3dHA5OTRDMEE3YjhOdW5LTmttSThFWkpPX2psU0VsNXItVFJYY0VTNDVIX2ludThsaGdHbg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPQkFJRWlmcmZtRXBVSHoyQzF5a0FqVkE4RkRuLUExQWxxaTRtTDdNTnBXLUFVSVFlbUw5Zm1YWDFoRzk4dDBlNm1CWEpNa1NOV3BRbFdKd3J5dVZ2MVhRVlBOVUhTenFEOXZYLUdCREl3dHA5OTRDMEE3YjhOdW5LTmttSThFWkpPX2psU0VsNXItVFJYY0VTNDVIX2ludThsaGdHbg?oc=5\" target=\"_blank\"&gt;Inside the deadlock at the world's top climate science body&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-09T06:04:00.000Z",
-          "score": 7
+          "title": "Dozens injured and buildings damaged as tornadoes hit Sicily",
+          "link": "https://www.theguardian.com/world/2026/oct/10/tornado-hit-marsala-sicily-injuries-damage",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Marsala on the island’s west coast badly affected after powerful storm approached from the Mediterranean &lt;/p&gt;&lt;p&gt;Two tornadoes struck the coastal town of Marsala in western Sicily on Friday, injuring dozens of people, damaging buildings including a school and overturning cars.&lt;/p&gt;&lt;p&gt;A series of videos that began circulating late on Friday morning showed two waterspouts approaching the Sicilian town from the sea as people braced for their arrival.&lt;/p&gt; &lt;a h",
+          "published": "2026-10-10T10:37:23.000Z",
+          "score": 2
         }
       ]
     },
@@ -137,7 +114,7 @@
           "link": "https://www.bbc.co.uk/news/articles/cm1dwgr666wno?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Ukraine's president sharply criticised the move, calling it an \"investment in war that must be ended, not prolonged\".",
-          "published": "2026-10-10T00:45:51.000Z",
+          "published": "2026-10-10T04:38:20.000Z",
           "score": 2
         },
         {
@@ -146,6 +123,14 @@
           "source": "Deutsche Welle World",
           "description": "For weeks, schoolchildren in France have been protesting the failing education system. Compared to many other countries, France invests heavily in education but critics say that the funds are not distributed fairly.",
           "published": "2026-10-09T19:52:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Zelenskiy says letting Russia sell diesel to US is 'investment in war' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQVJCMFpxdHZyV3d5ZGpwMFJOODA4dW4wZW53NnJ4OHN0MGJWeWtZSzU1ZzhvRS1Jd2VvanVvN3Rsa2hxZHQwRWlqM2p4bV9PM2tYS09PTDZDV0pnbkNtLXJqMkV6ZVpXS05xc29JX3RraVZ0SnM5QmEza1NaeGJnRUJqbTNWZVBLSEtCb0p2SlFVMk5GRW9TTUtnc3FyQmw5RUN3ZFQ1Yl9EeUk?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQVJCMFpxdHZyV3d5ZGpwMFJOODA4dW4wZW53NnJ4OHN0MGJWeWtZSzU1ZzhvRS1Jd2VvanVvN3Rsa2hxZHQwRWlqM2p4bV9PM2tYS09PTDZDV0pnbkNtLXJqMkV6ZVpXS05xc29JX3RraVZ0SnM5QmEza1NaeGJnRUJqbTNWZVBLSEtCb0p2SlFVMk5GRW9TTUtnc3FyQmw5RUN3ZFQ1Yl9EeUk?oc=5\" target=\"_blank\"&gt;Zelenskiy says letting Russia sell diesel to US is 'investment in war'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-09T20:42:23.000Z",
           "score": 2
         }
       ]
@@ -177,14 +162,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "India&#039;s &#039;cockroaches&#039; vs Election Commission: What you need to know ahead of CJP&#039;s October 10 protests",
-          "link": "https://www.dw.com/en/india-s-cockroaches-vs-election-commission-what-you-need-to-know-ahead-of-cjp-s-october-10-protests/a-79608760?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The Indian capital New Delhi has been turned into a fortress with train and metro cancelations, barricades and heavy police presence ahead of Saturday&#039;s planned protests against the chief of India&#039;s electoral body.",
-          "published": "2026-10-09T12:23:00.000Z",
-          "score": 8
-        },
-        {
           "title": "EU commissioner says recent Turkish actions widen gap with its EU membership goal - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQRHJYazRLcEVuM014X2hYRDVnWEgyXzVjTmZSY0E4ckx6V2ZLV0tQUFZjTGtmUUQzQU4zX2ItR2dhblNCV0ZjTHZ4ODV1SlZ0QzFjanhROXpOaVk2aktRZ0pOQVdENU5RSGJZVy1YczJtTllCcUpobWhUVGxCS3gwLWJIUEZBcnJTdjkwdXlTRGd0cU02eW15TjVmYXlVZk5ZWDdEU1dCQ1duVTFCNHFaWXlaRjJLMklKUXc?oc=5",
           "source": "Reuters World (via Google News)",
@@ -201,28 +178,36 @@
           "score": 8
         },
         {
-          "title": "China, EU strike deal to halve Chinese hybrid exports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTHg5eDd4SHlldjU0OVlpTEVOaHB0QVpIOGhaTm9CSVN2WmE2RUtobThWUkpGM1NrMFVxeVFKMnctbEF4aV9JQnZIT0RjaXlWVHBhb3Noam5HemZnd0ZRTy1TSEJjUFljMl9md29ESGFUeVFha29xaWd0a050VjVjV2pFRS1qUWVJVm04SDJJUjRGcXBQUzE3TzhDaV9SWHR6TndZaGhMRUlib0NSekZFenBpUUtuTnZZSy1JekRHaDZoLTA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTHg5eDd4SHlldjU0OVlpTEVOaHB0QVpIOGhaTm9CSVN2WmE2RUtobThWUkpGM1NrMFVxeVFKMnctbEF4aV9JQnZIT0RjaXlWVHBhb3Noam5HemZnd0ZRTy1TSEJjUFljMl9md29ESGFUeVFha29xaWd0a050VjVjV2pFRS1qUWVJVm04SDJJUjRGcXBQUzE3TzhDaV9SWHR6TndZaGhMRUlib0NSekZFenBpUUtuTnZZSy1JekRHaDZoLTA?oc=5\" target=\"_blank\"&gt;China, EU strike deal to halve Chinese hybrid exports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-09T16:58:00.000Z",
-          "score": 8
-        },
-        {
           "title": "EU tech chief says bloc 'well equipped' to fend off rogue AI risk - Reuters",
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUlZ0bzBBQ1FybjVfRTRYQTlWejZRdndVOHZxMFpJWWJ3dEJNYzBHb2N1QmdFLURtOEZGRm1OUUV4dmJoYmxwMHVXM19uSndXTFNrcHU1SkNjWWtrRW5WQ0ZvSl85cmJJaVpGTVVpNHFHc1VYby1CRzRQLWJzUWQ0RkJOMFo0X29jNk5pa1Exa2J0Sy1IRUlpc2JIWlQtR3ZzejBudw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxNUlZ0bzBBQ1FybjVfRTRYQTlWejZRdndVOHZxMFpJWWJ3dEJNYzBHb2N1QmdFLURtOEZGRm1OUUV4dmJoYmxwMHVXM19uSndXTFNrcHU1SkNjWWtrRW5WQ0ZvSl85cmJJaVpGTVVpNHFHc1VYby1CRzRQLWJzUWQ0RkJOMFo0X29jNk5pa1Exa2J0Sy1IRUlpc2JIWlQtR3ZzejBudw?oc=5\" target=\"_blank\"&gt;EU tech chief says bloc 'well equipped' to fend off rogue AI risk&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-09T16:36:22.000Z",
           "score": 8
+        },
+        {
+          "title": "China, EU strike deal to halve Chinese hybrid exports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTHg5eDd4SHlldjU0OVlpTEVOaHB0QVpIOGhaTm9CSVN2WmE2RUtobThWUkpGM1NrMFVxeVFKMnctbEF4aV9JQnZIT0RjaXlWVHBhb3Noam5HemZnd0ZRTy1TSEJjUFljMl9md29ESGFUeVFha29xaWd0a050VjVjV2pFRS1qUWVJVm04SDJJUjRGcXBQUzE3TzhDaV9SWHR6TndZaGhMRUlib0NSekZFenBpUUtuTnZZSy1JekRHaDZoLTA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTHg5eDd4SHlldjU0OVlpTEVOaHB0QVpIOGhaTm9CSVN2WmE2RUtobThWUkpGM1NrMFVxeVFKMnctbEF4aV9JQnZIT0RjaXlWVHBhb3Noam5HemZnd0ZRTy1TSEJjUFljMl9md29ESGFUeVFha29xaWd0a050VjVjV2pFRS1qUWVJVm04SDJJUjRGcXBQUzE3TzhDaV9SWHR6TndZaGhMRUlib0NSekZFenBpUUtuTnZZSy1JekRHaDZoLTA?oc=5\" target=\"_blank\"&gt;China, EU strike deal to halve Chinese hybrid exports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-09T12:41:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU aviation body widens Saudi airspace warning after Houthi strikes - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObUF1S2Y0LTFHM0JDbXRLY05aMmVvUDJqOU1ZNjEtLVlDdFVMelgyTlN0d3BvY0lrLVJkZEc4VGI0eEMtWTVnbDBGQnNVSGx1bklCQkxiNEs3RzFlWklGSWtoMFpyLV9zb2N6Y1VlVjQ2b2pqMy1ld0IyZ2RQMGt3YmFRaWQyUFBrYnVua2VyWGdyQW4wU0xGWm91d2prUlRLSHZrZXNwZjl0MVBuQV9ZeFZmZi15Nmh1VGFvV25xeVJfYkNGWkE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxObUF1S2Y0LTFHM0JDbXRLY05aMmVvUDJqOU1ZNjEtLVlDdFVMelgyTlN0d3BvY0lrLVJkZEc4VGI0eEMtWTVnbDBGQnNVSGx1bklCQkxiNEs3RzFlWklGSWtoMFpyLV9zb2N6Y1VlVjQ2b2pqMy1ld0IyZ2RQMGt3YmFRaWQyUFBrYnVua2VyWGdyQW4wU0xGWm91d2prUlRLSHZrZXNwZjl0MVBuQV9ZeFZmZi15Nmh1VGFvV25xeVJfYkNGWkE?oc=5\" target=\"_blank\"&gt;EU aviation body widens Saudi airspace warning after Houthi strikes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-09T16:25:01.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 410,
-    "articlesLast24h": 175,
-    "afterDedup": 163,
+    "totalArticlesScanned": 407,
+    "articlesLast24h": 164,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
