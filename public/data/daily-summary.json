@@ -1,18 +1,18 @@
 {
   "date": "2026-10-10",
-  "generatedAt": "2026-10-10T10:59:17.487Z",
+  "generatedAt": "2026-10-10T16:10:50.343Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 10 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Brussels: Rioters clash with police at anti-austerity rally",
-      "summary": "Violent rioters, many of whom were masked, confronted police at the edge of an anti-austerity march in Brussels. Police responded with water cannons and tear gas.",
+      "headline": "How the Houthi-Saudi conflict is affecting countries on Africa&#039;s Red Sea coast — and beyond",
+      "summary": "The Bab el-Mandeb Strait, which Yemeni government forces are trying to take back from the Houthis, is located not far from Djibouti and other African states.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "AI and the climate crisis pose existential risks. The law offers a way to reduce them | Robert Reich",
-      "summary": "&lt;p&gt;Liability lawsuits have held tobacco, oil and pharma companies to account in the past. AI investors won’t ignore this threat&lt;/p&gt;&lt;p&gt;The most basic function of government is to protect people from harm. Two growing phenomena – the climate crisis and AI – pose escalating risks of &lt;em&gt;extraordinary&lt;/em&gt; harm.&lt;/p&gt;&lt;p&gt;The climate crisis is already causing floods, wildfires, drought and record heat. AI agents are already escaping super-secure environments to ",
+      "headline": "Climate crisis is coming to crush many of world’s best surf breaks, study warns",
+      "summary": "&lt;p&gt;Changing tide levels, shifting sands and hardened shorelines put waves at risk, affecting more than just surfers&lt;/p&gt;&lt;p&gt;The climate crisis is coming for some of the world’s greatest surf breaks, submerging some as sea level rises and wiping out others as classic breaks get crushed against coastal developments.&lt;/p&gt;&lt;p&gt;Analysis of dozens of famous waves in &lt;a href=\"https://www.savethewaves.org/wsr/\"&gt;world surfing reserves&lt;/a&gt; (WSR) found more than three-q",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,14 +34,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Brussels: Rioters clash with police at anti-austerity rally",
-          "link": "https://www.dw.com/en/brussels-rioters-clash-with-police-at-anti-austerity-rally/a-79620594?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Violent rioters, many of whom were masked, confronted police at the edge of an anti-austerity march in Brussels. Police responded with water cannons and tear gas.",
-          "published": "2026-10-09T15:54:00.000Z",
-          "score": 8
-        },
-        {
           "title": "How the Houthi-Saudi conflict is affecting countries on Africa&#039;s Red Sea coast — and beyond",
           "link": "https://www.dw.com/en/how-the-houthi-saudi-conflict-is-affecting-countries-on-africa-s-red-sea-coast-and-beyond/a-79588992?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -50,12 +42,20 @@
           "score": 7
         },
         {
-          "title": "Tuscan winemaker Antinori sees red after $6 million theft - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRGNRVDd1dGxLLTcxUFdnSFdLUWRGRlN6SVJxTjE4dlVmZllSdWdRSFo3aHFCWEQwdEdFR3VZbFdCcGlMZHk5TlVGaVBUOTNyazhTRk5tWElXc01RQ3lRd1hQYjhyWnpmMjFEZWtvMHdTRFhKbTlZM3lMbTBVT0MxUnNWN1E4cmQ4MXo0V1AxLUpQRlJPUmxScE1HMzVQclE?oc=5",
+          "title": "Operations Plan Germany: How the Bundeswehr trains for NATO collective defense",
+          "link": "https://www.dw.com/en/operations-plan-germany-how-the-bundeswehr-trains-for-nato-collective-defense/a-79553793?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "How prepared is Germany for national defense? The answer lies in the Operations Plan Germany. Military exercises such as &quot;Red Storm Charlie&quot; are designed to put these preparations to the test in realistic scenarios.",
+          "published": "2026-10-10T12:02:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "US Gulf producers shut in more oil and gas as Isaias nears landfall - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdjFreUNCMW5wWVJtV21RWHU3VkkxejZoNDNaLV9NbnFJVEdVU2Ywd3lSaVF3OUhfREUyZlp0UjlBd29LdkdoZTZNSUtqanJfVnFncnE3M0ZEdkEyQzBzQmQ5akNzVVpXNWpmM0IyQk5Ba3VTNDdUeXpxeEJwX2M0dWRyMVpWZndOOHk2c0VRTm1jcGVoQVQxSl9SM2lxMFhfWG56dWtfb2tNWVBNbVE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQRGNRVDd1dGxLLTcxUFdnSFdLUWRGRlN6SVJxTjE4dlVmZllSdWdRSFo3aHFCWEQwdEdFR3VZbFdCcGlMZHk5TlVGaVBUOTNyazhTRk5tWElXc01RQ3lRd1hQYjhyWnpmMjFEZWtvMHdTRFhKbTlZM3lMbTBVT0MxUnNWN1E4cmQ4MXo0V1AxLUpQRlJPUmxScE1HMzVQclE?oc=5\" target=\"_blank\"&gt;Tuscan winemaker Antinori sees red after $6 million theft&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-09T11:19:45.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPdjFreUNCMW5wWVJtV21RWHU3VkkxejZoNDNaLV9NbnFJVEdVU2Ywd3lSaVF3OUhfREUyZlp0UjlBd29LdkdoZTZNSUtqanJfVnFncnE3M0ZEdkEyQzBzQmQ5akNzVVpXNWpmM0IyQk5Ba3VTNDdUeXpxeEJwX2M0dWRyMVpWZndOOHk2c0VRTm1jcGVoQVQxSl9SM2lxMFhfWG56dWtfb2tNWVBNbVE?oc=5\" target=\"_blank\"&gt;US Gulf producers shut in more oil and gas as Isaias nears landfall&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-09T18:15:53.000Z",
+          "score": 2
         }
       ]
     },
@@ -63,14 +63,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "AI and the climate crisis pose existential risks. The law offers a way to reduce them | Robert Reich",
-          "link": "https://www.theguardian.com/commentisfree/2026/oct/09/ai-climate-change-liability-lawsuits",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Liability lawsuits have held tobacco, oil and pharma companies to account in the past. AI investors won’t ignore this threat&lt;/p&gt;&lt;p&gt;The most basic function of government is to protect people from harm. Two growing phenomena – the climate crisis and AI – pose escalating risks of &lt;em&gt;extraordinary&lt;/em&gt; harm.&lt;/p&gt;&lt;p&gt;The climate crisis is already causing floods, wildfires, drought and record heat. AI agents are already escaping super-secure environments to ",
-          "published": "2026-10-09T11:00:26.000Z",
-          "score": 11
-        },
         {
           "title": "Climate crisis is coming to crush many of world’s best surf breaks, study warns",
           "link": "https://www.theguardian.com/environment/2026/oct/10/climate-crisis-putting-world-best-surf-breaks-at-risk",
@@ -80,11 +72,11 @@
           "score": 7
         },
         {
-          "title": "Cop31 host urges wealthy countries to spend ‘much more’ on climate than defence",
-          "link": "https://www.theguardian.com/environment/2026/oct/09/cop31-host-wealthy-countries-climate-crisis-spending-defence-nato",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;‘The climate issue is the security issue,’ says Turkish minister at Pacific pre-Cop summit in Fiji&lt;/p&gt;&lt;p&gt;Wealthy countries should spend far more on dealing with the climate crisis than the 5% of GDP promised by Nato members for defence because “the climate issue is the security issue”, the host of the next UN summit has said.&lt;/p&gt;&lt;p&gt;But, in comments that are likely to prove contentious, the Cop31 president-designate, Murat Kurum, hedged on whether countries should",
-          "published": "2026-10-09T12:00:28.000Z",
+          "title": "Isaias brings flood, tornado threats across US Southeast after Florida landfall - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNUXd4cU9kTnZkUXpiWnZCSUFrVXVqRDVVRWNsakotTU1aMTNkZjBra3lkaktVMGtUcnpORW40N1JMemk4WkREeFJGNnFibFBBRTdQMi10dDNlX2hua2pSZVVSWnNpRDZOblhrMW9CbS1vZTd3S0ktU2pSNGtfNWZyVGduR3YzNU52dEpMQkx3UXZYUmxPaGFoZVhSZ2lzNml0bFlZX3gzSTRrWEthTHZrd1lNaEcxRW8yeEVweTNIcVhKYUJTc2Qw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNUXd4cU9kTnZkUXpiWnZCSUFrVXVqRDVVRWNsakotTU1aMTNkZjBra3lkaktVMGtUcnpORW40N1JMemk4WkREeFJGNnFibFBBRTdQMi10dDNlX2hua2pSZVVSWnNpRDZOblhrMW9CbS1vZTd3S0ktU2pSNGtfNWZyVGduR3YzNU52dEpMQkx3UXZYUmxPaGFoZVhSZ2lzNml0bFlZX3gzSTRrWEthTHZrd1lNaEcxRW8yeEVweTNIcVhKYUJTc2Qw?oc=5\" target=\"_blank\"&gt;Isaias brings flood, tornado threats across US Southeast after Florida landfall&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
+          "published": "2026-10-10T01:49:00.000Z",
           "score": 7
         },
         {
@@ -99,8 +91,16 @@
           "title": "Dozens injured and buildings damaged as tornadoes hit Sicily",
           "link": "https://www.theguardian.com/world/2026/oct/10/tornado-hit-marsala-sicily-injuries-damage",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Marsala on the island’s west coast badly affected after powerful storm approached from the Mediterranean &lt;/p&gt;&lt;p&gt;Two tornadoes struck the coastal town of Marsala in western Sicily on Friday, injuring dozens of people, damaging buildings including a school and overturning cars.&lt;/p&gt;&lt;p&gt;A series of videos that began circulating late on Friday morning showed two waterspouts approaching the Sicilian town from the sea as people braced for their arrival.&lt;/p&gt; &lt;a h",
-          "published": "2026-10-10T10:37:23.000Z",
+          "description": "&lt;p&gt;Marsala on island’s west coast badly affected after powerful storm approached from Mediterranean&lt;/p&gt;&lt;p&gt;Two tornadoes have struck the coastal town of Marsala in western Sicily, injuring dozens of people, damaging buildings including a school, and overturning cars.&lt;/p&gt;&lt;p&gt;A series of videos began to circulate on Friday morning showing two waterspouts approaching the Sicilian town from the sea as people braced for their arrival.&lt;/p&gt; &lt;a href=\"https://www.theg",
+          "published": "2026-10-10T11:00:31.000Z",
+          "score": 2
+        },
+        {
+          "title": "Hundreds protest over data centre plans",
+          "link": "https://www.bbc.co.uk/news/articles/cm78pwq47vp1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Placard-waving opponents highlight concerns about a data centre development on the local landscape.",
+          "published": "2026-10-10T13:40:03.000Z",
           "score": 2
         }
       ]
@@ -114,7 +114,7 @@
           "link": "https://www.bbc.co.uk/news/articles/cm1dwgr666wno?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Ukraine's president sharply criticised the move, calling it an \"investment in war that must be ended, not prolonged\".",
-          "published": "2026-10-10T04:38:20.000Z",
+          "published": "2026-10-10T14:24:14.000Z",
           "score": 2
         },
         {
@@ -162,35 +162,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU commissioner says recent Turkish actions widen gap with its EU membership goal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQRHJYazRLcEVuM014X2hYRDVnWEgyXzVjTmZSY0E4ckx6V2ZLV0tQUFZjTGtmUUQzQU4zX2ItR2dhblNCV0ZjTHZ4ODV1SlZ0QzFjanhROXpOaVk2aktRZ0pOQVdENU5RSGJZVy1YczJtTllCcUpobWhUVGxCS3gwLWJIUEZBcnJTdjkwdXlTRGd0cU02eW15TjVmYXlVZk5ZWDdEU1dCQ1duVTFCNHFaWXlaRjJLMklKUXc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQRHJYazRLcEVuM014X2hYRDVnWEgyXzVjTmZSY0E4ckx6V2ZLV0tQUFZjTGtmUUQzQU4zX2ItR2dhblNCV0ZjTHZ4ODV1SlZ0QzFjanhROXpOaVk2aktRZ0pOQVdENU5RSGJZVy1YczJtTllCcUpobWhUVGxCS3gwLWJIUEZBcnJTdjkwdXlTRGd0cU02eW15TjVmYXlVZk5ZWDdEU1dCQ1duVTFCNHFaWXlaRjJLMklKUXc?oc=5\" target=\"_blank\"&gt;EU commissioner says recent Turkish actions widen gap with its EU membership goal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-09T13:53:44.000Z",
-          "score": 8
-        },
-        {
-          "title": "IKEA's Danish stores could become shelters as Europe boosts preparedness - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcC1iZ1lnRk9BNUt5bGFxTHNvU3U4bU1oczkya2MzbEJ0MFNSTGppUHZseGxiS2V1SUFXdElFdDFHcG95TzhfLXJSNENVb1JQZGtSTmFnTTFfMW41RHdoam5KRVROODZPdkw5cXhKa2JLWkc1OEdPT0t5Y19EMFJ4dHdaSW1adi1hQjVGMzI3cm5ZVGJBYV9zU2lKVHdlOTU5dlRqc2pUam5NSG80ekUw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQcC1iZ1lnRk9BNUt5bGFxTHNvU3U4bU1oczkya2MzbEJ0MFNSTGppUHZseGxiS2V1SUFXdElFdDFHcG95TzhfLXJSNENVb1JQZGtSTmFnTTFfMW41RHdoam5KRVROODZPdkw5cXhKa2JLWkc1OEdPT0t5Y19EMFJ4dHdaSW1adi1hQjVGMzI3cm5ZVGJBYV9zU2lKVHdlOTU5dlRqc2pUam5NSG80ekUw?oc=5\" target=\"_blank\"&gt;IKEA's Danish stores could become shelters as Europe boosts preparedness&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-09T14:05:03.000Z",
-          "score": 8
-        },
-        {
           "title": "EU tech chief says bloc 'well equipped' to fend off rogue AI risk - Reuters",
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUlZ0bzBBQ1FybjVfRTRYQTlWejZRdndVOHZxMFpJWWJ3dEJNYzBHb2N1QmdFLURtOEZGRm1OUUV4dmJoYmxwMHVXM19uSndXTFNrcHU1SkNjWWtrRW5WQ0ZvSl85cmJJaVpGTVVpNHFHc1VYby1CRzRQLWJzUWQ0RkJOMFo0X29jNk5pa1Exa2J0Sy1IRUlpc2JIWlQtR3ZzejBudw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxNUlZ0bzBBQ1FybjVfRTRYQTlWejZRdndVOHZxMFpJWWJ3dEJNYzBHb2N1QmdFLURtOEZGRm1OUUV4dmJoYmxwMHVXM19uSndXTFNrcHU1SkNjWWtrRW5WQ0ZvSl85cmJJaVpGTVVpNHFHc1VYby1CRzRQLWJzUWQ0RkJOMFo0X29jNk5pa1Exa2J0Sy1IRUlpc2JIWlQtR3ZzejBudw?oc=5\" target=\"_blank\"&gt;EU tech chief says bloc 'well equipped' to fend off rogue AI risk&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-09T16:36:22.000Z",
-          "score": 8
-        },
-        {
-          "title": "China, EU strike deal to halve Chinese hybrid exports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTHg5eDd4SHlldjU0OVlpTEVOaHB0QVpIOGhaTm9CSVN2WmE2RUtobThWUkpGM1NrMFVxeVFKMnctbEF4aV9JQnZIT0RjaXlWVHBhb3Noam5HemZnd0ZRTy1TSEJjUFljMl9md29ESGFUeVFha29xaWd0a050VjVjV2pFRS1qUWVJVm04SDJJUjRGcXBQUzE3TzhDaV9SWHR6TndZaGhMRUlib0NSekZFenBpUUtuTnZZSy1JekRHaDZoLTA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTHg5eDd4SHlldjU0OVlpTEVOaHB0QVpIOGhaTm9CSVN2WmE2RUtobThWUkpGM1NrMFVxeVFKMnctbEF4aV9JQnZIT0RjaXlWVHBhb3Noam5HemZnd0ZRTy1TSEJjUFljMl9md29ESGFUeVFha29xaWd0a050VjVjV2pFRS1qUWVJVm04SDJJUjRGcXBQUzE3TzhDaV9SWHR6TndZaGhMRUlib0NSekZFenBpUUtuTnZZSy1JekRHaDZoLTA?oc=5\" target=\"_blank\"&gt;China, EU strike deal to halve Chinese hybrid exports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-09T12:41:00.000Z",
           "score": 8
         },
         {
@@ -200,14 +176,38 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxObUF1S2Y0LTFHM0JDbXRLY05aMmVvUDJqOU1ZNjEtLVlDdFVMelgyTlN0d3BvY0lrLVJkZEc4VGI0eEMtWTVnbDBGQnNVSGx1bklCQkxiNEs3RzFlWklGSWtoMFpyLV9zb2N6Y1VlVjQ2b2pqMy1ld0IyZ2RQMGt3YmFRaWQyUFBrYnVua2VyWGdyQW4wU0xGWm91d2prUlRLSHZrZXNwZjl0MVBuQV9ZeFZmZi15Nmh1VGFvV25xeVJfYkNGWkE?oc=5\" target=\"_blank\"&gt;EU aviation body widens Saudi airspace warning after Houthi strikes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-09T16:25:01.000Z",
           "score": 8
+        },
+        {
+          "title": "Trump pushes Mexico for more cross-nation tie-ups between energy companies, FT reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQ3FaaF9LRXZRSk5zZWY4WmYwd3hWbmQxSEUtc0JVdXhxNllkNkIwSnNFZ2U2MGozd1RJTUlQa1laUjU2Q0RsRk1LU2otV2dpSjF1dDZzam9QQ2ZWRWprVFQ3djgtdXJzQ1I0T182eHJHTUowYS13T19rQ0Y4UUh6QTlLUHlVbURZS2c0WmFEbWpZaVB5SUNTUVlUQ3pNRnJGOUl1MUtxb0FlOWN2NGxoWi1vY1BpTGxKV21lZWNDWWZFc28?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQ3FaaF9LRXZRSk5zZWY4WmYwd3hWbmQxSEUtc0JVdXhxNllkNkIwSnNFZ2U2MGozd1RJTUlQa1laUjU2Q0RsRk1LU2otV2dpSjF1dDZzam9QQ2ZWRWprVFQ3djgtdXJzQ1I0T182eHJHTUowYS13T19rQ0Y4UUh6QTlLUHlVbURZS2c0WmFEbWpZaVB5SUNTUVlUQ3pNRnJGOUl1MUtxb0FlOWN2NGxoWi1vY1BpTGxKV21lZWNDWWZFc28?oc=5\" target=\"_blank\"&gt;Trump pushes Mexico for more cross-nation tie-ups between energy companies, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-10-09T17:47:43.000Z",
+          "score": 7
+        },
+        {
+          "title": "&#039;Ragebait&#039; is the 2026 German Youth Word of the Year",
+          "link": "https://www.dw.com/en/ragebait-is-the-2026-german-youth-word-of-the-year/a-79608158?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Already named the 2025 Oxford Word of the Year, &quot;rage bait&quot; has also been widely adopted in German slang.",
+          "published": "2026-10-10T13:36:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "Brazil extends fuel-price relief, cuts gasoline taxes ahead of runoff vote - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPRWFaUWZIb1ZfNERFeDNtZWwzOTN4ZFVoM2tSeDlaRGN1OFN3Sy1TdE91Rk9wSkxQLS1mU2FienFuY3lnYURmYkFmbjE1MDhIVmllX2JTanJSMUM0Tm1yVWlnSkNlaEFxQmY1eHFzTjBZc1hTcVlnNFo3ZnVWZFVLVGRJMlBZcmU1MXVGQ2xJZEtUMjhRYzVWMmltNmJiZ0JOYU5SYkVxQW9FUGI3c1AxdFZCLVVGTEtRNEx4V0ZXUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPRWFaUWZIb1ZfNERFeDNtZWwzOTN4ZFVoM2tSeDlaRGN1OFN3Sy1TdE91Rk9wSkxQLS1mU2FienFuY3lnYURmYkFmbjE1MDhIVmllX2JTanJSMUM0Tm1yVWlnSkNlaEFxQmY1eHFzTjBZc1hTcVlnNFo3ZnVWZFVLVGRJMlBZcmU1MXVGQ2xJZEtUMjhRYzVWMmltNmJiZ0JOYU5SYkVxQW9FUGI3c1AxdFZCLVVGTEtRNEx4V0ZXUQ?oc=5\" target=\"_blank\"&gt;Brazil extends fuel-price relief, cuts gasoline taxes ahead of runoff vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-09T16:35:23.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 407,
-    "articlesLast24h": 164,
-    "afterDedup": 152,
+    "totalArticlesScanned": 405,
+    "articlesLast24h": 153,
+    "afterDedup": 148,
     "feedsQueried": 19
   }
 }
