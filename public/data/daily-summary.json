@@ -1,12 +1,12 @@
 {
-  "date": "2026-10-11",
-  "generatedAt": "2026-10-11T20:53:20.220Z",
+  "date": "2026-10-12",
+  "generatedAt": "2026-10-12T02:09:52.336Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Sunday, 11 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Monday, 12 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Nuclear war and malicious use of AI threaten end of humanity by 2100, says Lancet assessment",
-      "summary": "&lt;p&gt;Newly established commission identifies 17 catastrophic threats to human health but says ‘realistic route to act’ on each exists&lt;/p&gt;&lt;p&gt;Humans could become extinct by the year 2100 due to malicious use of AI or nuclear conflict, according to a new global risk assessment.&lt;/p&gt;&lt;p&gt;They top a list of 17 major threats to human health over the next 75 years, which also includes cuts to aid spending by wealthy countries, the climate crisis and childhood malnutrition.&lt;/",
+      "headline": "‘We need less point scoring’: What party conference season taught us about UK climate action",
+      "summary": "&lt;p&gt;Tories plan to scrap low-carbon housebuilding, Greens back new nuclear reactors, and Labour put oil-drilling decisions on hold&lt;/p&gt;&lt;p&gt;New homes could be built without solar panels, heat pumps and high-grade insulation, leading to higher household bills if the Conservative party wins the next general election.&lt;/p&gt;&lt;p&gt;Kemi Badenoch made &lt;a href=\"https://www.theguardian.com/politics/2026/oct/04/tories-scrap-environment-agency-natural-england-conservative-conference",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -28,19 +28,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Nuclear war and malicious use of AI threaten end of humanity by 2100, says Lancet assessment",
-          "link": "https://www.theguardian.com/global-development/2026/oct/11/nuclear-war-and-malicious-use-of-ai-threaten-end-of-humanity-by-2100-says-lancet-assessment",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Newly established commission identifies 17 catastrophic threats to human health but says ‘realistic route to act’ on each exists&lt;/p&gt;&lt;p&gt;Humans could become extinct by the year 2100 due to malicious use of AI or nuclear conflict, according to a new global risk assessment.&lt;/p&gt;&lt;p&gt;They top a list of 17 major threats to human health over the next 75 years, which also includes cuts to aid spending by wealthy countries, the climate crisis and childhood malnutrition.&lt;/",
-          "published": "2026-10-10T23:01:09.000Z",
-          "score": 9
-        },
-        {
           "title": "‘We need less point scoring’: What party conference season taught us about UK climate action",
           "link": "https://www.theguardian.com/politics/2026/oct/11/party-conference-season-uk-climate-action-tories-greens-labour",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Tories plan to scrap low-carbon housebuilding, Greens back new nuclear reactors, and Labour put oil-drilling decisions on hold&lt;/p&gt;&lt;p&gt;New homes could be built without solar panels, heat pumps and high-grade insulation, leading to higher household bills if the Conservative party wins the next general election.&lt;/p&gt;&lt;p&gt;Kemi Badenoch made &lt;a href=\"https://www.theguardian.com/politics/2026/oct/04/tories-scrap-environment-agency-natural-england-conservative-conference",
           "published": "2026-10-11T06:00:18.000Z",
+          "score": 7
+        },
+        {
+          "title": "Minns government’s only meeting before reopening gas exploration was with fossil fuel lobby",
+          "link": "https://www.theguardian.com/australia-news/2026/oct/12/minns-governments-only-meeting-before-reopening-gas-exploration-was-with-fossil-fuel-lobby",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;&lt;strong&gt;Exclusive: &lt;/strong&gt;Peak body for oil and gas industry met with minister’s office before a 2014 freeze on new licences was overturned, documents show&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/oct/12/labor-anthony-albanese-greens-digital-duty-of-care-coalition-angus-taylor-one-nation-ntwnfb\"&gt;Follow our Australia politics live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our",
+          "published": "2026-10-11T23:00:38.000Z",
           "score": 7
         },
         {
@@ -52,20 +52,12 @@
           "score": 7
         },
         {
-          "title": "Real's Vinicius apologises after red card for hair pull against Villarreal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUVpvVnlKa3pqRnVJWFdjckc0MEhIWldRbkRzc1dJb1JqNUtYNmdCdTNJSUJDN1FfcHJmSkJrdllManZ4Ql9xenlaLUxfbzk3RllUV09ISzJ6bWo2TDNkMnhaOFYtc3FjU1FiTXQ4QW5tTVl1YkVudEVmZzZnN0JIZ25oZG12VUxMRFA2d2EtMjVSczF1emEtblF6OWZfMWstcU1PZmdUdDFGWm1yWTg0RmR6QjdGY2xSandv?oc=5",
+          "title": "Tencent plans dollar, offshore yuan bond sale under note programme - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdlB3SUFzTnN6enBNVTRiVXFZdlZsUGRMaFFhR3RENzZQNS1pV2RFMU9HU0x2UFdUZ1ZPNFlFWkZEZzJ2T0g0Wm9JalctMVJaclZkaXk3VHV3Mk1tVnQyMHBnZ1JMb21XZENjV0p0Y1A0aTNzVXRIandNTm4tMnBvb3ByQTVLOHhteXNKUWtTZkZGY0FqQVhzRGxFYUhTZm5sdlBMU3VENXRTak96YjNsaXpHOEtMVUtOdUwzbw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUVpvVnlKa3pqRnVJWFdjckc0MEhIWldRbkRzc1dJb1JqNUtYNmdCdTNJSUJDN1FfcHJmSkJrdllManZ4Ql9xenlaLUxfbzk3RllUV09ISzJ6bWo2TDNkMnhaOFYtc3FjU1FiTXQ4QW5tTVl1YkVudEVmZzZnN0JIZ25oZG12VUxMRFA2d2EtMjVSczF1emEtblF6OWZfMWstcU1PZmdUdDFGWm1yWTg0RmR6QjdGY2xSandv?oc=5\" target=\"_blank\"&gt;Real's Vinicius apologises after red card for hair pull against Villarreal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-10T23:49:47.000Z",
-          "score": 7
-        },
-        {
-          "title": "Red Bull's Verstappen celebrates sprint race win at Singapore Grand Prix - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE10ZGJYS3h2Z3hyRU96ZllYZF9HZkZRQVN0V2JpXzdtcFc3dUxIbFBfMWJYakNOeURFeTVRa3p4MUJXUkJZalYxWlNobEViem9YYW1xSVhHMm9BdV92dVRkRmdXNUlLRDg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE10ZGJYS3h2Z3hyRU96ZllYZF9HZkZRQVN0V2JpXzdtcFc3dUxIbFBfMWJYakNOeURFeTVRa3p4MUJXUkJZalYxWlNobEViem9YYW1xSVhHMm9BdV92dVRkRmdXNUlLRDg?oc=5\" target=\"_blank\"&gt;Red Bull's Verstappen celebrates sprint race win at Singapore Grand Prix&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-10T23:55:05.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPdlB3SUFzTnN6enBNVTRiVXFZdlZsUGRMaFFhR3RENzZQNS1pV2RFMU9HU0x2UFdUZ1ZPNFlFWkZEZzJ2T0g0Wm9JalctMVJaclZkaXk3VHV3Mk1tVnQyMHBnZ1JMb21XZENjV0p0Y1A0aTNzVXRIandNTm4tMnBvb3ByQTVLOHhteXNKUWtTZkZGY0FqQVhzRGxFYUhTZm5sdlBMU3VENXRTak96YjNsaXpHOEtMVUtOdUwzbw?oc=5\" target=\"_blank\"&gt;Tencent plans dollar, offshore yuan bond sale under note programme&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T01:19:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -82,14 +74,6 @@
           "score": 20
         },
         {
-          "title": "South Korea completes Arctic-Europe commercial voyage, eyes regular service despite risks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxON0xvMEdPQ1lSRVBDb3oyT00tRzROdy1sb2lBQXJIUEQ2VTRBM0NPNXJYZnFXVVJ0WWR2RkxaLVRZN1BQck02cEdneUVNS3pFUEFaSmlfRExjT184eUFXanBuaW1aMktiNDVYYjVSWHJYcDFVUjFqMVBNaWdQb3RhVWVLUGRQNG9CZUp6dUlEYzU3V25kWGtIMmo4Z3pROC1KV0J5LW9uYThWcnY1aUV3MnRTRHVWMXB4d2ZHMEtZZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxON0xvMEdPQ1lSRVBDb3oyT00tRzROdy1sb2lBQXJIUEQ2VTRBM0NPNXJYZnFXVVJ0WWR2RkxaLVRZN1BQck02cEdneUVNS3pFUEFaSmlfRExjT184eUFXanBuaW1aMktiNDVYYjVSWHJYcDFVUjFqMVBNaWdQb3RhVWVLUGRQNG9CZUp6dUlEYzU3V25kWGtIMmo4Z3pROC1KV0J5LW9uYThWcnY1aUV3MnRTRHVWMXB4d2ZHMEtZZw?oc=5\" target=\"_blank\"&gt;South Korea completes Arctic-Europe commercial voyage, eyes regular service despite risks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
-          "published": "2026-10-11T01:00:00.000Z",
-          "score": 13
-        },
-        {
           "title": "Council exceeds Surrey tree planting target",
           "link": "https://www.bbc.co.uk/news/articles/cr4g1wy331pdo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -103,6 +87,14 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNcnllV0stREo0VDlyUHJ4RkwxX2pWZ3RSQTZnbFA5OFMwcERqSXEzSFVZVnl5a3J5NjRoaWZrX2RhOFM5ajE2RkhxYVI0VXE3czN1Wk1pbGk0RVdDMW5SUTVJUnVkbmtibVBzczM0RzVvaXVfa05sUFpJSGV3V1Fxa28xc2dYeTZJZDd6SHFIeGMtQUtmREtLQnlXckJvR25PMzZrZWhWb05TZ1BMQWpKOU1jdGdya2x5aFZKN2lCMA?oc=5\" target=\"_blank\"&gt;Nepal urges villagers to evacuate after flood triggered by landslide, 5 missing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-11T03:40:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "As rising waters flood homes and temples, villagers protest India's $87 billion river-linking project - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTElpdjF1UmxmZFZUSnB1c2VCVHVyTlJ0cktqZmNHbmJGVXNsRUx0aUtGNDZuUFBzU3c3VEQ3UXN6M1dkX2hSeTBnOXFIS2hIWTRRSWs5bDBWVUVkSEFQb3ZvVkZUVlFjWVhLOUEwNmgtTDVFV1d5V2hPb1VxYnBodzlyRVVhQl9YMC1wUWgtdkxlSzl2X3ItYjJvQlg2bUZraE1SSDgxVlNSR3ZmOXVjMzdvU3VrS1FQY1FuT3NqZmY5X3NlTDEwdFpkYk4?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxOTElpdjF1UmxmZFZUSnB1c2VCVHVyTlJ0cktqZmNHbmJGVXNsRUx0aUtGNDZuUFBzU3c3VEQ3UXN6M1dkX2hSeTBnOXFIS2hIWTRRSWs5bDBWVUVkSEFQb3ZvVkZUVlFjWVhLOUEwNmgtTDVFV1d5V2hPb1VxYnBodzlyRVVhQl9YMC1wUWgtdkxlSzl2X3ItYjJvQlg2bUZraE1SSDgxVlNSR3ZmOXVjMzdvU3VrS1FQY1FuT3NqZmY5X3NlTDEwdFpkYk4?oc=5\" target=\"_blank\"&gt;As rising waters flood homes and temples, villagers protest India's $87 billion river-linking project&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=",
+          "published": "2026-10-12T01:03:00.000Z",
           "score": 7
         },
         {
@@ -130,6 +122,14 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "UK&#039;s Burnham accuses Russia of meddling in Brexit vote",
+          "link": "https://www.dw.com/en/uk-s-burnham-accuses-russia-of-meddling-in-brexit-vote/a-79635264?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The UK prime minister called for voters in Europe to be made fully aware of Russia&#039;s attempts to influence politics.",
+          "published": "2026-10-11T22:18:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Stellantis bets on small affordable EVs for European comeback - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQ3Vnc21nNnBpSEFHQW5rSEIweVpPVHU1aHNfLXhscElQQ3NZU21kOGNOMXlVVWdiTE1raXhHdjhKMDJpYUhqZURGM2NyS21MVjdzQVl1ckVJdkk2U3MzcVFLX05QU05rUG1VNWZMcDBFYmd4NVNoNzF6aVk2QVNyMjhEYk9xb0d1bnlsZkpKdFJBaGYxamd3QVB1Z25BVGFhQjM4Wkw1Y1NCUktQVHJWMWljZlVDNld3UlUyNw?oc=5",
           "source": "Reuters World (via Google News)",
@@ -146,36 +146,28 @@
           "score": 8
         },
         {
-          "title": "Trump claims Russia and Ukraine agreed to &#039;energy ceasefire&#039;",
-          "link": "https://www.dw.com/en/trump-claims-russia-and-ukraine-agreed-to-energy-ceasefire/a-79634509?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "US President Donald Trump says both sides have agreed to stop targeting oil refineries, power plants and other energy infrastructure immediately.",
-          "published": "2026-10-11T14:47:00.000Z",
+          "title": "Trump's 'energy ceasefire' claim welcomed by Zelensky but Russia silent",
+          "link": "https://www.bbc.co.uk/news/articles/c6pvg4jyz1m0o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Ukraine's leader says he will support such a truce if Moscow does, after initially expressing surprise at Donald Trump's announcement.",
+          "published": "2026-10-11T21:36:40.000Z",
           "score": 7
         },
         {
-          "title": "Trump announces Ukraine energy ceasefire with Russia, surprising Zelenskiy - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPTEo5WEZxUk5OcWNWU1Z1Z0g4SGlFQmxKckFxbS05WFd6UUxDNE0xa0NZRzZoR004Tms3azQ3aTVfUVIwNXlTU1ljcW9HLTREUGZBVVFiWlpVWXI3V1c3Zmt2UEJ2ME43azRMb0Vlei1iQUNPbzk4bV94bkRGTzBmREMydnBCRzVSclBoVkhrWkx4TFJ2YWdsRS1COGVOWU9pRDJqSUFNRk1pUnpQM2dlQ3o0eGpYSHYzbWdDX3dtQWtYT2Zz?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPTEo5WEZxUk5OcWNWU1Z1Z0g4SGlFQmxKckFxbS05WFd6UUxDNE0xa0NZRzZoR004Tms3azQ3aTVfUVIwNXlTU1ljcW9HLTREUGZBVVFiWlpVWXI3V1c3Zmt2UEJ2ME43azRMb0Vlei1iQUNPbzk4bV94bkRGTzBmREMydnBCRzVSclBoVkhrWkx4TFJ2YWdsRS1COGVOWU9pRDJqSUFNRk1pUnpQM2dlQ3o0eGpYSHYzbWdDX3dtQWtYT2Zz?oc=5\" target=\"_blank\"&gt;Trump announces Ukraine energy ceasefire with Russia, surprising Zelenskiy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-11T19:23:21.000Z",
-          "score": 7
-        },
-        {
-          "title": "Ukraine will halt strikes on refineries if Russia stops energy attacks, Zelenskiy says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQa2lQSWVCZ0RHVC1TSmJMNVJsQXBpQkxEc0I2R2NCTENjb0JHWm92RmkxMHJsTFlYdGJmLVFYeldvRnNlbEQwWE5saXpDalJSY19wcGduTWdzUEhmTEZ1c1JVcTdPazBvOUM1VG5UNmx3WW15Y1VLN243UXo2UmZKN1lDUzhuOHRHb2wzSDI4SktxUGNQd3dLQUVFYnAtelU0NWpoWnEtZWJJdlV4aHZOa3dXM1ZKaENjZUVCd0xaNjAxcVBxTUUtWXBGaWN3d0dRQVQwTmtR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxQa2lQSWVCZ0RHVC1TSmJMNVJsQXBpQkxEc0I2R2NCTENjb0JHWm92RmkxMHJsTFlYdGJmLVFYeldvRnNlbEQwWE5saXpDalJSY19wcGduTWdzUEhmTEZ1c1JVcTdPazBvOUM1VG5UNmx3WW15Y1VLN243UXo2UmZKN1lDUzhuOHRHb2wzSDI4SktxUGNQd3dLQUVFYnAtelU0NWpoWnEtZWJJdlV4aHZOa3dXM1ZKaENjZUVCd0xaNjAxcVBxTUUtWXBGaWN3d0dRQVQwTmtR?oc=5\" target=\"_blank\"&gt;Ukraine will halt strikes on refineries if Russia stops energy attacks, Zelenskiy says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#",
-          "published": "2026-10-11T09:47:15.000Z",
+          "title": "Watch: What's behind Trump's energy ceasefire claim?",
+          "link": "https://www.bbc.co.uk/news/videos/cwvgde9vrdd9o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The US president made the announcement in a social media post, which was an apparent surprise to Ukraine and Russia is yet to comment.",
+          "published": "2026-10-11T20:55:02.000Z",
           "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 401,
+    "totalArticlesScanned": 400,
     "articlesLast24h": 145,
-    "afterDedup": 114,
+    "afterDedup": 125,
     "feedsQueried": 19
   }
 }
