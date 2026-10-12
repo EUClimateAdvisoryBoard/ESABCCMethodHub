@@ -1,12 +1,12 @@
 {
   "date": "2026-10-12",
-  "generatedAt": "2026-10-12T02:09:52.336Z",
+  "generatedAt": "2026-10-12T12:51:35.688Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 12 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "‘We need less point scoring’: What party conference season taught us about UK climate action",
-      "summary": "&lt;p&gt;Tories plan to scrap low-carbon housebuilding, Greens back new nuclear reactors, and Labour put oil-drilling decisions on hold&lt;/p&gt;&lt;p&gt;New homes could be built without solar panels, heat pumps and high-grade insulation, leading to higher household bills if the Conservative party wins the next general election.&lt;/p&gt;&lt;p&gt;Kemi Badenoch made &lt;a href=\"https://www.theguardian.com/politics/2026/oct/04/tories-scrap-environment-agency-natural-england-conservative-conference",
+      "headline": "Ministers preparing to slash heat pump subsidies to fund defence spending",
+      "summary": "&lt;p&gt;Exclusive: Some of £2bn savings needed from energy budget expected to come from boiler upgrade scheme, sources say&lt;/p&gt;&lt;p&gt;Ministers are preparing to slash the amount of money available to subsidise heat pumps as they look for ways to fund higher defence spending, sources have told the Guardian.&lt;/p&gt;&lt;p&gt;Miatta Fahnbulleh, the energy secretary, has been tasked with finding more than £2bn in savings from her budget to help pay for defence investment under a plan drawn ",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,6 +15,12 @@
       "summary": "European Commission Read-out Brussels, 11 Oct 2026 Good call with President Zelenskyy.\r\nFully supported the call of President Zelenskyy for a ceasefire that would protect global food supplies and energy infrastru...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "IMF says AI investment keeps global growth around 3% but brings massive disruption - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxONXItVGZaTjNISE9iMlVzZzhlV2ZmYzFDR29feFhfWFRhRzJFdWlwYXk5QkZpUHQ3WVhLZEZId2xobTNmc1E2Y25FN2c1TTg1eldiR3RLR003ajh2RUpSN1RxYXVzYjJ4TW5ZMW1ZcVljRndfSUpoNVVlLUE3eWc1MkhqUUtGQTdYdC1zVUxIbnNJWVJYb2ZIcVN1S3QzWWhQUmdsQ3VFVG9xSEs4NDVvOTZ5dHJRZUNNaUtsazVSMThYQQ?oc=5\" target=\"_blank\"&gt;IMF says AI investment keeps global growth around 3% but brings massive disruption&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -28,11 +34,11 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "‘We need less point scoring’: What party conference season taught us about UK climate action",
-          "link": "https://www.theguardian.com/politics/2026/oct/11/party-conference-season-uk-climate-action-tories-greens-labour",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Tories plan to scrap low-carbon housebuilding, Greens back new nuclear reactors, and Labour put oil-drilling decisions on hold&lt;/p&gt;&lt;p&gt;New homes could be built without solar panels, heat pumps and high-grade insulation, leading to higher household bills if the Conservative party wins the next general election.&lt;/p&gt;&lt;p&gt;Kemi Badenoch made &lt;a href=\"https://www.theguardian.com/politics/2026/oct/04/tories-scrap-environment-agency-natural-england-conservative-conference",
-          "published": "2026-10-11T06:00:18.000Z",
+          "title": "Ministers preparing to slash heat pump subsidies to fund defence spending",
+          "link": "https://www.theguardian.com/environment/2026/oct/12/ministers-plan-slash-heat-pump-subsidies-fund-defence-spending",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Exclusive: Some of £2bn savings needed from energy budget expected to come from boiler upgrade scheme, sources say&lt;/p&gt;&lt;p&gt;Ministers are preparing to slash the amount of money available to subsidise heat pumps as they look for ways to fund higher defence spending, sources have told the Guardian.&lt;/p&gt;&lt;p&gt;Miatta Fahnbulleh, the energy secretary, has been tasked with finding more than £2bn in savings from her budget to help pay for defence investment under a plan drawn ",
+          "published": "2026-10-12T05:00:47.000Z",
           "score": 7
         },
         {
@@ -44,20 +50,28 @@
           "score": 7
         },
         {
-          "title": "Most Gulf stocks in red after attack on Riyadh airport - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOOEliNzFKYlR3T0NNakk4TWxXWGJ0UlJfQ0JLdFVIRnlESENoRW4zdjNSWW02UjFJOFozRmlZdVZ2ZlFaOTFSdEc5RGd6QWVVaFFMNi1QRTdMSVg2dFQxaHROcjhjbnI4ekhnZUZVbXlmYVBQaDZ3TG1pcFQ5RnFaVXpfYUxWRG1acC1mYnR6d3ZtdXpxbTBBUFJkcU9ock1wbXc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOOEliNzFKYlR3T0NNakk4TWxXWGJ0UlJfQ0JLdFVIRnlESENoRW4zdjNSWW02UjFJOFozRmlZdVZ2ZlFaOTFSdEc5RGd6QWVVaFFMNi1QRTdMSVg2dFQxaHROcjhjbnI4ekhnZUZVbXlmYVBQaDZ3TG1pcFQ5RnFaVXpfYUxWRG1acC1mYnR6d3ZtdXpxbTBBUFJkcU9ock1wbXc?oc=5\" target=\"_blank\"&gt;Most Gulf stocks in red after attack on Riyadh airport&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-11T13:19:13.000Z",
+          "title": "Appeal for major energy storage system rejected",
+          "link": "https://www.bbc.co.uk/news/articles/cwvgdej69m2ro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Plans for the battery system site near the Devon-Dorset border have again been dismissed.",
+          "published": "2026-10-12T12:10:34.000Z",
           "score": 7
         },
         {
-          "title": "Tencent plans dollar, offshore yuan bond sale under note programme - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdlB3SUFzTnN6enBNVTRiVXFZdlZsUGRMaFFhR3RENzZQNS1pV2RFMU9HU0x2UFdUZ1ZPNFlFWkZEZzJ2T0g0Wm9JalctMVJaclZkaXk3VHV3Mk1tVnQyMHBnZ1JMb21XZENjV0p0Y1A0aTNzVXRIandNTm4tMnBvb3ByQTVLOHhteXNKUWtTZkZGY0FqQVhzRGxFYUhTZm5sdlBMU3VENXRTak96YjNsaXpHOEtMVUtOdUwzbw?oc=5",
+          "title": "COMMENTARY: Middle East LNG industry remains hostage of Iran war: Bousso - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQLXNhN1pHTVFkMDM2M21lOXNtYnpXRzRvOEtkVU9pdG1YSXo2Q0M4eVNreElGaFI3RlZZV3FQZXBDZmYtTDYwNVJrbFZOY2VOZWFOR3l2TFpORElhZDhrUWxCRXM1RXpKbGowTVdsS3N0VUIwRFhJOF9wcFhlT1JvRE95dF9BNWluc25GZG1fMm9Gem9NVHN5SlJfNHFXdnprMkxwcktuTjFqOHBYb29lUXpLTE56MjRmbnp6OGU2MzNDNk0?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPdlB3SUFzTnN6enBNVTRiVXFZdlZsUGRMaFFhR3RENzZQNS1pV2RFMU9HU0x2UFdUZ1ZPNFlFWkZEZzJ2T0g0Wm9JalctMVJaclZkaXk3VHV3Mk1tVnQyMHBnZ1JMb21XZENjV0p0Y1A0aTNzVXRIandNTm4tMnBvb3ByQTVLOHhteXNKUWtTZkZGY0FqQVhzRGxFYUhTZm5sdlBMU3VENXRTak96YjNsaXpHOEtMVUtOdUwzbw?oc=5\" target=\"_blank\"&gt;Tencent plans dollar, offshore yuan bond sale under note programme&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-12T01:19:00.000Z",
-          "score": 2
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQLXNhN1pHTVFkMDM2M21lOXNtYnpXRzRvOEtkVU9pdG1YSXo2Q0M4eVNreElGaFI3RlZZV3FQZXBDZmYtTDYwNVJrbFZOY2VOZWFOR3l2TFpORElhZDhrUWxCRXM1RXpKbGowTVdsS3N0VUIwRFhJOF9wcFhlT1JvRE95dF9BNWluc25GZG1fMm9Gem9NVHN5SlJfNHFXdnprMkxwcktuTjFqOHBYb29lUXpLTE56MjRmbnp6OGU2MzNDNk0?oc=5\" target=\"_blank\"&gt;COMMENTARY: Middle East LNG industry remains hostage of Iran war: Bousso&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T06:00:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "India wastes 4% of solar power amid power shortages in July, August, report shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTUt6djVxbzlOUEJXbVE4a0k2YnRsUzlSWGZlWTBxbnlZdDRWQnUzajVzTFlHOXlYejJqejF0WXFfdVhpRG1WZTUtMmpQUmRyb3ZXU3hFdWNLSy1jM2Y5MEdCRmpZclRfNW42ZHhRMVZjQ1F0S3RCS1Btc1EyVjNMVmhQTm10VjRnTkdCYVRhbmFMRjVoemFXWmdZTGxUOXgyOFlGeGR6dEdRb1NkLTRmQW5naWl5QWJReEp1bWF5aWhRZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTUt6djVxbzlOUEJXbVE4a0k2YnRsUzlSWGZlWTBxbnlZdDRWQnUzajVzTFlHOXlYejJqejF0WXFfdVhpRG1WZTUtMmpQUmRyb3ZXU3hFdWNLSy1jM2Y5MEdCRmpZclRfNW42ZHhRMVZjQ1F0S3RCS1Btc1EyVjNMVmhQTm10VjRnTkdCYVRhbmFMRjVoemFXWmdZTGxUOXgyOFlGeGR6dEdRb1NkLTRmQW5naWl5QWJReEp1bWF5aWhRZw?oc=5\" target=\"_blank\"&gt;India wastes 4% of solar power amid power shortages in July, August, report shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T07:47:34.000Z",
+          "score": 7
         }
       ]
     },
@@ -74,20 +88,28 @@
           "score": 20
         },
         {
-          "title": "Council exceeds Surrey tree planting target",
-          "link": "https://www.bbc.co.uk/news/articles/cr4g1wy331pdo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A report finds some 885,000 trees have been planted, but there are concerns over survival rates.",
-          "published": "2026-10-11T07:04:06.000Z",
-          "score": 8
+          "title": "Governments that support climate science must stand firm against naysayers",
+          "link": "https://www.climatechangenews.com/2026/10/12/governments-that-support-climate-science-must-stand-firm-against-naysayers/",
+          "source": "Climate Home News",
+          "description": "The IPCC is meeting to decide the timing of its next major report, as some countries try to delay it and weaken the case for faster emissions cuts The post Governments that support climate science must stand firm against naysayers appeared first on Climate Home News.",
+          "published": "2026-10-12T08:53:51.000Z",
+          "score": 13
         },
         {
-          "title": "Nepal urges villagers to evacuate after flood triggered by landslide, 5 missing - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcnllV0stREo0VDlyUHJ4RkwxX2pWZ3RSQTZnbFA5OFMwcERqSXEzSFVZVnl5a3J5NjRoaWZrX2RhOFM5ajE2RkhxYVI0VXE3czN1Wk1pbGk0RVdDMW5SUTVJUnVkbmtibVBzczM0RzVvaXVfa05sUFpJSGV3V1Fxa28xc2dYeTZJZDd6SHFIeGMtQUtmREtLQnlXckJvR25PMzZrZWhWb05TZ1BMQWpKOU1jdGdya2x5aFZKN2lCMA?oc=5",
+          "title": "EU eyes COP31 climate deal to accelerate CO2 cuts, document shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQdmY4X3hOUlE1bVFld0ZMSVdCby1VUDFOZUpoM29Vbl9jRGllQXpuMVMtUzgwT0lQSWZuU3JDVzFLbEtpWl83b1p4NXZXUWkwazRkOFhETldzYTNLT282Qi1RckpvQU5Sc1lzUG03QmUyWnF3UlltN3F0R0tYeW5FaHJ4SzVmMU1SOTd3dVZldm5RTUxFaVJQN0xGZ05ydVptU2JpZUVreGZOaDdZb2ZfMXRBSWZYRHc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNcnllV0stREo0VDlyUHJ4RkwxX2pWZ3RSQTZnbFA5OFMwcERqSXEzSFVZVnl5a3J5NjRoaWZrX2RhOFM5ajE2RkhxYVI0VXE3czN1Wk1pbGk0RVdDMW5SUTVJUnVkbmtibVBzczM0RzVvaXVfa05sUFpJSGV3V1Fxa28xc2dYeTZJZDd6SHFIeGMtQUtmREtLQnlXckJvR25PMzZrZWhWb05TZ1BMQWpKOU1jdGdya2x5aFZKN2lCMA?oc=5\" target=\"_blank\"&gt;Nepal urges villagers to evacuate after flood triggered by landslide, 5 missing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-11T03:40:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQdmY4X3hOUlE1bVFld0ZMSVdCby1VUDFOZUpoM29Vbl9jRGllQXpuMVMtUzgwT0lQSWZuU3JDVzFLbEtpWl83b1p4NXZXUWkwazRkOFhETldzYTNLT282Qi1RckpvQU5Sc1lzUG03QmUyWnF3UlltN3F0R0tYeW5FaHJ4SzVmMU1SOTd3dVZldm5RTUxFaVJQN0xGZ05ydVptU2JpZUVreGZOaDdZb2ZfMXRBSWZYRHc?oc=5\" target=\"_blank\"&gt;EU eyes COP31 climate deal to accelerate CO2 cuts, document shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T05:02:00.000Z",
+          "score": 13
+        },
+        {
+          "title": "How green is Europe&#039;s urban public transport? A data-driven reality check",
+          "link": "https://www.dw.com/en/how-green-is-europe-s-urban-public-transport-a-data-driven-reality-check/a-79406721?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Greener buses and cleaner fleets are reshaping public transport across Europe. But are cities moving fast enough to meet their zero-emission goals?",
+          "published": "2026-10-12T07:30:00.000Z",
+          "score": 10
         },
         {
           "title": "As rising waters flood homes and temples, villagers protest India's $87 billion river-linking project - Reuters",
@@ -96,26 +118,60 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxOTElpdjF1UmxmZFZUSnB1c2VCVHVyTlJ0cktqZmNHbmJGVXNsRUx0aUtGNDZuUFBzU3c3VEQ3UXN6M1dkX2hSeTBnOXFIS2hIWTRRSWs5bDBWVUVkSEFQb3ZvVkZUVlFjWVhLOUEwNmgtTDVFV1d5V2hPb1VxYnBodzlyRVVhQl9YMC1wUWgtdkxlSzl2X3ItYjJvQlg2bUZraE1SSDgxVlNSR3ZmOXVjMzdvU3VrS1FQY1FuT3NqZmY5X3NlTDEwdFpkYk4?oc=5\" target=\"_blank\"&gt;As rising waters flood homes and temples, villagers protest India's $87 billion river-linking project&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=",
           "published": "2026-10-12T01:03:00.000Z",
           "score": 7
-        },
-        {
-          "title": "Drought-stricken Kenya - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5CR1RvQzlDTURVbzZZQnhEa2tXRTFPZVJoWlFTMkJJUlRjNnJRa3lhT2JkWFlwV2lLRDNSZHhycWt0bzhCNFR0VzFiN3FRaTB5Nk80X0hEUExCc0pDYURZ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE5CR1RvQzlDTURVbzZZQnhEa2tXRTFPZVJoWlFTMkJJUlRjNnJRa3lhT2JkWFlwV2lLRDNSZHhycWt0bzhCNFR0VzFiN3FRaTB5Nk80X0hEUExCc0pDYURZ?oc=5\" target=\"_blank\"&gt;Drought-stricken Kenya&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-11T11:36:45.000Z",
-          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "IMF says AI investment keeps global growth around 3% but brings massive disruption - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxONXItVGZaTjNISE9iMlVzZzhlV2ZmYzFDR29feFhfWFRhRzJFdWlwYXk5QkZpUHQ3WVhLZEZId2xobTNmc1E2Y25FN2c1TTg1eldiR3RLR003ajh2RUpSN1RxYXVzYjJ4TW5ZMW1ZcVljRndfSUpoNVVlLUE3eWc1MkhqUUtGQTdYdC1zVUxIbnNJWVJYb2ZIcVN1S3QzWWhQUmdsQ3VFVG9xSEs4NDVvOTZ5dHJRZUNNaUtsazVSMThYQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxONXItVGZaTjNISE9iMlVzZzhlV2ZmYzFDR29feFhfWFRhRzJFdWlwYXk5QkZpUHQ3WVhLZEZId2xobTNmc1E2Y25FN2c1TTg1eldiR3RLR003ajh2RUpSN1RxYXVzYjJ4TW5ZMW1ZcVljRndfSUpoNVVlLUE3eWc1MkhqUUtGQTdYdC1zVUxIbnNJWVJYb2ZIcVN1S3QzWWhQUmdsQ3VFVG9xSEs4NDVvOTZ5dHJRZUNNaUtsazVSMThYQQ?oc=5\" target=\"_blank\"&gt;IMF says AI investment keeps global growth around 3% but brings massive disruption&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+          "published": "2026-10-12T03:50:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "India's monthly fund investments hit record highs despite market slide - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNODJyMnpVeFUtMGI5STVmUERRbU9KNzdIajRaZldyal9SZDFHZWdHVmp1WG54WmMwa0g4NTF6cTRrWmdlQmdFSk5VRk81VUY1UXZfYXpSTzdDRDJmQ1djdFc3VTJXTGlzUnFyTGsweHZYQkF3eGctOGlhb2FHNUU2N0hNb2o4Q1M5Nnp3X195V1ZMM2R3SXhIUFRJTWRKMlIxMEs4MjI4QnpKcDBSVnctaC1EekVha1BxeDNQbVlzUk1iXzRxWGc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNODJyMnpVeFUtMGI5STVmUERRbU9KNzdIajRaZldyal9SZDFHZWdHVmp1WG54WmMwa0g4NTF6cTRrWmdlQmdFSk5VRk81VUY1UXZfYXpSTzdDRDJmQ1djdFc3VTJXTGlzUnFyTGsweHZYQkF3eGctOGlhb2FHNUU2N0hNb2o4Q1M5Nnp3X195V1ZMM2R3SXhIUFRJTWRKMlIxMEs4MjI4QnpKcDBSVnctaC1EekVha1BxeDNQbVlzUk1iXzRxWGc?oc=5\" target=\"_blank\"&gt;India's monthly fund investments hit record highs despite market slide&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T06:41:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Germany&#039;s Wadephul calls new EU sanctions &#039;unprecedented&#039; blow to Russia",
+          "link": "https://www.dw.com/en/germany-s-wadephul-calls-new-eu-sanctions-unprecedented-blow-to-russia/a-79638017?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Union has approved its largest-ever sanctions package against Moscow, targeting more than 1,000 entities tied to the military-industrial complex. The move took place in an EU foreign ministers&#039; meeting.",
+          "published": "2026-10-12T10:48:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "China details outcome of EU trade talks on hybrid, electric vehicles - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPRzNFMkF5b0ZQUnNpMlJlTE82NkZrRUJiTXNreWtQbi1wOHZ2ZC1aOE5GVkhZcDNmd1pBREFLb1I2MjBlVW9ncFhpd1oyaXhDbVdMUEUtbkE1WmtXQUtpa1NtTEJOb3NQcVBkc1lldUMwaUdUU01WLTg3MS1QVUtGcF9lVDRtNTBTOHVBX2JMZnJUVUNPWnRXb21heklpNEFS?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPRzNFMkF5b0ZQUnNpMlJlTE82NkZrRUJiTXNreWtQbi1wOHZ2ZC1aOE5GVkhZcDNmd1pBREFLb1I2MjBlVW9ncFhpd1oyaXhDbVdMUEUtbkE1WmtXQUtpa1NtTEJOb3NQcVBkc1lldUMwaUdUU01WLTg3MS1QVUtGcF9lVDRtNTBTOHVBX2JMZnJUVUNPWnRXb21heklpNEFS?oc=5\" target=\"_blank\"&gt;China details outcome of EU trade talks on hybrid, electric vehicles&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T05:42:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU eyes December trade initiatives after China car import deal - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUVjWi04OFQ3RzdMUmNYSTk1bk0wbWtWM1ZmbWpVY0dMUk1HVUJEVTAwbHJlc2cwUHhtNktGZHhwdEV4QzBxSlJVa3YtUFpVZlhXcXozZDlzRUlsbXV0UWdyTkU3d0FLdkpQS1kxdGNaeDJpdnBpNWhfdWk0UjYwbUcwUEJHcExDcXVPcTRYZDJOWi1DMGJxNjMyOGp1QUxoZXZvbGg1X0djb1VOLU1YN0psU0FfaF9sc191QkZtaXdUaGhqc2t3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxONUVjWi04OFQ3RzdMUmNYSTk1bk0wbWtWM1ZmbWpVY0dMUk1HVUJEVTAwbHJlc2cwUHhtNktGZHhwdEV4QzBxSlJVa3YtUFpVZlhXcXozZDlzRUlsbXV0UWdyTkU3d0FLdkpQS1kxdGNaeDJpdnBpNWhfdWk0UjYwbUcwUEJHcExDcXVPcTRYZDJOWi1DMGJxNjMyOGp1QUxoZXZvbGg1X0djb1VOLU1YN0psU0FfaF9sc191QkZtaXdUaGhqc2t3?oc=5\" target=\"_blank\"&gt;EU eyes December trade initiatives after China car import deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T11:50:46.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
@@ -130,28 +186,28 @@
           "score": 8
         },
         {
-          "title": "Stellantis bets on small affordable EVs for European comeback - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQ3Vnc21nNnBpSEFHQW5rSEIweVpPVHU1aHNfLXhscElQQ3NZU21kOGNOMXlVVWdiTE1raXhHdjhKMDJpYUhqZURGM2NyS21MVjdzQVl1ckVJdkk2U3MzcVFLX05QU05rUG1VNWZMcDBFYmd4NVNoNzF6aVk2QVNyMjhEYk9xb0d1bnlsZkpKdFJBaGYxamd3QVB1Z25BVGFhQjM4Wkw1Y1NCUktQVHJWMWljZlVDNld3UlUyNw?oc=5",
+          "title": "EU adopts nearly 1,600 new sanctions listings targeting Russia - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQNHU4aWdseGJQNDlHSkY2bVlVakhtNG9qSWo2eHl0MV9WSTRoc1lqdUdTcHlXeWdCVU1nZ3V6c2Z2dV9FMmRXdGlmMjhOOVpENE9ZRkY1UkRxM1ZzUTBaLTE0OUhEUE9nVzFVd1pUQUlJcjljeWhjNEJvSk55VlhobmU5Q0F2S2lKb0M0Z2lLcjg1Y1J2bG8zUU8xUXdLUV93WUpOMG5DSE11dzJmdklv?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNQ3Vnc21nNnBpSEFHQW5rSEIweVpPVHU1aHNfLXhscElQQ3NZU21kOGNOMXlVVWdiTE1raXhHdjhKMDJpYUhqZURGM2NyS21MVjdzQVl1ckVJdkk2U3MzcVFLX05QU05rUG1VNWZMcDBFYmd4NVNoNzF6aVk2QVNyMjhEYk9xb0d1bnlsZkpKdFJBaGYxamd3QVB1Z25BVGFhQjM4Wkw1Y1NCUktQVHJWMWljZlVDNld3UlUyNw?oc=5\" target=\"_blank\"&gt;Stellantis bets on small affordable EVs for European comeback&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-11T19:42:05.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQNHU4aWdseGJQNDlHSkY2bVlVakhtNG9qSWo2eHl0MV9WSTRoc1lqdUdTcHlXeWdCVU1nZ3V6c2Z2dV9FMmRXdGlmMjhOOVpENE9ZRkY1UkRxM1ZzUTBaLTE0OUhEUE9nVzFVd1pUQUlJcjljeWhjNEJvSk55VlhobmU5Q0F2S2lKb0M0Z2lLcjg1Y1J2bG8zUU8xUXdLUV93WUpOMG5DSE11dzJmdklv?oc=5\" target=\"_blank\"&gt;EU adopts nearly 1,600 new sanctions listings targeting Russia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T08:23:44.000Z",
           "score": 8
         },
         {
-          "title": "Volkswagen CEO says transformation is 'shared responsibility' in appeal to EU - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPejJ0eGxjSGtuYW55b3cxRi12Z3V0R2dvM3prcFF4bFpnZ196a0JNWjc1YjZrT0F2V2JLRTM2ZlZuNUlRU0tVVDhYYjFfOGc2N3lkbzFYTFJuX0FKNWVyc3o2RXdqODhrZmJiU1VSSUNXWlJtZFo5QXpVR2JsV1otQmdXWl9XbVBKNGd3R2kxYWpQQUFnYUdUYU9EY1JxVGFYWW00TDdpTlZiWW9HQmtyTUNYcHFqRVVYRWtFVnh4a2RzdXhzaVdQemFzV2R3d2xQ?oc=5",
+          "title": "UK's Heathrow rallies support for third runway as Parliament weighs expansion plans - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNck5PNkRCdVAzSExxOTNuWVhkRFdRX1JoSTF6bjJrcUYwNmJNdEswSE5xN09DZzFmOF9BTTQ1aU9jVUdXWGxfelgwLTNDeTBnaERoVnh6YlNDRkNuQV9jbTRjelNJYVFMOUZ2LTVDd1FjTVFYcEdUYlNyUlpzQUVyYUpjWGc4cXVCcExzLUI1VnZta1RjV3RnMHAtdWkzZVR3c3ZVT3hqd0xCTXB2dDdHXzNqYURhUGJjVzVUbA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxPejJ0eGxjSGtuYW55b3cxRi12Z3V0R2dvM3prcFF4bFpnZ196a0JNWjc1YjZrT0F2V2JLRTM2ZlZuNUlRU0tVVDhYYjFfOGc2N3lkbzFYTFJuX0FKNWVyc3o2RXdqODhrZmJiU1VSSUNXWlJtZFo5QXpVR2JsV1otQmdXWl9XbVBKNGd3R2kxYWpQQUFnYUdUYU9EY1JxVGFYWW00TDdpTlZiWW9HQmtyTUNYcHFqRVVYRWtFVnh4a2RzdXhzaVdQemFzV2R3d2xQ?oc=5\" target=\"_blank\"&gt;Volkswagen CEO says transformation is 'shared responsibility' in appeal to EU&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
-          "published": "2026-10-11T14:53:49.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNck5PNkRCdVAzSExxOTNuWVhkRFdRX1JoSTF6bjJrcUYwNmJNdEswSE5xN09DZzFmOF9BTTQ1aU9jVUdXWGxfelgwLTNDeTBnaERoVnh6YlNDRkNuQV9jbTRjelNJYVFMOUZ2LTVDd1FjTVFYcEdUYlNyUlpzQUVyYUpjWGc4cXVCcExzLUI1VnZta1RjV3RnMHAtdWkzZVR3c3ZVT3hqd0xCTXB2dDdHXzNqYURhUGJjVzVUbA?oc=5\" target=\"_blank\"&gt;UK's Heathrow rallies support for third runway as Parliament weighs expansion plans&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T07:01:43.000Z",
           "score": 8
         },
         {
-          "title": "Trump's 'energy ceasefire' claim welcomed by Zelensky but Russia silent",
-          "link": "https://www.bbc.co.uk/news/articles/c6pvg4jyz1m0o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Ukraine's leader says he will support such a truce if Moscow does, after initially expressing surprise at Donald Trump's announcement.",
-          "published": "2026-10-11T21:36:40.000Z",
-          "score": 7
+          "title": "Burnham to tell parliament UK needs to consider new deal with EU - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPQXpaYWl6TDFJWVZudURzUkMwckN2UGZpaEs0UFdrQWhyczdwdHRGV0NiQnVSd0prQTNRVG9mT3NBejVMUXhKTzRtTVVWSkY2N29LRS1KTzJNM2lKdEItMXJ4eGdxM3NJWnR3SlV0V2l0LTg1dElmWHdrT3ZOdkFVMW9ZeUZKN1RTWmk5cFZkSldLZ2Q0endobFo2RnQ4X0FOQjlPOEV3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPQXpaYWl6TDFJWVZudURzUkMwckN2UGZpaEs0UFdrQWhyczdwdHRGV0NiQnVSd0prQTNRVG9mT3NBejVMUXhKTzRtTVVWSkY2N29LRS1KTzJNM2lKdEItMXJ4eGdxM3NJWnR3SlV0V2l0LTg1dElmWHdrT3ZOdkFVMW9ZeUZKN1RTWmk5cFZkSldLZ2Q0endobFo2RnQ4X0FOQjlPOEV3?oc=5\" target=\"_blank\"&gt;Burnham to tell parliament UK needs to consider new deal with EU&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T12:06:51.000Z",
+          "score": 8
         },
         {
           "title": "Watch: What's behind Trump's energy ceasefire claim?",
@@ -165,9 +221,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 145,
-    "afterDedup": 125,
+    "totalArticlesScanned": 397,
+    "articlesLast24h": 159,
+    "afterDedup": 145,
     "feedsQueried": 19
   }
 }
