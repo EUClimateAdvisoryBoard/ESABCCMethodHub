@@ -1,12 +1,12 @@
 {
-  "date": "2026-10-12",
-  "generatedAt": "2026-10-12T23:35:22.074Z",
+  "date": "2026-10-13",
+  "generatedAt": "2026-10-13T12:33:40.180Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Monday, 12 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Tuesday, 13 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Ministers preparing to slash heat pump subsidies to fund defence spending",
-      "summary": "&lt;p&gt;Exclusive: Some of £2bn savings needed from energy budget expected to come from boiler upgrade scheme, sources say&lt;/p&gt;&lt;p&gt;Ministers are preparing to slash the amount of money available to subsidise heat pumps as they look for ways to fund higher defence spending, sources have told the Guardian.&lt;/p&gt;&lt;p&gt;Miatta Fahnbulleh, the energy secretary, has been tasked with finding more than £2bn in savings from her budget to help pay for defence investment under a plan drawn ",
+      "headline": "Red squirrel project opens £250k community grant",
+      "summary": "Groups from around northern England and southern Scotland can bid for funding to help the creatures.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "IMF says AI investment keeps global growth around 3% but brings massive disruption - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxONXItVGZaTjNISE9iMlVzZzhlV2ZmYzFDR29feFhfWFRhRzJFdWlwYXk5QkZpUHQ3WVhLZEZId2xobTNmc1E2Y25FN2c1TTg1eldiR3RLR003ajh2RUpSN1RxYXVzYjJ4TW5ZMW1ZcVljRndfSUpoNVVlLUE3eWc1MkhqUUtGQTdYdC1zVUxIbnNJWVJYb2ZIcVN1S3QzWWhQUmdsQ3VFVG9xSEs4NDVvOTZ5dHJRZUNNaUtsazVSMThYQQ?oc=5\" target=\"_blank\"&gt;IMF says AI investment keeps global growth around 3% but brings massive disruption&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+      "headline": "Dating app Bumble in $1bn takeover talks, say reports",
+      "summary": "The dating app which recently ditched its \"women-first\" chat rule could be bought by an investment firm.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,19 +34,11 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Ministers preparing to slash heat pump subsidies to fund defence spending",
-          "link": "https://www.theguardian.com/environment/2026/oct/12/ministers-plan-slash-heat-pump-subsidies-fund-defence-spending",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Exclusive: Some of £2bn savings needed from energy budget expected to come from boiler upgrade scheme, sources say&lt;/p&gt;&lt;p&gt;Ministers are preparing to slash the amount of money available to subsidise heat pumps as they look for ways to fund higher defence spending, sources have told the Guardian.&lt;/p&gt;&lt;p&gt;Miatta Fahnbulleh, the energy secretary, has been tasked with finding more than £2bn in savings from her budget to help pay for defence investment under a plan drawn ",
-          "published": "2026-10-12T05:00:47.000Z",
-          "score": 7
-        },
-        {
-          "title": "Appeal for major energy storage system rejected",
-          "link": "https://www.bbc.co.uk/news/articles/cwvgdej69m2ro?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Red squirrel project opens £250k community grant",
+          "link": "https://www.bbc.co.uk/news/articles/cr86zp8qn0w5o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Plans for the battery system site near the Devon-Dorset border have again been dismissed.",
-          "published": "2026-10-12T12:10:34.000Z",
+          "description": "Groups from around northern England and southern Scotland can bid for funding to help the creatures.",
+          "published": "2026-10-13T05:08:27.000Z",
           "score": 7
         },
         {
@@ -55,14 +47,6 @@
           "source": "BBC World News",
           "description": "The BBC's Dan Johnson reports from Kyiv, where Ukrainians face another winter with electricity outages.",
           "published": "2026-10-12T15:51:30.000Z",
-          "score": 7
-        },
-        {
-          "title": "COMMENTARY: Middle East LNG industry remains hostage of Iran war: Bousso - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQLXNhN1pHTVFkMDM2M21lOXNtYnpXRzRvOEtkVU9pdG1YSXo2Q0M4eVNreElGaFI3RlZZV3FQZXBDZmYtTDYwNVJrbFZOY2VOZWFOR3l2TFpORElhZDhrUWxCRXM1RXpKbGowTVdsS3N0VUIwRFhJOF9wcFhlT1JvRE95dF9BNWluc25GZG1fMm9Gem9NVHN5SlJfNHFXdnprMkxwcktuTjFqOHBYb29lUXpLTE56MjRmbnp6OGU2MzNDNk0?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQLXNhN1pHTVFkMDM2M21lOXNtYnpXRzRvOEtkVU9pdG1YSXo2Q0M4eVNreElGaFI3RlZZV3FQZXBDZmYtTDYwNVJrbFZOY2VOZWFOR3l2TFpORElhZDhrUWxCRXM1RXpKbGowTVdsS3N0VUIwRFhJOF9wcFhlT1JvRE95dF9BNWluc25GZG1fMm9Gem9NVHN5SlJfNHFXdnprMkxwcktuTjFqOHBYb29lUXpLTE56MjRmbnp6OGU2MzNDNk0?oc=5\" target=\"_blank\"&gt;COMMENTARY: Middle East LNG industry remains hostage of Iran war: Bousso&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-12T06:00:00.000Z",
           "score": 7
         }
       ]
@@ -88,14 +72,6 @@
           "score": 15
         },
         {
-          "title": "IPCC Chair Jim Skea&#8217;s remarks during the opening of the 65th Session of the IPCC",
-          "link": "https://www.ipcc.ch/2026/10/12/ipcc-chair-jim-skea-remarks-ipcc-65-opening/",
-          "source": "IPCC",
-          "description": "Addis Ababa, Ethiopia, 12 October 2026 Thank you, Ko, especially as you serve in a dual role at this plenary: interim Secretary of the IPCC and Deputy Secretary-General of the WMO. Your Excellencies, distinguished delegates and colleagues, dear guests, ladies and gentlemen, The Intergovernmental Panel on Climate Change, which I have the privilege of chairing, [&#8230;]",
-          "published": "2026-10-12T10:32:43.000Z",
-          "score": 15
-        },
-        {
           "title": "Interactive: Tracking negotiating texts at the COP17 biodiversity summit",
           "link": "https://www.carbonbrief.org/interactive-tracking-negotiating-texts-at-the-cop17-biodiversity-summit",
           "source": "Carbon Brief",
@@ -110,6 +86,14 @@
           "description": "Despite lobbying for an exemption, the UN regulator has for the first time made cookstove projects cover the risk that the trees they save are later destroyed The post UN carbon market forces cookstove projects to protect against forest loss appeared first on Climate Home News.",
           "published": "2026-10-12T17:53:54.000Z",
           "score": 13
+        },
+        {
+          "title": "Germany news: Economy set for stronger growth, wine harvest hit by drought",
+          "link": "https://www.dw.com/en/germany-news-economy-set-for-stronger-growth-wine-harvest-hit-by-drought/live-79647092?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany&#039;s economic outlook is looking a little brighter, with the International Monetary Fund almost doubling its growth forecast. However, Germany&#039;s winegrowers are facing another disappointing harvest. DW has more.",
+          "published": "2026-10-13T06:38:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -118,19 +102,27 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "IMF says AI investment keeps global growth around 3% but brings massive disruption - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxONXItVGZaTjNISE9iMlVzZzhlV2ZmYzFDR29feFhfWFRhRzJFdWlwYXk5QkZpUHQ3WVhLZEZId2xobTNmc1E2Y25FN2c1TTg1eldiR3RLR003ajh2RUpSN1RxYXVzYjJ4TW5ZMW1ZcVljRndfSUpoNVVlLUE3eWc1MkhqUUtGQTdYdC1zVUxIbnNJWVJYb2ZIcVN1S3QzWWhQUmdsQ3VFVG9xSEs4NDVvOTZ5dHJRZUNNaUtsazVSMThYQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxONXItVGZaTjNISE9iMlVzZzhlV2ZmYzFDR29feFhfWFRhRzJFdWlwYXk5QkZpUHQ3WVhLZEZId2xobTNmc1E2Y25FN2c1TTg1eldiR3RLR003ajh2RUpSN1RxYXVzYjJ4TW5ZMW1ZcVljRndfSUpoNVVlLUE3eWc1MkhqUUtGQTdYdC1zVUxIbnNJWVJYb2ZIcVN1S3QzWWhQUmdsQ3VFVG9xSEs4NDVvOTZ5dHJRZUNNaUtsazVSMThYQQ?oc=5\" target=\"_blank\"&gt;IMF says AI investment keeps global growth around 3% but brings massive disruption&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
-          "published": "2026-10-12T03:50:00.000Z",
+          "title": "Dating app Bumble in $1bn takeover talks, say reports",
+          "link": "https://www.bbc.co.uk/news/articles/cm9qzwjgnjxlo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The dating app which recently ditched its \"women-first\" chat rule could be bought by an investment firm.",
+          "published": "2026-10-13T01:50:47.000Z",
           "score": 2
         },
         {
-          "title": "India's monthly fund investments hit record highs despite market slide - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNODJyMnpVeFUtMGI5STVmUERRbU9KNzdIajRaZldyal9SZDFHZWdHVmp1WG54WmMwa0g4NTF6cTRrWmdlQmdFSk5VRk81VUY1UXZfYXpSTzdDRDJmQ1djdFc3VTJXTGlzUnFyTGsweHZYQkF3eGctOGlhb2FHNUU2N0hNb2o4Q1M5Nnp3X195V1ZMM2R3SXhIUFRJTWRKMlIxMEs4MjI4QnpKcDBSVnctaC1EekVha1BxeDNQbVlzUk1iXzRxWGc?oc=5",
+          "title": "Formula 1: Rwanda to bring sport back to Africa",
+          "link": "https://www.dw.com/en/formula-1-rwanda-to-bring-sport-back-to-africa/a-79649217?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The last time Formula 1 hosted a race in Africa was way back in 1993. But a new track in Rwanda is set to host a Grand Prix in &quot;the early 2030s&quot; continuing the country’s investment in international sport.",
+          "published": "2026-10-13T11:20:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "AI investment props up global growth, but war and debt threaten outlook, IMF says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPVlNmbDdlaDUwX1pOeWRzM1FhdDNhWTNnVnk4bXZLZlR2VGwxMFRCcWdiNngwM2p1Tmp3YjZMY0FwY1puZHk3bTlEYWNyd2pYYUxPd19nZVpqQU9CQjVlck9RUGtoajF5SGY4VnYzSWpZXzY2TWZ3TVY3Yl9ucVdEWnc3b2xzT19vbzBqazJUMzlCdmpfakw4VjAzOVZ3Ui13dmlJOV90Nk9pVUxWY1htUHYtNDZhTGhyTDYwZEk3SQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNODJyMnpVeFUtMGI5STVmUERRbU9KNzdIajRaZldyal9SZDFHZWdHVmp1WG54WmMwa0g4NTF6cTRrWmdlQmdFSk5VRk81VUY1UXZfYXpSTzdDRDJmQ1djdFc3VTJXTGlzUnFyTGsweHZYQkF3eGctOGlhb2FHNUU2N0hNb2o4Q1M5Nnp3X195V1ZMM2R3SXhIUFRJTWRKMlIxMEs4MjI4QnpKcDBSVnctaC1EekVha1BxeDNQbVlzUk1iXzRxWGc?oc=5\" target=\"_blank\"&gt;India's monthly fund investments hit record highs despite market slide&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-12T06:41:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPVlNmbDdlaDUwX1pOeWRzM1FhdDNhWTNnVnk4bXZLZlR2VGwxMFRCcWdiNngwM2p1Tmp3YjZMY0FwY1puZHk3bTlEYWNyd2pYYUxPd19nZVpqQU9CQjVlck9RUGtoajF5SGY4VnYzSWpZXzY2TWZ3TVY3Yl9ucVdEWnc3b2xzT19vbzBqazJUMzlCdmpfakw4VjAzOVZ3Ui13dmlJOV90Nk9pVUxWY1htUHYtNDZhTGhyTDYwZEk3SQ?oc=5\" target=\"_blank\"&gt;AI investment props up global growth, but war and debt threaten outlook, IMF says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-13T02:05:00.000Z",
           "score": 2
         }
       ]
@@ -148,28 +140,28 @@
           "score": 12
         },
         {
-          "title": "Cyprus closer than ever to joining Schengen but political hurdles relating to the Green Line and British Sovereign Base Areas remain",
-          "link": "https://www.dw.com/en/cyprus-closer-than-ever-to-joining-schengen-but-political-hurdles-relating-to-the-green-line-and-british-sovereign-base-areas-remain/a-79641488?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Bulgaria condemns Black Sea drone attacks as Russia&#039;s war in Ukraine spills over into Eastern Europe",
+          "link": "https://www.dw.com/en/bulgaria-condemns-black-sea-drone-attacks-as-russia-s-war-in-ukraine-spills-over-into-eastern-europe/a-79648001?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Bulgaria has seen the second spate of drone attacks on merchant ships off its coast in the past week. Russia has been accused of repeatedly targeting civilian cargo ships in the area.",
+          "published": "2026-10-13T10:15:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "What is holding back Cyprus&#039;s Schengen ambitions?",
+          "link": "https://www.dw.com/en/what-is-holding-back-cyprus-s-schengen-ambitions/a-79641488?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The European Commission says Cyprus is ready to join the Schengen Area. Yet questions relating to the island&#039;s division and British military bases could still complicate its path to Europe&#039;s border-free travel zone.",
-          "published": "2026-10-12T12:59:00.000Z",
+          "published": "2026-10-13T06:26:00.000Z",
           "score": 8
         },
         {
-          "title": "Germany&#039;s Wadephul calls new EU sanctions &#039;unprecedented&#039; blow to Russia",
-          "link": "https://www.dw.com/en/germany-s-wadephul-calls-new-eu-sanctions-unprecedented-blow-to-russia/a-79638017?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Germany&#039;s China calculation shifts as import pressures eclipse export benefits",
+          "link": "https://www.dw.com/en/germany-s-china-calculation-shifts-as-import-pressures-eclipse-export-benefits/a-79571852?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The European Union has approved its largest-ever sanctions package against Moscow, targeting more than 1,000 entities tied to the military-industrial complex. The move took place in an EU foreign ministers&#039; meeting.",
-          "published": "2026-10-12T10:48:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "China details outcome of EU trade talks on hybrid, electric vehicles - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPRzNFMkF5b0ZQUnNpMlJlTE82NkZrRUJiTXNreWtQbi1wOHZ2ZC1aOE5GVkhZcDNmd1pBREFLb1I2MjBlVW9ncFhpd1oyaXhDbVdMUEUtbkE1WmtXQUtpa1NtTEJOb3NQcVBkc1lldUMwaUdUU01WLTg3MS1QVUtGcF9lVDRtNTBTOHVBX2JMZnJUVUNPWnRXb21heklpNEFS?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPRzNFMkF5b0ZQUnNpMlJlTE82NkZrRUJiTXNreWtQbi1wOHZ2ZC1aOE5GVkhZcDNmd1pBREFLb1I2MjBlVW9ncFhpd1oyaXhDbVdMUEUtbkE1WmtXQUtpa1NtTEJOb3NQcVBkc1lldUMwaUdUU01WLTg3MS1QVUtGcF9lVDRtNTBTOHVBX2JMZnJUVUNPWnRXb21heklpNEFS?oc=5\" target=\"_blank\"&gt;China details outcome of EU trade talks on hybrid, electric vehicles&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-12T05:42:00.000Z",
-          "score": 8
+          "description": "Germany has long resisted tougher action against China, fearing retaliation. But rising pressure on key industries has pushed Berlin to seek stronger EU trade-defense powers to protect its industrial base.",
+          "published": "2026-10-13T08:47:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -186,22 +178,6 @@
           "score": 13
         },
         {
-          "title": "Germany news: Merz says Trump&#039;s Russia diesel deal &#039;out of question&#039; for Europe",
-          "link": "https://www.dw.com/en/germany-news-merz-says-trump-s-russia-diesel-deal-out-of-question-for-europe/live-79636427?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Chancellor Friedrich Merz has said that Donald Trump&#039;s diesel deal with Russia would be &quot;out of the question&quot; for Germany and the EU. Meanwhile, the ruling coalition has been rocked by a major resignation.",
-          "published": "2026-10-12T16:01:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU adopts nearly 1,600 new sanctions listings targeting Russia - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQNHU4aWdseGJQNDlHSkY2bVlVakhtNG9qSWo2eHl0MV9WSTRoc1lqdUdTcHlXeWdCVU1nZ3V6c2Z2dV9FMmRXdGlmMjhOOVpENE9ZRkY1UkRxM1ZzUTBaLTE0OUhEUE9nVzFVd1pUQUlJcjljeWhjNEJvSk55VlhobmU5Q0F2S2lKb0M0Z2lLcjg1Y1J2bG8zUU8xUXdLUV93WUpOMG5DSE11dzJmdklv?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQNHU4aWdseGJQNDlHSkY2bVlVakhtNG9qSWo2eHl0MV9WSTRoc1lqdUdTcHlXeWdCVU1nZ3V6c2Z2dV9FMmRXdGlmMjhOOVpENE9ZRkY1UkRxM1ZzUTBaLTE0OUhEUE9nVzFVd1pUQUlJcjljeWhjNEJvSk55VlhobmU5Q0F2S2lKb0M0Z2lLcjg1Y1J2bG8zUU8xUXdLUV93WUpOMG5DSE11dzJmdklv?oc=5\" target=\"_blank\"&gt;EU adopts nearly 1,600 new sanctions listings targeting Russia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-12T08:23:44.000Z",
-          "score": 8
-        },
-        {
           "title": "EU to host Britain for summit on Nov. 20 - Reuters",
           "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBqX0YxQU9mMi1QcmhCTVJzRHR5NnBSUm9FZGh4c3pKUGoxQ19CYWc3X2R4RDdnd2owOGlhbjl5VXdJUXVPaVFiQkFkX29vamloWHhObWpDUGttOFhlS0lrZjVyVnA4aEJUS2RhbEJqdzJGRmhxNUs4QmZuVVRiS3c?oc=5",
           "source": "Reuters World (via Google News)",
@@ -210,20 +186,36 @@
           "score": 8
         },
         {
-          "title": "EU establishes new Lebanon support mission - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNM1dyRnhINHRfR0g0b0U3RWNOR3VobkRqR1RTTnNRN01QSzltdlJBZ0pkR3JuUFU2VEhzQl8zeGttWVZ1RWNHM2lSYVFtMEd5WHBLOGl0LV9HNW9CSldIZGM4XzVQdGhkMHdfQWRaZEdqR2hHemVwR1RBV1FBa1Rma1hPcmFNemE1eFJFaVFHRlJNY0dJb3B0S24tZDA?oc=5",
+          "title": "Turkey to send Mecca agreement to parliament soon, Erdogan says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNXzR5bWZLY1o2SVExOE55Ml9Ua3pfbktkT19hb3ZDM3JMV1BGSFdQWFNYcTF4SElZX1k2MEExVnJzVGNMWmlUaUs5WnN2Y3NtMXJMZUlCQzJWMlFrUE9QQTdxTFp5V3doYV9zY2lRT2pUbUV2eTl1VWt2TmpWbGpuandvR3hwSGlXbnBsVFlUZnJZQkYxVmpLblpJeGNZRFJ4dkhKdUpmRGNsUjVYT213?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNM1dyRnhINHRfR0g0b0U3RWNOR3VobkRqR1RTTnNRN01QSzltdlJBZ0pkR3JuUFU2VEhzQl8zeGttWVZ1RWNHM2lSYVFtMEd5WHBLOGl0LV9HNW9CSldIZGM4XzVQdGhkMHdfQWRaZEdqR2hHemVwR1RBV1FBa1Rma1hPcmFNemE1eFJFaVFHRlJNY0dJb3B0S24tZDA?oc=5\" target=\"_blank\"&gt;EU establishes new Lebanon support mission&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-12T12:19:45.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNXzR5bWZLY1o2SVExOE55Ml9Ua3pfbktkT19hb3ZDM3JMV1BGSFdQWFNYcTF4SElZX1k2MEExVnJzVGNMWmlUaUs5WnN2Y3NtMXJMZUlCQzJWMlFrUE9QQTdxTFp5V3doYV9zY2lRT2pUbUV2eTl1VWt2TmpWbGpuandvR3hwSGlXbnBsVFlUZnJZQkYxVmpLblpJeGNZRFJ4dkhKdUpmRGNsUjVYT213?oc=5\" target=\"_blank\"&gt;Turkey to send Mecca agreement to parliament soon, Erdogan says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T15:56:09.000Z",
+          "score": 8
+        },
+        {
+          "title": "COMMENTARY: Europe gets the yuan rise it wants — just not the way it wanted: Mike Dolan - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPT1lpTHMyYkJVQWluMXdsN21kTTRtSnR3aXgzUHB6X2JUeXFCMmVPMlFXdDVHUkV3UHd4ZjlZTU5JX21CM1I3NzhqWTZzeU5yVXpvZHFaZDZoS1VCNUhmOWw3Rlc0NV9sanRwZnF4SE9YV1VPRFI5NnpvckQxZmxDdlE1ZmNuSjlIbGZ3N3lmVXpDOEJ1WFc0c2dBWHdWUk5jejRrRFdGTDdYQUlkSElSOHFneDZKQmpQZjg1NWxfR25jVldzMVFuN2xFTmNudw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPT1lpTHMyYkJVQWluMXdsN21kTTRtSnR3aXgzUHB6X2JUeXFCMmVPMlFXdDVHUkV3UHd4ZjlZTU5JX21CM1I3NzhqWTZzeU5yVXpvZHFaZDZoS1VCNUhmOWw3Rlc0NV9sanRwZnF4SE9YV1VPRFI5NnpvckQxZmxDdlE1ZmNuSjlIbGZ3N3lmVXpDOEJ1WFc0c2dBWHdWUk5jejRrRFdGTDdYQUlkSElSOHFneDZKQmpQZjg1NWxfR25jVldzMVFuN2xFTmNudw?oc=5\" target=\"_blank\"&gt;COMMENTARY: Europe gets the yuan rise it wants — just not the way it wanted: Mike Dolan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&g",
+          "published": "2026-10-13T00:00:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Burnham hopes for EU deal next month, stirs Brexit debate - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPQXpaYWl6TDFJWVZudURzUkMwckN2UGZpaEs0UFdrQWhyczdwdHRGV0NiQnVSd0prQTNRVG9mT3NBejVMUXhKTzRtTVVWSkY2N29LRS1KTzJNM2lKdEItMXJ4eGdxM3NJWnR3SlV0V2l0LTg1dElmWHdrT3ZOdkFVMW9ZeUZKN1RTWmk5cFZkSldLZ2Q0endobFo2RnQ4X0FOQjlPOEV3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPQXpaYWl6TDFJWVZudURzUkMwckN2UGZpaEs0UFdrQWhyczdwdHRGV0NiQnVSd0prQTNRVG9mT3NBejVMUXhKTzRtTVVWSkY2N29LRS1KTzJNM2lKdEItMXJ4eGdxM3NJWnR3SlV0V2l0LTg1dElmWHdrT3ZOdkFVMW9ZeUZKN1RTWmk5cFZkSldLZ2Q0endobFo2RnQ4X0FOQjlPOEV3?oc=5\" target=\"_blank\"&gt;Burnham hopes for EU deal next month, stirs Brexit debate&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-12T16:05:58.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 405,
-    "articlesLast24h": 158,
-    "afterDedup": 152,
+    "totalArticlesScanned": 416,
+    "articlesLast24h": 165,
+    "afterDedup": 160,
     "feedsQueried": 19
   }
 }
