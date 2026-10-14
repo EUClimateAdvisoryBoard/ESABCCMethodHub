@@ -1,15 +1,9 @@
 {
   "date": "2026-10-14",
-  "generatedAt": "2026-10-14T15:47:35.908Z",
+  "generatedAt": "2026-10-14T20:33:38.970Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 14 October 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Questions and answers on the proposal for amendment to the EU Methane Regulation",
-      "summary": "European Commission Questions and answers Brussels, 14 Oct 2026 Why is the Commission proposing a targeted amendment to the EU Methane Regulation?",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "Gales and heavy rain to impact UK as yellow wind warning issued",
       "summary": "The Met Office has issued a yellow warning for wind in north-west Scotland on Wednesday with 70mph gusts possible, as Ben Rich explains.",
@@ -27,16 +21,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Questions and answers on the proposal for amendment to the EU Methane Regulation",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_2120",
-          "source": "European Commission",
-          "description": "European Commission Questions and answers Brussels, 14 Oct 2026 Why is the Commission proposing a targeted amendment to the EU Methane Regulation?",
-          "published": "2026-10-13T22:00:00.000Z",
-          "score": 27
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -59,28 +44,28 @@
           "score": 7
         },
         {
+          "title": "Red hot CPI report fuels AI rout - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPOVVDZGpleGljMkt2cm12UEhqSHA5QWpUR3JITXBsQWpPZ1hkYXQyMkRjSmJXTWg5dkNJd0w4U1RpSGVWVnFrYUtydk91VzN2ZXNoQ3NLSmpqMExESkliZ3pmQ1JISjJqN0NtYVlzYkhCSUpRQ3Azay1MWGRWZVVpSXpScw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPOVVDZGpleGljMkt2cm12UEhqSHA5QWpUR3JITXBsQWpPZ1hkYXQyMkRjSmJXTWg5dkNJd0w4U1RpSGVWVnFrYUtydk91VzN2ZXNoQ3NLSmpqMExESkliZ3pmQ1JISjJqN0NtYVlzYkhCSUpRQ3Azay1MWGRWZVVpSXpScw?oc=5\" target=\"_blank\"&gt;Red hot CPI report fuels AI rout&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-14T18:40:09.000Z",
+          "score": 7
+        },
+        {
+          "title": "Nord Stream trial opens in Germany, defense seeks dismissal",
+          "link": "https://www.dw.com/en/nord-stream-trial-opens-in-germany-defense-seeks-dismissal/a-79662942?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Serhii Kuznietsov is accused of attacking civilian infrastructure in the 2022 sabotage of the Russian gas pipeline to Germany. His lawyers called Nord Stream a military target, and said their client is sworn to secrecy.",
+          "published": "2026-10-14T18:00:00.000Z",
+          "score": 4
+        },
+        {
           "title": "Trump announces plans for major oil, gas and mineral exploration in Greenland",
           "link": "https://www.dw.com/en/trump-announces-plans-for-major-oil-gas-and-mineral-exploration-in-greenland/a-79656889?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The US president has claimed Greenland holds vast and easily accessible oil reserves without providing evidence or details. His announcement follows a deal expanding the US military presence on the Arctic island.",
           "published": "2026-10-14T10:00:00.000Z",
           "score": 4
-        },
-        {
-          "title": "Australian industry reliant on gas for ‘foreseeable future’, resources minister tells press club",
-          "link": "https://www.theguardian.com/australia-news/2026/oct/14/australia-reliant-on-gas-for-foreseeable-future-madeleine-king-press-club",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Madeleine King says national gas reservation scheme, expected to come into effect from 2028, will reduce power prices&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Follow our &lt;a href=\"https://www.theguardian.com/australia-news/live/2026/oct/14/treasurer-jim-chalmers-labor-one-nation-pauline-hanson-one-nation-gas-reservation-scheme-ntwnfb\"&gt;Australian politics live blog&lt;/a&gt; for latest updates&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-",
-          "published": "2026-10-14T05:52:22.000Z",
-          "score": 2
-        },
-        {
-          "title": "Burnham - Rosebank and Jackdaw oil and gas decisions coming 'shortly'",
-          "link": "https://www.bbc.co.uk/news/articles/c92031m6knljo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Conservative leader Kemi Badenoch has urged the prime minister to stop \"faffing about\" with the North Sea oil and gas fields.",
-          "published": "2026-10-14T14:13:37.000Z",
-          "score": 2
         }
       ]
     },
@@ -113,19 +98,19 @@
           "score": 13
         },
         {
-          "title": "Mont Blanc the ‘roof of Europe’ loses more than a metre of height in a year",
-          "link": "https://www.theguardian.com/environment/2026/oct/14/mont-blanc-loses-metre-height",
+          "title": "Is it really ‘madness’ to account for emissions from fossil fuels burned overseas? The Coalition sure thinks so | Temperature Check",
+          "link": "https://www.theguardian.com/environment/2026/oct/14/is-it-really-madness-to-account-for-emissions-from-fossil-fuels-burned-overseas-the-coalition-sure-thinks-so",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Peak of French mountain now 4,807 metres high and fluctuates year by year due to changes in Alpine climate&lt;/p&gt;&lt;p&gt;Europe’s highest peak shrank by more than a metre last year, data has shown.&lt;/p&gt;&lt;p&gt;Mont Blanc in France now stands 4,807.47 metres above sea level, a team of surveyors from the Haute-Savoie regional department said on Wednesday, putting “the roof of Europe” 1.29 metres lower than in 2025.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/environment/20",
-          "published": "2026-10-14T15:33:52.000Z",
-          "score": 10
+          "description": "&lt;p&gt;The emissions might occur elsewhere, but they generate global harm that scientists can now quantify&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The Coalition has come up with the perfect solution to dea",
+          "published": "2026-10-14T14:14:43.000Z",
+          "score": 7
         },
         {
-          "title": "Indonesia wildfire fuelled by El Niño razes almost 300 homes",
-          "link": "https://www.theguardian.com/world/2026/oct/13/indonesia-wildfire-el-nino-razes-300-homes-bankga-belitung",
+          "title": "I work for a major insurer. Much of my industry is fudging the numbers in the face of the climate crisis | Anonymous",
+          "link": "https://www.theguardian.com/commentisfree/2026/oct/14/climate-crisis-insurance-risk-disaster-catastrophe",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Hundreds of people displaced in Bangka Belitung with conditions described as worst in a decade with wildlife also badly hit&lt;/p&gt;&lt;p&gt;A forest fire on Indonesia’s Sumatra island fuelled by El Niño has razed nearly 300 homes, forcing hundreds of people to evacuate, an official has said, as the country battles devastating blazes and haze.&lt;/p&gt;&lt;p&gt;Residents first spotted the fire approaching their village in Bangka Belitung province on Saturday and tried to put it out the",
-          "published": "2026-10-13T16:34:13.000Z",
+          "description": "&lt;p&gt;Insurers are taking on more risk than they should. If – or when – a major disaster hits, the catastrophe will have far-reaching consequences&lt;/p&gt;&lt;p&gt;I work for a major insurer, assessing the risk posed by natural disasters on properties around the world, from family homes to schools, government offices and multibillion-dollar commercial centres. The world is facing greater risk than ever from extreme weather. We are not prepared – and that inaction could have profound conseque",
+          "published": "2026-10-14T10:00:01.000Z",
           "score": 7
         }
       ]
@@ -148,20 +133,20 @@
           "score": 8
         },
         {
-          "title": "Ukraine takes step forward in EU membership talks after Hungary drops objections - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQY0ZoUTNvZnFOMHA2a1pianNRZlFmRlljSDRoREZxQ2lLdHg4Z3htWS0zZ19jcWpFNGdERE15cXR2TFVRNV9WY3NGUEtianoxQVBoN2ZfV2Vmd3RPT3VoUUlnNXJsbkpkZnhlRU1OM0JMVjl1cmxLN2NUNlRfdTRQRUF5MWdLVHNJNGVOQS1CWVNjN2pKNFRHS214Tmw1RXI0RzdXN29QbmIyMnByUkNKNW9sX1V3ek1zU3VV?oc=5",
+          "title": "Pressured at home, EU leaders weigh China trade steps - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPZC1va2NWTWZxZFZwX0o0VVhXdFBUODFPVGt5RVF0ZmZfQmN3MXdrSFlyYVczRVBLdU45bGU2NmthUldZZXF0TGdXYTI2bFpidU5WdGg4anBFckVsbUFyUV9EQW0yMzdWNUd0LV9kT3Rtd1QzdFRGc3VUODVoSkYycG1RbkxiRkpmWWh5dk5CUWk5OUpodFpBbWozVnBTZw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQY0ZoUTNvZnFOMHA2a1pianNRZlFmRlljSDRoREZxQ2lLdHg4Z3htWS0zZ19jcWpFNGdERE15cXR2TFVRNV9WY3NGUEtianoxQVBoN2ZfV2Vmd3RPT3VoUUlnNXJsbkpkZnhlRU1OM0JMVjl1cmxLN2NUNlRfdTRQRUF5MWdLVHNJNGVOQS1CWVNjN2pKNFRHS214Tmw1RXI0RzdXN29QbmIyMnByUkNKNW9sX1V3ek1zU3VV?oc=5\" target=\"_blank\"&gt;Ukraine takes step forward in EU membership talks after Hungary drops objections&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-13T17:33:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPZC1va2NWTWZxZFZwX0o0VVhXdFBUODFPVGt5RVF0ZmZfQmN3MXdrSFlyYVczRVBLdU45bGU2NmthUldZZXF0TGdXYTI2bFpidU5WdGg4anBFckVsbUFyUV9EQW0yMzdWNUd0LV9kT3Rtd1QzdFRGc3VUODVoSkYycG1RbkxiRkpmWWh5dk5CUWk5OUpodFpBbWozVnBTZw?oc=5\" target=\"_blank\"&gt;Pressured at home, EU leaders weigh China trade steps&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-14T06:04:00.000Z",
           "score": 8
         },
         {
-          "title": "Ukraine allies in Poland after Starlink sabotage, Trump diesel deal",
-          "link": "https://www.dw.com/en/ukraine-allies-in-poland-after-starlink-sabotage-trump-diesel-deal/a-79653869?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Germany&#039;s Johann Wadephul said hybrid plots like the Starlink fire showed Europe was &quot;in Russia&#039;s crosshairs.&quot; The UK&#039;s Ed Miliband said Trump&#039;s Russian diesel deal led to a &quot;very difficult few days&quot; diplomatically.",
-          "published": "2026-10-13T18:52:00.000Z",
-          "score": 4
+          "title": "Canada races to seal India trade pact by year-end, deepen EU ties - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNOXNyY0JKZ3FLSkljUGp1XzZXbkFMa29UR0dtSVExajRyTGxmNUZMVDNwMVpJZmtKd0pKbzZVOEFZaThFNUdLUnYzOVJndG53U0YxSTZBV3RPelVMU01KYzZncDY3YWpFYTB1eUlaZ19QbmQ0dVRxVWVqclhiWl9CZ29FQjU4SFJ5WVJCYjlkUUsxRWRWRVU1WFYtdFZWNFJ4S1A3SG9QaF9Tc3pTZFE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNOXNyY0JKZ3FLSkljUGp1XzZXbkFMa29UR0dtSVExajRyTGxmNUZMVDNwMVpJZmtKd0pKbzZVOEFZaThFNUdLUnYzOVJndG53U0YxSTZBV3RPelVMU01KYzZncDY3YWpFYTB1eUlaZ19QbmQ0dVRxVWVqclhiWl9CZ29FQjU4SFJ5WVJCYjlkUUsxRWRWRVU1WFYtdFZWNFJ4S1A3SG9QaF9Tc3pTZFE?oc=5\" target=\"_blank\"&gt;Canada races to seal India trade pact by year-end, deepen EU ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-14T13:50:05.000Z",
+          "score": 8
         }
       ]
     },
@@ -169,6 +154,22 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Are the European Women's World Cup play-offs working?",
+          "link": "https://www.bbc.co.uk/sport/football/articles/cq0k0x1l8gndo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The ease in which England saw off Greece in round one of the Women's World Cup qualifying play-offs showed just how inefficient the structure currently is.",
+          "published": "2026-10-14T13:25:56.000Z",
+          "score": 8
+        },
+        {
+          "title": "What if you could turn off your algorithm? Australia is about to try",
+          "link": "https://www.bbc.co.uk/news/videos/ck78pj2qy42po?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "New legislation is being tabled in Australia's parliament on Thursday to force big tech to allow users to switch off algorithms which send them recommended content.",
+          "published": "2026-10-14T18:00:54.000Z",
+          "score": 8
+        },
         {
           "title": "Sterling rises to fresh 16-month high against euro - Reuters",
           "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNa2xRYmk2RDZMQWxvTkRyLWZhVm01M0FmcnZfZTdGb1E3OVBjdnk4MEVac000dFpiWl9Vc1JveW9WaU42SDRmYVZKck0yRFBzNGRyNmRqeVhqMktySWtrYVI3U1RuWmotVXBCYjdKZDJEWEM1UjJxYjdxdkh2Zm9sZ1hUOHVEeU5TcGp1dXVoeC1sdVlldnkzUA?oc=5",
@@ -192,30 +193,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPZ1lFMnZBTXJ2UC1VZG96Mk1UMHZmS2JjWXBwZDFBME9HRC1tX0U2RC1wR2h2RGgzdlhYU3hwaXhnTVctclY5dDVPYU9NeWhCalgxWHNscEtmTW83a0IxSmZEdkdnOEk3UkstUVBzcWJGc1JmaGp3NGEtczRzYXJJWG1fY0NOQ25tSjFtM0tzY2xBY200Qlg2UFFvRk13NTdBSDZWTDZEeEhjbHlDdHA2VXVUUkNnNVFZbVFsenNMVldLRGJoMkYyaA?oc=5\" target=\"_blank\"&gt;Top economic adviser says Venezuela aims to publish debt sustainability analysis 'very soon'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;R",
           "published": "2026-10-14T13:06:11.000Z",
           "score": 7
-        },
-        {
-          "title": "Iran shifting tactics to step up attacks on shipping before US vote, officials say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOXl4Z2E1ajJabkV2V0d3VVN4TE4xZVdXU0xjY1FwX2QwNzVpSEZ2UUdWY2d2N0w0TEZCXzRFR2oyZ3l4MlZkMER3cDZtOFRMc2p4VzRSWE1OZGdJaHBvRlZieVJ3Unc4bXEyRHFvalF4MEkwTmduUEFtV0lBX3NZS2Q0M2hoSkozeWFNMS02MnF5QmNveXNFNklHVktxYy1RM1BRcHlSVm92aWYzRnJpNTJvVWYtemNjbklpM3Jna2t0bUIweUV6VQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOXl4Z2E1ajJabkV2V0d3VVN4TE4xZVdXU0xjY1FwX2QwNzVpSEZ2UUdWY2d2N0w0TEZCXzRFR2oyZ3l4MlZkMER3cDZtOFRMc2p4VzRSWE1OZGdJaHBvRlZieVJ3Unc4bXEyRHFvalF4MEkwTmduUEFtV0lBX3NZS2Q0M2hoSkozeWFNMS02MnF5QmNveXNFNklHVktxYy1RM1BRcHlSVm92aWYzRnJpNTJvVWYtemNjbklpM3Jna2t0bUIweUV6VQ?oc=5\" target=\"_blank\"&gt;Iran shifting tactics to step up attacks on shipping before US vote, officials say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
-          "published": "2026-10-14T00:06:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Houthis launch fresh wave of missiles across Saudi Arabia",
-          "link": "https://www.dw.com/en/houthis-launch-fresh-wave-of-missiles-across-saudi-arabia/live-79655805?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Both the Houthis and the Saudi-led coalition carried out strikes targeting energy infrastructure. Four people were injured as a result of debris of intercepted missiles in Riyadh. DW has the latest.",
-          "published": "2026-10-14T13:35:00.000Z",
-          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 401,
-    "articlesLast24h": 165,
-    "afterDedup": 155,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 166,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
