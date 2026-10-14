@@ -1,9 +1,15 @@
 {
   "date": "2026-10-14",
-  "generatedAt": "2026-10-14T01:41:27.361Z",
+  "generatedAt": "2026-10-14T10:00:58.787Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 14 October 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Questions and answers on the proposal for amendment to the EU Methane Regulation",
+      "summary": "European Commission Questions and answers Brussels, 14 Oct 2026 Why is the Commission proposing a targeted amendment to the EU Methane Regulation?",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "SE Asia speeds up plan for connected clean power grid after oil shock",
       "summary": "Countries are redoubling efforts to link their grids to bolster energy security and reduce their dependence on fossil fuels - but many challenges remain The post SE Asia speeds up plan for connected clean power grid after oil shock appeared first on Climate Home News.",
@@ -11,8 +17,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "World Bank and IMF should lead the financial system in responding to the climate crisis",
-      "summary": "Multilateral development banks have a vital role to play in delivering on donors' climate finance promises and protecting the most vulnerable The post World Bank and IMF should lead the financial system in responding to the climate crisis appeared first on Climate Home News.",
+      "headline": "Commission proposes flexibility to methane importers to help save costs",
+      "summary": "European Commission Press release Brussels, 14 Oct 2026 Europe is preparing for a challenging winter with high energy prices.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -27,7 +33,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Questions and answers on the proposal for amendment to the EU Methane Regulation",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_2120",
+          "source": "European Commission",
+          "description": "European Commission Questions and answers Brussels, 14 Oct 2026 Why is the Commission proposing a targeted amendment to the EU Methane Regulation?",
+          "published": "2026-10-13T22:00:00.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
@@ -50,27 +65,27 @@
           "score": 7
         },
         {
-          "title": "Red squirrel project opens £250k community grant",
-          "link": "https://www.bbc.co.uk/news/articles/cr86zp8qn0w5o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Groups from around northern England and southern Scotland can bid for funding to help the creatures.",
-          "published": "2026-10-13T05:08:27.000Z",
+          "title": "China solar giants shed another 40,000 jobs last year as overcapacity persists - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNThmWTFtdHAtZG1oNzJxbzdqc1R6bjFiTmlmZF9Ha2MxRlVBZkoxOWt4N0dFU3h4dkFJWmNGVzFpQVR3QllvSDRfc2F1MGpxYUZ4LW1NSkMwcmREVS1mYVNCR3VlQXBzNWg2ajRGQ2l6OG5vYS1QWmxvTHVuU3ZkX1JvVTI2QzJQZXpvQ3JvQ2F3QVFKSGVuTlNGeEJtS3FDSWtRQ0lIbW5uSUEwdlhBbkhRZmtvQ0dUMWg3cktZNWM3Y0VZNTdHak8xVmVGdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQNThmWTFtdHAtZG1oNzJxbzdqc1R6bjFiTmlmZF9Ha2MxRlVBZkoxOWt4N0dFU3h4dkFJWmNGVzFpQVR3QllvSDRfc2F1MGpxYUZ4LW1NSkMwcmREVS1mYVNCR3VlQXBzNWg2ajRGQ2l6OG5vYS1QWmxvTHVuU3ZkX1JvVTI2QzJQZXpvQ3JvQ2F3QVFKSGVuTlNGeEJtS3FDSWtRQ0lIbW5uSUEwdlhBbkhRZmtvQ0dUMWg3cktZNWM3Y0VZNTdHak8xVmVGdw?oc=5\" target=\"_blank\"&gt;China solar giants shed another 40,000 jobs last year as overcapacity persists&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+          "published": "2026-10-14T06:46:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Australian industry reliant on gas for ‘foreseeable future’, resources minister tells press club",
+          "link": "https://www.theguardian.com/australia-news/2026/oct/14/australia-reliant-on-gas-for-foreseeable-future-madeleine-king-press-club",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Madeleine King says national gas reservation scheme, expected to come into effect from 2028, will reduce power prices&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Follow our &lt;a href=\"https://www.theguardian.com/australia-news/live/2026/oct/14/treasurer-jim-chalmers-labor-one-nation-pauline-hanson-one-nation-gas-reservation-scheme-ntwnfb\"&gt;Australian politics live blog&lt;/a&gt; for latest updates&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-",
+          "published": "2026-10-14T05:52:22.000Z",
+          "score": 2
         },
         {
           "title": "Germany puts Ukrainian on trial accused of blowing up Nord Stream pipelines",
           "link": "https://www.bbc.co.uk/news/articles/cw99zpmnxzmjo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Four years after the attacks, Serhii K will appear in court accused of a plot to destroy Russia's gas pipelines to Germany.",
-          "published": "2026-10-13T23:42:22.000Z",
-          "score": 2
-        },
-        {
-          "title": "Russian strikes hit key power plant in Kyiv, Zelensky says",
-          "link": "https://www.bbc.co.uk/news/articles/ck20r9qpw505o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The Ukrainian president says the ballistic missile strikes came with \"no early warning from our partners\".",
-          "published": "2026-10-13T22:14:33.000Z",
+          "description": "Four years after the attacks, Serhii K is in court accused of a plot to destroy Russia's gas pipelines to Germany.",
+          "published": "2026-10-14T09:32:54.000Z",
           "score": 2
         }
       ]
@@ -79,6 +94,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Commission proposes flexibility to methane importers to help save costs",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2119",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 14 Oct 2026 Europe is preparing for a challenging winter with high energy prices.",
+          "published": "2026-10-13T22:00:00.000Z",
+          "score": 23
+        },
         {
           "title": "World Bank and IMF should lead the financial system in responding to the climate crisis",
           "link": "https://www.climatechangenews.com/2026/10/14/world-bank-and-imf-should-lead-the-financial-system-in-responding-to-the-climate-crisis/",
@@ -96,11 +119,11 @@
           "score": 7
         },
         {
-          "title": "South Korea's Lee welcomes home Arctic container ship as route faces viability tests - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNG1TNUF5UDJlaURuYkFNUm1BcVBfdmd3ck9QQXhvMXRlUHFXM3hMcUo1OTZrZTNBMXNKdHpKRGJLNXJ0c2g3N1E5b0JiZWw1bmU1dkxTZktQd3VnenJmc1pJdTBNbXduQko0bTFXT3JNaTdLOVA4VTV4MWl1Q2lYV2xyeW9LSHFhSnoxVEpHVURzN21RQlNvdlJCTi1FSmRKU081UEtlby1xSUFsSllRMkdfX2c4UQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQNG1TNUF5UDJlaURuYkFNUm1BcVBfdmd3ck9QQXhvMXRlUHFXM3hMcUo1OTZrZTNBMXNKdHpKRGJLNXJ0c2g3N1E5b0JiZWw1bmU1dkxTZktQd3VnenJmc1pJdTBNbXduQko0bTFXT3JNaTdLOVA4VTV4MWl1Q2lYV2xyeW9LSHFhSnoxVEpHVURzN21RQlNvdlJCTi1FSmRKU081UEtlby1xSUFsSllRMkdfX2c4UQ?oc=5\" target=\"_blank\"&gt;South Korea's Lee welcomes home Arctic container ship as route faces viability tests&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-13T08:21:38.000Z",
+          "title": "New team to save Antarctic port from climate change",
+          "link": "https://www.bbc.co.uk/news/articles/ck8dzgr780j8o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The mission aims to protect the base which is home to the world’s southernmost Post Office.",
+          "published": "2026-10-14T05:24:08.000Z",
           "score": 7
         },
         {
@@ -108,15 +131,7 @@
           "link": "https://www.bbc.co.uk/news/articles/cxdd80z9yjpqo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Experts are examining the ways Scotland's farmers might diversify and adapt to a changing climate.",
-          "published": "2026-10-13T21:57:25.000Z",
-          "score": 4
-        },
-        {
-          "title": "Fly-tippers face £5k fine in new crackdown",
-          "link": "https://www.bbc.co.uk/news/articles/cqn064027d2xo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Cornwall Council introduces new penalties after recording 17,500 incidents in five years.",
-          "published": "2026-10-13T05:23:07.000Z",
+          "published": "2026-10-14T05:02:27.000Z",
           "score": 4
         }
       ]
@@ -132,22 +147,6 @@
           "description": "The last time Formula 1 hosted a race in Africa was way back in 1993. But a new track in Rwanda is set to host a Grand Prix in &quot;the early 2030s,&quot; continuing the country’s investment in international sport.",
           "published": "2026-10-13T11:20:00.000Z",
           "score": 2
-        },
-        {
-          "title": "AI investment props up global growth, but war and debt threaten outlook, IMF says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPVlNmbDdlaDUwX1pOeWRzM1FhdDNhWTNnVnk4bXZLZlR2VGwxMFRCcWdiNngwM2p1Tmp3YjZMY0FwY1puZHk3bTlEYWNyd2pYYUxPd19nZVpqQU9CQjVlck9RUGtoajF5SGY4VnYzSWpZXzY2TWZ3TVY3Yl9ucVdEWnc3b2xzT19vbzBqazJUMzlCdmpfakw4VjAzOVZ3Ui13dmlJOV90Nk9pVUxWY1htUHYtNDZhTGhyTDYwZEk3SQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPVlNmbDdlaDUwX1pOeWRzM1FhdDNhWTNnVnk4bXZLZlR2VGwxMFRCcWdiNngwM2p1Tmp3YjZMY0FwY1puZHk3bTlEYWNyd2pYYUxPd19nZVpqQU9CQjVlck9RUGtoajF5SGY4VnYzSWpZXzY2TWZ3TVY3Yl9ucVdEWnc3b2xzT19vbzBqazJUMzlCdmpfakw4VjAzOVZ3Ui13dmlJOV90Nk9pVUxWY1htUHYtNDZhTGhyTDYwZEk3SQ?oc=5\" target=\"_blank\"&gt;AI investment props up global growth, but war and debt threaten outlook, IMF says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-13T02:05:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "India's monthly fund investments hit record highs despite market slide - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNODJyMnpVeFUtMGI5STVmUERRbU9KNzdIajRaZldyal9SZDFHZWdHVmp1WG54WmMwa0g4NTF6cTRrWmdlQmdFSk5VRk81VUY1UXZfYXpSTzdDRDJmQ1djdFc3VTJXTGlzUnFyTGsweHZYQkF3eGctOGlhb2FHNUU2N0hNb2o4Q1M5Nnp3X195V1ZMM2R3SXhIUFRJTWRKMlIxMEs4MjI4QnpKcDBSVnctaC1EekVha1BxeDNQbVlzUk1iXzRxWGc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNODJyMnpVeFUtMGI5STVmUERRbU9KNzdIajRaZldyal9SZDFHZWdHVmp1WG54WmMwa0g4NTF6cTRrWmdlQmdFSk5VRk81VUY1UXZfYXpSTzdDRDJmQ1djdFc3VTJXTGlzUnFyTGsweHZYQkF3eGctOGlhb2FHNUU2N0hNb2o4Q1M5Nnp3X195V1ZMM2R3SXhIUFRJTWRKMlIxMEs4MjI4QnpKcDBSVnctaC1EekVha1BxeDNQbVlzUk1iXzRxWGc?oc=5\" target=\"_blank\"&gt;India's monthly fund investments hit record highs despite market slide&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-13T04:51:57.000Z",
-          "score": 2
         }
       ]
     },
@@ -155,14 +154,6 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
-        {
-          "title": "What is holding back Cyprus&#039;s Schengen ambitions?",
-          "link": "https://www.dw.com/en/what-is-holding-back-cyprus-s-schengen-ambitions/a-79641488?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The European Commission says Cyprus is ready to join the Schengen Area. Yet questions relating to the island&#039;s division and British military bases could still complicate its path to Europe&#039;s border-free travel zone.",
-          "published": "2026-10-13T06:26:00.000Z",
-          "score": 8
-        },
         {
           "title": "EU expands migration cooperation with eastern Libya through new funding - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdktrQm1zZDRReldSTGhpQkNPaWdwaWNnSU9UV3hqSjdaT2h1V0E0OER0d1ZYdkNLRjZLcE5Qa2taSy16MlpHN3RQXzlSZEg5S0NLdUpRWUVPa2NKNmYyLXh0a256eHRTck9DSXJ0SHhzWGRKNTBUQm1CTW90R3pXUGhraDBlRnhNcDVqVWxHQm1LS3E1OXItUUJiTXRoWjdCdTBzUW1td0laUTlDQjRnczhWcDFhdEx1U0RDdg?oc=5",
@@ -180,19 +171,19 @@
           "score": 8
         },
         {
+          "title": "China says it is willing to work with EU to boost stability of trade ties - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1EyNEpnYmtaNHJ5TG5kM1NWZTVQNjRrTDdsREZUVTB6Y1hzNnl4R2JhTGdva1ZTTGpXWWdqUVdwRk1kQnIyLXFPbHNpLV9tZzhVTDNsRm93cndnVDVTeWNDTlU3T1ZCUElOQmxKRGh1eHNFSXBiRzAzc2dELTMtVmZnbzNaSDlKY2hzeUpCTnZnWTN2V0dXV1dxVG1PZTBicE9yTmJsMXJUM1I4Q0c2MEd3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1EyNEpnYmtaNHJ5TG5kM1NWZTVQNjRrTDdsREZUVTB6Y1hzNnl4R2JhTGdva1ZTTGpXWWdqUVdwRk1kQnIyLXFPbHNpLV9tZzhVTDNsRm93cndnVDVTeWNDTlU3T1ZCUElOQmxKRGh1eHNFSXBiRzAzc2dELTMtVmZnbzNaSDlKY2hzeUpCTnZnWTN2V0dXV1dxVG1PZTBicE9yTmJsMXJUM1I4Q0c2MEd3?oc=5\" target=\"_blank\"&gt;China says it is willing to work with EU to boost stability of trade ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-14T05:48:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Ukraine allies in Poland after Starlink sabotage, Trump diesel deal",
           "link": "https://www.dw.com/en/ukraine-allies-in-poland-after-starlink-sabotage-trump-diesel-deal/a-79653869?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "Germany&#039;s Johann Wadephul said hybrid plots like the Starlink fire showed Europe was &quot;in Russia&#039;s crosshairs.&quot; The UK&#039;s Ed Miliband said Trump&#039;s Russian diesel deal led to a &quot;very difficult few days&quot; diplomatically.",
           "published": "2026-10-13T18:52:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "Germany&#039;s China calculation shifts as import pressures eclipse export benefits",
-          "link": "https://www.dw.com/en/germany-s-china-calculation-shifts-as-import-pressures-eclipse-export-benefits/a-79571852?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Germany has long resisted tougher action against China, fearing retaliation. But rising pressure on key industries has pushed Berlin to seek stronger EU trade-defense powers to protect its industrial base.",
-          "published": "2026-10-13T08:47:00.000Z",
           "score": 4
         }
       ]
@@ -201,22 +192,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "Hungary&#039;s parliament votes to reverse anti-LGBTQ legislation from Orban era",
-          "link": "https://www.dw.com/en/hungary-s-parliament-votes-to-reverse-anti-lgbtq-legislation-from-orban-era/a-79647826?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Hungary&#039;s parliament passed a bill amending the 2021 &quot;child protection law.&quot; The move is considered the first significant reversal of Orban&#039;s curbs targeting the LGBTQ+ community.",
-          "published": "2026-10-13T15:48:00.000Z",
-          "score": 12
-        },
-        {
-          "title": "Sterling holds near 16-month high vs euro, budget and BoE in focus - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQ216WjVRWG5NZ3hMQUlKeW51UVB0Z2JTOThKZGd2TlBuRE1hakgtMnNDdHNybDI3dEIyejNOYm5kR25sQ25CMnFyTnh0VThEeExHTjZHMWphVzdvc29OMmxzUGxJX3d1SmR0MDVBT0hiV2x6MEdIWlJxTlQ1ZTJzdlczWUMxTC1KTS1hdk41X3JkazFJRDdIV0prblBOVHBlQ09EdHVB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxOQ216WjVRWG5NZ3hMQUlKeW51UVB0Z2JTOThKZGd2TlBuRE1hakgtMnNDdHNybDI3dEIyejNOYm5kR25sQ25CMnFyTnh0VThEeExHTjZHMWphVzdvc29OMmxzUGxJX3d1SmR0MDVBT0hiV2x6MEdIWlJxTlQ1ZTJzdlczWUMxTC1KTS1hdk41X3JkazFJRDdIV0prblBOVHBlQ09EdHVB?oc=5\" target=\"_blank\"&gt;Sterling holds near 16-month high vs euro, budget and BoE in focus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-13T09:34:09.000Z",
-          "score": 8
-        },
         {
           "title": "EU approves Kimberly-Clark's $40 billion Kenvue acquisition - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaUM5QjZ4UzMyOFAzcTZoUGdEckZHR2h6SW5NVF9hdjI1dV85OUtvRV8zRkl5TE9QemNLLUwxR05QYlJqaDB1cC1NSno0QjRIYktoNzZzVU5POTR1VVVJUFdnZnk3V3Y4SEVMTi1FWHJnMnl3TDFudW5yQ2o2MlVvUjBhR19OU1diUVVWcGZzck9OWTNXNzgtdnpzWEpWSWw3UFVLLVBDdld6ZHM?oc=5",
@@ -234,20 +209,36 @@
           "score": 8
         },
         {
-          "title": "IMF cuts Latin America, Caribbean growth forecasts on energy shock, little AI boost - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZ21qSmpyZzRDaFJwUUh1Zldnb25yMGphSVlOa0NiN3hPdDVXcThHVzlEdTM2U0NhdkwwSFdnanZ2VENlYVhDZWF3UlA4eVBGRms1clZabHdJbnJQeVpOWEd4NkkyWkVPbzQxRG8xQnFhWGVfVEpseXhfOURzLUI0SVptcW9KNWxjUGlLT1N6Nkh0cVRrMmdmQ2xoS09NbVBQa3RzWFgtWnRFQkZlUnMwekl0U0NJTm5wM2o3QURySFpJNldySHgzUjNzOVhRZw?oc=5",
+          "title": "EXCLUSIVE: EU seeks closer Vietnam ties on critical minerals in China hedge, documents show - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc1NFMUNzVk1sZ0RKYUJDSjZPdFh3eTRzMUhrSDVCR1NJM0dOWWlKWWJvUzhPem9YRHhNdWFDeFhKTmVFYXc4WXEtQ3E4OWxUZnlvanVRelloT3N6TUl0U2VheVBrYWVxOEZqLVI1WlRjbmlWQktJODJlLWN4dmZmcE12Q3dMeU1JYnZud0tvT0gtOG1YTTBWN3A1VGpjNGhIZFJXeUw4V3VwdzByLTBfUWRVQVVETzJGMEhSU2NB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPZ21qSmpyZzRDaFJwUUh1Zldnb25yMGphSVlOa0NiN3hPdDVXcThHVzlEdTM2U0NhdkwwSFdnanZ2VENlYVhDZWF3UlA4eVBGRms1clZabHdJbnJQeVpOWEd4NkkyWkVPbzQxRG8xQnFhWGVfVEpseXhfOURzLUI0SVptcW9KNWxjUGlLT1N6Nkh0cVRrMmdmQ2xoS09NbVBQa3RzWFgtWnRFQkZlUnMwekl0U0NJTm5wM2o3QURySFpJNldySHgzUjNzOVhRZw?oc=5\" target=\"_blank\"&gt;IMF cuts Latin America, Caribbean growth forecasts on energy shock, little AI boost&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
-          "published": "2026-10-13T02:09:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPc1NFMUNzVk1sZ0RKYUJDSjZPdFh3eTRzMUhrSDVCR1NJM0dOWWlKWWJvUzhPem9YRHhNdWFDeFhKTmVFYXc4WXEtQ3E4OWxUZnlvanVRelloT3N6TUl0U2VheVBrYWVxOEZqLVI1WlRjbmlWQktJODJlLWN4dmZmcE12Q3dMeU1JYnZud0tvT0gtOG1YTTBWN3A1VGpjNGhIZFJXeUw4V3VwdzByLTBfUWRVQVVETzJGMEhSU2NB?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: EU seeks closer Vietnam ties on critical minerals in China hedge, documents show&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
+          "published": "2026-10-14T06:21:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Kremlin says contacts on Trump's Russia-Ukraine energy ceasefire are continuing - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOajVXZk8xMkZQQkJjcG1EeFAwQWd1dVhOekZmUHhfZVlXWEZFMXJJcWdQT25meGhFSGRWdXJ2b05IT2wtM2l1X3VHanpFT1dsTWR5QjlfZWV4VTVDVlVLcHUwdGk0RnZ3MWY1UDd1cGMyZGllbi1xV0NFRWhqS3VqSnJZaDZkLWZ3YlpMT0dYRS0zdVpCSElmZVRFSkdzYUstQ0p4RTMzcVFBS1hHbUtTZlc3MlE0TG9a?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOajVXZk8xMkZQQkJjcG1EeFAwQWd1dVhOekZmUHhfZVlXWEZFMXJJcWdQT25meGhFSGRWdXJ2b05IT2wtM2l1X3VHanpFT1dsTWR5QjlfZWV4VTVDVlVLcHUwdGk0RnZ3MWY1UDd1cGMyZGllbi1xV0NFRWhqS3VqSnJZaDZkLWZ3YlpMT0dYRS0zdVpCSElmZVRFSkdzYUstQ0p4RTMzcVFBS1hHbUtTZlc3MlE0TG9a?oc=5\" target=\"_blank\"&gt;Kremlin says contacts on Trump's Russia-Ukraine energy ceasefire are continuing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-13T10:31:59.000Z",
           "score": 7
+        },
+        {
+          "title": "Iran shifting tactics to step up attacks on shipping before US vote, officials say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOXl4Z2E1ajJabkV2V0d3VVN4TE4xZVdXU0xjY1FwX2QwNzVpSEZ2UUdWY2d2N0w0TEZCXzRFR2oyZ3l4MlZkMER3cDZtOFRMc2p4VzRSWE1OZGdJaHBvRlZieVJ3Unc4bXEyRHFvalF4MEkwTmduUEFtV0lBX3NZS2Q0M2hoSkozeWFNMS02MnF5QmNveXNFNklHVktxYy1RM1BRcHlSVm92aWYzRnJpNTJvVWYtemNjbklpM3Jna2t0bUIweUV6VQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOXl4Z2E1ajJabkV2V0d3VVN4TE4xZVdXU0xjY1FwX2QwNzVpSEZ2UUdWY2d2N0w0TEZCXzRFR2oyZ3l4MlZkMER3cDZtOFRMc2p4VzRSWE1OZGdJaHBvRlZieVJ3Unc4bXEyRHFvalF4MEkwTmduUEFtV0lBX3NZS2Q0M2hoSkozeWFNMS02MnF5QmNveXNFNklHVktxYy1RM1BRcHlSVm92aWYzRnJpNTJvVWYtemNjbklpM3Jna2t0bUIweUV6VQ?oc=5\" target=\"_blank\"&gt;Iran shifting tactics to step up attacks on shipping before US vote, officials say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
+          "published": "2026-10-14T00:06:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 398,
-    "articlesLast24h": 164,
-    "afterDedup": 158,
+    "totalArticlesScanned": 401,
+    "articlesLast24h": 166,
+    "afterDedup": 159,
     "feedsQueried": 19
   }
 }
