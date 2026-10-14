@@ -1,6 +1,6 @@
 {
   "date": "2026-10-14",
-  "generatedAt": "2026-10-14T10:00:58.787Z",
+  "generatedAt": "2026-10-14T15:47:35.908Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 14 October 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,22 +11,16 @@
       "color": "#007B6C"
     },
     {
-      "headline": "SE Asia speeds up plan for connected clean power grid after oil shock",
-      "summary": "Countries are redoubling efforts to link their grids to bolster energy security and reduce their dependence on fossil fuels - but many challenges remain The post SE Asia speeds up plan for connected clean power grid after oil shock appeared first on Climate Home News.",
+      "headline": "Gales and heavy rain to impact UK as yellow wind warning issued",
+      "summary": "The Met Office has issued a yellow warning for wind in north-west Scotland on Wednesday with 70mph gusts possible, as Ben Rich explains.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Commission proposes flexibility to methane importers to help save costs",
-      "summary": "European Commission Press release Brussels, 14 Oct 2026 Europe is preparing for a challenging winter with high energy prices.",
+      "headline": "Global deforestation slowed in 2025 but Brazil&#8217;s election could undo &#8220;fragile&#8221; gains",
+      "summary": "Countries remain 70% off track to meet a goal to end deforestation by 2030, as progress in Latin America offset by failures in Africa The post Global deforestation slowed in 2025 but Brazil&#8217;s election could undo &#8220;fragile&#8221; gains appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Formula 1: Rwanda to bring sport back to Africa",
-      "summary": "The last time Formula 1 hosted a race in Africa was way back in 1993. But a new track in Rwanda is set to host a Grand Prix in &quot;the early 2030s,&quot; continuing the country’s investment in international sport.",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -49,14 +43,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "SE Asia speeds up plan for connected clean power grid after oil shock",
-          "link": "https://www.climatechangenews.com/2026/10/13/se-asia-speeds-up-plan-for-connected-clean-power-grid-after-oil-shock/",
-          "source": "Climate Home News",
-          "description": "Countries are redoubling efforts to link their grids to bolster energy security and reduce their dependence on fossil fuels - but many challenges remain The post SE Asia speeds up plan for connected clean power grid after oil shock appeared first on Climate Home News.",
-          "published": "2026-10-13T15:34:59.000Z",
-          "score": 13
-        },
-        {
           "title": "Gales and heavy rain to impact UK as yellow wind warning issued",
           "link": "https://www.bbc.co.uk/weather/articles/cxvgdq0jj8d2o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -73,6 +59,14 @@
           "score": 7
         },
         {
+          "title": "Trump announces plans for major oil, gas and mineral exploration in Greenland",
+          "link": "https://www.dw.com/en/trump-announces-plans-for-major-oil-gas-and-mineral-exploration-in-greenland/a-79656889?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The US president has claimed Greenland holds vast and easily accessible oil reserves without providing evidence or details. His announcement follows a deal expanding the US military presence on the Arctic island.",
+          "published": "2026-10-14T10:00:00.000Z",
+          "score": 4
+        },
+        {
           "title": "Australian industry reliant on gas for ‘foreseeable future’, resources minister tells press club",
           "link": "https://www.theguardian.com/australia-news/2026/oct/14/australia-reliant-on-gas-for-foreseeable-future-madeleine-king-press-club",
           "source": "The Guardian - Energy",
@@ -81,11 +75,11 @@
           "score": 2
         },
         {
-          "title": "Germany puts Ukrainian on trial accused of blowing up Nord Stream pipelines",
-          "link": "https://www.bbc.co.uk/news/articles/cw99zpmnxzmjo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Four years after the attacks, Serhii K is in court accused of a plot to destroy Russia's gas pipelines to Germany.",
-          "published": "2026-10-14T09:32:54.000Z",
+          "title": "Burnham - Rosebank and Jackdaw oil and gas decisions coming 'shortly'",
+          "link": "https://www.bbc.co.uk/news/articles/c92031m6knljo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Conservative leader Kemi Badenoch has urged the prime minister to stop \"faffing about\" with the North Sea oil and gas fields.",
+          "published": "2026-10-14T14:13:37.000Z",
           "score": 2
         }
       ]
@@ -95,12 +89,20 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Commission proposes flexibility to methane importers to help save costs",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2119",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 14 Oct 2026 Europe is preparing for a challenging winter with high energy prices.",
-          "published": "2026-10-13T22:00:00.000Z",
-          "score": 23
+          "title": "Global deforestation slowed in 2025 but Brazil&#8217;s election could undo &#8220;fragile&#8221; gains",
+          "link": "https://www.climatechangenews.com/2026/10/14/global-deforestation-slowed-in-2025-but-brazils-election-could-undo-fragile-gains/",
+          "source": "Climate Home News",
+          "description": "Countries remain 70% off track to meet a goal to end deforestation by 2030, as progress in Latin America offset by failures in Africa The post Global deforestation slowed in 2025 but Brazil&#8217;s election could undo &#8220;fragile&#8221; gains appeared first on Climate Home News.",
+          "published": "2026-10-14T15:45:50.000Z",
+          "score": 13
+        },
+        {
+          "title": "Carbon capture industry faces tough future, as UK raids green spending",
+          "link": "https://www.climatechangenews.com/2026/10/14/carbon-capture-industry-faces-tough-future-as-uk-raids-green-spending/",
+          "source": "Climate Home News",
+          "description": "Despite a spate of projects getting underway, the mood at an industry conference in London this week was low with government subsidies set to shrink The post Carbon capture industry faces tough future, as UK raids green spending appeared first on Climate Home News.",
+          "published": "2026-10-14T14:22:08.000Z",
+          "score": 13
         },
         {
           "title": "World Bank and IMF should lead the financial system in responding to the climate crisis",
@@ -111,55 +113,38 @@
           "score": 13
         },
         {
+          "title": "Mont Blanc the ‘roof of Europe’ loses more than a metre of height in a year",
+          "link": "https://www.theguardian.com/environment/2026/oct/14/mont-blanc-loses-metre-height",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Peak of French mountain now 4,807 metres high and fluctuates year by year due to changes in Alpine climate&lt;/p&gt;&lt;p&gt;Europe’s highest peak shrank by more than a metre last year, data has shown.&lt;/p&gt;&lt;p&gt;Mont Blanc in France now stands 4,807.47 metres above sea level, a team of surveyors from the Haute-Savoie regional department said on Wednesday, putting “the roof of Europe” 1.29 metres lower than in 2025.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/environment/20",
+          "published": "2026-10-14T15:33:52.000Z",
+          "score": 10
+        },
+        {
           "title": "Indonesia wildfire fuelled by El Niño razes almost 300 homes",
           "link": "https://www.theguardian.com/world/2026/oct/13/indonesia-wildfire-el-nino-razes-300-homes-bankga-belitung",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Hundreds of people displaced in Bangka Belitung with conditions described as worst in a decade with wildlife also badly hit&lt;/p&gt;&lt;p&gt;A forest fire on Indonesia’s Sumatra island fuelled by El Niño has razed nearly 300 homes, forcing hundreds of people to evacuate, an official has said, as the country battles devastating blazes and haze.&lt;/p&gt;&lt;p&gt;Residents first spotted the fire approaching their village in Bangka Belitung province on Saturday and tried to put it out the",
           "published": "2026-10-13T16:34:13.000Z",
           "score": 7
-        },
-        {
-          "title": "New team to save Antarctic port from climate change",
-          "link": "https://www.bbc.co.uk/news/articles/ck8dzgr780j8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The mission aims to protect the base which is home to the world’s southernmost Post Office.",
-          "published": "2026-10-14T05:24:08.000Z",
-          "score": 7
-        },
-        {
-          "title": "More tea? How Scotland's crops of the future could be set to change",
-          "link": "https://www.bbc.co.uk/news/articles/cxdd80z9yjpqo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Experts are examining the ways Scotland's farmers might diversify and adapt to a changing climate.",
-          "published": "2026-10-14T05:02:27.000Z",
-          "score": 4
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Formula 1: Rwanda to bring sport back to Africa",
-          "link": "https://www.dw.com/en/formula-1-rwanda-to-bring-sport-back-to-africa/a-79649217?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The last time Formula 1 hosted a race in Africa was way back in 1993. But a new track in Rwanda is set to host a Grand Prix in &quot;the early 2030s,&quot; continuing the country’s investment in international sport.",
-          "published": "2026-10-13T11:20:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "EU expands migration cooperation with eastern Libya through new funding - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdktrQm1zZDRReldSTGhpQkNPaWdwaWNnSU9UV3hqSjdaT2h1V0E0OER0d1ZYdkNLRjZLcE5Qa2taSy16MlpHN3RQXzlSZEg5S0NLdUpRWUVPa2NKNmYyLXh0a256eHRTck9DSXJ0SHhzWGRKNTBUQm1CTW90R3pXUGhraDBlRnhNcDVqVWxHQm1LS3E1OXItUUJiTXRoWjdCdTBzUW1td0laUTlDQjRnczhWcDFhdEx1U0RDdg?oc=5",
+          "title": "China says it is willing to work with EU to boost stability of trade ties - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1EyNEpnYmtaNHJ5TG5kM1NWZTVQNjRrTDdsREZUVTB6Y1hzNnl4R2JhTGdva1ZTTGpXWWdqUVdwRk1kQnIyLXFPbHNpLV9tZzhVTDNsRm93cndnVDVTeWNDTlU3T1ZCUElOQmxKRGh1eHNFSXBiRzAzc2dELTMtVmZnbzNaSDlKY2hzeUpCTnZnWTN2V0dXV1dxVG1PZTBicE9yTmJsMXJUM1I4Q0c2MEd3?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPdktrQm1zZDRReldSTGhpQkNPaWdwaWNnSU9UV3hqSjdaT2h1V0E0OER0d1ZYdkNLRjZLcE5Qa2taSy16MlpHN3RQXzlSZEg5S0NLdUpRWUVPa2NKNmYyLXh0a256eHRTck9DSXJ0SHhzWGRKNTBUQm1CTW90R3pXUGhraDBlRnhNcDVqVWxHQm1LS3E1OXItUUJiTXRoWjdCdTBzUW1td0laUTlDQjRnczhWcDFhdEx1U0RDdg?oc=5\" target=\"_blank\"&gt;EU expands migration cooperation with eastern Libya through new funding&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-13T13:18:09.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1EyNEpnYmtaNHJ5TG5kM1NWZTVQNjRrTDdsREZUVTB6Y1hzNnl4R2JhTGdva1ZTTGpXWWdqUVdwRk1kQnIyLXFPbHNpLV9tZzhVTDNsRm93cndnVDVTeWNDTlU3T1ZCUElOQmxKRGh1eHNFSXBiRzAzc2dELTMtVmZnbzNaSDlKY2hzeUpCTnZnWTN2V0dXV1dxVG1PZTBicE9yTmJsMXJUM1I4Q0c2MEd3?oc=5\" target=\"_blank\"&gt;China says it is willing to work with EU to boost stability of trade ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-14T05:48:00.000Z",
           "score": 8
         },
         {
@@ -168,14 +153,6 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQY0ZoUTNvZnFOMHA2a1pianNRZlFmRlljSDRoREZxQ2lLdHg4Z3htWS0zZ19jcWpFNGdERE15cXR2TFVRNV9WY3NGUEtianoxQVBoN2ZfV2Vmd3RPT3VoUUlnNXJsbkpkZnhlRU1OM0JMVjl1cmxLN2NUNlRfdTRQRUF5MWdLVHNJNGVOQS1CWVNjN2pKNFRHS214Tmw1RXI0RzdXN29QbmIyMnByUkNKNW9sX1V3ek1zU3VV?oc=5\" target=\"_blank\"&gt;Ukraine takes step forward in EU membership talks after Hungary drops objections&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-13T17:33:43.000Z",
-          "score": 8
-        },
-        {
-          "title": "China says it is willing to work with EU to boost stability of trade ties - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1EyNEpnYmtaNHJ5TG5kM1NWZTVQNjRrTDdsREZUVTB6Y1hzNnl4R2JhTGdva1ZTTGpXWWdqUVdwRk1kQnIyLXFPbHNpLV9tZzhVTDNsRm93cndnVDVTeWNDTlU3T1ZCUElOQmxKRGh1eHNFSXBiRzAzc2dELTMtVmZnbzNaSDlKY2hzeUpCTnZnWTN2V0dXV1dxVG1PZTBicE9yTmJsMXJUM1I4Q0c2MEd3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1EyNEpnYmtaNHJ5TG5kM1NWZTVQNjRrTDdsREZUVTB6Y1hzNnl4R2JhTGdva1ZTTGpXWWdqUVdwRk1kQnIyLXFPbHNpLV9tZzhVTDNsRm93cndnVDVTeWNDTlU3T1ZCUElOQmxKRGh1eHNFSXBiRzAzc2dELTMtVmZnbzNaSDlKY2hzeUpCTnZnWTN2V0dXV1dxVG1PZTBicE9yTmJsMXJUM1I4Q0c2MEd3?oc=5\" target=\"_blank\"&gt;China says it is willing to work with EU to boost stability of trade ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-14T05:48:00.000Z",
           "score": 8
         },
         {
@@ -193,19 +170,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU approves Kimberly-Clark's $40 billion Kenvue acquisition - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaUM5QjZ4UzMyOFAzcTZoUGdEckZHR2h6SW5NVF9hdjI1dV85OUtvRV8zRkl5TE9QemNLLUwxR05QYlJqaDB1cC1NSno0QjRIYktoNzZzVU5POTR1VVVJUFdnZnk3V3Y4SEVMTi1FWHJnMnl3TDFudW5yQ2o2MlVvUjBhR19OU1diUVVWcGZzck9OWTNXNzgtdnpzWEpWSWw3UFVLLVBDdld6ZHM?oc=5",
+          "title": "Sterling rises to fresh 16-month high against euro - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNa2xRYmk2RDZMQWxvTkRyLWZhVm01M0FmcnZfZTdGb1E3OVBjdnk4MEVac000dFpiWl9Vc1JveW9WaU42SDRmYVZKck0yRFBzNGRyNmRqeVhqMktySWtrYVI3U1RuWmotVXBCYjdKZDJEWEM1UjJxYjdxdkh2Zm9sZ1hUOHVEeU5TcGp1dXVoeC1sdVlldnkzUA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaUM5QjZ4UzMyOFAzcTZoUGdEckZHR2h6SW5NVF9hdjI1dV85OUtvRV8zRkl5TE9QemNLLUwxR05QYlJqaDB1cC1NSno0QjRIYktoNzZzVU5POTR1VVVJUFdnZnk3V3Y4SEVMTi1FWHJnMnl3TDFudW5yQ2o2MlVvUjBhR19OU1diUVVWcGZzck9OWTNXNzgtdnpzWEpWSWw3UFVLLVBDdld6ZHM?oc=5\" target=\"_blank\"&gt;EU approves Kimberly-Clark's $40 billion Kenvue acquisition&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-13T15:29:18.000Z",
-          "score": 8
-        },
-        {
-          "title": "Taiwan warns Europe of dangers of dependence on China - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOd01YX3J4RGpfRVVnZGNKeVpaVnlSZjhnWkljUi1qN3VwWW9Jdzk1czhuR2M4RHNCUl9EdURTVl9jay02VzRwWjQ1SDNIYzlDSFRwYzhQci1vWGxBRVZDUFRWUGZWU2dPTzgwSDJiM0J0TmhrU203RDJ1MElqYm5YNWF4dVpscEpjR3VpZ3FYZEYxWUNSTk44?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxOd01YX3J4RGpfRVVnZGNKeVpaVnlSZjhnWkljUi1qN3VwWW9Jdzk1czhuR2M4RHNCUl9EdURTVl9jay02VzRwWjQ1SDNIYzlDSFRwYzhQci1vWGxBRVZDUFRWUGZWU2dPTzgwSDJiM0J0TmhrU203RDJ1MElqYm5YNWF4dVpscEpjR3VpZ3FYZEYxWUNSTk44?oc=5\" target=\"_blank\"&gt;Taiwan warns Europe of dangers of dependence on China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-13T12:22:25.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNa2xRYmk2RDZMQWxvTkRyLWZhVm01M0FmcnZfZTdGb1E3OVBjdnk4MEVac000dFpiWl9Vc1JveW9WaU42SDRmYVZKck0yRFBzNGRyNmRqeVhqMktySWtrYVI3U1RuWmotVXBCYjdKZDJEWEM1UjJxYjdxdkh2Zm9sZ1hUOHVEeU5TcGp1dXVoeC1sdVlldnkzUA?oc=5\" target=\"_blank\"&gt;Sterling rises to fresh 16-month high against euro&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-14T11:31:01.000Z",
           "score": 8
         },
         {
@@ -217,11 +186,11 @@
           "score": 8
         },
         {
-          "title": "Kremlin says contacts on Trump's Russia-Ukraine energy ceasefire are continuing - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOajVXZk8xMkZQQkJjcG1EeFAwQWd1dVhOekZmUHhfZVlXWEZFMXJJcWdQT25meGhFSGRWdXJ2b05IT2wtM2l1X3VHanpFT1dsTWR5QjlfZWV4VTVDVlVLcHUwdGk0RnZ3MWY1UDd1cGMyZGllbi1xV0NFRWhqS3VqSnJZaDZkLWZ3YlpMT0dYRS0zdVpCSElmZVRFSkdzYUstQ0p4RTMzcVFBS1hHbUtTZlc3MlE0TG9a?oc=5",
+          "title": "Top economic adviser says Venezuela aims to publish debt sustainability analysis 'very soon' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPZ1lFMnZBTXJ2UC1VZG96Mk1UMHZmS2JjWXBwZDFBME9HRC1tX0U2RC1wR2h2RGgzdlhYU3hwaXhnTVctclY5dDVPYU9NeWhCalgxWHNscEtmTW83a0IxSmZEdkdnOEk3UkstUVBzcWJGc1JmaGp3NGEtczRzYXJJWG1fY0NOQ25tSjFtM0tzY2xBY200Qlg2UFFvRk13NTdBSDZWTDZEeEhjbHlDdHA2VXVUUkNnNVFZbVFsenNMVldLRGJoMkYyaA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOajVXZk8xMkZQQkJjcG1EeFAwQWd1dVhOekZmUHhfZVlXWEZFMXJJcWdQT25meGhFSGRWdXJ2b05IT2wtM2l1X3VHanpFT1dsTWR5QjlfZWV4VTVDVlVLcHUwdGk0RnZ3MWY1UDd1cGMyZGllbi1xV0NFRWhqS3VqSnJZaDZkLWZ3YlpMT0dYRS0zdVpCSElmZVRFSkdzYUstQ0p4RTMzcVFBS1hHbUtTZlc3MlE0TG9a?oc=5\" target=\"_blank\"&gt;Kremlin says contacts on Trump's Russia-Ukraine energy ceasefire are continuing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-13T10:31:59.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPZ1lFMnZBTXJ2UC1VZG96Mk1UMHZmS2JjWXBwZDFBME9HRC1tX0U2RC1wR2h2RGgzdlhYU3hwaXhnTVctclY5dDVPYU9NeWhCalgxWHNscEtmTW83a0IxSmZEdkdnOEk3UkstUVBzcWJGc1JmaGp3NGEtczRzYXJJWG1fY0NOQ25tSjFtM0tzY2xBY200Qlg2UFFvRk13NTdBSDZWTDZEeEhjbHlDdHA2VXVUUkNnNVFZbVFsenNMVldLRGJoMkYyaA?oc=5\" target=\"_blank\"&gt;Top economic adviser says Venezuela aims to publish debt sustainability analysis 'very soon'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;R",
+          "published": "2026-10-14T13:06:11.000Z",
           "score": 7
         },
         {
@@ -231,14 +200,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOXl4Z2E1ajJabkV2V0d3VVN4TE4xZVdXU0xjY1FwX2QwNzVpSEZ2UUdWY2d2N0w0TEZCXzRFR2oyZ3l4MlZkMER3cDZtOFRMc2p4VzRSWE1OZGdJaHBvRlZieVJ3Unc4bXEyRHFvalF4MEkwTmduUEFtV0lBX3NZS2Q0M2hoSkozeWFNMS02MnF5QmNveXNFNklHVktxYy1RM1BRcHlSVm92aWYzRnJpNTJvVWYtemNjbklpM3Jna2t0bUIweUV6VQ?oc=5\" target=\"_blank\"&gt;Iran shifting tactics to step up attacks on shipping before US vote, officials say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
           "published": "2026-10-14T00:06:00.000Z",
           "score": 6
+        },
+        {
+          "title": "Houthis launch fresh wave of missiles across Saudi Arabia",
+          "link": "https://www.dw.com/en/houthis-launch-fresh-wave-of-missiles-across-saudi-arabia/live-79655805?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Both the Houthis and the Saudi-led coalition carried out strikes targeting energy infrastructure. Four people were injured as a result of debris of intercepted missiles in Riyadh. DW has the latest.",
+          "published": "2026-10-14T13:35:00.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 401,
-    "articlesLast24h": 166,
-    "afterDedup": 159,
+    "articlesLast24h": 165,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
