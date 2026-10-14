@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-13",
-  "generatedAt": "2026-10-13T21:49:40.037Z",
+  "date": "2026-10-14",
+  "generatedAt": "2026-10-14T01:41:27.361Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Tuesday, 13 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Wednesday, 14 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
       "headline": "SE Asia speeds up plan for connected clean power grid after oil shock",
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Indonesia wildfire fuelled by El Niño razes almost 300 homes",
-      "summary": "&lt;p&gt;Hundreds of people displaced in Bangka Belitung with conditions described as worst in a decade with wildlife also badly hit&lt;/p&gt;&lt;p&gt;A forest fire on Indonesia’s Sumatra island fuelled by El Niño has razed nearly 300 homes, forcing hundreds of people to evacuate, an official has said, as the country battles devastating blazes and haze.&lt;/p&gt;&lt;p&gt;Residents first spotted the fire approaching their village in Bangka Belitung province on Saturday and tried to put it out the",
+      "headline": "World Bank and IMF should lead the financial system in responding to the climate crisis",
+      "summary": "Multilateral development banks have a vital role to play in delivering on donors' climate finance promises and protecting the most vulnerable The post World Bank and IMF should lead the financial system in responding to the climate crisis appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -42,6 +42,14 @@
           "score": 13
         },
         {
+          "title": "Gales and heavy rain to impact UK as yellow wind warning issued",
+          "link": "https://www.bbc.co.uk/weather/articles/cxvgdq0jj8d2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The Met Office has issued a yellow warning for wind in north-west Scotland on Wednesday with 70mph gusts possible, as Ben Rich explains.",
+          "published": "2026-10-13T23:55:49.000Z",
+          "score": 7
+        },
+        {
           "title": "Red squirrel project opens £250k community grant",
           "link": "https://www.bbc.co.uk/news/articles/cr86zp8qn0w5o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -50,11 +58,19 @@
           "score": 7
         },
         {
-          "title": "Nord Stream: Germany puts suspected Ukrainian pipeline saboteur on trial",
-          "link": "https://www.dw.com/en/nord-stream-germany-puts-suspected-ukrainian-pipeline-saboteur-on-trial/a-79647617?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A Ukrainian citizen faces court in Hamburg, accused of attacking the Nord Stream gas pipelines in 2022. It raises questions about Kyiv&#039;s possible role in the explosions. German support for Ukraine is also under scrutiny.",
-          "published": "2026-10-13T12:40:00.000Z",
+          "title": "Germany puts Ukrainian on trial accused of blowing up Nord Stream pipelines",
+          "link": "https://www.bbc.co.uk/news/articles/cw99zpmnxzmjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Four years after the attacks, Serhii K will appear in court accused of a plot to destroy Russia's gas pipelines to Germany.",
+          "published": "2026-10-13T23:42:22.000Z",
+          "score": 2
+        },
+        {
+          "title": "Russian strikes hit key power plant in Kyiv, Zelensky says",
+          "link": "https://www.bbc.co.uk/news/articles/ck20r9qpw505o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Ukrainian president says the ballistic missile strikes came with \"no early warning from our partners\".",
+          "published": "2026-10-13T22:14:33.000Z",
           "score": 2
         }
       ]
@@ -63,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "World Bank and IMF should lead the financial system in responding to the climate crisis",
+          "link": "https://www.climatechangenews.com/2026/10/14/world-bank-and-imf-should-lead-the-financial-system-in-responding-to-the-climate-crisis/",
+          "source": "Climate Home News",
+          "description": "Multilateral development banks have a vital role to play in delivering on donors' climate finance promises and protecting the most vulnerable The post World Bank and IMF should lead the financial system in responding to the climate crisis appeared first on Climate Home News.",
+          "published": "2026-10-14T00:00:00.000Z",
+          "score": 13
+        },
         {
           "title": "Indonesia wildfire fuelled by El Niño razes almost 300 homes",
           "link": "https://www.theguardian.com/world/2026/oct/13/indonesia-wildfire-el-nino-razes-300-homes-bankga-belitung",
@@ -80,28 +104,20 @@
           "score": 7
         },
         {
+          "title": "More tea? How Scotland's crops of the future could be set to change",
+          "link": "https://www.bbc.co.uk/news/articles/cxdd80z9yjpqo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Experts are examining the ways Scotland's farmers might diversify and adapt to a changing climate.",
+          "published": "2026-10-13T21:57:25.000Z",
+          "score": 4
+        },
+        {
           "title": "Fly-tippers face £5k fine in new crackdown",
           "link": "https://www.bbc.co.uk/news/articles/cqn064027d2xo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Cornwall Council introduces new penalties after recording 17,500 incidents in five years.",
           "published": "2026-10-13T05:23:07.000Z",
           "score": 4
-        },
-        {
-          "title": "Coastal erosion in England has claimed at least 183 homes in past 16 years",
-          "link": "https://www.theguardian.com/environment/2026/oct/13/coastal-erosion-england-homes-demolished",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Exclusive: Homes demolished along east coast after being deemed too vulnerable to live in, figures reveal&lt;/p&gt;&lt;p&gt;Seaside communities along the east coast of England have lost at least&lt;strong&gt; &lt;/strong&gt;183 homes to coastal&lt;strong&gt; &lt;/strong&gt;erosion and landslides over the past 16 years, figures obtained by the Guardian reveal.&lt;/p&gt;&lt;p&gt;After councils judged properties across the Yorkshire and East Anglian coasts too vulnerable to remain safely o",
-          "published": "2026-10-13T06:00:17.000Z",
-          "score": 2
-        },
-        {
-          "title": "Scientists deploy a 24-armed secret weapon to save California’s kelp forests",
-          "link": "https://www.theguardian.com/environment/2026/oct/13/sunflower-sea-star-california-kelp-forests",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Team works to restore the sunflower sea star as 95% of these key underwater ecosystems have been decimated along the Pacific coast in past decade&lt;/p&gt;&lt;p&gt;Off the coast of Monterey, &lt;a href=\"https://www.theguardian.com/us-news/california\"&gt;California&lt;/a&gt;, a team of researchers is gearing up for its first dive of the day into the cold and choppy waters of the Pacific Ocean.&lt;/p&gt;&lt;p&gt;On the back deck of the boat, Ashley Kidd, a co-founder of the non-profit &lt",
-          "published": "2026-10-13T12:00:01.000Z",
-          "score": 2
         }
       ]
     },
@@ -140,14 +156,6 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Bulgaria condemns Black Sea drone attacks as Russia&#039;s war in Ukraine spills over into Eastern Europe",
-          "link": "https://www.dw.com/en/bulgaria-condemns-black-sea-drone-attacks-as-russia-s-war-in-ukraine-spills-over-into-eastern-europe/a-79648001?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Bulgaria has seen the second spate of drone attacks on merchant ships off its coast in the past week. Russia has been accused of repeatedly targeting civilian cargo ships in the area.",
-          "published": "2026-10-13T10:15:00.000Z",
-          "score": 8
-        },
-        {
           "title": "What is holding back Cyprus&#039;s Schengen ambitions?",
           "link": "https://www.dw.com/en/what-is-holding-back-cyprus-s-schengen-ambitions/a-79641488?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -178,6 +186,14 @@
           "description": "Germany&#039;s Johann Wadephul said hybrid plots like the Starlink fire showed Europe was &quot;in Russia&#039;s crosshairs.&quot; The UK&#039;s Ed Miliband said Trump&#039;s Russian diesel deal led to a &quot;very difficult few days&quot; diplomatically.",
           "published": "2026-10-13T18:52:00.000Z",
           "score": 4
+        },
+        {
+          "title": "Germany&#039;s China calculation shifts as import pressures eclipse export benefits",
+          "link": "https://www.dw.com/en/germany-s-china-calculation-shifts-as-import-pressures-eclipse-export-benefits/a-79571852?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany has long resisted tougher action against China, fearing retaliation. But rising pressure on key industries has pushed Berlin to seek stronger EU trade-defense powers to protect its industrial base.",
+          "published": "2026-10-13T08:47:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -192,14 +208,6 @@
           "description": "Hungary&#039;s parliament passed a bill amending the 2021 &quot;child protection law.&quot; The move is considered the first significant reversal of Orban&#039;s curbs targeting the LGBTQ+ community.",
           "published": "2026-10-13T15:48:00.000Z",
           "score": 12
-        },
-        {
-          "title": "https://www.reuters.com/world/europe/pope-leo-enter-hospital-tuesday-surgery-lung-nodule-2026-10-13 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQbVI1SUJUZTUxMzJJdDlYc2FLVlh1dmZzTnh3andRUW9wZzR6Uk5neHVWcFgwNV9mUENqdENsQS1oVXdUSEltMktJWGZqRXNwcnpwQVdrTXl1NVp3ZFlVczBuN3Z5MDEtYmRfdFdTTkYteGNFNEdncW84RXkybFJfbWhPY0VtNUZmZFk0cjZiemhxUTJrNTNoVmpMbUZoMV9IdDNONG9hcVA5UQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQbVI1SUJUZTUxMzJJdDlYc2FLVlh1dmZzTnh3andRUW9wZzR6Uk5neHVWcFgwNV9mUENqdENsQS1oVXdUSEltMktJWGZqRXNwcnpwQVdrTXl1NVp3ZFlVczBuN3Z5MDEtYmRfdFdTTkYteGNFNEdncW84RXkybFJfbWhPY0VtNUZmZFk0cjZiemhxUTJrNTNoVmpMbUZoMV9IdDNONG9hcVA5UQ?oc=5\" target=\"_blank\"&gt;https://www.reuters.com/world/europe/pope-leo-enter-hospital-tuesday-surgery-lung-nodule-2026-10-13&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-13T20:37:00.000Z",
-          "score": 8
         },
         {
           "title": "Sterling holds near 16-month high vs euro, budget and BoE in focus - Reuters",
@@ -224,14 +232,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxOd01YX3J4RGpfRVVnZGNKeVpaVnlSZjhnWkljUi1qN3VwWW9Jdzk1czhuR2M4RHNCUl9EdURTVl9jay02VzRwWjQ1SDNIYzlDSFRwYzhQci1vWGxBRVZDUFRWUGZWU2dPTzgwSDJiM0J0TmhrU203RDJ1MElqYm5YNWF4dVpscEpjR3VpZ3FYZEYxWUNSTk44?oc=5\" target=\"_blank\"&gt;Taiwan warns Europe of dangers of dependence on China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-13T12:22:25.000Z",
           "score": 8
+        },
+        {
+          "title": "IMF cuts Latin America, Caribbean growth forecasts on energy shock, little AI boost - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZ21qSmpyZzRDaFJwUUh1Zldnb25yMGphSVlOa0NiN3hPdDVXcThHVzlEdTM2U0NhdkwwSFdnanZ2VENlYVhDZWF3UlA4eVBGRms1clZabHdJbnJQeVpOWEd4NkkyWkVPbzQxRG8xQnFhWGVfVEpseXhfOURzLUI0SVptcW9KNWxjUGlLT1N6Nkh0cVRrMmdmQ2xoS09NbVBQa3RzWFgtWnRFQkZlUnMwekl0U0NJTm5wM2o3QURySFpJNldySHgzUjNzOVhRZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPZ21qSmpyZzRDaFJwUUh1Zldnb25yMGphSVlOa0NiN3hPdDVXcThHVzlEdTM2U0NhdkwwSFdnanZ2VENlYVhDZWF3UlA4eVBGRms1clZabHdJbnJQeVpOWEd4NkkyWkVPbzQxRG8xQnFhWGVfVEpseXhfOURzLUI0SVptcW9KNWxjUGlLT1N6Nkh0cVRrMmdmQ2xoS09NbVBQa3RzWFgtWnRFQkZlUnMwekl0U0NJTm5wM2o3QURySFpJNldySHgzUjNzOVhRZw?oc=5\" target=\"_blank\"&gt;IMF cuts Latin America, Caribbean growth forecasts on energy shock, little AI boost&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
+          "published": "2026-10-13T02:09:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 399,
-    "articlesLast24h": 158,
-    "afterDedup": 154,
+    "totalArticlesScanned": 398,
+    "articlesLast24h": 164,
+    "afterDedup": 158,
     "feedsQueried": 19
   }
 }

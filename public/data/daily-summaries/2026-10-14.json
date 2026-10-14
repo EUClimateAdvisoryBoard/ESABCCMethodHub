@@ -1,0 +1,253 @@
+{
+  "date": "2026-10-14",
+  "generatedAt": "2026-10-14T01:41:27.361Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Wednesday, 14 October 2026 — Key developments from the last 24 hours",
+  "highlights": [
+    {
+      "headline": "SE Asia speeds up plan for connected clean power grid after oil shock",
+      "summary": "Countries are redoubling efforts to link their grids to bolster energy security and reduce their dependence on fossil fuels - but many challenges remain The post SE Asia speeds up plan for connected clean power grid after oil shock appeared first on Climate Home News.",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
+    {
+      "headline": "World Bank and IMF should lead the financial system in responding to the climate crisis",
+      "summary": "Multilateral development banks have a vital role to play in delivering on donors' climate finance promises and protecting the most vulnerable The post World Bank and IMF should lead the financial system in responding to the climate crisis appeared first on Climate Home News.",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
+    },
+    {
+      "headline": "Formula 1: Rwanda to bring sport back to Africa",
+      "summary": "The last time Formula 1 hosted a race in Africa was way back in 1993. But a new track in Rwanda is set to host a Grand Prix in &quot;the early 2030s,&quot; continuing the country’s investment in international sport.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
+    }
+  ],
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": [
+        {
+          "title": "SE Asia speeds up plan for connected clean power grid after oil shock",
+          "link": "https://www.climatechangenews.com/2026/10/13/se-asia-speeds-up-plan-for-connected-clean-power-grid-after-oil-shock/",
+          "source": "Climate Home News",
+          "description": "Countries are redoubling efforts to link their grids to bolster energy security and reduce their dependence on fossil fuels - but many challenges remain The post SE Asia speeds up plan for connected clean power grid after oil shock appeared first on Climate Home News.",
+          "published": "2026-10-13T15:34:59.000Z",
+          "score": 13
+        },
+        {
+          "title": "Gales and heavy rain to impact UK as yellow wind warning issued",
+          "link": "https://www.bbc.co.uk/weather/articles/cxvgdq0jj8d2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The Met Office has issued a yellow warning for wind in north-west Scotland on Wednesday with 70mph gusts possible, as Ben Rich explains.",
+          "published": "2026-10-13T23:55:49.000Z",
+          "score": 7
+        },
+        {
+          "title": "Red squirrel project opens £250k community grant",
+          "link": "https://www.bbc.co.uk/news/articles/cr86zp8qn0w5o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Groups from around northern England and southern Scotland can bid for funding to help the creatures.",
+          "published": "2026-10-13T05:08:27.000Z",
+          "score": 7
+        },
+        {
+          "title": "Germany puts Ukrainian on trial accused of blowing up Nord Stream pipelines",
+          "link": "https://www.bbc.co.uk/news/articles/cw99zpmnxzmjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Four years after the attacks, Serhii K will appear in court accused of a plot to destroy Russia's gas pipelines to Germany.",
+          "published": "2026-10-13T23:42:22.000Z",
+          "score": 2
+        },
+        {
+          "title": "Russian strikes hit key power plant in Kyiv, Zelensky says",
+          "link": "https://www.bbc.co.uk/news/articles/ck20r9qpw505o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Ukrainian president says the ballistic missile strikes came with \"no early warning from our partners\".",
+          "published": "2026-10-13T22:14:33.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "World Bank and IMF should lead the financial system in responding to the climate crisis",
+          "link": "https://www.climatechangenews.com/2026/10/14/world-bank-and-imf-should-lead-the-financial-system-in-responding-to-the-climate-crisis/",
+          "source": "Climate Home News",
+          "description": "Multilateral development banks have a vital role to play in delivering on donors' climate finance promises and protecting the most vulnerable The post World Bank and IMF should lead the financial system in responding to the climate crisis appeared first on Climate Home News.",
+          "published": "2026-10-14T00:00:00.000Z",
+          "score": 13
+        },
+        {
+          "title": "Indonesia wildfire fuelled by El Niño razes almost 300 homes",
+          "link": "https://www.theguardian.com/world/2026/oct/13/indonesia-wildfire-el-nino-razes-300-homes-bankga-belitung",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Hundreds of people displaced in Bangka Belitung with conditions described as worst in a decade with wildlife also badly hit&lt;/p&gt;&lt;p&gt;A forest fire on Indonesia’s Sumatra island fuelled by El Niño has razed nearly 300 homes, forcing hundreds of people to evacuate, an official has said, as the country battles devastating blazes and haze.&lt;/p&gt;&lt;p&gt;Residents first spotted the fire approaching their village in Bangka Belitung province on Saturday and tried to put it out the",
+          "published": "2026-10-13T16:34:13.000Z",
+          "score": 7
+        },
+        {
+          "title": "South Korea's Lee welcomes home Arctic container ship as route faces viability tests - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNG1TNUF5UDJlaURuYkFNUm1BcVBfdmd3ck9QQXhvMXRlUHFXM3hMcUo1OTZrZTNBMXNKdHpKRGJLNXJ0c2g3N1E5b0JiZWw1bmU1dkxTZktQd3VnenJmc1pJdTBNbXduQko0bTFXT3JNaTdLOVA4VTV4MWl1Q2lYV2xyeW9LSHFhSnoxVEpHVURzN21RQlNvdlJCTi1FSmRKU081UEtlby1xSUFsSllRMkdfX2c4UQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQNG1TNUF5UDJlaURuYkFNUm1BcVBfdmd3ck9QQXhvMXRlUHFXM3hMcUo1OTZrZTNBMXNKdHpKRGJLNXJ0c2g3N1E5b0JiZWw1bmU1dkxTZktQd3VnenJmc1pJdTBNbXduQko0bTFXT3JNaTdLOVA4VTV4MWl1Q2lYV2xyeW9LSHFhSnoxVEpHVURzN21RQlNvdlJCTi1FSmRKU081UEtlby1xSUFsSllRMkdfX2c4UQ?oc=5\" target=\"_blank\"&gt;South Korea's Lee welcomes home Arctic container ship as route faces viability tests&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-13T08:21:38.000Z",
+          "score": 7
+        },
+        {
+          "title": "More tea? How Scotland's crops of the future could be set to change",
+          "link": "https://www.bbc.co.uk/news/articles/cxdd80z9yjpqo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Experts are examining the ways Scotland's farmers might diversify and adapt to a changing climate.",
+          "published": "2026-10-13T21:57:25.000Z",
+          "score": 4
+        },
+        {
+          "title": "Fly-tippers face £5k fine in new crackdown",
+          "link": "https://www.bbc.co.uk/news/articles/cqn064027d2xo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Cornwall Council introduces new penalties after recording 17,500 incidents in five years.",
+          "published": "2026-10-13T05:23:07.000Z",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": [
+        {
+          "title": "Formula 1: Rwanda to bring sport back to Africa",
+          "link": "https://www.dw.com/en/formula-1-rwanda-to-bring-sport-back-to-africa/a-79649217?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The last time Formula 1 hosted a race in Africa was way back in 1993. But a new track in Rwanda is set to host a Grand Prix in &quot;the early 2030s,&quot; continuing the country’s investment in international sport.",
+          "published": "2026-10-13T11:20:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "AI investment props up global growth, but war and debt threaten outlook, IMF says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPVlNmbDdlaDUwX1pOeWRzM1FhdDNhWTNnVnk4bXZLZlR2VGwxMFRCcWdiNngwM2p1Tmp3YjZMY0FwY1puZHk3bTlEYWNyd2pYYUxPd19nZVpqQU9CQjVlck9RUGtoajF5SGY4VnYzSWpZXzY2TWZ3TVY3Yl9ucVdEWnc3b2xzT19vbzBqazJUMzlCdmpfakw4VjAzOVZ3Ui13dmlJOV90Nk9pVUxWY1htUHYtNDZhTGhyTDYwZEk3SQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPVlNmbDdlaDUwX1pOeWRzM1FhdDNhWTNnVnk4bXZLZlR2VGwxMFRCcWdiNngwM2p1Tmp3YjZMY0FwY1puZHk3bTlEYWNyd2pYYUxPd19nZVpqQU9CQjVlck9RUGtoajF5SGY4VnYzSWpZXzY2TWZ3TVY3Yl9ucVdEWnc3b2xzT19vbzBqazJUMzlCdmpfakw4VjAzOVZ3Ui13dmlJOV90Nk9pVUxWY1htUHYtNDZhTGhyTDYwZEk3SQ?oc=5\" target=\"_blank\"&gt;AI investment props up global growth, but war and debt threaten outlook, IMF says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-13T02:05:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "India's monthly fund investments hit record highs despite market slide - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNODJyMnpVeFUtMGI5STVmUERRbU9KNzdIajRaZldyal9SZDFHZWdHVmp1WG54WmMwa0g4NTF6cTRrWmdlQmdFSk5VRk81VUY1UXZfYXpSTzdDRDJmQ1djdFc3VTJXTGlzUnFyTGsweHZYQkF3eGctOGlhb2FHNUU2N0hNb2o4Q1M5Nnp3X195V1ZMM2R3SXhIUFRJTWRKMlIxMEs4MjI4QnpKcDBSVnctaC1EekVha1BxeDNQbVlzUk1iXzRxWGc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNODJyMnpVeFUtMGI5STVmUERRbU9KNzdIajRaZldyal9SZDFHZWdHVmp1WG54WmMwa0g4NTF6cTRrWmdlQmdFSk5VRk81VUY1UXZfYXpSTzdDRDJmQ1djdFc3VTJXTGlzUnFyTGsweHZYQkF3eGctOGlhb2FHNUU2N0hNb2o4Q1M5Nnp3X195V1ZMM2R3SXhIUFRJTWRKMlIxMEs4MjI4QnpKcDBSVnctaC1EekVha1BxeDNQbVlzUk1iXzRxWGc?oc=5\" target=\"_blank\"&gt;India's monthly fund investments hit record highs despite market slide&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-13T04:51:57.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": [
+        {
+          "title": "What is holding back Cyprus&#039;s Schengen ambitions?",
+          "link": "https://www.dw.com/en/what-is-holding-back-cyprus-s-schengen-ambitions/a-79641488?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Commission says Cyprus is ready to join the Schengen Area. Yet questions relating to the island&#039;s division and British military bases could still complicate its path to Europe&#039;s border-free travel zone.",
+          "published": "2026-10-13T06:26:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU expands migration cooperation with eastern Libya through new funding - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdktrQm1zZDRReldSTGhpQkNPaWdwaWNnSU9UV3hqSjdaT2h1V0E0OER0d1ZYdkNLRjZLcE5Qa2taSy16MlpHN3RQXzlSZEg5S0NLdUpRWUVPa2NKNmYyLXh0a256eHRTck9DSXJ0SHhzWGRKNTBUQm1CTW90R3pXUGhraDBlRnhNcDVqVWxHQm1LS3E1OXItUUJiTXRoWjdCdTBzUW1td0laUTlDQjRnczhWcDFhdEx1U0RDdg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPdktrQm1zZDRReldSTGhpQkNPaWdwaWNnSU9UV3hqSjdaT2h1V0E0OER0d1ZYdkNLRjZLcE5Qa2taSy16MlpHN3RQXzlSZEg5S0NLdUpRWUVPa2NKNmYyLXh0a256eHRTck9DSXJ0SHhzWGRKNTBUQm1CTW90R3pXUGhraDBlRnhNcDVqVWxHQm1LS3E1OXItUUJiTXRoWjdCdTBzUW1td0laUTlDQjRnczhWcDFhdEx1U0RDdg?oc=5\" target=\"_blank\"&gt;EU expands migration cooperation with eastern Libya through new funding&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-13T13:18:09.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ukraine takes step forward in EU membership talks after Hungary drops objections - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQY0ZoUTNvZnFOMHA2a1pianNRZlFmRlljSDRoREZxQ2lLdHg4Z3htWS0zZ19jcWpFNGdERE15cXR2TFVRNV9WY3NGUEtianoxQVBoN2ZfV2Vmd3RPT3VoUUlnNXJsbkpkZnhlRU1OM0JMVjl1cmxLN2NUNlRfdTRQRUF5MWdLVHNJNGVOQS1CWVNjN2pKNFRHS214Tmw1RXI0RzdXN29QbmIyMnByUkNKNW9sX1V3ek1zU3VV?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQY0ZoUTNvZnFOMHA2a1pianNRZlFmRlljSDRoREZxQ2lLdHg4Z3htWS0zZ19jcWpFNGdERE15cXR2TFVRNV9WY3NGUEtianoxQVBoN2ZfV2Vmd3RPT3VoUUlnNXJsbkpkZnhlRU1OM0JMVjl1cmxLN2NUNlRfdTRQRUF5MWdLVHNJNGVOQS1CWVNjN2pKNFRHS214Tmw1RXI0RzdXN29QbmIyMnByUkNKNW9sX1V3ek1zU3VV?oc=5\" target=\"_blank\"&gt;Ukraine takes step forward in EU membership talks after Hungary drops objections&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-13T17:33:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ukraine allies in Poland after Starlink sabotage, Trump diesel deal",
+          "link": "https://www.dw.com/en/ukraine-allies-in-poland-after-starlink-sabotage-trump-diesel-deal/a-79653869?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany&#039;s Johann Wadephul said hybrid plots like the Starlink fire showed Europe was &quot;in Russia&#039;s crosshairs.&quot; The UK&#039;s Ed Miliband said Trump&#039;s Russian diesel deal led to a &quot;very difficult few days&quot; diplomatically.",
+          "published": "2026-10-13T18:52:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "Germany&#039;s China calculation shifts as import pressures eclipse export benefits",
+          "link": "https://www.dw.com/en/germany-s-china-calculation-shifts-as-import-pressures-eclipse-export-benefits/a-79571852?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany has long resisted tougher action against China, fearing retaliation. But rising pressure on key industries has pushed Berlin to seek stronger EU trade-defense powers to protect its industrial base.",
+          "published": "2026-10-13T08:47:00.000Z",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": [
+        {
+          "title": "Hungary&#039;s parliament votes to reverse anti-LGBTQ legislation from Orban era",
+          "link": "https://www.dw.com/en/hungary-s-parliament-votes-to-reverse-anti-lgbtq-legislation-from-orban-era/a-79647826?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Hungary&#039;s parliament passed a bill amending the 2021 &quot;child protection law.&quot; The move is considered the first significant reversal of Orban&#039;s curbs targeting the LGBTQ+ community.",
+          "published": "2026-10-13T15:48:00.000Z",
+          "score": 12
+        },
+        {
+          "title": "Sterling holds near 16-month high vs euro, budget and BoE in focus - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQ216WjVRWG5NZ3hMQUlKeW51UVB0Z2JTOThKZGd2TlBuRE1hakgtMnNDdHNybDI3dEIyejNOYm5kR25sQ25CMnFyTnh0VThEeExHTjZHMWphVzdvc29OMmxzUGxJX3d1SmR0MDVBT0hiV2x6MEdIWlJxTlQ1ZTJzdlczWUMxTC1KTS1hdk41X3JkazFJRDdIV0prblBOVHBlQ09EdHVB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxOQ216WjVRWG5NZ3hMQUlKeW51UVB0Z2JTOThKZGd2TlBuRE1hakgtMnNDdHNybDI3dEIyejNOYm5kR25sQ25CMnFyTnh0VThEeExHTjZHMWphVzdvc29OMmxzUGxJX3d1SmR0MDVBT0hiV2x6MEdIWlJxTlQ1ZTJzdlczWUMxTC1KTS1hdk41X3JkazFJRDdIV0prblBOVHBlQ09EdHVB?oc=5\" target=\"_blank\"&gt;Sterling holds near 16-month high vs euro, budget and BoE in focus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-13T09:34:09.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU approves Kimberly-Clark's $40 billion Kenvue acquisition - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaUM5QjZ4UzMyOFAzcTZoUGdEckZHR2h6SW5NVF9hdjI1dV85OUtvRV8zRkl5TE9QemNLLUwxR05QYlJqaDB1cC1NSno0QjRIYktoNzZzVU5POTR1VVVJUFdnZnk3V3Y4SEVMTi1FWHJnMnl3TDFudW5yQ2o2MlVvUjBhR19OU1diUVVWcGZzck9OWTNXNzgtdnpzWEpWSWw3UFVLLVBDdld6ZHM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaUM5QjZ4UzMyOFAzcTZoUGdEckZHR2h6SW5NVF9hdjI1dV85OUtvRV8zRkl5TE9QemNLLUwxR05QYlJqaDB1cC1NSno0QjRIYktoNzZzVU5POTR1VVVJUFdnZnk3V3Y4SEVMTi1FWHJnMnl3TDFudW5yQ2o2MlVvUjBhR19OU1diUVVWcGZzck9OWTNXNzgtdnpzWEpWSWw3UFVLLVBDdld6ZHM?oc=5\" target=\"_blank\"&gt;EU approves Kimberly-Clark's $40 billion Kenvue acquisition&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-13T15:29:18.000Z",
+          "score": 8
+        },
+        {
+          "title": "Taiwan warns Europe of dangers of dependence on China - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOd01YX3J4RGpfRVVnZGNKeVpaVnlSZjhnWkljUi1qN3VwWW9Jdzk1czhuR2M4RHNCUl9EdURTVl9jay02VzRwWjQ1SDNIYzlDSFRwYzhQci1vWGxBRVZDUFRWUGZWU2dPTzgwSDJiM0J0TmhrU203RDJ1MElqYm5YNWF4dVpscEpjR3VpZ3FYZEYxWUNSTk44?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxOd01YX3J4RGpfRVVnZGNKeVpaVnlSZjhnWkljUi1qN3VwWW9Jdzk1czhuR2M4RHNCUl9EdURTVl9jay02VzRwWjQ1SDNIYzlDSFRwYzhQci1vWGxBRVZDUFRWUGZWU2dPTzgwSDJiM0J0TmhrU203RDJ1MElqYm5YNWF4dVpscEpjR3VpZ3FYZEYxWUNSTk44?oc=5\" target=\"_blank\"&gt;Taiwan warns Europe of dangers of dependence on China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-13T12:22:25.000Z",
+          "score": 8
+        },
+        {
+          "title": "IMF cuts Latin America, Caribbean growth forecasts on energy shock, little AI boost - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZ21qSmpyZzRDaFJwUUh1Zldnb25yMGphSVlOa0NiN3hPdDVXcThHVzlEdTM2U0NhdkwwSFdnanZ2VENlYVhDZWF3UlA4eVBGRms1clZabHdJbnJQeVpOWEd4NkkyWkVPbzQxRG8xQnFhWGVfVEpseXhfOURzLUI0SVptcW9KNWxjUGlLT1N6Nkh0cVRrMmdmQ2xoS09NbVBQa3RzWFgtWnRFQkZlUnMwekl0U0NJTm5wM2o3QURySFpJNldySHgzUjNzOVhRZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPZ21qSmpyZzRDaFJwUUh1Zldnb25yMGphSVlOa0NiN3hPdDVXcThHVzlEdTM2U0NhdkwwSFdnanZ2VENlYVhDZWF3UlA4eVBGRms1clZabHdJbnJQeVpOWEd4NkkyWkVPbzQxRG8xQnFhWGVfVEpseXhfOURzLUI0SVptcW9KNWxjUGlLT1N6Nkh0cVRrMmdmQ2xoS09NbVBQa3RzWFgtWnRFQkZlUnMwekl0U0NJTm5wM2o3QURySFpJNldySHgzUjNzOVhRZw?oc=5\" target=\"_blank\"&gt;IMF cuts Latin America, Caribbean growth forecasts on energy shock, little AI boost&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
+          "published": "2026-10-13T02:09:00.000Z",
+          "score": 7
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 398,
+    "articlesLast24h": 164,
+    "afterDedup": 158,
+    "feedsQueried": 19
+  }
+}
