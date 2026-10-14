@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T12:00:00.507Z",
+  "generatedAt": "2026-10-14T09:37:45.723Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,25 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1016/j.enpol.2026.115663",
+      "title": "The geopoliticization of Europe's energy transition: Geopolitical risk and selective transition adjustment across EU member states",
+      "journal": "Energy Policy",
+      "authors": "Shufeng Cong, Lee Chin, Ilhom Alimardonov, Hayot Berk Saydaliev",
+      "published": "2027-01",
+      "url": "https://doi.org/10.1016/j.enpol.2026.115663",
+      "abstract": "",
+      "suggestedOn": "2026-10-14",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 4,
+          "matched": [
+            "energy transition"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aeb1e2",
       "title": "Nearly ninety percent of Indonesian coffee area is classified as deforestation-free under the European Union Deforestation Regulation (EUDR)",
