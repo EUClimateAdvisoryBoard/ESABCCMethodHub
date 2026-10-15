@@ -1,18 +1,18 @@
 {
-  "date": "2026-10-14",
-  "generatedAt": "2026-10-14T20:33:38.970Z",
+  "date": "2026-10-15",
+  "generatedAt": "2026-10-15T01:18:26.787Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Wednesday, 14 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Thursday, 15 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Gales and heavy rain to impact UK as yellow wind warning issued",
-      "summary": "The Met Office has issued a yellow warning for wind in north-west Scotland on Wednesday with 70mph gusts possible, as Ben Rich explains.",
+      "headline": "China solar giants shed another 40,000 jobs last year as overcapacity persists - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQNThmWTFtdHAtZG1oNzJxbzdqc1R6bjFiTmlmZF9Ha2MxRlVBZkoxOWt4N0dFU3h4dkFJWmNGVzFpQVR3QllvSDRfc2F1MGpxYUZ4LW1NSkMwcmREVS1mYVNCR3VlQXBzNWg2ajRGQ2l6OG5vYS1QWmxvTHVuU3ZkX1JvVTI2QzJQZXpvQ3JvQ2F3QVFKSGVuTlNGeEJtS3FDSWtRQ0lIbW5uSUEwdlhBbkhRZmtvQ0dUMWg3cktZNWM3Y0VZNTdHak8xVmVGdw?oc=5\" target=\"_blank\"&gt;China solar giants shed another 40,000 jobs last year as overcapacity persists&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Global deforestation slowed in 2025 but Brazil&#8217;s election could undo &#8220;fragile&#8221; gains",
-      "summary": "Countries remain 70% off track to meet a goal to end deforestation by 2030, as progress in Latin America offset by failures in Africa The post Global deforestation slowed in 2025 but Brazil&#8217;s election could undo &#8220;fragile&#8221; gains appeared first on Climate Home News.",
+      "headline": "Commissioner Roswall's speech at the Inaugural Convening of the Women Public Sector Climate Leaders Network",
+      "summary": "European Commission Speech Brussels, 14 Oct 2026 Good morning,\r\n \r\nI am delighted to be part of today's inaugural event. \r\n \r\nAnd I'm delighted to be sharing a room with such inspirational and impressive leaders. ...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -27,14 +27,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Gales and heavy rain to impact UK as yellow wind warning issued",
-          "link": "https://www.bbc.co.uk/weather/articles/cxvgdq0jj8d2o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The Met Office has issued a yellow warning for wind in north-west Scotland on Wednesday with 70mph gusts possible, as Ben Rich explains.",
-          "published": "2026-10-13T23:55:49.000Z",
-          "score": 7
-        },
         {
           "title": "China solar giants shed another 40,000 jobs last year as overcapacity persists - Reuters",
           "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNThmWTFtdHAtZG1oNzJxbzdqc1R6bjFiTmlmZF9Ha2MxRlVBZkoxOWt4N0dFU3h4dkFJWmNGVzFpQVR3QllvSDRfc2F1MGpxYUZ4LW1NSkMwcmREVS1mYVNCR3VlQXBzNWg2ajRGQ2l6OG5vYS1QWmxvTHVuU3ZkX1JvVTI2QzJQZXpvQ3JvQ2F3QVFKSGVuTlNGeEJtS3FDSWtRQ0lIbW5uSUEwdlhBbkhRZmtvQ0dUMWg3cktZNWM3Y0VZNTdHak8xVmVGdw?oc=5",
@@ -66,6 +58,14 @@
           "description": "The US president has claimed Greenland holds vast and easily accessible oil reserves without providing evidence or details. His announcement follows a deal expanding the US military presence on the Arctic island.",
           "published": "2026-10-14T10:00:00.000Z",
           "score": 4
+        },
+        {
+          "title": "Australian industry reliant on gas for ‘foreseeable future’, resources minister tells press club",
+          "link": "https://www.theguardian.com/australia-news/2026/oct/14/australia-reliant-on-gas-for-foreseeable-future-madeleine-king-press-club",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Madeleine King says national gas reservation scheme, expected to come into effect from 2028, will reduce power prices&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Follow our &lt;a href=\"https://www.theguardian.com/australia-news/live/2026/oct/14/treasurer-jim-chalmers-labor-one-nation-pauline-hanson-one-nation-gas-reservation-scheme-ntwnfb\"&gt;Australian politics live blog&lt;/a&gt; for latest updates&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-",
+          "published": "2026-10-14T05:52:22.000Z",
+          "score": 2
         }
       ]
     },
@@ -73,6 +73,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Commissioner Roswall's speech at the Inaugural Convening of the Women Public Sector Climate Leaders Network",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2168",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 14 Oct 2026 Good morning,\r\n \r\nI am delighted to be part of today's inaugural event. \r\n \r\nAnd I'm delighted to be sharing a room with such inspirational and impressive leaders. ...",
+          "published": "2026-10-14T20:24:59.000Z",
+          "score": 19
+        },
         {
           "title": "Global deforestation slowed in 2025 but Brazil&#8217;s election could undo &#8220;fragile&#8221; gains",
           "link": "https://www.climatechangenews.com/2026/10/14/global-deforestation-slowed-in-2025-but-brazils-election-could-undo-fragile-gains/",
@@ -87,14 +95,6 @@
           "source": "Climate Home News",
           "description": "Despite a spate of projects getting underway, the mood at an industry conference in London this week was low with government subsidies set to shrink The post Carbon capture industry faces tough future, as UK raids green spending appeared first on Climate Home News.",
           "published": "2026-10-14T14:22:08.000Z",
-          "score": 13
-        },
-        {
-          "title": "World Bank and IMF should lead the financial system in responding to the climate crisis",
-          "link": "https://www.climatechangenews.com/2026/10/14/world-bank-and-imf-should-lead-the-financial-system-in-responding-to-the-climate-crisis/",
-          "source": "Climate Home News",
-          "description": "Multilateral development banks have a vital role to play in delivering on donors' climate finance promises and protecting the most vulnerable The post World Bank and IMF should lead the financial system in responding to the climate crisis appeared first on Climate Home News.",
-          "published": "2026-10-14T00:00:00.000Z",
           "score": 13
         },
         {
@@ -125,14 +125,6 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "China says it is willing to work with EU to boost stability of trade ties - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1EyNEpnYmtaNHJ5TG5kM1NWZTVQNjRrTDdsREZUVTB6Y1hzNnl4R2JhTGdva1ZTTGpXWWdqUVdwRk1kQnIyLXFPbHNpLV9tZzhVTDNsRm93cndnVDVTeWNDTlU3T1ZCUElOQmxKRGh1eHNFSXBiRzAzc2dELTMtVmZnbzNaSDlKY2hzeUpCTnZnWTN2V0dXV1dxVG1PZTBicE9yTmJsMXJUM1I4Q0c2MEd3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1EyNEpnYmtaNHJ5TG5kM1NWZTVQNjRrTDdsREZUVTB6Y1hzNnl4R2JhTGdva1ZTTGpXWWdqUVdwRk1kQnIyLXFPbHNpLV9tZzhVTDNsRm93cndnVDVTeWNDTlU3T1ZCUElOQmxKRGh1eHNFSXBiRzAzc2dELTMtVmZnbzNaSDlKY2hzeUpCTnZnWTN2V0dXV1dxVG1PZTBicE9yTmJsMXJUM1I4Q0c2MEd3?oc=5\" target=\"_blank\"&gt;China says it is willing to work with EU to boost stability of trade ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-14T05:48:00.000Z",
-          "score": 8
-        },
-        {
           "title": "Pressured at home, EU leaders weigh China trade steps - Reuters",
           "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPZC1va2NWTWZxZFZwX0o0VVhXdFBUODFPVGt5RVF0ZmZfQmN3MXdrSFlyYVczRVBLdU45bGU2NmthUldZZXF0TGdXYTI2bFpidU5WdGg4anBFckVsbUFyUV9EQW0yMzdWNUd0LV9kT3Rtd1QzdFRGc3VUODVoSkYycG1RbkxiRkpmWWh5dk5CUWk5OUpodFpBbWozVnBTZw?oc=5",
           "source": "Reuters World (via Google News)",
@@ -147,6 +139,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNOXNyY0JKZ3FLSkljUGp1XzZXbkFMa29UR0dtSVExajRyTGxmNUZMVDNwMVpJZmtKd0pKbzZVOEFZaThFNUdLUnYzOVJndG53U0YxSTZBV3RPelVMU01KYzZncDY3YWpFYTB1eUlaZ19QbmQ0dVRxVWVqclhiWl9CZ29FQjU4SFJ5WVJCYjlkUUsxRWRWRVU1WFYtdFZWNFJ4S1A3SG9QaF9Tc3pTZFE?oc=5\" target=\"_blank\"&gt;Canada races to seal India trade pact by year-end, deepen EU ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-14T13:50:05.000Z",
           "score": 8
+        },
+        {
+          "title": "China says it is willing to work with EU to boost stability of trade ties - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1EyNEpnYmtaNHJ5TG5kM1NWZTVQNjRrTDdsREZUVTB6Y1hzNnl4R2JhTGdva1ZTTGpXWWdqUVdwRk1kQnIyLXFPbHNpLV9tZzhVTDNsRm93cndnVDVTeWNDTlU3T1ZCUElOQmxKRGh1eHNFSXBiRzAzc2dELTMtVmZnbzNaSDlKY2hzeUpCTnZnWTN2V0dXV1dxVG1PZTBicE9yTmJsMXJUM1I4Q0c2MEd3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1EyNEpnYmtaNHJ5TG5kM1NWZTVQNjRrTDdsREZUVTB6Y1hzNnl4R2JhTGdva1ZTTGpXWWdqUVdwRk1kQnIyLXFPbHNpLV9tZzhVTDNsRm93cndnVDVTeWNDTlU3T1ZCUElOQmxKRGh1eHNFSXBiRzAzc2dELTMtVmZnbzNaSDlKY2hzeUpCTnZnWTN2V0dXV1dxVG1PZTBicE9yTmJsMXJUM1I4Q0c2MEd3?oc=5\" target=\"_blank\"&gt;China says it is willing to work with EU to boost stability of trade ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-14T05:48:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Why Zelensky's meeting with Burnham matters",
+          "link": "https://www.bbc.co.uk/news/videos/c65yngxdzdd5o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Prime Minister Andy Burnham welcomed President Zelensky to Downing Street on Wednesday, as Ukraine's leader looks to shore up his European allies five years into Russia's war on Ukraine.",
+          "published": "2026-10-14T20:41:03.000Z",
+          "score": 4
         }
       ]
     },
@@ -179,28 +187,28 @@
           "score": 8
         },
         {
+          "title": "Sportradar hit by EU, UK antitrust complaints from rival - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWUo3U3RSWU5xVENkZlI0cFUzM293OHIycDZGTFZpNjQwaFE4VWdJa3Jic0xMWF9pc044czJYVjhVRnBwQWhIQWVnSnBOOXRzQ2plV2ctcGJHVEo4azJXb2QxY0pPVUE4YzA5T2NZWWZfWGJhTmVyNEk1dmdJdXB3T3Z1LUk0R05naWtETUFnTHNuWkxXU1Bn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPWUo3U3RSWU5xVENkZlI0cFUzM293OHIycDZGTFZpNjQwaFE4VWdJa3Jic0xMWF9pc044czJYVjhVRnBwQWhIQWVnSnBOOXRzQ2plV2ctcGJHVEo4azJXb2QxY0pPVUE4YzA5T2NZWWZfWGJhTmVyNEk1dmdJdXB3T3Z1LUk0R05naWtETUFnTHNuWkxXU1Bn?oc=5\" target=\"_blank\"&gt;Sportradar hit by EU, UK antitrust complaints from rival&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-14T17:12:12.000Z",
+          "score": 8
+        },
+        {
           "title": "EXCLUSIVE: EU seeks closer Vietnam ties on critical minerals in China hedge, documents show - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc1NFMUNzVk1sZ0RKYUJDSjZPdFh3eTRzMUhrSDVCR1NJM0dOWWlKWWJvUzhPem9YRHhNdWFDeFhKTmVFYXc4WXEtQ3E4OWxUZnlvanVRelloT3N6TUl0U2VheVBrYWVxOEZqLVI1WlRjbmlWQktJODJlLWN4dmZmcE12Q3dMeU1JYnZud0tvT0gtOG1YTTBWN3A1VGpjNGhIZFJXeUw4V3VwdzByLTBfUWRVQVVETzJGMEhSU2NB?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPc1NFMUNzVk1sZ0RKYUJDSjZPdFh3eTRzMUhrSDVCR1NJM0dOWWlKWWJvUzhPem9YRHhNdWFDeFhKTmVFYXc4WXEtQ3E4OWxUZnlvanVRelloT3N6TUl0U2VheVBrYWVxOEZqLVI1WlRjbmlWQktJODJlLWN4dmZmcE12Q3dMeU1JYnZud0tvT0gtOG1YTTBWN3A1VGpjNGhIZFJXeUw4V3VwdzByLTBfUWRVQVVETzJGMEhSU2NB?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: EU seeks closer Vietnam ties on critical minerals in China hedge, documents show&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
           "published": "2026-10-14T06:21:00.000Z",
           "score": 8
-        },
-        {
-          "title": "Top economic adviser says Venezuela aims to publish debt sustainability analysis 'very soon' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPZ1lFMnZBTXJ2UC1VZG96Mk1UMHZmS2JjWXBwZDFBME9HRC1tX0U2RC1wR2h2RGgzdlhYU3hwaXhnTVctclY5dDVPYU9NeWhCalgxWHNscEtmTW83a0IxSmZEdkdnOEk3UkstUVBzcWJGc1JmaGp3NGEtczRzYXJJWG1fY0NOQ25tSjFtM0tzY2xBY200Qlg2UFFvRk13NTdBSDZWTDZEeEhjbHlDdHA2VXVUUkNnNVFZbVFsenNMVldLRGJoMkYyaA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPZ1lFMnZBTXJ2UC1VZG96Mk1UMHZmS2JjWXBwZDFBME9HRC1tX0U2RC1wR2h2RGgzdlhYU3hwaXhnTVctclY5dDVPYU9NeWhCalgxWHNscEtmTW83a0IxSmZEdkdnOEk3UkstUVBzcWJGc1JmaGp3NGEtczRzYXJJWG1fY0NOQ25tSjFtM0tzY2xBY200Qlg2UFFvRk13NTdBSDZWTDZEeEhjbHlDdHA2VXVUUkNnNVFZbVFsenNMVldLRGJoMkYyaA?oc=5\" target=\"_blank\"&gt;Top economic adviser says Venezuela aims to publish debt sustainability analysis 'very soon'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;R",
-          "published": "2026-10-14T13:06:11.000Z",
-          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 403,
-    "articlesLast24h": 166,
-    "afterDedup": 157,
+    "totalArticlesScanned": 402,
+    "articlesLast24h": 168,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
