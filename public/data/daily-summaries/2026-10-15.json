@@ -1,12 +1,12 @@
 {
   "date": "2026-10-15",
-  "generatedAt": "2026-10-15T15:34:50.205Z",
+  "generatedAt": "2026-10-15T20:15:40.984Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 15 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Red hot CPI report fuels AI rout - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPOVVDZGpleGljMkt2cm12UEhqSHA5QWpUR3JITXBsQWpPZ1hkYXQyMkRjSmJXTWg5dkNJd0w4U1RpSGVWVnFrYUtydk91VzN2ZXNoQ3NLSmpqMExESkliZ3pmQ1JISjJqN0NtYVlzYkhCSUpRQ3Azay1MWGRWZVVpSXpScw?oc=5\" target=\"_blank\"&gt;Red hot CPI report fuels AI rout&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Cost of balancing Great Britain’s power grid reaches nearly £50m a day",
+      "summary": "&lt;p&gt;Grid operator paying large sums to switch off windfarms in areas of excess electricity generation while turning on gas plants elsewhere&lt;/p&gt;&lt;p&gt;The cost of balancing Great Britain’s power grid has soared to near-record highs of almost £50m a day after windfarms were turned off because of bottlenecks in transmitting power around the country.&lt;/p&gt;&lt;p&gt;The grid operator paid £47.9m on Wednesday to turn windfarms off in areas with an oversupply of electricity and turn gas",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -28,20 +28,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Red hot CPI report fuels AI rout - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPOVVDZGpleGljMkt2cm12UEhqSHA5QWpUR3JITXBsQWpPZ1hkYXQyMkRjSmJXTWg5dkNJd0w4U1RpSGVWVnFrYUtydk91VzN2ZXNoQ3NLSmpqMExESkliZ3pmQ1JISjJqN0NtYVlzYkhCSUpRQ3Azay1MWGRWZVVpSXpScw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPOVVDZGpleGljMkt2cm12UEhqSHA5QWpUR3JITXBsQWpPZ1hkYXQyMkRjSmJXTWg5dkNJd0w4U1RpSGVWVnFrYUtydk91VzN2ZXNoQ3NLSmpqMExESkliZ3pmQ1JISjJqN0NtYVlzYkhCSUpRQ3Azay1MWGRWZVVpSXpScw?oc=5\" target=\"_blank\"&gt;Red hot CPI report fuels AI rout&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-14T18:40:09.000Z",
+          "title": "Cost of balancing Great Britain’s power grid reaches nearly £50m a day",
+          "link": "https://www.theguardian.com/business/2026/oct/15/cost-of-balancing-great-britain-power-grid-50m-daily",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Grid operator paying large sums to switch off windfarms in areas of excess electricity generation while turning on gas plants elsewhere&lt;/p&gt;&lt;p&gt;The cost of balancing Great Britain’s power grid has soared to near-record highs of almost £50m a day after windfarms were turned off because of bottlenecks in transmitting power around the country.&lt;/p&gt;&lt;p&gt;The grid operator paid £47.9m on Wednesday to turn windfarms off in areas with an oversupply of electricity and turn gas",
+          "published": "2026-10-15T15:55:52.000Z",
           "score": 7
-        },
-        {
-          "title": "Nord Stream trial opens in Germany, defense seeks dismissal",
-          "link": "https://www.dw.com/en/nord-stream-trial-opens-in-germany-defense-seeks-dismissal/a-79662942?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Serhii Kuznietsov is accused of attacking civilian infrastructure in the 2022 sabotage of the Russian gas pipeline to Germany. His lawyers called Nord Stream a military target, and said their client is sworn to secrecy.",
-          "published": "2026-10-14T18:00:00.000Z",
-          "score": 4
         },
         {
           "title": "Bessent calls for World Bank reforms, including upstream oil and gas financing - Reuters",
@@ -66,12 +58,28 @@
           "score": 19
         },
         {
-          "title": "Global deforestation slowed in 2025 but Brazil&#8217;s election could undo &#8220;fragile&#8221; gains",
-          "link": "https://www.climatechangenews.com/2026/10/14/global-deforestation-slowed-in-2025-but-brazils-election-could-undo-fragile-gains/",
+          "title": "COP17: Tracking progress towards the UN’s 2030 nature targets",
+          "link": "https://interactive.carbonbrief.org/nature-targets-2030-progress/",
+          "source": "Carbon Brief",
+          "description": "Countries will meet in Armenia this month to carry out the first global review of progress towards meeting key nature&#8230; The post COP17: Tracking progress towards the UN’s 2030 nature targets appeared first on Carbon Brief.",
+          "published": "2026-10-15T16:07:42.000Z",
+          "score": 10
+        },
+        {
+          "title": "COP17: Developed countries ‘fall far short’ of UN targets for nature finance",
+          "link": "https://www.carbonbrief.org/cop17-developed-countries-fall-far-short-of-un-targets-for-nature-finance",
+          "source": "Carbon Brief",
+          "description": "The amount of finance for nature delivered to date “falls far short” of what is needed to meet the UN’s&#8230; The post COP17: Developed countries ‘fall far short’ of UN targets for nature finance appeared first on Carbon Brief.",
+          "published": "2026-10-15T15:40:15.000Z",
+          "score": 10
+        },
+        {
+          "title": "Countries urged to ramp up &#8220;insufficient&#8221; nature policies at COP17",
+          "link": "https://www.climatechangenews.com/2026/10/15/countries-ramp-up-insufficient-nature-policies-un-report-cop17-armenia/",
           "source": "Climate Home News",
-          "description": "Countries remain 70% off track to meet a goal to end deforestation by 2030, as progress in Latin America offset by failures in Africa The post Global deforestation slowed in 2025 but Brazil&#8217;s election could undo &#8220;fragile&#8221; gains appeared first on Climate Home News.",
-          "published": "2026-10-14T15:45:50.000Z",
-          "score": 13
+          "description": "A major UN report that will inform biodiversity negotiations in Armenia shows countries have made some progress but are still off track for a landmark goal to protect 30% of land and oceans by 2030 The post Countries urged to ramp up &#8220;insufficient&#8221; nature policies at COP17 appeared first on Climate Home News.",
+          "published": "2026-10-15T19:25:25.000Z",
+          "score": 10
         },
         {
           "title": "Severe drought declared in six areas of England as reservoirs run low",
@@ -79,22 +87,6 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Some reservoirs in south at critical levels as water companies call for extended restrictions that would affect golf clubs, private schools and car washes&lt;/p&gt;&lt;p&gt;A severe drought has been declared in six areas of England, with some reservoirs at critically low levels, threatening public supplies.&lt;/p&gt;&lt;p&gt;Parts of Devon, Cornwall, Dorset, Somerset, East Sussex and West Sussex have moved into severe drought, and urgent measures are being taken to secure public supplie",
           "published": "2026-10-15T12:18:27.000Z",
-          "score": 7
-        },
-        {
-          "title": "‘I am still a child, it cannot be good to be married’: how drought forces Afghan families to sell girls as brides",
-          "link": "https://www.theguardian.com/global-development/2026/oct/15/afghanistan-drought-hunger-displaced-families-girls-child-marriage-poverty",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;As climate breakdown pushes families to starvation, many feel forced to ‘sacrifice’ daughters to save siblings. Photographer Elise Blanchard travelled the country speaking to girls as young as eight, 10 and 14 who have been engaged or married to repay debts or pay for food&lt;/p&gt;&lt;p&gt;‘I’m not happy about this,” says 11-year-old Khatira, who was sold into marriage to repay debts, sitting in her home in Qala-e-Naw, capital of Badghis province in north-west Afghanistan. “She was hea",
-          "published": "2026-10-15T04:00:21.000Z",
-          "score": 7
-        },
-        {
-          "title": "£15m for zero-emission testing at Belfast Harbour",
-          "link": "https://www.bbc.co.uk/news/articles/c6kgqr9n8082o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "It comes after a £15m investment from UK Research and Innovation's Local Innovation Partnerships Fund.",
-          "published": "2026-10-15T14:55:03.000Z",
           "score": 7
         }
       ]
@@ -147,28 +139,28 @@
           "score": 12
         },
         {
-          "title": "What if you could turn off your algorithm? Australia is about to try",
-          "link": "https://www.bbc.co.uk/news/videos/ck78pj2qy42po?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "New legislation is being tabled in Australia's parliament on Thursday to force big tech to allow users to switch off algorithms which send them recommended content.",
-          "published": "2026-10-14T18:00:54.000Z",
-          "score": 8
-        },
-        {
           "title": "India news: Supreme Court hears Rahul Gandhi&#039;s Election Commission plea",
           "link": "https://www.dw.com/en/india-news-supreme-court-hears-rahul-gandhi-s-election-commission-plea/live-79665180?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "A petition filed by opposition leader Rahul Gandhi and others seeks an independent audit of India&#039;s sweeping voter deletions. Meanwhile, actor Imran Khan has reportedly been ordered to leave India.",
           "published": "2026-10-15T09:48:00.000Z",
           "score": 8
+        },
+        {
+          "title": "EU and Gulf states postpone summit due in Saudi Arabia - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOck10ZlptWXBhUE9nbDNFb1dWa0xGMXRRaC1wR29SZjVIbnVlMmJBZmI4ZzE3OG9RbjhCR0VjYUNVX0xyU0p0WkZFbEtfcjg3aFRyXzFSWjczRWU4WUx1NW9TWW1yZmNpUGQwLUdaNmlTSXdqMll5RVRzb3lZOWdPanhNNmN1QzFUNWMtUVktRzdFS0VQaGZSSW9CY18wSk9YVlNV?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOck10ZlptWXBhUE9nbDNFb1dWa0xGMXRRaC1wR29SZjVIbnVlMmJBZmI4ZzE3OG9RbjhCR0VjYUNVX0xyU0p0WkZFbEtfcjg3aFRyXzFSWjczRWU4WUx1NW9TWW1yZmNpUGQwLUdaNmlTSXdqMll5RVRzb3lZOWdPanhNNmN1QzFUNWMtUVktRzdFS0VQaGZSSW9CY18wSk9YVlNV?oc=5\" target=\"_blank\"&gt;EU and Gulf states postpone summit due in Saudi Arabia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-15T11:13:47.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 168,
-    "afterDedup": 158,
+    "totalArticlesScanned": 405,
+    "articlesLast24h": 180,
+    "afterDedup": 166,
     "feedsQueried": 19
   }
 }
