@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T09:37:45.723Z",
+  "generatedAt": "2026-10-15T09:16:10.599Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -389,27 +389,6 @@
           "score": 4,
           "matched": [
             "steel"
-          ]
-        }
-      ]
-    },
-    {
-      "doi": "10.1038/s41558-026-02691-0",
-      "title": "Empirical insights into residual emissions in urban net-zero targets",
-      "journal": "Nature Climate Change",
-      "authors": "Giulia Ulpiani, Quirina Rodriguez Mendez, Valeria Todeschi et al.",
-      "published": "2026-08-14",
-      "url": "https://doi.org/10.1038/s41558-026-02691-0",
-      "abstract": "Cities increasingly pledge net-zero emissions targets, but the robustness of their residual emissions strategies remains uncertain. We examine the approaches of 103 European cities aiming at net zero by 2030. Total residual emissions are 61.4 MtCO 2 e originating mostly from buildings and transport, with the median at 0.8 tCO 2 e per capita, indicating a rapid decarbonization process. All municipal strategies rely on temporary, land-based CO 2 removal, then carbon credits (40%) and permanent CO 2 removal (32%). We develop the residual emissions strategy robustness index to assess the robustness of compensation strategies, indicating that the current maturity is medium-low with notable geographical disparities. Although cities invest in options mapping and governance, little attention is paid to land availability, the potential of the urban fabric to become a distributed carbon sink, provisions against carbon reversals, monitoring, timing and quantification (estimates cover only 18% of total residual emissions). We also distil recommendations and best practices to address residual emissions.",
-      "suggestedOn": "2026-08-15",
-      "projects": [
-        {
-          "projectId": "policy-gap-2-0",
-          "score": 6.5,
-          "matched": [
-            "net-zero",
-            "net zero",
-            "decarbonization"
           ]
         }
       ]
