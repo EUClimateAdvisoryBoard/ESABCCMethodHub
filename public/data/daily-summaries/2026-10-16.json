@@ -1,12 +1,12 @@
 {
   "date": "2026-10-16",
-  "generatedAt": "2026-10-16T15:18:52.226Z",
+  "generatedAt": "2026-10-16T19:53:38.652Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 16 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Under US pressure, World Bank says it will back gas &#8220;where appropriate&#8221;",
-      "summary": "The US wants the World Bank to expand its gas support while climate campaigners are pushing for it to end - its head spoke this week of limited backing for the fossil fuel The post Under US pressure, World Bank says it will back gas &#8220;where appropriate&#8221; appeared first on Climate Home News.",
+      "headline": "Statement by President von der Leyen at the joint press conference with President Costa following the meeting of the European Council of October 2026",
+      "summary": "European Commission Statement Brussels, 16 Oct 2026 We have had a long and dense European Council. Let me touch on some of the main topics, starting with European competitiveness and I will go straight into energy. Households and industry are paying the price for a war far beyond our borders. Since the start of the war in the Middle East, costs for imported fossil fuel have risen by EUR 106 billion, without a single additional molecule of energy. Gas prices have risen around 140% since late Febr",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -28,6 +28,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Statement by President von der Leyen at the joint press conference with President Costa following the meeting of the European Council of October 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2190",
+          "source": "European Commission",
+          "description": "European Commission Statement Brussels, 16 Oct 2026 We have had a long and dense European Council. Let me touch on some of the main topics, starting with European competitiveness and I will go straight into energy. Households and industry are paying the price for a war far beyond our borders. Since the start of the war in the Middle East, costs for imported fossil fuel have risen by EUR 106 billion, without a single additional molecule of energy. Gas prices have risen around 140% since late Febr",
+          "published": "2026-10-16T11:15:55.000Z",
+          "score": 20
+        },
+        {
           "title": "Under US pressure, World Bank says it will back gas &#8220;where appropriate&#8221;",
           "link": "https://www.climatechangenews.com/2026/10/16/under-us-pressure-world-bank-says-it-will-back-gas-where-appropriate/",
           "source": "Climate Home News",
@@ -41,14 +49,6 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Polls show that Democrats and Republicans in battleground states want to hear more from candidates about the climate crisis&lt;/p&gt;&lt;p&gt;Most Americans feel unease or alarm about the climate crisis and, in both red and blue states, want to know how political leaders are going to fix it. But in midterm election campaigns across the US, candidates have responded to this desire with near silence.&lt;/p&gt;&lt;p&gt;People in the US have this year endured a &lt;a href=\"https://www.ncei.",
           "published": "2026-10-16T15:00:04.000Z",
-          "score": 7
-        },
-        {
-          "title": "Cost of balancing Great Britain’s power grid reaches nearly £50m a day",
-          "link": "https://www.theguardian.com/business/2026/oct/15/cost-of-balancing-great-britain-power-grid-50m-daily",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Grid operator paying large sums to switch off windfarms in areas of excess electricity generation while turning on gas plants elsewhere&lt;/p&gt;&lt;p&gt;The cost of balancing Great Britain’s power grid has soared to near-record highs of almost £50m a day after windfarms were turned off because of bottlenecks in transmitting power around the country.&lt;/p&gt;&lt;p&gt;The grid operator paid £47.9m on Wednesday to turn windfarms off in areas with an oversupply of electricity and turn gas",
-          "published": "2026-10-15T15:55:52.000Z",
           "score": 7
         }
       ]
@@ -66,6 +66,14 @@
           "score": 18
         },
         {
+          "title": "65th Plenary Session of IPCC suspended",
+          "link": "https://www.ipcc.ch/2026/10/16/65th-plenary-session-of-ipcc/",
+          "source": "IPCC",
+          "description": "ADDIS ABABA, Oct 16 &#8211; The IPCC Chair, Jim Skea, suspended tonight the 65th Plenary Session in Addis Ababa after the meeting ran over its planned duration and many delegations from least developed countries and Small Island Developing States had to leave. The Chair’s decision safeguards and upholds the inclusivity of IPCC plenaries where the [&#8230;]",
+          "published": "2026-10-16T19:41:51.000Z",
+          "score": 15
+        },
+        {
           "title": "Daily News 16 / 10 / 2026",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_2189",
           "source": "European Commission",
@@ -77,7 +85,7 @@
           "title": "UN’s loss and damage fund set to give Nepal $20m for flood recovery",
           "link": "https://www.climatechangenews.com/2026/10/16/uns-loss-and-damage-fund-set-to-give-nepal-20m-for-flood-recovery/",
           "source": "Climate Home News",
-          "description": "The Fund for Responding to Loss and Damage is set to allocate funds to respond to Nepal’s floods at an extraordinary board meeting on Thursday The post UN’s loss and damage fund set to give Nepal $20m for flood recovery appeared first on Climate Home News.",
+          "description": "The Fund for Responding to Loss and Damage is expected to allocate funds to respond to Nepal’s floods at an extraordinary board meeting on Thursday The post UN’s loss and damage fund set to give Nepal $20m for flood recovery appeared first on Climate Home News.",
           "published": "2026-10-16T14:49:17.000Z",
           "score": 13
         },
@@ -88,14 +96,6 @@
           "description": "Early completion of the next global climate science assessment reports risks excluding research from the Global South, which is key to ensuring the findings are fair The post Who shapes climate science? The equity question facing the IPCC appeared first on Climate Home News.",
           "published": "2026-10-16T07:41:10.000Z",
           "score": 13
-        },
-        {
-          "title": "COP17: Which countries have released new pledges to tackle nature loss?",
-          "link": "https://www.carbonbrief.org/cop17-which-countries-have-released-new-pledges-to-tackle-nature-loss",
-          "source": "Carbon Brief",
-          "description": "Some 58% of countries have met a UN call to submit new pledges on addressing nature loss – two years&#8230; The post COP17: Which countries have released new pledges to tackle nature loss? appeared first on Carbon Brief.",
-          "published": "2026-10-16T11:54:59.000Z",
-          "score": 10
         }
       ]
     },
@@ -109,19 +109,27 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
+          "title": "Ukrainian President Zelenskyy speaks at EU summit amid spat with Donald Trump",
+          "link": "https://www.dw.com/en/ukrainian-president-zelenskyy-speaks-at-eu-summit-amid-spat-with-donald-trump/a-79684340?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "EU leaders reaffirmed support for Ukraine at the Brussels summit. But souring relations with the US over Russia and Starlink and a big hole in the budget will make for a difficult winter for Ukraine.",
+          "published": "2026-10-16T19:42:00.000Z",
+          "score": 8
+        },
+        {
           "title": "At summit, EU leaders pledge support for Ukraine&#039;s Zelenskyy",
           "link": "https://www.dw.com/en/at-summit-eu-leaders-pledge-support-for-ukraine-s-zelenskyy/a-79678808?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "President Zelenskyy has received words of encouragement from EU leaders, who pledged support for Ukraine&#039;s self-defense against Russia. This comes as winter approaches and the US seems to be withdrawing support.",
-          "published": "2026-10-16T13:17:00.000Z",
+          "published": "2026-10-16T17:34:00.000Z",
           "score": 8
         },
         {
-          "title": "Zelensky says Ukraine has right to defend itself after Trump calls latest strikes a 'disgrace'",
-          "link": "https://www.bbc.co.uk/news/articles/c58jz174w89ro?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Watch: Will Ukraine get the support needed as tensions with US rise?",
+          "link": "https://www.bbc.co.uk/news/videos/cm2ke1v8e4geo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "EU leaders rally around Ukraine's president after new criticism from Donald Trump, who says Zelensky is \"more difficult to work with than Putin\".",
-          "published": "2026-10-16T14:44:11.000Z",
+          "description": "Zelensky thanked the \"real leaders\" ahead of a meeting with the EU in Brussels.",
+          "published": "2026-10-16T15:45:10.000Z",
           "score": 4
         }
       ]
@@ -143,15 +151,7 @@
           "link": "https://www.dw.com/en/germany-france-agree-on-deal-to-support-europe-s-struggling-car-industry/a-79678595?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The two countries said the agreement aimed to safeguard Europe&#039;s automotive industry, encouraging development and research. Automakers in Europe have so far struggled to compete with Chinese electric car companies.",
-          "published": "2026-10-16T12:45:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Catholics in Africa outnumber those in Europe, Vatican says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRkdsZ3ZDeDkwemFIRXIwQk56ZTREbXgwLUpJbFl0M2dIYVRScHA0S2ZmY0hSWHAzMWVZRENPSGprazR0azBpaDZTNkhoWEUxRFpHc04tT2JCTUpONV9CRW1mS2NBU1dZR2prdlA4eXFRb1d5bXVhRmd3LVduSDREQklsZW9KcFpxT290RE82ODU0MzUxR19wWGVn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNRkdsZ3ZDeDkwemFIRXIwQk56ZTREbXgwLUpJbFl0M2dIYVRScHA0S2ZmY0hSWHAzMWVZRENPSGprazR0azBpaDZTNkhoWEUxRFpHc04tT2JCTUpONV9CRW1mS2NBU1dZR2prdlA4eXFRb1d5bXVhRmd3LVduSDREQklsZW9KcFpxT290RE82ODU0MzUxR19wWGVn?oc=5\" target=\"_blank\"&gt;Catholics in Africa outnumber those in Europe, Vatican says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-16T10:46:37.000Z",
+          "published": "2026-10-16T15:31:00.000Z",
           "score": 8
         },
         {
@@ -169,14 +169,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOYzM1MFlvcHllbHZBY0xabi1MZFBhS0FvdVFadU5oeGswa3hBN25KMmVSVWZ3M1pWaTB3RXNibWpsUGtxM3Y3M25zbkRZbWdNUjhtUG1wWVYwWTZGWFNpZ19INlZkMVBhVEUxMm1fNVlqckRtMWp4R1gyN2NUMzUwNGpHdUIwNDQ2M2VUNEZIWEpwNk10bzZYcWtKdkRUUDVrYVdkSmhpdDBjM09kYURfRUVaNnQ?oc=5\" target=\"_blank\"&gt;Iraq parliament approves remaining cabinet posts, PM deputies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-15T20:04:49.000Z",
           "score": 8
+        },
+        {
+          "title": "Sterling set for third weekly rise against euro, hits 3-week high vs dollar - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVU5SVzFTSk9Hd2RpR3VCc2lINWtMc1QyUTB0QmFfbW12WEt3aktMU2p3ZUlMbnN5MGNVbS1zY1pTUEc5c0Qzd1JodGcwNnBzOWhNSHhjcVlLTm9tNUVDQVBCVXZ5clNCT1pscnVwV2hVZmJOc2lUeFFFbzNDWU93U2kwSkdGdDRCNnBqYkpIcTYydmx2UkJYWjltV1plLVZRcTctdFB2MU5zdGlETXN1SW43ZHc4UQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPVU5SVzFTSk9Hd2RpR3VCc2lINWtMc1QyUTB0QmFfbW12WEt3aktMU2p3ZUlMbnN5MGNVbS1zY1pTUEc5c0Qzd1JodGcwNnBzOWhNSHhjcVlLTm9tNUVDQVBCVXZ5clNCT1pscnVwV2hVZmJOc2lUeFFFbzNDWU93U2kwSkdGdDRCNnBqYkpIcTYydmx2UkJYWjltV1plLVZRcTctdFB2MU5zdGlETXN1SW43ZHc4UQ?oc=5\" target=\"_blank\"&gt;Sterling set for third weekly rise against euro, hits 3-week high vs dollar&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-16T09:38:20.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 411,
-    "articlesLast24h": 168,
-    "afterDedup": 161,
+    "totalArticlesScanned": 412,
+    "articlesLast24h": 157,
+    "afterDedup": 149,
     "feedsQueried": 19
   }
 }
