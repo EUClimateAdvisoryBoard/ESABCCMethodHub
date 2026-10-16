@@ -1,18 +1,18 @@
 {
   "date": "2026-10-16",
-  "generatedAt": "2026-10-16T09:35:29.966Z",
+  "generatedAt": "2026-10-16T15:18:52.226Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 16 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Cost of balancing Great Britain’s power grid reaches nearly £50m a day",
-      "summary": "&lt;p&gt;Grid operator paying large sums to switch off windfarms in areas of excess electricity generation while turning on gas plants elsewhere&lt;/p&gt;&lt;p&gt;The cost of balancing Great Britain’s power grid has soared to near-record highs of almost £50m a day after windfarms were turned off because of bottlenecks in transmitting power around the country.&lt;/p&gt;&lt;p&gt;The grid operator paid £47.9m on Wednesday to turn windfarms off in areas with an oversupply of electricity and turn gas",
+      "headline": "Under US pressure, World Bank says it will back gas &#8220;where appropriate&#8221;",
+      "summary": "The US wants the World Bank to expand its gas support while climate campaigners are pushing for it to end - its head spoke this week of limited backing for the fossil fuel The post Under US pressure, World Bank says it will back gas &#8220;where appropriate&#8221; appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Who shapes climate science? The equity question facing the IPCC",
-      "summary": "Early completion of the next global climate science assessment reports risks excluding research from the Global South, which is key to ensuring the findings are fair The post Who shapes climate science? The equity question facing the IPCC appeared first on Climate Home News.",
+      "headline": "Commission sets out new strategy on combating trafficking in human beings",
+      "summary": "European Commission Press release Brussels, 16 Oct 2026 Today, the European Commission sets out a new strategy to combat trafficking in human beings. In 2023 and 2024, more than 20,000 victims were registered in the EU, a 16.1% increase, though many cases remain unseen. Trafficking takes many forms, including sexual exploitation, labour exploitation, forced criminality, begging and forced marriage.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -28,6 +28,22 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Under US pressure, World Bank says it will back gas &#8220;where appropriate&#8221;",
+          "link": "https://www.climatechangenews.com/2026/10/16/under-us-pressure-world-bank-says-it-will-back-gas-where-appropriate/",
+          "source": "Climate Home News",
+          "description": "The US wants the World Bank to expand its gas support while climate campaigners are pushing for it to end - its head spoke this week of limited backing for the fossil fuel The post Under US pressure, World Bank says it will back gas &#8220;where appropriate&#8221; appeared first on Climate Home News.",
+          "published": "2026-10-16T11:54:15.000Z",
+          "score": 10
+        },
+        {
+          "title": "US voters want action on global heating. So why are midterm candidates ‘climate hushing’?",
+          "link": "https://www.theguardian.com/us-news/2026/oct/16/midterms-voters-climate-crisis-candidates",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Polls show that Democrats and Republicans in battleground states want to hear more from candidates about the climate crisis&lt;/p&gt;&lt;p&gt;Most Americans feel unease or alarm about the climate crisis and, in both red and blue states, want to know how political leaders are going to fix it. But in midterm election campaigns across the US, candidates have responded to this desire with near silence.&lt;/p&gt;&lt;p&gt;People in the US have this year endured a &lt;a href=\"https://www.ncei.",
+          "published": "2026-10-16T15:00:04.000Z",
+          "score": 7
+        },
+        {
           "title": "Cost of balancing Great Britain’s power grid reaches nearly £50m a day",
           "link": "https://www.theguardian.com/business/2026/oct/15/cost-of-balancing-great-britain-power-grid-50m-daily",
           "source": "The Guardian - Energy",
@@ -42,6 +58,30 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Commission sets out new strategy on combating trafficking in human beings",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2177",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 16 Oct 2026 Today, the European Commission sets out a new strategy to combat trafficking in human beings. In 2023 and 2024, more than 20,000 victims were registered in the EU, a 16.1% increase, though many cases remain unseen. Trafficking takes many forms, including sexual exploitation, labour exploitation, forced criminality, begging and forced marriage.",
+          "published": "2026-10-15T22:00:00.000Z",
+          "score": 18
+        },
+        {
+          "title": "Daily News 16 / 10 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_2189",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 16 Oct 2026 Commission sets out new strategy on combating trafficking in human beings \r\nToday, the European Commission sets out a new strategy to combat trafficking in human...",
+          "published": "2026-10-16T09:38:24.000Z",
+          "score": 14
+        },
+        {
+          "title": "UN’s loss and damage fund set to give Nepal $20m for flood recovery",
+          "link": "https://www.climatechangenews.com/2026/10/16/uns-loss-and-damage-fund-set-to-give-nepal-20m-for-flood-recovery/",
+          "source": "Climate Home News",
+          "description": "The Fund for Responding to Loss and Damage is set to allocate funds to respond to Nepal’s floods at an extraordinary board meeting on Thursday The post UN’s loss and damage fund set to give Nepal $20m for flood recovery appeared first on Climate Home News.",
+          "published": "2026-10-16T14:49:17.000Z",
+          "score": 13
+        },
+        {
           "title": "Who shapes climate science? The equity question facing the IPCC",
           "link": "https://www.climatechangenews.com/2026/10/16/who-shapes-climate-science-the-equity-question-facing-the-ipcc/",
           "source": "Climate Home News",
@@ -50,36 +90,12 @@
           "score": 13
         },
         {
-          "title": "COP17: Tracking progress towards the UN’s 2030 nature targets",
-          "link": "https://interactive.carbonbrief.org/nature-targets-2030-progress/",
+          "title": "COP17: Which countries have released new pledges to tackle nature loss?",
+          "link": "https://www.carbonbrief.org/cop17-which-countries-have-released-new-pledges-to-tackle-nature-loss",
           "source": "Carbon Brief",
-          "description": "Countries will meet in Armenia this month to carry out the first global review of progress towards meeting key nature&#8230; The post COP17: Tracking progress towards the UN’s 2030 nature targets appeared first on Carbon Brief.",
-          "published": "2026-10-15T16:07:42.000Z",
+          "description": "Some 58% of countries have met a UN call to submit new pledges on addressing nature loss – two years&#8230; The post COP17: Which countries have released new pledges to tackle nature loss? appeared first on Carbon Brief.",
+          "published": "2026-10-16T11:54:59.000Z",
           "score": 10
-        },
-        {
-          "title": "COP17: Developed countries ‘fall far short’ of UN targets for nature finance",
-          "link": "https://www.carbonbrief.org/cop17-developed-countries-fall-far-short-of-un-targets-for-nature-finance",
-          "source": "Carbon Brief",
-          "description": "The amount of finance for nature delivered to date “falls far short” of what is needed to meet the UN’s&#8230; The post COP17: Developed countries ‘fall far short’ of UN targets for nature finance appeared first on Carbon Brief.",
-          "published": "2026-10-15T15:40:15.000Z",
-          "score": 10
-        },
-        {
-          "title": "Countries urged to ramp up &#8220;insufficient&#8221; nature policies at COP17",
-          "link": "https://www.climatechangenews.com/2026/10/15/countries-ramp-up-insufficient-nature-policies-un-report-cop17-armenia/",
-          "source": "Climate Home News",
-          "description": "A major UN report that will inform biodiversity negotiations in Armenia shows countries have made some progress but are still off track for a landmark goal to protect 30% of land and oceans by 2030 The post Countries urged to ramp up &#8220;insufficient&#8221; nature policies at COP17 appeared first on Climate Home News.",
-          "published": "2026-10-15T19:25:25.000Z",
-          "score": 10
-        },
-        {
-          "title": "Severe drought declared in six areas of England as reservoirs run low",
-          "link": "https://www.theguardian.com/environment/2026/oct/15/severe-drought-declared-six-areas-england-public-water-supplies-threat",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Some reservoirs in south at critical levels as water companies call for extended restrictions that would affect golf clubs, private schools and car washes&lt;/p&gt;&lt;p&gt;A severe drought has been declared in six areas of England, with some reservoirs at critically low levels, threatening public supplies.&lt;/p&gt;&lt;p&gt;Parts of Devon, Cornwall, Dorset, Somerset, East Sussex and West Sussex have moved into severe drought, and urgent measures are being taken to secure public supplie",
-          "published": "2026-10-15T12:18:27.000Z",
-          "score": 7
         }
       ]
     },
@@ -93,28 +109,20 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Zelensky rallies EU support as Trump says Ukraine leader 'more difficult to deal with than Putin'",
+          "title": "At summit, EU leaders pledge support for Ukraine&#039;s Zelenskyy",
+          "link": "https://www.dw.com/en/at-summit-eu-leaders-pledge-support-for-ukraine-s-zelenskyy/a-79678808?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "President Zelenskyy has received words of encouragement from EU leaders, who pledged support for Ukraine&#039;s self-defense against Russia. This comes as winter approaches and the US seems to be withdrawing support.",
+          "published": "2026-10-16T13:17:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Zelensky says Ukraine has right to defend itself after Trump calls latest strikes a 'disgrace'",
           "link": "https://www.bbc.co.uk/news/articles/c58jz174w89ro?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The US president launches a new wave of blistering criticism at Volodymyr Zelensky ahead of a meeting of EU leaders in Brussels.",
-          "published": "2026-10-16T09:34:30.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU summit to focus on China, Ukraine and bloc budget",
-          "link": "https://www.dw.com/en/eu-summit-to-focus-on-china-ukraine-and-bloc-budget/a-79665338?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "EU leaders meeting in Brussels will examine measures to curb the bloc&#039;s huge trade deficit with China. But they will also be looking to further agreement on the next EU budget ahead of some major elections next year.",
-          "published": "2026-10-15T14:37:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Ukraine passes key laws to help unlock billions in aid from EU, IMF - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPendQTllpUlhRZkJYVHBhb01NZjEzYXpmRjFUNFc1cllRb3hoQlQ2azl5YTAwWUY1U2JYV2U1MDVRMHJzQTA5dlBXbHhFM2p0U2lLVGlaVEJwQzMtWl9DZm1ORkpmSTlxMjRheWRVb1JPeUNlbVhDTi1ENDQ3YWUwVEViM2xxMGdCWkI5WTJhMDUwc1BEX3JuZUtSRVFGdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPendQTllpUlhRZkJYVHBhb01NZjEzYXpmRjFUNFc1cllRb3hoQlQ2azl5YTAwWUY1U2JYV2U1MDVRMHJzQTA5dlBXbHhFM2p0U2lLVGlaVEJwQzMtWl9DZm1ORkpmSTlxMjRheWRVb1JPeUNlbVhDTi1ENDQ3YWUwVEViM2xxMGdCWkI5WTJhMDUwc1BEX3JuZUtSRVFGdw?oc=5\" target=\"_blank\"&gt;Ukraine passes key laws to help unlock billions in aid from EU, IMF&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-15T12:58:50.000Z",
-          "score": 8
+          "description": "EU leaders rally around Ukraine's president after new criticism from Donald Trump, who says Zelensky is \"more difficult to work with than Putin\".",
+          "published": "2026-10-16T14:44:11.000Z",
+          "score": 4
         }
       ]
     },
@@ -123,12 +131,36 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Europe promotes sovereign, trusted AI as it struggles to catch US and China",
-          "link": "https://www.dw.com/en/europe-promotes-sovereign-trusted-ai-as-it-struggles-to-catch-us-and-china/a-79667770?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU promotes sovereign, trusted AI as it struggles to catch US and China",
+          "link": "https://www.dw.com/en/eu-promotes-sovereign-trusted-ai-as-it-struggles-to-catch-us-and-china/a-79667770?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "At an international AI summit in Dublin, European leaders promoted trusted and independent AI. Critics question whether the EU can close the gap with the US and China while maintaining strict regulation.",
+          "description": "At an international AI summit in Dublin, EU leaders promoted trusted and independent artificial intelligence. Critics question whether the bloc can close the gap with the US and China while maintaining strict regulation.",
           "published": "2026-10-16T09:07:00.000Z",
           "score": 12
+        },
+        {
+          "title": "Germany, France agree on deal to support Europe&#039;s struggling car industry",
+          "link": "https://www.dw.com/en/germany-france-agree-on-deal-to-support-europe-s-struggling-car-industry/a-79678595?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The two countries said the agreement aimed to safeguard Europe&#039;s automotive industry, encouraging development and research. Automakers in Europe have so far struggled to compete with Chinese electric car companies.",
+          "published": "2026-10-16T12:45:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Catholics in Africa outnumber those in Europe, Vatican says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRkdsZ3ZDeDkwemFIRXIwQk56ZTREbXgwLUpJbFl0M2dIYVRScHA0S2ZmY0hSWHAzMWVZRENPSGprazR0azBpaDZTNkhoWEUxRFpHc04tT2JCTUpONV9CRW1mS2NBU1dZR2prdlA4eXFRb1d5bXVhRmd3LVduSDREQklsZW9KcFpxT290RE82ODU0MzUxR19wWGVn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNRkdsZ3ZDeDkwemFIRXIwQk56ZTREbXgwLUpJbFl0M2dIYVRScHA0S2ZmY0hSWHAzMWVZRENPSGprazR0azBpaDZTNkhoWEUxRFpHc04tT2JCTUpONV9CRW1mS2NBU1dZR2prdlA4eXFRb1d5bXVhRmd3LVduSDREQklsZW9KcFpxT290RE82ODU0MzUxR19wWGVn?oc=5\" target=\"_blank\"&gt;Catholics in Africa outnumber those in Europe, Vatican says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-16T10:46:37.000Z",
+          "score": 8
+        },
+        {
+          "title": "Europe must boost growth or borrow less to keep debt sustainable, IMF says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTFJTlBURGN2am9IMTFlUUppek9EdGlIcEQzMzJscE9LekhoWVE1LVJnVlVhUVFDVTA2WElwQlpQM2M1eG1CVXF5SnR6SnRRNm81akFzeU9VamlZOFA1dVExbWxrRy1heExNVjFyZWI4c0NnNDZTTzgtWVlabVZzQ3RMWFRqYlRKMTdCWktVYlYtZkluS3JwaHVDTWd2RW01VVBTMWFNMXozY3Zhbm1uU0ZPRFg5UQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTFJTlBURGN2am9IMTFlUUppek9EdGlIcEQzMzJscE9LekhoWVE1LVJnVlVhUVFDVTA2WElwQlpQM2M1eG1CVXF5SnR6SnRRNm81akFzeU9VamlZOFA1dVExbWxrRy1heExNVjFyZWI4c0NnNDZTTzgtWVlabVZzQ3RMWFRqYlRKMTdCWktVYlYtZkluS3JwaHVDTWd2RW01VVBTMWFNMXozY3Zhbm1uU0ZPRFg5UQ?oc=5\" target=\"_blank\"&gt;Europe must boost growth or borrow less to keep debt sustainable, IMF says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-16T10:21:29.000Z",
+          "score": 8
         },
         {
           "title": "Iraq parliament approves remaining cabinet posts, PM deputies - Reuters",
@@ -137,38 +169,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOYzM1MFlvcHllbHZBY0xabi1MZFBhS0FvdVFadU5oeGswa3hBN25KMmVSVWZ3M1pWaTB3RXNibWpsUGtxM3Y3M25zbkRZbWdNUjhtUG1wWVYwWTZGWFNpZ19INlZkMVBhVEUxMm1fNVlqckRtMWp4R1gyN2NUMzUwNGpHdUIwNDQ2M2VUNEZIWEpwNk10bzZYcWtKdkRUUDVrYVdkSmhpdDBjM09kYURfRUVaNnQ?oc=5\" target=\"_blank\"&gt;Iraq parliament approves remaining cabinet posts, PM deputies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-15T20:04:49.000Z",
           "score": 8
-        },
-        {
-          "title": "EU and Gulf states postpone summit due in Saudi Arabia - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOck10ZlptWXBhUE9nbDNFb1dWa0xGMXRRaC1wR29SZjVIbnVlMmJBZmI4ZzE3OG9RbjhCR0VjYUNVX0xyU0p0WkZFbEtfcjg3aFRyXzFSWjczRWU4WUx1NW9TWW1yZmNpUGQwLUdaNmlTSXdqMll5RVRzb3lZOWdPanhNNmN1QzFUNWMtUVktRzdFS0VQaGZSSW9CY18wSk9YVlNV?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOck10ZlptWXBhUE9nbDNFb1dWa0xGMXRRaC1wR29SZjVIbnVlMmJBZmI4ZzE3OG9RbjhCR0VjYUNVX0xyU0p0WkZFbEtfcjg3aFRyXzFSWjczRWU4WUx1NW9TWW1yZmNpUGQwLUdaNmlTSXdqMll5RVRzb3lZOWdPanhNNmN1QzFUNWMtUVktRzdFS0VQaGZSSW9CY18wSk9YVlNV?oc=5\" target=\"_blank\"&gt;EU and Gulf states postpone summit due in Saudi Arabia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-15T11:13:47.000Z",
-          "score": 8
-        },
-        {
-          "title": "China ready to cooperate with EU in tackling global imbalances - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPdTI0SWJwQ0RXZkZjS1VGLXpYZWIxQnZLdmFWZlVyWlJQRXhpTlR6djVseEZEb2dzOTJVZXd2ZVh3dkRYNFZIUmx2cEZNR1NOQXZyUzBLTTB2TmFUN2ZQbThHeE90eHk4RW1rcFlHdHVxUHpnVTZxbDB0d29BVS1vSUgtdWVDdHJJbktQbFVMSE9MT1dLZFVtLW9wWHlNQlNmYTRaOVJ5TQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPdTI0SWJwQ0RXZkZjS1VGLXpYZWIxQnZLdmFWZlVyWlJQRXhpTlR6djVseEZEb2dzOTJVZXd2ZVh3dkRYNFZIUmx2cEZNR1NOQXZyUzBLTTB2TmFUN2ZQbThHeE90eHk4RW1rcFlHdHVxUHpnVTZxbDB0d29BVS1vSUgtdWVDdHJJbktQbFVMSE9MT1dLZFVtLW9wWHlNQlNmYTRaOVJ5TQ?oc=5\" target=\"_blank\"&gt;China ready to cooperate with EU in tackling global imbalances&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-16T07:25:34.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU leaders rally around Zelenskiy as Trump calls Ukrainian strikes on Russia a 'disgrace' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOY0hRTnFuN3FTNE1pY1cyNVRLbEJ3MmZ0UWZzUDhWbEhIU3R1RjY4dENuVi12U0hpeXRXM25vQTBOSWFjUFRrYlgxSWo0Y2tZVTU0bk9FQmlJRW9zcjhCMzRiNFNod1RuSWdoUUJwbDVaMmtNYi1peWgwMFhpQnVlbkZRUFZvSXliM3FYRW9IeXpzaUdGdW11Y2pNWlZwUGh2ZWdyRGZ3blhqUW9lUkcwNnI1UVk5OUJ4bk5PUEJLYVRkNVh5aHVV?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOY0hRTnFuN3FTNE1pY1cyNVRLbEJ3MmZ0UWZzUDhWbEhIU3R1RjY4dENuVi12U0hpeXRXM25vQTBOSWFjUFRrYlgxSWo0Y2tZVTU0bk9FQmlJRW9zcjhCMzRiNFNod1RuSWdoUUJwbDVaMmtNYi1peWgwMFhpQnVlbkZRUFZvSXliM3FYRW9IeXpzaUdGdW11Y2pNWlZwUGh2ZWdyRGZ3blhqUW9lUkcwNnI1UVk5OUJ4bk5PUEJLYVRkNVh5aHVV?oc=5\" target=\"_blank\"&gt;EU leaders rally around Zelenskiy as Trump calls Ukrainian strikes on Russia a 'disgrace'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
-          "published": "2026-10-16T08:03:44.000Z",
-          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 409,
-    "articlesLast24h": 172,
-    "afterDedup": 160,
+    "totalArticlesScanned": 411,
+    "articlesLast24h": 168,
+    "afterDedup": 161,
     "feedsQueried": 19
   }
 }
