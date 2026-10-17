@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T09:09:20.508Z",
+  "generatedAt": "2026-10-17T08:41:47.083Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,46 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/aeb55d",
+      "title": "Carbon Prices and Cooking Fires: How Decarbonization Pathway Design Shapes Household Energy Burdens",
+      "journal": "Environmental Research Letters",
+      "authors": "Mel George, Leon Clarke, Jihoon Min et al.",
+      "published": "2026-10-16",
+      "url": "https://doi.org/10.1088/1748-9326/aeb55d",
+      "abstract": "Pathways reaching the same climate target can distribute household energy costs very differently across income groups. We compare 16 core mitigation pathways spanning a cost-optimal benchmark and technology, timing, effort-sharing, and demand-side designs, plus one rebound sensitivity, within a common integrated assessment framework. All core pathways remain below 2°C and converge to approximately 1.5°C warming by 2100, consistent with the Paris Agreement's 1.5°C temperature goal. We translate energy- and food-price outcomes into household energy burdens across income deciles in India and the United States using survey-informed downscaling. In 2030, cost-optimal, technology, and pace pathways are regressive in both countries, with larger burden increases for poorer deciles. In India, lower-demand pathways reduce global carbon prices and lower burdens for poorer households, whereas accelerated electrification and rapid traditional-biomass phase-out raise burdens. Historical-responsibility transfers lower burdens in India and raise them in the United States under the stylized transfer design. A conventional gross-income sensitivity preserves pathway rankings and almost all decile-level burden-change signs but roughly halves poorest-decile magnitudes in India. Accounting for food expenditure therefore reveals affordability pressures on poorer households that gross-income measures mute. Scenario design is an equity-relevant dimension of pathway assessment alongside revenue recycl",
+      "suggestedOn": "2026-10-17",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 5,
+          "matched": [
+            "climate target",
+            "decarbonization",
+            "paris agreement"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1088/1748-9326/aeb55f",
+      "title": "Assessing processes and evidence for Highest Possible Ambition in Nationally Determined Contributions under the Paris Agreement",
+      "journal": "Environmental Research Letters",
+      "authors": "Julia K Schönfeld, Setu Pelz, Hamish Beath, Joeri Rogelj",
+      "published": "2026-10-16",
+      "url": "https://doi.org/10.1088/1748-9326/aeb55f",
+      "abstract": "The Paris Agreement establishes that Parties’ Nationally Determined Contributions (NDCs) will represent a progression, a country’s Highest Possible Ambition (HPA), and an equitable contribution to the collective long-term temperature goal. However, the Agreement provides no guidance on how the HPA standard should be interpreted, assessed, or operationalised in practice. In response to this gap, initial scholarship has proposed frameworks to interpret HPA based on the treaty's text and the wider international environmental law context, which includes the 2025 Advisory Opinion on Obligations of States in Respect of Climate Change from the International Court of Justice. Altogether, this has clarified how HPA is part of states’ due diligence obligations and sets the stage for the next challenge: how can the theoretical understanding of HPA be practically applied to assess whether NDCs reflect this norm? Here, we build on existing reporting obligations under the United Nations Framework Convention on Climate Change (UNFCCC), emerging approaches reflected in the UNFCCC NDC synthesis report, and best practices from the research community. We describe expectations for the process, conduct, presentation, and documentation of NDCs of highest possible ambition. These expectations provide qualitative benchmarks and criteria for assessing whether Parties have undertaken a rigorous and reasoned process to identify their highest possible mitigation efforts, and whether the evidence provide",
+      "suggestedOn": "2026-10-17",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 4,
+          "matched": [
+            "paris agreement"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1016/j.enpol.2026.115663",
       "title": "The geopoliticization of Europe's energy transition: Geopolitical risk and selective transition adjustment across EU member states",
