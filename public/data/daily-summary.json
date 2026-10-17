@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-16",
-  "generatedAt": "2026-10-16T19:53:38.652Z",
+  "date": "2026-10-17",
+  "generatedAt": "2026-10-17T01:07:27.700Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Friday, 16 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Saturday, 17 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
       "headline": "Statement by President von der Leyen at the joint press conference with President Costa following the meeting of the European Council of October 2026",
@@ -11,10 +11,16 @@
       "color": "#E87722"
     },
     {
-      "headline": "Commission sets out new strategy on combating trafficking in human beings",
-      "summary": "European Commission Press release Brussels, 16 Oct 2026 Today, the European Commission sets out a new strategy to combat trafficking in human beings. In 2023 and 2024, more than 20,000 victims were registered in the EU, a 16.1% increase, though many cases remain unseen. Trafficking takes many forms, including sexual exploitation, labour exploitation, forced criminality, begging and forced marriage.",
+      "headline": "65th Plenary Session of IPCC suspended",
+      "summary": "ADDIS ABABA, Oct 16 &#8211; The IPCC Chair, Jim Skea, suspended tonight the 65th Plenary Session in Addis Ababa after the meeting ran over its planned duration and many delegations from least developed countries and Small Island Developing States had to leave. The Chair’s decision safeguards and upholds the inclusivity of IPCC plenaries where the [&#8230;]",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "India's Persistent Systems plans debut rupee debt sale to fund acquisition, bankers say - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOcERlU2MzZ3lfNS1ZaFBEaWlxWGhDMWFmMW91a0JUMDE0eHNfVV83aVBjT05OVzhqeVJwSWVUVk9Ga1RjSE9rZmZzc1RvSk1mSVA5VlQ3Z2w4WFFuWkEzVUZaWXJ4Y1M5LWljQkJEbk1sVE5nTTlDNEpTN0pIaHBqZGM0Z1BuZWpKN0VfaUdBdnJXSHdEMWFPMURIYnpzdS1FdVVSbXBieUlDRFhGYzZNem9OWkJZQk5jWW1pTk94ZnFxcWlV?oc=5\" target=\"_blank\"&gt;India's Persistent Systems plans debut rupee debt sale to fund acquisition, bankers say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -44,12 +50,12 @@
           "score": 10
         },
         {
-          "title": "US voters want action on global heating. So why are midterm candidates ‘climate hushing’?",
+          "title": "US voters want more action on global heating. Why are Democrats and Republicans staying silent?",
           "link": "https://www.theguardian.com/us-news/2026/oct/16/midterms-voters-climate-crisis-candidates",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Polls show that Democrats and Republicans in battleground states want to hear more from candidates about the climate crisis&lt;/p&gt;&lt;p&gt;Most Americans feel unease or alarm about the climate crisis and, in both red and blue states, want to know how political leaders are going to fix it. But in midterm election campaigns across the US, candidates have responded to this desire with near silence.&lt;/p&gt;&lt;p&gt;People in the US have this year endured a &lt;a href=\"https://www.ncei.",
           "published": "2026-10-16T15:00:04.000Z",
-          "score": 7
+          "score": 4
         }
       ]
     },
@@ -57,14 +63,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Commission sets out new strategy on combating trafficking in human beings",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2177",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 16 Oct 2026 Today, the European Commission sets out a new strategy to combat trafficking in human beings. In 2023 and 2024, more than 20,000 victims were registered in the EU, a 16.1% increase, though many cases remain unseen. Trafficking takes many forms, including sexual exploitation, labour exploitation, forced criminality, begging and forced marriage.",
-          "published": "2026-10-15T22:00:00.000Z",
-          "score": 18
-        },
         {
           "title": "65th Plenary Session of IPCC suspended",
           "link": "https://www.ipcc.ch/2026/10/16/65th-plenary-session-of-ipcc/",
@@ -96,13 +94,30 @@
           "description": "Early completion of the next global climate science assessment reports risks excluding research from the Global South, which is key to ensuring the findings are fair The post Who shapes climate science? The equity question facing the IPCC appeared first on Climate Home News.",
           "published": "2026-10-16T07:41:10.000Z",
           "score": 13
+        },
+        {
+          "title": "COP17: Which countries have released new pledges to tackle nature loss?",
+          "link": "https://www.carbonbrief.org/cop17-which-countries-have-released-new-pledges-to-tackle-nature-loss",
+          "source": "Carbon Brief",
+          "description": "Some 58% of countries have met a UN call to submit new pledges on addressing nature loss – two years&#8230; The post COP17: Which countries have released new pledges to tackle nature loss? appeared first on Carbon Brief.",
+          "published": "2026-10-16T11:54:59.000Z",
+          "score": 10
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "India's Persistent Systems plans debut rupee debt sale to fund acquisition, bankers say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcERlU2MzZ3lfNS1ZaFBEaWlxWGhDMWFmMW91a0JUMDE0eHNfVV83aVBjT05OVzhqeVJwSWVUVk9Ga1RjSE9rZmZzc1RvSk1mSVA5VlQ3Z2w4WFFuWkEzVUZaWXJ4Y1M5LWljQkJEbk1sVE5nTTlDNEpTN0pIaHBqZGM0Z1BuZWpKN0VfaUdBdnJXSHdEMWFPMURIYnpzdS1FdVVSbXBieUlDRFhGYzZNem9OWkJZQk5jWW1pTk94ZnFxcWlV?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOcERlU2MzZ3lfNS1ZaFBEaWlxWGhDMWFmMW91a0JUMDE0eHNfVV83aVBjT05OVzhqeVJwSWVUVk9Ga1RjSE9rZmZzc1RvSk1mSVA5VlQ3Z2w4WFFuWkEzVUZaWXJ4Y1M5LWljQkJEbk1sVE5nTTlDNEpTN0pIaHBqZGM0Z1BuZWpKN0VfaUdBdnJXSHdEMWFPMURIYnpzdS1FdVVSbXBieUlDRFhGYzZNem9OWkJZQk5jWW1pTk94ZnFxcWlV?oc=5\" target=\"_blank\"&gt;India's Persistent Systems plans debut rupee debt sale to fund acquisition, bankers say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+          "published": "2026-10-16T07:42:53.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -122,6 +137,14 @@
           "source": "Deutsche Welle World",
           "description": "President Zelenskyy has received words of encouragement from EU leaders, who pledged support for Ukraine&#039;s self-defense against Russia. This comes as winter approaches and the US seems to be withdrawing support.",
           "published": "2026-10-16T17:34:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ukraine's Zelenskiy blasts US-Russian diesel deal, welcomes bigger European role in peace process - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQc2hXSnYwZU9ldlRnMk4yckJBZGdyYUJDZWJBa1ZRNFM5bWVmUkRYVmNfWVdtMFlGOG5TX3YwREZYWi1jeGRmLVpTanpzYWltYlR4UVpqblpnUUZuUEdYODVMS3VORFJHaXNIcC1PMVVKVERPTS1GeS1Ra0Y4dVNNb2otSWliai0zcXBaLWRmR3hfc2FMNFZZMTN4Q3F4YzN4NmM1RFg1cGtOdDQ0REFRN1B2RV95Wnp3R0NYUA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQc2hXSnYwZU9ldlRnMk4yckJBZGdyYUJDZWJBa1ZRNFM5bWVmUkRYVmNfWVdtMFlGOG5TX3YwREZYWi1jeGRmLVpTanpzYWltYlR4UVpqblpnUUZuUEdYODVMS3VORFJHaXNIcC1PMVVKVERPTS1GeS1Ra0Y4dVNNb2otSWliai0zcXBaLWRmR3hfc2FMNFZZMTN4Q3F4YzN4NmM1RFg1cGtOdDQ0REFRN1B2RV95Wnp3R0NYUA?oc=5\" target=\"_blank\"&gt;Ukraine's Zelenskiy blasts US-Russian diesel deal, welcomes bigger European role in peace process&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+          "published": "2026-10-16T20:00:09.000Z",
           "score": 8
         },
         {
@@ -155,19 +178,11 @@
           "score": 8
         },
         {
-          "title": "Europe must boost growth or borrow less to keep debt sustainable, IMF says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTFJTlBURGN2am9IMTFlUUppek9EdGlIcEQzMzJscE9LekhoWVE1LVJnVlVhUVFDVTA2WElwQlpQM2M1eG1CVXF5SnR6SnRRNm81akFzeU9VamlZOFA1dVExbWxrRy1heExNVjFyZWI4c0NnNDZTTzgtWVlabVZzQ3RMWFRqYlRKMTdCWktVYlYtZkluS3JwaHVDTWd2RW01VVBTMWFNMXozY3Zhbm1uU0ZPRFg5UQ?oc=5",
+          "title": "Catholics in Africa outnumber those in Europe, Vatican says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRkdsZ3ZDeDkwemFIRXIwQk56ZTREbXgwLUpJbFl0M2dIYVRScHA0S2ZmY0hSWHAzMWVZRENPSGprazR0azBpaDZTNkhoWEUxRFpHc04tT2JCTUpONV9CRW1mS2NBU1dZR2prdlA4eXFRb1d5bXVhRmd3LVduSDREQklsZW9KcFpxT290RE82ODU0MzUxR19wWGVn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTFJTlBURGN2am9IMTFlUUppek9EdGlIcEQzMzJscE9LekhoWVE1LVJnVlVhUVFDVTA2WElwQlpQM2M1eG1CVXF5SnR6SnRRNm81akFzeU9VamlZOFA1dVExbWxrRy1heExNVjFyZWI4c0NnNDZTTzgtWVlabVZzQ3RMWFRqYlRKMTdCWktVYlYtZkluS3JwaHVDTWd2RW01VVBTMWFNMXozY3Zhbm1uU0ZPRFg5UQ?oc=5\" target=\"_blank\"&gt;Europe must boost growth or borrow less to keep debt sustainable, IMF says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-16T10:21:29.000Z",
-          "score": 8
-        },
-        {
-          "title": "Iraq parliament approves remaining cabinet posts, PM deputies - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOYzM1MFlvcHllbHZBY0xabi1MZFBhS0FvdVFadU5oeGswa3hBN25KMmVSVWZ3M1pWaTB3RXNibWpsUGtxM3Y3M25zbkRZbWdNUjhtUG1wWVYwWTZGWFNpZ19INlZkMVBhVEUxMm1fNVlqckRtMWp4R1gyN2NUMzUwNGpHdUIwNDQ2M2VUNEZIWEpwNk10bzZYcWtKdkRUUDVrYVdkSmhpdDBjM09kYURfRUVaNnQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOYzM1MFlvcHllbHZBY0xabi1MZFBhS0FvdVFadU5oeGswa3hBN25KMmVSVWZ3M1pWaTB3RXNibWpsUGtxM3Y3M25zbkRZbWdNUjhtUG1wWVYwWTZGWFNpZ19INlZkMVBhVEUxMm1fNVlqckRtMWp4R1gyN2NUMzUwNGpHdUIwNDQ2M2VUNEZIWEpwNk10bzZYcWtKdkRUUDVrYVdkSmhpdDBjM09kYURfRUVaNnQ?oc=5\" target=\"_blank\"&gt;Iraq parliament approves remaining cabinet posts, PM deputies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-15T20:04:49.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNRkdsZ3ZDeDkwemFIRXIwQk56ZTREbXgwLUpJbFl0M2dIYVRScHA0S2ZmY0hSWHAzMWVZRENPSGprazR0azBpaDZTNkhoWEUxRFpHc04tT2JCTUpONV9CRW1mS2NBU1dZR2prdlA4eXFRb1d5bXVhRmd3LVduSDREQklsZW9KcFpxT290RE82ODU0MzUxR19wWGVn?oc=5\" target=\"_blank\"&gt;Catholics in Africa outnumber those in Europe, Vatican says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-16T10:46:37.000Z",
           "score": 8
         },
         {
@@ -177,14 +192,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPVU5SVzFTSk9Hd2RpR3VCc2lINWtMc1QyUTB0QmFfbW12WEt3aktMU2p3ZUlMbnN5MGNVbS1zY1pTUEc5c0Qzd1JodGcwNnBzOWhNSHhjcVlLTm9tNUVDQVBCVXZ5clNCT1pscnVwV2hVZmJOc2lUeFFFbzNDWU93U2kwSkdGdDRCNnBqYkpIcTYydmx2UkJYWjltV1plLVZRcTctdFB2MU5zdGlETXN1SW43ZHc4UQ?oc=5\" target=\"_blank\"&gt;Sterling set for third weekly rise against euro, hits 3-week high vs dollar&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-16T09:38:20.000Z",
           "score": 8
+        },
+        {
+          "title": "Europe must boost growth or borrow less to keep debt sustainable, IMF says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTFJTlBURGN2am9IMTFlUUppek9EdGlIcEQzMzJscE9LekhoWVE1LVJnVlVhUVFDVTA2WElwQlpQM2M1eG1CVXF5SnR6SnRRNm81akFzeU9VamlZOFA1dVExbWxrRy1heExNVjFyZWI4c0NnNDZTTzgtWVlabVZzQ3RMWFRqYlRKMTdCWktVYlYtZkluS3JwaHVDTWd2RW01VVBTMWFNMXozY3Zhbm1uU0ZPRFg5UQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTFJTlBURGN2am9IMTFlUUppek9EdGlIcEQzMzJscE9LekhoWVE1LVJnVlVhUVFDVTA2WElwQlpQM2M1eG1CVXF5SnR6SnRRNm81akFzeU9VamlZOFA1dVExbWxrRy1heExNVjFyZWI4c0NnNDZTTzgtWVlabVZzQ3RMWFRqYlRKMTdCWktVYlYtZkluS3JwaHVDTWd2RW01VVBTMWFNMXozY3Zhbm1uU0ZPRFg5UQ?oc=5\" target=\"_blank\"&gt;Europe must boost growth or borrow less to keep debt sustainable, IMF says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-16T10:21:29.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 412,
-    "articlesLast24h": 157,
-    "afterDedup": 149,
+    "totalArticlesScanned": 410,
+    "articlesLast24h": 156,
+    "afterDedup": 148,
     "feedsQueried": 19
   }
 }
