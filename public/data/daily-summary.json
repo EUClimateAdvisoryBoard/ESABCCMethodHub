@@ -1,12 +1,12 @@
 {
   "date": "2026-10-17",
-  "generatedAt": "2026-10-17T09:06:04.976Z",
+  "generatedAt": "2026-10-17T14:08:47.552Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 17 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Statement by President von der Leyen at the joint press conference with President Costa following the meeting of the European Council of October 2026",
-      "summary": "European Commission Statement Brussels, 16 Oct 2026 We have had a long and dense European Council. Let me touch on some of the main topics, starting with European competitiveness and I will go straight into energy. Households and industry are paying the price for a war far beyond our borders. Since the start of the war in the Middle East, costs for imported fossil fuel have risen by EUR 106 billion, without a single additional molecule of energy. Gas prices have risen around 140% since late Febr",
+      "headline": "US voters want more action on global heating. Why are Democrats and Republicans staying silent?",
+      "summary": "&lt;p&gt;Polls show that Democrats and Republicans in battleground states want to hear more from candidates about the climate crisis&lt;/p&gt;&lt;p&gt;Most Americans feel unease or alarm about the climate crisis and, in both red and blue states, want to know how political leaders are going to fix it. But in midterm election campaigns across the US, candidates have responded to this desire with near silence.&lt;/p&gt;&lt;p&gt;People in the US have this year endured a &lt;a href=\"https://www.ncei.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,6 +15,12 @@
       "summary": "ADDIS ABABA, Oct 16 &#8211; The IPCC Chair, Jim Skea, suspended tonight the 65th Plenary Session in Addis Ababa after the meeting ran over its planned duration and many delegations from least developed countries and Small Island Developing States had to leave. The Chair’s decision safeguards and upholds the inclusivity of IPCC plenaries where the [&#8230;]",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "EXCLUSIVE: US strikes one-year deal to fund maternal and newborn health donations in poorest countries - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxPNDlyZDhKeUV5SU9JeGd5ZkJtNDIyS3RnZHRlalZyMkVNWXlTRjdFMWFuZEQ5dkkzTkh0M2toTGNGQXJMRndPcXFRbWRpSmg4Z0NtNmZUdkY2bklYci02cWVFUjJ4bUZNWjZuWTJfMWU3MzVRZmdtMkE2cFFhcWhHT3hUSzI5WUdsMjc1RXBqRW1zX0lqZE9nRjNjQlhRU2lJcFVaRXNuVS11TjlPaHJOajh3c0RiTFlWOUQ0d1VTcG1lZHhZZEQyeTRybndweTJRUW1WMHV4bVFoZzZJTEs2UkwzMW92cnM?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: US strikes one-year deal to fund maternal and newborn health donations in poorest countries&lt;/a&g",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -28,22 +34,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Statement by President von der Leyen at the joint press conference with President Costa following the meeting of the European Council of October 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2190",
-          "source": "European Commission",
-          "description": "European Commission Statement Brussels, 16 Oct 2026 We have had a long and dense European Council. Let me touch on some of the main topics, starting with European competitiveness and I will go straight into energy. Households and industry are paying the price for a war far beyond our borders. Since the start of the war in the Middle East, costs for imported fossil fuel have risen by EUR 106 billion, without a single additional molecule of energy. Gas prices have risen around 140% since late Febr",
-          "published": "2026-10-16T11:15:55.000Z",
-          "score": 20
-        },
-        {
-          "title": "Under US pressure, World Bank says it will back gas &#8220;where appropriate&#8221;",
-          "link": "https://www.climatechangenews.com/2026/10/16/under-us-pressure-world-bank-says-it-will-back-gas-where-appropriate/",
-          "source": "Climate Home News",
-          "description": "The US wants the World Bank to expand its gas support while climate campaigners are pushing for it to end - its head spoke this week of limited backing for the fossil fuel The post Under US pressure, World Bank says it will back gas &#8220;where appropriate&#8221; appeared first on Climate Home News.",
-          "published": "2026-10-16T11:54:15.000Z",
-          "score": 10
-        },
-        {
           "title": "US voters want more action on global heating. Why are Democrats and Republicans staying silent?",
           "link": "https://www.theguardian.com/us-news/2026/oct/16/midterms-voters-climate-crisis-candidates",
           "source": "The Guardian - Climate",
@@ -52,11 +42,27 @@
           "score": 4
         },
         {
+          "title": "Russia wants blackout in Ukraine as winter comes — Zelenskyy",
+          "link": "https://www.dw.com/en/russia-wants-blackout-in-ukraine-as-winter-comes-zelenskyy/a-79686703?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Ukrainian President Zelenskyy says Russia is trying to cut electricity and heating to civilians ahead of winter. He also called the US president&#039;s waiver of new sanctions on Moscow a boost for Vladimir Putin.",
+          "published": "2026-10-17T11:34:00.000Z",
+          "score": 2
+        },
+        {
           "title": "Greenpeace activists occupy Woodside gas project unit off Western Australia - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQeGM2Q0Nob2NpUjJsLW5HWGR6WDhyNGFDSUFRZ2dnVEpGbFpfY1lfcTdYbzRfLVZOT19DNTZ2a1ZXS21Ic1JPV2VVM1JoNmlJOXVJbE9qQVBmaUgwSHRNVzl5UFRfOW5WMEtJLW9Ncl9wRUstblp6ZXExVUg2OURsSE10Um1FU1RpbGh5aEdUTFdwUmYwZ1A5TURpdE5qRzZ2dGdsTXF3U0x2dDBWRHM0RmFTcVFIQ3ZVdTh2UHpaQUNzVUNrYUE?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQeGM2Q0Nob2NpUjJsLW5HWGR6WDhyNGFDSUFRZ2dnVEpGbFpfY1lfcTdYbzRfLVZOT19DNTZ2a1ZXS21Ic1JPV2VVM1JoNmlJOXVJbE9qQVBmaUgwSHRNVzl5UFRfOW5WMEtJLW9Ncl9wRUstblp6ZXExVUg2OURsSE10Um1FU1RpbGh5aEdUTFdwUmYwZ1A5TURpdE5qRzZ2dGdsTXF3U0x2dDBWRHM0RmFTcVFIQ3ZVdTh2UHpaQUNzVUNrYUE?oc=5\" target=\"_blank\"&gt;Greenpeace activists occupy Woodside gas project unit off Western Australia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-17T06:21:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Tear gas, clashes hit French cities in cost-of-living protests - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNQ3ZSMTR3dmZDamlnT3EyMWx2U1hma3VycjFxblg3SmxXMi1mUEhibjJVTV8ySGRheTEyVndBWEF4em1sbEdoZ0pKcU0tS0JVSzVVS3VZdUVrOXdHNVNYdThleU0zaDE2RXpwMWxyYURCNGt1akVuRUF0aWhYY1VkQTV6cG9UeWd2eVRjTXV6U2V2NnpCeS1zMUl5M2N3Wk16a0t3ZQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxNQ3ZSMTR3dmZDamlnT3EyMWx2U1hma3VycjFxblg3SmxXMi1mUEhibjJVTV8ySGRheTEyVndBWEF4em1sbEdoZ0pKcU0tS0JVSzVVS3VZdUVrOXdHNVNYdThleU0zaDE2RXpwMWxyYURCNGt1akVuRUF0aWhYY1VkQTV6cG9UeWd2eVRjTXV6U2V2NnpCeS1zMUl5M2N3Wk16a0t3ZQ?oc=5\" target=\"_blank\"&gt;Tear gas, clashes hit French cities in cost-of-living protests&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-17T05:06:00.000Z",
           "score": 2
         }
       ]
@@ -74,14 +80,6 @@
           "score": 15
         },
         {
-          "title": "Daily News 16 / 10 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_2189",
-          "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 16 Oct 2026 Commission sets out new strategy on combating trafficking in human beings \r\nToday, the European Commission sets out a new strategy to combat trafficking in human...",
-          "published": "2026-10-16T09:38:24.000Z",
-          "score": 14
-        },
-        {
           "title": "UN’s loss and damage fund set to give Nepal $20m for flood recovery",
           "link": "https://www.climatechangenews.com/2026/10/16/uns-loss-and-damage-fund-set-to-give-nepal-20m-for-flood-recovery/",
           "source": "Climate Home News",
@@ -90,27 +88,44 @@
           "score": 13
         },
         {
-          "title": "COP17: Which countries have released new pledges to tackle nature loss?",
-          "link": "https://www.carbonbrief.org/cop17-which-countries-have-released-new-pledges-to-tackle-nature-loss",
-          "source": "Carbon Brief",
-          "description": "Some 58% of countries have met a UN call to submit new pledges on addressing nature loss – two years&#8230; The post COP17: Which countries have released new pledges to tackle nature loss? appeared first on Carbon Brief.",
-          "published": "2026-10-16T11:54:59.000Z",
-          "score": 10
+          "title": "Brazil sees record fall in Amazon deforestation as key election looms",
+          "link": "https://www.bbc.co.uk/news/articles/cqe8rzg6zl00o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The Amazon rainforest is a crucial buffer against climate change - but deforestation had expanded under former president Jair Bolsonaro.",
+          "published": "2026-10-17T02:33:09.000Z",
+          "score": 7
         },
         {
-          "title": "The EU wants an AI revolution. But on whose terms?",
-          "link": "https://www.dw.com/en/the-eu-wants-an-ai-revolution-but-on-whose-terms/a-79673456?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Evacuation orders as fast-moving California wildfire burns homes",
+          "link": "https://www.bbc.co.uk/news/articles/c6vgjnk8nw2wo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Fanned by the fierce Santa Ana winds, the Norte Fire is one of 13 burning across the state.",
+          "published": "2026-10-17T01:36:39.000Z",
+          "score": 7
+        },
+        {
+          "title": "Brazil: Amazon deforestation lowest in nearly 40 years",
+          "link": "https://www.dw.com/en/brazil-amazon-deforestation-lowest-in-nearly-40-years/a-79684906?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "As the US and China race ahead, the European Union seeks to boost its economy with AI. Can it compete while protecting workers, safety and the climate?",
-          "published": "2026-10-16T13:12:00.000Z",
-          "score": 10
+          "description": "The latest figures show that 3,335 square kilometers of the Amazon rainforest were cleared in the year ending in July, the lowest level since 1988. The drop has been described as an &quot;historic achievement.&quot;",
+          "published": "2026-10-16T22:30:00.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "EXCLUSIVE: US strikes one-year deal to fund maternal and newborn health donations in poorest countries - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPNDlyZDhKeUV5SU9JeGd5ZkJtNDIyS3RnZHRlalZyMkVNWXlTRjdFMWFuZEQ5dkkzTkh0M2toTGNGQXJMRndPcXFRbWRpSmg4Z0NtNmZUdkY2bklYci02cWVFUjJ4bUZNWjZuWTJfMWU3MzVRZmdtMkE2cFFhcWhHT3hUSzI5WUdsMjc1RXBqRW1zX0lqZE9nRjNjQlhRU2lJcFVaRXNuVS11TjlPaHJOajh3c0RiTFlWOUQ0d1VTcG1lZHhZZEQyeTRybndweTJRUW1WMHV4bVFoZzZJTEs2UkwzMW92cnM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxPNDlyZDhKeUV5SU9JeGd5ZkJtNDIyS3RnZHRlalZyMkVNWXlTRjdFMWFuZEQ5dkkzTkh0M2toTGNGQXJMRndPcXFRbWRpSmg4Z0NtNmZUdkY2bklYci02cWVFUjJ4bUZNWjZuWTJfMWU3MzVRZmdtMkE2cFFhcWhHT3hUSzI5WUdsMjc1RXBqRW1zX0lqZE9nRjNjQlhRU2lJcFVaRXNuVS11TjlPaHJOajh3c0RiTFlWOUQ0d1VTcG1lZHhZZEQyeTRybndweTJRUW1WMHV4bVFoZzZJTEs2UkwzMW92cnM?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: US strikes one-year deal to fund maternal and newborn health donations in poorest countries&lt;/a&g",
+          "published": "2026-10-16T21:00:29.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -155,14 +170,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU promotes sovereign, trusted AI as it struggles to catch US and China",
-          "link": "https://www.dw.com/en/eu-promotes-sovereign-trusted-ai-as-it-struggles-to-catch-us-and-china/a-79667770?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "At an international AI summit in Dublin, EU leaders promoted trusted and independent artificial intelligence. Critics question whether the bloc can close the gap with the US and China while maintaining strict regulation.",
-          "published": "2026-10-16T09:07:00.000Z",
-          "score": 12
-        },
-        {
           "title": "Germany, France agree on deal to support Europe&#039;s struggling car industry",
           "link": "https://www.dw.com/en/germany-france-agree-on-deal-to-support-europe-s-struggling-car-industry/a-79678595?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -171,36 +178,44 @@
           "score": 8
         },
         {
-          "title": "Catholics in Africa outnumber those in Europe, Vatican says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRkdsZ3ZDeDkwemFIRXIwQk56ZTREbXgwLUpJbFl0M2dIYVRScHA0S2ZmY0hSWHAzMWVZRENPSGprazR0azBpaDZTNkhoWEUxRFpHc04tT2JCTUpONV9CRW1mS2NBU1dZR2prdlA4eXFRb1d5bXVhRmd3LVduSDREQklsZW9KcFpxT290RE82ODU0MzUxR19wWGVn?oc=5",
+          "title": "EU to propose import curbs on other Chinese sectors, says EU chief - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQVFF1dWFoY2NKZzJmU2FwQkNSVW02MXFSYV90RUtPUlFWTnVvbl9UQi12OGJlc015SXRDZ3NaWjZ0Rm5sTDFIdXE2YndSbWJ0ZnVMRmRCcGljSkhtQVN4UURFUXpCa1UycnRBb2hCb1R1bnhaZE5SN2pacmVlNXlEX3ZKN2VNOVFiUGI0MHNjdjJrdjV1UE1GbUx4ZktkeG54NlBBai1ncmxQWFk?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNRkdsZ3ZDeDkwemFIRXIwQk56ZTREbXgwLUpJbFl0M2dIYVRScHA0S2ZmY0hSWHAzMWVZRENPSGprazR0azBpaDZTNkhoWEUxRFpHc04tT2JCTUpONV9CRW1mS2NBU1dZR2prdlA4eXFRb1d5bXVhRmd3LVduSDREQklsZW9KcFpxT290RE82ODU0MzUxR19wWGVn?oc=5\" target=\"_blank\"&gt;Catholics in Africa outnumber those in Europe, Vatican says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-16T10:46:37.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQVFF1dWFoY2NKZzJmU2FwQkNSVW02MXFSYV90RUtPUlFWTnVvbl9UQi12OGJlc015SXRDZ3NaWjZ0Rm5sTDFIdXE2YndSbWJ0ZnVMRmRCcGljSkhtQVN4UURFUXpCa1UycnRBb2hCb1R1bnhaZE5SN2pacmVlNXlEX3ZKN2VNOVFiUGI0MHNjdjJrdjV1UE1GbUx4ZktkeG54NlBBai1ncmxQWFk?oc=5\" target=\"_blank\"&gt;EU to propose import curbs on other Chinese sectors, says EU chief&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-16T17:55:06.000Z",
           "score": 8
         },
         {
-          "title": "Sterling set for third weekly rise against euro, hits 3-week high vs dollar - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVU5SVzFTSk9Hd2RpR3VCc2lINWtMc1QyUTB0QmFfbW12WEt3aktMU2p3ZUlMbnN5MGNVbS1zY1pTUEc5c0Qzd1JodGcwNnBzOWhNSHhjcVlLTm9tNUVDQVBCVXZ5clNCT1pscnVwV2hVZmJOc2lUeFFFbzNDWU93U2kwSkdGdDRCNnBqYkpIcTYydmx2UkJYWjltV1plLVZRcTctdFB2MU5zdGlETXN1SW43ZHc4UQ?oc=5",
+          "title": "Swiss finance minister warns steep European debt could trigger euro crisis - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTmwxaWZfbXJ1NjFHRGhZbGJQM3h4TVl2czdNajJCdnhVWWcteWRNQW9KUS1UaXlNa3R0WERESHRIWHB4cGY0VVJDbXZIaUh5YVlYN3ZCX3BROUtUVTIwNVF6TGdudzB3LWw4QzFLanZHTjRPYk02NHRHb3VaVEhEUUctQmdiUjVnYzBQVmtCLTNWSERSOEpfT3hLZFNSWkJKbkdjLUIyenNSZHVVT3RnV1lVUG1JRVlwM2g4?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPVU5SVzFTSk9Hd2RpR3VCc2lINWtMc1QyUTB0QmFfbW12WEt3aktMU2p3ZUlMbnN5MGNVbS1zY1pTUEc5c0Qzd1JodGcwNnBzOWhNSHhjcVlLTm9tNUVDQVBCVXZ5clNCT1pscnVwV2hVZmJOc2lUeFFFbzNDWU93U2kwSkdGdDRCNnBqYkpIcTYydmx2UkJYWjltV1plLVZRcTctdFB2MU5zdGlETXN1SW43ZHc4UQ?oc=5\" target=\"_blank\"&gt;Sterling set for third weekly rise against euro, hits 3-week high vs dollar&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-16T09:38:20.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTmwxaWZfbXJ1NjFHRGhZbGJQM3h4TVl2czdNajJCdnhVWWcteWRNQW9KUS1UaXlNa3R0WERESHRIWHB4cGY0VVJDbXZIaUh5YVlYN3ZCX3BROUtUVTIwNVF6TGdudzB3LWw4QzFLanZHTjRPYk02NHRHb3VaVEhEUUctQmdiUjVnYzBQVmtCLTNWSERSOEpfT3hLZFNSWkJKbkdjLUIyenNSZHVVT3RnV1lVUG1JRVlwM2g4?oc=5\" target=\"_blank\"&gt;Swiss finance minister warns steep European debt could trigger euro crisis&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-16T17:33:43.000Z",
           "score": 8
         },
         {
-          "title": "Europe must boost growth or borrow less to keep debt sustainable, IMF says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTFJTlBURGN2am9IMTFlUUppek9EdGlIcEQzMzJscE9LekhoWVE1LVJnVlVhUVFDVTA2WElwQlpQM2M1eG1CVXF5SnR6SnRRNm81akFzeU9VamlZOFA1dVExbWxrRy1heExNVjFyZWI4c0NnNDZTTzgtWVlabVZzQ3RMWFRqYlRKMTdCWktVYlYtZkluS3JwaHVDTWd2RW01VVBTMWFNMXozY3Zhbm1uU0ZPRFg5UQ?oc=5",
+          "title": "Australia confirms first H5N1 bird flu case on sub-Antarctic Macquarie Island - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNOUM1aXFXQ2RZMzE4aUd0UVBxQXExTUVwNWlkU0hkOW1iRGRJZC1ZSTJwMWY5eGFNaGxKOWU2TkRQNHJoLVNrdUQwdndtckF2NkxrT2VYWXdTOTdhSkluREYxbHQzTzhGN1I4ZnJBT0c3dW1aLXNrYXJjQmZNRHB5SHZ6bzRrOWZPRnViVi1KNGJIbkxHOGdTUEtsRDFleGZqVVAxamlTU2pESmFBU1JCNUg2REU0Mm9YS2hER0JDM0wtSG9RcFhWVzU3Sk1LWlBKWFF1MTZRTzRfd3Y5VVZN?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQLTFJTlBURGN2am9IMTFlUUppek9EdGlIcEQzMzJscE9LekhoWVE1LVJnVlVhUVFDVTA2WElwQlpQM2M1eG1CVXF5SnR6SnRRNm81akFzeU9VamlZOFA1dVExbWxrRy1heExNVjFyZWI4c0NnNDZTTzgtWVlabVZzQ3RMWFRqYlRKMTdCWktVYlYtZkluS3JwaHVDTWd2RW01VVBTMWFNMXozY3Zhbm1uU0ZPRFg5UQ?oc=5\" target=\"_blank\"&gt;Europe must boost growth or borrow less to keep debt sustainable, IMF says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-16T10:21:29.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxNOUM1aXFXQ2RZMzE4aUd0UVBxQXExTUVwNWlkU0hkOW1iRGRJZC1ZSTJwMWY5eGFNaGxKOWU2TkRQNHJoLVNrdUQwdndtckF2NkxrT2VYWXdTOTdhSkluREYxbHQzTzhGN1I4ZnJBT0c3dW1aLXNrYXJjQmZNRHB5SHZ6bzRrOWZPRnViVi1KNGJIbkxHOGdTUEtsRDFleGZqVVAxamlTU2pESmFBU1JCNUg2REU0Mm9YS2hER0JDM0wtSG9RcFhWVzU3Sk1LWlBKWFF1MTZRTzRfd3Y5VVZN?oc=5\" target=\"_blank\"&gt;Australia confirms first H5N1 bird flu case on sub-Antarctic Macquarie Island&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color",
+          "published": "2026-10-17T03:05:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Trump waives key Russia-related sanctions, tariffs before they take effect under new law - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQUWRsWXNvbUVMb01QdTFTbEhpSGhZLVZYVXZramJkQjg2RXUzbXRaZjZlcnY1QTNoeU1zQzhhOEhwOFZVSkRySFFZNWI3RjZtUHJLaDhybEhWVzFBTF9uVlZjWlNSQk5aX25iZ0EySjRQYjR5aVRiM1VERjVFWmpTOTR0Y1ZhNUtaTHpTaWdZZVRPUmppTUJtYl9IZlhGQnM3WkVSNmRreVBjaDF5anFfSHhqN1ZUc2p3cjRoU0pyUzRkZjlBM05B?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQUWRsWXNvbUVMb01QdTFTbEhpSGhZLVZYVXZramJkQjg2RXUzbXRaZjZlcnY1QTNoeU1zQzhhOEhwOFZVSkRySFFZNWI3RjZtUHJLaDhybEhWVzFBTF9uVlZjWlNSQk5aX25iZ0EySjRQYjR5aVRiM1VERjVFWmpTOTR0Y1ZhNUtaTHpTaWdZZVRPUmppTUJtYl9IZlhGQnM3WkVSNmRreVBjaDF5anFfSHhqN1ZUc2p3cjRoU0pyUzRkZjlBM05B?oc=5\" target=\"_blank\"&gt;Trump waives key Russia-related sanctions, tariffs before they take effect under new law&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+          "published": "2026-10-17T01:17:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 405,
-    "articlesLast24h": 162,
-    "afterDedup": 147,
+    "totalArticlesScanned": 401,
+    "articlesLast24h": 151,
+    "afterDedup": 135,
     "feedsQueried": 19
   }
 }
