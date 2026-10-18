@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-17",
-  "generatedAt": "2026-10-17T19:03:58.115Z",
+  "date": "2026-10-18",
+  "generatedAt": "2026-10-18T00:42:07.844Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Saturday, 17 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Sunday, 18 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
       "headline": "Russia wants blackout in Ukraine as winter comes — Zelenskyy",
@@ -11,14 +11,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "65th Plenary Session of IPCC suspended",
-      "summary": "ADDIS ABABA, Oct 16 &#8211; The IPCC Chair, Jim Skea, suspended tonight the 65th Plenary Session in Addis Ababa after the meeting ran over its planned duration and many delegations from least developed countries and Small Island Developing States had to leave. The Chair’s decision safeguards and upholds the inclusivity of IPCC plenaries where the [&#8230;]",
+      "headline": "Fast-moving California wildfire burns homes as people are ordered to leave",
+      "summary": "Fanned by the fierce Santa Ana winds, the Norte Fire is one of 13 burning across the state.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "EXCLUSIVE: US strikes one-year deal to fund maternal and newborn health donations in poorest countries - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxPNDlyZDhKeUV5SU9JeGd5ZkJtNDIyS3RnZHRlalZyMkVNWXlTRjdFMWFuZEQ5dkkzTkh0M2toTGNGQXJMRndPcXFRbWRpSmg4Z0NtNmZUdkY2bklYci02cWVFUjJ4bUZNWjZuWTJfMWU3MzVRZmdtMkE2cFFhcWhHT3hUSzI5WUdsMjc1RXBqRW1zX0lqZE9nRjNjQlhRU2lJcFVaRXNuVS11TjlPaHJOajh3c0RiTFlWOUQ0d1VTcG1lZHhZZEQyeTRybndweTJRUW1WMHV4bVFoZzZJTEs2UkwzMW92cnM?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: US strikes one-year deal to fund maternal and newborn health donations in poorest countries&lt;/a&g",
+      "headline": "Mongolia becomes new donor to World Bank's fund for poorest countries - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPODVoR0lEcE5fcDI2a2tWRDFBNUJpZ3c0QjlUTnV6M3ZPREJNcmVyTjkzSjM3SGg2S2VUQkhrUDhsME1uYXBHMU5MQUNwcEpIOVIyX1ZIcDJpbEdTdm5VN1VEaGNSZ0JqekFGeTFyZGlCOU1SRE4yZUxrcjU2TXBjLVVjbHhKZXhXRzBURFhycVJoTEZwaDRTdHdUakNoWEg3OHlUVjc0TWN6WDlOaDA0ZWlmbkVYdUE?oc=5\" target=\"_blank\"&gt;Mongolia becomes new donor to World Bank's fund for poorest countries&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -56,12 +56,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "65th Plenary Session of IPCC suspended",
-          "link": "https://www.ipcc.ch/2026/10/16/65th-plenary-session-of-ipcc/",
-          "source": "IPCC",
-          "description": "ADDIS ABABA, Oct 16 &#8211; The IPCC Chair, Jim Skea, suspended tonight the 65th Plenary Session in Addis Ababa after the meeting ran over its planned duration and many delegations from least developed countries and Small Island Developing States had to leave. The Chair’s decision safeguards and upholds the inclusivity of IPCC plenaries where the [&#8230;]",
-          "published": "2026-10-16T19:41:51.000Z",
-          "score": 15
+          "title": "Fast-moving California wildfire burns homes as people are ordered to leave",
+          "link": "https://www.bbc.co.uk/news/articles/c6vgjnk8nw2wo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Fanned by the fierce Santa Ana winds, the Norte Fire is one of 13 burning across the state.",
+          "published": "2026-10-17T19:13:21.000Z",
+          "score": 7
         },
         {
           "title": "Brazil sees record fall in Amazon deforestation as key election looms",
@@ -72,28 +72,28 @@
           "score": 7
         },
         {
-          "title": "Fast-moving California wildfire burns homes as people are ordered to leave",
-          "link": "https://www.bbc.co.uk/news/articles/c6vgjnk8nw2wo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Most NSW homes destroyed in black summer bushfires were within 100 metres of vegetation",
+          "link": "https://www.theguardian.com/australia-news/2026/oct/18/nsw-homes-destroyed-in-black-summer-bushfires-in-high-risk-buffer-zone",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;&lt;strong&gt;Exclusive&lt;/strong&gt;: Research confirms official advice about high-risk properties and warns worsening conditions will make more homes unsafe&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&g",
+          "published": "2026-10-17T19:00:40.000Z",
+          "score": 4
+        },
+        {
+          "title": "Hiding in plane sight: the invisible turbulence that can strike out of a clear blue sky",
+          "link": "https://www.theguardian.com/world/ng-interactive/2026/oct/18/invisible-clear-air-turbulence-airline-safety-climate-crisis",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;As the planet warms, airlines are grappling with what this means for air travel – and for the passengers who simply refuse to keep their seatbelts fastened&lt;/p&gt;&lt;p&gt;It was a swelteringly hot afternoon in south-west Myanmar on 21 May 2024. Tropical thunderstorms, showers and highs of 36C were forecast for the area around the Irrawaddy Basin. High above, monsoonal heat and humidity were building into a vast convective column of water vapour, a towering cumulonimbus cloud soaring ",
+          "published": "2026-10-17T19:00:40.000Z",
+          "score": 2
+        },
+        {
+          "title": "Avian flu and costs among reasons for loss of captive birds at Castle Espie",
+          "link": "https://www.bbc.co.uk/news/articles/c6m24e1ln130o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Fanned by the fierce Santa Ana winds, the Norte Fire is one of 13 burning across the state.",
-          "published": "2026-10-17T01:36:39.000Z",
-          "score": 7
-        },
-        {
-          "title": "Brazil: Amazon deforestation lowest in nearly 40 years",
-          "link": "https://www.dw.com/en/brazil-amazon-deforestation-lowest-in-nearly-40-years/a-79684906?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The latest figures show that 3,335 square kilometers of the Amazon rainforest were cleared in the year ending in July, the lowest level since 1988. The drop has been described as an &quot;historic achievement.&quot;",
-          "published": "2026-10-16T22:30:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Deforestation in Brazil's Amazon falls to all-time low - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTlVHQ2pKM3VsSVF2NFY3N0dPVWc0Wm9VcDRwUURrSHBHM1pxbHo0MFN2dkdSMzRoUGhIX1k5eEE5enYzMElzSmFieW9KMklCbzEwRmJVTVVoeTRoa0ttREt5VzFLZzZGd1hyMkNUdlBrdzV3aHFYS0FOeEFXanc0QzBzZnVWMXFmTTdBZkJ2YmFTcUQwbGJLb3N4YXh1TmRRNkRsUW5Tc3RGTzhodGhzUnRn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPTlVHQ2pKM3VsSVF2NFY3N0dPVWc0Wm9VcDRwUURrSHBHM1pxbHo0MFN2dkdSMzRoUGhIX1k5eEE5enYzMElzSmFieW9KMklCbzEwRmJVTVVoeTRoa0ttREt5VzFLZzZGd1hyMkNUdlBrdzV3aHFYS0FOeEFXanc0QzBzZnVWMXFmTTdBZkJ2YmFTcUQwbGJLb3N4YXh1TmRRNkRsUW5Tc3RGTzhodGhzUnRn?oc=5\" target=\"_blank\"&gt;Deforestation in Brazil's Amazon falls to all-time low&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-16T21:26:29.000Z",
-          "score": 7
+          "description": "Difficulties in transporting animals since Brexit has contributed to the decline in the number of captive birds.",
+          "published": "2026-10-17T05:10:33.000Z",
+          "score": 2
         }
       ]
     },
@@ -102,19 +102,19 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "EXCLUSIVE: US strikes one-year deal to fund maternal and newborn health donations in poorest countries - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPNDlyZDhKeUV5SU9JeGd5ZkJtNDIyS3RnZHRlalZyMkVNWXlTRjdFMWFuZEQ5dkkzTkh0M2toTGNGQXJMRndPcXFRbWRpSmg4Z0NtNmZUdkY2bklYci02cWVFUjJ4bUZNWjZuWTJfMWU3MzVRZmdtMkE2cFFhcWhHT3hUSzI5WUdsMjc1RXBqRW1zX0lqZE9nRjNjQlhRU2lJcFVaRXNuVS11TjlPaHJOajh3c0RiTFlWOUQ0d1VTcG1lZHhZZEQyeTRybndweTJRUW1WMHV4bVFoZzZJTEs2UkwzMW92cnM?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxPNDlyZDhKeUV5SU9JeGd5ZkJtNDIyS3RnZHRlalZyMkVNWXlTRjdFMWFuZEQ5dkkzTkh0M2toTGNGQXJMRndPcXFRbWRpSmg4Z0NtNmZUdkY2bklYci02cWVFUjJ4bUZNWjZuWTJfMWU3MzVRZmdtMkE2cFFhcWhHT3hUSzI5WUdsMjc1RXBqRW1zX0lqZE9nRjNjQlhRU2lJcFVaRXNuVS11TjlPaHJOajh3c0RiTFlWOUQ0d1VTcG1lZHhZZEQyeTRybndweTJRUW1WMHV4bVFoZzZJTEs2UkwzMW92cnM?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: US strikes one-year deal to fund maternal and newborn health donations in poorest countries&lt;/a&g",
-          "published": "2026-10-16T21:00:29.000Z",
-          "score": 2
-        },
-        {
           "title": "Mongolia becomes new donor to World Bank's fund for poorest countries - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPODVoR0lEcE5fcDI2a2tWRDFBNUJpZ3c0QjlUTnV6M3ZPREJNcmVyTjkzSjM3SGg2S2VUQkhrUDhsME1uYXBHMU5MQUNwcEpIOVIyX1ZIcDJpbEdTdm5VN1VEaGNSZ0JqekFGeTFyZGlCOU1SRE4yZUxrcjU2TXBjLVVjbHhKZXhXRzBURFhycVJoTEZwaDRTdHdUakNoWEg3OHlUVjc0TWN6WDlOaDA0ZWlmbkVYdUE?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPODVoR0lEcE5fcDI2a2tWRDFBNUJpZ3c0QjlUTnV6M3ZPREJNcmVyTjkzSjM3SGg2S2VUQkhrUDhsME1uYXBHMU5MQUNwcEpIOVIyX1ZIcDJpbEdTdm5VN1VEaGNSZ0JqekFGeTFyZGlCOU1SRE4yZUxrcjU2TXBjLVVjbHhKZXhXRzBURFhycVJoTEZwaDRTdHdUakNoWEg3OHlUVjc0TWN6WDlOaDA0ZWlmbkVYdUE?oc=5\" target=\"_blank\"&gt;Mongolia becomes new donor to World Bank's fund for poorest countries&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-17T04:59:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Venezuela expects nearly $76 billion in oil investment over five years, acting president says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNjRrMjhGV0NJUjVPZmZUdm1Da3JxcUFDaW9PTTVhVjZqSUszdzlLMGIwdjk4MFc0UXlUU0ZSZ1h4aGNTMmE1V3ZfdGJNcFVIUVIzbGFwTFdjd2xMVWtLWlBlV21QNlNxY0ZBcXVWTS05Z0c5UnY5d0tIWVFXOEdnLUZUTk84UXB1ektOV3A3OHhXSmxVYnhMZktTMl9PZUFaRGdpUkF4VXlGMlBoWVdhclhOa2p0bFExTTljdWtRZGs1bXM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNjRrMjhGV0NJUjVPZmZUdm1Da3JxcUFDaW9PTTVhVjZqSUszdzlLMGIwdjk4MFc0UXlUU0ZSZ1h4aGNTMmE1V3ZfdGJNcFVIUVIzbGFwTFdjd2xMVWtLWlBlV21QNlNxY0ZBcXVWTS05Z0c5UnY5d0tIWVFXOEdnLUZUTk84UXB1ektOV3A3OHhXSmxVYnhMZktTMl9PZUFaRGdpUkF4VXlGMlBoWVdhclhOa2p0bFExTTljdWtRZGs1bXM?oc=5\" target=\"_blank\"&gt;Venezuela expects nearly $76 billion in oil investment over five years, acting president says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+          "published": "2026-10-17T22:53:43.000Z",
           "score": 2
         }
       ]
@@ -124,19 +124,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Ukrainian President Zelenskyy speaks at EU summit amid spat with Donald Trump",
-          "link": "https://www.dw.com/en/ukrainian-president-zelenskyy-speaks-at-eu-summit-amid-spat-with-donald-trump/a-79684340?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "EU leaders reaffirmed support for Ukraine at the Brussels summit. But souring relations with the US over Russia and Starlink and a big hole in the budget will make for a difficult winter for Ukraine.",
-          "published": "2026-10-16T19:42:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Ukraine's Zelenskiy blasts US-Russian diesel deal, welcomes bigger European role in peace process - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQc2hXSnYwZU9ldlRnMk4yckJBZGdyYUJDZWJBa1ZRNFM5bWVmUkRYVmNfWVdtMFlGOG5TX3YwREZYWi1jeGRmLVpTanpzYWltYlR4UVpqblpnUUZuUEdYODVMS3VORFJHaXNIcC1PMVVKVERPTS1GeS1Ra0Y4dVNNb2otSWliai0zcXBaLWRmR3hfc2FMNFZZMTN4Q3F4YzN4NmM1RFg1cGtOdDQ0REFRN1B2RV95Wnp3R0NYUA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQc2hXSnYwZU9ldlRnMk4yckJBZGdyYUJDZWJBa1ZRNFM5bWVmUkRYVmNfWVdtMFlGOG5TX3YwREZYWi1jeGRmLVpTanpzYWltYlR4UVpqblpnUUZuUEdYODVMS3VORFJHaXNIcC1PMVVKVERPTS1GeS1Ra0Y4dVNNb2otSWliai0zcXBaLWRmR3hfc2FMNFZZMTN4Q3F4YzN4NmM1RFg1cGtOdDQ0REFRN1B2RV95Wnp3R0NYUA?oc=5\" target=\"_blank\"&gt;Ukraine's Zelenskiy blasts US-Russian diesel deal, welcomes bigger European role in peace process&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
-          "published": "2026-10-16T20:00:09.000Z",
+          "title": "European diplomats attacked by Israeli settlers in West Bank",
+          "link": "https://www.bbc.co.uk/news/articles/c962ydpmjm3zo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Israeli military condemns the violence but the prime minister's office says it is part of a \"smear\" campaign.",
+          "published": "2026-10-17T23:52:38.000Z",
           "score": 8
         }
       ]
@@ -145,14 +137,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "West Bank: Israeli settlers attack EU diplomats, French mayor",
-          "link": "https://www.dw.com/en/west-bank-israeli-settlers-attack-eu-diplomats-french-mayor/a-79688819?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A group of Israeli settlers attacked vehicles carrying European diplomats in the West Bank. Belgium has condemned the attack.",
-          "published": "2026-10-17T16:29:00.000Z",
-          "score": 8
-        },
         {
           "title": "Egypt's Sisi seeks parliament's backing to help defend Saudi Arabia if asked - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQ013QTYtQ0JudFVITVllWWh1Y3Y4WXVXOW80UmlXbEw1YXcxSG5RUkc4djV1X255M3BrWFl1ektoZU5vS1pMYzd4MW5jQ19wS3o4NEFDdHEyT3BsdGl6dDRTNXRDTGVKUnFlVkxSamlaVXRRaGhCeTBCblhQaDZUbHh2TlFRbHYzWUQtODRtVDFjdGlyRUxJR3A1OGdXWU1NalRGRnlhTExDbktfdHpWMmpoY1ZpdTlacmtiN0o1TEJaZ28?oc=5",
@@ -170,28 +154,36 @@
           "score": 7
         },
         {
-          "title": "Trump waives key Russia-related sanctions, tariffs before they take effect under new law - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQUWRsWXNvbUVMb01QdTFTbEhpSGhZLVZYVXZramJkQjg2RXUzbXRaZjZlcnY1QTNoeU1zQzhhOEhwOFZVSkRySFFZNWI3RjZtUHJLaDhybEhWVzFBTF9uVlZjWlNSQk5aX25iZ0EySjRQYjR5aVRiM1VERjVFWmpTOTR0Y1ZhNUtaTHpTaWdZZVRPUmppTUJtYl9IZlhGQnM3WkVSNmRreVBjaDF5anFfSHhqN1ZUc2p3cjRoU0pyUzRkZjlBM05B?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQUWRsWXNvbUVMb01QdTFTbEhpSGhZLVZYVXZramJkQjg2RXUzbXRaZjZlcnY1QTNoeU1zQzhhOEhwOFZVSkRySFFZNWI3RjZtUHJLaDhybEhWVzFBTF9uVlZjWlNSQk5aX25iZ0EySjRQYjR5aVRiM1VERjVFWmpTOTR0Y1ZhNUtaTHpTaWdZZVRPUmppTUJtYl9IZlhGQnM3WkVSNmRreVBjaDF5anFfSHhqN1ZUc2p3cjRoU0pyUzRkZjlBM05B?oc=5\" target=\"_blank\"&gt;Trump waives key Russia-related sanctions, tariffs before they take effect under new law&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
-          "published": "2026-10-17T01:17:00.000Z",
-          "score": 6
+          "title": "Violent clashes, looting and buildings ablaze in France as over 1,000 arrested after protests",
+          "link": "https://www.bbc.co.uk/news/articles/c6d937wedj7jo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Disorder broke out in cities across the country on a day in which more than half a million joined cost of living protests.",
+          "published": "2026-10-17T20:52:17.000Z",
+          "score": 2
         },
         {
           "title": "Trump waives several Russia sanctions as row with Zelensky intensifies",
           "link": "https://www.bbc.co.uk/news/articles/cxr5yvzv7rp0o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The US president temporarily ends many restrictions on Moscow recently passed by Congress over \"national security\" concerns.",
-          "published": "2026-10-17T11:56:06.000Z",
+          "published": "2026-10-17T19:19:19.000Z",
+          "score": 2
+        },
+        {
+          "title": "Anti-government protesters battle with police in Albania",
+          "link": "https://www.bbc.co.uk/news/articles/crwydey50xeno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "There were violent clashes between demonstrators and riot police throughout Saturday in the capital Tirana.",
+          "published": "2026-10-17T20:53:00.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 401,
-    "articlesLast24h": 141,
-    "afterDedup": 126,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 128,
+    "afterDedup": 112,
     "feedsQueried": 19
   }
 }
