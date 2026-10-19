@@ -1,15 +1,32 @@
 [
   {
-    "title": "Statement by President von der Leyen at the joint press conference with President Costa following the meeting of the European Council of October 2026",
-    "summary": "European Commission Statement Brussels, 16 Oct 2026 We have had a long and dense European Council. Let me touch on some of the main topics, starting with European competitiveness and I will go straight into energy. Households and industry are paying the price for a war far beyond our borders. Since the start of the war in the Middle East, costs for imported fossil fuel have risen by EUR 106 billion, without a single additional molecule of energy. Gas prices have risen around 140% since late Febr",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2190",
+    "title": "Daily News 19 / 10 / 2026",
+    "summary": "European Commission Daily news Brussels, 19 Oct 2026 Commission invests €3.4 billion in net-zero technology projects \r\nToday, the European Commission has selected 77 European net-zero technology projects to receive...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_2195",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-10-16T11:15:55.000Z",
+    "publishedDate": "2026-10-19T09:24:42.000Z",
+    "tags": []
+  },
+  {
+    "title": "Commission invests €3.4 billion in net-zero technology projects",
+    "summary": "European Commission Press release Brussels, 19 Oct 2026 Today, the European Commission has selected 77 European net-zero technology projects to receive funding support worth €3.4 billion under the second call of the Innovation Fund, launched in December 2025.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2187",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-10-18T22:00:00.000Z",
     "tags": [
-      "energy",
-      "industry"
+      "finance"
     ]
+  },
+  {
+    "title": "EU invests over €390 million in 135 new climate and environment projects",
+    "summary": "European Commission Press release Brussels, 19 Oct 2026 The European Commission has today granted more than €390 million to 135 new projects across Europe under the LIFE programme for environment and climate action.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2184",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-10-18T22:00:00.000Z",
+    "tags": []
   },
   {
     "title": "Daily News 16 / 10 / 2026",
@@ -18,17 +35,6 @@
     "source": "european_commission",
     "sourceLabel": "European Commission",
     "publishedDate": "2026-10-16T09:38:24.000Z",
-    "tags": [
-      "emissions"
-    ]
-  },
-  {
-    "title": "Commission sets out new strategy on combating trafficking in human beings",
-    "summary": "European Commission Press release Brussels, 16 Oct 2026 Today, the European Commission sets out a new strategy to combat trafficking in human beings. In 2023 and 2024, more than 20,000 victims were registered in the EU, a 16.1% increase, though many cases remain unseen. Trafficking takes many forms, including sexual exploitation, labour exploitation, forced criminality, begging and forced marriage.",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2177",
-    "source": "european_commission",
-    "sourceLabel": "European Commission",
-    "publishedDate": "2026-10-15T22:00:00.000Z",
     "tags": [
       "emissions"
     ]
