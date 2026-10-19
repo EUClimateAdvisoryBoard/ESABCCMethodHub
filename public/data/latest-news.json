@@ -1,5 +1,16 @@
 [
   {
+    "title": "EU Leaders discuss energy prices, budget, Ukraine during two-day summit in Brussels",
+    "summary": "European Commission News Brussels, 19 Oct 2026 \r\nEuropean Commission President Ursula von der Leyen participated in the meeting of the European Council of 16-17 October, a dense summit that touched on current...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ac_26_2197",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-10-19T12:07:03.000Z",
+    "tags": [
+      "energy"
+    ]
+  },
+  {
     "title": "Daily News 19 / 10 / 2026",
     "summary": "European Commission Daily news Brussels, 19 Oct 2026 Commission invests €3.4 billion in net-zero technology projects \r\nToday, the European Commission has selected 77 European net-zero technology projects to receive...",
     "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_2195",
@@ -21,22 +32,11 @@
   },
   {
     "title": "EU invests over €390 million in 135 new climate and environment projects",
-    "summary": "European Commission Press release Brussels, 19 Oct 2026 The European Commission has today granted more than €390 million to 135 new projects across Europe under the LIFE programme for environment and climate action.",
+    "summary": "European Commission Press release Brussels, 19 Oct 2026 The European Commission has today granted more than ��390 million to 135 new projects across Europe under the LIFE programme for environment and climate action.",
     "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2184",
     "source": "european_commission",
     "sourceLabel": "European Commission",
     "publishedDate": "2026-10-18T22:00:00.000Z",
     "tags": []
-  },
-  {
-    "title": "Daily News 16 / 10 / 2026",
-    "summary": "European Commission Daily news Brussels, 16 Oct 2026 Commission sets out new strategy on combating trafficking in human beings \r\nToday, the European Commission sets out a new strategy to combat trafficking in human...",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_2189",
-    "source": "european_commission",
-    "sourceLabel": "European Commission",
-    "publishedDate": "2026-10-16T09:38:24.000Z",
-    "tags": [
-      "emissions"
-    ]
   }
 ]
