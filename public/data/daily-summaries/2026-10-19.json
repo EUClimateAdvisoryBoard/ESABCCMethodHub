@@ -1,6 +1,6 @@
 {
   "date": "2026-10-19",
-  "generatedAt": "2026-10-19T10:36:34.333Z",
+  "generatedAt": "2026-10-19T17:25:05.892Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 19 October 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -12,7 +12,7 @@
     },
     {
       "headline": "EU invests over €390 million in 135 new climate and environment projects",
-      "summary": "European Commission Press release Brussels, 19 Oct 2026 The European Commission has today granted more than €390 million to 135 new projects across Europe under the LIFE programme for environment and climate action.",
+      "summary": "European Commission Press release Brussels, 19 Oct 2026 The European Commission has today granted more than ��390 million to 135 new projects across Europe under the LIFE programme for environment and climate action.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -51,7 +51,7 @@
           "title": "EU invests over €390 million in 135 new climate and environment projects",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2184",
           "source": "European Commission",
-          "description": "European Commission Press release Brussels, 19 Oct 2026 The European Commission has today granted more than €390 million to 135 new projects across Europe under the LIFE programme for environment and climate action.",
+          "description": "European Commission Press release Brussels, 19 Oct 2026 The European Commission has today granted more than ��390 million to 135 new projects across Europe under the LIFE programme for environment and climate action.",
           "published": "2026-10-18T22:00:00.000Z",
           "score": 23
         },
@@ -72,20 +72,20 @@
           "score": 15
         },
         {
+          "title": "IPCC scientists vow to press on with climate reports despite political deadlock",
+          "link": "https://www.climatechangenews.com/2026/10/19/ipcc-scientists-vow-to-press-on-with-climate-reports-despite-political-deadlock/",
+          "source": "Climate Home News",
+          "description": "After governments again failed to agree a timeline, nearly 120 IPCC authors pledged to complete their assessment on time and with full scientific rigour The post IPCC scientists vow to press on with climate reports despite political deadlock appeared first on Climate Home News.",
+          "published": "2026-10-19T12:31:12.000Z",
+          "score": 13
+        },
+        {
           "title": "Communication Officer in the IPCC WGI Technical Support Unit",
           "link": "https://www.ipcc.ch/2026/10/19/comm-officer-ipcc-wg1-tsu/",
           "source": "IPCC",
           "description": "Working Group I of the Intergovernmental Panel on Climate Change is filling the position of Communication Officer in the Technical Support Unit The position is located in the Paris area, at Gif-sur-Yvette (France). The Intergovernmental Panel on Climate Change (IPCC) The IPCC was established by the United Nations Environment Programme (UN Environment) and the World [&#8230;]",
           "published": "2026-10-19T10:03:34.000Z",
           "score": 11
-        },
-        {
-          "title": "Protecting nature is a public duty, not a Wall Street profit opportunity",
-          "link": "https://www.climatechangenews.com/2026/10/19/protecting-nature-is-a-public-duty-not-a-wall-street-profit-opportunity/",
-          "source": "Climate Home News",
-          "description": "To raise the money needed, governments should focus on redirecting subsidies that currently harm nature, while working on a new convention to recover the vast wealth drained by cross-border tax abuse The post Protecting nature is a public duty, not a Wall Street profit opportunity appeared first on Climate Home News.",
-          "published": "2026-10-19T08:09:06.000Z",
-          "score": 10
         }
       ]
     },
@@ -108,22 +108,6 @@
           "description": "Musk's announcement comes after Anthropic pledged to create a public benefit fund ahead of its blockbuster stock market listing.",
           "published": "2026-10-19T09:38:25.000Z",
           "score": 2
-        },
-        {
-          "title": "Germany news: Berlin conference seeks to drum up investment",
-          "link": "https://www.dw.com/en/germany-news-berlin-conference-seeks-to-drum-up-investment/live-79695354?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The &quot;Invest in Germany Summit&quot; is set to kick off in Berlin as the government looks to fill gaps in public funding. DW has more.",
-          "published": "2026-10-19T06:49:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Anthropic to commit 5% stake to new 'public benefit fund' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQUTgwNEw0VU9tTnJVbGZXUGx6dS1QSjMzSlRRdUQ5RnJhV3gxeFFHY2hlZExVSzBjQ3c4VEM0eEdLNk1NRk83U0VUSHZFYzdrR21GNkZlQmh0TGRjZXd2RWFrbE53RE9iTVZlSlpabU5MMkdBN0Iyd1R6YUMyd3hQM2txbUpVdFlVNkhPUXJfZU1JZE16ZDFhcg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQUTgwNEw0VU9tTnJVbGZXUGx6dS1QSjMzSlRRdUQ5RnJhV3gxeFFHY2hlZExVSzBjQ3c4VEM0eEdLNk1NRk83U0VUSHZFYzdrR21GNkZlQmh0TGRjZXd2RWFrbE53RE9iTVZlSlpabU5MMkdBN0Iyd1R6YUMyd3hQM2txbUpVdFlVNkhPUXJfZU1JZE16ZDFhcg?oc=5\" target=\"_blank\"&gt;Anthropic to commit 5% stake to new 'public benefit fund'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-18T18:18:00.000Z",
-          "score": 2
         }
       ]
     },
@@ -132,20 +116,12 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "EU tariffs aimed at China hitting Ukraine, steel boss says",
-          "link": "https://www.bbc.co.uk/news/articles/cwdd8z6gyy96o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The boss of one of Ukraine's biggest steel companies says the country has been \"bundled together\" in measures aimed at curbing cheap imports.",
-          "published": "2026-10-18T23:28:45.000Z",
-          "score": 8
-        },
-        {
-          "title": "Vietnam signs free-trade pact with European countries including Norway, Switzerland - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQeXJUYmVON2MyaDNUd3JSbXFwUmZ3ODRXVW05RTVSZ0cwQzRSSjF3OGkzNWMxQjVobFU3emI3a3FJVVRMQnRxSnFNWXF5QXQzVTZTZmlxNHdUd1hseVliMEJwZ0FEYm5FN1pPYVlfazVxaXpIRkRhZXhJaU1FSTlxRnNScThrMjlkQUhJVmZ6cHpkVF90bjZES2dYNEYtSWZDcXFYNGpsWFVEejdrSnJ5czJhQ0I2TTgzRW1keEw5dFk1Z3M?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQeXJUYmVON2MyaDNUd3JSbXFwUmZ3ODRXVW05RTVSZ0cwQzRSSjF3OGkzNWMxQjVobFU3emI3a3FJVVRMQnRxSnFNWXF5QXQzVTZTZmlxNHdUd1hseVliMEJwZ0FEYm5FN1pPYVlfazVxaXpIRkRhZXhJaU1FSTlxRnNScThrMjlkQUhJVmZ6cHpkVF90bjZES2dYNEYtSWZDcXFYNGpsWFVEejdrSnJ5czJhQ0I2TTgzRW1keEw5dFk1Z3M?oc=5\" target=\"_blank\"&gt;Vietnam signs free-trade pact with European countries including Norway, Switzerland&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-10-18T21:23:48.000Z",
-          "score": 8
+          "title": "EU Leaders discuss energy prices, budget, Ukraine during two-day summit in Brussels",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ac_26_2197",
+          "source": "European Commission",
+          "description": "European Commission News Brussels, 19 Oct 2026 \r\nEuropean Commission President Ursula von der Leyen participated in the meeting of the European Council of 16-17 October, a dense summit that touched on current...",
+          "published": "2026-10-19T12:07:03.000Z",
+          "score": 23
         }
       ]
     },
@@ -153,14 +129,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "Euro drops amid high energy prices and street riots in France - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUGwwZHd2R1h3Q1BiZkdpNVVzRFpXZTJEd19TT2tyelhtb21VX0ZOSzN2RVpURkdHMWl5REpraUVJTVRjeFlSQmU4T3V4XzhWV2g0bU1fd0Q0cmhRMFRFbVg5Snhld1owT2IwbmR2d0RwNGNpWEVGWHhYaDRzN3N1UWJwNjhuTXoyc3hsLXIybEt0VEl4VlJOS2JUZTB5TnV2OVFWU2NLYjRiWU5kYnA4?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNUGwwZHd2R1h3Q1BiZkdpNVVzRFpXZTJEd19TT2tyelhtb21VX0ZOSzN2RVpURkdHMWl5REpraUVJTVRjeFlSQmU4T3V4XzhWV2g0bU1fd0Q0cmhRMFRFbVg5Snhld1owT2IwbmR2d0RwNGNpWEVGWHhYaDRzN3N1UWJwNjhuTXoyc3hsLXIybEt0VEl4VlJOS2JUZTB5TnV2OVFWU2NLYjRiWU5kYnA4?oc=5\" target=\"_blank\"&gt;Euro drops amid high energy prices and street riots in France&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-19T01:35:00.000Z",
-          "score": 13
-        },
         {
           "title": "West Bank: Israel arrests 10 suspects over settler attacks on US journalist, European diplomats",
           "link": "https://www.dw.com/en/west-bank-israel-arrests-10-suspects-over-settler-attacks-on-us-journalist-european-diplomats/a-79696514?maca=en-rss-en-all-1573-xml-mrss",
@@ -170,26 +138,34 @@
           "score": 8
         },
         {
-          "title": "Albanian PM says protests pose threat to EU membership, not government - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOWlc3R0V2SVhwYWpQcDQzVnptVkptdkQtWHdGZUU0SUlYdUozS3ZFQmN2bmNTQUFKbUZ5UUNWR3RWQmlFVDZSU2daT0FMcXNVM0ZIaGtYbXFTTThzWjFqV3JkWkgzbWRxZWsyTGhhYU5wVTFRc01IV3ZRSkRlTlBlZ0p1YVQzMlZYUUxTSEV6WjUxMGNQb1R6Y3k0b0dZSDZIQlo3c1l2RUpTR0o3?oc=5",
+          "title": "VW plans to freeze salaries until 2030, works council says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNaFVUWW92dGw3ZW4xVVNIeDFBTUg5Qm9LdUk3b2JoNkVpTEpIZjQyYVcyaUlEVHpjY0pYRDBybzhrWllGVG1Wc3RQbTNfT0JseGpGVkFIN2h5RjNQQWwtQXp4YWJjOGNvUVE2VkFuU2lpMXdnY3dTai0xY3kwQ0pzcGxGbGRmYWlTQlRRcnBySjJQRnN0cjJXel9lMnh2dThuWDB4UkNyeGZxRTI1TXRGZFRzSQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxOWlc3R0V2SVhwYWpQcDQzVnptVkptdkQtWHdGZUU0SUlYdUozS3ZFQmN2bmNTQUFKbUZ5UUNWR3RWQmlFVDZSU2daT0FMcXNVM0ZIaGtYbXFTTThzWjFqV3JkWkgzbWRxZWsyTGhhYU5wVTFRc01IV3ZRSkRlTlBlZ0p1YVQzMlZYUUxTSEV6WjUxMGNQb1R6Y3k0b0dZSDZIQlo3c1l2RUpTR0o3?oc=5\" target=\"_blank\"&gt;Albanian PM says protests pose threat to EU membership, not government&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-18T11:15:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNaFVUWW92dGw3ZW4xVVNIeDFBTUg5Qm9LdUk3b2JoNkVpTEpIZjQyYVcyaUlEVHpjY0pYRDBybzhrWllGVG1Wc3RQbTNfT0JseGpGVkFIN2h5RjNQQWwtQXp4YWJjOGNvUVE2VkFuU2lpMXdnY3dTai0xY3kwQ0pzcGxGbGRmYWlTQlRRcnBySjJQRnN0cjJXel9lMnh2dThuWDB4UkNyeGZxRTI1TXRGZFRzSQ?oc=5\" target=\"_blank\"&gt;VW plans to freeze salaries until 2030, works council says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-19T08:36:09.000Z",
           "score": 8
         },
         {
-          "title": "EU condemns attacks by violent settlers, including on diplomats, spokesperson says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcG5pYTJCRkVpNVoxOTVPTVRoNUtwcTBYX2lhZ3ZmMVYxQjRjeG5kMHBHRnlpS1otNzZjWVNyaGJCNjhnU0ROclhuOWYwVGltT19POUY1Z0lOT2pJNDNCSUN0LTFHSkFxUW5iWW91T0ZiOVVTTm42TUpINVc2c1JVbEszT0hBQmhEUU5kemNPbFdqZndpTl9wTG1XeFRxd0JfTXhyam1zSDEzV2hXdWZ3X25xOXY4TkZwWThkLWVXTTBXREpWVFp0eC1XRQ?oc=5",
+          "title": "Sterling hits 17-month high against euro - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQ2J4LUZhclNaU1YxRFFEQ3F2Yk1Cbi13WDZJSjFGQ2p1UzMxYk93QUpieEtPTGVwbWlJZW54NjAyenh6ZzZsUmhUVVlyenhza1BMWDhTeGEyeHYtWlRoQUk4bXdiUjJCUDJRbng4eFJvT056WWxfNVBfLVlLQjdueTlMcFd5LUtsWkJ2QTFR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxOcG5pYTJCRkVpNVoxOTVPTVRoNUtwcTBYX2lhZ3ZmMVYxQjRjeG5kMHBHRnlpS1otNzZjWVNyaGJCNjhnU0ROclhuOWYwVGltT19POUY1Z0lOT2pJNDNCSUN0LTFHSkFxUW5iWW91T0ZiOVVTTm42TUpINVc2c1JVbEszT0hBQmhEUU5kemNPbFdqZndpTl9wTG1XeFRxd0JfTXhyam1zSDEzV2hXdWZ3X25xOXY4TkZwWThkLWVXTTBXREpWVFp0eC1XRQ?oc=5\" target=\"_blank\"&gt;EU condemns attacks by violent settlers, including on diplomats, spokesperson says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
-          "published": "2026-10-18T10:52:10.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxNQ2J4LUZhclNaU1YxRFFEQ3F2Yk1Cbi13WDZJSjFGQ2p1UzMxYk93QUpieEtPTGVwbWlJZW54NjAyenh6ZzZsUmhUVVlyenhza1BMWDhTeGEyeHYtWlRoQUk4bXdiUjJCUDJRbng4eFJvT056WWxfNVBfLVlLQjdueTlMcFd5LUtsWkJ2QTFR?oc=5\" target=\"_blank\"&gt;Sterling hits 17-month high against euro&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-19T10:43:44.000Z",
           "score": 8
         },
         {
-          "title": "France concerns weigh on Europe, while Wall Street looks to AI earnings - Reuters",
+          "title": "Euro dips on French turmoil, Aussie lifted by China growth - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUGwwZHd2R1h3Q1BiZkdpNVVzRFpXZTJEd19TT2tyelhtb21VX0ZOSzN2RVpURkdHMWl5REpraUVJTVRjeFlSQmU4T3V4XzhWV2g0bU1fd0Q0cmhRMFRFbVg5Snhld1owT2IwbmR2d0RwNGNpWEVGWHhYaDRzN3N1UWJwNjhuTXoyc3hsLXIybEt0VEl4VlJOS2JUZTB5TnV2OVFWU2NLYjRiWU5kYnA4?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNUGwwZHd2R1h3Q1BiZkdpNVVzRFpXZTJEd19TT2tyelhtb21VX0ZOSzN2RVpURkdHMWl5REpraUVJTVRjeFlSQmU4T3V4XzhWV2g0bU1fd0Q0cmhRMFRFbVg5Snhld1owT2IwbmR2d0RwNGNpWEVGWHhYaDRzN3N1UWJwNjhuTXoyc3hsLXIybEt0VEl4VlJOS2JUZTB5TnV2OVFWU2NLYjRiWU5kYnA4?oc=5\" target=\"_blank\"&gt;Euro dips on French turmoil, Aussie lifted by China growth&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-19T01:35:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "US futures rebound as AI earnings test looms; France pressures Europe - Reuters",
           "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOLVFWRVZxMkJLTnJJaThPRWdnNTFRbmc2V1FTYW1CbUNZc1hNYkZKd0xCbHJTeUpzYnNzYmx6RS1aZS1FNnBUcGx0VHY5bFZmY2xTMU1nZHlJNTNpWmliOE0tcmJ5d0JpeVJlZmw3Y1RuRnJvQWZSQXJraTNtN1pGOTJ4RQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOLVFWRVZxMkJLTnJJaThPRWdnNTFRbmc2V1FTYW1CbUNZc1hNYkZKd0xCbHJTeUpzYnNzYmx6RS1aZS1FNnBUcGx0VHY5bFZmY2xTMU1nZHlJNTNpWmliOE0tcmJ5d0JpeVJlZmw3Y1RuRnJvQWZSQXJraTNtN1pGOTJ4RQ?oc=5\" target=\"_blank\"&gt;France concerns weigh on Europe, while Wall Street looks to AI earnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOLVFWRVZxMkJLTnJJaThPRWdnNTFRbmc2V1FTYW1CbUNZc1hNYkZKd0xCbHJTeUpzYnNzYmx6RS1aZS1FNnBUcGx0VHY5bFZmY2xTMU1nZHlJNTNpWmliOE0tcmJ5d0JpeVJlZmw3Y1RuRnJvQWZSQXJraTNtN1pGOTJ4RQ?oc=5\" target=\"_blank\"&gt;US futures rebound as AI earnings test looms; France pressures Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-19T00:38:00.000Z",
           "score": 8
         }
@@ -197,9 +173,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 404,
-    "articlesLast24h": 163,
-    "afterDedup": 156,
+    "totalArticlesScanned": 402,
+    "articlesLast24h": 165,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
