@@ -1,9 +1,15 @@
 {
-  "date": "2026-10-18",
-  "generatedAt": "2026-10-18T19:16:22.287Z",
+  "date": "2026-10-19",
+  "generatedAt": "2026-10-19T00:52:30.359Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Sunday, 18 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Monday, 19 October 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "China's solar panel exports extend slump in September - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxQS0xzblQxU1RxMjQyV01pNjdwS2VISzBsR3VjbDN6OXliSzQzWmQ5Si1NLWtSZWQ0N0xFNnVzMjBiM253OUVYWnhMaThFWVVDRDh2andJOTVfd3FIR1hVS2pXZEl0cTVZbHNHeFpxVVdPUWdoa2RhbURMZ1hpXzFBU1htQ3Z4dFphVnRSVVFpM082UU8xbGRGOERsQndJNWYzTXZJ?oc=5\" target=\"_blank\"&gt;China's solar panel exports extend slump in September&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
     {
       "headline": "Corby metal pollution may harm people, says study",
       "summary": "However, the Environment Agency says it has not found evidence that could cause significant harm.",
@@ -26,7 +32,24 @@
     {
       "id": "energy",
       "title": "Energy Transition",
-      "items": []
+      "items": [
+        {
+          "title": "China's solar panel exports extend slump in September - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQS0xzblQxU1RxMjQyV01pNjdwS2VISzBsR3VjbDN6OXliSzQzWmQ5Si1NLWtSZWQ0N0xFNnVzMjBiM253OUVYWnhMaThFWVVDRDh2andJOTVfd3FIR1hVS2pXZEl0cTVZbHNHeFpxVVdPUWdoa2RhbURMZ1hpXzFBU1htQ3Z4dFphVnRSVVFpM082UU8xbGRGOERsQndJNWYzTXZJ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxQS0xzblQxU1RxMjQyV01pNjdwS2VISzBsR3VjbDN6OXliSzQzWmQ5Si1NLWtSZWQ0N0xFNnVzMjBiM253OUVYWnhMaThFWVVDRDh2andJOTVfd3FIR1hVS2pXZEl0cTVZbHNHeFpxVVdPUWdoa2RhbURMZ1hpXzFBU1htQ3Z4dFphVnRSVVFpM082UU8xbGRGOERsQndJNWYzTXZJ?oc=5\" target=\"_blank\"&gt;China's solar panel exports extend slump in September&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-18T07:36:09.000Z",
+          "score": 7
+        },
+        {
+          "title": "China proposes export controls on solar-manufacturing technologies - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOaGtBN1ctcU1NbGFxLXVKb01UVVdDUklxa3Z6Tk1ac05vT2lkd0d2THJqR1Q4VDBDTjJFSUlJYXNCdF83Tko2S0hrbDZSX3NrWWRrWFljNFNHOWhVUnpib3JpdjY3TWZJUEpEQzJKdnFpckZhZTM4X3RXTnhuMzVJWXRxemxoUTdlcDcwckxSUlROQ1pqbHZWdFplOEZUTHh1dDVxb3pfTlN3X2dURk1ETnJzTXJmUFluU0dfck1OSFl4YVlqZHE1NA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOaGtBN1ctcU1NbGFxLXVKb01UVVdDUklxa3Z6Tk1ac05vT2lkd0d2THJqR1Q4VDBDTjJFSUlJYXNCdF83Tko2S0hrbDZSX3NrWWRrWFljNFNHOWhVUnpib3JpdjY3TWZJUEpEQzJKdnFpckZhZTM4X3RXTnhuMzVJWXRxemxoUTdlcDcwckxSUlROQ1pqbHZWdFplOEZUTHh1dDVxb3pfTlN3X2dURk1ETnJzTXJmUFluU0dfck1OSFl4YVlqZHE1NA?oc=5\" target=\"_blank\"&gt;China proposes export controls on solar-manufacturing technologies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-18T06:22:00.000Z",
+          "score": 7
+        }
+      ]
     },
     {
       "id": "climate",
@@ -85,6 +108,14 @@
           "description": "&lt;p&gt;Warm homes plan would create 50,000 jobs, compared with about 1,100 for Rosebank oilfield, thinktank finds&lt;/p&gt;&lt;p&gt;Insulating Britain’s homes and investing in heat pumps would do more to cut the cost of living, create jobs and boost the UK’s economy than drilling for new oil, research suggests.&lt;/p&gt;&lt;p&gt;The government’s £15bn warm homes plan, currently &lt;a href=\"https://www.theguardian.com/environment/2026/oct/12/ministers-plan-slash-heat-pump-subsidies-fund-defence",
           "published": "2026-10-18T06:00:52.000Z",
           "score": 2
+        },
+        {
+          "title": "Anthropic to commit 5% stake to new public benefit fund - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQUTgwNEw0VU9tTnJVbGZXUGx6dS1QSjMzSlRRdUQ5RnJhV3gxeFFHY2hlZExVSzBjQ3c4VEM0eEdLNk1NRk83U0VUSHZFYzdrR21GNkZlQmh0TGRjZXd2RWFrbE53RE9iTVZlSlpabU5MMkdBN0Iyd1R6YUMyd3hQM2txbUpVdFlVNkhPUXJfZU1JZE16ZDFhcg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQUTgwNEw0VU9tTnJVbGZXUGx6dS1QSjMzSlRRdUQ5RnJhV3gxeFFHY2hlZExVSzBjQ3c4VEM0eEdLNk1NRk83U0VUSHZFYzdrR21GNkZlQmh0TGRjZXd2RWFrbE53RE9iTVZlSlpabU5MMkdBN0Iyd1R6YUMyd3hQM2txbUpVdFlVNkhPUXJfZU1JZE16ZDFhcg?oc=5\" target=\"_blank\"&gt;Anthropic to commit 5% stake to new public benefit fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-18T19:11:37.000Z",
+          "score": 2
         }
       ]
     },
@@ -92,6 +123,14 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
+        {
+          "title": "EU tariffs aimed at China hitting Ukraine, steel boss says",
+          "link": "https://www.bbc.co.uk/news/articles/cwdd8z6gyy96o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The boss of one of Ukraine's biggest steel companies says the country has been \"bundled together\" in measures aimed at curbing cheap imports.",
+          "published": "2026-10-18T23:28:45.000Z",
+          "score": 8
+        },
         {
           "title": "European diplomats attacked by Israeli settlers in West Bank",
           "link": "https://www.bbc.co.uk/news/articles/c962ydpmjm3zo?at_medium=RSS&amp;at_campaign=rss",
@@ -107,6 +146,22 @@
           "description": "Vietnam has signed a deal with four non-EU members that covers trade in goods and services, intellectual property rights, and sustainable development, among other areas.",
           "published": "2026-10-18T09:19:00.000Z",
           "score": 8
+        },
+        {
+          "title": "Iran's parliament approves Mehrdad Akhlaqi as minister of defence - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUllscVFHdi1ER1I5djNzUWkwbXpXUGVTRkRVLUNWSWRBUU9lek5waWFCVjJwMXphLXFHaV9EUkF0SjdXVGMwNnpLYl9xZ2xrWDFvZzlrN2RwV2J4QUt1UUtiLTlzZTA1Qms2eTMtTjMyRXRGblJXVkF5NV9nTzEzTE1rbDFLUDdNOWRuQlhrS1BIVXFRdVJiQUtuT0lmODVRcVZ1dTRMeU11SkJuWlJvNGNJUjJhY1RBVGN1WWJGQ0JyZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUllscVFHdi1ER1I5djNzUWkwbXpXUGVTRkRVLUNWSWRBUU9lek5waWFCVjJwMXphLXFHaV9EUkF0SjdXVGMwNnpLYl9xZ2xrWDFvZzlrN2RwV2J4QUt1UUtiLTlzZTA1Qms2eTMtTjMyRXRGblJXVkF5NV9nTzEzTE1rbDFLUDdNOWRuQlhrS1BIVXFRdVJiQUtuT0lmODVRcVZ1dTRMeU11SkJuWlJvNGNJUjJhY1RBVGN1WWJGQ0JyZw?oc=5\" target=\"_blank\"&gt;Iran's parliament approves Mehrdad Akhlaqi as minister of defence&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-18T09:08:02.000Z",
+          "score": 8
+        },
+        {
+          "title": "Vietnam signs free-trade pact with European countries including Norway, Switzerland - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQeXJUYmVON2MyaDNUd3JSbXFwUmZ3ODRXVW05RTVSZ0cwQzRSSjF3OGkzNWMxQjVobFU3emI3a3FJVVRMQnRxSnFNWXF5QXQzVTZTZmlxNHdUd1hseVliMEJwZ0FEYm5FN1pPYVlfazVxaXpIRkRhZXhJaU1FSTlxRnNScThrMjlkQUhJVmZ6cHpkVF90bjZES2dYNEYtSWZDcXFYNGpsWFVEejdrSnJ5czJhQ0I2TTgzRW1keEw5dFk1Z3M?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQeXJUYmVON2MyaDNUd3JSbXFwUmZ3ODRXVW05RTVSZ0cwQzRSSjF3OGkzNWMxQjVobFU3emI3a3FJVVRMQnRxSnFNWXF5QXQzVTZTZmlxNHdUd1hseVliMEJwZ0FEYm5FN1pPYVlfazVxaXpIRkRhZXhJaU1FSTlxRnNScThrMjlkQUhJVmZ6cHpkVF90bjZES2dYNEYtSWZDcXFYNGpsWFVEejdrSnJ5czJhQ0I2TTgzRW1keEw5dFk1Z3M?oc=5\" target=\"_blank\"&gt;Vietnam signs free-trade pact with European countries including Norway, Switzerland&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-10-18T05:30:00.000Z",
+          "score": 8
         }
       ]
     },
@@ -115,52 +170,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "&#039;No Kings&#039; rallies push early voting ahead of US midterm elections",
-          "link": "https://www.dw.com/en/no-kings-rallies-push-early-voting-ahead-of-us-midterm-elections/a-79690502?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Organizers of the &quot;No Kings&quot; protests, known for their anti-Trump sentiment, are urging Americans to vote early in the November 3 midterm elections, as Republicans face tough races to retain control of Congress.",
-          "published": "2026-10-18T00:51:00.000Z",
+          "title": "EU condemns attacks by violent settlers, including on diplomats, spokesperson says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcG5pYTJCRkVpNVoxOTVPTVRoNUtwcTBYX2lhZ3ZmMVYxQjRjeG5kMHBHRnlpS1otNzZjWVNyaGJCNjhnU0ROclhuOWYwVGltT19POUY1Z0lOT2pJNDNCSUN0LTFHSkFxUW5iWW91T0ZiOVVTTm42TUpINVc2c1JVbEszT0hBQmhEUU5kemNPbFdqZndpTl9wTG1XeFRxd0JfTXhyam1zSDEzV2hXdWZ3X25xOXY4TkZwWThkLWVXTTBXREpWVFp0eC1XRQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxOcG5pYTJCRkVpNVoxOTVPTVRoNUtwcTBYX2lhZ3ZmMVYxQjRjeG5kMHBHRnlpS1otNzZjWVNyaGJCNjhnU0ROclhuOWYwVGltT19POUY1Z0lOT2pJNDNCSUN0LTFHSkFxUW5iWW91T0ZiOVVTTm42TUpINVc2c1JVbEszT0hBQmhEUU5kemNPbFdqZndpTl9wTG1XeFRxd0JfTXhyam1zSDEzV2hXdWZ3X25xOXY4TkZwWThkLWVXTTBXREpWVFp0eC1XRQ?oc=5\" target=\"_blank\"&gt;EU condemns attacks by violent settlers, including on diplomats, spokesperson says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+          "published": "2026-10-18T10:52:10.000Z",
+          "score": 8
+        },
+        {
+          "title": "Albanian PM says protests pose threat to EU membership, not government - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOWlc3R0V2SVhwYWpQcDQzVnptVkptdkQtWHdGZUU0SUlYdUozS3ZFQmN2bmNTQUFKbUZ5UUNWR3RWQmlFVDZSU2daT0FMcXNVM0ZIaGtYbXFTTThzWjFqV3JkWkgzbWRxZWsyTGhhYU5wVTFRc01IV3ZRSkRlTlBlZ0p1YVQzMlZYUUxTSEV6WjUxMGNQb1R6Y3k0b0dZSDZIQlo3c1l2RUpTR0o3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxOWlc3R0V2SVhwYWpQcDQzVnptVkptdkQtWHdGZUU0SUlYdUozS3ZFQmN2bmNTQUFKbUZ5UUNWR3RWQmlFVDZSU2daT0FMcXNVM0ZIaGtYbXFTTThzWjFqV3JkWkgzbWRxZWsyTGhhYU5wVTFRc01IV3ZRSkRlTlBlZ0p1YVQzMlZYUUxTSEV6WjUxMGNQb1R6Y3k0b0dZSDZIQlo3c1l2RUpTR0o3?oc=5\" target=\"_blank\"&gt;Albanian PM says protests pose threat to EU membership, not government&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-18T17:48:04.000Z",
+          "score": 8
+        },
+        {
+          "title": "Zelenskiy says Russia attacked Ukrainian energy sector 76 times in past week - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONHpkelZ3dVpCdWF5d2JkVGE3TmZGUzJXLUtsQWUxQnZWVXBtNWJQY1dQOVZJakRiaWRrYlZBQVhsX0JJZ2FKM3AtTW0zRWN3TGNtY2NERnRNckJFU2s1LWNVUUVDb1d3XzVFSHJwT0VOMGVieVBiZHhTbk8ta3A0MkFQeUxUeGhtTnU0aHl0OG0taVh0VU45Y25HNkhwQ2RKWGEwa2w5d0o5RVJPNURXUXRoajdReG5ZbG1YbU1hVQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxONHpkelZ3dVpCdWF5d2JkVGE3TmZGUzJXLUtsQWUxQnZWVXBtNWJQY1dQOVZJakRiaWRrYlZBQVhsX0JJZ2FKM3AtTW0zRWN3TGNtY2NERnRNckJFU2s1LWNVUUVDb1d3XzVFSHJwT0VOMGVieVBiZHhTbk8ta3A0MkFQeUxUeGhtTnU0aHl0OG0taVh0VU45Y25HNkhwQ2RKWGEwa2w5d0o5RVJPNURXUXRoajdReG5ZbG1YbU1hVQ?oc=5\" target=\"_blank\"&gt;Zelenskiy says Russia attacked Ukrainian energy sector 76 times in past week&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-18T08:31:43.000Z",
+          "score": 7
+        },
+        {
+          "title": "Turkey will get some diesel from US-Russia supply deal, energy minister says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQYjdhZ0V0TGxFRVBoQWVSMVBlOXFvdm1rcFlmWm45dVdYS3FJdm5ZdExGM2xRd3hhb1hvWUJYdnVlRG50bm1CbjJubjRnM2JtVFp3UkdiU0QxcVJEbnZyNC1HSDhOYUM1THhiTm9heG9tTV9FTHpwMW1BOEhxN0Q0WjlocVJMZV9TSUlIN0RMZDdkQmpPQUhUQk40bkNDdzdMSVhEa3U5eUZKd2R1OVBqajZYTDI5cDhTT3FaUk5uZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQYjdhZ0V0TGxFRVBoQWVSMVBlOXFvdm1rcFlmWm45dVdYS3FJdm5ZdExGM2xRd3hhb1hvWUJYdnVlRG50bm1CbjJubjRnM2JtVFp3UkdiU0QxcVJEbnZyNC1HSDhOYUM1THhiTm9heG9tTV9FTHpwMW1BOEhxN0Q0WjlocVJMZV9TSUlIN0RMZDdkQmpPQUhUQk40bkNDdzdMSVhEa3U5eUZKd2R1OVBqajZYTDI5cDhTT3FaUk5uZw?oc=5\" target=\"_blank\"&gt;Turkey will get some diesel from US-Russia supply deal, energy minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-18T11:51:44.000Z",
+          "score": 7
+        },
+        {
+          "title": "Iran urges US to accept proposal to reopen Strait of Hormuz - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOWUh3Z1JyMmU4SkJ4ZXQ4Y0VaN3RMS1Vtcmg4S1lDMGlvUG1GeVY3Q1pkaWltSG5yOWhmcTBnNkk4U0ZiTVREVzd3RVRZNjZJTjhaTkg5bTFGX0J2Q0JzTUI4UlZIWmxHMmRDeVRRODZRYU1mbkNrVzFRX3piTnpDbllfUGc3NnJkSl9hWWRCQzlxZjFBYnE5bXJQMVBjMzNBUFlNcmRtcw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxOWUh3Z1JyMmU4SkJ4ZXQ4Y0VaN3RMS1Vtcmg4S1lDMGlvUG1GeVY3Q1pkaWltSG5yOWhmcTBnNkk4U0ZiTVREVzd3RVRZNjZJTjhaTkg5bTFGX0J2Q0JzTUI4UlZIWmxHMmRDeVRRODZRYU1mbkNrVzFRX3piTnpDbllfUGc3NnJkSl9hWWRCQzlxZjFBYnE5bXJQMVBjMzNBUFlNcmRtcw?oc=5\" target=\"_blank\"&gt;Iran urges US to accept proposal to reopen Strait of Hormuz&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-18T10:29:43.000Z",
           "score": 6
-        },
-        {
-          "title": "Burnt out cars and shattered glass on Paris streets after protests turn to riots and looting",
-          "link": "https://www.bbc.co.uk/news/articles/c574pdzl0k4no?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "About 1,800 people were arrested after nationwide protests saw outbreaks of violence and vandalism.",
-          "published": "2026-10-18T12:07:31.000Z",
-          "score": 2
-        },
-        {
-          "title": "Oil facilities hit in deadly overnight attack on St Petersburg",
-          "link": "https://www.bbc.co.uk/news/articles/c3eweygrjzd7o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "At least one person was killed in the strikes, which also hit a data centre used by Russia's equivalent of Facebook.",
-          "published": "2026-10-18T15:46:10.000Z",
-          "score": 2
-        },
-        {
-          "title": "A wave of homemade, synthetic drugs sweeps US and deepens crisis",
-          "link": "https://www.bbc.co.uk/news/articles/cmx2wvyv5j17o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "BBC News hears from users, dealers, prison and recovery workers as the country battles with a deadly new drug epidemic.",
-          "published": "2026-10-18T05:04:31.000Z",
-          "score": 2
-        },
-        {
-          "title": "Trump waives several Russia sanctions as row with Zelensky intensifies",
-          "link": "https://www.bbc.co.uk/news/articles/cxr5yvzv7rp0o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The US president temporarily ends many restrictions on Moscow recently passed by Congress over \"national security\" concerns.",
-          "published": "2026-10-18T01:10:25.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 306,
-    "articlesLast24h": 41,
-    "afterDedup": 41,
+    "totalArticlesScanned": 406,
+    "articlesLast24h": 147,
+    "afterDedup": 125,
     "feedsQueried": 19
   }
 }
