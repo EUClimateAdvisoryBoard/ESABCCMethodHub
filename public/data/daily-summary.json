@@ -1,12 +1,12 @@
 {
-  "date": "2026-10-20",
-  "generatedAt": "2026-10-20T20:22:58.792Z",
+  "date": "2026-10-21",
+  "generatedAt": "2026-10-21T01:24:00.683Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Tuesday, 20 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Wednesday, 21 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "The British island where red squirrels are thriving",
-      "summary": "Conservationists say that, with red squirrels dwindling in the UK, Jersey is an \"important refuge\".",
+      "headline": "Andy Burnham faces climate revolt after approval of North Sea gas drilling",
+      "summary": "&lt;p&gt;Jackdaw gasfield announcement signals UK’s commitment to North Sea industry but undermines green credentials&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/2026/oct/20/what-does-the-approval-of-the-jackdaw-gasfield-mean\"&gt;What does the approval of the Jackdaw gasfield mean?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The Jackdaw gasfield will be given the go-ahead on Wednesday, signalling Andy Burnham’s commitment to the North Sea fossil f",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -28,6 +28,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Andy Burnham faces climate revolt after approval of North Sea gas drilling",
+          "link": "https://www.theguardian.com/environment/2026/oct/20/jackdaw-north-sea-gas-field-to-get-go-ahead-in-blow-to-climate-campaigners",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Jackdaw gasfield announcement signals UK’s commitment to North Sea industry but undermines green credentials&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/2026/oct/20/what-does-the-approval-of-the-jackdaw-gasfield-mean\"&gt;What does the approval of the Jackdaw gasfield mean?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The Jackdaw gasfield will be given the go-ahead on Wednesday, signalling Andy Burnham’s commitment to the North Sea fossil f",
+          "published": "2026-10-20T18:24:46.000Z",
+          "score": 7
+        },
+        {
           "title": "The British island where red squirrels are thriving",
           "link": "https://www.bbc.co.uk/news/articles/cw1m4e3mrljxo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -36,11 +44,11 @@
           "score": 7
         },
         {
-          "title": "CATL bets on battery swapping to speed electrification of heavy trucks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNTXdDV3EyZ1NnLUVZaURjME9qMFU3MlFmaVJERWZSQklCOXFNcG1pQ0NUaVFuNHRmRmlVYXNlNURqVXYwcV9CR1JpSnFjc1ZjUktUY01WT2FaelU1RUZvVm5NVHZpQ2Q5QzhfMnNiVXFZMUJmRkpVTFNDcElTeXNWT1VUNV8xYWo5aDJEQ0FSNC1lWW40eFNjZG1jT1BCME40bF8tRE0tVlhJdmhyc2RoeVhZVUhlRzA?oc=5",
+          "title": "Most Gulf bourses in red after Houthis claim attacks on Saudi energy, airport sites - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOcXpWQlZUSjN2cnJReUppaUEyRldXVWpqOVNvVFpMZ0xMc09WanRpdEhEeE9iZmpMUnIyWmlGeVdNVTczOWIxYUd5VnZ2Mk80VGFheGlPVTdyM1NWS1pCdmhHekh1ZlhKbHdfNnRObnQyNVhycjFtdGQ5RmgydVhHRkthWDlBYWhkQnlsOUlsV0wzNzg2bGZqWGNVcURLMVBpNFZRaWZ6b2NBaGNCMGpuLWFndTRqd21mZzNUSVJ0Q3gzUFlnWGdLN0xQUUdOcHM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNTXdDV3EyZ1NnLUVZaURjME9qMFU3MlFmaVJERWZSQklCOXFNcG1pQ0NUaVFuNHRmRmlVYXNlNURqVXYwcV9CR1JpSnFjc1ZjUktUY01WT2FaelU1RUZvVm5NVHZpQ2Q5QzhfMnNiVXFZMUJmRkpVTFNDcElTeXNWT1VUNV8xYWo5aDJEQ0FSNC1lWW40eFNjZG1jT1BCME40bF8tRE0tVlhJdmhyc2RoeVhZVUhlRzA?oc=5\" target=\"_blank\"&gt;CATL bets on battery swapping to speed electrification of heavy trucks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-20T09:09:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOcXpWQlZUSjN2cnJReUppaUEyRldXVWpqOVNvVFpMZ0xMc09WanRpdEhEeE9iZmpMUnIyWmlGeVdNVTczOWIxYUd5VnZ2Mk80VGFheGlPVTdyM1NWS1pCdmhHekh1ZlhKbHdfNnRObnQyNVhycjFtdGQ5RmgydVhHRkthWDlBYWhkQnlsOUlsV0wzNzg2bGZqWGNVcURLMVBpNFZRaWZ6b2NBaGNCMGpuLWFndTRqd21mZzNUSVJ0Q3gzUFlnWGdLN0xQUUdOcHM?oc=5\" target=\"_blank\"&gt;Most Gulf bourses in red after Houthis claim attacks on Saudi energy, airport sites&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;R",
+          "published": "2026-10-20T13:34:55.000Z",
           "score": 7
         },
         {
@@ -115,14 +123,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNUFRNd3JZYUQ0bDBIdTYxNDczNExsX1h3ZUN5RU0xdTRUeThLVVljcjBHTkRlRUpxaUotM2tTUExONi15T29YQlJTZ2FPaEpoS0VkMXdiUlBGcTNNWXFoc0lEVUlHT0pIZWRZR1RUeXpVYW5aRlNZd2dGZXFIVFMyanFXcGh3V1JQcXRzM1ZzNnBSazBIT2NSVDNCa2pRTlZhNWt1cGpNeFNZTTFkd09iQ1hKZURpLThleHlNUmpFdVp2Yjg0WVA3VThydDI?oc=5\" target=\"_blank\"&gt;Turkey submits Saudi-Pakistan defence pact to parliament for ratification, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
           "published": "2026-10-20T17:27:55.000Z",
           "score": 8
-        },
-        {
-          "title": "Zelenskyy accuses US of delaying Patriot missile shipment",
-          "link": "https://www.dw.com/en/zelenskyy-accuses-us-of-delaying-patriot-missile-shipment/a-79707951?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Ukrainian President Volodymyr Zelenskyy has accused the United States of delaying deliveries of air defense missiles already paid for by European allies, as relations between Washington and Kyiv deteriorate.",
-          "published": "2026-10-20T02:15:00.000Z",
-          "score": 4
         }
       ]
     },
@@ -130,6 +130,14 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "AfD&#039;s Alice Weidel to unveil plan to cut EU powers — report",
+          "link": "https://www.dw.com/en/afd-s-alice-weidel-to-unveil-plan-to-cut-eu-powers-report/a-79717944?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The far-right AfD will propose slashing powers of the European Union when it presents its policy paper on Wednesday, Politico reports.",
+          "published": "2026-10-20T22:25:00.000Z",
+          "score": 8
+        },
         {
           "title": "As France erupts, Europe's far right gains from fuel-price anger ahead of elections - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRjl5VmhGZHJ1bUpkdTZQaElWaWdnSFVkdVVQOUhzN3Y5SFdHOUNpS0pXQjdsVzhMVm1YOFloSGhHbnNYT29talRoNVJWdlRDVkdCM0VQV1lIUFZSbG9MV3BPclJZZGVtejVZZFNNWWxxdFdBM19hS2pQdHNaWm51MFRFNWxLWHdzVzQwN1ZxeXFFenRPREthTGRvVW9vOW1JdWpiVWk0VE9UQWlqRnZJWEJ0aFVYd2xBR3FN?oc=5",
@@ -161,22 +169,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQTNPenpnTEpPMnMzMWJSMFFkUUJ1RXljMVdIcXJkel9iWmthaVB3RVlfUXA3b0VYVDVucE1HaVE5djFNWVJnelppUmZXREJHSkVlZ2dkN0Jmd1BoTFdhcmNxcFhndDhLTlhucVJ3b1pYT3FQbFdDTFdsSnlaVWJQVExGOHAzVFdMU1pFWWtKUGx5Nld6amF5NktqSi1lR1BOdEd1V2tXSU8zUzhTRkk2ZVRQaG1va1B1allqVnYzaGg1dFk?oc=5\" target=\"_blank\"&gt;Kremlin hopes Witkoff can brief Putin soon on latest Ukrainian/European thinking on peace deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
           "published": "2026-10-20T10:21:53.000Z",
           "score": 8
-        },
-        {
-          "title": "Canada, Turkey set to sign pledge during Carney visit to deepen defence, energy ties, source says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxObWlTeVJJYUVSSnEtekFFRGpHdkdVSVgwczVsS3NSeEdESkYxYWZoVkFJUmNuSUtmcC1ybXB3bFFFTlhDSjhYOFVxblVXZ3dYcHE3MzVYRHJieVYxQXd6VWtQWklwbjRkZzJGMkZnZkhpSzQ4UjI5ZTV4ZUxsUEpHQkhNcVNQczhsaWVLM3c5cUsxblJaMWVMN3diM1p3NWh6UUd2ZzNpQWdUdU5lOG9nN1RoMWFEdXdndzdOdzJMWjB5alFHcWFHNV9R?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxObWlTeVJJYUVSSnEtekFFRGpHdkdVSVgwczVsS3NSeEdESkYxYWZoVkFJUmNuSUtmcC1ybXB3bFFFTlhDSjhYOFVxblVXZ3dYcHE3MzVYRHJieVYxQXd6VWtQWklwbjRkZzJGMkZnZkhpSzQ4UjI5ZTV4ZUxsUEpHQkhNcVNQczhsaWVLM3c5cUsxblJaMWVMN3diM1p3NWh6UUd2ZzNpQWdUdU5lOG9nN1RoMWFEdXdndzdOdzJMWjB5alFHcWFHNV9R?oc=5\" target=\"_blank\"&gt;Canada, Turkey set to sign pledge during Carney visit to deepen defence, energy ties, source says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6",
-          "published": "2026-10-20T16:33:42.000Z",
-          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 405,
-    "articlesLast24h": 160,
-    "afterDedup": 155,
+    "totalArticlesScanned": 406,
+    "articlesLast24h": 156,
+    "afterDedup": 151,
     "feedsQueried": 19
   }
 }
