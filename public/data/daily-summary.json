@@ -1,12 +1,18 @@
 {
   "date": "2026-10-21",
-  "generatedAt": "2026-10-21T15:54:58.085Z",
+  "generatedAt": "2026-10-21T20:31:56.111Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 21 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
+      "headline": "Commission welcomes political agreement on rules enhancing stability and long-term resilience of EU carbon market",
+      "summary": "European Commission Press release Brussels, 21 Oct 2026 The European Commission welcomes the provisional political agreement reached by the European Parliament and the Council on a targeted amendment to strengthen the Market Stability Reserve (MSR) of the EU's Emissions Trading System (EU ETS).",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
       "headline": "UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status",
-      "summary": "The British government accepts that approving Jackdaw gas drilling will weaken its climate reputation and downplays the legal weight of the International Court of Justice advisory opinion The post UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status appeared first on Climate Home News.",
+      "summary": "The government accepts that approving the Jackdaw field will weaken its climate reputation and downplays the legal weight of the International Court of Justice opinion The post UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -21,7 +27,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Commission welcomes political agreement on rules enhancing stability and long-term resilience of EU carbon market",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2206",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 21 Oct 2026 The European Commission welcomes the provisional political agreement reached by the European Parliament and the Council on a targeted amendment to strengthen the Market Stability Reserve (MSR) of the EU's Emissions Trading System (EU ETS).",
+          "published": "2026-10-20T22:00:00.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
@@ -31,7 +46,7 @@
           "title": "UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status",
           "link": "https://www.climatechangenews.com/2026/10/21/uk-approves-gas-drilling-despite-admitting-blow-to-climate-leadership-status/",
           "source": "Climate Home News",
-          "description": "The British government accepts that approving Jackdaw gas drilling will weaken its climate reputation and downplays the legal weight of the International Court of Justice advisory opinion The post UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status appeared first on Climate Home News.",
+          "description": "The government accepts that approving the Jackdaw field will weaken its climate reputation and downplays the legal weight of the International Court of Justice opinion The post UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status appeared first on Climate Home News.",
           "published": "2026-10-21T14:49:54.000Z",
           "score": 13
         },
@@ -44,11 +59,11 @@
           "score": 10
         },
         {
-          "title": "Reform UK claims racism exposé has left some members ‘psychologically damaged’ as it reports ITV to police – UK politics live",
+          "title": "UK politics: Reform UK claims racism exposé has left some members ‘psychologically damaged’ as it reports ITV to police – as it happened",
           "link": "https://www.theguardian.com/politics/live/2026/oct/21/jackdaw-gasfield-labour-andy-burnham-zack-polanski-uk-politics-latest-news",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Zia Yusuf claims undercover investigation broke the law as broadcaster stands by its journalism&lt;/p&gt;&lt;p&gt;Here is an explainer by &lt;strong&gt;Jill Ambrose&lt;/strong&gt; about the Jackdaw decision.&lt;/p&gt;&lt;p&gt;But environmental groups have condemned the decision. Ami McCarthy, head of politics for &lt;strong&gt;Greenpeace UK&lt;/strong&gt;, said:&lt;/p&gt;&lt;p&gt;&lt;em&gt;Approving Jackdaw shows the toxic grip fossil fuel lobbyists still hold over our energy policy. An",
-          "published": "2026-10-21T15:53:34.000Z",
+          "published": "2026-10-21T16:45:48.000Z",
           "score": 8
         },
         {
@@ -60,12 +75,12 @@
           "score": 7
         },
         {
-          "title": "How much gas could Jackdaw provide? And will it cut your energy bills?",
-          "link": "https://www.bbc.co.uk/news/articles/cq4g13pplyzzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "BBC Verify looks at what the Jackdaw decision means for bills, energy security and the environment.",
-          "published": "2026-10-21T11:57:49.000Z",
-          "score": 7
+          "title": "Jackdaw approval is a step towards a grownup North Sea policy",
+          "link": "https://www.theguardian.com/business/nils-pratley-on-finance/2026/oct/21/jackdaw-approval-step-towards-grownup-north-sea-policy",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Government decision is about how much oil and gas is sensible for UK to produce on the way to net zero&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/oct/21/uk-inflation-jump-rising-motor-fuels-cost-jackdaw-gas-field-latest-news-updates\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Andy Burnham hit the nail on the (well)head in his first fortnight as prime minister when &lt;a href=\"https://www.thegu",
+          "published": "2026-10-21T17:12:32.000Z",
+          "score": 4
         }
       ]
     },
@@ -80,14 +95,6 @@
           "description": "European Commission Speech Strasbourg, 21 Oct 2026 President Metsola, dear Roberta,\r\nPresident Costa, dear António,\r\nHonourable Members,\r\nWe have had a long and dense European Council. Let me touch on two of the ma...",
           "published": "2026-10-21T06:04:27.000Z",
           "score": 22
-        },
-        {
-          "title": "Paris Agreement committee names three countries snubbing it over NDCs",
-          "link": "https://www.climatechangenews.com/2026/10/20/paris-agreement-committee-names-three-countries-snubbing-it-over-ndcs/",
-          "source": "Climate Home News",
-          "description": "More than 30 countries have failed to submit an NDC, but only three have repeatedly ignored the committee’s efforts to engage with them The post Paris Agreement committee names three countries snubbing it over NDCs appeared first on Climate Home News.",
-          "published": "2026-10-20T17:19:47.000Z",
-          "score": 17
         },
         {
           "title": "Turkish giant sponsoring COP31 cut climate goals then cashed in on oil boom",
@@ -106,12 +113,20 @@
           "score": 13
         },
         {
-          "title": "New EU plan for Arctic warily eyes influence of Russia, US",
-          "link": "https://www.dw.com/en/new-eu-plan-for-arctic-warily-eyes-influence-of-russia-us/a-79715219?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU unveiled its priorities in the Arctic as it vies with Russia, China and the US for influence. EU foreign affairs chief Kaja Kallas said drone incursions, GPS jamming and cable sabotage undermine Arctic security.",
-          "published": "2026-10-20T16:44:00.000Z",
-          "score": 13
+          "title": "UNEP: Opportunity has ‘been lost’ to meet 1.5C warming limit without ‘overshoot’",
+          "link": "https://www.carbonbrief.org/unep-opportunity-has-been-lost-to-meet-1-5c-warming-limit-without-overshoot",
+          "source": "Carbon Brief",
+          "description": "A temporary breach of the 1.5C global-warming limit is now “inevitable” following “decades of insufficient climate action”, says the UN&#8230; The post UNEP: Opportunity has ‘been lost’ to meet 1.5C warming limit without ‘overshoot’ appeared first on Carbon Brief.",
+          "published": "2026-10-21T05:00:00.000Z",
+          "score": 10
+        },
+        {
+          "title": "Climate campaigners condemn ‘maddening’ decision to approve Jackdaw gasfield",
+          "link": "https://www.theguardian.com/environment/2026/oct/21/jackdaw-gasfield-climate-campaigners-condemn-decision-north-sea-mining",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Critics say move will jeopardise climate targets, fail to cut cost of living and distract from need to decarbonise energy&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Climate campaigners and green experts have condemned the &lt;a href=\"https://www.theguardian.com/environment/2026/oct/21/jackdaw-gasfield-in-north-sea-approved\"&gt;government’s decision to allow the drilling of the Jackdaw&lt;/a&gt; gasfield in the North Sea.&lt;/p&gt;&lt;p&gt;They said approval for the site would &lt;a href=\"http",
+          "published": "2026-10-21T08:23:46.000Z",
+          "score": 7
         }
       ]
     },
@@ -125,11 +140,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Turkey submits Saudi-Pakistan defence pact to parliament for ratification, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNUFRNd3JZYUQ0bDBIdTYxNDczNExsX1h3ZUN5RU0xdTRUeThLVVljcjBHTkRlRUpxaUotM2tTUExONi15T29YQlJTZ2FPaEpoS0VkMXdiUlBGcTNNWXFoc0lEVUlHT0pIZWRZR1RUeXpVYW5aRlNZd2dGZXFIVFMyanFXcGh3V1JQcXRzM1ZzNnBSazBIT2NSVDNCa2pRTlZhNWt1cGpNeFNZTTFkd09iQ1hKZURpLThleHlNUmpFdVp2Yjg0WVA3VThydDI?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNUFRNd3JZYUQ0bDBIdTYxNDczNExsX1h3ZUN5RU0xdTRUeThLVVljcjBHTkRlRUpxaUotM2tTUExONi15T29YQlJTZ2FPaEpoS0VkMXdiUlBGcTNNWXFoc0lEVUlHT0pIZWRZR1RUeXpVYW5aRlNZd2dGZXFIVFMyanFXcGh3V1JQcXRzM1ZzNnBSazBIT2NSVDNCa2pRTlZhNWt1cGpNeFNZTTFkd09iQ1hKZURpLThleHlNUmpFdVp2Yjg0WVA3VThydDI?oc=5\" target=\"_blank\"&gt;Turkey submits Saudi-Pakistan defence pact to parliament for ratification, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
-          "published": "2026-10-20T17:27:55.000Z",
+          "title": "Trump, Putin and Xi at one table, without Ukraine. What Moscow wants from the proposal and why Beijing might agree.",
+          "link": "https://www.dw.com/en/trump-putin-and-xi-at-one-table-without-ukraine-what-moscow-wants-from-the-proposal-and-why-beijing-might-agree/a-79726190?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Moscow is pushing for a summit with Donald Trump and Xi Jinping to discuss ending the war in Ukraine, without Kyiv or the EU. What does Russia hope to gain, and why might China be willing to take part?",
+          "published": "2026-10-21T19:32:00.000Z",
           "score": 8
         }
       ]
@@ -139,11 +154,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Germany news: Nvidia CEO optimistic about EU&#039;s AI economy",
-          "link": "https://www.dw.com/en/germany-news-nvidia-ceo-optimistic-about-eu-s-ai-economy/live-79719483?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Germany news: AfD&#039;s Weidel calls for major EU reforms",
+          "link": "https://www.dw.com/en/germany-news-afd-s-weidel-calls-for-major-eu-reforms/live-79719483?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Jensen Huang, the head of the chip giant, was in Berlin to talk to developers and investors. Meanwhile, a cigarette tax hike came into effect early due to a &quot;technical error.&quot; DW has more.",
-          "published": "2026-10-21T13:14:00.000Z",
+          "description": "Far-right Alternative for Germany co-leader Alice Weidel reveals the party&#039;s plan to reform the EU. Meanwhile, Nvidia CEO Jensen Huang was in Berlin to talk to developers and investors. DW has more.",
+          "published": "2026-10-21T19:44:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Raids at far-right group&#039;s offices at European Parliament",
+          "link": "https://www.dw.com/en/raids-at-far-right-group-s-offices-at-european-parliament/a-79724631?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Authorities searched the Patriots for Europe&#039;s European Parliament offices in a long-running funding inquiry. The group says the charges pertain to its predecessor and there is &quot;no legal continuity&quot; between the two.",
+          "published": "2026-10-21T16:14:00.000Z",
           "score": 8
         },
         {
@@ -163,14 +186,6 @@
           "score": 8
         },
         {
-          "title": "Eastern Libya parliament approves maritime deal with Turkey, drawing Greek rejection - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQSDNpNHR3ZzZNNnVsTXE1c1N1RDVPdHFvRjBrRWJiQTltVlRmNlM3VzdkX1dEZmNhcW5rRFI4QzJvUjJXdU9XVWlVQklGLUV4LWc2S2VGczdPanlEb09Vb1hJakM5Z2pfRl9YOVZqNGtmVDFveXZscGhaLXpoRlF5WEUwLWVWSGwzU3JvSmJXb3djX3R6dmRfaGRKclNtRDQ4Smd2TUQ0eG43WEQzZXo1SmNRTmFkdE1JYnNoeGFwMXNlLTlrNGc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQSDNpNHR3ZzZNNnVsTXE1c1N1RDVPdHFvRjBrRWJiQTltVlRmNlM3VzdkX1dEZmNhcW5rRFI4QzJvUjJXdU9XVWlVQklGLUV4LWc2S2VGczdPanlEb09Vb1hJakM5Z2pfRl9YOVZqNGtmVDFveXZscGhaLXpoRlF5WEUwLWVWSGwzU3JvSmJXb3djX3R6dmRfaGRKclNtRDQ4Smd2TUQ0eG43WEQzZXo1SmNRTmFkdE1JYnNoeGFwMXNlLTlrNGc?oc=5\" target=\"_blank\"&gt;Eastern Libya parliament approves maritime deal with Turkey, drawing Greek rejection&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
-          "published": "2026-10-20T17:45:19.000Z",
-          "score": 8
-        },
-        {
           "title": "Burkina Faso parliament votes to restore death penalty - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNnZuVkdOUTNrZHVoVHJkdmg3YWVKanJNcUg3SEo5aTEwME5ybE9tVS12V0lId09CRDJQMHNrdGd1dUROWXNuejlTbFFlalFjc0JtMDhIWW16TFFGT3VabWV5cHpuWEVPTENvTzEtbDI0MzlEX1VQQ0hvVTNsR3hqSktBUnUxbDR0VjVMaG9hNGtvaXQ4UTFheHJnYkJvWWhoX0E?oc=5",
           "source": "Reuters World (via Google News)",
@@ -182,9 +197,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 409,
-    "articlesLast24h": 178,
-    "afterDedup": 168,
+    "totalArticlesScanned": 410,
+    "articlesLast24h": 186,
+    "afterDedup": 172,
     "feedsQueried": 19
   }
 }
