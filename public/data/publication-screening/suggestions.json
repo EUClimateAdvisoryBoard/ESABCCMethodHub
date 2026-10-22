@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T09:28:16.442Z",
+  "generatedAt": "2026-10-22T09:31:22.741Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,27 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/aeb70d",
+      "title": "Global organic chemicals industry under the CBAM: Changes in output, carbon emissions and cross-country inequality",
+      "journal": "Environmental Research Letters",
+      "authors": "Chenchen Wang, Laijun Zhao, Juntao Zhen, George N Papageorgiou",
+      "published": "2026-10-21",
+      "url": "https://doi.org/10.1088/1748-9326/aeb70d",
+      "abstract": "The European Union’s Carbon Border Adjustment Mechanism (CBAM) is poised to potentially cover the organic‑chemical industry after 2026, carrying far‑reaching consequences for global production, emissions and international fairness. This study assesses CBAM impacts across 42 major economies by combining an input‑output‑based emission intensity approach, a Two‑Stage Armington partial‑equilibrium model, and a sector‑level weighted inequality index. Simulations are implemented under a no‑CBAM baseline and a counterfactual CBAM policy setting, with two further emissions‑accounting scenarios: direct‑emission‑only (Scenario 1), and direct plus electricity‑related indirect emissions (Scenario 2). Going beyond prior work focused largely on output and emission shifts, this paper incorporates cross‑country inequality metrics to unpack policy distributional consequences. Results show that CBAM expands domestic output within the EU while contracting output in non‑EU regions, with larger effects under Scenario 2. All EU sub‑regions, particularly Western Europe, experience rising carbon emissions, whereas most non‑EU regions see emission reductions. CBAM widens cross‑country inequality, more sharply outside than inside the EU; the greatest inequality occurs in Central and Eastern Europe, as well as Russia, the Middle East and Norway. These findings expose sector‑level asymmetric and distributional harms of CBAM and offer empirical evidence for global chemical decarbonization, climate‑policy",
+      "suggestedOn": "2026-10-22",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 10.5,
+          "matched": [
+            "chemical industry",
+            "cbam",
+            "carbon border adjustment"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aeb55d",
       "title": "Carbon Prices and Cooking Fires: How Decarbonization Pathway Design Shapes Household Energy Burdens",
