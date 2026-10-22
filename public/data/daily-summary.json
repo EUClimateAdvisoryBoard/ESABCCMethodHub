@@ -1,6 +1,6 @@
 {
   "date": "2026-10-22",
-  "generatedAt": "2026-10-22T01:20:24.104Z",
+  "generatedAt": "2026-10-22T09:55:52.864Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 22 October 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,10 +11,16 @@
       "color": "#E87722"
     },
     {
-      "headline": "Speech by President von der Leyen at the European Parliament plenary debate on the conclusions of the European Council meeting of 15-16 October 2026",
-      "summary": "European Commission Speech Strasbourg, 21 Oct 2026 President Metsola, dear Roberta,\r\nPresident Costa, dear António,\r\nHonourable Members,\r\nWe have had a long and dense European Council. Let me touch on two of the ma...",
+      "headline": "NI risks missing 2030 energy goals, says Stormont committee",
+      "summary": "A committee hears that Northern Ireland could lose out on economic opportunities if action is not accelerated.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Norway's wealth fund posts $30 billion loss in third quarter - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNa3pHaTAydzc2dGxNdlNJQ2FkbDl0UF9BUjhGUkpsSEVmTF9nT0lJekdnTU9VV29lTzdTMU1wUmxwSUdxUDNpVVhZLUg3UHZHbXFmcnkyNEVTTGd1RnZlbFROaTBRcjVSSVdRNE1mblk1UFZoczJsemxrYlZyczNpMmUyMTFfakxqNVd3Rl8xd3hUYlJweXdzSG5OV3cwS1RPZUE?oc=5\" target=\"_blank\"&gt;Norway's wealth fund posts $30 billion loss in third quarter&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -52,20 +58,20 @@
           "score": 8
         },
         {
-          "title": "Wednesday briefing: ​Why has Jackdaw been approved in the middle of a climate crisis?",
-          "link": "https://www.theguardian.com/world/2026/oct/21/wednesday-briefing-why-has-jackdaw-been-approved-in-the-middle-of-a-climate-crisis",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;In today’s newsletter: The government has approved drilling in the Jackdaw gas field despite fierce opposition and evidence against it&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Good morning. After weeks of speculation, the secretary of state for energy and net zero, Miatta Fahnbulleh, approved drilling in the Jackdaw gasfield this morning. In a statement, published a few minutes before today’s First Edition, Fahnbulleh stressed that the government remains “resolute” in achieving net zero by ",
-          "published": "2026-10-21T06:21:52.000Z",
-          "score": 7
-        },
-        {
           "title": "Jackdaw approval is a step towards a grownup North Sea policy",
           "link": "https://www.theguardian.com/business/nils-pratley-on-finance/2026/oct/21/jackdaw-approval-step-towards-grownup-north-sea-policy",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Government decision is about how much oil and gas is sensible for UK to produce on the way to net zero&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/oct/21/uk-inflation-jump-rising-motor-fuels-cost-jackdaw-gas-field-latest-news-updates\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Andy Burnham hit the nail on the (well)head in his first fortnight as prime minister when &lt;a href=\"https://www.thegu",
           "published": "2026-10-21T17:12:32.000Z",
           "score": 4
+        },
+        {
+          "title": "Burnham defends Jackdaw decision as Badenoch urges PM to overturn ban on new oil and gas licences",
+          "link": "https://www.bbc.co.uk/news/articles/cy4zdgk081eo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The UK government says the field, which is opposed by environmental campaigners, could be producing gas by the end of this month.",
+          "published": "2026-10-21T15:36:31.000Z",
+          "score": 2
         }
       ]
     },
@@ -74,36 +80,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Speech by President von der Leyen at the European Parliament plenary debate on the conclusions of the European Council meeting of 15-16 October 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2222",
-          "source": "European Commission",
-          "description": "European Commission Speech Strasbourg, 21 Oct 2026 President Metsola, dear Roberta,\r\nPresident Costa, dear António,\r\nHonourable Members,\r\nWe have had a long and dense European Council. Let me touch on two of the ma...",
-          "published": "2026-10-21T06:04:27.000Z",
-          "score": 22
-        },
-        {
-          "title": "Turkish giant sponsoring COP31 cut climate goals then cashed in on oil boom",
-          "link": "https://www.climatechangenews.com/2026/10/21/turkish-giant-sponsoring-cop31-cut-climate-goals-then-cashed-in-on-oil-boom/",
-          "source": "Climate Home News",
-          "description": "COP31 sponsors should be screened for “climate integrity”. Yet Koç Holding has become a top partner while its oil refiner runs flat out and its climate targets slip The post Turkish giant sponsoring COP31 cut climate goals then cashed in on oil boom appeared first on Climate Home News.",
-          "published": "2026-10-21T08:30:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "UN sets steep emission cuts to reverse 1.5C overshoot by end of century",
-          "link": "https://www.climatechangenews.com/2026/10/21/un-sets-steep-emission-cuts-to-reverse-1-5c-overshoot-by-end-of-century/",
-          "source": "Climate Home News",
-          "description": "Emissions must by reduced by nearly 6% a year for the world to have a good chance of bringing global warming back down to the Paris Agreement limit, the Emissions Gap Report says The post UN sets steep emission cuts to reverse 1.5C overshoot by end of century appeared first on Climate Home News.",
-          "published": "2026-10-21T05:00:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "UNEP: Opportunity has ‘been lost’ to meet 1.5C warming limit without ‘overshoot’",
-          "link": "https://www.carbonbrief.org/unep-opportunity-has-been-lost-to-meet-1-5c-warming-limit-without-overshoot",
-          "source": "Carbon Brief",
-          "description": "A temporary breach of the 1.5C global-warming limit is now “inevitable” following “decades of insufficient climate action”, says the UN&#8230; The post UNEP: Opportunity has ‘been lost’ to meet 1.5C warming limit without ‘overshoot’ appeared first on Carbon Brief.",
-          "published": "2026-10-21T05:00:00.000Z",
-          "score": 10
+          "title": "NI risks missing 2030 energy goals, says Stormont committee",
+          "link": "https://www.bbc.co.uk/news/articles/c623d18dl3v0o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "A committee hears that Northern Ireland could lose out on economic opportunities if action is not accelerated.",
+          "published": "2026-10-22T05:09:52.000Z",
+          "score": 11
         },
         {
           "title": "COP17 must settle who decides how Cali Fund money is disbursed",
@@ -112,18 +94,59 @@
           "description": "The fund’s importance will depend not only on how much reaches Indigenous Peoples and local communities, but on whether they can determine how the finance is accessed, governed and used The post COP17 must settle who decides how Cali Fund money is disbursed appeared first on Climate Home News.",
           "published": "2026-10-21T20:42:11.000Z",
           "score": 10
+        },
+        {
+          "title": "Burnham approves Jackdaw – and Labour’s unity on climate action is imperilled with the stroke of a pen | Zoe Williams",
+          "link": "https://www.theguardian.com/commentisfree/2026/oct/21/andy-burnham-approve-jackdaw-labour-climate-action",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;This foolish decision undermines hopes that this government will take the necessary steps the climate crisis demands &lt;/p&gt;&lt;p&gt;When the news broke that the &lt;a href=\"https://www.theguardian.com/environment/2026/oct/21/jackdaw-gasfield-in-north-sea-approved\"&gt;UK government had approved the Jackdaw gasfield&lt;/a&gt;, I was at a Guardian climate event at the Royal Geographical Society. Appropriately, the theme suggested by readers was what can the public actually do in the fa",
+          "published": "2026-10-21T17:14:42.000Z",
+          "score": 7
+        },
+        {
+          "title": "How bad is Jackdaw gasfield approval for the climate? – The Latest",
+          "link": "https://www.theguardian.com/news/video/2026/oct/21/how-bad-is-jackdaw-gasfield-approval-for-the-climate-the-latest",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Climate campaigners have condemned the UK government’s decision to allow the drilling of the Jackdaw gasfield. Critics argue the move will put climate targets at risk, while failing to reduce energy bills and the cost of living crisis. But there could be a significant victory for green activists when it comes to the much larger Rosebank oilfield, with the energy secretary, Miatta Fahnbulleh, leaning towards rejecting approval. Michael Safi speaks to environment correspondent Matthew Tay",
+          "published": "2026-10-21T18:51:39.000Z",
+          "score": 7
+        },
+        {
+          "title": "Energy secretary leaning towards rejecting Rosebank oilfield",
+          "link": "https://www.theguardian.com/environment/2026/oct/21/energy-secretary-leaning-towards-rejecting-rosebank-oilfield",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Exclusive: Officials say Miatta Fahnbulleh minded not to give approval in victory for climate campaigners&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Miatta Fahnbulleh is minded to reject the giant Rosebank oilfield, sources have told the Guardian, in what would be a blow for the North Sea energy industry and a major victory for climate campaigners.&lt;/p&gt;&lt;p&gt;After &lt;a href=\"https://www.theguardian.com/environment/2026/oct/21/jackdaw-gasfield-in-north-sea-approved\"&gt;approving the s",
+          "published": "2026-10-21T17:15:23.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Norway's wealth fund posts $30 billion loss in third quarter - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNa3pHaTAydzc2dGxNdlNJQ2FkbDl0UF9BUjhGUkpsSEVmTF9nT0lJekdnTU9VV29lTzdTMU1wUmxwSUdxUDNpVVhZLUg3UHZHbXFmcnkyNEVTTGd1RnZlbFROaTBRcjVSSVdRNE1mblk1UFZoczJsemxrYlZyczNpMmUyMTFfakxqNVd3Rl8xd3hUYlJweXdzSG5OV3cwS1RPZUE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNa3pHaTAydzc2dGxNdlNJQ2FkbDl0UF9BUjhGUkpsSEVmTF9nT0lJekdnTU9VV29lTzdTMU1wUmxwSUdxUDNpVVhZLUg3UHZHbXFmcnkyNEVTTGd1RnZlbFROaTBRcjVSSVdRNE1mblk1UFZoczJsemxrYlZyczNpMmUyMTFfakxqNVd3Rl8xd3hUYlJweXdzSG5OV3cwS1RPZUE?oc=5\" target=\"_blank\"&gt;Norway's wealth fund posts $30 billion loss in third quarter&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-22T08:27:56.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
+        {
+          "title": "EU moves to loosen rules on pesticide use as experts sound the alarm",
+          "link": "https://www.dw.com/en/eu-moves-to-loosen-rules-on-pesticide-use-as-experts-sound-the-alarm/a-79646422?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Union wants to relax rules for pesticides, saying it will be easier for farmers to adopt more environmentally friendly options. But health and environmental experts say the risks are far too great.",
+          "published": "2026-10-22T08:07:00.000Z",
+          "score": 8
+        },
         {
           "title": "Trump, Putin and Xi at one table, without Ukraine. What Moscow wants from the proposal and why Beijing might agree.",
           "link": "https://www.dw.com/en/trump-putin-and-xi-at-one-table-without-ukraine-what-moscow-wants-from-the-proposal-and-why-beijing-might-agree/a-79726190?maca=en-rss-en-all-1573-xml-mrss",
@@ -138,6 +161,22 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Europe car sales rise 10% in September as EV surge offsets combustion slump - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZkZ4UUdOU1NEMGwxUnA0cnk3R19xZFp5X0hxOTN6X1Y0X3NjUldZemRiRXpRV3RCc09taGxGeGszTldhQk5ubWdzcW9sSkF2MUUxZnEwMnk5d3lnYThaMEE2T1BULWl0ZVNrb3BkRTVLNHFnMWJTWjFSd3lBd25uZEpyamRnSjY1N1d0MDlVRk0xUXV5Y3g0WGU2bEVOZ0lIeEJPZWNpODhuaFJWdm82QWszZk5pa2c?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOZkZ4UUdOU1NEMGwxUnA0cnk3R19xZFp5X0hxOTN6X1Y0X3NjUldZemRiRXpRV3RCc09taGxGeGszTldhQk5ubWdzcW9sSkF2MUUxZnEwMnk5d3lnYThaMEE2T1BULWl0ZVNrb3BkRTVLNHFnMWJTWjFSd3lBd25uZEpyamRnSjY1N1d0MDlVRk0xUXV5Y3g0WGU2bEVOZ0lIeEJPZWNpODhuaFJWdm82QWszZk5pa2c?oc=5\" target=\"_blank\"&gt;Europe car sales rise 10% in September as EV surge offsets combustion slump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-22T04:06:00.000Z",
+          "score": 13
+        },
+        {
+          "title": "Two European women held captive for more than a year in Niger freed in Libya",
+          "link": "https://www.bbc.co.uk/news/articles/cq62y0v7434yo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The aid workers from Switzerland and Austria are due to fly home on Thursday, reports say.",
+          "published": "2026-10-22T08:21:13.000Z",
+          "score": 8
+        },
         {
           "title": "Germany news: AfD&#039;s Weidel calls for major EU reforms",
           "link": "https://www.dw.com/en/germany-news-afd-s-weidel-calls-for-major-eu-reforms/live-79719483?maca=en-rss-en-all-1573-xml-mrss",
@@ -155,36 +194,20 @@
           "score": 8
         },
         {
-          "title": "Pound gains against dollar, euro as inflation data cements future rate hike bets - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONEtnY2tIVF9OZTdBSTNUOHpQWjFKYzlBd1JYdEx6eXBBTGV3M0U1RGVQT08tT1o2NEdXTzUzZ3d4eGV4OVN2Ukc3c0h1RjRMNy02VHNpd3hiSl9fcFNnV2tyUjNyaVpzeWc0akVmVk94Z3VTU3VFZi1TMlp6S2xUR2habU5BYkVhWWtoMVhCNGlDMmFCa245OUJPWlFvRl9PcFdFdWo4VGEwVFNPalVITEkzYWZtT3pBMUNrT0hR?oc=5",
+          "title": "Burkina Faso parliament votes to restore death penalty - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNnZuVkdOUTNrZHVoVHJkdmg3YWVKanJNcUg3SEo5aTEwME5ybE9tVS12V0lId09CRDJQMHNrdGd1dUROWXNuejlTbFFlalFjc0JtMDhIWW16TFFGT3VabWV5cHpuWEVPTENvTzEtbDI0MzlEX1VQQ0hvVTNsR3hqSktBUnUxbDR0VjVMaG9hNGtvaXQ4UTFheHJnYkJvWWhoX0E?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxONEtnY2tIVF9OZTdBSTNUOHpQWjFKYzlBd1JYdEx6eXBBTGV3M0U1RGVQT08tT1o2NEdXTzUzZ3d4eGV4OVN2Ukc3c0h1RjRMNy02VHNpd3hiSl9fcFNnV2tyUjNyaVpzeWc0akVmVk94Z3VTU3VFZi1TMlp6S2xUR2habU5BYkVhWWtoMVhCNGlDMmFCa245OUJPWlFvRl9PcFdFdWo4VGEwVFNPalVITEkzYWZtT3pBMUNrT0hR?oc=5\" target=\"_blank\"&gt;Pound gains against dollar, euro as inflation data cements future rate hike bets&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-21T09:54:38.000Z",
-          "score": 8
-        },
-        {
-          "title": "Prosecutors raid offices of Patriots for Europe group in European Parliament - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNmgtLWh0ZktoQVdwZndEM3VFSUV5UkhQOUREelR2X1BrTE9sY2xHT1V3NHFvR1JhaDlkX2FCTllRQUh1VVVfR2sxeHBCcWZtbVZZU05Pd0F1LXhZV2Z6UWNjT29VZkpmUlpreWkzSEVycVplXzh4SHprVjE4UU15X0lCMGdHU1EtQ21haDg2VlY1dzBLcHJia3ZabUVCbzhfZkxsaF9uLUo0YW1fQnY3Wk5PZTZUb0FjUmpF?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNmgtLWh0ZktoQVdwZndEM3VFSUV5UkhQOUREelR2X1BrTE9sY2xHT1V3NHFvR1JhaDlkX2FCTllRQUh1VVVfR2sxeHBCcWZtbVZZU05Pd0F1LXhZV2Z6UWNjT29VZkpmUlpreWkzSEVycVplXzh4SHprVjE4UU15X0lCMGdHU1EtQ21haDg2VlY1dzBLcHJia3ZabUVCbzhfZkxsaF9uLUo0YW1fQnY3Wk5PZTZUb0FjUmpF?oc=5\" target=\"_blank\"&gt;Prosecutors raid offices of Patriots for Europe group in European Parliament&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-21T15:42:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU will propose new tools to protect market, von der Leyen says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQRDhFRkdJRjdBMGRIYVJtMEtQTzFWNHp1Vnk3NTVGTDZsSzluRXBRWk5xaGEtTTZLQWVsM3oweVhlZTVfVUNockNWeU1GNDZZT1ZFLWFuLVdQektqNU5JWTFFaW1WY05iM1FuSVR1bWRZUkJ5VFZVUFRjYU0tUTlVVU5vTEVXY3BKbjdZRk8yY1ZjaE5QZHBOMDh5UEE1Rk12Um9DWnlrRkZZREZ5MTJ2SWxn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQRDhFRkdJRjdBMGRIYVJtMEtQTzFWNHp1Vnk3NTVGTDZsSzluRXBRWk5xaGEtTTZLQWVsM3oweVhlZTVfVUNockNWeU1GNDZZT1ZFLWFuLVdQektqNU5JWTFFaW1WY05iM1FuSVR1bWRZUkJ5VFZVUFRjYU0tUTlVVU5vTEVXY3BKbjdZRk8yY1ZjaE5QZHBOMDh5UEE1Rk12Um9DWnlrRkZZREZ5MTJ2SWxn?oc=5\" target=\"_blank\"&gt;EU will propose new tools to protect market, von der Leyen says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-21T16:02:50.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPNnZuVkdOUTNrZHVoVHJkdmg3YWVKanJNcUg3SEo5aTEwME5ybE9tVS12V0lId09CRDJQMHNrdGd1dUROWXNuejlTbFFlalFjc0JtMDhIWW16TFFGT3VabWV5cHpuWEVPTENvTzEtbDI0MzlEX1VQQ0hvVTNsR3hqSktBUnUxbDR0VjVMaG9hNGtvaXQ4UTFheHJnYkJvWWhoX0E?oc=5\" target=\"_blank\"&gt;Burkina Faso parliament votes to restore death penalty&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-21T10:02:29.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 408,
-    "articlesLast24h": 188,
-    "afterDedup": 169,
+    "totalArticlesScanned": 410,
+    "articlesLast24h": 181,
+    "afterDedup": 162,
     "feedsQueried": 19
   }
 }
