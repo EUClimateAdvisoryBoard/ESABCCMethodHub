@@ -1,15 +1,9 @@
 {
-  "date": "2026-10-21",
-  "generatedAt": "2026-10-21T20:31:56.111Z",
+  "date": "2026-10-22",
+  "generatedAt": "2026-10-22T01:20:24.104Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Wednesday, 21 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Thursday, 22 October 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Commission welcomes political agreement on rules enhancing stability and long-term resilience of EU carbon market",
-      "summary": "European Commission Press release Brussels, 21 Oct 2026 The European Commission welcomes the provisional political agreement reached by the European Parliament and the Council on a targeted amendment to strengthen the Market Stability Reserve (MSR) of the EU's Emissions Trading System (EU ETS).",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status",
       "summary": "The government accepts that approving the Jackdaw field will weaken its climate reputation and downplays the legal weight of the International Court of Justice opinion The post UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status appeared first on Climate Home News.",
@@ -27,16 +21,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Commission welcomes political agreement on rules enhancing stability and long-term resilience of EU carbon market",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2206",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 21 Oct 2026 The European Commission welcomes the provisional political agreement reached by the European Parliament and the Council on a targeted amendment to strengthen the Market Stability Reserve (MSR) of the EU's Emissions Trading System (EU ETS).",
-          "published": "2026-10-20T22:00:00.000Z",
-          "score": 27
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -121,12 +106,12 @@
           "score": 10
         },
         {
-          "title": "Climate campaigners condemn ‘maddening’ decision to approve Jackdaw gasfield",
-          "link": "https://www.theguardian.com/environment/2026/oct/21/jackdaw-gasfield-climate-campaigners-condemn-decision-north-sea-mining",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Critics say move will jeopardise climate targets, fail to cut cost of living and distract from need to decarbonise energy&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Climate campaigners and green experts have condemned the &lt;a href=\"https://www.theguardian.com/environment/2026/oct/21/jackdaw-gasfield-in-north-sea-approved\"&gt;government’s decision to allow the drilling of the Jackdaw&lt;/a&gt; gasfield in the North Sea.&lt;/p&gt;&lt;p&gt;They said approval for the site would &lt;a href=\"http",
-          "published": "2026-10-21T08:23:46.000Z",
-          "score": 7
+          "title": "COP17 must settle who decides how Cali Fund money is disbursed",
+          "link": "https://www.climatechangenews.com/2026/10/21/cop17-must-settle-who-decides-how-cali-fund-money-is-disbursed/",
+          "source": "Climate Home News",
+          "description": "The fund’s importance will depend not only on how much reaches Indigenous Peoples and local communities, but on whether they can determine how the finance is accessed, governed and used The post COP17 must settle who decides how Cali Fund money is disbursed appeared first on Climate Home News.",
+          "published": "2026-10-21T20:42:11.000Z",
+          "score": 10
         }
       ]
     },
@@ -170,14 +155,6 @@
           "score": 8
         },
         {
-          "title": "AfD&#039;s Alice Weidel to unveil plan to cut EU powers — report",
-          "link": "https://www.dw.com/en/afd-s-alice-weidel-to-unveil-plan-to-cut-eu-powers-report/a-79717944?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The far-right AfD will propose slashing powers of the European Union when it presents its policy paper on Wednesday, Politico reports.",
-          "published": "2026-10-20T22:25:00.000Z",
-          "score": 8
-        },
-        {
           "title": "Pound gains against dollar, euro as inflation data cements future rate hike bets - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONEtnY2tIVF9OZTdBSTNUOHpQWjFKYzlBd1JYdEx6eXBBTGV3M0U1RGVQT08tT1o2NEdXTzUzZ3d4eGV4OVN2Ukc3c0h1RjRMNy02VHNpd3hiSl9fcFNnV2tyUjNyaVpzeWc0akVmVk94Z3VTU3VFZi1TMlp6S2xUR2habU5BYkVhWWtoMVhCNGlDMmFCa245OUJPWlFvRl9PcFdFdWo4VGEwVFNPalVITEkzYWZtT3pBMUNrT0hR?oc=5",
           "source": "Reuters World (via Google News)",
@@ -186,20 +163,28 @@
           "score": 8
         },
         {
-          "title": "Burkina Faso parliament votes to restore death penalty - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNnZuVkdOUTNrZHVoVHJkdmg3YWVKanJNcUg3SEo5aTEwME5ybE9tVS12V0lId09CRDJQMHNrdGd1dUROWXNuejlTbFFlalFjc0JtMDhIWW16TFFGT3VabWV5cHpuWEVPTENvTzEtbDI0MzlEX1VQQ0hvVTNsR3hqSktBUnUxbDR0VjVMaG9hNGtvaXQ4UTFheHJnYkJvWWhoX0E?oc=5",
+          "title": "Prosecutors raid offices of Patriots for Europe group in European Parliament - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNmgtLWh0ZktoQVdwZndEM3VFSUV5UkhQOUREelR2X1BrTE9sY2xHT1V3NHFvR1JhaDlkX2FCTllRQUh1VVVfR2sxeHBCcWZtbVZZU05Pd0F1LXhZV2Z6UWNjT29VZkpmUlpreWkzSEVycVplXzh4SHprVjE4UU15X0lCMGdHU1EtQ21haDg2VlY1dzBLcHJia3ZabUVCbzhfZkxsaF9uLUo0YW1fQnY3Wk5PZTZUb0FjUmpF?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPNnZuVkdOUTNrZHVoVHJkdmg3YWVKanJNcUg3SEo5aTEwME5ybE9tVS12V0lId09CRDJQMHNrdGd1dUROWXNuejlTbFFlalFjc0JtMDhIWW16TFFGT3VabWV5cHpuWEVPTENvTzEtbDI0MzlEX1VQQ0hvVTNsR3hqSktBUnUxbDR0VjVMaG9hNGtvaXQ4UTFheHJnYkJvWWhoX0E?oc=5\" target=\"_blank\"&gt;Burkina Faso parliament votes to restore death penalty&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-21T10:02:29.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNmgtLWh0ZktoQVdwZndEM3VFSUV5UkhQOUREelR2X1BrTE9sY2xHT1V3NHFvR1JhaDlkX2FCTllRQUh1VVVfR2sxeHBCcWZtbVZZU05Pd0F1LXhZV2Z6UWNjT29VZkpmUlpreWkzSEVycVplXzh4SHprVjE4UU15X0lCMGdHU1EtQ21haDg2VlY1dzBLcHJia3ZabUVCbzhfZkxsaF9uLUo0YW1fQnY3Wk5PZTZUb0FjUmpF?oc=5\" target=\"_blank\"&gt;Prosecutors raid offices of Patriots for Europe group in European Parliament&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-21T15:42:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU will propose new tools to protect market, von der Leyen says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQRDhFRkdJRjdBMGRIYVJtMEtQTzFWNHp1Vnk3NTVGTDZsSzluRXBRWk5xaGEtTTZLQWVsM3oweVhlZTVfVUNockNWeU1GNDZZT1ZFLWFuLVdQektqNU5JWTFFaW1WY05iM1FuSVR1bWRZUkJ5VFZVUFRjYU0tUTlVVU5vTEVXY3BKbjdZRk8yY1ZjaE5QZHBOMDh5UEE1Rk12Um9DWnlrRkZZREZ5MTJ2SWxn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQRDhFRkdJRjdBMGRIYVJtMEtQTzFWNHp1Vnk3NTVGTDZsSzluRXBRWk5xaGEtTTZLQWVsM3oweVhlZTVfVUNockNWeU1GNDZZT1ZFLWFuLVdQektqNU5JWTFFaW1WY05iM1FuSVR1bWRZUkJ5VFZVUFRjYU0tUTlVVU5vTEVXY3BKbjdZRk8yY1ZjaE5QZHBOMDh5UEE1Rk12Um9DWnlrRkZZREZ5MTJ2SWxn?oc=5\" target=\"_blank\"&gt;EU will propose new tools to protect market, von der Leyen says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-21T16:02:50.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 410,
-    "articlesLast24h": 186,
-    "afterDedup": 172,
+    "totalArticlesScanned": 408,
+    "articlesLast24h": 188,
+    "afterDedup": 169,
     "feedsQueried": 19
   }
 }
