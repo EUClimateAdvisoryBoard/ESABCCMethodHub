@@ -1,24 +1,24 @@
 {
   "date": "2026-10-22",
-  "generatedAt": "2026-10-22T09:55:52.864Z",
+  "generatedAt": "2026-10-22T15:52:14.206Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 22 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status",
-      "summary": "The government accepts that approving the Jackdaw field will weaken its climate reputation and downplays the legal weight of the International Court of Justice opinion The post UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status appeared first on Climate Home News.",
+      "headline": "UK politics: Reform UK claims racism exposé has left some members ‘psychologically damaged’ as it reports ITV to police – as it happened",
+      "summary": "&lt;p&gt;Zia Yusuf claims undercover investigation broke the law as broadcaster stands by its journalism&lt;/p&gt;&lt;p&gt;Here is an explainer by &lt;strong&gt;Jill Ambrose&lt;/strong&gt; about the Jackdaw decision.&lt;/p&gt;&lt;p&gt;But environmental groups have condemned the decision. Ami McCarthy, head of politics for &lt;strong&gt;Greenpeace UK&lt;/strong&gt;, said:&lt;/p&gt;&lt;p&gt;&lt;em&gt;Approving Jackdaw shows the toxic grip fossil fuel lobbyists still hold over our energy policy. An",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "NI risks missing 2030 energy goals, says Stormont committee",
-      "summary": "A committee hears that Northern Ireland could lose out on economic opportunities if action is not accelerated.",
+      "headline": "Experts: How are climate scientists using artificial intelligence?",
+      "summary": "Artificial intelligence (AI) is developing at a rapid pace and is increasingly being used by scientists to better understand climate&#8230; The post Experts: How are climate scientists using artificial intelligence? appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Norway's wealth fund posts $30 billion loss in third quarter - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNa3pHaTAydzc2dGxNdlNJQ2FkbDl0UF9BUjhGUkpsSEVmTF9nT0lJekdnTU9VV29lTzdTMU1wUmxwSUdxUDNpVVhZLUg3UHZHbXFmcnkyNEVTTGd1RnZlbFROaTBRcjVSSVdRNE1mblk1UFZoczJsemxrYlZyczNpMmUyMTFfakxqNVd3Rl8xd3hUYlJweXdzSG5OV3cwS1RPZUE?oc=5\" target=\"_blank\"&gt;Norway's wealth fund posts $30 billion loss in third quarter&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Norway wealth fund slightly cautious on equities, tech companies - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNa3pHaTAydzc2dGxNdlNJQ2FkbDl0UF9BUjhGUkpsSEVmTF9nT0lJekdnTU9VV29lTzdTMU1wUmxwSUdxUDNpVVhZLUg3UHZHbXFmcnkyNEVTTGd1RnZlbFROaTBRcjVSSVdRNE1mblk1UFZoczJsemxrYlZyczNpMmUyMTFfakxqNVd3Rl8xd3hUYlJweXdzSG5OV3cwS1RPZUE?oc=5\" target=\"_blank\"&gt;Norway wealth fund slightly cautious on equities, tech companies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,28 +34,20 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status",
-          "link": "https://www.climatechangenews.com/2026/10/21/uk-approves-gas-drilling-despite-admitting-blow-to-climate-leadership-status/",
-          "source": "Climate Home News",
-          "description": "The government accepts that approving the Jackdaw field will weaken its climate reputation and downplays the legal weight of the International Court of Justice opinion The post UK approves gas drilling despite admitting blow to &#8220;climate leadership&#8221; status appeared first on Climate Home News.",
-          "published": "2026-10-21T14:49:54.000Z",
-          "score": 13
-        },
-        {
-          "title": "Revealed: Expensive gas behind ‘nearly 90%’ of rise in UK electricity bills",
-          "link": "https://www.carbonbrief.org/revealed-expensive-gas-behind-nearly-90-of-rise-in-uk-electricity-bills",
-          "source": "Carbon Brief",
-          "description": "A surge in wholesale costs driven by expensive gas is responsible for nearly 90% of the rise in UK household&#8230; The post Revealed: Expensive gas behind ‘nearly 90%’ of rise in UK electricity bills appeared first on Carbon Brief.",
-          "published": "2026-10-21T11:37:55.000Z",
-          "score": 10
-        },
-        {
           "title": "UK politics: Reform UK claims racism exposé has left some members ‘psychologically damaged’ as it reports ITV to police – as it happened",
           "link": "https://www.theguardian.com/politics/live/2026/oct/21/jackdaw-gasfield-labour-andy-burnham-zack-polanski-uk-politics-latest-news",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Zia Yusuf claims undercover investigation broke the law as broadcaster stands by its journalism&lt;/p&gt;&lt;p&gt;Here is an explainer by &lt;strong&gt;Jill Ambrose&lt;/strong&gt; about the Jackdaw decision.&lt;/p&gt;&lt;p&gt;But environmental groups have condemned the decision. Ami McCarthy, head of politics for &lt;strong&gt;Greenpeace UK&lt;/strong&gt;, said:&lt;/p&gt;&lt;p&gt;&lt;em&gt;Approving Jackdaw shows the toxic grip fossil fuel lobbyists still hold over our energy policy. An",
           "published": "2026-10-21T16:45:48.000Z",
           "score": 8
+        },
+        {
+          "title": "COMMENTARY: Asia buys more LNG despite surging prices, El Nino clouds outlook - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOZEd6MUJ0RzZBWktFMGFuNkUzNVZKejZBX3EtdmdGUW5SQWpmM18yNEpWb212MzA5dENESGNJcHVWaXNBdTFNc2oyM1FNS2l5bmJLaWNCb3cwaG1WX3FYUXItdHo4cDhsV1Q1ZXNpVXZaVE1ReTVpY0hXN0V3NDFpYVJpWWY0OTk0MV85VHFJSmVNa001SVdnOF9EUkhieURyQjlfX1NzTGY2WmZZcVQxenhkZVBIMVVQdTBHTVZucWpONFdWOXBQQnRudFpEdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOZEd6MUJ0RzZBWktFMGFuNkUzNVZKejZBX3EtdmdGUW5SQWpmM18yNEpWb212MzA5dENESGNJcHVWaXNBdTFNc2oyM1FNS2l5bmJLaWNCb3cwaG1WX3FYUXItdHo4cDhsV1Q1ZXNpVXZaVE1ReTVpY0hXN0V3NDFpYVJpWWY0OTk0MV85VHFJSmVNa001SVdnOF9EUkhieURyQjlfX1NzTGY2WmZZcVQxenhkZVBIMVVQdTBHTVZucWpONFdWOXBQQnRudFpEdw?oc=5\" target=\"_blank\"&gt;COMMENTARY: Asia buys more LNG despite surging prices, El Nino clouds outlook&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
+          "published": "2026-10-22T13:57:30.000Z",
+          "score": 7
         },
         {
           "title": "Jackdaw approval is a step towards a grownup North Sea policy",
@@ -66,11 +58,19 @@
           "score": 4
         },
         {
-          "title": "Burnham defends Jackdaw decision as Badenoch urges PM to overturn ban on new oil and gas licences",
-          "link": "https://www.bbc.co.uk/news/articles/cy4zdgk081eo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The UK government says the field, which is opposed by environmental campaigners, could be producing gas by the end of this month.",
-          "published": "2026-10-21T15:36:31.000Z",
+          "title": "Coal supply to power plants to normalise soon, Indian official says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNb3BXbHFBRE9HSGZWMGJJdmJJZDJhU0laWWlGU1E5d0FXTGI2U3diQ1MtQ3I4dkRvR2MwNVZmY0FFNEhtVVEzS25OZV90OFNSM1V3d3VCRG9udGxzNkRoZTdNZG9ld280V003WDNTUTFISDI3Q01CdXozWWc5eVVDcU8tc3JRQjROMHVCX09EOFJ0SFV1V2tObHVSMXlHSXJXN2dNX2VtOUVySkFs?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNb3BXbHFBRE9HSGZWMGJJdmJJZDJhU0laWWlGU1E5d0FXTGI2U3diQ1MtQ3I4dkRvR2MwNVZmY0FFNEhtVVEzS25OZV90OFNSM1V3d3VCRG9udGxzNkRoZTdNZG9ld280V003WDNTUTFISDI3Q01CdXozWWc5eVVDcU8tc3JRQjROMHVCX09EOFJ0SFV1V2tObHVSMXlHSXJXN2dNX2VtOUVySkFs?oc=5\" target=\"_blank\"&gt;Coal supply to power plants to normalise soon, Indian official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-22T04:52:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Ofgem approves deal to maintain UK gas import capacity - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWTZ3Uk5sNjNBbzZtZWxwMVlFcG1JS0VtSWtxTUx3RkVLOC1jVE5EcWdoMEZsWnQzVE9kQ1FZOFo5Vzh6ZnRvVERHbjFuZndqWElxWWhIRlV3Mno2M3FIRzFKdlc2ME55QlZFUUVkMENNbV9kZnNsWXZwbUlEUGtEWHNwZ1h1RUVPX2w0R2gxRzBON1I4a1E5ODBiNEY?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxOWTZ3Uk5sNjNBbzZtZWxwMVlFcG1JS0VtSWtxTUx3RkVLOC1jVE5EcWdoMEZsWnQzVE9kQ1FZOFo5Vzh6ZnRvVERHbjFuZndqWElxWWhIRlV3Mno2M3FIRzFKdlc2ME55QlZFUUVkMENNbV9kZnNsWXZwbUlEUGtEWHNwZ1h1RUVPX2w0R2gxRzBON1I4a1E5ODBiNEY?oc=5\" target=\"_blank\"&gt;Ofgem approves deal to maintain UK gas import capacity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-22T07:00:59.000Z",
           "score": 2
         }
       ]
@@ -79,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Experts: How are climate scientists using artificial intelligence?",
+          "link": "https://www.carbonbrief.org/experts-how-are-climate-scientists-using-artificial-intelligence",
+          "source": "Carbon Brief",
+          "description": "Artificial intelligence (AI) is developing at a rapid pace and is increasingly being used by scientists to better understand climate&#8230; The post Experts: How are climate scientists using artificial intelligence? appeared first on Carbon Brief.",
+          "published": "2026-10-22T10:45:03.000Z",
+          "score": 13
+        },
         {
           "title": "NI risks missing 2030 energy goals, says Stormont committee",
           "link": "https://www.bbc.co.uk/news/articles/c623d18dl3v0o?at_medium=RSS&amp;at_campaign=rss",
@@ -96,27 +104,19 @@
           "score": 10
         },
         {
+          "title": "Almost every shallow-water coral reef on the planet faces ecosystem collapse by 2075, UN advisors say",
+          "link": "https://www.theguardian.com/australia-news/2026/oct/22/shallow-water-coral-reef-ecosystem-collapse-by-2075-un-advisors-say",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Assessment finds global heating is endangering 96% of coral reefs across 80 countries – a figure scientists say should serve as a ‘wake-up call’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Almost every ",
+          "published": "2026-10-22T12:00:45.000Z",
+          "score": 7
+        },
+        {
           "title": "Burnham approves Jackdaw – and Labour’s unity on climate action is imperilled with the stroke of a pen | Zoe Williams",
           "link": "https://www.theguardian.com/commentisfree/2026/oct/21/andy-burnham-approve-jackdaw-labour-climate-action",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;This foolish decision undermines hopes that this government will take the necessary steps the climate crisis demands &lt;/p&gt;&lt;p&gt;When the news broke that the &lt;a href=\"https://www.theguardian.com/environment/2026/oct/21/jackdaw-gasfield-in-north-sea-approved\"&gt;UK government had approved the Jackdaw gasfield&lt;/a&gt;, I was at a Guardian climate event at the Royal Geographical Society. Appropriately, the theme suggested by readers was what can the public actually do in the fa",
           "published": "2026-10-21T17:14:42.000Z",
-          "score": 7
-        },
-        {
-          "title": "How bad is Jackdaw gasfield approval for the climate? – The Latest",
-          "link": "https://www.theguardian.com/news/video/2026/oct/21/how-bad-is-jackdaw-gasfield-approval-for-the-climate-the-latest",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Climate campaigners have condemned the UK government’s decision to allow the drilling of the Jackdaw gasfield. Critics argue the move will put climate targets at risk, while failing to reduce energy bills and the cost of living crisis. But there could be a significant victory for green activists when it comes to the much larger Rosebank oilfield, with the energy secretary, Miatta Fahnbulleh, leaning towards rejecting approval. Michael Safi speaks to environment correspondent Matthew Tay",
-          "published": "2026-10-21T18:51:39.000Z",
-          "score": 7
-        },
-        {
-          "title": "Energy secretary leaning towards rejecting Rosebank oilfield",
-          "link": "https://www.theguardian.com/environment/2026/oct/21/energy-secretary-leaning-towards-rejecting-rosebank-oilfield",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Exclusive: Officials say Miatta Fahnbulleh minded not to give approval in victory for climate campaigners&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Miatta Fahnbulleh is minded to reject the giant Rosebank oilfield, sources have told the Guardian, in what would be a blow for the North Sea energy industry and a major victory for climate campaigners.&lt;/p&gt;&lt;p&gt;After &lt;a href=\"https://www.theguardian.com/environment/2026/oct/21/jackdaw-gasfield-in-north-sea-approved\"&gt;approving the s",
-          "published": "2026-10-21T17:15:23.000Z",
           "score": 7
         }
       ]
@@ -126,11 +126,19 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Norway's wealth fund posts $30 billion loss in third quarter - Reuters",
+          "title": "Norway wealth fund slightly cautious on equities, tech companies - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNa3pHaTAydzc2dGxNdlNJQ2FkbDl0UF9BUjhGUkpsSEVmTF9nT0lJekdnTU9VV29lTzdTMU1wUmxwSUdxUDNpVVhZLUg3UHZHbXFmcnkyNEVTTGd1RnZlbFROaTBRcjVSSVdRNE1mblk1UFZoczJsemxrYlZyczNpMmUyMTFfakxqNVd3Rl8xd3hUYlJweXdzSG5OV3cwS1RPZUE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNa3pHaTAydzc2dGxNdlNJQ2FkbDl0UF9BUjhGUkpsSEVmTF9nT0lJekdnTU9VV29lTzdTMU1wUmxwSUdxUDNpVVhZLUg3UHZHbXFmcnkyNEVTTGd1RnZlbFROaTBRcjVSSVdRNE1mblk1UFZoczJsemxrYlZyczNpMmUyMTFfakxqNVd3Rl8xd3hUYlJweXdzSG5OV3cwS1RPZUE?oc=5\" target=\"_blank\"&gt;Norway's wealth fund posts $30 billion loss in third quarter&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-22T08:27:56.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNa3pHaTAydzc2dGxNdlNJQ2FkbDl0UF9BUjhGUkpsSEVmTF9nT0lJekdnTU9VV29lTzdTMU1wUmxwSUdxUDNpVVhZLUg3UHZHbXFmcnkyNEVTTGd1RnZlbFROaTBRcjVSSVdRNE1mblk1UFZoczJsemxrYlZyczNpMmUyMTFfakxqNVd3Rl8xd3hUYlJweXdzSG5OV3cwS1RPZUE?oc=5\" target=\"_blank\"&gt;Norway wealth fund slightly cautious on equities, tech companies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-22T10:43:04.000Z",
+          "score": 2
+        },
+        {
+          "title": "Canada, Turkey sign 'strategic partnership' during Carney visit meant to boost trade and investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTFJvR29OUUpTMi1BYlRleWhiSElXNW11WEdfS2tnTjhTdzN3RFd4a2NFbmdJanduZzl0cVRDTWVHWExiR2hxdnYwWEU5bmhZRWVWWlZYNGY2QW5oTUFJTTlVNy1VeEF1X2lxbi14VHBBSGtZSU5HbWk0VllxTmJFZkJLVUVob28zdmhqdlBIMlNxQlRMX1dTN2Uyb01kbmlRWmFNWEZ0TWY3YmtpbVE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPTFJvR29OUUpTMi1BYlRleWhiSElXNW11WEdfS2tnTjhTdzN3RFd4a2NFbmdJanduZzl0cVRDTWVHWExiR2hxdnYwWEU5bmhZRWVWWlZYNGY2QW5oTUFJTTlVNy1VeEF1X2lxbi14VHBBSGtZSU5HbWk0VllxTmJFZkJLVUVob28zdmhqdlBIMlNxQlRMX1dTN2Uyb01kbmlRWmFNWEZ0TWY3YmtpbVE?oc=5\" target=\"_blank\"&gt;Canada, Turkey sign 'strategic partnership' during Carney visit meant to boost trade and investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-22T02:01:00.000Z",
           "score": 2
         }
       ]
@@ -154,6 +162,22 @@
           "description": "Moscow is pushing for a summit with Donald Trump and Xi Jinping to discuss ending the war in Ukraine, without Kyiv or the EU. What does Russia hope to gain, and why might China be willing to take part?",
           "published": "2026-10-21T19:32:00.000Z",
           "score": 8
+        },
+        {
+          "title": "India-EU trade deal could become operational in early-2027, Indian trade minister says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRWEwMEcybTJ3OWxBdV9ENjZCUklWX0NMaW9aM0U0eE1JTnc1ZE1oaS10c2JQZVhBX1o1MmZKR1B2eXJnUEdlNy1qcVRPdXpGY1FxUGRLQkI4dm9kVWNmbk9pVWx3U1VBYWF6cWZOc2FxeXloTERldHhYcjRrRDM4U0VpbXk4Y210RG5qdHZLTFBlaWlUTzhtQk1jc2p6OUlJb01FYVJfX3otV0N5d3lOV181RFN1cXJjazluN09FZ0phUUk?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRWEwMEcybTJ3OWxBdV9ENjZCUklWX0NMaW9aM0U0eE1JTnc1ZE1oaS10c2JQZVhBX1o1MmZKR1B2eXJnUEdlNy1qcVRPdXpGY1FxUGRLQkI4dm9kVWNmbk9pVWx3U1VBYWF6cWZOc2FxeXloTERldHhYcjRrRDM4U0VpbXk4Y210RG5qdHZLTFBlaWlUTzhtQk1jc2p6OUlJb01FYVJfX3otV0N5d3lOV181RFN1cXJjazluN09FZ0phUUk?oc=5\" target=\"_blank\"&gt;India-EU trade deal could become operational in early-2027, Indian trade minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-10-22T12:01:54.000Z",
+          "score": 8
+        },
+        {
+          "title": "Are Europeans putting profits over human rights in Vietnam?",
+          "link": "https://www.dw.com/en/are-europeans-putting-profits-over-human-rights-in-vietnam/a-79732812?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Europe and Vietnam are deepening economic and diplomatic ties, but closer cooperation raises concerns about whether Brussels is doing enough to address Hanoi&#039;s human rights record, labor standards and trade imbalances.",
+          "published": "2026-10-22T14:12:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -173,8 +197,16 @@
           "title": "Two European women held captive for more than a year in Niger freed in Libya",
           "link": "https://www.bbc.co.uk/news/articles/cq62y0v7434yo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The aid workers from Switzerland and Austria are due to fly home on Thursday, reports say.",
-          "published": "2026-10-22T08:21:13.000Z",
+          "description": "The Swiss government told the BBC that the freed national was on her way back to Switzerland.",
+          "published": "2026-10-22T13:22:39.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU&#039;s Sakharov Prize won by the International Criminal Court",
+          "link": "https://www.dw.com/en/eu-s-sakharov-prize-won-by-the-international-criminal-court/a-79730914?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The EU has announced the International Criminal Court as the winner of this year&#039;s Sakharov Prize. The annual prize is awarded to individuals and organizations for their work in supporting human rights and democracy.",
+          "published": "2026-10-22T10:04:00.000Z",
           "score": 8
         },
         {
@@ -192,22 +224,14 @@
           "description": "Authorities searched the Patriots for Europe&#039;s European Parliament offices in a long-running funding inquiry. The group says the charges pertain to its predecessor and there is &quot;no legal continuity&quot; between the two.",
           "published": "2026-10-21T16:14:00.000Z",
           "score": 8
-        },
-        {
-          "title": "Burkina Faso parliament votes to restore death penalty - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNnZuVkdOUTNrZHVoVHJkdmg3YWVKanJNcUg3SEo5aTEwME5ybE9tVS12V0lId09CRDJQMHNrdGd1dUROWXNuejlTbFFlalFjc0JtMDhIWW16TFFGT3VabWV5cHpuWEVPTENvTzEtbDI0MzlEX1VQQ0hvVTNsR3hqSktBUnUxbDR0VjVMaG9hNGtvaXQ4UTFheHJnYkJvWWhoX0E?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPNnZuVkdOUTNrZHVoVHJkdmg3YWVKanJNcUg3SEo5aTEwME5ybE9tVS12V0lId09CRDJQMHNrdGd1dUROWXNuejlTbFFlalFjc0JtMDhIWW16TFFGT3VabWV5cHpuWEVPTENvTzEtbDI0MzlEX1VQQ0hvVTNsR3hqSktBUnUxbDR0VjVMaG9hNGtvaXQ4UTFheHJnYkJvWWhoX0E?oc=5\" target=\"_blank\"&gt;Burkina Faso parliament votes to restore death penalty&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-21T10:02:29.000Z",
-          "score": 8
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 410,
-    "articlesLast24h": 181,
-    "afterDedup": 162,
+    "articlesLast24h": 196,
+    "afterDedup": 174,
     "feedsQueried": 19
   }
 }
