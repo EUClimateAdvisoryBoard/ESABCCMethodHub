@@ -1,12 +1,12 @@
 {
-  "date": "2026-10-22",
-  "generatedAt": "2026-10-22T20:29:59.919Z",
+  "date": "2026-10-23",
+  "generatedAt": "2026-10-23T01:19:20.420Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Thursday, 22 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Friday, 23 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "We will make the net-zero transition work for Britain – approving the Jackdaw gasfield is part of the plan | Andy Burnham",
-      "summary": "&lt;p&gt;Protecting jobs and strengthening energy security in the short term does not mean wavering on Labour’s deep commitment to a cleaner, greener future&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/oct/22/andy-burnham-vows-uk-will-hit-net-zero-targets-despite-jackdaw-gasfield-approval\"&gt;Andy Burnham vows UK will hit net zero target despite Jackdaw gasfield approval&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;On Wednesday, the energy s",
+      "headline": "Coal in a green mask: Indonesia&#8217;s co-firing plan will harm, not help, the climate",
+      "summary": "Indonesia's plan to mix in a little wood will give coal-fired power plants an excuse to operate for longer and raise deforestation pressures The post Coal in a green mask: Indonesia&#8217;s co-firing plan will harm, not help, the climate appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Norway wealth fund slightly cautious on equities, tech companies - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNa3pHaTAydzc2dGxNdlNJQ2FkbDl0UF9BUjhGUkpsSEVmTF9nT0lJekdnTU9VV29lTzdTMU1wUmxwSUdxUDNpVVhZLUg3UHZHbXFmcnkyNEVTTGd1RnZlbFROaTBRcjVSSVdRNE1mblk1UFZoczJsemxrYlZyczNpMmUyMTFfakxqNVd3Rl8xd3hUYlJweXdzSG5OV3cwS1RPZUE?oc=5\" target=\"_blank\"&gt;Norway wealth fund slightly cautious on equities, tech companies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "US Treasury drops Venezuela from countries facing outbound US investment restrictions - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOOHpQWm5nQmJpYnlpNkloZEdBcWdKYmV2dkhOcFhuVEdtVUJBNlo4bVFZSkM0NmNVb3N3WEJ0QjYzekhrOEFvVmgzaEMtTUxtVnBpd0VIZm83RFpPOXpPV3FpVmtmZzNfRWphcjkwNURkMnk4MkhSQVI2NDgzRjFveWg3ang0VFlQY0thTzVybzdkYWRSeFUxdDYzMjBWU2k3UU1HamdFRVoySEJYeFJYd0h5X3hrY1l0dEtXelpCNA?oc=5\" target=\"_blank\"&gt;US Treasury drops Venezuela from countries facing outbound US investment restrictions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,11 +34,35 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Coal in a green mask: Indonesia&#8217;s co-firing plan will harm, not help, the climate",
+          "link": "https://www.climatechangenews.com/2026/10/23/coal-in-a-green-mask-indonesias-co-firing-plan-will-harm-not-help-the-climate/",
+          "source": "Climate Home News",
+          "description": "Indonesia's plan to mix in a little wood will give coal-fired power plants an excuse to operate for longer and raise deforestation pressures The post Coal in a green mask: Indonesia&#8217;s co-firing plan will harm, not help, the climate appeared first on Climate Home News.",
+          "published": "2026-10-23T00:00:00.000Z",
+          "score": 13
+        },
+        {
+          "title": "In allowing coal expansion in the Hunter, Chris Minns is pouring fuel on the climate fire. His decision will come back to hurt us all | Jack Egan",
+          "link": "https://www.theguardian.com/australia-news/commentisfree/2026/oct/23/chris-minns-coal-expansion-laws-will-hurt-us-all-climate-mount-pleasant",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;The high court found NSW is responsible for emissions from burning exported coal. What message does it send when the government can step in and bypass the law?&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&g",
+          "published": "2026-10-23T01:08:49.000Z",
+          "score": 11
+        },
+        {
           "title": "We will make the net-zero transition work for Britain – approving the Jackdaw gasfield is part of the plan | Andy Burnham",
           "link": "https://www.theguardian.com/commentisfree/2026/oct/22/net-zero-transition-britain-jackdaw-gasfield-jobs-energy-security-labour",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Protecting jobs and strengthening energy security in the short term does not mean wavering on Labour’s deep commitment to a cleaner, greener future&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/oct/22/andy-burnham-vows-uk-will-hit-net-zero-targets-despite-jackdaw-gasfield-approval\"&gt;Andy Burnham vows UK will hit net zero target despite Jackdaw gasfield approval&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;On Wednesday, the energy s",
           "published": "2026-10-22T17:00:45.000Z",
+          "score": 7
+        },
+        {
+          "title": "Trump says wind turbine imports threaten national security - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbXBnbGtXTC1kdE85WW5oRjI1dW9WU1d6RGdZLXoyRS12V0l0NXZyT21Rcnk5eERXeDhacVlpSWRDNVc2VlhoOUJyWWFvOVV3ck5oeU45eXZHQVpCaklMLTh4QXJkcXVWX192VUQ3QmNEa2VyMVdWNUtTaGlYdm1qb3pNRGtDazdsdjFQb3lISUNBNDNEWkJjUkFhLXJXcGpjWndUaVJLaDJFaHRIQk9KZQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQbXBnbGtXTC1kdE85WW5oRjI1dW9WU1d6RGdZLXoyRS12V0l0NXZyT21Rcnk5eERXeDhacVlpSWRDNVc2VlhoOUJyWWFvOVV3ck5oeU45eXZHQVpCaklMLTh4QXJkcXVWX192VUQ3QmNEa2VyMVdWNUtTaGlYdm1qb3pNRGtDazdsdjFQb3lISUNBNDNEWkJjUkFhLXJXcGpjWndUaVJLaDJFaHRIQk9KZQ?oc=5\" target=\"_blank\"&gt;Trump says wind turbine imports threaten national security&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-22T22:03:25.000Z",
           "score": 7
         },
         {
@@ -48,22 +72,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOZEd6MUJ0RzZBWktFMGFuNkUzNVZKejZBX3EtdmdGUW5SQWpmM18yNEpWb212MzA5dENESGNJcHVWaXNBdTFNc2oyM1FNS2l5bmJLaWNCb3cwaG1WX3FYUXItdHo4cDhsV1Q1ZXNpVXZaVE1ReTVpY0hXN0V3NDFpYVJpWWY0OTk0MV85VHFJSmVNa001SVdnOF9EUkhieURyQjlfX1NzTGY2WmZZcVQxenhkZVBIMVVQdTBHTVZucWpONFdWOXBQQnRudFpEdw?oc=5\" target=\"_blank\"&gt;COMMENTARY: Asia buys more LNG despite surging prices, El Nino clouds outlook&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
           "published": "2026-10-22T03:22:34.000Z",
           "score": 7
-        },
-        {
-          "title": "Coal supply to power plants to normalise soon, Indian official says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNb3BXbHFBRE9HSGZWMGJJdmJJZDJhU0laWWlGU1E5d0FXTGI2U3diQ1MtQ3I4dkRvR2MwNVZmY0FFNEhtVVEzS25OZV90OFNSM1V3d3VCRG9udGxzNkRoZTdNZG9ld280V003WDNTUTFISDI3Q01CdXozWWc5eVVDcU8tc3JRQjROMHVCX09EOFJ0SFV1V2tObHVSMXlHSXJXN2dNX2VtOUVySkFs?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNb3BXbHFBRE9HSGZWMGJJdmJJZDJhU0laWWlGU1E5d0FXTGI2U3diQ1MtQ3I4dkRvR2MwNVZmY0FFNEhtVVEzS25OZV90OFNSM1V3d3VCRG9udGxzNkRoZTdNZG9ld280V003WDNTUTFISDI3Q01CdXozWWc5eVVDcU8tc3JRQjROMHVCX09EOFJ0SFV1V2tObHVSMXlHSXJXN2dNX2VtOUVySkFs?oc=5\" target=\"_blank\"&gt;Coal supply to power plants to normalise soon, Indian official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-22T04:52:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Ofgem approves deal to maintain UK gas import capacity - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWTZ3Uk5sNjNBbzZtZWxwMVlFcG1JS0VtSWtxTUx3RkVLOC1jVE5EcWdoMEZsWnQzVE9kQ1FZOFo5Vzh6ZnRvVERHbjFuZndqWElxWWhIRlV3Mno2M3FIRzFKdlc2ME55QlZFUUVkMENNbV9kZnNsWXZwbUlEUGtEWHNwZ1h1RUVPX2w0R2gxRzBON1I4a1E5ODBiNEY?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxOWTZ3Uk5sNjNBbzZtZWxwMVlFcG1JS0VtSWtxTUx3RkVLOC1jVE5EcWdoMEZsWnQzVE9kQ1FZOFo5Vzh6ZnRvVERHbjFuZndqWElxWWhIRlV3Mno2M3FIRzFKdlc2ME55QlZFUUVkMENNbV9kZnNsWXZwbUlEUGtEWHNwZ1h1RUVPX2w0R2gxRzBON1I4a1E5ODBiNEY?oc=5\" target=\"_blank\"&gt;Ofgem approves deal to maintain UK gas import capacity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-22T16:24:54.000Z",
-          "score": 2
         }
       ]
     },
@@ -96,19 +104,19 @@
           "score": 10
         },
         {
-          "title": "COP17 must settle who decides how Cali Fund money is disbursed",
-          "link": "https://www.climatechangenews.com/2026/10/21/cop17-must-settle-who-decides-how-cali-fund-money-is-disbursed/",
-          "source": "Climate Home News",
-          "description": "The fund’s importance will depend not only on how much reaches Indigenous Peoples and local communities, but on whether they can determine how the finance is accessed, governed and used The post COP17 must settle who decides how Cali Fund money is disbursed appeared first on Climate Home News.",
-          "published": "2026-10-21T20:42:11.000Z",
-          "score": 10
-        },
-        {
           "title": "Andy Burnham vows UK will hit net zero target despite Jackdaw gasfield approval",
           "link": "https://www.theguardian.com/environment/2026/oct/22/andy-burnham-vows-uk-will-hit-net-zero-targets-despite-jackdaw-gasfield-approval",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;PM pledges commitment to address climate crisis, saying in Guardian article that his ‘determination is unwavering’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2026/oct/22/net-zero-transition-britain-jackdaw-gasfield-jobs-energy-security-labour\"&gt;Andy Burnham: We will make the net-zero transition work for Britain&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Andy Burnham has said he will not “abandon the responsibility” of fighting th",
-          "published": "2026-10-22T17:22:52.000Z",
+          "description": "&lt;p&gt;PM pledges commitment to address climate crisis, saying in Guardian article that his ‘determination is unwavering’ &lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2026/oct/22/net-zero-transition-britain-jackdaw-gasfield-jobs-energy-security-labour\"&gt;Andy Burnham: We will make the net-zero transition work for Britain&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Andy Burnham has said he will not “abandon the responsibility” of fighting t",
+          "published": "2026-10-22T21:34:11.000Z",
+          "score": 7
+        },
+        {
+          "title": "Almost every shallow-water coral reef on the planet faces ecosystem collapse by 2075, UN advisors say",
+          "link": "https://www.theguardian.com/australia-news/2026/oct/22/shallow-water-coral-reef-ecosystem-collapse-by-2075-un-advisors-say",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Assessment finds global heating is endangering 96% of coral reefs across 80 countries – a figure scientists say should serve as a ‘wake-up call’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Almost every ",
+          "published": "2026-10-22T12:00:45.000Z",
           "score": 7
         }
       ]
@@ -118,6 +126,14 @@
       "title": "Green Finance & Investment",
       "items": [
         {
+          "title": "US Treasury drops Venezuela from countries facing outbound US investment restrictions - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOOHpQWm5nQmJpYnlpNkloZEdBcWdKYmV2dkhOcFhuVEdtVUJBNlo4bVFZSkM0NmNVb3N3WEJ0QjYzekhrOEFvVmgzaEMtTUxtVnBpd0VIZm83RFpPOXpPV3FpVmtmZzNfRWphcjkwNURkMnk4MkhSQVI2NDgzRjFveWg3ang0VFlQY0thTzVybzdkYWRSeFUxdDYzMjBWU2k3UU1HamdFRVoySEJYeFJYd0h5X3hrY1l0dEtXelpCNA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOOHpQWm5nQmJpYnlpNkloZEdBcWdKYmV2dkhOcFhuVEdtVUJBNlo4bVFZSkM0NmNVb3N3WEJ0QjYzekhrOEFvVmgzaEMtTUxtVnBpd0VIZm83RFpPOXpPV3FpVmtmZzNfRWphcjkwNURkMnk4MkhSQVI2NDgzRjFveWg3ang0VFlQY0thTzVybzdkYWRSeFUxdDYzMjBWU2k3UU1HamdFRVoySEJYeFJYd0h5X3hrY1l0dEtXelpCNA?oc=5\" target=\"_blank\"&gt;US Treasury drops Venezuela from countries facing outbound US investment restrictions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-22T21:05:43.000Z",
+          "score": 2
+        },
+        {
           "title": "Norway wealth fund slightly cautious on equities, tech companies - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNa3pHaTAydzc2dGxNdlNJQ2FkbDl0UF9BUjhGUkpsSEVmTF9nT0lJekdnTU9VV29lTzdTMU1wUmxwSUdxUDNpVVhZLUg3UHZHbXFmcnkyNEVTTGd1RnZlbFROaTBRcjVSSVdRNE1mblk1UFZoczJsemxrYlZyczNpMmUyMTFfakxqNVd3Rl8xd3hUYlJweXdzSG5OV3cwS1RPZUE?oc=5",
           "source": "Reuters World (via Google News)",
@@ -126,19 +142,27 @@
           "score": 2
         },
         {
-          "title": "Indonesian sovereign fund Danantara says it has bought stocks after market rout - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOdmtKSk9BTE9RNjJhbWZ2dVdFZlAyQzhnUHBXT2RGS3JHb3ltcmpyanlwQ2RJZmJvaHhvaHRTelQtdVdfY29USi0tRnRQdmw2enFWSzBSSzMwZEVkRGtldGhmV2tnbFVmLXFaY1NpNzdKN0xMN1dDSTVUdHNGOGtBazgzTkRDQmh2RjNFNW5HNkg1UkdUb3hndFZDRnUzRncwSzNGX185LU9yV0IxZjkzenhTWTNpMDBWWC13Z3Q4ZWFEc1FUVElJb3k0TnI1Nmc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOdmtKSk9BTE9RNjJhbWZ2dVdFZlAyQzhnUHBXT2RGS3JHb3ltcmpyanlwQ2RJZmJvaHhvaHRTelQtdVdfY29USi0tRnRQdmw2enFWSzBSSzMwZEVkRGtldGhmV2tnbFVmLXFaY1NpNzdKN0xMN1dDSTVUdHNGOGtBazgzTkRDQmh2RjNFNW5HNkg1UkdUb3hndFZDRnUzRncwSzNGX185LU9yV0IxZjkzenhTWTNpMDBWWC13Z3Q4ZWFEc1FUVElJb3k0TnI1Nmc?oc=5\" target=\"_blank\"&gt;Indonesian sovereign fund Danantara says it has bought stocks after market rout&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
-          "published": "2026-10-22T03:08:00.000Z",
-          "score": 2
-        },
-        {
           "title": "Foreign investment flows into China fall 4.3% y/y in first three quarters - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQdzRHVjFYRmlzYmJrR0FLY2M5YXdGSXN0NmhTRVdEMkpfd2dkMkx3a1g4WGpvSVNyTGxvdzA5V3pWcy1vbTU2ZWdfbDBidm04ckJGbnFOT1pZTDR0akRzbTJYbXpqcy1PT0pFbVFrcGYtSWw4RmNmU3U1RlBfb0lwNWo3dlZXRkFhV3UyS01MTTZ2eGswck9HVzN5MzZUdjdTYWdkb3VveVBOTkhYSXVmbGpySHJHQUhoNUU5Yzh4NA?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQdzRHVjFYRmlzYmJrR0FLY2M5YXdGSXN0NmhTRVdEMkpfd2dkMkx3a1g4WGpvSVNyTGxvdzA5V3pWcy1vbTU2ZWdfbDBidm04ckJGbnFOT1pZTDR0akRzbTJYbXpqcy1PT0pFbVFrcGYtSWw4RmNmU3U1RlBfb0lwNWo3dlZXRkFhV3UyS01MTTZ2eGswck9HVzN5MzZUdjdTYWdkb3VveVBOTkhYSXVmbGpySHJHQUhoNUU5Yzh4NA?oc=5\" target=\"_blank\"&gt;Foreign investment flows into China fall 4.3% y/y in first three quarters&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-22T08:31:44.000Z",
+          "score": 2
+        },
+        {
+          "title": "UAE, Greece announce €12.75 billion in deals, Abu Dhabi plans further €15 billion investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZ1pwXzZBNGRLX2NWa3I0R2wwQU9fUmV5cjhSWVVVcHJISFNOMTd5UDBrck5DS2xqZFJidnRIdGpocEMyTHA5TlJoZ3BURndlVHM0RlNVbHlmejNtaTRacmZyYkZIQmRqd1RBdC1xeHh1SXZGdlVVOTlPS09mLUNNa2dSOG12SDRCWl9mRmZJV1JmQVRUd0lidnhBWndHVlo4Ql9neFRsYUZ0T1phUXFXM182ME5PS1FtYnE2ZVF5OERRWTl2Ync?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNZ1pwXzZBNGRLX2NWa3I0R2wwQU9fUmV5cjhSWVVVcHJISFNOMTd5UDBrck5DS2xqZFJidnRIdGpocEMyTHA5TlJoZ3BURndlVHM0RlNVbHlmejNtaTRacmZyYkZIQmRqd1RBdC1xeHh1SXZGdlVVOTlPS09mLUNNa2dSOG12SDRCWl9mRmZJV1JmQVRUd0lidnhBWndHVlo4Ql9neFRsYUZ0T1phUXFXM182ME5PS1FtYnE2ZVF5OERRWTl2Ync?oc=5\" target=\"_blank\"&gt;UAE, Greece announce €12.75 billion in deals, Abu Dhabi plans further €15 billion investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
+          "published": "2026-10-22T17:03:43.000Z",
+          "score": 2
+        },
+        {
+          "title": "Indonesian sovereign fund Danantara says it has bought stocks after market rout - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOdmtKSk9BTE9RNjJhbWZ2dVdFZlAyQzhnUHBXT2RGS3JHb3ltcmpyanlwQ2RJZmJvaHhvaHRTelQtdVdfY29USi0tRnRQdmw2enFWSzBSSzMwZEVkRGtldGhmV2tnbFVmLXFaY1NpNzdKN0xMN1dDSTVUdHNGOGtBazgzTkRDQmh2RjNFNW5HNkg1UkdUb3hndFZDRnUzRncwSzNGX185LU9yV0IxZjkzenhTWTNpMDBWWC13Z3Q4ZWFEc1FUVElJb3k0TnI1Nmc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOdmtKSk9BTE9RNjJhbWZ2dVdFZlAyQzhnUHBXT2RGS3JHb3ltcmpyanlwQ2RJZmJvaHhvaHRTelQtdVdfY29USi0tRnRQdmw2enFWSzBSSzMwZEVkRGtldGhmV2tnbFVmLXFaY1NpNzdKN0xMN1dDSTVUdHNGOGtBazgzTkRDQmh2RjNFNW5HNkg1UkdUb3hndFZDRnUzRncwSzNGX185LU9yV0IxZjkzenhTWTNpMDBWWC13Z3Q4ZWFEc1FUVElJb3k0TnI1Nmc?oc=5\" target=\"_blank\"&gt;Indonesian sovereign fund Danantara says it has bought stocks after market rout&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
+          "published": "2026-10-22T03:08:00.000Z",
           "score": 2
         }
       ]
@@ -229,9 +253,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 409,
+    "totalArticlesScanned": 406,
     "articlesLast24h": 187,
-    "afterDedup": 171,
+    "afterDedup": 174,
     "feedsQueried": 19
   }
 }
