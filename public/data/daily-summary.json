@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-23",
-  "generatedAt": "2026-10-23T20:17:04.493Z",
+  "date": "2026-10-24",
+  "generatedAt": "2026-10-24T01:28:09.659Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Friday, 23 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Saturday, 24 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
       "headline": "Some of Europe’s highest energy costs expected in Britain this winter",
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Commission opens investigation into possible anticompetitive conduct by Omya in the supply of calcium carbonates to the paper industry",
-      "summary": "European Commission Press release Brussels, 23 Oct 2026 The European Commission has opened a formal antitrust investigation to assess whether Omya has breached EU competition rules by requiring customers in the paper industry to purchase all or most of their calcium carbonates from Omya.",
+      "headline": "Chart: A record two-thirds of car sales in China are now electric vehicles",
+      "summary": "For the first time, new-energy vehicles (NEVs) made up 67% of new car sales in China in September, according to&#8230; The post Chart: A record two-thirds of car sales in China are now electric vehicles appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -42,19 +42,11 @@
           "score": 13
         },
         {
-          "title": "In allowing coal expansion in the Hunter, Chris Minns is pouring fuel on the climate fire. His decision will come back to hurt us all | Jack Egan",
-          "link": "https://www.theguardian.com/australia-news/commentisfree/2026/oct/23/chris-minns-coal-expansion-laws-will-hurt-us-all-climate-mount-pleasant",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The high court found NSW is responsible for emissions from burning exported coal. What message does it send when the government can step in and bypass the law?&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&g",
-          "published": "2026-10-23T01:08:49.000Z",
-          "score": 11
-        },
-        {
           "title": "Storm Austen brings power cuts and travel disruption as more wind and rain forecast",
           "link": "https://www.bbc.co.uk/news/articles/cxj0l193y0l8o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Millions remain under yellow weather warnings for wind and rain, with a second storm expected to hit Scotland and parts of northern England on Saturday.",
-          "published": "2026-10-23T18:48:18.000Z",
+          "description": "A second storm, Storm Boelo, is expected to hit Scotland, Northern Ireland and northern England on Saturday bringing more wild weather.",
+          "published": "2026-10-23T21:10:47.000Z",
           "score": 7
         },
         {
@@ -72,6 +64,14 @@
           "description": "Disruption to travel is likely as the season's first named storm brings a swathe of powerful winds to south-west England on Friday.",
           "published": "2026-10-23T09:30:03.000Z",
           "score": 7
+        },
+        {
+          "title": "Carney says AtkinsRealis is a contender to build nuclear power plant in Turkey - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQUDVaTVBUN2djLWhIejhzYlNpOGtWU0hoUEQxN1g0Q0M2UldpcFhud2pIc2s3LWpfOWdIVm1hZU4tSzFmVDRzLUJxSzFHcFNybURZTnY0R3liU1QtSE51S1F3TDJXdFJ6dzNUd2tjQUxScWpIYWt6ZXVPQnFqUjdVWkRENWRncnhoMFp2NDdMVWZrMFdUWThFcU9FbUdNOWplcWUxNXdRelc1cHN2RWJ3OEl6RXV4VkNpQUYxRDE1cTdFUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQUDVaTVBUN2djLWhIejhzYlNpOGtWU0hoUEQxN1g0Q0M2UldpcFhud2pIc2s3LWpfOWdIVm1hZU4tSzFmVDRzLUJxSzFHcFNybURZTnY0R3liU1QtSE51S1F3TDJXdFJ6dzNUd2tjQUxScWpIYWt6ZXVPQnFqUjdVWkRENWRncnhoMFp2NDdMVWZrMFdUWThFcU9FbUdNOWplcWUxNXdRelc1cHN2RWJ3OEl6RXV4VkNpQUYxRDE1cTdFUQ?oc=5\" target=\"_blank\"&gt;Carney says AtkinsRealis is a contender to build nuclear power plant in Turkey&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-23T15:11:26.000Z",
+          "score": 7
         }
       ]
     },
@@ -80,19 +80,19 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Commission opens investigation into possible anticompetitive conduct by Omya in the supply of calcium carbonates to the paper industry",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2232",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 23 Oct 2026 The European Commission has opened a formal antitrust investigation to assess whether Omya has breached EU competition rules by requiring customers in the paper industry to purchase all or most of their calcium carbonates from Omya.",
-          "published": "2026-10-22T22:00:00.000Z",
-          "score": 18
-        },
-        {
           "title": "Chart: A record two-thirds of car sales in China are now electric vehicles",
           "link": "https://www.carbonbrief.org/chart-a-record-two-thirds-of-car-sales-in-china-are-now-electric-vehicles",
           "source": "Carbon Brief",
           "description": "For the first time, new-energy vehicles (NEVs) made up 67% of new car sales in China in September, according to&#8230; The post Chart: A record two-thirds of car sales in China are now electric vehicles appeared first on Carbon Brief.",
           "published": "2026-10-23T15:55:26.000Z",
+          "score": 10
+        },
+        {
+          "title": "Early speakers&#8217; list suggests few powerful leaders will attend COP31",
+          "link": "https://www.climatechangenews.com/2026/10/23/early-speakers-list-suggests-few-powerful-leaders-will-attend-cop31/",
+          "source": "Climate Home News",
+          "description": "Just 77 heads of state or government are scheduled to address the COP31 climate summit in Antalya, a third less than the COP28 peak The post Early speakers&#8217; list suggests few powerful leaders will attend COP31 appeared first on Climate Home News.",
+          "published": "2026-10-23T11:32:34.000Z",
           "score": 10
         },
         {
@@ -104,19 +104,19 @@
           "score": 10
         },
         {
-          "title": "Andy Burnham vows UK will hit net zero target despite Jackdaw gasfield approval",
-          "link": "https://www.theguardian.com/environment/2026/oct/22/andy-burnham-vows-uk-will-hit-net-zero-targets-despite-jackdaw-gasfield-approval",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;PM pledges commitment to address climate crisis, saying in Guardian article that his ‘determination is unwavering’ &lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2026/oct/22/net-zero-transition-britain-jackdaw-gasfield-jobs-energy-security-labour\"&gt;Andy Burnham: We will make the net-zero transition work for Britain&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Andy Burnham has said he will not “abandon the responsibility” of fighting t",
-          "published": "2026-10-22T21:34:11.000Z",
-          "score": 7
-        },
-        {
           "title": "The US west has lost nearly 300 glaciers since the 1960s. Climate crisis is drastically shrinking what’s left",
           "link": "https://www.theguardian.com/environment/ng-interactive/2026/oct/23/glacier-loss-climate-crisis-west",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;At the midpoint of the last century the region had 1,450 glaciers and a new study reveals the extent of losses&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/environment/ng-interactive/2026/oct/23/glacier-loss-climate-crisis-west\"&gt;Continue reading...&lt;/a&gt;",
           "published": "2026-10-23T12:00:26.000Z",
+          "score": 7
+        },
+        {
+          "title": "New famine risk haunts war-torn Sudan with El Niño-driven drought - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPd05QVnpyM1N2MkZaeUo5ZnJfRnRwbjFDYkF1VlRibHVZRGhWRXVoVXh1aFNxNmRfU1VMZm44MFQzUTBiWE1NSWtHTkRIS2hxRUQ1YkUyRV9tYmJHYjBSY2RVUmJiXzhycTMxRE9SNy1iWGxRQno5TG0yUnBaLXF0UFRHQk14TE1FNTZoMWpkQ0dDX3c5WHhNa3RmTGd5WXN6WU9UbHlGQXg0Zw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPd05QVnpyM1N2MkZaeUo5ZnJfRnRwbjFDYkF1VlRibHVZRGhWRXVoVXh1aFNxNmRfU1VMZm44MFQzUTBiWE1NSWtHTkRIS2hxRUQ1YkUyRV9tYmJHYjBSY2RVUmJiXzhycTMxRE9SNy1iWGxRQno5TG0yUnBaLXF0UFRHQk14TE1FNTZoMWpkQ0dDX3c5WHhNa3RmTGd5WXN6WU9UbHlGQXg0Zw?oc=5\" target=\"_blank\"&gt;New famine risk haunts war-torn Sudan with El Niño-driven drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-23T10:10:27.000Z",
           "score": 7
         }
       ]
@@ -140,14 +140,6 @@
           "description": "Council leader Stephen Place says it will help businesses counter the rising cost of fuel.",
           "published": "2026-10-23T10:15:00.000Z",
           "score": 4
-        },
-        {
-          "title": "US Treasury drops Venezuela from countries facing outbound US investment restrictions - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOOHpQWm5nQmJpYnlpNkloZEdBcWdKYmV2dkhOcFhuVEdtVUJBNlo4bVFZSkM0NmNVb3N3WEJ0QjYzekhrOEFvVmgzaEMtTUxtVnBpd0VIZm83RFpPOXpPV3FpVmtmZzNfRWphcjkwNURkMnk4MkhSQVI2NDgzRjFveWg3ang0VFlQY0thTzVybzdkYWRSeFUxdDYzMjBWU2k3UU1HamdFRVoySEJYeFJYd0h5X3hrY1l0dEtXelpCNA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOOHpQWm5nQmJpYnlpNkloZEdBcWdKYmV2dkhOcFhuVEdtVUJBNlo4bVFZSkM0NmNVb3N3WEJ0QjYzekhrOEFvVmgzaEMtTUxtVnBpd0VIZm83RFpPOXpPV3FpVmtmZzNfRWphcjkwNURkMnk4MkhSQVI2NDgzRjFveWg3ang0VFlQY0thTzVybzdkYWRSeFUxdDYzMjBWU2k3UU1HamdFRVoySEJYeFJYd0h5X3hrY1l0dEtXelpCNA?oc=5\" target=\"_blank\"&gt;US Treasury drops Venezuela from countries facing outbound US investment restrictions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-22T21:05:43.000Z",
-          "score": 2
         }
       ]
     },
@@ -162,14 +154,6 @@
           "description": "European Commission Speech Dublin, 23 Oct 2026 Good afternoon and thank you, Minister – dear Helen – for your hospitality. I always leave Dublin impressed by its positive energy and this time, also grateful ...",
           "published": "2026-10-23T14:54:52.000Z",
           "score": 20
-        },
-        {
-          "title": "Putin says talks must focus on security for Russia, Ukraine and Europe overall - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVi1TUmlTaWNYT20wZG4tbGE2VTBkc3hzVlFoanNac2Y1eXBiRDFwTjdVVHFUc0VKNFkzSDk2UjZkaEx4Y01BYkQxOFByVFFQWjREVUJQbDhDZTJYaW1RVHdYbzdiQm9Ra1ZKd1IwWU9nME1BYURIbk1jdDduUjRGNExsbXVSU3IyeEk3MEhFZVFQNnBIMTJaNU9uS3pEdWtnTWhUbkFfN2hzVm5hY3YwalJYbzA3QQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPVi1TUmlTaWNYT20wZG4tbGE2VTBkc3hzVlFoanNac2Y1eXBiRDFwTjdVVHFUc0VKNFkzSDk2UjZkaEx4Y01BYkQxOFByVFFQWjREVUJQbDhDZTJYaW1RVHdYbzdiQm9Ra1ZKd1IwWU9nME1BYURIbk1jdDduUjRGNExsbXVSU3IyeEk3MEhFZVFQNnBIMTJaNU9uS3pEdWtnTWhUbkFfN2hzVm5hY3YwalJYbzA3QQ?oc=5\" target=\"_blank\"&gt;Putin says talks must focus on security for Russia, Ukraine and Europe overall&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-22T21:24:00.000Z",
-          "score": 8
         },
         {
           "title": "Ukraine seeks to move customs checks inside EU to avoid Russian drones, FT reports - Reuters",
@@ -210,28 +194,28 @@
           "score": 8
         },
         {
-          "title": "Rifts emerge in Libya as eastern parliament backs central bank chief's resignation - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUmZZVFpPdHR0ZXM0QllwRldsMlJCd3lxcU9BTHY5RE1IOTNNUFdMbTd1cVFzWG1ZUURydWpVU0NJM0M5a1BKZEw2cklMV25udUlqUk9WMkJXd1RHZEVuODBSMlJwNm1tekNVTWwwdzdsVEw1eHJyYzdVQ3E3czNFSnE5NzByUi1XY1g3aUZBaGtGRC04LUlQaXlZYjExRV8xMEFpb1dBVnhRLTNJdHBYVTJxdy1sSmRtWkhQa1JEU1hnaDNsVWNleA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUmZZVFpPdHR0ZXM0QllwRldsMlJCd3lxcU9BTHY5RE1IOTNNUFdMbTd1cVFzWG1ZUURydWpVU0NJM0M5a1BKZEw2cklMV25udUlqUk9WMkJXd1RHZEVuODBSMlJwNm1tekNVTWwwdzdsVEw1eHJyYzdVQ3E3czNFSnE5NzByUi1XY1g3aUZBaGtGRC04LUlQaXlZYjExRV8xMEFpb1dBVnhRLTNJdHBYVTJxdy1sSmRtWkhQa1JEU1hnaDNsVWNleA?oc=5\" target=\"_blank\"&gt;Rifts emerge in Libya as eastern parliament backs central bank chief's resignation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
-          "published": "2026-10-22T23:14:34.000Z",
-          "score": 8
+          "title": "Greece joins countries putting age-limits on social media, banning access for kids under 15",
+          "link": "https://www.dw.com/en/greece-joins-countries-putting-age-limits-on-social-media-banning-access-for-kids-under-15/a-79739606?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Greece has passed legislation banning social media access for children under 15. New rules will come into effect on January 1, 2027, and are designed to protect children&#039;s mental health.",
+          "published": "2026-10-23T09:04:00.000Z",
+          "score": 6
         },
         {
-          "title": "Euro zone growth slows to 4-month low amid rising costs and French strife, survey shows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPREYtdWRHb1k1TXZBQVJzeTdtb0NLZFBSNTFRRzR1enRIV0MwUE5meXJyX0tYNWZ2MmRBTnAtc3NPYm1wTHpkX0tSUURpLTNadDlYTHBHOWxmQ3FOZXl3cTBxQTBreTFCSmN3aGhlTEVIMTNJM3VyaExCYmp1TkV5X2d1cjFPZlhnQzBwR1lIZ0NMM2EtSkRpWTF6dXNoTWZiV01QRE02M3JJR0lTd2lONU9HRG1ETUJydEVUQjYwWnpGbnZv?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPREYtdWRHb1k1TXZBQVJzeTdtb0NLZFBSNTFRRzR1enRIV0MwUE5meXJyX0tYNWZ2MmRBTnAtc3NPYm1wTHpkX0tSUURpLTNadDlYTHBHOWxmQ3FOZXl3cTBxQTBreTFCSmN3aGhlTEVIMTNJM3VyaExCYmp1TkV5X2d1cjFPZlhnQzBwR1lIZ0NMM2EtSkRpWTF6dXNoTWZiV01QRE02M3JJR0lTd2lONU9HRG1ETUJydEVUQjYwWnpGbnZv?oc=5\" target=\"_blank\"&gt;Euro zone growth slows to 4-month low amid rising costs and French strife, survey shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
-          "published": "2026-10-23T14:10:13.000Z",
-          "score": 8
+          "title": "Rubio turns to small Indian town as US faces high oil prices",
+          "link": "https://www.bbc.co.uk/news/articles/c3x2wnk8ejq5o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "US Secretary of State Marco Rubio pushed a business and energy agenda over diplomacy on his second trip to India this year.",
+          "published": "2026-10-23T08:39:42.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 361,
-    "articlesLast24h": 181,
-    "afterDedup": 170,
+    "totalArticlesScanned": 392,
+    "articlesLast24h": 169,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
