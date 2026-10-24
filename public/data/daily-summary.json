@@ -1,12 +1,12 @@
 {
   "date": "2026-10-24",
-  "generatedAt": "2026-10-24T01:28:09.659Z",
+  "generatedAt": "2026-10-24T09:23:22.106Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 24 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Some of Europe’s highest energy costs expected in Britain this winter",
-      "summary": "&lt;p&gt;Official forecasts show country will meet energy demand by paying high prices to secure imports&lt;/p&gt;&lt;p&gt;Great Britain is expected to pay some of the highest energy costs in Europe this winter as its reliance on imports to ensure a steady supply is forecast to deepen.&lt;/p&gt;&lt;p&gt;Energy system operators have said the country will have enough gas and electricity to meet demand over the coldest months – in part because of paying higher market prices than neighbouring market",
+      "headline": "Storm Austen brings power cuts and travel disruption as more wind and rain forecast",
+      "summary": "A second storm, Storm Boelo, is expected to hit Scotland, Northern Ireland and northern England on Saturday bringing more wild weather.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,12 +15,6 @@
       "summary": "For the first time, new-energy vehicles (NEVs) made up 67% of new car sales in China in September, according to&#8230; The post Chart: A record two-thirds of car sales in China are now electric vehicles appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Turkey passes fund liquidation law as many savers still await access to money - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZERrS3lkNk1vMnYtcnFoZTNDUlRqd3RtOTAxS3J0NFhmQ2EwbHp1YXlfLWp2YlJxSjBxeVBZd0g0MkxibllTdFVUNGxfY0hBanlfN0lISGtpU3V3bjlEbkI4cmI2U3lKWGJrVUJ2aXN4WkxwMU1oXzFrZ2tVRWZodTZINi1vUmg5dEh5d09udWRBWnZ6V0Y2RlByMUptcE1DbmxxWEpJdzlEbVhkYk1yZ3BaamhxRUZ1Q0Zxay1tVUpRWUk?oc=5\" target=\"_blank\"&gt;Turkey passes fund liquidation law as many savers still await access to money&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -33,14 +27,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Some of Europe’s highest energy costs expected in Britain this winter",
-          "link": "https://www.theguardian.com/business/2026/oct/23/europe-highest-energy-costs-great-britain-this-winter",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Official forecasts show country will meet energy demand by paying high prices to secure imports&lt;/p&gt;&lt;p&gt;Great Britain is expected to pay some of the highest energy costs in Europe this winter as its reliance on imports to ensure a steady supply is forecast to deepen.&lt;/p&gt;&lt;p&gt;Energy system operators have said the country will have enough gas and electricity to meet demand over the coldest months – in part because of paying higher market prices than neighbouring market",
-          "published": "2026-10-23T05:00:03.000Z",
-          "score": 13
-        },
         {
           "title": "Storm Austen brings power cuts and travel disruption as more wind and rain forecast",
           "link": "https://www.bbc.co.uk/news/articles/cxj0l193y0l8o?at_medium=RSS&amp;at_campaign=rss",
@@ -72,6 +58,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQUDVaTVBUN2djLWhIejhzYlNpOGtWU0hoUEQxN1g0Q0M2UldpcFhud2pIc2s3LWpfOWdIVm1hZU4tSzFmVDRzLUJxSzFHcFNybURZTnY0R3liU1QtSE51S1F3TDJXdFJ6dzNUd2tjQUxScWpIYWt6ZXVPQnFqUjdVWkRENWRncnhoMFp2NDdMVWZrMFdUWThFcU9FbUdNOWplcWUxNXdRelc1cHN2RWJ3OEl6RXV4VkNpQUYxRDE1cTdFUQ?oc=5\" target=\"_blank\"&gt;Carney says AtkinsRealis is a contender to build nuclear power plant in Turkey&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-23T15:11:26.000Z",
           "score": 7
+        },
+        {
+          "title": "British jets join French nuclear exercise for first time, France says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNejUxWUdfTnA1dERLbFdHM21QSnA0cTl2NVhpeUo1cTRlWElBOHBCazM3cFNxQ3MyQUZuR3BUdTFteHVTeWFqWE1LZWxUa2UtQWxZWmxETUl3c1RJblFobnNUbXFfUkQ5eEpGNkhFUkp2c1NnYnRoaEVyclpmS21kbldqM1dOOHFlSHFtcF9FR3JRRnU5eVhmSUM0U2lOTm05X2d5Vk1HekphdUw5UmtsN25Icks0X0dVVXVGb1BVVElnXzQxcXc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNejUxWUdfTnA1dERLbFdHM21QSnA0cTl2NVhpeUo1cTRlWElBOHBCazM3cFNxQ3MyQUZuR3BUdTFteHVTeWFqWE1LZWxUa2UtQWxZWmxETUl3c1RJblFobnNUbXFfUkQ5eEpGNkhFUkp2c1NnYnRoaEVyclpmS21kbldqM1dOOHFlSHFtcF9FR3JRRnU5eVhmSUM0U2lOTm05X2d5Vk1HekphdUw5UmtsN25Icks0X0dVVXVGb1BVVElnXzQxcXc?oc=5\" target=\"_blank\"&gt;British jets join French nuclear exercise for first time, France says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-23T11:26:02.000Z",
+          "score": 7
         }
       ]
     },
@@ -96,14 +90,6 @@
           "score": 10
         },
         {
-          "title": "Heat killed ‘staggering’ 50,000 people in Europe’s cities this summer, scientists warn",
-          "link": "https://www.theguardian.com/environment/2026/oct/23/heat-killed-staggering-50000-people-european-cities-this-summer-experts",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;People succumbed to heat at highest rates in Malta, Italy and Hungary, with health issues, loneliness and poverty exacerbating toll&lt;/p&gt;&lt;p&gt;Heat killed a record 50,000 people in European cities this summer, new &lt;a href=\"https://www.imperial.ac.uk/grantham/publications/all-publications/heat-related-urban-mortality-attributable-to-human-induced-climate-change-in-europe-in-summer-2026.php\"&gt;research&lt;/a&gt; suggests, with scientists blaming climate breakdown for two in eve",
-          "published": "2026-10-23T04:01:01.000Z",
-          "score": 10
-        },
-        {
           "title": "The US west has lost nearly 300 glaciers since the 1960s. Climate crisis is drastically shrinking what’s left",
           "link": "https://www.theguardian.com/environment/ng-interactive/2026/oct/23/glacier-loss-climate-crisis-west",
           "source": "The Guardian - Climate",
@@ -118,30 +104,21 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPd05QVnpyM1N2MkZaeUo5ZnJfRnRwbjFDYkF1VlRibHVZRGhWRXVoVXh1aFNxNmRfU1VMZm44MFQzUTBiWE1NSWtHTkRIS2hxRUQ1YkUyRV9tYmJHYjBSY2RVUmJiXzhycTMxRE9SNy1iWGxRQno5TG0yUnBaLXF0UFRHQk14TE1FNTZoMWpkQ0dDX3c5WHhNa3RmTGd5WXN6WU9UbHlGQXg0Zw?oc=5\" target=\"_blank\"&gt;New famine risk haunts war-torn Sudan with El Niño-driven drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-23T10:10:27.000Z",
           "score": 7
+        },
+        {
+          "title": "Martin Rowson on the approval of the Jackdaw gasfield – cartoon",
+          "link": "https://www.theguardian.com/commentisfree/picture/2026/oct/23/martin-rowson-cartoon-jackdaw-gasfield-andy-burnham-labour-climate-crisis",
+          "source": "The Guardian - Climate",
+          "description": "&lt;a href=\"https://www.theguardian.com/commentisfree/picture/2026/oct/23/martin-rowson-cartoon-jackdaw-gasfield-andy-burnham-labour-climate-crisis\"&gt;Continue reading...&lt;/a&gt;",
+          "published": "2026-10-23T15:36:29.000Z",
+          "score": 4
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Turkey passes fund liquidation law as many savers still await access to money - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZERrS3lkNk1vMnYtcnFoZTNDUlRqd3RtOTAxS3J0NFhmQ2EwbHp1YXlfLWp2YlJxSjBxeVBZd0g0MkxibllTdFVUNGxfY0hBanlfN0lISGtpU3V3bjlEbkI4cmI2U3lKWGJrVUJ2aXN4WkxwMU1oXzFrZ2tVRWZodTZINi1vUmg5dEh5d09udWRBWnZ6V0Y2RlByMUptcE1DbmxxWEpJdzlEbVhkYk1yZ3BaamhxRUZ1Q0Zxay1tVUpRWUk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZERrS3lkNk1vMnYtcnFoZTNDUlRqd3RtOTAxS3J0NFhmQ2EwbHp1YXlfLWp2YlJxSjBxeVBZd0g0MkxibllTdFVUNGxfY0hBanlfN0lISGtpU3V3bjlEbkI4cmI2U3lKWGJrVUJ2aXN4WkxwMU1oXzFrZ2tVRWZodTZINi1vUmg5dEh5d09udWRBWnZ6V0Y2RlByMUptcE1DbmxxWEpJdzlEbVhkYk1yZ3BaamhxRUZ1Q0Zxay1tVUpRWUk?oc=5\" target=\"_blank\"&gt;Turkey passes fund liquidation law as many savers still await access to money&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-23T07:34:36.000Z",
-          "score": 6
-        },
-        {
-          "title": "Fund to help businesses switch to green vehicles",
-          "link": "https://www.bbc.co.uk/news/articles/cr62ydqjvg9lo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Council leader Stephen Place says it will help businesses counter the rising cost of fuel.",
-          "published": "2026-10-23T10:15:00.000Z",
-          "score": 4
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -154,14 +131,6 @@
           "description": "European Commission Speech Dublin, 23 Oct 2026 Good afternoon and thank you, Minister – dear Helen – for your hospitality. I always leave Dublin impressed by its positive energy and this time, also grateful ...",
           "published": "2026-10-23T14:54:52.000Z",
           "score": 20
-        },
-        {
-          "title": "Ukraine seeks to move customs checks inside EU to avoid Russian drones, FT reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRUIzdWdhRjZFUzJ5aWNSVWo2b0JlTTRJN1NEOHNrSlNkWVhGUFIwMFFBM2ViNzdmN1Q0ck5FUWtXYXRWV21lQVR0REhKbW1TNE9yODhMRWlUa1BlcjNtM1lSQWlERTlod0YyMW5MS2VhTEt4OU9EM01Zb0Vqb2hGVy1DRGItcVdqdjVtQUVWZkVpRjNNWWRDNGp3clM4OXVyZHRPWnR1S3oxbkwydjMwX29TWGMza0Yy?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRUIzdWdhRjZFUzJ5aWNSVWo2b0JlTTRJN1NEOHNrSlNkWVhGUFIwMFFBM2ViNzdmN1Q0ck5FUWtXYXRWV21lQVR0REhKbW1TNE9yODhMRWlUa1BlcjNtM1lSQWlERTlod0YyMW5MS2VhTEt4OU9EM01Zb0Vqb2hGVy1DRGItcVdqdjVtQUVWZkVpRjNNWWRDNGp3clM4OXVyZHRPWnR1S3oxbkwydjMwX29TWGMza0Yy?oc=5\" target=\"_blank\"&gt;Ukraine seeks to move customs checks inside EU to avoid Russian drones, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-23T04:57:00.000Z",
-          "score": 8
         }
       ]
     },
@@ -186,36 +155,36 @@
           "score": 8
         },
         {
-          "title": "Euro sinks on French debt worries; yen gains on AI rout - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNRU4zMGRzLXpsS3VUeXg0YlJGV1NNYnZCUTZaOVJhSm5KQkUxcExfVEZ0cmsyUkFHX2JubWJKV3RwVkpVd3dodmFLcHV2YU83S1JQSGF4YzlnOUdldHBHeks2bFpZLVJBVGhDeGxONTd1S05KSkxTZlhqYWFqZXA3bmloWDhhVEdQa3dpcllLbk16eURmMzhpUzJueE9vZw?oc=5",
+          "title": "EU opens antitrust investigation in paper industry supply chain - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbTZYQVdHald1QkM2eDV4Tm5ZWl9ibXlQSVFyaVd1YWt5cF82aWRxRjJPeG44LWNkZkJfaXp2RWhtNnlZMGpkOTZjZXNVckpwMDBLWFFGcmM2Rm90VWJtd1NHR01FT2lxb2htb0VuTllDeS1fa0kzTV8zOUtMSWxZemNmSTRFLWlsUTQyS1Z6TmhXWVZub1k2NXg1eWhXUE5TXzdwbA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxNRU4zMGRzLXpsS3VUeXg0YlJGV1NNYnZCUTZaOVJhSm5KQkUxcExfVEZ0cmsyUkFHX2JubWJKV3RwVkpVd3dodmFLcHV2YU83S1JQSGF4YzlnOUdldHBHeks2bFpZLVJBVGhDeGxONTd1S05KSkxTZlhqYWFqZXA3bmloWDhhVEdQa3dpcllLbk16eURmMzhpUzJueE9vZw?oc=5\" target=\"_blank\"&gt;Euro sinks on French debt worries; yen gains on AI rout&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-23T02:08:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPbTZYQVdHald1QkM2eDV4Tm5ZWl9ibXlQSVFyaVd1YWt5cF82aWRxRjJPeG44LWNkZkJfaXp2RWhtNnlZMGpkOTZjZXNVckpwMDBLWFFGcmM2Rm90VWJtd1NHR01FT2lxb2htb0VuTllDeS1fa0kzTV8zOUtMSWxZemNmSTRFLWlsUTQyS1Z6TmhXWVZub1k2NXg1eWhXUE5TXzdwbA?oc=5\" target=\"_blank\"&gt;EU opens antitrust investigation in paper industry supply chain&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-23T15:53:43.000Z",
           "score": 8
         },
         {
-          "title": "Greece joins countries putting age-limits on social media, banning access for kids under 15",
-          "link": "https://www.dw.com/en/greece-joins-countries-putting-age-limits-on-social-media-banning-access-for-kids-under-15/a-79739606?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Greece has passed legislation banning social media access for children under 15. New rules will come into effect on January 1, 2027, and are designed to protect children&#039;s mental health.",
-          "published": "2026-10-23T09:04:00.000Z",
-          "score": 6
+          "title": "EU vows to fix 'China Shock 2.0' via talks with Beijing - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeGVLeUlRY0dMNGczWjFFYkgxSFVzTGFzRTRfV3A2aHBKcjR5cEJVeFJWUmpIelNFa1pucXpRSjdNSVQyTmtoVkZTcWZ0OHItOXJTVVJQeGVYY3hnV204X1FrX05OdWUzMzE4a055Rmx3em5nRGx4VTU3UTIxd1FidkU0OU1GZnMxbHZ2NG5HeEpmWXBKeVBPdDhremRSWnhEemRjVW1XT2Frc2JCS1NYbW4ySQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNeGVLeUlRY0dMNGczWjFFYkgxSFVzTGFzRTRfV3A2aHBKcjR5cEJVeFJWUmpIelNFa1pucXpRSjdNSVQyTmtoVkZTcWZ0OHItOXJTVVJQeGVYY3hnV204X1FrX05OdWUzMzE4a055Rmx3em5nRGx4VTU3UTIxd1FidkU0OU1GZnMxbHZ2NG5HeEpmWXBKeVBPdDhremRSWnhEemRjVW1XT2Frc2JCS1NYbW4ySQ?oc=5\" target=\"_blank\"&gt;EU vows to fix 'China Shock 2.0' via talks with Beijing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-23T16:39:28.000Z",
+          "score": 8
         },
         {
-          "title": "Rubio turns to small Indian town as US faces high oil prices",
-          "link": "https://www.bbc.co.uk/news/articles/c3x2wnk8ejq5o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "US Secretary of State Marco Rubio pushed a business and energy agenda over diplomacy on his second trip to India this year.",
-          "published": "2026-10-23T08:39:42.000Z",
-          "score": 4
+          "title": "Euro zone growth slows to 4-month low amid rising costs and French strife, survey shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPREYtdWRHb1k1TXZBQVJzeTdtb0NLZFBSNTFRRzR1enRIV0MwUE5meXJyX0tYNWZ2MmRBTnAtc3NPYm1wTHpkX0tSUURpLTNadDlYTHBHOWxmQ3FOZXl3cTBxQTBreTFCSmN3aGhlTEVIMTNJM3VyaExCYmp1TkV5X2d1cjFPZlhnQzBwR1lIZ0NMM2EtSkRpWTF6dXNoTWZiV01QRE02M3JJR0lTd2lONU9HRG1ETUJydEVUQjYwWnpGbnZv?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPREYtdWRHb1k1TXZBQVJzeTdtb0NLZFBSNTFRRzR1enRIV0MwUE5meXJyX0tYNWZ2MmRBTnAtc3NPYm1wTHpkX0tSUURpLTNadDlYTHBHOWxmQ3FOZXl3cTBxQTBreTFCSmN3aGhlTEVIMTNJM3VyaExCYmp1TkV5X2d1cjFPZlhnQzBwR1lIZ0NMM2EtSkRpWTF6dXNoTWZiV01QRE02M3JJR0lTd2lONU9HRG1ETUJydEVUQjYwWnpGbnZv?oc=5\" target=\"_blank\"&gt;Euro zone growth slows to 4-month low amid rising costs and French strife, survey shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+          "published": "2026-10-23T14:10:13.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 392,
-    "articlesLast24h": 169,
-    "afterDedup": 157,
+    "totalArticlesScanned": 398,
+    "articlesLast24h": 170,
+    "afterDedup": 160,
     "feedsQueried": 19
   }
 }
