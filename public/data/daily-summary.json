@@ -1,6 +1,6 @@
 {
   "date": "2026-10-24",
-  "generatedAt": "2026-10-24T14:20:57.773Z",
+  "generatedAt": "2026-10-24T19:20:21.976Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 24 October 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,10 +11,16 @@
       "color": "#E87722"
     },
     {
-      "headline": "Chart: A record two-thirds of car sales in China are now electric vehicles",
-      "summary": "For the first time, new-energy vehicles (NEVs) made up 67% of new car sales in China in September, according to&#8230; The post Chart: A record two-thirds of car sales in China are now electric vehicles appeared first on Carbon Brief.",
+      "headline": "The BoM’s temperature record keeping is under attack – again. What’s going on? | Temperature Check",
+      "summary": "&lt;p&gt;An ‘audit’ of the Bureau of Meteorology main dataset for measuring climate change claims it contains ‘widespread errors’. It doesn’t stack up&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Want to get this in your inbox when it publishes? &lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for the Clear Air Australia newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&l",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "China urges US to halt proposed expansion of outbound investment curbs - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOY3V2bWpZckhlWExlaDZRLTR0NG1MY3l4NmpfZzJCUkVpSkJGblR1S0RScmxSa2tWWVhtZFdBNzkyc0ZaUnlDU2lVNEh3WUpUTkw3d0tIdGlzeTNrRnpWNFhiUk9xTEw4bENXWmxuRlRYTXQtU2N4MXRLVURsUkVxYUpGMks3R0hUaXA4eUZHSXNBWXRLRUN4VVkyVW5WQlBVUFo1dnRSVGxPYmxqMXRXUnVn?oc=5\" target=\"_blank\"&gt;China urges US to halt proposed expansion of outbound investment curbs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -36,19 +42,11 @@
           "score": 7
         },
         {
-          "title": "Scotland to be hit with 80mph wind gusts as Storm Boelo warning upgraded to amber",
-          "link": "https://www.bbc.co.uk/news/articles/cwkgjz3dpyj6o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "It is due to be the second of two storms to hit Scotland over the weekend, with Storm Austen bringing heavy rain on Friday.",
-          "published": "2026-10-23T16:13:11.000Z",
-          "score": 7
-        },
-        {
-          "title": "Carney says AtkinsRealis is a contender to build nuclear power plant in Turkey - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQUDVaTVBUN2djLWhIejhzYlNpOGtWU0hoUEQxN1g0Q0M2UldpcFhud2pIc2s3LWpfOWdIVm1hZU4tSzFmVDRzLUJxSzFHcFNybURZTnY0R3liU1QtSE51S1F3TDJXdFJ6dzNUd2tjQUxScWpIYWt6ZXVPQnFqUjdVWkRENWRncnhoMFp2NDdMVWZrMFdUWThFcU9FbUdNOWplcWUxNXdRelc1cHN2RWJ3OEl6RXV4VkNpQUYxRDE1cTdFUQ?oc=5",
+          "title": "Top LNG exporter QatarEnergy in talks to buy US LNG from Woodside's Louisiana plant - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNLWo4ZHBtWXB5blhDUlU3d0lLRXRUX2NfeUVuY3FQSjYzenBjVlppVDA3Nk42VnJaUWtMQWtLZzdLSTNPMWhDc1NmSjVJa1UzN1pGb2dTWEg0Q2lHTzVjamdndGVZRml5VGFjSnlJcjAzcHdwQ21EUkxNZGdiclJjNkYySnFkVVVzYThVV2FGcThsS3hfb25jZTZXdzZxRE45ejF0YzNYcjBjc1pVTFlidElOWWxjeG9zdHZqdldQUUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQUDVaTVBUN2djLWhIejhzYlNpOGtWU0hoUEQxN1g0Q0M2UldpcFhud2pIc2s3LWpfOWdIVm1hZU4tSzFmVDRzLUJxSzFHcFNybURZTnY0R3liU1QtSE51S1F3TDJXdFJ6dzNUd2tjQUxScWpIYWt6ZXVPQnFqUjdVWkRENWRncnhoMFp2NDdMVWZrMFdUWThFcU9FbUdNOWplcWUxNXdRelc1cHN2RWJ3OEl6RXV4VkNpQUYxRDE1cTdFUQ?oc=5\" target=\"_blank\"&gt;Carney says AtkinsRealis is a contender to build nuclear power plant in Turkey&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-23T15:11:26.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNLWo4ZHBtWXB5blhDUlU3d0lLRXRUX2NfeUVuY3FQSjYzenBjVlppVDA3Nk42VnJaUWtMQWtLZzdLSTNPMWhDc1NmSjVJa1UzN1pGb2dTWEg0Q2lHTzVjamdndGVZRml5VGFjSnlJcjAzcHdwQ21EUkxNZGdiclJjNkYySnFkVVVzYThVV2FGcThsS3hfb25jZTZXdzZxRE45ejF0YzNYcjBjc1pVTFlidElOWWxjeG9zdHZqdldQUUQ?oc=5\" target=\"_blank\"&gt;Top LNG exporter QatarEnergy in talks to buy US LNG from Woodside's Louisiana plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-23T22:16:02.000Z",
           "score": 7
         },
         {
@@ -66,6 +64,14 @@
           "description": "&lt;p&gt;Season will be less vibrant with trees such as birches, which usually offer a striking burst of yellow leaves, already bare&lt;/p&gt;&lt;p&gt;Among a canvas of copper, red and purple autumn leaves on display at Wisley garden in Surrey, south-east England, one tree stands conspicuously naked.&lt;/p&gt;&lt;p&gt;“The birch has lost all its leaves,” says Guy Barter, the chief horticulturist at the Royal Horticultural Society. “That’s the effect of drought, so it’ll have no autumn colour thi",
           "published": "2026-10-24T08:00:27.000Z",
           "score": 4
+        },
+        {
+          "title": "Complex issues: how to get your apartment block off gas – before it’s too late",
+          "link": "https://www.theguardian.com/australia-news/2026/oct/24/complex-issues-how-to-get-your-apartment-block-off-gas-before-its-too-late",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Electrifying your block of flats could cut emissions and save money. Don��t wait to plan the change&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/series/change-by-degrees\"&gt;Change by degrees&lt;/a&gt; offers life hacks and sustainable living tips each Saturday to help reduce your household’s carbon footprint&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Got a question or tip for reducing household emissions? Email us at changebydegrees@theguardi",
+          "published": "2026-10-23T23:00:16.000Z",
+          "score": 4
         }
       ]
     },
@@ -74,19 +80,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Chart: A record two-thirds of car sales in China are now electric vehicles",
-          "link": "https://www.carbonbrief.org/chart-a-record-two-thirds-of-car-sales-in-china-are-now-electric-vehicles",
-          "source": "Carbon Brief",
-          "description": "For the first time, new-energy vehicles (NEVs) made up 67% of new car sales in China in September, according to&#8230; The post Chart: A record two-thirds of car sales in China are now electric vehicles appeared first on Carbon Brief.",
-          "published": "2026-10-23T15:55:26.000Z",
-          "score": 10
-        },
-        {
-          "title": "Martin Rowson on the approval of the Jackdaw gasfield – cartoon",
-          "link": "https://www.theguardian.com/commentisfree/picture/2026/oct/23/martin-rowson-cartoon-jackdaw-gasfield-andy-burnham-labour-climate-crisis",
+          "title": "The BoM’s temperature record keeping is under attack – again. What’s going on? | Temperature Check",
+          "link": "https://www.theguardian.com/environment/2026/oct/25/bom-temperature-record-keeping-under-attack-again",
           "source": "The Guardian - Climate",
-          "description": "&lt;a href=\"https://www.theguardian.com/commentisfree/picture/2026/oct/23/martin-rowson-cartoon-jackdaw-gasfield-andy-burnham-labour-climate-crisis\"&gt;Continue reading...&lt;/a&gt;",
-          "published": "2026-10-23T15:36:29.000Z",
+          "description": "&lt;p&gt;An ‘audit’ of the Bureau of Meteorology main dataset for measuring climate change claims it contains ‘widespread errors’. It doesn’t stack up&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Want to get this in your inbox when it publishes? &lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for the Clear Air Australia newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&l",
+          "published": "2026-10-24T19:00:41.000Z",
           "score": 4
         },
         {
@@ -98,19 +96,27 @@
           "score": 4
         },
         {
-          "title": "Tinned mackerel, hand-crank radios and bags for poo: crisis-prepping guides around the world",
-          "link": "https://www.theguardian.com/society/2026/oct/23/tinned-mackerel-hand-crank-radios-and-bags-for-poo-crisis-prepping-guides-around-the-world",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;UK allies have long urged people to stockpile supplies for a crisis. How are people from France to Australia being advised to prepare?&lt;/p&gt;&lt;p&gt;The UK has told people to &lt;a href=\"https://www.theguardian.com/politics/2026/oct/22/britain-prepare-infrastructure-attacks-hostile-states-wes-streeting\"&gt;fill their pantries with food for three days&lt;/a&gt; in case of catastrophe, joining a host of countries urging citizens to ready themselves for core systems failing.&lt;/p&gt;&",
-          "published": "2026-10-23T15:52:29.000Z",
-          "score": 2
-        },
-        {
           "title": "Trains cancelled and road warnings as Scotland prepares for Storm Boelo",
           "link": "https://www.bbc.co.uk/news/articles/c60qk5lw1z8wo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Heavy rain and strong winds are expected during the second named storm to hit in two days, with gusts of up to 80mph forecast.",
-          "published": "2026-10-24T13:08:05.000Z",
+          "published": "2026-10-24T18:26:46.000Z",
+          "score": 2
+        },
+        {
+          "title": "Storm Boelo to bring severe gales and heavy rain into Sunday",
+          "link": "https://www.bbc.co.uk/weather/articles/cv8ez97k0wnlo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "An amber weather warning has been issued for much of Scotland, parts of Northern Ireland and northern England, as Storm Boelo approaches.",
+          "published": "2026-10-24T11:48:58.000Z",
+          "score": 2
+        },
+        {
+          "title": "Weather warnings in place ahead of Storm Boelo",
+          "link": "https://www.bbc.co.uk/news/articles/c83vqn2x54v1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The amber Met Office alert for counties Antrim and Londonderry lasts from 21:00 BST on Saturday until 21:00 GMT on Sunday.",
+          "published": "2026-10-24T08:28:49.000Z",
           "score": 2
         }
       ]
@@ -118,20 +124,21 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "China urges US to halt proposed expansion of outbound investment curbs - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOY3V2bWpZckhlWExlaDZRLTR0NG1MY3l4NmpfZzJCUkVpSkJGblR1S0RScmxSa2tWWVhtZFdBNzkyc0ZaUnlDU2lVNEh3WUpUTkw3d0tIdGlzeTNrRnpWNFhiUk9xTEw4bENXWmxuRlRYTXQtU2N4MXRLVURsUkVxYUpGMks3R0hUaXA4eUZHSXNBWXRLRUN4VVkyVW5WQlBVUFo1dnRSVGxPYmxqMXRXUnVn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOY3V2bWpZckhlWExlaDZRLTR0NG1MY3l4NmpfZzJCUkVpSkJGblR1S0RScmxSa2tWWVhtZFdBNzkyc0ZaUnlDU2lVNEh3WUpUTkw3d0tIdGlzeTNrRnpWNFhiUk9xTEw4bENXWmxuRlRYTXQtU2N4MXRLVURsUkVxYUpGMks3R0hUaXA4eUZHSXNBWXRLRUN4VVkyVW5WQlBVUFo1dnRSVGxPYmxqMXRXUnVn?oc=5\" target=\"_blank\"&gt;China urges US to halt proposed expansion of outbound investment curbs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T13:51:55.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
-        {
-          "title": "Remarks by Commissioner Šefčovič at the press conference following the informal Foreign Affairs Council (Trade)",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2252",
-          "source": "European Commission",
-          "description": "European Commission Speech Dublin, 23 Oct 2026 Good afternoon and thank you, Minister – dear Helen – for your hospitality. I always leave Dublin impressed by its positive energy and this time, also grateful ...",
-          "published": "2026-10-23T14:54:52.000Z",
-          "score": 20
-        },
         {
           "title": "EU moves to loosen rules on pesticide use as experts sound the alarm",
           "link": "https://www.dw.com/en/eu-moves-to-loosen-rules-on-pesticide-use-as-experts-sound-the-alarm/a-79646422?maca=en-rss-en-all-1573-xml-mrss",
@@ -155,19 +162,11 @@
           "score": 8
         },
         {
-          "title": "EU vows to fix 'China Shock 2.0' via talks with Beijing - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeGVLeUlRY0dMNGczWjFFYkgxSFVzTGFzRTRfV3A2aHBKcjR5cEJVeFJWUmpIelNFa1pucXpRSjdNSVQyTmtoVkZTcWZ0OHItOXJTVVJQeGVYY3hnV204X1FrX05OdWUzMzE4a055Rmx3em5nRGx4VTU3UTIxd1FidkU0OU1GZnMxbHZ2NG5HeEpmWXBKeVBPdDhremRSWnhEemRjVW1XT2Frc2JCS1NYbW4ySQ?oc=5",
+          "title": "Belgian protesters and police skirmish at anti-government demonstrations in Brussels - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNdWRmTGozX08xMlVRbHEtbWNESTBRVUg5eVNVR2dJTnh2UTNoU1F1aktWc2FYZVh6N0hkcFJxN05OS1hmNmQzLWZZODBIVFRBYlQ1SG5BUzJvUUdxMmFsRWJlcFdlR3pSRTdJT0pDWk1XYUl6UENiTzNja0ExT0VFbWZvU01iTmpjY0R4bnF1RmRscUtDSnJUQTFJeUtLeF9BZ2kzcWxQOGlOZUhyUThmY29IOTY5eWc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNeGVLeUlRY0dMNGczWjFFYkgxSFVzTGFzRTRfV3A2aHBKcjR5cEJVeFJWUmpIelNFa1pucXpRSjdNSVQyTmtoVkZTcWZ0OHItOXJTVVJQeGVYY3hnV204X1FrX05OdWUzMzE4a055Rmx3em5nRGx4VTU3UTIxd1FidkU0OU1GZnMxbHZ2NG5HeEpmWXBKeVBPdDhremRSWnhEemRjVW1XT2Frc2JCS1NYbW4ySQ?oc=5\" target=\"_blank\"&gt;EU vows to fix 'China Shock 2.0' via talks with Beijing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-23T16:39:28.000Z",
-          "score": 8
-        },
-        {
-          "title": "Explainer: How can EU limit impact of China Shock 2.0? - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOWkxVNEsyREpCbkZLNFhGbUFWaEJCNUNPZ2xHclljSF9nb1Vaeng3cjBBWGp2M0dQUDF3WTdZbERoWE1RbVFhV2NxTS1xZ2tlTDJSVW9mYm54WldYV3dQbGl6RTAtT1VaMVRBUlh5czZlOE1ib0daWE81WXI4UFhOdEwyQkdPY1dXb0d4cFNFcw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxOWkxVNEsyREpCbkZLNFhGbUFWaEJCNUNPZ2xHclljSF9nb1Vaeng3cjBBWGp2M0dQUDF3WTdZbERoWE1RbVFhV2NxTS1xZ2tlTDJSVW9mYm54WldYV3dQbGl6RTAtT1VaMVRBUlh5czZlOE1ib0daWE81WXI4UFhOdEwyQkdPY1dXb0d4cFNFcw?oc=5\" target=\"_blank\"&gt;Explainer: How can EU limit impact of China Shock 2.0?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-23T14:36:21.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNdWRmTGozX08xMlVRbHEtbWNESTBRVUg5eVNVR2dJTnh2UTNoU1F1aktWc2FYZVh6N0hkcFJxN05OS1hmNmQzLWZZODBIVFRBYlQ1SG5BUzJvUUdxMmFsRWJlcFdlR3pSRTdJT0pDWk1XYUl6UENiTzNja0ExT0VFbWZvU01iTmpjY0R4bnF1RmRscUtDSnJUQTFJeUtLeF9BZ2kzcWxQOGlOZUhyUThmY29IOTY5eWc?oc=5\" target=\"_blank\"&gt;Belgian protesters and police skirmish at anti-government demonstrations in Brussels&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T16:06:20.000Z",
           "score": 8
         },
         {
@@ -177,6 +176,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQekgyR1FuVEk3cnpGRGlzWVFSTmZPT2gteXQ0UHk2M0hiUDJ2MnFJbjIzYjdhbzZfa3pPNDlVcWJhRjVRWlVPVFlJZC1FOFE2UHBDWTNzOGlmdHR2Z1NVN1lYdFNBU2haMVRGTlUwOE1OTENUUHl2bGo2R2d4RXRTdlQ2WTRuNm9adGU4TnE4alVleS11OHNmU20tOHVYMEdPQndUa19NazhxVHlfNkdMMk5SZG5mRjAtY2kycmd5TQ?oc=5\" target=\"_blank\"&gt;COMMENTARY: How Trump's energy dominance turned into hubris&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-24T06:00:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Czech coalition advances media overhaul in rushed overnight vote - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQRXZxMFpieEY0QlBTdEhzcUs0VnZfUXhnbnJnQXF0M2hmZzVmcXVnVFBUQ0RTZlZaVnc3SjRjSDdITmtyVFBhU0MwdGdZeTlfRWRiYXFFREVxZ2RDZDBVaVliVVBVU3l0S2kzRmRKWEFXU2lmMkZoekJLUjRRc2hiZUt5N08tMzRBMGxzOFJEb2RJWEcxd0lnQUNzX1l5MkNySloxaWU4WmNBV2xBVkNZT0dBNGZnYnlnOVZvTA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQRXZxMFpieEY0QlBTdEhzcUs0VnZfUXhnbnJnQXF0M2hmZzVmcXVnVFBUQ0RTZlZaVnc3SjRjSDdITmtyVFBhU0MwdGdZeTlfRWRiYXFFREVxZ2RDZDBVaVliVVBVU3l0S2kzRmRKWEFXU2lmMkZoekJLUjRRc2hiZUt5N08tMzRBMGxzOFJEb2RJWEcxd0lnQUNzX1l5MkNySloxaWU4WmNBV2xBVkNZT0dBNGZnYnlnOVZvTA?oc=5\" target=\"_blank\"&gt;Czech coalition advances media overhaul in rushed overnight vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T08:14:09.000Z",
+          "score": 6
         },
         {
           "title": "Ukraine says Starlink connection 'now stable' after network limits",
@@ -190,9 +197,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 399,
-    "articlesLast24h": 161,
-    "afterDedup": 151,
+    "totalArticlesScanned": 400,
+    "articlesLast24h": 151,
+    "afterDedup": 146,
     "feedsQueried": 19
   }
 }
