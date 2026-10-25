@@ -1,0 +1,205 @@
+{
+  "date": "2026-10-25",
+  "generatedAt": "2026-10-25T00:56:50.358Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Sunday, 25 October 2026 — Key developments from the last 24 hours",
+  "highlights": [
+    {
+      "headline": "Wales plans to ban steel pylons as government launches consultation",
+      "summary": "The Welsh government says it is consulting on an \"undergrounding-first approach\" to electricity lines.",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
+    {
+      "headline": "The BoM’s temperature record keeping is under attack – again. What’s going on? | Temperature Check",
+      "summary": "&lt;p&gt;An ‘audit’ of the Bureau of Meteorology main dataset for measuring climate change claims it contains ‘widespread errors’. It doesn’t stack up&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Want to get this in your inbox when it publishes? &lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for the Clear Air Australia newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&l",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
+    },
+    {
+      "headline": "China urges US to halt proposed expansion of outbound investment curbs - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOY3V2bWpZckhlWExlaDZRLTR0NG1MY3l4NmpfZzJCUkVpSkJGblR1S0RScmxSa2tWWVhtZFdBNzkyc0ZaUnlDU2lVNEh3WUpUTkw3d0tIdGlzeTNrRnpWNFhiUk9xTEw4bENXWmxuRlRYTXQtU2N4MXRLVURsUkVxYUpGMks3R0hUaXA4eUZHSXNBWXRLRUN4VVkyVW5WQlBVUFo1dnRSVGxPYmxqMXRXUnVn?oc=5\" target=\"_blank\"&gt;China urges US to halt proposed expansion of outbound investment curbs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
+    }
+  ],
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": [
+        {
+          "title": "Wales plans to ban steel pylons as government launches consultation",
+          "link": "https://www.bbc.co.uk/news/articles/c9x28dgj2r0go?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The Welsh government says it is consulting on an \"undergrounding-first approach\" to electricity lines.",
+          "published": "2026-10-24T10:04:29.000Z",
+          "score": 6
+        },
+        {
+          "title": "‘False autumn’: stressed trees drop leaves early after scorching English summer",
+          "link": "https://www.theguardian.com/environment/2026/oct/24/false-autumn-stressed-trees-drop-leaves-early-extreme-summer-heat",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Season will be less vibrant with trees such as birches, which usually offer a striking burst of yellow leaves, already bare&lt;/p&gt;&lt;p&gt;Among a canvas of copper, red and purple autumn leaves on display at Wisley garden in Surrey, south-east England, one tree stands conspicuously naked.&lt;/p&gt;&lt;p&gt;“The birch has lost all its leaves,” says Guy Barter, the chief horticulturist at the Royal Horticultural Society. “That’s the effect of drought, so it’ll have no autumn colour thi",
+          "published": "2026-10-24T08:00:27.000Z",
+          "score": 4
+        },
+        {
+          "title": "Amber weather warning as Storm Boelo hits Scotland",
+          "link": "https://www.bbc.co.uk/news/videos/cmqlnkq6p6y7o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The Met Office has issued an amber warning for wind over Scotland from 21:00 until 21:00 on Sunday.",
+          "published": "2026-10-24T14:40:18.000Z",
+          "score": 4
+        },
+        {
+          "title": "Fireworks and tear gas as protesters and riot police clash in Paris",
+          "link": "https://www.bbc.co.uk/news/videos/cm89zqw9lx1do?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Europe correspondent Nick Beake reports from Paris where mostly peaceful protests turned into unrest after nightfall.",
+          "published": "2026-10-24T19:37:35.000Z",
+          "score": 4
+        },
+        {
+          "title": "Albanian police fire tear gas as anti-government student protests turn violent - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX21BMWozRzgtZFdWcVVVc3o5dHh3bUIzSzZjcTdZTnNzcFdXN2lVYVpXTmY0OHB0UWdFbjdmQ0FKV0hxOVUxeVJGNEhxTGdhQW9tZWtuTGoxTDNKZWplYjBkLWd4Q2sxdlhXdElFaVo1a0pWbm9walRONWoxRVZCU2VFTEUwMlZfNEZZeWpsVGJPMnF6MW9ZNW11WHlKRGEtVjNoRlFsMTIxT0pvQkU5UnRhT3RxTThD?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX21BMWozRzgtZFdWcVVVc3o5dHh3bUIzSzZjcTdZTnNzcFdXN2lVYVpXTmY0OHB0UWdFbjdmQ0FKV0hxOVUxeVJGNEhxTGdhQW9tZWtuTGoxTDNKZWplYjBkLWd4Q2sxdlhXdElFaVo1a0pWbm9walRONWoxRVZCU2VFTEUwMlZfNEZZeWpsVGJPMnF6MW9ZNW11WHlKRGEtVjNoRlFsMTIxT0pvQkU5UnRhT3RxTThD?oc=5\" target=\"_blank\"&gt;Albanian police fire tear gas as anti-government student protests turn violent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T17:11:44.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "The BoM’s temperature record keeping is under attack – again. What’s going on? | Temperature Check",
+          "link": "https://www.theguardian.com/environment/2026/oct/25/bom-temperature-record-keeping-under-attack-again",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;An ‘audit’ of the Bureau of Meteorology main dataset for measuring climate change claims it contains ‘widespread errors’. It doesn’t stack up&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Want to get this in your inbox when it publishes? &lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for the Clear Air Australia newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&l",
+          "published": "2026-10-24T19:00:41.000Z",
+          "score": 4
+        },
+        {
+          "title": "Historic swimming pond to be restored",
+          "link": "https://www.bbc.co.uk/news/articles/c5lyellrmlego?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Specialists are looking at how to clear the Cornwall bath house pond and understand the tidal inlet.",
+          "published": "2026-10-24T06:08:37.000Z",
+          "score": 4
+        },
+        {
+          "title": "Rosebank: Life on the oil field at the centre of a political storm",
+          "link": "https://www.bbc.co.uk/news/articles/cqy8ljkle97ro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Scotland editor James Cook finds out what life is like on board a ship in an untapped oil field awaiting its fate.",
+          "published": "2026-10-24T23:15:18.000Z",
+          "score": 2
+        },
+        {
+          "title": "From Russian cages to Irish sanctuary: The five-year rescue journey of Bu and Tyapa",
+          "link": "https://www.bbc.co.uk/news/articles/cx62y9j1zyjvo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "For Bu and Tyapa, the five-year journey from Russia to the Irish countryside was anything but straightforward.",
+          "published": "2026-10-24T23:02:51.000Z",
+          "score": 2
+        },
+        {
+          "title": "Trains cancelled and road warnings as Storm Boelo sweeps into Scotland",
+          "link": "https://www.bbc.co.uk/news/articles/c60qk5lw1z8wo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Heavy rain and strong winds are expected during the second named storm to hit in two days, with gusts of up to 80mph forecast.",
+          "published": "2026-10-24T22:39:52.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": [
+        {
+          "title": "China urges US to halt proposed expansion of outbound investment curbs - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOY3V2bWpZckhlWExlaDZRLTR0NG1MY3l4NmpfZzJCUkVpSkJGblR1S0RScmxSa2tWWVhtZFdBNzkyc0ZaUnlDU2lVNEh3WUpUTkw3d0tIdGlzeTNrRnpWNFhiUk9xTEw4bENXWmxuRlRYTXQtU2N4MXRLVURsUkVxYUpGMks3R0hUaXA4eUZHSXNBWXRLRUN4VVkyVW5WQlBVUFo1dnRSVGxPYmxqMXRXUnVn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOY3V2bWpZckhlWExlaDZRLTR0NG1MY3l4NmpfZzJCUkVpSkJGblR1S0RScmxSa2tWWVhtZFdBNzkyc0ZaUnlDU2lVNEh3WUpUTkw3d0tIdGlzeTNrRnpWNFhiUk9xTEw4bENXWmxuRlRYTXQtU2N4MXRLVURsUkVxYUpGMks3R0hUaXA4eUZHSXNBWXRLRUN4VVkyVW5WQlBVUFo1dnRSVGxPYmxqMXRXUnVn?oc=5\" target=\"_blank\"&gt;China urges US to halt proposed expansion of outbound investment curbs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T13:51:55.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": [
+        {
+          "title": "EU moves to loosen rules on pesticide use as experts sound the alarm",
+          "link": "https://www.dw.com/en/eu-moves-to-loosen-rules-on-pesticide-use-as-experts-sound-the-alarm/a-79646422?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Union wants to relax rules for pesticides, saying it will be easier for farmers to adopt more environmentally friendly options. But health and environmental experts say the risks are far too great.",
+          "published": "2026-10-24T10:33:00.000Z",
+          "score": 8
+        }
+      ]
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": [
+        {
+          "title": "Turkey&#039;s new deal on Mediterranean maritime boundaries with Libya is exacerbating issues with Greece and the EU",
+          "link": "https://www.dw.com/en/turkey-s-new-deal-on-mediterranean-maritime-boundaries-with-libya-is-exacerbating-issues-with-greece-and-the-eu/a-79745971?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Turkey and Libya plan to redraw maritime boundaries in the Mediterranean as part of a new economic corridor. This has sparked strong protests from Greece, and has also drawn the European Union into the conflict.",
+          "published": "2026-10-24T14:09:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Belgian protesters and police skirmish at anti-government demonstrations in Brussels - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNdWRmTGozX08xMlVRbHEtbWNESTBRVUg5eVNVR2dJTnh2UTNoU1F1aktWc2FYZVh6N0hkcFJxN05OS1hmNmQzLWZZODBIVFRBYlQ1SG5BUzJvUUdxMmFsRWJlcFdlR3pSRTdJT0pDWk1XYUl6UENiTzNja0ExT0VFbWZvU01iTmpjY0R4bnF1RmRscUtDSnJUQTFJeUtLeF9BZ2kzcWxQOGlOZUhyUThmY29IOTY5eWc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNdWRmTGozX08xMlVRbHEtbWNESTBRVUg5eVNVR2dJTnh2UTNoU1F1aktWc2FYZVh6N0hkcFJxN05OS1hmNmQzLWZZODBIVFRBYlQ1SG5BUzJvUUdxMmFsRWJlcFdlR3pSRTdJT0pDWk1XYUl6UENiTzNja0ExT0VFbWZvU01iTmpjY0R4bnF1RmRscUtDSnJUQTFJeUtLeF9BZ2kzcWxQOGlOZUhyUThmY29IOTY5eWc?oc=5\" target=\"_blank\"&gt;Belgian protesters and police skirmish at anti-government demonstrations in Brussels&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T16:06:20.000Z",
+          "score": 8
+        },
+        {
+          "title": "COMMENTARY: How Trump's energy dominance turned into hubris - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQekgyR1FuVEk3cnpGRGlzWVFSTmZPT2gteXQ0UHk2M0hiUDJ2MnFJbjIzYjdhbzZfa3pPNDlVcWJhRjVRWlVPVFlJZC1FOFE2UHBDWTNzOGlmdHR2Z1NVN1lYdFNBU2haMVRGTlUwOE1OTENUUHl2bGo2R2d4RXRTdlQ2WTRuNm9adGU4TnE4alVleS11OHNmU20tOHVYMEdPQndUa19NazhxVHlfNkdMMk5SZG5mRjAtY2kycmd5TQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQekgyR1FuVEk3cnpGRGlzWVFSTmZPT2gteXQ0UHk2M0hiUDJ2MnFJbjIzYjdhbzZfa3pPNDlVcWJhRjVRWlVPVFlJZC1FOFE2UHBDWTNzOGlmdHR2Z1NVN1lYdFNBU2haMVRGTlUwOE1OTENUUHl2bGo2R2d4RXRTdlQ2WTRuNm9adGU4TnE4alVleS11OHNmU20tOHVYMEdPQndUa19NazhxVHlfNkdMMk5SZG5mRjAtY2kycmd5TQ?oc=5\" target=\"_blank\"&gt;COMMENTARY: How Trump's energy dominance turned into hubris&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T06:00:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Bolsonaro, Lula about even in polls for Brazil runoff vote - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOW9aaS1WT2hUWE5VTjd3U19BR0VxZ0xtUXd5QjQ5V3EzMkxsYWs2X0lHYm11TzU5YTY3RDQ2dGlnblllZklkV1AySElHOVF6a0RKZmNZZHpJMlVCaE82QjBXN1lHeFNFSGE4VlBjUGVwWlBSWkRQOTE0dzNRZ2NMQm9tWWRzN1FBaHhfbWVqcDl5Qkw5OW5wNlNDMEJjZXVmUkQ3NE5CSmdfci1IMkVVQktUdElSSEd2ZEs2VjRBQktYM3dXc2pvMmFR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPOW9aaS1WT2hUWE5VTjd3U19BR0VxZ0xtUXd5QjQ5V3EzMkxsYWs2X0lHYm11TzU5YTY3RDQ2dGlnblllZklkV1AySElHOVF6a0RKZmNZZHpJMlVCaE82QjBXN1lHeFNFSGE4VlBjUGVwWlBSWkRQOTE0dzNRZ2NMQm9tWWRzN1FBaHhfbWVqcDl5Qkw5OW5wNlNDMEJjZXVmUkQ3NE5CSmdfci1IMkVVQktUdElSSEd2ZEs2VjRBQktYM3dXc2pvMmFR?oc=5\" target=\"_blank\"&gt;Bolsonaro, Lula about even in polls for Brazil runoff vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T23:02:10.000Z",
+          "score": 6
+        },
+        {
+          "title": "Czech coalition advances media overhaul in rushed overnight vote - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQRXZxMFpieEY0QlBTdEhzcUs0VnZfUXhnbnJnQXF0M2hmZzVmcXVnVFBUQ0RTZlZaVnc3SjRjSDdITmtyVFBhU0MwdGdZeTlfRWRiYXFFREVxZ2RDZDBVaVliVVBVU3l0S2kzRmRKWEFXU2lmMkZoekJLUjRRc2hiZUt5N08tMzRBMGxzOFJEb2RJWEcxd0lnQUNzX1l5MkNySloxaWU4WmNBV2xBVkNZT0dBNGZnYnlnOVZvTA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQRXZxMFpieEY0QlBTdEhzcUs0VnZfUXhnbnJnQXF0M2hmZzVmcXVnVFBUQ0RTZlZaVnc3SjRjSDdITmtyVFBhU0MwdGdZeTlfRWRiYXFFREVxZ2RDZDBVaVliVVBVU3l0S2kzRmRKWEFXU2lmMkZoekJLUjRRc2hiZUt5N08tMzRBMGxzOFJEb2RJWEcxd0lnQUNzX1l5MkNySloxaWU4WmNBV2xBVkNZT0dBNGZnYnlnOVZvTA?oc=5\" target=\"_blank\"&gt;Czech coalition advances media overhaul in rushed overnight vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T08:14:09.000Z",
+          "score": 6
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 400,
+    "articlesLast24h": 143,
+    "afterDedup": 134,
+    "feedsQueried": 19
+  }
+}

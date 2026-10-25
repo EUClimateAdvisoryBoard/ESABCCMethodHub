@@ -1,12 +1,12 @@
 {
-  "date": "2026-10-24",
-  "generatedAt": "2026-10-24T19:20:21.976Z",
+  "date": "2026-10-25",
+  "generatedAt": "2026-10-25T00:56:50.358Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Saturday, 24 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Sunday, 25 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Storm Austen brings power cuts and travel disruption as more wind and rain forecast",
-      "summary": "A second storm, Storm Boelo, is expected to hit Scotland, Northern Ireland and northern England on Saturday bringing more wild weather.",
+      "headline": "Wales plans to ban steel pylons as government launches consultation",
+      "summary": "The Welsh government says it is consulting on an \"undergrounding-first approach\" to electricity lines.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -34,22 +34,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Storm Austen brings power cuts and travel disruption as more wind and rain forecast",
-          "link": "https://www.bbc.co.uk/news/articles/cxj0l193y0l8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A second storm, Storm Boelo, is expected to hit Scotland, Northern Ireland and northern England on Saturday bringing more wild weather.",
-          "published": "2026-10-23T21:10:47.000Z",
-          "score": 7
-        },
-        {
-          "title": "Top LNG exporter QatarEnergy in talks to buy US LNG from Woodside's Louisiana plant - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNLWo4ZHBtWXB5blhDUlU3d0lLRXRUX2NfeUVuY3FQSjYzenBjVlppVDA3Nk42VnJaUWtMQWtLZzdLSTNPMWhDc1NmSjVJa1UzN1pGb2dTWEg0Q2lHTzVjamdndGVZRml5VGFjSnlJcjAzcHdwQ21EUkxNZGdiclJjNkYySnFkVVVzYThVV2FGcThsS3hfb25jZTZXdzZxRE45ejF0YzNYcjBjc1pVTFlidElOWWxjeG9zdHZqdldQUUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNLWo4ZHBtWXB5blhDUlU3d0lLRXRUX2NfeUVuY3FQSjYzenBjVlppVDA3Nk42VnJaUWtMQWtLZzdLSTNPMWhDc1NmSjVJa1UzN1pGb2dTWEg0Q2lHTzVjamdndGVZRml5VGFjSnlJcjAzcHdwQ21EUkxNZGdiclJjNkYySnFkVVVzYThVV2FGcThsS3hfb25jZTZXdzZxRE45ejF0YzNYcjBjc1pVTFlidElOWWxjeG9zdHZqdldQUUQ?oc=5\" target=\"_blank\"&gt;Top LNG exporter QatarEnergy in talks to buy US LNG from Woodside's Louisiana plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-23T22:16:02.000Z",
-          "score": 7
-        },
-        {
           "title": "Wales plans to ban steel pylons as government launches consultation",
           "link": "https://www.bbc.co.uk/news/articles/c9x28dgj2r0go?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -66,12 +50,28 @@
           "score": 4
         },
         {
-          "title": "Complex issues: how to get your apartment block off gas – before it’s too late",
-          "link": "https://www.theguardian.com/australia-news/2026/oct/24/complex-issues-how-to-get-your-apartment-block-off-gas-before-its-too-late",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Electrifying your block of flats could cut emissions and save money. Don��t wait to plan the change&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/series/change-by-degrees\"&gt;Change by degrees&lt;/a&gt; offers life hacks and sustainable living tips each Saturday to help reduce your household’s carbon footprint&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Got a question or tip for reducing household emissions? Email us at changebydegrees@theguardi",
-          "published": "2026-10-23T23:00:16.000Z",
+          "title": "Amber weather warning as Storm Boelo hits Scotland",
+          "link": "https://www.bbc.co.uk/news/videos/cmqlnkq6p6y7o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The Met Office has issued an amber warning for wind over Scotland from 21:00 until 21:00 on Sunday.",
+          "published": "2026-10-24T14:40:18.000Z",
           "score": 4
+        },
+        {
+          "title": "Fireworks and tear gas as protesters and riot police clash in Paris",
+          "link": "https://www.bbc.co.uk/news/videos/cm89zqw9lx1do?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Europe correspondent Nick Beake reports from Paris where mostly peaceful protests turned into unrest after nightfall.",
+          "published": "2026-10-24T19:37:35.000Z",
+          "score": 4
+        },
+        {
+          "title": "Albanian police fire tear gas as anti-government student protests turn violent - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX21BMWozRzgtZFdWcVVVc3o5dHh3bUIzSzZjcTdZTnNzcFdXN2lVYVpXTmY0OHB0UWdFbjdmQ0FKV0hxOVUxeVJGNEhxTGdhQW9tZWtuTGoxTDNKZWplYjBkLWd4Q2sxdlhXdElFaVo1a0pWbm9walRONWoxRVZCU2VFTEUwMlZfNEZZeWpsVGJPMnF6MW9ZNW11WHlKRGEtVjNoRlFsMTIxT0pvQkU5UnRhT3RxTThD?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX21BMWozRzgtZFdWcVVVc3o5dHh3bUIzSzZjcTdZTnNzcFdXN2lVYVpXTmY0OHB0UWdFbjdmQ0FKV0hxOVUxeVJGNEhxTGdhQW9tZWtuTGoxTDNKZWplYjBkLWd4Q2sxdlhXdElFaVo1a0pWbm9walRONWoxRVZCU2VFTEUwMlZfNEZZeWpsVGJPMnF6MW9ZNW11WHlKRGEtVjNoRlFsMTIxT0pvQkU5UnRhT3RxTThD?oc=5\" target=\"_blank\"&gt;Albanian police fire tear gas as anti-government student protests turn violent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T17:11:44.000Z",
+          "score": 2
         }
       ]
     },
@@ -96,27 +96,27 @@
           "score": 4
         },
         {
-          "title": "Trains cancelled and road warnings as Scotland prepares for Storm Boelo",
+          "title": "Rosebank: Life on the oil field at the centre of a political storm",
+          "link": "https://www.bbc.co.uk/news/articles/cqy8ljkle97ro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Scotland editor James Cook finds out what life is like on board a ship in an untapped oil field awaiting its fate.",
+          "published": "2026-10-24T23:15:18.000Z",
+          "score": 2
+        },
+        {
+          "title": "From Russian cages to Irish sanctuary: The five-year rescue journey of Bu and Tyapa",
+          "link": "https://www.bbc.co.uk/news/articles/cx62y9j1zyjvo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "For Bu and Tyapa, the five-year journey from Russia to the Irish countryside was anything but straightforward.",
+          "published": "2026-10-24T23:02:51.000Z",
+          "score": 2
+        },
+        {
+          "title": "Trains cancelled and road warnings as Storm Boelo sweeps into Scotland",
           "link": "https://www.bbc.co.uk/news/articles/c60qk5lw1z8wo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Heavy rain and strong winds are expected during the second named storm to hit in two days, with gusts of up to 80mph forecast.",
-          "published": "2026-10-24T18:26:46.000Z",
-          "score": 2
-        },
-        {
-          "title": "Storm Boelo to bring severe gales and heavy rain into Sunday",
-          "link": "https://www.bbc.co.uk/weather/articles/cv8ez97k0wnlo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "An amber weather warning has been issued for much of Scotland, parts of Northern Ireland and northern England, as Storm Boelo approaches.",
-          "published": "2026-10-24T11:48:58.000Z",
-          "score": 2
-        },
-        {
-          "title": "Weather warnings in place ahead of Storm Boelo",
-          "link": "https://www.bbc.co.uk/news/articles/c83vqn2x54v1o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The amber Met Office alert for counties Antrim and Londonderry lasts from 21:00 BST on Saturday until 21:00 GMT on Sunday.",
-          "published": "2026-10-24T08:28:49.000Z",
+          "published": "2026-10-24T22:39:52.000Z",
           "score": 2
         }
       ]
@@ -178,28 +178,28 @@
           "score": 7
         },
         {
+          "title": "Bolsonaro, Lula about even in polls for Brazil runoff vote - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOW9aaS1WT2hUWE5VTjd3U19BR0VxZ0xtUXd5QjQ5V3EzMkxsYWs2X0lHYm11TzU5YTY3RDQ2dGlnblllZklkV1AySElHOVF6a0RKZmNZZHpJMlVCaE82QjBXN1lHeFNFSGE4VlBjUGVwWlBSWkRQOTE0dzNRZ2NMQm9tWWRzN1FBaHhfbWVqcDl5Qkw5OW5wNlNDMEJjZXVmUkQ3NE5CSmdfci1IMkVVQktUdElSSEd2ZEs2VjRBQktYM3dXc2pvMmFR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPOW9aaS1WT2hUWE5VTjd3U19BR0VxZ0xtUXd5QjQ5V3EzMkxsYWs2X0lHYm11TzU5YTY3RDQ2dGlnblllZklkV1AySElHOVF6a0RKZmNZZHpJMlVCaE82QjBXN1lHeFNFSGE4VlBjUGVwWlBSWkRQOTE0dzNRZ2NMQm9tWWRzN1FBaHhfbWVqcDl5Qkw5OW5wNlNDMEJjZXVmUkQ3NE5CSmdfci1IMkVVQktUdElSSEd2ZEs2VjRBQktYM3dXc2pvMmFR?oc=5\" target=\"_blank\"&gt;Bolsonaro, Lula about even in polls for Brazil runoff vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T23:02:10.000Z",
+          "score": 6
+        },
+        {
           "title": "Czech coalition advances media overhaul in rushed overnight vote - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQRXZxMFpieEY0QlBTdEhzcUs0VnZfUXhnbnJnQXF0M2hmZzVmcXVnVFBUQ0RTZlZaVnc3SjRjSDdITmtyVFBhU0MwdGdZeTlfRWRiYXFFREVxZ2RDZDBVaVliVVBVU3l0S2kzRmRKWEFXU2lmMkZoekJLUjRRc2hiZUt5N08tMzRBMGxzOFJEb2RJWEcxd0lnQUNzX1l5MkNySloxaWU4WmNBV2xBVkNZT0dBNGZnYnlnOVZvTA?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQRXZxMFpieEY0QlBTdEhzcUs0VnZfUXhnbnJnQXF0M2hmZzVmcXVnVFBUQ0RTZlZaVnc3SjRjSDdITmtyVFBhU0MwdGdZeTlfRWRiYXFFREVxZ2RDZDBVaVliVVBVU3l0S2kzRmRKWEFXU2lmMkZoekJLUjRRc2hiZUt5N08tMzRBMGxzOFJEb2RJWEcxd0lnQUNzX1l5MkNySloxaWU4WmNBV2xBVkNZT0dBNGZnYnlnOVZvTA?oc=5\" target=\"_blank\"&gt;Czech coalition advances media overhaul in rushed overnight vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-24T08:14:09.000Z",
           "score": 6
-        },
-        {
-          "title": "Ukraine says Starlink connection 'now stable' after network limits",
-          "link": "https://www.bbc.co.uk/news/articles/cwkg5md14j8go?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The slowed Starlink connections had affected the Ukraine's military and drone operations for a week.",
-          "published": "2026-10-24T12:12:40.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 400,
-    "articlesLast24h": 151,
-    "afterDedup": 146,
+    "articlesLast24h": 143,
+    "afterDedup": 134,
     "feedsQueried": 19
   }
 }
