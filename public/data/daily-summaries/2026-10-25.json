@@ -1,12 +1,12 @@
 {
   "date": "2026-10-25",
-  "generatedAt": "2026-10-25T14:55:49.258Z",
+  "generatedAt": "2026-10-25T19:32:07.227Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 25 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Fireworks and tear gas as protesters and riot police clash in Paris",
-      "summary": "The BBC's Europe correspondent reports from Paris where mostly peaceful protests turned into unrest after nightfall.",
+      "headline": "Man killed by falling tree as Storm Boelo leaves 160,000 properties without power",
+      "summary": "An amber wind warning will remain until Sunday evening as severe weather continues to batter the UK.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -28,6 +28,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Man killed by falling tree as Storm Boelo leaves 160,000 properties without power",
+          "link": "https://www.bbc.co.uk/news/articles/cxdd8gr1vje0o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "An amber wind warning will remain until Sunday evening as severe weather continues to batter the UK.",
+          "published": "2026-10-25T19:28:52.000Z",
+          "score": 4
+        },
+        {
           "title": "Fireworks and tear gas as protesters and riot police clash in Paris",
           "link": "https://www.bbc.co.uk/news/videos/cm89zqw9lx1do?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -40,15 +48,7 @@
           "link": "https://www.bbc.co.uk/news/articles/c84g10r00221o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "About 350 incidents, including fallen trees and flooding, have been reported to the Department for Infrastructure.",
-          "published": "2026-10-25T14:16:04.000Z",
-          "score": 2
-        },
-        {
-          "title": "Albanian police fire tear gas as anti-government student protests turn violent - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX21BMWozRzgtZFdWcVVVc3o5dHh3bUIzSzZjcTdZTnNzcFdXN2lVYVpXTmY0OHB0UWdFbjdmQ0FKV0hxOVUxeVJGNEhxTGdhQW9tZWtuTGoxTDNKZWplYjBkLWd4Q2sxdlhXdElFaVo1a0pWbm9walRONWoxRVZCU2VFTEUwMlZfNEZZeWpsVGJPMnF6MW9ZNW11WHlKRGEtVjNoRlFsMTIxT0pvQkU5UnRhT3RxTThD?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX21BMWozRzgtZFdWcVVVc3o5dHh3bUIzSzZjcTdZTnNzcFdXN2lVYVpXTmY0OHB0UWdFbjdmQ0FKV0hxOVUxeVJGNEhxTGdhQW9tZWtuTGoxTDNKZWplYjBkLWd4Q2sxdlhXdElFaVo1a0pWbm9walRONWoxRVZCU2VFTEUwMlZfNEZZeWpsVGJPMnF6MW9ZNW11WHlKRGEtVjNoRlFsMTIxT0pvQkU5UnRhT3RxTThD?oc=5\" target=\"_blank\"&gt;Albanian police fire tear gas as anti-government student protests turn violent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-24T17:11:44.000Z",
+          "published": "2026-10-25T15:14:26.000Z",
           "score": 2
         }
       ]
@@ -66,27 +66,27 @@
           "score": 7
         },
         {
-          "title": "The BoM’s temperature record keeping is under attack – again. What’s going on? | Temperature Check",
-          "link": "https://www.theguardian.com/environment/2026/oct/25/bom-temperature-record-keeping-under-attack-again",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;An ‘audit’ of the Bureau of Meteorology main dataset for measuring climate change claims it contains ‘widespread errors’. It doesn’t stack up&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Want to get this in your inbox when it publishes? &lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for the Clear Air Australia newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&l",
-          "published": "2026-10-24T19:00:41.000Z",
-          "score": 4
+          "title": "The aftermath of Storm Boelo across Scotland",
+          "link": "https://www.bbc.co.uk/news/videos/cr3wvzl947q7o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Flooding, travel disruption and fallen trees - Storm Boelo has left it's mark across Scotland.",
+          "published": "2026-10-25T19:31:36.000Z",
+          "score": 2
         },
         {
           "title": "Travel disruption and power cuts after back-to-back storms",
           "link": "https://www.bbc.co.uk/news/articles/c6n9rzde1n80o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Authorities said they were dealing with flooding and fallen trees as Storm Boelo followed Storm Austen.",
-          "published": "2026-10-25T14:29:15.000Z",
+          "published": "2026-10-25T18:50:09.000Z",
           "score": 2
         },
         {
-          "title": "Overnight winds reach 85mph as Scotland is hit by Storm Boelo",
-          "link": "https://www.bbc.co.uk/news/articles/c60qk5lw1z8wo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "When will the weather settle after Storm Boelo?",
+          "link": "https://www.bbc.co.uk/news/videos/cmrlyeekzldpo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Heavy rain and strong winds are affecting most of the country until 21:00 on Sunday.",
-          "published": "2026-10-25T14:15:34.000Z",
+          "description": "Gillian Smart has the weather forecast after the worst of Storm Boelo.",
+          "published": "2026-10-25T17:04:32.000Z",
           "score": 2
         },
         {
@@ -123,14 +123,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Belgian protesters and police skirmish at anti-government demonstrations in Brussels - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNdWRmTGozX08xMlVRbHEtbWNESTBRVUg5eVNVR2dJTnh2UTNoU1F1aktWc2FYZVh6N0hkcFJxN05OS1hmNmQzLWZZODBIVFRBYlQ1SG5BUzJvUUdxMmFsRWJlcFdlR3pSRTdJT0pDWk1XYUl6UENiTzNja0ExT0VFbWZvU01iTmpjY0R4bnF1RmRscUtDSnJUQTFJeUtLeF9BZ2kzcWxQOGlOZUhyUThmY29IOTY5eWc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNdWRmTGozX08xMlVRbHEtbWNESTBRVUg5eVNVR2dJTnh2UTNoU1F1aktWc2FYZVh6N0hkcFJxN05OS1hmNmQzLWZZODBIVFRBYlQ1SG5BUzJvUUdxMmFsRWJlcFdlR3pSRTdJT0pDWk1XYUl6UENiTzNja0ExT0VFbWZvU01iTmpjY0R4bnF1RmRscUtDSnJUQTFJeUtLeF9BZ2kzcWxQOGlOZUhyUThmY29IOTY5eWc?oc=5\" target=\"_blank\"&gt;Belgian protesters and police skirmish at anti-government demonstrations in Brussels&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-24T16:06:20.000Z",
-          "score": 8
-        },
-        {
           "title": "UK's Burnham says he is open to discussing EU free movement - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNSjVxck9RU09WdXhBX1ZuMkZzX013Y0h5QXZ3dGU4amkwYllEV05odVJVcnRmQnpNZ2RtX3BlMGZYc3cwc1lJWU5zNkJELUpQSTNQTDlIanQ1OXN2RDlKRnZsS0FMVUM5ejhyaEhTSU1sVjl2NzN1NGxXNzRVNmE3dWdtZ2hIamMyaGQ4WG1fMldGMkl3Snhoc3dRZ2tESFdJaHJsc0xUQVV2LXJhaW1JQUFydmd5UQ?oc=5",
           "source": "Reuters World (via Google News)",
@@ -161,14 +153,22 @@
           "description": "Almost 160 million are eligible to vote in the final round of Brazil&#039;s election that pits the left-wing incumbent against the son of the former far-right president. DW has more.",
           "published": "2026-10-25T14:13:00.000Z",
           "score": 6
+        },
+        {
+          "title": "India news: Rahul Gandhi urges protest against voter deletions, announces November 1 rally",
+          "link": "https://www.dw.com/en/india-news-rahul-gandhi-urges-protest-against-voter-deletions-announces-november-1-rally/live-79748098?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "India&#039;s opposition leader Rahul Gandhi has accused the ruling BJP of &quot;vote theft&quot; and urged people to join a rally in Delhi on November 1. The call comes amid protests over revision of electoral rolls. DW has more.",
+          "published": "2026-10-25T10:52:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 403,
-    "articlesLast24h": 153,
-    "afterDedup": 140,
+    "totalArticlesScanned": 400,
+    "articlesLast24h": 151,
+    "afterDedup": 138,
     "feedsQueried": 19
   }
 }
