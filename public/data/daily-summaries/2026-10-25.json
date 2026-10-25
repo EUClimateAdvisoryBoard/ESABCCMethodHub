@@ -1,26 +1,20 @@
 {
   "date": "2026-10-25",
-  "generatedAt": "2026-10-25T09:40:13.491Z",
+  "generatedAt": "2026-10-25T14:55:49.258Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 25 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Wind gust of 84mph recorded as Storm Boelo brings disruption",
-      "summary": "More than 500 homes are without power and flooding and felled trees have been reported on roads.",
+      "headline": "Fireworks and tear gas as protesters and riot police clash in Paris",
+      "summary": "The BBC's Europe correspondent reports from Paris where mostly peaceful protests turned into unrest after nightfall.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "The BoM’s temperature record keeping is under attack – again. What’s going on? | Temperature Check",
-      "summary": "&lt;p&gt;An ‘audit’ of the Bureau of Meteorology main dataset for measuring climate change claims it contains ‘widespread errors’. It doesn’t stack up&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Want to get this in your inbox when it publishes? &lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for the Clear Air Australia newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&l",
+      "headline": "The penguins are noisy, the people fantastic - what it takes to be an Antarctic postmaster",
+      "summary": "George Clarke from Bristol will run the post office at Port Lockroy in Antarctica from October to March.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "China urges US to halt proposed expansion of outbound investment curbs - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOY3V2bWpZckhlWExlaDZRLTR0NG1MY3l4NmpfZzJCUkVpSkJGblR1S0RScmxSa2tWWVhtZFdBNzkyc0ZaUnlDU2lVNEh3WUpUTkw3d0tIdGlzeTNrRnpWNFhiUk9xTEw4bENXWmxuRlRYTXQtU2N4MXRLVURsUkVxYUpGMks3R0hUaXA4eUZHSXNBWXRLRUN4VVkyVW5WQlBVUFo1dnRSVGxPYmxqMXRXUnVn?oc=5\" target=\"_blank\"&gt;China urges US to halt proposed expansion of outbound investment curbs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,30 +28,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Wind gust of 84mph recorded as Storm Boelo brings disruption",
-          "link": "https://www.bbc.co.uk/news/articles/c6n9rzde1n80o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "More than 500 homes are without power and flooding and felled trees have been reported on roads.",
-          "published": "2026-10-25T09:28:30.000Z",
-          "score": 7
-        },
-        {
-          "title": "Wales plans to ban steel pylons as government launches consultation",
-          "link": "https://www.bbc.co.uk/news/articles/c9x28dgj2r0go?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The Welsh government says it is consulting on an \"undergrounding-first approach\" to electricity lines.",
-          "published": "2026-10-24T10:04:29.000Z",
-          "score": 6
-        },
-        {
-          "title": "Amber weather warning as Storm Boelo hits Scotland",
-          "link": "https://www.bbc.co.uk/news/videos/cmqlnkq6p6y7o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The Met Office has issued an amber warning for wind over Scotland from 21:00 until 21:00 on Sunday.",
-          "published": "2026-10-24T14:40:18.000Z",
-          "score": 4
-        },
-        {
           "title": "Fireworks and tear gas as protesters and riot police clash in Paris",
           "link": "https://www.bbc.co.uk/news/videos/cm89zqw9lx1do?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -66,11 +36,19 @@
           "score": 4
         },
         {
-          "title": "Thousands without electricity as Storm Boelo hits",
+          "title": "Flight disruption and thousands without electricity after Storm Boelo",
           "link": "https://www.bbc.co.uk/news/articles/c84g10r00221o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "An amber warning is in force across parts of County Antrim and County Londonderry until 10:00 GMT on Sunday.",
-          "published": "2026-10-25T08:53:04.000Z",
+          "description": "About 350 incidents, including fallen trees and flooding, have been reported to the Department for Infrastructure.",
+          "published": "2026-10-25T14:16:04.000Z",
+          "score": 2
+        },
+        {
+          "title": "Albanian police fire tear gas as anti-government student protests turn violent - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX21BMWozRzgtZFdWcVVVc3o5dHh3bUIzSzZjcTdZTnNzcFdXN2lVYVpXTmY0OHB0UWdFbjdmQ0FKV0hxOVUxeVJGNEhxTGdhQW9tZWtuTGoxTDNKZWplYjBkLWd4Q2sxdlhXdElFaVo1a0pWbm9walRONWoxRVZCU2VFTEUwMlZfNEZZeWpsVGJPMnF6MW9ZNW11WHlKRGEtVjNoRlFsMTIxT0pvQkU5UnRhT3RxTThD?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX21BMWozRzgtZFdWcVVVc3o5dHh3bUIzSzZjcTdZTnNzcFdXN2lVYVpXTmY0OHB0UWdFbjdmQ0FKV0hxOVUxeVJGNEhxTGdhQW9tZWtuTGoxTDNKZWplYjBkLWd4Q2sxdlhXdElFaVo1a0pWbm9walRONWoxRVZCU2VFTEUwMlZfNEZZeWpsVGJPMnF6MW9ZNW11WHlKRGEtVjNoRlFsMTIxT0pvQkU5UnRhT3RxTThD?oc=5\" target=\"_blank\"&gt;Albanian police fire tear gas as anti-government student protests turn violent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-24T17:11:44.000Z",
           "score": 2
         }
       ]
@@ -80,6 +58,14 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "The penguins are noisy, the people fantastic - what it takes to be an Antarctic postmaster",
+          "link": "https://www.bbc.co.uk/news/articles/c6dxwklr409eo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "George Clarke from Bristol will run the post office at Port Lockroy in Antarctica from October to March.",
+          "published": "2026-10-25T09:59:50.000Z",
+          "score": 7
+        },
+        {
           "title": "The BoM’s temperature record keeping is under attack – again. What’s going on? | Temperature Check",
           "link": "https://www.theguardian.com/environment/2026/oct/25/bom-temperature-record-keeping-under-attack-again",
           "source": "The Guardian - Climate",
@@ -88,35 +74,27 @@
           "score": 4
         },
         {
-          "title": "Overnight winds hit 85mph as Scotland is hit by Storm Beolo",
+          "title": "Travel disruption and power cuts after back-to-back storms",
+          "link": "https://www.bbc.co.uk/news/articles/c6n9rzde1n80o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Authorities said they were dealing with flooding and fallen trees as Storm Boelo followed Storm Austen.",
+          "published": "2026-10-25T14:29:15.000Z",
+          "score": 2
+        },
+        {
+          "title": "Overnight winds reach 85mph as Scotland is hit by Storm Boelo",
           "link": "https://www.bbc.co.uk/news/articles/c60qk5lw1z8wo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Heavy rain and strong winds are affecting most of the country until 21:00 on Sunday.",
-          "published": "2026-10-25T09:33:29.000Z",
+          "published": "2026-10-25T14:15:34.000Z",
           "score": 2
         },
         {
-          "title": "Rosebank: Life on the oil field at the centre of a political storm",
-          "link": "https://www.bbc.co.uk/news/articles/cqy8ljkle97ro?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Police using AI risks making discrimination worse, researchers warn",
+          "link": "https://www.bbc.co.uk/news/articles/ckpdg4pl7pgvo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Scotland editor James Cook finds out what life is like on board a ship in an untapped oil field awaiting its fate.",
-          "published": "2026-10-25T07:15:38.000Z",
-          "score": 2
-        },
-        {
-          "title": "From Russian cages to Irish sanctuary: The five-year rescue journey of Bu and Tyapa",
-          "link": "https://www.bbc.co.uk/news/articles/cx62y9j1zyjvo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "For Bu and Tyapa, the five-year journey from Russia to the Irish countryside was anything but straightforward.",
-          "published": "2026-10-24T23:02:51.000Z",
-          "score": 2
-        },
-        {
-          "title": "Storm Boelo to bring severe gales and heavy rain into Sunday",
-          "link": "https://www.bbc.co.uk/weather/articles/cv8ez97k0wnlo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "An amber weather warning has been issued for much of Scotland, parts of Northern Ireland and northern England, as Storm Boelo approaches.",
-          "published": "2026-10-24T11:48:58.000Z",
+          "description": "AI tools learn from biased records and may deepen discrimination against minorities without oversight, researchers say.",
+          "published": "2026-10-25T12:18:56.000Z",
           "score": 2
         }
       ]
@@ -124,16 +102,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "China urges US to halt proposed expansion of outbound investment curbs - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOY3V2bWpZckhlWExlaDZRLTR0NG1MY3l4NmpfZzJCUkVpSkJGblR1S0RScmxSa2tWWVhtZFdBNzkyc0ZaUnlDU2lVNEh3WUpUTkw3d0tIdGlzeTNrRnpWNFhiUk9xTEw4bENXWmxuRlRYTXQtU2N4MXRLVURsUkVxYUpGMks3R0hUaXA4eUZHSXNBWXRLRUN4VVkyVW5WQlBVUFo1dnRSVGxPYmxqMXRXUnVn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOY3V2bWpZckhlWExlaDZRLTR0NG1MY3l4NmpfZzJCUkVpSkJGblR1S0RScmxSa2tWWVhtZFdBNzkyc0ZaUnlDU2lVNEh3WUpUTkw3d0tIdGlzeTNrRnpWNFhiUk9xTEw4bENXWmxuRlRYTXQtU2N4MXRLVURsUkVxYUpGMks3R0hUaXA4eUZHSXNBWXRLRUN4VVkyVW5WQlBVUFo1dnRSVGxPYmxqMXRXUnVn?oc=5\" target=\"_blank\"&gt;China urges US to halt proposed expansion of outbound investment curbs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-24T13:51:55.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -146,14 +115,6 @@
           "description": "Ukraine needs another satellite internet service, but a decent alternative to Elon Musk's network doesn't exist - yet.",
           "published": "2026-10-25T05:45:31.000Z",
           "score": 8
-        },
-        {
-          "title": "EU moves to loosen rules on pesticide use as experts sound the alarm",
-          "link": "https://www.dw.com/en/eu-moves-to-loosen-rules-on-pesticide-use-as-experts-sound-the-alarm/a-79646422?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The European Union wants to relax rules for pesticides, saying it will be easier for farmers to adopt more environmentally friendly options. But health and environmental experts say the risks are far too great.",
-          "published": "2026-10-24T10:33:00.000Z",
-          "score": 8
         }
       ]
     },
@@ -161,14 +122,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "Turkey&#039;s new deal on Mediterranean maritime boundaries with Libya is exacerbating issues with Greece and the EU",
-          "link": "https://www.dw.com/en/turkey-s-new-deal-on-mediterranean-maritime-boundaries-with-libya-is-exacerbating-issues-with-greece-and-the-eu/a-79745971?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Turkey and Libya plan to redraw maritime boundaries in the Mediterranean as part of a new economic corridor. This has sparked strong protests from Greece, and has also drawn the European Union into the conflict.",
-          "published": "2026-10-24T14:09:00.000Z",
-          "score": 8
-        },
         {
           "title": "Belgian protesters and police skirmish at anti-government demonstrations in Brussels - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNdWRmTGozX08xMlVRbHEtbWNESTBRVUg5eVNVR2dJTnh2UTNoU1F1aktWc2FYZVh6N0hkcFJxN05OS1hmNmQzLWZZODBIVFRBYlQ1SG5BUzJvUUdxMmFsRWJlcFdlR3pSRTdJT0pDWk1XYUl6UENiTzNja0ExT0VFbWZvU01iTmpjY0R4bnF1RmRscUtDSnJUQTFJeUtLeF9BZ2kzcWxQOGlOZUhyUThmY29IOTY5eWc?oc=5",
@@ -178,36 +131,44 @@
           "score": 8
         },
         {
-          "title": "British PM Burnham open to adopting EU free movement, Sunday Times reports - Reuters",
+          "title": "UK's Burnham says he is open to discussing EU free movement - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNSjVxck9RU09WdXhBX1ZuMkZzX013Y0h5QXZ3dGU4amkwYllEV05odVJVcnRmQnpNZ2RtX3BlMGZYc3cwc1lJWU5zNkJELUpQSTNQTDlIanQ1OXN2RDlKRnZsS0FMVUM5ejhyaEhTSU1sVjl2NzN1NGxXNzRVNmE3dWdtZ2hIamMyaGQ4WG1fMldGMkl3Snhoc3dRZ2tESFdJaHJsc0xUQVV2LXJhaW1JQUFydmd5UQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNSjVxck9RU09WdXhBX1ZuMkZzX013Y0h5QXZ3dGU4amkwYllEV05odVJVcnRmQnpNZ2RtX3BlMGZYc3cwc1lJWU5zNkJELUpQSTNQTDlIanQ1OXN2RDlKRnZsS0FMVUM5ejhyaEhTSU1sVjl2NzN1NGxXNzRVNmE3dWdtZ2hIamMyaGQ4WG1fMldGMkl3Snhoc3dRZ2tESFdJaHJsc0xUQVV2LXJhaW1JQUFydmd5UQ?oc=5\" target=\"_blank\"&gt;British PM Burnham open to adopting EU free movement, Sunday Times reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNSjVxck9RU09WdXhBX1ZuMkZzX013Y0h5QXZ3dGU4amkwYllEV05odVJVcnRmQnpNZ2RtX3BlMGZYc3cwc1lJWU5zNkJELUpQSTNQTDlIanQ1OXN2RDlKRnZsS0FMVUM5ejhyaEhTSU1sVjl2NzN1NGxXNzRVNmE3dWdtZ2hIamMyaGQ4WG1fMldGMkl3Snhoc3dRZ2tESFdJaHJsc0xUQVV2LXJhaW1JQUFydmd5UQ?oc=5\" target=\"_blank\"&gt;UK's Burnham says he is open to discussing EU free movement&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-25T03:13:00.000Z",
           "score": 8
         },
         {
-          "title": "Gadi Eisenkot campaigns on Moroccan roots in challenge to Netanyahu",
-          "link": "https://www.dw.com/en/gadi-eisenkot-campaigns-on-moroccan-roots-in-challenge-to-netanyahu/a-79747193?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "As Israel prepares to vote, Gadi Eisenkot is leveraging his Moroccan heritage in Likud strongholds such as Sderot. From historical divides to October 7, identity and trauma are redefining the city&#039;s political loyalties.",
-          "published": "2026-10-25T09:27:00.000Z",
-          "score": 6
+          "title": "Senegal party that controls parliament comes out against revised budget bill - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQl9ZdzdPRHZXenduQW9SWTgxd3hZZnlTZTNmVDJXcWdfRFNlSjBLd001enBmTlFHSVdIY3E2VkNYR0gteDMzSU1KR1NyQU94TGQtR0tVRWo3bE55dnZuajFMcHZmSnZFdlE5YlY4VTNlbmJyWjdhUnEtenFVU1V6MUV0bDNoMzBfWlI5a3pHSHRjTHpxZHBFLUhSN2VObU5EQjFvQUpqalZZUEUySXR1ZTVldW1oSWxtZVVMSm9qZHpTc2s?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQl9ZdzdPRHZXenduQW9SWTgxd3hZZnlTZTNmVDJXcWdfRFNlSjBLd001enBmTlFHSVdIY3E2VkNYR0gteDMzSU1KR1NyQU94TGQtR0tVRWo3bE55dnZuajFMcHZmSnZFdlE5YlY4VTNlbmJyWjdhUnEtenFVU1V6MUV0bDNoMzBfWlI5a3pHSHRjTHpxZHBFLUhSN2VObU5EQjFvQUpqalZZUEUySXR1ZTVldW1oSWxtZVVMSm9qZHpTc2s?oc=5\" target=\"_blank\"&gt;Senegal party that controls parliament comes out against revised budget bill&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-25T10:14:51.000Z",
+          "score": 8
         },
         {
-          "title": "Bulgaria holds presidential elections amid divisions over Ukraine war",
-          "link": "https://www.dw.com/en/bulgaria-holds-presidential-elections-amid-divisions-over-ukraine-war/a-79753496?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "How Ukraine's strikes on Russian energy sites deepened the rift with Trump - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVXpULV9fUktZbnM0SlNnU1prS1RjMmp2b1FfakpycmpYU2pwelRVOWxsZTFVY1I5bUE3Wm82S1I4WG1kZHBIcExkeWhlRlV5Yjc2OWJnMDZDbnFSNnhLV3FlNUFBUnhxaDJ5b1ZjRVgwUHE1ZUVIYWwyNWdNR3J2ajMwWGlsTGRaX0tGOGFnOVE4ZVd3VGU3cEFmTGRGQWpyaDZjQ0hySnpaN2Nlc2hOR1VUT1VJYXBJSW4w?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVXpULV9fUktZbnM0SlNnU1prS1RjMmp2b1FfakpycmpYU2pwelRVOWxsZTFVY1I5bUE3Wm82S1I4WG1kZHBIcExkeWhlRlV5Yjc2OWJnMDZDbnFSNnhLV3FlNUFBUnhxaDJ5b1ZjRVgwUHE1ZUVIYWwyNWdNR3J2ajMwWGlsTGRaX0tGOGFnOVE4ZVd3VGU3cEFmTGRGQWpyaDZjQ0hySnpaN2Nlc2hOR1VUT1VJYXBJSW4w?oc=5\" target=\"_blank\"&gt;How Ukraine's strikes on Russian energy sites deepened the rift with Trump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-25T11:03:18.000Z",
+          "score": 7
+        },
+        {
+          "title": "Brazil election: Lula, Bolsonaro cast votes in final bout",
+          "link": "https://www.dw.com/en/brazil-election-lula-bolsonaro-cast-votes-in-final-bout/live-79755630?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Bulgarians are voting in presidential elections amid security concerns over attacks on ships in the Black Sea. The vote for the largely ceremonial post is seen as a test of the popularity of Prime Minister Rumen Radev.",
-          "published": "2026-10-25T07:19:00.000Z",
+          "description": "Almost 160 million are eligible to vote in the final round of Brazil&#039;s election that pits the left-wing incumbent against the son of the former far-right president. DW has more.",
+          "published": "2026-10-25T14:13:00.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 406,
-    "articlesLast24h": 148,
-    "afterDedup": 137,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 153,
+    "afterDedup": 140,
     "feedsQueried": 19
   }
 }
