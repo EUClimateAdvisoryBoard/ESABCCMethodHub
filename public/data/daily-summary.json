@@ -1,12 +1,12 @@
 {
-  "date": "2026-10-25",
-  "generatedAt": "2026-10-25T19:32:07.227Z",
+  "date": "2026-10-26",
+  "generatedAt": "2026-10-26T01:04:19.361Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Sunday, 25 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Monday, 26 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Man killed by falling tree as Storm Boelo leaves 160,000 properties without power",
-      "summary": "An amber wind warning will remain until Sunday evening as severe weather continues to batter the UK.",
+      "headline": "Two men killed by falling trees as Storm Boelo leaves 160,000 properties without power",
+      "summary": "An amber wind warning has now expired after severe weather sweeps across the UK.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -28,27 +28,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Man killed by falling tree as Storm Boelo leaves 160,000 properties without power",
+          "title": "Two men killed by falling trees as Storm Boelo leaves 160,000 properties without power",
           "link": "https://www.bbc.co.uk/news/articles/cxdd8gr1vje0o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "An amber wind warning will remain until Sunday evening as severe weather continues to batter the UK.",
-          "published": "2026-10-25T19:28:52.000Z",
+          "description": "An amber wind warning has now expired after severe weather sweeps across the UK.",
+          "published": "2026-10-25T22:24:16.000Z",
           "score": 4
         },
         {
-          "title": "Fireworks and tear gas as protesters and riot police clash in Paris",
-          "link": "https://www.bbc.co.uk/news/videos/cm89zqw9lx1do?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The BBC's Europe correspondent reports from Paris where mostly peaceful protests turned into unrest after nightfall.",
-          "published": "2026-10-24T19:37:35.000Z",
-          "score": 4
-        },
-        {
-          "title": "Flight disruption and thousands without electricity after Storm Boelo",
+          "title": "Majority of homes in NI have power restored after Storm Boelo",
           "link": "https://www.bbc.co.uk/news/articles/c84g10r00221o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "About 350 incidents, including fallen trees and flooding, have been reported to the Department for Infrastructure.",
-          "published": "2026-10-25T15:14:26.000Z",
+          "description": "Northern Ireland Electricity Networks (NIE) said around 12,500 properties were without power at one stage.",
+          "published": "2026-10-25T23:53:04.000Z",
           "score": 2
         }
       ]
@@ -66,35 +58,35 @@
           "score": 7
         },
         {
-          "title": "The aftermath of Storm Boelo across Scotland",
-          "link": "https://www.bbc.co.uk/news/videos/cr3wvzl947q7o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Cabinet split emerges over controversial Rosebank oilfield decision",
+          "link": "https://www.theguardian.com/environment/2026/oct/25/cabinet-split-emerges-over-controversial-rosebank-oilfield-decision",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Chancellor is in favour of North Sea project, but energy secretary has said she is leaning towards rejecting it&lt;/p&gt;&lt;p&gt;A cabinet split has emerged over whether to approve drilling at the Rosebank oilfield, with the chancellor, John Healey, in favour of the controversial North Sea project.&lt;/p&gt;&lt;p&gt;The energy secretary, Miatta Fahnbulleh, is ultimately in charge of the decision, and the Guardian reported last week that &lt;a href=\"https://www.theguardian.com/environme",
+          "published": "2026-10-25T20:29:25.000Z",
+          "score": 4
+        },
+        {
+          "title": "From agriculture to AI-griculture: How tech is changing farming",
+          "link": "https://www.bbc.co.uk/news/articles/cw80zk9k51j1o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Flooding, travel disruption and fallen trees - Storm Boelo has left it's mark across Scotland.",
-          "published": "2026-10-25T19:31:36.000Z",
+          "description": "From remote monitoring of cattle to automation of processes that took up valuable time, farmers in NI are rapidly becoming skilled in technology.",
+          "published": "2026-10-26T00:13:09.000Z",
           "score": 2
         },
         {
-          "title": "Travel disruption and power cuts after back-to-back storms",
-          "link": "https://www.bbc.co.uk/news/articles/c6n9rzde1n80o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "In pictures: Storm Boelo leaves a trail of destruction across Scotland",
+          "link": "https://www.bbc.co.uk/news/articles/cmewe8ndn1q4o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Authorities said they were dealing with flooding and fallen trees as Storm Boelo followed Storm Austen.",
-          "published": "2026-10-25T18:50:09.000Z",
+          "description": "The severe weather brought strong winds and heavy rain to large parts of Scotland.",
+          "published": "2026-10-25T21:11:43.000Z",
           "score": 2
         },
         {
-          "title": "When will the weather settle after Storm Boelo?",
-          "link": "https://www.bbc.co.uk/news/videos/cmrlyeekzldpo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Man killed by falling tree as Storm Boelo batters Scotland",
+          "link": "https://www.bbc.co.uk/news/articles/c60qk5lw1z8wo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Gillian Smart has the weather forecast after the worst of Storm Boelo.",
-          "published": "2026-10-25T17:04:32.000Z",
-          "score": 2
-        },
-        {
-          "title": "Police using AI risks making discrimination worse, researchers warn",
-          "link": "https://www.bbc.co.uk/news/articles/ckpdg4pl7pgvo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "AI tools learn from biased records and may deepen discrimination against minorities without oversight, researchers say.",
-          "published": "2026-10-25T12:18:56.000Z",
+          "description": "The 60-year-old man was struck by the tree near Castle Douglas as Storm Boelo brought strong winds and heavy rain to Scotland.",
+          "published": "2026-10-25T21:09:58.000Z",
           "score": 2
         }
       ]
@@ -147,11 +139,11 @@
           "score": 7
         },
         {
-          "title": "Brazil election: Lula, Bolsonaro cast votes in final bout",
-          "link": "https://www.dw.com/en/brazil-election-lula-bolsonaro-cast-votes-in-final-bout/live-79755630?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Almost 160 million are eligible to vote in the final round of Brazil&#039;s election that pits the left-wing incumbent against the son of the former far-right president. DW has more.",
-          "published": "2026-10-25T14:13:00.000Z",
+          "title": "Serbia's veteran ruler Vučić concedes election to student-led protest movement",
+          "link": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The populist right-wing leader of 12 years says it is \"clear\" his party has lost the vote billed as a referendum on the country's future.",
+          "published": "2026-10-25T22:54:57.000Z",
           "score": 6
         },
         {
@@ -166,9 +158,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 151,
-    "afterDedup": 138,
+    "totalArticlesScanned": 399,
+    "articlesLast24h": 146,
+    "afterDedup": 130,
     "feedsQueried": 19
   }
 }

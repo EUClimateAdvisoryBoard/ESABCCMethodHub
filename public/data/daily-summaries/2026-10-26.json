@@ -1,0 +1,166 @@
+{
+  "date": "2026-10-26",
+  "generatedAt": "2026-10-26T01:04:19.361Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Monday, 26 October 2026 — Key developments from the last 24 hours",
+  "highlights": [
+    {
+      "headline": "Two men killed by falling trees as Storm Boelo leaves 160,000 properties without power",
+      "summary": "An amber wind warning has now expired after severe weather sweeps across the UK.",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
+    {
+      "headline": "The penguins are noisy, the people fantastic - what it takes to be an Antarctic postmaster",
+      "summary": "George Clarke from Bristol will run the post office at Port Lockroy in Antarctica from October to March.",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
+    }
+  ],
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": [
+        {
+          "title": "Two men killed by falling trees as Storm Boelo leaves 160,000 properties without power",
+          "link": "https://www.bbc.co.uk/news/articles/cxdd8gr1vje0o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "An amber wind warning has now expired after severe weather sweeps across the UK.",
+          "published": "2026-10-25T22:24:16.000Z",
+          "score": 4
+        },
+        {
+          "title": "Majority of homes in NI have power restored after Storm Boelo",
+          "link": "https://www.bbc.co.uk/news/articles/c84g10r00221o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Northern Ireland Electricity Networks (NIE) said around 12,500 properties were without power at one stage.",
+          "published": "2026-10-25T23:53:04.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "The penguins are noisy, the people fantastic - what it takes to be an Antarctic postmaster",
+          "link": "https://www.bbc.co.uk/news/articles/c6dxwklr409eo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "George Clarke from Bristol will run the post office at Port Lockroy in Antarctica from October to March.",
+          "published": "2026-10-25T09:59:50.000Z",
+          "score": 7
+        },
+        {
+          "title": "Cabinet split emerges over controversial Rosebank oilfield decision",
+          "link": "https://www.theguardian.com/environment/2026/oct/25/cabinet-split-emerges-over-controversial-rosebank-oilfield-decision",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Chancellor is in favour of North Sea project, but energy secretary has said she is leaning towards rejecting it&lt;/p&gt;&lt;p&gt;A cabinet split has emerged over whether to approve drilling at the Rosebank oilfield, with the chancellor, John Healey, in favour of the controversial North Sea project.&lt;/p&gt;&lt;p&gt;The energy secretary, Miatta Fahnbulleh, is ultimately in charge of the decision, and the Guardian reported last week that &lt;a href=\"https://www.theguardian.com/environme",
+          "published": "2026-10-25T20:29:25.000Z",
+          "score": 4
+        },
+        {
+          "title": "From agriculture to AI-griculture: How tech is changing farming",
+          "link": "https://www.bbc.co.uk/news/articles/cw80zk9k51j1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "From remote monitoring of cattle to automation of processes that took up valuable time, farmers in NI are rapidly becoming skilled in technology.",
+          "published": "2026-10-26T00:13:09.000Z",
+          "score": 2
+        },
+        {
+          "title": "In pictures: Storm Boelo leaves a trail of destruction across Scotland",
+          "link": "https://www.bbc.co.uk/news/articles/cmewe8ndn1q4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The severe weather brought strong winds and heavy rain to large parts of Scotland.",
+          "published": "2026-10-25T21:11:43.000Z",
+          "score": 2
+        },
+        {
+          "title": "Man killed by falling tree as Storm Boelo batters Scotland",
+          "link": "https://www.bbc.co.uk/news/articles/c60qk5lw1z8wo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The 60-year-old man was struck by the tree near Castle Douglas as Storm Boelo brought strong winds and heavy rain to Scotland.",
+          "published": "2026-10-25T21:09:58.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": []
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": [
+        {
+          "title": "Why is Ukraine so reliant on Starlink and can Europe plug the gap?",
+          "link": "https://www.bbc.co.uk/news/articles/c65yn97xe7ypo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Ukraine needs another satellite internet service, but a decent alternative to Elon Musk's network doesn't exist - yet.",
+          "published": "2026-10-25T05:45:31.000Z",
+          "score": 8
+        }
+      ]
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": [
+        {
+          "title": "UK's Burnham says he is open to discussing EU free movement - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNSjVxck9RU09WdXhBX1ZuMkZzX013Y0h5QXZ3dGU4amkwYllEV05odVJVcnRmQnpNZ2RtX3BlMGZYc3cwc1lJWU5zNkJELUpQSTNQTDlIanQ1OXN2RDlKRnZsS0FMVUM5ejhyaEhTSU1sVjl2NzN1NGxXNzRVNmE3dWdtZ2hIamMyaGQ4WG1fMldGMkl3Snhoc3dRZ2tESFdJaHJsc0xUQVV2LXJhaW1JQUFydmd5UQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNSjVxck9RU09WdXhBX1ZuMkZzX013Y0h5QXZ3dGU4amkwYllEV05odVJVcnRmQnpNZ2RtX3BlMGZYc3cwc1lJWU5zNkJELUpQSTNQTDlIanQ1OXN2RDlKRnZsS0FMVUM5ejhyaEhTSU1sVjl2NzN1NGxXNzRVNmE3dWdtZ2hIamMyaGQ4WG1fMldGMkl3Snhoc3dRZ2tESFdJaHJsc0xUQVV2LXJhaW1JQUFydmd5UQ?oc=5\" target=\"_blank\"&gt;UK's Burnham says he is open to discussing EU free movement&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-25T03:13:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Senegal party that controls parliament comes out against revised budget bill - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQl9ZdzdPRHZXenduQW9SWTgxd3hZZnlTZTNmVDJXcWdfRFNlSjBLd001enBmTlFHSVdIY3E2VkNYR0gteDMzSU1KR1NyQU94TGQtR0tVRWo3bE55dnZuajFMcHZmSnZFdlE5YlY4VTNlbmJyWjdhUnEtenFVU1V6MUV0bDNoMzBfWlI5a3pHSHRjTHpxZHBFLUhSN2VObU5EQjFvQUpqalZZUEUySXR1ZTVldW1oSWxtZVVMSm9qZHpTc2s?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQl9ZdzdPRHZXenduQW9SWTgxd3hZZnlTZTNmVDJXcWdfRFNlSjBLd001enBmTlFHSVdIY3E2VkNYR0gteDMzSU1KR1NyQU94TGQtR0tVRWo3bE55dnZuajFMcHZmSnZFdlE5YlY4VTNlbmJyWjdhUnEtenFVU1V6MUV0bDNoMzBfWlI5a3pHSHRjTHpxZHBFLUhSN2VObU5EQjFvQUpqalZZUEUySXR1ZTVldW1oSWxtZVVMSm9qZHpTc2s?oc=5\" target=\"_blank\"&gt;Senegal party that controls parliament comes out against revised budget bill&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-25T10:14:51.000Z",
+          "score": 8
+        },
+        {
+          "title": "How Ukraine's strikes on Russian energy sites deepened the rift with Trump - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVXpULV9fUktZbnM0SlNnU1prS1RjMmp2b1FfakpycmpYU2pwelRVOWxsZTFVY1I5bUE3Wm82S1I4WG1kZHBIcExkeWhlRlV5Yjc2OWJnMDZDbnFSNnhLV3FlNUFBUnhxaDJ5b1ZjRVgwUHE1ZUVIYWwyNWdNR3J2ajMwWGlsTGRaX0tGOGFnOVE4ZVd3VGU3cEFmTGRGQWpyaDZjQ0hySnpaN2Nlc2hOR1VUT1VJYXBJSW4w?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVXpULV9fUktZbnM0SlNnU1prS1RjMmp2b1FfakpycmpYU2pwelRVOWxsZTFVY1I5bUE3Wm82S1I4WG1kZHBIcExkeWhlRlV5Yjc2OWJnMDZDbnFSNnhLV3FlNUFBUnhxaDJ5b1ZjRVgwUHE1ZUVIYWwyNWdNR3J2ajMwWGlsTGRaX0tGOGFnOVE4ZVd3VGU3cEFmTGRGQWpyaDZjQ0hySnpaN2Nlc2hOR1VUT1VJYXBJSW4w?oc=5\" target=\"_blank\"&gt;How Ukraine's strikes on Russian energy sites deepened the rift with Trump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-25T11:03:18.000Z",
+          "score": 7
+        },
+        {
+          "title": "Serbia's veteran ruler Vučić concedes election to student-led protest movement",
+          "link": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The populist right-wing leader of 12 years says it is \"clear\" his party has lost the vote billed as a referendum on the country's future.",
+          "published": "2026-10-25T22:54:57.000Z",
+          "score": 6
+        },
+        {
+          "title": "India news: Rahul Gandhi urges protest against voter deletions, announces November 1 rally",
+          "link": "https://www.dw.com/en/india-news-rahul-gandhi-urges-protest-against-voter-deletions-announces-november-1-rally/live-79748098?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "India&#039;s opposition leader Rahul Gandhi has accused the ruling BJP of &quot;vote theft&quot; and urged people to join a rally in Delhi on November 1. The call comes amid protests over revision of electoral rolls. DW has more.",
+          "published": "2026-10-25T10:52:00.000Z",
+          "score": 6
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 399,
+    "articlesLast24h": 146,
+    "afterDedup": 130,
+    "feedsQueried": 19
+  }
+}
