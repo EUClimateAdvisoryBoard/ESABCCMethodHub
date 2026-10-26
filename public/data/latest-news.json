@@ -1,5 +1,17 @@
 [
   {
+    "title": "Commission launches T-MED Investment Platform with up to €4.5 billion in EU guarantees",
+    "summary": "European Commission Press release Brussels, 26 Oct 2026 Today, the European Commission launched the T-MED Investment Platform, to mobilise large-scale investment in renewable energy and clean technologies across the Mediterranean. The platform is a key component of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED), a flagship initiative of the Pact for the Mediterranean.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2256",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-10-26T10:41:12.000Z",
+    "tags": [
+      "energy",
+      "finance"
+    ]
+  },
+  {
     "title": "Remarks by Commissioner Šefčovič at the press conference following the informal Foreign Affairs Council (Trade)",
     "summary": "European Commission Speech Dublin, 23 Oct 2026 Good afternoon and thank you, Minister – dear Helen – for your hospitality. I always leave Dublin impressed by its positive energy and this time, also grateful ...",
     "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2252",
@@ -8,18 +20,6 @@
     "publishedDate": "2026-10-23T14:54:52.000Z",
     "tags": [
       "energy"
-    ]
-  },
-  {
-    "title": "Commission opens investigation into possible anticompetitive conduct by Omya in the supply of calcium carbonates to the paper industry",
-    "summary": "European Commission Press release Brussels, 23 Oct 2026 The European Commission has opened a formal antitrust investigation to assess whether Omya has breached EU competition rules by requiring customers in the paper industry to purchase all or most of their calcium carbonates from Omya.",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2232",
-    "source": "european_commission",
-    "sourceLabel": "European Commission",
-    "publishedDate": "2026-10-22T22:00:00.000Z",
-    "tags": [
-      "emissions",
-      "industry"
     ]
   }
 ]
