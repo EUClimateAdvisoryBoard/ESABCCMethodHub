@@ -1,12 +1,12 @@
 {
   "date": "2026-10-26",
-  "generatedAt": "2026-10-26T10:51:40.932Z",
+  "generatedAt": "2026-10-26T17:12:32.739Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 26 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Storm Boelo leaves 90,000 without power as Met Office issues new wind warning",
-      "summary": "Around 90,000 properties are without power after Scotland and north England is battered by strong winds.",
+      "headline": "Commission launches T-MED Investment Platform with up to €4.5 billion in EU guarantees",
+      "summary": "European Commission Press release Brussels, 26 Oct 2026 Today, the European Commission launched the T-MED Investment Platform, to mobilise large-scale investment in renewable energy and clean technologies across the Mediterranean. The platform is a key component of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED), a flagship initiative of the Pact for the Mediterranean.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -28,28 +28,44 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Commission launches T-MED Investment Platform with up to €4.5 billion in EU guarantees",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2256",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 26 Oct 2026 Today, the European Commission launched the T-MED Investment Platform, to mobilise large-scale investment in renewable energy and clean technologies across the Mediterranean. The platform is a key component of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED), a flagship initiative of the Pact for the Mediterranean.",
+          "published": "2026-10-26T10:41:12.000Z",
+          "score": 20
+        },
+        {
+          "title": "African governments strengthen waste rules as solar and battery use surges",
+          "link": "https://www.climatechangenews.com/2026/10/26/african-governments-strengthen-waste-rules-as-solar-and-battery-use-surges/",
+          "source": "Climate Home News",
+          "description": "With solar panels, batteries and inverters spreading, officials want to bolster weak recycling systems to protect the environment and reuse key materials The post African governments strengthen waste rules as solar and battery use surges appeared first on Climate Home News.",
+          "published": "2026-10-26T16:43:07.000Z",
+          "score": 13
+        },
+        {
           "title": "Storm Boelo leaves 90,000 without power as Met Office issues new wind warning",
           "link": "https://www.bbc.co.uk/news/articles/cqm264jxxnxzo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Around 90,000 properties are without power after Scotland and north England is battered by strong winds.",
-          "published": "2026-10-26T10:21:18.000Z",
+          "published": "2026-10-26T16:54:11.000Z",
           "score": 7
         },
         {
-          "title": "Storm Boelo clears but more wind and rain bears down on UK",
+          "title": "Storm Boelo clears but more wind and rain bear down on UK",
           "link": "https://www.bbc.co.uk/weather/articles/cqwy7w8dryrxo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Another area of low pressure will pass close to the north-west UK with a Met Office yellow wind warning issued for Tuesday.",
-          "published": "2026-10-26T08:09:16.000Z",
+          "published": "2026-10-26T11:21:24.000Z",
           "score": 7
         },
         {
-          "title": "Majority of homes in NI have power restored after Storm Boelo",
-          "link": "https://www.bbc.co.uk/news/articles/c84g10r00221o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Northern Ireland Electricity Networks (NIE) said around 12,500 properties were without power at one stage.",
-          "published": "2026-10-25T23:53:04.000Z",
-          "score": 2
+          "title": "UK looking to give carmakers incentives to turn EVs into ‘power plants on wheels’",
+          "link": "https://www.theguardian.com/environment/2026/oct/26/uk-carmakers-evs-automatic-charge-sell-electricity-back-to-grid-technology",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;V2G tech enables drivers to charge automatically when electricity is cheaper and then sell some back to the grid at times of high demand&lt;/p&gt;&lt;p&gt;Electric cars that can be used as “power plants on wheels” could be given government backing as part of plans under consideration to help UK manufacturers.&lt;/p&gt;&lt;p&gt;Ministers are considering giving manufacturers incentives to add “vehicle to grid” (V2G) technology to cars as part of its review of the zero-emission vehicle (ZE",
+          "published": "2026-10-26T13:00:42.000Z",
+          "score": 4
         }
       ]
     },
@@ -74,6 +90,14 @@
           "score": 4
         },
         {
+          "title": "US forces accused of ‘weaponising’ Somalia’s floods by trapping women and children in the path of El Niño",
+          "link": "https://www.theguardian.com/global-development/2026/oct/26/us-forces-accused-of-weaponising-somalia-flood-el-nino",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Coordinated airstrikes on territory held by al-Shabaab are driving the civilian population to find refuge alongside a river where rising water levels are a threat to safety. Is it a deliberate military strategy?&lt;/p&gt;&lt;p&gt;The water was rising rapidly. It had already reached Cayni Ali’s waist. Her home, five metres from the flooded River Juba in southern Somalia, never stood a chance. There was nowhere to go. Ali’s city of Jilib was under a",
+          "published": "2026-10-26T11:00:40.000Z",
+          "score": 2
+        },
+        {
           "title": "Britain's Be Ready campaign aims to encourage (frighten?) citizens into preparing for disaster | First Dog on the Moon",
           "link": "https://www.theguardian.com/commentisfree/picture/2026/oct/26/be-ready-campaign-aims-to-encourage-frighten-citizens-into-preparing-for-disaster",
           "source": "The Guardian - Climate",
@@ -82,19 +106,11 @@
           "score": 2
         },
         {
-          "title": "From agriculture to AI-griculture: How tech is changing farming",
-          "link": "https://www.bbc.co.uk/news/articles/cw80zk9k51j1o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "'Safety first' as wedding guests stranded on island after Storm Boelo",
+          "link": "https://www.bbc.co.uk/news/articles/cqe9lykm93jmo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "From remote monitoring of cattle to automation of processes that took up valuable time, farmers in NI are rapidly becoming skilled in technology.",
-          "published": "2026-10-26T00:13:09.000Z",
-          "score": 2
-        },
-        {
-          "title": "In pictures: Storm Boelo leaves a trail of destruction across Scotland",
-          "link": "https://www.bbc.co.uk/news/articles/cmewe8ndn1q4o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The severe weather brought strong winds and heavy rain to large parts of Scotland.",
-          "published": "2026-10-25T21:11:43.000Z",
+          "description": "Wedding guests at an island in County Fermanagh were left stranded due to the storm.",
+          "published": "2026-10-26T15:17:59.000Z",
           "score": 2
         }
       ]
@@ -107,26 +123,35 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Why Ukraine may be involved in Mali&#039;s conflict",
+          "link": "https://www.dw.com/en/why-ukraine-may-be-involved-in-mali-s-conflict/a-79743423?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Allegations that Ukrainian specialists are supporting Tuareg rebels in Mali highlight Kyiv&#039;s effort to challenge Russian influence far beyond the battlefield in Europe.",
+          "published": "2026-10-26T14:58:00.000Z",
+          "score": 4
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Euro firms against dollar, yen ahead of central bank meetings - Reuters",
+          "title": "Euro firms against yen, flat vs dollar ahead of central bank meetings - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWlRGQXNlMDJDS0ZlQnJqVlI0Q3FOUUhyZmpfcUY2TDJNOTA5a0NDMEc5QWpKZ3NrQlZ0QWJSMERlU2wzQlFxcWF0OVFRVlNOSUYydEdiaU5LaTFvVDMxTk5NWTF6NVVFZEdRcW8tOHpZRnlmWDhiRnV3QlllYnVtVldqTGllWmY2RnF1MWVlMFRBT0xWbHliN3pWM3NhQnNzRV80ZHJ5T0M?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWlRGQXNlMDJDS0ZlQnJqVlI0Q3FOUUhyZmpfcUY2TDJNOTA5a0NDMEc5QWpKZ3NrQlZ0QWJSMERlU2wzQlFxcWF0OVFRVlNOSUYydEdiaU5LaTFvVDMxTk5NWTF6NVVFZEdRcW8tOHpZRnlmWDhiRnV3QlllYnVtVldqTGllWmY2RnF1MWVlMFRBT0xWbHliN3pWM3NhQnNzRV80ZHJ5T0M?oc=5\" target=\"_blank\"&gt;Euro firms against dollar, yen ahead of central bank meetings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWlRGQXNlMDJDS0ZlQnJqVlI0Q3FOUUhyZmpfcUY2TDJNOTA5a0NDMEc5QWpKZ3NrQlZ0QWJSMERlU2wzQlFxcWF0OVFRVlNOSUYydEdiaU5LaTFvVDMxTk5NWTF6NVVFZEdRcW8tOHpZRnlmWDhiRnV3QlllYnVtVldqTGllWmY2RnF1MWVlMFRBT0xWbHliN3pWM3NhQnNzRV80ZHJ5T0M?oc=5\" target=\"_blank\"&gt;Euro firms against yen, flat vs dollar ahead of central bank meetings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-26T02:02:00.000Z",
           "score": 8
         },
         {
-          "title": "Gap apparel supplier Gokaldas eyes doubling Europe exports share to cut US reliance - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNHVCTVRsc3V1VkZ3dkhISThlYUdZZkFfbmplWFZyclRHZnlvb3ZyZW9TamF4cnJXUzI4RkRnbnp1SUoyME5NZlRRenFsMndrTnAyX09KQjQzUDdEUklPVmQwTGdqclM1bUpDbXBJTzg1eDZNX0ZsMFdkcnd6eEl0anB2MzF5Z1RteHBmeVQxT0ZBLTg5V1prSjRQNjNfVjVJVjZVOXhZTUtiZEVHUkljeVlZWjJ0cEdydzVrM2lPZTFmdG5nbzNrNnl1aGtORkVMMVpJY1ZoeXg?oc=5",
+          "title": "Sweden's Centre leader hands task of forming government back to parliament speaker - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTko5bG1uRkNGLWNkZFFXVHVCRGdiRkloLXZMZjBPU3VQRmN4ckFHaUN2SGlQdzBCMnpTMTNYN0lJN1ppaUxkMmhRT2lvd0hHSmg1MldMbVBTdzFORWN1X1JGbllIQkQwcDhjYldWR3Y4SnNoNU1nSFpSMXNFYjdjSldaYlo5dGVFeTI3dFdIQlFoQ1Fpd2d0NW9mc3k5bG5YckVfbFZCUWlzTHFDdkhRNW5OazB5bWhW?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNHVCTVRsc3V1VkZ3dkhISThlYUdZZkFfbmplWFZyclRHZnlvb3ZyZW9TamF4cnJXUzI4RkRnbnp1SUoyME5NZlRRenFsMndrTnAyX09KQjQzUDdEUklPVmQwTGdqclM1bUpDbXBJTzg1eDZNX0ZsMFdkcnd6eEl0anB2MzF5Z1RteHBmeVQxT0ZBLTg5V1prSjRQNjNfVjVJVjZVOXhZTUtiZEVHUkljeVlZWjJ0cEdydzVrM2lPZTFmdG5nbzNrNnl1aGtORkVMMVpJY1ZoeXg?oc=5\" target=\"_blank\"&gt;Gap apparel supplier Gokaldas eyes doubling Europe exports share to cut US reliance&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#",
-          "published": "2026-10-26T03:58:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTko5bG1uRkNGLWNkZFFXVHVCRGdiRkloLXZMZjBPU3VQRmN4ckFHaUN2SGlQdzBCMnpTMTNYN0lJN1ppaUxkMmhRT2lvd0hHSmg1MldMbVBTdzFORWN1X1JGbllIQkQwcDhjYldWR3Y4SnNoNU1nSFpSMXNFYjdjSldaYlo5dGVFeTI3dFdIQlFoQ1Fpd2d0NW9mc3k5bG5YckVfbFZCUWlzTHFDdkhRNW5OazB5bWhW?oc=5\" target=\"_blank\"&gt;Sweden's Centre leader hands task of forming government back to parliament speaker&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T11:05:42.000Z",
           "score": 8
         },
         {
@@ -146,20 +171,20 @@
           "score": 7
         },
         {
-          "title": "IEA's Birol does not expect energy markets to return to pre-war levels in 2027 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNV2ZfTHdlczRzUzg4VTlJa2R6czhZeEtoZW8taUE3MzFxWEh1MVh0U2FPdG5XcEs2ZVhGZ2JxT3JwSkVBUEtseTR0YktxN05ycmxmODRONkVMd3JEbUJQdDIycm5QSHRMcGZqejJDSk5kMkFtT3dMa2EwNnlTV3Q0ZTNieWFSbWJGUVBoNFVDcklUZlF6UDhsMDVqbTJvd2FlWHJqMVBTVDJnM1d5ejc1V2hpTjVxZ3NmcXBhUA?oc=5",
+          "title": "Japan's Nikkei falls for a 3rd day as tech sector weighs, energy shares rise - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUG42aUpCNmlxUXpHUzRPWFpWWVZZclY2anZvbUZ2cld4eEVRaUtPeHNkMDBCcG9SN0JJY2FaZ3RfMnNzNkZQcUNzc1JWZjhsWUVPSTZaX0Z0UmJ1SWdFQlNFMkx0dEZ3enFJMjZ6TFNCNHhwV19MYldONE44a2lTdERfLXYzMU1xR0ZNTmdURnhNUDFnc3VIOEV4ZWhHTGhxYTBmWUtuOEdyTHRJenR6cTIzajB4SGFxenc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNV2ZfTHdlczRzUzg4VTlJa2R6czhZeEtoZW8taUE3MzFxWEh1MVh0U2FPdG5XcEs2ZVhGZ2JxT3JwSkVBUEtseTR0YktxN05ycmxmODRONkVMd3JEbUJQdDIycm5QSHRMcGZqejJDSk5kMkFtT3dMa2EwNnlTV3Q0ZTNieWFSbWJGUVBoNFVDcklUZlF6UDhsMDVqbTJvd2FlWHJqMVBTVDJnM1d5ejc1V2hpTjVxZ3NmcXBhUA?oc=5\" target=\"_blank\"&gt;IEA's Birol does not expect energy markets to return to pre-war levels in 2027&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-26T02:49:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPUG42aUpCNmlxUXpHUzRPWFpWWVZZclY2anZvbUZ2cld4eEVRaUtPeHNkMDBCcG9SN0JJY2FaZ3RfMnNzNkZQcUNzc1JWZjhsWUVPSTZaX0Z0UmJ1SWdFQlNFMkx0dEZ3enFJMjZ6TFNCNHhwV19MYldONE44a2lTdERfLXYzMU1xR0ZNTmdURnhNUDFnc3VIOEV4ZWhHTGhxYTBmWUtuOEdyTHRJenR6cTIzajB4SGFxenc?oc=5\" target=\"_blank\"&gt;Japan's Nikkei falls for a 3rd day as tech sector weighs, energy shares rise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T01:27:00.000Z",
           "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 391,
-    "articlesLast24h": 151,
-    "afterDedup": 143,
+    "totalArticlesScanned": 394,
+    "articlesLast24h": 163,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
