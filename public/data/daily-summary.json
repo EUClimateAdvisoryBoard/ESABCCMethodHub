@@ -1,18 +1,18 @@
 {
   "date": "2026-10-26",
-  "generatedAt": "2026-10-26T01:04:19.361Z",
+  "generatedAt": "2026-10-26T10:51:40.932Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 26 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Two men killed by falling trees as Storm Boelo leaves 160,000 properties without power",
-      "summary": "An amber wind warning has now expired after severe weather sweeps across the UK.",
+      "headline": "Storm Boelo leaves 90,000 without power as Met Office issues new wind warning",
+      "summary": "Around 90,000 properties are without power after Scotland and north England is battered by strong winds.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "The penguins are noisy, the people fantastic - what it takes to be an Antarctic postmaster",
-      "summary": "George Clarke from Bristol will run the post office at Port Lockroy in Antarctica from October to March.",
+      "headline": "Cabinet split emerges over controversial Rosebank oilfield decision",
+      "summary": "&lt;p&gt;Chancellor is in favour of North Sea project, but energy secretary has said she is leaning towards rejecting it&lt;/p&gt;&lt;p&gt;A cabinet split has emerged over whether to approve drilling at the Rosebank oilfield, with the chancellor, John Healey, in favour of the controversial North Sea project.&lt;/p&gt;&lt;p&gt;The energy secretary, Miatta Fahnbulleh, is ultimately in charge of the decision, and the Guardian reported last week that &lt;a href=\"https://www.theguardian.com/environme",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -28,12 +28,20 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Two men killed by falling trees as Storm Boelo leaves 160,000 properties without power",
-          "link": "https://www.bbc.co.uk/news/articles/cxdd8gr1vje0o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Storm Boelo leaves 90,000 without power as Met Office issues new wind warning",
+          "link": "https://www.bbc.co.uk/news/articles/cqm264jxxnxzo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "An amber wind warning has now expired after severe weather sweeps across the UK.",
-          "published": "2026-10-25T22:24:16.000Z",
-          "score": 4
+          "description": "Around 90,000 properties are without power after Scotland and north England is battered by strong winds.",
+          "published": "2026-10-26T10:21:18.000Z",
+          "score": 7
+        },
+        {
+          "title": "Storm Boelo clears but more wind and rain bears down on UK",
+          "link": "https://www.bbc.co.uk/weather/articles/cqwy7w8dryrxo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Another area of low pressure will pass close to the north-west UK with a Met Office yellow wind warning issued for Tuesday.",
+          "published": "2026-10-26T08:09:16.000Z",
+          "score": 7
         },
         {
           "title": "Majority of homes in NI have power restored after Storm Boelo",
@@ -50,20 +58,28 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "The penguins are noisy, the people fantastic - what it takes to be an Antarctic postmaster",
-          "link": "https://www.bbc.co.uk/news/articles/c6dxwklr409eo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "George Clarke from Bristol will run the post office at Port Lockroy in Antarctica from October to March.",
-          "published": "2026-10-25T09:59:50.000Z",
-          "score": 7
-        },
-        {
           "title": "Cabinet split emerges over controversial Rosebank oilfield decision",
           "link": "https://www.theguardian.com/environment/2026/oct/25/cabinet-split-emerges-over-controversial-rosebank-oilfield-decision",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Chancellor is in favour of North Sea project, but energy secretary has said she is leaning towards rejecting it&lt;/p&gt;&lt;p&gt;A cabinet split has emerged over whether to approve drilling at the Rosebank oilfield, with the chancellor, John Healey, in favour of the controversial North Sea project.&lt;/p&gt;&lt;p&gt;The energy secretary, Miatta Fahnbulleh, is ultimately in charge of the decision, and the Guardian reported last week that &lt;a href=\"https://www.theguardian.com/environme",
           "published": "2026-10-25T20:29:25.000Z",
           "score": 4
+        },
+        {
+          "title": "Fire-hit nature reserve 'will never be the same'",
+          "link": "https://www.bbc.co.uk/news/articles/c3vgxk9w9rqjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Three months on from a devastating wildfire, the RSPB says it will take 20 years to recover.",
+          "published": "2026-10-26T06:03:12.000Z",
+          "score": 4
+        },
+        {
+          "title": "Britain's Be Ready campaign aims to encourage (frighten?) citizens into preparing for disaster | First Dog on the Moon",
+          "link": "https://www.theguardian.com/commentisfree/picture/2026/oct/26/be-ready-campaign-aims-to-encourage-frighten-citizens-into-preparing-for-disaster",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;You’ll need food, water, plastic bags, spare stiff upper lips and a shovel&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2014/jun/16/-sp-first-dog-on-the-moon-subscribe-by-email\"&gt;Sign up here to get an email&lt;/a&gt; whenever First Dog cartoons are published&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://firstdogonthemoon.com.au/shop/\"&gt;Get all your needs met at the First Dog shop&lt;/a&gt; if what you need is First Dog mer",
+          "published": "2026-10-26T05:22:12.000Z",
+          "score": 2
         },
         {
           "title": "From agriculture to AI-griculture: How tech is changing farming",
@@ -80,14 +96,6 @@
           "description": "The severe weather brought strong winds and heavy rain to large parts of Scotland.",
           "published": "2026-10-25T21:11:43.000Z",
           "score": 2
-        },
-        {
-          "title": "Man killed by falling tree as Storm Boelo batters Scotland",
-          "link": "https://www.bbc.co.uk/news/articles/c60qk5lw1z8wo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The 60-year-old man was struck by the tree near Castle Douglas as Storm Boelo brought strong winds and heavy rain to Scotland.",
-          "published": "2026-10-25T21:09:58.000Z",
-          "score": 2
         }
       ]
     },
@@ -99,68 +107,59 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "Why is Ukraine so reliant on Starlink and can Europe plug the gap?",
-          "link": "https://www.bbc.co.uk/news/articles/c65yn97xe7ypo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Ukraine needs another satellite internet service, but a decent alternative to Elon Musk's network doesn't exist - yet.",
-          "published": "2026-10-25T05:45:31.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "UK's Burnham says he is open to discussing EU free movement - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNSjVxck9RU09WdXhBX1ZuMkZzX013Y0h5QXZ3dGU4amkwYllEV05odVJVcnRmQnpNZ2RtX3BlMGZYc3cwc1lJWU5zNkJELUpQSTNQTDlIanQ1OXN2RDlKRnZsS0FMVUM5ejhyaEhTSU1sVjl2NzN1NGxXNzRVNmE3dWdtZ2hIamMyaGQ4WG1fMldGMkl3Snhoc3dRZ2tESFdJaHJsc0xUQVV2LXJhaW1JQUFydmd5UQ?oc=5",
+          "title": "Euro firms against dollar, yen ahead of central bank meetings - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWlRGQXNlMDJDS0ZlQnJqVlI0Q3FOUUhyZmpfcUY2TDJNOTA5a0NDMEc5QWpKZ3NrQlZ0QWJSMERlU2wzQlFxcWF0OVFRVlNOSUYydEdiaU5LaTFvVDMxTk5NWTF6NVVFZEdRcW8tOHpZRnlmWDhiRnV3QlllYnVtVldqTGllWmY2RnF1MWVlMFRBT0xWbHliN3pWM3NhQnNzRV80ZHJ5T0M?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNSjVxck9RU09WdXhBX1ZuMkZzX013Y0h5QXZ3dGU4amkwYllEV05odVJVcnRmQnpNZ2RtX3BlMGZYc3cwc1lJWU5zNkJELUpQSTNQTDlIanQ1OXN2RDlKRnZsS0FMVUM5ejhyaEhTSU1sVjl2NzN1NGxXNzRVNmE3dWdtZ2hIamMyaGQ4WG1fMldGMkl3Snhoc3dRZ2tESFdJaHJsc0xUQVV2LXJhaW1JQUFydmd5UQ?oc=5\" target=\"_blank\"&gt;UK's Burnham says he is open to discussing EU free movement&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-25T03:13:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWlRGQXNlMDJDS0ZlQnJqVlI0Q3FOUUhyZmpfcUY2TDJNOTA5a0NDMEc5QWpKZ3NrQlZ0QWJSMERlU2wzQlFxcWF0OVFRVlNOSUYydEdiaU5LaTFvVDMxTk5NWTF6NVVFZEdRcW8tOHpZRnlmWDhiRnV3QlllYnVtVldqTGllWmY2RnF1MWVlMFRBT0xWbHliN3pWM3NhQnNzRV80ZHJ5T0M?oc=5\" target=\"_blank\"&gt;Euro firms against dollar, yen ahead of central bank meetings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T02:02:00.000Z",
           "score": 8
         },
         {
-          "title": "Senegal party that controls parliament comes out against revised budget bill - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQl9ZdzdPRHZXenduQW9SWTgxd3hZZnlTZTNmVDJXcWdfRFNlSjBLd001enBmTlFHSVdIY3E2VkNYR0gteDMzSU1KR1NyQU94TGQtR0tVRWo3bE55dnZuajFMcHZmSnZFdlE5YlY4VTNlbmJyWjdhUnEtenFVU1V6MUV0bDNoMzBfWlI5a3pHSHRjTHpxZHBFLUhSN2VObU5EQjFvQUpqalZZUEUySXR1ZTVldW1oSWxtZVVMSm9qZHpTc2s?oc=5",
+          "title": "Gap apparel supplier Gokaldas eyes doubling Europe exports share to cut US reliance - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNHVCTVRsc3V1VkZ3dkhISThlYUdZZkFfbmplWFZyclRHZnlvb3ZyZW9TamF4cnJXUzI4RkRnbnp1SUoyME5NZlRRenFsMndrTnAyX09KQjQzUDdEUklPVmQwTGdqclM1bUpDbXBJTzg1eDZNX0ZsMFdkcnd6eEl0anB2MzF5Z1RteHBmeVQxT0ZBLTg5V1prSjRQNjNfVjVJVjZVOXhZTUtiZEVHUkljeVlZWjJ0cEdydzVrM2lPZTFmdG5nbzNrNnl1aGtORkVMMVpJY1ZoeXg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQl9ZdzdPRHZXenduQW9SWTgxd3hZZnlTZTNmVDJXcWdfRFNlSjBLd001enBmTlFHSVdIY3E2VkNYR0gteDMzSU1KR1NyQU94TGQtR0tVRWo3bE55dnZuajFMcHZmSnZFdlE5YlY4VTNlbmJyWjdhUnEtenFVU1V6MUV0bDNoMzBfWlI5a3pHSHRjTHpxZHBFLUhSN2VObU5EQjFvQUpqalZZUEUySXR1ZTVldW1oSWxtZVVMSm9qZHpTc2s?oc=5\" target=\"_blank\"&gt;Senegal party that controls parliament comes out against revised budget bill&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-25T10:14:51.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNHVCTVRsc3V1VkZ3dkhISThlYUdZZkFfbmplWFZyclRHZnlvb3ZyZW9TamF4cnJXUzI4RkRnbnp1SUoyME5NZlRRenFsMndrTnAyX09KQjQzUDdEUklPVmQwTGdqclM1bUpDbXBJTzg1eDZNX0ZsMFdkcnd6eEl0anB2MzF5Z1RteHBmeVQxT0ZBLTg5V1prSjRQNjNfVjVJVjZVOXhZTUtiZEVHUkljeVlZWjJ0cEdydzVrM2lPZTFmdG5nbzNrNnl1aGtORkVMMVpJY1ZoeXg?oc=5\" target=\"_blank\"&gt;Gap apparel supplier Gokaldas eyes doubling Europe exports share to cut US reliance&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#",
+          "published": "2026-10-26T03:58:00.000Z",
           "score": 8
         },
         {
-          "title": "How Ukraine's strikes on Russian energy sites deepened the rift with Trump - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVXpULV9fUktZbnM0SlNnU1prS1RjMmp2b1FfakpycmpYU2pwelRVOWxsZTFVY1I5bUE3Wm82S1I4WG1kZHBIcExkeWhlRlV5Yjc2OWJnMDZDbnFSNnhLV3FlNUFBUnhxaDJ5b1ZjRVgwUHE1ZUVIYWwyNWdNR3J2ajMwWGlsTGRaX0tGOGFnOVE4ZVd3VGU3cEFmTGRGQWpyaDZjQ0hySnpaN2Nlc2hOR1VUT1VJYXBJSW4w?oc=5",
+          "title": "Ather Energy posts first quarterly profit, shares rise 10% - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVnhEVHdQMmhvSjlHM0h6dzZuNWJnQi14MW1wa1Q3T1dTekdSaVpxRjVUMGhTWTBHVjF0amdGMkd2ZVNGUDFtTFhXUG54aS0xWU5VYW9nQVZMS05EV2ZQN3RaWjNwYmw4Snh1YTFJckZ2NTd0ZzE4RF9LYmhlQVBUX2xBSl91WlJCY0x0TXQ5Y090YjRKQ19BQWJ1WWYxU1A4bU5OX284WG5MUUF2YTdV?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVXpULV9fUktZbnM0SlNnU1prS1RjMmp2b1FfakpycmpYU2pwelRVOWxsZTFVY1I5bUE3Wm82S1I4WG1kZHBIcExkeWhlRlV5Yjc2OWJnMDZDbnFSNnhLV3FlNUFBUnhxaDJ5b1ZjRVgwUHE1ZUVIYWwyNWdNR3J2ajMwWGlsTGRaX0tGOGFnOVE4ZVd3VGU3cEFmTGRGQWpyaDZjQ0hySnpaN2Nlc2hOR1VUT1VJYXBJSW4w?oc=5\" target=\"_blank\"&gt;How Ukraine's strikes on Russian energy sites deepened the rift with Trump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-25T11:03:18.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOVnhEVHdQMmhvSjlHM0h6dzZuNWJnQi14MW1wa1Q3T1dTekdSaVpxRjVUMGhTWTBHVjF0amdGMkd2ZVNGUDFtTFhXUG54aS0xWU5VYW9nQVZMS05EV2ZQN3RaWjNwYmw4Snh1YTFJckZ2NTd0ZzE4RF9LYmhlQVBUX2xBSl91WlJCY0x0TXQ5Y090YjRKQ19BQWJ1WWYxU1A4bU5OX284WG5MUUF2YTdV?oc=5\" target=\"_blank\"&gt;Ather Energy posts first quarterly profit, shares rise 10%&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T10:07:57.000Z",
           "score": 7
         },
         {
-          "title": "Serbia's veteran ruler Vučić concedes election to student-led protest movement",
-          "link": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The populist right-wing leader of 12 years says it is \"clear\" his party has lost the vote billed as a referendum on the country's future.",
-          "published": "2026-10-25T22:54:57.000Z",
-          "score": 6
+          "title": "Indonesia energy minister to visit China, India to ensure gasoline supply - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOY3owSDlCRkxMQVhCNmpZSXQtcm1GSHhiZDZFODgtcFowaGhGMU9VQU9OdFdUWE9LMkRESnJSYUFsYVlUcE5PVzl3TFFEYUhHWHhxTGNkdmxJQ0FTU3l6RjN0Q2MxNkdGMUYtOVF0RlpjcVpCN0tfMlZ3UE5JUjA4MVN5MzJjU0NRc3E0a2pJbTBYMVBwbDd0WXVJRUxKLVhZS3RsRHRHMTJ6X005bzZRM3MtdVA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOY3owSDlCRkxMQVhCNmpZSXQtcm1GSHhiZDZFODgtcFowaGhGMU9VQU9OdFdUWE9LMkRESnJSYUFsYVlUcE5PVzl3TFFEYUhHWHhxTGNkdmxJQ0FTU3l6RjN0Q2MxNkdGMUYtOVF0RlpjcVpCN0tfMlZ3UE5JUjA4MVN5MzJjU0NRc3E0a2pJbTBYMVBwbDd0WXVJRUxKLVhZS3RsRHRHMTJ6X005bzZRM3MtdVA?oc=5\" target=\"_blank\"&gt;Indonesia energy minister to visit China, India to ensure gasoline supply&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T08:26:44.000Z",
+          "score": 7
         },
         {
-          "title": "India news: Rahul Gandhi urges protest against voter deletions, announces November 1 rally",
-          "link": "https://www.dw.com/en/india-news-rahul-gandhi-urges-protest-against-voter-deletions-announces-november-1-rally/live-79748098?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "India&#039;s opposition leader Rahul Gandhi has accused the ruling BJP of &quot;vote theft&quot; and urged people to join a rally in Delhi on November 1. The call comes amid protests over revision of electoral rolls. DW has more.",
-          "published": "2026-10-25T10:52:00.000Z",
-          "score": 6
+          "title": "IEA's Birol does not expect energy markets to return to pre-war levels in 2027 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNV2ZfTHdlczRzUzg4VTlJa2R6czhZeEtoZW8taUE3MzFxWEh1MVh0U2FPdG5XcEs2ZVhGZ2JxT3JwSkVBUEtseTR0YktxN05ycmxmODRONkVMd3JEbUJQdDIycm5QSHRMcGZqejJDSk5kMkFtT3dMa2EwNnlTV3Q0ZTNieWFSbWJGUVBoNFVDcklUZlF6UDhsMDVqbTJvd2FlWHJqMVBTVDJnM1d5ejc1V2hpTjVxZ3NmcXBhUA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNV2ZfTHdlczRzUzg4VTlJa2R6czhZeEtoZW8taUE3MzFxWEh1MVh0U2FPdG5XcEs2ZVhGZ2JxT3JwSkVBUEtseTR0YktxN05ycmxmODRONkVMd3JEbUJQdDIycm5QSHRMcGZqejJDSk5kMkFtT3dMa2EwNnlTV3Q0ZTNieWFSbWJGUVBoNFVDcklUZlF6UDhsMDVqbTJvd2FlWHJqMVBTVDJnM1d5ejc1V2hpTjVxZ3NmcXBhUA?oc=5\" target=\"_blank\"&gt;IEA's Birol does not expect energy markets to return to pre-war levels in 2027&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T02:49:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 399,
-    "articlesLast24h": 146,
-    "afterDedup": 130,
+    "totalArticlesScanned": 391,
+    "articlesLast24h": 151,
+    "afterDedup": 143,
     "feedsQueried": 19
   }
 }
