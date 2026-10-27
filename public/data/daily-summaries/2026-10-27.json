@@ -1,0 +1,190 @@
+{
+  "date": "2026-10-27",
+  "generatedAt": "2026-10-27T01:54:45.809Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Tuesday, 27 October 2026 — Key developments from the last 24 hours",
+  "highlights": [
+    {
+      "headline": "Commission launches T-MED Investment Platform with up to €4.5 billion in EU guarantees",
+      "summary": "European Commission Press release Brussels, 26 Oct 2026 Today, the European Commission launched the T-MED Investment Platform, to mobilise large-scale investment in renewable energy and clean technologies across the Mediterranean. The platform is a key component of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED), a flagship initiative of the Pact for the Mediterranean.",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
+    {
+      "headline": "Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive",
+      "summary": "Lula’s re-election makes it more likely Brazil can meet a key goal to end forest loss in the Amazon and builds confidence in a new fund to protect the world's rainforests, experts say The post Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive appeared first on Climate Home News.",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
+    }
+  ],
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": [
+        {
+          "title": "Commission launches T-MED Investment Platform with up to €4.5 billion in EU guarantees",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2256",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 26 Oct 2026 Today, the European Commission launched the T-MED Investment Platform, to mobilise large-scale investment in renewable energy and clean technologies across the Mediterranean. The platform is a key component of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED), a flagship initiative of the Pact for the Mediterranean.",
+          "published": "2026-10-26T10:41:12.000Z",
+          "score": 20
+        },
+        {
+          "title": "African governments strengthen waste rules as solar and battery use surges",
+          "link": "https://www.climatechangenews.com/2026/10/26/african-governments-strengthen-waste-rules-as-solar-and-battery-use-surges/",
+          "source": "Climate Home News",
+          "description": "With solar panels, batteries and inverters spreading, officials want to bolster weak recycling systems to protect the environment and reuse key materials The post African governments strengthen waste rules as solar and battery use surges appeared first on Climate Home News.",
+          "published": "2026-10-26T16:43:07.000Z",
+          "score": 13
+        },
+        {
+          "title": "Storm Boelo leaves 22,000 without power as Met Office issues new wind warning",
+          "link": "https://www.bbc.co.uk/news/articles/cqm264jxxnxzo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "A yellow warning for strong winds came in effect at 18:00 on Monday across the west coast of England, Wales and Scotland and eastern parts of Northern Ireland.",
+          "published": "2026-10-26T22:43:44.000Z",
+          "score": 7
+        },
+        {
+          "title": "Storm Boelo clears but more wind and rain bear down on UK",
+          "link": "https://www.bbc.co.uk/weather/articles/cqwy7w8dryrxo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Another area of low pressure will pass close to the north-west UK with a Met Office yellow wind warning issued for Tuesday.",
+          "published": "2026-10-26T11:21:24.000Z",
+          "score": 7
+        },
+        {
+          "title": "UK looking to give carmakers incentives to turn EVs into ‘power plants on wheels’",
+          "link": "https://www.theguardian.com/environment/2026/oct/26/uk-carmakers-evs-automatic-charge-sell-electricity-back-to-grid-technology",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;V2G tech enables drivers to charge automatically when electricity is cheaper and then sell some back to the grid at times of high demand&lt;/p&gt;&lt;p&gt;Electric cars that can be used as “power plants on wheels” could be given government backing as part of plans under consideration to help UK manufacturers.&lt;/p&gt;&lt;p&gt;Ministers are considering giving manufacturers incentives to add “vehicle to grid” (V2G) technology to cars as part of its review of the zero-emission vehicle (ZE",
+          "published": "2026-10-26T13:00:42.000Z",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive",
+          "link": "https://www.climatechangenews.com/2026/10/26/lulas-election-win-in-brazil-raises-hopes-for-zero-deforestation-drive/",
+          "source": "Climate Home News",
+          "description": "Lula’s re-election makes it more likely Brazil can meet a key goal to end forest loss in the Amazon and builds confidence in a new fund to protect the world's rainforests, experts say The post Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive appeared first on Climate Home News.",
+          "published": "2026-10-26T17:49:56.000Z",
+          "score": 13
+        },
+        {
+          "title": "Political battle intensifies within Labour over Rosebank oil field",
+          "link": "https://www.bbc.co.uk/news/articles/c6zxj7dvxr5yo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Scottish Labour leader Michael Marra is urging the energy secretary to approve the controversial plans.",
+          "published": "2026-10-26T18:09:49.000Z",
+          "score": 4
+        },
+        {
+          "title": "Fire-hit nature reserve 'will never be the same'",
+          "link": "https://www.bbc.co.uk/news/articles/c3vgxk9w9rqjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Three months on from a devastating wildfire, the RSPB says it will take 20 years to recover.",
+          "published": "2026-10-26T06:03:12.000Z",
+          "score": 4
+        },
+        {
+          "title": "US forces accused of ‘weaponising’ Somalia’s floods by trapping women and children in the path of El Niño",
+          "link": "https://www.theguardian.com/global-development/2026/oct/26/us-forces-accused-of-weaponising-somalia-flood-el-nino",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Coordinated airstrikes on territory held by al-Shabaab are driving the civilian population to find refuge alongside a river where rising water levels are a threat to safety. Is it a deliberate military strategy?&lt;/p&gt;&lt;p&gt;The water was rising rapidly. It had already reached Cayni Ali’s waist. Her home, five metres from the flooded River Juba in southern Somalia, never stood a chance. There was nowhere to go. Ali’s city of Jilib was under a",
+          "published": "2026-10-26T11:00:40.000Z",
+          "score": 2
+        },
+        {
+          "title": "Britain's Be Ready campaign aims to encourage (frighten?) citizens into preparing for disaster | First Dog on the Moon",
+          "link": "https://www.theguardian.com/commentisfree/picture/2026/oct/26/be-ready-campaign-aims-to-encourage-frighten-citizens-into-preparing-for-disaster",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;You’ll need food, water, plastic bags, spare stiff upper lips and a shovel&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2014/jun/16/-sp-first-dog-on-the-moon-subscribe-by-email\"&gt;Sign up here to get an email&lt;/a&gt; whenever First Dog cartoons are published&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://firstdogonthemoon.com.au/shop/\"&gt;Get all your needs met at the First Dog shop&lt;/a&gt; if what you need is First Dog mer",
+          "published": "2026-10-26T05:22:12.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": []
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": [
+        {
+          "title": "Why Ukraine may be involved in Mali&#039;s conflict",
+          "link": "https://www.dw.com/en/why-ukraine-may-be-involved-in-mali-s-conflict/a-79743423?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Allegations that Ukrainian specialists are supporting Tuareg rebels in Mali highlight Kyiv&#039;s effort to challenge Russian influence far beyond the battlefield in Europe.",
+          "published": "2026-10-26T14:58:00.000Z",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": [
+        {
+          "title": "Euro slips ahead of central bank meetings, real tumbles - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWlRGQXNlMDJDS0ZlQnJqVlI0Q3FOUUhyZmpfcUY2TDJNOTA5a0NDMEc5QWpKZ3NrQlZ0QWJSMERlU2wzQlFxcWF0OVFRVlNOSUYydEdiaU5LaTFvVDMxTk5NWTF6NVVFZEdRcW8tOHpZRnlmWDhiRnV3QlllYnVtVldqTGllWmY2RnF1MWVlMFRBT0xWbHliN3pWM3NhQnNzRV80ZHJ5T0M?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWlRGQXNlMDJDS0ZlQnJqVlI0Q3FOUUhyZmpfcUY2TDJNOTA5a0NDMEc5QWpKZ3NrQlZ0QWJSMERlU2wzQlFxcWF0OVFRVlNOSUYydEdiaU5LaTFvVDMxTk5NWTF6NVVFZEdRcW8tOHpZRnlmWDhiRnV3QlllYnVtVldqTGllWmY2RnF1MWVlMFRBT0xWbHliN3pWM3NhQnNzRV80ZHJ5T0M?oc=5\" target=\"_blank\"&gt;Euro slips ahead of central bank meetings, real tumbles&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T02:02:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Sterling drops against euro and dollar ahead of UK budget - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOTG1zRmxKejNRVlA2Mm5HTHNDb0g3T3lWVTdYLVRlQWhDamFWbDZrMXp2MmNyZnMtOS1uUDVqZ0RYX2VxWkRwTm55LTAyX0MzUVBWUGE0RVBwRW1LQi1zZ25DX0I2em5jamZRV0lkQWxIS3lyV2VodjJGTldOdzlOLTM0SWdORlBhV2JuNzd1cnFrUDRKZm9SYmNvZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxOTG1zRmxKejNRVlA2Mm5HTHNDb0g3T3lWVTdYLVRlQWhDamFWbDZrMXp2MmNyZnMtOS1uUDVqZ0RYX2VxWkRwTm55LTAyX0MzUVBWUGE0RVBwRW1LQi1zZ25DX0I2em5jamZRV0lkQWxIS3lyV2VodjJGTldOdzlOLTM0SWdORlBhV2JuNzd1cnFrUDRKZm9SYmNvZw?oc=5\" target=\"_blank\"&gt;Sterling drops against euro and dollar ahead of UK budget&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T10:49:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "Sweden's Centre leader hands task of forming government back to parliament speaker - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTko5bG1uRkNGLWNkZFFXVHVCRGdiRkloLXZMZjBPU3VQRmN4ckFHaUN2SGlQdzBCMnpTMTNYN0lJN1ppaUxkMmhRT2lvd0hHSmg1MldMbVBTdzFORWN1X1JGbllIQkQwcDhjYldWR3Y4SnNoNU1nSFpSMXNFYjdjSldaYlo5dGVFeTI3dFdIQlFoQ1Fpd2d0NW9mc3k5bG5YckVfbFZCUWlzTHFDdkhRNW5OazB5bWhW?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTko5bG1uRkNGLWNkZFFXVHVCRGdiRkloLXZMZjBPU3VQRmN4ckFHaUN2SGlQdzBCMnpTMTNYN0lJN1ppaUxkMmhRT2lvd0hHSmg1MldMbVBTdzFORWN1X1JGbllIQkQwcDhjYldWR3Y4SnNoNU1nSFpSMXNFYjdjSldaYlo5dGVFeTI3dFdIQlFoQ1Fpd2d0NW9mc3k5bG5YckVfbFZCUWlzTHFDdkhRNW5OazB5bWhW?oc=5\" target=\"_blank\"&gt;Sweden's Centre leader hands task of forming government back to parliament speaker&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T11:05:42.000Z",
+          "score": 8
+        },
+        {
+          "title": "Bank of Canada expected to hike rate on Wednesday to stem spillover of energy inflation - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUXpOXzVmSjQ1YVpWOEdvN2ZtR2xyVmFDTTJxZzhqekRPVGRaVzl3QUV4bFFQYjZUckk0MExrRGZYbUNPd3czSV9yQVNORlFJc19rMm03T3BoNHhVNkRtTnRQckdpM0Q4MUFscWlzU1gtYVhrSUY0SjY1UlMxby00YXROUlJleDc4cXdBS2xFTkJvSHQwTGpwVkN5aVpqZ1dVM081dk9qM3dGSy05Z2kxaGU0TlctSXVMQUpBaGlVckQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUXpOXzVmSjQ1YVpWOEdvN2ZtR2xyVmFDTTJxZzhqekRPVGRaVzl3QUV4bFFQYjZUckk0MExrRGZYbUNPd3czSV9yQVNORlFJc19rMm03T3BoNHhVNkRtTnRQckdpM0Q4MUFscWlzU1gtYVhrSUY0SjY1UlMxby00YXROUlJleDc4cXdBS2xFTkJvSHQwTGpwVkN5aVpqZ1dVM081dk9qM3dGSy05Z2kxaGU0TlctSXVMQUpBaGlVckQ?oc=5\" target=\"_blank\"&gt;Bank of Canada expected to hike rate on Wednesday to stem spillover of energy inflation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-10-26T10:24:33.000Z",
+          "score": 7
+        },
+        {
+          "title": "Ather Energy posts first quarterly profit, shares rise 10% - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVnhEVHdQMmhvSjlHM0h6dzZuNWJnQi14MW1wa1Q3T1dTekdSaVpxRjVUMGhTWTBHVjF0amdGMkd2ZVNGUDFtTFhXUG54aS0xWU5VYW9nQVZMS05EV2ZQN3RaWjNwYmw4Snh1YTFJckZ2NTd0ZzE4RF9LYmhlQVBUX2xBSl91WlJCY0x0TXQ5Y090YjRKQ19BQWJ1WWYxU1A4bU5OX284WG5MUUF2YTdV?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOVnhEVHdQMmhvSjlHM0h6dzZuNWJnQi14MW1wa1Q3T1dTekdSaVpxRjVUMGhTWTBHVjF0amdGMkd2ZVNGUDFtTFhXUG54aS0xWU5VYW9nQVZMS05EV2ZQN3RaWjNwYmw4Snh1YTFJckZ2NTd0ZzE4RF9LYmhlQVBUX2xBSl91WlJCY0x0TXQ5Y090YjRKQ19BQWJ1WWYxU1A4bU5OX284WG5MUUF2YTdV?oc=5\" target=\"_blank\"&gt;Ather Energy posts first quarterly profit, shares rise 10%&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T10:07:57.000Z",
+          "score": 7
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 397,
+    "articlesLast24h": 166,
+    "afterDedup": 159,
+    "feedsQueried": 19
+  }
+}

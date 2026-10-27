@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-26",
-  "generatedAt": "2026-10-26T17:12:32.739Z",
+  "date": "2026-10-27",
+  "generatedAt": "2026-10-27T01:54:45.809Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Monday, 26 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Tuesday, 27 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
       "headline": "Commission launches T-MED Investment Platform with up to €4.5 billion in EU guarantees",
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Cabinet split emerges over controversial Rosebank oilfield decision",
-      "summary": "&lt;p&gt;Chancellor is in favour of North Sea project, but energy secretary has said she is leaning towards rejecting it&lt;/p&gt;&lt;p&gt;A cabinet split has emerged over whether to approve drilling at the Rosebank oilfield, with the chancellor, John Healey, in favour of the controversial North Sea project.&lt;/p&gt;&lt;p&gt;The energy secretary, Miatta Fahnbulleh, is ultimately in charge of the decision, and the Guardian reported last week that &lt;a href=\"https://www.theguardian.com/environme",
+      "headline": "Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive",
+      "summary": "Lula’s re-election makes it more likely Brazil can meet a key goal to end forest loss in the Amazon and builds confidence in a new fund to protect the world's rainforests, experts say The post Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -44,11 +44,11 @@
           "score": 13
         },
         {
-          "title": "Storm Boelo leaves 90,000 without power as Met Office issues new wind warning",
+          "title": "Storm Boelo leaves 22,000 without power as Met Office issues new wind warning",
           "link": "https://www.bbc.co.uk/news/articles/cqm264jxxnxzo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Around 90,000 properties are without power after Scotland and north England is battered by strong winds.",
-          "published": "2026-10-26T16:54:11.000Z",
+          "description": "A yellow warning for strong winds came in effect at 18:00 on Monday across the west coast of England, Wales and Scotland and eastern parts of Northern Ireland.",
+          "published": "2026-10-26T22:43:44.000Z",
           "score": 7
         },
         {
@@ -74,11 +74,19 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Cabinet split emerges over controversial Rosebank oilfield decision",
-          "link": "https://www.theguardian.com/environment/2026/oct/25/cabinet-split-emerges-over-controversial-rosebank-oilfield-decision",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Chancellor is in favour of North Sea project, but energy secretary has said she is leaning towards rejecting it&lt;/p&gt;&lt;p&gt;A cabinet split has emerged over whether to approve drilling at the Rosebank oilfield, with the chancellor, John Healey, in favour of the controversial North Sea project.&lt;/p&gt;&lt;p&gt;The energy secretary, Miatta Fahnbulleh, is ultimately in charge of the decision, and the Guardian reported last week that &lt;a href=\"https://www.theguardian.com/environme",
-          "published": "2026-10-25T20:29:25.000Z",
+          "title": "Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive",
+          "link": "https://www.climatechangenews.com/2026/10/26/lulas-election-win-in-brazil-raises-hopes-for-zero-deforestation-drive/",
+          "source": "Climate Home News",
+          "description": "Lula’s re-election makes it more likely Brazil can meet a key goal to end forest loss in the Amazon and builds confidence in a new fund to protect the world's rainforests, experts say The post Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive appeared first on Climate Home News.",
+          "published": "2026-10-26T17:49:56.000Z",
+          "score": 13
+        },
+        {
+          "title": "Political battle intensifies within Labour over Rosebank oil field",
+          "link": "https://www.bbc.co.uk/news/articles/c6zxj7dvxr5yo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Scottish Labour leader Michael Marra is urging the energy secretary to approve the controversial plans.",
+          "published": "2026-10-26T18:09:49.000Z",
           "score": 4
         },
         {
@@ -103,14 +111,6 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;You’ll need food, water, plastic bags, spare stiff upper lips and a shovel&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2014/jun/16/-sp-first-dog-on-the-moon-subscribe-by-email\"&gt;Sign up here to get an email&lt;/a&gt; whenever First Dog cartoons are published&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://firstdogonthemoon.com.au/shop/\"&gt;Get all your needs met at the First Dog shop&lt;/a&gt; if what you need is First Dog mer",
           "published": "2026-10-26T05:22:12.000Z",
-          "score": 2
-        },
-        {
-          "title": "'Safety first' as wedding guests stranded on island after Storm Boelo",
-          "link": "https://www.bbc.co.uk/news/articles/cqe9lykm93jmo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Wedding guests at an island in County Fermanagh were left stranded due to the storm.",
-          "published": "2026-10-26T15:17:59.000Z",
           "score": 2
         }
       ]
@@ -139,11 +139,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Euro firms against yen, flat vs dollar ahead of central bank meetings - Reuters",
+          "title": "Euro slips ahead of central bank meetings, real tumbles - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWlRGQXNlMDJDS0ZlQnJqVlI0Q3FOUUhyZmpfcUY2TDJNOTA5a0NDMEc5QWpKZ3NrQlZ0QWJSMERlU2wzQlFxcWF0OVFRVlNOSUYydEdiaU5LaTFvVDMxTk5NWTF6NVVFZEdRcW8tOHpZRnlmWDhiRnV3QlllYnVtVldqTGllWmY2RnF1MWVlMFRBT0xWbHliN3pWM3NhQnNzRV80ZHJ5T0M?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWlRGQXNlMDJDS0ZlQnJqVlI0Q3FOUUhyZmpfcUY2TDJNOTA5a0NDMEc5QWpKZ3NrQlZ0QWJSMERlU2wzQlFxcWF0OVFRVlNOSUYydEdiaU5LaTFvVDMxTk5NWTF6NVVFZEdRcW8tOHpZRnlmWDhiRnV3QlllYnVtVldqTGllWmY2RnF1MWVlMFRBT0xWbHliN3pWM3NhQnNzRV80ZHJ5T0M?oc=5\" target=\"_blank\"&gt;Euro firms against yen, flat vs dollar ahead of central bank meetings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWlRGQXNlMDJDS0ZlQnJqVlI0Q3FOUUhyZmpfcUY2TDJNOTA5a0NDMEc5QWpKZ3NrQlZ0QWJSMERlU2wzQlFxcWF0OVFRVlNOSUYydEdiaU5LaTFvVDMxTk5NWTF6NVVFZEdRcW8tOHpZRnlmWDhiRnV3QlllYnVtVldqTGllWmY2RnF1MWVlMFRBT0xWbHliN3pWM3NhQnNzRV80ZHJ5T0M?oc=5\" target=\"_blank\"&gt;Euro slips ahead of central bank meetings, real tumbles&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-26T02:02:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Sterling drops against euro and dollar ahead of UK budget - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOTG1zRmxKejNRVlA2Mm5HTHNDb0g3T3lWVTdYLVRlQWhDamFWbDZrMXp2MmNyZnMtOS1uUDVqZ0RYX2VxWkRwTm55LTAyX0MzUVBWUGE0RVBwRW1LQi1zZ25DX0I2em5jamZRV0lkQWxIS3lyV2VodjJGTldOdzlOLTM0SWdORlBhV2JuNzd1cnFrUDRKZm9SYmNvZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxOTG1zRmxKejNRVlA2Mm5HTHNDb0g3T3lWVTdYLVRlQWhDamFWbDZrMXp2MmNyZnMtOS1uUDVqZ0RYX2VxWkRwTm55LTAyX0MzUVBWUGE0RVBwRW1LQi1zZ25DX0I2em5jamZRV0lkQWxIS3lyV2VodjJGTldOdzlOLTM0SWdORlBhV2JuNzd1cnFrUDRKZm9SYmNvZw?oc=5\" target=\"_blank\"&gt;Sterling drops against euro and dollar ahead of UK budget&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T10:49:43.000Z",
           "score": 8
         },
         {
@@ -155,36 +163,28 @@
           "score": 8
         },
         {
+          "title": "Bank of Canada expected to hike rate on Wednesday to stem spillover of energy inflation - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUXpOXzVmSjQ1YVpWOEdvN2ZtR2xyVmFDTTJxZzhqekRPVGRaVzl3QUV4bFFQYjZUckk0MExrRGZYbUNPd3czSV9yQVNORlFJc19rMm03T3BoNHhVNkRtTnRQckdpM0Q4MUFscWlzU1gtYVhrSUY0SjY1UlMxby00YXROUlJleDc4cXdBS2xFTkJvSHQwTGpwVkN5aVpqZ1dVM081dk9qM3dGSy05Z2kxaGU0TlctSXVMQUpBaGlVckQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUXpOXzVmSjQ1YVpWOEdvN2ZtR2xyVmFDTTJxZzhqekRPVGRaVzl3QUV4bFFQYjZUckk0MExrRGZYbUNPd3czSV9yQVNORlFJc19rMm03T3BoNHhVNkRtTnRQckdpM0Q4MUFscWlzU1gtYVhrSUY0SjY1UlMxby00YXROUlJleDc4cXdBS2xFTkJvSHQwTGpwVkN5aVpqZ1dVM081dk9qM3dGSy05Z2kxaGU0TlctSXVMQUpBaGlVckQ?oc=5\" target=\"_blank\"&gt;Bank of Canada expected to hike rate on Wednesday to stem spillover of energy inflation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-10-26T10:24:33.000Z",
+          "score": 7
+        },
+        {
           "title": "Ather Energy posts first quarterly profit, shares rise 10% - Reuters",
           "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVnhEVHdQMmhvSjlHM0h6dzZuNWJnQi14MW1wa1Q3T1dTekdSaVpxRjVUMGhTWTBHVjF0amdGMkd2ZVNGUDFtTFhXUG54aS0xWU5VYW9nQVZMS05EV2ZQN3RaWjNwYmw4Snh1YTFJckZ2NTd0ZzE4RF9LYmhlQVBUX2xBSl91WlJCY0x0TXQ5Y090YjRKQ19BQWJ1WWYxU1A4bU5OX284WG5MUUF2YTdV?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOVnhEVHdQMmhvSjlHM0h6dzZuNWJnQi14MW1wa1Q3T1dTekdSaVpxRjVUMGhTWTBHVjF0amdGMkd2ZVNGUDFtTFhXUG54aS0xWU5VYW9nQVZMS05EV2ZQN3RaWjNwYmw4Snh1YTFJckZ2NTd0ZzE4RF9LYmhlQVBUX2xBSl91WlJCY0x0TXQ5Y090YjRKQ19BQWJ1WWYxU1A4bU5OX284WG5MUUF2YTdV?oc=5\" target=\"_blank\"&gt;Ather Energy posts first quarterly profit, shares rise 10%&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-26T10:07:57.000Z",
           "score": 7
-        },
-        {
-          "title": "Indonesia energy minister to visit China, India to ensure gasoline supply - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOY3owSDlCRkxMQVhCNmpZSXQtcm1GSHhiZDZFODgtcFowaGhGMU9VQU9OdFdUWE9LMkRESnJSYUFsYVlUcE5PVzl3TFFEYUhHWHhxTGNkdmxJQ0FTU3l6RjN0Q2MxNkdGMUYtOVF0RlpjcVpCN0tfMlZ3UE5JUjA4MVN5MzJjU0NRc3E0a2pJbTBYMVBwbDd0WXVJRUxKLVhZS3RsRHRHMTJ6X005bzZRM3MtdVA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOY3owSDlCRkxMQVhCNmpZSXQtcm1GSHhiZDZFODgtcFowaGhGMU9VQU9OdFdUWE9LMkRESnJSYUFsYVlUcE5PVzl3TFFEYUhHWHhxTGNkdmxJQ0FTU3l6RjN0Q2MxNkdGMUYtOVF0RlpjcVpCN0tfMlZ3UE5JUjA4MVN5MzJjU0NRc3E0a2pJbTBYMVBwbDd0WXVJRUxKLVhZS3RsRHRHMTJ6X005bzZRM3MtdVA?oc=5\" target=\"_blank\"&gt;Indonesia energy minister to visit China, India to ensure gasoline supply&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-26T08:26:44.000Z",
-          "score": 7
-        },
-        {
-          "title": "Japan's Nikkei falls for a 3rd day as tech sector weighs, energy shares rise - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUG42aUpCNmlxUXpHUzRPWFpWWVZZclY2anZvbUZ2cld4eEVRaUtPeHNkMDBCcG9SN0JJY2FaZ3RfMnNzNkZQcUNzc1JWZjhsWUVPSTZaX0Z0UmJ1SWdFQlNFMkx0dEZ3enFJMjZ6TFNCNHhwV19MYldONE44a2lTdERfLXYzMU1xR0ZNTmdURnhNUDFnc3VIOEV4ZWhHTGhxYTBmWUtuOEdyTHRJenR6cTIzajB4SGFxenc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPUG42aUpCNmlxUXpHUzRPWFpWWVZZclY2anZvbUZ2cld4eEVRaUtPeHNkMDBCcG9SN0JJY2FaZ3RfMnNzNkZQcUNzc1JWZjhsWUVPSTZaX0Z0UmJ1SWdFQlNFMkx0dEZ3enFJMjZ6TFNCNHhwV19MYldONE44a2lTdERfLXYzMU1xR0ZNTmdURnhNUDFnc3VIOEV4ZWhHTGhxYTBmWUtuOEdyTHRJenR6cTIzajB4SGFxenc?oc=5\" target=\"_blank\"&gt;Japan's Nikkei falls for a 3rd day as tech sector weighs, energy shares rise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-26T01:27:00.000Z",
-          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 394,
-    "articlesLast24h": 163,
-    "afterDedup": 152,
+    "totalArticlesScanned": 397,
+    "articlesLast24h": 166,
+    "afterDedup": 159,
     "feedsQueried": 19
   }
 }
