@@ -1,26 +1,20 @@
 {
   "date": "2026-10-27",
-  "generatedAt": "2026-10-27T10:18:06.541Z",
+  "generatedAt": "2026-10-27T16:17:39.486Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 27 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Commission launches T-MED Investment Platform with up to €4.5 billion in EU guarantees",
-      "summary": "European Commission Press release Brussels, 26 Oct 2026 Today, the European Commission launched the T-MED Investment Platform, to mobilise large-scale investment in renewable energy and clean technologies across the Mediterranean. The platform is a key component of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED), a flagship initiative of the Pact for the Mediterranean.",
+      "headline": "African governments strengthen waste rules as solar and battery use surges",
+      "summary": "With solar panels, batteries and inverters spreading, officials want to bolster weak recycling systems to protect the environment and reuse key materials The post African governments strengthen waste rules as solar and battery use surges appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive",
-      "summary": "Lula’s re-election makes it more likely Brazil can meet a key goal to end forest loss in the Amazon and builds confidence in a new fund to protect the world's rainforests, experts say The post Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive appeared first on Climate Home News.",
+      "headline": "Factsheet - EU Framework for Climate Resilience",
+      "summary": "European Commission Factsheet Brussels, 27 Oct 2026   Factsheet - EU Framework for Climate Resilience Factsheet - EU Framework for Climate Resilience",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Apollo deepens Abu Dhabi ties with investment in Mubadala Capital - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPcEE4ZE9DeXU0LWNqVVVWRUxKTXFzbmN2ZHlUXzY1czFSZ1VWemlWUkx5N0RfZnlJZGNNeHcxY0ZkRUJkaTZXdzZDWm9FMjl1SXhlVFdSbXVBWnZaRUYzcmhweDVPeldraGJiQW1ueXJBM1pBUUExVHpSMDN1b1lpb3dacU5vNWJna0xJZVBlaWhGWkhWbWxadFF2Q0tTV0RVYjdySjlxTVdGX2p1OUJkdm1vd2pGdmVLY2dic1RnWDNycE5K?oc=5\" target=\"_blank\"&gt;Apollo deepens Abu Dhabi ties with investment in Mubadala Capital&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,14 +28,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Commission launches T-MED Investment Platform with up to €4.5 billion in EU guarantees",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2256",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 26 Oct 2026 Today, the European Commission launched the T-MED Investment Platform, to mobilise large-scale investment in renewable energy and clean technologies across the Mediterranean. The platform is a key component of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED), a flagship initiative of the Pact for the Mediterranean.",
-          "published": "2026-10-26T10:41:12.000Z",
-          "score": 20
-        },
-        {
           "title": "African governments strengthen waste rules as solar and battery use surges",
           "link": "https://www.climatechangenews.com/2026/10/26/african-governments-strengthen-waste-rules-as-solar-and-battery-use-surges/",
           "source": "Climate Home News",
@@ -50,28 +36,28 @@
           "score": 13
         },
         {
-          "title": "Storm Boelo leaves thousands without power as Met Office issues new wind warning",
-          "link": "https://www.bbc.co.uk/news/articles/cqm264jxxnxzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A yellow warning for strong winds came in effect at 18:00 on Monday across the west coast of England, Wales and Scotland and eastern parts of Northern Ireland.",
-          "published": "2026-10-27T04:13:56.000Z",
+          "title": "‘No one saves the planet if it hits their pocket’: UK heat pump installers fear planned subsidy cuts",
+          "link": "https://www.theguardian.com/environment/2026/oct/27/heat-pump-installers-fear-planned-subsidy-cuts-uk-budget",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Boiler upgrade scheme, which provides grants of up to £9,000 for sustainable alternatives, expected to be slashed in budget&lt;/p&gt;&lt;p&gt;When Bill Tuck first started installing air source heat pumps six years ago, other heating engineers were skeptical about whether the green technology would take off. “Now, the conversation is completely different,” he said.&lt;/p&gt;&lt;p&gt;“I’m getting approached by them saying: ‘Mrs Jones, my customer for 15 years, she’s enquiring about a heat",
+          "published": "2026-10-27T11:59:42.000Z",
           "score": 7
         },
         {
-          "title": "Storm Boelo clears but more wind and rain bear down on UK",
-          "link": "https://www.bbc.co.uk/weather/articles/cqwy7w8dryrxo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Another area of low pressure will pass close to the north-west UK with a Met Office yellow wind warning issued for Tuesday.",
-          "published": "2026-10-26T11:21:24.000Z",
-          "score": 7
-        },
-        {
-          "title": "New UK nuclear rules pave way for US reactor developers - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNSlBja091eHd3djdmbGd5MVB1MlRZYU5ZZUlTN1ZEZzNOWnlMMjJnem5zU1dndnVScV9qV1ZBemp1Y0tNTkZfT3I4cjU2bHdLUTBxRFV5LVFkZnRWTWtTaUloSUFXYTZuMVp5NmRGb2hERnBVMGxBRWZjRXpkdElNOXF3Y0NZQjY5bnh0Y3VVOVlZMjZ6N1d0OUJQcGFSWkNQNGg2RHI3SFhBQk9lR2dr?oc=5",
+          "title": "COMMENTARY: US gas boom risks leaving Mexico on energy-transition sidelines - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWGJabWVrUlI1RUZZZHd2UTN0aXhfX2psamxVekdtcldueTgwRzNhNUNZYUZBRUw4WHlLQldUem1ieDEtSkQ4bkJTdUZra1RpQmI4WmtnaVc0aEo2YTBkdXpyeDdpaUJrX3hhRU55cFozdDZUenByM3pSS1FJS0doVGxBOVJIZDVnZG8wVTRNUElyQ0hqSnc3YTVvMGRLUGR6SWVrQ0FMaU5ySGZwc3ZYdUpKczhLbF9NZWJZbWMxWWp4YXU3QVlJQw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNSlBja091eHd3djdmbGd5MVB1MlRZYU5ZZUlTN1ZEZzNOWnlMMjJnem5zU1dndnVScV9qV1ZBemp1Y0tNTkZfT3I4cjU2bHdLUTBxRFV5LVFkZnRWTWtTaUloSUFXYTZuMVp5NmRGb2hERnBVMGxBRWZjRXpkdElNOXF3Y0NZQjY5bnh0Y3VVOVlZMjZ6N1d0OUJQcGFSWkNQNGg2RHI3SFhBQk9lR2dr?oc=5\" target=\"_blank\"&gt;New UK nuclear rules pave way for US reactor developers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-26T13:42:48.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWGJabWVrUlI1RUZZZHd2UTN0aXhfX2psamxVekdtcldueTgwRzNhNUNZYUZBRUw4WHlLQldUem1ieDEtSkQ4bkJTdUZra1RpQmI4WmtnaVc0aEo2YTBkdXpyeDdpaUJrX3hhRU55cFozdDZUenByM3pSS1FJS0doVGxBOVJIZDVnZG8wVTRNUElyQ0hqSnc3YTVvMGRLUGR6SWVrQ0FMaU5ySGZwc3ZYdUpKczhLbF9NZWJZbWMxWWp4YXU3QVlJQw?oc=5\" target=\"_blank\"&gt;COMMENTARY: US gas boom risks leaving Mexico on energy-transition sidelines&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-10-27T11:01:23.000Z",
           "score": 7
+        },
+        {
+          "title": "Bottled water and tinned food sales surge after UK government issues emergency stockpile advice",
+          "link": "https://www.theguardian.com/society/2026/oct/27/bottled-water-and-tinned-food-sales-surge-after-uk-government-issues-emergency-stockpile-advice",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Retailers also report jump in purchases of wind-up radios and torches to deal with extreme weather and cyber-attacks&lt;/p&gt;&lt;p&gt;Sales of tinned foods, bottled water, wind-up radios and torches have surged after the UK government advised households to &lt;a href=\"https://www.theguardian.com/politics/2026/oct/22/britain-prepare-infrastructure-attacks-hostile-states-wes-streeting\"&gt;prepare for emergencies&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Retailers have reported a jump in sales of item",
+          "published": "2026-10-27T15:49:17.000Z",
+          "score": 4
         }
       ]
     },
@@ -79,6 +65,22 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Factsheet - EU Framework for Climate Resilience",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/fs_26_2246",
+          "source": "European Commission",
+          "description": "European Commission Factsheet Brussels, 27 Oct 2026   Factsheet - EU Framework for Climate Resilience Factsheet - EU Framework for Climate Resilience",
+          "published": "2026-10-26T23:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "National climate plans now promise half the emission cuts expected by UN",
+          "link": "https://www.climatechangenews.com/2026/10/27/national-climate-plans-now-promise-half-the-emission-cuts-expected-by-un/",
+          "source": "Climate Home News",
+          "description": "The US exit from the Paris Agreement and weak new pledges leave 2035 emissions just 6% below 2019 levels, against 12% projected last year The post National climate plans now promise half the emission cuts expected by UN appeared first on Climate Home News.",
+          "published": "2026-10-27T13:51:00.000Z",
+          "score": 13
+        },
         {
           "title": "Lula&#8217;s election win in Brazil raises hopes for zero deforestation drive",
           "link": "https://www.climatechangenews.com/2026/10/26/lulas-election-win-in-brazil-raises-hopes-for-zero-deforestation-drive/",
@@ -88,63 +90,62 @@
           "score": 13
         },
         {
+          "title": "Guest post: Greenland ice sheet shrinks for 30th year in a row",
+          "link": "https://www.carbonbrief.org/guest-post-greenland-ice-sheet-shrinks-for-30th-year-in-a-row",
+          "source": "Carbon Brief",
+          "description": "Greenland has now marked the 30th consecutive year where it lost more ice than it gained.&#160; Over the 12-month period&#8230; The post Guest post: Greenland ice sheet shrinks for 30th year in a row appeared first on Carbon Brief.",
+          "published": "2026-10-27T14:07:31.000Z",
+          "score": 10
+        },
+        {
           "title": "Burnham in danger of sleepwalking into climate disaster, say campaigners",
           "link": "https://www.theguardian.com/environment/2026/oct/27/burnham-sleepwalking-climate-disaster-campaigners",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Letter to PM argues series of wrong choices on North Sea oil, Heathrow, EVs and heat pumps will scupper net zero plans&lt;/p&gt;&lt;p&gt;Andy Burnham will “sleepwalk” into climate disaster if he fails to get a grip on a series of important policies whose combined impact could scupper plans to reach net zero, campaigners have said.&lt;/p&gt;&lt;p&gt;Big decisions on &lt;a href=\"https://www.theguardian.com/environment/2026/oct/21/energy-secretary-leaning-towards-rejecting-rosebank-oilfiel",
           "published": "2026-10-27T07:00:06.000Z",
           "score": 7
-        },
-        {
-          "title": "Super-rich get ‘double dividend’ from causes and costs of climate crisis, report finds",
-          "link": "https://www.theguardian.com/environment/2026/oct/27/super-rich-double-dividend-climate-crisis-oxfam",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Oxfam says investing by rich in disaster recovery widens inequality and gives incentive to delay climate action&lt;/p&gt;&lt;p&gt;The world’s wealthiest people are not just profiting from the polluting causes of climate breakdown, they are also increasingly cashing in on the catastrophic consequences, according to a study by Oxfam.&lt;/p&gt;&lt;p&gt;The global equality organisation has found that the richest 0.1% of the world’s population are heavily invested in disaster preparedness, r",
-          "published": "2026-10-27T05:00:02.000Z",
-          "score": 7
-        },
-        {
-          "title": "Political battle intensifies within Labour over Rosebank oil field",
-          "link": "https://www.bbc.co.uk/news/articles/c6zxj7dvxr5yo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Scottish Labour leader Michael Marra is urging the energy secretary to approve the controversial plans.",
-          "published": "2026-10-26T18:09:49.000Z",
-          "score": 4
-        },
-        {
-          "title": "Melting glaciers in Dolomites reveal cache of first world war munitions",
-          "link": "https://www.theguardian.com/world/2026/oct/27/melting-glaciers-dolomites-first-world-war-munitions-italy",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Italian army removes and defuses 250 explosives encased in ice for more than 100 years after hikers’ sightings&lt;/p&gt;&lt;p&gt;A significant cache of unexploded bombs from the first world war emerged this summer from rapidly retreating glaciers in the Dolomites, the Italian army has said.&lt;/p&gt;&lt;p&gt;The devices, which included Italian artillery shells and French mortar bombs, were removed and defused by the army’s Julia Alpine brigade, according to a statement.&lt;/p&gt; &lt;a ",
-          "published": "2026-10-27T07:00:04.000Z",
-          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Apollo deepens Abu Dhabi ties with investment in Mubadala Capital - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPcEE4ZE9DeXU0LWNqVVVWRUxKTXFzbmN2ZHlUXzY1czFSZ1VWemlWUkx5N0RfZnlJZGNNeHcxY0ZkRUJkaTZXdzZDWm9FMjl1SXhlVFdSbXVBWnZaRUYzcmhweDVPeldraGJiQW1ueXJBM1pBUUExVHpSMDN1b1lpb3dacU5vNWJna0xJZVBlaWhGWkhWbWxadFF2Q0tTV0RVYjdySjlxTVdGX2p1OUJkdm1vd2pGdmVLY2dic1RnWDNycE5K?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPcEE4ZE9DeXU0LWNqVVVWRUxKTXFzbmN2ZHlUXzY1czFSZ1VWemlWUkx5N0RfZnlJZGNNeHcxY0ZkRUJkaTZXdzZDWm9FMjl1SXhlVFdSbXVBWnZaRUYzcmhweDVPeldraGJiQW1ueXJBM1pBUUExVHpSMDN1b1lpb3dacU5vNWJna0xJZVBlaWhGWkhWbWxadFF2Q0tTV0RVYjdySjlxTVdGX2p1OUJkdm1vd2pGdmVLY2dic1RnWDNycE5K?oc=5\" target=\"_blank\"&gt;Apollo deepens Abu Dhabi ties with investment in Mubadala Capital&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-26T14:33:59.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "EU seeks to widen market access to counter trade restrictions, Germany's Merz says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSkZSOUw3U0tLdEdHZUF4ckFzWXBYOTVzSThCRFU4a1B5dWFXSG9jLTNZanJGOXo1Q0ktS3FFeUpJMEpUMkhPOVl0RTVPalVrYlZOS0hGM09ISWxyMmZuVUE0dmp6RTEzZHA1N3BiUHRYbUw4eUw5WTdOZm9ZdWo3ZjBoQ1B4WlVqbVdMYW85TkFSSFY2SFI4MHA1OS1ZX0t6Z191MGEwRUkwOHRxQmtlYQ?oc=5",
+          "title": "Myanmar: Is US undermining EU&#039;s diplomatic blockade?",
+          "link": "https://www.dw.com/en/myanmar-is-us-undermining-eu-s-diplomatic-blockade/a-79778863?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "With the US reopening talks with Myanmar&#039;s military-backed government and several Southeast Asian countries restarting diplomatic contacts, the EU is facing uncomfortable questions about its own boycott of the junta.",
+          "published": "2026-10-27T15:16:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Denmark&#039;s Frederiksen criticizes Finland and Norway for calling Putin without coordinating with allies, despite consultation with Ukraine",
+          "link": "https://www.dw.com/en/denmark-s-frederiksen-criticizes-finland-and-norway-for-calling-putin-without-coordinating-with-allies-despite-consultation-with-ukraine/a-79776208?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Finland and Norway have called Putin about ending the Ukraine war, drawing Danish criticism. The dispute highlights divisions over European engagement with Moscow ahead of planned US-led peace talks.",
+          "published": "2026-10-27T12:54:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Germany&#039;s Merz says erosion of global order means middle powers in Europe and Asia must be more assertive",
+          "link": "https://www.dw.com/en/germany-s-merz-says-erosion-of-global-order-means-middle-powers-in-europe-and-asia-must-be-more-assertive/live-79772992?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "During a visit to Singapore, German Chancellor Friedrich Merz said Europe and Germany want to increase free trade with open competition, reliability and a rules-based order.",
+          "published": "2026-10-27T09:49:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNVc2emkxZkxNNXJ3U2E3TTJ5UVhOSGJHQnZKYzZuSjFOVXZiaC1QVkc4dE9pMWJsd2RteE50M1czVlBhN1dRNWhjUjc4VUpNRXVjZ3RrdklENUVTWWNtVVlHQXExRE9DZGZBUXdaRnVOb3RXNlFHY3NVbThyNWRFME9fMElTR19iclFxaUczRkpaOGphRXVlMENMM2tHdWNnUHZKXzl5YWctYVcxLVhEdXhtLTVjcEtab1o3ZnVvaFBDdw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQSkZSOUw3U0tLdEdHZUF4ckFzWXBYOTVzSThCRFU4a1B5dWFXSG9jLTNZanJGOXo1Q0ktS3FFeUpJMEpUMkhPOVl0RTVPalVrYlZOS0hGM09ISWxyMmZuVUE0dmp6RTEzZHA1N3BiUHRYbUw4eUw5WTdOZm9ZdWo3ZjBoQ1B4WlVqbVdMYW85TkFSSFY2SFI4MHA1OS1ZX0t6Z191MGEwRUkwOHRxQmtlYQ?oc=5\" target=\"_blank\"&gt;EU seeks to widen market access to counter trade restrictions, Germany's Merz says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-27T04:07:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNVc2emkxZkxNNXJ3U2E3TTJ5UVhOSGJHQnZKYzZuSjFOVXZiaC1QVkc4dE9pMWJsd2RteE50M1czVlBhN1dRNWhjUjc4VUpNRXVjZ3RrdklENUVTWWNtVVlHQXExRE9DZGZBUXdaRnVOb3RXNlFHY3NVbThyNWRFME9fMElTR19iclFxaUczRkpaOGphRXVlMENMM2tHdWNnUHZKXzl5YWctYVcxLVhEdXhtLTVjcEtab1o3ZnVvaFBDdw?oc=5\" target=\"_blank\"&gt;Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-27T12:36:01.000Z",
           "score": 8
         },
         {
@@ -154,14 +155,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxNRWRKSlpLR3l4cENjelFuU0tPXzRLc21PTTZ4QUpCNHBnZDZ0MW85NFVpYnlvLXhiaFQ3SnZ3aDhEZXRfOXg3LURobjdQWHAtSGNKalZMcVNhWGRCeDRpYzVYb1BTOXZydlFJVVFqbXRaWDlsbUozS0lSc1BsUDdhaWRuV3dpUDFFT3VXRjg4cklMT3NvOEs4T1hOX0lvUC1Yek5kcXd0TmhIaUItS3RVRFUxejN1amZIMmJmcHE3M0k5VGVGOGs3LU5GTWk3R0ZCNzBURk41dw?oc=5\" target=\"_blank\"&gt;USTR Greer tells EU that loan to Airbus threatens trade truce on aircraft financing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6",
           "published": "2026-10-27T00:54:00.000Z",
           "score": 8
-        },
-        {
-          "title": "Why Ukraine may be involved in Mali&#039;s conflict",
-          "link": "https://www.dw.com/en/why-ukraine-may-be-involved-in-mali-s-conflict/a-79743423?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Allegations that Ukrainian specialists are supporting Tuareg rebels in Mali highlight Kyiv&#039;s effort to challenge Russian influence far beyond the battlefield in Europe.",
-          "published": "2026-10-26T14:58:00.000Z",
-          "score": 4
         }
       ]
     },
@@ -170,52 +163,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Germany news: Fall of global order threatens Europe, Asia, Merz says",
-          "link": "https://www.dw.com/en/germany-news-fall-of-global-order-threatens-europe-asia-merz-says/live-79772992?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "During a visit to Singapore, German Chancellor Friedrich Merz spoke about how the erosion of world order presents a threat to the interests of both European and Asian nations.",
-          "published": "2026-10-27T09:49:00.000Z",
+          "title": "Britain and EU finding way through 'Made in Europe' concerns, UK minister says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQdW5Ib200d0FJeEsydzhRVmxNSXR3MFlFeHFKeV9lWVJTX1BoMUlqT2dPOU5PcS13TzhBdlh6eE0zM0N1aU9GaElNOWVZWXgzaXJyT09MY1hrQU5pM1YtZkFHbmVyeFcxc2ZISlZKdGYyUDRmREpVRTE4STVLS3R5dVlLMDlkM05oWEdMUFZyVGJKWlBpZVlJNzVqS2VkSzNKMy11QUlhcTZsN3dOMEwxeWNHVQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQdW5Ib200d0FJeEsydzhRVmxNSXR3MFlFeHFKeV9lWVJTX1BoMUlqT2dPOU5PcS13TzhBdlh6eE0zM0N1aU9GaElNOWVZWXgzaXJyT09MY1hrQU5pM1YtZkFHbmVyeFcxc2ZISlZKdGYyUDRmREpVRTE4STVLS3R5dVlLMDlkM05oWEdMUFZyVGJKWlBpZVlJNzVqS2VkSzNKMy11QUlhcTZsN3dOMEwxeWNHVQ?oc=5\" target=\"_blank\"&gt;Britain and EU finding way through 'Made in Europe' concerns, UK minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-27T08:08:11.000Z",
           "score": 8
         },
         {
-          "title": "Sterling drops against euro and dollar ahead of UK budget - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOTG1zRmxKejNRVlA2Mm5HTHNDb0g3T3lWVTdYLVRlQWhDamFWbDZrMXp2MmNyZnMtOS1uUDVqZ0RYX2VxWkRwTm55LTAyX0MzUVBWUGE0RVBwRW1LQi1zZ25DX0I2em5jamZRV0lkQWxIS3lyV2VodjJGTldOdzlOLTM0SWdORlBhV2JuNzd1cnFrUDRKZm9SYmNvZw?oc=5",
+          "title": "World to add less clean energy capacity this year, renewables agency chief says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQV01DdmUtSFViX0RVSWlQX2o2OFBfM0gzRml3SU5GVWVCeU10bElSWXowNlFyZmhRekRRYkpSWVBDZDRPUHRSR3Z3S2d5MVZ6MGNYdUp3NHVDSlJDczhySGN1V3g4LVZmX3oxQjhfSXVwNGtMZXRHOE5OYjg0VXNua0w2WGhETnprNjFWcE93LWNxbkR0VnhYYk1GWW5sQjAzWGxxQjFSLUJLX0QwRHp3Z2lrSzVWcUdmRUZoTVo0TmdnZTBsNFE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxOTG1zRmxKejNRVlA2Mm5HTHNDb0g3T3lWVTdYLVRlQWhDamFWbDZrMXp2MmNyZnMtOS1uUDVqZ0RYX2VxWkRwTm55LTAyX0MzUVBWUGE0RVBwRW1LQi1zZ25DX0I2em5jamZRV0lkQWxIS3lyV2VodjJGTldOdzlOLTM0SWdORlBhV2JuNzd1cnFrUDRKZm9SYmNvZw?oc=5\" target=\"_blank\"&gt;Sterling drops against euro and dollar ahead of UK budget&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-26T10:49:43.000Z",
-          "score": 8
-        },
-        {
-          "title": "Sweden's Centre leader hands task of forming government back to parliament speaker - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTko5bG1uRkNGLWNkZFFXVHVCRGdiRkloLXZMZjBPU3VQRmN4ckFHaUN2SGlQdzBCMnpTMTNYN0lJN1ppaUxkMmhRT2lvd0hHSmg1MldMbVBTdzFORWN1X1JGbllIQkQwcDhjYldWR3Y4SnNoNU1nSFpSMXNFYjdjSldaYlo5dGVFeTI3dFdIQlFoQ1Fpd2d0NW9mc3k5bG5YckVfbFZCUWlzTHFDdkhRNW5OazB5bWhW?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTko5bG1uRkNGLWNkZFFXVHVCRGdiRkloLXZMZjBPU3VQRmN4ckFHaUN2SGlQdzBCMnpTMTNYN0lJN1ppaUxkMmhRT2lvd0hHSmg1MldMbVBTdzFORWN1X1JGbllIQkQwcDhjYldWR3Y4SnNoNU1nSFpSMXNFYjdjSldaYlo5dGVFeTI3dFdIQlFoQ1Fpd2d0NW9mc3k5bG5YckVfbFZCUWlzTHFDdkhRNW5OazB5bWhW?oc=5\" target=\"_blank\"&gt;Sweden's Centre leader hands task of forming government back to parliament speaker&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-26T11:05:42.000Z",
-          "score": 8
-        },
-        {
-          "title": "Volkswagen considers using Chinese software for Europe, report says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNOVlmcnJkZWZuVFk1VUpHSnJWbG5YdXFocWVOT2RPU2J3anBNRml5OXVjcmJscE5FYVVaeTVWYVRNMVhPbG9kWWFjTTJtTHJ1eW93QW81cWRCWFFJaDVKaHhjTVJoYkFrUWk1V0sxbC1hVUhUcWhfOV9GQnZUS2Z6b0JtOTBlVzZnLXViRlBQNjBGalgtZHYzcmhqNGVMZWxLOUN0Qk4wZnZzdFhKR3dyYm95OTN0T0FzRVdyeXhZMnhxNU1QUm1F?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNOVlmcnJkZWZuVFk1VUpHSnJWbG5YdXFocWVOT2RPU2J3anBNRml5OXVjcmJscE5FYVVaeTVWYVRNMVhPbG9kWWFjTTJtTHJ1eW93QW81cWRCWFFJaDVKaHhjTVJoYkFrUWk1V0sxbC1hVUhUcWhfOV9GQnZUS2Z6b0JtOTBlVzZnLXViRlBQNjBGalgtZHYzcmhqNGVMZWxLOUN0Qk4wZnZzdFhKR3dyYm95OTN0T0FzRVdyeXhZMnhxNU1QUm1F?oc=5\" target=\"_blank\"&gt;Volkswagen considers using Chinese software for Europe, report says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-26T16:45:22.000Z",
-          "score": 8
-        },
-        {
-          "title": "Bank of Canada expected to hike rate on Wednesday to stem spillover of energy inflation - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUXpOXzVmSjQ1YVpWOEdvN2ZtR2xyVmFDTTJxZzhqekRPVGRaVzl3QUV4bFFQYjZUckk0MExrRGZYbUNPd3czSV9yQVNORlFJc19rMm03T3BoNHhVNkRtTnRQckdpM0Q4MUFscWlzU1gtYVhrSUY0SjY1UlMxby00YXROUlJleDc4cXdBS2xFTkJvSHQwTGpwVkN5aVpqZ1dVM081dk9qM3dGSy05Z2kxaGU0TlctSXVMQUpBaGlVckQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUXpOXzVmSjQ1YVpWOEdvN2ZtR2xyVmFDTTJxZzhqekRPVGRaVzl3QUV4bFFQYjZUckk0MExrRGZYbUNPd3czSV9yQVNORlFJc19rMm03T3BoNHhVNkRtTnRQckdpM0Q4MUFscWlzU1gtYVhrSUY0SjY1UlMxby00YXROUlJleDc4cXdBS2xFTkJvSHQwTGpwVkN5aVpqZ1dVM081dk9qM3dGSy05Z2kxaGU0TlctSXVMQUpBaGlVckQ?oc=5\" target=\"_blank\"&gt;Bank of Canada expected to hike rate on Wednesday to stem spillover of energy inflation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-10-26T10:24:33.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQV01DdmUtSFViX0RVSWlQX2o2OFBfM0gzRml3SU5GVWVCeU10bElSWXowNlFyZmhRekRRYkpSWVBDZDRPUHRSR3Z3S2d5MVZ6MGNYdUp3NHVDSlJDczhySGN1V3g4LVZmX3oxQjhfSXVwNGtMZXRHOE5OYjg0VXNua0w2WGhETnprNjFWcE93LWNxbkR0VnhYYk1GWW5sQjAzWGxxQjFSLUJLX0QwRHp3Z2lrSzVWcUdmRUZoTVo0TmdnZTBsNFE?oc=5\" target=\"_blank\"&gt;World to add less clean energy capacity this year, renewables agency chief says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-10-27T15:26:05.000Z",
           "score": 7
+        },
+        {
+          "title": "Algeria to deploy army units to Niger to protect energy and economic interests - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPOTFrSWZjQ0E0MUdTd05BVGstWk9FNUhCNTZiN21BZEhIX3B1MHgzZDdrSzFsSGt2Q2xZMGEtODdIMm5qbUNwR2EzSXpuNnFJZUk4QmZZbF9NeURyVE1yRGU2Wk5icVJOdHUzNll2ZFh5VGxIQTFpbi1vOUg3VmJLUEdpN0dzMm1Dbzl0Vi1QaUhNMGIzdmZ3UUxTUmhFZkxOVXQ5MktseVZSdHczTWg2U2V5SGdyOWtTZGJPSXZCTm5JUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPOTFrSWZjQ0E0MUdTd05BVGstWk9FNUhCNTZiN21BZEhIX3B1MHgzZDdrSzFsSGt2Q2xZMGEtODdIMm5qbUNwR2EzSXpuNnFJZUk4QmZZbF9NeURyVE1yRGU2Wk5icVJOdHUzNll2ZFh5VGxIQTFpbi1vOUg3VmJLUEdpN0dzMm1Dbzl0Vi1QaUhNMGIzdmZ3UUxTUmhFZkxOVXQ5MktseVZSdHczTWg2U2V5SGdyOWtTZGJPSXZCTm5JUQ?oc=5\" target=\"_blank\"&gt;Algeria to deploy army units to Niger to protect energy and economic interests&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-26T17:46:40.000Z",
+          "score": 7
+        },
+        {
+          "title": "Turnout so far highest on record as Israelis vote in pivotal election",
+          "link": "https://www.bbc.co.uk/news/articles/c3j47l4kdez4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The elections - the first since the Hamas-led attacks on Israel and the wars which followed - are widely seen as a referendum on Benjamin Netanyahu.",
+          "published": "2026-10-27T11:11:33.000Z",
+          "score": 6
+        },
+        {
+          "title": "Turnout at Israel&#039;s election has reached a record high at the halfway stage",
+          "link": "https://www.dw.com/en/turnout-at-israel-s-election-has-reached-a-record-high-at-the-halfway-stage/live-79713839?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Almost 45% of the electorate had voted by 2 p.m., the highest share since such records began in 1973. The highly anticipated vote is expected to be a close-fought contest, and perhaps even a stalemate.",
+          "published": "2026-10-27T14:35:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 397,
-    "articlesLast24h": 164,
-    "afterDedup": 154,
+    "totalArticlesScanned": 395,
+    "articlesLast24h": 172,
+    "afterDedup": 159,
     "feedsQueried": 19
   }
 }
