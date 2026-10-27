@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T10:21:03.628Z",
+  "generatedAt": "2026-10-27T09:55:42.504Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -384,26 +384,6 @@
           "matched": [
             "greenhouse gas emissions",
             "decarbonization"
-          ]
-        }
-      ]
-    },
-    {
-      "doi": "10.1080/14693062.2026.2722557",
-      "title": "Institutional compression in climate policy integration: coordinating green electricity certificates and carbon emissions trading in China",
-      "journal": "Climate Policy",
-      "authors": "Yu Tian, Bangjun Wang",
-      "published": "2026-08-27",
-      "url": "https://doi.org/10.1080/14693062.2026.2722557",
-      "abstract": "",
-      "suggestedOn": "2026-08-27",
-      "projects": [
-        {
-          "projectId": "policy-gap-2-0",
-          "score": 6,
-          "matched": [
-            "emissions trading",
-            "climate policy integration"
           ]
         }
       ]
