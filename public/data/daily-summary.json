@@ -1,18 +1,18 @@
 {
-  "date": "2026-10-27",
-  "generatedAt": "2026-10-27T21:12:07.950Z",
+  "date": "2026-10-28",
+  "generatedAt": "2026-10-28T02:06:00.063Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Tuesday, 27 October 2026 — Key developments from the last 24 hours",
+  "subtitle": "Wednesday, 28 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Homes across UK to get low- or no-interest loans to fund solar panels and heat pumps",
-      "summary": "&lt;p&gt;Government-backed Warm Home Loans scheme to help households cut energy bills by hundreds of pounds&lt;/p&gt;&lt;p&gt;Households across the UK can now cut their energy bills by hundreds of pounds a year at no upfront cost by applying for interest-free or “low-interest” loans to fund upgrades such as heat pumps, batteries and solar panels.&lt;/p&gt;&lt;p&gt;The government-backed Warm Home Loans scheme, which launched on Tuesday, could mean thousands more households are able to access low-",
+      "headline": "Plan for multibillion-pound Sizewell nuclear plant a ‘terrible deal’ for UK taxpayers, MPs say",
+      "summary": "&lt;p&gt;The public accounts committee has said the risk to billpayers is ‘extraordinary’&lt;/p&gt;&lt;p&gt;The government’s plan to fund a multibillion-pound nuclear plant at the Sizewell site in Suffolk represents a “terrible deal” for the UK taxpayer over the rest of the century, according to the government’s spending watchdog.&lt;/p&gt;&lt;p&gt;MPs on the public accounts committee (PAC) have warned the government that the cost of the Sizewell C nuclear reactor could spiral to almost £48bn, l",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Factsheet - EU Framework for Climate Resilience",
-      "summary": "European Commission Factsheet Brussels, 27 Oct 2026   Factsheet - EU Framework for Climate Resilience Factsheet - EU Framework for Climate Resilience",
+      "headline": "Commissioner Roswall's speech at the event, ‘From Principles to International Cooperation: Mobilising Biodiversity Finance through High-Integrity Nature Credits'",
+      "summary": "European Commission Speech Yerevan, 27 Oct 2026 Excellencies, Ministers, Executive Secretary Schomaker, distinguished guests, Ladies and gentlemen,\r\nI am delighted to welcome you to today's high-level event, t...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -27,6 +27,22 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Plan for multibillion-pound Sizewell nuclear plant a ‘terrible deal’ for UK taxpayers, MPs say",
+          "link": "https://www.theguardian.com/business/2026/oct/28/plan-for-multibillion-pound-sizewell-nuclear-plant-a-terrible-deal-for-uk-taxpayers-mps-say",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;The public accounts committee has said the risk to billpayers is ‘extraordinary’&lt;/p&gt;&lt;p&gt;The government’s plan to fund a multibillion-pound nuclear plant at the Sizewell site in Suffolk represents a “terrible deal” for the UK taxpayer over the rest of the century, according to the government’s spending watchdog.&lt;/p&gt;&lt;p&gt;MPs on the public accounts committee (PAC) have warned the government that the cost of the Sizewell C nuclear reactor could spiral to almost £48bn, l",
+          "published": "2026-10-28T00:01:47.000Z",
+          "score": 11
+        },
+        {
+          "title": "Trump says government to ‘terminate’ Biden-era methane emissions rules",
+          "link": "https://www.theguardian.com/us-news/2026/oct/27/trump-biden-era-methane-emissions-rules-oil-gas",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Critics warn of climate danger as president in Texas claims change will save companies and consumers billions&lt;/p&gt;&lt;p&gt;Donald Trump announced his administration is “terminating” Biden-era regulations holding oil and gas companies accountable for large leaks of planet-warming methane during a rally in Lubbock, Texas, on Tuesday evening.&lt;/p&gt;&lt;p&gt;Trump said during a campaign rally in Texas that the change would save consumers and energy producers $45bn and unlock 210 mil",
+          "published": "2026-10-28T01:45:27.000Z",
+          "score": 7
+        },
         {
           "title": "Homes across UK to get low- or no-interest loans to fund solar panels and heat pumps",
           "link": "https://www.theguardian.com/environment/2026/oct/27/homes-across-uk-to-get-low--or-no-interest-loans-to-fund-solar-panels-and-heat-pumps",
@@ -50,14 +66,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWGJabWVrUlI1RUZZZHd2UTN0aXhfX2psamxVekdtcldueTgwRzNhNUNZYUZBRUw4WHlLQldUem1ieDEtSkQ4bkJTdUZra1RpQmI4WmtnaVc0aEo2YTBkdXpyeDdpaUJrX3hhRU55cFozdDZUenByM3pSS1FJS0doVGxBOVJIZDVnZG8wVTRNUElyQ0hqSnc3YTVvMGRLUGR6SWVrQ0FMaU5ySGZwc3ZYdUpKczhLbF9NZWJZbWMxWWp4YXU3QVlJQw?oc=5\" target=\"_blank\"&gt;COMMENTARY: US gas boom risks leaving Mexico on energy-transition sidelines&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
           "published": "2026-10-27T11:01:23.000Z",
           "score": 7
-        },
-        {
-          "title": "Bottled water and tinned food sales surge after UK government issues emergency stockpile advice",
-          "link": "https://www.theguardian.com/society/2026/oct/27/bottled-water-and-tinned-food-sales-surge-after-uk-government-issues-emergency-stockpile-advice",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Retailers also report jump in purchases of wind-up radios and torches to deal with extreme weather and cyber-attacks&lt;/p&gt;&lt;p&gt;Sales of tinned foods, bottled water, wind-up radios and torches have surged after the UK government advised households to &lt;a href=\"https://www.theguardian.com/politics/2026/oct/22/britain-prepare-infrastructure-attacks-hostile-states-wes-streeting\"&gt;prepare for emergencies&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Retailers have reported a jump in sales of item",
-          "published": "2026-10-27T15:49:17.000Z",
-          "score": 4
         }
       ]
     },
@@ -65,14 +73,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Factsheet - EU Framework for Climate Resilience",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/fs_26_2246",
-          "source": "European Commission",
-          "description": "European Commission Factsheet Brussels, 27 Oct 2026   Factsheet - EU Framework for Climate Resilience Factsheet - EU Framework for Climate Resilience",
-          "published": "2026-10-26T23:00:00.000Z",
-          "score": 23
-        },
         {
           "title": "Commissioner Roswall's speech at the event, ‘From Principles to International Cooperation: Mobilising Biodiversity Finance through High-Integrity Nature Credits'",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2276",
@@ -104,6 +104,14 @@
           "description": "Greenland has now marked the 30th consecutive year where it lost more ice than it gained.&#160; Over the 12-month period&#8230; The post Guest post: Greenland ice sheet shrinks for 30th year in a row appeared first on Carbon Brief.",
           "published": "2026-10-27T14:07:31.000Z",
           "score": 10
+        },
+        {
+          "title": "Burnham in danger of sleepwalking into climate disaster, say campaigners",
+          "link": "https://www.theguardian.com/environment/2026/oct/27/burnham-sleepwalking-climate-disaster-campaigners",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Letter to PM argues series of wrong choices on North Sea oil, Heathrow, EVs and heat pumps will scupper net zero plans&lt;/p&gt;&lt;p&gt;Andy Burnham will “sleepwalk” into climate disaster if he fails to get a grip on a series of important policies whose combined impact could scupper plans to reach net zero, campaigners have said.&lt;/p&gt;&lt;p&gt;Big decisions on &lt;a href=\"https://www.theguardian.com/environment/2026/oct/21/energy-secretary-leaning-towards-rejecting-rosebank-oilfiel",
+          "published": "2026-10-27T07:00:06.000Z",
+          "score": 7
         }
       ]
     },
@@ -163,6 +171,14 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "Poland to host European Patriot maintenance centre, government says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQX1JiMjhCNDBXTTQxOUpWUXh0QXBlUjJLMWZQNEVQQ3Jjel9qa1RRNmV4aTRYYkNIV2p5MW1FLTFySTJYX0kxTEk3ZG1STzkzRExJSUNvaHhDN1dtZ2lmR0pJcDhDZVhKdjdhUzF4WGFyeFMtSG9UbFlkR0IxbVlrc3M0MXMzZC1ia2xuMjBNUGFUNGdBS1Y3WkVjVXBmLVR2YmFJNXdPdTI?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQX1JiMjhCNDBXTTQxOUpWUXh0QXBlUjJLMWZQNEVQQ3Jjel9qa1RRNmV4aTRYYkNIV2p5MW1FLTFySTJYX0kxTEk3ZG1STzkzRExJSUNvaHhDN1dtZ2lmR0pJcDhDZVhKdjdhUzF4WGFyeFMtSG9UbFlkR0IxbVlrc3M0MXMzZC1ia2xuMjBNUGFUNGdBS1Y3WkVjVXBmLVR2YmFJNXdPdTI?oc=5\" target=\"_blank\"&gt;Poland to host European Patriot maintenance centre, government says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-27T17:15:41.000Z",
+          "score": 8
+        },
+        {
           "title": "Britain and EU finding way through 'Made in Europe' concerns, UK minister says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQdW5Ib200d0FJeEsydzhRVmxNSXR3MFlFeHFKeV9lWVJTX1BoMUlqT2dPOU5PcS13TzhBdlh6eE0zM0N1aU9GaElNOWVZWXgzaXJyT09MY1hrQU5pM1YtZkFHbmVyeFcxc2ZISlZKdGYyUDRmREpVRTE4STVLS3R5dVlLMDlkM05oWEdMUFZyVGJKWlBpZVlJNzVqS2VkSzNKMy11QUlhcTZsN3dOMEwxeWNHVQ?oc=5",
           "source": "Reuters World (via Google News)",
@@ -171,11 +187,11 @@
           "score": 8
         },
         {
-          "title": "Poland to host European Patriot maintenance centre, government says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQX1JiMjhCNDBXTTQxOUpWUXh0QXBlUjJLMWZQNEVQQ3Jjel9qa1RRNmV4aTRYYkNIV2p5MW1FLTFySTJYX0kxTEk3ZG1STzkzRExJSUNvaHhDN1dtZ2lmR0pJcDhDZVhKdjdhUzF4WGFyeFMtSG9UbFlkR0IxbVlrc3M0MXMzZC1ia2xuMjBNUGFUNGdBS1Y3WkVjVXBmLVR2YmFJNXdPdTI?oc=5",
+          "title": "Thousands rally outside Portugal's parliament over housing crisis, police operations - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPcVVMNDA5ellNRWdhT0pZeklKSC14Ulo1cUtpR2ZtbzVsSDZVc0VvaE9GNDZBaWVaTmxOaWpRb0k2cWZCU3BzblA3TEZ2ZXcyM0dzWWhPRm82T01XZjlMb19jWlpwdi10dXFNREYwQ3RrdEJIQTVpemFralRvekZRZE9FRTdLZHpob1N3aGpFOGVkMHp6SW5qVnIzU0JMc2d5MVRpM2VjR0tYd09SYWJXWnRjY3EzS183elNWeg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQX1JiMjhCNDBXTTQxOUpWUXh0QXBlUjJLMWZQNEVQQ3Jjel9qa1RRNmV4aTRYYkNIV2p5MW1FLTFySTJYX0kxTEk3ZG1STzkzRExJSUNvaHhDN1dtZ2lmR0pJcDhDZVhKdjdhUzF4WGFyeFMtSG9UbFlkR0IxbVlrc3M0MXMzZC1ia2xuMjBNUGFUNGdBS1Y3WkVjVXBmLVR2YmFJNXdPdTI?oc=5\" target=\"_blank\"&gt;Poland to host European Patriot maintenance centre, government says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-27T17:15:41.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPcVVMNDA5ellNRWdhT0pZeklKSC14Ulo1cUtpR2ZtbzVsSDZVc0VvaE9GNDZBaWVaTmxOaWpRb0k2cWZCU3BzblA3TEZ2ZXcyM0dzWWhPRm82T01XZjlMb19jWlpwdi10dXFNREYwQ3RrdEJIQTVpemFralRvekZRZE9FRTdLZHpob1N3aGpFOGVkMHp6SW5qVnIzU0JMc2d5MVRpM2VjR0tYd09SYWJXWnRjY3EzS183elNWeg?oc=5\" target=\"_blank\"&gt;Thousands rally outside Portugal's parliament over housing crisis, police operations&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-27T22:49:00.000Z",
           "score": 8
         },
         {
@@ -187,28 +203,20 @@
           "score": 7
         },
         {
-          "title": "Indian media groups decry Modi’s privacy law in court, say newsrooms face shutdown risk - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPamZ6a0RNdDZHNVJ5M2xGeG5TR0x3VHNpSXBmaW95aTdjVS1nZDJRenJaNlZCUWltMUpzRnMwdlF4YTdPY0haaFJlSTI4bjNVRWdIR2ZWR19rWDQweElGYl94T1MyX3g4R3doWmxVYjRJX2JObDRWMVRqdFdNMzdKWl9pS1RRTEZISGhMY29FaF9FSVg1QVBKazlPRU1QWGtZcjBVV19uZ3NPVGZwel9mMGV1dzU?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPamZ6a0RNdDZHNVJ5M2xGeG5TR0x3VHNpSXBmaW95aTdjVS1nZDJRenJaNlZCUWltMUpzRnMwdlF4YTdPY0haaFJlSTI4bjNVRWdIR2ZWR19rWDQweElGYl94T1MyX3g4R3doWmxVYjRJX2JObDRWMVRqdFdNMzdKWl9pS1RRTEZISGhMY29FaF9FSVg1QVBKazlPRU1QWGtZcjBVV19uZ3NPVGZwel9mMGV1dzU?oc=5\" target=\"_blank\"&gt;Indian media groups decry Modi’s privacy law in court, say newsrooms face shutdown risk&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-27T06:15:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Why has Modi’s privacy law alarmed India’s news publishers? - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUDItTk9JdkJldThBVUJLd1lPQTNuemlHZ3NzaC1lb1NPWUVIZnVtaDlrY09WYVM3cjBWQ0k0aVdvZ2F5SjRGWkVyOEFVUm9XVTBhVlB2T3czYUJ0V1NHM3JFRTU1cExTalBGV2lGV0NteWtjdHJNQmdZU2YxaDNIV1RTY2dQcHhoYlZZN1owRlMxUkNaMkhVQktFaXZiZEVyLVpFWUliUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNUDItTk9JdkJldThBVUJLd1lPQTNuemlHZ3NzaC1lb1NPWUVIZnVtaDlrY09WYVM3cjBWQ0k0aVdvZ2F5SjRGWkVyOEFVUm9XVTBhVlB2T3czYUJ0V1NHM3JFRTU1cExTalBGV2lGV0NteWtjdHJNQmdZU2YxaDNIV1RTY2dQcHhoYlZZN1owRlMxUkNaMkhVQktFaXZiZEVyLVpFWUliUQ?oc=5\" target=\"_blank\"&gt;Why has Modi’s privacy law alarmed India’s news publishers?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-27T09:02:52.000Z",
+          "title": "Watch: What happens now after close vote in Israeli election?",
+          "link": "https://www.bbc.co.uk/news/videos/cm79p5pxqey2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Polls have closed in the Israeli election, but there is no clear winner.",
+          "published": "2026-10-28T00:04:29.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 398,
-    "articlesLast24h": 173,
-    "afterDedup": 162,
+    "totalArticlesScanned": 392,
+    "articlesLast24h": 172,
+    "afterDedup": 165,
     "feedsQueried": 19
   }
 }
