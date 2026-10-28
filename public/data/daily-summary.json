@@ -1,20 +1,26 @@
 {
   "date": "2026-10-28",
-  "generatedAt": "2026-10-28T11:05:05.474Z",
+  "generatedAt": "2026-10-28T17:12:37.948Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 28 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Plan for multibillion-pound Sizewell nuclear plant a ‘terrible deal’ for UK taxpayers, MPs say",
-      "summary": "&lt;p&gt;The public accounts committee has said the risk to billpayers is ‘extraordinary’&lt;/p&gt;&lt;p&gt;The government’s plan to fund a multibillion-pound nuclear plant at the Sizewell site in Suffolk represents a “terrible deal” for the UK taxpayer over the rest of the century, according to the government’s spending watchdog.&lt;/p&gt;&lt;p&gt;MPs on the public accounts committee (PAC) have warned the government that the cost of the Sizewell C nuclear reactor could spiral to almost £48bn, l",
+      "headline": "Press remarks by Commissioner Jørgensen following the Dialogue with European refineries",
+      "summary": "European Commission Statement Brussels, 28 Oct 2026 Once again, due to geopolitical turbulence, Europe faces another energy crisis.\r\nAs in 2022, after the Russia's illegal invasion of Ukraine, prices of crude oil ...",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Revealed: UK relied on £2bn of ‘questionable accounting’ to hit its climate-aid goal",
-      "summary": "The UK has beaten its target to provide £11.6bn of climate aid to developing countries by 2026 – but only&#8230; The post Revealed: UK relied on £2bn of ‘questionable accounting’ to hit its climate-aid goal appeared first on Carbon Brief.",
+      "headline": "Commissioner Roswall's speech at the event, ‘From Principles to International Cooperation: Mobilising Biodiversity Finance through High-Integrity Nature Credits'",
+      "summary": "European Commission Speech Yerevan, 27 Oct 2026 Excellencies, Ministers, Executive Secretary Schomaker, distinguished guests, Ladies and gentlemen,\r\nI am delighted to welcome you to today's high-level event, t...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "COMMENTARY: Boosting Western supply of refined critical metals means de-risking investment. But how? - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxPLUhKSEMycmlfeVV1akxmZmpOdzNHWEtzVFdSSm9QM21TZ09fYnVtaFZsVFhJbDRnd1dMRmxNeUZVbXJMNkNvNGY1V29RU3J3a1BaTDRIWkJmazBkY1ZYM0hnUHhTSkNSOVhfU21Oc2RMWjROSUFUU0VPUzIteGpjNWNScGQ1N0I3eENDdkdtNFQ0TVJSNHJqa2VYMDlia3B3aDV1Wkp2QjJqUVVpZjBYc0RzMmRXMXJacTc5Smd1TTdHclNBa0U3RGlOdmFlZVRVU1FQMTVFa0xEeFJMMk15M1Bn?oc=5\" target=\"_blank\"&gt;COMMENTARY: Boosting Western supply of refined critical metals means de-risking investment. But how?&lt;/a&gt;&amp;nb",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -28,6 +34,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Press remarks by Commissioner Jørgensen following the Dialogue with European refineries",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2278",
+          "source": "European Commission",
+          "description": "European Commission Statement Brussels, 28 Oct 2026 Once again, due to geopolitical turbulence, Europe faces another energy crisis.\r\nAs in 2022, after the Russia's illegal invasion of Ukraine, prices of crude oil ...",
+          "published": "2026-10-28T11:39:10.000Z",
+          "score": 20
+        },
+        {
           "title": "Plan for multibillion-pound Sizewell nuclear plant a ‘terrible deal’ for UK taxpayers, MPs say",
           "link": "https://www.theguardian.com/business/2026/oct/28/plan-for-multibillion-pound-sizewell-nuclear-plant-a-terrible-deal-for-uk-taxpayers-mps-say",
           "source": "The Guardian - Energy",
@@ -39,8 +53,16 @@
           "title": "Trump says government to ‘terminate’ Biden-era methane emissions rules",
           "link": "https://www.theguardian.com/us-news/2026/oct/27/trump-biden-era-methane-emissions-rules-oil-gas",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Critics warn of climate danger as president in Texas claims change will save companies and consumers billions&lt;/p&gt;&lt;p&gt;Donald Trump announced his administration is “terminating” Biden-era regulations holding oil and gas companies accountable for large leaks of planet-warming methane during a rally in Lubbock, Texas, on Tuesday evening.&lt;/p&gt;&lt;p&gt;Trump said during a campaign rally in Texas that the change would save consumers and energy producers $45bn and unlock 210 mil",
-          "published": "2026-10-28T01:45:27.000Z",
+          "description": "&lt;p&gt;Critics warn of climate danger as president in Texas claims change will save companies and consumers billions&lt;/p&gt;&lt;p&gt;Donald Trump said his administration is “terminating” Biden-era regulations holding oil and gas companies accountable for large leaks of planet-warming methane during a rally in Lubbock, Texas, on Tuesday evening.&lt;/p&gt;&lt;p&gt;“Tonight, I’m officially terminating Biden’s expensive and unnecessary methane regulations to save consumers and energy producers,”",
+          "published": "2026-10-28T14:30:29.000Z",
+          "score": 7
+        },
+        {
+          "title": "Will it be AI or the climate crisis that ends humanity? We can make it neither | Adam McKay and Philip Eubanks",
+          "link": "https://www.theguardian.com/commentisfree/2026/oct/28/ai-climate-crisis-humanity",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Both of these threats have the same roots: private entities seeking to cash in. We have the power to stand against them&lt;/p&gt;&lt;p&gt;A summer of extreme heat, entire villages obliterated in Nepal, a super &lt;a href=\"https://www.theguardian.com/environment/elnino\"&gt;El Niño&lt;/a&gt; breaking records, Exxon &lt;a href=\"https://www.reuters.com/business/energy/exxon-raises-2050-global-emissions-forecast-sees-slower-coal-decline-2026-09-17/\"&gt;publicly saying&lt;/a&gt; we may reach ",
+          "published": "2026-10-28T12:00:04.000Z",
           "score": 7
         },
         {
@@ -50,22 +72,6 @@
           "description": "&lt;p&gt;Government-backed Warm Home Loans scheme to help households cut energy bills by hundreds of pounds&lt;/p&gt;&lt;p&gt;Households across the UK can now cut their energy bills by hundreds of pounds a year at no upfront cost by applying for interest-free or “low-interest” loans to fund upgrades such as heat pumps, batteries and solar panels.&lt;/p&gt;&lt;p&gt;The government-backed Warm Home Loans scheme, which launched on Tuesday, could mean thousands more households are able to access low-",
           "published": "2026-10-27T17:28:33.000Z",
           "score": 7
-        },
-        {
-          "title": "‘No one saves the planet if it hits their pocket’: UK heat pump installers fear planned subsidy cuts",
-          "link": "https://www.theguardian.com/environment/2026/oct/27/heat-pump-installers-fear-planned-subsidy-cuts-uk-budget",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Boiler upgrade scheme, which provides grants of up to £9,000 for sustainable alternatives, expected to be slashed in budget&lt;/p&gt;&lt;p&gt;When Bill Tuck first started installing air source heat pumps six years ago, other heating engineers were skeptical about whether the green technology would take off. “Now, the conversation is completely different,” he said.&lt;/p&gt;&lt;p&gt;“I’m getting approached by them saying: ‘Mrs Jones, my customer for 15 years, she’s enquiring about a heat",
-          "published": "2026-10-27T11:59:42.000Z",
-          "score": 7
-        },
-        {
-          "title": "US closes $5.1 billion loan to Alliant Energy for new gas power generation, energy storage - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPWmQ0c2FUVWhaMXlBcU94NERDUlp0YzhfdFpLUUpsaDhLeU5RRTVEU25GbXp0c2xtdDFlRmY3QU45TkRWdjFiR1djWXZGT05QbHY3ZkVDTVh1b2N1c2hRT3djc2gzOGh2d1B1M3ZqTjFhNTloOXN1ODBXM1VvTk50ck14VG9qLTJaeHoxRGU5VW1XSlBEdG5PMS1KbVVFcWx1QVp1UGg3X2YwYk1idFRmWVF0Z2xqMnNYZ2dqaHhjNA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPWmQ0c2FUVWhaMXlBcU94NERDUlp0YzhfdFpLUUpsaDhLeU5RRTVEU25GbXp0c2xtdDFlRmY3QU45TkRWdjFiR1djWXZGT05QbHY3ZkVDTVh1b2N1c2hRT3djc2gzOGh2d1B1M3ZqTjFhNTloOXN1ODBXM1VvTk50ck14VG9qLTJaeHoxRGU5VW1XSlBEdG5PMS1KbVVFcWx1QVp1UGg3X2YwYk1idFRmWVF0Z2xqMnNYZ2dqaHhjNA?oc=5\" target=\"_blank\"&gt;US closes $5.1 billion loan to Alliant Energy for new gas power generation, energy storage&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-10-28T02:10:00.000Z",
-          "score": 7
         }
       ]
     },
@@ -73,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Commissioner Roswall's speech at the event, ‘From Principles to International Cooperation: Mobilising Biodiversity Finance through High-Integrity Nature Credits'",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2276",
+          "source": "European Commission",
+          "description": "European Commission Speech Yerevan, 27 Oct 2026 Excellencies, Ministers, Executive Secretary Schomaker, distinguished guests, Ladies and gentlemen,\r\nI am delighted to welcome you to today's high-level event, t...",
+          "published": "2026-10-27T18:54:09.000Z",
+          "score": 19
+        },
         {
           "title": "Revealed: UK relied on £2bn of ‘questionable accounting’ to hit its climate-aid goal",
           "link": "https://www.carbonbrief.org/revealed-uk-relied-on-2bn-of-questionable-accounting-to-hit-its-climate-aid-goal",
@@ -90,14 +104,6 @@
           "score": 13
         },
         {
-          "title": "Q&#038;A: Why are UK energy bills so high – and how could they be lowered?",
-          "link": "https://www.carbonbrief.org/qa-why-are-uk-energy-bills-so-high-and-how-could-they-be-lowered",
-          "source": "Carbon Brief",
-          "description": "Energy bills in the UK have continued to soar in 2026, with intense debate raging about how to bring them&#8230; The post Q&amp;A: Why are UK energy bills so high – and how could they be lowered? appeared first on Carbon Brief.",
-          "published": "2026-10-27T16:47:54.000Z",
-          "score": 13
-        },
-        {
           "title": "Why COP31 needs to start talking about just transition finance",
           "link": "https://www.climatechangenews.com/2026/10/28/why-cop31-needs-to-start-talking-about-just-transition-finance/",
           "source": "Climate Home News",
@@ -106,19 +112,28 @@
           "score": 13
         },
         {
-          "title": "National climate plans now promise half the emission cuts expected by UN",
-          "link": "https://www.climatechangenews.com/2026/10/27/national-climate-plans-now-promise-half-the-emission-cuts-expected-by-un/",
+          "title": "Stalemate on finance at COP17 nature talks exposes need for new sources",
+          "link": "https://www.climatechangenews.com/2026/10/28/stalemate-finance-cop17-nature-un-exposes-need-new-sources-yerevan/",
           "source": "Climate Home News",
-          "description": "The US exit from the Paris Agreement and weak new pledges leave 2035 emissions just 6% below 2019 levels, against 12% projected last year The post National climate plans now promise half the emission cuts expected by UN appeared first on Climate Home News.",
-          "published": "2026-10-27T13:51:00.000Z",
-          "score": 13
+          "description": "At talks in Yerevan, the EU has proposed expanding the list of nature donors so that large emerging economies like China can help fund biodiversity protection The post Stalemate on finance at COP17 nature talks exposes need for new sources appeared first on Climate Home News.",
+          "published": "2026-10-28T13:04:32.000Z",
+          "score": 12
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "COMMENTARY: Boosting Western supply of refined critical metals means de-risking investment. But how? - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPLUhKSEMycmlfeVV1akxmZmpOdzNHWEtzVFdSSm9QM21TZ09fYnVtaFZsVFhJbDRnd1dMRmxNeUZVbXJMNkNvNGY1V29RU3J3a1BaTDRIWkJmazBkY1ZYM0hnUHhTSkNSOVhfU21Oc2RMWjROSUFUU0VPUzIteGpjNWNScGQ1N0I3eENDdkdtNFQ0TVJSNHJqa2VYMDlia3B3aDV1Wkp2QjJqUVVpZjBYc0RzMmRXMXJacTc5Smd1TTdHclNBa0U3RGlOdmFlZVRVU1FQMTVFa0xEeFJMMk15M1Bn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxPLUhKSEMycmlfeVV1akxmZmpOdzNHWEtzVFdSSm9QM21TZ09fYnVtaFZsVFhJbDRnd1dMRmxNeUZVbXJMNkNvNGY1V29RU3J3a1BaTDRIWkJmazBkY1ZYM0hnUHhTSkNSOVhfU21Oc2RMWjROSUFUU0VPUzIteGpjNWNScGQ1N0I3eENDdkdtNFQ0TVJSNHJqa2VYMDlia3B3aDV1Wkp2QjJqUVVpZjBYc0RzMmRXMXJacTc5Smd1TTdHclNBa0U3RGlOdmFlZVRVU1FQMTVFa0xEeFJMMk15M1Bn?oc=5\" target=\"_blank\"&gt;COMMENTARY: Boosting Western supply of refined critical metals means de-risking investment. But how?&lt;/a&gt;&amp;nb",
+          "published": "2026-10-28T02:34:50.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -130,38 +145,6 @@
           "source": "Deutsche Welle World",
           "description": "In shielding Europe&#039;s carmakers from Chinese rivals, the EU risks hurting close partners from Turkey and Morocco to Japan and South Korea. Billions in trade and hundreds of thousands of European jobs are at stake.",
           "published": "2026-10-28T10:24:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU proposes giving Frontex border agency new major powers",
-          "link": "https://www.dw.com/en/eu-proposes-giving-frontex-border-agency-new-major-powers/a-79779690?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The European Commission has unveiled a new plan to give Frontex more resources to ensure the return of irregular migrants, including by supporting non-EU countries. The move comes after the tragedy in Ceuta.",
-          "published": "2026-10-27T17:44:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Myanmar: Is the US undermining the EU&#039;s diplomatic blockade?",
-          "link": "https://www.dw.com/en/myanmar-is-the-us-undermining-the-eu-s-diplomatic-blockade/a-79778863?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "With the US reopening talks with Myanmar&#039;s military-backed government, and several Southeast Asian countries restarting diplomatic contacts, the EU is facing uncomfortable questions about its own boycott of the junta.",
-          "published": "2026-10-27T15:16:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Denmark&#039;s Frederiksen criticizes Finland and Norway for calling Putin without coordinating with allies, despite consultation with Ukraine",
-          "link": "https://www.dw.com/en/denmark-s-frederiksen-criticizes-finland-and-norway-for-calling-putin-without-coordinating-with-allies-despite-consultation-with-ukraine/a-79776208?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Finland and Norway have called Putin about ending the Ukraine war, drawing Danish criticism. The dispute highlights divisions over European engagement with Moscow ahead of planned US-led peace talks.",
-          "published": "2026-10-27T12:54:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNVc2emkxZkxNNXJ3U2E3TTJ5UVhOSGJHQnZKYzZuSjFOVXZiaC1QVkc4dE9pMWJsd2RteE50M1czVlBhN1dRNWhjUjc4VUpNRXVjZ3RrdklENUVTWWNtVVlHQXExRE9DZGZBUXdaRnVOb3RXNlFHY3NVbThyNWRFME9fMElTR19iclFxaUczRkpaOGphRXVlMENMM2tHdWNnUHZKXzl5YWctYVcxLVhEdXhtLTVjcEtab1o3ZnVvaFBDdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNVc2emkxZkxNNXJ3U2E3TTJ5UVhOSGJHQnZKYzZuSjFOVXZiaC1QVkc4dE9pMWJsd2RteE50M1czVlBhN1dRNWhjUjc4VUpNRXVjZ3RrdklENUVTWWNtVVlHQXExRE9DZGZBUXdaRnVOb3RXNlFHY3NVbThyNWRFME9fMElTR19iclFxaUczRkpaOGphRXVlMENMM2tHdWNnUHZKXzl5YWctYVcxLVhEdXhtLTVjcEtab1o3ZnVvaFBDdw?oc=5\" target=\"_blank\"&gt;Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-27T12:36:01.000Z",
           "score": 8
         }
       ]
@@ -179,6 +162,14 @@
           "score": 8
         },
         {
+          "title": "'Nobody heard us' – why Gen Z are leading protests across Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPYjU3YkZqYTlQelo5OVJKRi1EN2pYVThKWGZRUDZQNlozeFk5OXBzbGo2THREaDdxZ05EOE9OYnViV2ZEYWJwRUNZb09LQk40NzhWMjc1c2pjeElGTUE0eFIzRnhrTmhGS0gzeTJPTndrUWlJN252THlTRkpHQ1JrOHlGeFpxS3VWUmoyaDVGOGpONXIwYVhzVUtMaVRrWDQ5eTNnbjhLMEt3WFZNUVE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPYjU3YkZqYTlQelo5OVJKRi1EN2pYVThKWGZRUDZQNlozeFk5OXBzbGo2THREaDdxZ05EOE9OYnViV2ZEYWJwRUNZb09LQk40NzhWMjc1c2pjeElGTUE0eFIzRnhrTmhGS0gzeTJPTndrUWlJN252THlTRkpHQ1JrOHlGeFpxS3VWUmoyaDVGOGpONXIwYVhzVUtMaVRrWDQ5eTNnbjhLMEt3WFZNUVE?oc=5\" target=\"_blank\"&gt;'Nobody heard us' – why Gen Z are leading protests across Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-28T13:05:01.000Z",
+          "score": 8
+        },
+        {
           "title": "Poland to host European Patriot maintenance centre, government says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQX1JiMjhCNDBXTTQxOUpWUXh0QXBlUjJLMWZQNEVQQ3Jjel9qa1RRNmV4aTRYYkNIV2p5MW1FLTFySTJYX0kxTEk3ZG1STzkzRExJSUNvaHhDN1dtZ2lmR0pJcDhDZVhKdjdhUzF4WGFyeFMtSG9UbFlkR0IxbVlrc3M0MXMzZC1ia2xuMjBNUGFUNGdBS1Y3WkVjVXBmLVR2YmFJNXdPdTI?oc=5",
           "source": "Reuters World (via Google News)",
@@ -187,36 +178,28 @@
           "score": 8
         },
         {
-          "title": "'Nobody heard us' – why Gen Z are leading protests across Europe - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPYjU3YkZqYTlQelo5OVJKRi1EN2pYVThKWGZRUDZQNlozeFk5OXBzbGo2THREaDdxZ05EOE9OYnViV2ZEYWJwRUNZb09LQk40NzhWMjc1c2pjeElGTUE0eFIzRnhrTmhGS0gzeTJPTndrUWlJN252THlTRkpHQ1JrOHlGeFpxS3VWUmoyaDVGOGpONXIwYVhzVUtMaVRrWDQ5eTNnbjhLMEt3WFZNUVE?oc=5",
+          "title": "Canada, European Union officials drop 'associate member' from summit declaration - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQkp4Nmp2NmJtYm90dmZfX0FUQTczcUZQNzVsa2pva1BMRjhocG50X2ktZVBjMTJUbTNJNEc5cTlYZUhLaWV3NXdJWUR6RFowR0pPR3FTdzZwSHcwT1k0bVhLa2dMSm11T3JVbEw4TXFNQkFOMEwtaHNPMnl1RDJCS19WaFpBMUxZVTlqUWhCc293YjFfY1dDU2ZfLXBqNmlRVk0wYkladjR4Ty16LXo5R2tsb21BSkltUzF1eQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPYjU3YkZqYTlQelo5OVJKRi1EN2pYVThKWGZRUDZQNlozeFk5OXBzbGo2THREaDdxZ05EOE9OYnViV2ZEYWJwRUNZb09LQk40NzhWMjc1c2pjeElGTUE0eFIzRnhrTmhGS0gzeTJPTndrUWlJN252THlTRkpHQ1JrOHlGeFpxS3VWUmoyaDVGOGpONXIwYVhzVUtMaVRrWDQ5eTNnbjhLMEt3WFZNUVE?oc=5\" target=\"_blank\"&gt;'Nobody heard us' – why Gen Z are leading protests across Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-28T09:02:53.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNQkp4Nmp2NmJtYm90dmZfX0FUQTczcUZQNzVsa2pva1BMRjhocG50X2ktZVBjMTJUbTNJNEc5cTlYZUhLaWV3NXdJWUR6RFowR0pPR3FTdzZwSHcwT1k0bVhLa2dMSm11T3JVbEw4TXFNQkFOMEwtaHNPMnl1RDJCS19WaFpBMUxZVTlqUWhCc293YjFfY1dDU2ZfLXBqNmlRVk0wYkladjR4Ty16LXo5R2tsb21BSkltUzF1eQ?oc=5\" target=\"_blank\"&gt;Canada, European Union officials drop 'associate member' from summit declaration&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-28T16:38:04.000Z",
           "score": 8
         },
         {
-          "title": "Nigeria's president seeks parliament approval for about $21.7 billion borrowing - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUk5sSDFWcEVDUmI2M3dqWHJCMWhvRUhpaU9GcjhzZXhtNFY3UzhVS3ZyVndaV3RKZW51U2hDU0VjYktOdE1LVGFOZG9BMFBnMjhpVEExeHlDeXZ5aWhXakZIbXBiNkg3dEFyNFFObTNKOUN6Tl9qYmpOX3lRbk5kaDlTVTYtQU10dG1sU3VsRU4wZ1dBWXh6aGVydG9qa0dkUVhiX0IwVTgzWXE1Slo1eThHWERWMnFybjZVMG9R?oc=5",
+          "title": "Norway's premier says call with Putin was effort to present European views - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPa0tFU3FmZUI4RzVyc2hwUzJWbXRDRTNLQWxDSFhhbUlrb19qNVdkWHNmbXBBaGkwMmx4b1o1SEJDY2MtM2hNbWhGWk9yNnRYeXAyVTdyWFFLMUN1MUNNejJWZndqaTJ0aGVwdkVsTkhGYW9TVDdPclRQU0dZS3VQbkhISm90QTlmNGVvZnZKcVZpUFhUenhFZFpscXhtUlZRMVpqTklNRjJuUmthRHJGX3RTZzRBUldPTnFV?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQUk5sSDFWcEVDUmI2M3dqWHJCMWhvRUhpaU9GcjhzZXhtNFY3UzhVS3ZyVndaV3RKZW51U2hDU0VjYktOdE1LVGFOZG9BMFBnMjhpVEExeHlDeXZ5aWhXakZIbXBiNkg3dEFyNFFObTNKOUN6Tl9qYmpOX3lRbk5kaDlTVTYtQU10dG1sU3VsRU4wZ1dBWXh6aGVydG9qa0dkUVhiX0IwVTgzWXE1Slo1eThHWERWMnFybjZVMG9R?oc=5\" target=\"_blank\"&gt;Nigeria's president seeks parliament approval for about $21.7 billion borrowing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-27T17:10:14.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPa0tFU3FmZUI4RzVyc2hwUzJWbXRDRTNLQWxDSFhhbUlrb19qNVdkWHNmbXBBaGkwMmx4b1o1SEJDY2MtM2hNbWhGWk9yNnRYeXAyVTdyWFFLMUN1MUNNejJWZndqaTJ0aGVwdkVsTkhGYW9TVDdPclRQU0dZS3VQbkhISm90QTlmNGVvZnZKcVZpUFhUenhFZFpscXhtUlZRMVpqTklNRjJuUmthRHJGX3RTZzRBUldPTnFV?oc=5\" target=\"_blank\"&gt;Norway's premier says call with Putin was effort to present European views&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-28T10:46:09.000Z",
           "score": 8
-        },
-        {
-          "title": "World to add less clean energy capacity this year, renewables agency chief says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQV01DdmUtSFViX0RVSWlQX2o2OFBfM0gzRml3SU5GVWVCeU10bElSWXowNlFyZmhRekRRYkpSWVBDZDRPUHRSR3Z3S2d5MVZ6MGNYdUp3NHVDSlJDczhySGN1V3g4LVZmX3oxQjhfSXVwNGtMZXRHOE5OYjg0VXNua0w2WGhETnprNjFWcE93LWNxbkR0VnhYYk1GWW5sQjAzWGxxQjFSLUJLX0QwRHp3Z2lrSzVWcUdmRUZoTVo0TmdnZTBsNFE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQV01DdmUtSFViX0RVSWlQX2o2OFBfM0gzRml3SU5GVWVCeU10bElSWXowNlFyZmhRekRRYkpSWVBDZDRPUHRSR3Z3S2d5MVZ6MGNYdUp3NHVDSlJDczhySGN1V3g4LVZmX3oxQjhfSXVwNGtMZXRHOE5OYjg0VXNua0w2WGhETnprNjFWcE93LWNxbkR0VnhYYk1GWW5sQjAzWGxxQjFSLUJLX0QwRHp3Z2lrSzVWcUdmRUZoTVo0TmdnZTBsNFE?oc=5\" target=\"_blank\"&gt;World to add less clean energy capacity this year, renewables agency chief says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-10-27T15:26:05.000Z",
-          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 384,
-    "articlesLast24h": 167,
-    "afterDedup": 163,
+    "totalArticlesScanned": 386,
+    "articlesLast24h": 157,
+    "afterDedup": 153,
     "feedsQueried": 19
   }
 }
