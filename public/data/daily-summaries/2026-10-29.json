@@ -1,6 +1,6 @@
 {
   "date": "2026-10-29",
-  "generatedAt": "2026-10-29T02:12:41.744Z",
+  "generatedAt": "2026-10-29T11:23:37.327Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 29 October 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -15,6 +15,12 @@
       "summary": "Chancellor John Healey has announced a “new course on energy” for the UK, focused on keeping bills low amid the&#8230; The post UK budget 2026: Key climate and energy announcements appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Kremlin aide says discussions underway with US to lift sanctions on Russian investment fund - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQVl9HWWNraGlYV3NRSGloLWwxUjBRN0ZDc1M4dVZKTnM4NEtDejItVlAwZFdib3VsNWE2bk1XX0Fpc2dmLVh3X3hBeFNmVkdyTk1OSW9VbUd5TFdOaWtQQkxiWnBjaXdOWHlwYklBSlZ5ekYxTEdEVEt0T1NfOGF3cExwWVVCZlM1RFhsUnpCYzBrOWNxaDJEZzloSTZQM1p4OE01UlJGT2hmM1R2VjZtS1lvUEgwTVJ3WFRfWTVFMA?oc=5\" target=\"_blank\"&gt;Kremlin aide says discussions underway with US to lift sanctions on Russian investment fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -36,6 +42,22 @@
           "score": 20
         },
         {
+          "title": "Analysis: China’s clean-tech exports in 2026 to avoid as much CO2 as Brazil emits in a year",
+          "link": "https://www.carbonbrief.org/analysis-chinas-clean-tech-exports-in-2026-to-avoid-as-much-co2-as-brazil-emits-in-a-year",
+          "source": "Carbon Brief",
+          "description": "China’s exports in 2026 of clean-energy technologies, such as solar panels, batteries and electric vehicles, are on track to cut&#8230; The post Analysis: China’s clean-tech exports in 2026 to avoid as much CO2 as Brazil emits in a year appeared first on Carbon Brief.",
+          "published": "2026-10-29T07:51:24.000Z",
+          "score": 10
+        },
+        {
+          "title": "How will John Healey’s energy support package affect you?",
+          "link": "https://www.theguardian.com/money/2026/oct/29/john-healey-energy-support-package-budget-explainer",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Chancellor’s ‘new course’ includes a £100 one-off payment, low-carbon upgrade loans and an end to standing charges&lt;/p&gt;&lt;p&gt;John Healey has unveiled a package of support for households being buffeted by “global economic storms”.&lt;/p&gt;&lt;p&gt;“I’m setting a new course to get energy costs down in line with Europe,” the chancellor said in his maiden budget. In the long term, he hopes that changes in how Britain covers the cost of renewables and grid upgrades will “drive down ",
+          "published": "2026-10-29T05:00:26.000Z",
+          "score": 9
+        },
+        {
           "title": "Trump says government to ‘terminate’ Biden-era methane emissions rules",
           "link": "https://www.theguardian.com/us-news/2026/oct/27/trump-biden-era-methane-emissions-rules-oil-gas",
           "source": "The Guardian - Climate",
@@ -50,22 +72,6 @@
           "description": "&lt;p&gt;Both of these threats have the same roots: private entities seeking to cash in. We have the power to stand against them&lt;/p&gt;&lt;p&gt;A summer of extreme heat, entire villages obliterated in Nepal, a super &lt;a href=\"https://www.theguardian.com/environment/elnino\"&gt;El Niño&lt;/a&gt; breaking records, Exxon &lt;a href=\"https://www.reuters.com/business/energy/exxon-raises-2050-global-emissions-forecast-sees-slower-coal-decline-2026-09-17/\"&gt;publicly saying&lt;/a&gt; we may reach ",
           "published": "2026-10-28T12:00:04.000Z",
           "score": 7
-        },
-        {
-          "title": "Tanzania celebrates first natural gas discovery in more than 10 years",
-          "link": "https://www.bbc.co.uk/news/articles/c5m2dry2xwwvo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The energy minister described it as a \"major milestone\" for the East African nation.",
-          "published": "2026-10-28T10:18:40.000Z",
-          "score": 4
-        },
-        {
-          "title": "Spanish train crash leaves 68 dead, PM Sanchez declares 3 days of mourning",
-          "link": "https://www.dw.com/en/spanish-train-crash-leaves-68-dead-pm-sanchez-declares-3-days-of-mourning/live-79785087?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Two high-speed trains carrying hundreds of passengers collided south of Madrid. Spain&#039;s transport minister said one of the trains was told to continue its journey despite a &quot;red signal&quot; being in effect. Follow DW.",
-          "published": "2026-10-28T14:33:00.000Z",
-          "score": 4
         }
       ]
     },
@@ -82,62 +88,63 @@
           "score": 13
         },
         {
-          "title": "Revealed: UK relied on £2bn of ‘questionable accounting’ to hit its climate-aid goal",
-          "link": "https://www.carbonbrief.org/revealed-uk-relied-on-2bn-of-questionable-accounting-to-hit-its-climate-aid-goal",
-          "source": "Carbon Brief",
-          "description": "The UK has beaten its target to provide £11.6bn of climate aid to developing countries by 2026 – but only&#8230; The post Revealed: UK relied on £2bn of ‘questionable accounting’ to hit its climate-aid goal appeared first on Carbon Brief.",
-          "published": "2026-10-28T07:00:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "Analysis: How the UK spent more than £11.6bn on climate aid since 2021",
-          "link": "https://www.carbonbrief.org/analysis-how-the-uk-spent-more-than-11-6bn-on-climate-aid-since-2021",
-          "source": "Carbon Brief",
-          "description": "The UK has spent £12.8bn on climate aid for developing countries since 2021, according to official figures obtained by Carbon&#8230; The post Analysis: How the UK spent more than £11.6bn on climate aid since 2021 appeared first on Carbon Brief.",
-          "published": "2026-10-28T07:00:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "Why COP31 needs to start talking about just transition finance",
-          "link": "https://www.climatechangenews.com/2026/10/28/why-cop31-needs-to-start-talking-about-just-transition-finance/",
-          "source": "Climate Home News",
-          "description": "Funding that helps workers and communities navigate the clean energy switch remains overlooked, splintered and poorly tracked - a blindspot that could undermine climate goals The post Why COP31 needs to start talking about just transition finance appeared first on Climate Home News.",
-          "published": "2026-10-28T10:56:06.000Z",
-          "score": 13
-        },
-        {
           "title": "Stalemate on finance at COP17 nature talks exposes need for new sources",
           "link": "https://www.climatechangenews.com/2026/10/28/stalemate-finance-cop17-nature-un-exposes-need-new-sources-yerevan/",
           "source": "Climate Home News",
           "description": "At talks in Yerevan, the EU has proposed expanding the list of nature donors so that large emerging economies like China can help fund biodiversity protection The post Stalemate on finance at COP17 nature talks exposes need for new sources appeared first on Climate Home News.",
           "published": "2026-10-28T13:04:32.000Z",
           "score": 12
+        },
+        {
+          "title": "From Australia to Chile, our cities are driving a green investment boom",
+          "link": "https://www.climatechangenews.com/2026/10/29/from-australia-to-chile-our-cities-are-driving-a-green-investment-boom/",
+          "source": "Climate Home News",
+          "description": "Cities' climate commitments are set to generate trillions of dollars in demand for clean tech and green infrastructure, creating huge opportunities for businesses and investors The post From Australia to Chile, our cities are driving a green investment boom appeared first on Climate Home News.",
+          "published": "2026-10-29T08:43:50.000Z",
+          "score": 10
+        },
+        {
+          "title": "Africa wants adaptation finance on COP31 agenda, raising risk of a fight",
+          "link": "https://www.climatechangenews.com/2026/10/28/africa-wants-adaptation-finance-on-cop31-agenda-raising-risk-of-a-fight/",
+          "source": "Climate Home News",
+          "description": "The African Group wants dedicated space on tripling adaptation finance, the Green Climate Fund and trade, setting up a possible clash The post Africa wants adaptation finance on COP31 agenda, raising risk of a fight appeared first on Climate Home News.",
+          "published": "2026-10-28T15:57:17.000Z",
+          "score": 10
+        },
+        {
+          "title": "Angry Labour MPs urge leadership not to overrule energy secretary on Rosebank",
+          "link": "https://www.theguardian.com/environment/2026/oct/29/labour-mps-rosebank-oilfield-decision-miatta-fahnbulleh-john-healey",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Exclusive: Backbenchers voice alarm over ‘intolerable position’ faced by Miatta Fahnbulleh over oilfield decision&lt;/p&gt;&lt;p&gt;Furious Labour MPs have been lobbying the prime minister and chancellor not to overrule the energy secretary should she decide to block the Rosebank oilfield.&lt;/p&gt;&lt;p&gt;MPs say they are alarmed at the cabinet splits that have emerged over the issue after sources &lt;a href=\"https://www.theguardian.com/environment/2026/oct/21/energy-secretary-leaning",
+          "published": "2026-10-29T06:00:26.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Kremlin aide says discussions underway with US to lift sanctions on Russian investment fund - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQVl9HWWNraGlYV3NRSGloLWwxUjBRN0ZDc1M4dVZKTnM4NEtDejItVlAwZFdib3VsNWE2bk1XX0Fpc2dmLVh3X3hBeFNmVkdyTk1OSW9VbUd5TFdOaWtQQkxiWnBjaXdOWHlwYklBSlZ5ekYxTEdEVEt0T1NfOGF3cExwWVVCZlM1RFhsUnpCYzBrOWNxaDJEZzloSTZQM1p4OE01UlJGT2hmM1R2VjZtS1lvUEgwTVJ3WFRfWTVFMA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQVl9HWWNraGlYV3NRSGloLWwxUjBRN0ZDc1M4dVZKTnM4NEtDejItVlAwZFdib3VsNWE2bk1XX0Fpc2dmLVh3X3hBeFNmVkdyTk1OSW9VbUd5TFdOaWtQQkxiWnBjaXdOWHlwYklBSlZ5ekYxTEdEVEt0T1NfOGF3cExwWVVCZlM1RFhsUnpCYzBrOWNxaDJEZzloSTZQM1p4OE01UlJGT2hmM1R2VjZtS1lvUEgwTVJ3WFRfWTVFMA?oc=5\" target=\"_blank\"&gt;Kremlin aide says discussions underway with US to lift sanctions on Russian investment fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-10-29T00:52:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "EU&#039;s &#039;Made in Europe&#039; push unnerves global auto suppliers",
-          "link": "https://www.dw.com/en/eu-s-made-in-europe-push-unnerves-global-auto-suppliers/a-79732579?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "In shielding Europe&#039;s carmakers from Chinese rivals, the EU risks hurting close partners from Turkey and Morocco to Japan and South Korea. Billions in trade and hundreds of thousands of European jobs are at stake.",
-          "published": "2026-10-28T10:24:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "China calls on Germany, EU to be rational on trade, supply chain issues - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQOFB5V1F5MG1uQ01IbWo5VHEwa1Z3YlNKaEROendtSWxhelJURE9BMzlvc0p6VzJWc203cjA1SnhlTHU5VEVXYXMxeFhLMnBlUXUyUzI4NlZ2Ul9XWUJaUkVNTGdFLW0zVlgwc1VKMkE4QUI0NUVKR2tSV1lHMDRKRmpVdFNscTY0ak53UTNLQ01FUXVaeHdEU1ZSV2JKdFR2Nkh4dElyaVptMFJ0?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQOFB5V1F5MG1uQ01IbWo5VHEwa1Z3YlNKaEROendtSWxhelJURE9BMzlvc0p6VzJWc203cjA1SnhlTHU5VEVXYXMxeFhLMnBlUXUyUzI4NlZ2Ul9XWUJaUkVNTGdFLW0zVlgwc1VKMkE4QUI0NUVKR2tSV1lHMDRKRmpVdFNscTY0ak53UTNLQ01FUXVaeHdEU1ZSV2JKdFR2Nkh4dElyaVptMFJ0?oc=5\" target=\"_blank\"&gt;China calls on Germany, EU to be rational on trade, supply chain issues&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-28T07:36:09.000Z",
+          "title": "Carney to push for closer ties at Canada-EU summit in Montreal",
+          "link": "https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The term \"associate member\" is reportedly off the table as officials discuss deeper economic and defence ties.",
+          "published": "2026-10-29T09:51:06.000Z",
           "score": 8
         }
       ]
@@ -146,6 +153,22 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Europe's youth take to the streets - they feel locked out of a promising future",
+          "link": "https://www.bbc.co.uk/news/articles/cm2ke80nd929o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The last month has seen youth-driven demonstrations across Europe. What connects them?",
+          "published": "2026-10-29T00:33:11.000Z",
+          "score": 8
+        },
+        {
+          "title": "European Central Bank (ECB) head Christine Lagarde to step down in February, before her term ends",
+          "link": "https://www.dw.com/en/european-central-bank-ecb-head-christine-lagarde-to-step-down-in-february-before-her-term-ends/a-79794353?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "European Central Bank (ECB) President Christine Lagarde is to resign nine months ahead of the end of her 8-year term. European Council President Antonio Costa has said the process to find a successor is underway.",
+          "published": "2026-10-29T10:33:00.000Z",
+          "score": 8
+        },
         {
           "title": "EU countries block Canada&#039;s &#039;associate membership&#039; plan",
           "link": "https://www.dw.com/en/eu-countries-block-canada-s-associate-membership-plan/a-79791601?maca=en-rss-en-all-1573-xml-mrss",
@@ -169,30 +192,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOcW4xekU2MEFsTlhLV2hTT3luWGVvLVVlb3FWVzJOV3hDX1R2eDFzNVRfQWhCSDFOOE1obl9rblBfSldIYTdwMGlpbmkySzYtYTBZUDZJdXNrUUxjSEw1LVNEUGYwN01obGJOTExsQXdoSm1zMldSS0tUek16cVFqU2I2M2stQXo0eGc0NmNCa1dlV3VBYW0yNGdkYXg0emQ3SFlmbjlmcHQzd0lRZUtJUDlWLWI?oc=5\" target=\"_blank\"&gt;South Korea media commission fines Google and Apple over app payment systems&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-28T13:04:46.000Z",
           "score": 8
-        },
-        {
-          "title": "Melexis CEO says China now beats Europe in new design wins - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNnFXbURvVVpNNWJTMXVGUjdvNW1yV254VEZuSmhJM2R6Y3g4WTJKdm04bmMzdUhqM3ZaRVNCOG9pS0s5cGQ3WnpXYnNwRDNwemZDVGNFQnZGTXBSLWtoMWNwVzBYOWFIOVBRbkYtYmFfdW9zSjdrdDlFLWJFYk03Y2MzSTdXRG5vNTd6bWJ2Zm5nZERyenBHckhhdFFpTUF4X21QckVR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxQNnFXbURvVVpNNWJTMXVGUjdvNW1yV254VEZuSmhJM2R6Y3g4WTJKdm04bmMzdUhqM3ZaRVNCOG9pS0s5cGQ3WnpXYnNwRDNwemZDVGNFQnZGTXBSLWtoMWNwVzBYOWFIOVBRbkYtYmFfdW9zSjdrdDlFLWJFYk03Y2MzSTdXRG5vNTd6bWJ2Zm5nZERyenBHckhhdFFpTUF4X21QckVR?oc=5\" target=\"_blank\"&gt;Melexis CEO says China now beats Europe in new design wins&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-28T12:47:43.000Z",
-          "score": 8
-        },
-        {
-          "title": "Canada, European Union officials drop 'associate member' from joint summit declaration - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQkp4Nmp2NmJtYm90dmZfX0FUQTczcUZQNzVsa2pva1BMRjhocG50X2ktZVBjMTJUbTNJNEc5cTlYZUhLaWV3NXdJWUR6RFowR0pPR3FTdzZwSHcwT1k0bVhLa2dMSm11T3JVbEw4TXFNQkFOMEwtaHNPMnl1RDJCS19WaFpBMUxZVTlqUWhCc293YjFfY1dDU2ZfLXBqNmlRVk0wYkladjR4Ty16LXo5R2tsb21BSkltUzF1eQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNQkp4Nmp2NmJtYm90dmZfX0FUQTczcUZQNzVsa2pva1BMRjhocG50X2ktZVBjMTJUbTNJNEc5cTlYZUhLaWV3NXdJWUR6RFowR0pPR3FTdzZwSHcwT1k0bVhLa2dMSm11T3JVbEw4TXFNQkFOMEwtaHNPMnl1RDJCS19WaFpBMUxZVTlqUWhCc293YjFfY1dDU2ZfLXBqNmlRVk0wYkladjR4Ty16LXo5R2tsb21BSkltUzF1eQ?oc=5\" target=\"_blank\"&gt;Canada, European Union officials drop 'associate member' from joint summit declaration&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-28T19:27:18.000Z",
-          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 391,
-    "articlesLast24h": 153,
-    "afterDedup": 149,
+    "totalArticlesScanned": 392,
+    "articlesLast24h": 158,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
