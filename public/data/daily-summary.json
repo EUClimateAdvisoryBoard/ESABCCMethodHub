@@ -1,24 +1,24 @@
 {
   "date": "2026-10-29",
-  "generatedAt": "2026-10-29T11:23:37.327Z",
+  "generatedAt": "2026-10-29T21:38:05.205Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 29 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Press remarks by Commissioner Jørgensen following the Dialogue with European refineries",
-      "summary": "European Commission Statement Brussels, 28 Oct 2026 Once again, due to geopolitical turbulence, Europe faces another energy crisis.\r\nAs in 2022, after the Russia's illegal invasion of Ukraine, prices of crude oil ...",
+      "headline": "Analysis: China’s clean-tech exports in 2026 to avoid as much CO2 as Brazil emits in a year",
+      "summary": "China’s exports in 2026 of clean-energy technologies, such as solar panels, batteries and electric vehicles, are on track to cut&#8230; The post Analysis: China’s clean-tech exports in 2026 to avoid as much CO2 as Brazil emits in a year appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "UK budget 2026: Key climate and energy announcements",
-      "summary": "Chancellor John Healey has announced a “new course on energy” for the UK, focused on keeping bills low amid the&#8230; The post UK budget 2026: Key climate and energy announcements appeared first on Carbon Brief.",
+      "headline": "Press remarks by Commissioner Jørgensen following the Energy Council",
+      "summary": "European Commission Speech Brussels, 29 Oct 2026 Thank you, Ministers, I agree that we have had a very good day.\r\nThere's no doubt that Ministers from all Member States know that we are facing a difficult winte...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Kremlin aide says discussions underway with US to lift sanctions on Russian investment fund - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQVl9HWWNraGlYV3NRSGloLWwxUjBRN0ZDc1M4dVZKTnM4NEtDejItVlAwZFdib3VsNWE2bk1XX0Fpc2dmLVh3X3hBeFNmVkdyTk1OSW9VbUd5TFdOaWtQQkxiWnBjaXdOWHlwYklBSlZ5ekYxTEdEVEt0T1NfOGF3cExwWVVCZlM1RFhsUnpCYzBrOWNxaDJEZzloSTZQM1p4OE01UlJGT2hmM1R2VjZtS1lvUEgwTVJ3WFRfWTVFMA?oc=5\" target=\"_blank\"&gt;Kremlin aide says discussions underway with US to lift sanctions on Russian investment fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+      "headline": "US moves to lift sanctions on Russia&#039;s shadow fleet could undermine Western pressure on Moscow and help fund its war in Ukraine.",
+      "summary": "The US is reportedly considering ways to convert &quot;dark tankers&quot; into legitimate vessels, allowing them to transport crude oil that is not subject to sanctions.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,14 +33,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Press remarks by Commissioner Jørgensen following the Dialogue with European refineries",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2278",
-          "source": "European Commission",
-          "description": "European Commission Statement Brussels, 28 Oct 2026 Once again, due to geopolitical turbulence, Europe faces another energy crisis.\r\nAs in 2022, after the Russia's illegal invasion of Ukraine, prices of crude oil ...",
-          "published": "2026-10-28T11:39:10.000Z",
-          "score": 20
-        },
         {
           "title": "Analysis: China’s clean-tech exports in 2026 to avoid as much CO2 as Brazil emits in a year",
           "link": "https://www.carbonbrief.org/analysis-chinas-clean-tech-exports-in-2026-to-avoid-as-much-co2-as-brazil-emits-in-a-year",
@@ -58,19 +50,27 @@
           "score": 9
         },
         {
-          "title": "Trump says government to ‘terminate’ Biden-era methane emissions rules",
-          "link": "https://www.theguardian.com/us-news/2026/oct/27/trump-biden-era-methane-emissions-rules-oil-gas",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Critics warn of climate danger as president in Texas claims change will save companies and consumers billions&lt;/p&gt;&lt;p&gt;Donald Trump said his administration was “terminating” Biden-era regulations holding oil and gas companies accountable for large leaks of planet-warming methane during a rally in Lubbock, Texas, on Tuesday evening.&lt;/p&gt;&lt;p&gt;“Tonight, I’m officially terminating Biden’s expensive and unnecessary methane regulations to save consumers and energy producers,",
-          "published": "2026-10-28T14:30:29.000Z",
+          "title": "Cheniere boosts forecast as Middle East gas disruptions buoy demand for US LNG - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQVEJxaHdoZFhCWkJNNTB5N2NfM1poRUZnbXdzTG9JWktCbTZYekxxeEhHVENOTy1maFRjTjZMYVhCTzB1Sm50cEZFVzlpcGhEYmtxRXhQbU1aTlotNnRlNHVzUUpyOTR1eDl6eXl6amFoVmJYUFBmWmp6UHd0cXNTQkNtR2VuS2NKd2hBN1hnRF9HalpTWmtvdEhjVTQ1LVU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQVEJxaHdoZFhCWkJNNTB5N2NfM1poRUZnbXdzTG9JWktCbTZYekxxeEhHVENOTy1maFRjTjZMYVhCTzB1Sm50cEZFVzlpcGhEYmtxRXhQbU1aTlotNnRlNHVzUUpyOTR1eDl6eXl6amFoVmJYUFBmWmp6UHd0cXNTQkNtR2VuS2NKd2hBN1hnRF9HalpTWmtvdEhjVTQ1LVU?oc=5\" target=\"_blank\"&gt;Cheniere boosts forecast as Middle East gas disruptions buoy demand for US LNG&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-29T17:58:29.000Z",
           "score": 7
         },
         {
-          "title": "Will it be AI or the climate crisis that ends humanity? We can make it neither | Adam McKay and Philip Eubanks",
-          "link": "https://www.theguardian.com/commentisfree/2026/oct/28/ai-climate-crisis-humanity",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Both of these threats have the same roots: private entities seeking to cash in. We have the power to stand against them&lt;/p&gt;&lt;p&gt;A summer of extreme heat, entire villages obliterated in Nepal, a super &lt;a href=\"https://www.theguardian.com/environment/elnino\"&gt;El Niño&lt;/a&gt; breaking records, Exxon &lt;a href=\"https://www.reuters.com/business/energy/exxon-raises-2050-global-emissions-forecast-sees-slower-coal-decline-2026-09-17/\"&gt;publicly saying&lt;/a&gt; we may reach ",
-          "published": "2026-10-28T12:00:04.000Z",
+          "title": "One injured in fire at South Carolina nuclear site; no contamination reported - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPN2R6Ympvd3EwQ1Fmc1VhQnZFNkR3V0FUa09IYXIweUpHZmtzRFhZWDczcGpSb09NajJtWXV0RXdnQ1ZIMnRINDNUN0lKR2FWV3ZpSVc5d2c2eUktUkpIV3kwNUNxWllDSEZJV0Q1ZE5HcDFLaGdQemx5cGUxS3Q3U2xpT3M4eGdpSElrX193bzU0ck45aGxYM0NSSXZ5Qm9mZ3BlaGZVLTFYc3EzWFk1RkZESlhldw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPN2R6Ympvd3EwQ1Fmc1VhQnZFNkR3V0FUa09IYXIweUpHZmtzRFhZWDczcGpSb09NajJtWXV0RXdnQ1ZIMnRINDNUN0lKR2FWV3ZpSVc5d2c2eUktUkpIV3kwNUNxWllDSEZJV0Q1ZE5HcDFLaGdQemx5cGUxS3Q3U2xpT3M4eGdpSElrX193bzU0ck45aGxYM0NSSXZ5Qm9mZ3BlaGZVLTFYc3EzWFk1RkZESlhldw?oc=5\" target=\"_blank\"&gt;One injured in fire at South Carolina nuclear site; no contamination reported&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-29T02:30:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Taiwan semiconductor industry group backs government review of nuclear power restart - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVUpZN2hCNjRnOE1DYXh5V3hkSzdZRjJqUHloN2lrOHB5UE05Q3dvOXBlNVIxUk1PWHFPcWxUblUwQVFfdjl4U1kwY0pWb3NBN1lrSVlGZ25tX0NabTA5UXRIc0JQYXplUUdrQTV6RUo2SWhpR3NhSkV4S3FGU1ZrZ0NEaDY5LTFQTUpqRTdPVTM5UUQxV3o4YzA4RmhEdi04QXpJZnhybjYyeW5vRnIyV1BSYlhlU0hKT3paU3F1S1hfeVk?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVUpZN2hCNjRnOE1DYXh5V3hkSzdZRjJqUHloN2lrOHB5UE05Q3dvOXBlNVIxUk1PWHFPcWxUblUwQVFfdjl4U1kwY0pWb3NBN1lrSVlGZ25tX0NabTA5UXRIc0JQYXplUUdrQTV6RUo2SWhpR3NhSkV4S3FGU1ZrZ0NEaDY5LTFQTUpqRTdPVTM5UUQxV3o4YzA4RmhEdi04QXpJZnhybjYyeW5vRnIyV1BSYlhlU0hKT3paU3F1S1hfeVk?oc=5\" target=\"_blank\"&gt;Taiwan semiconductor industry group backs government review of nuclear power restart&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
+          "published": "2026-10-29T08:27:47.000Z",
           "score": 7
         }
       ]
@@ -80,20 +80,36 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "UK budget 2026: Key climate and energy announcements",
-          "link": "https://www.carbonbrief.org/uk-budget-2026-key-climate-and-energy-announcements",
+          "title": "Press remarks by Commissioner Jørgensen following the Energy Council",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2302",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 29 Oct 2026 Thank you, Ministers, I agree that we have had a very good day.\r\nThere's no doubt that Ministers from all Member States know that we are facing a difficult winte...",
+          "published": "2026-10-29T18:46:41.000Z",
+          "score": 23
+        },
+        {
+          "title": "Experts: What China wants from the COP31 climate talks",
+          "link": "https://www.carbonbrief.org/experts-what-china-wants-from-the-cop31-climate-talks",
           "source": "Carbon Brief",
-          "description": "Chancellor John Healey has announced a “new course on energy” for the UK, focused on keeping bills low amid the&#8230; The post UK budget 2026: Key climate and energy announcements appeared first on Carbon Brief.",
-          "published": "2026-10-28T18:16:58.000Z",
+          "description": "With the COP31 climate summit in Turkey looming, all eyes are on China to see what the country will push&#8230; The post Experts: What China wants from the COP31 climate talks appeared first on Carbon Brief.",
+          "published": "2026-10-29T14:25:40.000Z",
           "score": 13
         },
         {
-          "title": "Stalemate on finance at COP17 nature talks exposes need for new sources",
-          "link": "https://www.climatechangenews.com/2026/10/28/stalemate-finance-cop17-nature-un-exposes-need-new-sources-yerevan/",
+          "title": "IPCC’s Sixty-Fifth Session",
+          "link": "https://www.ipcc.ch/2026/10/29/ipcc-65/",
+          "source": "IPCC",
+          "description": "GENEVA, Oct 29 – The Intergovernmental Panel on Climate Change (IPCC) will resume its Sixty-Fifth Session (IPCC-65) from 1 to 3 December 2026. The meeting will be held virtually. At the resumed session, the IPCC member governments will primarily consider two remaining agenda items: the Work Plan for the IPCC Seventh Assessment Report (AR7) and [&#8230;]",
+          "published": "2026-10-29T16:14:32.000Z",
+          "score": 11
+        },
+        {
+          "title": "Editor&#8217;s Desk: COP reform is happening quietly, behind the headlines",
+          "link": "https://www.climatechangenews.com/2026/10/29/editors-desk-cop-reform-is-happening-quietly-behind-the-headlines/",
           "source": "Climate Home News",
-          "description": "At talks in Yerevan, the EU has proposed expanding the list of nature donors so that large emerging economies like China can help fund biodiversity protection The post Stalemate on finance at COP17 nature talks exposes need for new sources appeared first on Climate Home News.",
-          "published": "2026-10-28T13:04:32.000Z",
-          "score": 12
+          "description": "It may seem like little has changed in how the UN climate summits are run, but there's been a gradual shift as action becomes as important as negotiation The post Editor&#8217;s Desk: COP reform is happening quietly, behind the headlines appeared first on Climate Home News.",
+          "published": "2026-10-29T17:51:12.000Z",
+          "score": 10
         },
         {
           "title": "From Australia to Chile, our cities are driving a green investment boom",
@@ -102,22 +118,6 @@
           "description": "Cities' climate commitments are set to generate trillions of dollars in demand for clean tech and green infrastructure, creating huge opportunities for businesses and investors The post From Australia to Chile, our cities are driving a green investment boom appeared first on Climate Home News.",
           "published": "2026-10-29T08:43:50.000Z",
           "score": 10
-        },
-        {
-          "title": "Africa wants adaptation finance on COP31 agenda, raising risk of a fight",
-          "link": "https://www.climatechangenews.com/2026/10/28/africa-wants-adaptation-finance-on-cop31-agenda-raising-risk-of-a-fight/",
-          "source": "Climate Home News",
-          "description": "The African Group wants dedicated space on tripling adaptation finance, the Green Climate Fund and trade, setting up a possible clash The post Africa wants adaptation finance on COP31 agenda, raising risk of a fight appeared first on Climate Home News.",
-          "published": "2026-10-28T15:57:17.000Z",
-          "score": 10
-        },
-        {
-          "title": "Angry Labour MPs urge leadership not to overrule energy secretary on Rosebank",
-          "link": "https://www.theguardian.com/environment/2026/oct/29/labour-mps-rosebank-oilfield-decision-miatta-fahnbulleh-john-healey",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Exclusive: Backbenchers voice alarm over ‘intolerable position’ faced by Miatta Fahnbulleh over oilfield decision&lt;/p&gt;&lt;p&gt;Furious Labour MPs have been lobbying the prime minister and chancellor not to overrule the energy secretary should she decide to block the Rosebank oilfield.&lt;/p&gt;&lt;p&gt;MPs say they are alarmed at the cabinet splits that have emerged over the issue after sources &lt;a href=\"https://www.theguardian.com/environment/2026/oct/21/energy-secretary-leaning",
-          "published": "2026-10-29T06:00:26.000Z",
-          "score": 7
         }
       ]
     },
@@ -125,6 +125,14 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
+        {
+          "title": "US moves to lift sanctions on Russia&#039;s shadow fleet could undermine Western pressure on Moscow and help fund its war in Ukraine.",
+          "link": "https://www.dw.com/en/us-moves-to-lift-sanctions-on-russia-s-shadow-fleet-could-undermine-western-pressure-on-moscow-and-help-fund-its-war-in-ukraine/a-79787035?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The US is reportedly considering ways to convert &quot;dark tankers&quot; into legitimate vessels, allowing them to transport crude oil that is not subject to sanctions.",
+          "published": "2026-10-29T12:01:00.000Z",
+          "score": 2
+        },
         {
           "title": "Kremlin aide says discussions underway with US to lift sanctions on Russian investment fund - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQVl9HWWNraGlYV3NRSGloLWwxUjBRN0ZDc1M4dVZKTnM4NEtDejItVlAwZFdib3VsNWE2bk1XX0Fpc2dmLVh3X3hBeFNmVkdyTk1OSW9VbUd5TFdOaWtQQkxiWnBjaXdOWHlwYklBSlZ5ekYxTEdEVEt0T1NfOGF3cExwWVVCZlM1RFhsUnpCYzBrOWNxaDJEZzloSTZQM1p4OE01UlJGT2hmM1R2VjZtS1lvUEgwTVJ3WFRfWTVFMA?oc=5",
@@ -140,12 +148,36 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Carney to push for closer ties at Canada-EU summit in Montreal",
-          "link": "https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The term \"associate member\" is reportedly off the table as officials discuss deeper economic and defence ties.",
-          "published": "2026-10-29T09:51:06.000Z",
+          "title": "EU seeks &#039;highest level&#039; ties with Canada in Montreal summit",
+          "link": "https://www.dw.com/en/eu-seeks-highest-level-ties-with-canada-in-montreal-summit/a-79800299?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "European Commission President Ursula von der Leyen said EU seeks &quot;association without accession&quot; for Canada, after EU members snub &quot;associate member&quot; designation.",
+          "published": "2026-10-29T18:50:00.000Z",
           "score": 8
+        },
+        {
+          "title": "Can EU and India work together to secure Indo-Pacific?",
+          "link": "https://www.dw.com/en/can-eu-and-india-work-together-to-secure-indo-pacific/a-79796195?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "India and Europe are deepening defense ties, but their clashing perspectives on Russia and differing priorities on China are hampering their joint ambitions on maritime security.",
+          "published": "2026-10-29T13:26:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Germany news: Chancellor Friedrich Merz accuses North Korea of threatening Europe&#039;s freedom",
+          "link": "https://www.dw.com/en/germany-news-chancellor-friedrich-merz-accuses-north-korea-of-threatening-europe-s-freedom/live-79792915?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Friedrich Merz, who is visiting Seoul, said North Korea is putting Europe&#039;s security at risk by sending soldiers to fight for Russia in Ukraine. DW has more.",
+          "published": "2026-10-29T10:37:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Human trafficking victims stranded in Guinea-Bissau",
+          "link": "https://www.dw.com/en/human-trafficking-victims-stranded-in-guinea-bissau/a-79785558?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Dozens of West Africans lured to Guinea-Bissau with promises of jobs and migration to Europe say they were exploited by a suspected trafficking network. Now many cannot afford to return home.",
+          "published": "2026-10-29T14:20:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -154,7 +186,15 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Europe's youth take to the streets - they feel locked out of a promising future",
+          "title": "EU chief lays out vision for new Canada partnership at Montreal summit",
+          "link": "https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Ursula von der Leyen continued to use the term \"associate member\" for Canada despite some opposition of the bloc's members, including Germany.",
+          "published": "2026-10-29T17:02:59.000Z",
+          "score": 8
+        },
+        {
+          "title": "Europe's youth is on the march - but does anything actually unite them?",
           "link": "https://www.bbc.co.uk/news/articles/cm2ke80nd929o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The last month has seen youth-driven demonstrations across Europe. What connects them?",
@@ -170,36 +210,28 @@
           "score": 8
         },
         {
-          "title": "EU countries block Canada&#039;s &#039;associate membership&#039; plan",
-          "link": "https://www.dw.com/en/eu-countries-block-canada-s-associate-membership-plan/a-79791601?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "European Commission President Ursula von der Leyen wanted to give Canada a special status within the EU. But Germany and other member states have raised objections ahead of a summit in Montreal.",
-          "published": "2026-10-29T00:49:00.000Z",
+          "title": "At least four killed as Italian helicopter in EU mission in Bosnia crashes - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTUlFV3JZME1DdXNyVnZGZlhRZ1k2ZVUteFVpMVppdEd2YnVsVjEzSlZZT2lYbXJ2aXM0TjgxeTVYYnpKeXA1WWFsUHhxcEhEMEQ5U09sSWNDODFwZ2wxQUM0RjZQVVBzbDQ4cHh2djJRbkp3d2h1MlVGYWdtN3lEWDlacDVaaFQwTmV5aUpCZG5mRTBVSWp4bmtzdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxPTUlFV3JZME1DdXNyVnZGZlhRZ1k2ZVUteFVpMVppdEd2YnVsVjEzSlZZT2lYbXJ2aXM0TjgxeTVYYnpKeXA1WWFsUHhxcEhEMEQ5U09sSWNDODFwZ2wxQUM0RjZQVVBzbDQ4cHh2djJRbkp3d2h1MlVGYWdtN3lEWDlacDVaaFQwTmV5aUpCZG5mRTBVSWp4bmtzdw?oc=5\" target=\"_blank\"&gt;At least four killed as Italian helicopter in EU mission in Bosnia crashes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-29T19:16:22.000Z",
           "score": 8
         },
         {
-          "title": "'Nobody heard us' – why Gen Z are leading protests across Europe - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPYjU3YkZqYTlQelo5OVJKRi1EN2pYVThKWGZRUDZQNlozeFk5OXBzbGo2THREaDdxZ05EOE9OYnViV2ZEYWJwRUNZb09LQk40NzhWMjc1c2pjeElGTUE0eFIzRnhrTmhGS0gzeTJPTndrUWlJN252THlTRkpHQ1JrOHlGeFpxS3VWUmoyaDVGOGpONXIwYVhzVUtMaVRrWDQ5eTNnbjhLMEt3WFZNUVE?oc=5",
+          "title": "Albania opposition disrupts parliament session after violent street protests - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUUtlUzlidDNZSUE2N18wQWlfczBWcGh0TFRvZ2JHODAzMnNzMmIyQ0w1TXJTY3prTnRXZFR3ZzZvRVhXNjhITmhwN2gySXdVRUhuNm9HSzY2THlEdnR0UHFhS2ZROE5hcm01Q0h5bXYxaFVxSG5VVk5EU0txckVPZjYwUnNBYV9haFFBQmpjV0Z0S3hJWEtMS01XSkFNRHlhU2Q1MDFoNjdoQXlWTVJPcDBoM2ZwOTByRlE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPYjU3YkZqYTlQelo5OVJKRi1EN2pYVThKWGZRUDZQNlozeFk5OXBzbGo2THREaDdxZ05EOE9OYnViV2ZEYWJwRUNZb09LQk40NzhWMjc1c2pjeElGTUE0eFIzRnhrTmhGS0gzeTJPTndrUWlJN252THlTRkpHQ1JrOHlGeFpxS3VWUmoyaDVGOGpONXIwYVhzVUtMaVRrWDQ5eTNnbjhLMEt3WFZNUVE?oc=5\" target=\"_blank\"&gt;'Nobody heard us' – why Gen Z are leading protests across Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-28T13:05:01.000Z",
-          "score": 8
-        },
-        {
-          "title": "South Korea media commission fines Google and Apple over app payment systems - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOcW4xekU2MEFsTlhLV2hTT3luWGVvLVVlb3FWVzJOV3hDX1R2eDFzNVRfQWhCSDFOOE1obl9rblBfSldIYTdwMGlpbmkySzYtYTBZUDZJdXNrUUxjSEw1LVNEUGYwN01obGJOTExsQXdoSm1zMldSS0tUek16cVFqU2I2M2stQXo0eGc0NmNCa1dlV3VBYW0yNGdkYXg0emQ3SFlmbjlmcHQzd0lRZUtJUDlWLWI?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOcW4xekU2MEFsTlhLV2hTT3luWGVvLVVlb3FWVzJOV3hDX1R2eDFzNVRfQWhCSDFOOE1obl9rblBfSldIYTdwMGlpbmkySzYtYTBZUDZJdXNrUUxjSEw1LVNEUGYwN01obGJOTExsQXdoSm1zMldSS0tUek16cVFqU2I2M2stQXo0eGc0NmNCa1dlV3VBYW0yNGdkYXg0emQ3SFlmbjlmcHQzd0lRZUtJUDlWLWI?oc=5\" target=\"_blank\"&gt;South Korea media commission fines Google and Apple over app payment systems&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-28T13:04:46.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPUUtlUzlidDNZSUE2N18wQWlfczBWcGh0TFRvZ2JHODAzMnNzMmIyQ0w1TXJTY3prTnRXZFR3ZzZvRVhXNjhITmhwN2gySXdVRUhuNm9HSzY2THlEdnR0UHFhS2ZROE5hcm01Q0h5bXYxaFVxSG5VVk5EU0txckVPZjYwUnNBYV9haFFBQmpjV0Z0S3hJWEtMS01XSkFNRHlhU2Q1MDFoNjdoQXlWTVJPcDBoM2ZwOTByRlE?oc=5\" target=\"_blank\"&gt;Albania opposition disrupts parliament session after violent street protests&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-29T12:39:43.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 392,
-    "articlesLast24h": 158,
-    "afterDedup": 152,
+    "totalArticlesScanned": 394,
+    "articlesLast24h": 161,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
