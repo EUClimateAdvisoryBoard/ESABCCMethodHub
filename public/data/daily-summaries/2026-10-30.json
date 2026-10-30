@@ -1,26 +1,20 @@
 {
   "date": "2026-10-30",
-  "generatedAt": "2026-10-30T11:16:00.711Z",
+  "generatedAt": "2026-10-30T21:27:48.091Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 30 October 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Cheniere boosts forecast as Middle East gas disruptions buoy demand for US LNG - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQVEJxaHdoZFhCWkJNNTB5N2NfM1poRUZnbXdzTG9JWktCbTZYekxxeEhHVENOTy1maFRjTjZMYVhCTzB1Sm50cEZFVzlpcGhEYmtxRXhQbU1aTlotNnRlNHVzUUpyOTR1eDl6eXl6amFoVmJYUFBmWmp6UHd0cXNTQkNtR2VuS2NKd2hBN1hnRF9HalpTWmtvdEhjVTQ1LVU?oc=5\" target=\"_blank\"&gt;Cheniere boosts forecast as Middle East gas disruptions buoy demand for US LNG&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "IPCC Invites Experts to Review Draft Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization and Storage",
+      "summary": "GENEVA, Oct&#160;30&#160;– The Intergovernmental Panel on Climate Change (IPCC) has opened registration for experts to review the First Order Draft of the 2027 IPCC Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization and Storage for National Greenhouse Gas Inventories (Additional guidance). The Expert Review will run from 2 November to 20 December 2026.&#160; [&#8230;]",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Press remarks by Commissioner Jørgensen following the Energy Council",
-      "summary": "European Commission Speech Brussels, 29 Oct 2026 Thank you, Ministers, I agree that we have had a very good day.\r\nThere's no doubt that Ministers from all Member States know that we are facing a difficult winte...",
+      "headline": "Fears for mature Scots Pines burned by huge Highland wildfire",
+      "summary": "Experts say some older Scot pine damaged by fire could die removing an important source of seeds",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "US moves to lift sanctions on Russia&#039;s shadow fleet could undermine Western pressure on Moscow and help fund its war in Ukraine.",
-      "summary": "The US is reportedly considering ways to convert &quot;dark tankers&quot; into legitimate vessels, allowing them to transport crude oil that is not subject to sanctions.",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,11 +28,27 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Cheniere boosts forecast as Middle East gas disruptions buoy demand for US LNG - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQVEJxaHdoZFhCWkJNNTB5N2NfM1poRUZnbXdzTG9JWktCbTZYekxxeEhHVENOTy1maFRjTjZMYVhCTzB1Sm50cEZFVzlpcGhEYmtxRXhQbU1aTlotNnRlNHVzUUpyOTR1eDl6eXl6amFoVmJYUFBmWmp6UHd0cXNTQkNtR2VuS2NKd2hBN1hnRF9HalpTWmtvdEhjVTQ1LVU?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQVEJxaHdoZFhCWkJNNTB5N2NfM1poRUZnbXdzTG9JWktCbTZYekxxeEhHVENOTy1maFRjTjZMYVhCTzB1Sm50cEZFVzlpcGhEYmtxRXhQbU1aTlotNnRlNHVzUUpyOTR1eDl6eXl6amFoVmJYUFBmWmp6UHd0cXNTQkNtR2VuS2NKd2hBN1hnRF9HalpTWmtvdEhjVTQ1LVU?oc=5\" target=\"_blank\"&gt;Cheniere boosts forecast as Middle East gas disruptions buoy demand for US LNG&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-29T17:58:29.000Z",
+          "title": "IPCC Invites Experts to Review Draft Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization and Storage",
+          "link": "https://www.ipcc.ch/2026/10/30/ipcc-methodology-report-cdrtccus-expert-review/",
+          "source": "IPCC",
+          "description": "GENEVA, Oct&#160;30&#160;– The Intergovernmental Panel on Climate Change (IPCC) has opened registration for experts to review the First Order Draft of the 2027 IPCC Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization and Storage for National Greenhouse Gas Inventories (Additional guidance). The Expert Review will run from 2 November to 20 December 2026.&#160; [&#8230;]",
+          "published": "2026-10-30T12:20:49.000Z",
+          "score": 11
+        },
+        {
+          "title": "Buy a wind-up radio – and don’t forget the chocolate: survival experts on how to prepare for an emergency",
+          "link": "https://www.theguardian.com/thefilter/2026/oct/30/expert-guide-prepare-stockpile-emergency-uk",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;UK government guidance says we should be ready for the unexpected, but what’s actually helpful to have at home? We ask the specialists&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://www.theguardian.com/thefilter/2025/apr/10/best-power-banks-portable-chargers-battery-uk\"&gt;&lt;strong&gt;The best power banks – tested&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;How prepared are you for an emergency? Do you have a few extra tins of beans in the cupboard, or a full-on preppers’ kit in the cellar? W",
+          "published": "2026-10-30T15:00:17.000Z",
+          "score": 7
+        },
+        {
+          "title": "The Iran war is deepening the US energy crisis. A bad winter is ahead | Mark Wolfe",
+          "link": "https://www.theguardian.com/commentisfree/2026/oct/30/iran-war-energy-crisis-winter",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Congress must act to ensure that families are able to heat their homes before the start of the season&lt;/p&gt;&lt;p&gt;Heating oil may be the clearest warning yet of how the war in Iran is deepening the US’s energy affordability crisis. Families who heat their homes with oil are facing bills that could be &lt;a href=\"https://neada.org/wp-content/uploads/2026/09/NEADA-Heating-Oil-Press-Release-Sept-25-2026A-1.pdf\"&gt;50% higher&lt;/a&gt; this winter, adding nearly $900 to the cost of ke",
+          "published": "2026-10-30T14:00:20.000Z",
           "score": 7
         },
         {
@@ -50,28 +60,12 @@
           "score": 7
         },
         {
-          "title": "Hungary to stick with Orban-era nuclear cooperation deal with US - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxORTlRajQzWTF3ZU85V0lTQUZ5S3VQeFVsbW9TRmdrbkxCT0ZDTFotWmpZb25XQ2pvd2szZWhrSXhwd0FtbDZ4UGt1Y181d1F5RDgyQTFuanl5cXVVRk9jNkJjR2Y5WGMtbXVzWmZGRFVucmxPODNwZ1NGTlgyZ3JfTzhJMTVnc2dCMjRnc3BGWW9oVk9LcDdubHlpOGc1cXRaelR1dnVR?oc=5",
+          "title": "Russia in talks with four African states on large nuclear power plants, Rosatom says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSG5EemNweEFzbnpkVWp5b3pIaWNNSExXclRsandFN2xfZDhoWDliczBQWWpqaWpERWpLZnpsMzBNdUlYZHpXbEpxcjhsSHdNVUtKQkwxQVNXLXZ6YVk0cXQtcUdUMFZkUU4zY3FhNERWQWg2MHZWdngxT3ZIRHV5TVdiR0tyMVRvNGdxWGtvY2c3cHBxZXRvWnhuS3Bxd09ydnpTVkpZYnMtMHd5Y1pRT1FUNlNQczJhTVRpaUxuZjNLM1Mw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxORTlRajQzWTF3ZU85V0lTQUZ5S3VQeFVsbW9TRmdrbkxCT0ZDTFotWmpZb25XQ2pvd2szZWhrSXhwd0FtbDZ4UGt1Y181d1F5RDgyQTFuanl5cXVVRk9jNkJjR2Y5WGMtbXVzWmZGRFVucmxPODNwZ1NGTlgyZ3JfTzhJMTVnc2dCMjRnc3BGWW9oVk9LcDdubHlpOGc1cXRaelR1dnVR?oc=5\" target=\"_blank\"&gt;Hungary to stick with Orban-era nuclear cooperation deal with US&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-29T15:40:41.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOSG5EemNweEFzbnpkVWp5b3pIaWNNSExXclRsandFN2xfZDhoWDliczBQWWpqaWpERWpLZnpsMzBNdUlYZHpXbEpxcjhsSHdNVUtKQkwxQVNXLXZ6YVk0cXQtcUdUMFZkUU4zY3FhNERWQWg2MHZWdngxT3ZIRHV5TVdiR0tyMVRvNGdxWGtvY2c3cHBxZXRvWnhuS3Bxd09ydnpTVkpZYnMtMHd5Y1pRT1FUNlNQczJhTVRpaUxuZjNLM1Mw?oc=5\" target=\"_blank\"&gt;Russia in talks with four African states on large nuclear power plants, Rosatom says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
+          "published": "2026-10-30T14:55:44.000Z",
           "score": 7
-        },
-        {
-          "title": "Residents leave devastated Russian-occupied Oleshky as evacuation corridor opens",
-          "link": "https://www.bbc.co.uk/news/articles/c60me298k1yeo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Several hundred people are understood to have decided to stay in the frontline town, despite the lack of gas, electricity and running water.",
-          "published": "2026-10-30T10:32:06.000Z",
-          "score": 2
-        },
-        {
-          "title": "India's Hyderabad city to add 60-70 offshore tech centres in 2027, consultant ANSR says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOTlBfNThJYkNaY1U1MVgyZm44NkU1M3ZEdEJwcGt4MkxqTnFxVmhpS3pzOThHdkZYUklfNHVLdXBjbkZiOGJCcFFnVXFJb001M1ZpVy1DVWJmWWxBeTZwVDdPWGdzZXVDVFltRVVGc211WHRIZGpVVk5jVEt6TEZOUUxnYkNkYzZ0WGpyQzBKY2d3TDQ4SC12Mlh1dml5QVhlckh5WVBLTTZwWXBOaTFTeE1tOGdaZjd2YllnNF9iNmdBS0cxT0E?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOTlBfNThJYkNaY1U1MVgyZm44NkU1M3ZEdEJwcGt4MkxqTnFxVmhpS3pzOThHdkZYUklfNHVLdXBjbkZiOGJCcFFnVXFJb001M1ZpVy1DVWJmWWxBeTZwVDdPWGdzZXVDVFltRVVGc211WHRIZGpVVk5jVEt6TEZOUUxnYkNkYzZ0WGpyQzBKY2d3TDQ4SC12Mlh1dml5QVhlckh5WVBLTTZwWXBOaTFTeE1tOGdaZjd2YllnNF9iNmdBS0cxT0E?oc=5\" target=\"_blank\"&gt;India's Hyderabad city to add 60-70 offshore tech centres in 2027, consultant ANSR says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
-          "published": "2026-10-29T17:58:37.000Z",
-          "score": 2
         }
       ]
     },
@@ -80,95 +74,62 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Press remarks by Commissioner Jørgensen following the Energy Council",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2302",
-          "source": "European Commission",
-          "description": "European Commission Speech Brussels, 29 Oct 2026 Thank you, Ministers, I agree that we have had a very good day.\r\nThere's no doubt that Ministers from all Member States know that we are facing a difficult winte...",
-          "published": "2026-10-29T18:46:41.000Z",
-          "score": 23
-        },
-        {
-          "title": "Experts: What China wants from the COP31 climate talks",
-          "link": "https://www.carbonbrief.org/experts-what-china-wants-from-the-cop31-climate-talks",
-          "source": "Carbon Brief",
-          "description": "With the COP31 climate summit in Turkey looming, all eyes are on China to see what the country will push&#8230; The post Experts: What China wants from the COP31 climate talks appeared first on Carbon Brief.",
-          "published": "2026-10-29T14:25:40.000Z",
-          "score": 13
-        },
-        {
-          "title": "IPCC’s Sixty-Fifth Session",
-          "link": "https://www.ipcc.ch/2026/10/29/ipcc-65/",
-          "source": "IPCC",
-          "description": "GENEVA, Oct 29 – The Intergovernmental Panel on Climate Change (IPCC) will resume its Sixty-Fifth Session (IPCC-65) from 1 to 3 December 2026. The meeting will be held virtually. At the resumed session, the IPCC member governments will primarily consider two remaining agenda items: the Work Plan for the IPCC Seventh Assessment Report (AR7) and [&#8230;]",
-          "published": "2026-10-29T16:14:32.000Z",
-          "score": 11
-        },
-        {
-          "title": "Editor&#8217;s Desk: COP reform is happening quietly, behind the headlines",
-          "link": "https://www.climatechangenews.com/2026/10/29/editors-desk-cop-reform-is-happening-quietly-behind-the-headlines/",
-          "source": "Climate Home News",
-          "description": "It may seem like little has changed in how the UN climate summits are run, but there's been a gradual shift as action becomes as important as negotiation The post Editor&#8217;s Desk: COP reform is happening quietly, behind the headlines appeared first on Climate Home News.",
-          "published": "2026-10-29T17:51:12.000Z",
-          "score": 10
-        },
-        {
-          "title": "Serious pollution by water industry remains high despite £5bn investment",
-          "link": "https://www.bbc.co.uk/news/articles/cw5ynxepy4gno?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Fears for mature Scots Pines burned by huge Highland wildfire",
+          "link": "https://www.bbc.co.uk/news/articles/cqd09pv4l3k0o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "All but one of England's water companies were rated as \"poor\" or \"requiring improvement\" for environmental targets.",
-          "published": "2026-10-29T12:08:01.000Z",
+          "description": "Experts say some older Scot pine damaged by fire could die removing an important source of seeds",
+          "published": "2026-10-30T15:12:17.000Z",
           "score": 7
+        },
+        {
+          "title": "Healey’s budget cuts mean Britain is likely to miss green heating targets",
+          "link": "https://www.theguardian.com/environment/2026/oct/30/john-healey-budget-cuts-miss-green-heating-targets",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Ex-energy secretary Ed Miliband’s agenda appears undermined as money is diverted from renewables to defence&lt;/p&gt;&lt;p&gt;Britain is unlikely to hit its targets on green heating after the cuts announced by John Healey this week, experts have warned, as critics of Ed Miliband claim the former energy secretary’s green agenda is being dismantled.&lt;/p&gt;&lt;p&gt;The chancellor unveiled more than £3bn worth of cuts to the energy department’s budget this week, much of which will pay fo",
+          "published": "2026-10-30T10:00:50.000Z",
+          "score": 4
+        },
+        {
+          "title": "‘You can see the water going down’: residents on edge as one of England’s worst-hit reservoirs dries up",
+          "link": "https://www.theguardian.com/environment/2026/oct/30/haywards-heath-ardingly-reservoir-water-level-drought-england",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;After UK’s hottest summer on record, Ardingly near Haywards Heath is just 19% full – and next-closest reservoir is unusable due to broken treatment works&lt;/p&gt;&lt;p&gt;“You can see the water level at Ardingly going down and down. I don’t remember ever seeing it this low,” says Caroline Allan, a lifetime resident of Haywards Heath, the nearest town to one of England’s most depleted reservoirs.&lt;/p&gt;&lt;p&gt;The Ardingly reservoir, managed by South East Water and serving about 95,",
+          "published": "2026-10-30T09:00:49.000Z",
+          "score": 2
+        },
+        {
+          "title": "Six dead after helicopter crashes in northern Indian state",
+          "link": "https://www.bbc.co.uk/news/articles/cr93zxyn9eqeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The aircraft reportedly took off from the Hindu pilgrimage site of Badrinath on Friday afternoon before losing contact.",
+          "published": "2026-10-30T15:06:05.000Z",
+          "score": 2
+        },
+        {
+          "title": "Hazardous driving conditions for Friday as fog warning issued by Met Office",
+          "link": "https://www.bbc.co.uk/weather/articles/c6ly075l742ro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Foggy conditions likely to bring tricky conditions for the Friday morning commute as severe weather warning issued.",
+          "published": "2026-10-30T06:18:35.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "US moves to lift sanctions on Russia&#039;s shadow fleet could undermine Western pressure on Moscow and help fund its war in Ukraine.",
-          "link": "https://www.dw.com/en/us-moves-to-lift-sanctions-on-russia-s-shadow-fleet-could-undermine-western-pressure-on-moscow-and-help-fund-its-war-in-ukraine/a-79787035?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The US is reportedly considering ways to convert &quot;dark tankers&quot; into legitimate vessels, allowing them to transport crude oil that is not subject to sanctions.",
-          "published": "2026-10-29T12:01:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Robust consumer spending, AI-related investment power US economy in third quarter - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNd0JuSzdaWWtxaGJGdW5CV0pONGc2dlpzMVJnaGl2UUIwQmtkc1FNSUVNQzhxTFRycVZ4dGpRaVlvbGdraXBWenkzY1otSno3TC1zWTlQUmFRandmM0hlSm14a1pfWTJMNjdNclo5bFlFQWt3UlpIcFlPY3RtZzBQVXhKUzVPSWMxUXZFckNVM3ZXZEU?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNd0JuSzdaWWtxaGJGdW5CV0pONGc2dlpzMVJnaGl2UUIwQmtkc1FNSUVNQzhxTFRycVZ4dGpRaVlvbGdraXBWenkzY1otSno3TC1zWTlQUmFRandmM0hlSm14a1pfWTJMNjdNclo5bFlFQWt3UlpIcFlPY3RtZzBQVXhKUzVPSWMxUXZFckNVM3ZXZEU?oc=5\" target=\"_blank\"&gt;Robust consumer spending, AI-related investment power US economy in third quarter&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-29T20:29:42.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "EU seeks &#039;highest level&#039; ties with Canada in Montreal summit",
-          "link": "https://www.dw.com/en/eu-seeks-highest-level-ties-with-canada-in-montreal-summit/a-79800299?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "European Commission President Ursula von der Leyen said EU seeks &quot;association without accession&quot; for Canada, after EU members snub &quot;associate member&quot; designation.",
-          "published": "2026-10-29T18:50:00.000Z",
-          "score": 8
-        },
-        {
           "title": "Germany's Merz says EU to shape better offer as global trade order comes under pressure - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOcHhrNEFqcXpYaHZVOTlsdVQ0RjJub1lOaHhYZWhzMW40eElFTlAtSkZFbS1RTVRHdmVHRnN0Qkc0dVc1djdLSEU4Y1hzVXZ6VXB5QzEtYUtuNmo1Y1lmaVlhb1ZsOW1pVlNkQ2RRTFM5bFI3Skx2Y0xpUXgwbkNxVGFxMEg5Y0pPMGs5WndndmxDaTY3Y2RPRUdUZHB3QnoxNGxGUUgyVmx0N3ZhTDNEVUtNOHVRb1VjUUZrdG5lWTh3dWFQUmNJ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOcHhrNEFqcXpYaHZVOTlsdVQ0RjJub1lOaHhYZWhzMW40eElFTlAtSkZFbS1RTVRHdmVHRnN0Qkc0dVc1djdLSEU4Y1hzVXZ6VXB5QzEtYUtuNmo1Y1lmaVlhb1ZsOW1pVlNkQ2RRTFM5bFI3Skx2Y0xpUXgwbkNxVGFxMEg5Y0pPMGs5WndndmxDaTY3Y2RPRUdUZHB3QnoxNGxGUUgyVmx0N3ZhTDNEVUtNOHVRb1VjUUZrdG5lWTh3dWFQUmNJ?oc=5\" target=\"_blank\"&gt;Germany's Merz says EU to shape better offer as global trade order comes under pressure&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
           "published": "2026-10-30T03:11:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU pressure on Antigua's 'golden passport' trade threatens budget cushion - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNd3plTzhtd25ZUzByT2JrbURPakpYYkExbDczaDhsSXRJY290T2pUVFZHQjE5THhLNlkybW5pN3M3ODdGMjBNUFJRVG1qYnlFU0ZZTWx1aFRVZ2otTktsSXVVYWJINzVFOHhhY3VDR0k2SXhwZFVSX3ZxNmRuM0UtaER0TVRqSE9Uc2U5c1lOaDBnMGNIV1A2ZnlRSXgzb3NYZngtOWRCN0FtN0lyWmF5RV9vQjZXR3lFdHc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNd3plTzhtd25ZUzByT2JrbURPakpYYkExbDczaDhsSXRJY290T2pUVFZHQjE5THhLNlkybW5pN3M3ODdGMjBNUFJRVG1qYnlFU0ZZTWx1aFRVZ2otTktsSXVVYWJINzVFOHhhY3VDR0k2SXhwZFVSX3ZxNmRuM0UtaER0TVRqSE9Uc2U5c1lOaDBnMGNIV1A2ZnlRSXgzb3NYZngtOWRCN0FtN0lyWmF5RV9vQjZXR3lFdHc?oc=5\" target=\"_blank\"&gt;EU pressure on Antigua's 'golden passport' trade threatens budget cushion&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-29T18:45:43.000Z",
           "score": 8
         }
       ]
@@ -178,30 +139,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Swedish parliament to vote on Centre Party leader as prime minister despite gridlock - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPNGo1RGFmbjJ4UGxVRTlpRTd2a0Z4RDFzY1Y3NHNpWmxoZ2ctbzd6RTJnNjJaOWE4LTZIT2dWNlFmZUVpdnpqVVZaSVUwQXQ2Yi1lTzlrZUYySUNlT25ZclRuSVY0RFdGZ3FPUHZqVkRYVUZEVy1HSG9vcm9Sd2UxYTB5M3RjS05DVFB3OHdZLTk2d1loMTJvWHZnT2RiNDgteXF6a1pBbVhCSWRaTFNhT1R3TTJ0WVBt?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPNGo1RGFmbjJ4UGxVRTlpRTd2a0Z4RDFzY1Y3NHNpWmxoZ2ctbzd6RTJnNjJaOWE4LTZIT2dWNlFmZUVpdnpqVVZaSVUwQXQ2Yi1lTzlrZUYySUNlT25ZclRuSVY0RFdGZ3FPUHZqVkRYVUZEVy1HSG9vcm9Sd2UxYTB5M3RjS05DVFB3OHdZLTk2d1loMTJvWHZnT2RiNDgteXF6a1pBbVhCSWRaTFNhT1R3TTJ0WVBt?oc=5\" target=\"_blank\"&gt;Swedish parliament to vote on Centre Party leader as prime minister despite gridlock&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-29T15:10:09.000Z",
-          "score": 12
-        },
-        {
-          "title": "EU chief lays out vision for new Canada partnership at Montreal summit",
-          "link": "https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Ursula von der Leyen continued to use the term \"associate member\" for Canada despite some opposition of the bloc's members, including Germany.",
-          "published": "2026-10-29T17:02:59.000Z",
-          "score": 8
-        },
-        {
-          "title": "Four killed in crash of Italian helicopter on EU mission in Bosnia - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTUlFV3JZME1DdXNyVnZGZlhRZ1k2ZVUteFVpMVppdEd2YnVsVjEzSlZZT2lYbXJ2aXM0TjgxeTVYYnpKeXA1WWFsUHhxcEhEMEQ5U09sSWNDODFwZ2wxQUM0RjZQVVBzbDQ4cHh2djJRbkp3d2h1MlVGYWdtN3lEWDlacDVaaFQwTmV5aUpCZG5mRTBVSWp4bmtzdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxPTUlFV3JZME1DdXNyVnZGZlhRZ1k2ZVUteFVpMVppdEd2YnVsVjEzSlZZT2lYbXJ2aXM0TjgxeTVYYnpKeXA1WWFsUHhxcEhEMEQ5U09sSWNDODFwZ2wxQUM0RjZQVVBzbDQ4cHh2djJRbkp3d2h1MlVGYWdtN3lEWDlacDVaaFQwTmV5aUpCZG5mRTBVSWp4bmtzdw?oc=5\" target=\"_blank\"&gt;Four killed in crash of Italian helicopter on EU mission in Bosnia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-29T21:11:44.000Z",
-          "score": 8
-        },
-        {
           "title": "Putin says Moscow seeks better European ties, conflict will produce no winners - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNU1BuNGpORFprSUxsY212N0RyamVmZVQ0a3lJRW1zQk9oM2U3a3ZzMDV4YWNBaWFsd1dvYjVCRUcwVFR5dGdfTV85Q2MxN20xR1FaZ09WdDNrdTU1dmhMYXRxYkFfN21oQWllbFNSamo0WVRhbU9BNWtsVkV3d2NuQ3hfczk3cV9VTFM4bl9mRTBkU1FsTnl6RDZUZEl1Wm9sSElGaDVmU2tJc0dZRWU2bFBYWlp6X2tTdk9EcWhyMFZXOTlF?oc=5",
           "source": "Reuters World (via Google News)",
@@ -210,20 +147,44 @@
           "score": 8
         },
         {
-          "title": "VIEW ECB keeps rates unchanged; euro and bond yields fall - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNRS1GTl9NNk5PZHlwa1lfREJ1SlVlb0w0YnVJVHVldVJta1ROanY3MXdQSVZ4NHVjajBINE44VV93cGFtWngtVGxjMV8zaHFPbG8weVEzUE1KUWVDZDRFeXZpckZlTk55d1ZkOVZ1dlBhbFdreWY3ZHUzQmtrc2FmajZmRVlZLWVsTEZ6YmJOaHYxbmI1?oc=5",
+          "title": "Dockworkers strike in Europe and beyond against arms shipments, war deaths - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNN3NLLUpOZmk5ZjdPZmJWYnYyVnlBcnpzdGlsQmRqTHVweGladWdBZTQ3WFNPblI2ZzlTcFJVeEJXSmpIaEt5UU96QW5uOG9yeGN4cjg5c0hDUFozM0xaZGlISkpKbzU3ZXNnQThFNjBjT3pIMjZvSy1Nc3JONUpWeUhDQW9rX2FxbWktNm5OSk9VdURZbWE5ZWdCQjczWFJyYjlRZ3JvSE1nRVJ1ZWwxMUhDZU1nRVNpa0JTcjRmbGZkYkZ5RzJv?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxNRS1GTl9NNk5PZHlwa1lfREJ1SlVlb0w0YnVJVHVldVJta1ROanY3MXdQSVZ4NHVjajBINE44VV93cGFtWngtVGxjMV8zaHFPbG8weVEzUE1KUWVDZDRFeXZpckZlTk55d1ZkOVZ1dlBhbFdreWY3ZHUzQmtrc2FmajZmRVlZLWVsTEZ6YmJOaHYxbmI1?oc=5\" target=\"_blank\"&gt;VIEW ECB keeps rates unchanged; euro and bond yields fall&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-29T14:21:50.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNN3NLLUpOZmk5ZjdPZmJWYnYyVnlBcnpzdGlsQmRqTHVweGladWdBZTQ3WFNPblI2ZzlTcFJVeEJXSmpIaEt5UU96QW5uOG9yeGN4cjg5c0hDUFozM0xaZGlISkpKbzU3ZXNnQThFNjBjT3pIMjZvSy1Nc3JONUpWeUhDQW9rX2FxbWktNm5OSk9VdURZbWE5ZWdCQjczWFJyYjlRZ3JvSE1nRVJ1ZWwxMUhDZU1nRVNpa0JTcjRmbGZkYkZ5RzJv?oc=5\" target=\"_blank\"&gt;Dockworkers strike in Europe and beyond against arms shipments, war deaths&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-30T17:09:14.000Z",
+          "score": 8
+        },
+        {
+          "title": "China's Xi calls on EU to work with China, says Beijing handles ties with sincerity, goodwill - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOeUJSUmlkMEFPVXdGR3QwUUVoWXk4Smo4MjNOeThtNWMxR19hcHhkSmI5d0p4MGstOGd3dVNselZaUmE4NHgyS1dDYlp2QUFUaUU4bWt5OGZiTmdWVEpicndNUlNTR3BYSDRyRmhIT1gxcUt2VHVpYkY3eFY1RUtKa1hLTlRLUW1aT1RwMjZFMDlKSk9JeTZuTlR4SGVqalJ5U0VFcG0tNkRfRWt5dDlZMHpaTHpoMDJ6QWNXWUF3QXM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOeUJSUmlkMEFPVXdGR3QwUUVoWXk4Smo4MjNOeThtNWMxR19hcHhkSmI5d0p4MGstOGd3dVNselZaUmE4NHgyS1dDYlp2QUFUaUU4bWt5OGZiTmdWVEpicndNUlNTR3BYSDRyRmhIT1gxcUt2VHVpYkY3eFY1RUtKa1hLTlRLUW1aT1RwMjZFMDlKSk9JeTZuTlR4SGVqalJ5U0VFcG0tNkRfRWt5dDlZMHpaTHpoMDJ6QWNXWUF3QXM?oc=5\" target=\"_blank\"&gt;China's Xi calls on EU to work with China, says Beijing handles ties with sincerity, goodwill&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
+          "published": "2026-10-30T12:15:07.000Z",
+          "score": 8
+        },
+        {
+          "title": "Euro zone growth beats projections but headwinds mount - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPQ0VVWXZnOW1zb3FvZGREcFJZNnlqZVVTTHpleHhyZEVyNkhCSmtnRTV4bEh6WWZ2eHdyN0ZKNkMwTEpsVERSOFBzNnVLaWNhMTJUQ2QzMzBGUTNhN2l3Uk9mUXRteXY5Y1dFclAtR2QyYWtTV3lPTERQVDlLVlFwY0tZV1ZtTDVOX05HU1QtRnUzTWM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxPQ0VVWXZnOW1zb3FvZGREcFJZNnlqZVVTTHpleHhyZEVyNkhCSmtnRTV4bEh6WWZ2eHdyN0ZKNkMwTEpsVERSOFBzNnVLaWNhMTJUQ2QzMzBGUTNhN2l3Uk9mUXRteXY5Y1dFclAtR2QyYWtTV3lPTERQVDlLVlFwY0tZV1ZtTDVOX05HU1QtRnUzTWM?oc=5\" target=\"_blank\"&gt;Euro zone growth beats projections but headwinds mount&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-30T11:08:31.000Z",
+          "score": 8
+        },
+        {
+          "title": "Pound stands tall as dollar, euro wilt - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOdjkwT0Q2STZxeU5kb3pvNWpQdTFuMVowY0ptVzR4ODhJOWlEdWZKYUxrbU5sSHlOaTFRSEpZbTE0cmJGT3pub21UaE50NWdVOXFSd2g3Rlloem41bFJEY1p1dDJybENzRzRyVm55a1BBa0tDbi1Mdm5pRVY2TURqblJTYkpSZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxOdjkwT0Q2STZxeU5kb3pvNWpQdTFuMVowY0ptVzR4ODhJOWlEdWZKYUxrbU5sSHlOaTFRSEpZbTE0cmJGT3pub21UaE50NWdVOXFSd2g3Rlloem41bFJEY1p1dDJybENzRzRyVm55a1BBa0tDbi1Mdm5pRVY2TURqblJTYkpSZw?oc=5\" target=\"_blank\"&gt;Pound stands tall as dollar, euro wilt&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-30T10:39:44.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 397,
-    "articlesLast24h": 171,
-    "afterDedup": 163,
+    "totalArticlesScanned": 401,
+    "articlesLast24h": 170,
+    "afterDedup": 164,
     "feedsQueried": 19
   }
 }
