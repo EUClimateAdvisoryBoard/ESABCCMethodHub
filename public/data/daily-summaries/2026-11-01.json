@@ -1,6 +1,6 @@
 {
   "date": "2026-11-01",
-  "generatedAt": "2026-11-01T01:58:04.446Z",
+  "generatedAt": "2026-11-01T11:46:13.574Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 1 November 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Borsa Istanbul general manager detained in fund investigation, Anadolu Agency says - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxPZjNORS1HV3hYZE1pRjRUR2FyY1FkTDN4OG42WFc5R2laMkI5b1p1TXFQamEyNW95c3YtaDY2MVVfZWxaRTVnclA1UnFxOWpMQUhEaXhNSGw5ZGxGMF9seWhPWlhqTmFSLWprZk5BYmd3QjZ0V3Q5bDFZcHNOQ3B6UGxLNElFXzR1SkhTbUE4bjBRektfMFNlTVk2WGtsRWd6RmhudFhCald0SFNpTGttdXFKUHNhekNiRWRZNGJNVTJERW42ajBoVU5paDg?oc=5\" target=\"_blank\"&gt;Borsa Istanbul general manager detained in fund investigation, Anadolu Agency says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
+      "headline": "South Korea exports nearly double in October on AI investment boom - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNTEw3WmpfUE9XNlpDeFd4LUpBenRHZVpiTVpFRDZfakN2T29CaHE4emNXQ0s0VzFDZTJTeDlXVkJtV0FSVEpwblJEVWZoWEZ4eEFzNDA5eHh0TGo4X2ZFX3hlYzljRl9TTDhPNkE1a05aNjNPU19Kb1lGbmV1UWw0dUtNZk9HS2JENWx5dDJyNWgxSGRWMzBLaGxMazJRbWxGbVBFbWNJbVlzbHkzTk05RDFGMnBzcUh4V2VqSmhTZmhkUQ?oc=5\" target=\"_blank\"&gt;South Korea exports nearly double in October on AI investment boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -42,20 +42,20 @@
           "score": 7
         },
         {
+          "title": "Germany&#039;s search for a nuclear waste site",
+          "link": "https://www.dw.com/en/germany-s-search-for-a-nuclear-waste-site/a-79820678?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Finland has become the first country with a final storage facility for nuclear waste. Germany is still searching for a site, while some countries have yet to start. Costs are expected to total many billions of euros.",
+          "published": "2026-11-01T08:06:00.000Z",
+          "score": 7
+        },
+        {
           "title": "Ghana says Russia to back 2,000 MW nuclear plant, deepen ties - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVEU1TzJ6c1lISFlURGdCYlJscFltNmo3ay1SblgxNEtKU1lwcEhEcHZpMjg3TWE0VkVrdEtwSFF0dzhxRExVdUQtZTlkU2pENWpTRkdER3FHWEk1RzNRdFA2QlFVcmdzWWNSZ044MjNBejRPeFFNX3dwRUItTXRndW1UaXJxdHJkcThxUUtsVFo2d19MdFZVbVJFM245bW9iSEZwZENCQWk?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVEU1TzJ6c1lISFlURGdCYlJscFltNmo3ay1SblgxNEtKU1lwcEhEcHZpMjg3TWE0VkVrdEtwSFF0dzhxRExVdUQtZTlkU2pENWpTRkdER3FHWEk1RzNRdFA2QlFVcmdzWWNSZ044MjNBejRPeFFNX3dwRUItTXRndW1UaXJxdHJkcThxUUtsVFo2d19MdFZVbVJFM245bW9iSEZwZENCQWk?oc=5\" target=\"_blank\"&gt;Ghana says Russia to back 2,000 MW nuclear plant, deepen ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-10-31T19:45:43.000Z",
           "score": 7
-        },
-        {
-          "title": "Watch: Blood donors get a Halloween fright in Thailand",
-          "link": "https://www.bbc.co.uk/news/videos/cmze42el49d9o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Thai Red Cross workers dressed up as part of a Halloween-themed blood drive in the country's capital Bangkok.",
-          "published": "2026-10-31T12:50:45.000Z",
-          "score": 4
         },
         {
           "title": "Trump boosted half of US coal plants with taxpayer dollars and ‘free passes to pollute’, report says",
@@ -126,6 +126,14 @@
       "title": "Green Finance & Investment",
       "items": [
         {
+          "title": "South Korea exports nearly double in October on AI investment boom - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNTEw3WmpfUE9XNlpDeFd4LUpBenRHZVpiTVpFRDZfakN2T29CaHE4emNXQ0s0VzFDZTJTeDlXVkJtV0FSVEpwblJEVWZoWEZ4eEFzNDA5eHh0TGo4X2ZFX3hlYzljRl9TTDhPNkE1a05aNjNPU19Kb1lGbmV1UWw0dUtNZk9HS2JENWx5dDJyNWgxSGRWMzBLaGxMazJRbWxGbVBFbWNJbVlzbHkzTk05RDFGMnBzcUh4V2VqSmhTZmhkUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNTEw3WmpfUE9XNlpDeFd4LUpBenRHZVpiTVpFRDZfakN2T29CaHE4emNXQ0s0VzFDZTJTeDlXVkJtV0FSVEpwblJEVWZoWEZ4eEFzNDA5eHh0TGo4X2ZFX3hlYzljRl9TTDhPNkE1a05aNjNPU19Kb1lGbmV1UWw0dUtNZk9HS2JENWx5dDJyNWgxSGRWMzBLaGxMazJRbWxGbVBFbWNJbVlzbHkzTk05RDFGMnBzcUh4V2VqSmhTZmhkUQ?oc=5\" target=\"_blank\"&gt;South Korea exports nearly double in October on AI investment boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-01T00:39:00.000Z",
+          "score": 2
+        },
+        {
           "title": "Borsa Istanbul general manager detained in fund investigation, Anadolu Agency says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPZjNORS1HV3hYZE1pRjRUR2FyY1FkTDN4OG42WFc5R2laMkI5b1p1TXFQamEyNW95c3YtaDY2MVVfZWxaRTVnclA1UnFxOWpMQUhEaXhNSGw5ZGxGMF9seWhPWlhqTmFSLWprZk5BYmd3QjZ0V3Q5bDFZcHNOQ3B6UGxLNElFXzR1SkhTbUE4bjBRektfMFNlTVk2WGtsRWd6RmhudFhCald0SFNpTGttdXFKUHNhekNiRWRZNGJNVTJERW42ajBoVU5paDg?oc=5",
           "source": "Reuters World (via Google News)",
@@ -145,14 +153,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "India news: Amit Shah challenges Rahul Gandhi to debate vote theft in parliament",
-          "link": "https://www.dw.com/en/india-news-amit-shah-challenges-rahul-gandhi-to-debate-vote-theft-in-parliament/live-79814329?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Home Minister Amit Shah has challenged Rahul Gandhi to debate electoral irregularity allegations in parliament, ahead of a major opposition rally against the election chief in Delhi.",
-          "published": "2026-10-31T05:06:00.000Z",
-          "score": 12
-        },
-        {
           "title": "Thousands demonstrate in Paris as protests spread across Europe",
           "link": "https://www.bbc.co.uk/news/videos/ck0j0y87j303o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -161,12 +161,20 @@
           "score": 8
         },
         {
-          "title": "After Louvre heist and string of thefts, Europe's smaller museums are on guard - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNV2hEQ0g1Rk9ZSjJMakpuX2lCY3hFc1I4VjhMbnE3aGFMWXh3TU9NSE1sWEFCM2dRUVBTRXE5cWxUMXdwdXZwZ29vNFdBbjVKYW1yTDN1b2tlZ1RjQW13NkdqVEI5RV9ybFRad3kyY0VTOTZaUEhFaDYyUmdTYnlMenBDNGM0VVEyanFtRFJUTjFnc0MyemdmRVlLNlBGbGdxMjFmZXRUem43WTRz?oc=5",
+          "title": "Dining and Down Syndrome, a winning combination for Brussels restaurant - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xc1hhTDVfcFBuYTI2d2J0SXM4QTA5d0xSVEtoeTBqaENtVFhXMFZ1Tm90Zm9oQXlBMlctZlBxdFB0cFFrU2NjR19UT2RLTEVjdm5wQ3ZtbV81OGdL?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNV2hEQ0g1Rk9ZSjJMakpuX2lCY3hFc1I4VjhMbnE3aGFMWXh3TU9NSE1sWEFCM2dRUVBTRXE5cWxUMXdwdXZwZ29vNFdBbjVKYW1yTDN1b2tlZ1RjQW13NkdqVEI5RV9ybFRad3kyY0VTOTZaUEhFaDYyUmdTYnlMenBDNGM0VVEyanFtRFJUTjFnc0MyemdmRVlLNlBGbGdxMjFmZXRUem43WTRz?oc=5\" target=\"_blank\"&gt;After Louvre heist and string of thefts, Europe's smaller museums are on guard&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-31T23:49:30.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xc1hhTDVfcFBuYTI2d2J0SXM4QTA5d0xSVEtoeTBqaENtVFhXMFZ1Tm90Zm9oQXlBMlctZlBxdFB0cFFrU2NjR19UT2RLTEVjdm5wQ3ZtbV81OGdL?oc=5\" target=\"_blank\"&gt;Dining and Down Syndrome, a winning combination for Brussels restaurant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-01T10:39:21.000Z",
           "score": 8
+        },
+        {
+          "title": "Xiaomi's October EV deliveries top 50,000, hit 2026 monthly high - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVGJQV25faktaWGFiUks0eTdlWmFhbkcwR0RWcXdFbk95UXJ6VjBmSUV1NjRaTk1oYXk0NEtKaGF1NTJBOWNFUm1sY2tiUVhjekJVU25tRWduZVpGVFNHMGFyOTN1RjRmS1lFcnNSRExoT216QUNtaFZjOTluU1g0d19EejFmR2pRWDJuSXc4WWQ3WHJ2UngzYmZRV3d0a2dmeHFycVhhZGdvN1dUbmc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQVGJQV25faktaWGFiUks0eTdlWmFhbkcwR0RWcXdFbk95UXJ6VjBmSUV1NjRaTk1oYXk0NEtKaGF1NTJBOWNFUm1sY2tiUVhjekJVU25tRWduZVpGVFNHMGFyOTN1RjRmS1lFcnNSRExoT216QUNtaFZjOTluU1g0d19EejFmR2pRWDJuSXc4WWQ3WHJ2UngzYmZRV3d0a2dmeHFycVhhZGdvN1dUbmc?oc=5\" target=\"_blank\"&gt;Xiaomi's October EV deliveries top 50,000, hit 2026 monthly high&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-01T07:42:09.000Z",
+          "score": 7
         },
         {
           "title": "African lenders formally establish $5 billion energy bank - Reuters",
@@ -177,19 +185,19 @@
           "score": 7
         },
         {
-          "title": "COMMENTARY: A guide to swing-state energy politics ahead of US midterms - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObjZPQ1l5NXRZTnFyQUpJVXpkZUdmLXZVWU5zMXhRZ09oemQ2RFZfT2ZfcDlTZ05HekJTS3dRa1pPWXpsTk9ycHZLSGtDbF9UdkdTdlpfMlctWW42eWpmSzgwUlBnOXhxRlNXUHoyY1EyZkhXMW9FZXRsYzlqUm82cjhrZDZiZEdrb18wZzRUTE1fSlo5T2gzaU1kQlJXZXIwX1psaFVsLU5sVTRDR0xha3BKSktDOWlJajZHaw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxObjZPQ1l5NXRZTnFyQUpJVXpkZUdmLXZVWU5zMXhRZ09oemQ2RFZfT2ZfcDlTZ05HekJTS3dRa1pPWXpsTk9ycHZLSGtDbF9UdkdTdlpfMlctWW42eWpmSzgwUlBnOXhxRlNXUHoyY1EyZkhXMW9FZXRsYzlqUm82cjhrZDZiZEdrb18wZzRUTE1fSlo5T2gzaU1kQlJXZXIwX1psaFVsLU5sVTRDR0xha3BKSktDOWlJajZHaw?oc=5\" target=\"_blank\"&gt;COMMENTARY: A guide to swing-state energy politics ahead of US midterms&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-31T07:28:51.000Z",
-          "score": 7
+          "title": "Bulgarians vote in highly polarized presidential runoff overshadowed by Ukraine war",
+          "link": "https://www.dw.com/en/bulgarians-vote-in-highly-polarized-presidential-runoff-overshadowed-by-ukraine-war/a-79820449?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Voters in Bulgaria are choosing between two candidates with vastly different views of the war in Ukraine and ties with Russia. The runoff comes after a record-low turnout in the first round.",
+          "published": "2026-11-01T07:00:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 385,
-    "articlesLast24h": 137,
+    "totalArticlesScanned": 384,
+    "articlesLast24h": 141,
     "afterDedup": 129,
     "feedsQueried": 19
   }
