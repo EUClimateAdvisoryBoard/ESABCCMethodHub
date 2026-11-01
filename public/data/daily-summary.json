@@ -1,18 +1,18 @@
 {
   "date": "2026-11-01",
-  "generatedAt": "2026-11-01T11:46:13.574Z",
+  "generatedAt": "2026-11-01T21:02:41.664Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 1 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Healey to veto new offshore wind projects if they will not lower bills",
-      "summary": "&lt;p&gt;UK chancellor’s plans add to concerns government is moving away from pro-renewables agenda&lt;/p&gt;&lt;p&gt;John Healey has said he will veto new offshore wind projects if they will not lower bills, adding to concerns that the government is moving away from the pro-renewables agenda.&lt;/p&gt;&lt;p&gt;Announcing his plans, the chancellor said clean power is “how we break the grip of international gas prices on our bills”, but added the shift towards it “has to come at the right pace, i",
+      "headline": "Germany&#039;s search for a nuclear waste site",
+      "summary": "Finland has become the first country with a final storage facility for nuclear waste. Germany is still searching for a site, while some countries have yet to start. Costs are expected to total many billions of euros.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "COP17: Key outcomes agreed at the UN biodiversity conference in Yerevan",
-      "summary": "Countries have completed the first “global review” of their progress towards reversing nature loss by 2030 at the COP17 biodiversity&#8230; The post COP17: Key outcomes agreed at the UN biodiversity conference in Yerevan appeared first on Carbon Brief.",
+      "headline": "How the downfall of Serbia's Vučiċ mirrored that of Hungary's Orbán",
+      "summary": "Defeat for Serbia's Aleksandar Vučiċ in last weekend's vote was a carbon copy of Viktor Orbán's fall in Hungary.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,14 +34,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Healey to veto new offshore wind projects if they will not lower bills",
-          "link": "https://www.theguardian.com/environment/2026/oct/31/john-healey-chancellor-offshore-wind-projects-veto",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;UK chancellor’s plans add to concerns government is moving away from pro-renewables agenda&lt;/p&gt;&lt;p&gt;John Healey has said he will veto new offshore wind projects if they will not lower bills, adding to concerns that the government is moving away from the pro-renewables agenda.&lt;/p&gt;&lt;p&gt;Announcing his plans, the chancellor said clean power is “how we break the grip of international gas prices on our bills”, but added the shift towards it “has to come at the right pace, i",
-          "published": "2026-10-31T11:48:14.000Z",
-          "score": 7
-        },
-        {
           "title": "Germany&#039;s search for a nuclear waste site",
           "link": "https://www.dw.com/en/germany-s-search-for-a-nuclear-waste-site/a-79820678?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -50,27 +42,35 @@
           "score": 7
         },
         {
-          "title": "Ghana says Russia to back 2,000 MW nuclear plant, deepen ties - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVEU1TzJ6c1lISFlURGdCYlJscFltNmo3ay1SblgxNEtKU1lwcEhEcHZpMjg3TWE0VkVrdEtwSFF0dzhxRExVdUQtZTlkU2pENWpTRkdER3FHWEk1RzNRdFA2QlFVcmdzWWNSZ044MjNBejRPeFFNX3dwRUItTXRndW1UaXJxdHJkcThxUUtsVFo2d19MdFZVbVJFM245bW9iSEZwZENCQWk?oc=5",
+          "title": "Venture Global begins supplying Plaquemines phase 1 customers under long-term LNG contracts - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNUdFOHN2STIyaFRSZlNUbERCOTM2SkpuVzZUMmZmeGNidXpFQ3hpTEZYblE0N1VmdzZ4WExBRmxQTjB4OEpXV1hiOUlxWjFBTWZDYVBjSUNBYnMyRzR2N2VIa3dnTlNhWGhjWlpPOGdRVE5OWXYyNzFDOXJsZjBpVmVEUEYtUk5VREVKM2U5NjR4a2NKTGN0RlBwOHBKUHJSWWYxT0hrMThWSDNJS1ppQVUxZTBtTTRpajkzTzk2Rm90MnJObnV2Qw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVEU1TzJ6c1lISFlURGdCYlJscFltNmo3ay1SblgxNEtKU1lwcEhEcHZpMjg3TWE0VkVrdEtwSFF0dzhxRExVdUQtZTlkU2pENWpTRkdER3FHWEk1RzNRdFA2QlFVcmdzWWNSZ044MjNBejRPeFFNX3dwRUItTXRndW1UaXJxdHJkcThxUUtsVFo2d19MdFZVbVJFM245bW9iSEZwZENCQWk?oc=5\" target=\"_blank\"&gt;Ghana says Russia to back 2,000 MW nuclear plant, deepen ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-31T19:45:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNUdFOHN2STIyaFRSZlNUbERCOTM2SkpuVzZUMmZmeGNidXpFQ3hpTEZYblE0N1VmdzZ4WExBRmxQTjB4OEpXV1hiOUlxWjFBTWZDYVBjSUNBYnMyRzR2N2VIa3dnTlNhWGhjWlpPOGdRVE5OWXYyNzFDOXJsZjBpVmVEUEYtUk5VREVKM2U5NjR4a2NKTGN0RlBwOHBKUHJSWWYxT0hrMThWSDNJS1ppQVUxZTBtTTRpajkzTzk2Rm90MnJObnV2Qw?oc=5\" target=\"_blank\"&gt;Venture Global begins supplying Plaquemines phase 1 customers under long-term LNG contracts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
+          "published": "2026-11-01T14:25:43.000Z",
           "score": 7
         },
         {
-          "title": "Trump boosted half of US coal plants with taxpayer dollars and ‘free passes to pollute’, report says",
-          "link": "https://www.theguardian.com/us-news/2026/oct/31/trump-coal-plants-taxpayer-dollars",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Environmental Defense Fund analysis shows administration handed out $950m and Clean Air Act exemptions&lt;/p&gt;&lt;p&gt;It’s a good time to be a coal plant in the US. The Trump administration has given support to almost half of the nation’s coal plants, helping them to continue operating despite economic and regulatory headwinds, according to a new &lt;a href=\"https://coalcosts.edf.org/\"&gt;analysis&lt;/a&gt; by the Environmental Defense Fund.&lt;/p&gt;&lt;p&gt;The analysis, which look",
-          "published": "2026-10-31T13:00:42.000Z",
+          "title": "India's October coal-fired power output jumps most in 3 years as hydro generation slumps - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPb0s3MDQ2QklmZmpMU05CQ2hDRmFhMUoyMnBsdUo0dVhzQm5KZWpUNktScUxlY3BTYmNsazJtUU5pU08wZHhveTlJR1VFcjlrNWVPNTV4QTR3aktmM0Y1WUZGSnZVUVQ1WUQyV1ZRRXpnVkR6VVI1VUd3Z2g3ZFBUTUV3aGVvUnZfZVIwNE1UdFpzTVVuWjNRNXhIZi1QcExzaFBSSTZQSUp2eGllcnpoc0F5N242empXRDR3Y2lIOA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPb0s3MDQ2QklmZmpMU05CQ2hDRmFhMUoyMnBsdUo0dVhzQm5KZWpUNktScUxlY3BTYmNsazJtUU5pU08wZHhveTlJR1VFcjlrNWVPNTV4QTR3aktmM0Y1WUZGSnZVUVQ1WUQyV1ZRRXpnVkR6VVI1VUd3Z2g3ZFBUTUV3aGVvUnZfZVIwNE1UdFpzTVVuWjNRNXhIZi1QcExzaFBSSTZQSUp2eGllcnpoc0F5N242empXRDR3Y2lIOA?oc=5\" target=\"_blank\"&gt;India's October coal-fired power output jumps most in 3 years as hydro generation slumps&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-11-01T06:54:00.000Z",
           "score": 2
         },
         {
-          "title": "Ukrainian evacuees reunite with family after years trapped in Russia-occupied city",
-          "link": "https://www.bbc.co.uk/news/articles/cqx2818elrnzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Oleshky residents had been without food, water and electricity, with many resorting to cooking garden weeds to survive.",
-          "published": "2026-10-31T17:53:35.000Z",
+          "title": "Vietnam cuts retail electricity price, removes gasoline tax from November 1 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQN0MxaERXNWw4U25McV9YQUtQNllvaUxPdDgyUTZEZ2hBMlNEQ3U2ZThXTWwtNTU3UnVjbFdTQ3E3QkhUMVVxclMxcWY3UUdtaVNKTVpwSHk5REdMNUJ3SHN5NUxES2U5eEtkeGFkUTNEejBnWVFCMHZxdE50Zi1uT0ZIcEs1Qk5tQjFyT3FfMDdIZ2tNTUI2Z1diSU0teC1NVndvOGw3Wmduczc2WWxXTUh6aC1xUWZaM2ltbG1n?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQN0MxaERXNWw4U25McV9YQUtQNllvaUxPdDgyUTZEZ2hBMlNEQ3U2ZThXTWwtNTU3UnVjbFdTQ3E3QkhUMVVxclMxcWY3UUdtaVNKTVpwSHk5REdMNUJ3SHN5NUxES2U5eEtkeGFkUTNEejBnWVFCMHZxdE50Zi1uT0ZIcEs1Qk5tQjFyT3FfMDdIZ2tNTUI2Z1diSU0teC1NVndvOGw3Wmduczc2WWxXTUh6aC1xUWZaM2ltbG1n?oc=5\" target=\"_blank\"&gt;Vietnam cuts retail electricity price, removes gasoline tax from November 1&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-10-31T22:30:26.000Z",
+          "score": 2
+        },
+        {
+          "title": "Germany must do more to boost gas reserves as storage levels hit record low, lobby group says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNTzBFS0hhWUtOcVhOMDVsX25TV3R4eENLbjdCMUpDRDByYTBHWjU3MmtycmM2blh4Y1Y3V2t6SUhIODJidldfcjNOdG0zVHRNdVFWdXZKWVhJeWdFWE9LaDA1MnJlbk1vaC1qLUpuZWU0WERCckY3Nk4tLUhHcnNFZ1pJdzJYRTFxWFl4cjRTNG53QmxkSDAxUUd2NjdnRUhOTDBhbUx5eUppU3Q4Vmh0aFExRlVRTUJzUGl1aWgySFZtRjlnb1E?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNTzBFS0hhWUtOcVhOMDVsX25TV3R4eENLbjdCMUpDRDByYTBHWjU3MmtycmM2blh4Y1Y3V2t6SUhIODJidldfcjNOdG0zVHRNdVFWdXZKWVhJeWdFWE9LaDA1MnJlbk1vaC1qLUpuZWU0WERCckY3Nk4tLUhHcnNFZ1pJdzJYRTFxWFl4cjRTNG53QmxkSDAxUUd2NjdnRUhOTDBhbUx5eUppU3Q4Vmh0aFExRlVRTUJzUGl1aWgySFZtRjlnb1E?oc=5\" target=\"_blank\"&gt;Germany must do more to boost gas reserves as storage levels hit record low, lobby group says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
+          "published": "2026-11-01T05:04:00.000Z",
           "score": 2
         }
       ]
@@ -80,22 +80,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "COP17: Key outcomes agreed at the UN biodiversity conference in Yerevan",
-          "link": "https://www.carbonbrief.org/cop17-key-outcomes-agreed-at-the-un-biodiversity-conference-in-yerevan",
-          "source": "Carbon Brief",
-          "description": "Countries have completed the first “global review” of their progress towards reversing nature loss by 2030 at the COP17 biodiversity&#8230; The post COP17: Key outcomes agreed at the UN biodiversity conference in Yerevan appeared first on Carbon Brief.",
-          "published": "2026-10-31T13:30:22.000Z",
-          "score": 13
-        },
-        {
-          "title": "COP17 delivers fragile deal to boost conservation and funding for nature",
-          "link": "https://www.climatechangenews.com/2026/10/31/cop17-delivers-fragile-deal-scaling-up-biodiversity-conservation-armenia-cbd/",
-          "source": "Climate Home News",
-          "description": "After a two-week stalemate, countries agreed to invite wealthy emerging economies like China to assume donor status and help fund biodiversity protection as finance falls short The post COP17 delivers fragile deal to boost conservation and funding for nature appeared first on Climate Home News.",
-          "published": "2026-10-31T11:50:27.000Z",
-          "score": 10
-        },
-        {
           "title": "How the downfall of Serbia's Vučiċ mirrored that of Hungary's Orbán",
           "link": "https://www.bbc.co.uk/news/articles/c893z699q401o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -104,20 +88,36 @@
           "score": 8
         },
         {
-          "title": "Countries reach COP17 deal to speed up biodiversity action, but money still short - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQR0NES1I2SUNHY1pIdGg3aVBYdW9wR0gtSDlETFpHU3pwbS1TVzdrTXFCd09DLUFHbjJxY0pBSHhGb0duVDEtczNjTjJFLThRaFRiTnJ2N2J4anJiWUpLVHhhay1xdmdCbzNTTUI1R0JCWkY2aVU5aTZxNHpWMUJzMS1ZVWE1UXRPdTE1SEhhd3JvTWVBSEtIUmM3Y0phRlc0X1Bzc1Z3NmYxSm5TS0FiYkNaenYzcmIyQUhKUk43Zy0wX2V0emhr?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQR0NES1I2SUNHY1pIdGg3aVBYdW9wR0gtSDlETFpHU3pwbS1TVzdrTXFCd09DLUFHbjJxY0pBSHhGb0duVDEtczNjTjJFLThRaFRiTnJ2N2J4anJiWUpLVHhhay1xdmdCbzNTTUI1R0JCWkY2aVU5aTZxNHpWMUJzMS1ZVWE1UXRPdTE1SEhhd3JvTWVBSEtIUmM3Y0phRlc0X1Bzc1Z3NmYxSm5TS0FiYkNaenYzcmIyQUhKUk43Zy0wX2V0emhr?oc=5\" target=\"_blank\"&gt;Countries reach COP17 deal to speed up biodiversity action, but money still short&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
-          "published": "2026-10-31T18:32:51.000Z",
-          "score": 7
+          "title": "Bolivia declares emergency as El Nino intensifies, threatens severe weather",
+          "link": "https://www.dw.com/en/bolivia-declares-emergency-as-el-nino-intensifies-threatens-severe-weather/a-79820253?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "President Rodrigo Paz warned of severe droughts and flooding as El Nino intensifies, with at least 78,000 families already affected by drought.",
+          "published": "2026-11-01T06:19:00.000Z",
+          "score": 4
         },
         {
-          "title": "‘Bunch of baloney’: calls grow for Cop summit reforms as countries on track to fail nature targets",
-          "link": "https://www.theguardian.com/environment/2026/oct/31/cop17-reforms-fails-to-deliver-targets",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Cop17, focused on protecting nature and restoring ecosystems, concludes on Saturday with critics saying system allows ‘one idiot’ to stall progress&lt;/p&gt;&lt;p&gt;Calls are growing for major reforms to UN biodiversity summits as countries fail to deliver on their promises to halt the destruction of the natural world, with governments likely on track to continue their record of never having met a target in the 34-year history of the convention.&lt;/p&gt;&lt;p&gt;Two weeks of negotiati",
-          "published": "2026-10-31T12:30:06.000Z",
-          "score": 4
+          "title": "'Fascinating' rare beetle found in Wales again after 60 years",
+          "link": "https://www.bbc.co.uk/news/articles/cry8317pdp5yo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "It was feared The Short-Necked Oil Beetle had become extinct in Wales after recent surveys",
+          "published": "2026-11-01T18:04:52.000Z",
+          "score": 2
+        },
+        {
+          "title": "Spill from vandalised home oil tank kills 13 birds",
+          "link": "https://www.bbc.co.uk/news/videos/crwyd2lyj15go?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "A number of birds are also injured after the spill from the oil tank earlier this week.",
+          "published": "2026-11-01T08:57:56.000Z",
+          "score": 2
+        },
+        {
+          "title": "Oil tank vandalism results in waterfowl park 'nightmare'",
+          "link": "https://www.bbc.co.uk/news/articles/c64g14ene2epo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The popular attraction in County Down has been forced to close while efforts continue to remove oil from the pond.",
+          "published": "2026-11-01T06:42:13.000Z",
+          "score": 2
         }
       ]
     },
@@ -132,21 +132,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNTEw3WmpfUE9XNlpDeFd4LUpBenRHZVpiTVpFRDZfakN2T29CaHE4emNXQ0s0VzFDZTJTeDlXVkJtV0FSVEpwblJEVWZoWEZ4eEFzNDA5eHh0TGo4X2ZFX3hlYzljRl9TTDhPNkE1a05aNjNPU19Kb1lGbmV1UWw0dUtNZk9HS2JENWx5dDJyNWgxSGRWMzBLaGxMazJRbWxGbVBFbWNJbVlzbHkzTk05RDFGMnBzcUh4V2VqSmhTZmhkUQ?oc=5\" target=\"_blank\"&gt;South Korea exports nearly double in October on AI investment boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-11-01T00:39:00.000Z",
           "score": 2
-        },
-        {
-          "title": "Borsa Istanbul general manager detained in fund investigation, Anadolu Agency says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPZjNORS1HV3hYZE1pRjRUR2FyY1FkTDN4OG42WFc5R2laMkI5b1p1TXFQamEyNW95c3YtaDY2MVVfZWxaRTVnclA1UnFxOWpMQUhEaXhNSGw5ZGxGMF9seWhPWlhqTmFSLWprZk5BYmd3QjZ0V3Q5bDFZcHNOQ3B6UGxLNElFXzR1SkhTbUE4bjBRektfMFNlTVk2WGtsRWd6RmhudFhCald0SFNpTGttdXFKUHNhekNiRWRZNGJNVTJERW42ajBoVU5paDg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxPZjNORS1HV3hYZE1pRjRUR2FyY1FkTDN4OG42WFc5R2laMkI5b1p1TXFQamEyNW95c3YtaDY2MVVfZWxaRTVnclA1UnFxOWpMQUhEaXhNSGw5ZGxGMF9seWhPWlhqTmFSLWprZk5BYmd3QjZ0V3Q5bDFZcHNOQ3B6UGxLNElFXzR1SkhTbUE4bjBRektfMFNlTVk2WGtsRWd6RmhudFhCald0SFNpTGttdXFKUHNhekNiRWRZNGJNVTJERW42ajBoVU5paDg?oc=5\" target=\"_blank\"&gt;Borsa Istanbul general manager detained in fund investigation, Anadolu Agency says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
-          "published": "2026-10-31T18:27:43.000Z",
-          "score": 2
         }
       ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Russia&#039;s giant new radar in Kaliningrad raises alarm in NATO",
+          "link": "https://www.dw.com/en/russia-s-giant-new-radar-in-kaliningrad-raises-alarm-in-nato/a-79797815?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Russia is nearing completion of what experts think is a giant radar complex in Kaliningrad, capable of monitoring much of Europe. Experts warn the project could intensify the military standoff between Moscow and NATO.",
+          "published": "2026-11-01T20:34:00.000Z",
+          "score": 4
+        }
+      ]
     },
     {
       "id": "other_world",
@@ -158,6 +159,14 @@
           "source": "BBC World News",
           "description": "More than 320,000 people demonstrated across France against the rising cost of living and poor public services, with clashes between some protesters and police.",
           "published": "2026-10-31T21:29:01.000Z",
+          "score": 8
+        },
+        {
+          "title": "European 1,500 metres champion Mageean dies aged 34 after cancer battle - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcHNtLUVZN3cwNkt0ZTlnYUl4ZG5SV0l4dFZuVW5Lc1Rab3NWQ0YyT21MWU9KMTRCZWZsZ2xMcU04bXFpRm5kNThQZzBmaGZUYWdkSXk4VWVxcl9CajFlZUhJNjM5ZXg4aUh5ckVxYWRqQVNKRm85VFFweFlqUXBfeFpqMzMwcnRKWmd3dGFEXzc1U0JGenhLT2NhWEdRWTBQalBN?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOcHNtLUVZN3cwNkt0ZTlnYUl4ZG5SV0l4dFZuVW5Lc1Rab3NWQ0YyT21MWU9KMTRCZWZsZ2xMcU04bXFpRm5kNThQZzBmaGZUYWdkSXk4VWVxcl9CajFlZUhJNjM5ZXg4aUh5ckVxYWRqQVNKRm85VFFweFlqUXBfeFpqMzMwcnRKWmd3dGFEXzc1U0JGenhLT2NhWEdRWTBQalBN?oc=5\" target=\"_blank\"&gt;European 1,500 metres champion Mageean dies aged 34 after cancer battle&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-01T11:19:43.000Z",
           "score": 8
         },
         {
@@ -177,28 +186,20 @@
           "score": 7
         },
         {
-          "title": "African lenders formally establish $5 billion energy bank - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQX0psczBDdnpUSWlSNnRmQURlR2tEUFhHVFZkZktQRTNRNWNNUU1laFplb2RfbDNGNGItRmF4d3A4XzdvdkdmZFQyMEQ1Q0c2bUhiWEZUSlpuV2ZXRXBsS0kzTkJkS2JJNGFDc2M1M1Y0WUc0UnVwa04xWVZIN2xJVFFjeUpLck1IUU5aWWpjWU92ZHc2VVNNYVFvTzJXdDlZSFNrZmx3enBYTkMx?oc=5",
+          "title": "iShares MSCI World Energy Sector UCITS ETF USD D (5MVW.DE) | Stock Price &amp; Latest News - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1KeXVGX3dsUDNHdzlnbEY3WDVsOW5ZWkl3Y0Rtb3dUa3paYW15MVVoSnJsVWdWVkFMSEg2T3VXd0ZnWFNYRHEyNkxLSElUaEtWT0xFMHZlOHh4dw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQX0psczBDdnpUSWlSNnRmQURlR2tEUFhHVFZkZktQRTNRNWNNUU1laFplb2RfbDNGNGItRmF4d3A4XzdvdkdmZFQyMEQ1Q0c2bUhiWEZUSlpuV2ZXRXBsS0kzTkJkS2JJNGFDc2M1M1Y0WUc0UnVwa04xWVZIN2xJVFFjeUpLck1IUU5aWWpjWU92ZHc2VVNNYVFvTzJXdDlZSFNrZmx3enBYTkMx?oc=5\" target=\"_blank\"&gt;African lenders formally establish $5 billion energy bank&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-31T16:19:40.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE1KeXVGX3dsUDNHdzlnbEY3WDVsOW5ZWkl3Y0Rtb3dUa3paYW15MVVoSnJsVWdWVkFMSEg2T3VXd0ZnWFNYRHEyNkxLSElUaEtWT0xFMHZlOHh4dw?oc=5\" target=\"_blank\"&gt;iShares MSCI World Energy Sector UCITS ETF USD D (5MVW.DE) | Stock Price &amp; Latest News&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-01T12:37:19.000Z",
           "score": 7
-        },
-        {
-          "title": "Bulgarians vote in highly polarized presidential runoff overshadowed by Ukraine war",
-          "link": "https://www.dw.com/en/bulgarians-vote-in-highly-polarized-presidential-runoff-overshadowed-by-ukraine-war/a-79820449?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Voters in Bulgaria are choosing between two candidates with vastly different views of the war in Ukraine and ties with Russia. The runoff comes after a record-low turnout in the first round.",
-          "published": "2026-11-01T07:00:00.000Z",
-          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 384,
-    "articlesLast24h": 141,
-    "afterDedup": 129,
+    "totalArticlesScanned": 389,
+    "articlesLast24h": 139,
+    "afterDedup": 131,
     "feedsQueried": 19
   }
 }
