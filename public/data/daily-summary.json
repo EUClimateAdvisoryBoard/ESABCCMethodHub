@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-01",
-  "generatedAt": "2026-11-01T21:02:41.664Z",
+  "date": "2026-11-02",
+  "generatedAt": "2026-11-02T02:12:29.217Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Sunday, 1 November 2026 — Key developments from the last 24 hours",
+  "subtitle": "Monday, 2 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
       "headline": "Germany&#039;s search for a nuclear waste site",
@@ -11,16 +11,10 @@
       "color": "#E87722"
     },
     {
-      "headline": "How the downfall of Serbia's Vučiċ mirrored that of Hungary's Orbán",
-      "summary": "Defeat for Serbia's Aleksandar Vučiċ in last weekend's vote was a carbon copy of Viktor Orbán's fall in Hungary.",
+      "headline": "Conservatives like me embrace conservation. Why the Coalition’s chainsaw approach to climate?",
+      "summary": "&lt;p&gt;The radical assault on longstanding measures to drive down Australia’s emissions and facilitate decarbonisation seems almost pathological&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;T",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "South Korea exports nearly double in October on AI investment boom - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNTEw3WmpfUE9XNlpDeFd4LUpBenRHZVpiTVpFRDZfakN2T29CaHE4emNXQ0s0VzFDZTJTeDlXVkJtV0FSVEpwblJEVWZoWEZ4eEFzNDA5eHh0TGo4X2ZFX3hlYzljRl9TTDhPNkE1a05aNjNPU19Kb1lGbmV1UWw0dUtNZk9HS2JENWx5dDJyNWgxSGRWMzBLaGxMazJRbWxGbVBFbWNJbVlzbHkzTk05RDFGMnBzcUh4V2VqSmhTZmhkUQ?oc=5\" target=\"_blank\"&gt;South Korea exports nearly double in October on AI investment boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -50,19 +44,19 @@
           "score": 7
         },
         {
+          "title": "Erdogan says South Korea could partner in Turkey's Sinop nuclear project, Yonhap reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRWlldndLdklSWDlnQjF3TFRqT0toSUlZUE1yQmNTem9aTDd0OE9WWlk1cy00aWpGYTFaWXdkLURmTkRMbUZOTWFxRFdZeUJfWTZMdlJUdHQ4MVcxb194VThjaFprTmk3NWNFWlFtX3VZS0NCV1FaM0RLaUNqcHl5SHRHUHZmQXFyWU5OV3hnUW0tNVlVSTRNUjAwTUYxMmZjM1dNc0RPc1VSaF9rd21BZy1zOEhHZ21NQkpxbC1WMHlGQVRocEE3NU9n?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNRWlldndLdklSWDlnQjF3TFRqT0toSUlZUE1yQmNTem9aTDd0OE9WWlk1cy00aWpGYTFaWXdkLURmTkRMbUZOTWFxRFdZeUJfWTZMdlJUdHQ4MVcxb194VThjaFprTmk3NWNFWlFtX3VZS0NCV1FaM0RLaUNqcHl5SHRHUHZmQXFyWU5OV3hnUW0tNVlVSTRNUjAwTUYxMmZjM1dNc0RPc1VSaF9rd21BZy1zOEhHZ21NQkpxbC1WMHlGQVRocEE3NU9n?oc=5\" target=\"_blank\"&gt;Erdogan says South Korea could partner in Turkey's Sinop nuclear project, Yonhap reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
+          "published": "2026-11-02T00:42:00.000Z",
+          "score": 7
+        },
+        {
           "title": "India's October coal-fired power output jumps most in 3 years as hydro generation slumps - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPb0s3MDQ2QklmZmpMU05CQ2hDRmFhMUoyMnBsdUo0dVhzQm5KZWpUNktScUxlY3BTYmNsazJtUU5pU08wZHhveTlJR1VFcjlrNWVPNTV4QTR3aktmM0Y1WUZGSnZVUVQ1WUQyV1ZRRXpnVkR6VVI1VUd3Z2g3ZFBUTUV3aGVvUnZfZVIwNE1UdFpzTVVuWjNRNXhIZi1QcExzaFBSSTZQSUp2eGllcnpoc0F5N242empXRDR3Y2lIOA?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPb0s3MDQ2QklmZmpMU05CQ2hDRmFhMUoyMnBsdUo0dVhzQm5KZWpUNktScUxlY3BTYmNsazJtUU5pU08wZHhveTlJR1VFcjlrNWVPNTV4QTR3aktmM0Y1WUZGSnZVUVQ1WUQyV1ZRRXpnVkR6VVI1VUd3Z2g3ZFBUTUV3aGVvUnZfZVIwNE1UdFpzTVVuWjNRNXhIZi1QcExzaFBSSTZQSUp2eGllcnpoc0F5N242empXRDR3Y2lIOA?oc=5\" target=\"_blank\"&gt;India's October coal-fired power output jumps most in 3 years as hydro generation slumps&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
           "published": "2026-11-01T06:54:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Vietnam cuts retail electricity price, removes gasoline tax from November 1 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQN0MxaERXNWw4U25McV9YQUtQNllvaUxPdDgyUTZEZ2hBMlNEQ3U2ZThXTWwtNTU3UnVjbFdTQ3E3QkhUMVVxclMxcWY3UUdtaVNKTVpwSHk5REdMNUJ3SHN5NUxES2U5eEtkeGFkUTNEejBnWVFCMHZxdE50Zi1uT0ZIcEs1Qk5tQjFyT3FfMDdIZ2tNTUI2Z1diSU0teC1NVndvOGw3Wmduczc2WWxXTUh6aC1xUWZaM2ltbG1n?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQN0MxaERXNWw4U25McV9YQUtQNllvaUxPdDgyUTZEZ2hBMlNEQ3U2ZThXTWwtNTU3UnVjbFdTQ3E3QkhUMVVxclMxcWY3UUdtaVNKTVpwSHk5REdMNUJ3SHN5NUxES2U5eEtkeGFkUTNEejBnWVFCMHZxdE50Zi1uT0ZIcEs1Qk5tQjFyT3FfMDdIZ2tNTUI2Z1diSU0teC1NVndvOGw3Wmduczc2WWxXTUh6aC1xUWZaM2ltbG1n?oc=5\" target=\"_blank\"&gt;Vietnam cuts retail electricity price, removes gasoline tax from November 1&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-10-31T22:30:26.000Z",
           "score": 2
         },
         {
@@ -80,12 +74,20 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "How the downfall of Serbia's Vučiċ mirrored that of Hungary's Orbán",
-          "link": "https://www.bbc.co.uk/news/articles/c893z699q401o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Defeat for Serbia's Aleksandar Vučiċ in last weekend's vote was a carbon copy of Viktor Orbán's fall in Hungary.",
-          "published": "2026-11-01T00:55:06.000Z",
-          "score": 8
+          "title": "Conservatives like me embrace conservation. Why the Coalition’s chainsaw approach to climate?",
+          "link": "https://www.theguardian.com/commentisfree/2026/nov/02/conservatives-like-me-embrace-conservation-why-the-coalitions-chainsaw-approach-to-climate",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;The radical assault on longstanding measures to drive down Australia’s emissions and facilitate decarbonisation seems almost pathological&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;T",
+          "published": "2026-11-02T01:49:07.000Z",
+          "score": 7
+        },
+        {
+          "title": "Cryosphere faces permanent damage when world overshoots 1.5C, scientists warn",
+          "link": "https://www.theguardian.com/science/2026/nov/02/permanent-damage-crysophere-overshoots-15c-scientists-warn",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;UN-backed report finds even temporary rises above Paris agreement target could cause harm to glaciers and polar ice sheets&lt;/p&gt;&lt;p&gt;Earth’s icy regions face such dangerous melting that global heating should be brought back below 1C after an inevitable period of overshooting global temperature targets, a UN report has found.&lt;/p&gt;&lt;p&gt;Permanent and widespread losses of snow and ice expose a “persistent myth” that overshooting the 1.5C target of the &lt;a href=\"https://ww",
+          "published": "2026-11-02T00:01:25.000Z",
+          "score": 4
         },
         {
           "title": "Bolivia declares emergency as El Nino intensifies, threatens severe weather",
@@ -110,30 +112,13 @@
           "description": "A number of birds are also injured after the spill from the oil tank earlier this week.",
           "published": "2026-11-01T08:57:56.000Z",
           "score": 2
-        },
-        {
-          "title": "Oil tank vandalism results in waterfowl park 'nightmare'",
-          "link": "https://www.bbc.co.uk/news/articles/c64g14ene2epo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The popular attraction in County Down has been forced to close while efforts continue to remove oil from the pond.",
-          "published": "2026-11-01T06:42:13.000Z",
-          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "South Korea exports nearly double in October on AI investment boom - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNTEw3WmpfUE9XNlpDeFd4LUpBenRHZVpiTVpFRDZfakN2T29CaHE4emNXQ0s0VzFDZTJTeDlXVkJtV0FSVEpwblJEVWZoWEZ4eEFzNDA5eHh0TGo4X2ZFX3hlYzljRl9TTDhPNkE1a05aNjNPU19Kb1lGbmV1UWw0dUtNZk9HS2JENWx5dDJyNWgxSGRWMzBLaGxMazJRbWxGbVBFbWNJbVlzbHkzTk05RDFGMnBzcUh4V2VqSmhTZmhkUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNTEw3WmpfUE9XNlpDeFd4LUpBenRHZVpiTVpFRDZfakN2T29CaHE4emNXQ0s0VzFDZTJTeDlXVkJtV0FSVEpwblJEVWZoWEZ4eEFzNDA5eHh0TGo4X2ZFX3hlYzljRl9TTDhPNkE1a05aNjNPU19Kb1lGbmV1UWw0dUtNZk9HS2JENWx5dDJyNWgxSGRWMzBLaGxMazJRbWxGbVBFbWNJbVlzbHkzTk05RDFGMnBzcUh4V2VqSmhTZmhkUQ?oc=5\" target=\"_blank\"&gt;South Korea exports nearly double in October on AI investment boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-01T00:39:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -153,14 +138,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "Thousands demonstrate in Paris as protests spread across Europe",
-          "link": "https://www.bbc.co.uk/news/videos/ck0j0y87j303o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "More than 320,000 people demonstrated across France against the rising cost of living and poor public services, with clashes between some protesters and police.",
-          "published": "2026-10-31T21:29:01.000Z",
-          "score": 8
-        },
         {
           "title": "European 1,500 metres champion Mageean dies aged 34 after cancer battle - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcHNtLUVZN3cwNkt0ZTlnYUl4ZG5SV0l4dFZuVW5Lc1Rab3NWQ0YyT21MWU9KMTRCZWZsZ2xMcU04bXFpRm5kNThQZzBmaGZUYWdkSXk4VWVxcl9CajFlZUhJNjM5ZXg4aUh5ckVxYWRqQVNKRm85VFFweFlqUXBfeFpqMzMwcnRKWmd3dGFEXzc1U0JGenhLT2NhWEdRWTBQalBN?oc=5",
@@ -192,14 +169,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE1KeXVGX3dsUDNHdzlnbEY3WDVsOW5ZWkl3Y0Rtb3dUa3paYW15MVVoSnJsVWdWVkFMSEg2T3VXd0ZnWFNYRHEyNkxLSElUaEtWT0xFMHZlOHh4dw?oc=5\" target=\"_blank\"&gt;iShares MSCI World Energy Sector UCITS ETF USD D (5MVW.DE) | Stock Price &amp; Latest News&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-11-01T12:37:19.000Z",
           "score": 7
+        },
+        {
+          "title": "Biological weapons: The weaponization of disease",
+          "link": "https://www.dw.com/en/biological-weapons-the-weaponization-of-disease/a-79819662?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Biological weapons are prohibited under international law. But new developments in biotech and AI are a cause for concern. DW addresses some of the most important questions about their history, risks, and control.",
+          "published": "2026-11-01T12:25:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 389,
-    "articlesLast24h": 139,
-    "afterDedup": 131,
+    "totalArticlesScanned": 390,
+    "articlesLast24h": 136,
+    "afterDedup": 130,
     "feedsQueried": 19
   }
 }
