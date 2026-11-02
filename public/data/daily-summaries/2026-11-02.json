@@ -1,20 +1,26 @@
 {
   "date": "2026-11-02",
-  "generatedAt": "2026-11-02T02:12:29.217Z",
+  "generatedAt": "2026-11-02T13:13:05.455Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 2 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Germany&#039;s search for a nuclear waste site",
-      "summary": "Finland has become the first country with a final storage facility for nuclear waste. Germany is still searching for a site, while some countries have yet to start. Costs are expected to total many billions of euros.",
+      "headline": "US pushes to restore Russian gas sales to Europe via Ukraine, WSJ reports - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOMkQyS0lzcURKNWt5Rk9fQlRvMGx5ejJiMTBRSnFsdTA1SWl6cncxdHNHR28wWDdCelVyWVctTkx3TjB6T3pCaHBDdm5veGVtZnJQWnRGNXVIQlRpamRENktDTU5SQ0JtZGFyWGFNYloyTTg5LTM5eTVKaklmZWlqRTNBM1FHRGdPYW9HS05QWlg3aEU5cXFjbVNvbm1BeVZBSk94RWFQbW9Cc2RGTVlGejBsT1RNZ0hZdlE?oc=5\" target=\"_blank\"&gt;US pushes to restore Russian gas sales to Europe via Ukraine, WSJ reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Conservatives like me embrace conservation. Why the Coalition’s chainsaw approach to climate?",
-      "summary": "&lt;p&gt;The radical assault on longstanding measures to drive down Australia’s emissions and facilitate decarbonisation seems almost pathological&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;T",
+      "headline": "Shop freezers in six European countries hit by suspected cyber-attack",
+      "summary": "The temperature of freezers in several shops across Europe reportedly rose to as high as 50C.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Will renewed conflict derail Ethiopia&#039;s economic growth?",
+      "summary": "Ethiopia&#039;s economy is growing strongly. But renewed fighting in the north of the BRICS member state could deter investment, strain public finances and push up the cost of living.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -28,19 +34,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Germany&#039;s search for a nuclear waste site",
-          "link": "https://www.dw.com/en/germany-s-search-for-a-nuclear-waste-site/a-79820678?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Finland has become the first country with a final storage facility for nuclear waste. Germany is still searching for a site, while some countries have yet to start. Costs are expected to total many billions of euros.",
-          "published": "2026-11-01T08:06:00.000Z",
-          "score": 7
+          "title": "US pushes to restore Russian gas sales to Europe via Ukraine, WSJ reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOMkQyS0lzcURKNWt5Rk9fQlRvMGx5ejJiMTBRSnFsdTA1SWl6cncxdHNHR28wWDdCelVyWVctTkx3TjB6T3pCaHBDdm5veGVtZnJQWnRGNXVIQlRpamRENktDTU5SQ0JtZGFyWGFNYloyTTg5LTM5eTVKaklmZWlqRTNBM1FHRGdPYW9HS05QWlg3aEU5cXFjbVNvbm1BeVZBSk94RWFQbW9Cc2RGTVlGejBsT1RNZ0hZdlE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOMkQyS0lzcURKNWt5Rk9fQlRvMGx5ejJiMTBRSnFsdTA1SWl6cncxdHNHR28wWDdCelVyWVctTkx3TjB6T3pCaHBDdm5veGVtZnJQWnRGNXVIQlRpamRENktDTU5SQ0JtZGFyWGFNYloyTTg5LTM5eTVKaklmZWlqRTNBM1FHRGdPYW9HS05QWlg3aEU5cXFjbVNvbm1BeVZBSk94RWFQbW9Cc2RGTVlGejBsT1RNZ0hZdlE?oc=5\" target=\"_blank\"&gt;US pushes to restore Russian gas sales to Europe via Ukraine, WSJ reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T02:19:00.000Z",
+          "score": 8
         },
         {
-          "title": "Venture Global begins supplying Plaquemines phase 1 customers under long-term LNG contracts - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNUdFOHN2STIyaFRSZlNUbERCOTM2SkpuVzZUMmZmeGNidXpFQ3hpTEZYblE0N1VmdzZ4WExBRmxQTjB4OEpXV1hiOUlxWjFBTWZDYVBjSUNBYnMyRzR2N2VIa3dnTlNhWGhjWlpPOGdRVE5OWXYyNzFDOXJsZjBpVmVEUEYtUk5VREVKM2U5NjR4a2NKTGN0RlBwOHBKUHJSWWYxT0hrMThWSDNJS1ppQVUxZTBtTTRpajkzTzk2Rm90MnJObnV2Qw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNUdFOHN2STIyaFRSZlNUbERCOTM2SkpuVzZUMmZmeGNidXpFQ3hpTEZYblE0N1VmdzZ4WExBRmxQTjB4OEpXV1hiOUlxWjFBTWZDYVBjSUNBYnMyRzR2N2VIa3dnTlNhWGhjWlpPOGdRVE5OWXYyNzFDOXJsZjBpVmVEUEYtUk5VREVKM2U5NjR4a2NKTGN0RlBwOHBKUHJSWWYxT0hrMThWSDNJS1ppQVUxZTBtTTRpajkzTzk2Rm90MnJObnV2Qw?oc=5\" target=\"_blank\"&gt;Venture Global begins supplying Plaquemines phase 1 customers under long-term LNG contracts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
-          "published": "2026-11-01T14:25:43.000Z",
+          "title": "For US Democrats, climate policy is now about energy bills",
+          "link": "https://www.dw.com/en/for-us-democrats-climate-policy-is-now-about-energy-bills/a-79808783?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Climate change has all but disappeared from Democrats&#039; campaign pitches, replaced by promises to lower electricity bills. But what would the party actually do on climate if it wins control of Congress?",
+          "published": "2026-11-02T08:59:00.000Z",
           "score": 7
         },
         {
@@ -52,20 +58,20 @@
           "score": 7
         },
         {
-          "title": "India's October coal-fired power output jumps most in 3 years as hydro generation slumps - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPb0s3MDQ2QklmZmpMU05CQ2hDRmFhMUoyMnBsdUo0dVhzQm5KZWpUNktScUxlY3BTYmNsazJtUU5pU08wZHhveTlJR1VFcjlrNWVPNTV4QTR3aktmM0Y1WUZGSnZVUVQ1WUQyV1ZRRXpnVkR6VVI1VUd3Z2g3ZFBUTUV3aGVvUnZfZVIwNE1UdFpzTVVuWjNRNXhIZi1QcExzaFBSSTZQSUp2eGllcnpoc0F5N242empXRDR3Y2lIOA?oc=5",
+          "title": "North Korea says US-South Korea nuclear drill shows need for stronger nuclear deterrent - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOWWxMc2tZWEhyS1Q1TXlxdFg1OTlIcEU0aVp5c0xGWEI0RE0wbzVfTVhOdHhXQXFseElRYlZIalE0bEpGeUNRRHVVWmY4MmhoYjNDakEyeEtkd1ZPSU9EYnZUSTZBOWNzU25MNkJQaWRYXzVVR1pESzJBX0IzQ255MnpBOXhpaXpyUGhVTHBHdHVHc3hQM0syRmlHam8wVmc5V1lHNnUwWkdGbW5kbjU2a2J4QXFQOGVzUFRFUnNLMVZDVS00cVpB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPb0s3MDQ2QklmZmpMU05CQ2hDRmFhMUoyMnBsdUo0dVhzQm5KZWpUNktScUxlY3BTYmNsazJtUU5pU08wZHhveTlJR1VFcjlrNWVPNTV4QTR3aktmM0Y1WUZGSnZVUVQ1WUQyV1ZRRXpnVkR6VVI1VUd3Z2g3ZFBUTUV3aGVvUnZfZVIwNE1UdFpzTVVuWjNRNXhIZi1QcExzaFBSSTZQSUp2eGllcnpoc0F5N242empXRDR3Y2lIOA?oc=5\" target=\"_blank\"&gt;India's October coal-fired power output jumps most in 3 years as hydro generation slumps&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-11-01T06:54:00.000Z",
-          "score": 2
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOWWxMc2tZWEhyS1Q1TXlxdFg1OTlIcEU0aVp5c0xGWEI0RE0wbzVfTVhOdHhXQXFseElRYlZIalE0bEpGeUNRRHVVWmY4MmhoYjNDakEyeEtkd1ZPSU9EYnZUSTZBOWNzU25MNkJQaWRYXzVVR1pESzJBX0IzQ255MnpBOXhpaXpyUGhVTHBHdHVHc3hQM0syRmlHam8wVmc5V1lHNnUwWkdGbW5kbjU2a2J4QXFQOGVzUFRFUnNLMVZDVS00cVpB?oc=5\" target=\"_blank\"&gt;North Korea says US-South Korea nuclear drill shows need for stronger nuclear deterrent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
+          "published": "2026-11-02T02:49:00.000Z",
+          "score": 7
         },
         {
-          "title": "Germany must do more to boost gas reserves as storage levels hit record low, lobby group says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNTzBFS0hhWUtOcVhOMDVsX25TV3R4eENLbjdCMUpDRDByYTBHWjU3MmtycmM2blh4Y1Y3V2t6SUhIODJidldfcjNOdG0zVHRNdVFWdXZKWVhJeWdFWE9LaDA1MnJlbk1vaC1qLUpuZWU0WERCckY3Nk4tLUhHcnNFZ1pJdzJYRTFxWFl4cjRTNG53QmxkSDAxUUd2NjdnRUhOTDBhbUx5eUppU3Q4Vmh0aFExRlVRTUJzUGl1aWgySFZtRjlnb1E?oc=5",
+          "title": "Venture Global begins supplying Plaquemines phase 1 customers under long-term LNG contracts - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNUdFOHN2STIyaFRSZlNUbERCOTM2SkpuVzZUMmZmeGNidXpFQ3hpTEZYblE0N1VmdzZ4WExBRmxQTjB4OEpXV1hiOUlxWjFBTWZDYVBjSUNBYnMyRzR2N2VIa3dnTlNhWGhjWlpPOGdRVE5OWXYyNzFDOXJsZjBpVmVEUEYtUk5VREVKM2U5NjR4a2NKTGN0RlBwOHBKUHJSWWYxT0hrMThWSDNJS1ppQVUxZTBtTTRpajkzTzk2Rm90MnJObnV2Qw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNTzBFS0hhWUtOcVhOMDVsX25TV3R4eENLbjdCMUpDRDByYTBHWjU3MmtycmM2blh4Y1Y3V2t6SUhIODJidldfcjNOdG0zVHRNdVFWdXZKWVhJeWdFWE9LaDA1MnJlbk1vaC1qLUpuZWU0WERCckY3Nk4tLUhHcnNFZ1pJdzJYRTFxWFl4cjRTNG53QmxkSDAxUUd2NjdnRUhOTDBhbUx5eUppU3Q4Vmh0aFExRlVRTUJzUGl1aWgySFZtRjlnb1E?oc=5\" target=\"_blank\"&gt;Germany must do more to boost gas reserves as storage levels hit record low, lobby group says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
-          "published": "2026-11-01T05:04:00.000Z",
-          "score": 2
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNUdFOHN2STIyaFRSZlNUbERCOTM2SkpuVzZUMmZmeGNidXpFQ3hpTEZYblE0N1VmdzZ4WExBRmxQTjB4OEpXV1hiOUlxWjFBTWZDYVBjSUNBYnMyRzR2N2VIa3dnTlNhWGhjWlpPOGdRVE5OWXYyNzFDOXJsZjBpVmVEUEYtUk5VREVKM2U5NjR4a2NKTGN0RlBwOHBKUHJSWWYxT0hrMThWSDNJS1ppQVUxZTBtTTRpajkzTzk2Rm90MnJObnV2Qw?oc=5\" target=\"_blank\"&gt;Venture Global begins supplying Plaquemines phase 1 customers under long-term LNG contracts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
+          "published": "2026-11-01T14:25:43.000Z",
+          "score": 7
         }
       ]
     },
@@ -74,7 +80,15 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Conservatives like me embrace conservation. Why the Coalition’s chainsaw approach to climate?",
+          "title": "Shop freezers in six European countries hit by suspected cyber-attack",
+          "link": "https://www.bbc.co.uk/news/articles/cq1kd1nee80eo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The temperature of freezers in several shops across Europe reportedly rose to as high as 50C.",
+          "published": "2026-11-02T12:54:33.000Z",
+          "score": 8
+        },
+        {
+          "title": "Conservatives like me embrace conservation. Why the Coalition’s chainsaw approach to climate? | Andrew McLachlan",
           "link": "https://www.theguardian.com/commentisfree/2026/nov/02/conservatives-like-me-embrace-conservation-why-the-coalitions-chainsaw-approach-to-climate",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;The radical assault on longstanding measures to drive down Australia’s emissions and facilitate decarbonisation seems almost pathological&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;T",
@@ -90,35 +104,44 @@
           "score": 4
         },
         {
-          "title": "Bolivia declares emergency as El Nino intensifies, threatens severe weather",
-          "link": "https://www.dw.com/en/bolivia-declares-emergency-as-el-nino-intensifies-threatens-severe-weather/a-79820253?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "President Rodrigo Paz warned of severe droughts and flooding as El Nino intensifies, with at least 78,000 families already affected by drought.",
-          "published": "2026-11-01T06:19:00.000Z",
+          "title": "A lackluster response to North Carolina flooding disasters is eroding Republican support in one county",
+          "link": "https://www.theguardian.com/us-news/2026/nov/02/north-carolina-congress-republicans",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;At more than $52m, the race has become the most expensive in US history, but residents are fed up with flooding&lt;/p&gt;&lt;p&gt;Aida Havel mulled her fate over coffee after working the early voting polls all day in Kill Devil Hills, North Carolina. “We are trapped,” she concluded.&lt;/p&gt;&lt;p&gt;The Dare county commission candidate lives about 50 miles (80km) south, on Hatteras Island on the state’s Outer Banks.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/us-news/2026/nov/02/",
+          "published": "2026-11-02T12:00:41.000Z",
           "score": 4
         },
         {
-          "title": "'Fascinating' rare beetle found in Wales again after 60 years",
-          "link": "https://www.bbc.co.uk/news/articles/cry8317pdp5yo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Verdict delayed on controversial sea defences",
+          "link": "https://www.bbc.co.uk/news/articles/cq9vz2jj409vo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "It was feared The Short-Necked Oil Beetle had become extinct in Wales after recent surveys",
-          "published": "2026-11-01T18:04:52.000Z",
-          "score": 2
-        },
-        {
-          "title": "Spill from vandalised home oil tank kills 13 birds",
-          "link": "https://www.bbc.co.uk/news/videos/crwyd2lyj15go?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A number of birds are also injured after the spill from the oil tank earlier this week.",
-          "published": "2026-11-01T08:57:56.000Z",
-          "score": 2
+          "description": "The council have deferred a decision on the building of 17 rock groynes after RNLI safety concerns.",
+          "published": "2026-11-02T06:16:34.000Z",
+          "score": 4
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Will renewed conflict derail Ethiopia&#039;s economic growth?",
+          "link": "https://www.dw.com/en/will-renewed-conflict-derail-ethiopia-s-economic-growth/a-79807060?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Ethiopia&#039;s economy is growing strongly. But renewed fighting in the north of the BRICS member state could deter investment, strain public finances and push up the cost of living.",
+          "published": "2026-11-02T11:19:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "South Korea's Lee vows to make bold AI investment in record budget push - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNbll4VGlsal9aSG5UR3h5ZjZobjJGSHV4UVJXZDNrSEV4M3lTQXRnaWRaemVBZjRzMk4wVU5lTG1tMDFQLTdweklqemdlQkhoS3JBOWZFVHFxbG1yMXltcnl0LThzNm15R1Q3ZS1temp1TWJqOXBCM1J6UjhSRHBsNGQ0VnVLelFERjJZeW5oM3U3eGVpSWxSUUFrU0VHcUVvSXBsRDF5NTdReGVWaXZYQlJkbTUtSUp6Tkhj?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNbll4VGlsal9aSG5UR3h5ZjZobjJGSHV4UVJXZDNrSEV4M3lTQXRnaWRaemVBZjRzMk4wVU5lTG1tMDFQLTdweklqemdlQkhoS3JBOWZFVHFxbG1yMXltcnl0LThzNm15R1Q3ZS1temp1TWJqOXBCM1J6UjhSRHBsNGQ0VnVLelFERjJZeW5oM3U3eGVpSWxSUUFrU0VHcUVvSXBsRDF5NTdReGVWaXZYQlJkbTUtSUp6Tkhj?oc=5\" target=\"_blank\"&gt;South Korea's Lee vows to make bold AI investment in record budget push&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T02:37:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -139,52 +162,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "European 1,500 metres champion Mageean dies aged 34 after cancer battle - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcHNtLUVZN3cwNkt0ZTlnYUl4ZG5SV0l4dFZuVW5Lc1Rab3NWQ0YyT21MWU9KMTRCZWZsZ2xMcU04bXFpRm5kNThQZzBmaGZUYWdkSXk4VWVxcl9CajFlZUhJNjM5ZXg4aUh5ckVxYWRqQVNKRm85VFFweFlqUXBfeFpqMzMwcnRKWmd3dGFEXzc1U0JGenhLT2NhWEdRWTBQalBN?oc=5",
+          "title": "European stocks edge down, oil drops as midterm caution prevails - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPbXpaWVRrQUkzYThuc1E5TnFCUXBTSTV2bHNaR1FhUmdEYnhjSHVneFdpbGhjeENwWlE2WVE1c3FCUV9qeGZzRGNoNFEzdERMblBDb005a2NBV3B2YzdfNF95dGtrVmxiNlJrNFU3UC1BTnZHcVh4a3hna25vdEFkSEtMUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOcHNtLUVZN3cwNkt0ZTlnYUl4ZG5SV0l4dFZuVW5Lc1Rab3NWQ0YyT21MWU9KMTRCZWZsZ2xMcU04bXFpRm5kNThQZzBmaGZUYWdkSXk4VWVxcl9CajFlZUhJNjM5ZXg4aUh5ckVxYWRqQVNKRm85VFFweFlqUXBfeFpqMzMwcnRKWmd3dGFEXzc1U0JGenhLT2NhWEdRWTBQalBN?oc=5\" target=\"_blank\"&gt;European 1,500 metres champion Mageean dies aged 34 after cancer battle&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-01T11:19:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPbXpaWVRrQUkzYThuc1E5TnFCUXBTSTV2bHNaR1FhUmdEYnhjSHVneFdpbGhjeENwWlE2WVE1c3FCUV9qeGZzRGNoNFEzdERMblBDb005a2NBV3B2YzdfNF95dGtrVmxiNlJrNFU3UC1BTnZHcVh4a3hna25vdEFkSEtMUQ?oc=5\" target=\"_blank\"&gt;European stocks edge down, oil drops as midterm caution prevails&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T00:41:00.000Z",
           "score": 8
         },
         {
-          "title": "Dining and Down Syndrome, a winning combination for Brussels restaurant - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xc1hhTDVfcFBuYTI2d2J0SXM4QTA5d0xSVEtoeTBqaENtVFhXMFZ1Tm90Zm9oQXlBMlctZlBxdFB0cFFrU2NjR19UT2RLTEVjdm5wQ3ZtbV81OGdL?oc=5",
+          "title": "As Europe's right advances, Germany's AfD rethinks its anti-euro roots - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPc2xLaXNFaGMzRzY1MFpOV01sWml1NWpDTTJQN0NEcDhEcUdOSEUzaWliRzIyeG9JR0RwakZ2UFlPR05sWjRyZXR0dFFud0xMdkpMM3pEbHFVaWRiZmhpczMtQW9TNGZrT09JZzZUNVUtalRGS0ZjR0JHTGduNlhLUC1JSzhUTHVDc2dmUDd2emtRUmVreXVLNjRGczA3QzdtVTUyTWVlU3F0QQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xc1hhTDVfcFBuYTI2d2J0SXM4QTA5d0xSVEtoeTBqaENtVFhXMFZ1Tm90Zm9oQXlBMlctZlBxdFB0cFFrU2NjR19UT2RLTEVjdm5wQ3ZtbV81OGdL?oc=5\" target=\"_blank\"&gt;Dining and Down Syndrome, a winning combination for Brussels restaurant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-01T10:39:21.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPc2xLaXNFaGMzRzY1MFpOV01sWml1NWpDTTJQN0NEcDhEcUdOSEUzaWliRzIyeG9JR0RwakZ2UFlPR05sWjRyZXR0dFFud0xMdkpMM3pEbHFVaWRiZmhpczMtQW9TNGZrT09JZzZUNVUtalRGS0ZjR0JHTGduNlhLUC1JSzhUTHVDc2dmUDd2emtRUmVreXVLNjRGczA3QzdtVTUyTWVlU3F0QQ?oc=5\" target=\"_blank\"&gt;As Europe's right advances, Germany's AfD rethinks its anti-euro roots&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T06:04:00.000Z",
           "score": 8
         },
         {
-          "title": "Xiaomi's October EV deliveries top 50,000, hit 2026 monthly high - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVGJQV25faktaWGFiUks0eTdlWmFhbkcwR0RWcXdFbk95UXJ6VjBmSUV1NjRaTk1oYXk0NEtKaGF1NTJBOWNFUm1sY2tiUVhjekJVU25tRWduZVpGVFNHMGFyOTN1RjRmS1lFcnNSRExoT216QUNtaFZjOTluU1g0d19EejFmR2pRWDJuSXc4WWQ3WHJ2UngzYmZRV3d0a2dmeHFycVhhZGdvN1dUbmc?oc=5",
+          "title": "Euro zone factory growth eases in October but remains solid, PMI shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQdHhCRWw3M2tFaFpfWGNsSFUzWU91b0hpd2lib0xJM3VRQkU0ZWpRLXVvNUIwM2pwSWhldHN5amtqRkRLRzN6c3BWMEdIem9NM0xGTlBmeFlOQU9IcWpQNzJZeHppemJNMVRNLW9IdXpjRlZmZGk1dTNvakR2YTJnRDZZOXAwdDEyX2F6MWlqUXBfTDQ4NWxEWFdqbXVYQUo3aEE3SFZpN2F4RzZMM1hIRw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQVGJQV25faktaWGFiUks0eTdlWmFhbkcwR0RWcXdFbk95UXJ6VjBmSUV1NjRaTk1oYXk0NEtKaGF1NTJBOWNFUm1sY2tiUVhjekJVU25tRWduZVpGVFNHMGFyOTN1RjRmS1lFcnNSRExoT216QUNtaFZjOTluU1g0d19EejFmR2pRWDJuSXc4WWQ3WHJ2UngzYmZRV3d0a2dmeHFycVhhZGdvN1dUbmc?oc=5\" target=\"_blank\"&gt;Xiaomi's October EV deliveries top 50,000, hit 2026 monthly high&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-01T07:42:09.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQdHhCRWw3M2tFaFpfWGNsSFUzWU91b0hpd2lib0xJM3VRQkU0ZWpRLXVvNUIwM2pwSWhldHN5amtqRkRLRzN6c3BWMEdIem9NM0xGTlBmeFlOQU9IcWpQNzJZeHppemJNMVRNLW9IdXpjRlZmZGk1dTNvakR2YTJnRDZZOXAwdDEyX2F6MWlqUXBfTDQ4NWxEWFdqbXVYQUo3aEE3SFZpN2F4RzZMM1hIRw?oc=5\" target=\"_blank\"&gt;Euro zone factory growth eases in October but remains solid, PMI shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T09:39:56.000Z",
+          "score": 8
         },
         {
-          "title": "iShares MSCI World Energy Sector UCITS ETF USD D (5MVW.DE) | Stock Price &amp; Latest News - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1KeXVGX3dsUDNHdzlnbEY3WDVsOW5ZWkl3Y0Rtb3dUa3paYW15MVVoSnJsVWdWVkFMSEg2T3VXd0ZnWFNYRHEyNkxLSElUaEtWT0xFMHZlOHh4dw?oc=5",
+          "title": "European supermarkets hit by new fridge cyber attack - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObF9LUXZ2TVpjZm13eW9HNXZ0MkZFVDM5eHl5RXc0aDkzODdvc0VKYVE4YV9MSDZITjVTR01CM3l6ajdCVEFZMXlmdmx3MzBRWHN5QVkyTFU2bkR2Sm5VQm5OWUVfLVJoeHFZaXdrc0F1QTRnT0tHYXRvcVd4S0V2QUxmV3ptOEszT2EyWmFpVjYyUnRwODF1eGhXbGpGcUV2UXRwZFFLOGhPLTY1MWUxal9TY3M0Qm9MOVpSeTFHazNxMUNGSnVfdzVvOE0tUGM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE1KeXVGX3dsUDNHdzlnbEY3WDVsOW5ZWkl3Y0Rtb3dUa3paYW15MVVoSnJsVWdWVkFMSEg2T3VXd0ZnWFNYRHEyNkxLSElUaEtWT0xFMHZlOHh4dw?oc=5\" target=\"_blank\"&gt;iShares MSCI World Energy Sector UCITS ETF USD D (5MVW.DE) | Stock Price &amp; Latest News&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-01T12:37:19.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxObF9LUXZ2TVpjZm13eW9HNXZ0MkZFVDM5eHl5RXc0aDkzODdvc0VKYVE4YV9MSDZITjVTR01CM3l6ajdCVEFZMXlmdmx3MzBRWHN5QVkyTFU2bkR2Sm5VQm5OWUVfLVJoeHFZaXdrc0F1QTRnT0tHYXRvcVd4S0V2QUxmV3ptOEszT2EyWmFpVjYyUnRwODF1eGhXbGpGcUV2UXRwZFFLOGhPLTY1MWUxal9TY3M0Qm9MOVpSeTFHazNxMUNGSnVfdzVvOE0tUGM?oc=5\" target=\"_blank\"&gt;European supermarkets hit by new fridge cyber attack&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T12:18:10.000Z",
+          "score": 8
         },
         {
-          "title": "Biological weapons: The weaponization of disease",
-          "link": "https://www.dw.com/en/biological-weapons-the-weaponization-of-disease/a-79819662?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Biological weapons are prohibited under international law. But new developments in biotech and AI are a cause for concern. DW addresses some of the most important questions about their history, risks, and control.",
-          "published": "2026-11-01T12:25:00.000Z",
-          "score": 6
+          "title": "Euro zone countries are integrating faster with US than with each other, ECB says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPTmVQWHVwb21iejNtYmUyXzktbkxWSFlNWVI2NkI2Sm9RazROUzBLQjJBaW9TeDR2VGlRTk9Jano1UmlONEFQU3diNlBEZVZHck1yT3E1YjBJQUFBZGZmUUNhS1pmTHZRS2JlazFuVWdyUU9CZEZWdWcxVTZoMGZENEg0YTdnV2Z1c1JkU2hMVms1ckVoV3NvV2lBRzlrTzJwMGdCeTNfWEQ2WVNXaVRyNy1vOXdYVm9EVFJTSzM1Z3RMTHlvYWI2d3dnUm1wdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPTmVQWHVwb21iejNtYmUyXzktbkxWSFlNWVI2NkI2Sm9RazROUzBLQjJBaW9TeDR2VGlRTk9Jano1UmlONEFQU3diNlBEZVZHck1yT3E1YjBJQUFBZGZmUUNhS1pmTHZRS2JlazFuVWdyUU9CZEZWdWcxVTZoMGZENEg0YTdnV2Z1c1JkU2hMVms1ckVoV3NvV2lBRzlrTzJwMGdCeTNfWEQ2WVNXaVRyNy1vOXdYVm9EVFJTSzM1Z3RMTHlvYWI2d3dnUm1wdw?oc=5\" target=\"_blank\"&gt;Euro zone countries are integrating faster with US than with each other, ECB says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
+          "published": "2026-11-02T09:29:46.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 390,
-    "articlesLast24h": 136,
-    "afterDedup": 130,
+    "totalArticlesScanned": 389,
+    "articlesLast24h": 141,
+    "afterDedup": 134,
     "feedsQueried": 19
   }
 }
