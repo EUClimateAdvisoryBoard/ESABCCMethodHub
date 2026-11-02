@@ -1,18 +1,18 @@
 {
   "date": "2026-11-02",
-  "generatedAt": "2026-11-02T13:13:05.455Z",
+  "generatedAt": "2026-11-02T23:52:09.957Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 2 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "US pushes to restore Russian gas sales to Europe via Ukraine, WSJ reports - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOMkQyS0lzcURKNWt5Rk9fQlRvMGx5ejJiMTBRSnFsdTA1SWl6cncxdHNHR28wWDdCelVyWVctTkx3TjB6T3pCaHBDdm5veGVtZnJQWnRGNXVIQlRpamRENktDTU5SQ0JtZGFyWGFNYloyTTg5LTM5eTVKaklmZWlqRTNBM1FHRGdPYW9HS05QWlg3aEU5cXFjbVNvbm1BeVZBSk94RWFQbW9Cc2RGTVlGejBsT1RNZ0hZdlE?oc=5\" target=\"_blank\"&gt;US pushes to restore Russian gas sales to Europe via Ukraine, WSJ reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Europe's short-sighted policy on gas storage to boost costs, says TotalEnergies chief - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQd2M2U1Z4ejdLX3c0WjZSMXFIbF9IbVpnX3c2cFVlMzdfa0lENEwtRzJJMHdzUVhmbnljMHhMVEZZUDZtelNSREpMZldfc092S1dFMUdzVzJjNTFxX09YaV9OalplOXZ4US13RGs5a29sUU5qMHlTclUwdGxQbFNYVlBZaUx2cGpocjdXOUwwMnlpWWMweDFPdGZ6MHVlS0J4TUItU21fUQ?oc=5\" target=\"_blank\"&gt;Europe's short-sighted policy on gas storage to boost costs, says TotalEnergies chief&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Shop freezers in six European countries hit by suspected cyber-attack",
-      "summary": "The temperature of freezers in several shops across Europe reportedly rose to as high as 50C.",
+      "headline": "Interactive: Who wants what at the COP31 climate change summit",
+      "summary": "Delegates will soon gather in the Turkish resort city of Antalya for UN climate negotiations, against a backdrop of war,&#8230; The post Interactive: Who wants what at the COP31 climate change summit appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,6 +34,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Europe's short-sighted policy on gas storage to boost costs, says TotalEnergies chief - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQd2M2U1Z4ejdLX3c0WjZSMXFIbF9IbVpnX3c2cFVlMzdfa0lENEwtRzJJMHdzUVhmbnljMHhMVEZZUDZtelNSREpMZldfc092S1dFMUdzVzJjNTFxX09YaV9OalplOXZ4US13RGs5a29sUU5qMHlTclUwdGxQbFNYVlBZaUx2cGpocjdXOUwwMnlpWWMweDFPdGZ6MHVlS0J4TUItU21fUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQd2M2U1Z4ejdLX3c0WjZSMXFIbF9IbVpnX3c2cFVlMzdfa0lENEwtRzJJMHdzUVhmbnljMHhMVEZZUDZtelNSREpMZldfc092S1dFMUdzVzJjNTFxX09YaV9OalplOXZ4US13RGs5a29sUU5qMHlTclUwdGxQbFNYVlBZaUx2cGpocjdXOUwwMnlpWWMweDFPdGZ6MHVlS0J4TUItU21fUQ?oc=5\" target=\"_blank\"&gt;Europe's short-sighted policy on gas storage to boost costs, says TotalEnergies chief&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T15:50:12.000Z",
+          "score": 8
+        },
+        {
           "title": "US pushes to restore Russian gas sales to Europe via Ukraine, WSJ reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOMkQyS0lzcURKNWt5Rk9fQlRvMGx5ejJiMTBRSnFsdTA1SWl6cncxdHNHR28wWDdCelVyWVctTkx3TjB6T3pCaHBDdm5veGVtZnJQWnRGNXVIQlRpamRENktDTU5SQ0JtZGFyWGFNYloyTTg5LTM5eTVKaklmZWlqRTNBM1FHRGdPYW9HS05QWlg3aEU5cXFjbVNvbm1BeVZBSk94RWFQbW9Cc2RGTVlGejBsT1RNZ0hZdlE?oc=5",
           "source": "Reuters World (via Google News)",
@@ -42,35 +50,27 @@
           "score": 8
         },
         {
+          "title": "Fake nuclear warning from hacked app sparks unease but not panic in Ukraine",
+          "link": "https://www.bbc.co.uk/news/articles/cwx28mngxz8do?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Many Ukrainians, who have faced years of Russian attacks, did not take the messages seriously and doubted their veracity.",
+          "published": "2026-11-02T18:34:24.000Z",
+          "score": 7
+        },
+        {
           "title": "For US Democrats, climate policy is now about energy bills",
           "link": "https://www.dw.com/en/for-us-democrats-climate-policy-is-now-about-energy-bills/a-79808783?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Climate change has all but disappeared from Democrats&#039; campaign pitches, replaced by promises to lower electricity bills. But what would the party actually do on climate if it wins control of Congress?",
+          "description": "Climate change has all but disappeared from Democrats&#039; campaign pitches, replaced by promises to lower electricity bills. So what would the party really do for climate policy should it win control of Congress?",
           "published": "2026-11-02T08:59:00.000Z",
           "score": 7
         },
         {
-          "title": "Erdogan says South Korea could partner in Turkey's Sinop nuclear project, Yonhap reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRWlldndLdklSWDlnQjF3TFRqT0toSUlZUE1yQmNTem9aTDd0OE9WWlk1cy00aWpGYTFaWXdkLURmTkRMbUZOTWFxRFdZeUJfWTZMdlJUdHQ4MVcxb194VThjaFprTmk3NWNFWlFtX3VZS0NCV1FaM0RLaUNqcHl5SHRHUHZmQXFyWU5OV3hnUW0tNVlVSTRNUjAwTUYxMmZjM1dNc0RPc1VSaF9rd21BZy1zOEhHZ21NQkpxbC1WMHlGQVRocEE3NU9n?oc=5",
+          "title": "US tech selloff drags global stocks back into the red - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPbXpaWVRrQUkzYThuc1E5TnFCUXBTSTV2bHNaR1FhUmdEYnhjSHVneFdpbGhjeENwWlE2WVE1c3FCUV9qeGZzRGNoNFEzdERMblBDb005a2NBV3B2YzdfNF95dGtrVmxiNlJrNFU3UC1BTnZHcVh4a3hna25vdEFkSEtMUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNRWlldndLdklSWDlnQjF3TFRqT0toSUlZUE1yQmNTem9aTDd0OE9WWlk1cy00aWpGYTFaWXdkLURmTkRMbUZOTWFxRFdZeUJfWTZMdlJUdHQ4MVcxb194VThjaFprTmk3NWNFWlFtX3VZS0NCV1FaM0RLaUNqcHl5SHRHUHZmQXFyWU5OV3hnUW0tNVlVSTRNUjAwTUYxMmZjM1dNc0RPc1VSaF9rd21BZy1zOEhHZ21NQkpxbC1WMHlGQVRocEE3NU9n?oc=5\" target=\"_blank\"&gt;Erdogan says South Korea could partner in Turkey's Sinop nuclear project, Yonhap reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
-          "published": "2026-11-02T00:42:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "North Korea says US-South Korea nuclear drill shows need for stronger nuclear deterrent - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOWWxMc2tZWEhyS1Q1TXlxdFg1OTlIcEU0aVp5c0xGWEI0RE0wbzVfTVhOdHhXQXFseElRYlZIalE0bEpGeUNRRHVVWmY4MmhoYjNDakEyeEtkd1ZPSU9EYnZUSTZBOWNzU25MNkJQaWRYXzVVR1pESzJBX0IzQ255MnpBOXhpaXpyUGhVTHBHdHVHc3hQM0syRmlHam8wVmc5V1lHNnUwWkdGbW5kbjU2a2J4QXFQOGVzUFRFUnNLMVZDVS00cVpB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOWWxMc2tZWEhyS1Q1TXlxdFg1OTlIcEU0aVp5c0xGWEI0RE0wbzVfTVhOdHhXQXFseElRYlZIalE0bEpGeUNRRHVVWmY4MmhoYjNDakEyeEtkd1ZPSU9EYnZUSTZBOWNzU25MNkJQaWRYXzVVR1pESzJBX0IzQ255MnpBOXhpaXpyUGhVTHBHdHVHc3hQM0syRmlHam8wVmc5V1lHNnUwWkdGbW5kbjU2a2J4QXFQOGVzUFRFUnNLMVZDVS00cVpB?oc=5\" target=\"_blank\"&gt;North Korea says US-South Korea nuclear drill shows need for stronger nuclear deterrent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-11-02T02:49:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Venture Global begins supplying Plaquemines phase 1 customers under long-term LNG contracts - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNUdFOHN2STIyaFRSZlNUbERCOTM2SkpuVzZUMmZmeGNidXpFQ3hpTEZYblE0N1VmdzZ4WExBRmxQTjB4OEpXV1hiOUlxWjFBTWZDYVBjSUNBYnMyRzR2N2VIa3dnTlNhWGhjWlpPOGdRVE5OWXYyNzFDOXJsZjBpVmVEUEYtUk5VREVKM2U5NjR4a2NKTGN0RlBwOHBKUHJSWWYxT0hrMThWSDNJS1ppQVUxZTBtTTRpajkzTzk2Rm90MnJObnV2Qw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNUdFOHN2STIyaFRSZlNUbERCOTM2SkpuVzZUMmZmeGNidXpFQ3hpTEZYblE0N1VmdzZ4WExBRmxQTjB4OEpXV1hiOUlxWjFBTWZDYVBjSUNBYnMyRzR2N2VIa3dnTlNhWGhjWlpPOGdRVE5OWXYyNzFDOXJsZjBpVmVEUEYtUk5VREVKM2U5NjR4a2NKTGN0RlBwOHBKUHJSWWYxT0hrMThWSDNJS1ppQVUxZTBtTTRpajkzTzk2Rm90MnJObnV2Qw?oc=5\" target=\"_blank\"&gt;Venture Global begins supplying Plaquemines phase 1 customers under long-term LNG contracts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
-          "published": "2026-11-01T14:25:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPbXpaWVRrQUkzYThuc1E5TnFCUXBTSTV2bHNaR1FhUmdEYnhjSHVneFdpbGhjeENwWlE2WVE1c3FCUV9qeGZzRGNoNFEzdERMblBDb005a2NBV3B2YzdfNF95dGtrVmxiNlJrNFU3UC1BTnZHcVh4a3hna25vdEFkSEtMUQ?oc=5\" target=\"_blank\"&gt;US tech selloff drags global stocks back into the red&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T00:41:00.000Z",
           "score": 7
         }
       ]
@@ -80,11 +80,27 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Shop freezers in six European countries hit by suspected cyber-attack",
+          "title": "Interactive: Who wants what at the COP31 climate change summit",
+          "link": "https://www.carbonbrief.org/interactive-who-wants-what-at-the-cop31-climate-change-summit",
+          "source": "Carbon Brief",
+          "description": "Delegates will soon gather in the Turkish resort city of Antalya for UN climate negotiations, against a backdrop of war,&#8230; The post Interactive: Who wants what at the COP31 climate change summit appeared first on Carbon Brief.",
+          "published": "2026-11-02T16:57:31.000Z",
+          "score": 13
+        },
+        {
+          "title": "IPCC authors meet in Tanzania to advance report on physical science of climate change",
+          "link": "https://www.ipcc.ch/2026/11/02/ipcc-ar7-wgi-lam3-arusha-tanzania/",
+          "source": "IPCC",
+          "description": "GENEVA, Nov 2- Scientists of the Working Group I of the Intergovernmental Panel on Climate Change (IPCC), which assesses the physical science of climate change, are meeting in Arusha, Tanzania, from 2 to 6 November to advance their contribution to the Seventh Assessment Report. The meeting is hosted by the government of the United Republic [&#8230;]",
+          "published": "2026-11-02T15:35:32.000Z",
+          "score": 11
+        },
+        {
+          "title": "Shop freezers in seven European countries hit by cyber-attack",
           "link": "https://www.bbc.co.uk/news/articles/cq1kd1nee80eo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The temperature of freezers in several shops across Europe reportedly rose to as high as 50C.",
-          "published": "2026-11-02T12:54:33.000Z",
+          "published": "2026-11-02T17:38:11.000Z",
           "score": 8
         },
         {
@@ -96,28 +112,12 @@
           "score": 7
         },
         {
-          "title": "Cryosphere faces permanent damage when world overshoots 1.5C, scientists warn",
-          "link": "https://www.theguardian.com/science/2026/nov/02/permanent-damage-crysophere-overshoots-15c-scientists-warn",
+          "title": "ICE, inflation and Trump: gen Z readers share their concerns heading into the voting booth",
+          "link": "https://www.theguardian.com/us-news/2026/nov/02/gen-z-voting-issues",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;UN-backed report finds even temporary rises above Paris agreement target could cause harm to glaciers and polar ice sheets&lt;/p&gt;&lt;p&gt;Earth’s icy regions face such dangerous melting that global heating should be brought back below 1C after an inevitable period of overshooting global temperature targets, a UN report has found.&lt;/p&gt;&lt;p&gt;Permanent and widespread losses of snow and ice expose a “persistent myth” that overshooting the 1.5C target of the &lt;a href=\"https://ww",
-          "published": "2026-11-02T00:01:25.000Z",
-          "score": 4
-        },
-        {
-          "title": "A lackluster response to North Carolina flooding disasters is eroding Republican support in one county",
-          "link": "https://www.theguardian.com/us-news/2026/nov/02/north-carolina-congress-republicans",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;At more than $52m, the race has become the most expensive in US history, but residents are fed up with flooding&lt;/p&gt;&lt;p&gt;Aida Havel mulled her fate over coffee after working the early voting polls all day in Kill Devil Hills, North Carolina. “We are trapped,” she concluded.&lt;/p&gt;&lt;p&gt;The Dare county commission candidate lives about 50 miles (80km) south, on Hatteras Island on the state’s Outer Banks.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/us-news/2026/nov/02/",
-          "published": "2026-11-02T12:00:41.000Z",
-          "score": 4
-        },
-        {
-          "title": "Verdict delayed on controversial sea defences",
-          "link": "https://www.bbc.co.uk/news/articles/cq9vz2jj409vo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The council have deferred a decision on the building of 17 rock groynes after RNLI safety concerns.",
-          "published": "2026-11-02T06:16:34.000Z",
-          "score": 4
+          "description": "&lt;p&gt;Young voters have many of the same concerns as the larger voting cohort, even if many are not registered to vote&lt;/p&gt;&lt;p&gt;The &lt;a href=\"https://www.theguardian.com/us-news/us-midterm-elections-2026\"&gt;2026 US midterms&lt;/a&gt; are approaching against a backdrop of growing political uncertainty, with young voters increasingly mobilizing around concerns about the country’s future.&lt;/p&gt;&lt;p&gt;Although nearly 50 million Americans aged 18 to 29 are eligible to vote in the",
+          "published": "2026-11-02T14:00:42.000Z",
+          "score": 6
         }
       ]
     },
@@ -146,27 +146,18 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "Russia&#039;s giant new radar in Kaliningrad raises alarm in NATO",
-          "link": "https://www.dw.com/en/russia-s-giant-new-radar-in-kaliningrad-raises-alarm-in-nato/a-79797815?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Russia is nearing completion of what experts think is a giant radar complex in Kaliningrad, capable of monitoring much of Europe. Experts warn the project could intensify the military standoff between Moscow and NATO.",
-          "published": "2026-11-01T20:34:00.000Z",
-          "score": 4
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "European stocks edge down, oil drops as midterm caution prevails - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPbXpaWVRrQUkzYThuc1E5TnFCUXBTSTV2bHNaR1FhUmdEYnhjSHVneFdpbGhjeENwWlE2WVE1c3FCUV9qeGZzRGNoNFEzdERMblBDb005a2NBV3B2YzdfNF95dGtrVmxiNlJrNFU3UC1BTnZHcVh4a3hna25vdEFkSEtMUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPbXpaWVRrQUkzYThuc1E5TnFCUXBTSTV2bHNaR1FhUmdEYnhjSHVneFdpbGhjeENwWlE2WVE1c3FCUV9qeGZzRGNoNFEzdERMblBDb005a2NBV3B2YzdfNF95dGtrVmxiNlJrNFU3UC1BTnZHcVh4a3hna25vdEFkSEtMUQ?oc=5\" target=\"_blank\"&gt;European stocks edge down, oil drops as midterm caution prevails&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-02T00:41:00.000Z",
+          "title": "European supermarkets targeted in second reported cyberattack",
+          "link": "https://www.dw.com/en/european-supermarkets-targeted-in-second-reported-cyberattack/a-79831139?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Supermarkets across Europe have been targeted in cyberattacks once again. Three weeks after a defrosting attack in France, supermarkets in Belgium, Estonia, Ireland, Luxembourg and Sweden reported freezer malfunctions.",
+          "published": "2026-11-02T14:31:00.000Z",
           "score": 8
         },
         {
@@ -178,36 +169,36 @@
           "score": 8
         },
         {
-          "title": "Euro zone factory growth eases in October but remains solid, PMI shows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQdHhCRWw3M2tFaFpfWGNsSFUzWU91b0hpd2lib0xJM3VRQkU0ZWpRLXVvNUIwM2pwSWhldHN5amtqRkRLRzN6c3BWMEdIem9NM0xGTlBmeFlOQU9IcWpQNzJZeHppemJNMVRNLW9IdXpjRlZmZGk1dTNvakR2YTJnRDZZOXAwdDEyX2F6MWlqUXBfTDQ4NWxEWFdqbXVYQUo3aEE3SFZpN2F4RzZMM1hIRw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQdHhCRWw3M2tFaFpfWGNsSFUzWU91b0hpd2lib0xJM3VRQkU0ZWpRLXVvNUIwM2pwSWhldHN5amtqRkRLRzN6c3BWMEdIem9NM0xGTlBmeFlOQU9IcWpQNzJZeHppemJNMVRNLW9IdXpjRlZmZGk1dTNvakR2YTJnRDZZOXAwdDEyX2F6MWlqUXBfTDQ4NWxEWFdqbXVYQUo3aEE3SFZpN2F4RzZMM1hIRw?oc=5\" target=\"_blank\"&gt;Euro zone factory growth eases in October but remains solid, PMI shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-02T09:39:56.000Z",
-          "score": 8
-        },
-        {
-          "title": "European supermarkets hit by new fridge cyber attack - Reuters",
+          "title": "New cyberattack on supermarket fridges sweeps across Europe - Reuters",
           "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObF9LUXZ2TVpjZm13eW9HNXZ0MkZFVDM5eHl5RXc0aDkzODdvc0VKYVE4YV9MSDZITjVTR01CM3l6ajdCVEFZMXlmdmx3MzBRWHN5QVkyTFU2bkR2Sm5VQm5OWUVfLVJoeHFZaXdrc0F1QTRnT0tHYXRvcVd4S0V2QUxmV3ptOEszT2EyWmFpVjYyUnRwODF1eGhXbGpGcUV2UXRwZFFLOGhPLTY1MWUxal9TY3M0Qm9MOVpSeTFHazNxMUNGSnVfdzVvOE0tUGM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxObF9LUXZ2TVpjZm13eW9HNXZ0MkZFVDM5eHl5RXc0aDkzODdvc0VKYVE4YV9MSDZITjVTR01CM3l6ajdCVEFZMXlmdmx3MzBRWHN5QVkyTFU2bkR2Sm5VQm5OWUVfLVJoeHFZaXdrc0F1QTRnT0tHYXRvcVd4S0V2QUxmV3ptOEszT2EyWmFpVjYyUnRwODF1eGhXbGpGcUV2UXRwZFFLOGhPLTY1MWUxal9TY3M0Qm9MOVpSeTFHazNxMUNGSnVfdzVvOE0tUGM?oc=5\" target=\"_blank\"&gt;European supermarkets hit by new fridge cyber attack&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-02T12:18:10.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxObF9LUXZ2TVpjZm13eW9HNXZ0MkZFVDM5eHl5RXc0aDkzODdvc0VKYVE4YV9MSDZITjVTR01CM3l6ajdCVEFZMXlmdmx3MzBRWHN5QVkyTFU2bkR2Sm5VQm5OWUVfLVJoeHFZaXdrc0F1QTRnT0tHYXRvcVd4S0V2QUxmV3ptOEszT2EyWmFpVjYyUnRwODF1eGhXbGpGcUV2UXRwZFFLOGhPLTY1MWUxal9TY3M0Qm9MOVpSeTFHazNxMUNGSnVfdzVvOE0tUGM?oc=5\" target=\"_blank\"&gt;New cyberattack on supermarket fridges sweeps across Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T21:37:54.000Z",
           "score": 8
         },
         {
-          "title": "Euro zone countries are integrating faster with US than with each other, ECB says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPTmVQWHVwb21iejNtYmUyXzktbkxWSFlNWVI2NkI2Sm9RazROUzBLQjJBaW9TeDR2VGlRTk9Jano1UmlONEFQU3diNlBEZVZHck1yT3E1YjBJQUFBZGZmUUNhS1pmTHZRS2JlazFuVWdyUU9CZEZWdWcxVTZoMGZENEg0YTdnV2Z1c1JkU2hMVms1ckVoV3NvV2lBRzlrTzJwMGdCeTNfWEQ2WVNXaVRyNy1vOXdYVm9EVFJTSzM1Z3RMTHlvYWI2d3dnUm1wdw?oc=5",
+          "title": "Libya's eastern parliament votes to appoint Fawzi Abu Khazam as central bank governor - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSEl4ZFdTQ2NQXzE3TElWbzh5UkhZeGsxQ0toOENKVmhnY05fa2QxNEl5cEdMaGhFX2xOSFlfM3o2bGdyT3lsNkdJRjFIMGM3SGd0U0lEVVFJRTlULXFKMVVsSmVrckFYYzJOeF96YlE1Z19aZFJINWFNZFpkMDg3Q21nakFXNHo0dFFHZHJFSWp2NHFtZzhzanZWb0NrRnVsUDdSbnViX3ItVVowNWlLalE4c2FGWGw5NExvYmRPWQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPTmVQWHVwb21iejNtYmUyXzktbkxWSFlNWVI2NkI2Sm9RazROUzBLQjJBaW9TeDR2VGlRTk9Jano1UmlONEFQU3diNlBEZVZHck1yT3E1YjBJQUFBZGZmUUNhS1pmTHZRS2JlazFuVWdyUU9CZEZWdWcxVTZoMGZENEg0YTdnV2Z1c1JkU2hMVms1ckVoV3NvV2lBRzlrTzJwMGdCeTNfWEQ2WVNXaVRyNy1vOXdYVm9EVFJTSzM1Z3RMTHlvYWI2d3dnUm1wdw?oc=5\" target=\"_blank\"&gt;Euro zone countries are integrating faster with US than with each other, ECB says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
-          "published": "2026-11-02T09:29:46.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQSEl4ZFdTQ2NQXzE3TElWbzh5UkhZeGsxQ0toOENKVmhnY05fa2QxNEl5cEdMaGhFX2xOSFlfM3o2bGdyT3lsNkdJRjFIMGM3SGd0U0lEVVFJRTlULXFKMVVsSmVrckFYYzJOeF96YlE1Z19aZFJINWFNZFpkMDg3Q21nakFXNHo0dFFHZHJFSWp2NHFtZzhzanZWb0NrRnVsUDdSbnViX3ItVVowNWlLalE4c2FGWGw5NExvYmRPWQ?oc=5\" target=\"_blank\"&gt;Libya's eastern parliament votes to appoint Fawzi Abu Khazam as central bank governor&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T15:43:47.000Z",
           "score": 8
+        },
+        {
+          "title": "World's energy supply buffers have been eroded, ADNOC CEO says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOVFJFQUd0MGpUMUdubkFVLWwzTHgwWmc1dlhDMzBWWjVYVnJGbTFiTndMWk9IclpjVWljUWlGTy1xUUN3VVRCLWRNeFluRGxQc3dFek52dVhvMU4zTGwtRDJtZWdDRnJRRFd4eUZiWDQtUnpkeFFOc1FRb1pJQ3BQNmptTDdKa0FWek5zSjdQcC1IcUZMTk1xNzdFQS1mQTd2WW11MmlGMTBIMmhyYURMVjltNmVWNi1Bc0JTLXhnTGg5TXk3YzYtb3Y2VQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxOVFJFQUd0MGpUMUdubkFVLWwzTHgwWmc1dlhDMzBWWjVYVnJGbTFiTndMWk9IclpjVWljUWlGTy1xUUN3VVRCLWRNeFluRGxQc3dFek52dVhvMU4zTGwtRDJtZWdDRnJRRFd4eUZiWDQtUnpkeFFOc1FRb1pJQ3BQNmptTDdKa0FWek5zSjdQcC1IcUZMTk1xNzdFQS1mQTd2WW11MmlGMTBIMmhyYURMVjltNmVWNi1Bc0JTLXhnTGg5TXk3YzYtb3Y2VQ?oc=5\" target=\"_blank\"&gt;World's energy supply buffers have been eroded, ADNOC CEO says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-02T06:38:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 389,
-    "articlesLast24h": 141,
-    "afterDedup": 134,
+    "totalArticlesScanned": 396,
+    "articlesLast24h": 158,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
