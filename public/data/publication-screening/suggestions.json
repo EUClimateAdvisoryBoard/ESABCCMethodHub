@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T12:42:56.344Z",
+  "generatedAt": "2026-11-03T12:08:39.094Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,27 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/aebc9e",
+      "title": "Decomposing drivers of global temperature change after net zero",
+      "journal": "Environmental Research Letters",
+      "authors": "Annika Högner, Zebedee Nicholls, Gaurav Ganti",
+      "published": "2026-11-02",
+      "url": "https://doi.org/10.1088/1748-9326/aebc9e",
+      "abstract": "Net-zero CO2 (NZCO2) and greenhouse gas emission (GHG) targets are central to the development of mitigation scenarios. Projected global surface air temperature (GSAT) change after NZCO2 depends on several factors that broadly fall into two categories: scenario-specific factors that account for the diversity of possible mitigation pathways to net zero and beyond, and model-specific factors that describe the climate system response, captured in the zero emissions commitment (ZEC). Current established climate assessment approaches do not separate contributions from these two categories to post-net-zero GSAT change in GHG emission scenarios. To address this shortcoming, we propose a diagnostic protocol that decomposes the contributions from the model-specific ZEC and from key scenario-characteristics including non-CO2 GHG reductions, net-negative CO2 emissions, and other climate forcers. We assess the GSAT outcomes from a large collection of scenarios that achieve NZCO2 using the MAGICC model. We find a peak warming increase of 0.08°C (‘likely (>66%)’ 0.05 to 0.11°C) per decade delay in reaching NZCO2 and a -0.11°C (likely -0.13 to -0.05°C) post-NZCO2 GSAT decline by 2100. Based on our decomposition approach we find that the model-specific negative ZEC contributes about -0.03°C across the full scenario set. This is on the same order as the contribution from non-CO2 mitigation for scenarios that achieve NZGHG. The decomposition allows us to test the sensitivity of our outcomes. We",
+      "suggestedOn": "2026-11-03",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 7,
+          "matched": [
+            "net-zero",
+            "net zero",
+            "climate assessment"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aeb70d",
       "title": "Global organic chemicals industry under the CBAM: Changes in output, carbon emissions and cross-country inequality",
