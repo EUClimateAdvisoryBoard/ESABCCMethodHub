@@ -1,12 +1,12 @@
 {
-  "date": "2026-11-04",
-  "generatedAt": "2026-11-04T22:30:52.940Z",
+  "date": "2026-11-05",
+  "generatedAt": "2026-11-05T03:17:12.274Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Wednesday, 4 November 2026 — Key developments from the last 24 hours",
+  "subtitle": "Thursday, 5 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "COP31 must deliver finance for Africa or there will be no implementation",
-      "summary": "Without real progress in Antalya on finance for adaptation and energy transition, next year's Africa-hosted COP will inherit the same unmet promises The post COP31 must deliver finance for Africa or there will be no implementation appeared first on Climate Home News.",
+      "headline": "Clean power shields China from oil shock more than any other country",
+      "summary": "Rapid clean power growth and electrification have boosted China's energy resilience as well as confidence in its energy policy ahead of COP31, experts say The post Clean power shields China from oil shock more than any other country appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,12 +15,6 @@
       "summary": "European Commission Speech Brussels, 04 Nov 2026 What a fantastic way to end this Forum. I have just come from our workshop with 100 young people. Their energy is contagious.\r\nThese two days have been unforgett...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "EXCLUSIVE: Japan fund JIC plans to sell JSR to Mitsui Chemicals, sources say - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNZ0NuZnZmczRXNFNBQlJvbXNmUXdpMk1DVnkzU29LVGVGc1dvTTlVRlRlQXZnUEFHSGRsY0lRQmpMRTNId1pQZ0c4Z2lmTFF1ZEVIQ0t0bWw2N0w5UVdmWndFQVg3ZjhkMFB4RDBCSjZFME81YzdrTGFxRWN2Yk1ma0ZVZy1aS05KVzJUY21HMlQzU2l4X21FX1ZoTVZXUGxCX2pZV1JZbWNlS2NxME5Ec0lrdw?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Japan fund JIC plans to sell JSR to Mitsui Chemicals, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -33,6 +27,14 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Clean power shields China from oil shock more than any other country",
+          "link": "https://www.climatechangenews.com/2026/11/05/clean-power-shields-china-from-oil-shock-more-than-any-other-country/",
+          "source": "Climate Home News",
+          "description": "Rapid clean power growth and electrification have boosted China's energy resilience as well as confidence in its energy policy ahead of COP31, experts say The post Clean power shields China from oil shock more than any other country appeared first on Climate Home News.",
+          "published": "2026-11-05T01:00:00.000Z",
+          "score": 10
+        },
         {
           "title": "COP31 must deliver finance for Africa or there will be no implementation",
           "link": "https://www.climatechangenews.com/2026/11/04/cop31-must-deliver-finance-for-africa-or-there-will-be-no-implementation/",
@@ -80,14 +82,6 @@
           "score": 20
         },
         {
-          "title": "Commission strengthens Europe's position as the world's leading tourism destination",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2281",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 04 Nov 2026 The European Commission today presented a new EU Sustainable Tourism Strategy, to increase the sector's competitiveness, sustainability and resilience.",
-          "published": "2026-11-03T23:00:00.000Z",
-          "score": 20
-        },
-        {
           "title": "Q&#038;A: What is the Brazil-led ‘deforestation roadmap’?",
           "link": "https://www.carbonbrief.org/qa-what-is-the-brazil-led-deforestation-roadmap",
           "source": "Carbon Brief",
@@ -110,30 +104,21 @@
           "description": "New research from Oxfam shows the wealthiest 0.1% are making money from the climate crisis their pollution has caused, while buying protection for themselves The post The great disaster divide: How the super-rich are profiting from global climate suffering appeared first on Climate Home News.",
           "published": "2026-11-04T17:29:57.000Z",
           "score": 13
+        },
+        {
+          "title": "COP30 adaptation pledge would meet under a third of poorer nations’ needs, UN warns",
+          "link": "https://www.climatechangenews.com/2026/11/04/cop30-adaptation-pledge-would-meet-under-a-third-of-poorer-nations-needs-un-warns/",
+          "source": "Climate Home News",
+          "description": "Even tripled by 2035, adaptation finance would reach $85-120bn a year against $420bn in needs – and rich nations’ real contribution could barely grow The post COP30 adaptation pledge would meet under a third of poorer nations’ needs, UN warns appeared first on Climate Home News.",
+          "published": "2026-11-04T18:20:24.000Z",
+          "score": 10
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "EXCLUSIVE: Japan fund JIC plans to sell JSR to Mitsui Chemicals, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNZ0NuZnZmczRXNFNBQlJvbXNmUXdpMk1DVnkzU29LVGVGc1dvTTlVRlRlQXZnUEFHSGRsY0lRQmpMRTNId1pQZ0c4Z2lmTFF1ZEVIQ0t0bWw2N0w5UVdmWndFQVg3ZjhkMFB4RDBCSjZFME81YzdrTGFxRWN2Yk1ma0ZVZy1aS05KVzJUY21HMlQzU2l4X21FX1ZoTVZXUGxCX2pZV1JZbWNlS2NxME5Ec0lrdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNZ0NuZnZmczRXNFNBQlJvbXNmUXdpMk1DVnkzU29LVGVGc1dvTTlVRlRlQXZnUEFHSGRsY0lRQmpMRTNId1pQZ0c4Z2lmTFF1ZEVIQ0t0bWw2N0w5UVdmWndFQVg3ZjhkMFB4RDBCSjZFME81YzdrTGFxRWN2Yk1ma0ZVZy1aS05KVzJUY21HMlQzU2l4X21FX1ZoTVZXUGxCX2pZV1JZbWNlS2NxME5Ec0lrdw?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Japan fund JIC plans to sell JSR to Mitsui Chemicals, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-04T00:42:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Chinese banks have applied for $30 billion worth of loan quota to fund share purchases - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWVdQSjJqMGpIeERfb1F1dFByNElNdGhObklvVngxejlNb0V4NXlFZ1EyTGRZbElicDNfX3pNR053VlVoYnZKLW82cE0xWVh4cVNWaE8yMWFaNEthMGdaa3hLMTdPLVJxRlNEbE52MXc3VjBFTzFmeEV5QzdVdjhxQ1d1bHFjYmJOQ1FpNTZlRy1DSmpGNVdtd21vV2xjN2pPWFlIYkpSbWNrWHNMeG9FVmVn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPWVdQSjJqMGpIeERfb1F1dFByNElNdGhObklvVngxejlNb0V4NXlFZ1EyTGRZbElicDNfX3pNR053VlVoYnZKLW82cE0xWVh4cVNWaE8yMWFaNEthMGdaa3hLMTdPLVJxRlNEbE52MXc3VjBFTzFmeEV5QzdVdjhxQ1d1bHFjYmJOQ1FpNTZlRy1DSmpGNVdtd21vV2xjN2pPWFlIYkpSbWNrWHNMeG9FVmVn?oc=5\" target=\"_blank\"&gt;Chinese banks have applied for $30 billion worth of loan quota to fund share purchases&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-04T01:29:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -205,8 +190,8 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 386,
-    "articlesLast24h": 162,
+    "totalArticlesScanned": 383,
+    "articlesLast24h": 163,
     "afterDedup": 153,
     "feedsQueried": 19
   }
