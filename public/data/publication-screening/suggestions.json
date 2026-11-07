@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T12:18:43.412Z",
+  "generatedAt": "2026-11-07T11:13:24.954Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,26 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1016/j.enpol.2026.115688",
+      "title": "Bridge fuels and climate policy integration: The case of low-carbon hydrogen in the European Union",
+      "journal": "Energy Policy",
+      "authors": "Nils Bruch",
+      "published": "2027-02",
+      "url": "https://doi.org/10.1016/j.enpol.2026.115688",
+      "abstract": "",
+      "suggestedOn": "2026-11-07",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6.5,
+          "matched": [
+            "climate policy integration",
+            "european union"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aebc9e",
       "title": "Decomposing drivers of global temperature change after net zero",
