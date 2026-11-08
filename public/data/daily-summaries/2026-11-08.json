@@ -1,0 +1,182 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T02:05:05.405Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Sunday, 8 November 2026 — Key developments from the last 24 hours",
+  "highlights": [
+    {
+      "headline": "What’s the point? Ten years after the Paris treaty, are climate talks getting anywhere?",
+      "summary": "&lt;p&gt;Its key temperature goal has been missed but experts say the agreement is still proving a vital moral compass for progress&lt;/p&gt;&lt;p&gt;It was a curious way of conducting negotiations. Ahead of the 2025 climate summit, in the Amazonian port of Belém last year, the Brazilian hosts had taken off the table the issue that most had assumed would be at its heart: concrete plans from each country laying out exactly what they would be doing to cut their greenhouse gas emissions.&lt;/p&gt;&",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
+    {
+      "headline": "Five European leaders call for closer EU-UK ties ahead of Brussels summit",
+      "summary": "&lt;p&gt;Germany, Belgium, Netherlands, Luxembourg and Denmark say cooperation on clean energy will benefit both sides&lt;/p&gt;&lt;p&gt;Five European leaders have called for closer ties with Britain ahead of a keenly anticipated EU-UK summit.&lt;/p&gt;&lt;p&gt;The leaders of Germany, Belgium, the Netherlands, Luxembourg and Denmark, said deeper cooperation on clean energy would benefit both sides in a letter to Ursula von der Leyen and António Costa.&lt;/p&gt; &lt;a href=\"https://www.theguardia",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
+    }
+  ],
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": [
+        {
+          "title": "What’s the point? Ten years after the Paris treaty, are climate talks getting anywhere?",
+          "link": "https://www.theguardian.com/environment/ng-interactive/2026/nov/07/whats-the-point-ten-years-after-the-paris-treaty-are-climate-talks-getting-anywhere",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Its key temperature goal has been missed but experts say the agreement is still proving a vital moral compass for progress&lt;/p&gt;&lt;p&gt;It was a curious way of conducting negotiations. Ahead of the 2025 climate summit, in the Amazonian port of Belém last year, the Brazilian hosts had taken off the table the issue that most had assumed would be at its heart: concrete plans from each country laying out exactly what they would be doing to cut their greenhouse gas emissions.&lt;/p&gt;&",
+          "published": "2026-11-07T05:00:02.000Z",
+          "score": 7
+        },
+        {
+          "title": "US offers $20m reward for information about Iran's nuclear programme",
+          "link": "https://www.bbc.co.uk/news/articles/c6d091ev3p0jo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Donald Trump has repeatedly raised the prospect of renewing strikes against Iran's nuclear facilities.",
+          "published": "2026-11-07T18:14:38.000Z",
+          "score": 7
+        },
+        {
+          "title": "South Africa&#039;s ANC facing worst-ever performance in local elections",
+          "link": "https://www.dw.com/en/south-africa-s-anc-facing-worst-ever-performance-in-local-elections/a-79887482?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Near-final results show South Africa&#039;s once dominant ANC will see its lowest-ever vote percentage. The party is taking the blame for shoddy municipal services, including water and electricity shortages.",
+          "published": "2026-11-07T18:07:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "Lanarkshire AI datacentre to fully rely on National Grid despite renewables claim",
+          "link": "https://www.theguardian.com/uk-news/2026/nov/07/lanarkshire-ai-datacentre-datavita-chapelhall-national-grid-renewable-energy",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;DataVita has revised plan for Chapelhall development to be wholly powered by 1GW of renewable energy&lt;/p&gt;&lt;p&gt;A datacentre company that said it would power a massive AI development near Glasgow with renewable energy has admitted that the scheme will be entirely served by the National Grid.&lt;/p&gt;&lt;p&gt;DataVita, a key plank of the UK’s AI strategy, had promised that &lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/scotland-lanarkshire-village-ai-datacentre\"&g",
+          "published": "2026-11-07T10:00:08.000Z",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "Five European leaders call for closer EU-UK ties ahead of Brussels summit",
+          "link": "https://www.theguardian.com/world/2026/nov/07/europe-leaders-call-closer-eu-uk-ties-brussels-summit",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Germany, Belgium, Netherlands, Luxembourg and Denmark say cooperation on clean energy will benefit both sides&lt;/p&gt;&lt;p&gt;Five European leaders have called for closer ties with Britain ahead of a keenly anticipated EU-UK summit.&lt;/p&gt;&lt;p&gt;The leaders of Germany, Belgium, the Netherlands, Luxembourg and Denmark, said deeper cooperation on clean energy would benefit both sides in a letter to Ursula von der Leyen and António Costa.&lt;/p&gt; &lt;a href=\"https://www.theguardia",
+          "published": "2026-11-07T15:30:35.000Z",
+          "score": 10
+        },
+        {
+          "title": "New Forest wildfire restoration work begins",
+          "link": "https://www.bbc.co.uk/news/articles/cw98zzn7z04vo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Work begins to restore nature to part of the New Forest destroyed by a summer wildfire.",
+          "published": "2026-11-07T07:14:33.000Z",
+          "score": 7
+        },
+        {
+          "title": "India news: Vehicles major cause of Delhi pollution, top court says",
+          "link": "https://www.dw.com/en/india-news-vehicles-major-cause-of-delhi-pollution-top-court-says/live-79883248?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Supreme Court implored responsible Diwali celebrations as the Indian government sets out to tackle the country&#039;s severe air pollution crisis. DW has more.",
+          "published": "2026-11-07T07:07:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "National Trust votes to seek banking partner more in tune with its environmental policies",
+          "link": "https://www.theguardian.com/uk-news/2026/nov/07/national-trust-agm-barclays-environment-policies",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Charity’s AGM decides overwhelmingly to begin tendering process amid criticism of Barclays’ fossil fuel investments&lt;/p&gt;&lt;p&gt;The National Trust has voted overwhelmingly to seek a new banking partner in a significant victory for members who have long argued that its relationship with Barclays was at odds with its commitment to protecting the natural world.&lt;/p&gt;&lt;p&gt;The resolution, passed at the charity’s annual general meeting on Saturday with the backing of its board o",
+          "published": "2026-11-07T15:06:59.000Z",
+          "score": 4
+        },
+        {
+          "title": "Thunderstruck: what does the future hold for lightning?",
+          "link": "https://www.theguardian.com/science/ng-interactive/2026/nov/08/future-of-lightning-global-heating-weather-australia",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Humans have always been awed by the power and beauty of lightning. How does the experience and understanding of it change in a warming world?&lt;/p&gt;&lt;p&gt;In a rock shelter in Kakadu national park in the north of Australia is an image of a being the Bininj people call &lt;a href=\"https://kakadu.gov.au/discover/culture/stories/\"&gt;Namarrkon&lt;/a&gt;. His flesh bleached away to reveal the bones beneath, he wears stone axes on his head, elbows and knees, and wields a great band of l",
+          "published": "2026-11-07T14:00:13.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": []
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": [
+        {
+          "title": "UK cannot 'cherry pick' EU single market deal, Barnier tells BBC",
+          "link": "https://www.bbc.co.uk/news/articles/c9kgjj206nzpo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The former Brexit negotiator says EU countries would reject any British attempts to follow economic rules \"a la carte\".",
+          "published": "2026-11-07T15:19:35.000Z",
+          "score": 8
+        }
+      ]
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": [
+        {
+          "title": "Armenia&#039;s selective prosecution: A threat to EU relations?",
+          "link": "https://www.dw.com/en/armenia-s-selective-prosecution-a-threat-to-eu-relations/a-79878159?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "While Brussels has refrained from harsh criticism, Armenian civil society has warned of selective justice against opposition figures. Could the EU&#039;s pragmatic stance risk repeating past mistakes?",
+          "published": "2026-11-07T18:36:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "As COP31 comes to Turkey, satellites reveal a landfill methane problem - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPOVRwcWFYZndwYUxDdEZaT2ZaeENLZ3lvOFJiOFRBREdZTng1Tmhtbm1YTE9MUy1sM2FDNkhvSE9nakhabFpHdXhOclZHeWgtXzlPRmhzNzlKcjR4OXE5U01wRWZBZ2pGZFJocHhTeWZmRkxBVnM0RTQwd0Jmemhjd0IyUFRDM2lzMHBsT3Q5V0o4cXBsU01PN2ZBN2MzZGxvQXJVemxZSXBnQnk4eTdZSXNOZ3JNY3c?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPOVRwcWFYZndwYUxDdEZaT2ZaeENLZ3lvOFJiOFRBREdZTng1Tmhtbm1YTE9MUy1sM2FDNkhvSE9nakhabFpHdXhOclZHeWgtXzlPRmhzNzlKcjR4OXE5U01wRWZBZ2pGZFJocHhTeWZmRkxBVnM0RTQwd0Jmemhjd0IyUFRDM2lzMHBsT3Q5V0o4cXBsU01PN2ZBN2MzZGxvQXJVemxZSXBnQnk4eTdZSXNOZ3JNY3c?oc=5\" target=\"_blank\"&gt;As COP31 comes to Turkey, satellites reveal a landfill methane problem&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-07T06:08:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "New Zealand preliminary vote leaves unclear who will govern - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeHN3TmpfLVFhTnlIdlNERm8zUnRzaExUZ0NDUGo4Q3JiR295dVNsRDgwRDVDUC1VaU12MzlpYVdiSXJOMVdFRy1nYTZDWWE4OVM3X1JIUV9vQ01YaTVoVlN4MzNMaXlIUWRDTUVyT1dMeW16d2dWYjlrVndFek5GanZtQWdSUUt0RkVwcFpJWTZkRWlnWUdPbEdZRlBaU283Nk5aQXptWG5DZ08ybG1nZkVn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNeHN3TmpfLVFhTnlIdlNERm8zUnRzaExUZ0NDUGo4Q3JiR295dVNsRDgwRDVDUC1VaU12MzlpYVdiSXJOMVdFRy1nYTZDWWE4OVM3X1JIUV9vQ01YaTVoVlN4MzNMaXlIUWRDTUVyT1dMeW16d2dWYjlrVndFek5GanZtQWdSUUt0RkVwcFpJWTZkRWlnWUdPbEdZRlBaU283Nk5aQXptWG5DZ08ybG1nZkVn?oc=5\" target=\"_blank\"&gt;New Zealand preliminary vote leaves unclear who will govern&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-07T18:05:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "Explainer: What happens next after New Zealand's vote? - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNeXBnajlhbkZ6bEs3X2tsanJQZFhLTWpTOVYwcUpDajdySE1qTWtId1RYa1pJMF9PR2cyOGdHTlYxT3JVdFJJc0FZcDNPbU5waVJaNHRzU2lJY1RacHc0cExSRVBiN2M0N0xGbVB1eHc5NXh4WWdxazIwazBfOFRhQ1RHc0JpQ3FOU1hEX2ZNQXFkMUNpZTZOWUs0UWY?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNeXBnajlhbkZ6bEs3X2tsanJQZFhLTWpTOVYwcUpDajdySE1qTWtId1RYa1pJMF9PR2cyOGdHTlYxT3JVdFJJc0FZcDNPbU5waVJaNHRzU2lJY1RacHc0cExSRVBiN2M0N0xGbVB1eHc5NXh4WWdxazIwazBfOFRhQ1RHc0JpQ3FOU1hEX2ZNQXFkMUNpZTZOWUs0UWY?oc=5\" target=\"_blank\"&gt;Explainer: What happens next after New Zealand's vote?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-07T23:47:20.000Z",
+          "score": 6
+        },
+        {
+          "title": "No clear winner after tight New Zealand general election",
+          "link": "https://www.bbc.co.uk/news/articles/c3ewev11g1e0o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Weeks of coalition talks could follow after preliminary results pointed to a highly divided national parliament.",
+          "published": "2026-11-07T15:56:28.000Z",
+          "score": 4
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 378,
+    "articlesLast24h": 137,
+    "afterDedup": 131,
+    "feedsQueried": 19
+  }
+}
