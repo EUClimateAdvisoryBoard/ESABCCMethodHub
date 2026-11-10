@@ -1,18 +1,18 @@
 {
   "date": "2026-11-10",
-  "generatedAt": "2026-11-10T00:34:33.385Z",
+  "generatedAt": "2026-11-10T13:20:08.703Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 10 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Rare call for more electricity supplies as wind power drops across Europe",
-      "summary": "&lt;p&gt;Neso issued ‘electricity margin notice’ for gas power plants in Britain to fire up and boost generation this morning amid energy shortfall&lt;/p&gt;&lt;p&gt;The government body tasked with keeping the lights on issued a rare call for more electricity supplies on Monday morning due to low wind power generation forecasts across Europe.&lt;/p&gt;&lt;p&gt;A notice issued by the National Energy System Operator (Neso) on Sunday night said it faced a “shortfall” of almost 1,400 megawatts in it",
+      "headline": "Commission approves €2 billion Belgian State aid to support offshore wind energy",
+      "summary": "European Commission Press release Brussels, 10 Nov 2026 The European Commission has approved a €2.04 billion Belgian scheme to support offshore wind energy in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Q&#038;A: What is the Belém-Antalya mechanism for a ‘just transition’?",
-      "summary": "One of the key expected outcomes from the upcoming COP31 climate summit in Antalya, Turkey, is the launch of a&#8230; The post Q&amp;A: What is the Belém-Antalya mechanism for a ‘just transition’? appeared first on Carbon Brief.",
+      "headline": "Analysis: Fossil-fuel CO2 emissions set to dip in 2026 as Iran conflict hits oil use",
+      "summary": "Carbon dioxide (CO2) emissions from fossil fuels and cement are projected to fall by around 0.4% in 2026 to 38.2bn&#8230; The post Analysis: Fossil-fuel CO2 emissions set to dip in 2026 as Iran conflict hits oil use appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,11 +34,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Rare call for more electricity supplies as wind power drops across Europe",
-          "link": "https://www.theguardian.com/business/2026/nov/09/rare-call-more-electricity-supplies-windpower-drops-britain-energy-shortfall",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Neso issued ‘electricity margin notice’ for gas power plants in Britain to fire up and boost generation this morning amid energy shortfall&lt;/p&gt;&lt;p&gt;The government body tasked with keeping the lights on issued a rare call for more electricity supplies on Monday morning due to low wind power generation forecasts across Europe.&lt;/p&gt;&lt;p&gt;A notice issued by the National Energy System Operator (Neso) on Sunday night said it faced a “shortfall” of almost 1,400 megawatts in it",
-          "published": "2026-11-09T08:12:17.000Z",
+          "title": "Commission approves €2 billion Belgian State aid to support offshore wind energy",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2373",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 10 Nov 2026 The European Commission has approved a €2.04 billion Belgian scheme to support offshore wind energy in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy.",
+          "published": "2026-11-09T23:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "COP31 outcome needs to prioritise transition away from fossil fuels",
+          "link": "https://www.climatechangenews.com/2026/11/10/cop31-outcome-needs-to-prioritise-transition-away-from-fossil-fuels/",
+          "source": "Climate Home News",
+          "description": "Many countries are already working on parts of their transition, such as phasing out coal or ending fossil fuel subsidies, with more expected to follow soon The post COP31 outcome needs to prioritise transition away from fossil fuels appeared first on Climate Home News.",
+          "published": "2026-11-10T09:36:39.000Z",
           "score": 13
         },
         {
@@ -50,11 +58,11 @@
           "score": 11
         },
         {
-          "title": "Senate votes on bill to speed up projects from gas pipelines to clean energy",
+          "title": "Senate advances bill to speed up projects from gas pipelines to clean energy",
           "link": "https://www.theguardian.com/us-news/2026/nov/09/senate-energy-infrastructure-bill-vote",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Environmentalists torn over procedural vote to boost infrastructure projects but weaken environmental laws&lt;/p&gt;&lt;p&gt;It’s a bill that would make it easier to build big infrastructure projects in America – everything from &lt;a href=\"https://www.theguardian.com/environment/fossil-fuels\"&gt;fossil fuel&lt;/a&gt; pipelines to transmission lines that would add more &lt;a href=\"https://www.theguardian.com/environment/renewableenergy\"&gt;clean energy&lt;/a&gt; to the grid. And it woul",
-          "published": "2026-11-09T18:42:32.000Z",
+          "description": "&lt;p&gt;Key environmental groups come out against bipartisan Baaja bill over fears it could spur datacenters and ICE jails&lt;/p&gt;&lt;p&gt;The Senate on Monday advanced bipartisan legislation aimed at speeding up permitting reviews for datacenters and other infrastructure projects, in the first major action since last week’s election that soundly repudiated Donald Trump and congressional &lt;a href=\"https://www.theguardian.com/us-news/republicans\"&gt;Republicans&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;I",
+          "published": "2026-11-10T02:28:00.000Z",
           "score": 11
         },
         {
@@ -64,14 +72,6 @@
           "description": "&lt;p&gt;UN climate summit will focus on how to implement the targets needed to urgently cut greenhouse gas emissions&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/nov/08/cop31-what-is-at-stake-at-the-un-climate-summit-and-what-can-it-achieve\"&gt;What is at stake at the UN climate summit and what can it achieve?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/nov/08/cop31-key-players-climat",
           "published": "2026-11-09T15:45:04.000Z",
           "score": 7
-        },
-        {
-          "title": "UK households face rush to find green energy installer to beat April VAT hike",
-          "link": "https://www.theguardian.com/environment/2026/nov/09/uk-households-green-energy-installer-rush-april-vat-hike",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Ministers pushed to reverse ‘policy madness’ of scrapping exemption on 5% tax rise for heat pumps, solar panels and batteries &lt;/p&gt;&lt;p&gt;Households planning to invest in green energy upgrades, including heat pumps and solar panels, risk a nationwide rush to find an installer or face hundreds of pounds in unexpected costs unless the government abandons its looming VAT increase.&lt;/p&gt;&lt;p&gt;Ministers are under growing pressure to reverse plans to scrap the 5% VAT exemption o",
-          "published": "2026-11-09T09:00:05.000Z",
-          "score": 7
         }
       ]
     },
@@ -80,43 +80,43 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Q&#038;A: What is the Belém-Antalya mechanism for a ‘just transition’?",
-          "link": "https://www.carbonbrief.org/qa-what-is-the-belem-antalya-mechanism-for-a-just-transition",
+          "title": "Analysis: Fossil-fuel CO2 emissions set to dip in 2026 as Iran conflict hits oil use",
+          "link": "https://www.carbonbrief.org/analysis-fossil-fuel-co2-emissions-set-to-dip-in-2026-as-iran-conflict-hits-oil-use",
           "source": "Carbon Brief",
-          "description": "One of the key expected outcomes from the upcoming COP31 climate summit in Antalya, Turkey, is the launch of a&#8230; The post Q&amp;A: What is the Belém-Antalya mechanism for a ‘just transition’? appeared first on Carbon Brief.",
-          "published": "2026-11-09T08:00:00.000Z",
+          "description": "Carbon dioxide (CO2) emissions from fossil fuels and cement are projected to fall by around 0.4% in 2026 to 38.2bn&#8230; The post Analysis: Fossil-fuel CO2 emissions set to dip in 2026 as Iran conflict hits oil use appeared first on Carbon Brief.",
+          "published": "2026-11-10T01:01:00.000Z",
           "score": 13
         },
         {
-          "title": "Remarks by the IPCC Chair Jim Skea during the opening of COP31 of the UNFCCC",
-          "link": "https://www.ipcc.ch/2026/11/09/remarks-ipcc-chair-jim-skea-unfccc-cop31/",
-          "source": "IPCC",
-          "description": "9 November 2026, Antalya, Turkey Your Excellencies, distinguished delegates, colleagues and friends, ladies and gentlemen, As Chair of the Intergovernmental Panel on Climate Change, I am grateful for the opportunity to address the opening of COP31. This is the first COP held in Türkiye, and I thank our hosts for their warm welcome and exemplary [&#8230;]",
-          "published": "2026-11-09T08:50:10.000Z",
-          "score": 11
-        },
-        {
-          "title": "COP31 Bulletin Day 1: Agenda settled as COP urged to &#8220;supercharge solutions&#8221;",
-          "link": "https://www.climatechangenews.com/2026/11/09/cop31-bulletin-day-1-australia-says-cover-decision-wont-spring-surprises/",
+          "title": "COP31 Bulletin Day 2: Energy Day off to slow start amid transport chaos",
+          "link": "https://www.climatechangenews.com/2026/11/10/cop31-bulletin-day-2-energy-day-off-to-slow-start-amid-transport-chaos/",
           "source": "Climate Home News",
-          "description": "An agenda row is averted at the opening session, where the UN climate chief said strong results are needed from the talks to boost \"real-world outcomes\" The post COP31 Bulletin Day 1: Agenda settled as COP urged to &#8220;supercharge solutions&#8221; appeared first on Climate Home News.",
-          "published": "2026-11-09T10:01:38.000Z",
-          "score": 10
+          "description": "Momentum starts to build around the COP31 presidency's electrification pledge, while the UN chief calls on all countries to plan their transition away from fossil fuels The post COP31 Bulletin Day 2: Energy Day off to slow start amid transport chaos appeared first on Climate Home News.",
+          "published": "2026-11-10T12:21:33.000Z",
+          "score": 13
         },
         {
-          "title": "‘A new age of climate extremes’: Earth accumulating heat at accelerating rate",
-          "link": "https://www.theguardian.com/environment/2026/nov/09/cop31-climate-extremes-earth-global-heating",
+          "title": "Developing countries face climate finance deficit as loan payments soar",
+          "link": "https://www.climatechangenews.com/2026/11/10/developing-countries-face-climate-finance-deficit-as-loan-repayments-soar/",
+          "source": "Climate Home News",
+          "description": "Repayments on climate loans could overtake new lending by 2036, according to CARE analysis shared exclusively with Climate Home News The post Developing countries face climate finance deficit as loan payments soar appeared first on Climate Home News.",
+          "published": "2026-11-10T05:00:00.000Z",
+          "score": 13
+        },
+        {
+          "title": "Slight fall in carbon emissions from fossil fuels as Iran war drives renewables push",
+          "link": "https://www.theguardian.com/environment/2026/nov/10/slight-fall-in-carbon-emissions-from-fossil-fuels-as-iran-war-drives-renewables-push",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Increased heat will supercharge extreme weather events, warns UN agency as Cop31 climate summit begins&lt;/p&gt;&lt;p&gt;Heat is accumulating in Earth’s systems at an accelerating rate, the UN’s weather agency has reported as the Cop31 climate change summit begins in Turkey, with 2026 on track to be one of the four warmest years on record.&lt;/p&gt;&lt;p&gt;The imbalance between incoming energy from the sun and energy leaving Earth reached its highest level since monitoring began, the W",
-          "published": "2026-11-09T07:30:02.000Z",
+          "description": "&lt;p&gt;However, authors of a comprehensive assessment to be presented at Cop31 warn talk of a global turnaround premature&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/live/2026/nov/10/cop31-live-fossil-fuel-carbon-emissions-climate-crisis-latest-news-updates\"&gt;Cop31 live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Soaring &lt;a href=\"https://www.theguardian.com/business/2026/nov/02/nine-of-world-biggest-oil-firms-95bn-profit",
+          "published": "2026-11-10T11:55:06.000Z",
           "score": 7
         },
         {
-          "title": "Democrats to attend Cop31 climate talks boosted by midterms and eager to make up for Trump-era setbacks",
-          "link": "https://www.theguardian.com/environment/2026/nov/09/cop31-climate-democrats-midterms",
+          "title": "Tuesday briefing: The world is falling short on climate action. Can Cop31 change that?",
+          "link": "https://www.theguardian.com/world/2026/nov/10/tuesday-briefing-the-world-is-falling-short-on-climate-action-can-cop31-change-that",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;US government will have no official presence at UN’s annual climate summit, this year’s Cop31 held in Antalya, Turkey&lt;/p&gt;&lt;p&gt;The US will be absent from key UN climate talks that start on Monday, a further sign of Donald Trump’s scornful dismissal of the climate crisis. But Democrats’ crushing win in the US midterm elections has delivered a timely shot of optimism to countries now looking beyond the Trump era of climate obstruction.&lt;/p&gt;&lt;p&gt;For the &lt;a href=\"https:",
-          "published": "2026-11-09T06:00:01.000Z",
+          "description": "&lt;p&gt;In today’s newsletter: As global leaders gather in Turkey for the UN climate summit, both doubts and hope surround what the annual talks can achieve&lt;/p&gt;&lt;p&gt;Good morning. After another year of unprecedented droughts, floods and wildfires driven by human-caused global heating, 91 heads of government will meet tomorrow in Turkey to discuss the climate crisis. They will do so against a backdrop of global instability and conflict.&lt;/p&gt;&lt;p&gt;But as high-ranking officials an",
+          "published": "2026-11-10T06:45:39.000Z",
           "score": 7
         }
       ]
@@ -138,21 +138,20 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "EU sues IBM, two European companies over border system woes - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOQXJPVTdRRklXWVVfcDEzUlQ4RHdINUpuei1aYnFyX3BZYWlfMFhIX3pOT3lVc25XS3FnOUhiai1obnZzQmhuSHdsOW92ZkhDV1VXakxfZFJKeFQxemtuQURkSHJxZUpuZUFBcDFqOXJIUWhkMmxneHlwZ3VFTGthdWRTNnp0RGFGQ2VjTGcxdUFsSTJFSzctT1hHUWN2U3hTY2VyaVJpSnNKVHhydkhSUldnNWFyZlg0WmNfYjBXaGdEMGVK?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOQXJPVTdRRklXWVVfcDEzUlQ4RHdINUpuei1aYnFyX3BZYWlfMFhIX3pOT3lVc25XS3FnOUhiai1obnZzQmhuSHdsOW92ZkhDV1VXakxfZFJKeFQxemtuQURkSHJxZUpuZUFBcDFqOXJIUWhkMmxneHlwZ3VFTGthdWRTNnp0RGFGQ2VjTGcxdUFsSTJFSzctT1hHUWN2U3hTY2VyaVJpSnNKVHhydkhSUldnNWFyZlg0WmNfYjBXaGdEMGVK?oc=5\" target=\"_blank\"&gt;EU sues IBM, two European companies over border system woes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-09T06:25:00.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Israel's new parliament to be sworn in as leaders compete to form government",
+          "link": "https://www.bbc.co.uk/news/articles/crd939lpzjp9o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Benjamin Netanyahu's main political rival, Gadi Eisenkot, has first chance to build a new government and oust the prime minister.",
+          "published": "2026-11-10T12:25:48.000Z",
+          "score": 8
+        },
         {
           "title": "At least 39 die after Europe-bound migrant boat sinks off Senegal",
           "link": "https://www.bbc.co.uk/news/articles/cv2d6dpge65go?at_medium=RSS&amp;at_campaign=rss",
@@ -162,44 +161,36 @@
           "score": 8
         },
         {
-          "title": "EU aims to pick new ECB chief by year-end",
-          "link": "https://www.dw.com/en/eu-aims-to-pick-new-ecb-chief-by-year-end/a-79898169?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Christine Lagarde&#039;s decision to step down early as head of the European Central Bank (ECB) has put the European Union on a tight schedule. The bloc expects to pick a new ECB chief by the end of December.",
-          "published": "2026-11-09T11:55:00.000Z",
+          "title": "EXCLUSIVE: UniCredit to win unconditional EU nod for Commerzbank deal, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbm1MYXVsMmJud0lZVmRiNS1PTGxoQ3FOYlNtdGpUbDdwcHlLN2ZheG9IUHFJRE0zU3ZPY2hESmhrMUNsYVotSHpaTm9NVUFFZ0pKN044ZmpmQjlWNG8wSXl0dVI4OW5zMjhhWjlJa0xTajdLc0VPZUt0MG9ySkNyMFNmTnNNQUpfaU9tbDZNb0hPakNYRlZIMW1oajkydi1ZVHhpeTd6VFE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbm1MYXVsMmJud0lZVmRiNS1PTGxoQ3FOYlNtdGpUbDdwcHlLN2ZheG9IUHFJRE0zU3ZPY2hESmhrMUNsYVotSHpaTm9NVUFFZ0pKN044ZmpmQjlWNG8wSXl0dVI4OW5zMjhhWjlJa0xTajdLc0VPZUt0MG9ySkNyMFNmTnNNQUpfaU9tbDZNb0hPakNYRlZIMW1oajkydi1ZVHhpeTd6VFE?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: UniCredit to win unconditional EU nod for Commerzbank deal, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-09T18:58:28.000Z",
           "score": 8
         },
         {
-          "title": "EXCLUSIVE: Covert Russian network exploited French riots on social media, EU report says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNQ0hpUFBLeDI4ZDJzc25aU0VuT0FKVkNBSHhEMHgyVUlXc0NGcXVyYjJZcDl3Vy1kN3NRX2wtSUVFZ1ctajJhMHQ3UC1PeEJYczNZZ0dZVEVIeEoySnN0X0lMQTlCd3F5OWVSUHlQNkZTdEZKRUZiX0NjOVNNaVhaek4yNVVkdXFzaURTdXJCVVk4QTN1NFdjcDYwZFdGal9KNVBaRWQwaDRTaEFYZ0x2WkZTVUZITHlUVHZqbDFRZw?oc=5",
+          "title": "Europe can compete in robotics and physical AI, top chipmaker CEOs say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMXAxVGN4VW9UTDVUVEZNcG9sS25IcVJNR0RxRE9IZFZwQ3NSMjI0SUktbWVNN3RWaWlUWFlpSUN1czB4T2RvdE5xeHQ1dG5zX2lGNEN5c0RUbGxoOEh6d2cxTkFQY19kOWE2aXhSMjlwaW9LS3VTYVQxdU1mU1d6cWE5UmFBOFY2WnVYZWhfaUJNWVJRTjNta1lSYmlCdTBiVU5LNzNIb2VLWEk?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNQ0hpUFBLeDI4ZDJzc25aU0VuT0FKVkNBSHhEMHgyVUlXc0NGcXVyYjJZcDl3Vy1kN3NRX2wtSUVFZ1ctajJhMHQ3UC1PeEJYczNZZ0dZVEVIeEoySnN0X0lMQTlCd3F5OWVSUHlQNkZTdEZKRUZiX0NjOVNNaVhaek4yNVVkdXFzaURTdXJCVVk4QTN1NFdjcDYwZFdGal9KNVBaRWQwaDRTaEFYZ0x2WkZTVUZITHlUVHZqbDFRZw?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Covert Russian network exploited French riots on social media, EU report says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-11-09T06:10:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMXAxVGN4VW9UTDVUVEZNcG9sS25IcVJNR0RxRE9IZFZwQ3NSMjI0SUktbWVNN3RWaWlUWFlpSUN1czB4T2RvdE5xeHQ1dG5zX2lGNEN5c0RUbGxoOEh6d2cxTkFQY19kOWE2aXhSMjlwaW9LS3VTYVQxdU1mU1d6cWE5UmFBOFY2WnVYZWhfaUJNWVJRTjNta1lSYmlCdTBiVU5LNzNIb2VLWEk?oc=5\" target=\"_blank\"&gt;Europe can compete in robotics and physical AI, top chipmaker CEOs say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-10T07:15:00.000Z",
           "score": 8
         },
         {
-          "title": "Euro zone ministers to discuss ECB appointments, but await leaders' guidance - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZDd0NktfMktIc0l5R2tGdnkwLUFYNXdOOVpNeDNpSTlJMFdOaTlLM0lqVmpqQ0xDMkdubjlranRvd2xZc0NVeE5qa18zbTBaMlFZM1dXMkRfc1A2aE9iUGJjY3o4UGRNTzRZYjJaM0ktZkIzMjc0ZUtWVm8wWEQ5OGFRdDVReEVkMXE2MVBPUG9SeHNPNlVCZjhLeFB6RE9na2RNN19QTXhpeGtlZk5OU2cxVTVIb2ZyaEhReQ?oc=5",
+          "title": "European shares near record high as lower oil prices boost sentiment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxObUhPanl6a2ZpNXhoQlpNRGdJWmFFcE5rY3U2YTFfYXhZOWRDc2FCZjFDckNFLWRrR3pzSDQycjMxaDNrQ2s5TzdmRXlRX0M3cGl3UWtobXppajFqS000Ymtrby1qbGsxZTBsVVB2ajhCZkVxN0VlM1lGVTJHZm1kWFA1cWtNcFlINWQ1VnVSSzRQNlQ5R3dFdE1wdmZIS09veGw5THp1Q0hxbW1HQV9hMmtUVXp1Mk0?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOZDd0NktfMktIc0l5R2tGdnkwLUFYNXdOOVpNeDNpSTlJMFdOaTlLM0lqVmpqQ0xDMkdubjlranRvd2xZc0NVeE5qa18zbTBaMlFZM1dXMkRfc1A2aE9iUGJjY3o4UGRNTzRZYjJaM0ktZkIzMjc0ZUtWVm8wWEQ5OGFRdDVReEVkMXE2MVBPUG9SeHNPNlVCZjhLeFB6RE9na2RNN19QTXhpeGtlZk5OU2cxVTVIb2ZyaEhReQ?oc=5\" target=\"_blank\"&gt;Euro zone ministers to discuss ECB appointments, but await leaders' guidance&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-09T09:43:09.000Z",
-          "score": 8
-        },
-        {
-          "title": "Euro zone investor morale dips in November, Sentix survey shows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZWtKeG9UbF9pRE05Q0hUSkhrZ0U3c01SN3RBazg3Uk1ZNFVVUGtmSl9FcEk3Nm1Sa2dkOUZSVkMyU01oZEhQbmVJbGVzNkg0SXVRX01sQm9VeFZtRFJ5RHc2SGo2SE8xYWE0clVRNFRTMlZYb3pGNUdwekZuQUVERHczTUZ1VHg3VGJzX09FY1IxdG5kVXFOS1ZmaW9fX3Y3VFlvd2ZrUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNZWtKeG9UbF9pRE05Q0hUSkhrZ0U3c01SN3RBazg3Uk1ZNFVVUGtmSl9FcEk3Nm1Sa2dkOUZSVkMyU01oZEhQbmVJbGVzNkg0SXVRX01sQm9VeFZtRFJ5RHc2SGo2SE8xYWE0clVRNFRTMlZYb3pGNUdwekZuQUVERHczTUZ1VHg3VGJzX09FY1IxdG5kVXFOS1ZmaW9fX3Y3VFlvd2ZrUQ?oc=5\" target=\"_blank\"&gt;Euro zone investor morale dips in November, Sentix survey shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-09T09:33:51.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxObUhPanl6a2ZpNXhoQlpNRGdJWmFFcE5rY3U2YTFfYXhZOWRDc2FCZjFDckNFLWRrR3pzSDQycjMxaDNrQ2s5TzdmRXlRX0M3cGl3UWtobXppajFqS000Ymtrby1qbGsxZTBsVVB2ajhCZkVxN0VlM1lGVTJHZm1kWFA1cWtNcFlINWQ1VnVSSzRQNlQ5R3dFdE1wdmZIS09veGw5THp1Q0hxbW1HQV9hMmtUVXp1Mk0?oc=5\" target=\"_blank\"&gt;European shares near record high as lower oil prices boost sentiment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-10T08:25:43.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 387,
-    "articlesLast24h": 171,
-    "afterDedup": 157,
+    "totalArticlesScanned": 390,
+    "articlesLast24h": 178,
+    "afterDedup": 167,
     "feedsQueried": 19
   }
 }
