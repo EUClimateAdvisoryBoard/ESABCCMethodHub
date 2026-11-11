@@ -1,18 +1,18 @@
 {
-  "date": "2026-11-10",
-  "generatedAt": "2026-11-10T22:10:53.939Z",
+  "date": "2026-11-11",
+  "generatedAt": "2026-11-11T02:34:31.913Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Tuesday, 10 November 2026 — Key developments from the last 24 hours",
+  "subtitle": "Wednesday, 11 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Commission approves €2 billion Belgian State aid to support offshore wind energy",
-      "summary": "European Commission Press release Brussels, 10 Nov 2026 The European Commission has approved a €2.04 billion Belgian scheme to support offshore wind energy in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy.",
+      "headline": "COP31 outcome needs to prioritise transition away from fossil fuels",
+      "summary": "Many countries are already working on parts of their transition, such as phasing out coal or ending fossil fuel subsidies, with more expected to follow soon The post COP31 outcome needs to prioritise transition away from fossil fuels appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Analysis: Fossil-fuel CO2 emissions set to dip in 2026 as Iran conflict hits oil use",
-      "summary": "Carbon dioxide (CO2) emissions from fossil fuels and cement are projected to fall by around 0.4% in 2026 to 38.2bn&#8230; The post Analysis: Fossil-fuel CO2 emissions set to dip in 2026 as Iran conflict hits oil use appeared first on Carbon Brief.",
+      "headline": "Big fossil-fuel countries back Brazil-led transition roadmap",
+      "summary": "Some countries including Germany and the Netherlands call for the roadmaps to inform a key global review of climate progress in 2028 The post Big fossil-fuel countries back Brazil-led transition roadmap appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,28 +34,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Commission approves €2 billion Belgian State aid to support offshore wind energy",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2373",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 10 Nov 2026 The European Commission has approved a €2.04 billion Belgian scheme to support offshore wind energy in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy.",
-          "published": "2026-11-09T23:00:00.000Z",
-          "score": 23
-        },
-        {
           "title": "COP31 outcome needs to prioritise transition away from fossil fuels",
           "link": "https://www.climatechangenews.com/2026/11/10/cop31-outcome-needs-to-prioritise-transition-away-from-fossil-fuels/",
           "source": "Climate Home News",
           "description": "Many countries are already working on parts of their transition, such as phasing out coal or ending fossil fuel subsidies, with more expected to follow soon The post COP31 outcome needs to prioritise transition away from fossil fuels appeared first on Climate Home News.",
           "published": "2026-11-10T09:36:39.000Z",
           "score": 13
-        },
-        {
-          "title": "Senate advances bill to speed up projects from gas pipelines to clean energy",
-          "link": "https://www.theguardian.com/us-news/2026/nov/09/senate-energy-infrastructure-bill-vote",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Key environmental groups come out against bipartisan Baaja bill over fears it could spur datacenters and ICE jails&lt;/p&gt;&lt;p&gt;The Senate on Monday advanced bipartisan legislation aimed at speeding up permitting reviews for datacenters and other infrastructure projects, in the first major action since last week’s election that soundly repudiated Donald Trump and congressional &lt;a href=\"https://www.theguardian.com/us-news/republicans\"&gt;Republicans&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;I",
-          "published": "2026-11-10T02:28:00.000Z",
-          "score": 11
         },
         {
           "title": "Watch: E-bike battery explodes into massive fireball inside Oregon home",
@@ -72,6 +56,22 @@
           "description": "From EVs and electric buses on the road, heat pumps warming homes and solar panels powering appliances, the shift to electrifying tech is already in full swing. But what exactly does &quot;electrification&quot; mean?",
           "published": "2026-11-10T08:00:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Will Australia push for fossil fuel exit at UN talks?",
+          "link": "https://www.dw.com/en/will-australia-push-for-fossil-fuel-exit-at-un-talks/a-79782066?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The heat is on Australia as chief negotiator at the COP31 UN climate conference to forge a path away from coal and gas, and to protect Pacific neighbors facing rising sea levels.",
+          "published": "2026-11-10T07:43:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Canada reimposes sanctions on 11 Iranian entities for contributing to nuclear activities - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOOUZmREVMbUtQd1F6bVdxUUNDSWx1bThmbXBERGNOSk9JVG9JMVlYNkRvRW5BdVkydEVZQmROcXBVMUptMGUwYmZYQXhtTUpkTmJYQkFUWG41bVBESldpd2ZyWlpJMFNHLTQ5bjIwZEpIWUVVcmhxRVl5Z3QxNEl5SDd2XzJGaGVPRTFIb3ZiN19Kb2hCUEtuenBNbTJMdmhSTXc2a2w2V1FFcktPX1kxR1hreWxKaGFZaUdQZQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOOUZmREVMbUtQd1F6bVdxUUNDSWx1bThmbXBERGNOSk9JVG9JMVlYNkRvRW5BdVkydEVZQmROcXBVMUptMGUwYmZYQXhtTUpkTmJYQkFUWG41bVBESldpd2ZyWlpJMFNHLTQ5bjIwZEpIWUVVcmhxRVl5Z3QxNEl5SDd2XzJGaGVPRTFIb3ZiN19Kb2hCUEtuenBNbTJMdmhSTXc2a2w2V1FFcktPX1kxR1hreWxKaGFZaUdQZQ?oc=5\" target=\"_blank\"&gt;Canada reimposes sanctions on 11 Iranian entities for contributing to nuclear activities&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-10T10:46:57.000Z",
+          "score": 7
         }
       ]
     },
@@ -79,14 +79,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Analysis: Fossil-fuel CO2 emissions set to dip in 2026 as Iran conflict hits oil use",
-          "link": "https://www.carbonbrief.org/analysis-fossil-fuel-co2-emissions-set-to-dip-in-2026-as-iran-conflict-hits-oil-use",
-          "source": "Carbon Brief",
-          "description": "Carbon dioxide (CO2) emissions from fossil fuels and cement are projected to fall by around 0.4% in 2026 to 38.2bn&#8230; The post Analysis: Fossil-fuel CO2 emissions set to dip in 2026 as Iran conflict hits oil use appeared first on Carbon Brief.",
-          "published": "2026-11-10T01:01:00.000Z",
-          "score": 13
-        },
         {
           "title": "Big fossil-fuel countries back Brazil-led transition roadmap",
           "link": "https://www.climatechangenews.com/2026/11/10/big-fossil-fuel-countries-back-brazil-led-transition-roadmap/",
@@ -118,6 +110,14 @@
           "description": "Repayments on climate loans could overtake new lending by 2036, according to CARE analysis shared exclusively with Climate Home News The post Developing countries face climate finance deficit as loan payments soar appeared first on Climate Home News.",
           "published": "2026-11-10T05:00:00.000Z",
           "score": 13
+        },
+        {
+          "title": "Analysis: Which countries have sent the most delegates to COP31?",
+          "link": "https://www.carbonbrief.org/analysis-which-countries-have-sent-the-most-delegates-to-cop31",
+          "source": "Carbon Brief",
+          "description": "More than 92,000 people have registered to attend the COP31 climate summit in Antalya, Turkey, potentially making it the largest&#8230; The post Analysis: Which countries have sent the most delegates to COP31? appeared first on Carbon Brief.",
+          "published": "2026-11-10T17:21:37.000Z",
+          "score": 10
         }
       ]
     },
@@ -205,9 +205,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 398,
-    "articlesLast24h": 185,
-    "afterDedup": 175,
+    "totalArticlesScanned": 399,
+    "articlesLast24h": 182,
+    "afterDedup": 172,
     "feedsQueried": 19
   }
 }
