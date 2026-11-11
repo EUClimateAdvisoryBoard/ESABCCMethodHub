@@ -1,24 +1,24 @@
 {
   "date": "2026-11-11",
-  "generatedAt": "2026-11-11T02:34:31.913Z",
+  "generatedAt": "2026-11-11T12:31:51.039Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 11 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "COP31 outcome needs to prioritise transition away from fossil fuels",
-      "summary": "Many countries are already working on parts of their transition, such as phasing out coal or ending fossil fuel subsidies, with more expected to follow soon The post COP31 outcome needs to prioritise transition away from fossil fuels appeared first on Climate Home News.",
+      "headline": "Italy says EU nations failed to commit to Red Sea security - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQWXhYTjBLNXBVeWw2Y051RklaUDRGYVNpNmM4cUE4VnR2WkFpZnhrZnItNjVYcXhuTEtrWHJ4YndHV1YtRUdpZENDTnRqOVZuWWU4dU1xYUxlNWRYOXRhbmZ1eUNONnJrN1dfbjlJTThxQlpfODBSOS1wbzRjUFhFUFhLdThyQ1k1VDRWMHZJNWlDeUFoS2VCcTV3?oc=5\" target=\"_blank\"&gt;Italy says EU nations failed to commit to Red Sea security&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Big fossil-fuel countries back Brazil-led transition roadmap",
-      "summary": "Some countries including Germany and the Netherlands call for the roadmaps to inform a key global review of climate progress in 2028 The post Big fossil-fuel countries back Brazil-led transition roadmap appeared first on Climate Home News.",
+      "headline": "Analysis: Climate-finance pledges fall 70% as countries meet at COP31",
+      "summary": "The amount of public funding pledged to help developing countries tackle climate change has dropped by more than 70% in&#8230; The post Analysis: Climate-finance pledges fall 70% as countries meet at COP31 appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Malaysia's disgraced former PM leaves jail for house arrest after embezzling millions",
-      "summary": "Najib Razak was convicted for his role in the billion-dollar scandal involving the 1MDB sovereign wealth fund.",
+      "headline": "Why are Britain's streets still so polluted? Because the car industry dinosaurs do what they like, and politicians let them | George Monbiot",
+      "summary": "&lt;p&gt;The transition to electric vehicles should be moving apace, but it is not. And why? Incompetence, expedience and cowardice&lt;/p&gt;&lt;p&gt;This is how it works. An industry puts tremendous effort into resisting change: lobbying governments, mobilising the media, pouring money into &lt;a href=\"https://diversedaily.com/think-tank-domination-how-corporations-create-or-fund-think-tanks-to-produce-policy-recommendations-aligned-with-their-business-goals/\"&gt;junktanks&lt;/a&gt;. It argues ",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,12 +34,28 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "COP31 outcome needs to prioritise transition away from fossil fuels",
-          "link": "https://www.climatechangenews.com/2026/11/10/cop31-outcome-needs-to-prioritise-transition-away-from-fossil-fuels/",
-          "source": "Climate Home News",
-          "description": "Many countries are already working on parts of their transition, such as phasing out coal or ending fossil fuel subsidies, with more expected to follow soon The post COP31 outcome needs to prioritise transition away from fossil fuels appeared first on Climate Home News.",
-          "published": "2026-11-10T09:36:39.000Z",
+          "title": "Italy says EU nations failed to commit to Red Sea security - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQWXhYTjBLNXBVeWw2Y051RklaUDRGYVNpNmM4cUE4VnR2WkFpZnhrZnItNjVYcXhuTEtrWHJ4YndHV1YtRUdpZENDTnRqOVZuWWU4dU1xYUxlNWRYOXRhbmZ1eUNONnJrN1dfbjlJTThxQlpfODBSOS1wbzRjUFhFUFhLdThyQ1k1VDRWMHZJNWlDeUFoS2VCcTV3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQWXhYTjBLNXBVeWw2Y051RklaUDRGYVNpNmM4cUE4VnR2WkFpZnhrZnItNjVYcXhuTEtrWHJ4YndHV1YtRUdpZENDTnRqOVZuWWU4dU1xYUxlNWRYOXRhbmZ1eUNONnJrN1dfbjlJTThxQlpfODBSOS1wbzRjUFhFUFhLdThyQ1k1VDRWMHZJNWlDeUFoS2VCcTV3?oc=5\" target=\"_blank\"&gt;Italy says EU nations failed to commit to Red Sea security&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-10T14:31:43.000Z",
           "score": 13
+        },
+        {
+          "title": "AI datacentres plan on-site power stations on huge scale despite climate risks, research reveals",
+          "link": "https://www.theguardian.com/world/2026/nov/11/ai-datacentres-on-site-gas-fired-power-stations",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;181GW of gas-fired capacity proposed for sites in US and Europe because of delays in connecting to national grids, says report&lt;/p&gt;&lt;p&gt;Developers of AI datacentres plan to build on-site climate-destroying gas power stations on a huge scale to meet their energy demands, research reveals.&lt;/p&gt;&lt;p&gt;Datacentres planned across the US, the UK and mainland Europe have proposals to build fossil fuel plants on-site to create 181GW of gas-fired capacity because of delays to con",
+          "published": "2026-11-11T12:00:48.000Z",
+          "score": 9
+        },
+        {
+          "title": "Burnham lauds £12bn offshore wind investment as he prepares for climate summit",
+          "link": "https://www.theguardian.com/environment/2026/nov/11/burnham-offshore-wind-investment-norfolk-climate-summit-cop31-jackdaw-gasfield",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Package for plan off Norfolk coast revealed as government tries to calm critics after approving Jackdaw gasfield&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/live/2026/nov/11/andy-burnham-kemi-badenoch-pmqs-cop31-windfarms-europe-brexit-latest-news-updates\"&gt;UK politics live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Andy Burnham has hailed a record investment in offshore wind, as the government tries to repair its gree",
+          "published": "2026-11-11T09:46:18.000Z",
+          "score": 9
         },
         {
           "title": "Watch: E-bike battery explodes into massive fireball inside Oregon home",
@@ -50,27 +66,11 @@
           "score": 7
         },
         {
-          "title": "Why electrification is the climate game changer we need",
-          "link": "https://www.dw.com/en/why-electrification-is-the-climate-game-changer-we-need/a-79615979?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Germany slips in climate protection rankings as other countries make gains",
+          "link": "https://www.dw.com/en/germany-slips-in-climate-protection-rankings-as-other-countries-make-gains/a-79913635?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "From EVs and electric buses on the road, heat pumps warming homes and solar panels powering appliances, the shift to electrifying tech is already in full swing. But what exactly does &quot;electrification&quot; mean?",
-          "published": "2026-11-10T08:00:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Will Australia push for fossil fuel exit at UN talks?",
-          "link": "https://www.dw.com/en/will-australia-push-for-fossil-fuel-exit-at-un-talks/a-79782066?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The heat is on Australia as chief negotiator at the COP31 UN climate conference to forge a path away from coal and gas, and to protect Pacific neighbors facing rising sea levels.",
-          "published": "2026-11-10T07:43:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Canada reimposes sanctions on 11 Iranian entities for contributing to nuclear activities - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOOUZmREVMbUtQd1F6bVdxUUNDSWx1bThmbXBERGNOSk9JVG9JMVlYNkRvRW5BdVkydEVZQmROcXBVMUptMGUwYmZYQXhtTUpkTmJYQkFUWG41bVBESldpd2ZyWlpJMFNHLTQ5bjIwZEpIWUVVcmhxRVl5Z3QxNEl5SDd2XzJGaGVPRTFIb3ZiN19Kb2hCUEtuenBNbTJMdmhSTXc2a2w2V1FFcktPX1kxR1hreWxKaGFZaUdQZQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOOUZmREVMbUtQd1F6bVdxUUNDSWx1bThmbXBERGNOSk9JVG9JMVlYNkRvRW5BdVkydEVZQmROcXBVMUptMGUwYmZYQXhtTUpkTmJYQkFUWG41bVBESldpd2ZyWlpJMFNHLTQ5bjIwZEpIWUVVcmhxRVl5Z3QxNEl5SDd2XzJGaGVPRTFIb3ZiN19Kb2hCUEtuenBNbTJMdmhSTXc2a2w2V1FFcktPX1kxR1hreWxKaGFZaUdQZQ?oc=5\" target=\"_blank\"&gt;Canada reimposes sanctions on 11 Iranian entities for contributing to nuclear activities&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-10T10:46:57.000Z",
+          "description": "Record renewable energy growth is driving climate progress in some countries, but Germany and many major emitters are falling behind.",
+          "published": "2026-11-11T06:41:00.000Z",
           "score": 7
         }
       ]
@@ -79,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Analysis: Climate-finance pledges fall 70% as countries meet at COP31",
+          "link": "https://www.carbonbrief.org/analysis-climate-finance-pledges-fall-70-as-countries-meet-at-cop31",
+          "source": "Carbon Brief",
+          "description": "The amount of public funding pledged to help developing countries tackle climate change has dropped by more than 70% in&#8230; The post Analysis: Climate-finance pledges fall 70% as countries meet at COP31 appeared first on Carbon Brief.",
+          "published": "2026-11-11T07:00:00.000Z",
+          "score": 13
+        },
         {
           "title": "Big fossil-fuel countries back Brazil-led transition roadmap",
           "link": "https://www.climatechangenews.com/2026/11/10/big-fossil-fuel-countries-back-brazil-led-transition-roadmap/",
@@ -96,20 +104,12 @@
           "score": 13
         },
         {
-          "title": "COP31 Bulletin Day 2: Momentum builds on electrification and fossil fuel transition",
-          "link": "https://www.climatechangenews.com/2026/11/10/cop31-bulletin-day-2-energy-day-off-to-slow-start-amid-transport-chaos/",
+          "title": "Türkiye pushes &#8220;zero waste&#8221; at COP31, but is it delivering at home?",
+          "link": "https://www.climatechangenews.com/2026/11/11/turkiye-pushes-zero-waste-at-cop31-but-is-it-delivering-at-home/",
           "source": "Climate Home News",
-          "description": "The COP31 presidency whips up support for its 35x35 electrification goal, while the UN chief calls on all countries to plan their shift away from fossil fuels The post COP31 Bulletin Day 2: Momentum builds on electrification and fossil fuel transition appeared first on Climate Home News.",
-          "published": "2026-11-10T12:21:33.000Z",
-          "score": 13
-        },
-        {
-          "title": "Developing countries face climate finance deficit as loan payments soar",
-          "link": "https://www.climatechangenews.com/2026/11/10/developing-countries-face-climate-finance-deficit-as-loan-repayments-soar/",
-          "source": "Climate Home News",
-          "description": "Repayments on climate loans could overtake new lending by 2036, according to CARE analysis shared exclusively with Climate Home News The post Developing countries face climate finance deficit as loan payments soar appeared first on Climate Home News.",
-          "published": "2026-11-10T05:00:00.000Z",
-          "score": 13
+          "description": "Türkiye is hosting a Zero Waste Day at the UN climate summit, led by its First Lady, but its own waste generation keeps rising while plastic imports from Europe look set to boom The post Türkiye pushes &#8220;zero waste&#8221; at COP31, but is it delivering at home? appeared first on Climate Home News.",
+          "published": "2026-11-11T07:00:32.000Z",
+          "score": 12
         },
         {
           "title": "Analysis: Which countries have sent the most delegates to COP31?",
@@ -126,11 +126,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Malaysia's disgraced former PM leaves jail for house arrest after embezzling millions",
-          "link": "https://www.bbc.co.uk/news/articles/cxnv0v4yln7do?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Najib Razak was convicted for his role in the billion-dollar scandal involving the 1MDB sovereign wealth fund.",
-          "published": "2026-11-10T18:33:51.000Z",
+          "title": "Why are Britain's streets still so polluted? Because the car industry dinosaurs do what they like, and politicians let them | George Monbiot",
+          "link": "https://www.theguardian.com/commentisfree/2026/nov/11/britain-streets-polluted-car-industry-electric-vehicles-transition",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;The transition to electric vehicles should be moving apace, but it is not. And why? Incompetence, expedience and cowardice&lt;/p&gt;&lt;p&gt;This is how it works. An industry puts tremendous effort into resisting change: lobbying governments, mobilising the media, pouring money into &lt;a href=\"https://diversedaily.com/think-tank-domination-how-corporations-create-or-fund-think-tanks-to-produce-policy-recommendations-aligned-with-their-business-goals/\"&gt;junktanks&lt;/a&gt;. It argues ",
+          "published": "2026-11-11T06:00:31.000Z",
           "score": 2
         }
       ]
@@ -154,6 +154,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZnM0RUlnSmE5cHpkOFdfNWYteFFwaW5pY1hkZDBmbW5MYTFQMHdxN3ZoYlg2bmwyN19QWVFCT2MwdGh2M1pFOWtNNUx4azYtZ1NZNHBXMlZ2WXdsV2lsNFdEQVB4UTI5NXdDdTZwMW5aQU5oSVhNdWtDblFHUXBZcDFlMl9jWlZJeEFzblNFaldIMlFBTlExVkxZa1NiNGNNbkNSM1hqNmRGQUc0ajJ6akh3cjVzaW5XNnZn?oc=5\" target=\"_blank\"&gt;Slovak PM Fico accuses Merz of 'blackmail' for linking Ukraine funding to EU budget talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-11-10T12:56:09.000Z",
           "score": 8
+        },
+        {
+          "title": "Russian negotiator reports some progress after Ukraine talks, sees no EU role in process for now - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQV2RpSFF1Ym9mZkNRLTAyOFVnRk5JbzJmMmEydmFjMl9TS0lBdER0LVNieEZiSWlveXBwdjZtRkZuVWlWalBpdnNlZnZ6RmEtX3A2S0trZFF6OElSa0UyM1IxY1hUd1dnXzZzb2NZRVRkNUxJQmcycHhLN3JhRGo4RUo2N241cHpVeHMxWFlVeENaTFVtYk5GUUR6R3NYX2RxdmthQ0dKNlhKUkprN2tpNDVtVFhfWGVxUHlVbnN0bjRrUDA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQV2RpSFF1Ym9mZkNRLTAyOFVnRk5JbzJmMmEydmFjMl9TS0lBdER0LVNieEZiSWlveXBwdjZtRkZuVWlWalBpdnNlZnZ6RmEtX3A2S0trZFF6OElSa0UyM1IxY1hUd1dnXzZzb2NZRVRkNUxJQmcycHhLN3JhRGo4RUo2N241cHpVeHMxWFlVeENaTFVtYk5GUUR6R3NYX2RxdmthQ0dKNlhKUkprN2tpNDVtVFhfWGVxUHlVbnN0bjRrUDA?oc=5\" target=\"_blank\"&gt;Russian negotiator reports some progress after Ukraine talks, sees no EU role in process for now&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
+          "published": "2026-11-11T11:46:55.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ukraine's path to EU accession narrows as war drags on - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORGQ3Vnl3Q3JxLUxKMjE3OUdLSG5lYi1LRXZLTjR4U1hhSE1sMFdZWlB2ZHRrMEJnd2pRbGdlUWxkcHN3aHhNUmEyd2s3LUtRaHhtYVE1cWZ3cEE1aUpJRFB1TUJINXUxWE9VMVJKcnc3YnZVaDd3VE5vRTNUd2ZGT3BDZ2xaNWtBcDI2RWFtOS1VVjBlMHNvcg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxORGQ3Vnl3Q3JxLUxKMjE3OUdLSG5lYi1LRXZLTjR4U1hhSE1sMFdZWlB2ZHRrMEJnd2pRbGdlUWxkcHN3aHhNUmEyd2s3LUtRaHhtYVE1cWZ3cEE1aUpJRFB1TUJINXUxWE9VMVJKcnc3YnZVaDd3VE5vRTNUd2ZGT3BDZ2xaNWtBcDI2RWFtOS1VVjBlMHNvcg?oc=5\" target=\"_blank\"&gt;Ukraine's path to EU accession narrows as war drags on&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-11T07:04:00.000Z",
+          "score": 8
         }
       ]
     },
@@ -170,11 +186,11 @@
           "score": 12
         },
         {
-          "title": "Israel's new parliament sworn in as leaders compete to form government",
-          "link": "https://www.bbc.co.uk/news/articles/crd939lpzjp9o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Benjamin Netanyahu's main political rival, Gadi Eisenkot, has first chance to build a new government and oust the prime minister.",
-          "published": "2026-11-10T17:03:16.000Z",
+          "title": "Israel's parliament sworn in as Eisenkot tries to forge a government - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVXZKMU1sQ21EaElhUnNZblNweVZxQWFZNFJUZVRNVzBRMW42WF8wY0k2YnRTSmRVVlFsYTZOcHhMOTVERUJuQUFlM3BfcVpJa01aMTFvdXg5ZEFJcWoyQndmS2UwcDI0a3ZKdEhwRXJadHZIRnFjLUIza1g5V2U1TmRzVWcxSUh1bEZENThRMDZnZUVJTFJSTW9qd2FSLVU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNVXZKMU1sQ21EaElhUnNZblNweVZxQWFZNFJUZVRNVzBRMW42WF8wY0k2YnRTSmRVVlFsYTZOcHhMOTVERUJuQUFlM3BfcVpJa01aMTFvdXg5ZEFJcWoyQndmS2UwcDI0a3ZKdEhwRXJadHZIRnFjLUIza1g5V2U1TmRzVWcxSUh1bEZENThRMDZnZUVJTFJSTW9qd2FSLVU?oc=5\" target=\"_blank\"&gt;Israel's parliament sworn in as Eisenkot tries to forge a government&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-10T18:17:03.000Z",
           "score": 8
         },
         {
@@ -186,28 +202,28 @@
           "score": 8
         },
         {
-          "title": "Israel's parliament sworn in as Eisenkot tries to forge a government - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVXZKMU1sQ21EaElhUnNZblNweVZxQWFZNFJUZVRNVzBRMW42WF8wY0k2YnRTSmRVVlFsYTZOcHhMOTVERUJuQUFlM3BfcVpJa01aMTFvdXg5ZEFJcWoyQndmS2UwcDI0a3ZKdEhwRXJadHZIRnFjLUIza1g5V2U1TmRzVWcxSUh1bEZENThRMDZnZUVJTFJSTW9qd2FSLVU?oc=5",
+          "title": "Siemens Energy sees higher margins as data centres boost power equipment demand - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQ0RRaDlOaG9RSTZKTFZYclg0Y0lTY2NTQXdxTUhjem83a3JBX01IVDk2NnpfcXUxTVN5ZjB3WDFvemJTbDJWVVpTaGFELW5mWkhMeXd5ajYwREVUS250YTk3N2JzbnpTNGs3VkdXSGVqVkpzWHFMWE1qVW13VFNyZms0ZGY2SmsteUZzUlFFUjJNeEEwSTlUaGlBU0FiOHFyMlk5clhoUF9XZ2prVzJmV3ZROVEyWGY4ejE3WDhIa2FESmZOcTkwTmdR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNVXZKMU1sQ21EaElhUnNZblNweVZxQWFZNFJUZVRNVzBRMW42WF8wY0k2YnRTSmRVVlFsYTZOcHhMOTVERUJuQUFlM3BfcVpJa01aMTFvdXg5ZEFJcWoyQndmS2UwcDI0a3ZKdEhwRXJadHZIRnFjLUIza1g5V2U1TmRzVWcxSUh1bEZENThRMDZnZUVJTFJSTW9qd2FSLVU?oc=5\" target=\"_blank\"&gt;Israel's parliament sworn in as Eisenkot tries to forge a government&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-10T18:17:03.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxQQ0RRaDlOaG9RSTZKTFZYclg0Y0lTY2NTQXdxTUhjem83a3JBX01IVDk2NnpfcXUxTVN5ZjB3WDFvemJTbDJWVVpTaGFELW5mWkhMeXd5ajYwREVUS250YTk3N2JzbnpTNGs3VkdXSGVqVkpzWHFMWE1qVW13VFNyZms0ZGY2SmsteUZzUlFFUjJNeEEwSTlUaGlBU0FiOHFyMlk5clhoUF9XZ2prVzJmV3ZROVEyWGY4ejE3WDhIa2FESmZOcTkwTmdR?oc=5\" target=\"_blank\"&gt;Siemens Energy sees higher margins as data centres boost power equipment demand&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+          "published": "2026-11-11T06:03:00.000Z",
+          "score": 7
         },
         {
-          "title": "Europe can compete in robotics and physical AI, top chipmaker CEOs say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMXAxVGN4VW9UTDVUVEZNcG9sS25IcVJNR0RxRE9IZFZwQ3NSMjI0SUktbWVNN3RWaWlUWFlpSUN1czB4T2RvdE5xeHQ1dG5zX2lGNEN5c0RUbGxoOEh6d2cxTkFQY19kOWE2aXhSMjlwaW9LS3VTYVQxdU1mU1d6cWE5UmFBOFY2WnVYZWhfaUJNWVJRTjNta1lSYmlCdTBiVU5LNzNIb2VLWEk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMXAxVGN4VW9UTDVUVEZNcG9sS25IcVJNR0RxRE9IZFZwQ3NSMjI0SUktbWVNN3RWaWlUWFlpSUN1czB4T2RvdE5xeHQ1dG5zX2lGNEN5c0RUbGxoOEh6d2cxTkFQY19kOWE2aXhSMjlwaW9LS3VTYVQxdU1mU1d6cWE5UmFBOFY2WnVYZWhfaUJNWVJRTjNta1lSYmlCdTBiVU5LNzNIb2VLWEk?oc=5\" target=\"_blank\"&gt;Europe can compete in robotics and physical AI, top chipmaker CEOs say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-10T07:15:00.000Z",
-          "score": 8
+          "title": "Judge allows Trump's $10bn defamation case against BBC to proceed",
+          "link": "https://www.bbc.co.uk/news/articles/cm93rpy6lx0do?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "But the court dismisses the other part of Trump's lawsuit that alleged the BBC had violated a Florida law.",
+          "published": "2026-11-11T01:18:09.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 399,
-    "articlesLast24h": 182,
-    "afterDedup": 172,
+    "totalArticlesScanned": 384,
+    "articlesLast24h": 168,
+    "afterDedup": 160,
     "feedsQueried": 19
   }
 }
