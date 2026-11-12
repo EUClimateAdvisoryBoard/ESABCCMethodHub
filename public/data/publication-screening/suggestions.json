@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T11:59:22.588Z",
+  "generatedAt": "2026-11-12T13:01:06.093Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,26 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1016/j.enpol.2026.115722",
+      "title": "Geopolitical risk and energy transition in the European Union: Can institutional quality mitigate geopolitical shocks?",
+      "journal": "Energy Policy",
+      "authors": "Subhabandhu Sethi, Bibhuti Ranjan Mishra",
+      "published": "2027-02",
+      "url": "https://doi.org/10.1016/j.enpol.2026.115722",
+      "abstract": "",
+      "suggestedOn": "2026-11-12",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6.5,
+          "matched": [
+            "european union",
+            "energy transition"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1002/wcc.70092",
       "title": "Effective, Credible, and Acceptable: How to Ensure the <scp>EU ETS</scp> Delivers on Climate Targets",
