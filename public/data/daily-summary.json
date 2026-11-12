@@ -1,24 +1,30 @@
 {
-  "date": "2026-11-11",
-  "generatedAt": "2026-11-11T23:20:36.426Z",
+  "date": "2026-11-12",
+  "generatedAt": "2026-11-12T13:37:23.841Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Wednesday, 11 November 2026 — Key developments from the last 24 hours",
+  "subtitle": "Thursday, 12 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "AI datacentres plan on-site power stations on huge scale despite climate risks, research reveals",
-      "summary": "&lt;p&gt;181GW of gas-fired capacity proposed for sites in US and Europe because of delays in connecting to national grids, says report&lt;/p&gt;&lt;p&gt;Developers of AI datacentres plan to build on-site climate-destroying gas power stations on a huge scale to meet their energy demands, research reveals.&lt;/p&gt;&lt;p&gt;Datacentres planned across the US, the UK and mainland Europe have proposals to build fossil fuel plants on-site to create 181GW of gas-fired capacity because of delays to con",
+      "headline": "Exxon files legal challenge to EU carbon capture law, FT reports - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPaUFieWVvRVV5LUlvRjBGSkpaMkRFdi1UYVVCbEFVQ0xjRWNrWEJGUW5KSFp3QVJrc0xJWXBaSmFFbE1ZQmg4bUtmeGVpcDY4TGRHa1ItT2RzZWVuVUhuU0JUSWlpSDllVFdubkRHZzRKNFFYRmxtM0VCbUZsSi1mYktiNTFJcTcya1V6MG0zRU9HRi1XZTMyb0YwVE94cnhUc0c0eGVPdG9XNGowLTZoSkR3?oc=5\" target=\"_blank\"&gt;Exxon files legal challenge to EU carbon capture law, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "KKR and RWE are rich firms. Why do they need a UK state loan for their windfarms? | Nils Pratley",
+      "summary": "&lt;p&gt;National wealth fund is to lend £1bn towards the Vanguard projects – but whether the private equity giant needed help is debatable&lt;/p&gt;&lt;p&gt;“This major investment in UK renewables is a vote of confidence for building in Britain,” declared the prime minister.&lt;/p&gt;&lt;p&gt;Andy Burnham is obviously correct that &lt;a href=\"https://www.theguardian.com/environment/2026/nov/11/burnham-offshore-wind-investment-norfolk-climate-summit-cop31-jackdaw-gasfield\"&gt;the two Vanguard wi",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Speech by President von der Leyen at the United Nations Climate Change Conference (COP31)",
-      "summary": "European Commission Speech Antalya, 11 Nov 2026 Mr President,\r\nHeads of State and Government,\r\nExcellencies,\r\nThis summer was the summer of truth. Devastating floods in Nepal, droughts from Sudan to Central Amer...",
+      "headline": "UK appoints world’s first special representative for climate security",
+      "summary": "&lt;p&gt;Exclusive: Madeleine Alessandri, former chair of joint intelligence committee, will take on role of advising No 10 on climate-related national security risks&lt;/p&gt;&lt;p&gt;The UK government has appointed the world’s first special representative for climate security, in the strongest sign yet of fears that climate breakdown will bring chaos to the country.&lt;/p&gt;&lt;p&gt;Prime minister Andy Burnham will announce the move on Thursday at &lt;a href=\"https://www.theguardian.com/envir",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Why are Britain's streets still so polluted? Because the car industry dinosaurs do what they like, and politicians let them | George Monbiot",
-      "summary": "&lt;p&gt;The transition to electric vehicles should be moving apace, but it is not. And why? Incompetence, expedience and cowardice&lt;/p&gt;&lt;p&gt;This is how it works. An industry puts tremendous effort into resisting change: lobbying governments, mobilising the media, pouring money into &lt;a href=\"https://diversedaily.com/think-tank-domination-how-corporations-create-or-fund-think-tanks-to-produce-policy-recommendations-aligned-with-their-business-goals/\"&gt;junktanks&lt;/a&gt;. It argues ",
+      "headline": "Is AIIB&#039;s complaint mechanism failing affected communities?",
+      "summary": "The Asian Infrastructure Investment Bank has a grievance redress mechanism for people affected by projects it finances. But those seeking to file a complaint face significant hurdles. Critics say reforms are needed.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,20 +33,21 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Exxon files legal challenge to EU carbon capture law, FT reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPaUFieWVvRVV5LUlvRjBGSkpaMkRFdi1UYVVCbEFVQ0xjRWNrWEJGUW5KSFp3QVJrc0xJWXBaSmFFbE1ZQmg4bUtmeGVpcDY4TGRHa1ItT2RzZWVuVUhuU0JUSWlpSDllVFdubkRHZzRKNFFYRmxtM0VCbUZsSi1mYktiNTFJcTcya1V6MG0zRU9HRi1XZTMyb0YwVE94cnhUc0c0eGVPdG9XNGowLTZoSkR3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPaUFieWVvRVV5LUlvRjBGSkpaMkRFdi1UYVVCbEFVQ0xjRWNrWEJGUW5KSFp3QVJrc0xJWXBaSmFFbE1ZQmg4bUtmeGVpcDY4TGRHa1ItT2RzZWVuVUhuU0JUSWlpSDllVFdubkRHZzRKNFFYRmxtM0VCbUZsSi1mYktiNTFJcTcya1V6MG0zRU9HRi1XZTMyb0YwVE94cnhUc0c0eGVPdG9XNGowLTZoSkR3?oc=5\" target=\"_blank\"&gt;Exxon files legal challenge to EU carbon capture law, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-11T23:00:17.000Z",
+          "score": 17
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "AI datacentres plan on-site power stations on huge scale despite climate risks, research reveals",
-          "link": "https://www.theguardian.com/world/2026/nov/11/ai-datacentres-on-site-gas-fired-power-stations",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;181GW of gas-fired capacity proposed for sites in US and Europe because of delays in connecting to national grids, says report&lt;/p&gt;&lt;p&gt;Developers of AI datacentres plan to build on-site climate-destroying gas power stations on a huge scale to meet their energy demands, research reveals.&lt;/p&gt;&lt;p&gt;Datacentres planned across the US, the UK and mainland Europe have proposals to build fossil fuel plants on-site to create 181GW of gas-fired capacity because of delays to con",
-          "published": "2026-11-11T12:00:48.000Z",
-          "score": 9
-        },
         {
           "title": "KKR and RWE are rich firms. Why do they need a UK state loan for their windfarms? | Nils Pratley",
           "link": "https://www.theguardian.com/business/nils-pratley-on-finance/2026/nov/11/kkr-rwe-uk-state-loan-vanguard-windfarms",
@@ -58,20 +65,28 @@
           "score": 7
         },
         {
-          "title": "Burnham lauds £12bn offshore wind investment as he prepares for climate summit",
-          "link": "https://www.theguardian.com/environment/2026/nov/11/burnham-offshore-wind-investment-norfolk-climate-summit-cop31-jackdaw-gasfield",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Package for plan off Norfolk coast revealed as government tries to calm critics after approving Jackdaw gasfield&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/nils-pratley-on-finance/2026/nov/11/kkr-rwe-uk-state-loan-vanguard-windfarms\"&gt;Comment: KKR and RWE are rich firms. Why do they need a UK state loan for their windfarms?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Andy Burnham has hailed a record investment in offshore wind, as the ",
-          "published": "2026-11-11T09:46:18.000Z",
+          "title": "'No light, no water, no heat': Ukrainians struggle with blackouts as Russia hits power grid",
+          "link": "https://www.bbc.co.uk/news/articles/cr1ewpd95d21o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "For parents in parts of Ukraine, trying to lead a normal family life with just a few hours of power each day is taking its toll.",
+          "published": "2026-11-12T07:59:33.000Z",
           "score": 7
         },
         {
-          "title": "Germany slips in climate protection rankings as other countries make gains",
-          "link": "https://www.dw.com/en/germany-slips-in-climate-protection-rankings-as-other-countries-make-gains/a-79913635?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Record renewable energy growth is driving climate progress in some countries, but Germany and many major emitters are falling behind.",
-          "published": "2026-11-11T06:41:00.000Z",
-          "score": 7
+          "title": "Datacentres are deeply unpopular. Has Sweden made one we can all love?",
+          "link": "https://www.theguardian.com/environment/2026/nov/12/datacentres-unpopular-sweden-ecodatacenter-falun",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;It is built of wood, resembles an Ikea and its power is totally renewable. Plus, it was built with the local community in mind. Is this facility in Falun the best datacentre in the world?&lt;/p&gt;&lt;p&gt;‘It was pretty cool, when they were building it. It looked like a very large Ikea,” says John Wernvik, of EcoDataCenter. He is giving me a tour of their facility in Falun, Sweden, which could lay claim to being the world’s greenest datacentre – although to many, that is a contradictio",
+          "published": "2026-11-12T11:00:46.000Z",
+          "score": 4
+        },
+        {
+          "title": "Kidnapper, 74, escapes from house arrest in Argentina by abseiling from balcony",
+          "link": "https://www.bbc.co.uk/news/articles/c933gn6710lyo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Leonardo Bertulazzi, a former member of the Marxist guerrilla group the Red Brigades, was about to be extradited to his home country of Italy.",
+          "published": "2026-11-11T14:56:11.000Z",
+          "score": 4
         }
       ]
     },
@@ -80,44 +95,44 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Speech by President von der Leyen at the United Nations Climate Change Conference (COP31)",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2410",
-          "source": "European Commission",
-          "description": "European Commission Speech Antalya, 11 Nov 2026 Mr President,\r\nHeads of State and Government,\r\nExcellencies,\r\nThis summer was the summer of truth. Devastating floods in Nepal, droughts from Sudan to Central Amer...",
-          "published": "2026-11-11T09:32:34.000Z",
-          "score": 23
-        },
-        {
-          "title": "Analysis: Climate-finance pledges fall 70% as countries meet at COP31",
-          "link": "https://www.carbonbrief.org/analysis-climate-finance-pledges-fall-70-as-countries-meet-at-cop31",
-          "source": "Carbon Brief",
-          "description": "The amount of public funding pledged to help developing countries tackle climate change has dropped by more than 70% in&#8230; The post Analysis: Climate-finance pledges fall 70% as countries meet at COP31 appeared first on Carbon Brief.",
-          "published": "2026-11-11T07:00:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "Türkiye pushes &#8220;zero waste&#8221; at COP31, but is it delivering at home?",
-          "link": "https://www.climatechangenews.com/2026/11/11/turkiye-pushes-zero-waste-at-cop31-but-is-it-delivering-at-home/",
-          "source": "Climate Home News",
-          "description": "Türkiye is hosting a Zero Waste Day at the UN climate summit, led by its First Lady, but its own waste generation keeps rising while plastic imports from Europe look set to boom The post Türkiye pushes &#8220;zero waste&#8221; at COP31, but is it delivering at home? appeared first on Climate Home News.",
-          "published": "2026-11-11T07:00:32.000Z",
-          "score": 12
-        },
-        {
           "title": "UK appoints world’s first special representative for climate security",
           "link": "https://www.theguardian.com/politics/2026/nov/11/uk-appoints-worlds-first-special-representative-for-climate-security",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Exclusive: Madeleine Alessandri, chair of the joint intelligence committee, will take on the role of advising No 10 on climate-related national security risks&lt;/p&gt;&lt;p&gt;The UK government has appointed the world’s first special representative for climate security, in the strongest sign yet of fears that climate breakdown will bring chaos to the country.&lt;/p&gt;&lt;p&gt;Prime minister Andy Burnham will announce the move on Thursday at &lt;a href=\"https://www.theguardian.com/envi",
+          "description": "&lt;p&gt;Exclusive: Madeleine Alessandri, former chair of joint intelligence committee, will take on role of advising No 10 on climate-related national security risks&lt;/p&gt;&lt;p&gt;The UK government has appointed the world’s first special representative for climate security, in the strongest sign yet of fears that climate breakdown will bring chaos to the country.&lt;/p&gt;&lt;p&gt;Prime minister Andy Burnham will announce the move on Thursday at &lt;a href=\"https://www.theguardian.com/envir",
           "published": "2026-11-11T22:30:01.000Z",
           "score": 11
         },
         {
-          "title": "COP31 Bulletin Day 3: With the people stuck outside, world leaders jet in",
-          "link": "https://www.climatechangenews.com/2026/11/11/cop31-bulletin-day-3-with-the-people-stuck-outside-world-leaders-jet-in/",
+          "title": "COP31’s electrification pledge wins support, with caveats on clean power and finance",
+          "link": "https://www.climatechangenews.com/2026/11/12/cop31s-electrification-pledge-wins-support-with-caveats-on-clean-power-and-finance/",
           "source": "Climate Home News",
-          "description": "Around 40 leaders, including Lula, Erdoğan and Albanese, addressed the summit in Antalya, where the UN chief proposed a \"climate justice compact\" The post COP31 Bulletin Day 3: With the people stuck outside, world leaders jet in appeared first on Climate Home News.",
-          "published": "2026-11-11T10:31:13.000Z",
+          "description": "At least 14 countries have endorsed the voluntary pledge so far, but island nations warn it must not distract from the shift away from fossil fuels The post COP31’s electrification pledge wins support, with caveats on clean power and finance appeared first on Climate Home News.",
+          "published": "2026-11-12T12:08:10.000Z",
           "score": 10
+        },
+        {
+          "title": "COP31 Bulletin Day 4: Burnham praises electrification while Greta rails at &#8220;detached&#8221; leaders",
+          "link": "https://www.climatechangenews.com/2026/11/12/cop31-bulletin-day-4-burnham-speaks-with-uk-climate-policy-under-fire/",
+          "source": "Climate Home News",
+          "description": "The UK prime minister is one of 25 leaders speaking in Antalya on Thursday while Lula, Greta Thunberg and Gavin Newsom are set to draw crowds The post COP31 Bulletin Day 4: Burnham praises electrification while Greta rails at &#8220;detached&#8221; leaders appeared first on Climate Home News.",
+          "published": "2026-11-12T08:33:44.000Z",
+          "score": 10
+        },
+        {
+          "title": "Trump the ‘biggest loser’ for scrapping climate action, John Kerry says at Cop31",
+          "link": "https://www.theguardian.com/environment/2026/nov/12/trump-loser-john-kerry-cop31",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Kerry decries president for ceding clean-energy dominance to China and says climate crisis still a key issue for voters&lt;/p&gt;&lt;p&gt;Donald Trump is the “biggest loser we’ve seen in a long time” for scrapping action on the climate crisis and ceding the clean energy race to China, former US secretary of state John Kerry has said.&lt;/p&gt;&lt;p&gt;Kerry, speaking at the Cop31 climate summit in Turkey, criticized Trump for withdrawing the US from the international climate process and",
+          "published": "2026-11-12T11:00:48.000Z",
+          "score": 7
+        },
+        {
+          "title": "Cop31 as it happened: ‘Fossil fuels must go the way of the dinosaurs’ - UN chief hits out at industry lobbying",
+          "link": "https://www.theguardian.com/environment/live/2026/nov/11/climate-crisis-talks-turkey-latest-news-updates",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Third day of UN talks begin but leaders of many big polluting nations absent&lt;/p&gt;&lt;p&gt;After a couple of hosts provide us a bit of background on Antalya (founded in 200BC, apparently) it is time to hear from António Guterres, the outgoing secretary-general of the UN, who will probably not be dancing.&lt;/p&gt;&lt;p&gt;Guterres starts by praising Turkey for the “excellent organization” of the Cop, which gets smattering of applause and perhaps a few raised eyebrows given the trans",
+          "published": "2026-11-11T17:26:42.000Z",
+          "score": 7
         }
       ]
     },
@@ -126,19 +141,35 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Why are Britain's streets still so polluted? Because the car industry dinosaurs do what they like, and politicians let them | George Monbiot",
-          "link": "https://www.theguardian.com/commentisfree/2026/nov/11/britain-streets-polluted-car-industry-electric-vehicles-transition",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The transition to electric vehicles should be moving apace, but it is not. And why? Incompetence, expedience and cowardice&lt;/p&gt;&lt;p&gt;This is how it works. An industry puts tremendous effort into resisting change: lobbying governments, mobilising the media, pouring money into &lt;a href=\"https://diversedaily.com/think-tank-domination-how-corporations-create-or-fund-think-tanks-to-produce-policy-recommendations-aligned-with-their-business-goals/\"&gt;junktanks&lt;/a&gt;. It argues ",
-          "published": "2026-11-11T06:00:31.000Z",
+          "title": "Is AIIB&#039;s complaint mechanism failing affected communities?",
+          "link": "https://www.dw.com/en/is-aiib-s-complaint-mechanism-failing-affected-communities/a-79919917?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Asian Infrastructure Investment Bank has a grievance redress mechanism for people affected by projects it finances. But those seeking to file a complaint face significant hurdles. Critics say reforms are needed.",
+          "published": "2026-11-11T15:12:00.000Z",
           "score": 2
         },
         {
-          "title": "RWE, KKR finalise $16 billion investment in UK renewables - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPMWZqWUJrNUF3VmVHaFNVY2FzczhHRm1hLTN1b3BBNTRQc2xzOS1XLTgyMTkxVFNON29LQnNiV1NFYjRNZXFrSnJnV2pvaC1nTklFR2JHZlRSMklwQUxmbThGdWdCakRvVlNCX2pYN3pwTFVNSW43MVBTblN4UHhKWFhHS21WdnNsSFRXQXBQTldUR1dDZzJXTXEtZlpPaEZ5VUJUUGludw?oc=5",
+          "title": "Heads of Kazakh sovereign wealth fund, state railway company arrested on suspicion of corruption, security service says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxObXhVSjJIVUI3alJjZDlOejdJZHR1TWhEcTZhaEMyRDhDSWtYWEVmMXZOcXRZcEh3dUk1d2xzSTFoSE5lQ2tzOUJ1MldMQmg1NlZCbkczVmZDTy1MYS1pa0dUX1ZMUzZJdzlnbHBldmFyZFhPZ1JHMldFRGJXckhKYjhEUlNrVmlZV1c0b2ZsRDBFZEtlVkVUamNTeE1tSV9oQVpvYWx0Y2pMQ3F2S2MxNjE3VjlnbjB3QVYtNktkM2JXRkdEdkhETVRB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPMWZqWUJrNUF3VmVHaFNVY2FzczhHRm1hLTN1b3BBNTRQc2xzOS1XLTgyMTkxVFNON29LQnNiV1NFYjRNZXFrSnJnV2pvaC1nTklFR2JHZlRSMklwQUxmbThGdWdCakRvVlNCX2pYN3pwTFVNSW43MVBTblN4UHhKWFhHS21WdnNsSFRXQXBQTldUR1dDZzJXTXEtZlpPaEZ5VUJUUGludw?oc=5\" target=\"_blank\"&gt;RWE, KKR finalise $16 billion investment in UK renewables&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-11T07:01:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxObXhVSjJIVUI3alJjZDlOejdJZHR1TWhEcTZhaEMyRDhDSWtYWEVmMXZOcXRZcEh3dUk1d2xzSTFoSE5lQ2tzOUJ1MldMQmg1NlZCbkczVmZDTy1MYS1pa0dUX1ZMUzZJdzlnbHBldmFyZFhPZ1JHMldFRGJXckhKYjhEUlNrVmlZV1c0b2ZsRDBFZEtlVkVUamNTeE1tSV9oQVpvYWx0Y2pMQ3F2S2MxNjE3VjlnbjB3QVYtNktkM2JXRkdEdkhETVRB?oc=5\" target=\"_blank\"&gt;Heads of Kazakh sovereign wealth fund, state railway company arrested on suspicion of corruption, security service says&lt;/a&gt;&amp;nbsp;&amp;nbsp;",
+          "published": "2026-11-12T08:00:33.000Z",
+          "score": 2
+        },
+        {
+          "title": "Kia India plans $2 billion investment in second plant, targets 2030 production kickoff - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkhfZlRPWFM0U0ZPcl9pcHNwWEFuaXZ4S3NJQ0l5b3E1Qk5wZDcyZGtUdDM0S2R0cUYycGlyWlI2UDk5ZmlQcjJEV1loTDh6X1oxRHlVdXFpTmkzRDVhRTYyc0tGRGk5cjN5bGlUbTlJTXV6OUxxU0RKdEdvbFdtQTFHQ2xtbjJjSUZlanNtTjdaVHlDOVRhbGVDaVRrWlVJdk1aQTRPZmxGMWJhQzA5MExyTjRSeVUtbFF3ZjVPLUtrdDRtd2c?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkhfZlRPWFM0U0ZPcl9pcHNwWEFuaXZ4S3NJQ0l5b3E1Qk5wZDcyZGtUdDM0S2R0cUYycGlyWlI2UDk5ZmlQcjJEV1loTDh6X1oxRHlVdXFpTmkzRDVhRTYyc0tGRGk5cjN5bGlUbTlJTXV6OUxxU0RKdEdvbFdtQTFHQ2xtbjJjSUZlanNtTjdaVHlDOVRhbGVDaVRrWlVJdk1aQTRPZmxGMWJhQzA5MExyTjRSeVUtbFF3ZjVPLUtrdDRtd2c?oc=5\" target=\"_blank\"&gt;Kia India plans $2 billion investment in second plant, targets 2030 production kickoff&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt",
+          "published": "2026-11-12T07:41:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "South Korea's Lee says Samsung chip packaging expansion to spur $30 billion additional investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQlRGQlBiSTVaaWVLek9ESklNZld6X05nWWhZOHJJb1JfRjlkRnFNekpUNkU2NEppMkFLTFplak5YWFRVb2d1cG90TWU3SGkyRlFxZXYySnpPbjluUmR0YUp1YjFodnc4M3hQdWw5MWZKaTMtZzZBRUpMRUQtb0pheUthcDRtNWQ1ZFktOFB5eU1BODc4TE5TY0FfSUxfb1JnNnRlbDBMMmN5YmdLSDNpSHFtWjlndS1qdHJSU3p3a0x1VjA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQlRGQlBiSTVaaWVLek9ESklNZld6X05nWWhZOHJJb1JfRjlkRnFNekpUNkU2NEppMkFLTFplak5YWFRVb2d1cG90TWU3SGkyRlFxZXYySnpPbjluUmR0YUp1YjFodnc4M3hQdWw5MWZKaTMtZzZBRUpMRUQtb0pheUthcDRtNWQ1ZFktOFB5eU1BODc4TE5TY0FfSUxfb1JnNnRlbDBMMmN5YmdLSDNpSHFtWjlndS1qdHJSU3p3a0x1VjA?oc=5\" target=\"_blank\"&gt;South Korea's Lee says Samsung chip packaging expansion to spur $30 billion additional investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
+          "published": "2026-11-12T01:43:00.000Z",
           "score": 2
         }
       ]
@@ -154,30 +185,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxQZ3FwSmZlN1hmX1BUenVtVzU0RWZrMnR4OGJQc2sxY1VieENrSElZNjN0NFV3ZkdBSDdtSEJjVDRXekE3LTF1RG4taXFuWThnMWIxZ0xYY0hSZ0VoZkFabVVaY0w3akt2VS1HX1dYSEhOQVR5UzJIMHh0Yk5sdmhGVTlnRXF3bHdNRXJDZ2NEN1ItSkk1WWNXblNsU1F1UXBmWVdBUg?oc=5\" target=\"_blank\"&gt;EU threatens significant fines for unfair online trade practices&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-11-11T16:58:16.000Z",
           "score": 8
-        },
-        {
-          "title": "Ukraine's path to EU accession narrows as war drags on - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORGQ3Vnl3Q3JxLUxKMjE3OUdLSG5lYi1LRXZLTjR4U1hhSE1sMFdZWlB2ZHRrMEJnd2pRbGdlUWxkcHN3aHhNUmEyd2s3LUtRaHhtYVE1cWZ3cEE1aUpJRFB1TUJINXUxWE9VMVJKcnc3YnZVaDd3VE5vRTNUd2ZGT3BDZ2xaNWtBcDI2RWFtOS1VVjBlMHNvcg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxORGQ3Vnl3Q3JxLUxKMjE3OUdLSG5lYi1LRXZLTjR4U1hhSE1sMFdZWlB2ZHRrMEJnd2pRbGdlUWxkcHN3aHhNUmEyd2s3LUtRaHhtYVE1cWZ3cEE1aUpJRFB1TUJINXUxWE9VMVJKcnc3YnZVaDd3VE5vRTNUd2ZGT3BDZ2xaNWtBcDI2RWFtOS1VVjBlMHNvcg?oc=5\" target=\"_blank\"&gt;Ukraine's path to EU accession narrows as war drags on&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-11T07:04:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Russian negotiator reports some progress after Ukraine talks, sees no EU role in process for now - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQV2RpSFF1Ym9mZkNRLTAyOFVnRk5JbzJmMmEydmFjMl9TS0lBdER0LVNieEZiSWlveXBwdjZtRkZuVWlWalBpdnNlZnZ6RmEtX3A2S0trZFF6OElSa0UyM1IxY1hUd1dnXzZzb2NZRVRkNUxJQmcycHhLN3JhRGo4RUo2N241cHpVeHMxWFlVeENaTFVtYk5GUUR6R3NYX2RxdmthQ0dKNlhKUkprN2tpNDVtVFhfWGVxUHlVbnN0bjRrUDA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQV2RpSFF1Ym9mZkNRLTAyOFVnRk5JbzJmMmEydmFjMl9TS0lBdER0LVNieEZiSWlveXBwdjZtRkZuVWlWalBpdnNlZnZ6RmEtX3A2S0trZFF6OElSa0UyM1IxY1hUd1dnXzZzb2NZRVRkNUxJQmcycHhLN3JhRGo4RUo2N241cHpVeHMxWFlVeENaTFVtYk5GUUR6R3NYX2RxdmthQ0dKNlhKUkprN2tpNDVtVFhfWGVxUHlVbnN0bjRrUDA?oc=5\" target=\"_blank\"&gt;Russian negotiator reports some progress after Ukraine talks, sees no EU role in process for now&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
-          "published": "2026-11-11T11:46:55.000Z",
-          "score": 8
-        },
-        {
-          "title": "Russia-Ukraine talks turn to post-war security but end without breakthrough",
-          "link": "https://www.bbc.co.uk/news/articles/ck792we7zrz4o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Talks in Abu Dhabi centred around Europe's security framework, with US envoys due to meet Putin and Zelensky on Thursday.",
-          "published": "2026-11-11T18:04:58.000Z",
-          "score": 4
         }
       ]
     },
@@ -194,44 +201,44 @@
           "score": 8
         },
         {
-          "title": "EU explores deeper Syria partnership, flags concern over Russia role - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONkU2dWNBakJSWk1ZVGE3Z3ZYR0VWejVheEtvai1BbTBZTmNsV2RpT0N1TmVzRUF6WGd2WV9rTUlocDFIUVBNWnNPc09KYmd5QklhSnN2eUVmSVJ0c045cUR4ZldveGRidGhOS2Z0NjB0T0tMeUY5TkRzLVF6N1BUeFRCblJfM25DZ0s1TktlbmRmc3FDZEg5ajNseUZjdTNyX1gwRnI0V0VmcF9WUDBsekhuamMzc1ZkZUVVNTRR?oc=5",
+          "title": "Setback for Google as EU Court adviser backs $1.7 billion antitrust fine - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNm13elhGVjJBZFpZVlZDbDB2VGROQ3B6bFJ5dW1QcVNXdGV4cUVNWWMtQXRuVEt0YVNQMF80d3dsTFpEVFd5ZUFGdVVmU29wX243MFljWEd3cEtFZTFpQmhidE8ycFNmWXpiMTJmQnk0b1lLb3BfZkk5SC1SVDIwdE9saWREU0Nyb2ZYb2pnaDRhZWQxN2JKX0FNVkoxZEg5cTR4T0I1Sms?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxONkU2dWNBakJSWk1ZVGE3Z3ZYR0VWejVheEtvai1BbTBZTmNsV2RpT0N1TmVzRUF6WGd2WV9rTUlocDFIUVBNWnNPc09KYmd5QklhSnN2eUVmSVJ0c045cUR4ZldveGRidGhOS2Z0NjB0T0tMeUY5TkRzLVF6N1BUeFRCblJfM25DZ0s1TktlbmRmc3FDZEg5ajNseUZjdTNyX1gwRnI0V0VmcF9WUDBsekhuamMzc1ZkZUVVNTRR?oc=5\" target=\"_blank\"&gt;EU explores deeper Syria partnership, flags concern over Russia role&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-11T12:35:55.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNm13elhGVjJBZFpZVlZDbDB2VGROQ3B6bFJ5dW1QcVNXdGV4cUVNWWMtQXRuVEt0YVNQMF80d3dsTFpEVFd5ZUFGdVVmU29wX243MFljWEd3cEtFZTFpQmhidE8ycFNmWXpiMTJmQnk0b1lLb3BfZkk5SC1SVDIwdE9saWREU0Nyb2ZYb2pnaDRhZWQxN2JKX0FNVkoxZEg5cTR4T0I1Sms?oc=5\" target=\"_blank\"&gt;Setback for Google as EU Court adviser backs $1.7 billion antitrust fine&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-12T12:59:22.000Z",
           "score": 8
         },
         {
-          "title": "European shares log record close on Siemens, CoreWeave-fueled AI optimism - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVlRWM1JkZFR6Qy1vb0dDbkhqTHRsd2FIaGV4SUdSWkxITF9ndW1UNExHR2IyZk1uV2JjMU5XVndQRUxMVXI0d1QzV3ZfZkNYQVhHOEZueDEzb3ZWaDVwYjNyV3BvZnJpbGVQeFl0ZjBxNUxzdzdORWFodTBDSGtlQXBHaXAwc1pUMEMyeEtOdHhZdkMyYkVxLWYwR0FlTC0wWDNGck9HNG11b0NMN3NMbHVWcFlsTUlUSXc?oc=5",
+          "title": "European business sentiment picks up, inflation worries grow, survey finds - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNXFJX1VibGJ0TWNWcjh4UnBIYXlEbHpqMTlaaDJLSHhtZFo1T0xBVTk5eGIwb1lwWUhQQ0I3NjlTYVNZTVl0Z3MyQU1EakZxc0YwRUpDVF9iOC00N3VtVm52emFEd3RFRDFnRE9XS0xfOF9nUVlxRzVnSWJIR0wzWFM4NVJhMUZ6bDlYeE8wVzB1WnViblNMdnI4Z0R2WjBfREZlWFNrdVRXUC1wY0lfZ2FZbW5OZHkw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPVlRWM1JkZFR6Qy1vb0dDbkhqTHRsd2FIaGV4SUdSWkxITF9ndW1UNExHR2IyZk1uV2JjMU5XVndQRUxMVXI0d1QzV3ZfZkNYQVhHOEZueDEzb3ZWaDVwYjNyV3BvZnJpbGVQeFl0ZjBxNUxzdzdORWFodTBDSGtlQXBHaXAwc1pUMEMyeEtOdHhZdkMyYkVxLWYwR0FlTC0wWDNGck9HNG11b0NMN3NMbHVWcFlsTUlUSXc?oc=5\" target=\"_blank\"&gt;European shares log record close on Siemens, CoreWeave-fueled AI optimism&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-11T17:53:08.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNXFJX1VibGJ0TWNWcjh4UnBIYXlEbHpqMTlaaDJLSHhtZFo1T0xBVTk5eGIwb1lwWUhQQ0I3NjlTYVNZTVl0Z3MyQU1EakZxc0YwRUpDVF9iOC00N3VtVm52emFEd3RFRDFnRE9XS0xfOF9nUVlxRzVnSWJIR0wzWFM4NVJhMUZ6bDlYeE8wVzB1WnViblNMdnI4Z0R2WjBfREZlWFNrdVRXUC1wY0lfZ2FZbW5OZHkw?oc=5\" target=\"_blank\"&gt;European business sentiment picks up, inflation worries grow, survey finds&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-12T06:03:00.000Z",
           "score": 8
         },
         {
-          "title": "FTSE 100 gains as oil, copper lift energy and miners - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNa25IQkVOY1YtWUFRaV95Njh0YVVnVUFDd2VfWm5Td0dLSVgyM19RcnUtTWFESWxvQ0wzRFhxX25LN016Q1pFUVZJRF9EOVlIT2VOei1DODg2LXJWeDU5Y3BzZjBoUlVvZGhSRFh5RlBxMVhCbHVQbXprbVNYUWF4SmpmN3pHWllyd2c?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxNa25IQkVOY1YtWUFRaV95Njh0YVVnVUFDd2VfWm5Td0dLSVgyM19RcnUtTWFESWxvQ0wzRFhxX25LN016Q1pFUVZJRF9EOVlIT2VOei1DODg2LXJWeDU5Y3BzZjBoUlVvZGhSRFh5RlBxMVhCbHVQbXprbVNYUWF4SmpmN3pHWllyd2c?oc=5\" target=\"_blank\"&gt;FTSE 100 gains as oil, copper lift energy and miners&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-11T18:00:58.000Z",
-          "score": 7
+          "title": "Ukraine peace talks: US envoys arrive in Russia to meet with Putin",
+          "link": "https://www.dw.com/en/ukraine-peace-talks-us-envoys-arrive-in-russia-to-meet-with-putin/live-79925580?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The US president&#039;s son-in-law Jared Kushner and envoy Steve Witkoff are in Russia to meet Vladimir Putin. The expected meeting comes after two days of trilateral talks in Abu Dhabi. Follow DW for more.",
+          "published": "2026-11-12T06:35:00.000Z",
+          "score": 6
         },
         {
-          "title": "Siemens Energy sees higher margins as data centres boost power equipment demand - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQ0RRaDlOaG9RSTZKTFZYclg0Y0lTY2NTQXdxTUhjem83a3JBX01IVDk2NnpfcXUxTVN5ZjB3WDFvemJTbDJWVVpTaGFELW5mWkhMeXd5ajYwREVUS250YTk3N2JzbnpTNGs3VkdXSGVqVkpzWHFMWE1qVW13VFNyZms0ZGY2SmsteUZzUlFFUjJNeEEwSTlUaGlBU0FiOHFyMlk5clhoUF9XZ2prVzJmV3ZROVEyWGY4ejE3WDhIa2FESmZOcTkwTmdR?oc=5",
+          "title": "Congolese president signs contested referendum law amid fears over third-term bid - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUC1HSkxmZG9TT2xVemJwalgwU3FuTmdpcG9teTVJUEZheFoyNWxtVzNJSHFBWkJlcExNOUVBYk1oWDMxemxYSmJmSDdyeWNOTVFMZXBqX1dlS29maHZMc2xjczNid0d3VTdHTW5yaE9uNjV0dTRLX3hSYU90WExTODRKMFczMW1KUTYzcEpEYmhxaDNSdGNMbEVGcktPQlByNEZuUXF6MEpIWlJsZzdQdldNUGNDMzRueUpWUldOSmJWcTRN?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxQQ0RRaDlOaG9RSTZKTFZYclg0Y0lTY2NTQXdxTUhjem83a3JBX01IVDk2NnpfcXUxTVN5ZjB3WDFvemJTbDJWVVpTaGFELW5mWkhMeXd5ajYwREVUS250YTk3N2JzbnpTNGs3VkdXSGVqVkpzWHFMWE1qVW13VFNyZms0ZGY2SmsteUZzUlFFUjJNeEEwSTlUaGlBU0FiOHFyMlk5clhoUF9XZ2prVzJmV3ZROVEyWGY4ejE3WDhIa2FESmZOcTkwTmdR?oc=5\" target=\"_blank\"&gt;Siemens Energy sees higher margins as data centres boost power equipment demand&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
-          "published": "2026-11-11T10:41:52.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOUC1HSkxmZG9TT2xVemJwalgwU3FuTmdpcG9teTVJUEZheFoyNWxtVzNJSHFBWkJlcExNOUVBYk1oWDMxemxYSmJmSDdyeWNOTVFMZXBqX1dlS29maHZMc2xjczNid0d3VTdHTW5yaE9uNjV0dTRLX3hSYU90WExTODRKMFczMW1KUTYzcEpEYmhxaDNSdGNMbEVGcktPQlByNEZuUXF6MEpIWlJsZzdQdldNUGNDMzRueUpWUldOSmJWcTRN?oc=5\" target=\"_blank\"&gt;Congolese president signs contested referendum law amid fears over third-term bid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-11-11T14:06:09.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 389,
-    "articlesLast24h": 165,
-    "afterDedup": 157,
+    "totalArticlesScanned": 392,
+    "articlesLast24h": 163,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
