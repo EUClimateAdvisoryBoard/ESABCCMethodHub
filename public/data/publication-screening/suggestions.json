@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T13:01:06.093Z",
+  "generatedAt": "2026-11-13T12:26:25.758Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,25 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1088/1748-9326/aeb9fe",
+      "title": "Reply to Comment on ‘A globally relevant data-driven assessment of carbon leakage from forestry’",
+      "journal": "Environmental Research Letters",
+      "authors": "Adam Daigneault, Brent Sohngen, Ethan Belair, Peter W Ellis",
+      "published": "2026-11-12",
+      "url": "https://doi.org/10.1088/1748-9326/aeb9fe",
+      "abstract": "Filewod (2026 Environ. Res. Lett. 20 114022) Comment questions whether the Global Timber Model (GTM) used in Daigneault et al (2025 Environ. Res. Lett. 20 114022) should be to quantify the carbon leakage from climate-smart forestry (CSF) practices. We share the Comment’s goal of protecting the integrity of forest carbon credits and mitigate climate change, but differ on whether model-based estimates should inform crediting adjustments, particularly while ex-post evidence of recent CSF projects accumulates. We clarify and stand by our study conclusions that our estimates support ex-ante, multi-factor leakage deductions, that forest carbon leakage can vary widely depending on the project type and location, and that carbon leakage is typically lower than harvest leakage. We also acknowledge the strong market assumptions underlying GTM and show that discounting carbon leakage that accrues in the distant future reduces the influence of far off supply responses thereby providing conservative estimates. We acknowledge that ex-ante model intercomparison and robust ex-post analysis can offer a shared path toward more robust and credible leakage accounting.",
+      "suggestedOn": "2026-11-13",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 6,
+          "matched": [
+            "carbon leakage"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1016/j.enpol.2026.115722",
       "title": "Geopolitical risk and energy transition in the European Union: Can institutional quality mitigate geopolitical shocks?",
