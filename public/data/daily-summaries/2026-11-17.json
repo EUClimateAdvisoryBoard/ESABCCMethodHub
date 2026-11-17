@@ -1,24 +1,24 @@
 {
   "date": "2026-11-17",
-  "generatedAt": "2026-11-17T14:12:23.241Z",
+  "generatedAt": "2026-11-17T23:46:37.078Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 17 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Commission approves amended German State aid schemes for energy-intensive companies",
-      "summary": "European Commission Press release Brussels, 17 Nov 2026 The European Commission has approved, under EU State aid rules, Germany's amended schemes to compensate energy-intensive companies for indirect emission costs under the EU Emission Trading System (EU ETS) and for temporary electricity price relief under the Clean Industrial Deal State aid Framework (CISAF) and Middle East Crisis Temporary State Aid Framework (METSAF).",
+      "headline": "Fossil-fuel industry accused of violating Colorado law over not disclosing drilling chemicals",
+      "summary": "&lt;p&gt;Non-profit FracTracker Alliance alleges regulators have exempted compounds used in drilling despite 2022 law&lt;/p&gt;&lt;p&gt;The fossil-fuel industry is violating Colorado law by not disclosing which chemicals it uses in drilling, a new &lt;a href=\"https://fractracker.org/2026/11/colorado-oil-gas-chemical-disclosure-2026/\"&gt;analysis&lt;/a&gt; by the FracTracker Alliance non-profit alleges, and state records show it has used illegal or dangerous compounds while fracking.&lt;/p&gt;&lt",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "COP31 Bulletin Day 8: EU dubs draft cover text “a shopping list” and endorses electrification goal",
-      "summary": "Negotiations will try to slim down the bulky draft cover decision, while the EU backs the electrification goal, and oceans and science feature at events The post COP31 Bulletin Day 8: EU dubs draft cover text “a shopping list” and endorses electrification goal appeared first on Climate Home News.",
+      "headline": "COP31 Bulletin Day 8: EU backs electrification goal, as more TAFF roadmaps promised",
+      "summary": "The EU endorses the 35x35 electrification goal, while the tally of countries preparing plans to exit fossil fuels grows The post COP31 Bulletin Day 8: EU backs electrification goal, as more TAFF roadmaps promised appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Baidu CEO says AI investment must deliver profits to avoid bubble - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOS0wwd1hrZzVDQzBrY1U3RmtldGU1VnZ4SFItdTc4V3dNZFZud2V3RURfZ2M3MlczakxBX2Rxd3FhdUt0X1BjMmoxX0pacDJTOFpFR2lxby1lS2dKSWI0NXV1VnlCVWJPM2ZEdWR0RjNrbldGUzNJNTFoRUJCN1VYQlNWMHg4T0N2QVN4YUliMXp0Q1lRQzZ3RXJtclEwdk5MejEzdk5QT1FUbE01WEZ6eXpMYkJacUwtWlhXYzRB?oc=5\" target=\"_blank\"&gt;Baidu CEO says AI investment must deliver profits to avoid bubble&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Motor vehicles, AI investment lift US factory production in October - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNSllOZEt0QlYtUnpvWjNmYW5PSnNUYXVuN3NzOGtyU0RWSE5QQlFNelI5d0Rka01HYWxJNXhtTEZIWkNpT194RFdDajhIdW04NDBkTXNZYzM4VUFLZkVTQVR4X3p1UXhmeG5iaVBKbGdtSjViOVJXekJBZ1B4cVc4eDZTVmNHdmIySWRzSmQ0V2dZRjdSbGJZYzRiNzhDT2xSQkx5TVluZGdQQU11?oc=5\" target=\"_blank\"&gt;Motor vehicles, AI investment lift US factory production in October&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,12 +34,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Commission approves amended German State aid schemes for energy-intensive companies",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2456",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 17 Nov 2026 The European Commission has approved, under EU State aid rules, Germany's amended schemes to compensate energy-intensive companies for indirect emission costs under the EU Emission Trading System (EU ETS) and for temporary electricity price relief under the Clean Industrial Deal State aid Framework (CISAF) and Middle East Crisis Temporary State Aid Framework (METSAF).",
-          "published": "2026-11-16T23:00:00.000Z",
-          "score": 23
+          "title": "Fossil-fuel industry accused of violating Colorado law over not disclosing drilling chemicals",
+          "link": "https://www.theguardian.com/environment/2026/nov/17/fossil-fuel-industry-colorado",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Non-profit FracTracker Alliance alleges regulators have exempted compounds used in drilling despite 2022 law&lt;/p&gt;&lt;p&gt;The fossil-fuel industry is violating Colorado law by not disclosing which chemicals it uses in drilling, a new &lt;a href=\"https://fractracker.org/2026/11/colorado-oil-gas-chemical-disclosure-2026/\"&gt;analysis&lt;/a&gt; by the FracTracker Alliance non-profit alleges, and state records show it has used illegal or dangerous compounds while fracking.&lt;/p&gt;&lt",
+          "published": "2026-11-17T19:12:15.000Z",
+          "score": 11
         },
         {
           "title": "Minerals for the planet or for war and AI? COP31 must make clear what we prioritise",
@@ -50,28 +50,28 @@
           "score": 10
         },
         {
-          "title": "COP31&#8217;s electricity goal must be about more than AI and luxuries for the rich",
-          "link": "https://www.climatechangenews.com/2026/11/16/cop31s-electricity-goal-must-be-about-more-than-ai-and-luxuries-for-the-rich/",
-          "source": "Climate Home News",
-          "description": "The pledge to boost electrification must not neglect the pressing need to bring clean, affordable power to hundreds of millions of people still living without it The post COP31&#8217;s electricity goal must be about more than AI and luxuries for the rich appeared first on Climate Home News.",
-          "published": "2026-11-16T15:02:08.000Z",
-          "score": 10
-        },
-        {
-          "title": "Passing bill to speed up gas projects and datacenters would be ‘serious mistake’, Al Gore says",
-          "link": "https://www.theguardian.com/us-news/2026/nov/16/al-gore-baaja-cop-31-climate",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Former US vice-president at Cop31 urges lawmakers to rethink contentious bipartisan Baaja bill advanced by the US Senate&lt;/p&gt;&lt;p&gt;It would be a “serious mistake” to pass a contentious bipartisan bill to speed up energy projects and datacenters that has divided Democrats and environmentalists, Al Gore said.&lt;/p&gt;&lt;p&gt;The legislation, known as the Bipartisan American Affordability and Jobs Act (Baaja), will make it easier to build large infrastructure projects in the US, ",
-          "published": "2026-11-16T14:34:17.000Z",
-          "score": 8
-        },
-        {
           "title": "Where do people want to see Britain’s climate action plan working? On their own doorstep | Miatta Fahnbulleh",
           "link": "https://www.theguardian.com/commentisfree/2026/nov/17/britain-climate-action-plan-working-cop31-voters-jobs-home-prices",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;I am at Cop 31 – concerned about the crisis around the world, but mindful that voters want jobs, warmer homes and cheaper prices&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Miatta Fahnbulleh is the UK secretary of state for energy security and net zero&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;In this cold weather, it is easy to forget that Britain has just been through its hottest summer on record, part of our new reality as the climate crisis reaches our doorstep. For millions around the worl",
+          "description": "&lt;p&gt;I am at Cop31 – concerned about the crisis around the world, but mindful that voters want jobs, warmer homes and cheaper prices&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Miatta Fahnbulleh is the UK secretary of state for energy security and net zero&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;In this cold weather, it is easy to forget that Britain has just been through its hottest summer on record, part of our new reality as the climate crisis reaches our doorstep. For millions around the world",
           "published": "2026-11-17T13:32:44.000Z",
           "score": 7
+        },
+        {
+          "title": "Pakistan's solar revolution seems unstoppable - but there's a problem",
+          "link": "https://www.bbc.co.uk/news/articles/ckvg2n2q3103o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "People installing their own solar panels has helped boost the solar share of Pakistan's electricity from 1% to 28%.",
+          "published": "2026-11-17T23:34:56.000Z",
+          "score": 7
+        },
+        {
+          "title": "These US coal plants on the Ohio River shut down years ago. Now, residents say their waste is destroying lives",
+          "link": "https://www.theguardian.com/us-news/2026/nov/17/coal-plants-ohio-river-landfill",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Landfill owner’s data show lithium above groundwater standards near the drinking water source for millions&lt;/p&gt;&lt;p&gt;Down winding roads and past quiet homesteads, all that can be heard in the otherwise bucolic air of rural Clermont county, &lt;a href=\"https://www.theguardian.com/us-news/ohio\"&gt;Ohio&lt;/a&gt;, is the roar of dump trucks.&lt;/p&gt;&lt;p&gt;The speeding vehicles are headed for a massive, 1,400-acre&lt;a href=\"https://www.aboutzimmer.com/\"&gt; landfill&lt;/a&gt; f",
+          "published": "2026-11-17T13:00:48.000Z",
+          "score": 2
         }
       ]
     },
@@ -80,19 +80,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "COP31 Bulletin Day 8: EU dubs draft cover text “a shopping list” and endorses electrification goal",
+          "title": "COP31 Bulletin Day 8: EU backs electrification goal, as more TAFF roadmaps promised",
           "link": "https://www.climatechangenews.com/2026/11/17/cop31-bulletin-day-8-arab-group-russia-reject-cover-text-over-fossil-fuels-and-electrification-goal/",
           "source": "Climate Home News",
-          "description": "Negotiations will try to slim down the bulky draft cover decision, while the EU backs the electrification goal, and oceans and science feature at events The post COP31 Bulletin Day 8: EU dubs draft cover text “a shopping list” and endorses electrification goal appeared first on Climate Home News.",
+          "description": "The EU endorses the 35x35 electrification goal, while the tally of countries preparing plans to exit fossil fuels grows The post COP31 Bulletin Day 8: EU backs electrification goal, as more TAFF roadmaps promised appeared first on Climate Home News.",
           "published": "2026-11-17T09:29:23.000Z",
-          "score": 16
-        },
-        {
-          "title": "Speech by Commissioner Kadis at the Blue NDC Challenge event hosted by France and Brazil",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2466",
-          "source": "European Commission",
-          "description": "European Commission Speech Antalya, 17 Nov 2026 Excellencies, dear friends, ladies and gentlemen,\r\nThank you for the opportunity to participate in this important event.\r\nThe climate crisis is no longer a distan...",
-          "published": "2026-11-17T08:48:28.000Z",
           "score": 16
         },
         {
@@ -104,19 +96,27 @@
           "score": 13
         },
         {
-          "title": "Countries take up industry push to loosen UN carbon market rules at COP31",
-          "link": "https://www.climatechangenews.com/2026/11/16/countries-take-up-industry-push-to-loosen-un-carbon-market-rules-at-cop31/",
-          "source": "Climate Home News",
-          "description": "A draft decision reflects demands from dozens of countries to reassess the UN carbon market’s integrity rules, a push campaigners blame on industry lobbying. The post Countries take up industry push to loosen UN carbon market rules at COP31 appeared first on Climate Home News.",
-          "published": "2026-11-16T16:16:15.000Z",
-          "score": 13
-        },
-        {
           "title": "Revealed: Russia, Saudi Arabia and Australia are largest CO2 exporters of all time",
           "link": "https://www.carbonbrief.org/revealed-russia-saudi-arabia-and-australia-are-largest-co2-exporters-of-all-time",
           "source": "Carbon Brief",
           "description": "Russia, Saudi Arabia and COP31 co-president Australia are the largest exporters of carbon dioxide (CO2) emissions in history, reveals Carbon&#8230; The post Revealed: Russia, Saudi Arabia and Australia are largest CO2 exporters of all time appeared first on Carbon Brief.",
           "published": "2026-11-17T05:00:00.000Z",
+          "score": 10
+        },
+        {
+          "title": "Building coastal resilience for local communities in Honduras",
+          "link": "https://www.climatechangenews.com/2026/11/17/building-coastal-resilience-for-local-communities-in-honduras/",
+          "source": "Climate Home News",
+          "description": "Climate adaptation projects that focus on ocean and coastal management could provide useful case studies for negotiators at COP31 The post Building coastal resilience for local communities in Honduras appeared first on Climate Home News.",
+          "published": "2026-11-17T11:02:29.000Z",
+          "score": 10
+        },
+        {
+          "title": "COP31 can&#8217;t deliver for islands without delivering for the ocean",
+          "link": "https://www.climatechangenews.com/2026/11/17/cop31-cant-deliver-for-islands-without-delivering-for-the-ocean/",
+          "source": "Climate Home News",
+          "description": "Recognition of the ocean's importance must go beyond speeches and start shaping national climate commitments and the allocation of international finance The post COP31 can&#8217;t deliver for islands without delivering for the ocean appeared first on Climate Home News.",
+          "published": "2026-11-17T09:24:16.000Z",
           "score": 10
         }
       ]
@@ -125,6 +125,14 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
+        {
+          "title": "Motor vehicles, AI investment lift US factory production in October - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSllOZEt0QlYtUnpvWjNmYW5PSnNUYXVuN3NzOGtyU0RWSE5QQlFNelI5d0Rka01HYWxJNXhtTEZIWkNpT194RFdDajhIdW04NDBkTXNZYzM4VUFLZkVTQVR4X3p1UXhmeG5iaVBKbGdtSjViOVJXekJBZ1B4cVc4eDZTVmNHdmIySWRzSmQ0V2dZRjdSbGJZYzRiNzhDT2xSQkx5TVluZGdQQU11?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNSllOZEt0QlYtUnpvWjNmYW5PSnNUYXVuN3NzOGtyU0RWSE5QQlFNelI5d0Rka01HYWxJNXhtTEZIWkNpT194RFdDajhIdW04NDBkTXNZYzM4VUFLZkVTQVR4X3p1UXhmeG5iaVBKbGdtSjViOVJXekJBZ1B4cVc4eDZTVmNHdmIySWRzSmQ0V2dZRjdSbGJZYzRiNzhDT2xSQkx5TVluZGdQQU11?oc=5\" target=\"_blank\"&gt;Motor vehicles, AI investment lift US factory production in October&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-17T15:35:45.000Z",
+          "score": 2
+        },
         {
           "title": "Baidu CEO says AI investment must deliver profits to avoid bubble - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOS0wwd1hrZzVDQzBrY1U3RmtldGU1VnZ4SFItdTc4V3dNZFZud2V3RURfZ2M3MlczakxBX2Rxd3FhdUt0X1BjMmoxX0pacDJTOFpFR2lxby1lS2dKSWI0NXV1VnlCVWJPM2ZEdWR0RjNrbldGUzNJNTFoRUJCN1VYQlNWMHg4T0N2QVN4YUliMXp0Q1lRQzZ3RXJtclEwdk5MejEzdk5QT1FUbE01WEZ6eXpMYkJacUwtWlhXYzRB?oc=5",
@@ -140,19 +148,19 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
+          "title": "EU, ASEAN pursue deeper trade ties, but hurdles remain as businesses struggle with informal barriers",
+          "link": "https://www.dw.com/en/eu-asean-pursue-deeper-trade-ties-but-hurdles-remain-as-businesses-struggle-with-informal-barriers/a-79971350?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "2027 could be a landmark year for EU–Southeast Asia trade, with several deals nearing completion. But the harder task will be to ensure that businesses actually use them.",
+          "published": "2026-11-17T18:39:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Could the Airbus&#039; €3 billion loan row reignite a US-EU trade dispute?",
           "link": "https://www.dw.com/en/could-the-airbus-€3-billion-loan-row-reignite-a-us-eu-trade-dispute/a-79943075?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The US says a record €3 billion financing package for Airbus may conflict with a transatlantic aircraft-subsidy truce. EU officials insist the funding complies with market-based rules.",
           "published": "2026-11-17T11:00:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU sanctions Wildberries CEO Tatyana Kim, Russia&#039;s richest woman",
-          "link": "https://www.dw.com/en/eu-sanctions-wildberries-ceo-tatyana-kim-russia-s-richest-woman/a-79962532?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Wildberries, Russia&#039;s largest online retailer, has been the target of Ukrainian attacks for its role in supplying the Russian military. The EU has now frozen its owner&#039;s assets and banned her from travel to the bloc.",
-          "published": "2026-11-16T19:18:00.000Z",
           "score": 8
         },
         {
@@ -162,6 +170,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQR2U4T3ZBY2hQRnZGS2NTMFVZM3FwRVFJSUtIUjNWSG5URWlXNUNac3ZoQ0pla3BIRFNOTF94Mm5NNmZUekEzQjV2dUhtSWNtZ3gwcURrRWxQLXJIejBjXzNvTmNuZUVwVFY3YjdDLVZkSlctbnFxVy1HVDJneW43QVpVb29hdXZVSGVON29aRTRpS2JabDh4bS1MMEh4bUcwaW5NYWhYX3NTVEE1bHY3N09yMXEzaTFuWHliSW1BZnZFU0k4?oc=5\" target=\"_blank\"&gt;Zelenskiy says Ukraine held new talks with US, European officials on peace prospects&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
           "published": "2026-11-16T23:49:25.000Z",
           "score": 8
+        },
+        {
+          "title": "Back to 1997: Russia wants NATO to roll back its eastern expansion",
+          "link": "https://www.dw.com/en/back-to-1997-russia-wants-nato-to-roll-back-its-eastern-expansion/a-79970289?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Kremlin is reportedly calling on NATO to withdraw from large parts of Eastern Europe. What this would mean for the security of millions of Europeans — and what lies behind Russia&#039;s plan.",
+          "published": "2026-11-17T16:20:00.000Z",
+          "score": 4
         },
         {
           "title": "Germany news: Plans for Rwanda migrant hub come under fire",
@@ -186,44 +202,44 @@
           "score": 8
         },
         {
-          "title": "European shares fall, Nasdaq futures inch up ahead of Nvidia earnings - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbHY5U3ZMUmhWeEViMkJTbW9ObHlQYWRWbmdxWDhXMUdaWFRvLVdRY01oaTJJb3lmOFBiaWpQMEFlTFk5R2ttRnBaT18zaF9Jbk9od2Rza0cyMXJ6Z3JlalJDdG9neTVhQ3pJRG05SE9NQUYxZkFvQmQ5bnVfTi13amFNOA?oc=5",
+          "title": "'Death is near': Inside the hoax bomb threats that rattled Europe's schools and airports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVlo2VTVwTGRISXFPQ2lld2FvUVJxMktBMXFsX2Zrb2FpV3RnZVlEa3JJazJra0xZcEM0VzNNdE9xSkpKV3dLS2VtY1RvMFBoajhYRFBhWUQ2Nk1MeDg1Y3duNGZBUm8tbjdCVHc3elpyMXFTQW83U1Q4WlJIQmE3MnkwVDl4LVdfLUZ2dnhMU0hWU1I4Q3F0TFB3QndMNUVjZG9TSUpXOUxrR1JrYlBzRmx3MFh3OGVXYklxdjNESzZHaXc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxQbHY5U3ZMUmhWeEViMkJTbW9ObHlQYWRWbmdxWDhXMUdaWFRvLVdRY01oaTJJb3lmOFBiaWpQMEFlTFk5R2ttRnBaT18zaF9Jbk9od2Rza0cyMXJ6Z3JlalJDdG9neTVhQ3pJRG05SE9NQUYxZkFvQmQ5bnVfTi13amFNOA?oc=5\" target=\"_blank\"&gt;European shares fall, Nasdaq futures inch up ahead of Nvidia earnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-17T01:22:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVlo2VTVwTGRISXFPQ2lld2FvUVJxMktBMXFsX2Zrb2FpV3RnZVlEa3JJazJra0xZcEM0VzNNdE9xSkpKV3dLS2VtY1RvMFBoajhYRFBhWUQ2Nk1MeDg1Y3duNGZBUm8tbjdCVHc3elpyMXFTQW83U1Q4WlJIQmE3MnkwVDl4LVdfLUZ2dnhMU0hWU1I4Q3F0TFB3QndMNUVjZG9TSUpXOUxrR1JrYlBzRmx3MFh3OGVXYklxdjNESzZHaXc?oc=5\" target=\"_blank\"&gt;'Death is near': Inside the hoax bomb threats that rattled Europe's schools and airports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+          "published": "2026-11-17T16:05:58.000Z",
           "score": 8
         },
         {
-          "title": "Five EU countries starting talks with Rwanda on deportation hub, Austria says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZFh2TV8xR3JSejFkM0c0RjBIVmVsWXhkZUtTWHlsLTY4WEI0Q0hVZDJFQURQaWdpM3JtRFdocXFpcW85RTJGeVgzaGhyODNTTUxIcHc5YUl4SWVQU0dwb0d3XzRzZFB0QjBrY2VGQWFSUVRWLTZNeUZZd1dSdnNJTG1zRzI2VXN3TGFTM092MEhRMjRkblBmeXZJSVhacS1aQXg5cG5tOEw2T2MxTjNkdjVOSUtLR1dELUtSdlYwWQ?oc=5",
+          "title": "Euro zone economy seen growing moderately, France outlook weakest -Commission - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNc2k3bXJscXRZNnlPa3VxNTREb3djN2dXWVhFS1hwQ1ZFUkU0OF9KWnlLdFRPNHF1VEpVRGd2cmhJTGFDTnd4QTN4R0pmWmRtTkV2S1JuUTlBUTNCMzZxVDk0cEJWMzE5TjBVaVJwaFpJdzZ3TmRuWUNxeHpwSTJvbTZ4d0hQY284dmk0QWtLM0ZaQ0x0aHRZV1NxbHdaTzAxSTV3QmdsaExSTlJwb002RmZEYU93Qlk2?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOZFh2TV8xR3JSejFkM0c0RjBIVmVsWXhkZUtTWHlsLTY4WEI0Q0hVZDJFQURQaWdpM3JtRFdocXFpcW85RTJGeVgzaGhyODNTTUxIcHc5YUl4SWVQU0dwb0d3XzRzZFB0QjBrY2VGQWFSUVRWLTZNeUZZd1dSdnNJTG1zRzI2VXN3TGFTM092MEhRMjRkblBmeXZJSVhacS1aQXg5cG5tOEw2T2MxTjNkdjVOSUtLR1dELUtSdlYwWQ?oc=5\" target=\"_blank\"&gt;Five EU countries starting talks with Rwanda on deportation hub, Austria says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-16T15:21:35.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNc2k3bXJscXRZNnlPa3VxNTREb3djN2dXWVhFS1hwQ1ZFUkU0OF9KWnlLdFRPNHF1VEpVRGd2cmhJTGFDTnd4QTN4R0pmWmRtTkV2S1JuUTlBUTNCMzZxVDk0cEJWMzE5TjBVaVJwaFpJdzZ3TmRuWUNxeHpwSTJvbTZ4d0hQY284dmk0QWtLM0ZaQ0x0aHRZV1NxbHdaTzAxSTV3QmdsaExSTlJwb002RmZEYU93Qlk2?oc=5\" target=\"_blank\"&gt;Euro zone economy seen growing moderately, France outlook weakest -Commission&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-17T10:08:37.000Z",
           "score": 8
         },
         {
-          "title": "More than 50 companies call for stronger EU action on truck electrification - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPQ1c2Z3dTcGt4TDVfTjZWR2VQRGEyeXBGdlE0NXhDSUVmUVAzUFZqbHhuWkttSFI5MkUtbmdxR3Q4d1dOb2N2SFdIcjZqc293RGVrSTNtRUVWcmdaOXZrdFhPcUFWVUlxY0VyTFh1MklvM2Uyb205c0NVZnlDVnd4Qm1WTXVQWXo2TTZpREdCQXkwQVFLY2lQRE9DWEFmcERGcUlWTFB0UkFidHpGSzBXR0ZvcXNSd1R1VWNNMUxpalpzejdOSU9OZQ?oc=5",
+          "title": "Serbia's Student List deputies take seats in parliament after landmark election win - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNakF3T2Fha3NKVlNiWlduV29vaV9feVBlMEZqclBQaTQyNEstb1BUaFNxSnFZRXdyeDlJNWJCNDJaeFJ2c3ExUUhROVBtcDFhZVdHLU1sd1FBeEtLd1hXTXk2Z29JcFpPVERQVkhaT2c5Qnh0R194QkNDUG15QTZOZ2dmOXZzMEU4OG80UExKVWtWR2pyc242dS1ZaENBeUZXN3BVdEdEcWc3WW44VFNWVnlFZVE1Nl9uZldZck93?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPQ1c2Z3dTcGt4TDVfTjZWR2VQRGEyeXBGdlE0NXhDSUVmUVAzUFZqbHhuWkttSFI5MkUtbmdxR3Q4d1dOb2N2SFdIcjZqc293RGVrSTNtRUVWcmdaOXZrdFhPcUFWVUlxY0VyTFh1MklvM2Uyb205c0NVZnlDVnd4Qm1WTXVQWXo2TTZpREdCQXkwQVFLY2lQRE9DWEFmcERGcUlWTFB0UkFidHpGSzBXR0ZvcXNSd1R1VWNNMUxpalpzejdOSU9OZQ?oc=5\" target=\"_blank\"&gt;More than 50 companies call for stronger EU action on truck electrification&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-          "published": "2026-11-17T05:05:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNakF3T2Fha3NKVlNiWlduV29vaV9feVBlMEZqclBQaTQyNEstb1BUaFNxSnFZRXdyeDlJNWJCNDJaeFJ2c3ExUUhROVBtcDFhZVdHLU1sd1FBeEtLd1hXTXk2Z29JcFpPVERQVkhaT2c5Qnh0R194QkNDUG15QTZOZ2dmOXZzMEU4OG80UExKVWtWR2pyc242dS1ZaENBeUZXN3BVdEdEcWc3WW44VFNWVnlFZVE1Nl9uZldZck93?oc=5\" target=\"_blank\"&gt;Serbia's Student List deputies take seats in parliament after landmark election win&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-17T12:43:44.000Z",
           "score": 8
         },
         {
-          "title": "EU sets tariffs on steel from India, Japan, Taiwan, Turkey, Vietnam - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNa3B4YmpOaVdhclpneERib0V3NzMtR3JUSV9wY3RHR3JuM2hibkZYUlg0LXNIMGtuN3B2MEF3eFRxOUdQdlVPWTNkY2lOWW1ieGRIRVl6ZU9fZEtFVDBONFA3bnBRMWdyYXpsZjNkYUhnNWUzQW81cGFtV1o2REEwM1V0Qm1yU05FSk9lRVZNVkw3OGs1dGdJS3JEaXZhUVd3N0tPWUFaX3RqenZpQ1RqMnYyUkFQQmI4TFJ1Q1pCLXNQMDFjWXc?oc=5",
+          "title": "Explainer: Five EU countries' plan for a deportation hub in Rwanda - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWVNyb1A1UnZwcGRXakZTUFBIS2JCRk9oR09kZHBaUDc2QmZOY2dzUmFXZWV5emctQkM2a05UNEkyelozeVpFSE5uU3pFVk1mNjB6LUFLdkowdEtSaGJVS1Y3ZGZSSkZsUFNCUXRmZ3FSWXpOQktwLURjWG1nR0VWZzIzcmZtS1h5UmNBQmZHNkdCSl9XVWRGT1Nn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNa3B4YmpOaVdhclpneERib0V3NzMtR3JUSV9wY3RHR3JuM2hibkZYUlg0LXNIMGtuN3B2MEF3eFRxOUdQdlVPWTNkY2lOWW1ieGRIRVl6ZU9fZEtFVDBONFA3bnBRMWdyYXpsZjNkYUhnNWUzQW81cGFtV1o2REEwM1V0Qm1yU05FSk9lRVZNVkw3OGs1dGdJS3JEaXZhUVd3N0tPWUFaX3RqenZpQ1RqMnYyUkFQQmI4TFJ1Q1pCLXNQMDFjWXc?oc=5\" target=\"_blank\"&gt;EU sets tariffs on steel from India, Japan, Taiwan, Turkey, Vietnam&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-16T16:13:36.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxPWVNyb1A1UnZwcGRXakZTUFBIS2JCRk9oR09kZHBaUDc2QmZOY2dzUmFXZWV5emctQkM2a05UNEkyelozeVpFSE5uU3pFVk1mNjB6LUFLdkowdEtSaGJVS1Y3ZGZSSkZsUFNCUXRmZ3FSWXpOQktwLURjWG1nR0VWZzIzcmZtS1h5UmNBQmZHNkdCSl9XVWRGT1Nn?oc=5\" target=\"_blank\"&gt;Explainer: Five EU countries' plan for a deportation hub in Rwanda&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-17T15:14:36.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 395,
-    "articlesLast24h": 172,
-    "afterDedup": 160,
+    "totalArticlesScanned": 400,
+    "articlesLast24h": 174,
+    "afterDedup": 164,
     "feedsQueried": 19
   }
 }
