@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-16",
-  "generatedAt": "2026-11-16T13:27:31.205Z",
+  "date": "2026-11-17",
+  "generatedAt": "2026-11-17T00:41:00.729Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Monday, 16 November 2026 — Key developments from the last 24 hours",
+  "subtitle": "Tuesday, 17 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
       "headline": "COMMENTARY: Europe draws LNG from Asia, but not fast enough - Reuters",
@@ -11,14 +11,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "Can AI data centres help power underserved African communities?",
-      "summary": "Three African countries join a pledge for sustainable AI at COP31, but the jury is still out on whether the energy-hungry industry can bring benefits for all The post Can AI data centres help power underserved African communities? appeared first on Climate Home News.",
+      "headline": "Countries take up industry push to loosen UN carbon market rules at COP31",
+      "summary": "A draft decision reflects demands from dozens of countries to reassess the UN carbon market’s integrity rules, a push campaigners blame on industry lobbying. The post Countries take up industry push to loosen UN carbon market rules at COP31 appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Keynote speech by Commissioner Albuquerque at the 2nd International Conference on Decarbonisation and Sustainable Finance, Lusíada University",
-      "summary": "European Commission Speech Lisbon, 16 Nov 2026 Good morning, ladies and gentlemen.\r\nIt is a particular pleasure to return to Universidade Lusíada, where I studied Economics. Coming back to my alma mater as Eu...",
+      "headline": "Tesla planning €3BN investment in German factory to produce Cybercabs",
+      "summary": "The Elon Musk-owned company is looking to further expand its only European production line. Brandenburg&#039;s state leader has welcomed the decision.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -38,8 +38,32 @@
           "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQazNSNGIxWE5oU0dkNG1ZY2hBelhzb2JmOUpWR3VPMkdZN1I3RmE1WEpXcUtpbGU3cnFETTgydzdtVTFQcDVYOGZmcmhVTHVYS1JFLUYyWjVUQTBHVHdFblFfQmxfSDBSUWViOTljeFFVSkdQYktVRS1peWZDRzE5eFhia0RvQnFtU3R4ZmxadDI5QzRiTzlnek9STTRDTGFibmxzZmstcVNEdw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQazNSNGIxWE5oU0dkNG1ZY2hBelhzb2JmOUpWR3VPMkdZN1I3RmE1WEpXcUtpbGU3cnFETTgydzdtVTFQcDVYOGZmcmhVTHVYS1JFLUYyWjVUQTBHVHdFblFfQmxfSDBSUWViOTljeFFVSkdQYktVRS1peWZDRzE5eFhia0RvQnFtU3R4ZmxadDI5QzRiTzlnek9STTRDTGFibmxzZmstcVNEdw?oc=5\" target=\"_blank\"&gt;COMMENTARY: Europe draws LNG from Asia, but not fast enough&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-16T01:48:17.000Z",
+          "published": "2026-11-16T02:55:07.000Z",
           "score": 13
+        },
+        {
+          "title": "COP31&#8217;s electricity goal must be about more than AI and luxuries for the rich",
+          "link": "https://www.climatechangenews.com/2026/11/16/cop31s-electricity-goal-must-be-about-more-than-ai-and-luxuries-for-the-rich/",
+          "source": "Climate Home News",
+          "description": "The pledge to boost electrification must not neglect the pressing need to bring clean, affordable power to hundreds of millions of people still living without it The post COP31&#8217;s electricity goal must be about more than AI and luxuries for the rich appeared first on Climate Home News.",
+          "published": "2026-11-16T15:02:08.000Z",
+          "score": 10
+        },
+        {
+          "title": "COP31 Bulletin Day 7: Incoming ministers set to battle over cover text",
+          "link": "https://www.climatechangenews.com/2026/11/16/cop31-bulletin-day-7-sharp-divisions-lower-expectations-for-cop-outcome/",
+          "source": "Climate Home News",
+          "description": "A first draft of the Antalya summit's main political outcome includes a wide range of asks from 160 countries and must be whittled down amid divisions over science, finance and energy transition The post COP31 Bulletin Day 7: Incoming ministers set to battle over cover text appeared first on Climate Home News.",
+          "published": "2026-11-16T10:37:01.000Z",
+          "score": 10
+        },
+        {
+          "title": "Passing bill to speed up gas projects and datacenters would be ‘serious mistake’, Al Gore says",
+          "link": "https://www.theguardian.com/us-news/2026/nov/16/al-gore-baaja-cop-31-climate",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Former US vice-president at Cop31 urges lawmakers to rethink contentious bipartisan Baaja bill advanced by the US Senate&lt;/p&gt;&lt;p&gt;It would be a “serious mistake” to pass a contentious bipartisan bill to speed up energy projects and datacenters that has divided Democrats and environmentalists, Al Gore said.&lt;/p&gt;&lt;p&gt;The legislation, known as the Bipartisan American Affordability and Jobs Act (Baaja), will make it easier to build large infrastructure projects in the US, ",
+          "published": "2026-11-16T14:34:17.000Z",
+          "score": 8
         },
         {
           "title": "Can a &#039;coalition of the willing&#039; create momentum for a fossil fuel phaseout?",
@@ -48,30 +72,6 @@
           "description": "In April, about 60 countries held an unprecedented meeting in Colombia to work out a plan to slowly quit oil, coal and gas. How influential is this coalition at the COP31 climate summit?",
           "published": "2026-11-16T08:23:00.000Z",
           "score": 7
-        },
-        {
-          "title": "EXCLUSIVE: Risk of nuclear accident in Ukraine increasing this winter, atomic safety regulators say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNRjlIbUpKS3NfVi1Oai13Y213OWJ4S0FkU0RIa1hDU1o2ZHBBN05zUXRKQnFZUDlXZ1hhbUxGS2wwUUJIbEVRSmNsSXFRNk10dEhIS0NuWVFHSHBPRFNxUUluT0ZZRlByUVhGajRMcWUxQlBkazFwU0hvYUthYlZGRzdEQTdrNnl4cDJWeEIzZWtaYnc0UUFMTk03QldsOHZiZGNTRTlmRWNrcVpIWHg5UGMzcDRINkF4cG1ZTExsZktQSjlTNm91Vg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNRjlIbUpKS3NfVi1Oai13Y213OWJ4S0FkU0RIa1hDU1o2ZHBBN05zUXRKQnFZUDlXZ1hhbUxGS2wwUUJIbEVRSmNsSXFRNk10dEhIS0NuWVFHSHBPRFNxUUluT0ZZRlByUVhGajRMcWUxQlBkazFwU0hvYUthYlZGRzdEQTdrNnl4cDJWeEIzZWtaYnc0UUFMTk03QldsOHZiZGNTRTlmRWNrcVpIWHg5UGMzcDRINkF4cG1ZTExsZktQSjlTNm91Vg?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Risk of nuclear accident in Ukraine increasing this winter, atomic safety regulators say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6",
-          "published": "2026-11-16T11:54:18.000Z",
-          "score": 7
-        },
-        {
-          "title": "Germany news: Merz, Söder aim to revisit electricity tax cut",
-          "link": "https://www.dw.com/en/germany-news-merz-söder-aim-to-revisit-electricity-tax-cut/live-79954869?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The Christian Democrats are in Munich, pushing to revive some tax relief that didn&#039;t make it into the budget after talks last week. And Manuela Schwesig faces a vote on a new term as regional leader. Follow DW.",
-          "published": "2026-11-16T08:37:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Great Britain’s oldest renewables projects could rake in nearly £9bn next year",
-          "link": "https://www.theguardian.com/business/2026/nov/16/great-britain-renewable-energy-subsidies-wind-solar",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Subsidy scheme, which is paid via taxes and energy bills, must be reformed, ECU analysis finds&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/nov/16/ai-sell-off-resumes-jensen-huang-discusses-comeback-nvidia-ceo-dollar-stock-markets-latest-news-updates\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Great Britain’s oldest renewable energy projects are likely to rake in a near £9bn windfall next year b",
-          "published": "2026-11-16T11:56:20.000Z",
-          "score": 4
         }
       ]
     },
@@ -79,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Countries take up industry push to loosen UN carbon market rules at COP31",
+          "link": "https://www.climatechangenews.com/2026/11/16/countries-take-up-industry-push-to-loosen-un-carbon-market-rules-at-cop31/",
+          "source": "Climate Home News",
+          "description": "A draft decision reflects demands from dozens of countries to reassess the UN carbon market’s integrity rules, a push campaigners blame on industry lobbying. The post Countries take up industry push to loosen UN carbon market rules at COP31 appeared first on Climate Home News.",
+          "published": "2026-11-16T16:16:15.000Z",
+          "score": 13
+        },
         {
           "title": "Can AI data centres help power underserved African communities?",
           "link": "https://www.climatechangenews.com/2026/11/16/can-ai-data-centres-help-power-underserved-african-communities/",
@@ -88,35 +96,27 @@
           "score": 10
         },
         {
-          "title": "COP31 Bulletin Day 7: Sharp divisions lower expectations for COP outcome",
-          "link": "https://www.climatechangenews.com/2026/11/16/cop31-bulletin-day-7-sharp-divisions-lower-expectations-for-cop-outcome/",
-          "source": "Climate Home News",
-          "description": "Big emerging economies reject putting a voluntary electrification pledge and fossil fuel roadmap in the cover decision, while rich nations have little new finance to offer as a sweetener The post COP31 Bulletin Day 7: Sharp divisions lower expectations for COP outcome appeared first on Climate Home News.",
-          "published": "2026-11-16T10:37:01.000Z",
-          "score": 10
+          "title": "AI models ‘weak and fallible’ on climate science, UN-backed study reports",
+          "link": "https://www.theguardian.com/environment/2026/nov/16/ai-models-fallible-denial-climate-science-unesco-cop31",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;While mostly accurate describing simple facts, models pivoted to denial and wrong answers when challenged&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/live/2026/nov/16/cop31-climate-crisis-talks-turkey-latest-news-updates\"&gt;Cop31 live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Artificial intelligence models can quickly turn into climate crisis deniers at the mildest challenge from users, according to a new UN-backed ",
+          "published": "2026-11-16T16:05:58.000Z",
+          "score": 7
         },
         {
-          "title": "Cop31 live: draft climate deal calls for faster shift away from fossil fuels",
+          "title": "Cop31 as it happened: draft climate deal calls for faster shift away from fossil fuels",
           "link": "https://www.theguardian.com/environment/live/2026/nov/16/cop31-climate-crisis-talks-turkey-latest-news-updates",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;‘Cancer of indifference’ to climate crisis is pushing the world closer to the brink, says Mia Mottley as UN talks enter second week&lt;/p&gt;&lt;p&gt;Chris Bowen, Australia’s climate minister and president of the negotiations, has opened a press conference by saying it “is a given” that parties will not agree on all elements of the draft. He added that the timing of this Cop – alongside the rise of AI, war and cost of living crises, among others – made it more important to show that mul",
-          "published": "2026-11-16T12:51:33.000Z",
+          "published": "2026-11-16T15:27:54.000Z",
           "score": 7
         },
         {
-          "title": "‘When the sun came out it felt like it opened a scar’ – This is climate breakdown",
-          "link": "https://www.theguardian.com/environment/ng-interactive/2026/nov/16/when-the-sun-came-out-it-felt-like-it-opened-a-scar-this-is-climate-breakdown",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;When the floods hit Pakistan he went out to help. Then the water reached his own family. This is Imran Lodhi’s story&lt;/p&gt;&lt;p&gt;&lt;em&gt;Location: Dera Ghazi Khan, Pakistan&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;Disaster: Pakistan intense monsoon rainfall&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;Imran Lodhi is a university lecturer with a doctorate in climate change and sustainable development&lt;/em&gt;&lt;em&gt;. The 41-year-old was living in &lt;/em&gt;&lt;em&gt;Dera Ghazi Khan",
-          "published": "2026-11-16T12:00:59.000Z",
-          "score": 7
-        },
-        {
-          "title": "Indonesia president conveys apology to Singapore, Malaysia over wildfire haze - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcHo5U295dTNfU3R0MVRNU1FYbkVCc3FtbXgxV2hwOHF0dnptUExXdjFqU0NQR3lldzh3UTlubXpORUNvU3NSdml5T0t2a0M3LUs2ZXBWcGtWM2RRNUNNYVV0c1hScjU0STVyZkg4ZnJ4Skg3ZWhiWF9XWjNQUTZ6SnlPcDg5UmpBdHBuYnEzWjBNV1Q0cm1HaGRSaEpuRXVhZTdFcFNoX0ItcU9MSGdwNmxKU3J6TUUzTnJCbUVVMVNRcEc4czRDTV93?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOcHo5U295dTNfU3R0MVRNU1FYbkVCc3FtbXgxV2hwOHF0dnptUExXdjFqU0NQR3lldzh3UTlubXpORUNvU3NSdml5T0t2a0M3LUs2ZXBWcGtWM2RRNUNNYVV0c1hScjU0STVyZkg4ZnJ4Skg3ZWhiWF9XWjNQUTZ6SnlPcDg5UmpBdHBuYnEzWjBNV1Q0cm1HaGRSaEpuRXVhZTdFcFNoX0ItcU9MSGdwNmxKU3J6TUUzTnJCbUVVMVNRcEc4czRDTV93?oc=5\" target=\"_blank\"&gt;Indonesia president conveys apology to Singapore, Malaysia over wildfire haze&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
-          "published": "2026-11-15T16:25:41.000Z",
+          "title": "Australia’s climate change minister Chris Bowen announces first draft of Cop31 deal – video",
+          "link": "https://www.theguardian.com/environment/video/2026/nov/17/australias-climate-change-minister-chris-bowen-announces-first-draft-of-cop31-deal-video",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;The first draft of a Cop31 climate deal was published in an 18-page document that said more about the disparate views across participating nations than it did about what the final agreement — due in four days — will include. &amp;nbsp;Australia’s minister for climate change and energy, Chris Bowen, said the first draft contained clauses that had already been rejected by some nations, and cautioned that the inclusion of some elements did not mean they were going to make the final text. T",
+          "published": "2026-11-17T00:29:42.000Z",
           "score": 7
         }
       ]
@@ -126,12 +126,20 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Keynote speech by Commissioner Albuquerque at the 2nd International Conference on Decarbonisation and Sustainable Finance, Lusíada University",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2443",
-          "source": "European Commission",
-          "description": "European Commission Speech Lisbon, 16 Nov 2026 Good morning, ladies and gentlemen.\r\nIt is a particular pleasure to return to Universidade Lusíada, where I studied Economics. Coming back to my alma mater as Eu...",
-          "published": "2026-11-16T08:58:25.000Z",
-          "score": 19
+          "title": "Tesla planning €3BN investment in German factory to produce Cybercabs",
+          "link": "https://www.dw.com/en/tesla-planning-€3bn-investment-in-german-factory-to-produce-cybercabs/a-79961416?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Elon Musk-owned company is looking to further expand its only European production line. Brandenburg&#039;s state leader has welcomed the decision.",
+          "published": "2026-11-16T16:25:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "Rio Tinto to contribute $250 million to fund addressing Bougainville mine legacy impacts - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNMnUtWURQYmdVOUh4aDhLeXNZRW5OVmdsWUpqQldDNTFFa1BpdHpuY2JVbU1BZFdJSzJEci1zQVgteFlQOTRQRDMwREM5cmhYWVRPS3JVRU00anpHLXBURlJ5eE5lWTRZVlI1Wmp3dUZNZWVGQzRsMjBvR3M1d2VoS1BXcHVZeTVJWktXcmFtdVlNb19RMU1LbkQyT0ZCZTRjOWlrNUNRTVk2MXZfcWVWUFhYSUdGdkRSNUlSQTlmbjhiUjB3UHJpdmhB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNMnUtWURQYmdVOUh4aDhLeXNZRW5OVmdsWUpqQldDNTFFa1BpdHpuY2JVbU1BZFdJSzJEci1zQVgteFlQOTRQRDMwREM5cmhYWVRPS3JVRU00anpHLXBURlJ5eE5lWTRZVlI1Wmp3dUZNZWVGQzRsMjBvR3M1d2VoS1BXcHVZeTVJWktXcmFtdVlNb19RMU1LbkQyT0ZCZTRjOWlrNUNRTVk2MXZfcWVWUFhYSUdGdkRSNUlSQTlmbjhiUjB3UHJpdmhB?oc=5\" target=\"_blank\"&gt;Rio Tinto to contribute $250 million to fund addressing Bougainville mine legacy impacts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
+          "published": "2026-11-16T10:05:17.000Z",
+          "score": 2
         }
       ]
     },
@@ -140,19 +148,19 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Speech by President von der Leyen at the Enlargement Forum",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2442",
-          "source": "European Commission",
-          "description": "European Commission Speech Brussels, 16 Nov 2026 President Stubb,\r\nDear Alex,\r\nPresident Sandu,\r\nDear Maia,\r\nPrime Minister Koretsky,\r\nDear Sergii,\r\nPrime Minister Mickoski,\r\nDear Hristijan,\r\nDear Marta,\r\nDear Andrius,...",
-          "published": "2026-11-16T08:45:03.000Z",
-          "score": 18
-        },
-        {
-          "title": "Five EU countries expected to announce migrant deportation centre in Rwanda",
+          "title": "Five EU countries announce migrant deportation centre in Rwanda",
           "link": "https://www.bbc.co.uk/news/articles/cw987343352go?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Germany, Denmark, Austria, Greece and the Netherlands are expected to announce a \"return hub\" for failed asylum seekers.",
-          "published": "2026-11-16T12:54:44.000Z",
+          "description": "Germany, Denmark, Austria, Greece and the Netherlands have announced a \"return hub\" for failed asylum seekers.",
+          "published": "2026-11-16T23:20:45.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU sanctions Wildberries CEO Tatyana Kim, Russia&#039;s richest woman",
+          "link": "https://www.dw.com/en/eu-sanctions-wildberries-ceo-tatyana-kim-russia-s-richest-woman/a-79962532?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Wildberries, Russia&#039;s largest online retailer, has been the target of Ukrainian attacks for its role in supplying the Russian military. The EU has now frozen its owner&#039;s assets and banned her from travel to the bloc.",
+          "published": "2026-11-16T19:18:00.000Z",
           "score": 8
         },
         {
@@ -161,6 +169,14 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxOV3JyU0NWZEdoTXFBQmUzR3VNNjY2SndjSXN4ZllJUGNtSElvZTl2WW9ZODMwTm5odlUxSlBtN3o0NVNRSmUxYmZQSHBsam5yMHczUXpobC1HR2dReUFIVlNFT0pUU0kwUUFHWkZOMzE3MDNtdTloeHNQT3Z4Uy1lY3JDTndTc0h6SFNhNFRHSkdGQWNTNlg0Tm00T3N0YWc?oc=5\" target=\"_blank\"&gt;As Britain seeks closer EU ties, Brexit trade-offs return&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-11-16T07:03:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Zelenskiy says Ukraine held new talks with US, European officials on peace prospects - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQR2U4T3ZBY2hQRnZGS2NTMFVZM3FwRVFJSUtIUjNWSG5URWlXNUNac3ZoQ0pla3BIRFNOTF94Mm5NNmZUekEzQjV2dUhtSWNtZ3gwcURrRWxQLXJIejBjXzNvTmNuZUVwVFY3YjdDLVZkSlctbnFxVy1HVDJneW43QVpVb29hdXZVSGVON29aRTRpS2JabDh4bS1MMEh4bUcwaW5NYWhYX3NTVEE1bHY3N09yMXEzaTFuWHliSW1BZnZFU0k4?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQR2U4T3ZBY2hQRnZGS2NTMFVZM3FwRVFJSUtIUjNWSG5URWlXNUNac3ZoQ0pla3BIRFNOTF94Mm5NNmZUekEzQjV2dUhtSWNtZ3gwcURrRWxQLXJIejBjXzNvTmNuZUVwVFY3YjdDLVZkSlctbnFxVy1HVDJneW43QVpVb29hdXZVSGVON29aRTRpS2JabDh4bS1MMEh4bUcwaW5NYWhYX3NTVEE1bHY3N09yMXEzaTFuWHliSW1BZnZFU0k4?oc=5\" target=\"_blank\"&gt;Zelenskiy says Ukraine held new talks with US, European officials on peace prospects&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
+          "published": "2026-11-16T19:24:11.000Z",
           "score": 8
         },
         {
@@ -178,12 +194,28 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Germany to join other EU states in announcing Rwanda deportation hub",
-          "link": "https://www.dw.com/en/germany-to-join-other-eu-states-in-announcing-rwanda-deportation-hub/a-79959158?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Germany joins 4 other EU states to set up Rwanda deportation hub",
+          "link": "https://www.dw.com/en/germany-joins-4-other-eu-states-to-set-up-rwanda-deportation-hub/a-79959158?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The move follows approval of EU regulations that ease deportations and allow hubs to be set up outside the bloc. A similar scheme by the UK government fell apart over legal issues.",
+          "description": "The move follows approval of EU regulations that ease deportations and allow hubs to be set up outside the bloc. A similar scheme by the UK government fell apart over legal issues though the US has one up and running.",
           "published": "2026-11-16T12:10:00.000Z",
           "score": 8
+        },
+        {
+          "title": "Five EU countries unveil plans for Rwanda deportation hub - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRVpJQWlwdjFDa3FpbGZ3aDVFdE5fREVGZTBnNGY4Rm9jeDJXWng3SU5uOGZOSG1FT3JDZG1jd3VUVVYwNFBtcTZTXzR4Z01OTVJrYVRPTndoRGc4Yk9uVXFickRTYzIxMXc4VWxvcXMzNDVOLU9JcGVFeE1jcEVjNkhFb3VmaVV2YkExbEJ1VTc0aGtfZC1xMThkOUw2WnM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPRVpJQWlwdjFDa3FpbGZ3aDVFdE5fREVGZTBnNGY4Rm9jeDJXWng3SU5uOGZOSG1FT3JDZG1jd3VUVVYwNFBtcTZTXzR4Z01OTVJrYVRPTndoRGc4Yk9uVXFickRTYzIxMXc4VWxvcXMzNDVOLU9JcGVFeE1jcEVjNkhFb3VmaVV2YkExbEJ1VTc0aGtfZC1xMThkOUw2WnM?oc=5\" target=\"_blank\"&gt;Five EU countries unveil plans for Rwanda deportation hub&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-16T05:03:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Carney to meet Xi on Tuesday to talk food, energy and financial services - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOTk9EbXNOUTJiNTl1b1FUcm85UEhQVWdXS0FCZXRsMnRia19GMWlERVl5eTlHWnlJbEQ0TGtoX05pSmR6bXVpMmNmcWFxWmQxUXdsM0k2bVZnNlhBalYydGlTdF91eGVkSkl3TjIxMTdMMUs5RnN2aWlOQUhWNzMyTy1fRHFXbC1MQVNJRjNXckFCeUMxZDFHLXlRUWhLNWpfMFZLNGtqa2hhdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOTk9EbXNOUTJiNTl1b1FUcm85UEhQVWdXS0FCZXRsMnRia19GMWlERVl5eTlHWnlJbEQ0TGtoX05pSmR6bXVpMmNmcWFxWmQxUXdsM0k2bVZnNlhBalYydGlTdF91eGVkSkl3TjIxMTdMMUs5RnN2aWlOQUhWNzMyTy1fRHFXbC1MQVNJRjNXckFCeUMxZDFHLXlRUWhLNWpfMFZLNGtqa2hhdw?oc=5\" target=\"_blank\"&gt;Carney to meet Xi on Tuesday to talk food, energy and financial services&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-16T18:47:44.000Z",
+          "score": 7
         },
         {
           "title": "Ashes of exiled Nobel Laureate Miguel Ángel Asturias returned to Guatemala",
@@ -194,36 +226,20 @@
           "score": 4
         },
         {
-          "title": "Yemeni forces retreat to defend port city from Houthis",
-          "link": "https://www.bbc.co.uk/news/articles/cqvg2xgyvnjpo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Saudi-backed forces say they are moving troops from the Bab al-Mandab Strait to protect the interim capital, Aden.",
-          "published": "2026-11-16T11:09:38.000Z",
-          "score": 2
-        },
-        {
-          "title": "Elon Musk joins 'Bring Jensen Back' campaign to reinstate the ex-Nvidia boss",
-          "link": "https://www.bbc.co.uk/news/articles/cry49plv8v3go?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "A number of tech figures want the board of the AI chip giant to give Jensen Huang his job back.",
-          "published": "2026-11-16T12:20:49.000Z",
-          "score": 2
-        },
-        {
-          "title": "Man sentenced over 'horrific' attempted murder of three children",
-          "link": "https://www.bbc.co.uk/news/articles/cr0qj0nzwj34o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Riad Bouchaker was sentenced after the attempted murder of three children in November 2023.",
-          "published": "2026-11-16T12:27:15.000Z",
-          "score": 2
+          "title": "France&#039;s Philippe Diallo to challenge Infantino for FIFA presidency",
+          "link": "https://www.dw.com/en/france-s-philippe-diallo-to-challenge-infantino-for-fifa-presidency/a-79962843?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Philippe Diallo is the second candidate to stand against incumbent Gianni Infantino. He is backed by European football&#039;s governing body UEFA, known to be critical of Infantino.",
+          "published": "2026-11-16T20:24:00.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 392,
-    "articlesLast24h": 157,
-    "afterDedup": 150,
+    "totalArticlesScanned": 389,
+    "articlesLast24h": 163,
+    "afterDedup": 151,
     "feedsQueried": 19
   }
 }
