@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "title": "Speech by Commissioner Kadis at the Blue NDC Challenge event hosted by France and Brazil",
+    "summary": "European Commission Speech Antalya, 17 Nov 2026 Excellencies, dear friends, ladies and gentlemen,\r\nThank you for the opportunity to participate in this important event.\r\nThe climate crisis is no longer a distan...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2466",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-11-17T08:48:28.000Z",
+    "tags": []
+  },
+  {
+    "title": "Commission approves amended German State aid schemes for energy-intensive companies",
+    "summary": "European Commission Press release Brussels, 17 Nov 2026 The European Commission has approved, under EU State aid rules, Germany's amended schemes to compensate energy-intensive companies for indirect emission costs under the EU Emission Trading System (EU ETS) and for temporary electricity price relief under the Clean Industrial Deal State aid Framework (CISAF) and Middle East Crisis Temporary State Aid Framework (METSAF).",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2456",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-11-16T23:00:00.000Z",
+    "tags": [
+      "emissions",
+      "energy",
+      "industry"
+    ]
+  }
+]
