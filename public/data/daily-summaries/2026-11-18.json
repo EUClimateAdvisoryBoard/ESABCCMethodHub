@@ -1,0 +1,206 @@
+{
+  "date": "2026-11-18",
+  "generatedAt": "2026-11-18T13:45:20.115Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Wednesday, 18 November 2026 — Key developments from the last 24 hours",
+  "highlights": [
+    {
+      "headline": "Remarks by Commissioner Hoekstra during the Ministerial Dialogue on Implementing The Energy Transition at COP31",
+      "summary": "European Commission Speech Antalya, 18 Nov 2026 Good morning!\r\nLet me start by thanking the Netherlands, Tuvalu and Ireland for organising this and being excellent hosts and chairs of this conference.\r\nSanta Ma...",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
+    {
+      "headline": "Commission sets up new EU Sanctions Office and appoints new EU Sanctions Envoy",
+      "summary": "European Commission Press release Brussels, 18 Nov 2026 Today, the Commission has created the EU Sanctions Office to bring together the Commission's expertise on the entire sanctions lifecycle, from policy design to implementation, enforcement, and anti-circumvention, including outreach to and engagement with third countries.",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
+    }
+  ],
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": [
+        {
+          "title": "Remarks by Commissioner Hoekstra during the Ministerial Dialogue on Implementing The Energy Transition at COP31",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2498",
+          "source": "European Commission",
+          "description": "European Commission Speech Antalya, 18 Nov 2026 Good morning!\r\nLet me start by thanking the Netherlands, Tuvalu and Ireland for organising this and being excellent hosts and chairs of this conference.\r\nSanta Ma...",
+          "published": "2026-11-18T11:23:28.000Z",
+          "score": 23
+        },
+        {
+          "title": "Fossil-fuel industry accused of violating Colorado law over not disclosing drilling chemicals",
+          "link": "https://www.theguardian.com/environment/2026/nov/17/fossil-fuel-industry-colorado",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Non-profit FracTracker Alliance alleges regulators have exempted compounds used in drilling despite 2022 law&lt;/p&gt;&lt;p&gt;The fossil-fuel industry is violating Colorado law by not disclosing which chemicals it uses in drilling, a new &lt;a href=\"https://fractracker.org/2026/11/colorado-oil-gas-chemical-disclosure-2026/\"&gt;analysis&lt;/a&gt; by the FracTracker Alliance non-profit alleges, and state records show it has used illegal or dangerous compounds while fracking.&lt;/p&gt;&lt",
+          "published": "2026-11-17T19:12:15.000Z",
+          "score": 11
+        },
+        {
+          "title": "Pakistan's solar revolution is so successful the national grid is lagging behind",
+          "link": "https://www.bbc.co.uk/news/articles/ckvg2n2q3103o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "People installing their own solar panels has helped boost the solar share of Pakistan's electricity from 1% to 28%.",
+          "published": "2026-11-17T23:34:56.000Z",
+          "score": 7
+        },
+        {
+          "title": "Millions of red crabs start annual migration on Christmas Island",
+          "link": "https://www.bbc.co.uk/news/videos/cq62p73jjl90o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The crabs were seen migrating from forests to the sea to breed on the coast of the Australian territory.",
+          "published": "2026-11-17T23:05:39.000Z",
+          "score": 7
+        },
+        {
+          "title": "QatarEnergy's LNG expansion may leave it bigger but not less exposed - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNaDhzZEk3LWh5X255cUFCZWFpNExoVzBXQk1idWhGakprTjQtQ0xMbkhPZjluaThIeFF5NjVVYWcxNzExaVNpdHNLX1oxRlM5ejhYaU8xS0FYbW00LVZxdDI2M2JXRktNRmRjcEx0TjhwQy1DV0lYWHhzZ29FR1RoejJxeEVSZXNGdDVNU0F6REFKcnk2M3BOOU4zdnhkWUFEZ3BFdUJEM2ZPMk00NjFjNURWSTRydw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNaDhzZEk3LWh5X255cUFCZWFpNExoVzBXQk1idWhGakprTjQtQ0xMbkhPZjluaThIeFF5NjVVYWcxNzExaVNpdHNLX1oxRlM5ejhYaU8xS0FYbW00LVZxdDI2M2JXRktNRmRjcEx0TjhwQy1DV0lYWHhzZ29FR1RoejJxeEVSZXNGdDVNU0F6REFKcnk2M3BOOU4zdnhkWUFEZ3BFdUJEM2ZPMk00NjFjNURWSTRydw?oc=5\" target=\"_blank\"&gt;QatarEnergy's LNG expansion may leave it bigger but not less exposed&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-18T06:06:00.000Z",
+          "score": 7
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "Commission sets up new EU Sanctions Office and appoints new EU Sanctions Envoy",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2499",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 18 Nov 2026 Today, the Commission has created the EU Sanctions Office to bring together the Commission's expertise on the entire sanctions lifecycle, from policy design to implementation, enforcement, and anti-circumvention, including outreach to and engagement with third countries.",
+          "published": "2026-11-18T11:36:36.000Z",
+          "score": 18
+        },
+        {
+          "title": "Daily News 18 / 11 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_2497",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 18 Nov 2026 Commission sets up new EU Sanctions Office and appoints new EU Sanctions Envoy \r\nToday, the European Commission has created the EU Sanctions Office to bring toge...",
+          "published": "2026-11-18T10:29:20.000Z",
+          "score": 14
+        },
+        {
+          "title": "UK will miss climate targets if it weakens EV sales rules, advisers warn",
+          "link": "https://www.theguardian.com/environment/2026/nov/18/uk-will-miss-climate-targets-if-weakens-rules-on-ev-sales-zev-ccc",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Analysts say mooted move to let more petrol and diesel vehicles be sold would wreck plan to reach net zero by 2050&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Weakening the UK’s electric car sales rules would probably cause the government to miss legally binding climate targets, according to advisers tracking Britain’s progress to net zero.&lt;/p&gt;&lt;p&gt;The analysis by the &lt;a href=\"https://www.theguardian.com/environment/committee-on-climate-change\"&gt;Climate Change Committee (CCC)&lt",
+          "published": "2026-11-18T00:01:26.000Z",
+          "score": 11
+        },
+        {
+          "title": "COP31 Bulletin Day 9: Crunch ministerial talks planned for Wednesday evening",
+          "link": "https://www.climatechangenews.com/2026/11/18/cop31-bulletin-day-9-crunch-ministerial-talks-planned-for-wednesday-evening/",
+          "source": "Climate Home News",
+          "description": "With a draft cover text still untrimmed, the presidency is holding a “Divan\" meeting to make progress towards a \"balanced package\" The post COP31 Bulletin Day 9: Crunch ministerial talks planned for Wednesday evening appeared first on Climate Home News.",
+          "published": "2026-11-18T09:10:54.000Z",
+          "score": 10
+        },
+        {
+          "title": "Republicans could expedite bill to make big oil immune to lawsuits, warn experts",
+          "link": "https://www.theguardian.com/us-news/2026/nov/18/big-oil-immunity-bill-climate",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;GOP lawmakers are rushing through high-priority bills before newly elected Democrats are sworn in&lt;/p&gt;&lt;p&gt;Climate groups fear lawmakers could pass a bill by the end of the year that would give fossil fuel companies immunity from lawsuits and legislation that aims to hold them accountable for the climate crisis.&lt;/p&gt;&lt;p&gt;After the blue wave election, Republican lawmakers are rushing to pass high-priority bills before newly elected Democrats are sworn in. Hundreds of el",
+          "published": "2026-11-18T13:00:04.000Z",
+          "score": 8
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": []
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": [
+        {
+          "title": "EU, ASEAN pursue deeper trade ties, but hurdles remain as businesses struggle with informal barriers",
+          "link": "https://www.dw.com/en/eu-asean-pursue-deeper-trade-ties-but-hurdles-remain-as-businesses-struggle-with-informal-barriers/a-79971350?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "2027 could be a landmark year for EU–Southeast Asia trade, with several deals nearing completion. But the harder task will be to ensure that businesses actually use them.",
+          "published": "2026-11-17T18:39:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU proposes €45 billion Ukraine loan, to be repaid after Russia pays reparations - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOaFhjUFo4SHBqb20yY1dQWmZZNlZhV2VvZjRQLTFoQjlYeFItaHNXX0FZVmhuazRYODFqcEk5RThWZUNpX2lPOFJrZ0M5U0hEODBZZFNndnE3U18xNWRtVGhlYmRXU3V1My16RTUybkdaSXRvc3NIOWpNdllIWG1GMjE4Z2N1bm1naUZjNXF6bVBPSF9lalVpeHdNN1FQeWRtZDBfaTh3ZXBaQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOaFhjUFo4SHBqb20yY1dQWmZZNlZhV2VvZjRQLTFoQjlYeFItaHNXX0FZVmhuazRYODFqcEk5RThWZUNpX2lPOFJrZ0M5U0hEODBZZFNndnE3U18xNWRtVGhlYmRXU3V1My16RTUybkdaSXRvc3NIOWpNdllIWG1GMjE4Z2N1bm1naUZjNXF6bVBPSF9lalVpeHdNN1FQeWRtZDBfaTh3ZXBaQQ?oc=5\" target=\"_blank\"&gt;EU proposes €45 billion Ukraine loan, to be repaid after Russia pays reparations&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-18T11:36:16.000Z",
+          "score": 8
+        },
+        {
+          "title": "Back to 1997: Russia wants NATO to roll back its eastern expansion",
+          "link": "https://www.dw.com/en/back-to-1997-russia-wants-nato-to-roll-back-its-eastern-expansion/a-79970289?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Kremlin is reportedly calling on NATO to withdraw from large parts of Eastern Europe. What this would mean for the security of millions of Europeans — and what lies behind Russia&#039;s plan.",
+          "published": "2026-11-17T16:20:00.000Z",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": [
+        {
+          "title": "Israeli parliament elects speaker backed by Netanyahu opponents - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZ0FvY0VGYXV2RkxSOFMxOENQVF85Mkt5SjZUUXFQS0VuZGpBZjBRbmxnNkVMNWVuRXFOa3lpY09XaE9HNk00UjYtVXJURmtTZGpyaEhEajVoUjh6bGZYbFRzd2NTQUVNd2ExdGFBbkdyXzhnOFZoWjNuRGtuTWpLMmU0U0FrdE40aEtTRnZtZTY5WWRJbFV2UUZXMzI3ZTZSVzFKNDZhYkpYc2hmd3Y2Yg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPZ0FvY0VGYXV2RkxSOFMxOENQVF85Mkt5SjZUUXFQS0VuZGpBZjBRbmxnNkVMNWVuRXFOa3lpY09XaE9HNk00UjYtVXJURmtTZGpyaEhEajVoUjh6bGZYbFRzd2NTQUVNd2ExdGFBbkdyXzhnOFZoWjNuRGtuTWpLMmU0U0FrdE40aEtTRnZtZTY5WWRJbFV2UUZXMzI3ZTZSVzFKNDZhYkpYc2hmd3Y2Yg?oc=5\" target=\"_blank\"&gt;Israeli parliament elects speaker backed by Netanyahu opponents&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-17T22:14:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Explainer: Five EU countries' plan for a deportation hub in Rwanda - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWVNyb1A1UnZwcGRXakZTUFBIS2JCRk9oR09kZHBaUDc2QmZOY2dzUmFXZWV5emctQkM2a05UNEkyelozeVpFSE5uU3pFVk1mNjB6LUFLdkowdEtSaGJVS1Y3ZGZSSkZsUFNCUXRmZ3FSWXpOQktwLURjWG1nR0VWZzIzcmZtS1h5UmNBQmZHNkdCSl9XVWRGT1Nn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxPWVNyb1A1UnZwcGRXakZTUFBIS2JCRk9oR09kZHBaUDc2QmZOY2dzUmFXZWV5emctQkM2a05UNEkyelozeVpFSE5uU3pFVk1mNjB6LUFLdkowdEtSaGJVS1Y3ZGZSSkZsUFNCUXRmZ3FSWXpOQktwLURjWG1nR0VWZzIzcmZtS1h5UmNBQmZHNkdCSl9XVWRGT1Nn?oc=5\" target=\"_blank\"&gt;Explainer: Five EU countries' plan for a deportation hub in Rwanda&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-17T15:14:36.000Z",
+          "score": 8
+        },
+        {
+          "title": "Britain sets out scope of UK-EU summit package ahead of Friday talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNS3ZOdzNIbWRkR0hUV3dGN3lTdEd2b2d6dTRxWnItMk9MUWdpM1hQUmxYZXBhZ19tLWc4MlA4aC1HaVlxeTBwV2ZiczZ2SmYxVTIyVG1rRDNKb0N3V2IzRVQwMExNQkZUSHFmcFI4RHhlaFJnUi1fZ0xqTE8yUWEyNXpXV2xudGZqd2NpVy1fX25QQm5ham1STnhBWnR3MVdBVEZONEtHaGxHMnc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNS3ZOdzNIbWRkR0hUV3dGN3lTdEd2b2d6dTRxWnItMk9MUWdpM1hQUmxYZXBhZ19tLWc4MlA4aC1HaVlxeTBwV2ZiczZ2SmYxVTIyVG1rRDNKb0N3V2IzRVQwMExNQkZUSHFmcFI4RHhlaFJnUi1fZ0xqTE8yUWEyNXpXV2xudGZqd2NpVy1fX25QQm5ham1STnhBWnR3MVdBVEZONEtHaGxHMnc?oc=5\" target=\"_blank\"&gt;Britain sets out scope of UK-EU summit package ahead of Friday talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-17T19:30:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "US Democrats flip Alaska Senate seat as Mary Peltola wins race",
+          "link": "https://www.dw.com/en/us-democrats-flip-alaska-senate-seat-as-mary-peltola-wins-race/a-79976628?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The US Senate&#039;s final outstanding midterm election race has been won by Mary Peltola. She unseats Republican Dan Sullivan after winning 50.1% of the vote.",
+          "published": "2026-11-18T06:27:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "Nvidia forms national security committee after Huang affair",
+          "link": "https://www.dw.com/en/nvidia-forms-national-security-committee-after-huang-affair/a-79970447?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Nvidia has created a board-level committee for national security and export control. This follows the resignation of CEO Jensen Huang over extramarital affairs, allegedly including one with a Chinese intelligence asset.",
+          "published": "2026-11-17T14:53:00.000Z",
+          "score": 6
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 171,
+    "afterDedup": 158,
+    "feedsQueried": 19
+  }
+}

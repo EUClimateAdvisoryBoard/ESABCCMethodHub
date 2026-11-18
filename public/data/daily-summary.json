@@ -1,26 +1,20 @@
 {
-  "date": "2026-11-17",
-  "generatedAt": "2026-11-17T23:46:37.078Z",
+  "date": "2026-11-18",
+  "generatedAt": "2026-11-18T13:45:20.115Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Tuesday, 17 November 2026 — Key developments from the last 24 hours",
+  "subtitle": "Wednesday, 18 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Fossil-fuel industry accused of violating Colorado law over not disclosing drilling chemicals",
-      "summary": "&lt;p&gt;Non-profit FracTracker Alliance alleges regulators have exempted compounds used in drilling despite 2022 law&lt;/p&gt;&lt;p&gt;The fossil-fuel industry is violating Colorado law by not disclosing which chemicals it uses in drilling, a new &lt;a href=\"https://fractracker.org/2026/11/colorado-oil-gas-chemical-disclosure-2026/\"&gt;analysis&lt;/a&gt; by the FracTracker Alliance non-profit alleges, and state records show it has used illegal or dangerous compounds while fracking.&lt;/p&gt;&lt",
+      "headline": "Remarks by Commissioner Hoekstra during the Ministerial Dialogue on Implementing The Energy Transition at COP31",
+      "summary": "European Commission Speech Antalya, 18 Nov 2026 Good morning!\r\nLet me start by thanking the Netherlands, Tuvalu and Ireland for organising this and being excellent hosts and chairs of this conference.\r\nSanta Ma...",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "COP31 Bulletin Day 8: EU backs electrification goal, as more TAFF roadmaps promised",
-      "summary": "The EU endorses the 35x35 electrification goal, while the tally of countries preparing plans to exit fossil fuels grows The post COP31 Bulletin Day 8: EU backs electrification goal, as more TAFF roadmaps promised appeared first on Climate Home News.",
+      "headline": "Commission sets up new EU Sanctions Office and appoints new EU Sanctions Envoy",
+      "summary": "European Commission Press release Brussels, 18 Nov 2026 Today, the Commission has created the EU Sanctions Office to bring together the Commission's expertise on the entire sanctions lifecycle, from policy design to implementation, enforcement, and anti-circumvention, including outreach to and engagement with third countries.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Motor vehicles, AI investment lift US factory production in October - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNSllOZEt0QlYtUnpvWjNmYW5PSnNUYXVuN3NzOGtyU0RWSE5QQlFNelI5d0Rka01HYWxJNXhtTEZIWkNpT194RFdDajhIdW04NDBkTXNZYzM4VUFLZkVTQVR4X3p1UXhmeG5iaVBKbGdtSjViOVJXekJBZ1B4cVc4eDZTVmNHdmIySWRzSmQ0V2dZRjdSbGJZYzRiNzhDT2xSQkx5TVluZGdQQU11?oc=5\" target=\"_blank\"&gt;Motor vehicles, AI investment lift US factory production in October&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,6 +28,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Remarks by Commissioner Hoekstra during the Ministerial Dialogue on Implementing The Energy Transition at COP31",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2498",
+          "source": "European Commission",
+          "description": "European Commission Speech Antalya, 18 Nov 2026 Good morning!\r\nLet me start by thanking the Netherlands, Tuvalu and Ireland for organising this and being excellent hosts and chairs of this conference.\r\nSanta Ma...",
+          "published": "2026-11-18T11:23:28.000Z",
+          "score": 23
+        },
+        {
           "title": "Fossil-fuel industry accused of violating Colorado law over not disclosing drilling chemicals",
           "link": "https://www.theguardian.com/environment/2026/nov/17/fossil-fuel-industry-colorado",
           "source": "The Guardian - Climate",
@@ -42,23 +44,7 @@
           "score": 11
         },
         {
-          "title": "Minerals for the planet or for war and AI? COP31 must make clear what we prioritise",
-          "link": "https://www.climatechangenews.com/2026/11/17/minerals-for-the-planet-or-for-war-and-ai-cop31-must-make-clear-what-we-prioritise/",
-          "source": "Climate Home News",
-          "description": "As demand for minerals soars, intensifying pressure for new mining, meeting demand for the energy transition must come first The post Minerals for the planet or for war and AI? COP31 must make clear what we prioritise appeared first on Climate Home News.",
-          "published": "2026-11-17T04:00:00.000Z",
-          "score": 10
-        },
-        {
-          "title": "Where do people want to see Britain’s climate action plan working? On their own doorstep | Miatta Fahnbulleh",
-          "link": "https://www.theguardian.com/commentisfree/2026/nov/17/britain-climate-action-plan-working-cop31-voters-jobs-home-prices",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;I am at Cop31 – concerned about the crisis around the world, but mindful that voters want jobs, warmer homes and cheaper prices&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Miatta Fahnbulleh is the UK secretary of state for energy security and net zero&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;In this cold weather, it is easy to forget that Britain has just been through its hottest summer on record, part of our new reality as the climate crisis reaches our doorstep. For millions around the world",
-          "published": "2026-11-17T13:32:44.000Z",
-          "score": 7
-        },
-        {
-          "title": "Pakistan's solar revolution seems unstoppable - but there's a problem",
+          "title": "Pakistan's solar revolution is so successful the national grid is lagging behind",
           "link": "https://www.bbc.co.uk/news/articles/ckvg2n2q3103o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "People installing their own solar panels has helped boost the solar share of Pakistan's electricity from 1% to 28%.",
@@ -66,12 +52,20 @@
           "score": 7
         },
         {
-          "title": "These US coal plants on the Ohio River shut down years ago. Now, residents say their waste is destroying lives",
-          "link": "https://www.theguardian.com/us-news/2026/nov/17/coal-plants-ohio-river-landfill",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Landfill owner’s data show lithium above groundwater standards near the drinking water source for millions&lt;/p&gt;&lt;p&gt;Down winding roads and past quiet homesteads, all that can be heard in the otherwise bucolic air of rural Clermont county, &lt;a href=\"https://www.theguardian.com/us-news/ohio\"&gt;Ohio&lt;/a&gt;, is the roar of dump trucks.&lt;/p&gt;&lt;p&gt;The speeding vehicles are headed for a massive, 1,400-acre&lt;a href=\"https://www.aboutzimmer.com/\"&gt; landfill&lt;/a&gt; f",
-          "published": "2026-11-17T13:00:48.000Z",
-          "score": 2
+          "title": "Millions of red crabs start annual migration on Christmas Island",
+          "link": "https://www.bbc.co.uk/news/videos/cq62p73jjl90o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The crabs were seen migrating from forests to the sea to breed on the coast of the Australian territory.",
+          "published": "2026-11-17T23:05:39.000Z",
+          "score": 7
+        },
+        {
+          "title": "QatarEnergy's LNG expansion may leave it bigger but not less exposed - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNaDhzZEk3LWh5X255cUFCZWFpNExoVzBXQk1idWhGakprTjQtQ0xMbkhPZjluaThIeFF5NjVVYWcxNzExaVNpdHNLX1oxRlM5ejhYaU8xS0FYbW00LVZxdDI2M2JXRktNRmRjcEx0TjhwQy1DV0lYWHhzZ29FR1RoejJxeEVSZXNGdDVNU0F6REFKcnk2M3BOOU4zdnhkWUFEZ3BFdUJEM2ZPMk00NjFjNURWSTRydw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNaDhzZEk3LWh5X255cUFCZWFpNExoVzBXQk1idWhGakprTjQtQ0xMbkhPZjluaThIeFF5NjVVYWcxNzExaVNpdHNLX1oxRlM5ejhYaU8xS0FYbW00LVZxdDI2M2JXRktNRmRjcEx0TjhwQy1DV0lYWHhzZ29FR1RoejJxeEVSZXNGdDVNU0F6REFKcnk2M3BOOU4zdnhkWUFEZ3BFdUJEM2ZPMk00NjFjNURWSTRydw?oc=5\" target=\"_blank\"&gt;QatarEnergy's LNG expansion may leave it bigger but not less exposed&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-18T06:06:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -80,68 +74,51 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "COP31 Bulletin Day 8: EU backs electrification goal, as more TAFF roadmaps promised",
-          "link": "https://www.climatechangenews.com/2026/11/17/cop31-bulletin-day-8-arab-group-russia-reject-cover-text-over-fossil-fuels-and-electrification-goal/",
-          "source": "Climate Home News",
-          "description": "The EU endorses the 35x35 electrification goal, while the tally of countries preparing plans to exit fossil fuels grows The post COP31 Bulletin Day 8: EU backs electrification goal, as more TAFF roadmaps promised appeared first on Climate Home News.",
-          "published": "2026-11-17T09:29:23.000Z",
-          "score": 16
+          "title": "Commission sets up new EU Sanctions Office and appoints new EU Sanctions Envoy",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2499",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 18 Nov 2026 Today, the Commission has created the EU Sanctions Office to bring together the Commission's expertise on the entire sanctions lifecycle, from policy design to implementation, enforcement, and anti-circumvention, including outreach to and engagement with third countries.",
+          "published": "2026-11-18T11:36:36.000Z",
+          "score": 18
         },
         {
-          "title": "Rich countries must step up to replenish Green Climate Fund, Duarte says",
-          "link": "https://www.climatechangenews.com/2026/11/17/rich-countries-must-step-up-to-replenish-green-climate-fund-duarte-says/",
-          "source": "Climate Home News",
-          "description": "GCF Executive Director Mafalda Duarte tells Climate Home News efforts to leverage the fund's balance sheet more effectively and find new contributors do not mean letting wealthy donor nations off the hook The post Rich countries must step up to replenish Green Climate Fund, Duarte says appeared first on Climate Home News.",
-          "published": "2026-11-17T13:33:41.000Z",
-          "score": 13
+          "title": "Daily News 18 / 11 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_2497",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 18 Nov 2026 Commission sets up new EU Sanctions Office and appoints new EU Sanctions Envoy \r\nToday, the European Commission has created the EU Sanctions Office to bring toge...",
+          "published": "2026-11-18T10:29:20.000Z",
+          "score": 14
         },
         {
-          "title": "Revealed: Russia, Saudi Arabia and Australia are largest CO2 exporters of all time",
-          "link": "https://www.carbonbrief.org/revealed-russia-saudi-arabia-and-australia-are-largest-co2-exporters-of-all-time",
-          "source": "Carbon Brief",
-          "description": "Russia, Saudi Arabia and COP31 co-president Australia are the largest exporters of carbon dioxide (CO2) emissions in history, reveals Carbon&#8230; The post Revealed: Russia, Saudi Arabia and Australia are largest CO2 exporters of all time appeared first on Carbon Brief.",
-          "published": "2026-11-17T05:00:00.000Z",
+          "title": "UK will miss climate targets if it weakens EV sales rules, advisers warn",
+          "link": "https://www.theguardian.com/environment/2026/nov/18/uk-will-miss-climate-targets-if-weakens-rules-on-ev-sales-zev-ccc",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Analysts say mooted move to let more petrol and diesel vehicles be sold would wreck plan to reach net zero by 2050&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Weakening the UK’s electric car sales rules would probably cause the government to miss legally binding climate targets, according to advisers tracking Britain’s progress to net zero.&lt;/p&gt;&lt;p&gt;The analysis by the &lt;a href=\"https://www.theguardian.com/environment/committee-on-climate-change\"&gt;Climate Change Committee (CCC)&lt",
+          "published": "2026-11-18T00:01:26.000Z",
+          "score": 11
+        },
+        {
+          "title": "COP31 Bulletin Day 9: Crunch ministerial talks planned for Wednesday evening",
+          "link": "https://www.climatechangenews.com/2026/11/18/cop31-bulletin-day-9-crunch-ministerial-talks-planned-for-wednesday-evening/",
+          "source": "Climate Home News",
+          "description": "With a draft cover text still untrimmed, the presidency is holding a “Divan\" meeting to make progress towards a \"balanced package\" The post COP31 Bulletin Day 9: Crunch ministerial talks planned for Wednesday evening appeared first on Climate Home News.",
+          "published": "2026-11-18T09:10:54.000Z",
           "score": 10
         },
         {
-          "title": "Building coastal resilience for local communities in Honduras",
-          "link": "https://www.climatechangenews.com/2026/11/17/building-coastal-resilience-for-local-communities-in-honduras/",
-          "source": "Climate Home News",
-          "description": "Climate adaptation projects that focus on ocean and coastal management could provide useful case studies for negotiators at COP31 The post Building coastal resilience for local communities in Honduras appeared first on Climate Home News.",
-          "published": "2026-11-17T11:02:29.000Z",
-          "score": 10
-        },
-        {
-          "title": "COP31 can&#8217;t deliver for islands without delivering for the ocean",
-          "link": "https://www.climatechangenews.com/2026/11/17/cop31-cant-deliver-for-islands-without-delivering-for-the-ocean/",
-          "source": "Climate Home News",
-          "description": "Recognition of the ocean's importance must go beyond speeches and start shaping national climate commitments and the allocation of international finance The post COP31 can&#8217;t deliver for islands without delivering for the ocean appeared first on Climate Home News.",
-          "published": "2026-11-17T09:24:16.000Z",
-          "score": 10
+          "title": "Republicans could expedite bill to make big oil immune to lawsuits, warn experts",
+          "link": "https://www.theguardian.com/us-news/2026/nov/18/big-oil-immunity-bill-climate",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;GOP lawmakers are rushing through high-priority bills before newly elected Democrats are sworn in&lt;/p&gt;&lt;p&gt;Climate groups fear lawmakers could pass a bill by the end of the year that would give fossil fuel companies immunity from lawsuits and legislation that aims to hold them accountable for the climate crisis.&lt;/p&gt;&lt;p&gt;After the blue wave election, Republican lawmakers are rushing to pass high-priority bills before newly elected Democrats are sworn in. Hundreds of el",
+          "published": "2026-11-18T13:00:04.000Z",
+          "score": 8
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Motor vehicles, AI investment lift US factory production in October - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSllOZEt0QlYtUnpvWjNmYW5PSnNUYXVuN3NzOGtyU0RWSE5QQlFNelI5d0Rka01HYWxJNXhtTEZIWkNpT194RFdDajhIdW04NDBkTXNZYzM4VUFLZkVTQVR4X3p1UXhmeG5iaVBKbGdtSjViOVJXekJBZ1B4cVc4eDZTVmNHdmIySWRzSmQ0V2dZRjdSbGJZYzRiNzhDT2xSQkx5TVluZGdQQU11?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNSllOZEt0QlYtUnpvWjNmYW5PSnNUYXVuN3NzOGtyU0RWSE5QQlFNelI5d0Rka01HYWxJNXhtTEZIWkNpT194RFdDajhIdW04NDBkTXNZYzM4VUFLZkVTQVR4X3p1UXhmeG5iaVBKbGdtSjViOVJXekJBZ1B4cVc4eDZTVmNHdmIySWRzSmQ0V2dZRjdSbGJZYzRiNzhDT2xSQkx5TVluZGdQQU11?oc=5\" target=\"_blank\"&gt;Motor vehicles, AI investment lift US factory production in October&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-17T15:35:45.000Z",
-          "score": 2
-        },
-        {
-          "title": "Baidu CEO says AI investment must deliver profits to avoid bubble - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOS0wwd1hrZzVDQzBrY1U3RmtldGU1VnZ4SFItdTc4V3dNZFZud2V3RURfZ2M3MlczakxBX2Rxd3FhdUt0X1BjMmoxX0pacDJTOFpFR2lxby1lS2dKSWI0NXV1VnlCVWJPM2ZEdWR0RjNrbldGUzNJNTFoRUJCN1VYQlNWMHg4T0N2QVN4YUliMXp0Q1lRQzZ3RXJtclEwdk5MejEzdk5QT1FUbE01WEZ6eXpMYkJacUwtWlhXYzRB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOS0wwd1hrZzVDQzBrY1U3RmtldGU1VnZ4SFItdTc4V3dNZFZud2V3RURfZ2M3MlczakxBX2Rxd3FhdUt0X1BjMmoxX0pacDJTOFpFR2lxby1lS2dKSWI0NXV1VnlCVWJPM2ZEdWR0RjNrbldGUzNJNTFoRUJCN1VYQlNWMHg4T0N2QVN4YUliMXp0Q1lRQzZ3RXJtclEwdk5MejEzdk5QT1FUbE01WEZ6eXpMYkJacUwtWlhXYzRB?oc=5\" target=\"_blank\"&gt;Baidu CEO says AI investment must deliver profits to avoid bubble&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-17T07:18:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -156,19 +133,11 @@
           "score": 8
         },
         {
-          "title": "Could the Airbus&#039; €3 billion loan row reignite a US-EU trade dispute?",
-          "link": "https://www.dw.com/en/could-the-airbus-€3-billion-loan-row-reignite-a-us-eu-trade-dispute/a-79943075?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The US says a record €3 billion financing package for Airbus may conflict with a transatlantic aircraft-subsidy truce. EU officials insist the funding complies with market-based rules.",
-          "published": "2026-11-17T11:00:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Zelenskiy says Ukraine held new talks with US, European officials on peace prospects - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQR2U4T3ZBY2hQRnZGS2NTMFVZM3FwRVFJSUtIUjNWSG5URWlXNUNac3ZoQ0pla3BIRFNOTF94Mm5NNmZUekEzQjV2dUhtSWNtZ3gwcURrRWxQLXJIejBjXzNvTmNuZUVwVFY3YjdDLVZkSlctbnFxVy1HVDJneW43QVpVb29hdXZVSGVON29aRTRpS2JabDh4bS1MMEh4bUcwaW5NYWhYX3NTVEE1bHY3N09yMXEzaTFuWHliSW1BZnZFU0k4?oc=5",
+          "title": "EU proposes €45 billion Ukraine loan, to be repaid after Russia pays reparations - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOaFhjUFo4SHBqb20yY1dQWmZZNlZhV2VvZjRQLTFoQjlYeFItaHNXX0FZVmhuazRYODFqcEk5RThWZUNpX2lPOFJrZ0M5U0hEODBZZFNndnE3U18xNWRtVGhlYmRXU3V1My16RTUybkdaSXRvc3NIOWpNdllIWG1GMjE4Z2N1bm1naUZjNXF6bVBPSF9lalVpeHdNN1FQeWRtZDBfaTh3ZXBaQQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQR2U4T3ZBY2hQRnZGS2NTMFVZM3FwRVFJSUtIUjNWSG5URWlXNUNac3ZoQ0pla3BIRFNOTF94Mm5NNmZUekEzQjV2dUhtSWNtZ3gwcURrRWxQLXJIejBjXzNvTmNuZUVwVFY3YjdDLVZkSlctbnFxVy1HVDJneW43QVpVb29hdXZVSGVON29aRTRpS2JabDh4bS1MMEh4bUcwaW5NYWhYX3NTVEE1bHY3N09yMXEzaTFuWHliSW1BZnZFU0k4?oc=5\" target=\"_blank\"&gt;Zelenskiy says Ukraine held new talks with US, European officials on peace prospects&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-11-16T23:49:25.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOaFhjUFo4SHBqb20yY1dQWmZZNlZhV2VvZjRQLTFoQjlYeFItaHNXX0FZVmhuazRYODFqcEk5RThWZUNpX2lPOFJrZ0M5U0hEODBZZFNndnE3U18xNWRtVGhlYmRXU3V1My16RTUybkdaSXRvc3NIOWpNdllIWG1GMjE4Z2N1bm1naUZjNXF6bVBPSF9lalVpeHdNN1FQeWRtZDBfaTh3ZXBaQQ?oc=5\" target=\"_blank\"&gt;EU proposes €45 billion Ukraine loan, to be repaid after Russia pays reparations&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-18T11:36:16.000Z",
           "score": 8
         },
         {
@@ -178,14 +147,6 @@
           "description": "The Kremlin is reportedly calling on NATO to withdraw from large parts of Eastern Europe. What this would mean for the security of millions of Europeans — and what lies behind Russia&#039;s plan.",
           "published": "2026-11-17T16:20:00.000Z",
           "score": 4
-        },
-        {
-          "title": "Germany news: Plans for Rwanda migrant hub come under fire",
-          "link": "https://www.dw.com/en/germany-news-plans-for-rwanda-migrant-hub-come-under-fire/live-79965639?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Human rights groups have slammed plans by Germany and four other EU states to send rejected asylum seekers to Rwanda. In other news, business start-ups in Germany are on track to reach the highest level since 2015.",
-          "published": "2026-11-17T10:15:00.000Z",
-          "score": 4
         }
       ]
     },
@@ -194,35 +155,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Students&#039; List candidates take seats as Serbian parliament opens",
-          "link": "https://www.dw.com/en/students-list-candidates-take-seats-as-serbian-parliament-opens/a-79969166?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Serbia&#039;s Student List&#039;s candidates have taken their oaths in the inaugural parliament session. As the new majority, they have 90 days to form a government.",
-          "published": "2026-11-17T12:09:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "'Death is near': Inside the hoax bomb threats that rattled Europe's schools and airports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVlo2VTVwTGRISXFPQ2lld2FvUVJxMktBMXFsX2Zrb2FpV3RnZVlEa3JJazJra0xZcEM0VzNNdE9xSkpKV3dLS2VtY1RvMFBoajhYRFBhWUQ2Nk1MeDg1Y3duNGZBUm8tbjdCVHc3elpyMXFTQW83U1Q4WlJIQmE3MnkwVDl4LVdfLUZ2dnhMU0hWU1I4Q3F0TFB3QndMNUVjZG9TSUpXOUxrR1JrYlBzRmx3MFh3OGVXYklxdjNESzZHaXc?oc=5",
+          "title": "Israeli parliament elects speaker backed by Netanyahu opponents - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZ0FvY0VGYXV2RkxSOFMxOENQVF85Mkt5SjZUUXFQS0VuZGpBZjBRbmxnNkVMNWVuRXFOa3lpY09XaE9HNk00UjYtVXJURmtTZGpyaEhEajVoUjh6bGZYbFRzd2NTQUVNd2ExdGFBbkdyXzhnOFZoWjNuRGtuTWpLMmU0U0FrdE40aEtTRnZtZTY5WWRJbFV2UUZXMzI3ZTZSVzFKNDZhYkpYc2hmd3Y2Yg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVlo2VTVwTGRISXFPQ2lld2FvUVJxMktBMXFsX2Zrb2FpV3RnZVlEa3JJazJra0xZcEM0VzNNdE9xSkpKV3dLS2VtY1RvMFBoajhYRFBhWUQ2Nk1MeDg1Y3duNGZBUm8tbjdCVHc3elpyMXFTQW83U1Q4WlJIQmE3MnkwVDl4LVdfLUZ2dnhMU0hWU1I4Q3F0TFB3QndMNUVjZG9TSUpXOUxrR1JrYlBzRmx3MFh3OGVXYklxdjNESzZHaXc?oc=5\" target=\"_blank\"&gt;'Death is near': Inside the hoax bomb threats that rattled Europe's schools and airports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
-          "published": "2026-11-17T16:05:58.000Z",
-          "score": 8
-        },
-        {
-          "title": "Euro zone economy seen growing moderately, France outlook weakest -Commission - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNc2k3bXJscXRZNnlPa3VxNTREb3djN2dXWVhFS1hwQ1ZFUkU0OF9KWnlLdFRPNHF1VEpVRGd2cmhJTGFDTnd4QTN4R0pmWmRtTkV2S1JuUTlBUTNCMzZxVDk0cEJWMzE5TjBVaVJwaFpJdzZ3TmRuWUNxeHpwSTJvbTZ4d0hQY284dmk0QWtLM0ZaQ0x0aHRZV1NxbHdaTzAxSTV3QmdsaExSTlJwb002RmZEYU93Qlk2?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNc2k3bXJscXRZNnlPa3VxNTREb3djN2dXWVhFS1hwQ1ZFUkU0OF9KWnlLdFRPNHF1VEpVRGd2cmhJTGFDTnd4QTN4R0pmWmRtTkV2S1JuUTlBUTNCMzZxVDk0cEJWMzE5TjBVaVJwaFpJdzZ3TmRuWUNxeHpwSTJvbTZ4d0hQY284dmk0QWtLM0ZaQ0x0aHRZV1NxbHdaTzAxSTV3QmdsaExSTlJwb002RmZEYU93Qlk2?oc=5\" target=\"_blank\"&gt;Euro zone economy seen growing moderately, France outlook weakest -Commission&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-17T10:08:37.000Z",
-          "score": 8
-        },
-        {
-          "title": "Serbia's Student List deputies take seats in parliament after landmark election win - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNakF3T2Fha3NKVlNiWlduV29vaV9feVBlMEZqclBQaTQyNEstb1BUaFNxSnFZRXdyeDlJNWJCNDJaeFJ2c3ExUUhROVBtcDFhZVdHLU1sd1FBeEtLd1hXTXk2Z29JcFpPVERQVkhaT2c5Qnh0R194QkNDUG15QTZOZ2dmOXZzMEU4OG80UExKVWtWR2pyc242dS1ZaENBeUZXN3BVdEdEcWc3WW44VFNWVnlFZVE1Nl9uZldZck93?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNakF3T2Fha3NKVlNiWlduV29vaV9feVBlMEZqclBQaTQyNEstb1BUaFNxSnFZRXdyeDlJNWJCNDJaeFJ2c3ExUUhROVBtcDFhZVdHLU1sd1FBeEtLd1hXTXk2Z29JcFpPVERQVkhaT2c5Qnh0R194QkNDUG15QTZOZ2dmOXZzMEU4OG80UExKVWtWR2pyc242dS1ZaENBeUZXN3BVdEdEcWc3WW44VFNWVnlFZVE1Nl9uZldZck93?oc=5\" target=\"_blank\"&gt;Serbia's Student List deputies take seats in parliament after landmark election win&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-17T12:43:44.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPZ0FvY0VGYXV2RkxSOFMxOENQVF85Mkt5SjZUUXFQS0VuZGpBZjBRbmxnNkVMNWVuRXFOa3lpY09XaE9HNk00UjYtVXJURmtTZGpyaEhEajVoUjh6bGZYbFRzd2NTQUVNd2ExdGFBbkdyXzhnOFZoWjNuRGtuTWpLMmU0U0FrdE40aEtTRnZtZTY5WWRJbFV2UUZXMzI3ZTZSVzFKNDZhYkpYc2hmd3Y2Yg?oc=5\" target=\"_blank\"&gt;Israeli parliament elects speaker backed by Netanyahu opponents&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-17T22:14:00.000Z",
           "score": 8
         },
         {
@@ -232,14 +169,38 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxPWVNyb1A1UnZwcGRXakZTUFBIS2JCRk9oR09kZHBaUDc2QmZOY2dzUmFXZWV5emctQkM2a05UNEkyelozeVpFSE5uU3pFVk1mNjB6LUFLdkowdEtSaGJVS1Y3ZGZSSkZsUFNCUXRmZ3FSWXpOQktwLURjWG1nR0VWZzIzcmZtS1h5UmNBQmZHNkdCSl9XVWRGT1Nn?oc=5\" target=\"_blank\"&gt;Explainer: Five EU countries' plan for a deportation hub in Rwanda&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-11-17T15:14:36.000Z",
           "score": 8
+        },
+        {
+          "title": "Britain sets out scope of UK-EU summit package ahead of Friday talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNS3ZOdzNIbWRkR0hUV3dGN3lTdEd2b2d6dTRxWnItMk9MUWdpM1hQUmxYZXBhZ19tLWc4MlA4aC1HaVlxeTBwV2ZiczZ2SmYxVTIyVG1rRDNKb0N3V2IzRVQwMExNQkZUSHFmcFI4RHhlaFJnUi1fZ0xqTE8yUWEyNXpXV2xudGZqd2NpVy1fX25QQm5ham1STnhBWnR3MVdBVEZONEtHaGxHMnc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNS3ZOdzNIbWRkR0hUV3dGN3lTdEd2b2d6dTRxWnItMk9MUWdpM1hQUmxYZXBhZ19tLWc4MlA4aC1HaVlxeTBwV2ZiczZ2SmYxVTIyVG1rRDNKb0N3V2IzRVQwMExNQkZUSHFmcFI4RHhlaFJnUi1fZ0xqTE8yUWEyNXpXV2xudGZqd2NpVy1fX25QQm5ham1STnhBWnR3MVdBVEZONEtHaGxHMnc?oc=5\" target=\"_blank\"&gt;Britain sets out scope of UK-EU summit package ahead of Friday talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-17T19:30:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "US Democrats flip Alaska Senate seat as Mary Peltola wins race",
+          "link": "https://www.dw.com/en/us-democrats-flip-alaska-senate-seat-as-mary-peltola-wins-race/a-79976628?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The US Senate&#039;s final outstanding midterm election race has been won by Mary Peltola. She unseats Republican Dan Sullivan after winning 50.1% of the vote.",
+          "published": "2026-11-18T06:27:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "Nvidia forms national security committee after Huang affair",
+          "link": "https://www.dw.com/en/nvidia-forms-national-security-committee-after-huang-affair/a-79970447?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Nvidia has created a board-level committee for national security and export control. This follows the resignation of CEO Jensen Huang over extramarital affairs, allegedly including one with a Chinese intelligence asset.",
+          "published": "2026-11-17T14:53:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 174,
-    "afterDedup": 164,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 171,
+    "afterDedup": 158,
     "feedsQueried": 19
   }
 }
