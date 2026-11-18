@@ -28,6 +28,7 @@ import IndicatorModule from './IndicatorModule';
 import RecommendationsModule from './RecommendationsModule';
 import MemberStatesModule from './MemberStatesModule';
 import ContentAnalysisModule from './ContentAnalysisModule';
+import ScenarioDatabaseModule from './ScenarioDatabaseModule';
 import LiteratureWatchModule from './LiteratureWatchModule';
 import CustomNotesModule from './CustomNotesModule';
 import ReportPageModule from './ReportPageModule';
@@ -258,6 +259,7 @@ export default function ProjectShell({
               initialPhases={phases}
             />
           )}
+          {current.kind === 'scenario-database' && <ScenarioDatabaseModule />}
           {current.kind === 'report-page' && (
             <ReportPageModule
               moduleId={current.id}

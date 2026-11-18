@@ -37,6 +37,11 @@ export type WorkspaceModuleKind =
   // merges them into every project, so they do not depend on a migration
   // having run (see `withReportPageModules` in lib/project-workspace/db.ts).
   | 'report-page'
+  // The industry scenario database (screening against the ESABCC criteria).
+  // Like `report-page`, it is defined in code and merged in on read, never
+  // stored in `pw_modules` (see CODE_DEFINED_KINDS in
+  // lib/project-workspace/db.ts), so it needs no migration.
+  | 'scenario-database'
   | 'custom';
 
 export interface WorkspaceModule {
@@ -218,6 +223,19 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'New peer-reviewed publications on industrial decarbonisation — ' +
           'steel, cement, hydrogen, CBAM, CCS/CCU — screened every morning ' +
           'from the relevant journals and matched to this project.',
+      },
+      {
+        id: 'scenario-database',
+        kind: 'scenario-database',
+        name: 'Scenario database',
+        featured: true,
+        beta: true,
+        description:
+          'The 1,008 EU industry emission pathways from ten scenario pools, the ' +
+          '289-run REMIND-EU ensemble and the EEA screening against the ESABCC ' +
+          'criteria (net zero 2050, 85–95 % by 2040, feasibility filter, risk ' +
+          'levels) — filterable, with live risk-level sensitivity and the ' +
+          'workbook to download. AI-compiled — pending Secretariat verification.',
       },
       // ── The Industry Report’s own pages ─────────────────────────────────
       // The five sub-pages of the Industry Report (formerly M · 34 Overview

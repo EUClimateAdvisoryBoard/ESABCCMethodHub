@@ -49,6 +49,7 @@ Nine kinds are defined:
 | `custom`            | A free-form Markdown scratchpad for anything that doesn't fit the above.     | `CustomNotesModule`                 |
 | `literature-watch`  | The morning journal screening, matched to the project.                      | `LiteratureWatchModule`             |
 | `report-page`       | A pointer to one page of the project's report — never stored, merged in on read. | `ReportPageModule`             |
+| `scenario-database` | Industry Project only: the 1,008 EU industry pathways and the REMIND-EU ensemble screened against the ESABCC criteria — never stored, merged in on read. | `ScenarioDatabaseModule`       |
 
 Two projects ship seeded by the migration:
 
@@ -60,7 +61,28 @@ Two projects ship seeded by the migration:
   holds the stored positions.
 - **Industry Project** (`industry-project`) — an industry-tagged
   `content-analysis` corpus and its literature watch (plus a second module
-  added in migration 044), then the five Industry Report pages.
+  added in migration 044), the scenario database, then the five Industry
+  Report pages.
+
+**Scenario database (Industry Project).** The tab carries the EEA workbook
+behind the deck *EU industry emission pathways in scenario databases:
+screening against the ESABCC criteria* (18 November 2026):
+[`public/data/industry-scenario-screening/Scenario_database.xlsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/public/data/industry-scenario-screening/Scenario_database.xlsx).
+[`scripts/build-industry-scenario-screening.py`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/build-industry-scenario-screening.py)
+turns it into
+[`src/data/industry-scenario-screening.generated.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/data/industry-scenario-screening.generated.ts)
+and refuses to write if its recomputation of the Pools and Sensitivity sheets
+differs from the workbook's cached counts. The screening rules (net zero 2050 →
+85–95 % by 2040 → ESABCC filter → risk levels) live in
+[`src/lib/industry-scenario-screening/model.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/industry-scenario-screening/model.ts).
+The view, in
+[`src/components/industry-scenario-screening/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/src/components/industry-scenario-screening),
+has five task views: screen pathways (pool, period, CMIP7, search and stage
+filters, chart, table, CSV), test risk levels (live sliders plus presets
+A–D), explore REMIND-EU (factor filters, ranges), compare assumptions, and
+read the reference sheets. All of them keep their state in the URL (`sd_*`
+parameters). The tab is AI-compiled and pending Secretariat verification, and
+the workbook marks Scenario Compass data as internal use only.
 
 Anything users create lives in the same tables alongside the seeds.
 
