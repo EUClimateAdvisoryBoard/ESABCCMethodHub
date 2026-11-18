@@ -93,6 +93,15 @@ const ReportPageIcon = ({ className }: { className?: string }) => (
   </IconBase>
 );
 
+const ScenarioDatabaseIcon = ({ className }: { className?: string }) => (
+  <IconBase className={className}>
+    <ellipse cx="12" cy="5" rx="8" ry="2.5" />
+    <path d="M4 5v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5V5" />
+    <path d="M4 11v6c0 1.4 3.6 2.5 8 2.5" />
+    <path d="M15 16l2 2 4-4" />
+  </IconBase>
+);
+
 const NotesIcon = ({ className }: { className?: string }) => (
   <IconBase className={className}>
     <path d="M12 20h9" />
@@ -165,6 +174,13 @@ export const MODULE_META: Record<WorkspaceModuleKind, ModuleMeta> = {
     accent: '#B83230',
     accentBg: '#FBEFEF',
     Icon: ReportPageIcon,
+  },
+  'scenario-database': {
+    label: 'Scenario database',
+    blurb: 'Filter the EU industry emission pathways in the scenario databases and screen them against the ESABCC criteria.',
+    accent: '#608C95',
+    accentBg: '#EEF3F4',
+    Icon: ScenarioDatabaseIcon,
   },
   custom: {
     label: 'Notes',

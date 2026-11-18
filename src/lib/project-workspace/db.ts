@@ -117,6 +117,14 @@ export async function reseedFor(projectId: string): Promise<void> {
 type Supa = NonNullable<ReturnType<typeof getServerSupabase>>;
 
 /**
+ * Module kinds defined entirely in code (SEED_PROJECTS) and merged into a
+ * project on read, never written to `pw_modules`: report pages, and the
+ * Industry Project's scenario database, whose data ship with the app. Keeping
+ * them out of the table means no migration widening `pw_modules_kind_check`.
+ */
+const CODE_DEFINED_KINDS = new Set<WorkspaceModuleKind>(['report-page', 'scenario-database']);
+
+/**
  * Idempotently insert a seed project's modules. Mirrors the migration so the
  * lazy on-render path makes a project's tabs appear even before the SQL seed
  * has run (the Industry Project's four modules ship this way).
@@ -131,8 +139,8 @@ async function ensureSeedModules(sb: Supa, projectId: string) {
   const have = new Set((existing ?? []).map(r => r.id));
   const toInsert = project.modules
     .map((m, position) => ({ m, position }))
-    // `report-page` modules are never stored — see reportPageModules() below.
-    .filter(({ m }) => m.kind !== 'report-page')
+    // Code-defined modules are never stored — see withReportPageModules() below.
+    .filter(({ m }) => !CODE_DEFINED_KINDS.has(m.kind))
     .filter(({ m }) => !have.has(m.id));
   if (toInsert.length === 0) return;
   const { error } = await sb.from('pw_modules').insert(
@@ -616,7 +624,7 @@ async function ensureCleanTechReadingSeed(): Promise<void> {
 function withReportPageModules(projectId: string, stored: WorkspaceModule[]): WorkspaceModule[] {
   const seeded = SEED_PROJECTS.find(p => p.id === projectId)?.modules ?? [];
   const have = new Set(stored.map(m => m.id));
-  const missing = seeded.filter(m => m.kind === 'report-page' && !have.has(m.id));
+  const missing = seeded.filter(m => CODE_DEFINED_KINDS.has(m.kind) && !have.has(m.id));
   if (missing.length === 0) return stored;
 
   const merged = stored.slice();
