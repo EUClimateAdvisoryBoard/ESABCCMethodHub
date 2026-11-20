@@ -1,26 +1,20 @@
 {
-  "date": "2026-11-19",
-  "generatedAt": "2026-11-19T23:29:27.606Z",
+  "date": "2026-11-20",
+  "generatedAt": "2026-11-20T13:55:16.165Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Thursday, 19 November 2026 — Key developments from the last 24 hours",
+  "subtitle": "Friday, 20 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Remarks by Commissioner Hoekstra at press conference \"Powering the Transition: New Alliances to Replace the World's Most Potent Greenhouse Gas SF6” at COP31",
-      "summary": "European Commission Speech Antalya, 19 Nov 2026 Ladies and gentlemen,\r\nGood morning to all of you.\r\nI am privileged to be here with you on the kind invitation of Minister Schneider.\r\nDear Carsten, really great t...",
+      "headline": "No mention of fossil fuels in latest COP31 draft deal",
+      "summary": "One of the most fraught debates at the UN climate talks in Turkey has revolved around the future of coal, oil and gas. Now, all mention of fossil fuels has been removed from the summit&#039;s new draft agreement.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "COP31 Bulletin Day 10: New draft keeps electrification goal but drops fossil fuel references",
-      "summary": "The second draft of the COP31 cover decision leaves out a key ask from many developing countries to put a number on tripling finance for adaptation The post COP31 Bulletin Day 10: New draft keeps electrification goal but drops fossil fuel references appeared first on Climate Home News.",
+      "headline": "COP31 Bulletin Day 11: Countries decry cover text for omitting fossil fuels",
+      "summary": "Small island states and a group of Global North and South nations say the draft decision is too weak on issues ranging from the transition away from fossil fuels to finance provision The post COP31 Bulletin Day 11: Countries decry cover text for omitting fossil fuels appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Schneider Electric warns high power costs could push AI investment out of Europe - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMV8wcTVyeEdDUFZNSW9xSGJtdnlPNW9WUjRZdVVsc1haRkxWZ3lwcnY5Zmx3dk0xZXRySnV0ZlFqLVlyT1BYVjZZYTRlRHRQZF9oRTVscE5UVXBMeml6WW03TmdHNXhrOTh2QzNqR09YeWtZSGtYY3ltLWh1N2tkeENMMVRuRzhkSF9WSTBONnFyN1VGRzJyVE1vUWZDOE1ySnRKbzl2Y2JiSXg0Q015TGZLRTBEWlpCRmJLX2NZZGhMV2Z3UGlYRQ?oc=5\" target=\"_blank\"&gt;Schneider Electric warns high power costs could push AI investment out of Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,27 +28,35 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Remarks by Commissioner Hoekstra at press conference \"Powering the Transition: New Alliances to Replace the World's Most Potent Greenhouse Gas SF6” at COP31",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2514",
-          "source": "European Commission",
-          "description": "European Commission Speech Antalya, 19 Nov 2026 Ladies and gentlemen,\r\nGood morning to all of you.\r\nI am privileged to be here with you on the kind invitation of Minister Schneider.\r\nDear Carsten, really great t...",
-          "published": "2026-11-19T08:49:35.000Z",
-          "score": 23
-        },
-        {
-          "title": "Datacentres to create 70% more carbon emissions by 2030, IEA report warns",
-          "link": "https://www.theguardian.com/world/2026/nov/19/datacentres-to-create-70-more-carbon-emissions-by-2030-iea-report-warns",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Global energy watchdog forecasts huge rise as US and China turn to fossil fuels to power AI growth agendas &lt;/p&gt;&lt;p&gt;The world’s datacentres will create 70% more carbon emissions within the next four years as the US and China turn to fossil fuels to power their AI growth agendas, according to the world’s energy watchdog.&lt;/p&gt;&lt;p&gt;The International Energy Agency (IEA) warned that datacentres will consume twice as much electricity by 2030 compared with today, with the gl",
-          "published": "2026-11-19T05:00:18.000Z",
-          "score": 7
-        },
-        {
           "title": "No mention of fossil fuels in latest COP31 draft deal",
           "link": "https://www.dw.com/en/no-mention-of-fossil-fuels-in-latest-cop31-draft-deal/a-79992394?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "One of the most fraught debates at the UN climate talks in Turkey has revolved around the future of coal, oil and gas. Now, all mention of fossil fuels has been removed from the summit&#039;s new draft agreement.",
           "published": "2026-11-19T16:03:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Tashima says Balogun red-card row at World Cup pushed him to run for FIFA presidency - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMkV2QkQtU1E3Z1dzNzRfdnB2bC1PMG9qZ04yV2w5UHFNRTFKdVJlYTV4VGhEUFdSb3RKbzM1ZmRCZlpPNzVCWERpcUFqZ2ItQ1M3MU96RGxCSjRwbEs3dVE4WFlhMlppeHJFWEFFOS1nT0s1bTVnT2dqZ0pUR0dZZ0M5T3pvTkZZbHhMa1QtSFpITFhkWGhWN3hUUEFDNnZpanN1N2VFUzlsckw2QzNxLWpvRGRaSldab3V1RGNDc2dvUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMkV2QkQtU1E3Z1dzNzRfdnB2bC1PMG9qZ04yV2w5UHFNRTFKdVJlYTV4VGhEUFdSb3RKbzM1ZmRCZlpPNzVCWERpcUFqZ2ItQ1M3MU96RGxCSjRwbEs3dVE4WFlhMlppeHJFWEFFOS1nT0s1bTVnT2dqZ0pUR0dZZ0M5T3pvTkZZbHhMa1QtSFpITFhkWGhWN3hUUEFDNnZpanN1N2VFUzlsckw2QzNxLWpvRGRaSldab3V1RGNDc2dvUQ?oc=5\" target=\"_blank\"&gt;Tashima says Balogun red-card row at World Cup pushed him to run for FIFA presidency&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-11-20T05:06:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Trump says nuclear arms limits with China, Russia will be very hard to achieve - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMVJxajFFWVpKWFIzZjFkQjg3bzRfeTRmbGdhX0JtYmhXMDFiSDhmZ012TXRfUTYxOG8yNXQ1NFBWTWp5NDRIdzludmtZS0xGLXNENE5LNHo0Zk01OHR4S2hRZFhjRUZKMkRRdHBiQm1BTFluWWVzTTJORmluTXNCSWxmUV8xVEJ3Vlc4Q1l5NU9sQ3VxUzlMOEZUa21nZW11UFZtb3lVNGlEaGdNb25WazZISXFhQXY5dG1OZzVGUS0zN2pMTFE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPMVJxajFFWVpKWFIzZjFkQjg3bzRfeTRmbGdhX0JtYmhXMDFiSDhmZ012TXRfUTYxOG8yNXQ1NFBWTWp5NDRIdzludmtZS0xGLXNENE5LNHo0Zk01OHR4S2hRZFhjRUZKMkRRdHBiQm1BTFluWWVzTTJORmluTXNCSWxmUV8xVEJ3Vlc4Q1l5NU9sQ3VxUzlMOEZUa21nZW11UFZtb3lVNGlEaGdNb25WazZISXFhQXY5dG1OZzVGUS0zN2pMTFE?oc=5\" target=\"_blank\"&gt;Trump says nuclear arms limits with China, Russia will be very hard to achieve&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-11-19T21:09:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "EXCLUSIVE: Beijing to bar young 'red-chip' firms from listing outside mainland China, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRTdaaUUyWTJoNmxNSkszY3U3di1OSlJoOE5Qb2dKRHFyX1FjNDM1XzdjZDV0NXBja2Voem1nYlpRUjdYZXNsM05fenltM0ZpQVE0MEJ2WVJDV0NSU1NBYi1XVDZpRm9LS0JnRTRGSHBpQzg4ZVUxMXV1azA2eU14b2IyLXBkMzE2ZW9OeGF4eEUxcHBQdHJucXlUTElVRi1zRVcwd0d1MlhJZEwtRE54cUxfM2l2Q1Bu?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRTdaaUUyWTJoNmxNSkszY3U3di1OSlJoOE5Qb2dKRHFyX1FjNDM1XzdjZDV0NXBja2Voem1nYlpRUjdYZXNsM05fenltM0ZpQVE0MEJ2WVJDV0NSU1NBYi1XVDZpRm9LS0JnRTRGSHBpQzg4ZVUxMXV1azA2eU14b2IyLXBkMzE2ZW9OeGF4eEUxcHBQdHJucXlUTElVRi1zRVcwd0d1MlhJZEwtRE54cUxfM2l2Q1Bu?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Beijing to bar young 'red-chip' firms from listing outside mainland China, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-11-20T12:47:42.000Z",
           "score": 7
         },
         {
@@ -64,14 +66,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNX1BENXJsTm9KVlRxVjk0SENfVmszM1ZXVFpjQzJZcVRneVFiR210MTNseE0yUlJqWmRObE9ndjlKQkZUVFJqd0Joc3hFLWNhcW5KQ0ZKZWdBWDZ5Q1BCNWFQcDdBN1N5MDllSGNNYjdOUG1IaG5BNjB2S3hPMHRTSGpDM2phXzkzSUF6TkJtMktQRWpodkdiRVVSM0FJZ0lDOVRLZk5Dby1SdXV1elBEaW5GM0k?oc=5\" target=\"_blank\"&gt;West presses Iran at IAEA to let inspections resume at bombed nuclear sites&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-11-19T18:40:09.000Z",
           "score": 7
-        },
-        {
-          "title": "Lynch yacht crew unaware of wind risk before fatal sinking, UK report finds - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQX3p5RGx3OWRJNHIwc0w5Q0hjQjFOQngxMmpjMjM5RTI4aUV5MmJYZ19Bc2UyajhsX1hYSnhSa1NSeFVQWW4tMDRWaV9EQWJLanJkM3hpeHRRQ3l6Rkx3Z0dCT3EyVExCR0xROVdDWE1SWHZuenQxUlJQT3ZWR2kxejVpckxEN2NmWmYzdVB5cHFZeW9VWGl4bHBGdTQ0Zm1VNTFTYTlyMHhCUm1LOFlVeGluWndNVlE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQX3p5RGx3OWRJNHIwc0w5Q0hjQjFOQngxMmpjMjM5RTI4aUV5MmJYZ19Bc2UyajhsX1hYSnhSa1NSeFVQWW4tMDRWaV9EQWJLanJkM3hpeHRRQ3l6Rkx3Z0dCT3EyVExCR0xROVdDWE1SWHZuenQxUlJQT3ZWR2kxejVpckxEN2NmWmYzdVB5cHFZeW9VWGl4bHBGdTQ0Zm1VNTFTYTlyMHhCUm1LOFlVeGluWndNVlE?oc=5\" target=\"_blank\"&gt;Lynch yacht crew unaware of wind risk before fatal sinking, UK report finds&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-19T18:21:45.000Z",
-          "score": 7
         }
       ]
     },
@@ -80,28 +74,28 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "COP31 Bulletin Day 10: New draft keeps electrification goal but drops fossil fuel references",
-          "link": "https://www.climatechangenews.com/2026/11/19/cop31-antalya-turkiye-australia-ministers-agremeent-fossil-fuels-electrification/",
+          "title": "COP31 Bulletin Day 11: Countries decry cover text for omitting fossil fuels",
+          "link": "https://www.climatechangenews.com/2026/11/20/cop31-bulletin-day-11-best-cop-worst-cop-weary-negotiators-seek-to-strengthen-outcome/",
           "source": "Climate Home News",
-          "description": "The second draft of the COP31 cover decision leaves out a key ask from many developing countries to put a number on tripling finance for adaptation The post COP31 Bulletin Day 10: New draft keeps electrification goal but drops fossil fuel references appeared first on Climate Home News.",
-          "published": "2026-11-19T08:28:07.000Z",
+          "description": "Small island states and a group of Global North and South nations say the draft decision is too weak on issues ranging from the transition away from fossil fuels to finance provision The post COP31 Bulletin Day 11: Countries decry cover text for omitting fossil fuels appeared first on Climate Home News.",
+          "published": "2026-11-20T10:08:40.000Z",
           "score": 13
         },
         {
-          "title": "Bangladesh needs COP31 to deliver clarity on climate finance",
-          "link": "https://www.climatechangenews.com/2026/11/19/bangladesh-needs-cop31-to-deliver-clarity-on-climate-finance/",
-          "source": "Climate Home News",
-          "description": "Bangladesh cannot bear rising climate costs alone - the UN summit in Antalya must show how timely, accessible finance will be delivered at the scale needed The post Bangladesh needs COP31 to deliver clarity on climate finance appeared first on Climate Home News.",
-          "published": "2026-11-19T01:00:00.000Z",
+          "title": "More climate money for Africa? Europe says use what's already pledged",
+          "link": "https://www.bbc.co.uk/news/articles/c6074k5jjrzko?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "African countries at the UN climate summit in Turkey are demanding more funding from developed nations to help them cope with climate change.",
+          "published": "2026-11-20T05:03:43.000Z",
           "score": 13
         },
         {
-          "title": "As COP31 weighs 35&#215;35 pledge, IEA says Hormuz crisis driving electrification",
-          "link": "https://www.climatechangenews.com/2026/11/19/iea-report-hormuz-crisis-climate-electrification-shift-cop31-35x35-pledge/",
-          "source": "Climate Home News",
-          "description": "The report estimates that a planned transition away from fossil fuels and into renewables can add energy jobs and cut energy bills The post As COP31 weighs 35&#215;35 pledge, IEA says Hormuz crisis driving electrification appeared first on Climate Home News.",
-          "published": "2026-11-19T12:46:05.000Z",
-          "score": 10
+          "title": "Cop31 live: ‘We didn’t come here to beg’, African ministers say as climate talks enter final day",
+          "link": "https://www.theguardian.com/world/live/2026/nov/20/cop31-climate-crisis-talks-turkey-latest-news-updates",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Disagreements between rich polluting countries and everyone else threaten to push UN summit beyond its official end&lt;/p&gt;&lt;p&gt;Antalya 2026 is the “worst Cop ever”, civil society activists have said in a packed final press conference at the UN climate summit.&lt;/p&gt;&lt;p&gt;Civil society organisations have a special status at UN climate treaty summits. They have the right to observe and even intervene in negotiations, although decisions are ultimately taken by the countries th",
+          "published": "2026-11-20T13:32:11.000Z",
+          "score": 7
         },
         {
           "title": "Cop31 told it risks being ‘ghost’ summit as all mentions of fossil fuels removed from draft text",
@@ -112,11 +106,11 @@
           "score": 7
         },
         {
-          "title": "IPCC report delay will threaten global effort to tackle climate crisis, says top scientist",
-          "link": "https://www.theguardian.com/science/2026/nov/19/ipcc-report-delay-climate-crisis-scientist",
+          "title": "Pacific islanders face a ‘sickening disconnect’ between Cop31 and the climate devastation at their doorstep",
+          "link": "https://www.theguardian.com/environment/2026/nov/20/pacific-cop31-summit-climate-devastation",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Johan Rockström, one of world’s leading climate experts, says slowing down scientific work puts cooperation at risk&lt;/p&gt;&lt;p&gt;Climate science is “foundational” to the Paris agreement and worldwide progress on tackling global heating, and &lt;a href=\"https://www.theguardian.com/environment/2026/oct/13/ipcc-pressure-delay-publication-climate-report-ar7-cop33\"&gt;attempts to delay new scientific reports&lt;/a&gt; threaten global cooperation on tackling the crisis, one of the world’",
-          "published": "2026-11-19T07:16:45.000Z",
+          "description": "&lt;p&gt;As the UN summit nears its close, the ‘frustratingly’ slow progress and lack of focus on fossil fuel transition have the Pacific turning elsewhere for help&lt;/p&gt;&lt;p&gt;“I need to go to sleep every night wondering what that means, you know?” says Albon Ishoda, leaning against a wall in a corridor at the UN climate summit in Turkey. “For us, it’s about existence.”&lt;/p&gt;&lt;p&gt;Ishoda is a diplomat who works for the Marshall Islands – a group of low-lying atolls that are specks ",
+          "published": "2026-11-20T05:00:23.000Z",
           "score": 7
         }
       ]
@@ -124,59 +118,26 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Schneider Electric warns high power costs could push AI investment out of Europe - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMV8wcTVyeEdDUFZNSW9xSGJtdnlPNW9WUjRZdVVsc1haRkxWZ3lwcnY5Zmx3dk0xZXRySnV0ZlFqLVlyT1BYVjZZYTRlRHRQZF9oRTVscE5UVXBMeml6WW03TmdHNXhrOTh2QzNqR09YeWtZSGtYY3ltLWh1N2tkeENMMVRuRzhkSF9WSTBONnFyN1VGRzJyVE1vUWZDOE1ySnRKbzl2Y2JiSXg0Q015TGZLRTBEWlpCRmJLX2NZZGhMV2Z3UGlYRQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMV8wcTVyeEdDUFZNSW9xSGJtdnlPNW9WUjRZdVVsc1haRkxWZ3lwcnY5Zmx3dk0xZXRySnV0ZlFqLVlyT1BYVjZZYTRlRHRQZF9oRTVscE5UVXBMeml6WW03TmdHNXhrOTh2QzNqR09YeWtZSGtYY3ltLWh1N2tkeENMMVRuRzhkSF9WSTBONnFyN1VGRzJyVE1vUWZDOE1ySnRKbzl2Y2JiSXg0Q015TGZLRTBEWlpCRmJLX2NZZGhMV2Z3UGlYRQ?oc=5\" target=\"_blank\"&gt;Schneider Electric warns high power costs could push AI investment out of Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
-          "published": "2026-11-19T14:09:40.000Z",
-          "score": 8
-        },
-        {
-          "title": "Riyadh’s tallest skyscraper hit in Houthi strike on Saudi wealth fund HQ - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOUUVVMURmUjNxMHVQNThNQkRiUElQbkhnNVJNdkdVejBqLVVIRU1hUl9DWDhpYlFVWUtFZlo5dGNOSnFqTFU5VE93bXdGY3NaOEVmSERoWlJNOWhQN25NN3E1bGF1MEprczBsWFlkOHBDTUVLM21CSFJydjFzUFFaM2ozQU8wSTdnSENadVQ2UTNmSWhOMFBHNE1ZaDB5MURkMFM0cHZuU1BySDl0ZlQ2aDBEUEdmNUE5MnNzTnl2T2VBaV9sWUQ2Zg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOUUVVMURmUjNxMHVQNThNQkRiUElQbkhnNVJNdkdVejBqLVVIRU1hUl9DWDhpYlFVWUtFZlo5dGNOSnFqTFU5VE93bXdGY3NaOEVmSERoWlJNOWhQN25NN3E1bGF1MEprczBsWFlkOHBDTUVLM21CSFJydjFzUFFaM2ozQU8wSTdnSENadVQ2UTNmSWhOMFBHNE1ZaDB5MURkMFM0cHZuU1BySDl0ZlQ2aDBEUEdmNUE5MnNzTnl2T2VBaV9sWUQ2Zg?oc=5\" target=\"_blank\"&gt;Riyadh’s tallest skyscraper hit in Houthi strike on Saudi wealth fund HQ&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-19T03:19:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "JBIC chair calls for greater Japanese role in $550 billion US investment - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOXEyQ1NtYnViWXdiUDRoRUJZVk8xaGlBMW9rc0szWmdoMlRieEd0UmxTWURyQ3hXUDducXRySzFpVWk3R1QtR0toNEJaWk9OR2xHSjFQR1ZnbV9CZTN6OGdrUTBpU3NQbmpuTWl0bkxkQUZmZGlxTndwQVdleTZ3MVZLMmFxRkZaRDdHQkEzSWdnQnVUUTJiYktIZFVMeTVRS1g0Y2xLWTZ0UQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOXEyQ1NtYnViWXdiUDRoRUJZVk8xaGlBMW9rc0szWmdoMlRieEd0UmxTWURyQ3hXUDducXRySzFpVWk3R1QtR0toNEJaWk9OR2xHSjFQR1ZnbV9CZTN6OGdrUTBpU3NQbmpuTWl0bkxkQUZmZGlxTndwQVdleTZ3MVZLMmFxRkZaRDdHQkEzSWdnQnVUUTJiYktIZFVMeTVRS1g0Y2xLWTZ0UQ?oc=5\" target=\"_blank\"&gt;JBIC chair calls for greater Japanese role in $550 billion US investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-19T05:06:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "China's Jetour to start Brazil car production in 2027, plans $69 million investment - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNMmhuWVVOSEVONDBWOVZVMnphYTRrbGF4X29mQVVOblBIczhrbmRiYXBRVmd0eHd6ZnFwOUh1N2gzR1M5Q2pNZFFDMlZlUUVJNzRzWm92dXNFUm40eWc4bk00YndoSnpWTkgyTS1uLXU4M1dFbFJIeXhkd3JQTHlNeTBXcENyT2xQQzdhY2FFdU5CR3VfTW9yS3ZGRVYwd0JId3h5dUppX3dKTlNobjV3RWtVNGZ2Q0JZN1RpaFp3TnVDZ2hHR3k4T1JJMHJHdzlER1N3Wm5LOA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxNMmhuWVVOSEVONDBWOVZVMnphYTRrbGF4X29mQVVOblBIczhrbmRiYXBRVmd0eHd6ZnFwOUh1N2gzR1M5Q2pNZFFDMlZlUUVJNzRzWm92dXNFUm40eWc4bk00YndoSnpWTkgyTS1uLXU4M1dFbFJIeXhkd3JQTHlNeTBXcENyT2xQQzdhY2FFdU5CR3VfTW9yS3ZGRVYwd0JId3h5dUppX3dKTlNobjV3RWtVNGZ2Q0JZN1RpaFp3TnVDZ2hHR3k4T1JJMHJHdzlER1N3Wm5LOA?oc=5\" target=\"_blank\"&gt;China's Jetour to start Brazil car production in 2027, plans $69 million investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6",
-          "published": "2026-11-18T23:53:47.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "US energy chief Wright sees no sign Europe wants return to Russia energy - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZE1wRjV3NXNuaVRoWmVQcE5aZ2xTS2daTWgtcE5mWnpaWFBudTdCT2RwelhTLVRaU2pJZVFWa3dxR0NtRjg3cHRuZGhnQ0V1c3FGZWhqWGJMTGVEWC10eFlqVmozMl91dDlNTmduOU9oMEpNOVM5NzFLZ1dtVllZRndqU01IQms1WHRlNXFFLTlMYWdSejRvYTdfU2pPSzlqRTVBOGZBamROdmFyVFIzbXozQlZhSmVlZTZiME9B?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNZE1wRjV3NXNuaVRoWmVQcE5aZ2xTS2daTWgtcE5mWnpaWFBudTdCT2RwelhTLVRaU2pJZVFWa3dxR0NtRjg3cHRuZGhnQ0V1c3FGZWhqWGJMTGVEWC10eFlqVmozMl91dDlNTmduOU9oMEpNOVM5NzFLZ1dtVllZRndqU01IQms1WHRlNXFFLTlMYWdSejRvYTdfU2pPSzlqRTVBOGZBamROdmFyVFIzbXozQlZhSmVlZTZiME9B?oc=5\" target=\"_blank\"&gt;US energy chief Wright sees no sign Europe wants return to Russia energy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-19T18:38:07.000Z",
-          "score": 13
-        },
-        {
           "title": "Europe ready for talks with Russia on ending war in Ukraine, leaders say",
           "link": "https://www.bbc.co.uk/news/articles/ckzd9nln5e6go?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "European allies of Ukraine say they have a \"united\" negotiating position at a summit in Berlin.",
-          "published": "2026-11-19T21:21:43.000Z",
+          "published": "2026-11-20T00:50:24.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU and UK strike &#039;landmark deal&#039; to strengthen ties after Brexit",
+          "link": "https://www.dw.com/en/eu-and-uk-strike-landmark-deal-to-strengthen-ties-after-brexit/a-80001076?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Union and the United Kingdom have agreed on &quot;landmark&quot; deals on youth mobility and trade. Leaders on both sides praised the agreement as they seek to rebuild ties.",
+          "published": "2026-11-20T11:30:00.000Z",
           "score": 8
         },
         {
@@ -184,7 +145,7 @@
           "link": "https://www.dw.com/en/new-ukraine-talks-including-europe-to-be-held-soon-merz/a-79997961?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "Germany&#039;s Chancellor Friedrich Merz says European leaders could take part in fresh Ukraine talks on &quot;neutral ground.&quot; The UK and EU countries have urged a seat at the table in meetings between the US, Russia and Ukraine.",
-          "published": "2026-11-19T23:19:00.000Z",
+          "published": "2026-11-20T01:27:00.000Z",
           "score": 8
         },
         {
@@ -196,11 +157,11 @@
           "score": 8
         },
         {
-          "title": "Why China's EVs could throw a wrench into EU, UK trade talks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPQmVWbXJnQkY3VjV6T2FGcnlvendxcEJmWXVhclphaGtWSW00enZvcmJ2Q0RpaVc5bjlhWU9FQzVEUUNfczNralRudWcwaHdVa2txWjJRblJFQWZKcjRpcWNlT1dadXFfTnBpLUpYSXFOMzBBNzZIQUtqaHpVVVVHcTVyVEdablZ0YWc?oc=5",
+          "title": "Turkey's trade minister urges EU to include it in 'Made in Europe' rules - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQ1VieDRqVWYwR1U2UGktMXMwdDJUSnZOWmZFbmtncUMyNUIzZl9NR1VWdTVvWmFWLUhpUmZJZWpnazRFVUFDVHhDcVpvR3NscmJ4UDE0NW5rbnRiTFA2TnMtWTRJYXZnOElBRzNTOEdRaUUxZlhlWUJDbXg4a0ZFeUZoUDE0T0R5RUFmcEwxUHpFZlB3Mjd4YzBaUDVheFNfd3B4dU9QejZCdUND?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxPQmVWbXJnQkY3VjV6T2FGcnlvendxcEJmWXVhclphaGtWSW00enZvcmJ2Q0RpaVc5bjlhWU9FQzVEUUNfczNralRudWcwaHdVa2txWjJRblJFQWZKcjRpcWNlT1dadXFfTnBpLUpYSXFOMzBBNzZIQUtqaHpVVVVHcTVyVEdablZ0YWc?oc=5\" target=\"_blank\"&gt;Why China's EVs could throw a wrench into EU, UK trade talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-19T23:05:56.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQQ1VieDRqVWYwR1U2UGktMXMwdDJUSnZOWmZFbmtncUMyNUIzZl9NR1VWdTVvWmFWLUhpUmZJZWpnazRFVUFDVHhDcVpvR3NscmJ4UDE0NW5rbnRiTFA2TnMtWTRJYXZnOElBRzNTOEdRaUUxZlhlWUJDbXg4a0ZFeUZoUDE0T0R5RUFmcEwxUHpFZlB3Mjd4YzBaUDVheFNfd3B4dU9QejZCdUND?oc=5\" target=\"_blank\"&gt;Turkey's trade minister urges EU to include it in 'Made in Europe' rules&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-19T14:09:43.000Z",
           "score": 8
         }
       ]
@@ -210,14 +171,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Indonesia parliament passes asset forfeiture bill into law - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRGZJWTdDVW1qaXdOYWVqaFVKUVV4Z0lEQThzMm1BYmFjVHMxSUF1d2FPYk5mVl9uMXN4cU9ycWdJZVluaHEzbVNwZnZYVnNKakRmalNqb1VYUnowNVFHVFdUU05nUGs5ZzdveFk5RzNxZE8zd2RId21CMzFkcnNJRE5INm4wOGllS0FMRHRfS3RHY3dXYWE5b2huaW1OVFVKVXRWUlZ0RG1rYmgxOUFGazU4QQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPRGZJWTdDVW1qaXdOYWVqaFVKUVV4Z0lEQThzMm1BYmFjVHMxSUF1d2FPYk5mVl9uMXN4cU9ycWdJZVluaHEzbVNwZnZYVnNKakRmalNqb1VYUnowNVFHVFdUU05nUGs5ZzdveFk5RzNxZE8zd2RId21CMzFkcnNJRE5INm4wOGllS0FMRHRfS3RHY3dXYWE5b2huaW1OVFVKVXRWUlZ0RG1rYmgxOUFGazU4QQ?oc=5\" target=\"_blank\"&gt;Indonesia parliament passes asset forfeiture bill into law&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-19T04:50:00.000Z",
-          "score": 12
-        },
-        {
           "title": "EU Commission confirms it was targeted in cyberattack using AI tools",
           "link": "https://www.dw.com/en/eu-commission-confirms-it-was-targeted-in-cyberattack-using-ai-tools/a-79993016?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -226,11 +179,11 @@
           "score": 8
         },
         {
-          "title": "COMMENTARY: Trump-Xi-Putin summit exposes Europe’s power deficit - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOcXhYWk03Z1VnUVZYME1MaUxfVzRsU25WYjRHTTQwZkhFbmE1dmNiZHYzc3p5TEtJUHpQNTU0R1dtMUk5QlEzNzd5b2k0Tl81emFncl9PU2FkRnRIYVdBVXI0OC1ZeEVDd0ljaUp1OGhUeG53WjYxNlVKcVRhZEgzQkdueXZVekZsVGZvTi11YW9rSkxwNTF0ZWh5NTZFWm8zNHJQRW0zQ19mTUdKdXk3UmJCWXRzdmk4d1J1Wg?oc=5",
+          "title": "Britain and EU launch reset with food and youth mobility deals - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNaUxSQlE3YTlodUx3ZVRaSnlCLVJtZVc5bUtURl8yaEQzZVk4bWdXdFlHdDgwTE1IOFFrZ3pvOTFvQ0s4Y2trSU9PWE4tUnZFQjMyWmZLeVY0aU9IaUFBWVdIVFlRaVZmdXRheEdmVHYyUU9JUnBMQVVhVzNwN2JGdDI5ZlJSVzdNb2tZV0dfaUpoVHJaRnFfcA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOcXhYWk03Z1VnUVZYME1MaUxfVzRsU25WYjRHTTQwZkhFbmE1dmNiZHYzc3p5TEtJUHpQNTU0R1dtMUk5QlEzNzd5b2k0Tl81emFncl9PU2FkRnRIYVdBVXI0OC1ZeEVDd0ljaUp1OGhUeG53WjYxNlVKcVRhZEgzQkdueXZVekZsVGZvTi11YW9rSkxwNTF0ZWh5NTZFWm8zNHJQRW0zQ19mTUdKdXk3UmJCWXRzdmk4d1J1Wg?oc=5\" target=\"_blank\"&gt;COMMENTARY: Trump-Xi-Putin summit exposes Europe’s power deficit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-19T01:00:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNaUxSQlE3YTlodUx3ZVRaSnlCLVJtZVc5bUtURl8yaEQzZVk4bWdXdFlHdDgwTE1IOFFrZ3pvOTFvQ0s4Y2trSU9PWE4tUnZFQjMyWmZLeVY0aU9IaUFBWVdIVFlRaVZmdXRheEdmVHYyUU9JUnBMQVVhVzNwN2JGdDI5ZlJSVzdNb2tZV0dfaUpoVHJaRnFfcA?oc=5\" target=\"_blank\"&gt;Britain and EU launch reset with food and youth mobility deals&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-20T04:02:00.000Z",
           "score": 8
         },
         {
@@ -242,20 +195,28 @@
           "score": 8
         },
         {
-          "title": "Energy-security response to Iran war could cut oil demand by 4% by 2035, IEA says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRlVLekJsV1lXTGsxOWFDNkJLTDZhV3JSeFRQWS1zNXlobWJ6cDB0dXdhUE5IZ2VBY3N1THJOdVFtNmhEcnVTcUpWS2x4cVJRV1BscHJ2cVRmbGxtUEJLd0xvRUhkYlpUZU1PcnZpUzJ5cWx5R3ZnWFN5VXdiWmkwczJpci1yQkpVWWtMNV9yY3JHc3NfNzc0V2R2ZWlkSDVaa3V1MUhJVUNoSV9MQl91ckE5c2J4c1c2VFlPSHBIYzAxX2RZYXpZ?oc=5",
+          "title": "UK-EU reset deal agreed, Downing Street says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMFZfOXJRS2RFTTlMenB0cXUxNG1mNnVFaThZUGVfM0J0cnY5ckZmRTZDbWZGVWtWSFBhR3lHMF9ZZWVMOHpOSFNMZjNROTc0Z3JFSkJzaUdXYVpQWmg2T1E5ckIyYk82bXpHUzUzTTRkc1dTX2hzYi12RHVVYUxPM0ExbDRNb29tcVhPdEJaZ3RrUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNRlVLekJsV1lXTGsxOWFDNkJLTDZhV3JSeFRQWS1zNXlobWJ6cDB0dXdhUE5IZ2VBY3N1THJOdVFtNmhEcnVTcUpWS2x4cVJRV1BscHJ2cVRmbGxtUEJLd0xvRUhkYlpUZU1PcnZpUzJ5cWx5R3ZnWFN5VXdiWmkwczJpci1yQkpVWWtMNV9yY3JHc3NfNzc0V2R2ZWlkSDVaa3V1MUhJVUNoSV9MQl91ckE5c2J4c1c2VFlPSHBIYzAxX2RZYXpZ?oc=5\" target=\"_blank\"&gt;Energy-security response to Iran war could cut oil demand by 4% by 2035, IEA says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
-          "published": "2026-11-19T05:05:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPMFZfOXJRS2RFTTlMenB0cXUxNG1mNnVFaThZUGVfM0J0cnY5ckZmRTZDbWZGVWtWSFBhR3lHMF9ZZWVMOHpOSFNMZjNROTc0Z3JFSkJzaUdXYVpQWmg2T1E5ckIyYk82bXpHUzUzTTRkc1dTX2hzYi12RHVVYUxPM0ExbDRNb29tcVhPdEJaZ3RrUQ?oc=5\" target=\"_blank\"&gt;UK-EU reset deal agreed, Downing Street says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-20T10:30:27.000Z",
+          "score": 8
+        },
+        {
+          "title": "UK finds fix for fridge and freezer vulnerability after European hacks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORVlPYjE2cEpJQjlLNzNNcjVjRnI3LUxkcnE5UVJBak9QOTlPUXR2S1htU3BEUWxfM0RfUmo2QVVfX0g3cXpzTjdUSFNRMERVR0FKUVJ4T21TYUhUU2d3bE9tV2hpaGo1bUxqc25WR0VYWFl0Z0UxZDBiMGM3RUdYODlURmFxYnVvcm9KTXVhZWdObGl0bTZfNENXTTlhdG9ibzVNX1hCOFpkQ1k?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxORVlPYjE2cEpJQjlLNzNNcjVjRnI3LUxkcnE5UVJBak9QOTlPUXR2S1htU3BEUWxfM0RfUmo2QVVfX0g3cXpzTjdUSFNRMERVR0FKUVJ4T21TYUhUU2d3bE9tV2hpaGo1bUxqc25WR0VYWFl0Z0UxZDBiMGM3RUdYODlURmFxYnVvcm9KTXVhZWdObGl0bTZfNENXTTlhdG9ibzVNX1hCOFpkQ1k?oc=5\" target=\"_blank\"&gt;UK finds fix for fridge and freezer vulnerability after European hacks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-20T11:57:45.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 410,
-    "articlesLast24h": 167,
-    "afterDedup": 158,
+    "totalArticlesScanned": 409,
+    "articlesLast24h": 171,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
