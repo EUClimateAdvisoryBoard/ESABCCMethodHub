@@ -34,6 +34,26 @@ presented deck for the pathways that are left.
 Each step can be switched off. Every setting lives in the URL, so a view can
 be shared as a link.
 
+## Scaling to the historic inventory
+
+By default every emission result is scaled so that each pathway's 2020
+value equals the EEA inventory for 2020 (base year 2020, the year the export
+already harmonises industry to). The panel offers three methods:
+
+| Method | Rule | Note |
+|---|---|---|
+| Ratio (default) | v′(y) = v(y) × inv₂₀₂₀ / v₂₀₂₀ | Falls back to offset where model and inventory 2020 differ in sign or the factor lies outside 0.25–4 (most ecosystem pathways) |
+| Offset | v′(y) = v(y) + (inv₂₀₂₀ − v₂₀₂₀) | Pushes mobility and buildings well below zero by 2050 |
+| As reported | no scaling | The deck |
+
+It applies to EU net GHG (target: inventory net total 2020) and the six
+sectors' emissions, including the emissions columns of the lever charts.
+Lever indicators (TWh, EJ, Mha) stay as reported. The correction is held
+constant to 2050. Screening step 1 uses the reported 2050 net GHG unless
+"Use scaled 2050 net GHG in step 1" is switched on (advice setting: 75
+instead of 64 pathways). The CSV carries reported and scaled columns side
+by side.
+
 ## Views and charts
 
 - **Screen** — funnel of pathways per step; median EU net GHG at each step with
@@ -90,8 +110,8 @@ the medians and bands equal the deck's.
 
 ## Known limits
 
-- Only industry is harmonised to the inventory; the other sectors are as
-  reported, and model regions differ (EU27, EU27 and UK).
+- The scaling uses one base year (2020, a COVID year) and no convergence;
+  it is a presentation choice, not a re-run of the models.
 - Threshold units are inferred from the variable definitions and data ranges;
   the values themselves are the export's.
 - Rebuilding needs the zip at the repository root:

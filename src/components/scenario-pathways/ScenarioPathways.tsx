@@ -34,9 +34,10 @@ import Skeleton from '@/components/ui/Skeleton';
 import { codecs, useUrlState } from '@/lib/useUrlState';
 import {
   ADVICE_SETTINGS, DEFAULT_TH, PRESETS, SECTORS, SECTOR_BY_KEY, SRC_LABEL, STAGE_LABEL, THRESHOLDS, WIN_MIN, WIN_OPEN, YEARS,
-  bandStats, checkParity, fmtNum, isExportDefault, matchesPreset, median, netGhgValue, netLabel, parseDataset, presetSettings,
+  bandStats, checkParity, fmtNum, harmMix, harmonise, harmoniseSector, isExportDefault, matchesPreset, median, netGhgValue, netLabel, parseDataset, presetSettings,
+  RATIO_BOUNDS,
   screenAll, sectorMatrix, windowLabel,
-  type Dataset, type Pathway, type Preset, type RawDataset, type Screened, type SectorDef, type SectorKey, type Settings, type ThresholdKey,
+  type Dataset, type HarmMethod, type Pathway, type Preset, type RawDataset, type Screened, type SectorDef, type SectorKey, type Settings, type ThresholdKey,
 } from '@/lib/scenario-pathways/model';
 import {
   DECK, DriverColumnChart, FunnelChart, Legend, SettingsDotPlot, TrajectoryChart,
@@ -70,6 +71,8 @@ const SCHEMA = {
   r: codecs.boolean(true),
   m: codecs.number(0),
   miss: codecs.boolean(true),
+  h: codecs.enum(['ratio', 'offset', 'none'] as const, 'ratio'),
+  hs: codecs.boolean(false),
   ...(Object.fromEntries(THRESHOLDS.map((t) => [`t_${t.key}`, codecs.number(t.def)])) as Record<`t_${ThresholdKey}`, ReturnType<typeof codecs.number>>),
 };
 
@@ -167,9 +170,10 @@ function Hero() {
           The pathway data are the EEA export as delivered; do not copy them to external services or public
           repositories. The screening and the charts are an AI-compiled port of the export&apos;s Python scripts. With the
           default settings the port reproduces the export&apos;s stage codes and the deck&apos;s figures exactly (checked on every
-          load, see the badge below); any other combination of settings is exploratory and has not been reviewed. Only
-          industry is harmonised to the inventory; the other sectors are shown as the models report them, and model
-          regions differ (EU27, EU27 and UK).
+          load, see the badge below); any other combination of settings is exploratory and has not been reviewed. By
+          default all emission results are scaled to the EEA inventory for 2020 (ratio, offset where the ratio is unusable),
+          which removes the gap between the models&apos; 2020 and the inventory, including the regional differences (EU27, EU27
+          and UK). The deck showed the values as reported; choose “As reported” in the panel to see them.
         </p>
       </div>
     </section>
@@ -181,6 +185,7 @@ function SourcesPanel() {
     <section className="mt-10 rounded-lg border border-grey-200 bg-grey-50 p-4 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
       <h2 className="text-[13px] font-bold uppercase tracking-[0.08em] text-tertiary-dark dark:text-[var(--mh-fg)]">Caveats &amp; sources</h2>
       <ul className="mt-2 space-y-1 text-[12px] text-tertiary dark:text-[var(--mh-muted)]">
+        <li>Inventory scaling: base year 2020, the correction held constant to 2050 (no convergence back to the reported values). Ratio is used where model and inventory 2020 share a sign and the factor lies within 0.25–4; otherwise an additive offset. Lever indicators are not scaled.</li>
         <li>Missing filter values count as passed by default (the export&apos;s rule); switch this off in the panel to test the opposite.</li>
         <li>2040 cut: ESABCC runs use the Board&apos;s metric; other pathways use net GHG scaled to the 2015 inventory (2020 where 2015 is missing). The window is whole-percent rounded as in the export (lower bound − 0.05, upper bound + 0.5).</li>
         <li>Charts require a pathway to report all of 2020, 2030, 2040 and 2050 for the sector shown; n can therefore be lower than the number of pathways within all criteria.</li>
@@ -203,6 +208,9 @@ function SourcesPanel() {
 function Explorer({ ds }: { ds: Dataset }) {
   const [u, setU, resetU] = useUrlState(SCHEMA);
   const view = u.view as View;
+  const harm = u.h as HarmMethod;
+  // EU net GHG scaled to the inventory net total of 2020 (same rule as the sectors).
+  const netH = useMemo(() => harmonise(netGhgValue, ds.invNet[2020], harm), [ds, harm]);
 
   const settings: Settings = useMemo(() => ({
     pools: u.pool,
@@ -216,8 +224,10 @@ function Explorer({ ds }: { ds: Dataset }) {
     th: Object.fromEntries(THRESHOLDS.map((t) => [t.key, u[`t_${t.key}`] as number])) as Record<ThresholdKey, number>,
     margin: u.m,
     missingPass: u.miss,
-  }), [u]);
-  const sectors = useMemo(() => SECTORS.filter((s) => u.sec.includes(s.key)), [u.sec]);
+    netValue: u.hs && u.h !== 'none' ? (p: Pathway) => netH.value(p, 2050) : undefined,
+  }), [u, netH]);
+  const allSectors = useMemo(() => SECTORS.map((s) => harmoniseSector(s, ds.invSectors[2020], harm)), [ds, harm]);
+  const sectors = useMemo(() => allSectors.filter((s) => u.sec.includes(s.key)), [allSectors, u.sec]);
 
   const parity = useMemo(() => checkParity(ds), [ds]);
   const screened = useMemo(() => screenAll(ds, settings), [ds, settings]);
@@ -241,14 +251,15 @@ function Explorer({ ds }: { ds: Dataset }) {
     settings.riskOn ? 'risk levels' : null,
     settings.margin ? `+${settings.margin}% margin` : null,
   ].filter(Boolean).join(' · ') || 'no screening step applied';
+  const harmText = harm === 'none' ? 'results as reported by the models' : `results scaled to the EEA inventory 2020 (${harm === 'ratio' ? 'ratio, offset where the ratio is unusable' : 'offset'})${u.hs ? '; step 1 on scaled net GHG' : ''}`;
 
   return (
     <>
-      <StatStrip ds={ds} screened={screened} passing={passing} parity={parity} />
+      <StatStrip ds={ds} screened={screened} passing={passing} parity={parity} netValue={netH.value} scaled={harm !== 'none'} />
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
         <aside className="lg:sticky lg:top-[88px] lg:max-h-[calc(100vh-104px)] lg:overflow-y-auto rounded-lg border border-grey-200 bg-white p-4 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]" aria-label="Screening settings">
-          <FilterPanel settings={settings} u={u} setU={setU} pools={pools} onReset={resetU} isAdvice={isAdvice} />
+          <FilterPanel settings={settings} u={u} setU={setU} pools={pools} onReset={resetU} isAdvice={isAdvice && u.h === 'ratio' && !u.hs} />
         </aside>
 
         <div className="min-w-0 space-y-6">
@@ -266,7 +277,7 @@ function Explorer({ ds }: { ds: Dataset }) {
               )}
             </p>
             <p className="mt-0.5 font-mono text-[12px] tabular-nums text-tertiary dark:text-[var(--mh-muted)]">
-              {passing.length.toLocaleString('en-GB')} of {screened.filter((x) => x.stage !== -2).length.toLocaleString('en-GB')} pathways within all criteria
+              {passing.length.toLocaleString('en-GB')} of {screened.filter((x) => x.stage !== -2).length.toLocaleString('en-GB')} pathways within all criteria · {harmText}
             </p>
           </div>
 
@@ -309,14 +320,14 @@ function Explorer({ ds }: { ds: Dataset }) {
             />
           )}
 
-          {view === 'overview' && <OverviewView ds={ds} screened={screened} settings={settings} passing={passing} sectors={sectors} presetSets={presetSets} />}
+          {view === 'overview' && <OverviewView ds={ds} screened={screened} settings={settings} passing={passing} sectors={sectors} presetSets={presetSets} netValue={netH.value} harm={harm} />}
           {view === 'sectors' && passing.length > 0 && (
             sectors.length ? sectors.map((s) => (
-              <SectorCard key={s.key} ds={ds} sector={s} screened={screened} settings={settings} passing={passing} presetSets={presetSets} />
+              <SectorCard key={s.key} ds={ds} sector={s} screened={screened} settings={settings} passing={passing} presetSets={presetSets} harm={harm} />
             )) : <EmptyState title="No sector selected" body="Pick at least one sector above." primaryAction={{ label: 'Show all six', onClick: () => setU({ sec: ALL_SECTORS }) }} />
           )}
           {view === 'settings' && <SettingsView ds={ds} sectors={sectors} passing={passing} presetSets={presetSets} settings={settings} />}
-          {view === 'pathways' && <PathwayTable screened={screened} sectors={sectors} summary={summary} />}
+          {view === 'pathways' && <PathwayTable screened={screened} sectors={sectors} allSectors={allSectors} summary={summary} harm={harm} netValue={netH.value} />}
         </div>
       </div>
     </>
@@ -325,15 +336,18 @@ function Explorer({ ds }: { ds: Dataset }) {
 
 // ── stat strip ───────────────────────────────────────────────────────────
 
-function StatStrip({ ds, screened, passing, parity }: { ds: Dataset; screened: Screened[]; passing: Pathway[]; parity: { checked: number; mismatches: number } }) {
-  const net = passing.map((p) => p.v.net_ghg_2050).filter((v): v is number => v != null);
+function StatStrip({ ds, screened, passing, parity, netValue, scaled }: {
+  ds: Dataset; screened: Screened[]; passing: Pathway[]; parity: { checked: number; mismatches: number };
+  netValue: (p: Pathway, y: number) => number | null; scaled: boolean;
+}) {
+  const net = passing.map((p) => netValue(p, 2050)).filter((v): v is number => v != null);
   const models = new Set(passing.map((p) => p.model)).size;
   const srcs = new Set(passing.map((p) => p.src)).size;
   const tiles = [
     { label: 'Within all criteria', value: passing.length.toLocaleString('en-GB'), sub: `of ${screened.filter((x) => x.stage !== -2).length.toLocaleString('en-GB')} pathways in the selected sources` },
     { label: 'Pathways collected', value: ds.pathways.length.toLocaleString('en-GB'), sub: `${new Set(ds.pathways.map((p) => p.pool)).size} source pools` },
     { label: 'Models · studies left', value: `${models} · ${srcs}`, sub: 'distinct models · source studies' },
-    { label: 'EU net GHG 2050', value: net.length ? fmtNum(median(net), 0) : '—', sub: `Mt CO₂e, median of ${net.length} reporting` },
+    { label: 'EU net GHG 2050', value: net.length ? fmtNum(median(net), 0) : '—', sub: `Mt CO₂e, median of ${net.length} reporting${scaled ? ', scaled to inventory' : ''}` },
   ];
   return (
     <section>
@@ -389,6 +403,30 @@ function FilterPanel({ settings, u, setU, pools, onReset, isAdvice }: {
           ↺ 2040 advice
         </button>
       </div>
+
+      <ControlGroup step="Results" title="Scale to the historic inventory"
+        summary={u.h === 'none' ? 'off — values as the models report them (the deck)' : 'every pathway\u2019s 2020 value set to the EEA inventory 2020'}>
+        <PresetButtons
+          value={u.h}
+          onPick={(v) => setU({ h: v })}
+          options={[
+            { label: 'Ratio', value: 'ratio', title: `Multiply each series by inventory 2020 / model 2020; offset where that factor is outside ${RATIO_BOUNDS[0]}–${RATIO_BOUNDS[1]} or the signs differ` },
+            { label: 'Offset', value: 'offset', title: 'Add inventory 2020 − model 2020 to every year' },
+            { label: 'As reported', value: 'none', title: 'No scaling, as in the deck' },
+          ]}
+        />
+        <p className="mt-1.5 text-[10.5px] leading-snug text-tertiary dark:text-[var(--mh-muted)]">
+          Applies to EU net GHG and the six sectors' emissions. Ratio falls back to an offset where it would flip the sign or the factor
+          lies outside {RATIO_BOUNDS[0]}–{RATIO_BOUNDS[1]} (most ecosystem pathways). Lever indicators (TWh, EJ, Mha) stay as reported.
+        </p>
+        <label className={`mt-2.5 flex items-center justify-between gap-2 text-[11.5px] font-semibold text-tertiary-dark dark:text-[var(--mh-fg)] ${u.h === 'none' ? 'opacity-50' : ''}`}>
+          Use scaled 2050 net GHG in step 1
+          <Toggle checked={u.hs && u.h !== 'none'} onChange={(v) => setU({ hs: v })} label="Use scaled 2050 net GHG in step 1" />
+        </label>
+        <p className="mt-1 text-[10.5px] leading-snug text-tertiary dark:text-[var(--mh-muted)]">
+          Off by default: the 2040 advice screened on the reported values. The 2040 cut is already measured against the inventory.
+        </p>
+      </ControlGroup>
 
       <ControlGroup step="Step 0" title="Source databases" summary={u.pool.length ? `${u.pool.length} of ${pools.length} selected` : `all ${pools.length} selected`}>
         <div className="flex max-h-44 flex-wrap gap-1 overflow-y-auto">
@@ -486,8 +524,9 @@ const STEP_LABELS = (s: Settings) => [
   'Risk levels (sustainability, Table 6)',
 ];
 
-function OverviewView({ ds, screened, settings, passing, sectors, presetSets }: {
+function OverviewView({ ds, screened, settings, passing, sectors, presetSets, netValue, harm }: {
   ds: Dataset; screened: Screened[]; settings: Settings; passing: Pathway[]; sectors: SectorDef[]; presetSets: { pr: Preset; set: Pathway[] }[];
+  netValue: (p: Pathway, y: number) => number | null; harm: HarmMethod;
 }) {
   const labels = STEP_LABELS(settings);
   const off = [false, false, !settings.netOn, !settings.winOn, !settings.filterOn, !settings.riskOn];
@@ -497,7 +536,7 @@ function OverviewView({ ds, screened, settings, passing, sectors, presetSets }: 
 
   // Medians of EU net GHG for the set left after each step (econ.py).
   const stepSets = [0, 1, 2, 3, 4].map((k) => screened.filter((x) => x.stage >= k).map((x) => x.p));
-  const mats = stepSets.map((set) => sectorMatrix(set, netGhgValue));
+  const mats = stepSets.map((set) => sectorMatrix(set, netValue));
   const last = bandStats(mats[4]);
   const lineCols = ['#b9c9ce', '#97b4ba', '#608c95', '#3f6670', DECK.purple];
   const invYears = Object.keys(ds.invNet).map(Number).filter((y) => y >= 1990).sort((a, b) => a - b);
@@ -541,13 +580,15 @@ function OverviewView({ ds, screened, settings, passing, sectors, presetSets }: 
           ]} />
         </div>
         <p className="mt-2 text-[11px] text-tertiary dark:text-[var(--mh-muted)]">
-          Emissions|Kyoto Gases (REMIND-EU: Emi|GHG|LULUCF national accounting), as reported; only pathways reporting 2020, 2030, 2040 and 2050.
-          Model regions differ (EU27, EU27 and UK), so 2020 values are above the EU inventory.
+          Emissions|Kyoto Gases (REMIND-EU: Emi|GHG|LULUCF national accounting); only pathways reporting 2020, 2030, 2040 and 2050.{' '}
+          {harm === 'none'
+            ? 'As reported. Model regions differ (EU27, EU27 and UK), so 2020 values are above the EU inventory.'
+            : `Scaled so that every pathway's 2020 value equals the EEA inventory for 2020 (${fmtNum(ds.invNet[2020], 0)} Mt CO₂e), ${harm === 'ratio' ? 'by ratio (offset where the ratio is unusable)' : 'by offset'}; this also absorbs the regional differences (EU27, EU27 and UK).`}
         </p>
       </Card>
 
       {passing.length > 0 && sectors.length > 0 && (
-        <Card kicker="Six sectors · at a glance" title="Median trajectory per sector" lead="Filtered pathways: median, 25–75% and 5–95%; bars: EEA inventory 2005–2024. Open “Inspect sectors” for the full charts.">
+        <Card kicker="Six sectors · at a glance" title="Median trajectory per sector" lead={`Filtered pathways${harm === 'none' ? ', as reported' : ', scaled to the 2020 inventory'}: median, 25–75% and 5–95%; bars: EEA inventory 2005–2024. Open “Inspect sectors” for the full charts.`}>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {sectors.map((s) => {
               const b = bandStats(sectorMatrix(passing, s.value));
@@ -648,8 +689,8 @@ function SectorTrajectory({ ds, sector, b, compact, title, corner, rangeMarker, 
   );
 }
 
-function SectorCard({ ds, sector, screened, settings, passing, presetSets }: {
-  ds: Dataset; sector: SectorDef; screened: Screened[]; settings: Settings; passing: Pathway[]; presetSets: { pr: Preset; set: Pathway[] }[];
+function SectorCard({ ds, sector, screened, settings, passing, presetSets, harm }: {
+  ds: Dataset; sector: SectorDef; screened: Screened[]; settings: Settings; passing: Pathway[]; presetSets: { pr: Preset; set: Pathway[] }[]; harm: HarmMethod;
 }) {
   const [sv, setSv] = useState<SectorView>('main');
   const idx = SECTORS.findIndex((s) => s.key === sector.key);
@@ -659,7 +700,9 @@ function SectorCard({ ds, sector, screened, settings, passing, presetSets }: {
   const range = meds.length ? { lo: Math.min(...meds), hi: Math.max(...meds) } : undefined;
   const pool = screened.filter((x) => x.stage !== -2);
   const reporting = pool.filter((x) => x.stage >= -1 && YEARS.every((y) => sector.value(x.p, y) != null)).map((x) => x.p);
-  const m20 = reporting.length ? median(reporting.map((p) => sector.value(p, 2020) as number)) : NaN;
+  const reported = sector.reported ?? sector.value;
+  const m20 = reporting.length ? median(reporting.map((p) => reported(p, 2020) as number)) : NaN;
+  const mix = harmMix(passing, sector);
   const inv24 = ds.invSectors[2024]?.[sector.key];
   const inv20 = ds.invSectors[2020]?.[sector.key];
   const missing = passing.length - b.n;
@@ -707,7 +750,14 @@ function SectorCard({ ds, sector, screened, settings, passing, presetSets }: {
         </>
       ))}
 
-      {sv === 'data' && <SectorDataChart ds={ds} sector={sector} settings={settings} screened={pool} m20={m20} inv20={inv20} />}
+      {harm !== 'none' && b.n > 0 && (
+        <p className="mb-2 text-[11.5px] text-tertiary dark:text-[var(--mh-muted)]">
+          Scaled to the EEA inventory 2020 ({fmtNum(inv20, 0)} {sector.unit.replace(' (negative = sink)', '')}; models reported a median of {fmtNum(m20, 0)}).
+          Filtered pathways: {mix.ratio} by ratio, {mix.offset} by offset{mix.missing ? `, ${mix.missing} without a 2020 value (not scaled, left out)` : ''}.
+          {sector.key === 'industry' ? ' Industry was already harmonised to the 2020 inventory in the export, so the scaling leaves it unchanged.' : ''}
+        </p>
+      )}
+      {sv === 'data' && <SectorDataChart ds={ds} sector={sector} settings={settings} screened={pool} m20={m20} inv20={inv20} harm={harm} />}
 
       {sv === 'settings' && (
         <>
@@ -733,8 +783,8 @@ function SectorCard({ ds, sector, screened, settings, passing, presetSets }: {
   );
 }
 
-function SectorDataChart({ ds, sector, settings, screened, m20, inv20 }: {
-  ds: Dataset; sector: SectorDef; settings: Settings; screened: Screened[]; m20: number; inv20: number | undefined;
+function SectorDataChart({ ds, sector, settings, screened, m20, inv20, harm }: {
+  ds: Dataset; sector: SectorDef; settings: Settings; screened: Screened[]; m20: number; inv20: number | undefined; harm: HarmMethod;
 }) {
   const rep = screened.filter((x) => x.stage >= -1 && x.p.det);
   const all = bandStats(sectorMatrix(rep.map((x) => x.p), sector.value));
@@ -757,12 +807,14 @@ function SectorDataChart({ ds, sector, settings, screened, m20, inv20 }: {
         ariaLabel={`${sector.name}: all pathways reporting versus pathways meeting the 2050 net GHG rule`}
         years={YEARS} xDomain={[2004, 2052]} xTicks={[2010, 2020, 2030, 2040, 2050]} yLabel={sector.unit} yDomain={sector.yl}
         bars={invBars(ds, sector.key)} bands={bands} lines={lines}
-        diamond={Number.isFinite(m20) ? { x: 2020, y: m20, color: DECK.purple, title: `2020 in the models (all): median ${fmtNum(m20)} · inventory ${fmtNum(inv20)}` } : undefined}
+        diamond={Number.isFinite(m20) && harm === 'none' ? { x: 2020, y: m20, color: DECK.purple, title: `2020 in the models (all): median ${fmtNum(m20)} · inventory ${fmtNum(inv20)}` } : undefined}
       />
       <Legend items={[
         { label: `all pathways reporting (${all.n.toLocaleString('en-GB')}): median, 25–75%, 5–95%`, kind: 'line', color: '#6b6b6b' },
         ...(nz.n ? [{ label: `${netLabel(settings.netTol)} in 2050 (${nz.n}): median, 25–75%, 5–95%`, kind: 'line' as const, color: DECK.teal }] : []),
-        { label: `2020 in the models (all): median ${fmtNum(m20)} · inventory ${fmtNum(inv20)}`, kind: 'diamond', color: DECK.purple },
+        ...(harm === 'none'
+          ? [{ label: `2020 in the models (all): median ${fmtNum(m20, 0)} · inventory ${fmtNum(inv20, 0)}`, kind: 'diamond' as const, color: DECK.purple }]
+          : [{ label: `scaled: 2020 = inventory ${fmtNum(inv20, 0)} (models reported a median of ${fmtNum(m20, 0)})`, kind: 'diamond' as const, color: DECK.purple }]),
         { label: 'EEA inventory', kind: 'bar', color: DECK.bar },
       ]} />
       {!settings.netOn && <p className="mt-1 text-[11px] text-tertiary">The 2050 net-GHG step is off, so only all pathways are drawn.</p>}
@@ -774,8 +826,10 @@ function DriverChart({ sector, settings, presetSets, passing, ds }: {
   sector: SectorDef; settings: Settings; presetSets: { pr: Preset; set: Pathway[] }[]; passing: Pathway[]; ds: Dataset;
 }) {
   const preset = matchesPreset(settings);
-  const rowsFor = (c: string): DriverRow[] => {
-    const vals = (set: Pathway[]) => set.map((p) => p.v[c]).filter((v): v is number => v != null);
+  // Columns that are the sector's own emissions follow the inventory scaling; lever columns stay as reported.
+  const getter = (col: string, emYear?: number) => (p: Pathway) => (emYear ? sector.value(p, emYear) : p.v[col]);
+  const rowsFor = (get: (p: Pathway) => number | null): DriverRow[] => {
+    const vals = (set: Pathway[]) => set.map(get).filter((v): v is number => v != null);
     const rows: DriverRow[] = presetSets.map(({ pr, set }) => ({
       label: `${pr.short} (${set.length})`, values: vals(set), group: pr.netTol === 0 ? 'net0' : 'net150', star: pr.advice,
     }));
@@ -785,7 +839,7 @@ function DriverChart({ sector, settings, presetSets, passing, ds }: {
   // Dotted grey reference: 2020 median in the models, pathways of the nz0 · ≥ 85% setting (drivers.py).
   const nz0all = presetSets.find((x) => x.pr.key === 'nz0|≥ 85%|m0')?.set ?? [];
   const cols: DriverColumn[] = [
-    { label: sector.driver.label, unit: sector.driver.unit, rows: rowsFor(sector.driver.col), ref: sector.driver.ref, refStyle: 'inventory' },
+    { label: sector.driver.label, unit: sector.driver.unit, rows: rowsFor(getter(sector.driver.col, sector.driver.emYear)), ref: sector.driver.ref, refStyle: 'inventory' },
     ...sector.driverCols.map((d) => {
       let ref: number | null = null; let refStyle: DriverColumn['refStyle'] = 'inventory';
       if (d.refInv != null) ref = d.refInv;
@@ -793,7 +847,7 @@ function DriverChart({ sector, settings, presetSets, passing, ds }: {
         const v = nz0all.map((p) => p.v[d.ref20!]).filter((x): x is number => x != null);
         if (v.length) { ref = median(v); refStyle = 'model2020'; }
       }
-      return { label: d.label, unit: d.unit, rows: rowsFor(d.col), ref, refStyle };
+      return { label: d.label, unit: d.unit, rows: rowsFor(getter(d.col, d.emYear)), ref, refStyle };
     }),
   ];
   void ds;
@@ -948,13 +1002,13 @@ function MethodCard({ ds, sectors, passing }: { ds: Dataset; sectors: SectorDef[
               <th className="px-3 py-2 font-semibold">Inventory</th>
               <th className="px-3 py-2 text-right font-semibold">Reporting</th>
               <th className="px-3 py-2 text-right font-semibold">Filtered</th>
-              <th className="px-3 py-2 text-right font-semibold">2020 models (median)</th>
+              <th className="px-3 py-2 text-right font-semibold">2020 models, as reported (median)</th>
               <th className="px-3 py-2 text-right font-semibold">2020 inventory</th>
             </tr>
           </thead>
           <tbody>
             {sectors.map((s) => {
-              const rep = ds.pathways.filter((p) => p.det && YEARS.every((y) => s.value(p, y) != null));
+              const rep = ds.pathways.filter((p) => p.det && YEARS.every((y) => (s.reported ?? s.value)(p, y) != null));
               const filt = sectorMatrix(passing, s.value).length;
               return (
                 <tr key={s.key} className="border-b border-grey-200 dark:border-[var(--mh-border)]">
@@ -963,7 +1017,7 @@ function MethodCard({ ds, sectors, passing }: { ds: Dataset; sectors: SectorDef[
                   <td className="px-3 py-1.5 text-[11px] text-tertiary dark:text-[var(--mh-muted)]">{s.inventory}</td>
                   <td className="px-3 py-1.5 text-right font-mono tabular-nums">{rep.length.toLocaleString('en-GB')}</td>
                   <td className="px-3 py-1.5 text-right font-mono font-bold tabular-nums text-[#3b2468] dark:text-[var(--mh-fg)]">{filt}</td>
-                  <td className="px-3 py-1.5 text-right font-mono tabular-nums">{rep.length ? fmtNum(median(rep.map((p) => s.value(p, 2020) as number)), 0) : '—'}</td>
+                  <td className="px-3 py-1.5 text-right font-mono tabular-nums">{rep.length ? fmtNum(median(rep.map((p) => (s.reported ?? s.value)(p, 2020) as number)), 0) : '—'}</td>
                   <td className="px-3 py-1.5 text-right font-mono tabular-nums">{fmtNum(ds.invSectors[2020]?.[s.key], 0)}</td>
                 </tr>
               );
@@ -986,7 +1040,9 @@ function MethodCard({ ds, sectors, passing }: { ds: Dataset; sectors: SectorDef[
 const PAGE = 25;
 type SortKey = 'stage' | 'src' | 'model' | 'scenario' | 'net50' | 'red' | `sec:${SectorKey}`;
 
-function PathwayTable({ screened, sectors, summary }: { screened: Screened[]; sectors: SectorDef[]; summary: string }) {
+function PathwayTable({ screened, sectors, allSectors, summary, harm, netValue }: {
+  screened: Screened[]; sectors: SectorDef[]; allSectors: SectorDef[]; summary: string; harm: HarmMethod; netValue: (p: Pathway, y: number) => number | null;
+}) {
   const [stageFilter, setStageFilter] = useState<number | 'all'>(4);
   const [q, setQ] = useState('');
   const [sort, setSort] = useState<{ key: SortKey; dir: 1 | -1 }>({ key: 'stage', dir: -1 });
@@ -1003,7 +1059,7 @@ function PathwayTable({ screened, sectors, summary }: { screened: Screened[]; se
     if (k === 'stage') return x.stage;
     if (k === 'src' || k === 'model' || k === 'scenario') return x.p[k].toLowerCase();
     if (k === 'net50' || k === 'red') return x.p.v[k] ?? -Infinity;
-    return SECTOR_BY_KEY[k.slice(4) as SectorKey].value(x.p, 2050) ?? -Infinity;
+    return (allSectors.find((s) => s.key === k.slice(4)) ?? SECTOR_BY_KEY[k.slice(4) as SectorKey]).value(x.p, 2050) ?? -Infinity;
   };
 
   const rows = useMemo(() => {
@@ -1016,23 +1072,24 @@ function PathwayTable({ screened, sectors, summary }: { screened: Screened[]; se
         return (va < vb ? -1 : va > vb ? 1 : 0) * sort.dir;
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [screened, stageFilter, q, sort]);
+  }, [screened, stageFilter, q, sort, allSectors]);
 
   const pages = Math.max(1, Math.ceil(rows.length / PAGE));
   const shown = rows.slice(page * PAGE, page * PAGE + PAGE);
 
   const download = () => {
-    const head = ['source', 'pool', 'model', 'scenario', 'stage', 'stage_label', 'reasons', 'net_ghg_2050', 'cut_2040_pct', ...SECTORS.map((s) => `${s.key}_2050`)];
+    const sfx = harm === 'none' ? '' : '_scaled';
+    const head = ['source', 'pool', 'model', 'scenario', 'stage', 'stage_label', 'reasons', 'net_ghg_2050_reported', ...(sfx ? [`net_ghg_2050${sfx}`] : []), 'cut_2040_pct', ...allSectors.flatMap((s) => [`${s.key}_2050_reported`, ...(sfx ? [`${s.key}_2050${sfx}`] : [])])];
     const esc = (v: unknown) => {
       const s = v == null ? '' : String(v);
       return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
     };
     const lines = [
-      `# Internal: contains Scenario Compass v2.0 data under embargo. Setting: ${summary}`,
+      `# Internal: contains Scenario Compass v2.0 data under embargo. Setting: ${summary}. ${harm === 'none' ? 'Values as reported.' : `Scaled columns: 2020 set to the EEA inventory 2020 (${harm === 'ratio' ? 'ratio, offset where the ratio is unusable' : 'offset'}).`}`,
       head.join(','),
       ...rows.map((x) => [
         SRC_LABEL[x.p.src] ?? x.p.src, x.p.pool, x.p.model, x.p.scenario, x.stage, STAGE_LABEL[x.stage], x.reasons.join('; '),
-        x.p.v.net50, x.p.v.red, ...SECTORS.map((s) => s.value(x.p, 2050)),
+        x.p.v.net50, ...(sfx ? [netValue(x.p, 2050)] : []), x.p.v.red, ...allSectors.flatMap((s) => [(s.reported ?? s.value)(x.p, 2050), ...(sfx ? [s.value(x.p, 2050)] : [])]),
       ].map(esc).join(',')),
     ];
     const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8' });
@@ -1085,7 +1142,7 @@ function PathwayTable({ screened, sectors, summary }: { screened: Screened[]; se
                   <Th k="net50" right>Net GHG 2050</Th>
                   <Th k="red" right>2040 cut %</Th>
                   <Th k="stage">Outcome</Th>
-                  {sectors.map((s) => <Th key={s.key} k={`sec:${s.key}`} right>{s.name} 2050</Th>)}
+                  {sectors.map((s) => <Th key={s.key} k={`sec:${s.key}`} right>{s.name} 2050{harm !== 'none' ? ' (scaled)' : ''}</Th>)}
                 </tr>
               </thead>
               <tbody>

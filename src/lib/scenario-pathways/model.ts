@@ -166,6 +166,8 @@ export interface Settings {
   margin: number;
   /** Missing filter values count as passed (the export's rule). */
   missingPass: boolean;
+  /** 2050 net GHG used by step 1; default the reported `net50`. Set to screen on inventory-scaled values. */
+  netValue?: (p: Pathway) => number | null;
 }
 
 export const ADVICE_SETTINGS: Settings = {
@@ -211,7 +213,7 @@ export function screen(p: Pathway, s: Settings): Screened {
   if (s.pools.length && !s.pools.includes(p.pool)) return { p, stage: -2, reasons: ['source not selected'] };
   if (!p.det) return { p, stage: -1, reasons: ['no industry data'] };
   if (s.netOn) {
-    const n = p.v.net50;
+    const n = s.netValue ? s.netValue(p) : p.v.net50;
     const ok = n != null ? n <= s.netTol : p.src === 'JRC' && p.nz0 && s.netTol >= 0;
     if (!ok) return { p, stage: 0, reasons: [n == null ? '2050 net GHG not reported' : `2050 net GHG ${fmtNum(n)} Mt`] };
   }
@@ -339,8 +341,13 @@ export interface SectorDef {
   /** Lever indicators shown on the deck's "levers" slide and driver charts. */
   levers: Lever[];
   /** First column of the driver chart (drivers.py SYS). */
-  driver: { col: string; label: string; unit: string; ref: number | null; refLabel: string };
-  driverCols: { col: string; label: string; unit: string; ref20?: string; refInv?: number }[];
+  driver: { col: string; label: string; unit: string; ref: number | null; refLabel: string; emYear?: number };
+  /** `emYear` marks a column that is the sector's own emissions in that year, so it follows the harmonisation. */
+  driverCols: { col: string; label: string; unit: string; ref20?: string; refInv?: number; emYear?: number }[];
+  /** As reported by the model; equals `value` when no harmonisation is applied. */
+  reported?: (p: Pathway, y: number) => number | null;
+  /** How each pathway was harmonised (set by `harmoniseSector`). */
+  harmKind?: (p: Pathway) => HarmKind;
 }
 
 const col = (stem: string) => (p: Pathway, y: number) => p.v[`${stem}_${y}`] ?? null;
@@ -356,7 +363,7 @@ export const SECTORS: SectorDef[] = [
       { label: 'Solar electricity', unit: 'TWh', stem: 'sup_solar' },
       { label: 'Hydrogen production', unit: 'EJ', stem: 'sup_h2' },
     ],
-    driver: { col: 'sup_e_2040', label: 'CO₂ 2040', unit: 'Mt CO₂', ref: 786.8, refLabel: 'inventory 2020' },
+    driver: { col: 'sup_e_2040', label: 'CO₂ 2040', unit: 'Mt CO₂', ref: 786.8, refLabel: 'inventory 2020', emYear: 2040 },
     driverCols: [
       { col: 'sup_el_2040', label: 'Electricity generation', unit: 'TWh', ref20: 'sup_el_2020' },
       { col: 'sup_wind_2040', label: 'Wind', unit: 'TWh', ref20: 'sup_wind_2020' },
@@ -373,7 +380,7 @@ export const SECTORS: SectorDef[] = [
       { label: 'Hydrogen use', unit: 'EJ', col: 'h240', colYear: 2040 },
       { label: 'CO₂ captured', unit: 'Mt CO₂', col: 'ccs50', colYear: 2050 },
     ],
-    driver: { col: 'i40', label: 'GHG 2040', unit: 'Mt CO₂e', ref: 593.2, refLabel: 'inventory 2020 (CO₂)' },
+    driver: { col: 'i40', label: 'GHG 2040', unit: 'Mt CO₂e', ref: 593.2, refLabel: 'inventory 2020 (CO₂)', emYear: 2040 },
     driverCols: [
       { col: 'el40', label: 'Electricity use', unit: 'EJ' },
       { col: 'h240', label: 'Hydrogen use', unit: 'EJ' },
@@ -390,7 +397,7 @@ export const SECTORS: SectorDef[] = [
       { label: 'Electricity use', unit: 'EJ', stem: 'mob_el' },
       { label: 'Hydrogen use', unit: 'EJ', stem: 'mob_h2' },
     ],
-    driver: { col: 'mob_e_2040', label: 'CO₂ 2040', unit: 'Mt CO₂', ref: 713.2, refLabel: 'inventory 2020' },
+    driver: { col: 'mob_e_2040', label: 'CO₂ 2040', unit: 'Mt CO₂', ref: 713.2, refLabel: 'inventory 2020', emYear: 2040 },
     driverCols: [
       { col: 'mob_fe_2040', label: 'Final energy', unit: 'EJ', ref20: 'mob_fe_2020' },
       { col: 'mob_el_2040', label: 'Electricity use', unit: 'EJ', ref20: 'mob_el_2020' },
@@ -406,7 +413,7 @@ export const SECTORS: SectorDef[] = [
       { label: 'Electricity use', unit: 'EJ', stem: 'bui_el' },
       { label: 'Gas use', unit: 'EJ', stem: 'bui_gas' },
     ],
-    driver: { col: 'bui_e_2040', label: 'CO₂ 2040', unit: 'Mt CO₂', ref: 418.2, refLabel: 'inventory 2020' },
+    driver: { col: 'bui_e_2040', label: 'CO₂ 2040', unit: 'Mt CO₂', ref: 418.2, refLabel: 'inventory 2020', emYear: 2040 },
     driverCols: [
       { col: 'bui_fe_2040', label: 'Final energy', unit: 'EJ', ref20: 'bui_fe_2020' },
       { col: 'bui_el_2040', label: 'Electricity use', unit: 'EJ', ref20: 'bui_el_2020' },
@@ -440,15 +447,82 @@ export const SECTORS: SectorDef[] = [
       { label: 'Forest area', unit: 'Mha', stem: 'eco_forest' },
       { label: 'LULUCF CO₂', unit: 'Mt CO₂', stem: 'eco_e' },
     ],
-    driver: { col: 'eco_e_2040', label: 'Net land CO₂ 2040', unit: 'Mt CO₂ (− = sink)', ref: -263.4, refLabel: 'inventory 2020' },
+    driver: { col: 'eco_e_2040', label: 'Net land CO₂ 2040', unit: 'Mt CO₂ (− = sink)', ref: -263.4, refLabel: 'inventory 2020', emYear: 2040 },
     driverCols: [
-      { col: 'eco_e_2050', label: 'Net land CO₂ 2050', unit: 'Mt CO₂', refInv: -263.4 },
+      { col: 'eco_e_2050', label: 'Net land CO₂ 2050', unit: 'Mt CO₂', refInv: -263.4, emYear: 2050 },
       { col: 'eco_forest_2040', label: 'Forest area 2040', unit: 'million ha', ref20: 'eco_forest_2020' },
     ],
   },
 ];
 
 export const SECTOR_BY_KEY = Object.fromEntries(SECTORS.map((s) => [s.key, s])) as Record<SectorKey, SectorDef>;
+
+// ── harmonisation to the historic inventory ─────────────────────────────
+
+/**
+ * Scaling of model results to the EEA inventory (requested 2026-11-20:
+ * "scale all of the results to the historic GHG inventories").
+ *
+ * Base year 2020, the first model year and the year the export already
+ * harmonises industry to (i20 = 607.5 Mt = inventory 2020 for every
+ * pathway, so industry is unchanged by any method here).
+ *
+ *   ratio  — v′(y) = v(y) × inv₂₀₂₀ / v₂₀₂₀ for every year. Used only where
+ *            model and inventory 2020 have the same sign and the factor lies
+ *            in RATIO_BOUNDS; elsewhere the pathway falls back to offset.
+ *            (Ecosystems: most models report a 2020 land source or a tiny
+ *            sink against an inventory sink of −263 Mt, so a ratio would
+ *            flip or explode the series.)
+ *   offset — v′(y) = v(y) + (inv₂₀₂₀ − v₂₀₂₀) for every year.
+ *   none   — as reported (the deck).
+ *
+ * The correction is held constant to 2050 (no convergence back to the
+ * reported values). Pathways without a 2020 value cannot be scaled and drop
+ * out of the scaled charts (they are counted as `missing`).
+ */
+export type HarmMethod = 'none' | 'ratio' | 'offset';
+export type HarmKind = 'none' | 'ratio' | 'offset' | 'missing';
+export const HARM_BASE_YEAR = 2020;
+export const RATIO_BOUNDS: [number, number] = [0.25, 4];
+
+export function harmKindFor(m20: number | null, inv: number, method: HarmMethod): HarmKind {
+  if (method === 'none') return 'none';
+  if (m20 == null || !Number.isFinite(inv)) return 'missing';
+  if (method === 'offset') return 'offset';
+  const f = m20 !== 0 ? inv / m20 : NaN;
+  return Number.isFinite(f) && f >= RATIO_BOUNDS[0] && f <= RATIO_BOUNDS[1] ? 'ratio' : 'offset';
+}
+
+export function harmonise(
+  value: (p: Pathway, y: number) => number | null,
+  inv: number,
+  method: HarmMethod,
+): { value: (p: Pathway, y: number) => number | null; kind: (p: Pathway) => HarmKind } {
+  if (method === 'none') return { value, kind: () => 'none' };
+  const kind = (p: Pathway) => harmKindFor(value(p, HARM_BASE_YEAR), inv, method);
+  return {
+    kind,
+    value: (p, y) => {
+      const v = value(p, y), m20 = value(p, HARM_BASE_YEAR);
+      if (v == null || m20 == null) return null;
+      const k = harmKindFor(m20, inv, method);
+      return k === 'ratio' ? v * (inv / m20) : v + (inv - m20);
+    },
+  };
+}
+
+export function harmoniseSector(s: SectorDef, inv: Record<SectorKey, number> | undefined, method: HarmMethod): SectorDef {
+  const target = inv?.[s.key];
+  if (method === 'none' || target == null) return { ...s, reported: s.value, harmKind: () => 'none' };
+  const h = harmonise(s.value, target, method);
+  return { ...s, value: h.value, reported: s.value, harmKind: h.kind };
+}
+
+export function harmMix(ps: Pathway[], s: SectorDef): Record<HarmKind, number> {
+  const out: Record<HarmKind, number> = { none: 0, ratio: 0, offset: 0, missing: 0 };
+  for (const p of ps) if (s.reported?.(p, 2050) != null) out[(s.harmKind ?? (() => 'none'))(p)]++;
+  return out;
+}
 
 // ── statistics ───────────────────────────────────────────────────────────
 
