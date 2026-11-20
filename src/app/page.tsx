@@ -267,7 +267,7 @@ export default async function HomePage() {
   const domainCount = new Set(policies.map((p) => p.domain)).size;
   const recommendationCount = ALL_ESABCC_RECOMMENDATIONS.length;
 
-  // The two main modules — the pillars of the Hub. They get the featured
+  // The three main modules — the pillars of the Hub. They get the featured
   // section at the top of the page and are the only module links in the
   // site header's top bar (see SiteHeader.tsx).
   const mainModules = [
@@ -293,10 +293,21 @@ export default async function HomePage() {
         { label: 'MODULES', value: 'User-extensible' },
       ],
     },
+    {
+      code: 'M · 55',
+      title: 'Scenarios',
+      description:
+        'EU scenario pathways under the 2040 screening: move the 2050 net-GHG tolerance, the 2040 window, the ESABCC filter and the risk levels, and every sector chart recomputes.',
+      href: '/scenario-pathways',
+      stats: [
+        { label: 'PATHWAYS', value: '1,328' },
+        { label: 'SECTORS', value: '6' },
+      ],
+    },
   ];
 
   // The other six production modules — stable and shipped, but one tier
-  // below the two main modules in the navigation hierarchy.
+  // below the three main modules in the navigation hierarchy.
   const coreModules = [
     {
       code: 'M · 02',
@@ -450,8 +461,9 @@ export default async function HomePage() {
           </h1>
           <p className="mt-4 sm:mt-5 text-[14px] sm:text-[15px] lg:text-[17px] text-[#3D5265]/80 max-w-3xl leading-relaxed">
             An integrated, internal research workspace for the European Scientific Advisory Board on Climate Change Secretariat.
-            Two main modules — the <strong className="text-[#3D5265]">Reference Manager</strong> and the{' '}
-            <strong className="text-[#3D5265]">Project Workspace</strong> — supported by six further production
+            Three main modules — the <strong className="text-[#3D5265]">Reference Manager</strong>, the{' '}
+            <strong className="text-[#3D5265]">Project Workspace</strong> and{' '}
+            <strong className="text-[#3D5265]">Scenarios</strong> — supported by six further production
             modules and a ribbon of beta prototypes, packaged as a single self-contained Next.js service. It is <strong className="text-[#3D5265]">hosted on Vercel (EU region) today</strong>{' '}
             and built to be redeployed onto <strong className="text-[#3D5265]">EEA infrastructure</strong>, with the codebase
             stewarded by <strong className="text-[#3D5265]">CCE5</strong>.
@@ -462,7 +474,7 @@ export default async function HomePage() {
               href="#modules"
               className="inline-flex items-center justify-center px-4 sm:px-5 py-3 sm:py-2.5 text-[14px] sm:text-[13px] font-semibold text-white bg-[#00928F] border border-[#00928F] rounded-sm hover:bg-[#007a77] transition-colors touch-target shadow-sm"
             >
-              The two main modules
+              The three main modules
               <svg className="ml-2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M12 5v14M5 12h14" />
               </svg>
@@ -505,8 +517,8 @@ export default async function HomePage() {
       <div id="modules" className="scroll-mt-20" />
 
       {/* ─────────────────────────────────────────────────────────
-          MAIN MODULES  (Reference Manager · Project Workspace)
-          The two pillars of the Hub. They lead the page and are the only
+          MAIN MODULES  (Reference Manager · Project Workspace · Scenarios)
+          The three pillars of the Hub. They lead the page and are the only
           module links in the site header's top bar (see SiteHeader.tsx).
           ───────────────────────────────────────────────────────── */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-20">
@@ -517,12 +529,13 @@ export default async function HomePage() {
               Main modules
             </p>
             <h2 className="mt-3 text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#3D5265] leading-[1.15]">
-              The two main modules.
+              The three main modules.
             </h2>
             <p className="mt-3 max-w-2xl text-[13.5px] text-[#3D5265]/75 leading-relaxed">
-              The <strong className="text-[#3D5265]">Reference Manager</strong> and the{' '}
-              <strong className="text-[#3D5265]">Project Workspace</strong> are the daily entry points
-              for Secretariat work — every other module feeds into or supports these two. They are the
+              The <strong className="text-[#3D5265]">Reference Manager</strong>, the{' '}
+              <strong className="text-[#3D5265]">Project Workspace</strong> and{' '}
+              <strong className="text-[#3D5265]">Scenarios</strong> are the daily entry points
+              for Secretariat work — every other module feeds into or supports these three. They are the
               only modules pinned to the top navigation bar.
             </p>
           </div>
@@ -533,7 +546,7 @@ export default async function HomePage() {
         </div>
         <div className="mt-4 border-t border-[#3D5265]" />
 
-        <div className="mt-6 grid gap-4 sm:gap-5 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {mainModules.map((m, i) => (
             <Link
               key={m.href}
@@ -587,7 +600,7 @@ export default async function HomePage() {
 
       {/* ─────────────────────────────────────────────────────────
           THE OTHER SIX PRODUCTION MODULES
-          Stable and shipped, but one tier below the two main modules.
+          Stable and shipped, but one tier below the three main modules.
           Any beta module under `beta/modules/` must not appear here —
           that separation is the whole point of the scope lock.
           ───────────────────────────────────────────────────────── */}
@@ -603,7 +616,7 @@ export default async function HomePage() {
             </h2>
             <p className="mt-3 max-w-2xl text-[13.5px] text-[#3D5265]/75 leading-relaxed">
               Everything in this row is <strong className="text-[#3D5265]">stable</strong>, covered by migrations,
-              RLS policies, retention jobs and IT handoff scripts. Together with the two main modules above,
+              RLS policies, retention jobs and IT handoff scripts. Together with the three main modules above,
               this is the only code path EEA IT needs to care about on day one.
             </p>
           </div>

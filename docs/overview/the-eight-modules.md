@@ -4,7 +4,9 @@ The production ship surface. Every module listed here is **stable**, covered
 by migrations, RLS policies, retention jobs and IT handoff scripts. v1.0
 launched with six; the workspace layer (M·07) and the recommendations tracker
 (M·08) were promoted from beta once the science team signed off, bringing the
-core to **eight**.
+core to **eight**. The Scenarios module (M·55) was added in November 2026 as
+a third main module next to the Reference Manager and the Project Workspace;
+its data are file-based (no migrations), so it is listed separately below.
 
 | #     | Module               | Route                  | What it does                                                      | Deep-dive                                        |
 |-------|----------------------|------------------------|-------------------------------------------------------------------|--------------------------------------------------|
@@ -16,6 +18,7 @@ core to **eight**.
 | M·06  | Voting Tool          | `/voting`              | Anonymous Advisory-Board ballots: single-use or universal links, seven voting systems, live analysis. | [open](../modules/voting-tool.md)                |
 | M·07  | Project Workspace    | `/project-workspace`   | A workspace per analytical project, bundling indicator databases, the recommendation tracker, the member-state matrix and policy analysis. | [open](../modules/project-workspace.md)          |
 | M·08  | Recommendations      | `/recommendations`     | Tracker for Advisory-Board recommendations — implementation status and dated uptake events against EU legislation. | [open](../modules/recommendations.md)            |
+| M·55  | Scenarios (main)     | `/scenario-pathways`   | 1,328 EU scenario pathways under the 2040 screening, every criterion movable, all deck charts recomputed. | [open](../modules/scenario-pathways.md)          |
 
 <figure class="mh-figure mh-figure--wide" markdown>
 <img src="../../assets/fig-five-modules.svg" alt="Corpus-backed modules (References, Data & Scenarios, News, Policy Navigator, Content Analysis) plus the project-scoped Workspace and Recommendations modules, arranged around a shared Postgres corpus, with the isolated Voting Tool kept separate.">

@@ -16,7 +16,9 @@ into [Secretariat News](../modules/news-feed.md).)
 
 ## What is parked
 
-Numbered M·09–M·54, continuing the sequence after the eight core modules. The
+Numbered M·09–M·54, continuing the sequence after the eight core modules
+(M·55 is taken by the Scenarios main module, `/scenario-pathways`, so the next
+beta module is M·56). The
 list grows roughly weekly as new prototypes land; the
 [`beta/README.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/beta/README.md)
 table and the home-page module ribbon (`src/app/page.tsx`) are the canonical,

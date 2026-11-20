@@ -12,8 +12,8 @@ import { useAuth } from '@/lib/auth-context';
  * Site-wide header for MethodHub.
  *
  * Navigation hierarchy (top to bottom):
- * 1. The **two main modules** — Reference Manager and Project Workspace —
- *    are the only module links in the always-visible top bar.
+ * 1. The **three main modules** — Reference Manager, Project Workspace and
+ *    Scenarios — are the only module links in the always-visible top bar.
  * 2. The **other six production modules** sit one level below: they are
  *    reachable from the mobile drawer, the home page grid and the footer,
  *    but not from the top bar.
@@ -21,7 +21,7 @@ import { useAuth } from '@/lib/auth-context';
  *    home page ribbon (`/beta/<slug>`), never in header navigation.
  *
  * Responsive layout:
- * - Desktop/tablet (md+): the two main-module links on the right.
+ * - Desktop/tablet (md+): the three main-module links on the right.
  * - Mobile (<md): compact brand + hamburger opening a full-screen drawer
  *   with grouped sections and large tap targets.
  */
@@ -40,9 +40,10 @@ interface Module {
 }
 
 const MODULES: Module[] = [
-  // The two main modules — the only entries with topBar: true.
+  // The three main modules — the only entries with topBar: true.
   { href: '/references',        label: 'Reference Manager', short: 'Reference Manager', group: 'main', topBar: true },
   { href: '/project-workspace', label: 'Project Workspace', short: 'Project Workspace', group: 'main', topBar: true },
+  { href: '/scenario-pathways', label: 'Scenarios',         short: 'Scenarios',         group: 'main', topBar: true },
   // The other six production modules — drawer / home page / footer only.
   { href: '/scenarios',         label: 'Data & Scenarios',  short: 'Data',              group: 'core' },
   { href: '/news-feed',         label: 'News',              short: 'News',              group: 'core' },
@@ -152,8 +153,8 @@ export default function SiteHeader() {
           </span>
         </Link>
 
-        {/* Top-bar module nav — only the two main modules live here.
-            With just two links there is no need for a separate condensed
+        {/* Top-bar module nav — only the three main modules live here.
+            With just three links there is no need for a separate condensed
             tablet variant; one strip fits from md upwards. */}
         <nav className="hidden md:flex items-center gap-1 ml-auto text-[13px] text-[#3D5265] whitespace-nowrap">
           {TOP_BAR_MODULES.map(m => (

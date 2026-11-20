@@ -10,14 +10,15 @@ import NotificationBell from './NotificationBell';
 
 // NOTE: SiteHeader is the live header since early 2026; this legacy component
 // is kept only because a few internal routes still import <Navigation />.
-// The list below mirrors SiteHeader: only the two main modules (Reference
-// Manager, Project Workspace) render in the top bar; the other six production
+// The list below mirrors SiteHeader: only the three main modules (Reference
+// Manager, Project Workspace, Scenarios) render in the top bar; the other six production
 // modules are drawer-only. Beta modules live under `beta/modules/` and are
 // intentionally unreachable.
 const NAV_ITEMS = [
   { href: '/',                  label: 'Method Hub',        topBar: true  },
   { href: '/references',        label: 'Reference Manager', topBar: true  },
   { href: '/project-workspace', label: 'Project Workspace', topBar: true  },
+  { href: '/scenario-pathways', label: 'Scenarios',         topBar: true  },
   { href: '/scenarios',         label: 'Scenarios',         topBar: false },
   { href: '/news-feed',         label: 'News Feed',         topBar: false },
   { href: '/policy-navigator',  label: 'Policy Navigator',  topBar: false },
@@ -87,7 +88,7 @@ export default function Navigation() {
             <span className="sm:hidden truncate">Method Hub</span>
           </Link>
 
-          {/* Desktop nav — only the two main modules (plus home) */}
+          {/* Desktop nav — only the three main modules (plus home) */}
           <div className="hidden md:flex items-center gap-1">
             {TOP_BAR_ITEMS.map(item => (
               <Link

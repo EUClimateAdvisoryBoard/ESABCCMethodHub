@@ -186,6 +186,7 @@ nav:
       - "M·06 Voting Tool":          modules/voting-tool.md
       - "M·07 Project Workspace":    modules/project-workspace.md
       - "M·08 Recommendations":      modules/recommendations.md
+      - "M·55 Scenarios":            modules/scenario-pathways.md
       - "M·16 Funding Sources (beta)": modules/funding-sources.md
       - "M·17 Strategy & Framework Docs (beta)": modules/strategy-docs.md
       - "M·32 Ex-Post Policy Assessment (beta)": modules/ex-post-analysis.md
