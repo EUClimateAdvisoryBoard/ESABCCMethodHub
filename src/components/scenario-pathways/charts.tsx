@@ -37,7 +37,7 @@ export const DECK = {
   bar: '#cfdde0',
   barPale: '#dfe9eb',
   blue: '#2a6f97',
-  funnel: ['#d0d0d0', '#b9c9ce', '#97b4ba', '#608c95', '#3f6670', '#3b2468'],
+  funnel: ['#d0d0d0', '#b9c9ce', '#97b4ba', '#7aa0a8', '#608c95', '#3f6670', '#3b2468'],
 } as const;
 
 // ── scales ───────────────────────────────────────────────────────────────
@@ -107,7 +107,8 @@ export interface TrajectoryChartProps {
   valueLabels?: { ys: number[]; idx: number[]; color: string };
   diamond?: { x: number; y: number; color: string; title: string };
   /** Orange range marker to the right of the plot (2050 median across the six settings). */
-  rangeMarker?: { lo: number; hi: number; title: string };
+  /** `lines` replaces the default "2050 median across the six settings" label. */
+  rangeMarker?: { lo: number; hi: number; title: string; lines?: string[] };
   yDomain?: [number, number];
   xDomain: [number, number];
   xTicks: number[];
@@ -131,7 +132,7 @@ export function TrajectoryChart(props: TrajectoryChartProps) {
   const W = props.width ?? (compact ? 420 : 900);
   const H = props.height ?? (compact ? 250 : 380);
   const clipId = useId().replace(/:/g, '');
-  const m = { l: compact ? 44 : 62, r: rangeMarker ? 150 : compact ? 34 : 20, t: compact ? 26 : 14, b: compact ? 22 : 28 };
+  const m = { l: compact ? 44 : 62, r: rangeMarker ? (rangeMarker.lines ? 190 : 150) : compact ? 34 : 20, t: compact ? 26 : 14, b: compact ? 22 : 28 };
   const all: number[] = [
     ...bars.map((b) => b.y),
     ...bands.flatMap((b) => [...b.lo, ...b.hi]),
@@ -154,7 +155,7 @@ export function TrajectoryChart(props: TrajectoryChartProps) {
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label={ariaLabel}>
         <defs>
           <clipPath id={clipId}>
-            <rect x={m.l} y={m.t} width={W - m.l - m.r + (rangeMarker ? 140 : 0)} height={H - m.t - m.b} />
+            <rect x={m.l} y={m.t} width={W - m.l - m.r + (rangeMarker ? m.r - 10 : 0)} height={H - m.t - m.b} />
           </clipPath>
         </defs>
         {framed && <rect x={1.5} y={1.5} width={W - 3} height={H - 3} fill="none" stroke={DECK.orange} strokeWidth={3} />}
@@ -236,10 +237,9 @@ export function TrajectoryChart(props: TrajectoryChartProps) {
             <rect x={W - m.r + 22} y={sy(Math.max(rangeMarker.lo, rangeMarker.hi))} width={9}
               height={Math.max(3, Math.abs(sy(rangeMarker.lo) - sy(rangeMarker.hi)))} fill={DECK.orange} />
             <text x={W - m.r + 38} y={sy((rangeMarker.lo + rangeMarker.hi) / 2) - 18} fontSize={12} fontWeight={700} fill={DECK.orange}>
-              <tspan x={W - m.r + 38} dy="0">2050 median</tspan>
-              <tspan x={W - m.r + 38} dy="14">across the six</tspan>
-              <tspan x={W - m.r + 38} dy="14">settings:</tspan>
-              <tspan x={W - m.r + 38} dy="14">{`${fmtNum(rangeMarker.lo, 0)} to ${fmtNum(rangeMarker.hi, 0)}`}</tspan>
+              {(rangeMarker.lines ?? ['2050 median', 'across the six', 'settings:', `${fmtNum(rangeMarker.lo, 0)} to ${fmtNum(rangeMarker.hi, 0)}`]).map((t, i) => (
+                <tspan key={i} x={W - m.r + 38} dy={i ? '14' : '0'}>{t}</tspan>
+              ))}
             </text>
             <title>{rangeMarker.title}</title>
           </g>
@@ -253,7 +253,7 @@ export function TrajectoryChart(props: TrajectoryChartProps) {
 
 export interface FunnelStep { label: string; n: number; off?: boolean }
 
-export function FunnelChart({ steps }: { steps: FunnelStep[] }) {
+export function FunnelChart({ steps, showRemoved = false }: { steps: FunnelStep[]; showRemoved?: boolean }) {
   const W = 900, rowH = 46, labelW = 330, H = steps.length * rowH + 30;
   const max = Math.max(1, ...steps.map((s) => s.n));
   const sx = linear(0, max * 1.12, labelW + 10, W - 10);
@@ -262,7 +262,7 @@ export function FunnelChart({ steps }: { steps: FunnelStep[] }) {
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label="Pathways left after each screening step">
       {steps.map((s, i) => {
         const y = i * rowH + 6;
-        const col = DECK.funnel[Math.min(i, DECK.funnel.length - 1)];
+        const col = DECK.funnel[Math.max(0, Math.min(DECK.funnel.length - 1, DECK.funnel.length - steps.length + i))];
         const last = i === steps.length - 1;
         return (
           <g key={s.label} opacity={s.off ? 0.45 : 1}>
@@ -272,6 +272,9 @@ export function FunnelChart({ steps }: { steps: FunnelStep[] }) {
             <rect x={sx(0)} y={y} width={Math.max(0, sx(s.n) - sx(0))} height={rowH - 14} fill={col} />
             <text x={sx(s.n) + 8} y={y + 23} fontSize={18} fontWeight={700} fill={i < 2 ? '#666' : col}>
               {s.n.toLocaleString('en-GB')}
+              {showRemoved && i > 0 && !s.off && (
+                <tspan dx="10" fontSize={13} fontWeight={400} fill="#7a7a7a">{`−${(steps[i - 1].n - s.n).toLocaleString('en-GB')}`}</tspan>
+              )}
             </text>
             <title>{`${s.label}: ${s.n.toLocaleString('en-GB')} pathways`}</title>
           </g>

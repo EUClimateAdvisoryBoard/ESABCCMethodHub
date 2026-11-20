@@ -35,7 +35,7 @@ import { codecs, useUrlState } from '@/lib/useUrlState';
 import {
   ADVICE_SETTINGS, DEFAULT_TH, PRESETS, SECTORS, SECTOR_BY_KEY, SRC_LABEL, STAGE_LABEL, THRESHOLDS, WIN_MIN, WIN_OPEN, YEARS,
   bandStats, checkParity, fmtNum, harmMix, harmonise, harmoniseSector, isExportDefault, matchesPreset, median, netGhgValue, netLabel, parseDataset, presetSettings,
-  RATIO_BOUNDS,
+  RATIO_BOUNDS, LIKELY_SETTINGS, checkPdfParity, isLikely,
   screenAll, sectorMatrix, windowLabel,
   type Dataset, type HarmMethod, type Pathway, type Preset, type RawDataset, type Screened, type SectorDef, type SectorKey, type Settings, type ThresholdKey,
 } from '@/lib/scenario-pathways/model';
@@ -44,6 +44,7 @@ import {
   type DotRow, type DriverColumn, type DriverRow,
 } from './charts';
 import { ControlGroup, DualSlider, PresetButtons, SingleSlider, SliderStyles, Toggle } from './controls';
+import SlideDeck from './slides';
 
 const DATA_URL = '/data/scenario-pathways/pathways.json';
 const DECK_URL = '/data/scenario-pathways/EU_six_sectors_2040_settings_deck.html';
@@ -59,7 +60,9 @@ const SOURCES: { label: string; url: string }[] = [
 // ── URL state ────────────────────────────────────────────────────────────
 
 const SCHEMA = {
-  view: codecs.enum(['overview', 'sectors', 'settings', 'pathways'] as const, 'overview'),
+  view: codecs.enum(['overview', 'sectors', 'settings', 'slides', 'pathways'] as const, 'overview'),
+  r30: codecs.boolean(false),
+  r30m: codecs.number(55),
   sec: codecs.csv(ALL_SECTORS),
   pool: codecs.csv([]),
   net: codecs.boolean(true),
@@ -76,7 +79,7 @@ const SCHEMA = {
   ...(Object.fromEntries(THRESHOLDS.map((t) => [`t_${t.key}`, codecs.number(t.def)])) as Record<`t_${ThresholdKey}`, ReturnType<typeof codecs.number>>),
 };
 
-type View = 'overview' | 'sectors' | 'settings' | 'pathways';
+type View = 'overview' | 'sectors' | 'settings' | 'slides' | 'pathways';
 
 // ── data loading (loud on failure, never silently empty) ─────────────────
 
@@ -224,12 +227,15 @@ function Explorer({ ds }: { ds: Dataset }) {
     th: Object.fromEntries(THRESHOLDS.map((t) => [t.key, u[`t_${t.key}`] as number])) as Record<ThresholdKey, number>,
     margin: u.m,
     missingPass: u.miss,
+    r30On: u.r30,
+    r30Min: u.r30m,
     netValue: u.hs && u.h !== 'none' ? (p: Pathway) => netH.value(p, 2050) : undefined,
   }), [u, netH]);
   const allSectors = useMemo(() => SECTORS.map((s) => harmoniseSector(s, ds.invSectors[2020], harm)), [ds, harm]);
   const sectors = useMemo(() => allSectors.filter((s) => u.sec.includes(s.key)), [allSectors, u.sec]);
 
   const parity = useMemo(() => checkParity(ds), [ds]);
+  const pdfParity = useMemo(() => checkPdfParity(ds), [ds]);
   const screened = useMemo(() => screenAll(ds, settings), [ds, settings]);
   const passing = useMemo(() => screened.filter((x) => x.stage === 4).map((x) => x.p), [screened]);
   const presetSets = useMemo(
@@ -245,6 +251,7 @@ function Explorer({ ds }: { ds: Dataset }) {
   }, [ds]);
 
   const summary = [
+    settings.r30On ? `2030 cut ≥ ${settings.r30Min}%` : null,
     settings.netOn ? netLabel(settings.netTol) + ' in 2050' : null,
     settings.winOn ? `2040 cut ${windowLabel(settings)}` : null,
     settings.filterOn ? 'ESABCC filter' : null,
@@ -255,7 +262,7 @@ function Explorer({ ds }: { ds: Dataset }) {
 
   return (
     <>
-      <StatStrip ds={ds} screened={screened} passing={passing} parity={parity} netValue={netH.value} scaled={harm !== 'none'} />
+      <StatStrip ds={ds} screened={screened} passing={passing} parity={parity} pdfParity={pdfParity} netValue={netH.value} scaled={harm !== 'none'} />
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
         <aside className="lg:sticky lg:top-[88px] lg:max-h-[calc(100vh-104px)] lg:overflow-y-auto rounded-lg border border-grey-200 bg-white p-4 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]" aria-label="Screening settings">
@@ -267,6 +274,11 @@ function Explorer({ ds }: { ds: Dataset }) {
             <p className="text-[11px] uppercase tracking-[0.1em] text-tertiary dark:text-[var(--mh-muted)]">Current setting</p>
             <p className="mt-0.5 text-[14px] font-semibold text-tertiary-dark dark:text-[var(--mh-fg)]">
               {summary}
+              {isLikely(settings) && (
+                <span className="ml-2 inline-flex items-center gap-1 rounded-full border border-[#3b2468] px-2 py-0.5 align-middle text-[10.5px] font-bold text-[#3b2468]">
+                  ● potential likely setting
+                </span>
+              )}
               {isAdvice && (
                 <span className="ml-2 inline-flex items-center gap-1 rounded-full border border-[#ec621d] px-2 py-0.5 align-middle text-[10.5px] font-bold text-[#ec621d]">
                   ● setting of the 2040 advice
@@ -307,11 +319,12 @@ function Explorer({ ds }: { ds: Dataset }) {
               { id: 'overview', label: 'Screen', subtitle: 'Funnel and EU net GHG' },
               { id: 'sectors', label: 'Inspect sectors', subtitle: 'Trajectories and levers' },
               { id: 'settings', label: 'Compare settings', subtitle: 'Six deck settings side by side' },
+              { id: 'slides', label: 'Make slides', subtitle: 'Deck in the EEA layout' },
               { id: 'pathways', label: 'Browse pathways', subtitle: 'Every scenario, with reasons' },
             ]}
           />
 
-          {passing.length === 0 && view !== 'pathways' && (
+          {passing.length === 0 && view !== 'pathways' && view !== 'slides' && (
             <EmptyState
               title="No pathway is within all criteria"
               body="Loosen one of the criteria in the panel — for example widen the 2040 window or raise the 2050 tolerance — or open the pathway list to see where each pathway drops out."
@@ -327,6 +340,7 @@ function Explorer({ ds }: { ds: Dataset }) {
             )) : <EmptyState title="No sector selected" body="Pick at least one sector above." primaryAction={{ label: 'Show all six', onClick: () => setU({ sec: ALL_SECTORS }) }} />
           )}
           {view === 'settings' && <SettingsView ds={ds} sectors={sectors} passing={passing} presetSets={presetSets} settings={settings} />}
+          {view === 'slides' && <SlideDeck ds={ds} settings={settings} allSectors={allSectors} selected={u.sec as SectorKey[]} harm={harm} />}
           {view === 'pathways' && <PathwayTable screened={screened} sectors={sectors} allSectors={allSectors} summary={summary} harm={harm} netValue={netH.value} />}
         </div>
       </div>
@@ -336,8 +350,8 @@ function Explorer({ ds }: { ds: Dataset }) {
 
 // ── stat strip ───────────────────────────────────────────────────────────
 
-function StatStrip({ ds, screened, passing, parity, netValue, scaled }: {
-  ds: Dataset; screened: Screened[]; passing: Pathway[]; parity: { checked: number; mismatches: number };
+function StatStrip({ ds, screened, passing, parity, pdfParity, netValue, scaled }: {
+  ds: Dataset; screened: Screened[]; passing: Pathway[]; parity: { checked: number; mismatches: number }; pdfParity: { ok: boolean; got: number[] };
   netValue: (p: Pathway, y: number) => number | null; scaled: boolean;
 }) {
   const net = passing.map((p) => netValue(p, 2050)).filter((v): v is number => v != null);
@@ -369,6 +383,15 @@ function StatStrip({ ds, screened, passing, parity, netValue, scaled }: {
           ? `✓ Screening port reproduces the export's 12 stage columns (${parity.checked.toLocaleString('en-GB')} of ${parity.checked.toLocaleString('en-GB')} codes)`
           : `⚠ Screening port differs from the export in ${parity.mismatches.toLocaleString('en-GB')} of ${parity.checked.toLocaleString('en-GB')} stage codes — do not use the figures`}
       </p>
+      <p
+        className={`ml-2 mt-2 inline-flex items-center gap-1.5 rounded px-2 py-1 text-[11px] font-semibold ${pdfParity.ok ? 'bg-surface-green text-secondary' : 'bg-surface-orange text-accent-red'}`}
+        role={pdfParity.ok ? undefined : 'alert'}
+        title="Funnel of the EEA deck 'EU screening settings: potential likely setting' (20 Nov 2026): 1,318 → 657 → 151 → 51 → 48 → 40"
+      >
+        {pdfParity.ok
+          ? '✓ Potential likely setting reproduces the EEA PDF (1,318 → 40)'
+          : `⚠ Potential likely setting gives ${pdfParity.got.join(' → ')}, the PDF 1,318 → 657 → 151 → 51 → 48 → 40`}
+      </p>
     </section>
   );
 }
@@ -394,13 +417,29 @@ function FilterPanel({ settings, u, setU, pools, onReset, isAdvice }: {
     <div className="space-y-4">
       <div className="flex items-center justify-between gap-2">
         <h2 className="text-[14px] font-bold text-tertiary-dark dark:text-[var(--mh-fg)]">Screening settings</h2>
+      </div>
+      <div className="flex flex-wrap gap-1.5" aria-label="Named settings">
         <button
           type="button"
           onClick={onReset}
           disabled={isAdvice && !u.pool.length}
+          title="Net GHG ≤ 150 Mt in 2050, 2040 cut 85–95%, ESABCC filter and risk levels (64 pathways)"
           className="mh-focus rounded border border-grey-300 px-2 py-1 text-[11px] font-semibold text-tertiary hover:bg-grey-100 disabled:opacity-40 dark:border-[var(--mh-border)] dark:text-[var(--mh-fg)]"
         >
           ↺ 2040 advice
+        </button>
+        <button
+          type="button"
+          onClick={() => setU({
+            r30: true, r30m: LIKELY_SETTINGS.r30Min, net: true, tol: LIKELY_SETTINGS.netTol, win: true, lo: LIKELY_SETTINGS.winLo, hi: LIKELY_SETTINGS.winHi,
+            f: true, r: true, m: 0, miss: true, pool: [], hs: false,
+            ...(Object.fromEntries(THRESHOLDS.map((t) => [`t_${t.key}`, t.def])) as Partial<U>),
+          })}
+          disabled={isLikely(settings) && !u.pool.length}
+          title="EU-wide ≥ 55% by 2030, 85–90% by 2040, net GHG ≤ 300 Mt in 2050, ESABCC filter and risk levels (40 pathways; EEA deck of 20 Nov 2026)"
+          className="mh-focus rounded border border-[#3b2468] px-2 py-1 text-[11px] font-semibold text-[#3b2468] hover:bg-[#efe9f4] disabled:opacity-40 dark:text-[var(--mh-fg)]"
+        >
+          ◆ Potential likely setting
         </button>
       </div>
 
@@ -420,8 +459,8 @@ function FilterPanel({ settings, u, setU, pools, onReset, isAdvice }: {
           lies outside {RATIO_BOUNDS[0]}–{RATIO_BOUNDS[1]} (most ecosystem pathways). Lever indicators (TWh, EJ, Mha) stay as reported.
         </p>
         <label className={`mt-2.5 flex items-center justify-between gap-2 text-[11.5px] font-semibold text-tertiary-dark dark:text-[var(--mh-fg)] ${u.h === 'none' ? 'opacity-50' : ''}`}>
-          Use scaled 2050 net GHG in step 1
-          <Toggle checked={u.hs && u.h !== 'none'} onChange={(v) => setU({ hs: v })} label="Use scaled 2050 net GHG in step 1" />
+          Use scaled 2050 net GHG in step 2
+          <Toggle checked={u.hs && u.h !== 'none'} onChange={(v) => setU({ hs: v })} label="Use scaled 2050 net GHG in step 2" />
         </label>
         <p className="mt-1 text-[10.5px] leading-snug text-tertiary dark:text-[var(--mh-muted)]">
           Off by default: the 2040 advice screened on the reported values. The 2040 cut is already measured against the inventory.
@@ -440,7 +479,17 @@ function FilterPanel({ settings, u, setU, pools, onReset, isAdvice }: {
         )}
       </ControlGroup>
 
-      <ControlGroup step="Step 1" title="EU net GHG in 2050" on={u.net} onToggle={(v) => setU({ net: v })}
+      <ControlGroup step="Step 1" title="2030 net GHG cut vs 1990" on={u.r30} onToggle={(v) => setU({ r30: v })}
+        summary={u.r30 ? `cut ≥ ${u.r30m}% (rounded to one decimal; missing values pass)` : 'step off (the 2040 advice had no 2030 rule)'}>
+        <PresetButtons disabled={!u.r30} value={[50, 55, 60].includes(u.r30m) ? u.r30m : null} onPick={(v) => setU({ r30m: v })}
+          options={[{ label: '≥ 50%', value: 50 }, { label: '≥ 55%', value: 55, title: 'EU Climate Law 2030 target' }, { label: '≥ 60%', value: 60 }]} />
+        <div className="mt-2">
+          <SingleSlider label="Minimum 2030 cut" value={u.r30m} min={30} max={75} step={1} def={55} unit="%" disabled={!u.r30}
+            format={(v) => `≥ ${v}`} onChange={(v) => setU({ r30m: v })} />
+        </div>
+      </ControlGroup>
+
+      <ControlGroup step="Step 2" title="EU net GHG in 2050" on={u.net} onToggle={(v) => setU({ net: v })}
         summary={u.net ? `${netLabel(settings.netTol)} CO₂e` : 'step off'}>
         <PresetButtons
           disabled={!u.net}
@@ -454,7 +503,7 @@ function FilterPanel({ settings, u, setU, pools, onReset, isAdvice }: {
         </div>
       </ControlGroup>
 
-      <ControlGroup step="Step 2" title="2040 net GHG cut vs 1990" on={u.win} onToggle={(v) => setU({ win: v })}
+      <ControlGroup step="Step 3" title="2040 net GHG cut vs 1990" on={u.win} onToggle={(v) => setU({ win: v })}
         summary={u.win ? `window ${windowLabel(settings)} (rounded)` : 'step off'}>
         <PresetButtons
           disabled={!u.win}
@@ -478,7 +527,7 @@ function FilterPanel({ settings, u, setU, pools, onReset, isAdvice }: {
         </div>
       </ControlGroup>
 
-      <ControlGroup step="Step 3" title="ESABCC filter — feasibility" on={u.f} onToggle={(v) => setU({ f: v })}
+      <ControlGroup step="Step 4" title="ESABCC filter — feasibility" on={u.f} onToggle={(v) => setU({ f: v })}
         summary="ESABCC (2023) Table 5 · fails if a value exceeds its limit">
         <div className="space-y-2.5">
           {THRESHOLDS.filter((t) => t.group === 'filter').map((t) => (
@@ -489,7 +538,7 @@ function FilterPanel({ settings, u, setU, pools, onReset, isAdvice }: {
         </div>
       </ControlGroup>
 
-      <ControlGroup step="Step 4" title="Risk levels — sustainability" on={u.r} onToggle={(v) => setU({ r: v })}
+      <ControlGroup step="Step 5" title="Risk levels — sustainability" on={u.r} onToggle={(v) => setU({ r: v })}
         summary="ESABCC (2023) Table 6 · fails if a value exceeds its level">
         <div className="space-y-2.5">
           {THRESHOLDS.filter((t) => t.group === 'risk').map((t) => (
@@ -500,7 +549,7 @@ function FilterPanel({ settings, u, setU, pools, onReset, isAdvice }: {
         </div>
       </ControlGroup>
 
-      <ControlGroup step="Steps 3–4" title="Common rules">
+      <ControlGroup step="Steps 4–5" title="Common rules">
         <SingleSlider label="Margin on all limits" value={u.m} min={0} max={50} step={1} def={0} unit="%" disabled={!u.f && !u.r}
           onChange={(v) => setU({ m: v })} />
         <p className="mt-1 text-[10.5px] text-tertiary dark:text-[var(--mh-muted)]">The export also ran a +10% variant.</p>
@@ -518,6 +567,7 @@ function FilterPanel({ settings, u, setU, pools, onReset, isAdvice }: {
 const STEP_LABELS = (s: Settings) => [
   'Pathways collected',
   'With industry data',
+  `2030 net GHG cut ≥ ${s.r30Min ?? 55}% vs 1990`,
   `EU net GHG ≤ ${fmtNum(s.netTol)} Mt CO₂e in 2050`,
   `2040 net GHG cut ${windowLabel(s)} vs 1990`,
   'ESABCC filter (feasibility, Table 5)',
@@ -529,16 +579,25 @@ function OverviewView({ ds, screened, settings, passing, sectors, presetSets, ne
   netValue: (p: Pathway, y: number) => number | null; harm: HarmMethod;
 }) {
   const labels = STEP_LABELS(settings);
-  const off = [false, false, !settings.netOn, !settings.winOn, !settings.filterOn, !settings.riskOn];
-  // As variants.py: collected, then stage ≥ 0 (industry data), ≥ 1, ≥ 2, ≥ 3, ≥ 4.
-  const counts = [screened.filter((x) => x.stage !== -2).length, ...[0, 1, 2, 3, 4].map((k) => screened.filter((x) => x.stage >= k).length)];
-  const steps = labels.map((label, i) => ({ label, n: counts[i], off: off[i] }));
+  const off = [false, false, !settings.r30On, !settings.netOn, !settings.winOn, !settings.filterOn, !settings.riskOn];
+  // As variants.py: collected, then stage ≥ −0.5 (industry data), ≥ 0 (2030 rule), ≥ 1, ≥ 2, ≥ 3, ≥ 4.
+  const ks = [null, -0.5, 0, 1, 2, 3, 4] as const;
+  const all = ks.map((k, i) => ({
+    label: labels[i], off: off[i], k,
+    n: k == null ? screened.filter((x) => x.stage !== -2).length : screened.filter((x) => x.stage >= k).length,
+  }));
+  // The 2030 rule is new; hide its bar when it is off so the funnel keeps the deck's shape.
+  const steps = all.filter((x) => !(x.k === 0 && x.off));
 
-  // Medians of EU net GHG for the set left after each step (econ.py).
-  const stepSets = [0, 1, 2, 3, 4].map((k) => screened.filter((x) => x.stage >= k).map((x) => x.p));
-  const mats = stepSets.map((set) => sectorMatrix(set, netValue));
-  const last = bandStats(mats[4]);
-  const lineCols = ['#b9c9ce', '#97b4ba', '#608c95', '#3f6670', DECK.purple];
+  // Medians of EU net GHG for the set left after each active step (econ.py).
+  const active = all.filter((x) => x.k != null && (!x.off || x.k === -0.5));
+  const mats = active.map((x) => sectorMatrix(screened.filter((y) => y.stage >= (x.k as number)).map((y) => y.p), netValue));
+  if (all[6].off) mats.push(sectorMatrix(passing, netValue)); // the final set is always drawn
+  const lineLabels = [...active.map((x) => x.label), ...(all[6].off ? ['All active steps'] : [])];
+  const lastIdx = mats.length - 1;
+  const last = bandStats(mats[lastIdx]);
+  const palette = ['#b9c9ce', '#97b4ba', '#7aa0a8', '#608c95', '#3f6670'];
+  const lineCols = mats.map((_, i) => (i === lastIdx ? DECK.purple : palette[Math.max(0, palette.length - (lastIdx - i))]));
   const invYears = Object.keys(ds.invNet).map(Number).filter((y) => y >= 1990).sort((a, b) => a - b);
   const bySrc = Object.entries(passing.reduce<Record<string, number>>((a, p) => ({ ...a, [p.src]: (a[p.src] ?? 0) + 1 }), {})).sort((a, b) => b[1] - a[1]);
 
@@ -555,7 +614,7 @@ function OverviewView({ ds, screened, settings, passing, sectors, presetSets, ne
 
       <Card kicker="Economy-wide · EU net GHG" title="Median EU net GHG at each screening step"
         lead={`Number of pathways in each median in brackets; the ${passing.length} filtered pathways in purple`}>
-        {mats[4].length === 0 ? (
+        {mats[lastIdx].length === 0 ? (
           <PartialState summary="None of the filtered pathways reports EU net GHG for all four years, so only the earlier steps are drawn." />
         ) : null}
         <TrajectoryChart
@@ -566,15 +625,15 @@ function OverviewView({ ds, screened, settings, passing, sectors, presetSets, ne
           yLabel="Mt CO₂e"
           bars={invYears.map((y) => ({ x: y, y: ds.invNet[y] }))}
           barColor={DECK.barPale}
-          bands={mats[4].length ? [{ lo: last.q[25], hi: last.q[75], color: DECK.purple, opacity: 0.18, label: '25–75% of the filtered pathways' }] : []}
+          bands={mats[lastIdx].length ? [{ lo: last.q[25], hi: last.q[75], color: DECK.purple, opacity: 0.18, label: '25–75% of the filtered pathways' }] : []}
           lines={mats.map((m, i) => ({ m, i })).filter(({ m }) => m.length).map(({ m, i }) => ({
-            ys: bandStats(m).q[50], color: lineCols[i], width: i === 4 ? 4 : 2.5, markers: true, label: `${labels[i + 1]} (${m.length})`,
+            ys: bandStats(m).q[50], color: lineCols[i], width: i === lastIdx ? 4 : 2.5, markers: true, label: `${lineLabels[i]} (${m.length})`,
           }))}
-          valueLabels={mats[4].length ? { ys: last.q[50], idx: [1, 2, 3], color: DECK.purple } : undefined}
+          valueLabels={mats[lastIdx].length ? { ys: last.q[50], idx: [1, 2, 3], color: DECK.purple } : undefined}
         />
         <div className="mt-2">
           <Legend items={[
-            ...mats.map((m, i) => ({ label: `${labels[i + 1]} (${m.length.toLocaleString('en-GB')}): median`, kind: 'line' as const, color: lineCols[i], width: i === 4 ? 4 : 2.5 })),
+            ...mats.map((m, i) => ({ label: `${lineLabels[i]} (${m.length.toLocaleString('en-GB')}): median`, kind: 'line' as const, color: lineCols[i], width: i === lastIdx ? 4 : 2.5 })),
             { label: `25–75% of the ${passing.length}`, kind: 'band', color: DECK.purple, opacity: 0.18 },
             { label: 'EEA inventory, EU net GHG 1990–2024', kind: 'bar', color: DECK.barPale },
           ]} />
@@ -1113,7 +1172,7 @@ function PathwayTable({ screened, sectors, allSectors, summary, harm, netValue }
     <Card kicker="All scenarios" title="Every pathway and where it drops out" lead="Filter by screening outcome, search by model or scenario, sort by any column. The download carries the current setting.">
       <div className="mb-3 flex flex-wrap items-center gap-1.5">
         <FilterPill label="All" count={screened.length} active={stageFilter === 'all'} onClick={() => setStageFilter('all')} />
-        {[4, 3, 2, 1, 0, -1, -2].filter((k) => counts[k]).map((k) => (
+        {[4, 3, 2, 1, 0, -0.5, -1, -2].filter((k) => counts[k]).map((k) => (
           <FilterPill key={k} label={STAGE_LABEL[k]} count={counts[k]} active={stageFilter === k} onClick={() => setStageFilter(k)} />
         ))}
       </div>

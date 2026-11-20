@@ -25,14 +25,34 @@ presented deck for the pathways that are left.
 | Step | Control | Export default |
 |---|---|---|
 | 0 · Source databases | pills per source pool | all 16 |
-| 1 · EU net GHG in 2050 | presets ≤ 0 / ≤ 150 / ≤ 300 Mt plus a slider (−300 to 600 Mt) | ≤ 150 Mt |
-| 2 · 2040 cut vs 1990 | presets plus a two-handle timeline (70–100 %, right handle at 100 = open) | 85–95 % |
-| 3 · ESABCC filter (Table 5) | six threshold sliders | 500 Mt capture, 20 EJ bioenergy, 8,600 Mt world storage, 240 EJ world bioenergy, 1.89 EJ hydrogen 2030, 20 % final-energy decline |
-| 4 · Risk levels (Table 6) | three threshold sliders | 425 Mt capture, 9 EJ bioenergy, 400 Mt land sink |
-| 3–4 · Common rules | margin on all limits; "missing values count as passed" | 0 %; on |
+| 1 · 2030 cut vs 1990 | toggle, presets 50 / 55 / 60 %, slider | off (potential likely setting: ≥ 55 %) |
+| 2 · EU net GHG in 2050 | presets ≤ 0 / ≤ 150 / ≤ 300 Mt plus a slider (−300 to 600 Mt) | ≤ 150 Mt |
+| 3 · 2040 cut vs 1990 | presets plus a two-handle timeline (70–100 %, right handle at 100 = open) | 85–95 % |
+| 4 · ESABCC filter (Table 5) | six threshold sliders | 500 Mt capture, 20 EJ bioenergy, 8,600 Mt world storage, 240 EJ world bioenergy, 1.89 EJ hydrogen 2030, 20 % final-energy decline |
+| 5 · Risk levels (Table 6) | three threshold sliders | 425 Mt capture, 9 EJ bioenergy, 400 Mt land sink |
+| 4–5 · Common rules | margin on all limits; "missing values count as passed" | 0 %; on |
 
 Each step can be switched off. Every setting lives in the URL, so a view can
 be shared as a link.
+
+## 2030 rule and the potential likely setting
+
+Step 1 (off by default) keeps pathways whose EU net GHG cut 2030 vs 1990 is
+at least the chosen share (default 55 %, rounded to one decimal; missing values
+pass). The export has no 2030 cut; the build script derives it from the
+export's 2040 cut and the reported 2030 and 2040 net GHG, which reproduces the
+EEA deck "EU screening settings: potential likely setting" exactly. The panel
+button **◆ Potential likely setting** sets ≥ 55 % by 2030, 85–90 % by 2040 and
+≤ 300 Mt in 2050 (40 pathways); a badge confirms the PDF's funnel on every
+load.
+
+## Slides
+
+**Make slides** renders that deck for the current setting: the tolerance
+table, the three rule strips by model family, the funnel with the ESABCC
+limits, and one slide per selected sector with trajectory, 2050 annotation
+and lever tiles. **Present** opens full screen (arrow keys, Esc); **Print /
+save as PDF** prints one 16:9 slide per page.
 
 ## Scaling to the historic inventory
 
@@ -80,6 +100,7 @@ the user's source, filter, risk and margin choices are carried over to them.
 | [`src/lib/scenario-pathways/model.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/scenario-pathways/model.ts) | Screening port, sector definitions, numpy-compatible percentiles |
 | [`src/components/scenario-pathways/ScenarioPathways.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/scenario-pathways/ScenarioPathways.tsx) | Page, filter panel, views |
 | [`src/components/scenario-pathways/charts.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/scenario-pathways/charts.tsx) | SVG charts in the deck's palette |
+| [`src/components/scenario-pathways/slides.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/scenario-pathways/slides.tsx) | Slide view, presenter, print |
 | [`src/components/scenario-pathways/controls.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/scenario-pathways/controls.tsx) | Sliders, two-handle timeline, toggles |
 | [`src/app/scenario-pathways/page.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/app/scenario-pathways/page.tsx) | Route shell |
 

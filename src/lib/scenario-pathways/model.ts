@@ -8,8 +8,10 @@
  * columns exactly; `checkParity()` re-runs that comparison in the browser and
  * the page reports the result, so a drift cannot go unnoticed.
  *
- * Stage codes (as in the export README):
- *   -1 no industry data · 0 fails the 2050 net-GHG rule · 1 outside the 2040
+ * Stage codes (as in the export README, plus −0.5 for the 2030 rule of the
+ * EEA's follow-up "potential likely setting" deck, which sits between the
+ * industry-data check and the 2050 rule, as in that deck's funnel):
+ *   -1 no industry data · −0.5 fails the 2030 cut · 0 fails the 2050 net-GHG rule · 1 outside the 2040
  *   window · 2 fails the ESABCC filter (feasibility, ESABCC 2023 Table 5) ·
  *   3 above a risk level (sustainability, ESABCC 2023 Table 6) · 4 within all
  *   criteria.
@@ -166,6 +168,10 @@ export interface Settings {
   margin: number;
   /** Missing filter values count as passed (the export's rule). */
   missingPass: boolean;
+  /** Apply the 2030 rule (potential likely setting). Missing 2030 cuts pass. */
+  r30On?: boolean;
+  /** EU net GHG cut 2030 vs 1990 must be ≥ this, percent (cut rounded to one decimal). */
+  r30Min?: number;
   /** 2050 net GHG used by step 1; default the reported `net50`. Set to screen on inventory-scaled values. */
   netValue?: (p: Pathway) => number | null;
 }
@@ -212,6 +218,10 @@ export interface Screened {
 export function screen(p: Pathway, s: Settings): Screened {
   if (s.pools.length && !s.pools.includes(p.pool)) return { p, stage: -2, reasons: ['source not selected'] };
   if (!p.det) return { p, stage: -1, reasons: ['no industry data'] };
+  if (s.r30On) {
+    const r = p.v.red30;
+    if (r != null && Math.round(r * 10) / 10 < (s.r30Min ?? 55)) return { p, stage: -0.5, reasons: [`2030 cut ${r.toFixed(1)}%`] };
+  }
   if (s.netOn) {
     const n = s.netValue ? s.netValue(p) : p.v.net50;
     const ok = n != null ? n <= s.netTol : p.src === 'JRC' && p.nz0 && s.netTol >= 0;
@@ -280,6 +290,41 @@ export function presetSettings(base: Settings, pr: Preset): Settings {
   return { ...base, netOn: true, winOn: true, netTol: pr.netTol, winLo: pr.winLo, winHi: pr.winHi };
 }
 
+/**
+ * The "potential likely setting" of the EEA deck of 20 November 2026:
+ * EU-wide ≥ 55 % by 2030, 85–90 % by 2040, net GHG ≤ 300 Mt in 2050, ESABCC
+ * filter and risk levels without tolerance → 40 pathways.
+ */
+export const LIKELY_SETTINGS: Settings = {
+  ...ADVICE_SETTINGS,
+  r30On: true,
+  r30Min: 55,
+  netTol: 300,
+  winLo: 85,
+  winHi: 90,
+};
+
+export function isLikely(s: Settings): boolean {
+  return !!s.r30On && (s.r30Min ?? 55) === 55 && s.netOn && s.netTol === 300 && s.winOn && s.winLo === 85 && s.winHi === 90 && isExportDefault({ ...s, r30On: false }) && !s.netValue;
+}
+
+/** Counts printed in the PDF, re-checked in the browser (as the build script does). */
+export const PDF_FUNNEL = [1318, 657, 151, 51, 48, 40];
+export function checkPdfParity(ds: Dataset): { ok: boolean; got: number[] } {
+  const sc = ds.pathways.map((p) => screen(p, LIKELY_SETTINGS).stage);
+  const got = [-0.5, 0, 1, 2, 3, 4].map((k) => sc.filter((x) => x >= k).length);
+  return { ok: got.every((v, i) => v === PDF_FUNNEL[i]), got };
+}
+
+/** Model family for colour coding (the PDF's strip plots and "by model" bars). */
+export const FAMILIES = ['REMIND', 'IMAGE', 'PRIMES', 'POLES', 'GCAM', 'WITCH', 'MESSAGE', 'AIM', 'other'] as const;
+export type Family = (typeof FAMILIES)[number];
+export function modelFamily(model: string): Family {
+  const m = model.toUpperCase();
+  for (const f of FAMILIES) if (f !== 'other' && m.startsWith(f)) return f;
+  return 'other';
+}
+
 export function matchesPreset(s: Settings): Preset | undefined {
   if (!s.netOn || !s.winOn) return undefined;
   return PRESETS.find((p) => p.netTol === s.netTol && p.winLo === s.winLo && p.winHi === s.winHi);
@@ -287,6 +332,7 @@ export function matchesPreset(s: Settings): Preset | undefined {
 
 export function isExportDefault(s: Settings): boolean {
   return (
+    !s.r30On &&
     s.pools.length === 0 &&
     s.filterOn &&
     s.riskOn &&
@@ -603,6 +649,7 @@ export const SRC_LABEL: Record<string, string> = {
 export const STAGE_LABEL: Record<number, string> = {
   [-2]: 'Source not selected',
   [-1]: 'No industry data',
+  [-0.5]: 'Fails 2030 cut',
   0: 'Fails 2050 net GHG',
   1: 'Outside 2040 window',
   2: 'Fails ESABCC filter',
