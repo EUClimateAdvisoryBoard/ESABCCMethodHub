@@ -7,13 +7,14 @@ import { useState } from 'react';
 
 /**
  * Production modules surfaced in the footer, split to mirror the site-wide
- * navigation hierarchy: the two main modules first, then the other six.
+ * navigation hierarchy: the three main modules first, then the other six.
  * Beta modules live under `beta/modules/` in the repo and are intentionally
  * not linked here.
  */
 const SECTION_MAIN = [
   { href: '/references',        label: 'Reference Manager' },
   { href: '/project-workspace', label: 'Project Workspace' },
+  { href: '/scenario-pathways', label: 'Scenarios' },
 ];
 
 const SECTION_MODULES = [

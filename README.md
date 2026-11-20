@@ -48,6 +48,13 @@ Read more:
 | M·07 | Project Workspace | Per-project binder: indicator DB, member-state matrix, recommendation tracker, meetings. | [project workspace](https://methodhub.vercel.app/docs/modules/project-workspace/) |
 | M·08 | Recommendations | Advisory-Board recommendation tracker — status and dated uptake events vs. EU law. | [recommendations](https://methodhub.vercel.app/docs/modules/recommendations/) |
 
+A third **main module**, **M·55 Scenarios** (`/scenario-pathways`), sits in the top bar next to the
+Reference Manager and the Project Workspace: 1,328 EU scenario pathways from the EEA export
+`EU_six_sectors_export.zip`, screened with movable 2040-advice criteria. Data are built by
+[`scripts/build-scenario-pathways.py`](scripts/build-scenario-pathways.py) and served only behind
+the site login (embargoed Scenario Compass data). Docs:
+[scenarios](https://methodhub.vercel.app/docs/modules/scenario-pathways/).
+
 Module index: [modules overview](https://methodhub.vercel.app/docs/modules/).
 
 ## Repository layout

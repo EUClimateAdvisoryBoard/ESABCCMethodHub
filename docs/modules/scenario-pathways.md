@@ -1,0 +1,98 @@
+# M·55 Scenarios — EU pathways under the 2040 screening
+
+Main module, pinned to the top bar next to the
+[Reference Manager](references.md) and the [Project Workspace](project-workspace.md).
+Route: `/scenario-pathways`.
+
+!!! warning "Internal — embargoed data · AI-compiled — pending Secretariat verification"
+    The pathway data contain Scenario Compass v2.0 results under embargo. They
+    are served only behind the site login and must not be copied to external
+    services or public repositories. The screening port and the charts are
+    AI-compiled; with the default settings they reproduce the EEA export
+    exactly (see *Parity* below), any other setting is exploratory.
+
+## User story
+
+A Secretariat analyst wants to know how the six sector pictures of the 2040
+advice change if a screening criterion is set differently: a looser 2050
+net-GHG tolerance, a narrower 2040 window, a stricter bioenergy limit. The
+module loads the 1,328 pathways of the EEA export, applies the five screening
+steps with every threshold on a control, and redraws all chart types of the
+presented deck for the pathways that are left.
+
+## Controls
+
+| Step | Control | Export default |
+|---|---|---|
+| 0 · Source databases | pills per source pool | all 16 |
+| 1 · EU net GHG in 2050 | presets ≤ 0 / ≤ 150 / ≤ 300 Mt plus a slider (−300 to 600 Mt) | ≤ 150 Mt |
+| 2 · 2040 cut vs 1990 | presets plus a two-handle timeline (70–100 %, right handle at 100 = open) | 85–95 % |
+| 3 · ESABCC filter (Table 5) | six threshold sliders | 500 Mt capture, 20 EJ bioenergy, 8,600 Mt world storage, 240 EJ world bioenergy, 1.89 EJ hydrogen 2030, 20 % final-energy decline |
+| 4 · Risk levels (Table 6) | three threshold sliders | 425 Mt capture, 9 EJ bioenergy, 400 Mt land sink |
+| 3–4 · Common rules | margin on all limits; "missing values count as passed" | 0 %; on |
+
+Each step can be switched off. Every setting lives in the URL, so a view can
+be shared as a link.
+
+## Views and charts
+
+- **Screen** — funnel of pathways per step; median EU net GHG at each step with
+  the 1990–2024 inventory; median trajectory per sector; a 2050 summary table.
+- **Inspect sectors** — per sector: headline tiles; filtered pathways (median,
+  25–75 %, 5–95 %, inventory bars, orange 2050 range across the six settings);
+  all pathways vs the net-GHG subset with the 2020 model median; the six
+  settings as small multiples; the lever chart (2040 strip plot plus lever
+  ranges per setting).
+- **Compare settings** — 2050 median per sector and setting (dot plot, orange
+  ring on the setting of the 2040 advice), pathway counts per setting, the
+  levers table and the method table.
+- **Browse pathways** — every pathway with its screening outcome and the tests
+  it failed; sortable, searchable, CSV download of the current selection.
+
+The "six settings" are the deck's ({≤ 0, ≤ 150 Mt} × {85–90 %, 85–95 %, ≥ 85 %});
+the user's source, filter, risk and margin choices are carried over to them.
+
+## Code surface
+
+| File | Role |
+|---|---|
+| [`scripts/build-scenario-pathways.py`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/build-scenario-pathways.py) | Reads `EU_six_sectors_export.zip`, checks parity, writes the JSON and copies the deck |
+| [`src/lib/scenario-pathways/model.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/scenario-pathways/model.ts) | Screening port, sector definitions, numpy-compatible percentiles |
+| [`src/components/scenario-pathways/ScenarioPathways.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/scenario-pathways/ScenarioPathways.tsx) | Page, filter panel, views |
+| [`src/components/scenario-pathways/charts.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/scenario-pathways/charts.tsx) | SVG charts in the deck's palette |
+| [`src/components/scenario-pathways/controls.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/scenario-pathways/controls.tsx) | Sliders, two-handle timeline, toggles |
+| [`src/app/scenario-pathways/page.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/app/scenario-pathways/page.tsx) | Route shell |
+
+## Data flow
+
+```mermaid
+flowchart LR
+  Z[EU_six_sectors_export.zip] -->|build-scenario-pathways.py<br/>parity gate| J[public/data/scenario-pathways/pathways.json]
+  J -->|fetch, behind site login| M[model.ts screen]
+  M --> C[charts + table]
+```
+
+The JSON sits under `public/data/`, which the site-auth middleware gates; it
+is fetched at runtime and never bundled into the ungated `_next/static`
+JavaScript. A login redirect (HTML instead of JSON) or a truncated file is
+reported as an error, never shown as an empty result.
+
+## Parity
+
+The screening follows the export's `scripts/variants.py`: thresholds `TH`,
+windows (whole-percent rounding: lower bound − 0.05, upper bound + 0.5),
+margin factor 1 + m, missing values pass, JRC pathways without a 2050 value
+fall back on the net-zero flag. The build script and the page both re-run the
+export's twelve stage columns (`nz{0|150}|{window}|m{0|10}`) for all 1,328
+pathways and require 15,936 of 15,936 codes to match; the page shows the
+result as a badge. Percentiles use linear interpolation (numpy's default), so
+the medians and bands equal the deck's.
+
+## Known limits
+
+- Only industry is harmonised to the inventory; the other sectors are as
+  reported, and model regions differ (EU27, EU27 and UK).
+- Threshold units are inferred from the variable definitions and data ranges;
+  the values themselves are the export's.
+- Rebuilding needs the zip at the repository root:
+  `python3 -I scripts/build-scenario-pathways.py`.

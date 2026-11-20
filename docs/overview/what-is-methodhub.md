@@ -49,7 +49,9 @@ Every design decision is downstream of two constraints:
 
 The core ships **eight modules** — the original six plus the Project
 Workspace (M·07) and Recommendations (M·08), both promoted from beta once
-the science team signed off. Everything else — forty-five experimental
+the science team signed off. A third main module, Scenarios (M·55,
+`/scenario-pathways`), sits next to the Reference Manager and the Project
+Workspace in the top bar. Everything else — forty-five experimental
 modules — lives under [`beta/modules/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/beta/modules)
 and is **intentionally unrouted** by the Next.js app. Promoting a beta
 module is a single `git mv` back into `src/app/`. The file system is
