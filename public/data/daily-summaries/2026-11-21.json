@@ -1,0 +1,213 @@
+{
+  "date": "2026-11-21",
+  "generatedAt": "2026-11-21T03:53:36.511Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Saturday, 21 November 2026 — Key developments from the last 24 hours",
+  "highlights": [
+    {
+      "headline": "These US fishers see offshore wind as a ‘godsend’. Trump wants to shut it down",
+      "summary": "&lt;p&gt;Despite the president’s attacks, Sea Services is training New England fishers in offshore wind construction and providing them with a second income stream&lt;/p&gt;&lt;p&gt;On a rainy September morning, the Pamela Ann, a rusty, 86ft (26-metre) scallop boat, docked in New Bedford, Massachusetts. Its crew had spent the past 12 days at sea, recording mammal sightings, monitoring vessels to ensure they didn’t enter construction zones, and keeping watch over workers at Revolution Wind, a 65-",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
+    {
+      "headline": "COP31 Bulletin Day 11: Countries decry cover text for omitting fossil fuels",
+      "summary": "Small island states and a group of Global North and South nations say the draft decision is too weak on issues ranging from the transition away from fossil fuels to finance provision The post COP31 Bulletin Day 11: Countries decry cover text for omitting fossil fuels appeared first on Climate Home News.",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
+    },
+    {
+      "headline": "Anthropic's Tom Brown plans to donate to Trump's investment accounts for kids, source says - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVEFvNDBodHpvUlp4S085VFJqRGZsa1drMzJrQXZYWjQtNHNFRU1wR3Z5VG95dDNMWjFLMGRxMTNTYmpQVHlrS1hvd1dYMmE2RHdIZnBQaFFqVEQwWERxaDd6aWNqa1pXWnBYVnVCMTUyblg5ZHNpYTNGbWF5eHdlZk40QUdRcmZiZTl0cW5EMUphWXZpcEdQMjRQaGJTWC1qQ2JETnBhWF9kQQ?oc=5\" target=\"_blank\"&gt;Anthropic's Tom Brown plans to donate to Trump's investment accounts for kids, source says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
+    }
+  ],
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": [
+        {
+          "title": "These US fishers see offshore wind as a ‘godsend’. Trump wants to shut it down",
+          "link": "https://www.theguardian.com/environment/2026/nov/20/offshore-wind-farms-trump-fishers",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Despite the president’s attacks, Sea Services is training New England fishers in offshore wind construction and providing them with a second income stream&lt;/p&gt;&lt;p&gt;On a rainy September morning, the Pamela Ann, a rusty, 86ft (26-metre) scallop boat, docked in New Bedford, Massachusetts. Its crew had spent the past 12 days at sea, recording mammal sightings, monitoring vessels to ensure they didn’t enter construction zones, and keeping watch over workers at Revolution Wind, a 65-",
+          "published": "2026-11-20T14:00:31.000Z",
+          "score": 7
+        },
+        {
+          "title": "Tashima says Balogun red-card row at World Cup pushed him to run for FIFA presidency - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMkV2QkQtU1E3Z1dzNzRfdnB2bC1PMG9qZ04yV2w5UHFNRTFKdVJlYTV4VGhEUFdSb3RKbzM1ZmRCZlpPNzVCWERpcUFqZ2ItQ1M3MU96RGxCSjRwbEs3dVE4WFlhMlppeHJFWEFFOS1nT0s1bTVnT2dqZ0pUR0dZZ0M5T3pvTkZZbHhMa1QtSFpITFhkWGhWN3hUUEFDNnZpanN1N2VFUzlsckw2QzNxLWpvRGRaSldab3V1RGNDc2dvUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMkV2QkQtU1E3Z1dzNzRfdnB2bC1PMG9qZ04yV2w5UHFNRTFKdVJlYTV4VGhEUFdSb3RKbzM1ZmRCZlpPNzVCWERpcUFqZ2ItQ1M3MU96RGxCSjRwbEs3dVE4WFlhMlppeHJFWEFFOS1nT0s1bTVnT2dqZ0pUR0dZZ0M5T3pvTkZZbHhMa1QtSFpITFhkWGhWN3hUUEFDNnZpanN1N2VFUzlsckw2QzNxLWpvRGRaSldab3V1RGNDc2dvUQ?oc=5\" target=\"_blank\"&gt;Tashima says Balogun red-card row at World Cup pushed him to run for FIFA presidency&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-11-20T05:06:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "EXCLUSIVE: Beijing to bar young 'red-chip' firms from listing outside mainland China, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRTdaaUUyWTJoNmxNSkszY3U3di1OSlJoOE5Qb2dKRHFyX1FjNDM1XzdjZDV0NXBja2Voem1nYlpRUjdYZXNsM05fenltM0ZpQVE0MEJ2WVJDV0NSU1NBYi1XVDZpRm9LS0JnRTRGSHBpQzg4ZVUxMXV1azA2eU14b2IyLXBkMzE2ZW9OeGF4eEUxcHBQdHJucXlUTElVRi1zRVcwd0d1MlhJZEwtRE54cUxfM2l2Q1Bu?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRTdaaUUyWTJoNmxNSkszY3U3di1OSlJoOE5Qb2dKRHFyX1FjNDM1XzdjZDV0NXBja2Voem1nYlpRUjdYZXNsM05fenltM0ZpQVE0MEJ2WVJDV0NSU1NBYi1XVDZpRm9LS0JnRTRGSHBpQzg4ZVUxMXV1azA2eU14b2IyLXBkMzE2ZW9OeGF4eEUxcHBQdHJucXlUTElVRi1zRVcwd0d1MlhJZEwtRE54cUxfM2l2Q1Bu?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Beijing to bar young 'red-chip' firms from listing outside mainland China, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-11-20T21:17:27.000Z",
+          "score": 7
+        },
+        {
+          "title": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeERTd2VXX21mYUpEQUFyRjN2dk5Hdkl3RTZLTDUzbV9HRzE5cy1CcThnQkF3WVNsMDR0bWsxZDMxTlI1d0o2dFZwNjEtX0ZKSVBYQmFycVN2dGNYaXVTRnh3a2Y2M09uM0RkQU4wSDdGWEo3TF94ZlVySy1RNTNEaGhjZmlQZFJ4VjNzM094Rmp4Y0RJZHJZZG5MZVB1VHBkUjJxTmUwUlpBc1JFa2NhQkdGTVhOcGc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOeERTd2VXX21mYUpEQUFyRjN2dk5Hdkl3RTZLTDUzbV9HRzE5cy1CcThnQkF3WVNsMDR0bWsxZDMxTlI1d0o2dFZwNjEtX0ZKSVBYQmFycVN2dGNYaXVTRnh3a2Y2M09uM0RkQU4wSDdGWEo3TF94ZlVySy1RNTNEaGhjZmlQZFJ4VjNzM094Rmp4Y0RJZHJZZG5MZVB1VHBkUjJxTmUwUlpBc1JFa2NhQkdGTVhOcGc?oc=5\" target=\"_blank\"&gt;Houthi attacks add to worries over Trump Saudi nuclear power pact&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-20T18:29:31.000Z",
+          "score": 7
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "COP31 Bulletin Day 11: Countries decry cover text for omitting fossil fuels",
+          "link": "https://www.climatechangenews.com/2026/11/20/cop31-bulletin-day-11-best-cop-worst-cop-weary-negotiators-seek-to-strengthen-outcome/",
+          "source": "Climate Home News",
+          "description": "Small island states and a group of Global North and South nations say the draft decision is too weak on issues ranging from the transition away from fossil fuels to finance provision The post COP31 Bulletin Day 11: Countries decry cover text for omitting fossil fuels appeared first on Climate Home News.",
+          "published": "2026-11-20T10:08:40.000Z",
+          "score": 13
+        },
+        {
+          "title": "More climate money for Africa? Europe says use what's already pledged",
+          "link": "https://www.bbc.co.uk/news/articles/c6074k5jjrzko?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "African countries at the UN climate summit in Turkey are demanding more funding from developed nations to help them cope with climate change.",
+          "published": "2026-11-20T05:03:43.000Z",
+          "score": 13
+        },
+        {
+          "title": "Student protests held across Europe with demands from school funding to climate - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNT203dWpPR19PY3FGeGlGWkNqRklXMDA0cEtFTXBoY21LbVhhaEVNNzVXWTJfOUhUOURwUVVtQXBVazBOdjRjNmVnRktLOGxHam9tZ3ZneGp3bXNfQ2lHOU0yY0I2WF9qdnJxSkNrVm1Pc0REblNaMXJxRHZqRnpDcmY5MEhOdkNaeUZMUVFQYUxDUXRKbmhmckRvQnBHZUlXclh6ZEJJSUJQYll3SUNfdGJ5WQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNT203dWpPR19PY3FGeGlGWkNqRklXMDA0cEtFTXBoY21LbVhhaEVNNzVXWTJfOUhUOURwUVVtQXBVazBOdjRjNmVnRktLOGxHam9tZ3ZneGp3bXNfQ2lHOU0yY0I2WF9qdnJxSkNrVm1Pc0REblNaMXJxRHZqRnpDcmY5MEhOdkNaeUZMUVFQYUxDUXRKbmhmckRvQnBHZUlXclh6ZEJJSUJQYll3SUNfdGJ5WQ?oc=5\" target=\"_blank\"&gt;Student protests held across Europe with demands from school funding to climate&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-20T16:30:09.000Z",
+          "score": 13
+        },
+        {
+          "title": "Explainer: What are the UK and EU carbon markets and what does linking them mean? - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZTE4SFF1UWhkV3A2T3RhbHJZZmJzR3dCdkZjaWJrY0NabHJzZVhZTXAyaXpGNU1vNEZjUVFDbGh3dUhfRGVpNnUxYWVjb3c1OUF1T3Nva2VEbFhheDBpeFA0NjB2ckVrS0R4LUpKeG1MNlJseU5NLUFkTmtYb1NhYjROSWVyNmxzLWxIRkVXd3lvZlZISDdaVC1aWnhJVGE0T0JKVmVCdTV2dkZJRndxR0pNRWE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPZTE4SFF1UWhkV3A2T3RhbHJZZmJzR3dCdkZjaWJrY0NabHJzZVhZTXAyaXpGNU1vNEZjUVFDbGh3dUhfRGVpNnUxYWVjb3c1OUF1T3Nva2VEbFhheDBpeFA0NjB2ckVrS0R4LUpKeG1MNlJseU5NLUFkTmtYb1NhYjROSWVyNmxzLWxIRkVXd3lvZlZISDdaVC1aWnhJVGE0T0JKVmVCdTV2dkZJRndxR0pNRWE?oc=5\" target=\"_blank\"&gt;Explainer: What are the UK and EU carbon markets and what does linking them mean?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-20T12:44:59.000Z",
+          "score": 13
+        },
+        {
+          "title": "Ugandan oil official welcomes transition roadmap as nation gears up for exports",
+          "link": "https://www.climatechangenews.com/2026/11/20/uganda-backs-fossil-fuel-transition-roadmap-gears-up-oil-exports/",
+          "source": "Climate Home News",
+          "description": "A senior Petroleum Authority official described the global roadmap as \"fundamental\" to Uganda's transition planning as it prepares to become the world's newest oil exporter The post Ugandan oil official welcomes transition roadmap as nation gears up for exports appeared first on Climate Home News.",
+          "published": "2026-11-20T15:05:35.000Z",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": [
+        {
+          "title": "Anthropic's Tom Brown plans to donate to Trump's investment accounts for kids, source says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVEFvNDBodHpvUlp4S085VFJqRGZsa1drMzJrQXZYWjQtNHNFRU1wR3Z5VG95dDNMWjFLMGRxMTNTYmpQVHlrS1hvd1dYMmE2RHdIZnBQaFFqVEQwWERxaDd6aWNqa1pXWnBYVnVCMTUyblg5ZHNpYTNGbWF5eHdlZk40QUdRcmZiZTl0cW5EMUphWXZpcEdQMjRQaGJTWC1qQ2JETnBhWF9kQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVEFvNDBodHpvUlp4S085VFJqRGZsa1drMzJrQXZYWjQtNHNFRU1wR3Z5VG95dDNMWjFLMGRxMTNTYmpQVHlrS1hvd1dYMmE2RHdIZnBQaFFqVEQwWERxaDd6aWNqa1pXWnBYVnVCMTUyblg5ZHNpYTNGbWF5eHdlZk40QUdRcmZiZTl0cW5EMUphWXZpcEdQMjRQaGJTWC1qQ2JETnBhWF9kQQ?oc=5\" target=\"_blank\"&gt;Anthropic's Tom Brown plans to donate to Trump's investment accounts for kids, source says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-20T22:42:31.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": [
+        {
+          "title": "EU and UK strike &#039;landmark deal&#039; to strengthen ties after Brexit",
+          "link": "https://www.dw.com/en/eu-and-uk-strike-landmark-deal-to-strengthen-ties-after-brexit/a-80001076?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Union and the United Kingdom have agreed on &quot;landmark&quot; deals on youth mobility and trade. Leaders on both sides praised the agreement as they seek to rebuild ties.",
+          "published": "2026-11-20T14:30:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Russia says role for EU's Kallas in Ukraine talks with Moscow would lead to their collapse - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNeGUwN3RoRW5JY3hyZFVaT0g3enBwSDFiV0xSRGl4dm9KQ0U1RWo5MmhkT1dXbXVKREZkOXQ5RmJBaVNqWEQzTWZWSnpNS2c1MDRqVkZaWVlqTERoX09LUWc1MkFMSS1sVGhSUGJqeDRhaVNCSlU3ZTVVekljNVZaVEZ5MUVyUE5TYW5lS003REVqMHFpTk5KemxrQzFhdWdGZ09QN1F2aTlTZzZfcEl2b2F3LUNCUlZWRlRqME9n?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNeGUwN3RoRW5JY3hyZFVaT0g3enBwSDFiV0xSRGl4dm9KQ0U1RWo5MmhkT1dXbXVKREZkOXQ5RmJBaVNqWEQzTWZWSnpNS2c1MDRqVkZaWVlqTERoX09LUWc1MkFMSS1sVGhSUGJqeDRhaVNCSlU3ZTVVekljNVZaVEZ5MUVyUE5TYW5lS003REVqMHFpTk5KemxrQzFhdWdGZ09QN1F2aTlTZzZfcEl2b2F3LUNCUlZWRlRqME9n?oc=5\" target=\"_blank\"&gt;Russia says role for EU's Kallas in Ukraine talks with Moscow would lead to their collapse&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-11-20T12:15:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "Britain and EU agree deals on food trade, youth mobility, joint statement says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdHA4czl2OVhoMVN6dURzVWJSVFBpRlhNOS1kYllMMm54RkNKTFBpM1ZVaG5jUE1yYzBlT0Q0Nk1YYlBFVFBQWC1MQW15WERjMWpZWEJ5QU1xaVFjbXRodUxuclNHVFNsWnE5WF9uY1pzcEMyRGk2MEVvRnhBUzMxRXpSeHlQV3Z4ZjlQSENjd0MySnFXbkVrZWVpY19XNjZZSklEYjJVOEgxTmZRM0NzbDdXU3A?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOdHA4czl2OVhoMVN6dURzVWJSVFBpRlhNOS1kYllMMm54RkNKTFBpM1ZVaG5jUE1yYzBlT0Q0Nk1YYlBFVFBQWC1MQW15WERjMWpZWEJ5QU1xaVFjbXRodUxuclNHVFNsWnE5WF9uY1pzcEMyRGk2MEVvRnhBUzMxRXpSeHlQV3Z4ZjlQSENjd0MySnFXbkVrZWVpY19XNjZZSklEYjJVOEgxTmZRM0NzbDdXU3A?oc=5\" target=\"_blank\"&gt;Britain and EU agree deals on food trade, youth mobility, joint statement says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-20T13:10:09.000Z",
+          "score": 8
+        }
+      ]
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": [
+        {
+          "title": "UK to explore even closer ties with EU after agreeing deal, says Burnham",
+          "link": "https://www.bbc.co.uk/news/articles/c6jreyqgw4e9o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The UK-EU deal agreed on Friday covers British food exports, emissions trading and a youth experience scheme.",
+          "published": "2026-11-20T17:49:48.000Z",
+          "score": 8
+        },
+        {
+          "title": "What the new UK-EU deal could mean for future post-Brexit relations",
+          "link": "https://www.bbc.co.uk/news/videos/c90k6gl3lyxeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The BBC's political and Europe editors analyse the new agreements between the UK and EU.",
+          "published": "2026-11-20T21:43:22.000Z",
+          "score": 8
+        },
+        {
+          "title": "Cost of living protests sweep across Europe",
+          "link": "https://www.bbc.co.uk/news/videos/c6dx12ppeqn4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Thousands marched across European cities on Friday to protest against the cost of living and other issues.",
+          "published": "2026-11-20T16:45:34.000Z",
+          "score": 8
+        },
+        {
+          "title": "Britain, EU clinch food and youth deals ahead of 'brainstorm' on future ties - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNaUxSQlE3YTlodUx3ZVRaSnlCLVJtZVc5bUtURl8yaEQzZVk4bWdXdFlHdDgwTE1IOFFrZ3pvOTFvQ0s4Y2trSU9PWE4tUnZFQjMyWmZLeVY0aU9IaUFBWVdIVFlRaVZmdXRheEdmVHYyUU9JUnBMQVVhVzNwN2JGdDI5ZlJSVzdNb2tZV0dfaUpoVHJaRnFfcA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNaUxSQlE3YTlodUx3ZVRaSnlCLVJtZVc5bUtURl8yaEQzZVk4bWdXdFlHdDgwTE1IOFFrZ3pvOTFvQ0s4Y2trSU9PWE4tUnZFQjMyWmZLeVY0aU9IaUFBWVdIVFlRaVZmdXRheEdmVHYyUU9JUnBMQVVhVzNwN2JGdDI5ZlJSVzdNb2tZV0dfaUpoVHJaRnFfcA?oc=5\" target=\"_blank\"&gt;Britain, EU clinch food and youth deals ahead of 'brainstorm' on future ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-20T04:02:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU ban on plastic waste exports to non-OECD takes effect - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQcnFOVHkySXMyN1Zld2paMnBkWDFodzNnaVlyVkpyRENza1kzRXBjNDhWc3JHb2tEaE9RR2psLXVXcWNqaEIycnhjZWtpSnZGUTFISGtKd1dDOVZ0Wm81ODRiOVhlcGl1ekJ0UWp4R0NlakZtNzk4U3pGUWRlUXV3dkxCSVF0THdLQnhIMGVpNmMxNEZBaWMtY29HOV9qc1RRLWM3UmY5OGtIQms?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQcnFOVHkySXMyN1Zld2paMnBkWDFodzNnaVlyVkpyRENza1kzRXBjNDhWc3JHb2tEaE9RR2psLXVXcWNqaEIycnhjZWtpSnZGUTFISGtKd1dDOVZ0Wm81ODRiOVhlcGl1ekJ0UWp4R0NlakZtNzk4U3pGUWRlUXV3dkxCSVF0THdLQnhIMGVpNmMxNEZBaWMtY29HOV9qc1RRLWM3UmY5OGtIQms?oc=5\" target=\"_blank\"&gt;EU ban on plastic waste exports to non-OECD takes effect&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-20T20:58:18.000Z",
+          "score": 8
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 399,
+    "articlesLast24h": 165,
+    "afterDedup": 153,
+    "feedsQueried": 19
+  }
+}
