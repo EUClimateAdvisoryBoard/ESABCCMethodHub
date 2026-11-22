@@ -1,6 +1,6 @@
 {
   "date": "2026-11-22",
-  "generatedAt": "2026-11-22T13:06:53.410Z",
+  "generatedAt": "2026-11-22T22:22:45.838Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 22 November 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,16 @@
       "color": "#007B6C"
     },
     {
-      "headline": "COP31 Bulletin Day 13: Germany rejects text moments before plenary meeting",
-      "summary": "\"We do not accept the text as it is\", German minister Carsten Schneider told reporters before entering what should be the closing plenary The post COP31 Bulletin Day 13: Germany rejects text moments before plenary meeting appeared first on Climate Home News.",
-      "tag": "CLIMATE",
-      "color": "#2E8B57"
+      "headline": "COP31 climate talks end without consensus on how to fund vulnerable countries or move the world away from coal, oil and gas use",
+      "summary": "After two weeks of tough talks, the COP31 climate summit has closed without a consensus on how to quit fossil fuels or fund countries struggling to adapt to a hotter world.",
+      "tag": "ENERGY",
+      "color": "#E87722"
     },
     {
-      "headline": "EU and Indonesia sign trade deal",
-      "summary": "A deal covering 730 million people promises lower tariffs and new investment opportunities as the European Union seeks to diversify trade ties amid growing global economic tensions.",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
+      "headline": "Cop31 as it happened: EU and others reject deal as longest climate summit comes to fractious end",
+      "summary": "&lt;p&gt;Countries failed to reach consensus on a key deal that did not mention fossil fuels&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected\"&gt;&lt;strong&gt;Full report: Cop31 climate talks set to end in deep division as key deal rejected&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Mohamed Adow, director of Power Shift Africa, has been looking through ",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
     }
   ],
   "sections": [
@@ -41,34 +41,51 @@
     {
       "id": "energy",
       "title": "Energy Transition",
-      "items": []
+      "items": [
+        {
+          "title": "COP31 climate talks end without consensus on how to fund vulnerable countries or move the world away from coal, oil and gas use",
+          "link": "https://www.dw.com/en/cop31-climate-talks-end-without-consensus-on-how-to-fund-vulnerable-countries-or-move-the-world-away-from-coal-oil-and-gas-use/a-80003610?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "After two weeks of tough talks, the COP31 climate summit has closed without a consensus on how to quit fossil fuels or fund countries struggling to adapt to a hotter world.",
+          "published": "2026-11-22T13:18:00.000Z",
+          "score": 7
+        }
+      ]
     },
     {
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "COP31 Bulletin Day 13: Germany rejects text moments before plenary meeting",
-          "link": "https://www.climatechangenews.com/2026/11/22/cop31-bulletin-day-13-new-draft-retains-electrification-goal-but-delays-adaptation-finance-and-science-decisions/",
-          "source": "Climate Home News",
-          "description": "\"We do not accept the text as it is\", German minister Carsten Schneider told reporters before entering what should be the closing plenary The post COP31 Bulletin Day 13: Germany rejects text moments before plenary meeting appeared first on Climate Home News.",
-          "published": "2026-11-22T05:59:32.000Z",
-          "score": 14
-        },
-        {
-          "title": "Cop31 live: EU and others reject deal as longest climate summit ever faces collapse",
+          "title": "Cop31 as it happened: EU and others reject deal as longest climate summit comes to fractious end",
           "link": "https://www.theguardian.com/environment/live/2026/nov/22/cop31-climate-crisis-talks-turkey-latest-news-updates",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Although parties are still talking, the summit president said there can be no agreement on key deal&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected\"&gt;&lt;strong&gt;Full report: Cop31 climate talks set to end in deep division as key deal rejected&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Mohamed Adow, director of Power Shift Africa, has been ",
-          "published": "2026-11-22T12:59:58.000Z",
+          "description": "&lt;p&gt;Countries failed to reach consensus on a key deal that did not mention fossil fuels&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected\"&gt;&lt;strong&gt;Full report: Cop31 climate talks set to end in deep division as key deal rejected&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Mohamed Adow, director of Power Shift Africa, has been looking through ",
+          "published": "2026-11-22T16:45:37.000Z",
           "score": 13
         },
         {
-          "title": "Cop31 climate talks set to end in deep division as key deal rejected",
+          "title": "EU officials reject Cop31 deal as it 'doesn't speak to reality of the climate crisis' – video",
+          "link": "https://www.theguardian.com/environment/video/2026/nov/22/eu-officials-reject-cop31-deal-as-it-doesnt-speak-to-reality-of-the-climate-crisis-video",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;The Cop31 climate talks fell into disarray as the EU, UK and allies in the developing world rejected what they called an unacceptable deal on the future of the climate. Ireland's climate minister, Darragh O'Brien, said the EU could not support the proposed deal, in part because it made no mention of fossil fuels. The president of the negotiations, Australia's Chris Bowen, called the failure 'very disappointing', saying that a lot of good work had been done but 'many parties who were peo",
+          "published": "2026-11-22T16:08:20.000Z",
+          "score": 13
+        },
+        {
+          "title": "COP31 Bulletin Day 13: Talks fail as many countries reject main deal",
+          "link": "https://www.climatechangenews.com/2026/11/22/cop31-bulletin-day-13-new-draft-retains-electrification-goal-but-delays-adaptation-finance-and-science-decisions/",
+          "source": "Climate Home News",
+          "description": "The EU, the AILAC group of Latin American states and the Least Developed Countries (LDCs) said they could not accept the draft \"Antalya Pact\" The post COP31 Bulletin Day 13: Talks fail as many countries reject main deal appeared first on Climate Home News.",
+          "published": "2026-11-22T05:59:32.000Z",
+          "score": 12
+        },
+        {
+          "title": "Cop31 climate talks break down as key deal rejected",
           "link": "https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Two weeks of fierce negotiations all but collapse as some decisions pass, but main text objected to by EU, UK and some of developing world&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://www.theguardian.com/environment/live/2026/nov/22/cop31-climate-crisis-talks-turkey-latest-news-updates?#top-of-blog\"&gt;Cop31 live blog: longest climate summit ever faces collapse&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The EU, the UK and allies in the developing world rejected what they called an unacceptable deal on the ",
-          "published": "2026-11-22T12:54:41.000Z",
+          "description": "&lt;p&gt;EU, UK and some of developing world object to main text that ‘failed to meet the moment’ and did not mention fossil fuels&lt;/p&gt;&lt;p&gt;The EU, the UK and allies in the developing world rejected what they called an unacceptable deal on the future of the climate, which failed even to mention fossil fuels, in a dramatic finish to the Cop31 UN talks in Turkey.&lt;/p&gt;&lt;p&gt;The proposed deal “failed to meet the moment”, said Ireland’s environment minister, Darragh O’Brien, speaking",
+          "published": "2026-11-22T16:14:46.000Z",
           "score": 9
         },
         {
@@ -78,65 +95,23 @@
           "description": "&lt;p&gt;EU thought to have backing of 130 countries in last-ditch push to get cause of climate crisis mentioned in outcome of UN summit&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/nov/21/climate-talks-stall-countries-mull-showdown-saudi-arabia-over-fossil-fuels\"&gt;Climate talks stall as countries mull showdown with Saudi Arabia over fossil fuel phaseout&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Although not quite deserted, the halls of",
           "published": "2026-11-21T22:25:25.000Z",
           "score": 9
-        },
-        {
-          "title": "Climate talks stall as countries mull showdown with Saudi Arabia over fossil fuel phaseout",
-          "link": "https://www.theguardian.com/environment/2026/nov/21/climate-talks-stall-countries-mull-showdown-saudi-arabia-over-fossil-fuels",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;New draft text released at Cop31 summit after countries fail to agree on electrification and finance for developing world&lt;/p&gt;&lt;p&gt;Climate talks reached a standstill on Saturday night in Turkey as some countries mulled whether to force a showdown with Saudi Arabia and its allies over the global need to phase out fossil fuels.&lt;/p&gt;&lt;p&gt;The co-conveners of the &lt;a href=\"https://www.theguardian.com/environment/2026/nov/08/cop31-what-is-at-stake-at-the-un-climate-summit-",
-          "published": "2026-11-21T19:43:52.000Z",
-          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "EU and Indonesia sign trade deal",
-          "link": "https://www.dw.com/en/eu-and-indonesia-sign-trade-deal/a-80010099?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A deal covering 730 million people promises lower tariffs and new investment opportunities as the European Union seeks to diversify trade ties amid growing global economic tensions.",
-          "published": "2026-11-21T15:21:00.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "Trump told European leaders they were spending a lot on Ukraine, Zelenskiy says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPc1lrUklOU0NNN255SjN3SXdkR01FdDRYM0FiUzVkYVZtZW1ZR1dRVTBsUkx1MnoxeEhOTURCaEF2OHpLdU1fcVgzcXVZUGFaa2ZCMUNJbWo2UHk0ODNwYW4waUM1R3RvaDY2RFo0OXRiVUx6M29US3M1eHdUMDA0R3FfOVlUUlV5NzlNRVhFQ1JJZTNWN1J5S2pYTl9mMnZmNjBQNVFYam9RU1NRSng5SEpDMGhZNzZvdk5rdzl2aw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPc1lrUklOU0NNN255SjN3SXdkR01FdDRYM0FiUzVkYVZtZW1ZR1dRVTBsUkx1MnoxeEhOTURCaEF2OHpLdU1fcVgzcXVZUGFaa2ZCMUNJbWo2UHk0ODNwYW4waUM1R3RvaDY2RFo0OXRiVUx6M29US3M1eHdUMDA0R3FfOVlUUlV5NzlNRVhFQ1JJZTNWN1J5S2pYTl9mMnZmNjBQNVFYam9RU1NRSng5SEpDMGhZNzZvdk5rdzl2aw?oc=5\" target=\"_blank\"&gt;Trump told European leaders they were spending a lot on Ukraine, Zelenskiy says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-21T14:51:43.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "New EU budget proposal aims at tax gobal tech giants",
-          "link": "https://www.dw.com/en/new-eu-budget-proposal-aims-at-tax-gobal-tech-giants/a-80009255?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "European Council President Antonio Costa has proposed a smaller EU budget for 2028-2034, including a 3% tax on major digital firms to ease member states&#039; contributions. France has already rejected the plan as inadequate.",
-          "published": "2026-11-21T14:58:00.000Z",
-          "score": 12
-        },
-        {
-          "title": "EU leaders' chair proposes new cuts to EU 2028-2034 budget draft, suggests digital tax - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNMEktcWd6MTVXNDk2WEVleTlEckNHZy1HdDNfYjhTcmZaODB0ZE9YQXlpUUdBdmpiYjhvcUJDUWNRbUh6NjJCM1NPSlNCd2NJeTE1Mlpoel83ajNSQ1lWbTdGbFc2MWpvam9SWjU2WFZBZktuU2NBYmpaTlZmR1dsQU1sZzJ5LWZQbE9BS3VjbTRKZGg3QmNhWGNVT3VNV0JPWlZXZmtNVTVXZnUzZ05NR1Nzcjc1WEJZc24tT3M5Z1Rfdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNMEktcWd6MTVXNDk2WEVleTlEckNHZy1HdDNfYjhTcmZaODB0ZE9YQXlpUUdBdmpiYjhvcUJDUWNRbUh6NjJCM1NPSlNCd2NJeTE1Mlpoel83ajNSQ1lWbTdGbFc2MWpvam9SWjU2WFZBZktuU2NBYmpaTlZmR1dsQU1sZzJ5LWZQbE9BS3VjbTRKZGg3QmNhWGNVT3VNV0JPWlZXZmtNVTVXZnUzZ05NR1Nzcjc1WEJZc24tT3M5Z1Rfdw?oc=5\" target=\"_blank\"&gt;EU leaders' chair proposes new cuts to EU 2028-2034 budget draft, suggests digital tax&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-11-21T13:40:32.000Z",
-          "score": 8
-        },
         {
           "title": "FBI reportedly investigating apparent hack of its criminal database",
           "link": "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&amp;at_campaign=rss",
@@ -154,20 +129,36 @@
           "score": 6
         },
         {
-          "title": "South Korea education minister resigns over exam cheating scandal",
-          "link": "https://www.bbc.co.uk/news/articles/cw3dgk29d37no?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
+          "link": "https://www.bbc.co.uk/news/articles/cr894gjz0j0yo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Choi Kyo-jin admits last-minute measures to stop AI-assisted cheating during the college entrance exam caused chaos.",
-          "published": "2026-11-22T09:20:45.000Z",
+          "description": "Libya's eastern government says the ship had stopped for fuel and supplies on its way back to Russia.",
+          "published": "2026-11-22T20:28:09.000Z",
+          "score": 2
+        },
+        {
+          "title": "'Danger seems greater all the time': Ukrainians search for missing after Russian strikes",
+          "link": "https://www.bbc.co.uk/news/videos/cre3dvd1k9y1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The BBC's Sarah Rainsford reports from the scene of a collapsed residential building in Ukraine's Kyiv region.",
+          "published": "2026-11-22T17:57:43.000Z",
+          "score": 2
+        },
+        {
+          "title": "Russia-bound ship towed away after it was attacked in Gulf of Finland",
+          "link": "https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Finnish defence forces say that Ukraine was likely behind the drone strike on Saturday. Kyiv has yet to comment.",
+          "published": "2026-11-22T17:18:26.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 407,
-    "articlesLast24h": 142,
-    "afterDedup": 126,
+    "totalArticlesScanned": 412,
+    "articlesLast24h": 149,
+    "afterDedup": 124,
     "feedsQueried": 19
   }
 }
