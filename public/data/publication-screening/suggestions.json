@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T12:52:19.809Z",
+  "generatedAt": "2026-11-22T12:44:57.359Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,25 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1016/j.erss.2026.105095",
+      "title": "Charting the blind spots: A participatory assessment of knowledge gaps in industrial decarbonisation modelling in four European industry regions",
+      "journal": "Energy Research &amp; Social Science",
+      "authors": "Miriam Ruß, Lukas Hermwille, Diego García-Gusano et al.",
+      "published": "2026-12",
+      "url": "https://doi.org/10.1016/j.erss.2026.105095",
+      "abstract": "",
+      "suggestedOn": "2026-11-22",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 4.5,
+          "matched": [
+            "industrial decarbonisation"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/aeb9fe",
       "title": "Reply to Comment on ‘A globally relevant data-driven assessment of carbon leakage from forestry’",
