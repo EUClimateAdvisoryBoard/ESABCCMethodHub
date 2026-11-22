@@ -1,18 +1,18 @@
 {
   "date": "2026-11-22",
-  "generatedAt": "2026-11-22T02:52:02.563Z",
+  "generatedAt": "2026-11-22T13:06:53.410Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 22 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "China commits to low-carbon electrification and help for others to improve",
-      "summary": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Countries at Cop31 are being urged to commit to deriving 35% of their energy from electricity by 2035&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/live/2026/nov/21/cop31-climate-deal-latest-news-updates\"&gt;Cop31 live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;China is pushing for rapid electrification of its economy using low-carbon energy and will help other countries do the sa",
-      "tag": "ENERGY",
-      "color": "#E87722"
+      "headline": "COP31: Climate deal &#039;not adopted,&#039; summit president says",
+      "summary": "The summit was extended as nations worked to reach a deal, but they couldn&#039;t agree on including fossil fuels. European nations, small island states and activists have criticized oil-producing countries for the impasse.",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
     },
     {
-      "headline": "COP31 Bulletin Day 12: Divisions on fossil fuels, adaptation finance and trade set to delay deal until Sunday",
-      "summary": "A COP31 cover decision is not likely to be adopted before 9am on Sunday, with many negotiators complaining they had not yet seen the full text The post COP31 Bulletin Day 12: Divisions on fossil fuels, adaptation finance and trade set to delay deal until Sunday appeared first on Climate Home News.",
+      "headline": "COP31 Bulletin Day 13: Germany rejects text moments before plenary meeting",
+      "summary": "\"We do not accept the text as it is\", German minister Carsten Schneider told reporters before entering what should be the closing plenary The post COP31 Bulletin Day 13: Germany rejects text moments before plenary meeting appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -27,57 +27,49 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "COP31: Climate deal &#039;not adopted,&#039; summit president says",
+          "link": "https://www.dw.com/en/cop31-climate-deal-not-adopted-summit-president-says/live-79999516?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The summit was extended as nations worked to reach a deal, but they couldn&#039;t agree on including fossil fuels. European nations, small island states and activists have criticized oil-producing countries for the impasse.",
+          "published": "2026-11-22T12:39:00.000Z",
+          "score": 13
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
-      "items": [
-        {
-          "title": "China commits to low-carbon electrification and help for others to improve",
-          "link": "https://www.theguardian.com/environment/2026/nov/21/china-commits-low-carbon-electrification-help-others-improve",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Countries at Cop31 are being urged to commit to deriving 35% of their energy from electricity by 2035&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/live/2026/nov/21/cop31-climate-deal-latest-news-updates\"&gt;Cop31 live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;China is pushing for rapid electrification of its economy using low-carbon energy and will help other countries do the sa",
-          "published": "2026-11-21T09:47:57.000Z",
-          "score": 7
-        },
-        {
-          "title": "How red squirrels made island their home",
-          "link": "https://www.bbc.co.uk/news/articles/c61k9mwxmplxo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Conservationists say that, with red squirrels dwindling in the UK, Jersey is an \"important refuge\".",
-          "published": "2026-11-21T12:18:55.000Z",
-          "score": 7
-        },
-        {
-          "title": "As e-bike battery fires mount, New York weighs tougher restrictions - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPaUNxakhNeGhWWDF0QWZLYmtmRWd3R2g1WTdJVF9VVUdkWUFZNktJUUFTSHMxQTRNTFR4UWFTakdEVFJBWExldV9WMlpvYlFabklaY0lNMk5idl9iWlYtS2NBRVhaYUJhaVB1RC1JLWhYUXNyXzlWRE0zaVRxNktwc1BMakc2WHRydkZfbm9hSDNMMHUxd3JKMmhrcFI0Zy1IQW5JcVplbmRoeUpY?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPaUNxakhNeGhWWDF0QWZLYmtmRWd3R2g1WTdJVF9VVUdkWUFZNktJUUFTSHMxQTRNTFR4UWFTakdEVFJBWExldV9WMlpvYlFabklaY0lNMk5idl9iWlYtS2NBRVhaYUJhaVB1RC1JLWhYUXNyXzlWRE0zaVRxNktwc1BMakc2WHRydkZfbm9hSDNMMHUxd3JKMmhrcFI0Zy1IQW5JcVplbmRoeUpY?oc=5\" target=\"_blank\"&gt;As e-bike battery fires mount, New York weighs tougher restrictions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-21T11:18:56.000Z",
-          "score": 7
-        }
-      ]
+      "items": []
     },
     {
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "COP31 Bulletin Day 12: Divisions on fossil fuels, adaptation finance and trade set to delay deal until Sunday",
-          "link": "https://www.climatechangenews.com/2026/11/21/cop31-bulletin-day-12-dont-ignore-us-panama-warns-as-cop31-runs-into-overtime/",
+          "title": "COP31 Bulletin Day 13: Germany rejects text moments before plenary meeting",
+          "link": "https://www.climatechangenews.com/2026/11/22/cop31-bulletin-day-13-new-draft-retains-electrification-goal-but-delays-adaptation-finance-and-science-decisions/",
           "source": "Climate Home News",
-          "description": "A COP31 cover decision is not likely to be adopted before 9am on Sunday, with many negotiators complaining they had not yet seen the full text The post COP31 Bulletin Day 12: Divisions on fossil fuels, adaptation finance and trade set to delay deal until Sunday appeared first on Climate Home News.",
-          "published": "2026-11-21T07:46:00.000Z",
-          "score": 17
+          "description": "\"We do not accept the text as it is\", German minister Carsten Schneider told reporters before entering what should be the closing plenary The post COP31 Bulletin Day 13: Germany rejects text moments before plenary meeting appeared first on Climate Home News.",
+          "published": "2026-11-22T05:59:32.000Z",
+          "score": 14
         },
         {
-          "title": "COP31 is shaping up to be a disaster &#8211; not only because it’s weak on fossil fuels",
-          "link": "https://www.climatechangenews.com/2026/11/21/cop31-is-shaping-up-to-be-a-disaster-not-only-because-its-weak-on-fossil-fuels/",
-          "source": "Climate Home News",
-          "description": "A singular focus on the lack of fossil fuel outcomes - which weren't actually on the agenda - obscures the story of EU and Global North bad faith on finance and just transition The post COP31 is shaping up to be a disaster &#8211; not only because it’s weak on fossil fuels appeared first on Climate Home News.",
-          "published": "2026-11-21T10:18:17.000Z",
-          "score": 15
+          "title": "Cop31 live: EU and others reject deal as longest climate summit ever faces collapse",
+          "link": "https://www.theguardian.com/environment/live/2026/nov/22/cop31-climate-crisis-talks-turkey-latest-news-updates",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Although parties are still talking, the summit president said there can be no agreement on key deal&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected\"&gt;&lt;strong&gt;Full report: Cop31 climate talks set to end in deep division as key deal rejected&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Mohamed Adow, director of Power Shift Africa, has been ",
+          "published": "2026-11-22T12:59:58.000Z",
+          "score": 13
+        },
+        {
+          "title": "Cop31 climate talks set to end in deep division as key deal rejected",
+          "link": "https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Two weeks of fierce negotiations all but collapse as some decisions pass, but main text objected to by EU, UK and some of developing world&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://www.theguardian.com/environment/live/2026/nov/22/cop31-climate-crisis-talks-turkey-latest-news-updates?#top-of-blog\"&gt;Cop31 live blog: longest climate summit ever faces collapse&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The EU, the UK and allies in the developing world rejected what they called an unacceptable deal on the ",
+          "published": "2026-11-22T12:54:41.000Z",
+          "score": 9
         },
         {
           "title": "Diplomats race to compromise on fossil fuels as Cop31 teeters on brink of failure – as it happened",
@@ -94,14 +86,6 @@
           "description": "&lt;p&gt;New draft text released at Cop31 summit after countries fail to agree on electrification and finance for developing world&lt;/p&gt;&lt;p&gt;Climate talks reached a standstill on Saturday night in Turkey as some countries mulled whether to force a showdown with Saudi Arabia and its allies over the global need to phase out fossil fuels.&lt;/p&gt;&lt;p&gt;The co-conveners of the &lt;a href=\"https://www.theguardian.com/environment/2026/nov/08/cop31-what-is-at-stake-at-the-un-climate-summit-",
           "published": "2026-11-21T19:43:52.000Z",
           "score": 7
-        },
-        {
-          "title": "Will COP31 end with a new global climate deal?",
-          "link": "https://www.bbc.co.uk/news/videos/cqn0dwrewrwxo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "BBC Climate editor Justin Rowlatt reports from the COP 31 UN climate summit in Antalya, Turkey.",
-          "published": "2026-11-21T22:44:52.000Z",
-          "score": 7
         }
       ]
     },
@@ -116,14 +100,6 @@
           "description": "A deal covering 730 million people promises lower tariffs and new investment opportunities as the European Union seeks to diversify trade ties amid growing global economic tensions.",
           "published": "2026-11-21T15:21:00.000Z",
           "score": 8
-        },
-        {
-          "title": "Spain to extend banking tax to fund housing policies, PM says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZUQ4V0FDdDFjMThXUnVvbTdtbWF3R1M2UE9XX2ZRWVZ5aEV2bFdQRTdZdWtmQUh0WENMcGg1dDlkeUNWeUpUXzhuMnAzTlA2Q3FNaF9kbDh2dTBlTEQwTnA5aHgyUy1SbTczNkNkQWpZTWQ5MVB6YjN2WkdZdzVEc1ZLMnRxb1ZzMGU0SHFaVmZMNEx0RjhtLUdOQmxya0MxM2V6ajNaTzdjd00?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZUQ4V0FDdDFjMThXUnVvbTdtbWF3R1M2UE9XX2ZRWVZ5aEV2bFdQRTdZdWtmQUh0WENMcGg1dDlkeUNWeUpUXzhuMnAzTlA2Q3FNaF9kbDh2dTBlTEQwTnA5aHgyUy1SbTczNkNkQWpZTWQ5MVB6YjN2WkdZdzVEc1ZLMnRxb1ZzMGU0SHFaVmZMNEx0RjhtLUdOQmxya0MxM2V6ajNaTzdjd00?oc=5\" target=\"_blank\"&gt;Spain to extend banking tax to fund housing policies, PM says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-21T10:42:49.000Z",
-          "score": 2
         }
       ]
     },
@@ -154,44 +130,44 @@
           "score": 12
         },
         {
-          "title": "Latest EU budget proposal is 'very disappointing', French presidency says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPaDFMQVdaYU9BLTJOQnRyR3RRNXpVdWZjNW1wZGtVLUl6M3VRenZfX0UzbTFKai11NHNHVUw5dEg0R0pOanVYMFBJeW9oUlBOa0s2Qlc0TWR6Q1BiVmxRZEpCWWhWVlR5OTFYSDFHV3pCQko4bDdBalNYemtDVVBJUEtWN0FGelFlbzE1Mjh0ZE01UnMwZkJlWlFSYV9kb0pzbDVEYzZRXzlQeDlDVVZkV2NR?oc=5",
+          "title": "EU leaders' chair proposes new cuts to EU 2028-2034 budget draft, suggests digital tax - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNMEktcWd6MTVXNDk2WEVleTlEckNHZy1HdDNfYjhTcmZaODB0ZE9YQXlpUUdBdmpiYjhvcUJDUWNRbUh6NjJCM1NPSlNCd2NJeTE1Mlpoel83ajNSQ1lWbTdGbFc2MWpvam9SWjU2WFZBZktuU2NBYmpaTlZmR1dsQU1sZzJ5LWZQbE9BS3VjbTRKZGg3QmNhWGNVT3VNV0JPWlZXZmtNVTVXZnUzZ05NR1Nzcjc1WEJZc24tT3M5Z1Rfdw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPaDFMQVdaYU9BLTJOQnRyR3RRNXpVdWZjNW1wZGtVLUl6M3VRenZfX0UzbTFKai11NHNHVUw5dEg0R0pOanVYMFBJeW9oUlBOa0s2Qlc0TWR6Q1BiVmxRZEpCWWhWVlR5OTFYSDFHV3pCQko4bDdBalNYemtDVVBJUEtWN0FGelFlbzE1Mjh0ZE01UnMwZkJlWlFSYV9kb0pzbDVEYzZRXzlQeDlDVVZkV2NR?oc=5\" target=\"_blank\"&gt;Latest EU budget proposal is 'very disappointing', French presidency says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-21T11:21:46.000Z",
-          "score": 12
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNMEktcWd6MTVXNDk2WEVleTlEckNHZy1HdDNfYjhTcmZaODB0ZE9YQXlpUUdBdmpiYjhvcUJDUWNRbUh6NjJCM1NPSlNCd2NJeTE1Mlpoel83ajNSQ1lWbTdGbFc2MWpvam9SWjU2WFZBZktuU2NBYmpaTlZmR1dsQU1sZzJ5LWZQbE9BS3VjbTRKZGg3QmNhWGNVT3VNV0JPWlZXZmtNVTVXZnUzZ05NR1Nzcjc1WEJZc24tT3M5Z1Rfdw?oc=5\" target=\"_blank\"&gt;EU leaders' chair proposes new cuts to EU 2028-2034 budget draft, suggests digital tax&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
+          "published": "2026-11-21T13:40:32.000Z",
+          "score": 8
         },
         {
-          "title": "Deal with EU not dependent on tuition fees agreement, Miliband says",
-          "link": "https://www.bbc.co.uk/news/articles/cm9w9p4geke8o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "FBI reportedly investigating apparent hack of its criminal database",
+          "link": "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Brussels sources had previously suggested the bloc might not apply the wider deal until fees were lowered for EU students in Britain.",
-          "published": "2026-11-21T09:40:55.000Z",
-          "score": 8
+          "description": "The National Crime Information Center database is used by federal and local law enforcement to share information.",
+          "published": "2026-11-22T00:10:44.000Z",
+          "score": 6
         },
         {
-          "title": "EXCLUSIVE: Denmark pushes EU to tighten travel curbs on Russians after foiled plot - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOS0J3SExfSVZDcXRXb2wtcElESFhiam1fWTR4MUh0VGIzQU9iQjRkamVnWXZMaFI2cVRyNmFxYU40dmJBdWFOZTRuZVlPcFAzXzVhanZPckVpVXdQRlE0YkE3bkhfZk1ld2o5SDhYcmg0bUMwTklpdV9Qc3Q2Sjloajd0NzdzX0JhYjZvY0NmM2hMRnhLUmd4VzZxLUlsTWZoMmRFNVVwTU5uZ1lSVlp6MlpleTVJd2FqT1Q2d1NyaHYxU0lNSG1aWg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOS0J3SExfSVZDcXRXb2wtcElESFhiam1fWTR4MUh0VGIzQU9iQjRkamVnWXZMaFI2cVRyNmFxYU40dmJBdWFOZTRuZVlPcFAzXzVhanZPckVpVXdQRlE0YkE3bkhfZk1ld2o5SDhYcmg0bUMwTklpdV9Qc3Q2Sjloajd0NzdzX0JhYjZvY0NmM2hMRnhLUmd4VzZxLUlsTWZoMmRFNVVwTU5uZ1lSVlp6MlpleTVJd2FqT1Q2d1NyaHYxU0lNSG1aWg?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Denmark pushes EU to tighten travel curbs on Russians after foiled plot&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
-          "published": "2026-11-21T11:27:09.000Z",
-          "score": 8
+          "title": "Nigerian youth have shown their power in the past - why aren't they shaping this election?",
+          "link": "https://www.bbc.co.uk/news/articles/ck4g174n020eo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Fewer young people have registered to vote in next year's election than in 2023 - are young people losing faith in democracy?",
+          "published": "2026-11-22T00:10:37.000Z",
+          "score": 6
         },
         {
-          "title": "Russia's Wildberries CEO steps down days after EU sanctions, media report - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPUHlnc2RFZFltcC0zMXMtb1VfaEx6VFhrWVJfS2tpaHF2Vm4yMnRDYjVLX3FSTWNHaDJKdUYwZ3o5SUJfNVpvRERfcEladlQ2RkRCaFhxaEVZRGdwUTAwOVdSRDZDWjlSYXVucW83NS1aMVN0QzFKbFhVXzhBSEZtUmxKdHpYT3gwNXdCUWZxbU9MbVh3bEU3Ul9ZcXQxZTI5QjlyTHgtTUNDdWVINk9qbUwwNmo1eUt3aFFsaWlTNEJfQnZYNkVOMlVDRkY?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxPUHlnc2RFZFltcC0zMXMtb1VfaEx6VFhrWVJfS2tpaHF2Vm4yMnRDYjVLX3FSTWNHaDJKdUYwZ3o5SUJfNVpvRERfcEladlQ2RkRCaFhxaEVZRGdwUTAwOVdSRDZDWjlSYXVucW83NS1aMVN0QzFKbFhVXzhBSEZtUmxKdHpYT3gwNXdCUWZxbU9MbVh3bEU3Ul9ZcXQxZTI5QjlyTHgtTUNDdWVINk9qbUwwNmo1eUt3aFFsaWlTNEJfQnZYNkVOMlVDRkY?oc=5\" target=\"_blank\"&gt;Russia's Wildberries CEO steps down days after EU sanctions, media report&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-11-21T12:59:16.000Z",
-          "score": 8
+          "title": "South Korea education minister resigns over exam cheating scandal",
+          "link": "https://www.bbc.co.uk/news/articles/cw3dgk29d37no?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Choi Kyo-jin admits last-minute measures to stop AI-assisted cheating during the college entrance exam caused chaos.",
+          "published": "2026-11-22T09:20:45.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 406,
-    "articlesLast24h": 139,
-    "afterDedup": 129,
+    "totalArticlesScanned": 407,
+    "articlesLast24h": 142,
+    "afterDedup": 126,
     "feedsQueried": 19
   }
 }
