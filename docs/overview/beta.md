@@ -1,6 +1,6 @@
 # Beta parking lot
 
-**Forty-four** experimental modules sit outside the Next.js route tree at
+**Forty-five** experimental modules sit outside the Next.js route tree at
 [`beta/modules/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/beta/modules)
 in the repository. They are **intentionally unrouted** — the file-system
 location is the feature flag. (Former beta work has graduated before: the
@@ -24,20 +24,28 @@ list grows roughly weekly as new prototypes land; the
 table and the home-page module ribbon (`src/app/page.tsx`) are the canonical,
 always-current registry — this page mirrors them.
 
-The modules fall into four loose families:
+The modules fall into five loose families:
 
 - **Data surfaces awaiting a pipeline or licence** (M·09–M·20) — working UI,
   blocked on a backend service, a procured dataset, or editorial sign-off.
 - **Analysis & coherence tools** (M·23, M·25, M·26, M·28, M·29, M·31, M·32,
-  M·41, M·43) — faithful, interactive renderings of internal method notes and
+  M·41, M·43, M·44) — faithful, interactive renderings of internal method notes and
   position papers, or transparent what-if / reduced-form accounting models.
 - **Narrative & briefing surfaces** (M·21, M·22, M·24, M·27, M·30, M·33,
   M·34) — scrollytelling data essays, sector briefs and explainers built on
   published report content and ESABCC recommendations.
-- **Report-preparation working spaces & registers** (M·36–M·40, M·42) —
-  working surfaces for the next progress report: verbatim target and policy
-  registers, the ETS-review package hub, and structural maps of the acquis.
+- **Report-preparation working spaces & registers** (M·36–M·40, M·42,
+  M·53) — working surfaces for the next progress report: verbatim target and
+  policy registers, the ETS-review package hub, structural maps of the acquis,
+  and the target → indicator measurement layer.
   (M·35 Summer Prep is retired — its pages moved into the Project Workspace.)
+- **Competitiveness, security & damage ledgers** (M·45–M·52, M·54) —
+  deterministic accounting boards and snapshot registers (avoided fossil
+  imports, clean-tech manufacturing, competitiveness claims, critical raw
+  materials, CBAM leakage, grid security, the climate-vs-defence fiscal
+  squeeze, trade-partner policy, summer 2026 damages). M·45–M·52 were
+  re-checked against primary sources in
+  [`beta-modules-m45-m52-factcheck-2026-08.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/docs-internal/beta-modules-m45-m52-factcheck-2026-08.md).
 
 | #     | Folder                       | Module                | Why it is beta                                                  |
 |-------|------------------------------|-----------------------|-----------------------------------------------------------------|

@@ -14,7 +14,7 @@ scope-matched figures live only in these two services.
 > beta modules M·45–M·52 were compiled from model knowledge rather than
 > live pulls on the strength of it, and the resulting figures were wrong
 > by up to 20 percentage points in places (see
-> [`docs-internal/beta-modules-m45-m52-factcheck-2026-08.md`](../docs-internal/beta-modules-m45-m52-factcheck-2026-08.md)).
+> [`docs-internal/beta-modules-m45-m52-factcheck-2026-08.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/docs-internal/beta-modules-m45-m52-factcheck-2026-08.md)).
 > Check before you assume. As of August 2026, from the standard web
 > sandbox:
 >

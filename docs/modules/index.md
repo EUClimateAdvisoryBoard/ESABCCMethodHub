@@ -93,12 +93,20 @@ Every production module now sits inside a shared **User Space** — see
 <span class="mh-module__cta">Open →</span>
 </a></li>
 
+<li markdown><a class="mh-module" href="../modules/scenario-pathways/" markdown>
+<div class="mh-module__header"><span>M · 55</span><span>Main · file-based</span></div>
+<div class="mh-module__num">55</div>
+<h3 class="mh-module__title">Scenarios</h3>
+<p class="mh-module__desc">1,328 EU pathways · five-step 2040 screening · every threshold movable · deck charts recomputed.</p>
+<span class="mh-module__cta">Open →</span>
+</a></li>
+
 </ul>
 
 ## Beta modules with deep-dives
 
-Most of the thirty-five parked modules are documented only in the
-[beta parking lot](../overview/beta.md) registry, but seven have grown their
+Most of the forty-five parked modules are documented only in the
+[beta parking lot](../overview/beta.md) registry, but eight have grown their
 own deep-dive pages here:
 
 - [M·16 Funding Sources](funding-sources.md)
@@ -107,6 +115,7 @@ own deep-dive pages here:
 - [M·33 Sector Background](sector-background.md)
 - [M·36 Policy Targets Register](policy-targets.md)
 - [M·42 EU Policy Hierarchy](policy-hierarchy.md)
+- [M·53 Policy Targets → Indicators](policy-target-flows.md)
 - [Media Monitoring (M·13)](media-monitoring.md)
 
 In-repo methodology notes also ship next to the code for the analytical beta

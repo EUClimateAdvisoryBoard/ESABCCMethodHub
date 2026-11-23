@@ -18,7 +18,8 @@ hide:
 <p class="mh-hero-lede">
 The ESABCC Secretariat's internal research workspace — eight integrated
 modules for references, data, news, policy, content analysis, voting, the
-project workspace, and the recommendations tracker, shipped
+project workspace, and the recommendations tracker, plus the Scenarios
+main module (M·55), shipped
 as one Next.js service stewarded by CCE5 and designed for handoff to
 EEA-managed infrastructure.
 </p>
@@ -34,7 +35,7 @@ EEA-managed infrastructure.
 </div>
 <div class="mh-fact" markdown>
 <p class="mh-fact__k">Beta parking lot</p>
-<p class="mh-fact__v">35</p>
+<p class="mh-fact__v">45</p>
 <p class="mh-fact__sub">intentionally unrouted</p>
 </div>
 <div class="mh-fact" markdown>
@@ -72,6 +73,8 @@ Each corpus module reads and writes the same Postgres corpus — a reference
 created in M·01 shows up in M·05, a policy annotated in M·04 is reachable
 from M·05. No module is master; the corpus modules are peers, the project
 layer (M·07–M·08) hangs off them, and the Voting Tool keeps an isolated store.
+The Scenarios main module (M·55) sits beside them in the top bar; its data
+are file-based, so it is not part of the shared corpus.
 
 <ul class="mh-modules" markdown>
 
@@ -148,10 +151,19 @@ layer (M·07–M·08) hangs off them, and the Voting Tool keeps an isolated stor
 </li>
 
 <li markdown>
+<a class="mh-module" href="modules/scenario-pathways/" markdown>
+<div class="mh-module__header"><span>M · 55</span><span class="mh-module__num">55</span></div>
+<div class="mh-module__title">Scenarios</div>
+<p class="mh-module__desc">1,328 EU scenario pathways under the 2040 screening — every criterion movable, all deck charts recomputed.</p>
+<div class="mh-module__cta">Open module →</div>
+</a>
+</li>
+
+<li markdown>
 <a class="mh-module mh-module--beta" href="overview/beta/" markdown>
-<div class="mh-module__header"><span>BETA · ×35</span><span class="mh-module__num">β</span></div>
+<div class="mh-module__header"><span>BETA · ×45</span><span class="mh-module__num">β</span></div>
 <div class="mh-module__title">Beta parking lot</div>
-<p class="mh-module__desc">Thirty-five experimental modules, intentionally unrouted. Promotion is a single <code>git mv</code>.</p>
+<p class="mh-module__desc">Forty-five experimental modules, intentionally unrouted. Promotion is a single <code>git mv</code>.</p>
 <div class="mh-module__cta">Browse beta →</div>
 </a>
 </li>

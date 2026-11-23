@@ -66,7 +66,8 @@ the **cutover seam** for the EEA handoff:
 
 ## Module → dependency map
 
-Which third-party libraries each of the eight core modules actually leans on.
+Which third-party libraries each of the eight core modules, and the Scenarios
+main module (M·55), actually leans on.
 Anything not listed here is shared chrome (Next.js, React, Tailwind, Radix).
 
 | Module                       | Key dependencies                                                              |
@@ -79,6 +80,7 @@ Anything not listed here is shared chrome (Next.js, React, Tailwind, Radix).
 | M·06 Voting Tool             | `qrcode` (single-use links), isolated ballot store, seven tally algorithms in `lib/voting/`. |
 | M·07 Project Workspace       | `exceljs` (indicator workbooks), `leaflet` / `react-leaflet` + `topojson-client` (member-states map), `file-saver`, the indicator-refresh upstream clients (Eurostat / EEA / EAFO / IRENA / EHPA). |
 | M·08 Recommendations         | Shares the M·07 `pw_*` store; no extra runtime deps beyond the workspace API. |
+| M·55 Scenarios               | No third-party chart library — hand-drawn SVG charts in `components/scenario-pathways/charts.tsx`; reads the static `public/data/scenario-pathways/pathways.json` built offline by `scripts/build-scenario-pathways.py` (no database tables). |
 
 ## Auth & identity
 

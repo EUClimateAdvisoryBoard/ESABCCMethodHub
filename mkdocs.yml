@@ -217,6 +217,7 @@ nav:
   - Reference:
       - API reference: reference/api.md
       - Scripts reference: reference/scripts.md
+      - "Accessing Eurostat, EEA & EUR-Lex": how-to-access-eurostat-eea-data.md
       - Reference classification batch: reference/classification-batch.md
       - Reference metadata audit (June 2026): reference/reference-audit-2026-06.md
       - Component library: reference/components.md
@@ -226,3 +227,7 @@ nav:
 not_in_nav: |
   README.md
   DOCSITE.md
+  Indicator-Database-Missing-Indicators-Update.md
+  reference/eu-funding-tags.md
+  reference/reference-pdfs.md
+  reference/static-library-audit.md
