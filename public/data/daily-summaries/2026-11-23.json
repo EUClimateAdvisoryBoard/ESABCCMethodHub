@@ -1,62 +1,61 @@
 {
   "date": "2026-11-23",
-  "generatedAt": "2026-11-23T03:33:01.997Z",
+  "generatedAt": "2026-11-23T15:47:00.975Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 23 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "COP31: Climate deal &#039;not adopted,&#039; summit president says",
-      "summary": "The summit was extended as nations worked to reach a deal, but they couldn&#039;t agree on including fossil fuels. European nations, small island states and activists have criticized oil-producing countries for the impasse.",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "COP31 climate talks end without consensus on how to fund vulnerable countries or move the world away from coal, oil and gas use",
-      "summary": "After two weeks of tough talks, the COP31 climate summit has closed without a consensus on how to quit fossil fuels or fund countries struggling to adapt to a hotter world.",
+      "headline": "Australia and South Korea&#8217;s clean energy deal could boost low-carbon trade",
+      "summary": "The deal aims to connect Australia's renewable resources with Korean industries' clean energy demand, potentially transforming a relationship built on coal and gas The post Australia and South Korea&#8217;s clean energy deal could boost low-carbon trade appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Cop31 as it happened: EU and others reject deal as longest climate summit comes to fractious end",
-      "summary": "&lt;p&gt;Countries failed to reach consensus on a key deal that did not mention fossil fuels&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected\"&gt;&lt;strong&gt;Full report: Cop31 climate talks set to end in deep division as key deal rejected&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Mohamed Adow, director of Power Shift Africa, has been looking through ",
+      "headline": "EU stood firm for ambition and implementation at COP31",
+      "summary": "European Commission Joint press release Antalya, 23 Nov 2026 Yesterday at the COP31 UN Climate Change Conference in Antalya, the European Union and all 27 Member States in unity showed the world their firm stance to limit global warming through the Paris Agreement and their determination to implement climate commitments already made among global partners.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Germany&#039;s Early Start Pension: Can child investment accounts help?",
+      "summary": "Germany plans to pay €10 a month into investment accounts for children to encourage long-term retirement saving. Economists say the measure may help build wealth but won&#039;t solve the country&#039;s pension funding challenge.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "COP31: Climate deal &#039;not adopted,&#039; summit president says",
-          "link": "https://www.dw.com/en/cop31-climate-deal-not-adopted-summit-president-says/live-79999516?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The summit was extended as nations worked to reach a deal, but they couldn&#039;t agree on including fossil fuels. European nations, small island states and activists have criticized oil-producing countries for the impasse.",
-          "published": "2026-11-22T12:39:00.000Z",
-          "score": 13
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "COP31 climate talks end without consensus on how to fund vulnerable countries or move the world away from coal, oil and gas use",
-          "link": "https://www.dw.com/en/cop31-climate-talks-end-without-consensus-on-how-to-fund-vulnerable-countries-or-move-the-world-away-from-coal-oil-and-gas-use/a-80003610?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "After two weeks of tough talks, the COP31 climate summit has closed without a consensus on how to quit fossil fuels or fund countries struggling to adapt to a hotter world.",
-          "published": "2026-11-22T13:18:00.000Z",
+          "title": "Australia and South Korea&#8217;s clean energy deal could boost low-carbon trade",
+          "link": "https://www.climatechangenews.com/2026/11/23/australia-and-south-koreas-clean-energy-deal-could-boost-low-carbon-trade/",
+          "source": "Climate Home News",
+          "description": "The deal aims to connect Australia's renewable resources with Korean industries' clean energy demand, potentially transforming a relationship built on coal and gas The post Australia and South Korea&#8217;s clean energy deal could boost low-carbon trade appeared first on Climate Home News.",
+          "published": "2026-11-23T13:58:44.000Z",
+          "score": 13
+        },
+        {
+          "title": "NATO believes Russia is ready to launch nuclear-armed satellite, German media say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNQmRybDRhZzhaRkRlSHZUdWxTZVRPUEU1NDJfRFBwX3ItMDZsb0pSZWdFMlgwbDhzclBlaWwyTndXYUQxS0JrZFd5SjlNWC05YWYtYWZhREFHNE5VLXFEOGx3SkY5bWNrMWlYbVhEVklQN3YzMnZSNmVtcmNqdzlSQ21vZW1yWU4xN1UySDE1SHNCUXZfekUyQlRMQUFGMlBSWk5Hc0JFTjlsZGN6NS14M2E2eXk4a2tPUjZGd2Y4a09SX212UUlNY2lkVG1XQXZUMmhOMHRZMA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxNQmRybDRhZzhaRkRlSHZUdWxTZVRPUEU1NDJfRFBwX3ItMDZsb0pSZWdFMlgwbDhzclBlaWwyTndXYUQxS0JrZFd5SjlNWC05YWYtYWZhREFHNE5VLXFEOGx3SkY5bWNrMWlYbVhEVklQN3YzMnZSNmVtcmNqdzlSQ21vZW1yWU4xN1UySDE1SHNCUXZfekUyQlRMQUFGMlBSWk5Hc0JFTjlsZGN6NS14M2E2eXk4a2tPUjZGd2Y4a09SX212UUlNY2lkVG1XQXZUMmhOMHRZMA?oc=5\" target=\"_blank\"&gt;NATO believes Russia is ready to launch nuclear-armed satellite, German media say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6",
+          "published": "2026-11-23T09:10:32.000Z",
           "score": 7
         },
         {
-          "title": "Baum sees red as Augsburg beat Mainz 3-1 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOdm9PbTByd2wzRFMtMFJoNEtacUwxelNXaGlsNWkzQlRwWS0yOHE3a3JYbVU3MnAtQkRSZ1kxMk1fWHJkZXRmcGgyNlNFUW1FREZwSEhGWktXU2M4VnQ5RENRN3pBckk4amZBcXh1dVIxUzBRU2U1VUNrYi1LUXB4cXdTTFZGeHUxNE1TMElBTkdablc4?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxOdm9PbTByd2wzRFMtMFJoNEtacUwxelNXaGlsNWkzQlRwWS0yOHE3a3JYbVU3MnAtQkRSZ1kxMk1fWHJkZXRmcGgyNlNFUW1FREZwSEhGWktXU2M4VnQ5RENRN3pBckk4amZBcXh1dVIxUzBRU2U1VUNrYi1LUXB4cXdTTFZGeHUxNE1TMElBTkdablc4?oc=5\" target=\"_blank\"&gt;Baum sees red as Augsburg beat Mainz 3-1&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-22T18:38:07.000Z",
-          "score": 7
+          "title": "Cranberry jam: warming winters and extreme weather threaten an iconic holiday fruit",
+          "link": "https://www.theguardian.com/us-news/2026/nov/23/cranberry-growing-climate-crisis",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Scientists are racing to identify and breed new berry varieties that can thrive on an increasingly warmer planet&lt;/p&gt;&lt;p&gt;It is harvest time in rural &lt;a href=\"https://www.theguardian.com/world/wisconsin\"&gt;Wisconsin&lt;/a&gt;, and the Badger state’s most vibrant crop is painting the rolling countryside a brilliant, unmistakable red.&lt;/p&gt;&lt;p&gt;For nearly three decades, Nicole Hansen has been farming cranberries here. Wisconsin produces more than 60% of the nation’s s",
+          "published": "2026-11-23T15:00:49.000Z",
+          "score": 4
         }
       ]
     },
@@ -64,6 +63,22 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "EU stood firm for ambition and implementation at COP31",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/jp_26_2538",
+          "source": "European Commission",
+          "description": "European Commission Joint press release Antalya, 23 Nov 2026 Yesterday at the COP31 UN Climate Change Conference in Antalya, the European Union and all 27 Member States in unity showed the world their firm stance to limit global warming through the Paris Agreement and their determination to implement climate commitments already made among global partners.",
+          "published": "2026-11-22T23:00:00.000Z",
+          "score": 20
+        },
+        {
+          "title": "After COP31, our chance to save climate diplomacy lies in global shipping",
+          "link": "https://www.climatechangenews.com/2026/11/23/after-cop31-our-chance-to-save-climate-diplomacy-lies-in-global-shipping/",
+          "source": "Climate Home News",
+          "description": "If COP31's high ambition countries can show the same resolve at London shipping talks, a climate breakthrough is possible next week The post After COP31, our chance to save climate diplomacy lies in global shipping appeared first on Climate Home News.",
+          "published": "2026-11-23T13:56:35.000Z",
+          "score": 13
+        },
         {
           "title": "Cop31 as it happened: EU and others reject deal as longest climate summit comes to fractious end",
           "link": "https://www.theguardian.com/environment/live/2026/nov/22/cop31-climate-crisis-talks-turkey-latest-news-updates",
@@ -73,35 +88,19 @@
           "score": 13
         },
         {
-          "title": "EU officials reject Cop31 deal as it 'doesn't speak to reality of the climate crisis' – video",
-          "link": "https://www.theguardian.com/environment/video/2026/nov/22/eu-officials-reject-cop31-deal-as-it-doesnt-speak-to-reality-of-the-climate-crisis-video",
+          "title": "Failure of Cop31 prompts calls for urgent reform of UN climate summits",
+          "link": "https://www.theguardian.com/environment/2026/nov/23/failure-cop31-calls-urgent-reform-un-climate-summits",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The Cop31 climate talks fell into disarray as the EU, UK and allies in the developing world rejected what they called an unacceptable deal on the future of the climate. Ireland's climate minister, Darragh O'Brien, said the EU could not support the proposed deal, in part because it made no mention of fossil fuels. The president of the negotiations, Australia's Chris Bowen, called the failure 'very disappointing', saying that a lot of good work had been done but 'many parties who were peo",
-          "published": "2026-11-22T16:08:20.000Z",
-          "score": 13
+          "description": "&lt;p&gt;Former US vice-president Al Gore among climate leaders demanding change to consensus rule after Antalya summit &lt;/p&gt;&lt;p&gt;The failure at Cop31 to reach a keystone agreement has exposed the need to reform how the UN’s climate summits make decisions, say international climate diplomacy experts and scientists.&lt;/p&gt;&lt;p&gt;The talks in Antalya, co-chaired by Turkey and Australia, were supposed to agree a sweeping pact that would have injected urgency into calls for climate act",
+          "published": "2026-11-23T12:21:23.000Z",
+          "score": 7
         },
         {
-          "title": "COP31 Bulletin Day 13: Talks fail as many countries reject main deal",
-          "link": "https://www.climatechangenews.com/2026/11/22/cop31-bulletin-day-13-new-draft-retains-electrification-goal-but-delays-adaptation-finance-and-science-decisions/",
-          "source": "Climate Home News",
-          "description": "The EU, the AILAC group of Latin American states and the Least Developed Countries (LDCs) said they could not accept the draft \"Antalya Pact\" The post COP31 Bulletin Day 13: Talks fail as many countries reject main deal appeared first on Climate Home News.",
-          "published": "2026-11-22T05:59:32.000Z",
-          "score": 12
-        },
-        {
-          "title": "Cop31 climate talks break down as key deal rejected",
-          "link": "https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;EU, UK and some of developing world object to main text that ‘failed to meet the moment’ and did not mention fossil fuels&lt;/p&gt;&lt;p&gt;The EU, the UK and allies in the developing world rejected what they called an unacceptable deal on the future of the climate, which failed even to mention fossil fuels, in a dramatic finish to the Cop31 UN talks in Turkey.&lt;/p&gt;&lt;p&gt;The proposed deal “failed to meet the moment”, said Ireland’s environment minister, Darragh O’Brien, speaking",
-          "published": "2026-11-22T16:14:46.000Z",
-          "score": 9
-        },
-        {
-          "title": "Cop31 left Chris Bowen stuck between petrostates and climate reality. But the f-word failure is not his alone",
-          "link": "https://www.theguardian.com/environment/2026/nov/23/cop31-left-chris-bowen-stuck-between-petrostates-and-climate-reality-but-the-failure-to-say-the-f-word-is-not-his-alone",
+          "title": "Cop31’s big fossil fuel failure – podcast",
+          "link": "https://www.theguardian.com/australia-news/audio/2026/nov/23/cop31s-big-fossil-fuel-failure-full-story-podcast",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Australia’s climate change minister will face a torrent of criticism over his role, but disagreement over fossil fuels proved an unbridgeable sticking point&lt;/p&gt;&lt;p&gt;After delivering a major speech to the UN climate talks in Turkey last week, the Australian prime minister, Anthony Albanese, dismissed criticisms that he hadn’t managed to name the problem that is overwhelmingly driving catastrophic global heating – burning fossil fuels.&lt;/p&gt;&lt;p&gt;“You could pick out any n",
-          "published": "2026-11-22T21:46:40.000Z",
+          "description": "&lt;p&gt;Delegates will begin to depart Turkey without a clear deal from the latest Cop31 talks on climate change.&lt;/p&gt;&lt;p&gt;With one key phrase, fossil fuels, missing entirely from the proposed final agreement, advocates, media and frontline nations have been left asking if these talks can still bring any real change to the climate front.&lt;/p&gt;&lt;p&gt;Environment and climate correspondent &lt;strong&gt;Graham Readfearn&lt;/strong&gt; joins &lt;strong&gt;Nour Haydar&lt;/strong&gt; t",
+          "published": "2026-11-23T04:00:45.000Z",
           "score": 7
         }
       ]
@@ -109,64 +108,114 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Germany&#039;s Early Start Pension: Can child investment accounts help?",
+          "link": "https://www.dw.com/en/germany-s-early-start-pension-can-child-investment-accounts-help/a-79852185?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany plans to pay €10 a month into investment accounts for children to encourage long-term retirement saving. Economists say the measure may help build wealth but won&#039;t solve the country&#039;s pension funding challenge.",
+          "published": "2026-11-23T09:26:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Commission opens formal investigation into possible anticompetitive conduct by Coca-Cola Europacific Partners in the non-alcoholic drinks sector",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2530",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 23 Nov 2026 The European Commission has opened a formal antitrust investigation to assess whether Coca-Cola Europacific Partners (‘CCEP') has breached EU competition rules by (i) hindering the cross-border trade of carbonated soft drinks and sports drinks; and (ii) denying certain wholesale customers the possibility to negotiate the procurement of these products on a multi-country basis.",
+          "published": "2026-11-22T23:00:00.000Z",
+          "score": 18
+        },
+        {
+          "title": "North Macedonia remains stalled on its EU path after 21 years as a candidate while Montenegro and Albania move closer to membership",
+          "link": "https://www.dw.com/en/north-macedonia-remains-stalled-on-its-eu-path-after-21-years-as-a-candidate-while-montenegro-and-albania-move-closer-to-membership/a-80020841?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "EU enlargement has regained momentum, with Montenegro and Albania moving closer to membership. But North Macedonia, a candidate since 2005, remains stalled by a politically difficult dispute involving Bulgaria.",
+          "published": "2026-11-23T13:46:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ukraine sinks Russian warship in Libya as conflict spreads beyond Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQVVVOaXhUTVZWaDZ0YnlSQnRpZk1JdVpWdkJKVUlmQVpETHVkYV9CazJxR0xnS041MUYxQXcyV3IxZWpqbkVrWk9ZU1NaY2NyNTdHTjd6YmFHSFRIX0NpTE8tV3ZYaS1LajllOGxZZlAzclF3OGpiWU1Jd1dTNVB2VWtJMEZQd1lROVhxUnhYUUJ3TFBsMUV2YlFaQktHU0Q4RHktYnpTLXRndjl2aEZlQ3VzZWZSSFRSVzJiZjJsa3JaSkV4?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQVVVOaXhUTVZWaDZ0YnlSQnRpZk1JdVpWdkJKVUlmQVpETHVkYV9CazJxR0xnS041MUYxQXcyV3IxZWpqbkVrWk9ZU1NaY2NyNTdHTjd6YmFHSFRIX0NpTE8tV3ZYaS1LajllOGxZZlAzclF3OGpiWU1Jd1dTNVB2VWtJMEZQd1lROVhxUnhYUUJ3TFBsMUV2YlFaQktHU0Q4RHktYnpTLXRndjl2aEZlQ3VzZWZSSFRSVzJiZjJsa3JaSkV4?oc=5\" target=\"_blank\"&gt;Ukraine sinks Russian warship in Libya as conflict spreads beyond Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-23T07:53:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "European firms warn EU leaders against budget cuts on competitiveness - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOY1EwT0dKMUxVYzhvRE8zdzlTYlF2aGtuclU1ZjlfUXdmUzU4bVl0NTJkcG9mOGFpZmxSZ3JIYmxEbC1kWVAxY19iaVUzOWpfdUNNeFgyV292SE1YRUctdjJPd0pyMjJqa3o1b3dqalhPN3FhMEoxUlhUdzBfUVZNUlViYWZOaVRZLVV1QWZzMzlNMXJuM0hTT0NFdjRReGJwTzJGR29TT1BTS0FKRXBiSFpGY0JBVlpqbUE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOY1EwT0dKMUxVYzhvRE8zdzlTYlF2aGtuclU1ZjlfUXdmUzU4bVl0NTJkcG9mOGFpZmxSZ3JIYmxEbC1kWVAxY19iaVUzOWpfdUNNeFgyV292SE1YRUctdjJPd0pyMjJqa3o1b3dqalhPN3FhMEoxUlhUdzBfUVZNUlViYWZOaVRZLVV1QWZzMzlNMXJuM0hTT0NFdjRReGJwTzJGR29TT1BTS0FKRXBiSFpGY0JBVlpqbUE?oc=5\" target=\"_blank\"&gt;European firms warn EU leaders against budget cuts on competitiveness&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-23T04:06:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "NATO Parliamentary Assembly convenes amid Russian airspace violations",
+          "link": "https://www.dw.com/en/nato-parliamentary-assembly-convenes-amid-russian-airspace-violations/live-80016415?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Ukrainian President Zelenskyy and German Foreign Minister Wadephul are set to address the NATO Parliamentary Assembly in Berlin while NATO representatives discuss Russian airspace violations in Brussels. DW has more.",
+          "published": "2026-11-23T09:01:00.000Z",
+          "score": 4
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Burnham to tell MPs 'landmark' EU deal could make next decade 'much better'",
-          "link": "https://www.bbc.co.uk/news/articles/cmde1dy82lepo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The prime minister will tell MPs the deal agreed on Friday is a \"choice between a broken status quo or change\".",
-          "published": "2026-11-22T22:49:10.000Z",
-          "score": 8
-        },
-        {
-          "title": "European steel makers ask Anglo-American, MMG for more safeguards - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNak1aamFHeEdqWEhUTmRIcF81V0NWa3NNdkROcUVGdllVcmdpMjFGRTNLbnFpZHJBdzZBTlhYLUtJd3hSU3pfelBxU0NJdTg5ci0zZDZKbGc0d2hBTWs2OEs1bm1QU21aWW1lNVJDdG5tUW1xckUtbUFzWDhrY0t6Sm1rZUNXWVdWOUtPeVhncTRNT0ZJbVRGRUdFblZaVmphNElMakkwSjlXN2RKdWFSLVNhWmlCNlV1V0NWNFVkaXhMOW0tYmc3T09wY2ZHYnY3emc?oc=5",
+          "title": "Russia's sports comeback hits a European wall - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOYXVyZW4yUl9fcDBBNW8yRi1tMGQxMkNfX2dpYWF4b2x2bjA2Q21rRkJ1cF9naUUwbUxZenFJSmxscFpqZDBybXhHbVptejhaT08tRFpndmo0UGVXWlhfc0xMcU8zaXV5SDllV2FjeGNmejNOTVpaOGFjRFBYWm1VQ0RIcGRleWZrQ095eXJn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxNak1aamFHeEdqWEhUTmRIcF81V0NWa3NNdkROcUVGdllVcmdpMjFGRTNLbnFpZHJBdzZBTlhYLUtJd3hSU3pfelBxU0NJdTg5ci0zZDZKbGc0d2hBTWs2OEs1bm1QU21aWW1lNVJDdG5tUW1xckUtbUFzWDhrY0t6Sm1rZUNXWVdWOUtPeVhncTRNT0ZJbVRGRUdFblZaVmphNElMakkwSjlXN2RKdWFSLVNhWmlCNlV1V0NWNFVkaXhMOW0tYmc3T09wY2ZHYnY3emc?oc=5\" target=\"_blank\"&gt;European steel makers ask Anglo-American, MMG for more safeguards&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-11-22T23:01:48.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxOYXVyZW4yUl9fcDBBNW8yRi1tMGQxMkNfX2dpYWF4b2x2bjA2Q21rRkJ1cF9naUUwbUxZenFJSmxscFpqZDBybXhHbVptejhaT08tRFpndmo0UGVXWlhfc0xMcU8zaXV5SDllV2FjeGNmejNOTVpaOGFjRFBYWm1VQ0RIcGRleWZrQ095eXJn?oc=5\" target=\"_blank\"&gt;Russia's sports comeback hits a European wall&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-23T13:49:13.000Z",
           "score": 8
         },
         {
-          "title": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
-          "link": "https://www.bbc.co.uk/news/articles/cqdr15l32d3go?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Nine people are dead in the attack, with rescue efforts ongoing to find those still missing from the residential building.",
-          "published": "2026-11-23T02:37:02.000Z",
-          "score": 2
+          "title": "Europe's cloud sovereignty push gains ground, but US hyperscalers remain dominant - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPdUQxaGUwa0xZUXg3ZGRoZkp4dnJfVDhZUGo4Q0V4QlJGeXZNZjIzLU5YT0NMeW5KOUJfVG1wRk1fS2pzc2JIZW01TzBaaXZ4cjhyRlVDMmxpN1JuNERqNVUwQmpjd0pQWUFGb0RMdUxkYVdCZUxIYVBxUmpDeG1mUGdWMkw4a25pdXE2UjRlZXl3Q3hub2VZdEZPSEhGQ1BrZDdFSGFjR095LTBDU1BENkVRczNVOXJZRzNPM2RjZXVySHhNMXJF?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPdUQxaGUwa0xZUXg3ZGRoZkp4dnJfVDhZUGo4Q0V4QlJGeXZNZjIzLU5YT0NMeW5KOUJfVG1wRk1fS2pzc2JIZW01TzBaaXZ4cjhyRlVDMmxpN1JuNERqNVUwQmpjd0pQWUFGb0RMdUxkYVdCZUxIYVBxUmpDeG1mUGdWMkw4a25pdXE2UjRlZXl3Q3hub2VZdEZPSEhGQ1BrZDdFSGFjR095LTBDU1BENkVRczNVOXJZRzNPM2RjZXVySHhNMXJF?oc=5\" target=\"_blank\"&gt;Europe's cloud sovereignty push gains ground, but US hyperscalers remain dominant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-11-23T05:03:00.000Z",
+          "score": 8
         },
         {
-          "title": "San Francisco is enjoying an AI boom, but worries about a crash are growing",
-          "link": "https://www.bbc.co.uk/news/articles/cqe9k09j9jv4o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "AI employees in the industry's epicentre - San Francisco - worry that the sector is overheated.",
-          "published": "2026-11-23T00:08:00.000Z",
-          "score": 2
+          "title": "Euro zone growth holds steady but France's deepening downturn clouds outlook, PMI shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOEhfNVZTQlltZUg0ejVieWVmYU9HcnlPVVYzZGFiUnRLS0pTa1V1WC13RHVwWEI5MWsxNWN6Ti0wcWhhczJQN0Z5bTlnazdzd013Sm16Ulk5MnpheVJkNlI5anF5SE5Jb1ZwazJfVEVGU2pMZjNjbkNWUXR3ME1ZdTBuZHowWmRDd01sZWdNQmVSRVAwbHJSbEtPcE5FY0V0SDhoUC13UDRFRmFJLTgtOTEzbGFObElkTVkyVWsyYkdEdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOEhfNVZTQlltZUg0ejVieWVmYU9HcnlPVVYzZGFiUnRLS0pTa1V1WC13RHVwWEI5MWsxNWN6Ti0wcWhhczJQN0Z5bTlnazdzd013Sm16Ulk5MnpheVJkNlI5anF5SE5Jb1ZwazJfVEVGU2pMZjNjbkNWUXR3ME1ZdTBuZHowWmRDd01sZWdNQmVSRVAwbHJSbEtPcE5FY0V0SDhoUC13UDRFRmFJLTgtOTEzbGFObElkTVkyVWsyYkdEdw?oc=5\" target=\"_blank\"&gt;Euro zone growth holds steady but France's deepening downturn clouds outlook, PMI shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-11-23T10:56:06.000Z",
+          "score": 8
         },
         {
-          "title": "Russia-bound ship towed away after it was attacked in Gulf of Finland",
-          "link": "https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Finnish defence forces say that Ukraine was likely behind the drone strike on Saturday. Kyiv has yet to comment.",
-          "published": "2026-11-22T17:18:26.000Z",
-          "score": 2
+          "title": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQS0lxaFE3SDJqZEtGeFZSdXhHWEF4NHZyR1hta1dLNTNUMDEwNXdOMW5LQ3UxaEdWWVlJOVBLMkE5TFFSMk5QU0ZGbjYwM0xFMXdLdXhyMjM4aE5NSXpxZVhEMF9yUWdsbnhDOEFqdFVoc1BjUXVQcmtoQUJMalZDc0JESzJYU3ZtRFVSRGFCMDA2VWdiMUhnaTZzQXF6QTBCTW1kM3hGcnBHMDRwMEpJV3JZNmtTUTdMZnc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQS0lxaFE3SDJqZEtGeFZSdXhHWEF4NHZyR1hta1dLNTNUMDEwNXdOMW5LQ3UxaEdWWVlJOVBLMkE5TFFSMk5QU0ZGbjYwM0xFMXdLdXhyMjM4aE5NSXpxZVhEMF9yUWdsbnhDOEFqdFVoc1BjUXVQcmtoQUJMalZDc0JESzJYU3ZtRFVSRGFCMDA2VWdiMUhnaTZzQXF6QTBCTW1kM3hGcnBHMDRwMEpJV3JZNmtTUTdMZnc?oc=5\" target=\"_blank\"&gt;EU academy platform disabled after cyber attack on Commission, spokesperson says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-23T12:15:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "Europe's STOXX 600 rises as tech shares rebound after AI-driven rout - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdDFuaFRyaktlcVA5TVR0eXF2QlktZ3ZVU3JkbzZycU8zTU90WEhFSlhuVTc5RTRCdVctYVpuQzZhdUJnN1BlZWdOYkZEQXg5alR6d1BDVWEwMEszRTlRUFB1aG9ueFhHWmZmbkI1dmFSSmNZMVF6VzlhZFpBOG5BaVJ0QlprZnRVRmVIZ2djcXFzM3VrU2VQa3FQelVLU2Qzd2MwT19jTUdkRnVWYmc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNdDFuaFRyaktlcVA5TVR0eXF2QlktZ3ZVU3JkbzZycU8zTU90WEhFSlhuVTc5RTRCdVctYVpuQzZhdUJnN1BlZWdOYkZEQXg5alR6d1BDVWEwMEszRTlRUFB1aG9ueFhHWmZmbkI1dmFSSmNZMVF6VzlhZFpBOG5BaVJ0QlprZnRVRmVIZ2djcXFzM3VrU2VQa3FQelVLU2Qzd2MwT19jTUdkRnVWYmc?oc=5\" target=\"_blank\"&gt;Europe's STOXX 600 rises as tech shares rebound after AI-driven rout&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-23T10:26:47.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 413,
-    "articlesLast24h": 144,
-    "afterDedup": 124,
+    "articlesLast24h": 160,
+    "afterDedup": 151,
     "feedsQueried": 19
   }
 }
