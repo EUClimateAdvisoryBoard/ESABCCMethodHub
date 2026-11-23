@@ -2,7 +2,7 @@
 
 Utility scripts that power the data pipelines and Supabase-to-Postgres
 migration for the eight modules. See
-[docs/DATA_PIPELINES.md](../docs/DATA_PIPELINES.md) for how these run in CI.
+[docs/reference/scripts.md](../docs/reference/scripts.md) for the full per-script index and how each one runs.
 
 ```mermaid
 flowchart LR
@@ -109,4 +109,4 @@ npm run it:verify
   `.env.local.example`.
 - When adding a script that runs in CI, wire it up in
   `.github/workflows/daily-updates.yml` or create a sibling workflow file;
-  update [docs/DATA_PIPELINES.md](../docs/DATA_PIPELINES.md).
+  add a row to [docs/reference/scripts.md](../docs/reference/scripts.md).

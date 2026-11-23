@@ -145,7 +145,7 @@ recommendations. See [Data & GDPR](../infrastructure/data-gdpr.md).
 
 ## By-report and role-matrix views
 
-[`/recommendations/by-report`](../../src/app/recommendations/by-report/page.tsx)
+[`/recommendations/by-report`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/app/recommendations/by-report/page.tsx)
 is a read-only companion to the tracker with two modes (`?view=`):
 
 - **Read by report** (default): one table per ESABCC report, newest first, with
@@ -164,7 +164,7 @@ is a read-only companion to the tracker with two modes (`?view=`):
   rule behind it.
 
 Both modes show recommendations at **headline level**.
-[`src/lib/recommendations/headlines.ts`](../../src/lib/recommendations/headlines.ts)
+[`src/lib/recommendations/headlines.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/recommendations/headlines.ts)
 maps each stored row to its report's headline recommendation: reports the
 tracker stores as detailed sub-recommendations (TEN-E scenario guidelines 2022,
 the energy-infrastructure CBA advice 2023, the January 2023 initial advice on
@@ -184,7 +184,7 @@ energy-crisis advice). The mapping is presentation only; tracker rows are unchan
 - The focus, sector and role labels are **AI-compiled — pending Secretariat
   verification**. They come from fixed word-boundary vocabularies with veto
   phrases in
-  [`src/lib/recommendations/classify.ts`](../../src/lib/recommendations/classify.ts)
+  [`src/lib/recommendations/classify.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/recommendations/classify.ts)
   and are computed at render time. A grouped headline carries the union of the
   labels for its own title and for each sub-recommendation, so it can lose
   detail on which sub-recommendation a label comes from. A blank cell means no

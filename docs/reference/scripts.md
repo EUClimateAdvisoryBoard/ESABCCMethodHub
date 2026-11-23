@@ -12,18 +12,21 @@ by purpose.
 
 | Script                                              | Language | Cadence           | What it does                                                       |
 |-----------------------------------------------------|----------|-------------------|--------------------------------------------------------------------|
-| `scripts/fetch-news.js`                             | Node     | hourly            | Sweep every configured RSS feed; write new items to `news_articles`. |
+| `scripts/fetch-news.js`                             | Node     | 4× / day          | Sweep every configured RSS feed; write new items to `news_articles`. |
 | `scripts/generate-daily-summary.js`                 | Node     | 4× / day          | Dedup + topical cluster + LLM-summarise. Output: `public/data/daily-summary.json`. |
-| `scripts/fetch-eurlex-texts.js`                     | Node     | daily             | Consolidate CELEX texts from EUR-Lex cellar into `policy_texts`.   |
+| `scripts/fetch-eurlex-texts.js`                     | Node     | 4× / day          | Consolidate CELEX texts from EUR-Lex cellar into `policy_texts`.   |
 | `scripts/prefetch-eurlex-bodies.mjs`                | Node     | on demand         | Warm the full-text cache for a list of CELEXes.                    |
-| `scripts/fetch_iiasa_data.py`                       | Python   | weekly            | Pull AR6 WG3 snapshot; write `src/data/scenarios.ts`.              |
-| `scripts/fetch_esabcc_reports.py`                   | Python   | weekly            | Scrape new ESABCC report metadata into `esabcc_reports`.           |
+| `scripts/fetch_iiasa_data.py`                       | Python   | on demand         | Pull AR6 WG3 snapshot; write `src/data/scenarios.ts`.              |
+| `scripts/fetch_esabcc_reports.py`                   | Python   | monthly (1st)     | Scrape new ESABCC report metadata into `esabcc_reports`.           |
 | `scripts/fix-truncated-urls.js`                     | Node     | on demand         | Repair truncated URLs in legacy data imports.                      |
 
 **Triggers.** Each pipeline runs via a matching GitHub Actions
 workflow under [`.github/workflows/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/.github/workflows)
 (`daily-updates.yml`, `fetch-eurlex-branch.yml`, `fetch-esabcc-reports.yml`,
-`prefetch-policy-bodies.yml`). On EEA infrastructure the same scripts
+`prefetch-policy-bodies.yml`). `daily-updates.yml` runs the EUR-Lex, news
+and summary steps together at 05:00, 11:00, 17:00 and 23:00 UTC;
+`fetch-esabcc-reports.yml` runs on the 1st of each month;
+`fetch_iiasa_data.py` has no workflow and is run by hand. On EEA infrastructure the same scripts
 run from a local cron against the EEA Postgres; GitHub Actions is not
 required.
 
@@ -53,6 +56,63 @@ required.
 | `scripts/render-faq-pdf.py`                         | Render `docs/FAQ-NON-TECHNICAL.md` into the repo-root PDF.              |
 | `scripts/validate-connections.ts`                   | Nightly check: external feeds respond, schema matches.                  |
 | `scripts/classify-references.mjs`                   | Classify the whole reference corpus (static + custom) into scientific vs grey literature and emit the [classification batch](classification-batch.md) (`public/data/reference-classification-batch.json` + the markdown report). Offline; mirrors the Content Analysis `sourceTierOf` rule. |
+
+## Scheduled maintenance & reference library
+
+| Script                                        | Runs via                                         | What it does |
+|-----------------------------------------------|--------------------------------------------------|--------------|
+| `scripts/screen-publications.mjs`             | `daily-publication-screening.yml`, 04:30 UTC daily | Daily scientific-publication screening for the Project Workspace. |
+| `scripts/backup-content-analysis.mjs`         | `content-analysis-backup.yml`, 03:30 UTC daily   | Off-site backup of every content-analysis, project-workspace and reference-manager table. |
+| `scripts/restore-content-analysis-backup.mjs` | `content-analysis-backup.yml` (manual dispatch)  | Restore a backup snapshot written by the script above. |
+| `scripts/audit-static-references.mjs`         | `audit-static-references.yml` (push / manual)    | CrossRef audit of the bundled static library (`src/data/references.ts`); writes `src/data/reference-pdf-links.json` and `reference-corrections.json`. Report: [Static library audit](static-library-audit.md). |
+| `scripts/fetch-reference-pdfs.mjs`            | `fetch-reference-pdfs.yml` (push / manual)       | Attach open-access PDFs to live-stack references; curated sources in `scripts/data/reference-pdf-sources.json`. Report: [Reference PDFs](reference-pdfs.md). |
+| `scripts/tag-eu-funded-references.mjs`        | `tag-eu-funded-references.yml` (push / manual)   | Tag references whose CrossRef `funder[]` metadata names an EU programme. Report: [EU-funded references](eu-funding-tags.md). |
+
+## Policy datasets (M·04, M·05, M·36, M·53)
+
+| Script                                        | Runs via                        | What it does |
+|-----------------------------------------------|---------------------------------|--------------|
+| `scripts/extract-policy-targets.mjs`          | `npm run build:policy-targets`  | Deterministic regex safety-net over the enacting terms (never recitals) of every policy text; inputs and corrections live in `scripts/policy-targets-input/`. |
+| `scripts/build-policy-targets.mjs`            | `npm run build:policy-targets`  | Merge, validate (quotes re-checked as source substrings) and classify target candidates into the M·36 dataset, applying `scripts/policy-targets-overrides.json`, `policy-targets-replaced.json` and `policy-targets-review-2026-08.json`. |
+| `scripts/policy-targets-classify.mjs`         | imported by the build above     | The deterministic classification vocabularies and veto phrases for M·36. |
+| `scripts/export-policy-targets-workbook.py`   | by hand                         | Export the corrected M·36 register to the reviewer workbook. |
+| `scripts/build-sector-targets.py`             | by hand                         | Generate `src/data/sector-targets.generated.ts` from the Masterfile tab "Clean targets". |
+| `scripts/build-target-indicators.mjs`         | `npm run build:target-indicators` / `check:target-indicators` | Build (or, with `--check`, verify without writing) the M·53 target → indicator ledger; overrides in `scripts/target-indicators-overrides.json`. |
+| `scripts/target-indicator-catalogue.mjs`      | imported by the build above     | Measurement-family catalogue for M·53. |
+| `scripts/check-policy-registries.mjs`         | `npm run check:policies`        | Guard against drift between the sectoral overlay and the canonical Policy Navigator registry. |
+| `scripts/build-policy-bodies-from-texts.mjs`  | `prebuild`, `npm run build:policy-bodies` | Build `public/content-analysis/policy-bodies.json` from `public/data/policy-texts/*.txt`. |
+| `scripts/fetch-new-policy-texts.mjs`          | by hand (one-off)               | Fetch consolidated texts for newly registered policies through the Publications Office Cellar endpoint. |
+| `scripts/retag-policies.mjs`                  | by hand                         | Regenerate `src/lib/content-analysis/policy-master-tags.ts` with a fleet of tagging agents. |
+| `scripts/export-tag-workbook.ts`              | `npx tsx`, by hand              | Export the master tag taxonomy to Excel for team review. |
+
+## Module data builders
+
+| Script                                        | Module                     | What it does |
+|-----------------------------------------------|----------------------------|--------------|
+| `scripts/build-scenario-pathways.py`          | M·55 Scenarios             | Read `EU_six_sectors_export.zip` without unpacking it and write `public/data/scenario-pathways/pathways.json`, with a parity gate against the EEA export. |
+| `scripts/build-industry-scenario-screening.py`| M·07 Industry Project      | Generate `src/data/industry-scenario-screening.generated.ts` from `public/data/industry-scenario-screening/Scenario_database.xlsx`. |
+| `scripts/make-scenario-call-figure.py`        | M·07 (project documents)   | Draw the schematic figure for the scenario-call one-pager. |
+| `scripts/make-scenario-call-onepager.py`      | M·07 (project documents)   | Generate the one-page Word note on the IAM scenario submission call (needs the figure above). |
+| `scripts/country-profile-source-urls.mjs`     | M·07 member-state profiles | Add `source` / `sourceUrl` to every indicator value in `src/data/country-profiles/<code>.ts`. |
+| `scripts/build-eu27-geojson.mjs`              | EU-27 choropleths (`src/lib/geo/eu-choropleth.ts`, National Climate Policies map) | `prebuild`: write `public/data/eu27-boundaries.geojson` from the bundled world-atlas topojson. |
+| `scripts/seed-sector-background-readings.mjs` | M·33 Sector Background     | Emit `supabase/migrations/073_sector_background_readings_seed.sql`. |
+| `scripts/fetch-climate-laws.mjs`              | National Climate Policies (beta) | Refresh `public/data/national-climate-policies.json` from climate-laws.org. |
+| `scripts/extract-necpr-2025.py`               | M·40 NECPR 2025            | Extract tidy CSVs and a data-quality report from the 2025 NECPR Reportnet workbooks into `public/data/necpr-2025/`. |
+| `scripts/fetch-figaro-io-dataset.mjs`         | Overview Industry (beta)   | Import the full Eurostat FIGARO inter-country input–output table into `public/data/figaro/`. |
+| `scripts/fetch-trade-flows-io-data.mjs`       | Overview Industry (beta)   | Regenerate `beta/modules/overview-industry/trade-flows/eurostat-io.generated.ts`. |
+| `scripts/refresh-climate-security-eurostat.mjs` | M·45 Climate Security    | Rebuild the Eurostat-derived series in `beta/modules/climate-security/data.generated.ts`. |
+| `scripts/refresh-climate-security-prices.mjs` | M·45 Climate Security      | Refresh the border-price anchors in the same file. |
+| `scripts/refresh-wildfire-effis-data.mjs`     | M·41 Wildfires & the Land Sink | Refresh the EFFIS burnt-area snapshots in `beta/modules/wildfire-sink-risk/analyses/data.ts`. |
+
+## Pipeline folders
+
+| Folder                                   | What it holds |
+|------------------------------------------|---------------|
+| `scripts/esabcc-indicators/`             | The M·07 Indicator Database pipeline: report extraction, SQL emitters, the post-report and "report way" rows, fact-check inputs, and `refresh-from-sources.mjs` + `render_verification_pdf.py`, which `refresh-indicators.yml` runs monthly (it opens a PR, never pushes to `main`). |
+| `scripts/esabcc-indicator-derivations/`  | Per-chapter Python derivations that reproduce published ESABCC indicator figures from raw data; brief for agents in `AGENT_GUIDE.md`. |
+| `scripts/policy-targets-input/`          | Per-act extraction inputs, the regex table and dated correction files for the M·36 build. |
+| `scripts/summer-prep-background/`        | Builders for the background workbooks and documents of the former M·35 Summer Prep (indicator check, synergies, sector policy gaps). |
+| `scripts/data/`                          | Curated inputs shared by scripts (currently `reference-pdf-sources.json`). |
 
 ## Fact-sheet verification (beta)
 
