@@ -55,6 +55,7 @@ required.
 | `scripts/build-docs.sh`                             | Build the MkDocs site into `public/docs/`. Run automatically as part of `vercel-build`. Uses `pip --break-system-packages` so it works on PEP-668 build images. |
 | `scripts/render-faq-pdf.py`                         | Render `docs/FAQ-NON-TECHNICAL.md` into the repo-root PDF.              |
 | `scripts/validate-connections.ts`                   | Nightly check: external feeds respond, schema matches.                  |
+| `scripts/times-jl/run-demo12.jl`                    | Run the open TIMES demo model (demo12) with TIMES.jl (Julia/JuMP + HiGHS, no GAMS) and extract generation, CO₂, new capacity and the objective to `public/data/times-jl/demo12-results.json` for M·56. Julia 1.11+, by hand; see [`scripts/times-jl/README.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/times-jl/README.md). |
 | `scripts/classify-references.mjs`                   | Classify the whole reference corpus (static + custom) into scientific vs grey literature and emit the [classification batch](classification-batch.md) (`public/data/reference-classification-batch.json` + the markdown report). Offline; mirrors the Content Analysis `sourceTierOf` rule. |
 
 ## Scheduled maintenance & reference library

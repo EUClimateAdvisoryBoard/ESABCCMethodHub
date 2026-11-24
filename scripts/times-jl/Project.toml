@@ -1,6 +1,7 @@
 [deps]
 Arrow = "69666777-d1a9-59fb-9406-91d4454c9d45"
 JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
 TIMES = "2625f1fd-8477-4c68-a6fe-e00cc6f61c53"
 
 [sources]

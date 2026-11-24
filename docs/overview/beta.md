@@ -1,6 +1,6 @@
 # Beta parking lot
 
-**Forty-five** experimental modules sit outside the Next.js route tree at
+**Forty-six** experimental modules sit outside the Next.js route tree at
 [`beta/modules/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/beta/modules)
 in the repository. They are **intentionally unrouted** — the file-system
 location is the feature flag. (Former beta work has graduated before: the
@@ -16,15 +16,15 @@ into [Secretariat News](../modules/news-feed.md).)
 
 ## What is parked
 
-Numbered M·09–M·54, continuing the sequence after the eight core modules
-(M·55 is taken by the Scenarios main module, `/scenario-pathways`, so the next
-beta module is M·56). The
+Numbered M·09–M·56, continuing the sequence after the eight core modules
+(M·55 is taken by the Scenarios main module, `/scenario-pathways`; the next
+beta module is M·57). The
 list grows roughly weekly as new prototypes land; the
 [`beta/README.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/beta/README.md)
 table and the home-page module ribbon (`src/app/page.tsx`) are the canonical,
 always-current registry — this page mirrors them.
 
-The modules fall into five loose families:
+The modules fall into six loose families:
 
 - **Data surfaces awaiting a pipeline or licence** (M·09–M·20) — working UI,
   blocked on a backend service, a procured dataset, or editorial sign-off.
@@ -46,6 +46,9 @@ The modules fall into five loose families:
   squeeze, trade-partner policy, summer 2026 damages). M·45–M·52 were
   re-checked against primary sources in
   [`beta-modules-m45-m52-factcheck-2026-08.md`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/docs-internal/beta-modules-m45-m52-factcheck-2026-08.md).
+- **Open modelling tools** (M·56) — energy-system models run in the open:
+  the TIMES model generator through TIMES.jl, without GAMS
+  ([module page](../modules/times-jl.md)).
 
 | #     | Folder                       | Module                | Why it is beta                                                  |
 |-------|------------------------------|-----------------------|-----------------------------------------------------------------|
@@ -94,6 +97,7 @@ The modules fall into five loose families:
 | M·52  | `trade-partner-climate/`     | Trade-Partner Climate & Article 6 Tracker | Eight-partner snapshot register (carbon pricing, NDCs, CBAM stance, linkage) plus plausible Article 6 supply-at-quality vs the ≈260 Mt demand in COM(2026) 616 — issued credits to date cover under 1 % of the bet. Snapshot 2026-08. |
 | M·53  | `policy-target-flows/`       | Policy Targets → Indicators | Every relevant, unflagged M·36 target (the reduced set after the August 2026 "revise target" review pass) on a sector flow chart in the Policy Gap 2.0 style, matched to the series, dataset or compliance milestone that measures it — opening on a one-figure overview of all nine sector columns, each expandable into its chart — no target left unassessed, and the measurement gaps ranked by the dataset that would close them. |
 | M·54  | `summer-2026-damages/`       | Summer 2026 Damage Ledger | Economic damage dashboard for the summer of 2026 — record heat, a record fire season, the Rhine at its lowest since 1880 — asking whether the EU is ready for the climate it already has: sourced build-up chain ("why this summer"), the 2003→2026 escalation series, a five-strand event ledger with live EFFIS/Pegelonline pulls, a deliberate refusal to print a season total, and a gap-vs-steel-man preparedness ledger. AI-compiled mid-season (2026-08-11), editorial framing flagged, pending Secretariat verification. |
+| M·56  | `times-jl/`                  | TIMES.jl Demo Runner | Runs the open TIMES demo model (demo12) through TIMES.jl, the pre-release Julia/JuMP translation of TIMES solved with HiGHS, and checks the run against the GAMS reference. The numbers come from a teaching model, not EU projections; the wrapper is AI-compiled. |
 
 !!! note "Numbering vs. the route map"
     The `M·NN` codes are a **stable presentation index** assigned on the home

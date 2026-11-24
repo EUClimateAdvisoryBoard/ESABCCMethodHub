@@ -194,6 +194,7 @@ nav:
       - "M·36 Policy Targets Register (beta)": modules/policy-targets.md
       - "M·42 EU Policy Hierarchy (beta)": modules/policy-hierarchy.md
       - "M·53 Policy Targets → Indicators (beta)": modules/policy-target-flows.md
+      - "M·56 TIMES.jl Demo Runner (beta)": modules/times-jl.md
       - "Media Monitoring (beta)": modules/media-monitoring.md
   - Infrastructure:
       - Overview: infrastructure/index.md

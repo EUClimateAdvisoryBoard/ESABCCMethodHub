@@ -1,0 +1,1573 @@
+{
+ "co2_by_sector": [
+  {
+   "region": "REG1",
+   "sector": "AGR",
+   "value": 17275.70701666286,
+   "year": "2005"
+  },
+  {
+   "region": "REG1",
+   "sector": "COM",
+   "value": 85091.93395559999,
+   "year": "2005"
+  },
+  {
+   "region": "REG1",
+   "sector": "ELC",
+   "value": 652667.3640618501,
+   "year": "2005"
+  },
+  {
+   "region": "REG1",
+   "sector": "IND",
+   "value": 293678.9897399998,
+   "year": "2005"
+  },
+  {
+   "region": "REG1",
+   "sector": "RSD",
+   "value": 253812.89172042476,
+   "year": "2005"
+  },
+  {
+   "region": "REG1",
+   "sector": "TRA",
+   "value": 475211.85998059995,
+   "year": "2005"
+  },
+  {
+   "region": "REG1",
+   "sector": "AGR",
+   "value": 20472.32990983362,
+   "year": "2010"
+  },
+  {
+   "region": "REG1",
+   "sector": "COM",
+   "value": 140971.71699441416,
+   "year": "2010"
+  },
+  {
+   "region": "REG1",
+   "sector": "ELC",
+   "value": 661749.3662665774,
+   "year": "2010"
+  },
+  {
+   "region": "REG1",
+   "sector": "IND",
+   "value": 300956.4533741033,
+   "year": "2010"
+  },
+  {
+   "region": "REG1",
+   "sector": "RSD",
+   "value": 386437.63388302963,
+   "year": "2010"
+  },
+  {
+   "region": "REG1",
+   "sector": "TRA",
+   "value": 484047.09143510927,
+   "year": "2010"
+  },
+  {
+   "region": "REG1",
+   "sector": "AGR",
+   "value": 24248.976985529713,
+   "year": "2015"
+  },
+  {
+   "region": "REG1",
+   "sector": "COM",
+   "value": 172775.79609570574,
+   "year": "2015"
+  },
+  {
+   "region": "REG1",
+   "sector": "ELC",
+   "value": 786691.682439754,
+   "year": "2015"
+  },
+  {
+   "region": "REG1",
+   "sector": "IND",
+   "value": 308268.50156354735,
+   "year": "2015"
+  },
+  {
+   "region": "REG1",
+   "sector": "RSD",
+   "value": 461011.4692281902,
+   "year": "2015"
+  },
+  {
+   "region": "REG1",
+   "sector": "TRA",
+   "value": 526774.9662223749,
+   "year": "2015"
+  },
+  {
+   "region": "REG1",
+   "sector": "AGR",
+   "value": 28709.32120608195,
+   "year": "2020"
+  },
+  {
+   "region": "REG1",
+   "sector": "COM",
+   "value": 207973.19889763204,
+   "year": "2020"
+  },
+  {
+   "region": "REG1",
+   "sector": "ELC",
+   "value": 733300.9236936634,
+   "year": "2020"
+  },
+  {
+   "region": "REG1",
+   "sector": "IND",
+   "value": 315615.26182891335,
+   "year": "2020"
+  },
+  {
+   "region": "REG1",
+   "sector": "RSD",
+   "value": 536818.8982166682,
+   "year": "2020"
+  },
+  {
+   "region": "REG1",
+   "sector": "TRA",
+   "value": 581602.1278124516,
+   "year": "2020"
+  },
+  {
+   "region": "REG1",
+   "sector": "AGR",
+   "value": 35544.14922771073,
+   "year": "2030"
+  },
+  {
+   "region": "REG1",
+   "sector": "COM",
+   "value": 243963.58824392458,
+   "year": "2030"
+  },
+  {
+   "region": "REG1",
+   "sector": "ELC",
+   "value": 661629.9641422923,
+   "year": "2030"
+  },
+  {
+   "region": "REG1",
+   "sector": "IND",
+   "value": 330413.4307792987,
+   "year": "2030"
+  },
+  {
+   "region": "REG1",
+   "sector": "RSD",
+   "value": 570253.3677402299,
+   "year": "2030"
+  },
+  {
+   "region": "REG1",
+   "sector": "TRA",
+   "value": 800199.3848724739,
+   "year": "2030"
+  },
+  {
+   "region": "REG1",
+   "sector": "AGR",
+   "value": 42414.379138687575,
+   "year": "2050"
+  },
+  {
+   "region": "REG1",
+   "sector": "COM",
+   "value": 269554.2896453177,
+   "year": "2050"
+  },
+  {
+   "region": "REG1",
+   "sector": "ELC",
+   "value": 554853.0379793904,
+   "year": "2050"
+  },
+  {
+   "region": "REG1",
+   "sector": "IND",
+   "value": 360431.9714619127,
+   "year": "2050"
+  },
+  {
+   "region": "REG1",
+   "sector": "RSD",
+   "value": 618984.9499885886,
+   "year": "2050"
+  },
+  {
+   "region": "REG1",
+   "sector": "TRA",
+   "value": 884136.7612131402,
+   "year": "2050"
+  },
+  {
+   "region": "REG2",
+   "sector": "AGR",
+   "value": 18880.424280773696,
+   "year": "2005"
+  },
+  {
+   "region": "REG2",
+   "sector": "COM",
+   "value": 107820.67663180007,
+   "year": "2005"
+  },
+  {
+   "region": "REG2",
+   "sector": "ELC",
+   "value": 404871.61473729333,
+   "year": "2005"
+  },
+  {
+   "region": "REG2",
+   "sector": "IND",
+   "value": 289399.8351599999,
+   "year": "2005"
+  },
+  {
+   "region": "REG2",
+   "sector": "RSD",
+   "value": 308972.5116850601,
+   "year": "2005"
+  },
+  {
+   "region": "REG2",
+   "sector": "TRA",
+   "value": 475452.65789839975,
+   "year": "2005"
+  },
+  {
+   "region": "REG2",
+   "sector": "AGR",
+   "value": 24632.22045510055,
+   "year": "2010"
+  },
+  {
+   "region": "REG2",
+   "sector": "COM",
+   "value": 107397.62867622022,
+   "year": "2010"
+  },
+  {
+   "region": "REG2",
+   "sector": "ELC",
+   "value": 432663.0847180446,
+   "year": "2010"
+  },
+  {
+   "region": "REG2",
+   "sector": "IND",
+   "value": 297313.05859025446,
+   "year": "2010"
+  },
+  {
+   "region": "REG2",
+   "sector": "RSD",
+   "value": 314466.6604190051,
+   "year": "2010"
+  },
+  {
+   "region": "REG2",
+   "sector": "TRA",
+   "value": 510355.3839265737,
+   "year": "2010"
+  },
+  {
+   "region": "REG2",
+   "sector": "AGR",
+   "value": 32121.0759583297,
+   "year": "2015"
+  },
+  {
+   "region": "REG2",
+   "sector": "COM",
+   "value": 161157.87871423096,
+   "year": "2015"
+  },
+  {
+   "region": "REG2",
+   "sector": "ELC",
+   "value": 490440.67501118506,
+   "year": "2015"
+  },
+  {
+   "region": "REG2",
+   "sector": "IND",
+   "value": 305298.3086838091,
+   "year": "2015"
+  },
+  {
+   "region": "REG2",
+   "sector": "RSD",
+   "value": 338943.3721878367,
+   "year": "2015"
+  },
+  {
+   "region": "REG2",
+   "sector": "TRA",
+   "value": 580758.6103123749,
+   "year": "2015"
+  },
+  {
+   "region": "REG2",
+   "sector": "AGR",
+   "value": 41867.78248164582,
+   "year": "2020"
+  },
+  {
+   "region": "REG2",
+   "sector": "COM",
+   "value": 198263.6065765557,
+   "year": "2020"
+  },
+  {
+   "region": "REG2",
+   "sector": "ELC",
+   "value": 506305.4022939524,
+   "year": "2020"
+  },
+  {
+   "region": "REG2",
+   "sector": "IND",
+   "value": 313356.10852577956,
+   "year": "2020"
+  },
+  {
+   "region": "REG2",
+   "sector": "RSD",
+   "value": 394748.3769008982,
+   "year": "2020"
+  },
+  {
+   "region": "REG2",
+   "sector": "TRA",
+   "value": 673258.4003616335,
+   "year": "2020"
+  },
+  {
+   "region": "REG2",
+   "sector": "AGR",
+   "value": 57067.064110310646,
+   "year": "2030"
+  },
+  {
+   "region": "REG2",
+   "sector": "COM",
+   "value": 349074.26855401334,
+   "year": "2030"
+  },
+  {
+   "region": "REG2",
+   "sector": "ELC",
+   "value": 501399.3622664007,
+   "year": "2030"
+  },
+  {
+   "region": "REG2",
+   "sector": "IND",
+   "value": 329691.46698389074,
+   "year": "2030"
+  },
+  {
+   "region": "REG2",
+   "sector": "RSD",
+   "value": 383015.62288543093,
+   "year": "2030"
+  },
+  {
+   "region": "REG2",
+   "sector": "TRA",
+   "value": 1.1628329900168602e6,
+   "year": "2030"
+  },
+  {
+   "region": "REG2",
+   "sector": "AGR",
+   "value": 68097.39847759486,
+   "year": "2050"
+  },
+  {
+   "region": "REG2",
+   "sector": "COM",
+   "value": 348717.31652950076,
+   "year": "2050"
+  },
+  {
+   "region": "REG2",
+   "sector": "ELC",
+   "value": 361911.2361320243,
+   "year": "2050"
+  },
+  {
+   "region": "REG2",
+   "sector": "IND",
+   "value": 363256.1803652905,
+   "year": "2050"
+  },
+  {
+   "region": "REG2",
+   "sector": "RSD",
+   "value": 386757.3172646061,
+   "year": "2050"
+  },
+  {
+   "region": "REG2",
+   "sector": "TRA",
+   "value": 1.2848090276764487e6,
+   "year": "2050"
+  }
+ ],
+ "generated": "2026-11-24",
+ "generation_by_fuel": [
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2005"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 2395.6907519999995,
+   "year": "2005"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 527.0204011958292,
+   "year": "2005"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG1",
+   "value": 488.808,
+   "year": "2005"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG1",
+   "value": 1470.1500000000015,
+   "year": "2005"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2005"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 56.647260273972584,
+   "year": "2005"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 261.6263531678084,
+   "year": "2005"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 2319.145370669079,
+   "year": "2010"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 833.3278912800001,
+   "year": "2010"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG1",
+   "value": 353.8678881333639,
+   "year": "2010"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG1",
+   "value": 1470.1500000000015,
+   "year": "2010"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 37.764840182648385,
+   "year": "2010"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 196.21976487585633,
+   "year": "2010"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 3048.727949885228,
+   "year": "2015"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 555.55192752,
+   "year": "2015"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG1",
+   "value": 252.288,
+   "year": "2015"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG1",
+   "value": 1470.1500000000015,
+   "year": "2015"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 18.882420091324192,
+   "year": "2015"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 130.8131765839042,
+   "year": "2015"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 2649.4461578852283,
+   "year": "2020"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 2280.5553017057255,
+   "year": "2020"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG1",
+   "value": 252.288,
+   "year": "2020"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG1",
+   "value": 1470.1500000000015,
+   "year": "2020"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 385.05488798299507,
+   "year": "2020"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 2146.1227423655137,
+   "year": "2030"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 1778.9261043696106,
+   "year": "2030"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG1",
+   "value": 86.18788383085031,
+   "year": "2030"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG1",
+   "value": 1470.1500000000015,
+   "year": "2030"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 812.9582184386954,
+   "year": "2030"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 1772.3032526575812,
+   "year": "2050"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 127.22340230078836,
+   "year": "2050"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG1",
+   "value": 1551.8250000000014,
+   "year": "2050"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 1354.3615761713622,
+   "year": "2050"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2005"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 1289.9873279999993,
+   "year": "2005"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 753.268272424456,
+   "year": "2005"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG2",
+   "value": 488.808,
+   "year": "2005"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG2",
+   "value": 1796.85,
+   "year": "2005"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2005"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 50.97412480974123,
+   "year": "2005"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 470.9717012597846,
+   "year": "2005"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 39.36868600000003,
+   "year": "2010"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 1074.9894399999994,
+   "year": "2010"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 2106.4652575143214,
+   "year": "2010"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG2",
+   "value": 353.8678881333639,
+   "year": "2010"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG2",
+   "value": 1796.85,
+   "year": "2010"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 33.98274987316082,
+   "year": "2010"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 353.22877594483845,
+   "year": "2010"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 29.52651450000001,
+   "year": "2015"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 859.9915519999995,
+   "year": "2015"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 5545.763665400437,
+   "year": "2015"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG2",
+   "value": 252.288,
+   "year": "2015"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG2",
+   "value": 1796.85,
+   "year": "2015"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 16.99137493658041,
+   "year": "2015"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 235.4858506298923,
+   "year": "2015"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 19.684343000000016,
+   "year": "2020"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 644.9936639999996,
+   "year": "2020"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 3446.047239793454,
+   "year": "2020"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG2",
+   "value": 252.288,
+   "year": "2020"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG2",
+   "value": 1860.0725,
+   "year": "2020"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 432.22830500692237,
+   "year": "2020"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 214.99788799999988,
+   "year": "2030"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 2989.561219985331,
+   "year": "2030"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG2",
+   "value": 86.18788383085031,
+   "year": "2030"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG2",
+   "value": 1986.5175,
+   "year": "2030"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 848.8938402935463,
+   "year": "2030"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 982.0867105070971,
+   "year": "2050"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG2",
+   "value": 2845.0125,
+   "year": "2050"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 1228.0857572095792,
+   "year": "2050"
+  }
+ ],
+ "generator": "scripts/times-jl/run-demo12.jl",
+ "model": {
+  "milestone_years": [
+   "2005",
+   "2010",
+   "2015",
+   "2020",
+   "2030",
+   "2050"
+  ],
+  "name": "TIMES_Demo demo12",
+  "note": "A stylised two-region demonstration model shipped with TIMES. Its regions (REG1, REG2) and data are illustrative and represent no real country.",
+  "regions": [
+   "REG1",
+   "REG2"
+  ],
+  "source": "etsap-TIMES/TIMES_Demo @ 962db86 (CC BY 4.0, IEA-ETSAP), model/demo12.run"
+ },
+ "new_capacity_by_fuel": [
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 12.03988758576862,
+   "year": "2010"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 42.1130051637027,
+   "year": "2015"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 28.16403550757029,
+   "year": "2020"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 10.38796611466517,
+   "year": "2020"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 28.9599459747629,
+   "year": "2020"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 11.014122738542886,
+   "year": "2030"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 33.181986308264136,
+   "year": "2030"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 8.719477787989419,
+   "year": "2030"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 48.92446157115634,
+   "year": "2030"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG1",
+   "value": 5.129534981873919,
+   "year": "2050"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG1",
+   "value": 4.746150144029171,
+   "year": "2050"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG1",
+   "value": 51.7979452054795,
+   "year": "2050"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG1",
+   "value": 9.019611094625247,
+   "year": "2050"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG1",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG1",
+   "value": 98.80597843203817,
+   "year": "2050"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 8.290624518320255,
+   "year": "2010"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2010"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 54.77009091077981,
+   "year": "2015"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2015"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 42.6006285595554,
+   "year": "2020"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG2",
+   "value": 2.110286656519534,
+   "year": "2020"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2020"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 28.492188491336538,
+   "year": "2020"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 55.76374376968489,
+   "year": "2030"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG2",
+   "value": 4.220573313039068,
+   "year": "2030"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2030"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 52.57962844648039,
+   "year": "2030"
+  },
+  {
+   "fuel": "BIO",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "COA",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "GAS",
+   "region": "REG2",
+   "value": 36.63737094141138,
+   "year": "2050"
+  },
+  {
+   "fuel": "HYD",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "NUC",
+   "region": "REG2",
+   "value": 88.63203957382039,
+   "year": "2050"
+  },
+  {
+   "fuel": "OIL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "SOL",
+   "region": "REG2",
+   "value": 0.0,
+   "year": "2050"
+  },
+  {
+   "fuel": "WIN",
+   "region": "REG2",
+   "value": 85.58000671448642,
+   "year": "2050"
+  }
+ ],
+ "objective_components": [
+  {
+   "component": "OBJINV",
+   "currency": "MEuro05",
+   "region": "REG1",
+   "value": 7.126272339080028e6
+  },
+  {
+   "component": "OBJINV",
+   "currency": "MEuro05",
+   "region": "REG2",
+   "value": 9.12928758951814e6
+  },
+  {
+   "component": "OBJFIX",
+   "currency": "MEuro05",
+   "region": "REG1",
+   "value": 917622.4388282208
+  },
+  {
+   "component": "OBJFIX",
+   "currency": "MEuro05",
+   "region": "REG2",
+   "value": 1.0906477559968792e6
+  },
+  {
+   "component": "OBJVAR",
+   "currency": "MEuro05",
+   "region": "REG1",
+   "value": 2.8255994000337753e6
+  },
+  {
+   "component": "OBJVAR",
+   "currency": "MEuro05",
+   "region": "REG2",
+   "value": 3.5457861875342745e6
+  },
+  {
+   "component": "OBJSAL",
+   "currency": "MEuro05",
+   "region": "REG1",
+   "value": 277627.8076033859
+  },
+  {
+   "component": "OBJSAL",
+   "currency": "MEuro05",
+   "region": "REG2",
+   "value": 396902.1663800152
+  }
+ ],
+ "parity": {
+  "columns_gams_reference": 4485,
+  "objective_gams_reference": 2.3960685737007827e7,
+  "objective_timesjl": 2.3960685737007916e7,
+  "reference_source": "TIMES.jl README, section 'Quick start', step 3 (rows, columns and the GAMS/CPLEX reference objective for demo12)",
+  "relative_difference": 3.731402687903662e-15,
+  "rows_gams_reference": 3233
+ },
+ "process_descriptions": {
+  "REG1.ELCNENUC00": "Power Plants Existing00 - Nuclear Energy",
+  "REG1.ELCNNNUC01": "Power Plants New 1 - Nuclear",
+  "REG1.ELCREBIO00": "Power Plants Existing00 - Biomass",
+  "REG1.ELCREHYD00": "Power Plants Existing00 - Hydro power",
+  "REG1.ELCRESOL00": "Power Plants Existing00 - Solar energy",
+  "REG1.ELCREWIN00": "Power Plants Existing00 - Wind energy",
+  "REG1.ELCRNBIO01": "Power Plants New 1 - Biomass",
+  "REG1.ELCRNSOL01": "Power Plants New 1 - Solar energy",
+  "REG1.ELCRNWIN01": "Power Plants New 1 - Wind energy",
+  "REG1.ELCTECOA00": "Power Plants Existing00 - Solid Fuels",
+  "REG1.ELCTEGAS00": "Power Plants Existing00 - Natural Gas",
+  "REG1.ELCTEOIL00": "Power Plants Existing00 - Crude oil",
+  "REG1.ELCTNCOA01": "Power Plants New 1 - Solid Fuels",
+  "REG1.ELCTNGAS01": "Power Plants New 1 - Natural Gas",
+  "REG1.ELCTNOIL01": "Power Plants New 1 - Oil",
+  "REG2.ELCNENUC00": "Power Plants Existing00 - Nuclear Energy",
+  "REG2.ELCNNNUC01": "Power Plants New 1 - Nuclear",
+  "REG2.ELCREBIO00": "Power Plants Existing00 - Biomass",
+  "REG2.ELCREHYD00": "Power Plants Existing00 - Hydro power",
+  "REG2.ELCRESOL00": "Power Plants Existing00 - Solar energy",
+  "REG2.ELCREWIN00": "Power Plants Existing00 - Wind energy",
+  "REG2.ELCRNBIO01": "Power Plants New 1 - Biomass",
+  "REG2.ELCRNHYD01": "Power Plants New 1 - Hydro power",
+  "REG2.ELCRNSOL01": "Power Plants New 1 - Solar energy",
+  "REG2.ELCRNWIN01": "Power Plants New 1 - Wind energy",
+  "REG2.ELCTECOA00": "Power Plants Existing00 - Solid Fuels",
+  "REG2.ELCTEGAS00": "Power Plants Existing00 - Natural Gas",
+  "REG2.ELCTEOIL00": "Power Plants Existing00 - Crude Oil",
+  "REG2.ELCTNCOA01": "Power Plants New 1 - Solid Fuels",
+  "REG2.ELCTNGAS01": "Power Plants New 1 - Natural Gas",
+  "REG2.ELCTNOIL01": "Power Plants New 1 - Oil"
+ },
+ "run": {
+  "columns": 4485,
+  "reused_existing_output": false,
+  "rows": 3233,
+  "status": "solved",
+  "termination_status": "OPTIMAL",
+  "threads": 4,
+  "wall_time_s_total_first_run": 244.1
+ },
+ "software": {
+  "julia": "1.11.7",
+  "solver": "HiGHS.jl 1.27.0",
+  "times_gams_source": "etsap-TIMES/TIMES_model v4.9.7 @ d9a6a25",
+  "timesjl_commit": "4091d417282b74c8bf903375ef52c11f75ccdd3e"
+ },
+ "units": {
+  "co2": "kt CO2",
+  "generation": "PJ",
+  "new_capacity": "GW",
+  "objective": "MEuro05 (discounted)"
+ }
+}
