@@ -1,0 +1,10 @@
+[deps]
+Arrow = "69666777-d1a9-59fb-9406-91d4454c9d45"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+TIMES = "2625f1fd-8477-4c68-a6fe-e00cc6f61c53"
+
+[sources]
+TIMES = {url = "https://github.com/esma-ie/TIMESjl", rev = "4091d417282b74c8bf903375ef52c11f75ccdd3e"}
+
+[compat]
+julia = "1.11"
