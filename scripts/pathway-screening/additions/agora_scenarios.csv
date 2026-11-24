@@ -1,0 +1,2 @@
+ID,Model,Scenario,main_run,description,src,one_total
+2000,"Agora (Artelys METIS, TEP, Wuppertal)",EU Gas Exit Pathway (Central Scenario),True,"Agora Energiewende (May 2023) Breaking free from fossil gas: central EU-27 climate-neutrality pathway with gas phase-out; base year 2018; domestic GHG excl. international aviation and shipping. Values from Annex 1 Table 1 and Annex 2 Table 3. AI-compiled, pending Secretariat verification.",Agora2023,True

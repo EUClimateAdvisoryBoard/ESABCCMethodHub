@@ -1,0 +1,4 @@
+ID,Model,Scenario,main_run,description,src,one_total
+2010,"Öko-Institut/Fraunhofer ISI model suite (FORECAST, ALADIN, Enertile)",EUBase,False,Reference / current-policies scenario (policies as of 2022); does not aim at the 2030 or 2050 targets; 2050 net 816 Mt CO2e,UBA2026,True
+2011,"Öko-Institut/Fraunhofer ISI model suite (FORECAST, ALADIN, Enertile)",EUTarget,True,"Technology-oriented net-zero-2050 pathway: endogenous ETS1/ETS2 CO2 prices, CCS (106 Mt in 2050), 28 Mt technical CDR",UBA2026,True
+2012,"Öko-Institut/Fraunhofer ISI model suite (FORECAST, ALADIN, Enertile)",EUSupreme,True,"Sustainability/sufficiency net-zero pathway: no CCS, limited nuclear and biomass, dietary change, circular economy; 2050 net -130 Mt CO2e",UBA2026,True

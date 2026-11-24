@@ -90,6 +90,7 @@ required.
 | Script                                        | Module                     | What it does |
 |-----------------------------------------------|----------------------------|--------------|
 | `scripts/build-scenario-pathways.py`          | M·55 Scenarios             | Read `EU_six_sectors_export.zip` without unpacking it and write `public/data/scenario-pathways/pathways.json`, with a parity gate against the EEA export. |
+| `scripts/pathway-screening/screen_three_sets.py` | M·55 Scenarios (three-set screening) | Re-screen `EU_pathway_screening_three_sets.xlsx` with the added sources in `scripts/pathway-screening/additions/` and the exceptions in `pathway-screening-overrides.json`; `--check` asserts the workbook's 3 / 10 / 8. See `scripts/pathway-screening/README.md`. |
 | `scripts/build-industry-scenario-screening.py`| M·07 Industry Project      | Generate `src/data/industry-scenario-screening.generated.ts` from `public/data/industry-scenario-screening/Scenario_database.xlsx`. |
 | `scripts/make-scenario-call-figure.py`        | M·07 (project documents)   | Draw the schematic figure for the scenario-call one-pager. |
 | `scripts/make-scenario-call-onepager.py`      | M·07 (project documents)   | Generate the one-page Word note on the IAM scenario submission call (needs the figure above). |
