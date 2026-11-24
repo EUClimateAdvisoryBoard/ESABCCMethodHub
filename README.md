@@ -1,140 +1,52 @@
-# MethodHub
+# ESABCC pathway sets for the EU 2040 and 2050 targets (export 24 Nov 2026)
 
-Internal research workspace for the Secretariat of the European
-Scientific Advisory Board on Climate Change (ESABCC). Built and
-maintained by CCE5. Packaged to run on EEA infrastructure — not on
-Vercel in production.
+Screening database and the three pathway sets behind the deck "Three pathway sets for the EU 2040 and 2050 targets".
 
-This README is a quick overview. Every section links into the
-[documentation site](https://methodhub.vercel.app/docs/) hosted
-under the app on Vercel, which is the single source of truth.
+**Internal use only.** `data/systems_fix.csv`, `data/pathways_screened_1219.csv` and the Excel file contain Scenario Compass data, which are embargoed. Do not upload them to external services.
 
-## At a glance
+## The three sets
 
-<p align="center">
-  <img src="docs/assets/fig-system-context.svg" alt="MethodHub system context — CCE5 stewards the code, EEA hosts the service, the ESABCC Secretariat uses it daily, and peer EEA units can fork it." width="100%">
-</p>
+| Set | 2040 cut vs 1990 | EU net GHG 2050 | ESABCC limits | Pathways |
+|---|---|---|---|---|
+| ECL-compatible, within ESABCC limits (ECL) | 85–90% | ≤ 0 Mt (rule: ≤ 1 Mt, so REMIND-EU CCS180_highImp at +0.3 Mt counts) | all filters and risk levels | 3 |
+| ECL range, 10% tolerance margin (ECL +10%) | 85–90% | ≤ 50 Mt | EU CO₂ capture, EU primary bioenergy, world CO₂ storage ×1.1; others as published | 10 + EC 2040 IA S2 |
+| ESABCC 2040-compatible | 90–95% | ≤ 0 Mt (≤ 1 Mt) | all filters and risk levels | 23 pass; 8 main runs shown + EC 2040 IA LIFE |
 
-## What is MethodHub?
+All sets: industry data reported (industry energy CO₂ and process CO₂ for 2020 and 2050), 2030 cut ≥ 55% (missing 2030 counts as passed). JRC pathways: net-zero flag instead of a 2050 value.
 
-A Next.js 14 application that bundles the Secretariat's day-to-day
-research tooling — reference management, scenario data, news
-monitoring, EU policy tracking, content analysis, anonymous
-voting, per-project workspaces and recommendation tracking — behind a
-single sign-in. Eight production modules ship in
-`src/`; forty-five experimental
-modules (numbered M·09–M·54; M·35 is retired) sit unrouted in `beta/` and are pulled
-into production once the science team signs off (Project Workspace and
-Recommendations were the two most recent promotions). The beta list
-grows roughly weekly — [`beta/README.md`](beta/README.md) is the
-canonical registry.
+Limits (ESABCC 2023, Tables 5 and 6): filter EU capture 500 Mt, EU primary bioenergy 20 EJ, world storage 8,600 Mt, world bioenergy 240 EJ, EU hydrogen 2030 1.89 EJ, final energy decline 2020–30 ≤ 20%; risk levels EU capture 425 Mt, EU primary bioenergy 9 EJ, land sink 400 Mt. A limit only removes a pathway that reports the variable.
 
-Read more:
-[What is MethodHub?](https://methodhub.vercel.app/docs/overview/what-is-methodhub/) ·
-[The eight modules](https://methodhub.vercel.app/docs/overview/the-eight-modules/) ·
-[Beta parking lot](https://methodhub.vercel.app/docs/overview/beta/) ·
-[FAQ (non-technical)](https://methodhub.vercel.app/docs/FAQ-NON-TECHNICAL/).
+Window bounds as coded: 85–90% is 84.95 ≤ cut < 90.5; 90–95% is 90.5 ≤ cut < 95.5. Cuts scaled to the inventory (1990: 4,608.5 Mt). For the 16 REMIND 3.2 runs of the ESABCC 2023 advice the Board's own stored 2040 cut is used; with the general formula, def_bioLim7p5_500 and flex_bioLim7p5_500 move above 95% and ESABCC 2040 has 6 main runs.
 
-## The eight production modules
+## Files
 
-| # | Module | What it does | Docs |
-| --- | --- | --- | --- |
-| M·01 | Reference Manager | Shared bibliography with PDF ingestion and tagging. | [reference manager](https://methodhub.vercel.app/docs/modules/references/) |
-| M·02 | Data & Scenarios | Climate scenario datasets and chart builders. | [data & scenarios](https://methodhub.vercel.app/docs/modules/scenarios/) |
-| M·03 | Secretariat News | Curated daily climate-policy news feed. | [news feed](https://methodhub.vercel.app/docs/modules/news-feed/) |
-| M·04 | EU Policy Navigator | Search and timeline over EU climate legislation. | [policy navigator](https://methodhub.vercel.app/docs/modules/policy-navigator/) |
-| M·05 | Content Analysis | LLM-assisted analysis of long documents. | [content analysis](https://methodhub.vercel.app/docs/modules/content-analysis/) |
-| M·06 | Voting Tool | Anonymous Advisory-Board ballots with seven voting systems and live analysis. | [voting tool](https://methodhub.vercel.app/docs/modules/voting-tool/) |
-| M·07 | Project Workspace | Per-project binder: indicator DB, member-state matrix, recommendation tracker, meetings. | [project workspace](https://methodhub.vercel.app/docs/modules/project-workspace/) |
-| M·08 | Recommendations | Advisory-Board recommendation tracker — status and dated uptake events vs. EU law. | [recommendations](https://methodhub.vercel.app/docs/modules/recommendations/) |
+### data/
+- `pathways_screened_1219.csv`: start here. One row per pathway with industry data (duplicates removed): source, model, scenario, region, 2030 and 2040 cut (%), net GHG 2050, limit indicators, set membership (`in_ECL`, `in_ECL_plus10`, `ESABCC2040_passes`, `in_ESABCC2040`).
+- `systems_fix.csv`: full audited database (12k+ columns of indicators; `det` = industry data, `dup` = duplicate copy). Row index = `id`.
+- `stages.csv`: per row of systems_fix: `red30`, `red` (2030 and 2040 cut, %), sector values harmonised to the 2020 inventory (`{sector}_{year}`).
+- `sets3.csv`: set flags per id (`s1` ECL, `s2` ECL +10%, `s3_all` ESABCC 2040 passes, `s3` main runs shown).
+- `why.csv`: reason a pathway is not shown in a sector chart.
+- `sector_dump.json`: sector values 2020–2050 of every set member, EC 2040 IA sector values, inventory, WEM/WAM.
+- `inventory_eu_net_ghg.json`, `inventory_sectors_2005_2024.json`: EEA inventory (EU27).
+- `wemwam.json`: Member States' projections 2026 (EEA), EU27, summed to the same scopes, AR5 GWPs, not harmonised.
+- `trend.json`: least-squares line through the inventory 2005–2024 per sector, read at 2030/2040/2050 (calculated).
+- `ind_detail.json`, `ind_detail_stats.json`: industry final energy, electricity, hydrogen, energy CO₂, process CO₂ for set members, as reported (16 of 18 model pathways; POTEnCIA and JRC-EU-TIMES do not report).
+- `facet3.json`, `funnel3.json`: chart and funnel numbers.
 
-A third **main module**, **M·55 Scenarios** (`/scenario-pathways`), sits in the top bar next to the
-Reference Manager and the Project Workspace: 1,328 EU scenario pathways from the EEA export
-`EU_six_sectors_export.zip`, screened with movable 2040-advice criteria. Data are built by
-[`scripts/build-scenario-pathways.py`](scripts/build-scenario-pathways.py) and served only behind
-the site login (embargoed Scenario Compass data). Docs:
-[scenarios](https://methodhub.vercel.app/docs/modules/scenario-pathways/).
+### EC 2040 impact assessment (SWD(2024) 63, Part 3), not in the database
+- S2 (in ECL +10%): 2030 cut 56.9%, 2040 cut 87.5% (Table 1), net GHG 2050 −34 Mt, CO₂ capture 2050 ≈ 450 Mt (text p. 18, total incl. e-fuels and DACC), land sink 332 Mt.
+- LIFE (in ESABCC 2040): 2040 cut 92.3%, net GHG 2050 −70 Mt, capture 2050 lower than S1–S3 (no figure), land sink 389 Mt.
+- S1 (77.2%) and S3 (capture ≈ 450 Mt, above the 425 Mt risk level) are in no set.
 
-Module index: [modules overview](https://methodhub.vercel.app/docs/modules/).
+### scripts/
+Working scripts as used; paths point to `/home/claude/...` and need adjusting.
+- `facet.py` (harmonisation, loads stages), `facet4.py` (sector charts), `funnel3.py`, `methodfig.py`, `indfig.py` and `ind_detail.py` (industry detail), `wemwam.py`, `dump_sector.py`, `build3.py` + `insight_slides3.py` (HTML deck), `mkpdf.py`, `shot3.py` (Playwright), `retol.py` (recompute ECL +10% at a given tolerance), `build_xlsx3.py` + `roles.py` + `extract.py` (traced Excel).
+- Fonts: Selawik as Segoe UI stand-in (`segoe.py`). Colours (ESABCC chart): ECL #608c95, ECL +10% #b04545, ESABCC 2040 #2e422f, inventory #2c2d2d, accent #f26119.
 
-## Repository layout
+### outputs/
+- `EU_pathway_screening_three_sets.xlsx`: every value linked to the raw data by formula; limits editable on sheet Limits.
+- `Three_pathway_sets_EU_2040_2050.pdf` and `settings3.html`: meeting deck (14 slides).
+- `industry_chart_legend.png`, `ind_energy_chart.png`, `ind_co2_chart.png`: 300 dpi figures.
 
-| Path | Contents |
-| --- | --- |
-| `src/` | Next.js 14 application — eight production modules. |
-| `beta/` | Forty-five experimental modules (M·09–M·54; M·35 retired), intentionally unrouted. |
-| `docs/` | MkDocs source for the `/docs/` documentation subpage. |
-| `scripts/` | Data pipelines, migration tooling, IT handoff kit. |
-| `supabase/` | Postgres migrations. |
-| `Dockerfile`, `docker-compose.yml` | Single-host demo and production build target. |
-| `.github/workflows/` | CI, daily pipelines, docs deployment. |
-| `project-documents/` | Source and governance documents (Project Manual, PIRs) — reference only, not used by the runtime. |
-
-## Infrastructure
-
-MethodHub is packaged for self-hosted deployment on EEA infrastructure.
-The Vercel deployment exists only to host this documentation site and a
-public demo; the production target is a single Docker host inside the
-EEA estate, with Postgres on Supabase-compatible storage and an LLM
-layer that can be pointed at three different back-ends depending on the
-unit's procurement situation.
-
-* [Infrastructure overview](https://methodhub.vercel.app/docs/infrastructure/) — the picture in one page.
-* [Stewardship model](https://methodhub.vercel.app/docs/infrastructure/stewardship/) — who owns what after handoff.
-* [Deployment on EEA](https://methodhub.vercel.app/docs/infrastructure/deployment/) — Docker, env, secrets, CI.
-* [AI layer — three paths](https://methodhub.vercel.app/docs/infrastructure/ai-layer/) — hosted, EEA-internal, on-prem.
-* [Copilot — technical deep-dive](https://methodhub.vercel.app/docs/infrastructure/copilot/).
-* [Tech stack](https://methodhub.vercel.app/docs/infrastructure/tech-stack/) — Next.js, Postgres, MkDocs, the lot.
-* [Data & GDPR](https://methodhub.vercel.app/docs/infrastructure/data-gdpr/) — what's stored, what isn't, retention.
-
-## Vision and roadmap
-
-MethodHub is positioned as a blueprint for other EEA units, not just a
-tool for the ESABCC Secretariat. The vision pages capture the longer
-arc: where the modules are heading, what the user-space layer adds on
-top, and the open brainstorms that haven't yet hardened into roadmap
-items.
-
-* [Blueprint for EEA units](https://methodhub.vercel.app/docs/vision/blueprint/).
-* [Roadmap](https://methodhub.vercel.app/docs/vision/roadmap/).
-* [User Space](https://methodhub.vercel.app/docs/vision/user-space/).
-* [Brainstorm — 20 module improvements](https://methodhub.vercel.app/docs/vision/brainstorm-modules-ux-userspace/).
-* [Brainstorm — professional UX for the five modules](https://methodhub.vercel.app/docs/vision/brainstorm-pro-ux-five-modules/).
-* [Brainstorm rollout TODO](https://methodhub.vercel.app/docs/vision/brainstorm-rollout-todo/).
-
-## Reference
-
-* [API reference](https://methodhub.vercel.app/docs/reference/api/) — every route under `src/app/api/`.
-* [Scripts reference](https://methodhub.vercel.app/docs/reference/scripts/) — the pipelines and IT handoff kit under `scripts/`.
-* [Design system](https://methodhub.vercel.app/docs/reference/design-system/) — tokens, components, ESABCC palette.
-
-## Documentation
-
-The full documentation — six-module deep-dives, infrastructure,
-vision, deployment, GDPR and tech stack — ships as a subpage of the
-MethodHub itself, hosted on Vercel at:
-
-**<https://methodhub.vercel.app/docs/>**
-
-The MkDocs source lives under `docs/` and is built into `public/docs/`
-during the Vercel build (see `scripts/build-docs.sh` and the
-`vercel-build` script in `package.json`). To preview locally:
-
-```bash
-bash scripts/build-docs.sh   # writes to public/docs/
-mkdocs serve                 # http://127.0.0.1:8000
-```
-
-Not a developer? The non-technical FAQ is shipped as a PDF at the repo
-root: [`ESABCC-MethodHub-FAQ-non-technical.pdf`](ESABCC-MethodHub-FAQ-non-technical.pdf).
-
-## Contact
-
-* **Code stewardship (CCE5) — Sebastian Franz.**
-  <sebastian.franz@esabcc.europa.eu>
-* **About the Board.**
-  <https://climate-advisory-board.europa.eu>
-
-Please ask CCE5 before pulling design details from this repository
-directly — the docs site is the single source of truth for the current
-architecture.
+## Not included
+REMIND-EU ensemble of Rodrigues et al. 2026 (289 runs); the 433 pathways staged on 22 Nov evening (no new set member at the strict rules).
