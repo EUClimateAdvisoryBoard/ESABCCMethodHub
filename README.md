@@ -64,7 +64,7 @@ Module index: [modules overview](https://methodhub.vercel.app/docs/modules/).
 | `src/` | Next.js 14 application — eight production modules. |
 | `beta/` | Forty-six experimental modules (M·09–M·56; M·35 retired, M·55 is a main module), intentionally unrouted. |
 | `docs/` | MkDocs source for the `/docs/` documentation subpage. |
-| `scripts/` | Data pipelines, migration tooling, IT handoff kit. |
+| `scripts/` | Data pipelines, migration tooling, IT handoff kit ([`scripts/README.md`](scripts/README.md)). The TIMES.jl demo runner behind M·56 has its own README: [`scripts/times-jl/README.md`](scripts/times-jl/README.md). |
 | `supabase/` | Postgres migrations. |
 | `Dockerfile`, `docker-compose.yml` | Single-host demo and production build target. |
 | `.github/workflows/` | CI, daily pipelines, docs deployment. |
@@ -110,7 +110,7 @@ items.
 
 ## Documentation
 
-The full documentation — six-module deep-dives, infrastructure,
+The full documentation — module deep-dives, infrastructure,
 vision, deployment, GDPR and tech stack — ships as a subpage of the
 MethodHub itself, hosted on Vercel at:
 

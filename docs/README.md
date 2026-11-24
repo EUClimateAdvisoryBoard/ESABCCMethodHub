@@ -28,6 +28,7 @@ its code:
 | Word add-in companion Electron app             | [../word-addin-app/README.md](../word-addin-app/README.md) |
 | Word VBA macro (legacy)                        | [../word-vba/README.md](../word-vba/README.md)       |
 | Scripts & pipelines                            | [../scripts/README.md](../scripts/README.md)         |
+| TIMES.jl demo runner (M·56, Julia)             | [../scripts/times-jl/README.md](../scripts/times-jl/README.md) |
 
 ## Conventions for contributing docs
 

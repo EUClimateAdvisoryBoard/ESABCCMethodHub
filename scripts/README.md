@@ -98,6 +98,22 @@ npm run it:apply-schema
 npm run it:verify
 ```
 
+## TIMES.jl demo runner (M·56)
+
+Under [`times-jl/`](times-jl/README.md), the one Julia pipeline in this folder:
+
+| File              | Purpose                                                                                       |
+|-------------------|-----------------------------------------------------------------------------------------------|
+| `Project.toml`    | Julia environment; pins TIMES.jl (esma-ie/TIMESjl) to commit `4091d41`. Needs Julia 1.11+.    |
+| `run-demo12.jl`   | Runs the open TIMES demo model (demo12) with TIMES.jl and HiGHS, without GAMS, and writes `public/data/times-jl/demo12-results.json`. |
+
+Run by hand; it is not part of any workflow, and the Next.js build does not need Julia:
+
+```bash
+julia --project=scripts/times-jl -e 'using Pkg; Pkg.instantiate()'
+julia --project=scripts/times-jl scripts/times-jl/run-demo12.jl
+```
+
 ## Conventions
 
 - Node scripts use ES modules (`.mjs`) when they don't need to `require`

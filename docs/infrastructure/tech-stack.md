@@ -81,6 +81,7 @@ Anything not listed here is shared chrome (Next.js, React, Tailwind, Radix).
 | M·07 Project Workspace       | `exceljs` (indicator workbooks), `leaflet` / `react-leaflet` + `topojson-client` (member-states map), `file-saver`, the indicator-refresh upstream clients (Eurostat / EEA / EAFO / IRENA / EHPA). |
 | M·08 Recommendations         | Shares the M·07 `pw_*` store; no extra runtime deps beyond the workspace API. |
 | M·55 Scenarios               | No third-party chart library — hand-drawn SVG charts in `components/scenario-pathways/charts.tsx`; reads the static `public/data/scenario-pathways/pathways.json` built offline by `scripts/build-scenario-pathways.py` (no database tables). |
+| M·56 TIMES.jl (beta)         | No runtime dependency: the page reads the static `public/data/times-jl/demo12-results.json`, written offline by [`scripts/times-jl/run-demo12.jl`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/times-jl/README.md) (Julia 1.11+, TIMES.jl, HiGHS). Julia is not needed by the build. |
 
 ## Auth & identity
 
