@@ -35,8 +35,10 @@ This module installs TIMES.jl, runs demo12 and shows the result.
 3. **Runbook.** The README's workstation recipe, this repository's reproduction
    command, and the two workarounds needed behind the sandbox proxy.
 4. **Limits.** What TIMES.jl does not do yet. It writes no report parameters or
-   VEDA files (M1.6). Some features are still untranslated (elastic demand,
-   stochastic, MACRO, ETL and others). JRC-EU-TIMES is parity-checked only to
+   VEDA files (M1.6). Some features are still untranslated (the
+   stochastic extension, MACRO, ETL and others); elastic demand's linear form
+   is translated at the pinned commit, although the README's Progress text
+   still lists it. JRC-EU-TIMES is parity-checked only to
    the end of preprocessing.
 
 ## Data flow

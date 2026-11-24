@@ -454,7 +454,7 @@ function TimesJlView() {
           <section className="mb-8 rounded-lg border border-grey-200 bg-white p-4">
             <h2 className="text-[15px] font-bold text-tertiary-dark">Reading the demo results</h2>
             <p className="mt-1 max-w-4xl text-[12.5px] leading-relaxed text-tertiary">
-              In both regions together, gas generation grows from {firstYear} to the 2010s and declines after 2020.
+              In both regions together, gas generation peaks in 2015 and declines thereafter.
               By {lastYear} nuclear and wind are the two largest sources. Total CO₂ still rises over the horizon (
               {fmt(total(co2.get(firstYear)) / 1000)} → {fmt(total(co2.get(lastYear)) / 1000)} Mt for the selected
               region filter). demo12 puts no cap or price on CO₂ and its demand projections grow. Its power mix is shaped
@@ -511,13 +511,15 @@ function TimesJlView() {
 
       {/* limits */}
       <section className="mb-8 rounded-lg border border-grey-200 bg-white p-4">
-        <h2 className="text-[15px] font-bold text-tertiary-dark">What TIMES.jl cannot do yet (README, Progress, 19 Nov 2026)</h2>
+        <h2 className="text-[15px] font-bold text-tertiary-dark">What TIMES.jl cannot do yet (README and m13-plan at the pinned commit)</h2>
         <ul className="mt-2 list-disc space-y-1 pl-4 text-[12px] leading-relaxed text-tertiary">
           <li>No report parameters or VEDA .vd files (milestone M1.6). Results are raw variable and equation levels, so a VEDA user cannot open them yet.</li>
           <li>
-            Untranslated features stop the run with &ldquo;not translated&rdquo; and the name of the GAMS file. These
-            are elastic demand and the stochastic extension (before the M1.3 gate), and MACRO, ETL, lumpy investments,
-            discrete unit commitment and TIMES-Micro (after it).
+            Untranslated features stop the run with &ldquo;not translated&rdquo; and the name of the GAMS file. Still
+            untranslated: the stochastic extension (in progress before the M1.3 gate), and MACRO, ETL, lumpy
+            investments, discrete unit commitment and TIMES-Micro (after it). The linear form of elastic demand is
+            already translated at the pinned commit (docs/m13-plan.md, change 69), although the README&apos;s Progress
+            text of 19 Nov 2026 still lists it as missing.
           </li>
           <li>JRC-EU-TIMES matches GAMS to the end of preprocessing. Its matrix and optimum have not been compared yet, so an EU run is not yet a parity-checked result.</li>
           <li>Under REDUCE, flows that TIMES substitutes out are not columns, and their levels come only with the report (M1.6). This module therefore reads plant activity, not individual fuel-input flows.</li>
