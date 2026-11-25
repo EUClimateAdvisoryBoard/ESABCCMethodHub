@@ -159,3 +159,51 @@ ESABCC 2040 9. Slides and wording are kept; only data change. Method, per-slide 
   final energy, electrolysers and capture in the JRC IAMC file. EC IA LIFE has a 2050 capture figure (347.55 Mt, Annex 8 Fig 8).
 - **Mixed final-energy bases.** REMIND final energy includes feedstocks and bunkers; POTEnCIA excludes them. Medians mix both.
 - **Electrolyser reference ring.** The end-2025 value of 0.49 GW comes from a secondary source citing ACER; not verified.
+
+## Round 4 — exhaustive source sweep (25 Nov 2026)
+
+Eight research agents swept these slices:
+- scenario databases
+- open repositories
+- EU projects and Commission/JRC studies
+- think tanks, NGOs, industry and non-English sources
+- literature
+- downscaled and benchmark datasets
+- regional institutes
+- the 2040 policy process
+
+They extracted 624 pathways in the Raw-row format; the files are `scripts/pathway-screening/additions/r4-*`. 89 of them are duplicates and are excluded through `duplicate_of` overrides:
+- ENGAGE was extracted twice (58).
+- 23 ESABCC-database "X"/"Xf" ENGAGE pairs and 4 other same-source pairs have identical values.
+- GECO 2022 is held in the JRC file and in the ESABCC database (3).
+- EU Reference 2020 was extracted twice (1).
+
+None of the 624 duplicates a pathway already screened, whether matched by name or by 2040/2050 net values within 0.5 Mt.
+
+**Result:** 1,795 pathways are screened; ECL is 6 (unchanged), ECL +10% 18 (+4), and ESABCC 2040 9 (unchanged).
+
+| New pathways screened (535) | Count | Stops at (ECL) |
+|---|---|---|
+| ESABCC 2023 database (ENGAGE runs, REMIND variants, WITCH DIAG, NGFS3, GECO 2022) | 246 + 6 downscaled | mostly the 2050 net rule |
+| AR6 database (native EU28 regions) | 110 | 2050 net rule / no industry data |
+| ENGAGE T34 (Bertram et al. 2024) | 57 | 2050 net rule; REMIND: no process CO2 |
+| NAVIGATE WITCH, ECEMF WP2, ECEMF WP1 final | 19 + 6 + 6 | 2050 net rule / no industry data |
+| CD-LINKS, COMMIT, NGFS Phase 3 | 17 + 9 + 18 | 2050 net rule |
+| JRC GECO 2019–2023 | 13 | no industry data (no process CO2 published) |
+| PARIS REINFORCE GCAM, IAM COMPACT WILIAM, Strefler et al. 2024 | 8 + 6 + 8 | 2050 net rule / limits |
+| TYNDP 2024, Strategic Perspectives 2023, EU Reference 2020 | 3 + 2 + 1 | no industry data / 2050 net rule |
+
+Totals for the 535: the 2050 net rule stops 367, no industry data 136, the 2040 window 27, the 2030 rule 4, and bioenergy 1.
+
+**Open — vintage duplicates (Secretariat decision).** The only new set members are four REMIND 3.0 runs from the ESABCC 2023 database: Elec_dom, Elec_imp, Synf_dom and Synf_imp (IDs 4158–4161). They enter ECL +10% with 2040 cuts of 87.4–89.8 %, about +20 Mt in 2050, and capture of 253–270 Mt. They are the 2023 call submissions of the runs published as Schreyer et al. 2024 (IDs 1321–1325), which are already in the set. Their values differ materially; for example, Synf_dom capture is 269 Mt in the submission against 568 Mt in the published run. If they are treated as earlier vintages, ECL +10% returns to 14. The same question applies to:
+- the ECEMF WP1 final runs (5100–5105) against the pre-release run 862 (2050 net +9 Mt vs +107 Mt);
+- CETO 2024 against CETO 2025.
+
+**Other open points:**
+- The AR6 "EU28" native regions may equal R10 Europe for some models.
+- NGFS Phase 3 REMIND damage variants are included as in the ESABCC database.
+- **Licences:** the AR6, ENGAGE and NGFS licences restrict redistributing substantial parts of their data. The extracted rows sit in this internal repository; check before any external sharing.
+- **Not reachable:** data.paris-reinforce.eu (proxy 502), EUCalc, europarl.europa.eu (403).
+- **Unextractable but promising:** VTT EU2040 CDR modelling (2025) has 12 EU27 runs at a 91–93 % cut in 2040, but no base year or industry data and an inconsistent net row. Contact VTT. CATALYSE gives charts only.
+
+**Not changed:** the deck still shows 6 / 14 / 9; it is updated after the vintage decision.

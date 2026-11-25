@@ -61,5 +61,628 @@
     "rule": "source_representative",
     "value": "Rodrigues2026",
     "reason": "Rodrigues et al. (2026) contributes 337 REMIND-EU runs, 336 of them sensitivities of one set-up; screening all of them put 155 of the 160 ECL members in one study. The Secretariat decided to use one run only: the paper's reference scenario 14_Nzero_57_bio7p5 (Table 1 footnote: 57 % by 2030, reference final energy, biomass 7.5 EJ/yr, default CCS, hydrogen, synthetic fuels and VRE). The other 336 runs stay in additions/rodrigues2026_*.csv; delete this entry to screen them again. Decided by the Secretariat in session, 25 Nov 2026. [human review 2026-11]"
+  },
+  {
+    "id": "pso-9a2072d5",
+    "pathway_id": 4009,
+    "rule": "duplicate_of",
+    "value": 4008,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_1800 vs EN_INDCi2030_1800f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-8d8e226a",
+    "pathway_id": 4025,
+    "rule": "duplicate_of",
+    "value": 4024,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_1600 vs EN_NPi2020_1600f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-31ad682a",
+    "pathway_id": 4027,
+    "rule": "duplicate_of",
+    "value": 4026,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_1800 vs EN_NPi2020_1800f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-d9e0d186",
+    "pathway_id": 4037,
+    "rule": "duplicate_of",
+    "value": 4032,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_600f vs EN_NPi2020_900); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-b49bd7e6",
+    "pathway_id": 4049,
+    "rule": "duplicate_of",
+    "value": 4048,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_1400 vs EN_INDCi2030_1400f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-4a6a3f45",
+    "pathway_id": 4051,
+    "rule": "duplicate_of",
+    "value": 4050,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_1800 vs EN_INDCi2030_1800f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-0f0ab097",
+    "pathway_id": 4067,
+    "rule": "duplicate_of",
+    "value": 4066,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_1400 vs EN_NPi2020_1400f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-53cecd3f",
+    "pathway_id": 4069,
+    "rule": "duplicate_of",
+    "value": 4068,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_1800 vs EN_NPi2020_1800f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-2e1e66f7",
+    "pathway_id": 4097,
+    "rule": "duplicate_of",
+    "value": 4096,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_1600 vs EN_INDCi2030_1600f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-7be238c5",
+    "pathway_id": 4099,
+    "rule": "duplicate_of",
+    "value": 4098,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_1800 vs EN_INDCi2030_1800f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-a4967e44",
+    "pathway_id": 4101,
+    "rule": "duplicate_of",
+    "value": 4100,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_2000 vs EN_INDCi2030_2000f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-b4f0e030",
+    "pathway_id": 4103,
+    "rule": "duplicate_of",
+    "value": 4102,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_2500 vs EN_INDCi2030_2500f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-3887a80d",
+    "pathway_id": 4105,
+    "rule": "duplicate_of",
+    "value": 4104,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_3000 vs EN_INDCi2030_3000f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-7fcbfa4c",
+    "pathway_id": 4130,
+    "rule": "duplicate_of",
+    "value": 4129,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_1600 vs EN_NPi2020_1600f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-3e66e731",
+    "pathway_id": 4132,
+    "rule": "duplicate_of",
+    "value": 4131,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_1800 vs EN_NPi2020_1800f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-e025505e",
+    "pathway_id": 4134,
+    "rule": "duplicate_of",
+    "value": 4133,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_2000 vs EN_NPi2020_2000f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-379fca53",
+    "pathway_id": 4136,
+    "rule": "duplicate_of",
+    "value": 4135,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_2500 vs EN_NPi2020_2500f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-79991ade",
+    "pathway_id": 4138,
+    "rule": "duplicate_of",
+    "value": 4137,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_3000 vs EN_NPi2020_3000f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-57eb3cb0",
+    "pathway_id": 4188,
+    "rule": "duplicate_of",
+    "value": 4187,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_1400 vs EN_INDCi2030_1400f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-373305f6",
+    "pathway_id": 4190,
+    "rule": "duplicate_of",
+    "value": 4189,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_1600 vs EN_INDCi2030_1600f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-10509a52",
+    "pathway_id": 4192,
+    "rule": "duplicate_of",
+    "value": 4191,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_1800 vs EN_INDCi2030_1800f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-3593f1b5",
+    "pathway_id": 4225,
+    "rule": "duplicate_of",
+    "value": 4224,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_1400 vs EN_NPi2020_1400f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-3b3f2ef6",
+    "pathway_id": 4227,
+    "rule": "duplicate_of",
+    "value": 4226,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_1600 vs EN_NPi2020_1600f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-0b771b0e",
+    "pathway_id": 4319,
+    "rule": "duplicate_of",
+    "value": 4318,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_INDCi2030_3000 vs EN_INDCi2030_3000f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-b466e6b1",
+    "pathway_id": 4329,
+    "rule": "duplicate_of",
+    "value": 4328,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (EN_NPi2020_3000 vs EN_NPi2020_3000f); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-1ff95620",
+    "pathway_id": 4387,
+    "rule": "duplicate_of",
+    "value": 8000,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-c5eafd2b",
+    "pathway_id": 4388,
+    "rule": "duplicate_of",
+    "value": 8001,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-39be1b28",
+    "pathway_id": 4389,
+    "rule": "duplicate_of",
+    "value": 8002,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-30ac70a7",
+    "pathway_id": 4390,
+    "rule": "duplicate_of",
+    "value": 8003,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-caf9e06e",
+    "pathway_id": 4391,
+    "rule": "duplicate_of",
+    "value": 8004,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-c48431cb",
+    "pathway_id": 4392,
+    "rule": "duplicate_of",
+    "value": 8005,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-808c0654",
+    "pathway_id": 4393,
+    "rule": "duplicate_of",
+    "value": 8006,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-378a77b4",
+    "pathway_id": 4394,
+    "rule": "duplicate_of",
+    "value": 8007,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-e89a7fc3",
+    "pathway_id": 4395,
+    "rule": "duplicate_of",
+    "value": 8008,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-34f77da9",
+    "pathway_id": 4396,
+    "rule": "duplicate_of",
+    "value": 8009,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-0e9854e6",
+    "pathway_id": 4397,
+    "rule": "duplicate_of",
+    "value": 8010,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-f6add638",
+    "pathway_id": 4398,
+    "rule": "duplicate_of",
+    "value": 8011,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-8f7f5618",
+    "pathway_id": 4399,
+    "rule": "duplicate_of",
+    "value": 8012,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-3740b6d1",
+    "pathway_id": 4400,
+    "rule": "duplicate_of",
+    "value": 8013,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-14642d00",
+    "pathway_id": 4401,
+    "rule": "duplicate_of",
+    "value": 8014,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-dec57bae",
+    "pathway_id": 4402,
+    "rule": "duplicate_of",
+    "value": 8015,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-7f563579",
+    "pathway_id": 4403,
+    "rule": "duplicate_of",
+    "value": 8016,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-74cacf2d",
+    "pathway_id": 4404,
+    "rule": "duplicate_of",
+    "value": 8017,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-a5bf46e8",
+    "pathway_id": 4405,
+    "rule": "duplicate_of",
+    "value": 8018,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-4653cae5",
+    "pathway_id": 4406,
+    "rule": "duplicate_of",
+    "value": 8019,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-40a771ad",
+    "pathway_id": 4407,
+    "rule": "duplicate_of",
+    "value": 8020,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-a5ae3319",
+    "pathway_id": 4408,
+    "rule": "duplicate_of",
+    "value": 8023,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-1aa44e98",
+    "pathway_id": 4409,
+    "rule": "duplicate_of",
+    "value": 8022,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-ff67c1d1",
+    "pathway_id": 4410,
+    "rule": "duplicate_of",
+    "value": 8023,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-6a484b9c",
+    "pathway_id": 4411,
+    "rule": "duplicate_of",
+    "value": 8024,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-0c7dce47",
+    "pathway_id": 4412,
+    "rule": "duplicate_of",
+    "value": 8025,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-4c8530a3",
+    "pathway_id": 4413,
+    "rule": "duplicate_of",
+    "value": 8026,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-54ec23ce",
+    "pathway_id": 4414,
+    "rule": "duplicate_of",
+    "value": 8027,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-ac3f6840",
+    "pathway_id": 4415,
+    "rule": "duplicate_of",
+    "value": 8028,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-63d1a875",
+    "pathway_id": 4416,
+    "rule": "duplicate_of",
+    "value": 8029,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-c16ce5a8",
+    "pathway_id": 4417,
+    "rule": "duplicate_of",
+    "value": 8030,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-5954a382",
+    "pathway_id": 4418,
+    "rule": "duplicate_of",
+    "value": 8031,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-25c21005",
+    "pathway_id": 4419,
+    "rule": "duplicate_of",
+    "value": 8032,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-e29b2399",
+    "pathway_id": 4420,
+    "rule": "duplicate_of",
+    "value": 8033,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-a233f285",
+    "pathway_id": 4421,
+    "rule": "duplicate_of",
+    "value": 8034,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-a9e40f84",
+    "pathway_id": 4422,
+    "rule": "duplicate_of",
+    "value": 8035,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-62753638",
+    "pathway_id": 4423,
+    "rule": "duplicate_of",
+    "value": 8036,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-2a33c4cb",
+    "pathway_id": 4424,
+    "rule": "duplicate_of",
+    "value": 8037,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-81ce58b4",
+    "pathway_id": 4425,
+    "rule": "duplicate_of",
+    "value": 8038,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-4bde23a0",
+    "pathway_id": 4426,
+    "rule": "duplicate_of",
+    "value": 8039,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-e3f50b71",
+    "pathway_id": 4427,
+    "rule": "duplicate_of",
+    "value": 8040,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-6486e89e",
+    "pathway_id": 4428,
+    "rule": "duplicate_of",
+    "value": 8041,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-5ac293cc",
+    "pathway_id": 4429,
+    "rule": "duplicate_of",
+    "value": 8042,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-6e430c06",
+    "pathway_id": 4430,
+    "rule": "duplicate_of",
+    "value": 8043,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-258b7e81",
+    "pathway_id": 4431,
+    "rule": "duplicate_of",
+    "value": 8044,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-617e7dd7",
+    "pathway_id": 4432,
+    "rule": "duplicate_of",
+    "value": 8045,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-f92f5ace",
+    "pathway_id": 4433,
+    "rule": "duplicate_of",
+    "value": 8046,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-f6012c6c",
+    "pathway_id": 4434,
+    "rule": "duplicate_of",
+    "value": 8047,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-70bcb4a8",
+    "pathway_id": 4435,
+    "rule": "duplicate_of",
+    "value": 8048,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-6e2148a5",
+    "pathway_id": 4436,
+    "rule": "duplicate_of",
+    "value": 8049,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-914dab3e",
+    "pathway_id": 4437,
+    "rule": "duplicate_of",
+    "value": 8050,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-58233656",
+    "pathway_id": 4438,
+    "rule": "duplicate_of",
+    "value": 8051,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-398a355b",
+    "pathway_id": 4439,
+    "rule": "duplicate_of",
+    "value": 8052,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-5618fae0",
+    "pathway_id": 4440,
+    "rule": "duplicate_of",
+    "value": 8053,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-0f292efb",
+    "pathway_id": 4441,
+    "rule": "duplicate_of",
+    "value": 8054,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-beccb9fa",
+    "pathway_id": 4442,
+    "rule": "duplicate_of",
+    "value": 8055,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-f4628f4e",
+    "pathway_id": 4443,
+    "rule": "duplicate_of",
+    "value": 8056,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-6f9f43a1",
+    "pathway_id": 4444,
+    "rule": "duplicate_of",
+    "value": 8057,
+    "reason": "same ENGAGE run extracted twice in round 4 (H from the ESABCC/ENGAGE IIASA database, M from the public ENGAGE explorer, Bertram et al. 2024); identical values; M copy kept. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-b6e431de",
+    "pathway_id": 6003,
+    "rule": "duplicate_of",
+    "value": 4081,
+    "reason": "GECO 2022 run held both in the JRC FTP file (J) and in the ESABCC 2023 database (H); same net GHG; H copy kept because it also reports industrial process CO2 and hydrogen. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-cfa517fc",
+    "pathway_id": 6004,
+    "rule": "duplicate_of",
+    "value": 4082,
+    "reason": "GECO 2022 run held both in the JRC FTP file (J) and in the ESABCC 2023 database (H); same net GHG; H copy kept because it also reports industrial process CO2 and hydrogen. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-d7bb45e2",
+    "pathway_id": 6005,
+    "rule": "duplicate_of",
+    "value": 4083,
+    "reason": "GECO 2022 run held both in the JRC FTP file (J) and in the ESABCC 2023 database (H); same net GHG; H copy kept because it also reports industrial process CO2 and hydrogen. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-e5692459",
+    "pathway_id": 6125,
+    "rule": "duplicate_of",
+    "value": 6119,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (NAV_Dem-NPi-ref vs PEP-NPi); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-b9248691",
+    "pathway_id": 8023,
+    "rule": "duplicate_of",
+    "value": 8021,
+    "reason": "identical values for every reported variable and year as the kept run in the same source (T34_m550_enab_em vs T34_m550_enab_pr); counted once. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-b7f9c03a",
+    "pathway_id": 8100,
+    "rule": "duplicate_of",
+    "value": 6020,
+    "reason": "EU Reference Scenario 2020 extracted twice (J and M); J copy kept: M counts \"Other CO2 emissions (non land-use related)\" as process CO2, which may include more than industrial processes. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
   }
 ]

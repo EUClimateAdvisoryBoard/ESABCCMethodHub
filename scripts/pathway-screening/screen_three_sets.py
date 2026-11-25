@@ -26,6 +26,8 @@ Supported override rules:
   industry_process_start_year
                        the same, for industrial process CO2 only (energy CO2 keeps 2020 or
                        industry_start_year)
+  duplicate_of         value = ID of the kept pathway: this pathway holds the same run (identical values)
+                       and is left out of the screening; its rows stay in additions/
   source_representative
                        value = a src label: screen only this pathway of that source (e.g. a
                        study's reference run); its other pathways are kept in additions/
@@ -86,6 +88,10 @@ if not A.check:
             OVR.setdefault(int(o['pathway_id']), {})[o['rule']] = o['value']
     # source_representative: screen only this pathway of its source; the source's other
     # pathways stay in additions/ but are left out of the screening.
+    dups = [pid for pid, ov in OVR.items() if 'duplicate_of' in ov]
+    if dups:
+        print(f'duplicate_of: {len(dups)} pathways left out as duplicates of a kept pathway')
+        meta = meta[~meta.ID.isin(dups)].reset_index(drop=True)
     for pid, ov in OVR.items():
         if 'source_representative' in ov:
             src_ = ov['source_representative']

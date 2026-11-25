@@ -1,0 +1,3 @@
+ID,Model,Scenario,main_run,src,one_total,description
+6503,CLIMACT Pathways Explorer (EUCalc lineage),Visionary Scenario (-90% net),True,StrategicPerspectives2023,False,"Headline scenario; horizon 2040 only (no 2030 or 2050 value printed), so it stops at the 2050 rule. Net incl. international bunkers. No industry total for 2050 (Fig. 12 gives 2015 648 and 2040 159 Mt only)."
+6504,CLIMACT Pathways Explorer (EUCalc lineage),Full Acceleration Scenario (-95% net),False,StrategicPerspectives2023,False,High-ambition variant; horizon 2040 only. Net incl. international bunkers.
