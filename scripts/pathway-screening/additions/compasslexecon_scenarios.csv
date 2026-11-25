@@ -1,0 +1,3 @@
+ID,Model,Scenario,main_run,src,one_total,description
+2200,Compass Lexecon energy-system + power model,Managed Transition,True,CompassLexecon2024,False,"Net zero 2050 with -55 % 2030 and -90 % 2040 met by construction; high electrification (56 % of FED in 2050), CCS 178 Mt."
+2201,Compass Lexecon energy-system + power model,Frustrated Transition,True,CompassLexecon2024,False,Net zero 2050 with delayed electrification and RES roll-out; misses the -90 % 2040 target by about 100 Mt; CCS 243 Mt.

@@ -12,5 +12,19 @@
     "rule": "industry_start_year",
     "value": 2018,
     "reason": "Agora reports industry emissions (797 Mt CO2e in 2018, 36 Mt in 2050; Annex 1 Table 1, row Industry, one GHG total without energy/process split) with 2018 as its start year instead of 2020. The \"industry data reported\" rule is meant to require industry data, which are reported; 2018 is accepted as the start year. Approved by the Secretariat in session 24 Nov 2026. [human review 2026-11]"
+  },
+  {
+    "id": "pso-e21e5ebc",
+    "pathway_id": 2200,
+    "rule": "base_year",
+    "value": 2019,
+    "reason": "Compass Lexecon for BusinessEurope (July 2024) publishes EU27 net GHG for 2019 (3,337 Mt, historical), 2040 and 2050 only (p. 43 chart labels); no 2015 or 2020 value, so the cuts are harmonised on 2019, scaled to the EEA inventory 2019. Same mechanism as Agora (pso-entries for ID 2000). The industry rule is not waived: no industry series is published, so the pathway stops at \"no industry data\". Added on the Secretariat instruction to add every available source, 25 Nov 2026. [human review 2026-11]"
+  },
+  {
+    "id": "pso-8cf81ec5",
+    "pathway_id": 2201,
+    "rule": "base_year",
+    "value": 2019,
+    "reason": "Compass Lexecon for BusinessEurope (July 2024) publishes EU27 net GHG for 2019 (3,337 Mt, historical), 2040 and 2050 only (p. 43 chart labels); no 2015 or 2020 value, so the cuts are harmonised on 2019, scaled to the EEA inventory 2019. Same mechanism as Agora (pso-entries for ID 2000). The industry rule is not waived: no industry series is published, so the pathway stops at \"no industry data\". Added on the Secretariat instruction to add every available source, 25 Nov 2026. [human review 2026-11]"
   }
 ]
