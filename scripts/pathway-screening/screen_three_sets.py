@@ -142,6 +142,10 @@ for m in meta.itertuples():
     rows.append(dict(ID=i, src=m.src, model=m.model, scenario=m.scenario, base_year=base_y, industry_start_year=y0, overrides=';'.join(sorted(ov)) or '',
                      cut2030=c30, cut2040=c40, net2050=n50, capture=cap, bioenergy=bio, land_sink=sink, h2_2030=h2, fe_decline=fed, industry_reported=ind_ok,
                      in_ecl=s_ecl == 'passes all', in_ecl_plus10=s_red == 'passes all', esabcc2040_passes=es_pass, in_esabcc2040=es_pass and truthy(m.main),
+                     rule_2030=r30, window_85_90=w1, window_90_95=w3, net_ecl=net_rule(P['net_ecl']), net_ecl_plus10=net_rule(P['net_red']), net_esabcc2040=net_rule(P['net_es']),
+                     filters_ok=not any(FL.values()), risk_ok=not any(RK.values()),
+                     filters_plus10_ok=not any(RL[k] for k in ('capture > filter +10%', 'bioenergy > filter +10%', 'world storage > filter +10%', 'world bioenergy > filter', 'hydrogen > filter', 'final energy > filter')),
+                     risk_plus10_ok=not any(RL[k] for k in ('capture > risk level +10%', 'bioenergy > risk level +10%', 'land sink > risk level')),
                      stop_ecl=s_ecl, stop_ecl_plus10=s_red, stop_esabcc2040=s_es if not (es_pass and not truthy(m.main)) else 'passes; sensitivity variant, not a main run'))
 R = pd.DataFrame(rows)
 n = (int(R.in_ecl.sum()), int(R.in_ecl_plus10.sum()), int(R.in_esabcc2040.sum()), int(R.esabcc2040_passes.sum()))
