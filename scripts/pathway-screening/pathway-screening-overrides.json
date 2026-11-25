@@ -26,5 +26,33 @@
     "rule": "base_year",
     "value": 2019,
     "reason": "Compass Lexecon for BusinessEurope (July 2024) publishes EU27 net GHG for 2019 (3,337 Mt, historical), 2040 and 2050 only (p. 43 chart labels); no 2015 or 2020 value, so the cuts are harmonised on 2019, scaled to the EEA inventory 2019. Same mechanism as Agora (pso-entries for ID 2000). The industry rule is not waived: no industry series is published, so the pathway stops at \"no industry data\". Added on the Secretariat instruction to add every available source, 25 Nov 2026. [human review 2026-11]"
+  },
+  {
+    "id": "pso-c353a35c",
+    "pathway_id": 2420,
+    "rule": "industry_process_start_year",
+    "value": 2015,
+    "reason": "EC 2040 IA SWD(2024) 63, scenario S1: the Annex 8 graph-data workbook gives industrial process CO2 for 2015 (225.5 Mt) and 2050 but no 2020 point; industry energy CO2 is given for 2020. Process CO2 is reported, so 2015 is accepted as its start year (same kind of start-year exception as approved for Agora, ID 2000). Added on the Secretariat instruction to add every available source, 25 Nov 2026; confirm or delete. [human review 2026-11]"
+  },
+  {
+    "id": "pso-7ae7e633",
+    "pathway_id": 2421,
+    "rule": "industry_process_start_year",
+    "value": 2015,
+    "reason": "EC 2040 IA SWD(2024) 63, scenario S2: the Annex 8 graph-data workbook gives industrial process CO2 for 2015 (225.5 Mt) and 2050 but no 2020 point; industry energy CO2 is given for 2020. Process CO2 is reported, so 2015 is accepted as its start year (same kind of start-year exception as approved for Agora, ID 2000). Added on the Secretariat instruction to add every available source, 25 Nov 2026; confirm or delete. [human review 2026-11]"
+  },
+  {
+    "id": "pso-537d7abf",
+    "pathway_id": 2422,
+    "rule": "industry_process_start_year",
+    "value": 2015,
+    "reason": "EC 2040 IA SWD(2024) 63, scenario S3: the Annex 8 graph-data workbook gives industrial process CO2 for 2015 (225.5 Mt) and 2050 but no 2020 point; industry energy CO2 is given for 2020. Process CO2 is reported, so 2015 is accepted as its start year (same kind of start-year exception as approved for Agora, ID 2000). Added on the Secretariat instruction to add every available source, 25 Nov 2026; confirm or delete. [human review 2026-11]"
+  },
+  {
+    "id": "pso-19b1fe23",
+    "pathway_id": 2423,
+    "rule": "industry_process_start_year",
+    "value": 2015,
+    "reason": "EC 2040 IA SWD(2024) 63, scenario LIFE: the Annex 8 graph-data workbook gives industrial process CO2 for 2015 (225.5 Mt) and 2050 but no 2020 point; industry energy CO2 is given for 2020. Process CO2 is reported, so 2015 is accepted as its start year (same kind of start-year exception as approved for Agora, ID 2000). Added on the Secretariat instruction to add every available source, 25 Nov 2026; confirm or delete. [human review 2026-11]"
   }
 ]

@@ -23,6 +23,9 @@ Supported override rules:
                        year) when the pathway reports neither 2015 nor 2020
   industry_start_year  accept industry emissions for this year in place of 2020 in the
                        "industry data reported" rule
+  industry_process_start_year
+                       the same, for industrial process CO2 only (energy CO2 keeps 2020 or
+                       industry_start_year)
 
 Usage (from the repository root):
   python3 -I scripts/pathway-screening/screen_three_sets.py --check
@@ -96,7 +99,8 @@ for m in meta.itertuples():
     c40 = m.stored40 if (m.src == 'ESABCC' and pd.notna(m.stored40)) else cut(g('NET', 2040))
     n50 = g('NET', 2050)
     y0 = int(ov.get('industry_start_year', 2020))
-    ie0, ie50, ip0, ip50 = g('IND_E', y0), g('IND_E', 2050), g('IND_P', y0), g('IND_P', 2050)
+    y0p = int(ov.get('industry_process_start_year', y0))
+    ie0, ie50, ip0, ip50 = g('IND_E', y0), g('IND_E', 2050), g('IND_P', y0p), g('IND_P', 2050)
     ind_ok = ie0 is not None and ie50 is not None and (bool(m.one_total) or (ip0 is not None and ip50 is not None)) and ((ie0 or 0) + (ip0 or 0)) > 0
     cap, bio, land, h2, fe20, fe30, wccs, wbio = g('CAP', 2050), g('BIO', 2050), g('LAND_CO2', 2050), g('H2', 2030), g('FE', 2020), g('FE', 2030), g('WCCS', 2050), g('WBIO', 2050)
     sink = None if land is None else -land

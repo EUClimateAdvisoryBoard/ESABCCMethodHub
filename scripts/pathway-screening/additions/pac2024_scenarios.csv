@@ -1,0 +1,2 @@
+ID,Model,Scenario,main_run,src,one_total,description
+2430,Climact Pathways Explorer + PyPSA,PAC 2.0 EU27 2040 pathway (100% RES),TRUE,PAC2024,TRUE,"CAN Europe/EEB Paris Agreement Compatible scenario 2.0 (2024): EU27 aggregate of 27 national pathways, climate neutrality just before 2040, 100% renewable supply, no CCS/BECCS/DAC (CCU only). Horizon 2040, no 2050 values. Industry as one GHG total. AI-compiled, pending Secretariat verification."
