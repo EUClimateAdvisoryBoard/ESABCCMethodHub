@@ -26,6 +26,9 @@ Supported override rules:
   industry_process_start_year
                        the same, for industrial process CO2 only (energy CO2 keeps 2020 or
                        industry_start_year)
+  source_representative
+                       value = a src label: screen only this pathway of that source (e.g. a
+                       study's reference run); its other pathways are kept in additions/
 
 Usage (from the repository root):
   python3 -I scripts/pathway-screening/screen_three_sets.py --check
@@ -81,6 +84,14 @@ if not A.check:
             want = 'pso-' + hashlib.sha256(body.encode()).hexdigest()[:8]
             if o['id'] != want: sys.exit(f"override id {o['id']} does not match its content (expected {want})")
             OVR.setdefault(int(o['pathway_id']), {})[o['rule']] = o['value']
+    # source_representative: screen only this pathway of its source; the source's other
+    # pathways stay in additions/ but are left out of the screening.
+    for pid, ov in OVR.items():
+        if 'source_representative' in ov:
+            src_ = ov['source_representative']
+            drop = (meta.src == src_) & (meta.ID != pid)
+            print(f'source_representative: {src_} screened as ID {pid} only ({int(drop.sum())} other pathways left out)')
+            meta = meta[~drop].reset_index(drop=True)
 
 V = raw.groupby(['ID', 'Role', 'Year'])['Value used'].sum()
 def val(i, role, y):

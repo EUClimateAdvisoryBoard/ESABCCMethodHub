@@ -54,5 +54,12 @@
     "rule": "industry_process_start_year",
     "value": 2015,
     "reason": "EC 2040 IA SWD(2024) 63, scenario LIFE: the Annex 8 graph-data workbook gives industrial process CO2 for 2015 (225.5 Mt) and 2050 but no 2020 point; industry energy CO2 is given for 2020. Process CO2 is reported, so 2015 is accepted as its start year (same kind of start-year exception as approved for Agora, ID 2000). Added on the Secretariat instruction to add every available source, 25 Nov 2026; confirm or delete. [human review 2026-11]"
+  },
+  {
+    "id": "pso-70a85bc2",
+    "pathway_id": 3162,
+    "rule": "source_representative",
+    "value": "Rodrigues2026",
+    "reason": "Rodrigues et al. (2026) contributes 337 REMIND-EU runs, 336 of them sensitivities of one set-up; screening all of them put 155 of the 160 ECL members in one study. The Secretariat decided to use one run only: the paper's reference scenario 14_Nzero_57_bio7p5 (Table 1 footnote: 57 % by 2030, reference final energy, biomass 7.5 EJ/yr, default CCS, hydrogen, synthetic fuels and VRE). The other 336 runs stay in additions/rodrigues2026_*.csv; delete this entry to screen them again. Decided by the Secretariat in session, 25 Nov 2026. [human review 2026-11]"
   }
 ]

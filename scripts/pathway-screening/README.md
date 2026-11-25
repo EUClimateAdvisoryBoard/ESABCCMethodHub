@@ -44,11 +44,12 @@ the main-run selection). The full run adds every file in [`additions/`](addition
 | 2430 | CAN Europe/EEB PAC 2.0 (2024) | 1 | none; runs to 2040 only, no industry 2050 |
 | 2500–2506 | NGFS Phase V, MESSAGEix-GLOBIOM downscaled to EU27 | 7 | none; all above zero in 2050 |
 | 2510–2516 | NGFS Phase V, REMIND-MAgPIE 3.3-4.8 IPD-median (damage-feedback) runs | 7 | none; `main_run` FALSE for all: built on the retracted Kotz et al. (2024) damage function |
-| 3000–3336 | Rodrigues et al. (2026), Nat. Commun., REMIND-EU, Zenodo 10.5281/zenodo.18661988 | 337 | 155 ECL, 184 ECL +10%; one main run (reference), not in the ESABCC 2040 window |
+| 3000–3336 | Rodrigues et al. (2026), Nat. Commun., REMIND-EU, Zenodo 10.5281/zenodo.18661988 | 337 extracted, **1 screened** | only the reference run `14_Nzero_57_bio7p5` (ID 3162) is screened (override `source_representative`): ECL and ECL +10%. The other 336 sensitivities stay in `additions/`; screened, they would give 155 ECL and 184 ECL +10% members. |
 
-Result: 1,219 → 1,596 pathways; ECL 3 → **160**, ECL +10% 10 → **197**, ESABCC 2040 8 → **9**.
-Rodrigues et al. supply 155 of the 160 ECL members, all one REMIND-EU study with a near-fixed land sink (median 372.3 Mt):
-read set statistics by model family, not by pathway count.
+Result: 1,219 → 1,260 pathways screened; ECL 3 → **6**, ECL +10% 10 → **14**, ESABCC 2040 8 → **9**.
+The six ECL members are ESABCC 2023 REMIND 3.2 `rigid_bioLim7p5_300`, Schreyer REMIND-EU `07_NZ_CCS180_highImp` and
+`07_NZ_CCS350_highImp`, Agora EU Gas Exit Pathway, JRC CETO 2024 and the Rodrigues et al. reference run.
+Deleting the `source_representative` override screens all 337 Rodrigues runs (ECL 160, ECL +10% 197).
 
 The column `File in this workspace` names the working copy used during extraction; the source documents are not committed. They are at:
 

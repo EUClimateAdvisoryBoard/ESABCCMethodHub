@@ -120,3 +120,28 @@ S2 and LIFE leave their sets (giving 160 / 196 / 8).
 - Extract the NGFS Phase V REMIND IPD-median runs.
 - Rebuild the workbook with the added sources.
 - Fact-check pass on the extracted rows, starting with the Rodrigues mapping, CETO 2024 r97 and the EC IA Fig 4/Fig 5 choice.
+
+## Decision after this pass — Rodrigues et al. reduced to one run (25 Nov 2026)
+
+The Secretariat decided to use one Rodrigues et al. run instead of 337: the paper's reference scenario
+`14_Nzero_57_bio7p5` (ID 3162; 2040 cut 86.8 %, net −99.6 Mt in 2050, capture 382.8 Mt, bioenergy 7.5 EJ, land sink 372.3 Mt).
+This is applied by one override entry (`source_representative`, `[human review 2026-11]`). The other 336 runs stay in
+`scripts/pathway-screening/additions/rodrigues2026_*.csv`, and deleting the entry screens them again.
+
+| Set | Workbook | All Rodrigues runs | Reference run only |
+|---|---|---|---|
+| Pathways screened | 1,219 | 1,596 | **1,260** |
+| ECL-compatible, within ESABCC limits | 3 | 160 | **6** |
+| ECL range, 10% tolerance margin | 10 | 197 | **14** |
+| ESABCC 2040-compatible (main runs) | 8 | 9 | **9** |
+
+ECL members:
+- ESABCC REMIND 3.2 `rigid_bioLim7p5_300_withICEPhOP` (779)
+- Schreyer REMIND-EU `07_NZ_CCS180_highImp` (1266) and `07_NZ_CCS350_highImp` (1275)
+- Agora EU Gas Exit Pathway (2000)
+- JRC CETO 2024 (2400)
+- Rodrigues reference run (3162)
+
+**Open — CETO editions.** CETO 2024 (2400) and CETO 2025 (718) are two vintages of the same POTEnCIA scenario. CETO 2025 misses
+ECL on bioenergy (9.17 EJ, against the 9 EJ limit) and CETO 2024 passes. Both are kept until the Secretariat decides. Keeping
+CETO 2025 only would give ECL 5.
