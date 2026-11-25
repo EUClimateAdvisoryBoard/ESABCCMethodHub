@@ -64,4 +64,6 @@ The column `File in this workspace` names the working copy used during extractio
 - Rodrigues et al. 2026: Zenodo 10.5281/zenodo.18661988, `data/2025_12_16/data.rds`, CC BY 4.0
 - CLEVER: Open Energy Platform API, schema `scenario`, e.g. https://openenergyplatform.org/api/v0/schema/scenario/tables/all_ghg_emissions_by_sector/rows/ (pulled 24 Nov 2026)
 
+The deck `settings3.html` / `Three_pathway_sets_EU_2040_2050.pdf` was updated to these sets; see [`deck/README.md`](deck/README.md).
+
 The QA record is [`docs-internal/pathway-screening-source-refresh-2026-11-24.md`](../../docs-internal/pathway-screening-source-refresh-2026-11-24.md).

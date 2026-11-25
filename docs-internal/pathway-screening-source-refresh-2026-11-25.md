@@ -145,3 +145,17 @@ ECL members:
 **Open — CETO editions.** CETO 2024 (2400) and CETO 2025 (718) are two vintages of the same POTEnCIA scenario. CETO 2025 misses
 ECL on bioenergy (9.17 EJ, against the 9 EJ limit) and CETO 2024 passes. Both are kept until the Secretariat decides. Keeping
 CETO 2025 only would give ECL 5.
+
+## Deck update — 25 Nov 2026
+
+The 14-slide deck (`settings3.html`, `Three_pathway_sets_EU_2040_2050.pdf`) was updated to these sets: ECL 6, ECL +10% 14,
+ESABCC 2040 9. Slides and wording are kept; only data change. Method, per-slide checks against the old data, and caveats are in
+`scripts/pathway-screening/deck/README.md`.
+
+**Findings recorded alongside the update (no values changed):**
+- **Funnel, 2040-window box.** The screener gives 70 for the old data where the deck shows 68. All later boxes match. This is
+  unexplained.
+- **Footnotes on the clean-technology slides contradicted by the re-pull.** CETO 2025 (ID 718) does report PV and wind capacity,
+  final energy, electrolysers and capture in the JRC IAMC file. EC IA LIFE has a 2050 capture figure (347.55 Mt, Annex 8 Fig 8).
+- **Mixed final-energy bases.** REMIND final energy includes feedstocks and bunkers; POTEnCIA excludes them. Medians mix both.
+- **Electrolyser reference ring.** The end-2025 value of 0.49 GW comes from a secondary source citing ACER; not verified.
