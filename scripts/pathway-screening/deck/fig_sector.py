@@ -68,9 +68,30 @@ for sk in ('total', 'industry'):
     h2 = [Line2D([], [], color=HC, lw=3, label='EEA inventory 2005–2024'), Line2D([], [], color='#8a8a8a', lw=2, alpha=0.4, label='light line: median of each set')]
     if sk in WW['WEM']: h2 += [Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (5, 3)), label='WEM: MS projections, existing measures'), Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (1.5, 2)), label='WAM: with additional measures'), Line2D([], [], color=TRC, lw=2.6, label='Trend: linear fit to inventory 2005–2024')]
     f.legend(handles=h, loc='lower left', ncol=1, frameon=False, fontsize=14.5, bbox_to_anchor=(0.06, 0.0), handletextpad=0.4)
+    if sk == 'industry': h2 += [Line2D([], [], color='#6f6f6f', lw=2.2, ls=(0, (5, 2)), label='Eurostat production index (right axis), 2005–2024')]
     f.legend(handles=h2, loc='lower left', ncol=2, frameon=False, fontsize=13.5, bbox_to_anchor=(0.47, 0.0), handletextpad=0.4, columnspacing=1.0)
     if notes: ax.text(0.0, 1.015, '\n'.join(textwrap.fill(n_, 165) for n_ in notes), transform=ax.transAxes, fontsize=13.5, color='#6a6a6a', va='bottom')
     if sk == 'industry':
+        # Secondary axis: Eurostat production index (sts_inpr_a, EU27, 2005 = 100), scaled so that 100 = industry emissions 2005,
+        # so the black emission line reads as an index too. Palette (CVD note): orange / purple / blue / grey differ in lightness
+        # and are also labelled directly at their 2024 end, so no reading depends on hue alone.
+        PROD_COLOURS = {'C': '#6f6f6f', 'C24': '#c26a1b', 'C23': '#7b5ea7', 'C20': '#2f7fb8'}
+        PI = json.load(open('production_index.json'))['series']; e05 = H[2005][sk]
+        hi = e05 * 1.25; ax.set_ylim(lo, hi)
+        ax2 = ax.twinx(); ax2.set_ylim(lo / e05 * 100, hi / e05 * 100); ax2.set_yticks([0, 20, 40, 60, 80, 100, 120])
+        ax2.tick_params(axis='y', labelsize=15, colors='#5a5a5a'); ax2.set_ylabel('Index, 2005 = 100 (dashed: production; black line: emissions)', fontsize=13.5, color='#5a5a5a')
+        for sp in ('top', 'left'): ax2.spines[sp].set_visible(False)
+        SHORTN = {'C': 'Manufacturing, all', 'C24': 'Basic metals', 'C23': 'Non-metallic minerals', 'C20': 'Chemicals'}
+        ends = []
+        for code, col in PROD_COLOURS.items():
+            s = {int(y): v for y, v in PI[code]['I2005'].items()}; ys = sorted(s)
+            ax2.plot([hx(y) for y in ys], [s[y] for y in ys], color=col, lw=2.2, ls=(0, (5, 2)), zorder=2)
+            ends.append([s[HY], f'{SHORTN[code]} {s[HY]:.0f}', col])
+        ends.sort();
+        for q in range(1, len(ends)):
+            if ends[q][0] - ends[q - 1][0] < 6.5: ends[q][0] = ends[q - 1][0] + 6.5
+        for v, t, c_ in ends: ax2.text(hx(HY) + 0.08, v, t, fontsize=13, color=c_, va='center', ha='left', fontweight='bold', path_effects=halo)
+        ax.texts[0].set_text(f'{HY}: {fmt(hs[HY])} (index {hs[HY] / e05 * 100:.0f})'); ax.texts[0].set_position((hx(HY) + 0.08, hs[HY] - 0.07 * (hi - lo)))
         # Panel: average annual reductions, historic (EEA inventory) and required by the ECL set (range over its pathways)
         from matplotlib.patches import Rectangle
         from matplotlib.transforms import blended_transform_factory
@@ -94,7 +115,7 @@ for sk in ('total', 'industry'):
         for xa in (PAN[0][1], PAN[1][1]):
             ax.annotate('', (xa + 0.07, yb + hb / 2), (xa - 0.07, yb + hb / 2), xycoords=tr, textcoords=tr, arrowprops=dict(arrowstyle='simple', fc='#3b6fb6', ec='#2a4f86', lw=0.8, mutation_scale=22), annotation_clip=False)
         OUT[sk]['reductions'] = dict(hist=round(hist, 1), r2024_2040=[round(min(a), 1), round(max(a), 1)], r2040_2050=[round(min(b), 1), round(max(b), 1)], n=len(ecl))
-    f.subplots_adjust(left=0.07, right=0.99, top=(0.75 if sk == 'industry' else 0.90), bottom=(0.265 if sk == 'industry' else 0.31)); f.savefig(f'f3_{sk}.png', dpi=110, transparent=True); plt.close(f)
+    f.subplots_adjust(left=0.07, right=(0.935 if sk == 'industry' else 0.99), top=(0.75 if sk == 'industry' else 0.90), bottom=(0.265 if sk == 'industry' else 0.31)); f.savefig(f'f3_{sk}.png', dpi=110, transparent=True); plt.close(f)
 # ranges for the last slide (2040, 2050) per set, including the EC IA rows
 RG = {}
 for sk in ('total', 'industry'):

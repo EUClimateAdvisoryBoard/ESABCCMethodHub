@@ -67,3 +67,29 @@ At the request of the Secretariat, slide 8 (Industry, 2005–2050) has a panel a
 
 Pathway values are the deck's harmonised industry values (energy + process CO₂, scaled to the 2020 inventory; Agora on 2018).
 The 2024 starting point is the inventory, not a pathway value.
+
+## Industry slide: production index on a secondary axis (26 Nov 2026)
+
+Slide 8 has a right-hand axis "Index, 2005 = 100". It is scaled so that 100 equals industry emissions in 2005 (887.7 Mt), so the black emission line reads as an index too: 59 in 2024.
+
+**Data.** Dashed lines show EU27 industrial production for manufacturing as a whole and for the three branches that dominate industry emissions: basic metals (C24), non-metallic minerals (C23) and chemicals (C20). Data are in `production_index.json`:
+- Source: Eurostat `sts_inpr_a`, unit I21, calendar adjusted, retrieved 26 Nov 2026.
+- The series are rebased to 2005 = 100.
+- Paper (C17) is stored in the file but not plotted.
+- Refining (C19) is excluded, because its emissions sit in energy supply, not industry.
+
+| 2024 vs 2005 | Index (2005 = 100) |
+|---|---|
+| Industry emissions (EEA inventory) | 59 |
+| Manufacturing, all branches | 114 |
+| Chemicals (C20) | 96 |
+| Paper (C17), not plotted | 95 |
+| Basic metals (C24) | 80 |
+| Non-metallic minerals (C23) | 74 |
+
+**What the data does and does not show:**
+- **Supported:** heavy-industry output fell, and emissions follow it, for example the 2009 collapse and the 2022–24 decline.
+- **Not supported:** manufacturing output as a whole is 14 % above 2005.
+- **Partial:** emissions fell further (−41 %) than heavy-industry output (−4 % to −26 %), so lower output explains part of the decline, not all of it.
+
+The slide shows the series without a causal claim. Any statement on it should keep this distinction.
