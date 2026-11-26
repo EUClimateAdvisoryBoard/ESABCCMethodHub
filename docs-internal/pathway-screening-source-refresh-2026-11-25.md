@@ -207,3 +207,18 @@ Totals for the 535: the 2050 net rule stops 367, no industry data 136, the 2040 
 - **Unextractable but promising:** VTT EU2040 CDR modelling (2025) has 12 EU27 runs at a 91–93 % cut in 2040, but no base year or industry data and an inconsistent net row. Contact VTT. CATALYSE gives charts only.
 
 **Not changed:** the deck still shows 6 / 14 / 9; it is updated after the vintage decision.
+
+## Decision 26 Nov 2026 — earlier vintages counted once; deck updated
+
+The Secretariat decided that the four REMIND 3.0 runs from the ESABCC 2023 database (IDs 4158–4161) are earlier vintages
+(2023 call submissions) of the published Schreyer et al. 2024 runs (IDs 1320, 1321, 1324, 1325). Only the published
+versions count. The decision is applied as four `duplicate_of` entries, `[human review 2026-11]`.
+
+**Result:** 1,791 pathways screened; ECL 6, ECL +10% 14, ESABCC 2040 9 (24 passes before the main-run selection). 1,639 report
+industry data, and 749 of these pass the 2030 rule.
+
+**Deck:**
+- Slides 1, 2 and 4 now show the larger database. The round-4 sources are grouped into five rows; JRC GECO 2019–2024 (no process CO2) moved to the note.
+- The set slides are unchanged, because the sets did not change.
+
+The ECEMF WP1 final runs (5100–5105) remain alongside the pre-release run 862. They enter no set, but they are another vintage question for the Secretariat.

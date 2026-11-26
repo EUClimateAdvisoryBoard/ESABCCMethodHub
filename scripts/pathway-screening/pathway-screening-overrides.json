@@ -684,5 +684,33 @@
     "rule": "duplicate_of",
     "value": 6020,
     "reason": "EU Reference Scenario 2020 extracted twice (J and M); J copy kept: M counts \"Other CO2 emissions (non land-use related)\" as process CO2, which may include more than industrial processes. Round-4 merge, 25 Nov 2026. [source-refresh 2026-11]"
+  },
+  {
+    "id": "pso-779a89df",
+    "pathway_id": 4158,
+    "rule": "duplicate_of",
+    "value": 1320,
+    "reason": "REMIND 3.0 Elec_dom in the ESABCC 2023 database is the 2023 scenario-call submission of the run published as Schreyer et al. 2024 REMIND-EU Elec_dom_Ag280 (ID 1320); values differ between the two vintages. The Secretariat decided to count only the published version, 26 Nov 2026. [human review 2026-11]"
+  },
+  {
+    "id": "pso-efd6143b",
+    "pathway_id": 4159,
+    "rule": "duplicate_of",
+    "value": 1321,
+    "reason": "REMIND 3.0 Elec_imp in the ESABCC 2023 database is the 2023 scenario-call submission of the run published as Schreyer et al. 2024 REMIND-EU Elec_imp_Ag280 (ID 1321); values differ between the two vintages. The Secretariat decided to count only the published version, 26 Nov 2026. [human review 2026-11]"
+  },
+  {
+    "id": "pso-3570b2f8",
+    "pathway_id": 4160,
+    "rule": "duplicate_of",
+    "value": 1324,
+    "reason": "REMIND 3.0 Synf_dom in the ESABCC 2023 database is the 2023 scenario-call submission of the run published as Schreyer et al. 2024 REMIND-EU Synf_dom_Ag280 (ID 1324); values differ between the two vintages. The Secretariat decided to count only the published version, 26 Nov 2026. [human review 2026-11]"
+  },
+  {
+    "id": "pso-ebe6b5f1",
+    "pathway_id": 4161,
+    "rule": "duplicate_of",
+    "value": 1325,
+    "reason": "REMIND 3.0 Synf_imp in the ESABCC 2023 database is the 2023 scenario-call submission of the run published as Schreyer et al. 2024 REMIND-EU Synf_imp_Ag280 (ID 1325); values differ between the two vintages. The Secretariat decided to count only the published version, 26 Nov 2026. [human review 2026-11]"
   }
 ]
