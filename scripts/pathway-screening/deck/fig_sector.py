@@ -18,7 +18,7 @@ WHY = {718: 'industry only', 397: 'industry only', 1327: 'industry and total onl
 SHORT = {718: 'POTEnCIA'}
 fmt = lambda v: f'{v:,.0f}'.replace('-', '−'); halo = [pe.withStroke(linewidth=4, foreground='white')]; OUT = {}
 for sk in ('total', 'industry'):
-    f, ax = plt.subplots(figsize=(19, 8.2)); lo, hi = YL[sk]; OUT[sk] = {}
+    f, ax = plt.subplots(figsize=(19, 9.6) if sk == 'industry' else (19, 8.2)); lo, hi = YL[sk]; OUT[sk] = {}
     hs = {y: v for y, v in (HN if sk == 'total' else {y: H[y][sk] for y in H}).items() if y >= 2005}; hy = sorted(hs)
     hi = max(hi, max(hs.values()) * 1.08)
     ax.plot([hx(y) for y in hy], [hs[y] for y in hy], color=HC, lw=3, zorder=3, solid_capstyle='round'); ax.scatter([hx(HY)], [hs[HY]], s=60, color=HC, zorder=4)
@@ -70,7 +70,31 @@ for sk in ('total', 'industry'):
     f.legend(handles=h, loc='lower left', ncol=1, frameon=False, fontsize=14.5, bbox_to_anchor=(0.06, 0.0), handletextpad=0.4)
     f.legend(handles=h2, loc='lower left', ncol=2, frameon=False, fontsize=13.5, bbox_to_anchor=(0.47, 0.0), handletextpad=0.4, columnspacing=1.0)
     if notes: ax.text(0.0, 1.015, '\n'.join(textwrap.fill(n_, 165) for n_ in notes), transform=ax.transAxes, fontsize=13.5, color='#6a6a6a', va='bottom')
-    f.subplots_adjust(left=0.07, right=0.99, top=0.90, bottom=0.31); f.savefig(f'f3_{sk}.png', dpi=110, transparent=True); plt.close(f)
+    if sk == 'industry':
+        # Panel: average annual reductions, historic (EEA inventory) and required by the ECL set (range over its pathways)
+        from matplotlib.patches import Rectangle
+        from matplotlib.transforms import blended_transform_factory
+        tr = blended_transform_factory(ax.transData, ax.transAxes)
+        y0i, y1i = H[2005][sk], H[HY][sk]
+        ecl = [r for r in ROWS if r['ecl'] and r.get(f'{sk}_2040') is not None and r.get(f'{sk}_2050') is not None]
+        a = [(y1i - r[f'{sk}_2040']) / (2040 - HY) for r in ecl]; b = [(r[f'{sk}_2040'] - r[f'{sk}_2050']) / 10 for r in ecl]
+        rg = lambda v: f'{min(v):.0f}–{max(v):.0f}' if round(min(v)) != round(max(v)) else f'{min(v):.0f}'
+        hist = (y0i - y1i) / (HY - 2005)
+        PAN = [(hx(2005) - 0.05, hx(HY) + 0.05, f'2005–{HY}, EEA inventory', f'{hist:.0f} Mt CO₂e', '#bfd3d7'),
+               (hx(HY) + 0.05, XB[2040] + 0.42, f'{HY}–2040, ECL set', f'{rg(a)} Mt CO₂e', '#dde8ea'),
+               (XB[2040] + 0.42, XB[2050] + 0.42, '2040–2050, ECL set', f'{rg(b)} Mt CO₂e', '#d9d9d9')]
+        yb, hb, ht = 1.035, 0.17, 0.085
+        ax.add_patch(Rectangle((PAN[0][0], yb + hb), PAN[-1][1] - PAN[0][0], ht, transform=tr, clip_on=False, fc='#f1f1f1', ec='none'))
+        ax.text((PAN[0][0] + PAN[-1][1]) / 2, yb + hb + ht / 2, f"Average annual reductions (past, and required in the ECL set, n = {len(ecl)})", transform=tr,
+                ha='center', va='center', fontsize=17, fontweight='bold', color='#3f4d7a')
+        for x0, x1, lab, val, fc in PAN:
+            ax.add_patch(Rectangle((x0, yb), x1 - x0, hb, transform=tr, clip_on=False, fc=fc, ec='white', lw=3))
+            ax.text((x0 + x1) / 2, yb + hb * 0.66, lab, transform=tr, ha='center', va='center', fontsize=15.5, color='#3f4d7a')
+            ax.text((x0 + x1) / 2, yb + hb * 0.28, val, transform=tr, ha='center', va='center', fontsize=17, fontweight='bold', color='#3f4d7a')
+        for xa in (PAN[0][1], PAN[1][1]):
+            ax.annotate('', (xa + 0.07, yb + hb / 2), (xa - 0.07, yb + hb / 2), xycoords=tr, textcoords=tr, arrowprops=dict(arrowstyle='simple', fc='#3b6fb6', ec='#2a4f86', lw=0.8, mutation_scale=22), annotation_clip=False)
+        OUT[sk]['reductions'] = dict(hist=round(hist, 1), r2024_2040=[round(min(a), 1), round(max(a), 1)], r2040_2050=[round(min(b), 1), round(max(b), 1)], n=len(ecl))
+    f.subplots_adjust(left=0.07, right=0.99, top=(0.75 if sk == 'industry' else 0.90), bottom=(0.265 if sk == 'industry' else 0.31)); f.savefig(f'f3_{sk}.png', dpi=110, transparent=True); plt.close(f)
 # ranges for the last slide (2040, 2050) per set, including the EC IA rows
 RG = {}
 for sk in ('total', 'industry'):

@@ -53,3 +53,17 @@ combined (as in the root `mkpdf.py`).
   power and is not used.
 - The electrolyser ring (0.49 GW, end-2025) is taken from a secondary report citing ACER and is not verified against ACER.
   The PV and wind rings are Eurostat `nrg_inf_epcrw` 2024 (307.1 and 231.1 GW).
+
+## Industry slide: annual-reduction panel (26 Nov 2026)
+
+At the request of the Secretariat, slide 8 (Industry, 2005–2050) has a panel above the chart showing average annual reductions.
+`fig_sector.py` computes the values:
+
+- **2005–2024:** EEA inventory, (887.7 − 527.5) / 19 = **19 Mt CO₂e per year**.
+- **2024–2040, ECL set (n = 6):** (inventory 2024 − pathway 2040) / 16 for each pathway; range **18–28 Mt CO₂e per year**.
+  The low end is the Rodrigues et al. reference run and the high end Schreyer et al. 07_NZ_CCS180_highImp.
+- **2040–2050, ECL set:** (pathway 2040 − pathway 2050) / 10; range **7–20 Mt CO₂e per year**. The low end is Agora and the
+  high end the Rodrigues et al. reference run.
+
+Pathway values are the deck's harmonised industry values (energy + process CO₂, scaled to the 2020 inventory; Agora on 2018).
+The 2024 starting point is the inventory, not a pathway value.
