@@ -1,0 +1,81 @@
+{
+ "_note": "Steel and cement only, 2025-2040, LMDI-I additive per sub-sector (steel, cement) summed. Production and emissions as reported by each model (decomp_data/scen_production_ecl.json, locators inside). REMIND steel CO2 is energy CO2 only (coke counted as energy); CETO steel = energy + process. Only 3 of the 6 ECL pathways report physical output; 2040-2050 is not decomposed (residual emissions near or below zero). AI-compiled - pending Secretariat verification.",
+ "pathways": {
+  "1266": {
+   "model": "REMIND-EU",
+   "scenario": "07_NZ_CCS180_highImp",
+   "steel": {
+    "production": -2.3,
+    "intensity": -86.53
+   },
+   "cement": {
+    "production": -15.5,
+    "intensity": -79.95
+   },
+   "production": -17.8,
+   "intensity": -166.47,
+   "variables": {
+    "steelE": [
+     "Emi|CO2|Energy|Demand|Industry|++|Steel"
+    ],
+    "steelP": "Production|Industry|Steel",
+    "cemE": [
+     "Emi|CO2|Energy|Demand|Industry|++|Cement",
+     "Emi|CO2|Industrial Processes|+|Cement"
+    ],
+    "cemP": "Production|Industry|Cement"
+   }
+  },
+  "1275": {
+   "model": "REMIND-EU",
+   "scenario": "07_NZ_CCS350_highImp",
+   "steel": {
+    "production": -2.56,
+    "intensity": -85.55
+   },
+   "cement": {
+    "production": -12.79,
+    "intensity": -80.14
+   },
+   "production": -15.34,
+   "intensity": -165.69,
+   "variables": {
+    "steelE": [
+     "Emi|CO2|Energy|Demand|Industry|++|Steel"
+    ],
+    "steelP": "Production|Industry|Steel",
+    "cemE": [
+     "Emi|CO2|Energy|Demand|Industry|++|Cement",
+     "Emi|CO2|Industrial Processes|+|Cement"
+    ],
+    "cemP": "Production|Industry|Cement"
+   }
+  },
+  "2400": {
+   "model": "POTEnCIA",
+   "scenario": "CETO 2024",
+   "steel": {
+    "production": -0.42,
+    "intensity": -95.46
+   },
+   "cement": {
+    "production": 2.66,
+    "intensity": -112.77
+   },
+   "production": 2.24,
+   "intensity": -208.23,
+   "variables": {
+    "steelE": [
+     "ISI r44: Emissions from energy consumption",
+     "ISI r47: Process emissions"
+    ],
+    "steelP": "ISI r7: Physical output (kt steel)",
+    "cemE": [
+     "NMM r46: Cement",
+     "NMM r50: Cement"
+    ],
+    "cemP": "NMM r9: Cement (kt)"
+   }
+  }
+ }
+}

@@ -194,3 +194,44 @@ spread comes from chemicals.
 - Nitric and adipic acid emissions fell by over 95 % through N₂O abatement. That abatement remains an intensity effect in every variant.
 
 **Unchanged across variants:** food, other industry and non-ferrous metals keep the volume index in all three variants.
+
+## Audit, corrected method and one-figure summary (26 Nov 2026) — supersedes the decomposition sections above
+
+An independent audit (`docs-internal/industry-decomposition-audit-2026-11-26.md`) found one critical and six major issues in the
+earlier decomposition. The arithmetic was right; scope and data choices were not. **Corrections to statements above:**
+- **C-1, emissions scope.** The 906 / 545 Mt (Eurostat) vs 888 / 528 Mt (slide) difference is a **scope** difference: the slide
+  series excludes mining, construction and off-road (1.A.2.g.iii, .v, .vii). It is not a different inventory release.
+- **M-5, inventory activity data.** These were obtainable from the EEA (`eua_crt_2026.zip`) and are now used. Primary aluminium
+  is available.
+- **M-1, chemicals basket.** The T2 chemicals basket is replaced by sub-branches.
+- **M-3, sector index lines.** The earlier lines did not match the waterfall. They are now computed from the LMDI sums.
+- **M-4, base year.** The base-year sensitivity is now disclosed.
+- **Superseded files.** The earlier figures and files (`fig_industry_intensity.png`, `fig_method_compare.png`,
+  `industry_intensity.json`, `method_comparison.json`) are kept for the record but superseded.
+
+**Method R** (`decomp_industry.py`; inputs in `decomp_data/`, sources in `decomp_data/SOURCES.md`; output in `decomp_results.json`):
+- **One scope** (manufacturing, EU inventory 2026), which reproduces the slide's black line to within 0.049 Mt.
+- **15 sub-branches**, each with its own activity measure, combined by additive LMDI-I.
+
+| Result, 2005–2024 | Mt CO₂e | Output share |
+|---|---|---|
+| Method R | production −161.0, intensity −199.2 | **44.7 %** |
+| Production index only | production −117.5 | 32.6 % |
+| End year 2023 | — | 44.7 % |
+| Base 2007 / base 2010 | — | 58.4 % / 41.0 % |
+
+The independent re-implementation matches the audit to within 0.3 Mt.
+
+**Scenario side** (`scenario_steel_cement.json`):
+- Steel and cement 2025–2040, LMDI on each model's own output and emissions.
+- Covers the 3 ECL pathways that report output: 1266 and 1275 (REMIND-EU), 2400 (JRC CETO 2024).
+- Output share of the steel and cement cut: 9.7 %, 8.5 % and −1.1 %. In CETO 2024, output rises.
+- Historical comparison, steel plus minerals: 66.8 %.
+
+**One-figure summary.** `fig_industry_onefig.py` → `fig_industry_onefig.png`:
+- left: emissions 2005–2024 with the six ECL pathways;
+- right: average cut per year (past, split into producing cleaner and producing less; needed 2024–2040 and 2040–2050, one dot per pathway);
+- a steel and cement callout.
+
+All numbers are computed in the script from the files above. Policy implications:
+`docs-internal/industry-decomposition-policy-implications-2026-11-26.md`.

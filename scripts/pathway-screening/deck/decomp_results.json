@@ -1,0 +1,326 @@
+{
+ "_note": "Decomposition of EU27 manufacturing-industry GHG emissions, 2005-2024, into a production (activity) effect and an\nintensity effect. Method R of the audit (docs-internal/industry-decomposition-audit-2026-11-26.md).",
+ "scope_total_Mt": {
+  "2005": 887.73,
+  "2006": 872.2,
+  "2007": 883.45,
+  "2008": 833.72,
+  "2009": 675.09,
+  "2010": 718.84,
+  "2011": 703.75,
+  "2012": 668.23,
+  "2013": 649.39,
+  "2014": 639.38,
+  "2015": 648.04,
+  "2016": 652.73,
+  "2017": 668.73,
+  "2018": 665.74,
+  "2019": 645.53,
+  "2020": 607.5,
+  "2021": 649.67,
+  "2022": 588.69,
+  "2023": 536.17,
+  "2024": 527.46
+ },
+ "variants": {
+  "R 2005-2024": {
+   "production": -161.0,
+   "intensity": -199.2,
+   "total": -360.3,
+   "output_share_pct": 44.7
+  },
+  "R 2005-2023": {
+   "production": -157.2,
+   "intensity": -194.4,
+   "total": -351.6,
+   "output_share_pct": 44.7
+  },
+  "R 2007-2024": {
+   "production": -207.8,
+   "intensity": -148.2,
+   "total": -356.0,
+   "output_share_pct": 58.4
+  },
+  "R 2010-2024": {
+   "production": -78.5,
+   "intensity": -112.9,
+   "total": -191.4,
+   "output_share_pct": 41.0
+  },
+  "V 2005-2024": {
+   "production": -117.5,
+   "intensity": -242.7,
+   "total": -360.3,
+   "output_share_pct": 32.6
+  },
+  "V 2005-2023": {
+   "production": -107.3,
+   "intensity": -244.2,
+   "total": -351.6,
+   "output_share_pct": 30.5
+  },
+  "V 2007-2024": {
+   "production": -168.8,
+   "intensity": -187.2,
+   "total": -356.0,
+   "output_share_pct": 47.4
+  },
+  "V 2010-2024": {
+   "production": -51.6,
+   "intensity": -139.8,
+   "total": -191.4,
+   "output_share_pct": 26.9
+  }
+ },
+ "subbranches_R_2005_2024": {
+  "Iron and steel": {
+   "group": "Steel",
+   "measure": "crude steel, t (worldsteel/Eurofer)",
+   "E2005": 196.41,
+   "E2024": 121.42,
+   "production": -53.3,
+   "intensity": -21.7
+  },
+  "Cement": {
+   "group": "Cement, lime, glass",
+   "measure": "cement, t (CEMBUREAU)",
+   "E2005": 96.02,
+   "E2024": 58.71,
+   "production": -30.2,
+   "intensity": -7.1
+  },
+  "Lime": {
+   "group": "Cement, lime, glass",
+   "measure": "lime, t (EU CRT 2.A.2)",
+   "E2005": 21.06,
+   "E2024": 13.86,
+   "production": -6.3,
+   "intensity": -0.9
+  },
+  "Glass": {
+   "group": "Cement, lime, glass",
+   "measure": "glass, t (EU CRT 2.A.3)",
+   "E2005": 4.34,
+   "E2024": 3.38,
+   "production": -0.1,
+   "intensity": -0.9
+  },
+  "Other minerals": {
+   "group": "Cement, lime, glass",
+   "measure": "volume index C23",
+   "E2005": 138.73,
+   "E2024": 76.95,
+   "production": -31.9,
+   "intensity": -29.9
+  },
+  "Ammonia": {
+   "group": "Chemicals",
+   "measure": "ammonia, t (EU CRT 2.B.1)",
+   "E2005": 28.09,
+   "E2024": 16.04,
+   "production": -9.6,
+   "intensity": -2.5
+  },
+  "Nitric acid": {
+   "group": "Chemicals",
+   "measure": "nitric acid, t (EU CRT 2.B.2)",
+   "E2005": 34.58,
+   "E2024": 1.6,
+   "production": -2.2,
+   "intensity": -30.8
+  },
+  "Adipic acid": {
+   "group": "Chemicals",
+   "measure": "adipic acid, t (EU CRT 2.B.3; partly confidential)",
+   "E2005": 9.42,
+   "E2024": 0.06,
+   "production": -1.6,
+   "intensity": -7.8
+  },
+  "Petrochemicals": {
+   "group": "Chemicals",
+   "measure": "ethylene, t (EU CRT 2.B.8.b)",
+   "E2005": 19.82,
+   "E2024": 14.38,
+   "production": -9.3,
+   "intensity": 3.8
+  },
+  "Chemicals, fuel use and other": {
+   "group": "Chemicals",
+   "measure": "volume index C20.1 basic chemicals",
+   "E2005": 101.31,
+   "E2024": 63.45,
+   "production": -27.7,
+   "intensity": -10.2
+  },
+  "Primary aluminium": {
+   "group": "Other manufacturing",
+   "measure": "primary aluminium, t (EU CRT 2.C.3)",
+   "E2005": 7.03,
+   "E2024": 1.77,
+   "production": -4.8,
+   "intensity": -0.5
+  },
+  "Other non-ferrous": {
+   "group": "Other manufacturing",
+   "measure": "volume index C24.4",
+   "E2005": 14.95,
+   "E2024": 9.15,
+   "production": -2.7,
+   "intensity": -3.1
+  },
+  "Pulp and paper": {
+   "group": "Other manufacturing",
+   "measure": "volume index C17",
+   "E2005": 31.0,
+   "E2024": 16.5,
+   "production": -1.1,
+   "intensity": -13.4
+  },
+  "Food and drink": {
+   "group": "Other manufacturing",
+   "measure": "volume index C10-C12",
+   "E2005": 46.29,
+   "E2024": 31.89,
+   "production": 4.8,
+   "intensity": -19.2
+  },
+  "Other manufacturing": {
+   "group": "Other manufacturing",
+   "measure": "volume index C (proxy)",
+   "E2005": 138.65,
+   "E2024": 98.3,
+   "production": 14.8,
+   "intensity": -55.2
+  }
+ },
+ "groups_R_2005_2024": {
+  "Steel": {
+   "production": -53.3,
+   "intensity": -21.7,
+   "E2005": 196.4,
+   "E2024": 121.4
+  },
+  "Cement, lime, glass": {
+   "production": -68.5,
+   "intensity": -38.8,
+   "E2005": 260.2,
+   "E2024": 152.9
+  },
+  "Chemicals": {
+   "production": -50.3,
+   "intensity": -47.4,
+   "E2005": 193.2,
+   "E2024": 95.5
+  },
+  "Other manufacturing": {
+   "production": 11.1,
+   "intensity": -91.4,
+   "E2005": 237.9,
+   "E2024": 157.6
+  }
+ },
+ "sector_index_R": {
+  "2005": {
+   "emissions": 100,
+   "production": 100,
+   "intensity": 100
+  },
+  "2006": {
+   "emissions": 98.25,
+   "production": 104.0,
+   "intensity": 94.47
+  },
+  "2007": {
+   "emissions": 99.52,
+   "production": 106.66,
+   "intensity": 93.3
+  },
+  "2008": {
+   "emissions": 93.92,
+   "production": 101.52,
+   "intensity": 92.51
+  },
+  "2009": {
+   "emissions": 76.05,
+   "production": 82.52,
+   "intensity": 92.16
+  },
+  "2010": {
+   "emissions": 80.97,
+   "production": 89.99,
+   "intensity": 89.98
+  },
+  "2011": {
+   "emissions": 79.28,
+   "production": 92.44,
+   "intensity": 85.76
+  },
+  "2012": {
+   "emissions": 75.27,
+   "production": 87.87,
+   "intensity": 85.66
+  },
+  "2013": {
+   "emissions": 73.15,
+   "production": 86.42,
+   "intensity": 84.65
+  },
+  "2014": {
+   "emissions": 72.02,
+   "production": 87.02,
+   "intensity": 82.77
+  },
+  "2015": {
+   "emissions": 73.0,
+   "production": 87.11,
+   "intensity": 83.8
+  },
+  "2016": {
+   "emissions": 73.53,
+   "production": 86.4,
+   "intensity": 85.1
+  },
+  "2017": {
+   "emissions": 75.33,
+   "production": 90.67,
+   "intensity": 83.08
+  },
+  "2018": {
+   "emissions": 74.99,
+   "production": 91.36,
+   "intensity": 82.09
+  },
+  "2019": {
+   "emissions": 72.72,
+   "production": 89.11,
+   "intensity": 81.6
+  },
+  "2020": {
+   "emissions": 68.43,
+   "production": 84.42,
+   "intensity": 81.06
+  },
+  "2021": {
+   "emissions": 73.18,
+   "production": 91.29,
+   "intensity": 80.16
+  },
+  "2022": {
+   "emissions": 66.31,
+   "production": 86.68,
+   "intensity": 76.5
+  },
+  "2023": {
+   "emissions": 60.4,
+   "production": 79.82,
+   "intensity": 75.67
+  },
+  "2024": {
+   "emissions": 59.42,
+   "production": 79.24,
+   "intensity": 74.98
+  }
+ },
+ "n2o_abatement_intensity_Mt": -38.6
+}
