@@ -247,3 +247,35 @@ None duplicates a screened run (2040/2050 net within 0.5 Mt). None enters a set:
 **Result:** 1,820 pathways screened (1,661 with EU industry data, 759 passing the 2030 rule); ECL 6, ECL +10% 14, ESABCC 2040 9. The deck slides 1, 2 and 4 are updated.
 
 **Not reached:** the AMPERE and ADVANCE public databases. They need a guest login, which this environment's permission settings refused. AMPERE has EU27 views.
+
+## Round 5 — author, team, older-study, land/CDR and citation sweeps (26 Nov 2026)
+
+Five further agents ran these sweeps:
+- **IAM teams by author (13 researchers):** Luderer, Kriegler, Pietzcker, Ueckerdt, Strefler, Riahi, Krey, van Ruijven, van Vuuren, Bob van der Zwaan, Sabine Fuss, Minx, Edenhofer.
+- **EU model teams by author:** E3M/NTUA, CMCC, the JRC TIMES/POTEnCIA/POLES teams, Enerdata, IER, UCL, SINTEF and Cambridge Econometrics.
+- **Older EU studies (2010–2022)** and **land/CDR/bioeconomy pathways.**
+- **Citation chasing:** 629 works from 2023–2026 citing the main EU pathway studies. This found nothing new.
+
+They added 341 pathways (`additions/r5-*`). None duplicates a screened pathway; the two near-identical Merfort 2023 pairs differ by up to 26 Mt and are kept. The new pathways are:
+- **PIK REMIND studies:** Merfort et al. 2026 (225) and 2025 (29), Merfort et al. 2023 (47), Luderer et al. 2022 (11), Strefler et al. 2021 (12 + 4) and Bantje et al. 2026 (5). The region is REMIND EUR, which is EU27+UK. These are global studies, not EU-target designs.
+- **GEM-E3 EU NetZero:** 2 runs, from the climate_solutions explorer.
+- **JRC GECO 2018:** 3 runs, from PDF tables.
+- **TYNDP 2022:** Distributed Energy and Global Ambition.
+- **EU Reference Scenario 2016.**
+
+**Result:** 2,161 pathways screened, 1,997 with EU industry data and 811 passing the 2030 rule. The sets are unchanged: ECL 6, ECL +10% 14, ESABCC 2040 9. Of the 341 new pathways, 330 stop at the 2050 net rule. The closest misses:
+- Luderer 2022 sensitivity runs: 87.5–89.9 % cut in 2040, +178 to +442 Mt in 2050.
+- Best Merfort 2026 runs: 92–93.5 % cut, but about 750 Mt of capture and 15 EJ of bioenergy.
+
+Deck slides 1, 2 and 4 are updated.
+
+**Flags:**
+- **GEM-E3 net GHG:** the Kyoto total probably excludes LULUCF for the whole GEM-E3 family. A family-wide decision is needed.
+- **Gross industry CO2:** the Luderer and Merfort files publish industry energy CO2 gross of industry CCS.
+- **Bantje 2026:** the 2015 level (about 5,150 Mt) looks high for EU27+UK, and its totals with and without bunkers are identical. Neither could be explained.
+- **Merfort 2026:** EU land CO2 is a +536 Mt source in 2020.
+- **Not reached:**
+  - AMPERE and ADVANCE (guest login).
+  - The Schreyer 2020 ERL data statement (publisher 403).
+  - The ECF Roadmap 2050 archive (timeout).
+- **Watch list:** Merfort 2026 REMIND 1.5 °C data is reviewer-only until acceptance. Once the Milestones paper has a DOI, its citers can be chased.

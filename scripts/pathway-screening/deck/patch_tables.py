@@ -16,16 +16,15 @@ x = new[0]
 x = sub1(x, 'All EU pathways screened: 13 scenario databases and studies, plus the four scenarios of the EC 2040 impact assessment. Only pathways that report industry emissions are kept.',
          'All EU pathways from more than 40 databases and studies, plus the EC 2040 IA; only pathways with industry emissions count.')
 R1 = lambda nm, d, a, b: f"<tr><td class='l'><b>{nm}</b></td><td class='l'>{d}</td><td>{a}</td><td>{b}</td></tr>"
-x = sub1(x, "<tr><td class='l'><b>Schreyer et al. 2024</b>", R1('NGFS phase 5, REMIND IPD-median', 'NGFS damage-feedback runs; none is a main run (retracted damage function)', 7, 4)
-         + R1('NGFS phase 5, MESSAGE', 'MESSAGEix-GLOBIOM, downscaled to EU27', 7, 1) + "<tr><td class='l'><b>Schreyer et al. 2024</b>")
+x = sub1(x, "<tr><td class='l'><b>Schreyer et al. 2024</b>", R1('NGFS phase 5, IPD-median and MESSAGE', 'REMIND damage-feedback runs (not main runs); MESSAGE downscaled to EU27', 14, 5) + "<tr><td class='l'><b>Schreyer et al. 2024</b>")
 x = sub1(x, "<tr><td class='l'><b>POLIZERO</b>", R1('UBA 2026', 'Öko-Institut, Fraunhofer ISI; EUBase, EUTarget, EUSupreme', 3, 3) + "<tr><td class='l'><b>POLIZERO</b>")
 x = sub1(x, "<tr><td class='l'><b>EC 2040 impact assessment</b>",
          R1('Agora Energiewende 2023', 'EU Gas Exit Pathway; PDF tables', 1, 1) + R1('JRC CETO 2024', 'POTEnCIA, Clean Energy Technology Observatory 2024', 1, 1)
          + R1('Rodrigues et al. 2026', 'REMIND-EU, Nature Communications; reference run of 337', 1, 1) + R1('CLEVER 2023', 'négaWatt and partners; Open Energy Platform', 1, 1)
-         + R1('ESABCC 2023 database, further runs', 'IIASA, scenario call of the 2040 advice; ENGAGE, WITCH, REMIND variants', 242, 64) + R1('ENGAGE (Bertram et al. 2024)', 'IIASA ENGAGE explorer; AIM, COFFEE, GEM-E3, POLES', 37, 24) + R1('IPCC AR6 database', 'IIASA; native EU28 regions', 69, 9) + R1('CD-LINKS, COMMIT, NGFS phases 3–4', 'IIASA project databases', 48, 16) + R1('Other studies', 'NAVIGATE/ECEMF releases, PARIS REINFORCE, IAM COMPACT, Strefler 2024, others', 21, 11) 
+         + R1('ESABCC 2023 database, further runs', 'IIASA, scenario call of the 2040 advice; ENGAGE, WITCH, REMIND variants', 242, 64) + R1('ENGAGE (Bertram et al. 2024)', 'IIASA ENGAGE explorer; AIM, COFFEE, GEM-E3, POLES', 37, 24) + R1('IPCC AR6 database', 'IIASA; native EU28 regions', 69, 9) + R1('CD-LINKS, COMMIT, NGFS phases 3–4', 'IIASA project databases', 48, 16) + R1('Other studies', 'NAVIGATE/ECEMF releases, PARIS REINFORCE, IAM COMPACT, Strefler 2024, GEM-E3, others', 24, 11) + R1('PIK REMIND studies', 'Merfort 2023/2025/2026, Luderer 2022, Strefler 2021, Bantje 2026; Zenodo', 333, 52) 
          + "<tr><td class='l'><b>EC 2040 impact assessment</b>")
-x = sub1(x, "<td>1,223</td><td>623</td></tr></table>", "<td>1,661</td><td>759</td></tr></table>"
-         "<p class='key' style='font-size:15px'>Not counted (no EU industry data): JRC GECO 2019–2024 (16), NGFS 4 MESSAGE (7), Compass Lexecon 2024 (2), PAC 2.0 (1). Duplicates and earlier vintages counted once (93).</p>")
+x = sub1(x, "<td>1,223</td><td>623</td></tr></table>", "<td>1,997</td><td>811</td></tr></table>"
+         "<p class='key' style='font-size:15px'>Not counted (no EU industry data): JRC GECO 2018–2024 (19), NGFS 4 MESSAGE (7), TYNDP 2022 (2), Compass Lexecon 2024 (2), PAC 2.0 (1). Duplicates and earlier vintages counted once (93).</p>")
 x = x.replace('<table class="p sm">', '<table class="p xs">', 1)
 new[0] = x
 
@@ -49,11 +48,11 @@ new[2] = x
 x = new[3]
 D = "<td class='dim0'>–</td>"
 R4 = lambda nm, a, b, c, d, e: f"<tr><td class='l'><b>{nm}</b></td><td>{a}</td><td>{b}</td>" + ''.join(D if v in (0, None) else f'<td>{v}</td>' for v in (c, d, e)) + '</tr>'
-x = sub1(x, "<tr><td class='l'><b>Schreyer et al. 2024</b>", R4('NGFS phase 5, REMIND IPD-median', 7, 4, 0, 0, 0) + R4('NGFS phase 5, MESSAGE', 7, 1, 0, 0, 0) + "<tr><td class='l'><b>Schreyer et al. 2024</b>")
+x = sub1(x, "<tr><td class='l'><b>Schreyer et al. 2024</b>", R4('NGFS phase 5, IPD-median and MESSAGE', 14, 5, 0, 0, 0) + "<tr><td class='l'><b>Schreyer et al. 2024</b>")
 x = sub1(x, "<tr><td class='l'><b>POLIZERO</b>", R4('UBA 2026', 3, 3, 0, 0, 0) + "<tr><td class='l'><b>POLIZERO</b>")
 x = sub1(x, "<tr><td class='l'><b>EC 2040 impact assessment</b>", R4('Agora Energiewende 2023', 1, 1, 1, 1, 0) + R4('JRC CETO 2024', 1, 1, 1, 1, 0)
-         + R4('Rodrigues et al. 2026', 1, 1, 1, 1, 0) + R4('CLEVER 2023', 1, 1, 0, 0, 0) + R4('ESABCC 2023 database, further runs', 242, 64, 0, 0, 0) + R4('ENGAGE (Bertram et al. 2024)', 37, 24, 0, 0, 0) + R4('IPCC AR6 database', 69, 9, 0, 0, 0) + R4('CD-LINKS, COMMIT, NGFS phases 3–4', 48, 16, 0, 0, 0) + R4('Other studies', 21, 11, 0, 0, 0) + "<tr><td class='l'><b>EC 2040 impact assessment</b>")
-x = sub1(x, "<td>1,223</td><td>623</td><td>3</td><td>11</td><td>9 of 24</td>", "<td>1,661</td><td>759</td><td>6</td><td>14</td><td>9 of 24</td>")
+         + R4('Rodrigues et al. 2026', 1, 1, 1, 1, 0) + R4('CLEVER 2023', 1, 1, 0, 0, 0) + R4('ESABCC 2023 database, further runs', 242, 64, 0, 0, 0) + R4('ENGAGE (Bertram et al. 2024)', 37, 24, 0, 0, 0) + R4('IPCC AR6 database', 69, 9, 0, 0, 0) + R4('CD-LINKS, COMMIT, NGFS phases 3–4', 48, 16, 0, 0, 0) + R4('Other studies', 24, 11, 0, 0, 0) + R4('PIK REMIND studies', 333, 52, 0, 0, 0) + "<tr><td class='l'><b>EC 2040 impact assessment</b>")
+x = sub1(x, "<td>1,223</td><td>623</td><td>3</td><td>11</td><td>9 of 24</td>", "<td>1,997</td><td>811</td><td>6</td><td>14</td><td>9 of 24</td>")
 x = x.replace('<table class="p sm">', '<table class="p xs">', 1)
 new[3] = x
 
