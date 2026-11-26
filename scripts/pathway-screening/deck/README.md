@@ -129,3 +129,39 @@ lower intensity contributed more, chemicals above all.
 (193 × −27.6 % ≈ −53) and puts the remainder in intensity. LMDI splits the interaction term between the two, giving −50 / −23.
 
 **Data vintage.** The sector totals come from the current Eurostat release and are 1–3 % above the EEA series on the industry slide.
+
+## Update: tonnes where available; combined industry slide (26 Nov 2026)
+
+**Measures of production.** The decomposition now measures production in tonnes for the two branches where a reliable EU27
+tonnage exists. Sources and flags are in `production_tonnes.json`:
+
+| Branch | Measure | Source | 2024 (2005 = 100) |
+|---|---|---|---|
+| Iron and steel | Crude steel | worldsteel EU28 minus UK, 2005–2015; Eurofer EU27, 2016–2024 (the series overlap within 0.3 %) | 71 |
+| Non-metallic minerals | Cement | CEMBUREAU | 67 |
+
+The other branches keep the Eurostat volume index, for these reasons:
+- **Chemicals** has no meaningful single tonnage.
+- **Non-ferrous metals:** only an unwrought-aluminium proxy exists, not primary aluminium.
+- **Paper:** the FAOSTAT tonnage is mostly estimated.
+- **Food and other industry** have no tonnage.
+
+The EU inventory activity data, which are the preferred source, could not be downloaded (unfccc.int bot challenge). The EU NID
+2026 values for 2024 are kept in the file as cross-checks.
+
+**Results, Mt CO₂e, 2005–2024 (production effect / intensity effect):**
+
+| | Tonnes | Volume index (earlier) |
+|---|---|---|
+| Iron and steel | −53 / −20 | −50 / −23 |
+| Minerals | −81 / −27 | −61 / −46 |
+| **Industry** | **−122 / −240** (production effect 34 % of the decline) | −100 / −262 (28 %) |
+
+The sector production index for 2024 is 86 and the intensity index 70.
+
+**Slide 8** now combines two parts:
+- on the left, the scenario chart in a narrower variant (`NARROW=1 python3 fig_sector.py new_sector.json`);
+- on the right, the past-drivers waterfall over the branch breakdown (`fig_industry_drivers.png` from `fig_intensity.py`).
+
+`assemble.py` places the composite `f3_industry_combined.png`; the PIL step that builds it is in the run notes. The right-hand
+axis of the scenario chart now shows crude steel and cement in tonnes, plus chemicals and manufacturing on the volume index.

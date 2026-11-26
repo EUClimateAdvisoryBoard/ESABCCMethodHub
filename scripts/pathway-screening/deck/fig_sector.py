@@ -70,20 +70,23 @@ for sk in ('total', 'industry'):
     h2 = [Line2D([], [], color=HC, lw=3, label='EEA inventory 2005–2024'), Line2D([], [], color='#8a8a8a', lw=2, alpha=0.4, label='light line: median of each set')]
     if sk in WW['WEM']: h2 += [Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (5, 3)), label='WEM: MS projections, existing measures'), Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (1.5, 2)), label='WAM: with additional measures'), Line2D([], [], color=TRC, lw=2.6, label='Trend: linear fit to inventory 2005–2024')]
     f.legend(handles=h, loc='lower left', ncol=1, frameon=False, fontsize=(13 if NARROW else 14.5), bbox_to_anchor=(0.06, 0.0), handletextpad=0.4)
-    if sk == 'industry': h2 += [Line2D([], [], color='#6f6f6f', lw=2.2, ls=(0, (5, 2)), label=('Eurostat production index (right axis)' if NARROW else 'Eurostat production index (right axis), 2005–2024'))]
+    if sk == 'industry': h2 += [Line2D([], [], color='#6f6f6f', lw=2.2, ls=(0, (5, 2)), label=('Production, 2005 = 100 (right axis)' if NARROW else 'Production, 2005 = 100 (right axis): tonnes for steel and cement, volume index otherwise'))]
     f.legend(handles=h2, loc='lower left', ncol=2, frameon=False, fontsize=(11.5 if NARROW else 13.5), bbox_to_anchor=((0.50 if NARROW else 0.47), 0.0), handletextpad=0.4, columnspacing=1.0)
     if notes: ax.text(0.0, 1.015, '\n'.join(textwrap.fill(n_, 165) for n_ in notes), transform=ax.transAxes, fontsize=13.5, color='#6a6a6a', va='bottom')
     if sk == 'industry':
         # Secondary axis: Eurostat production index (sts_inpr_a, EU27, 2005 = 100), scaled so that 100 = industry emissions 2005,
         # so the black emission line reads as an index too. Palette (CVD note): orange / purple / blue / grey differ in lightness
         # and are also labelled directly at their 2024 end, so no reading depends on hue alone.
-        PROD_COLOURS = {'C': '#6f6f6f', 'C24': '#c26a1b', 'C23': '#7b5ea7', 'C20': '#2f7fb8'}
+        PROD_COLOURS = {'C': '#6f6f6f', 'STEEL_T': '#c26a1b', 'CEMENT_T': '#7b5ea7', 'C20': '#2f7fb8'}
         PI = json.load(open('production_index.json'))['series']; e05 = H[2005][sk]
+        TN = json.load(open('production_tonnes.json'))['series']
+        for k_, src_ in (('STEEL_T', 'crude_steel'), ('CEMENT_T', 'cement')):
+            v_ = {int(y): float(x) for y, x in TN[src_]['values'].items() if x is not None}; PI[k_] = {'I2005': {y: x / v_[2005] * 100 for y, x in v_.items()}}
         hi = e05 * 1.25; ax.set_ylim(lo, hi)
         ax2 = ax.twinx(); ax2.set_ylim(lo / e05 * 100, hi / e05 * 100); ax2.set_yticks([0, 20, 40, 60, 80, 100, 120])
-        ax2.tick_params(axis='y', labelsize=15, colors='#5a5a5a'); ax2.set_ylabel('Index, 2005 = 100 (dashed: production; black line: emissions)', fontsize=13.5, color='#5a5a5a')
+        ax2.tick_params(axis='y', labelsize=15, colors='#5a5a5a'); ax2.set_ylabel('Index, 2005 = 100 (dashed: production; black: emissions)', fontsize=13.5, color='#5a5a5a')
         for sp in ('top', 'left'): ax2.spines[sp].set_visible(False)
-        SHORTN = {'C': 'Manufacturing, all', 'C24': 'Basic metals', 'C23': 'Non-metallic minerals', 'C20': 'Chemicals'}
+        SHORTN = {'C': 'Manufacturing, all (volume)', 'STEEL_T': 'Crude steel (t)', 'CEMENT_T': 'Cement (t)', 'C20': 'Chemicals (volume)'}
         ends = []
         for code, col in PROD_COLOURS.items():
             s = {int(y): v for y, v in PI[code]['I2005'].items()}; ys = sorted(s)

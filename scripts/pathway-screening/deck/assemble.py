@@ -4,7 +4,7 @@ import base64, json, os, re, sys
 src, out, B = sys.argv[1:4]
 s = open(src).read()
 secs = re.findall(r'<section.*?</section>', s, re.S); new = list(secs)
-IMG = {2: 'f3_method.png', 7: 'f3_total.png', 8: 'f3_industry.png', 9: 'f3_ind_energy.png', 10: 'f3_ind_co2.png', 11: 'ct4.png', 12: 'ct5.png', 13: 'ct6.png'}
+IMG = {2: 'f3_method.png', 7: 'f3_total.png', 8: 'f3_industry_combined.png', 9: 'f3_ind_energy.png', 10: 'f3_ind_co2.png', 11: 'ct4.png', 12: 'ct5.png', 13: 'ct6.png'}
 for k, fn in IMG.items():
     p = os.path.join(B, fn)
     if not os.path.exists(p): print('missing, slide kept as is:', k, fn); continue
