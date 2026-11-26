@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-25",
-  "generatedAt": "2026-11-25T15:23:10.881Z",
+  "date": "2026-11-26",
+  "generatedAt": "2026-11-26T00:51:58.110Z",
   "title": "EU Climate & Energy Daily Briefing",
-  "subtitle": "Wednesday, 25 November 2026 — Key developments from the last 24 hours",
+  "subtitle": "Thursday, 26 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
       "headline": "China-linked battery projects could receive UK funding despite security warnings",
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Commission prolongs State aid framework to support sectors affected by Middle East crisis until June 2027",
-      "summary": "European Commission Press release Brussels, 25 Nov 2026 The European Commission has prolonged the Middle East Crisis Temporary State aid Framework (METSAF) by six months until 30 June 2027.",
+      "headline": "How COP31 fell short on easing access to finance for vulnerable nations",
+      "summary": "An action plan proposed by Australia failed to fly after small island nations and least-developed countries decided they couldn't back it, leaving a hastily improvised committee to take discussions forward The post How COP31 fell short on easing access to finance for vulnerable nations appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -42,6 +42,14 @@
           "score": 9
         },
         {
+          "title": "The Labour party has lost the plot on net zero | Letters",
+          "link": "https://www.theguardian.com/environment/2026/nov/25/the-labour-party-has-lost-the-plot-on-net-zero",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;&lt;strong&gt;Raymond T Pierrehumbert &lt;/strong&gt;and&lt;strong&gt; Dr Lynne Jones &lt;/strong&gt;respond to an article by the energy secretary, Miatta Fahnbulleh&lt;/p&gt;&lt;p&gt;Watching Miatta Fahnbulleh, the secretary of state for energy security and net zero, forced to defend the government’s retreat from net zero (&lt;a href=\"https://www.theguardian.com/commentisfree/2026/nov/17/britain-climate-action-plan-working-cop31-voters-jobs-home-prices\"&gt;Where do people want to see B",
+          "published": "2026-11-25T18:07:55.000Z",
+          "score": 7
+        },
+        {
           "title": "From the archive: Dismantling Sellafield: the epic task of shutting down a nuclear site – podcast",
           "link": "https://www.theguardian.com/news/audio/2026/nov/25/from-the-archive-dismantling-sellafield-the-epic-task-of-shutting-down-a-nuclear-site-podcast",
           "source": "The Guardian - Energy",
@@ -50,11 +58,11 @@
           "score": 7
         },
         {
-          "title": "EXCLUSIVE: Microsoft declares 'Code Red' after historic outage, internal memos show - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOZWlZRm9kdXdaMDkwUWdXZVZPM2NTakFfZTFDa3Iwcm5yNXh4enZZVWRpWjBuc2ZpVERzOElVc0h5NjY4eXZnb0w5YUZ4Wm1nRmUwd04xQmNKZDQxOFlQWk12N0FCd3hSQTVLVFFWZmJKbm01S0pCM1AwRXVRZklpdWJfdkJ1N0FDdS1EZGNqTzd4WjZoUy1qZ1QwNktXdUlMWlBDYW9jYlozNEVDV01DSGZlVVc?oc=5",
+          "title": "Russian attack damages Ukraine's energy and gas sites, cuts power in five regions - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPaDhyeUxrcS1sWnpSWnJPa1JGcXM0VDJ1U2FDamw1U2JxTm9May1fN1FPYmI2UjFqcTA0dmsxejlwS1NwRGpwR2RqQnN3cVJWU0VTcERHTzlhOHpzVmp6QUcwRUtNVzJQQjhmSTdmQ3h4YnptankzQ0RzRzZWWkk5LUNOTWRVT3dYUjhwZnh1NktRVjFpTGVadE5qTFZTb0xBU0lKbTdpdno1RmZrbzJHSDJxSHl6TzI0WDJqVml3?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOZWlZRm9kdXdaMDkwUWdXZVZPM2NTakFfZTFDa3Iwcm5yNXh4enZZVWRpWjBuc2ZpVERzOElVc0h5NjY4eXZnb0w5YUZ4Wm1nRmUwd04xQmNKZDQxOFlQWk12N0FCd3hSQTVLVFFWZmJKbm01S0pCM1AwRXVRZklpdWJfdkJ1N0FDdS1EZGNqTzd4WjZoUy1qZ1QwNktXdUlMWlBDYW9jYlozNEVDV01DSGZlVVc?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Microsoft declares 'Code Red' after historic outage, internal memos show&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-24T16:11:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPaDhyeUxrcS1sWnpSWnJPa1JGcXM0VDJ1U2FDamw1U2JxTm9May1fN1FPYmI2UjFqcTA0dmsxejlwS1NwRGpwR2RqQnN3cVJWU0VTcERHTzlhOHpzVmp6QUcwRUtNVzJQQjhmSTdmQ3h4YnptankzQ0RzRzZWWkk5LUNOTWRVT3dYUjhwZnh1NktRVjFpTGVadE5qTFZTb0xBU0lKbTdpdno1RmZrbzJHSDJxSHl6TzI0WDJqVml3?oc=5\" target=\"_blank\"&gt;Russian attack damages Ukraine's energy and gas sites, cuts power in five regions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-25T13:02:14.000Z",
           "score": 7
         },
         {
@@ -64,14 +72,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbmE5cEFGWGFLVzVEUlVvWlE5NzJaT2p0MTUxclgxejJ2ZHJPbTQ5d1BLNzh6R2tFb251aWQ4dHBUTDRtaTlETkVick9uV1hKVkdZSjNPbFk5M2NBd1oxQXptdzAtLS1zVzlidDBDVXBmWFAyVnRzMGRmZHNGZVk4T3Y1aV9ycGZFcWxGejZ0T29BbG9EUks5QjZ0bzFVRG05YlVQemt4UDdDSEY5cUZrYzNsSU9VMGVX?oc=5\" target=\"_blank\"&gt;Yemen's Houthis threaten to target Jeddah and other Saudi Red Sea ports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-11-25T02:42:00.000Z",
           "score": 7
-        },
-        {
-          "title": "Man United's Yoro has red card against Liverpool overturned - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOZmZVWmN0LXBmQkNDa0NpdzFfaC1nSlRxTG9XbkR3SlJhRFk5S2xmR05iZHZCWlM1R3hDVDA0Q3AwbFhfVkNjNEFJcFJucmRIdU14dmtZTFJ2akp0ZnhkLTRWUnM4XzFIQjhuVGVaRDVOcW5jMFctNi15ZUlTaGZScFBHSTV0djFVZDRkdk5fWkRIbmJFRnIzZUI0YTRaaXVlRUN6VWhIdWl2bWR1?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxOZmZVWmN0LXBmQkNDa0NpdzFfaC1nSlRxTG9XbkR3SlJhRFk5S2xmR05iZHZCWlM1R3hDVDA0Q3AwbFhfVkNjNEFJcFJucmRIdU14dmtZTFJ2akp0ZnhkLTRWUnM4XzFIQjhuVGVaRDVOcW5jMFctNi15ZUlTaGZScFBHSTV0djFVZDRkdk5fWkRIbmJFRnIzZUI0YTRaaXVlRUN6VWhIdWl2bWR1?oc=5\" target=\"_blank\"&gt;Man United's Yoro has red card against Liverpool overturned&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-24T22:00:39.000Z",
-          "score": 7
         }
       ]
     },
@@ -80,44 +80,44 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Commission prolongs State aid framework to support sectors affected by Middle East crisis until June 2027",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2576",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 25 Nov 2026 The European Commission has prolonged the Middle East Crisis Temporary State aid Framework (METSAF) by six months until 30 June 2027.",
-          "published": "2026-11-24T23:00:00.000Z",
-          "score": 18
+          "title": "How COP31 fell short on easing access to finance for vulnerable nations",
+          "link": "https://www.climatechangenews.com/2026/11/25/how-cop31-fell-short-on-easing-access-to-finance-for-vulnerable-nations/",
+          "source": "Climate Home News",
+          "description": "An action plan proposed by Australia failed to fly after small island nations and least-developed countries decided they couldn't back it, leaving a hastily improvised committee to take discussions forward The post How COP31 fell short on easing access to finance for vulnerable nations appeared first on Climate Home News.",
+          "published": "2026-11-25T16:31:30.000Z",
+          "score": 14
         },
         {
-          "title": "CB Live: Carbon Brief journalists discuss key COP31 outcomes",
-          "link": "https://www.carbonbrief.org/cb-live-carbon-brief-journalists-discuss-key-cop31-outcomes",
+          "title": "Media reaction: Who is to blame for COP31 ‘failure’?",
+          "link": "https://www.carbonbrief.org/media-reaction-who-is-to-blame-for-cop31-failure",
           "source": "Carbon Brief",
-          "description": "Following the close of COP31 in Antalya, Turkey, Carbon Brief’s journalists answered a range of questions in a CB Live&#8230; The post CB Live: Carbon Brief journalists discuss key COP31 outcomes appeared first on Carbon Brief.",
-          "published": "2026-11-24T17:06:20.000Z",
-          "score": 13
+          "description": "COP31 came to a dramatic close last weekend when a coalition of nations rejected the proposed “Antalya pact”, citing its&#8230; The post Media reaction: Who is to blame for COP31 ‘failure’? appeared first on Carbon Brief.",
+          "published": "2026-11-25T16:09:13.000Z",
+          "score": 10
         },
         {
-          "title": "COP31: Key outcomes for food, forests, oceans and nature at the UN climate talks in Antalya",
-          "link": "https://www.carbonbrief.org/cop31-key-outcomes-for-food-forests-oceans-and-nature-at-the-un-climate-talks-in-antalya",
-          "source": "Carbon Brief",
-          "description": "The COP31 climate talks in Antalya, Turkey, failed to agree on a “pact” that – despite making no clear reference&#8230; The post COP31: Key outcomes for food, forests, oceans and nature at the UN climate talks in Antalya appeared first on Carbon Brief.",
-          "published": "2026-11-24T16:33:18.000Z",
-          "score": 13
+          "title": "Four ways Ethiopia can ensure COP32 is not like COP31",
+          "link": "https://www.climatechangenews.com/2026/11/25/four-ways-ethiopia-can-ensure-cop32-is-not-like-cop31/",
+          "source": "Climate Home News",
+          "description": "The COP32 presidency should focus on the Action Agenda and roadmaps, while giving negotiators more warning of what to expect in any cover decision The post Four ways Ethiopia can ensure COP32 is not like COP31 appeared first on Climate Home News.",
+          "published": "2026-11-25T13:32:38.000Z",
+          "score": 10
         },
         {
-          "title": "Climate scientists urge US lawmakers to vote no on sweeping permitting bill",
-          "link": "https://www.theguardian.com/us-news/2026/nov/24/climate-scientists-lawmakers-baaja",
+          "title": "The Guardian view on rising energy prices: only bold action can win public confidence | Editorial",
+          "link": "https://www.theguardian.com/commentisfree/2026/nov/25/the-guardian-view-on-rising-energy-prices-only-bold-action-can-win-public-confidence",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Open letter warns Baaja, intended to expedite energy and infrastructure projects, will cause irreversible climate harm&lt;/p&gt;&lt;p&gt;A group of more than 120 climate scientists have urged US lawmakers to not pass contentious legislation to speed up the building of energy projects, datacenters and other infrastructure, amid a growing backlash to the sweeping permitting bill.&lt;/p&gt;&lt;p&gt;In &lt;a href=\"https://docs.google.com/document/u/5/d/e/2PACX-1vTGn1hGXhzefi1EQ5ddWv-iRQeYKC",
-          "published": "2026-11-24T22:09:57.000Z",
-          "score": 11
+          "description": "&lt;p&gt;Andy Burnham needs a radical vision of economic change to move on from policies aimed at giving voters ‘breathing space’&lt;/p&gt;&lt;p&gt;Ask Andy Burnham a question and it won’t be long before he mentions the cost of living. Responding to&amp;nbsp;the results of midterm elections in the US earlier this&amp;nbsp;month, &lt;a href=\"https://www.bbc.co.uk/news/articles/c6kgl0xk8en9o\"&gt;he said&lt;/a&gt; that the Democratic party’s triumph meant that there was “an opportunity now to&amp;n",
+          "published": "2026-11-25T18:33:21.000Z",
+          "score": 7
         },
         {
-          "title": "Why are people captivated by this photo of Australia’s climate change minister scowling at Cop31?",
-          "link": "https://www.theguardian.com/culture/2026/nov/25/chris-bowen-cop31-deal-failure-photograph",
+          "title": "Spain has been hit hard by the climate crisis. Why are politicians saying so little about it before the election?",
+          "link": "https://www.theguardian.com/world/2026/nov/25/spain-election-climate-crisis",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Chris Bowen was president of negotiations at Cop31 in Turkey when it all went a bit sideways&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Blake, I was at the back of the huge plenary hall in Antalya on Sunday at the end of the UN climate summit that overran by two days. For about 20 minutes, you could see from the panic on the stage that it wasn’t going well.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;I only had an old iPhone, was a long way back, and remember thinking: “I’d love a long lens to ",
-          "published": "2026-11-25T00:40:13.000Z",
-          "score": 11
+          "description": "&lt;p&gt;Wildfires and floods can do little to move climate change up voters’ list of priorities, experts say&lt;/p&gt;&lt;p&gt;Beneath the blackened branches of a pine tree that rises high above a landscape of scorched hillsides and the odd charred and ruined house, two older men address the obvious. Four months after one of the summer’s many wildfires &lt;a href=\"https://www.theguardian.com/world/2026/jul/29/people-return-to-their-home-in-spain-after-wildfires\"&gt;threatened to devour the haml",
+          "published": "2026-11-25T13:00:26.000Z",
+          "score": 7
         }
       ]
     },
@@ -140,6 +140,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUUNwSjZLMGhnbjRUT3dCanR4NUNvbFlkOHpleklINGJuU3p4X1dqQlpTZHYtYm85OTBLSlQ2ZjVudXJrQ2xvazBWN3lydjZXOUdzdjJ0amJ0Ulh5X3dXVEszdTM5QTdlMU9PbkszRmd4djFaLWh1M0FxQ1E5NzJQeDY5QTdSN2lvSGJpNUlUTGlSeVJjeGFzX0xpdlFzbS1GNzlfdDZLMTIwY0E?oc=5\" target=\"_blank\"&gt;EU plans €50 billion tech fund to challenge US and China, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-11-25T05:19:00.000Z",
           "score": 8
+        },
+        {
+          "title": "Trump's accounts traded Nvidia shares 44 times this year, records show",
+          "link": "https://www.bbc.co.uk/news/articles/cq772vk664yvo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "A review of the US president's financial disclosures shows Donald Trump's investment portfolios have regularly traded shares in the tech giant.",
+          "published": "2026-11-25T16:42:11.000Z",
+          "score": 2
         }
       ]
     },
@@ -153,12 +161,12 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Swedish parliament to vote on Moderates leader Kristersson to remain prime minister - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQd1pBSUc0YXMxRFZvQk9PdVpsUDJWOEFENjJzMmdQanFKbHY0ZENDZnVUN0kxNnQzNWhVY0VySkZoVWNfVXpIV2RBTTFROVdTMkk0b1pSQ3JKWHctRFdUaXRpWk9QeDcydTJsdXAtTkhSVUpxYlBSY0M0anNzNDJtbmdDbDIwQnlSOUlmUFBrekpqTE16UldGSlRHNEpHZ01qN0puTzBHMWV5dmtWeml5blZaV2hxVDA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQd1pBSUc0YXMxRFZvQk9PdVpsUDJWOEFENjJzMmdQanFKbHY0ZENDZnVUN0kxNnQzNWhVY0VySkZoVWNfVXpIV2RBTTFROVdTMkk0b1pSQ3JKWHctRFdUaXRpWk9QeDcydTJsdXAtTkhSVUpxYlBSY0M0anNzNDJtbmdDbDIwQnlSOUlmUFBrekpqTE16UldGSlRHNEpHZ01qN0puTzBHMWV5dmtWeml5blZaV2hxVDA?oc=5\" target=\"_blank\"&gt;Swedish parliament to vote on Moderates leader Kristersson to remain prime minister&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-24T16:03:20.000Z",
-          "score": 12
+          "title": "EU must set out a new timeline for cage-free farming, court rules",
+          "link": "https://www.dw.com/en/eu-must-set-out-a-new-timeline-for-cage-free-farming-court-rules/a-80051729?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "European General Court ruled that the European Commission has failed to set out a timeline after pledging to end caged farming by the end of 2023.",
+          "published": "2026-11-25T15:36:00.000Z",
+          "score": 8
         },
         {
           "title": "US plans new tariffs on EU, China and 12 others",
@@ -177,28 +185,28 @@
           "score": 8
         },
         {
-          "title": "Britons face soaring energy bills after 26% price cap hike - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQYWxiYkU2dDI4WjRoOUdyaDN0RDQ3MGR2b1k2aUdmQ3dseXVrQkpwSjlIb1NtbzRZbENaYnJfODJKN0pMV2VBMUx3NHZQZWEtUTh3VlRSVWNzMUhHdklzTlZlM1BmSkktbXpUVFhjTlNqY2pUdGpRbUV6bVdpdV9BWDYtQld1MDExX1BNTUt6YVRtSm81LU9VTXV3MF9GOHpMNTJHcVFSanlJWUVkWE1J?oc=5",
+          "title": "Global fragrance makers hit with nearly $517 million EU fine for taking part in cartel - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNNXdKc0Fib1ktQzJ1Umx4VE9DTjFjWHhQa3czVlJ6YVlTUVBxNG5IY2p5T3pGbVpkTDRXLV9GTWk5YXB3dHBUWTUyRVpVb1VPLTBfV1p2QUFjNnZqeFBWbE4zckpScDFnY2NtTzNQVVpadTdFcWZWMDNiM2RfVzZCZ3V1YVh3ZmhtbENaVGJvSG9yUFdZU0MySDA3LWZDNEt2U3BSY01RcExfT0lwWjdCMzlLNUZ5Mi1KdkYzaEpn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQYWxiYkU2dDI4WjRoOUdyaDN0RDQ3MGR2b1k2aUdmQ3dseXVrQkpwSjlIb1NtbzRZbENaYnJfODJKN0pMV2VBMUx3NHZQZWEtUTh3VlRSVWNzMUhHdklzTlZlM1BmSkktbXpUVFhjTlNqY2pUdGpRbUV6bVdpdV9BWDYtQld1MDExX1BNTUt6YVRtSm81LU9VTXV3MF9GOHpMNTJHcVFSanlJWUVkWE1J?oc=5\" target=\"_blank\"&gt;Britons face soaring energy bills after 26% price cap hike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-25T07:19:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNNXdKc0Fib1ktQzJ1Umx4VE9DTjFjWHhQa3czVlJ6YVlTUVBxNG5IY2p5T3pGbVpkTDRXLV9GTWk5YXB3dHBUWTUyRVpVb1VPLTBfV1p2QUFjNnZqeFBWbE4zckpScDFnY2NtTzNQVVpadTdFcWZWMDNiM2RfVzZCZ3V1YVh3ZmhtbENaVGJvSG9yUFdZU0MySDA3LWZDNEt2U3BSY01RcExfT0lwWjdCMzlLNUZ5Mi1KdkYzaEpn?oc=5\" target=\"_blank\"&gt;Global fragrance makers hit with nearly $517 million EU fine for taking part in cartel&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-25T15:27:44.000Z",
+          "score": 8
         },
         {
-          "title": "Fact check: Deepfakes and &#039;US abandons Taiwan&#039; claims spread ahead of vote",
-          "link": "https://www.dw.com/en/fact-check-deepfakes-and-us-abandons-taiwan-claims-spread-ahead-of-vote/a-80004834?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Ahead of local elections, AI-generated falsehoods targeting Democratic Progressive Party mayoral candidate Puma Shen have surged in Taiwan, alongside disinformation claiming the US is pulling back support for the island.",
-          "published": "2026-11-25T10:35:00.000Z",
-          "score": 6
+          "title": "NBA plans 10 billion euro push for Europe basketball arenas - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQM2U1Z1NtOTRaTW5Ya2I1ZlQyZ0dnX21XeEFWQ1pyMnJmcFZiOW9QTkk5QjNlbk9DMEJqenk5TkdLY0t0MVBMRkFHYU04bUFmM0xrelVuNmNmdVMzVkFQRE9JaHBOaTZvWXpqWkV6Rk1ESjdkVlBYSjZFcEM3Z3F5bl9BTWJ0Nks3QlBqV1VmdDNqaHg3aG9TUA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQM2U1Z1NtOTRaTW5Ya2I1ZlQyZ0dnX21XeEFWQ1pyMnJmcFZiOW9QTkk5QjNlbk9DMEJqenk5TkdLY0t0MVBMRkFHYU04bUFmM0xrelVuNmNmdVMzVkFQRE9JaHBOaTZvWXpqWkV6Rk1ESjdkVlBYSjZFcEM3Z3F5bl9BTWJ0Nks3QlBqV1VmdDNqaHg3aG9TUA?oc=5\" target=\"_blank\"&gt;NBA plans 10 billion euro push for Europe basketball arenas&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-25T13:03:44.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 411,
-    "articlesLast24h": 172,
-    "afterDedup": 156,
+    "totalArticlesScanned": 412,
+    "articlesLast24h": 184,
+    "afterDedup": 165,
     "feedsQueried": 19
   }
 }
