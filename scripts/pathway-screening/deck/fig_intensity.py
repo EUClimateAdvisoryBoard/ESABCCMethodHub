@@ -51,7 +51,7 @@ ax.set_title('By branch', fontsize=18, fontweight='bold', loc='left'); ax.grid(a
 for s in ('top', 'right'): ax.spines[s].set_visible(False)
 ax.legend(handles=[Line2D([], [], color=C_PROD, lw=10, label='Production effect'), Line2D([], [], color=C_INT, lw=10, label='Intensity effect')], loc='lower left', frameon=False, fontsize=12)
 f.text(0.01, 0.01, 'EU27. Emissions: Eurostat env_air_gge (industry = 1.A.2 + 2.A + 2.B + 2.C + 2.E + 2.H). Production: tonnes for iron and steel (crude steel) and minerals (cement, CEMBUREAU); Eurostat volume index (sts_inpr_a) for the other branches; sector = branch indices weighted by 2005 emissions. '
-       'LMDI decomposition.\n"Other industry" uses manufacturing as a whole as its production proxy. Sector totals are 1–3 % above the EEA series on the industry slide (different inventory release).', fontsize=10.5, color='#6a6a6a')
+       'LMDI decomposition.\n"Other industry" uses manufacturing as a whole as its production proxy. Sector totals are 1–3 % above the EEA series on the industry slide because this scope includes mining, construction and off-road (superseded: see fig_industry_onefig.png).', fontsize=10.5, color='#6a6a6a')
 f.subplots_adjust(left=0.045, right=0.985, top=0.9, bottom=0.19, wspace=0.42); f.savefig('fig_industry_intensity.png', dpi=110, facecolor='white'); plt.close(f)
 
 # figure 2: iron and steel, as in the Secretariat's example
