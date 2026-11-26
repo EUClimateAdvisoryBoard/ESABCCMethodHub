@@ -61,3 +61,22 @@ waterfall(axs[1], b['E2005'], b['production_effect'], b['intensity_effect'], b['
 f.text(0.01, 0.01, 'EU27. Emissions: 1.A.2.a + 2.C.1 (Eurostat env_air_gge). Production: NACE C24.1 (Eurostat sts_inpr_a). LMDI decomposition.', fontsize=10.5, color='#6a6a6a')
 f.subplots_adjust(left=0.06, right=0.98, top=0.9, bottom=0.15, wspace=0.25); f.savefig('fig_steel_intensity.png', dpi=110, facecolor='white'); plt.close(f)
 print('ok')
+
+# figure 3: right-hand column for the combined industry slide (waterfall over branch bars), same pixel height as f3_industry.png
+plt.rcParams.update({'font.size': 17})
+f, axs = plt.subplots(2, 1, figsize=(7.6, 9.6), gridspec_kw=dict(height_ratios=[1, 1.25]))
+waterfall(axs[0], S['E2005'], S['production_effect'], S['intensity_effect'], S['E2024'], 'Past drivers, 2005–2024')
+axs[0].title.set_fontsize(19)
+ax = axs[1]; yy = np.arange(len(order))[::-1]
+for y, b in zip(yy, order):
+    pe, ie = BR[b]['production_effect'], BR[b]['intensity_effect']
+    ax.barh(y + 0.19, pe, height=0.36, color=C_PROD); ax.barh(y - 0.19, ie, height=0.36, color=C_INT)
+    for v, dy in ((pe, 0.19), (ie, -0.19)):
+        ax.text(v + (2 if v >= 0 else -2), y + dy, f'{v:+.0f}'.replace('-', '−'), va='center', ha='left' if v >= 0 else 'right', fontsize=13)
+ax.set_yticks(yy); ax.set_yticklabels([b.replace('Non-metallic minerals', 'Minerals (cement, glass)') for b in order], fontsize=14)
+ax.axvline(0, color=INK, lw=0.9); ax.set_xlim(-118, 38); ax.set_xlabel('Mt CO₂e, 2005–2024', fontsize=14)
+ax.set_title('By branch', fontsize=19, fontweight='bold', loc='left'); ax.grid(axis='x', color='#e4e4e4'); ax.set_axisbelow(True)
+for s in ('top', 'right'): ax.spines[s].set_visible(False)
+ax.legend(handles=[Line2D([], [], color=C_PROD, lw=10, label='Production effect'), Line2D([], [], color=C_INT, lw=10, label='Intensity effect')], loc='upper left', bbox_to_anchor=(-0.55, -0.19), ncol=2, frameon=False, fontsize=13.5)
+f.subplots_adjust(left=0.36, right=0.97, top=0.94, bottom=0.16, hspace=0.42); f.savefig('fig_industry_drivers.png', dpi=110, facecolor='white'); plt.close(f)
+print('ok3')

@@ -18,7 +18,9 @@ WHY = {718: 'industry only', 397: 'industry only', 1327: 'industry and total onl
 SHORT = {718: 'POTEnCIA'}
 fmt = lambda v: f'{v:,.0f}'.replace('-', '−'); halo = [pe.withStroke(linewidth=4, foreground='white')]; OUT = {}
 for sk in ('total', 'industry'):
-    f, ax = plt.subplots(figsize=(19, 9.6) if sk == 'industry' else (19, 8.2)); lo, hi = YL[sk]; OUT[sk] = {}
+    import os
+    NARROW = os.environ.get('NARROW') == '1' and sk == 'industry'
+    f, ax = plt.subplots(figsize=((15.5, 9.6) if NARROW else (19, 9.6)) if sk == 'industry' else (19, 8.2)); lo, hi = YL[sk]; OUT[sk] = {}
     hs = {y: v for y, v in (HN if sk == 'total' else {y: H[y][sk] for y in H}).items() if y >= 2005}; hy = sorted(hs)
     hi = max(hi, max(hs.values()) * 1.08)
     ax.plot([hx(y) for y in hy], [hs[y] for y in hy], color=HC, lw=3, zorder=3, solid_capstyle='round'); ax.scatter([hx(HY)], [hs[HY]], s=60, color=HC, zorder=4)
@@ -67,9 +69,9 @@ for sk in ('total', 'industry'):
     h = [Line2D([], [], marker='o', ls='', ms=11, mfc=col + '88', mec=col, mew=2, label=f"{lab} (n = {OUT[sk][key]['n']}" + (f" of {OUT[sk][key]['N']}" if OUT[sk][key]['n'] < OUT[sk][key]['N'] else '') + ')') for key, col, lab in SETS]
     h2 = [Line2D([], [], color=HC, lw=3, label='EEA inventory 2005–2024'), Line2D([], [], color='#8a8a8a', lw=2, alpha=0.4, label='light line: median of each set')]
     if sk in WW['WEM']: h2 += [Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (5, 3)), label='WEM: MS projections, existing measures'), Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (1.5, 2)), label='WAM: with additional measures'), Line2D([], [], color=TRC, lw=2.6, label='Trend: linear fit to inventory 2005–2024')]
-    f.legend(handles=h, loc='lower left', ncol=1, frameon=False, fontsize=14.5, bbox_to_anchor=(0.06, 0.0), handletextpad=0.4)
-    if sk == 'industry': h2 += [Line2D([], [], color='#6f6f6f', lw=2.2, ls=(0, (5, 2)), label='Eurostat production index (right axis), 2005–2024')]
-    f.legend(handles=h2, loc='lower left', ncol=2, frameon=False, fontsize=13.5, bbox_to_anchor=(0.47, 0.0), handletextpad=0.4, columnspacing=1.0)
+    f.legend(handles=h, loc='lower left', ncol=1, frameon=False, fontsize=(13 if NARROW else 14.5), bbox_to_anchor=(0.06, 0.0), handletextpad=0.4)
+    if sk == 'industry': h2 += [Line2D([], [], color='#6f6f6f', lw=2.2, ls=(0, (5, 2)), label=('Eurostat production index (right axis)' if NARROW else 'Eurostat production index (right axis), 2005–2024'))]
+    f.legend(handles=h2, loc='lower left', ncol=2, frameon=False, fontsize=(11.5 if NARROW else 13.5), bbox_to_anchor=((0.50 if NARROW else 0.47), 0.0), handletextpad=0.4, columnspacing=1.0)
     if notes: ax.text(0.0, 1.015, '\n'.join(textwrap.fill(n_, 165) for n_ in notes), transform=ax.transAxes, fontsize=13.5, color='#6a6a6a', va='bottom')
     if sk == 'industry':
         # Secondary axis: Eurostat production index (sts_inpr_a, EU27, 2005 = 100), scaled so that 100 = industry emissions 2005,
@@ -91,7 +93,7 @@ for sk in ('total', 'industry'):
         for q in range(1, len(ends)):
             if ends[q][0] - ends[q - 1][0] < 6.5: ends[q][0] = ends[q - 1][0] + 6.5
         for v, t, c_ in ends: ax2.text(hx(HY) + 0.08, v, t, fontsize=13, color=c_, va='center', ha='left', fontweight='bold', path_effects=halo)
-        ax.texts[0].set_text(f'{HY}: {fmt(hs[HY])} (index {hs[HY] / e05 * 100:.0f})'); ax.texts[0].set_position((hx(HY) + 0.08, hs[HY] - 0.07 * (hi - lo)))
+        ax.texts[0].set_text(f'{HY}: {fmt(hs[HY])} (index {hs[HY] / e05 * 100:.0f})'); ax.texts[0].set_position((hx(HY) + 0.08, hs[HY] - 0.07 * (hi - lo)) if not NARROW else (hx(HY) - 0.35, hs[HY] - 0.10 * (hi - lo)))
         # Panel: average annual reductions, historic (EEA inventory) and required by the ECL set (range over its pathways)
         from matplotlib.patches import Rectangle
         from matplotlib.transforms import blended_transform_factory
@@ -115,7 +117,7 @@ for sk in ('total', 'industry'):
         for xa in (PAN[0][1], PAN[1][1]):
             ax.annotate('', (xa + 0.07, yb + hb / 2), (xa - 0.07, yb + hb / 2), xycoords=tr, textcoords=tr, arrowprops=dict(arrowstyle='simple', fc='#3b6fb6', ec='#2a4f86', lw=0.8, mutation_scale=22), annotation_clip=False)
         OUT[sk]['reductions'] = dict(hist=round(hist, 1), r2024_2040=[round(min(a), 1), round(max(a), 1)], r2040_2050=[round(min(b), 1), round(max(b), 1)], n=len(ecl))
-    f.subplots_adjust(left=0.07, right=(0.935 if sk == 'industry' else 0.99), top=(0.75 if sk == 'industry' else 0.90), bottom=(0.265 if sk == 'industry' else 0.31)); f.savefig(f'f3_{sk}.png', dpi=110, transparent=True); plt.close(f)
+    f.subplots_adjust(left=0.07, right=(0.935 if sk == 'industry' else 0.99), top=(0.75 if sk == 'industry' else 0.90), bottom=(0.265 if sk == 'industry' else 0.31)); f.savefig(f'f3_{sk}_narrow.png' if NARROW else f'f3_{sk}.png', dpi=110, transparent=True); plt.close(f)
 # ranges for the last slide (2040, 2050) per set, including the EC IA rows
 RG = {}
 for sk in ('total', 'industry'):
