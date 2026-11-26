@@ -222,3 +222,28 @@ industry data, and 749 of these pass the 2030 rule.
 - The set slides are unchanged, because the sets did not change.
 
 The ECEMF WP1 final runs (5100–5105) remain alongside the pre-release run 862. They enter no set, but they are another vintage question for the Secretariat.
+
+## Christoph Bertram's scenario publications (26 Nov 2026)
+
+A dedicated sweep of Bertram's work covered OpenAlex (114 works) and ORCID. His affiliations: IT:U Linz from 2026, previously UMD CGS 2023 to date (now as research affiliate) and PIK. The sweep found that these are already screened or are duplicates:
+- NGFS phases III and V
+- ENGAGE (2021, 2024, post-Glasgow, Brutschin 2025)
+- CD-LINKS and COMMIT
+- the 2018 targeted-policies runs
+- Bauer 2020 and Soergel 2021
+- ScenarioMIP-CMIP7
+- nine of ten Frilingou 2026 runs
+
+NGFS Phase I is no longer public, and the Phase V short-term runs stop in 2030.
+
+29 new EU runs were added (`additions/r4-P_bertram_*`, IDs 9500–9528):
+- NGFS Phase IV GCAM (7, EU-12 + EU-15 = EU28)
+- NGFS Phase IV REMIND IntegratedPhysicalDamages, median and 95th-high (14, main_run FALSE). The Net Zero 2050 runs cut 94.8 % by 2040 but end at +1.2 to +1.8 Mt in 2050.
+- NGFS Phase IV MESSAGE downscaled to EU27 (7, no industry energy CO2)
+- Frilingou 2026 GCAM 7.0 Survey_NDC_Infl (1)
+
+None duplicates a screened run (2040/2050 net within 0.5 Mt). None enters a set: 19 stop at the 2050 net rule, 7 have no industry data, 2 fall outside the 2040 window and 1 fails the 2030 rule.
+
+**Result:** 1,820 pathways screened (1,661 with EU industry data, 759 passing the 2030 rule); ECL 6, ECL +10% 14, ESABCC 2040 9. The deck slides 1, 2 and 4 are updated.
+
+**Not reached:** the AMPERE and ADVANCE public databases. They need a guest login, which this environment's permission settings refused. AMPERE has EU27 views.
