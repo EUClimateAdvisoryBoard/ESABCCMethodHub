@@ -1,24 +1,30 @@
 {
   "date": "2026-11-26",
-  "generatedAt": "2026-11-26T00:51:58.110Z",
+  "generatedAt": "2026-11-26T14:49:19.180Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 26 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "China-linked battery projects could receive UK funding despite security warnings",
-      "summary": "&lt;p&gt;China-made lithium-ion batteries, which are relatively low-cost, dominate Ofgem project shortlist&lt;/p&gt;&lt;p&gt;A string of battery projects linked to China are expected to be granted UK state subsidies despite deepening fears over the risk of foreign interference they could pose to Europe’s energy systems.&lt;/p&gt;&lt;p&gt;Ofgem, Great Britain’s energy regulator, published a provisional shortlist for a new “long duration” energy storage scheme in June. The list was dominated by pr",
+      "headline": "Speech by Commissioner Hoekstra in the European Parliament's Plenary debate on the Outcome of the Antalya UN climate summit (COP 31)",
+      "summary": "European Commission Speech Strasbourg, 26 Nov 2026 Ladies and gentlemen,\r\nGood morning to all of you.\r\nIn conversations and in negotiations you sometimes arrive at a moment where you simply have to say no.\r\nNo, bec...",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "The Labour party has lost the plot on net zero | Letters",
+      "summary": "&lt;p&gt;&lt;strong&gt;Raymond T Pierrehumbert &lt;/strong&gt;and&lt;strong&gt; Dr Lynne Jones &lt;/strong&gt;respond to an article by the energy secretary, Miatta Fahnbulleh&lt;/p&gt;&lt;p&gt;Watching Miatta Fahnbulleh, the secretary of state for energy security and net zero, forced to defend the government’s retreat from net zero (&lt;a href=\"https://www.theguardian.com/commentisfree/2026/nov/17/britain-climate-action-plan-working-cop31-voters-jobs-home-prices\"&gt;Where do people want to see B",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "How COP31 fell short on easing access to finance for vulnerable nations",
-      "summary": "An action plan proposed by Australia failed to fly after small island nations and least-developed countries decided they couldn't back it, leaving a hastily improvised committee to take discussions forward The post How COP31 fell short on easing access to finance for vulnerable nations appeared first on Climate Home News.",
+      "headline": "Media reaction: Who is to blame for COP31 ‘failure’?",
+      "summary": "COP31 came to a dramatic close last weekend when a coalition of nations rejected the proposed “Antalya pact”, citing its&#8230; The post Media reaction: Who is to blame for COP31 ‘failure’? appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "EU plans €50 billion sovereign tech equity fund to boost quantum technology",
-      "summary": "The European Commission proposed a tech fund with a target size of €50 billion to boost quantum computing efforts. The bloc aims to keep up with the US and China in the global race.",
+      "headline": "EU-Indonesia trade deal opens new markets, but challenges remain",
+      "summary": "The agreement offers new export and investment opportunities for Jakarta and Brussels. But can Indonesia turn Europe&#039;s growing interest in its markets and critical minerals into sustainable gains at home?",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,20 +33,21 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Speech by Commissioner Hoekstra in the European Parliament's Plenary debate on the Outcome of the Antalya UN climate summit (COP 31)",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2593",
+          "source": "European Commission",
+          "description": "European Commission Speech Strasbourg, 26 Nov 2026 Ladies and gentlemen,\r\nGood morning to all of you.\r\nIn conversations and in negotiations you sometimes arrive at a moment where you simply have to say no.\r\nNo, bec...",
+          "published": "2026-11-26T10:23:20.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "China-linked battery projects could receive UK funding despite security warnings",
-          "link": "https://www.theguardian.com/business/2026/nov/25/china-battery-projects-uk-funding-security-warnings",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;China-made lithium-ion batteries, which are relatively low-cost, dominate Ofgem project shortlist&lt;/p&gt;&lt;p&gt;A string of battery projects linked to China are expected to be granted UK state subsidies despite deepening fears over the risk of foreign interference they could pose to Europe’s energy systems.&lt;/p&gt;&lt;p&gt;Ofgem, Great Britain’s energy regulator, published a provisional shortlist for a new “long duration” energy storage scheme in June. The list was dominated by pr",
-          "published": "2026-11-25T06:00:07.000Z",
-          "score": 9
-        },
         {
           "title": "The Labour party has lost the plot on net zero | Letters",
           "link": "https://www.theguardian.com/environment/2026/nov/25/the-labour-party-has-lost-the-plot-on-net-zero",
@@ -50,27 +57,35 @@
           "score": 7
         },
         {
-          "title": "From the archive: Dismantling Sellafield: the epic task of shutting down a nuclear site – podcast",
-          "link": "https://www.theguardian.com/news/audio/2026/nov/25/from-the-archive-dismantling-sellafield-the-epic-task-of-shutting-down-a-nuclear-site-podcast",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;We are raiding the Guardian long read archives to bring you some classic pieces from years past, with new introductions from the authors&lt;/p&gt;&lt;p&gt;This week, from 2022: Nothing is produced at Sellafield anymore. But making safe what is left behind is an almost unimaginably expensive and complex task that requires us to think not on a human timescale, but a planetary one&lt;/p&gt;&lt;p&gt;By Samanth Subramanian. Read by Raj Ghatak&lt;/p&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=\"https",
-          "published": "2026-11-25T05:00:07.000Z",
+          "title": "Kim Jong Un tours nuclear material sites, urges wider use of tactical nuclear weapons",
+          "link": "https://www.dw.com/en/kim-jong-un-tours-nuclear-material-sites-urges-wider-use-of-tactical-nuclear-weapons/a-80055887?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "North Korea&#039;s Kim Jong Un visited sites that produce nuclear material and told his military to focus on tactical weapons, saying his country&#039;s nuclear status is irreversible.",
+          "published": "2026-11-26T04:12:00.000Z",
           "score": 7
         },
         {
-          "title": "Russian attack damages Ukraine's energy and gas sites, cuts power in five regions - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPaDhyeUxrcS1sWnpSWnJPa1JGcXM0VDJ1U2FDamw1U2JxTm9May1fN1FPYmI2UjFqcTA0dmsxejlwS1NwRGpwR2RqQnN3cVJWU0VTcERHTzlhOHpzVmp6QUcwRUtNVzJQQjhmSTdmQ3h4YnptankzQ0RzRzZWWkk5LUNOTWRVT3dYUjhwZnh1NktRVjFpTGVadE5qTFZTb0xBU0lKbTdpdno1RmZrbzJHSDJxSHl6TzI0WDJqVml3?oc=5",
+          "title": "North Korea's Kim urges wider tactical nuclear weapons deployment on facility tour, KCNA says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPWmxZanZuLVM5QUcwTnVIS2FTQlJQQk1nQzRUd2dzUTRvUzZxbkpRMmxMdG1SUUNSLUgtNlRfbTRjcHpab2hGMHczTU02aDl6NnJOd2tXWlJ5MGJtQ0QtZDQ2SW4xOEVNVk55T1E4bmJEU2x6T3R0UUVmVnYzSllaZnRLNzRhOFp6dU80dEtUWTByZDloR1U4RlI1U1M1dF9wTnFaTTRYOUl1V05IVU43M0NtdC1TTVB6cWtoOGFLald3bU4xc2xlM1pBNkgyM0U?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPaDhyeUxrcS1sWnpSWnJPa1JGcXM0VDJ1U2FDamw1U2JxTm9May1fN1FPYmI2UjFqcTA0dmsxejlwS1NwRGpwR2RqQnN3cVJWU0VTcERHTzlhOHpzVmp6QUcwRUtNVzJQQjhmSTdmQ3h4YnptankzQ0RzRzZWWkk5LUNOTWRVT3dYUjhwZnh1NktRVjFpTGVadE5qTFZTb0xBU0lKbTdpdno1RmZrbzJHSDJxSHl6TzI0WDJqVml3?oc=5\" target=\"_blank\"&gt;Russian attack damages Ukraine's energy and gas sites, cuts power in five regions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-25T13:02:14.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxPWmxZanZuLVM5QUcwTnVIS2FTQlJQQk1nQzRUd2dzUTRvUzZxbkpRMmxMdG1SUUNSLUgtNlRfbTRjcHpab2hGMHczTU02aDl6NnJOd2tXWlJ5MGJtQ0QtZDQ2SW4xOEVNVk55T1E4bmJEU2x6T3R0UUVmVnYzSllaZnRLNzRhOFp6dU80dEtUWTByZDloR1U4RlI1U1M1dF9wTnFaTTRYOUl1V05IVU43M0NtdC1TTVB6cWtoOGFLald3bU4xc2xlM1pBNkgyM0U?oc=5\" target=\"_blank\"&gt;North Korea's Kim urges wider tactical nuclear weapons deployment on facility tour, KCNA says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f",
+          "published": "2026-11-25T21:22:00.000Z",
           "score": 7
         },
         {
-          "title": "Yemen's Houthis threaten to target Jeddah and other Saudi Red Sea ports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbmE5cEFGWGFLVzVEUlVvWlE5NzJaT2p0MTUxclgxejJ2ZHJPbTQ5d1BLNzh6R2tFb251aWQ4dHBUTDRtaTlETkVick9uV1hKVkdZSjNPbFk5M2NBd1oxQXptdzAtLS1zVzlidDBDVXBmWFAyVnRzMGRmZHNGZVk4T3Y1aV9ycGZFcWxGejZ0T29BbG9EUks5QjZ0bzFVRG05YlVQemt4UDdDSEY5cUZrYzNsSU9VMGVX?oc=5",
+          "title": "Indian farmers sell paddy stubble to biomass firms, reduce burning - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZ2s4MHVMRVdVNVM3MVBLSlJnTVlLSUU5NkJQNUw0N2xtaW9kR2tsTGZWRkVqLUx3VWdsemJpbVNUa1VsT2FNV01GODhtWHZnbXhNSkFvSURCQnBWQ29UMFA4VDRVT3daWFc1NUZZSi1TUXQ2WEZUYk51V3J1dS1oaXk5eS1jYWxLMnR2UlNPT241UUplTFk2OWItN0ZaLXNPQVpRREh2bnJHc2FmTjRwWGY1aGRTUnNrOVZZ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbmE5cEFGWGFLVzVEUlVvWlE5NzJaT2p0MTUxclgxejJ2ZHJPbTQ5d1BLNzh6R2tFb251aWQ4dHBUTDRtaTlETkVick9uV1hKVkdZSjNPbFk5M2NBd1oxQXptdzAtLS1zVzlidDBDVXBmWFAyVnRzMGRmZHNGZVk4T3Y1aV9ycGZFcWxGejZ0T29BbG9EUks5QjZ0bzFVRG05YlVQemt4UDdDSEY5cUZrYzNsSU9VMGVX?oc=5\" target=\"_blank\"&gt;Yemen's Houthis threaten to target Jeddah and other Saudi Red Sea ports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-25T02:42:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZ2s4MHVMRVdVNVM3MVBLSlJnTVlLSUU5NkJQNUw0N2xtaW9kR2tsTGZWRkVqLUx3VWdsemJpbVNUa1VsT2FNV01GODhtWHZnbXhNSkFvSURCQnBWQ29UMFA4VDRVT3daWFc1NUZZSi1TUXQ2WEZUYk51V3J1dS1oaXk5eS1jYWxLMnR2UlNPT241UUplTFk2OWItN0ZaLXNPQVpRREh2bnJHc2FmTjRwWGY1aGRTUnNrOVZZ?oc=5\" target=\"_blank\"&gt;Indian farmers sell paddy stubble to biomass firms, reduce burning&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-26T01:05:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Russia may offer Brunei floating nuclear plants, Rosatom says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNcEtjWU1NMFI0aG95UkwxYlJGbE83UUQwdlI3V1VjblBRcDl0NjQzUXUwSlhzMXQ2VjhHSnNZVWZqelkyRFB3VWx6RWNLcGVoMG56eGRoVjA5TnAzQm5VYThxZG02MlloQUpUME54WW5OSEt2WlFHSHcwZUNJbTlCSEVnbTluVXFwaEM1dXJMU1BZRHAtUDllYm5GVTBES1hzRXVmNjduU3ZzbmxrcVJSNlZR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNcEtjWU1NMFI0aG95UkwxYlJGbE83UUQwdlI3V1VjblBRcDl0NjQzUXUwSlhzMXQ2VjhHSnNZVWZqelkyRFB3VWx6RWNLcGVoMG56eGRoVjA5TnAzQm5VYThxZG02MlloQUpUME54WW5OSEt2WlFHSHcwZUNJbTlCSEVnbTluVXFwaEM1dXJMU1BZRHAtUDllYm5GVTBES1hzRXVmNjduU3ZzbmxrcVJSNlZR?oc=5\" target=\"_blank\"&gt;Russia may offer Brunei floating nuclear plants, Rosatom says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-25T19:40:34.000Z",
           "score": 7
         }
       ]
@@ -80,14 +95,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "How COP31 fell short on easing access to finance for vulnerable nations",
-          "link": "https://www.climatechangenews.com/2026/11/25/how-cop31-fell-short-on-easing-access-to-finance-for-vulnerable-nations/",
-          "source": "Climate Home News",
-          "description": "An action plan proposed by Australia failed to fly after small island nations and least-developed countries decided they couldn't back it, leaving a hastily improvised committee to take discussions forward The post How COP31 fell short on easing access to finance for vulnerable nations appeared first on Climate Home News.",
-          "published": "2026-11-25T16:31:30.000Z",
-          "score": 14
-        },
-        {
           "title": "Media reaction: Who is to blame for COP31 ‘failure’?",
           "link": "https://www.carbonbrief.org/media-reaction-who-is-to-blame-for-cop31-failure",
           "source": "Carbon Brief",
@@ -96,12 +103,12 @@
           "score": 10
         },
         {
-          "title": "Four ways Ethiopia can ensure COP32 is not like COP31",
-          "link": "https://www.climatechangenews.com/2026/11/25/four-ways-ethiopia-can-ensure-cop32-is-not-like-cop31/",
-          "source": "Climate Home News",
-          "description": "The COP32 presidency should focus on the Action Agenda and roadmaps, while giving negotiators more warning of what to expect in any cover decision The post Four ways Ethiopia can ensure COP32 is not like COP31 appeared first on Climate Home News.",
-          "published": "2026-11-25T13:32:38.000Z",
-          "score": 10
+          "title": "Australia projected to completely miss 2035 emissions target without new climate policies",
+          "link": "https://www.theguardian.com/australia-news/2026/nov/26/australia-projected-to-miss-2035-emissions-targets-climate-policies",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;New official projections show country nearly on track for 2030 goal but Chris Bowen warns of ‘undeniable headwinds’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Australia is nearly on track to reach its ",
+          "published": "2026-11-26T02:26:10.000Z",
+          "score": 7
         },
         {
           "title": "The Guardian view on rising energy prices: only bold action can win public confidence | Editorial",
@@ -112,11 +119,19 @@
           "score": 7
         },
         {
-          "title": "Spain has been hit hard by the climate crisis. Why are politicians saying so little about it before the election?",
-          "link": "https://www.theguardian.com/world/2026/nov/25/spain-election-climate-crisis",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Wildfires and floods can do little to move climate change up voters’ list of priorities, experts say&lt;/p&gt;&lt;p&gt;Beneath the blackened branches of a pine tree that rises high above a landscape of scorched hillsides and the odd charred and ruined house, two older men address the obvious. Four months after one of the summer’s many wildfires &lt;a href=\"https://www.theguardian.com/world/2026/jul/29/people-return-to-their-home-in-spain-after-wildfires\"&gt;threatened to devour the haml",
-          "published": "2026-11-25T13:00:26.000Z",
+          "title": "Cop31 collapse must be a catalyst for genuine climate action | Letters",
+          "link": "https://www.theguardian.com/environment/2026/nov/25/cop31-collapse-must-be-a-catalyst-for-genuine-climate-action",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Readers on the failure of the climate talks in Turkey and the lessons we can learn &lt;/p&gt;&lt;p&gt;The failure of Cop31, as commented on by Bill McGuire (&lt;a href=\"https://www.theguardian.com/commentisfree/2026/nov/24/deadly-floods-fires-cop31-collapsed-climate-crisis\"&gt;A year of deadly floods and fires – and yet Cop31 still collapsed. When will our leaders grasp the scale of this crisis?, 24 November&lt;/a&gt;), is the expression of the overwhelming momentum of the value system ",
+          "published": "2026-11-25T18:08:06.000Z",
+          "score": 7
+        },
+        {
+          "title": "What is the US permitting bill and would it actually help the climate?",
+          "link": "https://www.dw.com/en/what-is-the-us-permitting-bill-and-would-it-actually-help-the-climate/a-80007213?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "A sweeping US bill to speed up energy projects has rare bipartisan support. Supporters say it would unlock clean energy and lower bills, but critics say it&#039;s a gift to fossil fuels.",
+          "published": "2026-11-26T11:22:00.000Z",
           "score": 7
         }
       ]
@@ -126,19 +141,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "EU plans €50 billion sovereign tech equity fund to boost quantum technology",
-          "link": "https://www.dw.com/en/eu-plans-€50-billion-sovereign-tech-equity-fund-to-boost-quantum-technology/a-80047569?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU-Indonesia trade deal opens new markets, but challenges remain",
+          "link": "https://www.dw.com/en/eu-indonesia-trade-deal-opens-new-markets-but-challenges-remain/a-80059568?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The European Commission proposed a tech fund with a target size of €50 billion to boost quantum computing efforts. The bloc aims to keep up with the US and China in the global race.",
-          "published": "2026-11-25T13:44:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU plans €50 billion tech fund to challenge US and China, FT reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUUNwSjZLMGhnbjRUT3dCanR4NUNvbFlkOHpleklINGJuU3p4X1dqQlpTZHYtYm85OTBLSlQ2ZjVudXJrQ2xvazBWN3lydjZXOUdzdjJ0amJ0Ulh5X3dXVEszdTM5QTdlMU9PbkszRmd4djFaLWh1M0FxQ1E5NzJQeDY5QTdSN2lvSGJpNUlUTGlSeVJjeGFzX0xpdlFzbS1GNzlfdDZLMTIwY0E?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUUNwSjZLMGhnbjRUT3dCanR4NUNvbFlkOHpleklINGJuU3p4X1dqQlpTZHYtYm85OTBLSlQ2ZjVudXJrQ2xvazBWN3lydjZXOUdzdjJ0amJ0Ulh5X3dXVEszdTM5QTdlMU9PbkszRmd4djFaLWh1M0FxQ1E5NzJQeDY5QTdSN2lvSGJpNUlUTGlSeVJjeGFzX0xpdlFzbS1GNzlfdDZLMTIwY0E?oc=5\" target=\"_blank\"&gt;EU plans €50 billion tech fund to challenge US and China, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-25T05:19:00.000Z",
+          "description": "The agreement offers new export and investment opportunities for Jakarta and Brussels. But can Indonesia turn Europe&#039;s growing interest in its markets and critical minerals into sustainable gains at home?",
+          "published": "2026-11-26T13:41:00.000Z",
           "score": 8
         },
         {
@@ -148,40 +155,81 @@
           "description": "A review of the US president's financial disclosures shows Donald Trump's investment portfolios have regularly traded shares in the tech giant.",
           "published": "2026-11-25T16:42:11.000Z",
           "score": 2
+        },
+        {
+          "title": "Data centre rush drives biggest rise in Australian business investment since mining boom - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQREUxRXVvWkI3aUV3eDR0alBfeWhZdndNczM3bEVtNFpPQlZzRm90aHJpbVNqaW9wYmVPNGpwN3ItbFN2YUVGZWdCVkdKbnhGdjJMMDhmYUktX1lTSGR6SlFrR0JpZzY3SWk3ZGkzOFV6TUxYQk45aHZQV29qZmNPaUJkQndEa3NKeFVOQzRZa2dqb0ViRThkTUZYRDFXRkdfM1lHTWlEMnBtbzdrdVE5NXVDcHJiMHl5eUdjU2VjY19BUGFENjlzTjNrOFp5SThT?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQREUxRXVvWkI3aUV3eDR0alBfeWhZdndNczM3bEVtNFpPQlZzRm90aHJpbVNqaW9wYmVPNGpwN3ItbFN2YUVGZWdCVkdKbnhGdjJMMDhmYUktX1lTSGR6SlFrR0JpZzY3SWk3ZGkzOFV6TUxYQk45aHZQV29qZmNPaUJkQndEa3NKeFVOQzRZa2dqb0ViRThkTUZYRDFXRkdfM1lHTWlEMnBtbzdrdVE5NXVDcHJiMHl5eUdjU2VjY19BUGFENjlzTjNrOFp5SThT?oc=5\" target=\"_blank\"&gt;Data centre rush drives biggest rise in Australian business investment since mining boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f",
+          "published": "2026-11-26T02:30:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "US chip curbs will slow Asia data-center investment, Fitch says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOelNJWFVtc1BvNXp5TFMzbWtqVTdzc3JVM3pmY1hkR09YMi1WV3k3TzZ4VzFDQUpkcGJHVEZ2R0NqVnRNNmZsTThQZ0V3SlNzUmY1dUFURGtVckNOTXVQamlqSnVxTG5NVy1UVVR1dnlaNFE1MTluNFdUOTZzSHg2eHYzYTF1emwxMjZKUVIxcWhqYzhxTUdYZ0VZU3BsV1UxRHp3RTZnc2lyS2U5SDAydW5vcjVqaFFz?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOelNJWFVtc1BvNXp5TFMzbWtqVTdzc3JVM3pmY1hkR09YMi1WV3k3TzZ4VzFDQUpkcGJHVEZ2R0NqVnRNNmZsTThQZ0V3SlNzUmY1dUFURGtVckNOTXVQamlqSnVxTG5NVy1UVVR1dnlaNFE1MTluNFdUOTZzSHg2eHYzYTF1emwxMjZKUVIxcWhqYzhxTUdYZ0VZU3BsV1UxRHp3RTZnc2lyS2U5SDAydW5vcjVqaFFz?oc=5\" target=\"_blank\"&gt;US chip curbs will slow Asia data-center investment, Fitch says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-26T11:19:43.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "EU leaders seek agreement on long-term budget and Ukraine at summit",
+          "link": "https://www.dw.com/en/eu-leaders-seek-agreement-on-long-term-budget-and-ukraine-at-summit/live-80056415?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Leaders of the EU&#039;s 27 member states are expected to thrash out the EU&#039;s budget for 2028 to 2034. Ukraine and European Central Bank leadership are also up for discussion. DW has more.",
+          "published": "2026-11-26T07:31:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Leaders wrestle over EU's budget, Ukraine financing, as Le Pen focuses minds - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxONUFuMXFIM2VqWWZ2S2RBUFkzM1VzQjE0WkxhTDlreXM3OU45NDdRejhWUkRUQVVvQ2x2ZG1PT2JiNjNtYlRiYWFqSF9wWnQzR25hTFRjcjI5YkU0QmxLeEwwNlJkak5JaWo5QjVqTnZPQmt1bGdzZl9nZ0k2ZjRxSDMyUmY2eTQ4TEM2NnJaZDNPZUR4RUZKb2FqRkZ3eklRaXNicEFLc2VRSHZRenpZWEpPRlp4SWxBdi1Nbw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxONUFuMXFIM2VqWWZ2S2RBUFkzM1VzQjE0WkxhTDlreXM3OU45NDdRejhWUkRUQVVvQ2x2ZG1PT2JiNjNtYlRiYWFqSF9wWnQzR25hTFRjcjI5YkU0QmxLeEwwNlJkak5JaWo5QjVqTnZPQmt1bGdzZl9nZ0k2ZjRxSDMyUmY2eTQ4TEM2NnJaZDNPZUR4RUZKb2FqRkZ3eklRaXNicEFLc2VRSHZRenpZWEpPRlp4SWxBdi1Nbw?oc=5\" target=\"_blank\"&gt;Leaders wrestle over EU's budget, Ukraine financing, as Le Pen focuses minds&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-26T05:02:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Bulgaria ready to back EU loan for Ukraine for civilian aid, Radev says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPR2dRYUZkbTc4Q2lNSlNIS2M3c2xRbGpoc20zbGcyZk5yWXQ2SlhtQ2VTMGZ2eElTY3ltaDlXd3RXWlVXR1hhV2JldklxeDlockpsMzU4cEotcFg4TGZpcWJPRHh0VmM5STFyMmlmRnlsak01VzUwSnFSaC0taTBKZ3Fhb2lqRlZDUThIQVNxa2U0bktBRHIyaG5JNnpSU2Y4UDcxcEIxMXNzQzRI?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPR2dRYUZkbTc4Q2lNSlNIS2M3c2xRbGpoc20zbGcyZk5yWXQ2SlhtQ2VTMGZ2eElTY3ltaDlXd3RXWlVXR1hhV2JldklxeDlockpsMzU4cEotcFg4TGZpcWJPRHh0VmM5STFyMmlmRnlsak01VzUwSnFSaC0taTBKZ3Fhb2lqRlZDUThIQVNxa2U0bktBRHIyaG5JNnpSU2Y4UDcxcEIxMXNzQzRI?oc=5\" target=\"_blank\"&gt;Bulgaria ready to back EU loan for Ukraine for civilian aid, Radev says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-26T09:12:09.000Z",
+          "score": 8
+        },
+        {
+          "title": "Italy's Meloni talks tough on EU budget, warns Ukraine on Mediterranean strike - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNT1MybVpBY2F5czNzeEJodWk4Mk5PMnB4Q3FJaFpnTGNLM0hDVXBkRUw1ellSVTZPeDZzalo2UGNFbEhBYUdhWTRIZ1Y3NThpcFdEWjRIeGRyc1VCNVhaM3ZjSWxJc2hNcVlFUV9QMkVPN01JRzl5OHpRMDZ0NUlaclBuZXlVQ3JxdFlxRnZBR1hONmppczZNYktQUVFmTnlCSmhKZ1hlU1F6Tnk2OHprbTlYcWg1amRYZkR1cjFn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNT1MybVpBY2F5czNzeEJodWk4Mk5PMnB4Q3FJaFpnTGNLM0hDVXBkRUw1ellSVTZPeDZzalo2UGNFbEhBYUdhWTRIZ1Y3NThpcFdEWjRIeGRyc1VCNVhaM3ZjSWxJc2hNcVlFUV9QMkVPN01JRzl5OHpRMDZ0NUlaclBuZXlVQ3JxdFlxRnZBR1hONmppczZNYktQUVFmTnlCSmhKZ1hlU1F6Tnk2OHprbTlYcWg1amRYZkR1cjFn?oc=5\" target=\"_blank\"&gt;Italy's Meloni talks tough on EU budget, warns Ukraine on Mediterranean strike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-26T12:35:49.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU must set out a new timeline for cage-free farming, court rules",
-          "link": "https://www.dw.com/en/eu-must-set-out-a-new-timeline-for-cage-free-farming-court-rules/a-80051729?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "European General Court ruled that the European Commission has failed to set out a timeline after pledging to end caged farming by the end of 2023.",
-          "published": "2026-11-25T15:36:00.000Z",
-          "score": 8
+          "title": "New UK-EU treaty has 10-year termination clause",
+          "link": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Text of the treaties will be published this afternoon, alongside legislation designed to enact the bulk of the deal.",
+          "published": "2026-11-26T09:59:14.000Z",
+          "score": 12
         },
         {
-          "title": "US plans new tariffs on EU, China and 12 others",
-          "link": "https://www.dw.com/en/us-plans-new-tariffs-on-eu-china-and-12-others/a-80050872?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The Trump administration is planning new import duties of up to 20% to counter excessive manufacturing abroad. The measures could put further pressure on US consumers already struggling with high living costs.",
-          "published": "2026-11-25T14:54:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Eurostar cancels London, Paris, Brussels trains due to strike - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQVk9yeVJpc3RkMmxRSHlNeFpZekpIMkJtY2F5TDdVc2prWGd6V1o2aUduOWNOR1VxUUdSbVhVSHJHRUNGcEdBNTlaV3kydXk1ZWVQUWJPSkloV0pkOXpzWGFVb0Y5ZHBxTmFxSzhTX2s3a2FnQ09oOWZ1dWtCaW9oZUdKaThENENLaXB4Ul85OEpmTG9CQzdYemp5bkFodnM?oc=5",
+          "title": "Senegal parliament adopts resolution opposing president's decision to implement budget - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSXB4M0Z3YmVRY00wSW9jUGpyU0hzT2h0a0tFel9wcXFIZFVpYWphTTI5Qm1nSDYxOW5ueVU2OHdLUGx2OFlDOWV2YTg5Wjl4Z0I5VmtWWFZkS0lDdU9IUWZnTjlicHMwMkpURXZaVC1RYzJrRFg5TjJrM3VTdFJ6S29FcFhwSTNpOEluWWJTZlZsdi01amwyZWNja0ptZkJnMGRiWnFJNkE3T3FwOHZyWEhfRVpKTTkyd0pmdU4wM0hFZw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQVk9yeVJpc3RkMmxRSHlNeFpZekpIMkJtY2F5TDdVc2prWGd6V1o2aUduOWNOR1VxUUdSbVhVSHJHRUNGcEdBNTlaV3kydXk1ZWVQUWJPSkloV0pkOXpzWGFVb0Y5ZHBxTmFxSzhTX2s3a2FnQ09oOWZ1dWtCaW9oZUdKaThENENLaXB4Ul85OEpmTG9CQzdYemp5bkFodnM?oc=5\" target=\"_blank\"&gt;Eurostar cancels London, Paris, Brussels trains due to strike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-25T09:45:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSXB4M0Z3YmVRY00wSW9jUGpyU0hzT2h0a0tFel9wcXFIZFVpYWphTTI5Qm1nSDYxOW5ueVU2OHdLUGx2OFlDOWV2YTg5Wjl4Z0I5VmtWWFZkS0lDdU9IUWZnTjlicHMwMkpURXZaVC1RYzJrRFg5TjJrM3VTdFJ6S29FcFhwSTNpOEluWWJTZlZsdi01amwyZWNja0ptZkJnMGRiWnFJNkE3T3FwOHZyWEhfRVpKTTkyd0pmdU4wM0hFZw?oc=5\" target=\"_blank\"&gt;Senegal parliament adopts resolution opposing president's decision to implement budget&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
+          "published": "2026-11-25T21:23:43.000Z",
           "score": 8
         },
         {
@@ -193,20 +241,28 @@
           "score": 8
         },
         {
-          "title": "NBA plans 10 billion euro push for Europe basketball arenas - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQM2U1Z1NtOTRaTW5Ya2I1ZlQyZ0dnX21XeEFWQ1pyMnJmcFZiOW9QTkk5QjNlbk9DMEJqenk5TkdLY0t0MVBMRkFHYU04bUFmM0xrelVuNmNmdVMzVkFQRE9JaHBOaTZvWXpqWkV6Rk1ESjdkVlBYSjZFcEM3Z3F5bl9BTWJ0Nks3QlBqV1VmdDNqaHg3aG9TUA?oc=5",
+          "title": "BoE's Bailey sees lower inflation peak if energy prices stabilise - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTmItUFQ0TDJDczBHR3RFWDhnTWd1MkVMcjcwOVAwSmxxYTNqcWlqUEpYY21kZXFnUWtBMndyWW9JeUtHdVB1dV9hVUtMQUtVcDVFTk9XLW5McVNxcnNCdGpOd3oyTDBlbnJpQndONWpFNVRSYk40R2gycHVIQ0p1blVGWmFDeS1CdUxEZ3FvcThZZHZmWENsODYzY1M4UklWVU5SLWI2NGwyLVhFSGc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQM2U1Z1NtOTRaTW5Ya2I1ZlQyZ0dnX21XeEFWQ1pyMnJmcFZiOW9QTkk5QjNlbk9DMEJqenk5TkdLY0t0MVBMRkFHYU04bUFmM0xrelVuNmNmdVMzVkFQRE9JaHBOaTZvWXpqWkV6Rk1ESjdkVlBYSjZFcEM3Z3F5bl9BTWJ0Nks3QlBqV1VmdDNqaHg3aG9TUA?oc=5\" target=\"_blank\"&gt;NBA plans 10 billion euro push for Europe basketball arenas&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-25T13:03:44.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPTmItUFQ0TDJDczBHR3RFWDhnTWd1MkVMcjcwOVAwSmxxYTNqcWlqUEpYY21kZXFnUWtBMndyWW9JeUtHdVB1dV9hVUtMQUtVcDVFTk9XLW5McVNxcnNCdGpOd3oyTDBlbnJpQndONWpFNVRSYk40R2gycHVIQ0p1blVGWmFDeS1CdUxEZ3FvcThZZHZmWENsODYzY1M4UklWVU5SLWI2NGwyLVhFSGc?oc=5\" target=\"_blank\"&gt;BoE's Bailey sees lower inflation peak if energy prices stabilise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-25T16:20:48.000Z",
+          "score": 7
+        },
+        {
+          "title": "Indian court tightens food labelling proposal, asks global food firms to end 'double standards' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQOXlHUEdKdndCTE54MEMyVERBWFVsZXQ4TXZYTmN4SVB1TF80bTVUbExoMEZlMWxKdkJJZUVlVHQzczQ3MnJlZGZ1RnZWZjZJbVBiT1pyX3pyc24xY3dtSkRIUTlpUENzNkJiREJDWnBaU2RINVFkQzU1ckU2ckFEMVhfazJXaW02Ykdra2pwSnlwcWJxY0NhRHFhekhxdHFBVHJVQUJGRk1RbmxXbzl4ZWF3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQOXlHUEdKdndCTE54MEMyVERBWFVsZXQ4TXZYTmN4SVB1TF80bTVUbExoMEZlMWxKdkJJZUVlVHQzczQ3MnJlZGZ1RnZWZjZJbVBiT1pyX3pyc24xY3dtSkRIUTlpUENzNkJiREJDWnBaU2RINVFkQzU1ckU2ckFEMVhfazJXaW02Ykdra2pwSnlwcWJxY0NhRHFhekhxdHFBVHJVQUJGRk1RbmxXbzl4ZWF3?oc=5\" target=\"_blank\"&gt;Indian court tightens food labelling proposal, asks global food firms to end 'double standards'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-26T05:59:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 412,
-    "articlesLast24h": 184,
-    "afterDedup": 165,
+    "totalArticlesScanned": 375,
+    "articlesLast24h": 177,
+    "afterDedup": 164,
     "feedsQueried": 19
   }
 }
