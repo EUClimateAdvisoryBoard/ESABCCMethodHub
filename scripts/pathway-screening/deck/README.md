@@ -165,3 +165,32 @@ The sector production index for 2024 is 86 and the intensity index 70.
 
 `assemble.py` places the composite `f3_industry_combined.png`; the PIL step that builds it is in the run notes. The right-hand
 axis of the scenario chart now shows crude steel and cement in tonnes, plus chemicals and manufacturing on the volume index.
+
+## Value-based vs tonnage-based production (26 Nov 2026)
+
+`fig_method_compare.py` compares the two production measures and their effect on the decomposition. It writes
+`fig_method_compare.png` and `method_comparison.json`. The chemicals weights are in `chem_weights.json`.
+
+| Branch | Value index 2024 (2005 = 100) | Tonnage 2024 | Reading |
+|---|---|---|---|
+| Iron and steel | 72 | Crude steel 71 | The measures agree |
+| Minerals | 74 | Cement 67 (lime 82) | Tonnes fall more |
+| Chemicals | 96 | Basket 65 (ammonia 67, nitric acid 64, adipic acid 71, ethylene 61) | Large gap: value held up while basic-chemical tonnes fell by a third |
+| Paper | 95 | Paper and board 83 (FAOSTAT, mostly estimated) | Tonnes fall more |
+| Non-ferrous | 80 | Aluminium proxy 25 | Proxy not usable |
+
+| Variant | Production effect | Intensity effect | Output share |
+|---|---|---|---|
+| V: value index for all branches | −100 | −262 | 28 % |
+| T1: tonnes for steel and cement (current slides) | −122 | −240 | 34 % |
+| T2: tonnes where available (adds the chemicals basket and paper) | −179 | −182 | 50 % |
+
+**Choice of measure.** The measure chosen moves the output share of the 2005–2024 decline from 28 % to 50 %. Almost all of that
+spread comes from chemicals.
+
+**Caveats for T2:**
+- The chemicals basket covers the four products with process emissions, weighted by their 2005 emissions (2.B.1, 2.B.2, 2.B.3, 2.B.8).
+- It is applied to the whole branch, including combustion (1.A.2.c). This assumes chemicals' fuel use follows basic-chemical output.
+- Nitric and adipic acid emissions fell by over 95 % through N₂O abatement. That abatement remains an intensity effect in every variant.
+
+**Unchanged across variants:** food, other industry and non-ferrous metals keep the volume index in all three variants.
