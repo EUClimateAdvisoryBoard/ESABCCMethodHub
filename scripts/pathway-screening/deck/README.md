@@ -93,3 +93,39 @@ Slide 8 has a right-hand axis "Index, 2005 = 100". It is scaled so that 100 equa
 - **Partial:** emissions fell further (−41 %) than heavy-industry output (−4 % to −26 %), so lower output explains part of the decline, not all of it.
 
 The slide shows the series without a causal claim. Any statement on it should keep this distinction.
+
+## GHG intensity of industry (26 Nov 2026)
+
+`fig_intensity.py` writes two figures:
+- `fig_industry_intensity.png`: the sector index lines, the sector waterfall and the branch breakdown.
+- `fig_steel_intensity.png`: iron and steel in the layout of the Secretariat's example.
+
+The data, with sources and method, are in `industry_intensity.json`.
+
+**Method.** Each industry inventory category is paired with the Eurostat production index of its branch:
+
+| Branch | Inventory categories | Production index |
+|---|---|---|
+| Iron and steel | 1.A.2.a + 2.C.1 | C24.1 |
+| Non-ferrous metals | 1.A.2.b + 2.C excl. 2.C.1 | C24.4 |
+| Chemicals | 1.A.2.c + 2.B | C20 |
+| Pulp and paper | 1.A.2.d | C17 |
+| Food and drink | 1.A.2.e | C10–12 |
+| Non-metallic minerals | 1.A.2.f + 2.A | C23 |
+| Other industry | 1.A.2.g + 2.E + 2.H | C (proxy) |
+
+Intensity is emissions divided by the production index. The 2005–2024 change is split into a production effect and an intensity
+effect with the additive LMDI-I method, which leaves no residual. The sector production index weights the branch indices by 2005
+emissions.
+
+**Results (Mt CO₂e, 2005 → 2024):**
+- **Industry:** 906 → 545. Production effect −100 (28 %), intensity effect −262 (72 %). Production index 88, intensity index 68.
+- **By branch:** iron and steel −50 / −23; non-metallic minerals −61 / −46; chemicals −6 / −92; other industry +17 / −59; food +5 / −19; paper −1 / −13; non-ferrous −4 / −9.
+
+**Reading.** Lower output dominates only in iron and steel and is about half of the change in minerals. Across industry as a whole,
+lower intensity contributed more, chemicals above all.
+
+**Comparison with the Secretariat's steel chart.** That chart shows −54 / −19. It applies the output change to 2005 emissions
+(193 × −27.6 % ≈ −53) and puts the remainder in intensity. LMDI splits the interaction term between the two, giving −50 / −23.
+
+**Data vintage.** The sector totals come from the current Eurostat release and are 1–3 % above the EEA series on the industry slide.
