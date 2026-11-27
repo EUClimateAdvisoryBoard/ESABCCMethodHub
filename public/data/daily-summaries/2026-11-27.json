@@ -1,30 +1,24 @@
 {
   "date": "2026-11-27",
-  "generatedAt": "2026-11-27T00:58:22.189Z",
+  "generatedAt": "2026-11-27T14:48:10.555Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 27 November 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Speech by Commissioner Hoekstra in the European Parliament's Plenary debate on the Outcome of the Antalya UN climate summit (COP 31)",
-      "summary": "European Commission Speech Strasbourg, 26 Nov 2026 Ladies and gentlemen,\r\nGood morning to all of you.\r\nIn conversations and in negotiations you sometimes arrive at a moment where you simply have to say no.\r\nNo, bec...",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "Indian farmers sell paddy stubble to biomass firms, reduce burning - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZ2s4MHVMRVdVNVM3MVBLSlJnTVlLSUU5NkJQNUw0N2xtaW9kR2tsTGZWRkVqLUx3VWdsemJpbVNUa1VsT2FNV01GODhtWHZnbXhNSkFvSURCQnBWQ29UMFA4VDRVT3daWFc1NUZZSi1TUXQ2WEZUYk51V3J1dS1oaXk5eS1jYWxLMnR2UlNPT241UUplTFk2OWItN0ZaLXNPQVpRREh2bnJHc2FmTjRwWGY1aGRTUnNrOVZZ?oc=5\" target=\"_blank\"&gt;Indian farmers sell paddy stubble to biomass firms, reduce burning&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "IAEA working with Russia, Ukraine on ceasefire to repair power link at Zaporizhzhia nuclear plant - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQXlld0FmMFoxdUVjNlhmNURVMmZwLXJNcXZrVkhEQWxOLS14ajJFb2VQZzBOOUZKM1Z1VGwzLURERG9lUWdGczh0bTZGTGJqdC00Nk9tYjZLR21iN1ZRbEtmTHhnRFAzV3lYRzVRN2txb3h0TUxoeENQbmNTeHlmN1AtNnBnTE1rYTRnYmxxTXNBUkh1WTdZVHpBN3h2XzNYMXlUaWVLRmlOR051bTIwbE9BWVhJRjRHSWxVd0pXQy1tdnc?oc=5\" target=\"_blank\"&gt;IAEA working with Russia, Ukraine on ceasefire to repair power link at Zaporizhzhia nuclear plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "What is the US permitting bill and would it actually help the climate?",
-      "summary": "Sweeping US legislation to speed up energy projects has found rare bipartisan support. Supporters say it would unlock clean energy and lower energy bills, but critics say it&#039;s a gift to fossil fuels.",
+      "headline": "Council to set London's highest littering fines",
+      "summary": "Fines for littering will rise from £500 to £750 in Harrow, while fly-tipping will see a £5,000 penalty.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "EU-Indonesia trade deal opens new markets, but challenges remain",
-      "summary": "The agreement offers new export and investment opportunities for Jakarta and Brussels. But can Indonesia turn Europe&#039;s growing interest in its markets and critical minerals into sustainable gains at home?",
+      "headline": "On farewell trip, Steinmeier calls for more investment in Africa",
+      "summary": "Cote d&#039;Ivoire, Ghana, Kenya: On his last trip to Africa, outgoing German President Frank-Walter Steinmeier called on companies at home to be bolder and seize opportunities in Africa.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,27 +27,18 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Speech by Commissioner Hoekstra in the European Parliament's Plenary debate on the Outcome of the Antalya UN climate summit (COP 31)",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2593",
-          "source": "European Commission",
-          "description": "European Commission Speech Strasbourg, 26 Nov 2026 Ladies and gentlemen,\r\nGood morning to all of you.\r\nIn conversations and in negotiations you sometimes arrive at a moment where you simply have to say no.\r\nNo, bec...",
-          "published": "2026-11-26T10:23:20.000Z",
-          "score": 27
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Indian farmers sell paddy stubble to biomass firms, reduce burning - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZ2s4MHVMRVdVNVM3MVBLSlJnTVlLSUU5NkJQNUw0N2xtaW9kR2tsTGZWRkVqLUx3VWdsemJpbVNUa1VsT2FNV01GODhtWHZnbXhNSkFvSURCQnBWQ29UMFA4VDRVT3daWFc1NUZZSi1TUXQ2WEZUYk51V3J1dS1oaXk5eS1jYWxLMnR2UlNPT241UUplTFk2OWItN0ZaLXNPQVpRREh2bnJHc2FmTjRwWGY1aGRTUnNrOVZZ?oc=5",
+          "title": "IAEA working with Russia, Ukraine on ceasefire to repair power link at Zaporizhzhia nuclear plant - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQXlld0FmMFoxdUVjNlhmNURVMmZwLXJNcXZrVkhEQWxOLS14ajJFb2VQZzBOOUZKM1Z1VGwzLURERG9lUWdGczh0bTZGTGJqdC00Nk9tYjZLR21iN1ZRbEtmTHhnRFAzV3lYRzVRN2txb3h0TUxoeENQbmNTeHlmN1AtNnBnTE1rYTRnYmxxTXNBUkh1WTdZVHpBN3h2XzNYMXlUaWVLRmlOR051bTIwbE9BWVhJRjRHSWxVd0pXQy1tdnc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZ2s4MHVMRVdVNVM3MVBLSlJnTVlLSUU5NkJQNUw0N2xtaW9kR2tsTGZWRkVqLUx3VWdsemJpbVNUa1VsT2FNV01GODhtWHZnbXhNSkFvSURCQnBWQ29UMFA4VDRVT3daWFc1NUZZSi1TUXQ2WEZUYk51V3J1dS1oaXk5eS1jYWxLMnR2UlNPT241UUplTFk2OWItN0ZaLXNPQVpRREh2bnJHc2FmTjRwWGY1aGRTUnNrOVZZ?oc=5\" target=\"_blank\"&gt;Indian farmers sell paddy stubble to biomass firms, reduce burning&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-26T01:05:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQXlld0FmMFoxdUVjNlhmNURVMmZwLXJNcXZrVkhEQWxOLS14ajJFb2VQZzBOOUZKM1Z1VGwzLURERG9lUWdGczh0bTZGTGJqdC00Nk9tYjZLR21iN1ZRbEtmTHhnRFAzV3lYRzVRN2txb3h0TUxoeENQbmNTeHlmN1AtNnBnTE1rYTRnYmxxTXNBUkh1WTdZVHpBN3h2XzNYMXlUaWVLRmlOR051bTIwbE9BWVhJRjRHSWxVd0pXQy1tdnc?oc=5\" target=\"_blank\"&gt;IAEA working with Russia, Ukraine on ceasefire to repair power link at Zaporizhzhia nuclear plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
+          "published": "2026-11-27T00:29:00.000Z",
           "score": 7
         },
         {
@@ -61,23 +46,23 @@
           "link": "https://www.bbc.co.uk/news/articles/ckm2mz3prq77o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Almost one million customers in the US had no power on Thursday evening as storms descended on both US coasts, bringing wind gusts, heavy rain and flooding.",
-          "published": "2026-11-27T00:52:11.000Z",
+          "published": "2026-11-27T05:15:26.000Z",
           "score": 4
         },
         {
-          "title": "Hugh Jackman not wrong to be ‘concerned’ about Woodside gas project near WA reef, Murray Watt says",
-          "link": "https://www.theguardian.com/australia-news/2026/nov/27/hugh-jackman-woodside-gas-project-wa-reef-murray-watt",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Environment minister says he understands concerns about potential impact after 150 scientists and celebrities urged the government to block the project&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;daily political email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&g",
-          "published": "2026-11-26T14:00:35.000Z",
-          "score": 2
+          "title": "Hundreds of thousands still without power after storms hit US on Thanksgiving",
+          "link": "https://www.bbc.co.uk/news/articles/cre3dj5n7dpwo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Pennsylvania and neighbouring states remain badly affected on Friday after both coasts were lashed with wind and rain.",
+          "published": "2026-11-27T10:26:28.000Z",
+          "score": 4
         },
         {
-          "title": "Watch: Alaskan flying team airdrops Thanksgiving turkeys to remote communities",
-          "link": "https://www.bbc.co.uk/news/videos/cvze7yk7dy5lo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "For the last few years, the \"turkey bombers\" have taken to the skies for the benefit of residents in off-grid communities.",
-          "published": "2026-11-26T09:22:34.000Z",
+          "title": "Coal India unit Mahanadi valued at $9.7 billion after subdued debut - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZlFJY2VTQW9YYWN4TW9mS2VPOVNPeDN0UmdBYU1mWjFoZXJOMkxXQV9nWmFLNW5IVllOMHp3aVpycVpLTnV4MGg3VzlrX3hBcGtsRjJUNDFaa081S1NkNHdpMjFtS0JUVnhoYWtia3hVTGhmaEtxbWdBbE9GdWd0cnZlNVpPOVZ1blQydHpNNmk2MHZtUEFxYmxGQTc4a1RqRTdVVmJIeHBGZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZlFJY2VTQW9YYWN4TW9mS2VPOVNPeDN0UmdBYU1mWjFoZXJOMkxXQV9nWmFLNW5IVllOMHp3aVpycVpLTnV4MGg3VzlrX3hBcGtsRjJUNDFaa081S1NkNHdpMjFtS0JUVnhoYWtia3hVTGhmaEtxbWdBbE9GdWd0cnZlNVpPOVZ1blQydHpNNmk2MHZtUEFxYmxGQTc4a1RqRTdVVmJIeHBGZw?oc=5\" target=\"_blank\"&gt;Coal India unit Mahanadi valued at $9.7 billion after subdued debut&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-27T04:17:00.000Z",
           "score": 2
         },
         {
@@ -95,19 +80,19 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "What is the US permitting bill and would it actually help the climate?",
-          "link": "https://www.dw.com/en/what-is-the-us-permitting-bill-and-would-it-actually-help-the-climate/a-80007213?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Sweeping US legislation to speed up energy projects has found rare bipartisan support. Supporters say it would unlock clean energy and lower energy bills, but critics say it&#039;s a gift to fossil fuels.",
-          "published": "2026-11-26T11:22:00.000Z",
-          "score": 11
+          "title": "Council to set London's highest littering fines",
+          "link": "https://www.bbc.co.uk/news/articles/ckj0590g84nno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Fines for littering will rise from £500 to £750 in Harrow, while fly-tipping will see a £5,000 penalty.",
+          "published": "2026-11-27T06:11:37.000Z",
+          "score": 8
         },
         {
-          "title": "Australia projected to completely miss 2035 emissions target without new climate policies",
-          "link": "https://www.theguardian.com/australia-news/2026/nov/26/australia-projected-to-miss-2035-emissions-targets-climate-policies",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;New official projections show country nearly on track for 2030 goal but Chris Bowen warns of ‘undeniable headwinds’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Australia is nearly on track to reach its ",
-          "published": "2026-11-26T02:26:10.000Z",
+          "title": "Lab-houses test indoor air quality to help build UK homes for future",
+          "link": "https://www.theguardian.com/environment/2026/nov/27/lab-houses-test-indoor-air-quality-university-york",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Researchers hope purpose-built structures at University of York will show best ways to reduce harmful pollutants&lt;/p&gt;&lt;p&gt;Homes of the future may offer greater protection from outdoor air pollution, according to initial results from &lt;a href=\"https://www.york.ac.uk/news-and-events/news/2026/research/test-house-indoor-pollution\"&gt;two experimental houses&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.york.ac.uk/environment-geography/people/nicola-carslaw/\"&gt;Prof Nicol",
+          "published": "2026-11-27T06:00:55.000Z",
           "score": 7
         },
         {
@@ -123,7 +108,7 @@
           "link": "https://www.theguardian.com/politics/2026/nov/26/labour-split-over-rosebank-oilfield-exposed-by-letter-from-nearly-100-mps",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Exclusive: Frontbenchers join scores of party colleagues urging Burnham not to let ministers approve project&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2026/nov/26/labour-mp-letter-andy-burnham-rosebank-oil-climate-crisis\"&gt;Opinion: Why Labour MPs are opposing Rosebank&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/audio/2026/nov/26/rosebank-rebellion-are-resignations-next-podcast\"&gt;P",
-          "published": "2026-11-26T16:13:09.000Z",
+          "published": "2026-11-27T08:39:59.000Z",
           "score": 4
         },
         {
@@ -141,14 +126,6 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "EU-Indonesia trade deal opens new markets, but challenges remain",
-          "link": "https://www.dw.com/en/eu-indonesia-trade-deal-opens-new-markets-but-challenges-remain/a-80059568?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The agreement offers new export and investment opportunities for Jakarta and Brussels. But can Indonesia turn Europe&#039;s growing interest in its markets and critical minerals into sustainable gains at home?",
-          "published": "2026-11-26T13:41:00.000Z",
-          "score": 8
-        },
-        {
           "title": "On farewell trip, Steinmeier calls for more investment in Africa",
           "link": "https://www.dw.com/en/on-farewell-trip-steinmeier-calls-for-more-investment-in-africa/a-80067717?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -157,27 +134,11 @@
           "score": 2
         },
         {
-          "title": "US chip curbs will slow Asia data-center investment, Fitch says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOelNJWFVtc1BvNXp5TFMzbWtqVTdzc3JVM3pmY1hkR09YMi1WV3k3TzZ4VzFDQUpkcGJHVEZ2R0NqVnRNNmZsTThQZ0V3SlNzUmY1dUFURGtVckNOTXVQamlqSnVxTG5NVy1UVVR1dnlaNFE1MTluNFdUOTZzSHg2eHYzYTF1emwxMjZKUVIxcWhqYzhxTUdYZ0VZU3BsV1UxRHp3RTZnc2lyS2U5SDAydW5vcjVqaFFz?oc=5",
+          "title": "EXCLUSIVE: Fund I Squared in advanced talks to buy German advertiser Stroeer, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNczljLXQxNFBSZGxqNkNOd1JFSGFtQ2ExYTlWdTBzSWRLMnJQRl9pLUhJLWd5UnNidXJKWkxBWTdIZGhLRm5xNk9LMkp0MWJDOHM1bnB5WVdmbHJCN1hqSlYtb241N0N0eE1mbkVKTnA5M1VHaWswbjRib2hRc2lDVzRNMVpYWTVYai1GMUozLUl6alQwX2VaUFRNQjAyZDYzVVlvWHZRM2JKc3BMeEF3ZE9JVQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOelNJWFVtc1BvNXp5TFMzbWtqVTdzc3JVM3pmY1hkR09YMi1WV3k3TzZ4VzFDQUpkcGJHVEZ2R0NqVnRNNmZsTThQZ0V3SlNzUmY1dUFURGtVckNOTXVQamlqSnVxTG5NVy1UVVR1dnlaNFE1MTluNFdUOTZzSHg2eHYzYTF1emwxMjZKUVIxcWhqYzhxTUdYZ0VZU3BsV1UxRHp3RTZnc2lyS2U5SDAydW5vcjVqaFFz?oc=5\" target=\"_blank\"&gt;US chip curbs will slow Asia data-center investment, Fitch says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-26T11:19:43.000Z",
-          "score": 2
-        },
-        {
-          "title": "Guinea lawmakers back sovereign wealth fund fuelled by Simandou revenue - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQVmlocmwtN0RlSmdpSUUxQ3RTUWxYdTB6YWRxTXpJdlYyT1d2MG1HMjhZQnhZLTJ4NW5JM0pPMFE1Q3RnQ2JMS0xpUXdpUmstQUhzSGxocVNLczZHRG5uZ0Q5d0FwbWJlMkE1dkNkbDY4d1RCaWl4MWRiVXAwdU0yY1oxanNTbzdjYUtJcGk3LWxndFRoVkxMYnNwdHM4cHdvS1ZnRHJSa1hjQVh4TGRqVHVtNk5za2IwU1o5cw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQVmlocmwtN0RlSmdpSUUxQ3RTUWxYdTB6YWRxTXpJdlYyT1d2MG1HMjhZQnhZLTJ4NW5JM0pPMFE1Q3RnQ2JMS0xpUXdpUmstQUhzSGxocVNLczZHRG5uZ0Q5d0FwbWJlMkE1dkNkbDY4d1RCaWl4MWRiVXAwdU0yY1oxanNTbzdjYUtJcGk3LWxndFRoVkxMYnNwdHM4cHdvS1ZnRHJSa1hjQVh4TGRqVHVtNk5za2IwU1o5cw?oc=5\" target=\"_blank\"&gt;Guinea lawmakers back sovereign wealth fund fuelled by Simandou revenue&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-26T13:45:43.000Z",
-          "score": 2
-        },
-        {
-          "title": "Data centre rush drives biggest rise in Australian business investment since mining boom - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQREUxRXVvWkI3aUV3eDR0alBfeWhZdndNczM3bEVtNFpPQlZzRm90aHJpbVNqaW9wYmVPNGpwN3ItbFN2YUVGZWdCVkdKbnhGdjJMMDhmYUktX1lTSGR6SlFrR0JpZzY3SWk3ZGkzOFV6TUxYQk45aHZQV29qZmNPaUJkQndEa3NKeFVOQzRZa2dqb0ViRThkTUZYRDFXRkdfM1lHTWlEMnBtbzdrdVE5NXVDcHJiMHl5eUdjU2VjY19BUGFENjlzTjNrOFp5SThT?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQREUxRXVvWkI3aUV3eDR0alBfeWhZdndNczM3bEVtNFpPQlZzRm90aHJpbVNqaW9wYmVPNGpwN3ItbFN2YUVGZWdCVkdKbnhGdjJMMDhmYUktX1lTSGR6SlFrR0JpZzY3SWk3ZGkzOFV6TUxYQk45aHZQV29qZmNPaUJkQndEa3NKeFVOQzRZa2dqb0ViRThkTUZYRDFXRkdfM1lHTWlEMnBtbzdrdVE5NXVDcHJiMHl5eUdjU2VjY19BUGFENjlzTjNrOFp5SThT?oc=5\" target=\"_blank\"&gt;Data centre rush drives biggest rise in Australian business investment since mining boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f",
-          "published": "2026-11-26T02:30:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNczljLXQxNFBSZGxqNkNOd1JFSGFtQ2ExYTlWdTBzSWRLMnJQRl9pLUhJLWd5UnNidXJKWkxBWTdIZGhLRm5xNk9LMkp0MWJDOHM1bnB5WVdmbHJCN1hqSlYtb241N0N0eE1mbkVKTnA5M1VHaWswbjRib2hRc2lDVzRNMVpYWTVYai1GMUozLUl6alQwX2VaUFRNQjAyZDYzVVlvWHZRM2JKc3BMeEF3ZE9JVQ?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Fund I Squared in advanced talks to buy German advertiser Stroeer, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-26T22:55:56.000Z",
           "score": 2
         }
       ]
@@ -187,35 +148,35 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Trump says he urged Putin to &#039;pull back&#039; military aggression in Europe",
-          "link": "https://www.dw.com/en/trump-says-he-urged-putin-to-pull-back-military-aggression-in-europe/a-80067722?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "REPORT on the proposal for a regulation of the European Parliament and of the Council amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council - A10-0303/2026",
+          "link": "https://www.europarl.europa.eu/doceo/document/A-10-2026-0303_EN.html",
+          "source": "EU Parliament ENVI Committee",
+          "description": "REPORT on the proposal for a regulation of the European Parliament and of the Council amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council&lt;br/&gt;Committee on the Environment, Public Health and Food Saf",
+          "published": "2026-11-27T11:11:30.000Z",
+          "score": 22
+        },
+        {
+          "title": "EU leaders fail to bridge budget splits as talks stall",
+          "link": "https://www.bbc.co.uk/news/articles/cw4gnm3m9deno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Aid for Ukraine was among the disputes as EU members hope to conclude talks by the end of the year.",
+          "published": "2026-11-27T06:11:55.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ukraine&#039;s Heraskevych hails EU pushback against Russian athletes",
+          "link": "https://www.dw.com/en/ukraine-s-heraskevych-hails-eu-pushback-against-russian-athletes/a-80074375?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "US President Donald Trump claimed that he talked with Vladimir Putin about ceasing Russia&#039;s military aggression in Europe and expressed his belief in the possibility of a deal between Russia and Ukraine.",
-          "published": "2026-11-26T16:54:00.000Z",
+          "description": "As European countries challenge Russia&#039;s sporting return, Ukrainian Olympian Vladyslav Heraskevych believes the IOC is facing a &#039;very big crisis.&#039;",
+          "published": "2026-11-27T12:37:00.000Z",
           "score": 8
         },
         {
-          "title": "EU leaders wrestle to 'Le Pen-proof' budget and lock in Ukraine funding - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxONUFuMXFIM2VqWWZ2S2RBUFkzM1VzQjE0WkxhTDlreXM3OU45NDdRejhWUkRUQVVvQ2x2ZG1PT2JiNjNtYlRiYWFqSF9wWnQzR25hTFRjcjI5YkU0QmxLeEwwNlJkak5JaWo5QjVqTnZPQmt1bGdzZl9nZ0k2ZjRxSDMyUmY2eTQ4TEM2NnJaZDNPZUR4RUZKb2FqRkZ3eklRaXNicEFLc2VRSHZRenpZWEpPRlp4SWxBdi1Nbw?oc=5",
+          "title": "Trump says he asked Putin to 'pull back' military aggression throughout Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOLTBqZDFmdVZMYUhDSHRObmlwNXBGNXRpXzdBVnBTc2hZTk54NU9BYThqQUswalJPMklvaGhHNmJiNW5venFCYk1FbjdNQUdJU1RISjlXbGtpc0lWektRUThRNEhOdFdSZ3B3cGZTSlk5blFMWnhGOGNfaEFjbzBha29XdlNxTXUzemUzR1FIc0FPc0kybGZLSmp5OVNNSGRLOXNZM21pd0Fac2prOVoxcC1rMnFIUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxONUFuMXFIM2VqWWZ2S2RBUFkzM1VzQjE0WkxhTDlreXM3OU45NDdRejhWUkRUQVVvQ2x2ZG1PT2JiNjNtYlRiYWFqSF9wWnQzR25hTFRjcjI5YkU0QmxLeEwwNlJkak5JaWo5QjVqTnZPQmt1bGdzZl9nZ0k2ZjRxSDMyUmY2eTQ4TEM2NnJaZDNPZUR4RUZKb2FqRkZ3eklRaXNicEFLc2VRSHZRenpZWEpPRlp4SWxBdi1Nbw?oc=5\" target=\"_blank\"&gt;EU leaders wrestle to 'Le Pen-proof' budget and lock in Ukraine funding&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-26T05:02:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Italy's Meloni talks tough on EU budget, warns Ukraine on Mediterranean strike - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNT1MybVpBY2F5czNzeEJodWk4Mk5PMnB4Q3FJaFpnTGNLM0hDVXBkRUw1ellSVTZPeDZzalo2UGNFbEhBYUdhWTRIZ1Y3NThpcFdEWjRIeGRyc1VCNVhaM3ZjSWxJc2hNcVlFUV9QMkVPN01JRzl5OHpRMDZ0NUlaclBuZXlVQ3JxdFlxRnZBR1hONmppczZNYktQUVFmTnlCSmhKZ1hlU1F6Tnk2OHprbTlYcWg1amRYZkR1cjFn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNT1MybVpBY2F5czNzeEJodWk4Mk5PMnB4Q3FJaFpnTGNLM0hDVXBkRUw1ellSVTZPeDZzalo2UGNFbEhBYUdhWTRIZ1Y3NThpcFdEWjRIeGRyc1VCNVhaM3ZjSWxJc2hNcVlFUV9QMkVPN01JRzl5OHpRMDZ0NUlaclBuZXlVQ3JxdFlxRnZBR1hONmppczZNYktQUVFmTnlCSmhKZ1hlU1F6Tnk2OHprbTlYcWg1amRYZkR1cjFn?oc=5\" target=\"_blank\"&gt;Italy's Meloni talks tough on EU budget, warns Ukraine on Mediterranean strike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-26T12:35:49.000Z",
-          "score": 8
-        },
-        {
-          "title": "Bulgaria ready to back EU loan for Ukraine for civilian aid, Radev says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPR2dRYUZkbTc4Q2lNSlNIS2M3c2xRbGpoc20zbGcyZk5yWXQ2SlhtQ2VTMGZ2eElTY3ltaDlXd3RXWlVXR1hhV2JldklxeDlockpsMzU4cEotcFg4TGZpcWJPRHh0VmM5STFyMmlmRnlsak01VzUwSnFSaC0taTBKZ3Fhb2lqRlZDUThIQVNxa2U0bktBRHIyaG5JNnpSU2Y4UDcxcEIxMXNzQzRI?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPR2dRYUZkbTc4Q2lNSlNIS2M3c2xRbGpoc20zbGcyZk5yWXQ2SlhtQ2VTMGZ2eElTY3ltaDlXd3RXWlVXR1hhV2JldklxeDlockpsMzU4cEotcFg4TGZpcWJPRHh0VmM5STFyMmlmRnlsak01VzUwSnFSaC0taTBKZ3Fhb2lqRlZDUThIQVNxa2U0bktBRHIyaG5JNnpSU2Y4UDcxcEIxMXNzQzRI?oc=5\" target=\"_blank\"&gt;Bulgaria ready to back EU loan for Ukraine for civilian aid, Radev says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-26T09:12:09.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOLTBqZDFmdVZMYUhDSHRObmlwNXBGNXRpXzdBVnBTc2hZTk54NU9BYThqQUswalJPMklvaGhHNmJiNW5venFCYk1FbjdNQUdJU1RISjlXbGtpc0lWektRUThRNEhOdFdSZ3B3cGZTSlk5blFMWnhGOGNfaEFjbzBha29XdlNxTXUzemUzR1FIc0FPc0kybGZLSmp5OVNNSGRLOXNZM21pd0Fac2prOVoxcC1rMnFIUQ?oc=5\" target=\"_blank\"&gt;Trump says he asked Putin to 'pull back' military aggression throughout Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-26T15:47:00.000Z",
           "score": 8
         }
       ]
@@ -225,52 +186,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "New UK-EU treaty has 10-year termination clause",
-          "link": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Text of the treaties was published this afternoon, alongside legislation designed to enact the bulk of the deal.",
-          "published": "2026-11-26T15:23:17.000Z",
-          "score": 12
-        },
-        {
-          "title": "Final New Zealand election vote count to confirm parliament make up - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPcFJqbEVQNWVCSWlBVEdnUXJlWHgwV3pmUjRGZ254NjNIcGgtSHU0NkVsemlWUnFjZWlJa3BLY01sTDN3djdCS0ZYU2dvcGV0U0I5NUh4MDV2NU5ya0V1WS1BUkJRSGRtNnIxUlRqc3ZFOXBycWJITFh5cnB3WEtsa1B1REFtMDlkMmFYdlBLTEFKSjNvWGZ4SmtEMl9RMzRNbFdCS25kbHF4eVhGeGs5OW1Rb2FGcUhWcVJV?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPcFJqbEVQNWVCSWlBVEdnUXJlWHgwV3pmUjRGZ254NjNIcGgtSHU0NkVsemlWUnFjZWlJa3BLY01sTDN3djdCS0ZYU2dvcGV0U0I5NUh4MDV2NU5ya0V1WS1BUkJRSGRtNnIxUlRqc3ZFOXBycWJITFh5cnB3WEtsa1B1REFtMDlkMmFYdlBLTEFKSjNvWGZ4SmtEMl9RMzRNbFdCS25kbHF4eVhGeGs5OW1Rb2FGcUhWcVJV?oc=5\" target=\"_blank\"&gt;Final New Zealand election vote count to confirm parliament make up&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-26T22:34:34.000Z",
-          "score": 12
-        },
-        {
-          "title": "Politics and peek-a-boo in Australian parliament as senator brings baby to work",
-          "link": "https://www.bbc.co.uk/news/videos/cmvg23djw8v9o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Senator Lidia Thorpe kept 6-month-old Aaliyah entertained, as her mum Senator Fatima Payman, participated in an online safety bill debate.",
-          "published": "2026-11-26T09:49:42.000Z",
-          "score": 8
-        },
-        {
-          "title": "At odds over the EU budget, European leaders cut summit short - DW has more",
-          "link": "https://www.dw.com/en/at-odds-over-the-eu-budget-european-leaders-cut-summit-short-dw-has-more/live-80056415?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "New Zealand election ends in hung parliament",
+          "link": "https://www.dw.com/en/new-zealand-election-ends-in-hung-parliament/a-80070240?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Even before they met, it was clear the gap between European leaders&#039; demands for the EU budget would make negotiations difficult. They ended a summit meeting early and aim to agree on EU funding in December. DW has more.",
-          "published": "2026-11-26T21:47:00.000Z",
+          "description": "A final vote count showed that neither the center-right bloc nor the opposition left bloc was able to secure a majority.",
+          "published": "2026-11-27T03:13:00.000Z",
+          "score": 12
+        },
+        {
+          "title": "EU may vote on authorising Tesla assisted-driving system at Dec 15 meeting - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOR3lJb1RJcmNiUVg2OE50cFI4YUM0M2Y1RkpMUko4TlRNQkZMVWlqbEFaT3FjVlBBWl9SS2ViUjM2VThnUHB5NDhnd0FoWFluaU5WTFJNYjkwZUowM0E5ZkVhWFZMdmJ4TGE2X2JxS2FCbWktRW9rVHNRZjNnY2NHR0pZc2pxazV1allrQ3lSc2VESk0xMUROSDhOT1BLYlRvUnZSejhDcHRRemxORHpWSFpUZ0cxUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOR3lJb1RJcmNiUVg2OE50cFI4YUM0M2Y1RkpMUko4TlRNQkZMVWlqbEFaT3FjVlBBWl9SS2ViUjM2VThnUHB5NDhnd0FoWFluaU5WTFJNYjkwZUowM0E5ZkVhWFZMdmJ4TGE2X2JxS2FCbWktRW9rVHNRZjNnY2NHR0pZc2pxazV1allrQ3lSc2VESk0xMUROSDhOT1BLYlRvUnZSejhDcHRRemxORHpWSFpUZ0cxUQ?oc=5\" target=\"_blank\"&gt;EU may vote on authorising Tesla assisted-driving system at Dec 15 meeting&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-11-26T15:57:49.000Z",
+          "score": 12
+        },
+        {
+          "title": "Clashes mar European games as Macron condemns violence",
+          "link": "https://www.bbc.co.uk/sport/football/articles/c69q8y5x03ywo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Violent clashes mar a number of European football matches on Thursday night, with French president Emmanuel Macron condemning trouble at Marseille's home game against Levski Sofia.",
+          "published": "2026-11-27T10:24:24.000Z",
           "score": 8
         },
         {
-          "title": "Stocks rally, Europe sizes up next ECB chief - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUWRTQ2N0czgwTVhPdVhvZDUzeDNDRUJ6cFd0MWx1N05aSTJHaUlOdTQ5X2xieEVueHJ3VTRrb0ppNEtzbFVBRm1fU3VvV0xpMWVlUWg3c0NvWXJxS2ZabkwwejhwenhCVmhYRUdweUwwdHhTTWd1bTh2QlR1dFpvVDFHVQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPUWRTQ2N0czgwTVhPdVhvZDUzeDNDRUJ6cFd0MWx1N05aSTJHaUlOdTQ5X2xieEVueHJ3VTRrb0ppNEtzbFVBRm1fU3VvV0xpMWVlUWg3c0NvWXJxS2ZabkwwejhwenhCVmhYRUdweUwwdHhTTWd1bTh2QlR1dFpvVDFHVQ?oc=5\" target=\"_blank\"&gt;Stocks rally, Europe sizes up next ECB chief&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-11-26T01:35:00.000Z",
+          "title": "India&#039;s Modi government calls special sitting of parliament",
+          "link": "https://www.dw.com/en/india-s-modi-government-calls-special-sitting-of-parliament/live-80070511?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The sitting of the Indian parliament comes after its monsoon session was adjourned indefinitely in August. Follow DW.",
+          "published": "2026-11-27T07:23:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "At odds over the EU budget, European leaders cut summit short",
+          "link": "https://www.dw.com/en/at-odds-over-the-eu-budget-european-leaders-cut-summit-short/live-80056415?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Even before they met, it was clear the gap between European leaders&#039; demands for the EU budget would make negotiations difficult. They ended a summit meeting early and aim to agree on EU funding in December.",
+          "published": "2026-11-26T21:47:00.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 373,
-    "articlesLast24h": 174,
-    "afterDedup": 162,
+    "totalArticlesScanned": 395,
+    "articlesLast24h": 167,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
