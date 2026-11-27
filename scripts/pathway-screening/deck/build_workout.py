@@ -62,7 +62,10 @@ lines = [
  ('Periods — the same calculation for fixed periods and sub-sets, used for the robustness checks and the literature comparison.', fN),
  ('Steel & cement — tonnes of CO2 per tonne of steel and of cement, ours next to the ESABCC 2024 report (Figure 26).', fN),
  ('Scenarios — the same arithmetic for steel and cement 2025–2040 in the three ECL pathways that report output.', fN),
- ('Literature — published figures next to our comparable number, with a verdict.', fN),
+ ('Key findings — the answer in plain words, each sentence tied to a live number in this workbook and to what the research found.', fN),
+ ('Evidence — every finding of the four research sweeps (decomposition studies; intensity data; why output fell; scenario assumptions) with locator and status (verified / not verified), their number, our comparable number (formula) and a verdict.', fN),
+ ('Trade & demand — the numbers behind "leakage or lower demand?": EU footprint (FIGARO), steel production vs consumption and imports, construction and chemicals indices, chemicals closures, ex-post leakage studies.', fN),
+ ('Scenario assumptions — what the scenario literature assumes about EU industrial output, next to the output in the ECL pathways and history.', fN),
  ('', fN),
  ('Colour code', fB),
  ('Blue text = input from a source (see the source column). Black = formula. Green = link to another sheet. Yellow fill = cells you may change.', fN),
@@ -105,8 +108,9 @@ I = lambda code, y: f"Inventory!{YC[y]}{IR[code]}"
 wo = wb.create_sheet('Output')
 wo.cell(1, 1, 'Output measures (inputs): physical output and Eurostat production indices').font = fT
 hdr(wo, 3, ['Key', 'Measure', 'Unit'] + Y + ['Source'], c0=1)
-OUTS = [('crude_steel', 'Crude steel', 'Mt', lambda y: dm.tn('crude_steel')[y] / 1000 if dm.tn('crude_steel')[y] > 1000 else dm.tn('crude_steel')[y], 'worldsteel Steel Statistical Yearbooks 2005–2015 (EU28 minus UK); Eurofer European Steel in Figures 2026 (EU27) 2016–2024'),
-        ('cement', 'Cement', 'Mt', lambda y: dm.tn('cement')[y] / 1000 if dm.tn('cement')[y] > 1000 else dm.tn('cement')[y], 'CEMBUREAU Key facts & figures, cement production EU27'),
+to_mt = lambda v: v / 1e6 if v > 1e7 else (v / 1e3 if v > 1e3 else v)   # crude steel is stored in kt, cement in t; both shown in Mt
+OUTS = [('crude_steel', 'Crude steel', 'Mt', lambda y: to_mt(dm.tn('crude_steel')[y]), 'worldsteel Steel Statistical Yearbooks 2005–2015 (EU28 minus UK); Eurofer European Steel in Figures 2026 (EU27) 2016–2024'),
+        ('cement', 'Cement', 'Mt', lambda y: to_mt(dm.tn('cement')[y]), 'CEMBUREAU Key facts & figures, cement production EU27'),
         ('lime', 'Lime', 'kt', lambda y: dm.ad('lime')[y], 'EU CRT 2026 Table 2(I).A-H, 2.A.2 activity data (sum of reporting Member States)'),
         ('glass', 'Glass', 'kt', lambda y: dm.ad('glass')[y], 'EU CRT 2026 Table 2(I).A-H, 2.A.3 activity data'),
         ('ammonia', 'Ammonia', 'kt', lambda y: dm.ad('ammonia')[y], 'EU CRT 2026 Table 2(I).A-H, 2.B.1 activity data'),
@@ -261,7 +265,9 @@ PER = [('Headline', 'All industry', 2005, 2024, 'physical'), ('Production index 
        ('Lit: ESABCC steel 2008–2021', 'Steel', 2008, 2021, 'physical'), ('Lit: ESABCC cement 2005–2021', 'Cement', 2005, 2021, 'physical'), ('Lit: ESABCC industry 2005–2022', 'All industry', 2005, 2022, 'physical'),
        ('Lit: ODYSSEE 2010–2023, index', 'All industry', 2010, 2023, 'index'), ('Lit: ODYSSEE 2010–2023, physical', 'All industry', 2010, 2023, 'physical'),
        ('Lit: Eurostat 2013–2024, index', 'All industry', 2013, 2024, 'index'), ('Lit: Eurostat 2013–2024, physical', 'All industry', 2013, 2024, 'physical'),
-       ('Lit: Commission CAPR 2014–2024, index', 'All industry', 2014, 2024, 'index'), ('Lit: Commission CAPR 2014–2024, physical', 'All industry', 2014, 2024, 'physical')]
+       ('Lit: Commission CAPR 2014–2024, index', 'All industry', 2014, 2024, 'index'), ('Lit: Commission CAPR 2014–2024, physical', 'All industry', 2014, 2024, 'physical'),
+       ('Lit: EEA 2010–2024 all industry', 'All industry', 2010, 2024, 'physical'), ('Lit: EEA 2010–2024 steel', 'Steel', 2010, 2024, 'physical'),
+       ('Lit: EEA 2010–2024 minerals', 'Cement, lime, glass', 2010, 2024, 'physical'), ('Lit: EEA 2010–2024 chemicals', 'Chemicals', 2010, 2024, 'physical')]
 PR = {}
 for k, (lab, st, y0, y1, ms) in enumerate(PER):
     r = 5 + k; PR[lab] = r
@@ -360,45 +366,269 @@ wsn.column_dimensions['A'].width = 44; wsn.column_dimensions['B'].width = 10
 for j in range(3, 12): wsn.column_dimensions[CL(j)].width = 13
 wsn.column_dimensions['L'].width = 70; wsn.column_dimensions['M'].width = 30; wsn.column_dimensions['N'].width = 60
 
-# ------------------------------------------------------------------ Literature
-wl = wb.create_sheet('Literature')
-wl.cell(1, 1, 'Published figures next to our comparable number (ours = formulas over sheets Periods and Steel & cement)').font = fT
-wl.cell(2, 1, 'Sources opened and checked in the literature pass of 27 Nov 2026 (docs-internal/industry-decomposition-literature-review-2026-11-27.md). "Comparable?" says how far the two numbers measure the same thing.').font = fNote
-cols = ['Source', 'Locator', 'Scope and method', 'Their figure', 'Our comparable figure', 'Ours (value)', 'Comparable?', 'Verdict']
+# ------------------------------------------------------------------ Steel & cement: reference points and chart
+from openpyxl.chart import LineChart
+rr0 = 5 + len(Y) + 5
+wsc.cell(rr0, 1, 'Reference points from the research sweep (not time series; for orientation only)').font = fB
+hdr(wsc, rr0 + 1, ['Product', 'Source', 'Locator', 'Year(s)', 'Value', 'Unit', 'Status', 'What it is'])
+REFP = [('Steel', 'JRC factsheet JRC144070 (2026)', 'p. 2', '2022', 1.81, 't CO2e/t', 'verified', 'Blast furnace route (BF-BOF) average'),
+        ('Steel', 'JRC factsheet JRC144070 (2026)', 'p. 2', '2022', 0.24, 't CO2e/t', 'verified', 'Electric arc route (EAF) average'),
+        ('Steel', 'EU ETS benchmark, Impl. Reg. (EU) 2021/447', 'Annex', '2016–17', 1.331, 't CO2e/t hot metal', 'verified', 'Best 10 % of plants, hot metal'),
+        ('Steel', 'EU ETS benchmark, Impl. Reg. (EU) 2026/1412', 'Annex', '2021–22', 1.360, 't CO2e/t hot metal', 'verified', 'Best 10 % of plants, hot metal (+2.2 %)'),
+        ('Steel', 'worldsteel Sustainability Indicators 2025', 'pp. 6–7', '2007 → 2024', 1.92, 't CO2/t', 'verified', 'GLOBAL average (1.80 in 2007); not EU'),
+        ('Cement', 'JRC factsheet JRC144123 (2026)', 'p. 1', 'current', 0.65, 't CO2/t cement', 'verified (derived 110 Mt ÷ 170 Mt)', 'EU average, all CO2'),
+        ('Cement', 'EU ETS benchmark, Impl. Reg. (EU) 2021/447', 'Annex', '2016–17', 0.722, 't CO2e/t clinker', 'verified', 'Best 10 % of plants, grey clinker'),
+        ('Cement', 'EU ETS benchmark, Impl. Reg. (EU) 2026/1412', 'Annex', '2021–22', 0.689, 't CO2e/t clinker', 'verified', 'Best 10 % of plants, grey clinker (−4.6 %)'),
+        ('Cement', 'CEMBUREAU (2023), cited in ESABCC 2024', 'ESABCC 2024 p. 92', '2005 → 2020', 0.61, 't CO2/t cementitious', 'verified (secondary)', 'Gross CO2 per tonne cementitious; 0.65 in 2005')]
+for k, row in enumerate(REFP):
+    for j, v in enumerate(row):
+        c = wsc.cell(rr0 + 2 + k, 1 + j, v); c.font = fIn if j == 4 else fN
+        if j == 4: c.number_format = R3
+lc = LineChart(); lc.title = 'Steel: t CO2 per tonne, index 2008 = 100'; lc.y_axis.title = 'Index'; lc.height = 8; lc.width = 16
+lc.add_data(Reference(wsc, min_col=6, max_col=7, min_row=4, max_row=4 + len(Y)), titles_from_data=True)
+lc.set_categories(Reference(wsc, min_col=1, min_row=5, max_row=4 + len(Y)))
+lc.roundedCorners = False; lc.legend.overlay = False; lc.title.overlay = False; lc.x_axis.delete = False; lc.y_axis.delete = False; lc.legend.position = 'b'
+wsc.add_chart(lc, 'O4')
+lc2 = LineChart(); lc2.title = 'Cement: t CO2 per tonne, index 2005 = 100'; lc2.y_axis.title = 'Index'; lc2.height = 8; lc2.width = 16
+lc2.add_data(Reference(wsc, min_col=12, max_col=13, min_row=4, max_row=4 + len(Y)), titles_from_data=True)
+lc2.set_categories(Reference(wsc, min_col=1, min_row=5, max_row=4 + len(Y)))
+lc2.roundedCorners = False; lc2.legend.overlay = False; lc2.title.overlay = False; lc2.x_axis.delete = False; lc2.y_axis.delete = False; lc2.legend.position = 'b'
+wsc.add_chart(lc2, 'O22')
+
+# ------------------------------------------------------------------ Trade & demand
+wt = wb.create_sheet('Trade & demand')
+wt.cell(1, 1, 'Leakage or lower demand? The numbers behind the question (inputs from the research sweep, with formulas)').font = fT
+wt.cell(2, 1, 'Blue = published value (source and locator in the row). Black = formula. Research sweep 27 Nov 2026; see sheet Evidence, question 3.').font = fNote
+r = 4
+wt.cell(r, 1, 'A. Where the emissions behind EU consumption happen (Eurostat env_ac_ghgfp, FIGARO; Mt CO2e by emitting industry; extracted via the Eurostat API, updated 30 Oct 2026)').font = fB
+hdr(wt, r + 1, ['Industry', 'Year', 'EU → EU', 'Imported (non-EU → EU)', 'Exported (EU → non-EU)', 'EU footprint = EU→EU + imported', 'Non-EU share of EU footprint', 'EU production-side = EU→EU + exported', 'Net imported = imported − exported'])
+FP = [('C24 basic metals', 2010, 111.6, 108.9, 77.1), ('C24 basic metals', 2019, 94.9, 101.4, 74.3), ('C24 basic metals', 2022, 90.0, 112.8, 61.6), ('C24 basic metals', 2024, 80.1, 98.9, 61.8),
+      ('C23 non-metallic minerals', 2010, 166.1, 72.9, 41.6), ('C23 non-metallic minerals', 2019, 141.2, 69.1, 45.1), ('C23 non-metallic minerals', 2024, 119.6, 69.4, 34.1),
+      ('C20 chemicals', 2010, 106.4, 105.0, 71.9), ('C20 chemicals', 2019, 81.0, 94.0, 69.3), ('C20 chemicals', 2022, 72.4, 110.4, 58.5), ('C20 chemicals', 2024, 68.1, 101.5, 59.9)]
+FPR = {}
+for k, (ind, y, a, b, c_) in enumerate(FP):
+    rr = r + 2 + k; FPR[(ind[:3], y)] = rr
+    for j, v in enumerate([ind, y, a, b, c_]):
+        c = wt.cell(rr, 1 + j, v); c.font = fIn if j >= 2 else fN; c.number_format = NUM if j >= 2 else 'General'
+    for j, f in enumerate([f'=C{rr}+D{rr}', f'=D{rr}/F{rr}', f'=C{rr}+E{rr}', f'=D{rr}-E{rr}']):
+        c = wt.cell(rr, 6 + j, f); c.font = fN; c.number_format = PCT if j == 1 else NUM
+r = r + 2 + len(FP) + 1
+wt.cell(r, 1, 'Change 2010 → 2024').font = fB
+hdr(wt, r + 1, ['Industry', '', 'EU production-side, %', 'EU footprint, %', 'Imported, %', 'Non-EU share, points', 'Share of the production-side fall from lower exports'])
+FPC = {}
+for k, ind in enumerate(['C24', 'C23', 'C20']):
+    rr = r + 2 + k; a, b = FPR[(ind, 2010)], FPR[(ind, 2024)]; FPC[ind] = rr
+    wt.cell(rr, 1, [x[0] for x in FP if x[0].startswith(ind)][0]).font = fN
+    for j, f in enumerate([f'=H{b}/H{a}-1', f'=F{b}/F{a}-1', f'=D{b}/D{a}-1', f'=(G{b}-G{a})*100', f'=(E{b}-E{a})/(H{b}-H{a})']):
+        c = wt.cell(rr, 3 + j, f); c.font = fN; c.number_format = '0.0' if j == 3 else PCT
+wt.cell(r + 5, 1, 'Reading: import SHARES rose because EU production fell faster than imports; imported emissions themselves fell. Consistent with some relative displacement, not with wholesale relocation. The footprint mixes volume with intensity abroad and starts in 2010.').font = fNote
+r = r + 7
+wt.cell(r, 1, 'B. Steel: production, consumption and imports (EUROFER, European Steel in Figures 2024)').font = fB
+hdr(wt, r + 1, ['Item', 'Locator', '2014', '2019', '2023', 'Change 2019 → 2023, Mt', 'Change 2019 → 2023, %'])
+ST = [('Crude steel production, Mt', 'p. 17', 157.1, 150.2, 126.2), ('Apparent steel consumption, Mt', 'p. 25', None, 144.8, 125.6), ('Finished-steel imports, Mt', 'p. 38', None, 26.3, 25.6),
+      ('Net scrap exports, Mt', 'p. 64', 7.2, None, 15.0)]
+STR = {}
+for k, (lab, loc, a, b, c_) in enumerate(ST):
+    rr = r + 2 + k; STR[lab] = rr
+    wt.cell(rr, 1, lab).font = fN; wt.cell(rr, 2, loc).font = fN
+    for j, v in enumerate((a, b, c_)):
+        if v is not None: c = wt.cell(rr, 3 + j, v); c.font = fIn; c.number_format = NUM
+    if b is not None:
+        c = wt.cell(rr, 6, f'=E{rr}-D{rr}'); c.font = fN; c.number_format = NUM
+        c = wt.cell(rr, 7, f'=E{rr}/D{rr}-1'); c.font = fN; c.number_format = PCT
+rr = r + 2 + len(ST)
+wt.cell(rr, 1, 'Electric-arc share of crude steel').font = fN; wt.cell(rr, 2, 'p. 17').font = fN
+c = wt.cell(rr, 3, '=64.1/C' + str(STR['Crude steel production, Mt'])); c.font = fN; c.number_format = PCT
+c = wt.cell(rr, 5, 0.45); c.font = fIn; c.number_format = PCT
+wt.cell(rr, 8, '2014: 64.1 Mt EAF ÷ 157.1 Mt (EUROFER p. 17); 2023: 45.0 % as published').font = fNote
+wt.cell(rr + 1, 1, 'Reading: after 2019 production fell by about as much as consumption while imports stayed flat: falling demand, not a surge of imports, explains most of it.').font = fNote
+r = rr + 3
+wt.cell(r, 1, 'C. Activity indices (Eurostat sts_copr_a, sts_inpr_a; EU27, 2021 = 100; extracted via the API, updated 19 Nov 2026)').font = fB
+hdr(wt, r + 1, ['Index', '2007', '2013', '2019', '2024', '2007 → 2013', '2013 → 2024'])
+IXT = [('Construction (F)', 113.7, 91.6, None, 102.9), ('Non-metallic minerals (C23)', 122.7, 86.0, None, 85.3), ('Basic metals (C24)', 120.8, 98.6, None, 88.8),
+       ('Basic chemicals (C20.1)', 109.5, None, 95.4, 74.0), ('Manufacturing (C)', 96.3, 87.9, None, 99.5)]
+for k, (lab, *vals) in enumerate(IXT):
+    rr = r + 2 + k; wt.cell(rr, 1, lab).font = fN
+    for j, v in enumerate(vals):
+        if v is not None: c = wt.cell(rr, 2 + j, v); c.font = fIn; c.number_format = '0.0'
+    if vals[1] is not None:
+        c = wt.cell(rr, 6, f'=C{rr}/B{rr}-1'); c.font = fN; c.number_format = PCT
+        c = wt.cell(rr, 7, f'=E{rr}/C{rr}-1'); c.font = fN; c.number_format = PCT
+wt.cell(r + 2 + len(IXT), 1, 'Reading: minerals followed the 2008–13 construction bust (demand). Basic chemicals fell after 2021 while construction held up (energy cost). Basic metals kept falling while manufacturing recovered.').font = fNote
+r = r + 4 + len(IXT)
+wt.cell(r, 1, 'D. Chemicals closures and stated reasons (Roland Berger for Cefic, Closures and investments radar 2022–2025, pdf p. 4; industry-commissioned)').font = fB
+hdr(wt, r + 1, ['Item', 'Value', 'Unit'])
+for k, (lab, v, u) in enumerate([('Announced closures, Europe', 37, 'Mt capacity'), ('of which EU27', 32, 'Mt capacity'), ('Share of European capacity', 0.09, 'share'), ('Confirmed investments', 7, 'Mt capacity'),
+                                  ('Stated reason: energy cost', 0.49, 'share of closures'), ('Stated reason: demand', 0.19, 'share of closures'), ('Stated reason: overcapacity', 0.09, 'share of closures'), ('Stated reason: regulation', 0.08, 'share of closures')]):
+    rr = r + 2 + k; wt.cell(rr, 1, lab).font = fN; c = wt.cell(rr, 2, v); c.font = fIn; c.number_format = PCT if u.startswith('share') else '#,##0'; wt.cell(rr, 3, u).font = fN
+r = r + 11
+wt.cell(r, 1, 'E. Was it the carbon price? Ex-post studies (see sheet Evidence, question 3, for locators)').font = fB
+hdr(wt, r + 1, ['Study', 'Period', 'Finding', 'Reading'])
+for k, row in enumerate([('Naegele & Zaklan 2019, JEEM 93', '2004–2011', 'No evidence the ETS caused carbon leakage in manufacturing (low prices)', 'No leakage'),
+                         ('Dechezleprêtre et al. 2022, JEEM 112', '2007–2014', 'No displacement of emissions by multinationals', 'No leakage'),
+                         ('Branger, Quirion & Chevallier 2016, Energy J. 37(3)', 'Phases I–II', 'Demand drives cement and steel trade; carbon price not significant', 'No leakage; demand'),
+                         ('Chen, Di Gregorio & Paavola 2026, Climate Policy (meta-analysis)', 'to 2025', 'Trade leakage 0.03 (CI −0.03 to 0.09), not significant; investment leakage 1.07 (CI 0.54–1.59), significant', 'No trade leakage; investment leakage'),
+                         ('Hagendorn et al. 2024, EIB WP 2024/05', '2012–2022', 'Higher ETS prices cut emissions with marginal effects on production', 'No leakage'),
+                         ('ECB Economic Bulletin 1/2023, Box 2', '2021–2022', 'Import-to-production ratio of energy-intensive sectors +11 % vs other sectors', 'Energy-cost leakage'),
+                         ('IEA Electricity Market Report Update 2023 (read via mirror)', '2022', 'Output: primary aluminium −12 %, crude steel −10 %, paper −6 %, chemicals −5 %; some aluminium closures permanent', 'Energy-cost leakage'),
+                         ('Draghi 2024, Part B ch. 4', '2019', 'CO2 cost about 2 % of EU steel production cost (free allocation)', 'Carbon price small so far')]):
+    for j, v in enumerate(row): c = wt.cell(r + 2 + k, 1 + j, v); c.font = fN; c.alignment = Alignment(wrap_text=True, vertical='top')
+wt.column_dimensions['A'].width = 44; wt.column_dimensions['B'].width = 12
+for j in range(3, 10): wt.column_dimensions[CL(j)].width = 16
+wt.column_dimensions['C'].width = 60 if False else 16
+
+# ------------------------------------------------------------------ Scenario assumptions
+wa = wb.create_sheet('Scenario assumptions')
+wa.cell(1, 1, 'What do net-zero scenarios assume about EU industrial output, compared with history?').font = fT
+wa.cell(2, 1, 'Top: output in the ECL pathways that report it (model data, as in sheet Scenarios) and in history (sheet Output). Bottom: assumptions published in the scenario literature (research sweep, sheet Evidence, question 4).').font = fNote
+hdr(wa, 4, ['Series', 'Product', '2015, Mt', '2025, Mt', '2040, Mt', '2050, Mt', '2025 → 2040', '2015 → 2050', 'Source'])
+r = 5
+for pid in ('1266', '1275', '2400'):
+    p = SC[pid]; V = {d['std']: (name, d) for name, d in p['variables'].items()}
+    for prod, key in (('Steel', 'prod_steel'), ('Cement', 'prod_cement')):
+        wa.cell(r, 1, f"{pid} {p['model']} {p['scenario']}").font = fN; wa.cell(r, 2, prod).font = fN
+        for j, y in enumerate(('2015', '2025', '2040', '2050')):
+            c = wa.cell(r, 3 + j, round(V[key][1]['values'][y], 3)); c.font = fIn; c.number_format = NUM
+        for j, f in enumerate([f'=E{r}/D{r}-1', f'=F{r}/C{r}-1']):
+            c = wa.cell(r, 7 + j, f); c.font = fN; c.number_format = PCT
+        wa.cell(r, 9, V[key][1].get('locator', p['source'])).font = fN
+        r += 1
+for prod, key in (('Steel', 'crude_steel'), ('Cement', 'cement')):
+    wa.cell(r, 1, 'History, EU27 (sheet Output)').font = fB; wa.cell(r, 2, prod).font = fB
+    c = wa.cell(r, 3, f'=Output!{OYC[2015]}{OR[key]}'); c.font = fLink; c.number_format = NUM
+    c = wa.cell(r, 4, f'=Output!{OYC[2024]}{OR[key]}'); c.font = fLink; c.number_format = NUM
+    c = wa.cell(r, 7, f'=Output!{OYC[2024]}{OR[key]}/Output!{OYC[2005]}{OR[key]}-1'); c.font = fLink; c.number_format = PCT
+    wa.cell(r, 9, 'columns: 2015 and 2024 (in the "2025" column); "2025 → 2040" column shows the HISTORICAL change 2005 → 2024').font = fNote
+    r += 1
+r += 1
+wa.cell(r, 1, 'Published scenario assumptions').font = fB
+hdr(wa, r + 1, ['Source', 'Locator', 'Scenario', 'Product', 'Assumption', 'Value', 'Unit / basis', 'Status', 'URL / DOI'])
+SA = [('EC 2040 IA, SWD(2024) 63 Part 2', 'Annex 6 §2.4.2 p. 15', 'S1–S3 (identical industry assumptions, Part 1 §5.3.1 p. 31)', 'Energy-intensive industry', 'Gross value added vs 2016–2020 average, 2040', 0.25, 'change', 'verified', 'data.consilium.europa.eu/doc/document/ST-6291-2024-ADD-2/en/pdf'),
+      ('EC 2040 IA, SWD(2024) 63 Part 2', 'Annex 6 §2.4.2 p. 15', 'S1–S3', 'Energy-intensive industry', 'Gross value added vs 2016–2020 average, 2050', 0.37, 'change', 'verified', ''),
+      ('EC 2040 IA, SWD(2024) 63 Part 2', 'Annex 6 §2.4.2 p. 15', 'S1–S3', 'All EII except iron and steel', '"an increase in the volume of production (with the exception of iron and steel)"', None, 'qualitative', 'verified', ''),
+      ('EC 2040 IA, SWD(2024) 63 Part 2', 'Annex 6 Table 3 pp. 38–39', 'LIFE variant', 'Steel', 'Activity vs S1–S3, 2050 (phased in linearly 2030–2050, so about half by 2040)', -0.15, 'change vs reference', 'verified', ''),
+      ('EC 2040 IA, SWD(2024) 63 Part 2', 'Annex 6 Table 3 pp. 38–39', 'LIFE variant', 'Cement & clinker', 'Activity vs S1–S3, 2050 (phased in 2030–2050)', -0.25, 'change vs reference', 'verified', ''),
+      ('EC 2040 IA, SWD(2024) 63 Part 2', 'Annex 6 Table 3 pp. 38–39', 'LIFE variant', 'Aluminium / paper / petrochemicals', 'Activity vs S1–S3, 2050', None, '−20 % / −20 % / −15 %', 'verified', ''),
+      ('EC, A Clean Planet for All analysis (2018)', 'Table 27 p. 322', 'CIRC', 'Iron & steel', 'Primary production vs baseline, 2050', -0.06, 'change vs baseline', 'verified', 'climate.ec.europa.eu/system/files/2018-11/com_2018_733_analysis_in_support_en.pdf'),
+      ('EC, A Clean Planet for All analysis (2018)', 'Table 27 p. 322', 'CIRC', 'Non-metallic minerals', 'Primary production vs baseline, 2050', -0.08, 'change vs baseline', 'verified', ''),
+      ('JRC CETO 2024 (EUR 40137)', '§2 pp. 14–15; §3.3.1 pp. 34–35', 'CETO 2024 (activity from IA S2)', 'Steel', '"stabilising to around 145 Mt" 2021–2050', 145, 'Mt', 'verified', 'publications.jrc.ec.europa.eu/repository/bitstream/JRC139836/JRC139836_01.pdf'),
+      ('JRC CETO 2024 (EUR 40137)', '§3.3.1.1 p. 34', 'CETO 2024', 'Cement', 'Physical output growth 2021–2050 (13–16 %; low end shown)', 0.13, 'change', 'verified', ''),
+      ('Pehl, Schreyer & Luderer 2024, GMD 17', 'PDF p. 5, p. 15', 'REMIND 3.1', 'Industry', 'Industrial activity endogenous; falls with mitigation stringency (price response)', None, 'qualitative', 'verified', 'doi.org/10.5194/gmd-17-2015-2024'),
+      ('Material Economics 2019', 'PDF p. 72, p. 78', 'Baseline / circular', 'Steel', 'Baseline about 190 Mt in the 2040s; high circularity 139 Mt', 139, 'Mt (circular)', 'verified', 'cisl.cam.ac.uk/.../material-economics-industrial-transformation-2050.pdf'),
+      ('Material Economics 2019', 'PDF p. 26', 'Circular', 'Steel, plastics, ammonia, cement', 'Use per person 870 → 570 kg (2050)', -0.35, 'change', 'verified', ''),
+      ('négaWatt / CLEVER convergence corridors (2022)', 'PDF p. 10', 'Corridor across studies', 'Cement', '2050 production as share of 2015: 52–99 % (low end shown)', 0.52, 'share of 2015', 'verified', 'negawatt.org/IMG/pdf/2206_convergence_corridors_-_industry-2.pdf'),
+      ('négaWatt / CLEVER convergence corridors (2022)', 'PDF p. 10', 'Corridor across studies', 'Steel', '2050 production as share of 2015: 74–92 % (low end shown)', 0.74, 'share of 2015', 'verified', ''),
+      ('IPCC AR6 WGIII Ch. 11', 'p. 1206', 'Assessment', 'Industry', '"material efficiency and demand management are still not well represented in the scenario literature"', None, 'qualitative', 'verified', 'ipcc.ch/report/ar6/wg3/downloads/report/IPCC_AR6_WGIII_Chapter11.pdf'),
+      ('IPCC AR6 WGIII Ch. 5', 'p. 528', 'Assessment (global)', 'Industry', 'Demand-side (end-use) reduction potential, median', 0.287, 'share of industry emissions', 'verified', 'ipcc.ch/report/ar6/wg3/downloads/report/IPCC_AR6_WGIII_Chapter05.pdf'),
+      ('IEA Net Zero by 2050 (2021)', 'Ch. 3 p. 122', 'NZE (global)', 'Steel / cement', 'Global demand 2050 vs today: steel +12 %, cement broadly flat', 0.12, 'change (steel)', 'verified', ''),
+      ('NAVIGATE synthesis (Kriegler et al. 2023)', 'p. 42', 'History', 'EU industry CO2', 'Past cuts came from heavy-industry collapse and the 2008 crisis; stagnation since 2010', None, 'qualitative', 'verified', 'doi.org/10.48485/pik.2023.024')]
+for k, row in enumerate(SA):
+    rr = r + 2 + k
+    for j, v in enumerate(row):
+        c = wa.cell(rr, 1 + j, v); c.font = fIn if j == 5 and v is not None else fN; c.alignment = Alignment(wrap_text=True, vertical='top')
+        if j == 5 and isinstance(v, float) and abs(v) < 2: c.number_format = PCT
+SA_ROW0 = r + 2
+wa.cell(r + 3 + len(SA), 1, 'Reading: in the central EU scenarios, steady or rising output is an input assumption, not a model result (EC IA S1–S3; CETO inherits S2). Only REMIND lets output respond to prices. Demand-side studies (Material Economics, CLEVER corridors, IA LIFE) show much lower output is possible by design.').font = fNote
+for j, w in enumerate([40, 18, 30, 22, 52, 10, 20, 12, 44], 1): wa.column_dimensions[CL(j)].width = w
+
+# ------------------------------------------------------------------ Evidence
+wl = wb.create_sheet('Evidence')
+wl.cell(1, 1, 'Evidence from the four research sweeps (27 Nov 2026), set against our numbers').font = fT
+wl.cell(2, 1, 'Status: verified = the source was opened and the number read at the locator; not verified = listed for completeness, never used for a conclusion. "Ours" cells are formulas (green = link). Difference = theirs − ours where both are % changes of the same kind. Review: docs-internal/industry-decomposition-literature-review-2026-11-27.md.').font = fNote
+cols = ['Question', 'Source', 'Locator', 'Scope, period, method', 'Their finding', 'Their value', 'Our comparable figure', 'Ours', 'Difference (points)', 'Comparable?', 'Verdict', 'Status', 'URL / DOI']
 hdr(wl, 4, cols); wl.row_dimensions[4].height = 30
 P = lambda lab, col: f'=Periods!{col}{PR[lab]}'
-SCr = lambda y: 5 + Y.index(y)
-LIT = [
- ('UBA / Öko-Institut, Climate Change 52/2025, Annex B', 'abstract p. 5; §3.1.1 p. 34', 'EU27+UK steel, ETS, direct + indirect CO2, 2005–2022, LMDI with tonnes by route',
-  'CO2 −71.4 Mt (−29 %); "primarily driven by a reduction of production on the BF-BOF route"; no efficiency effect', 'Steel emissions change 2005–2022, %', P('Lit: UBA steel 2005–2022', 'I'), 'Partly: scope (UK, indirect) differs', 'Consistent: similar fall; ours also output-led with small intensity gain'),
- ('', '', '', '', 'Steel: share from producing less 2005–2022', P('Lit: UBA steel 2005–2022', 'Q'), '', ''),
- ('', '', '', 'Direct intensity rose', 'Steel intensity change 2005–2022', P('Lit: UBA steel 2005–2022', 'P'), '', ''),
- ('UBA / Öko-Institut (Emele et al.), Climate Change 02/2022', '§3.1 p. 26', 'EU28 cement CO2 (process + fuel), 2005–2018, LMDI',
-  '150 → 120 Mt; −40.9 Mt; demand-side effects 55 % (incl. clinker share and trade)', 'Cement process CO2: share from producing less 2005–2018', P('Lit: UBA cement 2005–2018', 'Q'), 'Partly: their "demand side" is not a pure output term; ours is process CO2 only', 'Consistent: ours > 100 % because process CO2 per tonne rose (clinker share up), as UBA also finds'),
- ('', '', '', '', 'Cement, lime, glass (all minerals incl. fuel): share from producing less 2005–2018', P('Lit: UBA cement 2005–2018 (all minerals)', 'Q'), '', ''),
- ('Branger & Quirion 2015, Energy Economics 47 (working paper FAERE PP 2014-03)', 'WP §4 p. 22', 'EU27 cement CO2, LMDI', 'Activity effect −68.6 Mt over 2007–2010 (cement incl. fuel)', 'Cement process CO2: producing less 2007–2010, Mt (start-year order)', P('Lit: Branger & Quirion cement 2007–2010', 'K'), 'Partly: ours excludes kiln fuel (about 1/3 of cement CO2)', 'Consistent direction; ours smaller as expected'),
- ('EEA Report 14/2026, Europe\'s industrial transformation', 'p. 34', 'EU CO2 per tonne, 2010–2023', 'Steel and cement: "only a marginal decline"', 'Steel intensity change 2010–2023', P('Lit: EEA steel 2010–2023', 'P'), 'Yes (direction)', 'Consistent: steel and cement intensity fell only a few %'),
- ('', '', '', '', 'Cement process intensity change 2010–2023', P('Lit: EEA cement 2010–2023', 'P'), '', ''),
- ('', '', '', 'Aluminium −35 %', 'Primary aluminium intensity change 2010–2023', P('Lit: EEA primary aluminium 2010–2023', 'P'), 'Partly (EEA measure not stated)', 'Differs: our primary-aluminium intensity barely moved; not explained (EEA may include PFCs or electricity); left open'),
- ('', '', '', 'Chemicals −14 %', 'Chemicals intensity change 2010–2023 (incl. N2O)', P('Lit: EEA chemicals 2010–2023', 'P'), 'Partly (EEA measure not stated)', 'Close: same direction, ours somewhat smaller'),
- ('ESABCC 2024, Towards EU climate neutrality, Fig 26', 'Fig 26 data; p. 92', 'Steel t CO2/t (EEA emissions ÷ Eurofer)', '1.010 (2008) → 0.962 (2021): −4.7 %', 'Steel intensity change 2008–2021', P('Lit: ESABCC steel 2008–2021', 'P'), 'Yes', 'Consistent: within about 2 points'),
- ('', '', 'Cement t CO2/t (ETS cement emissions ÷ CEMBUREAU)', '0.599 (2005) → 0.604 (2021): +0.8 %', 'Cement process intensity change 2005–2021', P('Lit: ESABCC cement 2005–2021', 'P'), 'Partly (process only)', 'Consistent: both essentially flat'),
- ('ESABCC 2024, p. 81', 'p. 81, key messages', 'Industry GHG (wider scope: 981 Mt in 2005)', '−30 % 2005–2022; cuts in steel, cement, chemicals "mainly driven by lowered production"', 'Manufacturing emissions change 2005–2022, %', P('Lit: ESABCC industry 2005–2022', 'I'), 'Partly (scope)', 'Consistent: a few points apart, explained by scope'),
- ('ODYSSEE-MURE policy brief, Jan 2026', 'p. 4, Fig 11', 'EU industry energy CO2 (incl. mining, construction), 2010–2023, value-based activity', 'Activity effect +49 Mt (emissions rose with output); total −105 Mt', 'All industry, production index: producing less 2010–2023, Mt', P('Lit: ODYSSEE 2010–2023, index', 'K'), 'Partly: scope and gases differ', 'Differs in sign even with an index: ODYSSEE starts from value added, excludes process CO2 and includes mining and construction. Physical output makes the gap larger.'),
- ('', '', '', '', 'All industry, physical output: producing less 2010–2023, Mt', P('Lit: ODYSSEE 2010–2023, physical', 'K'), '', ''),
- ('Eurostat, Statistics Explained, GHG emission accounts', 'Fig 4–5 text', 'Manufacturing GHG per unit of gross value added (incl. refineries)', '−33 % 2013–2024', 'Sector intensity change 2013–2024, production index', P('Lit: Eurostat 2013–2024, index', 'P'), 'No: value added is not output volume; refineries included', 'Differs as expected: intensity per euro of value added falls much faster than per unit of output'),
- ('', '', '', '', 'Sector intensity change 2013–2024, physical output', P('Lit: Eurostat 2013–2024, physical', 'P'), '', ''),
- ('European Commission, Climate Action Progress Report 2026', 'decomposition section', 'Industry, 2014–2024, value-based', 'Mainly efficiency; lower activity mattered more in metals (no effect sizes)', 'Share from producing less 2014–2024, production index', P('Lit: Commission CAPR 2014–2024, index', 'Q'), 'Partly', 'Consistent with an index-based method: about one third from output; physical output gives nearly half'),
- ('', '', '', '', 'Share from producing less 2014–2024, physical output', P('Lit: Commission CAPR 2014–2024, physical', 'Q'), '', ''),
+Q1, Q2, Q3, Q4 = '1. Output or intensity?', '2. Steel and cement intensity', '3. Why did output fall?', '4. What do scenarios assume?'
+EV = [
+ (Q1, 'UBA / Öko-Institut, Climate Change 52/2025, Annex B', 'abstract p. 5; §3.1.1 p. 34', 'EU27+UK steel, ETS, direct + indirect CO2, 2005–2022, LMDI with tonnes by route', 'CO2 −29 % (−71.4 Mt); "primarily driven by a reduction of production on the BF-BOF route"; no efficiency effect', -0.29, 'Steel emissions change 2005–2022', P('Lit: UBA steel 2005–2022', 'I'), True, 'Partly (UK, indirect)', 'Consistent', 'verified', 'umweltbundesamt.de/en/publikationen/effectiveness-of-eu-emissions-trading-what-drives'),
+ (Q1, '', '', '', '', None, 'Steel: share from producing less 2005–2022', P('Lit: UBA steel 2005–2022', 'Q'), False, '', 'Consistent: output-led', '', ''),
+ (Q1, 'UBA / Öko-Institut (Emele et al.), Climate Change 02/2022', '§3.1 p. 26', 'EU28 cement CO2 (process + fuel), 2005–2018, LMDI', '150 → 120 Mt; demand-side effects 55 % of the fall; clinker share rose', 0.55, 'Minerals (incl. fuel): share from producing less 2005–2018', P('Lit: UBA cement 2005–2018 (all minerals)', 'Q'), False, 'Partly ("demand side" includes clinker share and trade)', 'Consistent: output-led', 'verified', 'umweltbundesamt.de/en/node/92389'),
+ (Q1, '', '', '', '', None, 'Cement process CO2: share from producing less 2005–2018', P('Lit: UBA cement 2005–2018', 'Q'), False, '', 'Consistent: >100 % because process CO2 per tonne rose (clinker share), as UBA finds', '', ''),
+ (Q1, 'Branger & Quirion 2015, Energy Economics 47', 'WP §4 p. 22; PDF p. 4', 'EU27 cement CO2, 1990–2011, LMDI', 'Activity effect −68.6 Mt over 2007–2010; ETS abatement 2.0 % ± 1.1 % (2005–2011)', -68.6, 'Cement process CO2: producing less 2007–2010, Mt', P('Lit: Branger & Quirion cement 2007–2010', 'K'), False, 'Partly (ours excludes kiln fuel)', 'Consistent: activity dominant', 'verified', 'doi.org/10.1016/j.eneco.2014.11.008'),
+ (Q1, 'NAVIGATE synthesis (Kriegler et al. 2023)', 'p. 42', 'EU industry CO2, 1990–2020', 'Cuts came from the collapse of heavy industry and the 2008 crisis; stagnation since 2010', None, 'Share from producing less, start 2007', P('Start 2007 (pre-crisis peak)', 'Q'), False, 'Qualitative', 'Consistent', 'verified', 'doi.org/10.48485/pik.2023.024'),
+ (Q1, 'ESABCC 2024, Towards EU climate neutrality', 'p. 81', 'Industry GHG (981 Mt scope), 2005–2022', '−30 %; cuts "mainly driven by lowered production"', -0.30, 'Manufacturing emissions change 2005–2022', P('Lit: ESABCC industry 2005–2022', 'I'), True, 'Partly (scope)', 'Consistent', 'verified', 'repo: esabcc-reports/esabcc_report_towards-eu-climate-neutrality.pdf'),
+ (Q1, 'EEA Report 14/2026, Europe\'s industrial transformation', 'Table 3.1, §3.1 pp. 29–31', 'Industry GHG 2010–2024 (incl. mining)', 'Total industry −27 %; metals −27 %, minerals −27 %, chemicals −33 %', -0.27, 'Manufacturing emissions change 2010–2024', P('Lit: EEA 2010–2024 all industry', 'I'), True, 'Partly (EEA includes mining)', 'Consistent', 'verified', 'eea.europa.eu/en/analysis/publications/europes-industrial-transformation'),
+ (Q1, '', '', '', 'Metals −27 %', -0.27, 'Steel emissions change 2010–2024', P('Lit: EEA 2010–2024 steel', 'I'), True, 'Partly (metals vs steel)', 'Consistent', '', ''),
+ (Q1, '', '', '', 'Minerals −27 %', -0.27, 'Cement, lime, glass emissions change 2010–2024', P('Lit: EEA 2010–2024 minerals', 'I'), True, 'Yes', 'Consistent', '', ''),
+ (Q1, '', '', '', 'Chemicals −33 %', -0.33, 'Chemicals emissions change 2010–2024', P('Lit: EEA 2010–2024 chemicals', 'I'), True, 'Yes', 'Consistent', '', ''),
+ (Q1, 'EC Climate Action Progress Report 2026, ch. 2 Box 2', 'web page', 'Five energy-intensive sectors, LMDI with value added, 2014–2024', '"real improvements in emissions efficiency" dominate; activity mattered more in metals (no effect sizes)', None, 'Share from producing less 2014–2024, production index', P('Lit: Commission CAPR 2014–2024, index', 'Q'), False, 'Partly', 'Consistent with an index-based method (about one third)', 'verified', 'climate.ec.europa.eu/…/eu-climate-action-progress-report-2025/chapter-2-…'),
+ (Q1, '', '', '', '', None, 'Share from producing less 2014–2024, physical output', P('Lit: Commission CAPR 2014–2024, physical', 'Q'), False, '', 'Physical output gives nearly half: method explains the gap', '', ''),
+ (Q1, 'ODYSSEE-MURE policy brief, Jan 2026', 'p. 4, Fig 11', 'EU industry energy CO2 (incl. mining, construction), 2010–2023, value-based activity', 'Activity effect +49 Mt; total −105 Mt (savings −72, decarbonisation −45, structure −36)', 49, 'Producing less 2010–2023, production index, Mt', P('Lit: ODYSSEE 2010–2023, index', 'K'), False, 'Partly (energy CO2 only; mining, construction; value added)', 'Differs in sign: scope and value-based activity', 'verified', 'odyssee-mure.eu/publications/policy-brief/industry-energy-efficiency-trends.html'),
+ (Q1, '', '', '', '', None, 'Producing less 2010–2023, physical output, Mt', P('Lit: ODYSSEE 2010–2023, physical', 'K'), False, '', 'Physical output makes the gap larger', '', ''),
+ (Q1, 'Eurostat, Statistics Explained, GHG emission accounts', 'Fig 4–5 text', 'Manufacturing GHG per value added (incl. refineries), 2013–2024', '−33 %', -0.33, 'Sector intensity change 2013–2024, production index', P('Lit: Eurostat 2013–2024, index', 'P'), True, 'No (value added ≠ volume)', 'Differs as expected: per-euro intensity falls faster than per-unit', 'verified', 'ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/132197.pdf'),
+ (Q1, 'Rottner & von Graevenitz 2024, ERE 87', 'p. 2523', 'Germany, product-level, 2005–2017', 'Technique effect +4.5 % (9-digit) vs +2.3 % (3-digit): coarse sectors understate composition', 0.045, 'Our split uses 15 sub-branches', None, False, 'Germany', 'Warning: product mix inside sub-branches stays in "producing cleaner"', 'verified', 'doi.org/10.1007/s10640-024-00894-7'),
+ (Q1, 'Farla & Blok 2000; Norman 2017; Ang & Xu 2013; Román-Collado & Economidou 2021', 'see review', 'Method papers', 'Monetary activity measures overstate intensity gains', None, 'Share from producing less: physical vs production index (2005–2024)', f'=Periods!Q{PR["Headline"]}-Periods!Q{PR["Production index only"]}', False, 'Method', 'Consistent: physical output raises the output share by about 12 points', 'verified', ''),
+ (Q2, 'ESABCC 2024, Fig 26 data', 'Fig 26; p. 92', 'Steel t CO2/t (EEA emissions ÷ Eurofer), 2008–2021', '1.010 → 0.962 (−4.7 %)', -0.047, 'Steel intensity change 2008–2021', P('Lit: ESABCC steel 2008–2021', 'P'), True, 'Yes', 'Consistent', 'verified', 'repo: ESABCC_report_Towards EU climate neutrality_underlying data.xlsx'),
+ (Q2, '', '', 'Cement t CO2/t (ETS emissions ÷ CEMBUREAU), 2005–2021', '0.599 → 0.604 (+0.8 %)', 0.008, 'Cement process intensity change 2005–2021', P('Lit: ESABCC cement 2005–2021', 'P'), True, 'Partly (ours process only)', 'Consistent: flat', '', ''),
+ (Q2, 'EEA Report 14/2026', 'p. 34', 'CO2 per tonne (JRC-IDEES), 2010–2023', 'Steel and cement "only a marginal decline"', None, 'Steel intensity change 2010–2023', P('Lit: EEA steel 2010–2023', 'P'), False, 'Yes (direction)', 'Consistent', 'verified', ''),
+ (Q2, '', '', '', '', None, 'Cement process intensity change 2010–2023', P('Lit: EEA cement 2010–2023', 'P'), False, '', 'Consistent', '', ''),
+ (Q2, '', '', '', 'Aluminium −35 %', -0.35, 'Primary aluminium intensity change 2010–2023', P('Lit: EEA primary aluminium 2010–2023', 'P'), True, 'Partly (EEA measure not stated)', 'Differs: not explained; left open', '', ''),
+ (Q2, '', '', '', 'Chemicals −14 %', -0.14, 'Chemicals intensity change 2010–2023', P('Lit: EEA chemicals 2010–2023', 'P'), True, 'Partly', 'Close', '', ''),
+ (Q2, 'EU ETS benchmarks, Impl. Reg. 2021/447 and 2026/1412', 'Annex', 'Best 10 % of plants, 2016–17 → 2021–22', 'Grey clinker −4.6 %; hot metal +2.2 %', None, '(see sheet Steel & cement, reference points)', None, False, 'Frontier, not average', 'Consistent: frontier also flat', 'verified', 'publications.europa.eu/resource/celex/32026R1412'),
+ (Q2, 'JRC factsheets JRC144070, JRC144123 (2026)', 'p. 2; p. 1', 'Route and product averages, current', 'BF-BOF 1.81, EAF 0.24 t CO2e/t; cement about 0.65 t CO2/t', None, '(see sheet Steel & cement, reference points)', None, False, 'Snapshot', 'Consistent orders of magnitude', 'verified', ''),
+ (Q3, 'Eurostat env_ac_ghgfp (FIGARO), own computation', 'API, updated 30 Oct 2026', 'EU footprint by emitting industry, 2010–2024', 'Non-EU share of the EU footprint rose; imported emissions fell', None, 'Basic metals: non-EU share change, points', f"='Trade & demand'!F{FPC['C24']}", False, '', 'Relative displacement, not wholesale relocation', 'verified (computed)', 'ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_ac_ghgfp'),
+ (Q3, '', '', '', '', None, 'Basic metals: share of production-side fall from lower exports', f"='Trade & demand'!G{FPC['C24']}", False, '', '', '', ''),
+ (Q3, 'EUROFER, European Steel in Figures 2024', 'pp. 17, 25, 38', 'Steel, 2019 → 2023', 'Production 150.2 → 126.2 Mt; consumption 144.8 → 125.6 Mt; imports 26.3 → 25.6 Mt', None, 'Fall in consumption as share of fall in production', f"='Trade & demand'!F{STR['Apparent steel consumption, Mt']}/'Trade & demand'!F{STR['Crude steel production, Mt']}", False, '', 'Demand: consumption fell about as much as production; imports flat', 'verified', 'eurofer.eu (EUROFER-2024-Version-June14.pdf)'),
+ (Q3, 'UBA Climate Change 02/2022 (cement)', '§3.1 p. 26', 'EU28 cement 2005–2018', 'Demand-side 55 %; ETS did not "substantially" contribute; EU net clinker exporter since 2008', 0.55, '', None, False, '', 'Demand', 'verified', ''),
+ (Q3, 'Ex-post leakage studies (Naegele & Zaklan; Dechezleprêtre et al.; Branger et al.; Healy et al.; Verde)', 'abstracts', 'Phases I–II (to about 2016)', 'No carbon-price leakage found (low prices, free allocation)', None, '', None, False, '', 'No leakage up to about 2016', 'verified', 'see sheet Trade & demand, part E'),
+ (Q3, 'Chen, Di Gregorio & Paavola 2026, Climate Policy', 'pp. 7, 9, 11', 'Meta-analysis to 2025', 'Trade leakage 0.03 (not significant); investment leakage 1.07 (significant)', None, '', None, False, '', 'No trade leakage; investment leakage', 'verified', 'doi.org/10.1080/14693062.2026.2627750'),
+ (Q3, 'ECB EB 1/2023 Box 2; IEA EMR 2023; Draghi 2024', 'see Trade & demand E', '2021–2023', 'Energy-cost relocation in chemicals and aluminium; CO2 about 2 % of steel cost', None, '', None, False, '', 'Energy-cost leakage after 2022, not carbon-price', 'verified (IEA via mirror)', ''),
+ (Q3, 'Roland Berger for Cefic, closures radar 2022–2025', 'pdf p. 4', 'European chemicals', '37 Mt closures; energy cost 49 %, demand 19 %', 0.49, '', None, False, '', 'Mostly energy cost (industry source)', 'verified', 'cefic.org/app/uploads/2026/01/European-Chemical-Closures-and-Investments-Radar-2022-2025.pdf'),
+ (Q3, 'Colmer et al. 2025; Pauliuk et al. 2013; OECD Steel Outlook 2025', '—', '—', 'Years / stock figures / overcapacity numbers', None, '', None, False, '', 'Not used', 'not verified', ''),
+ (Q4, 'EC 2040 IA, SWD(2024) 63', 'Part 1 §5.3.1 p. 31; Part 2 Annex 6 p. 15', 'S1–S3', 'Identical industry output assumptions; EII GVA +25 % by 2040; volumes grow except steel', 0.25, 'ECL pathways: steel + cement output change 2025–2040, REMIND 1266', f"=('Scenario assumptions'!E5+'Scenario assumptions'!E6)/('Scenario assumptions'!D5+'Scenario assumptions'!D6)-1", False, 'Partly (value added vs tonnes)', 'Output held up by assumption', 'verified', 'data.consilium.europa.eu/doc/document/ST-6291-2024-ADD-2/en/pdf'),
+ (Q4, 'JRC CETO 2024', 'pp. 14–15, 34–35', 'CETO 2024 (activity from IA S2)', 'Steel about 145 Mt flat; cement +13–16 % 2021–2050', None, 'CETO 2024 cement output change 2025–2040 (model data)', "='Scenario assumptions'!G10", False, 'Yes', 'Consistent: CETO inherits the IA assumption', 'verified', ''),
+ (Q4, 'EC 2040 IA, LIFE variant', 'Table 3 pp. 38–39', 'LIFE', 'Steel −15 %, cement −25 % by 2050 vs S1–S3', -0.15, '', None, False, '', 'Only demand-side variant in Commission modelling', 'verified', ''),
+ (Q4, 'Pehl, Schreyer & Luderer 2024, GMD 17', 'PDF pp. 5, 15', 'REMIND', 'Output falls endogenously with mitigation (price response)', None, 'REMIND 1266 steel output change 2025–2040', "='Scenario assumptions'!G5", False, 'Yes', 'Consistent: REMIND lets output fall', 'verified', 'doi.org/10.5194/gmd-17-2015-2024'),
+ (Q4, 'IPCC AR6 WGIII Ch. 11', 'p. 1206', 'Assessment', 'Material efficiency and demand management "still not well represented in the scenario literature"', None, '', None, False, '', 'Known structural gap', 'verified', ''),
+ (Q4, 'Material Economics 2019; CLEVER corridors 2022', 'PDF pp. 26, 78; PDF p. 10', 'Demand-side studies', 'Steel 139 Mt (circular) vs about 190 baseline; 2050 cement 52–99 %, steel 74–92 % of 2015', None, '', None, False, '', 'Lower output possible by design', 'verified', ''),
+ (Q4, 'Historical vs scenario decomposition', '—', 'Searched in all four sweeps', 'No published comparison found', None, 'Steel + cement: share from producing less, history vs ECL pathways', "=Scenarios!Q" + str(HIST_SC), False, '', 'Our comparison appears new', '', ''),
+ (Q4, 'EUCalc D3.2; Pauliuk et al. 2017; JRC GECO 2024; CTP IA SWD(2020) 176', '—', '—', 'Not opened', None, '', None, False, '', 'Not used', 'not verified', ''),
 ]
-for k, row in enumerate(LIT):
+qprev = None
+for k, (q, src, loc, scope, fin, theirs, olab, ours, diff, comp, verd, stat, url) in enumerate(EV):
     r = 5 + k
-    for j, v in enumerate(row):
-        c = wl.cell(r, 1 + j, v); c.font = fLink if j == 5 else fN; c.alignment = Alignment(wrap_text=True, vertical='top')
-        if j == 5: c.number_format = PCT if any(s in row[4] for s in ('%', 'share', 'intensity change')) else NUM
-    if row[0]:
-        for j in range(1, 9): wl.cell(r - 1, j).border = thin if k else Border()
-for j, w in enumerate([34, 16, 34, 40, 44, 12, 30, 30], 1): wl.column_dimensions[CL(j)].width = w
+    vals = [q if q != qprev else '', src, loc, scope, fin, theirs, olab, ours, (f'=(F{r}-H{r})*100' if diff else None), comp, verd, stat, url]
+    for j, v in enumerate(vals):
+        if v is None: continue
+        c = wl.cell(r, 1 + j, v); c.alignment = Alignment(wrap_text=True, vertical='top')
+        c.font = fIn if j == 5 else (fLink if j == 7 else (fB if j == 0 else fN))
+        if j in (5, 7):
+            c.number_format = PCT if (isinstance(v, float) and abs(v) < 2) or (j == 7 and any(t in olab for t in ('share', 'change', 'Share', 'Fall'))) and 'Mt' not in olab and 'points' not in olab else NUM
+        if j == 8: c.number_format = '0.0'
+    if q != qprev and k:
+        for j in range(1, 14): wl.cell(r - 1, j).border = thin
+    qprev = q
+for j, w in enumerate([18, 34, 16, 30, 44, 10, 38, 10, 10, 22, 36, 14, 40], 1): wl.column_dimensions[CL(j)].width = w
+wl.freeze_panes = 'B5'
+
+# ------------------------------------------------------------------ Key findings
+kf = wb.create_sheet('Key findings', 1)
+kf.cell(1, 1, 'Key findings in plain words (each number is a live link into this workbook)').font = fT
+kf.cell(2, 1, 'AI-compiled — pending Secretariat verification.').font = Font(name=F, bold=True, color='C55A11')
+hdr(kf, 4, ['#', 'Finding', 'Number', 'Shown on sheet', 'What the research sweep says'])
+hl = PR['Headline']
+KF = [
+ ('EU manufacturing emissions fell by about 19 Mt a year between 2005 and 2024.', f'=-Periods!H{hl}/19', NUM, 'Periods', 'EEA, ESABCC and the Commission report falls of the same size (sheet Evidence, Q1).'),
+ ('About 45 % of that fall came from producing less (average of the two calculation orders).', f'=Periods!Q{hl}', PCT, 'Periods / Workout', 'Every study that measures output in tonnes finds output-led cuts in steel and cement; value-based studies find a smaller output role.'),
+ ('Measured with production indices (value-based) instead of tonnes, the share drops to about one third.', f'=Periods!Q{PR["Production index only"]}', PCT, 'Periods', 'Method literature: value measures overstate intensity gains (Farla & Blok; Norman; Ang & Xu).'),
+ ('The share depends on the start year: from the 2007 peak it is higher, from 2010 lower.', f'=Periods!Q{PR["Start 2007 (pre-crisis peak)"]}', PCT, 'Periods', 'NAVIGATE: the collapse of heavy industry and the 2008 crisis drove past cuts.'),
+ ('For steel and cement, lime, glass, two-thirds of the fall came from producing less.', f'=Scenarios!Q{HIST_SC}', PCT, 'Scenarios / Periods', 'UBA (steel, cement), Branger & Quirion, EEA and ESABCC all agree.'),
+ ('Steel emitted only slightly less per tonne in 2021 than in 2008 (ours).', P('Lit: ESABCC steel 2008–2021', 'P')[0:] , PCT, 'Steel & cement', 'ESABCC Fig 26: −4.7 %; EEA: "only a marginal decline"; ETS hot-metal benchmark +2.2 %.'),
+ ('Cement process CO2 per tonne was flat 2005–2021 (ours).', P('Lit: ESABCC cement 2005–2021', 'P'), PCT, 'Steel & cement', 'ESABCC Fig 26: +0.8 %; clinker benchmark −4.6 %.'),
+ ('Imports did not replace EU production wholesale: emissions embodied in imported basic metals fell 2010–2024.', f"='Trade & demand'!E{FPC['C24']}", PCT, 'Trade & demand', 'Footprint shares rose (relative displacement). Ex-post studies find no carbon-price leakage to about 2016; after 2022, energy-cost relocation in chemicals and aluminium.'),
+ ('In the three ECL pathways that report output, only about one tenth of the 2025–2040 steel and cement cut comes from producing less (the highest of the three is shown; the others are lower).', f'=MAX(Scenarios!Q{SCN_ROWS[0]},Scenarios!Q{SCN_ROWS[1]},Scenarios!Q{SCN_ROWS[2]})', PCT, 'Scenarios', 'Expected: the Commission IA fixes output by assumption and CETO inherits it; only REMIND lets output respond (Q4).'),
+ ('So the cut from producing cleaner must speed up sharply: from about 10 Mt a year in the past to most of the 18–28 Mt a year the pathways need.', f'=-(Periods!H{hl}-Periods!H{hl}*Periods!Q{hl})/19', NUM, 'Periods', 'IPCC AR6: demand-side options are under-represented in scenarios; Material Economics and CLEVER show lower output by design.'),
+]
+for k, (txt, f, nf, sh, lit) in enumerate(KF):
+    r = 5 + k
+    kf.cell(r, 1, k + 1).font = fN
+    c = kf.cell(r, 2, txt); c.font = fN; c.alignment = Alignment(wrap_text=True, vertical='top')
+    c = kf.cell(r, 3, f); c.font = fLink; c.number_format = nf
+    kf.cell(r, 4, sh).font = fN
+    c = kf.cell(r, 5, lit); c.font = fN; c.alignment = Alignment(wrap_text=True, vertical='top')
+    kf.row_dimensions[r].height = 45
+kf.cell(5 + len(KF) + 1, 2, 'Units: rows 1 and 10 in Mt CO2e a year; the others are shares or % changes. The 18–28 Mt a year needed comes from the pathway screening (fig_industry_onefig.py).').font = fNote
+kf.column_dimensions['A'].width = 4; kf.column_dimensions['B'].width = 80; kf.column_dimensions['C'].width = 11; kf.column_dimensions['D'].width = 18; kf.column_dimensions['E'].width = 80
 
 # ------------------------------------------------------------------ Summary
 su = wb.create_sheet('Summary', 1)
