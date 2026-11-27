@@ -37,6 +37,7 @@ The sum of sectors differs from item 6 net by non-CO2 gases and unallocated emis
 
 Item 8, CAPEX and OPEX (sheet Costs):
 Only CETO 2024 (capital investment, operating cost incl. energy purchases, CO2 costs; bn EUR2015/yr) and EC IA S2 (decarbonisation investment in industry, bn EUR2023/yr as 2031–2040 and 2041–2050 averages) publish industry costs. The REMIND runs, CETO 2025, POLIZERO and Agora publish none for industry. Units, price bases and periods differ, so no ranges are formed.
+Costs per tonne (sheet Costs per tonne): CETO 2024 publishes energy-related cost per tonne of output by process (blast-furnace and electric-arc steel, cement, glass, ceramics, chemicals), EUR2015/t. CAPEX = annuity of the capital costs; OPEX = fixed + variable O&M + fuel; CO2 cost is published separately. Covers energy-using equipment only, not the full plant.
 
 General:
 Values are as published (EU27), not harmonised to the inventory. 1 EJ = 277.778 TWh; 1 ktoe = 0.01163 TWh; 1 Mtoe = 11.63 TWh.

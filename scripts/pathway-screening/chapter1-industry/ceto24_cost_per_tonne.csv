@@ -1,0 +1,241 @@
+process,component,year,value,unit,sheet,row,label
+Integrated steelworks,total,2005,186.2988896669299,EUR2015/t output,ISI,317,Energy equipment capital and operating costs
+Integrated steelworks,total,2020,163.64202648624106,EUR2015/t output,ISI,317,Energy equipment capital and operating costs
+Integrated steelworks,total,2030,201.9530318608643,EUR2015/t output,ISI,317,Energy equipment capital and operating costs
+Integrated steelworks,total,2040,350.86828673578464,EUR2015/t output,ISI,317,Energy equipment capital and operating costs
+Integrated steelworks,total,2050,350.1555158648207,EUR2015/t output,ISI,317,Energy equipment capital and operating costs
+Integrated steelworks,capex_annuity,2005,37.57835986135411,EUR2015/t output,ISI,318,Annuity of the capital costs
+Integrated steelworks,capex_annuity,2020,20.76939004806754,EUR2015/t output,ISI,318,Annuity of the capital costs
+Integrated steelworks,capex_annuity,2030,28.160155996633286,EUR2015/t output,ISI,318,Annuity of the capital costs
+Integrated steelworks,capex_annuity,2040,77.43518567090219,EUR2015/t output,ISI,318,Annuity of the capital costs
+Integrated steelworks,capex_annuity,2050,72.93550164320888,EUR2015/t output,ISI,318,Annuity of the capital costs
+Integrated steelworks,fixed_om,2005,29.659663892966265,EUR2015/t output,ISI,319,Fixed costs
+Integrated steelworks,fixed_om,2020,28.67678202508451,EUR2015/t output,ISI,319,Fixed costs
+Integrated steelworks,fixed_om,2030,24.04447629361262,EUR2015/t output,ISI,319,Fixed costs
+Integrated steelworks,fixed_om,2040,19.358472166542168,EUR2015/t output,ISI,319,Fixed costs
+Integrated steelworks,fixed_om,2050,18.42213498977458,EUR2015/t output,ISI,319,Fixed costs
+Integrated steelworks,variable_om,2005,51.6730374924955,EUR2015/t output,ISI,320,Variable O&M costs
+Integrated steelworks,variable_om,2020,47.81848099640868,EUR2015/t output,ISI,320,Variable O&M costs
+Integrated steelworks,variable_om,2030,38.915073532826455,EUR2015/t output,ISI,320,Variable O&M costs
+Integrated steelworks,variable_om,2040,24.819902081529786,EUR2015/t output,ISI,320,Variable O&M costs
+Integrated steelworks,variable_om,2050,21.833692573682363,EUR2015/t output,ISI,320,Variable O&M costs
+Integrated steelworks,fuel,2005,67.38782842011403,EUR2015/t output,ISI,321,Fuel costs
+Integrated steelworks,fuel,2020,66.37737341668034,EUR2015/t output,ISI,321,Fuel costs
+Integrated steelworks,fuel,2030,110.83332603779192,EUR2015/t output,ISI,321,Fuel costs
+Integrated steelworks,fuel,2040,229.25472681681052,EUR2015/t output,ISI,321,Fuel costs
+Integrated steelworks,fuel,2050,236.96418665815486,EUR2015/t output,ISI,321,Fuel costs
+Integrated steelworks,co2,2005,0,EUR2015/t output,ISI,323,CO2 emissions related cost
+Integrated steelworks,co2,2020,4.777888293820015,EUR2015/t output,ISI,323,CO2 emissions related cost
+Integrated steelworks,co2,2030,71.04401771661327,EUR2015/t output,ISI,323,CO2 emissions related cost
+Integrated steelworks,co2,2040,53.11998957629864,EUR2015/t output,ISI,323,CO2 emissions related cost
+Integrated steelworks,co2,2050,33.89857524430293,EUR2015/t output,ISI,323,CO2 emissions related cost
+Electric arc,total,2005,163.27973613145127,EUR2015/t output,ISI,329,Energy equipment capital and operating costs
+Electric arc,total,2020,168.54055780862112,EUR2015/t output,ISI,329,Energy equipment capital and operating costs
+Electric arc,total,2030,195.7506205450038,EUR2015/t output,ISI,329,Energy equipment capital and operating costs
+Electric arc,total,2040,227.67411044371798,EUR2015/t output,ISI,329,Energy equipment capital and operating costs
+Electric arc,total,2050,219.07441854775814,EUR2015/t output,ISI,329,Energy equipment capital and operating costs
+Electric arc,capex_annuity,2005,37.8545409591339,EUR2015/t output,ISI,330,Annuity of the capital costs
+Electric arc,capex_annuity,2020,39.62830151038328,EUR2015/t output,ISI,330,Annuity of the capital costs
+Electric arc,capex_annuity,2030,46.062918038282184,EUR2015/t output,ISI,330,Annuity of the capital costs
+Electric arc,capex_annuity,2040,42.59410895628814,EUR2015/t output,ISI,330,Annuity of the capital costs
+Electric arc,capex_annuity,2050,44.46585596031179,EUR2015/t output,ISI,330,Annuity of the capital costs
+Electric arc,fixed_om,2005,26.87876882379352,EUR2015/t output,ISI,331,Fixed costs
+Electric arc,fixed_om,2020,27.94517785903644,EUR2015/t output,ISI,331,Fixed costs
+Electric arc,fixed_om,2030,25.82981573713508,EUR2015/t output,ISI,331,Fixed costs
+Electric arc,fixed_om,2040,25.53022796848618,EUR2015/t output,ISI,331,Fixed costs
+Electric arc,fixed_om,2050,25.207618502210725,EUR2015/t output,ISI,331,Fixed costs
+Electric arc,variable_om,2005,31.253614146730204,EUR2015/t output,ISI,332,Variable O&M costs
+Electric arc,variable_om,2020,32.72814302838385,EUR2015/t output,ISI,332,Variable O&M costs
+Electric arc,variable_om,2030,31.342451874379517,EUR2015/t output,ISI,332,Variable O&M costs
+Electric arc,variable_om,2040,31.610553944131333,EUR2015/t output,ISI,332,Variable O&M costs
+Electric arc,variable_om,2050,31.44616884805969,EUR2015/t output,ISI,332,Variable O&M costs
+Electric arc,fuel,2005,67.29281220179365,EUR2015/t output,ISI,333,Fuel costs
+Electric arc,fuel,2020,68.23893541081756,EUR2015/t output,ISI,333,Fuel costs
+Electric arc,fuel,2030,92.51543489520704,EUR2015/t output,ISI,333,Fuel costs
+Electric arc,fuel,2040,127.93921957481231,EUR2015/t output,ISI,333,Fuel costs
+Electric arc,fuel,2050,117.95477523717594,EUR2015/t output,ISI,333,Fuel costs
+Electric arc,co2,2005,0,EUR2015/t output,ISI,335,CO2 emissions related cost
+Electric arc,co2,2020,0.6800016654764649,EUR2015/t output,ISI,335,CO2 emissions related cost
+Electric arc,co2,2030,9.299500563470545,EUR2015/t output,ISI,335,CO2 emissions related cost
+Electric arc,co2,2040,18.733396798414923,EUR2015/t output,ISI,335,CO2 emissions related cost
+Electric arc,co2,2050,14.824383241332638,EUR2015/t output,ISI,335,CO2 emissions related cost
+Cement,total,2005,38.90897673308335,EUR2015/t output,NMM,423,Energy equipment capital and operating costs
+Cement,total,2020,36.54584854149023,EUR2015/t output,NMM,423,Energy equipment capital and operating costs
+Cement,total,2030,52.4441582727644,EUR2015/t output,NMM,423,Energy equipment capital and operating costs
+Cement,total,2040,90.37716861283245,EUR2015/t output,NMM,423,Energy equipment capital and operating costs
+Cement,total,2050,105.33573915043493,EUR2015/t output,NMM,423,Energy equipment capital and operating costs
+Cement,capex_annuity,2005,5.749367276663648,EUR2015/t output,NMM,424,Annuity of the capital costs
+Cement,capex_annuity,2020,5.860271451926138,EUR2015/t output,NMM,424,Annuity of the capital costs
+Cement,capex_annuity,2030,6.781083557747301,EUR2015/t output,NMM,424,Annuity of the capital costs
+Cement,capex_annuity,2040,8.185426447355304,EUR2015/t output,NMM,424,Annuity of the capital costs
+Cement,capex_annuity,2050,14.625760557264064,EUR2015/t output,NMM,424,Annuity of the capital costs
+Cement,fixed_om,2005,4.79380479730932,EUR2015/t output,NMM,425,Fixed costs
+Cement,fixed_om,2020,4.689771074557175,EUR2015/t output,NMM,425,Fixed costs
+Cement,fixed_om,2030,4.250722177823365,EUR2015/t output,NMM,425,Fixed costs
+Cement,fixed_om,2040,4.120206904657826,EUR2015/t output,NMM,425,Fixed costs
+Cement,fixed_om,2050,3.970529800222082,EUR2015/t output,NMM,425,Fixed costs
+Cement,variable_om,2005,1.1530726311848158,EUR2015/t output,NMM,426,Variable O&M costs
+Cement,variable_om,2020,1.1220163470209163,EUR2015/t output,NMM,426,Variable O&M costs
+Cement,variable_om,2030,1.037440204812229,EUR2015/t output,NMM,426,Variable O&M costs
+Cement,variable_om,2040,1.0006384100082992,EUR2015/t output,NMM,426,Variable O&M costs
+Cement,variable_om,2050,0.9490683736789941,EUR2015/t output,NMM,426,Variable O&M costs
+Cement,fuel,2005,27.212732027925565,EUR2015/t output,NMM,427,Fuel costs
+Cement,fuel,2020,24.873789667986,EUR2015/t output,NMM,427,Fuel costs
+Cement,fuel,2030,40.374912332381506,EUR2015/t output,NMM,427,Fuel costs
+Cement,fuel,2040,77.07089685081102,EUR2015/t output,NMM,427,Fuel costs
+Cement,fuel,2050,85.7903804192698,EUR2015/t output,NMM,427,Fuel costs
+Cement,co2,2005,0,EUR2015/t output,NMM,429,CO2 emissions related cost
+Cement,co2,2020,2.770776941087975,EUR2015/t output,NMM,429,CO2 emissions related cost
+Cement,co2,2030,45.39969091581014,EUR2015/t output,NMM,429,CO2 emissions related cost
+Cement,co2,2040,22.2954184819533,EUR2015/t output,NMM,429,CO2 emissions related cost
+Cement,co2,2050,11.905315647429616,EUR2015/t output,NMM,429,CO2 emissions related cost
+Ceramics & other NMM,total,2005,40.27205275011542,EUR2015/t output,NMM,435,Energy equipment capital and operating costs
+Ceramics & other NMM,total,2020,42.060216227908434,EUR2015/t output,NMM,435,Energy equipment capital and operating costs
+Ceramics & other NMM,total,2030,51.417583229219154,EUR2015/t output,NMM,435,Energy equipment capital and operating costs
+Ceramics & other NMM,total,2040,60.45939118276614,EUR2015/t output,NMM,435,Energy equipment capital and operating costs
+Ceramics & other NMM,total,2050,56.370366576034286,EUR2015/t output,NMM,435,Energy equipment capital and operating costs
+Ceramics & other NMM,capex_annuity,2005,7.7845607297149435,EUR2015/t output,NMM,436,Annuity of the capital costs
+Ceramics & other NMM,capex_annuity,2020,9.025195209523904,EUR2015/t output,NMM,436,Annuity of the capital costs
+Ceramics & other NMM,capex_annuity,2030,11.339298519610987,EUR2015/t output,NMM,436,Annuity of the capital costs
+Ceramics & other NMM,capex_annuity,2040,10.840750986072939,EUR2015/t output,NMM,436,Annuity of the capital costs
+Ceramics & other NMM,capex_annuity,2050,11.006677131066548,EUR2015/t output,NMM,436,Annuity of the capital costs
+Ceramics & other NMM,fixed_om,2005,1.7974314393901771,EUR2015/t output,NMM,437,Fixed costs
+Ceramics & other NMM,fixed_om,2020,1.9157841701817069,EUR2015/t output,NMM,437,Fixed costs
+Ceramics & other NMM,fixed_om,2030,1.531586029399431,EUR2015/t output,NMM,437,Fixed costs
+Ceramics & other NMM,fixed_om,2040,1.4407702394602133,EUR2015/t output,NMM,437,Fixed costs
+Ceramics & other NMM,fixed_om,2050,1.522698444734305,EUR2015/t output,NMM,437,Fixed costs
+Ceramics & other NMM,variable_om,2005,12.85960366820188,EUR2015/t output,NMM,438,Variable O&M costs
+Ceramics & other NMM,variable_om,2020,13.442852697904293,EUR2015/t output,NMM,438,Variable O&M costs
+Ceramics & other NMM,variable_om,2030,11.253760051184708,EUR2015/t output,NMM,438,Variable O&M costs
+Ceramics & other NMM,variable_om,2040,9.636240169679771,EUR2015/t output,NMM,438,Variable O&M costs
+Ceramics & other NMM,variable_om,2050,9.958652413523557,EUR2015/t output,NMM,438,Variable O&M costs
+Ceramics & other NMM,fuel,2005,17.830456912808426,EUR2015/t output,NMM,439,Fuel costs
+Ceramics & other NMM,fuel,2020,17.67638415029853,EUR2015/t output,NMM,439,Fuel costs
+Ceramics & other NMM,fuel,2030,27.29293862902403,EUR2015/t output,NMM,439,Fuel costs
+Ceramics & other NMM,fuel,2040,38.54162978755321,EUR2015/t output,NMM,439,Fuel costs
+Ceramics & other NMM,fuel,2050,33.88233858670988,EUR2015/t output,NMM,439,Fuel costs
+Ceramics & other NMM,co2,2005,0,EUR2015/t output,NMM,441,CO2 emissions related cost
+Ceramics & other NMM,co2,2020,0.5868480550425136,EUR2015/t output,NMM,441,CO2 emissions related cost
+Ceramics & other NMM,co2,2030,2.99979561359854,EUR2015/t output,NMM,441,CO2 emissions related cost
+Ceramics & other NMM,co2,2040,6.916231599611622,EUR2015/t output,NMM,441,CO2 emissions related cost
+Ceramics & other NMM,co2,2050,3.5388544498741745,EUR2015/t output,NMM,441,CO2 emissions related cost
+Glass production,total,2005,114.49211888481545,EUR2015/t output,NMM,447,Energy equipment capital and operating costs
+Glass production,total,2020,114.39519012369463,EUR2015/t output,NMM,447,Energy equipment capital and operating costs
+Glass production,total,2030,159.80799296124633,EUR2015/t output,NMM,447,Energy equipment capital and operating costs
+Glass production,total,2040,211.2291482278284,EUR2015/t output,NMM,447,Energy equipment capital and operating costs
+Glass production,total,2050,197.9509009884716,EUR2015/t output,NMM,447,Energy equipment capital and operating costs
+Glass production,capex_annuity,2005,28.349679479253705,EUR2015/t output,NMM,448,Annuity of the capital costs
+Glass production,capex_annuity,2020,43.421771848296906,EUR2015/t output,NMM,448,Annuity of the capital costs
+Glass production,capex_annuity,2030,40.4179751838028,EUR2015/t output,NMM,448,Annuity of the capital costs
+Glass production,capex_annuity,2040,36.7823790506188,EUR2015/t output,NMM,448,Annuity of the capital costs
+Glass production,capex_annuity,2050,40.46544133552555,EUR2015/t output,NMM,448,Annuity of the capital costs
+Glass production,fixed_om,2005,6.0984733873815316,EUR2015/t output,NMM,449,Fixed costs
+Glass production,fixed_om,2020,5.641870675796986,EUR2015/t output,NMM,449,Fixed costs
+Glass production,fixed_om,2030,3.757367628099548,EUR2015/t output,NMM,449,Fixed costs
+Glass production,fixed_om,2040,3.1090136335412732,EUR2015/t output,NMM,449,Fixed costs
+Glass production,fixed_om,2050,3.197483804767068,EUR2015/t output,NMM,449,Fixed costs
+Glass production,variable_om,2005,4.301833638445204,EUR2015/t output,NMM,450,Variable O&M costs
+Glass production,variable_om,2020,3.987193139443306,EUR2015/t output,NMM,450,Variable O&M costs
+Glass production,variable_om,2030,3.3418961691602194,EUR2015/t output,NMM,450,Variable O&M costs
+Glass production,variable_om,2040,3.174308776330349,EUR2015/t output,NMM,450,Variable O&M costs
+Glass production,variable_om,2050,3.1702289345197223,EUR2015/t output,NMM,450,Variable O&M costs
+Glass production,fuel,2005,75.74213237973501,EUR2015/t output,NMM,451,Fuel costs
+Glass production,fuel,2020,61.34435446015743,EUR2015/t output,NMM,451,Fuel costs
+Glass production,fuel,2030,112.29075398018375,EUR2015/t output,NMM,451,Fuel costs
+Glass production,fuel,2040,168.16344676733797,EUR2015/t output,NMM,451,Fuel costs
+Glass production,fuel,2050,151.11774691365926,EUR2015/t output,NMM,451,Fuel costs
+Glass production,co2,2005,0,EUR2015/t output,NMM,453,CO2 emissions related cost
+Glass production,co2,2020,1.6060464482081218,EUR2015/t output,NMM,453,CO2 emissions related cost
+Glass production,co2,2030,5.782081217045486,EUR2015/t output,NMM,453,CO2 emissions related cost
+Glass production,co2,2040,17.40495992460693,EUR2015/t output,NMM,453,CO2 emissions related cost
+Glass production,co2,2050,8.893459218959885,EUR2015/t output,NMM,453,CO2 emissions related cost
+Basic chemicals,total,2005,989.1469826379405,EUR2015/t output,CHI,483,Energy equipment capital and operating costs
+Basic chemicals,total,2020,717.7315408901937,EUR2015/t output,CHI,483,Energy equipment capital and operating costs
+Basic chemicals,total,2030,1106.5085202038115,EUR2015/t output,CHI,483,Energy equipment capital and operating costs
+Basic chemicals,total,2040,1429.367160324447,EUR2015/t output,CHI,483,Energy equipment capital and operating costs
+Basic chemicals,total,2050,1527.057589487179,EUR2015/t output,CHI,483,Energy equipment capital and operating costs
+Basic chemicals,capex_annuity,2005,68.72019512792629,EUR2015/t output,CHI,484,Annuity of the capital costs
+Basic chemicals,capex_annuity,2020,68.90701804148392,EUR2015/t output,CHI,484,Annuity of the capital costs
+Basic chemicals,capex_annuity,2030,69.33715967344884,EUR2015/t output,CHI,484,Annuity of the capital costs
+Basic chemicals,capex_annuity,2040,69.4709494315649,EUR2015/t output,CHI,484,Annuity of the capital costs
+Basic chemicals,capex_annuity,2050,72.57623511012245,EUR2015/t output,CHI,484,Annuity of the capital costs
+Basic chemicals,fixed_om,2005,57.55555157458549,EUR2015/t output,CHI,485,Fixed costs
+Basic chemicals,fixed_om,2020,51.601136371822534,EUR2015/t output,CHI,485,Fixed costs
+Basic chemicals,fixed_om,2030,46.5878301297571,EUR2015/t output,CHI,485,Fixed costs
+Basic chemicals,fixed_om,2040,38.69403706667072,EUR2015/t output,CHI,485,Fixed costs
+Basic chemicals,fixed_om,2050,37.97890856547074,EUR2015/t output,CHI,485,Fixed costs
+Basic chemicals,variable_om,2005,18.17734735800647,EUR2015/t output,CHI,486,Variable O&M costs
+Basic chemicals,variable_om,2020,16.72525898804303,EUR2015/t output,CHI,486,Variable O&M costs
+Basic chemicals,variable_om,2030,16.32935330169063,EUR2015/t output,CHI,486,Variable O&M costs
+Basic chemicals,variable_om,2040,15.14115341504879,EUR2015/t output,CHI,486,Variable O&M costs
+Basic chemicals,variable_om,2050,14.912083729785191,EUR2015/t output,CHI,486,Variable O&M costs
+Basic chemicals,fuel,2005,844.6938885774222,EUR2015/t output,CHI,487,Fuel costs
+Basic chemicals,fuel,2020,580.4981274888443,EUR2015/t output,CHI,487,Fuel costs
+Basic chemicals,fuel,2030,974.2541770989149,EUR2015/t output,CHI,487,Fuel costs
+Basic chemicals,fuel,2040,1306.0610204111626,EUR2015/t output,CHI,487,Fuel costs
+Basic chemicals,fuel,2050,1401.5903620818005,EUR2015/t output,CHI,487,Fuel costs
+Basic chemicals,co2,2005,0,EUR2015/t output,CHI,489,CO2 emissions related cost
+Basic chemicals,co2,2020,4.428286685793882,EUR2015/t output,CHI,489,CO2 emissions related cost
+Basic chemicals,co2,2030,62.43399542675589,EUR2015/t output,CHI,489,CO2 emissions related cost
+Basic chemicals,co2,2040,66.62536904764536,EUR2015/t output,CHI,489,CO2 emissions related cost
+Basic chemicals,co2,2050,41.34372721740981,EUR2015/t output,CHI,489,CO2 emissions related cost
+Other chemicals,total,2005,243.32769778779954,EUR2015/t output,CHI,495,Energy equipment capital and operating costs
+Other chemicals,total,2020,192.72477775211715,EUR2015/t output,CHI,495,Energy equipment capital and operating costs
+Other chemicals,total,2030,283.39889513535604,EUR2015/t output,CHI,495,Energy equipment capital and operating costs
+Other chemicals,total,2040,383.6322635038103,EUR2015/t output,CHI,495,Energy equipment capital and operating costs
+Other chemicals,total,2050,313.037524803465,EUR2015/t output,CHI,495,Energy equipment capital and operating costs
+Other chemicals,capex_annuity,2005,22.272594213463023,EUR2015/t output,CHI,496,Annuity of the capital costs
+Other chemicals,capex_annuity,2020,23.55500125300644,EUR2015/t output,CHI,496,Annuity of the capital costs
+Other chemicals,capex_annuity,2030,26.8036199548932,EUR2015/t output,CHI,496,Annuity of the capital costs
+Other chemicals,capex_annuity,2040,26.682280670878793,EUR2015/t output,CHI,496,Annuity of the capital costs
+Other chemicals,capex_annuity,2050,28.96797232634426,EUR2015/t output,CHI,496,Annuity of the capital costs
+Other chemicals,fixed_om,2005,5.302053964969194,EUR2015/t output,CHI,497,Fixed costs
+Other chemicals,fixed_om,2020,4.515280532155633,EUR2015/t output,CHI,497,Fixed costs
+Other chemicals,fixed_om,2030,4.156532887924947,EUR2015/t output,CHI,497,Fixed costs
+Other chemicals,fixed_om,2040,4.48650145070559,EUR2015/t output,CHI,497,Fixed costs
+Other chemicals,fixed_om,2050,4.363491412697491,EUR2015/t output,CHI,497,Fixed costs
+Other chemicals,variable_om,2005,9.850120856514193,EUR2015/t output,CHI,498,Variable O&M costs
+Other chemicals,variable_om,2020,8.275273482533946,EUR2015/t output,CHI,498,Variable O&M costs
+Other chemicals,variable_om,2030,9.45567631391834,EUR2015/t output,CHI,498,Variable O&M costs
+Other chemicals,variable_om,2040,9.88892243378857,EUR2015/t output,CHI,498,Variable O&M costs
+Other chemicals,variable_om,2050,9.530753578713417,EUR2015/t output,CHI,498,Variable O&M costs
+Other chemicals,fuel,2005,205.90292875285311,EUR2015/t output,CHI,499,Fuel costs
+Other chemicals,fuel,2020,156.37922248442112,EUR2015/t output,CHI,499,Fuel costs
+Other chemicals,fuel,2030,242.98306597861958,EUR2015/t output,CHI,499,Fuel costs
+Other chemicals,fuel,2040,342.57455894843736,EUR2015/t output,CHI,499,Fuel costs
+Other chemicals,fuel,2050,270.1753074857098,EUR2015/t output,CHI,499,Fuel costs
+Other chemicals,co2,2005,0,EUR2015/t output,CHI,501,CO2 emissions related cost
+Other chemicals,co2,2020,2.231629338598268,EUR2015/t output,CHI,501,CO2 emissions related cost
+Other chemicals,co2,2030,10.915680503753851,EUR2015/t output,CHI,501,CO2 emissions related cost
+Other chemicals,co2,2040,34.773128829467225,EUR2015/t output,CHI,501,CO2 emissions related cost
+Other chemicals,co2,2050,16.172518752466424,EUR2015/t output,CHI,501,CO2 emissions related cost
+Pharmaceutical products etc.,total,2005,206.7209310959687,EUR2015/t output,CHI,507,Energy equipment capital and operating costs
+Pharmaceutical products etc.,total,2020,215.65022551857984,EUR2015/t output,CHI,507,Energy equipment capital and operating costs
+Pharmaceutical products etc.,total,2030,306.582425826312,EUR2015/t output,CHI,507,Energy equipment capital and operating costs
+Pharmaceutical products etc.,total,2040,369.05545398902206,EUR2015/t output,CHI,507,Energy equipment capital and operating costs
+Pharmaceutical products etc.,total,2050,309.20754494387614,EUR2015/t output,CHI,507,Energy equipment capital and operating costs
+Pharmaceutical products etc.,capex_annuity,2005,22.566629968276875,EUR2015/t output,CHI,508,Annuity of the capital costs
+Pharmaceutical products etc.,capex_annuity,2020,24.677740778742937,EUR2015/t output,CHI,508,Annuity of the capital costs
+Pharmaceutical products etc.,capex_annuity,2030,30.768414749342238,EUR2015/t output,CHI,508,Annuity of the capital costs
+Pharmaceutical products etc.,capex_annuity,2040,33.09563111222611,EUR2015/t output,CHI,508,Annuity of the capital costs
+Pharmaceutical products etc.,capex_annuity,2050,33.98169329517252,EUR2015/t output,CHI,508,Annuity of the capital costs
+Pharmaceutical products etc.,fixed_om,2005,5.706447912088078,EUR2015/t output,CHI,509,Fixed costs
+Pharmaceutical products etc.,fixed_om,2020,5.824659329801272,EUR2015/t output,CHI,509,Fixed costs
+Pharmaceutical products etc.,fixed_om,2030,5.812185987954946,EUR2015/t output,CHI,509,Fixed costs
+Pharmaceutical products etc.,fixed_om,2040,6.270104426032823,EUR2015/t output,CHI,509,Fixed costs
+Pharmaceutical products etc.,fixed_om,2050,5.9806459380100625,EUR2015/t output,CHI,509,Fixed costs
+Pharmaceutical products etc.,variable_om,2005,8.455845005549183,EUR2015/t output,CHI,510,Variable O&M costs
+Pharmaceutical products etc.,variable_om,2020,9.494601990903284,EUR2015/t output,CHI,510,Variable O&M costs
+Pharmaceutical products etc.,variable_om,2030,10.259155326442775,EUR2015/t output,CHI,510,Variable O&M costs
+Pharmaceutical products etc.,variable_om,2040,10.897773818759513,EUR2015/t output,CHI,510,Variable O&M costs
+Pharmaceutical products etc.,variable_om,2050,10.798270318624144,EUR2015/t output,CHI,510,Variable O&M costs
+Pharmaceutical products etc.,fuel,2005,169.99200821005456,EUR2015/t output,CHI,511,Fuel costs
+Pharmaceutical products etc.,fuel,2020,175.65322341913236,EUR2015/t output,CHI,511,Fuel costs
+Pharmaceutical products etc.,fuel,2030,259.742669762572,EUR2015/t output,CHI,511,Fuel costs
+Pharmaceutical products etc.,fuel,2040,318.7919446320036,EUR2015/t output,CHI,511,Fuel costs
+Pharmaceutical products etc.,fuel,2050,258.4469353920694,EUR2015/t output,CHI,511,Fuel costs
+Pharmaceutical products etc.,co2,2005,0,EUR2015/t output,CHI,513,CO2 emissions related cost
+Pharmaceutical products etc.,co2,2020,0,EUR2015/t output,CHI,513,CO2 emissions related cost
+Pharmaceutical products etc.,co2,2030,7.918496824384538,EUR2015/t output,CHI,513,CO2 emissions related cost
+Pharmaceutical products etc.,co2,2040,36.95293988872189,EUR2015/t output,CHI,513,CO2 emissions related cost
+Pharmaceutical products etc.,co2,2050,12.035775009283352,EUR2015/t output,CHI,513,CO2 emissions related cost

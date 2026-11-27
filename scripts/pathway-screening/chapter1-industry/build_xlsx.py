@@ -79,6 +79,7 @@ txt = [('Industry indicators for chapter 1: ECL-compatible set and ECL +10 % set
        ('Data — every extracted value with the variable as published, the file, locator, derivation and notes (blue = value from source; derived values say how).', N),
        ('Definitions — what each item covers and how the splits are made, including whether hydrogen electricity is in item 1.', N),
        ('Costs — industry CAPEX and OPEX where a pathway publishes them (as published: units, price bases and periods differ, so no ranges are formed).', N),
+       ('Costs per tonne — CETO 2024 cost per tonne of steel (both routes), cement, glass and chemicals, split into CAPEX, OPEX and CO2 cost (formulas).', N),
        ('Extraction notes — per-model notes on variables, scope and anomalies. Rebuild: python3 -I build_xlsx.py <out.xlsx> in scripts/pathway-screening/chapter1-industry/.', N),
        ('', N),
        ('Sets (screening of 2,161 pathways, see scripts/pathway-screening/)', B),
@@ -195,6 +196,42 @@ for k, x in enumerate(COSTS):
         if j == 6: c.number_format = '#,##0.0'
 for j, w in enumerate([7, 44, 10, 18, 12, 10, 22, 40, 36, 28, 90], 1): wc.column_dimensions[CL(j)].width = w
 wc.freeze_panes = 'C5'; wc.auto_filter.ref = f'A4:K{4 + len(COSTS)}'
+
+wt = wb.create_sheet('Costs per tonne')
+wt.cell(1, 1, 'Item 8b. Cost per tonne of product by process: JRC CETO 2024 (pathway 2400, ECL set), EU27, EUR2015 per tonne of output').font = B
+wt.cell(2, 1, 'Only CETO 2024 publishes costs per tonne. Source: ceto2024_EU27_ind_5years.xlsx (JRC open data), sheets ISI / NMM / CHI, block "Cost characteristics" (row numbers in column H). Values: blue = as published; black = formula. Energy-related costs only (equipment that uses energy, its O&M and fuel); not the full plant cost.').font = Font(name=F, italic=True, color='6A6A6A')
+wt.cell(3, 1, 'CAPEX = annuity of the capital costs. OPEX = fixed + variable O&M + fuel. The published total equals CAPEX + OPEX (check row); the CO2 cost is published separately and added in the last row.').font = Font(name=F, italic=True, color='6A6A6A')
+CT = list(csv.DictReader(open(os.path.join(S, 'ceto24_cost_per_tonne.csv'), encoding='utf-8')))
+TY = [2005, 2020, 2030, 2040, 2050]
+PROCS = ['Integrated steelworks', 'Electric arc', 'Cement', 'Glass production', 'Ceramics & other NMM', 'Basic chemicals', 'Other chemicals', 'Pharmaceutical products etc.']
+LAB = {'capex_annuity': 'CAPEX: annuity of the capital costs', 'fixed_om': 'Fixed O&M', 'variable_om': 'Variable O&M', 'fuel': 'Fuel (energy purchases)', 'total': 'Published total (energy equipment capital and operating costs)', 'co2': 'CO2 cost (published separately)'}
+r = 5
+for proc in PROCS:
+    c = wt.cell(r, 1, {'Integrated steelworks': 'Steel, blast furnace route (integrated steelworks)', 'Electric arc': 'Steel, electric arc furnace', 'Glass production': 'Glass'}.get(proc, proc)); c.font = B
+    for j, h in enumerate(['Component'] + TY + ['', 'Sheet / row'], 1):
+        if h != '': c = wt.cell(r + 1, j, h); c.font = H; c.fill = HF
+    rows = {}; rr = r + 2
+    for comp in ('capex_annuity', 'fixed_om', 'variable_om', 'fuel', 'total', 'co2'):
+        wt.cell(rr, 1, LAB[comp]).font = N; rows[comp] = rr
+        for j, y in enumerate(TY):
+            v = [x for x in CT if x['process'] == proc and x['component'] == comp and int(x['year']) == y]
+            if v and v[0]['value'] not in ('', 'None'):
+                c = wt.cell(rr, 2 + j, round(float(v[0]['value']), 2)); c.font = BL; c.number_format = '#,##0.0'
+        v = [x for x in CT if x['process'] == proc and x['component'] == comp]
+        if v: wt.cell(rr, 8, f"{v[0]['sheet']} r{v[0]['row']}").font = N
+        rr += 1
+    for lab, fn in (('OPEX = fixed + variable O&M + fuel', lambda col: f"={col}{rows['fixed_om']}+{col}{rows['variable_om']}+{col}{rows['fuel']}"),
+                   ('Check: CAPEX + OPEX − published total (should be 0)', lambda col: f"={col}{rows['capex_annuity']}+{col}{rr}-{col}{rows['total']}"),
+                   ('Total incl. CO2 cost', lambda col: f"={col}{rows['total']}+{col}{rows['co2']}")):
+        wt.cell(rr, 1, lab).font = B if 'incl' in lab else N
+        for j in range(len(TY)):
+            col = CL(2 + j); fx = fn(col) if 'Check' not in lab else f"={col}{rows['capex_annuity']}+{col}{rr - 1}-{col}{rows['total']}"
+            c = wt.cell(rr, 2 + j, fx); c.font = B if 'incl' in lab else N; c.number_format = '#,##0.0' if 'Check' not in lab else '0.00'
+        rr += 1
+    r = rr + 1
+wt.column_dimensions['A'].width = 58
+for j in range(2, 8): wt.column_dimensions[CL(j)].width = 11
+wt.column_dimensions['H'].width = 12
 
 wn = wb.create_sheet('Extraction notes')
 i = 1
