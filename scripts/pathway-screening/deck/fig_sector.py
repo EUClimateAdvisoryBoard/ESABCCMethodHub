@@ -70,7 +70,8 @@ for sk in ('total', 'industry'):
     for s in ('top', 'right'): ax.spines[s].set_visible(False)
     h = [Line2D([], [], marker='o', ls='', ms=11, mfc=col + '88', mec=col, mew=2, label=f"{lab} (n = {OUT[sk][key]['n']}" + (f" of {OUT[sk][key]['N']}" if OUT[sk][key]['n'] < OUT[sk][key]['N'] else '') + ')') for key, col, lab in SETS]
     h2 = [Line2D([], [], color=HC, lw=3, label='EEA inventory 2005–2024')]
-    if sk in WW['WEM']: h2 += [Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (5, 3)), label='WEM: MS projections, existing measures'), Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (1.5, 2)), label='WAM: with additional measures'), Line2D([], [], color=TRC, lw=2.6, label='Trend: linear fit to inventory 2005–2024')]
+    pass  # WEM, WAM and Trend are labelled on the chart, not in the legend (27 Nov 2026)
+#    if sk in WW['WEM']: h2 += [Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (5, 3)), label='WEM: MS projections, existing measures'), Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (1.5, 2)), label='WAM: with additional measures'), Line2D([], [], color=TRC, lw=2.6, label='Trend: linear fit to inventory 2005–2024')]
     f.legend(handles=h, loc='lower left', ncol=1, frameon=False, fontsize=(13 if NARROW else 14.5), bbox_to_anchor=(0.06, 0.0), handletextpad=0.4)
     if PRODAX: h2 += [Line2D([], [], color='#6f6f6f', lw=2.2, ls=(0, (5, 2)), label=('Production, 2005 = 100 (right axis)' if NARROW else 'Production, 2005 = 100 (right axis): tonnes for steel and cement, volume index otherwise'))]
     f.legend(handles=h2, loc='lower left', ncol=2, frameon=False, fontsize=(11.5 if NARROW else 13.5), bbox_to_anchor=((0.50 if NARROW else 0.47), 0.0), handletextpad=0.4, columnspacing=1.0)
