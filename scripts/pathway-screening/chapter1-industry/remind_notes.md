@@ -34,3 +34,37 @@ Region EU27 throughout; 1 EJ = 277.778 TWh; published values are in each CSV not
 - `CO2|Industry and Industrial Processes` duplicates `Energy|Demand|Industry` (not used).
 
 **Not covered.** 2030 values, harmonised Rodrigues data, and Eurostat reconciliation.
+
+## Item 7
+
+Output: `remind_sectors.csv`, built by `scr_remind/sectors.py`. The 2020 column is for orientation.
+
+**Coverage.** The seven native-REMIND runs (1321–1325, 1257–1275, 3162) split industry into Steel, Cement, Chemicals and Other Industry, using `Emi|CO2|Energy|Demand|Industry|<sector>`. 779 (ESABCC) and 862 (ECEMF) have no emissions by subsector, so each gets one "not reported" row.
+
+**What each sector row holds.**
+- Each row is CO2 only: energy CO2 plus the sector's process CO2.
+- Process CO2 is reported for cement and chemicals in Schreyer 2025 and Rodrigues, but for cement only in Schreyer 2024.
+- For Rodrigues, cement process CO2 is derived as total process CO2 minus chemicals process CO2.
+- Energy CO2 is after CCS and net of the credits booked to the sector: industry BECCS, CCS of synfuel-origin CO2, and plastics carbon storage (Schreyer 2025 and Rodrigues only). This is why chemicals turns negative in 2050, between about −15 and −83 Mt.
+- Non-ferrous metals, pulp and paper, and food sit inside "other". Refineries are in energy supply, not industry.
+- "Cement" is the source's label. The file does not say whether it covers lime and glass.
+
+**Sum check.**
+- The four sector rows add up exactly to `Energy|Demand|Industry`.
+- The total row (energy + process CO2) differs from the item 6 net value by the non-CO2 emissions (F-gases, economy-wide, plus industrial N2O). These are not allocated to sectors; the size of the gap is stated in the note on each total row.
+
+## Item 8
+
+Output: `remind_costs.csv`, built by `scr_remind/costs.py`.
+
+**No pathway publishes industry CAPEX or OPEX.** This holds for all nine runs. I searched for Invest*, *Cost*, Capital/OM/Policy Cost*, Expenditure*, Energy Service|Industry* and Price|*Industry*.
+
+**What does exist:**
+- **Unit prices only.** Industry fuel prices are published for Schreyer 2025 (US$2005/GJ) and ECEMF (EUR2020/GJ). They are prices per GJ, not expenditure, and I did not multiply them by quantities.
+- **System-wide investment, not attributable to industry.** CO2 transport and storage investment, and H2 or electrolysis investment, in billion US$2005/yr, annual. The values are quoted in the row notes.
+- **Schreyer 2025 `Energy investments|Demand`** is 0 in every year.
+
+**Context only (not industry):**
+- **Schreyer 2025:** `Energy system costs`, billion US$2005/yr, annual. The source has a value for 2050 (about 490) but NA for 2040.
+- **Schreyer 2024:** only the additional energy-system cost relative to an unnamed reference run.
+- **ESABCC, ECEMF and the reduced Rodrigues file:** no cost variables.

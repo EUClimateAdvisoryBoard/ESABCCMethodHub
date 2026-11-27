@@ -36,3 +36,30 @@ AI-compiled — pending Secretariat verification. Paths are relative to the scra
 - I did not take values from other models.
 - I did not use CETO 2024 numbers for 718.
 - I estimated no plastic proxies.
+
+## Item 7
+Sector values are in `pieter/jrc_sectors.csv`, built by `work_jrc/build7.py`. All of them are CO2 only, measured after CCS. No model gives non-CO2 by sector.
+- **718 CETO 2025:** each sector is `Emissions|CO2|Energy|Demand|Industry|<sector>` + `Emissions|CO2|Industrial Processes|<sector>`.
+  - The sectors available are steel, non-metallic minerals ("cement" row, which also covers lime, glass and ceramics; the cement-only figures are in the note), chemicals, non-ferrous metals and "Other Sector". Pulp and paper and food sit inside other.
+  - The industrial BECCS credit is netted per sector: non-metallic minerals energy CO2 is negative in 2040 and 2050.
+  - The sector rows fall short of the item-6 net by 20.1 / 3.5 / 2.1 Mt (2020 / 2040 / 2050). This is energy CO2 that the file does not allocate to any sector; the process rows sum exactly.
+- **2400 CETO 2024:** each sector is summary Emissions energy rows (r16–r43) plus process rows (r72–r83). Solvent and other process emissions go to "other". The sectors sum exactly to the item-6 gross.
+  - The industry BECCS storage credit (r104: 13.8 / 10.8 Mt in 2040 / 2050) is given only for industry as a whole. The sector values are therefore gross, and the total row exceeds the item-6 net by that amount.
+- **Refineries:** both CETO datasets put them in energy supply, so they are not included.
+- **1327 POLIZERO:** no EU sector split, so one "not reported" row.
+
+## Item 8
+Cost values are in `pieter/jrc_costs.csv`, built by `work_jrc/build8.py`.
+- **718 CETO 2025:** costs are not reported. The IAMC file has no Investment, Cost, Capital Cost or OM Cost variables. It has only prices, which are not costs.
+- **2400 CETO 2024:** taken from the summary report, sheet `Industry`. Units are M EUR2015, published as "5 year averages"; the averaging window is not stated.
+  - CAPEX = r161 "Capital investment": 34.5 / 28.0 bn per year (2040 / 2050).
+  - OPEX = fixed (r141) + variable O&M (r142) + fuel (r143), which includes fuel and energy purchases: 348 / 358 bn. This equals Overview r135.
+  - Other costs:
+    - capital annuity (r140);
+    - CO2 costs (r145);
+    - infrastructure efficiency investment (r162).
+  - Not reported:
+    - CCS capex for industry: the CCS-sheet costs are economy-wide (compression, biogenic capture and DAC);
+    - H2 capex attributable to industry;
+    - total system cost: only demand-side totals (Overview r134) and power-sector totals (r139) exist, and adding them would double count electricity purchases.
+- **1327 POLIZERO:** no EU costs in the results file. The assumptions file holds only technology unit costs, which are inputs, not pathway totals.

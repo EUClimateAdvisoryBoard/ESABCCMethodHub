@@ -12,19 +12,30 @@ PLUS = [('1257', 'Schreyer 2025, REMIND-EU', '07_NZ_CCS110_highImp'), ('1321', '
         ('862', 'ECEMF, REMIND 2.1', 'WP1 NetZero [pre-release 2023-11-14]'), ('718', 'JRC CETO 2025, POTEnCIA 4.2', 'CETO 2025 scenario'),
         ('1327', 'POLIZERO, JRC-EU-TIMES', 'CLI'), ('2421', 'EC 2040 IA, PRIMES-GAINS-GLOBIOM', 'S2')]
 PW = ECL + PLUS
-ITEMS = [('elec', 'direct', '1. Final electricity use in industry (direct, as reported)', 'TWh/yr'), ('elec', 'for_h2', '   plus: electricity to make the H2 used in industry (derived)', 'TWh/yr'),
-         ('elec', 'incl_h2', '   direct + for H2 (only where both are available)', 'TWh/yr'),
+ITEMS = [('elec', 'direct', '1. Final electricity use in industry (as reported; excludes electricity used to make hydrogen)', 'TWh/yr'),
          ('h2', 'total', '2. Hydrogen use in industry (not in item 1)', 'TWh/yr'), ('h2', 'energy', '   energy use', 'TWh/yr'), ('h2', 'feedstock', '   feedstock', 'TWh/yr'),
          ('bio', 'total', '3. Biomass use in industry', 'TWh/yr'), ('bio', 'fuel', '   fuel', 'TWh/yr'), ('bio', 'feedstock', '   feedstock', 'TWh/yr'),
          ('plastic', 'total', '4. Plastic waste use in industry', 'TWh/yr'),
          ('capture', 'total', '5. CO2 captured in industry', 'Mt CO2/yr'), ('capture', 'fossil', '   fossil (incl. process)', 'Mt CO2/yr'), ('capture', 'biogenic', '   biogenic', 'Mt CO2/yr'),
          ('ghg', 'net', '6. GHG emissions in industry, net (as reported)', 'Mt CO2e/yr'), ('ghg', 'gross', '   gross: before negative-emission credits', 'Mt CO2e/yr'),
          ('ghg', 'before_capture', '   before any capture (net + captured CO2, derived)', 'Mt CO2e/yr'), ('ghg', 'co2_energy', '   of which energy CO2 (net)', 'Mt CO2/yr'),
-         ('ghg', 'co2_process', '   of which process CO2 (net)', 'Mt CO2/yr'), ('ghg', 'nonco2', '   of which non-CO2', 'Mt CO2e/yr')]
+         ('ghg', 'co2_process', '   of which process CO2 (net)', 'Mt CO2/yr'), ('ghg', 'nonco2', '   of which non-CO2', 'Mt CO2e/yr'),
+         ('sector', 'steel', '7. Residual emissions by industrial sector (CO2, energy + process, after CCS): steel', 'Mt CO2/yr'),
+         ('sector', 'cement', '   cement (non-metallic minerals: cement, lime, glass, ceramics)', 'Mt CO2/yr'), ('sector', 'chemicals', '   chemicals', 'Mt CO2/yr'),
+         ('sector', 'non_ferrous', '   non-ferrous metals (REMIND: inside other)', 'Mt CO2/yr'), ('sector', 'pulp_paper', '   pulp and paper (REMIND, CETO 2025: inside other)', 'Mt CO2/yr'),
+         ('sector', 'food', '   food and drink (REMIND, CETO 2025: inside other)', 'Mt CO2/yr'), ('sector', 'other', '   other industry', 'Mt CO2/yr'),
+         ('sector', 'total', '   sum of sectors (compare item 6 net; difference = non-CO2 and unallocated)', 'Mt CO2/yr')]
 ROWS = []
 for g in ('remind', 'jrc', 'ecagora'):
-    p = os.path.join(S, f'{g}.csv')
-    if os.path.exists(p): ROWS += [dict(r, group=g) for r in csv.DictReader(open(p, encoding='utf-8'))]
+    for suf in ('', '_sectors'):
+        p = os.path.join(S, f'{g}{suf}.csv')
+        if os.path.exists(p): ROWS += [dict(r, group=g) for r in csv.DictReader(open(p, encoding='utf-8'))]
+# Electricity used to make hydrogen is not reported by any model; it is not estimated here (decision 27 Nov 2026).
+ROWS = [x for x in ROWS if not (x['item'] == 'elec' and x['component'] == 'for_h2')]
+COSTS = []
+for g in ('remind', 'jrc', 'ecagora'):
+    p = os.path.join(S, f'{g}_costs.csv')
+    if os.path.exists(p): COSTS += list(csv.DictReader(open(p, encoding='utf-8')))
 # ---- harmonisation of definitions across groups (each change is recorded in the row's derivation/note)
 def mk(base, **kw):
     d = dict(base); d.update(kw); return d
@@ -50,9 +61,6 @@ for (pid, it, comp, y), x in list(V.items()):
         else: continue
         out.append(mk(x, component='before_capture', value=str(float(x['value']) + cap), derivation=f'before_capture = net + {how}', variable_as_published='derived',
                       note='[orchestrator] emissions if no CO2 were captured (biogenic CO2 counted as zero); assumes all captured CO2 is deducted from reported industry emissions. Check the model notes: some models also capture CO2 from refineries, hydrogen or synthetic fuels.'))
-    if it == 'elec' and comp == 'for_h2':
-        d = V.get((pid, 'elec', 'direct', y)) or V.get((pid, 'elec', 'total', y))
-        if d: out.append(mk(x, component='incl_h2', value=str(float(d['value']) + float(x['value'])), derivation='incl_h2 = direct + for_h2', variable_as_published='derived', note='[orchestrator] sum of the two rows above.'))
 ROWS = out
 F = 'Arial'; H = Font(name=F, bold=True, color='FFFFFF'); B = Font(name=F, bold=True); N = Font(name=F); BL = Font(name=F, color='0000FF'); GR = Font(name=F, color='008000')
 HF = PatternFill('solid', fgColor='004B7F'); EF = PatternFill('solid', fgColor='E6F0F7'); PF = PatternFill('solid', fgColor='F2F2F2'); OF = PatternFill('solid', fgColor='FFF4E8')
@@ -70,6 +78,7 @@ txt = [('Industry indicators for chapter 1: ECL-compatible set and ECL +10 % set
        ('By pathway — one value per pathway, item and year. All cells are formulas that read sheet Data (blank = not reported).', N),
        ('Data — every extracted value with the variable as published, the file, locator, derivation and notes (blue = value from source; derived values say how).', N),
        ('Definitions — what each item covers and how the splits are made, including whether hydrogen electricity is in item 1.', N),
+       ('Costs — industry CAPEX and OPEX where a pathway publishes them (as published: units, price bases and periods differ, so no ranges are formed).', N),
        ('Extraction notes — per-model notes on variables, scope and anomalies. Rebuild: python3 -I build_xlsx.py <out.xlsx> in scripts/pathway-screening/chapter1-industry/.', N),
        ('', N),
        ('Sets (screening of 2,161 pathways, see scripts/pathway-screening/)', B),
@@ -168,6 +177,25 @@ defs = open(os.path.join(S, 'definitions.txt'), encoding='utf-8').read().strip()
 for i, line in enumerate(defs, 1):
     c = wf.cell(i, 1, line); c.font = B if line and not line.startswith(' ') and line.endswith(':') else N; c.alignment = Alignment(wrap_text=True, vertical='top')
 wf.column_dimensions['A'].width = 150
+wc = wb.create_sheet('Costs')
+wc.cell(1, 1, 'Item 8. Industry CAPEX and OPEX: what the pathways publish (as published; not comparable across models, so no ranges)').font = B
+wc.cell(2, 1, 'Only 2 of the 14 pathways publish industry investment (CETO 2024, EC IA S2) and only CETO 2024 publishes industry operating cost. Rows marked "not reported" record what was searched.').font = Font(name=F, italic=True, color='6A6A6A')
+cc = ['ID', 'Pathway', 'Set', 'Component', 'Year / period', 'Value', 'Unit (as published)', 'Variable as published', 'File', 'Locator', 'Note']
+for j, h in enumerate(cc, 1): c = wc.cell(4, j, h); c.font = H; c.fill = HF
+order = {p[0]: i for i, p in enumerate(PW)}
+COSTS.sort(key=lambda x: (order.get(x['ID'].strip(), 99), x['component'], x['year']))
+for k, x in enumerate(COSTS):
+    r = 5 + k; pid = x['ID'].strip(); m = meta.get(pid, (pid, '?', '?'))
+    v = x['value'].strip()
+    try: v = float(v)
+    except ValueError: v = v or None
+    vals = [pid, f'{m[1]} | {m[2]}', 'ECL' if pid in [p[0] for p in ECL] else 'ECL +10 %', x['component'], x['year'], v, x['unit'], x['variable_as_published'], x['file'], x['locator'], (x['derivation'] + ' ' if x['derivation'].strip() else '') + x['note']]
+    for j, val in enumerate(vals, 1):
+        c = wc.cell(r, j, val); c.font = BL if j == 6 and isinstance(val, float) else N; c.alignment = Alignment(wrap_text=j == 11, vertical='top')
+        if j == 6: c.number_format = '#,##0.0'
+for j, w in enumerate([7, 44, 10, 18, 12, 10, 22, 40, 36, 28, 90], 1): wc.column_dimensions[CL(j)].width = w
+wc.freeze_panes = 'C5'; wc.auto_filter.ref = f'A4:K{4 + len(COSTS)}'
+
 wn = wb.create_sheet('Extraction notes')
 i = 1
 for g in ('remind', 'jrc', 'ecagora'):
