@@ -1,0 +1,2 @@
+ID,Model,Scenario,main_run,description,src,one_total
+2050,CLEVER (négaWatt bottom-up aggregation),CLEVER,True,"CLEVER scenario (négaWatt and CLEVER network, final report June 2023), EU27 values from the Open Energy Platform tables (schema scenario); sufficiency-efficiency-renewables pathway, climate neutrality 2045 (report accounting), 100% renewable 2050, no CCS",CLEVER2023,False

@@ -1,0 +1,7 @@
+{
+ "ammonia": 28.091,
+ "nitric_acid": 34.582,
+ "adipic_acid": 9.419,
+ "ethylene": 19.822,
+ "_source": "Eurostat env_air_gge, GHG, MIO_T, EU27_2020, 2005; 2.B.1 ammonia, 2.B.2 nitric acid, 2.B.3 adipic acid, 2.B.8 petrochemicals and carbon black (mapped to ethylene); retrieved 26 Nov 2026"
+}

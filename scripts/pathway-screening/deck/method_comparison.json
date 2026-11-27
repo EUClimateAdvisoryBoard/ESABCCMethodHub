@@ -1,0 +1,144 @@
+{
+ "_note": "LMDI-I, 2005-2024. Chemicals tonnage = ammonia, nitric acid, adipic acid and ethylene tonnages weighted by their 2005 process emissions (2.B.1, 2.B.2, 2.B.3, 2.B.8), applied to the whole chemicals branch incl. combustion (assumption). Non-ferrous, food and other industry keep the volume index in every variant (no reliable tonnage).",
+ "chem_weights_2005_Mt": {
+  "ammonia": 28.091,
+  "nitric_acid": 34.582,
+  "adipic_acid": 9.419,
+  "ethylene": 19.822,
+  "_source": "Eurostat env_air_gge, GHG, MIO_T, EU27_2020, 2005; 2.B.1 ammonia, 2.B.2 nitric acid, 2.B.3 adipic acid, 2.B.8 petrochemicals and carbon black (mapped to ethylene); retrieved 26 Nov 2026"
+ },
+ "results": {
+  "V: value-based (all branches)": {
+   "branches": {
+    "Iron and steel": {
+     "production_effect": -49.7,
+     "intensity_effect": -23.1,
+     "production_2024": 72.4
+    },
+    "Non-ferrous metals": {
+     "production_effect": -4.1,
+     "intensity_effect": -9.1,
+     "production_2024": 79.8
+    },
+    "Chemicals": {
+     "production_effect": -5.8,
+     "intensity_effect": -91.9,
+     "production_2024": 95.9
+    },
+    "Non-metallic minerals": {
+     "production_effect": -61.3,
+     "intensity_effect": -46.0,
+     "production_2024": 73.8
+    },
+    "Pulp and paper": {
+     "production_effect": -1.1,
+     "intensity_effect": -13.4,
+     "production_2024": 95.2
+    },
+    "Food and drink": {
+     "production_effect": 4.8,
+     "intensity_effect": -19.2,
+     "production_2024": 113.2
+    },
+    "Other industry": {
+     "production_effect": 17.1,
+     "intensity_effect": -58.9,
+     "production_2024": 113.5
+    }
+   },
+   "industry": {
+    "production_effect": -100.0,
+    "intensity_effect": -261.7,
+    "production_share_pct": 27.6
+   }
+  },
+  "T1: tonnes for steel and cement": {
+   "branches": {
+    "Iron and steel": {
+     "production_effect": -52.6,
+     "intensity_effect": -20.2,
+     "production_2024": 71.0
+    },
+    "Non-ferrous metals": {
+     "production_effect": -4.1,
+     "intensity_effect": -9.1,
+     "production_2024": 79.8
+    },
+    "Chemicals": {
+     "production_effect": -5.8,
+     "intensity_effect": -91.9,
+     "production_2024": 95.9
+    },
+    "Non-metallic minerals": {
+     "production_effect": -80.5,
+     "intensity_effect": -26.8,
+     "production_2024": 67.1
+    },
+    "Pulp and paper": {
+     "production_effect": -1.1,
+     "intensity_effect": -13.4,
+     "production_2024": 95.2
+    },
+    "Food and drink": {
+     "production_effect": 4.8,
+     "intensity_effect": -19.2,
+     "production_2024": 113.2
+    },
+    "Other industry": {
+     "production_effect": 17.1,
+     "intensity_effect": -58.9,
+     "production_2024": 113.5
+    }
+   },
+   "industry": {
+    "production_effect": -122.1,
+    "intensity_effect": -239.6,
+    "production_share_pct": 33.8
+   }
+  },
+  "T2: tonnes wherever available": {
+   "branches": {
+    "Iron and steel": {
+     "production_effect": -52.6,
+     "intensity_effect": -20.2,
+     "production_2024": 71.0
+    },
+    "Non-ferrous metals": {
+     "production_effect": -4.1,
+     "intensity_effect": -9.1,
+     "production_2024": 79.8
+    },
+    "Chemicals": {
+     "production_effect": -59.8,
+     "intensity_effect": -37.9,
+     "production_2024": 65.0
+    },
+    "Non-metallic minerals": {
+     "production_effect": -80.5,
+     "intensity_effect": -26.8,
+     "production_2024": 67.1
+    },
+    "Pulp and paper": {
+     "production_effect": -4.4,
+     "intensity_effect": -10.1,
+     "production_2024": 82.6
+    },
+    "Food and drink": {
+     "production_effect": 4.8,
+     "intensity_effect": -19.2,
+     "production_2024": 113.2
+    },
+    "Other industry": {
+     "production_effect": 17.1,
+     "intensity_effect": -58.9,
+     "production_2024": 113.5
+    }
+   },
+   "industry": {
+    "production_effect": -179.3,
+    "intensity_effect": -182.4,
+    "production_share_pct": 49.6
+   }
+  }
+ }
+}

@@ -1,0 +1,43 @@
+Item 1, electricity:
+Direct use is reported final electricity use in industry. In every source this EXCLUDES the electricity used to make hydrogen (electrolysis sits in energy supply). It includes non-energy use, except in 862 (ECEMF) and 718 (CETO 2025), which exclude it.
+Answer to "is the electricity for H2 included in item 1": NO, in all 14 pathways. No pathway publishes the electricity used to make the hydrogen that industry uses, and it is not estimated here.
+
+Item 2, hydrogen:
+Pure hydrogen used in industry. REMIND runs: energy use only (no separate pure-H2 feedstock; synthetic H2-based feedstocks are excluded). CETO 2024, CETO 2025 and EC IA S2: energy use plus feedstock (CETO 2024 feedstock includes H2 as blast-furnace reductant).
+
+Item 3, biomass:
+Fuel = solid, liquid and gaseous biomass used for energy in industry (EC IA S2 includes refineries and solid waste; CETO 2024 includes renewable municipal waste and biogas). Feedstock = biomass non-energy use (bio-based chemicals; CETO 2024 also charcoal in blast furnaces). 779 reports only the total.
+
+Item 4, plastic waste:
+Not reported as an industry input by any of the 14 pathways. No proxy was estimated.
+
+Item 5, CO2 captured in industry:
+Captured at industrial plants (energy and process), before use or storage. Process capture is counted as fossil unless the source says otherwise.
+  Schreyer runs: total also includes CO2 from synthetic fuels, so total > fossil + biogenic.
+  Rodrigues and 779: fossil/biogenic split based on stored, not captured, CO2 (779 inferred from storage categories).
+  EC IA S2: about 65 % of the 2040 capture goes to e-fuels (CCU); fossil/biogenic split for 2040 from the Sankey figure only.
+  Agora: includes about 3 Mt of SMR-CCS up to 2040.
+  862 reports process capture only.
+
+Item 6, GHG emissions:
+Net = industry emissions as reported: energy CO2 + process CO2 (+ non-CO2 where reported), after all CCS and after crediting negative emissions (industrial BECCS; in REMIND also synfuel CCS and carbon stored in plastics). Can be negative.
+Gross = before those negative-emission credits; fossil CCS is still deducted. Common definition for all models (EC IA S2: net + biogenic capture, 2040 only).
+Before any capture = net + captured CO2 (fossil + biogenic, or total where no split). Derived; shows emissions if nothing were captured.
+Coverage differs: CETO 2024, CETO 2025 and POLIZERO are CO2 only (POLIZERO non-CO2 is an exogenous assumption shown separately). REMIND runs book all economy-wide F-gases under industry; 779 leaves out industrial N2O. EC IA S2 excludes refineries. Agora: all GHG, refineries probably excluded. GWP: AR5 in REMIND; not stated in Agora.
+POLIZERO's industry row is about 60 Mt above CETO in 2020; its scope could not be confirmed.
+
+Item 7, residual emissions by industrial sector:
+CO2 only (no pathway splits non-CO2 by sector): energy CO2 plus the sector's process CO2, after CCS.
+  REMIND runs (1266, 1275, 3162, 1257, 1321, 1322, 1325): steel, cement, chemicals, other (non-ferrous, paper and food are inside other). Energy CO2 is net of credits booked to the sector, so chemicals turn negative in 2050 (biogenic or synthetic carbon stored in products, BECCS). Schreyer 2024 reports process CO2 for cement only; Rodrigues cement process CO2 = total process minus chemicals process.
+  CETO 2024: seven sectors; values are before the biogenic storage credit, which exists only for industry as a whole, so the sectors add up to gross (item 6).
+  CETO 2025: steel, minerals, chemicals, non-ferrous, other (paper and food inside other); a few Mt of energy CO2 are not allocated to any sector.
+  EC IA S2: sector energy CO2 (Fig 52) plus process CO2 (Fig 53); steel includes non-ferrous process CO2; refineries are excluded (counted in energy supply).
+  Not split by sector: 779 (ESABCC), 862 (ECEMF), 1327 (POLIZERO), 2000 (Agora).
+The sum of sectors differs from item 6 net by non-CO2 gases and unallocated emissions; the difference is given in the note of each 'total' row on sheet Data.
+
+Item 8, CAPEX and OPEX (sheet Costs):
+Only CETO 2024 (capital investment, operating cost incl. energy purchases, CO2 costs; bn EUR2015/yr) and EC IA S2 (decarbonisation investment in industry, bn EUR2023/yr as 2031–2040 and 2041–2050 averages) publish industry costs. The REMIND runs, CETO 2025, POLIZERO and Agora publish none for industry. Units, price bases and periods differ, so no ranges are formed.
+Costs per tonne (sheet Costs per tonne): CETO 2024 publishes energy-related cost per tonne of output by process (blast-furnace and electric-arc steel, cement, glass, ceramics, chemicals), EUR2015/t. CAPEX = annuity of the capital costs; OPEX = fixed + variable O&M + fuel; CO2 cost is published separately. Covers energy-using equipment only, not the full plant.
+
+General:
+Values are as published (EU27), not harmonised to the inventory. 1 EJ = 277.778 TWh; 1 ktoe = 0.01163 TWh; 1 Mtoe = 11.63 TWh.

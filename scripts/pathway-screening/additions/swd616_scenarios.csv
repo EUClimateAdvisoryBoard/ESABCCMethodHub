@@ -1,0 +1,11 @@
+ID,Model,Scenario,main_run,description,src,one_total
+2020,PRIMES,Baseline,False,Current-legislation ETS (LRF 4.4%); no post-2030 net GHG objective; climate neutrality 2050 (Annex 4 Table 7). No economy-wide values published in SWD(2026) 616; no rows emitted.,EC_SWD2026_616,False
+2021,PRIMES,PRIMES-MAX,False,Technical-potential variant of Baseline (Annex 4 §2). No economy-wide values published; no rows emitted.,EC_SWD2026_616,False
+2022,PRIMES,85%,True,"PRIMES85: -85% net GHG 2040, climate neutrality 2050 (Annex 4 Table 8). Only ETS caps and removals published; no rows emitted.",EC_SWD2026_616,False
+2023,POTEnCIA,85%,True,"POTEnCIA 85% run (Annex 8 Part I Tables 3, 11). Only ETS caps and removals published; no rows emitted.",EC_SWD2026_616,False
+2024,PRIMES,9085,True,"90-85 pathway (90% trajectory to 2035, 85% in 2040) (Annex 8 Part I CAP3; Annex 4 §2). No economy-wide values published; no rows emitted.",EC_SWD2026_616,False
+2025,POTEnCIA,9085,True,"POTEnCIA 90-85 pathway (Annex 8 Part I Table 3, CAP3). No economy-wide values published; no rows emitted.",EC_SWD2026_616,False
+2026,POTEnCIA,accelerated 9085,True,CAP4 accelerated 90-85 pathway (Annex 8 Part I Table 5). No economy-wide values published; no rows emitted.,EC_SWD2026_616,False
+2027,PRIMES,90% (PRIMES-based estimation),True,PRIMES-based estimation 90% excl. extra-EU aviation (Annex 8 Part I Table 6). ETS cap only; no rows emitted.,EC_SWD2026_616,False
+2028,POTEnCIA,90%,True,POTEnCIA 90% excl. extra-EU aviation (Annex 8 Part I Table 6). ETS cap only; no rows emitted.,EC_SWD2026_616,False
+2029,POTEnCIA,CAP5 90% extended legal default,True,Cap-trajectory variant aiming at POTEnCIA 90% in 2040 with LRF 4.4% to 2035 (Annex 8 Part I Table 6). ETS cap only; no rows emitted.,EC_SWD2026_616,False

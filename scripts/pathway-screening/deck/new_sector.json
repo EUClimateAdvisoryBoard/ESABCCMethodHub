@@ -1,0 +1,50 @@
+[
+ {
+  "id": 2000,
+  "model": "Agora",
+  "scenario": "EU Gas Exit Pathway",
+  "ecl": true,
+  "red": true,
+  "esabcc": false,
+  "total_2020": 3493.5,
+  "industry_2020": 665.7,
+  "total_2030": 1856.7618979766314,
+  "industry_2030": 419.29912170639903,
+  "total_2040": 545.5793673411229,
+  "industry_2040": 97.72509410288583,
+  "total_2050": -38.827728697634655,
+  "industry_2050": 30.06925972396487
+ },
+ {
+  "id": 2400,
+  "model": "POTEnCIA",
+  "scenario": "CETO 2024",
+  "ecl": true,
+  "red": true,
+  "esabcc": false,
+  "total_2020": 3044.1,
+  "industry_2020": 607.5,
+  "total_2030": 1950.2192307472217,
+  "industry_2030": 498.0833744713212,
+  "total_2040": 452.2339165263035,
+  "industry_2040": 136.0633787407773,
+  "total_2050": 0.8431562006983326,
+  "industry_2050": 65.681531934197
+ },
+ {
+  "id": 3162,
+  "model": "REMIND-EU",
+  "scenario": "14_Nzero_57_bio7p5",
+  "ecl": true,
+  "red": true,
+  "esabcc": false,
+  "total_2020": 3044.1,
+  "industry_2020": 607.5,
+  "total_2030": 1822.6769132314585,
+  "industry_2030": 448.6109421726794,
+  "total_2040": 576.4927440369764,
+  "industry_2040": 241.6107719717342,
+  "total_2050": -90.05438380961802,
+  "industry_2050": 40.716049361134615
+ }
+]

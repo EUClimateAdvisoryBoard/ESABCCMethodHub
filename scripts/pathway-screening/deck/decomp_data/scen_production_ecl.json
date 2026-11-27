@@ -1,0 +1,967 @@
+{
+ "1266": {
+  "model": "REMIND-EU",
+  "scenario": "07_NZ_CCS180_highImp",
+  "region": "EU27",
+  "source": "Schreyer et al. 2025, Zenodo 10.5281/zenodo.17132530, EU_FossFree_Scripts_Data.zip -> data/AllScenarioData.mif",
+  "production_reported": true,
+  "variables": {
+   "Production|Industry|Steel": {
+    "unit": "Mt/yr",
+    "std": "prod_steel",
+    "values": {
+     "2015": 154.8553,
+     "2020": 168.3624,
+     "2025": 154.8708,
+     "2030": 147.1972,
+     "2035": 144.8789,
+     "2040": 140.2197,
+     "2045": 143.1933,
+     "2050": 145.0745
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Production|Industry|Steel"
+   },
+   "Production|Industry|Steel|Primary": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_primary",
+    "values": {
+     "2015": 92.4796,
+     "2020": 92.4222,
+     "2025": 74.813,
+     "2030": 59.9966,
+     "2035": 52.0862,
+     "2040": 45.5613,
+     "2045": 43.7306,
+     "2050": 41.3525
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Production|Industry|Steel|Primary"
+   },
+   "Production|Industry|Steel|Secondary": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_secondary",
+    "values": {
+     "2015": 62.3757,
+     "2020": 75.9402,
+     "2025": 80.0577,
+     "2030": 87.2006,
+     "2035": 92.7927,
+     "2040": 94.6584,
+     "2045": 99.4627,
+     "2050": 103.722
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Production|Industry|Steel|Secondary"
+   },
+   "Production|Industry|Steel|+|BF-BOF": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_bfbof",
+    "values": {
+     "2015": 92.4796,
+     "2020": 92.4222,
+     "2025": 72.9612,
+     "2030": 51.0141,
+     "2035": 18.1224,
+     "2040": 4.373,
+     "2045": 0.501,
+     "2050": 0.2829
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Production|Industry|Steel|+|BF-BOF"
+   },
+   "Production|Industry|Steel|+|BF-BOF-CCS": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_bfbof_ccs",
+    "values": {
+     "2015": 0.0,
+     "2020": 0.0,
+     "2025": 0.0,
+     "2030": 0.0,
+     "2035": 0.0,
+     "2040": 0.1687,
+     "2045": 0.2451,
+     "2050": 0.2469
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Production|Industry|Steel|+|BF-BOF-CCS"
+   },
+   "Production|Industry|Steel|+|DRI-H2-EAF": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_drih2",
+    "values": {
+     "2015": 0.0,
+     "2020": 0.0,
+     "2025": 0.3659,
+     "2030": 1.9749,
+     "2035": 6.055,
+     "2040": 39.0046,
+     "2045": 42.9845,
+     "2050": 40.8226
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Production|Industry|Steel|+|DRI-H2-EAF"
+   },
+   "Production|Industry|Steel|+|DRI-NG-EAF": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_ding",
+    "values": {
+     "2015": 0.0,
+     "2020": 0.0,
+     "2025": 1.4859,
+     "2030": 7.0076,
+     "2035": 27.9088,
+     "2040": 2.015,
+     "2045": 0.0,
+     "2050": 0.0
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Production|Industry|Steel|+|DRI-NG-EAF"
+   },
+   "Production|Industry|Steel|+|DRI-NG-EAF-CCS": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_ding_ccs",
+    "values": {
+     "2015": 0.0,
+     "2020": 0.0,
+     "2025": 0.0,
+     "2030": 0.0,
+     "2035": 0.0,
+     "2040": 0.0,
+     "2045": 0.0,
+     "2050": 0.0
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Production|Industry|Steel|+|DRI-NG-EAF-CCS"
+   },
+   "Production|Industry|Steel|+|SCRAP-EAF": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_scrap_eaf",
+    "values": {
+     "2015": 62.3757,
+     "2020": 75.9402,
+     "2025": 80.0577,
+     "2030": 87.2006,
+     "2035": 92.7927,
+     "2040": 94.6584,
+     "2045": 99.4627,
+     "2050": 103.722
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Production|Industry|Steel|+|SCRAP-EAF"
+   },
+   "Production|Industry|Cement": {
+    "unit": "Mt/yr",
+    "std": "prod_cement",
+    "values": {
+     "2015": 154.2977,
+     "2020": 166.8876,
+     "2025": 176.3753,
+     "2030": 159.0551,
+     "2035": 152.7891,
+     "2040": 141.7774,
+     "2045": 133.5259,
+     "2050": 134.7364
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Production|Industry|Cement"
+   },
+   "Value Added|Industry|Chemicals": {
+    "unit": "billion US$2005/yr",
+    "std": "va_chemicals",
+    "values": {
+     "2015": 199.7655,
+     "2020": 195.3944,
+     "2025": 235.6509,
+     "2030": 241.2734,
+     "2035": 249.6447,
+     "2040": 259.2547,
+     "2045": 278.434,
+     "2050": 304.8854
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Value Added|Industry|Chemicals"
+   },
+   "Value Added|Industry|Other Industry": {
+    "unit": "billion US$2005/yr",
+    "std": "va_other_industry",
+    "values": {
+     "2015": 1554.7516,
+     "2020": 1532.0098,
+     "2025": 1783.7226,
+     "2030": 1849.6656,
+     "2035": 1940.1956,
+     "2040": 2095.9302,
+     "2045": 2330.354,
+     "2050": 2575.8468
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Value Added|Industry|Other Industry"
+   },
+   "Emi|CO2|Energy|Demand|+|Industry": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_ind_energy",
+    "values": {
+     "2015": 533.8194,
+     "2020": 548.0108,
+     "2025": 508.1832,
+     "2030": 297.9818,
+     "2035": 175.5519,
+     "2040": 35.9935,
+     "2045": -51.1809,
+     "2050": -47.3674
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Emi|CO2|Energy|Demand|+|Industry"
+   },
+   "Emi|CO2|+|Industrial Processes": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_ind_process",
+    "values": {
+     "2015": 96.4549,
+     "2020": 98.9816,
+     "2025": 101.8958,
+     "2030": 83.6247,
+     "2035": 66.1793,
+     "2040": 44.6372,
+     "2045": 27.5759,
+     "2050": 26.6169
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Emi|CO2|+|Industrial Processes"
+   },
+   "Emi|CO2|Industry": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_ind_total",
+    "values": {
+     "2015": 630.2743,
+     "2020": 646.9924,
+     "2025": 610.079,
+     "2030": 381.6065,
+     "2035": 241.7313,
+     "2040": 80.6307,
+     "2045": -23.6051,
+     "2050": -20.7505
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Emi|CO2|Industry"
+   },
+   "Emi|CO2|Energy|Demand|Industry|++|Steel": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_steel_energy",
+    "values": {
+     "2015": 117.2292,
+     "2020": 115.8255,
+     "2025": 90.7917,
+     "2030": 48.4504,
+     "2035": 30.215,
+     "2040": 1.9616,
+     "2045": -0.1633,
+     "2050": -0.2253
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Emi|CO2|Energy|Demand|Industry|++|Steel"
+   },
+   "Emi|CO2|Energy|Demand|Industry|++|Cement": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_cement_energy",
+    "values": {
+     "2015": 61.513,
+     "2020": 67.1008,
+     "2025": 64.2795,
+     "2030": 25.7518,
+     "2035": 14.9419,
+     "2040": 1.4804,
+     "2045": -4.9973,
+     "2050": -5.0301
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Emi|CO2|Energy|Demand|Industry|++|Cement"
+   },
+   "Emi|CO2|Energy|Demand|Industry|++|Chemicals": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_chem_energy",
+    "values": {
+     "2015": 147.0194,
+     "2020": 140.0206,
+     "2025": 127.7696,
+     "2030": 81.896,
+     "2035": 31.9185,
+     "2040": -10.7481,
+     "2045": -60.2791,
+     "2050": -53.1966
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Emi|CO2|Energy|Demand|Industry|++|Chemicals"
+   },
+   "Emi|CO2|Energy|Demand|Industry|++|Other Industry": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_other_energy",
+    "values": {
+     "2015": 208.0578,
+     "2020": 225.064,
+     "2025": 225.3424,
+     "2030": 141.8836,
+     "2035": 98.4765,
+     "2040": 43.2997,
+     "2045": 14.2587,
+     "2050": 11.0846
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Emi|CO2|Energy|Demand|Industry|++|Other Industry"
+   },
+   "Emi|CO2|Industrial Processes|+|Cement": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_cement_process",
+    "values": {
+     "2015": 57.9878,
+     "2020": 62.026,
+     "2025": 64.8195,
+     "2030": 55.6026,
+     "2035": 44.7486,
+     "2040": 32.1718,
+     "2045": 25.951,
+     "2050": 25.5624
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Emi|CO2|Industrial Processes|+|Cement"
+   },
+   "Emi|CO2|Industrial Processes|+|Chemicals": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_chem_process",
+    "values": {
+     "2015": 38.4671,
+     "2020": 36.9556,
+     "2025": 37.0763,
+     "2030": 28.0221,
+     "2035": 21.4307,
+     "2040": 12.4654,
+     "2045": 1.6248,
+     "2050": 1.0545
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS180_highImp; Region EU27; Variable Emi|CO2|Industrial Processes|+|Chemicals"
+   }
+  },
+  "locators": [
+   "deck/raw_ct/schreyer2025/data/AllScenarioData.mif, Region EU27, Scenario 07_NZ_CCS180_highImp"
+  ],
+  "notes": "Cement is Production|Industry|Cement (cement, not clinker). Chemicals and other industry are reported only as value added (US$2005), not tonnes. "
+ },
+ "1275": {
+  "model": "REMIND-EU",
+  "scenario": "07_NZ_CCS350_highImp",
+  "region": "EU27",
+  "source": "Schreyer et al. 2025, Zenodo 10.5281/zenodo.17132530, EU_FossFree_Scripts_Data.zip -> data/AllScenarioData.mif",
+  "production_reported": true,
+  "variables": {
+   "Production|Industry|Steel": {
+    "unit": "Mt/yr",
+    "std": "prod_steel",
+    "values": {
+     "2015": 154.8553,
+     "2020": 168.3624,
+     "2025": 154.8048,
+     "2030": 146.9229,
+     "2035": 144.9226,
+     "2040": 139.8922,
+     "2045": 143.4939,
+     "2050": 145.8419
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Production|Industry|Steel"
+   },
+   "Production|Industry|Steel|Primary": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_primary",
+    "values": {
+     "2015": 92.4796,
+     "2020": 92.4222,
+     "2025": 74.8555,
+     "2030": 59.8535,
+     "2035": 52.1962,
+     "2040": 45.5953,
+     "2045": 44.1379,
+     "2050": 41.9068
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Production|Industry|Steel|Primary"
+   },
+   "Production|Industry|Steel|Secondary": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_secondary",
+    "values": {
+     "2015": 62.3757,
+     "2020": 75.9402,
+     "2025": 79.9493,
+     "2030": 87.0694,
+     "2035": 92.7264,
+     "2040": 94.2969,
+     "2045": 99.356,
+     "2050": 103.9351
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Production|Industry|Steel|Secondary"
+   },
+   "Production|Industry|Steel|+|BF-BOF": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_bfbof",
+    "values": {
+     "2015": 92.4796,
+     "2020": 92.4222,
+     "2025": 73.019,
+     "2030": 50.7485,
+     "2035": 18.9662,
+     "2040": 4.4239,
+     "2045": 0.1845,
+     "2050": 0.0
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Production|Industry|Steel|+|BF-BOF"
+   },
+   "Production|Industry|Steel|+|BF-BOF-CCS": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_bfbof_ccs",
+    "values": {
+     "2015": 0.0,
+     "2020": 0.0,
+     "2025": 0.0,
+     "2030": 0.0,
+     "2035": 0.0,
+     "2040": 0.261,
+     "2045": 0.3566,
+     "2050": 0.3363
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Production|Industry|Steel|+|BF-BOF-CCS"
+   },
+   "Production|Industry|Steel|+|DRI-H2-EAF": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_drih2",
+    "values": {
+     "2015": 0.0,
+     "2020": 0.0,
+     "2025": 0.3242,
+     "2030": 1.8259,
+     "2035": 5.4196,
+     "2040": 38.6408,
+     "2045": 43.5968,
+     "2050": 41.5705
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Production|Industry|Steel|+|DRI-H2-EAF"
+   },
+   "Production|Industry|Steel|+|DRI-NG-EAF": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_ding",
+    "values": {
+     "2015": 0.0,
+     "2020": 0.0,
+     "2025": 1.5123,
+     "2030": 7.2792,
+     "2035": 27.8104,
+     "2040": 2.2695,
+     "2045": 0.0,
+     "2050": 0.0
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Production|Industry|Steel|+|DRI-NG-EAF"
+   },
+   "Production|Industry|Steel|+|DRI-NG-EAF-CCS": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_ding_ccs",
+    "values": {
+     "2015": 0.0,
+     "2020": 0.0,
+     "2025": 0.0,
+     "2030": 0.0,
+     "2035": 0.0,
+     "2040": 0.0,
+     "2045": 0.0,
+     "2050": 0.0
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Production|Industry|Steel|+|DRI-NG-EAF-CCS"
+   },
+   "Production|Industry|Steel|+|SCRAP-EAF": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_scrap_eaf",
+    "values": {
+     "2015": 62.3757,
+     "2020": 75.9402,
+     "2025": 79.9493,
+     "2030": 87.0694,
+     "2035": 92.7264,
+     "2040": 94.2969,
+     "2045": 99.356,
+     "2050": 103.9351
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Production|Industry|Steel|+|SCRAP-EAF"
+   },
+   "Production|Industry|Cement": {
+    "unit": "Mt/yr",
+    "std": "prod_cement",
+    "values": {
+     "2015": 154.2977,
+     "2020": 166.8876,
+     "2025": 176.0678,
+     "2030": 159.6618,
+     "2035": 155.6397,
+     "2040": 147.8598,
+     "2045": 138.4164,
+     "2050": 142.2443
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Production|Industry|Cement"
+   },
+   "Value Added|Industry|Chemicals": {
+    "unit": "billion US$2005/yr",
+    "std": "va_chemicals",
+    "values": {
+     "2015": 199.7655,
+     "2020": 195.3944,
+     "2025": 235.35,
+     "2030": 241.0748,
+     "2035": 250.1526,
+     "2040": 261.0005,
+     "2045": 281.8455,
+     "2050": 306.7764
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Value Added|Industry|Chemicals"
+   },
+   "Value Added|Industry|Other Industry": {
+    "unit": "billion US$2005/yr",
+    "std": "va_other_industry",
+    "values": {
+     "2015": 1554.7516,
+     "2020": 1532.0098,
+     "2025": 1784.2797,
+     "2030": 1847.4141,
+     "2035": 1937.5303,
+     "2040": 2093.5269,
+     "2045": 2326.699,
+     "2050": 2588.4947
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Value Added|Industry|Other Industry"
+   },
+   "Emi|CO2|Energy|Demand|+|Industry": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_ind_energy",
+    "values": {
+     "2015": 533.8194,
+     "2020": 548.0108,
+     "2025": 510.0951,
+     "2030": 300.6358,
+     "2035": 182.9939,
+     "2040": 43.5873,
+     "2045": -52.237,
+     "2050": -44.5922
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Emi|CO2|Energy|Demand|+|Industry"
+   },
+   "Emi|CO2|+|Industrial Processes": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_ind_process",
+    "values": {
+     "2015": 96.4549,
+     "2020": 98.9816,
+     "2025": 101.8028,
+     "2030": 84.1515,
+     "2035": 67.3474,
+     "2040": 46.0098,
+     "2045": 24.9255,
+     "2050": 22.4537
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Emi|CO2|+|Industrial Processes"
+   },
+   "Emi|CO2|Industry": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_ind_total",
+    "values": {
+     "2015": 630.2743,
+     "2020": 646.9924,
+     "2025": 611.8979,
+     "2030": 384.7873,
+     "2035": 250.3413,
+     "2040": 89.5971,
+     "2045": -27.3115,
+     "2050": -22.1385
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Emi|CO2|Industry"
+   },
+   "Emi|CO2|Energy|Demand|Industry|++|Steel": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_steel_energy",
+    "values": {
+     "2015": 117.2292,
+     "2020": 115.8255,
+     "2025": 90.8835,
+     "2030": 47.6837,
+     "2035": 32.7619,
+     "2040": 2.7754,
+     "2045": -0.2861,
+     "2050": -0.3233
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Emi|CO2|Energy|Demand|Industry|++|Steel"
+   },
+   "Emi|CO2|Energy|Demand|Industry|++|Cement": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_cement_energy",
+    "values": {
+     "2015": 61.513,
+     "2020": 67.1008,
+     "2025": 64.5588,
+     "2030": 26.872,
+     "2035": 16.8629,
+     "2040": 3.6083,
+     "2045": -5.9316,
+     "2050": -6.0896
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Emi|CO2|Energy|Demand|Industry|++|Cement"
+   },
+   "Emi|CO2|Energy|Demand|Industry|++|Chemicals": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_chem_energy",
+    "values": {
+     "2015": 147.0194,
+     "2020": 140.0206,
+     "2025": 128.5885,
+     "2030": 82.998,
+     "2035": 32.9135,
+     "2040": -10.6138,
+     "2045": -65.7748,
+     "2050": -56.1111
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Emi|CO2|Energy|Demand|Industry|++|Chemicals"
+   },
+   "Emi|CO2|Energy|Demand|Industry|++|Other Industry": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_other_energy",
+    "values": {
+     "2015": 208.0578,
+     "2020": 225.064,
+     "2025": 226.0643,
+     "2030": 143.0821,
+     "2035": 100.4556,
+     "2040": 47.8174,
+     "2045": 19.7555,
+     "2050": 17.9318
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Emi|CO2|Energy|Demand|Industry|++|Other Industry"
+   },
+   "Emi|CO2|Industrial Processes|+|Cement": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_cement_process",
+    "values": {
+     "2015": 57.9878,
+     "2020": 62.026,
+     "2025": 64.7065,
+     "2030": 56.1845,
+     "2035": 45.5535,
+     "2040": 32.7334,
+     "2045": 21.9308,
+     "2050": 19.8511
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Emi|CO2|Industrial Processes|+|Cement"
+   },
+   "Emi|CO2|Industrial Processes|+|Chemicals": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_chem_process",
+    "values": {
+     "2015": 38.4671,
+     "2020": 36.9556,
+     "2025": 37.0963,
+     "2030": 27.967,
+     "2035": 21.7939,
+     "2040": 13.2764,
+     "2045": 2.9947,
+     "2050": 2.6026
+    },
+    "locator": "AllScenarioData.mif; Model REMIND; Scenario 07_NZ_CCS350_highImp; Region EU27; Variable Emi|CO2|Industrial Processes|+|Chemicals"
+   }
+  },
+  "locators": [
+   "deck/raw_ct/schreyer2025/data/AllScenarioData.mif, Region EU27, Scenario 07_NZ_CCS350_highImp"
+  ],
+  "notes": "Cement is Production|Industry|Cement (cement, not clinker). Chemicals and other industry are reported only as value added (US$2005), not tonnes. "
+ },
+ "2400": {
+  "model": "POTEnCIA",
+  "scenario": "CETO 2024",
+  "region": "EU27",
+  "source": "JRC CETO 2024, scenario-research/raw_eu/ceto24/EU27/5_year_reports/ceto2024_EU27_ind_5years.xlsx",
+  "production_reported": true,
+  "variables": {
+   "ISI r7: Physical output (kt steel)": {
+    "unit": "Mt/yr",
+    "std": "prod_steel",
+    "values": {
+     "2015": 155.8911,
+     "2020": 132.6606,
+     "2025": 146.6573,
+     "2030": 145.3197,
+     "2035": 145.4275,
+     "2040": 145.6006,
+     "2045": 145.4547,
+     "2050": 145.1614
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet ISI, row 7 \"Physical output (kt steel)\", kt / 1000"
+   },
+   "ISI r8: Integrated steelworks": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_primary_bfbof",
+    "values": {
+     "2015": 91.818,
+     "2020": 74.4989,
+     "2025": 83.1526,
+     "2030": 80.4879,
+     "2035": 79.3973,
+     "2040": 78.432,
+     "2045": 77.2429,
+     "2050": 75.9746
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet ISI, row 8 \"Integrated steelworks\", kt / 1000"
+   },
+   "ISI r9: Electric arc": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_eaf",
+    "values": {
+     "2015": 64.0731,
+     "2020": 58.1618,
+     "2025": 63.5046,
+     "2030": 64.8318,
+     "2035": 66.0302,
+     "2040": 67.1686,
+     "2045": 68.2118,
+     "2050": 69.1869
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet ISI, row 9 \"Electric arc\", kt / 1000"
+   },
+   "NMM r9: Cement (kt)": {
+    "unit": "Mt/yr",
+    "std": "prod_cement",
+    "values": {
+     "2015": 157.176,
+     "2020": 172.7441,
+     "2025": 183.9835,
+     "2030": 187.9537,
+     "2035": 190.6169,
+     "2040": 193.1736,
+     "2045": 196.4117,
+     "2050": 199.8974
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet NMM, row 9 \"Cement (kt)\", kt / 1000"
+   },
+   "CHI r10: Basic chemicals (kt ethylene eq.)": {
+    "unit": "Mt/yr",
+    "std": "prod_basic_chemicals",
+    "values": {
+     "2015": 79.4923,
+     "2020": 80.6509,
+     "2025": 85.1369,
+     "2030": 88.0763,
+     "2035": 88.8045,
+     "2040": 89.5639,
+     "2045": 90.7043,
+     "2050": 91.8396
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet CHI, row 10 \"Basic chemicals (kt ethylene eq.)\", kt / 1000"
+   },
+   "NFM r10: Aluminium production (kt)": {
+    "unit": "Mt/yr",
+    "std": "prod_aluminium",
+    "values": {
+     "2015": 4.5453,
+     "2020": 4.5105,
+     "2025": 4.9503,
+     "2030": 5.0612,
+     "2035": 5.1512,
+     "2040": 5.229,
+     "2045": 5.2826,
+     "2050": 5.3269
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet NFM, row 10 \"Aluminium production (kt)\", kt / 1000"
+   },
+   "NFM r11: Aluminium - primary production": {
+    "unit": "Mt/yr",
+    "std": "prod_aluminium_primary",
+    "values": {
+     "2015": 1.926,
+     "2020": 2.0065,
+     "2025": 2.1961,
+     "2030": 2.2238,
+     "2035": 2.2411,
+     "2040": 2.2553,
+     "2045": 2.2652,
+     "2050": 2.2736
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet NFM, row 11 \"Aluminium - primary production\", kt / 1000"
+   },
+   "Summary r3: Value added (M\u20ac2015)": {
+    "unit": "M\u20ac2015",
+    "std": "va_industry",
+    "values": {
+     "2015": 1766315.4591,
+     "2020": 1750090.3063,
+     "2025": 2021769.5975,
+     "2030": 2144721.5858,
+     "2035": 2231938.5861,
+     "2040": 2361696.9116,
+     "2045": 2511858.2826,
+     "2050": 2657554.3418
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet Summary, row 3 \"Value added (M\u20ac2015)\""
+   },
+   "Summary r78: Emissions from energy consumption": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_ind_energy",
+    "values": {
+     "2015": 357.711,
+     "2020": 345.3016,
+     "2025": 322.9487,
+     "2030": 246.8708,
+     "2035": 147.3245,
+     "2040": 65.6487,
+     "2045": 28.5219,
+     "2050": 23.0314
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet Summary, row 78 \"Emissions from energy consumption\", kt / 1000"
+   },
+   "Summary r90: Process emissions": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_ind_process",
+    "values": {
+     "2015": 232.6725,
+     "2020": 216.8309,
+     "2025": 235.2448,
+     "2030": 214.0163,
+     "2035": 135.6237,
+     "2040": 60.2536,
+     "2045": 42.1746,
+     "2050": 37.7452
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet Summary, row 90 \"Process emissions\", kt / 1000"
+   },
+   "ISI r44: Emissions from energy consumption": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_steel_energy",
+    "values": {
+     "2015": 66.2515,
+     "2020": 55.7536,
+     "2025": 52.3217,
+     "2030": 39.375,
+     "2035": 17.3703,
+     "2040": 7.327,
+     "2045": 4.3644,
+     "2050": 3.6731
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet ISI, row 44 \"Emissions from energy consumption\", kt / 1000"
+   },
+   "ISI r47: Process emissions": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_steel_process",
+    "values": {
+     "2015": 70.6943,
+     "2020": 59.3858,
+     "2025": 66.7363,
+     "2030": 57.2686,
+     "2035": 25.3427,
+     "2040": 15.849,
+     "2045": 11.5553,
+     "2050": 10.9938
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet ISI, row 47 \"Process emissions\", kt / 1000"
+   },
+   "NMM r46: Cement": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_cement_energy",
+    "values": {
+     "2015": 36.8875,
+     "2020": 38.94,
+     "2025": 32.9823,
+     "2030": 27.228,
+     "2035": 11.1891,
+     "2040": 1.6602,
+     "2045": 0.4899,
+     "2050": 0.2216
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet NMM, row 46 \"Cement\", kt / 1000"
+   },
+   "NMM r50: Cement": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_cement_process",
+    "values": {
+     "2015": 88.2948,
+     "2020": 86.4031,
+     "2025": 94.0686,
+     "2030": 89.0744,
+     "2035": 59.8015,
+     "2040": 15.2822,
+     "2045": 9.8228,
+     "2050": 8.6775
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet NMM, row 50 \"Cement\", kt / 1000"
+   },
+   "CHI r62: Emissions from energy consumption": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_chem_energy",
+    "values": {
+     "2015": 77.8622,
+     "2020": 75.3318,
+     "2025": 64.6978,
+     "2030": 50.1135,
+     "2035": 32.7287,
+     "2040": 13.5083,
+     "2045": 6.1435,
+     "2050": 6.0397
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet CHI, row 62 \"Emissions from energy consumption\", kt / 1000"
+   },
+   "CHI r66: Process emissions": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_chem_process",
+    "values": {
+     "2015": 47.0847,
+     "2020": 46.4457,
+     "2025": 47.7915,
+     "2030": 42.7481,
+     "2035": 28.6498,
+     "2040": 15.5328,
+     "2045": 12.0634,
+     "2050": 10.3925
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet CHI, row 66 \"Process emissions\", kt / 1000"
+   },
+   "CHI r63: Basic chemicals": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_basicchem_energy",
+    "values": {
+     "2015": 52.3066,
+     "2020": 48.7113,
+     "2025": 41.7602,
+     "2030": 32.8971,
+     "2035": 20.1948,
+     "2040": 7.6826,
+     "2045": 3.6773,
+     "2050": 3.6528
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet CHI, row 63 \"Basic chemicals\", kt / 1000"
+   },
+   "CHI r67: Basic chemicals": {
+    "unit": "Mt CO2/yr",
+    "std": "emi_basicchem_process",
+    "values": {
+     "2015": 47.0831,
+     "2020": 46.4442,
+     "2025": 47.7903,
+     "2030": 42.7468,
+     "2035": 28.6485,
+     "2040": 15.5314,
+     "2045": 12.062,
+     "2050": 10.391
+    },
+    "locator": "ceto2024_EU27_ind_5years.xlsx, sheet CHI, row 67 \"Basic chemicals\", kt / 1000"
+   },
+   "ISI r7: Physical output (kt steel) (annual report)": {
+    "unit": "Mt/yr",
+    "std": "prod_steel_annual",
+    "values": {
+     "2019": 150.6951,
+     "2020": 132.6606,
+     "2021": 153.0987,
+     "2022": 136.8465,
+     "2023": 126.7934,
+     "2024": 133.4147
+    },
+    "locator": "ceto2024_EU27_ind_yearly.xlsx, sheet ISI, row 7 \"Physical output (kt steel)\", kt / 1000"
+   },
+   "NMM r9: Cement (kt) (annual report)": {
+    "unit": "Mt/yr",
+    "std": "prod_cement_annual",
+    "values": {
+     "2019": 173.9372,
+     "2020": 172.7441,
+     "2021": 176.1429,
+     "2022": 178.6911,
+     "2023": 180.7869,
+     "2024": 182.5451
+    },
+    "locator": "ceto2024_EU27_ind_yearly.xlsx, sheet NMM, row 9 \"Cement (kt)\", kt / 1000"
+   }
+  },
+  "locators": [
+   "scenario-research/raw_eu/ceto24/EU27/5_year_reports/ceto2024_EU27_ind_5years.xlsx (header row 1: years 2000-2070 in columns B-O; 2055-2070 empty)"
+  ],
+  "notes": "Crude steel = ISI \"Physical output (kt steel)\" = Integrated steelworks + Electric arc. Cement = NMM \"Cement (kt)\" (cement, not clinker). Chemicals = \"Basic chemicals (kt ethylene eq.)\". Emissions are net emitted CO2 by subsector, energy and process. Values in kt converted to Mt (/1000)."
+ }
+}

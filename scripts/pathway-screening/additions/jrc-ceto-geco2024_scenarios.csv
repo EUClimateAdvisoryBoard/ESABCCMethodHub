@@ -1,0 +1,5 @@
+ID,Model,Scenario,main_run,src,one_total,description
+2400,POTEnCIA,CETO 2024 scenario,True,JRC_CETO2024,False,"JRC Clean Energy Technology Observatory 2024 scenario (POTEnCIA, EU27, single run; model-native 5-year reports dated 2024-09-13, FTP 2024-12-10). NET built as domestic total from printed rows; Overview r97 (EU-target accounting) as NET_INTL."
+2410,POLES-JRC,1.5C,True,JRC_GECO2024,False,"JRC Global Energy and Climate Outlook 2024, 1.5°C scenario (POLES-JRC, sheet EU, file GECO2024_15C_20241220_03.xlsx)."
+2411,POLES-JRC,NDC-LTS,True,JRC_GECO2024,False,"JRC GECO 2024, NDC-LTS scenario (NDCs plus long-term strategies; POLES-JRC, sheet EU, file GECO2024_NDC-LTS_20241220_03.xlsx)."
+2412,POLES-JRC,Ref,False,JRC_GECO2024,False,"JRC GECO 2024, Reference scenario (current policies; POLES-JRC, sheet EU). Not intended to reach the targets; the file itself says EU Reference results should not be used as an official projection."

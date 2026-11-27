@@ -1,0 +1,201 @@
+{
+ "_base": "Eurostat 2024 (nrg_bal_c updated 2026-08-27; nrg_inf_epcrw updated 2026-10-09)",
+ "tiles": {
+  "elec_use": {
+   "label": "Electricity use",
+   "unit": "TWh",
+   "base": 2394.009,
+   "lo": 3460.308,
+   "hi": 4464.865,
+   "change": "×1.7",
+   "n": 5,
+   "source": "nrg_bal_c: final consumption - energy use (FC_E), electricity (E7000), GWh/1000",
+   "text": "2,394 → 3,460–4,465 TWh",
+   "per_pathway": {
+    "ESABCC REMIND 3.2": 4161.53,
+    "Schreyer CCS180": 4464.86,
+    "Schreyer CCS350": 4441.06,
+    "Rodrigues": 3854.14,
+    "CETO 2024": 3460.31
+   },
+   "excluded": {}
+  },
+  "solar_cap": {
+   "label": "Solar",
+   "unit": "GW",
+   "base": 307.101,
+   "lo": 929.0,
+   "hi": 1860.032,
+   "change": "×4.5",
+   "n": 6,
+   "source": "nrg_inf_epcrw: net maximum electrical capacity, solar PV (RA420)",
+   "text": "307 → 929–1,860 GW",
+   "per_pathway": {
+    "ESABCC REMIND 3.2": 1860.03,
+    "Schreyer CCS180": 1822.62,
+    "Schreyer CCS350": 1781.93,
+    "Rodrigues": 1729.51,
+    "CETO 2024": 1236.07,
+    "Agora": 929.0
+   },
+   "excluded": {}
+  },
+  "wind_cap": {
+   "label": "Wind",
+   "unit": "GW",
+   "base": 231.146,
+   "lo": 681.758,
+   "hi": 969.236,
+   "change": "×3.6",
+   "n": 6,
+   "source": "nrg_inf_epcrw: net maximum electrical capacity, wind (RA300)",
+   "text": "231 → 682–969 GW",
+   "per_pathway": {
+    "ESABCC REMIND 3.2": 760.32,
+    "Schreyer CCS180": 969.24,
+    "Schreyer CCS350": 937.67,
+    "Rodrigues": 681.76,
+    "CETO 2024": 744.81,
+    "Agora": 923.0
+   },
+   "excluded": {}
+  }
+ },
+ "scope_check": {
+  "elec_use": {
+   "eurostat_2020": 2383.87,
+   "model_2020": {
+    "ESABCC REMIND 3.2": 2581.78,
+    "Schreyer CCS180": 2628.51,
+    "Schreyer CCS350": 2628.51,
+    "Rodrigues": 2499.88,
+    "CETO 2024": 2383.77
+   },
+   "deviation": {
+    "ESABCC REMIND 3.2": "+8%",
+    "Schreyer CCS180": "+10%",
+    "Schreyer CCS350": "+10%",
+    "Rodrigues": "+5%",
+    "CETO 2024": "-0%"
+   }
+  },
+  "elec_share": {
+   "eurostat_2020": 23.11,
+   "model_2020": {
+    "ESABCC REMIND 3.2": 20.0,
+    "Schreyer CCS180": 19.97,
+    "Schreyer CCS350": 19.97,
+    "Rodrigues": 18.98,
+    "CETO 2024": 23.03
+   },
+   "deviation": {
+    "ESABCC REMIND 3.2": "-13%",
+    "Schreyer CCS180": "-14%",
+    "Schreyer CCS350": "-14%",
+    "Rodrigues": "-18%",
+    "CETO 2024": "-0%"
+   }
+  },
+  "ind_bio": {
+   "eurostat_2020": 369.89,
+   "model_2020": {
+    "ESABCC REMIND 3.2": 561.31,
+    "Schreyer CCS180": 445.78,
+    "Schreyer CCS350": 445.78,
+    "Rodrigues": 545.86,
+    "CETO 2024": 265.41
+   },
+   "deviation": {
+    "ESABCC REMIND 3.2": "+52%",
+    "Schreyer CCS180": "+21%",
+    "Schreyer CCS350": "+21%",
+    "Rodrigues": "+48%",
+    "CETO 2024": "-28%"
+   }
+  },
+  "solar_cap": {
+   "eurostat_2020": 134.69,
+   "model_2020": {
+    "ESABCC REMIND 3.2": 139.83,
+    "Schreyer CCS180": 140.7,
+    "Schreyer CCS350": 140.7,
+    "Rodrigues": 138.36,
+    "CETO 2024": 118.24
+   },
+   "deviation": {
+    "ESABCC REMIND 3.2": "+4%",
+    "Schreyer CCS180": "+4%",
+    "Schreyer CCS350": "+4%",
+    "Rodrigues": "+3%",
+    "CETO 2024": "-12%"
+   }
+  },
+  "wind_cap": {
+   "eurostat_2020": 176.99,
+   "model_2020": {
+    "ESABCC REMIND 3.2": 172.78,
+    "Schreyer CCS180": 174.51,
+    "Schreyer CCS350": 174.51,
+    "Rodrigues": 170.34,
+    "CETO 2024": 177.27
+   },
+   "deviation": {
+    "ESABCC REMIND 3.2": "-2%",
+    "Schreyer CCS180": "-1%",
+    "Schreyer CCS350": "-1%",
+    "Rodrigues": "-4%",
+    "CETO 2024": "+0%"
+   }
+  },
+  "bio_primary": {
+   "eurostat_2020": 5.86,
+   "model_2020": {
+    "ESABCC REMIND 3.2": 6.97,
+    "Schreyer CCS180": 6.33,
+    "Schreyer CCS350": 6.33,
+    "Rodrigues": 7.47,
+    "CETO 2024": 5.8
+   },
+   "deviation": {
+    "ESABCC REMIND 3.2": "+19%",
+    "Schreyer CCS180": "+8%",
+    "Schreyer CCS350": "+8%",
+    "Rodrigues": "+27%",
+    "CETO 2024": "-1%"
+   }
+  }
+ },
+ "dropped": {
+  "elec_share": "model 2020 values differ from Eurostat 2020 by more than 15 % for Rodrigues (-18%)",
+  "ind_bio": "model 2020 values differ from Eurostat 2020 by more than 15 % for ESABCC REMIND 3.2 (+52%), Schreyer CCS180 (+21%), Schreyer CCS350 (+21%), Rodrigues (+48%), CETO 2024 (-28%)",
+  "bio_primary": "model 2020 values differ from Eurostat 2020 by more than 15 % for ESABCC REMIND 3.2 (+19%), Rodrigues (+27%)"
+ },
+ "jrc2030": {
+  "wind": {
+   "label": "Wind",
+   "change": "×3–4",
+   "note": "annual installations, 2024 → 2030 need"
+  },
+  "solar": {
+   "label": "Solar PV",
+   "change": "≈ on track",
+   "note": "annual installations close to the 2030 pace"
+  },
+  "heat_pumps": {
+   "label": "Heat pumps",
+   "change": "×3–4",
+   "note": "annual installations, 2024 → 2030 need"
+  },
+  "batteries": {
+   "label": "Batteries",
+   "change": "×6",
+   "note": "annual deployment, 2024 → 2030 need"
+  },
+  "electrolysers": {
+   "label": "Electrolysers",
+   "change": "×60",
+   "note": "annual installations, 2024 → 2030 need"
+  },
+  "_source": "JRC (2026), as quoted in the chapter draft; not re-verified against the JRC publication in this pass."
+ }
+}
