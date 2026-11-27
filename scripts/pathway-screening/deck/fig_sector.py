@@ -27,6 +27,7 @@ for sk in ('total', 'industry'):
     hs = {y: v for y, v in (HN if sk == 'total' else {y: H[y][sk] for y in H}).items() if y >= 2005}; hy = sorted(hs)
     hi = max(hi, max(hs.values()) * 1.08)
     ax.plot([hx(y) for y in hy], [hs[y] for y in hy], color=HC, lw=3, zorder=3, solid_capstyle='round'); ax.scatter([hx(HY)], [hs[HY]], s=60, color=HC, zorder=4)
+    ax.text(hx(2011), hs[2011] + 0.05 * (hi - lo), 'EEA inventory', ha='left', va='bottom', fontsize=15, fontweight='bold', color=HC, path_effects=halo)   # labelled on the line, not in the legend
     ax.text(hx(HY) + 0.08, hs[HY], f'{HY}: {fmt(hs[HY])}', ha='left', va='center', fontsize=15, fontweight='bold', color='#2c2d2d', path_effects=halo)
     notes = []
     for j, (key, col, lab) in enumerate(SETS):
@@ -72,9 +73,10 @@ for sk in ('total', 'industry'):
     h2 = [Line2D([], [], color=HC, lw=3, label='EEA inventory 2005–2024')]
     pass  # WEM, WAM and Trend are labelled on the chart, not in the legend (27 Nov 2026)
 #    if sk in WW['WEM']: h2 += [Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (5, 3)), label='WEM: MS projections, existing measures'), Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (1.5, 2)), label='WAM: with additional measures'), Line2D([], [], color=TRC, lw=2.6, label='Trend: linear fit to inventory 2005–2024')]
-    f.legend(handles=h, loc='lower left', ncol=1, frameon=False, fontsize=(13 if NARROW else 14.5), bbox_to_anchor=(0.06, 0.0), handletextpad=0.4)
+    # One compact legend below the chart, 2 x 2: history and the three sets (WEM, WAM, Trend are labelled on the chart)
     if PRODAX: h2 += [Line2D([], [], color='#6f6f6f', lw=2.2, ls=(0, (5, 2)), label=('Production, 2005 = 100 (right axis)' if NARROW else 'Production, 2005 = 100 (right axis): tonnes for steel and cement, volume index otherwise'))]
-    f.legend(handles=h2, loc='lower left', ncol=2, frameon=False, fontsize=(11.5 if NARROW else 13.5), bbox_to_anchor=((0.50 if NARROW else 0.47), 0.0), handletextpad=0.4, columnspacing=1.0)
+    hh = h + h2[1:]   # the three pathway sets; the inventory line is labelled on the chart
+    f.legend(handles=hh, loc='lower center', ncol=2, frameon=False, fontsize=(12.5 if NARROW else 14), bbox_to_anchor=(0.53, 0.0), handletextpad=0.4, columnspacing=2.2, labelspacing=0.5)
     if notes: ax.text(0.0, 1.015, '\n'.join(textwrap.fill(n_, 165) for n_ in notes), transform=ax.transAxes, fontsize=13.5, color='#6a6a6a', va='bottom')
     if FULL:
         # Secondary axis: Eurostat production index (sts_inpr_a, EU27, 2005 = 100), scaled so that 100 = industry emissions 2005,
@@ -100,8 +102,8 @@ for sk in ('total', 'industry'):
         for q in range(1, len(ends)):
             if ends[q][0] - ends[q - 1][0] < 6.5: ends[q][0] = ends[q - 1][0] + 6.5
         for v, t, c_ in ends: ax2.text(hx(HY) + 0.08, v, t, fontsize=13, color=c_, va='center', ha='left', fontweight='bold', path_effects=halo)
-        ax.texts[0].set_text(f'{HY}: {fmt(hs[HY])} (index {hs[HY] / e05 * 100:.0f})')
-        ax.texts[0].set_position((hx(HY) + 0.08, hs[HY] - 0.07 * (hi - lo)) if not NARROW else (hx(HY) - 0.35, hs[HY] - 0.10 * (hi - lo)))
+        ax.texts[1].set_text(f'{HY}: {fmt(hs[HY])} (index {hs[HY] / e05 * 100:.0f})')
+        ax.texts[1].set_position((hx(HY) + 0.08, hs[HY] - 0.07 * (hi - lo)) if not NARROW else (hx(HY) - 0.35, hs[HY] - 0.10 * (hi - lo)))
     if FULL:
         # Panel: average annual reductions, historic (EEA inventory) and required by the ECL set (range over its pathways)
         from matplotlib.patches import Rectangle
@@ -126,7 +128,7 @@ for sk in ('total', 'industry'):
         for xa in (PAN[0][1], PAN[1][1]):
             ax.annotate('', (xa + 0.07, yb + hb / 2), (xa - 0.07, yb + hb / 2), xycoords=tr, textcoords=tr, arrowprops=dict(arrowstyle='simple', fc='#3b6fb6', ec='#2a4f86', lw=0.8, mutation_scale=22), annotation_clip=False)
         OUT[sk]['reductions'] = dict(hist=round(hist, 1), r2024_2040=[round(min(a), 1), round(max(a), 1)], r2040_2050=[round(min(b), 1), round(max(b), 1)], n=len(ecl))
-    f.subplots_adjust(left=0.07, right=(0.935 if PRODAX else 0.99), top=(0.75 if FULL else (0.96 if PLAIN else 0.90)), bottom=(0.265 if sk == 'industry' else 0.31))
+    f.subplots_adjust(left=0.07, right=(0.935 if PRODAX else 0.99), top=(0.75 if FULL else (0.96 if PLAIN else 0.90)), bottom=(0.20 if sk == 'industry' else 0.24))
     if PLAIN: f.savefig(f'f3_{sk}_plain.png', dpi=150, facecolor='white')
     else: f.savefig(f'f3_{sk}_narrow.png' if NARROW else f'f3_{sk}.png', dpi=110, transparent=True)
     plt.close(f)
