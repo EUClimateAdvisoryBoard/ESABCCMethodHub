@@ -22,6 +22,7 @@ for sk in ('total', 'industry'):
     NARROW = os.environ.get('NARROW') == '1' and sk == 'industry'
     PLAIN = os.environ.get('PLAIN') == '1'   # plain version for documents: no production axis, no reductions panel
     FULL = sk == 'industry' and not PLAIN
+    PRODAX = FULL and os.environ.get('PRODAX') == '1'   # secondary production-index axis: off by default (removed on request 27 Nov 2026)
     f, ax = plt.subplots(figsize=((15.5, 9.6) if NARROW else (19, 9.6)) if sk == 'industry' else (19, 8.2)); lo, hi = YL[sk]; OUT[sk] = {}
     hs = {y: v for y, v in (HN if sk == 'total' else {y: H[y][sk] for y in H}).items() if y >= 2005}; hy = sorted(hs)
     hi = max(hi, max(hs.values()) * 1.08)
@@ -71,7 +72,7 @@ for sk in ('total', 'industry'):
     h2 = [Line2D([], [], color=HC, lw=3, label='EEA inventory 2005–2024')]
     if sk in WW['WEM']: h2 += [Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (5, 3)), label='WEM: MS projections, existing measures'), Line2D([], [], color='#5a5a5a', lw=2, ls=(0, (1.5, 2)), label='WAM: with additional measures'), Line2D([], [], color=TRC, lw=2.6, label='Trend: linear fit to inventory 2005–2024')]
     f.legend(handles=h, loc='lower left', ncol=1, frameon=False, fontsize=(13 if NARROW else 14.5), bbox_to_anchor=(0.06, 0.0), handletextpad=0.4)
-    if FULL: h2 += [Line2D([], [], color='#6f6f6f', lw=2.2, ls=(0, (5, 2)), label=('Production, 2005 = 100 (right axis)' if NARROW else 'Production, 2005 = 100 (right axis): tonnes for steel and cement, volume index otherwise'))]
+    if PRODAX: h2 += [Line2D([], [], color='#6f6f6f', lw=2.2, ls=(0, (5, 2)), label=('Production, 2005 = 100 (right axis)' if NARROW else 'Production, 2005 = 100 (right axis): tonnes for steel and cement, volume index otherwise'))]
     f.legend(handles=h2, loc='lower left', ncol=2, frameon=False, fontsize=(11.5 if NARROW else 13.5), bbox_to_anchor=((0.50 if NARROW else 0.47), 0.0), handletextpad=0.4, columnspacing=1.0)
     if notes: ax.text(0.0, 1.015, '\n'.join(textwrap.fill(n_, 165) for n_ in notes), transform=ax.transAxes, fontsize=13.5, color='#6a6a6a', va='bottom')
     if FULL:
@@ -84,6 +85,7 @@ for sk in ('total', 'industry'):
         for k_, src_ in (('STEEL_T', 'crude_steel'), ('CEMENT_T', 'cement')):
             v_ = {int(y): float(x) for y, x in TN[src_]['values'].items() if x is not None}; PI[k_] = {'I2005': {y: x / v_[2005] * 100 for y, x in v_.items()}}
         hi = e05 * 1.25; ax.set_ylim(lo, hi)
+    if PRODAX:
         ax2 = ax.twinx(); ax2.set_ylim(lo / e05 * 100, hi / e05 * 100); ax2.set_yticks([0, 20, 40, 60, 80, 100, 120])
         ax2.tick_params(axis='y', labelsize=15, colors='#5a5a5a'); ax2.set_ylabel('Index, 2005 = 100 (dashed: production; black: emissions)', fontsize=13.5, color='#5a5a5a')
         for sp in ('top', 'left'): ax2.spines[sp].set_visible(False)
@@ -97,7 +99,9 @@ for sk in ('total', 'industry'):
         for q in range(1, len(ends)):
             if ends[q][0] - ends[q - 1][0] < 6.5: ends[q][0] = ends[q - 1][0] + 6.5
         for v, t, c_ in ends: ax2.text(hx(HY) + 0.08, v, t, fontsize=13, color=c_, va='center', ha='left', fontweight='bold', path_effects=halo)
-        ax.texts[0].set_text(f'{HY}: {fmt(hs[HY])} (index {hs[HY] / e05 * 100:.0f})'); ax.texts[0].set_position((hx(HY) + 0.08, hs[HY] - 0.07 * (hi - lo)) if not NARROW else (hx(HY) - 0.35, hs[HY] - 0.10 * (hi - lo)))
+        ax.texts[0].set_text(f'{HY}: {fmt(hs[HY])} (index {hs[HY] / e05 * 100:.0f})')
+        ax.texts[0].set_position((hx(HY) + 0.08, hs[HY] - 0.07 * (hi - lo)) if not NARROW else (hx(HY) - 0.35, hs[HY] - 0.10 * (hi - lo)))
+    if FULL:
         # Panel: average annual reductions, historic (EEA inventory) and required by the ECL set (range over its pathways)
         from matplotlib.patches import Rectangle
         from matplotlib.transforms import blended_transform_factory
@@ -121,7 +125,7 @@ for sk in ('total', 'industry'):
         for xa in (PAN[0][1], PAN[1][1]):
             ax.annotate('', (xa + 0.07, yb + hb / 2), (xa - 0.07, yb + hb / 2), xycoords=tr, textcoords=tr, arrowprops=dict(arrowstyle='simple', fc='#3b6fb6', ec='#2a4f86', lw=0.8, mutation_scale=22), annotation_clip=False)
         OUT[sk]['reductions'] = dict(hist=round(hist, 1), r2024_2040=[round(min(a), 1), round(max(a), 1)], r2040_2050=[round(min(b), 1), round(max(b), 1)], n=len(ecl))
-    f.subplots_adjust(left=0.07, right=(0.935 if FULL else 0.99), top=(0.75 if FULL else (0.96 if PLAIN else 0.90)), bottom=(0.265 if sk == 'industry' else 0.31))
+    f.subplots_adjust(left=0.07, right=(0.935 if PRODAX else 0.99), top=(0.75 if FULL else (0.96 if PLAIN else 0.90)), bottom=(0.265 if sk == 'industry' else 0.31))
     if PLAIN: f.savefig(f'f3_{sk}_plain.png', dpi=150, facecolor='white')
     else: f.savefig(f'f3_{sk}_narrow.png' if NARROW else f'f3_{sk}.png', dpi=110, transparent=True)
     plt.close(f)
