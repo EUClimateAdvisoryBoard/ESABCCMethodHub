@@ -1,0 +1,35 @@
+Item 1, electricity:
+Direct use is reported final electricity use in industry. In every source this EXCLUDES the electricity used to make hydrogen (electrolysis sits in energy supply). It includes non-energy use, except in 862 (ECEMF) and 718 (CETO 2025), which exclude it.
+Electricity to make the hydrogen used in industry is not reported by any model. It is derived only where the model reports electrolysis electricity input: for_h2 = electrolysis input × (industry H2 / total H2 use). This is an allocation by share, not a model output.
+  Schreyer 2024/2025: input for H2 delivered directly to final energy (excludes synfuel and storage electrolysis).
+  Rodrigues: total electrolysis input, so an upper bound.
+  CETO 2024: electrolysis input plus own use, shared over total H2 supply incl. H2 used as a reductant in blast furnaces.
+  Not derivable for 779, 862, 718, 1327, 2421 and Agora.
+Answer to "is the electricity for H2 included in item 1": NO, in all pathways.
+
+Item 2, hydrogen:
+Pure hydrogen used in industry. REMIND runs: energy use only (no separate pure-H2 feedstock; synthetic H2-based feedstocks are excluded). CETO 2024, CETO 2025 and EC IA S2: energy use plus feedstock (CETO 2024 feedstock includes H2 as blast-furnace reductant).
+
+Item 3, biomass:
+Fuel = solid, liquid and gaseous biomass used for energy in industry (EC IA S2 includes refineries and solid waste; CETO 2024 includes renewable municipal waste and biogas). Feedstock = biomass non-energy use (bio-based chemicals; CETO 2024 also charcoal in blast furnaces). 779 reports only the total.
+
+Item 4, plastic waste:
+Not reported as an industry input by any of the 14 pathways. No proxy was estimated.
+
+Item 5, CO2 captured in industry:
+Captured at industrial plants (energy and process), before use or storage. Process capture is counted as fossil unless the source says otherwise.
+  Schreyer runs: total also includes CO2 from synthetic fuels, so total > fossil + biogenic.
+  Rodrigues and 779: fossil/biogenic split based on stored, not captured, CO2 (779 inferred from storage categories).
+  EC IA S2: about 65 % of the 2040 capture goes to e-fuels (CCU); fossil/biogenic split for 2040 from the Sankey figure only.
+  Agora: includes about 3 Mt of SMR-CCS up to 2040.
+  862 reports process capture only.
+
+Item 6, GHG emissions:
+Net = industry emissions as reported: energy CO2 + process CO2 (+ non-CO2 where reported), after all CCS and after crediting negative emissions (industrial BECCS; in REMIND also synfuel CCS and carbon stored in plastics). Can be negative.
+Gross = before those negative-emission credits; fossil CCS is still deducted. Common definition for all models (EC IA S2: net + biogenic capture, 2040 only).
+Before any capture = net + captured CO2 (fossil + biogenic, or total where no split). Derived; shows emissions if nothing were captured.
+Coverage differs: CETO 2024, CETO 2025 and POLIZERO are CO2 only (POLIZERO non-CO2 is an exogenous assumption shown separately). REMIND runs book all economy-wide F-gases under industry; 779 leaves out industrial N2O. EC IA S2 excludes refineries. Agora: all GHG, refineries probably excluded. GWP: AR5 in REMIND; not stated in Agora.
+POLIZERO's industry row is about 60 Mt above CETO in 2020; its scope could not be confirmed.
+
+General:
+Values are as published (EU27), not harmonised to the inventory. 1 EJ = 277.778 TWh; 1 ktoe = 0.01163 TWh; 1 Mtoe = 11.63 TWh.
