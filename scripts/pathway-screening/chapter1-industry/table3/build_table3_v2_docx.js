@@ -1,6 +1,6 @@
 // Word file for Table 3 v2 (best-fit tiles, Eurostat 2024 start, JRC 2030 needs). AI-compiled - pending Secretariat verification.
 const fs = require('fs');
-const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType, ShadingType, PageOrientation, BorderStyle, HeadingLevel, ImageRun } = require('docx');
+const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType, ShadingType, PageOrientation, BorderStyle, HeadingLevel, AlignmentType, VerticalAlign } = require('docx');
 const D = JSON.parse(fs.readFileSync('table3_v2.json', 'utf8'));
 const F = 'Arial';
 const r = (t, o = {}) => new TextRun({ text: t, font: F, size: o.size || 18, bold: o.bold, italics: o.italics, color: o.color });
@@ -10,7 +10,26 @@ const cell = (t, w, o = {}) => new TableCell({ children: [p(r(t, { size: 16, bol
 const table = (widths, head, rows) => new Table({ width: { size: widths.reduce((a, c) => a + c), type: WidthType.DXA }, columnWidths: widths,
   rows: [new TableRow({ tableHeader: true, children: head.map((h, j) => cell(h, widths[j], { bold: true, fill: 'E6F0F7' })) }), ...rows.map(row => new TableRow({ children: row.map((v, j) => cell(String(v), widths[j])) }))] });
 const H = t => new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun({ text: t, font: F })] });
-const img = fs.readFileSync('Table3_v2.png');
+// ---- the grid as a plain Word table; cell fill = importance of the need (copied from the original figure)
+const L = 'E4EDEF', I = 'A9C4C9', K = '608C95';
+const IMP = [[I, K, K, K, I], [L, I, I, K, K], [K, K, K, I, K], [L, I, K, K, K], [L, I, K, L, L], [K, K, K, K, L], [K, K, K, I, I]];
+const COLS = ['Clean power', 'Direct electrification', 'Indirect electrification', 'Bio-based resources', 'Recycling and waste management'];
+const ROWS = ['(1) Demand changes', '(2) Circular economy', '(3) Industrial facilities', '(4) Innovation and know-how', '(5) Low-carbon electricity', '(6) Alternatives to primary fossil inputs', '(7) Infrastructure'];
+const T = D.tiles, J = D.jrc2030;
+const c = (t, o = {}) => new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 0, after: 0 }, children: [new TextRun({ text: t, font: F, size: o.size || 21, bold: o.bold, italics: o.italics, color: o.color })] });
+const tileP = (k, col) => { const t = T[k]; return [c(t.label, { bold: true, color: col }), c(t.text, { color: col }), c(t.change, { bold: true, size: 30, color: col }), c(`n = ${t.n} of 6`, { size: 16, color: col })]; };
+const jrcP = (keys, col) => [c('JRC 2030 need', { italics: true, size: 18, color: col })].concat(keys.map(k => c(`${J[k].label}  ${J[k].change}`, { bold: true, size: 24, color: col })));
+const CONTENT = { '0,0': col => tileP('elec_use', col), '2,0': col => [...tileP('solar_cap', col), c(' ', { size: 8 }), ...tileP('wind_cap', col), c(' ', { size: 8 }), ...jrcP(['wind', 'solar'], col)],
+  '2,1': col => jrcP(['heat_pumps', 'batteries'], col), '2,2': col => jrcP(['electrolysers'], col) };
+const GW0 = 2600, GW = 2560;
+const gcell = (children, w, fill) => new TableCell({ children, width: { size: w, type: WidthType.DXA }, borders, verticalAlign: VerticalAlign.CENTER, margins: { top: 80, bottom: 80, left: 80, right: 80 }, shading: fill ? { type: ShadingType.CLEAR, fill, color: 'auto' } : undefined });
+const grid = new Table({ width: { size: GW0 + 5 * GW, type: WidthType.DXA }, columnWidths: [GW0, GW, GW, GW, GW, GW], rows: [
+  new TableRow({ tableHeader: true, children: [gcell([c('')], GW0)].concat(COLS.map(h => gcell([c(h, { bold: true, size: 21 })], GW))) }),
+  ...ROWS.map((rl, i) => new TableRow({ height: { value: 680, rule: 'atLeast' }, children: [gcell([new Paragraph({ children: [new TextRun({ text: rl, font: F, size: 21, bold: true })] })], GW0)].concat(IMP[i].map((fill, j) => {
+    const col = fill === K ? 'FFFFFF' : '2C2D2D'; const f = CONTENT[`${i},${j}`];
+    return gcell(f ? f(col) : [c('')], GW, fill); })) })),
+  new TableRow({ children: [gcell([new Paragraph({ children: [new TextRun({ text: 'Importance of the need', font: F, size: 21, bold: true })] })], GW0), gcell([c('Limited')], GW, L), gcell([c('Important')], GW, I), gcell([c('Key', { color: 'FFFFFF' })], GW, K),
+    gcell([c('Eurostat 2024 → 2040 range (ECL set)', { size: 17 })], GW), gcell([c('JRC 2030 need (annual deployment)', { size: 17, italics: true })], GW)] })] });
 const fmt = (v, d = 0) => v.toLocaleString('en-GB', { maximumFractionDigits: d });
 const W1 = [1700, 1500, 4200, 1900, 800, 5300];
 const tiles = Object.values(D.tiles).map(t => [t.label, `${fmt(t.base, 1)} ${t.unit}`, t.source, `${fmt(t.lo)}–${fmt(t.hi)} ${t.unit} (${t.change})`, `${t.n}/6`,
@@ -30,8 +49,9 @@ const doc = new Document({ styles: { default: { document: { run: { font: F, size
   sections: [{ properties: { page: { size: { width: 11906, height: 16838, orientation: PageOrientation.LANDSCAPE }, margin: { top: 720, bottom: 720, left: 720, right: 720 } } }, children: [
     H('Table 3 Needs per clean-technology option, with selected indicators for 2024 and 2040'),
     p(r('AI-compiled — pending Secretariat verification. Version 2, 27 Nov 2026: only the best-fitting indicators are shown.', { italics: true, color: 'C55A11', size: 17 })),
-    new Paragraph({ children: [new ImageRun({ data: img, type: 'png', transformation: { width: 660, height: 477 } })] }),
-    p([r('Notes: ', { bold: true }), r('Each scenario tile compares the Eurostat value for 2024 with the 2040 range across the pathways of the ECL set that report the indicator (lowest to highest value, bar). The bold figure is the change from 2024 to the middle of the 2040 range. "n" is the number of the 6 ECL pathways reporting it. An indicator is shown only if (1) it measures the need in its cell directly, (2) Eurostat publishes the same quantity, and (3) the pathways\' own 2020 values are within 15 % of Eurostat 2020, so the start value and the scenario values measure the same thing. Dashed tiles: growth in annual EU deployment needed from 2024 to 2030 to meet the 2030 targets, JRC (2026), as quoted in the chapter; not re-verified in this pass. Shading (limited / important / key) is the Secretariat\'s assessment, unchanged. Sources: Eurostat (nrg_bal_c, nrg_inf_epcrw); scenario data; JRC (2026).')], { before: 120 }),
+    grid,
+    new Paragraph({ children: [], pageBreakBefore: false }),
+    p([r('Notes: ', { bold: true }), r('Each scenario tile compares the Eurostat value for 2024 with the 2040 range across the pathways of the ECL set that report the indicator (lowest to highest value, bar). The bold figure is the change from 2024 to the middle of the 2040 range. "n" is the number of the 6 ECL pathways reporting it. An indicator is shown only if (1) it measures the need in its cell directly, (2) Eurostat publishes the same quantity, and (3) the pathways\' own 2020 values are within 15 % of Eurostat 2020, so the start value and the scenario values measure the same thing. Cells marked "JRC 2030 need": growth in annual EU deployment needed from 2024 to 2030 to meet the 2030 targets, JRC (2026), as quoted in the chapter; not re-verified in this pass. Cell shading (limited / important / key) is the Secretariat\'s assessment of the importance of the need, unchanged. Sources: Eurostat (nrg_bal_c, nrg_inf_epcrw); scenario data; JRC (2026).')], { before: 120 }),
     H('Scenario tiles: values and sources'),
     table(W1, ['Indicator', 'Eurostat 2024', 'Eurostat dataset', '2040 range (change)', 'n', '2040 value per pathway'], tiles),
     H('JRC (2026) 2030 scale-up needs'),
